@@ -1,0 +1,1569 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "meaningful work",
+  "results": [
+    {
+      "openalex_id": "W2901440541",
+      "doi": "10.1111/joms.12406",
+      "title": "Outcomes of Meaningful Work: A Meta\u2010Analysis",
+      "authors": [
+        {
+          "name": "Blake A. Allan",
+          "openalex_id": "A5003437815",
+          "orcid": "https://orcid.org/0000-0002-0814-1583",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "Cassondra Batz-Barbarich",
+          "openalex_id": "A5001740060",
+          "orcid": "https://orcid.org/0000-0003-3419-4221",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "Haley M. Sterling",
+          "openalex_id": "A5026999769",
+          "orcid": "https://orcid.org/0000-0003-0498-0205",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "Louis Tay",
+          "openalex_id": "A5050636888",
+          "orcid": "https://orcid.org/0000-0002-5522-4728",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-13",
+      "abstract": "Abstract Using job characteristics theory as a framework, we calculated meta\u2010analytic effect sizes between meaningful work and various outcomes and tested a mediated model of meaningful work predicting proximal and distal outcomes with meta\u2010analytic structural equation modelling (MASEM). From 44 articles (N = 23,144), we found that meaningful work had large correlations (r = 0.70+) with work engagement, commitment, and job satisfaction; moderate to large correlations (r = 0.44 to \u22120.49) with life satisfaction, life meaning, general health, and withdrawal intentions; and small to moderate correlations (r = \u22120.19 to 0.33) with organizational citizenship behaviours, self\u2010rated job performance, and negative affect. The best MASEM fitting model was meaningful work predicting work engagement, commitment, and job satisfaction and these variables subsequently predicting self\u2010rated performance, organizational citizenship behaviours, and withdrawal intentions. This meta\u2010analysis provides estimated effect sizes between meaningful work and its outcomes and reveals how meaningful work relates directly and indirectly to key outcomes.",
+      "cited_by_count": 536,
+      "type": "article",
+      "source": {
+        "name": "Journal of Management Studies",
+        "type": "journal",
+        "issn": [
+          "0022-2380",
+          "1467-6486"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Health and Well-being",
+        "Workplace Spirituality and Leadership"
+      ],
+      "referenced_works_count": 110,
+      "url": "https://openalex.org/W2901440541"
+    },
+    {
+      "openalex_id": "W2884339618",
+      "doi": "10.1016/j.jvb.2018.07.004",
+      "title": "Fostering meaningful work in organizations: A multi-level review and integration",
+      "authors": [
+        {
+          "name": "Evgenia I. Lysova",
+          "openalex_id": "A5067190932",
+          "orcid": "https://orcid.org/0000-0002-2135-9130",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Blake A. Allan",
+          "openalex_id": "A5003437815",
+          "orcid": "https://orcid.org/0000-0002-0814-1583",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "Bryan J. Dik",
+          "openalex_id": "A5034392446",
+          "institutions": [
+            "Colorado State University"
+          ]
+        },
+        {
+          "name": "Ryan D. Duffy",
+          "openalex_id": "A5063072527",
+          "orcid": "https://orcid.org/0000-0001-7418-3274",
+          "institutions": [
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Michael F. Steger",
+          "openalex_id": "A5009823666",
+          "orcid": "https://orcid.org/0000-0003-4888-1153",
+          "institutions": [
+            "Colorado State University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-21",
+      "abstract": null,
+      "cited_by_count": 463,
+      "type": "review",
+      "source": {
+        "name": "Journal of Vocational Behavior",
+        "type": "journal",
+        "issn": [
+          "0001-8791",
+          "1095-9084"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0001879118300800"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Supply Chain Resilience and Risk Management"
+      ],
+      "referenced_works_count": 148,
+      "url": "https://openalex.org/W2884339618"
+    },
+    {
+      "openalex_id": "W2889489975",
+      "doi": "10.1177/1534484318804653",
+      "title": "A Review of the Empirical Literature on Meaningful Work: Progress and Research Agenda",
+      "authors": [
+        {
+          "name": "Catherine Bailey",
+          "openalex_id": "A5044626723",
+          "orcid": "https://orcid.org/0000-0002-8741-3072",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Ruth Yeoman",
+          "openalex_id": "A5020680445",
+          "orcid": "https://orcid.org/0000-0002-9303-1003",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Adrian Madden",
+          "openalex_id": "A5051443296",
+          "orcid": "https://orcid.org/0000-0002-3193-5808",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Marc Thompson",
+          "openalex_id": "A5102249034",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Gary Kerridge",
+          "openalex_id": "A5013691216",
+          "orcid": "https://orcid.org/0000-0003-3753-085X",
+          "institutions": [
+            "University of Warwick"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-08",
+      "abstract": "Meaningful work is a topic of importance in core domains of human resource development (HRD) such as employee engagement, motivation, and personal development. However, there is little consensus over what comprises meaningful work or concerning the antecedent and outcome factors associated with meaningfulness. Prior theorizing has tended to conflate conceptual and empirical arguments, and hence, we lack clear insight into factors related to employees\u2019 experience of meaningfulness. To address these gaps, we undertook an analysis of the empirical literature relating to meaningful work. In all, 71 studies met the inclusion criteria. We focused on the question, \u201cWhat is the empirical evidence base concerning meaningful work, and how can this inform theory and practice in HRD?\u201d The synthesis revealed dominant trends alongside significant gaps in understanding. We highlight the practical implications of our analysis for the HRD field and propose avenues for future research on meaningfulness within HRD.",
+      "cited_by_count": 383,
+      "type": "review",
+      "source": {
+        "name": "Human Resource Development Review",
+        "type": "journal",
+        "issn": [
+          "1534-4843",
+          "1552-6712"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://kclpure.kcl.ac.uk/portal/en/publications/dfa16025-4522-4aaf-bcac-188c61b259ad"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Supply Chain Resilience and Risk Management"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W2889489975"
+    },
+    {
+      "openalex_id": "W4320040080",
+      "doi": "10.1007/s10551-023-05339-7",
+      "title": "The Ethical Implications of Artificial Intelligence (AI) For Meaningful Work",
+      "authors": [
+        {
+          "name": "Sarah Bankins",
+          "openalex_id": "A5009459648",
+          "orcid": "https://orcid.org/0000-0003-2290-3086",
+          "institutions": [
+            "Macquarie University"
+          ]
+        },
+        {
+          "name": "Paul Formosa",
+          "openalex_id": "A5067925382",
+          "orcid": "https://orcid.org/0000-0002-7490-0242",
+          "institutions": [
+            "Macquarie University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-11",
+      "abstract": "Abstract The increasing workplace use of artificially intelligent (AI) technologies has implications for the experience of meaningful human work. Meaningful work refers to the perception that one\u2019s work has worth, significance, or a higher purpose. The development and organisational deployment of AI is accelerating, but the ways in which this will support or diminish opportunities for meaningful work and the ethical implications of these changes remain under-explored. This conceptual paper is positioned at the intersection of the meaningful work and ethical AI literatures and offers a detailed assessment of the ways in which the deployment of AI can enhance or diminish employees\u2019 experiences of meaningful work. We first outline the nature of meaningful work and draw on philosophical and business ethics accounts to establish its ethical importance. We then explore the impacts of three paths of AI deployment (replacing some tasks, \u2018tending the machine\u2019, and amplifying human skills) across five dimensions constituting a holistic account of meaningful work, and finally assess the ethical implications. In doing so we help to contextualise the meaningful work literature for the era of AI, extend the ethical AI literature into the workplace, and conclude with a range of practical implications and future research directions.",
+      "cited_by_count": 286,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10551-023-05339-7.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W4320040080"
+    },
+    {
+      "openalex_id": "W2984754495",
+      "doi": "10.1007/s13347-019-00377-4",
+      "title": "Robots in the Workplace: a Threat to\u2014or Opportunity for\u2014Meaningful Work?",
+      "authors": [
+        {
+          "name": "Jilles Smids",
+          "openalex_id": "A5083983796",
+          "orcid": "https://orcid.org/0000-0002-1259-0883",
+          "institutions": [
+            "Art Innovation (Netherlands)"
+          ]
+        },
+        {
+          "name": "Sven Nyholm",
+          "openalex_id": "A5072438110",
+          "orcid": "https://orcid.org/0000-0002-3836-5932",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Hannah A. Berkers",
+          "openalex_id": "A5040208279",
+          "orcid": "https://orcid.org/0000-0002-5628-6082"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-01",
+      "abstract": null,
+      "cited_by_count": 259,
+      "type": "article",
+      "source": {
+        "name": "Philosophy & Technology",
+        "type": "journal",
+        "issn": [
+          "2210-5433",
+          "2210-5441"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13347-019-00377-4.pdf"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W2984754495"
+    },
+    {
+      "openalex_id": "W2424532254",
+      "doi": "10.1177/2041386616630039",
+      "title": "Meaningful work as realization and justification",
+      "authors": [
+        {
+          "name": "Douglas A. Lepisto",
+          "openalex_id": "A5040090880",
+          "institutions": [
+            "Western Michigan University"
+          ]
+        },
+        {
+          "name": "Michael G. Pratt",
+          "openalex_id": "A5081867610",
+          "orcid": "https://orcid.org/0000-0002-2917-1781",
+          "institutions": [
+            "Boston College"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-12",
+      "abstract": "We review and develop two alternative conceptualizations of meaningful work: a predominant perspective we label realization and an underdeveloped, yet critical, perspective we label justification. We develop each conceptualization by identifying the core problem meaningful work is thought to address and accompanying solutions. Next, we build from this distinction to propose a research agenda that advances scholarly understanding of meaningful work from a justification perspective. Through building this research agenda, we elevate scholarly understanding on meaningful work by illuminating new foci for research, highlighting the relevance of social-cultural mechanisms, and suggesting alternative outcomes.",
+      "cited_by_count": 213,
+      "type": "article",
+      "source": {
+        "name": "Organizational Psychology Review",
+        "type": "journal",
+        "issn": [
+          "2041-3866",
+          "2041-3874"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Management and Organizational Studies",
+        "Service and Product Innovation"
+      ],
+      "referenced_works_count": 87,
+      "url": "https://openalex.org/W2424532254"
+    },
+    {
+      "openalex_id": "W2920317074",
+      "doi": "10.1093/oxfordhb/9780198788232.001.0001",
+      "title": "The Oxford Handbook of Meaningful Work",
+      "authors": [
+        {
+          "name": "Helen Harding",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-10",
+      "abstract": "The Oxford Handbook of Meaningful Work examines the concept, practices, and effects of meaningful work in organizations and beyond. Taking an interdisciplinary approach, this volume reflects diverse scholarly contributions to understanding meaningful work from philosophy, political theory, psychology, sociology, organizational studies, and economics. In philosophy and political theory, treatments of meaningful work have been influenced by debates concerning the tensions between work as unavoidable and necessary, and work as a source of self-realization and human flourishing. This tension has come into renewed focus as work is reshaped by technology, globalization, and new forms of organization. In management studies, much empirical work has focused on meaningful work from the perspective of positive psychology, but more recent research has considered meaningful work as a complex phenomenon, socially constructed from interactive processes between individuals, and between individuals, organizations, and society. This Handbook examines meaningful work in the context of moral and pragmatic concerns such as dignity, alienation, freedom, organizational ethics, and corporate social responsibility. Representing some of the most up-to-date academic research, the collection illuminates the relationship of meaningful work to organizational constructs of identity, belonging, callings, self-transcendence, culture, and occupations. Researchers and practitioners will be inspired and equipped to identify new directions and methods with which to deepen scholarly inquiry into a topic of growing importance.",
+      "cited_by_count": 186,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Workplace Spirituality and Leadership"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W2920317074"
+    },
+    {
+      "openalex_id": "W4309373880",
+      "doi": "10.1146/annurev-orgpsych-031921-024847",
+      "title": "Understanding Decent Work and Meaningful Work",
+      "authors": [
+        {
+          "name": "David L. Blustein",
+          "openalex_id": "A5038379078",
+          "orcid": "https://orcid.org/0000-0002-4097-0314",
+          "institutions": [
+            "Boston College"
+          ]
+        },
+        {
+          "name": "Evgenia I. Lysova",
+          "openalex_id": "A5067190932",
+          "orcid": "https://orcid.org/0000-0002-2135-9130",
+          "institutions": [
+            "Vrije Universiteit Amsterdam"
+          ]
+        },
+        {
+          "name": "Ryan D. Duffy",
+          "openalex_id": "A5063072527",
+          "orcid": "https://orcid.org/0000-0001-7418-3274",
+          "institutions": [
+            "University of Florida"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-19",
+      "abstract": "Emerging from distinct perspectives, decent work and meaningful work are fundamental aspects of contemporary work with profound implications for individuals, organizations, and society. Decent work reflects basic workplace conditions to which all employees are entitled, whereas meaningful work is aspirational, reflecting significance at work. Following a conceptual and empirical review of scholarship on decent work and meaningful work, we draw from psychology of working theory to connect the two constructs. We argue that need satisfaction serves as the primary connector, and societal context, organizational conditions, and individual practices (in order of effectiveness) promote access to each type of work. We suggest future research directions broadening the available scholarship and methods used, promoting a focus on the complex intersection of macrolevel and psychological factors as well as interdisciplinary approaches in determining the quality of work, and engaging in intervention research to improve the way in which people live and work together.",
+      "cited_by_count": 194,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Organizational Psychology and Organizational Behavior",
+        "type": "journal",
+        "issn": [
+          "2327-0608",
+          "2327-0616"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-orgpsych-031921-024847"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Employment and Welfare Studies",
+        "Workplace Health and Well-being"
+      ],
+      "referenced_works_count": 112,
+      "url": "https://openalex.org/W4309373880"
+    },
+    {
+      "openalex_id": "W2902411941",
+      "doi": "10.1111/joms.12422",
+      "title": "The Five Paradoxes of Meaningful Work: Introduction to the special Issue \u2018Meaningful Work: Prospects for the 21st Century\u2019",
+      "authors": [
+        {
+          "name": "Catherine Bailey",
+          "openalex_id": "A5044626723",
+          "orcid": "https://orcid.org/0000-0002-8741-3072",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Marjolein Lips\u2010Wiersma",
+          "openalex_id": "A5049536451",
+          "orcid": "https://orcid.org/0000-0001-6965-334X",
+          "institutions": [
+            "Auckland University of Technology"
+          ]
+        },
+        {
+          "name": "Adrian Madden",
+          "openalex_id": "A5051443296",
+          "orcid": "https://orcid.org/0000-0002-3193-5808",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Ruth Yeoman",
+          "openalex_id": "A5020680445",
+          "orcid": "https://orcid.org/0000-0002-9303-1003",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Marc Thompson",
+          "openalex_id": "A5102249034",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Neal Chalofsky",
+          "openalex_id": "A5064422540",
+          "institutions": [
+            "George Washington University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-19",
+      "abstract": "Abstract In this introduction to the Journal of Management Studies Special Issue on Meaningful Work, we explain the imperative for a deeper understanding of meaningfulness within the context of the current sociopolitical environment, coupled with the growing use of organizational strategies aimed at \u2018managing the soul\u2019. Meaningful work remains a contested topic that has been the subject of attention in a wide range of disciplines. The focus of this Special Issue is the advancement of theory and evidence about the nature, causes, consequences, and processes of meaningful work. We summarize the contributions of each of the seven articles that comprise the Special Issue and, in particular, note their methodological and theoretical plurality. In conclusion, we set forth a future research agenda based on five fundamental paradoxes of meaningful work.",
+      "cited_by_count": 184,
+      "type": "article",
+      "source": {
+        "name": "Journal of Management Studies",
+        "type": "journal",
+        "issn": [
+          "0022-2380",
+          "1467-6486"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://kclpure.kcl.ac.uk/portal/en/publications/57cba43a-f1f1-4a19-a14f-ea9a57acd25c"
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W2902411941"
+    },
+    {
+      "openalex_id": "W2793980239",
+      "doi": "10.3389/fpsyg.2018.00363",
+      "title": "Significant Work Is About Self-Realization and Broader Purpose: Defining the Key Dimensions of Meaningful Work",
+      "authors": [
+        {
+          "name": "Frank Martela",
+          "openalex_id": "A5038038035",
+          "orcid": "https://orcid.org/0000-0001-8664-551X",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Anne Birgitta Pessi",
+          "openalex_id": "A5054302531",
+          "orcid": "https://orcid.org/0000-0002-1312-9538",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-03-26",
+      "abstract": "Research on meaningful work has proliferated in recent years, with an increasing understanding of the centrality of meaningfulness for work-related motivation, commitment, and well-being. However, ambiguity around the main construct, \"meaningful work,\" has hindered this progress as various researchers have used partly overlapping, partly differing conceptualizations. To bring clarity to this issue, we examine a broad range of various definitions of meaningful work and come to argue that meaningfulness in the broadest sense is about <i>work significance</i> as an overall evaluation of work as regards whether it is intrinsically valuable and worth doing. Furthermore, we argue that there are two key sub-dimensions to this work significance: <i>Broader purpose</i> as work serving some greater good or prosocial goals (the intrinsic value of work beyond the person in question). And <i>self-realization</i> as a sense of autonomy, authenticity and self-expression at work (the intrinsic value of work for the person in question). Previous definitions of meaningful work feature typically one or two of these elements-significance, broader purpose, self-realization -, but in the future it would be beneficial to clearly acknowledge all three elements in both definitions and operationalizations of meaningful work.",
+      "cited_by_count": 277,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2018.00363/pdf"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Management Theory and Practice"
+      ],
+      "referenced_works_count": 121,
+      "url": "https://openalex.org/W2793980239"
+    },
+    {
+      "openalex_id": "W4237026125",
+      "doi": "10.1093/acprof:oso/9780190618179.001.0001",
+      "title": "Meaningful Work",
+      "authors": [
+        {
+          "name": "Andrea Veltman",
+          "openalex_id": "A5003268853"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-17",
+      "abstract": "Abstract This book examines the importance of work in human well-being, addressing several related philosophical questions about work and arguing on the whole that meaningful work is central in human flourishing. Work impacts flourishing not only in developing and exercising human capabilities but also in instilling and reflecting virtues such as honor, pride, dignity, self-discipline, and self-respect. Work also attaches to a sense of purposefulness and personal identity, and meaningful work can promote both personal autonomy and a sense of personal satisfaction that issues from making oneself useful. Further still, work bears a formative influence on character and intelligence and provides a primary avenue for exercising complex skills and garnering esteem and recognition from others. The author defends a pluralistic account of meaningful work, identifying four primary dimension of meaningful work: (1) developing or exercising the worker\u2019s capabilities, especially insofar as this expression meets with recognition and esteem; (2) supporting virtues; (3) providing a purpose, and especially producing something of enduring value; and (4) integrating elements of a worker\u2019s life. In light of the impact that work has on flourishing, the author argues that well-ordered societies provide opportunities for meaningful work and that the philosophical view of value pluralism, which casts work as having no special significance in an individual\u2019s life, is false. The book also addresses oppressive work that undermines human flourishing, examining potential solutions to minimize the impact of bad work on those who perform it.",
+      "cited_by_count": 113,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4237026125"
+    },
+    {
+      "openalex_id": "W1910932373",
+      "doi": "10.1177/0950017015604100",
+      "title": "Time reclaimed: temporality and the experience of meaningful work",
+      "authors": [
+        {
+          "name": "Catherine Bailey",
+          "openalex_id": "A5044626723",
+          "orcid": "https://orcid.org/0000-0002-8741-3072",
+          "institutions": [
+            "University of Sussex"
+          ]
+        },
+        {
+          "name": "Adrian Madden",
+          "openalex_id": "A5051443296",
+          "orcid": "https://orcid.org/0000-0002-3193-5808",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-10",
+      "abstract": "The importance of meaningful work has been identified in scholarly writings across a range of disciplines. However, empirical studies remain sparse and the potential relevance of the concept of temporality, hitherto somewhat neglected even in wider sociological studies of organizations, has not been considered in terms of the light that it can shed on the experience of work as meaningful. These two disparate bodies of thought are brought together to generate new accounts of work meaningfulness through the lens of temporality. Findings from a qualitative study of workers in three occupations with ostensibly distinct temporal landscapes are reported. All jobs had the potential to be both meaningful and meaningless; meaningfulness arose episodically through work experiences that were shared, autonomous and temporally complex. Schutz\u2019s notion of the \u2018vivid present\u2019 emerged as relevant to understanding how work is rendered meaningful within an individual\u2019s personal and social system of relevances.",
+      "cited_by_count": 181,
+      "type": "article",
+      "source": {
+        "name": "Work Employment and Society",
+        "type": "journal",
+        "issn": [
+          "0950-0170",
+          "1469-8722"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://kclpure.kcl.ac.uk/portal/en/publications/700954de-a232-4194-8261-3de4dcf0a8cd"
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Nostalgia and Consumer Behavior"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W1910932373"
+    },
+    {
+      "openalex_id": "W2297307240",
+      "doi": "10.3389/fpsyg.2016.00071",
+      "title": "Self-Determination and Meaningful Work: Exploring Socioeconomic Constraints",
+      "authors": [
+        {
+          "name": "Blake A. Allan",
+          "openalex_id": "A5003437815",
+          "orcid": "https://orcid.org/0000-0002-0814-1583",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "Kelsey L. Autin",
+          "openalex_id": "A5038680217",
+          "orcid": "https://orcid.org/0000-0003-4630-5064",
+          "institutions": [
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Ryan D. Duffy",
+          "openalex_id": "A5063072527",
+          "orcid": "https://orcid.org/0000-0001-7418-3274",
+          "institutions": [
+            "University of Florida"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-02-02",
+      "abstract": "This study examined a model of meaningful work among a diverse sample of working adults. From the perspectives of Self-Determination Theory and the Psychology of Working Framework, we tested a structural model with social class and work volition predicting SDT motivation variables, which in turn predicted meaningful work. Partially supporting hypotheses, work volition was positively related to internal regulation and negatively related to amotivation, whereas social class was positively related to external regulation and amotivation. In turn, internal regulation was positively related to meaningful work, whereas external regulation and amotivation were negatively related to meaningful work. Indirect effects from work volition to meaningful work via internal regulation and amotivation were significant, and indirect effects from social class to meaningful work via external regulation and amotivation were significant. This study highlights the important relations between SDT motivation variables and meaningful work, especially the large positive relation between internal regulation and meaningful work. However, results also reveal that work volition and social class may play critical roles in predicting internal regulation, external regulation, and amotivation.",
+      "cited_by_count": 150,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00071/pdf"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W2297307240"
+    },
+    {
+      "openalex_id": "W2556421768",
+      "doi": "10.1016/j.hrmr.2016.11.001",
+      "title": "The mismanaged soul: Existential labor and the erosion of meaningful work",
+      "authors": [
+        {
+          "name": "Catherine Bailey",
+          "openalex_id": "A5044626723",
+          "orcid": "https://orcid.org/0000-0002-8741-3072",
+          "institutions": [
+            "University of Sussex"
+          ]
+        },
+        {
+          "name": "Adrian Madden",
+          "openalex_id": "A5051443296",
+          "orcid": "https://orcid.org/0000-0002-3193-5808",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Kerstin Alfes",
+          "openalex_id": "A5080364144",
+          "orcid": "https://orcid.org/0000-0002-6567-970X",
+          "institutions": [
+            "ESCP Business School"
+          ]
+        },
+        {
+          "name": "Amanda Shantz",
+          "openalex_id": "A5046434172",
+          "orcid": "https://orcid.org/0000-0002-6469-2574",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Emma Soane",
+          "openalex_id": "A5010257540",
+          "orcid": "https://orcid.org/0000-0001-6090-1212",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-23",
+      "abstract": null,
+      "cited_by_count": 163,
+      "type": "article",
+      "source": {
+        "name": "Human Resource Management Review",
+        "type": "journal",
+        "issn": [
+          "1053-4822",
+          "1873-7889"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S1053482216300766"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 129,
+      "url": "https://openalex.org/W2556421768"
+    },
+    {
+      "openalex_id": "W2807964499",
+      "doi": "10.3389/fpsyg.2018.01157",
+      "title": "Autonomy, Competence, Relatedness, and Beneficence: A Multicultural Comparison of the Four Pathways to Meaningful Work",
+      "authors": [
+        {
+          "name": "Frank Martela",
+          "openalex_id": "A5038038035",
+          "orcid": "https://orcid.org/0000-0001-8664-551X",
+          "institutions": [
+            "Aalto University"
+          ]
+        },
+        {
+          "name": "Tapani Riekki",
+          "openalex_id": "A5004466356",
+          "orcid": "https://orcid.org/0000-0001-5097-3415"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-10",
+      "abstract": "Meaningful work is a key element of positive functioning of employees, but what makes work meaningful? Based on research on self-determination theory, basic psychological needs, and prosocial impact, we suggest that there are four psychological satisfactions that substantially influence work meaningfulness across cultures: autonomy (sense of volition), competence (sense of efficacy), relatedness (sense of caring relationships), and beneficence (sense of making a positive contribution). We test the relationships between these satisfactions and perceived meaningful work in Finland (<i>n</i> = 594, employees of several organizations), India (<i>n</i> = 342, collected through Mturk), and the United States (<i>n</i> = 373, collected through Mturk). Regression analyses show that - except for competence in United States - all four satisfactions are significantly and independently associated with meaningful work. Moreover, structural equation modeling shows that they fully mediated the relationship between occupational position and work meaningfulness in India and in the United States. In sum, the results support the importance of these four satisfactions in explaining the psychological underpinnings of meaningful work.",
+      "cited_by_count": 196,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01157/pdf"
+      },
+      "topics": [
+        "Motivation and Self-Concept in Sports",
+        "Job Satisfaction and Organizational Behavior",
+        "Cultural Differences and Values"
+      ],
+      "referenced_works_count": 115,
+      "url": "https://openalex.org/W2807964499"
+    },
+    {
+      "openalex_id": "W2994859681",
+      "doi": "10.1007/s10551-019-04389-0",
+      "title": "A Normative Meaning of Meaningful Work",
+      "authors": [
+        {
+          "name": "Christopher Michaelson",
+          "openalex_id": "A5009831916",
+          "orcid": "https://orcid.org/0000-0001-7184-8306",
+          "institutions": [
+            "University of St. Thomas - Minnesota"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-16",
+      "abstract": null,
+      "cited_by_count": 108,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Workplace Spirituality and Leadership",
+        "Ethics in Business and Education",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 109,
+      "url": "https://openalex.org/W2994859681"
+    },
+    {
+      "openalex_id": "W2551445570",
+      "doi": "10.1080/09638237.2016.1244718",
+      "title": "Meaningful work and mental health: job satisfaction as a moderator",
+      "authors": [
+        {
+          "name": "Blake A. Allan",
+          "openalex_id": "A5003437815",
+          "orcid": "https://orcid.org/0000-0002-0814-1583",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "Chelsea Dexter",
+          "openalex_id": "A5000258782",
+          "institutions": [
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Rebecca Kinsey",
+          "openalex_id": "A5072343808",
+          "institutions": [
+            "Ball State University"
+          ]
+        },
+        {
+          "name": "Shelby Parker",
+          "openalex_id": "A5027385548",
+          "institutions": [
+            "University of Florida"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-12",
+      "abstract": "Although continued research is needed, employers and employees may have to target both the meaningfulness and job satisfaction to address the issues of stress and anxiety among working adults.",
+      "cited_by_count": 200,
+      "type": "article",
+      "source": {
+        "name": "Journal of Mental Health",
+        "type": "journal",
+        "issn": [
+          "0963-8237",
+          "1360-0567"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Healthcare professionals\u2019 stress and burnout",
+        "Workplace Health and Well-being"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2551445570"
+    },
+    {
+      "openalex_id": "W2191832878",
+      "doi": "10.1007/s10551-015-2907-7",
+      "title": "The Moderated Influence of Ethical Leadership, Via Meaningful Work, on Followers\u2019 Engagement, Organizational Identification, and Envy",
+      "authors": [
+        {
+          "name": "\u00d6zg\u00fcr Demirta\u015f",
+          "openalex_id": "A5032494386",
+          "orcid": "https://orcid.org/0000-0002-2495-2124",
+          "institutions": [
+            "Inonu University"
+          ]
+        },
+        {
+          "name": "Sean T. Hannah",
+          "openalex_id": "A5112054396",
+          "institutions": [
+            "Wake Forest University"
+          ]
+        },
+        {
+          "name": "Kubilay Gok",
+          "openalex_id": "A5067755889",
+          "orcid": "https://orcid.org/0000-0002-5063-7013",
+          "institutions": [
+            "Winona State University"
+          ]
+        },
+        {
+          "name": "Aykut Arslan",
+          "openalex_id": "A5057671578",
+          "orcid": "https://orcid.org/0000-0001-5689-3918",
+          "institutions": [
+            "Piri Reis University"
+          ]
+        },
+        {
+          "name": "Nejat \u00c7apar",
+          "openalex_id": "A5036081626",
+          "orcid": "https://orcid.org/0000-0002-1622-6253",
+          "institutions": [
+            "Meliksah University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-22",
+      "abstract": null,
+      "cited_by_count": 219,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Emotions and Moral Behavior",
+        "Emotional Labor in Professions"
+      ],
+      "referenced_works_count": 147,
+      "url": "https://openalex.org/W2191832878"
+    },
+    {
+      "openalex_id": "W2155136014",
+      "doi": "10.4102/sajhrm.v13i1.681",
+      "title": "Work engagement and meaningful work across generational cohorts",
+      "authors": [
+        {
+          "name": "Crystal Hoole",
+          "openalex_id": "A5035886718",
+          "orcid": "https://orcid.org/0000-0001-6385-6744",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Jackie Bonnema",
+          "openalex_id": "A5024342920",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-03-26",
+      "abstract": "Orientation: Engaging employees and providing employees with a sense of meaning at work is not a one-size-fits-all approach. Although research has shown that differences between work engagement and meaningful work amongst generational cohorts exist, results are still inconclusive. With age becoming increasingly more important as a diversity factor, a better understanding of the dynamics between work engagement and meaningful work across different generational cohorts is necessary to design the right strategy for each organisation\u2019s unique parameters.Research purpose: The aim of this study was to determine whether there is a relationship between work engagement and meaningful work and whether there are significant variances between the levels of work engagement and meaningful work between different generational cohorts.Motivation for study: Work engagement has consistently been highlighted by researchers and human resources experts as a recommended solution to provide companies with the upper hand when it comes to creating a competitive edge. Yet, levels of work engagement are far from ideal, requiring intensified efforts to identify solutions towards raising overall engagement levels. In recent years, much of the focus in terms of generating engagement has been aimed in the direction of financial rewards and other benefits; some organisational experts are of the opinion that a shift is occurring towards meaningful work instead of monetary rewards as the driver of engagement. The changing nature of the work landscape also suggests that generational cohorts experience work engagement and meaningful work differently. Understanding these complexities is mandatory in creating solutions towards improving levels of engagement and meaningful work.Research approach, design and method: A cross-sectional quantitative research approach has been followed. The Utrecht Work Engagement Scale (UWES) and Psychological Meaningful Scale (PMS) were administered to 261 participants across several financial institutions in Gauteng, including three generational cohorts (Baby Boomers, Generation X and Generation Y). Main findings: A moderate relationship was found to exist between work engagement and meaningful work. The Baby Boomer generation experiences the highest levels of engagement and meaningful work. Significant differences were found between Baby Boomers and Generation X and Baby Boomers and Generation Y. No significant difference were noted between Generation X and Generation Y.Practical/managerial implications: A one-size-fits-all strategy to improve work engagement and the sense of meaning in work does not exist. Results of this study suggest that various approaches based on the needs of each cohort may be required in order to sustain engagement. Older workers in particular prove to be far more valuable and productive and should be treated with care.Contribution: Whilst a large amount of information exists in terms of generational cohorts, not all findings are supported by empirical research to link the concept of work engagement to the different generational cohorts. The conventional belief that older people are less engaged and do not find meaning in their work has been proven to be a misconception, which highlights the danger of stereotypical beliefs. The findings suggest that older employees are still very valuable resources and can contribute significantly to the organisation\u2019s success, but have different needs and values than other age groups. Customised engagement strategies tailored towards different generational cohorts might be more beneficial.",
+      "cited_by_count": 122,
+      "type": "article",
+      "source": {
+        "name": "SA Journal of Human Resource Management",
+        "type": "journal",
+        "issn": [
+          "1683-7584",
+          "2071-078X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://sajhrm.co.za/index.php/sajhrm/article/download/681/931"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workaholism, burnout, and well-being",
+        "Psychological and Temporal Perspectives Research"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W2155136014"
+    },
+    {
+      "openalex_id": "W2520474730",
+      "doi": "10.1108/cdi-04-2016-0052",
+      "title": "Meaningful work: differences among blue-, pink-, and white-collar occupations",
+      "authors": [
+        {
+          "name": "Marjolein Lips\u2010Wiersma",
+          "openalex_id": "A5049536451",
+          "orcid": "https://orcid.org/0000-0001-6965-334X",
+          "institutions": [
+            "Auckland University of Technology"
+          ]
+        },
+        {
+          "name": "Sarah Wright",
+          "openalex_id": "A5018255284",
+          "orcid": "https://orcid.org/0000-0002-0552-3519",
+          "institutions": [
+            "University of Canterbury"
+          ]
+        },
+        {
+          "name": "Bryan J. Dik",
+          "openalex_id": "A5034392446",
+          "institutions": [
+            "Colorado State University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-09-12",
+      "abstract": "Purpose The purpose of this paper is to compare the importance currently placed on meaningful work (MFW), and determine the frequency by which it is experienced in blue-, pink-, and white-collar occupations.",
+      "cited_by_count": 160,
+      "type": "article",
+      "source": {
+        "name": "Career Development International",
+        "type": "journal",
+        "issn": [
+          "1362-0436",
+          "1758-6003"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Management Theory and Practice"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W2520474730"
+    },
+    {
+      "openalex_id": "W3145398680",
+      "doi": "10.3390/su13074045",
+      "title": "Meaningful Work, Job Resources, and Employee Engagement",
+      "authors": [
+        {
+          "name": "Simon L. Albrecht",
+          "openalex_id": "A5023502700",
+          "orcid": "https://orcid.org/0000-0002-9155-4759",
+          "institutions": [
+            "Deakin University"
+          ]
+        },
+        {
+          "name": "Camille R. Green",
+          "openalex_id": "A5029210451"
+        },
+        {
+          "name": "Andrew Marty",
+          "openalex_id": "A5070582857"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-06",
+      "abstract": "Meaningful work and employee engagement have been the subject of increasing interest in organizational research and practice over recent years. Both constructs have been shown to influence important organizational outcomes, such as job satisfaction, wellbeing, and performance. Only a limited amount of empirical research has focused on understanding the relationship within existing theoretical frameworks. For this study, meaningful work is proposed as a critical psychological state within the job demands-resources (JD-R) model that can therefore, in part, explain the relationship between job resources and employee engagement. Survey data collected from 1415 employees working in a range of organizations, across a number of industries, were analyzed with confirmatory factor analysis (CFA) and structural equation modelling (SEM). In support of expectations, job variety, development opportunities, and autonomy, each had a significant and positive direct association with meaningful work. These job resources also had a significant and positive indirect effect on employee engagement via meaningful work. Although job variety, development opportunities, autonomy, and feedback had significant positive direct associations with engagement, contrary to expectations, supervisor support had a negative association with engagement. The final model explained a sizable proportion of variance in both meaningful work (49%) and employee engagement (65%). Relative weights analyses showed that job variety was the strongest job resource predictor of meaningful work, and that meaningful work was more strongly associated with employee engagement than the job resources. Overall, the results show that meaningful work plays an important role in enhancing employee engagement and that providing employees with skill and task variety is important to achieving that goal. Practical implications, study limitations, and future research opportunities are discussed.",
+      "cited_by_count": 118,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/13/7/4045/pdf?version=1617940612"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Psychological Well-being and Life Satisfaction"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W3145398680"
+    },
+    {
+      "openalex_id": "W4200185291",
+      "doi": "10.1177/09500170211055998",
+      "title": "Towards a Sociology of Meaningful Work",
+      "authors": [
+        {
+          "name": "Knut Laaser",
+          "openalex_id": "A5044554163",
+          "orcid": "https://orcid.org/0000-0002-3230-3423",
+          "institutions": [
+            "University of Stirling",
+            "Brandenburg University of Technology Cottbus-Senftenberg"
+          ]
+        },
+        {
+          "name": "Jan Ch. Karlsson",
+          "openalex_id": "A5113444505",
+          "institutions": [
+            "Karlstad University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-17",
+      "abstract": "In the last decade, research on the nature, impact and prospect of meaningful work has flourished. Despite an upsurge in scholarly and practitioner interest, the research field is characterized by a lack of consensus over how meaningful work should be defined and whether its ingredients are exclusively subjective perceptions or solely triggered by objective job characteristics. The disconnection between objective and subjective dimensions of meaningful work results in a hampered understanding of how it emerges in relation to the interplay of workplace, managerial, societal and individual relations. The article addresses this gap and introduces a novel sociological meaningful work framework that features the objective and subjective dimensions of autonomy, dignity and recognition as its key pillars. In this way, a framework is offered that analyses how meaningful work is experienced at the agent level, but shaped by wider dynamics at the structural level.",
+      "cited_by_count": 90,
+      "type": "article",
+      "source": {
+        "name": "Work Employment and Society",
+        "type": "journal",
+        "issn": [
+          "0950-0170",
+          "1469-8722"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/09500170211055998"
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Workplace Spirituality and Leadership",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W4200185291"
+    },
+    {
+      "openalex_id": "W2807932573",
+      "doi": "10.1016/j.ijhm.2018.06.001",
+      "title": "Is corporate social responsibility (CSR) participation the pathway to foster meaningful work and helping behavior for millennials?",
+      "authors": [
+        {
+          "name": "Daraneekorn Supanti",
+          "openalex_id": "A5077493690",
+          "orcid": "https://orcid.org/0000-0002-8876-6603",
+          "institutions": [
+            "Prince of Songkla University"
+          ]
+        },
+        {
+          "name": "Ken Butcher",
+          "openalex_id": "A5112195835",
+          "institutions": [
+            "Griffith University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-10",
+      "abstract": null,
+      "cited_by_count": 192,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Hospitality Management",
+        "type": "journal",
+        "issn": [
+          "0278-4319",
+          "1873-4693"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Environmental Sustainability in Business",
+        "Job Satisfaction and Organizational Behavior",
+        "Corporate Social Responsibility Reporting"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W2807932573"
+    },
+    {
+      "openalex_id": "W2732563758",
+      "doi": "10.1007/s10551-017-3621-4",
+      "title": "Generational Differences in Definitions of Meaningful Work: A Mixed Methods Study",
+      "authors": [
+        {
+          "name": "Kelly Pledger Weeks",
+          "openalex_id": "A5084299566",
+          "orcid": "https://orcid.org/0000-0003-3177-2428",
+          "institutions": [
+            "Rhodes College"
+          ]
+        },
+        {
+          "name": "Caitlin Schaffert",
+          "openalex_id": "A5059685968",
+          "institutions": [
+            "Centenary College of Louisiana"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-01",
+      "abstract": null,
+      "cited_by_count": 130,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Management Theory and Practice"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W2732563758"
+    },
+    {
+      "openalex_id": "W2756378246",
+      "doi": "10.3389/fpsyg.2017.01649",
+      "title": "Accepting Lower Salaries for Meaningful Work",
+      "authors": [
+        {
+          "name": "Jing Hu",
+          "openalex_id": "A5103216360",
+          "orcid": "https://orcid.org/0009-0005-9018-8522",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Jacob B. Hirsh",
+          "openalex_id": "A5064437777",
+          "orcid": "https://orcid.org/0000-0002-3595-8417",
+          "institutions": [
+            "University of Toronto"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-29",
+      "abstract": "A growing literature indicates that people are increasingly motivated to experience a sense of meaning in their work lives. Little is known, however, about how perceptions of work meaningfulness influence job choice decisions. Although much of the research on job choice has focused on the importance of financial compensation, the subjective meanings attached to a job should also play a role. The current set of studies explored the hypothesis that people are willing to accept lower salaries for more meaningful work. In Study 1, participants reported lower minimum acceptable salaries when comparing jobs that they considered to be personally meaningful with those that they considered to be meaningless. In Study 2, an experimental enhancement of a job's apparent meaningfulness lowered the minimum acceptable salary that participants required for the position. In two large-scale cross-national samples of full-time employees in 2005 and 2015, Study 3 found that participants who experienced more meaningful work lives were more likely to turn down higher-paying job offers elsewhere. The strength of this effect also increased significantly over this time period. Study 4 replicated these findings in an online sample, such that participants who reported having more meaningful work were less willing to leave their current jobs and organizations for higher paying opportunities. These patterns of results remained significant when controlling for demographic factors and differences in job characteristics.",
+      "cited_by_count": 96,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2017.01649/pdf"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Psychological Well-being and Life Satisfaction",
+        "Workplace Spirituality and Leadership"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2756378246"
+    },
+    {
+      "openalex_id": "W2741660908",
+      "doi": "10.1016/j.jvb.2017.07.011",
+      "title": "Task significance and meaningful work: A longitudinal study",
+      "authors": [
+        {
+          "name": "Blake A. Allan",
+          "openalex_id": "A5003437815",
+          "orcid": "https://orcid.org/0000-0002-0814-1583",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-08-01",
+      "abstract": null,
+      "cited_by_count": 102,
+      "type": "article",
+      "source": {
+        "name": "Journal of Vocational Behavior",
+        "type": "journal",
+        "issn": [
+          "0001-8791",
+          "1095-9084"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 61,
+      "url": "https://openalex.org/W2741660908"
+    },
+    {
+      "openalex_id": "W2527643368",
+      "doi": "10.1177/0018726716663288",
+      "title": "Communicative tensions of meaningful work: The case of sustainability practitioners",
+      "authors": [
+        {
+          "name": "Rahul Mitra",
+          "openalex_id": "A5018142170",
+          "orcid": "https://orcid.org/0000-0003-0238-0660",
+          "institutions": [
+            "Wayne State University"
+          ]
+        },
+        {
+          "name": "Patrice M. Buzzanell",
+          "openalex_id": "A5052376000",
+          "orcid": "https://orcid.org/0000-0003-0058-7676",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-09-30",
+      "abstract": "This study, based on in-depth interviews with 45 practitioners in the emerging field of environmental sustainability, argues for a more nuanced approach to studying the meaningfulness of work. Drawing from the tension-centered approach, we posit that sustainability practitioners derived meaningfulness in tensional ways from circumstances and factors that were both enabling and constraining, stemming from various organizational, professional and political structures. This occurs through ongoing negotiation that spans everyday work processes, the perceived impact of such work, and participants\u2019 career positioning. In addition to examining meaningfulness as a dynamic and contested negotiation, rather than a purely positive outcome, the political implications of such meaning-making are traced. We close by discussing some implications for future research on meaningfulness of work.",
+      "cited_by_count": 136,
+      "type": "article",
+      "source": {
+        "name": "Human Relations",
+        "type": "journal",
+        "issn": [
+          "0018-7267",
+          "1741-282X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Spirituality and Leadership"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W2527643368"
+    },
+    {
+      "openalex_id": "W2808529048",
+      "doi": "10.1371/journal.pone.0197599",
+      "title": "The motivational potential of meaningful work: Relationships with strengths use, work engagement, and performance",
+      "authors": [
+        {
+          "name": "Jessica van Wingerden",
+          "openalex_id": "A5046686733",
+          "orcid": "https://orcid.org/0000-0001-9790-3406",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        },
+        {
+          "name": "Joost van der Stoep",
+          "openalex_id": "A5070655101"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-13",
+      "abstract": "Research in the field of work and organizational psychology increasingly highlights the importance of meaningful work. Adding to this growing body of research, this study examined the complex linkage between meaningful work and performance. More specifically, we hypothesized that meaningful work has a positive relationship with an employee's performance in several and interrelated ways, via employees' use of strengths, via work engagement, and via strengths use affecting work engagement. We conducted a structural equation modeling on a sample of 459 professionals working at a global operating organization for health technology. The results provided support for the proposed model which showed a better fit than the sequential mediation model and the direct effects model. This indicates that the meaningful work-performance relationship is predicted best by multiple pathways via employees' use of strengths and work engagement. The main theoretical, practical, and methodological implications of the results are discussed.",
+      "cited_by_count": 120,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0197599&type=printable"
+      },
+      "topics": [
+        "Job Satisfaction and Organizational Behavior",
+        "Psychological Well-being and Life Satisfaction",
+        "Workplace Spirituality and Leadership"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2808529048"
+    },
+    {
+      "openalex_id": "W2602359787",
+      "doi": "10.4102/sajip.v43i0.1398",
+      "title": "Antecedents and outcomes of meaningful work among school teachers",
+      "authors": [
+        {
+          "name": "Elmari Fouch\u00e9",
+          "openalex_id": "A5082626266",
+          "orcid": "https://orcid.org/0000-0001-6257-8615",
+          "institutions": [
+            "North-West University"
+          ]
+        },
+        {
+          "name": "Sebastiaan Rothmann",
+          "openalex_id": "A5081123573",
+          "orcid": "https://orcid.org/0000-0001-6065-4338",
+          "institutions": [
+            "North-West University"
+          ]
+        },
+        {
+          "name": "Corn\u00e9 Van der Vyver",
+          "openalex_id": "A5058169490",
+          "orcid": "https://orcid.org/0000-0003-1347-9471",
+          "institutions": [
+            "North-West University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-23",
+      "abstract": "Orientation: Quality education is dependent on the well-being, engagement, performance and retention of teachers. Meaningful work might affect these employee and organisational outcomes.Research purpose: The aim of this study was to investigate antecedents and outcomes of meaningful work among school teachers.Motivation for the study: Meaningful work underpins people\u2019s motivation and affects their well-being and job satisfaction. Furthermore, it is a significant pathway to healthy and authentic organisations. However, a research gap exists regarding the effects of different antecedents and outcomes of meaningful work.Research approach, design and method: A cross-sectional survey was used with a convenience sample of 513 teachers. The Work-Life Questionnaire, Revised Job Diagnostic Survey, Co-worker Relations Scale, Work and Meaning Inventory, Personal Resources Scale, Work Engagement Scale, Turnover Intention Scale and a measure of self-rated performance were administered.Main findings: A calling orientation, job design and co-worker relations were associated with meaningful work. A low calling orientation and poor co-worker relationships predicted burnout. A calling orientation, a well-designed job, good co-worker relationships and meaningful work predicted work engagement. Job design was moderately associated with self-ratings of performance. The absence of a calling orientation predicted teachers\u2019 intention to leave the organisation.Practical/managerial implications: Educational managers should consider implementing interventions to affect teachers\u2019 calling orientation (through job crafting), perceptions of the nature of their jobs (by allowing autonomy) and co-worker relations (through teambuilding) to promote perceptions of meaningful work. Promoting perceptions of meaningful work might contribute to lower burnout, higher work engagement, better self-ratings of performance and retention of teachers.Contribution/value-add: This study contributes to scientific knowledge regarding the effects of three antecedents, namely a calling orientation, job design and co-worker relationships on meaningful work. It also contributed to knowledge about the effects of meaningful work on employee and organisational outcomes.",
+      "cited_by_count": 98,
+      "type": "article",
+      "source": {
+        "name": "SA Journal of Industrial Psychology",
+        "type": "journal",
+        "issn": [
+          "0258-5200",
+          "2071-0763"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://sajip.co.za/index.php/sajip/article/download/1398/2087"
+      },
+      "topics": [
+        "Workplace Spirituality and Leadership",
+        "Job Satisfaction and Organizational Behavior",
+        "Resilience and Mental Health"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2602359787"
+    },
+    {
+      "openalex_id": "W2972229919",
+      "doi": "10.1371/journal.pone.0222518",
+      "title": "Meaningful work and resilience among teachers:\u00a0The mediating role of work engagement and job crafting",
+      "authors": [
+        {
+          "name": "Jessica van Wingerden",
+          "openalex_id": "A5046686733",
+          "orcid": "https://orcid.org/0000-0001-9790-3406",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        },
+        {
+          "name": "Rob F. Poell",
+          "openalex_id": "A5051555134",
+          "orcid": "https://orcid.org/0000-0002-1954-3668",
+          "institutions": [
+            "Tilburg University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-09-19",
+      "abstract": "Research in the field of work and organizational psychology more and more highlights the importance of employees' experience of meaningful work. Adding to this area of research, the present study among teachers examined the relationship between meaningful work and resilience and tested whether this proposed relationship is mediated by teachers' work engagement and job crafting behaviour. Data for this study was collected among a group of Dutch teachers working in a school for primary education (N = 174). To test the hypothesized relationships, we conducted a bootstrapping analysis. The outcomes revealed that work engagement and job crafting fully mediated the relationship between meaningful work and teacher's resilience. The insights provided in this study may be useful for the deliberate cultivation of teachers' resilience and may help them to stay enthusiastic in their meaningful but demanding profession. Theoretical contributions, limitations, suggestions for future research and practical implications are discussed.",
+      "cited_by_count": 124,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0222518&type=printable"
+      },
+      "topics": [
+        "Resilience and Mental Health",
+        "Job Satisfaction and Organizational Behavior",
+        "Workplace Health and Well-being"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W2972229919"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

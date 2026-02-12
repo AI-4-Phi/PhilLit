@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1163/17455243-20203085"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1163/17455243-20203085",
+      "title": "The Feminist Case Against Relational Autonomy",
+      "authors": [
+        {
+          "family": "Khader",
+          "given": "Serene J."
+        }
+      ],
+      "editors": [],
+      "year": 2020,
+      "container_title": "Journal of Moral Philosophy",
+      "volume": "17",
+      "issue": "5",
+      "page": "499-526",
+      "publisher": "Walter de Gruyter GmbH",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1163/17455243-20203085"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

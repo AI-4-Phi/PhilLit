@@ -1,0 +1,417 @@
+{
+  "status": "success",
+  "source": "core",
+  "query": "citation ethics philosophy",
+  "results": [
+    {
+      "core_id": "8861321",
+      "doi": "10.1111/hypa.12351",
+      "title": "The Underrepresentation of Women in Prestigious Ethics Journals",
+      "authors": [
+        {
+          "name": "Dalecki, Maggie"
+        },
+        {
+          "name": "Deveaux, Monique"
+        },
+        {
+          "name": "Krishnamurthy, Meena"
+        },
+        {
+          "name": "Liao, Shen\u2010yi"
+        }
+      ],
+      "year": 2017,
+      "abstract": "It has been widely reported that women are underrepresented in academic philosophy as faculty and students. This article investigates whether this representation may also occur in the domain of journal article publishing. Our study looked at whether women authors were underrepresented as authors in elite ethics journals \u2014 Ethics, Philosophy & Public Affairs, the Journal of Political Philosophy, and the Journal of Moral Philosophy \u2014 between 2004-2014,\u00a0relative to the proportion of women employed in academic ethics (broadly construed). We found that women are indeed underrepresented overall in prestigious ethics journal publishing. Though this is not our focus, we discuss possible causes for this finding, such as top ethics journals\u2019 tendency not to publish much feminist philosophy; the impact of women\u2019s lesser professional status or rank within philosophy on their prospects for, and success in, journal publishing; and the review process itself, which may disadvantage or discourage women authors \u2014 perhaps especially when their gender, rank, and affiliation are known to the editor or reviewer, or if their work is explicitly feminist. We discuss possible avenues for future research on the \"woman problem\" in philosophy, noting how our study relates to existing research on this issue",
+      "publisher": "",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/131211868.pdf",
+      "source_url": "https://philpapers.org/archive/KRITUO-5.pdf",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "24781830",
+      "doi": "10.1016/j.joi.2016.07.008",
+      "title": "Construction of a Pragmatic Base Line for Journal Classifications and\n  Maps Based on Aggregated Journal-Journal Citation Relations",
+      "authors": [
+        {
+          "name": "Bornmann, Lutz"
+        },
+        {
+          "name": "Leydesdorff, Loet"
+        },
+        {
+          "name": "Zhou, Ping"
+        }
+      ],
+      "year": 2016,
+      "abstract": "A number of journal classification systems have been developed in\nbibliometrics since the launch of the Citation Indices by the Institute of\nScientific Information (ISI) in the 1960s. These systems are used to normalize\ncitation counts with respect to field-specific citation patterns. The best\nknown system is the so-called \"Web-of-Science Subject Categories\" (WCs). In\nother systems papers are classified by algorithmic solutions. Using the Journal\nCitation Reports 2014 of the Science Citation Index and the Social Science\nCitation Index (n of journals = 11,149), we examine options for developing a\nnew system based on journal classifications into subject categories using\naggregated journal-journal citation data. Combining routines in VOSviewer and\nPajek, a tree-like classification is developed. At each level one can generate\na map of science for all the journals subsumed under a category. Nine major\nfields are distinguished at the top level. Further decomposition of the social\nsciences is pursued for the sake of example with a focus on journals in\ninformation science (LIS) and science studies (STS). The new classification\nsystem improves on alternative options by avoiding the problem of randomness in\neach run that has made algorithmic solutions hitherto irreproducible.\nLimitations of the new system are discussed (e.g. the classification of\nmulti-disciplinary journals). The system's usefulness for field-normalization\nin bibliometrics should be explored in future studies.Comment: accepted for publication in the Journal of Informetrics, 20 July 201",
+      "publisher": "",
+      "journal": null,
+      "download_url": "http://arxiv.org/abs/1604.02716",
+      "source_url": "http://www.loc.gov/mods/v3",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "38143504",
+      "doi": null,
+      "title": "Philosophy, Literature, Death, And Wisdom: On Philip Kitcher\\u27s  Deaths In Venice",
+      "authors": [
+        {
+          "name": "Eldridge, Richard Thomas"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "publisher": "'Transformative Works and Cultures'",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/76218639.pdf",
+      "source_url": "https://works.swarthmore.edu/cgi/viewcontent.cgi?article=1359&amp;context=fac-philosophy",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "45516564",
+      "doi": "10.1080/05568641.2015.1056962",
+      "title": "Forgiveness Or Fairness?",
+      "authors": [
+        {
+          "name": "Thomason, Krista Karbowski"
+        }
+      ],
+      "year": 2015,
+      "abstract": "Several philosophers who argue that forgiveness is an important virtue also wish to maintain the moral value of retributive emotions that forgiveness is meant to overcome. As such, these accounts explicate forgiveness as an Aristotelian mean between too much resentment and too little resentment. I argue that such an account ends up making forgiveness superfluous: it turns out that the forgiving person is not praised for a greater willingness to let go of her resentment, but rather for her fairness or good judgment. I conclude by arguing that the virtue of fair-mindedness is more compatible with maintaining the value of the retributive emotions than the virtue of forgiveness",
+      "publisher": "'Transformative Works and Cultures'",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/76218512.pdf",
+      "source_url": "https://works.swarthmore.edu/cgi/viewcontent.cgi?article=1228&amp;context=fac-philosophy",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "38147604",
+      "doi": "10.1111/jaac.12297",
+      "title": "Review Of  Reckoning With The Imagination: Wittgenstein And The Aesthetics Of Literary Experience  By C. Altieri",
+      "authors": [
+        {
+          "name": "Eldridge, Richard Thomas"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "publisher": "'Transformative Works and Cultures'",
+      "journal": "Journal of Aesthetics and Art Criticism",
+      "download_url": "https://core.ac.uk/download/76219978.pdf",
+      "source_url": "https://works.swarthmore.edu/cgi/viewcontent.cgi?article=1441&amp;context=fac-philosophy",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "9615899",
+      "doi": "10.1145/3290607.3299020",
+      "title": "Standing on the Shoulders of Giants: Exploring the Intersection of Philosophy and HCI:(Accepted workshop)",
+      "authors": [
+        {
+          "name": "Bardzell, Jeff"
+        },
+        {
+          "name": "Bardzell, Shaowen"
+        },
+        {
+          "name": "Kaptelinin, Victor"
+        },
+        {
+          "name": "Light, Ann"
+        },
+        {
+          "name": "Su, Norman"
+        },
+        {
+          "name": "Svan\u00e6s, Dag"
+        }
+      ],
+      "year": 2019,
+      "abstract": "The aim of this one-day workshop is to provide a forum for HCI researchers to discuss a wide range of issues at the intersection of philosophy and HCI. The participants will reflect on how philosophy influenced the development of HCI in the past, how philosophical insights are being utilized in current HCI research, and how philosophy can help HCI identify and address the emerging challenges facing the field. The main objectives of the workshop are to bring together HCI researchers interested in philosophy and produce an agenda for future research bringing HCI and philosophy closer together",
+      "publisher": "'Association for Computing Machinery (ACM)'",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/289098946.pdf",
+      "source_url": "https://pure.itu.dk/ws/files/84899700/Standing_on_the_Shoulders_of_Giants_Exploring_the_Intersection_of_Philosophy_and_HCI.pdf",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "8857701",
+      "doi": "10.1111/phc3.12424",
+      "title": "Buddhism and Animal Ethics",
+      "authors": [
+        {
+          "name": "Finnigan, Bronwyn"
+        }
+      ],
+      "year": 2017,
+      "abstract": "This article provides a philosophical overview of some of the central Buddhist positions and argument regarding animal welfare. It introduces the Buddha's teaching of ahi\u1e43s\u0101 or non-violence and rationally reconstructs five arguments from the context of early Indian Buddhism that aim to justify its extension to animals. These arguments appeal to the capacity and desire not to suffer, the virtue of compassion, as well as Buddhist views on the nature of self, karma, and reincarnation. This article also considers how versions of these arguments have been applied to address a practical issue in Buddhist ethics; whether Buddhists should be vegetarian",
+      "publisher": "",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/131213134.pdf",
+      "source_url": "https://philpapers.org/archive/FINBAA-2.pdf",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "62997920",
+      "doi": null,
+      "title": "Transformative Ethics and Moving Toward \u201cGreatness\u201d \u2013 Problems and Realities",
+      "authors": [
+        {
+          "name": "Ali Habib Al Lawati, Hawaraa"
+        },
+        {
+          "name": "Caldwell, Cam"
+        },
+        {
+          "name": "Taqui Syed, Raihan"
+        }
+      ],
+      "year": 2019,
+      "abstract": "The purpose of this paper is to emphasize the role of Transformative Ethics as leaders and organizations move toward the achievement of greatness. It is a conceptual paper that explains the key importance of the pursuit of greatness and the role of Transformative Ethics in that pursuit. The paper suggests that each of the twelve perspectives that comprise Transformative Ethics supports the pursuit of greatness and that the pursuit of excellence is necessary for individuals and firms in today\u2019s global marketplace. The research implications from this study support the importance of Transformative Ethics as a contributing ethical perspective for leaders and organizations. As leaders and organizations interact with others, the need for ethical leadership is critical for establishing trust and earning follower commitment This paper is one of the first to address the practical implications of Transformative Ethics for leaders and organizations",
+      "publisher": "ValpoScholar",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/216809957.pdf",
+      "source_url": "https://scholar.valpo.edu/cgi/viewcontent.cgi?article=1259&amp;context=jvbl",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "52744237",
+      "doi": "10.5130/csr.v21i2.4315",
+      "title": "Elegy to an Oz Republic: First Steps in a Ceremony of Invocation towards Reconciliation",
+      "authors": [
+        {
+          "name": "Bolt, Barbara"
+        }
+      ],
+      "year": 2015,
+      "abstract": "In 2012 the author completed a series of drawings that, while figurative in form, were structurally based on and derived their inspiration from Robert Motherwell\u2019s abstract series, Elegies to the Spanish Republic (1963-1975). This wholesale 'borrowing', 'quotation' and 'citation' raises the questions addressed in this article. What does it mean to engage in acts of appropriation now? And, more importantly, can such acts of appropriation draw on the spirit of the 'original' work to make a (political) difference?\u00a0",
+      "publisher": "'University of Technology, Sydney (UTS)'",
+      "journal": "Cultural Studies Review",
+      "download_url": "https://core.ac.uk/download/213629190.pdf",
+      "source_url": "https://epress.lib.uts.edu.au/journals/index.php/csrj/article/download/4315/5045",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "24741019",
+      "doi": "10.1016/j.joi.2016.02.003",
+      "title": "Large-Scale Analysis of the Accuracy of the Journal Classification\n  Systems of Web of Science and Scopus",
+      "authors": [
+        {
+          "name": "Waltman, Ludo"
+        },
+        {
+          "name": "Wang, Qi"
+        }
+      ],
+      "year": 2016,
+      "abstract": "Journal classification systems play an important role in bibliometric\nanalyses. The two most important bibliographic databases, Web of Science and\nScopus, each provide a journal classification system. However, no study has\nsystematically investigated the accuracy of these classification systems. To\nexamine and compare the accuracy of journal classification systems, we define\ntwo criteria on the basis of direct citation relations between journals and\ncategories. We use Criterion I to select journals that have weak connections\nwith their assigned categories, and we use Criterion II to identify journals\nthat are not assigned to categories with which they have strong connections. If\na journal satisfies either of the two criteria, we conclude that its assignment\nto categories may be questionable. Accordingly, we identify all journals with\nquestionable classifications in Web of Science and Scopus. Furthermore, we\nperform a more in-depth analysis for the field of Library and Information\nScience to assess whether our proposed criteria are appropriate and whether\nthey yield meaningful results. It turns out that according to our\ncitation-based criteria Web of Science performs significantly better than\nScopus in terms of the accuracy of its journal classification system",
+      "publisher": "",
+      "journal": "Journal of Informetrics",
+      "download_url": "http://arxiv.org/abs/1511.00735",
+      "source_url": "http://arxiv.org/abs/1511.00735",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "45020406",
+      "doi": null,
+      "title": "At the pillar of the proverbial Golden Calf: Sacrificing the Need for \u2018Responsible Knowing\u2019 on the Altar of a Compliance-Based Ethic",
+      "authors": [
+        {
+          "name": "Williams, Izaak L"
+        }
+      ],
+      "year": 2017,
+      "abstract": "Evidence-based practice (EBP) has been promoted and adopted broadly and has led to advances in health and human services. Notwithstanding the underlying rationale of EBP philosophy to diversify the current body of information concerning evidence-based practices, this paper draws attention to critical thinking fallacies that confound non-evidence-based \u201ctreatment as usual\u201d practice with actual EBP philosophy. Flawed belief systems about EBP, in tandem with a compliance-based culture, fail to provide structure to the possibility of evidence-based practice philosophy and proper use of EB treatment modalities. Impediments to EBP implementation are created by lack of \u201cresponsible knowing\u201d and this results in practitioner complacency toward means of augmenting effective treatment. However, insofar as EBP implementation confronts tension between \u2018responsible knowing\u2019 and compliance-based program culture, it gives way to confusion, misdirection, and complacency towards what can be known about EBP and the information gleaned about it. Effectively limiting important aspects of being a responsible knower in terms of the ability to embody accurate knowledge and practice philosophy. Thus, the compliance-based ethic risks incompatibility with the ethical freedom necessary for responsible knowing and is in constant conflict with the proper implementation of EBP.\n Keywords: compliance-based ethics, evidence-based practice, fallacies, testimonial injustice, critical thinking, human service",
+      "publisher": "SFA ScholarWorks",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/127631208.pdf",
+      "source_url": "https://scholarworks.sfasu.edu/cgi/viewcontent.cgi?article=1025&amp;context=jhstrp",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "42864100",
+      "doi": "10.1007/s11192-017-2528-2",
+      "title": "Betweenness and Diversity in Journal Citation Networks as Measures of\n  Interdisciplinarity -- A Tribute to Eugene Garfield --",
+      "authors": [
+        {
+          "name": "Bornmann, Lutz"
+        },
+        {
+          "name": "Leydesdorff, Loet"
+        },
+        {
+          "name": "Wagner, Caroline S."
+        }
+      ],
+      "year": 2017,
+      "abstract": "Journals were central to Eugene Garfield's research interests. Among other\nthings, journals are considered as units of analysis for bibliographic\ndatabases such as the Web of Science (WoS) and Scopus. In addition to\ndisciplinary classifications of journals, journal citation patterns span\nnetworks across boundaries to variable extents. Using betweenness centrality\n(BC) and diversity, we elaborate on the question of how to distinguish and rank\njournals in terms of interdisciplinarity. Interdisciplinarity, however, is\ndifficult to operationalize in the absence of an operational definition of\ndisciplines, the diversity of a unit of analysis is sample-dependent. BC can be\nconsidered as a measure of multi-disciplinarity. Diversity of co-citation in a\nciting document has been considered as an indicator of knowledge integration,\nbut an author can also generate trans-disciplinary--that is,\nnon-disciplined--variation by citing sources from other disciplines. Diversity\nin the bibliographic coupling among citing documents can analogously be\nconsidered as diffusion of knowledge across disciplines. Because the citation\nnetworks in the cited direction reflect both structure and variation, diversity\nin this direction is perhaps the best available measure of interdisciplinarity\nat the journal level. Furthermore, diversity is based on a summation and can\ntherefore be decomposed, differences among (sub)sets can be tested for\nstatistical significance. In an appendix, a general-purpose routine for\nmeasuring diversity in networks is provided",
+      "publisher": "",
+      "journal": "Scientometrics",
+      "download_url": "https://core.ac.uk/download/161946838.pdf",
+      "source_url": "https://kb.osu.edu/bitstream/1811/86343/1/GlennCollege_WagnerC_Scientometrics_2018.pdf",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "62048262",
+      "doi": null,
+      "title": "Moral Philosophy: A Contemporary Introduction",
+      "authors": [
+        {
+          "name": "DeNicola, Daniel R."
+        }
+      ],
+      "year": 2018,
+      "abstract": "Moral Philosophy: A Contemporary Introduction is a compact yet comprehensive book offering an explication and critique of the major theories that have shaped philosophical ethics. Engaging with both historical and contemporary figures, this book explores the scope, limits, and requirements of morality. DeNicola traces our various attempts to ground morality: in nature, in religion, in culture, in social contracts, and in aspects of the human person such as reason, emotions, caring, and intuition.https://cupola.gettysburg.edu/books/1147/thumbnail.jp",
+      "publisher": "The Cupola: Scholarship at Gettysburg College",
+      "journal": null,
+      "download_url": "https://cupola.gettysburg.edu/cgi/viewcontent.cgi?article=1147&amp;context=books",
+      "source_url": "https://cupola.gettysburg.edu/cgi/viewcontent.cgi?article=1147&amp;context=books",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "41647490",
+      "doi": "10.1007/s40926-015-0013-7",
+      "title": "Seeking the Real Adam Smith and Milton Friedman",
+      "authors": [
+        {
+          "name": "A Buchanan"
+        },
+        {
+          "name": "A Smith"
+        },
+        {
+          "name": "CB Bhattacharya"
+        },
+        {
+          "name": "E Butler"
+        },
+        {
+          "name": "GR Laczniak"
+        },
+        {
+          "name": "GR Laczniak"
+        },
+        {
+          "name": "IS Ross"
+        },
+        {
+          "name": "J Gaski"
+        },
+        {
+          "name": "J Mueller"
+        },
+        {
+          "name": "JQ Wilson"
+        },
+        {
+          "name": "M Friedman"
+        },
+        {
+          "name": "MM Jennings"
+        },
+        {
+          "name": "NJC Santos"
+        },
+        {
+          "name": "PH Werhane"
+        },
+        {
+          "name": "R Nozick"
+        },
+        {
+          "name": "WD Grampp"
+        }
+      ],
+      "year": 2015,
+      "abstract": "In this paper we will analyze the relationship between free market principles and ethics through an exploration of how too many business managers often approach the ideas of Adam Smith and Milton Friedman. In doing so, we aim to provide a thoughtful foundation for future discussions of how we ought to navigate this intersection. We briefly examine questions such as: What is the relationship between the \u201cbest\u201d economy in terms of efficiency and the common good for society? Is pursuing one\u2019s individual economic advantage the same as promoting the general interest? As we analyze and discuss these questions, specifically in the context of Smith and Friedman, we also make some alternative normative assertions, grounded in social welfare, about adopting a broader societal perspective for the purpose of business",
+      "publisher": "e-Publications@Marquette",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/213075909.pdf",
+      "source_url": "https://epublications.marquette.edu/cgi/viewcontent.cgi?article=1212&amp;context=market_fac",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "8870524",
+      "doi": "10.17879/95189423213",
+      "title": "The Ethics of Resisting Deportation",
+      "authors": [
+        {
+          "name": "Birnie, Rutger"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Can anti-deportation resistance be justified, and if so how and by whom may, or perhaps should, unjust deportations be resisted? In this paper, I seek to provide an answer to these questions. The paper starts by describing the main forms and agents of anti-deportation action in the contemporary context. Subsequently, I examine how different justifications for principled resistance and disobedience may each be invoked in the case of deportation resistance. I then explore how worries about the resister\u2019s motivation for engaging in the action and their epistemic position apply in the specific context of anti-deportation action and consider in what circumstances there is not merely a right but a duty to resist deportation. The upshot of this argument, I conclude, is that the liberal state ought to respond to anti-deportation action not by criminalising disobedience and resistance in this field, but rather by creating legal avenues for such actors to influence deportation decision-making. DOI 10.17879/95189423213",
+      "publisher": "",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/199235676.pdf",
+      "source_url": "https://philpapers.org/archive/BIRTEO-11.pdf",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "8486802",
+      "doi": null,
+      "title": "Logos II - Virtue Ethics and Political Corruption: An Ethical Case Study",
+      "authors": [
+        {
+          "name": "Potter, Nicholas"
+        }
+      ],
+      "year": 2018,
+      "abstract": "This ethical case study will apply virtue ethics in moral decision making. It is argued that exposing corruption defends virtue and protects the good life by demonstrating a commitment to honesty and truth. Virtuous behaviour allows us to live socially and undermines the attempts of dishonest individuals to secure a comfortable life immorally",
+      "publisher": "ResearchOnline@ND",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/213607825.pdf",
+      "source_url": "https://researchonline.nd.edu.au/cgi/viewcontent.cgi?article=1001&amp;context=aristos",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "24771497",
+      "doi": "10.1007/s11192-016-2125-9",
+      "title": "The Research Space: using the career paths of scholars to predict the\n  evolution of the research output of individuals, institutions, and nations",
+      "authors": [
+        {
+          "name": "Aristar\u00e1n, Manuel"
+        },
+        {
+          "name": "Guevara, Miguel R."
+        },
+        {
+          "name": "Hartmann, Dominik"
+        },
+        {
+          "name": "Hidalgo, C\u00e9sar A."
+        },
+        {
+          "name": "Mendoza, Marcelo"
+        }
+      ],
+      "year": 2016,
+      "abstract": "In recent years scholars have built maps of science by connecting the\nacademic fields that cite each other, are cited together, or that cite a\nsimilar literature. But since scholars cannot always publish in the fields they\ncite, or that cite them, these science maps are only rough proxies for the\npotential of a scholar, organization, or country, to enter a new academic\nfield. Here we use a large dataset of scholarly publications disambiguated at\nthe individual level to create a map of science-or research space-where links\nconnect pairs of fields based on the probability that an individual has\npublished in both of them. We find that the research space is a significantly\nmore accurate predictor of the fields that individuals and organizations will\nenter in the future than citation based science maps. At the country level,\nhowever, the research space and citations based science maps are equally\naccurate. These findings show that data on career trajectories-the set of\nfields that individuals have previously published in-provide more accurate\npredictors of future research output for more focalized units-such as\nindividuals or organizations-than citation based science maps",
+      "publisher": "",
+      "journal": "Scientometrics",
+      "download_url": "http://arxiv.org/abs/1602.08409",
+      "source_url": "http://arxiv.org/abs/1602.08409",
+      "language": "en",
+      "document_type": "research"
+    }
+  ],
+  "count": 17,
+  "errors": []
+}

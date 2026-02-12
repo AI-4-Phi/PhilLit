@@ -1,0 +1,1367 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "technology",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/technology/",
+      "entry_name": "technology",
+      "title": "Philosophy of Technology",
+      "preamble": "If philosophy is the attempt \u201cto understand how things in the\nbroadest possible sense of the term hang together in the broadest\npossible sense of the term\u201d, as Sellars (1962) put it,\nphilosophy should not ignore technology. It is largely by technology\nthat contemporary society hangs together. It is hugely important not\nonly as an economic force but also as a cultural force. Indeed during\nthe last two centuries, when it gradually emerged as a discipline,\nphilosophy of technology has mostly been concerned with the meaning of\ntechnology for, and its impact on, society and culture, rather than\nwith technology itself. Mitcham (1994) calls this type of philosophy\nof technology \u201chumanities philosophy of technology\u201d\nbecause it accepts \u201cthe primacy of the humanities over\ntechnologies\u201d and is continuous with the overall perspective of\nthe humanities (and some of the social sciences). Only recently a\nbranch of the philosophy of technology has developed that is concerned\nwith technology itself and that aims to understand both the practice\nof designing and creating artifacts (in a wide sense, including\nartificial processes and systems) and the nature of the things so\ncreated. This latter branch of the philosophy of technology seeks\ncontinuity with the philosophy of science and with several other\nfields in the analytic tradition in modern philosophy, such as the\nphilosophy of action and decision-making, rather than with the\nhumanities and social science. The entry starts with a brief historical overview, then continues with\na presentation of the themes on which modern analytic philosophy of\ntechnology focuses. This is followed by a discussion of the societal\nand ethical aspects of technology, in which some of the concerns of\nhumanities philosophy of technology are addressed. This twofold\npresentation takes into consideration the development of technology as\nthe outcome of a process originating within and guided by the practice\nof engineering, by standards on which only limited societal control is\nexercised, as well as the consequences for society of the\nimplementation of the technology so created, which result from\nprocesses upon which only limited control can be exercised.",
+      "bibliography": [
+        {
+          "raw": "Adams, Rachel, 2021, \u201cCan artificial intelligence be\ndecolonized?\u201d, Interdisciplinary Science Reviews ,\n46(1\u20132): 176\u2013197. doi: 10.1080/03080188.2020.1840225.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Agricola, Georgius, 1556 [1912], De re metallica ,\nTranslated and edited by Herbert Clark Hoover and Lou Henry Hoover,\nLondon: The Mining Magazine, 1912.\n [ Agricola 1556 [1912] available online ]",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Akrich, Madeleine, 1992, \u201cThe Description of Technical\nObjects\u201d, in Bijker and Law (eds) 1992: 205\u2013224.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Allhoff, Fritz, Patrick Lin, James H. Moor and John Weckert (eds),\n2007, Nanoethics: The Ethical and Social Implications of\nNanotechnology , Hoboken, NJ: Wiley-Interscience.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Anders, G\u00fcnther, 1956, Die Antiquiertheit des\nMenschen (Volume I: \u00dcber die Seele im Zeitalter der\nzweiten industriellen Revolution ; Volume II: \u00dcber die\nZerst\u00f6rung des Lebens im Zeitalter der dritten industriellen\nRevolution ), M\u00fcnchen: C.H. Beck.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Arendt, Hannah, 1958, The Human Condition , Chicago:\nUniversity of Chicago Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ariew, Andrew, Robert Cummins and Mark Perlman (eds), 2002, Functions: New Essays in the Philosophy of Psychology and\nBiology , New York and Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Aristotle, Physics , Translated in The Complete Works\nof Aristotle, Volume 1 , The Revised Oxford Translation 2014,\nedited by Jonathan Barnes.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bacon, Francis, 1627, New Atlantis: A Worke Vnfinished ,\nin his Sylva Sylvarum: or a Naturall Historie, in Ten\nCenturies , London: William Lee.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Baum, Robert J., 1980, Ethics and Engineering Curricula ,\nHastings-on-Hudson: The Hastings Center.",
+          "parsed": {
+            "authors": [
+              "Baum, Robert J."
+            ],
+            "year": "1980",
+            "title": "Ethics and Engineering Curricula ",
+            "publisher": "Hastings-on-Hudson: The Hastings Center"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Beauchamp, Tom L., 2003, \u201cThe Nature of Applied\nEthics\u201d, in Frey and Wellman (eds) 2003: 1\u201316.\ndoi:10.1002/9780470996621.ch1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Beauchamp, Tom L., and James F. Childress, 2001, Principles of\nBiomedical Ethics , fifth edition, Oxford and New York: Oxford\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bechtel, William, 1985, \u201cAttributing Responsibility to\nComputer Systems\u201d, Metaphilosophy , 16(4):\n296\u2013306. doi:10.1111/j.1467-9973.1985.tb00176.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bijker, Wiebe E., and John Law (eds), 1992, Shaping\nTechnology/Building Society: Studies in Sociotechnical Change ,\nCambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bimber, Bruce, 1990, \u201cKarl Marx and the Three Faces of\nTechnological Determinism\u201d, Social Studies of Science ,\n20(2): 333\u2013351. doi:10.1177/030631290020002006",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Borgmann, Albert, 1984, Technology and the Character of\nContemporary Life: A Philosophical Inquiry , Chicago and London:\nUniversity of Chicago Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bostrom, Nick, and Eliezer Yudkowsky, 2014, \u201cThe Ethics of\nArtificial Intelligence\u201d, in The Cambridge Handbook of\nArtificial Intelligence , edited by Keith Frankish and William M\nRamsey, Cambridge: Cambridge University Press, 316\u2013334.\ndoi:10.1017/CBO9781139046855.020",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Brey, Philip A.E., 2012, \u201cAnticipatory Ethics for Emerging\nTechnologies\u201d, NanoEthics , 6(1): 1\u201313.\ndoi:10.1007/s11569-012-0141-7",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Briffault, R., 1930, Rational Evolution (The Making of\nHumanity) , New York: The Macmillan Company.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bucciarelli, Louis L., 1994, Designing Engineers ,\nCambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "Bucciarelli, Louis L."
+            ],
+            "year": "1994",
+            "title": "Designing Engineers ",
+            "publisher": "Cambridge, MA: MIT Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Bunge, Mario, 1966, \u201cTechnology as Applied Science\u201d, Technology and Culture , 7(3): 329\u2013347.\ndoi:10.2307/3101932",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Butler, Samuel, 1872, Erewhon , London: Trubner and Co.\n [ Butler 1872 available online ]",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Callon, Michel, 1986, \u201cThe Sociology of an Actor-Network:\nthe Case of the Electric Vehicle\u201d, in Mapping the Dynamics\nof Science and Technology: Sociology of Science in the Real\nWorld , Michel Callon, John Law and Arie Rip (eds.), London:\nMacmillan, pp. 19\u201334.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Caney, Simon, 2014, \u201cTwo Kinds of Climate Justice: Avoiding\nHarm and Sharing Burdens\u201d, Journal of Political\nPhilosophy 22(2): 125\u2013149. doi:10.1111/jopp.12030",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Coeckelbergh, Mark, 2014, \u201cThe Moral Standing of Machines:\nTowards a Relational and Non-Cartesian Moral Hermeneutics\u201d, Philosophy & Technology 27(1): 61\u201377. doi:\n10.1007/s13347-013-0133-8.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2020a, Introduction to Philosophy of\nTechnology , Oxford and New York: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2020",
+            "title": "\u2013\u2013\u2013, 2020a, Introduction to Philosophy of\nTechnology , Oxford and New York: Oxford University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2020b, AI Ethics , Cambridge, MA:\nMIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2020",
+            "title": "\u2013\u2013\u2013, 2020b, AI Ethics , Cambridge, MA:\nMIT Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2022, The Political Philosophy of AI:\nAn Introduction , Cambridge: Polity.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2022",
+            "title": "\u2013\u2013\u2013, 2022, The Political Philosophy of AI:\nAn Introduction , Cambridge: Polity."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Cranor, Carl F., 1990, \u201cSome Moral Issues in Risk\nAssessment\u201d, Ethics , 101(1): 123\u2013143.\ndoi:10.1086/293263",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Danaher, John, 2016, \u201cRobots, Law and the Retribution\nGap\u201d, Ethics and Information Technology 18(4):\n299\u2013309. doi: 10.1007/s10676-016-9403-3.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2020, \u201cWelcoming Robots into the\nMoral Circle: A Defence of Ethical Behaviourism\u201d, Science\nand Engineering Ethics 26(4): 2023\u20132049. doi:\n10.1007/s11948-019-00119-x.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2020",
+            "title": "\u2013\u2013\u2013, 2020, \u201cWelcoming Robots into the\nMoral Circle: A Defence of Ethical Behaviourism\u201d, Science\nand Engineering Ethics 26(4): 2023\u20132049. doi:\n10.1007/s11948-019-00119-x."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Darwin, Charles R., 1859, On the Origin of Species by Means of\nNatural Selection, or the Preservation of Favoured Races in the\nStruggle for Life , London: John Murray.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Davis, Michael, 1998, Thinking Like an Engineer: Studies in\nthe Ethics of a Profession , New York and Oxford: Oxford\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005, Engineering Ethics ,\nAldershot/Burlington, VT: Ashgate.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "Engineering Ethics ",
+            "publisher": "Aldershot/Burlington, VT: Ashgate"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2012, \u201c\u2018Ain\u2019t No One Here\nBut Us Social Forces\u2019: Constructing the Professional\nResponsibility of Engineers\u201d, Science and Engineering\nEthics , 18(1): 13\u201334. doi:10.1007/s11948-010-9225-3",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2012",
+            "title": "\u2013\u2013\u2013, 2012, \u201c\u2018Ain\u2019t No One Here\nBut Us Social Forces\u2019: Constructing the Professional\nResponsibility of Engineers\u201d, Science and Engineering\nEthics , 18(1): 13\u201334. doi:10.1007/s11948-010-9225-3"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Dennett, Daniel C., 1997, \u201cWhen HAL kills, who\u2019s to\nblame? Computer ethics\u201d, in HAL\u2019s Legacy: 2001\u2019s\nComputer as Dream and Reality , edited by David G. Stork.\nCambridge, MA: MIT Press, pp. 351\u2013365.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Di Nucci, Ezio, and Filippo Santoni de Sio, 2016, Drones and\nResponsibility: Legal, Philosophical and Socio-Technical Perspectives\non Remotely Controlled Weapons , Milton Park: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Diels, Hermann, 1903, Die Fragmente der Vorsokratiker ,\nBerlin: Weidmann.",
+          "parsed": {
+            "authors": [
+              "Diels, Hermann"
+            ],
+            "year": "1903",
+            "title": "Die Fragmente der Vorsokratiker ",
+            "publisher": "Berlin: Weidmann"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Dipert, Randall R., 1993, Artifacts, Art Works, and\nAgency , Philadelphia: Temple University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Doorn, Neelke, 2010, \u201cA Rawlsian Approach to Distribute\nResponsibilities in Networks\u201d, Science and Engineering\nEthics , 16(2): 221\u2013249. doi:10.1007/s11948-009-9155-0",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2012, \u201cResponsibility Ascriptions in\nTechnology Development and Engineering: Three Perspectives\u201d, Science and Engineering Ethics , 18(1): 69\u201390.\ndoi:10.1007/s11948-009-9189-3",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2012",
+            "title": "\u2013\u2013\u2013, 2012, \u201cResponsibility Ascriptions in\nTechnology Development and Engineering: Three Perspectives\u201d, Science and Engineering Ethics , 18(1): 69\u201390.\ndoi:10.1007/s11948-009-9189-3"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Ellul, Jacques, 1954 [1964], La technique ou L\u2019enjeu du\nsi\u00e8cle , Paris: Armand Colin. Translated as The\nTechnological Society , by John Wilkinson, New York: Alfred A.\nKnopf, 1964.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Erlandson, Robert F., 2008, Universal and Accessible Design\nfor Products, Services, and Processes , Boca Raton, LA: CRC\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Feenberg, Andrew, 1999, Questioning Technology , London\nand New York: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Finnis, John, Joseph Boyle and Germain Grisez, 1988, Nuclear\nDeterrence, Morality and Realism , Oxford: Oxford University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Floridi, Luciano, 2010, The Cambridge Handbook of Information\nand Computer Ethics , Cambridge: Cambridge University Press.\ndoi:10.1017/CBO9780511845239",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Floridi, Luciano, and J.W. Sanders, 2004, \u201cOn the Morality\nof Artificial Agents\u201d, Minds and Machines , 14(3):\n349\u2013379. doi:10.1023/B:MIND.0000035461.63578.9d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fox, Warwick, 2000, Ethics and the Built Environment ,\n(Professional Ethics), London and New York: Routledge.",
+          "parsed": {
+            "authors": [
+              "Fox, Warwick"
+            ],
+            "year": "2000",
+            "title": "Ethics and the Built Environment ",
+            "publisher": "(Professional Ethics), London and New York: Routledge"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Franssen, Maarten, 2005, \u201cArrow\u2019s Theorem,\nMulti-Criteria Decision Problems and Multi-Attribute Preferences in\nEngineering Design\u201d, Research in Engineering Design ,\n16(1\u20132): 42\u201356. doi:10.1007/s00163-004-0057-5",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Franssen, Maarten, and Louis L. Bucciarelli, 2004, \u201cOn\nRationality in Engineering Design\u201d, Journal of Mechanical\nDesign , 126(6): 945\u2013949. doi:10.1115/1.1803850",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Franssen, Maarten, and Stefan Koller, 2016, \u201cPhilosophy of\nTechnology as a Serious Branch of Philosophy: The Empirical Turn as a\nStarting Point\u201d, in Philosophy of Technology after the\nEmpirical Turn , edited by Maarten Franssen, Pieter E. Vermaas,\nPeter Kroes, and Anthonie W.M. Meijers, Cham: Springer, 31\u201361.\ndoi:10.1007/978-3-319-33717-3_3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Franssen, Maarten, Peter Kroes, Thomas A.C. Reydon and Pieter E.\nVermaas (eds), 2014, Artefact Kinds: Ontology and the Human-Made\nWorld , Heidelberg/New York/Dordrecht/London: Springer.\ndoi:10.1007/978-3-319-00801-1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fraser, Nancy, and Axel Honneth, 2003, Redistribution or\nRecognition?: A Political-Philosophical Exchange , London and New\nYork: Verso.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Freeman, K., 1948, Ancilla to the Pre-Socratic\nPhilosophers ( A complete translation of the Fragments in\nDiels, Fragmente der Vorsokratiker ), Cambridge, MA: Harvard\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Frey, R. G., and Christopher Heath Wellman (eds), 2003, A\nCompanion to Applied Ethics , Oxford and Malden, MA: Blackwell.\ndoi:10.1002/9780470996621",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Friedman, Batya, and David Hendry, 2019, Value Sensitive\nDesign: Shaping Technology with Moral Imagination , Cambridge, MA:\nMIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Garson, Justin, 2016, A Critical Overview of Biological\nFunctions , (SpringerBriefs in Philosophy), Cham: Springer\nInternational Publishing. doi:10.1007/978-3-319-32020-5.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gehlen, Arnold, 1957, Die Seele im technischen Zeitalter ,\nHamburg: Rowohlt. Translated as Man in the Age of Technology ,\nby Patricia Lipscomb, New York: Columbia University Press, 1980.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gunkel, David J., 2018, Robot Rights , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Habermas, J\u00fcrgen, 1968 [1970], \u201cTechnik und\nWissenschaft als \u2018Ideologie\u2019\u201d in an an anthology of\nthe same name, Frankfurt: Suhrkamp Verlag. Translated as\n\u201cTechnology and Science as \u2018Ideology\u2019\u201d, in Toward a Rational Society: Student Protest, Science, and\nPolitics , by Jeremy J. Shapiro, Boston, MA: Beacon Press, pp.\n81\u2013122.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hansson, Sven Ove, 2003, \u201cEthical Criteria of Risk\nAcceptance\u201d, Erkenntnis , 59(3): 291\u2013309.\ndoi:10.1023/A:1026005915919",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2004a, \u201cFallacies of Risk\u201d, Journal of Risk Research , 7(3): 353\u2013360.\ndoi:10.1080/1366987042000176262",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2004",
+            "title": "\u2013\u2013\u2013, 2004a, \u201cFallacies of Risk\u201d, Journal of Risk Research , 7(3): 353\u2013360.\ndoi:10.1080/1366987042000176262"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2004b, \u201cPhilosophical Perspectives on\nRisk\u201d, Techn\u00e9 , 8(1): 10\u201335.\ndoi:10.5840/techne2004818",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2004",
+            "title": "\u2013\u2013\u2013, 2004b, \u201cPhilosophical Perspectives on\nRisk\u201d, Techn\u00e9 , 8(1): 10\u201335.\ndoi:10.5840/techne2004818"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2007, \u201cPhilosophical Problems in\nCost-Benefit Analysis\u201d, Economics and Philosophy ,\n23(2): 163\u2013183. doi:10.1017/S0266267107001356",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2007",
+            "title": "\u2013\u2013\u2013, 2007, \u201cPhilosophical Problems in\nCost-Benefit Analysis\u201d, Economics and Philosophy ,\n23(2): 163\u2013183. doi:10.1017/S0266267107001356"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Harris, Charles E., Michael S. Pritchard and Michael J. Rabins,\n2014, Engineering Ethics: Concepts and Cases , fifth edition,\nBelmont, CA: Wadsworth.",
+          "parsed": {
+            "authors": [
+              "Harris, Charles E., Michael S. Pritchard",
+              "Michael J. Rabins"
+            ],
+            "year": "2014",
+            "title": "Engineering Ethics: Concepts and Cases , fifth edition",
+            "publisher": "Belmont, CA: Wadsworth"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Heidegger, Martin, 1954 [1977], \u201cDie Frage nach der\nTechnik\u201d, in Vortr\u00e4ge und Aufs\u00e4tze ,\nPfullingen: G\u00fcnther Neske. Translated as \u201cThe Question\nconcerning Technology\u201d, in The Question Concerning\nTechnology and Other Essays , by William Lovitt, New York: Harper\nand Row, 1977, pp. 3\u201335.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Herkert, Joseph R., 2001, \u201cFuture Directions in Engineering\nEthics Research: Microethics, Macroethics and the Role of Professional\nSocieties\u201d, Science and Engineering Ethics , 7(3):\n403\u2013414. doi:10.1007/s11948-001-0062-2",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hilpinen, Risto, 1992, \u201cArtifacts and Works of Art\u201d, Theoria , 58(1): 58\u201382.\ndoi:10.1111/j.1755-2567.1992.tb01155.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Holt, Raymond, and Catherine Barnes, 2010, \u201cTowards an\nIntegrated Approach to \u2018Design for X\u2019: An Agenda for\nDecision-Based DFX Research\u201d, Research in Engineering\nDesign , 21(2): 123\u2013136. doi:10.1007/s00163-009-0081-6",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Horkheimer, Max, and Theodor W. Adorno, 1947 [2002], Dialektik\nder Aufkl\u00e4rung: Philosophische Fragmente , Amsterdam: Querido\nVerlag. Translated as Dialectic of Enlightenment: Philosophical\nFragments , by Edmund Jephcott, and edited by Gunzelin Schmid\nNoerr, Stanford, CA: Stanford University Press, 2002.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Houkes, Wybo, 2009, \u201cThe Nature of Technological\nKnowledge\u201d, in Meijers 2009: 309\u2013350.\ndoi:10.1016/B978-0-444-51667-1.50016-1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Houkes, Wybo, and Pieter E. Vermaas, 2010, Technical\nFunctions: On the Use and Design of Artefacts ,\nDordrecht/Heidelberg/London /New York: Springer.\ndoi:10.1007/978-90-481-3900-2",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hughes, Jesse, Peter Kroes, and Sjoerd Zwart, 2007, \u201cA\nSemantics for Means-End Relations\u201d, Synthese , 158(2):\n207\u2013231. doi:10.1007/s11229-006-9036-x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ihde, Don, 1979, Technics and Praxis ,\nDordrecht/Boston/Lancaster: D. Reidel.",
+          "parsed": {
+            "authors": [
+              "Ihde, Don"
+            ],
+            "year": "1979",
+            "title": "Technics and Praxis ",
+            "publisher": "Dordrecht/Boston/Lancaster: D. Reidel"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1990, Technology and the Lifeworld:\nfrom Garden to Earth , Bloomington: Indiana University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1990",
+            "title": "\u2013\u2013\u2013, 1990, Technology and the Lifeworld:\nfrom Garden to Earth , Bloomington: Indiana University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1993, Philosophy of Technology: An\nIntroduction , New York: Paragon.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1993",
+            "title": "\u2013\u2013\u2013, 1993, Philosophy of Technology: An\nIntroduction , New York: Paragon."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Ihde, Don, and Evan Selinger, 2003, Chasing Technoscience:\nMatrix for Materiality , Bloomington: Indiana University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Illies, Christian, and Anthonie Meijers, 2009, \u201cArtefacts\nWithout Agency\u201d, The Monist , 92(3): 420\u2013440.\ndoi:10.5840/monist200992324",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Jarvie, Ian C., 1966, \u201cThe Social Character of Technological\nProblems: Comments on Skolimowski\u2019s Paper\u201d, Technology\nand Culture , 7(3): 384\u2013390. doi:10.2307/3101936",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Jenkins, Kirsten, Darren McCauley, Raphael Heffron, Hannes Stephan\nand Robert Rehner, 2016, \u201cEnergy Justice: A Conceptual\nReview\u201d, Energy Research & Social Science 11:\n174\u2013182. doi:10.1016/j.erss.2015.10.004",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Johnson, Deborah G., 2003, \u201cComputer Ethics\u201d, in Frey\nand Wellman 2003: 608\u2013619. doi:10.1002/9780470996621.ch45",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006, \u201cComputer Systems: Moral\nEntities But Not Moral Agents\u201d, Ethics and Information\nTechnology , 8(4): 195\u2013205.\ndoi:10.1007/s10676-006-9111-5",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006, \u201cComputer Systems: Moral\nEntities But Not Moral Agents\u201d, Ethics and Information\nTechnology , 8(4): 195\u2013205.\ndoi:10.1007/s10676-006-9111-5"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, Computer Ethics , fourth\nedition. Upper Saddle River, NJ: Prentice Hall.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, Computer Ethics , fourth\nedition. Upper Saddle River, NJ: Prentice Hall."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Johnson, Deborah G., and Thomas M. Powers, 2005, \u201cComputer\nSystems and Responsibility: A Normative Look at Technological\nComplexity\u201d, Ethics and Information Technology , 7(2):\n99\u2013107. doi:10.1007/s10676-005-4585-0",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Jonas, Hans, 1979 [1984], Das Prinzip Verantwortung: Versuch\neiner Ethik f\u00fcr die technologische Zivilisation ,\nFrankfurt/Main: Suhrkamp; extended English edition The Imperative\nof Responsibility: in Search of An Ethics for the Technological\nAge , Chicago and London: University of Chicago Press, 1984.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kaplan, David M. (ed.), 2004 [2009], Readings in the\nPhilosophy of Technology , Lanham, MD and Oxford: Rowman and\nLittlefield, first edition 2004, second revised edition 2009.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kapp, Ernst, 1877 [2018], Grundlinien Einer Philosophie Der\nTechnik: Zur Entstehungsgeschichte Der Cultur Aus Neuen\nGesichtspunkten , Braunschweig: Westermann\n [ Kapp 1877 available online ].\n Translated as Elements of a Philosophy of Technology: On the\nEvolutionary History of Culture , by Lauren K. Wolfe, and edited\nby Jeffrey West Kirkwood and Leif Weatherby, Minneapolis, MN:\nUniversity of Minnesota Press, 2018.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kitcher, Philip, 2001, Science, Truth, and Democracy ,\nOxford and New York: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "Kitcher, Philip"
+            ],
+            "year": "2001",
+            "title": "Science, Truth, and Democracy ",
+            "publisher": "Oxford and New York: Oxford University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2011. The Ethical Project ,\nCambridge, MA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2011",
+            "title": "\u2013\u2013\u2013, 2011. The Ethical Project ,\nCambridge, MA: Harvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Klenk, Michael, 2021, \u201cHow Do Technological Artefacts Embody\nMoral Values?\u201d, Philosophy & Technology 34(3):\n525\u2013544. doi: 10.1007/s13347-020-00401-y.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kneese, Allen V., Shaul Ben-David and William D. Schulze, 1983,\n\u201cThe Ethical Foundations of Benefit-Cost Analysis\u201d, in Energy and the Future , edited by Douglas E. MacLean and Peter\nG. Brown, Totowa, NJ: Rowman and Littefield, pp. 59\u201374.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kotarbinski, Tadeusz, 1965, Praxiology: An Introduction to the\nSciences of Efficient Action , Oxford: Pergamon Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kroes, Peter, 2012, Technical Artefacts: Creations of Mind and\nMatter , Dordrecht/Heidelberg/New York/London: Springer.\ndoi:10.1007/978-94-007-3940-6",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kroes, Peter, and Anthonie Meijers (eds), 2006, \u201cThe Dual\nNature of Technical Artifacts\u201d, Special issue of Studies in\nHistory and Philosophy of Science , 37(1): 1\u2013158.\ndoi:10.1016/j.shpsa.2005.12.001",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kroes, Peter, Maarten Franssen and Louis Bucciarelli, 2009,\n\u201cRationality in Design\u201d, in Meijers (ed.) 2009:\n565\u2013600. doi:10.1016/B978-0-444-51667-1.50025-2",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kroes, Peter, and Peter-Paul Verbeek (eds), 2014, The Moral\nStatus of Technical Artefacts , Dordrecht: Springer.\ndoi:10.1007/978-94-007-7914-3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kuhn, Thomas S., 1962, The Structure of Scientific\nRevolutions , Chicago: University of Chicago Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ladd, John, 1991, \u201cBhopal: An Essay on Moral Responsibility\nand Civic Virtue\u201d, Journal of Social Philosophy , 22(1):\n73\u201391. doi:10.1111/j.1467-9833.1991.tb00022.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Latour, Bruno, 1992, \u201cWhere Are the Missing Masses?\u201d,\nin Bijker and Law (eds) 1992: 225\u2013258.",
+          "parsed": {
+            "authors": [
+              "Latour, Bruno"
+            ],
+            "year": "1992",
+            "title": "\u201cWhere Are the Missing Masses?\u201d",
+            "publisher": "in Bijker and Law (eds) 1992: 225\u2013258"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1993, We Have Never Been Modern ,\nNew York: Harvester Wheatsheaf.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1993",
+            "title": "We Have Never Been Modern ",
+            "publisher": "New York: Harvester Wheatsheaf"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005, Reassembling the Social: An\nIntroduction to Actor-Network-Theory , Oxford and New York: Oxford\nUniversity Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "\u2013\u2013\u2013, 2005, Reassembling the Social: An\nIntroduction to Actor-Network-Theory , Oxford and New York: Oxford\nUniversity Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Lawson, Clive, 2008, \u201cAn Ontology of Technology: Artefacts,\nRelations and Functions\u201d, Techn\u00e8 , 12(1):\n48\u201364. doi:10.5840/techne200812114",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2017, Technology and Isolation ,\nCambridge and New York: Cambridge University Press.\ndoi:10.1017/9781316848319",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2017",
+            "title": "\u2013\u2013\u2013, 2017, Technology and Isolation ,\nCambridge and New York: Cambridge University Press.\ndoi:10.1017/9781316848319"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Lin, Patrick, Keith Abney and Ryan Jenkins (eds), 2017, Robot\nEthics 2.0: From Autonomous Cars to Artificial Intelligence ,\nOxford/New York: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lloyd, G.E.R., 1973, \u201cAnalogy in Early Greek Thought\u201d,\nin The Dictionary of the History of Ideas , edited by Philip\nP. Wiener, New York: Charles Scribner\u2019s Sons, vol. 1 pp.\n60\u201364.\n [ Lloyd 1973 available online ]",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lloyd, Peter A., and Jerry A. Busby, 2003, \u201c\u2018Things\nthat Went Well\u2014No Serious Injuries or Deaths\u2019: Ethical\nReasoning in a Normal Engineering Design Process\u201d, Science\nand Engineering Ethics , 9(4): 503\u2013516.\ndoi:10.1007/s11948-003-0047-4",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Longino, Helen, 1990, Science as Social Knowledge: Values and\nObjectivity in Scientific Inquiry , Princeton: Princeton\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2002, The Fate of Knowledge ,\nPrinceton: Princeton University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2002",
+            "title": "The Fate of Knowledge ",
+            "publisher": "Princeton: Princeton University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Maheshwari, Kritika, and Sven Nyholm, 2022, \u201cDominating Risk\nImpositions\u201d, The Journal of Ethics . doi:\n10.1007/s10892-022-09407-4.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mahner, Martin, and Mario Bunge, 2001, \u201cFunction and\nFunctionalism: A Synthetic Perspective\u201d, Philosophy of\nScience , 68(1): 73\u201394. doi:10.1086/392867",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Marcuse, Herbert, 1964, One-Dimensional Man: Studies in the\nIdeology of Advanced Industrial Society , New York: Beacon Press,\nand London: Routledge and Kegan Paul.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Martin, Miles W., and Roland Schinzinger, 2022, Ethics in\nEngineering , fifth edition, Boston, MA: McGraw-Hill.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Matthias, Andreas, 2004, \u201cThe Responsibility Gap: Ascribing\nResponsibility for the Actions of Learning Automata\u201d, Ethics\nand Information Technology 6(3): 175\u2013183. doi:\n10.1007/s10676-004-3422-1.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McGinn, Robert E., 2010, \u201cWhat\u2019s Different, Ethically,\nAbout Nanotechnology? Foundational Questions and Answers\u201d, NanoEthics , 4(2): 115\u2013128.\ndoi:10.1007/s11569-010-0089-4",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Meijers, Anthonie (ed.), 2009, Philosophy of Technology and\nEngineering Sciences , (Handbook of the Philosophy of Science,\nvolume 9), Amsterdam: North-Holland.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Michelfelder, Diane P., and Neelke Doorn (eds), 2021, The\nRoutledge Handbook of the Philosophy of Engineering , New York and\nMilton Park, UK: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Miller, Boaz, 2020, \u201cIs Technology Value-Neutral?\u201d, Science, Technology & Human Values 46(1): 53\u201380.\ndoi: 10.1177/0162243919900965.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Millikan, Ruth Garrett, 1999, \u201cWings, Spoons, Pills, and\nQuills: A Pluralist Theory of Function\u201d, The Journal of\nPhilosophy , 96(4): 191\u2013206. doi:10.5840/jphil199996428",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mitcham, Carl, 1994, Thinking Through Technology: The Path\nBetween Engineering and Philosophy , Chicago: University of\nChicago Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mittelstadt, Brent Daniel, Patrick Allo, Mariarosaria Taddeo,\nSandra Wachter and Luciano Floridi, 2016, \u201cThe Ethics of\nAlgorithms: Mapping the Debate\u201d, Big Data &\nSociety , 3(2): 1\u201321. doi:10.1177/2053951716679679",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Moor, James H., 1985, \u201cWhat is Computer Ethics?\u201d Metaphilosophy , 16(4): 266\u2013275.\ndoi:10.1111/j.1467-9973.1985.tb00173.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006, \u201cThe Nature, Importance, and\nDifficulty of Machine Ethics\u201d, IEEE Intelligent\nSystems , 21(4): 18\u201321. doi:10.1109/MIS.2006.80",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006, \u201cThe Nature, Importance, and\nDifficulty of Machine Ethics\u201d, IEEE Intelligent\nSystems , 21(4): 18\u201321. doi:10.1109/MIS.2006.80"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Mosakas, Kestutis, 2021, \u201cOn the Moral Status of Social\nRobots: Considering the Consciousness Criterion\u201d, AI &\nSociety 36(2): 429\u2013443. doi:\n10.1007/s00146-020-01002-1.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mumford, Lewis, 1934, Technics and Civilization , New\nYork: Harcourt, Brace and Company, and London: Routledge and Kegan\nPaul.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Newman, William R., 2004, Promethean Ambitions: Alchemy and\nthe Quest to Perfect Nature , Chicago: University of Chicago\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Niiniluoto, Ilkka, 1993, \u201cThe Aim and Structure of Applied\nResearch\u201d, Erkenntnis , 38(1): 1\u201321.\ndoi:10.1007/BF01129020",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Nissenbaum, Helen, 1996, \u201cAccountability in a Computerized\nSociety\u201d, Science and Engineering Ethics , 2(1):\n25\u201342. doi:10.1007/BF02639315",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2010, Privacy in Context: Technology,\nPolicy, and the Integrity of Social Life , Stanford, CA: Stanford\nLaw Books.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2010",
+            "title": "\u2013\u2013\u2013, 2010, Privacy in Context: Technology,\nPolicy, and the Integrity of Social Life , Stanford, CA: Stanford\nLaw Books."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Nyholm, Sven, 2018, \u201cAttributing Agency to Automated\nSystems: Reflections on Human-Robot Collaborations and\nResponsibility-Loci\u201d, Science and Engineering Ethics 24(4): 1201\u20131219. doi: 10.1007/s11948-017-9943-x.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Olsen, Jan Kyrre Berg, Evan Selinger and S\u00f8ren Riis (eds),\n2009, New Waves in Philosophy of Technology , Basingstoke and\nNew York: Palgrave Macmillan. doi:10.1057/9780230227279",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Owen, Richard, John Bessant, and Maggy Heintz, 2013, Responsible Innovation: Managing the Responsible Emergence of\nScience and Innovation in Society , Chichester: John Wiley.\ndoi:10.1002/9781118551424",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Peterson, Martin, 2020, Ethics for Engineers , New York:\nOxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Peterson, Martin, and Andreas Spahn, 2011, \u201cCan\nTechnological Artefacts be Moral Agents?\u201d Science and\nEngineering Ethics , 17(3): 411\u2013424.\ndoi:10.1007/s11948-010-9241-3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pettit, Philip, 2012, On the People\u2019s Terms: A\nRepublican Theory and Model of Democracy , The Seeley lectures,\nCambridge and New York: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pitt, Joseph C., 1999, Thinking About Technology: Foundations\nof the Philosophy of Technology , New York: Seven Bridges\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Plato, Laws , 2016, M. Schofield (ed.), T. Griffith (tr.),\nCambridge: Cambridge University Press.",
+          "parsed": {
+            "authors": [
+              "Plato, Laws"
+            ],
+            "year": "2016",
+            "title": "M. Schofield (ed.), T. Griffith (tr.)",
+            "publisher": "Cambridge: Cambridge University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, Timaeus and Critias , 2008, R.\nWaterfield (tr.), with introduction and notes by A. Gregory, Oxford:\nOxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Polanyi, Michael, 1958, Personal Knowledge: Towards a\nPost-Critical Philosophy , London: Routledge and Kegan Paul.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Preston, Beth, 1998, \u201cWhy is a Wing Like a Spoon? A\nPluralist Theory of Function\u201d, The Journal of\nPhilosophy , 95(5): 215\u2013254. doi:10.2307/2564689",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2003, \u201cOf Marigold Beer: A Reply to\nVermaas and Houkes\u201d, British Journal for the Philosophy of\nScience , 54(4): 601\u2013612. doi:10.1093/bjps/54.4.601",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2003",
+            "title": "\u2013\u2013\u2013, 2003, \u201cOf Marigold Beer: A Reply to\nVermaas and Houkes\u201d, British Journal for the Philosophy of\nScience , 54(4): 601\u2013612. doi:10.1093/bjps/54.4.601"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2012, A Philosophy of Material Culture:\nAction, Function, and Mind , New York and Milton Park, UK:\nRoutledge.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2012",
+            "title": "\u2013\u2013\u2013, 2012, A Philosophy of Material Culture:\nAction, Function, and Mind , New York and Milton Park, UK:\nRoutledge."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Preston, Christopher J. (ed.), 2016, Climate Justice and\nGeoengineering: Ethics and Policy in the Atmospheric\nAnthropocene , London/New York: Rowman & Littlefield\nInternational.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Radder, Hans, 2009, \u201cWhy Technologies Are Inherently\nNormative\u201d, in Meijers (ed.) 2009: 887\u2013921.\ndoi:10.1016/B978-0-444-51667-1.50037-9",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rawls, John, 1999, A Theory of Justice , Revised Edition,\nCambridge, MA: The Belknap Press of Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "Rawls, John"
+            ],
+            "year": "1999",
+            "title": "A Theory of Justice , Revised Edition",
+            "publisher": "Cambridge, MA: The Belknap Press of Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Roeser, Sabine, 2012, \u201cMoral Emotions as Guide to Acceptable\nRisk\u201d, in Roeser et al. 2012: 819\u2013832.\ndoi:10.1007/978-94-007-1433-5_32",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Roeser, Sabine, Rafaela Hillerbrand, Per Sandin and Martin\nPeterson (eds), 2012, Handbook of Risk Theory: Epistemology,\nDecision Theory, Ethics, and Social Implications of Risk ,\nDordrecht/Heidelberg/London/New York: Springer.\ndoi:10.1007/978-94-007-1433-5",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ryle, Gilbert, 1949, The Concept of Mind , London:\nHutchinson.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Santoni de Sio, Filippo, and Giulio Mecacci, 2021, \u201cFour\nResponsibility Gaps with Artificial Intelligence: Why they Matter and\nHow to Address them\u201d, Philosophy & Technology 34(4): 1057\u20131084. doi: 10.1007/s13347-021-00450-x.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Santoni de Sio, Filippo, and Jeroen van den Hoven, 2018.\n\u201cMeaningful Human Control over Autonomous Systems: A\nPhilosophical Account\u201d, Frontiers in Robotics and AI .\ndoi: 10.3389/frobt.2018.00015.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Scharff, Robert C., and Val Dusek (eds), 2003 [2014], Philosophy of Technology: The Technological Condition ,\nMalden, MA and Oxford: Blackwell, first edition 2003, second [revised]\nedition 2014.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schummer, Joachim, 2001, \u201cAristotle on Technology and\nNature\u201d, Philosophia Naturalis , 38: 105\u2013120.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sclove, Richard E., 1995, Democracy and Technology , New\nYork: The Guilford Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sellars, Wilfrid, 1962, \u201cPhilosophy and the Scientific Image\nof Man\u201d, in Frontiers of Science and Philosophy , edited\nby R. Colodny, Pittsburgh: University of Pittsburgh Press, pp.\n35\u201378.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sharkey, Amanda, and Noel Sharkey, 2021, \u201cWe Need to Talk\nabout Deception in Social Robotics!\u201d, Ethics and Information\nTechnology 23(3): 309\u2013316. doi:\n10.1007/s10676-020-09573-9.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sherlock, Richard, and John D. Morrey (eds), 2002, Ethical\nIssues in Biotechnology , Lanham, MD: Rowman and Littlefield.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Shrader-Frechette, Kristen S., 1985, Risk Analysis and\nScientific Method: Methodological and Ethical Problems with Evaluating\nSocietal Hazards , Dordrecht and Boston: D. Reidel.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1991, Risk and Rationality:\nPhilosophical Foundations for Populist Reform , Berkeley etc.:\nUniversity of California Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1991",
+            "title": "\u2013\u2013\u2013, 1991, Risk and Rationality:\nPhilosophical Foundations for Populist Reform , Berkeley etc.:\nUniversity of California Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Simon, Herbert A., 1957, Models of Man, Social and Rational:\nMathematical Essays on Rational Human Behavior in a Social\nSetting , New York: John Wiley.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1969, The Sciences of the\nArtificial , Cambridge, MA and London: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1969",
+            "title": "\u2013\u2013\u2013, 1969, The Sciences of the\nArtificial , Cambridge, MA and London: MIT Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1982, Models of Bounded\nRationality , Cambridge, MA and London: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1982",
+            "title": "\u2013\u2013\u2013, 1982, Models of Bounded\nRationality , Cambridge, MA and London: MIT Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Skolimowski, Henryk, 1966, \u201cThe Structure of Thinking in\nTechnology\u201d, Technology and Culture , 7(3):\n371\u2013383. doi:10.2307/3101935",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Snapper, John W., 1985, \u201cResponsibility for Computer-Based\nErrors\u201d, Metaphilosophy , 16(4): 289\u2013295.\ndoi:10.1111/j.1467-9973.1985.tb00175.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Soavi, Marzia, 2009, \u201cRealism and Artifact Kinds\u201d, in Functions in Biological and Artificial Worlds: Comparative\nPhilosophical Perspectives , edited by Ulrich Krohs and Peter\nKroes. Cambridge, MA: MIT Press, pp. 185\u2013202.\ndoi:10.7551/mitpress/9780262113212.003.0011",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sparrow, Robert, 2007, \u201cKiller Robots\u201d, Journal of\nApplied Philosophy 24(1): 62\u201377.\ndoi:10.1111/j.1468-5930.2007.00346.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Suh, Nam Pyo, 2001, Axiomatic Design: Advances and\nApplications , Oxford and New York: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Susskind, Jamie, 2022, The Digital Republic: On Freedom and\nDemocracy in the 21st Century , London: Bloomsbury.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Swierstra, Tsjalling, and Jaap Jelsma, 2006, \u201cResponsibility\nWithout Moralism in Technoscientific Design Practice\u201d, Science, Technology & Human Values , 31(1): 309\u2013332.\ndoi:10.1177/0162243905285844",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Swierstra, Tsjalling, and Hedwig te Molder, 2012, \u201cRisk and\nSoft Impacts\u201d, in Roeser et al. (eds) 2012: 1049\u20131066.\ndoi:10.1007/978-94-007-1433-5_42",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Taebi, Behnam, 2021, Ethics and Engineering: An\nIntroduction , Cambridge Applied Ethics series, Cambridge and New\nYork: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Taebi, Behnam, and Sabine Roeser (eds), 2015, The Ethics of\nNuclear Energy: Risk, Justice, and Democracy in the Post-Fukushima\nEra , Cambridge: Cambridge University Press.\ndoi:10.1017/CBO9781107294905",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tavani, Herman T., 2002, \u201cThe Uniqueness Debate in Computer\nEthics: What Exactly is at Issue, and Why Does it Matter?\u201d Ethics and Information Technology , 4(1): 37\u201354.\ndoi:10.1023/A:1015283808882",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Thomasson, Amie L., 2003, \u201cRealism and Human Kinds\u201d, Philosophy and Phenomenological Research , 67(3):\n580\u2013609. doi:10.1111/j.1933-1592.2003.tb00309.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2007, \u201cArtifacts and Human\nConcepts\u201d, in Creations of the Mind: Essays on Artifacts and\nTheir Representation , edited by Eric Margolis and Stephen\nLaurence, Oxford: Oxford University Press, pp. 52\u201373.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2007",
+            "title": "\u2013\u2013\u2013, 2007, \u201cArtifacts and Human\nConcepts\u201d, in Creations of the Mind: Essays on Artifacts and\nTheir Representation , edited by Eric Margolis and Stephen\nLaurence, Oxford: Oxford University Press, pp. 52\u201373."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Thompson, Dennis F., 1980, \u201cMoral Responsibility and Public\nOfficials: The Problem of Many Hands\u201d, American Political\nScience Review , 74(4): 905\u2013916. doi:10.2307/1954312",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Thompson, Paul B., 2007, Food Biotechnology in Ethical\nPerspective , second edition, Dordrecht: Springer.\ndoi:10.1007/1-4020-5791-1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vallor, Shannon (ed.), 2022, The Oxford Handbook of Philosophy\nof Technology , Oxford and New York: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "van den Hoven, Jeroen, and John Weckert (eds), 2008, Information Technology and Moral Philosophy , Cambridge and\nNew York: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "van den Hoven, Jeroen, Pieter E. Vermaas and Ibo van de Poel\n(eds), 2015, Handbook of Ethics and Values in Technological\nDesign: Sources, Theory, Values and Application Domains ,\nDordrecht: Springer. doi:10.1007/978-94-007-6994-6",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "van de Poel, Ibo, 2009, \u201cValues in Engineering\nDesign\u201d, in Meijers (ed.) 2009: 973\u20131006.\ndoi:10.1016/B978-0-444-51667-1.50040-9",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2016, \u201cAn Ethical Framework for\nEvaluating Experimental Technology\u201d, Science and Engineering\nEthics , 22(3): 667\u2013686. doi:10.1007/s11948-015-9724-3",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2016",
+            "title": "\u2013\u2013\u2013, 2016, \u201cAn Ethical Framework for\nEvaluating Experimental Technology\u201d, Science and Engineering\nEthics , 22(3): 667\u2013686. doi:10.1007/s11948-015-9724-3"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "van de Poel, Ibo, and Lamb\u00e8r Royakkers, 2011, Ethics,\nTechnology and Engineering , Oxford: Wiley-Blackwell.",
+          "parsed": {
+            "authors": [
+              "van de Poel, Ibo,",
+              "Lamb\u00e8r Royakkers"
+            ],
+            "year": "2011",
+            "title": "Ethics",
+            "publisher": "Technology and Engineering , Oxford: Wiley-Blackwell"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "van de Poel, Ibo, Lamb\u00e8r Royakkers and Sjoerd D. Zwart,\n2015, Moral Responsibility and the Problem of Many Hands ,\nLondon: Routledge.",
+          "parsed": {
+            "authors": [
+              "van de Poel, Ibo, Lamb\u00e8r Royakkers",
+              "Sjoerd D. Zwart"
+            ],
+            "year": "2015",
+            "title": "Moral Responsibility and the Problem of Many Hands ",
+            "publisher": "London: Routledge"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "van der Pot, Johan Hendrik Jacob, 1985 [1994/2004], Die\nBewertung des technischen Fortschritts: eine systematische\n\u00dcbersicht der Theorien , 2 volumes, Assen/Maastricht: Van\nGorcum. Translated as Steward or Sorcerer\u2019s Apprentice? the\nEvaluation of Technical Progress: A Systematic Overview of Theories\nand Opinions , by Chris Turner, 2 volumes., Delft: Eburon, 1994,\nsecond edition, 2004, under the title Encyclopedia of\nTechnological Progress: A Systematic Overview of Theories and\nOpinions .",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "van Wynsberghe, Aimee, and Scott Robbins, 2019, \u201cCritiquing\nthe Reasons for Making Artificial Moral Agents\u201d, Science and\nEngineering Ethics 25(3): 719\u2013735. doi:\n10.1007/s11948-018-0030-8.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Verbeek, Peter-Paul, 2000 [2005], De daadkracht der Dingen:\nOver Techniek, Filosofie En Vormgeving , Amsterdam: Boom.\nTranslated as What Things Do: Philosophical Reflections on\nTechnology, Agency, and Design , by Robert P. Crease, University\nPark, PA: Penn State University Press, 2005.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2011, Moralizing Technology:\nUnderstanding and Designing the Morality of Things , Chicago and\nLondon: The University of Chicago Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2011",
+            "title": "\u2013\u2013\u2013, 2011, Moralizing Technology:\nUnderstanding and Designing the Morality of Things , Chicago and\nLondon: The University of Chicago Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Vermaas, Pieter E., and Wybo Houkes, 2003, \u201cAscribing\nFunctions to Technical Artefacts: A Challenge to Etiological Accounts\nof Functions\u201d, British Journal for the Philosophy of\nScience , 54(2): 261\u2013289. doi:10.1093/bjps/54.2.261",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vincenti, Walter A., 1990, What Engineers Know and How They\nKnow It: Analytical Studies from Aeronautical History , Baltimore,\nMD and London: Johns Hopkins University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vitruvius, De architecture , translated as The Ten\nBooks on Architecture , by Morris H. Morgan. Cambridge, MA:\nHarvard University Press, 1914.\n [ Vitruvius Morgan\u2019s translation 1914 available online ]",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Volti, Rudi, 2009, Society and Technological Change ,\nsixth edition, New York: Worth Publications.",
+          "parsed": {
+            "authors": [
+              "Volti, Rudi"
+            ],
+            "year": "2009",
+            "title": "Society and Technological Change ",
+            "publisher": "sixth edition, New York: Worth Publications"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Von Wright, Georg Henrik, 1963, Norm and Action: A Logical\nEnquiry , London: Routledge and Kegan Paul.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wallach, Wendell, and Colin Allen, 2009, Moral Machines:\nTeaching Robots Right from Wrong , Oxford and New York: Oxford\nUniversity Press. doi:10.1093/acprof:oso/9780195374049.001.0001",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Weckert, John, 2007, Computer Ethics , Aldershot and\nBurlington, VT: Ashgate.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wiggins, David, 1980, Sameness and Substance , Oxford:\nBlackwell.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Winner, Langdon, 1977, Autonomous Technology:\nTechnics-out-of-Control as a Theme in Political Thought ,\nCambridge, MA and London: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1980, \u201cDo Artifacts Have\nPolitics?\u201d Daedalus , 109(1): 121\u2013136.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1980",
+            "title": "\u2013\u2013\u2013, 1980, \u201cDo Artifacts Have\nPolitics?\u201d Daedalus , 109(1): 121\u2013136."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1983, \u201cTechn\u00e9 and Politeia:\nThe Technical Constitution of Society\u201d, in Philosophy and\nTechnology , edited by Paul T. Durbin and Friedrich Rapp,\nDordrecht/Boston/Lancaster: D. Reidel, pp. 97\u2013111.\ndoi:10.1007/978-94-009-7124-0_7",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1983",
+            "title": "\u2013\u2013\u2013, 1983, \u201cTechn\u00e9 and Politeia:\nThe Technical Constitution of Society\u201d, in Philosophy and\nTechnology , edited by Paul T. Durbin and Friedrich Rapp,\nDordrecht/Boston/Lancaster: D. Reidel, pp. 97\u2013111.\ndoi:10.1007/978-94-009-7124-0_7"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Zandvoort, H., 2000, \u201cCodes of Conduct, the Law, and\nTechnological Design and Development\u201d, in The Empirical Turn\nin the Philosophy of Technology , edited by Peter Kroes and\nAnthonie Meijers, Amsterdam: JAI/Elsevier, pp. 193\u2013205.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zuboff, Shoshana, 2017, The Age of Surveillance\nCapitalism , New York: Public Affairs.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zwart, Sjoerd, Maarten Franssen and Peter Kroes, 2018,\n\u201cPractical Inference\u2014A Formal Approach\u201d, in The\nFuture of Engineering: Philosophical Foundations, Ethical Problems and\nApplication Cases , edited by Albrecht Fritzsche and Sascha Julian\nOks, Cham: Springer, pp. 33\u201352.\ndoi:10.1007/978-3-319-91029-1_3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zwart, Sjoerd, Ibo van de Poel, Harald van Mil and Michiel\nBrumsen, 2006, \u201cA Network Approach for Distinguishing Ethical\nIssues in Research and Development\u201d, Science and Engineering\nEthics , 12(4): 663\u2013684. doi:10.1007/s11948-006-0063-2",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Philosophy & Technology",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Techn\u00e9: Research in Philosophy and Technology",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Science and Engineering Ethics",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Science, Technology & Human Values",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ethics and Information Technology",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "NanoEthics",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Neuroethics",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Encyclopedia of Science, Technology, and Ethics , 4\nvolumes, Carl Mitcham (ed.), Macmillan, 2005.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Encyclopedia of Applied Ethics , second edition, 4\nvolumes, Ruth Chadwick (editor-in-chief), Elsevier, 2012.",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ],
+      "sections": {
+        "1": {
+          "id": "1",
+          "title": "3 A Basic Ambiguity in the Meaning of Technology",
+          "content": "Mitcham contrasts \u2018humanities philosophy of technology\u2019 to\n\u2018engineering philosophy of technology\u2019, where the latter\nrefers to philosophical views developed by engineers or technologists\nas \u201cattempts \u2026 to elaborate a technological\nphilosophy\u201d (1994: 17). Mitcham discusses only a handful of\npeople as engineering philosophers of technology: Ernst Kapp, Peter\nEngelmeier, Friedrich Dessauer, and much more briefly Jacques Lafitte,\nGilbert Simondon, Hendrik van Riessen, Juan David Garc\u00eda Bacca,\nR. Buckminster Fuller and Mario Bunge. The label \u2018engineering\nphilosophy of technology\u2019 raises serious questions: many of the\npersons discussed hardly classify as engineers or technologists. It is\nalso not very clear how the notion of \u2018a technological\nphilosophy\u2019 should be understood. As philosophers, these authors\nseem all to be rather isolated figures, whose work shows little\noverlap and who seem to be sharing mainly the absence of a\n\u2018working relation\u2019 with established philosophical\ndisciplines. It is not so clear what sorts of questions and concerns\nunderlie the notion of \u2018engineering philosophy of\ntechnology\u2019. A larger role for systematic philosophy could bring\nit quite close to some examples of humanities philosophy of\ntechnology, for instance the work of Jacques Ellul, where the analyses\nwould be rather similar and the remaining differences would be ones of\nattitude or appreciation. In the next section we discuss in more detail a form of philosophy of\ntechnology that we consider to occupy, currently, the position of\nalternative to the humanities philosophy of technology. It emerged in\nthe 1960s and gained momentum in the past twenty to twenty-five years.\nThis form of the philosophy of technology, which may be called\n\u2018analytic\u2019, is not primarily concerned with the relations\nbetween technology and society but with technology itself. It\nexpressly does not look upon technology as a \u2018black box\u2019\nbut as a phenomenon that should be studied in detail. It does not\nregard technology as such as a practice but as something grounded in a\npractice, basically the practice of engineering. It analyses this\npractice, its goals, its concepts and its methods, and it relates its\nfindings to various themes from philosophy. In seeing technology as grounded in a practice sustained by engineers,\nsimilar to the way philosophy of science focuses on the practice of\nscience as sustained by scientists, analytic philosophy of technology\ncould be thought to amount to the philosophy of engineering. Indeed\nmany of the issues related to design, discussed below in Sections 2.3 and 2.4 ,\n could be singled out as forming the subject matter of a philosophy of\nengineering. The metaphysical issues discussed in Section 2.5 could not, however, and analytic philosophy of technology is\ntherefore significantly broader than philosophy of engineering. The\nvery title of Philosophy of Technology and Engineering\nSciences (Meijers 2009), an extensive up-to-date overview, which\ncontains contributions to all of the topics treated in the next\nsection, suggests that technology and engineering do not coincide, but\nthe book does not specifically address what distinguishes technology\nfrom engineering and how they are related. In fact, the existence of\nhumanities philosophy of technology and analytic philosophy of\ntechnology next to one another reflects a basic ambiguity in the\nnotion of technology that the philosophical work that has been going\non has hardly succeeded in clarifying. Technology can be said to have two aspects or dimensions, which can be\nreferred to as instrumentality and productivity .\nInstrumentality covers the totality of human endeavours to control\ntheir lives and their environments by interfering with the world in an\ninstrumental way, by using things in a purposeful and clever way.\nProductivity covers the totality of human endeavours to bring into\nexistence new things through which certain things can be realized in a\ncontrolled and clever way. For the study of the dimension of\ninstrumentality, it is in principle irrelevant whether the things that\nare made use of in controlling our lives and environments have been\nproduced by us first; if we somehow could rely on natural objects to\nalways be available to serve our purposes, the analysis of\ninstrumentality and its consequences for how we live our lives would\nnot necessarily be affected. Likewise, for the analysis of what is\ninvolved in the making of artifacts, and how the notion of artifact\nand of something new being brought into existence are to be\nunderstood, it is to a large extent irrelevant how human life, culture\nand society are changed as a result of the artifacts that are in fact\nproduced. Notwithstanding its fundamental character, the ambiguity\nnoted here seems hardly to be confronted directly in the literature.\nIt is addressed by Lawson (2008, 2017) and by Franssen and Koller\n(2016). Humanities philosophy of technology has been interested predominantly\nin the instrumentality dimension, whereas analytic philosophy of\ntechnology has focused on the productivity dimension. But technology\nas one of the basic phenomena of modern society, if not the most basic\none, clearly is constituted by the processes centering on and\ninvolving both dimensions. It has proved difficult, however, to come\nto an overarching approach in which the interaction between these two\ndimensions of technology are adequately dealt with\u2014no doubt\npartly due to the great differences in philosophical orientation and\nmethodology associated with the two traditions and their separate\nfoci. To improve this situation is arguably the most urgent challenge\nthat the field of philosophy of technology as a whole is facing, since\nthe continuation of the two orientations leading their separate lives\nthreatens its unity and coherence as a discipline in the first place.\nIndeed, during the past ten to fifteen years the philosophy of\nengineering has established itself as a subdiscipline within the\nphilosophy of technology, for which a comprehensive handbook was\nedited recently by Michelfelder and Doorn (2021). After presenting the major issues of philosophical relevance in\ntechnology and engineering that are studied by analytic philosophers\nof technology in the next section, we discuss the problems and\nchallenges that technology poses for the society in which it is\npracticed in the third and final section."
+        },
+        "2": {
+          "id": "2",
+          "title": "6 Other Topics",
+          "content": "There is at least one additional technology-related topic that ought\nto be mentioned because it has created a good deal of analytic\nphilosophical literature, namely Artificial Intelligence and related\nareas. A full discussion of this vast field is beyond the scope of\nthis entry, however. Information is to be found in the entries on Turing machines , the Church-Turing thesis , computability and complexity , the Turing test , the Chinese room argument , the computational theory of mind , functionalism , multiple realizability , and the philosophy of computer science ."
+        },
+        "3": {
+          "id": "3",
+          "title": "3 Some Recurrent Themes in the Ethics of Technology",
+          "content": "We now turn to the description of some specific themes in the ethics\nof technology. We focus on a number of general themes that provide an\nillustration of general issues in the ethics of technology and the way\nthese are treated."
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

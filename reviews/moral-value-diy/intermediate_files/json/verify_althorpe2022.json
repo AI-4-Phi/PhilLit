@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/13698230.2022.2137753"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/13698230.2022.2137753",
+      "title": "Meaningful work, nonperfectionism, and reciprocity",
+      "authors": [
+        {
+          "family": "Althorpe",
+          "given": "Caleb"
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Critical Review of International Social and Political Philosophy",
+      "volume": "28",
+      "issue": "4",
+      "page": "685-706",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/13698230.2022.2137753"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

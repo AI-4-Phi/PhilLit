@@ -1,0 +1,1103 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "peer review philosophy journals",
+  "results": [
+    {
+      "openalex_id": "W2764468990",
+      "doi": null,
+      "title": "New York Science Journal",
+      "authors": [
+        {
+          "name": "Publisher Marsland Press",
+          "openalex_id": "A5023638773"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-05",
+      "abstract": "New York Science Journal is published with English for the scientists and Engineers. The journal aims to present experimental and theoretical findings of science and engineering and to report on advances in technologies of multidisciplinary subjects. The journal was founded in 2008 by Marsland Press. The Editor-in-Chief, Deputy Editor and editors have backgrounds in Philosophy, Science, Technology and Engineering, etc. This interdisciplinary team is ultimately suited for facilitating the publication of the best of your research work. The journal welcomes manuscripts from all fields in science and engineering research. Papers submitted could be reviews, objective descriptions, research reports, opinions/debates, news, letters, and other types of writings that are nature and science related. Manuscripts submitted will be peer reviewed and the valuable papers will be considered for the publication after the peer review.",
+      "cited_by_count": 266,
+      "type": "article",
+      "source": {
+        "name": "ADVANCED SCIENCES INDEX",
+        "type": "journal",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Soil Science and Environmental Management",
+        "Diverse scientific research topics",
+        "Leaf Properties and Growth Measurement"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W2764468990"
+    },
+    {
+      "openalex_id": "W2607783752",
+      "doi": "10.1111/meta.12240",
+      "title": "Why Not Open the Black Box of Journal Editing in Philosophy? Make Peer Reviews of Published Papers Available",
+      "authors": [
+        {
+          "name": "Caroline Schaffalitzky de Muckadell",
+          "openalex_id": "A5013247731",
+          "orcid": "https://orcid.org/0000-0003-4958-461X",
+          "institutions": [
+            "University of Southern Denmark"
+          ]
+        },
+        {
+          "name": "Esben Nedenskov Petersen",
+          "openalex_id": "A5091731947",
+          "orcid": "https://orcid.org/0000-0003-2213-8812",
+          "institutions": [
+            "University of Southern Denmark"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-04-01",
+      "abstract": "Abstract Despite general agreement within philosophy that peer review is indispensable, its fairness and reliability is often questioned. This article suggests that such worries can to a large extent be met by adopting the practice that reviews as well as earlier versions of papers are made publicly available when the final version of a paper is published. This suggestion combines the advantages of transparency with the merits of anonymity of reviewers. While there are obstacles to this suggestion, the article argues that it would be worthwhile to implement it because it can help map patterns of conduct and secure confidence in the fairness and reliability of review procedures and journal editing within philosophy.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Metaphilosophy",
+        "type": "journal",
+        "issn": [
+          "0026-1068",
+          "1467-9973"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://portal.findresearcher.sdu.dk/da/publications/11360cc8-f213-4d01-b10a-8a57269eb367"
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W2607783752"
+    },
+    {
+      "openalex_id": "W2141805250",
+      "doi": "10.1177/1049732309357435",
+      "title": "What Makes a Phenomenological Study Phenomenological? An Analysis of Peer-Reviewed Empirical Nursing Studies",
+      "authors": [
+        {
+          "name": "Annelise Norlyk",
+          "openalex_id": "A5082178824",
+          "orcid": "https://orcid.org/0000-0002-8512-228X",
+          "institutions": [
+            "Aarhus University"
+          ]
+        },
+        {
+          "name": "Ingegerd Harder",
+          "openalex_id": "A5059349178",
+          "institutions": [
+            "Aarhus University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-12",
+      "abstract": "This article contributes to the debate about phenomenology as a research approach in nursing by providing a systematic review of what nurse researchers hold as phenomenology in published empirical studies. Based on the assumption that presentations of phenomenological approaches in peer-reviewed journals have consequences for the quality of future research, the aim was to analyze articles presenting phenomenological studies and, in light of the findings, raise a discussion about addressing scientific criteria. The analysis revealed considerable variations, ranging from brief to detailed descriptions of the stated phenomenological approach, and from inconsistencies to methodological clarity and rigor. Variations, apparent inconsistencies, and omissions made it unclear what makes a phenomenological study phenomenological. There is a need for clarifying how the principles of the phenomenological philosophy are implemented in a particular study before publishing. This should include an articulation of methodological keywords of the investigated phenomenon, and how an open attitude was adopted.",
+      "cited_by_count": 295,
+      "type": "review",
+      "source": {
+        "name": "Qualitative Health Research",
+        "type": "journal",
+        "issn": [
+          "1049-7323",
+          "1552-7557"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Palliative Care and End-of-Life Issues",
+        "Nursing education and management",
+        "Hermeneutics and Narrative Identity"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W2141805250"
+    },
+    {
+      "openalex_id": "W4206220800",
+      "doi": "10.37745/gjahss.2013",
+      "title": "Global Journal of Arts, Humanities and Social Sciences",
+      "authors": [
+        {
+          "name": "Sadiq, Saiqa",
+          "openalex_id": ""
+        },
+        {
+          "name": "Mohd. Zain, Zawiyah",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ajis, Mohd Na'eim",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-08-12",
+      "abstract": "Global Journal of Arts, Humanities and Social Sciences is a peer-reviewed journal published in March, June, September and December by the European Centre for Research, Training and Development (ECRTD), UK. GJAHSS welcomes research papers in Humanities: Language and Linguistics, History, Literature, Performing Art, Philosophy, Religion, Visual Arts. Social Sciences: Economics, Anthropology, Sociology, Psychology, Geography, Culture [\u2026]",
+      "cited_by_count": 182,
+      "type": "paratext",
+      "source": {
+        "name": "Global Journal of Arts Humanities and Social Sciences",
+        "type": "journal",
+        "issn": [
+          "2052-6350",
+          "2052-6369"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4206220800"
+    },
+    {
+      "openalex_id": "W1491185697",
+      "doi": "10.1108/978-1-61735-513-4",
+      "title": "American Educational History Journal",
+      "authors": [
+        {
+          "name": "Joseph Watras",
+          "openalex_id": "A5045143562"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-06-29",
+      "abstract": "The American Educational History Journal is a peer-reviewed, national research journal devoted to the examination of educational topics using perspectives from a variety of disciplines. The editors of AEHJ encourage communication between scholars from numerous disciplines, nationalities, institutions, and backgrounds. Authors come from a variety of disciplines including political science, curriculum, history, philosophy, teacher education, and educational leadership. Acceptance for publication in AEHJ requires that each author present a well-articulated argument that deals substantively with questions of educational history.",
+      "cited_by_count": 209,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Diverse Education Studies and Reforms"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1491185697"
+    },
+    {
+      "openalex_id": "W3148914383",
+      "doi": "10.1111/ijcs.12687",
+      "title": "Theory of consumption values in consumer behaviour research: A review and future research agenda",
+      "authors": [
+        {
+          "name": "Ceyda Tanr\u0131kulu",
+          "openalex_id": "A5006772619",
+          "orcid": "https://orcid.org/0000-0001-9025-583X",
+          "institutions": [
+            "Adana Science and Technology University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-31",
+      "abstract": "Abstract Current marketing philosophy is value\u2010oriented, whereas marketing theory explaining value from the consumer perspective is limited. The theory of consumption value (TCV) is a marketing theory that provides insight into the motivation for consumers' consumption behaviour through consumption values. Although it offers theoretical explanations about consumer behaviour on a large scale, there is no single article in the literature providing comprehensive and integrated knowledge of TCV and a future research agenda based on a systematic literature review. The main aims of this paper are to present integrated knowledge and provide propositions for future research. This review research covers peer\u2010reviewed journal articles that used this theory and were published between 1991 and 2020. The major findings in the review demonstrate that this theory has remained up to date in the consumer behaviour literature, has been dynamic and has been comprehensively used to explain choice behaviour. Thus, further understanding has been provided for consumer behaviour related to drivers of consumption, although some issues require further examination. Directions for future research are developed in more detail to encourage and advance the understanding of value through TCV.",
+      "cited_by_count": 239,
+      "type": "review",
+      "source": {
+        "name": "International Journal of Consumer Studies",
+        "type": "journal",
+        "issn": [
+          "1470-6423",
+          "1470-6431"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Customer Service Quality and Loyalty",
+        "Consumer Behavior in Brand Consumption and Identification",
+        "Environmental Sustainability in Business"
+      ],
+      "referenced_works_count": 108,
+      "url": "https://openalex.org/W3148914383"
+    },
+    {
+      "openalex_id": "W4392696242",
+      "doi": "10.4337/9781800375918.ch50",
+      "title": "Hypatia: A Journal of Feminist Philosophy",
+      "authors": [
+        {
+          "name": "Bonnie Mann",
+          "openalex_id": "A5023558568",
+          "orcid": "https://orcid.org/0000-0002-7458-2299"
+        },
+        {
+          "name": "Brooke Burns",
+          "openalex_id": "A5110922924"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-12",
+      "abstract": "Hypatia: A Journal of Feminist Philosophy is a highly ranked academic journal which publishes four volumes of double-anonymous peer-reviewed essays each year. It is published by Cambridge University Press. Hypatia is governed by a non-profit board, an editor or team of co-editors, and an advisory board made up of a diverse group of scholars of various academic ranks. The journal is intended to foster a diverse range of feminist philosophical work, and welcomes manuscripts written by scholars from many disciplines. Hypatia has a long history of publishing ground-breaking thematic special issues in collaboration with guest editors. The journal also publishes smaller thematic clusters and symposia.",
+      "cited_by_count": 155,
+      "type": "book-chapter",
+      "source": {
+        "name": "Edward Elgar Publishing eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Foucault, Power, and Ethics",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4392696242"
+    },
+    {
+      "openalex_id": "W2608023723",
+      "doi": null,
+      "title": "Pluralism and Peer Review in Philosophy",
+      "authors": [
+        {
+          "name": "JK Joel Katzav",
+          "openalex_id": "A5012737238",
+          "institutions": [
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "Krist Vaesen",
+          "openalex_id": "A5063730953",
+          "orcid": "https://orcid.org/0000-0002-7496-7463",
+          "institutions": [
+            "Ethics and Public Policy Center"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "&lt;p&gt;Recently, mainstream philosophy journals have tended to implement more and more stringent forms of peer review (e.g., from double-anonymous to triple-anonymous), probably in an attempt to prevent editorial decisions that are based on factors other than quality. Against this trend, we propose that journals should relax their standards of acceptance, as well as be less restrictive about whom is to decide what is admitted into the debate. We start by arguing, partly on the basis of the history of peer review in the journal Mind, that past and current peer review practices attest to partisanship with respect to philosophical approach (at least). Then, we explain that such partisanship conflicts with the standard aims of peer review, and that it is both epistemically and morally problematic. This assessment suggests that, if feasible, journals should treat all available and proposed standards of acceptance in philosophy as epistemically equal, and that philosophical work should be evaluated in terms of the novelty and significance of its contribution to developing thought in ways that are of value. Finally, we show, in a programmatic way, that improving the current situation is feasible, and can be done fairly easily.&lt;/p&gt;",
+      "cited_by_count": 86,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1887/71255"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and History of Science",
+        "Feminist Epistemology and Gender Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2608023723"
+    },
+    {
+      "openalex_id": "W2050025702",
+      "doi": "10.1002/asi.21608",
+      "title": "Assessing the citation impact of books: The role of Google Books, Google Scholar, and Scopus",
+      "authors": [
+        {
+          "name": "Kayvan Kousha",
+          "openalex_id": "A5079602209",
+          "orcid": "https://orcid.org/0000-0003-4827-971X",
+          "institutions": [
+            "University of Wolverhampton",
+            "University of Tehran"
+          ]
+        },
+        {
+          "name": "Mike Thelwall",
+          "openalex_id": "A5034823602",
+          "orcid": "https://orcid.org/0000-0001-6065-205X",
+          "institutions": [
+            "University of Wolverhampton"
+          ]
+        },
+        {
+          "name": "Somayeh Rezaie",
+          "openalex_id": "A5005115377",
+          "institutions": [
+            "Shahid Beheshti University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-08-26",
+      "abstract": "Abstract Citation indictors are increasingly used in some subject areas to support peer review in the evaluation of researchers and departments. Nevertheless, traditional journal\u2010based citation indexes may be inadequate for the citation impact assessment of book\u2010based disciplines. This article examines whether online citations from Google Books and Google Scholar can provide alternative sources of citation evidence. To investigate this, we compared the citation counts to 1,000 books submitted to the 2008 U.K. Research Assessment Exercise (RAE) from Google Books and Google Scholar with Scopus citations across seven book\u2010based disciplines (archaeology; law; politics and international studies; philosophy; sociology; history; and communication, cultural, and media studies). Google Books and Google Scholar citations to books were 1.4 and 3.2 times more common than were Scopus citations, and their medians were more than twice and three times as high as were Scopus median citations, respectively. This large number of citations is evidence that in book\u2010oriented disciplines in the social sciences, arts, and humanities, online book citations may be sufficiently numerous to support peer review for research evaluation, at least in the United Kingdom.",
+      "cited_by_count": 164,
+      "type": "article",
+      "source": {
+        "name": "Journal of the American Society for Information Science and Technology",
+        "type": "journal",
+        "issn": [
+          "1532-2882",
+          "1532-2890"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "scientometrics and bibliometrics research",
+        "Web visibility and informetrics",
+        "Research Data Management Practices"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W2050025702"
+    },
+    {
+      "openalex_id": "W1999857980",
+      "doi": "10.1111/j.1527-2001.2011.01178.x",
+      "title": "Social Biases and Solutions for Procedural Objectivity",
+      "authors": [
+        {
+          "name": "Carole J. Lee",
+          "openalex_id": "A5014032290",
+          "orcid": "https://orcid.org/0000-0002-5323-9205"
+        },
+        {
+          "name": "Christian D. Schunn",
+          "openalex_id": "A5016157521",
+          "orcid": "https://orcid.org/0000-0003-3589-297X"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-01",
+      "abstract": "An empirically sensitive formulation of the norms of transformative criticism must recognize that even public and shared standards of evaluation can be implemented in ways that unintentionally perpetuate and reproduce forms of social bias that are epistemically detrimental. Helen Longino's theory can explain and redress such social bias by treating peer evaluations as hypotheses based on data and by requiring a kind of perspectival diversity that bears, not on the content of the community's knowledge claims, but on the beliefs and norms of the culture of the knowledge community itself. To illustrate how socializing cognition can bias evaluations, we focus on peer-review practices, with some discussion of peer-review practices in philosophy. Data include responses to surveys by editors from general philosophy journals, as well as analyses of reviews and editorial decisions for the 2007 Cognitive Science Society Conference.",
+      "cited_by_count": 68,
+      "type": "article",
+      "source": {
+        "name": "Hypatia",
+        "type": "journal",
+        "issn": [
+          "0887-5367",
+          "1527-2001"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D4B601CEA1354FF1DF4C0490920BC1FA/S0887536700019838a.pdf/div-class-title-social-biases-and-solutions-for-procedural-objectivity-div.pdf"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Feminist Epistemology and Gender Studies",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W1999857980"
+    },
+    {
+      "openalex_id": "W1930791459",
+      "doi": "10.3402/qhw.v10.26799",
+      "title": "Orthorexia nervosa: An integrative literature review of a lifestyle syndrome",
+      "authors": [
+        {
+          "name": "Linn H\u00e5man",
+          "openalex_id": "A5042980466",
+          "orcid": "https://orcid.org/0000-0002-9753-3000",
+          "institutions": [
+            "University of Gothenburg",
+            "Halmstad University"
+          ]
+        },
+        {
+          "name": "Natalie Barker\u2010Ruchti",
+          "openalex_id": "A5005929472",
+          "orcid": "https://orcid.org/0000-0002-3918-7904",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        },
+        {
+          "name": "G\u00f6ran Patriksson",
+          "openalex_id": "A5043277364",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        },
+        {
+          "name": "Eva\u2010Carin Lindgren",
+          "openalex_id": "A5022924893",
+          "orcid": "https://orcid.org/0000-0002-8345-8994",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Bratman first proposed orthorexia nervosa in the late 1990s, defining it an obsession with eating healthy food to achieve, for instance, improved health. Today, in the Swedish media, excessive exercising plays a central role in relation to orthorexia. A few review articles on orthorexia have been conducted; however, these have not focused on aspects of food and eating, sport, exercise, or a societal perspective. The overall aim of this study was to provide an overview and synthesis of what philosophies of science approaches form the current academic framework of orthorexia. Key questions were: What aspects of food and eating are related to orthorexia? What role do exercise and sports play in relation to orthorexia? In what ways are orthorexia contextualized? Consequently, the concept of healthism was used to discuss and contextualize orthorexia. The method used was an integrative literature review; the material covered 19 empirical and theoretical articles published in peer-reviewed journals. This review demonstrates a multifaceted nature of orthorexia research; this field has been examined from four different philosophies of science approaches (i.e., empirical-atomistic, empirical-atomistic with elements of empirical-holistic, empirical-holistic, and rational-holistic) on individual, social, and societal levels. The majority of the articles followed an empirical-atomistic approach that focused on orthorexia as an individual issue, which was discussed using healthism. Our analysis indicates a need for (a) more empirical-holistic research that applies interpretive qualitative methods and uses a social perspective of health, e.g., healthism and (b) examining the role of sports and exercise in relation to orthorexia that takes the problematizing of \"orthorexic behaviours\" within the sports context into account.",
+      "cited_by_count": 137,
+      "type": "review",
+      "source": {
+        "name": "International Journal of Qualitative Studies on Health and Well-Being",
+        "type": "journal",
+        "issn": [
+          "1748-2623",
+          "1748-2631"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.3402/qhw.v10.26799"
+      },
+      "topics": [
+        "Eating Disorders and Behaviors",
+        "Behavioral Health and Interventions",
+        "Motivation and Self-Concept in Sports"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W1930791459"
+    },
+    {
+      "openalex_id": "W1937760702",
+      "doi": "10.22587/rjss",
+      "title": "Research Journal of Social Sciences",
+      "authors": [],
+      "publication_year": 2020,
+      "publication_date": "2020-04-30",
+      "abstract": "Research Journal Social Sciences (RJSS) is bi-annual peer reviewed Journal published by Tanzeem \u2013 e \u2013 Asatiza, Pakistan. The Research Journal Social Sciences comprehensively covers areas such as: administrative sciences, anthropology, area studies, business studies, communication studies, criminology, demography, development studies, economics, education, environmental studies, geography, history, industrial relations, information science, international relations, law and legislature, library science, linguistics, media studies, philosophy, political science, psychology, religious studies, sociology and statistics",
+      "cited_by_count": 70,
+      "type": "paratext",
+      "source": {
+        "name": "Research Journal of Social Sciences",
+        "type": "journal",
+        "issn": [
+          "2309-9631"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.22587/rjss"
+      },
+      "topics": [
+        "Politics and Conflicts in Afghanistan, Pakistan, and Middle East"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1937760702"
+    },
+    {
+      "openalex_id": "W2190951153",
+      "doi": null,
+      "title": "Journal of Digital Forensics, Security and Law",
+      "authors": [
+        {
+          "name": "Lae",
+          "openalex_id": "A5053864483"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-11-14",
+      "abstract": "This peer-reviewed, multidisciplinary Journal of Digital Forensics, Security and Law (JDFSL) focuses on the advancement of the field by publishing the state of the art in both basic and applied research conducted worldwide. We purposefully chose to use the word cyber in our tagline, instead of digital to emphasize the cyber culture surrounding computing, and the word cyber also extends itself beyond the technical domain of computing. The Journal\u2019s main aims are to open up the landscape for innovation and discussion, and to continuously bridge the gap between the science and practice of cyber forensics, security and law. This journal encourages both scientists and practitioners to share their discoveries and experiences.\u00a0 JDFSL is of interest to the following stakeholders: cyber forensic/security scientists, cyber security/forensic practitioners, law enforcement officers, lawyers, any governmental agencies with interest in national and local security, and private sector organizations. The Journal will publish the following types of articles: Research articles: These articles should have a strong contribution to the state of the art in cyber forensics/security science. Research could be either applied or basic. Although we anticipate that most of the research that will be published will primarily be computer science centric, the Journal strongly encourages topics that stem from other disciplines such as psychology, sociology, business, accounting, law, philosophy, linguistics, education, criminal justice, political science, social science, and ethics, to participate in the advancement of cyber forensic science. We have no preference on the type of methodology used in the research, as long as the work is both methodologically and scientifically grounded. Open Peer Commentaries: To ensure that there is constant discussion and deliberations in this field, JDFSL encourages experts in the domain to submit commentaries on the state of the art in the field through open peer commentaries. Commentaries seek to provide a critical and/or alternative perspective on the state of the art in cyber forensics/security. For a commentary to be accepted for publication, it should meet one or more of the following criteria: The contribution should offer significant insight into work that has been published in JDFSL. Novel findings substantially contradict well-established research, theory, and practice. It provides insight into bridging the gap between the science and practice of cyber forensics security. It critiques findings of seminal work, research, or practice in the domain. It offers significant contribution by consolidating findings in research and practice. It improves the multidisciplinary nature of the domain. It reviews and provides insight into both tools and methods used in cyber forensics. Book Reviews: The Journal provides a place for peers to share their opinions and reviews of published books in the field of cyber forensics and security science.",
+      "cited_by_count": 98,
+      "type": "article",
+      "source": {
+        "name": "ADVANCED SCIENCES INDEX",
+        "type": "journal",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Digital and Cyber Forensics",
+        "Cybercrime and Law Enforcement Studies",
+        "Advanced Malware Detection Techniques"
+      ],
+      "referenced_works_count": 150,
+      "url": "https://openalex.org/W2190951153"
+    },
+    {
+      "openalex_id": "W3118453399",
+      "doi": "10.1080/13603116.2020.1866688",
+      "title": "Students\u2019 attitudes toward disability: a systematic literature review (2012\u20132019)",
+      "authors": [
+        {
+          "name": "John Freer",
+          "openalex_id": "A5091058545",
+          "orcid": "https://orcid.org/0000-0002-2626-4907",
+          "institutions": [
+            "University of Windsor",
+            "St. Clair College"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-08",
+      "abstract": "Inclusive education is a philosophy and practice that has been promoted internationally. Most scholars now agree that inclusion is more than the placement of students with exceptionalities in a general education class. Instead, definitions of inclusion have expanded to encompass feelings of belongingness. This definition is an improvement, but begs the question: how do we help students to feel more of a part of their class? Ableist attitudes held by students without special education needs may be hindering inclusive ideals. This article presents a systematic literature review (SLR) of current research (2012-2019) on students\u2019 attitudes toward disability. The searching strategy resulted in 37 peer-reviewed journal articles. This review offers a synthesis of the research in the field, which includes determinant studies and intervention studies. The article pool includes 21 determinant studies and 16 intervention studies. Eight determinant and three intervention themes are presented. Recommendations for future research and implications for inclusive education are discussed.",
+      "cited_by_count": 92,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Inclusive Education",
+        "type": "journal",
+        "issn": [
+          "1360-3116",
+          "1464-5173"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Inclusion and Disability in Education and Sport",
+        "Hearing Impairment and Communication",
+        "Disability Rights and Representation"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W3118453399"
+    },
+    {
+      "openalex_id": "W1586561197",
+      "doi": "10.1111/1742-6723.12191",
+      "title": "<scp>F</scp>ree <scp>O</scp>pen <scp>A</scp>ccess <scp>M</scp>edical education (<scp>FOAM</scp>) for the emergency physician",
+      "authors": [
+        {
+          "name": "Christopher P Nickson",
+          "openalex_id": "A5014246382",
+          "orcid": "https://orcid.org/0000-0002-6968-3087",
+          "institutions": [
+            "The Alfred Hospital"
+          ]
+        },
+        {
+          "name": "Mike D Cadogan",
+          "openalex_id": "A5049924617",
+          "orcid": "https://orcid.org/0000-0002-1281-9828",
+          "institutions": [
+            "Sir Charles Gairdner Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-02-01",
+      "abstract": "If you want to know how we practised medicine 5 years ago, read a textbook. If you want to know how we practised medicine 2 years ago, read a journal. If you want to know how we practise medicine now, go to a (good) conference. If you want to know how we will practise medicine in the future, listen in the hallways and use FOAM. \u2013 from International EM Education Efforts and E-Learning by Joe Lex 20121 FOAM is \u2018free open-access med(ical ed)ucation\u2019.2, 3 As such, FOAM is a dynamic collection of resources and tools for lifelong learning in medicine, as well as a community and an ethos. FOAM is continually evolving and growing rapidly, and from anarchic beginnings is increasingly attracting interest from practicing clinicians, trainees, educators, researchers and publishers alike. This article defines FOAM, details its development and considers its role, particularly in relationship to scientific journals, textbooks and medical education as a whole. FOAM is sometimes considered synonymous with \u2018educational social media for medicine\u2019, but it is actually much more than that. Social media refers to the creation and exchange of user-generated content via virtual networks and communities using Internet applications. FOAM resources are predominantly social media based but are ultimately independent of platform or media.2 They include blogs, podcasts, tweets, Google\u00ae hangouts, web-based applications, online videos, text documents, photographs, graphics and even anything else you can create with pen and paper. Social media has been a potent catalyst for developing and disseminating FOAM resources but from the sharing of these resources has grown a lively, interactive global community of FOAM users and creators. This FOAM community is bound by the loosely woven philosophy that high-quality medical education resources and interactions can, and should, be free and accessible to all who care for patients and especially those that teach others the art and science of medicine. Importantly, FOAM enthusiasts also encourage the re-use and modification of their resources to suit user requirements and local needs. Ultimately, the glue that holds the community together is an ethos of open sharing and collaboration with attribution and recognition of the work of others. FOAM existed long before the acronym came into being, and the then unnamed FOAM ethos was at the forefront of our minds when we began working on Lifeinthefastlane.com years ago. Joe Lex, at the Social Media and Critical Care (SMACC) Conference in 2013, even argued that the origins of FOAM lie in the Hippocratic Oath itself,4 which states: \u2018\u2026 and to teach them this art \u2013 if they desire to learn it \u2013 without fee and covenant\u2019.5 Indeed, members of the medical profession throughout history have been willing to share knowledge with those committed to the craft and to seek learning from far-flung places from whoever is in a position to provide it. In the age of social media, this has never been easier. Yet, names are important when it comes to making ideas stick and making ideas spread. The term FOAM bubbled into existence when one of us (MDC) was, along with emergency physician Sean Rothwell, lamenting the negative connotations of the term \u2018Social Media\u2019 in the laggardly minds of practicing physicians. As the venue was the International Conference on Emergency Medicine (ICEM) 2012 in Dublin, the answer was naturally to be found at the bottom of a pint of Guinness\u00ae. Since then, FOAM has exploded and grown rampantly, and there are now over 240 blogs and podcasts devoted to free open-access medical education using the FOAM banner in emergency medicine and critical care alone.6 Some of the most established and well-regarded examples are listed in Table 1. There are also numerous other resources that can be considered as FOAM but that do not explicitly embrace the label. Twitter\u00ae has been central to the development of the FOAM community.7 This might be surprising to those whose minds meld Twitter\u00ae with the marketing machine of Justin Bieber but not to anyone who actually knows how to use this valuable tool. Twitter\u00ae is free to access and allows users to selectively follow people who have interesting or useful things to share. Tweets are, notoriously, limited to just 140 characters. This forced brevity ensures users must \u2018cut to the chase\u2019 when getting points across or sharing resources. Twitter\u00ae users can also follow topics, in addition to individuals, when tweets are labelled with a unifying hashtag. For instance, FOAM tweets can be labelled with a hashtag, allowing them to be rapidly identified by a search for #FOAMed (unfortunately #FOAM leads to not-so-educational tweets). Currently on Twitter\u00ae there are 630 people who have registered as followers of FOAM.2 Some that we suggest Australasian emergency physicians would benefit from following are listed in Table 2. FOAM is sometimes portrayed as being at loggerheads with \u2018the establishment\u2019, including traditional medical journals. We think this is overstated, and both social media and FOAM have a growing role in the post-publication analysis of scientific research and in bridging the gap between research and practice. There has been a push from some quarters to make FOAM more \u2018journal like\u2019, and a common criticism of FOAM is that it is not peer reviewed in the traditional sense.8 However, FOAM is not scientific research. Instead, FOAM is a useful way of disseminating, discussing, dissecting and deliberating over the products of that research \u2013 as well as exploring issues where research findings do not apply, or simply do not exist. FOAM is more akin to the editorials and commentary articles that appear in medical journals, usually solicited by editorial request and without traditional peer review \u2013 except that FOAM authors do not require invitations from editors-in-chief to share their thoughts. Unlike scientific research, FOAM opinions and arguments live or die by being hammered on \u2018the anvil of Truth\u2019 that is free and open debate and discussion. Peer review, although widely held to be central to the scientific process, has significant flaws.9 Many journals are now looking at means of improving this process, including consideration of various forms of post-publication peer review. Indeed, Pubmed\u00ae Commons10 is now being trialled and others have argued for a \u2018publish then filter\u2019 model of scientific publication, perhaps involving crowd-sourced peer review.11 In a sense, FOAM is already part of this post-publication peer-review process. For example, a blog post on Intensive Care Network12 recently led to a correction in the New England Journal of Medicine.13 Online journal clubs abound, and there are entire blogs dedicated to critical appraisal and discussion of the scientific literature (such as Emergency Medicine Literature of Note14 and EM Nerd15). The significance of, and the caveats to, the scientific literature have never been so widely discussed, disseminated and deliberated on, and never so quickly. This was most evident with widespread FOAM discussion of the negative outcome of the targeted temperature management trial within days of its publication.16 FOAM, because of the media used, is potentially subject to a more pervasive peer-review process that the scientific literature itself. A difference is that this occurs post-publication. The major drawback is that the review process might be \u2018hit-and-miss\u2019, with more popular resources, such as EMCrit.org, being subject to great scrutiny and discussion, whereas new blogs and podcasts with few subscribers might have little. A more pertinent criticism of FOAM is the variable degree of scholarship. In its least scholarly form, FOAM is the equivalent of a corridor conversation \u2013 some tweets are essentially unreferenced bullets shot from the hip, as are some opinion-based blog posts. Yet other FOAM products, such as Paul Young's \u2018Fever, Friend or Foe?\u2019 blog post,17 are extensively referenced and are as scholarly as any other publication. Thus, caveat emptor applies in FOAM, just as it does when we read scientific research or any other source of information \u2013 all physicians need to develop critical thinking skills and appraise the merits of whatever information they are using. On the other hand, FOAM creators should strive to produce referenced scholarly works whenever possible, for the sake of their own credibility and to aid the user in making up his or her own mind. As alluded to earlier, knowledge translation continues to be difficult to achieve in medicine, and there remain significant gaps between research and practice.18 Scientific research in the clinical sciences is essentially worthless unless it alters patient outcomes. Social media and FOAM have the potential to play a major role in knowledge translation. This is demonstrated by the rapid dissemination of the \u2018delayed sequence intubation\u2019 concept19, 20 and the \u2018NODESAT\u2019 approach to apnoeic oxygenation.19, 21 The CRASH2 investigators have also used social media and web-based tools to promote the use of tranexamic acid in trauma,22, 23 whereas tweets about articles appear to correlate with future citations24 and social media releases lead to more downloads of research articles.25 If the rise of open access medical publishing continues as expected, the distinction between FOAM and medical journals might blur. Regardless, it seems inevitable that traditional medical journals will continue to explore the role of social media in their peer review and knowledge translation strategies. So, while FOAM and medical journals complement more than they clash, can the same be said for the relationship between FOAM and textbooks? Even prominent FOAM advocates, such as Joe Lex and Scott Weingart, still advocate that trainees must read at least one of the major emergency medicine textbooks \u2018cover to cover\u2019.26 The underlying rationale for this, we believe, is to ensure that \u2018all the bases\u2019 are covered \u2013 that all the core topics of our specialty are studied by trainees. FOAM is considered too heterogenous, with too much emphasis on \u2018sexy topics\u2019, such as awake intubation and the intricacies of surgical airway, with not enough on important topics, such as hand hygiene and cultural competency. It is na\u00efve to believe that any one textbook meets the learning needs of a given trainee. The curriculum and the learning requirements are determined by the colleges, in our case the ACEM.27 Although there are a number of recommended reading texts suggested by ACEM, trainees are entitled to use whatever resources are available to meet these needs. In many cases, FOAM resources are the most accessible, most up-to-date, most engaging and sometimes even the highest quality resources available (targeted temperature management after cardiac arrest is a timely example16). Where this is not the case, interaction with a clinical teacher, exploration of the primary scientific literature or consultation of a text can fill in the gaps. As FOAM continues to grow, the gaps are shrinking. Does this mean that FOAM should have its own curriculum?28 We think not \u2013 as the trainee curriculum is clearly defined by the college. FOAM resources can be linked to the ACEM curriculum, for instance, providing a comprehensive base for trainee knowledge needs (e.g. ACEM's Best of Web project29). Importantly, in addition to these basic training requirements, learners need to develop their own personal \u2018curriculum\u2019 that will evolve over time according to their changing requirements and those of their patients. By learners, we mean physicians at every stage of their careers, not just trainees. Again, FOAM resources help meet these needs. So is the textbook dead? The monolithic tome of yore certainly should be. Bulky texts that are out-of-date before they are published, with editor-defined content, that are non-learner and non-location centric and are unchallengeable in a public forum have a dwindling role to play in medical education. A textbook of the future needs to integrate many of the characteristics of FOAM resources: instantly updatable, continual post-publication review, user interactivity, multimedia integration, platform independent, cloud based and adaptable to local needs. FOAM is an adjunct to existing medical education approaches, not a replacement. FOAM resources are easily accessible and are portable. This makes them ideally suited to asynchronous learning30 and the \u2018flipped classroom\u2019 model.31 Asynchronous learning allows trainees to educate themselves using resources that suit their needs when the time is right for them. This is useful in the emergency medicine setting where shift work is the norm, and trainees have different degrees of knowledge and understanding about different topics. This model is also suited to trainees who are isolated or in remote locations, distant from specialist clinical teachers. A remarkable feature of FOAM is its capacity for tacit knowledge sharing.32 Through, videos, audio discussions and iterative interactions knowledge that is otherwise difficult to express in stand alone texts or lectures can be transferred. FOAM facilitates practical solutions to problems that research has yet to answer and that textbooks have no room to discuss. The \u2018flipped classroom\u2019 model31 is a useful way to utilise FOAM. Asynchronous learning resources can be studied by participants prior to each education session and negates the need for lecture preparation. This allows the bulk of the valuable teaching time to be devoted to higher level facilitated peer-group discussion, simulation or other interactive and team-based learning approaches rather than one-way didactic sessions. This guards against FOAM resources being misunderstood by learners if they do not have sufficient base knowledge or clinical experience to appreciate the nuances and ramifications. No single technology or educational resource can replace bedside mentoring by an expert clinician educator, but adjunctive, asynchronous learning combined with a flipped classroom gives learners the best of both worlds. The future of FOAM is exciting. Although currently centred within the realms of emergency medicine \u2013 it continues to grow6 and its scope is expanding rapidly (e.g. the rise of subspecialty Twitter\u00ae hashtags, such as #FOAMcc for critical care, #FOAMped for paediatrics and #FOAMtox for toxicology). Existing resources are being continually updated, revised and remodelled to create tailored geo-centric and specialty-specific solutions. We hope to see FOAM, where appropriate, improve in its degree of scholarship and become increasingly recognised by employers, academic institutions and specialty colleges. Appropriate referencing of text-based resources is the key to scholarly credibility and should be used where appropriate. We feel it is unlikely that FOAM will ever become truly peer reviewed in the traditional sense, despite experiments, such as the \u2018expert peer review\u2019 system used by Academic Life in Emergency Medicine,33 because of the apparent advantages of crowd-sourced post-publication peer review by FOAM users. An important limitation to the expansion of FOAM is the \u2018cost of free\u2019. At this time FOAM resources are created largely by altruistic, motivated individuals, in their own time and at their own cost. One solution adopted by Scott Weingart of EMCrit.org is to provide the content for free but require a fee for obtaining CME points.34 Other possible models include jobs boards, advertising, donations and institutional funding to support the cost of hosting and website development. Confidentiality, maintaining patient privacy and obtaining appropriate consent are also key issues to consider when creating online educational resources.35 These factors are especially important as creators of FOAM content do not control the destiny of their educational material. These resources might be modified and reused in ways unimaginable to the original creator. There are also concerns about managing one's online professional persona and the public perception of frank and open debate involving healthcare professionals discussing issues at or beyond the limitations of their knowledge.35 Regardless of whether we are acting in the real world, or in a virtual world online, the principles of medical professionalism still apply. Anonymity is too be avoided and health professionals using social media need to remember that anything they say online will stay online. Cloud conversation is the equivalent of shouting through a megaphone in a stadium full of people during a televised event. It is a challenge to define the value, validity, utility and return-on-investment of FOAM resources.36 As with any educational platform, demonstrations of benefit are elusive. Current metrics are based on the rapid growth in the use of the resources, number of page views and downloads as well as individual testimonials of the benefits of FOAM resources in passing medical examinations and in solving clinical problems. FOAM allows emergency physicians to interact with colleagues around the world, including many of the shining lights of our specialty. For those interested in teaching, it enlarges the classroom of students and helps ensure that many hours of hard work are not limited to a small group teaching session but can be reused in other times and places by anyone. Anyone interested in helping others will be excited by the opportunities provided by the global FOAM community. Finally, we are in the midst of an ongoing war of ideas \u2013 some good, some bad \u2013 both in the minds of healthcare professionals and trainees as well as patients and the wider community. We have a moral imperative to ensure that high-quality resources are accessible to inform all of these groups and to do our best to not let anyone be wrong on the Internet. A simple guide to getting involved in FOAM has been published as \u2018Ten Tips for FOAM Beginners\u2019 on the iTeachEM.net blog,37 as summarised in Table 3. Key resources that will help the beginner get started are \u2018The LITFL Review\u2019,38 which provides a weekly digest of recommended FOAM resources published over the preceding week in emergency medicine, critical care and paediatrics. It also includes links to all the sites listed in Table 1 and many others. For those that find following multiple websites difficult, all blogs that have embraced the FOAM concept from around the world are collated into one feed at FOAMEM39 making this website a one-stop shop for comprehensively tracking new FOAM resources. Finally, GoogleFOAM40 provides a rapid, effective search engine for finding relevant FOAM resources when you need them. FOAM is a dynamic collection of tools and resources, an ethos and an exciting global movement. It is an adjunct to traditional teaching and an aid to knowledge translation, as well as providing accessible and reusable resources that allow meaningful and rapid interaction with the creator. FOAM is not without flaws and challenges, but these are recognised and being managed. FOAM can be integrated into an asynchronous learning and \u2018flipped classroom\u2019 model of education, or used to supplement existing educational approaches. Importantly, FOAM does not replace the need for an experienced clinical educator at the bedside. Finally, it is easy to get involved and, as emergency physicians, we have a moral imperative to take part in the ongoing battle for the hearts and minds of health professionals, patients and the wider community in a sea of misinformation. Thanks to Aidan Burrell for reviewing the manuscript and to all the FOAM community for helping to refine the ideas presented in this paper over the past 6 years. CPN and MDC founded Lifeinthefastlane.com and now as editors head the team that runs it. MDC is a section editor for Emergency Medicine Australasia.",
+      "cited_by_count": 198,
+      "type": "article",
+      "source": {
+        "name": "Emergency Medicine Australasia",
+        "type": "journal",
+        "issn": [
+          "1742-6723",
+          "1742-6731"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1742-6723.12191"
+      },
+      "topics": [
+        "Social Media in Health Education",
+        "Web and Library Services",
+        "Wikis in Education and Collaboration"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W1586561197"
+    },
+    {
+      "openalex_id": "W2409429797",
+      "doi": null,
+      "title": "Philippine Social Sciences Review",
+      "authors": [
+        {
+          "name": "Dominique Poggi",
+          "openalex_id": "A5014860976"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-09-09",
+      "abstract": "Philippine social sciences review Sujet : The Philippine Social Sciences Review (PSSR) is a peer-reviewed journal and is an official publication of the University of the Philippines-Diliman College of Social Sciences and Philosophy (CSSP). The PSSR accepts scholarly contributions from members of the academic community. The PSSR aims to promote the critical exchange of ideas and research findings in the social sciences and philosophy among the faculty, research staff, and students of ...",
+      "cited_by_count": 47,
+      "type": "article",
+      "source": {
+        "name": "OpenEdition (OpenEdition)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2409429797"
+    },
+    {
+      "openalex_id": "W2528138276",
+      "doi": "10.1108/md-04-2016-0259",
+      "title": "Integrating lean and green management",
+      "authors": [
+        {
+          "name": "Cory R. A. Hallam",
+          "openalex_id": "A5034806668",
+          "orcid": "https://orcid.org/0000-0002-7435-9820",
+          "institutions": [
+            "Center for Innovation"
+          ]
+        },
+        {
+          "name": "Carolina Contreras",
+          "openalex_id": "A5048976411",
+          "institutions": [
+            "Center for Innovation"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-07",
+      "abstract": "Purpose The purpose of this paper is to perform a literature review of peer-reviewed journal articles investigating the relationship between Lean and Green management in light of developing an integrated management model. Design/methodology/approach After an extensive search, 60 articles from 1996 to 2016 were identified as relevant to this study. Findings The evidence of successful integration of Lean and Green management has largely been weak. The strongest positive evidence between the two management philosophies has been for Lean implementation pushing Green outcomes through operational waste reduction, thus improving environmental performance. The majority of studies suggest highly optimistic outcomes from integrating Lean and Green, however, an integrated operating model of the firm relating Lean and Green is lacking. Research limitations/implications The literature review suggests the necessary elements for proposing an integrated operating model of the firm. Practical implications The paper offers interesting implications for managers. While most Lean implementations have resulted in some positive environmental outcomes, both management philosophies tend to be implemented independently. Integrating the implementation of Lean and Green offers the potential for synergistic returns. Originality/value The findings are derived from a systematic literature review of articles that have studied the relation between Lean and Green management, resulting in a proposed integrated model of firm performance.",
+      "cited_by_count": 110,
+      "type": "article",
+      "source": {
+        "name": "Management Decision",
+        "type": "journal",
+        "issn": [
+          "0025-1747",
+          "1758-6070"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Sustainable Supply Chain Management",
+        "Quality and Supply Management",
+        "Environmental Sustainability in Business"
+      ],
+      "referenced_works_count": 136,
+      "url": "https://openalex.org/W2528138276"
+    },
+    {
+      "openalex_id": "W2947501881",
+      "doi": "10.1108/ijqrm-12-2018-0346",
+      "title": "A systematic review of Lean in healthcare: a global prospective",
+      "authors": [
+        {
+          "name": "Jiju Antony",
+          "openalex_id": "A5057782868",
+          "orcid": "https://orcid.org/0000-0002-8197-5736",
+          "institutions": [
+            "Heriot-Watt University"
+          ]
+        },
+        {
+          "name": "Vijaya Sunder M",
+          "openalex_id": "A5030752928",
+          "orcid": "https://orcid.org/0000-0002-7095-7743",
+          "institutions": [
+            "Indian Institute of Technology Madras"
+          ]
+        },
+        {
+          "name": "V. Raja Sreedharan",
+          "openalex_id": "A5009157197",
+          "orcid": "https://orcid.org/0000-0003-3601-8002",
+          "institutions": [
+            "Anna University, Chennai"
+          ]
+        },
+        {
+          "name": "Ayon Chakraborty",
+          "openalex_id": "A5080209283",
+          "orcid": "https://orcid.org/0000-0001-6355-448X",
+          "institutions": [
+            "Indian Institute of Management Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Angappa Gunasekaran",
+          "openalex_id": "A5046110173",
+          "orcid": "https://orcid.org/0000-0002-6335-1962",
+          "institutions": [
+            "California State University, Bakersfield"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-28",
+      "abstract": "Purpose Fostered by a rapid spread beyond the manufacturing sector, Lean philosophy for continuous improvement has been widely used in service organizations, primarily in the healthcare sector. However, there is a limited research on the motivating factors, challenges and benefits of implementing Lean in healthcare. Taking this as a valuable opportunity, the purpose of this paper is to present the key motivating factors, limitations or challenges of Lean deployment, benefits of Lean in healthcare and key gaps in the literature as an agenda for future research. Design/methodology/approach The authors used the secondary data from the literature (peer-reviewed journal articles) published between 2000 and 2016 to understand the state of the art. The systematic review identified 101 articles across 88 journals recognized by the Association of Business Schools ranking guide 2015. Findings The systematic review helped the authors to identify the evolution, current trends, research gaps and an agenda for future research for Lean in healthcare. A bouquet of motivating factors, challenges/limitations and benefits of Lean in healthcare are presented. Practical implications The implications of this work include directions for managers and healthcare professionals in healthcare organizations to embark on a focused Lean journey aligned with the strategic objectives. This work could serve as a valuable resource to both practitioners and researchers for learning, investigating and rightly adapting the Lean in the healthcare sector. Originality/value This study is perhaps one of the comprehensive systematic literature reviews covering an important agenda of Lean in Healthcare. All the text, figures and tables featured here are original work carried by five authors in collaboration (from three countries, namely, India, the USA and the UK).",
+      "cited_by_count": 122,
+      "type": "review",
+      "source": {
+        "name": "International Journal of Quality & Reliability Management",
+        "type": "journal",
+        "issn": [
+          "0265-671X",
+          "1758-6682"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Quality and Supply Management",
+        "Quality and Management Systems",
+        "Healthcare Quality and Management"
+      ],
+      "referenced_works_count": 141,
+      "url": "https://openalex.org/W2947501881"
+    },
+    {
+      "openalex_id": "W4239432834",
+      "doi": "10.25082/ijah",
+      "title": "International Journal of Arts and Humanities",
+      "authors": [],
+      "publication_year": 2021,
+      "publication_date": "2021-06-28",
+      "abstract": "An open access journal, publishing high quality, peer-reviewed articles that bring critical research to the fore and stimulate debate. Topics of interest include, but are not limited to the following: Culture, Media & Film, Digital Humanities, History, Literature, Linguistics & Criticism, Philosophy & Religion, Visual & Performing Arts, etc.",
+      "cited_by_count": 49,
+      "type": "paratext",
+      "source": {
+        "name": "International Journal of Arts and Humanities",
+        "type": "journal",
+        "issn": [
+          "2661-4928"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Digital Games and Media"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4239432834"
+    },
+    {
+      "openalex_id": "W2142677817",
+      "doi": "10.1162/desi_a_00087",
+      "title": "Design for Socially Responsible Behavior: A Classification of Influence Based on Intended User Experience",
+      "authors": [
+        {
+          "name": "Nynke Tromp",
+          "openalex_id": "A5066415398",
+          "orcid": "https://orcid.org/0000-0002-6393-7998"
+        },
+        {
+          "name": "Paul Hekkert",
+          "openalex_id": "A5044579720"
+        },
+        {
+          "name": "Peter\u2010Paul Verbeek",
+          "openalex_id": "A5070880474",
+          "orcid": "https://orcid.org/0000-0001-9861-4091"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-07-01",
+      "abstract": "July 01 2011 Design for Socially Responsible Behavior: A Classification of Influence Based on Intended User Experience Nynke Tromp, Nynke Tromp Nynke Tromp is a PhD researcher at Delft University of Technology. She completed both her Bachelors in Industrial Design Engineering and Masters Design for Interaction at Delft University of Technology. She graduated cum laude in 2007 on her master thesis \u201cDesigning Social Cohesion,\u201d in which she carried out an initial exploration to the possible contributions of designers in solving issues of societal kind. Her PhD research aims to deliver the knowledge and tools for designers to deliberately design the implicit influence products inherently have on human behavior for the benefit of society. Search for other works by this author on: This Site Google Scholar Paul Hekkert, Paul Hekkert Paul Hekkert is full professor of form theory at the Faculty of Industrial Design Engineering, Delft University of Technology, where he supervises a group carrying out research on our sense perception and (emotional) experience of products (http://studiolab.io.tudelft.nl/dfe/). Paul is co-editor of \u201cThe Experience of Everyday Things\u201d (2004) and \u201cProduct Experience\u201d (2008). Together with a colleague/designer, he developed an interaction-centered design approach, Vision in Product design (ViP). A book about the approach will be published in the summer of 2011. Paul is co-founder and chairman of the Design and Emotion society (http://www.designandemotion.org) and serves as a member of the editorial boards of The Design Journal, Empirical Studies of the Arts, and the International Journal of Design. Search for other works by this author on: This Site Google Scholar Peter-Paul Verbeek Peter-Paul Verbeek Peter-Paul Verbeek is professor of Man and Technology at the University of Twente. He also holds the part-time Socrates chair in the Philosophy of Human Enhancement at Delft University of Technology. His publications include What Things Do (Penn State University Press, 2005) and Moralizing Technology: Understanding and Designing the Morality of Things (University of Chicago Press, 2011). Search for other works by this author on: This Site Google Scholar Author and Article Information Nynke Tromp Nynke Tromp is a PhD researcher at Delft University of Technology. She completed both her Bachelors in Industrial Design Engineering and Masters Design for Interaction at Delft University of Technology. She graduated cum laude in 2007 on her master thesis \u201cDesigning Social Cohesion,\u201d in which she carried out an initial exploration to the possible contributions of designers in solving issues of societal kind. Her PhD research aims to deliver the knowledge and tools for designers to deliberately design the implicit influence products inherently have on human behavior for the benefit of society. Paul Hekkert Paul Hekkert is full professor of form theory at the Faculty of Industrial Design Engineering, Delft University of Technology, where he supervises a group carrying out research on our sense perception and (emotional) experience of products (http://studiolab.io.tudelft.nl/dfe/). Paul is co-editor of \u201cThe Experience of Everyday Things\u201d (2004) and \u201cProduct Experience\u201d (2008). Together with a colleague/designer, he developed an interaction-centered design approach, Vision in Product design (ViP). A book about the approach will be published in the summer of 2011. Paul is co-founder and chairman of the Design and Emotion society (http://www.designandemotion.org) and serves as a member of the editorial boards of The Design Journal, Empirical Studies of the Arts, and the International Journal of Design. Peter-Paul Verbeek Peter-Paul Verbeek is professor of Man and Technology at the University of Twente. He also holds the part-time Socrates chair in the Philosophy of Human Enhancement at Delft University of Technology. His publications include What Things Do (Penn State University Press, 2005) and Moralizing Technology: Understanding and Designing the Morality of Things (University of Chicago Press, 2011). Online Issn: 1531-4790 Print Issn: 0747-9360 \u00a9 2011 Massachusetts Institute of Technology2011 Design Issues (2011) 27 (3): 3\u201319. https://doi.org/10.1162/DESI_a_00087 Cite Icon Cite Permissions Share Icon Share Facebook Twitter LinkedIn MailTo Views Icon Views Article contents Figures & tables Video Audio Supplementary Data Peer Review Search Site Citation Nynke Tromp, Paul Hekkert, Peter-Paul Verbeek; Design for Socially Responsible Behavior: A Classification of Influence Based on Intended User Experience. Design Issues 2011; 27 (3): 3\u201319. doi: https://doi.org/10.1162/DESI_a_00087 Download citation file: Ris (Zotero) Reference Manager EasyBib Bookends Mendeley Papers EndNote RefWorks BibTex toolbar search Search Dropdown Menu toolbar search search input Search input auto suggest filter your search All ContentAll JournalsDesign Issues Search Advanced Search This content is only available as a PDF. \u00a9 2011 Massachusetts Institute of Technology2011 Article PDF first page preview Close Modal You do not currently have access to this content.",
+      "cited_by_count": 279,
+      "type": "article",
+      "source": {
+        "name": "Design Issues",
+        "type": "journal",
+        "issn": [
+          "0747-9360",
+          "1531-4790"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://direct.mit.edu/desi/article-pdf/27/3/3/1714926/desi_a_00087.pdf"
+      },
+      "topics": [
+        "Innovative Human-Technology Interaction",
+        "Design Education and Practice",
+        "Usability and User Interface Design"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W2142677817"
+    },
+    {
+      "openalex_id": "W2995742707",
+      "doi": "10.1162/qss_a_00016",
+      "title": "The pricing of open access journals: Diverse niches and sources of value in academic publishing",
+      "authors": [
+        {
+          "name": "Kyle Siler",
+          "openalex_id": "A5031784614",
+          "orcid": "https://orcid.org/0000-0003-0427-9283",
+          "institutions": [
+            "University of Sussex"
+          ]
+        },
+        {
+          "name": "Koen Frenken",
+          "openalex_id": "A5000401722",
+          "orcid": "https://orcid.org/0000-0003-4731-0201",
+          "institutions": [
+            "Utrecht University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-11",
+      "abstract": "Open access (OA) publishing has created new academic and economic niches in contemporary science. OA journals offer numerous publication outlets with varying editorial philosophies and business models. This article analyzes the Directory of Open Access Journals (DOAJ) ( n = 12,127) to identify characteristics of OA academic journals related to the adoption of article processing charge (APC)-based business models, as well as the price points of journals that charge APCs. Journal impact factor (JIF), language, publisher mission, DOAJ Seal, economic and geographic regions of publishers, peer review duration, and journal discipline are all significantly related to the adoption and pricing of journal APCs. Even after accounting for other journal characteristics (prestige, discipline, publisher country), journals published by for-profit publishers charge the highest APCs. Journals with status endowments (JIF, DOAJ Seal) and articles written in English, published in wealthier regions, and in medical or science-based disciplines are also relatively costlier. The OA publishing market reveals insights into forces that create economic and academic value in contemporary science. Political and institutional inequalities manifest in the varying niches occupied by different OA journals and publishers.",
+      "cited_by_count": 56,
+      "type": "article",
+      "source": {
+        "name": "Quantitative Science Studies",
+        "type": "journal",
+        "issn": [
+          "2641-3337"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mitpressjournals.org/doi/pdf/10.1162/qss_a_00016"
+      },
+      "topics": [
+        "scientometrics and bibliometrics research",
+        "Private Equity and Venture Capital",
+        "Academic Publishing and Open Access"
+      ],
+      "referenced_works_count": 106,
+      "url": "https://openalex.org/W2995742707"
+    },
+    {
+      "openalex_id": "W4206676673",
+      "doi": "10.37745/gjpsa.2013",
+      "title": "Global Journal of Political Science and Administration",
+      "authors": [],
+      "publication_year": 2021,
+      "publication_date": "2021-08-12",
+      "abstract": "Global Journal of Political Science and Administration is a peer-reviewed journal published by the European Centre for Research, Training and Development (ECRTD), UK. GJPSA accepts research papers in Comparative Politics, International Relations, Political Philosophy and Public Administrations, Public Policy, Organisation Theory in Public Administration, Leadership Ethics in Public Administrations, Policy Analysis, Public Budgeting, and Human Resource [\u2026]",
+      "cited_by_count": 45,
+      "type": "paratext",
+      "source": {
+        "name": "Global Journal of Political Science and Administration",
+        "type": "journal",
+        "issn": [
+          "2054-6335",
+          "2054-6343"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4206676673"
+    },
+    {
+      "openalex_id": "W3201648806",
+      "doi": "10.5771/2192-1741-2014-2-157",
+      "title": "Die \u00bbneuen Kriege\u00ab im Spiegel postkolonialer Theorien und kritischer Friedensforschung",
+      "authors": [
+        {
+          "name": "Sven Chojnacki",
+          "openalex_id": "A5060516318",
+          "orcid": "https://orcid.org/0009-0001-7155-4081",
+          "institutions": [
+            "Kennedy Krieger Institute"
+          ]
+        },
+        {
+          "name": "Fabian Namberger",
+          "openalex_id": "A5072652569",
+          "orcid": "https://orcid.org/0000-0002-8766-586X",
+          "institutions": [
+            "Kennedy Krieger Institute"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "Zeitschrift f\u00fcr Friedens- und Konfliktforschung (ZeFKo) is a peer-reviewed journal providing a forum for theory based and methodically reflected studies from many different fields of research focusing on violence, conflict war and peace. A main goal is to stimulate interdisciplinary debates in the area of peace and conflict research. This includes ethnology, geography, history, culturural and literaterary studies, pedagogy , philosophy, political science, psychology, law, sociology, theology and natural sciences as well.",
+      "cited_by_count": 52,
+      "type": "article",
+      "source": {
+        "name": "Zeitschrift f\u00fcr Friedens- und Konfliktforschung",
+        "type": "journal",
+        "issn": [
+          "2192-1741",
+          "2524-6976"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.nomos-elibrary.de/10.5771/2192-1741-2014-2-157.pdf"
+      },
+      "topics": [
+        "Peace and Human Rights Education"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W3201648806"
+    },
+    {
+      "openalex_id": "W2286215175",
+      "doi": "10.1075/lplp",
+      "title": "Language Problems and Language Planning",
+      "authors": [
+        {
+          "name": "Inquiries should be sent to",
+          "openalex_id": "A5098173196",
+          "institutions": [
+            "WorldFish"
+          ]
+        },
+        {
+          "name": "Fran\u00e7ois Grin",
+          "openalex_id": "A5041051288",
+          "orcid": "https://orcid.org/0000-0002-0435-7547",
+          "institutions": [
+            "WorldFish"
+          ]
+        },
+        {
+          "name": "Editor-in-Chief Editor-in-Chief",
+          "openalex_id": "A5077908628",
+          "institutions": [
+            "WorldFish"
+          ]
+        },
+        {
+          "name": "with copy to Guillaume F\u00fcrst",
+          "openalex_id": "A5098332804",
+          "institutions": [
+            "WorldFish"
+          ]
+        },
+        {
+          "name": "Editorial assistant",
+          "openalex_id": "A5025864425",
+          "institutions": [
+            "WorldFish"
+          ]
+        },
+        {
+          "name": "FTI",
+          "openalex_id": "A5098596593",
+          "institutions": [
+            "WorldFish"
+          ]
+        },
+        {
+          "name": "University of Geneva",
+          "openalex_id": "A5098552546",
+          "institutions": [
+            "WorldFish"
+          ]
+        },
+        {
+          "name": "CH \u2013 Gen\u00e8ve Bd du Pont-d'Arve",
+          "openalex_id": "A5098228192",
+          "institutions": [
+            "WorldFish"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-05",
+      "abstract": "Language Problems and Language Planning (LPLP) is a peer-reviewed international and multilingual journal devoted to the study of multilingualism and language policy. It has a particular interest in contributions on relatively large-scale language issues and their international implications. LPLP encourages interdisciplinarity in the study of multilingualism and language policy. Contributions from any of the language disciplines, as well as from other fields in the social sciences (including political science, sociology, economics, education sciences, psychology, philosophy, history, law, etc.) are welcome, with a priority for papers offering a strong analytical orientation (whether theoretical, empirical, methodological, or a combination of these). LPLP publishes its articles Online First.",
+      "cited_by_count": 49,
+      "type": "paratext",
+      "source": {
+        "name": "Language Problems & Language Planning",
+        "type": "journal",
+        "issn": [
+          "0272-2690",
+          "1569-9889"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Second Language Learning and Teaching",
+        "Multilingual Education and Policy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2286215175"
+    },
+    {
+      "openalex_id": "W2623703952",
+      "doi": "10.1007/s11165-016-9602-2",
+      "title": "The Use of Cronbach\u2019s Alpha When Developing and Reporting Research Instruments in Science Education",
+      "authors": [
+        {
+          "name": "Keith S. Taber",
+          "openalex_id": "A5019483249",
+          "orcid": "https://orcid.org/0000-0002-1798-331X",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-06-07",
+      "abstract": "Cronbach's alpha is a statistic commonly quoted by authors to demonstrate that tests and scales that have been constructed or adopted for research projects are fit for purpose. Cronbach's alpha is regularly adopted in studies in science education: it was referred to in 69 different papers published in 4 leading science education journals in a single year (2015)\u2014usually as a measure of reliability. This article explores how this statistic is used in reporting science education research and what it represents. Authors often cite alpha values with little commentary to explain why they feel this statistic is relevant and seldom interpret the result for readers beyond citing an arbitrary threshold for an acceptable value. Those authors who do offer readers qualitative descriptors interpreting alpha values adopt a diverse and seemingly arbitrary terminology. More seriously, illustrative examples from the science education literature demonstrate that alpha may be acceptable even when there are recognised problems with the scales concerned. Alpha is also sometimes inappropriately used to claim an instrument is unidimensional. It is argued that a high value of alpha offers limited evidence of the reliability of a research instrument, and that indeed a very high value may actually be undesirable when developing a test of scientific knowledge or understanding. Guidance is offered to authors reporting, and readers evaluating, studies that present Cronbach's alpha statistic as evidence of instrument quality.",
+      "cited_by_count": 9463,
+      "type": "article",
+      "source": {
+        "name": "Research in Science Education",
+        "type": "journal",
+        "issn": [
+          "0157-244X",
+          "1573-1898"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11165-016-9602-2.pdf"
+      },
+      "topics": [
+        "Science Education and Pedagogy",
+        "Diverse Educational Innovations Studies"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W2623703952"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

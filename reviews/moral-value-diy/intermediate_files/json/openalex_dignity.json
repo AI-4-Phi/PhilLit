@@ -1,0 +1,905 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "dignity work labor",
+  "results": [
+    {
+      "openalex_id": "W3204203266",
+      "doi": "10.13133/2037-3643/17563",
+      "title": "Constrictive labor and the dignity of work",
+      "authors": [
+        {
+          "name": "Alessandro Roncaglia",
+          "openalex_id": "A5103341805"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-22",
+      "abstract": "The paper summarizes the rationale and contents of a conference held at the Accademia Nazionale dei Lincei in December 2020, celebrating the fiftieth anniversary of the Italian Statuto dei lavoratori (Charter of Workers\u2019 Rights): a reform that represents an important advancement in Italian civic development. The paper illustrates the Charter: its attempt to reconcile, in light of the Italian Constitution, the twin and opposite characteristics of labor as sacrifice and as contributing to the social dignity of workers; and the law\u2019s compromises between the opposite needs of the labor process (stability and flexibility of employment, employers\u2019 freedom in hiring, the need to avoid discrimination, and so on). JEL codes: J08, J28, J48, J53, J83",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "SHILAP Revista de lepidopterolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0300-5267",
+          "2340-4078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/552bbd91f02b499dbe442defdd8b2248"
+      },
+      "topics": [
+        "Legal and Labor Studies",
+        "Digital Economy and Work Transformation",
+        "Italian Social Issues and Migration"
+      ],
+      "referenced_works_count": 4,
+      "url": "https://openalex.org/W3204203266"
+    },
+    {
+      "openalex_id": "W2909374407",
+      "doi": "10.1017/beq.2018.34",
+      "title": "Decasticization, Dignity, and \u2018Dirty Work\u2019 at the Intersections of Caste, Memory, and Disaster",
+      "authors": [
+        {
+          "name": "Ramaswami Mahalingam",
+          "openalex_id": "A5061670607",
+          "orcid": "https://orcid.org/0000-0002-7569-6693",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Srinath Jagannathan",
+          "openalex_id": "A5076664277",
+          "orcid": "https://orcid.org/0000-0002-5949-4004"
+        },
+        {
+          "name": "Patturaja Selvaraj",
+          "openalex_id": "A5041768246",
+          "orcid": "https://orcid.org/0000-0002-0262-658X",
+          "institutions": [
+            "Gettysburg College"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-11",
+      "abstract": "ABSTRACT: In this qualitative study we examine the role of caste, class, and Dalit janitorial labor in the aftermath of floods in Chennai, India, in 2015. Drawing from a variety of sources including interviews, social media, and news coverage, we studied how Dalit (formerly known as \u2018untouchable\u2019) janitors were treated during the performance of janitorial labor for cleaning the city. Our study focuses on two theoretical premises: (a) caste-based social relations reproduce inequalities by devaluing Dalit labor as \u2018dirty work\u2019; and (b) Dalit subjectivities, labor, and sufferings including occupational hazards become invisible and ungrievable forcing Dalits to provide a counter narrative to preserve the memory of their trauma and dignity injuries. We find that the discursive construction of janitorial labor as dirty work forced Dalit janitors to work in appalling and unsafe working conditions. Janitors suffered several dignity injuries in terms of social exclusion and a lack of recognition for their efforts and accomplishments. Specifically, we examine various ways through which caste, dirty work, and dignity intersected in the narrative accounts of Dalit janitors. We also explore memory and how processes of remembering and forgetting affected the dignity claims of Dalit janitors.",
+      "cited_by_count": 59,
+      "type": "article",
+      "source": {
+        "name": "Business Ethics Quarterly",
+        "type": "journal",
+        "issn": [
+          "1052-150X",
+          "2153-3326"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Emotional Labor in Professions"
+      ],
+      "referenced_works_count": 61,
+      "url": "https://openalex.org/W2909374407"
+    },
+    {
+      "openalex_id": "W3009056561",
+      "doi": "10.1371/journal.pone.0229941",
+      "title": "Midwives\u2019 perspectives of respectful maternity care during childbirth: A qualitative study",
+      "authors": [
+        {
+          "name": "Maryam Moridi",
+          "openalex_id": "A5090437925",
+          "orcid": "https://orcid.org/0000-0002-6209-6971",
+          "institutions": [
+            "Iranshahr University",
+            "Shahid Beheshti University of Medical Sciences"
+          ]
+        },
+        {
+          "name": "Farzaneh Pazandeh",
+          "openalex_id": "A5075549061",
+          "orcid": "https://orcid.org/0000-0002-1955-5220",
+          "institutions": [
+            "Shahid Beheshti University of Medical Sciences",
+            "Iranshahr University"
+          ]
+        },
+        {
+          "name": "Sepideh Hajian",
+          "openalex_id": "A5014481458",
+          "orcid": "https://orcid.org/0000-0002-3368-0036",
+          "institutions": [
+            "Shahid Beheshti University of Medical Sciences",
+            "Iranshahr University"
+          ]
+        },
+        {
+          "name": "Barbara Potrata",
+          "openalex_id": "A5032863529",
+          "institutions": [
+            "Codarts Rotterdam"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-09",
+      "abstract": "The adoption of respectful maternity care during labor and birth is a complex process which needs both scientific and interpersonal skills of providers. In this regard, identifying the potential barriers and applying effective strategies for implementing respectful maternity care are essential. This study aimed to explore the perceptions of Iranian midwives regarding respectful maternity care during labor and childbirth. This was a qualitative study which was conducted from September-December 2018 in two non-teaching public hospitals in Tehran, Iran. Twenty-four semi-structured interviews were conducted with midwives, who had more than one year work experience in labor and childbirth units, through a purposive sampling method. A content analysis approach was used to analyze the data and identify themes. Three themes were extracted including \"showing empathy\", \"women-centered care\" and \"protecting rights\". Showing empathy reflects that \"establishing a friendly relationship\" and \"being with women\". Women-centered care encompassed \"keeping women safe\" and \"participating in decision making\". Protecting rights reflected a need for \"safeguarding dignity\" as well as \"giving equal care\" and \"preparing appropriate environment\". Iranian midwives considered respectful maternity care a broader concept than just preventing mistreatment. Providing supportive care through friendly interaction with women was the first step for providing respectful maternity care. Respectful care is also promoted by providing safe care, implementing evidence-based care and involving women in their care as well as by providing an appropriate environment for women, families and caregivers.",
+      "cited_by_count": 115,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0229941&type=printable"
+      },
+      "topics": [
+        "Maternal and Perinatal Health Interventions",
+        "Global Maternal and Child Health",
+        "Grief, Bereavement, and Mental Health"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W3009056561"
+    },
+    {
+      "openalex_id": "W3011920345",
+      "doi": "10.1007/s12134-020-00756-3",
+      "title": "Perceptions About the Labor Market Integration of Refugees: Evidences from Syrian Refugees in Jordan",
+      "authors": [
+        {
+          "name": "Zeynep \u015eahin Menc\u00fctek",
+          "openalex_id": "A5087673676",
+          "orcid": "https://orcid.org/0000-0002-6676-8579",
+          "institutions": [
+            "University of Duisburg-Essen"
+          ]
+        },
+        {
+          "name": "Ayat Nashwan",
+          "openalex_id": "A5024699973",
+          "orcid": "https://orcid.org/0000-0001-7691-9871",
+          "institutions": [
+            "Yarmouk University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-18",
+      "abstract": "Abstract This article focuses on the refugees\u2019 labor market integration in the immediate host countries. Drawing from the experience of Syrian refugees in Jordan, it describes how the integration in labor market depends on the alignment of four perspectives: (1) host state perspective, materialized through legal regulations about refugee employment; (2) refugee perspective that refers to refugees\u2019 access to labor market and challenges they face; (3) host community perspective that implies to the recognition, approval, or reactions of host communities to the refugee employment; and (4) donor perspective that appears with the intervention of international actors through development aid or general support to refugees\u2019 working rights. To explore these diverging perspectives and their implications about the labor market integration of Syrian refugees in Jordan, the data is gathered from ethnographic policy analysis and stakeholder interviews in urban areas and camps. We argue that the refugees\u2019 legal right to work is one of the most contentious policy issues not only for Jordanian state but also for its relations with Jordanian citizens, refugees, and donors. From the perspective of donors, ensuring Syrians\u2019 legal access to labor market in the immediate host countries, like Jordan, is a policy tool for keeping refugees in the origin region. At the host community level, the issue appears as a source of dilemma; because refugee employment is a critical domain for refugees\u2019 self-reliance and local integration on the one hand, it is perceived as the source of competition for already scarce job opportunities on the other hand. For refugees themselves, an access to labor market and getting support are ways of gaining sustainable livelihood opportunities, self-reliance, and dignity. However, this access is marked by severe conditions of exploitation, vulnerability, and discrimination in working places as well as the anti-refugee rhetoric of local host communities. Programming in refugee employment necessitates taking all these four perspectives into account.",
+      "cited_by_count": 61,
+      "type": "article",
+      "source": {
+        "name": "Journal of International Migration and Integration / Revue de l integration et de la migration internationale",
+        "type": "journal",
+        "issn": [
+          "1488-3473",
+          "1874-6365"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12134-020-00756-3.pdf"
+      },
+      "topics": [
+        "Migration, Refugees, and Integration",
+        "Migration and Labor Dynamics",
+        "Middle East Politics and Society"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W3011920345"
+    },
+    {
+      "openalex_id": "W3021080060",
+      "doi": "10.4324/9781003022909-10",
+      "title": "Labor rights as human rights",
+      "authors": [
+        {
+          "name": "Carol C. Gould",
+          "openalex_id": "A5057532325",
+          "orcid": "https://orcid.org/0000-0001-9417-8413"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-29",
+      "abstract": "The author refutes several arguments against labor rights as human rights by investigating the theoretical foundations of these various rights. She goes beyond existing defenses that turn almost exclusively on the notion of human dignity. While important, the author notes, the notion of dignity needs to be interpreted in a somewhat new way and has to be supplemented with the other core value underlying human rights, namely, freedom (in a certain conception). The author then goes on to draw some implications of the recognition of labor rights as human rights for our understanding of these labor rights themselves and argues for one additional such right, namely, democratic management of work. The author underscores the need to keep in mind the contemporary pervasiveness of new forms of diffuse work with the increasing globalization of work processes, as well as the growth of both leisure time and diminishing work, given automation. It is essential, too, to take labor broadly to extend also to care work, both paid and unpaid, rather than understanding it exclusively in terms of manufacturing or other types of work traditionally carried out only outside the home.",
+      "cited_by_count": 34,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "International Labor and Employment Law",
+        "Human Rights and Development",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3021080060"
+    },
+    {
+      "openalex_id": "W4385234894",
+      "doi": "10.1596/40066",
+      "title": "Working Without Borders: The Promise and Peril of Online Gig Work",
+      "authors": [
+        {
+          "name": "Namita Datta",
+          "openalex_id": "A5047667471"
+        },
+        {
+          "name": "Rong Chen",
+          "openalex_id": "A5100419018",
+          "orcid": "https://orcid.org/0000-0002-4432-8521"
+        },
+        {
+          "name": "Sunamika Singh",
+          "openalex_id": "A5080293905"
+        },
+        {
+          "name": "Clara Stinshoff",
+          "openalex_id": "A5092537449"
+        },
+        {
+          "name": "Nadina Iacob",
+          "openalex_id": "A5061276901",
+          "orcid": "https://orcid.org/0000-0002-0314-3854"
+        },
+        {
+          "name": "Natnael Simachew Nigatu",
+          "openalex_id": "A5092537450"
+        },
+        {
+          "name": "Mpumelelo Nxumalo",
+          "openalex_id": "A5067199113"
+        },
+        {
+          "name": "Luka Klimavi\u010di\u016bt\u0117",
+          "openalex_id": "A5068712048",
+          "orcid": "https://orcid.org/0000-0003-2517-603X"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-24",
+      "abstract": "Jobs are crucial for individual well-being. They provide a livelihood and, equally important, a sense of dignity. They are also crucial for collective well-being and economic growth. Over the past decade, technology has fundamentally shifted traditional work patterns, creating new ways in which work is contracted, performed, managed, scheduled, and remunerated. New business models, digital platform firms, are allowing the effects of technology to reach more people more quickly, bringing economic opportunity to millions of people who do not live in industrialized countries or even industrial areas, simply with access to broadband and a digital device (World Bank 2019). Digital labor platforms play a role in the process of structural transformation especially by triggering organizational and occupational transformations, for example, by enhancing labor productivity and formalization in service sectors (Nayyar, Hallward-Driemeier, and Davies 2021). New forms of work, known as gig jobs, enabled by digital platforms, have now gained momentum (Eurofound 2020).",
+      "cited_by_count": 52,
+      "type": "book",
+      "source": {
+        "name": "Washington, DC: World Bank eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1596/40066"
+      },
+      "topics": [
+        "Digital Economy and Work Transformation",
+        "Sharing Economy and Platforms",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4385234894"
+    },
+    {
+      "openalex_id": "W2970471990",
+      "doi": "10.1007/s13312-019-1584-5",
+      "title": "Children at Work, Child Labor and Modern Slavery in India: An Overview",
+      "authors": [
+        {
+          "name": "Rakesh K. Srivastava",
+          "openalex_id": "A5119268353",
+          "orcid": "https://orcid.org/0000-0003-3112-4252",
+          "institutions": [
+            "Indraprastha Apollo Hospitals"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-01",
+      "abstract": null,
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "Indian Pediatrics",
+        "type": "journal",
+        "issn": [
+          "0019-6061",
+          "0974-7559"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Poverty, Education, and Child Welfare",
+        "Energy and Environment Impacts",
+        "Child Nutrition and Water Access"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W2970471990"
+    },
+    {
+      "openalex_id": "W2802872413",
+      "doi": "10.1177/0896920518765925",
+      "title": "The Employment Relationship and Movement Strategies among Domestic Workers in India",
+      "authors": [
+        {
+          "name": "Rina Agarwala",
+          "openalex_id": "A5007133316",
+          "orcid": "https://orcid.org/0000-0002-8631-9295",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Shiny Saha",
+          "openalex_id": "A5050865562"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-03",
+      "abstract": "This article examines how paid domestic workers in India fight to reproduce themselves by attaining recognition for their employment relationship and struggling to advance their labor rights. We find a striking convergence toward female-dominated unions that articulate the recipient of domestic services as \u201cemployers,\u201d their employment relationship as an exploitative one in terms of time and dignity, and the household as a place of work and profit. To ensure a focus on women members and leaders, domestic workers\u2019 have developed different union types including politically-affiliated and independent unions, as well as unions affiliated to NGOs, faith-based institutions, and cooperatives. Domestic workers\u2019 direct, one-to-one employment relationship has led organizations to empower workers to confront employers\u2019 daily control of workers\u2019 associations (even outside the workplace), citizenship rights, worth, and dignity. However, because domestic workers\u2019 employment relationship is still not recognized by Indian law, domestic workers avoid confronting employers and instead target the state when demanding material concessions to de-commodify their labor. These findings offer important insights into the limits and potential of domestic workers\u2019 struggles.",
+      "cited_by_count": 45,
+      "type": "article",
+      "source": {
+        "name": "Critical Sociology",
+        "type": "journal",
+        "issn": [
+          "0896-9205",
+          "1569-1632"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Migration and Labor Dynamics",
+        "Employment and Welfare Studies",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W2802872413"
+    },
+    {
+      "openalex_id": "W3122654747",
+      "doi": "10.3390/su13020851",
+      "title": "From Liminal Labor to Decent Work: A Human-Centered Perspective on Sustainable Tourism Employment",
+      "authors": [
+        {
+          "name": "Dimitri \u0130oannides",
+          "openalex_id": "A5049419770",
+          "orcid": "https://orcid.org/0000-0002-3549-750X",
+          "institutions": [
+            "Mid Sweden University"
+          ]
+        },
+        {
+          "name": "Szilvia Gyim\u00f3thy",
+          "openalex_id": "A5006268310",
+          "orcid": "https://orcid.org/0000-0002-1556-5632",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        },
+        {
+          "name": "Laura James",
+          "openalex_id": "A5051453782",
+          "orcid": "https://orcid.org/0000-0001-8226-7945",
+          "institutions": [
+            "Aalborg University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-16",
+      "abstract": "In its sustainable tourism agenda for 2030, the UN World Tourism Organization has embraced three United Nations Sustainable Development Goals. One of these, specifically SDG 8, highlights the need to pursue decent work and growth. Nevertheless, despite the growing recognition of this target and although there is a growing number of writings lamenting the precarity characterizing many tourism-related jobs, the topic of tourism-related work continues to receive sparse attention in the considerable volume of academic literature on tourism and sustainability. This paper attempts to redress this neglect. First, by providing a review of extant studies on tourism labor, we seek to explain why this research lacuna continues to exist. We then examine organizational and technological aspects of tourism governance, which hinder attempts to establish decent work and improve dignity in the tourism industry worldwide. By acknowledging the volatile and liminal status of tourism work and future labor market prospects, we arrive at the following question: what should sustainable tourism work look like? This leads us to suggest that the development of a human-centered research agenda, which focuses on workers\u2019 agency and resources, offers a promising research avenue for expanding on the tourism and sustainability research agenda.",
+      "cited_by_count": 49,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/13/2/851/pdf?version=1610784273"
+      },
+      "topics": [
+        "Sharing Economy and Platforms",
+        "Diverse Aspects of Tourism Research",
+        "Digital Economy and Work Transformation"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W3122654747"
+    },
+    {
+      "openalex_id": "W4297821565",
+      "doi": "10.2139/ssrn.4216227",
+      "title": "Power and Dignity in the Low-Wage Labor Market: Theory and Evidence from Wal-Mart Workers",
+      "authors": [
+        {
+          "name": "Arindrajit Dub\u00e9",
+          "openalex_id": "A5109516884",
+          "institutions": [
+            "University of Massachusetts Amherst"
+          ]
+        },
+        {
+          "name": "Suresh Naidu",
+          "openalex_id": "A5043371757",
+          "orcid": "https://orcid.org/0000-0002-9774-1678",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Adam Reich",
+          "openalex_id": "A5062276217",
+          "orcid": "https://orcid.org/0000-0002-5573-1754",
+          "institutions": [
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": null,
+      "cited_by_count": 40,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.4216227"
+      },
+      "topics": [
+        "Employment and Welfare Studies",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4297821565"
+    },
+    {
+      "openalex_id": "W3017098906",
+      "doi": "10.7758/rsf.2020.6.1.09",
+      "title": "Sandpiles of Dignity: Labor Status and Boundary-Making in the Contemporary American Prison",
+      "authors": [
+        {
+          "name": "Michael Gibson-Light",
+          "openalex_id": "A5063780400",
+          "orcid": "https://orcid.org/0000-0003-2445-2389",
+          "institutions": [
+            "University of Denver",
+            "ORCID"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "This study investigates discursive strategies through which prisoners seek dignity. In particular, it turns toward the role of penal labor in such pursuits. Drawing on eighty-two in-depth interviews and eighteen months of ethnographic fieldwork conducted within one U.S. men\u2019s prison, it details the role of job status in prisoner dignity claims. In the scramble to the top of a shifting sandpile of dignity, prisoner appeals to legitimacy rely on downward-facing symbolic boundaries erected to distinguish from lower-status others. Participants in the highest-status work sites made moral claims against others by self-identifying as professionals rather than inmates. At the bottom reaches of the labor hierarchy, workers emphasized lateral distances from other low-status prisoners. These competitive processes serve to reify penal labor structures, inequity, and control.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "RSF The Russell Sage Foundation Journal of the Social Sciences",
+        "type": "journal",
+        "issn": [
+          "2377-8253",
+          "2377-8261"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.7758/rsf.2020.6.1.09"
+      },
+      "topics": [
+        "Criminal Justice and Corrections Analysis",
+        "Homelessness and Social Issues",
+        "Psychopathy, Forensic Psychiatry, Sexual Offending"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W3017098906"
+    },
+    {
+      "openalex_id": "W4306174704",
+      "doi": "10.1177/00197939221131558",
+      "title": "The Data-Driven Workplace and the Case for Worker Technology Rights",
+      "authors": [
+        {
+          "name": "Annette Bernhardt",
+          "openalex_id": "A5088256774",
+          "institutions": [
+            "University of California, Berkeley",
+            "Mozilla Foundation"
+          ]
+        },
+        {
+          "name": "Lisa Kresge",
+          "openalex_id": "A5073872318"
+        },
+        {
+          "name": "Reem Suleiman",
+          "openalex_id": "A5015056051"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-14",
+      "abstract": "Employers increasingly use digital technologies in the workplace to capture and analyze worker data, electronically monitor their workers, and manage them using algorithms. In this article, the authors analyze employers\u2019 use of data-driven systems in a diverse set of industries and identify a range of potential harms to workers, including bias and discrimination, de-skilling, unsafe work speeds, and loss of autonomy and dignity. In light of the current absence of regulation or oversight, the authors argue that workers deserve a robust set of 21st-century labor standards regarding digital technologies. They lay out a detailed public policy framework that establishes worker rights and employer responsibilities to ensure that the data-driven workplace benefits, rather than harms, workers.",
+      "cited_by_count": 43,
+      "type": "article",
+      "source": {
+        "name": "Industrial and Labor Relations Review",
+        "type": "journal",
+        "issn": [
+          "0019-7939",
+          "2162-271X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1177/00197939221131558"
+      },
+      "topics": [
+        "Digital Economy and Work Transformation",
+        "Employment and Welfare Studies",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W4306174704"
+    },
+    {
+      "openalex_id": "W2966151574",
+      "doi": "10.1177/1741659019865309",
+      "title": "Anti-heroes, wildfire, and the complex visibility of prison labor",
+      "authors": [
+        {
+          "name": "Lindsey Raisa Feldman",
+          "openalex_id": "A5068791942",
+          "orcid": "https://orcid.org/0000-0002-5223-8286",
+          "institutions": [
+            "University of Memphis"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-31",
+      "abstract": "The vast majority of prison labor goes unnoticed by the public, serving as a microcosm of the invisibility of prisoners as a whole. This perpetuates stereotypical media representations and public perceptions of prison laborers as nothing more than their indentured subjugation. This photo essay presents a more nuanced view of the experience of prison labor. I present images of an exceptional labor program, Arizona\u2019s Inmate Wildfire Program, in order to question what happens when prison labor becomes visible, and when the symbolic markers of incarceration disappear. The program, in which 11 prison crews fight wildfires across the state, is an experiential paradox for its participants. It is at once exploitative, with its low pay for risky work, as well as transformative, with its potential for a re-emergence of complex identities and reclamation of dignity for those involved. Through these images, I argue that the transformative potential of the program is due in part to the program\u2019s visibility, as incarcerated firefighters interact with the public\u2014and their own self-representations\u2014in emergent, meaningful ways. I call to examine the complexities of programs that challenge certain dehumanizing experiences of incarceration while being securely entrenched within the carceral regime.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "Crime Media Culture An International Journal",
+        "type": "journal",
+        "issn": [
+          "1741-6590",
+          "1741-6604"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Criminal Justice and Corrections Analysis",
+        "Posttraumatic Stress Disorder Research",
+        "Crime, Deviance, and Social Control"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2966151574"
+    },
+    {
+      "openalex_id": "W4381845780",
+      "doi": "10.1007/s13347-023-00631-w",
+      "title": "The Future of Work: Augmentation or Stunting?",
+      "authors": [
+        {
+          "name": "Markus Furendal",
+          "openalex_id": "A5032727137",
+          "orcid": "https://orcid.org/0000-0002-2378-750X",
+          "institutions": [
+            "Stockholm University"
+          ]
+        },
+        {
+          "name": "Karim Jebari",
+          "openalex_id": "A5076616129",
+          "orcid": "https://orcid.org/0000-0002-7378-3662",
+          "institutions": [
+            "Institute for Futures Studies"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-04",
+      "abstract": "Abstract The last decade has seen significant improvements in artificial intelligence (AI) technologies, including robotics, machine vision, speech recognition, and text generation. Increasing automation will undoubtedly affect the future of work, and discussions on how the development of AI in the workplace will impact labor markets often include two scenarios: (1) labor replacement and (2) labor enabling. The former involves replacing workers with machines, while the latter assumes that human\u2013machine cooperation can significantly improve worker productivity. In this context, it is often argued that (1) could lead to mass unemployment and that (2) therefore would be more desirable. We argue, however, that the labor-enabling scenario conflates two distinct possibilities. On the one hand, technology can increase productivity while also promoting \u201cthe goods of work,\u201d such as the opportunity to pursue excellence, experience a sense of community, and contribute to society (human augmentation). On the other hand, higher productivity can also be achieved in a way that reduces opportunities for the \u201cgoods of work\u201d and/or increases \u201cthe bads of work,\u201d such as injury, reduced physical and mental health, reduction of autonomy, privacy, and human dignity (human stunting). We outline the differences of these outcomes and discuss the implications for the labor market in the context of contemporaneous discussions on the value of work and human wellbeing.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Philosophy & Technology",
+        "type": "journal",
+        "issn": [
+          "2210-5433",
+          "2210-5441"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13347-023-00631-w.pdf"
+      },
+      "topics": [
+        "Digital Economy and Work Transformation",
+        "Employment and Welfare Studies",
+        "Retirement, Disability, and Employment"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4381845780"
+    },
+    {
+      "openalex_id": "W3017499265",
+      "doi": "10.1080/15313204.2020.1753614",
+      "title": "Employment of Syrian refugees in Jordan: challenges and opportunities",
+      "authors": [
+        {
+          "name": "Zeynep \u015eahin Menc\u00fctek",
+          "openalex_id": "A5087673676",
+          "orcid": "https://orcid.org/0000-0002-6676-8579",
+          "institutions": [
+            "University of Duisburg-Essen"
+          ]
+        },
+        {
+          "name": "Ayat Nashwan",
+          "openalex_id": "A5024699973",
+          "orcid": "https://orcid.org/0000-0001-7691-9871",
+          "institutions": [
+            "Yarmouk University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-27",
+      "abstract": "Employment is a key issue for refugees, host states, and local communities, whose interests in this area often diverge. Based on an ethnographic qualitative study among Syrian refugees and Jordanian citizens, this research sheds much-needed light on the dynamics of employment of refugees in Jordan. Research findings demonstrate how Syrian refugees work in both the formal and informal sectors of the labor market with an emphasis on legal precarity, job insecurity, poor working conditions, and workplace discrimination. Refugee women face additional challenges due to gender roles and cultural sensitivities. Employment also brings opportunities to refugees with regards to access to sustainable livelihoods, self-sufficiency, socialization, and regaining of the sense of dignity. Growing Syrian refugee employment in Jordan makes an urgent need for social workers to focus their efforts on addressing work-related problems and making advancements benefiting refugees, host communities, and policymakers.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "Journal of Ethnic & Cultural Diversity in Social Work",
+        "type": "journal",
+        "issn": [
+          "1531-3204",
+          "1531-3212"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Migration and Labor Dynamics",
+        "Middle East Politics and Society",
+        "Migration, Health and Trauma"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W3017499265"
+    },
+    {
+      "openalex_id": "W4242728803",
+      "doi": "10.36019/9780813565613",
+      "title": "Styling Masculinity",
+      "authors": [
+        {
+          "name": "Kristen Barber",
+          "openalex_id": "A5001564554"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-22",
+      "abstract": "The twenty-first century has seen the emergence of a new style of man: the metrosexual. Overwhelmingly straight, white, and wealthy, these impeccably coiffed urban professionals spend big money on everything from facials to pedicures, all part of a multi-billion-dollar male grooming industry. Yet as this innovative study reveals, even as the industry encourages men to invest more in their appearance, it still relies on women to do much of the work. Styling Masculinity investigates how men's beauty salons have persuaded their clientele to regard them as masculine spaces. To answer this question, sociologist Kristen Barber goes inside Adonis and The Executive, two upscale men's salons in Southern California. Conducting detailed observations and extensive interviews with both customers and employees, she shows how female salon workers not only perform the physical labor of snipping, tweezing, waxing, and exfoliating, but also perform the emotional labor of pampering their clients and pumping up their masculine egos. Letting salon employees tell their own stories, Barber not only documents occasions when these workers are objectified and demeaned, but also explores how their jobs allow for creativity and confer a degree of professional dignity. In the process, she traces the vast network of economic and social relations that undergird the burgeoning male beauty industry.",
+      "cited_by_count": 35,
+      "type": "book",
+      "source": {
+        "name": "Rutgers University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Gender, Feminism, and Media",
+        "Gender Roles and Identity Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4242728803"
+    },
+    {
+      "openalex_id": "W67880282",
+      "doi": "10.11648/j.ijsspe.20180301.11",
+      "title": "A Review on Child Labour Criticism in Bangladesh: An Analysis",
+      "authors": [
+        {
+          "name": "Md. Kamruzzaman",
+          "openalex_id": "A5062486239",
+          "orcid": "https://orcid.org/0000-0002-2595-0876",
+          "institutions": [
+            "Islamic University",
+            "University of Dhaka",
+            "Mawlana Bhashani Science and Technology University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "Child labor is a common practice in developing countries. Child labor is defined as work that deprives children of their childhood, their potential and dignity as an emerging social threat increasing at an alarming rate. The statistical secondary data analysis method was used in this study to estimate the causes and different types of victimization trend on child at workplace in Bangladesh. The authors have experienced that the child are now working in multidimensional sectors like agriculture, service sector, industry, construction, domestic work, transport etc for their hand to mouth. They are forced to perform more than one shift duty a day keeping contradiction with the ILO regulations in this connection. They are on the different kinds of workplace victimization where physical abuse, health injury, economical exploitation and sexual abuse are on the top rank. There is no headache on their educational deprivation in our ongoing society.",
+      "cited_by_count": 14,
+      "type": "review",
+      "source": {
+        "name": "International Journal of Sports Science and Physical Education",
+        "type": "journal",
+        "issn": [
+          "2575-1611",
+          "2575-226X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://article.sciencepublishinggroup.com/pdf/10.11648.j.ijsspe.20180301.11.pdf"
+      },
+      "topics": [
+        "Poverty, Education, and Child Welfare"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W67880282"
+    },
+    {
+      "openalex_id": "W4212941576",
+      "doi": "10.1093/oso/9780190691288.001.0001",
+      "title": "Left to Our Own Devices",
+      "authors": [
+        {
+          "name": "Julia Ticona",
+          "openalex_id": "A5013923574",
+          "orcid": "https://orcid.org/0000-0002-8923-1969",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-02-16",
+      "abstract": "Abstract Over the past three decades, digital technologies like smartphones and laptops have transformed the way we work in the United States. Over the same period of time, workers at the top and the bottom of the income ladder have experienced rising levels of job insecurity and anxiety about their economic futures. Despite this connection, we rarely link our everyday technology problems to our economic climate. Left to Our Own Devices explores the ways that workers use their digital technologies to navigate insecure and flexible labor markets. Through one hundred interviews with high- and low-wage precarious workers across the United States, the book explores the surprisingly similar \u201cdigital hustles\u201d they use to find work and maintain a sense of dignity and identity. However, although they shared similar practices, the digital hustle ultimately reproduces inequalities between workers at either end of polarized labor markets. The terms on which workers are included into the digital economy are marked by stark differences in power and privilege. Instead of a cognitive or individualistic approach to our \u201caddictions\u201d to technology, this book explains that our technologies must be understood as essential tools to cope with insecurity and manage the new risks that have emerged in the wake of the Great Recession and the crumbling social contract between employers and employees. In an economic climate characterized by unraveling social safety nets, workers use their devices to weave their own.",
+      "cited_by_count": 27,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Digital Economy and Work Transformation",
+        "Youth Education and Societal Dynamics",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 200,
+      "url": "https://openalex.org/W4212941576"
+    },
+    {
+      "openalex_id": "W2791857731",
+      "doi": "10.1111/amet.12600",
+      "title": "In search of dignified work: Gender and the work ethic in the crucible of fair trade production",
+      "authors": [
+        {
+          "name": "Josh Fisher",
+          "openalex_id": "A5021420525",
+          "orcid": "https://orcid.org/0000-0002-5954-7989",
+          "institutions": [
+            "Western Washington University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-01",
+      "abstract": "ABSTRACT After building the first worker\u2010owned free trade zone in the world, the women of the Fair Trade Zone in Ciudad Sandino, Nicaragua, rejected fair trade and elected to go their own way. The small cooperative's decision, as well as their claim to be seeking \u201cdignified work\u201d ( trabajo digno ), does not express the existing norms and conventions of a local moral economy. Rather, it stems from an alternative work ethic that was formed through their particular experiences of fair trade production\u2014one that rejected the logic of reproducing capital at the expense of social life and sought to preserve their workplace as a forum for dignity. Here, alternative work ethics unleash the inventive play of ethical labor and give rise to unruly subjects. [ gender , labor , the work ethic , cooperatives , development , fair trade , Nicaragua ]",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "American Ethnologist",
+        "type": "journal",
+        "issn": [
+          "0094-0496",
+          "1548-1425"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global trade, sustainability, and social impact",
+        "Digital Economy and Work Transformation",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W2791857731"
+    },
+    {
+      "openalex_id": "W2999922411",
+      "doi": "10.1080/02723638.2020.1712121",
+      "title": "\u201cBlack Workers Matter\u201d: Black labor geographies and uneven redevelopment in post-Katrina New Orleans",
+      "authors": [
+        {
+          "name": "Caroline Keegan",
+          "openalex_id": "A5055288059",
+          "orcid": "https://orcid.org/0000-0002-8227-5555",
+          "institutions": [
+            "University of Georgia"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-07",
+      "abstract": "For low-wage, predominantly Black workers in the city of New Orleans, post-Hurricane Katrina redevelopments constructing the \"New New Orleans\" present revanchist spatial configurations of uneven development. Black workers are relegated to industries characterized by precarious, discriminatory, and low-paying jobs building and supporting an upscale, and tourist-focused economic infrastructure. These emerging social relations are embedded in, and have evolved out of, a longstanding \"plantation tradition\" of racial and economic subjugation of Black labor. Understanding the redevelopment of New Orleans as a continuation of a \"plantation logic,\" in conversation with geographical discussions of labor, this paper investigates Black labor geographies in the so-called \"New New Orleans\". The paper is based on interviews and participant observation with members and organizers of Stand with Dignity, part of the New Orleans Workers' Center for Racial Justice (NOWCRJ), which focuses on the concerns of un- and underemployed Black workers. Drawing on narratives of resistance, this research shows how the uneven development of (work)places has been met by demands for a New Orleans in which \"Black Workers Matter.\"",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Urban Geography",
+        "type": "journal",
+        "issn": [
+          "0272-3638",
+          "1938-2847"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Environmental Justice and Health Disparities",
+        "Homelessness and Social Issues",
+        "Urban Planning and Governance"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2999922411"
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

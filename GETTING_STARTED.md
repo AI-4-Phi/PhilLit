@@ -43,7 +43,7 @@ OPENALEX_EMAIL=your@email.com
 Clone this repository 
 
 ```bash
-git clone https://github.com/phil-reasoning-lab/PhilReview.git
+git clone https://github.com/AI-4-Phi/PhilReview.git
 ```
 ### Environment Setup
 

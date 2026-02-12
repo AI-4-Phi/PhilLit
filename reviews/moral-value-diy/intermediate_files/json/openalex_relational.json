@@ -1,0 +1,1451 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "relational autonomy feminist",
+  "results": [
+    {
+      "openalex_id": "W2806113162",
+      "doi": "10.1016/j.wsif.2018.05.003",
+      "title": "Feminist innovation in philosophy: Relational autonomy and social justice",
+      "authors": [
+        {
+          "name": "Catriona Mackenzie",
+          "openalex_id": "A5065983696",
+          "orcid": "https://orcid.org/0000-0002-3222-0257",
+          "institutions": [
+            "Macquarie University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-30",
+      "abstract": null,
+      "cited_by_count": 106,
+      "type": "article",
+      "source": {
+        "name": "Women s Studies International Forum",
+        "type": "journal",
+        "issn": [
+          "0277-5395",
+          "1879-243X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Political Philosophy and Ethics",
+        "Feminism, Gender, and Sexuality Studies"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W2806113162"
+    },
+    {
+      "openalex_id": "W3030904127",
+      "doi": "10.1163/17455243-20203085",
+      "title": "The Feminist Case Against Relational Autonomy",
+      "authors": [
+        {
+          "name": "Serene J. Khader",
+          "openalex_id": "A5064816573",
+          "orcid": "https://orcid.org/0000-0001-9502-1952",
+          "institutions": [
+            "The Graduate Center, CUNY",
+            "Brooklyn College"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-05-31",
+      "abstract": "Abstract Feminist socially constitutive conceptions of autonomy make the presence of idealized social conditions necessary for autonomy. I argue that such conceptions cannot, when applied under nonideal conditions, play two key feminist theoretical roles for autonomy: the roles of anti-oppressive character ideal and paternalism-limiting concept. Instead, they prescribe action that reinforces oppression. Treated as character ideals, socially constitutive conceptions of autonomy ask agents living under nonideal ones to engage in self-harm or self-subordination. Moreover, conceptions of autonomy that make idealized social conditions a requirement of autonomy yield the conclusion that oppressed agents are appropriate objects of paternalism.",
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Journal of Moral Philosophy",
+        "type": "journal",
+        "issn": [
+          "1740-4681",
+          "1745-5243"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://brill.com/downloadpdf/journals/jmp/17/5/article-p499_499.pdf"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Feminist Epistemology and Gender Studies",
+        "Feminism, Gender, and Sexuality Studies"
+      ],
+      "referenced_works_count": 62,
+      "url": "https://openalex.org/W3030904127"
+    },
+    {
+      "openalex_id": "W3211411467",
+      "doi": "10.4324/9781003016885-7",
+      "title": "Relational autonomy in feminist bioethics",
+      "authors": [
+        {
+          "name": "Natalie Stoljar",
+          "openalex_id": "A5036648911",
+          "orcid": "https://orcid.org/0000-0001-5068-041X"
+        },
+        {
+          "name": "Catriona Mackenzie",
+          "openalex_id": "A5065983696",
+          "orcid": "https://orcid.org/0000-0002-3222-0257",
+          "institutions": [
+            "McGill University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-24",
+      "abstract": "This chapter outlines the feminist approach of relational autonomy. It argues against both decisional conceptions of autonomy, which are based on informed consent, and libertarian conceptions of autonomy. These conceptions fail to explain the ways in which gender norms and oppressive social conditions potentially hamper the development of autonomy skills and affect women\u2019s decision-making. The chapter also examines the notions of adaptive preference and exploitation in the light of relational autonomy. It concludes that decisional and libertarian conceptions are inadequate to capture feminist moral concerns and that the ethical principle that should be employed in bioethics is respect for relational autonomy. The chapter also briefly discusses a possible objection, that the principle of respect for relational autonomy is too demanding to be practicable in healthcare contexts.",
+      "cited_by_count": 27,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3211411467"
+    },
+    {
+      "openalex_id": "W3016987211",
+      "doi": "10.1017/hyp.2020.4",
+      "title": "Toward a Relational Approach? Common Models of Pious Women's Agency and Pious Feminist Autonomy in Turkey",
+      "authors": [
+        {
+          "name": "P\u0131nar Dokumac\u0131",
+          "openalex_id": "A5021455950",
+          "orcid": "https://orcid.org/0000-0001-6320-6151",
+          "institutions": [
+            "University of York"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "Abstract This article reviews the common models of pious women's agency in the literature with respect to pious feminist perceptions in Turkey, and calls for a relational approach to subjectivity and autonomy. After critically assessing individualistic models of pious women's autonomy as well as the main theoretical tenets of Saba Mahmood's landmark study on the women's piety movement in Egypt, I argue that previous models cannot fully explain the second stage of pious subjectivity-formation in the pious feminist narratives in Turkey, which combines habituation with informed choice. In the intersection of applied theory and ethnographic empirical research, my study posits the need for a relational reformulation of these common models that can account for (1) self-constitutive engagement with multiple discursive traditions, and (2) the importance of complex and interrelated webs of relationships. I suggest that Jennifer Nedelsky's relational self and relational autonomy and Kenneth Gergen's relational multi-being might provide a starting point for such an approach.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Hypatia",
+        "type": "journal",
+        "issn": [
+          "0887-5367",
+          "1527-2001"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Turkey's Politics and Society",
+        "Jewish and Middle Eastern Studies",
+        "Islamic Studies and History"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W3016987211"
+    },
+    {
+      "openalex_id": "W4407980028",
+      "doi": "10.13109/gege.2023.49.4.585",
+      "title": "Relationale Autonomie. Feministische Therapie und politische Subjektivierung in den 1980er Jahren / Relational autonomy. Feminist therapy and political subjectification in the 1980s",
+      "authors": [
+        {
+          "name": "Ulrike Kl\u00f6ppel",
+          "openalex_id": "A5019994899"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-01",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Geschichte und Gesellschaft",
+        "type": "journal",
+        "issn": [
+          "0340-613X",
+          "2196-9000"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W4407980028"
+    },
+    {
+      "openalex_id": "W3135363695",
+      "doi": "10.4324/9781315582207-23",
+      "title": "This Is Not Your Father\u2019s Autonomy: Lesbian and Gay Rights From a Feminist and Relational Perspective",
+      "authors": [
+        {
+          "name": "Laura T. Kessler",
+          "openalex_id": "A5065873561",
+          "orcid": "https://orcid.org/0000-0003-0568-4555"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-15",
+      "abstract": null,
+      "cited_by_count": 5,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "LGBTQ Health, Identity, and Policy",
+        "African Sexualities and LGBTQ+ Issues"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3135363695"
+    },
+    {
+      "openalex_id": "W2479473361",
+      "doi": "10.4324/9780429500466-3",
+      "title": "two Autonomy and Social Relationships Rethinking the Feminist Critique",
+      "authors": [
+        {
+          "name": "Marilyn Friedman",
+          "openalex_id": "A5004279712",
+          "orcid": "https://orcid.org/0000-0003-1300-3991"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-08",
+      "abstract": "Recent feminist philosophy has engaged in a love-hate relationship with autonomy. In the 1970s, feminists praised the ideal of autonomy and extolled its liberatory potential for women. Some feminists in the 1980s began recommending a relational concept of autonomy, one that treats social relationships and human community as central to the realization of autonomy. The 1990s, accordingly, are witnessing a renewed feminist interest in autonomy, but as relationally conceived. This chapter discusses prominent feminist writings that call for a relational conception of autonomy and that criticize the philosophical mainstream for lacking such an account. It shows that prominent mainstream accounts of autonomy do acknowledge the importance of social relationships, thus tending to converge on this point with the prevalent feminist view. Feminists have explored the resources available to caregivers, especially female caregivers, for realizing their own autonomy.",
+      "cited_by_count": 62,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Feminist Epistemology and Gender Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2479473361"
+    },
+    {
+      "openalex_id": "W1776440064",
+      "doi": "10.1016/j.ijlp.2015.04.010",
+      "title": "Relationships, autonomy and legal capacity: Mental capacity and support paradigms",
+      "authors": [
+        {
+          "name": "Lucy Series",
+          "openalex_id": "A5091452315",
+          "orcid": "https://orcid.org/0000-0003-0173-8165",
+          "institutions": [
+            "Cardiff University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-01",
+      "abstract": null,
+      "cited_by_count": 143,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Law and Psychiatry",
+        "type": "journal",
+        "issn": [
+          "0160-2527",
+          "1873-6386"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Healthcare Decision-Making and Restraints",
+        "Multicultural Socio-Legal Studies",
+        "Homicide, Infanticide, and Child Abuse"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W1776440064"
+    },
+    {
+      "openalex_id": "W2287475835",
+      "doi": "10.1177/0263775815622211",
+      "title": "Feeling precarious: Millennial women and work",
+      "authors": [
+        {
+          "name": "Nancy Worth",
+          "openalex_id": "A5077278125",
+          "orcid": "https://orcid.org/0000-0002-2379-526X",
+          "institutions": [
+            "York University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-20",
+      "abstract": "In Precarious Life (2004), Judith Butler writes about how a shared sense of fear and vulnerability opens the possibility of recognizing interdependency. This is a wider understanding of precarity than is often present in human geography \u2013 recognizing the consequences and possibilities of feeling precarious. Focusing on work and the workplace, I examine the working life stories of millennial women in Canada, a labour market where unemployment and underemployment are common experiences for young workers. Using work narratives of insecurity, I argue that one potential consequence of understanding precariousness is the recognition of our social selves, using millennial women\u2019s stories of mutual reliance and connection with parents, partners and friends to contrast assumptions of the individualizing, neoliberal, Gen Y worker. I use a feminist understanding of agency and autonomy to argue that young women\u2019s stories about work are anything but individual experiences of flexibility or precarity \u2013 instead, I explain how relationships play a critical role in worker agency and whether work feels flexible or precarious. Overall I consider what a feminist theorizing of interdependence and precariousness offers geography, emphasizing the importance of subjectivity and relationality.",
+      "cited_by_count": 77,
+      "type": "article",
+      "source": {
+        "name": "Environment and Planning D Society and Space",
+        "type": "journal",
+        "issn": [
+          "0263-7758",
+          "1472-3433"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://yorkspace.library.yorku.ca/bitstreams/49bddb36-54dd-427a-936d-05d64f102f45/download"
+      },
+      "topics": [
+        "Youth Education and Societal Dynamics",
+        "Employment and Welfare Studies",
+        "Rural development and sustainability"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W2287475835"
+    },
+    {
+      "openalex_id": "W4398179803",
+      "doi": "10.1017/hyp.2024.29",
+      "title": "How Progressive are Multidimensional Accounts of Autonomy? Transnational Feminist-Friendly Amendments and a Critical Intersectional Relational Autonomy",
+      "authors": [
+        {
+          "name": "Herjeet Marway",
+          "openalex_id": "A5083081635",
+          "orcid": "https://orcid.org/0000-0003-2783-899X",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Abstract \u201cMultidimensional\u201d accounts of autonomy offer multiple, rather than unitary, dimensions along which to measure autonomy. Such accounts are significant developments in the literature and help generate nuanced, degree-based frameworks. However, transnational feminists\u2014those theorizing feminism in light of (post)colonialism and global neoliberalism\u2014may raise concerns about multidimensional accounts for women in the Global South. For instance, there may be worries about the generalized focus and implicit individualism that still lurks. Sympathetic to both non-unitary autonomy and transnational feminist projects, I argue that multidimensional accounts can be salvaged from such critiques with two amendments. First, they can adopt what I label a \u201ccritical\u201d relational framing, and second, they can include intersectional identities. Using commercial surrogates in India as an example, I show how these amendments to multidimensional theories might better serve these women of color, and indeed all persons.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Hypatia",
+        "type": "journal",
+        "issn": [
+          "0887-5367",
+          "1527-2001"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9F346DAB9079A015E73602C29AA5E273/S0887536724000291a.pdf/div-class-title-how-progressive-are-multidimensional-accounts-of-autonomy-transnational-feminist-friendly-amendments-and-a-critical-intersectional-relational-autonomy-div.pdf"
+      },
+      "topics": [
+        "Reproductive Health and Technologies",
+        "LGBTQ Health, Identity, and Policy",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W4398179803"
+    },
+    {
+      "openalex_id": "W2598049941",
+      "doi": "10.3138/ijfab.10.1.7",
+      "title": "Whither Bioethics Now? The Promise of Relational Theory",
+      "authors": [
+        {
+          "name": "Susan Sherwin",
+          "openalex_id": "A5004443073"
+        },
+        {
+          "name": "Katie Stockdale",
+          "openalex_id": "A5040737228",
+          "orcid": "https://orcid.org/0000-0002-1609-1440"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-01",
+      "abstract": "This article reflects on the work of feminist bioethicists over the past ten years, reviewing how effective feminists have been in using relational theory to reorient bioethics and where we hope it will go from here. Feminist bioethicists have made significant achievements using relational theory to shape the notion of autonomy, bringing to light the relevance of patients' social circumstances and where they are situated within systems of privilege and oppression. But there is much work to be done to reorient bioethics so that it is capable of addressing some current public health challenges. We argue that relational theory holds promise for beginning this work.",
+      "cited_by_count": 68,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Feminist Approaches to Bioethics",
+        "type": "journal",
+        "issn": [
+          "1937-4577",
+          "1937-4585"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics in Clinical Research",
+        "Patient Dignity and Privacy"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W2598049941"
+    },
+    {
+      "openalex_id": "W2950674718",
+      "doi": "10.1080/0969725x.2019.1620461",
+      "title": "BETWEEN AN ETHIC OF CARE AND AN ETHIC OF AUTONOMY",
+      "authors": [
+        {
+          "name": "Laura Davy",
+          "openalex_id": "A5008031941",
+          "orcid": "https://orcid.org/0000-0003-0240-3586",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-04",
+      "abstract": "In this article I review the contested terrain of relationality, dependency and care within contemporary disability studies and feminist care theory. I begin and end with short personal narratives centring on my relationship with my sister, who has an intellectual disability. These stories are my point of departure in exploring the article's central theme \u2013 that the agency and autonomy of individual persons only emerges relationally, through the support and enablement of others. I argue that the concept of relational autonomy, which seeks to reconcile an understanding of our constitutive relationality with a respect for individuality, offers a way of thinking through the tensions between care ethics and disability studies productively. In the concept of relational autonomy that I propose, neither autonomy nor care is privileged, but both are placed in service of the other: autonomy cannot be enabled without care, and care cannot be enabling without respect for autonomy. The article concludes with a discussion of representation and the problem of appropriating the other's voice, an area where the question of the dichotomy between dependency and autonomy is particularly pronounced. Looking at the ways in which voice can be supported and enabled through relational forms of representation, I demonstrate how relational autonomy works as a lived dynamic, highlighting the sorts of caring practices and relationships that foster rather than stifle personal autonomy, and the need for greater support from wider social and political institutions to allow these practices and relationships to flourish.",
+      "cited_by_count": 57,
+      "type": "article",
+      "source": {
+        "name": "Angelaki",
+        "type": "journal",
+        "issn": [
+          "0969-725X",
+          "1469-2899"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Foucault, Power, and Ethics",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W2950674718"
+    },
+    {
+      "openalex_id": "W3182390178",
+      "doi": null,
+      "title": "Somatic Oppression and Relational Autonomy: Revisiting Medical Aid in Dying through a Feminist Lens",
+      "authors": [
+        {
+          "name": "Jonas-S\u00e9bastien Beaudry",
+          "openalex_id": "A5022851870",
+          "orcid": "https://orcid.org/0000-0001-5798-271X",
+          "institutions": [
+            "McGill University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-30",
+      "abstract": "Drawing upon disability studies and theories of relational autonomy, this essay illustrates how somatic oppression may affect one\u2019s autonomy \u2014 conceptualized as a socially contextualized competency \u2014 in the context of Medical Aid in Dying (MAiD), in ways that are not captured by current safeguards focused on protecting free and informed consent. From a relational standpoint, securing free and informed consent fails to protect individual autonomy, and instead we need to examine how medical and social relationships, practices, and institutions can hinder or enable the development and practice of autonomy. I conclude that oppression poses a credible threat to the autonomy of MAiD patients and thus warrants further attention.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3813361"
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Mental Health and Patient Involvement",
+        "Feminism, Gender, and Sexuality Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3182390178"
+    },
+    {
+      "openalex_id": "W2736754769",
+      "doi": "10.4324/9781315758152-19",
+      "title": "Personal Identity and Relational Selves",
+      "authors": [
+        {
+          "name": "Susan J. Brison",
+          "openalex_id": "A5029741498"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-19",
+      "abstract": "Feminist theorists have articulated, elaborated, and defended the view that the self is essentially relational in a variety of new ways in several philosophical subfields. While much feminist writing about the relational self has come in response to the individualism of the liberal political ideal of autonomy, different theories of the relational self have been developed for different philosophical purposes. Women and people of color have, historically, not been the ones doing the philosophizing and have been either left out or viewed as \"other\" and devalued to the extent people were seen as deviating from the norm. In ethics, as well as in social, political, and legal philosophy, the relational self has been defended as an alternative to what Lorraine Code has dubbed \"autonomous man\" who \"is the undoubted hero of philosophical moral and political discourse\". Traditional philosophy of mind has presupposed an individualistic view of the self.",
+      "cited_by_count": 51,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and Theoretical Science",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2736754769"
+    },
+    {
+      "openalex_id": "W2782583430",
+      "doi": "10.1093/oso/9780198810261.001.0001",
+      "title": "Women and Liberty, 1600-1800: Philosophical Essays",
+      "authors": [
+        {
+          "name": "Jacqueline Broad",
+          "openalex_id": "A5042195622",
+          "orcid": "https://orcid.org/0000-0002-3095-6770"
+        },
+        {
+          "name": "Karen Detlefsen",
+          "openalex_id": "A5056706828"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "There have been many different historical-intellectual accounts of the shaping and development of concepts of liberty in pre-Enlightenment Europe. This volume is unique for addressing the subject of liberty principally as it is discussed in the writings of women philosophers, and as it is theorized with respect to women and their lives, during this period. The volume covers ethical, political, metaphysical, and religious notions of liberty, with some chapters discussing women's ideas about the metaphysics of free will, and others examining the topic of women's freedom in their moral and personal lives as well as in the public socio-political domain. In some cases, these topics are situated in relation to the emergence of the concept of autonomy in the late eighteenth century, and in others, with respect to recent feminist theorizing about relational autonomy and internalized oppression. Many of the chapters draw upon a wide range of genres, including polemical texts, poetry, plays, and other forms of fiction, as well as standard philosophical treatises. Taken as a whole, this volume shows how crucial it is to recover the too-long forgotten views of female and women-friendly male philosophers of the seventeenth and eighteenth centuries. In the process of recovering these voices, our understanding of philosophy in the early modern period is not only expanded, but also significantly enhanced, toward a more accurate and gender-inclusive history of our discipline.",
+      "cited_by_count": 102,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "American Constitutional Law and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2782583430"
+    },
+    {
+      "openalex_id": "W2553331921",
+      "doi": "10.22329/wyaj.v32i2.4683",
+      "title": "MORE THAN MEETS THE EYE:\u00a0 RELATIONAL AUTONOMY AND DECISION-MAKING BY ADULTS WITH DEVELOPMENTAL DISABILITIES",
+      "authors": [
+        {
+          "name": "Eniola Salami",
+          "openalex_id": "A5017915206",
+          "institutions": [
+            "University of Calgary"
+          ]
+        },
+        {
+          "name": "Bonnie Lashewicz",
+          "openalex_id": "A5027907427",
+          "orcid": "https://orcid.org/0000-0001-6476-8981",
+          "institutions": [
+            "University of Calgary"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-01",
+      "abstract": "In Canadian law, the concept of autonomy is individualistic in nature, manifest as the capacity, or legal ability of an individual to actively understand the purpose and consequences of their actions according to whether they have faculties to comprehend and weigh risks and benefits. Feminist scholars critique such conceptualizations of autonomy and, instead, argue the importance of \u201crelational autonomy\u201d which is predicated on the view that actions result from one\u2019s own volition in combination with the influence of one\u2019s social and relational connections. In this paper, we examine the dynamics and implications of relational autonomy in decision-making by adults with developmental disabilities by studying adults with developmental disabilities in interaction with their caregiving family members. Our purpose is to contribute understandings of how and in what ways family caregiving relational contexts both support and hinder decision-making by adults with developmental disabilities. We begin with an overview of conceptualizations and applications of autonomy, then illustrate relational autonomy dynamics through comparative analysis of data from two women with developmental disabilities who were interviewed together with their family caregivers about successes and struggles in giving and receiving care and making decisions. These two women, and their family caregivers (N=9) are selected from a larger sample of adults with developmental disabilities and their family caregivers (N = 26) because the contrasts, as well as the similarities, between their family care situations are striking, and taken together, illustrate a range of ways in which decision-making is supported and hindered. We conclude by upholding the importance of relational autonomy for legal understandings of decision-making, yet we caution that critical examination of relationship dynamics is vital.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "Windsor Yearbook of Access to Justice",
+        "type": "journal",
+        "issn": [
+          "0710-0841",
+          "2561-5017"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://wyaj.uwindsor.ca/index.php/wyaj/article/download/4683/3967"
+      },
+      "topics": [
+        "Multicultural Socio-Legal Studies",
+        "Disability Rights and Representation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2553331921"
+    },
+    {
+      "openalex_id": "W4379646968",
+      "doi": "10.1111/phc3.12916",
+      "title": "Relational approaches to personal autonomy",
+      "authors": [
+        {
+          "name": "Ji Young Lee",
+          "openalex_id": "A5043898546",
+          "orcid": "https://orcid.org/0000-0003-1573-7139",
+          "institutions": [
+            "University College Copenhagen",
+            "University of Copenhagen",
+            "IT University of Copenhagen"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-30",
+      "abstract": "Abstract Individualistic traditions of autonomy have long been critiqued by feminists for their atomistic and asocial presentation of human agents. Relational approaches to autonomy were developed as an alternative to these views. Relational accounts generally capture a more socially informed picture of human agents, and aim to differentiate between social phenomena that are conducive to our agency versus those that pose a hindrance to our agency. In this article, I explore the various relational conceptualizations of autonomy profferred to date. I critically review some of the ongoing internal disputes within the relational autonomy literature, and conclude the article by taking stock of the value of relational autonomy despite these unresolved debates.",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "Philosophy Compass",
+        "type": "journal",
+        "issn": [
+          "1747-9991"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/phc3.12916"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Ethics in medical practice",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W4379646968"
+    },
+    {
+      "openalex_id": "W3033410427",
+      "doi": "10.1159/000509119",
+      "title": "Principles of Clinical Ethics and Their Application to Practice",
+      "authors": [
+        {
+          "name": "Basil Varkey",
+          "openalex_id": "A5043317564",
+          "institutions": [
+            "Medical College of Wisconsin"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-04",
+      "abstract": "An overview of ethics and clinical ethics is presented in this review. The 4 main ethical principles, that is beneficence, nonmaleficence, autonomy, and justice, are defined and explained. Informed consent, truth-telling, and confidentiality spring from the principle of autonomy, and each of them is discussed. In patient care situations, not infrequently, there are conflicts between ethical principles (especially between beneficence and autonomy). A four-pronged systematic approach to ethical problem-solving and several illustrative cases of conflicts are presented. Comments following the cases highlight the ethical principles involved and clarify the resolution of these conflicts. A model for patient care, with caring as its central element, that integrates ethical aspects (intertwined with professionalism) with clinical and technical expertise desired of a physician is illustrated.",
+      "cited_by_count": 953,
+      "type": "review",
+      "source": {
+        "name": "Medical Principles and Practice",
+        "type": "journal",
+        "issn": [
+          "1011-7571",
+          "1423-0151"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.karger.com/Article/Pdf/509119"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Palliative Care and End-of-Life Issues",
+        "Patient Dignity and Privacy"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W3033410427"
+    },
+    {
+      "openalex_id": "W2945000833",
+      "doi": "10.1177/0969733019848031",
+      "title": "Advance care planning with chronically ill patients: A relational autonomy approach",
+      "authors": [
+        {
+          "name": "Tieghan Killackey",
+          "openalex_id": "A5032903474",
+          "orcid": "https://orcid.org/0000-0003-2941-4058",
+          "institutions": [
+            "University Health Network",
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Elizabeth Peter",
+          "openalex_id": "A5082767224",
+          "orcid": "https://orcid.org/0000-0002-8155-216X",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Jane MacIver",
+          "openalex_id": "A5035544270",
+          "orcid": "https://orcid.org/0000-0002-5706-6399",
+          "institutions": [
+            "University of Toronto",
+            "University Health Network"
+          ]
+        },
+        {
+          "name": "Shan Mohammed",
+          "openalex_id": "A5022991649",
+          "orcid": "https://orcid.org/0000-0003-0889-2229",
+          "institutions": [
+            "University of Toronto"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-23",
+      "abstract": "Advance care planning is a process that encourages people to identify their values, to reflect upon the meanings and consequences of serious illness, to define goals and preferences for future medical treatment and care, and to discuss these goals with family and health-care providers. Advance care planning is especially important for those who are chronically ill, as patients and their families face a variety of complex healthcare decisions. Participating in advance care planning has been associated with improved outcomes; yet, despite over 25 years of public awareness campaigns, research, and interventions developed to increase participation, advance care planning completion rates for people with chronic illnesses are no different than those in the general public (approximately 25%). Advance care planning has traditionally used an individualistic approach to autonomy, which puts forward an understanding of agents as independent, rational and self-interested persons. Because this individualistic approach has been largely unsuccessful in improving advance care planning uptake, a re-examination of the philosophical underpinnings of this practice and an exploration of alternative frameworks is warranted. In offering this exploration, we briefly outline two current perspectives on autonomy: the individualistic view and the relational view as articulated by feminist philosophers. Using a critical examination of the theoretical and empirical work on this topic, we argue that the individualistic view of autonomy does not sufficiently capture the relational and social complexities of the decision-making process of advance care planning. To offer a counterpoint, we examine the relational view of autonomy and suggest that this perspective is better aligned with the process of advance care planning. Specifically, we demonstrate that a relational model of autonomy is well suited to exploring advance care planning for four main reasons: (1) it recognizes the importance of relationships, (2) it reflects the fluctuating nature of autonomy in chronic illness, (3) it recognizes vulnerability, and (4) it is consonant with empirical work examining the advance care planning process.",
+      "cited_by_count": 58,
+      "type": "article",
+      "source": {
+        "name": "Nursing Ethics",
+        "type": "journal",
+        "issn": [
+          "0969-7330",
+          "1477-0989"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Palliative Care and End-of-Life Issues",
+        "Family and Patient Care in Intensive Care Units",
+        "Patient Dignity and Privacy"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W2945000833"
+    },
+    {
+      "openalex_id": "W2550637040",
+      "doi": "10.1093/acprof:oso/9780198766841.001.0001",
+      "title": "The Social and Political Philosophy of Mary Wollstonecraft",
+      "authors": [
+        {
+          "name": "Berges, Sandrine",
+          "openalex_id": ""
+        },
+        {
+          "name": "Coffee, Alan M. S. J.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-24",
+      "abstract": "Abstract Interest in the contribution made by women to the history of philosophy is burgeoning and intense research is underway to recover their works, many of which have been lost or overlooked. At the forefront of this revival is interest in the works of Mary Wollstonecraft. While she has long been studied by feminists and later discovered by political scientists, philosophers have only recently begun to recognize the value of her work for their discipline. This volume brings together current leading scholarship that introduces readers to Wollstonecraft\u2019s range as a moral and political philosopher of note, taking both a historical perspective and applying her thinking to current academic debates. Subjects include Wollstonecraft\u2019s ideas on love and respect, friendship and marriage, motherhood, property in the person, and virtue and the emotions, as well as the application her thought has for current thinking on relational autonomy, and animal and children\u2019s rights. A major theme of the book places her within the republican tradition of political theory and analyses the contribution she makes to its conceptual resources.",
+      "cited_by_count": 94,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion, Gender, and Enlightenment",
+        "American Constitutional Law and Politics"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W2550637040"
+    },
+    {
+      "openalex_id": "W2805680718",
+      "doi": "10.1080/1369118x.2018.1478982",
+      "title": "Relational privacy and the networked governance of the self",
+      "authors": [
+        {
+          "name": "Sara Bannerman",
+          "openalex_id": "A5001191352",
+          "orcid": "https://orcid.org/0000-0002-2295-3254",
+          "institutions": [
+            "McMaster University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-29",
+      "abstract": "The self today is networked, and governed through networks. This paper examines the four functions of privacy as set out by privacy theorist Alan Westin [1967. Privacy and freedom. New York: Atheneum] and works to construct a revised view of the functions of privacy in a networked world by drawing on feminist theories of relationality. Many basic ideas about privacy, drawn from the Western liberal tradition, have been challenged, redrawn, and re-conceptualized by feminist philosophers of relationality. In section one, this paper defines the 'networked governance of the self' and outlines the feminist relational approach, drawing the concepts of networked governance and relationality together. In section two, the paper elaborates a relational perspective on networked privacy, set up against Westin's traditional formulation of the roles that privacy plays in democratic society. According to Westin, privacy (1) provides a realm of personal autonomy; (2) creates opportunities for emotional release; (3) permits a zone of self-evaluation; and (4) permits limited and protected forms of communication. The paper elaborates a relational perspective on the functions of privacy, emphasizing the importance of relational privacy to the networked governance of the self.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "Information Communication & Society",
+        "type": "journal",
+        "issn": [
+          "1369-118X",
+          "1468-4462"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Gender, Feminism, and Media",
+        "Privacy, Security, and Data Protection",
+        "Psychoanalysis, Philosophy, and Politics"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2805680718"
+    },
+    {
+      "openalex_id": "W2941532251",
+      "doi": "10.1515/9781474419703",
+      "title": "Spinoza and Relational Autonomy : Being with Others",
+      "authors": [
+        {
+          "name": "Aurelia Armstrong",
+          "openalex_id": "A5109899522",
+          "orcid": "https://orcid.org/0000-0002-3830-6043",
+          "institutions": [
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "Keith Green",
+          "openalex_id": "A5102835819",
+          "orcid": "https://orcid.org/0000-0001-5509-1737",
+          "institutions": [
+            "East Tennessee State University"
+          ]
+        },
+        {
+          "name": "Andrea Sangiacomo",
+          "openalex_id": "A5071561899",
+          "orcid": "https://orcid.org/0000-0001-7529-9826"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "Integrates Spinoza's thought into the contemporary debate on interpersonal relationships and individual autonomy13 new essays explore Spinoza's relational account of autonomy and individualityIntegrates different philosophical approaches and styles, both from analytic and continental traditionsBridges the gap between history of philosophy and contemporary debatesContributes to debates across a number of fields, including Spinoza studies, contemporary political philosophy and ethics, feminist philosophy, and the philosophy of actionThe question of how to understand autonomy has emerged as a critical issue in contemporary political philosophy. Feminists and others argue that autonomy cannot be adequately conceived without taking into consideration the ways in which it is shaped by our relationships with others. This collection of 13 new essays shows what Baruch Spinoza can add to our understanding of the relational nature of autonomy. By offering a relational understanding of the nature of individuals centred on the role played by emotions, Spinoza offers not only historical roots for contemporary debates but also broadens the current discussion. At the same time, reading Spinoza as a theorist of relational autonomy underscores the consistency of his overall metaphysical, ethical and political project, which has been clouded by the standard rationalist interpretation of his works.ContributorsAurelia Armstrong, University of QueenslandKeith Green, East Tennessee State UniversityMatthew Kisner, University of South CarolinaMartin Lenz, University of GroningenCatriona Mackenzie, Macquarie UniversityHeidi M. Ravven, Hamilton CollegeUrsula Renz, Alpen-Adria-University-KlagenfurtAndrea Sangiacomo, University of GroningenJustin Steinberg, CUNYEricka Tucker, Marquette UniversityCaroline Williams, Queen Mary University of London",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Marxism and Critical Theory",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2941532251"
+    },
+    {
+      "openalex_id": "W2292257566",
+      "doi": "10.1080/15265161.2015.1120793",
+      "title": "The Porosity of Autonomy: Social and Biological Constitution of the Patient in Biomedicine",
+      "authors": [
+        {
+          "name": "Jonathan Beever",
+          "openalex_id": "A5030979287",
+          "orcid": "https://orcid.org/0000-0002-1748-0202"
+        },
+        {
+          "name": "Nicolae Morar",
+          "openalex_id": "A5055538841",
+          "orcid": "https://orcid.org/0000-0003-2661-3676",
+          "institutions": [
+            "University of Oregon"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-02-01",
+      "abstract": "The nature and role of the patient in biomedicine comprise issues central to bioethical inquiry. Given its developmental history grounded firmly in a backlash against 20th-century cases of egregious human subjects abuse, contemporary medical bioethics has come to rely on a fundamental assumption: the unit of care (and the unit of value) is the autonomous self-directing patient. In this article we examine first the structure of the feminist social critique of autonomy. Then we show that a parallel argument can be made against relational autonomy as well, demonstrating how this second concept of autonomy fails to take sufficiently into account an array of biological determinants, particularly those from microbial biology. Finally, in light of this biological critique, we question whether or to what extent any relevant and meaningful view of autonomy can be recovered in the contemporary landscape of bioethics.",
+      "cited_by_count": 39,
+      "type": "article",
+      "source": {
+        "name": "The American Journal of Bioethics",
+        "type": "journal",
+        "issn": [
+          "1526-5161",
+          "1536-0075"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Biomedical Ethics and Regulation",
+        "Ethics in Clinical Research"
+      ],
+      "referenced_works_count": 84,
+      "url": "https://openalex.org/W2292257566"
+    },
+    {
+      "openalex_id": "W4210387121",
+      "doi": "10.1093/oxfordhb/9780190628925.013.29",
+      "title": "Relational Autonomy",
+      "authors": [
+        {
+          "name": "Catriona Mackenzie",
+          "openalex_id": "A5065983696",
+          "orcid": "https://orcid.org/0000-0002-3222-0257",
+          "institutions": [
+            "Macquarie University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-12",
+      "abstract": "Abstract This chapter offers an account of central issues and themes in feminist philosophical reflections on relational autonomy. Relational theories of autonomy explicate the social dimensions of personal autonomy, as well as the ways its development and exercise can be impaired by social oppression. The chapter outlines debates between internalist and externalist, and procedural and substantive theories of relational autonomy, including discussion of important contributions to these debates over the last two decades. It proposes that a multidimensional analysis of autonomy offers a possible resolution to these debates. Specifically, the chapter argues for the importance of distinguishing self-determination, self-governance, and self-authorization as distinct although causally interacting dimensions of relational autonomy. The advantage of a multidimensional analysis of autonomy is that it does justice to the complexity of the concept, while also clarifying the multifarious ways in which social oppression can impair autonomy.",
+      "cited_by_count": 25,
+      "type": "book-chapter",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Philosophical Ethics and Theory",
+        "Feminist Epistemology and Gender Studies"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W4210387121"
+    },
+    {
+      "openalex_id": "W2967839520",
+      "doi": "10.1080/09687599.2019.1649126",
+      "title": "\u2018Everything is down to the minute\u2019: clock time, crip time and the relational work of self-managing attendant services",
+      "authors": [
+        {
+          "name": "Erika Katzman",
+          "openalex_id": "A5066645876",
+          "orcid": "https://orcid.org/0000-0002-0907-6074",
+          "institutions": [
+            "Western University",
+            "King's University College"
+          ]
+        },
+        {
+          "name": "Elizabeth Anne Kinsella",
+          "openalex_id": "A5074410848",
+          "orcid": "https://orcid.org/0000-0002-7306-7957",
+          "institutions": [
+            "Western University"
+          ]
+        },
+        {
+          "name": "Jessica Polzer",
+          "openalex_id": "A5019422896",
+          "institutions": [
+            "Women's and Gender Studies et Recherches F\u00e9ministes",
+            "Western University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-12",
+      "abstract": "This article presents a key finding from a reflexive ethnographic study of the work disabled people and their support networks do to organize self-managed attendant services: that disabled 'self-managers' and their 'attendant' employees perform relational work to increase autonomy in the context of austerity-driven systemic constraints. Through a temporal lens informed by feminist and disability studies perspectives, 'clock time' was seen to obscure personal resources of energy, time and skill that self-managers and attendants contribute to the performance of relational work. 'Crip time' is explored as an alternative temporal orientation that might meaningfully inform future policy and programme development.",
+      "cited_by_count": 37,
+      "type": "article",
+      "source": {
+        "name": "Disability & Society",
+        "type": "journal",
+        "issn": [
+          "0968-7599",
+          "1360-0508"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Healthcare innovation and challenges",
+        "Employment and Welfare Studies",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 89,
+      "url": "https://openalex.org/W2967839520"
+    },
+    {
+      "openalex_id": "W4281899101",
+      "doi": "10.1111/1468-4446.12947",
+      "title": "Understanding autonomy and relationality in men's lives",
+      "authors": [
+        {
+          "name": "Karla Elliott",
+          "openalex_id": "A5086510898",
+          "orcid": "https://orcid.org/0000-0002-8985-4533",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Steven Roberts",
+          "openalex_id": "A5012978307",
+          "orcid": "https://orcid.org/0000-0003-4000-2257",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Brittany Ralph",
+          "openalex_id": "A5068569501",
+          "orcid": "https://orcid.org/0000-0001-8462-9508",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Brady Robards",
+          "openalex_id": "A5003315058",
+          "orcid": "https://orcid.org/0000-0001-5031-1235",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Michael Savic",
+          "openalex_id": "A5021180683",
+          "orcid": "https://orcid.org/0000-0002-6161-4511",
+          "institutions": [
+            "Monash Medical Centre",
+            "Monash University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-01",
+      "abstract": "Abstract Masculinities scholarship tends toward describing autonomy as bound up with hegemonic masculine ideals such as independence, atomization, and self\u2010sufficiency, without fully delving into the concept of autonomy. This article offers a more in\u2010depth conceptual treatment of autonomy, compared to its more simplified rendering in the literature on the dominant relational conceptualizations of masculinities. In doing so, we follow recent calls to avoid categorizing men according to typologies of masculinity, drawing instead on feminist theorizations of masculine autonomy and relationality to explore how both manifest in men's lives. We draw on a study of men's drinking practices, with our data coming from focus groups with 101 men in metropolitan and regional/rural Victoria, Australia; but the issues we attend to have relevance, and can be an impetus, for further scholarly thinking about autonomy in men's lives well beyond drinking practices, and in other similar industrialized nations. We explore how masculine autonomy remains an influential and harmful discourse, often impeding possibilities for men's greater intimacy, connection and care and reproducing gendered hierarchies. However, we simultaneously highlight how men are inescapably relationally situated, exposing masculine autonomy as a discursive ideal of valorized forms of masculinity rather than an achievable state in practice. We argue that acknowledging how men are relationally embedded and interdependent in practice offers potential avenues for further fostering men's care, intimacy and relationality, and might work toward ameliorating gendered inequalities that see care work and the work of sustaining relational networks disproportionately falling to women and marginalized men.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "0007-1315",
+          "1468-4446"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1468-4446.12947"
+      },
+      "topics": [
+        "Gender Roles and Identity Studies",
+        "Gender Diversity and Inequality",
+        "Gender, Feminism, and Media"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W4281899101"
+    },
+    {
+      "openalex_id": "W4286715562",
+      "doi": "10.1515/9781474419703",
+      "title": "Spinoza and Relational Autonomy",
+      "authors": [
+        {
+          "name": "Aurelia Armstrong",
+          "openalex_id": "A5109899522",
+          "orcid": "https://orcid.org/0000-0002-3830-6043"
+        },
+        {
+          "name": "Keith Green",
+          "openalex_id": "A5102835819",
+          "orcid": "https://orcid.org/0000-0001-5509-1737"
+        },
+        {
+          "name": "Andrea Sangiacomo",
+          "openalex_id": "A5071561899",
+          "orcid": "https://orcid.org/0000-0001-7529-9826"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-28",
+      "abstract": "Integrates Spinoza's thought into the contemporary debate on interpersonal relationships and individual autonomy 13 new essays explore Spinoza's relational account of autonomy and individuality Integrates different philosophical approaches and styles, both from analytic and continental traditions Bridges the gap between history of philosophy and contemporary debates Contributes to debates across a number of fields, including Spinoza studies, contemporary political philosophy and ethics, feminist philosophy, and the philosophy of action The question of how to understand autonomy has emerged as a critical issue in contemporary political philosophy. Feminists and others argue that autonomy cannot be adequately conceived without taking into consideration the ways in which it is shaped by our relationships with others. This collection of 13 new essays shows what Baruch Spinoza can add to our understanding of the relational nature of autonomy. By offering a relational understanding of the nature of individuals centred on the role played by emotions, Spinoza offers not only historical roots for contemporary debates but also broadens the current discussion. At the same time, reading Spinoza as a theorist of relational autonomy underscores the consistency of his overall metaphysical, ethical and political project, which has been clouded by the standard rationalist interpretation of his works. Contributors Aurelia Armstrong , University of Queensland Keith Green , East Tennessee State University Matthew Kisner , University of South Carolina Martin Lenz , University of Groningen Catriona Mackenzie , Macquarie University Heidi M. Ravven , Hamilton College Ursula Renz , Alpen-Adria-University-Klagenfurt Andrea Sangiacomo , University of Groningen Justin Steinberg , CUNY Ericka Tucker , Marquette University Caroline Williams , Queen Mary University of London",
+      "cited_by_count": 22,
+      "type": "book",
+      "source": {
+        "name": "Edinburgh University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Political Theology and Sovereignty",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4286715562"
+    },
+    {
+      "openalex_id": "W2941588343",
+      "doi": "10.1111/nin.12292",
+      "title": "Reconsidering the \u2018self\u2019 in self\u2010management of chronic illness: Lessons from relational autonomy",
+      "authors": [
+        {
+          "name": "Lydia Ould Brahim",
+          "openalex_id": "A5004244508",
+          "orcid": "https://orcid.org/0000-0003-1638-4953",
+          "institutions": [
+            "McGill University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-24",
+      "abstract": "Abstract Self\u2010management is often presented as a panacea for chronic disease care. It plays an important role at the policy level and increasingly guides the delivery of health care services. Self\u2010management approaches to care are founded on traditional individualistic views of autonomy in which the patient is understood as being independent, rational, self\u2010interested, and self\u2010governing. This conceptualization of autonomy has been challenged, particularly by feminist scholars. In this paper I review predominant critiques of self\u2010management and the traditional individualistic view of autonomy. I propose that a relational approach to autonomy, which is premised on social embeddedness and attends to social, political, and material conditions, is a more sound conception of autonomy capable of taking into consideration the complexities of illness experiences. I suggest that integrating a relational perspective of autonomy into self\u2010management will be valuable in guiding its progression and elaborate ways in which self\u2010management research and practice could benefit from incorporating a relational approach to autonomy.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "Nursing Inquiry",
+        "type": "journal",
+        "issn": [
+          "1320-7881",
+          "1440-1800"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Diabetes Management and Education",
+        "Primary Care and Health Outcomes",
+        "Mental Health and Patient Involvement"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W2941588343"
+    },
+    {
+      "openalex_id": "W3000917153",
+      "doi": "10.3138/ijfab.13.2.2020-01-08",
+      "title": "Nondomination and the Limits of Relational Autonomy",
+      "authors": [
+        {
+          "name": "Danielle M. Wenner",
+          "openalex_id": "A5019097155",
+          "orcid": "https://orcid.org/0000-0001-7731-8357"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-22",
+      "abstract": "Relational autonomy theorists attempt to accommodate social embeddedness within a conception of autonomy. These attempts are conceptually messy, at best, and category errors, at worst. Rejecting the liberal conception of autonomy due to feminist concerns is more helpfully answered by the neorepublican notion of freedom as nondomination. The conception of freedom as nondomination captures the values that motivate the relational turn in moral and political theory and does so in a conceptually neater way than attempting to accommodate those concerns in our accounts of autonomy.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Feminist Approaches to Bioethics",
+        "type": "journal",
+        "issn": [
+          "1937-4577",
+          "1937-4585"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Philosophical Ethics and Theory",
+        "Political Theory and Influence"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W3000917153"
+    },
+    {
+      "openalex_id": "W3010586843",
+      "doi": "10.3138/ijfab.13.1.09",
+      "title": "Building Intricate Partnerships with Neurotechnology: Deep Brain Stimulation and Relational Agency",
+      "authors": [
+        {
+          "name": "Timothy Brown",
+          "openalex_id": "A5024105482",
+          "orcid": "https://orcid.org/0000-0003-2294-3176"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-01",
+      "abstract": "Deep Brain Stimulation (DBS) is an FDA-approved treatment for symptoms of motor disorders\u2014with experimental use for psychiatric disorders. DBS, however, causes a variety of side effects. Moral philosophers question DBS\u2019s influence on users\u2019 experiences of authenticity, identity, and/or autonomy. These characterizations of DBS, however, may not make sense of how DBS complicates, rather than simply impedes or bolsters, users\u2019 abilities to exercise agency. Empirical work exploring DBS users\u2019 lived-experiences and feminist accounts of relational autonomy demonstrate that the issues users face are better characterized in terms of the user\u2019s relationship to their stimulator, that is, in terms of \u201crelational agency.\u201d",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Feminist Approaches to Bioethics",
+        "type": "journal",
+        "issn": [
+          "1937-4577",
+          "1937-4585"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neurological disorders and treatments",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Obsessive-Compulsive Spectrum Disorders"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W3010586843"
+    },
+    {
+      "openalex_id": "W2793232153",
+      "doi": "10.1111/hypa.12402",
+      "title": "Islamist Women's Agency and Relational Autonomy",
+      "authors": [
+        {
+          "name": "Ranjoo Seodu Herr",
+          "openalex_id": "A5076909502",
+          "orcid": "https://orcid.org/0000-0003-3684-3686"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "Mainstream conceptions of autonomy have been surreptitiously gender\u2010specific and masculinist. Feminist philosophers have reclaimed autonomy as a feminist value, while retaining its core ideal as self\u2010government, by reconceptualizing it as \u201crelational autonomy.\u201d This article examines whether feminist theories of relational autonomy can adequately illuminate the agency of Islamist women who defend their nonliberal religious values and practices and assiduously attempt to enact them in their daily lives. I focus on two notable feminist theories of relational autonomy advanced by Marina Oshana and Andrea Westlund and apply them to the case of Women's Mosque Movement participants in Egypt. I argue that feminist conceptions of relational autonomy, centered around the ideal of self\u2010government, cannot elucidate the agency of Women's Mosque Movement participants whose normative ideal involves perfecting their moral capacity.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Hypatia",
+        "type": "journal",
+        "issn": [
+          "0887-5367",
+          "1527-2001"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Gender Politics and Representation",
+        "Feminism, Gender, and Sexuality Studies"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2793232153"
+    },
+    {
+      "openalex_id": "W2957505890",
+      "doi": "10.14763/2019.2.1410",
+      "title": "Technology, autonomy, and manipulation",
+      "authors": [
+        {
+          "name": "Daniel Susser",
+          "openalex_id": "A5014693682",
+          "orcid": "https://orcid.org/0000-0003-4534-6200",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Beate Roessler",
+          "openalex_id": "A5059024078",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        },
+        {
+          "name": "Helen Nissenbaum",
+          "openalex_id": "A5011149012",
+          "orcid": "https://orcid.org/0000-0002-6485-6997",
+          "institutions": [
+            "Cornell University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-30",
+      "abstract": "Since 2016, when the Facebook/Cambridge Analytica scandal began to emerge, public concern has grown around the threat of \"online manipulation\". While these worries are familiar to privacy researchers, this paper aims to make them more salient to policymakers\u2014first, by defining \"online manipulation\", thus enabling identification of manipulative practices; and second, by drawing attention to the specific harms online manipulation threatens. We argue that online manipulation is the use of information technology to covertly influence another person's decision-making, by targeting and exploiting their decision-making vulnerabilities. Engaging in such practices can harm individuals by diminishing their economic interests, but its deeper, more insidious harm is its challenge to individual autonomy. We explore this autonomy harm, emphasising its implications for both individuals and society, and we briefly outline some strategies for combating online manipulation and strengthening autonomy in an increasingly digital world.",
+      "cited_by_count": 386,
+      "type": "article",
+      "source": {
+        "name": "Internet Policy Review",
+        "type": "journal",
+        "issn": [
+          "2197-6775"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://policyreview.info/pdf/policyreview-2019-2-1410.pdf"
+      },
+      "topics": [
+        "Privacy-Preserving Technologies in Data"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W2957505890"
+    },
+    {
+      "openalex_id": "W2148974647",
+      "doi": "10.1146/annurev-soc-073014-112142",
+      "title": "Intersectionality's Definitional Dilemmas",
+      "authors": [
+        {
+          "name": "Patr\u00edcia Hill Collins",
+          "openalex_id": "A5006360782",
+          "institutions": [
+            "University of Maryland, College Park"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-04",
+      "abstract": "The term intersectionality references the critical insight that race, class, gender, sexuality, ethnicity, nation, ability, and age operate not as unitary, mutually exclusive entities, but rather as reciprocally constructing phenomena. Despite this general consensus, definitions of what counts as intersectionality are far from clear. In this article, I analyze intersectionality as a knowledge project whose raison d'\u00eatre lies in its attentiveness to power relations and social inequalities. I examine three interdependent sets of concerns: (a) intersectionality as a field of study that is situated within the power relations that it studies; (b) intersectionality as an analytical strategy that provides new angles of vision on social phenomena; and (c) intersectionality as critical praxis that informs social justice projects.",
+      "cited_by_count": 2173,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Sociology",
+        "type": "journal",
+        "issn": [
+          "0360-0572",
+          "1545-2115"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-soc-073014-112142"
+      },
+      "topics": [
+        "LGBTQ Health, Identity, and Policy",
+        "Feminism, Gender, and Sexuality Studies",
+        "Gender Politics and Representation"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W2148974647"
+    },
+    {
+      "openalex_id": "W4236412677",
+      "doi": "10.1093/oxfordhb/9780199328581.013.2",
+      "title": "Agency",
+      "authors": [
+        {
+          "name": "Lois McNay",
+          "openalex_id": "A5050249716",
+          "orcid": "https://orcid.org/0000-0003-1727-5505",
+          "institutions": [
+            "Somerville Hospital",
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-07",
+      "abstract": "Abstract This chapter traces key developments in feminist thought on agency through an underlying tension between the descriptive and normative senses of the term. Feminist theories of agency as relational autonomy displace problematic ideas of sovereignty yet remain entangled in a problematic prescriptivism about the different ways women choose to lead their lives. This adjudicative agenda is overcome in feminist theories of agency as resistance that are grounded in less prescriptive ideas of emancipatory action as subversion from within. These, in turn, are subject to the criticism that resistance is a peculiarly Western preoccupation that leads to the ethnocentric discounting of other types of active agency where women in nonsecular societies create meaningful identities for themselves within, not against, the dominant cultural norms. The chapter goes on to consider how some theorists have sought to bypass the normative dilemmas that accompany the cross-cultural analysis of agency.",
+      "cited_by_count": 27,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Gender Politics and Representation",
+        "Feminism, Gender, and Sexuality Studies",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W4236412677"
+    },
+    {
+      "openalex_id": "W2571500167",
+      "doi": "10.1093/ojlr/rww059",
+      "title": "Relational Autonomy and Religious Tribunals",
+      "authors": [
+        {
+          "name": "Russell Sandberg",
+          "openalex_id": "A5082538888",
+          "orcid": "https://orcid.org/0000-0002-4310-9677",
+          "institutions": [
+            "Cardiff University"
+          ]
+        },
+        {
+          "name": "Sharon Thompson",
+          "openalex_id": "A5018133592",
+          "orcid": "https://orcid.org/0000-0002-2569-856X"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-21",
+      "abstract": "Academic writing on the place and status of religious tribunals in western societies has focused upon the \u2018minorities within minorities\u2019 debate: the extent to which States should intervene to ensure that the citizenship rights of female group members are protected and that religious tribunals do not discriminate on grounds of sex. In a number of recent publications following the Cardiff research on Social Cohesion and Civil Law: Marriage, Divorce and Religious Courts, it has been suggested that the concept of consent should be a key focus in determining whether the State should intervene. However, this article asks instead whether the focus should be on the question of autonomy. In particular, this article examines the need to understand the debate concerning religious tribunals within the wider context of changes within family law where an emphasis has been placed upon individual autonomy. It also compares, explores and critiques the concept of \u2018relational autonomy\u2019 as discussed by Jonathan Herring in the context of family law. We agree that developing a concept of autonomy based on the forming of relationships rather than the usual focus on the autonomy of the religious group or on the individual autonomy of those who use religious tribunals provides a way forward. However, we propose a modification of relational autonomy using relational contract theory to employ a relational approach that is ultimately rooted in contract theory. We conclude that Feminist Relational Contract Theory (FRCT) \u2013 a theory previously applied to prenuptial agreements \u2013provides, the most appropriate framework in which power imbalances within religious tribunals can be recognised.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "Oxford Journal of Law and Religion",
+        "type": "journal",
+        "issn": [
+          "2047-0770",
+          "2047-0789"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multicultural Socio-Legal Studies",
+        "Religion, Gender, and Enlightenment",
+        "Religious Freedom and Discrimination"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2571500167"
+    }
+  ],
+  "count": 35,
+  "errors": []
+}

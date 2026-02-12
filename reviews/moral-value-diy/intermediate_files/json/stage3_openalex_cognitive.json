@@ -1,0 +1,1455 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "division cognitive labor",
+  "results": [
+    {
+      "openalex_id": "W1991113915",
+      "doi": "10.1086/681766",
+      "title": "Epistemic Landscapes, Optimal Search, and the Division of Cognitive Labor",
+      "authors": [
+        {
+          "name": "Jason Alexander",
+          "openalex_id": "A5101750210",
+          "orcid": "https://orcid.org/0000-0002-2663-6993",
+          "institutions": [
+            "University of London",
+            "London School of Economics and Political Science",
+            "Universidad de Londres"
+          ]
+        },
+        {
+          "name": "Johannes Himmelreich",
+          "openalex_id": "A5010707458",
+          "orcid": "https://orcid.org/0000-0002-2163-0082",
+          "institutions": [
+            "London School of Economics and Political Science",
+            "University of London",
+            "Universidad de Londres"
+          ]
+        },
+        {
+          "name": "Christopher Thompson",
+          "openalex_id": "A5072972020",
+          "orcid": "https://orcid.org/0000-0001-8070-8890",
+          "institutions": [
+            "London School of Economics and Political Science",
+            "Ethics and Public Policy Center"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-27",
+      "abstract": "This article examines two questions about scientists\u2019 search for knowledge. First, which search strategies generate discoveries effectively? Second, is it advantageous to diversify search strategies? We argue pace Weisberg and Muldoon, \u201cEpistemic Landscapes and the Division of Cognitive Labor\u201d (this journal, 2009), that, on the first question, a search strategy that deliberately seeks novel research approaches need not be optimal. On the second question, we argue they have not shown epistemic reasons exist for the division of cognitive labor, identifying the errors that led to their conclusions. Furthermore, we generalize the epistemic landscape model, showing that one should be skeptical about the benefits of social learning in epistemically complex environments.",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "0031-8248",
+          "1539-767X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/23D64752CDE95E0FAE5A32D6B2DDB38B/S0031824800008023a.pdf/div-class-title-epistemic-landscapes-optimal-search-and-the-division-of-cognitive-labor-div.pdf"
+      },
+      "topics": [
+        "Experimental Behavioral Economics Studies",
+        "Game Theory and Applications",
+        "Evolutionary Game Theory and Cooperation"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W1991113915"
+    },
+    {
+      "openalex_id": "W2783547390",
+      "doi": "10.1086/699690",
+      "title": "The Public Understanding of What? Laypersons\u2019 Epistemic Needs, the Division of Cognitive Labor, and the Demarcation of Science",
+      "authors": [
+        {
+          "name": "Arnon Keren",
+          "openalex_id": "A5054598984",
+          "orcid": "https://orcid.org/0000-0002-4899-5495"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-13",
+      "abstract": "Abstract What must laypersons understand about science to allow them to make sound decisions on science-related issues? Relying on recent developments in social epistemology, this article argues that scientific education should have the goal not of bringing laypersons\u2019 understanding of science closer to that of expert insiders but rather of cultivating the kind of competence characteristic of \u201ccompetent outsiders.\u201d Moreover, it argues that philosophers of science have an important role to play in attempts to promote this kind of understanding but that, to successfully fulfill this role, they will have to approach central questions in the field differently.",
+      "cited_by_count": 61,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "0031-8248",
+          "1539-767X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/75E0B406D9A366DF60524A719629D00E/S0031824800010965a.pdf/div-class-title-the-public-understanding-of-what-laypersons-epistemic-needs-the-division-of-cognitive-labor-and-the-demarcation-of-science-div.pdf"
+      },
+      "topics": [
+        "Climate Change Communication and Perception",
+        "Epistemology, Ethics, and Metaphysics",
+        "Educational Strategies and Epistemologies"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W2783547390"
+    },
+    {
+      "openalex_id": "W2988744667",
+      "doi": "10.1111/ajps.12486",
+      "title": "Democracy's Pin Factory: Issue Specialization, the Division of Cognitive Labor, and Epistemic Performance",
+      "authors": [
+        {
+          "name": "Kevin J. Elliott",
+          "openalex_id": "A5013443305",
+          "orcid": "https://orcid.org/0000-0003-4055-4326",
+          "institutions": [
+            "Murray State University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-14",
+      "abstract": "Abstract This article describes how issue specialization through deliberative institutions called \u201cissue publics\u201d can improve the quality of democratic decision making. Issue specialization improves decisions by instantiating a cognitive division of labor among the mass public, which creates efficiencies in decision making and grants large groups of average citizens a scalable advantage over small groups of even the smartest and most capable individuals. Issue specialization further improves decisions by capturing issue\u2010specific information, concentrating it within the specialized deliberative enclaves of issue publics, and refining citizens\u2019 issue preferences. These advantages are brought to bear in wider democratic politics and policy through information shortcuts and through the specialized electoral incentives of representatives. The article responds to concerns about political ignorance, polarization/partisanship, rent seeking, and socioeconomic bias and argues that issue specialization can provide a valuable brake to polarization yet needs institutional supplementation to engage marginalized citizens and combat bias.",
+      "cited_by_count": 33,
+      "type": "article",
+      "source": {
+        "name": "American Journal of Political Science",
+        "type": "journal",
+        "issn": [
+          "0092-5853",
+          "1540-5907"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Electoral Systems and Political Participation",
+        "Social Policy and Reform Studies",
+        "Political Influence and Corporate Strategies"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2988744667"
+    },
+    {
+      "openalex_id": "W4388271860",
+      "doi": "10.1080/14616696.2023.2271963",
+      "title": "The gendered division of cognitive household labor, mental load, and family\u2013work conflict in European countries",
+      "authors": [
+        {
+          "name": "Andreas Haupt",
+          "openalex_id": "A5111068111",
+          "institutions": [
+            "Karlsruhe Institute of Technology"
+          ]
+        },
+        {
+          "name": "Dafna Gelbgiser",
+          "openalex_id": "A5045109972",
+          "orcid": "https://orcid.org/0000-0001-6557-3895",
+          "institutions": [
+            "Tel Aviv University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-25",
+      "abstract": "The unequal division of cognitive labor within households, and its potential association with mental load and stress, has gained substantial interest in recent public and scholarly discussions. We aim to deepen this debate theoretically and empirically. First, going beyond the question of whether the division of cognitive labor is gendered, we connect cognitive household labor with existing stress theories and ask whether men and women typically perform cognitive labor tasks that involve different levels of stress. We then discuss whether women perform these stressful tasks more often, making them more prone to higher levels of family\u2013work conflict. Second, we test the association between the division of cognitive labor and family\u2013work conflict empirically using large-scale survey data from 10 European countries within the Generations & Gender Programme (GGP). Results based on logistic regressions confirm that a high share of cognitive labor increases women's family\u2013work conflict, but not men's. We discuss future directions in the conceptualization and measurement of cognitive labor in the household and its implications for mental load. Through its contributions, this paper lays the foundations for a comprehensive understanding of the implications of an unequal division of cognitive labor in the household for gender inequality.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "European Societies",
+        "type": "journal",
+        "issn": [
+          "1461-6696",
+          "1469-8307"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/14616696.2023.2271963?download=true"
+      },
+      "topics": [
+        "Employment and Welfare Studies",
+        "Work-Family Balance Challenges",
+        "Youth Education and Societal Dynamics"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W4388271860"
+    },
+    {
+      "openalex_id": "W2797046728",
+      "doi": "10.1037/xap0000310",
+      "title": "Who knows what? Knowledge misattribution in the division of cognitive labor.",
+      "authors": [
+        {
+          "name": "Matthew Fisher",
+          "openalex_id": "A5073138228",
+          "orcid": "https://orcid.org/0000-0002-4338-1638",
+          "institutions": [
+            "Agricultural Marketing Service"
+          ]
+        },
+        {
+          "name": "Daniel M. Oppenheimer",
+          "openalex_id": "A5033148711"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-08",
+      "abstract": "As technology advances, people increasingly outsource cognitive tasks and can more easily access others' knowledge. While externalized aids often support human abilities, they may also make it more difficult for people to assess their own competence. Indeed, using online search engines leads people to treat searchable information as if they already know it (Fisher et al., <i>Journal of Experimental Psychology: General</i>, 2015, <i>144</i>, 674). Six primary and two supplemental studies (<i>N</i> = 3,262) extend previous research by exploring how illusions of knowledge result from reliance on other agents. After teaming with knowledgeable partners (artificially intelligent agents or human teammates) on a trivia quiz, people overestimated how well they would perform on future quizzes for which help was not available; this bias was not evident for participants who never received help. Moreover, overconfidence was insensitive to whether assistance was provided on hard versus easy problems, or even whether the assistance was accurate. Receiving outside assistance creates an ambiguity regarding who deserves credit for success or blame for failure. When this ambiguity is removed, people become better calibrated. These results indicate that reliance on technology and outside knowledge may change our view of ourselves-convincing us we are more capable than we really are. (PsycInfo Database Record (c) 2021 APA, all rights reserved).",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "Journal of Experimental Psychology Applied",
+        "type": "journal",
+        "issn": [
+          "1076-898X",
+          "1939-2192"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2797046728"
+    },
+    {
+      "openalex_id": "W3184155340",
+      "doi": "10.1371/journal.pone.0254532",
+      "title": "Self-organized division of cognitive labor",
+      "authors": [
+        {
+          "name": "Edgar Andrade-Lotero",
+          "openalex_id": "A5071114771",
+          "orcid": "https://orcid.org/0000-0003-1193-3423",
+          "institutions": [
+            "Universidad del Rosario"
+          ]
+        },
+        {
+          "name": "Robert L. Goldstone",
+          "openalex_id": "A5029222386",
+          "orcid": "https://orcid.org/0000-0001-8357-8358",
+          "institutions": [
+            "Indiana University Bloomington"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-19",
+      "abstract": "Often members of a group benefit from dividing the group\u2019s task into separate components, where each member specializes their role so as to accomplish only one of the components. While this division of labor phenomenon has been observed with respect to both manual and cognitive labor, there is no clear understanding of the cognitive mechanisms allowing for its emergence, especially when there are multiple divisions possible and communication is limited. Indeed, maximization of expected utility often does not differentiate between alternative ways in which individuals could divide labor. We developed an iterative two-person game in which there are multiple ways of dividing labor, but in which it is not possible to explicitly negotiate a division. We implemented the game both as a human experimental task and as a computational model. Our results show that the majority of human dyads can finish the game with an efficient division of labor. Moreover, we fitted our computational model to the behavioral data, which allowed us to explain how the perceived similarity between a player\u2019s actions and the task\u2019s focal points guided the players\u2019 choices from one round to the other, thus bridging the group dynamics and its underlying cognitive process. Potential applications of this model outside cognitive science include the improvement of cooperation in human groups, multi-agent systems, as well as human-robot collaboration.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1371/journal.pone.0254532"
+      },
+      "topics": [
+        "Evolutionary Game Theory and Cooperation",
+        "Language and cultural evolution",
+        "Action Observation and Synchronization"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W3184155340"
+    },
+    {
+      "openalex_id": "W4380200194",
+      "doi": "10.1007/s11229-023-04193-4",
+      "title": "The division of cognitive labor and the structure of interdisciplinary problems",
+      "authors": [
+        {
+          "name": "Samuli Reijula",
+          "openalex_id": "A5049206353",
+          "orcid": "https://orcid.org/0000-0001-6968-5819",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Jaakko Kuorikoski",
+          "openalex_id": "A5043181761",
+          "orcid": "https://orcid.org/0000-0001-5676-717X",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Miles MacLeod",
+          "openalex_id": "A5043598759",
+          "orcid": "https://orcid.org/0000-0002-6346-545X",
+          "institutions": [
+            "University of Twente"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-10",
+      "abstract": null,
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11229-023-04193-4.pdf"
+      },
+      "topics": [
+        "Interdisciplinary Research and Collaboration",
+        "Design Education and Practice",
+        "University-Industry-Government Innovation Models"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W4380200194"
+    },
+    {
+      "openalex_id": "W2962458733",
+      "doi": "10.1177/0003122419859007",
+      "title": "The Cognitive Dimension of Household Labor",
+      "authors": [
+        {
+          "name": "Allison Daminger",
+          "openalex_id": "A5005292039",
+          "orcid": "https://orcid.org/0000-0002-9706-1672",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-09",
+      "abstract": "Household labor is commonly defined as a set of physical tasks such as cooking, cleaning, and shopping. Sociologists sometimes reference non-physical activities related to \u201chousehold management,\u201d but these are typically mentioned in passing, imprecisely defined, or treated as equivalent to physical tasks. Using 70 in-depth interviews with members of 35 couples, this study argues that such tasks are better understood as examples of a unique dimension of housework: cognitive labor. The data demonstrate that cognitive labor entails anticipating needs, identifying options for filling them, making decisions, and monitoring progress. Because such work is taxing but often invisible to both cognitive laborers and their partners, it is a frequent source of conflict for couples. Cognitive labor is also a gendered phenomenon: women in this study do more cognitive labor overall and more of the anticipation and monitoring work in particular. However, male and female participation in decision-making, arguably the cognitive labor component most closely linked to power and influence, is roughly equal. These findings identify and define an overlooked\u2014yet potentially consequential\u2014source of gender inequality at the household level and suggest a new direction for research on the division of household labor.",
+      "cited_by_count": 459,
+      "type": "article",
+      "source": {
+        "name": "American Sociological Review",
+        "type": "journal",
+        "issn": [
+          "0003-1224",
+          "1939-8271"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Work-Family Balance Challenges",
+        "Emotional Labor in Professions",
+        "Gender Diversity and Inequality"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W2962458733"
+    },
+    {
+      "openalex_id": "W4233726401",
+      "doi": "10.1093/oso/9780190680534.003.0004",
+      "title": "Diversity, Rationality, and the Division of Cognitive Labor",
+      "authors": [
+        {
+          "name": "Ryan Muldoon",
+          "openalex_id": "A5029849083",
+          "orcid": "https://orcid.org/0000-0002-7269-6209"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-21",
+      "abstract": "Existing models of the division of cognitive labor in science assume that scientists have a particular problem they want to solve and can choose between different approaches to solving the problem. In this essay I invert the approach, supposing that scientists have fixed skills and seek problems to solve. This allows for a better explanation of increasing rates of cooperation in science, as well as flows of scientists between fields of inquiry. By increasing the realism of the model, we gain additional insight into the social structure of science and gain the ability to ask new questions about the optimal division of labor.",
+      "cited_by_count": 5,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Economic Theory and Institutions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4233726401"
+    },
+    {
+      "openalex_id": "W1787311702",
+      "doi": "10.13130/2282-5398/4768",
+      "title": "Some remarks on the division of cognitive labor",
+      "authors": [
+        {
+          "name": "Marco Viola",
+          "openalex_id": "A5039178009",
+          "orcid": "https://orcid.org/0000-0001-7970-5406",
+          "institutions": [
+            "Vita-Salute San Raffaele University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-10",
+      "abstract": "Since the publication of Kitcher\u2019s influential paper The Division of Cognitive Labor, some philosophers wondered about these two related issues: (1) which is the optimal distribution of cognitive efforts among rival methods within a scientific community?, and (2) whether and how can a community achieve such an optimal distribution? Though not committing to any specific answer to question (1), I claim that issue (2) does not depend exclusively on an invisible hand like mechanism, since both intra-scientific and extra-scientific institutions may play a major role. Finally, I examine some practical difficulties of reallocating scientists from a method to another, which leads to stress the importance of well-planned training and recruitment.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Riviste UNIMI (Universit\u00e0 degli studi di Milano)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://riviste.unimi.it/index.php/roars/article/view/4768"
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Complex Systems and Decision Making",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W1787311702"
+    },
+    {
+      "openalex_id": "W2888335301",
+      "doi": "10.1007/s13194-018-0230-8",
+      "title": "The division of cognitive labor: two missing dimensions of the debate",
+      "authors": [
+        {
+          "name": "Baptiste Bedessem",
+          "openalex_id": "A5106657682",
+          "orcid": "https://orcid.org/0000-0002-9603-6686",
+          "institutions": [
+            "Universit\u00e9 Grenoble Alpes"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-05",
+      "abstract": null,
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "European Journal for Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "1879-4912",
+          "1879-4920"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hal.science/hal-04201091"
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Complex Systems and Decision Making"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W2888335301"
+    },
+    {
+      "openalex_id": "W2903975937",
+      "doi": "10.7551/mitpress/10767.001.0001",
+      "title": "Heteromation, and Other Stories of Computing and Capitalism",
+      "authors": [
+        {
+          "name": "Hamid R. Ekbia",
+          "openalex_id": "A5082327117",
+          "orcid": "https://orcid.org/0000-0002-8437-520X"
+        },
+        {
+          "name": "Bonnie Nardi",
+          "openalex_id": "A5026440334"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-05-04",
+      "abstract": "An exploration of a new division of labor between machines and humans, in which people provide value to the economy with little or no compensation. The computerization of the economy\u2014and everyday life\u2014has transformed the division of labor between humans and machines, shifting many people into work that is hidden, poorly compensated, or accepted as part of being a \u201cuser\u201d of digital technology. Through our clicks and swipes, logins and profiles, emails and posts, we are, more or less willingly, participating in digital activities that yield economic value to others but little or no return to us. Hamid Ekbia and Bonnie Nardi call this kind of participation\u2014the extraction of economic value from low-cost or free labor in computer-mediated networks\u2014\u201cheteromation.\u201d In this book, they explore the social and technological processes through which economic value is extracted from digitally mediated work, the nature of the value created, and what prompts people to participate in the process. Arguing that heteromation is a new logic of capital accumulation, Ekbia and Nardi consider different kinds of heteromated labor: communicative labor, seen in user-generated content on social media; cognitive labor, including microwork and self-service; creative labor, from gaming environments to literary productions; emotional labor, often hidden within paid jobs; and organizing labor, made up of collaborative groups such as citizen scientists. Ekbia and Nardi then offer a utopian vision: heteromation refigured to bring end users more fully into the prosperity of capitalism.",
+      "cited_by_count": 267,
+      "type": "book",
+      "source": {
+        "name": "The MIT Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Information Society and Technology Trends",
+        "Information Systems Theories and Implementation",
+        "Technology's Impact on Media"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W2903975937"
+    },
+    {
+      "openalex_id": "W4289933892",
+      "doi": "10.31235/osf.io/tsfu6",
+      "title": "The Gendered Division of Cognitive Household Labor, Mental Load, and Family-Work Conflict in European Countries",
+      "authors": [
+        {
+          "name": "Andreas Haupt",
+          "openalex_id": "A5034467477",
+          "orcid": "https://orcid.org/0000-0002-6519-362X",
+          "institutions": [
+            "Karlsruhe Institute of Technology"
+          ]
+        },
+        {
+          "name": "Dafna Gelbgiser",
+          "openalex_id": "A5045109972",
+          "orcid": "https://orcid.org/0000-0001-6557-3895",
+          "institutions": [
+            "Tel Aviv University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-05",
+      "abstract": "The unequal division of cognitive labor within the household and its potential association with mental load and stress has gained substantial interest in recent discussions. We aim to deepen this debate theoretically and empirically. First, going beyond the question of whether the division of cognitive labor is gendered, we connect cognitive household labor with existing stress theories and ask whether men and women typically perform cognitive labor tasks that are differently stressful. We then discuss whether women perform these stressful tasks more often, making them more prone to higher levels of family-work conflict. Second, we test these associations empirically using large-scale survey data from seven European countries within the Generations &amp;amp; Gender Programme (GGP). Our results confirm that a high share of cognitive labor increases women\u2019s family-work conflict, but not men\u2019s. We discuss future directions in the conceptualization and measurement of cognitive labor in the household and its implications for mental load. In doing so, this paper lays the foundations for a comprehensive data-driven understanding of the implications of unequal division of cognitive labor in the household for gender inequality.",
+      "cited_by_count": 3,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://osf.io/tsfu6/download"
+      },
+      "topics": [
+        "Work-Family Balance Challenges",
+        "Gender, Labor, and Family Dynamics",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W4289933892"
+    },
+    {
+      "openalex_id": "W4410191067",
+      "doi": "10.1177/03616843251330284",
+      "title": "Taking on the Invisible Third Shift: The Unequal Division of Cognitive Labor and Women\u2019s Work Outcomes",
+      "authors": [
+        {
+          "name": "Anja Krsti\u0107",
+          "openalex_id": "A5065598101",
+          "orcid": "https://orcid.org/0000-0002-8188-3081",
+          "institutions": [
+            "York University"
+          ]
+        },
+        {
+          "name": "Winny Shen",
+          "openalex_id": "A5036547135",
+          "orcid": "https://orcid.org/0000-0001-6238-0051",
+          "institutions": [
+            "York University"
+          ]
+        },
+        {
+          "name": "Christianne T. Varty",
+          "openalex_id": "A5030619228",
+          "orcid": "https://orcid.org/0000-0002-6776-8319"
+        },
+        {
+          "name": "Janice Lam",
+          "openalex_id": "A5054317026",
+          "orcid": "https://orcid.org/0000-0001-5167-3799",
+          "institutions": [
+            "York University"
+          ]
+        },
+        {
+          "name": "Ivona Hideg",
+          "openalex_id": "A5075376029",
+          "orcid": "https://orcid.org/0000-0003-1900-2631",
+          "institutions": [
+            "York University",
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-04-21",
+      "abstract": "The current research focuses on the gendered work-related impacts of the division of unpaid labor. Drawing upon the literature on gender roles and conservation of resources theory, we argue that women (vs. men) are particularly drained due to undertaking a greater proportion of cognitive labor\u2014a hidden form of unpaid labor involved in managing a household\u2014leading to undermined work outcomes. Data were collected weekly (during the early phases of the COVID-19 pandemic) for 7 weeks in April to May 2020 ( N = 263) and aggregated. Using multilevel structural equation modeling, we found that women (vs. men) reported engaging in a disproportionate amount of cognitive labor in their households, which increased their emotional exhaustion and, in turn, was related to greater turnover intentions and lower career resilience. However, for mothers (vs. fathers), emotional exhaustion and undermined work-related outcomes were driven by disproportionate responsibility for childcare. Hence, division of cognitive labor uniquely affected work-related outcomes of women without children, whereas division of childcare shaped the work-related outcomes of women with children. Overall, this research highlights the differential challenges faced by working women with and without children and the need for gender equity initiatives focusing on both women with and without children.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Psychology of Women Quarterly",
+        "type": "journal",
+        "issn": [
+          "0361-6843",
+          "1471-6402"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1177/03616843251330284"
+      },
+      "topics": [
+        "Work-Family Balance Challenges",
+        "Employment and Welfare Studies",
+        "Gender Diversity and Inequality"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W4410191067"
+    },
+    {
+      "openalex_id": "W2313617431",
+      "doi": "10.1086/680078",
+      "title": "Can Deliberative Minipublics Address the Cognitive Challenges of Democratic Citizenship?",
+      "authors": [
+        {
+          "name": "Mark E. Warren",
+          "openalex_id": "A5079464965",
+          "orcid": "https://orcid.org/0000-0002-1478-0998",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "John Gastil",
+          "openalex_id": "A5054131709",
+          "orcid": "https://orcid.org/0000-0002-0337-1064",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-19",
+      "abstract": "Democracy asks its citizens to make informed judgments about collective matters. Given the scale and complexity of modern polities, however, even the most attentive citizens cannot engage knowledgeably with most of the collective decisions that affect them. For this reason, democratic theorists increasingly conceptualize democratic systems as requiring divisions of cognitive labor, in which citizens trust others to make decisions on their behalf. Modern democracies have long relied on such trustees, yet institutional supports for good trust decisions by citizens are often weak or missing. We argue that deliberative minipublics can serve as trusted information proxies that help citizens make the most of their scarce cognitive resources. These kinds of trustees cannot close the gap between the demands of complex societies and citizens' capacities for informed judgment, but they may be able to narrow it.",
+      "cited_by_count": 250,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Politics",
+        "type": "journal",
+        "issn": [
+          "0022-3816",
+          "1468-2508"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "E-Government and Public Services",
+        "Social Capital and Networks"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W2313617431"
+    },
+    {
+      "openalex_id": "W1518983875",
+      "doi": "10.3368/jhr.51.4.1014-6712r",
+      "title": "Aging and Strategic Learning: The Impact of Spousal Incentives on Financial Literacy",
+      "authors": [
+        {
+          "name": "Joanne W. Hsu",
+          "openalex_id": "A5055274129",
+          "orcid": "https://orcid.org/0000-0002-0715-6230"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-11-30",
+      "abstract": "Women tend to be less financially literate than men, consistent with a division of labor where husbands manage finances. However, women tend to outlive their husbands. I find that older women acquire financial literacy as they approach widowhood - 80 percent would catch up with their husbands by the expected onset of widowhood. These gains are not attributable to husbands' cognitive decline, as captured by cognition tests. The results are consistent with a model in which the division of labor collapses when a spouse dies: women have incentives to delay acquiring financial human capital, but also to begin learning before widowhood.",
+      "cited_by_count": 158,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Human Resources",
+        "type": "journal",
+        "issn": [
+          "0022-166X",
+          "1548-8004"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/5279946"
+      },
+      "topics": [
+        "Financial Literacy, Pension, Retirement Analysis",
+        "Intergenerational and Educational Inequality Studies",
+        "Intergenerational Family Dynamics and Caregiving"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W1518983875"
+    },
+    {
+      "openalex_id": "W2559671171",
+      "doi": "10.1017/s0140525x16002028",
+      "title": "An experimental approach to linguistic representation",
+      "authors": [
+        {
+          "name": "Holly P. Branigan",
+          "openalex_id": "A5061840333",
+          "orcid": "https://orcid.org/0000-0002-7845-8850",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Martin J. Pickering",
+          "openalex_id": "A5074553752",
+          "orcid": "https://orcid.org/0000-0002-2005-049X",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-29",
+      "abstract": "Abstract Within the cognitive sciences, most researchers assume that it is the job of linguists to investigate how language is represented, and that they do so largely by building theories based on explicit judgments about patterns of acceptability \u2013 whereas it is the task of psychologists to determine how language is processed, and that in doing so, they do not typically question the linguists' representational assumptions. We challenge this division of labor by arguing that structural priming provides an implicit method of investigating linguistic representations that should end the current reliance on acceptability judgments. Moreover, structural priming has now reached sufficient methodological maturity to provide substantial evidence about such representations. We argue that evidence from speakers' tendency to repeat their own and others' structural choices supports a linguistic architecture involving a single shallow level of syntax connected to a semantic level containing information about quantification, thematic relations, and information structure, as well as to a phonological level. Many of the linguistic distinctions often used to support complex (or multilevel) syntactic structure are instead captured by semantics; however, the syntactic level includes some specification of \u201cmissing\u201d elements that are not realized at the phonological level. We also show that structural priming provides evidence about the consistency of representations across languages and about language development. In sum, we propose that structural priming provides a new basis for understanding the nature of language.",
+      "cited_by_count": 263,
+      "type": "article",
+      "source": {
+        "name": "Behavioral and Brain Sciences",
+        "type": "journal",
+        "issn": [
+          "0140-525X",
+          "1469-1825"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/ca513ab2-93f4-4d0a-b746-ebafc14232ab"
+      },
+      "topics": [
+        "Neurobiology of Language and Bilingualism",
+        "Syntax, Semantics, Linguistic Variation",
+        "Categorization, perception, and language"
+      ],
+      "referenced_works_count": 181,
+      "url": "https://openalex.org/W2559671171"
+    },
+    {
+      "openalex_id": "W4286622875",
+      "doi": "10.5465/ambpp.2022.271",
+      "title": "Consequences of the Unequal Division of Cognitive Labor on Women\u2019s Work Outcomes During the Pandemic",
+      "authors": [
+        {
+          "name": "Anja Krsti\u0107",
+          "openalex_id": "A5065598101",
+          "orcid": "https://orcid.org/0000-0002-8188-3081",
+          "institutions": [
+            "York University"
+          ]
+        },
+        {
+          "name": "Christianne T. Varty",
+          "openalex_id": "A5030619228",
+          "orcid": "https://orcid.org/0000-0002-6776-8319"
+        },
+        {
+          "name": "Winny Shen",
+          "openalex_id": "A5036547135",
+          "orcid": "https://orcid.org/0000-0001-6238-0051"
+        },
+        {
+          "name": "Ivona Hideg",
+          "openalex_id": "A5075376029",
+          "orcid": "https://orcid.org/0000-0003-1900-2631"
+        },
+        {
+          "name": "Janice Lam",
+          "openalex_id": "A5054317026",
+          "orcid": "https://orcid.org/0000-0001-5167-3799"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-07-06",
+      "abstract": "The unequal division of unpaid labor between working women and their male partners remains a barrier to achieving workplace gender equality; women consistently bear responsibility for this \u201csecond shift\u201d and suffer career consequences as a result. The COVID-19 pandemic has exacerbated these inequalities. In addition to managing their current work and household demands, women may be disproportionately engaged in a less visible form of labor \u2013 cognitive labor \u2013 during the pandemic, which constitutes a hidden \u201cthird shift\u201d and may have consequences for women\u2019s work outcomes. Integrating theories of gender roles and conservation of resources, we theorize that women (vs. men) are responsible for a greater proportion of cognitive labor within their households during the pandemic, leading to increased emotional exhaustion and undermining work outcomes. Data (N = 263) from our main study collected weekly for eight weeks near the beginning of the pandemic reveals that women (vs. men) reported engaging in a disproportionate amount of cognitive labor, which led to increased emotional exhaustion. In turn, emotional exhaustion was related to greater turnover intentions and undermined career resilience. Further, results of a follow-up study provide additional insights into daily experiences of cognitive labor. Our findings suggest that women\u2019s heavy second and third shifts during the pandemic threaten to set back progress toward workplace gender equality.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Academy of Management Proceedings",
+        "type": "journal",
+        "issn": [
+          "2151-6561"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4286622875"
+    },
+    {
+      "openalex_id": "W2951922011",
+      "doi": "10.1523/eneuro.0122-19.2019",
+      "title": "A Roadmap for Understanding Memory: Decomposing Cognitive Processes into Operations and Representations",
+      "authors": [
+        {
+          "name": "Rosemary A. Cowell",
+          "openalex_id": "A5020807899",
+          "orcid": "https://orcid.org/0000-0002-5450-9350",
+          "institutions": [
+            "University of Massachusetts Amherst"
+          ]
+        },
+        {
+          "name": "Morgan D. Barense",
+          "openalex_id": "A5012111079",
+          "orcid": "https://orcid.org/0000-0002-4008-9201",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Patrick Sadil",
+          "openalex_id": "A5013792452",
+          "orcid": "https://orcid.org/0000-0003-4141-1343",
+          "institutions": [
+            "University of Massachusetts Amherst"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-12",
+      "abstract": "Abstract Thanks to patients Phineas Gage and Henry Molaison, we have long known that behavioral control depends on the frontal lobes, whereas declarative memory depends on the medial temporal lobes (MTL). For decades, cognitive functions\u2014behavioral control, declarative memory\u2014have served as labels for characterizing the division of labor in cortex. This approach has made enormous contributions to understanding how the brain enables the mind, providing a systems-level explanation of brain function that constrains lower-level investigations of neural mechanism. Today, the approach has evolved such that functional labels are often applied to brain networks rather than focal brain regions. Furthermore, the labels have diversified to include both broadly-defined cognitive functions (declarative memory, visual perception) and more circumscribed mental processes (recollection, familiarity, priming). We ask whether a process\u2014a high-level mental phenomenon corresponding to an introspectively-identifiable cognitive event\u2014is the most productive label for dissecting memory. For example, recollection conflates a neurocomputational operation (pattern completion-based retrieval) with a class of representational content (associative, high-dimensional memories). Because a full theory of memory must identify operations and representations separately, and specify how they interact, we argue that processes like recollection constitute inadequate labels for characterizing neural mechanisms. Instead, we advocate considering the component operations and representations of processes like recollection in isolation. For the organization of memory, the evidence suggests that pattern completion is recapitulated widely across the ventral visual stream and MTL, but the division of labor between sites within this pathway can be explained by representational content.",
+      "cited_by_count": 107,
+      "type": "review",
+      "source": {
+        "name": "eNeuro",
+        "type": "journal",
+        "issn": [
+          "2373-2822"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.eneuro.org/content/eneuro/6/4/ENEURO.0122-19.2019.full.pdf"
+      },
+      "topics": [
+        "Memory Processes and Influences",
+        "Memory and Neural Mechanisms",
+        "Neural and Behavioral Psychology Studies"
+      ],
+      "referenced_works_count": 214,
+      "url": "https://openalex.org/W2951922011"
+    },
+    {
+      "openalex_id": "W3011787122",
+      "doi": "10.1007/s11256-020-00565-z",
+      "title": "The National Teacher Shortage, Urban Education and the Cognitive Sociology of Labor",
+      "authors": [
+        {
+          "name": "Greg Wiggan",
+          "openalex_id": "A5058931364",
+          "orcid": "https://orcid.org/0000-0001-7202-1028"
+        },
+        {
+          "name": "Delphia S. Smith",
+          "openalex_id": "A5050146549",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Marcia J. Watson-Vandiver",
+          "openalex_id": "A5026235741",
+          "orcid": "https://orcid.org/0000-0002-5866-8738",
+          "institutions": [
+            "Towson University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-21",
+      "abstract": null,
+      "cited_by_count": 91,
+      "type": "article",
+      "source": {
+        "name": "The Urban Review",
+        "type": "journal",
+        "issn": [
+          "0042-0972",
+          "1573-1960"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "School Choice and Performance",
+        "Youth Development and Social Support"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W3011787122"
+    },
+    {
+      "openalex_id": "W2953288566",
+      "doi": "10.1016/j.plrev.2019.06.002",
+      "title": "Phenotypes in hemispheric functional segregation? Perspectives and challenges",
+      "authors": [
+        {
+          "name": "Guy Vingerhoets",
+          "openalex_id": "A5040885938",
+          "orcid": "https://orcid.org/0000-0001-6726-3858",
+          "institutions": [
+            "Ghent University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-12",
+      "abstract": null,
+      "cited_by_count": 146,
+      "type": "review",
+      "source": {
+        "name": "Physics of Life Reviews",
+        "type": "journal",
+        "issn": [
+          "1571-0645",
+          "1873-1457"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Hemispheric Asymmetry in Neuroscience",
+        "Child and Animal Learning Development",
+        "Neurobiology of Language and Bilingualism"
+      ],
+      "referenced_works_count": 123,
+      "url": "https://openalex.org/W2953288566"
+    },
+    {
+      "openalex_id": "W2558301207",
+      "doi": "10.1177/0963662516680311",
+      "title": "When science becomes too easy: Science popularization inclines laypeople to underrate their dependence on experts",
+      "authors": [
+        {
+          "name": "Lisa Scharrer",
+          "openalex_id": "A5025229661",
+          "orcid": "https://orcid.org/0000-0003-2748-4570",
+          "institutions": [
+            "University of M\u00fcnster"
+          ]
+        },
+        {
+          "name": "Yvonne Rupieper",
+          "openalex_id": "A5066328594",
+          "institutions": [
+            "University of M\u00fcnster"
+          ]
+        },
+        {
+          "name": "Marc Stadtler",
+          "openalex_id": "A5078903681",
+          "orcid": "https://orcid.org/0000-0002-2948-9837",
+          "institutions": [
+            "University of M\u00fcnster"
+          ]
+        },
+        {
+          "name": "Rainer Bromme",
+          "openalex_id": "A5010319947",
+          "orcid": "https://orcid.org/0000-0002-6123-7269",
+          "institutions": [
+            "University of M\u00fcnster"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-30",
+      "abstract": "Science popularization fulfills the important task of making scientific knowledge understandable and accessible for the lay public. However, the simplification of information required to achieve this accessibility may lead to the risk of audiences relying overly strongly on their own epistemic capabilities when making judgments about scientific claims. Moreover, they may underestimate how the division of cognitive labor makes them dependent on experts. This article reports an empirical study demonstrating that this \u201ceasiness effect of science popularization\u201d occurs when laypeople read authentic popularized science depictions. After reading popularized articles addressed to a lay audience, laypeople agreed more with the knowledge claims they contained and were more confident in their claim judgments than after reading articles addressed to expert audiences. Implications for communicating scientific knowledge to the general public are discussed.",
+      "cited_by_count": 144,
+      "type": "article",
+      "source": {
+        "name": "Public Understanding of Science",
+        "type": "journal",
+        "issn": [
+          "0963-6625",
+          "1361-6609"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Climate Change Communication and Perception",
+        "Misinformation and Its Impacts",
+        "Animal and Plant Science Education"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W2558301207"
+    },
+    {
+      "openalex_id": "W3107141556",
+      "doi": "10.1007/s11528-020-00566-5",
+      "title": "The State of Makerspace Research: a Review of the Literature",
+      "authors": [
+        {
+          "name": "Shannon Mersand",
+          "openalex_id": "A5019076049",
+          "orcid": "https://orcid.org/0000-0002-4229-9763",
+          "institutions": [
+            "University at Albany, State University of New York",
+            "Albany State University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-25",
+      "abstract": null,
+      "cited_by_count": 116,
+      "type": "review",
+      "source": {
+        "name": "TechTrends",
+        "type": "journal",
+        "issn": [
+          "1559-7075",
+          "8756-3894"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Innovative Human-Technology Interaction",
+        "Technology Use by Older Adults",
+        "Teaching and Learning Programming"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W3107141556"
+    },
+    {
+      "openalex_id": "W1541098024",
+      "doi": "10.3389/fpsyg.2015.00584",
+      "title": "Definitely maybe: can unconscious processes perform the same functions as conscious processes?",
+      "authors": [
+        {
+          "name": "Guido Hesselmann",
+          "openalex_id": "A5070863831",
+          "orcid": "https://orcid.org/0000-0002-8873-7212",
+          "institutions": [
+            "Charit\u00e9 - Universit\u00e4tsmedizin Berlin"
+          ]
+        },
+        {
+          "name": "Pieter Moors",
+          "openalex_id": "A5054003491",
+          "orcid": "https://orcid.org/0000-0002-4667-1235"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-06",
+      "abstract": "Hassin recently proposed the \"Yes It Can\" (YIC) principle to describe the division of labor between conscious and unconscious processes in human cognition. According to this principle, unconscious processes can carry out every fundamental high-level cognitive function that conscious processes can perform. In our commentary, we argue that the author presents an overly idealized review of the literature in support of the YIC principle. Furthermore, we point out that the dissimilar trends observed in social and cognitive psychology, with respect to published evidence of strong unconscious effects, can better be explained by the way how awareness is defined and measured in both research fields. Finally, we show that the experimental paradigm chosen by Hassin to rule out remaining objections against the YIC principle is unsuited to verify the new default notion that all high-level cognitive functions can unfold unconsciously.",
+      "cited_by_count": 83,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2015.00584/pdf"
+      },
+      "topics": [
+        "Neural and Behavioral Psychology Studies",
+        "Neural dynamics and brain function",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W1541098024"
+    },
+    {
+      "openalex_id": "W2588490876",
+      "doi": "10.1002/9781119241485.ch30",
+      "title": "Looking Toward the Future of Cognitive Translation Studies",
+      "authors": [
+        {
+          "name": "Ricardo Mu\u00f1oz Mart\u00edn",
+          "openalex_id": "A5071214442",
+          "orcid": "https://orcid.org/0000-0001-6049-9673"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-18",
+      "abstract": "Cognitive approaches to translation and interpreting may be considered the oldest empirical research area of modern translation studies (TS). This chapter argues that what is happening is simply that the research area is getting crowded; that the old map of TS with its division of labor has become untenable; and that the theoretical edifice of cognitive approaches to translation and interpreting needs to strive for internal coherence, rather than trying to cohere with all approaches within TS. Conference interpreting had become an object of study proper for researchers of cognition when translation research started focusing on the development of machine translation systems, inspired by Noam Chomsky's views on language, which exceeded his generative framework. The chapter also explains two major cognitive trends TS researchers will be adhering to in the next years: computational translatology, and cognitive translatology.",
+      "cited_by_count": 71,
+      "type": "other",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Translation Studies and Practices",
+        "Interpreting and Communication in Healthcare",
+        "Natural Language Processing Techniques"
+      ],
+      "referenced_works_count": 92,
+      "url": "https://openalex.org/W2588490876"
+    },
+    {
+      "openalex_id": "W2606121346",
+      "doi": "10.1007/s11192-017-2386-y",
+      "title": "With whom do researchers collaborate and why?",
+      "authors": [
+        {
+          "name": "Hajdeja Iglic\u0306",
+          "openalex_id": "A5072057089",
+          "orcid": "https://orcid.org/0000-0001-8354-5580",
+          "institutions": [
+            "University of Ljubljana"
+          ]
+        },
+        {
+          "name": "Patrick Doreian",
+          "openalex_id": "A5065490876",
+          "orcid": "https://orcid.org/0000-0002-3301-7840",
+          "institutions": [
+            "University of Ljubljana",
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Luka Kronegger",
+          "openalex_id": "A5059571531",
+          "orcid": "https://orcid.org/0000-0002-4385-1441",
+          "institutions": [
+            "University of Ljubljana"
+          ]
+        },
+        {
+          "name": "Anu\u0161ka Ferligoj",
+          "openalex_id": "A5029499420",
+          "orcid": "https://orcid.org/0000-0002-3682-6854",
+          "institutions": [
+            "University of Ljubljana"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-04-13",
+      "abstract": "Although research collaboration has been studied extensively, we still lack understanding regarding the factors stimulating researchers to collaborate with different kinds of research partners including members of the same research center or group, researchers from the same organization, researchers from other academic and non-academic organizations as well as international partners. Here, we provide an explanation of the emergence of diverse collaborative ties. The theoretical framework used for understanding research collaboration couples <i>scientific and technical human capital</i> embodied in the individual with the <i>social organization</i> and <i>cognitive characteristics</i> of the research field. We analyze survey data collected from Slovenian scientists in four scientific disciplines: mathematics; physics; biotechnology; and sociology. The results show that while individual characteristics and resources are among the strongest predictors of collaboration, very different mechanisms underlie collaboration with different kinds of partners. International collaboration is particularly important for the researchers in small national science systems. Collaboration with colleagues from various domestic organizations presents a vehicle for resource mobilization. Within organizations collaboration reflects the elaborated division of labor in the laboratories and high level of competition between different research groups. These results hold practical implications for policymakers interested in promoting quality research.",
+      "cited_by_count": 120,
+      "type": "article",
+      "source": {
+        "name": "Scientometrics",
+        "type": "journal",
+        "issn": [
+          "0138-9130",
+          "1588-2861"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11192-017-2386-y.pdf"
+      },
+      "topics": [
+        "Innovation and Knowledge Management",
+        "scientometrics and bibliometrics research",
+        "University-Industry-Government Innovation Models"
+      ],
+      "referenced_works_count": 99,
+      "url": "https://openalex.org/W2606121346"
+    },
+    {
+      "openalex_id": "W2612674204",
+      "doi": "10.1086/694005",
+      "title": "Novelty versus Replicability: Virtues and Vices in the Reward System of Science",
+      "authors": [
+        {
+          "name": "Felipe Romero",
+          "openalex_id": "A5061564106",
+          "orcid": "https://orcid.org/0000-0002-0858-7243"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-01",
+      "abstract": "The reward system of science is the priority rule. The first scientist making a new discovery is rewarded with prestige, while second runners get little or nothing. Michael Strevens, following Philip Kitcher, defends this reward system, arguing that it incentivizes an efficient division of cognitive labor. I argue that this assessment depends on strong implicit assumptions about the replicability of findings. I question these assumptions on the basis of metascientific evidence and argue that the priority rule systematically discourages replication. My analysis leads us to qualify Kitcher and Strevens\u2019s contention that a priority-based reward system is normatively desirable for science.",
+      "cited_by_count": 65,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "0031-8248",
+          "1539-767X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/0CFCF57B81708B3DDD3D7B4C75B4C19C/S0031824800010187a.pdf/div-class-title-novelty-versus-replicability-virtues-and-vices-in-the-reward-system-of-science-div.pdf"
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Meta-analysis and systematic reviews",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W2612674204"
+    },
+    {
+      "openalex_id": "W2806111011",
+      "doi": "10.7554/elife.31185",
+      "title": "Cognitive regulation alters social and dietary choice by changing attribute representations in domain-general and domain-specific brain circuits",
+      "authors": [
+        {
+          "name": "Anita Tusche",
+          "openalex_id": "A5039416675",
+          "orcid": "https://orcid.org/0000-0003-4180-8447",
+          "institutions": [
+            "California Institute of Technology"
+          ]
+        },
+        {
+          "name": "Cendri A. Hutcherson",
+          "openalex_id": "A5015080029",
+          "orcid": "https://orcid.org/0000-0002-4441-4809",
+          "institutions": [
+            "University of Toronto",
+            "The Scarborough Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-29",
+      "abstract": "Are some people generally more successful using cognitive regulation or does it depend on the choice domain? Why? We combined behavioral computational modeling and multivariate decoding of fMRI responses to identify neural loci of regulation-related shifts in value representations across goals and domains (dietary or altruistic choice). Surprisingly, regulatory goals did not alter integrative value representations in the ventromedial prefrontal cortex, which represented all choice-relevant attributes across goals and domains. Instead, the dorsolateral prefrontal cortex (DLPFC) flexibly encoded goal-consistent values and predicted regulatory success for the majority of choice-relevant attributes, using attribute-specific neural codes. We also identified domain-specific exceptions: goal-dependent encoding of prosocial attributes localized to precuneus and temporo-parietal junction (not DLPFC). Our results suggest that cognitive regulation operated by changing specific attribute representations (not integrated values). Evidence of domain-general and domain-specific neural loci reveals important divisions of labor, explaining when and why regulatory success generalizes (or doesn\u2019t) across contexts and domains.",
+      "cited_by_count": 109,
+      "type": "article",
+      "source": {
+        "name": "eLife",
+        "type": "journal",
+        "issn": [
+          "2050-084X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.7554/elife.31185"
+      },
+      "topics": [
+        "Neural and Behavioral Psychology Studies",
+        "Neuroendocrine regulation and behavior",
+        "Cultural Differences and Values"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2806111011"
+    },
+    {
+      "openalex_id": "W2422363455",
+      "doi": "10.1523/jneurosci.2789-15.2016",
+      "title": "The Hierarchical Structure of the Face Network Revealed by Its Functional Connectivity Pattern",
+      "authors": [
+        {
+          "name": "Xu Wang",
+          "openalex_id": "A5100407923",
+          "orcid": "https://orcid.org/0000-0003-0593-8615",
+          "institutions": [
+            "Beijing Normal University"
+          ]
+        },
+        {
+          "name": "Zonglei Zhen",
+          "openalex_id": "A5038594329",
+          "institutions": [
+            "Beijing Normal University"
+          ]
+        },
+        {
+          "name": "Yiying Song",
+          "openalex_id": "A5101521969",
+          "orcid": "https://orcid.org/0000-0002-5223-8083",
+          "institutions": [
+            "Beijing Normal University"
+          ]
+        },
+        {
+          "name": "Lijie Huang",
+          "openalex_id": "A5029894649",
+          "orcid": "https://orcid.org/0000-0003-2515-0315",
+          "institutions": [
+            "Beijing Normal University"
+          ]
+        },
+        {
+          "name": "Xiangzhen Kong",
+          "openalex_id": "A5066387381",
+          "orcid": "https://orcid.org/0000-0002-0805-1350",
+          "institutions": [
+            "Beijing Normal University"
+          ]
+        },
+        {
+          "name": "Jia Liu",
+          "openalex_id": "A5100409741",
+          "orcid": "https://orcid.org/0000-0003-0383-0934",
+          "institutions": [
+            "Beijing Normal University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-20",
+      "abstract": "A major principle of human brain organization is \u201cintegrating\u201d some regions into networks while \u201csegregating\u201d other sets of regions into separate networks. However, little is known about the cognitive function of the integration and segregation of brain networks. Here, we examined the well-studied brain network for face processing, and asked whether the integration and segregation of the face network (FN) are related to face recognition performance. To do so, we used a voxel-based global brain connectivity method based on resting-state fMRI to characterize the within-network connectivity (WNC) and the between-network connectivity (BNC) of the FN. We found that 95.4% of voxels in the FN had a significantly stronger WNC than BNC, suggesting that the FN is a relatively encapsulated network. Importantly, individuals with a stronger WNC (i.e., integration) in the right fusiform face area were better at recognizing faces, whereas individuals with a weaker BNC (i.e., segregation) in the right occipital face area performed better in the face recognition tasks. In short, our study not only demonstrates the behavioral relevance of integration and segregation of the FN but also provides evidence supporting functional division of labor between the occipital face area and fusiform face area in the hierarchically organized FN. SIGNIFICANCE STATEMENT Although the integration and segregation are major principles of human brain organization, little is known about whether they support the cognitive processes. By correlating the within-network connectivity (WNC) and between-network connectivity (BNC) of the face network with face recognition performance, we found that individuals with stronger WNC in the right fusiform face area or weaker BNC in the right occipital face area were better at recognizing faces. Our study not only demonstrates the behavioral relevance of the integration and segregation but also provides evidence supporting functional division of labor between the occipital face area and fusiform face area in the hierarchically organized face network.",
+      "cited_by_count": 81,
+      "type": "article",
+      "source": {
+        "name": "Journal of Neuroscience",
+        "type": "journal",
+        "issn": [
+          "0270-6474",
+          "1529-2401"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.jneurosci.org/content/jneuro/36/3/890.full.pdf"
+      },
+      "topics": [
+        "Face Recognition and Perception",
+        "Functional Brain Connectivity Studies",
+        "Neural dynamics and brain function"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W2422363455"
+    },
+    {
+      "openalex_id": "W4400179106",
+      "doi": "10.1007/s00737-024-01490-w",
+      "title": "Cognitive household labor: gender disparities and consequences for maternal mental health and wellbeing",
+      "authors": [
+        {
+          "name": "Elizabeth C. Aviv",
+          "openalex_id": "A5033725608",
+          "orcid": "https://orcid.org/0000-0001-9140-0904",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Yael H. Waizman",
+          "openalex_id": "A5090545906",
+          "orcid": "https://orcid.org/0000-0002-8031-491X",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Elizabeth Kim",
+          "openalex_id": "A5062635910",
+          "orcid": "https://orcid.org/0000-0002-4823-9163",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Jasmine Liu",
+          "openalex_id": "A5025884017",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Eve Rodsky",
+          "openalex_id": "A5104771572"
+        },
+        {
+          "name": "Darby Saxbe",
+          "openalex_id": "A5007506615",
+          "orcid": "https://orcid.org/0000-0001-8951-4216",
+          "institutions": [
+            "University of Southern California"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-07-01",
+      "abstract": "Abstract Purpose Although the division of unpaid household labor has been studied as a driver of global gender inequity, the cognitive dimension of household labor\u2014planning, anticipating, and delegating household tasks\u2014has received less empirical investigation. Cognitive household labor represents a form of invisible and often unacknowledged domestic work that has been challenging to measure. Methods Within 322 mothers of young children, we assessed the division of both cognitive (\u201cplanning\u201d) and physical (\u201cexecution\u201d) household labor within 30 common household tasks using a self-report measure. Results We found that while mothers did more of the overall domestic labor than their partners, the division of cognitive labor was particularly gendered, such that women\u2019s share of cognitive labor was more disproportionate than physical household labor. We found that cognitive labor was associated with women\u2019s depression, stress, burnout, overall mental health, and relationship functioning. Conclusions This study is one of the first to investigate cognitive labor quantitatively, and the first to investigate cognitive and physical dimensions within the same household tasks. Understanding how cognitive labor affects mothers\u2019 mental wellbeing has important implications for both practice and policy.",
+      "cited_by_count": 27,
+      "type": "article",
+      "source": {
+        "name": "Archives of Women s Mental Health",
+        "type": "journal",
+        "issn": [
+          "1434-1816",
+          "1435-1102"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s00737-024-01490-w.pdf"
+      },
+      "topics": [
+        "Work-Family Balance Challenges",
+        "Attachment and Relationship Dynamics",
+        "Maternal Mental Health During Pregnancy and Postpartum"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W4400179106"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

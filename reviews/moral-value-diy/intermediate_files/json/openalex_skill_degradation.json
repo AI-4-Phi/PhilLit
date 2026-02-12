@@ -1,0 +1,2148 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "technology skill degradation",
+  "results": [
+    {
+      "openalex_id": "W2463378445",
+      "doi": "10.1016/j.cirp.2016.06.006",
+      "title": "Continuous maintenance and the future \u2013 Foundations and technological challenges",
+      "authors": [
+        {
+          "name": "Rajkumar Roy",
+          "openalex_id": "A5024454586",
+          "orcid": "https://orcid.org/0000-0001-5491-7437",
+          "institutions": [
+            "Engineering and Physical Sciences Research Council",
+            "Cranfield University"
+          ]
+        },
+        {
+          "name": "Rainer Stark",
+          "openalex_id": "A5022492596",
+          "orcid": "https://orcid.org/0000-0002-2599-0130",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Kirsten Tracht",
+          "openalex_id": "A5028881802",
+          "orcid": "https://orcid.org/0000-0001-9740-3962",
+          "institutions": [
+            "University of Bremen"
+          ]
+        },
+        {
+          "name": "Shozo Takata",
+          "openalex_id": "A5102799759",
+          "orcid": "https://orcid.org/0000-0001-6765-3012",
+          "institutions": [
+            "Waseda University"
+          ]
+        },
+        {
+          "name": "M. Mori",
+          "openalex_id": "A5032925810",
+          "orcid": "https://orcid.org/0000-0001-6082-2848",
+          "institutions": [
+            "DMG Mori (Japan)"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "High value and long life products require continuous maintenance throughout their life cycle to achieve required performance with optimum through-life cost. This paper presents foundations and technologies required to offer the maintenance service. Component and system level degradation science, assessment and modelling along with life cycle \u2018big data\u2019 analytics are the two most important knowledge and skill base required for the continuous maintenance. Advanced computing and visualisation technologies will improve efficiency of the maintenance and reduce through-life cost of the product. Future of continuous maintenance within the Industry 4.0 context also identifies the role of IoT, standards and cyber security.",
+      "cited_by_count": 299,
+      "type": "article",
+      "source": {
+        "name": "CIRP Annals",
+        "type": "journal",
+        "issn": [
+          "0007-8506",
+          "1660-2773",
+          "1726-0604"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.cirp.2016.06.006"
+      },
+      "topics": [
+        "Quality and Safety in Healthcare",
+        "Reliability and Maintenance Optimization",
+        "Technology Assessment and Management"
+      ],
+      "referenced_works_count": 210,
+      "url": "https://openalex.org/W2463378445"
+    },
+    {
+      "openalex_id": "W2728876999",
+      "doi": "10.1016/j.rser.2017.06.055",
+      "title": "A review of renewable energy development in Africa: A focus in South Africa, Egypt and Nigeria",
+      "authors": [
+        {
+          "name": "Abubakar Kabir Aliyu",
+          "openalex_id": "A5028487257",
+          "institutions": [
+            "University of Technology Malaysia"
+          ]
+        },
+        {
+          "name": "Babangida Modu",
+          "openalex_id": "A5076308825",
+          "orcid": "https://orcid.org/0000-0001-8118-5905",
+          "institutions": [
+            "University of Technology Malaysia"
+          ]
+        },
+        {
+          "name": "Chee Wei Tan",
+          "openalex_id": "A5000567973",
+          "orcid": "https://orcid.org/0000-0002-4715-8505",
+          "institutions": [
+            "University of Technology Malaysia"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-06-28",
+      "abstract": null,
+      "cited_by_count": 347,
+      "type": "review",
+      "source": {
+        "name": "Renewable and Sustainable Energy Reviews",
+        "type": "journal",
+        "issn": [
+          "1364-0321",
+          "1879-0690"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Energy and Environment Impacts",
+        "Hybrid Renewable Energy Systems",
+        "Microgrid Control and Optimization"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2728876999"
+    },
+    {
+      "openalex_id": "W4206346145",
+      "doi": "10.1111/1748-8583.12433",
+      "title": "Can HR adapt to the paradoxes of artificial intelligence?",
+      "authors": [
+        {
+          "name": "Andy Charlwood",
+          "openalex_id": "A5073130043",
+          "orcid": "https://orcid.org/0000-0002-5444-194X",
+          "institutions": [
+            "University of Leeds"
+          ]
+        },
+        {
+          "name": "Nigel Guenole",
+          "openalex_id": "A5007023175",
+          "orcid": "https://orcid.org/0000-0001-7991-9180",
+          "institutions": [
+            "Goldsmiths University of London"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-07",
+      "abstract": "Abstract Artificial intelligence (AI) is widely heralded as a new and revolutionary technology that will transform the world of work. While the impact of AI on human resource (HR) and people management is difficult to predict, the article considers potential scenarios for how AI will affect our field. We argue that although popular accounts of AI stress the risks of bias and unfairness, these problems are eminently solvable. However, the way that the AI industry is currently constituted and wider trends in the use of technology for organising work mean that there is a significant risk that AI use will degrade the quality of work. Viewing different scenarios through a paradox lens, we argue that both positive and negative visions of the future are likely to coexist. The HR profession has a degree of agency to shape the future if it chooses to use it; HR professionals need to develop the skills to ensure that ethics and fairness are at the centre of AI development for HR and people management.",
+      "cited_by_count": 199,
+      "type": "article",
+      "source": {
+        "name": "Human Resource Management Journal",
+        "type": "journal",
+        "issn": [
+          "0954-5395",
+          "1748-8583"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1748-8583.12433"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Digital Economy and Work Transformation",
+        "AI and HR Technologies"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W4206346145"
+    },
+    {
+      "openalex_id": "W4206156515",
+      "doi": "10.1007/978-3-030-84044-0_4",
+      "title": "Digital Transformation in Higher Education Institutions as a Driver of Social Oriented Innovations",
+      "authors": [
+        {
+          "name": "Vladislav Kaputa",
+          "openalex_id": "A5034980302",
+          "orcid": "https://orcid.org/0000-0002-5953-1223",
+          "institutions": [
+            "Technical University of Zvolen"
+          ]
+        },
+        {
+          "name": "Erika Lou\u010danov\u00e1",
+          "openalex_id": "A5030520993",
+          "orcid": "https://orcid.org/0000-0003-0505-3251",
+          "institutions": [
+            "Technical University of Zvolen"
+          ]
+        },
+        {
+          "name": "Fernando Tejerina Gaite",
+          "openalex_id": "A5016783131",
+          "orcid": "https://orcid.org/0000-0001-6301-0757",
+          "institutions": [
+            "Universidad de Valladolid"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "Abstract Higher education institutions have in the digital transformation an opportunity to facilitate access to education for individuals of different social backgrounds. At the same time, it will provide them with the necessary tools and skills to face current global problems (poverty, health quality, income disparities, environmental crises, among others) from a transdisciplinary perspective. Progress in the digitalization of higher education has been significantly accelerated by the onset of a pandemics in early 2020 (in European conditions). Such a rapid and massive transition to distance (online) education with comprehensive support for digital technologies is unparalleled. The survey conducted reflects the consequences of this change. Results shows that digital transformation improves some of the most demanded skills in the new knowledge society (searching and processing information, digital communication and socialization or working with text). Likewise, it has an important role in reducing costs related to education, but also in degradation of abilities in personal communication.",
+      "cited_by_count": 118,
+      "type": "book-chapter",
+      "source": {
+        "name": "Innovation, technology and knowledge management",
+        "type": "book series",
+        "issn": [
+          "2197-5698",
+          "2197-5701"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-030-84044-0_4.pdf"
+      },
+      "topics": [
+        "Engineering Education and Technology",
+        "Educational Innovations and Challenges",
+        "University-Industry-Government Innovation Models"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W4206156515"
+    },
+    {
+      "openalex_id": "W2885731399",
+      "doi": "10.1016/j.scitotenv.2018.08.217",
+      "title": "Soil and water bioengineering: Practice and research needs for reconciling natural hazard control and ecological restoration",
+      "authors": [
+        {
+          "name": "Freddy Rey",
+          "openalex_id": "A5065947907",
+          "orcid": "https://orcid.org/0000-0002-2728-7123",
+          "institutions": [
+            "Universit\u00e9 Grenoble Alpes"
+          ]
+        },
+        {
+          "name": "Carlo Bifulco",
+          "openalex_id": "A5062444950",
+          "orcid": "https://orcid.org/0000-0003-1922-6977",
+          "institutions": [
+            "University of Lisbon"
+          ]
+        },
+        {
+          "name": "Gian Battista Bischetti",
+          "openalex_id": "A5037415865",
+          "orcid": "https://orcid.org/0000-0001-5181-2314",
+          "institutions": [
+            "University of Milan"
+          ]
+        },
+        {
+          "name": "Franck Bourrier",
+          "openalex_id": "A5004953001",
+          "orcid": "https://orcid.org/0000-0001-7012-818X",
+          "institutions": [
+            "Universit\u00e9 Grenoble Alpes"
+          ]
+        },
+        {
+          "name": "Giovanni De Cesare",
+          "openalex_id": "A5066742554",
+          "orcid": "https://orcid.org/0000-0002-1117-3180",
+          "institutions": [
+            "\u00c9cole Polytechnique F\u00e9d\u00e9rale de Lausanne"
+          ]
+        },
+        {
+          "name": "Florin Florineth",
+          "openalex_id": "A5084986568",
+          "institutions": [
+            "BOKU University"
+          ]
+        },
+        {
+          "name": "Frank Graf",
+          "openalex_id": "A5030695205",
+          "orcid": "https://orcid.org/0000-0003-4396-3731",
+          "institutions": [
+            "Swiss Federal Institute for Forest, Snow and Landscape Research"
+          ]
+        },
+        {
+          "name": "Mike Marden",
+          "openalex_id": "A5109922414",
+          "institutions": [
+            "Manaaki Whenua \u2013 Landcare Research"
+          ]
+        },
+        {
+          "name": "Slobodan B. Mickovski",
+          "openalex_id": "A5086330103",
+          "orcid": "https://orcid.org/0000-0002-1792-1258",
+          "institutions": [
+            "Glasgow Caledonian University"
+          ]
+        },
+        {
+          "name": "Chris Phillips",
+          "openalex_id": "A5072180504",
+          "orcid": "https://orcid.org/0000-0002-2034-1545",
+          "institutions": [
+            "Manaaki Whenua \u2013 Landcare Research"
+          ]
+        },
+        {
+          "name": "K. Peklo",
+          "openalex_id": "A5083088903"
+        },
+        {
+          "name": "Jean Poesen",
+          "openalex_id": "A5054382418",
+          "orcid": "https://orcid.org/0000-0001-6218-8967",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Dave Polster",
+          "openalex_id": "A5088090346"
+        },
+        {
+          "name": "Federico Preti",
+          "openalex_id": "A5034186024",
+          "orcid": "https://orcid.org/0000-0002-4569-3811",
+          "institutions": [
+            "University of Florence"
+          ]
+        },
+        {
+          "name": "Hans Peter Rauch",
+          "openalex_id": "A5006849331",
+          "orcid": "https://orcid.org/0000-0002-8306-571X",
+          "institutions": [
+            "BOKU University"
+          ]
+        },
+        {
+          "name": "Pierre Raymond",
+          "openalex_id": "A5040101837"
+        },
+        {
+          "name": "Paola Sangalli",
+          "openalex_id": "A5077058631"
+        },
+        {
+          "name": "Guillermo Tard\u00edo",
+          "openalex_id": "A5090010987",
+          "orcid": "https://orcid.org/0000-0001-6198-6297",
+          "institutions": [
+            "Universidad Polit\u00e9cnica de Madrid"
+          ]
+        },
+        {
+          "name": "Alexia Stokes",
+          "openalex_id": "A5060157029",
+          "orcid": "https://orcid.org/0000-0002-2276-0911",
+          "institutions": [
+            "Universit\u00e9 de Montpellier",
+            "Centre National de la Recherche Scientifique",
+            "Centre de Coop\u00e9ration Internationale en Recherche Agronomique pour le D\u00e9veloppement",
+            "Institut de Recherche pour le D\u00e9veloppement"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-08-17",
+      "abstract": "Soil and water bioengineering is a technology that encourages scientists and practitioners to combine their knowledge and skills in the management of ecosystems with a common goal to maximize benefits to both man and the natural environment. It involves techniques that use plants as living building materials, for: (i) natural hazard control (e.g., soil erosion, torrential floods and landslides) and (ii) ecological restoration or nature-based re-introduction of species on degraded lands, river embankments, and disturbed environments. For a bioengineering project to be successful, engineers are required to highlight all the potential benefits and ecosystem services by documenting the technical, ecological, economic and social values. The novel approaches used by bioengineers raise questions for researchers and necessitate innovation from practitioners to design bioengineering concepts and techniques. Our objective in this paper, therefore, is to highlight the practice and research needs in soil and water bioengineering for reconciling natural hazard control and ecological restoration. Firstly, we review the definition and development of bioengineering technology, while stressing issues concerning the design, implementation, and monitoring of bioengineering actions. Secondly, we highlight the need to reconcile natural hazard control and ecological restoration by posing novel practice and research questions.",
+      "cited_by_count": 145,
+      "type": "review",
+      "source": {
+        "name": "The Science of The Total Environment",
+        "type": "journal",
+        "issn": [
+          "0048-9697",
+          "1879-1026"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0048969718331814"
+      },
+      "topics": [
+        "Soil erosion and sediment transport",
+        "Tree Root and Stability Studies",
+        "Aeolian processes and effects"
+      ],
+      "referenced_works_count": 90,
+      "url": "https://openalex.org/W2885731399"
+    },
+    {
+      "openalex_id": "W2969898242",
+      "doi": "10.31269/triplec.v17i2.1093",
+      "title": "Critical Digital Literacy: Technology in Education Beyond Issues of User Competence and Labour-Market Qualifications",
+      "authors": [
+        {
+          "name": "Holger P\u00f6tzsch",
+          "openalex_id": "A5016257389",
+          "orcid": "https://orcid.org/0000-0002-5533-5014"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-26",
+      "abstract": "The present contribution conducts an intervention in the study and practice of digital and media literacy. After reviewing key tenets of recent debates, I advance a specific understanding of the concept \u2013 critical digital literacy \u2013 that, as I argue, comprehensively addresses issues of knowledge, competencies, and skills in relation to digital technologies. In particular, I posit that critical thinking about educational and other values of \u2018the digital\u2019 needs to take structural aspects of the technology into account that are often eschewed in instrumental or commercially-driven approaches. To prepare pupils for their future lives requires a widest possible contextualisation of technology, including issues of exploitation, commodification, and degradation in digital capitalism. Finally, I make concrete suggestions for constructive uses of technology in teaching and learning.",
+      "cited_by_count": 67,
+      "type": "article",
+      "source": {
+        "name": "tripleC Communication Capitalism & Critique Open Access Journal for a Global Sustainable Information Society",
+        "type": "journal",
+        "issn": [
+          "1726-670X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.triple-c.at/index.php/tripleC/article/download/1093/1295"
+      },
+      "topics": [
+        "Literacy, Media, and Education",
+        "Digital literacy in education",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W2969898242"
+    },
+    {
+      "openalex_id": "W3032963583",
+      "doi": "10.1016/j.cej.2020.125759",
+      "title": "Advances in thermocatalytic and photocatalytic techniques for the room/low temperature oxidative removal of formaldehyde in air",
+      "authors": [
+        {
+          "name": "Kowsalya Vellingiri",
+          "openalex_id": "A5073607959",
+          "orcid": "https://orcid.org/0000-0001-5314-9341",
+          "institutions": [
+            "Indian Institute of Technology Madras"
+          ]
+        },
+        {
+          "name": "Kumar Vikrant",
+          "openalex_id": "A5061985179",
+          "orcid": "https://orcid.org/0000-0001-7537-8540",
+          "institutions": [
+            "Hanyang University",
+            "Anyang University"
+          ]
+        },
+        {
+          "name": "Vanish Kumar",
+          "openalex_id": "A5047307631",
+          "orcid": "https://orcid.org/0000-0001-5555-4498",
+          "institutions": [
+            "National Agri-Food Biotechnology Institute"
+          ]
+        },
+        {
+          "name": "Ki\u2010Hyun Kim",
+          "openalex_id": "A5100459366",
+          "orcid": "https://orcid.org/0000-0003-0487-4242",
+          "institutions": [
+            "Anyang University",
+            "Hanyang University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-05",
+      "abstract": null,
+      "cited_by_count": 83,
+      "type": "article",
+      "source": {
+        "name": "Chemical Engineering Journal",
+        "type": "journal",
+        "issn": [
+          "1385-8947",
+          "1873-3212"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Advanced Photocatalysis Techniques",
+        "Gas Sensing Nanomaterials and Sensors",
+        "Catalytic Processes in Materials Science"
+      ],
+      "referenced_works_count": 335,
+      "url": "https://openalex.org/W3032963583"
+    },
+    {
+      "openalex_id": "W2104776215",
+      "doi": "10.1596/1813-9450-7240",
+      "title": "Global Experiences with Special Economic Zones: Focus on China and Africa",
+      "authors": [
+        {
+          "name": "Douglas Zhihua Zeng",
+          "openalex_id": "A5091126910",
+          "orcid": "https://orcid.org/0000-0002-9399-5443"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-01",
+      "abstract": "This study briefly summarizes the development experiences of special economic zones in China and Africa, the lessons that Africa can learn from China, and the preliminary results of the Chinese investments in special economic zones in Africa. The study makes recommendations on how to unleash the power of special economic zones and industrial zones in Africa through strategically leveraging the Chinese experiences. The success factors of Chinese special economic zones include the strong and long-term commitment of the government, a conducive business environment in the zones, strategic locations, technology upgrading and skills training, and strong linkages with the local economy. However, the Chinese experiences highlight some pitfalls to avoid, such as the ?mushroom approach? and high-level overlaps at the later stage, environmental degradation, and the unbalance between industrial development and social dimensions. This calls for a bigger role for the market. Sub-Sahara Africa's experience with traditional economic zones has been relatively poor, except in a few countries, such as Mauritius. The key challenges include the poor regulatory and institutional framework, lack of effective strategic planning, weak governance and implementation capacity, and inadequate infrastructure, among others. Since 2006, China has implemented special economic zone projects globally, including in four countries in Sub-Saharan Africa. It is still too early to conduct a full assessment of these projects; however, the evidence shows that some zones have begun to attract investments and make important contributions to the local economy. The main challenges include access to land, regulatory barriers, resettlement and coordination issues, and lack of external infrastructure.",
+      "cited_by_count": 160,
+      "type": "book",
+      "source": {
+        "name": "World Bank, Washington, DC eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Economic Zones and Regional Development",
+        "China's Global Influence and Migration"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W2104776215"
+    },
+    {
+      "openalex_id": "W2337966897",
+      "doi": "10.1177/0160449x15607154",
+      "title": "Continuity and Change in Labor Process Analysis Forty Years After <i>Labor and Monopoly Capital</i>",
+      "authors": [
+        {
+          "name": "Chris Smith",
+          "openalex_id": "A5100658236",
+          "orcid": "https://orcid.org/0000-0002-1348-189X",
+          "institutions": [
+            "University of London"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-09-01",
+      "abstract": "Braverman\u2019s Labor and Monopoly Capital tapped into a late twentieth century sense that work while appearing ever safer, cleaner and more automated, was actually, less skilled, more controlled, and more intensive. For Braverman the general movement in work in the twentieth century had been towards degradation of skill and worker control, devoid of creative technical content and thought. Braverman\u2019s monumental book drew on Marx\u2019s writings on technology and the labour process, for the conditions of American capitalism in the 1970s. He provoked such heated debate that the term \u2018Bravermania\u2019 has entered the sociological lexicon. His analysis on the labour process in late modernity has seen scholars of organization, work and society at loggerheads over an array of issues. While some writers have attacked Braverman for underplaying the potential for worker resistance, others have defended his analysis as more nuanced and ultimately true to its Marxist inheritance. These debates, which continue to this day on both sides of the Atlantic, but as the paper demonstrates, there has been a movement away from some of the grander themes of Labor and Monopoly Capital (the state, the class structure, the universal market) towards a narrow focus on skill. But there has also been a widening of debates, with new themes (embodiment of labour, globalization, heightened mobility of labour, fragmentation of employment contracts, and spatial division of labour) which has moved labour process theory on and continued to rejuvenate discussion around the control and direction of work that Braverman helped to initiate.",
+      "cited_by_count": 99,
+      "type": "article",
+      "source": {
+        "name": "Labor Studies Journal",
+        "type": "journal",
+        "issn": [
+          "0160-449X",
+          "1538-9758"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Labor Movements and Unions",
+        "Employment and Welfare Studies",
+        "Digital Economy and Work Transformation"
+      ],
+      "referenced_works_count": 115,
+      "url": "https://openalex.org/W2337966897"
+    },
+    {
+      "openalex_id": "W3098589545",
+      "doi": "10.1111/ijsw.12469",
+      "title": "A green social work perspective on social work during the time of COVID\u201019",
+      "authors": [
+        {
+          "name": "Lena Dominelli",
+          "openalex_id": "A5063869989",
+          "orcid": "https://orcid.org/0000-0002-7266-5517",
+          "institutions": [
+            "University of Stirling"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-15",
+      "abstract": "COVID\u201019 has challenged social workers to engage with health pandemics and provide essential services in conditions of uncertainty and high risk. They have safeguarded children, older adults and diverse adults in \u2018at risk\u2019 groups under tough conditions mediated by digital technologies, adhered to government injunctions, maintained social and physical distancing under lockdown and worked from home remotely. Social workers and social care workers have risen to the challenges, providing services with inadequate personal protective equipment and limited supervision and support. This article highlights the degraded physical environments, socio\u2010economic and political contexts that intensify precariousness and constraints that neoliberalism imposed on professional capacity before and during this health pandemic. It provides guidelines to protect practitioners and service users. It concludes that practitioners ought to understand zoonotic diseases, environmental concerns, acquire disaster expertise and training, widen their practice portfolio and value their contributions to this pandemic. Key Practitioner Message: \u2022 Develop technological skills and innovate to support stressed individuals, safeguard children, adolescents and elders and deal with poverty and unemployment; \u2022 Use digital technologies involving peers to explore tricky situations, examine ethical dilemmas through scenario building exercises, and tips for self\u2010care; \u2022 Contribute to environmental protections that prevent the spread of zoonotic diseases like COVID\u201019; \u2022 Seek supervision and support for disaster\u2010based training from your line manager .",
+      "cited_by_count": 106,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Social Welfare",
+        "type": "journal",
+        "issn": [
+          "1369-6866",
+          "1468-2397"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7753299"
+      },
+      "topics": [
+        "COVID-19 and healthcare impacts",
+        "Climate Change and Health Impacts",
+        "Healthcare Systems and Challenges"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W3098589545"
+    },
+    {
+      "openalex_id": "W2765764428",
+      "doi": "10.1108/whatt-09-2017-0047",
+      "title": "Are millennials transforming global tourism? Challenges for destinations and companies",
+      "authors": [
+        {
+          "name": "C\u00e9lia Veiga",
+          "openalex_id": "A5061486414",
+          "institutions": [
+            "University of Algarve"
+          ]
+        },
+        {
+          "name": "Margarida Cust\u00f3dio Santos",
+          "openalex_id": "A5001839177",
+          "orcid": "https://orcid.org/0000-0003-3383-5699",
+          "institutions": [
+            "University of Algarve"
+          ]
+        },
+        {
+          "name": "Paulo \u00c1guas",
+          "openalex_id": "A5028829483",
+          "orcid": "https://orcid.org/0000-0002-6046-8540",
+          "institutions": [
+            "University of Algarve"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 Ant\u00f3nio C. Santos",
+          "openalex_id": "A5031610023",
+          "orcid": "https://orcid.org/0000-0002-2675-3487",
+          "institutions": [
+            "University of Algarve"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-16",
+      "abstract": "Purpose The purpose of this study is to identify the characteristics of the millennials segment that is most likely to cause a significant disruption in the way the tourism sector is currently structured. A profile of this segment has been developed along with an analysis of the marketing implications for destinations and tourism providers. Design/methodology/approach The research involved examining academic, institutional and trade literature to provide an overview of the millennials profile and the related developments causing disruptive changes in the tourism sector. Findings The characteristics of the millennials with the greatest potential to disrupt the tourism sector are their strong digital skills, high degree of permanent connectivity, search for outstanding experiences and altruistic behaviours. The results already present from these characteristics \u2013 with a high probability of intensifying in the future \u2013 are the practice of volunteer tourism, search for places not connected with tourism and adoption of new, disruptive technologies. Even though volunteer tourism is an act of altruism, it can have harmful implications for tourist destinations in which it occurs. In addition, tourist invasions of places traditionally occupied only by residents can lead to the removal of locals from these places, manifestations of \u201ctourismphobia\u201d and ultimately degradation of these tourists\u2019 experiences. Finally, the adoption of disruptive technologies by tourism agents to fulfil the millennials\u2019 demands for immediate responses reduces human interactions highly valued by millennials and, therefore, requires close monitoring. Originality/value This study\u2019s value arises from its systematic identification of the millennials characteristics that are most likely to disrupt the tourism sector\u2019s functioning, allowing the relevant stakeholders to adopt proactive strategies, minimise potential negative impacts and maximise opportunities.",
+      "cited_by_count": 110,
+      "type": "article",
+      "source": {
+        "name": "Worldwide Hospitality and Tourism Themes",
+        "type": "journal",
+        "issn": [
+          "1755-4217",
+          "1755-4225"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Tourism, Volunteerism, and Development",
+        "Diverse Aspects of Tourism Research",
+        "Religious Tourism and Spaces"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W2765764428"
+    },
+    {
+      "openalex_id": "W2996646079",
+      "doi": "10.1007/s13762-019-02605-y",
+      "title": "Clean-up of crude oil-contaminated soils: bioremediation option",
+      "authors": [
+        {
+          "name": "Okoh Elechi",
+          "openalex_id": "A5060909977",
+          "orcid": "https://orcid.org/0000-0001-5595-1602",
+          "institutions": [
+            "The Federal Polytechnic, Ado-Ekiti"
+          ]
+        },
+        {
+          "name": "Z. R. Yelebe",
+          "openalex_id": "A5108670277",
+          "institutions": [
+            "Niger Delta University"
+          ]
+        },
+        {
+          "name": "Bernard Oruabena",
+          "openalex_id": "A5075640110",
+          "institutions": [
+            "The Federal Polytechnic, Ado-Ekiti"
+          ]
+        },
+        {
+          "name": "Ebitei Sintei Nelson",
+          "openalex_id": "A5057302965",
+          "orcid": "https://orcid.org/0000-0001-5988-4769",
+          "institutions": [
+            "The Federal Polytechnic, Ado-Ekiti"
+          ]
+        },
+        {
+          "name": "O. P. Indiamaowei",
+          "openalex_id": "A5018259889",
+          "institutions": [
+            "Niger Delta University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-21",
+      "abstract": null,
+      "cited_by_count": 60,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Environmental Science and Technology",
+        "type": "journal",
+        "issn": [
+          "1735-1472",
+          "1735-2630"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Microbial bioremediation and biosurfactants",
+        "Pharmaceutical and Antibiotic Environmental Impacts"
+      ],
+      "referenced_works_count": 102,
+      "url": "https://openalex.org/W2996646079"
+    },
+    {
+      "openalex_id": "W4281821804",
+      "doi": "10.3389/fvets.2022.889623",
+      "title": "Twelve Threats of Precision Livestock Farming (PLF) for Animal Welfare",
+      "authors": [
+        {
+          "name": "Frank Tuyttens",
+          "openalex_id": "A5015349079",
+          "orcid": "https://orcid.org/0000-0002-1348-218X",
+          "institutions": [
+            "Ghent University"
+          ]
+        },
+        {
+          "name": "Carla Forte Maiolino Molento",
+          "openalex_id": "A5042060767",
+          "orcid": "https://orcid.org/0000-0003-1408-7891",
+          "institutions": [
+            "Universidade Federal do Paran\u00e1"
+          ]
+        },
+        {
+          "name": "Said Benaissa",
+          "openalex_id": "A5011998721",
+          "orcid": "https://orcid.org/0000-0001-7962-6900",
+          "institutions": [
+            "Ghent University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-27",
+      "abstract": "Research and development of Precision Livestock Farming (PLF) is booming, partly due to hopes and claims regarding the benefits of PLF for animal welfare. These claims remain largely unproven, however, as only few PLF technologies focusing on animal welfare have been commercialized and adopted in practice. The prevailing enthusiasm and optimism about PLF innovations may be clouding the perception of possible threats that PLF may pose to farm animal welfare. Without claiming to be exhaustive, this paper lists 12 potential threats grouped into four categories: direct harm, indirect harm via the end-user, via changes to housing and management, and via ethical stagnation or degradation. PLF can directly harm the animals because of (1) technical failures, (2) harmful effects of exposure, adaptation or wearing of hardware components, (3) inaccurate predictions and decisions due to poor external validation, and (4) lack of uptake of the most meaningful indicators for animal welfare. PLF may create indirect effects on animal welfare if the farmer or stockperson (5) becomes under- or over-reliant on PLF technology, (6) spends less (quality) time with the animals, and (7) loses animal-oriented husbandry skills. PLF may also compromise the interests of the animals by creating transformations in animal farming so that the housing and management are (8) adapted to optimize PLF performance or (9) become more industrialized. Finally, PLF may affect the moral status of farm animals in society by leading to (10) increased speciesism, (11) further animal instrumentalization, and (12) increased animal consumption and harm. For the direct threats, possibilities for prevention and remedies are suggested. As the direction and magnitude of the more indirect threats are harder to predict or prevent, they are more difficult to address. In order to maximize the potential of PLF for improving animal welfare, the potential threats as well as the opportunities should be acknowledged, monitored and addressed.",
+      "cited_by_count": 82,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Veterinary Science",
+        "type": "journal",
+        "issn": [
+          "2297-1769"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fvets.2022.889623/pdf"
+      },
+      "topics": [
+        "Animal Behavior and Welfare Studies",
+        "Animal and Plant Science Education",
+        "Human-Animal Interaction Studies"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W4281821804"
+    },
+    {
+      "openalex_id": "W2999331182",
+      "doi": "10.1016/j.jrurstud.2020.01.009",
+      "title": "The role of self-control, hope and information in technology adoption by smallholder farmers \u2013 A moderation model",
+      "authors": [
+        {
+          "name": "Shira Bukchin\u2010Peles",
+          "openalex_id": "A5015122322",
+          "orcid": "https://orcid.org/0000-0003-4865-9632",
+          "institutions": [
+            "Tel Aviv University"
+          ]
+        },
+        {
+          "name": "Dorit Kerret",
+          "openalex_id": "A5045832632",
+          "orcid": "https://orcid.org/0000-0002-8436-8130",
+          "institutions": [
+            "Tel Aviv University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-18",
+      "abstract": null,
+      "cited_by_count": 47,
+      "type": "article",
+      "source": {
+        "name": "Journal of Rural Studies",
+        "type": "journal",
+        "issn": [
+          "0743-0167",
+          "1873-1392"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Environmental Education and Sustainability",
+        "Agricultural Innovations and Practices"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W2999331182"
+    },
+    {
+      "openalex_id": "W1973391424",
+      "doi": "10.3390/f6010133",
+      "title": "Case Study Report: Community-Based Monitoring Systems for REDD+ in Guyana",
+      "authors": [
+        {
+          "name": "Helen Bellfield",
+          "openalex_id": "A5010762466",
+          "institutions": [
+            "Global Canopy"
+          ]
+        },
+        {
+          "name": "David Sabogal",
+          "openalex_id": "A5041110359",
+          "orcid": "https://orcid.org/0009-0005-8944-7507",
+          "institutions": [
+            "Global Canopy"
+          ]
+        },
+        {
+          "name": "L Goodman",
+          "openalex_id": "A5066135309",
+          "orcid": "https://orcid.org/0000-0002-2762-4767",
+          "institutions": [
+            "Global Canopy"
+          ]
+        },
+        {
+          "name": "Matt Leggett",
+          "openalex_id": "A5038324288",
+          "institutions": [
+            "Global Canopy"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-06",
+      "abstract": "A fundamental component of initiatives to reduce emissions from deforestation and forest degradation (REDD+); will be the development of robust and cost-effective measuring, reporting, and verification (MRV) instruments for national forest monitoring and safeguard information systems. It is increasingly recognized that community-based monitoring (CBM) offers a positive model for greater participation and engagement of indigenous and forest-dependent communities within a REDD+ framework. Yet plans for CBM within REDD+ MRV systems remain limited, and there are currently relatively few concrete examples of CBM informing national forest monitoring systems. This paper outlines findings from a community MRV project with Amerindian communities in the North Rupununi, Guyana; and demonstrates that a CBM approach can enable key REDD+ requirements: in understanding local deforestation drivers and measuring carbon stocks; and for providing information on safeguards through social and environmental assessments. In addition, the authors discuss community capacity-building on smartphone technology for monitoring as a challenging yet viable pathway for scaling the use and adoption of indigenous knowledge and local skills for REDD+ programs.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": {
+        "name": "Forests",
+        "type": "journal",
+        "issn": [
+          "1999-4907"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1999-4907/6/1/133/pdf?version=1420551944"
+      },
+      "topics": [
+        "Conservation, Biodiversity, and Resource Management",
+        "Energy and Environment Impacts",
+        "Global trade, sustainability, and social impact"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W1973391424"
+    },
+    {
+      "openalex_id": "W2942534879",
+      "doi": "10.24259/fs.v3i1.5975",
+      "title": "Making the case for institutional support on designing agroforestry technology models for rehabilitating critical lands",
+      "authors": [
+        {
+          "name": "Andi Nuddin",
+          "openalex_id": "A5039664980",
+          "orcid": "https://orcid.org/0000-0001-7969-9261",
+          "institutions": [
+            "Universitas Muhammadiyah Parepare"
+          ]
+        },
+        {
+          "name": "Muhammad Arsyad",
+          "openalex_id": "A5037119303",
+          "orcid": "https://orcid.org/0000-0001-5619-4543",
+          "institutions": [
+            "Hasanuddin University"
+          ]
+        },
+        {
+          "name": "Muhammad Ikbal Putera",
+          "openalex_id": "A5049044763",
+          "institutions": [
+            "Universitas Muhammadiyah Parepare"
+          ]
+        },
+        {
+          "name": "Nuringsih Nuringsih",
+          "openalex_id": "A5033770242",
+          "institutions": [
+            "Universitas Muhammadiyah Parepare"
+          ]
+        },
+        {
+          "name": "Temesgen Tilahun Teshome",
+          "openalex_id": "A5030617602",
+          "institutions": [
+            "Addis Ababa University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-23",
+      "abstract": "Land and forest management practices in developing countries have resulted in millions of hectares of degraded lands. This is caused by policy implementation unable to synergize between conservation-ecological goals, and the economic needs of farmer households. This study aims to showcase a model for bringing together economic and ecological interests more closely in line with one another. Furthermore, the study also presents an institutional structure of a program that could help to establish agroforestry-based land rehabilitation policies. The research employed includes a combination of Farming Income Analysis and Interpretative Structural Modeling Analysis. The results show that farming income, when employing agroforestry technology is higher than non-agroforestry approaches. Furthermore, agroforestry technology supports critical land rehabilitation and provides conditions for longer term sustainability. Therefore, a programmatic institutional approach is needed to support these dual goals. We identify that a programmatic approach would include: (1) applying conditions of an agroforestry system as a holistic structured unit, (2) improvement of farmer knowledge and skills, (3) increasing the role and capacity of relevant institutions, (4) improving coordination between sectors, (5) developing conservation agriculture systems, (6) improving bureaucratic support systems, and (7) strengthening control and supervision functions. These elements imply that implementation of agroforestry technology requires institutional support in designing policy for critical land rehabilitation, of which would have significant economic and ecological outcomes on critical lands.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Forest and Society",
+        "type": "journal",
+        "issn": [
+          "2549-4333",
+          "2549-4724"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://journal.unhas.ac.id/index.php/fs/article/download/5975/pdf"
+      },
+      "topics": [
+        "Conservation, Biodiversity, and Resource Management",
+        "Agriculture and Rural Development Research",
+        "Agricultural Innovations and Practices"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W2942534879"
+    },
+    {
+      "openalex_id": "W2983762108",
+      "doi": "10.1038/s41586-019-1682-5",
+      "title": "Recycling lithium-ion batteries from electric vehicles",
+      "authors": [
+        {
+          "name": "Gavin Harper",
+          "openalex_id": "A5040619585",
+          "orcid": "https://orcid.org/0000-0002-4691-6642",
+          "institutions": [
+            "The Faraday Institution",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Roberto Sommerville",
+          "openalex_id": "A5081205367",
+          "orcid": "https://orcid.org/0000-0002-6676-1262",
+          "institutions": [
+            "The Faraday Institution",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Emma Kendrick",
+          "openalex_id": "A5053424857",
+          "orcid": "https://orcid.org/0000-0002-4219-964X",
+          "institutions": [
+            "University of Birmingham",
+            "The Faraday Institution"
+          ]
+        },
+        {
+          "name": "Laura L. Driscoll",
+          "openalex_id": "A5082443243",
+          "orcid": "https://orcid.org/0000-0002-1991-6858",
+          "institutions": [
+            "The Faraday Institution",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Peter R. Slater",
+          "openalex_id": "A5087896936",
+          "orcid": "https://orcid.org/0000-0002-6280-7673",
+          "institutions": [
+            "The Faraday Institution",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Rustam Stolkin",
+          "openalex_id": "A5005183926",
+          "orcid": "https://orcid.org/0000-0002-0890-8836",
+          "institutions": [
+            "NIHR Birmingham Biomedical Research Centre",
+            "The Faraday Institution",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Allan Walton",
+          "openalex_id": "A5027714932",
+          "orcid": "https://orcid.org/0000-0001-8608-7941",
+          "institutions": [
+            "University of Birmingham",
+            "The Faraday Institution"
+          ]
+        },
+        {
+          "name": "Paul A. Christensen",
+          "openalex_id": "A5101852731",
+          "orcid": "https://orcid.org/0000-0002-4974-2000",
+          "institutions": [
+            "University of Birmingham",
+            "The Faraday Institution",
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Oliver Heidrich",
+          "openalex_id": "A5053417998",
+          "orcid": "https://orcid.org/0000-0002-6581-5572",
+          "institutions": [
+            "Newcastle University",
+            "University of Birmingham",
+            "The Faraday Institution",
+            "Tyndall Centre"
+          ]
+        },
+        {
+          "name": "Simon Lambert",
+          "openalex_id": "A5025736158",
+          "orcid": "https://orcid.org/0000-0002-1946-5946",
+          "institutions": [
+            "The Faraday Institution",
+            "University of Birmingham",
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Andrew P. Abbott",
+          "openalex_id": "A5057160640",
+          "orcid": "https://orcid.org/0000-0001-9556-8341",
+          "institutions": [
+            "University of Leicester",
+            "NIHR Leicester Biomedical Research Centre",
+            "University of Birmingham",
+            "The Faraday Institution"
+          ]
+        },
+        {
+          "name": "Karl S. Ryder",
+          "openalex_id": "A5052480017",
+          "orcid": "https://orcid.org/0000-0003-2803-6884",
+          "institutions": [
+            "The Faraday Institution",
+            "NIHR Leicester Biomedical Research Centre",
+            "University of Leicester",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Linda Gaines",
+          "openalex_id": "A5036793143",
+          "orcid": "https://orcid.org/0000-0002-3726-3387",
+          "institutions": [
+            "Argonne National Laboratory"
+          ]
+        },
+        {
+          "name": "Paul A. Anderson",
+          "openalex_id": "A5103217887",
+          "orcid": "https://orcid.org/0000-0002-0613-7281",
+          "institutions": [
+            "University of Birmingham",
+            "The Faraday Institution"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-06",
+      "abstract": null,
+      "cited_by_count": 3283,
+      "type": "review",
+      "source": {
+        "name": "Nature",
+        "type": "journal",
+        "issn": [
+          "0028-0836",
+          "1476-4687"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.nature.com/articles/s41586-019-1682-5.pdf"
+      },
+      "topics": [
+        "Extraction and Separation Processes",
+        "Advancements in Battery Materials",
+        "Recycling and Waste Management Techniques"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W2983762108"
+    },
+    {
+      "openalex_id": "W1992193293",
+      "doi": "10.1016/j.gloenvcha.2015.01.004",
+      "title": "The roads ahead: Narratives for shared socioeconomic pathways describing world futures in the 21st century",
+      "authors": [
+        {
+          "name": "Brian C. O\u2019Neill",
+          "openalex_id": "A5086297597",
+          "orcid": "https://orcid.org/0000-0001-7505-8897",
+          "institutions": [
+            "NSF National Center for Atmospheric Research"
+          ]
+        },
+        {
+          "name": "Elmar Kriegler",
+          "openalex_id": "A5023849961",
+          "orcid": "https://orcid.org/0000-0002-3307-2647",
+          "institutions": [
+            "Potsdam Institute for Climate Impact Research"
+          ]
+        },
+        {
+          "name": "Kristie L. Ebi",
+          "openalex_id": "A5015997009",
+          "orcid": "https://orcid.org/0000-0003-4746-8236",
+          "institutions": [
+            "University of Washington"
+          ]
+        },
+        {
+          "name": "Eric Kemp\u2010Benedict",
+          "openalex_id": "A5053503527",
+          "orcid": "https://orcid.org/0000-0001-5794-7172",
+          "institutions": [
+            "Stockholm Environment Institute",
+            "Chulalongkorn University"
+          ]
+        },
+        {
+          "name": "Keywan Riahi",
+          "openalex_id": "A5035238849",
+          "orcid": "https://orcid.org/0000-0001-7193-3498",
+          "institutions": [
+            "Graz University of Technology",
+            "International Institute for Applied Systems Analysis"
+          ]
+        },
+        {
+          "name": "Dale S. Rothman",
+          "openalex_id": "A5088945400",
+          "orcid": "https://orcid.org/0000-0003-1479-2849",
+          "institutions": [
+            "University of Denver"
+          ]
+        },
+        {
+          "name": "Bas van Ruijven",
+          "openalex_id": "A5081313805",
+          "orcid": "https://orcid.org/0000-0003-1232-5892",
+          "institutions": [
+            "NSF National Center for Atmospheric Research"
+          ]
+        },
+        {
+          "name": "Detlef P. van Vuuren",
+          "openalex_id": "A5082748474",
+          "orcid": "https://orcid.org/0000-0003-0398-2831",
+          "institutions": [
+            "Netherlands Environmental Assessment Agency",
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Joern Birkmann",
+          "openalex_id": "A5031835848",
+          "orcid": "https://orcid.org/0000-0001-8733-3964",
+          "institutions": [
+            "University of Stuttgart"
+          ]
+        },
+        {
+          "name": "Kasper Kok",
+          "openalex_id": "A5022325093",
+          "orcid": "https://orcid.org/0000-0002-6319-9227",
+          "institutions": [
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "Marc A. Levy",
+          "openalex_id": "A5026265163",
+          "orcid": "https://orcid.org/0000-0002-1111-2222"
+        },
+        {
+          "name": "William Solecki",
+          "openalex_id": "A5026612849",
+          "orcid": "https://orcid.org/0000-0003-1256-4738",
+          "institutions": [
+            "Hunter College"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-12",
+      "abstract": null,
+      "cited_by_count": 3146,
+      "type": "article",
+      "source": {
+        "name": "Global Environmental Change",
+        "type": "journal",
+        "issn": [
+          "0959-3780",
+          "1872-9495"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0959378015000060"
+      },
+      "topics": [
+        "Sustainability and Climate Change Governance",
+        "Climate Change Communication and Perception",
+        "Climate change impacts on agriculture"
+      ],
+      "referenced_works_count": 92,
+      "url": "https://openalex.org/W1992193293"
+    },
+    {
+      "openalex_id": "W2987096276",
+      "doi": "10.18178/ijiet.2019.9.9.1275",
+      "title": "The Role of the Higher Education in the Development of the Agriculture",
+      "authors": [
+        {
+          "name": "P\u00e9ter Mikl\u00f3s K\u0151m\u00edves",
+          "openalex_id": "A5034883698",
+          "orcid": "https://orcid.org/0009-0006-8747-6993",
+          "institutions": [
+            "University of Debrecen"
+          ]
+        },
+        {
+          "name": "P\u00e9ter Pilishegyi",
+          "openalex_id": "A5096701112",
+          "institutions": [
+            "University of Debrecen"
+          ]
+        },
+        {
+          "name": "Norbert Nov\u00e1k",
+          "openalex_id": "A5025014437",
+          "orcid": "https://orcid.org/0000-0002-3604-7332",
+          "institutions": [
+            "University of Debrecen"
+          ]
+        },
+        {
+          "name": "Adri\u00e1n Nagy",
+          "openalex_id": "A5061515504",
+          "orcid": "https://orcid.org/0000-0002-3813-9759",
+          "institutions": [
+            "University of Debrecen"
+          ]
+        },
+        {
+          "name": "P\u00e9ter K\u00f6r\u00f6sparti",
+          "openalex_id": "A5073710219",
+          "institutions": [
+            "University of Debrecen"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "The aim of our article is to show the importance of the agriculture in the global life.One of the most important challenges of the world to produce enough food for the growing population of the Earth.The food production needs to be increased not only because of the growth in population but also because of the changing dietary habits.While the agriculture tries to produce more food they have to solve several problems.Increasing need for water, soil degradation and climate changethese are only a few of the most important problems we are facing right now.We have to increase the agricultural production on less arable landbut the question is: how?The role of education and especially the agricultural education became much more important in this case.Prior researches showed that for the improvement in the skills and knowledge of the farmers and agricultural employees we have to analyse the actual situation and challenges of the agricultural education.To serve the needs of the precision agriculture, the educational system have to pay attention for the changing needs of the agricultural system.During the reform of higher education and the agricultural higher education the most actual developments have to be included in the curricula.The labour market wants the higher education to offer actual knowledge for the students and for professionals as well during formal, informal and non-formal education as well.As the technology used by agriculture is continuously developing the employees and the farmers need different courses as parts of the lifelong learning systems.",
+      "cited_by_count": 27,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information and Education Technology",
+        "type": "journal",
+        "issn": [
+          "2010-3689"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.ijiet.org/vol9/1275-E143.pdf"
+      },
+      "topics": [
+        "Entrepreneurship Studies and Influences",
+        "Global Economic and Social Development"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W2987096276"
+    },
+    {
+      "openalex_id": "W2900579536",
+      "doi": "10.1177/0973174118804449",
+      "title": "Skills for Work and the Work of Skills: Community, Labour and Technological Change in India\u2019s Artisanal Fisheries",
+      "authors": [
+        {
+          "name": "Aparna Sundar",
+          "openalex_id": "A5088561640",
+          "orcid": "https://orcid.org/0000-0002-0849-7635",
+          "institutions": [
+            "Azim Premji University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-14",
+      "abstract": "Artisanal cultures of work and skills transmission provide a useful point of contrast from which to think about the renewed interest in skills development as a formal, institutionalized process of training and certification for discrete and standardized skills. This article traces the transformation of practices of skill in the context of technological change in the artisanal fisheries of Kanyakumari, Tamil Nadu, to explore a set of linked questions about skills and work: How expansively or narrowly should skills be understood? What can we learn from traditional modes of skills transmission? As technology makes redundant many of the traditional skills, are we seeing a \u2018degradation\u2019 of work? A focus on fishing, a traditionally caste-bound occupation, also opens up questions regarding the work that skills do within a political economy, both in reproducing a given social order, and in enabling change. In tracing processes of labour recruitment in the mechanized fisheries, the article offers a further reflection, about the extent to which skills matter in securing employment, given the continued importance of networks of caste, kinship and village-based community.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Journal of South Asian Development",
+        "type": "journal",
+        "issn": [
+          "0973-1733",
+          "0973-1741"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0973174118804449"
+      },
+      "topics": [
+        "Anthropological Studies and Insights",
+        "Southeast Asian Sociopolitical Studies",
+        "Social and Economic Development in India"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W2900579536"
+    },
+    {
+      "openalex_id": "W4391609700",
+      "doi": "10.1108/jsma-06-2023-0144",
+      "title": "Role of Industry 5.0 for driving\u00a0sustainability in the\u00a0manufacturing sector: an\u00a0emerging\u00a0research agenda",
+      "authors": [
+        {
+          "name": "Ganesh Narkhede",
+          "openalex_id": "A5053788671",
+          "orcid": "https://orcid.org/0000-0002-7190-714X"
+        },
+        {
+          "name": "Satish Chinchanikar",
+          "openalex_id": "A5075914095",
+          "orcid": "https://orcid.org/0000-0002-4175-3098"
+        },
+        {
+          "name": "Rupesh Narkhede",
+          "openalex_id": "A5093306471"
+        },
+        {
+          "name": "Tansen Chaudhari",
+          "openalex_id": "A5023043625"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-07",
+      "abstract": "Purpose With ever-increasing global concerns over environmental degradation and resource scarcity, the need for sustainable manufacturing (SM) practices has become paramount. Industry 5.0 (I5.0), the latest paradigm in the industrial revolution, emphasizes the integration of advanced technologies with human capabilities to achieve sustainable and socially responsible production systems. This paper aims to provide a comprehensive analysis of the role of I5.0 in enabling SM. Furthermore, the review discusses the integration of sustainable practices into the core of I5.0. Design/methodology/approach The systematic literature review (SLR) method is adopted to: explore the understanding of I5.0 and SM; understand the role of I5.0 in addressing sustainability challenges, including resource optimization, waste reduction, energy efficiency and ethical considerations and propose a framework for effective implementation of the I5.0 concept in manufacturing enterprises. Findings The concept of I5.0 represents a progressive step forward from previous industrial revolutions, emphasizing the integration of advanced technologies with a focus on sustainability. I5.0 offers opportunities to optimize resource usage and minimize environmental impact. Through the integration of automation, artificial intelligence (AI) and big data analytics (BDA), manufacturers can enhance process efficiency, reduce waste and implement proactive sustainability measures. By embracing I5.0 and incorporating SM practices, industries can move towards a more resource-efficient, environmentally friendly and socially responsible manufacturing paradigm. Research limitations/implications The findings presented in this article have several implications including the changing role of the workforce, skills requirements and the need for ethical considerations for SM, highlighting the need for interdisciplinary collaborations, policy support and stakeholder engagement to realize its full potential. Originality/value This article aims to stand on an unbiased assessment to ascertain the landscape occupied by the role of I5.0 in driving sustainability in the manufacturing sector. In addition, the proposed framework will serve as a basis for the effective implementation of I5.0 for SM.",
+      "cited_by_count": 51,
+      "type": "article",
+      "source": {
+        "name": "Journal of strategy and management",
+        "type": "journal",
+        "issn": [
+          "1755-425X",
+          "1755-4268"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Sustainable Supply Chain Management",
+        "Economic and Technological Innovation"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W4391609700"
+    },
+    {
+      "openalex_id": "W2598196137",
+      "doi": "10.5772/65926",
+      "title": "Community Forestry Management and its Role in Biodiversity Conservation in Nepal",
+      "authors": [
+        {
+          "name": "K C Anup",
+          "openalex_id": "A5085712650"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-22",
+      "abstract": "Community forest management is one of the successful stories of green economy sectors in Nepal recognized by the United Nation Environment Programme. It was initiated in Nepal to mitigate increasing deforestation and forest degradation and address the negative impacts on rural livelihoods. Different studies are conducted by researchers to assess the role of community forest in biodiversity conservation in Nepal. Researchers focused on analysis of biomass, carbon stock analysis, calculation of biodiversity index, change in land use and land cover, spatial analysis of forest resources, camera trapping of wild fauna and socioeconomic analysis by using different primary and secondary data collection techniques. It can be concluded that community forestry management had a great role in biodiversity conservation in Nepal. Biomass, carbon stock, growing stock, soil organic carbon, forest cover, forest products and benefit from forest resource had increased due to community forestry management. Wild animals such as leopard, porcupine, monkey and other birds were increased in the forest. It is recommended to provide skill development trainings and financial support for the installation of renewable and alternative energy technologies to minimize the use of forest resources. More researches on assessing role of community forestry management in biodiversity conservation should be conducted.",
+      "cited_by_count": 25,
+      "type": "book-chapter",
+      "source": {
+        "name": "InTech eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.intechopen.com/citation-pdf-url/52823"
+      },
+      "topics": [
+        "Conservation, Biodiversity, and Resource Management",
+        "Forest Management and Policy",
+        "Rangeland Management and Livestock Ecology"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W2598196137"
+    },
+    {
+      "openalex_id": "W2952213892",
+      "doi": "10.1080/20469047.2019.1624007",
+      "title": "Effective training-of-trainers model for the introduction of continuous positive airway pressure for neonatal and paediatric patients in Kenya",
+      "authors": [
+        {
+          "name": "Bernard Olayo",
+          "openalex_id": "A5034333907",
+          "orcid": "https://orcid.org/0000-0002-4757-3186",
+          "institutions": [
+            "Partners for Health and Development in Africa"
+          ]
+        },
+        {
+          "name": "Caroline Kendi Kirigia",
+          "openalex_id": "A5054258832",
+          "institutions": [
+            "Partners for Health and Development in Africa"
+          ]
+        },
+        {
+          "name": "Jacquie Oliwa",
+          "openalex_id": "A5034762518",
+          "orcid": "https://orcid.org/0000-0002-4575-2447",
+          "institutions": [
+            "University of Nairobi",
+            "Kenya Medical Research Institute"
+          ]
+        },
+        {
+          "name": "Odero Nicholas Agai",
+          "openalex_id": "A5023691636",
+          "institutions": [
+            "Partners for Health and Development in Africa"
+          ]
+        },
+        {
+          "name": "Marilyn C. Morris",
+          "openalex_id": "A5056140169",
+          "institutions": [
+            "Columbia University Irving Medical Center"
+          ]
+        },
+        {
+          "name": "Megan Benckert",
+          "openalex_id": "A5045975743",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Steve Adudans",
+          "openalex_id": "A5038181005",
+          "institutions": [
+            "Partners for Health and Development in Africa"
+          ]
+        },
+        {
+          "name": "Florence Murila",
+          "openalex_id": "A5111010447",
+          "orcid": "https://orcid.org/0000-0003-2343-4090",
+          "institutions": [
+            "University of Nairobi"
+          ]
+        },
+        {
+          "name": "Patrick T. Wilson",
+          "openalex_id": "A5076713764",
+          "orcid": "https://orcid.org/0000-0003-0870-4128",
+          "institutions": [
+            "Columbia University Irving Medical Center",
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-13",
+      "abstract": "<b>Background</b>: Continuous positive airway pressure (CPAP) is a relatively low-cost technology which can improve outcome in neonatal and paediatric patients with respiratory distress. Prior work in a lower middle-income country demonstrated degradation of CPAP skills and knowledge after the initial training. <b>Aims</b>: To determine if a training-of-trainers (ToT) curriculum can decrease gaps in skills and knowledge between first-generation (trained by a United States physician and nurse) and second-generation healthcare providers (trained by local trainers) in Kenya, and to describe the usage pattern, outcome and safety in patients who received CPAP following the trainings. <b>Methods</b>: The first day of training entailed didactic and simulation sessions. On the second day participants were taught how to train others to use CPAP. First- and second-generation healthcare providers were tested on their skills and knowledge. Unpaired <i>t</i>-tests were used to test for equivalence. Prospective data on CPAP usage was collected following the initial trainings. <b>Results</b>: 37 first-generation healthcare providers (16 nurses; 21 physicians, medical/clinical officers) were trained as trainers and 40 second-generation healthcare providers (19 nurses, 21 physicians, medical/clinical officers) trained by first-generation healthcare providers were available for skills and knowledge testing. There were no statistically significant differences between first- and second-generation healthcare providers' skills (90%, 95% CI 87-93 <i>vs</i> 89%, 95% CI 86-92) or knowledge scores (91%, 95% CI 88-93 <i>vs</i> 90%, 95% CI 88-93). A total of 1111 patients were placed on CPAP mostly by nurses (61%), prematurity/acute respiratory distress syndrome was the most common indication, nasal injury/bleeding (2%) was the most common reported adverse event, and the overall mortality rate was 24%. <b>Conclusion</b>: The ToT model was successful, nurses initiated CPAP most commonly, prematurity with acute respiratory distress syndrome was the most common indication, and adverse events were uncommon.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Paediatrics and International Child Health",
+        "type": "journal",
+        "issn": [
+          "2046-9047",
+          "2046-9055"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/7116663"
+      },
+      "topics": [
+        "Neonatal Respiratory Health Research",
+        "Global Maternal and Child Health",
+        "Respiratory Support and Mechanisms"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W2952213892"
+    },
+    {
+      "openalex_id": "W3207154715",
+      "doi": "10.1016/j.actbio.2021.10.021",
+      "title": "Development and characterization of a hydrogel-based adhesive patch for sealing open-globe injuries",
+      "authors": [
+        {
+          "name": "Clotilde Jumelle",
+          "openalex_id": "A5062089362",
+          "institutions": [
+            "Smith-Kettlewell Eye Research Institute",
+            "Massachusetts Eye and Ear Infirmary",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Ann Yung",
+          "openalex_id": "A5040308109",
+          "orcid": "https://orcid.org/0000-0003-4460-2364",
+          "institutions": [
+            "Massachusetts Eye and Ear Infirmary",
+            "Smith-Kettlewell Eye Research Institute",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Ehsan Shirzaei Sani",
+          "openalex_id": "A5091626047",
+          "orcid": "https://orcid.org/0000-0002-4609-1505",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        },
+        {
+          "name": "Y. Taketani",
+          "openalex_id": "A5036135855",
+          "orcid": "https://orcid.org/0000-0001-6424-3579",
+          "institutions": [
+            "Massachusetts Eye and Ear Infirmary",
+            "Smith-Kettlewell Eye Research Institute",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Fanny Gantin",
+          "openalex_id": "A5023718513",
+          "institutions": [
+            "Massachusetts Eye and Ear Infirmary",
+            "Harvard University",
+            "Smith-Kettlewell Eye Research Institute"
+          ]
+        },
+        {
+          "name": "Louisa Bourel",
+          "openalex_id": "A5059676920",
+          "orcid": "https://orcid.org/0000-0002-1821-6171",
+          "institutions": [
+            "Massachusetts Eye and Ear Infirmary",
+            "Smith-Kettlewell Eye Research Institute",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Shudan Wang",
+          "openalex_id": "A5089201871",
+          "orcid": "https://orcid.org/0000-0002-9292-0992",
+          "institutions": [
+            "Massachusetts Eye and Ear Infirmary",
+            "Smith-Kettlewell Eye Research Institute",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Erdem Y\u00fcksel",
+          "openalex_id": "A5081742592",
+          "orcid": "https://orcid.org/0000-0003-3713-8815",
+          "institutions": [
+            "Smith-Kettlewell Eye Research Institute",
+            "Massachusetts Eye and Ear Infirmary",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Senne Seneca",
+          "openalex_id": "A5013026839",
+          "orcid": "https://orcid.org/0000-0002-9939-9917",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        },
+        {
+          "name": "Nasim Annabi",
+          "openalex_id": "A5036666980",
+          "orcid": "https://orcid.org/0000-0003-1879-1202",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        },
+        {
+          "name": "Reza Dana",
+          "openalex_id": "A5021687613",
+          "orcid": "https://orcid.org/0000-0002-5732-5100",
+          "institutions": [
+            "Massachusetts Eye and Ear Infirmary",
+            "Smith-Kettlewell Eye Research Institute",
+            "Harvard University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-20",
+      "abstract": null,
+      "cited_by_count": 50,
+      "type": "article",
+      "source": {
+        "name": "Acta Biomaterialia",
+        "type": "journal",
+        "issn": [
+          "1742-7061",
+          "1878-7568"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.ncbi.nlm.nih.gov/pmc/articles/8678346"
+      },
+      "topics": [
+        "Traumatic Ocular and Foreign Body Injuries",
+        "Surgical Sutures and Adhesives",
+        "Intraocular Surgery and Lenses"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W3207154715"
+    },
+    {
+      "openalex_id": "W2955317066",
+      "doi": "10.1007/978-981-13-8063-1_17",
+      "title": "A Review on Versatile Applications of Degradable Polymers",
+      "authors": [
+        {
+          "name": "B. Jothimani",
+          "openalex_id": "A5023730621",
+          "institutions": [
+            "Orchid Pharma (India)"
+          ]
+        },
+        {
+          "name": "B. Venkatachalapathy",
+          "openalex_id": "A5025911361",
+          "institutions": [
+            "Orchid Pharma (India)"
+          ]
+        },
+        {
+          "name": "N.S. Karthikeyan",
+          "openalex_id": "A5025398082",
+          "orcid": "https://orcid.org/0000-0002-1822-0883"
+        },
+        {
+          "name": "C. Ravichandran",
+          "openalex_id": "A5101574994",
+          "orcid": "https://orcid.org/0000-0001-7812-6234"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": null,
+      "cited_by_count": 16,
+      "type": "review",
+      "source": {
+        "name": "Materials horizons",
+        "type": "book series",
+        "issn": [
+          "2524-5384",
+          "2524-5392"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "biodegradable polymer synthesis and properties",
+        "Microplastics and Plastic Pollution",
+        "Electrospun Nanofibers in Biomedical Applications"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W2955317066"
+    },
+    {
+      "openalex_id": "W2313422787",
+      "doi": "10.1519/jsc.0000000000001114",
+      "title": "Human Performance Optimization Metrics",
+      "authors": [
+        {
+          "name": "Bradley C. Nindl",
+          "openalex_id": "A5063080773",
+          "orcid": "https://orcid.org/0000-0001-7088-5930",
+          "institutions": [
+            "U.S. Army Center for Health Promotion and Preventive Medicine",
+            "University of Pittsburgh",
+            "Defense Center for Public Health - Aberdeen"
+          ]
+        },
+        {
+          "name": "Dianna P. Jaffin",
+          "openalex_id": "A5010019205",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        },
+        {
+          "name": "Michael N. Dretsch",
+          "openalex_id": "A5074705969",
+          "orcid": "https://orcid.org/0000-0001-8773-6376"
+        },
+        {
+          "name": "Samuel N. Cheuvront",
+          "openalex_id": "A5103114989",
+          "orcid": "https://orcid.org/0000-0001-8308-4614",
+          "institutions": [
+            "United States Army",
+            "U.S. Army Research Institute of Environmental Medicine"
+          ]
+        },
+        {
+          "name": "Nancy J. Wesensten",
+          "openalex_id": "A5073136439",
+          "institutions": [
+            "Walter Reed Army Institute of Research"
+          ]
+        },
+        {
+          "name": "Michael Kent",
+          "openalex_id": "A5101839383",
+          "orcid": "https://orcid.org/0000-0002-9051-2645",
+          "institutions": [
+            "Walter Reed National Military Medical Center"
+          ]
+        },
+        {
+          "name": "Neil E. Grunberg",
+          "openalex_id": "A5090134782",
+          "orcid": "https://orcid.org/0000-0002-2334-600X",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        },
+        {
+          "name": "Joseph R. Pierce",
+          "openalex_id": "A5066070150",
+          "orcid": "https://orcid.org/0000-0001-7331-5044",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Erin S. Barry",
+          "openalex_id": "A5086962022",
+          "orcid": "https://orcid.org/0000-0003-0788-7153",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        },
+        {
+          "name": "Jonathan M. Scott",
+          "openalex_id": "A5026701284",
+          "orcid": "https://orcid.org/0000-0002-1542-5875",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        },
+        {
+          "name": "Andrew Young",
+          "openalex_id": "A5101566053",
+          "orcid": "https://orcid.org/0000-0002-9019-128X",
+          "institutions": [
+            "U.S. Army Research Institute of Environmental Medicine",
+            "United States Army"
+          ]
+        },
+        {
+          "name": "Francis G. O\u2019Connor",
+          "openalex_id": "A5103796157",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        },
+        {
+          "name": "Patricia A. Deuster",
+          "openalex_id": "A5053070044",
+          "orcid": "https://orcid.org/0000-0002-7895-0888",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-27",
+      "abstract": "Human performance optimization (HPO) is defined as \"the process of applying knowledge, skills and emerging technologies to improve and preserve the capabilities of military members, and organizations to execute essential tasks.\" The lack of consensus for operationally relevant and standardized metrics that meet joint military requirements has been identified as the single most important gap for research and application of HPO. In 2013, the Consortium for Health and Military Performance hosted a meeting to develop a toolkit of standardized HPO metrics for use in military and civilian research, and potentially for field applications by commanders, units, and organizations. Performance was considered from a holistic perspective as being influenced by various behaviors and barriers. To accomplish the goal of developing a standardized toolkit, key metrics were identified and evaluated across a spectrum of domains that contribute to HPO: physical performance, nutritional status, psychological status, cognitive performance, environmental challenges, sleep, and pain. These domains were chosen based on relevant data with regard to performance enhancers and degraders. The specific objectives at this meeting were to (a) identify and evaluate current metrics for assessing human performance within selected domains; (b) prioritize metrics within each domain to establish a human performance assessment toolkit; and (c) identify scientific gaps and the needed research to more effectively assess human performance across domains. This article provides of a summary of 150 total HPO metrics across multiple domains that can be used as a starting point-the beginning of an HPO toolkit: physical fitness (29 metrics), nutrition (24 metrics), psychological status (36 metrics), cognitive performance (35 metrics), environment (12 metrics), sleep (9 metrics), and pain (5 metrics). These metrics can be particularly valuable as the military emphasizes a renewed interest in Human Dimension efforts, and leverages science, resources, programs, and policies to optimize the performance capacities of all Service members.",
+      "cited_by_count": 44,
+      "type": "editorial",
+      "source": {
+        "name": "The Journal of Strength and Conditioning Research",
+        "type": "journal",
+        "issn": [
+          "1064-8011",
+          "1533-4287"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Occupational Health and Performance",
+        "Sleep and Work-Related Fatigue",
+        "Spaceflight effects on biology"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W2313422787"
+    },
+    {
+      "openalex_id": "W4366828795",
+      "doi": "10.3390/su15097045",
+      "title": "Sustaining Performance of Wheat\u2013Rice Farms in Pakistan: The Effects of Financial Literacy and Financial Inclusion",
+      "authors": [
+        {
+          "name": "Ali Raza",
+          "openalex_id": "A5027780541",
+          "orcid": "https://orcid.org/0000-0001-5563-1692",
+          "institutions": [
+            "Northeast Forestry University"
+          ]
+        },
+        {
+          "name": "Guangji Tong",
+          "openalex_id": "A5061905681",
+          "orcid": "https://orcid.org/0000-0002-9017-9424",
+          "institutions": [
+            "Northeast Forestry University"
+          ]
+        },
+        {
+          "name": "Vasilii Erokhin",
+          "openalex_id": "A5032581518",
+          "orcid": "https://orcid.org/0000-0002-3745-5469",
+          "institutions": [
+            "Harbin Engineering University"
+          ]
+        },
+        {
+          "name": "Alexey Bobryshev",
+          "openalex_id": "A5086338530",
+          "orcid": "https://orcid.org/0000-0001-5039-507X",
+          "institutions": [
+            "Stavropol State Agrarian University"
+          ]
+        },
+        {
+          "name": "L.A. Tchaikovskaya",
+          "openalex_id": "A5088504484",
+          "orcid": "https://orcid.org/0000-0002-1292-402X",
+          "institutions": [
+            "Plekhanov Russian University of Economics",
+            "National Research University Higher School of Economics"
+          ]
+        },
+        {
+          "name": "Natal'ya V. MALINOVSKAYA",
+          "openalex_id": "A5081318099",
+          "orcid": "https://orcid.org/0000-0001-8153-2233",
+          "institutions": [
+            "Financial University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-23",
+      "abstract": "The unceasingly augmenting emission of greenhouse gases (GHG) has contributed substantially to the degradation of the key environmental parameters and the deterioration of performance of the agricultural sector globally. The food insecurity problem has been aggravated consequently. Due to a variety of economic and social issues, many farmers in developing economies use low-efficient and environmentally unfriendly agricultural practices. Adopting innovative technologies and practices linked with sustainable farming remains a complex issue across the developing world. In particular, financial exclusion and low financial literacy are commonly cited as the critical obstacles to achieving sustainable development. To contribute to resolving this development problem, the study attempts to investigate the effects of financial inclusion and literacy on establishing a sustainable performance of farms. A structured questionnaire was used to collect the data from 220 farmers within the Central Punjab region of Pakistan. Small-scale farms demonstrated a potential to sustain their performance by improving financial inclusion and financial literacy. Trust in extension services for agriculture plays a significant role in moderating the impact of eight independent variables (knowledge, skills, attitude, behavior, access, usage, quantity, welfare) on sustainable farm performance. The study implies that increased trust in financial services is essential for improving sustainable performance in the agricultural sector. The effect imposed by financial actors is crucial for establishing trust in financial services linked to sustainability within the agricultural industry.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/15/9/7045/pdf?version=1682228856"
+      },
+      "topics": [
+        "Microfinance and Financial Inclusion",
+        "Economic Growth and Development",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 93,
+      "url": "https://openalex.org/W4366828795"
+    },
+    {
+      "openalex_id": "W3017131514",
+      "doi": "10.1109/access.2020.2988510",
+      "title": "Artificial Intelligence in Education: A Review",
+      "authors": [
+        {
+          "name": "Lijia Chen",
+          "openalex_id": "A5101465106",
+          "orcid": "https://orcid.org/0000-0001-9172-1599",
+          "institutions": [
+            "Yango University"
+          ]
+        },
+        {
+          "name": "Pingping Chen",
+          "openalex_id": "A5100748906",
+          "orcid": "https://orcid.org/0000-0002-2876-653X",
+          "institutions": [
+            "Fuzhou University"
+          ]
+        },
+        {
+          "name": "Zhijian Lin",
+          "openalex_id": "A5033268753",
+          "orcid": "https://orcid.org/0000-0002-7609-1143",
+          "institutions": [
+            "Fuzhou University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "The purpose of this study was to assess the impact of Artificial Intelligence (AI) on education. Premised on a narrative and framework for assessing AI identified from a preliminary analysis, the scope of the study was limited to the application and effects of AI in administration, instruction, and learning. A qualitative research approach, leveraging the use of literature review as a research design and approach was used and effectively facilitated the realization of the study purpose. Artificial intelligence is a field of study and the resulting innovations and developments that have culminated in computers, machines, and other artifacts having human-like intelligence characterized by cognitive abilities, learning, adaptability, and decision-making capabilities. The study ascertained that AI has extensively been adopted and used in education, particularly by education institutions, in different forms. AI initially took the form of computer and computer related technologies, transitioning to web-based and online intelligent education systems, and ultimately with the use of embedded computer systems, together with other technologies, the use of humanoid robots and web-based chatbots to perform instructors' duties and functions independently or with instructors. Using these platforms, instructors have been able to perform different administrative functions, such as reviewing and grading students' assignments more effectively and efficiently, and achieve higher quality in their teaching activities. On the other hand, because the systems leverage machine learning and adaptability, curriculum and content has been customized and personalized in line with students' needs, which has fostered uptake and retention, thereby improving learners experience and overall quality of learning.",
+      "cited_by_count": 3016,
+      "type": "review",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/8948470/09069875.pdf"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "Online Learning and Analytics"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W3017131514"
+    },
+    {
+      "openalex_id": "W3102917583",
+      "doi": "10.1109/dasc50938.2020.9256418",
+      "title": "Human-Automation Teaming: Unintended Consequences of Automation on User Performance",
+      "authors": [
+        {
+          "name": "Philip J. Smith",
+          "openalex_id": "A5084536188",
+          "orcid": "https://orcid.org/0000-0003-0886-8587",
+          "institutions": [
+            "The Ohio State University"
+          ]
+        },
+        {
+          "name": "Emily Baumann",
+          "openalex_id": "A5035176499",
+          "institutions": [
+            "American Institutes for Research"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-11",
+      "abstract": "The Federal Aviation Administration (FAA) Next Generation Air Transportation System (NextGen) is implementing new capabilities that rely on the support of automation to improve air traffic eficiency and predictability while maintaining safety. One issue that needs to be addressed regarding such new forms of automation - primarily as decision support tools - support is the possible impact on human performance such as knowledge and skill degradation. In particular, the question is whether after long-term use air traffic controllers will be able to effectively revert back to previously used manual operations if the automation becomes unavailable due to some degradation or failure. Based on this concern, this paper focuses on lessons learned from past experiences with the long term use of automation. To explore this issue, 21 experts were interviewed from four different domains: naval operations, medicine, nuclear power plant operation, and aviation. Three distinct job positions were interviewed within the domain of aviation: Airline dispatchers, pilots, and air traffic controllers. Two fundamental questions were addressed: 1.Can the introduction of automation have unintended negative impacts on human performance? 2.What mitigation strategies can be used to avoid or reduce these potential negative impacts on human performance and on system performance? Based on these data, five potential negative impacts of automation that were identified: \u00b7Degradation of Knowledge and Skill; \u00b7 Reliance on Automation as the Primary \"Agent\" to Detect Problems; \u00b7 Reduced Attentiveness and Preparation to Deal with Automation Degradations or Failures; \u00b7 Alarm Fatigue, False Alarms, and Ignoring Alarms; \u00b7 Automation-Induced Effects on Team Situational Awareness and Teamwork. In addition, six strategies to mitigate these potential negative impacts were documented: \u00b7 Providing Effective Training and Experience; \u00b7 Supporting Effective Teamwork; \u00b7 Learning from Past Performance with Data Analytics; \u00b7 Developing and Using Contingency Procedures and Checklists; \u00b7 Designing Technology to Support Effective Human-Automation Teaming.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Human-Automation Interaction and Safety",
+        "Healthcare Technology and Patient Monitoring",
+        "Quality and Safety in Healthcare"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W3102917583"
+    },
+    {
+      "openalex_id": "W4220704605",
+      "doi": "10.1016/j.jobe.2022.104450",
+      "title": "Adoption of alkali-activated cement-based binders (geopolymers) from industrial by-products for sustainable construction of utility buildings-A field demonstration",
+      "authors": [
+        {
+          "name": "T. Revathi",
+          "openalex_id": "A5022707058",
+          "institutions": [
+            "SRM Institute of Science and Technology"
+          ]
+        },
+        {
+          "name": "N. Vanitha",
+          "openalex_id": "A5082100498",
+          "institutions": [
+            "SRM Institute of Science and Technology"
+          ]
+        },
+        {
+          "name": "R. Jeyalakshmi",
+          "openalex_id": "A5087197029",
+          "orcid": "https://orcid.org/0009-0004-1339-4130",
+          "institutions": [
+            "SRM Institute of Science and Technology"
+          ]
+        },
+        {
+          "name": "Baskar Sundararaj",
+          "openalex_id": "A5062405681",
+          "institutions": [
+            "SRM Institute of Science and Technology"
+          ]
+        },
+        {
+          "name": "M. Jegan",
+          "openalex_id": "A5083013047",
+          "institutions": [
+            "SRM Institute of Science and Technology"
+          ]
+        },
+        {
+          "name": "P. R. Kannan Rajkumar",
+          "openalex_id": "A5019858792",
+          "institutions": [
+            "SRM Institute of Science and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-31",
+      "abstract": null,
+      "cited_by_count": 35,
+      "type": "article",
+      "source": {
+        "name": "Journal of Building Engineering",
+        "type": "journal",
+        "issn": [
+          "2352-7102"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Concrete and Cement Materials Research",
+        "Magnesium Oxide Properties and Applications",
+        "Recycling and utilization of industrial and municipal waste in materials production"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W4220704605"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

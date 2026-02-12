@@ -85,10 +85,11 @@ reports/
 logs/
 
 
-# Reviews (kept locally, not tracked in git)
+# Reviews (kept locally, not tracked in git; example reviews are negated below)
 reviews/*
-!reviews/.gitkeep
 !reviews/extended-mind-cognitive-offloading/
+!reviews/metaphilosophy-literature-reviews/
+!reviews/moral-value-diy/
 
 # Claude Code local files (not shared)
 .claude/settings.local.json

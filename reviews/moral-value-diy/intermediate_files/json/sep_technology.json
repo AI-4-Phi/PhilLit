@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "sep_via_brave",
+  "query": "technology ethics",
+  "results": [
+    {
+      "title": "Phenomenological Approaches to Ethics and Information Technology (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/ethics-it-phenomenology/",
+      "entry_name": "ethics-it-phenomenology",
+      "snippet": "To say the least, we, as contemporary human beings, have our manner of being made possible through a rather comprehensive entanglement with information and communication technology. Indeed, the economic, organizational and social benefit of information technology is not widely disputed. The dispute is more often about the way information technology is changing or transforming the social domain, and in particular, the ethical domain.",
+      "page_age": "2005-02-19T00:00:00"
+    },
+    {
+      "title": "Information Technology and Moral Values (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/it-moral-values/",
+      "entry_name": "it-moral-values",
+      "snippet": "Philosophy of Information will not be addressed in detail here but the interested reader can begin with Floridi (2010b, 2011b) for an introduction. Some of the most important aspects of Information Ethics will be outlined in more detail below. The move from one set of dominant information technologies to another is always morally contentious.",
+      "page_age": "2012-06-12T00:00:00"
+    },
+    {
+      "title": "Philosophy of Technology (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/technology/",
+      "entry_name": "technology",
+      "snippet": "This perspective implies, basically, a positive ethical assessment of technology: technology increases the possibilities and capabilities of humans, which seems in general desirable. Of course, since antiquity, it has been recognized that the new capabilities may be put to bad use or lead to human hubris.",
+      "page_age": "2009-02-20T00:00:00"
+    },
+    {
+      "title": "Ethics of Artificial Intelligence and Robotics (Stanford Encyclopedia of Philosophy)",
+      "url": "https://plato.stanford.edu/entries/ethics-ai/",
+      "entry_name": "ethics-ai",
+      "snippet": "Artificial intelligence (AI) and robotics are digital technologies that will have significant impact on the development of humanity in the near future. They have raised fundamental questions about what we should do with these systems, what the systems themselves should do, what risks they involve, and how we can control these. After the Introduction to the field (\u00a71), the main themes (\u00a72) of this article are: Ethical issues that arise with AI systems as objects, i.e., tools made and used by humans.",
+      "page_age": "2020-04-30T00:00:00"
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

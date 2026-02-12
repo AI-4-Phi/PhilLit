@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1515/mopp-2023-0053"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1515/mopp-2023-0053",
+      "title": "Defending Relational Autonomy",
+      "authors": [
+        {
+          "family": "Humphries",
+          "given": "James"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Moral Philosophy and Politics",
+      "volume": "12",
+      "issue": "2",
+      "page": "581-603",
+      "publisher": "Walter de Gruyter GmbH",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1515/mopp-2023-0053"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

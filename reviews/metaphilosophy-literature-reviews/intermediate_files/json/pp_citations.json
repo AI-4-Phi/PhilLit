@@ -1,0 +1,30 @@
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "citation analysis philosophy",
+  "results": [
+    {
+      "title": "Chiara Lisciandra, Citation Metrics: A Philosophy of Science Perspective",
+      "url": "https://philpapers.org/rec/LISCMA",
+      "philpapers_id": "LISCMA",
+      "snippet": "While the strengths and weaknesses of citation metrics are extensively debated in a variety of fields, they have only recently started attracting attention in the philosophy of science literature. This paper takes a further step in this direction and presents an analysis of citation metrics from the perspective of a Kuhnian model for the development of science.",
+      "page_age": null
+    },
+    {
+      "title": "K. Brad Wray, Philosophy of Science: What are the Key Journals in the Field?",
+      "url": "https://philpapers.org/rec/WRAPOS-4",
+      "philpapers_id": "WRAPOS",
+      "snippet": "By means of a citation analysis I aim to determine which scholarly journals are most important in the sub-field of philosophy of science. My analysis shows that the six most important ...",
+      "page_age": null
+    },
+    {
+      "title": "Daniel Pauly & Konstantinos I. Stergiou, Equivalence of results from two citation analyses: Thomson ISI's Citation Index and Google's Scholar service",
+      "url": "https://philpapers.org/rec/PAUEOR",
+      "philpapers_id": "PAUEOR",
+      "snippet": "Mapping the Structure of the Intellectual Field Using Citation and Co-Citation Analysis of Correspondences.Yves Gingras - 2010 - History of European Ideas 36 (3):330-339.",
+      "page_age": null
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

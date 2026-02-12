@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "The Human Condition",
+    "author": "Arendt",
+    "year": 1958
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (26.3) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

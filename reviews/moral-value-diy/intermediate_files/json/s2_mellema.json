@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Mellema complicity moral accountability",
+  "results": [
+    {
+      "paperId": "605d665e6bf39758a92a4741066aeb18a9be7edf",
+      "title": "Complicity and Moral Accountability",
+      "authors": [
+        {
+          "name": "Gregory Mellema",
+          "authorId": "3316965"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 20,
+      "doi": "10.2307/j.ctvpj78ss",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/605d665e6bf39758a92a4741066aeb18a9be7edf",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b6e6436b0a05788ceea051cb892f799c7b3b0c21",
+      "title": "Charles Brockden Brown and the Conundrum of Complicity",
+      "authors": [
+        {
+          "name": "David A. Zimmerman",
+          "authorId": "143905852"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1215/00029831-3711078",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b6e6436b0a05788ceea051cb892f799c7b3b0c21",
+      "venue": "",
+      "journal": {
+        "name": "American Literature",
+        "pages": "665-693",
+        "volume": "88"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d12b5d00c14ec748ec260e99c16c274c878216ec",
+      "title": "Digital Militarism: Israel\u2019s Occupation in the Social Media Age. By Adi Kuntsman and Rebecca L. Stein. Stanford, CA: Stanford University Press, 2015. 192p. $65.00 cloth, $21.95 paper.",
+      "authors": [
+        {
+          "name": "N. Robinson",
+          "authorId": "145006023"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1017/S1537592716001006",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d12b5d00c14ec748ec260e99c16c274c878216ec",
+      "venue": "Perspectives on Politics",
+      "journal": {
+        "name": "Perspectives on Politics",
+        "pages": "607 - 609",
+        "volume": "14"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

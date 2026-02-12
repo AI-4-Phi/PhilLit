@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/s11229-023-04306-z"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s11229-023-04306-z",
+      "title": "Brittle virtue or bust: a new challenge to virtue-as-skill theories",
+      "authors": [
+        {
+          "family": "Kilov",
+          "given": "Daniel"
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "Synthese",
+      "volume": "202",
+      "issue": "3",
+      "page": "",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/s11229-023-04306-z"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

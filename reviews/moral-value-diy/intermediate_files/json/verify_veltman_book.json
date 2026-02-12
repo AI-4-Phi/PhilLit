@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1093/acprof:oso/9780190618179.001.0001"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/acprof:oso/9780190618179.001.0001",
+      "title": "Meaningful Work",
+      "authors": [
+        {
+          "family": "Veltman",
+          "given": "Andrea"
+        }
+      ],
+      "editors": [],
+      "year": 2016,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Oxford University Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1093/acprof:oso/9780190618179.001.0001"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

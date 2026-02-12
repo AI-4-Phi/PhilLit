@@ -1,0 +1,974 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "handbook philosophy",
+  "results": [
+    {
+      "openalex_id": "W2736893828",
+      "doi": "10.4324/9781315657905",
+      "title": "The Routledge Handbook of Philosophy of Imagination",
+      "authors": [
+        {
+          "name": "Kind, Amy 1969-",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-22",
+      "abstract": null,
+      "cited_by_count": 458,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2736893828"
+    },
+    {
+      "openalex_id": "W1499409334",
+      "doi": "10.4324/9781315682266",
+      "title": "The Routledge Handbook of Philosophy of Well-Being",
+      "authors": [],
+      "publication_year": 2015,
+      "publication_date": "2015-07-30",
+      "abstract": null,
+      "cited_by_count": 457,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Hannah Arendt's Political Philosophy",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W1499409334"
+    },
+    {
+      "openalex_id": "W2678181971",
+      "doi": "10.5860/choice.194275",
+      "title": "The Oxford handbook of the philosophy of perception",
+      "authors": [],
+      "publication_year": 2016,
+      "publication_date": "2016-01-20",
+      "abstract": null,
+      "cited_by_count": 392,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2678181971"
+    },
+    {
+      "openalex_id": "W4232078667",
+      "doi": "10.1093/oxfordhb/9780190236953.001.0001",
+      "title": "The Oxford Handbook of Philosophy and Race",
+      "authors": [
+        {
+          "name": "Zack, Naomi 1944-",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-10",
+      "abstract": "The Oxford Handbook of Philosophy and Race provides up-to-date explanation and analyses by leading scholars of contemporary issues in philosophy of race and African American philosophy. Ideas about race held by Locke, Hume, Kant, Hegel, and Nietzsche are supplemented by suppressed thought from the African diaspora, early twentieth-century African American perspectives, and Native American, Asian American, and Latin American views. Philosophical analysis is brought to bear on the status of racial divisions as human categories in the biological sciences, as well as within the architectonic of contemporary criticism and conceptual analysis. The special applications of American philosophy and continental philosophy to ideas of race are presented as methodological alternatives to more analytic approaches. As a collection of analyses and assessments of \u201crace\u201d in the real world, there is trenchant and relevant attention paid to historical and contemporary racism and what it means to say that \u201crace\u201d and racial identities are socially constructed. Analyses of contemporary social issues include the importance of racial difference and identity in education, public health, medicine, IQ and other standardized tests, and sports. Societal limitations and structures provided by public policy and law are realistically considered. As a critical theory, the study of race is compared to feminism. Historical and contemporary, as well as academic and popular, racisms pertaining to male and female gender receive special consideration. Although this comprehensive collection may have the effect of a textbook, each of the original essays is a fresh and authentic development of important present thought.",
+      "cited_by_count": 256,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Race, Genetics, and Society",
+        "Academic Freedom and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4232078667"
+    },
+    {
+      "openalex_id": "W2179607442",
+      "doi": "10.1093/oxfordhb/9780199607617.001.0001",
+      "title": "The Oxford Handbook of Probability and Philosophy",
+      "authors": [
+        {
+          "name": "H\u00e1jek, Alan ca. 20./21. Jh.",
+          "openalex_id": ""
+        },
+        {
+          "name": "Hitchcock, Christopher 1964-",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-06",
+      "abstract": "Probability theory is a key tool of the physical, mathematical, and social sciences. It has also been playing an increasingly significant role in philosophy: in epistemology, philosophy of science, ethics, social philosophy, philosophy of religion, and elsewhere. This Handbook encapsulates and furthers the influence of philosophy on probability, and of probability on philosophy. Nearly forty articles summarize the state of play and present new insights in various areas of research at the intersection of these two fields. The volume begins with a primer on those parts of probability theory that we believe are most important for philosophers to know, and the rest is divided into seven main sections: history; formalism; alternatives to standard probability theory; interpretations and interpretive issues; probabilistic judgment and its applications; applications of probability: science; and applications of probability: philosophy.",
+      "cited_by_count": 212,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Probability and Statistical Research",
+        "Statistics Education and Methodologies",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2179607442"
+    },
+    {
+      "openalex_id": "W2556255505",
+      "doi": "10.4324/9781315742250",
+      "title": "The Routledge Handbook of Philosophy of Animal Minds",
+      "authors": [
+        {
+          "name": "Vincent, Sarah",
+          "openalex_id": ""
+        },
+        {
+          "name": "Gallagher, Shaun",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-06",
+      "abstract": "The insight gained from Ruth Millikan leads us to investigate animal communication not by considering Gricean communicative intentions, but instead by considering feature of intentional communication, namely the flexible interaction between the participants of the communicative situation. Whether nonhuman primates communicate intentionally, that is, whether they rely on intentions, such as goals and beliefs about goals and knowledge states of the recipient, when they produce signals, has attracted much attention recently in the comparative research on animal communication. Thus, communication can only be successful if all participants attend to each other to get the intended message transmitted correctly. In the situation of two signalers' intentions involved in intentional communication, an individual must be capable of displaying second-order intentionality to display informative intentions, that is, the signaler wants the audience to know about something when producing the signal.",
+      "cited_by_count": 238,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion, Ecology, and Ethics",
+        "Evolution and Science Education",
+        "Theology and Philosophy of Evil"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2556255505"
+    },
+    {
+      "openalex_id": "W2560199171",
+      "doi": "10.4324/9781315731544",
+      "title": "The Routledge Handbook of Mechanisms and Mechanical Philosophy",
+      "authors": [
+        {
+          "name": "Stinson, Catherine",
+          "openalex_id": ""
+        },
+        {
+          "name": "Sullivan, Jacqueline",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-06",
+      "abstract": null,
+      "cited_by_count": 218,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Mechanics and Biomechanics Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2560199171"
+    },
+    {
+      "openalex_id": "W2793693148",
+      "doi": "10.1093/oxfordhb/9780199917389.001.0001",
+      "title": "The Oxford Handbook of Islamic Philosophy",
+      "authors": [
+        {
+          "name": "El-Rouayheb, Khaled 1970-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Schmidtke, Sabine",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-02",
+      "abstract": "The study of Islamic philosophy has recently entered a new and exciting phase. Both the received canon of Islamic philosophers and the grand narrative of the course of Islamic philosophy are in the process of being radically questioned and revised. The bulk of twentieth-century Western scholarship on Arabic or Islamic philosophy focused on the period from the ninth century to the twelfth. It is a measure of the transformation that is currently underway in the field that the present <italic>Handbook</italic> gives roughly equal weight to every century from the ninth to the twentieth. The <italic>Handbook</italic> differs from previous overviews in another significant way: It is work-centered rather than person- or theme-centered. This format is intended to give readers a better sense of what a work in Islamic philosophy looks like, and of the issues, concepts, and arguments that are at play in works belonging to various periods and subfields within Islamic philosophy.",
+      "cited_by_count": 120,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Medieval and Classical Philosophy",
+        "Islamic Studies and History",
+        "Education and Islamic Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2793693148"
+    },
+    {
+      "openalex_id": "W1459714757",
+      "doi": "10.1093/oxfordhb/9780199600472.001.0001",
+      "title": "The Oxford Handbook of Philosophy of Perception",
+      "authors": [
+        {
+          "name": "Mohan Matthen",
+          "openalex_id": "A5062115194",
+          "orcid": "https://orcid.org/0000-0003-0186-3812"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-01",
+      "abstract": "I. HISTORICAL BACKGROUND II. CONTEMPORARY PHILOSOPHICAL APPROACHES III. THE SENSES IV. WHAT WE PERCEIVE V. INTEGRATING SENSORY INFORMATION VI. FRAMEWORKS FOR PERCEPTION VII. BROADER PHILOSOPHICAL ISSUES",
+      "cited_by_count": 180,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Aesthetic Perception and Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1459714757"
+    },
+    {
+      "openalex_id": "W3175257626",
+      "doi": "10.1093/oxfordhb/9780198749677.001.0001",
+      "title": "The Oxford Handbook of the Philosophy of Consciousness",
+      "authors": [
+        {
+          "name": "Dan Zahavi",
+          "openalex_id": "A5031927870",
+          "orcid": "https://orcid.org/0000-0002-2869-4951"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-09",
+      "abstract": "This book provides a panoramic view of the state of the art in current philosophical research on consciousness. Featuring some of the most prominent contributors to the field, it explores (1) the wide range of types of consciousness there may be, (2) the many psychological phenomena with which consciousness interacts, and (3) the various views concerning the ultimate relationship between consciousness and the physical reality.",
+      "cited_by_count": 168,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3175257626"
+    },
+    {
+      "openalex_id": "W2888861421",
+      "doi": "10.4324/9781315282015",
+      "title": "The Routledge Handbook of Philosophy of Empathy",
+      "authors": [
+        {
+          "name": "Heidi L. Maibom",
+          "openalex_id": "A5073845238",
+          "orcid": "https://orcid.org/0000-0003-0433-9143"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-03",
+      "abstract": null,
+      "cited_by_count": 160,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2888861421"
+    },
+    {
+      "openalex_id": "W2725695520",
+      "doi": "10.4324/9781315689197",
+      "title": "The Routledge Handbook of Philosophy and Science of Addiction",
+      "authors": [
+        {
+          "name": "Pickard, Hanna 1972-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ahmed, Serge H. ca. 21. Jh.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-13",
+      "abstract": null,
+      "cited_by_count": 173,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychedelics and Drug Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2725695520"
+    },
+    {
+      "openalex_id": "W2904488912",
+      "doi": "10.4324/9781315687315",
+      "title": "The Routledge Handbook of Philosophy of Memory",
+      "authors": [],
+      "publication_year": 2017,
+      "publication_date": "2017-07-14",
+      "abstract": null,
+      "cited_by_count": 147,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Memory, Trauma, and Commemoration"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2904488912"
+    },
+    {
+      "openalex_id": "W3047206294",
+      "doi": "10.4324/9781315180809",
+      "title": "The Routledge Handbook of Philosophy of Skill And Expertise",
+      "authors": [
+        {
+          "name": "Ellen Fridland",
+          "openalex_id": "A5018305848",
+          "orcid": "https://orcid.org/0000-0002-5494-5232"
+        },
+        {
+          "name": "Carlotta Pavese",
+          "openalex_id": "A5050796860",
+          "orcid": "https://orcid.org/0000-0003-0759-8853"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-05",
+      "abstract": "According to virtue epistemology, one should primarily understand knowledge in terms of the relationship between cognitive success and cognitive agency. There are various ways of understanding this thesis. Along one axis, there is the debate about whether we should focus on the agent\u2019s reliable cognitive skills in general, or whether we should instead treat knowledge as primarily concerned with the manifestation of more elevated epistemic standings, such as intellectual virtues. Along another axis, there is the debate about whether we should understand knowledge as being exclusively defined in terms of the subject\u2019s cognitive skills (where this category includes the intellectual virtues), or whether there need to be supplementary conditions in one\u2019s theory of knowledge to deal with the problem posed by knowledge-undermining epistemic luck. This chapter will explore these topics, and in the process offer an overview of the contemporary debate regarding issues at the nexus of knowledge, skill and virtue epistemology.",
+      "cited_by_count": 105,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/e5aea733-780b-4a1c-974e-df2f49d8e568"
+      },
+      "topics": [
+        "Legal Education and Practice Innovations",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W3047206294"
+    },
+    {
+      "openalex_id": "W1484794259",
+      "doi": "10.1093/oxfordhb/9780199696543.001.0001",
+      "title": "The Oxford Handbook of German Philosophy in the Nineteenth Century",
+      "authors": [
+        {
+          "name": "Michael \u039d. Forster",
+          "openalex_id": "A5014194089",
+          "orcid": "https://orcid.org/0000-0002-9445-1333"
+        },
+        {
+          "name": "Kristin Gjesdal",
+          "openalex_id": "A5031169165"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-01",
+      "abstract": "No period of history has been richer in philosophical discoveries than Germany during the eighteenth and nineteenth centuries. And while it was the eighteenth century that saw Germany attain maturity in the discipline (above all in the works of Immanuel Kant), it was arguably the nineteenth century that bore the greatest philosophical fruits. This Handbook provides a comprehensive introduction to the philosophy of nineteenth-century Germany that will be helpful to readers of very different sorts, all the way from laymen to undergraduates to experts. The volume is divided into four parts. The first Part explores individual philosophers, including Fichte, Hegel, Kierkegaard, and Nietzsche, amongst other great thinkers of the period. The second addresses key philosophical movements: Idealism, Romanticism, Neo-Kantianism, and Existentialism. The essays in the third Part engage with different areas of philosophy that received particular attention at this time, including philosophy of nature and of science, philosophy of mind and language, the philosophy of education, and the relationship between philosophy and science, or Wissenschaft (a German term that is famously less narrowly restricted to natural science and disciplines modeled on it than its English counterpart). Finally, the contributors turn to discuss central philosophical topics, from skepticism to materialism, from dialectics to ideas of historical and cultural Otherness, and from the reception of antiquity to atheism",
+      "cited_by_count": 123,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy, Science, and History",
+        "Nietzsche, Schopenhauer, and Hegel",
+        "Philosophy and Historical Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1484794259"
+    },
+    {
+      "openalex_id": "W3204508822",
+      "doi": "10.1093/oxfordhb/9780190622879.001.0001",
+      "title": "The Oxford Handbook of Philosophy and Disability",
+      "authors": [
+        {
+          "name": "Wasserman, David T. 1953-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Cureton, Adam 1981-",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-08",
+      "abstract": "Abstract This Handbook introduces philosophers, as well as other scholars in the humanities and social sciences, to one of the most dynamic new areas of philosophical inquiry. Disability raises some of the deepest conceptual and normative issues about human embodiment and well-being; dignity, respect, justice and equality; and personal and social identity. But it also raises pressing practical questions for educational, health, reproductive, and technology policy, and confronts controversial questions about the scope and direction of the human and civil rights movements. The Handbook addresses these issues and more, with contributions from some of the most prominent philosophers in the field. The clarity it brings to these discussions demonstrates fully the continued centrality and importance of philosophical inquiry.",
+      "cited_by_count": 142,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3204508822"
+    },
+    {
+      "openalex_id": "W3040912165",
+      "doi": "10.4324/9781315542294",
+      "title": "The Routledge Handbook of Trust and Philosophy",
+      "authors": [
+        {
+          "name": "Simon, Judith",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-08",
+      "abstract": null,
+      "cited_by_count": 133,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3040912165"
+    },
+    {
+      "openalex_id": "W2889161682",
+      "doi": "10.4324/9781315530178",
+      "title": "The Routledge Handbook of Philosophy of the Social Mind",
+      "authors": [],
+      "publication_year": 2016,
+      "publication_date": "2016-11-18",
+      "abstract": null,
+      "cited_by_count": 149,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Cultural Differences and Values",
+        "Social Representations and Identity",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 128,
+      "url": "https://openalex.org/W2889161682"
+    },
+    {
+      "openalex_id": "W2787388742",
+      "doi": "10.4324/9781315657080",
+      "title": "The Routledge Handbook of the Philosophy of Paternalism",
+      "authors": [],
+      "publication_year": 2018,
+      "publication_date": "2018-01-17",
+      "abstract": "While paternalism has been a long-standing philosophical issue, it has recently received renewed attention among scholars and the general public. The Routledge Handbook of the Philosophy of Paterna ...",
+      "cited_by_count": 86,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2787388742"
+    },
+    {
+      "openalex_id": "W2502860515",
+      "doi": "10.1007/978-94-017-8688-1",
+      "title": "Handbook of the Philosophy of Medicine",
+      "authors": [
+        {
+          "name": "Thomas Schramme",
+          "openalex_id": "A5033671888",
+          "orcid": "https://orcid.org/0000-0001-6319-6635",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "S. Edwards",
+          "openalex_id": "A5056962499",
+          "institutions": [
+            "Swansea University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": null,
+      "cited_by_count": 76,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2502860515"
+    },
+    {
+      "openalex_id": "W4249867201",
+      "doi": "10.1093/oxfordhb/9780190851187.001.0001",
+      "title": "The Oxford Handbook of Philosophy of Technology",
+      "authors": [
+        {
+          "name": "Verbeek, Peter-Paul",
+          "openalex_id": ""
+        },
+        {
+          "name": "Vallor, Shannon",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-10",
+      "abstract": "The Oxford Handbook of Philosophy of Technology gives readers a view into this increasingly vital and urgently needed domain of philosophical understanding, offering an in-depth collection of leading and emerging voices in the philosophy of technology. The thirty-two contributions in this volume cut across and connect diverse philosophical traditions, methodologies, and subfields, providing the reader with provocative and original insights on the history, concepts, problems and challenges that mark humanity's attempts to attain deeper and more lasting wisdom about our complex and evolving relationship to technology.",
+      "cited_by_count": 81,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Space Science and Extraterrestrial Life",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4249867201"
+    },
+    {
+      "openalex_id": "W2890341730",
+      "doi": "10.4324/9781315757544",
+      "title": "The Routledge Handbook of Philosophy of Information",
+      "authors": [
+        {
+          "name": "Ilari, P.",
+          "openalex_id": ""
+        },
+        {
+          "name": "Russo, F.",
+          "openalex_id": ""
+        },
+        {
+          "name": "Floridi, L.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-17",
+      "abstract": "Philosophy of causality meets information. Philosophical theorizing has been concerned at least since ancient Greek thinkers with the problem of connecting events as causes and effects. For Aristotle causes are first principles that explain the \u2018why of things\u2019, but they are also \u2018efficient\u2019 in that they are the \u2018source of change or rest\u2019. In this sense Aristotelian efficient causation is very close to the attempts made by contemporary philosophy of science to give an account of how something gives rise to something else.",
+      "cited_by_count": 106,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dare.uva.nl/personal/pure/en/publications/information-and-causality(93a8ff70-ba68-49f2-9fe9-01917d44aa82).html"
+      },
+      "topics": [
+        "Computability, Logic, AI Algorithms"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W2890341730"
+    },
+    {
+      "openalex_id": "W4245532482",
+      "doi": "10.1093/oxfordhb/9780199395729.001.0001",
+      "title": "The Oxford Handbook of the Philosophy of Love",
+      "authors": [
+        {
+          "name": "Grau, Christopher ca. 20./21. Jh.",
+          "openalex_id": ""
+        },
+        {
+          "name": "Smuts, Aaron ca. 20./21. Jh.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-06",
+      "abstract": "Abstract The Oxford Handbook of Philosophy of Love offers a wide array of original essays on the nature and value of love. The editors, Christopher Grau and Aaron Smuts, have assembled an esteemed group of thinkers, including both established scholars and younger voices. The volume contains thirty-three essays addressing both issues about love as well as key philosophers who have contributed to the philosophy of love, such as Plato, Kierkegaard, Schopenhauer, and Murdoch. The topics range from central issues about the nature and variety of love, the possibility of its rational justification, and whether it is an emotion to the significance of love for law, economics, morality, and free will. The volume also contains an introduction to the subject as well as essays on love\u2019s relation to jealousy, religion, knowledge, biotechnology, and several other topics. This wide-ranging handbook will be a key resource for specialists working on the philosophy of love and a helpful guide for those looking to learn more about the area.",
+      "cited_by_count": 69,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Law in Society and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4245532482"
+    },
+    {
+      "openalex_id": "W4200302596",
+      "doi": "10.1017/9781108698283",
+      "title": "The Cambridge Handbook of the Philosophy of Language",
+      "authors": [
+        {
+          "name": "Stalmaszczyk, Piotr 1959-",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-12",
+      "abstract": "The philosophy of language is central to the concerns of those working across semantics, pragmatics and cognition, as well as the philosophy of mind and ideas. Bringing together an international team of leading scholars, this handbook provides a comprehensive guide to contemporary investigations into the relationship between language, philosophy, and linguistics. Chapters are grouped into thematic areas and cover a wide range of topics, from key philosophical notions, such as meaning, truth, reference, names and propositions, to characteristics of the most recent research in the field, including logicality of language, vagueness in natural language, value judgments, slurs, deception, proximization in discourse, argumentation theory and linguistic relativity. It also includes chapters that explore selected linguistic theories and their philosophical implications, providing a much-needed interdisciplinary perspective. Showcasing the cutting-edge in research in the field, this book is essential reading for philosophers interested in language and linguistics, and linguists interested in philosophical analyses.",
+      "cited_by_count": 69,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Language, Metaphor, and Cognition",
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4200302596"
+    },
+    {
+      "openalex_id": "W2962788196",
+      "doi": "10.4324/9781315726625",
+      "title": "The Routledge International Handbook of Philosophy for Children",
+      "authors": [
+        {
+          "name": "Gregory, Maughn",
+          "openalex_id": ""
+        },
+        {
+          "name": "Haynes, Joanna 1953-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Murris, Karin",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-01",
+      "abstract": null,
+      "cited_by_count": 112,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2962788196"
+    },
+    {
+      "openalex_id": "W3012831732",
+      "doi": "10.4324/9781351107532",
+      "title": "The Routledge Handbook of Philosophy of Humility",
+      "authors": [
+        {
+          "name": "Mark Alfano",
+          "openalex_id": "A5002852096",
+          "orcid": "https://orcid.org/0000-0001-5879-8033"
+        },
+        {
+          "name": "Michael P. Lynch",
+          "openalex_id": "A5036738925",
+          "orcid": "https://orcid.org/0000-0001-9535-6461"
+        },
+        {
+          "name": "Alessandra Tanesini",
+          "openalex_id": "A5087789463",
+          "orcid": "https://orcid.org/0000-0002-6250-471X"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-15",
+      "abstract": "Extended cognition is when cognitive processes extend beyond the brain and nervous system of the subject, and in the process properly include such \u2018external\u2019 devices as technology. This paper explores what relevance extended cognitive processes might have for humility, and especially for the specifically cognitive aspect of humility\u2014viz., intellectual humility. As regards humility in general, it is argued that there are no in principle barriers to extended cognitive processes helping to enable the development and manifestation of this character trait, but that there may be limitations to the extent to which one\u2019s manifestation of humility can be dependent upon these processes, at least insofar as we follow orthodoxy and treat humility as a virtue. As regards the cognitive trait of intellectual humility in particular, the question becomes whether this can itself be an extended cognitive process. It is argued that this wouldn\u2019t be a plausible conception of intellectual humility, at least insofar as we treat intellectual humility (like humility in general) as a virtue.",
+      "cited_by_count": 94,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/5a16cff1-66fc-46e3-9f88-c84778c0d91b"
+      },
+      "topics": [
+        "Ethics and Legal Issues in Pediatric Healthcare",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W3012831732"
+    },
+    {
+      "openalex_id": "W1631053551",
+      "doi": "10.1007/978-94-017-9579-1",
+      "title": "Handbook of Analytic Philosophy of Medicine",
+      "authors": [
+        {
+          "name": "Kazem Sadegh-Zadeh",
+          "openalex_id": "A5083593175",
+          "institutions": [
+            "University of M\u00fcnster"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": null,
+      "cited_by_count": 94,
+      "type": "book",
+      "source": {
+        "name": "Philosophy and medicine",
+        "type": "book series",
+        "issn": [
+          "0376-7418",
+          "2215-0080"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W1631053551"
+    },
+    {
+      "openalex_id": "W2810253663",
+      "doi": "10.4324/9781315672687",
+      "title": "The Routledge Handbook of the Philosophy of Evidence",
+      "authors": [
+        {
+          "name": "Maria Lasonen\u2010Aarnio",
+          "openalex_id": "A5052960600",
+          "orcid": "https://orcid.org/0000-0002-7215-5824"
+        },
+        {
+          "name": "Clayton Littlejohn",
+          "openalex_id": "A5000420353",
+          "orcid": "https://orcid.org/0000-0003-2126-6169"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-24",
+      "abstract": null,
+      "cited_by_count": 92,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Law in Society and Culture",
+        "Jury Decision Making Processes",
+        "Legal Education and Practice Innovations"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2810253663"
+    },
+    {
+      "openalex_id": "W2769310051",
+      "doi": "10.1057/978-1-137-59291-0",
+      "title": "The Palgrave Handbook of African Philosophy",
+      "authors": [
+        {
+          "name": "Adeshina Afolayan",
+          "openalex_id": "A5079567145",
+          "orcid": "https://orcid.org/0000-0002-5035-4312",
+          "institutions": [
+            "University of Ibadan"
+          ]
+        },
+        {
+          "name": "Toyin Fal\u1ecdla",
+          "openalex_id": "A5046235670",
+          "institutions": [
+            "The University of Texas at Austin"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "This handbook investigates the current state and future possibilities of African Philosophy, as a discipline and as a practice, vis-\u00e0-vis the challenge of African development and Africa's place in a g",
+      "cited_by_count": 58,
+      "type": "book",
+      "source": {
+        "name": "Palgrave Macmillan US eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "African cultural and philosophical studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2769310051"
+    },
+    {
+      "openalex_id": "W2209299906",
+      "doi": "10.4324/9781315530215",
+      "title": "The Routledge Handbook of Philosophy of Biodiversity",
+      "authors": [],
+      "publication_year": 2016,
+      "publication_date": "2016-10-04",
+      "abstract": null,
+      "cited_by_count": 84,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Environmental Philosophy and Ethics",
+        "Religion, Ecology, and Ethics"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2209299906"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

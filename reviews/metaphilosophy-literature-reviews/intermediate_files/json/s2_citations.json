@@ -1,0 +1,699 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "citation analysis philosophy",
+  "results": [
+    {
+      "paperId": "8143ae49d5299fff8bc3d3c59a6dfa18f3edeb83",
+      "title": "Has philosophy become more \u2018Scientific\u2019? A citation analysis",
+      "authors": [
+        {
+          "name": "Paul Rehren",
+          "authorId": "2005366225"
+        },
+        {
+          "name": "Till Armbruster",
+          "authorId": "2325240912"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11229-024-04896-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8143ae49d5299fff8bc3d3c59a6dfa18f3edeb83",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "205"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "edf63797d3ad5acbbe6eba42e0e24bb495a7a2ed",
+      "title": "Mapping the philosophy and neuroscience nexus through citation analysis",
+      "authors": [
+        {
+          "name": "Eugenio Petrovich",
+          "authorId": "2241835991"
+        },
+        {
+          "name": "Marco Viola",
+          "authorId": "2367875151"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We provide a quantitative analysis of the philosophy-neuroscience nexus using citation analysis. Combining bibliometric indicators of cross-field visibility with journal citation mapping techniques, we investigate four dimensions of the nexus: how the visibility of neuroscience in philosophy and of philosophy in neuroscience has changed over time, which areas of philosophy are more interested in neuroscience, which areas of neuroscience are more interested in philosophy, and how the trading zone between the two fields is configured. We also discuss two hypotheses: the supposed occurrence of a neuro-revolution in philosophy and the role of psychology as the disciplinary link between neuroscience and philosophy. Both the visibility of neuroscience in philosophy and the visibility of philosophy in neuroscience have increased significantly from 1980 to 2020, albeit the latter remains an order of magnitude lower than the former. Neuroscience is particularly visible in philosophy of mind, applied ethics, philosophy of science, but not in \u2018core\u2019 areas of analytic philosophy. Philosophy is particularly visible in cognitive and systems neuroscience and neuropsychiatry, but not in biomedical neuroscience. As for the trading zone between philosophy and neuroscience, our data show that it works differently in philosophy and in neuroscience. While some philosophy journals are active loci of bidirectional communication, neuroscience journals are divided between journals \u2018importing\u2019 philosophy in neuroscience and journals \u2018exporting\u2019 neuroscience to philosophy. Lastly, data do not support the hypothesis that a widespread neuro-revolution has transformed philosophy radically, but support the hypothesis that psychology functions as a mediating disciplinary link between philosophy and neuroscience.",
+      "citationCount": 0,
+      "doi": "10.1007/s13194-024-00621-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/edf63797d3ad5acbbe6eba42e0e24bb495a7a2ed",
+      "venue": "European Journal for Philosophy of Science",
+      "journal": {
+        "name": "European Journal for Philosophy of Science",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "283365087ed2f8db1a749bdaf5937ffe1d01138b",
+      "title": "A co-citation analysis of cross-disciplinarity in the empirically-informed philosophy of mind",
+      "authors": [
+        {
+          "name": "Karen Yan",
+          "authorId": "134275061"
+        },
+        {
+          "name": "Chuan-Ya Liao",
+          "authorId": "2215358184"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s11229-023-04146-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/283365087ed2f8db1a749bdaf5937ffe1d01138b",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "1-35",
+        "volume": "201"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "bdd4dcf308366fd1930a922cdfe10c67d9037d1a",
+      "title": "Quantitative Citation Analysis of <bold> <italic>An Introduction to the Philosophy of Engineering: I Create, Therefore I Am</italic> </bold>",
+      "authors": [
+        {
+          "name": "ZhiGang Hu",
+          "authorId": "2211405250"
+        },
+        {
+          "name": "Zhihong Li",
+          "authorId": "2116263141"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.3724/j.issn.1674-4969.22103101",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bdd4dcf308366fd1930a922cdfe10c67d9037d1a",
+      "venue": "JOURNAL OF ENGINEERING STUDIES",
+      "journal": {
+        "name": "Journal of Engineering Studies"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b6224c5e6c1f88864b25256ec64d7bc0b4ab75c3",
+      "title": "When philosophy (of science) meets formal methods: a citation analysis of early approaches between research fields",
+      "authors": [
+        {
+          "name": "G. Bonino",
+          "authorId": "67308133"
+        },
+        {
+          "name": "Paolo Maffezioli",
+          "authorId": "3133831"
+        },
+        {
+          "name": "E. Petrovich",
+          "authorId": "35713325"
+        },
+        {
+          "name": "P. Tripodi",
+          "authorId": "50521339"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The article investigates what happens when philosophy (of science) meets and begins to establish connections with two formal research methods such as game theory and network science. We use citation analysis to identify, among the articles published in Synthese and Philosophy of Science between 1985 and 2021, those that cite the specialistic literature in game theory and network science. Then, we investigate the structure of the two corpora thus identified by bibliographic coupling and divide them into clusters of related papers by automatic community detection. Lastly, we construct by the same bibliometric techniques a reference map of philosophy, on which we overlay our corpora to map the diffusion of game theory and network science in the various sub-areas of recent philosophy. Three main results derive from this study. (i) Philosophers are interested not only in using and investigating game theory as a formal method belonging to applied mathematics and sharing many relevant features with social choice theory, but also in considering its applications in more empirically oriented disciplines such as social psychology, cognitive science, or biology. (ii) Philosophers focus on networks in two research contexts and in two different ways: in the debate on causality and scientific explanation, they consider the results of network science; in social epistemology, they employ network science as a formal tool. (iii) In the reference map, logic\u2014whose use in philosophy dates back to a much earlier period\u2014is distributed in a more uniform way than recently encountered disciplines such as game theory and network science. We conclude by discussing some methodological limitations of our bibliometric approach, especially with reference to the problem of field delineation.",
+      "citationCount": 6,
+      "doi": "10.1007/s11229-022-03484-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b6224c5e6c1f88864b25256ec64d7bc0b4ab75c3",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "200"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5842d039ba1c25e39a1c98ec14ad2f402239bc03",
+      "title": "A Citation Analysis of Philosophy of Education Journals",
+      "authors": [
+        {
+          "name": "Jeffery M. Frank",
+          "authorId": "113358489"
+        },
+        {
+          "name": "Christina Rukki",
+          "authorId": "115914079"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Philosophers of education have expressed concern about the relevance of philosophy of education to scholars outside of our field\u2014philosophers, educational researchers, curriculum theorists, and teacher educators (for example, see Laverty, 2014; Arcilla, 2002; Wortham, 2011; Burbules, 2014, 2002; Fenstermacher, 2002; Butin, 2005; Bullough and Kriedel, 2011). But their accounts foreground another problem in our field that is, perhaps, even more significant. My experience as a reader often leaves me wondering why work in philosophy of education is not cited by other philosophers of education working in similar areas.2 As Hayden\u2019s (2012) important empirical work demonstrates, philosophers of education work on different topics but there are certainly clusters of interest present, which would suggest that there are grounds for greater citation within our own field. Drawing on my own experience as a reader and thinking more about the results of Hayden\u2019s project, I began looking informally at patterns of citation in individual articles. This brief and nonsystematic initial look at literature in philosophy of education journals validated my concern that we might not be citing each other enough, and it led me to the current project: an empirical examination of citation patterns in philosophy of education journals. The goal of this brief paper is to explore in an empirical manner how our field engages with the literature we publish. In this paper, I present a citation analysis of three prominent journals of philosophy of education: Studies in Philosophy of Education, Journal of Philosophy of Education, and Educational Theory. By exploring patterns of citation and self-citation in our field, I hope to spark a conversation about what citation patterns say about our field and its future. As will become clear from these results, it may be hard to make the case to scholars outside of our field that our work is important when it doesn\u2019t seem as though scholars within the field engage with the work particularly well.",
+      "citationCount": 2,
+      "doi": "10.7202/1070464AR",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5842d039ba1c25e39a1c98ec14ad2f402239bc03",
+      "venue": "",
+      "journal": {
+        "name": "Philosophical Inquiry in Education",
+        "pages": "191-199",
+        "volume": "23"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "58694ea5ae4793de1616d3926065d8defdac37d0",
+      "title": "Citation Metrics: A Philosophy of Science Perspective",
+      "authors": [
+        {
+          "name": "C. Lisciandra",
+          "authorId": "1994448"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Citation metrics are statistical measures of scientific output that draw on citation indexes. They purport to capture the impact of scientific articles and the journals in which they appear. As evaluative tools, they are mostly used in the natural sciences, but they are also acquiring an important role in the humanities. While the strengths and weaknesses of citation metrics are extensively debated in a variety of fields, they have only recently started attracting attention in the philosophy of science literature. This paper takes a further step in this direction and presents an analysis of citation metrics from the perspective of a Kuhnian model for the development of science. Starting from Gillies\u2019 argument against the use of citation metrics for scientific research (2008), this paper shows that citation metrics interfere with the development of normal science in certain fields or subfields. The main issue is that citation metrics do not take field-specific differences into account, thereby selectively favoring some fields and arbitrarily hindering the development of others. In other words, this paper shows that current citation metrics fail to \u201ccarve science at its joints\u201d. In light of this, the paper cautions against their use for evaluative purposes.",
+      "citationCount": 2,
+      "doi": "10.1017/epi.2024.46",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/58694ea5ae4793de1616d3926065d8defdac37d0",
+      "venue": "Episteme",
+      "journal": {
+        "name": "Episteme"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2e183b91aa2ced5aed9966df42f74d810e3fc538",
+      "title": "11. Research Report | Forms, Patterns, Structures: Citation Analysis and the History of Analytic Philosophy",
+      "authors": [
+        {
+          "name": "E. Petrovich",
+          "authorId": "35713325"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.13135/2280-8574/2843",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2e183b91aa2ced5aed9966df42f74d810e3fc538",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "7"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c8a44b0f074efd38e866664bdc0625fd727f3a44",
+      "title": "A co-citation analysis of purpose: trends and (potential) troubles in the foundation of purpose scholarship",
+      "authors": [
+        {
+          "name": "K. Bronk",
+          "authorId": "47675045"
+        },
+        {
+          "name": "R. Reichard",
+          "authorId": "11928390"
+        },
+        {
+          "name": "Jia Qi Li",
+          "authorId": "2203091898"
+        }
+      ],
+      "year": 2023,
+      "abstract": "ABSTRACT This article represents the first document co-citation on the purpose construct. Document co-citation is a bibliometric methodology that provides a clear, systematic structure for examining the intellectual foundations of a field or construct. Our analysis yielded several novel insights, including a few potentially troubling ones. For instance, it revealed that the origins of purpose, a construct that has deep roots in philosophy and significant implications for a variety of fields, derived almost exclusively from the study of psychology. Foundational work was primarily conducted by scholars in North America, and early conceptualizations of purpose were inconsistent. Originating documents often used the term interchangeably with meaning. These practices, which have persisted at least to some degree, are likely to yield inconsistent and unreliable conclusions. Implications of our findings as well as cautions and directions for future research are addressed.",
+      "citationCount": 16,
+      "doi": "10.1080/17439760.2023.2168563",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c8a44b0f074efd38e866664bdc0625fd727f3a44",
+      "venue": "Journal of Positive Psychology",
+      "journal": {
+        "name": "The Journal of Positive Psychology",
+        "pages": "1012 - 1026",
+        "volume": "18"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "56aa1741f0ff94b20b9ad237454acf410bc23ffc",
+      "title": "CSSCI-based National Achievements Library of Philosophy and Social Sciences (2004-2016) Citation Analysis",
+      "authors": [
+        {
+          "name": "\u5b5f\u6d9b",
+          "authorId": "66576733"
+        },
+        {
+          "name": "Meng Tao",
+          "authorId": "2053641094"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.12154/J.QBZLGZ.2019.05.002",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/56aa1741f0ff94b20b9ad237454acf410bc23ffc",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "6-8",
+        "volume": "40"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bcded5eba5fc973fc5519d831458b79f22ac6dc0",
+      "title": "CSSCI-based the National Post-funded Projects of Philosophy and Social Sciences (2004-2016) Citation Analysis",
+      "authors": [
+        {
+          "name": "\u803f\u6811\u9752",
+          "authorId": "1584398013"
+        },
+        {
+          "name": "Geng Shuqing",
+          "authorId": "1445100389"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.12154/J.QBZLGZ.2019.05.003",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bcded5eba5fc973fc5519d831458b79f22ac6dc0",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "9-12",
+        "volume": "40"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "812fcc3d21429e37bb8addaca77439c976f44e63",
+      "title": "Citation Analysis of References used in Ph. D. Theses of Philosophy",
+      "authors": [
+        {
+          "name": "A. Kaur",
+          "authorId": "144459294"
+        },
+        {
+          "name": "G. Rattan",
+          "authorId": "69064288"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/812fcc3d21429e37bb8addaca77439c976f44e63",
+      "venue": "",
+      "journal": {
+        "name": "International Journal of Innovative Knowledge Concepts",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ec37f5f78a4bfc76bad8d5a622f0ea0b4916320d",
+      "title": "A CITATION ANALYSIS OF THE E-JOURNAL, LIBRARY PHILOSOPHY AND PRACTICE (2005-2014)",
+      "authors": [
+        {
+          "name": "Anjali Verma",
+          "authorId": "48124451"
+        },
+        {
+          "name": "S. K. Sonker",
+          "authorId": "70351397"
+        },
+        {
+          "name": "Vibha Gupta",
+          "authorId": "2110652502"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ec37f5f78a4bfc76bad8d5a622f0ea0b4916320d",
+      "venue": "",
+      "journal": {
+        "name": "Library Philosophy and Practice",
+        "pages": "1",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d0e448b0de68a699d46a9b18b5064790b53352b6",
+      "title": "Publication Activity and Productivity of Media Researchers: Analysis of the Top 100 Media Researchers of the Russian Science Citation Index",
+      "authors": [
+        {
+          "name": "I. Demina",
+          "authorId": "2222432786"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The aim of the article is to analyze the publication activity and performance of authors registered in the Russian Science Citation Index (RSCI) database in the scientific field of Mass Communication. Journalism. Mass Media and included in the Top 100 of the RSCI rating by the h-index indicator. The research methods were a comparative analysis of the h-index dynamics from 2016 to 2024, a comparative analysis of this indicator of media researchers with scientists in the scientific fields of Politics. Political Sciences, Sociology, and Philosophy, and visualization of the analyzed data. The study was conducted using the data located in the eLibrary scientific electronic library and previously published results of previous studies. The results of the study showed that there is a positive dynamics of the h-index of authors in the scientific field under consideration. At the same time, the indicators of authors in the scientific direction \u201cMass Communication. Journalism. Mass Media\u201d are noticeably behind the h-index of authors in other social and humanitarian scientific directions, and the number of authors in the scientific direction \u201cMass Communication. Journalism. Mass Media\u201d is from a quarter to a third of the number of authors in the directions \u201cPolitics. Political Sciences\u201d, \u201cSociology\u201d and \u201cPhilosophy\u201d. The results also include a comparison of the indicators of the Top 100 rating according to the RSCI version and the RSCI Core. A comparative analysis was conducted by the scientific status, geography and composition of the Top 100 authors from the first hundred of the RSCI and the RSCI Core. The analysis of the Top 100 composition showed that the overwhelming majority of authors are affiliated in the Central Federal District, most of all \u2014 at\u00a0Lomonosov Moscow State University. Conclusion from the study: insufficient use of the scientific potential of media researchers. Reasons: a small number of dissertation councils; a more practical, applied, rather than theoretical, sphere; a small number of journals in which the results of media research can be published.",
+      "citationCount": 0,
+      "doi": "10.17150/2308-6203.2025.14(1).80-98",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d0e448b0de68a699d46a9b18b5064790b53352b6",
+      "venue": "Theoretical and Practical Issues of Journalism",
+      "journal": {
+        "name": "Theoretical and Practical Issues of Journalism"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b202beb91a340952a4d7c9ce3c5fa18701c89e6f",
+      "title": "Scientometric study and citation analysis of Ph. D. Theses submitted to three Universities of Punjab and Chandigarh in the subject of economics",
+      "authors": [
+        {
+          "name": "Gurpreet Singh",
+          "authorId": "145827970"
+        },
+        {
+          "name": "Jagtar Singh",
+          "authorId": "2112713310"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The purpose of the study is to assess the research trends in economics to derive meaningful inferences to support information needs of economists, policymakers, librarians, and other stakeholders. The study uses for data the theses in Economics accepted for the degree of Doctorate of Philosophy (Ph D..) by three Universities of Punjab and Chandigarh during the period 2011 to 2015. The collected data was recorded in.csv format for analysis. The data have been evaluated to identify the core journals, subject trends in research, based on keywords, and Bradford's Scattering Law to assess the distribution of publications in the research articles referred to in theses. The data visualization of keywords and journals have been done using VOS viewer network visualization software. The study reveals that a major part of the research work done at the Ph D.. level in the subject of economics in three universities of Punjab and Chandigarh is oriented towards agricultural economics and allied subjects, such as economical, social, cultural and other related aspects which have dependencies on agriculture in northern India. The study is an attempt to ascertain research in economics and key areas of economics in northern India.",
+      "citationCount": 0,
+      "doi": "10.5958/0976-2469.2021.00006.3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b202beb91a340952a4d7c9ce3c5fa18701c89e6f",
+      "venue": "",
+      "journal": {
+        "name": "Library Herald",
+        "pages": "103-118",
+        "volume": "59"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dcc855ddc77599dcc59e2ee72ad2c2117d961dd8",
+      "title": "CITATION ANALYSIS OF LIBRARY PHILOSOPHY AND PRACTICE (E-JOURNAL) FROM 2008-2012",
+      "authors": [
+        {
+          "name": "Joginder Singh Burman",
+          "authorId": "97786656"
+        },
+        {
+          "name": "S. Gupta",
+          "authorId": "118666597"
+        },
+        {
+          "name": "M. Phil",
+          "authorId": "71327520"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dcc855ddc77599dcc59e2ee72ad2c2117d961dd8",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "973df978bc83ac3de8d7138899dc15bf84c23fbe",
+      "title": "Assessment of research impact through citation analysis: a new approach",
+      "authors": [
+        {
+          "name": "P. Vrat",
+          "authorId": "2008060"
+        }
+      ],
+      "year": 2019,
+      "abstract": "\nPurpose\nThe purpose of this paper is to reveal the limitations of h-index in assessing research performance through citation analysis and suggest two new indexes called prime index (P-index) and value added index (V-index), which are simpler to compute than g-index and more informative. For more serious research performance evaluation, analytic hierarchy process (AHP) methodology is proposed.\n\n\nDesign/methodology/approach\nThe methodology adopted is to compare existing indexes for citation-based research assessment and identify their limitations, particularly the h-index, which is most commonly employed. It gives advantages of g-index over h-index and then proposes P-index which is simpler to compute than g-index but is more powerful in information content than g-index. Another V-index is proposed on a similar philosophy as P-index by considering total number of citations/author. For serious evaluation of finite candidates for awards/recognitions, a seven-criteria-based AHP is proposed. All new approaches have been illustrated by drawing raw data from Google scholar-powered website H-POP.\n\n\nFindings\nThis paper demonstrates over-hype about use of h-index over g-index. However, it shows that newly proposed P-index is much simpler in computation than g but better than g-index. V-index is a quick way to ascertain the value added by a research scientist in multiple-authored research papers. P-index gives a value 3\u20134 percent higher than g and it is holistic index as it uses complete data of citations. AHP is a very powerful multi-criteria approach and it also shows g-index to be a more important factor, whereas h-index is the least important but frequently used approach. It is hoped that the findings of this paper will help in rectifying the misplaced emphasis on h-index alone.\n\n\nResearch limitations/implications\nThe research focus has been to suggest new faster, better methods of research assessment. However, a detailed comparison of all existing approaches with the new approaches will call for testing these over a large number of data sets. Its limitation is that it has tested the approaches on 5 academics for illustrating AHP and 20 researchers for comparing new indexes with some of the existing indexes. All existing indexes are also not covered.\n\n\nPractical implications\nThe outcomes of this research may have major practical applications for research assessment of academics/researchers and rectify the imbalance in assessment by reducing over-hype on h-index. For more serious evaluation of research performance of academics, the seven-criteria AHP approach will be more comprehensive and holistic in comparison with a single criterion citation metric. One hopes that the findings of this paper will receive much attention/debate.\n\n\nSocial implications\nResearch assessment based on proposed approaches is likely to lead to greater satisfaction among those evaluated and higher confidence in the evaluation criteria.\n\n\nOriginality/value\nP- and V-indexes are original. Application of AHP for multi-criteria assessment of research through citation analysis is also a new idea.\n",
+      "citationCount": 2,
+      "doi": "10.1108/jamr-06-2019-0102",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/973df978bc83ac3de8d7138899dc15bf84c23fbe",
+      "venue": "Journal of Advances in Management Research",
+      "journal": {
+        "name": "Journal of Advances in Management Research"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3f992ce9630d3295b8b3cf1a89248429842dff2f",
+      "title": "The public sphere as an essentially contested concept: A co-citation analysis of the last 20 years of public sphere research",
+      "authors": [
+        {
+          "name": "Adrian Rauchfleisch",
+          "authorId": "3477958"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 41,
+      "doi": "10.1177/2057047317691054",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3f992ce9630d3295b8b3cf1a89248429842dff2f",
+      "venue": "",
+      "journal": {
+        "name": "Communication and the Public",
+        "pages": "18 - 3",
+        "volume": "2"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "431aa8f2db29b2166f6d348e11c012f5ec96d05a",
+      "title": "Scientific Mapping of Global Research Trends on Jain Philosophy: A Bibliometric Analysis",
+      "authors": [
+        {
+          "name": "Suman Pal",
+          "authorId": "2358605713"
+        },
+        {
+          "name": "Vinod Kumar",
+          "authorId": "2358418863"
+        },
+        {
+          "name": "Virendra Kumar",
+          "authorId": "2358415473"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.5530/jcitation.20250171",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/431aa8f2db29b2166f6d348e11c012f5ec96d05a",
+      "venue": "Journal of Data Science, Informetrics, and Citation Studies",
+      "journal": {
+        "name": "Journal of Data Science, Informetrics, and Citation Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "111192b619d5f433556bfba2f04e50d732084710",
+      "title": "Scientific Mapping of Research Evolution on Buddhist Philosophy: A Bibliometric Analysis",
+      "authors": [
+        {
+          "name": "Suman Pal",
+          "authorId": "2358605713"
+        },
+        {
+          "name": "Vinod Kumar",
+          "authorId": "2358418863"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.5530/jcitation.20250144",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/111192b619d5f433556bfba2f04e50d732084710",
+      "venue": "Journal of Data Science, Informetrics, and Citation Studies",
+      "journal": {
+        "name": "Journal of Data Science, Informetrics, and Citation Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "618c8d485a771526a2e3fb2f9eefefdcece64f35",
+      "title": "Citation Analysis of Most Prolific Authors in the Field of Library and Information Science in Nigeria",
+      "authors": [
+        {
+          "name": "C. Okeji",
+          "authorId": "79682765"
+        },
+        {
+          "name": "Ejiobi Gabriel Bosah Mr",
+          "authorId": "113916125"
+        },
+        {
+          "name": "E. Eze",
+          "authorId": "33217347"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/618c8d485a771526a2e3fb2f9eefefdcece64f35",
+      "venue": "",
+      "journal": {
+        "name": "Library Philosophy and Practice",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8d7feae071173e232fb1d181075c199e15d3c7bc",
+      "title": "Variants of compound models and their application to citation analysis",
+      "authors": [
+        {
+          "name": "Wan Jing Low",
+          "authorId": "32665063"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8d7feae071173e232fb1d181075c199e15d3c7bc",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8e178c18df212f266351bf73a8187225f5072871",
+      "title": "Australasian Journal of Philosophy 1947\u20132016: a retrospective using citation and social network analyses",
+      "authors": [
+        {
+          "name": "Martin Davies",
+          "authorId": "26584815"
+        },
+        {
+          "name": "A. Calma",
+          "authorId": "3424655"
+        }
+      ],
+      "year": 2018,
+      "abstract": "ABSTRACT In anticipation of the journal\u2019s centenary in 2027 this paper provides a citation network analysis of all available citation and publication data of the Australasian Journal of Philosophy (1923\u20132017). A total of 2,353 academic articles containing 21,772 references were collated and analyzed. This includes 175 articles that contained author-submitted keywords, 415 publisher-tagged keywords and 519 articles that had abstracts. Results initially focused on finding the most published authors, most cited articles and most cited authors within the journal, followed by most discussed topics and emerging patterns using keywords and abstracts. The analysis then proceeded to apply social network analysis using Kumu\u00a9 \u2013 a visualization platform for mapping systems and relationships using large datasets. Analysis reveals topic clusters both unique to the journal, and inclusive of the journal\u2019s history. Results from this analysis reaffirm the journal\u2019s continuing focus on topics in traditional analytic philosophy such as morality, epistemology and knowledge, whilst also featuring topics associated with logic and paradox. This paper presents a new approach to analysing and understanding the historic and emerging topics of interest to the journal, and its readership. This has never previously been done for single philosophy journal. This is historically important given the journal\u2019s forthcoming centenary.",
+      "citationCount": 7,
+      "doi": "10.1080/23801883.2018.1478233",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8e178c18df212f266351bf73a8187225f5072871",
+      "venue": "Global Intellectual History",
+      "journal": {
+        "name": "Global Intellectual History",
+        "pages": "181 - 203",
+        "volume": "4"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ee4ef81cc5c8484898f30a7deb6c79ddad44f53c",
+      "title": "Hasty Generalizations Are Pervasive in Experimental Philosophy: A Systematic Analysis",
+      "authors": [
+        {
+          "name": "U. Peters",
+          "authorId": "48458022"
+        },
+        {
+          "name": "Olivier Lemeire",
+          "authorId": "14796367"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Abstract Scientists may sometimes generalize from their samples to broader populations when they have not yet sufficiently supported this generalization. Do such hasty generalizations also occur in experimental philosophy? To check, we analyzed 171 experimental philosophy studies published between 2017 and 2023. We found that most studies tested only Western populations but generalized beyond them without justification. There was also no evidence that studies with broader conclusions had larger, more diverse samples, but they nonetheless had higher citation impact. Our analyses reveal important methodological limitations of many experimental philosophy studies and suggest that philosophical training may not protect against hasty generalizations.",
+      "citationCount": 6,
+      "doi": "10.1017/psa.2023.109",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ee4ef81cc5c8484898f30a7deb6c79ddad44f53c",
+      "venue": "Philosophia Scienti\u00e6",
+      "journal": {
+        "name": "Philosophy of Science",
+        "pages": "661 - 681",
+        "volume": "91"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d073c84bfcc36a4f25b9a0b7750bde29d33e8c38",
+      "title": "Evaluation of Research Productivity Among Academic Oculoplastic Surgeons Using the Relative Citation Ratio.",
+      "authors": [
+        {
+          "name": "Matthew N. Henderson",
+          "authorId": "2051606575"
+        },
+        {
+          "name": "Lucy S Guan",
+          "authorId": "2284843854"
+        },
+        {
+          "name": "Oliver Guyer",
+          "authorId": "2284843019"
+        },
+        {
+          "name": "Cathy J. Hwang",
+          "authorId": "2262300548"
+        },
+        {
+          "name": "Julian D Perry",
+          "authorId": "2262311467"
+        }
+      ],
+      "year": 2025,
+      "abstract": "PURPOSE\nTo evaluate research productivity among oculoplastic surgeons and provide relative citation ratio (RCR) benchmark data for the field.\n\n\nMETHODS\nIn this cross-sectional bibliometric analysis, fellowship-trained academic oculoplastic surgeons at Accreditation Council for Graduate Medical Education-accredited institutions were individually indexed using the National Institutes of Health iCite database. Publication count, mean RCR (mRCR) score, and weighted RCR score were collected for each author between February and May 2023 and included PubMed-listed articles from 1980 to 2022. Data were compared by gender, career duration, academic rank, and acquisition of a doctor of philosophy.\n\n\nRESULTS\nTwo hundred ninety-nine academic oculoplastic surgeons from 113 institutions were indexed. These physicians produced highly impactful research with a median publication count of 20 (interquartile range, 8-45), median mRCR of 0.91 (interquartile range, 0.65-1.24), and median weighted RCR of 16.27 (interquartile range, 5.61-41.10). Academic rank and career duration were associated with increased publication count, mRCR, and weighted RCR. Weighted RCR scores were greater among male faculty, but no differences were observed between genders for publication count or mRCR score. Female faculties were underrepresented in more senior academic ranks and earlier career start years.\n\n\nCONCLUSIONS\nCurrent academic oculoplastic surgeons have comparable mRCR values relative to the National Institutes of Health-standard RCR value of 1. These benchmark data serve as a more accurate gauge of research impact within the oculoplastic surgery community and can be used to inform self, institutional, and departmental evaluations. In addition, the mRCR may provide an accurate metric for quantifying research productivity among historically underrepresented groups that are disadvantaged by time-dependent factors such as the number of publications.",
+      "citationCount": 0,
+      "doi": "10.1097/IOP.0000000000002940",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d073c84bfcc36a4f25b9a0b7750bde29d33e8c38",
+      "venue": "Ophthalmic Plastic and Reconstructive Surgery",
+      "journal": {
+        "name": "Ophthalmic plastic and reconstructive surgery"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

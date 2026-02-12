@@ -1,0 +1,15 @@
+{
+  "status": "partial",
+  "source": "philpapers_via_brave",
+  "query": "bibliometrics philosophy",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "rate_limit",
+      "message": "Rate limit exceeded",
+      "recoverable": true
+    }
+  ],
+  "warning": "Found 0 entries with errors"
+}

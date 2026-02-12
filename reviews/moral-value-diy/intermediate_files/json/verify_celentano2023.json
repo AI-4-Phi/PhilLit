@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/josp.12548"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/josp.12548",
+      "title": "Labor automation for fair cooperation: Why and how machines should provide meaningful work for all",
+      "authors": [
+        {
+          "family": "Celentano",
+          "given": "Denise"
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "Journal of Social Philosophy",
+      "volume": "55",
+      "issue": "1",
+      "page": "25-43",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/josp.12548"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

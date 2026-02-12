@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/s11948-019-00099-y"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s11948-019-00099-y",
+      "title": "What Do We Have to Lose? Offloading Through Moral Technologies: Moral Struggle and Progress",
+      "authors": [
+        {
+          "family": "Frank",
+          "given": "Lily Eva"
+        }
+      ],
+      "editors": [],
+      "year": 2019,
+      "container_title": "Science and Engineering Ethics",
+      "volume": "26",
+      "issue": "1",
+      "page": "369-385",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/s11948-019-00099-y"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

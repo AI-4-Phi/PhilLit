@@ -1,0 +1,1716 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "intrinsic value productive activity",
+  "results": [
+    {
+      "openalex_id": "W2986613091",
+      "doi": "10.11591/ijeecs.v17.i2.pp1096-1103",
+      "title": "ICT services features to support intrinsic value activities for productive ageing",
+      "authors": [
+        {
+          "name": "Norisan Abd Karim",
+          "openalex_id": "A5054935091",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        },
+        {
+          "name": "Haryani Haron",
+          "openalex_id": "A5039782685",
+          "orcid": "https://orcid.org/0000-0002-0550-8351",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        },
+        {
+          "name": "Wan Adilah Wan Adnan",
+          "openalex_id": "A5103539281",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-01",
+      "abstract": "Intrinsic values associated with ICT services activities in productive ageing. Given the advances made in ICT services that have been widely used, elderlies need to be equipped with the knowledge in using the services. The lack of ICT usage among elderlies is because of the low motivation to use the ICT applications. This in turn could be due to the lack of intrinsic values associated with the use of ICT applications among elderlies. This study explores further the features of ICT services needed to support intrinsic values activities. Brainstorming sessions is conducted in this study where it involved six ICT experts in order to identify ICT services features to support intrinsic value activities. Intrinsic motivation features are significant features in ICT services to support intrinsic value activities for productive ageing. There are five intrinsic motivation features identified in this research, which are autonomy, competence, relatedness, altruism and curiosity. The ICT services to support intrinsic value activities model comprises of the ICT services characteristics that are transactive, community-based with online communication channels, and incorporated with intelligent agents.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Indonesian Journal of Electrical Engineering and Computer Science",
+        "type": "journal",
+        "issn": [
+          "2502-4752",
+          "2502-4760"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://ijeecs.iaescore.com/index.php/IJEECS/article/download/20613/13484"
+      },
+      "topics": [
+        "Technology Use by Older Adults"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2986613091"
+    },
+    {
+      "openalex_id": "W4247722653",
+      "doi": "10.1787/3c8385d0-en",
+      "title": "Health for Everyone?",
+      "authors": [
+        {
+          "name": "OECD",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-09-27",
+      "abstract": "Health is one of the main components of a good life.In addition to having value in itself, good health also translates into a better chance of succeeding in education and in the labour market -ultimately contributing to enhance opportunities for people to improve their standing in life.At the same time, inequalities in income and educational attainment contribute to health inequality.Ensuring that everyone, regardless of socio-economic circumstances, has access to the health system can help make sure that economic prosperity is shared by the entire population.This publication analyses inequalities in health and health systems and thus provides a key insight for the discussion of how societies can become more inclusive.It looks into socio-economic differences in the exposure to risk factors to health, health status, the utilisation of health services, unmet health care needs and coverage.To assess these inequalities, the report undertakes detailed analyses of micro-level data from a range of national health surveys representing 33 OECD and EU countries, presenting differences between the most and least well-off as well as population-level summary measures of inequalities. Poor health behaviour tends to be more prevalent among the disadvantaged, but the relationship between risk factors and educational level can be complexOverall, less educated people are more likely to be overweight and smoke.This applies to both sexes but the extent of these inequalities differs.In all countries, there is a greater risk of women with low education to be obese or overweight.For men, this holds true in about 55% of countries.Regarding tobacco consumption, the less educated men are significantly more likely to smoke in all countries and in 80% of countries in the case of women.The picture for hazardous alcohol consumption is less clear.For women, there are no significant differences in drinking habits across education levels in around two-thirds of the countries but in 25% of them, alcohol consumption rises with income.Men with a high education level are less likely to be heavy drinkers but the population-level gradient is only significant in around half of the countries. No matter how it is measured, the least educated are more likely to be in bad healthAcross all countries, people in the lowest education category are twice more likely to view their health as poor compared to those with tertiary education (44% vs. 23%).Similar results can be observed for other variables of health status, such as limitations in daily activities and prevalence of multiple chronic conditions.\uf07c 15 HEALTH FOR EVERYONE?\u00a9 OECD 2019 Why a report on health-related inequalities? Introduction and method Health is essential to well-being and increases a person's chance of being productive\u2026Health is one of the main components of a good life, and it is of intrinsic value.Data collected in the context of the OECD's Better Life Index 1 from around 145 000 citizens around the world suggest that health is the number one priority for living a good life for the majority of people.Being in good health also contributes to other important outcomes such as labour market outcomes, educational achievement and allows for an active participation in community life.Particularly important in an economic context is the impact on labour market outcomes: good health translates into a better chance of finding a job, being more productive and ultimately creates opportunities for people to improve their standing in life (Chapter 2 of this report will discuss this further).The Preventing Ageing Unequally report (OECD, 2017[1]), showed that, at all ages, men and women in bad health work less and earn less when they work.Over the course of a career, bad health reduces lifetime earnings by 33% and 17% for men with low and high levels of education, respectively (and with smaller effects overall for women).This is detrimental to economies and societies at large. Annex 1.A. Summary tablesAnnex Table 1.A.1.Key results, country-by-country",
+      "cited_by_count": 745,
+      "type": "book",
+      "source": {
+        "name": "OECD health policy studies",
+        "type": "book series",
+        "issn": [
+          "2074-3181",
+          "2074-319X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global Health Care Issues",
+        "Health disparities and outcomes",
+        "Healthcare Systems and Reforms"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W4247722653"
+    },
+    {
+      "openalex_id": "W2557029688",
+      "doi": "10.1111/ejop.12209",
+      "title": "The Compatibility of Freedom and Necessity in Marx's Idea of Communist Society",
+      "authors": [
+        {
+          "name": "David James",
+          "openalex_id": "A5028470049",
+          "orcid": "https://orcid.org/0000-0003-0081-9721",
+          "institutions": [
+            "University of Warwick"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-22",
+      "abstract": "Abstract Taking a well\u2010known passage from the third volume of Capital as my starting point, I explain on what grounds Marx thinks that freedom and necessity will be compatible in a communist society. The necessity in question concerns having to produce to satisfy material needs. Unlike some accounts of this issue, I argue that the compatibility of freedom and necessity in communist society has more to do with how production is organized than with the direct relation of the worker to the object produced or to his or her own productive activity. Moreover, I show how self\u2010realization and a form of activity that possesses an intrinsic value are made possible by the organization of the production process and how this is integral to Marx's account of the compatibility of freedom and necessity in communist society.",
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Philosophy",
+        "type": "journal",
+        "issn": [
+          "0966-8373",
+          "1468-0378"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/ejop.12209"
+      },
+      "topics": [
+        "Political Economy and Marxism",
+        "Critical Theory and Philosophy",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W2557029688"
+    },
+    {
+      "openalex_id": "W15178538",
+      "doi": "10.4000/books.pum.6300",
+      "title": "2. L\u2019\u00e9valuation dans le domaine de la sant\u00e9\u00a0: concepts et m\u00e9thodes",
+      "authors": [
+        {
+          "name": "Fran\u00e7ois Champagne",
+          "openalex_id": "A5110171054"
+        },
+        {
+          "name": "Andr\u00e9\u2010Pierre Contandriopoulos",
+          "openalex_id": "A5111505229",
+          "institutions": [
+            "Universit\u00e9 de Montr\u00e9al"
+          ]
+        },
+        {
+          "name": "Astrid Brousselle",
+          "openalex_id": "A5060148376",
+          "orcid": "https://orcid.org/0000-0003-4237-2518"
+        },
+        {
+          "name": "Zulmira Hartz",
+          "openalex_id": "A5074595226",
+          "orcid": "https://orcid.org/0000-0001-9780-9428"
+        },
+        {
+          "name": "Jean\u2010Louis Denis",
+          "openalex_id": "A5017970648",
+          "orcid": "https://orcid.org/0000-0003-1295-332X"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-24",
+      "abstract": "The practice of evaluation has existed in one form or another for as long as one can remember and is central to all processes of learning. Today, evaluation is a popular concept grouping together multiple and diverse realities. This article aims to propose a conceptual framework for evaluation that is broad and universal enough to allow all those concerned with evaluation of health services (regardless of their disciplines and interests) to better understand each other, to perform better evaluations, and to use them in a more pertinent manner. We will begin by defining evaluation as the process which consists of making a judgement on the value of an intervention by implementing a system which can provide scientifically valid and socially legitimate information on regarding this particular intervention (or any of its components) to the different stakeholders concerned, such that they can form an opinion from their perspective on the intervention and reach a judgement which can translate into action. We define \"intervention\" as any organized system of action (a structure, actors and their practices, processes of action, one or many finalities and an environment) aiming to, in a given environment, during a given time period, modify the foreseeable course of a phenomenon to correct a problematic situation. An intervention can be a technique, a medication, a treatment, an organisation, a program, a policy or even a complex system like the health care system. Various interventions, regardless of their nature, can be the object of two types of evaluation. Normative evaluation is based on appreciation of each component of the intervention according to criteria and standards. This type of evaluation is defined as an activity which consists of making a judgement regarding an intervention by comparing the resources utilized and their organisation (structure); services and goods produced (process) and results obtained to criteria and standards (in other words, summaries of what is good and right). Did the intervention correspond to what should have been done according to the standards utilized? Evaluative research aims to employ valid scientific methods to analyze relationships between different components of an intervention. More specifically, evaluation research can be classified into six types of analysis, which employ different research strategies. Strategic analysis allows appreciation of the pertinence of an intervention; logical analysis, the soundness of the theoretical and operational bases of the intervention; productivity analysis, the technical efficiency with which resources are mobilized to produce goods or services; analysis of effects, effectiveness of goods and services in producing results; efficiency analysis, relations between the costs of the resources (or the services) used and the results; implementation analysis, appreciation of interactions between the process of the intervention and the context of implementation in the production of effects. The official finalities of all evaluation processes are of four types: (1)strategic, to aid the planning and development of an intervention, (2) formative, to supply information to improve an intervention in progress, (3) summative, to determine the effects of an intervention (to decide if it should be maintained, transformed or suspended), (4) fundamental, to contribute to the advancement of empirical and theoretical knowledge regarding the intervention. In addition, experience acquired in the field of evaluation suggests that evaluation is also productive in that it allows actors, in an organized setting, to reconsider the links between the objectives given, practices developed and their context of action. This task of achieving coherence is continuous and is one of the intrinsic conditions of action in an organized setting. In this perspective, evaluation can have a key role, given that it is not employed to legitimize new forms of control but rather to favor debate and th",
+      "cited_by_count": 103,
+      "type": "article",
+      "source": {
+        "name": "Presses de l\u2019Universit\u00e9 de Montr\u00e9al eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Healthcare Systems and Practices",
+        "Health, Medicine and Society"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W15178538"
+    },
+    {
+      "openalex_id": "W2800737416",
+      "doi": "10.1111/joms.12344",
+      "title": "The Imposter Syndrome, or the Mis\u2010Representation of Self in Academic Life",
+      "authors": [
+        {
+          "name": "Joel Bothello",
+          "openalex_id": "A5086013431",
+          "orcid": "https://orcid.org/0000-0002-6571-4958",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Thomas J. Roulet",
+          "openalex_id": "A5000194382",
+          "orcid": "https://orcid.org/0000-0002-9148-3743",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-28",
+      "abstract": "As academics who have recently entered the 'tunnel' of management academia, we witness a troubling phenomenon. Among junior scholars \u2013 ourselves included \u2013 there is a growing sense of anxiety and self-doubt about the legitimacy of our profession and our position within it. We see much evidence of an 'imposter syndrome' (Clance and Imes, 1978) in newly minted academics, a condition where high-achieving individuals either ascribe their accomplishments to luck and contingency rather than individual skill and merit, or find their profession to be a 'bullshit job' that provides little social value. This condition leads to a sense of anomie; in more severe cases, individuals live with the constant fear that they will someday lose all credibility, either when they are exposed as charlatans or when their occupation is revealed to be a sham. Although the imposter syndrome is common in many professions, we consider that certain characteristics intrinsic to management academia progressively intensify this condition. Our occupation is one where the induction rituals \u2013 both formal and informal \u2013 are in many ways misaligned with the multi-dimensional roles of our profession. This cognitive dissonance leads a growing number of us to question whether we merit the status, legitimacy and rewards that are conferred upon us as members of a hyper-competitive scholarly community. In a recent retrospective, Nicole Biggart details how empirical curiosity drove her to join management academia \u2013 an experience which now, she laments, stands in stark contrast to the current descent of scholarship into the 'theory cave' (Biggart, 2016). As junior academics who ourselves tumbled head-first into this cave, we are well-acquainted with groping in the dark in the hopes of staking out some previously undiscovered conceptual niche. Early on, in our quest to establish a distinct research identity and to be known for 'something', we were often uncritical about how management was positioned vis-\u00e0-vis other disciplines, and about the value it provided to society more broadly. This myopia, we propose, is a root cause of the imposter syndrome, and stems from a series of induction rituals \u2013 each with an attendant mantra \u2013 that we outline below: The onset of the imposter syndrome often becomes manifest in graduate school, the result of a peculiarly single-minded focus on theory. Many students enter doctoral programs with a wide-eyed aspiration to contribute to the greater good; in our cases, we both entered our programmes with a passion for corporate social responsibility and the bottom-of-the-pyramid \u2013 we firmly believed that our research would solve problems like poverty! In retrospect, we wonder: had we entered the tunnel from the Care Bears' Kingdom of Caring? Over time though, we were gradually socialized through coursework, exams, and research assistantships to focus on more conceptual concerns. Context and phenomena were means to an end; sifting through data was useful insofar as it provided material for shaping the ever-elusive theoretical contribution: From PhD programmes to letters from peer-reviewed journals, we were pushed to delve into findings, further excavate the theory cave and find the holy grail of a theoretical contribution. In this sense, our doctoral training functioned as a protected space where we would mostly develop expertise in conceptual refinement rather than specifically tackling practical problems. We became progressively convinced, in fact, that it was easier to switch phenomena-based nails that did not suit our theoretical hammer, rather than find a more appropriate tool. Once we began as tenure-track faculty though, we were naturally exposed to a broader range of audiences with very different expectations. One of us encountered an owner of a trucking company on a flight who inquired about how to better incentivize his employees, an area outside the scope of the scholar's research. He seemed puzzled that someone teaching in a strategy department could not recommend 'best practices' for improving performance. On the other hand, the conceptual skills that we had honed over the years could not be communicated within the span of a conversation \u2013 nor would they be deemed particularly interesting to an audience expecting pre-packaged 'practical' advice. As instructors, we would (and still do) come across those who hold the belief that practical experience is a prerequisite for management pedagogy, without which one is ill-equipped to talk about 'real-world' and up-to-date knowledge. A colleague of ours who teaches entrepreneurship has been asked incredulously on more than one occasion by students 'yes, but have you ever started your own company?' Admittedly, over the course of a semester many students gradually recognize the value-added in applying theory to their work, but the obstinate hold-outs prove highly frustrating for us \u2013 were they too narrow-minded or were we ill-equipped to teach them what they signed up for? The imposter syndrome is further intensified by another induction ritual inculcated during the PhD, job market and tenure process, namely a focus on outputs. When doctoral programs encourage students to produce dissertations comprised of three separate articles of publishable quality, they inadvertently signal to budding scholars that the merit of academic work is in identifiable results (i.e., the number of 'A' publications). Less visible processes favoured within a traditional monograph format \u2013 like knowledge accumulation and critical thinking (i.e., challenging taken-for-granted understandings of the world) \u2013 are treated as secondary concerns. In favouring multiple standalone projects \u2013 often comically grouped under an afterthought title like 'three essays on management' \u2013 over the assiduous investigation of a single phenomenon, doctoral students are indoctrinated into salami-slicing their work. It should come as no surprise then, that students complete their theses with the impression that they are a jack of three trades and a master of none. As students, we often heard that publications acted as currency on the job market. This was a remarkably apt observation: schools of all sizes and renown post carbon-copy announcements soliciting candidates with an 'established track record' of research output. After our recruitment, the faculty on our selection committees revealed that they whittled down dozens (if not hundreds) of applications by simply eliminating those without publications or R&Rs in top journals, regardless of other merits. In fact, our experiences on the 'inside' of this process generated even more self-doubt regarding the quality of our work compared with other peers who seemed better trained and more confident, sporting prestigious co-authorship and affiliations as badges. We were recruited over them based on achievements within a socially constructed pecking order among journals. Recently, one of us was offered his dream job but could not sleep for days because he was anxious that it had been a mistake; how could he have possibly been preferred over the hordes of US-trained applicants? As tenure-track faculty, our status, professional mobility and remuneration continue to be nearly fully contingent upon research output. Excellence in pedagogy, academic service or engagement with the business community are promoted but only symbolically valued within our home institutions, beyond which they are openly called 'dead ends' or 'traps'. One of us quickly realized that the only outcome for volunteering to undertake a role nobody else wanted \u2013 MSc programme director \u2013 was that he became a target for mobs of students disgruntled by free-riding colleagues who had preferred to focus on their research rather than on student contact. Given that one academic activity is lauded and incentivized while another is not, the parochial focus of junior academics on research is not that surprising. Research merit is, in any case, an upwardly moving target owing to increased competition in our field: we tend to view 'star-performers' of our field as standard academics. In the sprint towards 'A-level' publications and citation counts, we only look at those ahead of us \u2013 and of course, there is no shortage of more productive, better cited, and more well-known scholars than ourselves. These comparisons foster self-doubt and more importantly are skewed: well-published colleagues are simply more visible than most scholars and are thus often believed to be the norm. Observing these academics becomes a distorted exercise akin to watching pornography, with questions like 'how do they perform like that?' or 'how can they be so well-endowed (with publications)?' Those constant upward comparisons are damaging to our sense of self-worth; during the day, we prize rapport with Reviewer 2 over real-world interactions with friends and family. At night, top journal editorial decisions make frequent cameos in dreams and nightmares (depending on whether they are acceptances or rejections, respectively). Although the formal and informal induction rituals and mantras in academia certainly contribute to a sense of misalignment, the imposter syndrome also stems from uncertainty regarding the boundaries of our domain. The multidisciplinary character of our field produces turf battles with colleagues from neighbouring social sciences such as sociology, economics or psychology. Despite comparable demands and overlaps in research outlets, faculty from these disciplines often discount the scientific rigor of management research, believing that the business school \u2013 as a cash cow for many universities \u2013 is a necessary evil to subsidize other faculties, rather than a legitimate source of knowledge and scientific creation. We often come across business school colleagues trained as psychologists or sociologists who are chastised by their classmates for selling out their disciplines to cross over to the 'dark side' of business school faculty. These sorts of occurrences extend to daily life as well. As part of public, multidisciplinary universities, we perceive that business faculties are treated as trade schools that train people to make money rather than conduct research or even contribute to society. A colleague in medical school, for example, genuinely believes that business schools primarily exist to train students for the Certified Public Accountancy exam. One of us experienced substantial delays in obtaining a work visa (and therefore salary) in France for his postdoc, in part because the immigration authorities were unsure of whether his PhD qualified him for the 'scientist' permit. The other is frequently asked at family events whether his work counts as 'real' research compared with natural sciences or more established social sciences, and whether he got 'his PhD in a gift box'1. His brother offloads his kids on him, telling him jokingly that he has plenty of 'free time' for babysitting. Such experiences are minor but cumulatively unsettling. They lead us to question the value of our profession and status: Was the PhD worth it? Is our research of any use beyond our narrow circles? Are students learning anything of substance from our classes? As we progress in our careers, we have found ways to better align our work with the expectations of our audiences, which helps us alleviate our feelings of imposterhood. We have both sought to publish in disciplinary journals like sociology, psychology and political science, to underscore the amphibian nature of management and improve the legitimacy of our research among colleagues in more established social sciences. We strive to engage with the business community through consulting roles and demonstrate the value-added of rigorous research. In doing so we find the confidence to teach even in classrooms full of executives with decades of experience. We also engage in public outlets like newspapers and magazines or on social media platforms, forcing us to communicate our work in layman's terms. The risk is that we become known more for media presence than for academic work \u2013 one of us was labelled as the academic Beyonc\u00e9 just before giving a research seminar because of his Twitter followership. Flattering comparisons to divas aside, the exercise of being a publicly engaged individual permits us to convey the merits of management research to broader audiences. However, these acts are taken of our own volition, and are not necessarily rewarded or encouraged by our home institutions; we are worried about the real trade-off between focusing on publishing and broadening the impact of our work. As such, the prevalence of the imposter syndrome signals the need for more structural changes in business schools and management academia. We proceed to examine what these changes might look like, beginning with the doctoral programme. In many ways, the induction of PhD students follows the model of a Jedi apprenticeship \u2013 a tough master training clueless students to continue his/her tradition. In contrast, we were lucky enough to have supervisors that granted us the liberty to wander intellectually and develop a unique identity as scholars. As faculty members, this has helped us alleviate our anxiety to an extent, as we feel no obligation to carry someone else's mantle. We note, however, that many recent recruits are apprentices of senior scholars: although the former quickly became experts in the domain of the latter, they sacrificed reflexivity and agency regarding the ontological premises of their research (as well as the possibility of alternative worldviews). This model undoubtedly provided rapid returns for both supervisor and student, although the limitations became apparent after the defence: these colleagues are now faltering without hands-on mentorship, questioning whether they are faulty facsimiles of their advisers. We make the point that students and junior scholars need not rely primarily on the instruction of one senior colleague but keep an 'open relationship', multiplying collaborations and engagement with a broader range of academics. Breaking free from the master-padawan relationship helps junior academics respect their own ideas rather than seeking 'what will get them published'. A few years out of the PhD, we now recognize that we were infected by the curiosity and self-efficacy of our advisors; the expected output was secondary to intrinsic motivation and the assiduous exploration of a phenomenon. Such collaboration should also extend outside of departments and schools. During our doctoral programs we were fortunate enough to be exposed to a multitude of research paradigms through courses in economics, psychology, sociology and epistemology but also through diverse research projects with multiple faculty. This fostered the recognition of paradigms divergent from our own, a necessary pre-condition for engaging with different audiences. Now, as researchers, we are most excited about projects where we rope in concepts from outside domains like media studies or biology. We seek to encourage the same approach to academic training in our own institutions, especially when we see many recent graduates floundering without the oversight of their supervisor. We believe that network and competence building produce long-term resilience and inoculates against the imposter syndrome that stems from a one-to-one apprenticeship. Effectively, we push students to become hybrids of different research strains rather than clones of predecessors, and more importantly to appreciate the intrinsic value of their work rather than the recognition it gets them. We note in recent years a welcome shift of PhD programs orienting themselves around phenomenological rather than theoretical foci. Newer journals, such as Academy of Management Discoveries are attempting to address the legitimacy crisis our field is facing. It is heartening to observe newer generations of PhD students become less risk averse and more eager to tackle 'grand challenges' such as climate change, income inequality, migration or artificial intelligence. Editors have started to provide roadmaps to tackle these important topics (George et al., 2016), although publishing in top-tier outlets is often a risky proposition due to data-related challenges. Nonetheless, students express to us that they find meaning in addressing concerns of practical relevance, where entering the tunnel does not first necessitate diving into the theory cave. To these students, academia generates theories to understand problems rather than the converse. Not coincidentally, these students are noticeably more self-assured and motivated than their peers and less likely, we find, to suffer from feelings of imposterhood. We recognize that published (or publishable) articles offer a measurable signal of quality on the job market compared with monographs, but the two are not mutually exclusive formats: articles can and should be organized as sequential chapters within a larger treatise. One of us found that a fruitful way to ensure consistency in his dissertation was to frame it as a 'special issue', where the three articles were organized around a specific theme, context, and/or method. He felt legitimated when he won an award in a dissertation contest, where judges lauded the 'coherence' of the work. Such accolades (including the Grigor McClelland award) not only offer strong incentives for students to reflect upon the integrity of their dissertation, but also provide external validation for those susceptible to the imposter syndrome. For faculty, we offer a related suggestion: making field-work compulsory. The sabbatical system in most academic institutions offers a good opportunity to dedicate time outside the ivory tower to experience 'what's out there'. Such experiential sabbaticals were far more common a few decades ago when management scholarship was less obsessed with outputs: faculty would, for instance, engage in consulting for a year to gain practical experience but also diffuse the conceptual and analytical skills accumulated in preceding years. As junior scholars juggling academic duties, we find that feelings of imposterhood become more pronounced as we experience distance, physical and temporal, from managerially relevant phenomena and the practical implications of our areas of expertise. Accordingly, we have both recently gone back into the field to engage with grand challenges (refugees and minorities in one case and urban impoverishment in the other). As Chowdhury (2017) vividly recounts, such work is oftentimes grinding and heart-breaking but also profoundly inspiring and self-affirming. Unlike the data collection during our PhD, though, we are now more cognizant of our added value: the cross-disciplinary character of our training is proving especially useful for tackling grand challenges from multiple conceptual angles and is crucial for the construction of comprehensive solutions. We find the work to be therapeutic and effective at eroding the imposter syndrome: we collaborate with researchers from neighbouring social sciences, we gather anecdotes for pedagogical use, and we are reminded that we became academics to solve problems. Our final suggestion is clich\u00e9d but necessary to repeat: higher education establishments need to change their incentive systems. Scholars need to be encouraged to act less as mercenaries and more as public intellectuals, loyal to institutions that promote and cherish a holistic contribution. Beyond incentives, we also believe that collegial supportiveness is pivotal. Junior academics need encouragement that what they do matters beyond the number of their publications; collectively, we need to build a culture of indulgence and benevolence in academia. These formal and informal support systems may allow anxious academics to overcome the imposter syndrome and recognize the value in both their professions and themselves. We are grateful to our editors Bill Harley, Rick Delbridge and Penny Dick for their support in the revision process. We also thank our moms for telling us we were special, despite reviewers convincing us otherwise. Finally, we thank all those that dismissed our work and our ability as academics, thus inspiring this essay. See, we did it! We published in JMS.",
+      "cited_by_count": 159,
+      "type": "article",
+      "source": {
+        "name": "Journal of Management Studies",
+        "type": "journal",
+        "issn": [
+          "0022-2380",
+          "1467-6486"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/joms.12344"
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Ethics in Business and Education",
+        "Management Theory and Practice"
+      ],
+      "referenced_works_count": 4,
+      "url": "https://openalex.org/W2800737416"
+    },
+    {
+      "openalex_id": "W4323840563",
+      "doi": "10.1080/17439760.2023.2179936",
+      "title": "Resolving the paradox of work: generalization of the roles of self-determination, the balance of challenges and skills, and self-realization values in intrinsic motivation across activity domains",
+      "authors": [
+        {
+          "name": "Alan S. Waterman",
+          "openalex_id": "A5016717169",
+          "orcid": "https://orcid.org/0000-0001-7487-2459",
+          "institutions": [
+            "College of New Jersey"
+          ]
+        },
+        {
+          "name": "Seth J. Schwartz",
+          "openalex_id": "A5055609440",
+          "orcid": "https://orcid.org/0000-0003-4238-9520",
+          "institutions": [
+            "The University of Texas at Austin"
+          ]
+        },
+        {
+          "name": "Regina Conti",
+          "openalex_id": "A5111763825",
+          "institutions": [
+            "Colgate University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-10",
+      "abstract": "ABSTRACTABSTRACTThe present study was conducted to replicate and resolve the paradox of work. This paradox makes it appear that intrinsic motivation functions differently based on the type of activity being performed, with productive activities having different patterns of relationships among predictor and subjective experience indices of intrinsic motivation than found in other life domains. Variables were drawn from three theoretical perspectives \u2013 self-determination theory (self-determination and interest), flow theory (balance of challenges and skills and flow experiences), and eudaimonic identity theory (self-realization values and feelings of personal expressiveness). A sample of 637 college students completed the Personally Expressive Activities Questionnaire. The paradox of work was replicated and, as hypothesized, relationships among the predictor and subjective experience variables were demonstrated to be similar across all activity domains including productive activities. The paradox of work appears to be an artifact of particularly low levels of self-determination associated with productive activities.KEYWORDS: Paradox of workintrinsic motivationself-determinationinterestflowpersonal expressivenessenjoyment Disclosure statementNo potential conflict of interest was reported by the author(s).Supplementary materialSupplemental data for this article can be accessed online at https://doi.org/10.1080/17439760.2023.2179936",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Positive Psychology",
+        "type": "journal",
+        "issn": [
+          "1743-9760",
+          "1743-9779"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Flow Experience in Various Fields",
+        "Motivation and Self-Concept in Sports",
+        "Sport Psychology and Performance"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W4323840563"
+    },
+    {
+      "openalex_id": "W1600238717",
+      "doi": "10.1111/josp.12096",
+      "title": "The Socialist Principle \u201cFrom Each According To Their Abilities, To Each According To Their Needs\u201d",
+      "authors": [
+        {
+          "name": "Pablo Gilabert",
+          "openalex_id": "A5005751449",
+          "orcid": "https://orcid.org/0000-0002-0183-8716"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-06-01",
+      "abstract": "This article offers an exploration of the socialist principle \u201cFrom each according to their abilities, to each according to their needs.\u201d The Abilities/Needs Principle is arguably the ethical heart of socialism but, surprisingly, has received almost no attention from political philosophers.1 I will propose an interpretation of the principle and argue that it involves appealing ideas of solidarity, fair reciprocity, recognition of individual differences, and meaningful work. There is a moderate revival of interest in socialism. In the aftermath of the global crisis of 2008, many people started to wonder whether there is a desirable alternative to the capitalist way of organizing economic life. Socialism provides the historically most important counter-tradition to capitalism. But how should we understand socialism today? To answer this question, we can think of a fully developed conception of social justice as having three key dimensions. It would propose a set of normative principles (DI), certain social institutions and practices that implement those principles (DII), and some political strategies of transformation leading agents from where they are to the social realizations implementing the principles (if these do not exist already; DIII). Now, it is common to characterize socialism (or communism, a term preferred by many Marxists) in terms of dimension DII. Socialism is seen as a form of social organization in which economic class division no longer exists and in which workers control the means of production, shape the economic process, and benefit equally from it. I think, however, that this narrow focus on DII should be avoided, and that we should make discussion of DI more prominent. We cannot defend any specific version of DII as desirable without engaging the standards that DI illuminates.2 Discussion at DI is also crucial because we cannot simply assume, as many socialists did in the past, that socialist transformations are inevitable. History need not move in a socialist direction. To move it in that direction, some political agents will have to become committed to socialism and pursue it in practice. Given the mistakes of past socialist politics, this point has real bite. Many people need to be convinced that socialism is desirable, and some also need to be convinced that socialism is not utterly undesirable. This requires ethical argument and advocacy. This article proceeds as follows. Section 2 analyzes the formulation of the Abilities/Needs Principle by Marx. Section 3 identifies the principle's initial plausibility, but shows that it faces problems that cannot be addressed without developing a fresh interpretation of it. Sections 4.1\u20134.3-4.1\u20134.3 provide an interpretation of the principle that highlights demands concerning opportunities for self-realization in work, positive duties of solidarity, sensitivity to individual differences, and mechanisms of fair reciprocity. Although it focuses largely on DI, this article also considers DII and DIII. Section 4.4 explores a practical implementation of the socialist principle, and Section 5 discusses some normative puzzles about the transition from capitalism to socialism. The Abilities/Needs Principle (hereafter \u201cANP\u201d) was formulated by Karl Marx in a late text, the \u201cCritique of the Gotha Program.\u201d This is one of the few occasions in which Marx is explicit about what socialism (or communism, in his words) would involve. Although my aims in this article are not exegetical, it will be helpful to summarize the key points in Marx's discussion.3 They are of intrinsic interest, have been quite influential in socialist thought, and will be significant for this article's argument. Marx presents two principles of distribution. The first is the so-called Contribution Principle (To each according to their contribution), and the second is the ANP (From each according to their abilities, to each according to their needs). They are supposed to apply consecutively, in two phases of socialism. The second is evaluatively superior to the former. In the early phase part of the distribution already caters directly for needs: the Contribution Principle is constrained by basic provisions concerning health care, education, and the reproduction of the infrastructure of the economy. But the ANP goes far beyond such basic needs, catering for the conditions for everyone's human flourishing. The ANP also interrupts the translation of inequalities in natural endowments into unequal access to consumption goods. The needs of each person count equally regardless of the extent of their capability to produce. However, the principle's implementation is not feasible during the early stage of transition, as moral and political culture is still colored by bourgeois principles (such as the principle of exchange of commodities with equivalent value\u2014which disadvantages workers with lower natural talents), and there is not yet enough material abundance to support the higher needs of all. It thus makes sense to implement the Contribution Principle first. Although less intrinsically desirable, its implementation would ease the transition away from capitalism by delivering on its unfulfilled promise to reward productive output rather than reflect the superior bargaining power of those in superior class positions. Furthermore, it would pave the way for the creation of more desirable distributive schemes by introducing incentives to generate the level of material abundance that would make distribution according to needs viable and, thus, a real option. Some might ask whether it makes sense today to even entertain a view of economic justice based on the ANP. Kymlicka provides an instructive example of skepticism.9 He raises a number of challenges to the ANP. They can be summarized as saying that the principle may be trivial, redundant, or manifestly inferior to others. Triviality may arise if it just restates the familiar idea of equal concern for the interests of all without telling us anything specific about how to honor it. It may be redundant because we already have principles calling for equal consideration of the interests of all in liberal egalitarian theories (such as those of John Rawls or Ronald Dworkin). When we consider those theories we may find, furthermore, that the ANP is manifestly inferior to them, as it does not include insights they lack and it lacks insights they have. Two examples of the latter insights are the account of the needs or interests that matter from the point of view of justice by reference to social primary goods (Rawls) or resources (Dworkin), and the circumstance/choice distinction that helps to establish a demarcation between inequalities that deserve to be combated from the point of view of justice (those resulting from circumstances) and those that do not (those resulting from choice). To respond to this challenge we can say several things. First, the ANP was formulated before the recent liberal egalitarian theories that Kymlicka mentions, and Marx already captured some of the insights of those theories in his discussion of the ANP. Marx and socialists more generally, were worried about superficial views of equality that did not address material disadvantage. They demanded economic systems that actually worked equally to the benefit of all those living under them, challenging the absolute and relative deprivations capitalist institutions generated. In this respect, part of the appeal of contemporary liberal egalitarianism consists precisely in mobilizing socialist concerns that pre-date it. Furthermore, Marx anticipated the circumstance/choice distinction. As we saw, in the \u201cCritique of the Gotha Program\u201d Marx criticizes the Contribution Principle precisely because it condones inequalities in the capacity to satisfy needs which result from choice-independent differences in natural endowments. Arguably, the ANP captures the liberal egalitarian concern for responsibility if we consider both of its clauses rather than only the second (as Kymlicka does). The first clause identifies a responsibility to contribute, and we can interpret the second (as I will below) as taking the justifiability of some demands on the social product as depending on one's making an appropriate effort to support its generation. There is more. The ANP and the socialist tradition provide fresh insights about how to think about the metric and duties of distributive justice. They include a rich account of \u201cabilities\u201d and \u201cneeds\u201d as being multifarious, developing over time, and as partially dependent on the nature of social and political systems. They include a valuable emphasis on the significance of self-realization in work besides consumption.10 And they display a fundamental concern for solidarity (as captured, for example, in the responsibility to produce to meet the needs of others as something that has intrinsic significance). Recent liberal egalitarian theories are different from earlier liberal views of economic equality (which focused only on formal equality of opportunity) precisely because they have absorbed the historical contribution of socialism. It is liberalism that has moved toward socialist ideas. If contemporary socialists move toward the liberal egalitarian framework, they partly move toward greater understanding of their own historical contribution. As will become clear from what follows, I accept that there are serious problems in the Marxian formulation of the ANP. I also accept that contemporary socialists have much to learn from liberalism. I think that any viable contemporary socialist view of justice must substantially overlap with liberalism, absorbing the priority the latter gives to certain civil and political freedoms. But the socialist tradition has much to offer as well. An elaboration of the ANP can yield important insights. I focus here on the ANP. But a complete account of dimension DI of socialism should also include other principles, and if possible identify their relations. For example, it should include principles of civil and political liberty, and see them as often outweighing the ANP when their implications conflict. If people choose jobs in which they make poor use of their productive abilities they should not be coerced to do other work (except in emergencies15). People should obey (although they may campaign for changing) distributive arrangements generated by a legitimate democratic process even if they are unjust according to the ANP (unless the injustices are extreme). In the interpretation I will formulate, the principle is normally constrained by some civil and political liberties. We can account for people's needs by considering what would constitute their capabilities to engage in certain valuable \u201cfunctionings\u201d (i.e., certain ways of being or doing they have reason to value). Marx's view of socialism as securing the conditions for people's self-realization, itself construed as the development and exercise of various capabilities, can indeed be seen as a case of the capabilitarian strategy. In particular, the emphasis on autonomous and cooperative capability development and exercise at the workplace is a distinctive contribution of the socialist tradition to the capability metric.19 There are two kinds of work in Marx's view: work that merely secures subsistence and work that involves the extensive development and expression of workers' various capabilities. The second is the kind of work that includes self-realization. It involves activities in which workers cooperate with each other as equals, have powers to choose what to do and how to do it, and develop and exercise skills through interesting, challenging, and enjoyable performances. It is the opposite of alienated labor, which involves dull or distressful tasks and servile or hostile relationships.20 Now, these two kinds of work are respectively picked out in two common interpretations of the significance of work in Marx's view of socialism, the \u201chigher form of society \u2026 in which the full and free development of every individual forms the ruling principle.\u201d21 One interpretation draws on Marx's contrast between the \u201crealm of freedom\u201d and the \u201crealm of necessity,\u201d which seems to locate all work in the latter, and envisions self-realization as occurring outside of it.22 The other invokes Marx's characterization of work as \u201clife's prime want.\u201d23 Here self-realization in work is a primary achievement of socialism. Arguably both forms of work are important, although in different ways. Access to work involving self-realization should count as one of the needs satisfied in socialism. As described in the previous paragraph, it strikes me as an intrinsically significant good. If the design of a just society is to focus not only on distributing the outputs of an economic process but also on its internal shape, it should have room for work of this kind. Conversely, a duty to do one's fair share regarding some forms of instrumentally necessary but not intrinsically desirable work is obviously part of what a duty to contribute according to one's abilities should include. Of course, there are needs that go beyond work. Needs regarding consumption goods and the pursuit of intimate relationships are clear examples. When it comes to those Marx's framework is often limited, and we must look elsewhere.24 Recent work in the capability approach provides excellent ideas concerning what further categories of needs and associated capabilities we should The capability approach various of It that we people's positive to develop and exercise various it for people's by not them to engage in any specific it gives to political (such as that people to and political of important capabilities and distributive schemes I to the and of this In a people can develop and their own views of what needs should be But we should not democratic of and about what needs deserve to be for example, considers the of a of of needs that we should that are are are He three by a a that without and social agents to He that the is the But that his discussion moved from to Some might say that we should a view here and think that how distributive schemes are provides the conditions that make them I this because it is to a version of the a distributive because we make it, or should we make it because it is of the or of principles do not provide as we to think about what to and to in a about needs if we it. There are two and important to this The first is as we saw, the of the ANP is to a framework of democratic and The of this framework the extent to which agents are to standards they do not They of course, be part of a But the second this The distributive focus is on securing certain real opportunities or capabilities, not their has a civil being to engage in a specific by others when they not to do It might be that in a social implementing the ANP people's is because the of the opportunities is and is to for it whether they use them or However, the is if all feasible social schemes have in terms of and If normative of schemes is to on people's opportunities to (as it and different feasible schemes different we should being support the with the feasible It may include some opportunities that not But their is important to those do use them, and it the of those do not by them real to choose Furthermore, and to the would be constrained by civil and political which people to from and them to challenge and Some might that we about by a less of the ANP according to which we should people to meet their most or basic But not a more that equal opportunities to the of that are is it not that some people can less than others through no or of their If we civil and political not pursue the more The of this this In this I propose an interpretation of the demands of the ANP. I also how it to important socialist concerns about and and helps respond to regarding responsibility and their different needs and concerning self-realization, and As I in the of an economic that it the ANP should be other normative that will often be such as the of civil and political and their fair formulation of the demands associated with the principle of those such as the from in and certain democratic political the design of economic institutions and practices in also that the principle of support for the of certain basic needs care, education, that are necessary for subsistence and is in also be seen as that a more narrow formulation of the demands of the ANP. in this the ANP captures the socialist normative concerns for and The first two concerns are captured in the of the productive process as opportunities for self-realization in work and the duty to produce that can be to meet The concern for is partly captured by the of fair reciprocity. I will these points by that their in other interpretations of the ideas First, consider of captures the of taking of the of others without appropriate This with a of and with a view that its significance as from the distribution of economic The the of as a matter of workers of the product of their which they are The latter it as a of the unjust in control of means of production, which gives more bargaining power than The principle of to the product of one's is because it makes it unjust to the of some of it to meet the basic needs of those cannot work. It thus of the for example, requires the of basic resources to those cannot work because they are The principle also to those work but are of having less natural less productive We should to the of in a different The here can An that seems to support the principle is when workers have an effort and to produce they have a to The of this can be captured by the of fair to the of others in The crucial idea the of is that there is a duty to taking of others. In my the ANP an of we should not of activities by others that benefit us without doing share in that can meet needs of others when we If we can do share and we do and we from others do their we is an of in according to which should of effort if they can when they benefit from the effort of others. Furthermore, the account includes and it also makes reference to positive duties to support which provides a key consideration and the that and need not with the that cannot work and are do not engage in may however, if some make on the work of others without when they I address this case The second view of captures the important points that unequal control of means of bargaining and is in any case that should their as economic agents with productive than others. that we can the ANP to generate this its egalitarian as described in the second of this of course, we see it as a of an Furthermore, the partly be through the democratic process in process yield control of means of production, or on control to shape bargaining conditions the view under discussion the specific in of resources this but does not fully account for what it. The account of positive duties and fair here can partly what is The with the of workers by for example, is not only that their initial unequal access to means of is There is also the that some use their superior bargaining power to others to benefit them of cooperative that equally support all those make The here also partly the possible in between people or equal access to means of differences in natural endowments may by make their bargaining power and this may the to shape economic that they from of this some agents taking of the relative of others. social and institutions of solidarity and fair of the kind in and would that they be me a regarding As I interpret the it does not a complete of the between work and distributive might make sense if we lack of material or that goods for consumption are the result of productive by As as there is some that people need will not be If workers have of (as they and they can be more or less certain needs can be more or less satisfied depending on how much people choose to work. In this it seems when a person makes on consumption goods without having to the economic process by their The would be one of toward those have but will less because of the lower economic resulting from lack of This does not make the ANP a version of the Contribution In of the the latter, is to But and make the ANP a different it that we individual differences into account when we contribution and Furthermore, is not the of the duty to access to consumption but a on support in of relative Needs are still what gives to economic of course, in my interpretation the ANP involves a distinctive concern with self-realization, to which I The of self-realization (or is obviously for by of the The socialist view that economic systems should opportunities for self-realization in work has been to Some have that a conception of justice appealing to self-realization in work might other goods or concerning or the of not people work less if this gives them more to to and or work in ways that do not self-realization if this gives them more for This is an important But the view here can answer it. First, it is important to that where there are material and any economic will people to make between various goods. the is what offers the and whether it gives people real and conditions of to choose from in these many people to work in jobs for as in work involving self-realization is an not an forms of work are not is crucial is that workers are by being real to work. even opportunities for self-realization, the of work can be As the of their economic can that to free for other self-realization can also be outside of productive work. the ANP does not the of those other or their its to individual differences, this would support for people to how to the opportunities and they As in the of self-realization is has a significance as a of much every In any that is not fully work will have to if subsistence and opportunities for human and outside the are to be society will have to through various mechanisms that people work. It is only that this with that shape a significant number of opportunities to work in ways that considers the that the social duty to produce according to is people room for doing what they without social In that is in in his socialist economy. In a capitalist many people have consumption outside of work their lower does not to work, and it a that people are to choose jobs they rather than This is not in capitalist where people are by to jobs they to for and and other basic The socialist would not be Furthermore, we should not think that other do not social of their if we have a of what would the implementation of the ANP and we still have to how such an implementation might be feasible in terms of I to this We how socialism be construed at DI and DII by an interpretation of the ANP and an version of the But how can we move from here to is a socialist the ANP from the capitalist This is the of transition to DIII. It gives to many about the between and justice in and about the of socialism in In this I on the specific of how the capitalist be into the socialist one by the ANP. An answer is that people can become to honor that principle by being in and economic institutions that them to based in it. This answer is but does not go far We have to out how a of people may arise that choose to in this way for the first the second the is not because it provides the but because it helps complete the transition away from capitalism and the conditions for the of the higher phase of socialism. It is only in the latter that a real to the In the early what is crucial is and First, we that we capitalism This is by a key promise which capitalism makes but is often through the of exchange of but in it workers more than they and more than they in the early phase of socialism by the each in to what they This would those the of exchange of to move from capitalism to the early phase of socialism, and to not go the of the gives people a to work (as they would be in to how much they They would thus the material abundance that is necessary for the socialist to be in the higher It be the implementation of the involves a case of not For example, that a in the early stage is some version of Principle (which only those inequalities that work to the benefit of the in a make the might be but we should not the of that Marx is As we saw, the involves some with the bourgeois moral culture that is being for transformation principle of exchange of is the Principle seems more In Rawls that it is quite a from the If this is it might be a idea to a of the the and the ANP. The second would be as the inequalities in access to consumption goods resulting from differences in productive capacity by the first become and and the would be the problems that the second become less As material is these in moral culture might It is important that in its version the Principle is not the It involves a version of Rawls it as idea of not to have greater this is to the benefit of others are less But we can a form of that involves more than the by them to have more than they before we to have more that we We can also wonder whether we should to have more than them than share the we can with to The ANP involves a more and egalitarian form of is interesting, however, to consider how it with the version of the which for of the of the but does not on the ANP involves a of and of are because their are seen as intrinsically it is to meet are also as makes activities in which their capabilities for and for cooperative and are developed and When agents honor the principle in their economic the is and An a of in which each and are equally In this the human of each is as the free pursuit of of each in and consumption is In human is seen as to positive duties of To concern besides for the human of others we must not just from the conditions in which they can Socialism the abilities and needs of all as the focus of and positive As a it gives human full The socialist of involving both and positive goes beyond the of which involves In capitalist economic the needs of others are normally for me only and to the extent catering for them would work to my own This does not the of other human The idea of exchange of is also should we think that are not to exchange is higher than the exchange of the they This the intrinsic significance of their needs, and the that solidarity The idea of exchange of appeal it has from its to the idea of fair reciprocity. But fair is an different which is captured by the ANP. It requires in productive effort we are to not that only exchange be The socialist Abilities/Needs Principle gives human its However, this point is by a of human that support from others is a of or and it involves or This is an because it the idea of to of and we move beyond conditions of the of these cannot be and the for the of human may the it For I two and at the and the of",
+      "cited_by_count": 77,
+      "type": "article",
+      "source": {
+        "name": "Journal of Social Philosophy",
+        "type": "journal",
+        "issn": [
+          "0047-2786",
+          "1467-9833"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/josp.12096"
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W1600238717"
+    },
+    {
+      "openalex_id": "W3157866418",
+      "doi": "10.1002/pro.4102",
+      "title": "Elucidation and control of low and high active populations of alkaline phosphatase molecules for quantitative digital bioassay",
+      "authors": [
+        {
+          "name": "Hiroshi Ueno",
+          "openalex_id": "A5053400838",
+          "orcid": "https://orcid.org/0000-0001-5331-4335",
+          "institutions": [
+            "The University of Tokyo"
+          ]
+        },
+        {
+          "name": "Makoto Kato",
+          "openalex_id": "A5103405293",
+          "institutions": [
+            "The University of Tokyo"
+          ]
+        },
+        {
+          "name": "Yoshihiro Minagawa",
+          "openalex_id": "A5019111570",
+          "orcid": "https://orcid.org/0000-0002-6921-1274",
+          "institutions": [
+            "The University of Tokyo"
+          ]
+        },
+        {
+          "name": "Yushi Hirose",
+          "openalex_id": "A5063046116",
+          "institutions": [
+            "The University of Tokyo"
+          ]
+        },
+        {
+          "name": "Hiroyuki Noji",
+          "openalex_id": "A5009306741",
+          "orcid": "https://orcid.org/0000-0002-8842-6836",
+          "institutions": [
+            "The University of Tokyo"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-06",
+      "abstract": "Abstract Alkaline phosphatase (ALP), a homo\u2010dimeric enzyme has been widely used in various bioassays as disease markers and enzyme probes. Recent advancements of digital bioassay revolutionized ALP\u2010based diagnostic assays as seen in rapid growth of digital ELISA and the emerging multiplex profiling of single\u2010molecule ALP isomers. However, the intrinsic heterogeneity found among ALP molecules hampers the ALP\u2010based quantitative digital bioassays. This study aims quantitative analysis of single\u2010molecule activities of ALP from Escherichia coli and reveals the static heterogeneity in catalytic activity of ALP with two distinct populations: half\u2010active and fully\u2010active portions. Digital assays with serial buffer exchange uncovered single\u2010molecule Michaelis\u2013Menten kinetics of ALP; half\u2010active molecules have halved values of the catalytic turnover rate, k cat , and the rate constant of productive binding, k on , of the fully active molecules. These findings suggest that half\u2010active ALP molecules are heterogenic dimers composed of inactive and active monomer units, while fully active ALP molecules comprise two active units. Static heterogeneity was also observed for ALP with other origins: calf intestine or shrimp, showing how the findings can be generalized across species. Cell\u2010free expression of ALP with disulfide bond enhancer and spiked zinc ion resulted in homogenous population of ALP of full activity, implying that inactive monomer units of ALP are deficient in correct disulfide bond formation and zinc ion coordination. These findings provide basis for further study on molecular mechanism and biogenesis of ALP, and also offer the way to prepare homogenous and active populations of ALP for highly quantitative and sensitive bioassays with ALP.",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "Protein Science",
+        "type": "journal",
+        "issn": [
+          "0961-8368",
+          "1469-896X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/pro.4102"
+      },
+      "topics": [
+        "Alkaline Phosphatase Research Studies",
+        "Biochemical and Molecular Research",
+        "Cancer, Hypoxia, and Metabolism"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W3157866418"
+    },
+    {
+      "openalex_id": "W2272853385",
+      "doi": "10.1073/pnas.1525002113",
+      "title": "Why protect nature? Rethinking values and the environment",
+      "authors": [
+        {
+          "name": "Kai M. A. Chan",
+          "openalex_id": "A5064887876",
+          "orcid": "https://orcid.org/0000-0002-7804-3276",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Patricia Balvanera",
+          "openalex_id": "A5023059860",
+          "orcid": "https://orcid.org/0000-0001-6408-6876",
+          "institutions": [
+            "Universidad Nacional Aut\u00f3noma de M\u00e9xico"
+          ]
+        },
+        {
+          "name": "Karina Benessaiah",
+          "openalex_id": "A5060158421",
+          "orcid": "https://orcid.org/0000-0001-9959-554X",
+          "institutions": [
+            "Arizona State University"
+          ]
+        },
+        {
+          "name": "Mollie Chapman",
+          "openalex_id": "A5014668327",
+          "orcid": "https://orcid.org/0000-0003-1399-2144",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Sandra D\u0131\u0301az",
+          "openalex_id": "A5008623763",
+          "orcid": "https://orcid.org/0000-0003-0012-4612",
+          "institutions": [
+            "Consejo Nacional de Investigaciones Cient\u00edficas y T\u00e9cnicas",
+            "Instituto Multidisciplinario de Biolog\u00eda Vegetal",
+            "Universidad Nacional de C\u00f3rdoba"
+          ]
+        },
+        {
+          "name": "Erik G\u00f3mez\u2010Baggethun",
+          "openalex_id": "A5047258935",
+          "orcid": "https://orcid.org/0000-0003-2690-2101",
+          "institutions": [
+            "Norwegian Institute for Nature Research",
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Rachelle K. Gould",
+          "openalex_id": "A5079985070",
+          "orcid": "https://orcid.org/0000-0002-6307-8783",
+          "institutions": [
+            "University of Vermont"
+          ]
+        },
+        {
+          "name": "Neil Hannahs",
+          "openalex_id": "A5057733960",
+          "institutions": [
+            "Kamehameha Schools"
+          ]
+        },
+        {
+          "name": "Kurt Jax",
+          "openalex_id": "A5056456720",
+          "orcid": "https://orcid.org/0000-0002-1052-0195",
+          "institutions": [
+            "Helmholtz Centre for Environmental Research"
+          ]
+        },
+        {
+          "name": "Sarah C. Klain",
+          "openalex_id": "A5064099321",
+          "orcid": "https://orcid.org/0000-0002-3798-9436",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Gary Luck",
+          "openalex_id": "A5022028487",
+          "orcid": "https://orcid.org/0000-0002-7266-5568",
+          "institutions": [
+            "Charles Sturt University"
+          ]
+        },
+        {
+          "name": "Berta Mart\u00edn\u2010L\u00f3pez",
+          "openalex_id": "A5010852252",
+          "orcid": "https://orcid.org/0000-0003-2622-0135",
+          "institutions": [
+            "Leuphana University of L\u00fcneburg"
+          ]
+        },
+        {
+          "name": "Barbara Muraca",
+          "openalex_id": "A5000544943",
+          "orcid": "https://orcid.org/0000-0001-5718-7329",
+          "institutions": [
+            "Oregon State University"
+          ]
+        },
+        {
+          "name": "Bryan G. Norton",
+          "openalex_id": "A5102918016",
+          "orcid": "https://orcid.org/0000-0002-9711-3567",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Konrad Ott",
+          "openalex_id": "A5053073900",
+          "orcid": "https://orcid.org/0000-0002-2377-5963",
+          "institutions": [
+            "Clinical Research Center Kiel",
+            "Christian-Albrechts-Universit\u00e4t zu Kiel",
+            "Fachhochschule Kiel"
+          ]
+        },
+        {
+          "name": "Unai Pascual",
+          "openalex_id": "A5031271580",
+          "orcid": "https://orcid.org/0000-0002-5696-236X",
+          "institutions": [
+            "Basque Centre for Climate Change",
+            "Ikerbasque"
+          ]
+        },
+        {
+          "name": "Terre Satterfield",
+          "openalex_id": "A5087921844",
+          "orcid": "https://orcid.org/0000-0001-9807-6836",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Marc Tadaki",
+          "openalex_id": "A5036111528",
+          "orcid": "https://orcid.org/0000-0002-1533-8173",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Jonathan Taggart",
+          "openalex_id": "A5045605454",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Nancy J. Turner",
+          "openalex_id": "A5051993913",
+          "orcid": "https://orcid.org/0000-0002-6810-619X",
+          "institutions": [
+            "University of Victoria"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-02-09",
+      "abstract": "A cornerstone of environmental policy is the debate over protecting nature for humans\u2019 sake (instrumental values) or for nature\u2019s (intrinsic values) (1). We propose that focusing only on instrumental or intrinsic values may fail to resonate with views on personal and collective well-being, or \u201cwhat is right,\u201d with regard to nature and the environment. Without complementary attention to other ways that value is expressed and realized by people, such a focus may inadvertently promote worldviews at odds with fair and desirable futures. It is time to engage seriously with a third class of values, one with diverse roots and current expressions: relational values. By doing so, we reframe the discussion about environmental protection, and open the door to new, potentially more productive policy approaches.",
+      "cited_by_count": 1607,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the National Academy of Sciences",
+        "type": "journal",
+        "issn": [
+          "0027-8424",
+          "1091-6490"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.pnas.org/content/pnas/113/6/1462.full.pdf"
+      },
+      "topics": [
+        "Environmental Philosophy and Ethics",
+        "Religion, Ecology, and Ethics",
+        "Environmental Education and Sustainability"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W2272853385"
+    },
+    {
+      "openalex_id": "W2938563284",
+      "doi": "10.11591/ijeecs.v13.i3.pp1228-1236",
+      "title": "Intrinsic motivations for productive ageing",
+      "authors": [
+        {
+          "name": "Norisan Abd Karim",
+          "openalex_id": "A5054935091",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        },
+        {
+          "name": "Haryani Haron",
+          "openalex_id": "A5039782685",
+          "orcid": "https://orcid.org/0000-0002-0550-8351",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        },
+        {
+          "name": "Natrah Abdullah",
+          "openalex_id": "A5064872769",
+          "orcid": "https://orcid.org/0000-0001-5463-8913",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        },
+        {
+          "name": "Wan Adilah Wan Adnan",
+          "openalex_id": "A5103539281",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        },
+        {
+          "name": "Sharifah Muzlia Syed Mustafa",
+          "openalex_id": "A5041316443",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-01",
+      "abstract": "The involvement of the elderly in the activities is low compare to younger adult due to their frailty. This paper presents intrinsic motivations for productive ageing where it highlights the factors that motivate the elderly to participate in the activities. There are thirteen elderly respondents came from the people in the urban Klang Valley. The qualitative data analysis approach is used in this study. There are five intrinsic factors, which, consist of Autonomy, Competence, Relatedness, Curiosity and Altruism that motivate the participation of the elderly in volunteering, caregiving and self-development activities in this study. This research focuses on activities that resulted intrinsic values and not on monetary value like most of past researchers. Intrinsic motivation features are significant features in ICT as the identification of the ICT features is based on motivation to use the ICT.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Indonesian Journal of Electrical Engineering and Computer Science",
+        "type": "journal",
+        "issn": [
+          "2502-4752",
+          "2502-4760"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://ijeecs.iaescore.com/index.php/IJEECS/article/download/17008/10866"
+      },
+      "topics": [
+        "Technology Use by Older Adults"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W2938563284"
+    },
+    {
+      "openalex_id": "W2886696884",
+      "doi": "10.1016/j.physa.2018.08.005",
+      "title": "Information, entropy, value, and price formation: An econophysical perspective",
+      "authors": [
+        {
+          "name": "Ricardo Rodr\u00edguez",
+          "openalex_id": "A5012152653",
+          "orcid": "https://orcid.org/0000-0003-2752-005X",
+          "institutions": [
+            "Universidad de La Laguna"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 Juan C\u00e1ceres Hern\u00e1ndez",
+          "openalex_id": "A5047069277",
+          "orcid": "https://orcid.org/0000-0003-0092-8864",
+          "institutions": [
+            "Universidad de La Laguna"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-08-04",
+      "abstract": null,
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "Physica A Statistical Mechanics and its Applications",
+        "type": "journal",
+        "issn": [
+          "0378-4371",
+          "1873-2119"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Economic and Technological Innovation",
+        "Sustainability and Ecological Systems Analysis",
+        "Innovation Diffusion and Forecasting"
+      ],
+      "referenced_works_count": 125,
+      "url": "https://openalex.org/W2886696884"
+    },
+    {
+      "openalex_id": "W4296148568",
+      "doi": "10.6007/ijarped/v11-i3/14358",
+      "title": "Conceptual Model of Productive Ageing to Support Intrinsic Value Activities through ICT Services",
+      "authors": [
+        {
+          "name": "Norisan Abd Karim",
+          "openalex_id": "A5054935091",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        },
+        {
+          "name": "Haryani Haron",
+          "openalex_id": "A5039782685",
+          "orcid": "https://orcid.org/0000-0002-0550-8351",
+          "institutions": [
+            "Universiti Teknologi MARA"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-18",
+      "abstract": "This paper looks into the conceptual model for productive aging towards quality of life. This conceptual model underlines the limitation of intrinsic values research in productive aging and ICT as enabler towards intrinsic value. The research aims to investigate on how Information and Communication Technology (ICT) services support intrinsic values activities in productive aging. The literature review on productive ageing, intrinsic values and the theories related to intrinsic motivation theories are found in this paper in order to help the researcher frame the research design of this study. The uses of ICT services with the features of intrinsic motivation (IM) such as competence, relatedness, autonomous, altruism that could support the elderlies in their intrinsic values activities especially in self-development, care giving and volunteering for productivity is emphasized in this research.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Academic Research in Progressive Education and Development",
+        "type": "journal",
+        "issn": [
+          "2226-6348",
+          "2312-1319"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://hrmars.com/papers_submitted/14358/conceptual-model-of-productive-ageing-to-support-intrinsic-value-activities-through-ict-services.pdf"
+      },
+      "topics": [
+        "Technology Use by Older Adults"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W4296148568"
+    },
+    {
+      "openalex_id": "W2969625533",
+      "doi": "10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "authors": [
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Laurie Hughes",
+          "openalex_id": "A5072512285",
+          "orcid": "https://orcid.org/0000-0002-0956-0608",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Elvira Ismagilova",
+          "openalex_id": "A5033472055",
+          "orcid": "https://orcid.org/0000-0001-9634-194X",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Gert Aarts",
+          "openalex_id": "A5027512483",
+          "orcid": "https://orcid.org/0000-0002-6038-3782",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Crispin Coombs",
+          "openalex_id": "A5018731131",
+          "orcid": "https://orcid.org/0000-0002-4203-9291",
+          "institutions": [
+            "Loughborough University"
+          ]
+        },
+        {
+          "name": "Tom Crick",
+          "openalex_id": "A5015452463",
+          "orcid": "https://orcid.org/0000-0001-5196-9389",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Yanqing Duan",
+          "openalex_id": "A5032994640",
+          "orcid": "https://orcid.org/0000-0003-4205-7403",
+          "institutions": [
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Rohita Dwivedi",
+          "openalex_id": "A5070017829",
+          "orcid": "https://orcid.org/0000-0003-3801-3635",
+          "institutions": [
+            "Prin. L. N. Welingkar Institute of Management Development and Research"
+          ]
+        },
+        {
+          "name": "John S. Edwards",
+          "openalex_id": "A5007695310",
+          "orcid": "https://orcid.org/0000-0003-3979-017X",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Aled Eirug",
+          "openalex_id": "A5000411910",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Vassilis Galanos",
+          "openalex_id": "A5015685463",
+          "orcid": "https://orcid.org/0000-0002-8363-4855",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "P. Vigneswara Ilavarasan",
+          "openalex_id": "A5004125306",
+          "orcid": "https://orcid.org/0000-0002-9431-3520",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Marijn Janssen",
+          "openalex_id": "A5062073470",
+          "orcid": "https://orcid.org/0000-0001-6211-8790",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Paul Jones",
+          "openalex_id": "A5080152304",
+          "orcid": "https://orcid.org/0000-0003-0417-9143",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Arpan Kumar Kar",
+          "openalex_id": "A5061235109",
+          "orcid": "https://orcid.org/0000-0003-4186-4887",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Hatice Kizgin",
+          "openalex_id": "A5037522059",
+          "orcid": "https://orcid.org/0000-0003-0841-8973",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Bianca Kronemann",
+          "openalex_id": "A5037724665",
+          "orcid": "https://orcid.org/0009-0002-5146-537X",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Banita Lal",
+          "openalex_id": "A5103045218",
+          "orcid": "https://orcid.org/0000-0003-1340-1746",
+          "institutions": [
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Biagio Lucini",
+          "openalex_id": "A5003777616",
+          "orcid": "https://orcid.org/0000-0001-8974-8266",
+          "institutions": [
+            "Swansea University",
+            "Foundry (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Rony Medaglia",
+          "openalex_id": "A5003475331",
+          "orcid": "https://orcid.org/0000-0001-7292-5895",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        },
+        {
+          "name": "Kenneth Le Meunier\u2010FitzHugh",
+          "openalex_id": "A5059234800",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        },
+        {
+          "name": "Leslie Caroline Le Meunier-FitzHugh",
+          "openalex_id": "A5076965699"
+        },
+        {
+          "name": "Santosh K. Misra",
+          "openalex_id": "A5018760782",
+          "orcid": "https://orcid.org/0000-0002-3313-4895",
+          "institutions": [
+            "University of East Anglia",
+            "Government of Tamil Nadu"
+          ]
+        },
+        {
+          "name": "Emmanuel Mogaji",
+          "openalex_id": "A5082000265",
+          "orcid": "https://orcid.org/0000-0003-0544-4842",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Sujeet Kumar Sharma",
+          "openalex_id": "A5037836435",
+          "orcid": "https://orcid.org/0000-0003-3614-9053"
+        },
+        {
+          "name": "Jang Bahadur Singh",
+          "openalex_id": "A5040405430",
+          "orcid": "https://orcid.org/0000-0001-7017-1989",
+          "institutions": [
+            "Indian Institute of Management Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Vishnupriya Raghavan",
+          "openalex_id": "A5050603102"
+        },
+        {
+          "name": "Ramakrishnan Raman",
+          "openalex_id": "A5072261829",
+          "orcid": "https://orcid.org/0000-0003-3642-6989",
+          "institutions": [
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "Nripendra P. Rana",
+          "openalex_id": "A5034248834",
+          "orcid": "https://orcid.org/0000-0003-1105-8729",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Spyridon Samothrakis",
+          "openalex_id": "A5033216620",
+          "orcid": "https://orcid.org/0000-0003-1902-9690",
+          "institutions": [
+            "University of Essex"
+          ]
+        },
+        {
+          "name": "Jak Spencer",
+          "openalex_id": "A5016998336",
+          "institutions": [
+            "Training Programs in Epidemiology and Public Health Interventions Network"
+          ]
+        },
+        {
+          "name": "Kuttimani Tamilmani",
+          "openalex_id": "A5008267619",
+          "orcid": "https://orcid.org/0000-0002-9615-1465",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Annie Tubadji",
+          "openalex_id": "A5070089201",
+          "orcid": "https://orcid.org/0000-0002-6134-3520",
+          "institutions": [
+            "University of the West of England"
+          ]
+        },
+        {
+          "name": "Paul Walton",
+          "openalex_id": "A5109157215",
+          "institutions": [
+            "Capgemini (United Kingdom)",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Michael D. Williams",
+          "openalex_id": "A5002569790",
+          "orcid": "https://orcid.org/0000-0002-3047-0332",
+          "institutions": [
+            "Swansea University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-27",
+      "abstract": null,
+      "cited_by_count": 3661,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information Management",
+        "type": "journal",
+        "issn": [
+          "0268-4012",
+          "1873-4707"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S026840121930917X"
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Economic and Technological Systems Analysis",
+        "Digital Transformation in Industry"
+      ],
+      "referenced_works_count": 338,
+      "url": "https://openalex.org/W2969625533"
+    },
+    {
+      "openalex_id": "W2488757378",
+      "doi": "10.1002/wps.20311",
+      "title": "Understanding the burnout experience: recent research and its implications for psychiatry",
+      "authors": [
+        {
+          "name": "Christina Maslach",
+          "openalex_id": "A5079876687",
+          "orcid": "https://orcid.org/0000-0002-4820-1317",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Michael P. Leiter",
+          "openalex_id": "A5023248014",
+          "orcid": "https://orcid.org/0000-0001-5680-0363",
+          "institutions": [
+            "Acadia University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-01",
+      "abstract": "The experience of burnout has been the focus of much research during the past few decades. Measures have been developed, as have various theoretical models, and research studies from many countries have contributed to a better understanding of the causes and consequences of this occupationally\u2010specific dysphoria. The majority of this work has focused on human service occupations, and particularly health care. Research on the burnout experience for psychiatrists mirrors much of the broader literature, in terms of both sources and outcomes of burnout. But it has also identified some of the unique stressors that mental health professionals face when they are dealing with especially difficult or violent clients. Current issues of particular relevance for psychiatry include the links between burnout and mental illness, the attempts to redefine burnout as simply exhaustion, and the relative dearth of evaluative research on potential interventions to treat and/or prevent burnout. Given that the treatment goal for burnout is usually to enable people to return to their job, and to be successful in their work, psychiatry could make an important contribution by identifying the treatment strategies that would be most effective in achieving that goal.",
+      "cited_by_count": 3442,
+      "type": "article",
+      "source": {
+        "name": "World Psychiatry",
+        "type": "journal",
+        "issn": [
+          "1723-8617",
+          "2051-5545"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/wps.20311"
+      },
+      "topics": [
+        "Healthcare professionals\u2019 stress and burnout",
+        "Workplace Health and Well-being",
+        "Stress and Burnout Research"
+      ],
+      "referenced_works_count": 84,
+      "url": "https://openalex.org/W2488757378"
+    },
+    {
+      "openalex_id": "W3131775585",
+      "doi": "10.1108/ecam-06-2020-0399",
+      "title": "The motivation of operatives in small construction firms towards health and safety \u2013 A conceptual framework",
+      "authors": [
+        {
+          "name": "Sunan Babar Khan",
+          "openalex_id": "A5065480599",
+          "institutions": [
+            "Birmingham City University"
+          ]
+        },
+        {
+          "name": "David Proverbs",
+          "openalex_id": "A5009686598",
+          "orcid": "https://orcid.org/0000-0002-3297-2205",
+          "institutions": [
+            "Birmingham City University"
+          ]
+        },
+        {
+          "name": "Hong Xiao",
+          "openalex_id": "A5103187374",
+          "orcid": "https://orcid.org/0000-0003-3847-1898",
+          "institutions": [
+            "Birmingham City University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-02",
+      "abstract": "Purpose Health and safety in small construction firms is often neglected by owners leading to poor health and safety performance and unacceptably high fatality and injury rates. A body of knowledge has established significant links between the motivational behaviours of operatives towards health and safety. Motivation is also considered as a key tool for improving operative productivity as when operatives experience safe worksites, they can carry out their work in a more productive manner. The purpose of this research is to develop a framework to examine the motivational factors that affect operative health and safety in small construction firms. Design/methodology/approach A critical review and synthesis of the body of knowledge incorporating motivational theory, health and safety literature and the factors which characterise small firms, is used to develop the framework. Findings Key components of the framework include the presence of intrinsic and extrinsic components, appropriate health and safety policies and procedures, the type of work environment, the operatives (i.e. attitude, experience and training) as well as the presence of appropriate management and supervision. The study revealed that operatives in small firms are less likely to be extrinsically motivated due to the absence of training, management commitment, policies and the wider working environment Research limitations/implications Failure of motivational support can result in increased danger and risk in exposing operatives to injury in the small firm environment. In this context, the damage caused to operative's health and safety in small construction firms is dependent mainly on the extrinsic factors. Practical implications The framework provides a basis for improving our understanding of how to motivate operatives to act safely and will help to improve the health and safety performance of small firms. It is therefore vital to emphasise enhancement efforts on these extrinsic strategies in the small firms' environment especially in the initial stages of the project (or activity), so that the health and safety of operatives in small firms can be improved. Originality/value This study proposes a contribution in developing an understanding of the motivational factors and their influence on the health and safety of operatives in small construction firms. The study revealed that operatives in small firms are less likely to be extrinsically motivated and have only intrinsically motivated elements in their workplace. The study proposes an indirect link between the extrinsic and intrinsic factors that affect motivation.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "Engineering Construction & Architectural Management",
+        "type": "journal",
+        "issn": [
+          "0969-9988",
+          "1365-232X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/2436/624960"
+      },
+      "topics": [
+        "Occupational Health and Safety Research",
+        "Workplace Health and Well-being",
+        "Musculoskeletal pain and rehabilitation"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W3131775585"
+    },
+    {
+      "openalex_id": "W2074980407",
+      "doi": "10.3390/md13031133",
+      "title": "Chitin and Chitosan Preparation from Marine Sources. Structure, Properties and Applications",
+      "authors": [
+        {
+          "name": "Islem Younes",
+          "openalex_id": "A5014580772",
+          "institutions": [
+            "University of Sfax"
+          ]
+        },
+        {
+          "name": "Marguerite Rinaudo",
+          "openalex_id": "A5029207589",
+          "orcid": "https://orcid.org/0000-0003-3254-0194"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-03-02",
+      "abstract": "This review describes the most common methods for recovery of chitin from marine organisms. In depth, both enzymatic and chemical treatments for the step of deproteinization are compared, as well as different conditions for demineralization. The conditions of chitosan preparation are also discussed, since they significantly impact the synthesis of chitosan with varying degree of acetylation (DA) and molecular weight (MW). In addition, the main characterization techniques applied for chitin and chitosan are recalled, pointing out the role of their solubility in relation with the chemical structure (mainly the acetyl group distribution along the backbone). Biological activities are also presented, such as: antibacterial, antifungal, antitumor and antioxidant. Interestingly, the relationship between chemical structure and biological activity is demonstrated for chitosan molecules with different DA and MW and homogeneous distribution of acetyl groups for the first time. In the end, several selected pharmaceutical and biomedical applications are presented, in which chitin and chitosan are recognized as new biomaterials taking advantage of their biocompatibility and biodegradability.",
+      "cited_by_count": 2344,
+      "type": "review",
+      "source": {
+        "name": "Marine Drugs",
+        "type": "journal",
+        "issn": [
+          "1660-3397"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1660-3397/13/3/1133/pdf?version=1425289172"
+      },
+      "topics": [
+        "Nanocomposite Films for Food Packaging",
+        "Protein Hydrolysis and Bioactive Peptides",
+        "Studies on Chitinases and Chitosanases"
+      ],
+      "referenced_works_count": 315,
+      "url": "https://openalex.org/W2074980407"
+    },
+    {
+      "openalex_id": "W2293768750",
+      "doi": "10.1080/14719037.2015.1111927",
+      "title": "Co-Production and the Co-Creation of Value in Public Services: A suitable case for treatment?",
+      "authors": [
+        {
+          "name": "Stephen P. Osborne",
+          "openalex_id": "A5003314979",
+          "orcid": "https://orcid.org/0000-0002-9722-2325",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Zoe Radnor",
+          "openalex_id": "A5017449783",
+          "orcid": "https://orcid.org/0000-0002-1624-5729",
+          "institutions": [
+            "Loughborough University"
+          ]
+        },
+        {
+          "name": "Kirsty Strokosch",
+          "openalex_id": "A5049106789",
+          "orcid": "https://orcid.org/0000-0001-6119-2112",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-09",
+      "abstract": "The file associated with this record is under an 18 month embargo from publication in accordance with the publisher's self-archiving policy. The full text may be available through the publisher links provided above.",
+      "cited_by_count": 1050,
+      "type": "article",
+      "source": {
+        "name": "Public Management Review",
+        "type": "journal",
+        "issn": [
+          "1471-9037",
+          "1471-9045"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/b834db79-aa19-4e79-a3c1-e6989ef15366"
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Service and Product Innovation",
+        "Innovative Approaches in Technology and Social Development"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W2293768750"
+    },
+    {
+      "openalex_id": "W2782708334",
+      "doi": "10.1038/nrd.2017.243",
+      "title": "mRNA vaccines \u2014 a new era in vaccinology",
+      "authors": [
+        {
+          "name": "Norbert Pardi",
+          "openalex_id": "A5067992777",
+          "orcid": "https://orcid.org/0000-0003-1008-6242",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Michael J. Hogan",
+          "openalex_id": "A5003213587",
+          "orcid": "https://orcid.org/0000-0002-6244-2993",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Frederick Porter",
+          "openalex_id": "A5078754071",
+          "institutions": [
+            "Duke University"
+          ]
+        },
+        {
+          "name": "Drew Weissman",
+          "openalex_id": "A5068253145",
+          "orcid": "https://orcid.org/0000-0002-1501-6510",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-12",
+      "abstract": null,
+      "cited_by_count": 4214,
+      "type": "review",
+      "source": {
+        "name": "Nature Reviews Drug Discovery",
+        "type": "journal",
+        "issn": [
+          "1474-1776",
+          "1474-1784"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.nature.com/articles/nrd.2017.243.pdf"
+      },
+      "topics": [
+        "RNA Interference and Gene Delivery",
+        "Immunotherapy and Immune Responses",
+        "Animal Virus Infections Studies"
+      ],
+      "referenced_works_count": 221,
+      "url": "https://openalex.org/W2782708334"
+    },
+    {
+      "openalex_id": "W3001065916",
+      "doi": "10.1007/s11031-019-09818-1",
+      "title": "Basic psychological need theory: Advancements, critical themes, and future directions",
+      "authors": [
+        {
+          "name": "Maarten Vansteenkiste",
+          "openalex_id": "A5072031072",
+          "orcid": "https://orcid.org/0000-0001-6983-3607",
+          "institutions": [
+            "Ghent University"
+          ]
+        },
+        {
+          "name": "Richard M. Ryan",
+          "openalex_id": "A5001390698",
+          "orcid": "https://orcid.org/0000-0002-2355-6154",
+          "institutions": [
+            "Australian Catholic University"
+          ]
+        },
+        {
+          "name": "Bart Soenens",
+          "openalex_id": "A5080446268",
+          "orcid": "https://orcid.org/0000-0003-1581-3656",
+          "institutions": [
+            "Australian Catholic University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-21",
+      "abstract": null,
+      "cited_by_count": 1523,
+      "type": "article",
+      "source": {
+        "name": "Motivation and Emotion",
+        "type": "journal",
+        "issn": [
+          "0146-7239",
+          "1573-6644"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11031-019-09818-1.pdf"
+      },
+      "topics": [
+        "Youth Development and Social Support",
+        "Motivation and Self-Concept in Sports",
+        "Grit, Self-Efficacy, and Motivation"
+      ],
+      "referenced_works_count": 342,
+      "url": "https://openalex.org/W3001065916"
+    },
+    {
+      "openalex_id": "W2888399392",
+      "doi": "10.1016/j.landusepol.2018.07.035",
+      "title": "Challenges to access and safeguard mineral resources for society: A case study of kaolin in Portugal",
+      "authors": [
+        {
+          "name": "Catarina Lopes",
+          "openalex_id": "A5088963757",
+          "orcid": "https://orcid.org/0000-0002-1224-3232",
+          "institutions": [
+            "University of Lisbon"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 V\u00edtor M.B. Vieira Lisboa",
+          "openalex_id": "A5036215016",
+          "orcid": "https://orcid.org/0000-0002-4983-9347",
+          "institutions": [
+            "National Laboratory of Energy and Geology"
+          ]
+        },
+        {
+          "name": "Jorge M. F. Carvalho",
+          "openalex_id": "A5007725324",
+          "orcid": "https://orcid.org/0000-0001-7055-5907",
+          "institutions": [
+            "National Laboratory of Energy and Geology"
+          ]
+        },
+        {
+          "name": "Ant\u00f3nio Mateus",
+          "openalex_id": "A5020926976",
+          "orcid": "https://orcid.org/0000-0003-2623-1539",
+          "institutions": [
+            "Instituto Dom Luiz",
+            "University of Lisbon",
+            "IdMind (Portugal)"
+          ]
+        },
+        {
+          "name": "Lu\u00eds Martins",
+          "openalex_id": "A5101438173",
+          "orcid": "https://orcid.org/0009-0007-7472-0173"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-08-23",
+      "abstract": null,
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Land Use Policy",
+        "type": "journal",
+        "issn": [
+          "0264-8377",
+          "1873-5754"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Mining and Resource Management",
+        "Mine drainage and remediation techniques",
+        "Geochemistry and Geologic Mapping"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W2888399392"
+    },
+    {
+      "openalex_id": "W2913144876",
+      "doi": "10.1007/s10648-019-09465-5",
+      "title": "Cognitive Architecture and Instructional Design: 20\u00a0Years Later",
+      "authors": [
+        {
+          "name": "John Sweller",
+          "openalex_id": "A5006640853",
+          "orcid": "https://orcid.org/0000-0001-7855-9160",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Jeroen J. G. van Merri\u00ebnboer",
+          "openalex_id": "A5023940180",
+          "orcid": "https://orcid.org/0000-0002-5868-7031",
+          "institutions": [
+            "Maastricht University"
+          ]
+        },
+        {
+          "name": "Fred Paas",
+          "openalex_id": "A5028053852",
+          "orcid": "https://orcid.org/0000-0002-1647-5305",
+          "institutions": [
+            "University of Wollongong",
+            "Erasmus University Rotterdam"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-22",
+      "abstract": "Cognitive load theory was introduced in the 1980s as an instructional design theory based on several uncontroversial aspects of human cognitive architecture. Our knowledge of many of the characteristics of working memory, long-term memory and the relations between them had been well-established for many decades prior to the introduction of the theory. Curiously, this knowledge had had a limited impact on the field of instructional design with most instructional design recommendations proceeding as though working memory and long-term memory did not exist. In contrast, cognitive load theory emphasised that all novel information first is processed by a capacity and duration limited working memory and then stored in an unlimited long-term memory for later use. Once information is stored in long-term memory, the capacity and duration limits of working memory disappear transforming our ability to function. By the late 1990s, sufficient data had been collected using the theory to warrant an extended analysis resulting in the publication of Sweller et al. (Educational Psychology Review, 10, 251-296, 1998). Extensive further theoretical and empirical work have been carried out since that time and this paper is an attempt to summarise the last 20years of cognitive load theory and to sketch directions for future research.",
+      "cited_by_count": 1652,
+      "type": "article",
+      "source": {
+        "name": "Educational Psychology Review",
+        "type": "journal",
+        "issn": [
+          "1040-726X",
+          "1573-336X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10648-019-09465-5.pdf"
+      },
+      "topics": [
+        "Visual and Cognitive Learning Processes",
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "Innovative Teaching and Learning Methods"
+      ],
+      "referenced_works_count": 129,
+      "url": "https://openalex.org/W2913144876"
+    },
+    {
+      "openalex_id": "W4306955176",
+      "doi": "10.1016/j.mtsust.2022.100255",
+      "title": "Solar reflective properties of porcelain tiles for UHI mitigation: effect of highly reflective frits in the engobe's formulation",
+      "authors": [
+        {
+          "name": "M. Governatori",
+          "openalex_id": "A5089195714",
+          "orcid": "https://orcid.org/0000-0002-7597-1608"
+        },
+        {
+          "name": "Erika Iveth Cedillo-Gonz\u00e1lez",
+          "openalex_id": "A5008332198",
+          "orcid": "https://orcid.org/0000-0001-5041-1404"
+        },
+        {
+          "name": "Tiziano Manfredini",
+          "openalex_id": "A5050574917",
+          "orcid": "https://orcid.org/0000-0003-0588-3546"
+        },
+        {
+          "name": "Cristina Siligardi",
+          "openalex_id": "A5000679710",
+          "orcid": "https://orcid.org/0000-0003-1642-832X"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-20",
+      "abstract": null,
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Materials Today Sustainability",
+        "type": "journal",
+        "issn": [
+          "2589-2347"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hdl.handle.net/11380/1291304"
+      },
+      "topics": [
+        "Urban Heat Island Mitigation",
+        "Building Energy and Comfort Optimization",
+        "Urban Green Space and Health"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W4306955176"
+    },
+    {
+      "openalex_id": "W3040251999",
+      "doi": "10.1080/19415257.2020.1787199",
+      "title": "Understanding values embedded in the leadership of reciprocal professional learning by teachers",
+      "authors": [
+        {
+          "name": "Susan Lovett",
+          "openalex_id": "A5103068913",
+          "orcid": "https://orcid.org/0000-0001-8814-8074",
+          "institutions": [
+            "University of Canterbury"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-30",
+      "abstract": "A starting point for realising connections between leadership and professional learning is to focus specifically on teachers and their conceptions of leadership. Typically, leadership is understood as a designated position with a defined role and responsibilities for individuals. An alternative conception is to view leadership as collective rather than individual work to enhance student learning. This article advances leadership for professional learning through explicit recognition and application of actions underpinning four professional values (professional discretion, collegial obligation, reflective inquiry and discourse and evidence-based practice). These values are intrinsic to collaborative learning cultures. The literature supporting them points to important actions for the creation and maintenance of these cultures. The article explores this literature and justifies particular teacher leadership actions that help collaborative learning cultures. These actions are captured in a sample survey instrument designed to stimulate in-school discussions on productive ways to work towards teacher leadership in cooperative settings. Sample data are analysed to indicate how teachers' individual views produce a school profile, which can be used as a prompt to determine whether the basis for reciprocal professional learning by teachers is evident or requires further development. The survey tool makes explicit the foundations for teacher leadership as collective activity.",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Professional Development in Education",
+        "type": "journal",
+        "issn": [
+          "1941-5257",
+          "1941-5265"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Educational Assessment and Improvement",
+        "Teacher Education and Leadership Studies",
+        "Collaborative Teaching and Inclusion"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W3040251999"
+    },
+    {
+      "openalex_id": "W2747423355",
+      "doi": "10.1038/s41467-017-00424-8",
+      "title": "Tumor-selective catalytic nanomedicine by nanocatalyst delivery",
+      "authors": [
+        {
+          "name": "Minfeng Huo",
+          "openalex_id": "A5074312043",
+          "orcid": "https://orcid.org/0000-0001-5717-1845",
+          "institutions": [
+            "Shanghai Institute of Ceramics",
+            "University of Chinese Academy of Sciences",
+            "Chinese Academy of Sciences"
+          ]
+        },
+        {
+          "name": "Liying Wang",
+          "openalex_id": "A5100405017",
+          "orcid": "https://orcid.org/0009-0004-0175-9796",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "University of Chinese Academy of Sciences",
+            "Shanghai Institute of Ceramics",
+            "ShanghaiTech University"
+          ]
+        },
+        {
+          "name": "Yu Chen",
+          "openalex_id": "A5100402072",
+          "orcid": "https://orcid.org/0000-0002-8206-3325",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Shanghai Institute of Ceramics"
+          ]
+        },
+        {
+          "name": "Jianlin Shi",
+          "openalex_id": "A5108427188",
+          "orcid": "https://orcid.org/0000-0001-8790-195X",
+          "institutions": [
+            "Shanghai Institute of Ceramics",
+            "Chinese Academy of Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-08-21",
+      "abstract": "Abstract Tumor cells metabolize in distinct pathways compared with most normal tissue cells. The resulting tumor microenvironment would provide characteristic physiochemical conditions for selective tumor modalities. Here we introduce a concept of sequential catalytic nanomedicine for efficient tumor therapy by designing and delivering biocompatible nanocatalysts into tumor sites. Natural glucose oxidase (GOD, enzyme catalyst) and ultrasmall Fe 3 O 4 nanoparticles (inorganic nanozyme, Fenton reaction catalyst) have been integrated into the large pore-sized and biodegradable dendritic silica nanoparticles to fabricate the sequential nanocatalyst. GOD in sequential nanocatalyst could effectively deplete glucose in tumor cells, and meanwhile produce a considerable amount of H 2 O 2 for subsequent Fenton-like reaction catalyzed by Fe 3 O 4 nanoparticles in response to mild acidic tumor microenvironment. Highly toxic hydroxyl radicals are generated through these sequential catalytic reactions to trigger the apoptosis and death of tumor cells. The current work manifests a proof of concept of catalytic nanomedicine by approaching selectivity and efficiency concurrently for tumor therapeutics.",
+      "cited_by_count": 1314,
+      "type": "article",
+      "source": {
+        "name": "Nature Communications",
+        "type": "journal",
+        "issn": [
+          "2041-1723"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41467-017-00424-8.pdf"
+      },
+      "topics": [
+        "Nanoplatforms for cancer theranostics",
+        "Advanced Nanomaterials in Catalysis",
+        "Nanoparticle-Based Drug Delivery"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2747423355"
+    },
+    {
+      "openalex_id": "W2518885625",
+      "doi": "10.1111/medu.13074",
+      "title": "Motivation to learn: an overview of contemporary theories",
+      "authors": [
+        {
+          "name": "David A. Cook",
+          "openalex_id": "A5102930007",
+          "orcid": "https://orcid.org/0000-0003-2383-4633",
+          "institutions": [
+            "Mayo Clinic in Arizona",
+            "WinnMed",
+            "Mayo Clinic",
+            "Mayo Clinic in Florida"
+          ]
+        },
+        {
+          "name": "Anthony R. Artino",
+          "openalex_id": "A5072266383",
+          "orcid": "https://orcid.org/0000-0003-2661-7853",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-09-15",
+      "abstract": "Objective To succinctly summarise five contemporary theories about motivation to learn, articulate key intersections and distinctions among these theories, and identify important considerations for future research. Results Motivation has been defined as the process whereby goal\u2010directed activities are initiated and sustained. In expectancy\u2010value theory, motivation is a function of the expectation of success and perceived value. Attribution theory focuses on the causal attributions learners create to explain the results of an activity, and classifies these in terms of their locus, stability and controllability. Social\u2010 cognitive theory emphasises self\u2010efficacy as the primary driver of motivated action, and also identifies cues that influence future self\u2010efficacy and support self\u2010regulated learning. Goal orientation theory suggests that learners tend to engage in tasks with concerns about mastering the content (mastery goal, arising from a \u2018growth\u2019 mindset regarding intelligence and learning) or about doing better than others or avoiding failure (performance goals, arising from a \u2018fixed\u2019 mindset). Finally, self\u2010determination theory proposes that optimal performance results from actions motivated by intrinsic interests or by extrinsic values that have become integrated and internalised. Satisfying basic psychosocial needs of autonomy, competence and relatedness promotes such motivation. Looking across all five theories, we note recurrent themes of competence, value, attributions, and interactions between individuals and the learning context. Conclusions To avoid conceptual confusion, and perhaps more importantly to maximise the theory\u2010building potential of their work, researchers must be careful (and precise) in how they define, operationalise and measure different motivational constructs. We suggest that motivation research continue to build theory and extend it to health professions domains, identify key outcomes and outcome measures, and test practical educational applications of the principles thus derived.",
+      "cited_by_count": 949,
+      "type": "article",
+      "source": {
+        "name": "Medical Education",
+        "type": "journal",
+        "issn": [
+          "0308-0110",
+          "1365-2923"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/medu.13074"
+      },
+      "topics": [
+        "Motivation and Self-Concept in Sports",
+        "Education, Achievement, and Giftedness",
+        "Innovative Teaching and Learning Methods"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W2518885625"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

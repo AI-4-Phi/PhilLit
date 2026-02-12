@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/s10790-021-09812-2"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s10790-021-09812-2",
+      "title": "Effective Deliberation, Good Deliberation, and the Skill Analogy",
+      "authors": [
+        {
+          "family": "Zheng",
+          "given": "Tiger"
+        }
+      ],
+      "editors": [],
+      "year": 2021,
+      "container_title": "The Journal of Value Inquiry",
+      "volume": "55",
+      "issue": "2",
+      "page": "213-228",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/s10790-021-09812-2"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,635 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "philosophy journal rankings prestige",
+  "results": [
+    {
+      "paperId": "08502b1080167d2d16362c948110fa22ebb6d3e5",
+      "title": "The Journal of Prompt-Engineered Philosophy Or: How I Started to Track AI Assistance and Stopped Worrying About Slop",
+      "authors": [
+        {
+          "name": "Michele Loi",
+          "authorId": "2391962990"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Academic publishing increasingly requires authors to disclose AI assistance, yet imposes reputational costs for doing so--especially when such assistance is substantial. This article analyzes that structural contradiction, showing how incentives discourage transparency in precisely the work where it matters most. Traditional venues cannot resolve this tension through policy tweaks alone, as the underlying prestige economy rewards opacity. To address this, the article proposes an alternative publishing infrastructure: a venue outside prestige systems that enforces mandatory disclosure, enables reproduction-based review, and supports ecological validity through detailed documentation. As a demonstration of this approach, the article itself is presented as an example of AI-assisted scholarship under reasonably detailed disclosure, with representative prompt logs and modification records included. Rather than taking a position for or against AI-assisted scholarship, the article outlines conditions under which such work can be evaluated on its own terms: through transparent documentation, verification-oriented review, and participation by methodologically committed scholars. While focused on AI, the framework speaks to broader questions about how academic systems handle methodological innovation.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2511.08639",
+      "arxivId": "2511.08639",
+      "url": "https://www.semanticscholar.org/paper/08502b1080167d2d16362c948110fa22ebb6d3e5",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2511.08639"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5924ebab0e0e42f4bba8dae6186892621b9908da",
+      "title": "Mapping the Social Structure of Philosophy of Science Through Large-Scale Acknowledgments Analysis",
+      "authors": [
+        {
+          "name": "Eugenio Petrovich",
+          "authorId": "2373838998"
+        },
+        {
+          "name": "Edoardo Fazzini",
+          "authorId": "2373837708"
+        },
+        {
+          "name": "Lorenzo Gandolfi",
+          "authorId": "2373839631"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The acknowledgments in scientific publications offer a unique perspective on the complex web of\nsocio-cognitive relationships underlying the production of knowledge. Acknowledgment analysis\nenables us to highlight the role of funding institutions, reconstruct informal collaboration patterns\ninvisible to co-authorship analysis, and measure a distinct form of prestige beyond authorships and\ncitations. This study leverages acknowledgment analysis to investigate the fine-grained social\nstructure of philosophy of science, a research field whose social dimension has thus far remained\nunexplored. Specifically, we aim to: 1) identify the scholars who receive the most acknowledgments\nin the field and examine their roles in professional associations; 2) analyze how acknowledgments are\ndistributed across the community and the factors affecting the number of mentions received; and 3)\nmap the social communities within philosophy of science, exploring whether they a re organized\naround topics, methodological approaches, or professional associations. Our findings reveal that\nacknowledgments are prevalent in philosophy of science, with 79% of articles including them, and\nthat the average acknowledgment mentions 5.3 individuals\u2014significantly higher than the average\nnumber of co-authors per article (1.3). Most acknowledged individuals are prominent philosophers of\nscience who play key roles in professional associations. In terms of distribution, mentions are highly\nconcentrated among a few individuals, with the top 10% of acknowledged scholars receiving nearly\nhalf of all mentions. Mentions are most strongly predicted by academic awards, productivity in\nphilosophy of science journals, leadership roles in professional associations, and affiliation with\nEnglish-speaking institutions, with smaller effects for gender and general publication metrics. Finally,\nthe co-acknowledgment network shows that clusters of frequently co-mentioned individuals are\norganized around both topics (e.g., philosophies of specific sciences) and methodological approaches\n(e.g., formal vs. historical philosophy of science).",
+      "citationCount": 0,
+      "doi": "10.51408/issi2025_129",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5924ebab0e0e42f4bba8dae6186892621b9908da",
+      "venue": "International Conference on Scientometrics &amp; Informetrics",
+      "journal": {
+        "name": "International Conference on Scientometrics &amp; Informetrics"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "a5a05e830ff35ba4f3a78752e0f2e872657910da",
+      "title": "Ranking philosophy journals: a meta-ranking and a new survey ranking",
+      "authors": [
+        {
+          "name": "Boudewijn de Bruin",
+          "authorId": "1741323927"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This paper presents a meta-ranking of philosophy journals based on existing rankings, and a new ranking of philosophy journals developed through a survey involving a thousand authors (351 respondents, data collection May 2022) of articles from the most recent issues of 40 general philosophy journals. In addition to assessing journal quality, data were gathered on various variables such as gender, age, years in academia, number of refereed publications, area of specialization, and journal affiliation (as an author or editor). Findings indicate that only area of specialization and affiliation have some influence on respondents\u2019 assessments. Authors affiliated with particular journals rate them higher than non-affiliated authors. The paper discusses criticisms of both citation-based and survey-based journal rankings, and offers words of caution regarding the practical use of rankings.",
+      "citationCount": 0,
+      "doi": "10.1007/s11229-023-04342-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a5a05e830ff35ba4f3a78752e0f2e872657910da",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "1-31",
+        "volume": "202"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "53b0a1339daf3f8e1ba10c7820fcd79c5ce11881",
+      "title": "From a nitty-gritty debate within economics into the deep waters of philosophy of science. Introduction to the special issue of ZFN",
+      "authors": [
+        {
+          "name": "Walter Block",
+          "authorId": "2338080061"
+        },
+        {
+          "name": "Igor Wysocki",
+          "authorId": "2398505390"
+        }
+      ],
+      "year": 2024,
+      "abstract": "It all started in 2021 when we sparked a rather specific debate within Austrian economics in Philosophical Problems in Science (Zagadnienia Filozoficzne w Nauce) \u2013 traditionally abbreviated as ZFN. The story unfolded as follows. First, Wysocki submitted a paper on the concept of indifference, as it is normally understood in the Austrian school of economics. To his astonishment and great relief, this then rising journal (now the one with well-established reputation, its Scopus ranking being as high as Q2 under the rubric of philosophy) accepted the submission in question and published it promptly in ZFN 71 as (Wysocki, 2021). It was an honour and a privilege, especially given the fact that Austrian economics \u2013 with all due respect to its scientific achievements \u2013 is nowadays not a mainstream economic current, to say the least. Hence, being published in ZFN only added to the strength of Wysocki\u2019s belief that the journal is clearly unbiased towards any sort of philosophy of science. The very fact that Wysocki published a paper on indifference in Austrian economics and the fact that he spread the news about ZFN being also open to publishing maverick (after all, as already observed, Austrian economics is not a branch of mainstream economics) papers related to philosophy of science prompted Walter Block (a prominent Austrian economist) to submit to ZFN his rejoinder to Wysocki\u2019s original paper on indifference, with the said response being ultimately published in ZFN 72 as (Block, 2022).",
+      "citationCount": 0,
+      "doi": "10.59203/zfn.76.704",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/53b0a1339daf3f8e1ba10c7820fcd79c5ce11881",
+      "venue": "Philosophical Problems in Science (Zagadnienia Filozoficzne w Nauce)",
+      "journal": {
+        "name": "Philosophical Problems in Science (Zagadnienia Filozoficzne w Nauce)"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1fe6139495fdbbb534c5005043732ef06c270853",
+      "title": "The critical gift: Revaluing book reviews in Educational Philosophy and Theory",
+      "authors": [
+        {
+          "name": "Sean Sturm",
+          "authorId": "31524596"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Scholarly book reviews are dying. Academics \u2013 and the journals with which academics exist in an unhealthy co-dependence \u2013 keep them alive only to sell books and to boost the books on their CVs. So say the cynics. And a litany of reviews of book reviews would tend to agree (Di Leo, 2009; Diani, 2009; East, 2011; Henige, 2001; Hyland & Diani, 2009; Lee, Green, Johnson, & Nyquist, 2010; Nicolaisen, 2002, Spink, Robins, & Schamber, 1998). They aren\u2019t valued for a number of reasons. First, they aren\u2019t considered peer-reviewed \u201coutputs\u201d for research audit purposes \u2013 and they are rarely cited anyway (so they\u2019re a waste of time for strategic academics). Secondly, they aren\u2019t as effective as they once were to promote books since the internet is faster and broader in reach than scholarly journals, and they don\u2019t contribute to journal rankings or impact factors (so they\u2019re a loss leader for publishers). And, thirdly, they can be biased (because reviews typically rely on the evaluation of a single reviewer who is not always an expert in the field); they tend to be positive \u2013 although more so in the sciences than the humanities (academics are past masters at damning with faint praise); and, like other scholarly activities, are prone to the Matthew, or \u201crich-get-richer,\u201d effect (because books by established or better-known scholars tend to get published and reviewed). As a book reviews editor (and non-cynic), I well know these failings of reviews \u2013 and the challenges of having to find reviewers and encourage them to experiment with the genre. But I also know that book reviews are vital to their scholarly field because they serve to map what is considered of value in that field to its scholars. For this reason, they require scholarly revaluation in the light of the shift in our contemporary scholarly culture toward a focus on auditable and open-access research, a revaluation that cannot but bring into question the values that ground all scholarly fields. As Ann Chinnery puts it in an editorial for Studies in Philosophy and Education (2010, p. 418), book reviews serve not the market economy of the neoliberal academy (or, at least, not well), but the still vital gift ecology of the scholarly community: \u201cWriting a book review is ... an act of intellectual generosity \u2013 a kind of other-centred responsibility that may not reap institutional rewards, but which is essential if we are to ensure the preservation [or cultivation, I would say] of a critical culture within academic communities.\u201d As an editor, I value the book review as a critical gift, an act of scholarly generosity not only to readers, but also to reviewers. How so, I will endeavour to make clear.",
+      "citationCount": 10,
+      "doi": "10.1080/00131857.2020.1741335",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1fe6139495fdbbb534c5005043732ef06c270853",
+      "venue": "Educational Philosophy and Theory",
+      "journal": {
+        "name": "Educational Philosophy and Theory",
+        "pages": "450 - 456",
+        "volume": "54"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "bc8957dccffd1e0c139e377c062bbc64261f8b03",
+      "title": "Epistemological Traditions in Modern Russian Philosophy",
+      "authors": [
+        {
+          "name": "L. Mikeshina",
+          "authorId": "113280880"
+        },
+        {
+          "name": "Mikhail I. Mikeshin",
+          "authorId": "114752924"
+        }
+      ],
+      "year": 2023,
+      "abstract": "\u201cGnoseology\u201d and \u201cepistemology\u201d, two terms widely used in the theory of cog\u00adnition, have a history of use for about hundred years. During this time, they were interpreted very differently. In world philosophy, the first term is considered obsolete, and understanding of the second has developed in connection with the great interest in scientific knowledge. In Russia, the first term is much more common due to its use in dialectical materialism and official ideology, while the second has become widespread in the last fifty years due to the influence of works and translations in the field of philosophy of science. The paper\u2019s authors take into account the current practice and propose to use the term \u201cgnoseology\u201d to describe the theory of cognition, built on the maximum abstrac\u00adtion of the subject, and to use the term \u201cepistemology\u201d in the theory of cognition with a reduced level of abstraction of the subject, a level that takes into account such social characteristics of the subject as its communicativeness and values. In gnoseology, these components were either not studied, or they were fought with as unscientific and acceptable only in everyday knowledge. Despite the de\u00advelopment of philosophical concepts of the sociality of the subject in the theory of cognition, in real technoscience the model of the most abstract mind is still very widely used, which is reflected, first of all, in the content and rhetoric of scientific papers. The paper provides examples from modern scientific texts published in high-ranking technical journals. It is concluded that the exceptional use the abstract representation of the subject prevents the scientists from formu\u00adlating and realizing the current acute problems of their sciences.",
+      "citationCount": 0,
+      "doi": "10.21146/0042-8744-2023-11-67-77",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bc8957dccffd1e0c139e377c062bbc64261f8b03",
+      "venue": "Voprosy filosofii",
+      "journal": {
+        "name": "Voprosy Filosofii"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "16af5ed21fce5f2f8e4f1a50abb4e482f5e52242",
+      "title": "Philosophy of bridge building",
+      "authors": [
+        {
+          "name": "Alexander Vasiliev",
+          "authorId": "2052151323"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The author presents a philosophical interpretation of the contribution of bridge construction to the development of civilization.\n\nBridges have always been an important element of civilization, an instrument of human interaction with each other and with nature, an object of not only physical, but, above all, intellectual human activity. Therefore, their philosophical understanding, penetration into the logic and dialectics of the development of bridge construction is justified and necessary.\n\nThe following main factors determine the development of bridge construction: concept and criteria, requirements, competition, experience and information.\n\nThe concept of the projected bridge should take into account the categories of purpose, reliability, economy, traditions, the level of design achieved, personal preferences and experience of the designer.\n\nThe goal pursued by the construction of a specific bridge in a specific location is determined mainly by current needs, is formulated in the Terms of Reference and is regulated by the levels of consumer properties set in the norms.\n\nAt the same time, the criteria of strength and reliability must be observed throughout the entire life cycle. The level of reliability is provided by design standards.\n\nThe requirements for bridges should contain social, technical and humanitarian aspects. The economy is almost always, at least in our country, the main criterion when choosing a bridge option.\n\nCompetition is one of the main conditions for the development of nature and human society. There are three types of competition in the field of bridge construction: between different countries (competition of prestige), competition of scientific and design schools, competition in bidding.\n\nExperience and information are important for the development of bridge construction. We are talking here about the collective experience of the bridge community.\n\nAn effective means of exchanging experience and ideas is technical literature, and above all, technical journals and collections, various bridge forums.",
+      "citationCount": 0,
+      "doi": "10.15862/06sats322",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/16af5ed21fce5f2f8e4f1a50abb4e482f5e52242",
+      "venue": "Russian journal of transport engineering",
+      "journal": {
+        "name": "Russian journal of transport engineering"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "294edef206b7802cb46e43be1aab28e09a2d5214",
+      "title": "Philosophy in Halakhah: The Case of Intentional Action",
+      "authors": [
+        {
+          "name": "Jed Lewinsohn",
+          "authorId": "121169280"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/294edef206b7802cb46e43be1aab28e09a2d5214",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dd639229d5130cf5d873974e5f2fb214b5175d50",
+      "title": "SCIENTIFIC CONTRIBUTION OF DOCTOR HABILITAT ILLIA KOLOSOV INTO JURISPRUDENCE: FACTS, THOUGHTS AND PERSPECTIVES",
+      "authors": [
+        {
+          "name": "Olha Choporova",
+          "authorId": "2326622028"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The article reveals the scientific and personal contribution to legal science of Dr hab. I.V. Kolosov, Doctor of Law (Habilitated) (in Republic of Poland), Philosophy Doctor in Law (in Ukraine), Reviewer of international scientific professional journals of \u2018International Journal of Law and Society\u2019, Science Publishing Group Inc. (in New York, USA), \u2018Technium Education and Humanities\u2019 (in Ponta Delgada, Portugal), \u2018Technium Business and Management\u2019 (in Mumbai, India), Invited Expert of the Times Higher Education's Global Academic Reputation Survey-2024 and World University Rankings-2025 (in London, UK), Member of the Harvard Club, Alumnus of Sommerschule-2024 \u2018Recht in Deutschland\u2019 of Heidelberg University (Germany) and so on and so forth. The contribution of I. V. Kolosov to the development of the aforesaid science at different stages of his scientific career is studied. Some publications covering scientific and legislative views of I. V. Kolosov, which, in our viewpoint, are multifaceted, revolutionary and significant, are considered. It is established that the scientist's papers clearly and understandably cover issues in such branches of law as labor, international, environmental, criminal, social security, constitutional, etc. It is stated that the citation of Dr hab. Kolosov's works can be found in a link of scientific articles, monographs, textbooks and dissertations. The purpose of the article is to provide a scientific coverage of the creative work and personal contribution to the development of legal science, to reflect on the prospects of the scientific research derivated by him from the viewpoint of facts, and to reasonably reflect on the prospects of scientific research. The author forecasts the prospects for further development of legal science, the actual impact of the legal paradigm on the fate of mankind and its place in solving global problems of our time. Based on the results of the study, the author presents scientifically sound conclusions. In particular, it is determined that the issue of nuclear and environmental safety makes us think about furthermore actions for the complete safety of nuclear industrial facilities and furthermore research on this issue.",
+      "citationCount": 0,
+      "doi": "10.30525/2592-8813-2024-3-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dd639229d5130cf5d873974e5f2fb214b5175d50",
+      "venue": "Baltic Journal of Legal and Social Sciences",
+      "journal": {
+        "name": "Baltic Journal of Legal and Social Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ef7f0bc9b78f0613538e6dc1153f35cdcb86349f",
+      "title": "Adult Education Philosophy: The Case of Self-Directed Learning Strategies in Graduate Teaching.",
+      "authors": [
+        {
+          "name": "T. Cox",
+          "authorId": "47886698"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ef7f0bc9b78f0613538e6dc1153f35cdcb86349f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "17-22",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "236be678103260af3d658f03ce2430c227521ef7",
+      "title": "Bibliometric Analysis of the Journal Library Philosophy and Practice from 2005-2009",
+      "authors": [
+        {
+          "name": "S. Thanuskodi",
+          "authorId": "52039329"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 55,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/236be678103260af3d658f03ce2430c227521ef7",
+      "venue": "",
+      "journal": {
+        "name": "Library Philosophy and Practice",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "503722c80e332185398219d359f4705657dca0e2",
+      "title": "Privacy, Due Process and the Computational Turn: The Philosophy of Law Meets the Philosophy of Technology. By Mireille Hildebrandt and Katja De Vries (eds.) [Oxford and New York: Routledge, 2013. xiv + 256 pp. Paperback \u00a389. ISBN 978-0-41564-481-5.]",
+      "authors": [
+        {
+          "name": "Ann Kristin Glenster",
+          "authorId": "119315253"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1017/S0008197317000046",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/503722c80e332185398219d359f4705657dca0e2",
+      "venue": "The Cambridge Law Journal",
+      "journal": {
+        "name": "The Cambridge Law Journal",
+        "pages": "207 - 209",
+        "volume": "76"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "06eecd70c373bce2c256739eaad60769eb2bc789",
+      "title": "Open access in ethics research: an analysis of open access availability and author self-archiving behaviour in light of journal copyright restrictions",
+      "authors": [
+        {
+          "name": "M. Laakso",
+          "authorId": "37378296"
+        },
+        {
+          "name": "A. Polonioli",
+          "authorId": "3399230"
+        }
+      ],
+      "year": 2018,
+      "abstract": "The current state of open access to journal publications within research areas belonging to the humanities has received relatively little research attention. This study provides a detailed mapping of the bibliometric state of open access to journal publications among ethicists, taking into account not only open access publishing in journals directly, but also where and in what form ethicists make their journal articles available elsewhere on the web. As part of the study 297 ethicists affiliated with top-ranking philosophy departments were identified and their journal publication information for the years 2010\u20132015 were recorded (1682 unique articles). The journal articles were then queried for through Google Scholar in order to establish open access status (web locations, document versions) of each publication record. Publication records belonging to the 20 most frequently used journal outlets (subset of 597 unique articles) were put under closer inspection with regards to alignment with publisher copyright restrictions as well as measuring unused potential to share articles. The results show that slightly over half of recent journal publications are available to read for free. PhilPapers and academic social networks (Academia.edu and ResearchGate) were found to be key platforms for research dissemination in ethics research. The representation of institutional repositories as providers of access was found to be weak, receiving the second lowest frequency rating among the eight discrete web location categories. Further, the study reveals that ethicists are at the same time prone to copyright infringement and undersharing their scholarly work.",
+      "citationCount": 20,
+      "doi": "10.1007/s11192-018-2751-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/06eecd70c373bce2c256739eaad60769eb2bc789",
+      "venue": "Scientometrics",
+      "journal": {
+        "name": "Scientometrics",
+        "pages": "291-317",
+        "volume": "116"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "7d94f3ed573b5d2e30288d0148c5a006ab5e90da",
+      "title": "Socrates Reborn?: Philosophy, after the Disciplines",
+      "authors": [
+        {
+          "name": "M. Sharpe",
+          "authorId": "145436721"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7d94f3ed573b5d2e30288d0148c5a006ab5e90da",
+      "venue": "",
+      "journal": {
+        "name": "Arena journal",
+        "pages": "304",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "36f0922b3d73a14f75dece0d9d173c0f3cc0799a",
+      "title": "Epistemic Credibility and Women in Philosophy",
+      "authors": [
+        {
+          "name": "F. Jenkins",
+          "authorId": "66372581"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.1080/08164649.2014.928190",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/36f0922b3d73a14f75dece0d9d173c0f3cc0799a",
+      "venue": "",
+      "journal": {
+        "name": "Australian Feminist Studies",
+        "pages": "161 - 170",
+        "volume": "29"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6b5adaac677db67f867e3e6704230d261e323cb8",
+      "title": "A Time to Remember: The Fiftieth Anniversary of the Faculty of Philosophy, Sciences and Letters at Ribeir\u00e3o Preto, University of S\u00e3o Paulo",
+      "authors": [
+        {
+          "name": "M. A. Santos",
+          "authorId": "5557312"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1590/1982-43272457201401",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6b5adaac677db67f867e3e6704230d261e323cb8",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "1-3",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ff2dd8b17e8df58b91f2c2ae58258101470d9c4f",
+      "title": "Do we need a book citation index for research evaluation?",
+      "authors": [
+        {
+          "name": "Y. Gingras",
+          "authorId": "2055895021"
+        },
+        {
+          "name": "Mahdi Khelfaoui",
+          "authorId": "35541240"
+        }
+      ],
+      "year": 2019,
+      "abstract": "\n Given the importance of books and book chapters as vehicles of knowledge in social sciences and humanities (SSH) disciplines, it has previously been thought that the application of citation metrics to the evaluation of these disciplines should also include, in addition to journal articles, citations from books and book chapters. The main argument supporting this claim is the belief that top cited authors in journal articles and in monographs form two distinct populations. In this article, we compare the rankings of the most cited authors in three SSH disciplines (sociology, philosophy, and history), obtained by counting citations in the journal articles covered in the Web of Science, and a large sample of books and book chapters covered in the book citation index. Contrary to what is often suggested, we show that adding book and book chapter citations to journal citations does not produce significantly different rankings than those obtained solely on the basis of citations in journal articles.",
+      "citationCount": 9,
+      "doi": "10.1093/reseval/rvz024",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ff2dd8b17e8df58b91f2c2ae58258101470d9c4f",
+      "venue": "Research Evaluation",
+      "journal": {
+        "name": "Research Evaluation"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ad924e56a4cff81482f13ae5de56864a3cab2016",
+      "title": "Open access in ethics research: an analysis of open access availability and author self-archiving behaviour in light of journal copyright restrictions",
+      "authors": [
+        {
+          "name": "M. Laakso",
+          "authorId": "37378296"
+        },
+        {
+          "name": "A. Polonioli",
+          "authorId": "3399230"
+        }
+      ],
+      "year": 2018,
+      "abstract": "The current state of open access to journal publications within research areas belonging to the humanities has received relatively little research attention. This study provides a detailed mapping of the bibliometric state of open access to journal publications among ethicists, taking into account not only open access publishing in journals directly, but also where and in what form ethicists make their journal articles available elsewhere on the web. As part of the study 297 ethicists affiliated with top-ranking philosophy departments were identified and their journal publication information for the years 2010\u20132015 were recorded (1682 unique articles). The journal articles were then queried for through Google Scholar in order to establish open access status (web locations, document versions) of each publication record. Publication records belonging to the 20 most frequently used journal outlets (subset of 597 unique articles) were put under closer inspection with regards to alignment with publisher copyright restrictions as well as measuring unused potential to share articles. The results show that slightly over half of recent journal publications are available to read for free. PhilPapers and academic social networks (Academia.edu and ResearchGate) were found to be key platforms for research dissemination in ethics research. The representation of institutional repositories as providers of access was found to be weak, receiving the second lowest frequency rating among the eight discrete web location categories. Further, the study reveals that ethicists are at the same time prone to copyright infringement and undersharing their scholarly work.",
+      "citationCount": 0,
+      "doi": "10.1007/s11192-018-2751-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ad924e56a4cff81482f13ae5de56864a3cab2016",
+      "venue": "Scientometrics",
+      "journal": {
+        "name": "Scientometrics",
+        "pages": "291 - 317",
+        "volume": "116"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d0f4eb44cc00a822cd56aca98f8af25e96808b6b",
+      "title": "Why So Low?",
+      "authors": [
+        {
+          "name": "A. Leuschner",
+          "authorId": "1574058182"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Empirical evidence indicates that women philosophers tend to submit their work to journals substantially less often than their male colleagues. This paper points out that this difference in submission behavior comes with other specific aspects of women philosophers\u2019 behavior, such as a tendency to be reluctant to participate in discussions, to be willing to do work low in prestige, and to specialize in certain research topics, and it argues that these differences can be understood as indirect effects of social biases: namely, effects on the working behavior of members of targeted social groups. Recent findings from philosophy journals\u2019 book review sections and from other academic disciplines known to suffer from gender problems, especially from STEM disciplines, lend additional weight to this hypothesis.",
+      "citationCount": 7,
+      "doi": "10.1111/META.12353",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d0f4eb44cc00a822cd56aca98f8af25e96808b6b",
+      "venue": "Metaphilosophy",
+      "journal": {
+        "name": "Metaphilosophy"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "aaa941a85bfdd3fbe1ebdddf9236bff305ab9b68",
+      "title": "A new proposal for the classification of philosophy journals",
+      "authors": [
+        {
+          "name": "Tomasz \u017buradzki",
+          "authorId": "49817820"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aaa941a85bfdd3fbe1ebdddf9236bff305ab9b68",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a25e3eb02613a4a32fe225b74c21302c1193d1bc",
+      "title": "Another Relationship to Failure:Reflections on Beckett and Education",
+      "authors": [
+        {
+          "name": "A. O\u2019Donnell",
+          "authorId": "1400517120"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 11,
+      "doi": "10.1111/1467-9752.12064",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a25e3eb02613a4a32fe225b74c21302c1193d1bc",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Philosophy of Education",
+        "pages": "260-275",
+        "volume": "48"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1739b588b4dfa288b391cc39afbd696ccb77d924",
+      "title": "Book review: David Banks, The Birth of the Academic Article: Le Journal des S\u00e7avans and the Philosophical Transactions 1665\u20131700",
+      "authors": [
+        {
+          "name": "Peipei Jia",
+          "authorId": "48502527"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1177/1461445618761388d",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1739b588b4dfa288b391cc39afbd696ccb77d924",
+      "venue": "",
+      "journal": {
+        "name": "Discourse Studies",
+        "pages": "451 - 453",
+        "volume": "20"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "0b25ac322e1d2368faa53b08de2227878c470e63",
+      "title": "Daniel A. Bell & Pei Wang, Just Hierarchy: Why Social Hierarchies Matter in China and the Rest of the World",
+      "authors": [
+        {
+          "name": "Zhengxu Wang",
+          "authorId": "1473169668"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11366-020-09705-4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0b25ac322e1d2368faa53b08de2227878c470e63",
+      "venue": "Journal of Chinese Political Science",
+      "journal": {
+        "name": "Journal of Chinese Political Science",
+        "pages": "265 - 266",
+        "volume": "26"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "43b1a011fd3cf4da9323241fc06b98346f3881c0",
+      "title": "The Humanities Crisis Then and Now",
+      "authors": [
+        {
+          "name": "P. Jay",
+          "authorId": "144845244"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1057/9781137398031_2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/43b1a011fd3cf4da9323241fc06b98346f3881c0",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "7-31",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d387967d94665aa1aa2ef02f5e23dbf6dda571f0",
+      "title": "Transgressing the Borders of the Social Sciences and the Humanities in France",
+      "authors": [
+        {
+          "name": "J. Heilbron",
+          "authorId": "6346051"
+        },
+        {
+          "name": "A. Bokobza",
+          "authorId": "92361766"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d387967d94665aa1aa2ef02f5e23dbf6dda571f0",
+      "venue": "",
+      "journal": {
+        "name": "Actes De La Recherche En Sciences Sociales",
+        "pages": "108-121",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

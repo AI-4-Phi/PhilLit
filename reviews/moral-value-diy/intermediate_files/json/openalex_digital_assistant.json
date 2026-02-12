@@ -1,0 +1,1184 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "digital assistant cognitive delegation",
+  "results": [
+    {
+      "openalex_id": "W4385484319",
+      "doi": "10.1002/job.2735",
+      "title": "A multilevel review of artificial intelligence in organizations: Implications for organizational behavior research and practice",
+      "authors": [
+        {
+          "name": "Sarah Bankins",
+          "openalex_id": "A5009459648",
+          "orcid": "https://orcid.org/0000-0003-2290-3086",
+          "institutions": [
+            "Macquarie University"
+          ]
+        },
+        {
+          "name": "Anna Carmella Ocampo",
+          "openalex_id": "A5063809924",
+          "orcid": "https://orcid.org/0000-0001-9380-227X",
+          "institutions": [
+            "Universitat Ramon Llull"
+          ]
+        },
+        {
+          "name": "Mauricio Marrone",
+          "openalex_id": "A5011035488",
+          "orcid": "https://orcid.org/0000-0003-3896-6049",
+          "institutions": [
+            "Macquarie University"
+          ]
+        },
+        {
+          "name": "Simon Lloyd D. Restubog",
+          "openalex_id": "A5015663807",
+          "orcid": "https://orcid.org/0000-0003-1602-2530",
+          "institutions": [
+            "University of Illinois Urbana-Champaign",
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "Sang Eun Woo",
+          "openalex_id": "A5065878227",
+          "orcid": "https://orcid.org/0000-0002-3232-5913",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-02",
+      "abstract": "Summary The rising use of artificially intelligent (AI) technologies, including generative AI tools, in organizations is undeniable. As these systems become increasingly integrated into organizational practices and processes, understanding their impact on workers' experiences and job designs is critical. However, the ongoing discourse surrounding AI use in the workplace remains divided. Proponents of the technology extol its benefits for enhancing efficiency and productivity, while others voice concerns about the potential harm to human workers. To provide greater clarity on this pressing issue, this article presents a systematic review of empirical research that sheds light on the implications of AI use at work. Organized under five inductively generated themes within a multilevel framework, we uncover individual, group, and organizational factors that shape the interplay between humans and AI. Specifically, the themes are: (1) human\u2013AI collaboration; (2) perceptions of algorithmic and human capabilities; (3) worker attitudes towards AI; (4) AI as a control mechanism in algorithmic management of platform\u2010based work; and (5) labor market implications of AI use. Our review offers insights into these themes and identifies five pathways for future research. Finally, we provide practical recommendations for organizational leaders seeking to implement AI technologies while prioritizing their employees' well\u2010being.",
+      "cited_by_count": 401,
+      "type": "review",
+      "source": {
+        "name": "Journal of Organizational Behavior",
+        "type": "journal",
+        "issn": [
+          "0894-3796",
+          "1099-1379"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/job.2735"
+      },
+      "topics": [
+        "Digital Economy and Work Transformation",
+        "Cyberloafing and Workplace Behavior",
+        "Technostress in Professional Settings"
+      ],
+      "referenced_works_count": 143,
+      "url": "https://openalex.org/W4385484319"
+    },
+    {
+      "openalex_id": "W4406026056",
+      "doi": "10.3390/soc15010006",
+      "title": "AI Tools in Society: Impacts on Cognitive Offloading and the Future of Critical Thinking",
+      "authors": [
+        {
+          "name": "Michael Gerlich",
+          "openalex_id": "A5058773312",
+          "orcid": "https://orcid.org/0000-0003-4033-4403",
+          "institutions": [
+            "SBS Swiss Business School",
+            "Business School Lausanne"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-03",
+      "abstract": "The proliferation of artificial intelligence (AI) tools has transformed numerous aspects of daily life, yet its impact on critical thinking remains underexplored. This study investigates the relationship between AI tool usage and critical thinking skills, focusing on cognitive offloading as a mediating factor. Utilising a mixed-method approach, we conducted surveys and in-depth interviews with 666 participants across diverse age groups and educational backgrounds. Quantitative data were analysed using ANOVA and correlation analysis, while qualitative insights were obtained through thematic analysis of interview transcripts. The findings revealed a significant negative correlation between frequent AI tool usage and critical thinking abilities, mediated by increased cognitive offloading. Younger participants exhibited higher dependence on AI tools and lower critical thinking scores compared to older participants. Furthermore, higher educational attainment was associated with better critical thinking skills, regardless of AI usage. These results highlight the potential cognitive costs of AI tool reliance, emphasising the need for educational strategies that promote critical engagement with AI technologies. This study contributes to the growing discourse on AI\u2019s cognitive implications, offering practical recommendations for mitigating its adverse effects on critical thinking. The findings underscore the importance of fostering critical thinking in an AI-driven world, making this research essential reading for educators, policymakers, and technologists.",
+      "cited_by_count": 305,
+      "type": "article",
+      "source": {
+        "name": "Societies",
+        "type": "journal",
+        "issn": [
+          "2075-4698"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2075-4698/15/1/6/pdf?version=1735907439"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Intelligent Tutoring Systems and Adaptive Learning",
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W4406026056"
+    },
+    {
+      "openalex_id": "W3102980059",
+      "doi": "10.1007/s11747-020-00753-z",
+      "title": "Conversational robo advisors as surrogates of trust: onboarding experience, firm perception, and consumer financial decision making",
+      "authors": [
+        {
+          "name": "Christian Hildebrand",
+          "openalex_id": "A5089806968",
+          "orcid": "https://orcid.org/0000-0003-4366-3093",
+          "institutions": [
+            "University of St. Gallen"
+          ]
+        },
+        {
+          "name": "Anouk Bergner",
+          "openalex_id": "A5021633138",
+          "orcid": "https://orcid.org/0000-0003-1060-9672",
+          "institutions": [
+            "University of St. Gallen"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-16",
+      "abstract": "Abstract The current research demonstrates how conversational robo advisors as opposed to static, non-conversational robo advisors alter perceptions of trust, the evaluation of a financial services firm, and consumer financial decision making. We develop and empirically test a novel conceptualization of conversational robo advisors building on prior work in human-to-human communication and interpersonal psychology, showing that conversational robo advisors cause greater levels of affective trust compared to non-conversational robo advisors and evoke a more benevolent evaluation of a financial services firm. We demonstrate that this increase in affective trust not only affects firm perception (in terms of benevolence attributions or a more positively-valenced onboarding experience), but has important implications for investor behavior, such as greater recommendation acceptance and an increase in asset allocation toward conversational robo advisors. These findings have important implications for research on trust formation between humans and machines, the effective design of conversational robo advisors, and public policy in the digital economy.",
+      "cited_by_count": 196,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Academy of Marketing Science",
+        "type": "journal",
+        "issn": [
+          "0092-0703",
+          "1552-7824"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11747-020-00753-z.pdf"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Psychology of Moral and Emotional Judgment",
+        "Psychology of Social Influence"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W3102980059"
+    },
+    {
+      "openalex_id": "W4200295417",
+      "doi": "10.1038/s42256-021-00417-9",
+      "title": "AI-generated characters for supporting personalized learning and well-being",
+      "authors": [
+        {
+          "name": "Pat Pataranutaporn",
+          "openalex_id": "A5036506156",
+          "orcid": "https://orcid.org/0000-0002-1879-7340",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Valdemar Danry",
+          "openalex_id": "A5001522776",
+          "orcid": "https://orcid.org/0000-0001-5225-0077",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Joanne Leong",
+          "openalex_id": "A5020423438",
+          "orcid": "https://orcid.org/0000-0001-5422-1018",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Parinya Punpongsanon",
+          "openalex_id": "A5028668884",
+          "orcid": "https://orcid.org/0000-0003-2720-7768",
+          "institutions": [
+            "Osaka University"
+          ]
+        },
+        {
+          "name": "Dan Novy",
+          "openalex_id": "A5024650749",
+          "orcid": "https://orcid.org/0000-0003-3440-3409",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Pattie Maes",
+          "openalex_id": "A5081457786",
+          "orcid": "https://orcid.org/0000-0002-7722-6038",
+          "institutions": [
+            "Massachusetts Institute of Technology"
+          ]
+        },
+        {
+          "name": "Misha Sra",
+          "openalex_id": "A5029380651",
+          "institutions": [
+            "University of California, Santa Barbara"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-15",
+      "abstract": "Advancements in machine learning have recently enabled the hyper-realistic synthesis of prose, images, audio and video data, in what is referred to as artificial intelligence (AI)-generated media. These techniques offer novel opportunities for creating interactions with digital portrayals of individuals that can inspire and intrigue us. AI-generated portrayals of characters can feature synthesized faces, bodies and voices of anyone, from a fictional character to a historical figure, or even a deceased family member. Although negative use cases of this technology have dominated the conversation so far, in this Perspective we highlight emerging positive use cases of AI-generated characters, specifically in supporting learning and well-being. We demonstrate an easy-to-use AI character generation pipeline to enable such outcomes and discuss ethical implications as well as the need for including traceability to help maintain trust in the generated media. As we look towards the future, we foresee generative media as a crucial part of the ever growing landscape of human\u2013AI interaction. Digitally recreating the likeness of a person used to be a costly and complex process. Through the use of generative models, AI-generated characters can now be made with relative ease. Pataranutaporn et al. discuss in this Perspective how this technology can be used for positive applications in education and well-being.",
+      "cited_by_count": 314,
+      "type": "article",
+      "source": {
+        "name": "Nature Machine Intelligence",
+        "type": "journal",
+        "issn": [
+          "2522-5839"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s42256-021-00417-9.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in Service Interactions",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W4200295417"
+    },
+    {
+      "openalex_id": "W3110817755",
+      "doi": "10.1007/s12599-020-00678-5",
+      "title": "Watch Me Improve\u2014Algorithm Aversion and Demonstrating the Ability to Learn",
+      "authors": [
+        {
+          "name": "Benedikt Berger",
+          "openalex_id": "A5075386890",
+          "orcid": "https://orcid.org/0000-0001-8220-7686",
+          "institutions": [
+            "Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen"
+          ]
+        },
+        {
+          "name": "Martin Adam",
+          "openalex_id": "A5033330633",
+          "orcid": "https://orcid.org/0000-0001-9369-7203",
+          "institutions": [
+            "Technical University of Darmstadt"
+          ]
+        },
+        {
+          "name": "Alexander R\u00fchr",
+          "openalex_id": "A5000545973",
+          "orcid": "https://orcid.org/0000-0003-4116-2033",
+          "institutions": [
+            "Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen"
+          ]
+        },
+        {
+          "name": "Alexander Benlian",
+          "openalex_id": "A5082912598",
+          "orcid": "https://orcid.org/0000-0002-7294-3097",
+          "institutions": [
+            "Technical University of Darmstadt"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-04",
+      "abstract": null,
+      "cited_by_count": 158,
+      "type": "article",
+      "source": {
+        "name": "Business & Information Systems Engineering",
+        "type": "journal",
+        "issn": [
+          "1867-0202",
+          "2363-7005"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12599-020-00678-5.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Mobile Crowdsensing and Crowdsourcing",
+        "AI in Service Interactions"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W3110817755"
+    },
+    {
+      "openalex_id": "W3006864169",
+      "doi": "10.1002/sd.2048",
+      "title": "Governing Artificial Intelligence to benefit the UN Sustainable Development Goals",
+      "authors": [
+        {
+          "name": "Jon Truby",
+          "openalex_id": "A5070327620",
+          "orcid": "https://orcid.org/0000-0002-9184-7033",
+          "institutions": [
+            "Qatar University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-26",
+      "abstract": "Abstract Big Tech's unregulated roll\u2010out out of experimental AI poses risks to the achievement of the UN Sustainable Development Goals (SDGs), with particular vulnerability for developing countries. The goal of financial inclusion is threatened by the imperfect and ungoverned design and implementation of AI decision\u2010making software making important financial decisions affecting customers. Automated decision\u2010making algorithms have displayed evidence of bias, lack ethical governance, and limit transparency in the basis for their decisions, causing unfair outcomes and amplify unequal access to finance. Poverty reduction and sustainable development targets are risked by Big Tech's potential exploitation of developing countries by using AI to harvest data and profits. Stakeholder progress toward preventing financial crime and corruption is further threatened by potential misuse of AI. In the light of such risks, Big Tech's unscrupulous history means it cannot be trusted to operate without regulatory oversight. The article proposes effective pre\u2010emptive regulatory options to minimize scenarios of AI damaging the SDGs. It explores internationally accepted principles of AI governance, and argues for their implementation as regulatory requirements governing AI developers and coders, with compliance verified through algorithmic auditing. Furthermore, it argues that AI governance frameworks must require a benefit to the SDGs. The article argues that proactively predicting such problems can enable continued AI innovation through well\u2010designed regulations adhering to international principles. It highlights risks of unregulated AI causing harm to human interests, where a public and regulatory backlash may result in over\u2010regulation that could damage the otherwise beneficial development of AI.",
+      "cited_by_count": 214,
+      "type": "article",
+      "source": {
+        "name": "Sustainable Development",
+        "type": "journal",
+        "issn": [
+          "0968-0802",
+          "1099-1719"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/sd.2048"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Blockchain Technology Applications and Security",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W3006864169"
+    },
+    {
+      "openalex_id": "W3122989495",
+      "doi": "10.1109/access.2021.3054833",
+      "title": "6G Ecosystem: Current Status and Future Perspective",
+      "authors": [
+        {
+          "name": "Jagadeesha R. Bhat",
+          "openalex_id": "A5013740584",
+          "orcid": "https://orcid.org/0000-0002-4266-728X"
+        },
+        {
+          "name": "Salman A. AlQahtani",
+          "openalex_id": "A5046464125",
+          "orcid": "https://orcid.org/0000-0003-1233-1774",
+          "institutions": [
+            "King Saud University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Next-generation of the cellular network will attempt to overcome the limitations of the current Fifth Generation (5G) networks and equip itself to address the challenges which become obvious in the future. Currently, academia and industry have focused their attention on the Sixth Generation (6G) network, which is anticipated to be the next big game-changer in the telecom industry. The outbreak of COVID&#x2019;19 has made the whole world to opt for virtual meetings, live video interactions ranging from healthcare, business to education. However, we miss an immersive experience due to the lack of supporting technology. Experts have anticipated that starting from the post-pandemic age, the performance requirements of technology for virtual and real-time communication, the rise of several verticals such as industrial automation, robotics, and autonomous driving will increase tremendously, and will skyrocket during the next decade. In this manuscript, we study the latest perspectives and future megatrends that are most likely to drive 6G. Initially, we describe the instances that lead us to the vision of 6G. Later, we narrate some of the use cases and the KPIs essential to meet their performance requirement. Further, we highlight the key requirements of 6G based on contemporary research such as UN sustainability goals, business model, edge intelligence, digital divide, and the trends in machine learning for 6G.",
+      "cited_by_count": 272,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/9312710/09335927.pdf"
+      },
+      "topics": [
+        "Advanced Wireless Communication Technologies",
+        "Satellite Communication Systems",
+        "Advanced MIMO Systems Optimization"
+      ],
+      "referenced_works_count": 189,
+      "url": "https://openalex.org/W3122989495"
+    },
+    {
+      "openalex_id": "W3136753322",
+      "doi": "10.1109/access.2021.3065880",
+      "title": "A Comprehensive Review of Blockchain Consensus Mechanisms",
+      "authors": [
+        {
+          "name": "Bahareh Lashkari",
+          "openalex_id": "A5089089368",
+          "orcid": "https://orcid.org/0000-0002-1327-3409",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Petr Mus\u0131\u0301lek",
+          "openalex_id": "A5090314619",
+          "orcid": "https://orcid.org/0000-0002-7780-5048",
+          "institutions": [
+            "University of Alberta"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Since the advent of distributed ledger technologies, they have provided diverse opportunities in a wide range of application domains. This article brings a comprehensive review of the fundamentals of distributed ledger and its variants. Analyzing 185 publications, ranging from academic journals to industry websites, it provides a comparative analysis of 130 consensus algorithms using a novel architectural classification. The distribution of the reviewed algorithms is analyzed in terms of the proposed classification and different application domains, along with the applicability of each class among the top 10 platforms in the most prominent blockchain application domains. Additional conclusions are drawn from the evolution of consensus mechanisms, and the analysis concludes envisaging future prospects for consensus as an important part of distributed ledger technology.",
+      "cited_by_count": 430,
+      "type": "review",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/6287639/9312710/09376868.pdf"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Caching and Content Delivery",
+        "IoT and Edge/Fog Computing"
+      ],
+      "referenced_works_count": 163,
+      "url": "https://openalex.org/W3136753322"
+    },
+    {
+      "openalex_id": "W4283465583",
+      "doi": "10.1108/aaaj-09-2020-4934",
+      "title": "Artificial intelligence based decision-making in accounting and\u00a0auditing: ethical challenges and normative thinking",
+      "authors": [
+        {
+          "name": "Othmar M. Lehner",
+          "openalex_id": "A5066679289",
+          "orcid": "https://orcid.org/0000-0002-3317-9604",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Kim Ittonen",
+          "openalex_id": "A5026581628",
+          "orcid": "https://orcid.org/0000-0002-2917-4077",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Hanna Silvola",
+          "openalex_id": "A5057056352",
+          "orcid": "https://orcid.org/0000-0001-7176-3548",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Eva Str\u00f6m",
+          "openalex_id": "A5007787257",
+          "orcid": "https://orcid.org/0000-0002-6115-8181",
+          "institutions": [
+            "Hanken School of Economics"
+          ]
+        },
+        {
+          "name": "Alena W\u00fchrleitner",
+          "openalex_id": "A5034667304"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-21",
+      "abstract": "Purpose This paper aims to identify ethical challenges of using artificial intelligence (AI)-based accounting systems for decision-making and discusses its findings based on Rest's four-component model of antecedents for ethical decision-making. This study derives implications for accounting and auditing scholars and practitioners. Design/methodology/approach This research is rooted in the hermeneutics tradition of interpretative accounting research, in which the reader and the texts engage in a form of dialogue. To substantiate this dialogue, the authors conduct a theoretically informed, narrative (semi-systematic) literature review spanning the years 2015\u20132020. This review's narrative is driven by the depicted contexts and the accounting/auditing practices found in selected articles are used as sample instead of the research or methods. Findings In the thematic coding of the selected papers the authors identify five major ethical challenges of AI-based decision-making in accounting: objectivity, privacy, transparency, accountability and trustworthiness. Using Rest's component model of antecedents for ethical decision-making as a stable framework for our structure, the authors critically discuss the challenges and their relevance for a future human\u2013machine collaboration within varying agency between humans and AI. Originality/value This paper contributes to the literature on accounting as a subjectivising as well as mediating practice in a socio-material context. It does so by providing a solid base of arguments that AI alone, despite its enabling and mediating role in accounting, cannot make ethical accounting decisions because it lacks the necessary preconditions in terms of Rest's model of antecedents. What is more, as AI is bound to pre-set goals and subjected to human made conditions despite its autonomous learning and adaptive practices, it lacks true agency. As a consequence, accountability needs to be shared between humans and AI. The authors suggest that related governance as well as internal and external auditing processes need to be adapted in terms of skills and awareness to ensure an ethical AI-based decision-making.",
+      "cited_by_count": 169,
+      "type": "article",
+      "source": {
+        "name": "Accounting Auditing & Accountability Journal",
+        "type": "journal",
+        "issn": [
+          "0951-3574",
+          "2051-3151"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/AAAJ-09-2020-4934/full/pdf?title=artificial-intelligence-based-decision-making-in-accounting-and-auditing-ethical-challenges-and-normative-thinking"
+      },
+      "topics": [
+        "Auditing, Earnings Management, Governance",
+        "Blockchain Technology Applications and Security",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W4283465583"
+    },
+    {
+      "openalex_id": "W4327620114",
+      "doi": "10.3389/fcomp.2023.1113903",
+      "title": "What does the public think about artificial intelligence?\u2014A criticality map to understand bias in the public perception of AI",
+      "authors": [
+        {
+          "name": "Philipp Brauner",
+          "openalex_id": "A5079079215",
+          "orcid": "https://orcid.org/0000-0003-2837-5181",
+          "institutions": [
+            "RWTH Aachen University"
+          ]
+        },
+        {
+          "name": "Alexander Hick",
+          "openalex_id": "A5027824858",
+          "institutions": [
+            "RWTH Aachen University"
+          ]
+        },
+        {
+          "name": "Ralf Philipsen",
+          "openalex_id": "A5030446427",
+          "orcid": "https://orcid.org/0000-0002-8922-8604",
+          "institutions": [
+            "RWTH Aachen University"
+          ]
+        },
+        {
+          "name": "Martina Ziefle",
+          "openalex_id": "A5065952170",
+          "orcid": "https://orcid.org/0000-0002-6105-4729",
+          "institutions": [
+            "RWTH Aachen University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-16",
+      "abstract": "Introduction Artificial Intelligence (AI) has become ubiquitous in medicine, business, manufacturing and transportation, and is entering our personal lives. Public perceptions of AI are often shaped either by admiration for its benefits and possibilities, or by uncertainties, potential threats and fears about this opaque and perceived as mysterious technology. Understanding the public perception of AI, as well as its requirements and attributions, is essential for responsible research and innovation and enables aligning the development and governance of future AI systems with individual and societal needs. Methods To contribute to this understanding, we asked 122 participants in Germany how they perceived 38 statements about artificial intelligence in different contexts (personal, economic, industrial, social, cultural, health). We assessed their personal evaluation and the perceived likelihood of these aspects becoming reality. Results We visualized the responses in a criticality map that allows the identification of issues that require particular attention from research and policy-making. The results show that the perceived evaluation and the perceived expectations differ considerably between the domains. The aspect perceived as most critical is the fear of cybersecurity threats, which is seen as highly likely and least liked. Discussion The diversity of users influenced the evaluation: People with lower trust rated the impact of AI as more positive but less likely. Compared to people with higher trust, they consider certain features and consequences of AI to be more desirable, but they think the impact of AI will be smaller. We conclude that AI is still a \u201cblack box\u201d for many. Neither the opportunities nor the risks can yet be adequately assessed, which can lead to biased and irrational control beliefs in the public perception of AI. The article concludes with guidelines for promoting AI literacy to facilitate informed decision-making.",
+      "cited_by_count": 105,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Computer Science",
+        "type": "journal",
+        "issn": [
+          "2624-9898"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fcomp.2023.1113903/pdf"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Ethics and Social Impacts of AI",
+        "Misinformation and Its Impacts"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4327620114"
+    },
+    {
+      "openalex_id": "W3199046025",
+      "doi": "10.1007/s12525-021-00493-0",
+      "title": "AI invading the workplace: negative emotions towards the organizational use of personal virtual assistants",
+      "authors": [
+        {
+          "name": "Olivia Hornung",
+          "openalex_id": "A5002819267",
+          "orcid": "https://orcid.org/0000-0001-9117-9146",
+          "institutions": [
+            "University of Hagen"
+          ]
+        },
+        {
+          "name": "Stefan Smolnik",
+          "openalex_id": "A5113993660",
+          "orcid": "https://orcid.org/0000-0001-9859-7500",
+          "institutions": [
+            "University of Hagen"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-18",
+      "abstract": null,
+      "cited_by_count": 79,
+      "type": "article",
+      "source": {
+        "name": "Electronic Markets",
+        "type": "journal",
+        "issn": [
+          "1019-6781",
+          "1422-8890"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12525-021-00493-0.pdf"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Cyberloafing and Workplace Behavior",
+        "Psychology of Social Influence"
+      ],
+      "referenced_works_count": 109,
+      "url": "https://openalex.org/W3199046025"
+    },
+    {
+      "openalex_id": "W3034195306",
+      "doi": "10.1109/tts.2020.2992669",
+      "title": "Design Lessons From AI\u2019s Two Grand Goals: Human Emulation and Useful Applications",
+      "authors": [
+        {
+          "name": "Ben Shneiderman",
+          "openalex_id": "A5052623072",
+          "orcid": "https://orcid.org/0000-0002-8298-1097",
+          "institutions": [
+            "University of Maryland, College Park"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-01",
+      "abstract": "Researchers' goals shape the questions they raise, collaborators they choose, methods they use, and outcomes of their work. This article offers a fresh vision of artificial intelligence (AI) research by suggesting a simplification to two goals: 1) emulation to understand human abilities to build systems that perform tasks as well as or better than humans and 2) application of AI methods to build widely used products and services. Researchers and developers for each goal can fruitfully work along their desired paths, but this article is intended to limit the problems that arise when assumptions from one goal are used to drive work on the other goal. For example, autonomous humanoid robots are prominent with emulation researchers, but application developers avoid them, in favor of tool-like appliances or teleoperated devices for widely used commercial products and services. This article covers four such mismatches in goals that affect AI-guided application development: 1) intelligent agent or powerful tool; 2) simulated teammate or teleoperated device; 3) autonomous system or supervisory control; and 4) humanoid robot or mechanoid appliance. This article clarifies these mismatches to facilitate the discovery of workable compromise designs that will accelerate human-centered AI applications research. A greater emphasis on human-centered AI could reduce AI's existential threats and increase benefits for users and society, such as in business, education, healthcare, environmental preservation, and community safety.",
+      "cited_by_count": 101,
+      "type": "article",
+      "source": {
+        "name": "IEEE Transactions on Technology and Society",
+        "type": "journal",
+        "issn": [
+          "2637-6415"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/8566059/9107511/09088114.pdf"
+      },
+      "topics": [
+        "Social Robot Interaction and HRI",
+        "AI in Service Interactions",
+        "Human-Automation Interaction and Safety"
+      ],
+      "referenced_works_count": 61,
+      "url": "https://openalex.org/W3034195306"
+    },
+    {
+      "openalex_id": "W4226154401",
+      "doi": "10.35833/mpce.2021.000673",
+      "title": "Perspectives on Future Power System Control Centers for Energy Transition",
+      "authors": [
+        {
+          "name": "Antoine Marot",
+          "openalex_id": "A5109393340",
+          "institutions": [
+            "\u00c9lectricit\u00e9 de France (France)"
+          ]
+        },
+        {
+          "name": "Adrian Kelly",
+          "openalex_id": "A5036033508"
+        },
+        {
+          "name": "Matija Nagli\u010d",
+          "openalex_id": "A5006758138",
+          "orcid": "https://orcid.org/0000-0002-5624-8289",
+          "institutions": [
+            "Tennet (Netherlands)"
+          ]
+        },
+        {
+          "name": "Vincent Barbesant",
+          "openalex_id": "A5073547625",
+          "institutions": [
+            "\u00c9lectricit\u00e9 de France (France)"
+          ]
+        },
+        {
+          "name": "Jochen Cremer",
+          "openalex_id": "A5019114577",
+          "orcid": "https://orcid.org/0000-0001-9284-5083",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Alexandru \u015etefanov",
+          "openalex_id": "A5076780322",
+          "orcid": "https://orcid.org/0000-0003-4707-7948",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Jan Viebahn",
+          "openalex_id": "A5086947009",
+          "orcid": "https://orcid.org/0000-0003-3118-7691",
+          "institutions": [
+            "Tennet (Netherlands)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "&lt;p&gt;Today's power systems are seeing a paradigm shift under the energy transition, sparkled by the electrification of demand, digitalisation of systems, and an increasing share of decarbonated power generation. Most of these changes have a direct impact on their control centers, forcing them to handle weather-based energy resources, new interconnections with neighbouring transmission networks, more markets, active distribution networks, micro-grids, and greater amounts of available data. Unfortunately, these changes have translated during the past decade to small, incremental changes, mostly centered on hardware, software, and human factors. We assert that more transformative changes are needed, especially regarding humancentered design approaches, to enable control room operators to manage the future power system. This paper discusses the evolution of operators towards continuous operation planners, monitoring complex time horizons thanks to adequate real-time automation. Reviewing upcoming challenges as well as emerging technologies for power systems, we present our vision of a new evolutionary architecture for control centers, both at backend and frontend levels. We propose a unified hypervision scheme based on structured decision-making concepts, providing operators with proactive, collaborative, and effective decision support.&lt;/p&gt;",
+      "cited_by_count": 95,
+      "type": "article",
+      "source": {
+        "name": "Journal of Modern Power Systems and Clean Energy",
+        "type": "journal",
+        "issn": [
+          "2196-5420",
+          "2196-5625"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ieeexplore.ieee.org/ielx7/8685265/9744621/09744623.pdf"
+      },
+      "topics": [
+        "Smart Grid Energy Management",
+        "Integrated Energy Systems Optimization",
+        "Optimal Power Flow Distribution"
+      ],
+      "referenced_works_count": 103,
+      "url": "https://openalex.org/W4226154401"
+    },
+    {
+      "openalex_id": "W4312163567",
+      "doi": "10.1007/s10796-022-10365-3",
+      "title": "Artificial Intelligence (AI) and Information Systems: Perspectives to Responsible AI",
+      "authors": [
+        {
+          "name": "Denis Dennehy",
+          "openalex_id": "A5083528596",
+          "orcid": "https://orcid.org/0000-0001-9931-762X",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Anastasia Griva",
+          "openalex_id": "A5017184057",
+          "orcid": "https://orcid.org/0000-0001-8346-9389",
+          "institutions": [
+            "Ollscoil na Gaillimhe \u2013 University of Galway",
+            "Science Foundation Ireland"
+          ]
+        },
+        {
+          "name": "Athanasia Pouloudi",
+          "openalex_id": "A5068175603",
+          "orcid": "https://orcid.org/0000-0002-4774-3499",
+          "institutions": [
+            "Athens University of Economics and Business"
+          ]
+        },
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Swansea University",
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "Matti M\u00e4ntym\u00e4ki",
+          "openalex_id": "A5065472011",
+          "orcid": "https://orcid.org/0000-0002-1981-566X",
+          "institutions": [
+            "University of Turku"
+          ]
+        },
+        {
+          "name": "Ilias O. Pappas",
+          "openalex_id": "A5080505347",
+          "orcid": "https://orcid.org/0000-0001-7528-3488",
+          "institutions": [
+            "University of Agder",
+            "Norwegian University of Science and Technology"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-23",
+      "abstract": null,
+      "cited_by_count": 68,
+      "type": "article",
+      "source": {
+        "name": "Information Systems Frontiers",
+        "type": "journal",
+        "issn": [
+          "1387-3326",
+          "1572-9419"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10796-022-10365-3.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Blockchain Technology Applications and Security",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W4312163567"
+    },
+    {
+      "openalex_id": "W4386724197",
+      "doi": "10.21541/apjess.1293702",
+      "title": "Is ChatGPT Leading Generative AI? What is Beyond Expectations?",
+      "authors": [
+        {
+          "name": "\u00d6mer Ayd\u0131n",
+          "openalex_id": "A5100616808",
+          "orcid": "https://orcid.org/0000-0002-7137-4881",
+          "institutions": [
+            "Manisa Celal Bayar University"
+          ]
+        },
+        {
+          "name": "Enis Karaarslan",
+          "openalex_id": "A5051304181",
+          "orcid": "https://orcid.org/0000-0002-3595-8783",
+          "institutions": [
+            "Mu\u011fla University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-09-13",
+      "abstract": "Generative AI has the potential to change the way we do things. The chatbot is one of the most popular implementation areas. Even though companies like Google and Meta had chatbots, ChatGPT became popular as it was made publicly available. Although ChatGPT is still in the early stages of its development, it attracted the attention of people and capital groups. It has taken the public interest; people from different fields, ages, and education levels started using ChatGPT. There have been many trials with ChatGPT. It is possible to see a lot of news and shares on the Internet. The study aims to shed light on what is happening in the literature and get an insight into the user expectations of ChatGPT and Generative AI. We also give information about the competitors of ChatGPT, such as Google\u2019s Bard AI, Claude, Meta\u2019s Wit.ai and Tencent\u2019s HunyuanAide. We describe technical and structural fundamentals and try to shed light on who will win the race. We also shared information about the GPT4 version of OpenAI's ChatGPT. We share the early stage due diligence and current situation analysis for all these points. We examine preprint papers and published articles. We also included striking posts on the LinkedIn platform and a compilation of various blogs and news. We also made use of ChatGPT in editing the content of these resources of this study. We can get an insight into the people's interests through their questions submitted to ChatGPT. We can also understand the capabilities of GPT3, GPT4 and also predict further enhancements.",
+      "cited_by_count": 152,
+      "type": "article",
+      "source": {
+        "name": "Academic Platform Journal of Engineering and Smart Systems",
+        "type": "journal",
+        "issn": [
+          "2822-2385"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dergipark.org.tr/en/download/article-file/3127764"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W4386724197"
+    },
+    {
+      "openalex_id": "W4391903960",
+      "doi": "10.24251/hicss.2023.021",
+      "title": "AI Literacy - Towards Measuring Human Competency in Artificial Intelligence",
+      "authors": [
+        {
+          "name": "Triparna de Vreede",
+          "openalex_id": "A5080667085",
+          "orcid": "https://orcid.org/0000-0002-8037-8315"
+        },
+        {
+          "name": "Vivek Kumar Singh",
+          "openalex_id": "A5040051225",
+          "orcid": "https://orcid.org/0000-0003-4614-7633"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Artificial intelligence (AI) has gained significant traction in information systems (IS) research in recent years. While past studies have identified many effects of AI technology on human-AI collaborations, there is a paucity in IS literature on the competencies of humans that affect this relationship. In this study, we set out to develop a measurement instrument (scale) for general AI literacy, that is humans\u2019 socio-technical competencies regarding AI. We conducted a systematic literature review followed by five expert interviews to define and conceptualize the construct of general AI literacy and to generate an initial set of items. Furthermore, we performed two rounds of card sorting with six and five judges and a pre-test study with 50 participants to evaluate the developed scale. The validated measurement instrument contains five dimensions and 13 items. We provide empirical support for the measurement model and conclude with future research directions.",
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the ... Annual Hawaii International Conference on System Sciences/Proceedings of the Annual Hawaii International Conference on System Sciences",
+        "type": "conference",
+        "issn": [
+          "1530-1605",
+          "2572-6862"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://scholarspace.manoa.hawaii.edu/bitstreams/06fa6203-9d34-4c05-89c5-d00eebaca1e8/download"
+      },
+      "topics": [
+        "Technology Adoption and User Behaviour",
+        "Ethics and Social Impacts of AI",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4391903960"
+    },
+    {
+      "openalex_id": "W3158403247",
+      "doi": "10.1115/1.4051041",
+      "title": "Design Engineering in the Age of Industry 4.0",
+      "authors": [
+        {
+          "name": "Jianxin Jiao",
+          "openalex_id": "A5045633577",
+          "orcid": "https://orcid.org/0000-0002-9832-7276",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Sesh Commuri",
+          "openalex_id": "A5053979472",
+          "orcid": "https://orcid.org/0000-0002-2655-7996",
+          "institutions": [
+            "University of Nevada, Reno"
+          ]
+        },
+        {
+          "name": "Jitesh H. Panchal",
+          "openalex_id": "A5036201536",
+          "orcid": "https://orcid.org/0000-0003-4873-3089",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "Jelena Milisavljevic-Syed",
+          "openalex_id": "A5054040946",
+          "orcid": "https://orcid.org/0000-0003-2957-8933",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        },
+        {
+          "name": "Janet K. Allen",
+          "openalex_id": "A5032671028",
+          "orcid": "https://orcid.org/0000-0003-0686-6764",
+          "institutions": [
+            "University of Oklahoma"
+          ]
+        },
+        {
+          "name": "Farrokh Mistree",
+          "openalex_id": "A5076537620",
+          "orcid": "https://orcid.org/0000-0001-6835-0902",
+          "institutions": [
+            "University of Oklahoma"
+          ]
+        },
+        {
+          "name": "Dirk Schaefer",
+          "openalex_id": "A5053568957",
+          "orcid": "https://orcid.org/0000-0002-5695-9312",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-03",
+      "abstract": "Abstract Industry 4.0 is based on the digitization of manufacturing industries and has raised the prospect for substantial improvements in productivity, quality, and customer satisfaction. This digital transformation not only affects the way products are manufactured but also creates new opportunities for the design of products, processes, services, and systems. Unlike traditional design practices based on system-centric concepts, design for these new opportunities requires a holistic view of the human (stakeholder), artefact (product), and process (realization) dimensions of the design problem. In this paper we envision a \u201chuman-cyber-physical view of the systems realization ecosystem,\u201d termed \u201cDesign Engineering 4.0 (DE4.0),\u201d to reconceptualize how cyber and physical technologies can be seamlessly integrated to identify and fulfil customer needs and garner the benefits of Industry 4.0. In this paper, we review the evolution of Engineering Design in response to advances in several strategic areas including smart and connected products, end-to-end digital integration, customization and personalization, data-driven design, digital twins and intelligent design automation, extended supply chains and agile collaboration networks, open innovation, co-creation and crowdsourcing, product servitization and anything-as-a-service, and platformization for the sharing economy. We postulate that DE 4.0 will account for drivers such as Internet of Things, Internet of People, Internet of Services, and Internet of Commerce to deliver on the promise of Industry 4.0 effectively and efficiently. Further, we identify key issues to be addressed in DE 4.0 and engage the design research community on the challenges that the future holds.",
+      "cited_by_count": 106,
+      "type": "article",
+      "source": {
+        "name": "Journal of Mechanical Design",
+        "type": "journal",
+        "issn": [
+          "1050-0472",
+          "1528-9001"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://asmedigitalcollection.asme.org/mechanicaldesign/article-pdf/143/7/070801/6706923/md_143_7_070801.pdf"
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Flexible and Reconfigurable Manufacturing Systems",
+        "Product Development and Customization"
+      ],
+      "referenced_works_count": 269,
+      "url": "https://openalex.org/W3158403247"
+    },
+    {
+      "openalex_id": "W3043904603",
+      "doi": "10.3390/ijerph17155330",
+      "title": "Review of Big Data Analytics, Artificial Intelligence and Nature-Inspired Computing Models towards Accurate Detection of COVID-19 Pandemic Cases and Contact Tracing",
+      "authors": [
+        {
+          "name": "Israel Edem Agbehadji",
+          "openalex_id": "A5090377929",
+          "orcid": "https://orcid.org/0000-0001-5718-4494",
+          "institutions": [
+            "Central University of Technology"
+          ]
+        },
+        {
+          "name": "Bankole Awuzie",
+          "openalex_id": "A5022769965",
+          "orcid": "https://orcid.org/0000-0003-3371-191X",
+          "institutions": [
+            "Central University of Technology"
+          ]
+        },
+        {
+          "name": "A.B. Ngowi",
+          "openalex_id": "A5004281135",
+          "orcid": "https://orcid.org/0000-0002-5122-6777",
+          "institutions": [
+            "Central University of Technology"
+          ]
+        },
+        {
+          "name": "Richard Millham",
+          "openalex_id": "A5035774652",
+          "orcid": "https://orcid.org/0000-0002-7970-9615",
+          "institutions": [
+            "Durban University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-24",
+      "abstract": "The emergence of the 2019 novel coronavirus (COVID-19) which was declared a pandemic has spread to 210 countries worldwide. It has had a significant impact on health systems and economic, educational and social facets of contemporary society. As the rate of transmission increases, various collaborative approaches among stakeholders to develop innovative means of screening, detecting and diagnosing COVID-19\u2019s cases among human beings at a commensurate rate have evolved. Further, the utility of computing models associated with the fourth industrial revolution technologies in achieving the desired feat has been highlighted. However, there is a gap in terms of the accuracy of detection and prediction of COVID-19 cases and tracing contacts of infected persons. This paper presents a review of computing models that can be adopted to enhance the performance of detecting and predicting the COVID-19 pandemic cases. We focus on big data, artificial intelligence (AI) and nature-inspired computing (NIC) models that can be adopted in the current pandemic. The review suggested that artificial intelligence models have been used for the case detection of COVID-19. Similarly, big data platforms have also been applied for tracing contacts. However, the nature-inspired computing (NIC) models that have demonstrated good performance in feature selection of medical issues are yet to be explored for case detection and tracing of contacts in the current COVID-19 pandemic. This study holds salient implications for practitioners and researchers alike as it elucidates the potentials of NIC in the accurate detection of pandemic cases and optimized contact tracing.",
+      "cited_by_count": 244,
+      "type": "review",
+      "source": {
+        "name": "International Journal of Environmental Research and Public Health",
+        "type": "journal",
+        "issn": [
+          "1660-4601",
+          "1661-7827"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/1660-4601/17/15/5330/pdf?version=1595587668"
+      },
+      "topics": [
+        "COVID-19 diagnosis using AI",
+        "Anomaly Detection Techniques and Applications",
+        "Artificial Intelligence in Healthcare"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W3043904603"
+    },
+    {
+      "openalex_id": "W3084873812",
+      "doi": "10.1093/jopart/muaa031",
+      "title": "Administrative Capital and Citizens\u2019 Responses to Administrative Burden",
+      "authors": [
+        {
+          "name": "Ayesha Masood",
+          "openalex_id": "A5083475114",
+          "orcid": "https://orcid.org/0000-0003-2481-3543",
+          "institutions": [
+            "Lahore University of Management Sciences"
+          ]
+        },
+        {
+          "name": "Muhammad Azfar Nisar",
+          "openalex_id": "A5027604836",
+          "orcid": "https://orcid.org/0000-0001-7201-3829",
+          "institutions": [
+            "Lahore University of Management Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-04",
+      "abstract": "Abstract Administrative burden research has highlighted the multiple costs imposed by public policies and their impact on citizens. However, the empirical understanding of citizens\u2019 responses to such burdens remains limited. Using ethnographic data of doctors applying for maternity leave in Pakistan, this article documents strategies used by citizens to navigate the administrative burden faced by them. Our findings suggest that these strategies are based on an individual\u2019s cache of social, cultural capital, and economic capital. Based on our data, we also theorize the significance of another form of capital for navigating administrative burden. This administrative capital is defined as an individual\u2019s understanding of bureaucratic rules, processes, and behaviors. Our findings further illustrate that the different costs imposed by public policies can be interchangeable, which may be used by citizens to their advantage. Propositions for future research on the intersection of different forms capital and administrative burden are also included.",
+      "cited_by_count": 179,
+      "type": "article",
+      "source": {
+        "name": "Journal of Public Administration Research and Theory",
+        "type": "journal",
+        "issn": [
+          "1053-1858",
+          "1477-9803"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/jpart/article-pdf/31/1/56/36194941/muaa031.pdf"
+      },
+      "topics": [
+        "Local Government Finance and Decentralization",
+        "Public Policy and Administration Research",
+        "Global Maternal and Child Health"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W3084873812"
+    },
+    {
+      "openalex_id": "W4388409187",
+      "doi": "10.1007/s42438-023-00440-6",
+      "title": "Generative AI and the Automating of Academia",
+      "authors": [
+        {
+          "name": "Richard Watermeyer",
+          "openalex_id": "A5064818149",
+          "orcid": "https://orcid.org/0000-0002-2365-3771",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Lawrie Phipps",
+          "openalex_id": "A5065926516",
+          "orcid": "https://orcid.org/0000-0002-0834-273X",
+          "institutions": [
+            "Keele University"
+          ]
+        },
+        {
+          "name": "Donna Lanclos",
+          "openalex_id": "A5025346040",
+          "orcid": "https://orcid.org/0000-0001-8714-7707",
+          "institutions": [
+            "Munster Technological University"
+          ]
+        },
+        {
+          "name": "Cathryn Knight",
+          "openalex_id": "A5065836371",
+          "orcid": "https://orcid.org/0000-0002-7574-3090",
+          "institutions": [
+            "University of Bristol"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-06",
+      "abstract": "Abstract The neoliberal transformation of higher education in the UK and an intertwined focus on the productive efficiency and prestige value of universities has led to an epidemic of overwork and precarity among academics. Many are found to be struggling with lofty performance expectations and an insistence that all dimensions of their work consistently achieve positional gains despite ferocious competition and the omnipresent threat of failure. Working under the current audit culture present across education, academics are thus found to overwork or commit to accelerated labour as pre-emptive compensation for the habitual inclemency of peer-review and vagaries of student evaluation, in accommodating the copiousness of \u2018invisible\u2019 tasks, and in eluding the myriad crevasses of their precarious labour. The proliferation of generative artificial intelligence (GAI) tools and more specifically, large language models (LLMs) like ChatGPT, offers potential relief for academics and a means to offset intensive demands and discover more of a work-based equilibrium. Through a recent survey of n = 284 UK academics and their use of GAI, we discover, however, that the digitalisation of higher education through GAI tools no more alleviates than extends the dysfunctions of neoliberal logic and deepens academia\u2019s malaise. Notwithstanding, we argue that the proliferating use of GAI tools by academics may be harnessed as a source of positive disruption to the industrialisation of their labour and catalyst of (re)engagement with scholarly craftsmanship.",
+      "cited_by_count": 100,
+      "type": "article",
+      "source": {
+        "name": "Postdigital Science and Education",
+        "type": "journal",
+        "issn": [
+          "2524-485X",
+          "2524-4868"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s42438-023-00440-6.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W4388409187"
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

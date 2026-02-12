@@ -1,0 +1,476 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:AI cognitive offloading AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2602.10116",
+      "title": "SAGE: Scalable Agentic 3D Scene Generation for Embodied AI",
+      "authors": [
+        "Hongchi Xia",
+        "Xuan Li",
+        "Zhaoshuo Li",
+        "Qianli Ma",
+        "Jiashu Xu",
+        "Ming-Yu Liu",
+        "Yin Cui",
+        "Tsung-Yi Lin",
+        "Wei-Chiu Ma",
+        "Shenlong Wang",
+        "Shuran Song",
+        "Fangyin Wei"
+      ],
+      "abstract": "Real-world data collection for embodied agents remains costly and unsafe, calling for scalable, realistic, and simulator-ready 3D environments. However, existing scene-generation systems often rely on rule-based or task-specific pipelines, yielding artifacts and physically invalid scenes. We present SAGE, an agentic framework that, given a user-specified embodied task (e.g., \"pick up a bowl and place it on the table\"), understands the intent and automatically generates simulation-ready environments at scale. The agent couples multiple generators for layout and object composition with critics that evaluate semantic plausibility, visual realism, and physical stability. Through iterative reasoning and adaptive tool selection, it self-refines the scenes until meeting user intent and physical validity. The resulting environments are realistic, diverse, and directly deployable in modern simulators for policy training. Policies trained purely on this data exhibit clear scaling trends and generalize to unseen objects and layouts, demonstrating the promise of simulation-driven scaling for embodied AI. Code, demos, and the SAGE-10k dataset can be found on the project page here: https://nvlabs.github.io/sage.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV",
+        "cs.RO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10116v1",
+      "url": "https://arxiv.org/abs/2602.10116"
+    },
+    {
+      "arxiv_id": "2602.10081",
+      "title": "Anagent For Enhancing Scientific Table & Figure Analysis",
+      "authors": [
+        "Xuehang Guo",
+        "Zhiyong Lu",
+        "Tom Hope",
+        "Qingyun Wang"
+      ],
+      "abstract": "In scientific research, analysis requires accurately interpreting complex multimodal knowledge, integrating evidence from different sources, and drawing inferences grounded in domain-specific knowledge. However, current artificial intelligence (AI) systems struggle to consistently demonstrate such capabilities. The complexity and variability of scientific tables and figures, combined with heterogeneous structures and long-context requirements, pose fundamental obstacles to scientific table \\& figure analysis. To quantify these challenges, we introduce AnaBench, a large-scale benchmark featuring $63,178$ instances from nine scientific domains, systematically categorized along seven complexity dimensions. To tackle these challenges, we propose Anagent, a multi-agent framework for enhanced scientific table \\& figure analysis through four specialized agents: Planner decomposes tasks into actionable subtasks, Expert retrieves task-specific information through targeted tool execution, Solver synthesizes information to generate coherent analysis, and Critic performs iterative refinement through five-dimensional quality assessment. We further develop modular training strategies that leverage supervised finetuning and specialized reinforcement learning to optimize individual capabilities while maintaining effective collaboration. Comprehensive evaluation across 170 subdomains demonstrates that Anagent achieves substantial improvements, up to $\\uparrow 13.43\\%$ in training-free settings and $\\uparrow 42.12\\%$ with finetuning, while revealing that task-oriented reasoning and context-aware problem-solving are essential for high-quality scientific table \\& figure analysis. Our project page: https://xhguo7.github.io/Anagent/.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10081v1",
+      "url": "https://arxiv.org/abs/2602.10081"
+    },
+    {
+      "arxiv_id": "2602.10069",
+      "title": "Humanoid Factors: Design Principles for AI Humanoids in Human Worlds",
+      "authors": [
+        "Xinyuan Liu",
+        "Eren Sadikoglu",
+        "Ransalu Senanayake",
+        "Lixiao Huang"
+      ],
+      "abstract": "Human factors research has long focused on optimizing environments, tools, and systems to account for human performance. Yet, as humanoid robots begin to share our workplaces, homes, and public spaces, the design challenge expands. We must now consider not only factors for humans but also factors for humanoids, since both will coexist and interact within the same environments. Unlike conventional machines, humanoids introduce expectations of human-like behavior, communication, and social presence, which reshape usability, trust, and safety considerations. In this article, we introduce the concept of humanoid factors as a framework structured around four pillars - physical, cognitive, social, and ethical - that shape the development of humanoids to help them effectively coexist and collaborate with humans. This framework characterizes the overlap and divergence between human capabilities and those of general-purpose humanoids powered by AI foundation models. To demonstrate our framework's practical utility, we then apply the framework to evaluate a real-world humanoid control algorithm, illustrating how conventional task completion metrics in robotics overlook key human cognitive and interaction principles. We thus position humanoid factors as a foundational framework for designing, evaluating, and governing sustained human-humanoid coexistence.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10069v1",
+      "url": "https://arxiv.org/abs/2602.10069"
+    },
+    {
+      "arxiv_id": "2602.10063",
+      "title": "Chain of Mindset: Reasoning with Adaptive Cognitive Modes",
+      "authors": [
+        "Tianyi Jiang",
+        "Arctanx An",
+        "Hengyi Feng",
+        "Naixin Zhai",
+        "Haodong Li",
+        "Xiaomin Yu",
+        "Jiahui Liu",
+        "Hanwen Du",
+        "Shuo Zhang",
+        "Zhi Yang",
+        "Jie Huang",
+        "Yuhua Li",
+        "Yongxin Ni",
+        "Huacan Wang",
+        "Ronghao Chen"
+      ],
+      "abstract": "Human problem-solving is never the repetition of a single mindset, by which we mean a distinct mode of cognitive processing. When tackling a specific task, we do not rely on a single mindset; instead, we integrate multiple mindsets within the single solution process. However, existing LLM reasoning methods fall into a common trap: they apply the same fixed mindset across all steps, overlooking that different stages of solving the same problem require fundamentally different mindsets. This single-minded assumption prevents models from reaching the next level of intelligence. To address this limitation, we propose Chain of Mindset (CoM), a training-free agentic framework that enables step-level adaptive mindset orchestration. CoM decomposes reasoning into four functionally heterogeneous mindsets: Spatial, Convergent, Divergent, and Algorithmic. A Meta-Agent dynamically selects the optimal mindset based on the evolving reasoning state, while a bidirectional Context Gate filters cross-module information flow to maintain effectiveness and efficiency. Experiments across six challenging benchmarks spanning mathematics, code generation, scientific QA, and spatial reasoning demonstrate that CoM achieves state-of-the-art performance, outperforming the strongest baseline by 4.96\\% and 4.72\\% in overall accuracy on Qwen3-VL-32B-Instruct and Gemini-2.0-Flash, while balancing reasoning efficiency. Our code is publicly available at \\href{https://github.com/QuantaAlpha/chain-of-mindset}{https://github.com/QuantaAlpha/chain-of-mindset}.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10063v1",
+      "url": "https://arxiv.org/abs/2602.10063"
+    },
+    {
+      "arxiv_id": "2602.10054",
+      "title": "AIDED: Augmenting Interior Design with Human Experience Data for Designer-AI Co-Design",
+      "authors": [
+        "Yang Chen Lin",
+        "Chen-Ying Chen",
+        "Kai-Hsin Hou",
+        "Hung-Yu Chen",
+        "Po-Chih Kuo"
+      ],
+      "abstract": "Interior design often struggles to capture the subtleties of client experience, leaving gaps between what clients feel and what designers can act upon. We present AIDED, a designer-AI co-design workflow that integrates multimodal client data into generative AI (GAI) design processes. In a within-subjects study with twelve professional designers, we compared four modalities: baseline briefs, gaze heatmaps, questionnaire visualizations, and AI-predicted overlays. Results show that questionnaire data were trusted, creativity-enhancing, and satisfying; gaze heatmaps increased cognitive load; and AI-predicted overlays improved GAI communication but required natural language mediation to establish trust. Interviews confirmed that an authenticity-interpretability trade-off is central to balancing client voices with professional control. Our contributions are: (1) a system that incorporates experiential client signals into GAI design workflows; (2) empirical evidence of how different modalities affect design outcomes; and (3) implications for future AI tools that support human-data interaction in creative practice.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC"
+      ],
+      "doi": "10.1145/3772318.3791378",
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10054v1",
+      "url": "https://arxiv.org/abs/2602.10054"
+    },
+    {
+      "arxiv_id": "2602.10053",
+      "title": "The Architecture of Illusion: Network Opacity and Strategic Escalation",
+      "authors": [
+        "Raman Ebrahimi",
+        "Sepehr Ilami",
+        "Babak Heydari",
+        "Isabel Trevino",
+        "Massimo Franceschetti"
+      ],
+      "abstract": "Standard models of bounded rationality typically assume agents either possess accurate knowledge of the population's reasoning abilities (Cognitive Hierarchy) or hold dogmatic, degenerate beliefs (Level-$k$). We introduce the ``Connected Minds'' model, which unifies these frameworks by integrating iterative reasoning with a parameterized network bias. We posit that agents do not observe the global population; rather, they observe a sample biased by their network position, governed by a locality parameter $p$ representing algorithmic ranking, social homophily, or information disclosure. We show that this parameter acts as a continuous bridge: the model collapses to the myopic Level-$k$ recursion as networks become opaque ($p \\to 0$) and recovers the standard Cognitive Hierarchy model under full transparency ($p=1$). Theoretically, we establish that network opacity induces a \\emph{Sophisticated Bias}, causing agents to systematically overestimate the cognitive depth of their opponents while preserving the log-concavity of belief distributions. This makes $p$ an actionable lever: a planner or platform can tune transparency -- globally or by segment (a personalized $p_k$) -- to shape equilibrium behavior. From a mechanism design perspective, we derive the \\emph{Escalation Principle}: in games of strategic complements, restricting information can maximize aggregate effort by trapping agents in echo chambers where they compete against hallucinated, high-sophistication peers. Conversely, we identify a \\emph{Transparency Reversal} for coordination games, where maximizing network visibility is required to minimize variance and stabilize outcomes. Our results suggest that network topology functions as a cognitive zoom lens, determining whether agents behave as local imitators or global optimizers.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.GT",
+      "categories": [
+        "cs.GT",
+        "econ.TH"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10053v1",
+      "url": "https://arxiv.org/abs/2602.10053"
+    },
+    {
+      "arxiv_id": "2602.10043",
+      "title": "Simple Image Processing and Similarity Measures Can Link Data Samples across Databases through Brain MRI",
+      "authors": [
+        "Gaurang Sharma",
+        "Harri Polonen",
+        "Juha Pajula",
+        "Jutta Suksi",
+        "Jussi Tohka"
+      ],
+      "abstract": "Head Magnetic Resonance Imaging (MRI) is routinely collected and shared for research under strict regulatory frameworks. These frameworks require removing potential identifiers before sharing. But, even after skull stripping, the brain parenchyma contains unique signatures that can match other MRIs from the same participants across databases, posing a privacy risk if additional data features are available. Current regulatory frameworks often mandate evaluating such risks based on the assessment of a certain level of reasonableness. Prior studies have already suggested that a brain MRI could enable participant linkage, but they have relied on training-based or computationally intensive methods.   Here, we demonstrate that linking an individual's skull-stripped T1-weighted MRI, which may lead to re-identification if other identifiers are available, is possible using standard preprocessing followed by image similarity computation. Nearly perfect linkage accuracy was achieved in matching data samples across various time intervals, scanner types, spatial resolutions, and acquisition protocols, despite potential cognitive decline, simulating MRI matching across databases. These results aim to contribute meaningfully to the development of thoughtful, forward-looking policies in medical data sharing.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10043v1",
+      "url": "https://arxiv.org/abs/2602.10043"
+    },
+    {
+      "arxiv_id": "2602.10023",
+      "title": "MEVER: Multi-Modal and Explainable Claim Verification with Graph-based Evidence Retrieval",
+      "authors": [
+        "Delvin Ce Zhang",
+        "Suhan Cui",
+        "Zhelin Chu",
+        "Xianren Zhang",
+        "Dongwon Lee"
+      ],
+      "abstract": "Verifying the truthfulness of claims usually requires joint multi-modal reasoning over both textual and visual evidence, such as analyzing both textual caption and chart image for claim verification. In addition, to make the reasoning process transparent, a textual explanation is necessary to justify the verification result. However, most claim verification works mainly focus on the reasoning over textual evidence only or ignore the explainability, resulting in inaccurate and unconvincing verification. To address this problem, we propose a novel model that jointly achieves evidence retrieval, multi-modal claim verification, and explanation generation. For evidence retrieval, we construct a two-layer multi-modal graph for claims and evidence, where we design image-to-text and text-to-image reasoning for multi-modal retrieval. For claim verification, we propose token- and evidence-level fusion to integrate claim and evidence embeddings for multi-modal verification. For explanation generation, we introduce multi-modal Fusion-in-Decoder for explainability. Finally, since almost all the datasets are in general domain, we create a scientific dataset, AIChartClaim, in AI domain to complement claim verification community. Experiments show the strength of our model.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10023v1",
+      "url": "https://arxiv.org/abs/2602.10023"
+    },
+    {
+      "arxiv_id": "2602.10009",
+      "title": "Discovering High Level Patterns from Simulation Traces",
+      "authors": [
+        "Sean Memery",
+        "Kartic Subr"
+      ],
+      "abstract": "Artificial intelligence (AI) agents embedded in environments with physics-based interaction face many challenges including reasoning, planning, summarization, and question answering. This problem is exacerbated when a human user wishes to either guide or interact with the agent in natural language. Although the use of Language Models (LMs) is the default choice, as an AI tool, they struggle with tasks involving physics. The LM's capability for physical reasoning is learned from observational data, rather than being grounded in simulation. A common approach is to include simulation traces as context, but this suffers from poor scalability as simulation traces contain larger volumes of fine-grained numerical and semantic data. In this paper, we propose a natural language guided method to discover coarse-grained patterns (e.g., 'rigid-body collision', 'stable support', etc.) from detailed simulation logs. Specifically, we synthesize programs that operate on simulation logs and map them to a series of high level activated patterns. We show, through two physics benchmarks, that this annotated representation of the simulation log is more amenable to natural language reasoning about physical systems. We demonstrate how this method enables LMs to generate effective reward programs from goals specified in natural language, which may be used within the context of planning or supervised learning.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10009v1",
+      "url": "https://arxiv.org/abs/2602.10009"
+    },
+    {
+      "arxiv_id": "2602.10001",
+      "title": "Human-AI Synergy Supports Collective Creative Search",
+      "authors": [
+        "Chenyi Li",
+        "Raja Marjieh",
+        "Haoyu Hu",
+        "Mark Steyvers",
+        "Katherine M. Collins",
+        "Ilia Sucholutsky",
+        "Nori Jacoby"
+      ],
+      "abstract": "Generative AI is increasingly transforming creativity into a hybrid human-artificial process, but its impact on the quality and diversity of creative output remains unclear. We study collective creativity using a controlled word-guessing task that balances open-endedness with an objective measure of task performance. Participants attempt to infer a hidden target word, scored based on the semantic similarity of their guesses to the target, while also observing the best guess from previous players. We compare performance and outcome diversity across human-only, AI-only, and hybrid human-AI groups. Hybrid groups achieve the highest performance while preserving high diversity of guesses. Within hybrid groups, both humans and AI agents systematically adjust their strategies relative to single-agent conditions, suggesting higher-order interaction effects, whereby agents adapt to each other's presence. Although some performance benefits can be reproduced through collaboration between heterogeneous AI systems, human-AI collaboration remains superior, underscoring complementary roles in collective creativity.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.SI",
+      "categories": [
+        "cs.SI",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.10001v1",
+      "url": "https://arxiv.org/abs/2602.10001"
+    },
+    {
+      "arxiv_id": "2602.09992",
+      "title": "A Unified Assessment of the Poverty of the Stimulus Argument for Neural Language Models",
+      "authors": [
+        "Xiulin Yang",
+        "Arianna Bisazza",
+        "Nathan Schneider",
+        "Ethan Gotlieb Wilcox"
+      ],
+      "abstract": "How can children acquire native-level syntax from limited input? According to the Poverty of the Stimulus Hypothesis (PoSH), the linguistic input children receive is insufficient to explain certain generalizations that are robustly learned; innate linguistic constraints, many have argued, are thus necessary to explain language learning. Neural language models, which lack such language-specific constraints in their design, offer a computational test of this longstanding (but controversial) claim. We introduce \\poshbench, a training-and-evaluation suite targeting question formation, islands to movement, and other English phenomena at the center of the PoSH arguments. Training Transformer models on 10--50M words of developmentally plausible text, we find indications of generalization on all phenomena even without direct positive evidence -- yet neural models remain less data-efficient and their generalizations are weaker than those of children. We further enhance our models with three recently proposed cognitively motivated inductive biases. We find these biases improve general syntactic competence but not \\poshbench performance. Our findings challenge the claim that innate syntax is the only possible route to generalization, while suggesting that human-like data efficiency requires inductive biases beyond those tested here.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09992v1",
+      "url": "https://arxiv.org/abs/2602.09992"
+    },
+    {
+      "arxiv_id": "2602.09947",
+      "title": "Trustworthy Agentic AI Requires Deterministic Architectural Boundaries",
+      "authors": [
+        "Manish Bhattarai",
+        "Minh Vu"
+      ],
+      "abstract": "Current agentic AI architectures are fundamentally incompatible with the security and epistemological requirements of high-stakes scientific workflows. The problem is not inadequate alignment or insufficient guardrails, it is architectural: autoregressive language models process all tokens uniformly, making deterministic command--data separation unattainable through training alone. We argue that deterministic, architectural enforcement, not probabilistic learned behavior, is a necessary condition for trustworthy AI-assisted science. We introduce the Trinity Defense Architecture, which enforces security through three mechanisms: action governance via a finite action calculus with reference-monitor enforcement, information-flow control via mandatory access labels preventing cross-scope leakage, and privilege separation isolating perception from execution. We show that without unforgeable provenance and deterministic mediation, the ``Lethal Trifecta'' (untrusted inputs, privileged data access, external action capability) turns authorization security into an exploit-discovery problem: training-based defenses may reduce empirical attack rates but cannot provide deterministic guarantees. The ML community must recognize that alignment is insufficient for authorization security, and that architectural mediation is required before agentic AI can be safely deployed in consequential scientific domains.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.CR",
+      "categories": [
+        "cs.CR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09947v1",
+      "url": "https://arxiv.org/abs/2602.09947"
+    },
+    {
+      "arxiv_id": "2602.09937",
+      "title": "Why Do AI Agents Systematically Fail at Cloud Root Cause Analysis?",
+      "authors": [
+        "Taeyoon Kim",
+        "Woohyeok Park",
+        "Hoyeong Yun",
+        "Kyungyong Lee"
+      ],
+      "abstract": "Failures in large-scale cloud systems incur substantial financial losses, making automated Root Cause Analysis (RCA) essential for operational stability. Recent efforts leverage Large Language Model (LLM) agents to automate this task, yet existing systems exhibit low detection accuracy even with capable models, and current evaluation frameworks assess only final answer correctness without revealing why the agent's reasoning failed. This paper presents a process level failure analysis of LLM-based RCA agents. We execute the full OpenRCA benchmark across five LLM models, producing 1,675 agent runs, and classify observed failures into 12 pitfall types across intra-agent reasoning, inter-agent communication, and agent-environment interaction. Our analysis reveals that the most prevalent pitfalls, notably hallucinated data interpretation and incomplete exploration, persist across all models regardless of capability tier, indicating that these failures originate from the shared agent architecture rather than from individual model limitations. Controlled mitigation experiments further show that prompt engineering alone cannot resolve the dominant pitfalls, whereas enriching the inter-agent communication protocol reduces communication-related failures by up to 15 percentage points. The pitfall taxonomy and diagnostic methodology developed in this work provide a foundation for designing more reliable autonomous agents for cloud RCA.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09937v1",
+      "url": "https://arxiv.org/abs/2602.09937"
+    },
+    {
+      "arxiv_id": "2602.09907",
+      "title": "Self-Regulated Reading with AI Support: An Eight-Week Study with Students",
+      "authors": [
+        "Yue Fu",
+        "Joel Wester",
+        "Niels Van Berkel",
+        "Alexis Hiniker"
+      ],
+      "abstract": "College students increasingly use AI chatbots to support academic reading, yet we lack granular understanding of how these interactions shape their reading experience and cognitive engagement. We conducted an eight-week longitudinal study with 15 undergraduates who used AI to support assigned readings in a course. We collected 838 prompts across 239 reading sessions and developed a coding schema categorizing prompts into four cognitive themes: Decoding, Comprehension, Reasoning, and Metacognition. Comprehension prompts dominated (59.6%), with Reasoning (29.8%), Metacognition (8.5%), and Decoding (2.1%) less frequent. Most sessions (72%) contained exactly three prompts, the required minimum of the reading assignment. Within sessions, students showed natural cognitive progression from comprehension toward reasoning, but this progression was truncated. Across eight weeks, students' engagement patterns remained stable, with substantial individual differences persisting throughout. Qualitative analysis revealed an intention-behavior gap: students recognized that effective prompting required effort but rarely applied this knowledge, with efficiency emerging as the primary driver. Students also strategically triaged their engagement based on interest and academic pressures, exhibiting a novel pattern of reading through AI rather than with it: using AI-generated summaries as primary material to filter which sections merited deeper attention. We discuss design implications for AI reading systems that scaffold sustained cognitive engagement.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI",
+        "cs.CY"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09907v1",
+      "url": "https://arxiv.org/abs/2602.09907"
+    },
+    {
+      "arxiv_id": "2602.09904",
+      "title": "Safeguarding Privacy: Privacy-Preserving Detection of Mind Wandering and Disengagement Using Federated Learning in Online Education",
+      "authors": [
+        "Anna Bodonhelyi",
+        "Mengdi Wang",
+        "Efe Bozkir",
+        "Babette B\u00fchler",
+        "Enkelejda Kasneci"
+      ],
+      "abstract": "Since the COVID-19 pandemic, online courses have expanded access to education, yet the absence of direct instructor support challenges learners' ability to self-regulate attention and engagement. Mind wandering and disengagement can be detrimental to learning outcomes, making their automated detection via video-based indicators a promising approach for real-time learner support. However, machine learning-based approaches often require sharing sensitive data, raising privacy concerns. Federated learning offers a privacy-preserving alternative by enabling decentralized model training while also distributing computational load. We propose a framework exploiting cross-device federated learning to address different manifestations of behavioral and cognitive disengagement during remote learning, specifically behavioral disengagement, mind wandering, and boredom. We fit video-based cognitive disengagement detection models using facial expressions and gaze features. By adopting federated learning, we safeguard users' data privacy through privacy-by-design and introduce a novel solution with the potential for real-time learner support. We further address challenges posed by eyeglasses by incorporating related features, enhancing overall model performance. To validate the performance of our approach, we conduct extensive experiments on five datasets and benchmark multiple federated learning algorithms. Our results show great promise for privacy-preserving educational technologies promoting learner engagement.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.HC"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09904v1",
+      "url": "https://arxiv.org/abs/2602.09904"
+    },
+    {
+      "arxiv_id": "2602.09877",
+      "title": "The Devil Behind Moltbook: Anthropic Safety is Always Vanishing in Self-Evolving AI Societies",
+      "authors": [
+        "Chenxu Wang",
+        "Chaozhuo Li",
+        "Songyang Liu",
+        "Zejian Chen",
+        "Jinyu Hou",
+        "Ji Qi",
+        "Rui Li",
+        "Litian Zhang",
+        "Qiwei Ye",
+        "Zheng Liu",
+        "Xu Chen",
+        "Xi Zhang",
+        "Philip S. Yu"
+      ],
+      "abstract": "The emergence of multi-agent systems built from large language models (LLMs) offers a promising paradigm for scalable collective intelligence and self-evolution. Ideally, such systems would achieve continuous self-improvement in a fully closed loop while maintaining robust safety alignment--a combination we term the self-evolution trilemma. However, we demonstrate both theoretically and empirically that an agent society satisfying continuous self-evolution, complete isolation, and safety invariance is impossible. Drawing on an information-theoretic framework, we formalize safety as the divergence degree from anthropic value distributions. We theoretically demonstrate that isolated self-evolution induces statistical blind spots, leading to the irreversible degradation of the system's safety alignment. Empirical and qualitative results from an open-ended agent community (Moltbook) and two closed self-evolving systems reveal phenomena that align with our theoretical prediction of inevitable safety erosion. We further propose several solution directions to alleviate the identified safety concern. Our work establishes a fundamental limit on the self-evolving AI societies and shifts the discourse from symptom-driven safety patches to a principled understanding of intrinsic dynamical risks, highlighting the need for external oversight or novel safety-preserving mechanisms.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09877v1",
+      "url": "https://arxiv.org/abs/2602.09877"
+    },
+    {
+      "arxiv_id": "2602.09846",
+      "title": "Generative AI Adoption in an Energy Company: Exploring Challenges and Use Cases",
+      "authors": [
+        "Malik Abdul Sami",
+        "Zeeshan Rasheed",
+        "Meri Olenius",
+        "Muhammad Waseem",
+        "Kai-Kristian Kemell",
+        "Jussi Rasku",
+        "Pekka Abrahamsson"
+      ],
+      "abstract": "Organisations are examining how generative AI can support their operational work and decision-making processes. This study investigates how employees in a energy company understand AI adoption and identify areas where AI and LLMs-based agentic workflows could assist daily activities. Data was collected in four weeks through sixteen semi-structured interviews across nine departments, supported by internal documents and researcher observations. The analysis identified areas where employees positioned AI as useful, including reporting work, forecasting, data handling, maintenance-related tasks, and anomaly detection. Participants also described how GenAI and LLM-based tools could be introduced through incremental steps that align with existing workflows. The study provides an overview view of AI adoption in the energy sector and offers a structured basis for identifying entry points for practical implementation and comparative research across industries.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.SE",
+      "categories": [
+        "cs.SE",
+        "cs.CY"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09846v1",
+      "url": "https://arxiv.org/abs/2602.09846"
+    },
+    {
+      "arxiv_id": "2602.09841",
+      "title": "Hybrid Responsible AI-Stochastic Approach for SLA Compliance in Multivendor 6G Networks",
+      "authors": [
+        "Emanuel Figetakis",
+        "Ahmed Refaey Hussein"
+      ],
+      "abstract": "The convergence of AI and 6G network automation introduces new challenges in maintaining transparency, fairness, and accountability across multivendor management systems. Although closed-loop AI orchestration improves adaptability and self-optimization, it also creates a responsibility gap, where violations of SLAs cannot be causally attributed to specific agents or vendors. This paper presents a hybrid responsible AI-stochastic learning framework that embeds fairness, robustness, and auditability directly into the network control loop. The framework integrates RAI games with stochastic optimization, enabling dynamic adversarial reweighting and probabilistic exploration across heterogeneous vendor domains. An RAAP continuously records AI-driven decision trajectories and produces dual accountability reports: user-level SLA summaries and operator-level responsibility analytics. Experimental evaluations on synthetic two-class multigroup datasets demonstrate that the proposed hybrid model improves the accuracy of the worst group by up to 10.5\\%. Specifically, hybrid RAI achieved a WGAcc of 60.5\\% and an AvgAcc of 72.7\\%, outperforming traditional RAI-GA (50.0\\%) and ERM (21.5\\%). The audit mechanism successfully traced 99\\% simulated SLA violations to the AI entities responsible, producing both vendor and agent-level accountability indices. These results confirm that the proposed hybrid approach enhances fairness and robustness as well as establishes a concrete accountability framework for autonomous SLA assurance in multivendor 6G networks.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.NI",
+      "categories": [
+        "cs.NI",
+        "cs.AI",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09841v1",
+      "url": "https://arxiv.org/abs/2602.09841"
+    },
+    {
+      "arxiv_id": "2602.09781",
+      "title": "Explainability in Generative Medical Diffusion Models: A Faithfulness-Based Analysis on MRI Synthesis",
+      "authors": [
+        "Surjo Dey",
+        "Pallabi Saikia"
+      ],
+      "abstract": "This study investigates the explainability of generative diffusion models in the context of medical imaging, focusing on Magnetic resonance imaging (MRI) synthesis. Although diffusion models have shown strong performance in generating realistic medical images, their internal decision making process remains largely opaque. We present a faithfulness-based explainability framework that analyzes how prototype-based explainability methods like ProtoPNet (PPNet), Enhanced ProtoPNet (EPPNet), and ProtoPool can link the relationship between generated and training features. Our study focuses on understanding the reasoning behind image formation through denoising trajectory of diffusion model and subsequently prototype explainability with faithfulness analysis. Experimental analysis shows that EPPNet achieves the highest faithfulness (with score 0.1534), offering more reliable insights, and explainability into the generative process. The results highlight that diffusion models can be made more transparent and trustworthy through faithfulness-based explanations, contributing to safer and more interpretable applications of generative AI in healthcare.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09781v1",
+      "url": "https://arxiv.org/abs/2602.09781"
+    },
+    {
+      "arxiv_id": "2602.09772",
+      "title": "Design and Evaluation of an Assisted Programming Interface for Behavior Trees in Robotics",
+      "authors": [
+        "Jonathan Styrud",
+        "Matteo Iovino",
+        "Rebecca Stower",
+        "Mart Karta\u0161ev",
+        "Mikael Norrl\u00f6f",
+        "M\u00e5rten Bj\u00f6rkman",
+        "Christian Smith"
+      ],
+      "abstract": "The possibility to create reactive robot programs faster without the need for extensively trained programmers is becoming increasingly important. So far, it has not been explored how various techniques for creating Behavior Tree (BT) program representations could be combined with complete graphical user interfaces (GUIs) to allow a human user to validate and edit trees suggested by automated methods. In this paper, we introduce BEhavior TRee GUI (BETR-GUI) for creating BTs with the help of an AI assistant that combines methods using large language models, planning, genetic programming, and Bayesian optimization with a drag-and-drop editor. A user study with 60 participants shows that by combining different assistive methods, BETR-GUI enables users to perform better at solving the robot programming tasks. The results also show that humans using the full variant of BETR-GUI perform better than the AI assistant running on its own.",
+      "published": "2026-02-10",
+      "updated": "2026-02-10",
+      "primary_category": "cs.RO",
+      "categories": [
+        "cs.RO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.09772v1",
+      "url": "https://arxiv.org/abs/2602.09772"
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

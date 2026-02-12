@@ -1,0 +1,2007 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "metaphilosophy philosophical methodology",
+  "results": [
+    {
+      "openalex_id": "W1569323692",
+      "doi": "10.1515/9781474471176",
+      "title": "Bergson and Philosophy",
+      "authors": [
+        {
+          "name": "John Mullarkey",
+          "openalex_id": "A5032819429",
+          "orcid": "https://orcid.org/0000-0002-2782-9674"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-06",
+      "abstract": "Various schools of philosophy have tried to position the thought of Henri Bergson over the last eighty years. In France he has been regarded primarily as an early form of phenomenologist, in the United States and Britain he is still regarded as a vitalist philosopher. This introductory study looks instead at Bergson's use of philosophical form itself and aims to dispel the view that Bergson ever stuck to one type of philosophy at all, be it vitalism or phenomenology. The claim of any one form of thought to the title of 'first philosophy' is challenged by the idea of a Bergsonian metaphilosophy which states that, in a universe with no static foundations, there can never be first philosophies. In other words, if everything is changing, then this must be no less true of philosophy. In pursuit of this approach, John Mullarkey explores each of Bergson's seven major works from a metaphilosophical perspective. Taking each book in chronological order of publication, the first four chapters are devoted to examining one of Bergson's works against the background of current debate within its respective field - the metaphysics of space and time, the philosophy of mind, the philosophy of biology, and sociobiology. The remaining four chapters take a problem-based approach examining the role of ethics, ontology, methodology and metaphilosophy in Bergson's thought. This book is an important and lucid reassessment of an influential philosopher which sets his work in philosophical contexts appropriate to his thought. Key Features * Covers all major aspects of Bergson's thought and all his philosophical writings. * Places Bergson's work in its proper philosophical context between Continental and Analytical traditions. * Relates Bergson's ideas to contemporary philosophical debate, showingthe importance of his work to Thomas Nagel, Gilles Deleuze, Emmanuel Levinas, philosophy of mind, biology and ethics. * Written in a clear style which assumes no prior knowledge of Bergson.",
+      "cited_by_count": 146,
+      "type": "book",
+      "source": {
+        "name": "Edinburgh University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical and Theoretical Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1569323692"
+    },
+    {
+      "openalex_id": "W1718119966",
+      "doi": "10.1111/meta.12127",
+      "title": "How \u201cIntuition\u201d Exploded",
+      "authors": [
+        {
+          "name": "James Andow",
+          "openalex_id": "A5089236663",
+          "orcid": "https://orcid.org/0000-0002-5760-0475",
+          "institutions": [
+            "University of Reading"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-01",
+      "abstract": "Abstract Recent decades have seen a surge in interest in metaphilosophy. In particular there has been an interest in philosophical methodology. Various questions have been asked about philosophical methods. Are our methods any good? Can we improve upon them? Prior to such evaluative and ameliorative concerns, however, is the matter of what methods philosophers actually use. Worryingly, our understanding of philosophical methodology is impoverished in various respects. This article considers one particular respect in which we seem to be missing an important part of the picture. While it is a received wisdom that the word \u201cintuition\u201d has exploded across analytic philosophy in recent decades, the article presents evidence that the explosion is apparent across a broad swathe of academia (and perhaps beyond). It notes various implications for current methodological debates about the role of intuitions in philosophy.",
+      "cited_by_count": 37,
+      "type": "article",
+      "source": {
+        "name": "Metaphilosophy",
+        "type": "journal",
+        "issn": [
+          "0026-1068",
+          "1467-9973"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/meta.12127"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Psychology of Moral and Emotional Judgment",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W1718119966"
+    },
+    {
+      "openalex_id": "W2199182303",
+      "doi": "10.1093/acprof:oso/9780199661985.001.0001",
+      "title": "Ontology after Carnap",
+      "authors": [
+        {
+          "name": "Blatti, Stephan 1975-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Lapointe, Sandra",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-01",
+      "abstract": "Abstract Methodological questions play an important role in contemporary metaphysics, whose practitioners and historians are actively reflecting on the nature of ontological questions, the status of their answers, and the relevance of contributions both from other areas within philosophy (e.g., philosophical logic, semantics) and beyond (notably, the natural sciences). Such reflections are hardly new: the debate between Willard van Orman Quine and Rudolf Carnap about how to understand and resolve ontological questions is widely seen as a turning point in twentieth-century analytic philosophy. And indeed, this volume is occasioned by the fact that the deflationary approach to metaphysics advocated by Carnap in that debate is once again attracting considerable interest and support.Containing eleven original essays by many of today\u2019s leading voices in metametaphysics, Ontology After Carnap aims both to deepen our understanding of Carnap\u2019s contributions to metaontology and to explore how this legacy might be mined for insights into the contemporary debate. This collection will be of interest to scholars and students working in metaphysics, semantics, philosophical logic, metaphilosophy, and the history of analytic philosophy.",
+      "cited_by_count": 41,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy, Science, and History",
+        "Philosophy and Theoretical Science",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2199182303"
+    },
+    {
+      "openalex_id": "W2470712923",
+      "doi": "10.4324/9781315626307",
+      "title": "Wittgenstein and Phenomenology",
+      "authors": [
+        {
+          "name": "Timur U\u00e7an",
+          "openalex_id": "A5042399119",
+          "orcid": "https://orcid.org/0000-0001-7620-6601",
+          "institutions": [
+            "Universit\u00e9 de Bordeaux"
+          ]
+        },
+        {
+          "name": "Oskari Kuusela",
+          "openalex_id": "A5066016354",
+          "orcid": "https://orcid.org/0000-0002-9345-9499"
+        },
+        {
+          "name": "Miha\u00ef Ometita",
+          "openalex_id": "A5074559845"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-04",
+      "abstract": "This volume of new essays explores the relationship between the thought of Wittgenstein and the key figures of phenomenology: Husserl, Heidegger, Levinas, Merleau-Ponty and Sartre. It is the first book to provide an overview of how Wittgenstein's philosophy in its different phases, including his own so-called phenomenological phase, relates to the variety of phenomenological approaches developed in continental Europe. In so doing, the volume seeks to throw light on both sides of the comparison, and to clarify more broadly the relations between analytic and phenomenological philosophy. However, rather than treating the interpretation of either phenomenological philosophy or Wittgenstein as an already settled issue, several chapters in the volume examine and question received views regarding them, and develop alternatives to such views. Wittgenstein and Phenomenology will be of interest to scholars working in philosophical methodology and metaphilosophy, the philosophy of mind, philosophy of language and logic, and ethics",
+      "cited_by_count": 30,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://philpapers.org/archive/KUUWAP.pdf"
+      },
+      "topics": [
+        "Wittgensteinian philosophy and applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2470712923"
+    },
+    {
+      "openalex_id": "W4401784864",
+      "doi": "10.1093/oso/9780197779217.001.0001",
+      "title": "Overfitting and Heuristics in Philosophy",
+      "authors": [
+        {
+          "name": "Timothy Williamson",
+          "openalex_id": "A5007201391",
+          "orcid": "https://orcid.org/0000-0002-4659-8672",
+          "institutions": [
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-08-22",
+      "abstract": "Abstract The main aim of this book is to encourage philosophers to take a more sophisticated and scientific attitude to their handling of evidence, both in theory and in practice, by introducing two categories neglected in current metaphilosophy. The first category is heuristics. These are typically efficient ways of solving problems of some kind, quick and easy to use, and mostly but not always reliable. Those most probably central to philosophical methodology are more or less humanly universal general cognitive heuristics which we employ without conscious reflection. In many plausible cases, they can be shown to be implicitly inconsistent, and so cannot be perfectly valid, though for evolutionary reasons they are likely to be fairly reliable in normal cases. Such heuristics may well generate false but convincing data as applied to some actual or hypothetical. Arguably, the heuristics also generate philosophical paradoxes, just as heuristics embedded in our perceptual systems generate perceptual illusions. The second category is that of overfitting. This is a recognized pathology in science, when models are allowed to become very complicated to achieve a close fit with data, and further complications typically keep having to be made as new data comes in. When the data contains errors, such theorizing provides little insight. Scientists guard against overfitting by strongly preferring comparatively simple models. Philosophers should learn to do the same. This approach is applied to debates between coarse-grained (intensionalist) and fine-grained (hyperintensionalist) theories of metaphysics, ascriptions of propositional attitudes, and other topics, in favour of intensionalism.",
+      "cited_by_count": 32,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Philosophy and Theoretical Science",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 146,
+      "url": "https://openalex.org/W4401784864"
+    },
+    {
+      "openalex_id": "W3215524045",
+      "doi": "10.1515/opphil-2020-0190",
+      "title": "Kant\u2019s Metaphilosophy",
+      "authors": [
+        {
+          "name": "Michael Lewin",
+          "openalex_id": "A5003455507",
+          "orcid": "https://orcid.org/0000-0002-5097-5725",
+          "institutions": [
+            "Immanuel Kant Baltic Federal University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Abstract While the term \u201cmetaphilosophy\u201d enjoys increasing popularity in Kant scholarship, it is neither clear what distinguishes a metaphilosophical theory from a philosophical one nor to what extent Kant\u2019s philosophy contains metaphilosophical views. In the first part of the article, I will introduce a demarcation criterion and show how scholars fall prey to the fallacy of extension confusing Kant\u2019s philosophical theories with his theories about philosophy. In the second part, I will analyze eight elements for an \u201cimperfect definition\u201d ( KrV A731/B759) of philosophy outlining the scope of Kant\u2019s explicit metaphilosophy against the backdrop of recent metaphilosophical research: (i) scientific concept of philosophy, (ii) philosophy as an activity, (iii) worldly concept, (iv) philosophy as a (proper and improper) science, (v) philosophy as an architectonic idea (archetype and ectypes), (vi) philosophy as a social practice and the appropriate holding-to-be-true (one or many true philosophies?), (vii) reason as the absolute condition and subject of philosophy, and (viii) methodology of philosophy. I will put these elements together for an attempt to give an imperfect definition of philosophy \u2013 something that Kant promised but never did \u2013 in the conclusion.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Open Philosophy",
+        "type": "journal",
+        "issn": [
+          "2543-8875"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1515/opphil-2020-0190"
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Philosophy, Science, and History"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W3215524045"
+    },
+    {
+      "openalex_id": "W2945074333",
+      "doi": "10.5840/eps201956234",
+      "title": "The Philosophical Status of \u201cMetaphilosophy of Science\u201d",
+      "authors": [
+        {
+          "name": "Vladimir N. Porus",
+          "openalex_id": "A5042250521",
+          "orcid": "https://orcid.org/0000-0002-2958-2185"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "Interdisciplinary studies of science form a \u201cliving\u201d organism, in which every part performs its function and is connected with other parts. Philosophy of science plays a role of the \u201cthink-tank\u201d of that organism. It is a generator of the sense that connects the functions of its separate parts into a systematic unity. It can be called the consciousness of science. Metaphilosophy of science is related to philosophy of science in the same way as philosophy of science itself is related to science. Within metaphilosophy of science the propensity of philosophy of science to self-reflection is implemented. Metaphilosophy of science makes relevant the issues that relate to the philosophical significance of the processes taking place in the so-called \u201ctrading zone\u201d (in the sense of P. Galison). These trading zone is a place where scientists, science-of-science theorists and philosophers exchange their ideas. The interaction between philosophy and metaphilosophy of science takes place in the course of a competition among various philosophical interpretations of the results received within the studies of these \u201ctrading\u201d processes. Institutional, methodological, historical and culturological studies get a philosophical interpretation and become the source of metaphilosophical ideas. Metaphorically, one may say, that metaphilosophy of science is the self-consciousness of philosophy of science. The very idea that metaphilosophy of science is a participant of the process occurring in the \u201ctrading zone\u201d puts an end to a meaningless pile of \u201cmetalevels\u201d that very often characterize philosophical discussions of science.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Epistemology & Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "1811-833X",
+          "2311-7133"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.5840/eps201956234"
+      },
+      "topics": [
+        "Scientific Research and Philosophical Inquiry",
+        "Educational Innovations and Challenges",
+        "Ukrainian Legal and Forensic Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2945074333"
+    },
+    {
+      "openalex_id": "W4240977143",
+      "doi": "10.5871/bacad/9780197266298.001.0001",
+      "title": "Philosophy and the Historical Perspective",
+      "authors": [
+        {
+          "name": "Ackeren, Marcel van 1971-",
+          "openalex_id": ""
+        },
+        {
+          "name": "Klein, Lee",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-26",
+      "abstract": "Since the rise of analytical philosophy, the relation of philosophy and its past is more hotly debated among philosophers than ever. Some scholars analyse historical texts without reference to current debates and their terminology, while others pursue first-order philosophy by focusing on problems instead of doxography\u2014that is, without reference to their predecessors. A growing group, though, doubts that philosophy can be studied effectively on the basis of this sharp division. But does the study of the history of philosophy contribute to current philosophy? And, if it does, what precisely is the contribution? Does making such a contribution depend on using a specific method which determines how the historical perspective is related to systematic philosophy and philosophy in general? More generally, how do our assumptions about the relationship between historical and systematic perspectives affect our methodology and metaphilosophy or philosophy of philosophy? This volume presents and debates answers to these questions, which deserve to be addressed in their own right and not just as an adjunct to other discussions. The contributors of this volume provide diverse answers based on historical references, stretching from ancient philosophy to the most current debates, and also refer to various philosophical sub-disciplines.",
+      "cited_by_count": 22,
+      "type": "book",
+      "source": {
+        "name": "British Academy eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4240977143"
+    },
+    {
+      "openalex_id": "W3109496103",
+      "doi": "10.1007/s11229-020-02934-3",
+      "title": "Decision-Based Epistemology: sketching a systematic framework of Feyerabend\u2019s metaphilosophy",
+      "authors": [
+        {
+          "name": "Daniel Kuby",
+          "openalex_id": "A5076361294",
+          "orcid": "https://orcid.org/0000-0002-7779-7500",
+          "institutions": [
+            "University of Konstanz"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-27",
+      "abstract": null,
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11229-020-02934-3.pdf"
+      },
+      "topics": [
+        "Philosophy, Science, and History",
+        "Philosophy and History of Science",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 84,
+      "url": "https://openalex.org/W3109496103"
+    },
+    {
+      "openalex_id": "W2573188387",
+      "doi": "10.1111/meta.12228",
+      "title": "On the Domain of Metaphilosophy",
+      "authors": [
+        {
+          "name": "Bob Plant",
+          "openalex_id": "A5038212402",
+          "institutions": [
+            "University of Aberdeen"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "Abstract This article argues for four interrelated claims: (i) Metaphilosophy is not one sub\u2010discipline of philosophy, nor is it restricted to questions of methodology. Rather, metaphilosophical inquiry encompasses the general background conditions of philosophical practice. (ii) These background conditions are of various sorts, not only those routinely considered \u201cphilosophical\u201d but also those considered biographical, historical, and sociological. Accordingly, we should be wary of the customary distinction between what is proper (internal) and merely contingent (external) to philosophy. (iii) \u201cWhat is philosophy?\u201d is best understood as a practical question concerning how members of different philosophical sub\u2010communities identify what is pertinent to their respective activities and self\u2010conceptions. (iv) Given (i)\u2013(iii), understanding what philosophy is requires us to take more seriously the social\u2010institutional dimension of contemporary philosophical practice.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Metaphilosophy",
+        "type": "journal",
+        "issn": [
+          "0026-1068",
+          "1467-9973"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Philosophy, Science, and History",
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2573188387"
+    },
+    {
+      "openalex_id": "W4384347610",
+      "doi": "10.18524/2410-2601.2022.2(38).283059",
+      "title": "METHODOLOGICAL NOTES ON METAPHILOSOPHY AS A PHILOSOPHICAL DISCIPLINE",
+      "authors": [
+        {
+          "name": "Oleksii Rodgero",
+          "openalex_id": "A5092473522"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-18",
+      "abstract": "The paper deals with the explanation of the subject of metaphilosophy as a philosophical science. The main themes and problems of metaphilosophy are formulated, and its interrelation with other philosophical subjects and fields of research is clarified. The author proposes some methodological principles that are essential in dealing with such an important problem of metaphilosophy as the relationship between a philosophical doctrine and the life of the thinker who created it. This problem is examined through the life and philosophical doctrine of G. Skovoroda. The paper also identifies certain types (dimensions) of determination of the genesis of philosophical thought, and classifies particular cases associated with different degrees of relevance to the problem of \u201cphilosophical doctrine and the life of the philosopher\u201d.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Doxa",
+        "type": "journal",
+        "issn": [
+          "2410-2601"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://doksa.onu.edu.ua/article/download/283059/278465"
+      },
+      "topics": [
+        "Security, Politics, and Digital Transformation",
+        "Cultural, Linguistic, Economic Studies",
+        "Scientific Research and Philosophical Inquiry"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4384347610"
+    },
+    {
+      "openalex_id": "W2784337528",
+      "doi": "10.4324/9781315301594-13",
+      "title": "Wittgensteinian \u2018Therapy\u2019, Experimental Philosophy, and Metaphilosophical Naturalism",
+      "authors": [
+        {
+          "name": "Eugen Fischer",
+          "openalex_id": "A5063007317",
+          "orcid": "https://orcid.org/0000-0003-2088-1610"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-17",
+      "abstract": "An important strand of current experimental philosophy promotes a new kind of methodological naturalism. This chapter argues that this new 'metaphilosophical naturalism' is fundamentally consistent with key tenets of Wittgenstein's metaphilosophy and can provide empirical foundations for therapeutic conceptions of philosophy. Metaphilosophical naturalism invites us to contribute to the resolution of philosophical problems about X by turning to scientific findings about the way we think about X-in general or when doing philosophy. This new naturalism encourages us to use resources from psychology that can empirically vindicate precisely some of the most controversial aspects of Wittgenstein's conception of philosophy: They can establish the need, and provide key tools, for something worth calling 'therapy', in philosophy. As 'pudding proof', this chapter shows how methods and findings from psycholinguistics motivate and facilitate a therapeutic approach to a characteristically philosophical problem: 'the problem of perception'.",
+      "cited_by_count": 8,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Wittgensteinian philosophy and applications"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2784337528"
+    },
+    {
+      "openalex_id": "W2575293069",
+      "doi": "10.1080/00048402.2016.1273959",
+      "title": "Knowledge Is Not Enough",
+      "authors": [
+        {
+          "name": "Jennifer Nado",
+          "openalex_id": "A5005648700",
+          "orcid": "https://orcid.org/0000-0003-1680-2975",
+          "institutions": [
+            "Lingnan University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-15",
+      "abstract": "Discussions of the role of intuition in philosophical methodology typically proceed within the knowledge-centred framework of mainstream analytic epistemology. Either implicitly or explicitly, the primary questions in metaphilosophy frequently seem to revolve around whether or not intuition is a source of justification, evidence, or knowledge. I argue that this Standard Framework is inappropriate for methodological purposes: the epistemic standards that govern inquiry in philosophy are more stringent than the standards that govern everyday cognition. The experimentalist should instead view her criticisms as analogous to calls for the use of double-blinding in science.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Australasian Journal of Philosophy",
+        "type": "journal",
+        "issn": [
+          "0004-8402",
+          "1470-6828",
+          "1471-6828"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and History of Science",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W2575293069"
+    },
+    {
+      "openalex_id": "W2554467860",
+      "doi": "10.1098/rsta.2016.0360",
+      "title": "What is data ethics?",
+      "authors": [
+        {
+          "name": "Luciano Floridi",
+          "openalex_id": "A5046574356",
+          "orcid": "https://orcid.org/0000-0002-5444-2280",
+          "institutions": [
+            "Turing Institute",
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Mariarosaria Taddeo",
+          "openalex_id": "A5003032735",
+          "orcid": "https://orcid.org/0000-0002-1181-649X",
+          "institutions": [
+            "University of Oxford",
+            "Turing Institute"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-15",
+      "abstract": "This theme issue has the founding ambition of landscaping data ethics as a new branch of ethics that studies and evaluates moral problems related to data (including generation, recording, curation, processing, dissemination, sharing and use), algorithms (including artificial intelligence, artificial agents, machine learning and robots) and corresponding practices (including responsible innovation, programming, hacking and professional codes), in order to formulate and support morally good solutions (e.g. right conducts or right values). Data ethics builds on the foundation provided by computer and information ethics but, at the same time, it refines the approach endorsed so far in this research field, by shifting the level of abstraction of ethical enquiries, from being information-centric to being data-centric. This shift brings into focus the different moral dimensions of all kinds of data, even data that never translate directly into information but can be used to support actions or generate behaviours, for example. It highlights the need for ethical analyses to concentrate on the content and nature of computational operations\u2014the interactions among hardware, software and data\u2014rather than on the variety of digital technologies that enable them. And it emphasizes the complexity of the ethical challenges posed by data science. Because of such complexity, data ethics should be developed from the start as a macroethics, that is, as an overall framework that avoids narrow, ad hoc approaches and addresses the ethical impact and implications of data science and its applications within a consistent, holistic and inclusive framework. Only as a macroethics will data ethics provide solutions that can maximize the value of data science for our societies, for all of us and for our environments. This article is part of the themed issue \u2018The ethical impact of data science\u2019.",
+      "cited_by_count": 513,
+      "type": "article",
+      "source": {
+        "name": "Philosophical Transactions of the Royal Society A Mathematical Physical and Engineering Sciences",
+        "type": "journal",
+        "issn": [
+          "1364-503X",
+          "1471-2962"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://royalsocietypublishing.org/doi/pdf/10.1098/rsta.2016.0360"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Ethics in Clinical Research",
+        "Privacy-Preserving Technologies in Data"
+      ],
+      "referenced_works_count": 24,
+      "url": "https://openalex.org/W2554467860"
+    },
+    {
+      "openalex_id": "W3205797577",
+      "doi": "10.5922/0207-6918-2021-3-4",
+      "title": "Transcendental Philosophy as a Research Programme",
+      "authors": [
+        {
+          "name": "Michael Lewin",
+          "openalex_id": "A5003455507",
+          "orcid": "https://orcid.org/0000-0002-5097-5725",
+          "institutions": [
+            "University of Wuppertal",
+            "University of Koblenz and Landau",
+            "Immanuel Kant Baltic Federal University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Transcendental philosophy was not born like Athena out of Zeus\u2019s head, mature and in full armour from the very beginning. That is why in both prefaces to the Critique of Pure Reason (1781 and 1787) Kant introduces the concept of transcendental philosophy as an \u201cidea.\u201d The idea understood architectonically develops slowly and only gradually acquires a definite form. As witnessed by the works of Kant himself and of his predecessors and followers, the idea of transcendental philosophy has undergone a series of changes and adjustments compared to the initial plan. In this context, my goal is not simply exegesis and historical investigation of transcendental philosophy, but also to look at it from a systematic and methodological perspective. I examine the concept of transcendental philosophy from the viewpoint of programmatic metaphilosophy. The first part discusses programmatics as a distinct subsection of metaphilosophy. I argue that Kant\u2019s architectonic methodology and the methodology of Lakatos can be used to understand the inception, development and degradation of philosophical systems. In the second part I look at the project of transcendental philosophy and the stages of its development from the standpoint of architectonics. The third part shows that Lakatos\u2019s methodology can provide a detailed insight into the elements of transcendental philosophy, a clear idea of its logic and identify the component parts that can be improved and developed. In spite of the different levels of detailing and epistemological prerequisites, the methodologies of Kant and Lakatos can be combined to achieve a metaphilosophically informed and progressive understanding of philosophical projects.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Kantian journal",
+        "type": "journal",
+        "issn": [
+          "0207-6918",
+          "2310-3701"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.5922/0207-6918-2021-3-4"
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Kantian Philosophy and Modern Interpretations",
+        "Philosophy, Science, and History"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W3205797577"
+    },
+    {
+      "openalex_id": "W4312795483",
+      "doi": "10.5771/9783465145981",
+      "title": "The methods of metaphilosophy",
+      "authors": [
+        {
+          "name": "Jelscha Schmid",
+          "openalex_id": "A5071884983",
+          "orcid": "https://orcid.org/0000-0002-2397-1585"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "On the basis of an examination of Kant's, Maimon's and Schelling's metaphilosophies, this book investigates how, starting from Kant's diagnosis of a \"groping metaphysics\", a philosophical research program, whose goal is to elucidate the nature and method of philosophy itself, develops. What unites their projects is the thesis that philosophy must begin with an investigation of its own nature, and that this investigation, because of its special object, must be accompanied by a reflection on its method. To this end, their methods are discussed on the assumption that these methods arise from a particular engagement with the theories and practices of the 18th century sciences. Finally, this discussion provides the basis for showing in what ways philosophical experiments, fictions, or models offer methodological solutions to the problem of developing a scientific metaphysics.",
+      "cited_by_count": 5,
+      "type": "book",
+      "source": {
+        "name": "Klostermann eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4312795483"
+    },
+    {
+      "openalex_id": "W4407134070",
+      "doi": "10.1016/j.metip.2025.100178",
+      "title": "Critical dialectical pluralism as a transformative multidimensional metaparadigm and metaphilosophy for mixed methods research",
+      "authors": [
+        {
+          "name": "Anthony J. Onwuegbuzie",
+          "openalex_id": "A5011074768",
+          "orcid": "https://orcid.org/0000-0002-4569-5796",
+          "institutions": [
+            "University of South Africa",
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Sandra Schamroth Abrams",
+          "openalex_id": "A5088388092",
+          "orcid": "https://orcid.org/0000-0003-0535-9170",
+          "institutions": [
+            "University of Sheffield",
+            "University of South Africa"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-04",
+      "abstract": null,
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Methods in Psychology",
+        "type": "journal",
+        "issn": [
+          "2590-2601"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.metip.2025.100178"
+      },
+      "topics": [
+        "Evaluation and Performance Assessment"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W4407134070"
+    },
+    {
+      "openalex_id": "W2067549128",
+      "doi": "10.1353/lib.2015.0014",
+      "title": "What Is Disinformation?",
+      "authors": [
+        {
+          "name": "Don Fallis",
+          "openalex_id": "A5032611033",
+          "orcid": "https://orcid.org/0000-0003-1385-8009"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-19",
+      "abstract": "Prototypical instances of disinformation include deceptive advertising (in business and in politics), government propaganda, doctored photographs, forged documents, fake maps, internet frauds, fake websites, and manipulated Wikipedia entries. Disinformation can cause significant harm if people are misled by it. In order to address this critical threat to information quality, we first need to understand exactly what disinformation is. This paper surveys the various analyses of this concept that have been proposed by information scientists and philosophers (most notably, Luciano Floridi). It argues that these analyses are either too broad (that is, that they include things that are not disinformation), or too narrow (they exclude things that are disinformation), or both. Indeed, several of these analyses exclude important forms of disinformation, such as true disinformation, visual disinformation, side-effect disinformation, and adaptive disinformation. After considering the shortcomings of these analyses, the paper argues that disinformation is misleading information that has the function of misleading. Finally, in addition to responding to Floridi\u2019s claim that such a precise analysis of disinformation is not necessary, it briefly discusses how this analysis can help us develop techniques for detecting disinformation and policies for deterring its spread.",
+      "cited_by_count": 465,
+      "type": "article",
+      "source": {
+        "name": "Library trends",
+        "type": "journal",
+        "issn": [
+          "0024-2594",
+          "1559-0682"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://muse.jhu.edu/pub/1/article/579342"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Deception detection and forensic psychology",
+        "Spam and Phishing Detection"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W2067549128"
+    },
+    {
+      "openalex_id": "W2945587222",
+      "doi": "10.5840/eps201956240",
+      "title": "Normativity, Expertise and Epistemological Paternalism in the Philosophy of Science",
+      "authors": [
+        {
+          "name": "Alina O. Kostina",
+          "openalex_id": "A5059155449"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "For almost 50 years the journal Metaphilosophy has been publishing research on a wide range of philosophical issues from the fundamental questions of ontology, epistemology and the philosophy of science to applied studies on ethics, technology and STS. The following review focuses on a number of key questions that have become the stumbling block for investigations in epistemology, philosophy and methodology of science and STS. The spotlight here is on the issues of reestablishment of normativity in philosophy of science, related to the PSP turn; new perspectives on the \u201carmchair philosophy\u201d and the ex cathedra principle; the misuse of scientific data by the philosophers of science; experimental philosophy and the \u201cundermined\u201d authority of philosophical expertise; and also we\u2019ll find out how epistemic paternalism may become a virtue of research practice.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Epistemology & Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "1811-833X",
+          "2311-7133"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://doi.org/10.5840/eps201956240"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Space Science and Extraterrestrial Life",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2945587222"
+    },
+    {
+      "openalex_id": "W2767787225",
+      "doi": "10.1007/978-3-319-65460-7_6",
+      "title": "Knowledge Second (for Metaphilosophy)",
+      "authors": [
+        {
+          "name": "Jennifer Nado",
+          "openalex_id": "A5005648700",
+          "orcid": "https://orcid.org/0000-0003-1680-2975",
+          "institutions": [
+            "University of Hong Kong"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W2767787225"
+    },
+    {
+      "openalex_id": "W4236399381",
+      "doi": "10.1093/acprof:oso/9780198715702.003.0019",
+      "title": "Concluding Meditation",
+      "authors": [
+        {
+          "name": "Peter van Inwagen",
+          "openalex_id": "A5053749971"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-05",
+      "abstract": "Abstract In this final chapter, Peter van Inwagen responds to the essays of Louise Antony, David Chalmers, John Keller, Thomas Kelly and Sarah McGrath, Michael Loux, Laurie Paul, and Alex Rosenberg. These responses clarify (and in some cases modify) van Inwagen\u2019s views, and give a nice indication of where the next rounds of debate will be conducted on the problem of evil, metaphilosophy, constituent ontology, and the compatibility of theism and evolution. Van Inwagen\u2019s responses also provide helpful methodological insight into his approach to philosophy in general, and to ontology, the philosophy of religion, and philosophical success and failure in particular.",
+      "cited_by_count": 1,
+      "type": "book-chapter",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religious Studies and Spiritual Practices",
+        "Historical and Architectural Studies",
+        "Historical Astronomy and Related Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4236399381"
+    },
+    {
+      "openalex_id": "W2797413227",
+      "doi": "10.1007/s13164-018-0400-9",
+      "title": "Estimating the Reproducibility of Experimental Philosophy",
+      "authors": [
+        {
+          "name": "Flori\u00e1n Cova",
+          "openalex_id": "A5079555559",
+          "orcid": "https://orcid.org/0000-0001-9360-8290",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "Brent Strickland",
+          "openalex_id": "A5041589142",
+          "orcid": "https://orcid.org/0000-0002-7573-3722",
+          "institutions": [
+            "Centre National de la Recherche Scientifique",
+            "Institut Jean Nicod"
+          ]
+        },
+        {
+          "name": "Angela Abatista",
+          "openalex_id": "A5052309565",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "Aur\u00e9lien Allard",
+          "openalex_id": "A5088419067",
+          "orcid": "https://orcid.org/0000-0001-9655-3715",
+          "institutions": [
+            "Universit\u00e9 Paris 8"
+          ]
+        },
+        {
+          "name": "James Andow",
+          "openalex_id": "A5089236663",
+          "orcid": "https://orcid.org/0000-0002-5760-0475",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Mario Attie",
+          "openalex_id": "A5069514187",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "James R. Beebe",
+          "openalex_id": "A5044677058",
+          "orcid": "https://orcid.org/0000-0001-8282-4297",
+          "institutions": [
+            "University at Buffalo, State University of New York"
+          ]
+        },
+        {
+          "name": "Renatas Berni\u00fbnas",
+          "openalex_id": "A5036954396",
+          "orcid": "https://orcid.org/0000-0002-4720-8146",
+          "institutions": [
+            "Vilnius University"
+          ]
+        },
+        {
+          "name": "Jordane Boudesseul",
+          "openalex_id": "A5058011008",
+          "orcid": "https://orcid.org/0000-0001-7920-4812",
+          "institutions": [
+            "Universidad de Lima"
+          ]
+        },
+        {
+          "name": "Matteo Colombo",
+          "openalex_id": "A5101671330",
+          "orcid": "https://orcid.org/0009-0009-0194-6010",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Fiery Cushman",
+          "openalex_id": "A5066361095",
+          "orcid": "https://orcid.org/0000-0002-6929-9982",
+          "institutions": [
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Rodrigo D\u00edaz",
+          "openalex_id": "A5006743236",
+          "orcid": "https://orcid.org/0000-0002-1709-5806",
+          "institutions": [
+            "University of Bern"
+          ]
+        },
+        {
+          "name": "Noah N. N. van Dongen",
+          "openalex_id": "A5077364750",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Vilius Dranseika",
+          "openalex_id": "A5037514928",
+          "orcid": "https://orcid.org/0000-0002-1144-1624",
+          "institutions": [
+            "Vilnius University"
+          ]
+        },
+        {
+          "name": "Brian D. Earp",
+          "openalex_id": "A5058038900",
+          "orcid": "https://orcid.org/0000-0001-9691-2888",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "Antonio Gait\u00e1n Torres",
+          "openalex_id": "A5048253221",
+          "orcid": "https://orcid.org/0000-0001-6684-4255",
+          "institutions": [
+            "Universidad Carlos III de Madrid"
+          ]
+        },
+        {
+          "name": "Ivar R. Hannikainen",
+          "openalex_id": "A5041233682",
+          "orcid": "https://orcid.org/0000-0003-0623-357X",
+          "institutions": [
+            "Pontifical Catholic University of Rio de Janeiro"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 V. Hern\u00e1ndez\u2010Conde",
+          "openalex_id": "A5074152251",
+          "orcid": "https://orcid.org/0000-0002-8502-6570",
+          "institutions": [
+            "University of the Basque Country"
+          ]
+        },
+        {
+          "name": "Wenjia Hu",
+          "openalex_id": "A5055523841",
+          "institutions": [
+            "Lawrence University"
+          ]
+        },
+        {
+          "name": "Fran\u00e7ois Jaquet",
+          "openalex_id": "A5091775858",
+          "orcid": "https://orcid.org/0000-0001-8254-4471",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "Kareem Khalifa",
+          "openalex_id": "A5073973362",
+          "institutions": [
+            "Middlebury College"
+          ]
+        },
+        {
+          "name": "Hanna Kim",
+          "openalex_id": "A5100455101",
+          "orcid": "https://orcid.org/0000-0002-0934-4411",
+          "institutions": [
+            "Washington and Jefferson College"
+          ]
+        },
+        {
+          "name": "Markus Kneer",
+          "openalex_id": "A5022593047",
+          "orcid": "https://orcid.org/0000-0002-4223-0715",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Joshua Knobe",
+          "openalex_id": "A5047857923",
+          "orcid": "https://orcid.org/0000-0003-0733-3775",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "Mikl\u00f3s K\u00fcrthy",
+          "openalex_id": "A5029581025",
+          "orcid": "https://orcid.org/0000-0002-7940-845X",
+          "institutions": [
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Anthony Lantian",
+          "openalex_id": "A5060427483",
+          "orcid": "https://orcid.org/0000-0001-7855-3914",
+          "institutions": [
+            "Universit\u00e9 Paris Nanterre"
+          ]
+        },
+        {
+          "name": "Shen\u2010yi Liao",
+          "openalex_id": "A5075682462",
+          "orcid": "https://orcid.org/0000-0003-3086-1453",
+          "institutions": [
+            "University of Puget Sound"
+          ]
+        },
+        {
+          "name": "\u00c9douard Machery",
+          "openalex_id": "A5067236822",
+          "orcid": "https://orcid.org/0000-0002-9944-6138",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Tania Moerenhout",
+          "openalex_id": "A5038252890",
+          "orcid": "https://orcid.org/0000-0002-6742-5260",
+          "institutions": [
+            "Ghent University"
+          ]
+        },
+        {
+          "name": "Christian Mott",
+          "openalex_id": "A5002550533",
+          "orcid": "https://orcid.org/0000-0002-9861-3176",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "Mark Phelan",
+          "openalex_id": "A5036397371",
+          "orcid": "https://orcid.org/0000-0002-9155-7183",
+          "institutions": [
+            "Lawrence University"
+          ]
+        },
+        {
+          "name": "Jonathan Phillips",
+          "openalex_id": "A5038492810",
+          "orcid": "https://orcid.org/0000-0002-9536-1794",
+          "institutions": [
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Navin Rambharose",
+          "openalex_id": "A5025911127",
+          "institutions": [
+            "Lawrence University"
+          ]
+        },
+        {
+          "name": "Kevin Reuter",
+          "openalex_id": "A5022641523",
+          "orcid": "https://orcid.org/0000-0003-2404-1619",
+          "institutions": [
+            "University of Bern"
+          ]
+        },
+        {
+          "name": "Felipe Romero",
+          "openalex_id": "A5061564106",
+          "orcid": "https://orcid.org/0000-0002-0858-7243",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Paulo Sousa",
+          "openalex_id": "A5036609288",
+          "orcid": "https://orcid.org/0000-0002-7681-855X",
+          "institutions": [
+            "Queen's University Belfast"
+          ]
+        },
+        {
+          "name": "Jan Sprenger",
+          "openalex_id": "A5078348621",
+          "orcid": "https://orcid.org/0000-0003-0083-9685",
+          "institutions": [
+            "University of Turin"
+          ]
+        },
+        {
+          "name": "Emile Thalabard",
+          "openalex_id": "A5006163871"
+        },
+        {
+          "name": "Kevin Tobia",
+          "openalex_id": "A5066227262",
+          "orcid": "https://orcid.org/0000-0003-3447-9825",
+          "institutions": [
+            "Yale University"
+          ]
+        },
+        {
+          "name": "Hugo Viciana",
+          "openalex_id": "A5007834276",
+          "orcid": "https://orcid.org/0000-0002-4569-3635",
+          "institutions": [
+            "Instituto de Estudios Sociales Avanzados"
+          ]
+        },
+        {
+          "name": "Daniel A. Wilkenfeld",
+          "openalex_id": "A5053272505",
+          "orcid": "https://orcid.org/0000-0003-2600-3237",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Xiang Zhou",
+          "openalex_id": "A5049279412",
+          "orcid": "https://orcid.org/0000-0002-0736-3651",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-14",
+      "abstract": null,
+      "cited_by_count": 180,
+      "type": "article",
+      "source": {
+        "name": "Review of Philosophy and Psychology",
+        "type": "journal",
+        "issn": [
+          "1878-5158",
+          "1878-5166"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13164-018-0400-9.pdf"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Decision-Making and Behavioral Economics",
+        "Experimental Behavioral Economics Studies"
+      ],
+      "referenced_works_count": 105,
+      "url": "https://openalex.org/W2797413227"
+    },
+    {
+      "openalex_id": "W2945520935",
+      "doi": "10.5840/eps201956222",
+      "title": "Metaphilosophy: History and Perspectives",
+      "authors": [
+        {
+          "name": "Vadim V. Vasilyev",
+          "openalex_id": "A5042501182"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "In this paper I discuss a prehistory of the recent metaphilosophical research and provide an overview of its most important areas. I review the ways of understanding of philosophy by the authors of the Early Modernity and contemporary continental philosophers and outline a trajectory of metaphilosophical discussions in analytic philosophy of 20th century. I try to show that the recent surge of metaphilosophy research in it could be explained by a search for a new identity of analytic philosophy after wide disappointment in the \u201clinguistic turn,\u201d as well as after criticism of Quine and his followers of various aspects of the common method of conceptual analysis, and expansion of the field of inquiry. I argue that contemporary analytic philosophy is much closer to the classical and modern tradition than to the early analytic philosophy. And the most important question for contemporary metaphilosophers seems to be a question about possible substitutes of an old-fashioned conceptual analysis. Some authors propose to get rid of armchair methods at all and follow experimental line of research. This, however, could be destructive to the philosophy as a separate discipline. That\u2019s why it is important to pay utmost attention to those philosophers who try to save armchair philosophy. As Timothy Williamson is one of the most interesting authors working in this vein, I asses his role in the recent metaphilosophical research. I give a brief review of his book \u201cDoing Philosophy\u201d (2018) and draw attention to the fact that its main ideas are briefly expressed in his paper \u201cArmchair Philosophy\u201d, published in this issue of the journal. I claim that the importance of Timothy Williamson\u2019s work is best explained by its role in realizing that philosophers now have to make a hard choice between dissolving philosophical methodology in methods of experimental sciences and trying to find way of justification of armchair philosophy.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Epistemology & Philosophy of Science",
+        "type": "journal",
+        "issn": [
+          "1811-833X",
+          "2311-7133"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.5840/eps201956222"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophical Ethics and Theory",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2945520935"
+    },
+    {
+      "openalex_id": "W3110910775",
+      "doi": "10.1016/j.jbusres.2020.11.030",
+      "title": "Artificial intelligence for human flourishing \u2013 Beyond principles for machine learning",
+      "authors": [
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "De Montfort University"
+          ]
+        },
+        {
+          "name": "Andreas G. Andreou",
+          "openalex_id": "A5057789499",
+          "orcid": "https://orcid.org/0000-0003-3826-600X",
+          "institutions": [
+            "Caritas Cyprus"
+          ]
+        },
+        {
+          "name": "Philip Brey",
+          "openalex_id": "A5085078000",
+          "orcid": "https://orcid.org/0000-0002-4789-4588",
+          "institutions": [
+            "University of Twente"
+          ]
+        },
+        {
+          "name": "Tally Hatzakis",
+          "openalex_id": "A5027379595",
+          "orcid": "https://orcid.org/0000-0002-6014-8117",
+          "institutions": [
+            "Trilateral Research & Consulting"
+          ]
+        },
+        {
+          "name": "A. S. Kirichenko",
+          "openalex_id": "A5057063941",
+          "orcid": "https://orcid.org/0000-0002-7303-4098",
+          "institutions": [
+            "F-Secure (Finland)"
+          ]
+        },
+        {
+          "name": "Kevin Macnish",
+          "openalex_id": "A5084675784",
+          "orcid": "https://orcid.org/0000-0003-4510-3049",
+          "institutions": [
+            "University of Twente"
+          ]
+        },
+        {
+          "name": "St\u00e9phanie Laulh\u00e9 Shaelou",
+          "openalex_id": "A5032233574",
+          "orcid": "https://orcid.org/0000-0002-3221-5116",
+          "institutions": [
+            "University of Central Lancashire Cyprus"
+          ]
+        },
+        {
+          "name": "Alpesh Patel",
+          "openalex_id": "A5080636879",
+          "orcid": "https://orcid.org/0000-0003-3956-9862",
+          "institutions": [
+            "F-Secure (Finland)"
+          ]
+        },
+        {
+          "name": "Mark Ryan",
+          "openalex_id": "A5110616325",
+          "orcid": "https://orcid.org/0000-0003-4850-0111",
+          "institutions": [
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "David Wright",
+          "openalex_id": "A5103019983",
+          "orcid": "https://orcid.org/0000-0002-7867-9354",
+          "institutions": [
+            "Trilateral Research & Consulting"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-16",
+      "abstract": null,
+      "cited_by_count": 163,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Research",
+        "type": "journal",
+        "issn": [
+          "0148-2963",
+          "1873-7978"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0148296320307839?via%3Dihub"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W3110910775"
+    },
+    {
+      "openalex_id": "W2484983710",
+      "doi": "10.3389/fpsyg.2016.01090",
+      "title": "Cultural Affordances: Scaffolding Local Worlds Through Shared Intentionality and Regimes of Attention",
+      "authors": [
+        {
+          "name": "Maxwell J. D. Ramstead",
+          "openalex_id": "A5010108818",
+          "orcid": "https://orcid.org/0000-0002-1477-8177",
+          "institutions": [
+            "McGill University"
+          ]
+        },
+        {
+          "name": "Samuel P. L. Veissi\u00e8re",
+          "openalex_id": "A5017587005",
+          "orcid": "https://orcid.org/0000-0002-1158-2347",
+          "institutions": [
+            "University of Johannesburg",
+            "McGill University"
+          ]
+        },
+        {
+          "name": "Laurence J. Kirmayer",
+          "openalex_id": "A5054510055",
+          "orcid": "https://orcid.org/0000-0002-6228-1739",
+          "institutions": [
+            "McGill University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-07-26",
+      "abstract": "In this paper we outline a framework for the study of the mechanisms involved in the engagement of human agents with cultural affordances. Our aim is to better understand how culture and context interact with human biology to shape human behavior, cognition, and experience. We attempt to integrate several related approaches in the study of the embodied, cognitive, and affective substrates of sociality and culture and the sociocultural scaffolding of experience. The integrative framework we propose bridges cognitive and social sciences to provide (i) an expanded concept of 'affordance' that extends to sociocultural forms of life, and (ii) a multilevel account of the socioculturally scaffolded forms of affordance learning and the transmission of affordances in patterned sociocultural practices and regimes of shared attention. This framework provides an account of how cultural content and normative practices are built on a foundation of contentless basic mental processes that acquire content through immersive participation of the agent in social practices that regulate joint attention and shared intentionality.",
+      "cited_by_count": 411,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2016.01090/pdf"
+      },
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Action Observation and Synchronization",
+        "Language and cultural evolution"
+      ],
+      "referenced_works_count": 193,
+      "url": "https://openalex.org/W2484983710"
+    },
+    {
+      "openalex_id": "W3026607820",
+      "doi": "10.1108/jices-12-2019-0138",
+      "title": "Artificial intelligence ethics guidelines for developers and users: clarifying their content and normative implications",
+      "authors": [
+        {
+          "name": "Mark Ryan",
+          "openalex_id": "A5110616325",
+          "orcid": "https://orcid.org/0000-0003-4850-0111",
+          "institutions": [
+            "KTH Royal Institute of Technology"
+          ]
+        },
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "De Montfort University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-09",
+      "abstract": "Purpose The purpose of this paper is clearly illustrate this convergence and the prescriptive recommendations that such documents entail. There is a significant amount of research into the ethical consequences of artificial intelligence (AI). This is reflected by many outputs across academia, policy and the media. Many of these outputs aim to provide guidance to particular stakeholder groups. It has recently been shown that there is a large degree of convergence in terms of the principles upon which these guidance documents are based. Despite this convergence, it is not always clear how these principles are to be translated into practice. Design/methodology/approach In this paper, the authors move beyond the high-level ethical principles that are common across the AI ethics guidance literature and provide a description of the normative content that is covered by these principles. The outcome is a comprehensive compilation of normative requirements arising from existing guidance documents. This is not only required for a deeper theoretical understanding of AI ethics discussions but also for the creation of practical and implementable guidance for developers and users of AI. Findings In this paper, the authors therefore provide a detailed explanation of the normative implications of existing AI ethics guidelines but directed towards developers and organisational users of AI. The authors believe that the paper provides the most comprehensive account of ethical requirements in AI currently available, which is of interest not only to the research and policy communities engaged in the topic but also to the user communities that require guidance when developing or deploying AI systems. Originality/value The authors believe that they have managed to compile the most comprehensive document collecting existing guidance which can guide practical action but will hopefully also support the consolidation of the guidelines landscape. The authors\u2019 findings should also be of academic interest and inspire philosophical research on the consistency and justification of the various normative statements that can be found in the literature.",
+      "cited_by_count": 255,
+      "type": "article",
+      "source": {
+        "name": "Journal of Information Communication and Ethics in Society",
+        "type": "journal",
+        "issn": [
+          "1477-996X",
+          "1758-8871"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JICES-12-2019-0138/full/pdf?title=artificial-intelligence-ethics-guidelines-for-developers-and-users-clarifying-their-content-and-normative-implications"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W3026607820"
+    },
+    {
+      "openalex_id": "W2803098389",
+      "doi": "10.5772/intechopen.70628",
+      "title": "Philosophy and Paradigm of Scientific Research",
+      "authors": [
+        {
+          "name": "Pranas \u017dukauskas",
+          "openalex_id": "A5030276776"
+        },
+        {
+          "name": "Jolita Vveinhardt",
+          "openalex_id": "A5071215246",
+          "orcid": "https://orcid.org/0000-0001-6231-9402"
+        },
+        {
+          "name": "Regina Andriukaitien\u0117",
+          "openalex_id": "A5037668969",
+          "orcid": "https://orcid.org/0000-0002-0691-7333"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-18",
+      "abstract": "Before carrying out the empirical analysis of the role of management culture in corporate social responsibility, identification of the philosophical approach and the paradigm on which the research carried out is based is necessary. Therefore, this chapter deals with the philosophical systems and paradigms of scientific research, the epistemology, evaluating understanding and application of various theories and practices used in the scientific research. The key components of the scientific research paradigm are highlighted. Theories on the basis of which this research was focused on identification of the level of development of the management culture in order to implement corporate social responsibility are identified, and the stages of its implementation are described.",
+      "cited_by_count": 134,
+      "type": "book-chapter",
+      "source": {
+        "name": "InTech eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.intechopen.com/citation-pdf-url/58890"
+      },
+      "topics": [
+        "Management Theory and Practice",
+        "Ethics in Business and Education",
+        "Educational Methods and Teacher Development"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W2803098389"
+    },
+    {
+      "openalex_id": "W3164960502",
+      "doi": "10.1007/s10551-021-04843-y",
+      "title": "Leveraging Artificial Intelligence in Marketing for Social Good\u2014An Ethical Perspective",
+      "authors": [
+        {
+          "name": "Erik Hermann",
+          "openalex_id": "A5043199158",
+          "orcid": "https://orcid.org/0000-0003-0895-3562",
+          "institutions": [
+            "Innovations for High Performance Microelectronics"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-26",
+      "abstract": "Abstract Artificial intelligence (AI) is (re)shaping strategy, activities, interactions, and relationships in business and specifically in marketing. The drawback of the substantial opportunities AI systems and applications (will) provide in marketing are ethical controversies. Building on the literature on AI ethics, the authors systematically scrutinize the ethical challenges of deploying AI in marketing from a multi-stakeholder perspective. By revealing interdependencies and tensions between ethical principles, the authors shed light on the applicability of a purely principled, deontological approach to AI ethics in marketing. To reconcile some of these tensions and account for the AI-for-social-good perspective, the authors make suggestions of how AI in marketing can be leveraged to promote societal and environmental well-being.",
+      "cited_by_count": 302,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10551-021-04843-y.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 195,
+      "url": "https://openalex.org/W3164960502"
+    },
+    {
+      "openalex_id": "W2295674006",
+      "doi": "10.1007/s10670-015-9791-5",
+      "title": "Explication as a Method of Conceptual Re-engineering",
+      "authors": [
+        {
+          "name": "Georg Brun",
+          "openalex_id": "A5076650239",
+          "orcid": "https://orcid.org/0000-0001-9884-0566",
+          "institutions": [
+            "University of Bern",
+            "Bern University of Applied Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-14",
+      "abstract": null,
+      "cited_by_count": 168,
+      "type": "article",
+      "source": {
+        "name": "Erkenntnis",
+        "type": "journal",
+        "issn": [
+          "0165-0106",
+          "1572-8420"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10670-015-9791-5.pdf"
+      },
+      "topics": [
+        "Philosophy, Science, and History",
+        "Philosophy and History of Science",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W2295674006"
+    },
+    {
+      "openalex_id": "W4388697447",
+      "doi": "10.21146/2072-0726-2023-16-3-55-68",
+      "title": "Metaphilosophy of philosophical \u201cturns\u201d: case study",
+      "authors": [
+        {
+          "name": "Konstantin D. Skripnik",
+          "openalex_id": "A5017469956",
+          "orcid": "https://orcid.org/0000-0002-2150-1571"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "The purpose of the article is to consider the phenomenon of philosophical \u201cturn\u201d in the framework of descriptive metaphilosophy. Using the example of analytical, linguis\u00adtic, pragmatic and ontological turns, an attempt is made to highlight the characteristic fea\u00adtures of \u201cturns\u201d. The author shows that the analytical turn is associated with the develop\u00adment of methods of philosophy, primarily with the diversification of the concept of analy\u00adsis itself. Consideration of the linguistic turn leads to the position that its characterization as a change in the subject of philosophy is not quite adequate \u2013 in fact, it is a change in the methods of philosophical analysis, which leads to the emergence of new problem areas not only in philosophy, but also in linguistics. The pragmatic turn is characterized by emphasizing the role of pragmatism in overcoming the existing opposition of analytic and continental philosophy through the use of both logical and, for example, axiological methods or the \u201cpragmatic principle\u201d. The ontological turn, characteristic of anthropol\u00adogy, the philosophy of technology, as well as for \u201cgeneral\u201d philosophy, is associated with a change in the methods of analysis in the direction of solving the problem of seeing \u201cthings in a new way\u201d and how \u201cthey really are\u201d. The analysis in the case of an ontologi\u00adcal turn is aimed not so much at \u201cmulticulturalism\u201d as at \u201cmulti-naturalism\u201d, at taking into account the active role of the subject and building the research models capable of taking this into account. The final position of the author is that according to which a \u201cturn\u201d is a change in research methods that leads to the formation of a new subject area and the formulation of new problems. They, in turn, stimulate the next \u201cturn\u201d and the de\u00advelopment of new methods and methodologies.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Philosophy Journal",
+        "type": "journal",
+        "issn": [
+          "2072-0726",
+          "2658-4883"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://pj.iphras.ru/article/download/9056/4422"
+      },
+      "topics": [
+        "Philosophical and Historical Studies",
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W4388697447"
+    },
+    {
+      "openalex_id": "W2791815218",
+      "doi": "10.1007/s11229-018-1732-9",
+      "title": "Carnapian explication and ameliorative analysis: a systematic comparison",
+      "authors": [
+        {
+          "name": "Catarina Dutilh Novaes",
+          "openalex_id": "A5026914322",
+          "orcid": "https://orcid.org/0000-0002-7347-3795",
+          "institutions": [
+            "University of Groningen"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-24",
+      "abstract": "A distinction often drawn is one between conservative versus revisionary conceptions of philosophical analysis with respect to commonsensical beliefs and intuitions. This paper offers a comparative investigation of two revisionary methods: Carnapian explication and ameliorative analysis as developed by S. Haslanger. It is argued that they have a number of common features, and in particular that they share a crucial political dimension: they both have the potential to serve as instrument for social reform. Indeed, they may produce improved versions of key concepts of everyday life, for example those pertaining to social categories such as gender and race (among others), which in turn may lead to social change. The systematic comparison of these two frameworks offered here, where similarities as well as differences are discussed, is likely to provide useful guidance to practitioners of both approaches, as it will highlight important aspects of each of them that tend to remain implicit and under-theorized in existing applications of these methodologies to specific questions.",
+      "cited_by_count": 133,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11229-018-1732-9.pdf"
+      },
+      "topics": [
+        "Philosophy and History of Science",
+        "Philosophy, Science, and History",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W2791815218"
+    },
+    {
+      "openalex_id": "W4214900417",
+      "doi": "10.1111/josp.12456",
+      "title": "Neurodiversity, epistemic injustice, and the good human life",
+      "authors": [
+        {
+          "name": "Robert Chapman",
+          "openalex_id": "A5073524010",
+          "orcid": "https://orcid.org/0000-0003-1220-6068",
+          "institutions": [
+            "Sheffield Hallam University"
+          ]
+        },
+        {
+          "name": "Havi Carel",
+          "openalex_id": "A5062294875",
+          "orcid": "https://orcid.org/0000-0002-1260-2362",
+          "institutions": [
+            "University of Bristol"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-01",
+      "abstract": "Autism has typically been framed as inherently harmful and at odds with both subjective happiness and objective flourishing. In recent decades, however, the view of autism as inherently harmful has been challenged by neurodiversity proponents, who draw on social and relational models of disability to reframe the harm autistic people face as arising out of the interaction between being autistic and disabling environments. Here we build on the neurodiversity perspective by arguing that autistic thriving has been rendered both invisible and unthinkable by interlocking forms of testimonial and hermeneutical injustice. On the view we propose, rather than autism being at odds with the possibility of living a good life as such, We argue that our mainstream conceptions of the good life have excluded autistic manifestations of happiness and flourishing. This leads to an epistemic catch-22-like paradoxical situation whereby one can be recognised as autistic or as thriving, but not both. We then propose four ameliorative strategies that support moving towards broader conceptions of the good human life which will allow us to recognise not just autistic, but also other neurodivergent ways, of living a good human life.",
+      "cited_by_count": 169,
+      "type": "article",
+      "source": {
+        "name": "Journal of Social Philosophy",
+        "type": "journal",
+        "issn": [
+          "0047-2786",
+          "1467-9833"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/josp.12456"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W4214900417"
+    },
+    {
+      "openalex_id": "W3033465268",
+      "doi": "10.51291/2377-7478.1527",
+      "title": "Minds without spines: Evolutionarily inclusive animal ethics",
+      "authors": [
+        {
+          "name": "Irina Mikhalevich",
+          "openalex_id": "A5065374720",
+          "orcid": "https://orcid.org/0000-0001-8134-1533",
+          "institutions": [
+            "Rochester Institute of Technology"
+          ]
+        },
+        {
+          "name": "Russell Powell",
+          "openalex_id": "A5080645062",
+          "orcid": "https://orcid.org/0000-0002-9893-1721",
+          "institutions": [
+            "Boston University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "Invertebrate animals are frequently lumped into a single category and denied welfare protections despite their considerable cognitive, behavioral, and evolutionary diversity. Some ethical and policy inroads have been made for cephalopod molluscs and crustaceans, but the vast majority of arthropods, including the insects, remain excluded from moral consideration. We argue that this exclusion is unwarranted given the existing evidence. Anachronistic readings of evolution, which view invertebrates as lower in the scala naturae, continue to influence public policy and common morality. The assumption that small brains are unlikely to support cognition or sentience likewise persists, despite growing evidence that arthropods have converged on cognitive functions comparable to those found in vertebrates. The exclusion of invertebrates is also motivated by cognitive-affective biases that covertly influence moral judgment, as well as a flawed balancing of scientific uncertainty against moral risk. All these factors shape moral attitudes toward basal vertebrates too, but they are particularly acute in the arthropod context. Moral consistency dictates that the same standards of evidence and risk management that justify policy protections for vertebrates also support extending moral consideration to certain invertebrates. Moving beyond a vertebrate-centered conception of welfare can also clarify foundational moral concepts in their own right.",
+      "cited_by_count": 174,
+      "type": "article",
+      "source": {
+        "name": "Animal Sentience",
+        "type": "journal",
+        "issn": [
+          "2377-7478"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.wellbeingintlstudiesrepository.org/cgi/viewcontent.cgi?article=1527&context=animsent"
+      },
+      "topics": [
+        "Human-Animal Interaction Studies",
+        "Neuroendocrine regulation and behavior",
+        "Cephalopods and Marine Biology"
+      ],
+      "referenced_works_count": 207,
+      "url": "https://openalex.org/W3033465268"
+    },
+    {
+      "openalex_id": "W2312612603",
+      "doi": "10.3390/isis-summit-vienna-2015-t9.1004",
+      "title": "Information Science, Transdisciplinarity and Logic",
+      "authors": [
+        {
+          "name": "Joseph E. Brenner",
+          "openalex_id": "A5089796757",
+          "orcid": "https://orcid.org/0000-0003-1568-5180",
+          "institutions": [
+            "Center for Research and Interdisciplinarity"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-01",
+      "abstract": "1. Introduction. Transdisciplinarity and Information Science and Philosophy The emergence of the concept of transdisciplinarity, and the field of transdisciplinary studies has come in response not only to the proliferation of disciplines and the need to manage their practical applications, but to the post-modernist crisis in the related philosophies of science and knowledge in general. Transdisciplinarity is not a new discipline but a philosophical movement which, through its non-standard logic of human experience and human intelligence, can provide a new approach to on-going problems and paradoxes of human thought, science and philosophy. In parallel to the development of transdisciplinarity, the last decade has also seen major developments not only in the information and communications technologies, but in the science and philosophy of information. As I will show, recent theories of information science and philosophy have a close relation to transdisciplinarity. 2. The Philosophy of Information as Metaphilosophy Starting in 1980 from philosophical considerations of the essence of information, Wu Kun, working at the Jiaotong University in Xi'an, China, developed a Philosophy of Information (PI) that included an informational ontology, epistemology and theory of social evolution. For Wu, information is a critical component of all disciplines, beyond the formal content specific to each. A small fraction of this work became available in English in 2010 in a monograph presented at an International Conference on the Foundations of Information Science in Xi'An (\"The Basic Theory of the Philosophy of Information\" (BTPI) [1]). In the conception of Wu Kun, the presence of information throughout existence converts the philosophy of information to a metaphilosophy. The comprehensive nature of such a metaphilosophy establishes a role of those involved in the social and ethical aspects of informational activities. The metaphilosophy of information requires attention to the informational aspects of complex processes as a methodological necessity, in a process that Wu calls Informational Thinking. Informational Thinking (IT), as conceived of by Wu, refers to a way of grasping and describing the essential characteristics and attributes of things by reference to the structure and dynamics of the information involved in their evolution, from their historical origins to future possibilities and probabilities. A summary of his views in English can be found in [2]. At the heart of Wu's theory is a necessarily alternative worldview that emphasizes its relational and process aspects. Information and informational processes, in the conception of Wu Kun, are transdisciplinary and can also be seen to evolve according to the principles of Logic in Reality (see below). This work was completely independent of the concomitant development of a Philosophy of Information by Luciano Floridi [3], working at the University of Hertfordshire in the U.K. The differences in the two approaches are philosophical: Floridi's theory is basically epistemological, seeing the operation of information from the perspective of the human observer-reasoner. The philosophy of information has thus transcended its origins in information and computation science and technology. We move from a quantitative, \"technological\" conception of information to what may fairly be called a transdisciplinary one. It is not only that the philosophy and metaphilosophy of information refer to the standard disciplines that makes them transdisciplinary but that they contain, like transdisciplinarity in general, what lies in, between and beyond the different conceptions of information \u2013 an attitude, a stance and an ethics. The 2nd International Conference on the Philosophy of Information is taking place as a major Stream within this Summit. 3. The Logic of Transdisciplinarity I consider that a more scientific description of the grounding of ethical human ethical behavior is not just an intellectual exercise but a moral obligation. Two related tools now available for this task are thus transdisciplinarity and informational science and philosophy or metaphilosophy as indicated above. A necessary component of both is the non-standard logic of transdisciplinarity originally proposed by Lupasco [4] and up-dated by me and made available to English-language readers as Logic in Reality (LIR) [5]. In the acceptation of Basarab Nicolescu [6], the three 'pillars' of transdisciplinarity are complexity, levels of reality and this logic of the included middle or third. In previous papers, I have also discussed in some detail my interpretation of the Lupasco system as a non-truth-functional, non-linguistic extension of logic to real systems. A key axiom defines the energetic logical relations between the opposing or contradictory elements of real processes. I emphasize that both approaches include the emergence of new states through the principle of dynamic opposition, the dialectic and interactive relation between the dual elements of all real processes. The difference, very briefly, is the following: Nicolescu looks 'upward' toward the transcendental aspects of existence, extending the Lupasco logic to cover the relations between epistemological Subjects and Objects, designated as Transdisciplinary, at higher levels of cognitive reality. LIR focuses on the explication of the evolution of complex real systems, their ontological subjects and objects, and the information processes directly associated with them. This point is critical for the discussion of transdisciplinarity in relation to information science. My view of transdisciplinarity and its relation to a logic is similar to the discussion by Roderick Lawrence in his paper \"Transgression of Disciplinary Frontiers\" [7]. In particular, he cites the statement by Thierry Ramadier that \"the specificity of transdisciplinarity consists in simultaneously integrating two contradictory movements (emphasis mine) of disciplinary logic, that is, the fragmentation of knowledge and the relation between the \"fragments\", in order to do research into the connections possible between the (forms of) knowledge produced\". These are the kinds of movements, including their connections to the fundamental physics of our world, which Logic in Reality can describe. 4. Applications in the Real World 4.1 The Global Sustainable Information Society The concept of Wolfgang Hofkirchner and his associates in Salzburg and (now) Vienna is that the study of the emerging theory of the information society is transdisciplinary. In particular the new field of research in the Information and Communication Technologies (ICTs) and Society is a transdiscipline, as proposed in 2007 [8]. The key aspects of a transdiscipline for Hofkirchner et al. are its scientific status and its potential societal function. As regards the scientific status of the field, a transdiscipline is not a mere combination of existing disciplines but a transgression of their traditional borders and their transformation into something new with its own identity. Its terminology should overarch the terminologies of the single disciplines it departs from. A transdiscipline therefore is expected to bridge several gaps: the gap between the two cultures of (natural) science and social and human sciences as well as the gap between specialists and generalists as well as the gap between applied research and basic research. It is the result of a process that departs from mono- or multidisciplinarity and transcends interdisciplinarity. In this view, it is the role of a transdisciplinary information science [8] to help in bringing about a Global Sustainable Information Society (GSIS) [9]. A GSIS can be defined in a normative way and technology (the ICTs) can be assessed according to how they facilitate society to achieve the GSIS. This is in sharp contrast to either undertaking research solely for reasons of curiosity or being instrumental to whatever is demanded by parts of society. In contrast to the ideology of value-free science, the normative criteria are laid down to which ICTs as well as society should be subject. Hofkirchner argues that transdisciplinary features must inhere to the newly established field of ICTs-and-Society research if it is to 1) be critical of current socio-economic developments; 2) aim for the establishment of a GSIS; 3) tackle the complex problems of society and technology; and 4) use social-scientific and technological, empirical and theoretical methods in a proper way. Logic in Reality (LIR) supports this transdisciplinary view as it involves integrative ICT assessment and design approaches that incorporate a normative view of technology and society. There is no place in LIR for value-free science; the practitioner is always involved logically with the material substrate of his science, whose dynamics and properties he partly shares. As clearly stated by Hofkirchner et al., a normative approach requires \"doing justice\" to what is normative and factual, actual and potential. The term \"transdiscipline\" should be adopted in discussions of transdisciplinarity where it brings out better the issues under discussion. Whether the use of the term conflicts with a definition of transdisciplinarity which is also supposed to be beyond all disciplines is for me a secondary question, perhaps best answered pragmatically by reference to transdisciplinary openness itself. 4.2 The Ethical Dimension and the Environment As discussed above, the link between informational philosophy and transdisciplinarity is the logic of and in reality (LIR), which is, also, the logic of transdisciplinarity. A basic tenet of this logic is a respect for the other, as stated by Nicolescu in his Manifesto [10]. The other in the broadest sense is not only female vs. male in a male-dominated society and racial and ethic minorities in general but human and non-human, that is, the total physical environment. In the LIR view of ethical behavior, the same metaphysical but also physical principle of dynamic opposition provides the basis for both 1) a generally applicable antagonistic psychological typology of responsible and irresponsible behavior; and 2) the origin of environmental responsibility and in fact moral responsibility in general. Morality in the generally accepted sense of responsibility toward others as well as oneself and the environment is thus logically and ontologically grounded, as are other universal aspects of human behavior and not dependent on transcendental assumptions that serve only to weaken its purport. Strategies to strengthen awareness of and positive response to environmental threats should thus emphasize common humanity and a common psychological structure across cultures as well as enlightened self-interest. This area is being currently addressed by Zong-Rong Li and his associates [11]. Li has suggested the term 'Informationalism' to capture the controlling function of informational existence in which information science and material science explain individual and social phenomena. This approach permits, among other things, a reformulation and interpretation of psychology and its history into a specifically informational psychology. 4.3 Toward a New Democratic System In the applications suggested by Wu Kun for his theory and philosophy of information, no specific comprehensive economic-political model is suggested, but he does call for a \"new democratic system\" that would permit maximization of the benefits from the new ICTs. A proper model would include an informational perspective for studying social phenomena, a social information theory based on his concept of the essence of information in a social evolutionary context. As shown in Wu [1], forms of human civilization can be differentiated according to their different ways of creating, processing, dissemination and development of information. Only human beings can create information. Human production and productivity are essentially only information production and information productivity, and models of the economy and market activity are informational models. The expanded social role of information should be accompanied by the development of networks for its dissemination resulting in the (slow) atrophy of centralized national and global hegemony. However, any theory or model of social change cannot ignore (see my interpretation of the Lupasco logic above) the inevitable fundamental embodiment of contrary, anti-social and anti-civilizational forces in the society. These will always make the struggle for the common good and implementation of human values a struggle indeed. 5. Summary and Conclusions In summary, one of the most important aspects of the concept of transdisciplinarity is its relation to the field of information and information science. The role and function of the Logic in Reality as the logic of transdisciplinarity is to support, philosophically and scientifically, the transdisciplinary approach or attitude toward current issues in philosophy and science and to provide new insights into the qualitative, ethical aspects of the informational evolution of science and society. I believe that a new way of looking at thought and the traditional disciplines can make a contribution to the establishment of an informational commons. Following Wu Kun, I have shown that the philosophy of information is a metaphilosophy that also makes possible a new conception of nature, understanding, society and values and actively promotes the development of human information society, and a more civilized and democratic social polity, economic and cultural new order. Wu's informational philosophy and LIR constitute part of a new transdisciplinary paradigm, in which information science has a central role in the transformation of society. References Wu, K. 2010. The Basic Theory of Philosophy of Information. Paper, 4th International Conference on the Foundations of Information Science, August, 2010, Beijing. Brenner, J. E. 2010. Wu Kun and the Metaphilosophy of Information. International Journal \"Information Theories and Applications\", 18(2), 103-128. Floridi L. 2010. The Philosophy of Information. Oxford University Press: Oxford, U.K. Lupasco S. 1987. Le principe d'antagonisme et la logique de l'\u00e9nergie. Paris : Editions du Rocher.(Originally published in Paris: \u00c9ditions Hermann, 1951). Brenner, J. E. 2008. Logic in Reality. Dordrecht: Springer. Nicolescu B. 2011. Methodology of Transdisciplinarity-Levels of Reality, Logic of the Included Middle and Complexity. In Transdisciplinarity: Bridging Natural Science, Social Science, Humanities & Engineering, A. Ertas (ed.). www.theatlas.org/atlas-books.pdf , 22-45. Lawrence R.J. 2008 Transgresser les Fronti\u00e8res Disciplinaires. In Le D\u00e9fi de l'Inter- et Transdisciplinarit\u00e9, F. Darbellay, T. Paulsen (Eds.). Lausanne: Presses polytechniques et universitaires romandes, 223-238. Hofkirchner, W., Fuchs, C., Raffl, C., Schafranek, M., Sandoval, M. & Bichler, R. 2007. ICTs and Society: The Salzburg Approach. University of Salzburg Research Paper No. 3, December. Salzburg: ICT&S Center. Hofkirchner, W. 2013. Emergent Information; A Unified Theory of Information Framework. World Scientific Publishing Company: Singapore. Nicolescu B. 2002. Manifesto of Transdisciplinarity. Albany, NY: SUNY Press. Li, Z.-R. 2013. The Worldview and Methodology of Information Science. In International Conference on Philosophy of Information, October 18 -21, 2013 (ed. Z.-R. Li et al.), Xi'an, China.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://sciforum.net/paper/download/2953/manuscript"
+      },
+      "topics": [
+        "Semantic Web and Ontologies",
+        "Scientific Research and Philosophical Inquiry",
+        "University-Industry-Government Innovation Models"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W2312612603"
+    },
+    {
+      "openalex_id": "W2808102992",
+      "doi": "10.1007/s11948-018-00081-0",
+      "title": "Artificial Intelligence Crime: An Interdisciplinary Analysis of Foreseeable Threats and Solutions",
+      "authors": [
+        {
+          "name": "Thomas C. King",
+          "openalex_id": "A5072186507",
+          "orcid": "https://orcid.org/0000-0001-6610-8098",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Nikita Aggarwal",
+          "openalex_id": "A5036412233",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Mariarosaria Taddeo",
+          "openalex_id": "A5003032735",
+          "orcid": "https://orcid.org/0000-0002-1181-649X",
+          "institutions": [
+            "Turing Institute",
+            "University of Oxford",
+            "The Alan Turing Institute"
+          ]
+        },
+        {
+          "name": "Luciano Floridi",
+          "openalex_id": "A5046574356",
+          "orcid": "https://orcid.org/0000-0002-5444-2280",
+          "institutions": [
+            "The Alan Turing Institute",
+            "Turing Institute"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-02-14",
+      "abstract": "Artificial intelligence (AI) research and regulation seek to balance the benefits of innovation against any potential harms and disruption. However, one unintended consequence of the recent surge in AI research is the potential re-orientation of AI technologies to facilitate criminal acts, term in this article AI-Crime (AIC). AIC is theoretically feasible thanks to published experiments in automating fraud targeted at social media users, as well as demonstrations of AI-driven manipulation of simulated markets. However, because AIC is still a relatively young and inherently interdisciplinary area-spanning socio-legal studies to formal science-there is little certainty of what an AIC future might look like. This article offers the first systematic, interdisciplinary literature analysis of the foreseeable threats of AIC, providing ethicists, policy-makers, and law enforcement organisations with a synthesis of the current problems, and a possible solution space.",
+      "cited_by_count": 252,
+      "type": "review",
+      "source": {
+        "name": "Science and Engineering Ethics",
+        "type": "journal",
+        "issn": [
+          "1353-3452",
+          "1471-5546"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11948-018-00081-0.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Law, AI, and Intellectual Property",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 131,
+      "url": "https://openalex.org/W2808102992"
+    },
+    {
+      "openalex_id": "W4230590913",
+      "doi": "10.5840/jphil20161131137",
+      "title": "Epistemic Risk",
+      "authors": [
+        {
+          "name": "Duncan Pritchard",
+          "openalex_id": "A5082884079",
+          "orcid": "https://orcid.org/0000-0002-5997-0752"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": null,
+      "cited_by_count": 126,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Philosophy",
+        "type": "journal",
+        "issn": [
+          "0022-362X",
+          "1939-8549"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/534f4b25-5283-4ad5-a697-39ec7082f566"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4230590913"
+    },
+    {
+      "openalex_id": "W2762845979",
+      "doi": "10.1111/meta.12277",
+      "title": "Blockchain Technology as an Institution of Property",
+      "authors": [
+        {
+          "name": "Georgy Ishmaev",
+          "openalex_id": "A5028904686",
+          "orcid": "https://orcid.org/0000-0002-9797-5140",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-01",
+      "abstract": "Abstract This paper argues that the practical implementation of blockchain technology can be considered an institution of property similar to legal institutions. Invoking Penner's theory of property and Hegel's system of property rights, and using the example of bitcoin, it is possible to demonstrate that blockchain effectively implements all necessary and sufficient criteria for property without reliance on legal means. Blockchains eliminate the need for a third\u2010party authority to enforce exclusion rights, and provide a system of universal access to knowledge and discoverability about the property rights of all participants and how the system functions. The implications of these findings are that traditional property relations in society could be replaced by or supplemented with blockchain models, and implemented in new domains.",
+      "cited_by_count": 66,
+      "type": "article",
+      "source": {
+        "name": "Metaphilosophy",
+        "type": "journal",
+        "issn": [
+          "0026-1068",
+          "1467-9973"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/meta.12277"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Ethics and Social Impacts of AI",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W2762845979"
+    },
+    {
+      "openalex_id": "W2601967293",
+      "doi": "10.1093/oso/9780198823841.001.0001",
+      "title": "Oxford Studies in Metaethics 13",
+      "authors": [
+        {
+          "name": "Shafer-Landau, Russ",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-08-22",
+      "abstract": "This series is devoted to original philosophical work in the foundations of ethics. It provides an annual selection of much of the best new scholarship being done in the field. Its broad purview includes work being done at the intersection of ethical theory and metaphysics, epistemology, philosophy of language, and philosophy of mind. The chapters included in the series provide a basis for understanding recent developments in the field. Chapters in this volume cover normative supervenience; non-naturalism; non-descriptive relativism; learning about aesthetics and morality through acquaintance and deference; the possibility of moral epistemology; pure moral motivation; virtue ethics; moral uncertainty and value comparison; (in)coherence; the authority of formality; authoritatively normative concepts; \u2018ought\u2019 <italic>simpliciter</italic>; and the rationality of ends.",
+      "cited_by_count": 107,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://nottingham-repository.worktribe.com/preview/878097/Sinclair%20-%20Belief%20Pills%20and%20the%20Possibility%20of%20Moral%20Epistemology%20-%20final%20version.pdf"
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Ethics in medical practice",
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W2601967293"
+    },
+    {
+      "openalex_id": "W4319661244",
+      "doi": "10.1007/s43681-023-00258-9",
+      "title": "From ethical AI frameworks to tools: a review of approaches",
+      "authors": [
+        {
+          "name": "Erich Prem",
+          "openalex_id": "A5031392778",
+          "orcid": "https://orcid.org/0000-0002-4380-3722",
+          "institutions": [
+            "University of Vienna"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-09",
+      "abstract": "Abstract In reaction to concerns about a broad range of potential ethical issues, dozens of proposals for addressing ethical aspects of artificial intelligence (AI) have been published. However, many of them are too abstract for being easily translated into concrete designs for AI systems. The various proposed ethical frameworks can be considered an instance of principlism that is similar to that found in medical ethics. Given their general nature, principles do not say how they should be applied in a particular context. Hence, a broad range of approaches, methods, and tools have been proposed for addressing ethical concerns of AI systems. This paper presents a systematic analysis of more than 100 frameworks, process models, and proposed remedies and tools for helping to make the necessary shift from principles to implementation, expanding on the work of Morley and colleagues. This analysis confirms a strong focus of proposed approaches on only a few ethical issues such as explicability, fairness, privacy, and accountability. These issues are often addressed with proposals for software and algorithms. Other, more general ethical issues are mainly addressed with conceptual frameworks, guidelines, or process models. This paper develops a structured list and definitions of approaches, presents a refined segmentation of the AI development process, and suggests areas that will require more attention from researchers and developers.",
+      "cited_by_count": 177,
+      "type": "review",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-023-00258-9.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Artificial Intelligence in Healthcare and Education",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W4319661244"
+    },
+    {
+      "openalex_id": "W2978869655",
+      "doi": "10.1177/0969733019874492",
+      "title": "What is \u2018moral distress\u2019 in nursing? A feminist empirical bioethics study",
+      "authors": [
+        {
+          "name": "Georgina Morley",
+          "openalex_id": "A5074899243",
+          "orcid": "https://orcid.org/0000-0002-0099-3597",
+          "institutions": [
+            "University of Bristol",
+            "Cleveland Clinic",
+            "Barts Health NHS Trust"
+          ]
+        },
+        {
+          "name": "Caroline Bradbury\u2010Jones",
+          "openalex_id": "A5071125034",
+          "orcid": "https://orcid.org/0000-0002-5237-6777",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Jonathan Ives",
+          "openalex_id": "A5076025395",
+          "orcid": "https://orcid.org/0000-0002-5233-5000",
+          "institutions": [
+            "University of Bristol"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-09-29",
+      "abstract": "Background The phenomenon of \u2018moral distress\u2019 has continued to be a popular topic for nursing research. However, much of the scholarship has lacked conceptual clarity, and there is debate about what it means to experience moral distress. Moral distress remains an obscure concept to many clinical nurses, especially those outside of North America, and there is a lack of empirical research regarding its impact on nurses in the United Kingdom and its relevance to clinical practice. Research aim To explore the concept of moral distress in nursing both empirically and conceptually. Methodology Feminist interpretive phenomenology was used to explore and analyse the experiences of critical care nurses at two acute care trauma hospitals in the United Kingdom. Empirical data were analysed using Van Manen\u2019s six steps for data analysis. Ethical considerations The study was approved locally by the university ethics review committee and nationally by the Health Research Authority in the United Kingdom. Findings The empirical findings suggest that psychological distress can occur in response to a variety of moral events. The moral events identified as causing psychological distress in the participants\u2019 narratives were moral tension, moral uncertainty, moral constraint, moral conflict and moral dilemmas. Discussion We suggest a new definition of moral distress which captures this broader range of moral events as legitimate causes of distress. We also suggest that moral distress can be sub-categroised according to the source of distress, for example, \u2018moral-uncertainty distress\u2019. We argue that this could aid in the development of interventions which attempt to address and mitigate moral distress. Conclusion The empirical findings support the notion that narrow conceptions of moral distress fail to capture the real-life experiences of this group of critical care nurses. If these experiences resonate with other nurses and healthcare professionals, then it is likely that the definition needs to be broadened to recognise these experiences as \u2018moral distress\u2019.",
+      "cited_by_count": 144,
+      "type": "article",
+      "source": {
+        "name": "Nursing Ethics",
+        "type": "journal",
+        "issn": [
+          "0969-7330",
+          "1477-0989"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0969733019874492"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Patient Dignity and Privacy",
+        "Palliative Care and End-of-Life Issues"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W2978869655"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

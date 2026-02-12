@@ -1,0 +1,806 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "content-externalism",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/content-externalism/",
+      "entry_name": "content-externalism",
+      "title": "Externalism About the Mind",
+      "preamble": "In the philosophy of mind, externalism is the view that what\nis going on in an individual\u2019s mind is not (entirely) determined\nby what is going on inside her body, including her brain. Externalism\ncomes in two principal forms: externalism about mental content and externalism about the vehicles or bearers of that\ncontent. The latter form of externalism is commonly known as the extended mind . At stake are important issues concerning the nature of the\nmind and its relation to the world, both natural and social.",
+      "bibliography": [
+        {
+          "raw": "Adams, Frederick, 2010, \u201cWhy We Still Need a Mark of the\nCognitive\u201d, Cognitive Systems Research , 11(4):\n324\u2013331. doi:10.1016/j.cogsys.2010.03.001",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Adams, Fred and Ken Aizawa, 2001, \u201cThe Bounds of\nCognition\u201d, Philosophical Psychology , 14(1):\n43\u201364. doi:10.1080/09515080120033571",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, The Bounds of Cognition , New\nYork: Wiley-Blackwell.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008, The Bounds of Cognition , New\nYork: Wiley-Blackwell."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Allen, Colin, 2017, \u201cOn (Not) Defining Cognition\u201d, Synthese , 194(11): 4233\u20134249.\ndoi:10.1007/s11229-017-1454-4",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Barnier, Amanda J., John Sutton, Celia B. Harris, and Robert A.\nWilson, 2008, \u201cA Conceptual and Empirical Framework for the\nSocial Distribution of Cognition: The Case of Memory\u201d, Cognitive Systems Research , 9(1\u20132): 33\u201351.\ndoi:10.1016/j.cogsys.2007.07.002",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Block, Ned, 1990, \u201cInverted Earth\u201d, in Philosophical Perspectives 4 , James Tomberlin (ed.),\nAtascadero, CA: Ridgeview Press, 52\u201379.",
+          "parsed": {
+            "authors": [
+              "Block, Ned"
+            ],
+            "year": "1990",
+            "title": "\u201cInverted Earth\u201d, in Philosophical Perspectives 4 , James Tomberlin (ed.)",
+            "publisher": "Atascadero, CA: Ridgeview Press, 52\u201379"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1991, \u201cWhat Narrow Content is\nNot\u201d, in Meaning and Mind: Fodor and His Critics , Barry\nLoewer and Georges Rey (eds.), Oxford: Blackwell Publishers,\n33\u201364.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1991",
+            "title": "\u2013\u2013\u2013, 1991, \u201cWhat Narrow Content is\nNot\u201d, in Meaning and Mind: Fodor and His Critics , Barry\nLoewer and Georges Rey (eds.), Oxford: Blackwell Publishers,\n33\u201364."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Boghossian, Paul A., 1997, \u201cWhat the Externalist Can Know A\nPriori\u201d, Proceedings of the Aristotelian Society ,\n97(2): 161\u2013175. doi:10.1111/1467-9264.00011",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Boldyrev, Ivan A. and Carsten Herrmann-Pillath, 2013,\n\u201cHegel\u2019s \u2018Objective Spirit\u2019, Extended Mind,\nand the Institutional Nature of Economic Action\u201d, Mind &\nSociety , 12(2): 177\u2013202. doi:10.1007/s11299-012-0111-3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Burge, Tyler, 1979, \u201cIndividualism and the Mental\u201d, Midwest Studies in Philosophy , 4: 73\u2013121.\ndoi:10.1111/j.1475-4975.1979.tb00374.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1986, \u201cIndividualism and\nPsychology\u201d, The Philosophical Review , 95(1):\n3\u201345. doi:10.2307/2185131",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1986",
+            "title": "\u2013\u2013\u2013, 1986, \u201cIndividualism and\nPsychology\u201d, The Philosophical Review , 95(1):\n3\u201345. doi:10.2307/2185131"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1993, \u201cMind-Body Causation and\nExplanatory Practice\u201d, in Mental Causation , John Heil\nand Alfred R. Mele (eds.) Oxford: Clarendon Press, pp.\n97\u2013120.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1993",
+            "title": "\u2013\u2013\u2013, 1993, \u201cMind-Body Causation and\nExplanatory Practice\u201d, in Mental Causation , John Heil\nand Alfred R. Mele (eds.) Oxford: Clarendon Press, pp.\n97\u2013120."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Carter, J. Adam, Emma C. Gordon, and S. Orestis Palermos, 2016,\n\u201cExtended Emotion\u201d, Philosophical Psychology ,\n29(2): 198\u2013217. doi:10.1080/09515089.2015.1063596",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Chalmers, David, 2012, Constructing the World , Oxford:\nOxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2019, \u201cExtended Cognition and\nExtended Consciousness\u201d, in Andy Clark and his Critics ,\nMatteo Colombo, Elizabeth Irvine, and Mog Stapleton (eds.), Oxford:\nOxford University Press, Chapter 1.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2019",
+            "title": "\u2013\u2013\u2013, 2019, \u201cExtended Cognition and\nExtended Consciousness\u201d, in Andy Clark and his Critics ,\nMatteo Colombo, Elizabeth Irvine, and Mog Stapleton (eds.), Oxford:\nOxford University Press, Chapter 1."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Chemero, Anthony, 2009, Radical Embodied Cognitive\nScience , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Chomsky, Noam, 1995, \u201cLanguage and Nature\u201d, Mind , 104(413): 1\u201361. doi:10.1093/mind/104.413.1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Clark, Andy, 1989, Microcognition: Philosophy, Cognitive\nScience and Parallel Distributed Processing , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1997, Being There: Putting Brain, Body\nand World Back Together Again , Cambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1997",
+            "title": "\u2013\u2013\u2013, 1997, Being There: Putting Brain, Body\nand World Back Together Again , Cambridge, MA: MIT Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008a, \u201cPressing the Flesh: A Tension\nin the Study of the Embodied, Embedded Mind?\u201d, Philosophy\nand Phenomenological Research , 76(1): 37\u201359.\ndoi:10.1111/j.1933-1592.2007.00114.x",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008a, \u201cPressing the Flesh: A Tension\nin the Study of the Embodied, Embedded Mind?\u201d, Philosophy\nand Phenomenological Research , 76(1): 37\u201359.\ndoi:10.1111/j.1933-1592.2007.00114.x"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008b, Supersizing the Mind:\nEmbodiment, Action, and Cognitive Extension , Oxford: Oxford\nUniversity Press. doi:10.1093/acprof:oso/9780195333213.001.0001",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008b, Supersizing the Mind:\nEmbodiment, Action, and Cognitive Extension , Oxford: Oxford\nUniversity Press. doi:10.1093/acprof:oso/9780195333213.001.0001"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, \u201cSpreading the Joy? Why the\nMachinery of Consciousness Is (Probably) Still in the Head\u201d, Mind , 118(472): 963\u2013993. doi:10.1093/mind/fzp110",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, \u201cSpreading the Joy? Why the\nMachinery of Consciousness Is (Probably) Still in the Head\u201d, Mind , 118(472): 963\u2013993. doi:10.1093/mind/fzp110"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Clark, Andy and David Chalmers, 1998, \u201cThe Extended\nMind\u201d, Analysis , 58(1): 7\u201319.\ndoi:10.1093/analys/58.1.7",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Crane, Tim, 1991, \u201cAll The Difference in the World\u201d, The Philosophical Quarterly , 41(162): 1\u201325.\ndoi:10.2307/2219783",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Crisafi, Anthony and Shaun Gallagher, 2010, \u201cHegel and the\nExtended Mind\u201d, AI & Society , 25(1): 123\u2013129.\ndoi:10.1007/s00146-009-0239-9",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Cummins, Robert, 1991, \u201cMethodological Reflections on\nBelief\u201d, in Mind and Common Sense , Radu Bogan (ed.),\nCambridge: Cambridge University Press, pp. 53\u201370.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Davidson, Donald, 1980, \u201cActions, Reasons and Causes\u201d,\nin his Essays On Actions and Events , Oxford: Oxford\nUniversity Press, pp. 3\u201320.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1987, \u201cKnowing One\u2019s Own\nMind\u201d, Proceedings and Addresses of the American\nPhilosophical Association , 60(3): 441\u2013458.\ndoi:10.2307/3131782",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1987",
+            "title": "\u2013\u2013\u2013, 1987, \u201cKnowing One\u2019s Own\nMind\u201d, Proceedings and Addresses of the American\nPhilosophical Association , 60(3): 441\u2013458.\ndoi:10.2307/3131782"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "De Jaegher, Hanne, Ezequiel Di Paolo, and Shaun Gallagher, 2010,\n\u201cCan Social Interaction Constitute Social Cognition?\u201d, Trends in Cognitive Sciences , 14(10): 441\u2013447.\ndoi:10.1016/j.tics.2010.06.009",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Donald, Merlin, 1991, Origins of the Modern Mind; Three Stages\nin the Evolution of Culture and Cognition , Cambridge, MA: Harvard\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dretske, Fred, 1988, Explaining Behavior: Reasons in a World\nof Causes , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Farkas, Katalin, 2003, \u201cWhat Is Externalism?\u201d, Philosophical Studies , 112(3): 187\u2013208.\ndoi:10.1023/A:1023002625641",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, The Subject\u2019s Point of\nView , Oxford: Oxford University Press.\ndoi:10.1093/acprof:oso/9780199230327.001.0001",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008, The Subject\u2019s Point of\nView , Oxford: Oxford University Press.\ndoi:10.1093/acprof:oso/9780199230327.001.0001"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Fodor, Jerry A., 1981, \u201cMethodological Solipsism Considered\nas a Research Strategy in Cognitive Science\u201d, in his RePresentations: Philosophical Essays on the Foundations of\nCognitive Science , Cambridge MA: MIT Press, 225\u2013256.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1982, \u201cCognitive Science and the\nTwin-Earth Problem.\u201d, Notre Dame Journal of Formal\nLogic , 23(2): 98\u2013118. doi:10.1305/ndjfl/1093883623",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1982",
+            "title": "\u2013\u2013\u2013, 1982, \u201cCognitive Science and the\nTwin-Earth Problem.\u201d, Notre Dame Journal of Formal\nLogic , 23(2): 98\u2013118. doi:10.1305/ndjfl/1093883623"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1987, Psychosemantics: The Problem of\nMeaning in the Philosophy of Mind , Cambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1987",
+            "title": "\u2013\u2013\u2013, 1987, Psychosemantics: The Problem of\nMeaning in the Philosophy of Mind , Cambridge, MA: MIT Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, \u201cWhere is my mind?\u201d London Review of Books , 31(3): 13\u201315.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u201cWhere is my mind?\u201d London Review of Books ",
+            "publisher": "31(3): 13\u201315"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Frances, Bryan, 2007, \u201cExternalism, Physicalism, Statues,\nand Hunks\u201d, Philosophical Studies , 133(2):\n199\u2013232. doi:10.1007/s11098-005-8446-9",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gallagher, Shaun, 2013, \u201cThe Socially Extended Mind\u201d, Cognitive Systems Research , 25\u201326: 4\u201312.\ndoi:10.1016/j.cogsys.2013.03.008",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2018, Enactivist Interventions:\nRethinking the Mind , New York: Oxford University Press.\ndoi:10.1093/oso/9780198794325.001.0001",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2018",
+            "title": "\u2013\u2013\u2013, 2018, Enactivist Interventions:\nRethinking the Mind , New York: Oxford University Press.\ndoi:10.1093/oso/9780198794325.001.0001"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Georgalis, Nicholas, 1999, \u201cRethinking Burge\u2019s Thought\nExperiment\u201d, Synthese , 118(2): 145\u2013164.\ndoi:10.1023/A:1017145322572",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gertler, Brie, 2012, \u201cUnderstanding the\nInternalism-Externalism Debate: What Is the Boundary of the\nThinker?\u201d, Philosophical Perspectives , 26(1):\n51\u201375. doi:10.1111/phpe.12001",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gibbons, John, 1993, \u201cIdentity without Supervenience\u201d, Philosophical Studies , 70(1): 59\u201379.\ndoi:10.1007/BF00989662",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gibson, James, 1966, The Senses Considered as Perceptual\nSystems , Boston: Houghton-Mifflin.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1979, The Ecological Approach to Visual\nPerception , Boston: Houghton-Mifflin.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1979",
+            "title": "\u2013\u2013\u2013, 1979, The Ecological Approach to Visual\nPerception , Boston: Houghton-Mifflin."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Haugeland, John, 1993, \u201cMind embodied and embedded\u201d,\nin Yu-Houng H. Houng & J. Ho (eds.), Mind and Cognition: 1993\nInternational Symposium , Academica Sinica. pp.\n233\u2013267.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Heidegger, Martin, 1927 [1962], Being and Time , J.\nMacquarie (trans.), Oxford: Blackwell.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Horgan, Terence and John Tienson, 2002, \u201cThe Intentionality\nof Phenomenology and the Phenomenology of Intentionality\u201d, in Philosophy of Mind: Classical and Contemporary Readings ,\nDavid Chalmers (ed.), Oxford: Oxford University Press, Chapter 49.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hurley, Susan, 1998, Consciousness in Action , Cambridge,\nMA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "Hurley, Susan"
+            ],
+            "year": "1998",
+            "title": "Consciousness in Action , Cambridge",
+            "publisher": "MA: Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Hutto, Daniel and Erik Myin, 2012, Radicalizing\nEnactivism , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2017, Evolving Enactivism ,\nCambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2017",
+            "title": "Evolving Enactivism ",
+            "publisher": "Cambridge, MA: MIT Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Jackson, Frank, 2007, \u201cReference and Description from the\nDescriptivists\u2019 Corner\u201d, Philosophical Books ,\n48(1): 17\u201326. doi:10.1111/j.1468-0149.2007.00426.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kirsh, David and Paul Maglio, 1994, \u201cOn Distinguishing\nEpistemic from Pragmatic Action\u201d, Cognitive Science ,\n18(4): 513\u2013549. doi:10.1207/s15516709cog1804_1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Korman, Daniel Z., 2006, \u201cWhat Externalists Should Say About\nDry Earth\u201d, Journal of Philosophy , 103(10):\n503\u2013520. doi:10.5840/jphil20061031030",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kriegel, Uriah, 2007, \u201cIntentional Inexistence and\nPhenomenal Intentionality\u201d, Philosophical Perspectives ,\n21(1): 307\u2013340. doi:10.1111/j.1520-8583.2007.00129.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2011, The Sources of\nIntentionality , Oxford: Oxford University Press.\ndoi:10.1093/acprof:oso/9780199742974.001.0001",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2011",
+            "title": "\u2013\u2013\u2013, 2011, The Sources of\nIntentionality , Oxford: Oxford University Press.\ndoi:10.1093/acprof:oso/9780199742974.001.0001"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2013, \u201cPhenomenal Intentionality Past\nand Present: Introductory\u201d, Phenomenology and the Cognitive\nSciences , 12(3): 437\u2013444.\ndoi:10.1007/s11097-013-9308-0",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2013",
+            "title": "\u2013\u2013\u2013, 2013, \u201cPhenomenal Intentionality Past\nand Present: Introductory\u201d, Phenomenology and the Cognitive\nSciences , 12(3): 437\u2013444.\ndoi:10.1007/s11097-013-9308-0"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Krueger, Joel, 2014, \u201cVarieties of Extended Emotions\u201d, Phenomenology and the Cognitive Sciences , 13(4):\n533\u2013555. doi:10.1007/s11097-014-9363-1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Krueger, Joel and Thomas Szanto, 2016, \u201cExtended\nEmotions\u201d, Philosophy Compass , 11(12): 863\u2013878.\ndoi:10.1111/phc3.12390",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lewis, Davis, 1981, \u201cIndex, Context, and Content\u201d, in Philosophy and Grammar , Stig Kanger and Sven \u014chman\n(eds.), Dordrecht: D. Reider, 79\u2013100.\ndoi:10.1007/978-94-009-9012-8_6",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Loar, Brian, 2003, \u201cPhenomenal Intentionality as the Basis\nof Mental Content\u201d, in Reflections and Replies: Essays on\nthe Philosophy of Tyler Burge , Martin Hahn and B. Ramberg (eds.),\nCambridge, MA: MIT Press, 229\u2013258.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ludwig, David, 2015, \u201cExtended Cognition and the Explosion\nof Knowledge\u201d, Philosophical Psychology , 28(3):\n355\u2013368. doi:10.1080/09515089.2013.867319",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Luria, Alexander and Vygotsky, Lev 1930 [1992], Ape, Primitive Man,\nand Child: Essay in the History of Behavior , Evelyn Rossiter\n(trans.), Brighton: Harvester-Wheatsheaf.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lyre, Holger, 2018, \u201cSocially Extended Cognition and Shared\nIntentionality\u201d, Frontiers in Psychology , 9: 831.\ndoi:10.3389/fpsyg.2018.00831",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Macdonald, Cynthia, 1990, \u201cWeak Externalism and Mind-Body\nIdentity\u201d, Mind , 99(395): 387\u2013404.\ndoi:10.1093/mind/XCIX.395.387",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mallon, Ron, Edouard Machery, Shaun Nichols, and Stephen Stich,\n2009, \u201cAgainst Arguments from Reference\u201d, Philosophy\nand Phenomenological Research , 79(2): 332\u2013356.\ndoi:10.1111/j.1933-1592.2009.00281.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McGinn, Colin, 1977, \u201cCharity, Interpretation, and\nBelief\u201d, The Journal of Philosophy , 74(9):\n521\u2013535. doi:10.2307/2025795",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1982, \u201cThe structure of\ncontent\u201d, in Thought and Object , A. Woodfield (ed.),\nOxford: Oxford University Press, pp. 207\u201358.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1982",
+            "title": "\u2013\u2013\u2013, 1982, \u201cThe structure of\ncontent\u201d, in Thought and Object , A. Woodfield (ed.),\nOxford: Oxford University Press, pp. 207\u201358."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1989, Mental Content , Oxford:\nBlackwell.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1989",
+            "title": "\u2013\u2013\u2013, 1989, Mental Content , Oxford:\nBlackwell."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Menary, Richard, 2006, \u201cAttacking the Bounds of\nCognition\u201d, Philosophical Psychology , 19(3):\n329\u2013344. doi:10.1080/09515080600690557",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2007, Cognitive Integration: Attacking\nthe Bounds of Cognition , Basingstoke: Palgrave-Macmillan.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2007",
+            "title": "\u2013\u2013\u2013, 2007, Cognitive Integration: Attacking\nthe Bounds of Cognition , Basingstoke: Palgrave-Macmillan."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013 (ed.), 2010, The Extended Mind ,\nCambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013 (ed.)"
+            ],
+            "year": "2010",
+            "title": "The Extended Mind ",
+            "publisher": "Cambridge, MA: MIT Press",
+            "is_edited": true
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2015, \u201cMathematical cognition: a case\nof enculturation\u201d, in Open MIND , T. Metzinger & J.\nM. Windt (eds.), Frankfurt am Main: MIND Group, 1\u201320.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2015",
+            "title": "\u2013\u2013\u2013, 2015, \u201cMathematical cognition: a case\nof enculturation\u201d, in Open MIND , T. Metzinger & J.\nM. Windt (eds.), Frankfurt am Main: MIND Group, 1\u201320."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Newen, Albert, Leon De Bruin, and Shaun Gallagher (eds.), 2018, The Oxford Handbook of 4E Cognition , Oxford: Oxford\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "No\u00eb, Alva (ed.), 2002, Is the Visual World a Grand\nIllusion? Special edition of The Journal of Consciousness\nStudies , Vol. 5\u20136.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2004, Action in Perception ,\nCambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2004",
+            "title": "Action in Perception ",
+            "publisher": "Cambridge, MA: MIT Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "O\u2019Regan, J. Kevin and Alva No\u00eb, 2001, \u201cA\nSensorimotor Account of Vision and Visual Consciousness\u201d, Behavioral and Brain Sciences , 24(5): 939\u2013973.\ndoi:10.1017/S0140525X01000115",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Prinz, Jesse, 2009, \u201cIs Consciousness Embodied?\u201d, in The Cambridge Handbook of Situated Cognition , Philip Robbins\nand Murat Aydede (eds.), Cambridge: Cambridge University Press,\n419\u2013436. doi:10.1017/CBO9780511816826.022",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pryor, James, 2007, \u201cWhat\u2019s Wrong with McKinsey-style\nReasoning\u201d, in Internalism and Externalism in Semantics and\nEpistemology , S. Goldberg (ed.), Oxford: Oxford University Press,\n177\u2013200.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Putnam, Hilary, 1975, \u201cThe Meaning of\n\u2018Meaning\u2019\u201d, Philosophical Papers, Vol. II: Mind,\nLanguage, and Reality , Cambridge: Cambridge University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rowlands, Mark, 1999, The Body in Mind: Understanding\nCognitive Processes , Cambridge: Cambridge University Press.\ndoi:10.1017/CBO9780511583261",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2003, Externalism: Putting Mind and\nWorld Back Together Again , London: Acumen.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2003",
+            "title": "\u2013\u2013\u2013, 2003, Externalism: Putting Mind and\nWorld Back Together Again , London: Acumen."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006, Body Language: Representation in\nAction , Cambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006, Body Language: Representation in\nAction , Cambridge, MA: MIT Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, \u201cExtended Cognition and the\nMark of the Cognitive\u201d, Philosophical Psychology ,\n22(1): 1\u201319. doi:10.1080/09515080802703620",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, \u201cExtended Cognition and the\nMark of the Cognitive\u201d, Philosophical Psychology ,\n22(1): 1\u201319. doi:10.1080/09515080802703620"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2010, The New Science of the Mind: From\nExtended Mind to Embodied Phenomenology , Cambridge, MA: MIT\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2010",
+            "title": "\u2013\u2013\u2013, 2010, The New Science of the Mind: From\nExtended Mind to Embodied Phenomenology , Cambridge, MA: MIT\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Rumelhart, David E., James L. McClelland, and the PDP Research\nGroup, 1986, Parallel Distributed Processing: Explorations in the\nMicrostructure of Cognition 1: Foundations , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rupert, Robert D., 2004, \u201cChallenges to the Hypothesis of\nExtended Cognition\u201d, Journal of Philosophy , 101(8):\n389\u2013428. doi:10.5840/jphil2004101826",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, Cognitive Systems and the\nExtended Mind , New York: Oxford University Press.\ndoi:10.1093/acprof:oso/9780195379457.001.0001",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, Cognitive Systems and the\nExtended Mind , New York: Oxford University Press.\ndoi:10.1093/acprof:oso/9780195379457.001.0001"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Sartre, Jean-Paul, 1943 [1957], Being and Nothingness , H.\nBarnes (trans.), London: Methuen; originally published Paris:\nGallimard, 1943.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Segal, Gabriel, 2000, A Slim Book about Narrow Content ,\nCambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "Segal, Gabriel"
+            ],
+            "year": "2000",
+            "title": "A Slim Book about Narrow Content ",
+            "publisher": "Cambridge, MA: MIT Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Shapiro, Lawrence, 2004, The Mind Incarnate , Cambridge,\nMA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "Shapiro, Lawrence"
+            ],
+            "year": "2004",
+            "title": "The Mind Incarnate , Cambridge",
+            "publisher": "MA: MIT Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Siewert, Charles, 1998, The Significance of\nConsciousness , Princeton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Slors, Marc, 2019, \u201cSymbiotic Cognition as an Alternative\nfor Socially Extended Cognition\u201d, Philosophical\nPsychology , 32(8): 1179\u20131203.\ndoi:10.1080/09515089.2019.1679591",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Stalnaker, Robert, 1989, \u201cOn What\u2019s In the\nHead\u201d, Philosophical Perspectives , 3: 287\u2013316.\nReprinted in The Nature of Mind , David Rosenthal (ed.),\nOxford: Oxford University Press, 1991, 576\u2013590.\ndoi:10.2307/2214271",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Stich, Stephen, 1983, From Folk Psychology to Cognitive\nScience: The Case Against Belief , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sutton, John, 2008, Philosophy and Memory Traces: Descartes to\nConnectionism , Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2010, \u201cExograms and Interdisciplinarity:\nHistory, the Extended Mind, and the Civilizing Process\u201d, in\nMenary 2010: 189\u2013225.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2010",
+            "title": "\u2013\u2013\u2013, 2010, \u201cExograms and Interdisciplinarity:\nHistory, the Extended Mind, and the Civilizing Process\u201d, in\nMenary 2010: 189\u2013225."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2015, \u201cRemembering as Public\nPractice: Wittgenstein, Memory, and Distributed Cognitive\nEcologies\u201d, in Mind, Language and Action:\u202f: Proceedings of\nthe 36th International Wittgenstein Symposium , Dani\u00e8le\nMoyal-Sharrock, Volker Munz, and Annalisa Coliva (eds.), Berlin: De\nGruyter, 409\u2013443. doi:10.1515/9783110378795.409",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2015",
+            "title": "\u2013\u2013\u2013, 2015, \u201cRemembering as Public\nPractice: Wittgenstein, Memory, and Distributed Cognitive\nEcologies\u201d, in Mind, Language and Action:\u202f: Proceedings of\nthe 36th International Wittgenstein Symposium , Dani\u00e8le\nMoyal-Sharrock, Volker Munz, and Annalisa Coliva (eds.), Berlin: De\nGruyter, 409\u2013443. doi:10.1515/9783110378795.409"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Theiner, Georg, 2011, Res Cogitans Extensa: A Philosophical\nDefense of the Extended Mind Thesis , New York: Peter Lang.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vygotsky, Lev S., 1934 [1962], Thought and Language ,\nEugenia Hanfmann and Gertrude Vakar (trans.), Cambridge, MA: MIT\nPress. [Originally published in Russian as Myshlenie i Rech ,\nMoscow & Leningrad: Gosudarstvennoe sotsial'no-ekonomicheskoe\nizdatel'svo.]",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wheeler, Michael, 2005, Reconstructing the Cognitive World:\nThe Next Step , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2010, \u201cIn defense of extended\nfunctionalism\u201d, in Menary 2010: 245\u2013270.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2010",
+            "title": "\u2013\u2013\u2013, 2010, \u201cIn defense of extended\nfunctionalism\u201d, in Menary 2010: 245\u2013270."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Wikforss, Asa Maria, 2001, \u201cSocial Externalism and\nConceptual Errors\u201d, The Philosophical Quarterly ,\n51(203): 217\u2013231. doi:10.1111/j.0031-8094.2001.00225.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Williamson, Timothy, 2000, Knowledge and Its Limits ,\nOxford: Oxford University Press. doi:10.1093/019925656X.001.0001",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wilson, Robert A., 1994, \u201cWide Computationalism\u201d, Mind , 103(411): 351\u2013372.\ndoi:10.1093/mind/103.411.351",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2004, Boundaries of the Mind: The\nIndividual in the Fragile Sciences \u2013 Cognition , New York:\nCambridge University Press. doi:10.1017/CBO9780511606847",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2004",
+            "title": "\u2013\u2013\u2013, 2004, Boundaries of the Mind: The\nIndividual in the Fragile Sciences \u2013 Cognition , New York:\nCambridge University Press. doi:10.1017/CBO9780511606847"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Wittgenstein, L., 1953, Philosophical Investigations , E.\nAnscombe, R. Rhees and G. H. Von Wright (eds.), E. Anscombe (trans.),\nOxford: Blackwell.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Yli-Vakkuri, Juhani and John Hawthorne, 2018, Narrow\nContent , Oxford: Oxford University Press.\ndoi:10.1093/oso/9780198785965.001.0001",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ],
+      "sections": {
+        "1": {
+          "id": "1",
+          "title": "Introduction",
+          "content": "In the philosophy of mind, externalism is the view that what\nis going on inside an individual\u2019s body does not always, on its\nown, fix what is going on inside that individual\u2019s mind. The mind , in this sense, simply denotes the totality of mental\noccurrences undergone by an individual at any given time. The body , in this sense, delineates the biological boundaries of\nthe individual which, in creatures such as us, coincide with the\nindividual\u2019s skin and, of course, includes the brain,\ntraditionally taken as the crucial determinant of an\nindividual\u2019s mental life. Thus, externalism is the view that an\nindividual\u2019s bodily (including neural) events, states,\nprocesses, etc. do not always, on their own, determine the mental,\nstates, processes had or undergone by that individual. The qualifier not always permits there to be cases\u2014perhaps\nmany\u2014in which mental occurrences are fixed by bodily\noccurrences. Externalism, generically at least, is merely committed to\nthe claim that this does not always happen. The qualifier on its own is intended to convey that even if an\nindividual\u2019s bodily occurrences do not completely determine which mental occurrences are had or undergone by that\nindividual, the former will at least partially determine the\nlatter and, indeed, can play an important role in such determination. Externalism appears in two major forms. Content externalism is externalism about mental content \u2014the content of\nmental states. It claims that the contents of at least some mental\nstates are not solely determined by occurrences falling within the\nbiological boundaries of that individual that has them. Since mental\nstates that have content are typically individuated by that content,\nthis entails that which mental states an individual has is not\ncompletely determined by occurrences falling within the biological\nboundaries of that individual. Vehicle externalism , more commonly known as the thesis of the extended mind , is externalism about the vehicles of mental content. According to the thesis of extended mind, the vehicles of mental content\u2014roughly, the physical or computational bearers of this content\u2014are not always determined or exhausted by things occurring inside the\nbiological boundaries of the individual. Content externalism and extended mind are logically independent views, and it is not uncommon to find adherents of one view denying the other. These two forms of externalism diverge sharply not simply because they are externalism about different things\u2014contents and vehicles,\nrespectively\u2014but also because they have different\nconceptions of this failure of determination. If mental contents are not determined solely by what is occurring inside the biological boundaries of an individual, this is quite different from the way in which the vehicles of content are not determined solely by what is occurring inside these boundaries. In other words, each form of\nexternalism differs not only in what it claims to be external, but\nalso in what it means by \u201cexternal\u201d."
+        },
+        "2": {
+          "id": "2",
+          "title": "Historical Antecedents",
+          "content": "Externalism\u2014whether of content or vehicle\u2014is often viewed\nas a peculiar eruption of late twentieth-century analytic philosophy.\nThis, however, is historically myopic. Cognate views with fairly clear\nexternalist credentials have been advanced and defended much earlier\nthan this, and in some of the defining works of twentieth-century\nphilosophy (see Rowlands 2003: Chapters 3&4). Wittgenstein (1953)\nargued that meaning something by a sign does not consist in an inner\nstate or process. Rather, the possibility of such meaning depends\nessentially on the existence of a custom or practice of using a sign in given way, and the mastery of a\ntechnique \u2014i.e., the ability to adjust one\u2019s use of\nthe sign to bring in into accordance with this custom. According to\nthe dominant\u2014 community \u2014interpretation of the\nnotion of a custom, this entails that the possibility of meaning\nsomething by a sign is dependent on the existence of a practice\nexternal to the individual meaner, and that what this individual means\nby a sign on any given occasion depends, at least in part, on this\nexternal practice. As we shall see, this social version of content\nexternalism was later developed, powerfully, by Burge (1979,\n1986). There are earlier views that are, at least, closely aligned with\nexternalism. Sartre (1943 [1957]) argued that consciousness\u2014his\nterm for intentional mental acts in general\u2014is nothing in the sense that it exists only as a pure directedness towards the\nworld, and is essentially dependent for its existence on the objects\nto which it is directed. As a consequence, Sartre claimed,\nconsciousness has \u201cno content\u201d. What he meant by this that\nwhat we, today, would call the contents of intentional acts are\nalways, necessarily, outside those acts\u2014transcendent items in\nthe world rather than immanent things inside consciousness. Content\nexternalism seems to be a trivial implication of this. If it were\npossible to transplant a consciousness from one world to\nanother\u2014a staple, as we shall see, of later externalist\nliterature, but which may or may not make sense on Sartre\u2019s\nview\u2014the contents of this consciousness would necessarily\nchange. The reason this may not qualify as externalism in the standard\nsense, however, is that Sartre also defended a revisionist conception\nof the body. The body-as-lived , Sartre argued, is not\nidentical with the body-as-object \u2014the way the body is\nconceived of in the formulation of externalism. Rather, the\nbody-as-lived is revealing activity whose boundaries in no way\ncoincide with those of the body-as-object. Thus, rather than being a\nstraightforward form of externalism, Sartre\u2019s view may better be\nregarded as an abandoning the categories in terms of which the ideas\nof externalism\u2014and its oppositional counterpart,\ninternalism\u2014are formulated. The same is true of Heidegger (1927\n[1962]), to whom Sartre\u2019s discussion of the body was heavily\nindebted. Heidegger urges us to think of human\nreality\u2014 dasein , the characteristic type of being\npossessed by humans\u2014not as a biological organism but, rather, as\na network of natural and social practices. Humans minds, to the extent\nthey have any place in this scheme, would certainly not reside in\nhuman bodies. However\u2014and this is why it does not qualify as\nexternalism in the usual sense\u2014neither do bodies. (But see\nWheeler 2005, for a defense of extended mind grounded in\nHeidegger\u2019s work.) Whether or not they can ultimately be characterized as externalist,\nthe views of Wittgenstein, Sartre and Heidegger play an important role\nin contextualizing the later development of externalism. Like\nexternalism, they all occupy a position that can be labeled anti-Cartesian . They are all opposed to the idea that the\nmental processes had by an individual are always, and completely,\ndetermined by what is going on inside that individual\u2019s body (or\nthey expand the idea of the body in non-Cartesian ways, as in the case\nof Sartre and Heidegger). This type of view is not peculiar to\nphilosophy. In psychology, expressions of the idea can be found in the\nwork of the Soviet psychologists, most notably Vygotsky (1934 [1962]), and Luria and Vygotsky (1930 [1992]) and later in James Gibson\u2019s (1966, 1979) development of an ecological psychology (see also Donald 1991 for a more recent development in this tradition). The roots of this anti-Cartesianism are not only\nbroad but deep, predating Heidegger, and indeed the twentieth century.\nGallagher (2018) argues that versions of this can be found in American\npragmatism. It may be that the ultimate roots of this sort of anti-Cartesianism lie in Hegel (Crisafi & Gallagher 2010; Boldyrev\n& Herrmann-Pillath 2013). Whether or not this is correct,\nexternalism\u2014in either form\u2014is best regarded as less an unprecedented eruption, and more as a recent expression of this\nhistorical tradition of anti-Cartesian thought."
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

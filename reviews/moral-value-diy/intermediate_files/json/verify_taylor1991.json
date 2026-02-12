@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Ethics of Authenticity",
+    "author": "Taylor",
+    "year": 1991
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4159/9780674237117",
+      "title": "The Ethics of Authenticity",
+      "authors": [
+        {
+          "family": "Taylor",
+          "given": "Charles"
+        }
+      ],
+      "editors": [],
+      "year": 1992,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Harvard University Press",
+      "type": "edited-book",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.4159/9780674237117",
+      "score": 30.233807
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,680 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "citation bias philosophy",
+  "results": [
+    {
+      "paperId": "10dd4ea193229f92739adf8a8afa3b67d8b05ad1",
+      "title": "From \u201cParadigm\u201d to \u201cDisciplinary Matrix\u201d: A Fatal Step",
+      "authors": [
+        {
+          "name": "Nataliya I. Kuznetsova",
+          "authorId": "2160322159"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The citation index of Thomas Kuhn\u2019s work may strike any imagination. \u201cThe Structure of Scientific Revolutions\u201d (first edition 1962) is undoubtedly a twentieth-century record-breaker in the field of philosophy of science in terms of such a scientometric parameter. But such fame has been bitter in many ways and placed a heavy burden on the author. For several decades he has been the target of the harshest and most severe criticism. Often the concept of \u201cnormal science\u201d and the \u201cscientific revolution\u201d as a \u201cGestalt switch\u201d was declared ridiculous and absurd. The paper analyses three lines of criticism of Kuhn\u2019s concept: the first came from practicing scientists, the second from specialists in the philosophy of science (primarily proponents of \u201ccritical rationalism\u201d), and the third from the field of social epistemology. Reproaches about the political bias of Kuhn\u2019s concept were taken to extremes, since his views were widely popular. In our opinion, Kuhn should be called a victim of spontaneous hypercriticism. This circumstance did not allow him to improve the original model of scientific revolutions. In this respect, replacing the concept of \u201cparadigm\u201d with the concept of \u201cdisciplinary matrix\u201d was a step backwards, not forwards. However, it is impossible to deny that in the field of the historiography of science, he acted as a real reformer. With the courage of Don Quixote, he defended the rights of historical reconstruction, the preservation of the historical past of science, which should not be completely assimilated within the framework of the modern system of knowledge. His motto was \u2013 \u201cpenetrate the minds of other people who lived in the past.\u201d He boldly argued that in the process of historical development, science changes not only ideas about the object of knowledge (representations of the object), but also the reference of its ideas and concepts. Such a formulation of the question has not yet been fully reflected in modern epistemological concepts.",
+      "citationCount": 0,
+      "doi": "10.5840/eps202259459",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/10dd4ea193229f92739adf8a8afa3b67d8b05ad1",
+      "venue": "Epistemology &amp; Philosophy of Science",
+      "journal": {
+        "name": "Epistemology &amp; Philosophy of Science"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "58694ea5ae4793de1616d3926065d8defdac37d0",
+      "title": "Citation Metrics: A Philosophy of Science Perspective",
+      "authors": [
+        {
+          "name": "C. Lisciandra",
+          "authorId": "1994448"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Citation metrics are statistical measures of scientific output that draw on citation indexes. They purport to capture the impact of scientific articles and the journals in which they appear. As evaluative tools, they are mostly used in the natural sciences, but they are also acquiring an important role in the humanities. While the strengths and weaknesses of citation metrics are extensively debated in a variety of fields, they have only recently started attracting attention in the philosophy of science literature. This paper takes a further step in this direction and presents an analysis of citation metrics from the perspective of a Kuhnian model for the development of science. Starting from Gillies\u2019 argument against the use of citation metrics for scientific research (2008), this paper shows that citation metrics interfere with the development of normal science in certain fields or subfields. The main issue is that citation metrics do not take field-specific differences into account, thereby selectively favoring some fields and arbitrarily hindering the development of others. In other words, this paper shows that current citation metrics fail to \u201ccarve science at its joints\u201d. In light of this, the paper cautions against their use for evaluative purposes.",
+      "citationCount": 2,
+      "doi": "10.1017/epi.2024.46",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/58694ea5ae4793de1616d3926065d8defdac37d0",
+      "venue": "Episteme",
+      "journal": {
+        "name": "Episteme"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "8143ae49d5299fff8bc3d3c59a6dfa18f3edeb83",
+      "title": "Has philosophy become more \u2018Scientific\u2019? A citation analysis",
+      "authors": [
+        {
+          "name": "Paul Rehren",
+          "authorId": "2005366225"
+        },
+        {
+          "name": "Till Armbruster",
+          "authorId": "2325240912"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11229-024-04896-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8143ae49d5299fff8bc3d3c59a6dfa18f3edeb83",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "205"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "edf63797d3ad5acbbe6eba42e0e24bb495a7a2ed",
+      "title": "Mapping the philosophy and neuroscience nexus through citation analysis",
+      "authors": [
+        {
+          "name": "Eugenio Petrovich",
+          "authorId": "2241835991"
+        },
+        {
+          "name": "Marco Viola",
+          "authorId": "2367875151"
+        }
+      ],
+      "year": 2024,
+      "abstract": "We provide a quantitative analysis of the philosophy-neuroscience nexus using citation analysis. Combining bibliometric indicators of cross-field visibility with journal citation mapping techniques, we investigate four dimensions of the nexus: how the visibility of neuroscience in philosophy and of philosophy in neuroscience has changed over time, which areas of philosophy are more interested in neuroscience, which areas of neuroscience are more interested in philosophy, and how the trading zone between the two fields is configured. We also discuss two hypotheses: the supposed occurrence of a neuro-revolution in philosophy and the role of psychology as the disciplinary link between neuroscience and philosophy. Both the visibility of neuroscience in philosophy and the visibility of philosophy in neuroscience have increased significantly from 1980 to 2020, albeit the latter remains an order of magnitude lower than the former. Neuroscience is particularly visible in philosophy of mind, applied ethics, philosophy of science, but not in \u2018core\u2019 areas of analytic philosophy. Philosophy is particularly visible in cognitive and systems neuroscience and neuropsychiatry, but not in biomedical neuroscience. As for the trading zone between philosophy and neuroscience, our data show that it works differently in philosophy and in neuroscience. While some philosophy journals are active loci of bidirectional communication, neuroscience journals are divided between journals \u2018importing\u2019 philosophy in neuroscience and journals \u2018exporting\u2019 neuroscience to philosophy. Lastly, data do not support the hypothesis that a widespread neuro-revolution has transformed philosophy radically, but support the hypothesis that psychology functions as a mediating disciplinary link between philosophy and neuroscience.",
+      "citationCount": 0,
+      "doi": "10.1007/s13194-024-00621-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/edf63797d3ad5acbbe6eba42e0e24bb495a7a2ed",
+      "venue": "European Journal for Philosophy of Science",
+      "journal": {
+        "name": "European Journal for Philosophy of Science",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "42cd084009d6848d5e0ab6fe548e262e19f62ae7",
+      "title": "Challenging Antifat Bias and Fatphobia in the Philosophy Classroom in advance",
+      "authors": [
+        {
+          "name": "Christine Wieseler",
+          "authorId": "2359859435"
+        }
+      ],
+      "year": 2025,
+      "abstract": "<jats:p/>",
+      "citationCount": 0,
+      "doi": "10.5840/aaptstudies202557105",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/42cd084009d6848d5e0ab6fe548e262e19f62ae7",
+      "venue": "American Association of Philosophy Teachers Studies in Pedagogy",
+      "journal": {
+        "name": "American Association of Philosophy Teachers Studies in Pedagogy"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "283365087ed2f8db1a749bdaf5937ffe1d01138b",
+      "title": "A co-citation analysis of cross-disciplinarity in the empirically-informed philosophy of mind",
+      "authors": [
+        {
+          "name": "Karen Yan",
+          "authorId": "134275061"
+        },
+        {
+          "name": "Chuan-Ya Liao",
+          "authorId": "2215358184"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s11229-023-04146-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/283365087ed2f8db1a749bdaf5937ffe1d01138b",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "1-35",
+        "volume": "201"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2f69cc7baa51fa7f61bf71369b8514ba48c7252e",
+      "title": "Affirmative citation bias in scientific myth debunking: A three-in-one case study",
+      "authors": [
+        {
+          "name": "K\u00e5re Letrud",
+          "authorId": "107681421"
+        },
+        {
+          "name": "S. Hernes",
+          "authorId": "108568679"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Several uncorroborated, false, or misinterpreted conceptions have for years been widely distributed in academic publications, thus becoming scientific myths. How can such misconceptions persist and proliferate within the inimical environment of academic criticism? Examining 613 articles we demonstrate that the reception of three myth-exposing publications is skewed by an \u2018affirmative citation bias\u2019: The vast majority of articles citing the critical article will affirm the idea criticized. 468 affirmed the myth, 105 were neutral, while 40 took a negative stance. Once misconceptions proliferate wide and long enough, criticizing them not only becomes increasingly difficult, efforts may even contribute to the continued spreading of the myths.",
+      "citationCount": 33,
+      "doi": "10.1371/journal.pone.0222213",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2f69cc7baa51fa7f61bf71369b8514ba48c7252e",
+      "venue": "PLoS ONE",
+      "journal": {
+        "name": "PLoS ONE",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cb66fbfbbe5abf3df590f2666c34fec37a944ed4",
+      "title": "A Scientometric Approach to the Integrated History and Philosophy of Science: Entrenched Biomedical Standardisation and Citation-Exemplar",
+      "authors": [
+        {
+          "name": "Karen Yan",
+          "authorId": "134275061"
+        },
+        {
+          "name": "Meng-Li Tsai",
+          "authorId": "2069879644"
+        },
+        {
+          "name": "Tsung-Ren Huang",
+          "authorId": "1488669097"
+        }
+      ],
+      "year": 2023,
+      "abstract": "ABSTRACT Is Kuhn\u2019s notion of exemplar applicable to ongoing biomedical sciences? Many philosophers may be skeptical because Kuhn\u2019s cases are mostly from physics and chemistry. However, how do philosophers test the above (non-)applicability directly? We will use examples to illustrate a scientometric approach to the integrated history and philosophy of science (SciHPS) and argue that SciHPS can provide an empirical basis to empirically test and revise a philosophical concept questioned for its applicability to biomedical sciences. This paper will build on Yan, K., M. L. Tsai, and T. R. Huang. [2021. \u201cImproving the Quality of Case-Based Research in the Philosophy of Contemporary Sciences.\u201d Synthese 198 (10): 9591\u20139610. https://doi.org/10.1007/s11229-020-02657-5] heart-rate variability (HRV) case study to examine the biomedical changes within the HRV community from 1970 to 2022. We will investigate how a task force standardises and entrenches methodological standardisations, and argue that some of the task force\u2019s methodological standardisations are tool-afforded by an algorithm. These tool-afforded aspects further explain why an HRV method is robustly dominant in the HRV community despite other HRV scholars having developed alternatives to compete with the dominant one. We will then show how to use SciHPS to empirically test and revise the Kuhnian concept of exemplar into a concept of citation-exemplar that better captures the above tool-afforded aspects of standardisations.",
+      "citationCount": 0,
+      "doi": "10.1080/02698595.2023.2243435",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cb66fbfbbe5abf3df590f2666c34fec37a944ed4",
+      "venue": "International Studies in the Philosophy of Science",
+      "journal": {
+        "name": "International Studies in the Philosophy of Science",
+        "pages": "143 - 165",
+        "volume": "36"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "912df7163fbacc3bbe5ff85a2241deca21cbce39",
+      "title": "A philosophical anchor for creating inclusive communities in early childhood education: Anti-bias philosophy and te Wh\u0101riki: Early childhood curriculum",
+      "authors": [
+        {
+          "name": "A. Gunn",
+          "authorId": "52339730"
+        }
+      ],
+      "year": 2017,
+      "abstract": "The basic premise of this paper is that inclusion in early childhood education in Aotearoa New Zealand is a worthy focus of early childhood education curriculum and that an anti-bias philosophy assists in developing curriculum that is inclusive. It is claimed that the early childhood curriculum in Aotearoa New Zealand is an emancipatory one, and arguments for activism and anti-bias principles in support of curriculum implementation are made. Drawing on anti-bias principles, the current curriculum statement (Te Wh\u00e2riki: Early Childhood Curriculum) is examined to ascertain what support for anti-bias foci exists. Teaching strategies based upon discussion, critical thinking and an awareness of diversity themes/difference are considered in support of active anti-bias work in early childhood education.",
+      "citationCount": 11,
+      "doi": "10.15663/WJE.V9I0.390",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/912df7163fbacc3bbe5ff85a2241deca21cbce39",
+      "venue": "",
+      "journal": {
+        "name": "Waikato Journal of Education",
+        "volume": "9"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b6224c5e6c1f88864b25256ec64d7bc0b4ab75c3",
+      "title": "When philosophy (of science) meets formal methods: a citation analysis of early approaches between research fields",
+      "authors": [
+        {
+          "name": "G. Bonino",
+          "authorId": "67308133"
+        },
+        {
+          "name": "Paolo Maffezioli",
+          "authorId": "3133831"
+        },
+        {
+          "name": "E. Petrovich",
+          "authorId": "35713325"
+        },
+        {
+          "name": "P. Tripodi",
+          "authorId": "50521339"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The article investigates what happens when philosophy (of science) meets and begins to establish connections with two formal research methods such as game theory and network science. We use citation analysis to identify, among the articles published in Synthese and Philosophy of Science between 1985 and 2021, those that cite the specialistic literature in game theory and network science. Then, we investigate the structure of the two corpora thus identified by bibliographic coupling and divide them into clusters of related papers by automatic community detection. Lastly, we construct by the same bibliometric techniques a reference map of philosophy, on which we overlay our corpora to map the diffusion of game theory and network science in the various sub-areas of recent philosophy. Three main results derive from this study. (i) Philosophers are interested not only in using and investigating game theory as a formal method belonging to applied mathematics and sharing many relevant features with social choice theory, but also in considering its applications in more empirically oriented disciplines such as social psychology, cognitive science, or biology. (ii) Philosophers focus on networks in two research contexts and in two different ways: in the debate on causality and scientific explanation, they consider the results of network science; in social epistemology, they employ network science as a formal tool. (iii) In the reference map, logic\u2014whose use in philosophy dates back to a much earlier period\u2014is distributed in a more uniform way than recently encountered disciplines such as game theory and network science. We conclude by discussing some methodological limitations of our bibliometric approach, especially with reference to the problem of field delineation.",
+      "citationCount": 6,
+      "doi": "10.1007/s11229-022-03484-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b6224c5e6c1f88864b25256ec64d7bc0b4ab75c3",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "volume": "200"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "eb0028811723fa44c84b2c4af987c68a820055ef",
+      "title": "Cognitive colonialism: Nationality bias in Brazilian academic philosophy",
+      "authors": [
+        {
+          "name": "Murilo Rocha Seabra",
+          "authorId": "2068570827"
+        },
+        {
+          "name": "Luke Prendergast",
+          "authorId": "2203644613"
+        },
+        {
+          "name": "Gabriel Silveira de Andrade Antunes",
+          "authorId": "2203682226"
+        },
+        {
+          "name": "Laura Tolton",
+          "authorId": "115392684"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1111/meta.12608",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eb0028811723fa44c84b2c4af987c68a820055ef",
+      "venue": "Metaphilosophy",
+      "journal": {
+        "name": "Metaphilosophy"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d8e32c517675dfacf4c961174e7ecc55035f0eda",
+      "title": "Ameliorating Algorithmic Bias, or Why Explainable AI Needs Feminist Philosophy",
+      "authors": [
+        {
+          "name": "Linus Ta-Lun Huang",
+          "authorId": "2282337904"
+        },
+        {
+          "name": "Hsiang-Yun Chen",
+          "authorId": "47666461"
+        },
+        {
+          "name": "Ying-Tung Lin",
+          "authorId": "2282345578"
+        },
+        {
+          "name": "Tsung-Ren Huang",
+          "authorId": "2282353573"
+        },
+        {
+          "name": "Tzu-Wei Hung",
+          "authorId": "2282341392"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Artificial intelligence (AI) systems are increasingly adopted to make decisions in domains such as business, education, health care, and criminal justice. However, such algorithmic decision systems can have prevalent biases against marginalized social groups and undermine social justice. Explainable artificial intelligence (XAI) is a recent development aiming to make an AI system\u2019s decision processes less opaque and to expose its problematic biases. This paper argues against technical XAI, according to which the detection and interpretation of algorithmic bias can be handled more or less independently by technical experts who specialize in XAI methods. Drawing on resources from feminist epistemology, we show why technical XAI is mistaken. Specifically, we demonstrate that the proper detection of algorithmic bias requires relevant interpretive resources, which can only be made available, in practice, by actively involving a diverse group of stakeholders. Finally, we suggest how feminist theories can help shape integrated XAI: an inclusive social-epistemic process that facilitates the amelioration of algorithmic bias.",
+      "citationCount": 21,
+      "doi": "10.5206/fpq/2022.3/4.14347",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d8e32c517675dfacf4c961174e7ecc55035f0eda",
+      "venue": "Feminist Philosophy Quarterly",
+      "journal": {
+        "name": "Feminist Philosophy Quarterly"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5842d039ba1c25e39a1c98ec14ad2f402239bc03",
+      "title": "A Citation Analysis of Philosophy of Education Journals",
+      "authors": [
+        {
+          "name": "Jeffery M. Frank",
+          "authorId": "113358489"
+        },
+        {
+          "name": "Christina Rukki",
+          "authorId": "115914079"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Philosophers of education have expressed concern about the relevance of philosophy of education to scholars outside of our field\u2014philosophers, educational researchers, curriculum theorists, and teacher educators (for example, see Laverty, 2014; Arcilla, 2002; Wortham, 2011; Burbules, 2014, 2002; Fenstermacher, 2002; Butin, 2005; Bullough and Kriedel, 2011). But their accounts foreground another problem in our field that is, perhaps, even more significant. My experience as a reader often leaves me wondering why work in philosophy of education is not cited by other philosophers of education working in similar areas.2 As Hayden\u2019s (2012) important empirical work demonstrates, philosophers of education work on different topics but there are certainly clusters of interest present, which would suggest that there are grounds for greater citation within our own field. Drawing on my own experience as a reader and thinking more about the results of Hayden\u2019s project, I began looking informally at patterns of citation in individual articles. This brief and nonsystematic initial look at literature in philosophy of education journals validated my concern that we might not be citing each other enough, and it led me to the current project: an empirical examination of citation patterns in philosophy of education journals. The goal of this brief paper is to explore in an empirical manner how our field engages with the literature we publish. In this paper, I present a citation analysis of three prominent journals of philosophy of education: Studies in Philosophy of Education, Journal of Philosophy of Education, and Educational Theory. By exploring patterns of citation and self-citation in our field, I hope to spark a conversation about what citation patterns say about our field and its future. As will become clear from these results, it may be hard to make the case to scholars outside of our field that our work is important when it doesn\u2019t seem as though scholars within the field engage with the work particularly well.",
+      "citationCount": 2,
+      "doi": "10.7202/1070464AR",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5842d039ba1c25e39a1c98ec14ad2f402239bc03",
+      "venue": "",
+      "journal": {
+        "name": "Philosophical Inquiry in Education",
+        "pages": "191-199",
+        "volume": "23"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "64439d8807425bbaefb18d804619696ba9351db2",
+      "title": "Implicit Bias and Philosophy, Moral Responsibility, Structural Injustice, and Ethics",
+      "authors": [
+        {
+          "name": "M. Brownstein",
+          "authorId": "143913353"
+        },
+        {
+          "name": "J. Saul",
+          "authorId": "46845571"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/64439d8807425bbaefb18d804619696ba9351db2",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ad406e69c52ba0bab8b1900038f07e5782ffe589",
+      "title": "IDENTITY AND BIAS IN PHILOSOPHY: WHAT PHILOSOPHERS CAN LEARN FROM STEM SUBJECTS",
+      "authors": [
+        {
+          "name": "Yasemin J. Erden",
+          "authorId": "2579749"
+        }
+      ],
+      "year": 2021,
+      "abstract": "This article centres on two distinct but intersecting questions: (1) does it matter if we cannot definitively answer the question \u2018what is philosophy?\u2019 and (2) do philosophers exhibit bias? The article will answer \u2018yes\u2019 to both questions for the following reasons. First because the uncertainty has allowed some answers to dominate. Second, because the answers necessarily demonstrate biases, and these have led to a lack of diversity in the discipline. Following this, the article will consider why philosophers have been slow or reluctant to accept that bias plays a role in what we do. This lack of recognition has, I suggest, limited opportunity for diverse approaches, methods, and standpoints to flourish. The discipline has suffered as a result, and so too have diverse philosophers. Many fields in science, technology, engineering and mathematics (STEM) meanwhile have sought to tackle the lack of diversity head on, and philosophers would do well to heed their examples.",
+      "citationCount": 1,
+      "doi": "10.1017/S1477175621000245",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ad406e69c52ba0bab8b1900038f07e5782ffe589",
+      "venue": "On Thinking",
+      "journal": {
+        "name": "Think",
+        "pages": "117 - 131",
+        "volume": "20"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8e178c18df212f266351bf73a8187225f5072871",
+      "title": "Australasian Journal of Philosophy 1947\u20132016: a retrospective using citation and social network analyses",
+      "authors": [
+        {
+          "name": "Martin Davies",
+          "authorId": "26584815"
+        },
+        {
+          "name": "A. Calma",
+          "authorId": "3424655"
+        }
+      ],
+      "year": 2018,
+      "abstract": "ABSTRACT In anticipation of the journal\u2019s centenary in 2027 this paper provides a citation network analysis of all available citation and publication data of the Australasian Journal of Philosophy (1923\u20132017). A total of 2,353 academic articles containing 21,772 references were collated and analyzed. This includes 175 articles that contained author-submitted keywords, 415 publisher-tagged keywords and 519 articles that had abstracts. Results initially focused on finding the most published authors, most cited articles and most cited authors within the journal, followed by most discussed topics and emerging patterns using keywords and abstracts. The analysis then proceeded to apply social network analysis using Kumu\u00a9 \u2013 a visualization platform for mapping systems and relationships using large datasets. Analysis reveals topic clusters both unique to the journal, and inclusive of the journal\u2019s history. Results from this analysis reaffirm the journal\u2019s continuing focus on topics in traditional analytic philosophy such as morality, epistemology and knowledge, whilst also featuring topics associated with logic and paradox. This paper presents a new approach to analysing and understanding the historic and emerging topics of interest to the journal, and its readership. This has never previously been done for single philosophy journal. This is historically important given the journal\u2019s forthcoming centenary.",
+      "citationCount": 7,
+      "doi": "10.1080/23801883.2018.1478233",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8e178c18df212f266351bf73a8187225f5072871",
+      "venue": "Global Intellectual History",
+      "journal": {
+        "name": "Global Intellectual History",
+        "pages": "181 - 203",
+        "volume": "4"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2e183b91aa2ced5aed9966df42f74d810e3fc538",
+      "title": "11. Research Report | Forms, Patterns, Structures: Citation Analysis and the History of Analytic Philosophy",
+      "authors": [
+        {
+          "name": "E. Petrovich",
+          "authorId": "35713325"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.13135/2280-8574/2843",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2e183b91aa2ced5aed9966df42f74d810e3fc538",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "7"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "948469f4a42d31becea660363b48f65fbea3f842",
+      "title": "Philosophy of Biology: Philosophical bias is the one bias that science cannot avoid",
+      "authors": [
+        {
+          "name": "Fredrik Andersen",
+          "authorId": "145131297"
+        },
+        {
+          "name": "R. Anjum",
+          "authorId": "2323383"
+        },
+        {
+          "name": "E. Rocca",
+          "authorId": "33817273"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 46,
+      "doi": "10.7554/eLife.44929",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/948469f4a42d31becea660363b48f65fbea3f842",
+      "venue": "",
+      "journal": {
+        "name": "eLife",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dbc238fc2d345e0fac4b2b1c1aa6bca0bb2e5b09",
+      "title": "Fuck the Algorithm: Conceptual Issues in Algorithmic Bias",
+      "authors": [
+        {
+          "name": "Catherine Stinson",
+          "authorId": "2362501231"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Algorithmic bias has been the subject of much recent controversy. To clarify what is at stake and to make progress resolving the controversy, a better understanding of the concepts involved would be helpful. The discussion here focuses on the disputed claim that algorithms themselves cannot be biased. To clarify this claim we need to know what kind of thing 'algorithms themselves' are, and to disambiguate the several meanings of 'bias' at play. This further involves showing how bias of moral import can result from statistical biases, and drawing connections to previous conceptual work about political artifacts and oppressive things. Data bias has been identified in domains like hiring, policing and medicine. Examples where algorithms themselves have been pinpointed as the locus of bias include recommender systems that influence media consumption, academic search engines that influence citation patterns, and the 2020 UK algorithmically-moderated A-level grades. Recognition that algorithms are a kind of thing that can be biased is key to making decisions about responsibility for harm, and preventing algorithmically mediated discrimination.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2505.13509",
+      "arxivId": "2505.13509",
+      "url": "https://www.semanticscholar.org/paper/dbc238fc2d345e0fac4b2b1c1aa6bca0bb2e5b09",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2505.13509"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dfd7bc2c8a4e4d9ef0e9658de53c28b65ca10987",
+      "title": "Ethically Aligned Artificial Intelligence: Investigating Algorithmic Bias, Human Identity, and Posthuman Ethics through a Data-Driven Philosophical Lens",
+      "authors": [
+        {
+          "name": "A. Alyousef",
+          "authorId": "52160924"
+        },
+        {
+          "name": "Asem Omari",
+          "authorId": "2339704411"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Human society is being transformed by AI at an unprecedented speed-and in this context questions regarding fairness, agency, and identity become very tricky. This paper presents an interdisciplinary study into algorithmic bias and its ethical implicature in the relationship of data science and philosophy. By bringing into account concepts from posthumanism and moral theory, the research scrutinizes the redefinition of human identity within an age of autonomous systems and artificial consciousness. It proposes a data-oriented mechanism to the detection and mitigation of bias in AI systems, substantiated with case studies in health care and recruitment. One of the emphases of this work is on transparency, accountability, and inclusive governance, ultimately arguing for ethically aligned AI that promotes human dignity concurrent with evolving technological realities. Implications of this study point toward diversifying the development of a new ethical paradigm with the capability to regulate AI design, deployment, and policy.",
+      "citationCount": 1,
+      "doi": "10.63332/joph.v5i5.1316",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dfd7bc2c8a4e4d9ef0e9658de53c28b65ca10987",
+      "venue": "Journal of Posthumanism",
+      "journal": {
+        "name": "Journal of Posthumanism"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1ddfa47dae730ad6380743d60c0d528c36c23a80",
+      "title": "Guides: Philosophy: Citation Style & Tools",
+      "authors": [
+        {
+          "name": "D. Dunham",
+          "authorId": "9083381"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1ddfa47dae730ad6380743d60c0d528c36c23a80",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "812fcc3d21429e37bb8addaca77439c976f44e63",
+      "title": "Citation Analysis of References used in Ph. D. Theses of Philosophy",
+      "authors": [
+        {
+          "name": "A. Kaur",
+          "authorId": "144459294"
+        },
+        {
+          "name": "G. Rattan",
+          "authorId": "69064288"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/812fcc3d21429e37bb8addaca77439c976f44e63",
+      "venue": "",
+      "journal": {
+        "name": "International Journal of Innovative Knowledge Concepts",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "78971c3efea4653833eb083af4541edcb680deb6",
+      "title": "Library Guides: Philosophy Resources: Using MLA citation style",
+      "authors": [
+        {
+          "name": "L. McMillan",
+          "authorId": "145205351"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/78971c3efea4653833eb083af4541edcb680deb6",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "72450c8ef3b251d10e7abded9d6488fb39a640cc",
+      "title": "Are They Good? Are They Bad? Double Hermeneutics and Citation in Philosophy, Asphodel and Alan Rickman, Bruno Latour and the \u2018Science Wars",
+      "authors": [
+        {
+          "name": "Babette Babich",
+          "authorId": "3575549"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/72450c8ef3b251d10e7abded9d6488fb39a640cc",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f4640be9ad31256137a1927685995c972946ee5a",
+      "title": "RATIONALIST BIAS IN SCIENCE POPULARIZATION AND THE NEED TO RETHINK THE ARGUMENTATIVE STRATEGIES OF POPULARIZERS",
+      "authors": [
+        {
+          "name": "Liudmyla Voinarovska",
+          "authorId": "2306825143"
+        },
+        {
+          "name": "Yevhen Kozlov",
+          "authorId": "2369485591"
+        },
+        {
+          "name": "Myroslava Kruhliak",
+          "authorId": "2332128700"
+        },
+        {
+          "name": "Tetyana Pityakova",
+          "authorId": "2369495436"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The article deals with the shortcomings of a common argumentative strategy in popularizing science \u2013 rationalist bias, which relies on the enlightenment ideal of informing and rational persuasion. Some data shows that adherence to pseudoscientific or esoteric concepts is not always a result of low educational or intellectual level \u2013 sometimes it is the more educated denialists hold on to their beliefs more firmly and reject scientific explanations. This situation implies the need of searching new argumentative strategies \u2013 this is the main goal of this article. The article shows that the trends of the past few decades in the philosophy of science and in the theory of argumentation also push to a rethinking of the rationalist bias. In the philosophy of science, the ideals of logical positivism were revised in the light of constructivism, which showed that science is not a purely rational activity which is doing according to strict methodological rules. In the theory of argumentation, there has also been a revision of the formal-logical approach, and a turn to models of real discussions, which take into account the rhetorical and pragmatic aspects of argumentation. In light of this, a number of tactics have been analyzed \u2013 appeal to authority, appeal to tradition, appeal to emotions, appeal to benefit (or appeal to consequences) \u2013 which are sometimes attributed to argumentative errors, but a closer examination shows that these techniques can play a constructive role in popularizing science. Appealing to authority is inevitable in today\u2019s world, where experts are indispensable in many matters. At the same time, it is important to avoid abuse of authority (as in the absolutization of the role of science in scientism). The appeal to tradition is connected with the conventionalist theory of truth, and it can also be a powerful safeguard against amateurs or charlatans who propose some \u201crevolutionary\u201d theories or discoveries. Appealing to emotions allows evoking interest from an audience and motivating to take action on practical issues. Despite stereotype that rationality opposes emotions, the emotional aspect can actually be combined with the rational, and then the argument can have a stronger communicative impact. Another tactic \u2013 an appeal to benefit \u2013 encourages us to consider the motives of our interlocutors. The classical approach to argumentation emphasizes the value of impartiality and considers appeals to interests to be a mistake. But in real communication, where the search for truth is not the main goal for everyone, taking into account the interests that underlie a certain belief helps to find the most acceptable way of presenting information for the audience. And finally, the criticism of rationalist bias has to do with the very method of justification. Popularizers should better rely not on the classical ideal of a completely convincing proof, but rather on the principle of abduction, which involves choosing the best of available explanations, even if that explanation is not perfect.This analysis of argumentative tactics can be useful in developing effective argumentative strategies in the popularization of science.",
+      "citationCount": 0,
+      "doi": "10.15421/342504",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f4640be9ad31256137a1927685995c972946ee5a",
+      "venue": "Epistemological Studies in Philosophy Social and Political Sciences",
+      "journal": {
+        "name": "Epistemological Studies in Philosophy Social and Political Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

@@ -1,0 +1,107 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "4 paper IDs",
+  "results": [
+    {
+      "paperId": "67e10a31d46902dbb9f1e72de40ea77a1d75ace2",
+      "title": "Autonomy, Gender, Politics",
+      "authors": [
+        {
+          "name": "M. Friedman",
+          "authorId": "82488729"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 306,
+      "doi": "10.5860/choice.41-2103",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/67e10a31d46902dbb9f1e72de40ea77a1d75ace2",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "67e10a31d46902dbb9f1e72de40ea77a1d75ace2"
+    },
+    {
+      "paperId": "c5f1120921624486670be8ecfeff2d2853f89abe",
+      "title": "The Ethics of Care",
+      "authors": [
+        {
+          "name": "Virginia Held",
+          "authorId": "69492453"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 613,
+      "doi": "10.1093/0195180992.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c5f1120921624486670be8ecfeff2d2853f89abe",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "c5f1120921624486670be8ecfeff2d2853f89abe"
+    },
+    {
+      "paperId": "238e718b823dd25d62a9defc33a88ab9503a14bd",
+      "title": "Liberalism and the Limits of Justice.",
+      "authors": [
+        {
+          "name": "N. Care",
+          "authorId": "97506361"
+        },
+        {
+          "name": "Michael J. Sandel",
+          "authorId": "49076336"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 1596,
+      "doi": "10.2307/2214956",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/238e718b823dd25d62a9defc33a88ab9503a14bd",
+      "venue": "",
+      "journal": {
+        "name": "No\u00fbs",
+        "pages": "459",
+        "volume": "19"
+      },
+      "publicationTypes": null,
+      "_queryId": "238e718b823dd25d62a9defc33a88ab9503a14bd"
+    },
+    {
+      "paperId": "1c68c89b187b5ffc2df0766ae5bd5de7e59d198e",
+      "title": "Reconceiving Autonomy: Sources, Thoughts and Possibilities",
+      "authors": [
+        {
+          "name": "Jennifer Nedelsky",
+          "authorId": "101396428"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 458,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c68c89b187b5ffc2df0766ae5bd5de7e59d198e",
+      "venue": "",
+      "journal": {
+        "name": "Yale Journal of Law and Feminism",
+        "pages": "5",
+        "volume": "1"
+      },
+      "publicationTypes": null,
+      "_queryId": "1c68c89b187b5ffc2df0766ae5bd5de7e59d198e"
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

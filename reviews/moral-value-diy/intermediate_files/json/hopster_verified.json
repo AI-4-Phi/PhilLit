@@ -1,0 +1,65 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/0020174X.2022.2090434"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/0020174x.2022.2090434",
+      "title": "Pistols, pills, pork and ploughs: the structure of technomoral revolutions",
+      "authors": [
+        {
+          "family": "Hopster",
+          "given": "J. K. G."
+        },
+        {
+          "family": "Arora",
+          "given": "C."
+        },
+        {
+          "family": "Blunden",
+          "given": "C."
+        },
+        {
+          "family": "Eriksen",
+          "given": "C."
+        },
+        {
+          "family": "Frank",
+          "given": "L. E."
+        },
+        {
+          "family": "Hermann",
+          "given": "J. S."
+        },
+        {
+          "family": "Klenk",
+          "given": "M. B. O. T."
+        },
+        {
+          "family": "O\u2019Neill",
+          "given": "E. R. H."
+        },
+        {
+          "family": "Steinert",
+          "given": "S."
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Inquiry",
+      "volume": "68",
+      "issue": "2",
+      "page": "264-296",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/0020174x.2022.2090434"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

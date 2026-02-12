@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/s10677-023-10380-6"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s10677-023-10380-6",
+      "title": "The Skill Model: A Dilemma for Virtue Ethics",
+      "authors": [
+        {
+          "family": "Schuster",
+          "given": "Nick"
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "Ethical Theory and Moral Practice",
+      "volume": "26",
+      "issue": "3",
+      "page": "447-461",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/s10677-023-10380-6"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

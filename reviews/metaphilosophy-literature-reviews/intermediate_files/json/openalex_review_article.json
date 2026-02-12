@@ -1,0 +1,1903 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "review article philosophy",
+  "results": [
+    {
+      "openalex_id": "W2932631983",
+      "doi": "10.1007/s40037-019-0509-2",
+      "title": "How phenomenology can help us learn from the experiences of others",
+      "authors": [
+        {
+          "name": "Brian E. Neubauer",
+          "openalex_id": "A5070004409",
+          "orcid": "https://orcid.org/0000-0003-0716-7017",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences",
+            "Walter Reed National Military Medical Center"
+          ]
+        },
+        {
+          "name": "Catherine Witkop",
+          "openalex_id": "A5022297956",
+          "orcid": "https://orcid.org/0000-0001-5366-2663",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences"
+          ]
+        },
+        {
+          "name": "Lara Varpio",
+          "openalex_id": "A5021077287",
+          "orcid": "https://orcid.org/0000-0002-1412-4341",
+          "institutions": [
+            "Uniformed Services University of the Health Sciences",
+            "Unifor"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-05",
+      "abstract": "Introduction As a research methodology, phenomenology is uniquely positioned to help health professions education (HPE) scholars learn from the experiences of others. Phenomenology is a form of qualitative research that focuses on the study of an individual\u2019s lived experiences within the world. Although it is a powerful approach for inquiry, the nature of this methodology is often intimidating to HPE researchers. This article aims to explain phenomenology by reviewing the key philosophical and methodological differences between two of the major approaches to phenomenology: transcendental and hermeneutic. Understanding the ontological and epistemological assumptions underpinning these approaches is essential for successfully conducting phenomenological research. Purpose This review provides an introduction to phenomenology and demonstrates how it can be applied to HPE research. We illustrate the two main sub-types of phenomenology and detail their ontological, epistemological, and methodological differences. Conclusions Phenomenology is a powerful research strategy that is well suited for exploring challenging problems in HPE. By building a better understanding of the nature of phenomenology and working to ensure proper alignment between the specific research question and the researcher\u2019s underlying philosophy, we hope to encourage HPE scholars to consider its utility when addressing their research questions.",
+      "cited_by_count": 1816,
+      "type": "review",
+      "source": {
+        "name": "Perspectives on Medical Education",
+        "type": "journal",
+        "issn": [
+          "2212-2761",
+          "2212-277X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://storage.googleapis.com/jnl-up-j-pme-files/journals/1/articles/277/636dfe9837902.pdf"
+      },
+      "topics": [
+        "Empathy and Medical Education",
+        "Counseling, Therapy, and Family Dynamics",
+        "Hermeneutics and Narrative Identity"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W2932631983"
+    },
+    {
+      "openalex_id": "W4306178549",
+      "doi": "10.1007/s11846-022-00588-8",
+      "title": "Literature reviews as independent studies: guidelines for academic practice",
+      "authors": [
+        {
+          "name": "Sascha Kraus",
+          "openalex_id": "A5055158022",
+          "orcid": "https://orcid.org/0000-0003-4886-7482",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Matthias Breier",
+          "openalex_id": "A5029009501",
+          "institutions": [
+            "Lappeenranta-Lahti University of Technology"
+          ]
+        },
+        {
+          "name": "Weng Marc Lim",
+          "openalex_id": "A5045594204",
+          "orcid": "https://orcid.org/0000-0001-7196-1923",
+          "institutions": [
+            "Swinburne University of Technology",
+            "Sunway University",
+            "Swinburne University of Technology Sarawak Campus"
+          ]
+        },
+        {
+          "name": "Marina Dabi\u0107",
+          "openalex_id": "A5017353394",
+          "orcid": "https://orcid.org/0000-0001-8374-9719",
+          "institutions": [
+            "University of Ljubljana",
+            "University of Zagreb"
+          ]
+        },
+        {
+          "name": "Satish Kumar",
+          "openalex_id": "A5100777365",
+          "orcid": "https://orcid.org/0000-0001-5200-1476",
+          "institutions": [
+            "Malaviya National Institute of Technology Jaipur",
+            "Swinburne University of Technology Sarawak Campus"
+          ]
+        },
+        {
+          "name": "Dominik K. Kanbach",
+          "openalex_id": "A5036332361",
+          "orcid": "https://orcid.org/0000-0003-0956-8009",
+          "institutions": [
+            "HHL Leipzig Graduate School of Management",
+            "Woxsen School of Business"
+          ]
+        },
+        {
+          "name": "Debmalya Mukherjee",
+          "openalex_id": "A5044093515",
+          "orcid": "https://orcid.org/0000-0001-6952-2120",
+          "institutions": [
+            "University of Akron"
+          ]
+        },
+        {
+          "name": "Vincenzo Corvello",
+          "openalex_id": "A5047618162",
+          "orcid": "https://orcid.org/0000-0001-7502-7206",
+          "institutions": [
+            "University of Messina"
+          ]
+        },
+        {
+          "name": "Juan Pi\u00f1eiro Chousa",
+          "openalex_id": "A5016171857",
+          "orcid": "https://orcid.org/0000-0002-4639-8435",
+          "institutions": [
+            "Universidade de Santiago de Compostela"
+          ]
+        },
+        {
+          "name": "Eric W. Liguori",
+          "openalex_id": "A5066291402",
+          "orcid": "https://orcid.org/0000-0001-7159-4625",
+          "institutions": [
+            "Rowan University"
+          ]
+        },
+        {
+          "name": "Daniel Palacios-Marqu\u00e9s",
+          "openalex_id": "A5113257600",
+          "institutions": [
+            "Universitat Polit\u00e8cnica de Val\u00e8ncia"
+          ]
+        },
+        {
+          "name": "Francesco Schiavone",
+          "openalex_id": "A5059899728",
+          "orcid": "https://orcid.org/0000-0001-9219-6714",
+          "institutions": [
+            "Parthenope University of Naples",
+            "Paris School of Business"
+          ]
+        },
+        {
+          "name": "Alberto Ferraris",
+          "openalex_id": "A5025632015",
+          "orcid": "https://orcid.org/0000-0003-3125-1710",
+          "institutions": [
+            "Ural Federal University",
+            "University of Turin"
+          ]
+        },
+        {
+          "name": "Cristina Fernandes",
+          "openalex_id": "A5044366607",
+          "orcid": "https://orcid.org/0000-0001-8560-0758",
+          "institutions": [
+            "Loughborough University",
+            "University of Beira Interior"
+          ]
+        },
+        {
+          "name": "Jo\u00e3o J. Ferreira",
+          "openalex_id": "A5042387489",
+          "orcid": "https://orcid.org/0000-0002-5928-2474",
+          "institutions": [
+            "University of Beira Interior"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-14",
+      "abstract": null,
+      "cited_by_count": 862,
+      "type": "article",
+      "source": {
+        "name": "Review of Managerial Science",
+        "type": "journal",
+        "issn": [
+          "1863-6683",
+          "1863-6691"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1007/s11846-022-00588-8"
+      },
+      "topics": [
+        "scientometrics and bibliometrics research",
+        "Meta-analysis and systematic reviews"
+      ],
+      "referenced_works_count": 62,
+      "url": "https://openalex.org/W4306178549"
+    },
+    {
+      "openalex_id": "W2899623761",
+      "doi": "10.1126/science.aat6766",
+      "title": "Navigating cognition: Spatial codes for human thinking",
+      "authors": [
+        {
+          "name": "Jacob L. S. Bellmund",
+          "openalex_id": "A5040622071",
+          "orcid": "https://orcid.org/0000-0002-2098-4487",
+          "institutions": [
+            "Radboud University Nijmegen",
+            "Norwegian University of Science and Technology",
+            "Max Planck Institute for Human Cognitive and Brain Sciences"
+          ]
+        },
+        {
+          "name": "Peter G\u00e4rdenfors",
+          "openalex_id": "A5047434698",
+          "orcid": "https://orcid.org/0000-0001-7423-828X",
+          "institutions": [
+            "Lund University",
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Edvard I Moser",
+          "openalex_id": "A5086289649",
+          "orcid": "https://orcid.org/0000-0003-0226-5566",
+          "institutions": [
+            "Norwegian University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Christian F. Doeller",
+          "openalex_id": "A5041330412",
+          "orcid": "https://orcid.org/0000-0003-4120-4600",
+          "institutions": [
+            "Norwegian University of Science and Technology",
+            "Max Planck Institute for Human Cognitive and Brain Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-08",
+      "abstract": "A framework for cognitive spaces Ever since Tolman's proposal of cognitive maps in the 1940s, the question of how spatial representations support flexible behavior has been a contentious topic. Bellmund et al. review and combine concepts from cognitive science and philosophy with findings from neurophysiology of spatial navigation in rodents to propose a framework for cognitive neuroscience. They argue that spatial-processing principles in the hippocampalentorhinal region provide a geometric code to map information domains of cognitive spaces for high-level cognition and discuss recent evidence for this proposal. Science , this issue p. eaat6766",
+      "cited_by_count": 640,
+      "type": "review",
+      "source": {
+        "name": "Science",
+        "type": "journal",
+        "issn": [
+          "0036-8075",
+          "1095-9203"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Memory and Neural Mechanisms",
+        "Neuroscience and Neuropharmacology Research",
+        "Olfactory and Sensory Function Studies"
+      ],
+      "referenced_works_count": 167,
+      "url": "https://openalex.org/W2899623761"
+    },
+    {
+      "openalex_id": "W3007805859",
+      "doi": "10.17051/ilkonline.2020.696699",
+      "title": "A review article on philosophy education as a stimuli for early brain development",
+      "authors": [
+        {
+          "name": "\u00d6zg\u00fcl Polat",
+          "openalex_id": "A5012194359",
+          "orcid": "https://orcid.org/0000-0001-7426-5771",
+          "institutions": [
+            "Marmara University"
+          ]
+        },
+        {
+          "name": "Dicle Akay",
+          "openalex_id": "A5081963600",
+          "orcid": "https://orcid.org/0000-0003-3513-7886",
+          "institutions": [
+            "Bah\u00e7e\u015fehir University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-01",
+      "abstract": "The studies examining the relationship between brain development and desired skills in accordance with the needs emerging from the changing conditions of today have started to change. Although philosophy is a curriculum that becomes widespread with Children for Philosophy developed by Matthew Lipman in Turkey, it is not a curriculum that becomes widespread in preschool period, a period that brain development is on such important. In preschool period that is seen as the most important period in terms of brain development, it is required that children are given the education that will positively affect their neuroplasticity (the flexibility of brain neurons). When the importance of philosophy education programs in early years on children is considered, the importance of giving philosophy education as a thinking skills education program positively affecting children\u2019s thinking skills at first and their skills in all developmental areas in preschool period, becoming widespread these programs and increasing the resources for these programs emerges. Therefore, this study was a review article prepared by the aim of emphasizing the importance of philosophy education in preschool period as a stimuli for brain development, drawing attention to the importance of conducting these programs prevalently and systematically. \u00a9 2020, Ankara University. All rights reserved.",
+      "cited_by_count": 3,
+      "type": "review",
+      "source": {
+        "name": "\u0130lk\u00f6\u011fretim Online",
+        "type": "journal",
+        "issn": [
+          "1305-3515"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.17051/ilkonline.2020.696699"
+      },
+      "topics": [
+        "Education and Critical Thinking Development",
+        "Values and Moral Education",
+        "Education Practices and Challenges"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3007805859"
+    },
+    {
+      "openalex_id": "W2789254838",
+      "doi": "10.1109/mcom.2018.1700839",
+      "title": "Design of Low-Density Parity Check Codes for 5G New Radio",
+      "authors": [
+        {
+          "name": "Tom Richardson",
+          "openalex_id": "A5100888435",
+          "institutions": [
+            "Qualcomm (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Shrinivas Kudekar",
+          "openalex_id": "A5030079757",
+          "orcid": "https://orcid.org/0000-0001-6441-0699",
+          "institutions": [
+            "Qualcomm (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-03-01",
+      "abstract": "Turbo codes, prevalent in most modern cellular devices, are set to be replaced by LDPC codes as the code for forward error correction. This transition was ushered in mainly because of the high throughput demands for 5G New Radio (NR). The new channel coding solution also needs to support incremental-redundancy hybrid ARQ, and a wide range of blocklengths and coding rates, with stringent performance guarantees and minimal description complexity. In this article, we first briefly review the requirements of the new channel code for 5G NR. We then describe the LDPC code design philosophy and how the broad requirements of 5G NR channel coding led to the introduction of novel structural features in the code design, culminating in an LDPC code that satisfies all the demands of 5G NR.",
+      "cited_by_count": 399,
+      "type": "article",
+      "source": {
+        "name": "IEEE Communications Magazine",
+        "type": "journal",
+        "issn": [
+          "0163-6804",
+          "1558-1896"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Error Correcting Code Techniques",
+        "Advanced Wireless Communication Techniques",
+        "Cooperative Communication and Network Coding"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W2789254838"
+    },
+    {
+      "openalex_id": "W2737721978",
+      "doi": "10.1016/j.bioactmat.2020.01.004",
+      "title": "3D printing of bone tissue engineering scaffolds",
+      "authors": [
+        {
+          "name": "Chong Wang",
+          "openalex_id": "A5103069379",
+          "orcid": "https://orcid.org/0000-0002-9549-1775",
+          "institutions": [
+            "Dongguan University of Technology"
+          ]
+        },
+        {
+          "name": "Wei Huang",
+          "openalex_id": "A5044742458",
+          "orcid": "https://orcid.org/0000-0002-3023-7610",
+          "institutions": [
+            "Huazhong University of Science and Technology",
+            "Union Hospital"
+          ]
+        },
+        {
+          "name": "Yu Zhou",
+          "openalex_id": "A5029418754",
+          "orcid": "https://orcid.org/0000-0003-0366-2694",
+          "institutions": [
+            "Chinese Academy of Sciences",
+            "Shenzhen Institutes of Advanced Technology"
+          ]
+        },
+        {
+          "name": "Libing He",
+          "openalex_id": "A5101107272",
+          "institutions": [
+            "Dongguan University of Technology"
+          ]
+        },
+        {
+          "name": "Zhi\u2010Zhu He",
+          "openalex_id": "A5085580822",
+          "orcid": "https://orcid.org/0000-0001-8861-9964",
+          "institutions": [
+            "Dongguan University of Technology"
+          ]
+        },
+        {
+          "name": "Ziling Chen",
+          "openalex_id": "A5010068608",
+          "institutions": [
+            "Dongguan University of Technology"
+          ]
+        },
+        {
+          "name": "Xiao He",
+          "openalex_id": "A5102490033",
+          "institutions": [
+            "Dongguan University of Technology"
+          ]
+        },
+        {
+          "name": "Shuo Tian",
+          "openalex_id": "A5021285930",
+          "orcid": "https://orcid.org/0000-0001-7930-5656",
+          "institutions": [
+            "Huazhong University of Science and Technology",
+            "Union Hospital"
+          ]
+        },
+        {
+          "name": "Jiaming Liao",
+          "openalex_id": "A5088357152",
+          "institutions": [
+            "Dongguan University of Technology"
+          ]
+        },
+        {
+          "name": "Bingheng Lu",
+          "openalex_id": "A5101679909",
+          "orcid": "https://orcid.org/0000-0003-1449-872X",
+          "institutions": [
+            "Dongguan University of Technology"
+          ]
+        },
+        {
+          "name": "Yen Wei",
+          "openalex_id": "A5024952249",
+          "orcid": "https://orcid.org/0000-0001-5950-0163",
+          "institutions": [
+            "Tsinghua University"
+          ]
+        },
+        {
+          "name": "Min Wang",
+          "openalex_id": "A5100340927",
+          "orcid": "https://orcid.org/0000-0002-6495-5637",
+          "institutions": [
+            "University of Hong Kong"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-15",
+      "abstract": "Tissue engineering is promising in realizing successful treatments of human body tissue loss that current methods cannot treat well or achieve satisfactory clinical outcomes. In scaffold-based bone tissue engineering, a high performance scaffold underpins the success of a bone tissue engineering strategy and a major direction in the field is to produce bone tissue engineering scaffolds with desirable shape, structural, physical, chemical and biological features for enhanced biological performance and for regenerating complex bone tissues. Three-dimensional (3D) printing can produce customized scaffolds that are highly desirable for bone tissue engineering. The enormous interest in 3D printing and 3D printed objects by the science, engineering and medical communities has led to various developments of the 3D printing technology and wide investigations of 3D printed products in many industries, including biomedical engineering, over the past decade. It is now possible to create novel bone tissue engineering scaffolds with customized shape, architecture, favorable macro-micro structure, wettability, mechanical strength and cellular responses. This article provides a concise review of recent advances in the R & D of 3D printing of bone tissue engineering scaffolds. It also presents our philosophy and research in the designing and fabrication of bone tissue engineering scaffolds through 3D printing.",
+      "cited_by_count": 624,
+      "type": "review",
+      "source": {
+        "name": "Bioactive Materials",
+        "type": "journal",
+        "issn": [
+          "2097-1192",
+          "2452-199X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.bioactmat.2020.01.004"
+      },
+      "topics": [
+        "Bone Tissue Engineering Materials",
+        "Additive Manufacturing and 3D Printing Technologies",
+        "3D Printing in Biomedical Research"
+      ],
+      "referenced_works_count": 87,
+      "url": "https://openalex.org/W2737721978"
+    },
+    {
+      "openalex_id": "W2956949459",
+      "doi": "10.1007/s11159-019-09793-2",
+      "title": "Self-directed learning: A fundamental competence in a rapidly changing world",
+      "authors": [
+        {
+          "name": "Thomas Howard Morris",
+          "openalex_id": "A5020894776",
+          "orcid": "https://orcid.org/0000-0002-0100-6434",
+          "institutions": [
+            "University of Kaiserslautern"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-13",
+      "abstract": null,
+      "cited_by_count": 300,
+      "type": "article",
+      "source": {
+        "name": "International Review of Education",
+        "type": "journal",
+        "issn": [
+          "0020-8566",
+          "1573-0638"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://researchspace.bathspa.ac.uk/13084/1/13084.pdf"
+      },
+      "topics": [
+        "Innovative Teaching and Learning Methods",
+        "E-Learning and Knowledge Management",
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W2956949459"
+    },
+    {
+      "openalex_id": "W3010600010",
+      "doi": "10.1108/tqm-10-2019-0243",
+      "title": "Role of artificial intelligence in operations environment: a review and bibliometric analysis",
+      "authors": [
+        {
+          "name": "Pavitra Dhamija",
+          "openalex_id": "A5032226015",
+          "orcid": "https://orcid.org/0000-0001-5882-1168",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Surajit Bag",
+          "openalex_id": "A5045841946",
+          "orcid": "https://orcid.org/0000-0002-2344-9551",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-06",
+      "abstract": "Purpose \u201cTechnological intelligence\u201d is the capacity to appreciate and adapt technological advancements, and \u201cartificial intelligence\u201d is the key to achieve persuasive operational transformations in majority of contemporary organizational set-ups. Implicitly, artificial intelligence (the philosophies of machines to think, behave and perform either same or similar to humans) has knocked the doors of business organizations as an imperative activity. Artificial intelligence, as a discipline, initiated by scientist John McCarthy and formally publicized at Dartmouth Conference in 1956, now occupies a central stage for many organizations. Implementation of artificial intelligence provides competitive edge to an organization with a definite augmentation in its social and corporate status. Mere application of a concept will not furnish real output until and unless its performance is reviewed systematically. Technological changes are dynamic and advancing at a rapid rate. Subsequently, it becomes highly crucial to understand that where have the people reached with respect to artificial intelligence research. The present article aims to review significant work by eminent researchers towards artificial intelligence in the form of top contributing universities, authors, keywords, funding sources, journals and citation statistics. Design/methodology/approach As rightly remarked by past researchers that reviewing is learning from experience, research team has reviewed (by applying systematic literature review through bibliometric analysis) the concept of artificial intelligence in this article. A sum of 1,854 articles extracted from Scopus database for the year 2018\u20132019 (31st of May) with selected keywords (artificial intelligence, genetic algorithms, agent-based systems, expert systems, big data analytics and operations management) along with certain filters (subject\u2013business, management and accounting; language-English; document\u2013article, article in press, review articles and source-journals). Findings Results obtained from cluster analysis focus on predominant themes for present as well as future researchers in the area of artificial intelligence. Emerged clusters include Cluster 1: Artificial Intelligence and Optimization; Cluster 2: Industrial Engineering/Research and Automation; Cluster 3: Operational Performance and Machine Learning; Cluster 4: Sustainable Supply Chains and Sustainable Development; Cluster 5: Technology Adoption and Green Supply Chain Management and Cluster 6: Internet of Things and Reverse Logistics. Originality/value The result of review of selected studies is in itself a unique contribution and a food for thought for operations managers and policy makers.",
+      "cited_by_count": 353,
+      "type": "review",
+      "source": {
+        "name": "The TQM Journal",
+        "type": "journal",
+        "issn": [
+          "1754-2731",
+          "1754-274X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 112,
+      "url": "https://openalex.org/W3010600010"
+    },
+    {
+      "openalex_id": "W2998578058",
+      "doi": "10.1109/jproc.2019.2957798",
+      "title": "Deep-Learning-Based Wireless Resource Allocation With Application to Vehicular Networks",
+      "authors": [
+        {
+          "name": "Le Liang",
+          "openalex_id": "A5066151952",
+          "orcid": "https://orcid.org/0000-0002-8489-1933",
+          "institutions": [
+            "Intel (United States)"
+          ]
+        },
+        {
+          "name": "Hao Ye",
+          "openalex_id": "A5100427161",
+          "orcid": "https://orcid.org/0000-0003-1544-1768",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Guanding Yu",
+          "openalex_id": "A5079187892",
+          "orcid": "https://orcid.org/0000-0003-1354-2557",
+          "institutions": [
+            "Zhejiang University"
+          ]
+        },
+        {
+          "name": "Geoffrey Ye Li",
+          "openalex_id": "A5039289964",
+          "orcid": "https://orcid.org/0000-0002-7894-2415",
+          "institutions": [
+            "Georgia Institute of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-27",
+      "abstract": "It has been a long-held belief that judicious resource allocation is critical to mitigating interference, improving network efficiency, and ultimately optimizing wireless communication performance. The traditional wisdom is to explicitly formulate resource allocation as an optimization problem and then exploit mathematical programming to solve the problem to a certain level of optimality. Nonetheless, as wireless networks become increasingly diverse and complex, for example, in the high-mobility vehicular networks, the current design methodologies face significant challenges and thus call for rethinking of the traditional design philosophy. Meanwhile, deep learning, with many success stories in various disciplines, represents a promising alternative due to its remarkable power to leverage data for problem solving. In this article, we discuss the key motivations and roadblocks of using deep learning for wireless resource allocation with application to vehicular networks. We review major recent studies that mobilize the deep-learning philosophy in wireless resource allocation and achieve impressive results. We first discuss deep-learning-assisted optimization for resource allocation. We then highlight the deep reinforcement learning approach to address resource allocation problems that are difficult to handle in the traditional optimization framework. We also identify some research directions that deserve further investigation.",
+      "cited_by_count": 278,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the IEEE",
+        "type": "journal",
+        "issn": [
+          "0018-9219",
+          "1558-2256"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Advanced MIMO Systems Optimization",
+        "Wireless Communication Security Techniques",
+        "Energy Harvesting in Wireless Networks"
+      ],
+      "referenced_works_count": 121,
+      "url": "https://openalex.org/W2998578058"
+    },
+    {
+      "openalex_id": "W3148914383",
+      "doi": "10.1111/ijcs.12687",
+      "title": "Theory of consumption values in consumer behaviour research: A review and future research agenda",
+      "authors": [
+        {
+          "name": "Ceyda Tanr\u0131kulu",
+          "openalex_id": "A5006772619",
+          "orcid": "https://orcid.org/0000-0001-9025-583X",
+          "institutions": [
+            "Adana Science and Technology University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-31",
+      "abstract": "Abstract Current marketing philosophy is value\u2010oriented, whereas marketing theory explaining value from the consumer perspective is limited. The theory of consumption value (TCV) is a marketing theory that provides insight into the motivation for consumers' consumption behaviour through consumption values. Although it offers theoretical explanations about consumer behaviour on a large scale, there is no single article in the literature providing comprehensive and integrated knowledge of TCV and a future research agenda based on a systematic literature review. The main aims of this paper are to present integrated knowledge and provide propositions for future research. This review research covers peer\u2010reviewed journal articles that used this theory and were published between 1991 and 2020. The major findings in the review demonstrate that this theory has remained up to date in the consumer behaviour literature, has been dynamic and has been comprehensively used to explain choice behaviour. Thus, further understanding has been provided for consumer behaviour related to drivers of consumption, although some issues require further examination. Directions for future research are developed in more detail to encourage and advance the understanding of value through TCV.",
+      "cited_by_count": 239,
+      "type": "review",
+      "source": {
+        "name": "International Journal of Consumer Studies",
+        "type": "journal",
+        "issn": [
+          "1470-6423",
+          "1470-6431"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Customer Service Quality and Loyalty",
+        "Consumer Behavior in Brand Consumption and Identification",
+        "Environmental Sustainability in Business"
+      ],
+      "referenced_works_count": 108,
+      "url": "https://openalex.org/W3148914383"
+    },
+    {
+      "openalex_id": "W2946643783",
+      "doi": "10.1016/j.jclepro.2019.05.216",
+      "title": "Relationships between lean and sustainable construction: Positive impacts of lean practices over sustainability during construction phase",
+      "authors": [
+        {
+          "name": "David Carvajal-Arango",
+          "openalex_id": "A5029835912",
+          "orcid": "https://orcid.org/0000-0001-8359-6003",
+          "institutions": [
+            "Universidad EAFIT"
+          ]
+        },
+        {
+          "name": "Sara Baham\u00f3n-Jaramillo",
+          "openalex_id": "A5051313921",
+          "institutions": [
+            "Universidad EAFIT"
+          ]
+        },
+        {
+          "name": "Paula Aristiz\u00e1bal-Monsalve",
+          "openalex_id": "A5080201642",
+          "institutions": [
+            "Universidad EAFIT"
+          ]
+        },
+        {
+          "name": "Alejandro V\u00e1squez-Hernandez",
+          "openalex_id": "A5051824240",
+          "orcid": "https://orcid.org/0000-0002-1073-4038",
+          "institutions": [
+            "Universidad EAFIT"
+          ]
+        },
+        {
+          "name": "Luis Fernando Botero Botero",
+          "openalex_id": "A5072071183",
+          "orcid": "https://orcid.org/0000-0003-3418-7144",
+          "institutions": [
+            "Universidad EAFIT"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-20",
+      "abstract": null,
+      "cited_by_count": 156,
+      "type": "article",
+      "source": {
+        "name": "Journal of Cleaner Production",
+        "type": "journal",
+        "issn": [
+          "0959-6526",
+          "1879-1786"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Construction Project Management and Performance",
+        "BIM and Construction Integration",
+        "Occupational Health and Safety Research"
+      ],
+      "referenced_works_count": 166,
+      "url": "https://openalex.org/W2946643783"
+    },
+    {
+      "openalex_id": "W2995973262",
+      "doi": "10.1037/met0000303",
+      "title": "Modeling psychopathology: From data models to formal theories.",
+      "authors": [
+        {
+          "name": "Jonas M B Haslbeck",
+          "openalex_id": "A5050675565",
+          "orcid": "https://orcid.org/0000-0001-9096-7837"
+        },
+        {
+          "name": "Ois\u00edn Ryan",
+          "openalex_id": "A5038403882",
+          "orcid": "https://orcid.org/0000-0003-3698-6396"
+        },
+        {
+          "name": "Donald J. Robinaugh",
+          "openalex_id": "A5072280023",
+          "orcid": "https://orcid.org/0000-0002-5579-7518",
+          "institutions": [
+            "Massachusetts General Hospital"
+          ]
+        },
+        {
+          "name": "Lourens Waldorp",
+          "openalex_id": "A5064926593",
+          "orcid": "https://orcid.org/0000-0002-5941-4625"
+        },
+        {
+          "name": "Denny Borsboom",
+          "openalex_id": "A5029100305",
+          "orcid": "https://orcid.org/0000-0001-9720-4162"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-04",
+      "abstract": "Over the past decade, there has been a surge of empirical research investigating mental disorders as complex systems. In this article, we investigate how to best make use of this growing body of empirical research and move the field toward its fundamental aims of explaining, predicting, and controlling psychopathology. We first review the contemporary philosophy of science literature on scientific theories and argue that fully achieving the aims of explanation, prediction, and control requires that we construct formal theories of mental disorders: theories expressed in the language of mathematics or a computational programming language. We then investigate three routes by which one can use empirical findings (i.e., data models) to construct formal theories: (a) using data models themselves as formal theories, (b) using data models to infer formal theories, and (c) comparing empirical data models to theory-implied data models in order to evaluate and refine an existing formal theory. We argue that the third approach is the most promising path forward. We conclude by introducing the abductive formal theory construction (AFTC) framework, informed by both our review of philosophy of science and our methodological investigation. We argue that this approach provides a clear and promising way forward for using empirical research to inform the generation, development, and testing of formal theories both in the domain of psychopathology and in the broader field of psychological science. (PsycInfo Database Record (c) 2023 APA, all rights reserved).",
+      "cited_by_count": 180,
+      "type": "review",
+      "source": {
+        "name": "Psychological Methods",
+        "type": "journal",
+        "issn": [
+          "1082-989X",
+          "1939-1463"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1037/met0000303"
+      },
+      "topics": [
+        "Mental Health Research Topics",
+        "Functional Brain Connectivity Studies",
+        "Mental Health and Psychiatry"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W2995973262"
+    },
+    {
+      "openalex_id": "W2898363183",
+      "doi": "10.1016/j.ijheatmasstransfer.2018.08.048",
+      "title": "Air cooled heat sink geometries subjected to forced flow: A critical review",
+      "authors": [
+        {
+          "name": "Zulfiqar Khattak",
+          "openalex_id": "A5081332493",
+          "institutions": [
+            "University of Engineering and Technology Taxila",
+            "COMSATS University Islamabad"
+          ]
+        },
+        {
+          "name": "Haf\u0131z Muhammad Ali",
+          "openalex_id": "A5073534575",
+          "orcid": "https://orcid.org/0000-0001-9266-408X",
+          "institutions": [
+            "University of Engineering and Technology Taxila"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-25",
+      "abstract": null,
+      "cited_by_count": 252,
+      "type": "review",
+      "source": {
+        "name": "International Journal of Heat and Mass Transfer",
+        "type": "journal",
+        "issn": [
+          "0017-9310",
+          "1879-2189"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Heat Transfer and Optimization",
+        "Heat Transfer Mechanisms",
+        "Nanofluid Flow and Heat Transfer"
+      ],
+      "referenced_works_count": 106,
+      "url": "https://openalex.org/W2898363183"
+    },
+    {
+      "openalex_id": "W2982850536",
+      "doi": "10.3233/bpl-190084",
+      "title": "Yoga Effects on Brain Health: A Systematic Review of the Current Literature",
+      "authors": [
+        {
+          "name": "Neha P. Gothe",
+          "openalex_id": "A5066535654",
+          "orcid": "https://orcid.org/0000-0002-2736-757X",
+          "institutions": [
+            "University of Illinois Urbana-Champaign"
+          ]
+        },
+        {
+          "name": "Imadh Khan",
+          "openalex_id": "A5070837005",
+          "orcid": "https://orcid.org/0000-0003-0180-1590",
+          "institutions": [
+            "University of Illinois Urbana-Champaign"
+          ]
+        },
+        {
+          "name": "Jessica M. Hayes",
+          "openalex_id": "A5066244892",
+          "orcid": "https://orcid.org/0000-0003-1396-7133",
+          "institutions": [
+            "Wayne State University"
+          ]
+        },
+        {
+          "name": "Emily Erlenbach",
+          "openalex_id": "A5025953656",
+          "institutions": [
+            "University of Illinois Urbana-Champaign"
+          ]
+        },
+        {
+          "name": "Jessica S. Damoiseaux",
+          "openalex_id": "A5088830505",
+          "institutions": [
+            "Wayne State University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-01",
+      "abstract": "Yoga is the most popular complementary health approach practiced by adults in the United States. It is an ancient mind and body practice with origins in Indian philosophy. Yoga combines physical postures, rhythmic breathing and meditative exercise to offer the practitioners a unique holistic mind-body experience. While the health benefits of physical exercise are well established, in recent years, the active attentional component of breathing and meditation practice has garnered interest among exercise neuroscientists. As the scientific evidence for the physical and mental health benefits of yoga continues to grow, this article aims to summarize the current knowledge of yoga practice and its documented positive effects for brain structure and function, as assessed with MRI, fMRI, and SPECT. We reviewed 11 studies examining the effects of yoga practice on the brain structures, function and cerebral blood flow. Collectively, the studies demonstrate a positive effect of yoga practice on the structure and/or function of the hippocampus, amygdala, prefrontal cortex, cingulate cortex and brain networks including the default mode network (DMN). The studies offer promising early evidence that behavioral interventions like yoga may hold promise to mitigate age-related and neurodegenerative declines as many of the regions identified are known to demonstrate significant age-related atrophy.",
+      "cited_by_count": 198,
+      "type": "review",
+      "source": {
+        "name": "Brain Plasticity",
+        "type": "journal",
+        "issn": [
+          "2213-6304",
+          "2213-6312"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://content.iospress.com:443/download/brain-plasticity/bpl190084?id=brain-plasticity%2Fbpl190084"
+      },
+      "topics": [
+        "Mindfulness and Compassion Interventions",
+        "Heart Rate Variability and Autonomic Control",
+        "Psychosomatic Disorders and Their Treatments"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W2982850536"
+    },
+    {
+      "openalex_id": "W3159306875",
+      "doi": "10.15294/jpii.v10i1.28438",
+      "title": "Indonesian Curriculum Reform in Policy and Local Wisdom: Perspectives from Science Education",
+      "authors": [
+        {
+          "name": "Nadi Suprapto",
+          "openalex_id": "A5075985538",
+          "orcid": "https://orcid.org/0000-0002-8990-7412",
+          "institutions": [
+            "Universitas Negeri Surabaya"
+          ]
+        },
+        {
+          "name": "Binar Kurnia Prahan\u0131",
+          "openalex_id": "A5056946018",
+          "orcid": "https://orcid.org/0000-0002-5606-6629",
+          "institutions": [
+            "Universitas Negeri Surabaya"
+          ]
+        },
+        {
+          "name": "Tsung-Hui Cheng",
+          "openalex_id": "A5057095350",
+          "institutions": [
+            "National Dong Hwa University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-31",
+      "abstract": "This article summarizes the issue of Indonesian curriculum reform in policy and local wisdom. The perspectives on science education influence the analysis and discussions. This paper is part of a position paper (PP) in which the writers tailored their ideas based on their experiences and literature review. The views regarding curriculum policy, science local wisdom, and ethnoscience were developed based on theoretical and empirical literature regarding these issues. The discussion is divided into five parts: curriculum policy and policy borrowing, philosophy of Indonesian local wisdom, cultural-based learning, science local wisdom and ethnoscience, and policy borrowing versus local wisdom. The significance of the results gives a view to the government, academicians, policymakers, and educational communities.",
+      "cited_by_count": 106,
+      "type": "article",
+      "source": {
+        "name": "Jurnal Pendidikan IPA Indonesia",
+        "type": "journal",
+        "issn": [
+          "2089-4392",
+          "2339-1286"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journal.unnes.ac.id/nju/index.php/jpii/article/download/28438/11447"
+      },
+      "topics": [
+        "Educational Curriculum and Learning Methods",
+        "Education and Critical Thinking Development",
+        "Educational Assessment and Pedagogy"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W3159306875"
+    },
+    {
+      "openalex_id": "W4378782804",
+      "doi": "10.1038/s41583-023-00705-w",
+      "title": "The neuroconnectionist research programme",
+      "authors": [
+        {
+          "name": "Adrien Doerig",
+          "openalex_id": "A5021679728",
+          "orcid": "https://orcid.org/0000-0001-5120-9750"
+        },
+        {
+          "name": "Rowan P. Sommers",
+          "openalex_id": "A5023965314",
+          "institutions": [
+            "Max Planck Institute for Psycholinguistics"
+          ]
+        },
+        {
+          "name": "Katja Seeliger",
+          "openalex_id": "A5044503071",
+          "orcid": "https://orcid.org/0000-0002-5343-0595",
+          "institutions": [
+            "Max Planck Institute for Human Cognitive and Brain Sciences"
+          ]
+        },
+        {
+          "name": "Blake A. Richards",
+          "openalex_id": "A5004133705",
+          "orcid": "https://orcid.org/0000-0001-9662-2151",
+          "institutions": [
+            "Montreal Neurological Institute and Hospital",
+            "Canadian Institute for Advanced Research",
+            "McGill University",
+            "Mila - Quebec Artificial Intelligence Institute"
+          ]
+        },
+        {
+          "name": "Jenann Ismael",
+          "openalex_id": "A5085365602",
+          "orcid": "https://orcid.org/0000-0002-3854-2898",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Grace W. Lindsay",
+          "openalex_id": "A5006191787",
+          "orcid": "https://orcid.org/0000-0001-9904-7471",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Konrad P. K\u00f6rding",
+          "openalex_id": "A5072047827",
+          "orcid": "https://orcid.org/0000-0001-8408-4499",
+          "institutions": [
+            "Canadian Institute for Advanced Research",
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Talia Konkle",
+          "openalex_id": "A5002461431",
+          "orcid": "https://orcid.org/0000-0003-1738-4744",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "Marcel van Gerven",
+          "openalex_id": "A5074794877",
+          "orcid": "https://orcid.org/0000-0002-2206-9098",
+          "institutions": [
+            "Radboud University Nijmegen"
+          ]
+        },
+        {
+          "name": "Nikolaus Kriegeskorte",
+          "openalex_id": "A5084467223",
+          "orcid": "https://orcid.org/0000-0001-7433-9005",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Tim C. Kietzmann",
+          "openalex_id": "A5021717958",
+          "orcid": "https://orcid.org/0000-0001-8076-6062",
+          "institutions": [
+            "Osnabr\u00fcck University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-30",
+      "abstract": null,
+      "cited_by_count": 212,
+      "type": "review",
+      "source": {
+        "name": "Nature reviews. Neuroscience",
+        "type": "journal",
+        "issn": [
+          "1471-003X",
+          "1471-0048"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://repository.ubn.ru.nl//bitstream/handle/2066/292222/292222.pdf"
+      },
+      "topics": [
+        "Neural dynamics and brain function",
+        "EEG and Brain-Computer Interfaces",
+        "Functional Brain Connectivity Studies"
+      ],
+      "referenced_works_count": 292,
+      "url": "https://openalex.org/W4378782804"
+    },
+    {
+      "openalex_id": "W3189747190",
+      "doi": "10.1146/annurev-soc-072320-095202",
+      "title": "Rethinking Culture and Cognition",
+      "authors": [
+        {
+          "name": "Karen A. Cerulo",
+          "openalex_id": "A5029194479",
+          "orcid": "https://orcid.org/0000-0002-8159-2102",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Vanina Leschziner",
+          "openalex_id": "A5035236344",
+          "orcid": "https://orcid.org/0000-0002-1585-2113",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Hana Shepherd",
+          "openalex_id": "A5033227219",
+          "orcid": "https://orcid.org/0000-0003-4491-6400",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-31",
+      "abstract": "Paul DiMaggio's (1997) Annual Review of Sociology article urged integration of the cognitive and the cultural, triggering a cognitive turn in cultural sociology. Since then, a burgeoning literature in cultural sociology has incorporated ideas from the cognitive sciences\u2014cognitive anthropology, cognitive psychology, linguistics, neuroscience and philosophy\u2014significantly reshaping sociologists\u2019 approach to culture, both theoretically and methodologically. This article reviews work published since DiMaggio's agenda-setting piece\u2014research that builds on cross-disciplinary links between cultural sociology and the cognitive sciences. These works present new ideas on the acquisition, storage, and retrieval of culture, on how forms of personal culture interact, on how culture becomes shared, and on how social interaction and cultural environments inform cognitive processes. Within our discussion, we point to research questions that remain unsettled. We then conclude with issues for future research in culture and cognition that can enrich sociological analysis about action more generally.",
+      "cited_by_count": 119,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Sociology",
+        "type": "journal",
+        "issn": [
+          "0360-0572",
+          "1545-2115"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social and Cultural Dynamics",
+        "Cultural Differences and Values",
+        "Language, Metaphor, and Cognition"
+      ],
+      "referenced_works_count": 178,
+      "url": "https://openalex.org/W3189747190"
+    },
+    {
+      "openalex_id": "W57691508",
+      "doi": "10.1093/oso/9780198815655.001.0001",
+      "title": "Oxford Studies in Ancient Philosophy",
+      "authors": [
+        {
+          "name": "Michael Frede",
+          "openalex_id": "A5035966153"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-18",
+      "abstract": "<italic>Oxford Studies in Ancient Philosophy</italic> provides, twice each year, a collection of the best current work in the field of ancient philosophy. Each volume features original essays that contribute to an understanding of a wide range of themes and problems in all periods of ancient Greek and Roman philosophy, from the beginnings to the threshold of the Middle Ages. From its first volume in 1983, <italic>OSAP</italic> has been a highly influential venue for work in the field, and has often featured essays of substantial length as well as critical essays on books of distinctive importance. Volume LIII contains: an article on several of Zeno of Elea\u2019s paradoxes and the nihilist interpretation of Eudemus of Rhodes; an article on the coherence of Thrasymachus\u2019 challenge in Plato\u2019s <italic>Republic</italic> book 1; another on Plato\u2019s treatment of perceptual content in the <italic>Theaetetus</italic> and the <italic>Phaedo</italic>; an article on why Aristotle thinks that hypotheses are material causes of conclusions, and another on why he denies shame is a virtue; and a book review of a new edition of a work possibly by Apuleius and Middle Platonist political philosophy.",
+      "cited_by_count": 74,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W57691508"
+    },
+    {
+      "openalex_id": "W3091242554",
+      "doi": "10.1177/0098628320959979",
+      "title": "Rethinking the Course Syllabus: Considerations for Promoting Equity, Diversity, and Inclusion",
+      "authors": [
+        {
+          "name": "Milton A. Fuentes",
+          "openalex_id": "A5061620370",
+          "orcid": "https://orcid.org/0000-0002-5707-7004",
+          "institutions": [
+            "Montclair State University"
+          ]
+        },
+        {
+          "name": "David G. Zelaya",
+          "openalex_id": "A5005938643",
+          "orcid": "https://orcid.org/0000-0002-3173-3499",
+          "institutions": [
+            "Merrimack College"
+          ]
+        },
+        {
+          "name": "Joshua W. Madsen",
+          "openalex_id": "A5070377240",
+          "orcid": "https://orcid.org/0000-0003-3112-7592",
+          "institutions": [
+            "University of Calgary"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-30",
+      "abstract": "Introduction: Equity, diversity, and inclusion (EDI) are receiving considerable attention in higher education. Within psychology, the American Psychological Association has highlighted the importance of cultural diversity in both undergraduate and graduate curricula and charged educators with facilitating the development of cultural competence among learners. Statement of the Problem: Many resources have been developed to help promote EDI within higher education. The resources developed have mainly focused on the curricula and pedagogical approaches, yet the syllabus remains overlooked with few guidelines available to educators. Literature Review: We offer several considerations informed by theoretical frameworks and best practices in the discipline and suggestions for the successful implementation of EDI in the syllabus. Teaching Implications: This article provides a comprehensive and useful guide for developing a syllabus that assists with the integration of EDI, as the syllabus is the first opportunity for faculty to communicate their philosophy, expectations, requirements, and other course information. Conclusion: Infusing EDI in the syllabus is essential for promoting an inclusive learning environment and is conducive to establishing goals related to cultural competence.",
+      "cited_by_count": 207,
+      "type": "article",
+      "source": {
+        "name": "Teaching of Psychology",
+        "type": "journal",
+        "issn": [
+          "0098-6283",
+          "1532-8023"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Counseling Practices and Supervision",
+        "Mentoring and Academic Development",
+        "Higher Education Research Studies"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W3091242554"
+    },
+    {
+      "openalex_id": "W2955170938",
+      "doi": "10.31857/s004287440004416-2",
+      "title": "Diversity of approaches towards comprehension of realism Review Article on the book \u201cPerspectives of Realism in Modern Philosophy\u201d",
+      "authors": [
+        {
+          "name": "Valent\u00edn A. Bazhanov",
+          "openalex_id": "A5064092622",
+          "orcid": "https://orcid.org/0000-0002-0336-9570"
+        },
+        {
+          "name": "E.V. Kudryashova",
+          "openalex_id": "A5002693407",
+          "orcid": "https://orcid.org/0000-0002-3268-4756"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-01",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Voprosy filosofii",
+        "type": "journal",
+        "issn": [
+          "0042-8744"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Sociopolitical Dynamics in Russia",
+        "Cultural, Linguistic, Economic Studies",
+        "Security, Politics, and Digital Transformation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2955170938"
+    },
+    {
+      "openalex_id": "W2943763474",
+      "doi": "10.1002/wcs.1501",
+      "title": "What do implicit measures measure?",
+      "authors": [
+        {
+          "name": "Michael Brownstein",
+          "openalex_id": "A5069819842",
+          "orcid": "https://orcid.org/0000-0003-0311-9536",
+          "institutions": [
+            "John Jay College of Criminal Justice",
+            "City University of New York"
+          ]
+        },
+        {
+          "name": "Alex Madva",
+          "openalex_id": "A5044314671",
+          "institutions": [
+            "California State Polytechnic University"
+          ]
+        },
+        {
+          "name": "Bertram Gawronski",
+          "openalex_id": "A5069999624",
+          "orcid": "https://orcid.org/0000-0001-7938-3339",
+          "institutions": [
+            "Austin College"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-29",
+      "abstract": "Abstract We identify several ongoing debates related to implicit measures, surveying prominent views and considerations in each. First, we summarize the debate regarding whether performance on implicit measures is explained by conscious or unconscious representations. Second, we discuss the cognitive structure of the operative constructs: are they associatively or propositionally structured? Third, we review debates about whether performance on implicit measures reflects traits or states. Fourth, we discuss the question of whether a person's performance on an implicit measure reflects characteristics of the person who is taking the test or characteristics of the situation in which the person is taking the test. Finally, we survey the debate about the relationship between implicit measures and (other kinds of) behavior. This article is categorized under: Philosophy &gt; Representation Psychology &gt; Theory and Methods Psychology &gt; Prediction Philosophy &gt; Psychological Capacities",
+      "cited_by_count": 121,
+      "type": "review",
+      "source": {
+        "name": "Wiley Interdisciplinary Reviews Cognitive Science",
+        "type": "journal",
+        "issn": [
+          "1939-5078",
+          "1939-5086"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social and Intergroup Psychology",
+        "Social Representations and Identity",
+        "Action Observation and Synchronization"
+      ],
+      "referenced_works_count": 105,
+      "url": "https://openalex.org/W2943763474"
+    },
+    {
+      "openalex_id": "W3118453399",
+      "doi": "10.1080/13603116.2020.1866688",
+      "title": "Students\u2019 attitudes toward disability: a systematic literature review (2012\u20132019)",
+      "authors": [
+        {
+          "name": "John Freer",
+          "openalex_id": "A5091058545",
+          "orcid": "https://orcid.org/0000-0002-2626-4907",
+          "institutions": [
+            "University of Windsor",
+            "St. Clair College"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-08",
+      "abstract": "Inclusive education is a philosophy and practice that has been promoted internationally. Most scholars now agree that inclusion is more than the placement of students with exceptionalities in a general education class. Instead, definitions of inclusion have expanded to encompass feelings of belongingness. This definition is an improvement, but begs the question: how do we help students to feel more of a part of their class? Ableist attitudes held by students without special education needs may be hindering inclusive ideals. This article presents a systematic literature review (SLR) of current research (2012-2019) on students\u2019 attitudes toward disability. The searching strategy resulted in 37 peer-reviewed journal articles. This review offers a synthesis of the research in the field, which includes determinant studies and intervention studies. The article pool includes 21 determinant studies and 16 intervention studies. Eight determinant and three intervention themes are presented. Recommendations for future research and implications for inclusive education are discussed.",
+      "cited_by_count": 92,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Inclusive Education",
+        "type": "journal",
+        "issn": [
+          "1360-3116",
+          "1464-5173"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Inclusion and Disability in Education and Sport",
+        "Hearing Impairment and Communication",
+        "Disability Rights and Representation"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W3118453399"
+    },
+    {
+      "openalex_id": "W2785492254",
+      "doi": "10.5944/ried.21.2.20055",
+      "title": "Constructivism and connectivism in education technology: Active, situated, authentic, experiential, and anchored learning",
+      "authors": [
+        {
+          "name": "Jo\u00e3o Mattar",
+          "openalex_id": "A5087957744",
+          "orcid": "https://orcid.org/0000-0001-6265-6150",
+          "institutions": [
+            "Uninter",
+            "Pontif\u00edcia Universidade Cat\u00f3lica de S\u00e3o Paulo"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-29",
+      "abstract": "The main objectives of this theoretical paper are to compare some constructivist-related learning theories and explore how they can be adequately used in educational technology and distance education. After a brief introduction, constructivism is defined as a general philosophy of education encompassing several different learning theories. The article then presents and discusses the following theories: situated cognition, activity theory, experiential learning, anchored instruction, and authentic learning. Connectivism or distributed learning is also presented as a new and important theory, including its pedagogical view and practice in massive open online courses (MOOCs). These theories are then organized in a coherent way, classified under the constructivist umbrella, pointing their common and distinctive features. Connectivism is positioned as a new philosophy of education for the digital age, making Vygotsky\u2019s concept of zone of proximal development (ZPD) more flexible and stretching it to include learning that lies outside the learner, in social networks and technological tools. The text finally proposes further work on how these theories can be properly combined and used as frameworks for constructivist projects and activities in the fields of educational technology and distance education. The article is based on the search and review of peer-reviewed articles on constructivism, connectivism, the other aforementioned theories, and education technology and distance education._________________________________________________________Este art\u00edculo te\u00f3rico pretende comparar algunas teor\u00edas de aprendizaje relacionadas con el constructivismo y explorar c\u00f3mo pueden usarse adecuadamente en el campo de la tecnolog\u00eda educativa y la educaci\u00f3n a distancia. Despu\u00e9s de una breve introducci\u00f3n, el constructivismo queda definido como una filosof\u00eda general de la educaci\u00f3n que abarca varias teor\u00edas de aprendizaje diferentes. El art\u00edculo presenta y analiza las siguientes teor\u00edas: cognici\u00f3n situada, teor\u00eda de la actividad, aprendizaje experiencial, instrucci\u00f3n anclada y aprendizaje aut\u00e9ntico. El conectivismo o aprendizaje distribuido tambi\u00e9n se presenta como una nueva e importante teor\u00eda, que incluye su visi\u00f3n pedag\u00f3gica y pr\u00e1ctica en cursos masivos y abiertos en l\u00ednea (MOOCs). Organizamos estas teor\u00edas de manera coherente bajo el paraguas constructivista e indicamos las principales similitudes y diferencias entre ellas. El conectivismo se posiciona como una nueva filosof\u00eda de la educaci\u00f3n para la era digital, flexibilizando y ampliando el concepto de Zona de Desarrollo Pr\u00f3ximo (ZDP) de Vygotsky para incluir el aprendizaje que se encuentra fuera del alumno, en redes sociales y herramientas tecnol\u00f3gicas. El texto finalmente propone un trabajo adicional sobre c\u00f3mo estas teor\u00edas pueden combinarse y utilizarse adecuadamente como marcos para proyectos y actividades constructivistas en los campos de la tecnolog\u00eda educativa y la educaci\u00f3n a distancia. El art\u00edculo se basa en la investigaci\u00f3n y revisi\u00f3n de art\u00edculos revisados por pares sobre el constructivismo, el conectivismo, las otras teor\u00edas mencionadas y la tecnolog\u00eda educativa y la educaci\u00f3n a distancia.",
+      "cited_by_count": 208,
+      "type": "article",
+      "source": {
+        "name": "RIED Revista Iberoamericana de Educaci\u00f3n a Distancia",
+        "type": "journal",
+        "issn": [
+          "1138-2783",
+          "1390-3306"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.5944/ried.21.2.20055"
+      },
+      "topics": [
+        "E-Learning and Knowledge Management",
+        "Innovative Teaching and Learning Methods",
+        "Online Learning and Analytics"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2785492254"
+    },
+    {
+      "openalex_id": "W2796820415",
+      "doi": "10.1177/0163278718756992",
+      "title": "What Is Lean Management in Health Care? Development of an Operational Definition for a Cochrane Systematic Review",
+      "authors": [
+        {
+          "name": "Thomas Rotter",
+          "openalex_id": "A5101545931",
+          "orcid": "https://orcid.org/0000-0002-8979-0111",
+          "institutions": [
+            "Queen's University"
+          ]
+        },
+        {
+          "name": "Christopher Plishka",
+          "openalex_id": "A5021982833",
+          "orcid": "https://orcid.org/0000-0003-0157-2409",
+          "institutions": [
+            "University of Saskatchewan"
+          ]
+        },
+        {
+          "name": "Adegboyega Lawal",
+          "openalex_id": "A5001311616",
+          "orcid": "https://orcid.org/0000-0002-5670-0175",
+          "institutions": [
+            "University of Saskatchewan"
+          ]
+        },
+        {
+          "name": "Elizabeth Harrison",
+          "openalex_id": "A5048093763",
+          "orcid": "https://orcid.org/0000-0002-6923-9410",
+          "institutions": [
+            "University of Saskatchewan"
+          ]
+        },
+        {
+          "name": "Nazmi Sari",
+          "openalex_id": "A5007900574",
+          "orcid": "https://orcid.org/0000-0002-6509-5499",
+          "institutions": [
+            "University of Saskatchewan"
+          ]
+        },
+        {
+          "name": "Donna Goodridge",
+          "openalex_id": "A5055568768",
+          "orcid": "https://orcid.org/0000-0002-8680-8646",
+          "institutions": [
+            "University of Saskatchewan"
+          ]
+        },
+        {
+          "name": "Rachel Flynn",
+          "openalex_id": "A5009517041",
+          "orcid": "https://orcid.org/0000-0003-2980-7441",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "James G. Chan",
+          "openalex_id": "A5072589671",
+          "institutions": [
+            "University of Northern British Columbia"
+          ]
+        },
+        {
+          "name": "Michelle Fiander",
+          "openalex_id": "A5036307004",
+          "orcid": "https://orcid.org/0000-0002-3579-9292",
+          "institutions": [
+            "University of Utah"
+          ]
+        },
+        {
+          "name": "Bozena Poksi\u0144ska",
+          "openalex_id": "A5090333223",
+          "orcid": "https://orcid.org/0000-0003-4040-8302",
+          "institutions": [
+            "Link\u00f6ping University"
+          ]
+        },
+        {
+          "name": "Keith A. Willoughby",
+          "openalex_id": "A5038273159",
+          "orcid": "https://orcid.org/0009-0008-6713-6902",
+          "institutions": [
+            "University of Saskatchewan"
+          ]
+        },
+        {
+          "name": "Leigh Kinsman",
+          "openalex_id": "A5036972628",
+          "orcid": "https://orcid.org/0000-0002-0790-5887",
+          "institutions": [
+            "University of Tasmania"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-10",
+      "abstract": "Industrial improvement approaches such as Lean management are increasingly being adopted in health care. Synthesis is necessary to ensure these approaches are evidence based and requires operationalization of concepts to ensure all relevant studies are included. This article outlines the process utilized to develop an operational definition of Lean in health care. The literature search, screening, data extraction, and data synthesis processes followed the recommendations outlined by the Cochrane Collaboration. Development of the operational definition utilized the methods prescribed by Kinsman et al. and Wieland et al. This involved extracting characteristics of Lean, synthesizing similar components to establish an operational definition, applying this definition, and updating the definition to address shortcomings. We identified two defining characteristics of Lean health-care management: (1) Lean philosophy, consisting of Lean principles and continuous improvement, and (2) Lean activities, which include Lean assessment activities and Lean improvement activities. The resulting operational definition requires that an organization or subunit of an organization had integrated Lean philosophy into the organization\u2019s mandate, guidelines, or policies and utilized at least one Lean assessment activity or Lean improvement activity. This operational definition of Lean management in health care will act as an objective screening criterion for our systematic review. To our knowledge, this is the first evidence-based operational definition of Lean management in health care.",
+      "cited_by_count": 117,
+      "type": "article",
+      "source": {
+        "name": "Evaluation & the Health Professions",
+        "type": "journal",
+        "issn": [
+          "0163-2787",
+          "1552-3918"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0163278718756992"
+      },
+      "topics": [
+        "Healthcare Quality and Management",
+        "Quality and Supply Management",
+        "Health Systems, Economic Evaluations, Quality of Life"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W2796820415"
+    },
+    {
+      "openalex_id": "W4245163563",
+      "doi": "10.7196/sajbl.2019.v12i2.679",
+      "title": "Core aspects of ubuntu: A systematic review",
+      "authors": [
+        {
+          "name": "Cornelius Ewuoso",
+          "openalex_id": "A5007094646",
+          "orcid": "https://orcid.org/0000-0001-7219-5554",
+          "institutions": [
+            "Stellenbosch University"
+          ]
+        },
+        {
+          "name": "Susan Hall",
+          "openalex_id": "A5060311926",
+          "institutions": [
+            "Stellenbosch University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-17",
+      "abstract": "Background. Ubuntu has been proposed as a useful alternative to current (Western) ethical frameworks for evaluating global bioethical issues, contributing theoretical diversity to the clinical context. However, the literature regarding this philosophy is often described as confusing, and is characterised by a number of competing interpretations. Objective. To arrive, by way of a systematic review, at a definition of ubuntu that encompasses the common themes that appear in competing interpretations. Methods. Searches were done in PhilPaper, PubMed and Google Scholar using a variety of search strings, generating 1 207 hits. After screening for English language, as well as relevance of the article after reading the title, abstract and full text, 99 articles were included for review. Another 17 articles were identified through snowballing and additional searches, giving a total of 116 articles that were included in the review. Results. This review shows that ubuntu is an essentially relational ethics, which prizes relationships of interdependence, fellowship, reconciliation, relationality, community friendliness, harmonious relationships and other-regarding actions such as compassion and actions that are likely to be good for others, in which actions are morally right to the extent that they honour the capacity to relate communally, reduce discord or promote friendly relationships with others, and in which the physical world and the spiritual world are fundamentally united. Conclusion. Scholars, health professionals, policy makers and others should be aware that an alternative ethical theory exists in the global South that may be applied to address a variety of global (bio)ethical issues. Further research, however, is needed to evaluate how properly action-guiding this formulation is in particular contexts.",
+      "cited_by_count": 117,
+      "type": "review",
+      "source": {
+        "name": "South African Journal of Bioethics and Law",
+        "type": "journal",
+        "issn": [
+          "1999-7639"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.7196/sajbl.2019.v12i2.679"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics and Legal Issues in Pediatric Healthcare",
+        "African cultural and philosophical studies"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W4245163563"
+    },
+    {
+      "openalex_id": "W3136139111",
+      "doi": "10.1016/j.oooo.2021.03.004",
+      "title": "Third molar surgery: Past, present, and the future",
+      "authors": [
+        {
+          "name": "Jos\u00e9 S. Sifuentes-Cervantes",
+          "openalex_id": "A5043638687",
+          "orcid": "https://orcid.org/0000-0003-3017-4178",
+          "institutions": [
+            "University of Puerto Rico, Medical Sciences Campus"
+          ]
+        },
+        {
+          "name": "Francisco Carrillo-Morales",
+          "openalex_id": "A5033999325",
+          "institutions": [
+            "University of Puerto Rico, Medical Sciences Campus"
+          ]
+        },
+        {
+          "name": "Jaime Castro-N\u00fa\u00f1ez",
+          "openalex_id": "A5039704640",
+          "orcid": "https://orcid.org/0000-0002-1733-2824",
+          "institutions": [
+            "University of Puerto Rico, Medical Sciences Campus",
+            "Instituci\u00f3n Universitaria Colegios de Colombia"
+          ]
+        },
+        {
+          "name": "Larry L. Cunningham",
+          "openalex_id": "A5030331911",
+          "orcid": "https://orcid.org/0000-0002-1174-7105",
+          "institutions": [
+            "University of Pittsburgh"
+          ]
+        },
+        {
+          "name": "Joseph E. Van Sickels",
+          "openalex_id": "A5017213215",
+          "orcid": "https://orcid.org/0000-0001-6572-1739",
+          "institutions": [
+            "University of Kentucky"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-14",
+      "abstract": null,
+      "cited_by_count": 74,
+      "type": "review",
+      "source": {
+        "name": "Oral Surgery Oral Medicine Oral Pathology and Oral Radiology",
+        "type": "journal",
+        "issn": [
+          "2212-4403",
+          "2212-4411"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Dental Radiography and Imaging",
+        "Dental Anxiety and Anesthesia Techniques",
+        "Facial Trauma and Fracture Management"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W3136139111"
+    },
+    {
+      "openalex_id": "W2962523738",
+      "doi": "10.1109/access.2019.2928233",
+      "title": "Towards Disaster Resilient Smart Cities: Can Internet of Things and Big Data Analytics Be the Game Changers?",
+      "authors": [
+        {
+          "name": "Syed Attique Shah",
+          "openalex_id": "A5023820143",
+          "orcid": "https://orcid.org/0000-0003-2949-7391",
+          "institutions": [
+            "Istanbul Technical University",
+            "ORCID"
+          ]
+        },
+        {
+          "name": "Dursun Zafer \u015eeker",
+          "openalex_id": "A5024707647",
+          "orcid": "https://orcid.org/0000-0001-7498-1540",
+          "institutions": [
+            "Istanbul Technical University"
+          ]
+        },
+        {
+          "name": "M. Mazhar Rathore",
+          "openalex_id": "A5019517189",
+          "orcid": "https://orcid.org/0000-0002-0701-9850",
+          "institutions": [
+            "ORCID",
+            "Hamad bin Khalifa University"
+          ]
+        },
+        {
+          "name": "Sufian Hameed",
+          "openalex_id": "A5005835956",
+          "orcid": "https://orcid.org/0000-0003-4683-1988",
+          "institutions": [
+            "National University of Computer and Emerging Sciences"
+          ]
+        },
+        {
+          "name": "Sadok Ben Yahia",
+          "openalex_id": "A5070511935",
+          "orcid": "https://orcid.org/0000-0001-8939-8948",
+          "institutions": [
+            "Tallinn University of Technology"
+          ]
+        },
+        {
+          "name": "Dirk Draheim",
+          "openalex_id": "A5024067855",
+          "orcid": "https://orcid.org/0000-0003-3376-7489",
+          "institutions": [
+            "Tallinn University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "<p dir=\"ltr\">Disasters (natural or man-made) can be lethal to human life, the environment, and infrastructure. The recent advancements in the Internet of Things (IoT) and the evolution in big data analytics (BDA) technologies have provided an open opportunity to develop highly needed disaster resilient smart city environments. In this paper, we propose and discuss the novel reference architecture and philosophy of a disaster resilient smart city (DRSC) through the integration of the IoT and BDA technologies. The proposed architecture offers a generic solution for disaster management activities in smart city incentives. A combination of the Hadoop Ecosystem and Spark are reviewed to develop an efficient DRSC environment that supports both real-time and offline analysis. The implementation model of the environment consists of data harvesting, data aggregation, data pre-processing, and big data analytics and service platform. A variety of datasets (i.e., smart buildings, city pollution, traffic simulator, and twitter) are utilized for the validation and evaluation of the system to detect and generate alerts for a fire in a building, pollution level in the city, emergency evacuation path, and the collection of information about natural disasters (i.e., earthquakes and tsunamis). The evaluation of the system efficiency is measured in terms of processing time and throughput that demonstrates the performance superiority of the proposed architecture. Moreover, the key challenges faced are identified and briefly discussed. <h2>Other Information</h2><p dir=\"ltr\">Published in: IEEE Access<br>License: <a href=\"https://creativecommons.org/licenses/by/4.0/deed.en\" rel=\"noreferrer noopener\" target=\"_blank\">https://creativecommons.org/licenses/by/4.0/</a><br>See article on publisher's website: <a href=\"https://dx.doi.org/10.1109/access.2019.2928233\" target=\"_blank\">https://dx.doi.org/10.1109/access.2019.2928233</a>",
+      "cited_by_count": 198,
+      "type": "article",
+      "source": {
+        "name": "IEEE Access",
+        "type": "journal",
+        "issn": [
+          "2169-3536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1109/access.2019.2928233"
+      },
+      "topics": [
+        "IoT and Edge/Fog Computing",
+        "Smart Cities and Technologies",
+        "Traffic Prediction and Management Techniques"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W2962523738"
+    },
+    {
+      "openalex_id": "W2884650380",
+      "doi": "10.1002/wcs.1479",
+      "title": "Analog mental representation",
+      "authors": [
+        {
+          "name": "Jacob Beck",
+          "openalex_id": "A5025141355",
+          "orcid": "https://orcid.org/0000-0002-2991-3124",
+          "institutions": [
+            "York University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-13",
+      "abstract": "Over the past 50 years, philosophers and psychologists have perennially argued for the existence of analog mental representations of one type or another. This study critically reviews a number of these arguments as they pertain to three different types of mental representation: perceptual representations, imagery representations, and numerosity representations. Along the way, careful consideration is given to the meaning of \u201canalog\u201d presupposed by these arguments for analog mental representation, and to open avenues for future research. This article is categorized under: Philosophy &gt; Foundations of Cognitive Science Philosophy &gt; Representation Philosophy &gt; Psychological Capacities",
+      "cited_by_count": 59,
+      "type": "review",
+      "source": {
+        "name": "Wiley Interdisciplinary Reviews Cognitive Science",
+        "type": "journal",
+        "issn": [
+          "1939-5078",
+          "1939-5086"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Cognitive and developmental aspects of mathematical skills",
+        "Child and Animal Learning Development",
+        "Neuroscience, Education and Cognitive Function"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W2884650380"
+    },
+    {
+      "openalex_id": "W2990958091",
+      "doi": "10.1080/17439760.2019.1685581",
+      "title": "Joy: a review of the literature and suggestions for future directions",
+      "authors": [
+        {
+          "name": "Matthew Kuan Johnson",
+          "openalex_id": "A5029959836",
+          "orcid": "https://orcid.org/0000-0002-4768-9875",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-19",
+      "abstract": "Despite the large body of empirical and theoretical work that has emerged from positive psychology in the recent decades, surprisingly little work has been done by this field on joy. As a result, the work that has been done on joy is disjointed, and frequently does not build on the previous literature; indeed, the various definitions of joy that psychologists use often conflict with one another. The present article, therefore, seeks to address this gap in the positive psychology literature and provide suggestions for future directions, by placing the existing psychological work on joy in dialogue with itself and also in dialogue with the work on joy done in other fields, including, theology and religious studies, philosophy, and literature. The first part of this paper provides a systematic review of the existing work on joy and aims to develop an overarching framework that can be used to operationalize and define joy. This paper will then provide some suggestions for future directions for psychological research into joy, and will close by suggesting reasons why joy is an important phenomenon toward which positive psychology should turn its focus.",
+      "cited_by_count": 106,
+      "type": "review",
+      "source": {
+        "name": "The Journal of Positive Psychology",
+        "type": "journal",
+        "issn": [
+          "1743-9760",
+          "1743-9779"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/17439760.2019.1685581?needAccess=true"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Emotions and Moral Behavior",
+        "Mindfulness and Compassion Interventions"
+      ],
+      "referenced_works_count": 114,
+      "url": "https://openalex.org/W2990958091"
+    },
+    {
+      "openalex_id": "W3021584124",
+      "doi": "10.1002/pan3.10089",
+      "title": "Environmental aesthetics: A synthetic review",
+      "authors": [
+        {
+          "name": "Emily Brady",
+          "openalex_id": "A5018861551",
+          "orcid": "https://orcid.org/0000-0003-1719-5433",
+          "institutions": [
+            "Texas A&M University"
+          ]
+        },
+        {
+          "name": "Jonathan Prior",
+          "openalex_id": "A5018656957",
+          "orcid": "https://orcid.org/0000-0001-7081-8025",
+          "institutions": [
+            "Cardiff University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-05-05",
+      "abstract": "Abstract The main aim of the article is to provide up\u2010to\u2010date knowledge of environmental aesthetics for an interdisciplinary audience, and to signal the importance of research in this area for studying people\u2013nature relationships. Environmental aesthetics has emerged in the last 50 years from the philosophical fields of aesthetics and environmental philosophy. Other disciplinary perspectives have also shaped environmental aesthetics, including landscape architecture, human geography, restoration ecology and empirical studies on landscape preferences in developmental and environmental psychology. This review and synthesis mainly addresses the theoretical approaches and concepts that provide a framework to the key debates in the field, but also considers how empirical approaches have shaped recent developments, and how conceptual issues arise with respect to empirical cases. We outline the background and context of environmental aesthetics, its key concepts, and provide a critical review of contemporary theories in the field. We then consider how aesthetics features in issues pertaining to the conservation, preservation, and restoration of nature. Finally, we identify some new directions for environmental aesthetics scholarship that can productively contribute to ongoing debates regarding various relationships between people and nature. A free Plain Language Summary can be found within the Supporting Information of this article.",
+      "cited_by_count": 81,
+      "type": "review",
+      "source": {
+        "name": "People and Nature",
+        "type": "journal",
+        "issn": [
+          "2575-8314"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://besjournals.onlinelibrary.wiley.com/doi/pdfdirect/10.1002/pan3.10089"
+      },
+      "topics": [
+        "Urban Green Space and Health",
+        "Environmental Philosophy and Ethics",
+        "Land Use and Ecosystem Services"
+      ],
+      "referenced_works_count": 127,
+      "url": "https://openalex.org/W3021584124"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

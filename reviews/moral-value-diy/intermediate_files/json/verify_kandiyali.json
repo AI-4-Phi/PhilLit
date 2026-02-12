@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Importance of Others: Marx on Unalienated Production",
+    "author": "Kandiyali",
+    "year": 2020
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1086/708536",
+      "title": "The Importance of Others: Marx on Unalienated Production",
+      "authors": [
+        {
+          "family": "Kandiyali",
+          "given": "Jan"
+        }
+      ],
+      "editors": [],
+      "year": 2020,
+      "container_title": "Ethics",
+      "volume": "130",
+      "issue": "4",
+      "page": "555-587",
+      "publisher": "University of Chicago Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1086/708536",
+      "score": 68.39341
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

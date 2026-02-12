@@ -1,0 +1,2203 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "citational justice epistemic injustice",
+  "results": [
+    {
+      "openalex_id": "W4313345776",
+      "doi": "10.48085/x3b678b7a",
+      "title": "Epistemic Injustice, Open Access, and Citational Justice",
+      "authors": [
+        {
+          "name": "Carl Taswell",
+          "openalex_id": "A5022963362",
+          "orcid": "https://orcid.org/0000-0002-9386-4574"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-30",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Brainiacs Journal of Brain Imaging And Computing Sciences",
+        "type": "journal",
+        "issn": [
+          "2766-6883"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.brainiacsjournal.org/arc/pub/Taswell2022EIOACJ/ViewPdf"
+      },
+      "topics": [
+        "Academic integrity and plagiarism",
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W4313345776"
+    },
+    {
+      "openalex_id": "W2148974647",
+      "doi": "10.1146/annurev-soc-073014-112142",
+      "title": "Intersectionality's Definitional Dilemmas",
+      "authors": [
+        {
+          "name": "Patr\u00edcia Hill Collins",
+          "openalex_id": "A5006360782",
+          "institutions": [
+            "University of Maryland, College Park"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-04",
+      "abstract": "The term intersectionality references the critical insight that race, class, gender, sexuality, ethnicity, nation, ability, and age operate not as unitary, mutually exclusive entities, but rather as reciprocally constructing phenomena. Despite this general consensus, definitions of what counts as intersectionality are far from clear. In this article, I analyze intersectionality as a knowledge project whose raison d'\u00eatre lies in its attentiveness to power relations and social inequalities. I examine three interdependent sets of concerns: (a) intersectionality as a field of study that is situated within the power relations that it studies; (b) intersectionality as an analytical strategy that provides new angles of vision on social phenomena; and (c) intersectionality as critical praxis that informs social justice projects.",
+      "cited_by_count": 2173,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Sociology",
+        "type": "journal",
+        "issn": [
+          "0360-0572",
+          "1545-2115"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-soc-073014-112142"
+      },
+      "topics": [
+        "LGBTQ Health, Identity, and Policy",
+        "Feminism, Gender, and Sexuality Studies",
+        "Gender Politics and Representation"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W2148974647"
+    },
+    {
+      "openalex_id": "W4387694735",
+      "doi": "10.1177/01622439231201707",
+      "title": "Intersectionality and Science and Technology Studies",
+      "authors": [
+        {
+          "name": "Patrick R. Grzanka",
+          "openalex_id": "A5005552615",
+          "orcid": "https://orcid.org/0000-0002-7364-9965",
+          "institutions": [
+            "University of Tennessee at Knoxville"
+          ]
+        },
+        {
+          "name": "Jenny Dyck Brian",
+          "openalex_id": "A5051405843",
+          "institutions": [
+            "Arizona State University"
+          ]
+        },
+        {
+          "name": "Rajani Bhatia",
+          "openalex_id": "A5052220878",
+          "institutions": [
+            "University at Albany, State University of New York",
+            "Albany State University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-10-16",
+      "abstract": "Over the past thirty years, intersectionality has become a nearly ubiquitous framework for understanding, critiquing, and intervening in complex social inequalities. Emerging from critical race and feminist studies, intersectionality has many shared analytic priorities with science and technology studies (STS), including an emphasis on co-emergent social forces, historical contingency, and interventions that challenge and enhance knowledge production. Despite these shared affinities, STS and intersectionality remain largely nonoverlapping scholarly discourses. Based on a systematic review of intersectionality in eight STS journals, we observe a slight increase in intersectionality\u2019s usage over time but find that its relevance is contained largely to venues outside of the STS mainstream. Our study identifies some ways STS scholars have modeled intersectionality\u2019s responsible use through citation practices, methodological integration, and normative claims about justice/injustice. We also consider what epistemic exclusion of intersectionality might foreclose. We argue that increased use of intersectionality would amplify engagement with justice in STS work, not only by introducing new questions and theoretical frames but also opening possibilities for new interdisciplinary formations. This is not simply an argument for greater inclusion of a term, but rather for transformation in epistemic accountability toward feminist studies and other social justice\u2013oriented fields.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Science Technology & Human Values",
+        "type": "journal",
+        "issn": [
+          "0162-2439",
+          "1552-8251"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1177/01622439231201707"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Feminist Theory and Gender Studies",
+        "Academic Freedom and Politics"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W4387694735"
+    },
+    {
+      "openalex_id": "W4391816779",
+      "doi": "10.1515/applirev-2024-0011",
+      "title": "The myopic focus on decoloniality in applied linguistics and English language education: citations and stolen subjectivities",
+      "authors": [
+        {
+          "name": "Ali Fuad Selvi",
+          "openalex_id": "A5044269144",
+          "orcid": "https://orcid.org/0000-0002-1122-9770",
+          "institutions": [
+            "University of Alabama"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-14",
+      "abstract": "Abstract The recent surge in acknowledging and critically engaging with identity, advocacy, social justice, criticality, anti-racism, and decolonization in applied linguistics has initiated a process aimed at destabilizing, disrupting, and eventually transforming the geopolitics of knowledge, epistemological orientations, ideological commitments, and methodological practices in research. The current study investigates the evolutionary trajectory of decoloniality in applied linguistics, specifically focusing on citation practices as a point of entry in knowledge building, theorization, and dissemination in major journals over the past 5 years. The findings uncover the consistent invisibility of scholars from the Global South as authors (who use their voices [in]form the knowledge building and dissemination), cited authors (whose voices are used to [in]form the knowledge building and dissemination), and editors/editorial board members (whose vision and practices that ultimately [in]form disciplinary norms, expectations, and directions about knowledge building and dissemination). These (in)advertent (self-) exclusionary trends relegate Southern voices, subjectivities, and epistemological perspectives, perpetuating the dominance of the Anglosphere and obscuring ongoing epistemic appropriation. It concludes that resisting epistemic injustices (erasure, silence, and theft) must be regarded as an ethical, ideological, and professional imperative and demand the deployment of rhetorical strategies, equitable citation practices, collaborative initiatives, and a sustained commitment to decolonial skepticism.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Applied Linguistics Review",
+        "type": "journal",
+        "issn": [
+          "1868-6303",
+          "1868-6311"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Discourse Analysis in Language Studies",
+        "Second Language Learning and Teaching",
+        "Multilingual Education and Policy"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4391816779"
+    },
+    {
+      "openalex_id": "W3131457744",
+      "doi": "10.1016/j.artint.2021.103473",
+      "title": "What do we want from Explainable Artificial Intelligence (XAI)? \u2013 A stakeholder perspective on XAI and a conceptual model guiding interdisciplinary XAI research",
+      "authors": [
+        {
+          "name": "Markus Langer",
+          "openalex_id": "A5038410639",
+          "orcid": "https://orcid.org/0000-0002-8165-1803",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Daniel Oster",
+          "openalex_id": "A5052038529",
+          "orcid": "https://orcid.org/0000-0003-2761-6262",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Timo Speith",
+          "openalex_id": "A5007325624",
+          "orcid": "https://orcid.org/0000-0002-6675-154X",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Holger Hermanns",
+          "openalex_id": "A5028747794",
+          "orcid": "https://orcid.org/0000-0002-2766-9615",
+          "institutions": [
+            "Saarland University",
+            "Institute of Software"
+          ]
+        },
+        {
+          "name": "Lena K\u00e4stner",
+          "openalex_id": "A5034952055",
+          "orcid": "https://orcid.org/0000-0002-8747-6911",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Eva Schmidt",
+          "openalex_id": "A5075670033",
+          "orcid": "https://orcid.org/0000-0002-7305-7126",
+          "institutions": [
+            "TU Dortmund University"
+          ]
+        },
+        {
+          "name": "Andreas Sesing-Wagenpfeil",
+          "openalex_id": "A5027323776",
+          "orcid": "https://orcid.org/0000-0003-0894-5407",
+          "institutions": [
+            "Saarland University"
+          ]
+        },
+        {
+          "name": "Kevin Baum",
+          "openalex_id": "A5012518399",
+          "orcid": "https://orcid.org/0000-0002-6893-573X",
+          "institutions": [
+            "Saarland University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-15",
+      "abstract": null,
+      "cited_by_count": 526,
+      "type": "article",
+      "source": {
+        "name": "Artificial Intelligence",
+        "type": "journal",
+        "issn": [
+          "0004-3702",
+          "1872-7921"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0004370221000242"
+      },
+      "topics": [
+        "Explainable Artificial Intelligence (XAI)",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 325,
+      "url": "https://openalex.org/W3131457744"
+    },
+    {
+      "openalex_id": "W2895330846",
+      "doi": "10.1016/j.erss.2018.07.007",
+      "title": "Promoting novelty, rigor, and style in energy social science: Towards codes of practice for appropriate methods and research design",
+      "authors": [
+        {
+          "name": "Benjamin K. Sovacool",
+          "openalex_id": "A5088822272",
+          "orcid": "https://orcid.org/0000-0002-4794-9403",
+          "institutions": [
+            "Aarhus University",
+            "University of Sussex"
+          ]
+        },
+        {
+          "name": "Jonn Axsen",
+          "openalex_id": "A5090491703",
+          "orcid": "https://orcid.org/0000-0001-7088-8912",
+          "institutions": [
+            "Simon Fraser University"
+          ]
+        },
+        {
+          "name": "Steve Sorrell",
+          "openalex_id": "A5089217296",
+          "orcid": "https://orcid.org/0000-0001-8084-4139",
+          "institutions": [
+            "University of Sussex"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-03",
+      "abstract": null,
+      "cited_by_count": 1088,
+      "type": "article",
+      "source": {
+        "name": "Energy Research & Social Science",
+        "type": "journal",
+        "issn": [
+          "2214-6296",
+          "2214-6326"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S2214629618307230?via%3Dihub"
+      },
+      "topics": [
+        "Energy and Environment Impacts",
+        "Social Acceptance of Renewable Energy",
+        "Environmental Impact and Sustainability"
+      ],
+      "referenced_works_count": 376,
+      "url": "https://openalex.org/W2895330846"
+    },
+    {
+      "openalex_id": "W3137278820",
+      "doi": "10.1111/gwao.12658",
+      "title": "Delivering gender justice in academia through gender equality plans? Normative and practical challenges",
+      "authors": [
+        {
+          "name": "Sara Clavero",
+          "openalex_id": "A5102867086",
+          "orcid": "https://orcid.org/0000-0001-5482-7108",
+          "institutions": [
+            "Technological University Dublin",
+            "Office of Diversity and Inclusion",
+            "Inclusion Ireland"
+          ]
+        },
+        {
+          "name": "Yvonne Galligan",
+          "openalex_id": "A5034569048",
+          "orcid": "https://orcid.org/0000-0003-4624-3959",
+          "institutions": [
+            "Office of Diversity and Inclusion",
+            "Inclusion Ireland",
+            "Technological University Dublin"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-20",
+      "abstract": "Abstract This paper employs the concept of epistemic justice to examine the potential for gender equality plans (GEPs) to bring about sustainable transformative change towards gender equality in higher education. Mindful of both the limitations and opportunities of gender policy interventions, the paper highlights the importance of approaching gender inequality as a problem of justice and power rather than as an issue of \u201closs of talent.\u201d The paper draws on Fricker's account of epistemic justice as well as on Bourdieu's analysis of power in the academic field, to evaluate seven GEPs in European universities for their potential to transform gender\u2013power relations in academia. The analysis reveals that insufficient attention is paid to the role of academic power in creating gender injustice at all institutional levels and to the role of organizational culture in the perpetuation of gender inequalities in those settings. The study suggests that the incorporation of an epistemic justice lens in the creation of GEPs would address gendered power relationships and lead to sustainable equitable outcomes.",
+      "cited_by_count": 121,
+      "type": "article",
+      "source": {
+        "name": "Gender Work and Organization",
+        "type": "journal",
+        "issn": [
+          "0968-6673",
+          "1468-0432"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1111/gwao.12658"
+      },
+      "topics": [
+        "Gender Diversity and Inequality",
+        "Gender Politics and Representation",
+        "Gender Roles and Identity Studies"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W3137278820"
+    },
+    {
+      "openalex_id": "W2995189441",
+      "doi": null,
+      "title": "False confessions and testimonial injustice",
+      "authors": [
+        {
+          "name": "Jennifer Lackey",
+          "openalex_id": "A5057549789",
+          "orcid": "https://orcid.org/0000-0001-7754-248X"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-01",
+      "abstract": "In the criminal justice system, confessions have long been considered the gold standard in evidence. An immediate problem arises for this gold standard, however, when the prevalence of false confessions is taken into account. Since 1989, there have been 367 post-conviction DNA exonerations in the United States, and 28% of these involved false confessions. Moreover, false confessions involve everything from minor infractions to detailed accounts of violent crimes.\\nThis article takes a close look at false confessions in connection with the phenomenon of testimonial injustice. It argues that false confessions provide a unique and compelling challenge to the current conceptual tools used to understand this epistemic wrong. In particular, it argues that we cannot make sense of the unjust ways in which false confessions function in our criminal justice system by focusing exclusively on speakers getting less credibility than they deserve. It concludes that the way we conceive of testimonial injustice requires a significant expansion to include what is called agential testimonial injustice\u2014where an unwarranted credibility excess is afforded to speakers when their epistemic agency has been denied or subverted in the obtaining of their testimony. At the same time, it shows that work by legal scholars and social scientists can benefit by viewing the practices that produce confessions through the lens of this expanded notion, and hence that epistemological tools can shed light on issues with enormous moral and practical consequences.",
+      "cited_by_count": 97,
+      "type": "article",
+      "source": {
+        "name": "eYLS (Yale Law School)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarlycommons.law.northwestern.edu/jclc/vol110/iss1/4"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Criminal Justice and Corrections Analysis",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2995189441"
+    },
+    {
+      "openalex_id": "W2982126667",
+      "doi": "10.1353/ken.2019.0023",
+      "title": "The Harm of Ableism: Medical Error and Epistemic Injustice",
+      "authors": [
+        {
+          "name": "David M. Pe\u00f1a\u2010Guzm\u00e1n",
+          "openalex_id": "A5046355927"
+        },
+        {
+          "name": "Joel Michael Reynolds",
+          "openalex_id": "A5009707169",
+          "orcid": "https://orcid.org/0000-0002-9640-5082"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "This paper argues that epistemic errors rooted in group- or identity-based biases, especially those pertaining to disability, are undertheorized in the literature on medical error. After sketching dominant taxonomies of medical error, we turn to the field of social epistemology to understand the role that epistemic schemas play in contributing to medical errors that disproportionately affect patients from marginalized social groups. We examine the effects of this unequal distribution through a detailed case study of ableism. There are four primary mechanisms through which the epistemic schema of ableism distorts communication between nondisabled physicians and disabled patients: testimonial injustice, epistemic overconfidence, epistemic erasure, and epistemic derailing. Measures against epistemic injustices in general and against schema-based medical errors in particular are ultimately issues of justice that must be better addressed at all levels of health care practice.",
+      "cited_by_count": 114,
+      "type": "article",
+      "source": {
+        "name": "Kennedy Institute of Ethics journal",
+        "type": "journal",
+        "issn": [
+          "1054-6863",
+          "1086-3249"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Clinical Reasoning and Diagnostic Skills",
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W2982126667"
+    },
+    {
+      "openalex_id": "W3161290911",
+      "doi": "10.1145/3411764.3445103",
+      "title": "Getting Ourselves Together: Data-centered participatory design research &amp; epistemic burden",
+      "authors": [
+        {
+          "name": "Jennifer Pierre",
+          "openalex_id": "A5077064220",
+          "orcid": "https://orcid.org/0000-0002-3918-0411",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        },
+        {
+          "name": "Roderic Crooks",
+          "openalex_id": "A5005072848",
+          "orcid": "https://orcid.org/0000-0001-7514-7021",
+          "institutions": [
+            "University of California, Irvine"
+          ]
+        },
+        {
+          "name": "Morgan Currie",
+          "openalex_id": "A5103013828",
+          "orcid": "https://orcid.org/0000-0003-4569-7190",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Britt Paris",
+          "openalex_id": "A5021345446",
+          "orcid": "https://orcid.org/0000-0003-1527-7953",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Irene V. Pasquetto",
+          "openalex_id": "A5024537982",
+          "orcid": "https://orcid.org/0000-0002-2790-0629",
+          "institutions": [
+            "Michigan United",
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-06",
+      "abstract": "Data-centered participatory design research projects\u2014wherein researchers collaborate with community members for the purpose of gathering, generating, or communicating data about the community or their causes\u2014can place epistemic burdens on minoritized or racialized groups, even in projects focused on social justice outcomes. Analysis of epistemic burden encourages researchers to rethink the purpose and value of data in community organizing and activism more generally. This paper describes three varieties of epistemic burden drawn from two case studies based on the authors' previous work with anti-police brutality community organizations. The authors conclude with a discussion of ways to alleviate and avoid these issues through a series of questions about participatory research design. Ultimately, we call for a reorientation of knowledge production away from putative design solutions to community problems and toward a more robust interrogation of the power dynamics of research itself.",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3411764.3445103"
+      },
+      "topics": [
+        "Digital Education and Society",
+        "Innovative Human-Technology Interaction",
+        "Participatory Visual Research Methods"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W3161290911"
+    },
+    {
+      "openalex_id": "W3084198316",
+      "doi": "10.1016/j.erss.2020.101768",
+      "title": "Energy democracy as a process, an outcome and a goal: A conceptual review",
+      "authors": [
+        {
+          "name": "Kacper Szulecki",
+          "openalex_id": "A5040161319",
+          "orcid": "https://orcid.org/0000-0002-1835-3758",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Indra \u00d8verland",
+          "openalex_id": "A5015932555",
+          "orcid": "https://orcid.org/0000-0002-5955-4759",
+          "institutions": [
+            "Norwegian Institute of International Affairs"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-07",
+      "abstract": "\u2018Energy democracy\u2019 has evolved from a slogan used by activists demanding a greater say in energy-related decision-making to a term used in policy documents and scholarly literature on energy governance and energy transitions. This article reviews the academic literature using a combination of three methodological elements: (1) keyword searches of major bibliographical databases for quantification purposes; (2) an innovative method referred to as \u2018circulation tracing\u2019 to assess impact; and (3) in-depth discussion of the theoretical underpinnings, implications and interconnections of different parts of the literature. A conceptual framework is developed around three divergent understandings of the term \u2018energy democracy\u2019: (1) a process driven forwards by a popular movement; (2) an outcome of decarbonisation; and (3) a goal or ideal to which stakeholders aspire. The review also highlights some weaknesses of the literature: fragmentation between its European and American branches, which barely relate to each other; implicit or absent linkages between \u2018energy democracy\u2019 and broader theories of democracy; a tendency to idealise societal grassroots; confusion about the roles of the state, private capital and communities; and lack of attention to the threat posed by energy populism. Proponents should not assume that more energy democracy will inherently mean faster decarbonisation, improved energy access or social wellbeing. Finally, more emphasis should be placed on the role of research in providing evidence to ground energy democracy-related analyses and discussions.",
+      "cited_by_count": 221,
+      "type": "review",
+      "source": {
+        "name": "Energy Research & Social Science",
+        "type": "journal",
+        "issn": [
+          "2214-6296",
+          "2214-6326"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S2214629620303431?via%3Dihub"
+      },
+      "topics": [
+        "Energy and Environment Impacts",
+        "Sustainability and Climate Change Governance",
+        "Social Acceptance of Renewable Energy"
+      ],
+      "referenced_works_count": 274,
+      "url": "https://openalex.org/W3084198316"
+    },
+    {
+      "openalex_id": "W4317497835",
+      "doi": "10.1136/jme-2022-108291",
+      "title": "Where is knowledge from the global South? An account of epistemic justice for a global bioethics",
+      "authors": [
+        {
+          "name": "Bridget Pratt",
+          "openalex_id": "A5020008265",
+          "orcid": "https://orcid.org/0000-0002-4934-3560",
+          "institutions": [
+            "Center for Practical Bioethics",
+            "Australian Catholic University"
+          ]
+        },
+        {
+          "name": "Jantina de Vries",
+          "openalex_id": "A5038277030",
+          "orcid": "https://orcid.org/0000-0001-7192-2633",
+          "institutions": [
+            "University of Cape Town",
+            "Ethics and Public Policy Center",
+            "Neuroscience Institute"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-19",
+      "abstract": "The silencing of the epistemologies, theories, principles, values, concepts and experiences of the global South constitutes a particularly egregious epistemic injustice in bioethics. Our shared responsibility to rectify that injustice should be at the top of the ethics agenda. That it is not, or only is in part, is deeply problematic and endangers the credibility of the entire field. As a first step towards reorienting the field, this paper offers a comprehensive account of epistemic justice for global health ethics. We first introduce several different conceptions of justice and decolonisation in relation to knowledge, purposefully drawing on work emanating from the global South as well as the global North. We then apply those conceptions to the global health ethics context to generate a tripartite account of the layers of epistemic justice in the field: who is producing ethics knowledge; what theories and concepts are being applied to produce ethics knowledge; and whose voices are sought, recorded and used to generate ethics knowledge. These layers reflect that the field spans conceptual and empirical research. We conclude by proposing that, going forward, three avenues are key to achieve greater epistemic justice at each layer and to help decolonise global health ethics: namely, understanding the problem, dialogue and structural change.",
+      "cited_by_count": 81,
+      "type": "article",
+      "source": {
+        "name": "Journal of Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "0306-6800",
+          "1473-4257"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://jme.bmj.com/content/medethics/early/2023/01/18/jme-2022-108291.full.pdf"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics in Clinical Research",
+        "Biomedical Ethics and Regulation"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W4317497835"
+    },
+    {
+      "openalex_id": "W2098063708",
+      "doi": "10.1177/1097184x14553056",
+      "title": "Whither Critical Masculinity Studies? Notes on Inclusive Masculinity Theory, Postfeminism, and Sexual Politics",
+      "authors": [
+        {
+          "name": "Rachel O\u2019Neill",
+          "openalex_id": "A5102765887",
+          "orcid": "https://orcid.org/0000-0002-6724-1760",
+          "institutions": [
+            "King's College London"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-10-02",
+      "abstract": "Inclusive masculinity theory has recently been proposed as a new approach to theorizing contemporary masculinities. Focusing particularly on the work of the theory\u2019s key exponent, Eric Anderson, this article offers a critical reading of inclusive masculinity theory in relation to the context of contemporary postfeminism. Building on feminist scholarship that analyzes the emergence of a distinctive postfeminist sensibility within the academy, I consider how inclusive masculinity theory both reflects and reproduces certain logics of postfeminism. My central concern is the manner in which this scholarship deemphasizes key issues of sexual politics and promotes a discourse of optimism about men, masculinities, and social change. Against this view, I argue that critical masculinity studies must foreground the analysis of gendered power relations and posit that the interrogation of contemporary postfeminism is critical to this endeavor.",
+      "cited_by_count": 182,
+      "type": "article",
+      "source": {
+        "name": "Men and Masculinities",
+        "type": "journal",
+        "issn": [
+          "1097-184X",
+          "1552-6828"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://eprints.lse.ac.uk/89848/1/O%27Neill_Critical-masculinity-studies_Accepted.pdf"
+      },
+      "topics": [
+        "Gender Roles and Identity Studies",
+        "Gender, Feminism, and Media",
+        "Historical Gender and Feminism Studies"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W2098063708"
+    },
+    {
+      "openalex_id": "W4311339086",
+      "doi": "10.1371/journal.pmed.1004139",
+      "title": "Understanding ethnic inequalities in mental healthcare in the UK: A meta-ethnography",
+      "authors": [
+        {
+          "name": "Narinder Bansal",
+          "openalex_id": "A5085130753",
+          "orcid": "https://orcid.org/0000-0002-6925-1719",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Saffron Karlsen",
+          "openalex_id": "A5027560235",
+          "orcid": "https://orcid.org/0000-0003-0503-5088",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "S. P. Sashidharan",
+          "openalex_id": "A5008950616",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "Rachel Cohen",
+          "openalex_id": "A5006109226",
+          "orcid": "https://orcid.org/0000-0002-4518-5489",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Carolyn Chew\u2010Graham",
+          "openalex_id": "A5012491915",
+          "orcid": "https://orcid.org/0000-0002-9722-9981",
+          "institutions": [
+            "Keele University"
+          ]
+        },
+        {
+          "name": "Alice Malpass",
+          "openalex_id": "A5072238594",
+          "orcid": "https://orcid.org/0000-0002-6329-4304",
+          "institutions": [
+            "University of Bristol"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-13",
+      "abstract": "Background Evidence regarding the presence and persistence of ethnic inequalities in mental healthcare is well established. The reasons for these inequalities and lack of progress in diminishing them are less understood. This meta-ethnography aims to provide a new conceptual understanding of how ethnic inequalities are created and sustained; this is essential to develop effective interventions. Specifically, we sought to understand why people from ethnic minority groups are underrepresented in primary care mental health service provision and overrepresented in crisis pathways and detention. Methods and findings Following eMERGe guidelines for meta-ethnographies, we searched OpenGrey, Kings Fund, CINAHL, Medline, PsycINFO, and Social Care Online databases for qualitative articles published from database inception until October 2, 2022, using broad categories of search terms relating to \u201cethnicity AND (mental illness/mental health/emotional distress) AND (help-seeking/service utilisation/experience/perception/view).\u201d We included all conceptually rich articles that used qualitative methods of data collection and analysis and excluded non-UK studies and those that focused solely on causation of mental illness. Our patient, public, and practitioner lived experience advisory group provided feedback and input on key stages of the project including search terms, research questions, data analysis, and dissemination. A total of 14,142 articles were identified; 66 met the inclusion criteria. We used reciprocal, refutational, and line of argument analytical approaches to identify convergence and divergence between studies. The synthesis showed that current models of statutory mental healthcare are experienced as a major barrier to the delivery of person-centred care to those in ethnic minority groups due to the perceived dominance of monocultural and reductionist frameworks of assessment and treatment (described as \u201cmedical\u201d and \u201cEurocentric\u201d) and direct experiences of racist practice. The lack of socially oriented and holistic frameworks of knowledge and understanding in medical training and services is experienced as epistemic injustice, particularly among those who attribute their mental illness to experiences of migration, systemic racism, and complex trauma. Fear of harm, concerns about treatment suitability, and negative experiences with health providers such as racist care and medical neglect/injury contribute to avoidance of, and disengagement from, mainstream healthcare. The lack of progress in tackling ethnic inequalities is attributed to failures in coproduction and insufficient adoption of existing recommendations within services. Study limitations include insufficient recording of participant characteristics relating to generational status and social class in primary studies, which prevented exploration of these intersections. Conclusions In this study, we found that the delivery of safe and equitable person-centred care requires a model of mental health that is responsive to the lived experiences of people in ethnic minority groups. For the people considered in this review, this requires better alignment of mental health services with social and anti-racist models of care. Our findings suggest that intersections related to experiences of racism, migration, religion, and complex trauma might be more relevant than crude ethnic group classifications. Strategies to tackle ethnic inequalities in mental healthcare require an evaluation of individual, systemic, and structural obstacles to authentic and meaningful coproduction and implementation of existing community recommendations in services.",
+      "cited_by_count": 174,
+      "type": "review",
+      "source": {
+        "name": "PLoS Medicine",
+        "type": "journal",
+        "issn": [
+          "1549-1277",
+          "1549-1676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1004139&type=printable"
+      },
+      "topics": [
+        "Migration, Health and Trauma",
+        "Mental Health Treatment and Access",
+        "Health, psychology, and well-being"
+      ],
+      "referenced_works_count": 113,
+      "url": "https://openalex.org/W4311339086"
+    },
+    {
+      "openalex_id": "W3135894733",
+      "doi": "10.1111/edth.12442",
+      "title": "Transformative Education: Philosophical, Psychological, and Pedagogical Dimensions",
+      "authors": [
+        {
+          "name": "Douglas W. Yacek",
+          "openalex_id": "A5056166601",
+          "orcid": "https://orcid.org/0000-0001-6275-5845",
+          "institutions": [
+            "TU Dortmund University"
+          ]
+        },
+        {
+          "name": "Severin Sales R\u00f6del",
+          "openalex_id": "A5055325221",
+          "orcid": "https://orcid.org/0000-0002-7489-6642",
+          "institutions": [
+            "Humboldt State University"
+          ]
+        },
+        {
+          "name": "Martin Karcher",
+          "openalex_id": "A5090865530",
+          "orcid": "https://orcid.org/0000-0002-4767-7989",
+          "institutions": [
+            "Helmut Schmidt University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-01",
+      "abstract": "One of the enduring mysteries of the human experience is our capacity to undergo profound changes in the values, modes of thought, self-conceptions, and guiding ideals that have given shape to our lives. Moved by an encounter of sublime beauty in a piece of music, thrust into a new way of life after immigrating to a foreign country, inspired by the courage of a character in a novel, or impelled by the example set by a trusted teacher, we decide to follow a new path for ourselves \u2014 one that, just a short time before, was either unforeseeable or seemingly unforgeable for us. We call these experiences transformative, and we often look back on them with gratitude for the person they have made us into and even a bit of awe at the obscurity of their inner workings. Understanding the human capacity for transformative change has a long history in Western philosophy. We see already in Plato's Allegory of the Cave a dramatic depiction of personal transformation, and Augustine, Kant, Hegel, James, and Dewey would devote pages to its study as well. It is also a popular and recurring theme of literature and art. From Ovid's Metamorphoses to T. H. White's Once and Future King, the idea of personal transformation continues to capture the Western imagination. Perhaps Wotan of Wagner's Das Rheingold captures this sentiment most succinctly: \"Transformation and turmoil are loved by those who live.\"11 Richard Wagner, Das Rheingold (Stuttgart, Germany: Reclam, 2009). In spite of this long legacy of thinking about transformation, only recently has it become a topic of extensive empirical and theoretical research. Especially in education, but not only there, the mystery and promise of transformation has had broad appeal. In educational psychology,22 Kevin Pugh, \"Teaching for Idea-Based, Transformative Experiences in Science: An Investigation of the Effectiveness of Two Instructional Elements,\" Teachers College Record 104, no. 6 (2002): 1101\u20131137. social justice education,33 C. Alejandra Elenes, \"Transformando fronteras: Chicana Feminist Transformative Pedagogies,\" in Education Feminism: Classic and Contemporary Readings, ed. Barbara J. Thayer-Bacon, Lynda Stone, and Katharine M. Sprecher (Albany: State University of New York Press, 2013), 341\u2013353. adult education,44 Jack Mezirow, \"Perspective Transformation,\" Adult Education Quarterly 28, no. 2 (1978): 100\u2013110; and Jack Mezirow, \"A Critical Theory of Adult Learning and Education,\" Adult Education Quarterly 32, no. 1 (1981): 3\u201324. school leadership studies,55 Carolyn M. Shields, \"Transformative Leadership: Working for Equity in Diverse Contexts,\" Educational Administration Quarterly 46, no. 4 (2010): 558\u2013589. higher education,66 Richard P. Keeling, Learning Reconsidered: A Campus-Wide Focus on the Student Experience (Washington, DC: National Association of Student Personnel Administrators, 2004). and philosophy of education,77 Andrea English, Discontinuity in Learning: Dewey, Herbart, and Education as Transformation (New York: Cambridge University Press, 2014). researchers have pointed to the transformative potential lying within the educational environment. Unlocking this potential is a fundamental aim of teaching and learning, proponents of transformative education have argued, and it is the task of the researcher to provide theoretical and conceptual resources to understand how we might do so. If education is about something more than providing the epistemic goods necessary for a productive career and the social and cultural appurtenances of middle-class life, then perhaps it is this: to transform us, to jumpstart processes of profound and existentially meaningful change that make us into the people we \u2014 or at least our educators \u2014 know we can be. Driven by something like this conviction, educational researchers in the last half-decade or so have offered numerous conceptions of what a truly transformative education might look like, employing terms like transformative pedagogy,88 Elenes, \"Transformando fronteras,\" 341\u2013353; Biren (Ratnesh) A. Nagda, Patricia Gurin, and Gretchen E. Lopez, \"Transformative Pedagogy for Democracy and Social Justice,\" Race, Ethnicity and Education 6, no. 2 (2003): 165\u2013191; David Lusted, \"Why Pedagogy?,\" Screen 27, no. 5 (1986): 2\u201316; and bell hooks, Teaching to Transgress: Education as the Practice of Freedom (New York: Routledge, 1994). transformative learning,99 Edward W. Taylor and Patricia Cranton, The Handbook of Transformative Learning: Theory, Research, and Practice (San Francisco, CA: Jossey-Bass); and English, Discontinuity in Learning. transformational teaching,1010 Todd Finley, \"4 Things Transformational Teachers Do\" edutopia [Website] (2015), https://www.edutopia.org/blog/big-things-transformational-teachers-do-todd-finley (last modified July 15, 2014); Thomas R. Rosebrough and Ralph G. Leverett, Transformational Teaching in the Information Age: Making Why and How We Teach Relevant to Students (Alexandria, VA: ASCD, 2011); and George M. Slavich and Philip G. Zimbardo, \"Transformational Teaching: Theoretical Underpinnings, Basic Principles, and Core Methods,\" Educational Psychology Review 24, no. 4 (2012): 569\u2013608. Compare with Peggy Albers and Tammy Frederick, \"'We teach who we are': A Study of Two Latino Transformative Educators,\" TESOL Journal 4, no. 2 (2013): 233\u2013260; Laura E. Pinto et al., \"Charismatic, Competent or Transformative? Ontario School Administrators' Perceptions of 'Good Teachers,'\" Journal of Teaching and Learning 8, no. 1 (2012): 73\u201390; and Henry A. Giroux, Paulo Freire, and Peter McLaren, Teachers as Intellectuals: Toward a Critical Pedagogy of Learning (Westport, CT: Bergin & Garvey, 1988). transformative experience,1111 Laurie Paul, Transformative Experience (Oxford: Oxford University Press, 2014); and Kevin Pugh, \"Transformative Experience: An Integrative Construct in the Spirit of Deweyan Pragmatism,\" Educational Psychologist 46, no. 2 (2011): 107\u2013121. transformative school leadership,1212 Eric J. Weiner, \"Secretary Paulo Freire and the Democratization of Power: Toward a Theory of Transformative Leadership,\" Educational Philosophy and Theory 35, no. 1 (2003): 89\u2013106; C. M. Shields, \"Dialogic Leadership for Social Justice: Overcoming Pathologies of Silence,\" Educational Administration Quarterly 40, no. 1 (2004): 109\u2013132; and Shields, \"Transformative Leadership,\" 558\u2013589. and transformative Bildung1313 Hans-Christoph Koller, Bildung anders denken: Einf\u00fchrung in die Theorie transformatorischer Bildungsprozesse [Thinking about Education Differently: Introduction to the Theory of Transformative Bildung Processes] (Stuttgart, Germany: Kohlhammer, 2012); Winfried Marotzki, Entwurf einer strukturalen Bildungstheorie: Biographietheoretische Auslegung von Bildungsprozessen in hochkomplexen Gesellschaften [Drafting a Structural Theory of Bildung: A Biographical-Theoretical Interpretation of Bildung Processes in Complex Societies] (Weinheim, Germany: Deutscher Studien Verlag, 1990); and Rainer Kokemohr, \"Bildung als Welt-und Selbstentwurf im Fremden. Ann\u00e4herungen an eine Bildungsprozesstheorie\" [Conceptualizing World and Self in Bildung Processes and Encounters with the Foreign: Contributions to a Theory of Transformative Bildung Processes], in Bildungsprozesse und Fremdheitserfahrung: Beitr\u00e4ge zu einer Theorie transformatorischer Bildung, ed. Hans-Christoph Koller, Winfried Marotzki, and Olaf Sanders (Weinheim, Germany: Deutscher Studien Verlag, 2007), 13\u201368. to describe their vision. Within this discussion one can find rich and compelling resources for how to conceive of the transformative process and how to turn the classroom into a space for transformation. The person looking for guidance on these matters will find a vast and growing literature on this important idea. At the same time, he or she will also find that the current discussion about transformation and its role in the educational process has been carried out largely within traditional disciplinary boundaries. Although the idea of transformation has been assayed from a multitude of disciplinary perspectives, attempts to account for the substantive and sometimes drastic differences in the aims, methods, and meanings that have been ascribed to transformative education are almost completely lacking. In one context, for example, transformative education is closely aligned with the project of eradicating oppression and injustice,1414 Elenes, \"Transformando fronteras,\" 341\u2013353. while in another it is derived from a phenomenological account of experience and thus carries no particular implications for social justice.1515 English, Discontinuity in Learning. Sometimes transformative education refers to deep forms of learning in which students experience an expansion of value and meaning with respect to new science concepts,1616 Pugh, \"Transformative Experience,\" 107\u2013121. and other times it concerns principally learning how to learn.1717 Slavich and Zimbardo, \"Transformational Teaching,\" 569\u2013608. So what are the defining characteristics of a specifically transformative approach to education? What exactly is transformed in the process? How are we to think of the outcome of transformation? Is transformation always a desirable aim? What are the ethical risks involved? Are we comfortable granting teachers the power to transform? A birds-eye view of the literature reveals a deep dissensus about these questions. This lack of disciplinary crossover holds not only between the various disciplines of educational research, but also between (1) the Anglo-American and German educational research communities, and (2) educational research and philosophy proper. Concerning the former, exciting recent work on the notion of transformatorische Bildungsprozesse in the German context, in addition to the long phenomenological tradition centering around the concept of Horizontwandel (horizon transformation), have gone largely unnoticed in the English-speaking world. Concerning the latter, recent work in philosophy proper on \"transformative experience\"1818 Paul, Transformative Experience. and the special \"agency of becoming\"1919 Agnes Callard, Aspiration: The Agency of Becoming (Oxford: Oxford University Press, 2018). that transformative experiences can encompass have yet to make it into the pages of educational research and philosophy of education. To our minds, the current discussion of transformation in education has thus come to a crossroads. If it were to proceed along the traditional disciplinary lines it has previously followed, it may suffer the fate of other central educational ideas such as \"multicultural education\" or \"liberal education,\" which are regularly appropriated to mean just about anything under the pedagogical sun. The problem with abiding contradictory proposals within the conceptual boundaries of important ideas is that they can thereby become mere rhetoric. In the absence of firm philosophical grounding, calling a method or educational experience \"transformative\" becomes a way of saying \"I like this!\" rather than referring to anything characteristically transformative about the proposal. The end result is that \"transformative education\" loses its capacity to pose an alternative to the educational status quo, further ossifying the place of mediocre and uninspired pedagogy in the day-to-day of teaching and learning. Instead of challenging the epistemic boundaries of students' understanding, transformative education is turned into an entertaining repackaging of the material needed for success on standardized tests. Instead of confronting students with compelling figures of integrity, courage, foresight, or compassion, transformative education is boxed into the paradigm of acquiring reflective competencies and critical thinking skills. And instead of encouraging students to inquire into their own frameworks of value to see whether they are coherent, empowering, and socially responsible, transformative education becomes a means of getting into a good college and finding a lucrative profession. There is worrying evidence that this appropriation is already occurring.2020 See, for example, David Burgess, Teach like a Pirate: Increase Student Engagement, Boost Your Creativity, and Transform Your Life as an Educator (San Diego, CA: Dave Burgess Consulting, 2012), 60; and Finley, \"4 Things Transformational Teachers Do.\" The purpose of this symposium is therefore to provide further philosophical grounding for the idea of a transformative education. Simultaneously, it aims to open up an interdisciplinary discussion that includes some of the leading contributors to the discussion of transformative education to date. These contributors represent various fields of educational research and philosophy, both in the Anglo-American context and the German-speaking world. This symposium therefore constitutes one of the first truly interdisciplinary attempts to understand the complex phenomenon of transformative self-change and its role in the educational process. In what follows, we outline how each of the symposium contributors advances this purpose. Kevin Pugh, Dylan Kriescher, Simon Cropp, and Maaly Younis explore the philosophical groundings of an emerging perspective in educational psychology, transformative experience (TE) theory, which Pugh has developed over the last decade. TE theory has already proven to be a central contribution to empirical research on science education, and the authors show that it has its roots in Dewey's philosophy of experience. In the article, Pugh and his coauthors demonstrate how several crucial facets of transformative experience derive directly from some of the core concepts of Deweyan thought, specifically, the concepts of an experience, ideas, and educative experience, while at the same time pointing to some of the limitations and incompatibilities that emerge when TE theory is exclusively derived from Dewey. To address some of these shortcomings, the authors point to the philosophical perspectives dealing with the sublime and awe, Romantic science, critical theory, and transformative learning theory as potential resources for further developing the empirical construct of transformative experience. In their contribution, Laurie Paul and John Quiggin argue that institutions of higher education inevitably pursue a transformative educational project. The transformative experience that characteristically occurs in higher education involves the emergence of a form of criticality in students. In their view, colleges and universities can provide spaces for students to experience a Kuhnian scientific revolution in their thinking, with the effect that students can thereby become more critically minded individuals in many areas of their intellectual lives. In making this argument, Paul and Quiggin take up a position contrary to commentators on higher education such as Stanley Fish, who maintain that colleges and universities should focus only on the mastery of scholarly skills. Against this view, Paul and Quiggin argue that transformative epistemic and personal growth forms a core aim of higher education. In the final lines of the article, the authors point out that the recent shift to digital platforms in university teaching brought on by the COVID-19 pandemic can serve as a test case for the transformative dimensions of higher education. In particular, we can begin to observe how much of the transformative effect of higher education is due exclusively to engagement with course content versus the role of students' wider experience of being on campus. In his contribution, Randall Curren discusses the role of transformative experiences in education, with a specific focus on valuing. Engaging with Laurie Paul's influential 2014 book Transformative Experience, Curren offers a holistic picture of transformative experience by putting the process in the wider context of what he calls a fully transformative package, which includes changes in values, capabilities, and understanding. Given this notion of transformation, he raises questions with important practical implications: Which ethical issues arise when we aim at orchestrating educational experiences that may prove to be transformative? What transformations are worth orchestrating in education? Curren argues from an Aristotelian perspective that the student's capacity to live well is at the center of these questions. When defining what qualifies as an ethically defensible transformative education, one needs to reflect on what count as necessary goods and desirable capabilities for students to acquire in the transformative process. In other words, Curren urges us to consider whether we can observe in the transformation a \"fulfillment of [students'] species-potential in eudaimonic activity that is the substance of a life lived well.\"2121 Randall Curren, \"Transformative Valuing,\" in this issue. This specification helps us to recognize that not every kind of transformation is worth pursuing (from the teacher's perspective) or worth having (from the student's perspective) in an educational context. In a similar vein to Curren, Ryan Kemp points to some potentially serious limitations and ethical pitfalls of transformative education. In particular, Kemp argues that transformative experiences can lead us away from personal flourishing. He makes \u2014 as he himself calls it \u2014 an \"unlikely case for a certain kind of value stability.\"2222 Ryan S. Kemp, \"Lessons in Self-Betrayal: On the Pitfalls of Transformative Education,\" in this issue. Kemp draws on a novel by Wendell Berry (Hannah Coulter) and Jonathan Lear's Radical Hope to question the very rationality of aspiring to be a different person, that is, to take on values that conflict with our foundational values.2323 Wendell Berry, Hannah Coulter (Berkeley, CA: Counterpoint Press, 2004); and Jonathan Lear, Radical Hope: Ethics in the Face of Cultural Devastation (Cambridge, MA: Harvard University Press, 2006). Kemp maintains that in most cases, if not all, it is irrational to have this desire, since it requires that we give up on the volitional sources that render our practical decision-making coherent and agentive. If transformative education encourages this kind of \"radical\" aspiration, then it may seriously undermine students' capacity to flourish. James Gordon reexamines Ryan Kemp's \"self-transformation puzzle,\" with specific reference to the 2015 article in which Kemp originally developed this idea.2424 Ryan Kemp, \"The Self-Transformation Puzzle,\" Res Philosophica 92, no. 2 (2015): 389\u2013417. In Kemp's formulation, the attempt to understand experiences of self-transformation as expressions of personal agency introduces a host of difficult ethical and logical paradoxes. To avoid these paradoxes, Kemp recommends conceiving of self-transformation as an externally caused phenomenon, something that happens to us. Gordon suggests an alternative perspective on the topic of self-transformation by drawing on the \"aspirational\" concept of self-change offered recently by Agnes Callard. Gordon suggests that aspiration points to a mode of rational agency that is active when choosing to undergo transformative self-change. Given the new conceptual grounds provided by aspirational self-change, Gordon not only tackles several potential problems with the inner structure of Kemp's puzzle, but he also offers new perspectives on the educational practices involved in transformative education when conducted in aspirational terms. In particular, Gordon suggests that educators be held to aspirational rather than performance-based standards: they should be evaluated on their ability to model the values to which their students should aspire rather than on their students' success or failure. Hans-Christoph Koller contributes an essay to the symposium that focuses on the German concept of transformative Bildung. Bildung, which is sometimes translated as \"self-formation,\" has been the guiding concept in German philosophy and theory of education for the last 200 years. Koller draws from this tradition and takes as his starting point Wilhelm von Humboldt's notion of Bildung. However, instead of simply reproducing the theory of Bildung found in German Idealism, Koller suggests a contemporary concept of transformatorische Bildung. By referring to Bourdieu, Derrida, and phenomenological thought, Koller conceptualizes a theory of transformative Bildung that seeks to be relevant for the idiosyncrasies of the modern (or postmodern) world, as well as for prevalent questions regarding how to connect a theory of Bildung to empirical research. In doing so, Koller builds upon previous work developed in his 2012 book Bildung anders denken, which has received a wide reception among educational theorists and qualitative researchers in the German-speaking context.2525 The full citation for Koller's Bildung anders denken is in note 13. Diane Andrea English, and contribution takes up the important and between and transformative education. In particular, they argue that rather than transformations in students to To this teachers be to recognize the of to meaningful forms of within the and to a form of that the of each The authors come to the that students to is not only a educational but an of education. The to this symposium important new along the and pedagogical dimensions of transformative education. provide to some of the questions that arise in these what role transformative experiences should in education and Bildung Kriescher, Cropp, and Paul and what the ethical limitations of transformative education may be how transformative education can be by experiences of and English, and and to what transformative education aspirational or In doing so, these provide an for philosophical on transformative education. We research on the topic of transformation to be of central for in an in which empirical of educational research are the for developing to classroom it is important to demonstrate the empirical and implications of philosophical the of this symposium philosophy of education can be a means of empirical research with the of experience into reflective of are many profound theoretical and practical questions that this symposium The more of education, and educational researchers with questions like the the Although not of the questions we might to have about the and pitfalls of transformative education are in this we are that its will in and about transformative education. and by is a in the of Educational and Education at areas of are educational education, transformative education, and the history of educational is a in the of Educational at University of areas of are the theory of learning and Bildung, education, and education and the is a in the of and Social at areas of are and in education, education and in education.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "Educational Theory",
+        "type": "journal",
+        "issn": [
+          "0013-2004",
+          "1741-5446"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/edth.12442"
+      },
+      "topics": [
+        "Education and Critical Thinking Development",
+        "Ego Development and Educational Practices"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W3135894733"
+    },
+    {
+      "openalex_id": "W3209214149",
+      "doi": "10.1186/s13010-021-00110-0",
+      "title": "Mapping out epistemic justice in the clinical space: using narrative techniques to affirm patients as knowers",
+      "authors": [
+        {
+          "name": "Leah Teresa Rosen",
+          "openalex_id": "A5102725476",
+          "institutions": [
+            "Cornell University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-26",
+      "abstract": null,
+      "cited_by_count": 65,
+      "type": "review",
+      "source": {
+        "name": "Philosophy Ethics and Humanities in Medicine",
+        "type": "journal",
+        "issn": [
+          "1747-5341"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://peh-med.biomedcentral.com/track/pdf/10.1186/s13010-021-00110-0"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Empathy and Medical Education",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W3209214149"
+    },
+    {
+      "openalex_id": "W4229029684",
+      "doi": "10.1111/sjtg.12426",
+      "title": "Epistemic injustice in geography. A commentary on Patricia Daley and Amber Murrey's \u2018Defiant scholarship: Dismantling coloniality in contemporary African geographies\u2019.",
+      "authors": [
+        {
+          "name": "Maano Ramutsindela",
+          "openalex_id": "A5018502560",
+          "orcid": "https://orcid.org/0000-0003-0918-5892",
+          "institutions": [
+            "University of Cape Town",
+            "International Geographical Union"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-01",
+      "abstract": "The ongoing debate on the politics of knowledge, especially the dominance of Eurocentric epistemology at the expense of indigenous knowledge systems reveals multiple ways in which knowledge production takes place in universities, and how it is institutionalized. There is consensus among critical scholars of higher education that the European origins of the African university have implications for the project of decolonizing the university in Africa (Ndofirepi, 2014; Jansen, 2019). As knowledge production is always motivated, there is a need to uncover the interests and ideological foundations on which geographic scholarship is anchored and how they are defended by an epistemic community. Such a community would naturally seek to reproduce itself through various strategies. Hence, we witness the division of labour in the form of the knower and the collector of data, the theorist and the exampled, and the producer and consumer of knowledge. This categorization points to a broader process of epistemic injustice, which downgrades certain groups of people \u2018in respect of their status as an epistemic subject\u2019 (Frickler, 2017). Epistemic injustice manifests in various forms, including hermeneutical marginalization by which \u2018a socially disadvantaged group is blocked \u2026 from access to knowledge, or access to communicating knowledge\u2019 (McKinnon, 2016: 441). It is worth pondering on Bhargava's (2013: 413) conception of epistemic injustice as \u2018a form of cultural injustice that occurs when concepts and categories by which people understand themselves and their world is replaced or adversely affected by the concepts and categories of the colonisers\u2019. Current work on decoloniality exposes this injustice but I would argue that it has not gone far enough in mapping possibilities for and forms of epistemic justice in geography. Daley and Murrey's (2022) paper adds to the critique of the coloniality of geographic knowledge and offers a starting point for working towards decolonial \u2018African geographies\u2019. Three important points in the paper drew my attention. The first is the notion of \u2018African geographies\u2019 and the assumptions underlying it. The second relates to the idea of defiant scholarship and its relation to other concepts and critiques in human geography and social science more broadly. The third point is on the relationships between African universities and geographic scholarship and curriculum. The concept of \u2018geographies\u2019 needs careful consideration because its meaning is derived from its use, and it has no clear boundaries. It is used to reflect on the plurality of geographic (sub)fields and inclusivity of perspectives, to expand the scope of geographic inquiry, to insert (human) geography to the wider social science, and to challenge conceptions and the content of geography. Non-geographers (in terms of disciplinary training) sometime use it to invite geographers to their conversation. At times, its use signals uncertainty about where to place the subject matter for scientific validation. It also shows creativity in capturing themes and experiences across disciplinary boundaries. \u2018African geographies\u2019 is an interesting concept that touches on assumptions of our knowledge about Africa. We gather our knowledge of Africa based on the prior existence of a phenomenon called Africa (Macamo, 2016), which has been constructed through various instruments over centuries (Mudimbe, 1988). Macamo (2016: 325) argues that there is no such thing as knowledge of Africa and asks a pertinent question: \u2018what is it that people are studying when they state that they are studying the geography, history, economy, politics, or even culture of Africa\u2019. We need conceptual apparatus to recover the Africa that has been erased by colonial discourses, representations, and western epistemologies. In this context, \u2018African geographies\u2019 should be understood as a project by which we (re)constitute Africa as an object of geographic inquiry. How we undertake this process will shape the kinds of questions our research should address, and the curricular transformation required for teaching and communicating geographic knowledge. We need theories, concepts and methods for the project of \u2018African geographies\u2019 not least because knowledge production takes place in \u2018the theoretical frameworks, conceptual categories and methodological procedures that form the basis for the conditions of possibility of any knowledge at all\u2019 (Macamo, 2016: 324). There are good examples of how dominant theoretical frameworks have been challenged and alternatives provided. These include (re)theorising African urbanism and the structure of African cities (Davies, 1976; Mbembe & Nuttall, 2004; Pieterse, 2010). Obeng-Odoom (2021) argues for placing just land at the centre of theories of cities as commons and as a research methodology. Such a methodology aids our understanding of the African conception of land necessary for decolonizing nature and for working towards solving ecological crises. Returning to the concept of \u2018African geographies\u2019, we need clarity on how it relates to associated concepts such as Africanization and Afrocentrism, and also how it helps position geographic scholarship to contribute to African studies. I find the concept of defiant scholarship interesting in so far as it foregrounds African intellectuals and their commitment to social, political, and economic change. Daley and Murrey suggest that African geographers should tap into this historical tradition of defiant scholarship. That tradition provides geographers with intellectual tools for disrupting the coloniality of geography on the continent. Thus, a new African geographic scholarship should be founded on the work of African intellectuals and African experiences. After reading this concept carefully, I was left wondering what it adds in relation to traditions of critical or radical geography, or postcolonial geography (see Sidaway, 2000; Timar, 2004; Sidaway et al., 2014) or attempts to Africanize the geography curriculum (Ogden, 1982). The concept of defiant scholarship reads like an amalgam of critiques of the colonial matrix of power and its consequent epistemic violence. Earlier attempts at such an amalgam in geography appeared in the form of a critical imaginary when the journal ACME was established as an avenue for critical geographic scholarship with a critical praxis (Moss et al., 2002). What I find missing from the concept of defiant scholarship in the context of geography is a reflection on how geographers themselves have engaged with the critiques that Daley and Murrey raise. For example, human geographers have long critiqued the relationship between geography and empire (Godlewska & Smith, 1994), and the centrality of geography to colonial models of theft, subjugation, and hegemony (Blaut, 1993; Timar, 2004). The concept of African development through which African intellectuals exposed colonialism has been used by one of Africa's leading geographers, Akin Mabogunje (1980) to critique the development process and to demonstrate how it unfolds in an African context. It would be helpful to systematically examine the extent to which the work of radical African intellectuals might have influenced geographic thinking as a starting point towards uncovering the histories and trajectories of geographic scholarship on the continent. The authors could engage with the limitations of a critical geographic scholarship. Has this scholarship remained embedded in coloniality, and if so, how? What are the limits of postcolonial geography for the emergence of \u2018African geographies\u2019 being proposed? These questions are important for grounding the project of \u2018African geographies\u2019 within the wider field of geography. Daley and Murrey remind us of the persistence of epistemic injustice that manifests in lack of recognition of African geographers in the field and within departments, in geographical societies, in the validation of knowledge through the politics of citations, and in the production of knowledge more generally. In the most recent conversation I had with co-authors of a proposed book chapter, I was intrigued by the comment that we should not include Africa in the title because it would not appeal to the global readership. We need to understand how African geographers participate in their own marginalization (Ramutsindela, 2007). Defiant scholarship points to the need to interrogate the relationships between universities and the geography programmes they offer(ed). It speaks to concerns with the colonial foundations of the university in Africa and the rise of neoliberalization as some of the major limitations for launching a progressive geography curriculum. But care is needed not to fall into the trap of overgeneralizing the university in Africa, based on examples from a few institutions. Universities in Africa have diverse histories and played dissimilar roles, some of which influenced geographic scholarship. For example, geographic inquiry in South Africa was influenced by universities that hosted geography departments, the responses of universities to the apartheid project, and their international networks (Maharaj & Ramutsindela, 2022). Before 1994, universities in South Africa were classified into three broad categories: English-speaking, Afrikaans-speaking, and Black (African, coloured and Indian). English-speaking universities were generally considered liberal and were critical of the apartheid state. Geography departments in some of these universities espoused this liberal tradition and developed a critical scholarship. However, in a democratic South Africa, the categories of universities became blurred, especially with mergers that resulted in incorporating some historically black institutions into historically white universities. This happened at universities such as the Free State, KwaZulu-Natal, North-West and Pretoria. This process resulted in the relocation of geography departments, the merging of geography departments with related disciplines, and the spreading of geography programmes across or in different campuses of the same university. Regarding the geography curricula, the state-driven restructuring of institutions of higher learning led to some geography departments and associated research units refocusing their curricula to vocationally oriented programmes (Fairhurst et al., 2003). The process of decolonization in universities in democratic South Africa is uneven. Though student protests have been part of the broader anti-apartheid struggle in black universities, the decolonial project that gained momentum from the Rhodes Must Fall Movement in 2015 has its traction on historically white campuses. This unevenness points to different interpretations of colonial inheritances and conceptualizations of epistemic justice. The jury is still out on the extent to which the decolonial project could fundamentally transform the geography curricula in Africa. Daley and Murrey call for rethinking the curriculum for \u2018African Geographies\u2019 to address the sidelining and silencing of Africa and African geographers. The challenge remains to find appropriate curricula models for decolonizing geography and for resolving the epistemic tension between African and Eurocentric epistemologies. Mapping \u2018African Geographies\u2019 needs to confront the key question of whether the project involves adding African epistemological paradigms to Eurocentric frameworks, or rejecting all forms of Western knowledge, or re-centring African knowledge systems, or doing something else.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Singapore Journal of Tropical Geography",
+        "type": "journal",
+        "issn": [
+          "0129-7619",
+          "1467-9493"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1111/sjtg.12426"
+      },
+      "topics": [
+        "Historical Geography and Geographical Thought",
+        "Qualitative Research Methods and Ethics",
+        "Geography Education and Pedagogy"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W4229029684"
+    },
+    {
+      "openalex_id": "W3119629698",
+      "doi": "10.24277/classica.v33i2.934",
+      "title": "Epistemicide: the Roman Case",
+      "authors": [
+        {
+          "name": "Dan-el Padilla Peralta",
+          "openalex_id": "A5061961277",
+          "orcid": "https://orcid.org/0000-0002-4833-1568",
+          "institutions": [
+            "Princeton University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-31",
+      "abstract": "The desire to recover and preserve the antiquity that in some circles is designated as \u201cclassical\u201d is rooted in the conviction that knowledge of that antiquity is a good. But does (or should) awareness of the epistemicides that define Greco-Roman antiquity modify the texture of that desire? Relying on the definition of epistemicide proposed by the postcolonial theorist Boaventura de Sousa Santos, this article argues that the Roman Republic and Empire engineered a staggering loss of epistemic diversity throughout the ancient Mediterranean, traceable along multiple vectors \u2014 from mass enslavement to ecological upheaval. It concludes with a summons to come to terms with the scope of ancient Rome\u2019s epistemicide, and to embrace the epistemological and ethical recalibration needed to write its history.",
+      "cited_by_count": 120,
+      "type": "article",
+      "source": {
+        "name": "Classica - Revista Brasileira de Estudos Cl\u00e1ssicos",
+        "type": "journal",
+        "issn": [
+          "0103-4316",
+          "2176-6436"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revista.classica.org.br/classica/article/download/934/824"
+      },
+      "topics": [
+        "Colonialism, slavery, and trade",
+        "Anthropological Studies and Insights",
+        "Caribbean and African Literature and Culture"
+      ],
+      "referenced_works_count": 160,
+      "url": "https://openalex.org/W3119629698"
+    },
+    {
+      "openalex_id": "W4210771594",
+      "doi": "10.4324/9781003133520",
+      "title": "",
+      "authors": [
+        {
+          "name": "Agnieszka Graff",
+          "openalex_id": "A5018131335",
+          "orcid": "https://orcid.org/0000-0003-0468-0376",
+          "institutions": [
+            "S\u00f6dert\u00f6rn University",
+            "Sant Gadge Baba Amravati University",
+            "Asociaci\u00f3n por los Derechos Civiles"
+          ]
+        },
+        {
+          "name": "El\u017cbieta Korolczuk",
+          "openalex_id": "A5086856279",
+          "orcid": "https://orcid.org/0000-0002-8263-5530",
+          "institutions": [
+            "S\u00f6dert\u00f6rn University",
+            "Sant Gadge Baba Amravati University",
+            "Asociaci\u00f3n por los Derechos Civiles"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-07",
+      "abstract": "This book charts the new phase of global struggles around gender equality and sexual democracy: the ultraconservative mobilization against \"gender ideology\" and feminist efforts to counteract it. It argues that anti-gender campaigns, which emerged around 2010 in Europe, are not a simple continuation of the anti-feminist backlash dating back to the 1970s, but part of a new political configuration. Opposition to \"gender\" has become a key element of the rise of right-wing populism, which successfully harnesses the anxiety, shame and anger caused by neoliberalism and threatens to destroy liberal democracy. Anti-Gender Politics in the Populist Moment offers a novel conceptualization of the relationship between the ultraconservative anti-gender movement and right-wing populist parties, examining the opportunistic synergy between these actors. The authors map the anti-gender campaigns as a global movement, putting the Polish case in a comparative perspective. They show that the anti-gender rhetoric is best understood as a reactionary critique of neoliberalism as a socio-cultural formation. The book also studies the recent wave of feminist mass mobilizations, viewing the transnational revolt of women as a left populist movement. This is an important study for those doing research in politics, cultural studies, gender and sexuality studies and sociology. It will also be useful for activists and policy makers.",
+      "cited_by_count": 462,
+      "type": "book",
+      "source": {
+        "name": "BiblioBoard Library Catalog (Open Research Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://library.oapen.org/handle/20.500.12657/50542"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Gender Politics and Representation"
+      ],
+      "referenced_works_count": 196,
+      "url": "https://openalex.org/W4210771594"
+    },
+    {
+      "openalex_id": "W2905069215",
+      "doi": "10.1001/amajethics.2018.1181",
+      "title": "Three Things Clinicians Should Know About Disability",
+      "authors": [
+        {
+          "name": "Joel Michael Reynolds",
+          "openalex_id": "A5009707169",
+          "orcid": "https://orcid.org/0000-0002-9640-5082"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-01",
+      "abstract": "The historical relationship between health care professionals and people with disabilities is fraught, a fact all the more troubling in light of the distinctive roles clinicians play in both establishing and responding to that which is considered normal or abnormal by society at large. Those who wish to improve their clinical practice might struggle, however, to keep up with developments across numerous disability communities as well as the ever-growing body of disability studies scholarship. To assist with this goal, I offer an overview of recent disability theory, outline a set of responsibilities clinicians have to disability communities, and provide recommendations for clinicians who hope to justly treat patients with disabilities and improve their care and health outcomes.",
+      "cited_by_count": 79,
+      "type": "article",
+      "source": {
+        "name": "The AMA Journal of Ethic",
+        "type": "journal",
+        "issn": [
+          "2376-6980"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journalofethics.ama-assn.org/sites/journalofethics.ama-assn.org/files/2018-11/msoc3-1812_1.pdf"
+      },
+      "topics": [
+        "Patient Dignity and Privacy",
+        "Disability Rights and Representation",
+        "Family and Disability Support Research"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W2905069215"
+    },
+    {
+      "openalex_id": "W4386249234",
+      "doi": "10.1145/3600211.3604673",
+      "title": "Sociotechnical Harms of Algorithmic Systems: Scoping a Taxonomy for Harm Reduction",
+      "authors": [
+        {
+          "name": "Renee Shelby",
+          "openalex_id": "A5063334612",
+          "orcid": "https://orcid.org/0000-0003-4720-3844",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Shalaleh Rismani",
+          "openalex_id": "A5090537987",
+          "orcid": "https://orcid.org/0000-0002-5281-2428"
+        },
+        {
+          "name": "Kathryn Henne",
+          "openalex_id": "A5067233169",
+          "orcid": "https://orcid.org/0000-0001-7369-3002",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "AJung Moon",
+          "openalex_id": "A5081123654",
+          "orcid": "https://orcid.org/0000-0002-9387-6284"
+        },
+        {
+          "name": "Negar Rostamzadeh",
+          "openalex_id": "A5072851389",
+          "orcid": "https://orcid.org/0000-0002-9638-4664",
+          "institutions": [
+            "Google (Canada)"
+          ]
+        },
+        {
+          "name": "P. O. Nicholas",
+          "openalex_id": "A5055401976",
+          "orcid": "https://orcid.org/0000-0002-1409-8956",
+          "institutions": [
+            "Google (Canada)",
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "N'Mah Yilla-Akbari",
+          "openalex_id": "A5092815408",
+          "institutions": [
+            "Google (Canada)",
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Jess Gallegos",
+          "openalex_id": "A5002562910",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Andrew Smart",
+          "openalex_id": "A5077833261",
+          "orcid": "https://orcid.org/0000-0002-9816-7348",
+          "institutions": [
+            "Google (United States)"
+          ]
+        },
+        {
+          "name": "Emilio Garc\u00eda Garc\u00eda",
+          "openalex_id": "A5102889321",
+          "orcid": "https://orcid.org/0000-0001-8637-0245",
+          "institutions": [
+            "Google (United States)",
+            "Google (Canada)"
+          ]
+        },
+        {
+          "name": "Gurleen Virk",
+          "openalex_id": "A5068760318",
+          "institutions": [
+            "Google (Canada)",
+            "Google (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-08",
+      "abstract": "Understanding the landscape of potential harms from algorithmic systems enables practitioners to better anticipate consequences of the systems they build. It also supports the prospect of incorporating controls to help minimize harms that emerge from the interplay of technologies and social and cultural dynamics. A growing body of scholarship has identified a wide range of harms across different algorithmic technologies. However, computing research and practitioners lack a high level and synthesized overview of harms from algorithmic systems. Based on a scoping review of computing research (n=172), we present an applied taxonomy of sociotechnical harms to support a more systematic surfacing of potential harms in algorithmic systems. The final taxonomy builds on and refers to existing taxonomies, classifications, and terminologies. Five major themes related to sociotechnical harms \u2014 representational, allocative, quality-of-service, interpersonal harms, and social system/societal harms \u2014 and sub-themes are presented along with a description of these categories. We conclude with a discussion of challenges and opportunities for future research.",
+      "cited_by_count": 160,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3600211.3604673"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Mobile Crowdsensing and Crowdsourcing",
+        "Privacy, Security, and Data Protection"
+      ],
+      "referenced_works_count": 198,
+      "url": "https://openalex.org/W4386249234"
+    },
+    {
+      "openalex_id": "W4319834002",
+      "doi": "10.1002/sd.2497",
+      "title": "Doing epistemic justice in sustainable development: Applying the philosophical concept of epistemic injustice to the real world",
+      "authors": [
+        {
+          "name": "Sarah Cummings",
+          "openalex_id": "A5055286981",
+          "orcid": "https://orcid.org/0000-0001-9722-0517",
+          "institutions": [
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "Charles Dhewa",
+          "openalex_id": "A5076261111",
+          "institutions": [
+            "Wageningen University & Research",
+            "Women's University in Africa"
+          ]
+        },
+        {
+          "name": "Gladys Kemboi",
+          "openalex_id": "A5057718542",
+          "institutions": [
+            "Nairobi Hospital",
+            "Wageningen University & Research"
+          ]
+        },
+        {
+          "name": "Stacey Young",
+          "openalex_id": "A5055480981",
+          "institutions": [
+            "United States Agency for International Development"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-17",
+      "abstract": "Abstract Originally conceptualized by the philosopher, Miranda Fricker, epistemic injustice\u2014unfair treatment of individuals and groups in knowledge\u2010related and communicative practices\u2014is increasingly being employed to delineate individual and collective injustice in healthcare, information sciences, education and sustainable development. Embedded in many other forms of social injustice and inequality, epistemic injustice is a particularly serious problem for sustainable development, undermining the global community's ability to deal with \u2018wicked\u2019 problems. Building on the more conceptually developed, philosophical framework of epistemic injustice and recent research from other fields, this article develops a holistic action\u2010oriented framework of epistemic justice, namely fair treatment in knowledge\u2010related and communicative practices, for sustainable development and beyond. It also adds to the current framework of individual and collective injustice by including a range of new insights on structural and systemic epistemic injustice, such as linguistic injustice and epistemicide.",
+      "cited_by_count": 55,
+      "type": "article",
+      "source": {
+        "name": "Sustainable Development",
+        "type": "journal",
+        "issn": [
+          "0968-0802",
+          "1099-1719"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/sd.2497"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W4319834002"
+    },
+    {
+      "openalex_id": "W3140719370",
+      "doi": "10.37514/per-b.2021.1206",
+      "title": "Race, Rhetoric, and Research Methods",
+      "authors": [
+        {
+          "name": "Alexandria L. Lockett",
+          "openalex_id": "A5073588552",
+          "institutions": [
+            "Spelman College"
+          ]
+        },
+        {
+          "name": "Iris D. Ruiz",
+          "openalex_id": "A5090225050",
+          "institutions": [
+            "Colorado State University",
+            "California State University, Stanislaus"
+          ]
+        },
+        {
+          "name": "James Chase Sanchez",
+          "openalex_id": "A5008829018",
+          "institutions": [
+            "Middlebury College"
+          ]
+        },
+        {
+          "name": "Christopher Carter",
+          "openalex_id": "A5101400798",
+          "orcid": "https://orcid.org/0000-0002-9472-1364",
+          "institutions": [
+            "University of Cincinnati"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-03",
+      "abstract": "The Perspectives on Writing series addresses writing studies in a broad sense.Consistent with the wide ranging approaches characteristic of teaching and scholarship in writing across the curriculum, the series presents works that take divergent perspectives on working as a writer, teaching writing, administering writing programs, and studying writing in its various forms.",
+      "cited_by_count": 74,
+      "type": "book",
+      "source": {
+        "name": "The WAC Clearinghouse; University Press of Colorado eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://wac.colostate.edu/docs/books/race/rhetoric.pdf"
+      },
+      "topics": [
+        "Race, History, and American Society",
+        "Critical Race Theory in Education"
+      ],
+      "referenced_works_count": 260,
+      "url": "https://openalex.org/W3140719370"
+    },
+    {
+      "openalex_id": "W3135371071",
+      "doi": "10.1145/3442188.3445918",
+      "title": "Towards Accountability for Machine Learning Datasets: Practices from Software Engineering and Infrastructure",
+      "authors": [
+        {
+          "name": "Ben Hutchinson",
+          "openalex_id": "A5071599724",
+          "orcid": "https://orcid.org/0000-0003-2253-6204"
+        },
+        {
+          "name": "Andrew Smart",
+          "openalex_id": "A5077833261",
+          "orcid": "https://orcid.org/0000-0002-9816-7348"
+        },
+        {
+          "name": "Alex Hanna",
+          "openalex_id": "A5025947434",
+          "orcid": "https://orcid.org/0000-0002-8957-0813"
+        },
+        {
+          "name": "Emily Denton",
+          "openalex_id": "A5045383831",
+          "orcid": "https://orcid.org/0000-0003-4915-0512"
+        },
+        {
+          "name": "Christina Greer",
+          "openalex_id": "A5041666220"
+        },
+        {
+          "name": "Oddur Kjartansson",
+          "openalex_id": "A5024402566"
+        },
+        {
+          "name": "Parker Barnes",
+          "openalex_id": "A5001087250"
+        },
+        {
+          "name": "Margaret Mitchell",
+          "openalex_id": "A5046235098",
+          "orcid": "https://orcid.org/0000-0001-7043-6545"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-01",
+      "abstract": "Datasets that power machine learning are often used, shared, and reused with little visibility into the processes of deliberation that led to their creation. As artificial intelligence systems are increasingly used in high-stakes tasks, system development and deployment practices must be adapted to address the very real consequences of how model development data is constructed and used in practice. This includes greater transparency about data, and accountability for decisions made when developing it. In this paper, we introduce a rigorous framework for dataset development transparency that supports decision-making and accountability. The framework uses the cyclical, infrastructural and engineering nature of dataset development to draw on best practices from the software development lifecycle. Each stage of the data development lifecycle yields documents that facilitate improved communication and decision-making, as well as drawing attention to the value and necessity of careful data work. The proposed framework makes visible the often overlooked work and decisions that go into dataset creation, a critical step in closing the accountability gap in artificial intelligence and a critical/necessary resource aligned with recent work on auditing processes.",
+      "cited_by_count": 222,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3442188.3445918"
+      },
+      "topics": [
+        "Data Quality and Management",
+        "Scientific Computing and Data Management",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 130,
+      "url": "https://openalex.org/W3135371071"
+    },
+    {
+      "openalex_id": "W4280595958",
+      "doi": "10.1145/3531146.3533157",
+      "title": "The Forgotten Margins of AI Ethics",
+      "authors": [
+        {
+          "name": "Abeba Birhane",
+          "openalex_id": "A5038758207",
+          "orcid": "https://orcid.org/0000-0001-6319-7937",
+          "institutions": [
+            "Mozilla Foundation",
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Elayne Ruane",
+          "openalex_id": "A5052651879",
+          "orcid": "https://orcid.org/0000-0001-7344-9763",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Thomas Laurent",
+          "openalex_id": "A5024411628",
+          "orcid": "https://orcid.org/0000-0002-0953-774X",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Matthew S. Brown",
+          "openalex_id": "A5087263570",
+          "orcid": "https://orcid.org/0000-0003-0575-3696",
+          "institutions": [
+            "Bucknell University"
+          ]
+        },
+        {
+          "name": "Johnathan Flowers",
+          "openalex_id": "A5021998832",
+          "orcid": "https://orcid.org/0000-0002-4535-8466",
+          "institutions": [
+            "Worcester State University"
+          ]
+        },
+        {
+          "name": "Anthony Ventresque",
+          "openalex_id": "A5020823954",
+          "orcid": "https://orcid.org/0000-0003-2064-1238",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Christopher L. Dancy",
+          "openalex_id": "A5065588624",
+          "orcid": "https://orcid.org/0000-0003-2119-496X",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-20",
+      "abstract": "How has recent AI Ethics literature addressed topics such as fairness and justice in the context of continued social and structural power asymmetries? We trace both the historical roots and current landmark work that have been shaping the field and categorize these works under three broad umbrellas: (i) those grounded in Western canonical philosophy, (ii) mathematical and statistical methods, and (iii) those emerging from critical data/algorithm/information studies. We also survey the field and explore emerging trends by examining the rapidly growing body of literature that falls under the broad umbrella of AI Ethics. To that end, we read and annotated peer-reviewed papers published over the past four years in two premier conferences: FAccT and AIES. We organize the literature based on an annotation scheme we developed according to three main dimensions: whether the paper deals with concrete applications, use-cases, and/or people's lived experience; to what extent it addresses harmed, threatened, or otherwise marginalized groups; and if so, whether it explicitly names such groups. We note that although the goals of the majority of FAccT and AIES papers were often commendable, their consideration of the negative impacts of AI on traditionally marginalized groups remained shallow. Taken together, our conceptual analysis and the data from annotated papers indicate that the field would benefit from an increased focus on ethical analysis grounded in concrete use-cases, people's experiences, and applications as well as from approaches that are sensitive to structural and historical power asymmetries.",
+      "cited_by_count": 104,
+      "type": "article",
+      "source": {
+        "name": "2022 ACM Conference on Fairness, Accountability, and Transparency",
+        "type": "conference",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3531146.3533157"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 92,
+      "url": "https://openalex.org/W4280595958"
+    },
+    {
+      "openalex_id": "W3036944142",
+      "doi": "10.1007/s11625-020-00832-8",
+      "title": "Philosophy of science for sustainability science",
+      "authors": [
+        {
+          "name": "Michiru Nagatsu",
+          "openalex_id": "A5052551542",
+          "orcid": "https://orcid.org/0000-0001-6566-0307",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Taylor Davis",
+          "openalex_id": "A5040925183",
+          "orcid": "https://orcid.org/0000-0003-2699-5002",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        },
+        {
+          "name": "C. Tyler DesRoches",
+          "openalex_id": "A5021288993",
+          "orcid": "https://orcid.org/0000-0002-7318-6948",
+          "institutions": [
+            "Arizona State University"
+          ]
+        },
+        {
+          "name": "Inkeri Koskinen",
+          "openalex_id": "A5055312243",
+          "orcid": "https://orcid.org/0000-0002-9060-7011",
+          "institutions": [
+            "Tampere University"
+          ]
+        },
+        {
+          "name": "Miles MacLeod",
+          "openalex_id": "A5043598759",
+          "orcid": "https://orcid.org/0000-0002-6346-545X",
+          "institutions": [
+            "University of Twente"
+          ]
+        },
+        {
+          "name": "Milutin Stojanovic",
+          "openalex_id": "A5017928918",
+          "orcid": "https://orcid.org/0000-0002-0290-6960",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Henrik Thor\u00e9n",
+          "openalex_id": "A5028624265",
+          "orcid": "https://orcid.org/0000-0002-6356-2022",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-22",
+      "abstract": null,
+      "cited_by_count": 86,
+      "type": "article",
+      "source": {
+        "name": "Sustainability Science",
+        "type": "journal",
+        "issn": [
+          "1862-4057",
+          "1862-4065"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11625-020-00832-8.pdf"
+      },
+      "topics": [
+        "Sustainability in Higher Education",
+        "Sustainability and Climate Change Governance",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "referenced_works_count": 135,
+      "url": "https://openalex.org/W3036944142"
+    },
+    {
+      "openalex_id": "W4394624215",
+      "doi": "10.1093/isq/sqae038",
+      "title": "Positionality Statements as a Function of Coloniality: Interrogating Reflexive Methodologies",
+      "authors": [
+        {
+          "name": "Jasmine K. Gani",
+          "openalex_id": "A5032532300",
+          "orcid": "https://orcid.org/0000-0002-8218-1807",
+          "institutions": [
+            "University of St Andrews"
+          ]
+        },
+        {
+          "name": "Rabea M. Khan",
+          "openalex_id": "A5030440023",
+          "orcid": "https://orcid.org/0000-0002-0709-6493",
+          "institutions": [
+            "Liverpool John Moores University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-03-14",
+      "abstract": "Abstracts Declaration of positionality and the confession of privilege as a way of revealing unequal power dynamics in knowledge production has become an increasingly encouraged reflexive practice in international relations and other disciplines. However, we interrogate the potentially negative implications of this methodology, occurring through a reification of material, assumed, and imagined hierarchies between people, which then is advertised and (re)produced by its utterance. We further query the modernist origins of reflexive methodology, which has inspired the practice of declaring positionality, and argue that its underpinning coloniality has bearings for its use today. We then explore how this coloniality manifests: Thus, first, we consider the extent to which publicly acknowledging privilege paradoxically acts as a means of centering whiteness through the narcissistic gaze and an assertion of legitimacy. Second, we argue positionality statements offer a redemption of guilt for the hegemonic researcher. And lastly, rather than ameliorating unequal power dynamics in the production of knowledge, we contend positionality statements may constitute hidden power moves in which one is able to signal and reinstate one\u2019s authority vis-\u00e0-vis people, but especially women, of color. We end with a call for a reparative scholarship that acknowledges these limitations in positionality statements.",
+      "cited_by_count": 216,
+      "type": "article",
+      "source": {
+        "name": "International Studies Quarterly",
+        "type": "journal",
+        "issn": [
+          "0020-8833",
+          "1468-2478"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/isq/article-pdf/68/2/sqae038/57187997/sqae038.pdf"
+      },
+      "topics": [
+        "Qualitative Research Methods and Ethics",
+        "Social Science and Policy Research",
+        "Migration, Refugees, and Integration"
+      ],
+      "referenced_works_count": 119,
+      "url": "https://openalex.org/W4394624215"
+    },
+    {
+      "openalex_id": "W3200475978",
+      "doi": "10.25120/etropic.20.2.2021.3796",
+      "title": "Decolonising Climate Change: A Call for Beyond-Human Imaginaries and Knowledge Generation",
+      "authors": [
+        {
+          "name": "Sophie Chao",
+          "openalex_id": "A5067659174",
+          "orcid": "https://orcid.org/0000-0002-5434-9238",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Dion Enari",
+          "openalex_id": "A5030557135",
+          "orcid": "https://orcid.org/0000-0002-3239-699X",
+          "institutions": [
+            "Auckland University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-10",
+      "abstract": "This article calls for transdisciplinary, experimental, and decolonial imaginations of climate change and Pacific futures in an age of great planetary undoing. Drawing from our personal and academic knowledge of the Pacific from West Papua to Samoa, we highlight the need for radical forms of imagination that are grounded in an ethos of inclusivity, participation, and humility. Such imaginations must account for the perspectives, interests, and storied existences of both human and beyond-human communities of life across their multiple and situated contexts, along with their co-constitutive relations. We invite respectful cross-pollination across Indigenous epistemologies, secular scientific paradigms, and transdisciplinary methodologies in putting such an imagination into practice. In doing so, we seek to destabilise the prevailing hegemony of secular science over other ways of knowing and being in the world. We draw attention to the consequential agency of beyond-human lifeforms in shaping local and global worlds and to the power of experimental, emplaced storytelling in conveying the lively and lethal becoming-withs that animate an unevenly shared and increasingly vulnerable planet. The wisdom of our kindred plants, animals, elements, mountains, forests, oceans, rivers, skies, and ancestors are part of this story. Finally, we reflect on the structural challenges in decolonising climate change and associated forms of knowledge production in light of past and ongoing thefts of sovereignty over lands, bodies, and ecosystems across the tropics.",
+      "cited_by_count": 96,
+      "type": "article",
+      "source": {
+        "name": "eTropic electronic journal of studies in the tropics",
+        "type": "journal",
+        "issn": [
+          "1448-2940"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.jcu.edu.au/etropic/article/download/3796/3674"
+      },
+      "topics": [
+        "Climate Change, Adaptation, Migration",
+        "Geographies of human-animal interactions",
+        "Indigenous Studies and Ecology"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W3200475978"
+    },
+    {
+      "openalex_id": "W3158706632",
+      "doi": "10.1007/s40037-021-00661-0",
+      "title": "The prism model: advancing a&amp;nbsp;theory of practice for arts and humanities in medical education",
+      "authors": [
+        {
+          "name": "Tracy Moniz",
+          "openalex_id": "A5081831213",
+          "orcid": "https://orcid.org/0000-0002-5078-4611",
+          "institutions": [
+            "Mount Saint Vincent University"
+          ]
+        },
+        {
+          "name": "Maryam Golafshani",
+          "openalex_id": "A5044597113",
+          "orcid": "https://orcid.org/0000-0003-2053-1215",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Carolyn M. Melro",
+          "openalex_id": "A5026283080",
+          "orcid": "https://orcid.org/0000-0003-0412-5495",
+          "institutions": [
+            "Dalhousie University"
+          ]
+        },
+        {
+          "name": "Nancy Adams",
+          "openalex_id": "A5054055877",
+          "orcid": "https://orcid.org/0000-0003-0534-6716",
+          "institutions": [
+            "Penn State Milton S. Hershey Medical Center"
+          ]
+        },
+        {
+          "name": "Paul Haidet",
+          "openalex_id": "A5086644562",
+          "orcid": "https://orcid.org/0000-0002-7527-2065",
+          "institutions": [
+            "Woodward (United States)",
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Javeed Sukhera",
+          "openalex_id": "A5048528912",
+          "orcid": "https://orcid.org/0000-0001-8146-4947",
+          "institutions": [
+            "Western University"
+          ]
+        },
+        {
+          "name": "Rebecca L. Volpe",
+          "openalex_id": "A5030548146",
+          "orcid": "https://orcid.org/0000-0003-3406-9498",
+          "institutions": [
+            "Penn State Milton S. Hershey Medical Center"
+          ]
+        },
+        {
+          "name": "Claire de Boer",
+          "openalex_id": "A5057258427",
+          "institutions": [
+            "Penn State Milton S. Hershey Medical Center"
+          ]
+        },
+        {
+          "name": "Lorelei Lingard",
+          "openalex_id": "A5077159626",
+          "orcid": "https://orcid.org/0000-0002-4150-3355",
+          "institutions": [
+            "Western University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-29",
+      "abstract": "Introduction The arts and humanities have transformative potential for medical education. Realizing this potential requires an understanding of what arts and humanities teaching is and what it aims to do. A 2016 review of exclusively quantitative studies mapped three discursive positions (art as intrinsic to, additive to or curative for medicine) and three epistemic functions (art for mastering skills, perspective taking, and personal growth and activism). A more inclusive sample might offer new insights into the position and function of arts and humanities teaching in medical education. Methods Informed by this 2016 framework, we conducted discursive and conceptual analyses of 769 citations from a database created in a recent scoping review. We also analyzed the 15 stakeholder interviews from this review for recurring themes. These three analyses were iteratively compared and combined to produce a model representing the complex relationship among discursive functions and learning domains. Results The literature largely positioned arts and humanities as additive to medicine and focused on the functions of mastering skills and perspective taking. Stakeholders emphasized the intrinsic value of arts and humanities and advocated their utility for social critique and change. We offer a refined theory of practice\u2014the Prism Model of four functions (mastering skills, perspective taking, personal insight and social advocacy)\u2014to support more strategic use of arts and humanities in medical education across all learning domains. Discussion The Prism Model encourages greater pedagogical flexibility and critical reflection in arts and humanities teaching, offering a foundation for achieving its transformative potential.",
+      "cited_by_count": 60,
+      "type": "review",
+      "source": {
+        "name": "Perspectives on Medical Education",
+        "type": "journal",
+        "issn": [
+          "2212-2761",
+          "2212-277X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40037-021-00661-0.pdf"
+      },
+      "topics": [
+        "Empathy and Medical Education",
+        "Innovations in Medical Education",
+        "Film in Education and Therapy"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W3158706632"
+    },
+    {
+      "openalex_id": "W4229368683",
+      "doi": "10.1515/multi-2022-0034",
+      "title": "Peripheral multilingual scholars confronting epistemic exclusion in global academic knowledge production: a positive case study",
+      "authors": [
+        {
+          "name": "Ingrid Piller",
+          "openalex_id": "A5031627555",
+          "orcid": "https://orcid.org/0000-0003-2181-2596",
+          "institutions": [
+            "Macquarie University"
+          ]
+        },
+        {
+          "name": "Jie Zhang",
+          "openalex_id": "A5047379893",
+          "orcid": "https://orcid.org/0000-0002-3979-7032",
+          "institutions": [
+            "Zhongnan University of Economics and Law"
+          ]
+        },
+        {
+          "name": "Jia Li",
+          "openalex_id": "A5100405683",
+          "orcid": "https://orcid.org/0000-0002-3391-5720",
+          "institutions": [
+            "Yunnan University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-09",
+      "abstract": "Abstract The decolonization of knowledge is increasingly high on the agenda of applied and sociolinguistics. This article contributes to this agenda by examining how peripheral multilingual scholars confront their linguistic and epistemic exclusion from global knowledge production. Based on the product of such a challenge \u2013 a Chinese-centric special issue of Multilingua , a global academic Q1 journal, devoted to crisis communication during the COVID-19 pandemic and committed to furthering intercultural dialogue in research \u2013 we explore the decades-long knowledge production process behind that product and so provide a look into the \u201cblack box\u201d of academic networking and publishing. Advocating for collaborative autoethnography as an inherently inclusive method, we focus on enabling academic and personal networks, textual scaffolding, and linguistic and epistemic brokerage. The article closes with three aspects of linguistic and epistemic citizenship that are central to inclusion, namely recognition of the value of peripheral knowledges, recognition of a collaborative ethics of care, and recognition of shared responsibility.",
+      "cited_by_count": 57,
+      "type": "article",
+      "source": {
+        "name": "Multilingua",
+        "type": "journal",
+        "issn": [
+          "0167-8507",
+          "1613-3684"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/multi-2022-0034/pdf"
+      },
+      "topics": [
+        "Higher Education Practises and Engagement",
+        "Global Educational Policies and Reforms",
+        "Second Language Learning and Teaching"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W4229368683"
+    },
+    {
+      "openalex_id": "W3198760712",
+      "doi": "10.1613/jair.1.12814",
+      "title": "Socially Responsible AI Algorithms: Issues, Purposes, and Challenges",
+      "authors": [
+        {
+          "name": "Lu Cheng",
+          "openalex_id": "A5040552536",
+          "orcid": "https://orcid.org/0000-0002-2503-2522",
+          "institutions": [
+            "Arizona State University"
+          ]
+        },
+        {
+          "name": "Kush R. Varshney",
+          "openalex_id": "A5015286159",
+          "orcid": "https://orcid.org/0000-0002-7376-5536",
+          "institutions": [
+            "IBM Research - Thomas J. Watson Research Center"
+          ]
+        },
+        {
+          "name": "Huan Liu",
+          "openalex_id": "A5100338946",
+          "orcid": "https://orcid.org/0000-0002-3264-7904",
+          "institutions": [
+            "Arizona State University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-08-28",
+      "abstract": "In the current era, people and society have grown increasingly reliant on artificial intelligence (AI) technologies. AI has the potential to drive us towards a future in which all of humanity flourishes. It also comes with substantial risks for oppression and calamity. Discussions about whether we should (re)trust AI have repeatedly emerged in recent years and in many quarters, including industry, academia, healthcare, services, and so on. Technologists and AI researchers have a responsibility to develop trustworthy AI systems. They have responded with great effort to design more responsible AI algorithms. However, existing technical solutions are narrow in scope and have been primarily directed towards algorithms for scoring or classification tasks, with an emphasis on fairness and unwanted bias. To build long-lasting trust between AI and human beings, we argue that the key is to think beyond algorithmic fairness and connect major aspects of AI that potentially cause AI\u2019s indifferent behavior. In this survey, we provide a systematic framework of Socially Responsible AI Algorithms that aims to examine the subjects of AI indifference and the need for socially responsible AI algorithms, define the objectives, and introduce the means by which we may achieve these objectives. We further discuss how to leverage this framework to improve societal well-being through protection, information, and prevention/mitigation. This article appears in the special track on AI &amp; Society.",
+      "cited_by_count": 209,
+      "type": "article",
+      "source": {
+        "name": "Journal of Artificial Intelligence Research",
+        "type": "journal",
+        "issn": [
+          "1076-9757",
+          "1943-5037"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://jair.org/index.php/jair/article/download/12814/26713"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Adversarial Robustness in Machine Learning",
+        "Explainable Artificial Intelligence (XAI)"
+      ],
+      "referenced_works_count": 288,
+      "url": "https://openalex.org/W3198760712"
+    },
+    {
+      "openalex_id": "W4207071765",
+      "doi": "10.1007/s11625-022-01091-5",
+      "title": "Envisioning just transformations in and beyond the EU bioeconomy: inspirations from decolonial environmental justice and degrowth",
+      "authors": [
+        {
+          "name": "Sabaheta Ramcilovic\u2010Suominen",
+          "openalex_id": "A5014421679",
+          "orcid": "https://orcid.org/0000-0002-3209-545X",
+          "institutions": [
+            "Natural Resources Institute Finland"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-25",
+      "abstract": "Abstract The European Union (EU) is adhering to decarbonization of its economy to tackle what is narrowly framed as \u2018environmental issues\u2019 of our socioecological and civilizational crises\u2014including, but not limited to, climate change and biodiversity loss. A shift to bio-based economy (bioeconomy) is an important component of this effort. This paper applies theoretical ideas from decolonial environmental justice and degrowth, placed in the wider context of transformations, to analyse the EU bioeconomy policy within the global context, and to draw lessons and recommendations for just transformations in the EU bioeconomy policy. I identify five dominant logics and approaches in the EU bioeconomy that act as barriers for just transformations and propose alternative ones that can support such transformations. Barriers and alternatives include (1) framing \u2018nature\u2019 as a resource and service provider for humans, who are seen as separate from nature, and the need to abandon human\u2013nature duality; (2) dominance of economic green growth and technoscientific policy solutions, and the need to place planetary justice at the centre of tackling socioecological crises; (3) a limited approach to justice, and the need to act upon climate and epistemic justice, including self-determination and self-governing authority; (4) the EU\u2019s ambition for global leadership and competitiveness in global bioeconomic markets and governance, and the need to redefine global governance towards partnerships based on the principles of solidarity, mutual respect, reconciliation and redistribution of power and wealth; (5) hegemonic politico-economic structures and actor coalitions in charge of the EU bioeconomy, and the need for decentralized bottom-up leadership coalitions that promote direct democracy, local autonomy and sovereignty beyond state. I conclude with reflections on the politics of change and risks of co-optation, with a hope to inspire decolonial and just socioecological transformations in and beyond bioeconomy.",
+      "cited_by_count": 58,
+      "type": "article",
+      "source": {
+        "name": "Sustainability Science",
+        "type": "journal",
+        "issn": [
+          "1862-4057",
+          "1862-4065"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11625-022-01091-5.pdf"
+      },
+      "topics": [
+        "Bioeconomy and Sustainability Development",
+        "Biomedical Ethics and Regulation",
+        "Sustainability and Climate Change Governance"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W4207071765"
+    },
+    {
+      "openalex_id": "W4366390744",
+      "doi": "10.1007/s13347-023-00606-x",
+      "title": "In Conversation with Artificial Intelligence: Aligning language Models with Human Values",
+      "authors": [
+        {
+          "name": "Atoosa Kasirzadeh",
+          "openalex_id": "A5047979305",
+          "orcid": "https://orcid.org/0000-0002-5967-3782",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Iason Gabriel",
+          "openalex_id": "A5032814084",
+          "orcid": "https://orcid.org/0000-0002-7552-4576",
+          "institutions": [
+            "Google DeepMind (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-19",
+      "abstract": "Abstract Large-scale language technologies are increasingly used in various forms of communication with humans across different contexts. One particular use case for these technologies is conversational agents, which output natural language text in response to prompts and queries. This mode of engagement raises a number of social and ethical questions. For example, what does it mean to align conversational agents with human norms or values? Which norms or values should they be aligned with? And how can this be accomplished? In this paper, we propose a number of steps that help answer these questions. We start by developing a philosophical analysis of the building blocks of linguistic communication between conversational agents and human interlocutors. We then use this analysis to identify and formulate ideal norms of conversation that can govern successful linguistic communication between humans and conversational agents. Furthermore, we explore how these norms can be used to align conversational agents with human values across a range of different discursive domains. We conclude by discussing the practical implications of our proposal for the design of conversational agents that are aligned with these norms and values.",
+      "cited_by_count": 99,
+      "type": "article",
+      "source": {
+        "name": "Philosophy & Technology",
+        "type": "journal",
+        "issn": [
+          "2210-5433",
+          "2210-5441"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13347-023-00606-x.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Hate Speech and Cyberbullying Detection",
+        "Multi-Agent Systems and Negotiation"
+      ],
+      "referenced_works_count": 101,
+      "url": "https://openalex.org/W4366390744"
+    },
+    {
+      "openalex_id": "W4307804865",
+      "doi": "10.1186/s12889-022-14389-x",
+      "title": "A qualitative study on gender inequality and gender-based violence in Nepal",
+      "authors": [
+        {
+          "name": "Pranab Dahal",
+          "openalex_id": "A5039527056",
+          "orcid": "https://orcid.org/0000-0001-7399-9829",
+          "institutions": [
+            "Linnaeus University"
+          ]
+        },
+        {
+          "name": "Sunil Kumar Joshi",
+          "openalex_id": "A5101781609",
+          "orcid": "https://orcid.org/0000-0002-2704-5060",
+          "institutions": [
+            "Kathmandu Medical College Teaching Hospital"
+          ]
+        },
+        {
+          "name": "Katarina Swahnberg",
+          "openalex_id": "A5037999165",
+          "orcid": "https://orcid.org/0000-0001-5200-1740",
+          "institutions": [
+            "Linnaeus University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-01",
+      "abstract": "Abstract Background Gender inequality and violence are not mutually exclusive phenomena but complex loops affecting each other. Women in Nepal face several inequalities and violence. The causes are diverse, but most of these results are due to socially assigned lower positioning of women. The hierarchies based on power make women face subordination and violence in Nepal. The study aims to explore participants' understanding and experience to identify the status of inequality for women and how violence emerges as one of its consequences. Furthermore, it explores the causes of sex trafficking as an example of an outcome of inequality and violence. Method The study formulated separate male and female groups using a purposive sampling method. The study used a multistage focus group discussion, where the same groups met at different intervals. Six focus group discussions, three times each with male and female groups, were conducted in a year. Thirty-six individuals, including sixteen males and twenty females, were involved in the discussions. The study used constructivist grounded theory for the data analysis. Results The study participants identify that a power play between men and women reinforce inequality and increases the likelihood of violence for women. The findings suggest that the subjugation of women occurs due to practices based on gender differences, constricted life opportunities, and internalization of constructed differences among women. The study identifies that interpersonal and socio-cultural violence can result due to established differences between men and women. Sex trafficking, as an example of the outcome of inequality and violence, occurs due to the disadvantageous position of women compounded by poverty and illiteracy. The study has developed a concept of power-play which is identified as a cause and consequence of women's subordination and violence. This power play is found operative at various levels with social approval for men to use violence and maintain/produce inequality. Conclusion The theoretical concept of power play shows that there are inequitable power relations between men and women. The male-centric socio-cultural norms and practices have endowed men with privilege, power, and an opportunity to exploit women. This lowers the status of women and the power-play help to produce and sustain inequality. The power-play exposes women to violence and manifests itself as one of the worst expressions used by men.",
+      "cited_by_count": 109,
+      "type": "article",
+      "source": {
+        "name": "BMC Public Health",
+        "type": "journal",
+        "issn": [
+          "1471-2458"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcpublichealth.biomedcentral.com/counter/pdf/10.1186/s12889-022-14389-x"
+      },
+      "topics": [
+        "Intimate Partner and Family Violence",
+        "Gender Roles and Identity Studies",
+        "Gender, Security, and Conflict"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4307804865"
+    },
+    {
+      "openalex_id": "W4226146728",
+      "doi": "10.5751/es-12960-270134",
+      "title": "A framework for co-production of knowledge in the context of Arctic research",
+      "authors": [
+        {
+          "name": "Ellam Yua",
+          "openalex_id": "A5024200604"
+        },
+        {
+          "name": "Julie Raymond-Yakoubian",
+          "openalex_id": "A5021774871",
+          "orcid": "https://orcid.org/0000-0002-3961-7660",
+          "institutions": [
+            "Kawerak"
+          ]
+        },
+        {
+          "name": "Raychelle Daniel",
+          "openalex_id": "A5087680629",
+          "orcid": "https://orcid.org/0000-0002-0392-6453",
+          "institutions": [
+            "Pew Charitable Trusts"
+          ]
+        },
+        {
+          "name": "Carolina Behe",
+          "openalex_id": "A5034040983",
+          "orcid": "https://orcid.org/0000-0002-8141-8550",
+          "institutions": [
+            "Inuit Circumpolar Council"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "The Arctic has been home to Indigenous Peoples from time immemorial. Distinct Indigenous worldviews and complex knowledge systems have been passed on from generation to generation, evolving over time in a living process that continues to this day. Indigenous Peoples' knowledge systems hold methodologies and assessment processes that provide pathways for knowing and understanding the Arctic, which address all aspects of life, including the spiritual, cultural, and ecological, all in interlinked and supporting ways. For too long, Indigenous Peoples of the Arctic and their knowledges have not been equitably included in many research activities. We argue for systematic change in how research-related activities are conducted in the Arctic. Bringing together multiple knowledge systems, specifically Indigenous Peoples' knowledge systems and science, can lead to more equitable, inclusive, and useful outcomes. The co-production of knowledge framework that we forward is designed to assist researchers, decision makers, and communities in moving toward those goals. Given increased interest in the Arctic by the research community, the complex, rapid, and ongoing change in Arctic systems, and amidst renewed and urgent calls for equity globally and across all spheres of life, adoption of a co-production of knowledge framework for the conduct of Arctic research is timely as well as a moral and intellectual imperative. Further, solutions to challenges facing the Arctic and global community are enhanced by the combined understanding of Indigenous Peoples' knowledges and science.",
+      "cited_by_count": 154,
+      "type": "article",
+      "source": {
+        "name": "Ecology and Society",
+        "type": "journal",
+        "issn": [
+          "1708-3087"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.ecologyandsociety.org/vol27/iss1/art34/ES-2021-12960.pdf"
+      },
+      "topics": [
+        "Indigenous Studies and Ecology",
+        "Arctic and Russian Policy Studies"
+      ],
+      "referenced_works_count": 138,
+      "url": "https://openalex.org/W4226146728"
+    },
+    {
+      "openalex_id": "W2914286274",
+      "doi": "10.1177/0309132518824659",
+      "title": "Towards a critical geography of resettlement",
+      "authors": [
+        {
+          "name": "Sarah Rogers",
+          "openalex_id": "A5045843331",
+          "orcid": "https://orcid.org/0000-0003-0437-5187",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Brooke Wilmsen",
+          "openalex_id": "A5050645485",
+          "orcid": "https://orcid.org/0000-0002-0970-7673",
+          "institutions": [
+            "La Trobe University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-29",
+      "abstract": "Resettlement is a governmental program with inherent spatial effects in that it drives the rearrangement of capital, labour, and land, and seeks to render people and space more governable. This article examines the extent to which this disruptive phenomenon has been theorised. We first review the existing literature, finding a distinct polarisation between mainstream studies and more critical scholarship. We then propose a critical geography of resettlement centred on its multiple logics, agents and expertise, and subject-making and spatial practices. An invigorated critical geography of resettlement is needed to challenge the legitimisation of an expanding resettlement industry.",
+      "cited_by_count": 125,
+      "type": "article",
+      "source": {
+        "name": "Progress in Human Geography",
+        "type": "journal",
+        "issn": [
+          "0309-1325",
+          "1477-0288"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11343/222006"
+      },
+      "topics": [
+        "Hydropower, Displacement, Environmental Impact",
+        "Homelessness and Social Issues",
+        "Migration, Refugees, and Integration"
+      ],
+      "referenced_works_count": 129,
+      "url": "https://openalex.org/W2914286274"
+    },
+    {
+      "openalex_id": "W3136148022",
+      "doi": "10.20853/35-1-4426",
+      "title": "Decolonisation of education in South Africa: Challenges to decolonise the university curriculum",
+      "authors": [
+        {
+          "name": "Pierre du Plessis",
+          "openalex_id": "A5084937513",
+          "orcid": "https://orcid.org/0000-0003-4243-6139",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-01",
+      "abstract": "Leadership matters in the engagement and achievement of students. There is a growing demand for research in the African context as much of the research in this area has emanated from the context of western influences. Through the use of narratives, this qualitative study examines the challenges of five university heads of departments in South African universities to gain deeper insights into the leadership challenges, practices and theorising within a post-colonial context such as that which exists in South Africa. Utilising a decolonised education and a social justice leadership discourse framework, the tensions, challenges and complexities inherent in the heads of department's leadership practices are explored. Educational leaders in developing countries face problems that are different from their Western counterparts and as such, leadership practices and theorising must be contextualised. Findings support a decolonised approach to education, tensions exist in practice regarding the manifestation of social issues in universities, and the need for leadership development that is grounded in South African knowledge and experiences.",
+      "cited_by_count": 57,
+      "type": "article",
+      "source": {
+        "name": "South African Journal of Higher Education",
+        "type": "journal",
+        "issn": [
+          "1011-3487",
+          "1753-5913"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.journals.ac.za/sajhe/article/download/4426/2916"
+      },
+      "topics": [
+        "Higher Education Practises and Engagement",
+        "African cultural and philosophical studies",
+        "Teacher Education and Leadership Studies"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W3136148022"
+    },
+    {
+      "openalex_id": "W2622569585",
+      "doi": "10.3390/su9060991",
+      "title": "The Normative Dimension in Transdisciplinarity, Transition Management, and Transformation Sciences: New Roles of Science and Universities in Sustainable Transitioning",
+      "authors": [
+        {
+          "name": "Roland W. Scholz",
+          "openalex_id": "A5020171024",
+          "orcid": "https://orcid.org/0000-0003-2506-3254",
+          "institutions": [
+            "Universit\u00e4t f\u00fcr Weiterbildung Krems",
+            "ETH Zurich"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-06-09",
+      "abstract": "This paper discusses the role normative aspects play in different approaches of science\u2013practice collaboration, in particular as action research, (Mode 2) Transdisciplinarity (Td), Transition Management (TM), and Transformative Science (TSc). We elaborate on the different roles that scientists in these processes play. They work as facilitators (or contribute to a facilitated Td process), as activists (i.e., activist researchers) in TM projects, and as catalysts in TSc. Td processes develop socially robust solutions for sustainable transitioning and impacts on the science system through mutual learning and by integrating epistemics (i.e., ways of knowing) from science and practice and focusing on the empowerment of stakeholders. Science is viewed as a public good aiming to serve all key stakeholders. Researchers involved in TM projects strive to influence ongoing transition processes by actively engaging and participating in them, including lobbying for and empowering transformative changes toward sustainability based upon the researchers\u2019 own analyses and world views. The TSc approach takes a catalyst perspective of the scientist\u2019s role in inducing processes of strategic (societal) transition when including certain stakeholder groups. The paper focuses on what roles normative aspects play in the different approaches and new societal demands imposed on science and universities. Based on this, we conclude that a new order of universities, public knowledge institutions, and boundary institutions is forthcoming.",
+      "cited_by_count": 111,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/9/6/991/pdf?version=1497010398"
+      },
+      "topics": [
+        "Sustainability and Climate Change Governance",
+        "Interdisciplinary Research and Collaboration",
+        "Sustainability in Higher Education"
+      ],
+      "referenced_works_count": 126,
+      "url": "https://openalex.org/W2622569585"
+    },
+    {
+      "openalex_id": "W4295678468",
+      "doi": "10.1145/3507695",
+      "title": "A Method to the Madness: Applying an Intersectional Analysis of Structural Oppression and Power in HCI and Design",
+      "authors": [
+        {
+          "name": "Sheena Erete",
+          "openalex_id": "A5028107491",
+          "orcid": "https://orcid.org/0000-0003-2819-1083",
+          "institutions": [
+            "University of Maryland, College Park"
+          ]
+        },
+        {
+          "name": "Yolanda A. Rankin",
+          "openalex_id": "A5066701195",
+          "orcid": "https://orcid.org/0000-0002-3201-4613",
+          "institutions": [
+            "Florida State University"
+          ]
+        },
+        {
+          "name": "Jakita O. Thomas",
+          "openalex_id": "A5087581034",
+          "orcid": "https://orcid.org/0000-0002-6370-7316",
+          "institutions": [
+            "Auburn University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-14",
+      "abstract": "With increased focus on historically excluded populations, there have been recent calls for HCI research methods to more adequately acknowledge and address the historical context of racism, sexism, gendered racism, epistemic violence, classism, and so on. In this article, we utilize Black feminist epistemologies to serve as critical frameworks for understanding the historical context that reveals the interconnected systems of power that mutually influence one another to create unequal outcomes or social inequalities for different populations. Leveraging Black feminist thought (BFT) and intersectionality as critical social theories of design praxis, we introduce intersectional analysis of power\u2014a method that enables HCI researchers, designers, and practitioners to identify and situate saturated sites of violence in a historical context and to transform the ways in which they engage with populations that have been historically oppressed. Engaging in self-reflection as researchers, we apply an intersectional analysis of power to co-design technologies with community street outreach workers who address violence in their predominantly Black communities. We: (1) identify the saturated site of violence; (2) identify the intersecting systems of power and who holds power (past and present); (3) describe the \u201cconceptual glue\u201d that binds these intersecting systems together and the assumption(s) that those who hold power are employing to guide their interactions; (4) examine the ways in which Black people are subjugated, surveilled, and/or expected to assimilate to \u201cnormative\u201d ways of being and behaving; and (5) identify acts of resistance. This article contributes an alternative to traditional HCI and design methods that falsely perpetuate a lens of neutrality and colorblindness that centers on whiteness, innovation, and capitalism and ignores the history of State-sanctioned violence and structural oppression.",
+      "cited_by_count": 67,
+      "type": "article",
+      "source": {
+        "name": "ACM Transactions on Computer-Human Interaction",
+        "type": "journal",
+        "issn": [
+          "1073-0516",
+          "1557-7325"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3507695"
+      },
+      "topics": [
+        "Innovative Human-Technology Interaction",
+        "Child Development and Digital Technology",
+        "Crafts, Textile, and Design"
+      ],
+      "referenced_works_count": 119,
+      "url": "https://openalex.org/W4295678468"
+    },
+    {
+      "openalex_id": "W3163553826",
+      "doi": "10.23987/sts.94964",
+      "title": "The Democratisation Myth",
+      "authors": [
+        {
+          "name": "Marcel Kn\u00f6chelmann",
+          "openalex_id": "A5030242250",
+          "orcid": "https://orcid.org/0000-0003-1050-1303",
+          "institutions": [
+            "Yale University",
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-19",
+      "abstract": "Open access (OA) in the Global North is considered to solve an accessibility problem in scholarly communication. But this accessibility is restricted to the consumption of knowledge. Epistemic injustices inhering in the scholarly communication of a global production of knowledge remain unchanged. This underscores that the commercial or big deal OA dominating Europe and North America have little revolutionary potential to democratise knowledge. Academia in the Global North, driven by politics of progressive neoliberalism, can even reinforce its hegemonic power by solidifying and legitimating contemporary hierarchies of scholarly communication through OA. In a critique of the notion of a democratisation of knowledge, I showcase manifestations of OA as either allowing consumption of existing discourse or as active participation of discourse in the making. The latter comes closer to being the basis for a democratisation of knowledge. I discuss this as I issue a threefold conceptualisation of epistemic injustices comprising of testimonial injustice, hermeneutical injustice, and epistemic objectification. As these injustices prevail, the notion of a democratisation of knowledge through OA is but another form of technological determinism that neglects the intricacies of culture and hegemony.",
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "Science & Technology Studies",
+        "type": "journal",
+        "issn": [
+          "2243-4690"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://sciencetechnologystudies.journal.fi/article/download/94964/59993"
+      },
+      "topics": [
+        "Interdisciplinary Research and Collaboration",
+        "Feminist Epistemology and Gender Studies",
+        "Digital Education and Society"
+      ],
+      "referenced_works_count": 148,
+      "url": "https://openalex.org/W3163553826"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

@@ -12,8 +12,8 @@
 
 1. **Accurate** — Only cite verified papers; never fabricate references
 2. **Comprehensive** — Cover all major positions and key debates
-3. **Rigorous and concise** — Analytical depth, tight prose
-4. **Reproducible** — Structured workflow, standard BibTeX output
+3. **Rigorous and concise** — Analytical depth, tight prose; balanced presentation of positions
+4. **Reproducible** — Structured workflow, standard BibTeX output, Chicago author-date citations
 
 **NOT priorities**:
 - ❌ Speed — Quality over fast completion

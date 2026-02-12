@@ -1,0 +1,140 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Watson Free Agency",
+  "results": [
+    {
+      "paperId": "27b31d41a2c32049a35298905d2966b2693bcccc",
+      "title": "Moral Free Agency",
+      "authors": [
+        {
+          "name": "Daniel H. Ludlow",
+          "authorId": "120879837"
+        }
+      ],
+      "year": 1975,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/27b31d41a2c32049a35298905d2966b2693bcccc",
+      "venue": "",
+      "journal": {
+        "name": "BYU Studies Quarterly",
+        "pages": "4",
+        "volume": "15"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cd3587af895439b5e907d78e72963b01b90248fb",
+      "title": "Form and function in a Recent free living brachiopod Magadina cumingi",
+      "authors": [
+        {
+          "name": "J. R. Richardson",
+          "authorId": "2150298444"
+        },
+        {
+          "name": "J. Watson",
+          "authorId": "39445249"
+        }
+      ],
+      "year": 1975,
+      "abstract": null,
+      "citationCount": 30,
+      "doi": "10.1017/S0094837300002682",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cd3587af895439b5e907d78e72963b01b90248fb",
+      "venue": "Paleobiology",
+      "journal": {
+        "name": "Paleobiology",
+        "pages": "379 - 387",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "394871a626bb9f510b098b97ca0f282b775fd810",
+      "title": "Kinetic studies for diatomic free radicals using mass spectrometry. Part 3.\u2014Elementary reactions involving BrO X2\u03a0 radicals",
+      "authors": [
+        {
+          "name": "M. Clyne",
+          "authorId": "46786336"
+        },
+        {
+          "name": "R. Watson",
+          "authorId": "46852402"
+        }
+      ],
+      "year": 1975,
+      "abstract": null,
+      "citationCount": 24,
+      "doi": "10.1039/F19757100336",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/394871a626bb9f510b098b97ca0f282b775fd810",
+      "venue": "",
+      "journal": {
+        "name": "Journal of the Chemical Society, Faraday Transactions",
+        "pages": "336-350",
+        "volume": "71"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "21442d17211a6dc9905cc26c0bdcd6ab60567c6e",
+      "title": "The Family Agency and the Kinship System of the Elderly",
+      "authors": [
+        {
+          "name": "A. Freed",
+          "authorId": "39566993"
+        }
+      ],
+      "year": 1975,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1177/104438947505601001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/21442d17211a6dc9905cc26c0bdcd6ab60567c6e",
+      "venue": "",
+      "journal": {
+        "name": "Families in Society: The Journal of Contemporary Social Services",
+        "pages": "579 - 586",
+        "volume": "56"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c7124b9a854b255bd193cbea5ad77bdedbff119a",
+      "title": "Locomotory adaptations in a free-lying brachiopod.",
+      "authors": [
+        {
+          "name": "J. R. Richardson",
+          "authorId": "2150298444"
+        },
+        {
+          "name": "J. Watson",
+          "authorId": "39445249"
+        }
+      ],
+      "year": 1975,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.1126/SCIENCE.1170639",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c7124b9a854b255bd193cbea5ad77bdedbff119a",
+      "venue": "Science",
+      "journal": {
+        "name": "Science",
+        "pages": "\n          381-2\n        ",
+        "volume": "189 4200"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

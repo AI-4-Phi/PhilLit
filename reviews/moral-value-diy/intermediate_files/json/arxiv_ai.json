@@ -1,0 +1,416 @@
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:moral responsibility artificial intelligence AND cat:cs.AI",
+  "results": [
+    {
+      "arxiv_id": "2110.01831",
+      "title": "The Artificial Scientist: Logicist, Emergentist, and Universalist Approaches to Artificial General Intelligence",
+      "authors": [
+        "Michael Timothy Bennett",
+        "Yoshihiro Maruyama"
+      ],
+      "abstract": "We attempt to define what is necessary to construct an Artificial Scientist, explore and evaluate several approaches to artificial general intelligence (AGI) which may facilitate this, conclude that a unified or hybrid approach is necessary and explore two theories that satisfy this requirement to some degree.",
+      "published": "2021-10-05",
+      "updated": "2021-10-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "10.1007/978-3-030-93758-4_6",
+      "journal_ref": "Proceedings of the 14th International Conference on Artificial General Intelligence. 2021. Lecture Notes in Computer Science, vol 13154. Springer. pp. 45-54",
+      "pdf_url": "https://arxiv.org/pdf/2110.01831v1",
+      "url": "https://arxiv.org/abs/2110.01831"
+    },
+    {
+      "arxiv_id": "2110.01835",
+      "title": "Compression, The Fermi Paradox and Artificial Super-Intelligence",
+      "authors": [
+        "Michael Timothy Bennett"
+      ],
+      "abstract": "The following briefly discusses possible difficulties in communication with and control of an AGI (artificial general intelligence), building upon an explanation of The Fermi Paradox and preceding work on symbol emergence and artificial general intelligence. The latter suggests that to infer what someone means, an agent constructs a rationale for the observed behaviour of others. Communication then requires two agents labour under similar compulsions and have similar experiences (construct similar solutions to similar tasks). Any non-human intelligence may construct solutions such that any rationale for their behaviour (and thus the meaning of their signals) is outside the scope of what a human is inclined to notice or comprehend. Further, the more compressed a signal, the closer it will appear to random noise. Another intelligence may possess the ability to compress information to the extent that, to us, their signals would appear indistinguishable from noise (an explanation for The Fermi Paradox). To facilitate predictive accuracy an AGI would tend to more compressed representations of the world, making any rationale for their behaviour more difficult to comprehend for the same reason. Communication with and control of an AGI may subsequently necessitate not only human-like compulsions and experiences, but imposed cognitive impairment.",
+      "published": "2021-10-05",
+      "updated": "2021-10-05",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "10.1007/978-3-030-93758-4_5",
+      "journal_ref": "Proceedings of the 14th International Conference on Artificial General Intelligence. 2021. Lecture Notes in Computer Science, vol 13154. Springer. pp. 41-44",
+      "pdf_url": "https://arxiv.org/pdf/2110.01835v1",
+      "url": "https://arxiv.org/abs/2110.01835"
+    },
+    {
+      "arxiv_id": "2204.10358",
+      "title": "Creative Problem Solving in Artificially Intelligent Agents: A Survey and Framework",
+      "authors": [
+        "Evana Gizzi",
+        "Lakshmi Nair",
+        "Sonia Chernova",
+        "Jivko Sinapov"
+      ],
+      "abstract": "Creative Problem Solving (CPS) is a sub-area within Artificial Intelligence (AI) that focuses on methods for solving off-nominal, or anomalous problems in autonomous systems. Despite many advancements in planning and learning, resolving novel problems or adapting existing knowledge to a new context, especially in cases where the environment may change in unpredictable ways post deployment, remains a limiting factor in the safe and useful integration of intelligent systems. The emergence of increasingly autonomous systems dictates the necessity for AI agents to deal with environmental uncertainty through creativity. To stimulate further research in CPS, we present a definition and a framework of CPS, which we adopt to categorize existing AI methods in this field. Our framework consists of four main components of a CPS problem, namely, 1) problem formulation, 2) knowledge representation, 3) method of knowledge manipulation, and 4) method of evaluation. We conclude our survey with open research questions, and suggested directions for the future.",
+      "published": "2022-04-21",
+      "updated": "2022-04-21",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "10.1613/jair.1.13864",
+      "journal_ref": "Journal of Artificial Intelligence Research 2022",
+      "pdf_url": "https://arxiv.org/pdf/2204.10358v1",
+      "url": "https://arxiv.org/abs/2204.10358"
+    },
+    {
+      "arxiv_id": "2304.04780",
+      "title": "A Review on Explainable Artificial Intelligence for Healthcare: Why, How, and When?",
+      "authors": [
+        "Subrato Bharati",
+        "M. Rubaiyat Hossain Mondal",
+        "Prajoy Podder"
+      ],
+      "abstract": "Artificial intelligence (AI) models are increasingly finding applications in the field of medicine. Concerns have been raised about the explainability of the decisions that are made by these AI models. In this article, we give a systematic analysis of explainable artificial intelligence (XAI), with a primary focus on models that are currently being used in the field of healthcare. The literature search is conducted following the preferred reporting items for systematic reviews and meta-analyses (PRISMA) standards for relevant work published from 1 January 2012 to 02 February 2022. The review analyzes the prevailing trends in XAI and lays out the major directions in which research is headed. We investigate the why, how, and when of the uses of these XAI models and their implications. We present a comprehensive examination of XAI methodologies as well as an explanation of how a trustworthy AI can be derived from describing AI models for healthcare fields. The discussion of this work will contribute to the formalization of the XAI field.",
+      "published": "2023-04-10",
+      "updated": "2023-04-10",
+      "primary_category": "cs.LG",
+      "categories": [
+        "cs.LG",
+        "cs.AI"
+      ],
+      "doi": "10.1109/TAI.2023.3266418",
+      "journal_ref": "IEEE Transactions on Artificial Intelligence, 2023",
+      "pdf_url": "https://arxiv.org/pdf/2304.04780v1",
+      "url": "https://arxiv.org/abs/2304.04780"
+    },
+    {
+      "arxiv_id": "1301.2158",
+      "title": "Artificial Intelligence Framework for Simulating Clinical Decision-Making: A Markov Decision Process Approach",
+      "authors": [
+        "Casey C. Bennett",
+        "Kris Hauser"
+      ],
+      "abstract": "In the modern healthcare system, rapidly expanding costs/complexity, the growing myriad of treatment options, and exploding information streams that often do not effectively reach the front lines hinder the ability to choose optimal treatment decisions over time. The goal in this paper is to develop a general purpose (non-disease-specific) computational/artificial intelligence (AI) framework to address these challenges. This serves two potential functions: 1) a simulation environment for exploring various healthcare policies, payment methodologies, etc., and 2) the basis for clinical artificial intelligence - an AI that can think like a doctor. This approach combines Markov decision processes and dynamic decision networks to learn from clinical data and develop complex plans via simulation of alternative sequential decision paths while capturing the sometimes conflicting, sometimes synergistic interactions of various components in the healthcare system. It can operate in partially observable environments (in the case of missing observations or data) by maintaining belief states about patient health status and functions as an online agent that plans and re-plans. This framework was evaluated using real patient data from an electronic health record. Such an AI framework easily outperforms the current treatment-as-usual (TAU) case-rate/fee-for-service models of healthcare (Cost per Unit Change: $189 vs. $497) while obtaining a 30-35% increase in patient outcomes. Tweaking certain model parameters further enhances this advantage, obtaining roughly 50% more improvement for roughly half the costs. Given careful design and problem formulation, an AI simulation framework can approximate optimal decisions even in complex and uncertain environments. Future work is described that outlines potential lines of research and integration of machine learning algorithms for personalized medicine.",
+      "published": "2013-01-10",
+      "updated": "2013-01-10",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "stat.ML"
+      ],
+      "doi": "10.1016/j.artmed.2012.12.003",
+      "journal_ref": "Artificial Intelligence in Medicine. 57(1): 9-19. (2013)",
+      "pdf_url": "https://arxiv.org/pdf/1301.2158v1",
+      "url": "https://arxiv.org/abs/1301.2158"
+    },
+    {
+      "arxiv_id": "cs/9903016",
+      "title": "Modeling Belief in Dynamic Systems, Part II: Revision and Update",
+      "authors": [
+        "N Friedman",
+        "J. Y. Halpern"
+      ],
+      "abstract": "The study of belief change has been an active area in philosophy and AI. In recent years two special cases of belief change, belief revision and belief update, have been studied in detail. In a companion paper (Friedman & Halpern, 1997), we introduce a new framework to model belief change. This framework combines temporal and epistemic modalities with a notion of plausibility, allowing us to examine the change of beliefs over time. In this paper, we show how belief revision and belief update can be captured in our framework. This allows us to compare the assumptions made by each method, and to better understand the principles underlying them. In particular, it shows that Katsuno and Mendelzon's notion of belief update (Katsuno & Mendelzon, 1991a) depends on several strong assumptions that may limit its applicability in artificial intelligence. Finally, our analysis allow us to identify a notion of minimal change that underlies a broad range of belief change operations including revision and update.",
+      "published": "1999-03-24",
+      "updated": "1999-03-24",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": "Journal of Artificial Intelligence Research, Vol.10 (1999) 117-167",
+      "pdf_url": "https://arxiv.org/pdf/cs/9903016v1",
+      "url": "https://arxiv.org/abs/cs/9903016"
+    },
+    {
+      "arxiv_id": "2410.11896",
+      "title": "Study on the Helpfulness of Explainable Artificial Intelligence",
+      "authors": [
+        "Tobias Labarta",
+        "Elizaveta Kulicheva",
+        "Ronja Froelian",
+        "Christian Gei\u00dfler",
+        "Xenia Melman",
+        "Julian von Klitzing"
+      ],
+      "abstract": "Explainable Artificial Intelligence (XAI) is essential for building advanced machine learning-powered applications, especially in critical domains such as medical diagnostics or autonomous driving. Legal, business, and ethical requirements motivate using effective XAI, but the increasing number of different methods makes it challenging to pick the right ones. Further, as explanations are highly context-dependent, measuring the effectiveness of XAI methods without users can only reveal a limited amount of information, excluding human factors such as the ability to understand it. We propose to evaluate XAI methods via the user's ability to successfully perform a proxy task, designed such that a good performance is an indicator for the explanation to provide helpful information. In other words, we address the helpfulness of XAI for human decision-making. Further, a user study on state-of-the-art methods was conducted, showing differences in their ability to generate trust and skepticism and the ability to judge the rightfulness of an AI decision correctly. Based on the results, we highly recommend using and extending this approach for more objective-based human-centered user studies to measure XAI performance in an end-to-end fashion.",
+      "published": "2024-10-14",
+      "updated": "2024-10-14",
+      "primary_category": "cs.HC",
+      "categories": [
+        "cs.HC",
+        "cs.AI"
+      ],
+      "doi": "10.1007/978-3-031-63803-9_16",
+      "journal_ref": "Longo, L., Lapuschkin, S., Seifert, C. (eds) Explainable Artificial Intelligence. xAI 2024. Communications in Computer and Information Science, vol 2156",
+      "pdf_url": "https://arxiv.org/pdf/2410.11896v1",
+      "url": "https://arxiv.org/abs/2410.11896"
+    },
+    {
+      "arxiv_id": "2104.13155",
+      "title": "Watershed of Artificial Intelligence: Human Intelligence, Machine Intelligence, and Biological Intelligence",
+      "authors": [
+        "Li Weigang",
+        "Liriam Enamoto",
+        "Denise Leyi Li",
+        "Geraldo Pereira Rocha Filho"
+      ],
+      "abstract": "This article reviews the \"Once learning\" mechanism that was proposed 23 years ago and the subsequent successes of \"One-shot learning\" in image classification and \"You Only Look Once - YOLO\" in objective detection. Analyzing the current development of Artificial Intelligence (AI), the proposal is that AI should be clearly divided into the following categories: Artificial Human Intelligence (AHI), Artificial Machine Intelligence (AMI), and Artificial Biological Intelligence (ABI), which will also be the main directions of theory and application development for AI. As a watershed for the branches of AI, some classification standards and methods are discussed: 1) Human-oriented, machine-oriented, and biological-oriented AI R&D; 2) Information input processed by Dimensionality-up or Dimensionality-reduction; 3) The use of one/few or large samples for knowledge learning.",
+      "published": "2021-04-27",
+      "updated": "2021-05-07",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2104.13155v2",
+      "url": "https://arxiv.org/abs/2104.13155"
+    },
+    {
+      "arxiv_id": "2304.13269",
+      "title": "Games for Artificial Intelligence Research: A Review and Perspectives",
+      "authors": [
+        "Chengpeng Hu",
+        "Yunlong Zhao",
+        "Ziqi Wang",
+        "Haocheng Du",
+        "Jialin Liu"
+      ],
+      "abstract": "Games have been the perfect test-beds for artificial intelligence research for the characteristics that widely exist in real-world scenarios. Learning and optimisation, decision making in dynamic and uncertain environments, game theory, planning and scheduling, design and education are common research areas shared between games and real-world problems. Numerous open-source games or game-based environments have been implemented for studying artificial intelligence. In addition to single- or multi-player, collaborative or adversarial games, there has also been growing interest in implementing platforms for creative design in recent years. Those platforms provide ideal benchmarks for exploring and comparing artificial intelligence ideas and techniques. This paper reviews the games and game-based platforms for artificial intelligence research, provides guidance on matching particular types of artificial intelligence with suitable games for testing and matching particular needs in games with suitable artificial intelligence techniques, discusses the research trend induced by the evolution of those games and platforms, and gives an outlook.",
+      "published": "2023-04-26",
+      "updated": "2024-06-04",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2304.13269v4",
+      "url": "https://arxiv.org/abs/2304.13269"
+    },
+    {
+      "arxiv_id": "1703.06597",
+      "title": "Artificial Intelligence and Economic Theories",
+      "authors": [
+        "Tshilidzi Marwala",
+        "Evan Hurwitz"
+      ],
+      "abstract": "The advent of artificial intelligence has changed many disciplines such as engineering, social science and economics. Artificial intelligence is a computational technique which is inspired by natural intelligence such as the swarming of birds, the working of the brain and the pathfinding of the ants. These techniques have impact on economic theories. This book studies the impact of artificial intelligence on economic theories, a subject that has not been extensively studied. The theories that are considered are: demand and supply, asymmetrical information, pricing, rational choice, rational expectation, game theory, efficient market hypotheses, mechanism design, prospect, bounded rationality, portfolio theory, rational counterfactual and causality. The benefit of this book is that it evaluates existing theories of economics and update them based on the developments in artificial intelligence field.",
+      "published": "2017-03-20",
+      "updated": "2017-03-20",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/1703.06597v1",
+      "url": "https://arxiv.org/abs/1703.06597"
+    },
+    {
+      "arxiv_id": "1812.04814",
+      "title": "Linking Artificial Intelligence Principles",
+      "authors": [
+        "Yi Zeng",
+        "Enmeng Lu",
+        "Cunqing Huangfu"
+      ],
+      "abstract": "Artificial Intelligence principles define social and ethical considerations to develop future AI. They come from research institutes, government organizations and industries. All versions of AI principles are with different considerations covering different perspectives and making different emphasis. None of them can be considered as complete and can cover the rest AI principle proposals. Here we introduce LAIP, an effort and platform for linking and analyzing different Artificial Intelligence Principles. We want to explicitly establish the common topics and links among AI Principles proposed by different organizations and investigate on their uniqueness. Based on these efforts, for the long-term future of AI, instead of directly adopting any of the AI principles, we argue for the necessity of incorporating various AI Principles into a comprehensive framework and focusing on how they can interact and complete each other.",
+      "published": "2018-12-12",
+      "updated": "2018-12-12",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CY"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/1812.04814v1",
+      "url": "https://arxiv.org/abs/1812.04814"
+    },
+    {
+      "arxiv_id": "2103.06769",
+      "title": "Intelligent behavior depends on the ecological niche: Scaling up AI to human-like intelligence in socio-cultural environments",
+      "authors": [
+        "Manfred Eppe",
+        "Pierre-Yves Oudeyer"
+      ],
+      "abstract": "This paper outlines a perspective on the future of AI, discussing directions for machines models of human-like intelligence. We explain how developmental and evolutionary theories of human cognition should further inform artificial intelligence. We emphasize the role of ecological niches in sculpting intelligent behavior, and in particular that human intelligence was fundamentally shaped to adapt to a constantly changing socio-cultural environment. We argue that a major limit of current work in AI is that it is missing this perspective, both theoretically and experimentally. Finally, we discuss the promising approach of developmental artificial intelligence, modeling infant development through multi-scale interaction between intrinsically motivated learning, embodiment and a fastly changing socio-cultural environment. This paper takes the form of an interview of Pierre-Yves Oudeyer by Mandred Eppe, organized within the context of a KI - K{\u00fc}nstliche Intelligenz special issue in developmental robotics.",
+      "published": "2021-03-11",
+      "updated": "2021-03-11",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.LG"
+      ],
+      "doi": "10.1007/s13218-020-00696-1",
+      "journal_ref": "KI - K\u00fcnstliche Intelligenz KI - K\u00fcnstliche Intelligenz (German Journal of Artificial Intelligence), 2021",
+      "pdf_url": "https://arxiv.org/pdf/2103.06769v1",
+      "url": "https://arxiv.org/abs/2103.06769"
+    },
+    {
+      "arxiv_id": "1809.07842",
+      "title": "Bias Amplification in Artificial Intelligence Systems",
+      "authors": [
+        "Kirsten Lloyd"
+      ],
+      "abstract": "As Artificial Intelligence (AI) technologies proliferate, concern has centered around the long-term dangers of job loss or threats of machines causing harm to humans. All of this concern, however, detracts from the more pertinent and already existing threats posed by AI today: its ability to amplify bias found in training datasets, and swiftly impact marginalized populations at scale. Government and public sector institutions have a responsibility to citizens to establish a dialogue with technology developers and release thoughtful policy around data standards to ensure diverse representation in datasets to prevent bias amplification and ensure that AI systems are built with inclusion in mind.",
+      "published": "2018-09-20",
+      "updated": "2018-09-20",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/1809.07842v1",
+      "url": "https://arxiv.org/abs/1809.07842"
+    },
+    {
+      "arxiv_id": "1304.3429",
+      "title": "Probability Judgement in Artificial Intelligence",
+      "authors": [
+        "Glenn Shafer"
+      ],
+      "abstract": "This paper is concerned with two theories of probability judgment: the Bayesian theory and the theory of belief functions. It illustrates these theories with some simple examples and discusses some of the issues that arise when we try to implement them in expert systems. The Bayesian theory is well known; its main ideas go back to the work of Thomas Bayes (1702-1761). The theory of belief functions, often called the Dempster-Shafer theory in the artificial intelligence community, is less well known, but it has even older antecedents; belief-function arguments appear in the work of George Hooper (16401723) and James Bernoulli (1654-1705). For elementary expositions of the theory of belief functions, see Shafer (1976, 1985).",
+      "published": "2013-03-27",
+      "updated": "2013-03-27",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/1304.3429v1",
+      "url": "https://arxiv.org/abs/1304.3429"
+    },
+    {
+      "arxiv_id": "1903.02172",
+      "title": "AAAI-2019 Workshop on Games and Simulations for Artificial Intelligence",
+      "authors": [
+        "Marwan Mattar",
+        "Roozbeh Mottaghi",
+        "Julian Togelius",
+        "Danny Lange"
+      ],
+      "abstract": "This volume represents the accepted submissions from the AAAI-2019 Workshop on Games and Simulations for Artificial Intelligence held on January 29, 2019 in Honolulu, Hawaii, USA. https://www.gamesim.ai",
+      "published": "2019-03-06",
+      "updated": "2019-03-06",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CL",
+        "cs.CV",
+        "cs.LG",
+        "cs.RO"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/1903.02172v1",
+      "url": "https://arxiv.org/abs/1903.02172"
+    },
+    {
+      "arxiv_id": "1606.00652",
+      "title": "Death and Suicide in Universal Artificial Intelligence",
+      "authors": [
+        "Jarryd Martin",
+        "Tom Everitt",
+        "Marcus Hutter"
+      ],
+      "abstract": "Reinforcement learning (RL) is a general paradigm for studying intelligent behaviour, with applications ranging from artificial intelligence to psychology and economics. AIXI is a universal solution to the RL problem; it can learn any computable environment. A technical subtlety of AIXI is that it is defined using a mixture over semimeasures that need not sum to 1, rather than over proper probability measures. In this work we argue that the shortfall of a semimeasure can naturally be interpreted as the agent's estimate of the probability of its death. We formally define death for generally intelligent agents like AIXI, and prove a number of related theorems about their behaviour. Notable discoveries include that agent behaviour can change radically under positive linear transformations of the reward signal (from suicidal to dogmatically self-preserving), and that the agent's posterior belief that it will survive increases over time.",
+      "published": "2016-06-02",
+      "updated": "2016-06-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/1606.00652v1",
+      "url": "https://arxiv.org/abs/1606.00652"
+    },
+    {
+      "arxiv_id": "2108.11451",
+      "title": "From Statistical Relational to Neurosymbolic Artificial Intelligence: a Survey",
+      "authors": [
+        "Giuseppe Marra",
+        "Sebastijan Duman\u010di\u0107",
+        "Robin Manhaeve",
+        "Luc De Raedt"
+      ],
+      "abstract": "This survey explores the integration of learning and reasoning in two different fields of artificial intelligence: neurosymbolic and statistical relational artificial intelligence. Neurosymbolic artificial intelligence (NeSy) studies the integration of symbolic reasoning and neural networks, while statistical relational artificial intelligence (StarAI) focuses on integrating logic with probabilistic graphical models. This survey identifies seven shared dimensions between these two subfields of AI. These dimensions can be used to characterize different NeSy and StarAI systems. They are concerned with (1) the approach to logical inference, whether model or proof-based; (2) the syntax of the used logical theories; (3) the logical semantics of the systems and their extensions to facilitate learning; (4) the scope of learning, encompassing either parameter or structure learning; (5) the presence of symbolic and subsymbolic representations; (6) the degree to which systems capture the original logic, probabilistic, and neural paradigms; and (7) the classes of learning tasks the systems are applied to. By positioning various NeSy and StarAI systems along these dimensions and pointing out similarities and differences between them, this survey contributes fundamental concepts for understanding the integration of learning and reasoning.",
+      "published": "2021-08-25",
+      "updated": "2024-01-02",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2108.11451v4",
+      "url": "https://arxiv.org/abs/2108.11451"
+    },
+    {
+      "arxiv_id": "1407.7281",
+      "title": "Modular Belief Updates and Confusion about Measures of Certainty in Artificial Intelligence Research",
+      "authors": [
+        "Eric J. Horvitz",
+        "David Heckerman"
+      ],
+      "abstract": "Over the last decade, there has been growing interest in the use or measures or change in belief for reasoning with uncertainty in artificial intelligence research. An important characteristic of several methodologies that reason with changes in belief or belief updates, is a property that we term modularity. We call updates that satisfy this property modular updates. Whereas probabilistic measures of belief update - which satisfy the modularity property were first discovered in the nineteenth century, knowledge and discussion of these quantities remains obscure in artificial intelligence research. We define modular updates and discuss their inappropriate use in two influential expert systems.",
+      "published": "2014-07-27",
+      "updated": "2014-07-27",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/1407.7281v1",
+      "url": "https://arxiv.org/abs/1407.7281"
+    },
+    {
+      "arxiv_id": "2310.09243",
+      "title": "Augmented Computational Design: Methodical Application of Artificial Intelligence in Generative Design",
+      "authors": [
+        "Pirouz Nourian",
+        "Shervin Azadi",
+        "Roy Uijtendaal",
+        "Nan Bai"
+      ],
+      "abstract": "This chapter presents methodological reflections on the necessity and utility of artificial intelligence in generative design. Specifically, the chapter discusses how generative design processes can be augmented by AI to deliver in terms of a few outcomes of interest or performance indicators while dealing with hundreds or thousands of small decisions. The core of the performance-based generative design paradigm is about making statistical or simulation-driven associations between these choices and consequences for mapping and navigating such a complex decision space. This chapter will discuss promising directions in Artificial Intelligence for augmenting decision-making processes in architectural design for mapping and navigating complex design spaces.",
+      "published": "2023-10-13",
+      "updated": "2023-10-13",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI",
+        "cs.CE"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2310.09243v1",
+      "url": "https://arxiv.org/abs/2310.09243"
+    },
+    {
+      "arxiv_id": "1710.08191",
+      "title": "Human-in-the-loop Artificial Intelligence",
+      "authors": [
+        "Fabio Massimo Zanzotto"
+      ],
+      "abstract": "Little by little, newspapers are revealing the bright future that Artificial Intelligence (AI) is building. Intelligent machines will help everywhere. However, this bright future has a dark side: a dramatic job market contraction before its unpredictable transformation. Hence, in a near future, large numbers of job seekers will need financial support while catching up with these novel unpredictable jobs. This possible job market crisis has an antidote inside. In fact, the rise of AI is sustained by the biggest knowledge theft of the recent years. Learning AI machines are extracting knowledge from unaware skilled or unskilled workers by analyzing their interactions. By passionately doing their jobs, these workers are digging their own graves.   In this paper, we propose Human-in-the-loop Artificial Intelligence (HIT-AI) as a fairer paradigm for Artificial Intelligence systems. HIT-AI will reward aware and unaware knowledge producers with a different scheme: decisions of AI systems generating revenues will repay the legitimate owners of the knowledge used for taking those decisions. As modern Robin Hoods, HIT-AI researchers should fight for a fairer Artificial Intelligence that gives back what it steals.",
+      "published": "2017-10-23",
+      "updated": "2017-10-23",
+      "primary_category": "cs.AI",
+      "categories": [
+        "cs.AI"
+      ],
+      "doi": "10.1613/jair.1.11345",
+      "journal_ref": "Journal of Artificial Intelligence Research, 2019",
+      "pdf_url": "https://arxiv.org/pdf/1710.08191v1",
+      "url": "https://arxiv.org/abs/1710.08191"
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

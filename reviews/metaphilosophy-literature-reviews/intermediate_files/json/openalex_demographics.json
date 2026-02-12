@@ -1,0 +1,1973 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "demographics philosophy profession gender",
+  "results": [
+    {
+      "openalex_id": "W2945695979",
+      "doi": "10.1590/0034-7167.2018710501",
+      "title": "Nursing Perspectives and the \u201cNursing Now\u201d Campaign",
+      "authors": [
+        {
+          "name": "Silvia Helena De Bortoli Cassiani",
+          "openalex_id": "A5025570804",
+          "orcid": "https://orcid.org/0000-0003-4044-8988",
+          "institutions": [
+            "World Health Organization Regional Office for the Americas"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 Cl\u00e1udio Garcia Lira Neto",
+          "openalex_id": "A5084564902",
+          "orcid": "https://orcid.org/0000-0003-2777-1406",
+          "institutions": [
+            "Universidade Federal do Cear\u00e1"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-01",
+      "abstract": "Nursing constitutes half of the health workforce, and nurses have been identified as the main responsible for coordinating health teams at different levels of Health Care.The \"Triple Impact of Nursing\" report has pointed to the crucial role of Nursing in the global agenda in the face of demographic and epidemiological changes; the need for different forms of care, policies and services in the community and home, and the alignment of Nursing philosophy, practice and values to the changes that are occurring.The report recommended that governments and international agencies work to raise the profession's profile, make it central to health policies, and establish programs for the development of nursing leaders (1) .The World Health Organization, for its part, calls on governments to invest in policies that value the role of Nursing given the shortage of nine million nurses, their low pay, gender inequality, and the lack of professionals in leadership positions.Since 2013, the Pan American Health Organization/World Health Organization (PAHO/WHO) has been pointing out to the international community the need to broaden the role of nurses at the first level of care as practitioners of advanced practice.Such professionals with postgraduate training would be integrated to the interprofessional team of the Primary Health Care services, contributing to the management of the care of patients/ users with mild acute diseases and chronic disorders diagnosed according to protocols or clinical guidelines (2) .However, factors such as ongoing training, adequate work opportunities, sufficient and well-distributed numbers of professionals, valorization, financial incentives, political will and leadership recognition remain the major challenges for advancement of the profession in all regions of the world and consequently, achievement of conditions and capabilities to expand access and universal health coverage.The International Council of Nurses (ICN), the WHO and the UK All Party Parliamentary Group on Global Health in the UK, to address these difficulties, launched the \"Nursing Now\" campaign in February 2018, having as patroness the Duchess of Cambridge and with several leaders supporting the campaign.The campaign, which will end in 2020, when the bicentenary of Florence Nightingale will be celebrated, counts today the accession of 30 countries.Brazil, Canada, the United States, Jamaica and Mexico are participating in the campaign.Other countries interested in joining the campaign should establish their objectives and plan of action, contact campaign coordination, sign commitment to disseminate it at the national level and support global actions.The \"Nursing Now\" aims at increasing investment in improving education, professional development, regulation and working conditions for nurses; increasing their influence on national and international policies; increasing the number of nurses in leadership positions with more opportunities for development at all levels of leadership; increasing evidence to support policy; increasing work for nurses to act comprehensively; and increase and improve the dissemination of effective and innovative nursing practices (3) .The Campaign promotes the profession at a global level, however, at the local level, it is necessary to work to strengthen the articulation between educational institutions and health services, invest in the workforce and enhance the professional, improve training and, especially, work together to advance the profession.It is the",
+      "cited_by_count": 92,
+      "type": "editorial",
+      "source": {
+        "name": "Revista Brasileira de Enfermagem",
+        "type": "journal",
+        "issn": [
+          "0034-7167",
+          "1984-0446"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://www.scielo.br/pdf/reben/v71n5/0034-7167-reben-71-05-2351.pdf"
+      },
+      "topics": [
+        "Nursing Education, Practice, and Leadership"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2945695979"
+    },
+    {
+      "openalex_id": "W2594519269",
+      "doi": "10.1186/s12910-017-0179-8",
+      "title": "Implicit bias in healthcare professionals: a systematic review",
+      "authors": [
+        {
+          "name": "Chlo\u00eb FitzGerald",
+          "openalex_id": "A5026140459",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "Samia Hurst",
+          "openalex_id": "A5086682967",
+          "orcid": "https://orcid.org/0000-0002-1980-5226",
+          "institutions": [
+            "University of Geneva"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-01",
+      "abstract": null,
+      "cited_by_count": 2230,
+      "type": "review",
+      "source": {
+        "name": "BMC Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "1472-6939"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmedethics.biomedcentral.com/track/pdf/10.1186/s12910-017-0179-8"
+      },
+      "topics": [
+        "Healthcare cost, quality, practices",
+        "Medical Education and Admissions",
+        "Patient-Provider Communication in Healthcare"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W2594519269"
+    },
+    {
+      "openalex_id": "W2969625533",
+      "doi": "10.1016/j.ijinfomgt.2019.08.002",
+      "title": "Artificial Intelligence (AI): Multidisciplinary perspectives on emerging challenges, opportunities, and agenda for research, practice and policy",
+      "authors": [
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Laurie Hughes",
+          "openalex_id": "A5072512285",
+          "orcid": "https://orcid.org/0000-0002-0956-0608",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Elvira Ismagilova",
+          "openalex_id": "A5033472055",
+          "orcid": "https://orcid.org/0000-0001-9634-194X",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Gert Aarts",
+          "openalex_id": "A5027512483",
+          "orcid": "https://orcid.org/0000-0002-6038-3782",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Crispin Coombs",
+          "openalex_id": "A5018731131",
+          "orcid": "https://orcid.org/0000-0002-4203-9291",
+          "institutions": [
+            "Loughborough University"
+          ]
+        },
+        {
+          "name": "Tom Crick",
+          "openalex_id": "A5015452463",
+          "orcid": "https://orcid.org/0000-0001-5196-9389",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Yanqing Duan",
+          "openalex_id": "A5032994640",
+          "orcid": "https://orcid.org/0000-0003-4205-7403",
+          "institutions": [
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Rohita Dwivedi",
+          "openalex_id": "A5070017829",
+          "orcid": "https://orcid.org/0000-0003-3801-3635",
+          "institutions": [
+            "Prin. L. N. Welingkar Institute of Management Development and Research"
+          ]
+        },
+        {
+          "name": "John S. Edwards",
+          "openalex_id": "A5007695310",
+          "orcid": "https://orcid.org/0000-0003-3979-017X",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Aled Eirug",
+          "openalex_id": "A5000411910",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Vassilis Galanos",
+          "openalex_id": "A5015685463",
+          "orcid": "https://orcid.org/0000-0002-8363-4855",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "P. Vigneswara Ilavarasan",
+          "openalex_id": "A5004125306",
+          "orcid": "https://orcid.org/0000-0002-9431-3520",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Marijn Janssen",
+          "openalex_id": "A5062073470",
+          "orcid": "https://orcid.org/0000-0001-6211-8790",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Paul Jones",
+          "openalex_id": "A5080152304",
+          "orcid": "https://orcid.org/0000-0003-0417-9143",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Arpan Kumar Kar",
+          "openalex_id": "A5061235109",
+          "orcid": "https://orcid.org/0000-0003-4186-4887",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Hatice Kizgin",
+          "openalex_id": "A5037522059",
+          "orcid": "https://orcid.org/0000-0003-0841-8973",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Bianca Kronemann",
+          "openalex_id": "A5037724665",
+          "orcid": "https://orcid.org/0009-0002-5146-537X",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Banita Lal",
+          "openalex_id": "A5103045218",
+          "orcid": "https://orcid.org/0000-0003-1340-1746",
+          "institutions": [
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Biagio Lucini",
+          "openalex_id": "A5003777616",
+          "orcid": "https://orcid.org/0000-0001-8974-8266",
+          "institutions": [
+            "Swansea University",
+            "Foundry (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Rony Medaglia",
+          "openalex_id": "A5003475331",
+          "orcid": "https://orcid.org/0000-0001-7292-5895",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        },
+        {
+          "name": "Kenneth Le Meunier\u2010FitzHugh",
+          "openalex_id": "A5059234800",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        },
+        {
+          "name": "Leslie Caroline Le Meunier-FitzHugh",
+          "openalex_id": "A5076965699"
+        },
+        {
+          "name": "Santosh K. Misra",
+          "openalex_id": "A5018760782",
+          "orcid": "https://orcid.org/0000-0002-3313-4895",
+          "institutions": [
+            "University of East Anglia",
+            "Government of Tamil Nadu"
+          ]
+        },
+        {
+          "name": "Emmanuel Mogaji",
+          "openalex_id": "A5082000265",
+          "orcid": "https://orcid.org/0000-0003-0544-4842",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Sujeet Kumar Sharma",
+          "openalex_id": "A5037836435",
+          "orcid": "https://orcid.org/0000-0003-3614-9053"
+        },
+        {
+          "name": "Jang Bahadur Singh",
+          "openalex_id": "A5040405430",
+          "orcid": "https://orcid.org/0000-0001-7017-1989",
+          "institutions": [
+            "Indian Institute of Management Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Vishnupriya Raghavan",
+          "openalex_id": "A5050603102"
+        },
+        {
+          "name": "Ramakrishnan Raman",
+          "openalex_id": "A5072261829",
+          "orcid": "https://orcid.org/0000-0003-3642-6989",
+          "institutions": [
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "Nripendra P. Rana",
+          "openalex_id": "A5034248834",
+          "orcid": "https://orcid.org/0000-0003-1105-8729",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Spyridon Samothrakis",
+          "openalex_id": "A5033216620",
+          "orcid": "https://orcid.org/0000-0003-1902-9690",
+          "institutions": [
+            "University of Essex"
+          ]
+        },
+        {
+          "name": "Jak Spencer",
+          "openalex_id": "A5016998336",
+          "institutions": [
+            "Training Programs in Epidemiology and Public Health Interventions Network"
+          ]
+        },
+        {
+          "name": "Kuttimani Tamilmani",
+          "openalex_id": "A5008267619",
+          "orcid": "https://orcid.org/0000-0002-9615-1465",
+          "institutions": [
+            "University of Bradford"
+          ]
+        },
+        {
+          "name": "Annie Tubadji",
+          "openalex_id": "A5070089201",
+          "orcid": "https://orcid.org/0000-0002-6134-3520",
+          "institutions": [
+            "University of the West of England"
+          ]
+        },
+        {
+          "name": "Paul Walton",
+          "openalex_id": "A5109157215",
+          "institutions": [
+            "Capgemini (United Kingdom)",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Michael D. Williams",
+          "openalex_id": "A5002569790",
+          "orcid": "https://orcid.org/0000-0002-3047-0332",
+          "institutions": [
+            "Swansea University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-27",
+      "abstract": null,
+      "cited_by_count": 3658,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information Management",
+        "type": "journal",
+        "issn": [
+          "0268-4012",
+          "1873-4707"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S026840121930917X"
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Economic and Technological Systems Analysis",
+        "Digital Transformation in Industry"
+      ],
+      "referenced_works_count": 338,
+      "url": "https://openalex.org/W2969625533"
+    },
+    {
+      "openalex_id": "W2159141474",
+      "doi": "10.1257/jep.29.1.89",
+      "title": "The Superiority of Economists",
+      "authors": [
+        {
+          "name": "Marion Fourcade",
+          "openalex_id": "A5064154638",
+          "orcid": "https://orcid.org/0000-0002-4821-9031",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "\u00c9tienne Ollion",
+          "openalex_id": "A5022704573",
+          "orcid": "https://orcid.org/0000-0003-3099-5240",
+          "institutions": [
+            "Universit\u00e9 de Strasbourg"
+          ]
+        },
+        {
+          "name": "Yann Algan",
+          "openalex_id": "A5051037471",
+          "orcid": "https://orcid.org/0000-0002-8120-5969",
+          "institutions": [
+            "Institut d'Etudes Politiques de Paris",
+            "Centre Pour La Recherche Economique et ses Applications"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-01",
+      "abstract": "In this essay, we analyze the dominant position of economics within the network of the social sciences in the United States. We begin by documenting the relative insularity of economics, using bibliometric data. Next we analyze the tight management of the field from the top down, which gives economics its characteristic hierarchical structure. Economists also distinguish themselves from other social scientists through their much better material situation (many teach in business schools, have external consulting activities), their more individualist worldviews, and their confidence in their discipline's ability to fix the world's problems. Taken together, these traits constitute what we call the superiority of economists, where economists' objective supremacy is intimately linked with their subjective sense of authority and entitlement. While this superiority has certainly fueled economists' practical involvement and their considerable influence over the economy, it has also exposed them more to conflicts of interests, political critique, even derision.",
+      "cited_by_count": 665,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Economic Perspectives",
+        "type": "journal",
+        "issn": [
+          "0895-3309",
+          "1944-7965"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.29.1.89"
+      },
+      "topics": [
+        "Economic Theory and Institutions"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W2159141474"
+    },
+    {
+      "openalex_id": "W4281677412",
+      "doi": "10.24106/kefdergi.919394",
+      "title": "Investigation of Science Teachers\u2019 Professional and Scientific Attitudes",
+      "authors": [
+        {
+          "name": "Serpil KARAAL\u0130O\u011eLU \u00c7AKIR",
+          "openalex_id": "A5072335295",
+          "orcid": "https://orcid.org/0000-0002-2186-564X"
+        },
+        {
+          "name": "Cansel Kad\u0131o\u011flu Akbulut",
+          "openalex_id": "A5088521873",
+          "orcid": "https://orcid.org/0000-0002-6908-1684",
+          "institutions": [
+            "Tokat Gaziosmanpa\u015fa \u00dcniversitesi"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-03",
+      "abstract": "Purpose: The aim of this study is to investigate the level of science teachers\u2019 professional and scientific attitudes, whether these variables differ according to gender and the relationship between two variables. Design/Methodology/Approach: It is conducted through survey design based on quantitative research. A total of 174 science teachers (91 females and 83 males) working in public middle schools participated. The data were collected using \u201cAttitudes towards Teaching Profession Scale\u201d and \u201cScientific Attitudes Scale\u201d. Additionally, qualitative data were collected through \u201cDemographic Information Form\u201d to support quantitative findings. Descriptive statistics, independent samples t-test and Pearson correlation analysis techniques were used in quantitative data analysis. Besides, descriptive analysis technique was used to analyze qualitative data. Findings: Results revealed that science teachers possessed highly positive attitudes towards teaching profession, and their scientific attitudes were at moderate level. While female teachers\u2019 professional attitudes were found to be more positive, scientific attitudes did not change by gender. There was a moderate and positive relationship between two variables. Science teachers choose their profession mainly for affective reasons such as loving teaching. Moreover, although teachers mostly attended in-service training programs, they were not trained on nature, history or philosophy of science to improve scientific attitudes. Finally, it was discovered that TUBITAK publications were popular among science teachers. Highlights: Although science teachers possess positive attitudes towards their profession, their scientific attitudes found to be moderate. In the Information Age, scientific attitudes of teachers are of great importance as well as their attitudes towards their profession. In order to support teachers\u2019 scientific attitudes, in-service trainings on the nature, history, or philosophy of science can be developed, implemented, and evaluated.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Kastamonu E\u011fitim Dergisi",
+        "type": "journal",
+        "issn": [
+          "1300-8811",
+          "2147-9844"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.24106/kefdergi.919394"
+      },
+      "topics": [
+        "Teacher Professional Development and Motivation",
+        "Educational Leadership and Administration",
+        "Education Practices and Challenges"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W4281677412"
+    },
+    {
+      "openalex_id": "W2170328207",
+      "doi": "10.1017/s0020818313000209",
+      "title": "The Gender Citation Gap in International Relations",
+      "authors": [
+        {
+          "name": "Daniel Maliniak",
+          "openalex_id": "A5025190638",
+          "orcid": "https://orcid.org/0000-0002-1741-2306",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Ryan Powers",
+          "openalex_id": "A5090603310",
+          "orcid": "https://orcid.org/0000-0003-1664-3695",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Barbara F. Walter",
+          "openalex_id": "A5085555888",
+          "orcid": "https://orcid.org/0000-0002-2771-464X",
+          "institutions": [
+            "University of California, San Diego"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-08-28",
+      "abstract": "Abstract This article investigates the extent to which citation and publication patterns differ between men and women in the international relations (IR) literature. Using data from the Teaching, Research, and International Policy project on peer-reviewed publications between 1980 and 2006, we show that women are systematically cited less than men after controlling for a large number of variables including year of publication, venue of publication, substantive focus, theoretical perspective, methodology, tenure status, and institutional affiliation. These results are robust to a variety of modeling choices. We then turn to network analysis to investigate the extent to which the gender of an article's author affects that article's relative centrality in the network of citations between papers in our sample. Articles authored by women are systematically less central than articles authored by men, all else equal. This is likely because (1) women tend to cite themselves less than men, and (2) men (who make up a disproportionate share of IR scholars) tend to cite men more than women. This is the first study in political science to reveal significant gender differences in citation patterns and is especially meaningful because citation counts are increasingly used as a key measure of research's quality and impact.",
+      "cited_by_count": 740,
+      "type": "article",
+      "source": {
+        "name": "International Organization",
+        "type": "journal",
+        "issn": [
+          "0020-8183",
+          "1531-5088"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/3A769C5CFA7E24C32641CDB2FD03126A/S0020818313000209a.pdf/div-class-title-the-gender-citation-gap-in-international-relations-div.pdf"
+      },
+      "topics": [
+        "Gender Politics and Representation",
+        "Political Influence and Corporate Strategies",
+        "Gender Diversity and Inequality"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W2170328207"
+    },
+    {
+      "openalex_id": "W3174905465",
+      "doi": "10.4324/9781003027140-4",
+      "title": "Linguistic diversity in philosophy",
+      "authors": [
+        {
+          "name": "Chun-Ping Yen",
+          "openalex_id": "A5027742499",
+          "orcid": "https://orcid.org/0000-0001-7576-3115"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-25",
+      "abstract": "In recent years, increased attention has been devoted to the problem of the lack of diversity in academic philosophy. Indeed, the profession does not represent the diversity of our current population. This is what Linda M. Alcoff calls the \"demographic challenge,\" a challenge regarding representation and marginalization in the discipline. Among the various cases of diversity within the profession, the issue of linguistic diversity seems the most controversial one. While it is clearly unjust to judge academic performance based on gender, race, or ethnicity, it seems less clear in assessments of one's work based on language proficiency. This chapter is an attempt to provide an overview of the related issues, including how the absence of linguistic diversity shapes the current status of the discipline. We first review the role of English in academic knowledge production, circulation, and evaluation globally. Using data from a recent study, we argue that English has an asymmetric influence on scholarly output in other languages in academic philosophy. The lack of linguistic diversity within the profession raises not only ethical but also epistemological concerns. It leaves non-native English-speaking philosophers in an underprivileged position and hinders the inclusion of different thoughts and novel perspectives. In closing, we made some suggestions for change.",
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3174905465"
+    },
+    {
+      "openalex_id": "W2231695800",
+      "doi": "10.1111/jan.12888",
+      "title": "What is resilience? An Integrative Review of the empirical literature",
+      "authors": [
+        {
+          "name": "Gemma Aburn",
+          "openalex_id": "A5076114737",
+          "orcid": "https://orcid.org/0000-0002-9290-145X",
+          "institutions": [
+            "Starship Children's Health",
+            "University of Auckland"
+          ]
+        },
+        {
+          "name": "Merryn Gott",
+          "openalex_id": "A5037076098",
+          "orcid": "https://orcid.org/0000-0003-4399-962X",
+          "institutions": [
+            "University of Auckland"
+          ]
+        },
+        {
+          "name": "Karen Hoare",
+          "openalex_id": "A5049124922",
+          "orcid": "https://orcid.org/0000-0002-7123-5881",
+          "institutions": [
+            "University of Auckland",
+            "Greenlane Clinical Centre"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-07",
+      "abstract": "Abstract Aim To use systematic methods to examine how resilience is defined in empirical research. Background Resilience is a term that is increasingly being used to describe and explain the complexities of individual and group responses to traumatic and challenging situations. It is now frequently mentioned in relation to many areas of nursing practice, including research. Given the increasing use of the term, it is timely to examine how resilience has been defined in empirical research. Design An integrative review of the empirical literature (2000\u20132015). Data sources Three health\u2010related databases were searched: Medline, Psyc INFO and the Cumulative Index for Nursing and Allied Health ( CINAHL ). Reference and citation tracking was performed on all articles included in the review. Review methods The methods described by Whittemore and Knafl were used to guide this review. Two reviewers were involved in screening articles for inclusion and in the data extraction process. Data were synthesized using the constant comparative method of analysis. Results One hundred articles were included in the final data analysis. The most significant finding of the review was that there is no universal definition of resilience. There were, however, some common themes identified: rising above, adaptation and adjustment, dynamic process, \u2018ordinary magic\u2019 and mental illness as a marker of resilience. Conclusion Despite the increasing use of the term \u2018resilience\u2019, this review has identified that there is no universal definition of resilience adopted in the research literature. Further research is required to explore this construct in the context of nursing.",
+      "cited_by_count": 592,
+      "type": "review",
+      "source": {
+        "name": "Journal of Advanced Nursing",
+        "type": "journal",
+        "issn": [
+          "0309-2402",
+          "1365-2648"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jan.12888"
+      },
+      "topics": [
+        "Resilience and Mental Health",
+        "Optimism, Hope, and Well-being",
+        "Disaster Response and Management"
+      ],
+      "referenced_works_count": 118,
+      "url": "https://openalex.org/W2231695800"
+    },
+    {
+      "openalex_id": "W2911089814",
+      "doi": "10.1257/jep.33.1.3",
+      "title": "Women in Economics: Stalled Progress",
+      "authors": [
+        {
+          "name": "Shelly Lundberg",
+          "openalex_id": "A5109262462",
+          "institutions": [
+            "Shell (Norway)",
+            "University of California, Santa Barbara",
+            "University of Bergen",
+            "IZA - Institute of Labor Economics"
+          ]
+        },
+        {
+          "name": "Jenna Stearns",
+          "openalex_id": "A5001661838"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-31",
+      "abstract": "Women are still a minority in the economics profession. By the mid-2000s, just under 35 percent of PhD students and 30 percent of assistant professors were female, and these numbers have remained roughly constant ever since. Over the past two decades, women\u2019s progress in academic economics has slowed, with virtually no improvement in the female share of junior faculty or graduate students in decades. Little consensus has emerged as to why, though there has been a renewal of widespread interest in the status and future of women in economics and of the barriers they face to professional success. In this paper, we first document trends in the gender composition of academic economists over the past 25 years, the extent to which these trends encompass the most elite departments, and how women\u2019s representation across fields of study within economics has changed. We then review the recent literature on other dimensions of women\u2019s relative position in the discipline, including research productivity and income, and assess evidence on the barriers that female economists face in publishing, promotion, and tenure. While differences in preferences and constraints may directly affect the relative productivity of men and women, productivity gaps do not fully explain the gender disparity in promotion rates in economics. Furthermore, the progress of women has stalled relative to that in other disciplines in the past two decades. We propose that differential assessment of men and women is one important factor in explaining this stalled progress, reflected in gendered institutional policies and apparent implicit bias in promotion and tenure processes.",
+      "cited_by_count": 311,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Economic Perspectives",
+        "type": "journal",
+        "issn": [
+          "0895-3309",
+          "1944-7965"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.33.1.3"
+      },
+      "topics": [
+        "Innovations in Educational Methods",
+        "Economic Theory and Institutions",
+        "Experimental Behavioral Economics Studies"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W2911089814"
+    },
+    {
+      "openalex_id": "W2889478184",
+      "doi": "10.7556/jaoa.2018.131",
+      "title": "Empathy and Osteopathic Manipulative Medicine: Is It All in the Hands?",
+      "authors": [
+        {
+          "name": "Mireille N. Rizkalla",
+          "openalex_id": "A5057209630"
+        },
+        {
+          "name": "Kyle K. Henderson",
+          "openalex_id": "A5048663666"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-09-01",
+      "abstract": "Abstract Context The osteopathic medical school curriculum is unique because of the inclusion of training in osteopathic manipulative medicine (OMM). Interest in and use of OMM promotes cognitive training in diagnosing conditions, emotional training in the alleviation of pain, and physical training in the application of OMM. Osteopathic manipulative medicine may mitigate a reduction in empathy levels of medical students and explain why osteopathic medical students do not follow the declining pattern of empathy previously reported in allopathic medical students. Objective To examine whether favorable opinions of OMM are positively correlated with overall student empathy as well as the cognitive, emotional, and behavioral subcomponents of empathy. Methods Institutional review board approval was obtained to measure empathy in medical students attending the Midwestern University/Chicago College of Osteopathic Medicine for this cross-sectional study. The 20-item Jefferson Scale of Empathy medical student version (JSE-S) was distributed via email to first-year students at the beginning of the 2016-2017 academic year and at the end of the academic year to all students. Items were divided into cognitive, emotional, and behavioral categories. Items related to demographics, interest and use of OMM and the osteopathic philosophy, frequency of touch, and personality were also included in the survey. Data were analyzed using SPSS software and presented as mean (SEM). Statistical significance was set at P &lt;.05. Results Of the 801 students the survey was sent to at the end of the 2016-2017 academic year, 598 students completed the survey, for a response rate of 75%. When accounting for the effect of gender with a multivariate analysis of covariance, there were no differences in empathy scores across school years. When empathy scores from first- and second-year students were combined and compared with combined third- and fourth-year students\u2019 scores to examine the difference between empathy in students during academic and clinical training, a difference in the mean (SEM) JSE-S empathy score was noted (114.6 [0.7] and 112.0 [0.7], respectively; P =.01); however, the effect size was small (partial \u03b7 2 =0.01). Interest in OMM and the osteopathic philosophy were significantly associated with higher empathy scores ( P &lt;.05; medium effect; partial \u03b7 2 =0.08). Conclusion Interest in and use of OMM are associated with higher empathy scores and empathy subcomponents. Training and use of OMM should be examined as a mechanism contributing to the durability of empathy in the osteopathic medical profession.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Journal of Osteopathic Medicine",
+        "type": "journal",
+        "issn": [
+          "2702-3648"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://jaoa.org/aoa/content_public/journal/jaoa/937482/573.pdf"
+      },
+      "topics": [
+        "Empathy and Medical Education",
+        "Innovations in Medical Education",
+        "Clinical Reasoning and Diagnostic Skills"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2889478184"
+    },
+    {
+      "openalex_id": "W2167926214",
+      "doi": "10.1093/jhuman/huq004",
+      "title": "'Stop Stealing Our Stories': The Ethics of Research with Vulnerable Groups",
+      "authors": [
+        {
+          "name": "Eileen Pittaway",
+          "openalex_id": "A5111489499",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Luigi Bartolomei",
+          "openalex_id": "A5020362233",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Richard Hugman",
+          "openalex_id": "A5032224199",
+          "orcid": "https://orcid.org/0000-0001-9988-6849",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-06-23",
+      "abstract": "The article discusses the challenges and opportunities faced when integrating participatory methods into human rights-based research. It describes the development of a participatory action research approach designed to fulfil the aim of undertaking advocacy-focused research grounded in human rights and community participation. It reflects the principles of anti-oppressive social work and the ethics of undertaking research with vulnerable populations. In line with other contributions to this special issue, the article explores questions such as: 'Where does knowledge about the story come from and how is it passed on?'; 'What spurs ethical thinking at an individual and organizational level?'; and 'How can ethical sensitivity and strategic effectiveness be combined?'",
+      "cited_by_count": 425,
+      "type": "article",
+      "source": {
+        "name": "Journal of Human Rights Practice",
+        "type": "journal",
+        "issn": [
+          "1757-9619",
+          "1757-9627"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/jhrp/article-pdf/2/2/229/6458371/huq004.pdf"
+      },
+      "topics": [
+        "Social Work Education and Practice",
+        "Mental Health and Patient Involvement",
+        "Homelessness and Social Issues"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2167926214"
+    },
+    {
+      "openalex_id": "W2142202291",
+      "doi": "10.1257/jep.27.3.3",
+      "title": "The Top 1 Percent in International and Historical Perspective",
+      "authors": [
+        {
+          "name": "Facundo Alvaredo",
+          "openalex_id": "A5111503380",
+          "orcid": "https://orcid.org/0009-0002-1530-9150"
+        },
+        {
+          "name": "Anthony B. Atkinson",
+          "openalex_id": "A5113710542"
+        },
+        {
+          "name": "Thomas Piketty",
+          "openalex_id": "A5026928510",
+          "orcid": "https://orcid.org/0000-0002-1261-2392"
+        },
+        {
+          "name": "Emmanuel Saez",
+          "openalex_id": "A5017685817"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-08-01",
+      "abstract": "The top 1 percent income share has more than doubled in the United States over the last 30 years, drawing much public attention in recent years. While other English-speaking countries have also experienced sharp increases in the top 1 percent income share, many high-income countries such as Japan, France, or Germany have seen much less increase in top income shares. Hence, the explanation cannot rely solely on forces common to advanced countries, such as the impact of new technologies and globalization on the supply and demand for skills. Moreover, the explanations have to accommodate the falls in top income shares earlier in the twentieth century experienced in virtually all high-income countries. We highlight four main factors. The first is the impact of tax policy, which has varied over time and differs across countries. Top tax rates have moved in the opposite direction from top income shares. The effects of top rate cuts can operate in conjunction with other mechanisms. The second factor is a richer view of the labor market, where we contrast the standard supply-side model with one where pay is determined by bargaining and the reactions to top rate cuts may lead simply to a redistribution of surplus. Indeed, top rate cuts may lead managerial energies to be diverted to increasing their remuneration at the expense of enterprise growth and employment. The third factor is capital income. Overall, private wealth (relative to income) has followed a U-shaped path over time, particularly in Europe, where inherited wealth is, in Europe if not in the United States, making a return. The fourth, little investigated, element is the correlation between earned income and capital income, which has substantially increased in recent decades in the United States.",
+      "cited_by_count": 824,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Economic Perspectives",
+        "type": "journal",
+        "issn": [
+          "0895-3309",
+          "1944-7965"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.27.3.3"
+      },
+      "topics": [
+        "Fiscal Policy and Economic Growth",
+        "Economic Theory and Policy",
+        "Economic Growth and Productivity"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W2142202291"
+    },
+    {
+      "openalex_id": "W2762515529",
+      "doi": "10.1057/s41599-017-0001-8",
+      "title": "Rethinking higher education and its relationship with social inequalities: past knowledge, present state and future potential",
+      "authors": [
+        {
+          "name": "Theocharis Kromydas",
+          "openalex_id": "A5010595144",
+          "orcid": "https://orcid.org/0000-0002-2470-5940",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-10",
+      "abstract": "Abstract The purposes and impact of higher education on the economy and the broader society have been transformed through time in various ways. Higher education institutional and policy dynamics differ across time, but also between countries and political regimes and therefore context cannot be neglected. This article reviews the purpose of higher education and its institutional characteristics juxtaposing two, allegedly rival, conceptual frameworks; the instrumental and the intrinsic one. Various pedagogical traditions are critically reviewed and used as examples, which can potentially inform today\u2019s policy making. Since, higher education cannot be seen as detached from all other lower levels of education appropriate conceptual links are offered throughout this article. Its significance lies on the organic synthesis of literature across social science, suggesting ways of going forward based on the traditions that already exist but seem underutilized so far because of overdependence in market-driven practices. This offers a new insight on how theories can inform policy making, through conceptual \u201cbridging\u201d and reconciliation. The debate on the purpose of higher education is placed under the context of the most recent developments of increasing social inequalities in the western world and its relation to the mass model of higher education and the relevant policy decisions for a continuous increase in participation. This article suggests that the current policy focus on labor market driven policies in higher education have led to an ever growing competition transforming this social institution to an ordinary market-place, where attainment and degrees are seen as a currency that can be converted to a labour market value. Education has become an instrument for economic progress moving away from its original role to provide context for human development. As a result, higher education becomes very expensive and even if policies are directed towards openness, in practice, just a few have the money to afford it. A shift toward a hybrid model, where the intrinsic purpose of higher education is equally acknowledged along with its instrumental purpose should be seen by policy makers as the way forward to create educational systems that are more inclusive and societies that are more knowledgeable and just.",
+      "cited_by_count": 320,
+      "type": "article",
+      "source": {
+        "name": "Palgrave Communications",
+        "type": "journal",
+        "issn": [
+          "2055-1045"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41599-017-0001-8.pdf"
+      },
+      "topics": [
+        "Higher Education Governance and Development",
+        "Global Educational Policies and Reforms",
+        "Higher Education Research Studies"
+      ],
+      "referenced_works_count": 130,
+      "url": "https://openalex.org/W2762515529"
+    },
+    {
+      "openalex_id": "W2900746061",
+      "doi": "10.3389/fpsyg.2018.02324",
+      "title": "An Investigation of Self-Directed Learning Skills of Undergraduate Students",
+      "authors": [
+        {
+          "name": "\u0130lkay A\u015fk\u0131n Tekkol",
+          "openalex_id": "A5040712842",
+          "institutions": [
+            "Kastamonu University"
+          ]
+        },
+        {
+          "name": "Melek Demirel",
+          "openalex_id": "A5079218896",
+          "institutions": [
+            "Hacettepe University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-23",
+      "abstract": "The aims of this study were to reveal university students' self-directed learning skills and determine whether these skills vary based on university type, gender, field of study, year of study, academic success, type of university entrance score, income level, and the desire to pursue a graduate degree. Also, this study explored the relationship between university students' self-directed learning skills and their lifelong learning tendencies. The study group of the survey comprised 2,600 first and fourth-year students from same departments of Hacettepe and Ba\u015fkent Universities. The study collected its data by using \"Self-Directed Learning Skills Scale\" designed by A\u015fkin (2015). Moreover, Diker-Co\u015fkun's \"Lifelong Learning Tendencies Scale\" was used to explore the relationship between university students' self-directed learning skills and their lifelong learning tendencies. The results revealed that university students' self-directed learning scores were above the median score of the scale. Self-directed learning skills were found not to vary based on university, year of study, income level. However, gender, field of study, university entrance score type, academic success and the desire to pursue a graduate degree made a significant difference on university students' self-directed learning skills. Finally, a moderate positive relationship was detected between self-directed learning skills and lifelong learning tendencies. In summary it can be said that, undergraduate students have self-directed learning skills and these skills are related to lifelong learning.",
+      "cited_by_count": 291,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02324/pdf"
+      },
+      "topics": [
+        "Reflective Practices in Education",
+        "Innovative Teaching and Learning Methods",
+        "Adult and Continuing Education Topics"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2900746061"
+    },
+    {
+      "openalex_id": "W1544416332",
+      "doi": null,
+      "title": "EcoWellness: Construction and validation of the Reese ecowellness inventory",
+      "authors": [
+        {
+          "name": "Ryan F. Reese",
+          "openalex_id": "A5078871390",
+          "orcid": "https://orcid.org/0000-0001-7716-5610"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "abstract": "Multidisciplinary scholars have argued the importance of nature in human health for the past several decades (Kellert &amp; Wilson, 1993; Roszak, 1992), and numerous researchers have identified the positive effects of nature on human wellness (Brymer, Cuddihy, &amp; Sharma-Brymer, 2010; Kuo, 2010). The profession of counseling is based on the philosophy of human wellness (Myers, 1992), although the current multidisciplinary wellness models (Myers &amp; Sweeney, 2008) seem to overlook the wellness benefits of nature. As a way to begin the systematic exploration of nature in professional counseling, Reese and Myers (2012) developed the construct of EcoWellness and described the construct as the missing link in holistic wellness models in counseling. They recommended that the next step in exploring the construct included the development of an instrument operationalizing EcoWellness and its underlying constructs. Thus, the purpose of this study was to develop and assess the initial validity and reliability of the Reese EcoWellness Inventory (REI). The researcher utilized a six-step instrument development method that included the pilot testing of an initial 111-item instrument with a convenience sample of college students (N = 264). After modification of the REI, a revised 62-item instrument was tested and evaluated with a simple random sample recruited from Researchmatch.org (N = 853). Participants completed the REI, the Five-Factor Wellness Inventory (Myers &amp; Sweeney, 2005b), and the Marlowe-Crowne Social Desirability Scale Short Form (Strahan &amp; Gerbasi, 1972) in testing the initial validity and reliability of the REI. Results of confirmatory and exploratory factor analyses and the associated univariate tests demonstrated a mixed picture of the instrument's validity and reliability. A lower-level factor model was tested and it was found to possess adequate model fit. It was determined that the second-order factor of EcoWellness dictated the relationships between the lower-level factors. The development and testing of the REI provides an initial empirical foundation for the integration of nature into professional counseling and counselor education. Further research is needed to replicate and extend the study findings through utilizing samples more inclusive of national distributions of demographic characteristics such as age, gender, and ethnicity.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Urban Green Space and Health",
+        "Environmental Education and Sustainability",
+        "Animal and Plant Science Education"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W1544416332"
+    },
+    {
+      "openalex_id": "W4283170666",
+      "doi": "10.1145/3531146.3533088",
+      "title": "Taxonomy of Risks posed by Language Models",
+      "authors": [
+        {
+          "name": "Laura Weidinger",
+          "openalex_id": "A5056575786",
+          "orcid": "https://orcid.org/0000-0002-5189-760X",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Jonathan Uesato",
+          "openalex_id": "A5059226057",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Maribeth Rauh",
+          "openalex_id": "A5080160770",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Conor Griffin",
+          "openalex_id": "A5048091074",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Po-Sen Huang",
+          "openalex_id": "A5076474156",
+          "orcid": "https://orcid.org/0000-0003-1470-0991",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "John Mellor",
+          "openalex_id": "A5111981498",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Amelia Glaese",
+          "openalex_id": "A5005117726",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Myra Cheng",
+          "openalex_id": "A5012939002",
+          "institutions": [
+            "California Institute of Technology",
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Borja Balle",
+          "openalex_id": "A5085679401",
+          "orcid": "https://orcid.org/0009-0003-8726-2803",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Atoosa Kasirzadeh",
+          "openalex_id": "A5047979305",
+          "orcid": "https://orcid.org/0000-0002-5967-3782",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Courtney Biles",
+          "openalex_id": "A5041858762",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Sasha Brown",
+          "openalex_id": "A5081055990",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Zac Kenton",
+          "openalex_id": "A5065666918",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Will Hawkins",
+          "openalex_id": "A5103131863",
+          "orcid": "https://orcid.org/0009-0004-5135-6792",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Tom Stepleton",
+          "openalex_id": "A5046305893",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Abeba Birhane",
+          "openalex_id": "A5038758207",
+          "orcid": "https://orcid.org/0000-0001-6319-7937",
+          "institutions": [
+            "DeepMind (United Kingdom)",
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Lisa Anne Hendricks",
+          "openalex_id": "A5020758501",
+          "orcid": "https://orcid.org/0000-0001-9340-5143",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Laura Rimell",
+          "openalex_id": "A5059804251",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "William Isaac",
+          "openalex_id": "A5048272174",
+          "orcid": "https://orcid.org/0000-0002-1297-5409",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Julia Haas",
+          "openalex_id": "A5007213257",
+          "orcid": "https://orcid.org/0000-0003-2330-1132",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Sean Legassick",
+          "openalex_id": "A5043068612",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Geoffrey Irving",
+          "openalex_id": "A5029611587",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Iason Gabriel",
+          "openalex_id": "A5032814084",
+          "orcid": "https://orcid.org/0000-0002-7552-4576",
+          "institutions": [
+            "DeepMind (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-20",
+      "abstract": "Responsible innovation on large-scale Language Models (LMs) re- quires foresight into and in-depth understanding of the risks these models may pose. This paper develops a comprehensive taxon- omy of ethical and social risks associated with LMs. We identify twenty-one risks, drawing on expertise and literature from com- puter science, linguistics, and the social sciences. We situate these risks in our taxonomy of six risk areas: I. Discrimination, Hate speech and Exclusion, II. Information Hazards, III. Misinformation Harms, IV. Malicious Uses, V. Human-Computer Interaction Harms, and VI. Environmental and Socioeconomic harms. For risks that have already been observed in LMs, the causal mechanism leading to harm, evidence of the risk, and approaches to risk mitigation are discussed. We further describe and analyse risks that have not yet been observed but are anticipated based on assessments of other language technologies, and situate these in the same taxonomy. We underscore that it is the responsibility of organizations to engage with the mitigations we discuss throughout the paper. We close by highlighting challenges and directions for further research on risk evaluation and mitigation with the goal of ensuring that language models are developed responsibly.",
+      "cited_by_count": 488,
+      "type": "article",
+      "source": {
+        "name": "2022 ACM Conference on Fairness, Accountability, and Transparency",
+        "type": "conference",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3531146.3533088"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W4283170666"
+    },
+    {
+      "openalex_id": "W2022855629",
+      "doi": "10.1016/j.meatsci.2014.08.011",
+      "title": "Meat morals: relationship between meat consumption consumer attitudes towards human and animal welfare and moral behavior",
+      "authors": [
+        {
+          "name": "Charlotte De Backer",
+          "openalex_id": "A5058855679",
+          "orcid": "https://orcid.org/0000-0001-6721-3762",
+          "institutions": [
+            "University of Antwerp"
+          ]
+        },
+        {
+          "name": "Liselot Hudders",
+          "openalex_id": "A5028800885",
+          "orcid": "https://orcid.org/0000-0002-9585-7175",
+          "institutions": [
+            "Ghent University"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-08-28",
+      "abstract": null,
+      "cited_by_count": 282,
+      "type": "article",
+      "source": {
+        "name": "Meat Science",
+        "type": "journal",
+        "issn": [
+          "0309-1740",
+          "1873-4138"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S0309174014002769"
+      },
+      "topics": [
+        "Agriculture Sustainability and Environmental Impact",
+        "Psychology of Moral and Emotional Judgment",
+        "Human-Animal Interaction Studies"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W2022855629"
+    },
+    {
+      "openalex_id": "W1515465086",
+      "doi": "10.1111/more.12010",
+      "title": "Chinese<i>Guanxi</i>: An Integrative Review and New Directions for Future Research",
+      "authors": [
+        {
+          "name": "Chao C. Chen",
+          "openalex_id": "A5077466042",
+          "institutions": [
+            "Nanjing University",
+            "Nanchang University",
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Xiaoping Chen",
+          "openalex_id": "A5018125731",
+          "orcid": "https://orcid.org/0000-0002-3776-8211",
+          "institutions": [
+            "University of Washington"
+          ]
+        },
+        {
+          "name": "Shengsheng Huang",
+          "openalex_id": "A5048955522",
+          "institutions": [
+            "University of Houston - Victoria"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-12-24",
+      "abstract": "Abstract In this article we review research on Chinese guanxi and social networking in the past twenty years and identify the major perspectives, theories, and methodologies used in guanxi research at micro and macro levels. We summarize the main findings of over 200 journal articles on guanxi research in terms of its conceptual definitions and measurements, its antecedents and consequences, and its dynamics and processes. Furthermore, we identify the gaps between different levels of guanxi research and discuss future directions to advance our understanding of the complex and intricate guanxi phenomenon.",
+      "cited_by_count": 611,
+      "type": "article",
+      "source": {
+        "name": "Management and Organization Review",
+        "type": "journal",
+        "issn": [
+          "1740-8776",
+          "1740-8784"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/01B691E6A8EFA2F0E1AC05E9013C0E39/S1740877600003211a.pdf/div-class-title-chinese-span-class-italic-guanxi-span-an-integrative-review-and-new-directions-for-future-research-div.pdf"
+      },
+      "topics": [
+        "Complex Network Analysis Techniques",
+        "Social Capital and Networks",
+        "Digital Marketing and Social Media"
+      ],
+      "referenced_works_count": 188,
+      "url": "https://openalex.org/W1515465086"
+    },
+    {
+      "openalex_id": "W3153832172",
+      "doi": "10.1016/s2155-8256(21)00027-2",
+      "title": "The 2020 National Nursing Workforce Survey",
+      "authors": [
+        {
+          "name": "Richard Smiley",
+          "openalex_id": "A5072080851",
+          "institutions": [
+            "Council of State"
+          ]
+        },
+        {
+          "name": "Clark Ruttinger",
+          "openalex_id": "A5038463497"
+        },
+        {
+          "name": "Carrie M. Oliveira",
+          "openalex_id": "A5073166142",
+          "institutions": [
+            "Texas Workforce Commission"
+          ]
+        },
+        {
+          "name": "Laura Hudson",
+          "openalex_id": "A5047197319"
+        },
+        {
+          "name": "Richard L. Allgeyer",
+          "openalex_id": "A5004917214"
+        },
+        {
+          "name": "Kyrani Reneau",
+          "openalex_id": "A5067140455",
+          "orcid": "https://orcid.org/0000-0002-6535-3689",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Josephine Silvestre",
+          "openalex_id": "A5001787116",
+          "institutions": [
+            "Council of State"
+          ]
+        },
+        {
+          "name": "Maryann Alexander",
+          "openalex_id": "A5007579076",
+          "institutions": [
+            "Council of State"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-01",
+      "abstract": null,
+      "cited_by_count": 309,
+      "type": "article",
+      "source": {
+        "name": "Journal of Nursing Regulation",
+        "type": "journal",
+        "issn": [
+          "2155-8256",
+          "2155-8264"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.journalofnursingregulation.com/article/S2155825621000272/pdf"
+      },
+      "topics": [
+        "Climate Change and Health Impacts",
+        "Geriatric Care and Nursing Homes",
+        "Workplace Health and Well-being"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W3153832172"
+    },
+    {
+      "openalex_id": "W4383913712",
+      "doi": "10.1111/1748-8583.12524",
+      "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+      "authors": [
+        {
+          "name": "Pawan Budhwar",
+          "openalex_id": "A5055856506",
+          "orcid": "https://orcid.org/0000-0001-8915-6172",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "TBS Education"
+          ]
+        },
+        {
+          "name": "Geoffrey Wood",
+          "openalex_id": "A5034762665",
+          "orcid": "https://orcid.org/0000-0001-9709-1823",
+          "institutions": [
+            "Western University",
+            "Trinity College Dublin",
+            "Cranfield University",
+            "University of Bath"
+          ]
+        },
+        {
+          "name": "Herman Aguinis",
+          "openalex_id": "A5067660877",
+          "orcid": "https://orcid.org/0000-0002-3485-9484",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Greg J. Bamber",
+          "openalex_id": "A5018194210",
+          "orcid": "https://orcid.org/0000-0001-6646-3065",
+          "institutions": [
+            "Monash University",
+            "Monash Institute of Medical Research",
+            "Rutgers, The State University of New Jersey",
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Jose R. Beltran",
+          "openalex_id": "A5044503602",
+          "orcid": "https://orcid.org/0000-0002-3886-8142",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Paul Boselie",
+          "openalex_id": "A5023651869",
+          "orcid": "https://orcid.org/0000-0001-8507-7258",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Fang Lee Cooke",
+          "openalex_id": "A5025486785",
+          "orcid": "https://orcid.org/0000-0003-0337-6591",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Stephanie Decker",
+          "openalex_id": "A5064172786",
+          "orcid": "https://orcid.org/0000-0003-0547-9594",
+          "institutions": [
+            "Birmingham City University",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Angelo S. DeNisi",
+          "openalex_id": "A5065954019",
+          "institutions": [
+            "Tulane University"
+          ]
+        },
+        {
+          "name": "Prasanta Kumar Dey",
+          "openalex_id": "A5046908030",
+          "orcid": "https://orcid.org/0000-0002-9984-5374",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "David Guest",
+          "openalex_id": "A5091214938",
+          "orcid": "https://orcid.org/0000-0003-0457-6077",
+          "institutions": [
+            "King's College London",
+            "King's College School"
+          ]
+        },
+        {
+          "name": "Andrew J. Knoblich",
+          "openalex_id": "A5066797749",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Ashish Malik",
+          "openalex_id": "A5108813058",
+          "orcid": "https://orcid.org/0000-0002-2185-7674",
+          "institutions": [
+            "Hunter Water"
+          ]
+        },
+        {
+          "name": "Jaap Paauwe",
+          "openalex_id": "A5081370774",
+          "orcid": "https://orcid.org/0000-0003-3633-9607",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Charmi Patel",
+          "openalex_id": "A5088161716",
+          "orcid": "https://orcid.org/0000-0002-0235-9784",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Vijay Pereira",
+          "openalex_id": "A5069901933",
+          "orcid": "https://orcid.org/0000-0001-6755-0793",
+          "institutions": [
+            "NEOMA Business School"
+          ]
+        },
+        {
+          "name": "Shuang Ren",
+          "openalex_id": "A5084581187",
+          "orcid": "https://orcid.org/0000-0002-8768-8447",
+          "institutions": [
+            "Queen's University Belfast"
+          ]
+        },
+        {
+          "name": "Steven G. Rogelberg",
+          "openalex_id": "A5000877507",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Mark N. K. Saunders",
+          "openalex_id": "A5054244780",
+          "orcid": "https://orcid.org/0000-0001-5176-8317",
+          "institutions": [
+            "University of Birmingham",
+            "Birmingham City University",
+            "University College Birmingham"
+          ]
+        },
+        {
+          "name": "Rosalie L. Tung",
+          "openalex_id": "A5014893902",
+          "institutions": [
+            "Simon Fraser University"
+          ]
+        },
+        {
+          "name": "Arup Varma",
+          "openalex_id": "A5005292478",
+          "orcid": "https://orcid.org/0000-0002-6530-5564",
+          "institutions": [
+            "Loyola University Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-01",
+      "abstract": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labour by generating new, potentially trivial or practically irrelevant, information and decisions. According to the CEO of ChatGPT, the potential impact of this new family of AI technology could be as big as \u201cthe printing press\u201d, with significant implications for employment, stakeholder relationships, business models, and academic research, and its full consequences are largely undiscovered and uncertain. The introduction of more advanced and potent generative AI tools in the AI market, following the launch of ChatGPT, has ramped up the \u201cAI arms race\u201d, creating continuing uncertainty for workers, expanding their business applications, while heightening risks related to well\u2010being, bias, misinformation, context insensitivity, privacy issues, ethical dilemmas, and security. Given these developments, this perspectives editorial offers a collection of perspectives and research pathways to extend HRM scholarship in the realm of generative AI. In doing so, the discussion synthesizes the literature on AI and generative AI, connecting it to various aspects of HRM processes, practices, relationships, and outcomes, thereby contributing to shaping the future of HRM research.",
+      "cited_by_count": 655,
+      "type": "article",
+      "source": {
+        "name": "Human Resource Management Journal",
+        "type": "journal",
+        "issn": [
+          "0954-5395",
+          "1748-8583"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1748-8583.12524"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI and HR Technologies",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4383913712"
+    },
+    {
+      "openalex_id": "W3152594952",
+      "doi": "10.1111/jan.14855",
+      "title": "Artificial intelligence in nursing: Priorities and opportunities from an international invitational think\u2010tank of the Nursing and Artificial Intelligence Leadership Collaborative",
+      "authors": [
+        {
+          "name": "Charlene Ronquillo",
+          "openalex_id": "A5039869643",
+          "orcid": "https://orcid.org/0000-0002-6520-1765",
+          "institutions": [
+            "American Medical Informatics Association",
+            "Toronto Metropolitan University",
+            "Okanagan University College",
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Laura\u2010Maria Peltonen",
+          "openalex_id": "A5116387005",
+          "orcid": "https://orcid.org/0000-0001-5740-6480",
+          "institutions": [
+            "University of Turku",
+            "American Medical Informatics Association"
+          ]
+        },
+        {
+          "name": "Lisiane Pruinelli",
+          "openalex_id": "A5076198521",
+          "orcid": "https://orcid.org/0000-0002-1046-6037",
+          "institutions": [
+            "University of Minnesota"
+          ]
+        },
+        {
+          "name": "Charlene H. Chu",
+          "openalex_id": "A5072994743",
+          "orcid": "https://orcid.org/0000-0002-0333-7210",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Suzanne Bakken",
+          "openalex_id": "A5038579832",
+          "orcid": "https://orcid.org/0000-0001-6202-6001",
+          "institutions": [
+            "Columbia University",
+            "Precision Research (United States)"
+          ]
+        },
+        {
+          "name": "Ana Beduschi",
+          "openalex_id": "A5066382090",
+          "orcid": "https://orcid.org/0000-0002-8037-5384",
+          "institutions": [
+            "University of Exeter"
+          ]
+        },
+        {
+          "name": "Kenrick Cato",
+          "openalex_id": "A5048937462",
+          "orcid": "https://orcid.org/0000-0002-0704-3826",
+          "institutions": [
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "Nicholas R. Hardiker",
+          "openalex_id": "A5075893463",
+          "orcid": "https://orcid.org/0000-0002-7629-5664",
+          "institutions": [
+            "University of Huddersfield"
+          ]
+        },
+        {
+          "name": "Alain Junger",
+          "openalex_id": "A5037129956",
+          "orcid": "https://orcid.org/0000-0001-8355-0232",
+          "institutions": [
+            "University Hospital of Lausanne"
+          ]
+        },
+        {
+          "name": "Martin Michalowski",
+          "openalex_id": "A5074088845",
+          "orcid": "https://orcid.org/0000-0003-2060-5878",
+          "institutions": [
+            "University of Minnesota"
+          ]
+        },
+        {
+          "name": "Rune Nyrup",
+          "openalex_id": "A5022347019",
+          "orcid": "https://orcid.org/0000-0002-9880-6912",
+          "institutions": [
+            "University of Cambridge",
+            "Leverhulme Trust"
+          ]
+        },
+        {
+          "name": "Samira Abbasgholizadeh Rahimi",
+          "openalex_id": "A5024597650",
+          "orcid": "https://orcid.org/0000-0003-3781-1360",
+          "institutions": [
+            "Mila - Quebec Artificial Intelligence Institute",
+            "McGill University",
+            "Jewish General Hospital"
+          ]
+        },
+        {
+          "name": "Donald N. Reed",
+          "openalex_id": "A5019140636",
+          "orcid": "https://orcid.org/0000-0002-4479-9227",
+          "institutions": [
+            "University of Exeter"
+          ]
+        },
+        {
+          "name": "Tapio Salakoski",
+          "openalex_id": "A5105839982",
+          "institutions": [
+            "University of Turku"
+          ]
+        },
+        {
+          "name": "Sanna Salanter\u00e4",
+          "openalex_id": "A5077864708",
+          "orcid": "https://orcid.org/0000-0003-2529-6699",
+          "institutions": [
+            "University of Turku",
+            "Turku University Hospital"
+          ]
+        },
+        {
+          "name": "Nancy Walton",
+          "openalex_id": "A5040348364",
+          "orcid": "https://orcid.org/0000-0002-2606-5940",
+          "institutions": [
+            "Public Health Agency of Canada",
+            "Health Canada",
+            "Toronto Metropolitan University",
+            "Women's College Hospital"
+          ]
+        },
+        {
+          "name": "Patrick Weber",
+          "openalex_id": "A5101753067",
+          "orcid": "https://orcid.org/0000-0003-4469-0464",
+          "institutions": [
+            "European Society for Medical Oncology",
+            "AC Immune (Switzerland)"
+          ]
+        },
+        {
+          "name": "Thomas Wiegand",
+          "openalex_id": "A5034084717",
+          "orcid": "https://orcid.org/0000-0002-1121-2581",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin",
+            "Istanbul Technical University",
+            "Artificial Intelligence in Medicine (Canada)",
+            "Fraunhofer Institute for Telecommunications, Heinrich Hertz Institute",
+            "Fraunhofer Institute for Production Systems and Design Technology"
+          ]
+        },
+        {
+          "name": "Maxim Topaz",
+          "openalex_id": "A5021465135",
+          "orcid": "https://orcid.org/0000-0002-2358-9837",
+          "institutions": [
+            "American Medical Informatics Association",
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-18",
+      "abstract": "Abstract Aim To develop a consensus paper on the central points of an international invitational think\u2010tank on nursing and artificial intelligence (AI). Methods We established the Nursing and Artificial Intelligence Leadership (NAIL) Collaborative, comprising interdisciplinary experts in AI development, biomedical ethics, AI in primary care, AI legal aspects, philosophy of AI in health, nursing practice, implementation science, leaders in health informatics practice and international health informatics groups, a representative of patients and the public, and the Chair of the ITU/WHO Focus Group on Artificial Intelligence for Health. The NAIL Collaborative convened at a 3\u2010day invitational think tank in autumn 2019. Activities included a pre\u2010event survey, expert presentations and working sessions to identify priority areas for action, opportunities and recommendations to address these. In this paper, we summarize the key discussion points and notes from the aforementioned activities. Implications for nursing Nursing's limited current engagement with discourses on AI and health posts a risk that the profession is not part of the conversations that have potentially significant impacts on nursing practice. Conclusion There are numerous gaps and a timely need for the nursing profession to be among the leaders and drivers of conversations around AI in health systems. Impact We outline crucial gaps where focused effort is required for nursing to take a leadership role in shaping AI use in health systems. Three priorities were identified that need to be addressed in the near future: (a) Nurses must understand the relationship between the data they collect and AI technologies they use; (b) Nurses need to be meaningfully involved in all stages of AI: from development to implementation; and (c) There is a substantial untapped and an unexplored potential for nursing to contribute to the development of AI technologies for global health and humanitarian efforts.",
+      "cited_by_count": 324,
+      "type": "article",
+      "source": {
+        "name": "Journal of Advanced Nursing",
+        "type": "journal",
+        "issn": [
+          "0309-2402",
+          "1365-2648"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/jan.14855"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Machine Learning in Healthcare",
+        "Artificial Intelligence in Healthcare"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W3152594952"
+    },
+    {
+      "openalex_id": "W4237309712",
+      "doi": "10.4018/978-1-4666-4735-0.ch007",
+      "title": "Technology, Gender, and Professional Identity",
+      "authors": [],
+      "publication_year": 2013,
+      "publication_date": "2013-10-07",
+      "abstract": "On its surface, technology does not appear to be a topic that is gendered. Both men and women use technology, and it must, therefore, be shaped by those who use it. However, both technology and gender are dependent on cultural, social, and historical contexts. These contexts shape how technologies are designed and used and how technologies and gender is understood. Currently, information technologies are associated with masculinity. In a similar manner, librarianship is gendered. Not only is the demographic makeup of the profession female-intensive, with approximately 80% of all LIS professionals being women, but some have argued that its core professional values, specifically access to information and service, are feminine in nature \u2013 as are its traditional activities, specifically cataloguing and children\u2019s librarianship. This chapter closely examines a feminist critique of librarianship by Harris (1992) that argues librarians are embracing technology in an effort to improve the perception of librarianship and make it more masculine. The status of male librarians is examined in light of Harris\u2019s argument, alongside an examination of Library 2.0 and how technology is used as part of its service philosophy. This chapter argues that the relationship between gender and technology is more complex than Harris argues.",
+      "cited_by_count": 1,
+      "type": "book-chapter",
+      "source": {
+        "name": "Advances in library and information science (ALIS) book series",
+        "type": "book series",
+        "issn": [
+          "2326-4136",
+          "2326-4144"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Gender and Technology in Education",
+        "Digital Games and Media",
+        "Impact of Technology on Adolescents"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W4237309712"
+    },
+    {
+      "openalex_id": "W4383959108",
+      "doi": "10.15678/eber.2023.110201",
+      "title": "The dark side of generative artificial intelligence: A critical analysis of controversies and risks of ChatGPT",
+      "authors": [
+        {
+          "name": "Krzysztof Wach",
+          "openalex_id": "A5048885851",
+          "orcid": "https://orcid.org/0000-0001-7542-2863"
+        },
+        {
+          "name": "Cong Doanh Duong",
+          "openalex_id": "A5039112242",
+          "orcid": "https://orcid.org/0000-0003-4431-9761"
+        },
+        {
+          "name": "Joanna Ejdys",
+          "openalex_id": "A5006581094",
+          "orcid": "https://orcid.org/0000-0002-5132-166X"
+        },
+        {
+          "name": "R\u016bta Kazlauskait\u0117",
+          "openalex_id": "A5052821341",
+          "orcid": "https://orcid.org/0000-0003-4004-0106"
+        },
+        {
+          "name": "Pawe\u0142 Korzy\u0144ski",
+          "openalex_id": "A5069874075",
+          "orcid": "https://orcid.org/0000-0002-6457-4965"
+        },
+        {
+          "name": "Grzegorz Mazurek",
+          "openalex_id": "A5053922801",
+          "orcid": "https://orcid.org/0000-0002-0047-6944"
+        },
+        {
+          "name": "Joanna Paliszkiewicz",
+          "openalex_id": "A5050298120",
+          "orcid": "https://orcid.org/0000-0002-6250-0583"
+        },
+        {
+          "name": "Ewa Ziemba",
+          "openalex_id": "A5056932691",
+          "orcid": "https://orcid.org/0000-0002-1084-7497"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Objective: The objective of the article is to provide a comprehensive identification and understanding of the challenges and opportunities associated with the use of generative artificial intelligence (GAI) in business. This study sought to develop a conceptual framework that gathers the negative aspects of GAI development in management and economics, with a focus on ChatGPT. Research Design & Methods: The study employed a narrative and critical literature review and developed a conceptual framework based on prior literature. We used a line of deductive reasoning in formulating our theoretical framework to make the study's overall structure rational and productive. Therefore, this article should be viewed as a conceptual article that highlights the controversies and threats of GAI in management and economics, with ChatGPT as a case study. Findings: Based on the conducted deep and extensive query of academic literature on the subject as well as professional press and Internet portals, we identified various controversies, threats, defects, and disadvantages of GAI, in particular ChatGPT. Next, we grouped the identified threats into clusters to summarize the seven main threats we see. In our opinion they are as follows: (i) no regulation of the AI market and urgent need for regulation, (ii) poor quality, lack of quality control, disinformation, deepfake content, algorithmic bias, (iii) automation-spurred job losses, (iv) personal data violation, social surveillance, and privacy violation, (v) social manipulation, weakening ethics and goodwill, (vi) widening socio-economic inequalities, and (vii) AI technostress. Implications & Recommendations: It is important to regulate the AI/GAI market. Advocating for the regulation of the AI market is crucial to ensure a level playing field, promote fair competition, protect intellectual property rights and privacy, and prevent potential geopolitical risks. The changing job market requires workers to continuously acquire new (digital) skills through education and retraining. As the training of AI systems becomes a prominent job category, it is important to adapt and take advantage of new opportunities. To mitigate the risks related to personal data violation, social surveillance, and privacy violation, GAI developers must prioritize ethical considerations and work to develop systems that prioritize user privacy and security. To avoid social manipulation and weaken ethics and goodwill, it is important to implement responsible AI practices and ethical guidelines: transparency in data usage, bias mitigation techniques, and monitoring of generated content for harmful or misleading information. Contribution & Value Added: This article may aid in bringing attention to the significance of resolving the ethical and legal considerations that arise from the use of GAI and ChatGPT by drawing attention to the controversies and hazards associated with these technologies.",
+      "cited_by_count": 440,
+      "type": "article",
+      "source": {
+        "name": "Entrepreneurial Business and Economics Review",
+        "type": "journal",
+        "issn": [
+          "2353-8821",
+          "2353-883X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://eber.uek.krakow.pl/index.php/eber/article/view/2113/852"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 117,
+      "url": "https://openalex.org/W4383959108"
+    },
+    {
+      "openalex_id": "W1596187321",
+      "doi": "10.1186/s12912-015-0090-x",
+      "title": "Invisible no more: a scoping review of the health care aide workforce literature",
+      "authors": [
+        {
+          "name": "Sarah Hewko",
+          "openalex_id": "A5085564116",
+          "orcid": "https://orcid.org/0000-0002-8804-4686",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Sarah Cooper",
+          "openalex_id": "A5030224736",
+          "orcid": "https://orcid.org/0000-0002-6409-7337",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Hanhmi Huynh",
+          "openalex_id": "A5112481851",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Trish L. Spiwek",
+          "openalex_id": "A5042348740",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Heather L. Carleton",
+          "openalex_id": "A5088030545",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Shawna Reid",
+          "openalex_id": "A5069755927",
+          "orcid": "https://orcid.org/0000-0002-5595-8668",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Greta G. Cummings",
+          "openalex_id": "A5077345115",
+          "orcid": "https://orcid.org/0000-0002-0668-6176",
+          "institutions": [
+            "University of Alberta"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-21",
+      "abstract": "This is the largest, most comprehensive scoping review of HCA workforce literature to date. Our results indicate that the HCA workforce is both invisible and ubiquitous; as long as this is the case, governments and healthcare organizations will be limited in their ability to develop and implement feasible, effective HCA workforce plans. The continued undervaluation of HCAs adversely impacts care providers, the institutions they work for and those who depend on their care. Future workforce planning and research necessitates national HCA registries, or at minimum, directories.",
+      "cited_by_count": 223,
+      "type": "review",
+      "source": {
+        "name": "BMC Nursing",
+        "type": "journal",
+        "issn": [
+          "1472-6955"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcnurs.biomedcentral.com/track/pdf/10.1186/s12912-015-0090-x"
+      },
+      "topics": [
+        "Geriatric Care and Nursing Homes",
+        "Global Health Workforce Issues",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W1596187321"
+    },
+    {
+      "openalex_id": "W2622634793",
+      "doi": "10.3998/mpub.9708722",
+      "title": "Academic Ableism",
+      "authors": [
+        {
+          "name": "Jay Dolmage",
+          "openalex_id": "A5087968800"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "Academic Ableism brings together disability studies and institutional critique to recognize the ways that disability is composed in and by higher education, and rewrites the spaces, times, and economies of disability in higher education to place disability front and center. For too long, argues Jay Timothy Dolmage, disability has been constructed as the antithesis of higher education, often positioned as a distraction, a drain, a problem to be solved. The ethic of higher education encourages students and teachers alike to accentuate ability, valorize perfection, and stigmatize anything that hints at intellectual, mental, or physical weakness, even as we gesture toward the value of diversity and innovation. Examining everything from campus accommodation processes, to architecture, to popular films about college life, Dolmage argues that disability is central to higher education, and that building more inclusive schools allows better education for all.",
+      "cited_by_count": 700,
+      "type": "book",
+      "source": {
+        "name": "University of Michigan Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.fulcrum.org/ebooks/6t053h23g/download?locale=en"
+      },
+      "topics": [
+        "Disability Rights and Representation",
+        "University Challenges and Reforms"
+      ],
+      "referenced_works_count": 210,
+      "url": "https://openalex.org/W2622634793"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

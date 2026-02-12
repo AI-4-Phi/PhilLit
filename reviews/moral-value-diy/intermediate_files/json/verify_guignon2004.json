@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "On Being Authentic",
+    "author": "Guignon",
+    "year": 2004
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9780203646793",
+      "title": "On Being Authentic",
+      "authors": [
+        {
+          "family": "Guignon",
+          "given": "Charles"
+        }
+      ],
+      "editors": [],
+      "year": 2004,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Routledge",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.4324/9780203646793",
+      "score": 41.80143
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Spheres of Justice",
+    "author": "Walzer",
+    "year": 1983
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (21.5) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

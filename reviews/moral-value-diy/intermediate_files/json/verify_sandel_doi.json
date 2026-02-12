@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/2214956"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2214956",
+      "title": "Liberalism and the Limits of Justice.",
+      "authors": [
+        {
+          "family": "Care",
+          "given": "Norman S."
+        },
+        {
+          "family": "Sandel",
+          "given": "Michael J."
+        }
+      ],
+      "editors": [],
+      "year": 1985,
+      "container_title": "No\u00fbs",
+      "volume": "19",
+      "issue": "3",
+      "page": "459",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/2214956"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

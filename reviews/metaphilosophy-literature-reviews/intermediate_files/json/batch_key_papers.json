@@ -1,0 +1,175 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "6 paper IDs",
+  "results": [
+    {
+      "paperId": "bd5b9c8ef53bc8ff29441a0aa832851171c211bf",
+      "title": "A typology of reviews: an analysis of 14 review types and associated methodologies.",
+      "authors": [
+        {
+          "name": "M. Grant",
+          "authorId": "32823119"
+        },
+        {
+          "name": "Andrew Booth",
+          "authorId": "2252158779"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 8549,
+      "doi": "10.1111/j.1471-1842.2009.00848.x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bd5b9c8ef53bc8ff29441a0aa832851171c211bf",
+      "venue": "Health Information and Libraries Journal",
+      "journal": {
+        "name": "Health information and libraries journal",
+        "pages": "\n          91-108\n        ",
+        "volume": "26 2"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ],
+      "_queryId": "DOI:10.1111/j.1471-1842.2009.00848.x"
+    },
+    {
+      "paperId": "f12499d98165f62f07f928f913bc184a1be6045c",
+      "title": "Scoping studies: towards a methodological framework",
+      "authors": [
+        {
+          "name": "H. Arksey",
+          "authorId": "13352422"
+        },
+        {
+          "name": "L. O\u2019Malley",
+          "authorId": "1403306171"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 28789,
+      "doi": "10.1080/1364557032000119616",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f12499d98165f62f07f928f913bc184a1be6045c",
+      "venue": "",
+      "journal": {
+        "name": "International Journal of Social Research Methodology",
+        "pages": "19 - 32",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "Review"
+      ],
+      "_queryId": "DOI:10.1080/1364557032000119616"
+    },
+    {
+      "paperId": "e1ad30b748d4f0684a5b2fda1570b343c7e95c0d",
+      "title": "The Philosophy of Philosophy",
+      "authors": [
+        {
+          "name": "L. Hosford",
+          "authorId": "134305041"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 539,
+      "doi": "10.1002/9780470696675",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e1ad30b748d4f0684a5b2fda1570b343c7e95c0d",
+      "venue": "",
+      "journal": {
+        "name": "Cedarville Review",
+        "pages": "15",
+        "volume": "10"
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.1002/9780470696675"
+    },
+    {
+      "paperId": "8ba0c0060670536aab336c0986ef834c8735c69b",
+      "title": "The Cambridge Companion to Philosophical Methodology",
+      "authors": [
+        {
+          "name": "S. Overgaard",
+          "authorId": "145713957"
+        },
+        {
+          "name": "G. D\u2019oro",
+          "authorId": "83366548"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 49,
+      "doi": "10.1017/9781316344118",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8ba0c0060670536aab336c0986ef834c8735c69b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.1017/9781316344118"
+    },
+    {
+      "paperId": "0892c507bbd08b337ceb901fb825f1e5ab67e7fa",
+      "title": "The Oxford Handbook of Philosophical Methodology",
+      "authors": [
+        {
+          "name": "H. Cappelen",
+          "authorId": "2944535"
+        },
+        {
+          "name": "T. Gendler",
+          "authorId": "5141986"
+        },
+        {
+          "name": "J. Hawthorne",
+          "authorId": "143917511"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 98,
+      "doi": "10.1093/oxfordhb/9780199668779.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0892c507bbd08b337ceb901fb825f1e5ab67e7fa",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.1093/oxfordhb/9780199668779.001.0001"
+    },
+    {
+      "paperId": "ef706241708dcdbd4cb962e910559736a884bc11",
+      "title": "Ontology Made Easy",
+      "authors": [
+        {
+          "name": "Amie L. Thomasson",
+          "authorId": "46248587"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 257,
+      "doi": "10.1093/acprof:oso/9780199385119.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ef706241708dcdbd4cb962e910559736a884bc11",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.1093/acprof:oso/9780199385119.001.0001"
+    }
+  ],
+  "count": 6,
+  "errors": []
+}

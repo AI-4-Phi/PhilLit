@@ -1,0 +1,51 @@
+{
+  "status": "success",
+  "source": "sep_context",
+  "query": {
+    "entry": "authenticity",
+    "author": "Guignon",
+    "year": "2004",
+    "coauthor": null
+  },
+  "results": [
+    {
+      "entry_name": "authenticity",
+      "entry_title": "Authenticity",
+      "entry_url": "https://plato.stanford.edu/entries/authenticity/",
+      "paper": {
+        "author": "Guignon",
+        "year": "2004",
+        "coauthor": null
+      },
+      "citation_count": 3,
+      "citations": [
+        {
+          "section": "4",
+          "section_title": "Recent Accounts of Authenticity",
+          "citation_text": "Guignon (2004)",
+          "sentence": "Guignon (2004) explores both the philosophical roots of authenticity\nand its contemporary manifestations in popular culture.",
+          "context": "authenticity, paying\nattention to both literary and philosophical sources. While\ncontinuously reminding us of the inherently social dimension of\nauthenticity, one of the achievements here is the focus on boundary\nsituations where authenticity \u201cis best forged and\nrevealed\u201d (Ibid.: 201). Golomb takes a neutral position on the\nethical value of authenticity, maintaining that \u201cthere is no\nreason to suppose that it is any better or any more valuable to be\nauthentic than to act inauthentically\u201d (Ibid.: 202). Guignon (2004) explores both the philosophical roots of authenticity\nand its contemporary manifestations in popular culture. He\nthoughtfully criticizes pop-psychological literature that deals with\nthe authentic life by making recourse to the subdued \u2018inner\nchild\u2019. Since Rousseau, the dichotomy between authentic and\ninauthentic has often been interpreted akin to the distinction between\nchild and adult (Guignon 2004: 43). Like the inner child, the\nauthentic self is depicted as not yet corrupted by the pressures,\ncompetitiveness,",
+          "position_in_text": 6238
+        },
+        {
+          "section": "4",
+          "section_title": "Recent Accounts of Authenticity",
+          "citation_text": "Guignon 2004",
+          "sentence": "Since Rousseau, the dichotomy between authentic and\ninauthentic has often been interpreted akin to the distinction between\nchild and adult (Guignon 2004: 43).",
+          "context": "it is any better or any more valuable to be\nauthentic than to act inauthentically\u201d (Ibid.: 202). Guignon (2004) explores both the philosophical roots of authenticity\nand its contemporary manifestations in popular culture. He\nthoughtfully criticizes pop-psychological literature that deals with\nthe authentic life by making recourse to the subdued \u2018inner\nchild\u2019. Since Rousseau, the dichotomy between authentic and\ninauthentic has often been interpreted akin to the distinction between\nchild and adult (Guignon 2004: 43). Like the inner child, the\nauthentic self is depicted as not yet corrupted by the pressures,\ncompetitiveness, and conformity of modern public life. Guignon draws\non the psychoanalytic theories of Freud and Jung to remind us of less\nromanticized visions of the inner child. Additionally, Guignon (2004:\n151) aims to identify the manner in which authenticity can be\nunderstood as being at the same time a personal and a\n\u201cfundamentally and irreducibly\u201d social virtue.\nAuthenticity then involves reflectively",
+          "position_in_text": 6643
+        },
+        {
+          "section": "preamble",
+          "section_title": "Preamble",
+          "citation_text": "Guignon 2004",
+          "sentence": "Bernard Williams captures this when he\nspecifies authenticity as \u201cthe idea that some things are in some\nsense really you, or express what you are, and others\naren\u2019t\u201d (quoted in Guignon 2004: viii).",
+          "context": "longer of metaphysical\nnature, but rather about moral-psychology, identity and\nresponsibility. When used in this latter sense, the characterization describes a\nperson who acts in accordance with desires, motives, ideals or beliefs\nthat are not only hers (as opposed to someone else\u2019s), but that\nalso express who she really is. Bernard Williams captures this when he\nspecifies authenticity as \u201cthe idea that some things are in some\nsense really you, or express what you are, and others\naren\u2019t\u201d (quoted in Guignon 2004: viii). Besides being a topic in philosophical debates, authenticity is also a\npervasive ideal that impacts social and political thinking.\nIn fact, one distinctive feature of recent Western intellectual\ndevelopments has been a shift to what is called the \u201cage of\nauthenticity\u201d (Taylor 2007; Ferrarra 1998). Therefore,\nunderstanding the concept also involves investigating its historical\nand philosophical sources and on the way it impacts the\nsocio-political outlook of contemporary societies.",
+          "position_in_text": 1698
+        }
+      ]
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

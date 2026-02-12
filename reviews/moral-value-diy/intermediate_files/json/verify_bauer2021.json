@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1093/OSO/9780199970742.003.0016"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/oso/9780199970742.003.0016",
+      "title": "Authenticity, Self-Actualizing, and Self-Authorship",
+      "authors": [
+        {
+          "family": "Bauer",
+          "given": "Jack"
+        }
+      ],
+      "editors": [],
+      "year": 2021,
+      "container_title": "The Transformative Self",
+      "volume": "",
+      "issue": "",
+      "page": "492-532",
+      "publisher": "Oxford University Press",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1093/oso/9780199970742.003.0016"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

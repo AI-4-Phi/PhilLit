@@ -1,0 +1,3867 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "cognitive enhancement agency",
+  "results": [
+    {
+      "openalex_id": "W3126737939",
+      "doi": "10.1080/03069885.2020.1867703",
+      "title": "Enhancing agency in career development via cognitive information processing theory",
+      "authors": [
+        {
+          "name": "Seth C. W. Hayden",
+          "openalex_id": "A5056209657",
+          "orcid": "https://orcid.org/0000-0002-7238-8900",
+          "institutions": [
+            "Wake Forest University"
+          ]
+        },
+        {
+          "name": "Debra S. Osborn",
+          "openalex_id": "A5005703613",
+          "orcid": "https://orcid.org/0000-0002-7523-3672",
+          "institutions": [
+            "Florida State University"
+          ]
+        },
+        {
+          "name": "Carley Peace",
+          "openalex_id": "A5059250196",
+          "orcid": "https://orcid.org/0009-0009-9685-6068",
+          "institutions": [
+            "Florida State University"
+          ]
+        },
+        {
+          "name": "Robert Tjarko Lange",
+          "openalex_id": "A5013857977",
+          "orcid": "https://orcid.org/0009-0005-8799-1138",
+          "institutions": [
+            "Wake Forest University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-08",
+      "abstract": "The interconnected aspects of career and mental health posit career as a central feature of human functioning. A perceived lack of control within career and work exacerbates existing challenges associated with COVID-19. Focusing on enhancing agency within the realm of career and work is imperative within counselling. Cognitive Information Processing (CIP) accounts for the complexity of career concerns by enhancing agency in career decision making, with problem solving serving as a conduit between uncertainty and empowerment. The current state of employment, threats to agency within career development, and specific CIP-based interventions to enhance agency are discussed.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Guidance and Counselling",
+        "type": "journal",
+        "issn": [
+          "0306-9885",
+          "1469-3534"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Emotional Intelligence and Performance",
+        "Grit, Self-Efficacy, and Motivation",
+        "Career Development and Diversity"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W3126737939"
+    },
+    {
+      "openalex_id": "W2911488183",
+      "doi": "10.1177/0003122418822335",
+      "title": "A Theory of Racialized Organizations",
+      "authors": [
+        {
+          "name": "Victor Ray",
+          "openalex_id": "A5047277387",
+          "orcid": "https://orcid.org/0000-0002-7929-4173",
+          "institutions": [
+            "University of Tennessee at Knoxville"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-25",
+      "abstract": "Organizational theory scholars typically see organizations as race-neutral bureaucratic structures, while race and ethnicity scholars have largely neglected the role of organizations in the social construction of race. The theory developed in this article bridges these subfields, arguing that organizations are racial structures\u2014cognitive schemas connecting organizational rules to social and material resources. I begin with the proposition that race is constitutive of organizational foundations, hierarchies, and processes. Next, I develop four tenets: (1) racialized organizations enhance or diminish the agency of racial groups; (2) racialized organizations legitimate the unequal distribution of resources; (3) Whiteness is a credential; and (4) the decoupling of formal rules from organizational practice is often racialized. I argue that racialization theory must account for how both state policy and individual attitudes are filtered through\u2014and changed by\u2014organizations. Seeing race as constitutive of organizations helps us better understand the formation and everyday functioning of organizations. Incorporating organizations into a structural theory of racial inequality can help us better understand stability, change, and the institutionalization of racial inequality. I conclude with an overview of internal and external sources of organizational change and a discussion of how the theory of racialized organizations may set the agenda for future research.",
+      "cited_by_count": 1741,
+      "type": "article",
+      "source": {
+        "name": "American Sociological Review",
+        "type": "journal",
+        "issn": [
+          "0003-1224",
+          "1939-8271"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0003122418822335"
+      },
+      "topics": [
+        "Gender Diversity and Inequality",
+        "Management and Organizational Studies",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 201,
+      "url": "https://openalex.org/W2911488183"
+    },
+    {
+      "openalex_id": "W2528124781",
+      "doi": "10.1177/1529100616661983",
+      "title": "Do \u201cBrain-Training\u201d Programs Work?",
+      "authors": [
+        {
+          "name": "Daniel J. Simons",
+          "openalex_id": "A5006468035",
+          "orcid": "https://orcid.org/0000-0001-7545-1621",
+          "institutions": [
+            "University of Illinois Urbana-Champaign"
+          ]
+        },
+        {
+          "name": "Walter R. Boot",
+          "openalex_id": "A5023912685",
+          "orcid": "https://orcid.org/0000-0003-1047-5467",
+          "institutions": [
+            "Florida State University"
+          ]
+        },
+        {
+          "name": "Neil Charness",
+          "openalex_id": "A5002594323",
+          "orcid": "https://orcid.org/0000-0002-1002-3439",
+          "institutions": [
+            "Florida State University"
+          ]
+        },
+        {
+          "name": "Susan E. Gathercole",
+          "openalex_id": "A5001624726",
+          "orcid": "https://orcid.org/0000-0001-6618-586X",
+          "institutions": [
+            "MRC Cognition and Brain Sciences Unit",
+            "Medical Research Council",
+            "University of Cambridge",
+            "Cambridge School"
+          ]
+        },
+        {
+          "name": "Christopher F. Chabris",
+          "openalex_id": "A5043896474",
+          "orcid": "https://orcid.org/0000-0002-7379-7378",
+          "institutions": [
+            "Union College",
+            "Geisinger Health System"
+          ]
+        },
+        {
+          "name": "David Z. Hambrick",
+          "openalex_id": "A5070926148",
+          "orcid": "https://orcid.org/0000-0002-5315-5597",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Elizabeth A. L. Stine\u2010Morrow",
+          "openalex_id": "A5071083569",
+          "orcid": "https://orcid.org/0000-0002-9977-2160",
+          "institutions": [
+            "University of Illinois Urbana-Champaign"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-01",
+      "abstract": "In 2014, two groups of scientists published open letters on the efficacy of brain-training interventions, or \u201cbrain games,\u201d for improving cognition. The first letter, a consensus statement from an international group of more than 70 scientists, claimed that brain games do not provide a scientifically grounded way to improve cognitive functioning or to stave off cognitive decline. Several months later, an international group of 133 scientists and practitioners countered that the literature is replete with demonstrations of the benefits of brain training for a wide variety of cognitive and everyday activities. How could two teams of scientists examine the same literature and come to conflicting \u201cconsensus\u201d views about the effectiveness of brain training? In part, the disagreement might result from different standards used when evaluating the evidence. To date, the field has lacked a comprehensive review of the brain-training literature, one that examines both the quantity and the quality of the evidence according to a well-defined set of best practices. This article provides such a review, focusing exclusively on the use of cognitive tasks or games as a means to enhance performance on other tasks. We specify and justify a set of best practices for such brain-training interventions and then use those standards to evaluate all of the published peer-reviewed intervention studies cited on the websites of leading brain-training companies listed on Cognitive Training Data ( www.cognitivetrainingdata.org ), the site hosting the open letter from brain-training proponents. These citations presumably represent the evidence that best supports the claims of effectiveness. Based on this examination, we find extensive evidence that brain-training interventions improve performance on the trained tasks, less evidence that such interventions improve performance on closely related tasks, and little evidence that training enhances performance on distantly related tasks or that training improves everyday cognitive performance. We also find that many of the published intervention studies had major shortcomings in design or analysis that preclude definitive conclusions about the efficacy of training, and that none of the cited studies conformed to all of the best practices we identify as essential to drawing clear conclusions about the benefits of brain training for everyday activities. We conclude with detailed recommendations for scientists, funding agencies, and policymakers that, if adopted, would lead to better evidence regarding the efficacy of brain-training interventions.",
+      "cited_by_count": 1152,
+      "type": "review",
+      "source": {
+        "name": "Psychological Science in the Public Interest",
+        "type": "journal",
+        "issn": [
+          "1529-1006",
+          "2160-0031"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Cognitive Abilities and Testing",
+        "Birth, Development, and Health",
+        "Cognitive Functions and Memory"
+      ],
+      "referenced_works_count": 334,
+      "url": "https://openalex.org/W2528124781"
+    },
+    {
+      "openalex_id": "W3089729671",
+      "doi": "10.1016/j.chb.2020.106590",
+      "title": "Agency over social media use can be enhanced through brief abstinence, but only in users with high cognitive reflection tendencies",
+      "authors": [
+        {
+          "name": "Ofir Turel",
+          "openalex_id": "A5020472362",
+          "orcid": "https://orcid.org/0000-0002-6374-6382",
+          "institutions": [
+            "Decision Sciences (United States)",
+            "University of Southern California",
+            "California State University, Fullerton"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-01",
+      "abstract": "Many social media users have lost some agency over the use of these sites. Restoring this sense of agency is important as it can help users live responsibly with the technology, and can serve as a target for therapists treating people with difficulty to control their social media use. Nevertheless, knowledge about ways to increase people's sense of agency has been limited. In this study I propose that invoking reflections about agency but allowing normal use will likely produce realization about loss of agency, and result in undesirable reduced sense of agency. In contrast, I suggest that if invoking reflections on agency is followed by a brief abstinence attempt, people will process insights on their actual ability to exert control over social media use, which will result in an increase in perceived agency. I further argue that this information processing will only accrue in people high in cognitive reflection tendencies. A 2 (time: pre vs. post) by 2 (condition: abstinence vs. control) by 2 (cognitive reflection group: low vs. high) experiment with 610 Facebook users showed an increase in agency only among high cognitive reflection participants who experienced abstinence; all other groups showed decline in perceived agency. Implications are discussed.",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Computers in Human Behavior",
+        "type": "journal",
+        "issn": [
+          "0747-5632",
+          "1873-7692"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1016/j.chb.2020.106590"
+      },
+      "topics": [
+        "Death Anxiety and Social Exclusion",
+        "Mind wandering and attention",
+        "Impact of Technology on Adolescents"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W3089729671"
+    },
+    {
+      "openalex_id": "W3003606046",
+      "doi": "10.1177/1529100620946707",
+      "title": "Citizens Versus the Internet: Confronting Digital Challenges With Cognitive Tools",
+      "authors": [
+        {
+          "name": "Anastasia Kozyreva",
+          "openalex_id": "A5006314379",
+          "orcid": "https://orcid.org/0000-0001-8037-9919",
+          "institutions": [
+            "Max Planck Institute for Human Development"
+          ]
+        },
+        {
+          "name": "Stephan Lewandowsky",
+          "openalex_id": "A5017914184",
+          "orcid": "https://orcid.org/0000-0003-1655-2013",
+          "institutions": [
+            "University of Bristol",
+            "University of Western Australia"
+          ]
+        },
+        {
+          "name": "Ralph Hertwig",
+          "openalex_id": "A5068556395",
+          "orcid": "https://orcid.org/0000-0002-9908-9556",
+          "institutions": [
+            "Max Planck Institute for Human Development"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-01",
+      "abstract": "The Internet has evolved into a ubiquitous and indispensable digital environment in which people communicate, seek information, and make decisions. Despite offering various benefits, online environments are also replete with smart, highly adaptive choice architectures designed primarily to maximize commercial interests, capture and sustain users\u2019 attention, monetize user data, and predict and influence future behavior. This online landscape holds multiple negative consequences for society, such as a decline in human autonomy, rising incivility in online conversation, the facilitation of political extremism, and the spread of disinformation. Benevolent choice architects working with regulators may curb the worst excesses of manipulative choice architectures, yet the strategic advantages, resources, and data remain with commercial players. One way to address some of this imbalance is with interventions that empower Internet users to gain some control over their digital environments, in part by boosting their information literacy and their cognitive resistance to manipulation. Our goal is to present a conceptual map of interventions that are based on insights from psychological science. We begin by systematically outlining how online and offline environments differ despite being increasingly inextricable. We then identify four major types of challenges that users encounter in online environments: persuasive and manipulative choice architectures, AI-assisted information architectures, false and misleading information, and distracting environments. Next, we turn to how psychological science can inform interventions to counteract these challenges of the digital world. After distinguishing among three types of behavioral and cognitive interventions\u2014nudges, technocognition, and boosts\u2014we focus on boosts, of which we identify two main groups: (a) those aimed at enhancing people\u2019s agency in their digital environments (e.g., self-nudging, deliberate ignorance) and (b) those aimed at boosting competencies of reasoning and resilience to manipulation (e.g., simple decision aids, inoculation). These cognitive tools are designed to foster the civility of online discourse and protect reason and human autonomy against manipulative choice architectures, attention-grabbing techniques, and the spread of false information.",
+      "cited_by_count": 389,
+      "type": "review",
+      "source": {
+        "name": "Gothic.net",
+        "type": "journal",
+        "issn": [
+          "1539-6053"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1177/1529100620946707"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Social Media and Politics",
+        "Media Influence and Politics"
+      ],
+      "referenced_works_count": 263,
+      "url": "https://openalex.org/W3003606046"
+    },
+    {
+      "openalex_id": "W2985230952",
+      "doi": "10.1002/dta.2717",
+      "title": "The occurrence of putative cognitive enhancing research peptides in seized pharmaceutical preparations: An incentive for controlling agencies to prepare for future encounters of the kind",
+      "authors": [
+        {
+          "name": "C\u00e9line Vanhee",
+          "openalex_id": "A5000923878",
+          "orcid": "https://orcid.org/0000-0002-6634-3706",
+          "institutions": [
+            "Sciensano (Belgium)",
+            "Directorate-General for Health and Food Safety"
+          ]
+        },
+        {
+          "name": "Antoine Francotte",
+          "openalex_id": "A5002258871",
+          "orcid": "https://orcid.org/0000-0002-8406-9114",
+          "institutions": [
+            "Sciensano (Belgium)",
+            "Directorate-General for Health and Food Safety"
+          ]
+        },
+        {
+          "name": "Steven Janvier",
+          "openalex_id": "A5078803435",
+          "orcid": "https://orcid.org/0000-0002-4967-7528",
+          "institutions": [
+            "Sciensano (Belgium)"
+          ]
+        },
+        {
+          "name": "Eric Deconinck",
+          "openalex_id": "A5101547183",
+          "orcid": "https://orcid.org/0000-0001-6980-6684",
+          "institutions": [
+            "Directorate-General for Health and Food Safety",
+            "Sciensano (Belgium)"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-30",
+      "abstract": "Abstract At the end of 2017 and 2018 two different unknown suspicious preparations were encountered and were subjected to a plethora of different analyses in order to identify, if present, any bioactive compound. It turned out that these samples contained the assumedly cognitive enhancing research peptides Selank and Semax, which, to our knowledge, have not completed any clinical trials. Moreover, an online search, excluding the dark web, demonstrated that these kinds of nootropic research peptides are freely available either as lyophilized powder for injection purposes or are present in nasal sprays. It stands to reason that controlling laboratories need to anticipate the uprising of these types of potentially dangerous molecules and must therefore be able to correctly identify these compounds. Therefore, these findings served as an incentive to develop a novel combined liquid chromatography tandem mass spectroscopy (LC\u2013MS/MS) methodology, applicable to both hydrophilic or more hydrophobic peptides, which was utilized to analyze a total of 10 putative cognitive enhancing polypeptides, with variable biochemical characteristics, that are currently being sold online. The screening rationale, complying to the recommendation paper of the General European Official Medicines Control Laboratory (OMCL) network on the interpretation of screening results for unknown peptides by mass spectrometry, was also validated in different matrices as required by ISO 17025.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Drug Testing and Analysis",
+        "type": "journal",
+        "issn": [
+          "1942-7603",
+          "1942-7611"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Computational Drug Discovery Methods",
+        "Advanced Chemical Sensor Technologies",
+        "Mass Spectrometry Techniques and Applications"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W2985230952"
+    },
+    {
+      "openalex_id": "W4400085203",
+      "doi": "10.1155/2024/3135532",
+      "title": "Enhancing Agency in Individuals with Depressive Symptoms: The Roles of Effort, Outcome Valence, and Its Underlying Cognitive Mechanisms and Neural Basis",
+      "authors": [
+        {
+          "name": "Jingyuan Lin",
+          "openalex_id": "A5048621336",
+          "orcid": "https://orcid.org/0000-0001-6547-2111",
+          "institutions": [
+            "Sichuan Normal University"
+          ]
+        },
+        {
+          "name": "Xuemei Yang",
+          "openalex_id": "A5053567144",
+          "orcid": "https://orcid.org/0009-0004-1187-8326",
+          "institutions": [
+            "Sichuan Normal University"
+          ]
+        },
+        {
+          "name": "Hong Li",
+          "openalex_id": "A5100339381",
+          "orcid": "https://orcid.org/0000-0002-3620-5548",
+          "institutions": [
+            "South China Normal University",
+            "Sichuan Normal University"
+          ]
+        },
+        {
+          "name": "Wuji Lin",
+          "openalex_id": "A5013285491",
+          "orcid": "https://orcid.org/0000-0001-5555-6215",
+          "institutions": [
+            "Sichuan Normal University"
+          ]
+        },
+        {
+          "name": "J. Zhang",
+          "openalex_id": "A5016204922",
+          "orcid": "https://orcid.org/0009-0006-6344-3433",
+          "institutions": [
+            "South China Normal University"
+          ]
+        },
+        {
+          "name": "Yi Lei",
+          "openalex_id": "A5084475054",
+          "orcid": "https://orcid.org/0000-0002-8874-923X",
+          "institutions": [
+            "Sichuan Normal University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": "Background . Agency, a sense of control over one\u2019s actions and outcomes, is crucial for recovery from depressive symptoms. However, the mechanisms that enhance agency in individuals with depressive symptoms remain poorly understood. This study endeavors to elucidate these fundamental processes. Materials and Methods . We recruited 52 participants exhibiting depressive symptoms to participate in a novel Judgment of Agency (JoA) task. This task was structured with a 3 (effort: high load, medium load, low load) \u00d7 2 (outcome: win, miss) within\u2010subject design to assess the impact of effort and outcome valence on agency. Throughout the task, we utilized functional near\u2010infrared spectroscopy (fNIRS) to explore the neural mechanisms underlying agency. Furthermore, we conducted a randomized, sham\u2010controlled, pre\u2013post\u2010test trial involving intermittent theta\u2010burst stimulation (iTBS) targeted at the left dorsolateral prefrontal cortex (DLPFC) to investigate its potential to enhance agency. Participants were randomly allocated to either an active iTBS group or a sham group, with each receiving a single session of stimulation (600 pulses). The JoA task was conducted both before and after the stimulation. Results . Effort significantly influenced agency in individuals with depressive symptoms, with this effect being moderated by the outcomes\u2019 valences. Agency was positively correlated with self\u2010efficacy ( r = 0.28, P &lt; 0.05) when goals were achieved with effort, and with anxiety severity ( r = 0.29, P &lt; 0.05) when goals were not achieved. Additionally, it was associated with the activation of several frontal brain regions (all P values &lt; 0.01), including the left DLPFC, right premotor and supplementary motor areas, and the left inferior frontal gyrus (IFG). Application of iTBS over the left DLPFC significantly enhanced self\u2010attributed agency, particularly when the outcomes were achieved under conditions of low\u2010load effort. Conclusions . Our study highlights the critical role of effort in enhancing agency for individuals with depressive symptoms, with iTBS applied to the left DLPFC showing potential to enhance agency postgoal achievement. Moreover, the activation of the left IFG and the presence of anxiety are associated with maladaptive self\u2010attributed agency, offering potential targets for therapeutic intervention.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Depression and Anxiety",
+        "type": "journal",
+        "issn": [
+          "1091-4269",
+          "1520-6394"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1155/2024/3135532"
+      },
+      "topics": [
+        "Neural and Behavioral Psychology Studies",
+        "Psychosomatic Disorders and Their Treatments",
+        "Anxiety, Depression, Psychometrics, Treatment, Cognitive Processes"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W4400085203"
+    },
+    {
+      "openalex_id": "W3028434776",
+      "doi": "10.1016/j.cedpsych.2020.101865",
+      "title": "Theories of motivation: Integration and ways forward",
+      "authors": [
+        {
+          "name": "John Hattie",
+          "openalex_id": "A5035981377",
+          "orcid": "https://orcid.org/0000-0003-3873-4854",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Flaviu A. Hodis",
+          "openalex_id": "A5112177610",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        },
+        {
+          "name": "Sean H. K. Kang",
+          "openalex_id": "A5047408218",
+          "orcid": "https://orcid.org/0000-0001-9017-3615",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-01",
+      "abstract": null,
+      "cited_by_count": 241,
+      "type": "article",
+      "source": {
+        "name": "Contemporary Educational Psychology",
+        "type": "journal",
+        "issn": [
+          "0361-476X",
+          "1090-2384"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Motivation and Self-Concept in Sports",
+        "Behavioral Health and Interventions",
+        "Education, Achievement, and Giftedness"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W3028434776"
+    },
+    {
+      "openalex_id": "W2167311298",
+      "doi": "10.1159/000430949",
+      "title": "Older Adults' Reasons for Using Technology while Aging in Place",
+      "authors": [
+        {
+          "name": "Sebastiaan Theodorus Micha\u00ebl Peek",
+          "openalex_id": "A5035950418",
+          "orcid": "https://orcid.org/0000-0003-0105-4230",
+          "institutions": [
+            "Tilburg University",
+            "Fontys University of Applied Sciences",
+            "Health Innovations (United States)"
+          ]
+        },
+        {
+          "name": "Katrien Luijkx",
+          "openalex_id": "A5059909558",
+          "orcid": "https://orcid.org/0000-0002-1856-3819",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "M. D. Rijnaard",
+          "openalex_id": "A5084320362",
+          "institutions": [
+            "Fontys University of Applied Sciences",
+            "Health Innovations (United States)"
+          ]
+        },
+        {
+          "name": "Marianne Nieboer",
+          "openalex_id": "A5059169253",
+          "orcid": "https://orcid.org/0000-0001-8471-5342",
+          "institutions": [
+            "Fontys University of Applied Sciences",
+            "Health Innovations (United States)"
+          ]
+        },
+        {
+          "name": "C. S. van der Voort",
+          "openalex_id": "A5075307649",
+          "institutions": [
+            "Fontys University of Applied Sciences",
+            "Health Innovations (United States)"
+          ]
+        },
+        {
+          "name": "Sil Aarts",
+          "openalex_id": "A5083247761",
+          "orcid": "https://orcid.org/0000-0002-3121-412X",
+          "institutions": [
+            "Fontys University of Applied Sciences",
+            "Health Innovations (United States)"
+          ]
+        },
+        {
+          "name": "Joost van Hoof",
+          "openalex_id": "A5005516164",
+          "orcid": "https://orcid.org/0000-0001-9704-7128",
+          "institutions": [
+            "Fontys University of Applied Sciences"
+          ]
+        },
+        {
+          "name": "Hubertus JM Vrijhoef",
+          "openalex_id": "A5001877044",
+          "orcid": "https://orcid.org/0000-0002-5539-4671",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Eveline Wouters",
+          "openalex_id": "A5009640664",
+          "orcid": "https://orcid.org/0000-0001-8911-9398",
+          "institutions": [
+            "Fontys University of Applied Sciences",
+            "Health Innovations (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-06-04",
+      "abstract": "&lt;b&gt;&lt;i&gt;Background:&lt;/i&gt;&lt;/b&gt; Most older adults prefer to age in place, and supporting older adults to remain in their own homes and communities is also favored by policy makers. Technology can play a role in staying independent, active and healthy. However, the use of technology varies considerably among older adults. Previous research indicates that current models of technology acceptance are missing essential predictors specific to community-dwelling older adults. Furthermore, in situ research within the specific context of aging in place is scarce, while this type of research is needed to better understand how and why community-dwelling older adults are using technology. &lt;b&gt;&lt;i&gt;Objective:&lt;/i&gt;&lt;/b&gt; To explore which factors influence the level of use of various types of technology by older adults who are aging in place and to describe these factors in a comprehensive model. &lt;b&gt;&lt;i&gt;Methods:&lt;/i&gt;&lt;/b&gt; A qualitative explorative field study was set up, involving home visits to 53 community-dwelling older adults, aged 68-95, living in the Netherlands. Purposive sampling was used to include participants with different health statuses, living arrangements, and levels of technology experience. During each home visit: (1) background information on the participants' chronic conditions, major life events, frailty, cognitive functioning, subjective health, ownership and use of technology was gathered, and (2) a semistructured interview was conducted regarding reasons for the level of use of technology. The study was designed to include various types of technology that could support activities of daily living, personal health or safety, mobility, communication, physical activity, personal development, and leisure activities. Thematic analysis was employed to analyze interview transcripts. &lt;b&gt;&lt;i&gt;Results:&lt;/i&gt;&lt;/b&gt; The level of technology use in the context of aging in place is influenced by six major themes: challenges in the domain of independent living; behavioral options; personal thoughts on technology use; influence of the social network; influence of organizations, and the role of the physical environment. &lt;b&gt;&lt;i&gt;Conclusion:&lt;/i&gt;&lt;/b&gt; Older adults' perceptions and use of technology are embedded in their personal, social, and physical context. Awareness of these psychological and contextual factors is needed in order to facilitate aging in place through the use of technology. A conceptual model covering these factors is presented.",
+      "cited_by_count": 19709,
+      "type": "article",
+      "source": {
+        "name": "Gerontology",
+        "type": "journal",
+        "issn": [
+          "0304-324X",
+          "1423-0003"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://karger.com/ger/article-pdf/62/2/226/2837897/000430949.pdf"
+      },
+      "topics": [
+        "Technology Use by Older Adults",
+        "Health disparities and outcomes",
+        "Migration, Aging, and Tourism Studies"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W2167311298"
+    },
+    {
+      "openalex_id": "W4396807937",
+      "doi": "10.1007/s11896-024-09682-x",
+      "title": "Enhancing Justice and Efficiency: Advocating for the Adoption of Cognitive Interviewing Techniques Across Local and Federal Law Enforcement Agencies",
+      "authors": [
+        {
+          "name": "Shane McNeil",
+          "openalex_id": "A5039500572",
+          "orcid": "https://orcid.org/0000-0002-0051-367X",
+          "institutions": [
+            "Liberty University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-05-10",
+      "abstract": null,
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Journal of Police and Criminal Psychology",
+        "type": "journal",
+        "issn": [
+          "0882-0783",
+          "1936-6469"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Deception detection and forensic psychology",
+        "Memory Processes and Influences",
+        "Criminal Justice and Corrections Analysis"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W4396807937"
+    },
+    {
+      "openalex_id": "W2986109582",
+      "doi": "10.1007/s10548-019-00737-5",
+      "title": "The Role of the Temporoparietal Junction in Self-Other Distinction",
+      "authors": [
+        {
+          "name": "Fran\u00e7ois Quesque",
+          "openalex_id": "A5046807261",
+          "orcid": "https://orcid.org/0000-0001-7954-8316",
+          "institutions": [
+            "Ghent University",
+            "Inserm"
+          ]
+        },
+        {
+          "name": "Marcel Bra\u00df",
+          "openalex_id": "A5050798516",
+          "orcid": "https://orcid.org/0000-0002-3364-4019",
+          "institutions": [
+            "Ghent University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-01",
+      "abstract": null,
+      "cited_by_count": 124,
+      "type": "review",
+      "source": {
+        "name": "Brain Topography",
+        "type": "journal",
+        "issn": [
+          "0896-0267",
+          "1573-6792"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10548-019-00737-5.pdf"
+      },
+      "topics": [
+        "Action Observation and Synchronization",
+        "Neural and Behavioral Psychology Studies",
+        "Face Recognition and Perception"
+      ],
+      "referenced_works_count": 104,
+      "url": "https://openalex.org/W2986109582"
+    },
+    {
+      "openalex_id": "W2916865896",
+      "doi": "10.1007/s10567-019-00287-z",
+      "title": "Applying Self-Regulation Principles in the Delivery of Parenting Interventions",
+      "authors": [
+        {
+          "name": "Matthew R. Sanders",
+          "openalex_id": "A5079932998",
+          "orcid": "https://orcid.org/0000-0003-3479-6337",
+          "institutions": [
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "Karen Turner",
+          "openalex_id": "A5063126476",
+          "orcid": "https://orcid.org/0000-0002-2750-5012",
+          "institutions": [
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "Carol W. Metzler",
+          "openalex_id": "A5065004533",
+          "orcid": "https://orcid.org/0000-0003-0734-2225",
+          "institutions": [
+            "Oregon Research Institute"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-02-20",
+      "abstract": null,
+      "cited_by_count": 128,
+      "type": "review",
+      "source": {
+        "name": "Clinical Child and Family Psychology Review",
+        "type": "journal",
+        "issn": [
+          "1096-4037",
+          "1573-2827"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Child and Adolescent Psychosocial and Emotional Development",
+        "Family and Disability Support Research",
+        "Maternal Mental Health During Pregnancy and Postpartum"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W2916865896"
+    },
+    {
+      "openalex_id": "W2082704080",
+      "doi": "10.1371/journal.pmed.1001779",
+      "title": "UK Biobank: An Open Access Resource for Identifying the Causes of a Wide Range of Complex Diseases of Middle and Old Age",
+      "authors": [
+        {
+          "name": "Cathie Sudlow",
+          "openalex_id": "A5081850154",
+          "orcid": "https://orcid.org/0000-0002-7725-7520",
+          "institutions": [
+            "University of Edinburgh",
+            "UK Biobank"
+          ]
+        },
+        {
+          "name": "John Gallacher",
+          "openalex_id": "A5060591968",
+          "orcid": "https://orcid.org/0000-0002-2394-5299",
+          "institutions": [
+            "Cardiff University"
+          ]
+        },
+        {
+          "name": "Naomi E. Allen",
+          "openalex_id": "A5073405229",
+          "orcid": "https://orcid.org/0000-0003-1938-5038",
+          "institutions": [
+            "University of Oxford",
+            "UK Biobank"
+          ]
+        },
+        {
+          "name": "Valerie Beral",
+          "openalex_id": "A5053516882",
+          "orcid": "https://orcid.org/0000-0002-3581-9361",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Paul R. Burton",
+          "openalex_id": "A5001775749",
+          "orcid": "https://orcid.org/0000-0001-5799-9634",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "John Danesh",
+          "openalex_id": "A5033502820",
+          "orcid": "https://orcid.org/0000-0003-1158-6791",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Paul Downey",
+          "openalex_id": "A5010394384",
+          "orcid": "https://orcid.org/0000-0002-9890-4678",
+          "institutions": [
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "Paul Elliott",
+          "openalex_id": "A5034710571",
+          "orcid": "https://orcid.org/0000-0002-7511-5684",
+          "institutions": [
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "Jane Green",
+          "openalex_id": "A5101773952",
+          "orcid": "https://orcid.org/0000-0002-0858-0500",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Martin Landray",
+          "openalex_id": "A5079926383",
+          "orcid": "https://orcid.org/0000-0001-6646-827X",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Bette Liu",
+          "openalex_id": "A5016466948",
+          "orcid": "https://orcid.org/0000-0002-0787-5825",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Paul M. Matthews",
+          "openalex_id": "A5070529061",
+          "orcid": "https://orcid.org/0000-0002-1619-8328",
+          "institutions": [
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "Giok Ong",
+          "openalex_id": "A5008036659",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "Jill P. Pell",
+          "openalex_id": "A5051770579",
+          "orcid": "https://orcid.org/0000-0002-8898-7035",
+          "institutions": [
+            "University of Glasgow"
+          ]
+        },
+        {
+          "name": "Alan J. Silman",
+          "openalex_id": "A5018096937",
+          "orcid": "https://orcid.org/0000-0001-8426-8925",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "A. P. Young",
+          "openalex_id": "A5018185682",
+          "orcid": "https://orcid.org/0000-0001-5129-4924",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Tim Sprosen",
+          "openalex_id": "A5064422397",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Tim Peakman",
+          "openalex_id": "A5046297577",
+          "institutions": [
+            "UK Biobank"
+          ]
+        },
+        {
+          "name": "Rory Collins",
+          "openalex_id": "A5090621185",
+          "orcid": "https://orcid.org/0000-0001-8288-8602",
+          "institutions": [
+            "University of Oxford",
+            "UK Biobank"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-03-31",
+      "abstract": "Cathie Sudlow and colleagues describe the UK Biobank, a large population-based prospective study, established to allow investigation of the genetic and non-genetic determinants of the diseases of middle and old age.",
+      "cited_by_count": 12325,
+      "type": "article",
+      "source": {
+        "name": "PLoS Medicine",
+        "type": "journal",
+        "issn": [
+          "1549-1277",
+          "1549-1676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1001779&type=printable"
+      },
+      "topics": [
+        "Genetic Associations and Epidemiology",
+        "Nutrition, Genetics, and Disease",
+        "Health, Environment, Cognitive Aging"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2082704080"
+    },
+    {
+      "openalex_id": "W2908901670",
+      "doi": "10.3389/fpsyg.2018.02655",
+      "title": "Creative Arts Interventions to Address Depression in Older Adults: A Systematic Review of Outcomes, Processes, and Mechanisms",
+      "authors": [
+        {
+          "name": "Kim Dunphy",
+          "openalex_id": "A5073899083",
+          "orcid": "https://orcid.org/0000-0003-1464-2154",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Felicity Baker",
+          "openalex_id": "A5002530092",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Ella Dumaresq",
+          "openalex_id": "A5050228356",
+          "orcid": "https://orcid.org/0000-0002-4035-9929",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Katrina Carroll-Haskins",
+          "openalex_id": "A5060470289",
+          "orcid": "https://orcid.org/0000-0002-9074-6898",
+          "institutions": [
+            "Drexel University"
+          ]
+        },
+        {
+          "name": "Jasmin Eickholt",
+          "openalex_id": "A5063609015",
+          "orcid": "https://orcid.org/0000-0002-0189-4670",
+          "institutions": [
+            "University of Melbourne",
+            "Technical University of Applied Sciences W\u00fcrzburg-Schweinfurt"
+          ]
+        },
+        {
+          "name": "Maya Ercole",
+          "openalex_id": "A5067639243",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Girija Kaimal",
+          "openalex_id": "A5039318534",
+          "orcid": "https://orcid.org/0000-0002-7316-0473",
+          "institutions": [
+            "Drexel University"
+          ]
+        },
+        {
+          "name": "Kirsten Meyer",
+          "openalex_id": "A5062554225",
+          "orcid": "https://orcid.org/0000-0003-1891-1673",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Nisha Sajnani",
+          "openalex_id": "A5061837878",
+          "orcid": "https://orcid.org/0000-0001-5805-6179",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Opher Y. Shamir",
+          "openalex_id": "A5037568785",
+          "orcid": "https://orcid.org/0000-0002-4547-8644",
+          "institutions": [
+            "New York University"
+          ]
+        },
+        {
+          "name": "Thomas Wosch",
+          "openalex_id": "A5056033647",
+          "orcid": "https://orcid.org/0000-0002-9851-7133",
+          "institutions": [
+            "Technical University of Applied Sciences W\u00fcrzburg-Schweinfurt"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-08",
+      "abstract": "Depression experienced by older adults is proving an increasing global health burden, with rates generally 7% and as high as 27% in the USA. This is likely to significantly increase in coming years as the number and proportion of older adults in the population rises all around the world. Therefore, it is imperative that the effectiveness of approaches to the prevention and treatment of depression are understood. Creative arts interventions, including art, dance movement, drama, and music modalities, are utilized internationally to target depression and depressive symptoms in older adults. This includes interventions led by trained arts therapists as well as other health and arts professionals. However, to date there has not been a systematic review that reports effects and examines the processes (why) and mechanisms (how) of creative arts interventions are used to address depression in this older age group. This systematic review of studies on creative arts interventions for older adults experiencing depression examined: outcomes of four creative arts modalities (art, dance movement, drama, and music); with particular attention paid to processes documented as contributing to change in each modality; and mechanisms considered to result from these processes. Our analysis of 75 articles (17 art, 13 dance, 4 drama, and 41 music) indicates mostly significant quantitative or positive qualitative findings, particularly for interventions led by creative arts therapists. Mechanisms of change gleaned from the studies that were common across modalities include physical (e.g., increased muscle strength; neurochemical effects, such as endorphin release), intra-personal (e.g., enhanced self-concept, strengthened agency and mastery; processing and communication of emotions), cultural (e.g., creative expression, aesthetic pleasure), cognitive (e.g., stimulation of memory), and social (e.g., increased social skills and connection), that were all considered to contribute to reduced depression and symptoms. Recommendations for future research includes stronger focus on testing of processes and mechanisms.",
+      "cited_by_count": 211,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2018.02655/pdf"
+      },
+      "topics": [
+        "Art Therapy and Mental Health",
+        "Stroke Rehabilitation and Recovery",
+        "Music Therapy and Health"
+      ],
+      "referenced_works_count": 123,
+      "url": "https://openalex.org/W2908901670"
+    },
+    {
+      "openalex_id": "W3092849554",
+      "doi": "10.1016/s0140-6736(20)30925-9",
+      "title": "Global burden of 369 diseases and injuries in 204 countries and territories, 1990\u20132019: a systematic analysis for the Global Burden of Disease Study 2019",
+      "authors": [
+        {
+          "name": "Theo Vos",
+          "openalex_id": "A5007119101",
+          "orcid": "https://orcid.org/0000-0002-5690-5365"
+        },
+        {
+          "name": "Stephen S Lim",
+          "openalex_id": "A5112677199",
+          "orcid": "https://orcid.org/0009-0008-2734-3165"
+        },
+        {
+          "name": "Cristiana Abbafati",
+          "openalex_id": "A5022331752",
+          "orcid": "https://orcid.org/0000-0003-2811-6251"
+        },
+        {
+          "name": "Kaja Abbas",
+          "openalex_id": "A5020081921",
+          "orcid": "https://orcid.org/0000-0003-0563-1576"
+        },
+        {
+          "name": "Mohammad Abbasi",
+          "openalex_id": "A5103201651",
+          "orcid": "https://orcid.org/0000-0002-9261-9489"
+        },
+        {
+          "name": "Mitra Abbasifard",
+          "openalex_id": "A5016971429",
+          "orcid": "https://orcid.org/0000-0001-8149-8549"
+        },
+        {
+          "name": "Mohsen Abbasi\u2010Kangevari",
+          "openalex_id": "A5038454257",
+          "orcid": "https://orcid.org/0000-0001-8405-7482"
+        },
+        {
+          "name": "Hedayat Abbastabar",
+          "openalex_id": "A5039134870",
+          "orcid": "https://orcid.org/0000-0002-5713-4806"
+        },
+        {
+          "name": "Foad Abd-Allah",
+          "openalex_id": "A5081409858",
+          "orcid": "https://orcid.org/0000-0001-8308-5756"
+        },
+        {
+          "name": "Ahmed Abdelalim",
+          "openalex_id": "A5004128917",
+          "orcid": "https://orcid.org/0000-0001-6445-5539"
+        },
+        {
+          "name": "Mohammad Abdollah\u0131",
+          "openalex_id": "A5068915111",
+          "orcid": "https://orcid.org/0000-0003-0123-1209"
+        },
+        {
+          "name": "Ibrahim Abdollahpour",
+          "openalex_id": "A5015334869",
+          "orcid": "https://orcid.org/0000-0003-4364-9224"
+        },
+        {
+          "name": "Hassan Abolhassani",
+          "openalex_id": "A5051258190",
+          "orcid": "https://orcid.org/0000-0002-4838-0407"
+        },
+        {
+          "name": "Victor Aboyans",
+          "openalex_id": "A5114083534"
+        },
+        {
+          "name": "Elissa M. Abrams",
+          "openalex_id": "A5051803014",
+          "orcid": "https://orcid.org/0000-0003-3433-1986"
+        },
+        {
+          "name": "Lucas Guimar\u00e3es Abreu",
+          "openalex_id": "A5022099745"
+        },
+        {
+          "name": "Michael R.M. Abrigo",
+          "openalex_id": "A5073588344",
+          "orcid": "https://orcid.org/0000-0002-8187-4302"
+        },
+        {
+          "name": "Laith J. Abu\u2010Raddad",
+          "openalex_id": "A5014846631",
+          "orcid": "https://orcid.org/0000-0003-0790-0506"
+        },
+        {
+          "name": "Abdelrahman Ibrahim Abushouk",
+          "openalex_id": "A5024753707",
+          "orcid": "https://orcid.org/0000-0003-1399-6487"
+        },
+        {
+          "name": "Alyssa Acebedo",
+          "openalex_id": "A5058948939"
+        },
+        {
+          "name": "Ilana N. Ackerman",
+          "openalex_id": "A5053699466",
+          "orcid": "https://orcid.org/0000-0002-6028-1612"
+        },
+        {
+          "name": "Maryam Adabi",
+          "openalex_id": "A5026327806",
+          "orcid": "https://orcid.org/0000-0002-5083-9061"
+        },
+        {
+          "name": "Abdu A. Adamu",
+          "openalex_id": "A5075629581",
+          "orcid": "https://orcid.org/0000-0003-3317-1319"
+        },
+        {
+          "name": "Oladimeji Adebayo",
+          "openalex_id": "A5025832040",
+          "orcid": "https://orcid.org/0000-0001-7096-4460"
+        },
+        {
+          "name": "Victor Adekanmbi",
+          "openalex_id": "A5089232733",
+          "orcid": "https://orcid.org/0000-0002-7394-1640"
+        },
+        {
+          "name": "Jaimie D. Adelson",
+          "openalex_id": "A5111625147"
+        },
+        {
+          "name": "Olatunji Adetokunboh",
+          "openalex_id": "A5028307745",
+          "orcid": "https://orcid.org/0000-0002-4608-3951"
+        },
+        {
+          "name": "Davoud Adham",
+          "openalex_id": "A5089325874",
+          "orcid": "https://orcid.org/0000-0002-9764-6363"
+        },
+        {
+          "name": "Mahdi Afshari",
+          "openalex_id": "A5051692662",
+          "orcid": "https://orcid.org/0000-0002-3159-8741"
+        },
+        {
+          "name": "Ashkan Afshin",
+          "openalex_id": "A5028948429",
+          "orcid": "https://orcid.org/0000-0001-6239-8809"
+        },
+        {
+          "name": "Emilie Agardh",
+          "openalex_id": "A5066858273",
+          "orcid": "https://orcid.org/0000-0002-8408-1279"
+        },
+        {
+          "name": "Gina Agarwal",
+          "openalex_id": "A5054428913",
+          "orcid": "https://orcid.org/0000-0002-5691-4675"
+        },
+        {
+          "name": "Kareha M Agesa",
+          "openalex_id": "A5073195032"
+        },
+        {
+          "name": "Mohammad Aghaali",
+          "openalex_id": "A5030523667",
+          "orcid": "https://orcid.org/0000-0003-3417-1580"
+        },
+        {
+          "name": "Seyed Mohammad Kazem Aghamir",
+          "openalex_id": "A5054276792",
+          "orcid": "https://orcid.org/0000-0003-1611-0362"
+        },
+        {
+          "name": "Anurag Agrawal",
+          "openalex_id": "A5022120849",
+          "orcid": "https://orcid.org/0000-0002-0340-5252"
+        },
+        {
+          "name": "Tauseef Ahmad",
+          "openalex_id": "A5100647892",
+          "orcid": "https://orcid.org/0000-0001-8793-273X"
+        },
+        {
+          "name": "Alireza Ahmadi",
+          "openalex_id": "A5022776797",
+          "orcid": "https://orcid.org/0000-0001-8327-2420"
+        },
+        {
+          "name": "Mehdi Ahmadi",
+          "openalex_id": "A5100693052",
+          "orcid": "https://orcid.org/0000-0002-9227-7562"
+        },
+        {
+          "name": "Hamid Ahmadieh",
+          "openalex_id": "A5004513221",
+          "orcid": "https://orcid.org/0000-0002-8139-2661"
+        },
+        {
+          "name": "Ehsan Ahmadpour",
+          "openalex_id": "A5011598532",
+          "orcid": "https://orcid.org/0000-0003-1202-6147"
+        },
+        {
+          "name": "Temesgen Yihunie Akalu",
+          "openalex_id": "A5063768278",
+          "orcid": "https://orcid.org/0000-0002-0340-0443"
+        },
+        {
+          "name": "Rufus Akinyemi",
+          "openalex_id": "A5022954543",
+          "orcid": "https://orcid.org/0000-0001-5286-428X"
+        },
+        {
+          "name": "Tomi Akinyemiju",
+          "openalex_id": "A5074539440",
+          "orcid": "https://orcid.org/0000-0002-1412-3234"
+        },
+        {
+          "name": "Blessing Akombi-Inyang",
+          "openalex_id": "A5019189772",
+          "orcid": "https://orcid.org/0000-0002-6410-4154"
+        },
+        {
+          "name": "Ziyad Al\u2010Aly",
+          "openalex_id": "A5047490642",
+          "orcid": "https://orcid.org/0000-0002-2600-0434"
+        },
+        {
+          "name": "Khurshid Alam",
+          "openalex_id": "A5061878115",
+          "orcid": "https://orcid.org/0000-0002-7402-7519"
+        },
+        {
+          "name": "Noore Alam",
+          "openalex_id": "A5085634981",
+          "orcid": "https://orcid.org/0000-0002-1150-7582"
+        },
+        {
+          "name": "Hanne Christensen",
+          "openalex_id": "A5026526616",
+          "orcid": "https://orcid.org/0000-0002-7472-3194"
+        },
+        {
+          "name": "Shazia Alam",
+          "openalex_id": "A5101711502",
+          "orcid": "https://orcid.org/0000-0003-2606-9463"
+        },
+        {
+          "name": "Thomas Truelsen",
+          "openalex_id": "A5044800937",
+          "orcid": "https://orcid.org/0000-0001-6648-7761"
+        },
+        {
+          "name": "Shazia Alam",
+          "openalex_id": "A5101711502",
+          "orcid": "https://orcid.org/0000-0003-2606-9463"
+        },
+        {
+          "name": "Turki M Alanzi",
+          "openalex_id": "A5043822651",
+          "orcid": "https://orcid.org/0000-0001-6598-1274"
+        },
+        {
+          "name": "Samuel B Albertson",
+          "openalex_id": "A5050954407"
+        },
+        {
+          "name": "Jacqueline Elizabeth Alcalde\u2010Rabanal",
+          "openalex_id": "A5061311900",
+          "orcid": "https://orcid.org/0000-0002-9172-2302"
+        },
+        {
+          "name": "Niguse Meles Alema",
+          "openalex_id": "A5075507875",
+          "orcid": "https://orcid.org/0000-0003-3439-4688"
+        },
+        {
+          "name": "Muhammad Ali",
+          "openalex_id": "A5042386888",
+          "orcid": "https://orcid.org/0000-0002-3393-6222"
+        },
+        {
+          "name": "Saqib Ali",
+          "openalex_id": "A5022947458",
+          "orcid": "https://orcid.org/0000-0001-7905-7306"
+        },
+        {
+          "name": "Gianfranco Alicandro",
+          "openalex_id": "A5006260823",
+          "orcid": "https://orcid.org/0000-0002-0430-2714"
+        },
+        {
+          "name": "Mehran Alijanzadeh",
+          "openalex_id": "A5084483965"
+        },
+        {
+          "name": "Cyrus Alinia",
+          "openalex_id": "A5113912805"
+        },
+        {
+          "name": "Vahid Alipour",
+          "openalex_id": "A5107926219"
+        },
+        {
+          "name": "Syed Mohamed Aljunid",
+          "openalex_id": "A5029961086",
+          "orcid": "https://orcid.org/0000-0002-0380-1335"
+        },
+        {
+          "name": "Fran\u00e7ois Alla",
+          "openalex_id": "A5026413767",
+          "orcid": "https://orcid.org/0000-0002-5793-7190"
+        },
+        {
+          "name": "Peter Alle\u00adbeck",
+          "openalex_id": "A5011524331",
+          "orcid": "https://orcid.org/0000-0002-2778-6467"
+        },
+        {
+          "name": "Amir Almasi\u2010Hashiani",
+          "openalex_id": "A5100781180",
+          "orcid": "https://orcid.org/0000-0003-4434-561X"
+        },
+        {
+          "name": "Jordi Alonso",
+          "openalex_id": "A5002758767",
+          "orcid": "https://orcid.org/0000-0001-8627-9636"
+        },
+        {
+          "name": "Rajaa Al\u2010Raddadi",
+          "openalex_id": "A5035907008",
+          "orcid": "https://orcid.org/0000-0002-8921-9628"
+        },
+        {
+          "name": "Khalid A Altirkawi",
+          "openalex_id": "A5068032683",
+          "orcid": "https://orcid.org/0000-0002-7331-4196"
+        },
+        {
+          "name": "Nelson Alvis\u2010Guzm\u00e1n",
+          "openalex_id": "A5078832673",
+          "orcid": "https://orcid.org/0000-0001-9458-864X"
+        },
+        {
+          "name": "Nelson J Alvis-Zakzuk",
+          "openalex_id": "A5085934063",
+          "orcid": "https://orcid.org/0000-0001-9382-214X"
+        },
+        {
+          "name": "GK Mini",
+          "openalex_id": "A5030094802",
+          "orcid": "https://orcid.org/0000-0003-2775-629X"
+        },
+        {
+          "name": "Mostafa Amini\u2010Rarani",
+          "openalex_id": "A5017054765",
+          "orcid": "https://orcid.org/0000-0002-4809-2237"
+        },
+        {
+          "name": "Arya Aminorroaya",
+          "openalex_id": "A5062037359",
+          "orcid": "https://orcid.org/0000-0003-3197-2657"
+        },
+        {
+          "name": "Fatemeh Amiri",
+          "openalex_id": "A5012235172",
+          "orcid": "https://orcid.org/0000-0002-4082-1060"
+        },
+        {
+          "name": "Arianna Maever L. Amit",
+          "openalex_id": "A5048877321",
+          "orcid": "https://orcid.org/0000-0003-4571-400X"
+        },
+        {
+          "name": "Dickson A Amugsi",
+          "openalex_id": "A5037982462",
+          "orcid": "https://orcid.org/0000-0002-5261-8481"
+        },
+        {
+          "name": "Gianna Gayle Herrera Amul",
+          "openalex_id": "A5032495968",
+          "orcid": "https://orcid.org/0000-0002-4197-9601"
+        },
+        {
+          "name": "Deanna Anderlini",
+          "openalex_id": "A5050120227",
+          "orcid": "https://orcid.org/0000-0003-4594-2125"
+        },
+        {
+          "name": "C\u0103t\u0103lina Liliana Andrei",
+          "openalex_id": "A5015796792",
+          "orcid": "https://orcid.org/0000-0003-4990-0205"
+        },
+        {
+          "name": "Tudorel Andrei",
+          "openalex_id": "A5016293332",
+          "orcid": "https://orcid.org/0000-0003-1203-7612"
+        },
+        {
+          "name": "Mina Anjomshoa",
+          "openalex_id": "A5009283382"
+        },
+        {
+          "name": "Fereshteh Ansari",
+          "openalex_id": "A5006820691",
+          "orcid": "https://orcid.org/0000-0001-8554-1276"
+        },
+        {
+          "name": "Iman Ansari",
+          "openalex_id": "A5013651350",
+          "orcid": "https://orcid.org/0000-0001-9597-653X"
+        },
+        {
+          "name": "Alireza Ansari\u2010Moghaddam",
+          "openalex_id": "A5110997178",
+          "orcid": "https://orcid.org/0000-0002-3267-7193"
+        },
+        {
+          "name": "Carl Abelardo T Antonio",
+          "openalex_id": "A5112522986"
+        },
+        {
+          "name": "Catherine M Antony",
+          "openalex_id": "A5113963958"
+        },
+        {
+          "name": "Ernoiz Antriyandarti",
+          "openalex_id": "A5048448601",
+          "orcid": "https://orcid.org/0000-0002-0948-4000"
+        },
+        {
+          "name": "Davood Anvari",
+          "openalex_id": "A5050473276",
+          "orcid": "https://orcid.org/0000-0003-1021-4347"
+        },
+        {
+          "name": "Razique Anwer",
+          "openalex_id": "A5047221475",
+          "orcid": "https://orcid.org/0000-0002-9223-1951"
+        },
+        {
+          "name": "Jalal Arabloo",
+          "openalex_id": "A5011663896",
+          "orcid": "https://orcid.org/0000-0003-1223-4528"
+        },
+        {
+          "name": "Morteza Arab\u2010Zozani",
+          "openalex_id": "A5049582382",
+          "orcid": "https://orcid.org/0000-0001-7223-6707"
+        },
+        {
+          "name": "Aleksandr Y. Aravkin",
+          "openalex_id": "A5091863515",
+          "orcid": "https://orcid.org/0000-0002-1875-1801"
+        },
+        {
+          "name": "Filippo Ariani",
+          "openalex_id": "A5010206657",
+          "orcid": "https://orcid.org/0000-0002-0504-1712"
+        },
+        {
+          "name": "Johan \u00c4rnl\u00f6v",
+          "openalex_id": "A5044523693",
+          "orcid": "https://orcid.org/0000-0002-6933-4637"
+        },
+        {
+          "name": "Kavumpurathu Raman Thankappan",
+          "openalex_id": "A5090932299",
+          "orcid": "https://orcid.org/0009-0006-0883-3623"
+        },
+        {
+          "name": "Afsaneh Arzani",
+          "openalex_id": "A5065404687",
+          "orcid": "https://orcid.org/0000-0002-0562-4176"
+        },
+        {
+          "name": "Mehran Asadi-Aliabadi",
+          "openalex_id": "A5070246213",
+          "orcid": "https://orcid.org/0000-0003-1582-5489"
+        },
+        {
+          "name": "Ali A. Asadi\u2010Pooya",
+          "openalex_id": "A5077743551",
+          "orcid": "https://orcid.org/0000-0002-2598-7601"
+        },
+        {
+          "name": "Babak Asghari",
+          "openalex_id": "A5078926615",
+          "orcid": "https://orcid.org/0000-0002-4038-9618"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-01",
+      "abstract": null,
+      "cited_by_count": 18066,
+      "type": "article",
+      "source": {
+        "name": "The Lancet",
+        "type": "journal",
+        "issn": [
+          "0140-6736",
+          "1474-547X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "http://www.thelancet.com/article/S0140673620309259/pdf"
+      },
+      "topics": [
+        "Climate Change and Health Impacts",
+        "Healthcare cost, quality, practices",
+        "Global Public Health Policies and Epidemiology"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W3092849554"
+    },
+    {
+      "openalex_id": "W3049715998",
+      "doi": "10.3389/fdata.2020.00027",
+      "title": "Embodied Predictions, Agency, and Psychosis",
+      "authors": [
+        {
+          "name": "Pantelis Leptourgos",
+          "openalex_id": "A5013441165",
+          "orcid": "https://orcid.org/0000-0002-0801-5501",
+          "institutions": [
+            "Yale University",
+            "Connecticut Mental Health Center"
+          ]
+        },
+        {
+          "name": "Philip R. Corlett",
+          "openalex_id": "A5045479268",
+          "orcid": "https://orcid.org/0000-0002-5368-1992",
+          "institutions": [
+            "Connecticut Mental Health Center",
+            "Yale University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-14",
+      "abstract": "Psychotic symptoms, i.e., hallucinations and delusions, involve gross departures from conscious apprehension of consensual reality; respectively, perceiving and believing things that, according to same culture peers, do not obtain. In schizophrenia, those experiences are often related to abnormal sense of control over one's own actions, often expressed as a distorted sense of agency (i.e., passivity symptoms). Cognitive and computational neuroscience have furnished an account of these experiences and beliefs in terms of the brain's generative model of the world, which underwrites inferences to the best explanation of current and future states, in order to behave adaptively. Inference then involves a reliability-based trade off of predictions and prediction errors, and psychotic symptoms may arise as departures from this inference process, either an over- or under-weighting of priors relative to prediction errors. Surprisingly, there is empirical evidence in favor of both positions. Relatedly, there is evidence for both an enhanced and a diminished sense of agency in schizophrenia. How can this be? We argue that there is more than one generative model in the brain, and that ego- and allo-centric models operate in tandem. In brief, ego-centric models implement corollary discharge signals that cancel out the effects of self-generated actions while allo-centric models compare several hypothesis regarding the causes of sensory inputs (including the self among the potential causes). The two parallel hierarchies give rise to different levels of agency, with ego-centric models subserving \"feelings of agency\" and allo-centric predictions giving rise to \"judgements of agency.\" Those two components are weighted according to their reliability and combined, generating a higher-level \"sense of agency.\" We suggest that in schizophrenia a failure of corollary discharges to suppress self-generated inputs results in the absence of a \"feeling of agency\" and in a compensatory enhancement of allo-centric priors, which might underlie hallucinations, delusions of control but also, under certain circumstances, the enhancement of \"judgments of agency.\" We discuss the consequences of such a model, and potential courses of action that could lead to its falsification.",
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Big Data",
+        "type": "journal",
+        "issn": [
+          "2624-909X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fdata.2020.00027/pdf"
+      },
+      "topics": [
+        "Mental Health and Psychiatry",
+        "Psychosomatic Disorders and Their Treatments",
+        "Free Will and Agency"
+      ],
+      "referenced_works_count": 130,
+      "url": "https://openalex.org/W3049715998"
+    },
+    {
+      "openalex_id": "W2471707359",
+      "doi": "10.1017/s026021051600019x",
+      "title": "The problem of change in constructivist theory: Ontological security seeking and agent motivation",
+      "authors": [
+        {
+          "name": "Trine Flockhart",
+          "openalex_id": "A5051312091",
+          "orcid": "https://orcid.org/0000-0002-3709-2493",
+          "institutions": [
+            "University of Kent"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-07-01",
+      "abstract": "Abstract Constructivism has a problem in accounting for agent-led change and for what motivates agents to make up their minds about how to put their agency to use. I show that constructivism\u2019s problem of change is related to tensions between constructivism\u2019s own key assumptions about the mutually constitutive relationship between structure and agency, understanding of change and to an essentialist conception of identity. I argue that agency is constituted through processes of \u2018identification\u2019 involving identity and narrative constructions and performance through practice and action. I make the perhaps controversial move to regard ontological security as a precondition for agent-led change and to identify ontological security maximisation as functionally equivalent to rationalist theories\u2019 agent assumption of utility maximisation. I identify two strategies for maximising ontological security: a \u2018strategy of being\u2019 to secure a stable and esteem-enhancing identity and a strong narrative; and a \u2018strategy of doing\u2019 to ensure cognitive consistency through routinised practice whilst also undertaking action contributing to a sense of integrity and pride. The article concludes that although humans are endowed with agency, their actual ability to utilise their agency is severely constrained by their need for maintaining ontological security, which may explain why change appears so difficult to achieve.",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "Review of International Studies",
+        "type": "journal",
+        "issn": [
+          "0260-2105",
+          "1469-9044"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Embodied and Extended Cognition",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 92,
+      "url": "https://openalex.org/W2471707359"
+    },
+    {
+      "openalex_id": "W2772411892",
+      "doi": "10.1186/s13012-017-0684-7",
+      "title": "Feasibility and acceptability of two incentive-based implementation strategies for mental health therapists implementing cognitive-behavioral therapy: a pilot study to inform a randomized controlled trial",
+      "authors": [
+        {
+          "name": "Rinad S. Beidas",
+          "openalex_id": "A5004895406",
+          "orcid": "https://orcid.org/0000-0001-6056-6071",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Emily M. Becker\u2010Haimes",
+          "openalex_id": "A5059106179",
+          "orcid": "https://orcid.org/0000-0002-9922-8667",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Danielle R. Adams",
+          "openalex_id": "A5000672282",
+          "orcid": "https://orcid.org/0000-0002-3892-989X",
+          "institutions": [
+            "University of Chicago",
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Laura C. Skriner",
+          "openalex_id": "A5050289259",
+          "orcid": "https://orcid.org/0000-0001-6568-0199",
+          "institutions": [
+            "Cornell University",
+            "University of Pennsylvania",
+            "Presbyterian Hospital"
+          ]
+        },
+        {
+          "name": "Rebecca E. Stewart",
+          "openalex_id": "A5007411237",
+          "orcid": "https://orcid.org/0000-0002-6453-6715",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Courtney Benjamin Wolk",
+          "openalex_id": "A5054537467",
+          "orcid": "https://orcid.org/0000-0001-9542-2801",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Alison M. Buttenheim",
+          "openalex_id": "A5042386213",
+          "orcid": "https://orcid.org/0000-0003-2432-1637",
+          "institutions": [
+            "Community Initiatives",
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Nathaniel J. Williams",
+          "openalex_id": "A5047725733",
+          "orcid": "https://orcid.org/0000-0002-3948-7480",
+          "institutions": [
+            "Boise State University"
+          ]
+        },
+        {
+          "name": "Patricia Inacker",
+          "openalex_id": "A5005275846"
+        },
+        {
+          "name": "Elizabeth Richey",
+          "openalex_id": "A5036848051",
+          "institutions": [
+            "Children\u2019s Village"
+          ]
+        },
+        {
+          "name": "Steven C. Marcus",
+          "openalex_id": "A5091820260",
+          "orcid": "https://orcid.org/0000-0001-7819-3824",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-01",
+      "abstract": null,
+      "cited_by_count": 51,
+      "type": "article",
+      "source": {
+        "name": "Implementation Science",
+        "type": "journal",
+        "issn": [
+          "1748-5908"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://implementationscience.biomedcentral.com/track/pdf/10.1186/s13012-017-0684-7"
+      },
+      "topics": [
+        "Health Policy Implementation Science",
+        "Child and Adolescent Psychosocial and Emotional Development",
+        "Digital Mental Health Interventions"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W2772411892"
+    },
+    {
+      "openalex_id": "W3005634335",
+      "doi": "10.1007/s41465-020-00167-3",
+      "title": "A Review of US Army Research Contributing to Cognitive Enhancement in Military Contexts",
+      "authors": [
+        {
+          "name": "Tad T. Bruny\u00e9",
+          "openalex_id": "A5030033190",
+          "orcid": "https://orcid.org/0000-0002-8788-8764",
+          "institutions": [
+            "United States Army Combat Capabilities Development Command"
+          ]
+        },
+        {
+          "name": "Randy J. Brou",
+          "openalex_id": "A5015883154",
+          "institutions": [
+            "United States Army",
+            "U.S. Army Research Institute for the Behavioral and Social Sciences"
+          ]
+        },
+        {
+          "name": "Tracy Jill Doty",
+          "openalex_id": "A5019791528",
+          "orcid": "https://orcid.org/0000-0001-9921-2457",
+          "institutions": [
+            "Walter Reed Army Institute of Research"
+          ]
+        },
+        {
+          "name": "Frederick D. Gregory",
+          "openalex_id": "A5104357312"
+        },
+        {
+          "name": "Erika K. Hussey",
+          "openalex_id": "A5009901092",
+          "orcid": "https://orcid.org/0000-0002-9782-5943",
+          "institutions": [
+            "Tufts University"
+          ]
+        },
+        {
+          "name": "Harris R. Lieberman",
+          "openalex_id": "A5014750352",
+          "orcid": "https://orcid.org/0000-0002-1519-0156",
+          "institutions": [
+            "U.S. Army Research Institute of Environmental Medicine",
+            "United States Army"
+          ]
+        },
+        {
+          "name": "Kari L. Loverro",
+          "openalex_id": "A5112452182",
+          "institutions": [
+            "United States Army Combat Capabilities Development Command"
+          ]
+        },
+        {
+          "name": "Elizabeth Mezzacappa",
+          "openalex_id": "A5080100191",
+          "orcid": "https://orcid.org/0000-0002-5243-2732",
+          "institutions": [
+            "United States Army Combat Capabilities Development Command"
+          ]
+        },
+        {
+          "name": "William H. Neumeier",
+          "openalex_id": "A5020374089",
+          "orcid": "https://orcid.org/0000-0002-5588-0477",
+          "institutions": [
+            "United States Army",
+            "U.S. Army Research Institute of Environmental Medicine"
+          ]
+        },
+        {
+          "name": "Debra J. Patton",
+          "openalex_id": "A5053823078",
+          "institutions": [
+            "United States Army Combat Capabilities Development Command"
+          ]
+        },
+        {
+          "name": "Jason W. Soares",
+          "openalex_id": "A5084685591",
+          "orcid": "https://orcid.org/0009-0006-1130-3420",
+          "institutions": [
+            "United States Army Combat Capabilities Development Command"
+          ]
+        },
+        {
+          "name": "Thaddeus P. Thomas",
+          "openalex_id": "A5048397381",
+          "orcid": "https://orcid.org/0000-0002-5817-9846",
+          "institutions": [
+            "United States Army Combat Capabilities Development Command",
+            "U.S. Army Combat Capabilities Development Command Armaments Center"
+          ]
+        },
+        {
+          "name": "Alfred B. Yu",
+          "openalex_id": "A5110586485",
+          "institutions": [
+            "U.S. Army Combat Capabilities Development Command Armaments Center",
+            "United States Army Combat Capabilities Development Command"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-12",
+      "abstract": null,
+      "cited_by_count": 63,
+      "type": "review",
+      "source": {
+        "name": "Journal of Cognitive Enhancement",
+        "type": "journal",
+        "issn": [
+          "2509-3290",
+          "2509-3304"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Cognitive Abilities and Testing",
+        "Neural and Behavioral Psychology Studies"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W3005634335"
+    },
+    {
+      "openalex_id": "W4281486035",
+      "doi": "10.1016/j.cnp.2022.05.002",
+      "title": "Non-invasive brain stimulation and neuroenhancement",
+      "authors": [
+        {
+          "name": "Andrea Antal",
+          "openalex_id": "A5048523093",
+          "orcid": "https://orcid.org/0000-0001-9671-8946",
+          "institutions": [
+            "University of G\u00f6ttingen",
+            "Universit\u00e4tsmedizin G\u00f6ttingen"
+          ]
+        },
+        {
+          "name": "Bruce Luber",
+          "openalex_id": "A5103575243",
+          "orcid": "https://orcid.org/0000-0001-5183-293X",
+          "institutions": [
+            "National Institute of Mental Health"
+          ]
+        },
+        {
+          "name": "Anna\u2010Katharine Brem",
+          "openalex_id": "A5007764412",
+          "orcid": "https://orcid.org/0000-0003-0295-6834",
+          "institutions": [
+            "University of Bern",
+            "King's College London",
+            "University Hospital of Bern"
+          ]
+        },
+        {
+          "name": "Marom Bikson",
+          "openalex_id": "A5025915090",
+          "orcid": "https://orcid.org/0000-0002-0493-8333",
+          "institutions": [
+            "City College of New York"
+          ]
+        },
+        {
+          "name": "Andr\u00e9 R. Brunoni",
+          "openalex_id": "A5063506824",
+          "orcid": "https://orcid.org/0000-0002-6310-3571",
+          "institutions": [
+            "Hospital das Cl\u00ednicas da Faculdade de Medicina da Universidade de S\u00e3o Paulo"
+          ]
+        },
+        {
+          "name": "Roi Cohen Kadosh",
+          "openalex_id": "A5078356087",
+          "orcid": "https://orcid.org/0000-0002-5564-5469",
+          "institutions": [
+            "University of Surrey"
+          ]
+        },
+        {
+          "name": "Veljko Dubljevi\u0107",
+          "openalex_id": "A5049798044",
+          "orcid": "https://orcid.org/0000-0003-3606-587X",
+          "institutions": [
+            "North Carolina State University"
+          ]
+        },
+        {
+          "name": "Shirley Fecteau",
+          "openalex_id": "A5051997495",
+          "orcid": "https://orcid.org/0000-0002-9781-4451",
+          "institutions": [
+            "Universit\u00e9 Laval"
+          ]
+        },
+        {
+          "name": "Florinda Ferreri",
+          "openalex_id": "A5004503638",
+          "orcid": "https://orcid.org/0000-0002-7938-905X",
+          "institutions": [
+            "Kuopio University Hospital",
+            "University of Eastern Finland",
+            "University of Padua"
+          ]
+        },
+        {
+          "name": "Agnes Fl\u00f6el",
+          "openalex_id": "A5041380550",
+          "orcid": "https://orcid.org/0000-0002-1475-5872",
+          "institutions": [
+            "Universit\u00e4tsmedizin Greifswald",
+            "German Center for Neurodegenerative Diseases"
+          ]
+        },
+        {
+          "name": "Mark Hallett",
+          "openalex_id": "A5108525535",
+          "institutions": [
+            "National Institute of Neurological Disorders and Stroke",
+            "National Institutes of Health"
+          ]
+        },
+        {
+          "name": "Roy H. Hamilton",
+          "openalex_id": "A5053000100",
+          "orcid": "https://orcid.org/0000-0001-8400-0726",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Christoph S. Herrmann",
+          "openalex_id": "A5087111784",
+          "orcid": "https://orcid.org/0000-0003-0323-2272",
+          "institutions": [
+            "Carl von Ossietzky Universit\u00e4t Oldenburg"
+          ]
+        },
+        {
+          "name": "Michal Lavidor",
+          "openalex_id": "A5083291108",
+          "orcid": "https://orcid.org/0000-0003-3965-0257",
+          "institutions": [
+            "Bar-Ilan University"
+          ]
+        },
+        {
+          "name": "Collen Loo",
+          "openalex_id": "A5107600266",
+          "institutions": [
+            "George Institute for Global Health",
+            "Black Dog Institute",
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Caroline Lustenberger",
+          "openalex_id": "A5014703934",
+          "orcid": "https://orcid.org/0000-0001-6243-8831",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "S\u00e9rgio Machado",
+          "openalex_id": "A5044288506",
+          "orcid": "https://orcid.org/0000-0001-8946-8467",
+          "institutions": [
+            "Universidade Federal de Santa Maria"
+          ]
+        },
+        {
+          "name": "Carlo Miniussi",
+          "openalex_id": "A5027399570",
+          "orcid": "https://orcid.org/0000-0002-5436-4745",
+          "institutions": [
+            "University of Trento"
+          ]
+        },
+        {
+          "name": "Vera Moliadze",
+          "openalex_id": "A5019114128",
+          "orcid": "https://orcid.org/0000-0002-9072-6539",
+          "institutions": [
+            "Kiel University"
+          ]
+        },
+        {
+          "name": "Michael A. Nitsche",
+          "openalex_id": "A5052849808",
+          "orcid": "https://orcid.org/0000-0002-2207-5965",
+          "institutions": [
+            "TU Dortmund University",
+            "BG University Hospital Bergmannsheil Bochum",
+            "Leibniz Research Centre for Working Environment and Human Factors"
+          ]
+        },
+        {
+          "name": "S\u00edmone Rossi",
+          "openalex_id": "A5085936196",
+          "orcid": "https://orcid.org/0000-0001-6697-9459",
+          "institutions": [
+            "University of Siena"
+          ]
+        },
+        {
+          "name": "Paolo Maria Rossini",
+          "openalex_id": "A5035394476",
+          "orcid": "https://orcid.org/0000-0003-2665-534X"
+        },
+        {
+          "name": "Emiliano Santarnecchi",
+          "openalex_id": "A5007618142",
+          "orcid": "https://orcid.org/0000-0002-6533-7427",
+          "institutions": [
+            "Massachusetts General Hospital",
+            "Gordon Center for Medical Imaging",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Margitta Seeck",
+          "openalex_id": "A5053828831",
+          "orcid": "https://orcid.org/0000-0002-6702-0167"
+        },
+        {
+          "name": "Gregor Thut",
+          "openalex_id": "A5048392151",
+          "orcid": "https://orcid.org/0000-0003-1313-4262"
+        },
+        {
+          "name": "Zsolt Turi",
+          "openalex_id": "A5085037258",
+          "orcid": "https://orcid.org/0000-0002-8130-7949",
+          "institutions": [
+            "University of Freiburg"
+          ]
+        },
+        {
+          "name": "Yoshikazu Ugawa",
+          "openalex_id": "A5040602448",
+          "orcid": "https://orcid.org/0000-0002-8016-152X",
+          "institutions": [
+            "Fukushima Medical University"
+          ]
+        },
+        {
+          "name": "Ganesan Venkatasubramanian",
+          "openalex_id": "A5047157394",
+          "orcid": "https://orcid.org/0000-0002-0949-898X",
+          "institutions": [
+            "National Institute of Mental Health and Neurosciences"
+          ]
+        },
+        {
+          "name": "Nicole Wenderoth",
+          "openalex_id": "A5054708623",
+          "orcid": "https://orcid.org/0000-0002-3246-9386",
+          "institutions": [
+            "Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen",
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Anna Wexler",
+          "openalex_id": "A5114375005",
+          "orcid": "https://orcid.org/0000-0002-6723-9038",
+          "institutions": [
+            "University of Bern",
+            "University of Pennsylvania",
+            "King's College London",
+            "University Hospital of Bern"
+          ]
+        },
+        {
+          "name": "Ulf Ziemann",
+          "openalex_id": "A5070374515",
+          "orcid": "https://orcid.org/0000-0001-8372-3615",
+          "institutions": [
+            "Hertie Institute for Clinical Brain Research",
+            "University of T\u00fcbingen"
+          ]
+        },
+        {
+          "name": "Walter Paulus",
+          "openalex_id": "A5080015386",
+          "orcid": "https://orcid.org/0000-0001-5549-8377",
+          "institutions": [
+            "University of T\u00fcbingen",
+            "Hertie Institute for Clinical Brain Research",
+            "Ludwig-Maximilians-Universit\u00e4t M\u00fcnchen"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": null,
+      "cited_by_count": 195,
+      "type": "review",
+      "source": {
+        "name": "Clinical Neurophysiology Practice",
+        "type": "journal",
+        "issn": [
+          "2467-981X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://doi.org/10.1016/j.cnp.2022.05.002"
+      },
+      "topics": [
+        "Transcranial Magnetic Stimulation Studies",
+        "Neurological disorders and treatments",
+        "EEG and Brain-Computer Interfaces"
+      ],
+      "referenced_works_count": 325,
+      "url": "https://openalex.org/W4281486035"
+    },
+    {
+      "openalex_id": "W2790231203",
+      "doi": "10.1093/ageing/afy026",
+      "title": "Technology in geriatrics",
+      "authors": [
+        {
+          "name": "Alberto Pilotto",
+          "openalex_id": "A5101492770",
+          "orcid": "https://orcid.org/0000-0002-8615-1955",
+          "institutions": [
+            "Ente Ospedaliero Ospedali Galliera"
+          ]
+        },
+        {
+          "name": "Raffaella Boi",
+          "openalex_id": "A5024293140",
+          "institutions": [
+            "Ente Ospedaliero Ospedali Galliera"
+          ]
+        },
+        {
+          "name": "Jean P\u00e9termans",
+          "openalex_id": "A5019217343",
+          "institutions": [
+            "Centre Hospitalier Universitaire de Li\u00e8ge",
+            "University of Li\u00e8ge"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-03-01",
+      "abstract": "Recently, the interest of industry, government agencies and healthcare professionals in technology for aging people has increased. The challenge is whether technology may play a role in enhancing independence and quality of life and in reducing individual and societal costs of caring. Information and communication technologies, i.e. tools aimed at communicating and informing, assistive technologies designed to maintain older peoples' independence and increasing safety, and human-computer interaction technologies for supporting older people with motility and cognitive impairments as humanoid robots, exoskeletons, rehabilitation robots, service robots and companion-type are interdisciplinary topics both in research and in clinical practice. The most promising clinical applications of technologies are housing and safety to guarantee older people remaining in their own homes and communities, mobility and rehabilitation to improve mobility and gait and communication and quality of life by reducing isolation, improve management of medications and transportation. Many factors impair a broad use of technology in older age, including psychosocial and ethical issues, costs and fear of losing human interaction. A substantial lack of appropriate clinical trials to establish the clinical role of technologies to improve physical or cognitive performances and/or quality of life of subjects and their caregivers may suggest that the classical biomedical research model may not be the optimal choice to evaluate technologies in older people. In conclusion, successful technology development requires a great effort in interdisciplinary collaboration to integrate technologies into the existing health and social service systems with the aim to fit into the older adults' everyday life.",
+      "cited_by_count": 90,
+      "type": "article",
+      "source": {
+        "name": "Age and Ageing",
+        "type": "journal",
+        "issn": [
+          "0002-0729",
+          "1468-2834"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ageing/article-pdf/47/6/771/26174205/afy026.pdf"
+      },
+      "topics": [
+        "Technology Use by Older Adults",
+        "Context-Aware Activity Recognition Systems",
+        "Assistive Technology in Communication and Mobility"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W2790231203"
+    },
+    {
+      "openalex_id": "W2475819449",
+      "doi": "10.1007/s11948-016-9792-z",
+      "title": "Smart-Glasses: Exposing and Elucidating the Ethical Issues",
+      "authors": [
+        {
+          "name": "Bj\u00f8rn Hofmann",
+          "openalex_id": "A5058531157",
+          "orcid": "https://orcid.org/0000-0001-6709-4265",
+          "institutions": [
+            "Norwegian University of Science and Technology"
+          ]
+        },
+        {
+          "name": "Du\u0161an Haustein",
+          "openalex_id": "A5087541968",
+          "institutions": [
+            "University of West Bohemia"
+          ]
+        },
+        {
+          "name": "Laurens Landeweerd",
+          "openalex_id": "A5058418358",
+          "institutions": [
+            "OsloMet \u2013 Oslo Metropolitan University",
+            "Radboud University Nijmegen"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-07-18",
+      "abstract": null,
+      "cited_by_count": 81,
+      "type": "article",
+      "source": {
+        "name": "Science and Engineering Ethics",
+        "type": "journal",
+        "issn": [
+          "1353-3452",
+          "1471-5546"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hdl.handle.net/10642/5699"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Ethics and Social Impacts of AI",
+        "Innovative Human-Technology Interaction"
+      ],
+      "referenced_works_count": 164,
+      "url": "https://openalex.org/W2475819449"
+    },
+    {
+      "openalex_id": "W2901859262",
+      "doi": "10.1071/ah18064",
+      "title": "Going digital: a narrative overview of the effects, quality and utility of mobile apps in chronic disease self-management",
+      "authors": [
+        {
+          "name": "Ian Scott",
+          "openalex_id": "A5054848977",
+          "orcid": "https://orcid.org/0000-0002-7596-0837",
+          "institutions": [
+            "Princess Alexandra Hospital",
+            "Nova Scotia Health Authority"
+          ]
+        },
+        {
+          "name": "Paul Scuffham",
+          "openalex_id": "A5057811148",
+          "orcid": "https://orcid.org/0000-0001-5931-642X",
+          "institutions": [
+            "Griffith University"
+          ]
+        },
+        {
+          "name": "Deepali Gupta",
+          "openalex_id": "A5041600708",
+          "orcid": "https://orcid.org/0000-0002-6771-2534",
+          "institutions": [
+            "Princess Alexandra Hospital"
+          ]
+        },
+        {
+          "name": "Tanya M. Harch",
+          "openalex_id": "A5050494354"
+        },
+        {
+          "name": "John Borchi",
+          "openalex_id": "A5056658780"
+        },
+        {
+          "name": "Brent Richards",
+          "openalex_id": "A5067166627",
+          "orcid": "https://orcid.org/0000-0003-2613-0308",
+          "institutions": [
+            "Gold Coast Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-12",
+      "abstract": "Objective Smartphone health applications (apps) are being increasingly used to assist patients in chronic disease self-management. The effects of such apps on patient outcomes are uncertain, as are design features that maximise usability and efficacy, and the best methods for evaluating app quality and utility. Methods In assessing efficacy, PubMed, Cochrane Library and EMBASE were searched for systematic reviews (and single studies if no systematic review was available) published between January 2007 and January 2018 using search terms (and synonyms) of \u2018smartphone\u2019 and \u2018mobile applications\u2019, and terms for each of 11 chronic diseases: asthma, chronic obstructive lung disease (COPD), diabetes, chronic pain, serious mental health disorders, alcohol and substance addiction, heart failure, ischaemic heart disease, cancer, cognitive impairment, chronic kidney disease (CKD). With regard to design features and evaluation methods, additional reviews were sought using search terms \u2018design\u2019, \u2018quality,\u2019 \u2018usability\u2019, \u2018functionality,\u2019 \u2018adherence\u2019, \u2018evaluation\u2019 and related synonyms. Results Of 13 reviews and six single studies assessing efficacy, consistent evidence of benefit was seen only with apps for diabetes, as measured by decreased glycosylated haemoglobin levels (HbA1c). Some, but not all, studies showed benefit in asthma, low back pain, alcohol addiction, heart failure, ischaemic heart disease and cancer. There was no evidence of benefit in COPD, cognitive impairment or CKD. In all studies, benefits were clinically marginal and none related to morbid events or hospitalisation. Twelve design features were identified as enhancing usability. An evaluation framework comprising 32 items was formulated. Conclusion Evidence of clinical benefit of most available apps is very limited. Design features that enhance usability and maximise efficacy were identified. A provisional \u2018first-pass\u2019 evaluation framework is proposed that can help decide which apps should be endorsed by government agencies following more detailed technical assessments and which could then be recommended with confidence by clinicians to their patients. What is known about the topic? Smartphone health apps have attracted considerable interest from patients and health managers as a means of promoting more effective self-management of chronic diseases, which leads to better health outcomes. However, most commercially available apps have never been evaluated for benefits or harms in clinical trials, and there are currently no agreed quality criteria, standards or regulations to ensure health apps are user-friendly, accurate in content, evidence based or efficacious. What does this paper add? This paper presents a comprehensive review of evidence relating to the efficacy, usability and evaluation of apps for 11 common diseases aimed at assisting patients in self-management. Consistent evidence of benefit was only seen for diabetes apps; there was absent or conflicting evidence of benefit for apps for the remaining 10 diseases. Benefits that were detected were of marginal clinical importance, with no reporting of hard clinical end-points, such as mortality or hospitalisations. Only a minority of studies explicitly reported using behaviour change theories to underpin the app intervention. Many apps lacked design features that the literature identified as enhancing usability and potential to confer benefit. Despite a plethora of published evaluation tools, there is no universal framework that covers all relevant clinical and technical attributes. An inclusive list of evaluation criteria is proposed that may overcome this shortcoming. What are the implications for practitioners? The number of smartphone apps will continue to grow, as will the appetite for patients and clinicians to use them in chronic disease self-management. However, the evidence to date of clinical benefit of most apps already available is very limited. Design features that enhance usability and clinical efficacy need to be considered. In making decisions about which apps should be endorsed by government agencies and recommended with confidence by clinicians to their patients, a comprehensive but workable evaluation framework needs to be used by bodies assuming the roles of setting and applying standards.",
+      "cited_by_count": 128,
+      "type": "review",
+      "source": {
+        "name": "Australian Health Review",
+        "type": "journal",
+        "issn": [
+          "0156-5788",
+          "1449-8944"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.publish.csiro.au/ah/pdf/AH18064"
+      },
+      "topics": [
+        "Mobile Health and mHealth Applications",
+        "Digital Mental Health Interventions",
+        "Health Literacy and Information Accessibility"
+      ],
+      "referenced_works_count": 103,
+      "url": "https://openalex.org/W2901859262"
+    },
+    {
+      "openalex_id": "W2316354491",
+      "doi": "10.1007/s11097-016-9465-z",
+      "title": "How does it really feel to act together? Shared emotions and the phenomenology of we-agency",
+      "authors": [
+        {
+          "name": "Mikko Salmela",
+          "openalex_id": "A5002247996",
+          "orcid": "https://orcid.org/0000-0002-9988-3274",
+          "institutions": [
+            "University of Helsinki",
+            "Research Council of Finland"
+          ]
+        },
+        {
+          "name": "Michiru Nagatsu",
+          "openalex_id": "A5052551542",
+          "orcid": "https://orcid.org/0000-0001-6566-0307",
+          "institutions": [
+            "University of Helsinki",
+            "Research Council of Finland"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-31",
+      "abstract": null,
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Phenomenology and the Cognitive Sciences",
+        "type": "journal",
+        "issn": [
+          "1568-7759",
+          "1572-8676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10138/233125"
+      },
+      "topics": [
+        "Emotions and Moral Behavior",
+        "Mental Health and Psychiatry",
+        "Free Will and Agency"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W2316354491"
+    },
+    {
+      "openalex_id": "W3123893780",
+      "doi": "10.1136/bmj.n160",
+      "title": "PRISMA 2020 explanation and elaboration: updated guidance and exemplars for reporting systematic reviews",
+      "authors": [
+        {
+          "name": "Matthew J. Page",
+          "openalex_id": "A5089979303",
+          "orcid": "https://orcid.org/0000-0002-4242-7526",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "David Moher",
+          "openalex_id": "A5068353058",
+          "orcid": "https://orcid.org/0000-0003-2434-4206",
+          "institutions": [
+            "University of Ottawa",
+            "Ottawa Hospital Research Institute",
+            "Ottawa Hospital"
+          ]
+        },
+        {
+          "name": "Patrick M. Bossuyt",
+          "openalex_id": "A5061726857",
+          "orcid": "https://orcid.org/0000-0003-4427-0128",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        },
+        {
+          "name": "Isabelle Boutron",
+          "openalex_id": "A5065028933",
+          "orcid": "https://orcid.org/0000-0002-5263-6241",
+          "institutions": [
+            "Universit\u00e9 Paris Cit\u00e9",
+            "Inserm",
+            "Centre de Recherche \u00c9pid\u00e9miologie et Statistique"
+          ]
+        },
+        {
+          "name": "Tammy Hoffmann",
+          "openalex_id": "A5090700680",
+          "orcid": "https://orcid.org/0000-0001-5210-8548",
+          "institutions": [
+            "Bond University"
+          ]
+        },
+        {
+          "name": "Cynthia D. Mulrow",
+          "openalex_id": "A5031204654",
+          "orcid": "https://orcid.org/0000-0002-4768-4492",
+          "institutions": [
+            "Academy of Medicine",
+            "The University of Texas Health Science Center at San Antonio"
+          ]
+        },
+        {
+          "name": "Larissa Shamseer",
+          "openalex_id": "A5091561305",
+          "orcid": "https://orcid.org/0000-0003-3690-3378",
+          "institutions": [
+            "University of Ottawa",
+            "Li Ka Shing Foundation"
+          ]
+        },
+        {
+          "name": "Jennifer Tetzlaff",
+          "openalex_id": "A5076572041",
+          "orcid": "https://orcid.org/0000-0003-0787-5363"
+        },
+        {
+          "name": "Elie A. Akl",
+          "openalex_id": "A5041615321",
+          "orcid": "https://orcid.org/0000-0002-3444-8618",
+          "institutions": [
+            "American University of Beirut",
+            "McMaster University",
+            "Impact"
+          ]
+        },
+        {
+          "name": "Sue Brennan",
+          "openalex_id": "A5012486829",
+          "orcid": "https://orcid.org/0000-0003-1789-8809",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Roger Chou",
+          "openalex_id": "A5070442023",
+          "orcid": "https://orcid.org/0000-0001-9889-8610",
+          "institutions": [
+            "Oregon Health & Science University"
+          ]
+        },
+        {
+          "name": "Julie Glanville",
+          "openalex_id": "A5003504334",
+          "orcid": "https://orcid.org/0000-0002-1253-8524",
+          "institutions": [
+            "University of York",
+            "Leeds and York Partnership NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Jeremy Grimshaw",
+          "openalex_id": "A5054403907",
+          "orcid": "https://orcid.org/0000-0001-8015-8243",
+          "institutions": [
+            "University of Ottawa",
+            "Ottawa Hospital",
+            "Ottawa Hospital Research Institute"
+          ]
+        },
+        {
+          "name": "Asbj\u00f8rn Hr\u00f3bjartsson",
+          "openalex_id": "A5110728949",
+          "orcid": "https://orcid.org/0000-0002-2451-5012",
+          "institutions": [
+            "Odense University Hospital",
+            "University of Southern Denmark"
+          ]
+        },
+        {
+          "name": "Manoj M. Lalu",
+          "openalex_id": "A5007813511",
+          "orcid": "https://orcid.org/0000-0002-0322-382X",
+          "institutions": [
+            "Ottawa Hospital Research Institute",
+            "Ottawa Hospital"
+          ]
+        },
+        {
+          "name": "Tianjing Li",
+          "openalex_id": "A5072760500",
+          "orcid": "https://orcid.org/0000-0001-5371-4558",
+          "institutions": [
+            "University of Colorado Denver",
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Elizabeth Loder",
+          "openalex_id": "A5054045289",
+          "orcid": "https://orcid.org/0000-0003-1501-2947",
+          "institutions": [
+            "Brigham and Women's Hospital",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Evan Mayo\u2010Wilson",
+          "openalex_id": "A5055917772",
+          "orcid": "https://orcid.org/0000-0001-6126-2459",
+          "institutions": [
+            "Indiana University Bloomington"
+          ]
+        },
+        {
+          "name": "Steve McDonald",
+          "openalex_id": "A5074391235",
+          "orcid": "https://orcid.org/0000-0003-2832-5205",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Luke A. McGuinness",
+          "openalex_id": "A5037094305",
+          "orcid": "https://orcid.org/0000-0001-8730-9761",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Lesley Stewart",
+          "openalex_id": "A5082927689",
+          "orcid": "https://orcid.org/0000-0003-0287-4724",
+          "institutions": [
+            "University of York"
+          ]
+        },
+        {
+          "name": "James Thomas",
+          "openalex_id": "A5090183643",
+          "orcid": "https://orcid.org/0000-0003-4805-4190",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Andrea C. Tricco",
+          "openalex_id": "A5074901391",
+          "orcid": "https://orcid.org/0000-0002-4114-8971",
+          "institutions": [
+            "Queen's University",
+            "University of Toronto",
+            "St. Michael's Hospital",
+            "Unity Health Toronto",
+            "Public Health Ontario"
+          ]
+        },
+        {
+          "name": "Vivian Welch",
+          "openalex_id": "A5029006782",
+          "orcid": "https://orcid.org/0000-0002-5238-7097",
+          "institutions": [
+            "University of Ottawa",
+            "Bruy\u00e8re"
+          ]
+        },
+        {
+          "name": "Penny Whiting",
+          "openalex_id": "A5077388783",
+          "orcid": "https://orcid.org/0000-0003-1138-5682",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Joanne E. McKenzie",
+          "openalex_id": "A5015844348",
+          "orcid": "https://orcid.org/0000-0003-3534-1641",
+          "institutions": [
+            "Monash University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-29",
+      "abstract": "The methods and results of systematic reviews should be reported in sufficient detail to allow users to assess the trustworthiness and applicability of the review findings. The Preferred Reporting Items for Systematic reviews and Meta-Analyses (PRISMA) statement was developed to facilitate transparent and complete reporting of systematic reviews and has been updated (to PRISMA 2020) to reflect recent advances in systematic review methodology and terminology. Here, we present the explanation and elaboration paper for PRISMA 2020, where we explain why reporting of each item is recommended, present bullet points that detail the reporting recommendations, and present examples from published reviews. We hope that changes to the content and structure of PRISMA 2020 will facilitate uptake of the guideline and lead to more transparent, complete, and accurate reporting of systematic reviews.",
+      "cited_by_count": 9895,
+      "type": "article",
+      "source": {
+        "name": "BMJ",
+        "type": "journal",
+        "issn": [
+          "1756-1833"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.bmj.com/content/bmj/372/bmj.n160.full.pdf"
+      },
+      "topics": [
+        "Meta-analysis and systematic reviews",
+        "Traumatic Brain Injury Research",
+        "Delphi Technique in Research"
+      ],
+      "referenced_works_count": 217,
+      "url": "https://openalex.org/W3123893780"
+    },
+    {
+      "openalex_id": "W3119955948",
+      "doi": "10.3758/s13423-020-01849-x",
+      "title": "Having a sense of agency can improve memory",
+      "authors": [
+        {
+          "name": "Nicholas Hon",
+          "openalex_id": "A5005070476",
+          "orcid": "https://orcid.org/0000-0002-8901-2037",
+          "institutions": [
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Nicholas Yeo",
+          "openalex_id": "A5113929333",
+          "institutions": [
+            "National University of Singapore"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-07",
+      "abstract": null,
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "Psychonomic Bulletin & Review",
+        "type": "journal",
+        "issn": [
+          "1069-9384",
+          "1531-5320"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.3758/s13423-020-01849-x.pdf"
+      },
+      "topics": [
+        "Free Will and Agency",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Psychosomatic Disorders and Their Treatments"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W3119955948"
+    },
+    {
+      "openalex_id": "W3046275966",
+      "doi": "10.1016/s0140-6736(20)30367-6",
+      "title": "Dementia prevention, intervention, and care: 2020 report of the Lancet Commission",
+      "authors": [
+        {
+          "name": "Gill Livingston",
+          "openalex_id": "A5068994533",
+          "orcid": "https://orcid.org/0000-0001-6741-5516",
+          "institutions": [
+            "University College London",
+            "Camden and Islington NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Jonathan Huntley",
+          "openalex_id": "A5074999126",
+          "orcid": "https://orcid.org/0000-0001-6304-6231",
+          "institutions": [
+            "University College London",
+            "Camden and Islington NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Andrew Sommerlad",
+          "openalex_id": "A5084818858",
+          "orcid": "https://orcid.org/0000-0002-8895-7055",
+          "institutions": [
+            "Camden and Islington NHS Foundation Trust",
+            "University College London"
+          ]
+        },
+        {
+          "name": "David Ames",
+          "openalex_id": "A5107927449",
+          "institutions": [
+            "University of Melbourne",
+            "National Ageing Research Institute",
+            "The Royal Melbourne Hospital"
+          ]
+        },
+        {
+          "name": "Clive Ballard",
+          "openalex_id": "A5032708452",
+          "orcid": "https://orcid.org/0000-0003-0022-5632",
+          "institutions": [
+            "University of Exeter"
+          ]
+        },
+        {
+          "name": "Sube Banerjee",
+          "openalex_id": "A5034164760",
+          "orcid": "https://orcid.org/0000-0002-8083-7649",
+          "institutions": [
+            "University of Plymouth"
+          ]
+        },
+        {
+          "name": "Carol Brayne",
+          "openalex_id": "A5085651175",
+          "orcid": "https://orcid.org/0000-0001-5307-663X",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Alistair Burns",
+          "openalex_id": "A5027171288",
+          "orcid": "https://orcid.org/0000-0002-9837-0645",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Jiska Cohen\u2010Mansfield",
+          "openalex_id": "A5056389726",
+          "orcid": "https://orcid.org/0000-0003-0209-7304",
+          "institutions": [
+            "Tel Aviv University"
+          ]
+        },
+        {
+          "name": "Claudia Cooper",
+          "openalex_id": "A5002983308",
+          "orcid": "https://orcid.org/0000-0002-2777-7616",
+          "institutions": [
+            "Camden and Islington NHS Foundation Trust",
+            "University College London"
+          ]
+        },
+        {
+          "name": "Sergi G. Costafreda",
+          "openalex_id": "A5081739897",
+          "orcid": "https://orcid.org/0000-0001-6914-086X",
+          "institutions": [
+            "University College London",
+            "Camden and Islington NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Amit Dias",
+          "openalex_id": "A5102922229",
+          "orcid": "https://orcid.org/0000-0001-9686-8143",
+          "institutions": [
+            "Goa Medical College"
+          ]
+        },
+        {
+          "name": "Nick C. Fox",
+          "openalex_id": "A5018836358",
+          "orcid": "https://orcid.org/0000-0002-6660-657X",
+          "institutions": [
+            "University College London Hospitals NHS Foundation Trust",
+            "UK Dementia Research Institute",
+            "National Hospital for Neurology and Neurosurgery",
+            "University College London"
+          ]
+        },
+        {
+          "name": "Laura N. Gitlin",
+          "openalex_id": "A5002018234",
+          "orcid": "https://orcid.org/0000-0003-2869-473X",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Robert Howard",
+          "openalex_id": "A5043071365",
+          "orcid": "https://orcid.org/0000-0002-3071-2338",
+          "institutions": [
+            "Camden and Islington NHS Foundation Trust",
+            "University College London"
+          ]
+        },
+        {
+          "name": "Helen C. Kales",
+          "openalex_id": "A5080007900",
+          "orcid": "https://orcid.org/0000-0002-2032-370X",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Mika Kivim\u00e4ki",
+          "openalex_id": "A5030837922",
+          "orcid": "https://orcid.org/0000-0002-4699-5627",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Eric B. Larson",
+          "openalex_id": "A5108394469",
+          "institutions": [
+            "Kaiser Permanente Washington Health Research Institute"
+          ]
+        },
+        {
+          "name": "Adesola Ogunniyi",
+          "openalex_id": "A5026755583",
+          "orcid": "https://orcid.org/0000-0002-2946-8956",
+          "institutions": [
+            "University College Hospital, Ibadan"
+          ]
+        },
+        {
+          "name": "Vasiliki Orgeta",
+          "openalex_id": "A5004318968",
+          "orcid": "https://orcid.org/0000-0001-8643-5061",
+          "institutions": [
+            "University College London"
+          ]
+        },
+        {
+          "name": "Karen Ritchie",
+          "openalex_id": "A5075011135",
+          "orcid": "https://orcid.org/0000-0002-0688-8982",
+          "institutions": [
+            "Inserm",
+            "Universit\u00e9 de Montpellier",
+            "University of Edinburgh",
+            "Neuropsychiatrie : Recherche Epidemiologique et Clinique"
+          ]
+        },
+        {
+          "name": "Kenneth Rockwood",
+          "openalex_id": "A5006205778",
+          "orcid": "https://orcid.org/0000-0002-6674-995X",
+          "institutions": [
+            "Dalhousie University"
+          ]
+        },
+        {
+          "name": "Elizabeth L Sampson",
+          "openalex_id": "A5018087286",
+          "orcid": "https://orcid.org/0000-0001-8929-7362",
+          "institutions": [
+            "University College London",
+            "Barnet Enfield and Haringey Mental Health Trust"
+          ]
+        },
+        {
+          "name": "Quincy M. Samus",
+          "openalex_id": "A5020841594",
+          "orcid": "https://orcid.org/0000-0001-8218-7769",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Lon S. Schneider",
+          "openalex_id": "A5059020389",
+          "orcid": "https://orcid.org/0000-0002-4636-6150",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Geir Selb\u00e6k",
+          "openalex_id": "A5007726770",
+          "orcid": "https://orcid.org/0000-0001-6511-8219",
+          "institutions": [
+            "Oslo University Hospital",
+            "Sykehuset i Vestfold",
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Linda Teri",
+          "openalex_id": "A5036095173",
+          "orcid": "https://orcid.org/0000-0001-7127-8905",
+          "institutions": [
+            "University of Washington"
+          ]
+        },
+        {
+          "name": "Naaheed Mukadam",
+          "openalex_id": "A5086247322",
+          "orcid": "https://orcid.org/0000-0001-8635-9521",
+          "institutions": [
+            "University College London",
+            "Camden and Islington NHS Foundation Trust"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-30",
+      "abstract": null,
+      "cited_by_count": 9613,
+      "type": "review",
+      "source": {
+        "name": "The Lancet",
+        "type": "journal",
+        "issn": [
+          "0140-6736",
+          "1474-547X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.thelancet.com/article/S0140673620303676/pdf"
+      },
+      "topics": [
+        "Dementia and Cognitive Impairment Research",
+        "Intensive Care Unit Cognitive Disorders",
+        "Frailty in Older Adults"
+      ],
+      "referenced_works_count": 347,
+      "url": "https://openalex.org/W3046275966"
+    },
+    {
+      "openalex_id": "W2734936128",
+      "doi": "10.1111/emre.12128",
+      "title": "The Impact of Global Economic Crisis and Austerity on Quality of Working Life and Work\u2010Life Balance: A Capabilities Perspective",
+      "authors": [
+        {
+          "name": "Uracha Chatrakul Na Ayudhya",
+          "openalex_id": "A5075354758",
+          "orcid": "https://orcid.org/0000-0001-5144-3096",
+          "institutions": [
+            "Middlesex University"
+          ]
+        },
+        {
+          "name": "Rea Prouska",
+          "openalex_id": "A5001293360",
+          "orcid": "https://orcid.org/0000-0001-6729-5964",
+          "institutions": [
+            "London South Bank University"
+          ]
+        },
+        {
+          "name": "T. Alexandra Beauregard",
+          "openalex_id": "A5020761202",
+          "orcid": "https://orcid.org/0000-0002-9348-9110",
+          "institutions": [
+            "Middlesex University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-17",
+      "abstract": "This paper draws on the capabilities approach as a framework for examining the impact of the global economic crisis and austerity on quality of working life and work\u2010life balance. Our paper focuses on Greece, an extreme case of a country in economic crisis, characterized by a weak institutional basis. We build on the work of Barbara Hobson and colleagues who first applied the capabilities approach to explore work\u2010life balance capabilities. Our study contributes to the development of theory by emphasizing the sense of entitlement concept within the capabilities approach and by proposing a modified conceptual framework that encapsulates the link between capabilities, agency, and the sense of entitlement, where the latter acts as a cognitive \u2018filter\u2019 that enhances or weakens an individual's perception of her/his agency to enact on her/his capabilities. Drawing on the accounts of twenty Greek professional and managerial workers, we illustrate how the crisis and austerity measures have eroded working conditions and thus the sense of entitlement, leading to the weakening of our participants' agency and capabilities to achieve quality of working life and work\u2010life balance.",
+      "cited_by_count": 69,
+      "type": "article",
+      "source": {
+        "name": "European Management Review",
+        "type": "journal",
+        "issn": [
+          "1740-4754",
+          "1740-4762"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/emre.12128"
+      },
+      "topics": [
+        "Employment and Welfare Studies",
+        "Social Policy and Reform Studies",
+        "Youth Education and Societal Dynamics"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W2734936128"
+    },
+    {
+      "openalex_id": "W2747686677",
+      "doi": "10.3389/fpsyg.2017.01548",
+      "title": "Job Crafting: Older Workers\u2019 Mechanism for Maintaining Person-Job Fit",
+      "authors": [
+        {
+          "name": "Carol M. Wong",
+          "openalex_id": "A5023315928",
+          "orcid": "https://orcid.org/0000-0002-5761-1174",
+          "institutions": [
+            "George Mason University"
+          ]
+        },
+        {
+          "name": "Lois E. Tetrick",
+          "openalex_id": "A5023370092",
+          "institutions": [
+            "George Mason University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-08",
+      "abstract": "Aging at work is a dynamic process. As individuals age, their motives, abilities and values change as suggested by life-span development theories (Lang and Carstensen, 2002; Kanfer and Ackerman, 2004). Their growth and extrinsic motives weaken while intrinsic motives increase (Kooij et al., 2011), which may result in workers investing their resources in different areas accordingly. However, there is significant individual variability in aging trajectories (Hedge et al., 2006). In addition, the changing nature of work, the evolving job demands, as well as the available opportunities at work may no longer be suitable for older workers, increasing the likelihood of person-job misfit. The potential misfit may, in turn, impact how older workers perceive themselves on the job, which leads to conflicting work identities. With the traditional job redesign approach being a top-down process, it is often difficult for organizations to take individual needs and skills into consideration and tailor jobs for every employee (Berg et al., 2010). Therefore, job crafting, being an individualized process initiated by employees themselves, can be a particularly valuable mechanism for older workers to realign and enhance their demands-abilities and needs-supplies fit. Through job crafting, employees can exert personal agency and make changes to the task, social and cognitive aspects of their jobs with the goal of improving their work experience (Wrzesniewski and Dutton, 2001). Building on the Life Span Theory of Control (Heckhausen and Schulz, 1995), we posit that job crafting, particularly cognitive crafting, will be of increasing value as employees age. Through reframing how they think of their job and choosing to emphasize job features that are personally meaningful, older workers can optimize their resources to proactively redesign their jobs and maintain congruent, positive work identities.",
+      "cited_by_count": 96,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2017.01548/pdf"
+      },
+      "topics": [
+        "Retirement, Disability, and Employment",
+        "Employment and Welfare Studies",
+        "Aging and Gerontology Research"
+      ],
+      "referenced_works_count": 125,
+      "url": "https://openalex.org/W2747686677"
+    },
+    {
+      "openalex_id": "W2895922731",
+      "doi": "10.4324/9781315666396",
+      "title": "Food Sovereignty, Agroecology And Biocultural Diversity",
+      "authors": [
+        {
+          "name": "Michel Pimbert",
+          "openalex_id": "A5008921993",
+          "orcid": "https://orcid.org/0000-0002-6214-8305"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-01",
+      "abstract": "Contestations over knowledge \u2013 and who controls its production \u2013 are a key focus of social movements and other actors that promote food sovereignty, agroecology and biocultural diversity. This book critically examines the kinds of knowledge and ways of knowing needed for food sovereignty, agroecology and biocultural diversity. \u2018Food sovereignty\u2019 is understood here as a transformative process that seeks to recreate the democratic realm and regenerate a diversity of autonomous food systems based on agroecology, biocultural diversity, equity, social justice and ecological sustainability. It is shown that alternatives to the current model of development require radically different knowledges and epistemologies from those on offer today in mainstream institutions (including universities, policy think tanks and donor organizations). To achieve food sovereignty, agroecology and biocultural diversity, there is a need to re-imagine and construct knowledge for diversity, decentralisation, dynamic adaptation and democracy. The authors critically explore the changes in organizations, research paradigms and professional practice that could help transform and co-create knowledge for a new modernity based on plural definitions of wellbeing. Particular attention is given to institutional, pedagogical and methodological innovations that can enhance cognitive justice by giving hitherto excluded citizens more power and agency in the construction of knowledge. The book thus contributes to the democratization of knowledge and power in the domain of food, environment and society.",
+      "cited_by_count": 84,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://tandfbis.s3-us-west-2.amazonaws.com/rt-files/docs/Open+Access+Chapters/9781138955356_oachapter1.pdf\u00a0and"
+      },
+      "topics": [
+        "Agriculture, Land Use, Rural Development",
+        "Organic Food and Agriculture",
+        "Environmental and Cultural Studies in Latin America and Beyond"
+      ],
+      "referenced_works_count": 959,
+      "url": "https://openalex.org/W2895922731"
+    },
+    {
+      "openalex_id": "W2169205464",
+      "doi": "10.1136/bmj.g7647",
+      "title": "Preferred reporting items for systematic review and meta-analysis protocols (PRISMA-P) 2015: elaboration and explanation",
+      "authors": [
+        {
+          "name": "Larissa Shamseer",
+          "openalex_id": "A5091561305",
+          "orcid": "https://orcid.org/0000-0003-3690-3378",
+          "institutions": [
+            "Ottawa Hospital",
+            "University of Ottawa"
+          ]
+        },
+        {
+          "name": "David Moher",
+          "openalex_id": "A5068353058",
+          "orcid": "https://orcid.org/0000-0003-2434-4206",
+          "institutions": [
+            "Ottawa Hospital",
+            "University of Ottawa"
+          ]
+        },
+        {
+          "name": "Mike Clarke",
+          "openalex_id": "A5068789733",
+          "orcid": "https://orcid.org/0000-0002-2926-7257",
+          "institutions": [
+            "National University of Ireland"
+          ]
+        },
+        {
+          "name": "Davina Ghersi",
+          "openalex_id": "A5043048253",
+          "orcid": "https://orcid.org/0000-0002-9712-1604",
+          "institutions": [
+            "National Health and Medical Research Council"
+          ]
+        },
+        {
+          "name": "A. Liberati",
+          "openalex_id": "A5113580052",
+          "institutions": [
+            "University of Modena and Reggio Emilia"
+          ]
+        },
+        {
+          "name": "Mark Petticrew",
+          "openalex_id": "A5055244038",
+          "orcid": "https://orcid.org/0000-0002-6378-5517",
+          "institutions": [
+            "London School of Hygiene & Tropical Medicine"
+          ]
+        },
+        {
+          "name": "Paul Shekelle",
+          "openalex_id": "A5109914479"
+        },
+        {
+          "name": "Lesley Stewart",
+          "openalex_id": "A5082927689",
+          "orcid": "https://orcid.org/0000-0003-0287-4724",
+          "institutions": [
+            "University of York"
+          ]
+        },
+        {
+          "name": "the PRISMA-P Group",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-02",
+      "abstract": "Protocols of systematic reviews and meta-analyses allow for planning and documentation of review methods, act as a guard against arbitrary decision making during review conduct, enable readers to assess for the presence of selective reporting against completed reviews, and, when made publicly available, reduce duplication of efforts and potentially prompt collaboration. Evidence documenting the existence of selective reporting and excessive duplication of reviews on the same or similar topics is accumulating and many calls have been made in support of the documentation and public availability of review protocols. Several efforts have emerged in recent years to rectify these problems, including development of an international register for prospective reviews (PROSPERO) and launch of the first open access journal dedicated to the exclusive publication of systematic review products, including protocols (BioMed Central's Systematic Reviews). Furthering these efforts and building on the PRISMA (Preferred Reporting Items for Systematic Reviews and Meta-analyses) guidelines, an international group of experts has created a guideline to improve the transparency, accuracy, completeness, and frequency of documented systematic review and meta-analysis protocols--PRISMA-P (for protocols) 2015. The PRISMA-P checklist contains 17 items considered to be essential and minimum components of a systematic review or meta-analysis protocol.This PRISMA-P 2015 Explanation and Elaboration paper provides readers with a full understanding of and evidence about the necessity of each item as well as a model example from an existing published protocol. This paper should be read together with the PRISMA-P 2015 statement. Systematic review authors and assessors are strongly encouraged to make use of PRISMA-P when drafting and appraising review protocols.",
+      "cited_by_count": 12518,
+      "type": "article",
+      "source": {
+        "name": "BMJ",
+        "type": "journal",
+        "issn": [
+          "1756-1833"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.bmj.com/content/bmj/349/bmj.g7647.full.pdf"
+      },
+      "topics": [
+        "Meta-analysis and systematic reviews",
+        "Health and Medical Research Impacts",
+        "Delphi Technique in Research"
+      ],
+      "referenced_works_count": 206,
+      "url": "https://openalex.org/W2169205464"
+    },
+    {
+      "openalex_id": "W2740614417",
+      "doi": "10.1111/cts.12491",
+      "title": "Lessons Learned from Alzheimer Disease: Clinical Trials with Negative Outcomes",
+      "authors": [
+        {
+          "name": "Jeffrey L. Cummings",
+          "openalex_id": "A5060487287",
+          "orcid": "https://orcid.org/0000-0001-8944-4158",
+          "institutions": [
+            "Lou Ruvo Brain Institute",
+            "Cleveland Clinic"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-08-02",
+      "abstract": "Alzheimer disease (AD) drug development has a high failure rate. Drug development decision making can be improved based on lessons learned from past trials. Improved interpretation of animal models, better pharmacologic characterization in phase I and phase II trials, appropriate sample size, diagnosis of AD with biomarker support, optimization of global recruitment, and avoiding inappropriate subgroup analyses can improve drug development success rates. Alzheimer disease (AD) doubles in frequency every 5 years after the age of 65 years and is becoming increasingly common as the world's population ages. It is estimated that in the United States alone, the number of patients with AD will burgeon from 5.3 million now to nearly 14 million by 2050.1 To address this impending public health disaster, there is an urgent need to discover and develop new drugs to prevent, delay the onset, slow the progression, or treat the cognitive and behavioral symptoms of AD. AD drug development has proven to be unusually difficult with a 99.6% failure rate in the decade of 2002 to 20122; currently, the success rate continues at the same low level. Each clinical trial provides evidence on a narrow range of questions. For example, does this dose of the test agent, given for a specific period of time (e.g., 18\u201324 months for disease-modifying therapies [DMTs]), to a defined population (e.g., preclinical AD; prodromal AD; mild, moderate, or severe AD dementia) produce a statistically significant difference compared with placebo in change from baseline on the prespecified primary outcomes, such as those measuring cognition (e.g., the Alzheimer's Disease Assessment Scale \u2013 Cognitive Portion)3 and function (e.g., the Alzheimer's Disease Cooperative Study Activities of Daily Living scale).4 Questions regarding effects in other populations, other doses, other exposure durations, and effects on other instruments must all be addressed in separate trials. These complex constraints on clinical trials have evolved to allow them to define efficacy in a way that is acceptable to regulatory agencies, such as the US Food and Drug Administration (FDA) and the European Medicines Agency. Regulatory acceptance of the data is the only way to gain marketing approval and make the agent widely available to patients. Each trial is a critical test of a narrow hypothesis and each incorporates methodologic decisions that offer valuable insights into AD drug development. It is important that learnings from every trial be optimized so the lessons learned can be applied to future trials and improve the likelihood of success. A review of the literature identifies several steps in drug development that have been the source of recurrent challenges to success. Perspectives on these lessons learned from past clinical trials are provided here with suggestions for how these lessons may be applied to future trials. Figure 1 shows how these lessons align with the phases of drug development. Animal models of AD are an important means of investigating efficacy and toxicity in the preclinical state prior to exposing humans to possibly toxic or inefficacious compounds. A commonly used animal model is a transgenic mouse with the amyloid precursor protein/presenilin 1 double mutation. Triple and 5\u00d7 transgenic models as well as many types of gene knock-in and gene knock-out models have been created to allow focused interrogation of the biology of AD.5 Many of the animal models address the amyloidogenic process leading to cortical plaques similar to those observed in human AD.6 These genetically engineered animals have abnormalities of amyloid metabolism but generally lack other aspects of human AD. Amyloid transgenic animals do not exhibit tau accumulation or cell death and have limited inflammatory changes.7 They have cognitive changes but do not develop severe progressive dementia equivalent to the human disease. Many types of therapy have been successful in reducing amyloid abnormalities in these animals and have often led to improved cognitive performance on tests, such as the Morris Water Maze or Novel Object Recognition.5 None of these successes at the preclinical level has predicted success at the human level. An important issue that has arisen with regard to animal models is their irreproducibility.8 If an experiment cannot be reproduced within a single model or across related models, then its ability to predict human outcomes is suspect. Strain, age, gender, diet, light, and handler behavior may all influence animal behavior. Randomization and sample size are important aspects of animal trial design that have often been suboptimal.9 Lack of rigor with regard to these aspects of animal model testing may contribute to the lack of reproducibility both across models and in translating results from animals to humans. The lesson to be derived from these observations is that animals serve as important gateways in the drug development process when the animal experiments are rigorously executed. These models reveal the impact of intervention on specific pathways, such as amyloid production or clearance. Advancing a drug to human testing that did not succeed as expected in animals would be unwise; as success in animals provides evidence about a specific aspect of the biology of AD and the relevant mechanism and efficacy of the proposed therapy. They do not provide evidence about the potential impact on the wider array of pathology characteristic of human AD and cannot be expected to predict the success of a candidate therapy in the human setting. The models are simulacra of specific aspects of human AD, such as amyloidosis, and cannot be taken as models of the full spectrum of pathology of human AD or predictors of human benefit.10 Use of induced pluripotent stem cells derived from humans with AD is a promising means of humanizing drug development much earlier in the process and possibly recapitulating more human-like circumstances for preclinical drug efficacy and safety assessments.11, 12 Small molecules intended to impact AD pathophysiology must cross the blood-brain barrier (BBB). This applies to all classes of agents (monoclonal antibodies [mAbs] are discussed below). In some cases, AD therapies have not been shown to enter the central nervous system (CNS) before advancing them to late-stage trials. In general, compounds must be small (<500 Daltons) to cross the BBB unless they are the subject of facilitated transport.13 Even if they are the appropriate size, they may be subject to transport out of the CNS, for example, by p-glycoprotein transport mechanisms.14 The compound-excluding mechanisms of the CNS differ in rodent models and in humans; thus, entry into the CNS in animal models does not adequately establish BBB penetration in humans.15 Tarenflurbil is an example of an AD treatment candidate that had effects on the animal model system of AD but likely did not cross the human BBB in sufficient amounts and failed in clinical trials.16 Nonhuman primate models provide better guidance for human BBB penetration but are not often used in development programs. The optimal means of demonstrating BBB penetration, establishing the plasma/brain ratio, and determining if CNS exposure is compatible with therapeutic effects as demonstrated preclinically, is to measure the level of the agent in the cerebrospinal fluid (CSF). The CSF levels are a reasonable surrogate of brain levels since brain levels are inaccessible in human studies. Brain accumulation, brain clearance mechanisms, and intracellular entry are not completely resolved by CSF measures and remain a source of uncertainty.15 Monoclonal antibodies are large molecules that are excluded from the CNS except for very small numbers of the agent which cross the BBB. In most cases, 1 of 1,000 mAbs cross the BBB and enter the CNS.17 They may engage A\u03b2 or tau directly or they may initiate inflammatory mechanisms in which activated microglia ingest the target and remove it from the CNS.17 An alternative view of mAb activity is that by binding peripheral A\u03b2, mAbs can create a \"peripheral sink\" that will create a peripheral/central imbalance and passively pull A\u03b2 across the BBB into the periphery where it can be excreted and disposed.17 The peripheral sink hypothesis was assessed in recent trials of solanezumab, an mAb binding to peripheral A\u03b2. The agent led to markedly increased peripheral A\u03b2 levels but did not meet prespecified clinical outcomes and did not change CSF A\u03b2(1\u201342) levels. These findings do not support a peripheral sink effect.18 The lesson of these observations is that, in small molecule drug development, CNS levels of the agent should be established in phase I. Proof-of-concept cannot be determined without establishing CNS penetration and plasma/CSF ratios. It is important to establish a maximum tolerated dose (MTD) whenever possible to insure that the highest possible doses have been explored. In some cases, occupancy studies may allow conclusions about dosing without an MTD if the receptor is fully occupied at lower doses. In other cases, solubility, volumes, or other limitations may cap the administered dose and the MTD cannot be determined. Beyond these exceptional circumstances an MTD should be determined. Without an MTD, failure to show a drug-placebo difference in phase II or phase III will raise the issue of an inadequate dose. Efficacy of a test agent is determined by the difference in change from baseline of the treatment compared with placebo. For symptomatic therapies tested in short trials (e.g., 3\u20136 months), there is typically improvement above baseline for the active agent compared with no change or mild decline below baseline in the placebo group.19 There is often a desire to use small sample sizes to minimize the cost of clinical trials. Small groups, however, can be affected by outliers and recruitment biases and can be misleading because of irregular outcomes in the placebo group. Unusual improvement in the placebo group undermines the ability to determine if the drug is efficacious, whereas an unusually rapid decline in the placebo group may be misleading in suggesting an overly robust benefit from the therapy. The latter outcome might lead investigators to under-power a subsequent trial expecting a similarly robust effect. To minimize the risk of irregular outcomes because of small numbers, the placebo group should include at least 100 members.20 The sample size for each active treatment group should be at least as large as the placebo arm of the study. This lesson applies primarily to phase II trials when go/no go decisions are formulated. Larger samples are necessary in phase III trials to confirm expected effects. AD is a progressive disease and failure to observe decline in the placebo group in trials of 6 months or more duration is indicative of a failed trial.21 For DMTs, efficacy is determined by less rapid decline in the group on active therapy; lack of placebo decline indicates that the hypothesized superior efficacy of the active treatment was not tested and no conclusion regarding efficacy can be drawn. Lack of decline may sometimes be attributed to inclusion of non-AD patients into the trial (see Lesson 7 below). The lesson suggested is that failure of decline in a placebo group indicates operational flaws and a failed trial. Donepezil has been shown to improve cognition in mild-moderate AD with a 1.5\u20132.5 Alzheimer's Disease Assessment Scale \u2013 Cognitive Portion difference in drug vs. placebo change from baseline.22, 23 An active treatment arm with this agent can serve as a useful comparison group in trials. If no benefit is seen in the donepezil arm of the study compared with placebo, then the study has not achieved its operational goal and no conclusion can be drawn regarding the efficacy of the test agent.21, 24 The lesson derived is that an active comparator arm can provide insight into the quality of a clinical trial and failure to improve with an active comparator suggests operational shortcomings in the trial. If inclusion of an active comparator requires a true placebo arm in the trial, then implementation of an active comparator arm may not be feasible; nearly all current trials allow standard of care with approved agents. Studies of amyloid imaging in patients recruited to clinical trials show that up to 50% of mild cognitive impairment and 25% of those with mild dementia do not have a measurable amyloid plaque burden and do not meet biomarker criteria for AD.25 Subjects without AD typically show little or no change over time26 and, when included in AD trials, will be reflected in less decline of the placebo group and greater difficulty establishing a drug-placebo difference. The apolipoprotein E epsilon 4 gene is present in 65% of patients with AD27; therefore, trial populations with substantially lower representations of apolipoprotein E epsilon 4 carriers can be assumed to have fewer patients with AD in the trial cohort. For anti-amyloid agents, the presence of brain amyloid is critical for demonstration of efficacy. For drugs targeting nonamyloid AD-related mechanisms, such as tau agents, the presence of brain amyloidosis is necessary to insure the accuracy of diagnosis. Agents producing cognitive enhancement may have mechanisms independent of AD-specific pathology (e.g., 5-HT6 antagonists) but accurate diagnosis will help insure that the placebo group demonstrates the expected natural history of AD. A lesson to be derived from these observations is that clinical diagnosis of AD is insufficient for inclusion of subjects in clinical trials. Confirming the diagnosis using amyloid imaging or CSF measures of amyloid and tau or phospho-tau is required to insure the presence of AD in trial participants.28 Rigorous demonstration of hypothesized pharmacological effects in early-stage trials will assist in successful drug development. Many drugs fail in phase III because of lack of efficacy29; in some cases, the engagement of the intended target in humans has not been demonstrated in phase II trials and the biological basis for the expected clinical response has not been established. Phase IIa proof-of-concept studies have two related aspects: target engagement and proof-of-pharmacology. Target engagement is a measure that shows that the intended target of the drug is engaged in the human setting. Receptor occupancy studies using positron emission tomography are often used to show target engagement of agents for which there is a specific receptor.30 Another example of target engagement is assessment of the effects of beta-site cleavage enzyme (BACE) inhibitors on CSF BACE activity.31 Proof-of-pharmacology can be demonstrated by showing downstream effects of successful target engagement. Gamma-secretase inhibitors or gamma-secretase modulators result in reduced \u00df-amyloid protein synthesis, which has been demonstrated using the stable isotope-label kinetic technique.32, 33 Gamma-secretase inhibitors/gamma-secretase modulators change the cleavage of the amyloid protein producing an increase in short amyloid fragments detectable in CSF and establishing a pharmacologic effect.33, 34 BACE inhibitors have been shown to decrease CSF amyloid following chronic treatment, supporting proof-of-pharmacology.35 Removal of \u00df-amyloid plaques from the brain can be regarded as a target engagement and proof-of-pharmacology outcome. Aducanumab is a mAb that showed a dose- and time-dependent reduction in amyloid plaques and a reduction in rate of cognitive decline on some (but not all) cognitive measures included in a phase I trial.36 Target engagement of this type is not sufficient to predict drug efficacy. Some immunotherapies (e.g., AN1792, bapineuzumab, and gantenerumab) have been shown to have target engagement and reduce plaque amyloid without producing a corresponding clinical benefit.37-39 Thus, engaging the target is necessary for treatment response but does not insure that cognitive benefit will ensue. This may reflect the fact that insoluble plaque amyloid is not the most toxic form of amyloid; soluble species are more neurotoxic and may not be reduced by all antibodies. Phase II trials in drug development should minimally establish target engagement and doses to be advanced to phase III. A robust phase II program would also show a clinical benefit. Large sample sizes are typically required to demonstrate significant clinical benefit and many sponsors have progressed to phase III without conducting phase II studies. Establishing proof-of-target engagement or proof-of-pharmacology is one means of derisking phase III even without demonstrating cognitive benefit in phase II. DMTs being advanced without evidence of target engagement lack a critical aspect of the foundation of drug development. Development programs with biomarkers have a greater success rate than those without.40 Progressing to phase III without phase II also limits the availability of safety information that may impact phase III.41 A challenge for AD drug development is that there are many mechanisms for which there are no biomarkers available to demonstrate target engagement or proof-of-pharmacology. It is critical that, as agents are advanced from screening in assays to animal models to human testing, biomarkers indicative of target engagement be developed in concert with the candidate therapy. Biomarkers developed during drug development programs may become companion biomarkers useful to practitioners when the agent is advanced to the market. The lesson derived from the existing studies is that demonstration of target engagement is a key means of derisking a development program and that proceeding to phase III without target engagement or proof-of-pharmacology places the program at high risk for a negative outcome. Dose-response relationships provide critical information for drug choices. Dose escalation studies in phase I and dose refinement studies in phase II should provide confidence in the dose(s) selected for phase III.42 Dosing approaches ideally establish a low dose that is ineffective, one or two mid-range doses that are effective, and a high dose that is not tolerated and not acceptable. Regulatory agencies expect that patients are given the lowest effective dose to insure that they are not being exposed to unnecessary side effects. Knowledge of the neurobiology of AD is incomplete. Moreover, AD biology is complex,43 and biomarkers provide limited windows into this complex and ill-understood disease. Although working models of the order of events in AD have been posited, none have been proven and none have guided successful DMT development. Agnostic approaches to biomarkers (e.g., amyloid-tau, neurodegeneration) can be used to acknowledge the exploratory nature of our biomarker documentation of drug effects.44 To support DMT as the outcome of a therapy, trial sponsors should collect amyloid-tau, neurodegeneration biomarker data as well as other emerging biomarkers and biomarkers specifically linked to the mechanism of the intervention to delineate a comprehensive view of the impact of treatment. Preclinical, clinical, and biomarker data can be synthesized to provide support for DMT. The FDA specifies how to qualify biomarkers in trials of putative DMTs recommended.45 A lesson learned is that dependence on single key biomarkers should be avoided and multiple biomarker outcomes collected. Clinical trials, especially those for DMTs, are large and often require more than 1,000 patients. Timely recruitment for such trials often necessitates inclusion of clinical trial sites from many global regions. The variations in language, culture, trial experience, standard of care, genetics, nutrition, and other aspects of AD create variability in the data that may compromise the ability to demonstrate a drug-placebo difference. Recent studies of global trials show that North American and Western European data are very similar with regard to baseline characteristics, placebo group behavior, outcome measures, and adverse event reporting. Substantial variations on these parameters were observed for other global regions.46, 47 The lesson to be derived from these studies is that sponsors should seek ways of minimizing variability in global trials to insure greater data homogeneity. Post hoc analyses of negative trials are often pursued to detect treatment-responsive subgroups that can be exploited in future trials. This approach entails substantial risk of being misled by spurious results. Subgroups are not subject to the same recruitment or randomization as the original group; the sample sizes of subgroups are often small leading to underpowered results; and the outcome measures are typically not optimized for a specific subgroup. Basing a phase III program on a subgroup analysis of a phase II trial with a negative outcome has usually resulted in a negative phase III trial. Examples of this include the negative phase III outcomes for tarenflurbil,48 bapineuzumab,49 solanezumab,50 and ELND005.50 A lesson from these experiences is to apply guidelines for how to reduce the likelihood of being misled by phase II subgroup analyses. Table 151,52 shows the principal recommendations for subgroup analysis. A hypothesis-generating subgroup observation can be tested by conducting a phase II trial for this subgroup. Successful AD drug development is an unmet need and more disciplined approaches to drug development will assist in reducing the current high rate of negative trials.53 The lessons learned from trials with negative outcomes can inform drug development. Better preclinical models of AD, better knowledge of BBB penetration, MTD, dose response, demonstration of target engagement, more accurate diagnosis using biomarkers, select use of regional populations in trials, adequate trial size, construction of trial populations that exhibit decline in the placebo group, improvement in an active comparator group, and avoidance of misleading subgroup analyses can all contribute to greater success in AD drug development. These improvements in trial conduct and interpretation must be matched by studying candidate therapies that have superior efficacy. This two-pronged approach to AD therapy development will result in delivering urgently needed drugs to the rapidly growing AD population. Dr Cummings acknowledges the funding from the National Institute of General Medical Sciences (grant P20GM109025) and support from the Keep Memory Alive Foundation. J.C. wrote the manuscript and analyzed the data. Dr Cummings has provided consultation to Abbvie, Acadia, Adamas, Anavex, Avanir, Avid, Axovant, Biogen, Boehinger-Ingelheim, Bracket, Dart, Eisai, Genentech, Lilly, Lundbeck, Medavante, Merck, Neurocog, Novartis, Otsuka, Pfizer, QR Pharma, Roche, Takeda, and Toyama pharmaceutical and assessment companies.",
+      "cited_by_count": 294,
+      "type": "review",
+      "source": {
+        "name": "Clinical and Translational Science",
+        "type": "journal",
+        "issn": [
+          "1752-8054",
+          "1752-8062"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ascpt.onlinelibrary.wiley.com/doi/pdfdirect/10.1111/cts.12491"
+      },
+      "topics": [
+        "Dementia and Cognitive Impairment Research",
+        "Alzheimer's disease research and treatments",
+        "Diet and metabolism studies"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2740614417"
+    },
+    {
+      "openalex_id": "W2803689408",
+      "doi": "10.1177/0020852317753068",
+      "title": "Open data work: understanding open data usage from a practice lens",
+      "authors": [
+        {
+          "name": "Erna Ruijer",
+          "openalex_id": "A5087337530",
+          "orcid": "https://orcid.org/0000-0003-2907-1454",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Stephan Grimmelikhuijsen",
+          "openalex_id": "A5078834224",
+          "orcid": "https://orcid.org/0000-0002-1553-6065",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Jochem van den Berg",
+          "openalex_id": "A5043574674",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Albert Meijer",
+          "openalex_id": "A5084778347",
+          "orcid": "https://orcid.org/0000-0001-8532-7894",
+          "institutions": [
+            "Utrecht University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-14",
+      "abstract": "During recent years, the amount of data released on platforms by public administrations around the world have exploded. Open government data platforms are aimed at enhancing transparency and participation. Even though the promises of these platforms are high, their full potential has not yet been reached. Scholars have identified technical and quality barriers of open data usage. Although useful, these issues fail to acknowledge that the meaning of open data also depends on the context and people involved. In this study we analyze open data usage from a practice lens \u2013 as a social construction that emerges over time in interaction with governments and users in a specific context \u2013 to enhance our understanding of the role of context and agency in the development of open data platforms. This study is based on innovative action-based research in which civil servants\u2019 and citizens\u2019 initiatives collaborate to find solutions for public problems using an open data platform. It provides an insider perspective of Open Data Work. The findings show that an absence of a shared cognitive framework for understanding open data and a lack of high-quality datasets can prevent processes of collaborative learning. Our contextual approach stresses the need for open data practices that work on the basis of rich interactions with users rather than government-centric implementations.",
+      "cited_by_count": 85,
+      "type": "article",
+      "source": {
+        "name": "International Review of Administrative Sciences",
+        "type": "journal",
+        "issn": [
+          "0020-8523",
+          "1461-7226"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0020852317753068"
+      },
+      "topics": [
+        "E-Government and Public Services",
+        "Information Systems Theories and Implementation",
+        "Smart Cities and Technologies"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W2803689408"
+    },
+    {
+      "openalex_id": "W2886974979",
+      "doi": "10.1007/s10676-018-9466-4",
+      "title": "Brainjacking in deep brain stimulation and autonomy",
+      "authors": [
+        {
+          "name": "Jonathan Pugh",
+          "openalex_id": "A5019301762",
+          "institutions": [
+            "University of Oxford",
+            "Wellcome Centre for Ethics and Humanities"
+          ]
+        },
+        {
+          "name": "Laurie Pycroft",
+          "openalex_id": "A5001868757",
+          "orcid": "https://orcid.org/0000-0001-6599-1464",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Anders Sandberg",
+          "openalex_id": "A5023259126",
+          "orcid": "https://orcid.org/0000-0001-5636-5402",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Tipu Z. Aziz",
+          "openalex_id": "A5073459233",
+          "orcid": "https://orcid.org/0000-0001-9128-8668",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Julian Savulescu",
+          "openalex_id": "A5018300444",
+          "orcid": "https://orcid.org/0000-0003-1691-6403",
+          "institutions": [
+            "University of Oxford",
+            "Wellcome Centre for Ethics and Humanities"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-30",
+      "abstract": "'Brainjacking' refers to the exercise of unauthorized control of another's electronic brain implant. Whilst the possibility of hacking a Brain-Computer Interface (BCI) has already been proven in both experimental and real-life settings, there is reason to believe that it will soon be possible to interfere with the software settings of the Implanted Pulse Generators (IPGs) that play a central role in Deep Brain Stimulation (DBS) systems. Whilst brainjacking raises ethical concerns pertaining to privacy and physical or psychological harm, we claim that the possibility of brainjacking DBS raises particularly profound concerns about individual autonomy, since the possibility of hacking such devices raises the prospect of third parties exerting influence over the neural circuits underpinning the subject's cognitive, emotional and motivational states. However, although it seems natural to assume that brainjacking represents a profound threat to individual autonomy, we suggest that the implications of brainjacking for individual autonomy are complicated by the fact that technologies targeted by brainjacking often serve to enhance certain aspects of the user's autonomy. The difficulty of ascertaining the implications of brainjacking DBS for individual autonomy is exacerbated by the varied understandings of autonomy in the neuroethical and philosophical literature. In this paper, we seek to bring some conceptual clarity to this area by mapping out some of the prominent views concerning the different dimension of autonomous agency, and the implications of brainjacking DBS for each dimension. Drawing on three hypothetical case studies, we show that there could plausibly be some circumstances in which brainjacking could potentially be carried out in ways that could serve to enhance certain dimensions of the target's autonomy. Our analysis raises further questions about the power, scope, and necessity of obtaining prior consent in seeking to protect patient autonomy when directly interfering with their neural states, in particular in the context of self-regulating closed-loop stimulation devices.",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "Ethics and Information Technology",
+        "type": "journal",
+        "issn": [
+          "1388-1957",
+          "1572-8439"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10676-018-9466-4.pdf"
+      },
+      "topics": [
+        "Neurological disorders and treatments",
+        "Genetic Neurodegenerative Diseases",
+        "Obsessive-Compulsive Spectrum Disorders"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W2886974979"
+    },
+    {
+      "openalex_id": "W3028177668",
+      "doi": "10.1186/s12916-020-01585-y",
+      "title": "Guidance for identification and treatment of individuals with attention deficit/hyperactivity disorder and autism spectrum disorder based upon expert consensus",
+      "authors": [
+        {
+          "name": "Susan Young",
+          "openalex_id": "A5079079255",
+          "orcid": "https://orcid.org/0000-0002-8494-6949"
+        },
+        {
+          "name": "Jack Hollingdale",
+          "openalex_id": "A5060946546",
+          "orcid": "https://orcid.org/0000-0002-8720-2785",
+          "institutions": [
+            "South London and Maudsley NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Michael Absoud",
+          "openalex_id": "A5053491519",
+          "orcid": "https://orcid.org/0000-0002-0577-1897",
+          "institutions": [
+            "Evelina London Children's Healthcare",
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Patrick Bolton",
+          "openalex_id": "A5030755834",
+          "orcid": "https://orcid.org/0000-0002-5270-6262",
+          "institutions": [
+            "South London and Maudsley NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Polly Branney",
+          "openalex_id": "A5103906509"
+        },
+        {
+          "name": "William Colley",
+          "openalex_id": "A5006047939"
+        },
+        {
+          "name": "Emily Craze",
+          "openalex_id": "A5002048423",
+          "institutions": [
+            "South London and Maudsley NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Mayuri Dave",
+          "openalex_id": "A5030603292",
+          "institutions": [
+            "Hertfordshire Community NHS Trust"
+          ]
+        },
+        {
+          "name": "Quinton Deeley",
+          "openalex_id": "A5050209940",
+          "orcid": "https://orcid.org/0000-0001-5306-0769",
+          "institutions": [
+            "South London and Maudsley NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Emad Farrag",
+          "openalex_id": "A5015555956",
+          "institutions": [
+            "South London and Maudsley NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Gisli H. Gudj\u00f3nsson",
+          "openalex_id": "A5084847706",
+          "orcid": "https://orcid.org/0000-0002-8817-0797",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Peter Hill",
+          "openalex_id": "A5012544631"
+        },
+        {
+          "name": "Holan Liang",
+          "openalex_id": "A5071232548",
+          "orcid": "https://orcid.org/0000-0001-6650-9449",
+          "institutions": [
+            "University College London",
+            "Great Ormond Street Hospital"
+          ]
+        },
+        {
+          "name": "Clodagh M. Murphy",
+          "openalex_id": "A5016345332",
+          "orcid": "https://orcid.org/0000-0002-6350-0155",
+          "institutions": [
+            "South London and Maudsley NHS Foundation Trust",
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Peri Mackintosh",
+          "openalex_id": "A5061088171",
+          "institutions": [
+            "South London and Maudsley NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Marianna Murin",
+          "openalex_id": "A5033761474",
+          "institutions": [
+            "Anna Freud Centre"
+          ]
+        },
+        {
+          "name": "Fintan J. O\u2019Regan",
+          "openalex_id": "A5013571319"
+        },
+        {
+          "name": "Dennis Ougrin",
+          "openalex_id": "A5045975102",
+          "orcid": "https://orcid.org/0000-0003-1995-5408",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Patricia Rios",
+          "openalex_id": "A5110784515"
+        },
+        {
+          "name": "Nancy Stover",
+          "openalex_id": "A5083138790"
+        },
+        {
+          "name": "Eric Taylor",
+          "openalex_id": "A5006814780",
+          "orcid": "https://orcid.org/0000-0001-6081-1698",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Emma Woodhouse",
+          "openalex_id": "A5025537503",
+          "orcid": "https://orcid.org/0000-0003-3209-6329",
+          "institutions": [
+            "King's College London"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-05-25",
+      "abstract": null,
+      "cited_by_count": 151,
+      "type": "article",
+      "source": {
+        "name": "BMC Medicine",
+        "type": "journal",
+        "issn": [
+          "1741-7015"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmedicine.biomedcentral.com/track/pdf/10.1186/s12916-020-01585-y"
+      },
+      "topics": [
+        "Attention Deficit Hyperactivity Disorder",
+        "Autism Spectrum Disorder Research",
+        "Child and Adolescent Psychosocial and Emotional Development"
+      ],
+      "referenced_works_count": 119,
+      "url": "https://openalex.org/W3028177668"
+    },
+    {
+      "openalex_id": "W4242712349",
+      "doi": "10.7551/mitpress/11168.001.0001",
+      "title": "The Anxious Mind",
+      "authors": [
+        {
+          "name": "Charlie Kurth",
+          "openalex_id": "A5031263469",
+          "orcid": "https://orcid.org/0000-0002-2836-9163"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-06",
+      "abstract": "An empirically informed, philosophical account of the nature of anxiety and its value for agency, virtue, and decision making. In The Anxious Mind, Charlie Kurth offers a philosophical account of anxiety in its various forms, investigating its nature and arguing for its value in agency, virtue, and decision making. Folk wisdom tells us that anxiety is unpleasant and painful, and scholarly research seems to provide empirical and philosophical confirmation of this. But Kurth points to anxiety's positive effects: enhancing performance, facilitating social interaction, and even contributing to moral thought and action. Kurth argues that an empirically informed philosophical account of anxiety can help us understand the nature and value of emotions, and he offers just such an account. He develops a model of anxiety as a bio-cognitive emotion\u2014anxiety is an aversive emotional response to uncertainty about threats or challenges\u2014and shows that this model captures the diversity in the types of anxiety we experience. Building on this, he considers a range of issues in moral psychology and ethical theory. He explores the ways in which anxiety can be valuable, arguing that anxiety can be a fitting response and that it undergirds an important form of moral concern. He considers anxiety's role in deliberation and decision making, using the examples of Martin Luther King, Jr. and the abolitionist John Woolman to show that anxiety can be a mechanism of moral progress. Drawing on insights from psychiatry and clinical psychology, Kurth argues that we can cultivate anxiety so that we are better able to experience it at the right time and in the right way.",
+      "cited_by_count": 82,
+      "type": "book",
+      "source": {
+        "name": "The MIT Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4242712349"
+    },
+    {
+      "openalex_id": "W2804413960",
+      "doi": "10.3389/fpsyg.2018.00691",
+      "title": "Simulations in Cyber-Security: A Review of Cognitive Modeling of Network Attackers, Defenders, and Users",
+      "authors": [
+        {
+          "name": "Vladislav D. Veksler",
+          "openalex_id": "A5024326173",
+          "orcid": "https://orcid.org/0000-0001-5659-4854",
+          "institutions": [
+            "DCS Corporation (United States)",
+            "DEVCOM Army Research Laboratory"
+          ]
+        },
+        {
+          "name": "Norbou Buchler",
+          "openalex_id": "A5113688113",
+          "institutions": [
+            "DEVCOM Army Research Laboratory"
+          ]
+        },
+        {
+          "name": "Blaine Hoffman",
+          "openalex_id": "A5048968713",
+          "institutions": [
+            "DEVCOM Army Research Laboratory"
+          ]
+        },
+        {
+          "name": "Daniel N. Cassenti",
+          "openalex_id": "A5017990472",
+          "institutions": [
+            "DEVCOM Army Research Laboratory"
+          ]
+        },
+        {
+          "name": "Char Sample",
+          "openalex_id": "A5032875227",
+          "orcid": "https://orcid.org/0000-0002-7110-470X",
+          "institutions": [
+            "DEVCOM Army Research Laboratory"
+          ]
+        },
+        {
+          "name": "Shridat Sugrim",
+          "openalex_id": "A5067933541",
+          "institutions": [
+            "Vencore (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-15",
+      "abstract": "Computational models of cognitive processes may be employed in cyber-security tools, experiments, and simulations to address human agency and effective decision-making in keeping computational networks secure. Cognitive modeling can addresses multi-disciplinary cyber-security challenges requiring cross-cutting approaches over the human and computational sciences such as the following: (a) adversarial reasoning and behavioral game theory to predict attacker subjective utilities and decision likelihood distributions, (b) human factors of cyber tools to address human system integration challenges, estimation of defender cognitive states, and opportunities for automation, (c) dynamic simulations involving attacker, defender, and user models to enhance studies of cyber epidemiology and cyber hygiene, and (d) training effectiveness research and training scenarios to address human cyber-security performance, maturation of cyber-security skill sets, and effective decision-making. Models may be initially constructed at the group-level based on mean tendencies of each subject's subgroup, based on known statistics such as specific skill proficiencies, demographic characteristics, and cultural factors. For more precise and accurate predictions, cognitive models may be fine-tuned to each individual attacker, defender, or user profile, and updated over time (based on recorded behavior) via techniques such as model tracing and dynamic parameter fitting.",
+      "cited_by_count": 55,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2018.00691/pdf"
+      },
+      "topics": [
+        "Information and Cyber Security",
+        "Opinion Dynamics and Social Influence",
+        "Human-Automation Interaction and Safety"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W2804413960"
+    },
+    {
+      "openalex_id": "W3193574848",
+      "doi": "10.1007/s11097-021-09764-9",
+      "title": "Do delusions have and give meaning?",
+      "authors": [
+        {
+          "name": "Rosa Ritunnano",
+          "openalex_id": "A5087056935",
+          "orcid": "https://orcid.org/0000-0002-7967-5830",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Lisa Bortolotti",
+          "openalex_id": "A5067972057",
+          "orcid": "https://orcid.org/0000-0003-0507-4650",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-08-23",
+      "abstract": null,
+      "cited_by_count": 55,
+      "type": "article",
+      "source": {
+        "name": "Phenomenology and the Cognitive Sciences",
+        "type": "journal",
+        "issn": [
+          "1568-7759",
+          "1572-8676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11097-021-09764-9.pdf"
+      },
+      "topics": [
+        "Mental Health and Psychiatry",
+        "Psychosomatic Disorders and Their Treatments",
+        "Schizophrenia research and treatment"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W3193574848"
+    },
+    {
+      "openalex_id": "W4367310463",
+      "doi": "10.1007/s41042-023-00099-1",
+      "title": "The Relationships between the Hope Dimensions of Agency Thinking and Pathways Thinking With Depression and Anxiety: a Meta-Analysis",
+      "authors": [
+        {
+          "name": "Jordan A. Corrigan",
+          "openalex_id": "A5061873845",
+          "institutions": [
+            "University of New England"
+          ]
+        },
+        {
+          "name": "Nicola S. Schutte",
+          "openalex_id": "A5081362935",
+          "orcid": "https://orcid.org/0000-0002-3294-7659",
+          "institutions": [
+            "University of New England"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-28",
+      "abstract": "Abstract Lack of hope may be important in the development and progression of depression and anxiety. Hope theory holds that hope has two cognitive components, agency thinking and pathways thinking. The aim of this meta-analytic study was to consolidate the results of studies investigating the relationships between agency thinking and pathways thinking with depression and anxiety Results showed that across studies both higher levels of agency and pathways thinking were associated with less depression and less anxiety. The weighted effect sizes for agency thinking were r = -.391 for depression and r = -.259 for anxiety. The weighted effect sizes for pathways thinking were r = -.328 for depression and r = -.206 for anxiety. The effect size for the association of agency thinking with depression was substantially larger than the effect size for the association of pathways thinking for depression. Agency thinking and pathways thinking were both more strongly associated with depression than anxiety. The agency thinking association with depression and anxiety increased in strength with age, while pathways thinking did not. The findings suggest that even though both pathways thinking and agency thinking as aspects of hope play important roles in relation to depression and anxiety, agency thinking may be especially pivotal. Future research can build on these results with experimental designs to generate causal findings and investigate ways to enhance agency thinking and pathways thinking as a means to reduce depression and anxiety.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Applied Positive Psychology",
+        "type": "journal",
+        "issn": [
+          "2364-5040",
+          "2364-5059"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s41042-023-00099-1.pdf"
+      },
+      "topics": [
+        "Optimism, Hope, and Well-being",
+        "Homelessness and Social Issues",
+        "Religion, Spirituality, and Psychology"
+      ],
+      "referenced_works_count": 74,
+      "url": "https://openalex.org/W4367310463"
+    },
+    {
+      "openalex_id": "W3111242486",
+      "doi": "10.1002/jcop.22490",
+      "title": "Social participation and posttraumatic growth: The serial mediation of hope, social support, and reappraisal",
+      "authors": [
+        {
+          "name": "Roni Laslo\u2010Roth",
+          "openalex_id": "A5002039082",
+          "orcid": "https://orcid.org/0000-0002-1566-3582",
+          "institutions": [
+            "Peres Academic Center"
+          ]
+        },
+        {
+          "name": "Sivan George\u2010Levi",
+          "openalex_id": "A5076766563",
+          "orcid": "https://orcid.org/0000-0002-1235-0978",
+          "institutions": [
+            "Peres Academic Center"
+          ]
+        },
+        {
+          "name": "Malka Margalit",
+          "openalex_id": "A5081654007",
+          "orcid": "https://orcid.org/0000-0001-7967-8567",
+          "institutions": [
+            "Tel Aviv University",
+            "Peres Academic Center"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-09",
+      "abstract": "Abstract In light of the global crisis created by the outbreak of the coronavirus and the disease it causes, coronavirus disease 2019, the goal of the study was to detect factors that might enhance people's ability to experience positive psychological change during traumatic events. As such, this study examined the relationship between social participation and posttraumatic growth (PTG) during the coronavirus outbreak and tested the mediating role of hope, social support, and cognitive reappraisal in explaining this relationship. The sample consisted of 275 participants (21.8% male, and 78.2% female, with an average age of 33.42, SD = 13.63), subjected to social\u2010distancing regulations during this period. Results demonstrated a serial mediation model in which social participation predicted PTG directly and indirectly through hope (pathways and agency), social support, and cognitive reappraisal. The importance of social participation in nourishing personal resources and practical implications including the need for prevention programs are discussed.",
+      "cited_by_count": 39,
+      "type": "article",
+      "source": {
+        "name": "Journal of Community Psychology",
+        "type": "journal",
+        "issn": [
+          "0090-4392",
+          "1520-6629"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/jcop.22490"
+      },
+      "topics": [
+        "Optimism, Hope, and Well-being",
+        "Posttraumatic Stress Disorder Research",
+        "COVID-19 and Mental Health"
+      ],
+      "referenced_works_count": 101,
+      "url": "https://openalex.org/W3111242486"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

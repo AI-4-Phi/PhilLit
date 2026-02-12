@@ -1,0 +1,77 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Nedelsky Reconceiving Autonomy",
+  "results": [
+    {
+      "paperId": "1c68c89b187b5ffc2df0766ae5bd5de7e59d198e",
+      "title": "Reconceiving Autonomy: Sources, Thoughts and Possibilities",
+      "authors": [
+        {
+          "name": "Jennifer Nedelsky",
+          "authorId": "101396428"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 458,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c68c89b187b5ffc2df0766ae5bd5de7e59d198e",
+      "venue": "",
+      "journal": {
+        "name": "Yale Journal of Law and Feminism",
+        "pages": "5",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2d85846667a4666d91fc3a07f0cd03a366209e3f",
+      "title": "Law, Boundaries, and the Bounded Self",
+      "authors": [
+        {
+          "name": "Jennifer Nedelsky",
+          "authorId": "101396428"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 223,
+      "doi": "10.2307/2928450",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2d85846667a4666d91fc3a07f0cd03a366209e3f",
+      "venue": "",
+      "journal": {
+        "name": "Representations",
+        "pages": "162-189",
+        "volume": "30"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "383cf79e40219168f67bed6499abc1d503bc9b51",
+      "title": "The history of ideas : canon and variations",
+      "authors": [
+        {
+          "name": "D. Kelley",
+          "authorId": "40084641"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/383cf79e40219168f67bed6499abc1d503bc9b51",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

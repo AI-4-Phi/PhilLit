@@ -1,0 +1,786 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "authenticity",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/authenticity/",
+      "entry_name": "authenticity",
+      "title": "Authenticity",
+      "preamble": "The term \u2018authentic\u2019 is used either in the strong sense of\nbeing \u201cof undisputed origin or authorship\u201d, or in a weaker\nsense of being \u201cfaithful to an original\u201d or a\n\u201creliable, accurate representation\u201d. To say that something\nis authentic is to say that it is what it professes to be, or what it\nis reputed to be, in origin or authorship. But the distinction between\nauthentic and derivative is more complicated when discussing\nauthenticity as a characteristic attributed to human beings. For in\nthis case, the question arises: What is it to be oneself, at one with\noneself, or truly representing one\u2019s self? The multiplicity of\npuzzles that arise in conjunction with the conception of authenticity\nconnects with metaphysical, epistemological, and moral issues (for\nrecent discussion, see Newman and Smith 2016; Heldke and Thomsen\n2014). On the one hand, being oneself is inescapable, since whenever\none makes a choice or acts, it is oneself who is doing these things.\nBut on the other hand, we are sometimes inclined to say that some of\nthe thoughts, decisions and actions that we undertake are not really one\u2019s own and are therefore not genuinely\nexpressive of who one is. Here, the issue is no longer of metaphysical\nnature, but rather about moral-psychology, identity and\nresponsibility. When used in this latter sense, the characterization describes a\nperson who acts in accordance with desires, motives, ideals or beliefs\nthat are not only hers (as opposed to someone else\u2019s), but that\nalso express who she really is. Bernard Williams captures this when he\nspecifies authenticity as \u201cthe idea that some things are in some\nsense really you, or express what you are, and others\naren\u2019t\u201d (quoted in Guignon 2004: viii). Besides being a topic in philosophical debates, authenticity is also a\npervasive ideal that impacts social and political thinking.\nIn fact, one distinctive feature of recent Western intellectual\ndevelopments has been a shift to what is called the \u201cage of\nauthenticity\u201d (Taylor 2007; Ferrarra 1998). Therefore,\nunderstanding the concept also involves investigating its historical\nand philosophical sources and on the way it impacts the\nsocio-political outlook of contemporary societies.",
+      "bibliography": [
+        {
+          "raw": "Adorno, Theodor W., 1973, The Jargon of Authenticity ,\ntrans. Knut Tarnowski and Frederic Will, Evanston, IL: Northwestern\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1974, Minima Moralia: Reflections from\nDamaged Life , trans. E. F. N. Jephcott. London: NLB.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1974",
+            "title": "\u2013\u2013\u2013, 1974, Minima Moralia: Reflections from\nDamaged Life , trans. E. F. N. Jephcott. London: NLB."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Aho, Kevin, 2014, Existentialism: An Introduction ,\nCambridge: Polity.",
+          "parsed": {
+            "authors": [
+              "Aho, Kevin"
+            ],
+            "year": "2014",
+            "title": "Existentialism: An Introduction ",
+            "publisher": "Cambridge: Polity"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Anderson, Joel, 1995, \u201cReview Essay: The Persistence of\nAuthenticity\u201d, Philosophy and Social Criticism , 21(1):\n101\u2013109.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Augustine, St., 1953, De vera religione , ( On True\nReligion ), trans. by J.H.S. Burleigh, South Bend, Indiana:\nGateway.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1988, Tractates on the Gospel of\nJohn 1\u201310, translated by John W. Rettig. (The Fathers of\nthe Church, 78), Washington, DC: Catholic University of America\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1988",
+            "title": "\u2013\u2013\u2013, 1988, Tractates on the Gospel of\nJohn 1\u201310, translated by John W. Rettig. (The Fathers of\nthe Church, 78), Washington, DC: Catholic University of America\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Bauer, K., 2017, \u201cTo be or Not to be Authentic. In Defense\nof Authenticity as an Ethical Ideal\u201d, Ethical Theory and\nMoral Practice , 20(3): 567\u2013580.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Beauvoir, Simone de, 1970 [1947], The Ethics of\nAmbiguity , New York: The Citadel Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bell, Daniel, 1976, The Cultural Contradictions of\nCapitalism , New York: Basic Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bell, Linda A., 1989, Sartre\u2019s Ethics of\nAuthenticity , Tuscaloosa: The University of Alabama Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bellah, Robert N. et al., 1985, Habits of the Heart ,\nBerkeley: University of California Press.",
+          "parsed": {
+            "authors": [
+              "Bellah, Robert N. et al."
+            ],
+            "year": "1985",
+            "title": "Habits of the Heart ",
+            "publisher": "Berkeley: University of California Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Benjamin, Walter, 1973, \u201cThe Work of Art in the Age of\nMechanical Reproduction\u201d, in Illuminations , ed. by\nHannah Arendt, Glasgow: Fontana.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Berlin, Isaiah, 2000, Three Critics of the Enlightenment:\nVico, Hamann, Herder , Princeton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Berger, Peter, 1970, \u201cOn the Obsolescence of the Concept of\nHonor\u201d, European Journal of Sociology , 11(2):\n338\u2013347; reprinted in S. Hauerwas and A. MacIntyre, eds., Revisions: Changing Perspectives in Moral Philosophy , Notre\nDame University Press, 1983.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Berman, Marshall, 1970, The Politics of Authenticity: Radical\nIndividualism and the Emergence of Modern Society , New York:\nAtheneum.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bialystok, L., 2014, \u201cAuthenticity and the Limits of\nPhilosophy\u201d, Dialogue , 53(2): 271\u2013298.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Blattner, William, 2006, Heidegger\u2019s Being and\nTime , New York: Continuum.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bloom, Allan, 1987, The Closing of the American Mind , New\nYork: Simon and Schuster.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Calhoun, Cheshire, 1995, \u201cStanding for something\u201d, The Journal of Philosophy , 92: 235\u201360.",
+          "parsed": {
+            "authors": [
+              "Calhoun, Cheshire"
+            ],
+            "year": "1995",
+            "title": "\u201cStanding for something\u201d",
+            "publisher": "The Journal of Philosophy , 92: 235\u201360"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Carman, Taylor, 2003, Heidegger\u2019s Analytic:\nInterpretation, Discourse, and Authenticity in Being and Time ,\nNew York: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Carnegie, Dale, 1948, How to Stop Worrying and Start\nLiving , New York: Simon & Schuster.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Darnton, Robert, 1984, The Great Cat Massacre and Other\nEpisodes in French Cultural History , New York: Viking.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Davenport, John J., 2012, Narrative Identity, Autonomy, and\nMorality: From Frankfurt and MacIntyre to Kierkegaard , New York:\nRoutledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Despland, Michel, 1975, \u201cCan Conscience Be Hypocritical? The\nContrasting Analyses of Kant and Hegel\u201d, The Harvard\nTheological Review , 68 (3/4): 357\u2013370.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dreyfus, Hubert L, 1991, Being-in-the-World. A Commentary on\nHeidegger\u2019s Being and Time Division I , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dutton, Denis, 2003, Authenticity in Art , in The\nOxford Handbook of Aesthetics , ed. by Jerrold Levinson. New York:\nOxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dworkin, Gerald, 1988, The Theory and Practice of\nAutonomy , New York: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fairlie, Henry, 1978, \u201cToo rich for heroes\u201d, Harper\u2019s , 257: 33\u201342; 97\u201398.",
+          "parsed": {
+            "authors": [
+              "Fairlie, Henry"
+            ],
+            "year": "1978",
+            "title": "\u201cToo rich for heroes\u201d",
+            "publisher": "Harper\u2019s , 257: 33\u201342; 97\u201398"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Farrell, James J., 1997, The Spirit of the Sixties ,\nLondon: Routledge.",
+          "parsed": {
+            "authors": [
+              "Farrell, James J."
+            ],
+            "year": "1997",
+            "title": "The Spirit of the Sixties ",
+            "publisher": "London: Routledge"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Feldman, S., 2014, Against Authenticity: Why You\nShouldn\u2019t Be Yourself , Lanham, MD: Lexington Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ferrara, Alessandro, 1993, Modernity and Authenticity: A Study\nof the Social and Ethical Thought of Jean-Jacques Rousseau ,\nAlbany, NY: Sunny Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1998, Reflective Authenticity ,\nLondon: Routledge.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1998",
+            "title": "Reflective Authenticity ",
+            "publisher": "London: Routledge"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, \u201cAuthenticity Without a True\nSelf\u201d, in Ph. Vannini and J.P. Williams (eds.), Authenticity\nin Culture, Self, and Society , Farnham: Ashgate, pp.\n21\u201336.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, \u201cAuthenticity Without a True\nSelf\u201d, in Ph. Vannini and J.P. Williams (eds.), Authenticity\nin Culture, Self, and Society , Farnham: Ashgate, pp.\n21\u201336."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2017, Rousseau and Critical\nTheory , Boston and Leiden, Brill.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2017",
+            "title": "\u2013\u2013\u2013, 2017, Rousseau and Critical\nTheory , Boston and Leiden, Brill."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2019, \u201cThe Dual Paradox of\nAuthenticity in the 21st Century\u201d, in Th. Claviez, K. Imesch,\nand B. Sweers (eds.), Critique of Authenticity , Wilmington,\nDE: Vernon Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2019",
+            "title": "\u2013\u2013\u2013, 2019, \u201cThe Dual Paradox of\nAuthenticity in the 21st Century\u201d, in Th. Claviez, K. Imesch,\nand B. Sweers (eds.), Critique of Authenticity , Wilmington,\nDE: Vernon Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Foucault, Michel, 1980, The History of Sexuality: Volume I: An\nIntroduction , New York: Vintage Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1984, \u201cOn the Genealogy of Ethics: An\nOverview of Work in Progress,\u201d in The Foucault Reader ,\nPaul Rabinow (ed.), New York: Pantheon, pp. 340\u2013372.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1984",
+            "title": "\u2013\u2013\u2013, 1984, \u201cOn the Genealogy of Ethics: An\nOverview of Work in Progress,\u201d in The Foucault Reader ,\nPaul Rabinow (ed.), New York: Pantheon, pp. 340\u2013372."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1983, \u201cThe Subject and Power\u201d,\nin Michel Foucault Beyond Structuralism and Hermeneutics by\nHubert L. Dreyfus and Paul Rabinow, Chicago: University of Chicago\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1983",
+            "title": "\u2013\u2013\u2013, 1983, \u201cThe Subject and Power\u201d,\nin Michel Foucault Beyond Structuralism and Hermeneutics by\nHubert L. Dreyfus and Paul Rabinow, Chicago: University of Chicago\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1988, \u201cAn Aesthetics of\nExistence\u201d, in Michel Foucault: Politics, Philosophy,\nCulture , edited by Lawrence D.Kritzman, pp. 47\u201353, New\nYork: Routledge.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1988",
+            "title": "\u2013\u2013\u2013, 1988, \u201cAn Aesthetics of\nExistence\u201d, in Michel Foucault: Politics, Philosophy,\nCulture , edited by Lawrence D.Kritzman, pp. 47\u201353, New\nYork: Routledge."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1994, The Order of Things: An\nArchaeology of the Human Sciences , New York: Vintage Books.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1994",
+            "title": "\u2013\u2013\u2013, 1994, The Order of Things: An\nArchaeology of the Human Sciences , New York: Vintage Books."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Golomb, Jacob, 1995, In Search of Authenticity from\nKierkegaard to Camus , Routledge: London, New York.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gray, Glenn J., 1965, \u201cSalvation on the campus: Why\nexistentialism is capturing the students\u201d, Harper\u2019s , 230: 53\u201359.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Guignon, Charles, 2004, On Being Authentic , London:\nRoutledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, \u201cAuthenticity\u201d, Philosophy Compass , 3: 277\u2013290.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u201cAuthenticity\u201d",
+            "publisher": "Philosophy Compass , 3: 277\u2013290"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Hadot, Pierre, 1992, \u201cReflections on the notion of the\n\u2018cultivation of the self\u2019\u201d, in Timothy J. Armstrong\n(ed.), Michel Foucault, Philosopher , New York: Routledge, pp.\n225\u2013232.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hegel, G.W.F., 2002 [1807], The Phenomenology of Mind ,\nVol. 2. London: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Heidegger, Martin, 1962 [1927], Being and Time , J.\nMacquarrie & E. Robinson (trans.), New York: Harper &\nRow.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Heldke, Lisa, and Thomsen, Jens, 2014, \u201cTwo Concepts of\nAuthenticity\u201d, Social Philosophy Today , 30:\n79\u201394.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Honneth, Axel, 1994, \u201cSchwerpunkt: Autonomie und\nAuthentizit\u00e4t\u201d, Deutsche Zeitschrift f\u00fcr\nPhilosophie , 42(1): 59\u201360.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Jay, Martin, 2004, \u201cMimesis and Mimetology: Adorno and\nLacoue-Labarthe\u201d, in Critical Theory , Vol. 4, D.\nRasmussen and J. Swindal (eds), London: Sage, pp. 265\u2013283.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Jeffries, Stuart, 2002, \u201cBernard Williams: The Quest for\nTruth\u201d, The Guardian , November 29, 2.\n [ Jeffries 2002 available online ]",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kierkegaard, S\u00f8ren, 1962 [1846], The Present Age ,\nA. Dru (trans.), NY: Harper Torchbooks.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1992 [1846], Concluding Unscientific\nPostscript to \u201cPhilosophical Fragments\u201d, Vol. 1 ,\nPrinceton: Princeton University Press,",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1992",
+            "title": "\u2013\u2013\u2013, 1992 [1846], Concluding Unscientific\nPostscript to \u201cPhilosophical Fragments\u201d, Vol. 1 ,\nPrinceton: Princeton University Press,"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1983 [1843], Fear and Trembling and\nRepetition , Princeton: Princeton University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1983",
+            "title": "\u2013\u2013\u2013, 1983 [1843], Fear and Trembling and\nRepetition , Princeton: Princeton University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1980 [1849], The Sickness Unto Death:\nThe Christian Psychological Exposition for Upbuilding and\nAwakening , trans., H. V. Hong and E. H. Hong. Princeton:\nPrinceton University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1980",
+            "title": "\u2013\u2013\u2013, 1980 [1849], The Sickness Unto Death:\nThe Christian Psychological Exposition for Upbuilding and\nAwakening , trans., H. V. Hong and E. H. Hong. Princeton:\nPrinceton University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Lasch, C., 1979, The Culture of Narcissism: American Life in\nan Age of Diminishing Expectations , New York: Norton.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "MacKay, K., forthcoming, \u201cAuthenticity and Normative\nAuthority: Addressing the Agency Dilemma with Values of One\u2019s\nOwn\u201d, Journal of Social Philosophy , first online 01\nDecember 2019. doi:10.1111/josp.12309",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "McManus, D., 2019, \u201cOn a Judgment of One\u2019s Own:\nHeideggerian Authenticity, Standpoints, and All Things\nConsidered\u201d, Mind , 128(512): 1181\u20131204.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Menke, Christoph, 2005, \u201c Innere Natur und soziale\nNormativit\u00e4t: Die Idee der Selbstverwirklichung \u201d, in Die kulturellen Werte Europas , edited by Hans Joas and Klaus\nWiegandt, Frankfurt am Main: Fischer, pp. 304\u2013352.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Newman, G.E., and Smith, R.K., 2016, \u201cKinds of\nAuthenticity\u201d, Philosophy Compass , 11(10):\n609\u2013618.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Novak, Michael, 1976, \u201cThe family out of favor\u201d, Harper\u2019s , 252: 37\u201346.",
+          "parsed": {
+            "authors": [
+              "Novak, Michael"
+            ],
+            "year": "1976",
+            "title": "\u201cThe family out of favor\u201d",
+            "publisher": "Harper\u2019s , 252: 37\u201346"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Nussbaum, Martha, 1994, Therapy of Desire. Theory and Practice\nin Hellenistic Ethics , Princeton: Princeton University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Oshana, Marina, 2007, \u201cAutonomy and the Question of\nAuthenticity\u201d, Social Theory and Practice , 33(3):\n411\u2013429.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Orwell, Miles, 1989, The Real Thing: Imitation and\nAuthenticity in American Culture , 1880\u20131940. North\nCarolina: University of North Carolina Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Potter, Andrew, 2010, The Authenticity Hoax: How We Got Lost\nTrying to Find Ourselves , San Francisco: HarperCollins.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ricoeur, P., 1970, Freud and Philosophy: An Essay on\nInterpretation , trans., S. Savage, New Haven, Conn.: Yale Univ\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Riesmann, David, 1950, The Lonely Crowd. A Study of the\nChanging American Character , Written with Nathan Glazer and Reuel\nDenney, New Haven, Conn.: Yale University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rings, M., 2017, \u201cAuthenticity, Self-fulfillment, and\nSelf-acknowledgment\u201d, The Journal of Value Inquiry ,\n51(3): 475\u2013489.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Roessler, B., 2012, \u201cAuthenticity of cultures and of\npersons\u201d, Philosophy and Social Criticism , 38(4-5):\n445\u2013455.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rorty, Richard, 1989, Contingency, Irony and Solidarity ,\nCambridge: Cambridge University Press.",
+          "parsed": {
+            "authors": [
+              "Rorty, Richard"
+            ],
+            "year": "1989",
+            "title": "Contingency, Irony and Solidarity ",
+            "publisher": "Cambridge: Cambridge University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Rossinow, Doug, 1998, The Politics of Authenticity:\nLiberalism, Christianity and the New Left in America , New York:\nColumbia University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rousseau, Jean-Jacques, 1979 [1762], \u00c9mile , Alan\nBloom (trans.), New York: Basic Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1957 [1770], The Confessions of\nJean-Jacques Rousseau , Lester Crocker (ed.), New York: Pocket\nBooks.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1957",
+            "title": "\u2013\u2013\u2013, 1957 [1770], The Confessions of\nJean-Jacques Rousseau , Lester Crocker (ed.), New York: Pocket\nBooks."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1992 [1754], Discourse on the Origin of\nInequality , Donald A.Cress (trans.), Indianapolis: Hackett.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1992",
+            "title": "\u2013\u2013\u2013, 1992 [1754], Discourse on the Origin of\nInequality , Donald A.Cress (trans.), Indianapolis: Hackett."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1997 [1761], Julie, or, The new\nHeloise: Letters of Two Lovers Who Live in a Small Town at the Foot of\nthe Alps , P. Stewart and J. Hanover (trans.), Lebanon, NH:\nUniversity Press of New England.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1997",
+            "title": "\u2013\u2013\u2013, 1997 [1761], Julie, or, The new\nHeloise: Letters of Two Lovers Who Live in a Small Town at the Foot of\nthe Alps , P. Stewart and J. Hanover (trans.), Lebanon, NH:\nUniversity Press of New England."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Sartre, Jean-Paul, 1948, Anti-semite and Jew , New York:\nSchocken Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1992a [1943], Being and Nothingness: A\nPhenomenological Essay on Ontology , New York: Washington Square\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1992",
+            "title": "\u2013\u2013\u2013, 1992a [1943], Being and Nothingness: A\nPhenomenological Essay on Ontology , New York: Washington Square\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1992b [1947\u201348], Notebooks for an\nEthics , Chicago: University of Chicago Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1992",
+            "title": "\u2013\u2013\u2013, 1992b [1947\u201348], Notebooks for an\nEthics , Chicago: University of Chicago Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1946, \u201cThe Humanism of\nExistentialism\u201d, reprinted in Charles Guignon and Derk Pereboom\n(eds.), Existentialism: Basic Writings , Indianapolis, IN:\nHackett Publishing Co., 2001.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1946",
+            "title": "\u2013\u2013\u2013, 1946, \u201cThe Humanism of\nExistentialism\u201d, reprinted in Charles Guignon and Derk Pereboom\n(eds.), Existentialism: Basic Writings , Indianapolis, IN:\nHackett Publishing Co., 2001."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Schmid, H.B., 2017, \u201cAuthentic Role Play: A Political\nSolution to an Existential Paradox\u201d, in H. Schmid and G.\nThonhauser (eds.), From Conventionalism to Social\nAuthenticity (Studies in the Philosophy of Sociality: Volume 10),\nCham: Springer. doi:10.1007/978-3-319-56865-2_14",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schneewind, J. B., 1998, The Invention of Autonomy: A History\nof Modern Philosophy , Cambridge: Cambridge University Press",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sennett, Richard, 1993, The Conscience of the Eye: The Design\nand Social Life of Cities , London: Faber & Faber.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sennett, Richard and Richard Cobb, 1972, The Hidden Injuries\nof Class , New York: Knopf.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sheldrake, Philip F., 2003, \u201cChristian Spirituality as a Way\nof Living Publicly: A Dialectic of the Mystical and Prophetic\u201d, Spiritus: A Journal of Christian Spirituality , 3(1):\n19\u201337.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sisk, John P., 1973, \u201cOn being an object\u201d, Harper\u2019s , 247: 60\u201364.",
+          "parsed": {
+            "authors": [
+              "Sisk, John P."
+            ],
+            "year": "1973",
+            "title": "\u201cOn being an object\u201d",
+            "publisher": "Harper\u2019s , 247: 60\u201364"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Slater, Philip Elliot, 1970, The pursuit of loneliness:\nAmerican culture at the breaking point , Boston: Beacon\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Taylor, Charles, 1989, Sources of the Self. The Making of the\nModern Identity , Cambridge: CUP.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1991, The Ethics of Authenticity ,\nCambridge: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1991",
+            "title": "The Ethics of Authenticity ",
+            "publisher": "Cambridge: Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1995, \u201cThe politics of\nrecognition\u201d, in Philosophical Arguments , by Charles\nTaylor, 225\u2013257. Cambridge Ma: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1995",
+            "title": "\u2013\u2013\u2013, 1995, \u201cThe politics of\nrecognition\u201d, in Philosophical Arguments , by Charles\nTaylor, 225\u2013257. Cambridge Ma: Harvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2007, A Secular Age , Cambridge:\nHarvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2007",
+            "title": "\u2013\u2013\u2013, 2007, A Secular Age , Cambridge:\nHarvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Thomson, Irene Taviss, 2000, In conflict no longer: self and\nsociety in contemporary America , Oxford: Rowmann &\nLittlefield.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Trilling, Lionel, 1972, Sincerity and Authenticity ,\nCambridge: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "Trilling, Lionel"
+            ],
+            "year": "1972",
+            "title": "Sincerity and Authenticity ",
+            "publisher": "Cambridge: Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Varga, S., 2011a, Authenticity as an Ethical Ideal , New\nYork: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2011b, \u201cSelf-Realization and Owing to\nOthers. A Morality Constraint?\u201d International Journal of\nPhilosophical Studies , 19: 71\u201382.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2011",
+            "title": "\u2013\u2013\u2013, 2011b, \u201cSelf-Realization and Owing to\nOthers. A Morality Constraint?\u201d International Journal of\nPhilosophical Studies , 19: 71\u201382."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Whyte, William H., 1956, The Organizational Man , New\nYork, Simon and Schuster.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Williams, Bernard, 1973, Utilitarianism: For and Against ,\nCambridge: Cambridge University Press 108\u2013118.",
+          "parsed": {
+            "authors": [
+              "Williams, Bernard"
+            ],
+            "year": "1973",
+            "title": "Utilitarianism: For and Against ",
+            "publisher": "Cambridge: Cambridge University Press 108\u2013118"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1985, \u201cMoral Luck\u201d, in Moral Luck: Philosophical Papers 1973\u20131980 , Cambridge:\nCambridge University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1985",
+            "title": "\u2013\u2013\u2013, 1985, \u201cMoral Luck\u201d, in Moral Luck: Philosophical Papers 1973\u20131980 , Cambridge:\nCambridge University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2002, Truth and Truthfulness: An Essay\nin Genealogy , Princeton: Princeton University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2002",
+            "title": "\u2013\u2013\u2013, 2002, Truth and Truthfulness: An Essay\nin Genealogy , Princeton: Princeton University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2002, Truth and Truthfulness , New\nJersey: Princeton University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2002",
+            "title": "\u2013\u2013\u2013, 2002, Truth and Truthfulness , New\nJersey: Princeton University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Wolf, Susan, 1997, \u201cMeaning and Morality\u201d, Proceedings of the Aristotelian Society , 97: 299\u2013315.",
+          "parsed": {
+            "authors": [
+              "Wolf, Susan"
+            ],
+            "year": "1997",
+            "title": "\u201cMeaning and Morality\u201d",
+            "publisher": "Proceedings of the Aristotelian Society , 97: 299\u2013315"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Yankelovich, Daniel, 1981, New Rules: Searching for\nSelf-Fulfillment in a World Turned Upside Down , New York: Random\nHouse.",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ],
+      "sections": {
+        "1": {
+          "id": "1",
+          "title": "3 Authenticity and the self",
+          "content": "Another decisive factor in the development of the ideal of\nauthenticity was that it emerged together with a distinctively modern\nconception of the self. This is visible in the work of Rousseau, who\nargues that the orientation toward life that should guide the conduct\none chooses should come from a source within. This led to questions\nabout inwardness, self-reflection and introspection, many of them\naddressed in his Confessions (1770). When the space of\ninteriority becomes a guiding authority, the individual must detect\nand distinguish central impulses, feelings and wishes from ones that\nare less central or conflict with one\u2019s central motives. In\nother words, interiority must be divided into what is at the core and\nwhat is peripheral. In this picture, the measure of one\u2019s\nactions is whether they spring from and express essential aspects of\none\u2019s identity or whether they come from a peripheral place. Such a conception of the self exhibits decisive parallels to the\ntradition of \u201creligious individualism\u201d that centers\nreligious life on the individual and stresses the importance of\ninwardness and the introspective examination of one\u2019s inner\nmotives, intentions and conscience. Investigating the characteristics\nof the modern subject of inwardness, Foucault (1980: 58\u201360)\nsuggests that \u201cit seems to us that truth, lodged in our most\nsecret nature, \u2018demands\u2019 only to surface.\u201d For\nFoucault, confession\u2014the look inward to monitor one\u2019s\ninterior life and to tell certain \u201ctruths\u201d about\noneself\u2014has become a part of a cultural life, reaching from\nreligious contexts to psychological therapy. The radicalization of the\ndistinction between true and false interiority has led to new\npossibilities; inner states, motivations and feelings are now\nincreasingly thought of as objectifiable and malleable in different\ncontexts. Rousseau also adds that acting on motives that spring from the\nperiphery of the self, while ignoring or denying essential aspects of\none\u2019s self, simply amounts to self-betrayal and annihilation of\nthe self. Rousseau\u2019s The New Heloise (1997 [1761])\nemphasizes this aspect by showing how the novel accentuates the\nsignificant costs and the potential self-alienation involved in\nsuppressing one\u2019s deepest motivations. But, in addition, in the Discourse on the Origin of Inequality , Rousseau argues that,\nwith the emergence of a competitive public sphere, the ability to turn\ninward is increasingly compromised, because competitive relations\nrequire intense role-playing, which Rousseau calls an \u201cexcessive\nlabor\u201d (Rousseau 1992 [1754]: 22). The ongoing instrumental\nrole-playing not only causes alienation, but ultimately inequality and\ninjustice, since it destroys the immanent moral understanding with\nwhich, according to Rousseau, humans are hard-wired. Social life\nrequires identification with social roles, but because role identity\nis determined by other people\u2019s normative expectations,\nrole-playing leads to a tension that might be understood as a matter\nof politics more than anything else (Schmid 2017)."
+        },
+        "2": {
+          "id": "2",
+          "title": "Critique of Authenticity",
+          "content": "The idea of autonomy\u2014the view that each individual must decide\nhow to act based on his or her own rational deliberations about the\nbest course of action\u2014has in many ways paved the way for the\nidea of authenticity. However, authenticity goes beyond autonomy by\nholding that an individual\u2019s feelings and deepest desires can\noutweigh both the outcome of rational deliberation in making\ndecisions, and our willingness to immerse ourselves into the reigning\nnorms and values of society. Whereas sincerity generally seems to\naccept a given social order, authenticity becomes an implicitly\ncritical concept, often calling into question the reigning social\norder and public opinion. In Rousseau\u2019s optic, one of our most\nimportant projects is to avert from the social sphere and to unearth\nwhat is truly us underneath the \u2018masks\u2019 that\nsociety forces on us. But when authenticity comes to be regarded as\nsomething like sincerity for its own sake (Ferrara 1993: 86), it\nbecomes increasingly hard to see what the moral good is that it is\nsupposed to bring into being. A frequently mentioned worry with the ideal of authenticity is that\nthe focus on one\u2019s own inner feelings and attitudes may breed a\nself-centered preoccupation with oneself that is anti-social and\ndestructive of altruism and compassion toward others. Christopher\nLasch (1979) points out similarities between the clinical disorder\nreferred to as Narcissistic Personality Disorder and authenticity.\nAccording to Lasch, narcissism and authenticity are both characterized\nby deficient empathic skills, self-indulgence and self-absorbed\nbehavior. Similarly, Allan Bloom (1987: 61) maintains that the culture\nof authenticity has made the minds of the youth \u201cnarrower and\nflatter,\u201d leading to self-centeredness and the collapse of the\npublic self. While Lasch and Bloom worry about the threat that the\nself-centeredness and narcissism of the \u201cculture of\nauthenticity\u201d poses to morality and political coherence, Daniel\nBell voices worries about its economic viability. What Bell fears is\nthat the \u201cmegalomania of self-infinitization\u201d that comes\nwith the culture of authenticity will erode the foundations of market\nmechanisms that are \u201cbased on a moral system of reward rooted in\nthe Protestant sanctification of work\u201d (Bell 1976: 84). More\nrecently, critics have argued that when properly analyzed,\nauthenticity demands positing the existence of a \u201ctrue\nself.\u201d It requires positing an essentialist structure leading to\nmetaphysical problems that current accounts of authenticity fail to\nsolve (Bialystok 2014). Correspondingly, Feldman (2014) argues in\nfavor of abandoning the ideal of authenticity because it builds on\nconfused assumptions about the self, the value of one\u2019s\n\u201cgut feelings\u201d in revealing one\u2019s values, and the\nsupposedly corrupting influence of the \u201cexternal\u201d social\nrealm (for a critique of this position, see Bauer 2017; Ferrara 2009) However, one might argue that this only becomes a problem if one\nthinks of authenticity as entirely a personal virtue. In other words,\nthere is only a clash between morality and social life and being\nauthentic if the \u201ctrue\u201d self is regarded as fundamentally\nprone to anti-social behaviour. But many thinkers at this time\nunderstood human nature as fundamentally disposed toward beneficence,\nso that evil was seen as arising from socialization and upbringing\nrather than from deep drives within the human being. For instance,\nRousseau holds that certain immoral characteristics are immanent in\nman but were produced by the dynamics of modern society, which is\ncharacterized by a competitive way of relating to others and striving\nfor acknowledgement in the public sphere. Rousseau thus externalizes\nthe origins of societal evil and alienation from the original nature\nof man. The undistorted self-relation of natural man inspires sympathy\nand considerate relations with others, sensitive to \u201cseeing any\nsentient being, especially our fellow-man, perish or suffer,\nprincipally those like ourselves\u201d (Rousseau 1992 [1754]: 14). In\nsomewhat the same way, economic theorists of the time supposed that\nunregulated markets are self-correcting, as human beings are naturally\ninclined to engage in mutually advantageous commercial activities\n(Taylor 2007: 221\u2013269). On this view, authenticity does not\namount to egoism or self-absorption. On the contrary, the prevailing\nview seems to have been that, by turning inward and accessing the\n\u201ctrue\u201d self, one is simultaneously led towards a deeper\nengagement with the social world. This is why Taylor (1989:\n419\u2013455) describes the trajectory of the project of authenticity\nis \u201cinward and upward\u201d. It might however be objected that supposing that the\n\u201cinner\u201d is a morally worthy guide is deeply misguided and\nbuilds upon an overly optimistic idea of human nature. It may be\nargued that once the idea of rational deliberation is set aside, the\npowerful impact of the non-rational becomes apparent. Thinkers such as\nNietzsche and Freud have put in question the conception of human\nnature, and especially of our \u201cinner\u201d nature, as\nfundamentally good. Following their \u201chermeneutics of\nsuspicion\u201d (Ricoeur 1970), human nature comes to be seen as\nincluding forces of violence, disorder and unreason as well as\ntendencies toward beneficence and altruism. In that case, any idea of\nan ethic based primarily on the ideal of authenticity is simply\nuntenable. Others have expressed serious concerns not about the optimistic view\nof human nature, but about the conception of the self that underlies\nthe idea of authenticity. Some argued that the dichotomies that the\nconcept authenticity was built on, like conformity vs. independence,\nindividual vs. society, or inner-directedness vs. other-directedness,\nwere entirely misguided. The underlying assumption that considers the\nindividual separate from the environment is an absurd assumption that\nerodes that bond between the individual and community, which\nultimately is the source of the authentic self (Slater 1970: 15; Sisk\n1973). In agreement with Slater (1970) and Yankelovich (1981), Bellah\net al. (1985) and Fairlie (1978) contend that such a pursuit of\nauthenticity is self-defeating, for with the loss of the bond with\ncommunity, the sense of self is also diminished. Additionally, in The Jargon of Authenticity , Adorno contended\nthat the \u201cliturgy of inwardness\u201d is founded on the flawed\nidea of a self-transparent individual who is capable of choosing\nherself (Adorno 1973: 70). The doubtful picture of the self-centered\nindividual covers up the constitutive alterity and mimetic nature of\nthe self. In the concluding part of The Order of Things ,\nFoucault maintained that present society was witnessing a crisis, not\nonly of authenticity but also of the whole idea of the subject in its\ntemporary historically contingent constitution, foreseeing that\n\u201cman would be erased, like a face drawn in sand at the edge of\nthe sea\u201d (Foucault 1994: 387). Foucault clearly opposed the idea\nof a hidden authentic self, which he critically referred to as the\n\u201cCalifornian cult of the self\u201d (1983: 266). The\nrecognition that the subject is not given to itself in advance leads\nhim to the practical consequence that it must create itself as a work\nof art (Foucault 1983: 392). Rather than searching for a hidden true\nself, one should attempt to shape one\u2019s life as a work of art,\nproceeding without recourse to any fixed rules or permanent truths in\na process of unending becoming (Foucault 1988: 49). In a similar vein,\nRichard Rorty has argued that the idea of coming to \u201cknow a\ntruth which was out there (or in here) all the time\u201d (Rorty\n1989: 27) is simply a myth. Postmodern thought raises questions about\nthe existence of an underlying subject with essential properties\naccessible through introspection. The whole idea of the authentic as\nthat which is \u201coriginal\u201d, \u201cessential\u201d,\n\u201cproper\u201d, and so forth now seems doubtful. If we are\nself-constituting beings who make ourselves up from one moment to the\nnext, it appears that the term \u201cauthenticity\u201d can refer\nonly to whatever feels right at some particular moment. Yet others have based their criticism of authenticity especially on\nthe emergence of a pervasive \u201cculture of authenticity\u201d.\nCultural critics have argued that the ostensible \u201cdecline\u201d\nof modern society might not primarily be a result of economical or\nstructural transformations, but as the outcome of an increasingly\nubiquitous ideal of authenticity. Before we turn to these critiques,\nit is helpful to understand how the ideal of authenticity became so\nwidespread. First, we should mention that Rousseau\u2019s work, made\na significant contribution to the popularization of authenticity.\nIndeed, some argue that authenticity can be seen as a\n\u201ckeystone\u201d in Rousseau\u2019s work, giving unity to his\nreflections on sociality, political order, and education (Ferrara\n2017: 2). Particularly The New Heloise (1997 [1761]) was\nenormously influential, with at least 70 editions in print before 1800\n(Darnton 1984: 242). This dispersion of the ideal of authenticity into\npopular culture was further strengthened by several factors. For\ninstance, a wide array of intellectuals of the nineteenth and the\nearly twentieth century had embraced the idea of authenticity, and\neven radicalized it by resisting established codes and publicly\ndefending alternative, \u201cartistic\u201d or\n\u201cbohemian\u201d modes of life. The reception of the work of Sartre and Heidegger has surely\ncontributed to the popularization of the idea of authenticity, and the\ndecisive impact of this idea first began to manifest itself after the\nSecond World War (Taylor 2007: 475). Rossinow contends that the\npolitics of the 1960s were centered on questions of authenticity.\nFollowing his account, the main driving force towards political and\nsocial changes of the New Left movement in the 1960s was \u201ca\nsearch for authenticity in industrial American life\u201d (Rossinow\n1998: 345). Both J. Farrell (1997) and Rossinow argue that the New\nLeft emerged partly as a reaction to traditional American liberalism\nand Christian existentialism, replacing the negative concept of\n\u201csin\u201d with \u201calienation\u201d and the positive goal\nof \u201csalvation\u201d with that of \u201cauthenticity\u201d.\nConfronted with what they understood as alienation that\n\u201cisn\u2019t restricted to the poor\u201d (Rossinow 1998: 194),\nNew Left activism reached beyond civil rights to moral rights and\nattempted to bring about a recovery of a sense of personal wholeness\nand authenticity by curing the institutions of American society. The emerging youth culture was characterized by a severe\ndissatisfaction with the \u201cmorass of conformity\u201d of the\nparental generation (Gray 1965: 57). The critique of the growing\nconformity of life got more persistent during the 1950s, and a number\nof social scientists in widely read books criticized what they saw as\nwidespread conformity and inauthenticity. Among these, The Lonely\nCrowd (1950) by Riesman and The Organization Man (1956)\nby Whyte received the most attention. Riesman points out that the\nefficacious functioning of modern organizations requires\nother-directed individuals who smoothly adjust to their environment.\nHowever, he also notes that such people compromised themselves, and a\nsociety consisting mostly of other-directed individuals faces\nsubstantial deficiencies in leadership and human potential. On the background of this development, it seems that at a time when\nrelativism appears difficult to surmount, authenticity has become a\nlast measure of value and a common currency in contemporary cultural\nlife (Jay 2004). So, under the impact of existentialism on Western\nculture, the ubiquitous desire for authenticity has emerged in modern\nsociety as \u201cone of the most politically explosive of human\nimpulses,\u201d as Marshall Berman argues (1970: xix)."
+        },
+        "3": {
+          "id": "3",
+          "title": "2 Sartre and de Beauvoir",
+          "content": "Published in 1943, Sartre\u2019s opus magnum, Being and\nNothingness : A Phenomenological Essay on Ontology , had a\nsignificant influence on philosophical thought and intellectual life\nin the second half of the twentieth century. His principal goal in\nthis book is to \u201crepudiate the spirit of\nseriousness \u201d of traditional philosophy as well as of\nbourgeois culture (Sartre 1992a [1943]: 796). The spirit of\nseriousness assumes (1) that there are transcendent values that exist\nantecedently to humans, and (2) that the value of a thing is part of\nthe actual being of the valued thing. Sartre\u2019s view, in\ncontrast, is that all values are generated by human interactions in\nsituations, so that value is a human construct with no extra-human\nexistence in things. To address the question of human existence, Sartre scrutinizes our\neveryday lives, focusing on two particular aspects. He notes that\nhuman beings, like other entities in the world, have certain concrete\ncharacteristics that make up what he calls their\n\u201cfacticity\u201d or what they are \u201cin themselves\u201d\n( en soi ). Facticity makes up the element of\n\u201cgivenness\u201d we must work with: I find myself with a past,\na body and a social situation that constrains me in what I can do.\nThis \u201cjust being there\u201d is above all contingent: there is\nno prior justification or reason for the existence of my being. On\nSartre\u2019s view, the \u201cin itself\u201d does not even have\nany determinate characteristics, since every determination (every\n\u201cthis, not that\u201d) is first introduced into the\ntotality of being by our specific interpretations of things. While human beings share their \u201cfacticity\u201d with other\nentities in the world, they are unique among the totality of entities\ninsofar as they are capable of distancing themselves from what is\n\u201cin itself\u201d through reflection and self-awareness. Rather\nthan being an item in the world with relatively fixed attributes, what\nis distinctive about me as a human being is that I am capable of\nputting my own being in question by asking myself, for example,\nwhether I want to be a person of a particular sort. This capacity for\ngaining distance inserts a \u201cnot\u201d or a\n\u201cnonbeing\u201d into the totality of what is, which allows me\nto organize what surrounds me into a meaningfully differentiated\nwhole. In addition, human consciousness is the source of the\n\u201cnot\u201d because it is itself a \u201cnothingness\u201d. In\nother words, a human being is not just an \u201cin itself\u201d but\nalso a \u201cfor itself ( pour soi ), thus characterized by\nwhat Sartre calls \u201ctranscendence\u201d. As transcendence, I am\nalways more than I am as facticity because, as surpassing my brute\nbeing, I stand before an open range of possibilities for\nself-definition in the future. Sartre\u2019s notion of transcendence is closely linked with the idea\nof freedom. Humans are free in the sense that they have the\nability to choose how they are going to interpret things, and in these\ninterpretations they are deciding how things are to count or matter.\nWe constitute the world through our freedom to the extent that our\nways of taking things determine how reality will be sorted out and\nmatter to us. At the same time, we constitute ourselves through our own choices: though the facticity of my situation creates\nsome constraints on my possible self-interpretations, it is always up\nto me to decide the meaning of those constraints, and this means that\nwhat I take to be limitations are in fact produced by my own\ninterpretations or meaning-giving activities. Such limitations are\ngrasped in light of antecedent commitments, on the background of which\nsituations becomes intelligible, as affording certain actions and/or\nmodes of evaluation. It is our antecedent commitments that shape our\nworld, making situations and objects intelligible as threatening or\nfavorable, easy or full of obstacles, or more generally, as affording\ncertain actions (Sartre 1992a [1943]: 489). Our engagements provide a\nhermeneutic structure within which our situations and motives become\ncomprehensible and reveal themselves in the way situations appear to\nus\u2014as significant, requiring our attention, etc. (1992a [1943]:\n485). It is important to note that Sartre\u2019s notion of freedom is\nradical. Freedom is absolute to the extent that each person decides\nthe significance of the constraints in his or her facticity: \u201cI\nfind an absolute responsibility for the fact that my facticity\n\u2026 is directly inapprehensible\u201d, because supposed\n\u201cfacts\u201d about me are never brute facts, \u201cbut always\nappear across a projective reconstruction of my for-itself\u201d\n(Sartre 1992a [1943]: 710). For Sartre, only our choices and their\nprojected ends define our situations as meaningful, as threatening or\nfavorable, as affording certain actions etc. The resistances and\nobstacles that one encounters in a situation acquire meaning only in\nand through the free choice. Thus, individuals are responsible not\nonly for their identities, but for the way the world presents itself\nin their experiences. Even others are just\n\u201c opportunities and chances \u201d for my free\ncreative activity. According to this early formulation, it is up to us\nto interpret how other people are to matter to us relative to\nsituations in which we find ourselves engaged (Sartre 1992a [1943]:\n711). But human beings are not merely characterized by facticity and\ntranscendence; they are also seen as embodying a deep and\nirreconcilable tension between facticity and transcendence. This\ntension comes to the fore in Sartre\u2019s account of \u201cbad\nfaith\u201d. Bad faith, a kind of self-deception, involves believing\nor taking oneself to be an X while all along one is (and knows\noneself to be) actually a Y . The most familiar form of bad\nfaith is acting as if one were a mere thing\u2014solely\nfacticity\u2014and thereby denying one\u2019s own freedom to make\noneself into something very different. Thus, the person who thinks she\nis a coward \u201cjust as a matter of fact\u201d is excluding from\nview the ability to transform her existence through changed ways of\nbehaving. Such bad faith is a denial of transcendence or freedom. At first, it might seem that one could escape bad faith by making a\nsincere, deep commitment to something and abiding by that\ncommitment\u2014for example, a total, resolute engagement of the self\ncomparable to Kierkegaard\u2019s notion of an \u201cinfinite\npassion\u201d. In this regard, Sartre considers a person who tries to\nwholeheartedly believe that his friend really likes him. \u201cI believe it\u201d, he says, \u201cI decide to believe in it\nand maintain myself in this decision\u2026\u201d (Sartre 1992a\n[1943]: 114). My belief will be steady and solid, like something\n\u201cin itself\u201d that informs my being and cuts through all the\ntenuousness and unsteadiness of my subjective life. I know I\nbelieve it, I will say. If I could make myself believe\nsomething in this way, then to achieve this might be what we could\ncall \u201cgood faith:\u201d to actually be something,\nwithout the questionability of the \u201cnot\u201d creeping in.\nHowever, Sartre doubts that such an absolute, being-determining\ncommitment is possible. In fact, Sartre claims that any such sort of\n\u201cgood faith\u201d would actually amount to little more than\nanother form of self-deception. For if my decision to believe is in\nfact a decision, it must always be something that to some extent\ndistances me from what is decided. That is why we use the word\n\u2018believe\u2019 to imply some degree of uncertainty, as when we\nsay, \u201cIs he my friend? Well, I believe he is\u201d.\nLucid self-awareness shows us that in making a choice, we can never\nattain the condition of the \u201cin itself\u201d, because what we\nare is always in question for us. This is what Sartre means when he\nsays human being is always \u201cpreviously corrupted\u201d and that\n\u201cbad faith [always] reapprehends good faith\u201d (Sartre 1992a\n[1943]: 116). Thus, the project of being in good faith seems\nimpossible, as we are always necessarily in bad faith. The inescapable nature of bad faith seems to leave no room for the\npossibility of authenticity. This might be why the word translated as\n\u201cauthentic\u201d only appears twice in this vast tome. On one\noccasion, Sartre attacks Heidegger for introducing the idea of\nauthenticity as a way of providing something foundational in an\notherwise totally contingent world. The concept of authenticity\n\u201cshows all too clearly [Heidegger\u2019s] anxiety to establish\nan ontological foundation for an Ethics\u2026\u201d (Sartre 1992a\n[1943]: 128). A second and more obscure appearance of the word comes\nat the end of the discussion of bad faith early in the book. Here\nSartre acknowledges that his account of bad faith seems to have the\nconsequence that there can be no such thing as good faith, so that\n\u201cit is indifferent whether one is in good faith or in bad\nfaith\u201d, and that in turn seems to imply that \u201cwe can never\nradically escape bad faith\u201d. Nevertheless, he goes on, there may\nbe a \u201cself-recovery of being which has been previously\ncorrupted\u201d, a recovery \u201cwe shall call authenticity, the\ndescription of which has no place here\u201d (Sartre 1992a [1943]:\n116n). One might thus conclude that there is no way to be true to what one\nis, because there is nothing that one is. However, such a negative\nconclusion would be reached only by someone who embraced from the\noutset the \u201cspirit of seriousness\u201d Sartre sets out to\nattack. Seriousness would lead us to think that there is simply a fact\nof the matter about a person: the person is either a believer or he is\nnot. But, as Linda A. Bell (1989: 45) has noted, there is another\npossibility. If one rejects the spirit of seriousness, one might\nlucidly acknowledge that, as transcendence, one\u2019s\nbelief is always in question and so not really a secure belief. Yet,\nat the same time, one might also recognize that, as facticity, one genuinely holds a belief, and that the belief is\ncentral to one\u2019s being as an engaged agent in this situation. In\nSartre\u2019s convoluted style of formulation, \u201che would be\nright if he recognized himself as a being that is what it is not and\nis not what it is\u201d (Bell 1989: 45). On this account, I believe,\nbut I also acknowledge my ability to retract the belief, since nothing\nis ever fixed in stone. What is suggested here is that a correlate of authenticity can be\nfound in the idea of being true to the inescapable tension at the core\nof the human self. This would be attained if one clear-sightedly\nacknowledged the fundamental ambiguity of the human\ncondition. Authenticity would then be what Sartre calls a\n\u201cself-recovery of being which was previously corrupted\u201d\n(1992a [1943]: 116). In a sense, humans can never really be anything in the way brute objects can be things with determinate\nattributes. In Bell\u2019s words, authenticity would be \u201cthe\nawareness and acceptance of\u2014this basic ambiguity\u201d (1989:\n46). This conclusion is supported by Sartre\u2019s later work, Anti-Semite and Jew where he writes, Lucid recognition of the ambiguity of the human condition is the\nleading idea behind Beauvoir\u2019s The Ethics of Ambiguity .\nBeauvoir takes over Sartre\u2019s characterization of the human\ncondition and expands on ideas only hinted at in Sartre\u2019s famous\nlecture, \u201cThe Humanism of Existentialism\u201d (1946), in\ndeveloping a conception of authenticity. According to Beauvoir,\nSartre\u2019s conception of the human being as \u201cengaged\nfreedom\u201d implies not just that each individual finds his or her\n\u201creason for being\u201d in concrete realizations of freedom,\nbut that willing one\u2019s own freedom necessarily involves willing\nthe freedom of all humans. In achieving one\u2019s own freedom, she\nwrites, freedom must also will \u201can open future, by seeking to\nextend itself by means of the freedom of others\u201d (1948: 60). The\npoint here is that a dedication to freedom, when clearly grasped in\nits full implications, will be seen to call for a future in which an\nunrestricted range of possibilities is open to all. Beauvoir also builds on Sartre\u2019s notion of engagement to extend the idea of authenticity. Following Sartre, we are always\nalready engaged in the affairs of the world, whether we realize it or\nnot. To be human is to be already caught up in the midst of social and\nconcrete situations that call for commitments of certain sorts on our\npart. Sartre takes this ground-level fact of engagement as the basis\nfor exhorting us to be engaged in a deeper sense, where this implies\nthat we decisively and wholeheartedly involve ourselves in what the\ncurrent situation demands. Of course, once we have abandoned the\nspirit of seriousness, we will recognize that there are no\nantecedently given principles or values that dictate the proper course\nfor our existential engagement, so that any commitment will be tenuous\nand groundless. But the authentic individual will be the one who takes\nup the terrifying freedom of being the ultimate source of values,\nembraces it, and acts with a clarity and firmness suitable to his or\nher best understanding of what is right in this context. In this way,\nthe conception of authenticity is continuous with the ideal of being\ntrue to ourselves: we are called upon to become, in our concrete\nlives, what we already are in the ontological structure of our\nbeing. This is in agreement with the manner in which Sartre describes the\nconsequences of acting against one\u2019s deepest commitments. Sartre goes on to say that the character of the act may be such\nthat Thus, acting otherwise or, more precisely, failing to act on\none\u2019s fundamental commitments, comes at the price of\ntransforming who one is. This change effectively precludes one from\ncarrying on with an unchanged self-conception."
+        },
+        "4": {
+          "id": "4",
+          "title": "Recent Accounts of Authenticity",
+          "content": "In the last three decades, authors like Taylor (1989, 1991, 1995,\n2007), Ferrara (1993; 1998), Jacob Golomb (1995), Guignon (2004, 2008)\nand Varga (2011a) have attempted to reconstruct authenticity by\nmaintaining that the justified criticism of self-indulgent forms of\nthe idea does not justify the total condemnation of the idea itself\n(see Taylor 1991: 56). Instead of abandoning the notion of\nauthenticity, they attempt to reconstruct it in a manner that leads\nneither to aestheticism nor to atomistic self-indulgence. In The Ethics of Authenticity , and the more fully articulated Sources of the Self , Taylor makes a case for retaining the\nconcept of authenticity (and the practices associated with it) on the\ngrounds that the original and undistorted idea of authenticity\ncontains an important element of self-transcendence (Taylor 1991: 15;\nAnderson 1995). Unsatisfied with the widespread criticism of\nauthenticity as an adequate ethical orientation, Taylor sets out to\nprove that authenticity does not necessarily lead to aestheticism or\nself-indulgence: the justified criticism of self-indulgent forms of\nthe ideal does not justify the complete condemnation of the ideal\nitself (Taylor 1991: 56). This would mean extricating aestheticism,\nsubjectivism, individualism, and self-indulgent interpretations of\nthis ideal from what Taylor (Ibid.: 15) holds to be an original\nunderstanding of that concept as achieving self-transcendence\n(Anderson 1995). Restoring an undistorted version, Taylor says, could\nguard against meaninglessness, which is one of the \u201cmalaises of\nmodernity\u201d that Taylor regards as tied to trivialized forms of\nthe culture of authenticity. Self-transcendence, which once was a\ncrucial element in the ideal of authenticity, is practically lost from\nthe contemporary version, giving rise to cultures of self-absorption,\nwhich ultimately deteriorate into the malaise of absurdity. Already in Sources of the Self , Taylor draws attention to how\nmodernism gives birth to a new kind of inward turn that not only\nattempts to overcome the mechanistic conception of the self linked to\ndisengaged reason but also the Romantic ideal of a faultless alignment\nof inner nature and reason. Instead, for the modernists, a turn inward\ndid not mean a turn towards a self that needs articulation. While in modernism, the turn inward still contained a\nself-transcending moment, the critical point where the ideal of\nauthenticity becomes flattened is when it becomes\n\u2018contaminated\u2019 by a certain form of\n\u2018self-determining freedom\u2019 that also contains elements of\ninwardness and unconventionality (Taylor 1991: 38). Self-determining\nfreedom Not only is self-determining freedom not a necessary part of\nauthenticity, it is also counterproductive because its\nself-centeredness flattens the meanings of lives and fragments\nidentities. For Taylor, the process of articulating an identity\ninvolves adopting a relationship to the good or to what is important,\nwhich is connected to one\u2019s membership in a language community\n(Taylor 1989: 34\u201335). As he clearly states, \u201cauthenticity\nis not the enemy of demands that emanate from beyond the self; it\npresupposes such demands\u201d (Taylor 1991: 41). It cannot be up to\nme to decide what is important, since this would be self-defeating.\nInstead, whatever is important for me must connect to an\ninter-subjective notion of the good, wherefrom a good part of its\nnormative force lastly emanates. In this sense, authenticity simply\nrequires maintaining bonds to collective questions of worth that point\nbeyond one\u2019s own preferences. Taylor wants to show that modes of\ncontemporary culture that opt for self-fulfillment without regard Thus, not only do we need the recognition of concrete others in order\nto form our identities, but we must also (critically) engage with a\ncommon vocabulary of shared value orientations. In other words, Taylor\npoints out that authenticity needs the appropriation of values that\nmake up our collective horizons. In his Reflective Authenticity , Alessandro Ferrara also sets\nout to defend authenticity as an ideal, but in contrast to Taylor he\nis interested in the social and philosophical issues of the relation\nbetween authenticity and validity. According to Ferrara\u2019s\ndiagnosis, we are currently witnessing a profound transition that,\nbesides affecting cultures, values and norms, also touch on the\n\u201cfoundations of validity,\u201d thereby affecting the\n\u201cbedrock of the symbolic network through which we relate to\nreality and reproduce our life-forms\u201d (Ferrara 1998: 1). At the\ncore of this transformation is the reformulation of\n\u201cwell-being\u201d ( eudaimonia ) as the normative ideal\nof authenticity, which can be of help in reconstructing a contemporary\nunderstanding of normativity. For Ferrara, it can ground a new ideal\nof universal validity \u201cultimately linked with the model of\nexemplary uniqueness or enlightening singularity thus far associated\nwith \u2018aesthetics\u2019\u201d (Ferrara 1998: 10). Authenticity\nis then characterized by the \u201cself-congruency\u201d of an\nindividual, collective or symbolic identity (Ferrara 1998: 70), and is\nthought of as providing a new universal validity that does not build\non the generalizable but rather on the exemplary. Ferrara views\nSimmel\u2019s idea of an individual law as an instructive example of\nsuch an anti-generalizing universalism, and it is exactly this\ncharacteristic that makes it better suited to the pluralist contexts\nfaced by modern Western societies. More recently, Ferrara (2019) has\nargued that authenticity currently faces a \u201cdual paradox\u201d\nand is misconstrued by many critics advocating its deconstructionist\ndismissal. Golomb (1995) provides an informative historical overview of the\ngenesis and development of the concept of authenticity, paying\nattention to both literary and philosophical sources. While\ncontinuously reminding us of the inherently social dimension of\nauthenticity, one of the achievements here is the focus on boundary\nsituations where authenticity \u201cis best forged and\nrevealed\u201d (Ibid.: 201). Golomb takes a neutral position on the\nethical value of authenticity, maintaining that \u201cthere is no\nreason to suppose that it is any better or any more valuable to be\nauthentic than to act inauthentically\u201d (Ibid.: 202). Guignon (2004) explores both the philosophical roots of authenticity\nand its contemporary manifestations in popular culture. He\nthoughtfully criticizes pop-psychological literature that deals with\nthe authentic life by making recourse to the subdued \u2018inner\nchild\u2019. Since Rousseau, the dichotomy between authentic and\ninauthentic has often been interpreted akin to the distinction between\nchild and adult (Guignon 2004: 43). Like the inner child, the\nauthentic self is depicted as not yet corrupted by the pressures,\ncompetitiveness, and conformity of modern public life. Guignon draws\non the psychoanalytic theories of Freud and Jung to remind us of less\nromanticized visions of the inner child. Additionally, Guignon (2004:\n151) aims to identify the manner in which authenticity can be\nunderstood as being at the same time a personal and a\n\u201cfundamentally and irreducibly\u201d social virtue.\nAuthenticity then involves reflectively discerning what is really\nworth pursuing in the social context in which the agent is situated\n(Ibid.: 155). If the ideal of authenticity is possible only in a free\nsociety with a solid foundation of established social virtues, it\nwould seem that trying to be authentic, if it is to be coherent, must\ninvolve a commitment to sustaining and nurturing the type of society\nin which such an ideal is possible. A reflection on the social\nembodiment of virtues therefore suggests that authenticity, like many\nother character ideals, carries with it an obligation to contribute to\nthe maintenance and well-being of a particular type of social\norganization and way of life (Guignon 2008: 288; 2004: 161). On the\nother hand, Guignon (2004, 2008) argues that in a democratic society,\nin which the authority of government\u2014in setting the political\ncourse\u2014stems from the consent of the governed, there is good\nreason to promote virtues like authenticity that sustain such an\norganization of government. To be authentic is to be clear about\none\u2019s own most basic feelings, desires and convictions, and to\nopenly express one\u2019s stance in the public arena. But that\ncapacity is precisely the character trait that is needed in order to\nbe an effective member of a democratic society (Guignon 2008:\n288). Varga (2011a) shares the fundamental assumption that authenticity has\na certain potential (and therefore deserves to be reformulated), but\nhe also thinks that it could be used for a critical inquiry into the\npractices of the self in contemporary life. By way of an analysis of\nself-help and self-management literature, Varga detects a\n\u201cparadoxical transformation:\u201d the ideal of authenticity\nthat once provided an antidote to hierarchical institutions and\nrequirements of capitalism, now seems to function both as an\ninstitutionalized demand towards subjects to match the systemic\ndemands of contemporary capitalism and as a factor in the economic\nutilization of subjective capacities. Varga argues that it is in\n\u201cexistential\u201d choices that we express who we are, and that\nthese have a complex phenomenology characterized by a sense of\nnecessity. In such choices, described as \u201calternativeless\nchoices\u201d, we articulate who we are, bringing into reality some\ntacit intuitions that often only take on a gestalt-like formation. In\nthese cases, we both discover who we are \u201con the inside\u201d,\nand actively constitute ourselves. Varga\u2019s examination of the\nstructure of our commitments culminates in the claim that the internal\nstructure of our commitments commits us to more than what we happen to\ncare about. In many cases it may actually commit us to publicly\nintelligible values that we take our commitments to embody\u2014an\naspect that may constrain the manner of our practical deliberation and\nthe way in which we can pursue our commitments (Varga 2011a,b). Along similar lines, Bauer (2017) defends authenticity as an ethical\nideal, arguing that the ideal should understood as the combination of\nthe ideal of expressing one\u2019s individual personality and the\nideal of being an autonomous and morally responsible person. Others\nhave argued that authenticity might require more than living in accord\nwith commitments that one wholeheartedly endorses. For example, Rings\n(2017) highlights an epistemic criterion. The point is that the\ncommitments in question have to be chosen in light of an\nacknowledgment of facts concerning one\u2019s personal history and\npresent context. Thus, self-knowledge might matter more than hitherto\nrecognized, even if the self-relation most pertinent to authenticity\nis not primarily of an epistemic nature."
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

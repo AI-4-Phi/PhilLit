@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1016/j.wsif.2018.05.003"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1016/j.wsif.2018.05.003",
+      "title": "Feminist innovation in philosophy: Relational autonomy and social justice",
+      "authors": [
+        {
+          "family": "Mackenzie",
+          "given": "Catriona"
+        }
+      ],
+      "editors": [],
+      "year": 2019,
+      "container_title": "Women's Studies International Forum",
+      "volume": "72",
+      "issue": "",
+      "page": "144-151",
+      "publisher": "Elsevier BV",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1016/j.wsif.2018.05.003"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

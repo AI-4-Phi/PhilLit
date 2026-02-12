@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/s00146-018-0824-x"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s00146-018-0824-x",
+      "title": "The reappearing tool: transparency, smart technology, and the extended mind",
+      "authors": [
+        {
+          "family": "Wheeler",
+          "given": "Michael"
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "AI &amp; SOCIETY",
+      "volume": "34",
+      "issue": "4",
+      "page": "857-866",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/s00146-018-0824-x"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

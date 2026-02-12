@@ -1,0 +1,1054 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "principle of charity Davidson",
+  "results": [
+    {
+      "openalex_id": "W1512457525",
+      "doi": "10.1093/0199246297.001.0001",
+      "title": "Inquiries into Truth and Interpretation",
+      "authors": [
+        {
+          "name": "Donald Davidson",
+          "openalex_id": "A5103783172",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-09-27",
+      "abstract": "Abstract This volume collects Davidson's seminal contributions to the philosophy of language. Its key insight is that the concept of truth can shed light on various issues connected to meaning: Davidson, who assumes a partial and primitive understanding of the truth predicate, reverses Tarski who had succeeded in elucidating the concept of truth by taking the notion of \u2018translation\u2019 (preservation of meaning) for granted. In the first of five subsections into which the papers are thematically organized, Davidson develops the systematic constraints a theory of meaning has to meet and shows how an approach to semantics based on the concept of truth meets these demands better than any rival approach. Sect. 2 explores whether one can give semantic analyses of quotation, intensional contexts, and force within the extensional limitations of the truth\u2010theoretic framework. Viewing the theories of meaning developed in the first section as empirical, Sect. 3 inquires into their testability: can we verify these theories without presupposing concepts too closely aligned to that of meaning, interpretation, and synonymy? Davidson develops constitutive constraints on applying truth theories to interpret the speech behaviour of others: we have to view utterances for the most part as assertions of the speaker's beliefs and those beliefs as largely true and consistent (he terms this the \u2018Principle of Charity\u2019). Sect. 4 combines these interpretative constraints with the semantic concept of truth developed in Sect. 1 to tackle metaphysical issues. Davidson claims that truth is not relative to conceptual schemes but only to languages that can be shown to be largely correct about the world; consequently, by studying those languages via the semantic concept of truth we can derive ontological conclusions. Sect. 5 explores aspects of linguistic usage that form a particular threat to theories of meaning (such as Davidson's) that focus on the literal meaning of sentences: for truth theory to be adequate as a general theory of language, it must give valid accounts of sentence mood, illocutionary force, and metaphorical meaning.",
+      "cited_by_count": 4170,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and Theoretical Science",
+        "Epistemology, Ethics, and Metaphysics",
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 75,
+      "url": "https://openalex.org/W1512457525"
+    },
+    {
+      "openalex_id": "W2587617835",
+      "doi": "10.1007/s10503-017-9421-2",
+      "title": "Argumentation Theory Without Presumptions",
+      "authors": [
+        {
+          "name": "Marcin Lewi\u0144ski",
+          "openalex_id": "A5056045954",
+          "orcid": "https://orcid.org/0000-0002-7218-3948",
+          "institutions": [
+            "Universidade Nova de Lisboa"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-10",
+      "abstract": null,
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "Argumentation",
+        "type": "journal",
+        "issn": [
+          "0920-427X",
+          "1572-8374"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Artificial Intelligence in Law",
+        "Legal processes and jurisprudence"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2587617835"
+    },
+    {
+      "openalex_id": "W2039766154",
+      "doi": "10.1080/09672550600858320",
+      "title": "The Status of Charity I: Conceptual Truth or A Posteriori Necessity?",
+      "authors": [
+        {
+          "name": "Kathrin Gl\u00fcer",
+          "openalex_id": "A5023857090",
+          "orcid": "https://orcid.org/0000-0002-7483-7060"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-09-01",
+      "abstract": "According to Donald Davidson, linguistic meaning is determined by the principle of charity. Because of Davidson's semantic behaviourism, charity's significance is both epistemic and metaphysical: charity not only provides the radical interpreter with a method for constructing a semantic theory on the basis of his data, but it does so because it is the principle metaphysically determining meaning. In this paper, I assume that charity does determine meaning. On this assumption, I investigate both its epistemic and metaphysical status: is charity a priori or a posteriori? And what kind of necessity does it have? According to Davidson himself, charity is an a priori truth and its necessity is conceptual: it is essential to, or constitutive of, our common concepts of meaning and belief. Not only does this generate tension within Davidson's own, Quine-inspired epistemology, but there is independent reason to think of charity as an empirical truth. Even so, charity might be essential to belief and meaning in the sense of being an a posteriori necessity. I conclude that our ordinary modal intuitions might well support charity's psychological-nomological necessity, but that they do not reach all the way to metaphysical necessity.",
+      "cited_by_count": 46,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0967-2559",
+          "1466-4542"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://urn.kb.se/resolve?urn=urn:nbn:se:su:diva-8603"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophical Ethics and Theory",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W2039766154"
+    },
+    {
+      "openalex_id": "W4244420017",
+      "doi": "10.1093/0199246297.003.0010",
+      "title": "Belief and the Basis of Meaning",
+      "authors": [
+        {
+          "name": "Donald Davidson",
+          "openalex_id": "A5103783172"
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-09-27",
+      "abstract": "Abstract Davidson continues the analysis of the evidential base required for radical interpretation from Essay 9 and extends it into a systematic methodology. The ascription of meanings to utterances and intentions to speakers must proceed simultaneously because we lack a prior grasp on either (Davidson illustrates this by appeal to Ramsey's work on subjective probability); by the same token, if interpreters are to get anywhere at all they must start by an interpretative \u2018Principle of Charity\u2019 on which they assume at the outset that the speaker's beliefs are mostly true and that his utterances are, for the most part, assertions of what he believes or \u2018holds true\u2019. Consequently, interpreters must avoid attributing inexplicable error to the speaker, but rather \u2018maximize agreement\u2019. Davidson explains how these assumptions operate independently of detailed knowledge of what the speaker believes or asserts, and why they are indispensable to the process of radical interpretation; in specific, how we can have no independent foothold on propositional attitudes or speaker meaning (see Appendix); and he discusses the degree to which his interpretative constraints leave it indeterminate what the speaker means.",
+      "cited_by_count": 54,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and Theoretical Science",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 75,
+      "url": "https://openalex.org/W4244420017"
+    },
+    {
+      "openalex_id": "W2782804415",
+      "doi": "10.5617/jpg.2653",
+      "title": "Clarifying Incoherence in Games",
+      "authors": [
+        {
+          "name": "Hugo Hogenbirk",
+          "openalex_id": "A5030701303",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Marries van de Hoef",
+          "openalex_id": "A5071853684",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "John-Jules Meyer",
+          "openalex_id": "A5110070432",
+          "institutions": [
+            "Utrecht University",
+            "The Alan Turing Institute"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-30",
+      "abstract": "In this paper we will analyze the concept of incoherency that has been put forward by Jesper Juul in Half-Real (2005). Juul provides a paradigmatic example of an incoherency in the game Donkey Kong. The main character of the narrative, Mario, can die and subsequently reappear at the beginning of the level. However, when pressed to describe the narrative of the game, most players would not say that Mario ever died. The respawn is attributed to the game rules instead. Juul calls this phenomenon an incoherency of the game\u2019s fictional world. We claim that the precise nature of the concept of incoherency is unclear, and that Juul's connection between incoherency and contradictions is incorrect. Furthermore, we argue that Wesp incorrectly identifies the concept with 'incompleteness' in his response to Juul (Wesp, 2014). Our clarification argues that what is noteworthy in 'incoherency' is not some aspect of the fictional world, like it being contradictory or incomplete, but how the player interprets the fiction. Subsequently, we provide an explanation for what underlies an incoherency by adopting the principle of charity (Davidson 1973). Lastly we discuss how a proper understanding of incoherency can help game designers and how it relates to ludonarrative dissonance (Hocking, 2009).",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Philosophy of Games",
+        "type": "journal",
+        "issn": [
+          "2535-4388"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.uio.no/JPG/article/download/2653/5060"
+      },
+      "topics": [
+        "Digital Games and Media",
+        "Artificial Intelligence in Games"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W2782804415"
+    },
+    {
+      "openalex_id": "W4366827512",
+      "doi": "10.1007/s10503-023-09615-8",
+      "title": "The Dialectical Principle of Charity: A Procedure for a Critical Discussion",
+      "authors": [
+        {
+          "name": "Jakub Pru\u015b",
+          "openalex_id": "A5074369513",
+          "orcid": "https://orcid.org/0000-0003-0585-3865",
+          "institutions": [
+            "Jesuit University Ignatianum"
+          ]
+        },
+        {
+          "name": "Piotr Sikora",
+          "openalex_id": "A5083083287",
+          "orcid": "https://orcid.org/0000-0003-1214-8494",
+          "institutions": [
+            "Jesuit University Ignatianum"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-24",
+      "abstract": "Abstract This paper aims to discuss a well-known concept from argumentation theory, namely the principle of charity. It will show that this principle, especially in its contemporary version as formulated by Donald Davidson, meets with some serious problems. Since we need the principle of charity in any kind of critical discussion, we propose the way of modifying it according to the presupponendum \u2014the rule written in the sixteenth century by Ignatius Loyola. While also corresponding with pragma-dialectical rules, it also provides additional content. This will be termed the dialectical principle of charity, and it offers a few steps to be performed during an argument in order to make sure that the participants understand each other well and are not deceived by any cognitive bias. The meaning of these results could be of great significance for argumentation theory, pragma-dialectics and the practice of public discourse as it enhances the principle of charity and makes it easier to apply in argumentation.",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Argumentation",
+        "type": "journal",
+        "issn": [
+          "0920-427X",
+          "1572-8374"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10503-023-09615-8.pdf"
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Classical Philosophy and Thought",
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W4366827512"
+    },
+    {
+      "openalex_id": "W2168824535",
+      "doi": "10.1111/j.1468-2303.2004.00275.x",
+      "title": "Re\u2010Enactment and Radical Interpretation",
+      "authors": [
+        {
+          "name": "Giuseppina D\u2019Oro",
+          "openalex_id": "A5021722553",
+          "institutions": [
+            "Keele University"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-04-15",
+      "abstract": "Abstract This article discusses R. G. Collingwood's account of re\u2010enactment and Donald Davidson's account of radical translation. Both Collingwood and Davidson are concerned with the question \u201chow is understanding possible?\u201d and both seek to answer the question transcendentally by asking after the heuristic principles that guide the historian and the radical translator. Further, they both agree that the possibility of understanding rests on the presumption of rationality. But whereas Davidson's principle of charity entails that truth is a presupposition or heuristic principle of understanding, for Collingwood understanding rests on a commitment to internal consistency alone. Collingwood and Davidson diverge over the scope of the principle of charity because they have radically different conceptions of meaning. Davidson endorses an extensional semantics that links meaning with truth in the attempt to extrude intensional notions from a theory of meaning. Since radical translation rests on a truth\u2010conditional semantics, it rules out the possibility that there may be statements that are intelligible even though based on false beliefs. Collingwood's account of re\u2010enactment, on the other hand, disconnects meaning from truth, thereby allowing for the possibility of understanding agents who have false beliefs. The paper argues, first, that Davidson's account of radical translation rests on inappropriately naturalistic assumptions about the nature of understanding, and that Davidson commits this error because he develops his account of radical interpretation in response to an epistemological question that is motivated by a skeptical concern: \u201chow can we know whether we have provided the correct interpretation?\u201d Second, that in the twentieth century far too much philosophizing has been driven by epistemological concerns that have obscured attempts to provide adequate answers to the sort of conceptual question with which Collingwood is concerned, namely: \u201cwhat does it mean to understand?\u201d",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "History and Theory",
+        "type": "journal",
+        "issn": [
+          "0018-2656",
+          "1468-2303"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Philosophy, Ethics, and Existentialism"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W2168824535"
+    },
+    {
+      "openalex_id": "W2344196319",
+      "doi": "10.1017/cbo9780511613906.003",
+      "title": "Saving belief: on the new materialism in religious studies",
+      "authors": [
+        {
+          "name": "Terry F. Godlove",
+          "openalex_id": "A5017193694",
+          "institutions": [
+            "Hofstra University"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-09-19",
+      "abstract": "One of my enduring memories from graduate school has me shuffling back and forth between the classrooms of Mircea Eliade and Donald Davidson, trying to shake a persistent headache. Though at the time I did not see it in such antiseptic terms, it now strikes me that the general problem was the status of attributions of intentionality \u2013 in particular, how to respect the dizzying variety of religious belief and practice while recognizing that all of us share pretty much the same set of concepts. I was impressed early on with the principle of charity \u2013 roughly, the claim that broad agreement is a condition of linguistic interpretation, a claim defended, of course, by Davidson, but also endorsed in one form or another by Baker, Bennett, Brandom, Dennett, Putnam, Rorty, and Stich, to name only a few. While it is not a miracle cure, I have continued to urge its application to several of the outstanding methodological problems that arise in the study of religion, including reductionism, rationality, and relativism.",
+      "cited_by_count": 20,
+      "type": "book-chapter",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Study and Philosophy of Religion",
+        "Religion and Society Interactions",
+        "Karl Barth and Christian Theology"
+      ],
+      "referenced_works_count": 204,
+      "url": "https://openalex.org/W2344196319"
+    },
+    {
+      "openalex_id": "W128143118",
+      "doi": "10.1515/zfsoz-2000-0401",
+      "title": "Kulturrelativismus und die \u00dcbersetzbarkeit des kulturell Fremden in der Sicht von Quine und Davidson",
+      "authors": [
+        {
+          "name": "Gabriele Cappai",
+          "openalex_id": "A5028295565",
+          "institutions": [
+            "University of Bayreuth"
+          ]
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-08-01",
+      "abstract": "Zusammenfassung Die folgenden Ausf\u00fchrungen versuchen zu zeigen, da\u00df manche philosophische Einsichten von Quine und Davidson hinsichtlich Interpretation und \u00dcbersetzbarkeit auch denjenigen Sozialwissenschaftlern zugute kommen k\u00f6nnen, die an der Problematik des interkulturellen Verstehens und der interkulturellen Vermittlung interessiert sind. Im ersten Teil des Aufsatzes (Kap. 1, 2 und 3) wird zun\u00e4chst eine Rekonstruktion der Problematik der \u201eUnbestimmtheit der \u00dcbersetzung\u201c (nach Quine) unternommen, sodann die relativismuseinschr\u00e4nkenden Implikationen des \u201ePrinciple of Charity\u201c (nach Quine und Davidson) im Kontext bef\u00fcrwortender und kritischer Stellungnahmen diskutiert. Im zweiten Teil (Kap. 4 und 5) wird versucht, die These zu plausibilisieren, da\u00df eine (\u00fcbrigens bei Quine und Davidson bereits in nuce vorhandene) \u00d6ffnung der analytischen Philosophie zur sozialwissenschaftlichen Dimension eine unerl\u00e4\u00dfliche Bedingung f\u00fcr eine angemessene Behandlung des Relativismusproblems darstellt. Andererseits wird gezeigt, da\u00df die sozialwissenschaftliche Skepsis hinsichtlich der Erfassung und der Vermittlung des kulturell Fremden von Davidsons Kritik an der Idee unterschiedlicher und inkommensurabler \u201eConceptual Schemes\u201c viel profitieren k\u00f6nnte. Das Thema der Konvergenz von analytischem Denken und Sozialwissenschaften wird schlie\u00dflich im Kap. 6 im Kontext des Zusammenhangs von Sprache, Bedeutung, Regelhaftigkeit und Verstehen wieder aufgenommen und vertieft (Ethnomethodologie, A. Sch\u00fctz). Dabei zeigt sich, da\u00df das Problem der Erfassung und der Vermittlung des Fremden bereits \u201ezu Hause\u201c beginnt. Mit Quine und Davidson ausgedr\u00fcckt: \u201eRadical translation begins at home\u201c.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Zeitschrift f\u00fcr Soziologie",
+        "type": "journal",
+        "issn": [
+          "0340-1804",
+          "2366-0325"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/zfsoz-2000-0401/pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "German Social Sciences and History"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W128143118"
+    },
+    {
+      "openalex_id": "W2147520477",
+      "doi": "10.1017/s001221730000398x",
+      "title": "The Principle of Charity",
+      "authors": [
+        {
+          "name": "Nathaniel Goldberg",
+          "openalex_id": "A5022447828",
+          "orcid": "https://orcid.org/0000-0001-5184-1246",
+          "institutions": [
+            "Mount St. Mary's University"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "Abstract The recent publication of a third anthology of Donald Davidson's articles, and anticipated publication of two more, encourages a consideration of themes binding together Davidson's lifetime of research. One such theme is the principle of charity (PC). In light of the mileage Davidson gets out of PC, I propose a careful examination of PC itself. In Part 1, 1 consider some ways in which Davidson articulates PC. In Part 2, 1 show that the articulation that Davidson requires in his work on epistemology is untenable given what Davidson says in his work on semantics. I conclude that Davidson can use PC only in his work on semantics or not at all.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Dialogue",
+        "type": "journal",
+        "issn": [
+          "0012-2173",
+          "1759-0949"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and Theoretical Science",
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W2147520477"
+    },
+    {
+      "openalex_id": "W2500667150",
+      "doi": "10.1093/0199251584.003.0010",
+      "title": "Radical Interpretation and Epistemology",
+      "authors": [
+        {
+          "name": "Colin McGinn",
+          "openalex_id": "A5104022380"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-02-07",
+      "abstract": "Abstract In this companion to \u2018Charity, Interpretation, and Belief\u2019, McGinn broadens his attack on Davidson's principle of charity, arguing that charity is no more required for the ascription of notional beliefs (i.e. shared concepts) than it is for the ascription of relational beliefs. His argument takes the form of a reductio: if Davidson were right that about the inherently charitable nature of interpretation, then, McGinn argues, traditional sceptical worries (e.g. concerning the external world, other minds) would not even arise. But that is absurd. In the concluding section, McGinn presents his preferred (Quinean) method of interpretation, according to which the ascription of beliefs and meanings proceeds only after the attribution of perceptual experiences.",
+      "cited_by_count": 8,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophical Ethics and Theory",
+        "Theology and Philosophy of Evil"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2500667150"
+    },
+    {
+      "openalex_id": "W1547297733",
+      "doi": null,
+      "title": "Davidson\u2019s Philosophy and Chinese Philosophy: Constructive Engagement",
+      "authors": [
+        {
+          "name": "Bo Mou",
+          "openalex_id": "A5003073888",
+          "orcid": "https://orcid.org/0000-0002-6664-1236"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": "Acknowledgments Note on Transcription Contributors How Constructive Engagement of Davidson's Philosophy and Chinese Philosophy is Possible: A Theme Introduction, Bo Mou PART I. CONCEPTUAL SCHEMES, RELATIVISM, AND CROSS-CULTURAL UNDERSTANDING 1. Relativism and Its Schemes, Michael Krausz 2. Davidson and Chinese Conceptual Scheme, Koji Tanaka 3. Making Room for Comparative Philosophy: Davidson, Brandom, and Conceptual Distance, Stephen C. Angle PART II. PRINCIPLE OF CHARITY AND CHINESE PHILOSOPHY 4. Where Charity Begins, David B. Wong 5. Davidson's Charity in the Context of Chinese Philosophy, Yiu-ming Fung PART III. RATIONALITY, NORMATIVITY, AND INTER-CULTURAL DISAGREEMENT 6. Davidsonian Rationality and Ethical Disagreement between Cultures, Samuel C. Wheeler 7. A Davidsonian Approach to Normativity and the Limits of Cross-Cultural Interpretation, Yujian Zheng PART IV. MEANING AND INTERPRETATION 8. On Two Kinds of Meaning and Interpretation, A.P. Martinich 9. Metaphorical Use versus Metaphorical Essence: Examples from Chinese Philosophy, Kim-chong Chong 10. Reading the Analects with Davidson: Mood, Force, and Communicative Practice in Early China, Yang Xiao PART V. TRUTH CONCERN AND DAO CONCERN 11. From Donald Davidson's Use of Convention T to Meaning and Truth in Chinese Language, Chung-ying Cheng 12. Truth Pursuit and Dao Pursuit: From Davidson's Approach to Classical Daoist Approach in View of the Thesis of Truth as Strategic Normative Goal, Bo Mou Index",
+      "cited_by_count": 7,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education",
+        "Whitehead's Philosophy and Applications",
+        "Flannery O'Connor and Thomas Merton"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1547297733"
+    },
+    {
+      "openalex_id": "W2113837411",
+      "doi": null,
+      "title": "The Principle of Charity and Intercultural Communication",
+      "authors": [
+        {
+          "name": "Eli Dresner",
+          "openalex_id": "A5044062041",
+          "institutions": [
+            "Tel Aviv University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-04-10",
+      "abstract": "This article argues that the principle of \u201ccharity\u201d and the debate over it in contemporary philosophy of language are of interest and importance for communication scholars in general, and for those interested in intercultural communication in particular. In support of this claim, I present in the first section of the paper an overview of \u201cradical interpretation,\u201d a notion used by Donald Davidson in order to account for linguistic communication. In the second section, I discuss the principle of charity (as it arises in radical interpretation), according to which interpreters must construe the beliefs and utterances of others as largely rational and true. In the third section, I begin to explore the ramifications the principle of charity holds for intercultural communication.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "SHILAP Revista de lepidopterolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0300-5267",
+          "2340-4078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/b5e232645b154172a19b8bd0f7fc48b8"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Language, Discourse, Communication Strategies",
+        "Hermeneutics and Narrative Identity"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2113837411"
+    },
+    {
+      "openalex_id": "W2153542330",
+      "doi": "10.1111/j.1467-9973.2005.00369.x",
+      "title": "RORTY ON REALISM AND CONSTRUCTIVISM",
+      "authors": [
+        {
+          "name": "James A. Stieb",
+          "openalex_id": "A5052933042",
+          "institutions": [
+            "Drexel University"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-04-01",
+      "abstract": "Abstract: This article argues that we can and should recognize the mind dependence, epistemic dependence, and social dependence of theories of mind-independent reality, as opposed to Rorty, who thinks not even a constructivist theory of mind-independent reality can be had. It accuses Rorty of creating an equivocation or \"dualism of scheme and content\" between causation and justification based on various \"Davidsonian\" irrelevancies, not to be confused with the actual Davidson. These include the Principle of Charity, the attack against conceptual schemes, the linguistification of social practice, intersubjectivism, and causal naturalism. It follows that realists and constructivists need neither follow Rorty's mischaracterizations nor succumb to his internal paradoxes.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Metaphilosophy",
+        "type": "journal",
+        "issn": [
+          "0026-1068",
+          "1467-9973"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education",
+        "Philosophy and Theoretical Science",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W2153542330"
+    },
+    {
+      "openalex_id": "W2185929043",
+      "doi": null,
+      "title": "CHARITY AND HUMANITY IN THE PHILOSOPHY OF LANGUAGE",
+      "authors": [
+        {
+          "name": "Gareth Fitzgerald",
+          "openalex_id": "A5111438391"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-01-01",
+      "abstract": "ere is a popular idea that a shifrom a Principle of Charity to a Principle of Humanity, as famously advocated by Richard Grandy (1973), oers considerable advantages in constructing theories of meaning for natural languages. My claim is that Grandy's case for the superiority of the Principle of Humanity does not tell against the Principle of Charity developed by Donald Davidson. \ufffd e paper outlines important developments in Davidson's Principle of Charity, and his renement of the Principle of Charity that he found in Quine's writings. I argue that Grandy's criticisms, whilst sound against the Quinean principle he had in mind, do not extend to Davidson's rened Principle of Charity. I then raise two further issues that face advocates of the Principle of Humanity as an improvement on Davidson's Principle of Charity.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and Theoretical Science",
+        "Epistemology, Ethics, and Metaphysics",
+        "Logic, Reasoning, and Knowledge"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W2185929043"
+    },
+    {
+      "openalex_id": "W1551743605",
+      "doi": "10.1080/00455091.2004.10716561",
+      "title": "Finding Value in Davidson",
+      "authors": [
+        {
+          "name": "Robert H. Myers",
+          "openalex_id": "A5069541757",
+          "institutions": [
+            "York University"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-03-01",
+      "abstract": "Can an effective argument against scepticism about objective values be modelled on Donald Davidson's familiar argument against scepticism about external things? Davidson evidently thinks so. He has long been on record as maintaining that a theory of interpretation must be \u2018unified\u2019 in the sense that it cannot merely solve f or beliefs and meanings but must simultaneously solve for desires as well. And he has made it quite clear that he thinks a theory of interpretation can do this only by subjecting attributions of desires to a \u2018principle of charity\u2019 analogous to the principle that he claims must govern attributions of beliefs. Since his argument against external world scepticism is in large part powered by his claim that charity must govern attributions of beliefs, his feeling that charity must likewise govern attributions of desires might appear to commit him to a similar argument against value scepticism.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Canadian Journal of Philosophy",
+        "type": "journal",
+        "issn": [
+          "0045-5091",
+          "1911-0820"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Theology and Philosophy of Evil",
+        "Philosophy and Theoretical Science",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W1551743605"
+    },
+    {
+      "openalex_id": "W4242941468",
+      "doi": "10.1080/136425200457047",
+      "title": "EXCHANGING IDEAS",
+      "authors": [
+        {
+          "name": "Mark Bevir",
+          "openalex_id": "A5033125157",
+          "orcid": "https://orcid.org/0000-0001-9666-3113"
+        },
+        {
+          "name": "Frank Ankersmit",
+          "openalex_id": "A5106131841"
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-12-01",
+      "abstract": "Abstract In this debate Mark Bevir and Frank Ankersmit continue their discussion of Bevir's The Logic of the History of Ideas . There are two related areas of contention: 1) the notion of intention and its use for a correct understanding of the writing of the history of ideas and 2) the question how deep the (ontological and/or epistemological) gap runs separating us from the past. Keywords: Meaning Intention The History Of Ideas The Past'S Strangeness Davidson Donald Charity Principle",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Rethinking History",
+        "type": "journal",
+        "issn": [
+          "1364-2529",
+          "1470-1154"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Seventeenth-Century Political and Philosophical Thought",
+        "Marxism and Critical Theory",
+        "Philosophical and Historical Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4242941468"
+    },
+    {
+      "openalex_id": "W1972508008",
+      "doi": "10.1111/1467-9973.00190",
+      "title": "Charity, Supervenience, and Skepticism",
+      "authors": [
+        {
+          "name": "Hamid Vahid",
+          "openalex_id": "A5040464374",
+          "orcid": "https://orcid.org/0000-0001-9064-0877",
+          "institutions": [
+            "Institute for Cognitive Science Studies",
+            "Institute for Research in Fundamental Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-04-01",
+      "abstract": "In a number of articles Donald Davidson has argued that the charitable nature of his method of radical interpretation rules out the possibility of massive error and thus refutes Cartesian skepticism. The diversity of such arguments and the suggestions that are all being made under the name of the principle of charity have prompted a large body of conflicting responses, adding only to the obscurity of the issues that are generally associated with the question of skepticism. In this paper I propose to consider the debate in a new light by reconstruing the principle of charity as a supervenience constraint on belief attribution. This would help explain some of the puzzling features of Davidson's arguments, like the idea of an omniscient interpreter, and the ensuing commentaries. Having provided an analysis of the limitations of Davidson's arguments, I shall then suggest an alternative explanation of the purported necessity of the principle of charity. Finally, having construed the principle of charity as a supervenience constraint, I shall examine what consequences this construal has for the logical status of the principle itself and its alleged epistemic potentials.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Metaphilosophy",
+        "type": "journal",
+        "issn": [
+          "0026-1068",
+          "1467-9973"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought",
+        "Theology and Philosophy of Evil",
+        "War, Ethics, and Justification"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W1972508008"
+    },
+    {
+      "openalex_id": "W2031502025",
+      "doi": "10.1083/jcb.201004104",
+      "title": "Metadata matters: access to image data in the real world",
+      "authors": [
+        {
+          "name": "Melissa Linkert",
+          "openalex_id": "A5003687873",
+          "institutions": [
+            "Optica",
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Curtis Rueden",
+          "openalex_id": "A5078540488",
+          "orcid": "https://orcid.org/0000-0001-7055-6707",
+          "institutions": [
+            "University of Wisconsin\u2013Madison",
+            "Optica"
+          ]
+        },
+        {
+          "name": "Chris Allan",
+          "openalex_id": "A5060509001",
+          "orcid": "https://orcid.org/0000-0002-8151-4059",
+          "institutions": [
+            "University of Dundee",
+            "Wellcome Trust"
+          ]
+        },
+        {
+          "name": "Jean\u2010Marie Burel",
+          "openalex_id": "A5076169286",
+          "orcid": "https://orcid.org/0000-0002-1789-1861",
+          "institutions": [
+            "Wellcome Trust",
+            "University of Dundee"
+          ]
+        },
+        {
+          "name": "William J. Moore",
+          "openalex_id": "A5032873940",
+          "orcid": "https://orcid.org/0000-0002-7264-8338",
+          "institutions": [
+            "University of Dundee",
+            "Wellcome Trust"
+          ]
+        },
+        {
+          "name": "Andrew Patterson",
+          "openalex_id": "A5017588468",
+          "orcid": "https://orcid.org/0000-0002-0017-2393",
+          "institutions": [
+            "University of Dundee",
+            "Wellcome Trust"
+          ]
+        },
+        {
+          "name": "Brian Loranger",
+          "openalex_id": "A5008979802",
+          "institutions": [
+            "Wellcome Trust",
+            "University of Dundee"
+          ]
+        },
+        {
+          "name": "Josh Moore",
+          "openalex_id": "A5091278117",
+          "orcid": "https://orcid.org/0000-0003-4028-811X"
+        },
+        {
+          "name": "Carlos Neves",
+          "openalex_id": "A5021496248"
+        },
+        {
+          "name": "Donald MacDonald",
+          "openalex_id": "A5015952003",
+          "institutions": [
+            "University of Dundee",
+            "Wellcome Trust"
+          ]
+        },
+        {
+          "name": "Aleksandra Tarkowska",
+          "openalex_id": "A5075154106",
+          "orcid": "https://orcid.org/0000-0002-3392-3691",
+          "institutions": [
+            "University of Dundee",
+            "Wellcome Trust"
+          ]
+        },
+        {
+          "name": "Caitlin Sticco",
+          "openalex_id": "A5098456234",
+          "institutions": [
+            "Optica",
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Emma Hill",
+          "openalex_id": "A5108789931",
+          "institutions": [
+            "Rockefeller University",
+            "Rockefeller University Press"
+          ]
+        },
+        {
+          "name": "Mike Rossner",
+          "openalex_id": "A5033894962",
+          "orcid": "https://orcid.org/0000-0002-8821-1747",
+          "institutions": [
+            "Rockefeller University Press",
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Kevin W. Eliceiri",
+          "openalex_id": "A5010413374",
+          "orcid": "https://orcid.org/0000-0001-8678-670X",
+          "institutions": [
+            "Optica",
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Jason R. Swedlow",
+          "openalex_id": "A5087159664",
+          "orcid": "https://orcid.org/0000-0002-2198-1958",
+          "institutions": [
+            "University of Dundee",
+            "Wellcome Trust"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-31",
+      "abstract": "Data sharing is important in the biological sciences to prevent duplication of effort, to promote scientific integrity, and to facilitate and disseminate scientific discovery. Sharing requires centralized repositories, and submission to and utility of these resources require common data formats. This is particularly challenging for multidimensional microscopy image data, which are acquired from a variety of platforms with a myriad of proprietary file formats (PFFs). In this paper, we describe an open standard format that we have developed for microscopy image data. We call on the community to use open image data standards and to insist that all imaging platforms support these file formats. This will build the foundation for an open image data repository.",
+      "cited_by_count": 1069,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Cell Biology",
+        "type": "journal",
+        "issn": [
+          "0021-9525",
+          "1540-8140"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://rupress.org/jcb/article-pdf/189/5/777/1346115/jcb_201004104.pdf"
+      },
+      "topics": [
+        "Cell Image Analysis Techniques",
+        "Genetics, Bioinformatics, and Biomedical Research",
+        "Biomedical Text Mining and Ontologies"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W2031502025"
+    },
+    {
+      "openalex_id": "W2120194661",
+      "doi": "10.1353/plu.2010.0002",
+      "title": "On the Very Good Idea of a Conceptual Scheme",
+      "authors": [
+        {
+          "name": "Martin Coleman",
+          "openalex_id": "A5007009739",
+          "orcid": "https://orcid.org/0000-0002-3483-7613",
+          "institutions": [
+            "Indiana University \u2013 Purdue University Indianapolis"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-06-01",
+      "abstract": "On the Very Good Idea of a Conceptual Scheme Martin Coleman Richard Rorty has argued that Donald Davidson can be classified as a neopragmatist. To this end, Rorty has tried to show that Davidson's views share important similarities with those of Peirce, James, and Dewey. Davidson, for his part, has tended to resist Rorty's attempts to classify his views in this way. Interestingly, the reasons for Rorty's classification and the reasons for Davidson's resistance share a common trait: an appeal to the elimination of the dualism of conceptual scheme and experiential content on the basis of an assumed background of shared beliefs. According to Rorty, Davidson's background of shared beliefs is closely related to the notion of funded experience found in those thinkers often classified as Classic American Philosophers or pragmatists (13). But Davidson rejects pragmatism along with the relativisms and empiricisms that fall when the scheme-content dualism is eliminated (Davidson, Inquiries xviii). It is my contention that Rorty errs in including Davidson with Classic American Philosophers in virtue of his assumed background of shared beliefs, and Davidson is wrong to flatly reject the scheme-content distinction as the third and final dogma of empiricism. I intend to show that Davidson's background of shared belief differs significantly from the corresponding notion in the works of John Dewey, and that Dewey's position provides resources for eliminating the incoherence that Davidson finds in the scheme-content distinction without the outright rejection of a helpful tool of inquiry. This contributes to a defense of Dewey's empirical philosophy against Davidson's supposed defeat of empiricism. Background of Beliefs and Apparatus of Habits Conceptual schemes are supposed to be perspectives belonging to individuals or cultures by means of which sensory content is organized. The dualism [End Page 69] of scheme-content seems to entail the possibility that different individuals or different cultures may have utterly different understandings of the world to the point of incommensurability. Davidson denies such a possibility and contends that the very notion of a conceptual scheme is incoherent. This is because to recognize a conceptual scheme as completely incommensurable would entail either going beyond one's own conceptual scheme, which would show the superfluity of a conceptual scheme, or else recognizing the supposedly incommensurable conceptual scheme as a conceptual scheme, which would indicate a significant similarity to one's own conceptual scheme and hence a contradiction of the claim of utter incommensurability. In this latter case, the point is that recognizing something as a conceptual scheme requires a shared background of agreement or beliefs. And as this background is not itself a conceptual scheme but rather a basic requirement of reasoning, the notion of a conceptual scheme again becomes superfluous. This background of agreement can be understood by examining Davidson's use of the Principle of Charity, which is employed when trying to understand what a speaker means. According to Davidson, in order to understand the meaning of a speaker's utterances, one must know what the speaker believes because \"a speaker who holds a sentence to be true on an occasion does so in part because of what he means, or would mean, by an utterance of that sentence, and in part because of what he believes\" (Inquiries 142). But this \"interdependence of belief and meaning\" (Inquiries 137) presents a problem: beliefs cannot be determined without interpreting the meaning of a speaker's words. Thus, the interpreter appears trapped in a circle of the speaker's beliefs and the meanings of a speaker's utterances. The Principle of Charity allows the interpreter to escape the circle of unknown beliefs and uncomprehended meanings by assuming that most of the beliefs of the speaker are true. Without the assumption of shared understanding or shared truths, no further understanding is possible. Davidson thinks one is not only justified but also compelled to adopt the Principle of Charity because genuine disagreements and misunderstandings make sense only against a background of what is understood in common. Genuine misunderstandings stand in contrast to cases in which there is nothing\u2014no language, nothing rational\u2014to understand and so nothing to mis-understand. Hence, an interpreter's initial inability...",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "The Pluralist",
+        "type": "journal",
+        "issn": [
+          "1930-7365",
+          "1944-6489"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://muse.jhu.edu/pub/34/article/399371"
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education",
+        "Philosophy and History of Science",
+        "Philosophy, Science, and History"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W2120194661"
+    },
+    {
+      "openalex_id": "W3190100096",
+      "doi": "10.1007/s10516-006-9000-x",
+      "title": "Spurning charity",
+      "authors": [
+        {
+          "name": "Paul Saka",
+          "openalex_id": "A5058196512",
+          "institutions": [
+            "University of Houston"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-02-13",
+      "abstract": null,
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Axiomathes",
+        "type": "journal",
+        "issn": [
+          "1122-1151",
+          "1572-8390"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Psychology of Moral and Emotional Judgment",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W3190100096"
+    },
+    {
+      "openalex_id": "W2984464739",
+      "doi": null,
+      "title": "Meier and Davidson - \u2018Billigkeitsprinzip\u2019 and \u2018principle of charity\u2019 in interpretation -",
+      "authors": [
+        {
+          "name": "Shin-Hann Choi",
+          "openalex_id": "A5079628764"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "CHEOLHAK: Korean Journal of Philosophy",
+        "type": "journal",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Law and Political Science",
+        "European and International Law Studies",
+        "Legal principles and applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2984464739"
+    },
+    {
+      "openalex_id": "W2888732715",
+      "doi": "10.1093/oso/9780198739548.003.0008",
+      "title": "Interpretation and the Interpreter",
+      "authors": [
+        {
+          "name": "Kathrin Gl\u00fcer",
+          "openalex_id": "A5023857090",
+          "orcid": "https://orcid.org/0000-0002-7483-7060"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-12",
+      "abstract": "Abstract According to Donald Davidson, \u201cwhat a fully informed interpreter could learn about what a speaker means is all there is to learn; the same goes for what the speaker believes\u201d (Davidson 1983). This is a foundational claim about the nature of semantic properties: these are evidence-constituted properties. They are determined by the principle of charity on the basis of data about the behaviour of the speaker(s). But what exactly is the role of the interpreter in the Davidsonian account of meaning determination? Is she merely a dramatic device or an essential element of the metaphysical picture? This chapter investigates whether David Lewis\u2019s (1983) distinction between natural and unnatural properties can help in answering these questions.",
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://urn.kb.se/resolve?urn=urn:nbn:se:su:diva-164999"
+      },
+      "topics": [
+        "Classical Philosophy and Thought",
+        "Philosophy and Theoretical Science",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W2888732715"
+    },
+    {
+      "openalex_id": "W4237312828",
+      "doi": "10.30965/9783969751305_006",
+      "title": "Davidsons \u201ePrinciple of Charity\u201c als Entgegnung auf den Skeptizismus",
+      "authors": [
+        {
+          "name": "Ansgar Seide",
+          "openalex_id": "A5104891487"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-12-01",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "Philosophical Ethics and Theory",
+        "German Social Sciences and History"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4237312828"
+    },
+    {
+      "openalex_id": "W2162194629",
+      "doi": null,
+      "title": "The Principle of Charity in Interpreting Scientific Theory: A Meta-Theoretical Polemic Against Theoretical Polemics",
+      "authors": [
+        {
+          "name": "Walter Schroyens",
+          "openalex_id": "A5001481904"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": "I proffer the \u2018principle of charity \u2019 as a fundamental guiding principle in interpreting theories communicated to us via scientific papers. The principle (named by Neil Wilson) conveys that when interpreting another speaker we should make those assumptions about his intelligence, knowledge, sense of relevance and so on, that will make most of what he says come out true. In Donald Davidson&amp;apos;s work it often appears in terms of the injunction to optimise agreement between ourselves and those we interpret, that is, it counsels us to interpret speakers as holding true beliefs (true by our lights at least) wherever it is plausible to do. As David Vessey stated it; \u201cthe intuition behind the principle of charity is that if we interpret a sentence in such a way as to render it unintelligible, this is likely a sign of a poor interpretation rather than an accurate interpretation of an unintelligible",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "eScholarship (California Digital Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.org/uc/item/2gx4m87q"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Philosophy and Theoretical Science",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2162194629"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

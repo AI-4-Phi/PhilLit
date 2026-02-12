@@ -1,0 +1,909 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "embodied-cognition",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/embodied-cognition/",
+      "entry_name": "embodied-cognition",
+      "title": "Embodied Cognition",
+      "preamble": "Embodied Cognition is a wide-ranging research program drawing from and\ninspiring work in psychology, neuroscience, ethology, philosophy,\nlinguistics, robotics, and artificial intelligence. Whereas\ntraditional cognitive science also encompasses these disciplines, it\nfinds common purpose in a conception of mind wedded to\ncomputationalism: mental processes are computational processes; the\nbrain, qua computer, is the seat of cognition. In contrast,\nembodied cognition variously rejects or reformulates the computational\ncommitments of cognitive science, emphasizing the significance of an\nagent\u2019s physical body in cognitive abilities. Unifying\ninvestigators of embodied cognition is the idea that the body or the\nbody\u2019s interactions with the environment constitute or\ncontribute to cognition in ways that require a new framework for its\ninvestigation. Mental processes are not, or not only, computational\nprocesses. The brain is not a computer, or not the seat of\ncognition. Once a fringe movement, embodied cognition now enjoys a fair amount of\nprominence. Unlike, say, ecological psychology, which has faced an\nuphill battle for mainstream acceptance, embodied cognition has gained\na substantial following. The appointment of researchers who take an\nembodied perspective to cognition would, today, raise few eyebrows.\nEmbodied cognition has been the subject of numerous articles in\npopular outlets. Moreover, there is not an area of cognitive\nscience\u2014perception, language, learning, memory, categorization,\nproblem solving, emotion, social cognition\u2014that has not received\nan embodied \u201cmake-over.\u201d None of this is to say, of course, that embodied cognition does not\nface hard questions, or has escaped harsh criticism. The numerous and\nsometimes incompatible claims it makes about the body\u2019s role in\ncognition and the myriad methods it employs for understanding this\nrole make it ripe for philosophical reflection. Critics charge\nembodied cognition with embracing a depleted conception of cognition,\nor with not offering a genuine replacement to computational cognitive\nscience, or with claiming that bodies play a constitutive role in\ncognition when in fact their role is merely causal. Proponents have\nresponded to all of these objections. A welcome byproduct of these\ndebates is a new perspective on some old philosophical questions\nconcerning what minds are, what concepts are, and how to understand\nthe nature and significance of representation.",
+      "bibliography": [
+        {
+          "raw": "Adams, Fred, and Ken Aizawa, 2001, \u201cThe Bounds of\nCognition,\u201d Philosophical Psychology , 14(1):\n43\u201364. doi:10.1080/09515080120033571",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, The Bounds of Cognition ,\nMalden, MA: Blackwell.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "The Bounds of Cognition ",
+            "publisher": "Malden, MA: Blackwell"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, \u201cWhy the Mind Is Still in the\nHead,\u201d in Philip Robbins and Murat Aydede (eds.), The\nCambridge Handbook of Situated Cognition , 1st edition, Cambridge,\nNew York: Cambridge University Press, pp, 78\u201395.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, \u201cWhy the Mind Is Still in the\nHead,\u201d in Philip Robbins and Murat Aydede (eds.), The\nCambridge Handbook of Situated Cognition , 1st edition, Cambridge,\nNew York: Cambridge University Press, pp, 78\u201395."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2010, \u201cDefending the Bounds of\nCognition,\u201d in Richard Menary (ed.), The Extended Mind ,\nCambridge, MA: MIT Press, pp, 67\u201380.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2010",
+            "title": "\u2013\u2013\u2013, 2010, \u201cDefending the Bounds of\nCognition,\u201d in Richard Menary (ed.), The Extended Mind ,\nCambridge, MA: MIT Press, pp, 67\u201380."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Andrews, Kristin, Shannon Spaulding, and Evan Westra, 2020,\n\u201cIntroduction to Folk Psychology: Pluralistic\nApproaches ,\u201d Synthese , August, 1\u201316,\ndoi:10.1007/s11229-020-02837-3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Baggs, Edward, and Anthony Chemero, 2018, \u201cRadical\nEmbodiment in Two Directions,\u201d Synthese , 198\n(Supplement 9): 2175\u20132190. doi:10.1007/s11229-018-02020-9",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Barsalou, Lawrence W, 1999, \u201cPerceptual Symbol\nSystems,\u201d Behavioral and Brain Sciences , 22(4):\n577\u2013660. doi:10.1017/S0140525X99002149",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, \u201cGrounded Cognition,\u201d Annual Review of Psychology , 59(1): 617\u201345.\ndoi:10.1146/annurev.psych.59.103006.093639",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008, \u201cGrounded Cognition,\u201d Annual Review of Psychology , 59(1): 617\u201345.\ndoi:10.1146/annurev.psych.59.103006.093639"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Barsalou, Lawrence W., W. Kyle Simmons, Aron K. Barbey, and\nChristine D. Wilson, 2003, \u201cGrounding Conceptual Knowledge in\nModality-Specific Systems,\u201d Trends in Cognitive\nSciences , 7(2): 84\u201391.\ndoi:10.1016/S1364-6613(02)00029-3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Barsalou, Lawrence W., and Katja Wiemer-Hastings, 2005,\n\u201cSituating Abstract Concepts,\u201d in Diane Pecher and Rolf A.\nZwaan (eds.), Grounding Cognition (1st edition), pp.\n129\u201363, Cambridge: Cambridge University Press.\ndoi:10.1017/CBO9780511499968.007",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bechtel, William, 1998, \u201cRepresentations and Cognitive\nExplanations: Assessing the Dynamicist\u2019s Challenge in Cognitive\nScience,\u201d Cognitive Science , 22(3): 295\u2013318.\ndoi:10.1207/s15516709cog2203_2.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Beer, Randall D, 2000, \u201cDynamical Approaches to Cognitive\nScience,\u201d Trends in Cognitive Sciences , 4(3):\n91\u201399. doi:10.1016/S1364-6613(99)01440-0",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2003, \u201cThe Dynamics of Active\nCategorical Perception in an Evolved Model Agent,\u201d Adaptive\nBehavior , 11(4): 209\u201343. doi:10.1177/1059712303114001",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2003",
+            "title": "\u2013\u2013\u2013, 2003, \u201cThe Dynamics of Active\nCategorical Perception in an Evolved Model Agent,\u201d Adaptive\nBehavior , 11(4): 209\u201343. doi:10.1177/1059712303114001"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Broadbent, Donald E., 1958, Perception and Communication ,\nNew York: Pergamon Press.",
+          "parsed": {
+            "authors": [
+              "Broadbent, Donald E."
+            ],
+            "year": "1958",
+            "title": "Perception and Communication ",
+            "publisher": "New York: Pergamon Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Brooks, Rodney. A., 1991a, \u201cNew Approaches to\nRobotics,\u201d Science , 253 (5025): 1227\u201332.\ndoi:10.1126/science.253.5025.1227",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1991b, \u201cIntelligence without\nRepresentation,\u201d Artificial Intelligence ,\n47(1\u20133): 139\u201359. doi:10.1016/0004-3702(91)90053-M",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1991",
+            "title": "\u2013\u2013\u2013, 1991b, \u201cIntelligence without\nRepresentation,\u201d Artificial Intelligence ,\n47(1\u20133): 139\u201359. doi:10.1016/0004-3702(91)90053-M"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Buccino, Giovanni, Lucia Riggio, Gabor Melli, Ferdinand Binkofski,\nVittorio Gallese, and Giacomo Rizzolatti, 2005, \u201cListening to\nAction-Related Sentences Modulates the Activity of the Motor System: A\nCombined TMS and Behavioral Study,\u201d Cognitive Brain\nResearch , 24(3): 355\u201363.\ndoi:10.1016/j.cogbrainres.2005.02.020",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Chemero, Anthony, 2001, \u201cDynamical Explanation and Mental\nRepresentations,\u201d Trends in Cognitive Sciences , 5(4):\n141\u201342. doi:10.1016/S1364-6613(00)01627-2",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, Radical Embodied Cognitive\nScience , Cambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, Radical Embodied Cognitive\nScience , Cambridge, MA: MIT Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2016, \u201cSensorimotor Empathy,\u201d Journal of Consciousness Studies , 23(5\u20136):\n138\u201352.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2016",
+            "title": "\u2013\u2013\u2013, 2016, \u201cSensorimotor Empathy,\u201d Journal of Consciousness Studies , 23(5\u20136):\n138\u201352."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2021, \u201cEpilogue: What Embodiment\nIs,\u201d in Nancy Dess (ed.), A Multidisciplinary Approach to\nEmbodiment: Understanding Human Being , New York: Routledge, pp.\n133\u201340.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2021",
+            "title": "\u2013\u2013\u2013, 2021, \u201cEpilogue: What Embodiment\nIs,\u201d in Nancy Dess (ed.), A Multidisciplinary Approach to\nEmbodiment: Understanding Human Being , New York: Routledge, pp.\n133\u201340."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Chomsky, Noam, 1959, \u201cOn Certain Formal Properties of\nGrammars,\u201d Information and Control , 2(2): 137\u201367.\ndoi:10.1016/S0019-9958(59)90362-6",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1980, \u201cOn Cognitive Structures and\nTheir Development: A Reply to Piaget,\u201d in Massimo\nPiattelli-Palmarini (ed.), Language and Learning\u202f: The\nDebate between Jean Piaget and Noam Chomsky , Cambridge, MA:\nHarvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1980",
+            "title": "\u2013\u2013\u2013, 1980, \u201cOn Cognitive Structures and\nTheir Development: A Reply to Piaget,\u201d in Massimo\nPiattelli-Palmarini (ed.), Language and Learning\u202f: The\nDebate between Jean Piaget and Noam Chomsky , Cambridge, MA:\nHarvard University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Clark, Andy, 1997, \u201cThe Dynamical Challenge,\u201d Cognitive Science , 21(4): 461\u201381.\ndoi:10.1207/s15516709cog2104_3",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, Supersizing the Mind: Embodiment,\nAction, and Cognitive Extension , Oxford, New York: Oxford\nUniversity Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008, Supersizing the Mind: Embodiment,\nAction, and Cognitive Extension , Oxford, New York: Oxford\nUniversity Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2010, \u201cCoupling, Constitution, and\nthe Cognitive Kind: A Reply to Adams and Aizawa,\u201d in Richard\nMenary (ed.), The Extended Mind , Cambridge, MA: MIT Press,\npp. 81\u2013100.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2010",
+            "title": "\u2013\u2013\u2013, 2010, \u201cCoupling, Constitution, and\nthe Cognitive Kind: A Reply to Adams and Aizawa,\u201d in Richard\nMenary (ed.), The Extended Mind , Cambridge, MA: MIT Press,\npp. 81\u2013100."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Clark, Andy, and David J. Chalmers, 1998, \u201cThe Extended\nMind,\u201d Analysis , 58(1): 7\u201319.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Clark, Andy, and Josefa Toribio, 1994, \u201cDoing without\nRepresenting?\u201d Synthese , 101(3): 401\u201331.\ndoi:10.1007/BF01063896.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Cushman, Fiery, Liane Young, and Marc Hauser, 2006, \u201cThe\nRole of Conscious Reasoning and Intuition in Moral Judgment: Testing\nThree Principles of Harm,\u201d Psychological Science ,\n17(12): 1082\u201389.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Damasio, Antonio R., 1994, \u201cDescartes\u2019 Error and the\nFuture of Human Life,\u201d Scientific American , 271(4):\n144.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Davies, Martin, and Tony Stone, 1995a, Folk Psychology: The\nTheory of Mind Debate , Oxford: Blackwell.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1995b, Mental Simulation: Evaluations\nand Applications (Volume 4), Oxford: Blackwell.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1995",
+            "title": "\u2013\u2013\u2013, 1995b, Mental Simulation: Evaluations\nand Applications (Volume 4), Oxford: Blackwell."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Dietrich, Eric, and Arthur B. Markman, 2001, \u201cDynamical\nDescription versus Dynamical Modeling,\u201d Trends in Cognitive\nSciences , 5(8): 332. doi:10.1016/S1364-6613(00)01705-8",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Di Paolo, Ezequiel A., 2005, \u201cAutopoiesis, Adaptivity,\nTeleology, Agency,\u201d Phenomenology and the cognitive\nsciences , 4: 429\u2013452.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dove, Guy, 2009, \u201cBeyond Perceptual Symbols: A Call for\nRepresentational Pluralism,\u201d Cognition , 110(3):\n412\u201331. doi:10.1016/j.cognition.2008.11.016",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2016, \u201cThree Symbol Ungrounding\nProblems: Abstract Concepts and the Future of Embodied\nCognition,\u201d Psychonomic Bulletin & Review , 23(4):\n1109\u201321.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2016",
+            "title": "\u2013\u2013\u2013, 2016, \u201cThree Symbol Ungrounding\nProblems: Abstract Concepts and the Future of Embodied\nCognition,\u201d Psychonomic Bulletin & Review , 23(4):\n1109\u201321."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Edmiston, Pierce, and Gary Lupyan, 2017, \u201cVisual\nInterference Disrupts Visual Knowledge,\u201d Journal of Memory\nand Language , 92 (February): 281\u201392.\ndoi:10.1016/j.jml.2016.07.002",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Eliasmith, Chris, 1996, \u201cThe Third Contender: A Critical\nExamination of the Dynamicist Theory of Cognition,\u201d Philosophical Psychology , 9(4): 441\u201363.\ndoi:10.1080/09515089608573194",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fiske, Susan T., and Shelley E. Taylor, 2013, Social\nCognition: From Brains to Culture , London: Sage.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fodor, Jerry A., 1987, Psychosemantics: The Problem of Meaning\nin the Philosophy of Mind , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fuchs, Thomas, 2013, \u201cThe Phenomenology and Development of\nSocial Perspectives,\u201d Phenomenology and the Cognitive\nSciences , 12(4): 655\u2013683.\ndoi:10.1007/s11097-012-9267-x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gallagher, Shaun, 2005, How the Body Shapes the Mind ,\nOxford, Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "Gallagher, Shaun"
+            ],
+            "year": "2005",
+            "title": "How the Body Shapes the Mind ",
+            "publisher": "Oxford, Oxford University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2008, \u201cInference or Interaction:\nSocial Cognition without Precursors,\u201d Philosophical\nExplorations , 11(3): 163\u201374.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2008",
+            "title": "\u2013\u2013\u2013, 2008, \u201cInference or Interaction:\nSocial Cognition without Precursors,\u201d Philosophical\nExplorations , 11(3): 163\u201374."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2020, Action and Interaction ,\nOxford: University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2020",
+            "title": "Action and Interaction ",
+            "publisher": "Oxford: University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Gallagher, Shaun, and Daniel D. Hutto, 2008, \u201cUnderstanding\nOthers through Primary Interaction and Narrative Practice,\u201d in\nChris Sinha, Esa Itkonen, Jordan Zlatev, and Timothy P. Racine (eds.), The Shared Mind: Perspectives on Intersubjectivity ,\nAmsterdam: John Benjamins, pp. 17\u201338.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gallese, Vittorio, 2009, \u201cMirror Neurons and the Neural\nExploitation Hypothesis: From Embodied Simulation to Social\nCognition,\u201d in Jaimie A. Pineda (ed.), Mirror Neuron\nSystems , New York: Humana, pp. 163\u201390.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gibson, James J., 1966, The Senses Considered as Perceptual\nSystems , Boston: Houghton Mifflin.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1979, The Ecological Approach to Visual\nPerception , Boston: Houghton Mifflin.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1979",
+            "title": "\u2013\u2013\u2013, 1979, The Ecological Approach to Visual\nPerception , Boston: Houghton Mifflin."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Glenberg, Arthur M., and Michael P. Kaschak, 2002,\n\u201cGrounding Language in Action,\u201d Psychonomic Bulletin\n& Review , 9(3): 558\u201365. doi:10.3758/BF03196313",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Goldhill, Olivia, 2019, \u201cThe Replication Crisis Is Killing\nPsychologists\u2019 Theory of How the Body Influences the\nMind,\u201d Quartz , 16 January 2019,\n [ Goldhill 2019 available online ].",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Goldman, Alvin I., 2009, \u201cMirroring, Mindreading, and\nSimulation,\u201d in Jaimie A. Pineda (ed.), Mirror Neuron\nSystems , New York: Humana, pp. 311\u201330.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Goldman, Alvin I., and Frederique de Vignemont, 2009, \u201cIs\nSocial Cognition Embodied?\u201d Trends in Cognitive\nSciences , 13(4): 154\u201359.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Greene, Joshua D., \u201cBeyond Point-and-Shoot Morality,\u201d Ethics , 124(4): 695\u2013726.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gu, Jun, Chen-Bo Zhong, and Elizabeth Page-Gould, 2013,\n\u201cListen to Your Heart: When False Somatic Feedback Shapes Moral\nBehavior,\u201d Journal of Experimental Psychology: General ,\n142(2): 307.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Haidt, Jonathan, 2001, \u201cThe Emotional Dog and Its Rational\nTail: A Social Intuitionist Approach to Moral Judgment,\u201d Psychological Review , 108(4): 814\u2013834.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Haidt, Jonathan, Silvia Helena Koller, and Maria G Dias, 1993,\n\u201cAffect, Culture, and Morality, or Is It Wrong to Eat Your\nDog?\u201d Journal of Personality and Social Psychology ,\n65(4): 613\u2013628.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Haken, Hermann, J. A. Scott Kelso, and Herbert Bunz, 1985,\n\u201cA Theoretical Model of Phase Transitions in Human Hand\nMovements,\u201d Biological Cybernetics , 51(5):\n347\u201356. doi:10.1007/BF00336922",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hare, Robert D., 1999, Without Conscience: The Disturbing\nWorld of the Psychopaths among Us , New York: Guilford Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hatfield, Gary, 1991, \u201cRepresentation and Rule-Instantiation\nin Connectionist Systems,\u201d in Terence Horgan and John Tienson\n(eds.), Connectionism and the Philosophy of Mind (Studies in\nCognitive Systems), Dordrecht: Springer Netherlands, pp. 90\u2013112.\ndoi:10.1007/978-94-011-3524-5_5",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Heidegger, Martin, 1975, The Basic Problems of\nPhenomenology , translated by Albert Hofstadter, 1988,\nBloomington: Indiana University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hickok, Gregory, 2009, \u201cEight Problems for the Mirror Neuron\nTheory of Action Understanding in Monkeys and Humans,\u201d Journal of Cognitive Neuroscience , 21(7): 1229\u201343.\ndoi:10.1162/jocn.2009.21189",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Huebner, Bryce, 2015, \u201cDo Emotions Play a Constitutive Role\nin Moral Cognition?\u201d Topoi , 34(2): 427\u201340.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Husserl, Edmund, 1929, Cartesian Meditations: An Introduction\nto Phenomenology , translated by Dorian Cairns, 2012, Dordrect:\nSpringer Science & Business Media.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hutchins, Edwin, 1996, Cognition in the Wild (second\nprinting), Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hutto, Daniel D., 2008, Folk Psychological Narratives: The\nSociocultural Basis of Understanding Reasons , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hutto, Daniel D., and Erik Myin, 2013, Radicalizing\nEnactivism: Basic Minds without Content , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hutto, Daniel D., and M. Ratcliffe, 2007, Folk Psychology\nRe-Assessed , Dordrecht; London: Springer.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kelso, J. A. Scott, 1995, Dynamic Patterns: The\nSelf-Organization of Brain and Behavior , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lakens, Dani\u00ebl, 2014, \u201cGrounding Social\nEmbodiment,\u201d Social Cognition , 32 (Supplement):\n168\u201383. doi:10.1521/soco.2014.32.supp.168",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lakoff, George, and Mark Johnson, 1980, Metaphors We Live\nBy , Chicago: University of Chicago Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1999, Philosophy in the Flesh: The\nEmbodied Mind and Its Challenge to Western Thought , New York:\nBasic Books.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1999",
+            "title": "\u2013\u2013\u2013, 1999, Philosophy in the Flesh: The\nEmbodied Mind and Its Challenge to Western Thought , New York:\nBasic Books."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Leeuwen, Marco van, 2005, \u201cQuestions For The Dynamicist: The\nUse of Dynamical Systems Theory in the Philosophy of Cognition,\u201d Minds and Machines , 15(3\u20134): 271\u2013333.\ndoi:10.1007/s11023-004-8339-2",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Macrine, Shelia, L., and Jennifer M. B. Fugate, 2022, Movement\nMatters: How Embodied Cognition Informs Teaching and Learning ,\nCambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mahon, Bradford Z., 2015, \u201cWhat Is Embodied about\nCognition?\u201d Language, Cognition and Neuroscience ,\n30(4): 420\u201329. doi:10.1080/23273798.2014.987791",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mahon, Bradford Z., and Alfonso Caramazza, 2008, \u201cA Critical\nLook at the Embodied Cognition Hypothesis and a New Proposal for\nGrounding Conceptual Content,\u201d Journal of\nPhysiology-Paris , Links and Interactions Between Language and\nMotor Systems in the Brain, 102(1): 59\u201370.\ndoi:10.1016/j.jphysparis.2008.03.004",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Maibom, Heidi, 2010, \u201cWhat Experimental Evidence Shows Us\nabout the Role of Emotions in Moral Judgement,\u201d Philosophy\nCompass , 5(11): 999\u20131012.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Marr, David, 1982, Vision: A Computational Investigation into\nthe Human Representation and Processing of Visual Information ,\nSan Francisco: W. H. Freeman.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Martin, Taylor, and Daniel L. Schwartz, 2005a, \u201cPhysically\nDistributed Learning: Adapting and Reinterpreting Physical\nEnvironments in the Development of Fraction Concepts,\u201d Cognitive Science , 29(4): 587\u2013625.\ndoi:10.1207/s15516709cog0000_15",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2005b, \u201cPhysically Distributed\nLearning: Adapting and Reinterpreting Physical Environments in the\nDevelopment of Fraction Concepts,\u201d Cognitive Science ,\n29(4): 587\u2013625. doi:10.1207/s15516709cog0000_15",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2005",
+            "title": "\u2013\u2013\u2013, 2005b, \u201cPhysically Distributed\nLearning: Adapting and Reinterpreting Physical Environments in the\nDevelopment of Fraction Concepts,\u201d Cognitive Science ,\n29(4): 587\u2013625. doi:10.1207/s15516709cog0000_15"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Matthen, Mohan, 2014, \u201cDebunking Enactivism: A Critical\nNotice of Hutto and Myin\u2019s Radicalizing Enactivism,\u201d Canadian Journal of Philosophy , 44(1): 118\u201328.\ndoi:10.1080/00455091.2014.905251",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Maxwell, Scott E., Michael Y. Lau, and George S. Howard, 2015,\n\u201cIs Psychology Suffering from a Replication Crisis? What Does\n\u2018Failure to Replicate\u2019 Really Mean?\u201d American\nPsychologist , 70(6): 487\u201398. doi:10.1037/a0039400",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "May, Joshua, 2018, Regard for Reason in the Moral Mind ,\nOxford: Oxford University Press.",
+          "parsed": {
+            "authors": [
+              "May, Joshua"
+            ],
+            "year": "2018",
+            "title": "Regard for Reason in the Moral Mind ",
+            "publisher": "Oxford: Oxford University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "May, Joshua, and Victor Kumar, 2018, \u201cMoral Reasoning and\nEmotion,\u201d in Karen Jones, Mark Timmons and Aaron Zimmerman\n(eds.), Routledge Handbook on Moral Epistemology . London:\nRoutledge, pp. 139\u2013156.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Menary, Richard, 2008, Cognitive Integration: Mind and\nCognition Unbounded , Basingstoke, New York: Palgrave\nMacmillan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Merleau-Ponty, Maurice, 1962, Phenomenology of\nPerception , translated by Colin Smith, London: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Michaels, Claire, and Zsolt Palatinus, 2014, \u201cA Ten\nCommandments for Ecological Psychology,\u201d in Lawrence Shapiro\n(ed.), The Routledge Handbook of Embodied Cognition , New\nYork: Routledge, Taylor & Francis Group, pp. 19\u201328.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Newell, Allen, John C. Shaw, and Herbert A. Simon, 1958,\n\u201cElements of a Theory of Human Problem Solving,\u201d Psychological Review , 65(3): 151\u201366.\ndoi:10.1037/h0048495",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Nichols, Shaun, 2004, Sentimental Rules: On the Natural\nFoundations of Moral Judgment , Oxford: Oxford University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "No\u00eb, Alva, 2004, Action in Perception , Cambridge,\nMA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "No\u00eb, Alva"
+            ],
+            "year": "2004",
+            "title": "Action in Perception , Cambridge",
+            "publisher": "MA: MIT Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "O\u2019Regan, J. Kevin, and Alva No\u00eb, 2001, \u201cA\nSensorimotor Account of Vision and Visual Consciousness,\u201d Behavioral and Brain Sciences , 24(5): 939\u201373.\ndoi:10.1017/S0140525X01000115",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pouw, Wim T. J. L., Tamara van Gog, and Fred Paas, 2014, \u201cAn\nEmbedded and Embodied Cognition Review of Instructional\nManipulatives,\u201d Educational Psychology Review , 26(1):\n51\u201372. doi:10.1007/s10648-014-9255-5",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Prinz, Jesse J., 2004, Gut Reactions: A Perceptual Theory of\nEmotion , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Prinz, Jesse J., and Lawrence W. Barsalou, 2000, \u201cSteering a\nCourse for Embodied Representation,\u201d in Eric Dietrich and Arthur\nMarkman (eds.), Cognitive Dynamics: Conceptual Change in Humans\nand Machines , Cambridge, MA: MIT Press, pp. 51\u201377.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pulverm\u00fcller, Friedemann, 2005, \u201cBrain Mechanisms\nLinking Language and Action,\u201d Nature Reviews\nNeuroscience , 6(7): 576\u201382. doi:10.1038/nrn1706",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rabelo, Andr\u00e9 L. A., Victor N. Keller, Ronaldo Pilati, and\nJelte M. Wicherts, 2015, \u201cNo Effect of Weight on Judgments of\nImportance in the Moral Domain and Evidence of Publication Bias from a\nMeta-Analysis,\u201d PLoS ONE , 10(8).\ndoi:10.1371/journal.pone.0134808",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Railton, Peter, 2017, \u201cMoral Learning: Conceptual\nFoundations and Normative Relevance,\u201d Cognition , 167\n(October): 172\u201390.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rey, Georges, 1983, \u201cConcepts and Stereotypes,\u201d Cognition , 15(1): 237\u201362.\ndoi:10.1016/0010-0277(83)90044-6",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1985, \u201cConcepts and Conceptions: A\nReply to Smith, Medin and Rips,\u201d Cognition , 19(3):\n297\u2013303. doi:10.1016/0010-0277(85)90037-X",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1985",
+            "title": "\u2013\u2013\u2013, 1985, \u201cConcepts and Conceptions: A\nReply to Smith, Medin and Rips,\u201d Cognition , 19(3):\n297\u2013303. doi:10.1016/0010-0277(85)90037-X"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Rupert, Robert D., 2004, \u201cChallenges to the Hypothesis of\nExtended Cognition,\u201d The Journal of Philosophy , 101(8):\n389\u2013428.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sauer, Niko, 2010, \u201cCausality and Causation: What We Learn\nfrom Mathematical Dynamic Systems Theory,\u201d Transactions of\nthe Royal Society of South Africa , 65(1): 65\u201368.\ndoi:10.1080/00359191003680091",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schnall, Simone, Jennifer Benton, and Sophie Harvey, 2008,\n\u201cWith a Clean Conscience: Cleanliness Reduces the Severity of\nMoral Judgments,\u201d Psychological Science , 19(12):\n1219\u201322.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schnall, Simone, Jonathan Haidt, Gerald L Clore, and Alexander H\nJordan, 2008, \u201cDisgust as Embodied Moral Judgment,\u201d Personality and Social Psychology Bulletin , 34(8):\n1096\u20131109.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Shapiro, Lawrence, 2007, \u201cThe Embodied Cognition Research\nProgramme,\u201d Philosophy Compass , 2(2): 338\u201346.\ndoi:10.1111/j.1747-9991.2007.00064.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2012, \u201cEmbodied Cognition,\u201d in\nEric Margolis, Richard Samuels and Stephen P. Stich (eds.), The\nOxford Handbook of Philosophy of Cognitive Science , New York:\nOxford University Press, pp. 118\u2013147.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2012",
+            "title": "\u2013\u2013\u2013, 2012, \u201cEmbodied Cognition,\u201d in\nEric Margolis, Richard Samuels and Stephen P. Stich (eds.), The\nOxford Handbook of Philosophy of Cognitive Science , New York:\nOxford University Press, pp. 118\u2013147."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2013, \u201cDynamics and Cognition,\u201d Minds and Machines , 23(3): 353\u201375.\ndoi:10.1007/s11023-012-9290-2",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2013",
+            "title": "\u2013\u2013\u2013, 2013, \u201cDynamics and Cognition,\u201d Minds and Machines , 23(3): 353\u201375.\ndoi:10.1007/s11023-012-9290-2"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2019a, Embodied Cognition , Second\nEdition, London; New York: Routledge.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2019",
+            "title": "\u2013\u2013\u2013, 2019a, Embodied Cognition , Second\nEdition, London; New York: Routledge."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2019b, \u201cMatters of the Flesh: The\nRole(s) of Body in Cognition,\u201d in Matteo Colombo, Elizabeth\nIrvine and Mog Stapleton (eds.), Andy Clark and His Critics ,\nNew York, NY: Oxford University Press, pp. 69\u201380.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2019",
+            "title": "\u2013\u2013\u2013, 2019b, \u201cMatters of the Flesh: The\nRole(s) of Body in Cognition,\u201d in Matteo Colombo, Elizabeth\nIrvine and Mog Stapleton (eds.), Andy Clark and His Critics ,\nNew York, NY: Oxford University Press, pp. 69\u201380."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2019c, \u201cFlesh Matters: The Body in\nCognition,\u201d Mind & Language , 34(1): 3\u201320.\ndoi:10.1111/mila.12203",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2019",
+            "title": "\u2013\u2013\u2013, 2019c, \u201cFlesh Matters: The Body in\nCognition,\u201d Mind & Language , 34(1): 3\u201320.\ndoi:10.1111/mila.12203"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Spaulding, Shannon, 2010, \u201cEmbodied Cognition and\nMindreading,\u201d Mind & Language , 25(1):\n119\u201340.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2011, \u201cA Critique of Embodied\nSimulation,\u201d Review of Philosophy and Psychology , 2(3):\n579\u201399.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2011",
+            "title": "\u2013\u2013\u2013, 2011, \u201cA Critique of Embodied\nSimulation,\u201d Review of Philosophy and Psychology , 2(3):\n579\u201399."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2013, \u201cMirror Neurons and Social\nCognition,\u201d Mind & Language , 28(2):\n233\u201357.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2013",
+            "title": "\u2013\u2013\u2013, 2013, \u201cMirror Neurons and Social\nCognition,\u201d Mind & Language , 28(2):\n233\u201357."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Spivey, Michael J., 2007, The Continuity of Mind (Oxford\nPsychology Series), Oxford, New York: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sternberg, Saul, 1969, \u201cMemory-Scanning: Mental Processes\nRevealed by Reaction-Time Experiments,\u201d American\nScientist , 57(4): 421\u201357.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Symes, Ed, Rob Ellis, and Mike Tucker, 2007, \u201cVisual Object\nAffordances: Object Orientation,\u201d Acta Psychologica ,\n124(2): 238\u201355. doi:10.1016/j.actpsy.2006.03.005",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tettamanti, Marco, Giovanni Buccino, Maria Cristina Saccuman,\nVittorio Gallese, Massimo Danna, Paola Scifo, Ferruccio Fazio, Giacomo\nRizzolatti, Stefano F. Cappa, and Daniela Perani, 2005,\n\u201cListening to Action-Related Sentences Activates Fronto-Parietal\nMotor Circuits,\u201d Journal of Cognitive Neuroscience ,\n17(2): 273\u201381. doi:10.1162/0898929053124965",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Thelen, Esther, Gregor Sch\u00f6ner, Christian Scheier, and Linda\nB. Smith, 2001, \u201cThe Dynamics of Embodiment: A Field Theory of\nInfant Perseverative Reaching,\u201d Behavioral and Brain\nSciences , 24(1): 1\u201334. doi:10.1017/S0140525X01003910",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Thelen, Esther, and Linda Smith (eds.), 1993, A Dynamic\nSystems Approach to Development: Applications , Cambridge, MA: MIT\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Thompson, Evan, 2010, Mind in Life , Cambridge, MA:\nHarvard University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Trevarthen, Colwyn, 1979, \u201cCommunication and Cooperation in\nEarly Infancy: A Description of Primary Intersubjectivity,\u201d in\nMargaret Bullowa (ed.) Before Speech: The Beginning of\nInterpersonal Communication , Cambridge: Cambridge University\nPress, pp. 321\u2013348.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tucker, Mike, and Rob Ellis, 1998, \u201cOn the Relations between\nSeen Objects and Components of Potential Actions,\u201d Journal\nof Experimental Psychology: Human Perception and Performance ,\n24(3): 830\u201346. doi:10.1037/0096-1523.24.3.830",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2001, \u201cThe Potentiation of Grasp\nTypes during Visual Object Categorization,\u201d Visual\nCognition , 8(6): 769\u2013800.\ndoi:10.1080/13506280042000144",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2001",
+            "title": "\u2013\u2013\u2013, 2001, \u201cThe Potentiation of Grasp\nTypes during Visual Object Categorization,\u201d Visual\nCognition , 8(6): 769\u2013800.\ndoi:10.1080/13506280042000144"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2004, \u201cAction Priming by Briefly\nPresented Objects,\u201d Acta Psychologica , 116(2):\n185\u2013203. doi:10.1016/j.actpsy.2004.01.004",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2004",
+            "title": "\u2013\u2013\u2013, 2004, \u201cAction Priming by Briefly\nPresented Objects,\u201d Acta Psychologica , 116(2):\n185\u2013203. doi:10.1016/j.actpsy.2004.01.004"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Van Gelder, Tim, 1995, \u201cWhat Might Cognition Be, If Not\nComputation?\u201d The Journal of Philosophy , 92(7):\n345\u201381. doi:10.2307/2941061",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1998, \u201cThe Dynamical Hypothesis in\nCognitive Science,\u201d Behavioral and Brain Sciences ,\n21(5): 615\u201328. doi:10.1017/S0140525X98001733",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1998",
+            "title": "\u2013\u2013\u2013, 1998, \u201cThe Dynamical Hypothesis in\nCognitive Science,\u201d Behavioral and Brain Sciences ,\n21(5): 615\u201328. doi:10.1017/S0140525X98001733"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Varela, Francisco J., Evan Thompson, and Eleanor Rosch, 2017, The Embodied Mind, Revised Edition: Cognitive Science and Human\nExperience , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ward, Dave, David Silverman, and Mario Villalobos, 2017,\n\u201cIntroduction: The Varieties of Enactivism,\u201d Topoi , 36(3): 365\u201375.\ndoi:10.1007/s11245-017-9484-6",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wilson, Andrew D., and Sabrina Golonka, 2013, \u201cEmbodied\nCognition Is Not What You Think It Is,\u201d Frontiers in\nPsychology , 4, published online 12 February 2013.\ndoi:10.3389/fpsyg.2013.00058",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wilson, Margaret, 2002, \u201cSix Views of Embodied\nCognition,\u201d Psychonomic Bulletin & Review , 9(4):\n625\u201336. doi:10.3758/BF03196322",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wilson, Robert A., 1994, \u201cWide Computationalism,\u201d Mind , 103(411): 351\u201372.\ndoi:10.1093/mind/103.411.351",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wilson, Robert A., and Andy Clark, 2001, \u201cHow to Situate\nCognition: Letting Nature Take Its Course,\u201d in Philip Robbins\nand Murat Aydede (eds.) The Cambridge Handbook of Situated\nCognition , 1st ed., Cambridge: Cambridge University Press, pp.\n55\u201377. doi:10.1017/CBO9780511816826.004",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Woodward, James, 2016, \u201cEmotion versus Cognition in Moral\nDecision-Making: A Dubious Dichotomy,\u201d in S. Matthew Liao (ed.), Moral Brains: The Neuroscience of Morality , Oxford: Oxford\nUniversity Press, pp. 87\u2013116.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zahavi, Dan, 2005, Subjectivity and Selfhood: Investigating\nthe First-Person Perspective , Cambridge, MA: MIT Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zednik, Carlos, 2011, \u201cThe Nature of Dynamical\nExplanation,\u201d Philosophy of Science , 78(2):\n238\u201363.",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ],
+      "sections": {
+        "1": {
+          "id": "1",
+          "title": "2 Connectionism",
+          "content": "Connectionist systems offer a means of computation that, in many\ncases, eschews the symbolist commitments of computational cognitive\nscience. In contrast to the computer that operates on symbols on the\nbasis of internally stored rules, a connectionist system consists in\nnetworks of nodes that excite or inhibit each other\u2019s activity\naccording to weighted connections between them. Different stimuli will\naffect input nodes differently, causing distinct patterns of\nactivation in deeper layers of nodes depending on the values of\nactivation that the input nodes send upstream. The result of this\nactivity will reveal itself in the activation values of a final layer\nof nodes\u2014the output nodes. Connectionist networks thus compute\u2014they transform input\nactivation values into output activation values\u2014but the\nimputation of symbolic structures within this computational process,\nas well as explicit rules by which a C.P.U. executes operations upon\nthese symbols, appears unfounded. As Hatfield (1991) describes\nconnectionist networks, they are non-cognitive , in the sense\nthat their operation involves none of the trappings of cognition upon\nwhich computationalists insist, and yet still computational, insofar\nas stimulation of their input nodes creates patterns of activation\nthat lead to particular activation values in output nodes. For more on\nconnectionism generally, see the entry on connectionism . Many embodied cognition researchers saw in connectionist networks a\nnew way to conceptualize cognition and, accordingly, to explain\ncognitive processes. Non-symbolic explanations of cognition, despite\nthe \u201conly game in town\u201d mantra of computationalists (Fodor\n1987), might be possible after all. Adding momentum to the\nconnectionist challenge was the realization that the mathematics of\ndynamical systems theory could often illuminate the unfolding patterns\nof activity in connectionist networks and could as well be extended to\ninclude within its explanatory scope the body-environment interactions\nbetween which connectionist networks reside. Consequently, some\nembodied cognition researchers have argued that dynamical systems\ntheory offers the best framework from which to understand\ncognition."
+        },
+        "2": {
+          "id": "2",
+          "title": "4 Enactive Cognition",
+          "content": "Enactivism is the view that cognition emerges from or is constituted\nby sensorimotor activity. Currently, there are three distinct strands\nof enactivism (Ward, Silverman, and Villalobos 2017). Autopoietic\nEnactivism conceives of cognition in terms of the biodynamics of\nliving systems (Varela, Thompson, and Rosch 2017; Di Paolo 2005). Just\nas a bacterium is created and maintained by processes that span the\norganism and environment, so too is cognition generated and specified\nthrough operation of sensorimotor processes that crisscross the brain,\nbody, and world. On this version of enactivism, there is no bright\nline between mental processes and non-mental biological processes. The\nformer simply are an enriched version of the latter. Sensorimotor\nEnactivism is another strand of enactivism that focuses on explaining\nthe intentionality and phenomenology of perceptual experiences in\nparticular (O\u2019Regan and No\u00eb 2001; No\u00eb 2004). This view\nholds that perception consists in active exploration of the\nenvironment, which establishes patterns of dependence between our\nmovements, sensory states, and the world. Perceivers need not build\nand manipulate internal models of the external world. Instead, they\nneed only skillfully exploit sensorimotor dependences that their\nexploratory activities reveal. Finally, Radical Enactivism aims to\nreplace all representational explanations of cognition with embodied,\ninteractive explanations (Hutto and Myin 2013; Chemero 2011). The\nprimary tactic guiding Radical Enactivism is to deconstruct and\neliminate the notion of mental content in cognitive science. This\ntactic manifests in critiques of attempts to naturalize\nintentionality, redescribing cognitive processes studied in mainstream\ncognitive science, and challenging concepts employed even by closely\nrelated views, such as Autopoietic Enactivism\u2019s notion of\nsensemaking (Chemero 2016). These three strands of enactivism vary in\ntheir target explanations and methodology. However, they share the\ncommitment to the idea that cognition emerges from sensorimotor\nactivity."
+        },
+        "3": {
+          "id": "3",
+          "title": "2 Embodied Concepts",
+          "content": "A far more developed and empirically grounded case for\nConceptualization comes from psychological and neurological studies\nthat show a connection between a subject\u2019s use of a concept and\nactivity in the subject\u2019s sensorimotor systems. Arising from\nthese studies is a view of concepts as containing within their content\nfacts about the sensorimotor particularities of their possessors.\nBecause these particularities reflect the properties of an\norganism\u2019s body\u2014how, for instance, it moves its limbs when\ninteracting with the world\u2014the content of its concepts too will\nbe constrained and informed by the nature of its body. Central to the idea that concepts are embodied is the description of\nsuch concepts as modal . This label is intended to make stark\nthe anti-computationalism that proponents of embodied concepts\nendorse. Symbols in a computer\u2014strings of 1s and 0s\u2014are amodal , in the sense that their relationship to their\ncontents is arbitrary. Words too are amodal symbols. The symbol\n\u2018lake\u2019 means lake , but not in virtue of any\nresemblance or nomological connection it bears towards lakes. There is\nno reason that \u2018lake\u2019, rather than some other symbol,\nshould mean lake \u2014as is obvious when thinking about\nwords that mean lake in non-English languages. All mental\nsymbols, from the perspective of computational cognitive science, are\namodal in this sense. Modal symbols, on the other hand, retain information about the sources\nof their origin. They are not just symbols, but, in Barsalou\u2019s\n(1999; Barsalou et al. 2003) terminology, perceptual symbol s.\nThoughts about a lake, for instance, consist in activation of the\nsensorimotor areas of the brain that had been activated during\nprevious encounters with actual lakes. A lake thought\nre-activates areas of visual cortex that respond to visual information\ncorresponding to lakes; areas of auditory cortex that respond to\nauditory information corresponding to lakes; areas of motor cortex\nthat correspond to actions typically associated with lakes (although\nthis activation is suppressed so that it does not lead to actual\nmotion), and so on. The result is a lake concept that\nreflects the kinds of sensory and motor activities that are unique to\nhuman bodies and sensory systems. Lake means something like\n\u201cthing that looks like this , sounds like this ,\nsmells like this , allows me to swim within it like this \u201d. Moreover, because how things look and sound\ndepend on the properties of sensory systems, and because the\ninteractions something affords depends on the properties of motor\nsystems, concepts will be body-specific. Much of the evidence for the modality of concepts arises from\ndemonstrations of an orientation-dependent spatial compatibility\neffect (OSC) (Symes, Ellis, and Tucker 2007). Tucker and Ellis\n(1998), for instance, asked subjects to judge whether a given object,\ne.g., a pan, was right-side-up or upside down. The object was oriented\neither rightwards or leftwards. So, for instance, the pan\u2019s\nhandle extended toward the right or left. Subjects would indicate\nwhether the object was right-side-up or upside down by pressing a\nbutton to their right with their right index finger or to their left\nwith their left index finger. Subjects\u2019 reaction times were\nshorter when using a right finger to indicate a response when the\nobject was oriented to the right than when oriented toward the left,\nand, mutatis mutandis , for left-finger responses when the\nobject was oriented to the left. Despite the fact that subjects were\nnot asked to consider horizontal orientation of the stimulus object,\nthis orientation influenced response times (for related work on the\nOSC, see Tucker and Ellis 2001; 2004). Relatedly, Glenberg and Kaschak (2002) showed an action-sentence\ncompatibility effect (ASC). Subjects were asked to judge the\nsensibility of sentences like \u201copen the drawer\u201d or\n\u201cclose the drawer.\u201d Sentences of the first kind suggested\nactions that would require a motion of the hand toward the body and\nsentences of the second kind suggested actions with motions away from\nthe body. Subjects would indicate the sensibility of the sentence by\npressing a button that required a hand motion either away from the\nbody or toward the body. Glenberg and Kaschak found that reaction\ntimes were shorter when the response motion was compatible with the\nmotion suggested by the action sentences. Both the OSC and ASC effects have been taken to show that concepts are\nmodal. Thoughts about pans, for instance, activate areas in motor\ncortex that would be activated when actually manipulating a pan.\nSubjects are slower to respond to a leftward oriented pan with their\nright finger, because seeing the pan\u2019s orientation activates\nmotor areas in the brain associated with grasping the pan with the\nleft hand, priming a left finger response while inhibiting a right\nfinger response. Similarly, the meaning of words like\n\u201copen\u201d and \u201cclose\u201d include in their content\nthe kinds of motor activity that would be involved in opening or\nclosing motions. The meaning of object concepts thus contain\ninformation about how objects might be manipulated by bodies like\nours ; action concepts consist, in part, of information about how\nbodies like ours move. Further evidence for the claim that concepts are packed with\nsensorimotor information comes from Edmiston and Lupyan (2017), who\nasked subjects questions that required for their answers either\n\u201cencyclopedic\u201d knowledge\u2014\u201cDoes a swan lay\neggs?\u201d\u2014or visual knowledge\u2014\u201cDoes a swan have a\nbeak?\u201d. Interestingly, they found that visual interference\nduring the task would diminish performance on questions requiring\nvisual knowledge but not encyclopedic knowledge. They took this as\nevidence for the embodiment of concepts insofar as the effect of\nvisual interference would be expected if concepts were modal\u2014if,\nin this case, they involved the activation of vision centers in the\nbrain\u2014but not if concepts were amodal symbols, divorced from\ntheir sensorimotor origins. A final source of evidence for embodied concepts comes from\nneurological investigations that reveal activation in the sensorimotor\nareas of the brain associated with particular actions. Reading a word\nlike \u2018kick\u2019 or \u2018punch\u2019 causes activity in\nmotor areas of the brain associated with kicking and punching\n(Pulverm\u00fcller 2005). Stimulation of these areas by transcranial\nmagnetic stimulation can affect comprehension of such words\n(Pulverm\u00fcller 2005; Buccino et al. 2005). Again, results like\nthese are precisely what an embodied theory of concepts would predict\nbut would be unexpected on standard computational amodal theories of\nconcepts. If the concept kick includes in its content motions\ndistinctive of a human leg, as determined by activity in the motor\ncortex, then, as Conceptualization entails, it shows the imprint of a\nspecific sort of embodiment. Critics of embodied concepts have issued a number of challenges. Most\nbasically, one might question whether empirical studies like those\njust mentioned are targeting concepts at all. Why think, for instance,\nthat the meaning of the concept pan includes information\nabout how pans must be grasped; and that the meaning of open includes information about how an arm should move? Claims like these\nseem inattentive to a distinction between a concept and a conception (Rey 1983; 1985; Shapiro 2019a). The meaning of\nthe concept bachelor , for instance, is unmarried\nmale . But apart from this concept is a conception of a\nbachelor, where a conception involves something like typical or\nrepresentative features. A bachelor conception might include things\nlike being a lothario, or being young, or participating in\nbro-culture. These concepts are associated with the concept bachelor , but not actually part of the meaning of the\nconcept. Similarly, that pans might be grasped so , or opening involves moving an arm like so , might not be\npart of the meaning of the concepts pan and open ,\nbut instead features of one\u2019s conception of pans and one\u2019s\nconception of how to open things. Just as defenders of embodied concepts might not be investigating\nconcepts after all, but instead only conceptions\u2014only features associated with concepts\u2014it may be that the motor\nactivity that accompanies thoughts about concepts does not contribute\nto the meaning of a concept but is instead only associated with the\nconcept. The psychologists Mahon and Caramazza (2008) argue for this\nway of interpreting the neurological studies taken to support of\nembodied concepts. The finding that exposure to the word\n\u2018kick\u2019 causes activity in the motor areas of the brain\nresponsible for kicking does not show that kick is a modal\nconcept. Mahon and Caramazza suggest that linguistic processing of a\nword might create a cascade of activity that flows to areas of the\nbrain that are associated with the meaning of the word. A\nthought about kick is associated with thoughts about moving\none\u2019s leg, which in turn causes activity in the motor system,\nbut there is no motivation for regarding this activity as part of the kick concept\u2014no motivation for seeing it as evidence\nfor the modality of the concept (Mahon 2015). Thinking about a kick\ncauses one to think about moving one\u2019s leg, which causes\nactivity in motor cortex, but the meaning of kick is\nindependent of such activity. Finally, even granting the modality of concepts like pan and kick , one might question whether all concepts are\nembodied, as some embodied cognition researchers suggest (Barsalou\n1999). Of special concern are abstract concepts like democracy , justice , and morality (Dove\n2009; 2016). Unlike pan , the meaning of which might involve\ninformation from sensory and motor systems, what sensory and motor\nactivity might be included in the meaning of justice ?\nBarsalou (2008) and Barsalou and Wiemer-Hastings (2005) offer an\naccount of how abstract concepts might be analyzed in modal terms, but\ndebate over the issue is far from settled."
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

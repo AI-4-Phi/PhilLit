@@ -1,0 +1,1339 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "research ethics humanities",
+  "results": [
+    {
+      "openalex_id": "W2622022438",
+      "doi": null,
+      "title": "Guidelines for Research Ethics in the Social Sciences, Humanities, Law and Theology",
+      "authors": [
+        {
+          "name": "Rok Becin",
+          "openalex_id": "A5058240262"
+        },
+        {
+          "name": "Raphae Saginur",
+          "openalex_id": "A5023588646"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": null,
+      "cited_by_count": 112,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Legal Education and Practice Innovations"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2622022438"
+    },
+    {
+      "openalex_id": "W2001014514",
+      "doi": "10.1007/s10805-010-9118-8",
+      "title": "The Importance of Ethical Appraisal in Social Science Research: Reviewing a Faculty of Humanities\u2019 Research Ethics Committee",
+      "authors": [
+        {
+          "name": "Katinka de Wet",
+          "openalex_id": "A5073543769",
+          "orcid": "https://orcid.org/0000-0002-7272-7757",
+          "institutions": [
+            "University of the Free State"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-11-12",
+      "abstract": null,
+      "cited_by_count": 31,
+      "type": "article",
+      "source": {
+        "name": "Journal of Academic Ethics",
+        "type": "journal",
+        "issn": [
+          "1570-1727",
+          "1572-8544"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics in Clinical Research",
+        "Academic integrity and plagiarism"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W2001014514"
+    },
+    {
+      "openalex_id": "W2914280161",
+      "doi": "10.16995/dscn.302",
+      "title": "Applying an Ethics of Care to Internet Research: Gamergate and Digital Humanities",
+      "authors": [
+        {
+          "name": "Todd Suomela",
+          "openalex_id": "A5061855379",
+          "orcid": "https://orcid.org/0000-0002-4549-0782",
+          "institutions": [
+            "Bucknell University"
+          ]
+        },
+        {
+          "name": "Florence Chee",
+          "openalex_id": "A5015026800",
+          "orcid": "https://orcid.org/0000-0002-7668-7529",
+          "institutions": [
+            "Loyola University Chicago"
+          ]
+        },
+        {
+          "name": "Bettina Berendt",
+          "openalex_id": "A5072130052",
+          "orcid": "https://orcid.org/0000-0002-8003-3413",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Geoffrey Rockwell",
+          "openalex_id": "A5077549322",
+          "orcid": "https://orcid.org/0000-0001-7430-4742",
+          "institutions": [
+            "University of Alberta"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "This article examines key ethical issues that are continuing to emerge from the task of archiving data scraped from online sources such as social media sites, blogs, and forums, particularly pertaining to online harassment and hostile groups. Given the proliferation of digital social data, an understanding of ethics and data stewardship that evolves alongside the shifting landscape of digital societies is indeed essential. Our study involves a primary research archive that is comprised of data scraped from our project concerning the case study of Gamergate, which involved numerous instances of hate speech in various online communities. Doing this type of qualitative research presents advantages for humanities and social science research because it is possible to generate large and rich corpora about subjects of human interest. However, such data scraping has also raised ethical issues around treating social media authors as research subjects and, moreover, as subjects who have provided informed consent. Once researchers consider content creators on these sites as human research subjects, what would best efforts adhering to the directive to \u201cdo no harm\u201d look like? While we realize the impossibility for definite rules to exist, we do consider the possibilities for how one can best care for the stakeholders using the challenges in their particular contexts. In this case, the stakeholders included Twitter authors, targets of online harassment, researchers, students, archivists, and the larger academic community. Also under consideration is how the Ethics of Care may be extended to the research community, and especially student researchers in their exposure to toxic material. Cet article enqu\u00eate sur les questions \u00e9thiques fondamentales qui continuent \u00e0 se poser pendant le processus d\u2019archivage de donn\u00e9es recueillies de sources en ligne, tels que des r\u00e9seaux sociaux, des blogs et des forums, particuli\u00e8rement en ce qui concerne le harc\u00e8lement en ligne et les groupes hostiles. Vu la prolif\u00e9ration des donn\u00e9es sociales num\u00e9riques, il est effectivement imp\u00e9ratif de comprendre l\u2019\u00e9thique et la g\u00e9rance de donn\u00e9es qui \u00e9valuent conjointement les d\u00e9veloppements d\u2019un paysage changeant des soci\u00e9t\u00e9s num\u00e9riques. Pour notre \u00e9tude, il s\u2019agit d\u2019une archive de recherche primaire qui est constitu\u00e9 de donn\u00e9es recueillies de notre projet qui s\u2019int\u00e9ressait \u00e0 l\u2019\u00e9tude de cas Gamergate, ce qui a vu plusieurs exemples de discours haineux dans diverses communaut\u00e9s virtuelles. Ce type de recherche qualitative pr\u00e9sente des avantages pour les sciences humaines et sociales car il permet de produire de grands corpus riches sur des sujets d\u2019int\u00e9r\u00eat humain. Cette strat\u00e9gie de recueil de donn\u00e9es soul\u00e8ve cependant des questions \u00e9thiques au sujet du traitement des auteurs de r\u00e9seaux sociaux comme des sujets de recherche, tout comme des sujets qui ont donn\u00e9 leur consentement \u00e9clair\u00e9. Lorsque les chercheurs consid\u00e8rent les cr\u00e9ateurs de contenu sur ces sites comme des sujets de recherche humain, \u00e0 quoi les plus grands efforts ressembleraient-ils, qui respectent la directive \u00ab ne pas nuire \u00bb ? Tout en reconnaissant l\u2019impossibilit\u00e9 de l\u2019existence de r\u00e8gles d\u00e9finies, nous consid\u00e9rons, \u00e0 l\u2019aide des d\u00e9fis v\u00e9cus dans leurs contextes sp\u00e9cifiques, les fa\u00e7ons possibles pour s\u2019occuper au mieux des personnes int\u00e9ress\u00e9es. Dans ce cas, celles-ci \u00e9taient des auteurs sur Twitter, qui ont \u00e9t\u00e9 des cibles de harc\u00e8lement en ligne, des chercheurs, des \u00e9tudiants, des archivistes et des membres de la plus grande communaut\u00e9 acad\u00e9mique. Nous consid\u00e9rons aussi les fa\u00e7ons dont l\u2019\u00e9thique peut s\u2019appliquer \u00e0 la communaut\u00e9 de recherche, et particuli\u00e8rement aux chercheurs-\u00e9tudiants qui font face \u00e0 des sujets sensibles et n\u00e9fastes. Mots cl\u00e9s: \u00e9thique; \u00e9thique de recherche; cyberculture; jeux vid\u00e9o; \u00e9tudes des jeux vid\u00e9o; environnement num\u00e9rique",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Digital Studies / Le champ num\u00e9rique",
+        "type": "journal",
+        "issn": [
+          "1918-3666"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.digitalstudies.org/articles/10.16995/dscn.302/galley/307/download/"
+      },
+      "topics": [
+        "Privacy, Security, and Data Protection",
+        "Focus Groups and Qualitative Methods",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W2914280161"
+    },
+    {
+      "openalex_id": "W2404798394",
+      "doi": null,
+      "title": "#transform(ing)DH Writing and Research: An Autoethnography of Digital Humanities and Feminist Ethics.",
+      "authors": [
+        {
+          "name": "Moya Bailey",
+          "openalex_id": "A5043336813",
+          "orcid": "https://orcid.org/0000-0002-9018-6261"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": null,
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Digital humanities quarterly",
+        "type": "journal",
+        "issn": [
+          "1938-4122"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dblp.uni-trier.de/db/journals/dhq/dhq9.html#Bailey15"
+      },
+      "topics": [
+        "Digital Humanities and Scholarship"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2404798394"
+    },
+    {
+      "openalex_id": "W1874101032",
+      "doi": "10.1136/medhum-2015-010718",
+      "title": "Enhancement, ethics and society: towards an empirical research agenda for the medical humanities and social sciences",
+      "authors": [
+        {
+          "name": "Martyn Pickersgill",
+          "openalex_id": "A5018363607",
+          "orcid": "https://orcid.org/0000-0001-9807-9148",
+          "institutions": [
+            "University of Edinburgh",
+            "The Queen's Medical Research Institute"
+          ]
+        },
+        {
+          "name": "Linda F. Hogle",
+          "openalex_id": "A5065463470",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-10",
+      "abstract": "For some time now, bioethicists have paid close attention to issues associated with \u2018enhancement\u2019; specifically, the appropriate use and regulation of substances and artefacts understood by some to improve the functioning of human bodies beyond that associated with \u2018normal\u2019 function. Medical humanities scholars (aside from philosophers and lawyers) and social scientists have not been frequent participants in debates around enhancement, but could shine a bright light on the range of dilemmas and opportunities techniques of enhancement are purported to introduce. In this paper, we argue that empirical research into the notion and practice of enhancement is necessary and timely. Such work could fruitfully engage with\u2014and further develop\u2014existing conceptual repertoires within the medical humanities and social sciences in ways that would afford benefit to scholars in those disciplines. We maintain that empirical engagements could also provide important resources to bioethicists seeking to regulate new enhancements in ways that are sensitive to societal context and cultural difference. To this end, we outline an empirical agenda for the medical humanities and social sciences around enhancement, emphasising especially how science and technology studies could bring benefits to\u2014and be benefitted by\u2014research in this area. We also use the example of (pharmaceutical) cognitive enhancement to show how empirical studies of actual and likely enhancement practices can nuance resonant bioethical debates.",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Medical Humanities",
+        "type": "journal",
+        "issn": [
+          "1468-215X",
+          "1473-4265"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://mh.bmj.com/content/medhum/41/2/136.full.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Autism Spectrum Disorder Research",
+        "Ethics in Clinical Research"
+      ],
+      "referenced_works_count": 99,
+      "url": "https://openalex.org/W1874101032"
+    },
+    {
+      "openalex_id": "W4244848799",
+      "doi": "10.18820/24150479/aa48i1.1",
+      "title": "Report to the academy: power and ethics in humanities research",
+      "authors": [
+        {
+          "name": "Mareli Stolp",
+          "openalex_id": "A5057666588",
+          "institutions": [
+            "University of South Africa"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-29",
+      "abstract": "This article discusses a case study to explore notions of academic freedom and freedom of speech in the post-apartheid South African university. The focus is on the \u2018managerial turn\u2019 in university management and in particular its utilisation of ethical regulation in humanities research. I argue that, in the case in question, managerial power mechanisms co-opted ethics into processes of censure and censorship. Ethical regulation in the humanities has been on the increase in South Africa and internationally in recent decades; I posit here that ethical regulation can be used as amanagerial power mechanism in the control of research output. This has significant implications especially in the context of post-apartheid transformation of South African universities. I further posit that emergent and risk-taking research open up new spaces for exploration and investigation, and that the benefits of this kind of research must be balanced against possible ethical complexities.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Acta Academica Critical views on society culture and politics",
+        "type": "journal",
+        "issn": [
+          "0587-2405",
+          "2415-0479"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://journals.ufs.ac.za/index.php/aa/article/download/1502/1479"
+      },
+      "topics": [
+        "Legal Education and Practice Innovations",
+        "Higher Education Practises and Engagement",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4244848799"
+    },
+    {
+      "openalex_id": "W3037278266",
+      "doi": null,
+      "title": "Research Ethics in the Digital Age: Ethics for the Social Sciences and Humanities in Times of Mediatization and Digitization",
+      "authors": [
+        {
+          "name": "Farina Madita Dobrick",
+          "openalex_id": "A5081660598"
+        },
+        {
+          "name": "Jana Fischer",
+          "openalex_id": "A5066571103"
+        },
+        {
+          "name": "Lutz M. Hagen",
+          "openalex_id": "A5028213997",
+          "orcid": "https://orcid.org/0000-0002-9480-3482"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": null,
+      "cited_by_count": 11,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Law, AI, and Intellectual Property"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3037278266"
+    },
+    {
+      "openalex_id": "W2594261878",
+      "doi": "10.18820/05872405/aa48i2.2",
+      "title": "Power and ethics in humanities research: A response to Stolp",
+      "authors": [
+        {
+          "name": "Lyn Horn",
+          "openalex_id": "A5030109736",
+          "orcid": "https://orcid.org/0000-0001-7572-6832",
+          "institutions": [
+            "Stellenbosch University"
+          ]
+        },
+        {
+          "name": "Anton van Niekerk",
+          "openalex_id": "A5102244376",
+          "institutions": [
+            "Stellenbosch University"
+          ]
+        },
+        {
+          "name": "Therina Theron",
+          "openalex_id": "A5051959395",
+          "orcid": "https://orcid.org/0000-0002-2204-3947",
+          "institutions": [
+            "Stellenbosch University"
+          ]
+        },
+        {
+          "name": "Leslie Swartz",
+          "openalex_id": "A5045672734",
+          "orcid": "https://orcid.org/0000-0003-1741-5897"
+        },
+        {
+          "name": "Lesley Le Grange",
+          "openalex_id": "A5018670005",
+          "orcid": "https://orcid.org/0000-0002-7096-3609"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-15",
+      "abstract": "In the spirit of open engagement we respond to the article published in the last issue of Acta Academia by Mareli Stolp entitled \u201cReport to the Academy: Power and ethics in humanities research\u201d. This article raises many important issues but also requires, in our opinion, the presentation of an alternative perspective or narrative of the events chronicled. In responding to Stolp\u2019s discussion of this incident, four aspects will be discussed: (1) the conceptual delineation of the scope of research misconduct, research integrity and research ethics, (2) Research ethics and integrity at&nbsp;&nbsp; Stellenbosch University and the allegation that it used as a managerial tool to supress academic freedom (3) the investigation process itself, and finally (4) the question of innocence or guilt. In conclusion we believe that a limited knowledge and understanding of research ethics particularly as it applies to autoethnography, a context of intra-departmental conflict and a specific historical context led to the conflation of numerous issues and to this series of events.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Acta Academica Critical views on society culture and politics",
+        "type": "journal",
+        "issn": [
+          "0587-2405",
+          "2415-0479"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.18820/05872405/aa48i2.2"
+      },
+      "topics": [
+        "Innovations in Medical Education",
+        "Academic integrity and plagiarism",
+        "Ethics in Clinical Research"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W2594261878"
+    },
+    {
+      "openalex_id": "W2573145536",
+      "doi": null,
+      "title": "Ethics of e-Research in Social Sciences and Humanities",
+      "authors": [
+        {
+          "name": "S. Wyatt",
+          "openalex_id": "A5026318991"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": null,
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Data Archiving and Networked Services (DANS)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Big Data Technologies and Applications"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2573145536"
+    },
+    {
+      "openalex_id": "W2781661799",
+      "doi": "10.1089/omi.2017.0194",
+      "title": "Birth of Industry 5.0: Making Sense of Big Data with Artificial Intelligence, \u201cThe Internet of Things\u201d and Next-Generation Technology Policy",
+      "authors": [
+        {
+          "name": "Vural \u00d6zdemir",
+          "openalex_id": "A5012423795",
+          "orcid": "https://orcid.org/0000-0002-5117-759X",
+          "institutions": [
+            "Amrita Vishwa Vidyapeetham"
+          ]
+        },
+        {
+          "name": "Nezih Hekim",
+          "openalex_id": "A5091523904",
+          "orcid": "https://orcid.org/0000-0003-2613-8676",
+          "institutions": [
+            "Biruni University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "Abstract Driverless cars with artificial intelligence (AI) and automated supermarkets run by collaborative robots (cobots) working without human supervision have sparked off new debates: what will be the impacts of extreme automation, turbocharged by the Internet of Things (IoT), AI, and the Industry 4.0, on Big Data and omics implementation science? The IoT builds on (1) broadband wireless internet connectivity, (2) miniaturized sensors embedded in animate and inanimate objects ranging from the house cat to the milk carton in your smart fridge, and (3) AI and cobots making sense of Big Data collected by sensors. Industry 4.0 is a high-tech strategy for manufacturing automation that employs the IoT, thus creating the Smart Factory. Extreme automation until \u201ceverything is connected to everything else\u201d poses, however, vulnerabilities that have been little considered to date. First, highly integrated systems are vulnerable to systemic risks such as total network collapse in the event of failure of one of its parts, for example, by hacking or Internet viruses that can fully invade integrated systems. Second, extreme connectivity creates new social and political power structures. If left unchecked, they might lead to authoritarian governance by one person in total control of network power, directly or through her/his connected surrogates. We propose Industry 5.0 that can democratize knowledge coproduction from Big Data, building on the new concept of symmetrical innovation. Industry 5.0 utilizes IoT, but differs from predecessor automation systems by having three-dimensional (3D) symmetry in innovation ecosystem design: (1) a built-in safe exit strategy in case of demise of hyperconnected entrenched digital knowledge networks. Importantly, such safe exists are orthogonal\u2014in that they allow \u201cdigital detox\u201d by employing pathways unrelated/unaffected by automated networks, for example, electronic patient records versus material/article trails on vital medical information; (2) equal emphasis on both acceleration and deceleration of innovation if diminishing returns become apparent; and (3) next generation social science and humanities (SSH) research for global governance of emerging technologies: \u201cPost-ELSI Technology Evaluation Research\u201d (PETER). Importantly, PETER considers the technology opportunity costs, ethics, ethics-of-ethics, framings (epistemology), independence, and reflexivity of SSH research in technology policymaking. Industry 5.0 is poised to harness extreme automation and Big Data with safety, innovative technology policy, and responsible implementation science, enabled by 3D symmetry in innovation ecosystem design.",
+      "cited_by_count": 562,
+      "type": "review",
+      "source": {
+        "name": "OMICS A Journal of Integrative Biology",
+        "type": "journal",
+        "issn": [
+          "1536-2310",
+          "1557-8100"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Digital Transformation in Industry"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W2781661799"
+    },
+    {
+      "openalex_id": "W2587373534",
+      "doi": "10.18820/0587-2405/aa48i1.1",
+      "title": "Report to the academy: power and ethics in humanities research",
+      "authors": [],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "This article discusses a case study to explore notions\u00a0of academic freedom and freedom of speech in the\u00a0post-apartheid South African university. The focus is\u00a0on the \u2018managerial turn\u2019 in university management\u00a0and in particular its utilisation of ethical regulation\u00a0in humanities research. I argue that, in the case in\u00a0question, managerial power mechanisms co-opted\u00a0ethics into processes of censure and censorship. Ethical\u00a0regulation in the humanities has been on the increase\u00a0in South Africa and internationally in recent decades;\u00a0I posit here that ethical regulation can be used as a\u00a0managerial power mechanism in the control of research\u00a0output. This has significant implications especially\u00a0in the context of post-apartheid transformation of\u00a0South African universities. I further posit that emergent\u00a0and risk-taking research open up new spaces for\u00a0exploration and investigation, and that the benefits of\u00a0this kind of research must be balanced against possible\u00a0ethical complexities.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Acta Academica Critical views on society culture and politics",
+        "type": "journal",
+        "issn": [
+          "0587-2405",
+          "2415-0479"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.18820/0587-2405/aa48i1.1"
+      },
+      "topics": [
+        "Higher Education Practises and Engagement",
+        "Legal Education and Practice Innovations",
+        "Innovations in Medical Education"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W2587373534"
+    },
+    {
+      "openalex_id": "W3096405865",
+      "doi": "10.1080/26395916.2020.1814417",
+      "title": "A relational turn for sustainability science? Relational thinking, leverage points and transformations",
+      "authors": [
+        {
+          "name": "Simon West",
+          "openalex_id": "A5010088494",
+          "orcid": "https://orcid.org/0000-0002-9738-0593",
+          "institutions": [
+            "Charles Darwin University",
+            "Stockholm University",
+            "Stockholm Resilience Centre",
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "L. Jamila Haider",
+          "openalex_id": "A5010033189",
+          "orcid": "https://orcid.org/0000-0002-0265-5356",
+          "institutions": [
+            "Stockholm University",
+            "Stockholm Resilience Centre"
+          ]
+        },
+        {
+          "name": "Sanna St\u00e5lhammar",
+          "openalex_id": "A5069576660",
+          "orcid": "https://orcid.org/0000-0002-3398-2640",
+          "institutions": [
+            "Lund University"
+          ]
+        },
+        {
+          "name": "Stephen Woroniecki",
+          "openalex_id": "A5051909005",
+          "orcid": "https://orcid.org/0000-0003-1894-2859",
+          "institutions": [
+            "Link\u00f6ping University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "In sustainability science, revising the paradigms that separate humans from nature is considered a powerful 'leverage point' in pursuit of transformations. The coupled social-ecological and human-environment systems perspectives at the heart of sustainability science have, in many ways, enhanced recognition across academic, civil, policy and business spheres that humans and nature are inextricably connected. However, in retaining substantialist assumptions where 'social' and 'ecological' refer to different classes of entity that interact, coupled systems perspectives insist on the inextricability of humans and nature in theory, while requiring researchers to extricate them in practice-thus inadvertently reproducing the separation they seek to repair. Consequently, sustainability researchers are increasingly drawing on scholarship from the 'relational turn' in the humanities and the social sciences to propose a paradigm shift for sustainability science: away from focusing on interactions between entities, towards emphasizing continually unfolding processes and relations. Yet there remains widespread uncertainty about the origins, promises and challenges of using relational approaches. In this paper, we identify four themes in relational thinking-continually unfolding processes; embodied experience; reconstructing language and concepts; and ethics/practices of care-and highlight the ways in which these are being drawn on in sustainability science. We conclude by critically discussing how relational approaches might contribute to (i) a paradigm shift in sustainability science, and (ii) transformations towards sustainability. Relational approaches foster more dynamic, holistic accounts of human-nature connectedness; more situated and diverse knowledges for decision-making; and new domains and methods of intervention that nurture relationships in place and practice.",
+      "cited_by_count": 428,
+      "type": "article",
+      "source": {
+        "name": "Ecosystems and People",
+        "type": "journal",
+        "issn": [
+          "2639-5908",
+          "2639-5916"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/26395916.2020.1814417?needAccess=true"
+      },
+      "topics": [
+        "Complex Systems and Decision Making",
+        "Sustainability and Climate Change Governance",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "referenced_works_count": 225,
+      "url": "https://openalex.org/W3096405865"
+    },
+    {
+      "openalex_id": "W3008077006",
+      "doi": "10.1007/s13280-020-01322-y",
+      "title": "Towards a relational paradigm in sustainability research, practice, and education",
+      "authors": [
+        {
+          "name": "Zack Walsh",
+          "openalex_id": "A5000180695",
+          "institutions": [
+            "Research Institute For Sustainability \u2013 Helmholtz Centre Potsdam"
+          ]
+        },
+        {
+          "name": "Jessica B\u00f6hme",
+          "openalex_id": "A5045042895",
+          "orcid": "https://orcid.org/0000-0003-4591-3754",
+          "institutions": [
+            "Leuphana University of L\u00fcneburg"
+          ]
+        },
+        {
+          "name": "Christine Wamsler",
+          "openalex_id": "A5049476075",
+          "orcid": "https://orcid.org/0000-0003-4511-1532",
+          "institutions": [
+            "Lund University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-28",
+      "abstract": null,
+      "cited_by_count": 202,
+      "type": "article",
+      "source": {
+        "name": "AMBIO",
+        "type": "journal",
+        "issn": [
+          "0044-7447",
+          "1654-7209"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13280-020-01322-y.pdf"
+      },
+      "topics": [
+        "Environmental Education and Sustainability",
+        "Sustainability in Higher Education",
+        "Sustainability and Climate Change Governance"
+      ],
+      "referenced_works_count": 172,
+      "url": "https://openalex.org/W3008077006"
+    },
+    {
+      "openalex_id": "W4237941823",
+      "doi": "10.3138/9781442616653-017",
+      "title": "14. Ethics in Social Science and Humanities Research: Brazilian Strategies to Improve Guidelines",
+      "authors": [
+        {
+          "name": "Iara Coelho Zito Guerriero",
+          "openalex_id": "A5009774949",
+          "orcid": "https://orcid.org/0000-0001-7381-5516"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-31",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": {
+        "name": "University of Toronto Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in Clinical Research",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4237941823"
+    },
+    {
+      "openalex_id": "W34224613",
+      "doi": "10.1017/cbo9780511762475",
+      "title": "Climate Change, Ethics and Human Security",
+      "authors": [
+        {
+          "name": "Karen O\u2019Brien",
+          "openalex_id": "A5040738971",
+          "orcid": "https://orcid.org/0000-0002-2448-0665",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Asunci\u00f3n Lera St. Clair",
+          "openalex_id": "A5075935097"
+        },
+        {
+          "name": "Berit Kristoffersen",
+          "openalex_id": "A5035092364",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Karen O'Brien",
+          "openalex_id": "",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Des Gasper",
+          "openalex_id": ""
+        },
+        {
+          "name": "Jon Barnett",
+          "openalex_id": ""
+        },
+        {
+          "name": "J. Timmons Roberts",
+          "openalex_id": ""
+        },
+        {
+          "name": "W. Neil Adger",
+          "openalex_id": ""
+        },
+        {
+          "name": "Desmond McNeill",
+          "openalex_id": ""
+        },
+        {
+          "name": "Simon Caney",
+          "openalex_id": ""
+        },
+        {
+          "name": "Stephen M. Gardiner",
+          "openalex_id": ""
+        },
+        {
+          "name": "Livia Bizikova",
+          "openalex_id": ""
+        },
+        {
+          "name": "Asunci\u00f3n Lera St. Clair",
+          "openalex_id": ""
+        },
+        {
+          "name": "Bronwyn Hayward",
+          "openalex_id": ""
+        },
+        {
+          "name": "Karen O'Brien",
+          "openalex_id": "",
+          "institutions": [
+            "University of Oslo"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-07-22",
+      "abstract": "Presenting human security perspectives on climate change, this volume raises issues of equity, ethics and environmental justice, as well as our capacity to respond to what is increasingly considered to be the greatest societal challenge for humankind. Written by international experts, it argues that climate change must be viewed as an issue of human security, and not an environmental problem that can be managed in isolation from larger questions concerning development trajectories, and ethical obligations towards the poor and to future generations. The concept of human security offers a new approach to the challenges of climate change, and the responses that could lead to a more equitable and sustainable future. Climate Change, Ethics and Human Security will be of interest to researchers, policy makers, and practitioners concerned with the human dimensions of climate change, as well as to upper-level students in the social sciences and humanities interested in climate change.",
+      "cited_by_count": 164,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Climate Change, Adaptation, Migration",
+        "Climate Change and Geoengineering",
+        "Transboundary Water Resource Management"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W34224613"
+    },
+    {
+      "openalex_id": "W3116488845",
+      "doi": "10.14764/10.aseas-0043",
+      "title": "Ethics and the Role of Humanities in Transdisciplinary Research? A Short Reflection on the KNOTS Project",
+      "authors": [
+        {
+          "name": "Barbora Nov\u00e1kov\u00e1",
+          "openalex_id": "A5057674946",
+          "orcid": "https://orcid.org/0000-0001-5521-3941",
+          "institutions": [
+            "Charles University"
+          ]
+        },
+        {
+          "name": "Marta Lopatkov\u00e1",
+          "openalex_id": "A5085591320",
+          "orcid": "https://orcid.org/0000-0002-6868-8652",
+          "institutions": [
+            "Charles University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-15",
+      "abstract": "In this paper, we reflect upon our role as researchers embedded in humanities in the KNOTS project. In the course of the project, we noticed various misapprehensions among both staff and students stemming, among others, form different cultural, political, and educational backgrounds. While a diversity of inputs and perspectives is considered an advantage for transdisciplinary projects, cooperation among actors with various backgrounds can also be challenging. Based on our observations and previous experience living and working in Vietnam, we created a session focusing on ethics for the last summer school in Ho Chi Minh City. We decided to bring participants\u2019 attention to research ethics and issues of cross-cultural communication, and suggested reflection and discussion as a coping strategy. In the course of a three years long mutual learning process, we realized that striving to create a common understanding of research ethics and cross-cultural awareness is an indispensable element of teaching and doing transdisciplinary research in a multicultural environment.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Social Science Open Access Repository (GESIS \u2013 Leibniz Institute for the Social Sciences)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.ssoar.info/ssoar/handle/document/72629"
+      },
+      "topics": [
+        "Higher Education Learning Practices",
+        "Higher Education Governance and Development",
+        "Global Education and Multiculturalism"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W3116488845"
+    },
+    {
+      "openalex_id": "W4297239110",
+      "doi": "10.1007/s43681-022-00200-5",
+      "title": "Trust and trustworthiness in AI ethics",
+      "authors": [
+        {
+          "name": "Karoline Reinhardt",
+          "openalex_id": "A5001917919",
+          "orcid": "https://orcid.org/0000-0002-6711-0496",
+          "institutions": [
+            "University of Passau"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-26",
+      "abstract": "Abstract Due to the extensive progress of research in artificial intelligence (AI) as well as its deployment and application, the public debate on AI systems has also gained momentum in recent years. With the publication of the Ethics Guidelines for Trustworthy AI (2019), notions of trust and trustworthiness gained particular attention within AI ethics-debates; despite an apparent consensus that AI should be trustworthy, it is less clear what trust and trustworthiness entail in the field of AI. In this paper, I give a detailed overview on the notion of trust employed in AI Ethics Guidelines thus far. Based on that, I assess their overlaps and their omissions from the perspective of practical philosophy. I argue that, currently, AI ethics tends to overload the notion of trustworthiness. It thus runs the risk of becoming a buzzword that cannot be operationalized into a working concept for AI research. What is needed, however, is an approach that is also informed with findings of the research on trust in other fields, for instance, in social sciences and humanities, especially in the field of practical philosophy. This paper is intended as a step in this direction.",
+      "cited_by_count": 96,
+      "type": "article",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-022-00200-5.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Adversarial Robustness in Machine Learning",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4297239110"
+    },
+    {
+      "openalex_id": "W2889162813",
+      "doi": "10.4324/9781315231914",
+      "title": "Walking Methodologies in a More-than-human World: WalkingLab",
+      "authors": [
+        {
+          "name": "Stephanie Springgay",
+          "openalex_id": "A5004072968",
+          "orcid": "https://orcid.org/0000-0003-3461-0571"
+        },
+        {
+          "name": "Sarah E. Truman",
+          "openalex_id": "A5017975186",
+          "orcid": "https://orcid.org/0000-0002-1466-8859",
+          "institutions": [
+            "University of Toronto",
+            "University of Melbourne"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-22",
+      "abstract": "As a research methodology, walking has a diverse and extensive history in the social sciences and humanities, underscoring its value for conducting research that is situated, relational, and material. Building on the importance of place, sensory inquiry, embodiment, and rhythm within walking research, this book offers four new concepts for walking methodologies that are accountable to an ethics and politics of the more-than-human: Land and geos, affect, transmaterial and movement. The book carefully considers the more-than-human dimensions of walking methodologies by engaging with feminist new materialisms, posthumanisms, affect theory, trans and queer theory, Indigenous theories, and critical race and disability scholarship. These more-than-human theories rub frictionally against the history of walking scholarship and offer crucial insights into the potential of walking as a qualitative research methodology in a more-than-human world. Theoretically innovative, the book is grounded in examples of walking research by WalkingLab, an international research network on walking (www.walkinglab.org).\nThe book is rich in scope, engaging with a wide range of walking methods and forms including: long walks on hiking trails, geological walks, sensory walks, sonic art walks, processions, orienteering races, protest and activist walks, walking tours, derives, peripatetic mapping, school-based walking projects, and propositional walks. The chapters draw on WalkingLab\u2019s research-creation events to examine walking in relation to settler colonialism, affective labour, transspecies, participation, racial geographies and counter-cartographies, youth literacy, environmental education, and collaborative writing. The book outlines how more-than-human theories can influence and shape walking methodologies and provokes a critical mode of walking-with that engenders solidarity, accountability, and response-ability.\nThis volume will appeal to graduate students, artists, and academics and researchers who are interested in Education, Cultural Studies, Queer Studies, Affect Studies, Geography, Anthropology, and (Post)Qualitative Research Methods.",
+      "cited_by_count": 242,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Diverse Musicological Studies",
+        "Geographies of human-animal interactions",
+        "Posthumanist Ethics and Activism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2889162813"
+    },
+    {
+      "openalex_id": "W2111649842",
+      "doi": "10.1187/cbe.08-09-0055",
+      "title": "Educational Challenges of Molecular Life Science: Characteristics and Implications for Education and Research",
+      "authors": [
+        {
+          "name": "Lena Tibell",
+          "openalex_id": "A5004371761",
+          "orcid": "https://orcid.org/0000-0002-4694-5611"
+        },
+        {
+          "name": "Carl\u2010Johan Rundgren",
+          "openalex_id": "A5024956591",
+          "orcid": "https://orcid.org/0000-0001-7679-1628",
+          "institutions": [
+            "Link\u00f6ping University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-03-01",
+      "abstract": "Molecular life science is one of the fastest-growing fields of scientific and technical innovation, and biotechnology has profound effects on many aspects of daily life\u2014often with deep, ethical dimensions. At the same time, the content is inherently complex, highly abstract, and deeply rooted in diverse disciplines ranging from \u201cpure sciences,\u201d such as math, chemistry, and physics, through \u201capplied sciences,\u201d such as medicine and agriculture, to subjects that are traditionally within the remit of humanities, notably philosophy and ethics. Together, these features pose diverse, important, and exciting challenges for tomorrow's teachers and educational establishments. With backgrounds in molecular life science research and secondary life science teaching, we (Tibell and Rundgren, respectively) bring different experiences, perspectives, concerns, and awareness of these issues. Taking the nature of the discipline as a starting point, we highlight important facets of molecular life science that are both characteristic of the domain and challenging for learning and education. Of these challenges, we focus most detail on content, reasoning difficulties, and communication issues. We also discuss implications for education research and teaching in the molecular life sciences.",
+      "cited_by_count": 155,
+      "type": "article",
+      "source": {
+        "name": "CBE\u2014Life Sciences Education",
+        "type": "journal",
+        "issn": [
+          "1931-7913"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.lifescied.org/doi/epdf/10.1187/cbe.08-09-0055"
+      },
+      "topics": [
+        "Science Education and Pedagogy",
+        "Educational Strategies and Epistemologies",
+        "Genetics, Bioinformatics, and Biomedical Research"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W2111649842"
+    },
+    {
+      "openalex_id": "W2403158842",
+      "doi": null,
+      "title": "Mental Health Trauma Narratives and Misplaced Assumptions: Towards an Ethics of Self-Care Among (Humanities-Based) Trauma Researchers",
+      "authors": [
+        {
+          "name": "Katrina Clifford",
+          "openalex_id": "A5079156875",
+          "orcid": "https://orcid.org/0000-0002-3408-7488"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "eCite Digital Repository (University of Tasmania)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Counseling Practices and Supervision",
+        "Empathy and Medical Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2403158842"
+    },
+    {
+      "openalex_id": "W4236804520",
+      "doi": "10.4018/9781591401520.ch002",
+      "title": "Ethical Decision-Making and Internet Research",
+      "authors": [
+        {
+          "name": "Charles Ess",
+          "openalex_id": "A5053428343",
+          "orcid": "https://orcid.org/0000-0002-5770-3087"
+        },
+        {
+          "name": "Steven Jones",
+          "openalex_id": "A5106030388",
+          "orcid": "https://orcid.org/0000-0002-8801-5113"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-18",
+      "abstract": "The AoIR ethics statement, developed by ethicists and researchers from 11 countries, articulates guiding questions for online research appropriate to the many disciplines\u2014both within the social sciences and the humanities\u2014that undertake such research. These guidelines are characterized by an ethical pluralism\u2014one that acknowledges the legitimacy of a range of possible ethical responses to a given problem, especially as viewed from the perspectives of the diverse national and cultural traditions represented on the Web and the Net as global media. This is an excerpt of the full working document available at http://www.aoir.org/reports/ethics.pdf.Request access from your librarian to read this chapter's full text.",
+      "cited_by_count": 95,
+      "type": "book-chapter",
+      "source": {
+        "name": "IGI Global eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Focus Groups and Qualitative Methods",
+        "Social Science and Policy Research",
+        "Wikis in Education and Collaboration"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4236804520"
+    },
+    {
+      "openalex_id": "W1984293771",
+      "doi": "10.1093/phe/phs007",
+      "title": "Solidarity: a Moral Concept in Need of Clarification",
+      "authors": [
+        {
+          "name": "Angus Dawson",
+          "openalex_id": "A5107992347",
+          "orcid": "https://orcid.org/0000-0002-8533-4987",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Marcel Verweij",
+          "openalex_id": "A5026228519",
+          "orcid": "https://orcid.org/0000-0001-9169-1852",
+          "institutions": [
+            "Utrecht University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-22",
+      "abstract": "The recently published report by Barbara Prainsack and Alena Buyx entitled Solidarity: Reflections on an Emerging Concept in Bioethics funded by the Nuffield Council on Bioethics, Nuffield Foundation and the Arts and Humanities Research Council provides a welcome opportunity to reflect upon the meaning and place of solidarity in bioethics. It is indeed remarkable that the concept of solidarity has received so little discussion in the bioethics literature. There may be a number of reasons why this is the case, but perhaps the main one is the tendency for many discussions in bioethics to focus on a limited set of values primarily related to individual freedom and debates about the limits of state action and regulation. It is unclear how solidarity might fit into such discussions. Although some discussions in public health ethics mention it in passing (Verweij 2001; Dawson, 2010) and it has appeared in a number of reports (Upshur et al., 2005), it remains a rather opaque term. So what is solidarity and how should it feature in arguments about public health ethics?",
+      "cited_by_count": 107,
+      "type": "article",
+      "source": {
+        "name": "Public Health Ethics",
+        "type": "journal",
+        "issn": [
+          "1754-9973",
+          "1754-9981"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics and Legal Issues in Pediatric Healthcare",
+        "Ethics in Clinical Research"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W1984293771"
+    },
+    {
+      "openalex_id": "W3081322476",
+      "doi": "10.1093/envhis/emaa027",
+      "title": "More-Than-Human Histories",
+      "authors": [
+        {
+          "name": "Emily O\u2019Gorman",
+          "openalex_id": "A5024219772",
+          "orcid": "https://orcid.org/0000-0001-6935-1982",
+          "institutions": [
+            "Macquarie University"
+          ]
+        },
+        {
+          "name": "Andrea Gaynor",
+          "openalex_id": "A5077035185",
+          "orcid": "https://orcid.org/0000-0002-5633-9797",
+          "institutions": [
+            "University of Western Australia"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-05-12",
+      "abstract": "This article continues and extends a conversation between environmental history and the broader environmental humanities, outlining and defining an approach to more-than-human histories. Engaging with more-than-human and multispecies approaches in a range of fields within the broader environmental humanities, we point to a nested set of commitments that shape these research agendas. More-than-human histories as articulated here take on three of these commitments in particular: co-constitution; the presencing of multiple species and multiple voices; and situated politics and ethics. These commitments offer meeting points for environmental history and the broader environmental humanities, which can bring them into closer dialogue with a range of mutual benefits as well as raising some challenges for each. The article concludes with a consideration of the methodological implications of this approach, pointing to ways in which a more-than-human approach might allow environmental historians to uncover new sources and approach familiar ones from new angles.",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "Environmental History",
+        "type": "journal",
+        "issn": [
+          "1084-5453",
+          "1930-8892"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Geographies of human-animal interactions",
+        "Ecocriticism and Environmental Literature",
+        "Water Governance and Infrastructure"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W3081322476"
+    },
+    {
+      "openalex_id": "W2043617958",
+      "doi": "10.1080/14636204.2010.538244",
+      "title": "DOING THINGS: EMOTION, AFFECT, AND MATERIALITY",
+      "authors": [
+        {
+          "name": "Jo Labanyi",
+          "openalex_id": "A5005668424",
+          "orcid": "https://orcid.org/0000-0001-7367-627X"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-09-01",
+      "abstract": "Click to increase image sizeClick to decrease image size Notes 1. In practice, anthropological interviews\u2014especially when they elicit life story narratives\u2014can be used as a basis for the study of subjectivity, but that is not the focus usually adopted. 2. Martha Nussbaum (Love's Knowledge; Upheavals of Thought) has insisted on the concept of \u201cemotional intelligence\u201d. See also Carol Gilligan's Gilligan , Carol . In a Different Voice: Psychological Theory and Women's Development . Cambridge, MA : Harvard University Press , 1982 .[Crossref] , [Google Scholar] conclusions, based on psychological research, that girls tend to make moral judgments based on relationality (\u201cethics of care\u201d) while boys tend to make moral judgments based on the abstract principle of the highest good of the individual (\u201cethics of rights\u201d). Gilligan's work has prompted a strand of feminist legal theory advocating the rethinking of legal principles in terms of an \u201cethics of care\u201d. 3. For an attempt to think through trauma in terms of affect, see Clough (13\u20134) and Callard Callard , Felicity and Constantina Papoulias . \u201cAffect and Embodiment.\u201d Memory: Histories, Theories, Debates . Susannah Radstone and Bill Schwarz . New York : Fordham University Press , 2010 . 246 \u2013 62 . [Google Scholar] and Papoulias (253\u20136). 4. See also Miller's recently published Stuff Miller , Daniel . Stuff Cambridge : Polity , 2010 . [Google Scholar]. 5. See also Goodwin Goodwin , Jeff James M. . Jasper , and Francesca Polletta , Passionate Politics: Emotions and Social Movements . Chicago, IL : University of Chicago Press , 2001 .[Crossref] , [Google Scholar], Jasper, and Polletta's edited volume Passionate Politics. 6. Williams\u2019 \u201cOn Structure of Feeling\u201d, originally published in The Long Revolution, is reprinted as Chapter 1 of Jennifer Harding Harding , Jennifer and E. Deidre Pribram , Emotions: A Cultural Studies Reader . Abingdon : Routledge , 2009 . [Google Scholar] and E. Deidre Pribram's excellent anthology Emotions: A Cultural Reader. The volume brings together key texts from a wide range of disciplines across the humanities and social sciences.",
+      "cited_by_count": 175,
+      "type": "article",
+      "source": {
+        "name": "Journal of Spanish Cultural Studies",
+        "type": "journal",
+        "issn": [
+          "1463-6204",
+          "1469-9818"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "History of Emotions Research",
+        "Anthropological Studies and Insights",
+        "Gender, Security, and Conflict"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W2043617958"
+    },
+    {
+      "openalex_id": "W3024550724",
+      "doi": null,
+      "title": "[Ethics and methodology: the importance of promoting, evaluating and implementing education and humanities research in health].",
+      "authors": [
+        {
+          "name": "Carolina Consejo-y Chapela",
+          "openalex_id": "A5069213812"
+        },
+        {
+          "name": "Jos\u00e9 Francisco Gonz\u00e1lez-Mart\u00ednez",
+          "openalex_id": "A5001287675"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-18",
+      "abstract": "In this editorial we initially expose the agreements that have set the mechanisms to guarantee safety and fair treatment to human subjects in research. Later on, we offer alternatives from translational and multidisciplinary research to promote education and humanities research in health.",
+      "cited_by_count": 1,
+      "type": "editorial",
+      "source": {
+        "name": "PubMed",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Empathy and Medical Education",
+        "Health and Medical Education",
+        "Health Sciences Research and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3024550724"
+    },
+    {
+      "openalex_id": "W2801438220",
+      "doi": "10.1080/0267257x.2018.1446488",
+      "title": "Evolving netnography: how brand auto-netnography, a netnographic sensibility, and more-than-human netnography can transform your research",
+      "authors": [
+        {
+          "name": "Robert V. Kozinets",
+          "openalex_id": "A5071735756",
+          "orcid": "https://orcid.org/0000-0003-1724-8259",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Daiane Scaraboto",
+          "openalex_id": "A5018229393",
+          "orcid": "https://orcid.org/0000-0002-7658-9339",
+          "institutions": [
+            "Pontificia Universidad Cat\u00f3lica de Chile"
+          ]
+        },
+        {
+          "name": "Marie\u2010Agn\u00e8s Parmentier",
+          "openalex_id": "A5061456346",
+          "orcid": "https://orcid.org/0009-0006-2552-0557",
+          "institutions": [
+            "HEC Montr\u00e9al"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-12",
+      "abstract": "The basis of netnography is rather simple. It is grounded by the principle that the perspective of an embodied, temporally, historically and culturally situated human being with anthropological training is, for purposes relating to identity, language, ritual, imagery, symbolism, subculture and many other elements that require cultural understanding, a far better analyst of people\u2019s contemporary online experience than a disembodied algorithm programmed by statistics and marketing research scientists.1\n1. Of course, computer scientists are having their day, currently. And there is no doubt that there are many macro behaviours and precise measurements which are handled far better using statistical methods operating on large decontextualised data sets than they are by human participant-observers. But that really is not the point of netnography, of this paragraph or of this special section.\nView all notes\n\nThe fundamental positioning of netnography as a research method, its marketing-oriented point of difference, relevant to digital humanities artists, library and information scientists, sociologists, cultural anthropologists, marketing practitioners and consumer researchers alike, is also rather clear. It is that the knowledge we gain from machine understanding of human experience is often sorely limited, and the ethics of the investigatory situation fraught, no matter how large the data set, how cleverly programmed the machine learning algorithms or how extensive the public surveillance.",
+      "cited_by_count": 138,
+      "type": "article",
+      "source": {
+        "name": "Journal of Marketing Management",
+        "type": "journal",
+        "issn": [
+          "0267-257X",
+          "1472-1376"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/0267257X.2018.1446488?needAccess=true"
+      },
+      "topics": [
+        "Social Science and Policy Research",
+        "Big Data Technologies and Applications",
+        "Data Analysis and Archiving"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2801438220"
+    },
+    {
+      "openalex_id": "W2037829693",
+      "doi": "10.1177/105382591203500303",
+      "title": "An Environmental Pedagogy of Care: Emotion, Relationships, and Experience in Higher Education Ethics Learning",
+      "authors": [
+        {
+          "name": "Lissy Goralnik",
+          "openalex_id": "A5017744134",
+          "orcid": "https://orcid.org/0000-0001-9326-6470"
+        },
+        {
+          "name": "Kelly F. Millenbah",
+          "openalex_id": "A5079499826"
+        },
+        {
+          "name": "Michael Nelson",
+          "openalex_id": "A5054026635",
+          "orcid": "https://orcid.org/0000-0001-6917-4752"
+        },
+        {
+          "name": "Laurie Thorp",
+          "openalex_id": "A5082639099"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-10-01",
+      "abstract": "Field philosophy is interdisciplinary experiential environmental humanities learning. It grows from a community-focused conception of environmental ethics and place-based environmental education, and it aims to help students develop an awareness of the role of environmental ethics in environmental issues, as well as cultivate an empathetic environmental ethic that might enable them to participate in environmental problem solving. The emotional, cognitive, and physical relationships with people, place, and ideas at the core of field philosophy necessitate a pedagogy that attends to affective learning objectives and relationship building. A shared focus connects literature in experiential education, educational psychology research on emotional engagement, and the ethic of care. A synthesis of this literature grounds an environmental pedagogy of care with meaningful potential for field philosophy.",
+      "cited_by_count": 81,
+      "type": "article",
+      "source": {
+        "name": "Journal of Experiential Education",
+        "type": "journal",
+        "issn": [
+          "1053-8259",
+          "2169-009X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Outdoor and Experiential Education",
+        "Indigenous and Place-Based Education",
+        "Diverse Educational Innovations Studies"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W2037829693"
+    },
+    {
+      "openalex_id": "W1483593748",
+      "doi": "10.18574/nyu/9780814760741.001.0001",
+      "title": "Keywords for Environmental Studies",
+      "authors": [],
+      "publication_year": 2020,
+      "publication_date": "2020-05-28",
+      "abstract": "A new vocabulary for Environmental Studies Understandings of \u201cnature\u201d have expanded and changed, but the word has not lost importance at any level of discourse: it continues to hold a key place in conversations surrounding thought, ethics, and aesthetics. Nowhere is this more evident than in the interdisciplinary field of environmental studies. Keywords for Environmental Studies analyzes the central terms and debates currently structuring the most exciting research in and across environmental studies, including the environmental humanities, environmental social sciences, sustainability sciences, and the sciences of nature. Sixty essays from humanists, social scientists, and scientists, each written about a single term, reveal the broad range of quantitative and qualitative approaches critical to the state of the field today. From \u201cecotourism\u201d to \u201cecoterrorism,\u201d from \u201cgenome\u201d to \u201cspecies,\u201d this accessible volume illustrates the ways in which scholars are collaborating across disciplinary boundaries to reach shared understandings of key issues\u2014such as extreme weather events or increasing global environmental inequities\u2014in order to facilitate the pursuit of broad collective goals and actions. This book underscores the crucial realization that every discipline has a stake in the central environmental questions of our time, and that interdisciplinary conversations not only enhance, but are requisite to environmental studies today. Visit keywords.nyupress.org for online essays, teaching resources, and more.",
+      "cited_by_count": 160,
+      "type": "book",
+      "source": {
+        "name": "New York University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "American Environmental and Regional History",
+        "Religion, Ecology, and Ethics",
+        "Environmental Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1483593748"
+    },
+    {
+      "openalex_id": "W1522043330",
+      "doi": null,
+      "title": "International Journal of Humanities & Social Science Studies",
+      "authors": [
+        {
+          "name": "Publisher Scholar Publications",
+          "openalex_id": "A5066207824"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-11-02",
+      "abstract": "International Journal of Humanities & Social Science Studies (IJHSSS) is an online and print bilingual, interdisciplinary research journal publishing scholarly articles, book reviews and thesis abstracts from the disciplines of Humanities and Social Sciences.\u00a0 The subjects, in specific, covered by the journal include: Bengali, Commerce, Economics, Education, English, Hindi, Fine Arts, Visual Arts, Management, Pol. Science, Philosophy, Sanskrit, Sociology, Criminology, Anthropology, Business Studies, Communication studies, Corporate Governance, Cross Cultural studies, Demography, Development studies, Ethics, Geography, History, Industrial relations, Information science, International Relations, Law, Linguistics, Library science, Media Studies, Methodology, Population Studies, Psychology, Public administration, Social Welfare, Literature, Paralegal, Performing arts (Music/Theatre/Dance), Religious Studies, Women studies .",
+      "cited_by_count": 66,
+      "type": "article",
+      "source": {
+        "name": "ADVANCED SCIENCES INDEX",
+        "type": "journal",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Politics and Conflicts in Afghanistan, Pakistan, and Middle East"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1522043330"
+    },
+    {
+      "openalex_id": "W4245688923",
+      "doi": "10.1093/acprof:oso/9780195385793.001.0001",
+      "title": "Narrative Inquiry",
+      "authors": [
+        {
+          "name": "Kathleen Wells",
+          "openalex_id": "A5112577710"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-03",
+      "abstract": "Drawing on theoretical and methodological papers written over the past thirty years, this volume provides an introduction to narrative inquiry. It provides an overview of the development of narrative inquiry within the social sciences and the humanities, and establishes its relevance for social work and related professions. It presents one research design, the case study design, in which narrative inquiry may be placed. It provides a broad framework in which narrative and other relevant data may be collected and specifies ways in which audio-recordings of interviews may be transcribed. It presents major approaches to the analysis of transcribed interviews. These approaches include ones that focus on the analysis of narrative content, narrative structure, and narrative in context. The volume also examines two emerging approaches to narrative analysis, critical narrative analysis and contextual discursive analysis. Each narrative analytic approach covered is considered in relation to the same set of dimensions including definition of narrative, theoretical orientation, central question, and method. Exemplary investigations that rely on each approach are included. Issues pertaining to reflexivity, ethics, and validity of narrative inquiry are explored. The appendices contain an outline for a narrative research proposal.",
+      "cited_by_count": 107,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Work Education and Practice"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4245688923"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

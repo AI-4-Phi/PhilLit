@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1093/ANALYS/58.1.7"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/analys/58.1.7",
+      "title": "The Extended Mind",
+      "authors": [
+        {
+          "family": "Clark",
+          "given": "A."
+        },
+        {
+          "family": "Chalmers",
+          "given": "D."
+        }
+      ],
+      "editors": [],
+      "year": 1998,
+      "container_title": "Analysis",
+      "volume": "58",
+      "issue": "1",
+      "page": "7-19",
+      "publisher": "Oxford University Press (OUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1093/analys/58.1.7"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

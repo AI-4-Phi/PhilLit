@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5860/choice.41-2103"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5860/choice.41-2103",
+      "title": "Autonomy, gender, politics",
+      "authors": [],
+      "editors": [],
+      "year": 2003,
+      "container_title": "Choice Reviews Online",
+      "volume": "41",
+      "issue": "04",
+      "page": "41-2103-41-2103",
+      "publisher": "American Library Association",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5860/choice.41-2103"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

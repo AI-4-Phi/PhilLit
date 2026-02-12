@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/978-3-662-68362-0_2"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/978-3-662-68362-0_2",
+      "title": "The Ethics of the Extended Mind: Mental Privacy, Manipulation and Agency",
+      "authors": [
+        {
+          "family": "Clowes",
+          "given": "Robert W"
+        },
+        {
+          "family": "Smart",
+          "given": "Paul"
+        },
+        {
+          "family": "Heersmink",
+          "given": "Richard"
+        }
+      ],
+      "editors": [],
+      "year": 2024,
+      "container_title": "Techno:Phil \u2013 Aktuelle Herausforderungen der Technikphilosophie",
+      "volume": "",
+      "issue": "",
+      "page": "13-35",
+      "publisher": "Springer Berlin Heidelberg",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/978-3-662-68362-0_2"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

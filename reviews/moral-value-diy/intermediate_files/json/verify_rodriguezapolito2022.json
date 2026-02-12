@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1177/01914537221133485"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/01914537221133485",
+      "title": "Against authenticity: Autonomy and oppressive circumstances",
+      "authors": [
+        {
+          "family": "Rodr\u00edguez Ap\u00f3lito",
+          "given": "Maite"
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Philosophy &amp; Social Criticism",
+      "volume": "50",
+      "issue": "5",
+      "page": "803-822",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1177/01914537221133485"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

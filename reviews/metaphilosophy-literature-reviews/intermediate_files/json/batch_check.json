@@ -1,0 +1,80 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "3 paper IDs",
+  "results": [
+    {
+      "paperId": "93383900f485462f6901c62d7fc7c8213e13404d",
+      "title": "Africa, Asia, and the History of Philosophy: Racism in the Formation of the Philosophical Canon, 1780\u20131830",
+      "authors": [
+        {
+          "name": "Peter Park",
+          "authorId": "2068953673"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 75,
+      "doi": "10.1353/book22395",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/93383900f485462f6901c62d7fc7c8213e13404d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "93383900f485462f6901c62d7fc7c8213e13404d"
+    },
+    {
+      "paperId": "0a192960b0a50b513cae7c22315bdf609824f9a9",
+      "title": "Questions of canon formation in philosophy : the history of philosophy in Africa",
+      "authors": [
+        {
+          "name": "Anke Graness",
+          "authorId": "108661706"
+        }
+      ],
+      "year": 2018,
+      "abstract": "The history of philosophy is not just an academic discipline, but considered to be a philosophical activity itself. It has been instrumental in shaping our understanding of philosophy, our philosophical canon and curricula. The history of philosophy in Africa is still a young discipline, although philosophical thinking (concepts, manuscripts, books and philosophers) can be traced back until ancient Egypt. Facing the problem of exclusion and inferiorisation of traditions of thought and philosophy in Africa, the discipline of the history of philosophy involves very specific problems and requires a project of \u201cconceptual decolonisation\u201d. This explains both the importance and the difficulty of writing a history of philosophy in Africa.",
+      "citationCount": 9,
+      "doi": "10.25159/2413-3086/3819",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0a192960b0a50b513cae7c22315bdf609824f9a9",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "78-96",
+        "volume": "16"
+      },
+      "publicationTypes": null,
+      "_queryId": "0a192960b0a50b513cae7c22315bdf609824f9a9"
+    },
+    {
+      "paperId": "71c4033b4ec620c374e7d981129380e19b435adc",
+      "title": "From Canon Fodder to Canon-Formation: How Do We Get There from Here?",
+      "authors": [
+        {
+          "name": "M. E. Waithe",
+          "authorId": "8332154"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": "10.1093/MONIST/ONU004",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/71c4033b4ec620c374e7d981129380e19b435adc",
+      "venue": "",
+      "journal": {
+        "name": "The Monist",
+        "pages": "21-33",
+        "volume": "98"
+      },
+      "publicationTypes": null,
+      "_queryId": "71c4033b4ec620c374e7d981129380e19b435adc"
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

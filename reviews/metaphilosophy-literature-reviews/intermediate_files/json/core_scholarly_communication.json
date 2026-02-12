@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "core",
+  "query": "scholarly communication ethics",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "api_error",
+      "message": "CORE API error: 500",
+      "recoverable": false
+    }
+  ]
+}

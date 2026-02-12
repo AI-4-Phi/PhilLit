@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Just Work",
+    "author": "Muirhead",
+    "year": 2007
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4159/9780674041271",
+      "title": "Just Work",
+      "authors": [
+        {
+          "family": "Muirhead",
+          "given": "Russell"
+        }
+      ],
+      "editors": [],
+      "year": 2007,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Harvard University Press",
+      "type": "edited-book",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.4159/9780674041271",
+      "score": 34.457726
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

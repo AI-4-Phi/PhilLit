@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/EDTH.12338"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/edth.12338",
+      "title": "Autonomy, Cognitive Offloading, and Education",
+      "authors": [
+        {
+          "family": "Carter",
+          "given": "J. Adam"
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Educational Theory",
+      "volume": "68",
+      "issue": "6",
+      "page": "657-673",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/edth.12338"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

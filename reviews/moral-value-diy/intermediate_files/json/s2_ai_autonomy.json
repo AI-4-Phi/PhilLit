@@ -1,0 +1,898 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "AI assistant autonomy ethics",
+  "results": [
+    {
+      "paperId": "0eec7dad1f60c6802b88ba7637ab84c567e97c8d",
+      "title": "Toward an Ethics of AI Assistants: an Initial Framework",
+      "authors": [
+        {
+          "name": "J. Danaher",
+          "authorId": "144338643"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 84,
+      "doi": "10.1007/s13347-018-0317-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0eec7dad1f60c6802b88ba7637ab84c567e97c8d",
+      "venue": "Philosophy & Technology",
+      "journal": {
+        "name": "Philosophy & Technology",
+        "pages": "629 - 653",
+        "volume": "31"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "415e98543ab0f73fccc51bbea8390cebcfdc943a",
+      "title": "The Architecture of Cognitive Amplification: Enhanced Cognitive Scaffolding as a Resolution to the Comfort-Growth Paradox in Human-AI Cognitive Integration",
+      "authors": [
+        {
+          "name": "Giuseppe Riva",
+          "authorId": "2374149834"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI systems now function as cognitive extensions, evolving from tools to active cognitive collaborators within human-AI integrated systems. While these systems can amplify cognition - enhancing problem-solving, learning, and creativity - they present a fundamental\"comfort-growth paradox\": AI's user-friendly nature may foster intellectual stagnation by minimizing cognitive friction necessary for development. As AI aligns with user preferences and provides frictionless assistance, it risks inducing cognitive complacency rather than promoting growth. We introduce Enhanced Cognitive Scaffolding to resolve this paradox - reconceptualizing AI from convenient assistant to dynamic mentor. Drawing from Vygotskian theories, educational scaffolding principles, and AI ethics, our framework integrates three dimensions: (1) Progressive Autonomy, where AI support gradually fades as user competence increases; (2) Adaptive Personalization, tailoring assistance to individual needs and learning trajectories; and (3) Cognitive Load Optimization, balancing mental effort to maximize learning while minimizing unnecessary complexity. Research across educational, workplace, creative, and healthcare domains supports this approach, demonstrating accelerated skill acquisition, improved self-regulation, and enhanced higher-order thinking. The framework includes safeguards against risks like dependency, skill atrophy, and bias amplification. By prioritizing cognitive development over convenience in human-AI interaction, Enhanced Cognitive Scaffolding offers a pathway toward genuinely amplified cognition while safeguarding autonomous thought and continuous learning.",
+      "citationCount": 4,
+      "doi": "10.48550/arXiv.2507.19483",
+      "arxivId": "2507.19483",
+      "url": "https://www.semanticscholar.org/paper/415e98543ab0f73fccc51bbea8390cebcfdc943a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2507.19483"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "546001e39e43decab8db9181ea6b21590073cfad",
+      "title": "Why a Virtual Assistant for Moral Enhancement When We Could have a Socrates?",
+      "authors": [
+        {
+          "name": "Francisco Lara",
+          "authorId": "2065695931"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Can Artificial Intelligence (AI) be more effective than human instruction for the moral enhancement of people? The author argues that it only would be if the use of this technology were aimed at increasing the individual's capacity to reflectively decide for themselves, rather than at directly influencing behaviour. To support this, it is shown how a disregard for personal autonomy, in particular, invalidates the main proposals for applying new technologies, both biomedical and AI-based, to moral enhancement. As an alternative to these proposals, this article proposes a virtual assistant that, through dialogue, neutrality and virtual reality technologies, can teach users to make better moral decisions on their own. The author concludes that, as long as certain precautions are taken in its design, such an assistant could do this better than a human instructor adopting the same educational methodology.",
+      "citationCount": 29,
+      "doi": "10.1007/s11948-021-00318-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/546001e39e43decab8db9181ea6b21590073cfad",
+      "venue": "Science and Engineering Ethics",
+      "journal": {
+        "name": "Science and Engineering Ethics",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "dfeb1523fe814fb8b658dfe9a2463c5ad46c834d",
+      "title": "Autonomy, Ethics, and Inquiry in an Age of Algorithmic AI",
+      "authors": [
+        {
+          "name": "David L. Hildebrand",
+          "authorId": "2366337358"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Although we live in highly technologized societies, we frequently hear the cry, \u201cThis changes everything!\u201d Or perhaps we hear this so often because of technology. It is a phrase meant to cut through noise and grab attention\u2014attention being the commodity in truly short supply. The latest developments \u201cchanging everything\u201d include generative AI, including versions such as ChatGPT. These developments follow some other recent, revolutionary changes: the growth of social media platforms, smart appliances, apps, smartphones, and (to go way back) the internet. These have been real changes with real effects. We continue to be in a period of rapid change.",
+      "citationCount": 0,
+      "doi": "10.5840/swphilreview202541116",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dfeb1523fe814fb8b658dfe9a2463c5ad46c834d",
+      "venue": "Southwest Philosophy Review",
+      "journal": {
+        "name": "Southwest Philosophy Review"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a3635cd1b52573615fbe9cb24d45abf6f91f9eb5",
+      "title": "EXPLORING STUDENT PERSPECTIVES ON AI IN HIGHER EDUCATION: AUTONOMY, ETHICS, AND ENGAGEMENT",
+      "authors": [
+        {
+          "name": "Sigurbjoerg Johannesdottir",
+          "authorId": "2396202013"
+        },
+        {
+          "name": "\u00c1. Schram",
+          "authorId": "49098138"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.21125/iceri.2025.1355",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a3635cd1b52573615fbe9cb24d45abf6f91f9eb5",
+      "venue": "ICERI proceedings",
+      "journal": {
+        "name": "ICERI Proceedings"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "49ed3cd2f86cf71eeb7d42be141e8de11d75f131",
+      "title": "Personality Traits vs. AI Attitudes, Ethics, and Well-Being: Do Autonomy and Criticality in Design Matter?",
+      "authors": [
+        {
+          "name": "Mohammad Mominur Rahman",
+          "authorId": "2336923761"
+        },
+        {
+          "name": "S. Alshakhsi",
+          "authorId": "9279454"
+        },
+        {
+          "name": "Areej Babiker",
+          "authorId": "2366076298"
+        },
+        {
+          "name": "Ala Yankouskaya",
+          "authorId": "117167546"
+        },
+        {
+          "name": "M. Liebherr",
+          "authorId": "2346865700"
+        },
+        {
+          "name": "Raian Ali",
+          "authorId": "2242590123"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-032-06164-5_25",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/49ed3cd2f86cf71eeb7d42be141e8de11d75f131",
+      "venue": "IFIP International Conference on e-Business, e-Services, and e-Society",
+      "journal": {
+        "pages": "347-361"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "246faa65d50c45674fcfeb2429e1f22e97d86306",
+      "title": "Correction: Decolonizing AI Ethics: Relational Autonomy as a Means to Counter AI Harms",
+      "authors": [
+        {
+          "name": "S\u00e1b\u00eblo Mhlambi",
+          "authorId": "2205222667"
+        },
+        {
+          "name": "S. Tiribelli",
+          "authorId": "2139844938"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/s11245-024-10078-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/246faa65d50c45674fcfeb2429e1f22e97d86306",
+      "venue": "Topoi",
+      "journal": {
+        "name": "Topoi"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "20b7492b38b43cbe26621a2c5f00618510676577",
+      "title": "Decolonizing AI Ethics: Relational Autonomy as a Means to Counter AI Harms",
+      "authors": [
+        {
+          "name": "S\u00e1b\u00eblo Mhlambi",
+          "authorId": "2205222667"
+        },
+        {
+          "name": "S. Tiribelli",
+          "authorId": "2139844938"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Many popular artificial intelligence (AI) ethics frameworks center the principle of autonomy as necessary in order to mitigate the harms that might result from the use of AI within society. These harms often disproportionately affect the most marginalized within society. In this paper, we argue that the principle of autonomy, as currently formalized in AI ethics, is itself flawed, as it expresses only a mainstream mainly liberal notion of autonomy as rational self-determination, derived from Western traditional philosophy. In particular, we claim that the adherence to such principle, as currently formalized, does not only fail to address many ways in which people\u2019s autonomy can be violated, but also to grasp a broader range of AI-empowered harms profoundly tied to the legacy of colonization, and which particularly affect the already marginalized and most vulnerable on a global scale. To counter such a phenomenon, we advocate for the need of a relational turn in AI ethics, starting from a relational rethinking of the AI ethics principle of autonomy that we propose by drawing on theories on relational autonomy developed both in moral philosophy and Ubuntu ethics.",
+      "citationCount": 54,
+      "doi": "10.1007/s11245-022-09874-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/20b7492b38b43cbe26621a2c5f00618510676577",
+      "venue": "Topoi",
+      "journal": {
+        "name": "Topoi",
+        "pages": "867-880",
+        "volume": "42"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bd305c7b62120729a33303b62b82a06e03080c89",
+      "title": "Artificial Intelligence and Human Autonomy: Reassessing Ethics, Control, and Social Responsibility in the Digital Age",
+      "authors": [
+        {
+          "name": "Dr. Udai Singh",
+          "authorId": "2405022624"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The emergence of Artificial Intelligence (AI) has transformed social, economic, and ethical paradigms, challenging traditional notions of human autonomy, control, and moral responsibility. As algorithmic systems influence decision-making across governance, healthcare, employment, and personal life, questions arise about the boundaries of human agency in an increasingly automated world. This paper critically examines the interplay between AI and human autonomy, exploring ethical dilemmas, control mechanisms, and the evolution of social responsibility in the digital age. It argues that while AI enhances efficiency and predictive capability, it simultaneously risks eroding human independence through algorithmic bias, surveillance capitalism, and moral outsourcing. The study emphasizes that the preservation of human autonomy depends on embedding ethical governance, transparency, and accountability into AI systems, ensuring that technology remains a tool for empowerment rather than domination.",
+      "citationCount": 0,
+      "doi": "10.63665/ctsij.v1i1.01",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bd305c7b62120729a33303b62b82a06e03080c89",
+      "venue": "Contemporary Thought and Society International Journal",
+      "journal": {
+        "name": "Contemporary Thought and Society International Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b694138640f1acc2c7fb78955d018155d3630911",
+      "title": "Autonomy versus algorithm: a replication study of student perspectives on AI ethical boundaries",
+      "authors": [
+        {
+          "name": "Aminu Muhammad Auwal",
+          "authorId": "2282811147"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1186/s41239-025-00570-w",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b694138640f1acc2c7fb78955d018155d3630911",
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "journal": {
+        "name": "International Journal of Educational Technology in Higher Education",
+        "volume": "22"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3b94d78840be36239b18f1797770a7fed8b5e540",
+      "title": "AI in Sacred Healing: Health Law Perspectives on Regulating Algorithmic Interventions Against Spiritual Autonomy in Pluralistic Healthcare Systems",
+      "authors": [
+        {
+          "name": "Onyegbule Kelechi G",
+          "authorId": "2404197126"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper interrogates the regulatory lacunae that emerge when algorithmic systems, ostensibly therapeutic, encroach upon the sacrosanct domain of spiritual autonomy within pluralistic healthcare regimes. Framed at the nexus of health law, medical ethics, and the anthropology of healing, the analysis posits that contemporary governance paradigms, tethered to evidence-based biomedicine, systematically efface the ontological pluralism that underwrites indigenous, faith-based, and esoteric curative practices. By deploying a tripartite heuristic: (i) the algorithmic reification of probabilistic ontologies, (ii) the juridical commodification of belief as \u201cdata exhaust,\u201d and (iii) the epistemic violence latent in risk-benefit calculus, the study unmasks how AI-mediated interventions transmute sacred epistemologies into actuarial variables, thereby vitiating the inviolability of spiritual self-determination. Methodologically, drawing upon comparative constitutional jurisprudence (inter alia, the Indian Supreme Court\u2019s articulation of \u201cessential religious practices,\u201d the European Court of Human Rights\u2019 margin of appreciation doctrine, and the African Charter\u2019s communal dignity jurisprudence), the paper contends that extant regulatory frameworks, premised on paternalistic beneficence, fail to apprehend the incommensurability between machine rationality and transcendent healing. A novel conceptual scaffold is proffered: the \u201cspiritual harm threshold,\u201d a juridical metric that obliges regulators to demonstrate not merely empirical efficacy but also phenomenological non-interference with the patient\u2019s cosmogonic narrative. This threshold, operationalized through mandatory \u201contological impact assessments,\u201d inverts the burden of proof, compelling algorithmic proponents to negate existential displacement rather than merely affirm clinical outcomes. The argumentation culminates in a provocative normative claim: absent a statutory entitlement to \u201calgorithmic abstention\u201d in matters of sacral therapeutics, pluralistic polities risk the quietus of metaphysical diversity under the guise of precision medicine. Conclusively, by foregrounding the irreducibly hermeneutic character of sacred healing, the paper challenges health law scholars to reconceive autonomy not as volitional consent but as ontological sovereignty, an exigency that confounds utilitarian aggregation and demands a radical reconfiguration of regulatory reason.",
+      "citationCount": 0,
+      "doi": "10.65025/icfai25007k",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3b94d78840be36239b18f1797770a7fed8b5e540",
+      "venue": "International Conference on Faith and Artificial Intelligence (ICFAI 2025)",
+      "journal": {
+        "name": "International Conference on Faith and Artificial Intelligence (ICFAI 2025)"
+      },
+      "publicationTypes": [
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ed076d7af8e36fc7308515f59b4f9fbc76ad75b2",
+      "title": "Adaptive Autonomy as a Means for Implementing Shared Ethics in Human-AI Teams",
+      "authors": [
+        {
+          "name": "Allyson I. Hauptman",
+          "authorId": "2183031945"
+        },
+        {
+          "name": "Beau G. Schelble",
+          "authorId": "2003549723"
+        },
+        {
+          "name": "Nathan J. Mcneese",
+          "authorId": "2171978"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ed076d7af8e36fc7308515f59b4f9fbc76ad75b2",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "83aa21e8a753d6f0564c90c2c3564c6b7113c774",
+      "title": "Applying the ethics of AI: a systematic review of tools for developing and assessing AI-based systems",
+      "authors": [
+        {
+          "name": "Ricardo Ortega-Bola\u00f1os",
+          "authorId": "2295219257"
+        },
+        {
+          "name": "Joshua Bernal-Salcedo",
+          "authorId": "2210105298"
+        },
+        {
+          "name": "Mariana Germ\u00e1n Ortiz",
+          "authorId": "2301213910"
+        },
+        {
+          "name": "Julian Galeano Sarmiento",
+          "authorId": "2301212717"
+        },
+        {
+          "name": "Gonzalo A. Ruz",
+          "authorId": "2288938692"
+        },
+        {
+          "name": "Reinel Tabares-Soto",
+          "authorId": "1414663066"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Artificial Intelligence (AI)-based systems and their increasingly common use have made it a ubiquitous technology; Machine Learning algorithms are present in streaming services, social networks, and in the health sector. However, implementing this emerging technology carries significant social and ethical risks and implications. Without ethical development of such systems, there is the potential for this technology to undermine people\u2019s autonomy, privacy, and equity, even affecting human rights. Considering the approaches necessary for ethical development and effective governance of AI, such as ethical principles, guidelines, and technical tools, the question arises regarding the limitations of implementing these measures by the highly technical personnel involved in the process. In this context, we propose the creation of a typology that distinguishes the different stages of the AI life-cycle, the high-level ethical principles that should govern their implementation, and the tools with the potential to foster compliance with these principles, encompassing both technical and conceptual resources. In addition, this typology will include relevant information such as developmental level, related tasks, sectors, and language. Our research is based on a systematic review in which we identified 352 resources and tools. We expect this contribution to be valuable in promoting ethical AI development for developers and leaders who manage these initiatives. The complete typology and the comprehensive list of resources are available for consultation at https://ricardo-ob.github.io/tools4responsibleai.",
+      "citationCount": 36,
+      "doi": "10.1007/s10462-024-10740-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/83aa21e8a753d6f0564c90c2c3564c6b7113c774",
+      "venue": "Artificial Intelligence Review",
+      "journal": {
+        "name": "Artificial Intelligence Review",
+        "volume": "57"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1b4657d365f19a59a5b621eede90ed8eeff3821f",
+      "title": "Undergraduate students\u2019 perspectives of generative AI ethics",
+      "authors": [
+        {
+          "name": "Tianxiao Yang",
+          "authorId": "2299165588"
+        },
+        {
+          "name": "Jongpil Cheon",
+          "authorId": "2258172110"
+        },
+        {
+          "name": "Moon-Heum Cho",
+          "authorId": "2366227412"
+        },
+        {
+          "name": "Min Huang",
+          "authorId": "2279319527"
+        },
+        {
+          "name": "Naydu Cusson",
+          "authorId": "2366042568"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1186/s41239-025-00533-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1b4657d365f19a59a5b621eede90ed8eeff3821f",
+      "venue": "International Journal of Educational Technology in Higher Education",
+      "journal": {
+        "name": "International Journal of Educational Technology in Higher Education",
+        "volume": "22"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0260e28525333f77d1634b54336ead3c408e7c48",
+      "title": "Ethics of AI in healthcare: a scoping review demonstrating applicability of a foundational framework",
+      "authors": [
+        {
+          "name": "A. Gorelik",
+          "authorId": "40592135"
+        },
+        {
+          "name": "Mengyuan Li",
+          "authorId": "2380192004"
+        },
+        {
+          "name": "Jessica Hahne",
+          "authorId": "51147623"
+        },
+        {
+          "name": "Junyi Wang",
+          "authorId": "2257128503"
+        },
+        {
+          "name": "Yongqi Ren",
+          "authorId": "2380185922"
+        },
+        {
+          "name": "Lei Yang",
+          "authorId": "2381236818"
+        },
+        {
+          "name": "Xin Zhang",
+          "authorId": "2238888405"
+        },
+        {
+          "name": "Xing Liu",
+          "authorId": "2238939578"
+        },
+        {
+          "name": "Xiaomin Wang",
+          "authorId": "2283563041"
+        },
+        {
+          "name": "Ryan Bogdan",
+          "authorId": "2237624359"
+        },
+        {
+          "name": "Brian D. Carpenter",
+          "authorId": "2380291622"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Artificial Intelligence (AI) is increasingly being adopted across many industries including healthcare. This has brought forth the development of many new independent ethical frameworks for responsible use of AI within institutions and companies. Risks associated with the application of AI in healthcare have high stakes for patients. Further, the existence of multiple frameworks may exacerbate these risks due to potential differences in interpretation and prioritization in said frameworks. Resolving these risks requires an ethical framework that is both broadly adopted in healthcare settings and applicable to AI. Here, we examined whether a framework consisting of the 4 well-established principles of biomedical ethics (i.e., Beneficence, Non-Maleficence, Respect for Autonomy, and Justice) can serve as a foundation for an ethical framework for AI in healthcare. To this end, we conducted a scoping review of 227 peer-reviewed papers using semi-inductive thematic analyses to categorize patient-related ethical issues in healthcare AI under these 4 principles of biomedical ethics. We found that these principles, which are already widely adopted in healthcare settings, were comprehensively and internationally applicable to ethical considerations concerning use of AI in healthcare. The existing four principles of biomedical ethics can provide a foundational ethical framework for applying AI in healthcare, grounding other Responsible AI frameworks, and can act as a basis for AI governance and policy in healthcare.",
+      "citationCount": 7,
+      "doi": "10.3389/fdgth.2025.1662642",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0260e28525333f77d1634b54336ead3c408e7c48",
+      "venue": "Frontiers Digit. Health",
+      "journal": {
+        "name": "Frontiers in Digital Health",
+        "volume": "7"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ee9ae9ab29e048b5fbb04091f5bd42ffe32058c2",
+      "title": "Artificial intelligence ethics in precision oncology: balancing advancements in technology with patient privacy and autonomy",
+      "authors": [
+        {
+          "name": "Bahareh Farasati Far",
+          "authorId": "2124237716"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Precision oncology is a rapidly evolving field that uses advanced technologies to deliver personalized cancer care based on a patient\u2019s unique genetic and clinical profile. The use of artificial intelligence (AI) in precision oncology has shown great potential to improve diagnosis, treatment planning, and treatment outcomes. However, the integration of AI in precision oncology also raises important ethical considerations related to patient privacy, autonomy, and protection from bias. In this opinion paper, an overview is provided of previous studies that have explored the use of AI in precision oncology and the ethical considerations associated with this technology. The conclusions of these studies are compared, and the importance of approaching the use of AI in precision oncology with caution is emphasized. It is stressed that patient privacy, autonomy, and protection from bias should be made central to the development and use of AI in precision oncology. Clear guidelines and regulations must be established to ensure that AI is used ethically and for the benefit of patients. The use of AI in precision oncology has the potential to revolutionize cancer care, but it should be ensured that it striked a balance between advancements in technology and ethical considerations. In conclusion, the use of AI in precision oncology is a promising development that has the potential to improve cancer outcomes. However, ethical considerations related to patient privacy, autonomy, and protection from bias must be central to the development and use of AI in precision oncology.",
+      "citationCount": 24,
+      "doi": "10.37349/etat.2023.00160",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ee9ae9ab29e048b5fbb04091f5bd42ffe32058c2",
+      "venue": "Exploration of Targeted Anti-tumor Therapy",
+      "journal": {
+        "name": "Exploration of Targeted Anti-tumor Therapy",
+        "pages": "685 - 689",
+        "volume": "4"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8ca9dbbec3ad89615f591b1c247b79b9600eebbb",
+      "title": "Ethics of AI Decision Making in Buisness",
+      "authors": [],
+      "year": 2025,
+      "abstract": "Business decision-making is being revolutionised by artificial intelligence (AI), which offers previously unheard-of levels of accuracy, scalability, and efficiency. However, serious ethical questions about accountability, transparency, and fairness are brought up by its growing autonomy. The ethical issues surrounding algorithmic bias, data privacy, and the possible replacement of human judgement in business decision-making are the main topics of this paper. We evaluate the risks and obligations of integrating AI by using a multidisciplinary approach to examine ethical frameworks and real-world case studies. Our results demonstrate the need for ethical AI governance, regulatory frameworks, and human oversight in order to reduce unforeseen consequences. Businesses can balance innovation and ethical integrity, building trust and long-term sustainability, by making sure AI adoption is done responsibly",
+      "citationCount": 0,
+      "doi": "10.46632/tfe/3/1/5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8ca9dbbec3ad89615f591b1c247b79b9600eebbb",
+      "venue": "Trends in Finance and Economics",
+      "journal": {
+        "name": "Trends in Finance and Economics"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5ba9300d93ddf2e022d23be067120deaf53f3b73",
+      "title": "Affective Computing and Emotional Data: Challenges and Implications in Privacy Regulations, The AI Act, and Ethics in Large Language Models",
+      "authors": [
+        {
+          "name": "Nicola Fabiano",
+          "authorId": "2294363237"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This paper examines the integration of emotional intelligence into artificial intelligence systems, with a focus on affective computing and the growing capabilities of Large Language Models (LLMs), such as ChatGPT and Claude, to recognize and respond to human emotions. Drawing on interdisciplinary research that combines computer science, psychology, and neuroscience, the study analyzes foundational neural architectures - CNNs for processing facial expressions and RNNs for sequential data, such as speech and text - that enable emotion recognition. It examines the transformation of human emotional experiences into structured emotional data, addressing the distinction between explicit emotional data collected with informed consent in research settings and implicit data gathered passively through everyday digital interactions. That raises critical concerns about lawful processing, AI transparency, and individual autonomy over emotional expressions in digital environments. The paper explores implications across various domains, including healthcare, education, and customer service, while addressing challenges of cultural variations in emotional expression and potential biases in emotion recognition systems across different demographic groups. From a regulatory perspective, the paper examines emotional data in the context of the GDPR and the EU AI Act frameworks, highlighting how emotional data may be considered sensitive personal data that requires robust safeguards, including purpose limitation, data minimization, and meaningful consent mechanisms.",
+      "citationCount": 2,
+      "doi": "10.48550/arXiv.2509.20153",
+      "arxivId": "2509.20153",
+      "url": "https://www.semanticscholar.org/paper/5ba9300d93ddf2e022d23be067120deaf53f3b73",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2509.20153"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a569638d180618ba7f2acf687ef4440a53475734",
+      "title": "Living with AI personal assistant: an ethical appraisal",
+      "authors": [
+        {
+          "name": "Lorraine K. C. Yeung",
+          "authorId": "2244537130"
+        },
+        {
+          "name": "Cecilia S. Y. Tam",
+          "authorId": "2244516322"
+        },
+        {
+          "name": "Sam S. S. Lau",
+          "authorId": "2304981661"
+        },
+        {
+          "name": "Mandy M. Ko",
+          "authorId": "2244251423"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 16,
+      "doi": "10.1007/s00146-023-01776-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a569638d180618ba7f2acf687ef4440a53475734",
+      "venue": "Ai & Society",
+      "journal": {
+        "name": "AI & SOCIETY",
+        "pages": "2813 - 2828",
+        "volume": "39"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0384cf0089a8d4dca3abbd574d1e302fa852e6cb",
+      "title": "Relational Ethics in the Administration of Healthcare Technology: AI, Automation and Proper Distance",
+      "authors": [
+        {
+          "name": "Frances Shaw",
+          "authorId": "2344280058"
+        },
+        {
+          "name": "Anthony McCosker",
+          "authorId": "2367292373"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT Automation and AI\u2010driven decision support systems are increasingly reshaping healthcare, particularly in diagnostic and clinical management contexts. Although their potential to enhance access, efficiency and personalisation is widely recognised, there remain ethical concerns especially around the shifting dynamics of healthcare relationships. This article proposes a conceptual framework for understanding the relational ethics of healthcare automation, drawing on the work of Levinas and Silverstone to interrogate the ethical implications embedded in regulatory processes. Focusing on the Australian Therapeutic Goods Administration (TGA) database, we analyse clinical decision support system (CDSS) approvals to examine how healthcare relationships are discursively constructed within regulatory documentation. Through close reading of these technical and administrative texts, we investigate how ethical concerns such as patient autonomy, informed consent and trust are acknowledged or elided. Our findings reveal a limited framing of relational dimensions in regulatory discourse, raising important questions about how ethics are operationalised in the oversight of automated systems. By making visible the administrative practices shaping healthcare automation, this study contributes to emerging debates on AI governance and the ethical integration of automation into clinical practice.",
+      "citationCount": 3,
+      "doi": "10.1111/1467-9566.70055",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0384cf0089a8d4dca3abbd574d1e302fa852e6cb",
+      "venue": "Sociology of Health and Illness",
+      "journal": {
+        "name": "Sociology of Health & Illness",
+        "volume": "47"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b015543eb988260509711f4f866e725185e40b13",
+      "title": "Black Box AI and the Sovereignty of Personal Data: Between GDPR and Digital Ethics",
+      "authors": [
+        {
+          "name": "Andreea Buruian\u0103 (Rusu)",
+          "authorId": "2377409131"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The emergence of Black Box artificial intelligence poses fundamental challenges to data protection law, particularly with regard to digital sovereignty and the application of the General Data Protection Regulation (GDPR). These algorithmic systems, defined by their lack of transparency and the inability to explain automated decisions, significantly hinder the exercise of guaranteed rights such as data access, objection, and the right to contest automated decisions. Although the GDPR enshrines the principle of transparency and imposes clear obligations on data controllers, opaque AI systems jeopardize the informational autonomy of individuals. The CJEU ruling in the Nowak case reinforces the right to understand the decision-making logic of AI, but practical implementation remains difficult due to trade secret protections. In this context, an expanded legal framework is necessary\u2014one that integrates explainability requirements and ethical accountability to ensure a balance between innovation and the protection of fundamental rights. Furthermore, the distinction between formal transparency and substantive explainability becomes critical in guaranteeing individuals' effective control over the data and decisions that affect them.",
+      "citationCount": 0,
+      "doi": "10.18662/eljpa/12.1/258",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b015543eb988260509711f4f866e725185e40b13",
+      "venue": "European Journal of Law and Public Administration",
+      "journal": {
+        "name": "European Journal of Law and Public Administration"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4879c8fb4e4409bc0f2830d2359f1e62d5dbdc19",
+      "title": "Ethics on the Silver Screen: A Cultural Comparison of Chinese and Western AI Film and Television Text",
+      "authors": [
+        {
+          "name": "Liu Jiang",
+          "authorId": "2399107078"
+        },
+        {
+          "name": "Guowei Wang",
+          "authorId": "2399042324"
+        },
+        {
+          "name": "Bai Wei",
+          "authorId": "2399118559"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In recent years, the imagination of artificial intelligence on the screen has become a mirror reflecting social and cultural values. Western film and television works generally focus on how self-aware AI challenges human individual status and free will, with stories often revolving around boundaries, conflict, and control. In contrast, Chinese narratives tend to explore how AI is incorporated into existing networks of family and social relationships, emphasizing responsibility and integration. This paper selects representative Chinese and Western film and television texts to compare them from three aspects: AI role behavioral choices, linguistic expression, and role positioning, combined with audio-visual language analysis. The study finds that AI in Western stories mostly appears as a \"challenger\" seeking autonomy, with value choices favoring the individual; whereas AI in Chinese stories often serves as a \"new member\" integrating into the collective, with value reflected more in fulfilling family or social responsibilities. These two different screen imaginations correspond to the cultural mindsets of \"prevention and boundary\" and \"integration and responsibility\" respectively, indicating that the discussion of AI ethics needs to fully consider diverse cultural contexts to form a more inclusive consensus globally.",
+      "citationCount": 0,
+      "doi": "10.22161/ijels.106.57",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4879c8fb4e4409bc0f2830d2359f1e62d5dbdc19",
+      "venue": "International Journal of English Literature and Social Sciences",
+      "journal": {
+        "name": "International Journal of English Literature and Social Sciences"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b78cae88baf7d644f13659b3265d4f89e5e246b3",
+      "title": "Algorithmic care: Peter Singer\u2019s ethics and the challenge of AI in the end-of-life medicine",
+      "authors": [
+        {
+          "name": "Louise Bat\u00f4t",
+          "authorId": "2406998733"
+        },
+        {
+          "name": "Alessio Belli",
+          "authorId": "2406998857"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract This article applies Peter Singer\u2019s ethical framework to evaluate the impact of predictive AI systems in end-of-life care. Singer\u2019s work is particularly fitting for this analysis because it focuses on the normative variables that AI technologies influence: the moral significance of suffering, the formation of reflective preferences, and the assignment of responsibility for foreseeable outcomes. His perspective on personhood, emphasis on autonomy as rational self-determination, and principle of equal consideration of interests provide a solid foundation for assessing how algorithmic models affect clinical timing, deliberation, and risk allocation. By examining two predictive tools used in end-of-life care, the article demonstrates how Singer\u2019s framework clarifies the ways in which AI can enhance procedural rationality in end-of-life decisions. Additionally, it identifies the risks that AI poses to autonomy, responsibility diffusion, and the reproduction of structural inequalities. Ultimately, Singer\u2019s framework offers a conceptual means to differentiate algorithmic interventions that support ethical decision-making from those that undermine the non-negotiable ethical conditions he advocates.",
+      "citationCount": 0,
+      "doi": "10.2478/ebce-2025-0018",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b78cae88baf7d644f13659b3265d4f89e5e246b3",
+      "venue": "Ethics &amp; Bioethics",
+      "journal": {
+        "name": "Ethics & Bioethics",
+        "pages": "192 - 203",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "22c6bfa988f544c9ca579117694e6584921a726e",
+      "title": "Embodied AI at the Margins: Postcolonial Ethics for Intelligent Robotic Systems",
+      "authors": [
+        {
+          "name": "Atmadeep Ghoshal",
+          "authorId": "2221806347"
+        },
+        {
+          "name": "Martim Brandao",
+          "authorId": "143778750"
+        },
+        {
+          "name": "Ruba Abu-Salma",
+          "authorId": "1405685624"
+        },
+        {
+          "name": "Sanjay Modgil",
+          "authorId": "2275242381"
+        }
+      ],
+      "year": 2025,
+      "abstract": "As artificial intelligence (AI)-powered robots increasingly permeate global societies, critical questions emerge about their ethical governance in diverse cultural contexts. This paper interrogates the adequacy of dominant roboethics frameworks when applied to Global South environments, where unique sociotechnical landscapes demand a reevaluation of Western-centric ethical assumptions. Through thematic analysis of seven major ethical standards for AI and robotics, we uncover systemic limitations that present challenges in non-Western contexts---such as assumptions about standardized testing infrastructures, individualistic notions of autonomy, and universalized ethical principles. The uncritical adoption of these frameworks risks reproducing colonial power dynamics in which technological authority flows from centers of AI production rather than from the communities most affected by deployment. Instead of replacing existing frameworks entirely, we propose augmenting them through four complementary ethical dimensions developed through a postcolonial lens: epistemic non-imposition, onto-contextual consistency, agentic boundaries, and embodied spatial justice. These principles provide conceptual scaffolding for technological governance that respects indigenous knowledge systems, preserves cultural coherence, accounts for communal decision structures, and enhances substantive capabilities for Global South communities. The paper demonstrates practical implementation pathways for these principles across technological life cycles, offering actionable guidance for dataset curation, task design, and deployment protocols that mitigate power asymmetries in cross-cultural robotics implementation. This approach moves beyond surface-level adaptation to re-conceptualize how robotic systems may ethically function within the complex social ecologies of the Global South while fostering genuine technological sovereignty.",
+      "citationCount": 0,
+      "doi": "10.1609/aies.v8i2.36615",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/22c6bfa988f544c9ca579117694e6584921a726e",
+      "venue": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society",
+      "journal": {
+        "name": "Proceedings of the AAAI/ACM Conference on AI, Ethics, and Society"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "ff011080836989cc51894f60e7cd6a0c79f079c4",
+      "title": "Ethical Boundaries and Human-AI Dependency in Movie Entitled Atlas: Ethics of Technology Perspective",
+      "authors": [
+        {
+          "name": "Bintang Ryan Ananta",
+          "authorId": "2340606329"
+        },
+        {
+          "name": "Machfianita Mirza Ayu Rosadi",
+          "authorId": null
+        },
+        {
+          "name": "Kusuma Wijaya",
+          "authorId": "2340925454"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The rapid advancement of artificial intelligence (AI) has introduced significant ethical challenges, particularly regarding human dependency and technological mediation. This research examines the ethical boundaries and human-AI dependency portrayed in the movie Atlas through Verbeek\u2019s mediation theory and Floridi\u2019s principles of AI ethics. Using a qualitative method, the study analyzes pivotal scenes and dialogues to explore themes of autonomy, control, trust, and moral decision-making. Findings reveal the dual nature of AI dependency: as a strategic necessity enabling human-AI collaboration, exemplified by Neural Link technologies, and as a source of conflict, highlighted by the autonomous AI Harlan\u2019s misaligned ethical reasoning. While AI can amplify human capabilities and foster cooperative outcomes, its autonomy raises concerns about accountability and value alignment. The research underscores the importance of designing ethical, transparent, and accountable AI systems, contributing to broader discussions on balancing technological innovation with human autonomy. \nKeywords: accountability; autonomy; AI ethics; human dependency; technological mediation",
+      "citationCount": 1,
+      "doi": "10.25139/eckll.v12i1.9622",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ff011080836989cc51894f60e7cd6a0c79f079c4",
+      "venue": "Proceeding of International Seminar Enrichment of Career by Knowledge of Language and Literature",
+      "journal": {
+        "name": "Proceeding of International Seminar Enrichment of Career by Knowledge of Language and Literature"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "969dfaab39e3ff331180094f26cfaaffa82692de",
+      "title": "Balancing academic freedom and research integrity through virtue ethics in the use of AI in open distance education",
+      "authors": [
+        {
+          "name": "C. Prinsloo",
+          "authorId": "2377439731"
+        },
+        {
+          "name": "S. M. Ramashego",
+          "authorId": "2377424943"
+        },
+        {
+          "name": "R. G. Visagie",
+          "authorId": "2377425002"
+        },
+        {
+          "name": "N. Tjano",
+          "authorId": "2377431894"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In a rapidly evolving educational landscape shaped by Society 5.0, the integration of Artificial Intelligence (AI) into Open Distance Education (ODE) presents both transformative opportunities and ethical challenges. While AI enhances access, personalises learning, and streamlines administration, its usage raises concerns about academic freedom, research integrity, and ethical conduct. This article explores the balancing act required to leverage AI\u2019s capabilities without compromising the values of academic freedom and integrity. A virtue ethics framework is proposed to facilitate ethical AI deployment, prioritising virtues like integrity, accountability, and justice. Through a narrative literature review, the article examines the intersection of AI, academic freedom, and research integrity, proposing a conceptual model rooted in virtue ethics. The framework promotes a responsible AI-driven educational model that respects intellectual autonomy, mitigates ethical risks, and enhances research credibility in ODE. The article concludes with recommendations for implementing virtue ethics in AI governance within academic institutions, emphasising a sustainable approach to maintaining ethical standards in an AI-enhanced educational environment.\nKeywords: Artificial intelligence, Academic freedom, Conceptua; frameword, Open Distance Education, Research integrity, Virtue ethics",
+      "citationCount": 1,
+      "doi": "10.20853/39-4-7523",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/969dfaab39e3ff331180094f26cfaaffa82692de",
+      "venue": "South African Journal of Higher Education",
+      "journal": {
+        "name": "South African Journal of Higher Education"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "10761d98af358287de89c9d93fa9f457ac9f5351",
+      "title": "The Influence of AI in Medical Ethics and Warfare",
+      "authors": [
+        {
+          "name": "Julian Ungar-Sargon",
+          "authorId": "2355646537"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The Ethics of Artificial Intelligence in Combat pose significant challenges as military applications of technology evolve. As nations integrate AI into warfare, questions regarding moral responsibility and accountability emerge, complicating traditional notions of combat ethics. With the potential for enhanced operational efficiency, the implications of AI-laden scenarios provoke intense debate. This article explores the intricate landscape surrounding the ethics of artificial intelligence in combat, addressing both its advantages and ethical dilemmas. Central to the ethics of artificial intelligence in combat is the concept of accountability. The deployment of autonomous weapons raises questions about who is responsible for actions taken by machines. This complicates traditional notions of blame, especially when AI systems operate with varying degrees of autonomy and decision-making capacity.",
+      "citationCount": 0,
+      "doi": "10.52106/2837-7761.1022",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/10761d98af358287de89c9d93fa9f457ac9f5351",
+      "venue": "American Journal of Neurology Research",
+      "journal": {
+        "name": "American Journal of Neurology Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e2733937e1ce186f1355adaf1e193653f59d05f5",
+      "title": "The Dual Nature of Explicability in AI Ethics",
+      "authors": [
+        {
+          "name": "Hyundeuk Cheon",
+          "authorId": "2276893591"
+        }
+      ],
+      "year": 2025,
+      "abstract": ": Despite the significance of explicability in AI ethics, the principle of explicability remains subject to several unresolved issues, including its moral status, purpose, and the recipients of explanations. First, this paper proposes treating explicability as a prima facie duty to make machine learning algorithms explicable. Second, the dual nature of explicability is highlighted. It is claimed that explicability is for the warranted trust of decision-recipients in the algorithmic decisions as well as for enhancing the autonomy of decision-makers.",
+      "citationCount": 0,
+      "doi": "10.31577/orgf.2025.32401",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e2733937e1ce186f1355adaf1e193653f59d05f5",
+      "venue": "Organon F",
+      "journal": {
+        "name": "Organon F"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5accd17575a33b2d722c16f224d75644ea331e5c",
+      "title": "Understanding Students' Perceptions of Ethics in AI Use through the Lens of Floridi's Unified Framework of Ethical Principles for AI",
+      "authors": [
+        {
+          "name": "M\u00f3nica Col\u00f3n-Aguirre",
+          "authorId": "2326750295"
+        },
+        {
+          "name": "Kawanna Bright",
+          "authorId": "145424771"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Explorations of AI use in higher education have included ethical concerns, though primarily have taken a broad view, focusing on concerns with academic integrity and plagiarism. More nuanced explorations into the ethics of AI use, especially from a qualitative perspective, have been lacking. Utilizing Floridi's unified framework of ethical principles for AI as a guide, this study addresses this gap with a qualitative exploration of undergraduate students' perceptions of the ethical underpinnings of AI tools in the context of use for course work completion. Findings suggest that beneficence, non\u2010maleficence, and autonomy are clearly present in students' perceptions of ethics in AI, but justice and explicability were not. This suggests a deeper understanding of ethics in AI use beyond fear of plagiarism, but a noted lack of understanding around the true nature or impact of AI. These findings invite additional research around students' understanding of AI and the inclusion of faculty.",
+      "citationCount": 0,
+      "doi": "10.1002/pra2.1244",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5accd17575a33b2d722c16f224d75644ea331e5c",
+      "venue": "Proceedings of the Association for Information Science and Technology",
+      "journal": {
+        "name": "Proceedings of the Association for Information Science and Technology",
+        "volume": "62"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c93d7d7c322dee42cd2f1d66be3892e43918f5a0",
+      "title": "Artifical Intelliegnce (AI) Ethics Meets Ubuntu: Towards A Context-Aware Governance Model For Sustainable Innovation In Africa",
+      "authors": [
+        {
+          "name": "Prosper Mutswiri",
+          "authorId": "2375336119"
+        },
+        {
+          "name": "G. Hapanyengwi",
+          "authorId": "2834447"
+        },
+        {
+          "name": "Colleta T. Chipfumbu",
+          "authorId": "2355467508"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Artificial intelligence (AI) is rapidly diffusing across African societies, yet most governing frameworks arrive as de-contextualised imports that privilege individual autonomy and post-hoc liability. Drawing on Ubuntu, an indigenous relational philosophy that defines personhood through reciprocal obligation, this paper conducts a systematic review (2018 April 2025) of peer-reviewed and grey scholarship on Ubuntu-centred AI ethics. Thirty three eligible studies are interrogated through a pluralistic lens that couples Ubuntu ethics with relational autonomy theory and socio-technical systems analysis. Nine recurrent themes are identified, including communal data stewardship, collective responsibility, and contextual conceptions of fairness, ecological sustainability and intersectionality. While Ubuntu offers a powerful counter-narrative to data colonialism and responsibility gaps, empirical evidence of its operationalisation remains sparse and uneven. To translate ethos into practice, the article proposes a five-layer governance architecture including (1) Community Data Trusts, (2) Relational Design Praxis, (3) Harm Reconciliation Panels with risk-bond funding, (4) Ecological Stewardship Protocols, and (5) Developer Benefit Realisation. This modular model embeds Ubuntu values across the AI life-cycle while remaining compatible with statutory regimes and technical constraints. The study concludes that Ubuntu-aligned governance can enhance trust, equity and sustainability in African AI deployments, but realisation depends on sustained capacity-building, intersectional safeguards and iterative empirical evaluation.",
+      "citationCount": 0,
+      "doi": "10.18535/ijsrm/v13i08.ec02",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c93d7d7c322dee42cd2f1d66be3892e43918f5a0",
+      "venue": "International Journal of Scientific Research and Management",
+      "journal": {
+        "name": "International Journal of Scientific Research and Management (IJSRM)"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

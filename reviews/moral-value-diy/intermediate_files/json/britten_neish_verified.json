@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/s11229-024-04887-3"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s11229-024-04887-3",
+      "title": "Cognitive offloading and the causal structure of human action",
+      "authors": [
+        {
+          "family": "Britten-Neish",
+          "given": "George"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Synthese",
+      "volume": "205",
+      "issue": "2",
+      "page": "",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/s11229-024-04887-3"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

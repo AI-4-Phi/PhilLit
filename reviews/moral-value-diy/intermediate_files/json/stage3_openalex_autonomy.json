@@ -1,0 +1,2848 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "personal autonomy self-governance",
+  "results": [
+    {
+      "openalex_id": "W3004736790",
+      "doi": "10.1017/bpp.2020.5",
+      "title": "Self-nudging and the citizen choice architect",
+      "authors": [
+        {
+          "name": "Samuli Reijula",
+          "openalex_id": "A5049206353",
+          "orcid": "https://orcid.org/0000-0001-6968-5819",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        },
+        {
+          "name": "Ralph Hertwig",
+          "openalex_id": "A5068556395",
+          "orcid": "https://orcid.org/0000-0002-9908-9556",
+          "institutions": [
+            "Max Planck Institute for Human Development"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-26",
+      "abstract": "Abstract This article argues that nudges can often be turned into self-nudges: empowering interventions that enable people to design and structure their own decision environments \u2013 that is, to act as citizen choice architects. Self-nudging applies insights from behavioral science in a way that is practicable and cost-effective, but that sidesteps concerns about paternalism or manipulation. It has the potential to expand the scope of application of behavioral insights from the public to the personal sphere (e.g., homes, offices, families). It is a tool for reducing failures of self-control and enhancing personal autonomy; specifically, self-nudging can mean designing one's proximate choice architecture to alleviate the effects of self-control problems, engaging in education to understand the nature and causes of self-control problems and employing simple educational nudges to improve goal attainment in various domains. It can even mean self-paternalistic interventions such as winnowing down one's choice set by, for instance, removing options. Policy-makers could promote self-nudging by sharing knowledge about nudges and how they work. The ultimate goal of the self-nudging approach is to enable citizen choice architects\u2019 efficient self-governance, where reasonable, and the self-determined arbitration of conflicts between their mutually exclusive goals and preferences.",
+      "cited_by_count": 111,
+      "type": "article",
+      "source": {
+        "name": "Behavioural Public Policy",
+        "type": "journal",
+        "issn": [
+          "2398-063X",
+          "2398-0648"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Decision-Making and Behavioral Economics",
+        "Economic and Environmental Valuation",
+        "Environmental Education and Sustainability"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W3004736790"
+    },
+    {
+      "openalex_id": "W4309685178",
+      "doi": "10.4324/9780429290411",
+      "title": "The Routledge Handbook of Autonomy",
+      "authors": [
+        {
+          "name": "Ben Colburn",
+          "openalex_id": "A5060725334",
+          "orcid": "https://orcid.org/0000-0003-1416-1844"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-22",
+      "abstract": "This chapter offers a fine-grained analysis of the relationship between autonomy and responsibility in order to address a challenge according to which considering autonomy and responsibility as closely related is misleading since these concepts serve different normative objectives. In response to this challenge, I first explore two criteria of ascription \u2013 rationality and control \u2013 that autonomy and responsibility seem to share. I then contrast and compare three pairs of autonomy and responsibility conceptions. Examining these pairs rescues the idea that there are normatively significant connections between autonomy and responsibility, albeit that what that connection is and why it matters is highly sensitive to the different understandings of autonomy and responsibility one might adopt. The first pair, self-governance and accountability, posits a notion of core agency as irreducibly valuable. The second, authenticity and attributability, rests on a shared ideal of actively becoming a distinctive self. The third and final, relational autonomy and answerability, derives from the thought that unequal standing impacts heavily on whether and how the criteria of rationality and control are applied in specific cases. This analysis demonstrates that rationality and control are not independent criteria but always work in tandem. Failing to appreciate these conceptual interactions could obfuscate promising pathways for both supporting personal autonomy and challenging unwarranted responsibility ascriptions.",
+      "cited_by_count": 48,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://kar.kent.ac.uk/91907/1/Radoilska_Autonomy%20and%20Responsibility.pdf"
+      },
+      "topics": [
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W4309685178"
+    },
+    {
+      "openalex_id": "W2803232128",
+      "doi": "10.1007/s12152-018-9371-x",
+      "title": "Big Brain Data: On the Responsible Use of Brain Data from Clinical and Consumer-Directed Neurotechnological Devices",
+      "authors": [
+        {
+          "name": "Philipp Kellmeyer",
+          "openalex_id": "A5017891550",
+          "orcid": "https://orcid.org/0000-0001-5538-373X",
+          "institutions": [
+            "Bernstein Center for Computational Neuroscience Freiburg",
+            "University of Freiburg",
+            "University of Zurich",
+            "Institute for Biomedical Engineering"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-19",
+      "abstract": "Abstract The focus of this paper are the ethical, legal and social challenges for ensuring the responsible use of \u201cbig brain data\u201d\u2014the recording, collection and analysis of individuals\u2019 brain data on a large scale with clinical and consumer-directed neurotechnological devices. First, I highlight the benefits of big data and machine learning analytics in neuroscience for basic and translational research. Then, I describe some of the technological, social and psychological barriers for securing brain data from unwarranted access. In this context, I then examine ways in which safeguards at the hardware and software level, as well as increasing \u201cdata literacy\u201d in society, may enhance the security of neurotechnological devices and protect the privacy of personal brain data. Regarding ethical and legal ramifications of big brain data, I first discuss effects on the autonomy, the sense of agency and authenticity, as well as the self that may result from the interaction between users and intelligent, particularly closed-loop, neurotechnological devices. I then discuss the impact of the \u201cdatafication\u201d in basic and clinical neuroscience research on the just distribution of resources and access to these transformative technologies. In the legal realm, I examine possible legal consequences that arises from the increasing abilities to decode brain states and their corresponding subjective phenomenological experiences on the hitherto inaccessible privacy of these information. Finally, I discuss the implications of big brain data for national and international regulatory policies and models of good data governance.",
+      "cited_by_count": 106,
+      "type": "article",
+      "source": {
+        "name": "Neuroethics",
+        "type": "journal",
+        "issn": [
+          "1874-5490",
+          "1874-5504"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12152-018-9371-x.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Functional Brain Connectivity Studies",
+        "EEG and Brain-Computer Interfaces"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W2803232128"
+    },
+    {
+      "openalex_id": "W2805680718",
+      "doi": "10.1080/1369118x.2018.1478982",
+      "title": "Relational privacy and the networked governance of the self",
+      "authors": [
+        {
+          "name": "Sara Bannerman",
+          "openalex_id": "A5001191352",
+          "orcid": "https://orcid.org/0000-0002-2295-3254",
+          "institutions": [
+            "McMaster University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-29",
+      "abstract": "The self today is networked, and governed through networks. This paper examines the four functions of privacy as set out by privacy theorist Alan Westin [1967. Privacy and freedom. New York: Atheneum] and works to construct a revised view of the functions of privacy in a networked world by drawing on feminist theories of relationality. Many basic ideas about privacy, drawn from the Western liberal tradition, have been challenged, redrawn, and re-conceptualized by feminist philosophers of relationality. In section one, this paper defines the 'networked governance of the self' and outlines the feminist relational approach, drawing the concepts of networked governance and relationality together. In section two, the paper elaborates a relational perspective on networked privacy, set up against Westin's traditional formulation of the roles that privacy plays in democratic society. According to Westin, privacy (1) provides a realm of personal autonomy; (2) creates opportunities for emotional release; (3) permits a zone of self-evaluation; and (4) permits limited and protected forms of communication. The paper elaborates a relational perspective on the functions of privacy, emphasizing the importance of relational privacy to the networked governance of the self.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "Information Communication & Society",
+        "type": "journal",
+        "issn": [
+          "1369-118X",
+          "1468-4462"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Gender, Feminism, and Media",
+        "Privacy, Security, and Data Protection",
+        "Psychoanalysis, Philosophy, and Politics"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2805680718"
+    },
+    {
+      "openalex_id": "W4210387121",
+      "doi": "10.1093/oxfordhb/9780190628925.013.29",
+      "title": "Relational Autonomy",
+      "authors": [
+        {
+          "name": "Catriona Mackenzie",
+          "openalex_id": "A5065983696",
+          "orcid": "https://orcid.org/0000-0002-3222-0257",
+          "institutions": [
+            "Macquarie University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-12",
+      "abstract": "Abstract This chapter offers an account of central issues and themes in feminist philosophical reflections on relational autonomy. Relational theories of autonomy explicate the social dimensions of personal autonomy, as well as the ways its development and exercise can be impaired by social oppression. The chapter outlines debates between internalist and externalist, and procedural and substantive theories of relational autonomy, including discussion of important contributions to these debates over the last two decades. It proposes that a multidimensional analysis of autonomy offers a possible resolution to these debates. Specifically, the chapter argues for the importance of distinguishing self-determination, self-governance, and self-authorization as distinct although causally interacting dimensions of relational autonomy. The advantage of a multidimensional analysis of autonomy is that it does justice to the complexity of the concept, while also clarifying the multifarious ways in which social oppression can impair autonomy.",
+      "cited_by_count": 25,
+      "type": "book-chapter",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Philosophical Ethics and Theory",
+        "Feminist Epistemology and Gender Studies"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W4210387121"
+    },
+    {
+      "openalex_id": "W4366089971",
+      "doi": "10.1177/07435584231168402",
+      "title": "Mid-Adolescents\u2019 Social Media Use: Supporting and Suppressing Autonomy",
+      "authors": [
+        {
+          "name": "Monique West",
+          "openalex_id": "A5040700505",
+          "orcid": "https://orcid.org/0000-0002-8955-8099",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Simon Rice",
+          "openalex_id": "A5005781884",
+          "orcid": "https://orcid.org/0000-0003-4045-8553",
+          "institutions": [
+            "University of Melbourne",
+            "Orygen Youth Health"
+          ]
+        },
+        {
+          "name": "Dianne Vella\u2010Brodrick",
+          "openalex_id": "A5005010458",
+          "orcid": "https://orcid.org/0000-0002-4534-1998",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-17",
+      "abstract": "Autonomy development is an important process in adolescence and is central to a successful transition to adulthood. Social contexts play a crucial role in supporting and suppressing autonomy. Considering social media is a salient and important context for mid-adolescents it has the potential to strongly influence autonomy development. This study applied qualitative methods to examine mid-adolescents\u2019 perspectives of how their social media use impacts autonomy. Participants included 36 students aged 15 years from four schools in Melbourne, Australia. All participants completed a rich picture mapping activity and focus group discussions, and a sub-sample of 11 adolescents participated in follow-up, one-on-one interviews. Reflexive thematic analysis generated two overarching themes; supporting autonomy and suppressing autonomy. Sub-themes included; promoting self-governance, facilitating choicefulness, developing a sense of self, external forces motivating use, fostering compulsive and non-intentional use, and affordances of social media threaten personal control. This study revealed that social media contributes to today\u2019s adolescents encountering unique experiences with regard to their autonomy development compared with other generations. Findings highlighted the need to harness the autonomy-supportive aspects of social media use whilst mitigating the autonomy-suppressive ones to help mid-adolescents engage with social media in a way that promotes healthy functioning and wellbeing.",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "Journal of Adolescent Research",
+        "type": "journal",
+        "issn": [
+          "0743-5584",
+          "1552-6895"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1177/07435584231168402"
+      },
+      "topics": [
+        "Impact of Technology on Adolescents",
+        "Child Development and Digital Technology",
+        "Child and Adolescent Psychosocial and Emotional Development"
+      ],
+      "referenced_works_count": 79,
+      "url": "https://openalex.org/W4366089971"
+    },
+    {
+      "openalex_id": "W2441546371",
+      "doi": "10.13063/2327-9214.1207",
+      "title": "Privacy, Fairness, and Respect for Individuals",
+      "authors": [
+        {
+          "name": "Dixie B. Baker",
+          "openalex_id": "A5020415740",
+          "orcid": "https://orcid.org/0000-0002-5598-4815",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Jane Kaye",
+          "openalex_id": "A5049770889",
+          "orcid": "https://orcid.org/0000-0002-7311-4725",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Sharon F. Terry",
+          "openalex_id": "A5042161164",
+          "orcid": "https://orcid.org/0000-0002-0452-9329",
+          "institutions": [
+            "Genetic Alliance"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-31",
+      "abstract": "Introduction: Individuals have a moral claim to be involved in the governance of their personal data. Individuals\u2019 rights include privacy, autonomy, and the ability to choose for themselves how they want to manage risk, consistent with their own personal values and life situations. The Fair Information Practices principles (FIPPs) offer a framework for governance. Privacy-enhancing technology that complies with applicable law and FIPPs offers a dynamic governance tool for enabling the fair and open use of individual\u2019s personal data.Perceptions of Risk: Any governance model must protect against the risks posed by data misuse. Individual perceptions of risks are a subjective function involving individuals\u2019 values toward self, family, and society, their perceptions of trust, and their cognitive decision-making skills.The HIPAA Privacy Rule Puts Some Governance in the Hands of Individuals: Individual privacy protections and individuals\u2019 right to choose are codified in the HIPAA Privacy Rule, which attempts to strike a balance between the dual goals of information flow and privacy protection. The choices most commonly given individuals regarding the use of their health information are binary (\u201cyes\u201d or \u201cno\u201d) and immutable. Recent federal recommendations and law recognize the need for granular, dynamic choices.Building a Governance Framework Based in Trust: Avoiding Surprises: Individuals expect that they will govern the use of their own health and genomic data. Failure to build and maintain individuals\u2019 trust increases the likelihood that they will refuse to grant permission to access or use their data. The \u201cno surprises principle\u201d asserts that an individual\u2019s personal information should never be collected, used, transmitted, or disclosed in a way that would surprise the individual were she to learn about it.Fair Information Practices Principles: The FIPPs provide a powerful framework for enabling data sharing and use, while maintaining trust. We introduce the eight FIPPs adopted by the Department of Health and Human Services, and provide examples of their interpretation and implementation.Reducing Risk through Consumer Engagement: Privacy risk and health risk can be reduced by giving consumers control, autonomy, and transparency, and by engaging them in managing their own health. Explicit \u201cconsent\u201d may not always be necessary \u2013 the FIPPs offer multiple ways to engender trust and avoid surprises. Platform for Engaging Everyone Responsibly (PEER) We describe the Platform for Engaging Everyone Responsibly (PEER), a technology solution that enables individuals to govern the access to and use of their health information, within an environment that espouses the FIPPs and \u201cno surprises.\u201dConclusion: Fair and effective governance recognizes the individual\u2019s moral claim to maintain control over the contribution and use of their health and genomic information. Maintaining individuals\u2019 trust in an environment of transparency is essential to assuring continuing access to their data for safe and effective health care and biomedical knowledge advancement.",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "eGEMs (Generating Evidence & Methods to improve patient outcomes)",
+        "type": "journal",
+        "issn": [
+          "2327-9214"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://egems.academyhealth.org/articles/10.13063/2327-9214.1207/galley/160/download/"
+      },
+      "topics": [
+        "Ethics in Clinical Research",
+        "Patient Dignity and Privacy",
+        "Ethics and bioethics in healthcare"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W2441546371"
+    },
+    {
+      "openalex_id": "W2902634493",
+      "doi": "10.1007/s11023-018-9482-5",
+      "title": "AI4People\u2014An Ethical Framework for a Good AI Society: Opportunities, Risks, Principles, and Recommendations",
+      "authors": [
+        {
+          "name": "Luciano Floridi",
+          "openalex_id": "A5046574356",
+          "orcid": "https://orcid.org/0000-0002-5444-2280",
+          "institutions": [
+            "The Alan Turing Institute",
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Josh Cowls",
+          "openalex_id": "A5011861720",
+          "orcid": "https://orcid.org/0000-0002-8545-5068",
+          "institutions": [
+            "University of Oxford",
+            "The Alan Turing Institute"
+          ]
+        },
+        {
+          "name": "Monica Beltrametti",
+          "openalex_id": "A5013700307"
+        },
+        {
+          "name": "Raja Chatila",
+          "openalex_id": "A5114376610",
+          "orcid": "https://orcid.org/0000-0001-7822-0634"
+        },
+        {
+          "name": "Patrice Chazerand",
+          "openalex_id": "A5035683874",
+          "institutions": [
+            "Digital Europe"
+          ]
+        },
+        {
+          "name": "Virginia Dignum",
+          "openalex_id": "A5050532928",
+          "orcid": "https://orcid.org/0000-0001-7409-5813",
+          "institutions": [
+            "Ume\u00e5 University"
+          ]
+        },
+        {
+          "name": "Christoph Luetge",
+          "openalex_id": "A5110659346",
+          "institutions": [
+            "Technical University of Munich"
+          ]
+        },
+        {
+          "name": "Robert Madelin",
+          "openalex_id": "A5082672828",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Ugo Pagallo",
+          "openalex_id": "A5089573061",
+          "orcid": "https://orcid.org/0000-0001-7981-8849",
+          "institutions": [
+            "University of Turin"
+          ]
+        },
+        {
+          "name": "Francesca Rossi",
+          "openalex_id": "A5000527699",
+          "orcid": "https://orcid.org/0000-0001-8898-219X"
+        },
+        {
+          "name": "Burkhard Sch\u00e4fer",
+          "openalex_id": "A5011572139",
+          "orcid": "https://orcid.org/0000-0002-6025-4593",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Peggy Valcke",
+          "openalex_id": "A5053804154",
+          "orcid": "https://orcid.org/0000-0002-8456-430X",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Effy Vayena",
+          "openalex_id": "A5069093620",
+          "orcid": "https://orcid.org/0000-0003-1303-5467",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-25",
+      "abstract": null,
+      "cited_by_count": 2850,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-018-9482-5.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W2902634493"
+    },
+    {
+      "openalex_id": "W3110516943",
+      "doi": "10.2139/ssrn.3727562",
+      "title": "Democratic Data: A Relational Theory For Data Governance",
+      "authors": [
+        {
+          "name": "Salom\u00e9 Viljoen",
+          "openalex_id": "A5073980273",
+          "orcid": "https://orcid.org/0000-0003-0549-9966",
+          "institutions": [
+            "Harvard University Press",
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": null,
+      "cited_by_count": 99,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.3727562"
+      },
+      "topics": [
+        "Privacy, Security, and Data Protection",
+        "Privacy-Preserving Technologies in Data",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W3110516943"
+    },
+    {
+      "openalex_id": "W4388823218",
+      "doi": "10.4337/9781035303038.00025",
+      "title": "Self-nudging and the citizen choice architect",
+      "authors": [
+        {
+          "name": "Samuli Reijula",
+          "openalex_id": "A5049206353",
+          "orcid": "https://orcid.org/0000-0001-6968-5819"
+        },
+        {
+          "name": "Ralph Hertwig",
+          "openalex_id": "A5068556395",
+          "orcid": "https://orcid.org/0000-0002-9908-9556"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-07",
+      "abstract": "This article argues that nudges can often be turned into self-nudges: empowering interventions that enable people to design and structure their own decision environments\u2014that is, to act as citizen choice architects. Self-nudging applies insights from behavioral science in a way that is practicable and cost-effective but that sidesteps concerns about paternalism or manipulation. It has the potential to expand the scope of application of behavioral insights from the public to the personal sphere (e.g., homes, offices, families). It is a tool for reducing failures of self-control and enhancing personal autonomy; specifically, self-nudging can mean designing one\u2019s proximate choice architecture to alleviate the effects of self-control problems, engaging in education to understand the nature and causes of self-control problems and employing simple educational nudges to improve goal attainment in various domains. It can even mean self-paternalistic interventions such as winnowing down one\u2019s choice set by, for instance, removing options. Policymakers could promote self-nudging by sharing knowledge about nudges and how they work. The ultimate goal of the self-nudging approach is to enable citizen choice architects\u2019 efficient self-governance, where reasonable, and the self-determined arbitration of conflicts between their mutually exclusive goals and preferences.",
+      "cited_by_count": 20,
+      "type": "book-chapter",
+      "source": {
+        "name": "Edward Elgar Publishing eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Housing Market and Economics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4388823218"
+    },
+    {
+      "openalex_id": "W2903995309",
+      "doi": "10.1111/japp.12346",
+      "title": "Delusions and Personal Autonomy",
+      "authors": [
+        {
+          "name": "Gloria Sibson Ayob",
+          "openalex_id": "A5053046219",
+          "orcid": "https://orcid.org/0000-0001-5374-2161",
+          "institutions": [
+            "University of Central Lancashire"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-06",
+      "abstract": "ABSTRACT This article will examine the claim that personal autonomy is impaired by a paradigmatic instance of serious psychopathology \u2013 namely, the condition of being delusional \u2013 in light of the hierarchical conception of personal autonomy. This conception of personal autonomy aims at yielding value\u2010neutral judgements about freedom and self\u2010governance. I will argue that when viewed from the perspective of this specific conception of autonomy, delusions do not necessarily impair an agent's personal autonomy. In order to establish this claim, I will probe the general idea that delusional subjects are beset by a mental disease that is rationally incapacitating, to which the hierarchical theorist might appeal. I argue that, understood within the parameters set by the commitment to value neutrality, this idea fails to provide support for the claim that delusion necessarily impairs personal autonomy. One contribution this article makes to the effort of understanding how delusion impairs personal autonomy is to help us pinpoint the ways in which our value commitments inform our judgements of impaired personal autonomy in delusional agents.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Journal of Applied Philosophy",
+        "type": "journal",
+        "issn": [
+          "0264-3758",
+          "1468-5930"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Mental Health and Psychiatry",
+        "Body Image and Dysmorphia Studies",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W2903995309"
+    },
+    {
+      "openalex_id": "W2424214816",
+      "doi": "10.1089/omi.2016.0077",
+      "title": "How Healthcare Can Refocus on Its Super-Customers (Patients, <i>n</i>\u2009=1) and Customers (Doctors and Nurses) by Leveraging Lessons from Amazon, Uber, and Watson",
+      "authors": [
+        {
+          "name": "Evelyne Kolker",
+          "openalex_id": "A5013611190",
+          "institutions": [
+            "Northeastern University",
+            "Amazon (United States)",
+            "University of Washington",
+            "University of Washington Medical Center",
+            "Health Alliance International",
+            "Seattle Children's Hospital",
+            "Seattle University"
+          ]
+        },
+        {
+          "name": "Vural \u00d6zdemir",
+          "openalex_id": "A5012423795",
+          "orcid": "https://orcid.org/0000-0002-5117-759X",
+          "institutions": [
+            "Northeastern University",
+            "University of Washington",
+            "University of Washington Medical Center",
+            "Health Alliance International",
+            "Seattle Children's Hospital",
+            "Seattle University",
+            "Gaziantep University",
+            "Amrita Vishwa Vidyapeetham"
+          ]
+        },
+        {
+          "name": "Eugene Kolker",
+          "openalex_id": "A5087861388",
+          "institutions": [
+            "Northeastern University",
+            "University of Washington",
+            "University of Washington Medical Center",
+            "Health Alliance International",
+            "Seattle Children's Hospital",
+            "Gaziantep University",
+            "Amrita Vishwa Vidyapeetham"
+          ]
+        },
+        {
+          "name": "Eugene Kolker",
+          "openalex_id": "",
+          "institutions": [
+            "Northeastern University",
+            "University of Washington",
+            "University of Washington Medical Center",
+            "Health Alliance International",
+            "Seattle Children's Hospital",
+            "Seattle University"
+          ]
+        },
+        {
+          "name": "Eugene Kolker",
+          "openalex_id": "",
+          "institutions": [
+            "Northeastern University",
+            "University of Washington",
+            "University of Washington Medical Center",
+            "Health Alliance International",
+            "Seattle Children's Hospital",
+            "Seattle University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-06-01",
+      "abstract": "Healthcare is transforming with data-intensive omics technologies and Big Data. The \"revolution\" has already happened in technology, but the bottlenecks have shifted to the social domain: Who can be empowered by Big Data? Who are the users and customers? In this review and innovation field analysis, we introduce the idea of a \"super-customer\" versus \"customer\" and relate both to 21st century healthcare. A \"super-customer\" in healthcare is the patient, sample size of n = 1, while \"customers\" are the providers of healthcare (e.g., doctors and nurses). The super-customers have been patients, enabled by unprecedented social practices, such as the ability to track one's physical activities, personal genomics, patient advocacy for greater autonomy, and self-governance, to name but a few. In contrast, the originally intended customers\u2014providers, doctors, and nurses\u2014have relatively lagged behind. With patients as super-customers, there are valuable lessons to be learned from industry examples, such as Amazon and Uber. To offer superior quality service, healthcare organizations have to refocus on the needs, pains, and aspirations of their super-customers by enabling the customers. We propose a strategic solution to this end: the PPT-DAM (People\u2013Process\u2013Technology empowered by Data, Analytics, and Metrics) approach. When applied together with the classic Experiment\u2013Execute\u2013Evaluate iterative methodology, we suggest PPT-DAM is an extremely powerful approach to deliver quality health services to super-customers and customers. As an example, we describe the PPT-DAM implementation by the Benchmarking Improvement Program at the Seattle Children's Hospital. Finally, we forecast that cognitive systems in general and IBM Watson in particular, if properly implemented, can bring transformative and sustainable capabilities in healthcare far beyond the current ones.",
+      "cited_by_count": 41,
+      "type": "review",
+      "source": {
+        "name": "OMICS A Journal of Integrative Biology",
+        "type": "journal",
+        "issn": [
+          "1536-2310",
+          "1557-8100"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Service and Product Innovation"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2424214816"
+    },
+    {
+      "openalex_id": "W3194364730",
+      "doi": "10.4324/9781315636511-4",
+      "title": "Governance transfer",
+      "authors": [
+        {
+          "name": "Lauree Tilton\u2010Weaver",
+          "openalex_id": "A5064316069",
+          "orcid": "https://orcid.org/0000-0002-6879-3022"
+        },
+        {
+          "name": "Sheila K. Marshall",
+          "openalex_id": "A5051929655",
+          "orcid": "https://orcid.org/0000-0001-9330-8407"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-08-22",
+      "abstract": "In this chapter we introduce a way of understanding behavioral autonomy development during adolescence that we call governance transfer. We argue for moving beyond defining autonomy as behavioral freedom or independence because such definitions fail to account for societal constraints around individual actions. Measures of behavioral autonomy emerging from autonomy defined as behavioral freedom or independence include behaviors that are harmful to self and others, and therefore reveal a lack of maturity on the part of the adolescent. In addition, equating autonomy with independence fails to account for the role that parents play. To conceptualize governance transfer, we draw from multiple disciplines and Smetana's work on social domains to describe how societies limit individual action, defining domains of action that involve no harm to anyone (personal actions), harm only to self (prudential actions), and harm to others (conventional and moral actions). As adults and societal agents, parents understand (and define) the constraints, using their regulatory authority\u2014governance\u2014to guide and protect adolescents from harming themselves or others. Through transactional processes, parents and adolescents transfer governance when adolescents understand the constraints and are ready to regulate themselves in accordance with societal expectations. From our perspective, then, genuine behavioral autonomy is achieved when individuals understand the constraints and abide by the constraints or negotiate for their change.",
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": {
+        "name": "Psychology Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Child Welfare and Adoption",
+        "Disability Rights and Representation",
+        "Child Abuse and Trauma"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W3194364730"
+    },
+    {
+      "openalex_id": "W3003385079",
+      "doi": "10.1007/s11023-020-09517-8",
+      "title": "The Ethics of AI Ethics: An Evaluation of Guidelines",
+      "authors": [
+        {
+          "name": "Thilo Hagendorff",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-4633-2153",
+          "institutions": [
+            "University of T\u00fcbingen"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-01",
+      "abstract": null,
+      "cited_by_count": 1476,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-020-09517-8.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W3003385079"
+    },
+    {
+      "openalex_id": "W4360620450",
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "title": "Opinion Paper: \u201cSo what if ChatGPT wrote it?\u201d Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "authors": [
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Symbiosis International University",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Nir Kshetri",
+          "openalex_id": "A5025481201",
+          "orcid": "https://orcid.org/0000-0002-1408-4212",
+          "institutions": [
+            "University of North Carolina at Greensboro"
+          ]
+        },
+        {
+          "name": "Laurie Hughes",
+          "openalex_id": "A5072512285",
+          "orcid": "https://orcid.org/0000-0002-0956-0608",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Emma Slade",
+          "openalex_id": "A5081524121",
+          "orcid": "https://orcid.org/0000-0001-7648-6383",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Anand Jeyaraj",
+          "openalex_id": "A5057695278",
+          "orcid": "https://orcid.org/0000-0003-3691-881X",
+          "institutions": [
+            "Wright State University"
+          ]
+        },
+        {
+          "name": "Arpan Kumar Kar",
+          "openalex_id": "A5061235109",
+          "orcid": "https://orcid.org/0000-0003-4186-4887",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Abdullah M. Baabdullah",
+          "openalex_id": "A5017453435",
+          "institutions": [
+            "King Abdulaziz University"
+          ]
+        },
+        {
+          "name": "Alex Koohang",
+          "openalex_id": "A5008571658",
+          "orcid": "https://orcid.org/0000-0002-4565-0408",
+          "institutions": [
+            "Georgia State University",
+            "Middle Georgia State College"
+          ]
+        },
+        {
+          "name": "Vishnupriya Raghavan",
+          "openalex_id": "A5050603102",
+          "institutions": [
+            "NIIT (India)"
+          ]
+        },
+        {
+          "name": "Manju Ahuja",
+          "openalex_id": "A5018408477",
+          "orcid": "https://orcid.org/0000-0002-1791-5106",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Hanaa Albanna",
+          "openalex_id": "A5078874795",
+          "institutions": [
+            "Northumbria University"
+          ]
+        },
+        {
+          "name": "Mousa Ahmad Albashrawi",
+          "openalex_id": "A5019826465",
+          "institutions": [
+            "King Fahd University of Petroleum and Minerals"
+          ]
+        },
+        {
+          "name": "Adil S. Al-Busaidi",
+          "openalex_id": "A5057159975",
+          "orcid": "https://orcid.org/0000-0002-0959-7419",
+          "institutions": [
+            "Sultan Qaboos University"
+          ]
+        },
+        {
+          "name": "Janarthanan Balakrishnan",
+          "openalex_id": "A5033683059",
+          "orcid": "https://orcid.org/0000-0003-2456-2617",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Yves Barlette",
+          "openalex_id": "A5041516869",
+          "orcid": "https://orcid.org/0000-0001-6106-7274",
+          "institutions": [
+            "Montpellier Business School"
+          ]
+        },
+        {
+          "name": "Sriparna Basu",
+          "openalex_id": "A5056774275",
+          "orcid": "https://orcid.org/0000-0001-7924-8153",
+          "institutions": [
+            "Fore School of Management"
+          ]
+        },
+        {
+          "name": "Indranil Bose",
+          "openalex_id": "A5045996720",
+          "orcid": "https://orcid.org/0000-0002-5737-966X",
+          "institutions": [
+            "Indian Institute of Management Ahmedabad"
+          ]
+        },
+        {
+          "name": "Laurence Brooks",
+          "openalex_id": "A5049268821",
+          "orcid": "https://orcid.org/0000-0002-5456-8799",
+          "institutions": [
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Dimitrios Buhalis",
+          "openalex_id": "A5068663980",
+          "orcid": "https://orcid.org/0000-0001-9148-6090",
+          "institutions": [
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Lemuria Carter",
+          "openalex_id": "A5067377847",
+          "orcid": "https://orcid.org/0000-0002-2364-3100",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "TBS Education"
+          ]
+        },
+        {
+          "name": "Tom Crick",
+          "openalex_id": "A5015452463",
+          "orcid": "https://orcid.org/0000-0001-5196-9389",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Scott W. Cunningham",
+          "openalex_id": "A5000045142",
+          "orcid": "https://orcid.org/0000-0001-7140-916X",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Swansea University",
+            "University of Sheffield",
+            "University of Reading",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Strathclyde"
+          ]
+        },
+        {
+          "name": "Gareth H. Davies",
+          "openalex_id": "A5104108927",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Robert M. Davison",
+          "openalex_id": "A5006120288",
+          "orcid": "https://orcid.org/0000-0002-7243-3521",
+          "institutions": [
+            "City University of Hong Kong",
+            "Indian Institute of Management Bangalore",
+            "Universidad de Zaragoza"
+          ]
+        },
+        {
+          "name": "Rahul D\u00e9",
+          "openalex_id": "A5113796817",
+          "orcid": "https://orcid.org/0000-0002-1300-1438",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Denis Dennehy",
+          "openalex_id": "A5083528596",
+          "orcid": "https://orcid.org/0000-0001-9931-762X",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Yanqing Duan",
+          "openalex_id": "A5032994640",
+          "orcid": "https://orcid.org/0000-0003-4205-7403",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University",
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Rameshwar Dubey",
+          "openalex_id": "A5112902933",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "Prin. L. N. Welingkar Institute of Management Development and Research",
+            "Bournemouth University",
+            "Liverpool John Moores University",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "Montpellier Business School",
+            "Swansea University",
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Rohita Dwivedi",
+          "openalex_id": "A5070017829",
+          "orcid": "https://orcid.org/0000-0003-3801-3635",
+          "institutions": [
+            "Swansea University",
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "John S. Edwards",
+          "openalex_id": "A5007695310",
+          "orcid": "https://orcid.org/0000-0003-3979-017X",
+          "institutions": [
+            "University of Reading",
+            "College of Charleston",
+            "Bournemouth University",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Aston University",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Carlos Flavi\u00e1n",
+          "openalex_id": "A5044113079",
+          "orcid": "https://orcid.org/0000-0001-7118-9013",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Swansea University",
+            "College of Charleston",
+            "Universidad de Zaragoza",
+            "University of Reading",
+            "Bournemouth University",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Robin Gauld",
+          "openalex_id": "A5065964282",
+          "orcid": "https://orcid.org/0000-0001-5401-1192",
+          "institutions": [
+            "University of Reading",
+            "University of Sheffield",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Otago",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Varun Grover",
+          "openalex_id": "A5103134481",
+          "institutions": [
+            "University of Arkansas at Fayetteville",
+            "Swansea University",
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Mei\u2010Chih Hu",
+          "openalex_id": "A5112818613",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Marijn Janssen",
+          "openalex_id": "A5062073470",
+          "orcid": "https://orcid.org/0000-0001-6211-8790",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Reading",
+            "Bournemouth University",
+            "University of Sheffield",
+            "Delft University of Technology",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Paul Jones",
+          "openalex_id": "A5080152304",
+          "orcid": "https://orcid.org/0000-0003-0417-9143",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Iris Junglas",
+          "openalex_id": "A5001364826",
+          "orcid": "https://orcid.org/0000-0002-2914-3879",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Sangeeta Khorana",
+          "openalex_id": "A5086148004",
+          "orcid": "https://orcid.org/0000-0001-8901-0050",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Sascha Kraus",
+          "openalex_id": "A5075871949",
+          "orcid": "https://orcid.org/0000-0002-3721-1122",
+          "institutions": [
+            "Bournemouth University",
+            "University of Johannesburg",
+            "College of Charleston",
+            "University of Otago",
+            "Free University of Bozen-Bolzano"
+          ]
+        },
+        {
+          "name": "Kai R. Larsen",
+          "openalex_id": "A5075496480",
+          "orcid": "https://orcid.org/0000-0002-8812-9866",
+          "institutions": [
+            "University of Reading",
+            "University of Arkansas at Fayetteville",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Sheffield",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "University of Colorado Boulder"
+          ]
+        },
+        {
+          "name": "Paul Latreille",
+          "openalex_id": "A5109602539",
+          "orcid": "https://orcid.org/0000-0001-7685-6532",
+          "institutions": [
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Sven Laumer",
+          "openalex_id": "A5107936554",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Tegwen Malik",
+          "openalex_id": "A5090009163",
+          "orcid": "https://orcid.org/0000-0003-4315-5726",
+          "institutions": [
+            "Delft University of Technology",
+            "Newcastle University",
+            "University of Central Florida",
+            "AGH University of Krakow",
+            "University of Agder",
+            "University of Manchester",
+            "SKEMA Business School",
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Abbas Mardani",
+          "openalex_id": "A5033150664",
+          "orcid": "https://orcid.org/0000-0003-1010-3655",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "University of Reading",
+            "Bournemouth University",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Marcello Mariani",
+          "openalex_id": "A5108091448",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "University of Bologna",
+            "University of Reading",
+            "Bournemouth University",
+            "University of Sheffield",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Sunil Mithas",
+          "openalex_id": "A5086635152",
+          "orcid": "https://orcid.org/0000-0002-2182-6202",
+          "institutions": [
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Bournemouth University",
+            "University of Otago",
+            "College of Charleston",
+            "University of South Florida",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Emmanuel Mogaji",
+          "openalex_id": "A5082000265",
+          "orcid": "https://orcid.org/0000-0003-0544-4842",
+          "institutions": [
+            "University of Arkansas at Fayetteville",
+            "University of Greenwich",
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Jeretta Horn Nord",
+          "openalex_id": "A5070124847",
+          "orcid": "https://orcid.org/0000-0001-7590-9022",
+          "institutions": [
+            "College of Charleston",
+            "City University of Hong Kong",
+            "Indian Institute of Management Bangalore",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Siobh\u00e1n O\u2019Connor",
+          "openalex_id": "A5067043429",
+          "orcid": "https://orcid.org/0000-0001-8579-1718",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Fevzi Okumus",
+          "openalex_id": "A5114045132",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "College of Charleston",
+            "University of Sheffield",
+            "Bournemouth University",
+            "AGH University of Krakow",
+            "University of Reading",
+            "Newcastle University",
+            "Swansea University",
+            "SKEMA Business School",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Microsoft (United States)",
+            "University of Agder",
+            "University of Central Florida"
+          ]
+        },
+        {
+          "name": "Margherita Pagani",
+          "openalex_id": "A5074068450",
+          "orcid": "https://orcid.org/0000-0002-4269-9409",
+          "institutions": [
+            "SKEMA Business School"
+          ]
+        },
+        {
+          "name": "Neeraj Pandey",
+          "openalex_id": "A5035078504",
+          "orcid": "https://orcid.org/0000-0002-6238-6397",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg",
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Ilias O. Pappas",
+          "openalex_id": "A5080505347",
+          "orcid": "https://orcid.org/0000-0001-7528-3488",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Nishith Pathak",
+          "openalex_id": "A5108072182",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University",
+            "National Tsing Hua University"
+          ]
+        },
+        {
+          "name": "Jan Pries\u2010Heje",
+          "openalex_id": "A5074257477",
+          "orcid": "https://orcid.org/0000-0003-2219-9332",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Ramakrishnan Raman",
+          "openalex_id": "A5072261829",
+          "orcid": "https://orcid.org/0000-0003-3642-6989",
+          "institutions": [
+            "Bournemouth University",
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Nripendra P. Rana",
+          "openalex_id": "A5034248834",
+          "orcid": "https://orcid.org/0000-0003-1105-8729",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Sven\u2010Volker Rehm",
+          "openalex_id": "A5011882746",
+          "orcid": "https://orcid.org/0000-0002-9785-6707",
+          "institutions": [
+            "Humans and management in society"
+          ]
+        },
+        {
+          "name": "Samuel Ribeiro\u2010Navarrete",
+          "openalex_id": "A5006215958",
+          "orcid": "https://orcid.org/0000-0003-1046-5322",
+          "institutions": [
+            "University of Reading",
+            "University of Sheffield",
+            "Swansea University",
+            "Bournemouth University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Alexander Richter",
+          "openalex_id": "A5061717541",
+          "orcid": "https://orcid.org/0000-0002-3699-6466",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Frantz Rowe",
+          "openalex_id": "A5056984467",
+          "orcid": "https://orcid.org/0000-0001-8520-1570",
+          "institutions": [
+            "Laboratoire d'Economie et de Management de Nantes Atlantique"
+          ]
+        },
+        {
+          "name": "Suprateek Sarker",
+          "openalex_id": "A5060897112",
+          "orcid": "https://orcid.org/0000-0002-8079-3121",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "University of Reading",
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University",
+            "Universidad de Zaragoza",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg"
+          ]
+        },
+        {
+          "name": "Manoj Tiwari",
+          "openalex_id": "A5101785022",
+          "orcid": "https://orcid.org/0000-0001-8949-0330",
+          "institutions": [
+            "Swansea University",
+            "University of Sheffield",
+            "University of Reading",
+            "Bournemouth University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Wil van der Aalst",
+          "openalex_id": "A5114045133",
+          "institutions": [
+            "College of Charleston",
+            "University of Reading",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Bournemouth University",
+            "Delft University of Technology",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Viswanath Venkatesh",
+          "openalex_id": "A5108144975",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Giampaolo Viglia",
+          "openalex_id": "A5065568454",
+          "orcid": "https://orcid.org/0000-0001-8521-4988",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Michael Wade",
+          "openalex_id": "A5008575290",
+          "orcid": "https://orcid.org/0000-0002-0829-7422",
+          "institutions": [
+            "Montpellier Business School",
+            "Liverpool John Moores University",
+            "Prin. L. N. Welingkar Institute of Management Development and Research"
+          ]
+        },
+        {
+          "name": "Paul Walton",
+          "openalex_id": "A5109157215",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Jochen Wirtz",
+          "openalex_id": "A5064998398",
+          "orcid": "https://orcid.org/0000-0002-6297-4498",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Ryan Wright",
+          "openalex_id": "A5060691228",
+          "orcid": "https://orcid.org/0000-0002-9719-415X",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-11",
+      "abstract": null,
+      "cited_by_count": 3171,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information Management",
+        "type": "journal",
+        "issn": [
+          "0268-4012",
+          "1873-4707"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://linkinghub.elsevier.com/science/article/pii/S0268401223000233/pdfft?md5=492895056a2fa29b1cb81876a1c57544&pid=1-s2.0-S0268401223000233-main.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in Service Interactions",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 265,
+      "url": "https://openalex.org/W4360620450"
+    },
+    {
+      "openalex_id": "W974480840",
+      "doi": "10.1007/s12525-015-0196-8",
+      "title": "Smart tourism: foundations and developments",
+      "authors": [
+        {
+          "name": "Ulrike Gretzel",
+          "openalex_id": "A5035975032",
+          "orcid": "https://orcid.org/0000-0001-8416-1829",
+          "institutions": [
+            "University of Queensland"
+          ]
+        },
+        {
+          "name": "\u039c\u03b1\u03c1\u03b9\u03ac\u03bd\u03bd\u03b1 \u03a3\u03b9\u03b3\u03ac\u03bb\u03b1",
+          "openalex_id": "A5006428406",
+          "orcid": "https://orcid.org/0000-0001-8997-2292",
+          "institutions": [
+            "University of South Australia"
+          ]
+        },
+        {
+          "name": "Zheng Xiang",
+          "openalex_id": "A5084195072",
+          "orcid": "https://orcid.org/0000-0003-2608-4882",
+          "institutions": [
+            "Virginia Tech"
+          ]
+        },
+        {
+          "name": "Chulmo Koo",
+          "openalex_id": "A5073215248",
+          "orcid": "https://orcid.org/0000-0002-9822-1279",
+          "institutions": [
+            "Kyung Hee University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-31",
+      "abstract": "Abstract Smart tourism is a new buzzword applied to describe the increasing reliance of tourism destinations, their industries and their tourists on emerging forms of ICT that allow for massive amounts of data to be transformed into value propositions. However, it remains ill-defined as a concept, which hinders its theoretical development. The paper defines smart tourism, sheds light on current smart tourism trends, and then lays out its technological and business foundations. This is followed by a brief discussion on the prospects and drawbacks of smart tourism. The paper further draws attention to the great need for research to inform smart tourism development and management.",
+      "cited_by_count": 2036,
+      "type": "article",
+      "source": {
+        "name": "Electronic Markets",
+        "type": "journal",
+        "issn": [
+          "1019-6781",
+          "1422-8890"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12525-015-0196-8.pdf"
+      },
+      "topics": [
+        "Digital Marketing and Social Media",
+        "Sharing Economy and Platforms",
+        "Technology Adoption and User Behaviour"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W974480840"
+    },
+    {
+      "openalex_id": "W4304943299",
+      "doi": "10.1007/s10639-022-11316-w",
+      "title": "Ethical principles for artificial intelligence in education",
+      "authors": [
+        {
+          "name": "Andy Nguyen",
+          "openalex_id": "A5091570362",
+          "orcid": "https://orcid.org/0000-0002-0759-9656",
+          "institutions": [
+            "University of Oulu"
+          ]
+        },
+        {
+          "name": "Ha Ngan Ngo",
+          "openalex_id": "A5031594602",
+          "orcid": "https://orcid.org/0000-0002-4275-3620",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        },
+        {
+          "name": "Yvonne Hong",
+          "openalex_id": "A5084270282",
+          "orcid": "https://orcid.org/0000-0002-0046-3983",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        },
+        {
+          "name": "Belle Dang",
+          "openalex_id": "A5052061009",
+          "orcid": "https://orcid.org/0009-0006-8734-6697",
+          "institutions": [
+            "University of Oulu"
+          ]
+        },
+        {
+          "name": "Bich\u2010Phuong Thi Nguyen",
+          "openalex_id": "A5032059076",
+          "orcid": "https://orcid.org/0000-0003-1836-4403",
+          "institutions": [
+            "University of Languages and International Studies"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-13",
+      "abstract": null,
+      "cited_by_count": 870,
+      "type": "article",
+      "source": {
+        "name": "Education and Information Technologies",
+        "type": "journal",
+        "issn": [
+          "1360-2357",
+          "1573-7608"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10639-022-11316-w.pdf"
+      },
+      "topics": [
+        "Online Learning and Analytics",
+        "Explainable Artificial Intelligence (XAI)",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W4304943299"
+    },
+    {
+      "openalex_id": "W2896237628",
+      "doi": "10.1080/13691457.2018.1530640",
+      "title": "Neoliberalism as an art of governance: reflecting on techniques for securing life through direct social work practice",
+      "authors": [
+        {
+          "name": "Uschi Bay",
+          "openalex_id": "A5054042588",
+          "orcid": "https://orcid.org/0000-0001-7237-1060",
+          "institutions": [
+            "Monash University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-13",
+      "abstract": "Neoliberalism is a diffuse and contested term; however, as an art of government, drawing on Foucault\u2019s theorising, it posits personal responsibility as the basis of an ethical society. Neoliberalism mostly governs individuals through their freedom, where the concept of freedom presupposes a rational self that is motivated to improve and secure their life now and in the future. For those who are unable or unwilling to participate in securing a decent lifestyle within the norms of society, systematic modifications including social welfare policies that are punitive and freedom-depriving are used to attempt to modify individuals\u2019 behaviour. Direct social work practice with individuals also relies on individual autonomy as one of its central technologies guiding individuals towards choices that will improve their lives. Social work practitioners are seen to be part of an enabling network that assists individuals who are considered self-excluded due to their irresponsible choices to work on themselves to form an \u2018entrepreneurial self\u2019. Social workers engage in the neoliberal art of governance through the \u2018conduct of conduct\u2019 of self and others in their direct practice with people. If individuals are understood as constituted through networks of power relations, then direct social work using a pastoral relationship can be a node of power where understanding of whom they are \u2018made to be\u2019 can enable engaging in individual and collective resistance to some of the perversions of neoliberal governance. Through pastoral care, resistance as both \u2018conduct of conduct\u2019 and \u2018counter conduct\u2019 is possible and necessary.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Social Work",
+        "type": "journal",
+        "issn": [
+          "1369-1457",
+          "1468-2664"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Social Work Education and Practice",
+        "Homelessness and Social Issues"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2896237628"
+    },
+    {
+      "openalex_id": "W4311735234",
+      "doi": "10.1086/722126",
+      "title": "Ghostwritten Lives: Autonomy, Deference, and Self-Authorship",
+      "authors": [
+        {
+          "name": "Michael Garnett",
+          "openalex_id": "A5044647411"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-15",
+      "abstract": "Certain forms of practical deference seem to be incompatible with personal autonomy. I argue that such deference undermines autonomy not by compromising the governance of an authentic self, nor by constituting a failure to track objective reasons, but by constituting a particular social relation: one of interpersonal rule. I analyze this social relation and distinguish it from others, including ordinary relations of love and care. Finally, I argue that the particular form of interpersonal rule constituted by dispositions of practical deference in itself entails a partial, though not total, disconnection from the good of a self-authored life.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Ethics",
+        "type": "journal",
+        "issn": [
+          "0014-1704",
+          "1539-297X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/722126"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Philosophical Ethics and Theory",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4311735234"
+    },
+    {
+      "openalex_id": "W4384464487",
+      "doi": "10.1186/s41239-023-00411-8",
+      "title": "Students\u2019 voices on generative AI: perceptions, benefits, and challenges in higher education",
+      "authors": [
+        {
+          "name": "Cecilia Ka Yuk Chan",
+          "openalex_id": "A5079685686",
+          "orcid": "https://orcid.org/0000-0001-6984-6360",
+          "institutions": [
+            "University of Hong Kong"
+          ]
+        },
+        {
+          "name": "Wenjie Hu",
+          "openalex_id": "A5018198927",
+          "orcid": "https://orcid.org/0000-0003-1795-1710",
+          "institutions": [
+            "University of Hong Kong"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-16",
+      "abstract": "Abstract This study explores university students\u2019 perceptions of generative AI (GenAI) technologies, such as ChatGPT, in higher education, focusing on familiarity, their willingness to engage, potential benefits and challenges, and effective integration. A survey of 399 undergraduate and postgraduate students from various disciplines in Hong Kong revealed a generally positive attitude towards GenAI in teaching and learning. Students recognized the potential for personalized learning support, writing and brainstorming assistance, and research and analysis capabilities. However, concerns about accuracy, privacy, ethical issues, and the impact on personal development, career prospects, and societal values were also expressed. According to John Biggs\u2019 3P model, student perceptions significantly influence learning approaches and outcomes. By understanding students\u2019 perceptions, educators and policymakers can tailor GenAI technologies to address needs and concerns while promoting effective learning outcomes. Insights from this study can inform policy development around the integration of GenAI technologies into higher education. By understanding students\u2019 perceptions and addressing their concerns, policymakers can create well-informed guidelines and strategies for the responsible and effective implementation of GenAI tools, ultimately enhancing teaching and learning experiences in higher education.",
+      "cited_by_count": 1396,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Educational Technology in Higher Education",
+        "type": "journal",
+        "issn": [
+          "2365-9440"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://educationaltechnologyjournal.springeropen.com/counter/pdf/10.1186/s41239-023-00411-8"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in Service Interactions"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W4384464487"
+    },
+    {
+      "openalex_id": "W4390967667",
+      "doi": "10.1007/s12525-023-00684-x",
+      "title": "Establishing altruistic ethics to use technology for Social Welfare\u2014How Japan manages Web3 and self-sovereign identity in local communities",
+      "authors": [
+        {
+          "name": "D. Kim",
+          "openalex_id": "A5103277639",
+          "orcid": "https://orcid.org/0009-0007-1019-8937",
+          "institutions": [
+            "Keio University Shonan Fujisawa"
+          ]
+        },
+        {
+          "name": "Jiro Kokuryo",
+          "openalex_id": "A5016854552",
+          "orcid": "https://orcid.org/0000-0003-4906-3494",
+          "institutions": [
+            "Keio University Shonan Fujisawa"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-18",
+      "abstract": "Abstract Technologies of self-sovereign identity (SSI) and Web3 tools that strongly protect individual autonomy, combined with the ethics of Asian altruism, can effectively guide the governance of the emerging cyber civilization. In contrast, governance in Western industrial civilization stresses the pursuit of individual self-interest and struggles to balance the benefits of big tech with the protection of individual dignity and the preservation of the common good. We demonstrate, with reference to a local community in Japan, that SSI is successful in encouraging communal collaboration and well-being while providing individuals with greater control over their personal data. We also show that Web3 tools provide incentives for altruistic behaviors while safeguarding SSI. Integration of SSI and social protection demonstrates the potential for building an information society grounded in altruistic values, honoring individual dignity, and recognizing the government\u2019s role in protecting social welfare. Ultimately, this research unveils how altruistic values can be fostered through SSI and Web3.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Electronic Markets",
+        "type": "journal",
+        "issn": [
+          "1019-6781",
+          "1422-8890"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12525-023-00684-x.pdf"
+      },
+      "topics": [
+        "Sharing Economy and Platforms",
+        "Privacy, Security, and Data Protection",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W4390967667"
+    },
+    {
+      "openalex_id": "W4309470569",
+      "doi": "10.1080/23311975.2022.2144703",
+      "title": "Critical Success Factors for the Better Performance of Agricultural Marketing Co-operative Societies in Rombo District, Tanzania: Are Members Aware of Them?",
+      "authors": [
+        {
+          "name": "Victor Shirima",
+          "openalex_id": "A5024217717",
+          "orcid": "https://orcid.org/0000-0001-6842-9178",
+          "institutions": [
+            "Moshi Co-operative University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-18",
+      "abstract": "The purpose of the study was to establish the Critical Success Factors (CSFs) for the primary Agricultural Marketing Co-operatives Societies (AMCOS) at Rombo District in Tanzania. Specifically, the study aimed to establish factors that members perceive to be critical to their success, and to assess their contribution to the AMCOS performance. The study identified factors through intensive literature review, then refining them before testing them through survey to members and employed survey by distributing 334 questionnaires to members to the AMCOS that have the autonomy to do business directly without dependingon their umbrella institutions. Qualitative data were also used in order to validate the quantitative data. Data from survey were analysed by factor analysis in order to have factors which were mostly accepted by the AMCOS members. After categorising the factors obtained from the factor analysis, regression analysis was conducted to assess their influence on the performance. Qualitative data were analysed using content Analysis by the help of ATLAS Software. The study established Eleven (11) CSFs that were categorised into: commitment (use of personal skills, members' control and promotion), governance (measurement system, governance structure, leadership support, and transparency), strategy (self-evaluation, objective development, strategy focused, living the vision of the institution). The study found the CSFs to have positive significant influence on the primary AMCOS performance. The study concludes that members of the primary AMCOS do have their common factors which they believe to be key for the success of their institutions, that affect positively the performance of their cooperatives. The study recommends that, the CSFs suggested by the members should be given priority in any decision that is intended to affect the cooperatives that can be easily translated according to their expectations to have strong institutions.",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Cogent Business & Management",
+        "type": "journal",
+        "issn": [
+          "2331-1975"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.tandfonline.com/doi/epdf/10.1080/23311975.2022.2144703?needAccess=true&role=button"
+      },
+      "topics": [
+        "Cooperative Studies and Economics",
+        "Islamic Finance and Banking Studies"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W4309470569"
+    },
+    {
+      "openalex_id": "W2591654989",
+      "doi": "10.1257/jel.53.4.898",
+      "title": "Culture and Institutions",
+      "authors": [
+        {
+          "name": "Alberto Alesina",
+          "openalex_id": "A5083494527",
+          "institutions": [
+            "Bocconi University",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Paola Giuliano",
+          "openalex_id": "A5044204764",
+          "orcid": "https://orcid.org/0000-0002-3809-4108",
+          "institutions": [
+            "Anderson University - South Carolina",
+            "UCLA Health"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-01",
+      "abstract": "A growing body of empirical work measuring different types of cultural traits has shown that culture matters for a variety of economic outcomes. This paper focuses on one specific aspect of the relevance of culture: its relationship to institutions. We review work with a theoretical, empirical, and historical bent to assess the presence of a two-way causal effect between culture and institutions. ( JEL D02, D72, I32, J12, Z13)",
+      "cited_by_count": 1366,
+      "type": "article",
+      "source": {
+        "name": "Journal of Economic Literature",
+        "type": "journal",
+        "issn": [
+          "0022-0515",
+          "1547-1101",
+          "2328-8175"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jel.53.4.898"
+      },
+      "topics": [
+        "Culture, Economy, and Development Studies",
+        "Economic Policies and Impacts",
+        "Experimental Behavioral Economics Studies"
+      ],
+      "referenced_works_count": 219,
+      "url": "https://openalex.org/W2591654989"
+    },
+    {
+      "openalex_id": "W2277370197",
+      "doi": "10.1136/bmjqs-2015-004315",
+      "title": "Coproduction of healthcare service",
+      "authors": [
+        {
+          "name": "Maren Batalden",
+          "openalex_id": "A5067284350",
+          "institutions": [
+            "Cambridge Health Alliance"
+          ]
+        },
+        {
+          "name": "Paul B. Batalden",
+          "openalex_id": "A5054329972",
+          "orcid": "https://orcid.org/0000-0002-2283-989X",
+          "institutions": [
+            "Dartmouth Institute for Health Policy and Clinical Practice"
+          ]
+        },
+        {
+          "name": "Peter A. Margolis",
+          "openalex_id": "A5041400870",
+          "orcid": "https://orcid.org/0000-0002-2585-4630",
+          "institutions": [
+            "Cincinnati Children's Hospital Medical Center"
+          ]
+        },
+        {
+          "name": "Michael Seid",
+          "openalex_id": "A5052063099",
+          "orcid": "https://orcid.org/0000-0001-9773-9263",
+          "institutions": [
+            "Cincinnati Children's Hospital Medical Center"
+          ]
+        },
+        {
+          "name": "Gail Armstrong",
+          "openalex_id": "A5029572440",
+          "orcid": "https://orcid.org/0000-0002-1274-5267",
+          "institutions": [
+            "University of Colorado Anschutz Medical Campus",
+            "University of Colorado Denver"
+          ]
+        },
+        {
+          "name": "Lisa Opipari\u2010Arrigan",
+          "openalex_id": "A5027832467",
+          "orcid": "https://orcid.org/0000-0001-6989-9518",
+          "institutions": [
+            "Cincinnati Children's Hospital Medical Center"
+          ]
+        },
+        {
+          "name": "Hans Hartung",
+          "openalex_id": "A5063007485",
+          "institutions": [
+            "University Hospital Crosshouse"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-09-16",
+      "abstract": "Efforts to ensure effective participation of patients in healthcare are called by many names\u2014patient centredness, patient engagement, patient experience. Improvement initiatives in this domain often resemble the efforts of manufacturers to engage consumers in designing and marketing products. Services, however, are fundamentally different than products; unlike goods, services are always \u2018coproduced\u2019. Failure to recognise this unique character of a service and its implications may limit our success in partnering with patients to improve health care. We trace a partial history of the coproduction concept, present a model of healthcare service coproduction and explore its application as a design principle in three healthcare service delivery innovations. We use the principle to examine the roles, relationships and aims of this interdependent work. We explore the principle's implications and challenges for health professional development, for service delivery system design and for understanding and measuring benefit in healthcare services.",
+      "cited_by_count": 1043,
+      "type": "article",
+      "source": {
+        "name": "BMJ Quality & Safety",
+        "type": "journal",
+        "issn": [
+          "2044-5415",
+          "2044-5423"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://qualitysafety.bmj.com/content/qhc/25/7/509.full.pdf"
+      },
+      "topics": [
+        "Service and Product Innovation",
+        "Mental Health and Patient Involvement",
+        "Medical Research and Practices"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W2277370197"
+    },
+    {
+      "openalex_id": "W2174691720",
+      "doi": "10.1108/sbm-03-2015-0010",
+      "title": "Legitimacy and democracy: implications for governance in sport",
+      "authors": [
+        {
+          "name": "Brian Minikin",
+          "openalex_id": "A5006465429",
+          "institutions": [
+            "University of Stirling"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-10-30",
+      "abstract": "Purpose \u2013 The purpose of this paper is to demonstrate how the existing mechanisms for legitimising member based sport organisations can lead to poor governance and how accepted democratic processes can be manipulated to suit the personal agenda of individuals over the vision of the organisation. Design/methodology/approach \u2013 Three cases are provided to illustrate how, it is relatively easy for individuals to manipulate the established rules in order to obtain and retain power. Findings \u2013 The self-regulatory nature of sport assumes that elected representatives put the organisation\u2019s interests before their own and that they always act in the best interests of the members. The evidence, provided in this paper, suggests that this assumption may be inappropriate. Research limitations/implications \u2013 The case studies provided occurred within the boundaries of one continental grouping of countries and may be considered biased due to the specific demographic characteristics of this part of the world and the relative lack of development of sport systems that exist there. Practical implications \u2013 The paper raises important questions about the appropriateness of the legitimising mechanisms that affect sport and the challenges that face modern sport organisations. Social implications \u2013 The paper may provide a basis for arguing that the concepts of democracy and autonomy in sport organisations need to be reviewed if their autonomy is to be maintained. Originality/value \u2013 This paper provides a basis for challenging the basis of how sport is structured and how member based sport organisations are legitimised to operate as they do.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Sport Business and Management An International Journal",
+        "type": "journal",
+        "issn": [
+          "2042-678X",
+          "2042-6798"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Sport and Mega-Event Impacts",
+        "Sports, Gender, and Society",
+        "Doping in Sports"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W2174691720"
+    },
+    {
+      "openalex_id": "W3007311855",
+      "doi": "10.15171/ijhpm.2019.141",
+      "title": "Integrating the Population Perspective into Health System Performance Assessment (IPHA): Study Protocol for a Cross-Sectional Study in Germany Linking Survey and Claims Data of Statutorily and Privately Insured",
+      "authors": [
+        {
+          "name": "Miriam Bl\u00fcmel",
+          "openalex_id": "A5018339599",
+          "orcid": "https://orcid.org/0000-0002-8452-4666",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Julia R\u00f6ttger",
+          "openalex_id": "A5112966413",
+          "orcid": "https://orcid.org/0000-0003-3766-2465",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Julia K\u00f6ppen",
+          "openalex_id": "A5087470363",
+          "orcid": "https://orcid.org/0000-0001-7941-641X",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Katharina Achstetter",
+          "openalex_id": "A5036299777",
+          "orcid": "https://orcid.org/0000-0002-1436-4345",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Reinhard Busse",
+          "openalex_id": "A5043911021",
+          "orcid": "https://orcid.org/0000-0003-4961-9130",
+          "institutions": [
+            "Technische Universit\u00e4t Berlin"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-20",
+      "abstract": "Background: Health system performance assessment (HSPA) is a major tool for evidence-based governance in health systems and patient/population-orientation is increasingly considered as an important aspect. The IPHA study aims (1) to undertake a comprehensive performance assessment of the German health system from a population perspective based on the intermediate and final dimensions defined by the World Health Organization (WHO) and (2) to identify differences in HSPA between (a) common user characteristics and (b) user types, which differ in their interactions and patterns of action within the health system. Methods and Analysis: A cross-sectional survey was conducted between October and December 2018 with statutorily and privately health insured to assess the German health system from a population perspective related to the past 12 months. The random sample consists of 32 000 persons insured by AOK Nordost and 20 000 persons insured by Debeka. Data from the survey will subsequently be linked with health insurance claims data at the individual level for each respondent who has given consent for data linkage. Claims data covers the time period January 1, 2017 to June 30, 2018. The combination of the 2 data sources allows to identify associations between insured patient characteristics and differences in the assessment of health system performance. The survey consists of 71 items measuring all final and intermediate health system goals defined by the WHO and user characteristics like health literacy, self-efficacy, the attention an individual pays to his or her health or disease, the personal network, autonomy, compliance and sociodemographics. The claims data contains information on morbidity, care delivery, service utilization, (co)payments and sociodemography. Discussion: The study represents a promising attempt to perform a holistic HSPA using a population perspective. For this purpose, a questionnaire was designed that contains both validated and new items in order to collect data on all relevant health system dimensions. In particular, linking survey data on HSPA with claims data is of high potential for assessing and analysing determinants of health system performance from the population perspective.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Health Policy and Management",
+        "type": "journal",
+        "issn": [
+          "2322-5939"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.ijhpm.com/article_3741_5ded761d1cb3e355b2ec3b2f62f08ef4.pdf"
+      },
+      "topics": [
+        "Healthcare Systems and Reforms",
+        "Healthcare Policy and Management",
+        "Patient Satisfaction in Healthcare"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W3007311855"
+    },
+    {
+      "openalex_id": "W2605430904",
+      "doi": "10.1017/s1755048317000244",
+      "title": "Religion and Self-Governance: Catholicism, Islam, and the Issue of Censorship",
+      "authors": [
+        {
+          "name": "Ted G. Jelen",
+          "openalex_id": "A5110907919",
+          "institutions": [
+            "University of Nevada, Las Vegas"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-04-24",
+      "abstract": "Abstract Two aspects of democratic self-governance are analyzed: Collective self-governance, or the authority of citizens over one another, and individual self-governance, referring to the ability of each citizen to govern her/his own beliefs and actions. Individual self-governance is thought to require some level of autonomy on the part of individual citizens, and authenticity of personal preferences and desires. Beliefs about autonomy and authenticity in Roman Catholic and Islamic theology are considered, and these perspectives are applied to the problem of restricting certain types of discourse, based on the content of that discourse. While censorship if usually considered to be incompatible with democratic governance, Catholic and Islamic perspectives on individual self-governance suggest the possibility that some forms of censorship may enhance, rather than detract from citizen autonomy and authenticity, and enhance the possibility of positive collective self-governance.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Politics and Religion",
+        "type": "journal",
+        "issn": [
+          "1755-0483",
+          "1755-0491"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Religion, Society, and Development",
+        "American Constitutional Law and Politics"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W2605430904"
+    },
+    {
+      "openalex_id": "W3004820650",
+      "doi": "10.31235/osf.io/24dwn",
+      "title": "Self-nudging and the citizen choice architect",
+      "authors": [
+        {
+          "name": "Samuli Reijula",
+          "openalex_id": "A5049206353",
+          "orcid": "https://orcid.org/0000-0001-6968-5819",
+          "institutions": [
+            "University of Helsinki",
+            "Max Planck Institute for Human Development"
+          ]
+        },
+        {
+          "name": "Ralph Hertwig",
+          "openalex_id": "A5068556395",
+          "orcid": "https://orcid.org/0000-0002-9908-9556"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-12",
+      "abstract": "This article argues that nudges can often be turned into self-nudges: empowering interventions that enable people to design and structure their own decision environments\u2014that is, to act as citizen choice architects. Self-nudging applies insights from behavioral science in a way that is practicable and cost-effective but that sidesteps concerns about paternalism or manipulation. It has the potential to expand the scope of application of behavioral insights from the public to the personal sphere (e.g., homes, offices, families). It is a tool for reducing failures of self-control and enhancing personal autonomy; specifically, self-nudging can mean designing one\u2019s proximate choice architecture to alleviate the effects of self-control problems, engaging in education to understand the nature and causes of self-control problems, and employing simple educational nudges to improve goal attainment in various domains. It can even mean self-paternalistic interventions such as winnowing down one\u2019s choice set by, for instance, removing options. Policy makers could promote self-nudging by sharing knowledge about nudges and how they work. The ultimate goal of the self-nudging approach is to enable citizen choice architects\u2019 efficient self-governance, where reasonable, and the self-determined arbitration of conflicts between their mutually exclusive goals and preferences.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Housing Market and Economics"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W3004820650"
+    },
+    {
+      "openalex_id": "W2412950412",
+      "doi": "10.7220/2345-024x.17.6",
+      "title": "AUTONOMIJA KAIP STUDENTU PROFESINES GEROVES ASMENINIS ISTEKLIUS",
+      "authors": [
+        {
+          "name": "Kristina Paradnik\u0117",
+          "openalex_id": "A5074121970"
+        },
+        {
+          "name": "Rita Bandzevi\u010dien\u0117",
+          "openalex_id": "A5014967156"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Background. The awareness of resources that help to overcome life challenges and flourish even in the conditions of uncertainty is critically important for young individuals transitioning from school to labor market. Autonomy, as self-governance, based on the basis of personal interests, integrated goals and values, is linked with a number of positive constructs. Those include performance, creativity, greater sense of personal reward and energy, engagement in pro-social activities and etc. Thus, autonomy might be a promising personal resource for successful functioning and occupational well-being manifested as satisfaction with life, engagement and academic major satisfaction. Purpose. The purpose of the study was to analyze the role of students\u2019 autonomy when predicting satisfaction with life, engagement and academic major satisfaction. Method. The sample consisted of 148 college students (97.3% male, 2.7% female; mean age 19.69 \u00b1 1.30). The Short version of Utrecht Work Engagement Scale \u2013 student version (Schaufeli et al., 2002), Satisfaction With Life Scale (Diener et al., 1985), Academic Major Satisfaction Scale (Nauta, 2007) and Dispositional Index of Autonomous Functioning scale (Weinstein et al., 2012) were used in the study. Results. Only one of the components of autonomy, authorship/self-congruence in particular, had significant positive relationship with study variables and was a significant predictor of study engagement, satisfaction with life and academic major satisfaction. Conclusion. Our findings suggest that at least to some extent autonomy might serve as an important resource of students\u2019 well-being while struggling in academic settings.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Psychology a Biopsychosocial Approach",
+        "type": "journal",
+        "issn": [
+          "1941-7233",
+          "2345-024X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.7220/2345-024x.17.6"
+      },
+      "topics": [
+        "Motivation and Self-Concept in Sports",
+        "Psychological Well-being and Life Satisfaction",
+        "Grit, Self-Efficacy, and Motivation"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W2412950412"
+    },
+    {
+      "openalex_id": "W2992637938",
+      "doi": null,
+      "title": "The open future: Analysing the temporality of autonomy in family law",
+      "authors": [
+        {
+          "name": "Ellen Gordon-Bouvier",
+          "openalex_id": "A5021958904",
+          "orcid": "https://orcid.org/0000-0001-8516-9128"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "This article takes a novel approach by applying a theoretical framework of temporality to the law governing financial obligations on divorce. Although under-explored, particularly in family law, time and temporality are powerful tools of legal governance that reinforce norms and expectations of behaviour. The article explores family law\u2019s increasing preoccupation with principles of individual autonomy, as demonstrated through the recognition of prenuptial agreements and the expectation of financial self-sufficiency post-divorce. It argues that law\u2019s expectations of autonomy are reflected through temporal mechanisms, promoting liberal ideals of linear progress and modernity. The prenup and the clean break are based on an imagined legal subject who can seamlessly move on from the divorce towards an \u2018open future\u2019 that is unconstrained by obligations from the marriage. However, as the article argues, family law\u2019s imagined linear temporality conflicts with the temporal experiences of caregivers. Although the certainty promised by the prenup and the clean break is lauded as a universal good, caregivers face considerable temporal barriers to self-righting post-divorce. Problematically, neoliberal rhetoric paints longer-term financial hardship as a personal failure rather than a societal problem, frequently depicting the caregiver as someone stuck in the past and preventing the former spouse from moving forwards.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Radar (Oxford Brookes University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://radar.brookes.ac.uk/radar/items/df02cfb9-8157-4cc2-b547-5d5862042dac/1/"
+      },
+      "topics": [
+        "Conflict of Laws and Jurisdiction",
+        "Legal Systems and Judicial Processes"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2992637938"
+    },
+    {
+      "openalex_id": "W2804990926",
+      "doi": "10.1287/isre.2018.0794",
+      "title": "Introduction\u2014Platforms and Infrastructures in the Digital Age",
+      "authors": [
+        {
+          "name": "Panos Constantinides",
+          "openalex_id": "A5050801999",
+          "orcid": "https://orcid.org/0000-0003-2728-8975",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "Ola Henfridsson",
+          "openalex_id": "A5049831156",
+          "orcid": "https://orcid.org/0000-0003-1605-5180",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "Geoffrey Parker",
+          "openalex_id": "A5101535189",
+          "orcid": "https://orcid.org/0000-0002-7160-6451",
+          "institutions": [
+            "Dartmouth College"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-21",
+      "abstract": "In the last few years, leading-edge research from information systems, strategic management, and economics have separately informed our understanding of platforms and infrastructures in the digital age. Our motivation for undertaking this special issue rests in the conviction that it is significant to discuss platforms and infrastructures concomitantly, while enabling knowledge from diverse disciplines to cross-pollinate to address critical, pressing policy challenges and inform strategic thinking across both social and business spheres. In this editorial, we review key insights from the literature on digital infrastructures and platforms, present emerging research themes, highlight the contributions developed from each of the six articles in this special issue, and conclude with suggestions for further research.",
+      "cited_by_count": 835,
+      "type": "article",
+      "source": {
+        "name": "Information Systems Research",
+        "type": "journal",
+        "issn": [
+          "1047-7047",
+          "1526-5536"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://pubsonline.informs.org/doi/pdf/10.1287/isre.2018.0794"
+      },
+      "topics": [
+        "Digital Platforms and Economics",
+        "Auction Theory and Applications",
+        "ICT Impact and Policies"
+      ],
+      "referenced_works_count": 147,
+      "url": "https://openalex.org/W2804990926"
+    },
+    {
+      "openalex_id": "W2242311169",
+      "doi": "10.1007/s12152-015-9246-3",
+      "title": "Updating our Selves: Synthesizing Philosophical and Neurobiological Perspectives on Incorporating New Information into our Worldview",
+      "authors": [
+        {
+          "name": "Fay Niker",
+          "openalex_id": "A5080412580",
+          "orcid": "https://orcid.org/0000-0002-5597-7068",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "Peter B. Reiner",
+          "openalex_id": "A5055406859",
+          "orcid": "https://orcid.org/0000-0002-0587-5880",
+          "institutions": [
+            "University of British Columbia",
+            "NeuroDevNet"
+          ]
+        },
+        {
+          "name": "Gidon Felsen",
+          "openalex_id": "A5073641022",
+          "orcid": "https://orcid.org/0000-0003-0745-8279",
+          "institutions": [
+            "NeuroDevNet",
+            "University of British Columbia",
+            "University of Colorado Denver"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-18",
+      "abstract": null,
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Neuroethics",
+        "type": "journal",
+        "issn": [
+          "1874-5490",
+          "1874-5504"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neuroscience, Education and Cognitive Function",
+        "Embodied and Extended Cognition",
+        "Action Observation and Synchronization"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W2242311169"
+    },
+    {
+      "openalex_id": "W4221106857",
+      "doi": "10.3389/fsurg.2022.862322",
+      "title": "Legal and Ethical Consideration in Artificial Intelligence in Healthcare: Who Takes Responsibility?",
+      "authors": [
+        {
+          "name": "Nithesh Naik",
+          "openalex_id": "A5025506250",
+          "orcid": "https://orcid.org/0000-0003-0356-7697",
+          "institutions": [
+            "Manipal Academy of Higher Education"
+          ]
+        },
+        {
+          "name": "B. M. Zeeshan Hameed",
+          "openalex_id": "A5066540164",
+          "orcid": "https://orcid.org/0000-0002-2904-351X",
+          "institutions": [
+            "Father Muller Medical College Hospital"
+          ]
+        },
+        {
+          "name": "Dasharathraj K Shetty",
+          "openalex_id": "A5009434368",
+          "orcid": "https://orcid.org/0000-0002-5021-4029",
+          "institutions": [
+            "Manipal Academy of Higher Education"
+          ]
+        },
+        {
+          "name": "Dishant Swain",
+          "openalex_id": "A5017851202",
+          "institutions": [
+            "Manipal Academy of Higher Education"
+          ]
+        },
+        {
+          "name": "Milap Shah",
+          "openalex_id": "A5090723104",
+          "orcid": "https://orcid.org/0000-0003-1668-7006",
+          "institutions": [
+            "Max Healthcare"
+          ]
+        },
+        {
+          "name": "Rahul Paul",
+          "openalex_id": "A5006513001",
+          "orcid": "https://orcid.org/0000-0003-1491-1166",
+          "institutions": [
+            "Massachusetts General Hospital",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Kaivalya Aggarwal",
+          "openalex_id": "A5000121535",
+          "institutions": [
+            "Manipal Academy of Higher Education"
+          ]
+        },
+        {
+          "name": "Sufyan Ibrahim",
+          "openalex_id": "A5067015040",
+          "orcid": "https://orcid.org/0000-0001-9127-2738",
+          "institutions": [
+            "Kasturba Medical College, Manipal",
+            "Manipal Academy of Higher Education"
+          ]
+        },
+        {
+          "name": "Vathsala Patil",
+          "openalex_id": "A5088117549",
+          "orcid": "https://orcid.org/0000-0002-8656-8080",
+          "institutions": [
+            "Manipal Academy of Higher Education"
+          ]
+        },
+        {
+          "name": "Komal Smriti",
+          "openalex_id": "A5065001390",
+          "orcid": "https://orcid.org/0000-0002-7061-9883",
+          "institutions": [
+            "Manipal Academy of Higher Education"
+          ]
+        },
+        {
+          "name": "Suyog Shetty",
+          "openalex_id": "A5013353259",
+          "orcid": "https://orcid.org/0000-0003-3784-8016",
+          "institutions": [
+            "Father Muller Medical College Hospital"
+          ]
+        },
+        {
+          "name": "Bhavan Prasad",
+          "openalex_id": "A5103033178",
+          "orcid": "https://orcid.org/0000-0002-6323-7246",
+          "institutions": [
+            "Freeman Hospital"
+          ]
+        },
+        {
+          "name": "P. Ch\u0142osta",
+          "openalex_id": "A5051227886",
+          "institutions": [
+            "Jagiellonian University"
+          ]
+        },
+        {
+          "name": "Bhaskar Somani",
+          "openalex_id": "A5020657630",
+          "orcid": "https://orcid.org/0000-0002-6248-6478",
+          "institutions": [
+            "National Health Service",
+            "University Hospital Southampton NHS Foundation Trust"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-14",
+      "abstract": "The legal and ethical issues that confront society due to Artificial Intelligence (AI) include privacy and surveillance, bias or discrimination, and potentially the philosophical challenge is the role of human judgment. Concerns about newer digital technologies becoming a new source of inaccuracy and data breaches have arisen as a result of its use. Mistakes in the procedure or protocol in the field of healthcare can have devastating consequences for the patient who is the victim of the error. Because patients come into contact with physicians at moments in their lives when they are most vulnerable, it is crucial to remember this. Currently, there are no well-defined regulations in place to address the legal and ethical issues that may arise due to the use of artificial intelligence in healthcare settings. This review attempts to address these pertinent issues highlighting the need for algorithmic transparency, privacy, and protection of all the beneficiaries involved and cybersecurity of associated vulnerabilities.",
+      "cited_by_count": 795,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Surgery",
+        "type": "journal",
+        "issn": [
+          "2296-875X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fsurg.2022.862322/pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4221106857"
+    },
+    {
+      "openalex_id": "W2765304416",
+      "doi": "10.2196/jmir.8775",
+      "title": "Beyond Adoption: A New Framework for Theorizing and Evaluating Nonadoption, Abandonment, and Challenges to the Scale-Up, Spread, and Sustainability of Health and Care Technologies",
+      "authors": [
+        {
+          "name": "Trisha Greenhalgh",
+          "openalex_id": "A5059176055",
+          "orcid": "https://orcid.org/0000-0003-2369-8088",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Joseph Wherton",
+          "openalex_id": "A5077083399",
+          "orcid": "https://orcid.org/0000-0001-7701-4783",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Chrysanthi Papoutsi",
+          "openalex_id": "A5091582941",
+          "orcid": "https://orcid.org/0000-0003-1189-7100",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Jennifer Lynch",
+          "openalex_id": "A5101685108",
+          "orcid": "https://orcid.org/0000-0002-2601-7498",
+          "institutions": [
+            "University of Hertfordshire"
+          ]
+        },
+        {
+          "name": "Gemma Hughes",
+          "openalex_id": "A5017047819",
+          "orcid": "https://orcid.org/0000-0003-2930-1125",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Christine A\u2019Court",
+          "openalex_id": "A5066102523",
+          "orcid": "https://orcid.org/0000-0003-1829-3860",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Susan Hinder",
+          "openalex_id": "A5046268202",
+          "orcid": "https://orcid.org/0000-0001-8451-2027",
+          "institutions": [
+            "RAFT Solutions (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Nick Fahy",
+          "openalex_id": "A5068276550",
+          "orcid": "https://orcid.org/0000-0003-4957-0189",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Rob Procter",
+          "openalex_id": "A5056201855",
+          "orcid": "https://orcid.org/0000-0001-8059-5224",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "S. E. Shaw",
+          "openalex_id": "A5079756533",
+          "orcid": "https://orcid.org/0000-0002-7014-4793",
+          "institutions": [
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-01",
+      "abstract": "Subject to further empirical testing, NASSS could be applied across a range of technological innovations in health and social care. It has several potential uses: (1) to inform the design of a new technology; (2) to identify technological solutions that (perhaps despite policy or industry enthusiasm) have a limited chance of achieving large-scale, sustained adoption; (3) to plan the implementation, scale-up, or rollout of a technology program; and (4) to explain and learn from program failures.",
+      "cited_by_count": 2310,
+      "type": "article",
+      "source": {
+        "name": "Journal of Medical Internet Research",
+        "type": "journal",
+        "issn": [
+          "1438-8871",
+          "1439-4456"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.jmir.org/2017/11/e367/PDF"
+      },
+      "topics": [
+        "Telemedicine and Telehealth Implementation",
+        "Electronic Health Records Systems",
+        "Health Policy Implementation Science"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W2765304416"
+    },
+    {
+      "openalex_id": "W3206488632",
+      "doi": "10.2139/ssrn.3941520",
+      "title": "Relational Privacy and the Networked Governance of the Self",
+      "authors": [
+        {
+          "name": "Sara Bannerman",
+          "openalex_id": "A5001191352",
+          "orcid": "https://orcid.org/0000-0002-2295-3254",
+          "institutions": [
+            "McMaster University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.3941520"
+      },
+      "topics": [
+        "Privacy, Security, and Data Protection",
+        "Psychoanalysis, Philosophy, and Politics",
+        "Gender, Feminism, and Media"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W3206488632"
+    },
+    {
+      "openalex_id": "W2346603894",
+      "doi": "10.1057/9781137015129_12",
+      "title": "Women\u2019s Agency and the Fallacy of Autonomy: The Example of Rape and Sexual Consent",
+      "authors": [
+        {
+          "name": "Paul R. Reynolds",
+          "openalex_id": "A5009991971",
+          "orcid": "https://orcid.org/0000-0002-0931-3025"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Concepts are more important for what they do than for what they mean. Their value lies in the way in which they are able to provide a purchase for critical thought upon particular problems of the present. (Rose 1999, 9) Whether demonized or diminished, one central contention on the nature of women's capacity and ability to choose in their sexual conduct is that it is \u2014 or it should be \u2014 rooted in their individual, personal autonomy. This is a relatively recent development in the context of historically patriarchal and patrilineal descriptions of women. It is conceived as being progressive because it involves recognition of women's freedom of choice and self-governance, dissembling patriarchal characterizations of women as adjuncts or dependents \u2014 of 'Adam's rib' \u2014 and respecting women's dignity and equality as individuals alongside men. Seeing women 'in their own right' is a foundation to rejecting objectification and oppression.KeywordsSexual ViolenceFree ChoiceSexual OffenceAutonomous IndividualLiberal SocietyThese keywords were added by machine and not by the authors. This process is experimental and the keywords may be updated as the learning algorithm improves.",
+      "cited_by_count": 5,
+      "type": "book-chapter",
+      "source": {
+        "name": "Palgrave Macmillan UK eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Feminism, Gender, and Sexuality Studies",
+        "Gender Politics and Representation",
+        "Historical Gender and Feminism Studies"
+      ],
+      "referenced_works_count": 87,
+      "url": "https://openalex.org/W2346603894"
+    },
+    {
+      "openalex_id": "W3095596619",
+      "doi": "10.2147/lra.s240564",
+      "title": "&lt;p&gt;Burnout in Healthcare Workers: Prevalence, Impact and Preventative Strategies&lt;/p&gt;",
+      "authors": [
+        {
+          "name": "Stefan De Hert",
+          "openalex_id": "A5018843006",
+          "orcid": "https://orcid.org/0000-0002-6624-1646",
+          "institutions": [
+            "Ghent University Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-01",
+      "abstract": "Approximately, one in three physicians is experiencing burnout at any given time. This may not only interfere with own wellbeing but also with the quality of delivered care. This narrative review discusses several aspects of the burnout syndrome: prevalence, symptoms, etiopathogenesis, diagnosis, impact, and strategies on how to deal with the problem.",
+      "cited_by_count": 609,
+      "type": "review",
+      "source": {
+        "name": "Local and Regional Anesthesia",
+        "type": "journal",
+        "issn": [
+          "1178-7112"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.dovepress.com/getfile.php?fileID=63010"
+      },
+      "topics": [
+        "Healthcare professionals\u2019 stress and burnout",
+        "Stress and Burnout Research",
+        "Musculoskeletal pain and rehabilitation"
+      ],
+      "referenced_works_count": 93,
+      "url": "https://openalex.org/W3095596619"
+    },
+    {
+      "openalex_id": "W2899768131",
+      "doi": "10.1371/journal.pmed.1002689",
+      "title": "Machine learning in medicine: Addressing ethical challenges",
+      "authors": [
+        {
+          "name": "Effy Vayena",
+          "openalex_id": "A5069093620",
+          "orcid": "https://orcid.org/0000-0003-1303-5467",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "Alessandro Blasimme",
+          "openalex_id": "A5087306590",
+          "orcid": "https://orcid.org/0000-0001-5908-2002",
+          "institutions": [
+            "ETH Zurich"
+          ]
+        },
+        {
+          "name": "I. Glenn Cohen",
+          "openalex_id": "A5076810459",
+          "orcid": "https://orcid.org/0000-0002-0223-3305"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-06",
+      "abstract": "Effy Vayena and colleagues argue that machine learning in medicine must offer data protection, algorithmic transparency, and accountability to earn the trust of patients and clinicians.",
+      "cited_by_count": 723,
+      "type": "article",
+      "source": {
+        "name": "PLoS Medicine",
+        "type": "journal",
+        "issn": [
+          "1549-1277",
+          "1549-1676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1002689&type=printable"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "Healthcare cost, quality, practices"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2899768131"
+    },
+    {
+      "openalex_id": "W3213608654",
+      "doi": "10.1108/cg-05-2021-0197",
+      "title": "Influence of the entrepreneur\u2019s personal values in business governance style and their relationship with happiness at work",
+      "authors": [
+        {
+          "name": "Mar\u00eda Jos\u00e9 Foncubierta Rodr\u00edguez",
+          "openalex_id": "A5085999853",
+          "orcid": "https://orcid.org/0000-0003-3231-5261",
+          "institutions": [
+            "Universidad de C\u00e1diz"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-05",
+      "abstract": "Purpose Happiness management is receiving increasing attention in business, and this is reflected in the literature. But any business management option has to be grounded in a true awareness or belief that it will be a suitable and appropriate choice. In this belief the personal values of those who have the power to lead the way to weigh heavily. In this sense, there are personal values that, when used as guidelines in the management of a company, seem to promote the happiness of employees in the work environment. The purpose of this paper is to find the personal values of the entrepreneur. As a secondary objective, the authors also study whether these values are associated with certain entrepreneurs\u2019 socio-demographic factors (gender and age). Design/methodology/approach The group to be studied is the Spanish business community. An exploratory study is carried out, first, with the definition of value constructs according to Schwartz\u2019s personal values model and, second, with a relational analysis, measuring association effects through logistic regression. Findings Two higher-order personal values of the entrepreneur are found that seem to contain all the elements that would lead to management styles that would facilitate happiness at work. These values emerge from a dimension model of Schwartz\u2019s theory of basic human values. MVP which, however, does not follow its four adjacent/antagonistic dimensions, but is composed of three dimensions adjacent to each other and, therefore, complementary. Moreover, some stereotypes in the literature on the relationships between personal values and certain socio-demographic factors are broken down and their effects on happiness at work are revealed. Research limitations/implications One of the limitations of this work is the relatively small sample size. In this sense, it would be useful to check whether the overall results are repeated in larger samples. Another limitation is that this is a portrait of the group at a given time. Given the experimental nature of this type of work, especially in the case of socio-demographic factors, it would be advisable to carry out a follow-up longitudinal analysis with a time horizon. This would allow a more precise investigation of the effects of the variables mentioned above. In addition, a third limitation is that the authors are studying the collective of Spanish entrepreneurs, and in the study of personal values, culture has a determining influence (Schenck, 2016; Boer and Boehnke, 2016; Perozo and Paz, 2016). It would also be worthwhile considering this study by sector: are the values the same for entrepreneurs in different sectors?; or in some specific sectors, for example, are there differences between entrepreneurs with tech businesses versus non-tech businesses or those who make the circular economy or the green economy a guideline for their organizations? Thus, technology companies must be open to change. Openness and innovation are for their entrepreneurs\u2019 key values to ensure their performance (Tseng, 2010; Van Auken et al. , 2008). However, in these organizations, there is a framework of conflicting values between the required flexibility and the values of power and control that the entrepreneur needs, and wants, to have (Albarrac\u00edn et al. , 2014). On the other hand, personal values determine green self-identity and moderate its relationships with ecological care and the moral obligation of the entrepreneur (Blankenberg and Alhusen, 2019; Barbarossa et al. , 2017). Therefore, it could be analysed whether these values are maintained in entrepreneurs in these sectors, influencing, as discussed in this paper, greater happiness in the work context; and whether they are conditioned by gender or age (Fotieva, 2021; Li et al. , 2020). It would also be helpful to study the socio-demographic influence further, to analyse the possibility of interaction or confounding effects between socio-demographic variables and some other variables not addressed in this paper. For example, does purchasing power or income level, affect personal values? And do the values that give content to F2, power and control, lead the entrepreneur to a higher level of income level or vice versa? Do other factors play a role? In fact, for Hirigoyen (2008), values such as altruism, benevolence and universalism are considered as obstacles to the development of the company. Subsequently, authors such as Salas-Vallina (2018) and Boubakary (2015) conclude that far from that idea, these axiological elements would lead to more significant business development through the satisfaction and happiness they generate in employees and stimulate their productivity, matching with the conclusions. It would be interesting, as a complement to the approach of this work, to carry out a study on the happiness at work of the entrepreneur\u2019s employees, being the group of employees surveyed. Knowing the profile of values of an entrepreneur through the scale proposed in this work, it would be possible to analyse whether this is associated with greater or lesser perceived happiness among his/her employees. As mentioned above, from the methodological point of view, a risk of using the multidimensional scaling modelling for the analysis of personal values is that the respondent reflects more what he/she considers socially desirable than his/her true perception. This bias is one of the main limitations of psychological research. However, the fact that European Statistical Office surveys are guided by experts, both in processing -knowing how to deal with social desirability in personal values research (Danioni and Barni, 2020) \u2013 and in data collection, eliminates this limitation. Practical implications However, despite the above limitations, this paper makes important contributions. On the one hand, at a theoretical and instrumental level, it shows that the higher-order values graph of Spanish entrepreneurs follows the circumplex essence of the Schwartz value model but does not obey its number of higher-order dimensions. In the case of entrepreneurs, it consists of three elements, three dimensions, adjacent and complementary. None of them contradicts any other. A methodology is created to portray the Spanish entrepreneur in an axiological way and, from this portrait, to reveal his/her tendency towards a leadership style that promotes the happiness of his/her employees, through the importance given to these three factors or dimensions. These dimensions are weighted, in turn, by issues such as gender or age group. For added practical purposes, this information would be beneficial, in the first place, for all those who want to work in and with a particular entrepreneur. The type of leadership or management expected is a factor or reason why a person decides where he/she would like to work (Qing et al. , 2020; Lee, 2016). This is not only for the potential employees of that business but also for all those groups or stakeholders, who engage with the company to perform their functions. Individuals make important decisions and choices about their relationships in the work environment based on the alignment of their values with those of the party they want to engage with (Sagiv et al. , 2015). On the other hand, it can serve entrepreneurship educators. By knowing the value factors of entrepreneurs, adjusted to the culture of the particular territory, they will be able to pass on this information to their entrepreneurship students (Karimi and Makreet, 2020; Arieli and Tenne-Gazit, 2017) and teach them how they could increase the happiness at work. It also serves to better understand the constructs of management values-employee engagement-workplace happiness in the current environment (Ravina-Ripoll et al. , 2020; Salas-Vallina et al. , 2017; Wang and Yang, 2016), by introducing the role of personal values on the entrepreneur\u2019s governance style into this construct (Figure 1). Social implications Finally, this study can also have social implications, making its tiny contribution to the SDGs through the study of personal values that guide the behaviour of the entrepreneur. The decision by international institutions for countries to implement the sustainable development goals (SDGs) (UNSDG 2030 Agenda) as cross-cutting strands of their policies has boosted the idea of addressing happiness at work. Thus, SDG 8 talks about Decent Work. In addition to the priority of improving the conditions of groups living in discriminatory working environments (child labour, poverty, precariousness, etc.), taken to its maximum expression, this objective encompasses much more. Workers spend a large part of their lives at work. At the same time, a business needs its employees to be productive. SDG 8 aims to ensure that people have quality employment, increasing their productivity and consumption potential. On the other hand, SDG 3 is about \u201cHealth and Well-being\u201d, i.e. ensuring healthy lives and promoting well-being for all ages. It is also about health and well-being in the work environment. Issues such as interpersonal relationships at work, environment and teams, organizational culture, role in the organization, autonomy at work and fostering innovati",
+      "cited_by_count": 31,
+      "type": "article",
+      "source": {
+        "name": "Corporate Governance",
+        "type": "journal",
+        "issn": [
+          "1472-0701",
+          "1758-6054"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Cultural Differences and Values",
+        "Job Satisfaction and Organizational Behavior",
+        "Entrepreneurship Studies and Influences"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W3213608654"
+    },
+    {
+      "openalex_id": "W3002120718",
+      "doi": "10.34190/mlg.19.060",
+      "title": "Toxic Workplace: Problem Description and Search for Management Solutions",
+      "authors": [
+        {
+          "name": "Koropets, O.",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-14",
+      "abstract": "Organizational toxicity has a negative impact on labour productivity and the employees' psychological well-being. In an empirical study, the author explored major factors in high toxicity of workplaces, such as: toxic organizational culture, toxic staff, and toxic management. The author studied the correlation of the main factors in organizational toxicity with the level of employee psychological well-being and such components as positive interpersonal relations, autonomy, personal growth, life goals and self-acceptance. The study used quantitative and qualitative research methods: survey, semi-structured interview, psycho-diagnostic tools. The respondents were divided into three groups depending on the degree of their workplace toxicity. The study found that the majority of the respondents are faced with various toxins of the organizational environment when performing their professional duties. The results show that employees with high values of individual components of the psychological well-being scale, namely, self-acceptance and autonomy, are less susceptible to the toxicity of the organizational environment. The semi-structured interview allowed the author to identify three main strategies that employees choose when confronted with a highly toxic organizational environment: active rejection, passive rejection, and escape. The study found that employees with high levels of psychological well-being are more likely to make decisions about changing jobs in case the toxicity of the organizational environment increases. The study results led the author to the conclusions about the importance of complex work with staff personal resources and managerial culture to reduce the workplace toxicity. In conclusion, the authors make recommendations how to prevent and counteract a toxic organizational culture and create a culture of respectful engagement in the organization. This study contributes to the theory of social pollution and will be of interest to experts in organizational behaviour, leadership and human resource management. \u00a9 15th European Conference on Management, Leadership and Governance, ECMLG 2019. All rights reserved.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the ... European conference on management, leadership and governance",
+        "type": "conference",
+        "issn": [
+          "2048-9021",
+          "2048-903X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.34190/mlg.19.060"
+      },
+      "topics": [
+        "Occupational Health and Safety Research"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3002120718"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

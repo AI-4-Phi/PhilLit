@@ -1,0 +1,799 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "virtue ethics skill acquisition",
+  "results": [
+    {
+      "paperId": "2301e3885ba5868f8199ebc0aa3e70bd86db1af4",
+      "title": "Introduction to Special Edition on \u201cAnnas on Virtue and Skill\u201d",
+      "authors": [
+        {
+          "name": "R. Hamilton",
+          "authorId": "40043351"
+        },
+        {
+          "name": "Tiger Zheng",
+          "authorId": "83265012"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10790-021-09811-3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2301e3885ba5868f8199ebc0aa3e70bd86db1af4",
+      "venue": "Journal of Value Inquiry",
+      "journal": {
+        "name": "The Journal of Value Inquiry",
+        "pages": "209 - 212",
+        "volume": "55"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9a1f1551b7055c33cbf31d0782c5f8a68af7fc1f",
+      "title": "Character comes from practice: longitudinal practice-based ethics training in data science",
+      "authors": [
+        {
+          "name": "Louise Bezuidenhout",
+          "authorId": "2291569218"
+        },
+        {
+          "name": "E. Ratti",
+          "authorId": "34924156"
+        }
+      ],
+      "year": 2024,
+      "abstract": "In this chapter, we propose a non-traditional RCR training in data science that is grounded into a virtue theory framework. First, we delineate the approach in more theoretical detail, by discussing how the goal of RCR training is to foster the cultivation of certain moral abilities. We specify the nature of these abilities: while the ideal is the cultivation of virtues, the limited space allowed by RCR modules can only facilitate the cultivation of superficial abilities or proto-virtues, which help students to familiarize with moral and political issues in the data science environment. Third, we operationalize our approach by stressing that (proto-)virtue acquisition (like skill acquisition) occurs through the technical and social tasks of daily data science activities, where these repetitive tasks provide the opportunities to develop (proto-)virtue capacity and to support the development of ethically robust data systems. Finally, we discuss a concrete example of how this approach has been implemented. In particular, we describe how this method is applied to teach data ethics to students participating in the CODATA-RDA Data Science Summer Schools.",
+      "citationCount": 0,
+      "doi": "10.48550/arXiv.2401.04454",
+      "arxivId": "2401.04454",
+      "url": "https://www.semanticscholar.org/paper/9a1f1551b7055c33cbf31d0782c5f8a68af7fc1f",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2401.04454"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "772727df3a6f69a034a36c3fa802baa9f2de66c8",
+      "title": "Effective Deliberation, Good Deliberation, and the Skill Analogy",
+      "authors": [
+        {
+          "name": "Tiger Zheng",
+          "authorId": "83265012"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10790-021-09812-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/772727df3a6f69a034a36c3fa802baa9f2de66c8",
+      "venue": "Journal of Value Inquiry",
+      "journal": {
+        "name": "The Journal of Value Inquiry",
+        "pages": "213 - 228",
+        "volume": "55"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "be685a6381c2421d3ab1756313b30ea04825a408",
+      "title": "Phronesis and moral education: Treading beyond the truisms",
+      "authors": [
+        {
+          "name": "K. Kristj\u00e1nsson",
+          "authorId": "89278215"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 49,
+      "doi": "10.1177/1477878514530244",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/be685a6381c2421d3ab1756313b30ea04825a408",
+      "venue": "",
+      "journal": {
+        "name": "Theory and Research in Education",
+        "pages": "151 - 171",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "10c893a5b29907b3269b889edf4ea4c963ec62f6",
+      "title": "Virtues as Skills, and The Virtues of Self-Regulation",
+      "authors": [
+        {
+          "name": "Matt Stichter",
+          "authorId": "50825253"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10790-021-09820-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/10c893a5b29907b3269b889edf4ea4c963ec62f6",
+      "venue": "Journal of Value Inquiry",
+      "journal": {
+        "name": "The Journal of Value Inquiry",
+        "pages": "355 - 369",
+        "volume": "55"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dec4f73616d063fe786680dfb5388d0b35fedc04",
+      "title": "Educating the Virtuous Leader: Exploring the Reflexive Practicum",
+      "authors": [
+        {
+          "name": "Ian Robson",
+          "authorId": "118864651"
+        }
+      ],
+      "year": 2020,
+      "abstract": "The context of education under scrutiny in this paper is the post-experience practitioner sector, concerning students of ethics in Business Administration at both Masters and Doctoral levels. Responsible leadership is examined as a core theme in business ethics research and education. The paper proposes that responsible leaders require a virtuous mind-set, underpinned by Aristotelian thinking. Responsible leadership and romanticised models of leadership are interwoven in a critique of the technical-rational predominance in leadership and ethics research. The development of reflective practice is tracked from Argyris and Schon\u2019s reflection on and in action to reflexivity. The paper considers the essence of Aristotle\u2019s virtue ethics in proposing an integrative framework of skill and behaviour acquisition in organisational ethical decision-making. Reflective leadership and reflexivity are examined in relation to practitioner learning and the concept of a reflexive practicum explored to provide a praxis dimension to ethics education practice.",
+      "citationCount": 0,
+      "doi": "10.5840/JBEE2020178",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dec4f73616d063fe786680dfb5388d0b35fedc04",
+      "venue": "Journal of Business Ethics Education",
+      "journal": {
+        "name": "Journal of Business Ethics Education"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "06e55d77781cd643fafb0eec2dcfa4e303539888",
+      "title": "The Skill Model: A Dilemma for Virtue Ethics",
+      "authors": [
+        {
+          "name": "Nicholas C. Schuster",
+          "authorId": "2020215786"
+        }
+      ],
+      "year": 2023,
+      "abstract": "According to agent-centered virtue ethics, acting well is not a matter of conforming to agent-independent moral standards, like acting so as to respect humanity or maximize utility. Instead, virtuous agents determine what is called for in their circumstances through good practical reason. This is an attractive view, but it requires a plausible account of how good practical reason works. To that end, some theorists invoke the skill model of virtue, according to which virtue involves essentially the same kind of practical reason as ordinary skills. I contend, however, that ordinary skills provide a plausible and informative model of good practical reason only insofar as they are assessed by agent-independent standards. And so virtue, likewise, must be assessed primarily by agent-independent moral standards, if the skill model is to serve its purpose. I consider how agent-centered virtue ethics might avert this dilemma. But I ultimately suggest proceeding a different way.",
+      "citationCount": 2,
+      "doi": "10.1007/s10677-023-10380-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/06e55d77781cd643fafb0eec2dcfa4e303539888",
+      "venue": "Ethical Theory and Moral Practice",
+      "journal": {
+        "name": "Ethical Theory and Moral Practice",
+        "pages": "1-15",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "87d4da0598d96bf3a2bae1f4a69d1142d0d8686b",
+      "title": "Toward a Theory of Technical Virtue: Skill, Care, and Process in Qur\u2019anic Studio Recording",
+      "authors": [
+        {
+          "name": "Ian VanderMeulen",
+          "authorId": "117814881"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n Can technical labor be virtuous? This article investigates the production of a Qur\u2019anic sound recording, suggesting that focusing on the process of religious media production rather than its intended product might bring to the fore new ethical engagements that trouble recent oppositions between \u201cordinary\u201d and \u201ctranscendent\u201d ethics or even the classic dialectic of sacred and profane. In particular, the ethnography here foregrounds the sensory and temporal nuances of what I call technical virtue, an ethical orientation comprising three characteristics: technologized modes of listening, an object- rather than subject-oriented disposition of \u201ccare\u201d toward the Qur\u2019an, and a teleology that paradoxically requires that subjects defer transcendent engagement with God in favor of the \u201ctechnical\u201d fulfilment of a given stage of sound reproduction. I argue that religious media production can thus be made virtuous through such technical fulfilment rather than through the linkage of such labor to the subjective cultivation of more recognizably Islamic virtues.",
+      "citationCount": 0,
+      "doi": "10.1093/jaarel/lfaf034",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/87d4da0598d96bf3a2bae1f4a69d1142d0d8686b",
+      "venue": "Journal of the American Academy of Religion",
+      "journal": {
+        "name": "Journal of the American Academy of Religion"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "04ab6fc1a1870687888f36ec0d594cf92b30077f",
+      "title": "Moral Identity and the Acquisition of Virtue: A Self-Regulation View",
+      "authors": [
+        {
+          "name": "Tobias Krettenauer",
+          "authorId": "6110167"
+        },
+        {
+          "name": "Matt Stichter",
+          "authorId": "50825253"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The acquisition of virtue can be conceptualized as a self-regulatory process in which deliberate practice results in increasingly higher levels of skillfulness in leading a virtuous life. This conceptualization resonates with philosophical virtue theories as much as it converges with psychological models about skill development, expertise, goal motivation, and self-regulation. Yet, the conceptualization of virtue as skill acquisition poses the crucial question of motivation: What motivates individuals to self-improve over time so that they can learn from past experience, correct mistakes, and expand their ethical knowledge to new and unfamiliar circumstances? In this paper, it is argued that the motivation to increase one\u2019s level of skillfulness in leading a virtuous life is supported by a specific identity goal, namely the goal to be a moral person. However, this moral identity goal needs to carry specific goal characteristics in order to effectively provide this motivation. It needs to be sufficiently abstract, internally motivated and promotion- rather than prevention-oriented. Research in developmental psychology suggests that the moral identity of children is rather concrete, externally motivated, and prevention-oriented. With development, higher levels of abstraction, internal motivation, and promotion-orientation gain importance providing an important motivational basis for a self-regulated process of virtue acquisition.",
+      "citationCount": 16,
+      "doi": "10.1177/10892680231170393",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/04ab6fc1a1870687888f36ec0d594cf92b30077f",
+      "venue": "Review of General Psychology",
+      "journal": {
+        "name": "Review of General Psychology",
+        "pages": "396 - 409",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a63187455303e70608abd9240884b08b32c79d43",
+      "title": "Brittle virtue or bust: a new challenge to virtue-as-skill theories",
+      "authors": [
+        {
+          "name": "Daniel Kilov",
+          "authorId": "26397589"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Buoyed by research in philosophy and moral psychology, virtue ethics has become increasingly influential in the literature. This renewed attention has also led to the development of the situationist challenge : empirical studies undermine the idea that we possess character traits that allow us to act virtuously across contexts. A promising reply to the situationist challenge is that we should not conceive of virtues as traits. Instead, we should conceive of them as expert skills. Here, I raise a new challenge for those who go in for the (s)kill against situationism. Expert skills are brittle , rather than flexible or robust. They typically develop in narrow ways and can falter in novel situations. Experts also sometimes perform worse than novices in novel situations. Such findings present a problem for the virtue-as-skill thesis. Someone who will help others only in narrow contexts or who causes more harm than good does not exemplify virtue. The brittleness of expert skills means that virtue theorists must either (a) abandon the idea that virtues explain behaviour across contexts or (b) abandon the idea that virtues are expert skills. It\u2019s brittle virtue or bust \u2013 you can\u2019t teach an old dogma new skills.",
+      "citationCount": 1,
+      "doi": "10.1007/s11229-023-04306-z",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a63187455303e70608abd9240884b08b32c79d43",
+      "venue": "Synthese",
+      "journal": {
+        "name": "Synthese",
+        "pages": "1-16",
+        "volume": "202"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "541882770448f4b552362b16824cda6b564de865",
+      "title": "AI-based medical ethics education: examining the potential of large language models as a tool for virtue cultivation",
+      "authors": [
+        {
+          "name": "S. Okamoto",
+          "authorId": "2221057532"
+        },
+        {
+          "name": "M. Kataoka",
+          "authorId": "145336146"
+        },
+        {
+          "name": "Makoto Itano",
+          "authorId": "2344064619"
+        },
+        {
+          "name": "T. Sawai",
+          "authorId": "11415667"
+        }
+      ],
+      "year": 2025,
+      "abstract": "With artificial intelligence (AI) increasingly revolutionising medicine, this study critically evaluates the integration of large language models (LLMs), known for advanced text processing and generation capabilities, in medical ethics education, focusing on promoting virtue. Positing LLMs as central to mimicking nuanced human communication, it examines their use in medical education and the ethicality of embedding AI in such contexts. Using a hybrid approach that combines principlist and non-principlist methodologies, we position LLMs as exemplars and advisors. We discuss the imperative for including AI ethics in medical curricula and its utility as an educational tool, identify the lack of educational resources in medical ethics education, and advocate for future LLMs to mitigate this problem as a \u201csecond-best\u201d tool. We also emphasise the critical importance of instilling virtue in medical ethics education and illustrate how LLMs can effectively impart moral knowledge and model virtue cultivation. We address expected counter-arguments to using LLMs in this area and explain their profound potential to enrich medical ethics education, including facilitating the acquisition of moral knowledge and developing ethically grounded practitioners. The study involved a comprehensive exploration of the function of LLMs in medical ethics education, positing that tools such as ChatGPT can profoundly enhance the learning experience in the future. This is achieved through tailored, interactive educational encounters while addressing the ethical nuances of their use in educational settings.",
+      "citationCount": 6,
+      "doi": "10.1186/s12909-025-06801-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/541882770448f4b552362b16824cda6b564de865",
+      "venue": "BMC Medical Education",
+      "journal": {
+        "name": "BMC Medical Education",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b09f62b74c9ecf8b3200fae757b731c69a5d0366",
+      "title": "On Alan Armstrong's \u2018Towards a Strong Virtue Ethics for Nursing Practice\u2019",
+      "authors": [
+        {
+          "name": "Roger Newham",
+          "authorId": "145091159"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT Armstrong's (2006) \u2018Towards a strong virtue ethics for nursing practice\u2019 is focused on how the practice of nursing necessitates morally good character traits as virtues including the intellectual virtue phronesis. Because of this, he claims, nursing ethics should also be grounded in virtue ethics. Illness creates a unique phenomenon that involves a special therapeutic as helping relationship necessitating good interpersonal skills and patient\u2010centred care that, for the role of a nurse and nursing ethics, requires a focus on persons and relationships, character and emotions. Obligation, act centred normative theories are, according to Armstrong, incomplete and inadequate for nursing practice. They are incomplete and inadequate as moral theories because they ignore, or at least do not give appropriate moral importance to, other factors of life such as character, moral education, emotions and relationships. Armstrong grounds his virtue ethics in a \u2018moralised\u2019 eudaimonia. This leads to problems of getting from good for to good. It is suggested a non eudaimonistic, virtue ethics by Swanton might be just what Armstrong is after but as an account of ethics not morality.",
+      "citationCount": 0,
+      "doi": "10.1111/nup.70027",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b09f62b74c9ecf8b3200fae757b731c69a5d0366",
+      "venue": "Nursing Philosophy",
+      "journal": {
+        "name": "Nursing Philosophy",
+        "volume": "26"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "23623de1edb9df94ecd9b8c577579289a6a1abac",
+      "title": "The virtue theory in teaching accounting ethics \u2013 methods, techniques, and benefits",
+      "authors": [
+        {
+          "name": "Ma\u0142gorzata Czerny",
+          "authorId": "151109670"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Purpose: The article aims to present methods and techniques of teaching ethics in accounting using virtue theory. It also demonstrates the usefulness of this theory in developing modern ethics curricula, as well as the benefits for students educated in this way.Methodology/approach: Literature review, descriptive and comparative analysis. Findings: Methods based on virtue theory, such as reflective practice and giving voice to values (GVV), which utilize case studies, role-playing, discussion tasks, and reflective journals, are particularly useful for teaching future or current professionals in the field of accounting as members of a trusted profession, equipping them with practical skills that shape and defend ethical attitudes. Research limitations/implications: The review is primarily based on pioneering English-language literature in this field and is limited to basic methods of teaching ethics using virtue theory, employing a purely theoretical approach.Originality/value: The article is likely to inspire other researchers and practitioners in this field by presenting a comprehensive modern approach to teaching ethics in accounting, discussing a wide range of educational tools that can be practically applied.",
+      "citationCount": 1,
+      "doi": "10.5604/01.3001.0055.2467",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/23623de1edb9df94ecd9b8c577579289a6a1abac",
+      "venue": "Zeszyty Teoretyczne Rachunkowo\u015bci",
+      "journal": {
+        "name": "Zeszyty Teoretyczne Rachunkowo\u015bci"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e8246c5dc7fcdbe67fb2772b742fbfd05c586a0e",
+      "title": "Conflicting Interests and New Frontiers: A Role for Virtue Ethics in Cutting Edge Brain Research with Humans",
+      "authors": [
+        {
+          "name": "Ally Peabody Smith",
+          "authorId": "2185845584"
+        },
+        {
+          "name": "Lilyana Levy",
+          "authorId": "2256504486"
+        },
+        {
+          "name": "Colleen Hanson",
+          "authorId": "2387042130"
+        },
+        {
+          "name": "N. Pouratian",
+          "authorId": "2243146830"
+        },
+        {
+          "name": "Ashley Feinsinger",
+          "authorId": "1582940482"
+        }
+      ],
+      "year": 2025,
+      "abstract": "One of the central goals of recent neuroethics research is to understand the ethical implications that rapidly evolving neuroscientific discoveries and technologies may have for research participants, patients, and society. From adequate informed consent and post-trial obligations to impacts on agency and disability justice, neuroethicists have argued that the unique clinical, investigative, and financial context of these advances raises distinct and urgent ethical challenges. While much of the ethics work has been advanced through soliciting the perspectives of patients, participants, and the broader public, comparatively little work has explored the experiences of researchers who lead these studies, what ethical issues they face, and how they navigate them. Compared to other parties, investigators are uniquely situated with respect to both their agency and experience. They are the only stakeholders who experience ethical issues before, during, and after a study, and who interact with industry, universities, federal agencies, funders, IRBs, medical centers, ethicists, patients, participants, and caregivers. They are also in a position to determine, with relative authority, the designs of their studies and the solutions to ethical issues as they arise. Understanding researcher experiences is thus a critical part of recognizing, navigating, and mitigating the ethical issues that arise in cutting edge brain research. We conducted a qualitative study with 14 NIH BRAIN Initiative-funded investigators, whose research spans 11 institutions and which involves various kinds of invasive brain research with humans. Interviewees were asked about their experiences conducting research and responding to ethical challenges, navigating academic and commercial institutions, interacting with patients, participants, and other researchers, and engaging with neuroethicists. Interviews were coded and analyzed utilizing an inductive and semantic reflexive thematic analysis. Analyses of interviews yielded two main themes: (i) the difficulty of navigating complex conflicts of interest and (ii) the need for collaboration, community, and participation in neuroethics deliberation. Researchers describe facing multiple underappreciated structural and interpersonal conflicts of interest (including those from research funding, team structure, data collection and sharing obligations, commercialization, innovation, and the boundaries between research and care), as well as the need for increased engagement with participants, ethicists, and each other. Drawing on this data, we argue that navigating ethical issues in cutting edge brain research requires a shift from focusing on promoting ethical guidelines to also promoting neuroethical competencies. More specifically, we argue that integrating the philosophical discipline of virtue ethics\u2014which focuses on developing moral sensitivities, practical reasoning skills, and other ethical competencies\u2014could provide better tools for addressing the ethical issues researchers face than regulations and rules alone. We conclude by suggesting two ways that neuroethicists and neuroscientists might move together towards a virtue ethical ideal: (i) promoting targeted neuroethics education and opportunities for participating in collective moral deliberation, and (ii) prioritizing engagement amongst researchers, ethicists, and study participants.",
+      "citationCount": 0,
+      "doi": "10.1007/s12152-025-09618-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e8246c5dc7fcdbe67fb2772b742fbfd05c586a0e",
+      "venue": "Neuroethics",
+      "journal": {
+        "name": "Neuroethics",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "934672695c1a605768c29680d46c6101f2cefc29",
+      "title": "Virtue ethics and moral foundation theory applied to business ethics education",
+      "authors": [
+        {
+          "name": "Thomas Culham",
+          "authorId": "115760213"
+        },
+        {
+          "name": "R. Major",
+          "authorId": "145641275"
+        },
+        {
+          "name": "Neha Shivhare",
+          "authorId": "69002546"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s40889-023-00181-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/934672695c1a605768c29680d46c6101f2cefc29",
+      "venue": "International Journal of Ethics Education",
+      "journal": {
+        "name": "International Journal of Ethics Education",
+        "pages": "139 - 176",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f02162ecbacf0292b6dbd46fb7df42e557aa982d",
+      "title": "Generative AI Policy: A Pedagogical Communication Tool and Virtue Ethics Gateway",
+      "authors": [
+        {
+          "name": "Cara Haderlie",
+          "authorId": "2328207369"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Institution and classroom policies not only define academic practices but also potentially influence student behavior-positive or negative. The emerging technology of generative AI (GAI) requires administration and instructors to consider policy design concepts that are ideologically new to pedagogy. As academic scholars and instructors grapple with the emerging technology of generative AI usage, I suggest applying the ethical framework of virtue ethics (VE) to policy design, which will encourage virtue habituation within students, while promoting ethical usage of generative AI in their composition works. The virtue ethics framework also better prepares students for the use of future technology. Virtue Ethics is a philosophical approach to developing good character by choice, not force. One chooses to build habits (hexis) that lead to a virtue which becomes part of their character. Immerging from Aristotle, Confucius, and Buddhist, virtue ethics is being studied and evaluated by scholars and facilitators today. Refer to Rhetoric, Technology, and the Virtues by Jared Colton and Steve Holmes [1], or Provocations of Virtue by John Duffy [2] for further study. The scholarly work I will be referencing is by Professor Shannon Vallor, an American philosopher of technology. Approaching policy design through the lens of VE will not only set guidelines of learning, but also encourage ethical practices through the cultivation of virtues. These virtues can then be carried beyond the academic sphere into the professional world as AI technology plays a larger role in our society. In the case of generative AI, the conditions for habituating honesty and self-control can be created through course lessons and assignments if the policies are written with that intent in mind. This paper will first introduce generative AI and the need for adjoining academic policies. Then, it will discuss the theory of virtue ethics and how it is the ideal framework to design a generative AI policy. Additionally, the essay presents institutional policies from Yale University, Purdue University, and Utah State University by analyzing how the policies are currently working or not working in building honesty and self-control through measurable concepts. Finally, I will provide recommendations on how to revise or create new generative AI policy that interweaves virtuous development of honesty and self-control for students as they are improving their composition skills ethically.",
+      "citationCount": 1,
+      "doi": "10.1145/3641237.3691652",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f02162ecbacf0292b6dbd46fb7df42e557aa982d",
+      "venue": "ACM International Conference on Design of Communication",
+      "journal": {
+        "name": "Proceedings of the 42nd ACM International Conference on Design of Communication"
+      },
+      "publicationTypes": [
+        "Book",
+        "JournalArticle",
+        "Conference"
+      ]
+    },
+    {
+      "paperId": "54e0db035f2fa7088ac9c852b181dd6ce26c4545",
+      "title": "Confronting the Hidden Curriculum: A Four-Year Integrated Course in Ethics and Professionalism Grounded in Virtue Ethics",
+      "authors": [
+        {
+          "name": "W. Shelton",
+          "authorId": "46666070"
+        },
+        {
+          "name": "Lisa Campo-Engelstein",
+          "authorId": "1380707550"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 18,
+      "doi": "10.1007/s10912-021-09694-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/54e0db035f2fa7088ac9c852b181dd6ce26c4545",
+      "venue": "Journal of Medical Humanities",
+      "journal": {
+        "name": "Journal of Medical Humanities",
+        "pages": "689 - 703",
+        "volume": "42"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "57b106dcf1ba49926ca393d9948d0b918cfec789",
+      "title": "Emotional Skillfulness and Virtue Acquisition",
+      "authors": [
+        {
+          "name": "Mario De Caro",
+          "authorId": "2129088846"
+        },
+        {
+          "name": "M. Vaccarezza",
+          "authorId": "113342691"
+        },
+        {
+          "name": "Ariele Niccoli",
+          "authorId": "113567111"
+        }
+      ],
+      "year": 2022,
+      "abstract": "In this chapter, the authors offer a sketch of the state of the art as concerns existing accounts of virtue acquisition in relation to automaticity. In particular, the chapter focuses on the so-called \u201cskill model,\u201d which the authors aim to improve by questioning its rather common underlying dualistic picture of the mind. Then, the authors propose an account of skillful emotions by identifying the features that make them both automatic and embedded in an intelligent practice. Finally, the authors show how this view can help the skill model by offering a better description of emotion shaping in virtue acquisition. By doing so, they contend that emotions contribute autonomously and actively to the skillfulness of the habits in which they are embedded.",
+      "citationCount": 0,
+      "doi": "10.1093/oxfordhb/9780198855903.013.3",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/57b106dcf1ba49926ca393d9948d0b918cfec789",
+      "venue": "The Oxford Handbook of Emotional Development",
+      "journal": {
+        "name": "The Oxford Handbook of Emotional Development"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "49c26e12a53e0d50e726caec944730ebe7dac625",
+      "title": "Learning from Failure: Shame and Emotion Regulation in Virtue as Skill",
+      "authors": [
+        {
+          "name": "Matt Stichter",
+          "authorId": "50825253"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 21,
+      "doi": "10.1007/s10677-020-10079-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/49c26e12a53e0d50e726caec944730ebe7dac625",
+      "venue": "Ethical Theory and Moral Practice",
+      "journal": {
+        "name": "Ethical Theory and Moral Practice",
+        "pages": "341 - 354",
+        "volume": "23"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cf458b07a2b672f4e0d172169d65ba73894f5caa",
+      "title": "Virtue ethics and cultural competence: Improving service one administrator at a time",
+      "authors": [
+        {
+          "name": "Bridgette Cram",
+          "authorId": "114894357"
+        },
+        {
+          "name": "Mohamad G. Alkadry",
+          "authorId": "14448633"
+        }
+      ],
+      "year": 2018,
+      "abstract": "As the United States continues to become more diverse, companies and government agencies face the challenge of ensuring that their workforce is able to serve and to produce products for this diverse population. Public affairs programs also face the challenge of preparing a future public service workforce that is both culturally competent and ethical. This article explores cultural competence in the context of public administration education through a review of why cultural competence and virtue ethics call for similar skill sets and competencies. It concludes with a proposal to integrate cultural competency training and virtue ethics competencies in public affairs programs\u2019 curricula.",
+      "citationCount": 9,
+      "doi": "10.1080/15236803.2018.1484652",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cf458b07a2b672f4e0d172169d65ba73894f5caa",
+      "venue": "Journal of Public Affairs Education",
+      "journal": {
+        "name": "Journal of Public Affairs Education",
+        "pages": "518 - 537",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9bb44857c24faedb27379bee7f91c7210fbb6023",
+      "title": "Research Ethics Training: Using a Virtue Ethics Approach to Training to Support Development of Researcher Integrity",
+      "authors": [
+        {
+          "name": "N. Palmer",
+          "authorId": "151478286"
+        },
+        {
+          "name": "R. Forrester-Jones",
+          "authorId": "1413038172"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1108/S2398-601820180000003004",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9bb44857c24faedb27379bee7f91c7210fbb6023",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "3"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5b1a003bd0a724849eba1deaf296e40100742d3e",
+      "title": "Le r\u00f4le de la nature dans l\u2019acquisition de la vertu chez Aristote: la vertu naturelle et le bon naturel (euphuia)",
+      "authors": [
+        {
+          "name": "Marc-Olivier Tremblay",
+          "authorId": "2390780003"
+        }
+      ],
+      "year": 2025,
+      "abstract": "While the enumeration of potential sources of virtue in the Nicomachean Ethics, X,\u00a010, 1179b20-25 seems to set nature aside as a factor that does not depend on us, Aristotle mentions it again in the Politics. In book VII 13, Aristotle answers the question, \u201chow does an individual become virtuous?\u201d by saying that virtue is acquired through three elements: nature, habit and reason (\u03c6\u1f7b\u03c3\u03b9\u03c2, \u1f14\u03b8\u03bf\u03c2, \u03bb\u1f79\u03b3\u03bf\u03c2). The aim of this article is to clarify the importance of nature in the acquisition and development of virtue in Aristotle\u2019s ethics through the study of the concepts of natural virtue (\u1f00\u03c1\u03b5\u03c4\u1f74 \u03c6\u03c5\u03c3\u03b9\u03ba\u03ae) and good nature (\u03b5\u1f50\u03c6\u03c5\u0390\u03b1), which will allow us to show how Aristotle affirms the existence of a natural virtue, which is not the same for everyone and which, from birth, places human beings more or less far along in their ethical path towards virtue. I argue that \u03b5\u1f50\u03c6\u03c5\u0390\u03b1 is the highest form of natural virtue because it closely resembles virtue in the proper sense (\u1f00\u03c1\u03b5\u03c4\u1f74 \u03ba\u03c5\u03c1\u03af\u03b1).",
+      "citationCount": 0,
+      "doi": "10.62920/4s4aan58",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5b1a003bd0a724849eba1deaf296e40100742d3e",
+      "venue": "Facteurs humains: revue en sciences humaines et sociales de l'Universit\u00e9 Laval",
+      "journal": {
+        "name": "Facteurs humains: revue en sciences humaines et sociales de l'Universit\u00e9 Laval"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "104c149a695b071f7950c97d0aab7a921a02af57",
+      "title": "Flourishing Goals, Metacognitive Skills, and the Virtue of Wisdom",
+      "authors": [
+        {
+          "name": "Matt Stichter",
+          "authorId": "50825253"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s11245-024-10013-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/104c149a695b071f7950c97d0aab7a921a02af57",
+      "venue": "Topoi",
+      "journal": {
+        "name": "Topoi",
+        "pages": "963 - 981",
+        "volume": "43"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "182526709f4045d2dd68bede6c56b305189aa266",
+      "title": "Imaginative virtue ethics: A transportation-transcendental approach",
+      "authors": [
+        {
+          "name": "Surendra Arjoon",
+          "authorId": "116121810"
+        },
+        {
+          "name": "Meena Rambocas",
+          "authorId": "22449730"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s40889-021-00136-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/182526709f4045d2dd68bede6c56b305189aa266",
+      "venue": "International Journal of Ethics Education",
+      "journal": {
+        "name": "International Journal of Ethics Education",
+        "pages": "35 - 51",
+        "volume": "7"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "276c177e11cdf71935f6a2b1a4b4e2b8c37f63ea",
+      "title": "Virtue ethics in dentistry - a model for developing virtuous dental practitioners",
+      "authors": [
+        {
+          "name": "H. Miniggio",
+          "authorId": "40959492"
+        },
+        {
+          "name": "P. Motloba",
+          "authorId": "2037067402"
+        },
+        {
+          "name": "C. Wareham",
+          "authorId": "145619065"
+        }
+      ],
+      "year": 2021,
+      "abstract": "tue ethics in clinical healthcare practice, including dentistry. This interest in virtue ethics highlights the limitations of only focusing on the development of clinical skills and competence or mere adherence to a set of ethical rules and guidelines. There is also a growing interest and appreciation that an equally important and integral aspect of dental practice is the development of a virtuous character. From this virtue ethics perspective, a virtue is an excellent trait of character, a disposition, well entrenched in its possessor.1",
+      "citationCount": 0,
+      "doi": "10.17159/10.17159/2519-0105/2021/v76no5a9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/276c177e11cdf71935f6a2b1a4b4e2b8c37f63ea",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "03211ebc8ff51a6f90959a8327a319d08ae47451",
+      "title": "From Factitious to Veridical Attribution of Virtue: How Wang Yangming Can Do a Better Job than Alfano in Facilitating Virtue Acquisition",
+      "authors": [
+        {
+          "name": "Yat-hung Leung",
+          "authorId": "117553776"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10790-018-9669-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/03211ebc8ff51a6f90959a8327a319d08ae47451",
+      "venue": "Journal of Value Inquiry",
+      "journal": {
+        "name": "The Journal of Value Inquiry",
+        "pages": "289 - 307",
+        "volume": "53"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "62afa6c3a53f30826121eb418279d4d6bb128a6a",
+      "title": "How Did She Get So Good? On Virtue and Skill",
+      "authors": [
+        {
+          "name": "Bana Bashour",
+          "authorId": "103845256"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1007/s10677-020-10148-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/62afa6c3a53f30826121eb418279d4d6bb128a6a",
+      "venue": "",
+      "journal": {
+        "name": "Ethical Theory and Moral Practice",
+        "pages": "1-13",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b3a6f0802a7536a34fcc39e69743cc79f546e867",
+      "title": "How Did She Get So Good? On Virtue and Skill",
+      "authors": [
+        {
+          "name": "Bana Bashour",
+          "authorId": "103845256"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s10677-020-10148-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b3a6f0802a7536a34fcc39e69743cc79f546e867",
+      "venue": "Ethical Theory and Moral Practice",
+      "journal": {
+        "name": "Ethical Theory and Moral Practice",
+        "pages": "563 - 575",
+        "volume": "24"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "69ef1c494c1d8f5eb0374a9c4af922239b60844b",
+      "title": "Leadership and Ethics: Virtue Ethics as a Model for Leadership Development",
+      "authors": [
+        {
+          "name": "Lonnie Gentry",
+          "authorId": "24452387"
+        },
+        {
+          "name": "J. Fleshman",
+          "authorId": "4433600"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Abstract Leaders are held to the highest of standards in both performance and ethics. The same is true for leaders in medicine. Thus, medical leaders must give attention to ethical development as well as performance development. Virtue ethics provide a way for the leader to develop ethically. Virtue ethics is the oldest form of ethics. Although other ethical approaches focus on external considerations, virtue ethics focuses on the inward development of character. Following the examples of virtuous people and developing habits of virtue are critical with this approach. The cardinal virtues of prudence, courage, temperance, and justice are considered the most important. Specific virtue lists have also been developed for medical practitioners. All of these virtues can contribute to the enhancement of leadership skills. The virtue approach is especially helpful for leaders because it motivates one to excel in whatever endeavor pursued, whether medicine, leadership, relationships, or life.",
+      "citationCount": 5,
+      "doi": "10.1055/s-0040-1709437",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/69ef1c494c1d8f5eb0374a9c4af922239b60844b",
+      "venue": "Clinics in Colon and Rectal Surgery",
+      "journal": {
+        "name": "Clinics in Colon and Rectal Surgery",
+        "pages": "217 - 220",
+        "volume": "33"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ca5b672ba43738807fb4da74548500a9d7290abd",
+      "title": "WHY CONFUCIAN ETHICS IS A VIRTUE ETHICS, VIRTUE ETHICS IS NOT A BAD THING, AND NEVILLE SHOULD ENDORSE IT",
+      "authors": [
+        {
+          "name": "Yong Huang",
+          "authorId": "98026844"
+        }
+      ],
+      "year": 2020,
+      "abstract": "This paper addresses one of the three main themes of Neville\u2019s The Goodness Is One, Its Manifestations Many: Whether Confucian ethics can be appropriately characterized as a virtue ethics. It first examines some unique features of virtues ethics, concluding that Confucian ethics may be plausibly regarded as a virtue ethics. Then it shows that virtue ethics is immune to the two diseases that Neville worries about: subjectivism and individualism. Finally, it argues that what Neville regards as salient features of Confucian ethics, (1) situationism, (2) attention to knowledge and skills beyond virtues, and (3) consequentialism of principle, can all be kept intact when it is characterized as a virtue ethics.",
+      "citationCount": 5,
+      "doi": "10.1111/1540-6253.12409",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ca5b672ba43738807fb4da74548500a9d7290abd",
+      "venue": "Journal of Chinese philosophy",
+      "journal": {
+        "name": "Journal of Chinese Philosophy"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

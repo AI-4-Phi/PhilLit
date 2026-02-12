@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Relational Autonomy: Feminist Perspectives on Autonomy, Agency, and the Social Self",
+    "year": 2000
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/oso/9780195123333.003.0003",
+      "title": "Autonomy and the Social Self",
+      "authors": [
+        {
+          "family": "Barclay",
+          "given": "Linda"
+        }
+      ],
+      "editors": [],
+      "year": 2000,
+      "container_title": "Relational Autonomy",
+      "volume": "",
+      "issue": "",
+      "page": "52-71",
+      "publisher": "Oxford University PressNew York, NY",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1093/oso/9780195123333.003.0003",
+      "score": 72.65621
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

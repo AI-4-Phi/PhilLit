@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "semantic_scholar",
+  "query": "division of labor specialization efficiency",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No papers found matching query",
+      "recoverable": false
+    }
+  ]
+}

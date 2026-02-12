@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/japp.12614"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/japp.12614",
+      "title": "Two Concepts of Meaningful Work",
+      "authors": [
+        {
+          "family": "van der Deijl",
+          "given": "Willem"
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Journal of Applied Philosophy",
+      "volume": "41",
+      "issue": "2",
+      "page": "202-217",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/japp.12614"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

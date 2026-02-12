@@ -1,0 +1,100 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Strawson Freedom Resentment",
+  "results": [
+    {
+      "paperId": "28f4506dbde99b6fe59808227df2f69557a4c3fd",
+      "title": "Freedom and Resentment",
+      "authors": [
+        {
+          "name": "P. Strawson",
+          "authorId": "46192881"
+        }
+      ],
+      "year": 1962,
+      "abstract": null,
+      "citationCount": 2328,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/28f4506dbde99b6fe59808227df2f69557a4c3fd",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "686f9f2b02d87c3f30ea2ba0dca2a1c285c30e41",
+      "title": "Nationalism and Communism in South-East Asia",
+      "authors": [
+        {
+          "name": "D. P. Singhal",
+          "authorId": "84700435"
+        }
+      ],
+      "year": 1962,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1017/S0217781100000557",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/686f9f2b02d87c3f30ea2ba0dca2a1c285c30e41",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Southeast Asian History",
+        "pages": "56-66",
+        "volume": "3"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b9c839217ef494089a64e8b5bc77970880118b43",
+      "title": "Cuban Revisionist Interpretations of Cuba\u2019s Struggle for Independence",
+      "authors": [
+        {
+          "name": "D. C. Corbitt",
+          "authorId": "118977760"
+        }
+      ],
+      "year": 1963,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1215/00182168-43.3.395",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b9c839217ef494089a64e8b5bc77970880118b43",
+      "venue": "",
+      "journal": {
+        "name": "Americas",
+        "pages": "395-404",
+        "volume": "43"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "59a49c497ad2e72042b2605d299888e56e870774",
+      "title": "Daniel Biebuyck (ed.): African agrarian systems: studies presented and discussed at the second International African Seminar, Lovanium University, Leopoldville, January 1960. xiii, 408 pp. London, etc.: Oxford University Press for the International African Institute, 1963. 45s.",
+      "authors": [
+        {
+          "name": "P. Gulliver",
+          "authorId": "118714791"
+        }
+      ],
+      "year": 1964,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1017/S0041977X00100837",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/59a49c497ad2e72042b2605d299888e56e870774",
+      "venue": "Bulletin of the School of Oriental and African Studies",
+      "journal": {
+        "name": "Bulletin of the School of Oriental and African Studies",
+        "pages": "211 - 212",
+        "volume": "27"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

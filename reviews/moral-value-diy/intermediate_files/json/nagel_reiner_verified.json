@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.3389/fpsyg.2018.01251"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.3389/fpsyg.2018.01251",
+      "title": "Skillful Use of Technologies of the Extended Mind Illuminate Practical Paths Toward an Ethics of Consciousness",
+      "authors": [
+        {
+          "family": "Nagel",
+          "given": "Saskia K."
+        },
+        {
+          "family": "Reiner",
+          "given": "Peter B."
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Frontiers in Psychology",
+      "volume": "9",
+      "issue": "",
+      "page": "",
+      "publisher": "Frontiers Media SA",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.3389/fpsyg.2018.01251"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

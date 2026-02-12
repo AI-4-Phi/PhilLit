@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4324/9781003184294"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9781003184294",
+      "title": "Historiography and the Formation of Philosophical Canons",
+      "authors": [
+        {
+          "family": "Lapointe",
+          "given": "Sandra"
+        },
+        {
+          "family": "Reck",
+          "given": "Erich H."
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Routledge",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4324/9781003184294"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

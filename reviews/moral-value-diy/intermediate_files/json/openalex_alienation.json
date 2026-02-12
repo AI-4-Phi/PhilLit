@@ -1,0 +1,1206 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "alienation labor Marx",
+  "results": [
+    {
+      "openalex_id": "W2561417174",
+      "doi": "10.5209/rev_tekn.2016.v13.n2.52847",
+      "title": "An introduction to generative justice",
+      "authors": [
+        {
+          "name": "Ron Eglash",
+          "openalex_id": "A5074326413",
+          "orcid": "https://orcid.org/0000-0003-1354-1300",
+          "institutions": [
+            "Rensselaer Polytechnic Institute"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-18",
+      "abstract": "Marx proposed that capitalism\u2019s destructive force is caused, at root, by the alienation of labor value from its generators. Environmentalists have added the concept of unalienated ecological value, and rights activists added the unalienated expressive value of free speech, sexuality, spirituality, etc. Marx\u2019s vision for restoring an unalienated world by top-down economic governance was never fulfilled. But in the last 30 years, new forms of social justice have emerged that operate as \u201cbottom-up\u201d. Peer-to-peer production such as open source software or wikipedia has challenged the corporate grip on IP in a \u201cgift exchange\u201d of labor value; community based agroecology establishes a kind of gift exchange with our nonhuman allies in nature. DIY citizenship from feminist makerspaces to queer biohacking has profound implications for a new materialism of the \u201cknowledge commons\u201d; and restorative approaches to civil rights can challenge the prison-industrial complex. In contrast to top-down \u201cdistributive justice,\u201d all of the above are cases of bottom-up or \u201cgenerative justice\u201d",
+      "cited_by_count": 70,
+      "type": "article",
+      "source": {
+        "name": "Teknokultura Revista de Cultura Digital y Movimientos Sociales",
+        "type": "journal",
+        "issn": [
+          "1549-2230"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.ucm.es/index.php/TEKN/article/download/52847/49997"
+      },
+      "topics": [
+        "Global trade, sustainability, and social impact",
+        "Geographies of human-animal interactions"
+      ],
+      "referenced_works_count": 80,
+      "url": "https://openalex.org/W2561417174"
+    },
+    {
+      "openalex_id": "W2904719216",
+      "doi": "10.1093/oxfordhb/9780190695545.001.0001",
+      "title": "The Oxford Handbook of Karl Marx",
+      "authors": [
+        {
+          "name": "Matt Vidal",
+          "openalex_id": "A5025757773",
+          "orcid": "https://orcid.org/0000-0001-7189-7482",
+          "institutions": [
+            "Loughborough University"
+          ]
+        },
+        {
+          "name": "Tony Smith",
+          "openalex_id": "A5109415843",
+          "institutions": [
+            "Iowa State University"
+          ]
+        },
+        {
+          "name": "Tom\u00e1s Nielsen Rotta",
+          "openalex_id": "A5013328111",
+          "orcid": "https://orcid.org/0000-0002-5304-9890",
+          "institutions": [
+            "University of Greenwich"
+          ]
+        },
+        {
+          "name": "Paul Prew",
+          "openalex_id": "A5040568789",
+          "institutions": [
+            "Minnesota State University, Mankato"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-09-10",
+      "abstract": "Abstract The Oxford Handbook of Karl Marx provides an entry point for those new to Marxism. At the same time, its chapters, written by leading Marxist scholars, advance Marxist theory and research. Its coverage is more comprehensive than previous volumes on Marx in terms of both foundational concepts and empirical research on contemporary social problems. It also provides equal space to sociologists, economists, and political scientists, with substantial contributions from philosophers, historians and geographers. The Oxford Handbook of Karl Marx consists of seven sections. The first section, Foundations, includes chapters that demonstrate that the core elements of Marx\u2019s political economy of capitalism continue to be defended, elaborated and applied to empirical social science including historical materialism, class, capital, labor, value, crisis, ideology, and alienation. Additional sections include Labor, Class, and Social Divisions; Capitalist States and Spaces; Accumulation, Crisis and Class struggle in the Core Countries; Accumulation, Crisis and Class Struggle in the Peripheral and Semi-Peripheral Countries; and Alternatives to Capitalism.",
+      "cited_by_count": 63,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2904719216"
+    },
+    {
+      "openalex_id": "W2536415943",
+      "doi": "10.15581/015.xix.2.119-152",
+      "title": "The Path of Alienation in Work Ethics. Division of Labor and Personal Fulfillment in Smith, Marx and Wojtyla",
+      "authors": [
+        {
+          "name": "Javier Pinto",
+          "openalex_id": "A5068844183",
+          "institutions": [
+            "Universidad de Los Andes"
+          ]
+        },
+        {
+          "name": "Gonzalo Letelier Widow",
+          "openalex_id": "A5077423775",
+          "orcid": "https://orcid.org/0000-0002-1625-2216",
+          "institutions": [
+            "Instituto de Filosof\u00eda"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-04",
+      "abstract": "El presente art\u00edculo quiere describir la relaci\u00f3n entre divisi\u00f3n del trabajo y \u00e9tica en las teor\u00edas de Adam Smith, Karl Marx y Karol Wojtyla. De este modo se intenta no s\u00f3lo mostrar los elementos sustanciales del concepto de trabajo en estos tres autores, sino tambi\u00e9n c\u00f3mo hay una relaci\u00f3n conceptual entre ellos, en tanto que Wojtyla reacciona a la antropolog\u00eda marxista y el mismo Marx lee y hace una interpretaci\u00f3n original de Smith.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Revista Empresa y Humanismo",
+        "type": "journal",
+        "issn": [
+          "1139-7608",
+          "2254-6413"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.15581/015.xix.2.119-152"
+      },
+      "topics": [
+        "Education and Cultural Studies",
+        "Contemporary Social and Economic Issues",
+        "Finance, Markets, and Regulation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2536415943"
+    },
+    {
+      "openalex_id": "W2265724406",
+      "doi": "10.1177/0011392115591612",
+      "title": "Alienation: The critique that refuses to disappear",
+      "authors": [
+        {
+          "name": "Devorah Kalekin\u2010Fishman",
+          "openalex_id": "A5059220229",
+          "orcid": "https://orcid.org/0000-0001-5727-1600",
+          "institutions": [
+            "University of Haifa"
+          ]
+        },
+        {
+          "name": "Lauren Langman",
+          "openalex_id": "A5016869439",
+          "orcid": "https://orcid.org/0000-0002-2851-5220",
+          "institutions": [
+            "Loyola University Chicago",
+            "University of Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-20",
+      "abstract": "Although it is often condemned as an imprecise concept, alienation continues to flourish as critique in contemporary philosophy, theology, and psychology, as well as in sociology. Historically originating in Roman law, where it referred to the transfer of land ownership, alienation has since been applied extensively to analyses of labor relations, politics, and culture. In the 19th century, Marx showed that workers\u2019 alienation, their dehumanization and estrangement, was a consequence of the structure of exploitation in capitalist industry. The concern was echoed in Weber\u2019s metaphor of the \u2018iron cage\u2019 as an outcome of rationalized structures, as well as in Durkheim\u2019s conceptualization of anomie as a variant of alienation causing socially induced psychological states. Today, while research in the structural tradition does not assume that people necessarily are aware of their condition, researchers who assume that alienation is a conscious experience have invented scales to measure its intensity. Continuing both the structural and the psychosocial traditions, researchers now study alienation in relation to uses of digital technologies and new forms of exploitation in work, as well as in politics and popular culture. Alienation is also studied in families, especially in investigations of parenthood.",
+      "cited_by_count": 50,
+      "type": "article",
+      "source": {
+        "name": "Current Sociology",
+        "type": "journal",
+        "issn": [
+          "0011-3921",
+          "1461-7064"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Death Anxiety and Social Exclusion"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W2265724406"
+    },
+    {
+      "openalex_id": "W3197863781",
+      "doi": "10.2139/ssrn.3843057",
+      "title": "Karl Marx's Theory of Alienation",
+      "authors": [
+        {
+          "name": "Roudro Mukhopadhyay",
+          "openalex_id": "A5029361162"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.2139/ssrn.3843057"
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3197863781"
+    },
+    {
+      "openalex_id": "W2568721193",
+      "doi": "10.1163/9789004294301",
+      "title": "Value in Capitalist Society: Rethinking Marx's Criticism of Capitalism",
+      "authors": [
+        {
+          "name": "Paul Cobben",
+          "openalex_id": "A5031188205"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-05-27",
+      "abstract": "Marx's analysis of the commodity results in his conception of Capital as substance in the form of alienation. While Hegel claims that substance can be understood as the realization of freedom, Marx shows this freedom to be alienated labor: abstract labor, which Marx identifies as the capitalist conception of value. The book clarifies why Marx's so-called materialist criticism of Hegel can be conceived of as an immanent criticism of Hegel: Marx's criticism explicates that the realization of freedom in the Philosophy of Right contradicts Hegel's basic point of departure. The adequate realization of freedom not only leads to an alternative (non-alienated) conception of value, but also explains why this conception of value is fully compatible with the free market.",
+      "cited_by_count": 11,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2568721193"
+    },
+    {
+      "openalex_id": "W1667128688",
+      "doi": null,
+      "title": "THE CONCEPT OF ALIENATION IN THE EARLY WORKS OF KARLMARX",
+      "authors": [
+        {
+          "name": "Oliver Christ",
+          "openalex_id": "A5090128818",
+          "orcid": "https://orcid.org/0000-0002-4022-9278",
+          "institutions": [
+            "ZHAW Zurich University of Applied Sciences"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-03-30",
+      "abstract": "The main analysis of alienated labor was developed by Karl Marx in his early work Economic and Philosophical Manuscripts from 1844. Marx differentiates between four dimensions of alienated labor in capitalist modes of production: The alienation of individuals (workers) from the product, from economic activity, from their species-being, and the alienation of individuals from one another. Together with the description of four forms of alienation, Marx provides approaches for an anthropological definition of humans, who can be summarized in the conception of humans as \u2018representational species-beings\u2019. According to Marx, the individual is a creature who acts in relationship to his own species and to human society. Under the conditions of private ownership and exchange, the individual alienates himself from his species-being and his fellows, whom he views solely as a means of achieving personal objectives. Following the analysis of alienated labor, Karl Marx provides in his early works initial indications of his ideas on a superseded alienation. In the case of human modes of production, where private ownership is positively superseded, Marx lists four different forms of affirmation, which are conceived of in the sense of recognition relationships and also relate to the anthropological definition of humans as \u2018representational species-beings\u2019.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Z\u00fcrcher Hochschule f\u00fcr Angewandte Wissenschaften digital collection (Zurich University of Applied Sciences)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://digitalcollection.zhaw.ch/handle/11475/12657"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Philosophy and Historical Thought",
+        "Humanities and Social Sciences"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W1667128688"
+    },
+    {
+      "openalex_id": "W2827557294",
+      "doi": "10.5212/retepe.v.3.011",
+      "title": "O materialismo hist\u00f3rico-dial\u00e9tico nas pesquisas em Pol\u00edticas Educacionais",
+      "authors": [
+        {
+          "name": "Gisele Masson",
+          "openalex_id": "A5069857808",
+          "orcid": "https://orcid.org/0000-0002-9799-5950",
+          "institutions": [
+            "Universidade Estadual de Ponta Grossa"
+          ]
+        },
+        {
+          "name": "Simone de F\u00e1tima Flach",
+          "openalex_id": "A5058585746",
+          "orcid": "https://orcid.org/0000-0002-9445-0111",
+          "institutions": [
+            "Universidade Estadual de Ponta Grossa"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "Abstract: This study presents an analysis of the research on education policy which are based on the historical-dialectical materialism, aiming to identify the use of the method categories (praxis, totality, mediation, contradiction and historicity) and the Marxist theory categories (labor, surplus value, alienation, ideology, social classes and the State). Firstly, the background of the historical-dialectical materialism based on Marx and Luk\u00e1cs is presented, supported by the contribution of contemporary authors such as Tonet, Lessa, Netto, Chasin and M\u00e9sz\u00e1ros. Next, a survey of the thesis and dissertations presented between 1990 and 2010 in the Post-graduation programs in the Education area in Brazil is carried out, focusing on the studies presented between 2006 and 2010 which resorted to the Marxist theoretical background. From this survey, it was possible to map how often both categories the method and the Marxist work, highlighting the importance of the dialectical relationship between them. &nbsp; Keywords: Historical-dialectical materialism. Education policy research. Knowledge production.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Revista de Estudios Te\u00f3ricos y Epistemol\u00f3gicos en Pol\u00edtica Educativa",
+        "type": "journal",
+        "issn": [
+          "2409-3696"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.uepg.br/index.php/retepe/article/download/12384/209209210068"
+      },
+      "topics": [
+        "Social and Political Issues",
+        "Education Pedagogy and Practices",
+        "Youth, Politics, and Society"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2827557294"
+    },
+    {
+      "openalex_id": "W4313908413",
+      "doi": "10.1007/s11406-022-00604-x",
+      "title": "The Specter of Automation",
+      "authors": [
+        {
+          "name": "Zachary Biondi",
+          "openalex_id": "A5058091179",
+          "orcid": "https://orcid.org/0000-0002-9634-825X",
+          "institutions": [
+            "University of California, Los Angeles"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-10",
+      "abstract": "Abstract Karl Marx took technological development to be the heart of capitalism\u2019s drive and, ultimately, its undoing. Machines are initially engineered to perform functions that otherwise would be performed by human workers. The economic logic pushed to its limits leads to the prospect of full automation: a world in which all labor required to meet human needs is superseded and performed by machines. To explore the future of automation, the paper considers a specific point of resemblance between human beings and machines: intelligence. Examining the development of machine intelligence through the Marxist concepts of alienation and reification reveals a tension between certain technophilic post-labor visions and the reality of capitalistic development oriented towards intelligent technology. If the prospect of a post-labor world depends on technologies that closely resemble humans, the world can no longer be described as post-labor. The tension has implications for the potential moral status of machines and the possibility of full automation. The paper considers these implications by outlining four possible futures of automation.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Philosophia",
+        "type": "journal",
+        "issn": [
+          "0048-3893",
+          "1574-9274"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11406-022-00604-x.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Ethics and Social Impacts of AI",
+        "Digital Education and Society"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4313908413"
+    },
+    {
+      "openalex_id": "W1451910310",
+      "doi": null,
+      "title": "Killing for a Living: Psychological and Physiological Effects of Alienation of Food Production on Slaughterhouse Workers",
+      "authors": [
+        {
+          "name": "A. Dorovskikh",
+          "openalex_id": "A5015887954",
+          "institutions": [
+            "University of Colorado Boulder"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "This thesis research focuses on the negative effects that Concentrated Animal Feeding Operations (later referred to as CAFOs) have on the environment and the psychological and physiological effects of alienation of food production on slaughterhouse workers of industrial slaughterhouses in comparison to niche-market slaughterhouses. Billions of animals in United States are slaughtered each year for food. Concentrated Animal Feeding Operations function as establishments that raise large numbers of animals in small, confined spaces to accommodate the large demand for animal products. This comes at a certain environmental cost concerning water and air pollution. Animal agriculture produces more greenhouse gases than all of the transportation sector combined and poor regulations of CAFO establishments allows for poor waste management, which carries a big risk of contamination and spread of bacteria, viruses, pathogens, and other pollutants. Such large numbers of animals raised require a high speed of the disassembly line in industrial slaughterhouses to keep up with the animal output of CAFOs. A high speed of the disassembly line directly correlates with the injury risk rate earning slaughterhouse establishments the title of one of the most dangerous work places. Slaughterhouse workers are also at risk of Perpetration-Inducted Traumatic Stress, which is a form of Post Traumatic Stress Disorder and results from situations where the concerning subject suffering from PTSD was a causal participant in creating the traumatic situation. Karl Marx described alienation under Capitalist conditions as \u00e2\u0080\u009cEstranged Labour\u00e2\u0080\u009d distinguishing between four different aspects: alienation from the product of one\u00e2\u0080\u0099s labor, alienation from the labor process or one\u00e2\u0080\u0099s activity of laboring, alienation from one\u00e2\u0080\u0099s \u00e2\u0080\u009cspecies being,\u00e2\u0080\u009d and alienation from other human beings as a result of one\u00e2\u0080\u0099s work life demand. According to the primary research of this thesis there seems to be more alienation amongst industrial scale slaughterhouses than niche-market slaughterhouses. However, the sample size of primary research is not large enough to be representative of other niche-market slaughterhouses. The niche-market slaughterhouse investigated operates at a slower speed and employs a different managerial practice, which excludes the alienation of workers from each other. This is recommended to industrial scale slaughterhouses to reduce injury rates and increase worker satisfaction. A long-term, practical recommendation is to decrease the production of animal products as the current rate is unsustainable and negatively affects the environment.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "CU Scholar (University of Colorado Boulder)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholar.colorado.edu/concern/undergraduate_honors_theses/mp48sd395"
+      },
+      "topics": [
+        "Agriculture and Farm Safety"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W1451910310"
+    },
+    {
+      "openalex_id": "W1600238717",
+      "doi": "10.1111/josp.12096",
+      "title": "The Socialist Principle \u201cFrom Each According To Their Abilities, To Each According To Their Needs\u201d",
+      "authors": [
+        {
+          "name": "Pablo Gilabert",
+          "openalex_id": "A5005751449",
+          "orcid": "https://orcid.org/0000-0002-0183-8716"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-06-01",
+      "abstract": "This article offers an exploration of the socialist principle \u201cFrom each according to their abilities, to each according to their needs.\u201d The Abilities/Needs Principle is arguably the ethical heart of socialism but, surprisingly, has received almost no attention from political philosophers.1 I will propose an interpretation of the principle and argue that it involves appealing ideas of solidarity, fair reciprocity, recognition of individual differences, and meaningful work. There is a moderate revival of interest in socialism. In the aftermath of the global crisis of 2008, many people started to wonder whether there is a desirable alternative to the capitalist way of organizing economic life. Socialism provides the historically most important counter-tradition to capitalism. But how should we understand socialism today? To answer this question, we can think of a fully developed conception of social justice as having three key dimensions. It would propose a set of normative principles (DI), certain social institutions and practices that implement those principles (DII), and some political strategies of transformation leading agents from where they are to the social realizations implementing the principles (if these do not exist already; DIII). Now, it is common to characterize socialism (or communism, a term preferred by many Marxists) in terms of dimension DII. Socialism is seen as a form of social organization in which economic class division no longer exists and in which workers control the means of production, shape the economic process, and benefit equally from it. I think, however, that this narrow focus on DII should be avoided, and that we should make discussion of DI more prominent. We cannot defend any specific version of DII as desirable without engaging the standards that DI illuminates.2 Discussion at DI is also crucial because we cannot simply assume, as many socialists did in the past, that socialist transformations are inevitable. History need not move in a socialist direction. To move it in that direction, some political agents will have to become committed to socialism and pursue it in practice. Given the mistakes of past socialist politics, this point has real bite. Many people need to be convinced that socialism is desirable, and some also need to be convinced that socialism is not utterly undesirable. This requires ethical argument and advocacy. This article proceeds as follows. Section 2 analyzes the formulation of the Abilities/Needs Principle by Marx. Section 3 identifies the principle's initial plausibility, but shows that it faces problems that cannot be addressed without developing a fresh interpretation of it. Sections 4.1\u20134.3-4.1\u20134.3 provide an interpretation of the principle that highlights demands concerning opportunities for self-realization in work, positive duties of solidarity, sensitivity to individual differences, and mechanisms of fair reciprocity. Although it focuses largely on DI, this article also considers DII and DIII. Section 4.4 explores a practical implementation of the socialist principle, and Section 5 discusses some normative puzzles about the transition from capitalism to socialism. The Abilities/Needs Principle (hereafter \u201cANP\u201d) was formulated by Karl Marx in a late text, the \u201cCritique of the Gotha Program.\u201d This is one of the few occasions in which Marx is explicit about what socialism (or communism, in his words) would involve. Although my aims in this article are not exegetical, it will be helpful to summarize the key points in Marx's discussion.3 They are of intrinsic interest, have been quite influential in socialist thought, and will be significant for this article's argument. Marx presents two principles of distribution. The first is the so-called Contribution Principle (To each according to their contribution), and the second is the ANP (From each according to their abilities, to each according to their needs). They are supposed to apply consecutively, in two phases of socialism. The second is evaluatively superior to the former. In the early phase part of the distribution already caters directly for needs: the Contribution Principle is constrained by basic provisions concerning health care, education, and the reproduction of the infrastructure of the economy. But the ANP goes far beyond such basic needs, catering for the conditions for everyone's human flourishing. The ANP also interrupts the translation of inequalities in natural endowments into unequal access to consumption goods. The needs of each person count equally regardless of the extent of their capability to produce. However, the principle's implementation is not feasible during the early stage of transition, as moral and political culture is still colored by bourgeois principles (such as the principle of exchange of commodities with equivalent value\u2014which disadvantages workers with lower natural talents), and there is not yet enough material abundance to support the higher needs of all. It thus makes sense to implement the Contribution Principle first. Although less intrinsically desirable, its implementation would ease the transition away from capitalism by delivering on its unfulfilled promise to reward productive output rather than reflect the superior bargaining power of those in superior class positions. Furthermore, it would pave the way for the creation of more desirable distributive schemes by introducing incentives to generate the level of material abundance that would make distribution according to needs viable and, thus, a real option. Some might ask whether it makes sense today to even entertain a view of economic justice based on the ANP. Kymlicka provides an instructive example of skepticism.9 He raises a number of challenges to the ANP. They can be summarized as saying that the principle may be trivial, redundant, or manifestly inferior to others. Triviality may arise if it just restates the familiar idea of equal concern for the interests of all without telling us anything specific about how to honor it. It may be redundant because we already have principles calling for equal consideration of the interests of all in liberal egalitarian theories (such as those of John Rawls or Ronald Dworkin). When we consider those theories we may find, furthermore, that the ANP is manifestly inferior to them, as it does not include insights they lack and it lacks insights they have. Two examples of the latter insights are the account of the needs or interests that matter from the point of view of justice by reference to social primary goods (Rawls) or resources (Dworkin), and the circumstance/choice distinction that helps to establish a demarcation between inequalities that deserve to be combated from the point of view of justice (those resulting from circumstances) and those that do not (those resulting from choice). To respond to this challenge we can say several things. First, the ANP was formulated before the recent liberal egalitarian theories that Kymlicka mentions, and Marx already captured some of the insights of those theories in his discussion of the ANP. Marx and socialists more generally, were worried about superficial views of equality that did not address material disadvantage. They demanded economic systems that actually worked equally to the benefit of all those living under them, challenging the absolute and relative deprivations capitalist institutions generated. In this respect, part of the appeal of contemporary liberal egalitarianism consists precisely in mobilizing socialist concerns that pre-date it. Furthermore, Marx anticipated the circumstance/choice distinction. As we saw, in the \u201cCritique of the Gotha Program\u201d Marx criticizes the Contribution Principle precisely because it condones inequalities in the capacity to satisfy needs which result from choice-independent differences in natural endowments. Arguably, the ANP captures the liberal egalitarian concern for responsibility if we consider both of its clauses rather than only the second (as Kymlicka does). The first clause identifies a responsibility to contribute, and we can interpret the second (as I will below) as taking the justifiability of some demands on the social product as depending on one's making an appropriate effort to support its generation. There is more. The ANP and the socialist tradition provide fresh insights about how to think about the metric and duties of distributive justice. They include a rich account of \u201cabilities\u201d and \u201cneeds\u201d as being multifarious, developing over time, and as partially dependent on the nature of social and political systems. They include a valuable emphasis on the significance of self-realization in work besides consumption.10 And they display a fundamental concern for solidarity (as captured, for example, in the responsibility to produce to meet the needs of others as something that has intrinsic significance). Recent liberal egalitarian theories are different from earlier liberal views of economic equality (which focused only on formal equality of opportunity) precisely because they have absorbed the historical contribution of socialism. It is liberalism that has moved toward socialist ideas. If contemporary socialists move toward the liberal egalitarian framework, they partly move toward greater understanding of their own historical contribution. As will become clear from what follows, I accept that there are serious problems in the Marxian formulation of the ANP. I also accept that contemporary socialists have much to learn from liberalism. I think that any viable contemporary socialist view of justice must substantially overlap with liberalism, absorbing the priority the latter gives to certain civil and political freedoms. But the socialist tradition has much to offer as well. An elaboration of the ANP can yield important insights. I focus here on the ANP. But a complete account of dimension DI of socialism should also include other principles, and if possible identify their relations. For example, it should include principles of civil and political liberty, and see them as often outweighing the ANP when their implications conflict. If people choose jobs in which they make poor use of their productive abilities they should not be coerced to do other work (except in emergencies15). People should obey (although they may campaign for changing) distributive arrangements generated by a legitimate democratic process even if they are unjust according to the ANP (unless the injustices are extreme). In the interpretation I will formulate, the principle is normally constrained by some civil and political liberties. We can account for people's needs by considering what would constitute their capabilities to engage in certain valuable \u201cfunctionings\u201d (i.e., certain ways of being or doing they have reason to value). Marx's view of socialism as securing the conditions for people's self-realization, itself construed as the development and exercise of various capabilities, can indeed be seen as a case of the capabilitarian strategy. In particular, the emphasis on autonomous and cooperative capability development and exercise at the workplace is a distinctive contribution of the socialist tradition to the capability metric.19 There are two kinds of work in Marx's view: work that merely secures subsistence and work that involves the extensive development and expression of workers' various capabilities. The second is the kind of work that includes self-realization. It involves activities in which workers cooperate with each other as equals, have powers to choose what to do and how to do it, and develop and exercise skills through interesting, challenging, and enjoyable performances. It is the opposite of alienated labor, which involves dull or distressful tasks and servile or hostile relationships.20 Now, these two kinds of work are respectively picked out in two common interpretations of the significance of work in Marx's view of socialism, the \u201chigher form of society \u2026 in which the full and free development of every individual forms the ruling principle.\u201d21 One interpretation draws on Marx's contrast between the \u201crealm of freedom\u201d and the \u201crealm of necessity,\u201d which seems to locate all work in the latter, and envisions self-realization as occurring outside of it.22 The other invokes Marx's characterization of work as \u201clife's prime want.\u201d23 Here self-realization in work is a primary achievement of socialism. Arguably both forms of work are important, although in different ways. Access to work involving self-realization should count as one of the needs satisfied in socialism. As described in the previous paragraph, it strikes me as an intrinsically significant good. If the design of a just society is to focus not only on distributing the outputs of an economic process but also on its internal shape, it should have room for work of this kind. Conversely, a duty to do one's fair share regarding some forms of instrumentally necessary but not intrinsically desirable work is obviously part of what a duty to contribute according to one's abilities should include. Of course, there are needs that go beyond work. Needs regarding consumption goods and the pursuit of intimate relationships are clear examples. When it comes to those Marx's framework is often limited, and we must look elsewhere.24 Recent work in the capability approach provides excellent ideas concerning what further categories of needs and associated capabilities we should The capability approach various of It that we people's positive to develop and exercise various it for people's by not them to engage in any specific it gives to political (such as that people to and political of important capabilities and distributive schemes I to the and of this In a people can develop and their own views of what needs should be But we should not democratic of and about what needs deserve to be for example, considers the of a of of needs that we should that are are are He three by a a that without and social agents to He that the is the But that his discussion moved from to Some might say that we should a view here and think that how distributive schemes are provides the conditions that make them I this because it is to a version of the a distributive because we make it, or should we make it because it is of the or of principles do not provide as we to think about what to and to in a about needs if we it. There are two and important to this The first is as we saw, the of the ANP is to a framework of democratic and The of this framework the extent to which agents are to standards they do not They of course, be part of a But the second this The distributive focus is on securing certain real opportunities or capabilities, not their has a civil being to engage in a specific by others when they not to do It might be that in a social implementing the ANP people's is because the of the opportunities is and is to for it whether they use them or However, the is if all feasible social schemes have in terms of and If normative of schemes is to on people's opportunities to (as it and different feasible schemes different we should being support the with the feasible It may include some opportunities that not But their is important to those do use them, and it the of those do not by them real to choose Furthermore, and to the would be constrained by civil and political which people to from and them to challenge and Some might that we about by a less of the ANP according to which we should people to meet their most or basic But not a more that equal opportunities to the of that are is it not that some people can less than others through no or of their If we civil and political not pursue the more The of this this In this I propose an interpretation of the demands of the ANP. I also how it to important socialist concerns about and and helps respond to regarding responsibility and their different needs and concerning self-realization, and As I in the of an economic that it the ANP should be other normative that will often be such as the of civil and political and their fair formulation of the demands associated with the principle of those such as the from in and certain democratic political the design of economic institutions and practices in also that the principle of support for the of certain basic needs care, education, that are necessary for subsistence and is in also be seen as that a more narrow formulation of the demands of the ANP. in this the ANP captures the socialist normative concerns for and The first two concerns are captured in the of the productive process as opportunities for self-realization in work and the duty to produce that can be to meet The concern for is partly captured by the of fair reciprocity. I will these points by that their in other interpretations of the ideas First, consider of captures the of taking of the of others without appropriate This with a of and with a view that its significance as from the distribution of economic The the of as a matter of workers of the product of their which they are The latter it as a of the unjust in control of means of production, which gives more bargaining power than The principle of to the product of one's is because it makes it unjust to the of some of it to meet the basic needs of those cannot work. It thus of the for example, requires the of basic resources to those cannot work because they are The principle also to those work but are of having less natural less productive We should to the of in a different The here can An that seems to support the principle is when workers have an effort and to produce they have a to The of this can be captured by the of fair to the of others in The crucial idea the of is that there is a duty to taking of others. In my the ANP an of we should not of activities by others that benefit us without doing share in that can meet needs of others when we If we can do share and we do and we from others do their we is an of in according to which should of effort if they can when they benefit from the effort of others. Furthermore, the account includes and it also makes reference to positive duties to support which provides a key consideration and the that and need not with the that cannot work and are do not engage in may however, if some make on the work of others without when they I address this case The second view of captures the important points that unequal control of means of bargaining and is in any case that should their as economic agents with productive than others. that we can the ANP to generate this its egalitarian as described in the second of this of course, we see it as a of an Furthermore, the partly be through the democratic process in process yield control of means of production, or on control to shape bargaining conditions the view under discussion the specific in of resources this but does not fully account for what it. The account of positive duties and fair here can partly what is The with the of workers by for example, is not only that their initial unequal access to means of is There is also the that some use their superior bargaining power to others to benefit them of cooperative that equally support all those make The here also partly the possible in between people or equal access to means of differences in natural endowments may by make their bargaining power and this may the to shape economic that they from of this some agents taking of the relative of others. social and institutions of solidarity and fair of the kind in and would that they be me a regarding As I interpret the it does not a complete of the between work and distributive might make sense if we lack of material or that goods for consumption are the result of productive by As as there is some that people need will not be If workers have of (as they and they can be more or less certain needs can be more or less satisfied depending on how much people choose to work. In this it seems when a person makes on consumption goods without having to the economic process by their The would be one of toward those have but will less because of the lower economic resulting from lack of This does not make the ANP a version of the Contribution In of the the latter, is to But and make the ANP a different it that we individual differences into account when we contribution and Furthermore, is not the of the duty to access to consumption but a on support in of relative Needs are still what gives to economic of course, in my interpretation the ANP involves a distinctive concern with self-realization, to which I The of self-realization (or is obviously for by of the The socialist view that economic systems should opportunities for self-realization in work has been to Some have that a conception of justice appealing to self-realization in work might other goods or concerning or the of not people work less if this gives them more to to and or work in ways that do not self-realization if this gives them more for This is an important But the view here can answer it. First, it is important to that where there are material and any economic will people to make between various goods. the is what offers the and whether it gives people real and conditions of to choose from in these many people to work in jobs for as in work involving self-realization is an not an forms of work are not is crucial is that workers are by being real to work. even opportunities for self-realization, the of work can be As the of their economic can that to free for other self-realization can also be outside of productive work. the ANP does not the of those other or their its to individual differences, this would support for people to how to the opportunities and they As in the of self-realization is has a significance as a of much every In any that is not fully work will have to if subsistence and opportunities for human and outside the are to be society will have to through various mechanisms that people work. It is only that this with that shape a significant number of opportunities to work in ways that considers the that the social duty to produce according to is people room for doing what they without social In that is in in his socialist economy. In a capitalist many people have consumption outside of work their lower does not to work, and it a that people are to choose jobs they rather than This is not in capitalist where people are by to jobs they to for and and other basic The socialist would not be Furthermore, we should not think that other do not social of their if we have a of what would the implementation of the ANP and we still have to how such an implementation might be feasible in terms of I to this We how socialism be construed at DI and DII by an interpretation of the ANP and an version of the But how can we move from here to is a socialist the ANP from the capitalist This is the of transition to DIII. It gives to many about the between and justice in and about the of socialism in In this I on the specific of how the capitalist be into the socialist one by the ANP. An answer is that people can become to honor that principle by being in and economic institutions that them to based in it. This answer is but does not go far We have to out how a of people may arise that choose to in this way for the first the second the is not because it provides the but because it helps complete the transition away from capitalism and the conditions for the of the higher phase of socialism. It is only in the latter that a real to the In the early what is crucial is and First, we that we capitalism This is by a key promise which capitalism makes but is often through the of exchange of but in it workers more than they and more than they in the early phase of socialism by the each in to what they This would those the of exchange of to move from capitalism to the early phase of socialism, and to not go the of the gives people a to work (as they would be in to how much they They would thus the material abundance that is necessary for the socialist to be in the higher It be the implementation of the involves a case of not For example, that a in the early stage is some version of Principle (which only those inequalities that work to the benefit of the in a make the might be but we should not the of that Marx is As we saw, the involves some with the bourgeois moral culture that is being for transformation principle of exchange of is the Principle seems more In Rawls that it is quite a from the If this is it might be a idea to a of the the and the ANP. The second would be as the inequalities in access to consumption goods resulting from differences in productive capacity by the first become and and the would be the problems that the second become less As material is these in moral culture might It is important that in its version the Principle is not the It involves a version of Rawls it as idea of not to have greater this is to the benefit of others are less But we can a form of that involves more than the by them to have more than they before we to have more that we We can also wonder whether we should to have more than them than share the we can with to The ANP involves a more and egalitarian form of is interesting, however, to consider how it with the version of the which for of the of the but does not on the ANP involves a of and of are because their are seen as intrinsically it is to meet are also as makes activities in which their capabilities for and for cooperative and are developed and When agents honor the principle in their economic the is and An a of in which each and are equally In this the human of each is as the free pursuit of of each in and consumption is In human is seen as to positive duties of To concern besides for the human of others we must not just from the conditions in which they can Socialism the abilities and needs of all as the focus of and positive As a it gives human full The socialist of involving both and positive goes beyond the of which involves In capitalist economic the needs of others are normally for me only and to the extent catering for them would work to my own This does not the of other human The idea of exchange of is also should we think that are not to exchange is higher than the exchange of the they This the intrinsic significance of their needs, and the that solidarity The idea of exchange of appeal it has from its to the idea of fair reciprocity. But fair is an different which is captured by the ANP. It requires in productive effort we are to not that only exchange be The socialist Abilities/Needs Principle gives human its However, this point is by a of human that support from others is a of or and it involves or This is an because it the idea of to of and we move beyond conditions of the of these cannot be and the for the of human may the it For I two and at the and the of",
+      "cited_by_count": 77,
+      "type": "article",
+      "source": {
+        "name": "Journal of Social Philosophy",
+        "type": "journal",
+        "issn": [
+          "0047-2786",
+          "1467-9833"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/josp.12096"
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W1600238717"
+    },
+    {
+      "openalex_id": "W2299084016",
+      "doi": "10.1177/0896920515620476",
+      "title": "Atopia Awaits! A Critical Sociological Analysis of Marx\u2019s Political Imaginary",
+      "authors": [
+        {
+          "name": "Mark P. Worrell",
+          "openalex_id": "A5034203619",
+          "institutions": [
+            "SUNY Cortland"
+          ]
+        },
+        {
+          "name": "Dan Krier",
+          "openalex_id": "A5031804199",
+          "orcid": "https://orcid.org/0000-0003-3174-7310",
+          "institutions": [
+            "Iowa State University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-17",
+      "abstract": "Marx\u2019s (1844) estranged labor manuscript maps processes that stultify spontaneous human relations under the division of labor in the regime of capital accumulation. For Marx, negating absolutes would put \u2018Man\u2019 back on its natural trajectory toward positive freedom. Such evacuation of mediating \u2018substances\u2019 results in either frivolity or pragmatic barbarism rather than positive freedom. Marx\u2019s political imaginary rejected philosophical mysticism but overlooked finer points of Hegel\u2019s dialectic that contribute to an immanent critique of Marxist political ideology. Missing from Marx\u2019s thought is the logic of post-capitalist mediation and a trace of the subjective modalities that correspond with the objective forms of alienation. Lacking an adequate psychology, Marx did not see that he had constructed a communism that mirrored the subjective spirit of bourgeois society. We draw upon philosophical, sociological, and psychoanalytic currents to remap the genome of Marxist political philosophy with a Whitmanesque imaginary congenial to free, poetic social mediation.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Critical Sociology",
+        "type": "journal",
+        "issn": [
+          "0896-9205",
+          "1569-1632"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Weber, Simmel, Sociological Theory",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W2299084016"
+    },
+    {
+      "openalex_id": "W2911015452",
+      "doi": "10.1016/j.ajog.2019.01.001",
+      "title": "Academic physicians as factory workers: identifying and preventing alienation of labor",
+      "authors": [
+        {
+          "name": "Frank A. Chervenak",
+          "openalex_id": "A5055103818",
+          "orcid": "https://orcid.org/0000-0002-4600-0853",
+          "institutions": [
+            "Lenox Hill Hospital"
+          ]
+        },
+        {
+          "name": "Laurence B. McCullough",
+          "openalex_id": "A5072079955",
+          "orcid": "https://orcid.org/0000-0002-9505-0611",
+          "institutions": [
+            "Lenox Hill Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-08",
+      "abstract": null,
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "American Journal of Obstetrics and Gynecology",
+        "type": "journal",
+        "issn": [
+          "0002-9378",
+          "1085-8709",
+          "1097-6868"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Diversity and Career in Medicine",
+        "Healthcare Systems and Challenges",
+        "Healthcare professionals\u2019 stress and burnout"
+      ],
+      "referenced_works_count": 4,
+      "url": "https://openalex.org/W2911015452"
+    },
+    {
+      "openalex_id": "W4214820622",
+      "doi": "10.22363/2313-2272-2022-22-1-40-57",
+      "title": "\u201cDangerous modernity!\u201d, or the shadow play of modernity and its characters: instrumental rationality - money - technology (Part 2)",
+      "authors": [
+        {
+          "name": "Denis Podvoyskiy",
+          "openalex_id": "A5005090525",
+          "orcid": "https://orcid.org/0000-0002-7396-1828",
+          "institutions": [
+            "Institute of Sociology",
+            "Lomonosov Moscow State University",
+            "Moscow State University",
+            "Peoples' Friendship University of Russia"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-03",
+      "abstract": "The article is the second part of the essay on the phenomenon of alienation and its forms in modern societies (the first part was published in 2021, No. 4). In this part, the author focuses on technology as fetishized by the modern thinking and on various manifestations of alienation in labor, which are not only (and not so much) a consequence of private ownership of the means of production (according to Marx), but also a by-product of objective tendencies of social differentiation as aggravated in the course of historical development (division of labor) and the subordination of most spheres of the modern social experience to the logic of instrumental rationality. Excessive specialization, standardization, algorithmization, routinization of activities, technological and functional operationalization of the work process and professional roles, the dominance of means over goals, administrative and bureaucratic regulation and control have become signs of the time and distinctive features of the rhythm of activity not only in industrial enterprises, but also in non-physical labor. An important aspect (and a background circumstance) in the diagnosis of modernity is the fact that in recent centuries, modern societies have developed mainly in the urban social-ecological environment. The format and style of urban life with its role-based fragmentation and specific depersonification (and an increase in anonymity) also provoked a range of consequences that make alienation a challenge for modern societies. The author uses the concepts of classical sociological theory as a key tool for analyzing and describing the universe of modernity, and refers to the ideas of M. Weber, G. Simmel, L. Wirth, H.M. McLuhan, H. Marcuse, G. Friedmann, \u0421. Lefort and others.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "RUDN Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "2313-2272",
+          "2408-8897"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.rudn.ru/sociology/article/download/30386/20400"
+      },
+      "topics": [
+        "Sociopolitical Dynamics in Russia"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W4214820622"
+    },
+    {
+      "openalex_id": "W2615440601",
+      "doi": "10.1007/978-3-319-53438-1_5",
+      "title": "Labor and \u2018World Alienation\u2019: Arendt\u2019s Critique of Marx",
+      "authors": [
+        {
+          "name": "Trevor Tchir",
+          "openalex_id": "A5050438284",
+          "institutions": [
+            "Algoma University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Hannah Arendt's Political Philosophy",
+        "Philosophy, Ethics, and Existentialism",
+        "Psychoanalysis, Philosophy, and Politics"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W2615440601"
+    },
+    {
+      "openalex_id": "W3041183412",
+      "doi": "10.1007/978-3-030-39954-2_14",
+      "title": "Reification and Real Abstraction in Marx\u2019s Critique of Political Economy",
+      "authors": [
+        {
+          "name": "Ingo Elbe",
+          "openalex_id": "A5090371270",
+          "institutions": [
+            "Carl von Ossietzky Universit\u00e4t Oldenburg"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": null,
+      "cited_by_count": 4,
+      "type": "book-chapter",
+      "source": {
+        "name": "Marx, Engels, and Marxisms",
+        "type": "book series",
+        "issn": [
+          "2524-7123",
+          "2524-7131"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism",
+        "Critical Theory and Philosophy",
+        "Marxism and Critical Theory"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W3041183412"
+    },
+    {
+      "openalex_id": "W2464117639",
+      "doi": "10.1080/1462317x.2016.1187907",
+      "title": "Simone Weil's Political Theology",
+      "authors": [
+        {
+          "name": "Inese Radzins",
+          "openalex_id": "A5044582242",
+          "institutions": [
+            "Graduate Theological Union",
+            "Pacific School of Religion"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-05-03",
+      "abstract": "This article suggests that Simone Weil's political theology is characterized by the idea of labor and the event of laboring. I begin by arguing that her thinking is shaped by a materialist reading of Christianity that employs Marx's concepts \u2014 labor, capital and alienation \u2014 to examine the political implications of three theological ideas, fall, slavery and sin. Next, I suggest that although laboring should be understood as a creative endeavor, Weil argues that it is always conditioned and constrained by a force she terms social matter. This constraint produces what Marx called alienation and Weil will refer to as enslavement (and even sin). Finally, I contend that Weil's idea of labor \u2014 and its call for a minimization of constraint \u2014 provides a counter-force to social matter. I conclude by suggesting that Weil's labor provides a different way of conceptualizing not just the political subject, but political theology itself.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Political Theology",
+        "type": "journal",
+        "issn": [
+          "1462-317X",
+          "1743-1719"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and Literary Analysis",
+        "Philosophy, Ethics, and Existentialism",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W2464117639"
+    },
+    {
+      "openalex_id": "W2502134319",
+      "doi": "10.1177/0896920516658942",
+      "title": "Imagining Lacan Imagining Marx",
+      "authors": [
+        {
+          "name": "Roger Salerno",
+          "openalex_id": "A5014461104",
+          "institutions": [
+            "Pace University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-02",
+      "abstract": "This critical review proposes that Lacan\u2019s concept of alienation has little relevance to Marx\u2019s notion of estrangement of labor and in fact depoliticizes it. Proceeding from a position that is not unsympathetic to poststructuralist theory, the author finds fault with Lacanian structuralism and particularly enlisting the help of Durkheim in attempting to enrich Marx\u2019s psychology. While the author credits professors Worrell and Krier for attempting to take their critique of Marx to a more contemporary theoretical level, one which can potentially have value, he nevertheless sees the use of Lacan and Durkheim to rescue Marx as inappropriate, problematic, and a rejection of Marx\u2019s humanistic understanding of human relations as well as an unsupported dismissal of his notion of alienation based on human and material commodification.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Critical Sociology",
+        "type": "journal",
+        "issn": [
+          "0896-9205",
+          "1569-1632"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism",
+        "Psychoanalysis, Philosophy, and Politics",
+        "Housing, Finance, and Neoliberalism"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W2502134319"
+    },
+    {
+      "openalex_id": "W2803585432",
+      "doi": "10.30736/jesa.v2i1.13",
+      "title": "Kritik Ekonomi Islam Terhadap Pemikiran Karl Marx Tentang Sistem Kepemilikan Dalam Sistem Sosial Masyarakat",
+      "authors": [
+        {
+          "name": "Muhammad Kambali",
+          "openalex_id": "A5082503156",
+          "orcid": "https://orcid.org/0000-0003-1888-6164"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-01",
+      "abstract": "The theory of Karl Marx\u00e2\u20ac\u2122s Historical Materialism states that system of ownership is a necessity in the social system. Marx declares the social system development takes place in five stages. The first stage is primitive-communal society has have not recognized the system of ownership. The second stage is the stage of division of labor and the emergence of ownership. The third stage is formation of feudal society. The fourth stage is development of a capitalist community. The final stage is stage of development of the social system which is the formation of a socialist-communist society. If seen from ownership, the social-communal system is divided into three sections; the stage of primitive-communal society, the division of labor and the stages of ownership, and phase of the ownership elimination. According to Marx, the ownership of proletariat workers system suffers exploitation and alienation. Both of these things can only be solved by removing the ownership system which is replaced by the role of collective ownership. For Islamic economics, exploitation and alienation experienced by the proletariat workers are the result of inconsistencies in wealth management and distribution system in the capitalist system, not proprietary. Islamic Economics is looking at the role of individuals in managing their wealth and their distribution pattern.\u00c2 Keywords: Historical Materialism, Ownership, Exploitation, Alienation",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "JES (Jurnal Ekonomi Syariah)",
+        "type": "journal",
+        "issn": [
+          "2528-5610",
+          "2541-0431"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://jes.unisla.ac.id/index.php/jes/article/download/13/12"
+      },
+      "topics": [
+        "Islamic Finance and Banking Studies",
+        "Islamic Finance and Communication",
+        "Marriage and Family Dynamics"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W2803585432"
+    },
+    {
+      "openalex_id": "W2601049439",
+      "doi": "10.14421/ref.v15i1.1076",
+      "title": "ALIENASI MANUSIA MODERN KRITIK MODERNITAS DALAM PEMIKIRAN ERICH FROMM",
+      "authors": [
+        {
+          "name": "Nufi Ainun Nadhiroh",
+          "openalex_id": "A5086562145",
+          "institutions": [
+            "Sunan Kalijaga State Islamic University Yogyakarta"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Alienation is a term that has been used by many thinkers in the past, including Hegel and Karl Marx. Every thinker gives its meaning differently. Hegel supposed that this alienation's discussion is important in relation to the emerging of consciousness or the feeling towards the otherness. Karl Marx discussed about alienation when he concerned about the fate of labors that had been exploited by the bourgeoisies. It is explained in this article, Fromm has been influenced by both thinkers, but he also criticized them that their applications to solve human alienation conditions always find the deadlock because they simply focused to single aspect only. Fromm proposed an idea that to heal the ill modem society; they should perform the change not only in single aspect oflife but also the change in all aspects simultaneously such as industry and political organization, spiritual, philosophical orientation, human character structure and cultural activity. Fromm assumed that to create healthy society, it starts from the self awareness. This is identical to human nature as the aware and foremost creature.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Refleksi Jurnal Filsafat dan Pemikiran Islam",
+        "type": "journal",
+        "issn": [
+          "1411-9951",
+          "2548-4745"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ejournal.uin-suka.ac.id/ushuluddin/ref/article/download/1076/982"
+      },
+      "topics": [
+        "Islamic Studies and Radicalism",
+        "Islamic Finance and Communication",
+        "Education and Character Development"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2601049439"
+    },
+    {
+      "openalex_id": "W2892473038",
+      "doi": "10.1093/oxfordhb/9780190695545.013.50",
+      "title": "Marx\u2019s Concept of Socialism",
+      "authors": [
+        {
+          "name": "Peter Hudis",
+          "openalex_id": "A5006344796",
+          "institutions": [
+            "Oakton Community College"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-09-10",
+      "abstract": "Abstract One of the most important theoretical challenges facing us is developing a viable alternative to capitalism. Achieving this requires rethinking basic premises of social theory and practice, given the difficulties of freeing humanity from such problems as alienation, class domination, and the capitalist law of value. Taking off from Marx\u2019s Concept of the Alternative to Capitalism, this article explores how Marx\u2019s critique of capital, value production, and abstract universal labor time is grounded in an emancipatory vision of a post-capitalist society\u2014a vision that has been largely overlooked. While Marx never wrote \u201cblueprints of the future,\u201d the full breadth of his work as revealed in the Marx-Engels Gesaumtausgabe indicates that his vision of a post-capitalist society went further than specifying the need to abolish private property and \u201canarchic\u201d exchange relations. This chapter seeks to show how Marx\u2019s writings on this issue provide important theoretical ground for envisioning a non-capitalist future in the twenty-first century.",
+      "cited_by_count": 5,
+      "type": "book-chapter",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W2892473038"
+    },
+    {
+      "openalex_id": "W1598829572",
+      "doi": "10.26192/q7w89",
+      "title": "Social Science Research: Principles, Methods and Practices",
+      "authors": [
+        {
+          "name": "Anol Bhattacherjee",
+          "openalex_id": "A5021648020",
+          "orcid": "https://orcid.org/0000-0001-9559-6027"
+        },
+        {
+          "name": "Toleman, Mark",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-0535-8103",
+          "institutions": [
+            "Vecima Technology (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Rowling, Samara",
+          "openalex_id": ""
+        },
+        {
+          "name": "Frederiks, Anita",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0001-9618-5748",
+          "institutions": [
+            "Vecima Technology (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Andersen, Nikki",
+          "openalex_id": "",
+          "institutions": [
+            "Vecima Technology (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "This book is designed to introduce doctoral and postgraduate students to the process of conducting scientific research in the social sciences, business, education, public health, and related disciplines. It is a one-stop, comprehensive, and compact source for foundational concepts in behavioural research, and can serve as a standalone text or as a supplement to research readings in any doctoral seminar or research methods class. This book is currently being used as a research text at universities in 216 countries, across six continents and has been translated into seven different languages. To receive updates on this book, including the translated versions, please follow the author on Facebook or Twitter @Anol_B.",
+      "cited_by_count": 2049,
+      "type": "book",
+      "source": {
+        "name": "University of Southern Queensland ePrints (University of Southern Queensland)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://digitalcommons.usf.edu/oa_textbooks/3"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Complex Systems and Decision Making",
+        "Innovation and Knowledge Management"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W1598829572"
+    },
+    {
+      "openalex_id": "W4224044079",
+      "doi": "10.1111/1467-8675.12613",
+      "title": "Alienation and action in the young Marx, Aristotle, and Arendt",
+      "authors": [
+        {
+          "name": "Michael Lazarus",
+          "openalex_id": "A5008931653",
+          "orcid": "https://orcid.org/0000-0003-2127-672X",
+          "institutions": [
+            "Monash University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-04-13",
+      "abstract": "Hannah Arendt's account of action calls into question Karl Marx's concept of labor. Arendt's magnum opus, The Human Condition, published in 1958, began in part from her 1954 lecture series, \"Karl Marx and the Tradition of Political Thought\" (Arendt, 1998, p. 327). Recently published lectures and papers from 1953 and 1954 show the depth Arendt thought about Marx's idea of human freedom and the seriousness of her objection to his concept of labor (Arendt, 2018). Apparent in the initial research, which would evolve into The Human Condition, is her thesis that Marx problematically adopts Aristotle's social ontology. On Arendt's account, this inherence has the dramatic political implication of sacrificing action for labor.1 Evidently, for Arendt, crucial questions for thinking about human action and freedom derive from the relation between Marx and Aristotle. In this article, I defend Marx's concept of labor by arguing that Aristotle helps illuminate the normative aspects imbedded in his idea of freedom. In the fragmentary and unfinished \"Economic and Philosophical Manuscripts of 1844\" (EPM), Marx locates an ontological conception of sociality in his understanding of alienated labor.2 In my view, Marx's notion of \"species-being\" entails an account of human flourishing, in which to flourish is to realize both human capabilities and the conditions for freedom. Marx's conception of unalienated labor as allowing for human flourishing distinctly develops an Aristotelian strain of thinking about human beings in which a latent human potential is formed and realized in society. Arendt's challenge to this kind of construal of Marx's concept of labor is outlined in Part 1. In her probing assessment of Marx's social ontology, Arendt argues labor is glorified, reducing politics to the necessity of life and erroneously folding ethics into the fact of labor. However, I contend that Arendt's distinction between \"labor,\" \"work,\" and \"action\" fails to capture the richness of Marx's concept of labor, once properly understood as the critique of alienated labor. While many leading Arendt commentators \"deliberately leave aside questions about the accuracy or otherwise of her interpretation of Marx,\" I directly address this problem (Canovan, 1992, p. 64). If Arendt identifies the concept of labor as Marx's major weakness in thinking about freedom, I argue that in fact, his critique of alienated labor entails a strong normative dimension as a theory of human action and political freedom. In Part 2, I offer a discussion of Marx's largely overlooked \"Comments on James Mill\" (CJM). This text provides a critical vantage point for Marx's move towards the critique of political economy and contains his earliest thoughts on the fetishized character of value. In Part 3, I address the central claims of the EPM and trace the relation between Marx's early thought and Aristotle. From Aristotle, Marx preserves the centrality of rationality in activity, while historicizing the relation between actuality and potentiality. In Part 4, I offer an immanent critique of Arendt. I aim to reduce the polemical opposition between Arendt and Marx by showing that her commitment to the political realm of action shares something fundamental with Marx's understanding of human flourishing, once the richness of this concept is adequately articulated.3 Both Arendt and Marx insist that politics needs to be located in the shared interaction between human beings acting in the world. However, Marx's critique of the social form of alienated labor provides a critical standpoint to assess Arendt's own argument. The difference between both thinkers demonstrates what is at stake in the concept of labor for thinking about human freedom. My conclusion reflects upon Marx's further development of the concept of value as anticipated in the EPM. In the modern world, the social and political realms are much less distinct. That politics is nothing but a function of society, that action, speech and thought are primary superstructures upon social interests, is not a discovery of Karl Marx but on the contrary is among the axiomatic assumptions Marx accepted uncritically from the political economics of the modern age. (Arendt, 1998, p. 33) Arendt's argument is a directed critique of Marx's social ontology. She draws a strong distinction between \"labor,\" \"work,\" and \"action.\" Her argument is phenomenological, drawing on the changing linguistic usages, reflected in political theory and culture, in which it is \"a simple fact that every European language ancient and modern, contains two etymologically unrelated words, for what we have come to think of as the same activity\" (Arendt, 1998, pp. 79\u201380).5 For Arendt, the synonymous use of \"labor\" and \"work\"\u2014fully expressed in Marx's inheritance from political economy\u2014is in actuality \"the glorification of labor.\"6 Labor, the act of the animal laborans is \"enslaved by necessity.\" Labor is toil and suffering, the bondage of natural life. Work, however, is creative and formative. With work, man is the maker (homo faber), of the \"unnaturalness of human existence,\" of the \"'artificial' world of things.\" The third category, action, is Arendt's governing concept. Action allows for political life without the mediation of \"things or matter\" (Arendt, 1998, p. 7). For Arendt, \"While dire necessity made labor indispensable to sustain life, excellence would have the last thing to expect for it\" (Arendt, 1998, p. 48). This expectation is precisely the problem with Marx's social ontology, which elevates production to an idealized social standpoint, but really its \"sole purpose\" is the \"entertaining of the life process\u2014and this is the unfortunately quite unutopian ideal that guides Marx's theories.\" A footnote to this sentence, adds the suggestion that for Marx social humanity (vergesellshafteter Mensch and gesellschaftliche Menschheit) and \"species-being\" (gattungswesen) paint an ideal society as \"a state of affairs where all human activities derive as naturally from human 'nature' as the secretion of wax by bees for making the honeycomb; to live and to labor for life will have become one and the same\" (Arendt, 1998, p. 89). Behind Marx's theory of interests stands the conviction that the only legitimate gratification of an interest lies in labor. Supporting this conviction and fundamental to all his writing is a new definition of man, which sees man's essential humanity not in his rationality (animal rationale), or in his production of objects (homo faber), or in his having been made in the likeness of God (creatura Dei), but rather in labor, which tradition had unanimously rejected as incompatible with a full and free human existence. Marx was the first to define man as an animal laborans, as a laboring creature. He subsumes under this definition everything tradition passed down as the distinguishing marks of humanity: labor as the principle of rationality and its laws, which in the development of productive forces determine history, make history comprehensible to reason. Labor is the principle of productivity; it produces the truly human world on earth. (Arendt, 2005, p. 79) For Arendt, Marx occupies a paradoxical relationship to the western tradition of political thought. Marx's break with the tradition is in his definition of human beings in terms of labor, which reduces life (including action) to production. At the same time as Marx makes this challenge, Arendt stresses his place within the tradition. She views Marx as a \"traditionalist\" since he tries to resolve Aristotle's preoccupation with the relationship between freedom and necessity. This problem is a crucial element of The Human Condition; however, her 1953\u20131954 manuscripts show the extent her critique of Marx's social ontology explicitly animates the development of her thesis. Arendt draws a straight line\u2014\"given by Aristotle on one side and Marx on the other\"\u2014between the definition of the human being as a \"political animal\" and the definition of the \"animal laborans\" (Arendt, 2018, pp. 264, 269). Central to both Aristotle and Marx is the conception of social ontology based on the bios. As a result, Arendt claims Marx's economic thought is marked by this \"reliance on Aristotelian philosophy\" (Arendt, 2005, p. 79).7 Marx takes the productivity of the political economists and further naturalizes labor by way of an Aristotelian naturalism. Biological life is elevated over human reason (Arendt, 2018, p. 264). The deficiency in his concept of labor is its veneration of society and labor over politics and action. In so far as political action exists for Marx, it is now \"past\" as history (Arendt, 2018, p. 272). Human beings might make our own history, but the emphasis on making reveals Marx's proclivity for elevating productivity over action. Her interpretation is perceptive, not only in emphasizing the Aristotelian aspect of Marx's social ontology but also in the recognition that this ontology decisively shapes his concept of labor. Further, by identifying his attempt to overcome the distinction between the realm of freedom and the realm of necessity, \"by abolishing labor,\" Arendt argues that Marx's social ontology results in folding the latter into the former (Arendt, 1998, pp. 104\u2013105). However, in reassessing Marx's early writing, it becomes clear that the conflation of necessity and freedom that Arendt takes Marx to endorse, is in fact a problem he identifies precisely because human activity is reduced to the necessity of alienated production. Marx views the negation of this social form as contingent on the establishment of a public realm in which private interests are not defined by the necessity of capital accumulation, but the life of free activity. Freedom in Marx's sense is the condition of life in which human activity can be untied from the necessity of capital as dead labor. Rather than glorifying necessity, Marx conceptualizes production in terms of human activity in order to capture what is distinctive about a form of social life defined by unfree forms of activity. What Arendt fails to acknowledge is that the theory of alienation allows Marx to integrate necessity into the historical conditions for freedom. The movement from the realm of necessity to the realm of freedom requires a form of action which is dependent on the rationality of human beings to articulate a shared sense of political association. In the sublation of necessity to freedom, Marx construes the realm of freedom as a higher, rather than separate, sphere from the realm of necessity. Necessity is an essential condition for human activity to be concretely free. Arendt fails to grasp that Marx's concept of labor depends upon the critique of alienated labor. Marx's critique of political economy is precisely that it conceives of labor transhistorically as economic nature, rather than the specific social form of alienated labor. Once clarified, Marx's concept of alienation\u2014absent in Arendt's criticisms\u2014allows labor to be seen as an activity not just of necessity but of substantive freedom. This resolution provides a prism to see that Marx shares with Arendt an understanding of the necessity of political action. Rather than conflating freedom with necessity, Marx should be understood in line with Arendt's commitment to the freedom which arises with human action. In his early writings, the notion of freedom is not an added extra, but central to Marx's social theory. The inability of political economy to recognize the alienated form of wage-labor shapes Marx's emergent immanent and normative critique of economic theory. In CJM, Marx provides his first critique of political economy's naturalization of social form as economic law.8 Through an analysis of money and credit, and in a preliminary discussion of value, Marx ties James Mill's economic theory with a presupposed notion of human nature, which posits human beings as egotistical producers. Additionally, Marx provides a very early conception of human flourishing beyond capital. CJM consolidates Marx's 1843 texts, especially OJQ, by developing a political critique of economic categories. Marx's early assessment of the capitalist state as an alienated social form leads to his concept of species-being and his investigation of value. Political emancipation is the reduction of man on the one hand to the member of civil society, the egoistic, independent individual, and on the other to the citizen, the moral person. Only when real, individual man resumes the abstract citizen into himself and as an individual man has become a species-being in his empirical life, his individual work and his individual relationships, only when man has recognized and organized his forces propres [own forces] as social forces so that social force is no longer separated from him in the form of political force, only then will human emancipation be completed. (Marx, 1975a, p. 234)9 The split between political life and private life empties both spheres for the citizen and the individual, rendering both abstract and alienated. By seeking only political emancipation, political life cannot overcome this contradiction but, as Marx's argues, confirms the antinomy.10 Moreover, the political realm is judged to exist independently of the social realm.11 The political realm is empty if narrowly conceived as the state and divorced from the social dimension of freedom. Marx offers the term \"species-being\" as the actualization of the individual who recognizes themselves socially. Political emancipation is necessary but remains particular until unified in an adequately universal notion of freedom. This view of politics allows for social freedom, as human emancipation, to be conceived universally. Marx's objection to the simple equation of politics with the modern state is that \"the contradiction between public and private life [and] between universal and particular interests,\" makes impossible a political solution to the misery of poverty (Marx, 1975d, p. 412). Marx negates the split between the political and social and seeks to sublate both into an idea of human community. The freedom and equality of the modern citizen would become realized in an actualized subject which is universal. Marx calls the social being gattungswesen, \"species-being,\" \"species-essence,\" or \"species-life.\" This term, which is present in his 1843 writings, becomes a key notion in 1844. However, Marx strengthens his account of political and social alienation by providing an assessment of the way in which the individual is posited in economic theory. In CJM, Marx considers the economic laws theorized by Mill to be abstracted from the actual functioning of economic life. Following David Ricardo, Mill hangs his analysis of supply and demand and the relation of production to exchange value on the role of money as the medium of exchange. Money is the substance of value. Marx faults this analysis since it posits money as the determinant of meaning between human beings and the products of their activity, which become the \"relation between things\" (Marx, 1975b, p. 260). Contra Mill, Marx inverts the money-to-production relation. Political economy posits money as the embodiment, the essence of private property. However, Marx suggests that the real mediator is productive activity; that is alienated and objectified by private property and money. He claims this situation is \"dehumanized\" and as a result, the human becomes a slave to money (Marx, 1975b, pp. 260\u2013261). Why must private property finish up as money? Because as a social animal man must finish up in exchange and exchange \u2013 given the premise of private property \u2013 must finish up in value. For the mediating movement of man engaged in exchange is not a social, human movement, it is no human relationship: it is the abstract relation of private property to private property, and this abstract relation is the value which acquires a real existence as value only in the form of money. Since in the process of exchange men do not relate to each other as men, things lose the meaning of personal, human property. The social relationship of private property to private property is already one in which private property is estranged from itself. Hence, money, the existence-for-itself of this relationship, represents the alienation of private property, an abstraction from its specific personal nature (Marx, 1975b, p. 261). Marx notes that simple exchange is an expected form of social interaction and different in kind to the exchange principle formed by private property. What is particular about private property is the manner in which human relationships become abstract. Private property begets private property, expressing social meaning as money and value. Marx's identification of the abstract domination of things ties his analysis of social being with the critique of private property relations. His insight that value appears as money, anticipates his mature value-form theory and the concept of commodity fetishism (Marx, 1976, pp. 163\u2013170).12 Private property reflects the relation in which productive activity and the products of that activity become functional and determined by exchange. To Marx this means that the processes and results of productive activity do not embody human relations in which artifacts of human activity are embedded with meaning as human creations. Instead, there is a lack of correspondence between the needs and desires of the producers and the social fabric in which those products are made. As value, productive activity forms an abstract relation to private property, in effect emptying the human content. Money comes to represent this relationship. Marx writes \"the real value of things is their exchange value\" (Marx, 1975b, p. 262). He comes to fully explain this process in Capital, but in CJM the embryo of Marx's later distinction between use and exchange value is present. This distinction has key explanatory power in both texts, although in Capital the unity in contradiction between use and exchange value are theorized within the value-form at a much higher level of abstraction. Marx's discussion in CJM of money and value reconceives economic processes in terms of human activity and sociality rather than merely in the terms of political economy, whose abstractions are continually reproduced by the real abstractions of the exchange relation under private property. Implicit in Marx's critique of political economy in CJM, is a view of production in which human artifacts can embody human meaning. Modern life under capitalism subjects all modes of interaction to the compulsion of exchange. Human \"morality,\" \"social worth and status\" are now mediated by money in the form of credit. The language used here is significant. Marx maintains that human relationships\u2014ethical interaction\u2014are now debased to an alienated abstraction. Money becomes the \"moral existence, the social existence, the very heart of man, and because under the appearance of mutual trust between men it is really the greatest distrust and a total estrangement\" (Marx, 1975b, p. 263). Marx is describing the form of misrecognition that arises out of the abstract but universal relation of money. Human beings now relate primarily through a \"trust\" which is predicated on competition and self-gain. labor means that human activity becomes a and appears as the character of labor, and individual economic abstractions social Marx writes that the from other men appears to be his existence, his life appears as the of his life, the of his essence appears as the of his life, their production is the production of his power over objects appears as the power of objects over (Marx, 1975b, p. In normative the of alienation is the of human life to the conditions of unfree activity. Human activity is determined by the necessity to defined not as the of human but the of life. human life so that the very activity which would it definition and its freedom becomes its Marx out political economy this historical At a fundamental society takes the standpoint of the individual He a of history based on this standpoint, in which the individual develops to the natural of society. The conception of social relations is that of private property (Marx, 1975b, p. understanding of human nature his analysis of economic abstracted from society, to and exchange and only society, as in an p. Following this political economy takes alienated labor as labor. labor is and as a and necessity of society. for Marx, economic laws social Private property represents a historical where exchange value has decisively the simple of use that economic Marx's understanding of productive activity under capitalism as alienated labor allows him to see the world of the and the with the mutual interest of Marx argues exchange as an act and social relation is CJM, is to that of this society do not each other in their through their individual merely the of p. the of my own individual life my activity and in the I would an individual I would my as an power beyond all of In the individual of my own life I would have about the of life, and so in my individual activity I would have directly and realized my nature, my (Marx, 1975b, pp. This flourishing society is Marx's where can be recognized as which human and This offers a of the and capabilities of a different form of based on a critique of specific forms of Marx's first with political economy, especially his critique of its naturalization of alienated labor, is through an of the concept of human activity. The EPM provides the for the specific that productive activity for Marx's social ontology. The of laboring activity are as for social In the alienated form of labor under Marx conceives of social being in modern society as by productive activity. Marx identifies a central relation in the of wage-labor and capital. His of the abstract and alienated form of labor in capitalist society and his critique of the political economy of and Mill, develops a normative notion of Human essence is and made in the EPM by the interaction of productive activity with the being and the way of of human Marx's fundamental ontological commitment to the view that human beings are Marx's the from but the term with an Aristotelian social The individual is the social His when it not in the form of a conceived in with other an and of social life. individual and are not two things (Marx, p. For Marx, the ontological of human sociality and its is in the of shared which Marx as has as its but can only from the actualization of this potential (Marx, p. Marx develops Aristotle's distinction between actuality and which the historical form of For Aristotle, this distinction between actuality and is crucial because it the movement of human activity as both and Marx the conception of form development and the rationality of the activity which must be in its but inverts the historical relation between actuality and potentiality. By historicizing the the normative dimension of a critique of actuality is made For Aristotle, the development of an essence or form is the actualization of its In this is to both in its form and Aristotle offers the that which is in the primary sense potential is potential because it is for it to become As it to \"the actual member of the is to the potential member of the same the individual is potential it is The distinctive human the action which allows the to be is reason the relation between actuality and as the principle of movement and the form or p. This view to the since just as for a human being the form of activity to political life the of human beings and political in which the activity of political is an in pp. The between human reason and political is formed by Marx preserves this concept of through human but his concept of labor the relation between actuality and potentiality. is understood as an alienated form of life. In social relations are and determined by unfree activity. if actuality is an alienated Marx maintains that there is a contingent potential for alienated beings to become free. In his species-being is a potentiality. activity is alienated in its historical its but if the for creative labor is to the in the human then the flourishing Marx with the human essence be The for human beings to live to being as and through our and activity, marks human beings distinctly as a activity is precisely because it allows and However, the concept of labor explicitly Marx's concept of species-being from For Aristotle, there is a distinction between production and creative activity since has its in something other than but action since its is acting Aristotle allows for creative action, which production but has the of a that makes this action Aristotle views production as as to the of action is not a but the necessity of Aristotle production with as since action, not and a slave is from things to action Marx takes Aristotle's distinction between action and production to the of but rather than Aristotle's concept of activity, he to show that all production is (Marx, 1976, pp. For Marx, labor is the mediating activity which allows rationality to be as as the of and If this is then Arendt's critique of Marx is by the clear between Marx and Aristotle's notion of production. The is not between Aristotle's and Marx's glorification of labor, but between the of Aristotle's understanding of given the historical conditions in which his concept of production Marx's of Aristotle's idea of activity suggests that production must be understood as Further, for Marx, the form of this activity is from its by the of the relation. productive activity, that which human is into an power through labor. to the to labor for a Marx alienation as a process of For Marx, alienated labor by both the relation between and their and",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12613"
+      },
+      "topics": [
+        "Hannah Arendt's Political Philosophy",
+        "Political Theology and Sovereignty",
+        "Psychoanalysis, Philosophy, and Politics"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4224044079"
+    },
+    {
+      "openalex_id": "W4360595144",
+      "doi": "10.21146/2072-0726-2023-16-1-21-38",
+      "title": "Virtual reality as a transformed form",
+      "authors": [
+        {
+          "name": "Sergey Smirnov",
+          "openalex_id": "A5080213165",
+          "orcid": "https://orcid.org/0000-0002-3213-9416"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "The article provides an analysis of one problem related to the discussion of the ontologi\u00adcal status of virtual reality. The author proposes to discuss the problem of the reality of virtual worlds in terms of transformed forms. In this regard, an analysis is given of how this concept was introduced by K. Marx and how it was discussed further in the scientific literature. It is proposed to perceive the transformed form not as a perverted or false real\u00adity, but as a separate form of life presented in its transformation. An example is the meta\u00admorphosis of the cost of labor into the monetary form of a commodity, as was shown in Capital. On this example, a proposal is made, according to which virtual reality is the same transformed form of reality, and not an illusion of consciousness, and not an imaginary world. The qualities of the transformed form of reality are introduced: 1) a separate, but not independent form of life; 2) playing a role in the process of trans\u00adformation as an indirect form; 3) representation in the form of a copy of the original; 4) sign-symbolic mode of existence; 5) dependence on the original, generic form of real\u00adity, not independence. It is shown that virtual reality is, as it were, an unembodied form of reality, existence in its potency. Such a representation was presented in the history of philosophy in the form of the idea of potential being. But this idea did not subse\u00adquently become the basis for the development of an independent ontology of virtual real\u00adity. A distinction is made between the concept of virtual reality as a reality, not an illusion (the reality of digital objects) in the concept of D. Chalmers, and reality in the form of its transformed form. It is shown that virtual reality is not reduced only to the reality of imaginary worlds, to the reality of consciousness, the reality of special psychological states. The rationale is given that virtual reality is the continuation of a natural-artificial process of metamorphosis of human activity, only embodied in its transformed form. In this regard, the author proposes to interpret virtual reality as a form of life in its trans\u00adformation and non-incarnation, which a person must use as a new resource for their de\u00advelopment in order to overcome alienation from themselves.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Philosophy Journal",
+        "type": "journal",
+        "issn": [
+          "2072-0726",
+          "2658-4883"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://pj.iphras.ru/article/download/8537/4015"
+      },
+      "topics": [
+        "Scientific Research and Philosophical Inquiry"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W4360595144"
+    },
+    {
+      "openalex_id": "W3014682642",
+      "doi": "10.5840/philtoday202043321",
+      "title": "Conscious Organs",
+      "authors": [
+        {
+          "name": "Jason Read",
+          "openalex_id": "A5032022550"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "In Volume Three of Capital in a striking but somewhat uncharacteristic formula, Marx argues that the labor relation is the \u201chidden basis\u201d of the entire social edifice including the state and politics. As an attempt to clarify and develop this insight I examine the dual nature of labor as abstract and concrete labor, arguing that the two sides of labor correspond not just to two sides of the commodity, but to different ethics and alienations of labor, and ultimately to different philosophical anthropologies.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Philosophy Today",
+        "type": "journal",
+        "issn": [
+          "0031-8256",
+          "2329-8596"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3014682642"
+    },
+    {
+      "openalex_id": "W4412387784",
+      "doi": "10.12677/acpp.2025.147367",
+      "title": "Labor Alienation and Consumption Alienation: Comparison and Contemporary Value of Alienation Theory of Marx and Baudrillard",
+      "authors": [
+        {
+          "name": "\u6653\u4e50 \u9004",
+          "openalex_id": "A5118974215"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Advances in Philosophy",
+        "type": "journal",
+        "issn": [
+          "2169-2599",
+          "2169-2602"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://pdf.hanspub.org/acpp_2383230.pdf"
+      },
+      "topics": [
+        "Digital Economy and Work Transformation",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4412387784"
+    },
+    {
+      "openalex_id": "W4200046232",
+      "doi": "10.22363/2313-2272-2021-21-4-670-696",
+      "title": "\u201cDangerous modernity!\u201d, or the shadow play of modernity and its characters: instrumental rationality - money - technology (part 1)",
+      "authors": [
+        {
+          "name": "Denis Podvoyskiy",
+          "openalex_id": "A5005090525",
+          "orcid": "https://orcid.org/0000-0002-7396-1828",
+          "institutions": [
+            "Lomonosov Moscow State University",
+            "Institute of Sociology",
+            "Moscow State University",
+            "Peoples' Friendship University of Russia"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-07",
+      "abstract": "The article is an essay on the critical analysis of one of the fundamental issues of social theory of the 19th - 20th centuries - alienation and its manifestations in modern societies. Alienation is interpreted not in one of its special meanings (such as alienation of labor, etc.), but in the broadest way - as the transformation of products of individual and collective activities into an independent force that subjugates a person and transfers him from the position of the subject to the position of the object of social relations. Such a definition makes alienation a universal feature of social life. However, in different societies and in different historical periods, alienation can have variable specific forms. The historically specific manifestations of alienation in modern societies can be explained by referring to the classical theme of their genesis. The originality of their institutional organization is largely associated with the originality of their culture and spiritual life (in particular, with the radical demarcation between human and nature, subject and object in the modern era). The multifaceted phenomenon of scientific and technical rationality, the product of the post-Renaissance Western-European culture, becomes a source of social realities and practices fraught with alienation. The article illustrates it by a number of examples, including the logic and mechanisms of the capitalist money economy. The author refers to the heritage of world philosophy and social thought, which problematized and conceptualized the considered issues in various ways: the Frankfurt School, existentialist philosophers, pillars of theoretical sociology - Karl Marx and Georg Simmel.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "RUDN Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "2313-2272",
+          "2408-8897"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.rudn.ru/sociology/article/download/29612/20060"
+      },
+      "topics": [
+        "Sociopolitical Dynamics in Russia",
+        "Economic Issues in Ukraine",
+        "Global Economic and Social Development"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W4200046232"
+    },
+    {
+      "openalex_id": "W2567191438",
+      "doi": "10.1521/siso.2017.81.1.124",
+      "title": "Sean Sayers\u2019 Concept of Immaterial Labor and the Information Economy",
+      "authors": [
+        {
+          "name": "Kaan Kangal",
+          "openalex_id": "A5090450406",
+          "institutions": [
+            "Nanjing University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-22",
+      "abstract": "The concept \"immaterial labor\" is one of the most hotly debated topics in contemporary social theory.In his 2007 work The Concept of Labor: Marx and His Critics, Sean Sayers offered an extensive response to several critical redefinitions of labor (Habermas, Benton, Arendt) and immaterial labor (Lazzarato, Hardt and Negri).Sayers returned to the subject in his more recent book, Marx and Alienation: Essays on Hegelian Themes. 1 As one of the few accounts that contests the contemporary Marx critics with regard to fundamental concepts such as labor and immaterial labor, his contribution should be taken seriously.In this Communication I will summarize Sayers' critical definitions of labor and immaterial labor in response to the critics, and then focus on three problems in his account: 1) Sayers fails to clarify the relation between material and immaterial labor; 2) there are passages in Marx's economic works that are completely ignored by Sayers, and are decisive against the latter's views on immaterial labor; and 3) Sayers' views on immaterial labor do not fully apply to recent debates on immaterial labor in the information economy.Marx's critique of political economy has been challenged by many cognitive capitalism and information economy theorists.The concept of labor is one of the categories deemed outdated in this regard.Sayers' account offers a well-founded reply to this, but it also suffers from a few inconsistencies.It overlooks the fact that Marx himself adopted the term \"immaterial.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Science & Society",
+        "type": "journal",
+        "issn": [
+          "0036-8237",
+          "1943-2801"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W2567191438"
+    },
+    {
+      "openalex_id": "W3216525803",
+      "doi": "10.5897/ijsa2021.0929",
+      "title": "The (Capitalist) making of an addict: A Marxian and Durkheimian perspective on modern manifestations of addiction",
+      "authors": [
+        {
+          "name": "McIntyre Samantha",
+          "openalex_id": "A5097220141",
+          "orcid": "https://orcid.org/0000-0003-4191-7459"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-19",
+      "abstract": "The manifestation of addiction in modern day American society is novel in its materialization. Marxist concepts of self-estrangement and alienation provides a frame for viewing the way market capitalism and the way labor distribution negatively impact individuals because it supplies humans with false needs and a sense of disillusionment. The utilization of labor as identity and emphasis on profit creates a divide between a person and his self, a disconnect that ultimately causes an overarching culture of dissatisfaction in multiple areas of life. Durkheim&rsquo;s conceptualizations of anomie theorize the classification of addiction as a form of slow suicide due to external social forces, and the functionalist theory of society serves as a frame for the purpose the addict identity as deviant plays an important role in instigating and upholding certain ideologies of capitalist control and individualism.&nbsp; &nbsp; Key words: Marx, Durkheim, addiction, capitalism.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Sociology and Anthropology",
+        "type": "journal",
+        "issn": [
+          "2006-988X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://academicjournals.org/journal/IJSA/article-full-text-pdf/048D16968153.pdf"
+      },
+      "topics": [
+        "Gambling Behavior and Treatments",
+        "Homelessness and Social Issues",
+        "Substance Abuse Treatment and Outcomes"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W3216525803"
+    },
+    {
+      "openalex_id": "W4253421686",
+      "doi": "10.30736/jes.v1i2.13",
+      "title": "KRITIK EKONOMI ISLAM TERHADAP PEMIKIRAN KARL MARX TENTANG SISTEM KEPEMILIKAN DALAM SISTEM SOSIAL MASYARAKAT",
+      "authors": [
+        {
+          "name": "Muhammad Kambali",
+          "openalex_id": "A5082503156",
+          "orcid": "https://orcid.org/0000-0003-1888-6164"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-02",
+      "abstract": "The theory of Karl Marx\u2019s Historical Materialism states that system of ownership is a necessity in the social system. Marx declares the social system development takes place in five stages. The first stage is primitive-communal society has have not recognized the system of ownership. The second stage is the stage of division of labor and the emergence of ownership. The third stage is formation of feudal society. The fourth stage is development of a capitalist community. The final stage is stage of development of the social system which is the formation of a socialist-communist society. If seen from ownership, the social-communal system is divided into three sections; the stage of primitive-communal society, the division of labor and the stages of ownership, and phase of the ownership elimination. According to Marx, the ownership of proletariat workers system suffers exploitation and alienation. Both of these things can only be solved by removing the ownership system which is replaced by the role of collective ownership. For Islamic economics, exploitation and alienation experienced by the proletariat workers are the result of inconsistencies in wealth management and distribution system in the capitalist system, not proprietary. Islamic Economics is looking at the role of individuals in managing their wealth and their distribution pattern.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "JES (Jurnal Ekonomi Syariah)",
+        "type": "journal",
+        "issn": [
+          "2528-5610",
+          "2541-0431"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://jes.unisla.ac.id/index.php/jes/article/download/13/13"
+      },
+      "topics": [
+        "Islamic Finance and Communication",
+        "Marriage and Family Dynamics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4253421686"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

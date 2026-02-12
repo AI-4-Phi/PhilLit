@@ -1,0 +1,3815 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "extended mind ethics",
+  "results": [
+    {
+      "openalex_id": "W4396662087",
+      "doi": "10.1007/978-3-662-68362-0_2",
+      "title": "The Ethics of the Extended Mind: Mental Privacy, Manipulation and Agency",
+      "authors": [
+        {
+          "name": "Robert W. Clowes",
+          "openalex_id": "A5050310382",
+          "orcid": "https://orcid.org/0000-0003-2006-3917",
+          "institutions": [
+            "Universidade Nova de Lisboa"
+          ]
+        },
+        {
+          "name": "Paul R. Smart",
+          "openalex_id": "A5021620793",
+          "orcid": "https://orcid.org/0000-0001-9989-5307",
+          "institutions": [
+            "University of Southampton"
+          ]
+        },
+        {
+          "name": "Richard Heersmink",
+          "openalex_id": "A5067275194",
+          "orcid": "https://orcid.org/0000-0002-0102-0308",
+          "institutions": [
+            "Tilburg University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-01-01",
+      "abstract": null,
+      "cited_by_count": 12,
+      "type": "book-chapter",
+      "source": {
+        "name": "Techno:Phil",
+        "type": "book series",
+        "issn": [
+          "2524-5902",
+          "2524-5910"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Embodied and Extended Cognition",
+        "Cybernetics and Technology in Society"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4396662087"
+    },
+    {
+      "openalex_id": "W2811474348",
+      "doi": "10.3389/fpsyg.2018.01251",
+      "title": "Skillful Use of Technologies of the Extended Mind Illuminate Practical Paths Toward an Ethics of Consciousness",
+      "authors": [
+        {
+          "name": "Saskia K. Nagel",
+          "openalex_id": "A5005570116",
+          "orcid": "https://orcid.org/0000-0001-9657-5121",
+          "institutions": [
+            "RWTH Aachen University"
+          ]
+        },
+        {
+          "name": "Peter B. Reiner",
+          "openalex_id": "A5055406859",
+          "orcid": "https://orcid.org/0000-0002-0587-5880",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-19",
+      "abstract": null,
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01251/pdf"
+      },
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W2811474348"
+    },
+    {
+      "openalex_id": "W2898967088",
+      "doi": "10.1007/s11569-018-0325-x",
+      "title": "The Over-Extended Mind? Pink Noise and the Ethics of Interaction-Dominant Systems",
+      "authors": [
+        {
+          "name": "Darian Meacham",
+          "openalex_id": "A5080466410",
+          "orcid": "https://orcid.org/0000-0002-4039-3174",
+          "institutions": [
+            "Maastricht University",
+            "Engineering and Physical Sciences Research Council",
+            "University of the West of England",
+            "Biotechnology and Biological Sciences Research Council"
+          ]
+        },
+        {
+          "name": "Miguel Prado Casanova",
+          "openalex_id": "A5053523340",
+          "orcid": "https://orcid.org/0000-0003-2043-620X",
+          "institutions": [
+            "University of the West of England"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-01",
+      "abstract": null,
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "NanoEthics",
+        "type": "journal",
+        "issn": [
+          "1871-4757",
+          "1871-4765"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11569-018-0325-x.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Embodied and Extended Cognition",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W2898967088"
+    },
+    {
+      "openalex_id": "W2605806816",
+      "doi": "10.3389/fnhum.2017.00171",
+      "title": "Against Strong Ethical Parity: Situated Cognition Theses and Transcranial Brain Stimulation",
+      "authors": [
+        {
+          "name": "Jan-Hendrik Heinrichs",
+          "openalex_id": "A5057426822",
+          "orcid": "https://orcid.org/0000-0002-0560-8483",
+          "institutions": [
+            "Forschungszentrum J\u00fclich"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-04-11",
+      "abstract": "According to a prominent suggestion in the ethics of transcranial neurostimulation the effects of such devices can be treated as ethically on par with established, pre-neurotechnological alterations of the mind. This parity allegedly is supported by situated cognition theories showing how external devices can be part of a cognitive system. This article will evaluate this suggestion. It will reject the claim, that situated cognition theories support ethical parity. It will however point out another reason, why external carriers or modifications of the mental might come to be considered ethically on par with internal carriers. Section \"Why Could There Be Ethical Parity between Neural Tissue and External Tools?\" presents the ethical parity theses between external and internal carriers of the mind as well as neurotechnological alterations and established alterations. Section \"Extended, Embodied, Embedded: Situated Cognition as a Relational Thesis\" will elaborate the different situated cognition approaches and their relevance for ethics. It will evaluate, whether transcranial stimulation technologies are plausible candidates for situated cognition theses. Section \"On the Ethical Relevance of Situated Cognition Theses\" will discuss criteria for evaluating whether a cognitive tool is deeply embedded with a cognitive system and apply these criteria to transcranial brain stimulation technologies. Finally it will discuss the role diverse versions of situated cognition theory can play in the ethics of altering mental states, especially the ethics of transcranial brain stimulation technologies.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Human Neuroscience",
+        "type": "journal",
+        "issn": [
+          "1662-5161"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fnhum.2017.00171/pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Transcranial Magnetic Stimulation Studies",
+        "Neurology and Historical Studies"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W2605806816"
+    },
+    {
+      "openalex_id": "W2329699193",
+      "doi": "10.1007/s11217-016-9514-7",
+      "title": "Philosophies of Digital Pedagogy",
+      "authors": [
+        {
+          "name": "David Lewin",
+          "openalex_id": "A5048124491",
+          "orcid": "https://orcid.org/0000-0001-5205-8165",
+          "institutions": [
+            "University of Strathclyde"
+          ]
+        },
+        {
+          "name": "David Lundie",
+          "openalex_id": "A5018919985",
+          "orcid": "https://orcid.org/0000-0003-2913-8962",
+          "institutions": [
+            "Liverpool Hope University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-02-22",
+      "abstract": null,
+      "cited_by_count": 67,
+      "type": "article",
+      "source": {
+        "name": "Studies in Philosophy and Education",
+        "type": "journal",
+        "issn": [
+          "0039-3746",
+          "1573-191X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11217-016-9514-7.pdf"
+      },
+      "topics": [
+        "Digital Media and Philosophy",
+        "Digital Education and Society"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2329699193"
+    },
+    {
+      "openalex_id": "W4236357753",
+      "doi": "10.1371/journal.pbio.3000410",
+      "title": "The ARRIVE guidelines 2.0: Updated guidelines for reporting animal research",
+      "authors": [
+        {
+          "name": "Nathalie Percie du Sert",
+          "openalex_id": "A5026693514",
+          "orcid": "https://orcid.org/0000-0002-9478-0540",
+          "institutions": [
+            "National Centre for the Replacement Refinement and Reduction of Animals in Research"
+          ]
+        },
+        {
+          "name": "Viki Hurst",
+          "openalex_id": "A5044648327",
+          "orcid": "https://orcid.org/0000-0003-2098-744X",
+          "institutions": [
+            "National Centre for the Replacement Refinement and Reduction of Animals in Research"
+          ]
+        },
+        {
+          "name": "Amrita Ahluwalia",
+          "openalex_id": "A5020788754",
+          "orcid": "https://orcid.org/0000-0001-7626-6399",
+          "institutions": [
+            "Queen Mary University of London",
+            "William Harvey Research Institute"
+          ]
+        },
+        {
+          "name": "Sabina Alam",
+          "openalex_id": "A5046802875",
+          "orcid": "https://orcid.org/0000-0002-8615-9658",
+          "institutions": [
+            "Taylor and Francis (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Marc T. Avey",
+          "openalex_id": "A5009089580",
+          "orcid": "https://orcid.org/0000-0002-8696-3232",
+          "institutions": [
+            "ICF International (United States)"
+          ]
+        },
+        {
+          "name": "Monya Baker",
+          "openalex_id": "A5113959880",
+          "institutions": [
+            "The Nature Conservancy"
+          ]
+        },
+        {
+          "name": "William J. Browne",
+          "openalex_id": "A5087656450",
+          "orcid": "https://orcid.org/0000-0002-6659-6885",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Alejandra Clark",
+          "openalex_id": "A5043772847",
+          "orcid": "https://orcid.org/0000-0002-1292-0408",
+          "institutions": [
+            "Public Library of Science"
+          ]
+        },
+        {
+          "name": "Innes C. Cuthill",
+          "openalex_id": "A5004753412",
+          "orcid": "https://orcid.org/0000-0002-5007-8856",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Ulrich Dirnagl",
+          "openalex_id": "A5046050028",
+          "orcid": "https://orcid.org/0000-0003-0755-6119",
+          "institutions": [
+            "Berlin Institute of Health at Charit\u00e9 - Universit\u00e4tsmedizin Berlin"
+          ]
+        },
+        {
+          "name": "Michael Emerson",
+          "openalex_id": "A5019284502",
+          "orcid": "https://orcid.org/0000-0002-5305-7575",
+          "institutions": [
+            "Imperial College London"
+          ]
+        },
+        {
+          "name": "Paul Garner",
+          "openalex_id": "A5007223498",
+          "orcid": "https://orcid.org/0000-0002-0607-6941",
+          "institutions": [
+            "Liverpool School of Tropical Medicine"
+          ]
+        },
+        {
+          "name": "Stephen T. Holgate",
+          "openalex_id": "A5089020623",
+          "orcid": "https://orcid.org/0000-0003-2658-4617",
+          "institutions": [
+            "University of Southampton"
+          ]
+        },
+        {
+          "name": "David W. Howells",
+          "openalex_id": "A5056972691",
+          "orcid": "https://orcid.org/0000-0002-2512-7724",
+          "institutions": [
+            "University of Tasmania"
+          ]
+        },
+        {
+          "name": "Natasha A. Karp",
+          "openalex_id": "A5056701344",
+          "orcid": "https://orcid.org/0000-0002-8404-2907",
+          "institutions": [
+            "AstraZeneca (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Stanley E. Lazic",
+          "openalex_id": "A5021724057",
+          "orcid": "https://orcid.org/0000-0002-3409-3407",
+          "institutions": [
+            "Prioris.ai (Canada)"
+          ]
+        },
+        {
+          "name": "Katie Lidster",
+          "openalex_id": "A5035251091",
+          "institutions": [
+            "National Centre for the Replacement Refinement and Reduction of Animals in Research"
+          ]
+        },
+        {
+          "name": "Catriona MacCallum",
+          "openalex_id": "A5038121314",
+          "orcid": "https://orcid.org/0000-0001-9623-2225",
+          "institutions": [
+            "Hindawi (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Malcolm Macleod",
+          "openalex_id": "A5101814630",
+          "orcid": "https://orcid.org/0000-0001-9187-9839",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Esther J. Pearl",
+          "openalex_id": "A5009072337",
+          "orcid": "https://orcid.org/0000-0001-6510-0959",
+          "institutions": [
+            "National Centre for the Replacement Refinement and Reduction of Animals in Research"
+          ]
+        },
+        {
+          "name": "Ole H. Petersen",
+          "openalex_id": "A5065549009",
+          "orcid": "https://orcid.org/0000-0002-6998-0380",
+          "institutions": [
+            "Cardiff University"
+          ]
+        },
+        {
+          "name": "Frances Rawle",
+          "openalex_id": "A5046758954",
+          "orcid": "https://orcid.org/0000-0002-8877-6262",
+          "institutions": [
+            "Medical Research Council"
+          ]
+        },
+        {
+          "name": "Penny S. Reynolds",
+          "openalex_id": "A5037671046",
+          "orcid": "https://orcid.org/0000-0001-7480-6275",
+          "institutions": [
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Kieron Rooney",
+          "openalex_id": "A5004269545",
+          "orcid": "https://orcid.org/0000-0001-6563-7617",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Emily S. Sena",
+          "openalex_id": "A5046357692",
+          "orcid": "https://orcid.org/0000-0002-3282-8502",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Shai D. Silberberg",
+          "openalex_id": "A5083997685",
+          "orcid": "https://orcid.org/0000-0002-5306-664X",
+          "institutions": [
+            "National Institute of Neurological Disorders and Stroke"
+          ]
+        },
+        {
+          "name": "Thomas Steckler",
+          "openalex_id": "A5040568010",
+          "institutions": [
+            "Janssen (Belgium)"
+          ]
+        },
+        {
+          "name": "Hanno W\u00fcrbel",
+          "openalex_id": "A5112549766",
+          "institutions": [
+            "University of Bern"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-14",
+      "abstract": "Reproducible science requires transparent reporting. The ARRIVE guidelines (Animal Research: Reporting of In Vivo Experiments) were originally developed in 2010 to improve the reporting of animal research. They consist of a checklist of information to include in publications describing in vivo experiments to enable others to scrutinise the work adequately, evaluate its methodological rigour, and reproduce the methods and results. Despite considerable levels of endorsement by funders and journals over the years, adherence to the guidelines has been inconsistent, and the anticipated improvements in the quality of reporting in animal research publications have not been achieved. Here, we introduce ARRIVE 2.0. The guidelines have been updated and information reorganised to facilitate their use in practice. We used a Delphi exercise to prioritise and divide the items of the guidelines into 2 sets, the \"ARRIVE Essential 10,\" which constitutes the minimum requirement, and the \"Recommended Set,\" which describes the research context. This division facilitates improved reporting of animal research by supporting a stepwise approach to implementation. This helps journal editors and reviewers verify that the most important items are being reported in manuscripts. We have also developed the accompanying Explanation and Elaboration (E&E) document, which serves (1) to explain the rationale behind each item in the guidelines, (2) to clarify key concepts, and (3) to provide illustrative examples. We aim, through these changes, to help ensure that researchers, reviewers, and journal editors are better equipped to improve the rigour and transparency of the scientific process and thus reproducibility.",
+      "cited_by_count": 5041,
+      "type": "article",
+      "source": {
+        "name": "PLoS Biology",
+        "type": "journal",
+        "issn": [
+          "1544-9173",
+          "1545-7885"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosbiology/article/file?id=10.1371/journal.pbio.3000410&type=printable"
+      },
+      "topics": [
+        "Animal testing and alternatives",
+        "Meta-analysis and systematic reviews",
+        "Ethics in Clinical Research"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W4236357753"
+    },
+    {
+      "openalex_id": "W3158223366",
+      "doi": "10.1080/09515089.2021.1915972",
+      "title": "The psychology of philosophy: Associating philosophical views with psychological traits in professional philosophers",
+      "authors": [
+        {
+          "name": "David B. Yaden",
+          "openalex_id": "A5039486115",
+          "orcid": "https://orcid.org/0000-0002-9604-6227",
+          "institutions": [
+            "University of Pennsylvania",
+            "Johns Hopkins University",
+            "Johns Hopkins Medicine"
+          ]
+        },
+        {
+          "name": "Derek Egan Anderson",
+          "openalex_id": "A5068789645",
+          "orcid": "https://orcid.org/0000-0002-5663-6599",
+          "institutions": [
+            "Boston University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-27",
+      "abstract": "Do psychological traits predict philosophical views? We administered the PhilPapers Survey, created by David Bourget and David Chalmers, which consists of 30 views on central philosophical topics (e.g., epistemology, ethics, metaphysics, philosophy of mind, and philosophy of language) to a sample of professional philosophers (N = 314). We extended the PhilPapers survey to measure a number of psychological traits, such as personality, numeracy, well-being, lifestyle, and life experiences. We also included non-technical \u2018translations\u2019 of these views for eventual use in other populations. We found limited to no support for the notion that personality or demographics predict philosophical views. We did, however, find that some psychological traits were predictive of philosophical views, even after strict correction for multiple comparisons. Findings include: higher interest in numeracy predicted physicalism, naturalism, and consequentialism; lower levels of well-being and higher levels of mental illness predicted hard determinism; using substances such as psychedelics and marijuana predicted non-realist and subjectivist views of morality and aesthetics; having had a transformative or self-transcendent experience predicted theism and idealism. We discuss whether or not these empirical results have philosophical implications, while noting that 68% of our sample of professional philosophers indicated that such findings would indeed have philosophical value.",
+      "cited_by_count": 31,
+      "type": "article",
+      "source": {
+        "name": "Philosophical Psychology",
+        "type": "journal",
+        "issn": [
+          "0951-5089",
+          "1465-394X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Psychedelics and Drug Studies",
+        "Mindfulness and Compassion Interventions"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W3158223366"
+    },
+    {
+      "openalex_id": "W4239737922",
+      "doi": "10.4324/9781003074991-30",
+      "title": "On the Morality of Artificial Agents",
+      "authors": [
+        {
+          "name": "Luciano Floridi",
+          "openalex_id": "A5046574356",
+          "orcid": "https://orcid.org/0000-0002-5444-2280"
+        },
+        {
+          "name": "J. W. Sanders",
+          "openalex_id": "A5111782789"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-25",
+      "abstract": "Artificial agents (AAs), particularly but not only those in Cyberspace, extend the class of entities that can be involved in moral situations. For they can be conceived of as moral patients (as entities that can be acted upon for good or evil) and also as moral agents (as entities that can perform actions, again for good or evil). In this paper, we clarify the concept of agent and go on to separate the concerns of morality and responsibility of agents (most interestingly for us, of AAs). We conclude that there is substantial and important scope, particularly in Computer Ethics, for the concept of moral agent not necessarily exhibiting free will, mental states or responsibility. This complements the more traditional approach, common at least since Montaigne and Descartes, which considers whether or not (artificial) agents have mental states, feelings, emotions and so on. By focussing directly on 'mind-less morality' we are able to avoid that question and also many of the concerns of Artificial Intelligence. A vital component in our approach is the 'Method of Abstraction' for analysing the level of abstraction (LoA) at which an agent is considered to act. The LoA is determined by the way in which one chooses to describe, analyse and discuss a system and its context. The 'Method of Abstraction' is explained in terms of an 'interface' or set of features or observables at a given 'LoA'. Agenthood, and in particular moral agenthood, depends on a LoA. Our guidelines for agenthood are: interactivity (response to stimulus by change of state), autonomy (ability to change state without stimulus) and adaptability (ability to change the 'transition rules' by which state is changed) at a given LoA. Morality may be thought of as a 'threshold' defined on the observables in the interface determining the LoA under consideration. An agent is morally good if its actions all respect that threshold; and it is morally evil if some action violates it. That view is particularly informative when the agent constitutes a software or digital system, and the observables are numerical. Finally we review the consequences for Computer Ethics of our approach. In conclusion, this approach facilitates the discussion of the morality of agents not only in Cyberspace but also in the biosphere, where animals can be considered moral agents without their having to display free will, emotions or mental states, and in social contexts, where systems like organizations can play the role of moral agents. The primary 'cost' of this facility is the extension of the class of agents and moral agents to embrace AAs.",
+      "cited_by_count": 37,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Evolutionary Game Theory and Cooperation"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W4239737922"
+    },
+    {
+      "openalex_id": "W4249786483",
+      "doi": "10.4324/9781315302591",
+      "title": "The Social Contexts of Intellectual Virtue",
+      "authors": [
+        {
+          "name": "Adam Green",
+          "openalex_id": "A5101543858",
+          "orcid": "https://orcid.org/0000-0002-9348-6040"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-08",
+      "abstract": "This book reconceives virtue epistemology in light of the conviction that we are essentially social creatures. Virtue is normally thought of as something that allows individuals to accomplish things on their own. Although contemporary ethics is increasingly making room for an inherently social dimension in moral agency, intellectual virtues continue to be seen in terms of the computing potential of a brain taken by itself. Thinking in these terms, however, seriously misconstrues the way in which our individual flourishing hinges on our collective flourishing. Green's account of virtue epistemology is based on the extended credit view, which conceives of knowledge as an achievement and broadens that focus to include team achievements in addition to individual ones. He argues that this view does a better job than alternatives of answering the many conceptual and empirical challenges for virtue epistemology that have been based on cases of testimony. The view also allows for a nuanced interaction with situationist psychology, dual processing models in cognitive science, and the extended mind literature in philosophy of mind. This framework provides a useful conceptual bridge between individual and group epistemology, and it has novel applications to the epistemology of disagreement, prejudice, and authority.",
+      "cited_by_count": 13,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4249786483"
+    },
+    {
+      "openalex_id": "W2905447359",
+      "doi": "10.4324/9781351199797-17",
+      "title": "Creating heuristics for philosophical creativity",
+      "authors": [
+        {
+          "name": "Alan H\u00e1jek",
+          "openalex_id": "A5082132458",
+          "orcid": "https://orcid.org/0000-0003-2315-2114"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-21",
+      "abstract": "Creativity matters. We want people to be more creative and admire those who are. Yet creativity is deeply puzzling. Just what is it to be creative? Why is it valuable? Who or what can be creative and how?&#13;\\n&#13;\\nCreativity and Philosophy is an outstanding collection of specially commissioned chapters by leading philosophers who explore these problems and many more. It provides a comprehensive and creative picture of creativity, including the following themes:&#13;\\n&#13;\\ncreativity as a virtue, imagination, epistemic virtue, moral virtue and personal vice;&#13;\\ncreativity with and without value, the definition of creativity, creative failures and suffering;&#13;\\ncreativity in nature, divine creativity and human agency;&#13;\\nnaturalistic explanations of creativity and the extended mind;&#13;\\ncreativity in philosophy, mathematics and logic, and the role of heuristics;&#13;\\ncreativity in art, morality and politics;&#13;\\nindividual and group creativity.&#13;\\nA major feature of the collection is that it explores creativity not only from the perspective of art and aesthetics, but also from a variety of philosophical disciplines, including epistemology, philosophy of mind, philosophical psychology, philosophy of science, political philosophy and ethics.&#13;\\n&#13;\\nThe volume is essential reading for anyone fascinated by creativity, whether their interests lie in philosophy, music, art and visual studies, literature, psychology, neuroscience, management or education, or they are simply intent on learning more about this vital human trait.",
+      "cited_by_count": 20,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2905447359"
+    },
+    {
+      "openalex_id": "W2205765073",
+      "doi": "10.1016/s0140-6736(15)60757-7",
+      "title": "The need for a global health ethic",
+      "authors": [
+        {
+          "name": "Tony L. Goldberg",
+          "openalex_id": "A5024025397",
+          "orcid": "https://orcid.org/0000-0003-3962-4913",
+          "institutions": [
+            "University of Wisconsin\u2013Madison",
+            "University of Wisconsin Health"
+          ]
+        },
+        {
+          "name": "Jonathan A. Patz",
+          "openalex_id": "A5090232910",
+          "orcid": "https://orcid.org/0000-0002-7131-9698",
+          "institutions": [
+            "University of Wisconsin\u2013Madison",
+            "University of Wisconsin Health"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-16",
+      "abstract": null,
+      "cited_by_count": 73,
+      "type": "letter",
+      "source": {
+        "name": "The Lancet",
+        "type": "journal",
+        "issn": [
+          "0140-6736",
+          "1474-547X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.thelancet.com/article/S0140673615607577/pdf"
+      },
+      "topics": [
+        "Climate Change and Health Impacts",
+        "Zoonotic diseases and public health",
+        "Public Health Policies and Education"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W2205765073"
+    },
+    {
+      "openalex_id": "W4289837471",
+      "doi": "10.1111/nous.12431",
+      "title": "Controlling our reasons",
+      "authors": [
+        {
+          "name": "Sophie Keeling",
+          "openalex_id": "A5018993379",
+          "orcid": "https://orcid.org/0000-0002-7846-453X",
+          "institutions": [
+            "Universitat de Barcelona"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-04",
+      "abstract": "Abstract Philosophical discussion on control has largely centred around control over our actions and beliefs. Yet this overlooks the question of whether we also have control over the reasons for which we act and believe. To date, the overriding assumption appears to be that we do not, and with seemingly good reason. We cannot choose to act for a reason and acting\u2010for\u2010a\u2010reason is not itself something we do. While some have challenged this in the case of reasons for action, these claims seem especially untenable regarding believing for a reason. And extending the scope of control in this way also faces the threat of regress. In the face of this orthodoxy, the present paper argues that we do in fact have control over both believing and acting for a particular reason. It also starts to develop an account of the way in which this would be possible. Given the broad importance of understanding control and agency, this paper bears on a number of topics in epistemology, the philosophy of mind, and ethics.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "No\u00fbs",
+        "type": "journal",
+        "issn": [
+          "0029-4624",
+          "1468-0068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/nous.12431"
+      },
+      "topics": [
+        "Free Will and Agency",
+        "Epistemology, Ethics, and Metaphysics",
+        "War, Ethics, and Justification"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W4289837471"
+    },
+    {
+      "openalex_id": "W2903312499",
+      "doi": "10.1007/s10551-018-4078-9",
+      "title": "A MacIntyrean Perspective on the Collapse of a Money Market Fund",
+      "authors": [
+        {
+          "name": "Andrea Roncella",
+          "openalex_id": "A5107972558",
+          "orcid": "https://orcid.org/0000-0002-5825-6063",
+          "institutions": [
+            "Universidad de Navarra"
+          ]
+        },
+        {
+          "name": "Ignacio Ferrero",
+          "openalex_id": "A5036670346",
+          "orcid": "https://orcid.org/0000-0001-5869-8366",
+          "institutions": [
+            "Universidad de Navarra"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-01",
+      "abstract": null,
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Housing, Finance, and Neoliberalism",
+        "Economic Theory and Institutions",
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W2903312499"
+    },
+    {
+      "openalex_id": "W4285113288",
+      "doi": "10.21272/bel.6(2).6-11.2022",
+      "title": "Ethical Concerns While Using Artificial Intelligence in Recruitment of Employees",
+      "authors": [
+        {
+          "name": "Aashima Gupta",
+          "openalex_id": "A5001461325",
+          "orcid": "https://orcid.org/0000-0003-4715-6910",
+          "institutions": [
+            "Lovely Professional University"
+          ]
+        },
+        {
+          "name": "Mridula Mishra",
+          "openalex_id": "A5073930857",
+          "orcid": "https://orcid.org/0000-0002-5585-4236",
+          "institutions": [
+            "Lovely Professional University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "Artificial Intelligence has evolved as an alternative to human intelligence. It affects the lives of billions of people. It mimics humans by solving problems and understanding the task. These Artificial Intelligence technologies must have some moral values and ethics incorporated within itself. The usage of AI is growing worldwide, posing more ethical issues to consider. In recent years, many companies have used various Artificial Intelligence tools such as chatbots and face recognition software for fulfilling their hiring needs. This research work will focus on such devices that help manage one of the important functions of human resources: recruitment. It will identify various challenges and ethical issues that a firm faces while assimilating Artificial Intelligence tools in the process of Recruitment. The hiring companies need to make the job seekers realize that AI-powered tools would be free from discrimination and safeguard privacy. The purpose of the study is to identify the ethical issues while incorporating Artificial Intelligence into hiring needs. The study will be based on reviews and features of applications. The study mentions various applications whose features might be unethical for job seekers. Findings reveal that the significant unethical issues faced by the hiring companies are Data privacy and unconscious biasness. The biasness is due to the algorithm that works according to the inputs fed to build it, and the programmer might have subconscious biasness in his mind. AI has restored concerns regarding privacy and data protection. According to a report by UNESCO, Women make up only 22% of all AI professionals. Gender prejudices and stereotyping are perpetuated in AI technologies due to their underrepresentation in the sector. Virtual personal assistants like Siri, Alexa, and Cortana are \u201cfemale\u201d by default, which is no accident. The submissiveness they display is an illustration of how Artificial Intelligence (AI) might continue to support and extend gender bias in our society.",
+      "cited_by_count": 27,
+      "type": "article",
+      "source": {
+        "name": "Business Ethics and Leadership",
+        "type": "journal",
+        "issn": [
+          "2520-6311",
+          "2520-6761"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://armgpublishing.sumdu.edu.ua/wp-content/uploads/2022/07/BEL_2_2022_1.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "AI in Service Interactions",
+        "AI and HR Technologies"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W4285113288"
+    },
+    {
+      "openalex_id": "W3095319910",
+      "doi": "10.1007/s11023-020-09548-1",
+      "title": "GPT-3: Its Nature, Scope, Limits, and Consequences",
+      "authors": [
+        {
+          "name": "Luciano Floridi",
+          "openalex_id": "A5046574356",
+          "orcid": "https://orcid.org/0000-0002-5444-2280",
+          "institutions": [
+            "Science Oxford",
+            "British Library",
+            "Turing Institute",
+            "The Alan Turing Institute"
+          ]
+        },
+        {
+          "name": "Massimo Chiriatti",
+          "openalex_id": "A5074452768",
+          "orcid": "https://orcid.org/0000-0002-4623-1678"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-01",
+      "abstract": "Abstract In this commentary, we discuss the nature of reversible and irreversible questions, that is, questions that may enable one to identify the nature of the source of their answers. We then introduce GPT-3, a third-generation, autoregressive language model that uses deep learning to produce human-like texts, and use the previous distinction to analyse it. We expand the analysis to present three tests based on mathematical, semantic (that is, the Turing Test), and ethical questions and show that GPT-3 is not designed to pass any of them. This is a reminder that GPT-3 does not do what it is not supposed to do, and that any interpretation of GPT-3 as the beginning of the emergence of a general form of artificial intelligence is merely uninformed science fiction. We conclude by outlining some of the significant consequences of the industrialisation of automatic and cheap production of good, semantic artefacts.",
+      "cited_by_count": 2007,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-020-09548-1.pdf"
+      },
+      "topics": [
+        "Computational Physics and Python Applications",
+        "Computability, Logic, AI Algorithms",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W3095319910"
+    },
+    {
+      "openalex_id": "W2981863007",
+      "doi": "10.1186/s41239-019-0171-0",
+      "title": "Systematic review of research on artificial intelligence applications in higher education \u2013 where are the educators?",
+      "authors": [
+        {
+          "name": "Olaf Zawacki\u2010Richter",
+          "openalex_id": "A5062601414",
+          "orcid": "https://orcid.org/0000-0003-1482-8303",
+          "institutions": [
+            "Carl von Ossietzky Universit\u00e4t Oldenburg"
+          ]
+        },
+        {
+          "name": "Victoria I. Mar\u00edn",
+          "openalex_id": "A5081077793",
+          "orcid": "https://orcid.org/0000-0002-4673-6190",
+          "institutions": [
+            "Carl von Ossietzky Universit\u00e4t Oldenburg"
+          ]
+        },
+        {
+          "name": "Melissa Bond",
+          "openalex_id": "A5086439158",
+          "orcid": "https://orcid.org/0000-0002-8267-031X",
+          "institutions": [
+            "Carl von Ossietzky Universit\u00e4t Oldenburg"
+          ]
+        },
+        {
+          "name": "Franziska Gouverneur",
+          "openalex_id": "A5058780933",
+          "institutions": [
+            "Carl von Ossietzky Universit\u00e4t Oldenburg"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-28",
+      "abstract": null,
+      "cited_by_count": 4204,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Educational Technology in Higher Education",
+        "type": "journal",
+        "issn": [
+          "2365-9440"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://educationaltechnologyjournal.springeropen.com/track/pdf/10.1186/s41239-019-0171-0"
+      },
+      "topics": [
+        "Online Learning and Analytics",
+        "Artificial Intelligence in Healthcare and Education",
+        "Intelligent Tutoring Systems and Adaptive Learning"
+      ],
+      "referenced_works_count": 161,
+      "url": "https://openalex.org/W2981863007"
+    },
+    {
+      "openalex_id": "W4304080409",
+      "doi": "10.1080/00131857.2022.2130755",
+      "title": "Treat me as a place: On the (onto)ethics of place-responsive pedagogy",
+      "authors": [
+        {
+          "name": "Anna Vladimirova",
+          "openalex_id": "A5027459748",
+          "orcid": "https://orcid.org/0000-0001-6299-9620",
+          "institutions": [
+            "University of Oulu"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-10-10",
+      "abstract": "This article engages with new materialist posthumanist philosophy to conceptually approach an ethics of outdoor environmental education with the focus on a pupil's body. Thinking with place-responsive pedagogy, I aim to extend a conversation toward exploring a child's body as a place. Place-responsive pedagogy, while it challenges a commonly endorsed child/brain/self/anthropocentrism by paying more attention to a place, its history, and human-nonhuman entanglements, still positions children as intellectual observers (of places) and multisensorial body-mind thinkers. I propose to attend to pupils/their movements as to ontogenetic phenomena. These phenomena necessarily emerge from the surplus of child-place relations. They are intelligent, complex, transmogrifying, attuning with the emerging ecologies, and growing with/from a place. Such conceptualisation disrupts an often-empty rhetoric that 'humans are part of nature', offering an account of an (onto)ethics.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Educational Philosophy and Theory",
+        "type": "journal",
+        "issn": [
+          "0013-1857",
+          "1469-5812"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Outdoor and Experiential Education",
+        "Indigenous and Place-Based Education",
+        "Adventure Sports and Sensation Seeking"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W4304080409"
+    },
+    {
+      "openalex_id": "W2788315893",
+      "doi": "10.7202/1058308ar",
+      "title": "Guyana - How Do You Know Where to Get the Information You Need? Determining Ethics Approval Requirements in a Developing Country",
+      "authors": [
+        {
+          "name": "Gloria Song",
+          "openalex_id": "A5063693585",
+          "institutions": [
+            "Polar Knowledge Canada",
+            "International Development Research Centre"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-27",
+      "abstract": "Determining the process for obtaining local research ethics approval, or whether such a requirement even exists, may not always be straightforward in the context of some developing countries where such information may not be easily accessible to overseas researchers. How far do a researcher's ethical obligations extend in determining whether there is a requirement for local research ethics approval, and what form this would take (e.g., institutional or centralised ethics review)? In other words, how far should a researcher be expected to go in seeking out local ethics approval, especially where such information is not readily available? As part of this discussion, this case study describes the steps that I took as the principal researcher, before I was able to reasonably conclude that no national ethics approval requirement existed in Guyana for my particular research, which involved interviewing justice service providers about the implementation of Guyana's Domestic Violence Act. Drawing on this experience, I discuss various considerations that an international development researcher should bear in mind when planning and conducting research that seeks to meet leading international norms of research ethics.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Canadian Journal of Bioethics",
+        "type": "journal",
+        "issn": [
+          "2561-4665"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.erudit.org/en/journals/bioethics/2018-v1-n1-bioethics04468/1058308ar.pdf"
+      },
+      "topics": [
+        "Legal Education and Practice Innovations",
+        "Human Rights and Development"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W2788315893"
+    },
+    {
+      "openalex_id": "W2734605732",
+      "doi": "10.1007/s11097-017-9500-8",
+      "title": "Enactivism, second-person engagement and personal responsibility",
+      "authors": [
+        {
+          "name": "Janna van Grunsven",
+          "openalex_id": "A5083053150",
+          "orcid": "https://orcid.org/0000-0002-8751-1289",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-07-14",
+      "abstract": null,
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Phenomenology and the Cognitive Sciences",
+        "type": "journal",
+        "issn": [
+          "1568-7759",
+          "1572-8676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://resolver.tudelft.nl/uuid:75adc2d8-1f61-4c64-bcf1-0f29f7b6c637"
+      },
+      "topics": [
+        "Embodied and Extended Cognition",
+        "Mental Health and Psychiatry",
+        "Action Observation and Synchronization"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2734605732"
+    },
+    {
+      "openalex_id": "W2539374843",
+      "doi": "10.1007/978-3-319-45609-6_10",
+      "title": "The Limits and the Ethics of Consumer Profiling",
+      "authors": [
+        {
+          "name": "Nansi Lungu",
+          "openalex_id": "A5028082272",
+          "institutions": [
+            "Titu Maiorescu University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-19",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychology of Social Influence",
+        "Consumer Behavior in Brand Consumption and Identification",
+        "Emotions and Moral Behavior"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W2539374843"
+    },
+    {
+      "openalex_id": "W2894528744",
+      "doi": "10.1108/josm-04-2018-0119",
+      "title": "Brave new world: service robots in the frontline",
+      "authors": [
+        {
+          "name": "Jochen Wirtz",
+          "openalex_id": "A5064998398",
+          "orcid": "https://orcid.org/0000-0002-6297-4498",
+          "institutions": [
+            "National University of Singapore"
+          ]
+        },
+        {
+          "name": "Paul G. Patterson",
+          "openalex_id": "A5005437129",
+          "orcid": "https://orcid.org/0000-0003-4588-1510",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Werner H. Kunz",
+          "openalex_id": "A5053767623",
+          "orcid": "https://orcid.org/0000-0001-6264-183X",
+          "institutions": [
+            "University of Massachusetts Boston"
+          ]
+        },
+        {
+          "name": "Thorsten Gruber",
+          "openalex_id": "A5045766633",
+          "orcid": "https://orcid.org/0000-0002-1234-5503",
+          "institutions": [
+            "Loughborough University"
+          ]
+        },
+        {
+          "name": "Vinh Nhat Lu",
+          "openalex_id": "A5077416827",
+          "orcid": "https://orcid.org/0000-0001-6995-5313",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "Stefanie Paluch",
+          "openalex_id": "A5015670881",
+          "orcid": "https://orcid.org/0000-0002-7478-4149",
+          "institutions": [
+            "RWTH Aachen University",
+            "Westf\u00e4lische Hochschule"
+          ]
+        },
+        {
+          "name": "Antje Martins",
+          "openalex_id": "A5040576607",
+          "orcid": "https://orcid.org/0000-0003-1534-8598",
+          "institutions": [
+            "University of Queensland"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-09-26",
+      "abstract": "Purpose The service sector is at an inflection point with regard to productivity gains and service industrialization similar to the industrial revolution in manufacturing that started in the eighteenth century. Robotics in combination with rapidly improving technologies like artificial intelligence (AI), mobile, cloud, big data and biometrics will bring opportunities for a wide range of innovations that have the potential to dramatically change service industries. The purpose of this paper is to explore the potential role service robots will play in the future and to advance a research agenda for service researchers. Design/methodology/approach This paper uses a conceptual approach that is rooted in the service, robotics and AI literature. Findings The contribution of this paper is threefold. First, it provides a definition of service robots, describes their key attributes, contrasts their features and capabilities with those of frontline employees, and provides an understanding for which types of service tasks robots will dominate and where humans will dominate. Second, this paper examines consumer perceptions, beliefs and behaviors as related to service robots, and advances the service robot acceptance model. Third, it provides an overview of the ethical questions surrounding robot-delivered services at the individual, market and societal level. Practical implications This paper helps service organizations and their management, service robot innovators, programmers and developers, and policymakers better understand the implications of a ubiquitous deployment of service robots. Originality/value This is the first conceptual paper that systematically examines key dimensions of robot-delivered frontline service and explores how these will differ in the future.",
+      "cited_by_count": 1970,
+      "type": "article",
+      "source": {
+        "name": "Journal of service management",
+        "type": "journal",
+        "issn": [
+          "1757-5818",
+          "1757-5826"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.emerald.com/insight/content/doi/10.1108/JOSM-04-2018-0119/full/pdf?title=brave-new-world-service-robots-in-the-frontline"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Service and Product Innovation",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W2894528744"
+    },
+    {
+      "openalex_id": "W4308988930",
+      "doi": "10.1007/s11948-022-00405-1",
+      "title": "The Ethics of Supernumerary Robotic Limbs. An Enactivist Approach",
+      "authors": [
+        {
+          "name": "Nicola Di Stefano",
+          "openalex_id": "A5079321988",
+          "orcid": "https://orcid.org/0000-0002-9286-0395",
+          "institutions": [
+            "Institute of Cognitive Sciences and Technologies"
+          ]
+        },
+        {
+          "name": "Nathana\u00ebl Jarrass\u00e9",
+          "openalex_id": "A5057665161",
+          "orcid": "https://orcid.org/0000-0002-5680-1566",
+          "institutions": [
+            "Inserm",
+            "Institut Syst\u00e8mes Intelligents et de Robotique",
+            "D\u00e9l\u00e9gation Paris 7",
+            "Sorbonne Universit\u00e9",
+            "Centre National de la Recherche Scientifique"
+          ]
+        },
+        {
+          "name": "Luca Valera",
+          "openalex_id": "A5053872920",
+          "orcid": "https://orcid.org/0000-0002-1693-396X",
+          "institutions": [
+            "Universidad de Valladolid",
+            "Pontificia Universidad Cat\u00f3lica de Chile"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-14",
+      "abstract": "Abstract Supernumerary robotic limbs are innovative devices in the field of wearable robotics which can provide humans with unprecedented sensorimotor abilities. However, scholars have raised awareness of the ethical issues that would arise from the large adoption of technologies for human augmentation in society. Most negative attitudes towards such technologies seem to rely on an allegedly clear distinction between therapy and enhancement in the use of technological devices. Based on such distinction, people tend to accept technologies when used for therapeutic purposes (e.g., prostheses), but tend to raise issues when similar devices are used for upgrading a physical or cognitive ability (e.g., supernumerary robotics limbs). However, as many scholars have pointed out, the distinction between therapy and enhancement might be theoretically flawed. In this paper, we present an alternative approach to the ethics of supernumerary limbs which is based on two related claims. First, we propose to conceive supernumerary limbs as tools that necessarily modify our psychological and bodily identity. At the same time, we stress that such a modification is not ethically bad in itself; on the contrary, it drives human interaction with the environment. Second, by comparing our view with the extended mind thesis, we claim that the mediation through tools is crucial for the formation of novel meanings and skills that constitute human interaction with the world. We will relate the latter claim to enactivism as a helpful theoretical perspective to frame issues related to artificial limbs and, more in general, to technologies for augmentation. Based on this approach, we finally sketch some suggestions for future directions in the ethics of supernumerary limbs.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Science and Engineering Ethics",
+        "type": "journal",
+        "issn": [
+          "1353-3452",
+          "1471-5546"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11948-022-00405-1.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Neuroscience and Neural Engineering",
+        "Biomedical Ethics and Regulation"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W4308988930"
+    },
+    {
+      "openalex_id": "W2548405402",
+      "doi": "10.1108/par-02-2016-0024",
+      "title": "An ethical perspective on performance measurement in the public sector",
+      "authors": [
+        {
+          "name": "Anil K. Narayan",
+          "openalex_id": "A5026333985",
+          "orcid": "https://orcid.org/0000-0002-2273-2494",
+          "institutions": [
+            "Auckland University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-02",
+      "abstract": "Purpose The purpose of this paper is to provide an ethical perspective that goes beyond best practice in performance measurement systems in the public sector to help minimise unintended and unethical effects. Design/methodology/approach The paper draws on the ethical concepts of bounded ethicality, ethical blind spots and ethical fading to help illuminate the dark side of performance measurement in public sector organisations. Findings An understanding of the psychological tendencies that create unethical behaviours will assist compliance with ethics and morality and is a way forward towards minimising the unintended consequences of performance measurement in the public sector. Practical implications The findings will assist public sector managers by providing a greater understanding of why so many unethical acts occur and how to overcome ethical failures in the design and use of performance measurement systems. Originality/value The study adds value by contributing to performance measurement literature on the need to recognise the limitations of the human mind and innate psychological processes that make people systematically and unknowingly engage in unethical behaviour. The ethical concepts proposed in this paper go beyond the best practice notions of performance measurement and extend the toolkit of performance measurement techniques in the public sector.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Pacific Accounting Review",
+        "type": "journal",
+        "issn": [
+          "0114-0582",
+          "2041-5494"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Accounting and Organizational Management",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2548405402"
+    },
+    {
+      "openalex_id": "W2398139753",
+      "doi": "10.1093/jmammal/gyw078",
+      "title": "2016 Guidelines of the American Society of Mammalogists for the use of wild mammals in research and education:",
+      "authors": [
+        {
+          "name": "Robert S. Sikes",
+          "openalex_id": "A5109107195",
+          "institutions": [
+            "University of Arkansas at Little Rock"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-05-28",
+      "abstract": "Guidelines for use of wild mammal species in research are updated from Sikes et al. (2011) . These guidelines cover current professional techniques and regulations involving the use of mammals in research and teaching; they also incorporate new resources, procedural summaries, and reporting requirements. Included are details on capturing, marking, housing, and humanely killing wild mammals. It is recommended that Institutional Animal Care and Use Committees (IACUCs), regulatory agencies, and investigators use these guidelines as a resource for protocols involving wild mammals, whether studied in the field or in captivity. These guidelines were prepared and approved by the American Society of Mammalogists (ASM), in consultation with professional veterinarians experienced in wildlife research and IACUCs, whose collective expertise provides a broad and comprehensive understanding of the biology of nondomesticated mammals. The current version of these guidelines and any subsequent modifications are available online on the Animal Care and Use Committee page of the ASM website ( http://mammalogy.org/uploads/committee_files/CurrentGuidelines.pdf ). Additional resources pertaining to the use of wild animals in research are available at: http://www.mammalsociety.org/committees/animal-care-and-use#tab3 .",
+      "cited_by_count": 3054,
+      "type": "article",
+      "source": {
+        "name": "Journal of Mammalogy",
+        "type": "journal",
+        "issn": [
+          "0022-2372",
+          "1545-1542"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/jmammal/article-pdf/97/3/663/24356999/gyw078.pdf"
+      },
+      "topics": [
+        "Wildlife Ecology and Conservation",
+        "Human-Animal Interaction Studies",
+        "Species Distribution and Climate Change"
+      ],
+      "referenced_works_count": 75,
+      "url": "https://openalex.org/W2398139753"
+    },
+    {
+      "openalex_id": "W3159728495",
+      "doi": "10.1038/s41586-021-03451-0",
+      "title": "Towards complete and error-free genome assemblies of all vertebrate species",
+      "authors": [
+        {
+          "name": "Arang Rhie",
+          "openalex_id": "A5077909607",
+          "orcid": "https://orcid.org/0000-0002-9809-8127",
+          "institutions": [
+            "National Human Genome Research Institute",
+            "National Institutes of Health"
+          ]
+        },
+        {
+          "name": "Shane McCarthy",
+          "openalex_id": "A5030669774",
+          "orcid": "https://orcid.org/0000-0002-2715-4187",
+          "institutions": [
+            "Wellcome Sanger Institute",
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Olivier F\u00e9drigo",
+          "openalex_id": "A5055436946",
+          "orcid": "https://orcid.org/0000-0002-6450-7551",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Joana Damas",
+          "openalex_id": "A5082177222",
+          "orcid": "https://orcid.org/0000-0003-4857-2510",
+          "institutions": [
+            "University of California, Davis"
+          ]
+        },
+        {
+          "name": "Giulio Formenti",
+          "openalex_id": "A5018079714",
+          "orcid": "https://orcid.org/0000-0002-7554-5991",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Sergey Koren",
+          "openalex_id": "A5042603880",
+          "orcid": "https://orcid.org/0000-0002-1472-8962",
+          "institutions": [
+            "National Human Genome Research Institute",
+            "National Institutes of Health"
+          ]
+        },
+        {
+          "name": "Marcela Uliano\u2010Silva",
+          "openalex_id": "A5061679388",
+          "orcid": "https://orcid.org/0000-0001-6723-4715",
+          "institutions": [
+            "Berlin Center for Genomics in Biodiversity Research",
+            "Leibniz Institute for Zoo and Wildlife Research"
+          ]
+        },
+        {
+          "name": "William Chow",
+          "openalex_id": "A5057492348",
+          "orcid": "https://orcid.org/0000-0002-9056-201X",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Arkarachai Fungtammasan",
+          "openalex_id": "A5052377950",
+          "orcid": "https://orcid.org/0000-0003-2398-0358",
+          "institutions": [
+            "DNAnexus (United States)"
+          ]
+        },
+        {
+          "name": "Ju\u2010Wan Kim",
+          "openalex_id": "A5061190553",
+          "orcid": "https://orcid.org/0000-0002-9888-1090",
+          "institutions": [
+            "Seoul National University"
+          ]
+        },
+        {
+          "name": "Chul Lee",
+          "openalex_id": "A5101781933",
+          "orcid": "https://orcid.org/0000-0002-9403-0774",
+          "institutions": [
+            "Seoul National University"
+          ]
+        },
+        {
+          "name": "Byung June Ko",
+          "openalex_id": "A5034746659",
+          "orcid": "https://orcid.org/0000-0002-5683-7438",
+          "institutions": [
+            "Seoul National University"
+          ]
+        },
+        {
+          "name": "Mark Chaisson",
+          "openalex_id": "A5026460408",
+          "orcid": "https://orcid.org/0000-0001-5395-1457",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Gregory Gedman",
+          "openalex_id": "A5042165233",
+          "orcid": "https://orcid.org/0000-0001-6819-2019",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Lindsey Cantin",
+          "openalex_id": "A5058867280",
+          "orcid": "https://orcid.org/0000-0001-9715-533X",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Fran\u00e7oise Thibaud\u2010Nissen",
+          "openalex_id": "A5039928314",
+          "orcid": "https://orcid.org/0000-0003-4957-7807",
+          "institutions": [
+            "National Center for Biotechnology Information"
+          ]
+        },
+        {
+          "name": "Leanne Haggerty",
+          "openalex_id": "A5036325537",
+          "orcid": "https://orcid.org/0000-0001-8843-3596",
+          "institutions": [
+            "European Bioinformatics Institute"
+          ]
+        },
+        {
+          "name": "Iliana Bista",
+          "openalex_id": "A5036777285",
+          "orcid": "https://orcid.org/0000-0002-6155-3093",
+          "institutions": [
+            "Wellcome Sanger Institute",
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Michelle Smith",
+          "openalex_id": "A5073359077",
+          "orcid": "https://orcid.org/0000-0001-5288-0001",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Bettina Haase",
+          "openalex_id": "A5023008409",
+          "orcid": "https://orcid.org/0000-0001-8945-7282",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Jacquelyn Mountcastle",
+          "openalex_id": "A5001316572",
+          "orcid": "https://orcid.org/0000-0003-1078-4905",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Sylke Winkler",
+          "openalex_id": "A5079601477",
+          "orcid": "https://orcid.org/0000-0002-0915-3316",
+          "institutions": [
+            "Max Planck Institute of Molecular Cell Biology and Genetics",
+            "Center for Systems Biology Dresden"
+          ]
+        },
+        {
+          "name": "Sadye Paez",
+          "openalex_id": "A5067075237",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Jason T. Howard",
+          "openalex_id": "A5107226767",
+          "orcid": "https://orcid.org/0000-0003-3265-5127"
+        },
+        {
+          "name": "Sonja C. Vernes",
+          "openalex_id": "A5085492585",
+          "orcid": "https://orcid.org/0000-0003-0305-4584",
+          "institutions": [
+            "University of St Andrews",
+            "Radboud University Nijmegen",
+            "Max Planck Institute for Psycholinguistics"
+          ]
+        },
+        {
+          "name": "Tanya M. Lama",
+          "openalex_id": "A5044078252",
+          "orcid": "https://orcid.org/0000-0002-7372-8081",
+          "institutions": [
+            "University of Massachusetts Amherst"
+          ]
+        },
+        {
+          "name": "Frank Gr\u00fctzner",
+          "openalex_id": "A5035572752",
+          "orcid": "https://orcid.org/0000-0002-3088-7314",
+          "institutions": [
+            "The University of Adelaide"
+          ]
+        },
+        {
+          "name": "Wesley C. Warren",
+          "openalex_id": "A5062335998",
+          "orcid": "https://orcid.org/0000-0003-2255-2730",
+          "institutions": [
+            "University of Missouri"
+          ]
+        },
+        {
+          "name": "Christopher N. Balakrishnan",
+          "openalex_id": "A5021202372",
+          "orcid": "https://orcid.org/0000-0002-0788-0659",
+          "institutions": [
+            "East Carolina University"
+          ]
+        },
+        {
+          "name": "David W. Burt",
+          "openalex_id": "A5018058307",
+          "orcid": "https://orcid.org/0000-0002-9991-1028",
+          "institutions": [
+            "The University of Queensland"
+          ]
+        },
+        {
+          "name": "Julia M. George",
+          "openalex_id": "A5006938860",
+          "orcid": "https://orcid.org/0000-0001-6194-6914",
+          "institutions": [
+            "Clemson University"
+          ]
+        },
+        {
+          "name": "Matthew T. Biegler",
+          "openalex_id": "A5049555126",
+          "orcid": "https://orcid.org/0000-0003-4331-9890",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "David Iorns",
+          "openalex_id": "A5056385052"
+        },
+        {
+          "name": "Andrew Digby",
+          "openalex_id": "A5088919135",
+          "orcid": "https://orcid.org/0000-0002-1870-8811"
+        },
+        {
+          "name": "Daryl Eason",
+          "openalex_id": "A5057264653"
+        },
+        {
+          "name": "Bruce C. Robertson",
+          "openalex_id": "A5071196175",
+          "orcid": "https://orcid.org/0000-0002-5348-2731",
+          "institutions": [
+            "University of Otago"
+          ]
+        },
+        {
+          "name": "Taylor Edwards",
+          "openalex_id": "A5039857024",
+          "orcid": "https://orcid.org/0000-0002-7235-6175",
+          "institutions": [
+            "University of Arizona"
+          ]
+        },
+        {
+          "name": "Mark Wilkinson",
+          "openalex_id": "A5032081174",
+          "orcid": "https://orcid.org/0000-0002-9459-8976",
+          "institutions": [
+            "Natural History Museum"
+          ]
+        },
+        {
+          "name": "George F. Turner",
+          "openalex_id": "A5034346050",
+          "orcid": "https://orcid.org/0000-0003-0099-7261",
+          "institutions": [
+            "Bangor University"
+          ]
+        },
+        {
+          "name": "Axel Meyer",
+          "openalex_id": "A5041529580",
+          "orcid": "https://orcid.org/0000-0002-0888-8193",
+          "institutions": [
+            "University of Konstanz"
+          ]
+        },
+        {
+          "name": "Andreas F. Kautt",
+          "openalex_id": "A5051078737",
+          "orcid": "https://orcid.org/0000-0001-7792-0735",
+          "institutions": [
+            "Harvard University",
+            "University of Konstanz"
+          ]
+        },
+        {
+          "name": "Paolo Franchini",
+          "openalex_id": "A5003593150",
+          "orcid": "https://orcid.org/0000-0002-8184-1463",
+          "institutions": [
+            "University of Konstanz"
+          ]
+        },
+        {
+          "name": "H. William Detrich",
+          "openalex_id": "A5016895478",
+          "orcid": "https://orcid.org/0000-0002-0783-4505",
+          "institutions": [
+            "NOAA National Marine Fisheries Service Northeast Fisheries Science Center",
+            "Northeastern University"
+          ]
+        },
+        {
+          "name": "Hannes Svardal",
+          "openalex_id": "A5056647680",
+          "orcid": "https://orcid.org/0000-0001-7866-7313",
+          "institutions": [
+            "University of Antwerp",
+            "Naturalis Biodiversity Center"
+          ]
+        },
+        {
+          "name": "Maximilian Wagner",
+          "openalex_id": "A5090893293",
+          "orcid": "https://orcid.org/0000-0002-0949-8410",
+          "institutions": [
+            "University of Graz"
+          ]
+        },
+        {
+          "name": "Gavin J. P. Naylor",
+          "openalex_id": "A5062903025",
+          "orcid": "https://orcid.org/0000-0002-8731-2626",
+          "institutions": [
+            "Florida Museum of Natural History",
+            "University of Florida"
+          ]
+        },
+        {
+          "name": "Martin Pippel",
+          "openalex_id": "A5085636203",
+          "orcid": "https://orcid.org/0000-0002-8134-5929",
+          "institutions": [
+            "Center for Systems Biology Dresden",
+            "Max Planck Institute of Molecular Cell Biology and Genetics"
+          ]
+        },
+        {
+          "name": "Milan Malinsky",
+          "openalex_id": "A5063702666",
+          "orcid": "https://orcid.org/0000-0002-1462-6317",
+          "institutions": [
+            "University of Basel",
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Mark P. Mooney",
+          "openalex_id": "A5087605552",
+          "orcid": "https://orcid.org/0000-0002-1943-9967",
+          "institutions": [
+            "Technology Affinity Group"
+          ]
+        },
+        {
+          "name": "Maria Simbirsky",
+          "openalex_id": "A5003393141",
+          "institutions": [
+            "DNAnexus (United States)"
+          ]
+        },
+        {
+          "name": "Brett T. Hannigan",
+          "openalex_id": "A5057667258",
+          "orcid": "https://orcid.org/0000-0003-0934-1015",
+          "institutions": [
+            "DNAnexus (United States)"
+          ]
+        },
+        {
+          "name": "Trevor Pesout",
+          "openalex_id": "A5057510515",
+          "orcid": "https://orcid.org/0000-0002-1443-7970",
+          "institutions": [
+            "University of California, Santa Cruz"
+          ]
+        },
+        {
+          "name": "Marlys L. Houck",
+          "openalex_id": "A5000669712",
+          "orcid": "https://orcid.org/0000-0002-3879-9511",
+          "institutions": [
+            "San Diego Zoo Institute for Conservation Research",
+            "Zoological Society of San Diego"
+          ]
+        },
+        {
+          "name": "Ann Misuraca",
+          "openalex_id": "A5084102882",
+          "institutions": [
+            "San Diego Zoo Institute for Conservation Research",
+            "Zoological Society of San Diego"
+          ]
+        },
+        {
+          "name": "Sarah B. Kingan",
+          "openalex_id": "A5083254427",
+          "orcid": "https://orcid.org/0000-0002-4900-0189",
+          "institutions": [
+            "Pacific Biosciences (United States)"
+          ]
+        },
+        {
+          "name": "Richard Hall",
+          "openalex_id": "A5102957650",
+          "orcid": "https://orcid.org/0000-0001-6490-8227",
+          "institutions": [
+            "Pacific Biosciences (United States)"
+          ]
+        },
+        {
+          "name": "Zev Kronenberg",
+          "openalex_id": "A5070991284",
+          "orcid": "https://orcid.org/0000-0002-7627-9808",
+          "institutions": [
+            "Pacific Biosciences (United States)"
+          ]
+        },
+        {
+          "name": "Ivan Sovi\u0107",
+          "openalex_id": "A5001652460",
+          "orcid": "https://orcid.org/0000-0002-5900-4319",
+          "institutions": [
+            "Pacific Biosciences (United States)"
+          ]
+        },
+        {
+          "name": "Christopher Dunn",
+          "openalex_id": "A5010083960",
+          "orcid": "https://orcid.org/0000-0002-0601-3254",
+          "institutions": [
+            "Pacific Biosciences (United States)"
+          ]
+        },
+        {
+          "name": "Zemin Ning",
+          "openalex_id": "A5087942382",
+          "orcid": "https://orcid.org/0000-0003-4359-776X",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Alex Hastie",
+          "openalex_id": "A5101589610",
+          "orcid": "https://orcid.org/0000-0002-6401-5864",
+          "institutions": [
+            "BioNano Genomics (United States)"
+          ]
+        },
+        {
+          "name": "Joyce Lee",
+          "openalex_id": "A5100764481",
+          "orcid": "https://orcid.org/0000-0002-3492-1102",
+          "institutions": [
+            "BioNano Genomics (United States)"
+          ]
+        },
+        {
+          "name": "Siddarth Selvaraj",
+          "openalex_id": "A5032862833",
+          "institutions": [
+            "Arima Genomics (United States)"
+          ]
+        },
+        {
+          "name": "Richard E. Green",
+          "openalex_id": "A5038814932",
+          "orcid": "https://orcid.org/0000-0003-0516-5827",
+          "institutions": [
+            "University of California, Santa Cruz",
+            "Dovetail Genomics (United States)"
+          ]
+        },
+        {
+          "name": "Nicholas H. Putnam",
+          "openalex_id": "A5060151593",
+          "orcid": "https://orcid.org/0000-0002-1315-782X",
+          "institutions": [
+            "Santa Cruz County Office of Education"
+          ]
+        },
+        {
+          "name": "Marta Gut",
+          "openalex_id": "A5066760172",
+          "institutions": [
+            "Universitat Pompeu Fabra",
+            "Centre for Genomic Regulation"
+          ]
+        },
+        {
+          "name": "Jay Ghurye",
+          "openalex_id": "A5053208854",
+          "orcid": "https://orcid.org/0000-0003-1381-4081",
+          "institutions": [
+            "University of Maryland, College Park",
+            "Dovetail Genomics (United States)"
+          ]
+        },
+        {
+          "name": "Erik Garrison",
+          "openalex_id": "A5008992371",
+          "orcid": "https://orcid.org/0000-0003-3821-631X",
+          "institutions": [
+            "University of California, Santa Cruz"
+          ]
+        },
+        {
+          "name": "Ying Sims",
+          "openalex_id": "A5091615215",
+          "orcid": "https://orcid.org/0000-0003-4765-4872",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Joanna Collins",
+          "openalex_id": "A5073478949",
+          "orcid": "https://orcid.org/0000-0001-5782-5028",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Sarah Pelan",
+          "openalex_id": "A5059646650",
+          "orcid": "https://orcid.org/0000-0001-8729-685X",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "James Torrance",
+          "openalex_id": "A5066372539",
+          "orcid": "https://orcid.org/0000-0002-6117-8190",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Alan Tracey",
+          "openalex_id": "A5047614339",
+          "orcid": "https://orcid.org/0000-0002-4805-9058",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Jonathan Wood",
+          "openalex_id": "A5007342777",
+          "orcid": "https://orcid.org/0000-0002-7545-2162",
+          "institutions": [
+            "Wellcome Sanger Institute"
+          ]
+        },
+        {
+          "name": "Robel E. Dagnew",
+          "openalex_id": "A5010833870",
+          "institutions": [
+            "University of Southern California"
+          ]
+        },
+        {
+          "name": "Dengfeng Guan",
+          "openalex_id": "A5077353618",
+          "orcid": "https://orcid.org/0000-0002-6376-3940",
+          "institutions": [
+            "Harbin Institute of Technology",
+            "University of Cambridge"
+          ]
+        },
+        {
+          "name": "Sarah E. London",
+          "openalex_id": "A5088476045",
+          "orcid": "https://orcid.org/0000-0002-7839-2644",
+          "institutions": [
+            "University of Chicago"
+          ]
+        },
+        {
+          "name": "David F. Clayton",
+          "openalex_id": "A5052029788",
+          "orcid": "https://orcid.org/0000-0002-6395-3488",
+          "institutions": [
+            "Clemson University"
+          ]
+        },
+        {
+          "name": "Claudio V. Mello",
+          "openalex_id": "A5068496162",
+          "orcid": "https://orcid.org/0000-0002-9826-8421",
+          "institutions": [
+            "Oregon Health & Science University"
+          ]
+        },
+        {
+          "name": "Samantha R. Friedrich",
+          "openalex_id": "A5087988964",
+          "orcid": "https://orcid.org/0000-0003-0570-6080",
+          "institutions": [
+            "Oregon Health & Science University"
+          ]
+        },
+        {
+          "name": "Peter V. Lovell",
+          "openalex_id": "A5035894095",
+          "orcid": "https://orcid.org/0000-0002-6111-9131",
+          "institutions": [
+            "Oregon Health & Science University"
+          ]
+        },
+        {
+          "name": "Ekaterina Osipova",
+          "openalex_id": "A5033468966",
+          "orcid": "https://orcid.org/0000-0002-6769-7223",
+          "institutions": [
+            "Center for Systems Biology Dresden",
+            "Max Planck Institute of Molecular Cell Biology and Genetics",
+            "Max Planck Institute for the Physics of Complex Systems"
+          ]
+        },
+        {
+          "name": "Farooq O. Al-Ajli",
+          "openalex_id": "A5084520604",
+          "orcid": "https://orcid.org/0000-0002-4692-7106",
+          "institutions": [
+            "Monash University Malaysia"
+          ]
+        },
+        {
+          "name": "Simona Secomandi",
+          "openalex_id": "A5007106611",
+          "orcid": "https://orcid.org/0000-0001-8597-6034",
+          "institutions": [
+            "University of Milan"
+          ]
+        },
+        {
+          "name": "Heebal Kim",
+          "openalex_id": "A5083035763",
+          "orcid": "https://orcid.org/0000-0003-3064-1303",
+          "institutions": [
+            "Seoul National University"
+          ]
+        },
+        {
+          "name": "Constantina Theofanopoulou",
+          "openalex_id": "A5075223707",
+          "orcid": "https://orcid.org/0000-0003-2014-7563",
+          "institutions": [
+            "Rockefeller University"
+          ]
+        },
+        {
+          "name": "Michael Hiller",
+          "openalex_id": "A5041994630",
+          "orcid": "https://orcid.org/0000-0003-3024-1449",
+          "institutions": [
+            "Senckenberg Research Institute and Natural History Museum Frankfurt/M",
+            "LOEWE Centre for Translational Biodiversity Genomics",
+            "Goethe University Frankfurt"
+          ]
+        },
+        {
+          "name": "Yang Zhou",
+          "openalex_id": "A5002437998",
+          "orcid": "https://orcid.org/0000-0003-1247-5049",
+          "institutions": [
+            "BGI Group (China)"
+          ]
+        },
+        {
+          "name": "Robert S. Harris",
+          "openalex_id": "A5074817739",
+          "orcid": "https://orcid.org/0000-0001-5464-6892",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Kateryna D. Makova",
+          "openalex_id": "A5042289737",
+          "orcid": "https://orcid.org/0000-0002-6212-9526",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Paul Medvedev",
+          "openalex_id": "A5066909672",
+          "orcid": "https://orcid.org/0000-0003-3143-594X",
+          "institutions": [
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Jinna Hoffman",
+          "openalex_id": "A5071303198",
+          "institutions": [
+            "National Center for Biotechnology Information"
+          ]
+        },
+        {
+          "name": "Patrick Masterson",
+          "openalex_id": "A5056587845",
+          "orcid": "https://orcid.org/0000-0001-8837-3706",
+          "institutions": [
+            "National Center for Biotechnology Information"
+          ]
+        },
+        {
+          "name": "Karen Clark",
+          "openalex_id": "A5046639840",
+          "orcid": "https://orcid.org/0000-0003-4403-1477",
+          "institutions": [
+            "National Center for Biotechnology Information"
+          ]
+        },
+        {
+          "name": "Fergal J. Martin",
+          "openalex_id": "A5085030371",
+          "orcid": "https://orcid.org/0000-0002-1672-050X",
+          "institutions": [
+            "European Bioinformatics Institute"
+          ]
+        },
+        {
+          "name": "Kevin Howe",
+          "openalex_id": "A5020132228",
+          "orcid": "https://orcid.org/0000-0002-1751-9226",
+          "institutions": [
+            "European Bioinformatics Institute"
+          ]
+        },
+        {
+          "name": "Paul Flicek",
+          "openalex_id": "A5006816272",
+          "orcid": "https://orcid.org/0000-0002-3897-7955",
+          "institutions": [
+            "European Bioinformatics Institute"
+          ]
+        },
+        {
+          "name": "Brian P. Walenz",
+          "openalex_id": "A5012925880",
+          "orcid": "https://orcid.org/0000-0001-8431-1428",
+          "institutions": [
+            "National Human Genome Research Institute",
+            "National Institutes of Health"
+          ]
+        },
+        {
+          "name": "Woori Kwak",
+          "openalex_id": "A5063472700",
+          "orcid": "https://orcid.org/0000-0003-0600-067X"
+        },
+        {
+          "name": "Hiram Clawson",
+          "openalex_id": "A5079146965",
+          "orcid": "https://orcid.org/0000-0002-0480-0545",
+          "institutions": [
+            "University of California, Santa Cruz"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-28",
+      "abstract": null,
+      "cited_by_count": 2794,
+      "type": "article",
+      "source": {
+        "name": "Nature",
+        "type": "journal",
+        "issn": [
+          "0028-0836",
+          "1476-4687"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41586-021-03451-0.pdf"
+      },
+      "topics": [
+        "Genomics and Phylogenetic Studies",
+        "Chromosomal and Genetic Variations",
+        "Evolution and Genetic Dynamics"
+      ],
+      "referenced_works_count": 105,
+      "url": "https://openalex.org/W3159728495"
+    },
+    {
+      "openalex_id": "W2979906316",
+      "doi": "10.1007/s11747-019-00696-0",
+      "title": "How artificial intelligence will change the future of marketing",
+      "authors": [
+        {
+          "name": "Thomas H. Davenport",
+          "openalex_id": "A5018910159",
+          "orcid": "https://orcid.org/0000-0001-6205-3907",
+          "institutions": [
+            "Babson College"
+          ]
+        },
+        {
+          "name": "Abhijit Guha",
+          "openalex_id": "A5101532092",
+          "orcid": "https://orcid.org/0000-0002-9605-2993",
+          "institutions": [
+            "University of South Carolina"
+          ]
+        },
+        {
+          "name": "Dhruv Grewal",
+          "openalex_id": "A5076693618",
+          "orcid": "https://orcid.org/0000-0002-7046-6063",
+          "institutions": [
+            "Babson College"
+          ]
+        },
+        {
+          "name": "Timna Bre\u00dfgott",
+          "openalex_id": "A5037418745",
+          "institutions": [
+            "Maastricht University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-10",
+      "abstract": "Abstract In the future, artificial intelligence (AI) is likely to substantially change both marketing strategies and customer behaviors. Building from not only extant research but also extensive interactions with practice, the authors propose a multidimensional framework for understanding the impact of AI involving intelligence levels, task types, and whether AI is embedded in a robot. Prior research typically addresses a subset of these dimensions; this paper integrates all three into a single framework. Next, the authors propose a research agenda that addresses not only how marketing strategies and customer behaviors will change in the future, but also highlights important policy questions relating to privacy, bias and ethics. Finally, the authors suggest AI will be more effective if it augments (rather than replaces) human managers.",
+      "cited_by_count": 2067,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Academy of Marketing Science",
+        "type": "journal",
+        "issn": [
+          "0092-0703",
+          "1552-7824"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11747-019-00696-0.pdf"
+      },
+      "topics": [
+        "AI in Service Interactions",
+        "Ethics and Social Impacts of AI",
+        "Blockchain Technology Applications and Security"
+      ],
+      "referenced_works_count": 77,
+      "url": "https://openalex.org/W2979906316"
+    },
+    {
+      "openalex_id": "W3003385079",
+      "doi": "10.1007/s11023-020-09517-8",
+      "title": "The Ethics of AI Ethics: An Evaluation of Guidelines",
+      "authors": [
+        {
+          "name": "Thilo Hagendorff",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-4633-2153",
+          "institutions": [
+            "University of T\u00fcbingen"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-01",
+      "abstract": null,
+      "cited_by_count": 1476,
+      "type": "article",
+      "source": {
+        "name": "Minds and Machines",
+        "type": "journal",
+        "issn": [
+          "0924-6495",
+          "1572-8641"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11023-020-09517-8.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Psychology of Moral and Emotional Judgment",
+        "Adversarial Robustness in Machine Learning"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W3003385079"
+    },
+    {
+      "openalex_id": "W2897462268",
+      "doi": null,
+      "title": "Creativity and Philosophy",
+      "authors": [
+        {
+          "name": "Berys Gaut",
+          "openalex_id": "A5014832881",
+          "orcid": "https://orcid.org/0000-0003-4966-5874"
+        },
+        {
+          "name": "Matthew Kieran",
+          "openalex_id": "A5083191601"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-21",
+      "abstract": "\"Creativity matters. We want people to be more creative and admire those who are. Yet creativity is deeply puzzling. Just what is it to be creative? Why is it valuable? Who or what can be creative and how?Creativity and Philosophy is an outstanding collection of specially commissioned chapters by leading philosophers who explore these problems and many more. It provides a comprehensive and creative picture of creativity, including the following themes:creativity as a virtue, imagination, epistemic virtue, moral virtue and personal vice;creativity with and without value, the definition of creativity, creative failures and suffering;creativity in nature, divine creativity and human agency;naturalistic explanations of creativity and the extended mind;creativity in philosophy, mathematics and logic, and the role of heuristics;creativity in art, morality and politics; individual and group creativity. A major feature of the collection is that it explores creativity not only from the perspective of art and aesthetics, but also from a variety of philosophical disciplines, including epistemology, philosophy of mind, philosophical psychology, philosophy of science, political philosophy and ethics. The volume is essential reading for anyone fascinated by creativity, whether their interests lie in philosophy, music, art and visual studies, literature, psychology, neuroscience, management or education, or they are simply intent on learning more about this vital human trait.\"--Provided by publisher",
+      "cited_by_count": 7,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Creativity in Education and Neuroscience"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2897462268"
+    },
+    {
+      "openalex_id": "W4210704668",
+      "doi": "10.1007/978-3-030-95070-5_21",
+      "title": "Re-imagining Current AI Ethics Policy Debates: A View from\u00a0the\u00a0Ethics of\u00a0Technology",
+      "authors": [
+        {
+          "name": "Emma Ruttkamp",
+          "openalex_id": "A5019516186",
+          "orcid": "https://orcid.org/0000-0003-0299-6406",
+          "institutions": [
+            "University of Pretoria"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": null,
+      "cited_by_count": 3,
+      "type": "book-chapter",
+      "source": {
+        "name": "Communications in computer and information science",
+        "type": "book series",
+        "issn": [
+          "1865-0929",
+          "1865-0937"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4210704668"
+    },
+    {
+      "openalex_id": "W3153381270",
+      "doi": "10.1093/oxfordhb/9780190851187.013.35",
+      "title": "Toward an Existential and Emancipatory Ethic of Technology",
+      "authors": [
+        {
+          "name": "Charles Ess",
+          "openalex_id": "A5053428343",
+          "orcid": "https://orcid.org/0000-0002-5770-3087",
+          "institutions": [
+            "University of Oslo"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-13",
+      "abstract": "<italic>The Epic of Gilgamesh</italic> introduces existential themes of confronting our mortality and creating meaningful lives as <italic>embodied</italic> beings and <italic>relational autonomies.</italic> These entail care ethics, virtue ethics, deontological emphases on respect and equality, and overcoming destructive <italic>dualisms</italic> (mind/body, male/female, (human) nature/technology). The philosophical and theological origins of modern technology and the Enlightenment extend these starting points by emphasizing <italic>emancipation</italic>. Avoiding another set of dualisms (e.g., Enlightenment vs. Romanticism) offers richer understandings of emancipation, ethics, and our human/technology/nature relationships. Contemporary existentialism and virtue ethics further expand these understandings. Shannon Vallor\u2019s \u201ctechno-moral virtues\u201d specifically include courage. Gilgamesh and the woman in the Garden show how courage in resisting and disobeying authority emancipates us to embrace our mortality and take responsibility for meaning in our lives. This chapter closes with some specific ways for how we might do so in the contemporary world.",
+      "cited_by_count": 4,
+      "type": "reference-entry",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Theology and Philosophy of Evil",
+        "Religious Studies and Spiritual Practices",
+        "Space Science and Extraterrestrial Life"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3153381270"
+    },
+    {
+      "openalex_id": "W4220841532",
+      "doi": "10.1007/s11229-022-03612-2",
+      "title": "Science, responsibility, and the philosophical imagination",
+      "authors": [
+        {
+          "name": "Matthew Sample",
+          "openalex_id": "A5001007920",
+          "orcid": "https://orcid.org/0000-0001-5290-1458",
+          "institutions": [
+            "Leibniz University Hannover"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-08",
+      "abstract": null,
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11229-022-03612-2.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Feminist Epistemology and Gender Studies",
+        "Philosophy and History of Science"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W4220841532"
+    },
+    {
+      "openalex_id": "W2579791195",
+      "doi": "10.3390/educsci7010016",
+      "title": "Dewey on Seriousness, Playfulness and the Role of the Teacher",
+      "authors": [
+        {
+          "name": "Adrian Skilbeck",
+          "openalex_id": "A5071367986",
+          "orcid": "https://orcid.org/0000-0002-0277-1277",
+          "institutions": [
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-13",
+      "abstract": "The chapter that John Dewey dedicates to consideration of play and work in the curriculum in Democracy and Education echoes his thoughts on the same subject in How We Think, which preceded Democracy and Education by six years. Dewey closes How We Think with a more expansive treatment of the topic and is keen not only to recast the traditional dichotomy of work and play as distinct kinds of educational activity but to challenge the hierarchical status of the accompanying mental states of seriousness and playfulness. Dewey argues that a combination of playfulness and seriousness represents the ideal mental attitude of the artist: teaching is an art, therefore the teacher is an artist and the ideal mental attitude of the teacher to his or work combines the playful and the serious. It is the task of the teacher to inculcate such habits of mind in his or her students for whom it is implicitly the ideal mental state for learning. It is in the light of this that we should understand what characterises play and work as features of educational activity. Consideration of what Dewey meant is accompanied by an example from contemporary educational practice intended to illustrate Dewey\u2019s sense of purposeful activity in which a playful approach creates the kind of embodied experience that will help students to achieve desired educational outcomes. This will lead to reflection on how the role of the teacher as an artist might be conceived, resisting both the temptation towards an instrumental characterisation of playfulness derived from the application of discoveries in cognitive science to classroom practice and goal-directed notions of seriousness. I will argue that alongside the conventional classroom skills of the teacher, what is required is an authentic presence that is attuned to the nature of what is being taught, together with a concern for the outcomes to be achieved. Such an attunement would allow for playfulness and humour as well as seriousness. It is an attunement between both the individual and others in mutuality and with him or herself. These thoughts will be developed via extended reflection upon two scenes from Alan Bennett\u2019s The History Boys (2006). These scenes draw attention to the importance of conversation for both the teacher/student relationship and as a medium for playful and serious exploration of academic content. If we only think of the Deweyan attitude of the artist in an impersonal sense then the kind of seriousness that is internal to the personal expression of claims about art, ethics, morality, politics, even history, remains unheard, at least in an educational context. It is to this that I turn through consideration of conversation and mutuality in the work of Stanley Cavell via Michael Oakeshott\u2019s observations about seriousness and playfulness in conversation and further comments offered by Paul Standish on what it means to say something.",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Education Sciences",
+        "type": "journal",
+        "issn": [
+          "2227-7102"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-7102/7/1/16/pdf?version=1484292427"
+      },
+      "topics": [
+        "Education and Critical Thinking Development",
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W2579791195"
+    },
+    {
+      "openalex_id": "W4394625134",
+      "doi": "10.4018/979-8-3693-1143-1.ch004",
+      "title": "Empowered Minds",
+      "authors": [
+        {
+          "name": "Subhajit Panda",
+          "openalex_id": "A5012865566",
+          "orcid": "https://orcid.org/0000-0002-1578-1159",
+          "institutions": [
+            "Chandigarh University"
+          ]
+        },
+        {
+          "name": "Navkiran Kaur",
+          "openalex_id": "A5102307247",
+          "institutions": [
+            "Punjabi University"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-02-23",
+      "abstract": "In the digital age, marked by unparalleled technological advancements, our world is intricately connected to the digital realm, transforming how we access, disseminate, and interact with information. This chapter explores the impact of the digital age on information access, emphasizing the need for effective navigation in a vast sea of digital information. Information literacy is positioned as a crucial skillset, extending beyond digital tool usage to encompass critical evaluation, ethical information use, and digital citizenship. The chapter delves into the evolving landscape of information literacy, addressing its intersection with emerging technologies, education, ethics, and hybrid learning. Various information literacy models are examined to provide practical insights for empowering individuals to navigate the complexities of the modern information landscape confidently. This exploration aims to equip readers with the essential tools for discerning, synthesizing, and utilizing information in the digital age, fostering empowered minds.",
+      "cited_by_count": 6,
+      "type": "book-chapter",
+      "source": {
+        "name": "Advances in library and information science (ALIS) book series",
+        "type": "book series",
+        "issn": [
+          "2326-4136",
+          "2326-4144"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Online and Blended Learning"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4394625134"
+    },
+    {
+      "openalex_id": "W4360620450",
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "title": "Opinion Paper: \u201cSo what if ChatGPT wrote it?\u201d Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "authors": [
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Symbiosis International University",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Nir Kshetri",
+          "openalex_id": "A5025481201",
+          "orcid": "https://orcid.org/0000-0002-1408-4212",
+          "institutions": [
+            "University of North Carolina at Greensboro"
+          ]
+        },
+        {
+          "name": "Laurie Hughes",
+          "openalex_id": "A5072512285",
+          "orcid": "https://orcid.org/0000-0002-0956-0608",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Emma Slade",
+          "openalex_id": "A5081524121",
+          "orcid": "https://orcid.org/0000-0001-7648-6383",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Anand Jeyaraj",
+          "openalex_id": "A5057695278",
+          "orcid": "https://orcid.org/0000-0003-3691-881X",
+          "institutions": [
+            "Wright State University"
+          ]
+        },
+        {
+          "name": "Arpan Kumar Kar",
+          "openalex_id": "A5061235109",
+          "orcid": "https://orcid.org/0000-0003-4186-4887",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Abdullah M. Baabdullah",
+          "openalex_id": "A5017453435",
+          "institutions": [
+            "King Abdulaziz University"
+          ]
+        },
+        {
+          "name": "Alex Koohang",
+          "openalex_id": "A5008571658",
+          "orcid": "https://orcid.org/0000-0002-4565-0408",
+          "institutions": [
+            "Georgia State University",
+            "Middle Georgia State College"
+          ]
+        },
+        {
+          "name": "Vishnupriya Raghavan",
+          "openalex_id": "A5050603102",
+          "institutions": [
+            "NIIT (India)"
+          ]
+        },
+        {
+          "name": "Manju Ahuja",
+          "openalex_id": "A5018408477",
+          "orcid": "https://orcid.org/0000-0002-1791-5106",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Hanaa Albanna",
+          "openalex_id": "A5078874795",
+          "institutions": [
+            "Northumbria University"
+          ]
+        },
+        {
+          "name": "Mousa Ahmad Albashrawi",
+          "openalex_id": "A5019826465",
+          "institutions": [
+            "King Fahd University of Petroleum and Minerals"
+          ]
+        },
+        {
+          "name": "Adil S. Al-Busaidi",
+          "openalex_id": "A5057159975",
+          "orcid": "https://orcid.org/0000-0002-0959-7419",
+          "institutions": [
+            "Sultan Qaboos University"
+          ]
+        },
+        {
+          "name": "Janarthanan Balakrishnan",
+          "openalex_id": "A5033683059",
+          "orcid": "https://orcid.org/0000-0003-2456-2617",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Yves Barlette",
+          "openalex_id": "A5041516869",
+          "orcid": "https://orcid.org/0000-0001-6106-7274",
+          "institutions": [
+            "Montpellier Business School"
+          ]
+        },
+        {
+          "name": "Sriparna Basu",
+          "openalex_id": "A5056774275",
+          "orcid": "https://orcid.org/0000-0001-7924-8153",
+          "institutions": [
+            "Fore School of Management"
+          ]
+        },
+        {
+          "name": "Indranil Bose",
+          "openalex_id": "A5045996720",
+          "orcid": "https://orcid.org/0000-0002-5737-966X",
+          "institutions": [
+            "Indian Institute of Management Ahmedabad"
+          ]
+        },
+        {
+          "name": "Laurence Brooks",
+          "openalex_id": "A5049268821",
+          "orcid": "https://orcid.org/0000-0002-5456-8799",
+          "institutions": [
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Dimitrios Buhalis",
+          "openalex_id": "A5068663980",
+          "orcid": "https://orcid.org/0000-0001-9148-6090",
+          "institutions": [
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Lemuria Carter",
+          "openalex_id": "A5067377847",
+          "orcid": "https://orcid.org/0000-0002-2364-3100",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "TBS Education"
+          ]
+        },
+        {
+          "name": "Tom Crick",
+          "openalex_id": "A5015452463",
+          "orcid": "https://orcid.org/0000-0001-5196-9389",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Scott W. Cunningham",
+          "openalex_id": "A5000045142",
+          "orcid": "https://orcid.org/0000-0001-7140-916X",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Swansea University",
+            "University of Sheffield",
+            "University of Reading",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Strathclyde"
+          ]
+        },
+        {
+          "name": "Gareth H. Davies",
+          "openalex_id": "A5104108927",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Robert M. Davison",
+          "openalex_id": "A5006120288",
+          "orcid": "https://orcid.org/0000-0002-7243-3521",
+          "institutions": [
+            "City University of Hong Kong",
+            "Indian Institute of Management Bangalore",
+            "Universidad de Zaragoza"
+          ]
+        },
+        {
+          "name": "Rahul D\u00e9",
+          "openalex_id": "A5113796817",
+          "orcid": "https://orcid.org/0000-0002-1300-1438",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Denis Dennehy",
+          "openalex_id": "A5083528596",
+          "orcid": "https://orcid.org/0000-0001-9931-762X",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Yanqing Duan",
+          "openalex_id": "A5032994640",
+          "orcid": "https://orcid.org/0000-0003-4205-7403",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University",
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Rameshwar Dubey",
+          "openalex_id": "A5112902933",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "Prin. L. N. Welingkar Institute of Management Development and Research",
+            "Bournemouth University",
+            "Liverpool John Moores University",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "Montpellier Business School",
+            "Swansea University",
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Rohita Dwivedi",
+          "openalex_id": "A5070017829",
+          "orcid": "https://orcid.org/0000-0003-3801-3635",
+          "institutions": [
+            "Swansea University",
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "John S. Edwards",
+          "openalex_id": "A5007695310",
+          "orcid": "https://orcid.org/0000-0003-3979-017X",
+          "institutions": [
+            "University of Reading",
+            "College of Charleston",
+            "Bournemouth University",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Aston University",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Carlos Flavi\u00e1n",
+          "openalex_id": "A5044113079",
+          "orcid": "https://orcid.org/0000-0001-7118-9013",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Swansea University",
+            "College of Charleston",
+            "Universidad de Zaragoza",
+            "University of Reading",
+            "Bournemouth University",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Robin Gauld",
+          "openalex_id": "A5065964282",
+          "orcid": "https://orcid.org/0000-0001-5401-1192",
+          "institutions": [
+            "University of Reading",
+            "University of Sheffield",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Otago",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Varun Grover",
+          "openalex_id": "A5103134481",
+          "institutions": [
+            "University of Arkansas at Fayetteville",
+            "Swansea University",
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Mei\u2010Chih Hu",
+          "openalex_id": "A5112818613",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Marijn Janssen",
+          "openalex_id": "A5062073470",
+          "orcid": "https://orcid.org/0000-0001-6211-8790",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Reading",
+            "Bournemouth University",
+            "University of Sheffield",
+            "Delft University of Technology",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Paul Jones",
+          "openalex_id": "A5080152304",
+          "orcid": "https://orcid.org/0000-0003-0417-9143",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Iris Junglas",
+          "openalex_id": "A5001364826",
+          "orcid": "https://orcid.org/0000-0002-2914-3879",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Sangeeta Khorana",
+          "openalex_id": "A5086148004",
+          "orcid": "https://orcid.org/0000-0001-8901-0050",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Sascha Kraus",
+          "openalex_id": "A5075871949",
+          "orcid": "https://orcid.org/0000-0002-3721-1122",
+          "institutions": [
+            "Bournemouth University",
+            "University of Johannesburg",
+            "College of Charleston",
+            "University of Otago",
+            "Free University of Bozen-Bolzano"
+          ]
+        },
+        {
+          "name": "Kai R. Larsen",
+          "openalex_id": "A5075496480",
+          "orcid": "https://orcid.org/0000-0002-8812-9866",
+          "institutions": [
+            "University of Reading",
+            "University of Arkansas at Fayetteville",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Sheffield",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "University of Colorado Boulder"
+          ]
+        },
+        {
+          "name": "Paul Latreille",
+          "openalex_id": "A5109602539",
+          "orcid": "https://orcid.org/0000-0001-7685-6532",
+          "institutions": [
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Sven Laumer",
+          "openalex_id": "A5107936554",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Tegwen Malik",
+          "openalex_id": "A5090009163",
+          "orcid": "https://orcid.org/0000-0003-4315-5726",
+          "institutions": [
+            "Delft University of Technology",
+            "Newcastle University",
+            "University of Central Florida",
+            "AGH University of Krakow",
+            "University of Agder",
+            "University of Manchester",
+            "SKEMA Business School",
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Abbas Mardani",
+          "openalex_id": "A5033150664",
+          "orcid": "https://orcid.org/0000-0003-1010-3655",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "University of Reading",
+            "Bournemouth University",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Marcello Mariani",
+          "openalex_id": "A5108091448",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "University of Bologna",
+            "University of Reading",
+            "Bournemouth University",
+            "University of Sheffield",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Sunil Mithas",
+          "openalex_id": "A5086635152",
+          "orcid": "https://orcid.org/0000-0002-2182-6202",
+          "institutions": [
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Bournemouth University",
+            "University of Otago",
+            "College of Charleston",
+            "University of South Florida",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Emmanuel Mogaji",
+          "openalex_id": "A5082000265",
+          "orcid": "https://orcid.org/0000-0003-0544-4842",
+          "institutions": [
+            "University of Arkansas at Fayetteville",
+            "University of Greenwich",
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Jeretta Horn Nord",
+          "openalex_id": "A5070124847",
+          "orcid": "https://orcid.org/0000-0001-7590-9022",
+          "institutions": [
+            "College of Charleston",
+            "City University of Hong Kong",
+            "Indian Institute of Management Bangalore",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Siobh\u00e1n O\u2019Connor",
+          "openalex_id": "A5067043429",
+          "orcid": "https://orcid.org/0000-0001-8579-1718",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Fevzi Okumus",
+          "openalex_id": "A5114045132",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "College of Charleston",
+            "University of Sheffield",
+            "Bournemouth University",
+            "AGH University of Krakow",
+            "University of Reading",
+            "Newcastle University",
+            "Swansea University",
+            "SKEMA Business School",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Microsoft (United States)",
+            "University of Agder",
+            "University of Central Florida"
+          ]
+        },
+        {
+          "name": "Margherita Pagani",
+          "openalex_id": "A5074068450",
+          "orcid": "https://orcid.org/0000-0002-4269-9409",
+          "institutions": [
+            "SKEMA Business School"
+          ]
+        },
+        {
+          "name": "Neeraj Pandey",
+          "openalex_id": "A5035078504",
+          "orcid": "https://orcid.org/0000-0002-6238-6397",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg",
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Ilias O. Pappas",
+          "openalex_id": "A5080505347",
+          "orcid": "https://orcid.org/0000-0001-7528-3488",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Nishith Pathak",
+          "openalex_id": "A5108072182",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University",
+            "National Tsing Hua University"
+          ]
+        },
+        {
+          "name": "Jan Pries\u2010Heje",
+          "openalex_id": "A5074257477",
+          "orcid": "https://orcid.org/0000-0003-2219-9332",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Ramakrishnan Raman",
+          "openalex_id": "A5072261829",
+          "orcid": "https://orcid.org/0000-0003-3642-6989",
+          "institutions": [
+            "Bournemouth University",
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Nripendra P. Rana",
+          "openalex_id": "A5034248834",
+          "orcid": "https://orcid.org/0000-0003-1105-8729",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Sven\u2010Volker Rehm",
+          "openalex_id": "A5011882746",
+          "orcid": "https://orcid.org/0000-0002-9785-6707",
+          "institutions": [
+            "Humans and management in society"
+          ]
+        },
+        {
+          "name": "Samuel Ribeiro\u2010Navarrete",
+          "openalex_id": "A5006215958",
+          "orcid": "https://orcid.org/0000-0003-1046-5322",
+          "institutions": [
+            "University of Reading",
+            "University of Sheffield",
+            "Swansea University",
+            "Bournemouth University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Alexander Richter",
+          "openalex_id": "A5061717541",
+          "orcid": "https://orcid.org/0000-0002-3699-6466",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Frantz Rowe",
+          "openalex_id": "A5056984467",
+          "orcid": "https://orcid.org/0000-0001-8520-1570",
+          "institutions": [
+            "Laboratoire d'Economie et de Management de Nantes Atlantique"
+          ]
+        },
+        {
+          "name": "Suprateek Sarker",
+          "openalex_id": "A5060897112",
+          "orcid": "https://orcid.org/0000-0002-8079-3121",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "University of Reading",
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University",
+            "Universidad de Zaragoza",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg"
+          ]
+        },
+        {
+          "name": "Manoj Tiwari",
+          "openalex_id": "A5101785022",
+          "orcid": "https://orcid.org/0000-0001-8949-0330",
+          "institutions": [
+            "Swansea University",
+            "University of Sheffield",
+            "University of Reading",
+            "Bournemouth University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Wil van der Aalst",
+          "openalex_id": "A5114045133",
+          "institutions": [
+            "College of Charleston",
+            "University of Reading",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Bournemouth University",
+            "Delft University of Technology",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Viswanath Venkatesh",
+          "openalex_id": "A5108144975",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Giampaolo Viglia",
+          "openalex_id": "A5065568454",
+          "orcid": "https://orcid.org/0000-0001-8521-4988",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Michael Wade",
+          "openalex_id": "A5008575290",
+          "orcid": "https://orcid.org/0000-0002-0829-7422",
+          "institutions": [
+            "Montpellier Business School",
+            "Liverpool John Moores University",
+            "Prin. L. N. Welingkar Institute of Management Development and Research"
+          ]
+        },
+        {
+          "name": "Paul Walton",
+          "openalex_id": "A5109157215",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Jochen Wirtz",
+          "openalex_id": "A5064998398",
+          "orcid": "https://orcid.org/0000-0002-6297-4498",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Ryan Wright",
+          "openalex_id": "A5060691228",
+          "orcid": "https://orcid.org/0000-0002-9719-415X",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-11",
+      "abstract": null,
+      "cited_by_count": 3171,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information Management",
+        "type": "journal",
+        "issn": [
+          "0268-4012",
+          "1873-4707"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://linkinghub.elsevier.com/science/article/pii/S0268401223000233/pdfft?md5=492895056a2fa29b1cb81876a1c57544&pid=1-s2.0-S0268401223000233-main.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in Service Interactions",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 265,
+      "url": "https://openalex.org/W4360620450"
+    },
+    {
+      "openalex_id": "W3177166926",
+      "doi": null,
+      "title": "Quo Vadis Educatio? Emergence of a New Educational Paradigm",
+      "authors": [
+        {
+          "name": "Maria Jakubik",
+          "openalex_id": "A5018638470",
+          "orcid": "https://orcid.org/0000-0002-4131-4407"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-01",
+      "abstract": "Why should education change? In the literature, there are ongoing debates about what education is, what it is not, and what it should be. Therefore, the question <em>Quo vadis educatio?</em> is not new. Nonetheless, new solutions are needed to face new challenges. In the creative and mind economy, pressures from the environment call for a new educational paradigm. I seek to answer the question: <em>What is a new emerging educational paradigm that can answer the challenges of the 21st century?</em> After exploring a selected range of literature about schools, universities as institutions, education, learning, and teaching, I propose a new educational paradigm. I argue that educational institutions should become more innovative organizations, learning opportunities should be available anytime and anyplace, and learning needs to be made fun and enjoyable. Moreover, I express the needs for an extended epistemology, a synthesis of working and learning, focusing on practitioners as learners, applying a variety of pedagogical approaches, and the need for focusing on values and ethics in educational praxes.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "SHILAP Revista de lepidopterolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0300-5267",
+          "2340-4078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/1a7cbed6cbaf4d7eb52d92f90c14771d"
+      },
+      "topics": [
+        "Innovative Education and Learning Practices",
+        "Higher Education Governance and Development",
+        "Higher Education Learning Practices"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W3177166926"
+    },
+    {
+      "openalex_id": "W4295015388",
+      "doi": "10.1007/s11612-022-00645-6",
+      "title": "Extended norms: locating accountable decision-making in contexts of human-robot interaction",
+      "authors": [
+        {
+          "name": "Thomas M. Arnold",
+          "openalex_id": "A5103167243",
+          "orcid": "https://orcid.org/0000-0003-1461-7389",
+          "institutions": [
+            "Tufts University"
+          ]
+        },
+        {
+          "name": "Matthias Scheutz",
+          "openalex_id": "A5044523801",
+          "orcid": "https://orcid.org/0000-0002-0064-2789",
+          "institutions": [
+            "Tufts University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-01",
+      "abstract": null,
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Gruppe Interaktion Organisation Zeitschrift f\u00fcr Angewandte Organisationspsychologie (GIO)",
+        "type": "journal",
+        "issn": [
+          "2366-6145",
+          "2366-6218"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Embodied and Extended Cognition",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W4295015388"
+    },
+    {
+      "openalex_id": "W4327946446",
+      "doi": "10.3390/healthcare11060887",
+      "title": "ChatGPT Utility in Healthcare Education, Research, and Practice: Systematic Review on the Promising Perspectives and Valid Concerns",
+      "authors": [
+        {
+          "name": "Malik Sallam",
+          "openalex_id": "A5086563544",
+          "orcid": "https://orcid.org/0000-0002-0165-9670",
+          "institutions": [
+            "University of Jordan",
+            "Jordan Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-19",
+      "abstract": "ChatGPT is an artificial intelligence (AI)-based conversational large language model (LLM). The potential applications of LLMs in health care education, research, and practice could be promising if the associated valid concerns are proactively examined and addressed. The current systematic review aimed to investigate the utility of ChatGPT in health care education, research, and practice and to highlight its potential limitations. Using the PRIMSA guidelines, a systematic search was conducted to retrieve English records in PubMed/MEDLINE and Google Scholar (published research or preprints) that examined ChatGPT in the context of health care education, research, or practice. A total of 60 records were eligible for inclusion. Benefits of ChatGPT were cited in 51/60 (85.0%) records and included: (1) improved scientific writing and enhancing research equity and versatility; (2) utility in health care research (efficient analysis of datasets, code generation, literature reviews, saving time to focus on experimental design, and drug discovery and development); (3) benefits in health care practice (streamlining the workflow, cost saving, documentation, personalized medicine, and improved health literacy); and (4) benefits in health care education including improved personalized learning and the focus on critical thinking and problem-based learning. Concerns regarding ChatGPT use were stated in 58/60 (96.7%) records including ethical, copyright, transparency, and legal issues, the risk of bias, plagiarism, lack of originality, inaccurate content with risk of hallucination, limited knowledge, incorrect citations, cybersecurity issues, and risk of infodemics. The promising applications of ChatGPT can induce paradigm shifts in health care education, research, and practice. However, the embrace of this AI chatbot should be conducted with extreme caution considering its potential limitations. As it currently stands, ChatGPT does not qualify to be listed as an author in scientific articles unless the ICMJE/COPE guidelines are revised or amended. An initiative involving all stakeholders in health care education, research, and practice is urgently needed. This will help to set a code of ethics to guide the responsible use of ChatGPT among other LLMs in health care and academia.",
+      "cited_by_count": 2488,
+      "type": "review",
+      "source": {
+        "name": "Healthcare",
+        "type": "journal",
+        "issn": [
+          "2227-9032"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2227-9032/11/6/887/pdf?version=1679359384"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "COVID-19 diagnosis using AI"
+      ],
+      "referenced_works_count": 114,
+      "url": "https://openalex.org/W4327946446"
+    },
+    {
+      "openalex_id": "W3093667122",
+      "doi": "10.1038/s41564-020-00813-8",
+      "title": "Longitudinal observation and decline of neutralizing antibody responses in the three months following SARS-CoV-2 infection in humans",
+      "authors": [
+        {
+          "name": "Jeffrey Seow",
+          "openalex_id": "A5034026446",
+          "orcid": "https://orcid.org/0000-0003-0722-8561",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Carl Graham",
+          "openalex_id": "A5075689685",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Blair Merrick",
+          "openalex_id": "A5069971584",
+          "orcid": "https://orcid.org/0000-0002-6061-6064",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Sam Acors",
+          "openalex_id": "A5030338550",
+          "orcid": "https://orcid.org/0000-0001-6428-7707",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Suzanne Pickering",
+          "openalex_id": "A5030739997",
+          "orcid": "https://orcid.org/0000-0002-2747-9029",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Kathryn J. A. Steel",
+          "openalex_id": "A5091787149",
+          "orcid": "https://orcid.org/0000-0002-4446-0506",
+          "institutions": [
+            "Centre for Inflammation Research",
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Oliver Hemmings",
+          "openalex_id": "A5083108030",
+          "orcid": "https://orcid.org/0000-0001-7452-2723",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Aoife M. O\u2019Byrne",
+          "openalex_id": "A5032241534",
+          "orcid": "https://orcid.org/0000-0001-8185-2501",
+          "institutions": [
+            "Centre for Inflammation Research",
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Neophytos Kouphou",
+          "openalex_id": "A5026262746",
+          "orcid": "https://orcid.org/0000-0002-4945-8640",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Rui Pedro Gal\u00e3o",
+          "openalex_id": "A5046260624",
+          "orcid": "https://orcid.org/0000-0003-3368-5053",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Gilberto Betancor",
+          "openalex_id": "A5067983218",
+          "orcid": "https://orcid.org/0000-0003-0548-7690",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Harry Wilson",
+          "openalex_id": "A5089311200",
+          "orcid": "https://orcid.org/0000-0002-3185-1073",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Adrian W. Signell",
+          "openalex_id": "A5010919637",
+          "orcid": "https://orcid.org/0000-0003-4620-6891",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Helena Winstone",
+          "openalex_id": "A5089854130",
+          "orcid": "https://orcid.org/0000-0003-1936-6638",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Claire Kerridge",
+          "openalex_id": "A5079342547",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Isabella Huettner",
+          "openalex_id": "A5020012379",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Jose M. Jim\u00e9nez-Guarde\u00f1o",
+          "openalex_id": "A5045228809",
+          "orcid": "https://orcid.org/0000-0002-1726-8033",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Mar\u00eda Jos\u00e9 Lista",
+          "openalex_id": "A5062059107",
+          "orcid": "https://orcid.org/0009-0009-5476-5547",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Nigel Temperton",
+          "openalex_id": "A5073991440",
+          "orcid": "https://orcid.org/0000-0002-7978-3815",
+          "institutions": [
+            "University of Kent",
+            "Medway School of Pharmacy"
+          ]
+        },
+        {
+          "name": "Luke B. Snell",
+          "openalex_id": "A5011256041",
+          "orcid": "https://orcid.org/0000-0002-6263-9497",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Karen Bisnauthsing",
+          "openalex_id": "A5014033709",
+          "orcid": "https://orcid.org/0000-0001-9045-1064",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Amelia Moore",
+          "openalex_id": "A5020482251",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Adrian J. Green",
+          "openalex_id": "A5040650222",
+          "orcid": "https://orcid.org/0000-0001-9429-1838",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Lauren Martinez",
+          "openalex_id": "A5018336935",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Brielle Stokes",
+          "openalex_id": "A5053564819",
+          "orcid": "https://orcid.org/0000-0001-5371-2448",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Johanna Honey",
+          "openalex_id": "A5020580199",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Alba Izquierdo-Barras",
+          "openalex_id": "A5041184877",
+          "orcid": "https://orcid.org/0000-0003-0665-311X",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Graham Radcliffe",
+          "openalex_id": "A5112333670",
+          "orcid": "https://orcid.org/0000-0002-6920-3792",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Amita Patel",
+          "openalex_id": "A5043844258",
+          "orcid": "https://orcid.org/0000-0001-5945-7791",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Mark Tan Kia Ik",
+          "openalex_id": "A5015367776",
+          "orcid": "https://orcid.org/0000-0002-7774-3836",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Lorcan O\u2019Connell",
+          "openalex_id": "A5012657241",
+          "orcid": "https://orcid.org/0000-0002-7970-8313",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Geraldine O\u2019Hara",
+          "openalex_id": "A5027572330",
+          "orcid": "https://orcid.org/0000-0002-1922-9492",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Eithne MacMahon",
+          "openalex_id": "A5112757647",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Sam Douthwaite",
+          "openalex_id": "A5076186657",
+          "orcid": "https://orcid.org/0000-0003-4469-7623",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Gaia Nebbia",
+          "openalex_id": "A5019701406",
+          "orcid": "https://orcid.org/0000-0002-7524-1947",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Rahul Batra",
+          "openalex_id": "A5082183759",
+          "orcid": "https://orcid.org/0000-0003-0866-6571",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Roc\u00edo T. Mart\u00ednez-N\u00fa\u00f1ez",
+          "openalex_id": "A5006723670",
+          "orcid": "https://orcid.org/0000-0003-2507-4738",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Manu Shankar\u2010Hari",
+          "openalex_id": "A5012228981",
+          "orcid": "https://orcid.org/0000-0002-5338-2538",
+          "institutions": [
+            "King's College London",
+            "Guy's and St Thomas' NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Jonathan D. Edgeworth",
+          "openalex_id": "A5086105625",
+          "orcid": "https://orcid.org/0000-0002-0881-2703",
+          "institutions": [
+            "Guy's and St Thomas' NHS Foundation Trust",
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Stuart J. D. Neil",
+          "openalex_id": "A5042546561",
+          "orcid": "https://orcid.org/0000-0003-3306-5831",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Michael H. Malim",
+          "openalex_id": "A5091639782",
+          "orcid": "https://orcid.org/0000-0002-7699-2064",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Katie J. Doores",
+          "openalex_id": "A5018812698",
+          "orcid": "https://orcid.org/0000-0002-5507-1725",
+          "institutions": [
+            "King's College London"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-26",
+      "abstract": "Antibody responses to SARS-CoV-2 can be detected in most infected individuals 10-15 d after the onset of COVID-19 symptoms. However, due to the recent emergence of SARS-CoV-2 in the human population, it is not known how long antibody responses will be maintained or whether they will provide protection from reinfection. Using sequential serum samples collected up to 94 d post onset of symptoms (POS) from 65 individuals with real-time quantitative PCR-confirmed SARS-CoV-2 infection, we show seroconversion (immunoglobulin (Ig)M, IgA, IgG) in >95% of cases and neutralizing antibody responses when sampled beyond 8 d POS. We show that the kinetics of the neutralizing antibody response is typical of an acute viral infection, with declining neutralizing antibody titres observed after an initial peak, and that the magnitude of this peak is dependent on disease severity. Although some individuals with high peak infective dose (ID<sub>50</sub> > 10,000) maintained neutralizing antibody titres >1,000 at >60 d POS, some with lower peak ID<sub>50</sub> had neutralizing antibody titres approaching baseline within the follow-up period. A similar decline in neutralizing antibody titres was observed in a cohort of 31 seropositive healthcare workers. The present study has important implications when considering widespread serological testing and antibody protection against reinfection with SARS-CoV-2, and may suggest that vaccine boosters are required to provide long-lasting protection.",
+      "cited_by_count": 1366,
+      "type": "article",
+      "source": {
+        "name": "Nature Microbiology",
+        "type": "journal",
+        "issn": [
+          "2058-5276"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.nature.com/articles/s41564-020-00813-8.pdf"
+      },
+      "topics": [
+        "SARS-CoV-2 and COVID-19 Research",
+        "COVID-19 Clinical Research Studies",
+        "SARS-CoV-2 detection and testing"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W3093667122"
+    },
+    {
+      "openalex_id": "W1493777802",
+      "doi": "10.24926/8668.2201",
+      "title": "Research Methods in Psychology",
+      "authors": [
+        {
+          "name": "John J. Shaughnessy",
+          "openalex_id": "A5097661673",
+          "institutions": [
+            "Hope College"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-08",
+      "abstract": "Learning Objectives1. Define science.2. Describe the three fundamental features of science.3. Explain why psychology is a science. Define pseudoscience and give some examples. What Is Science?Some people are surprised to learn that psychology is a science.They generally agree that astronomy, biology, and chemistry are sciences but wonder what psychology has in common with these other fields.Before answering this question, however, it is worth reflecting on what astronomy, biology, and chemistry have in common with each other.It is clearly not their subject matter.Astronomers study celestial bodies, biologists study living organisms, and chemists study matter and its properties.It is also not the equipment and techniques that they use.Few biologists would know what to do with a radio telescope, for example, and few chemists would know how to track a moose population in the wild.For these and other reasons, philosophers and scientists who have thought deeply about this question have concluded that what the sciences have in common is a general approach to understanding the natural world.Psychology is a science because it takes this same general approach to understanding one aspect of the natural world: human behavior.Why should we concern ourselves with pseudoscience?There are at least three reasons.One is that learning about pseudoscience helps bring the fundamental features of science-and their importance-into sharper focus.A second is that biorhythms, psychic powers, astrology, and many other pseudoscientific beliefs are widely held and are promoted on the Internet, on television, and in books and magazines.Learning what makes them pseudoscientific can help us to identify and evaluate such beliefs and practices when we encounter them.A third reason is that many pseudosciences purport to explain some aspect of human behavior and mental processes, including biorhythms, astrology, graphology (handwriting analysis), and magnet therapy for pain control.It is important for students of psychology to distinguish their own field clearly from this \"pseudopsychology.\" The Skeptic's DictionaryAn excellent source for information on pseudoscience is The Skeptic's Dictionary (http://www.skepdic.com).Among the pseudoscientific beliefs and practices you can learn about are the following:\u2022 Cryptozoology.The study of \"hidden\" creatures like Bigfoot, the Loch Ness monster, and the chupacabra.\u2022 Pseudoscientific psychotherapies.Past-life regression, rebirthing therapy, and bioscream therapy, among others.\u2022 Homeopathy.The treatment of medical conditions using natural substances that have been diluted sometimes to the point of no longer being present.\u2022 Pyramidology.Odd theories about the origin and function of the Egyptian pyramids (e.g., that they were built by extraterrestrials) and the idea that pyramids in general have healing and other special powers. Key Takeaways\u2022 Science is a general way of understanding the natural world.Its three fundamental features are systematic empiricism, empirical questions, and public knowledge.\u2022 Psychology is a science because it takes the scientific approach to understanding human behavior.\u2022 Pseudoscience refers to beliefs and activities that are claimed to be scientific but lack one or more of the three features of science.It is important to distinguish the scientific approach to understanding human 1.1 Understanding Science 4behavior from the many pseudoscientific approaches. Exercises1. Discussion: People sometimes suggest that psychology cannot be a science because either (a) human behavior cannot be predicted with perfect accuracy or (b) much of its subject matter (e.g., thoughts and feelings) cannot be observed directly.Do you agree or disagree with each of these ideas?Why?2. Practice: List three empirical questions about human behavior.List three nonempirical questions about human behavior.3. Discussion: Consider the following psychological claim.\"People's choice of spouse is strongly influenced by their perception of their own parents.Some choose a spouse who is similar in some way to one of their parents.Others choose a spouse who is different from one of their parents.\"Is this claim falsifiable?Why or why not?",
+      "cited_by_count": 1503,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://open.lib.umn.edu/psychologyresearchmethods/open/download?type=pdf"
+      },
+      "topics": [
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 143,
+      "url": "https://openalex.org/W1493777802"
+    },
+    {
+      "openalex_id": "W4247155454",
+      "doi": "10.5465/amr.2018.0072",
+      "title": "Artificial Intelligence and Management: The Automation\u2013Augmentation Paradox",
+      "authors": [
+        {
+          "name": "Sebastian Raisch",
+          "openalex_id": "A5006145895",
+          "orcid": "https://orcid.org/0000-0001-9980-214X",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "Sebastian Krakowski",
+          "openalex_id": "A5088732694",
+          "orcid": "https://orcid.org/0000-0001-5441-2463",
+          "institutions": [
+            "Stockholm School of Economics"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Taking three recent business books on artificial intelligence (AI) as a starting point, we explore the automation and augmentation concepts in the management domain. Whereas automation implies that machines take over a human task, augmentation means that humans collaborate closely with machines to perform a task. Taking a normative stance, the three books advise organizations to prioritize augmentation, which they relate to superior performance. Using a more comprehensive paradox theory perspective, we argue that, in the management domain, augmentation cannot be neatly separated from automation. These dual AI applications are interdependent across time and space, creating a paradoxical tension. Overemphasizing either augmentation or automation fuels reinforcing cycles with negative organizational and societal outcomes. However, if organizations adopt a broader perspective comprising both automation and augmentation, they could deal with the tension and achieve complementarities that benefit business and society. Drawing on our insights, we conclude that management scholars need to be involved in research on the use of AI in organizations. We also argue that a substantial change is required in how AI research is currently conducted in order to develop meaningful theory and to provide practice with sound advice.",
+      "cited_by_count": 1404,
+      "type": "article",
+      "source": {
+        "name": "Academy of Management Review",
+        "type": "journal",
+        "issn": [
+          "0363-7425",
+          "1930-3807"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.aom.org/doi/full/10.5465/amr.2018.0072"
+      },
+      "topics": [
+        "Blockchain Technology Applications and Security",
+        "Ethics and Social Impacts of AI",
+        "Digital Transformation in Industry"
+      ],
+      "referenced_works_count": 93,
+      "url": "https://openalex.org/W4247155454"
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

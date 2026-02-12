@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/hypa.12333"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/hypa.12333",
+      "title": "Can Non\u2010Europeans Philosophize? Transnational Literacy and Planetary Ethics in a Global Age",
+      "authors": [
+        {
+          "family": "Dhawan",
+          "given": "Nikita"
+        }
+      ],
+      "editors": [],
+      "year": 2017,
+      "container_title": "Hypatia",
+      "volume": "32",
+      "issue": "3",
+      "page": "488-505",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/hypa.12333"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

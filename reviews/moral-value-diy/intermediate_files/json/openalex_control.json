@@ -1,0 +1,2707 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "moral responsibility control authorship",
+  "results": [
+    {
+      "openalex_id": "W4360620450",
+      "doi": "10.1016/j.ijinfomgt.2023.102642",
+      "title": "Opinion Paper: \u201cSo what if ChatGPT wrote it?\u201d Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+      "authors": [
+        {
+          "name": "Yogesh K. Dwivedi",
+          "openalex_id": "A5048622877",
+          "orcid": "https://orcid.org/0000-0002-5547-9990",
+          "institutions": [
+            "Symbiosis International University",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Nir Kshetri",
+          "openalex_id": "A5025481201",
+          "orcid": "https://orcid.org/0000-0002-1408-4212",
+          "institutions": [
+            "University of North Carolina at Greensboro"
+          ]
+        },
+        {
+          "name": "Laurie Hughes",
+          "openalex_id": "A5072512285",
+          "orcid": "https://orcid.org/0000-0002-0956-0608",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Emma Slade",
+          "openalex_id": "A5081524121",
+          "orcid": "https://orcid.org/0000-0001-7648-6383",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Anand Jeyaraj",
+          "openalex_id": "A5057695278",
+          "orcid": "https://orcid.org/0000-0003-3691-881X",
+          "institutions": [
+            "Wright State University"
+          ]
+        },
+        {
+          "name": "Arpan Kumar Kar",
+          "openalex_id": "A5061235109",
+          "orcid": "https://orcid.org/0000-0003-4186-4887",
+          "institutions": [
+            "Indian Institute of Technology Delhi"
+          ]
+        },
+        {
+          "name": "Abdullah M. Baabdullah",
+          "openalex_id": "A5017453435",
+          "institutions": [
+            "King Abdulaziz University"
+          ]
+        },
+        {
+          "name": "Alex Koohang",
+          "openalex_id": "A5008571658",
+          "orcid": "https://orcid.org/0000-0002-4565-0408",
+          "institutions": [
+            "Georgia State University",
+            "Middle Georgia State College"
+          ]
+        },
+        {
+          "name": "Vishnupriya Raghavan",
+          "openalex_id": "A5050603102",
+          "institutions": [
+            "NIIT (India)"
+          ]
+        },
+        {
+          "name": "Manju Ahuja",
+          "openalex_id": "A5018408477",
+          "orcid": "https://orcid.org/0000-0002-1791-5106",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Hanaa Albanna",
+          "openalex_id": "A5078874795",
+          "institutions": [
+            "Northumbria University"
+          ]
+        },
+        {
+          "name": "Mousa Ahmad Albashrawi",
+          "openalex_id": "A5019826465",
+          "institutions": [
+            "King Fahd University of Petroleum and Minerals"
+          ]
+        },
+        {
+          "name": "Adil S. Al-Busaidi",
+          "openalex_id": "A5057159975",
+          "orcid": "https://orcid.org/0000-0002-0959-7419",
+          "institutions": [
+            "Sultan Qaboos University"
+          ]
+        },
+        {
+          "name": "Janarthanan Balakrishnan",
+          "openalex_id": "A5033683059",
+          "orcid": "https://orcid.org/0000-0003-2456-2617",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Yves Barlette",
+          "openalex_id": "A5041516869",
+          "orcid": "https://orcid.org/0000-0001-6106-7274",
+          "institutions": [
+            "Montpellier Business School"
+          ]
+        },
+        {
+          "name": "Sriparna Basu",
+          "openalex_id": "A5056774275",
+          "orcid": "https://orcid.org/0000-0001-7924-8153",
+          "institutions": [
+            "Fore School of Management"
+          ]
+        },
+        {
+          "name": "Indranil Bose",
+          "openalex_id": "A5045996720",
+          "orcid": "https://orcid.org/0000-0002-5737-966X",
+          "institutions": [
+            "Indian Institute of Management Ahmedabad"
+          ]
+        },
+        {
+          "name": "Laurence Brooks",
+          "openalex_id": "A5049268821",
+          "orcid": "https://orcid.org/0000-0002-5456-8799",
+          "institutions": [
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Dimitrios Buhalis",
+          "openalex_id": "A5068663980",
+          "orcid": "https://orcid.org/0000-0001-9148-6090",
+          "institutions": [
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Lemuria Carter",
+          "openalex_id": "A5067377847",
+          "orcid": "https://orcid.org/0000-0002-2364-3100",
+          "institutions": [
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "TBS Education"
+          ]
+        },
+        {
+          "name": "Tom Crick",
+          "openalex_id": "A5015452463",
+          "orcid": "https://orcid.org/0000-0001-5196-9389",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Scott W. Cunningham",
+          "openalex_id": "A5000045142",
+          "orcid": "https://orcid.org/0000-0001-7140-916X",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Swansea University",
+            "University of Sheffield",
+            "University of Reading",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Strathclyde"
+          ]
+        },
+        {
+          "name": "Gareth H. Davies",
+          "openalex_id": "A5104108927",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Robert M. Davison",
+          "openalex_id": "A5006120288",
+          "orcid": "https://orcid.org/0000-0002-7243-3521",
+          "institutions": [
+            "City University of Hong Kong",
+            "Indian Institute of Management Bangalore",
+            "Universidad de Zaragoza"
+          ]
+        },
+        {
+          "name": "Rahul D\u00e9",
+          "openalex_id": "A5113796817",
+          "orcid": "https://orcid.org/0000-0002-1300-1438",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Denis Dennehy",
+          "openalex_id": "A5083528596",
+          "orcid": "https://orcid.org/0000-0001-9931-762X",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Yanqing Duan",
+          "openalex_id": "A5032994640",
+          "orcid": "https://orcid.org/0000-0003-4205-7403",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University",
+            "University of Bedfordshire"
+          ]
+        },
+        {
+          "name": "Rameshwar Dubey",
+          "openalex_id": "A5112902933",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "Prin. L. N. Welingkar Institute of Management Development and Research",
+            "Bournemouth University",
+            "Liverpool John Moores University",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "Montpellier Business School",
+            "Swansea University",
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Rohita Dwivedi",
+          "openalex_id": "A5070017829",
+          "orcid": "https://orcid.org/0000-0003-3801-3635",
+          "institutions": [
+            "Swansea University",
+            "Symbiosis International University"
+          ]
+        },
+        {
+          "name": "John S. Edwards",
+          "openalex_id": "A5007695310",
+          "orcid": "https://orcid.org/0000-0003-3979-017X",
+          "institutions": [
+            "University of Reading",
+            "College of Charleston",
+            "Bournemouth University",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Aston University",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Carlos Flavi\u00e1n",
+          "openalex_id": "A5044113079",
+          "orcid": "https://orcid.org/0000-0001-7118-9013",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Swansea University",
+            "College of Charleston",
+            "Universidad de Zaragoza",
+            "University of Reading",
+            "Bournemouth University",
+            "Worcester Polytechnic Institute",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Robin Gauld",
+          "openalex_id": "A5065964282",
+          "orcid": "https://orcid.org/0000-0001-5401-1192",
+          "institutions": [
+            "University of Reading",
+            "University of Sheffield",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Otago",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Varun Grover",
+          "openalex_id": "A5103134481",
+          "institutions": [
+            "University of Arkansas at Fayetteville",
+            "Swansea University",
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Mei\u2010Chih Hu",
+          "openalex_id": "A5112818613",
+          "institutions": [
+            "University of Louisville"
+          ]
+        },
+        {
+          "name": "Marijn Janssen",
+          "openalex_id": "A5062073470",
+          "orcid": "https://orcid.org/0000-0001-6211-8790",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Reading",
+            "Bournemouth University",
+            "University of Sheffield",
+            "Delft University of Technology",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Paul Jones",
+          "openalex_id": "A5080152304",
+          "orcid": "https://orcid.org/0000-0003-0417-9143",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Iris Junglas",
+          "openalex_id": "A5001364826",
+          "orcid": "https://orcid.org/0000-0002-2914-3879",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Sangeeta Khorana",
+          "openalex_id": "A5086148004",
+          "orcid": "https://orcid.org/0000-0001-8901-0050",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Sascha Kraus",
+          "openalex_id": "A5075871949",
+          "orcid": "https://orcid.org/0000-0002-3721-1122",
+          "institutions": [
+            "Bournemouth University",
+            "University of Johannesburg",
+            "College of Charleston",
+            "University of Otago",
+            "Free University of Bozen-Bolzano"
+          ]
+        },
+        {
+          "name": "Kai R. Larsen",
+          "openalex_id": "A5075496480",
+          "orcid": "https://orcid.org/0000-0002-8812-9866",
+          "institutions": [
+            "University of Reading",
+            "University of Arkansas at Fayetteville",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "University of Sheffield",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "University of Colorado Boulder"
+          ]
+        },
+        {
+          "name": "Paul Latreille",
+          "openalex_id": "A5109602539",
+          "orcid": "https://orcid.org/0000-0001-7685-6532",
+          "institutions": [
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Sven Laumer",
+          "openalex_id": "A5107936554",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Tegwen Malik",
+          "openalex_id": "A5090009163",
+          "orcid": "https://orcid.org/0000-0003-4315-5726",
+          "institutions": [
+            "Delft University of Technology",
+            "Newcastle University",
+            "University of Central Florida",
+            "AGH University of Krakow",
+            "University of Agder",
+            "University of Manchester",
+            "SKEMA Business School",
+            "Microsoft (United States)"
+          ]
+        },
+        {
+          "name": "Abbas Mardani",
+          "openalex_id": "A5033150664",
+          "orcid": "https://orcid.org/0000-0003-1010-3655",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "University of Sheffield",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "University of Reading",
+            "Bournemouth University",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Marcello Mariani",
+          "openalex_id": "A5108091448",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "College of Charleston",
+            "University of Bologna",
+            "University of Reading",
+            "Bournemouth University",
+            "University of Sheffield",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Sunil Mithas",
+          "openalex_id": "A5086635152",
+          "orcid": "https://orcid.org/0000-0002-2182-6202",
+          "institutions": [
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Bournemouth University",
+            "University of Otago",
+            "College of Charleston",
+            "University of South Florida",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Emmanuel Mogaji",
+          "openalex_id": "A5082000265",
+          "orcid": "https://orcid.org/0000-0003-0544-4842",
+          "institutions": [
+            "University of Arkansas at Fayetteville",
+            "University of Greenwich",
+            "Oklahoma State University"
+          ]
+        },
+        {
+          "name": "Jeretta Horn Nord",
+          "openalex_id": "A5070124847",
+          "orcid": "https://orcid.org/0000-0001-7590-9022",
+          "institutions": [
+            "College of Charleston",
+            "City University of Hong Kong",
+            "Indian Institute of Management Bangalore",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Siobh\u00e1n O\u2019Connor",
+          "openalex_id": "A5067043429",
+          "orcid": "https://orcid.org/0000-0001-8579-1718",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Fevzi Okumus",
+          "openalex_id": "A5114045132",
+          "institutions": [
+            "Worcester Polytechnic Institute",
+            "College of Charleston",
+            "University of Sheffield",
+            "Bournemouth University",
+            "AGH University of Krakow",
+            "University of Reading",
+            "Newcastle University",
+            "Swansea University",
+            "SKEMA Business School",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Microsoft (United States)",
+            "University of Agder",
+            "University of Central Florida"
+          ]
+        },
+        {
+          "name": "Margherita Pagani",
+          "openalex_id": "A5074068450",
+          "orcid": "https://orcid.org/0000-0002-4269-9409",
+          "institutions": [
+            "SKEMA Business School"
+          ]
+        },
+        {
+          "name": "Neeraj Pandey",
+          "openalex_id": "A5035078504",
+          "orcid": "https://orcid.org/0000-0002-6238-6397",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg",
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston",
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Ilias O. Pappas",
+          "openalex_id": "A5080505347",
+          "orcid": "https://orcid.org/0000-0001-7528-3488",
+          "institutions": [
+            "Free University of Bozen-Bolzano",
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Nishith Pathak",
+          "openalex_id": "A5108072182",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University",
+            "National Tsing Hua University"
+          ]
+        },
+        {
+          "name": "Jan Pries\u2010Heje",
+          "openalex_id": "A5074257477",
+          "orcid": "https://orcid.org/0000-0003-2219-9332",
+          "institutions": [
+            "National Institute of Technology Tiruchirappalli"
+          ]
+        },
+        {
+          "name": "Ramakrishnan Raman",
+          "openalex_id": "A5072261829",
+          "orcid": "https://orcid.org/0000-0003-3642-6989",
+          "institutions": [
+            "Bournemouth University",
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Nripendra P. Rana",
+          "openalex_id": "A5034248834",
+          "orcid": "https://orcid.org/0000-0003-1105-8729",
+          "institutions": [
+            "College of Charleston",
+            "Bournemouth University"
+          ]
+        },
+        {
+          "name": "Sven\u2010Volker Rehm",
+          "openalex_id": "A5011882746",
+          "orcid": "https://orcid.org/0000-0002-9785-6707",
+          "institutions": [
+            "Humans and management in society"
+          ]
+        },
+        {
+          "name": "Samuel Ribeiro\u2010Navarrete",
+          "openalex_id": "A5006215958",
+          "orcid": "https://orcid.org/0000-0003-1046-5322",
+          "institutions": [
+            "University of Reading",
+            "University of Sheffield",
+            "Swansea University",
+            "Bournemouth University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Alexander Richter",
+          "openalex_id": "A5061717541",
+          "orcid": "https://orcid.org/0000-0002-3699-6466",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Frantz Rowe",
+          "openalex_id": "A5056984467",
+          "orcid": "https://orcid.org/0000-0001-8520-1570",
+          "institutions": [
+            "Laboratoire d'Economie et de Management de Nantes Atlantique"
+          ]
+        },
+        {
+          "name": "Suprateek Sarker",
+          "openalex_id": "A5060897112",
+          "orcid": "https://orcid.org/0000-0002-8079-3121",
+          "institutions": [
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Swansea University",
+            "Worcester Polytechnic Institute",
+            "University of Reading",
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "University of Reading",
+            "College of Charleston",
+            "Swansea University",
+            "Bournemouth University",
+            "Universidad de Zaragoza",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg"
+          ]
+        },
+        {
+          "name": "Manoj Tiwari",
+          "openalex_id": "A5101785022",
+          "orcid": "https://orcid.org/0000-0001-8949-0330",
+          "institutions": [
+            "Swansea University",
+            "University of Sheffield",
+            "University of Reading",
+            "Bournemouth University",
+            "College of Charleston",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Wil van der Aalst",
+          "openalex_id": "A5114045133",
+          "institutions": [
+            "College of Charleston",
+            "University of Reading",
+            "Swansea University",
+            "Friedrich-Alexander-Universit\u00e4t Erlangen-N\u00fcrnberg",
+            "Bournemouth University",
+            "Delft University of Technology",
+            "University of Sheffield",
+            "Worcester Polytechnic Institute"
+          ]
+        },
+        {
+          "name": "Viswanath Venkatesh",
+          "openalex_id": "A5108144975",
+          "institutions": [
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Giampaolo Viglia",
+          "openalex_id": "A5065568454",
+          "orcid": "https://orcid.org/0000-0001-8521-4988",
+          "institutions": [
+            "Swansea University",
+            "College of Charleston"
+          ]
+        },
+        {
+          "name": "Michael Wade",
+          "openalex_id": "A5008575290",
+          "orcid": "https://orcid.org/0000-0002-0829-7422",
+          "institutions": [
+            "Montpellier Business School",
+            "Liverpool John Moores University",
+            "Prin. L. N. Welingkar Institute of Management Development and Research"
+          ]
+        },
+        {
+          "name": "Paul Walton",
+          "openalex_id": "A5109157215",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Jochen Wirtz",
+          "openalex_id": "A5064998398",
+          "orcid": "https://orcid.org/0000-0002-6297-4498",
+          "institutions": [
+            "College of Charleston",
+            "Swansea University"
+          ]
+        },
+        {
+          "name": "Ryan Wright",
+          "openalex_id": "A5060691228",
+          "orcid": "https://orcid.org/0000-0002-9719-415X",
+          "institutions": [
+            "Bournemouth University",
+            "College of Charleston"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-11",
+      "abstract": null,
+      "cited_by_count": 3171,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Information Management",
+        "type": "journal",
+        "issn": [
+          "0268-4012",
+          "1873-4707"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://linkinghub.elsevier.com/science/article/pii/S0268401223000233/pdfft?md5=492895056a2fa29b1cb81876a1c57544&pid=1-s2.0-S0268401223000233-main.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI in Service Interactions",
+        "FinTech, Crowdfunding, Digital Finance"
+      ],
+      "referenced_works_count": 265,
+      "url": "https://openalex.org/W4360620450"
+    },
+    {
+      "openalex_id": "W3103386674",
+      "doi": "10.1080/21550085.2020.1848185",
+      "title": "Luck Has Nothing to Do with It: Prevailing Uncertainty and Responsibilities of Due Care",
+      "authors": [
+        {
+          "name": "Levente Szentkir\u00e1lyi",
+          "openalex_id": "A5041743431",
+          "orcid": "https://orcid.org/0000-0002-6573-3358",
+          "institutions": [
+            "University of Colorado Boulder"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-01",
+      "abstract": "We are surrounded by threats of environmental harm whose actual dangers to public health are scientifically unverified. It is widely presumed that under conditions of uncertainty, when it is not possible to foresee the outcomes of our actions, or to calculate the probability they will actually cause harm, we cannot be held culpable for the risks and harms our actions impose on others. It is commonly presumed, that is, that exposing others to what this paper terms 'uncertain threats' is permissible, because conventional theories of moral responsibility understand uncertainty as implying that the effects of our actions are out of our control and, therefore, beyond our fault. In contrast, in rejecting arguments from moral luck, this paper denies that authors of uncertain threats of environmental harm are excusably ignorant, and denies that prevailing uncertainty diminishes their moral obligations or attenuates their culpability. For under conditions of uncertainty, culpability turns on the lack of due regard for others as moral equals \u2013 a consideration that neither luck nor ignorance excuses. To expose others to unconsented-to uncertain threats of harm without exercising due care to prevent possible injury is to wrongfully gamble with their welfare and their capacity for self-authorship.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Ethics Policy & Environment",
+        "type": "journal",
+        "issn": [
+          "2155-0085",
+          "2155-0093"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Environmental Justice and Health Disparities",
+        "Risk Perception and Management",
+        "Climate Change and Geoengineering"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W3103386674"
+    },
+    {
+      "openalex_id": "W2897688435",
+      "doi": "10.22459/mcwap.10.2018.03",
+      "title": "Fair Use and Traditional Cultural Expressions",
+      "authors": [
+        {
+          "name": "Natalie Stoianoff",
+          "openalex_id": "A5056849512",
+          "orcid": "https://orcid.org/0000-0003-1532-6241",
+          "institutions": [
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "Evana Wright",
+          "openalex_id": "A5048633998",
+          "orcid": "https://orcid.org/0000-0001-7875-2796",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-18",
+      "abstract": "This paper analyses the ability of Indigenous communities to control the use of Traditional Cultural Expressions (TCEs) including use under \u2018fair use\u2019 exceptions to copyright infringement. TCEs include Indigenous or traditional artworks, music and songs, stories and performances and are generated collectively and cumulatively. Copyright law vests ownership of a work in the author of that work however, in the case of TCEs, this fails to recognise the rights of the Indigenous community to which the author belongs and the obligations that the author owes to their community. This obligation to community has been recognised in Australian courts as a fiduciary duty however this approach is insufficient to fully reflect the rights and responsibilities of an Indigenous community to TCEs. \r\n\r\nBoth the Indigenous community and the author or creator hold the responsibility for maintaining and protecting TCEs and therefore the community has a particularly important role to play in the context of making decisions as to how a copyrighted work may be used and who may provide consent to such use. Fair use provisions provide exceptions to copyright infringement and are intended to ensure that fair access to content is available while still protecting and incentivising creators of copyright works. It is critical that any rights under fair use provisions are balanced with the rights of the Indigenous community to maintain, control and protect their cultural heritage and TCEs.\r\n\r\nIn the Productivity Commission\u2019s \u2018Intellectual Property Arrangements Draft Report April 2016\u2019, support was given for the Australian Law Reform Commission\u2019s (ALRC) recommendation to replace the existing fair dealing exceptions in the Copyright Act 1968 (Cth) with fair use provisions. In the ALRC report \u2018Copyright and the Digital Economy\u2019 it was proposed that the introduction of a fair use exception be evaluated with reference to certain fairness factors including \u2018(a) the purpose and character of use; (b) the nature of the copyright material; (c) the amount and substantiality of the part use; and (d) the effect of the use upon the potential market for, or value of, the copyright material.\u2019 The authors argue that any fair use provisions must be subject to the right of an Indigenous community to control the use of TCEs without consent, especially in the case of sacred works. In particular, it may be necessary to carry out broad consultation with Indigenous communities in order to provide guidance on dealing with Indigenous cultural production. \r\nIn addition, any amendment should make clear that any fair use is expressly subject to the moral rights regime in Part IX Copyright Act, including, in particular, the right of integrity of authorship that works are not subject to derogatory treatment. Indeed it may be said that respect for Indigenous works is a sub-set of the broader right of integrity of authorship.",
+      "cited_by_count": 5,
+      "type": "book-chapter",
+      "source": {
+        "name": "ANU Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.22459/mcwap.10.2018.03"
+      },
+      "topics": [
+        "Copyright and Intellectual Property",
+        "Law in Society and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2897688435"
+    },
+    {
+      "openalex_id": "W4317910584",
+      "doi": "10.37074/jalt.2023.6.1.9",
+      "title": "ChatGPT: Bullshit spewer or the end of traditional assessments in higher education?",
+      "authors": [
+        {
+          "name": "J\u00fcrgen Rudolph",
+          "openalex_id": "A5109171711"
+        },
+        {
+          "name": "Samson Tan",
+          "openalex_id": "A5049520538",
+          "orcid": "https://orcid.org/0000-0003-1059-1839"
+        },
+        {
+          "name": "Shannon Tan",
+          "openalex_id": "A5007592120"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-25",
+      "abstract": "ChatGPT is the world\u2019s most advanced chatbot thus far. Unlike other chatbots, it can create impressive prose within seconds, and it has created much hype and doomsday predictions when it comes to student assessment in higher education and a host of other matters. ChatGPT is a state-of-the-art language model (a variant of OpenAI\u2019s Generative Pretrained Transformer (GPT) language model) designed to generate text that can be indistinguishable from text written by humans. It can engage in conversation with users in a seemingly natural and intuitive way. In this article, we briefly tell the story of OpenAI, the organisation behind ChatGPT. We highlight the fundamental change from a not-for-profit organisation to a commercial business model. In terms of our methods, we conducted an extensive literature review and experimented with this artificial intelligence (AI) software. Our literature review shows our review to be amongst the first peer-reviewed academic journal articles to explore ChatGPT and its relevance for higher education (especially assessment, learning and teaching). After a description of ChatGPT\u2019s functionality and a summary of its strengths and limitations, we focus on the technology\u2019s implications for higher education and discuss what is the future of learning, teaching and assessment in higher education in the context of AI chatbots such as ChatGPT. We position ChatGPT in the context of current Artificial Intelligence in Education (AIEd) research, discuss student-facing, teacher-facing and system-facing applications, and analyse opportunities and threats. We conclude the article with recommendations for students, teachers and higher education institutions. Many of them focus on assessment.",
+      "cited_by_count": 1554,
+      "type": "article",
+      "source": {
+        "name": "Journal of Applied Learning & Teaching",
+        "type": "journal",
+        "issn": [
+          "2591-801X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.sfu.ca/jalt/index.php/jalt/article/download/689/539"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Online Learning and Analytics",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 94,
+      "url": "https://openalex.org/W4317910584"
+    },
+    {
+      "openalex_id": "W2620316821",
+      "doi": "10.1177/0969733017724354",
+      "title": "What is \u2018moral distress\u2019? A narrative synthesis of the literature",
+      "authors": [
+        {
+          "name": "Georgina Morley",
+          "openalex_id": "A5074899243",
+          "orcid": "https://orcid.org/0000-0002-0099-3597"
+        },
+        {
+          "name": "Jonathan Ives",
+          "openalex_id": "A5076025395",
+          "orcid": "https://orcid.org/0000-0002-5233-5000",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Caroline Bradbury\u2010Jones",
+          "openalex_id": "A5071125034",
+          "orcid": "https://orcid.org/0000-0002-5237-6777"
+        },
+        {
+          "name": "Fiona Irvine",
+          "openalex_id": "A5088940358",
+          "orcid": "https://orcid.org/0000-0003-3064-7166",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-08",
+      "abstract": "Aims: The aim of this narrative synthesis was to explore the necessary and sufficient conditions required to define moral distress. Background: Moral distress is said to occur when one has made a moral judgement but is unable to act upon it. However, problems with this narrow conception have led to multiple redefinitions in the empirical and conceptual literature. As a consequence, much of the research exploring moral distress has lacked conceptual clarity, complicating attempts to study the phenomenon. Design: Systematic literature review and narrative synthesis (November 2015\u2013March 2016). Data sources: Ovid MEDLINE \u00ae In-Process &amp; Other Non-Indexed Citations 1946\u2013Present, PsycINFO \u00ae 1967\u2013Present, CINAHL \u00ae Plus 1937\u2013Present, EMBASE 1974\u201324 February 2016, British Nursing Index 1994\u2013Present, Social Care Online, Social Policy and Practice Database (1890\u2013Present), ERIC (EBSCO) 1966\u2013Present and Education Abstracts. Review methods: Literature relating to moral distress was systematically retrieved and subjected to relevance assessment. Narrative synthesis was the overarching framework that guided quality assessment, data analysis and synthesis. Results: In all, 152 papers underwent initial data extraction and 34 were chosen for inclusion in the narrative synthesis based on both quality and relevance. Analysis revealed different proposed conditions for the occurrence of moral distress: moral judgement, psychological and physical effects, moral dilemmas, moral uncertainty, external and internal constraints and threats to moral integrity. Conclusion: We suggest the combination of (1) the experience of a moral event, (2) the experience of \u2018psychological distress\u2019 and (3) a direct causal relation between (1) and (2) together are necessary and sufficient conditions for moral distress.",
+      "cited_by_count": 428,
+      "type": "review",
+      "source": {
+        "name": "Nursing Ethics",
+        "type": "journal",
+        "issn": [
+          "0969-7330",
+          "1477-0989"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0969733017724354"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Patient Dignity and Privacy",
+        "Palliative Care and End-of-Life Issues"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2620316821"
+    },
+    {
+      "openalex_id": "W3127745374",
+      "doi": "10.1016/s2213-2600(21)00068-0",
+      "title": "COVID-19: a heavy toll on health-care workers",
+      "authors": [
+        {
+          "name": "Sangeeta Mehta",
+          "openalex_id": "A5107300515",
+          "orcid": "https://orcid.org/0000-0002-7073-4769",
+          "institutions": [
+            "Sinai Health System",
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "F.S. Machado",
+          "openalex_id": "A5102907365",
+          "orcid": "https://orcid.org/0000-0001-6921-227X",
+          "institutions": [
+            "Universidade Federal de S\u00e3o Paulo"
+          ]
+        },
+        {
+          "name": "Arthur Kwizera",
+          "openalex_id": "A5031137260",
+          "orcid": "https://orcid.org/0000-0002-7025-0465",
+          "institutions": [
+            "Makerere University"
+          ]
+        },
+        {
+          "name": "Laurent Papazian",
+          "openalex_id": "A5085477470",
+          "orcid": "https://orcid.org/0000-0002-8125-9406",
+          "institutions": [
+            "Assistance Publique H\u00f4pitaux de Marseille",
+            "Aix-Marseille Universit\u00e9",
+            "H\u00f4pital Nord"
+          ]
+        },
+        {
+          "name": "Marc Moss",
+          "openalex_id": "A5112510856",
+          "institutions": [
+            "University of Colorado Denver"
+          ]
+        },
+        {
+          "name": "\u00c9lie Azoulay",
+          "openalex_id": "A5076578951",
+          "orcid": "https://orcid.org/0000-0002-8162-1508",
+          "institutions": [
+            "H\u00f4pital Saint-Louis"
+          ]
+        },
+        {
+          "name": "Margaret S. Herridge",
+          "openalex_id": "A5052266669",
+          "orcid": "https://orcid.org/0000-0002-2903-1631",
+          "institutions": [
+            "University of Toronto",
+            "University Health Network"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-07",
+      "abstract": "Although effective vaccines might soon be available and vaccination combined with other strategies will hopefully curb and eventually stop the COVID-19 pandemic, infections will probably continue to affect world populations for months to years.Evolving experience in the era of SARS-CoV-2 at lung transplantation centres around the world will provide guidance for developing best practices to deal with the threat that this novel virus poses to successful solid organ transplantation.",
+      "cited_by_count": 390,
+      "type": "article",
+      "source": {
+        "name": "The Lancet Respiratory Medicine",
+        "type": "journal",
+        "issn": [
+          "2213-2600",
+          "2213-2619"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.thelancet.com/article/S2213260021000680/pdf"
+      },
+      "topics": [
+        "COVID-19 and Mental Health",
+        "Healthcare professionals\u2019 stress and burnout",
+        "COVID-19 Pandemic Impacts"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W3127745374"
+    },
+    {
+      "openalex_id": "W4323536358",
+      "doi": "10.53761/1.20.3.02",
+      "title": "Leadership is needed for ethical ChatGPT: Character, assessment, and learning using artificial intelligence (AI)",
+      "authors": [
+        {
+          "name": "Joseph Crawford",
+          "openalex_id": "A5103027683",
+          "orcid": "https://orcid.org/0000-0002-2191-6216",
+          "institutions": [
+            "University of Tasmania"
+          ]
+        },
+        {
+          "name": "Michael Cowling",
+          "openalex_id": "A5091861600",
+          "orcid": "https://orcid.org/0000-0002-1361-1201",
+          "institutions": [
+            "Central Queensland University"
+          ]
+        },
+        {
+          "name": "Kelly\u2010Ann Allen",
+          "openalex_id": "A5019513024",
+          "orcid": "https://orcid.org/0000-0002-6813-0034",
+          "institutions": [
+            "Monash University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-09",
+      "abstract": "The OpenAI\u2019s ChatGPT-3, or Chat Generative Pre-Trained Transformer was released in November 2022 without significant warning, and has taken higher education by storm since. The artificial intelligence (AI)-powered chatbot has caused alarm for practitioners seeking to detect authenticity of student work. Whereas some educational doomsayers predict the end of education in its current form, we propose an alternate early view. We identify in this commentary a position where educators can leverage AI like ChatGPT to build supportive learning environments for students who have cultivated good character. Such students know how to use ChatGPT for good, and can engage effectively with the ChatGPT application. In building our ChatGPT argument, we acknowledge the existing literature on plagiarism and academic integrity, and consider leadership as a root support mechanism, character development as an antidote, and authentic assessment as an enabler. In doing so, we highlight that while ChatGPT \u2013 like papermills, and degree factories before it \u2013 can be used to cheat on university exams, it can also be used to support deeper learning and better learning outcomes for students. In doing so, we offer a commentary that offers opportunities for practitioners, and research potential for scholars.",
+      "cited_by_count": 480,
+      "type": "article",
+      "source": {
+        "name": "Journal of University Teaching and Learning Practice",
+        "type": "journal",
+        "issn": [
+          "1449-9789"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ro.uow.edu.au/cgi/viewcontent.cgi?article=3180&context=jutlp"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Academic integrity and plagiarism"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W4323536358"
+    },
+    {
+      "openalex_id": "W3115247823",
+      "doi": "10.1186/s12910-021-00577-8",
+      "title": "Artificial intelligence for good health: a scoping review of the ethics literature",
+      "authors": [
+        {
+          "name": "Kathleen Murphy",
+          "openalex_id": "A5017799890",
+          "orcid": "https://orcid.org/0000-0002-5332-088X",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Erica Di Ruggiero",
+          "openalex_id": "A5088793705",
+          "orcid": "https://orcid.org/0000-0002-8935-7908",
+          "institutions": [
+            "Public Health Ontario",
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Ross Upshur",
+          "openalex_id": "A5055101693",
+          "orcid": "https://orcid.org/0000-0003-1128-0557",
+          "institutions": [
+            "Public Health Ontario",
+            "Lunenfeld-Tanenbaum Research Institute"
+          ]
+        },
+        {
+          "name": "Donald J. Willison",
+          "openalex_id": "A5005516430",
+          "orcid": "https://orcid.org/0000-0002-2848-3791",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Neha Malhotra",
+          "openalex_id": "A5075131441",
+          "orcid": "https://orcid.org/0000-0002-8380-8739",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Jia Cai",
+          "openalex_id": "A5033196884",
+          "orcid": "https://orcid.org/0000-0001-8942-8668",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Nakul Malhotra",
+          "openalex_id": "A5090104343",
+          "institutions": [
+            "University of Toronto"
+          ]
+        },
+        {
+          "name": "Vincci Lui",
+          "openalex_id": "A5057225514",
+          "institutions": [
+            "University of Toronto",
+            "Canada Research Chairs"
+          ]
+        },
+        {
+          "name": "Jennifer Gibson",
+          "openalex_id": "A5101946533",
+          "orcid": "https://orcid.org/0000-0001-5761-0297",
+          "institutions": [
+            "University of Toronto"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-15",
+      "abstract": "Abstract Background Artificial intelligence (AI) has been described as the \u201cfourth industrial revolution\u201d with transformative and global implications, including in healthcare, public health, and global health. AI approaches hold promise for improving health systems worldwide, as well as individual and population health outcomes. While AI may have potential for advancing health equity within and between countries, we must consider the ethical implications of its deployment in order to mitigate its potential harms, particularly for the most vulnerable. This scoping review addresses the following question: What ethical issues have been identified in relation to AI in the field of health, including from a global health perspective? Methods Eight electronic databases were searched for peer reviewed and grey literature published before April 2018 using the concepts of health, ethics, and AI, and their related terms. Records were independently screened by two reviewers and were included if they reported on AI in relation to health and ethics and were written in the English language. Data was charted on a piloted data charting form, and a descriptive and thematic analysis was performed. Results Upon reviewing 12,722 articles, 103 met the predetermined inclusion criteria. The literature was primarily focused on the ethics of AI in health care, particularly on carer robots, diagnostics, and precision medicine, but was largely silent on ethics of AI in public and population health. The literature highlighted a number of common ethical concerns related to privacy, trust, accountability and responsibility, and bias. Largely missing from the literature was the ethics of AI in global health, particularly in the context of low- and middle-income countries (LMICs). Conclusions The ethical issues surrounding AI in the field of health are both vast and complex. While AI holds the potential to improve health and health systems, our analysis suggests that its introduction should be approached with cautious optimism. The dearth of literature on the ethics of AI within LMICs, as well as in public health, also points to a critical need for further research into the ethical implications of AI within both global and public health, to ensure that its development and implementation is ethical for everyone, everywhere.",
+      "cited_by_count": 369,
+      "type": "review",
+      "source": {
+        "name": "BMC Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "1472-6939"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcmedethics.biomedcentral.com/track/pdf/10.1186/s12910-021-00577-8"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W3115247823"
+    },
+    {
+      "openalex_id": "W2980471514",
+      "doi": "10.1136/bmjgh-2019-002068",
+      "title": "The foreign gaze: authorship in academic global health",
+      "authors": [
+        {
+          "name": "\u1e62\u1eb9\u0300y\u1eb9 Ab\u00edmb\u1ecd\u0301l\u00e1",
+          "openalex_id": "A5065499691",
+          "orcid": "https://orcid.org/0000-0003-1294-3850",
+          "institutions": [
+            "The George Institute for Global Health",
+            "University of Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-01",
+      "abstract": "> \u200b I was really interested in black readership. For me the parallel is black music, which is as splendid and complicated and wonderful as it is because its audience was within; its primary audience. The fact that it has become universal, worldwide, anyone, everyone can play it, and it has evolved, was because it wasn\u2019t tampered with, and editorialised, within the community. So, I wanted the literature that I wrote to be that way. I could just go straight to where the soil was, where the fertility was in this landscape. And also, I wanted to feel free not to have the white gaze in this place that was so precious to me\u2026\n\n> \u2014Toni Morrison (1931\u20132019)1\n> \u200bAnd I have spent my entire writing life trying to make sure that the white gaze was not the dominant one in any of my books. The people who helped me most arrive at that kind of language were African writers\u2026 Those writers who could assume the centrality of their race because they were African. And they didn\u2019t explain anything to white people\u2026 \u201cThings Fall Apart\u201d [by Chinua Achebe] was more important to me than anything only because there was a language, there was a posture, there were the parameters. I could step in now, and I didn\u2019t have to be consumed by or concerned by the white gaze.\n\n> \u2014Toni Morrison (1931\u20132019)2There is a problem of gaze at the heart of academic global health. It is difficult to name. Replace the word \u2018white\u2019 in the Toni Morrison quotes above with the word \u2018foreign\u2019, and you may see what I mean. Better still, read on. Because without naming this problem, we cannot have holistic discussions on imbalances in the authorship of academic global health publications. Recent bibliometric analyses3\u20136 (some of which have been published in BMJ Global Health 7\u20139 \u2026",
+      "cited_by_count": 383,
+      "type": "editorial",
+      "source": {
+        "name": "BMJ Global Health",
+        "type": "journal",
+        "issn": [
+          "2059-7908"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://gh.bmj.com/content/bmjgh/4/5/e002068.full.pdf"
+      },
+      "topics": [
+        "Global Health and Surgery",
+        "Global Public Health Policies and Epidemiology",
+        "Health and Medical Research Impacts"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2980471514"
+    },
+    {
+      "openalex_id": "W3082801379",
+      "doi": "10.1111/pcn.13140",
+      "title": "Anticipating <scp>COVID</scp>\u201019\u2010related stigma in survivors and health\u2010care workers: Lessons from previous infectious diseases outbreaks \u2013 An integrative literature review",
+      "authors": [
+        {
+          "name": "Salut Muhidin",
+          "openalex_id": "A5048983931",
+          "orcid": "https://orcid.org/0000-0002-8281-3405",
+          "institutions": [
+            "Macquarie University"
+          ]
+        },
+        {
+          "name": "Maryam Vizheh",
+          "openalex_id": "A5091612463",
+          "orcid": "https://orcid.org/0000-0002-7780-8580",
+          "institutions": [
+            "Iranshahr University",
+            "Iran University of Medical Sciences",
+            "Tehran University of Medical Sciences"
+          ]
+        },
+        {
+          "name": "Zahra Behboodi Moghadam",
+          "openalex_id": "A5063291156",
+          "orcid": "https://orcid.org/0000-0002-4708-3590",
+          "institutions": [
+            "Iran University of Medical Sciences",
+            "Tehran University of Medical Sciences",
+            "Iranshahr University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-05",
+      "abstract": "As the number of affected people and deaths due to novel coronavirus 2019 (COVID-19) increases drastically, fear of the disease and of infected people can cause social stigmatization.1 'Health-related stigma' is typically known as social rejection or exclusion of individuals and populations suffering from specific health problems.2 We conducted a literature review to assess the stigma related to COVID-19. The search showed 1254 results, of which 13 articles met the inclusion criteria (see Appendix S1). This review showed no original article evaluated the impact of COVID-19 on experiencing stigma. However, results on previous infectious diseases showed that stigma can be experienced by survivors and health-care workers (HCW) and that it can recur: in the behavior of the public and medical staff; due to reemergence of infection; or during survivors' use of public services, namely health-care services. Based on the included studies, a range of 63% to 100% of survivors of severe acute respiratory syndrome (SARS) and Ebola reported stigmatization after recovery. Survivors in various studies experienced apathetic views and avoidant behaviors from medical staff while hospitalized. They also reported verbal abuse and the fear of contagion expressed by healthy people as well as avoidance from family, friends, colleagues, and neighbors after recovery. Furthermore, many perceived barriers in using services and employment. Emotional disturbances, such as anxiety, worries, and helplessness, were common. Survivors reported various forms of being insulted, shunned, marginalized, and rejected in different aspects of their lives, including work, familial relationships, schooling, and public services. Stigma was also prevalent in HCWs. In a study assessing 10 511 HCWs fighting against SARS, although most of them were appreciated by the society, a considerable proportion felt social stigmatization (49%) and exclusion by family members (31%). Moreover, 31% thought that people kept away from their family members because of their job.3 Stigma had direct and also indirect effects through stress on mental health in nurses fighting the Middle East respiratory syndrome (MERS); however, the impact of stigma on their mental health was worse compared to stress effects.4 Studies identified several factors contributing to stigma associated with infectious diseases, such as people's knowledge; distribution of myths and stories by the mass and social media; and psychosocial variables, such as risk perception and fear of being infected. Outbreak-related stigma is largely based on community fear and the understanding that survivors are still contagious. Based on included studies, the consequences of health-related stigma were significant. First, stigmatization can considerably increase psychosomatic distress and disturbance.5 Second, stigmatization can negatively affect people with infection and those at risk of infection in seeking medical care.6 Infected individuals may remain undiagnosed, avoid testing and treatment efforts, and therefore jeopardize their physical and mental health, and may be more likely to infect others.7 This may also result in more trouble in controlling the disease for public health authorities. Third, HCWs and volunteers working in the field may also become stigmatized, leading to higher rates of distress, stress, and burnout. Finally, when people avoid groups or geographic areas related to infectious diseases, this can pose significant economic losses.8 Thus, stigma is more than a mere negative outcome of infectious diseases; it is both a factor that contributes to the epidemics and pandemics and a disease in itself.9 COVID-19 is a new disease with many unknown aspects and, naturally, people are afraid of the unknown. Fear of COVID-19 directly correlates with its rapid and invisible transmission, and its morbidity and mortality. This elevated level of fear can influence people's rational thinking in reacting to COVID-19.10 Furthermore, a large amount of uncontrolled news is spreading through the media, which increases the risk of disseminating fake news more rapidly than the virus itself, causing anxiety, worries, and uncertainties that all contribute to negatives effects, such as stigma. The suggested approaches for mitigating stigma include psychological support and counseling of stigmatized patients and HCWs; developing community campaigns to convey informative messages and discouraging people from stigmatizing others; public education; ensuring that the media take accountability in news dissemination; acknowledging the presence of stigma in the COVID-19 era; and also endorsing our moral and social responsibility. Previous studies have provided clear evidence of the possibility of stigma as a result of outbreaks. Now, we are in the midst of this pandemic, and it appears that its consequences will remain for many years. In this situation, paying particular attention to the possible effects of COVID-19 causing stigma in susceptible people is vital. Anticipating disease-related stigma during the COVID-19 pandemic enables policy-makers and emergency coordinators to address it, thereby potentially restricting its adverse effects. The hidden burden caused by stigma as a result of COVID-19 can create severe consequences for patients, HCW, and public health measures. Considering the screening of stigma in all COVID-19 survivors and coordinated psychological interventions to overcome this crisis are essential. The authors declare no conflicts of interest regarding authorship or the publication of this article. Appendix S1 Supporting Information. Please note: The publisher is not responsible for the content or functionality of any supporting information supplied by the authors. Any queries (other than missing content) should be directed to the corresponding author for the article.",
+      "cited_by_count": 32,
+      "type": "review",
+      "source": {
+        "name": "Psychiatry and Clinical Neurosciences",
+        "type": "journal",
+        "issn": [
+          "1323-1316",
+          "1440-1819"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "COVID-19 and Mental Health",
+        "Mental Health Treatment and Access",
+        "COVID-19 Pandemic Impacts"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W3082801379"
+    },
+    {
+      "openalex_id": "W4238212557",
+      "doi": "10.1257/jel.20151245",
+      "title": "Information Avoidance",
+      "authors": [
+        {
+          "name": "Russell Golman",
+          "openalex_id": "A5063275693",
+          "orcid": "https://orcid.org/0000-0002-3414-223X",
+          "institutions": [
+            "Carnegie Mellon University",
+            "Decision Sciences (United States)"
+          ]
+        },
+        {
+          "name": "David Hagmann",
+          "openalex_id": "A5052566005",
+          "orcid": "https://orcid.org/0000-0002-2080-997X",
+          "institutions": [
+            "Decision Sciences (United States)",
+            "Carnegie Mellon University"
+          ]
+        },
+        {
+          "name": "George Loewenstein",
+          "openalex_id": "A5074175050",
+          "orcid": "https://orcid.org/0000-0003-2790-0474",
+          "institutions": [
+            "Carnegie Mellon University",
+            "Decision Sciences (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-01",
+      "abstract": "We commonly think of information as a means to an end. However, a growing theoretical and experimental literature suggests that information may directly enter the agent's utility function. This can create an incentive to avoid information, even when it is useful, free, and independent of strategic considerations. We review research documenting the occurrence of information avoidance, as well as theoretical and empirical research on reasons why people avoid information, drawing from economics, psychology, and other disciplines. The review concludes with a discussion of some of the diverse (and often costly) individual and societal consequences of information avoidance. (JEL D82, D83)",
+      "cited_by_count": 750,
+      "type": "article",
+      "source": {
+        "name": "Journal of Economic Literature",
+        "type": "journal",
+        "issn": [
+          "0022-0515",
+          "1547-1101",
+          "2328-8175"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jel.20151245"
+      },
+      "topics": [
+        "Experimental Behavioral Economics Studies",
+        "Decision-Making and Behavioral Economics",
+        "Game Theory and Applications"
+      ],
+      "referenced_works_count": 145,
+      "url": "https://openalex.org/W4238212557"
+    },
+    {
+      "openalex_id": "W4383959108",
+      "doi": "10.15678/eber.2023.110201",
+      "title": "The dark side of generative artificial intelligence: A critical analysis of controversies and risks of ChatGPT",
+      "authors": [
+        {
+          "name": "Krzysztof Wach",
+          "openalex_id": "A5048885851",
+          "orcid": "https://orcid.org/0000-0001-7542-2863"
+        },
+        {
+          "name": "Cong Doanh Duong",
+          "openalex_id": "A5039112242",
+          "orcid": "https://orcid.org/0000-0003-4431-9761"
+        },
+        {
+          "name": "Joanna Ejdys",
+          "openalex_id": "A5006581094",
+          "orcid": "https://orcid.org/0000-0002-5132-166X"
+        },
+        {
+          "name": "R\u016bta Kazlauskait\u0117",
+          "openalex_id": "A5052821341",
+          "orcid": "https://orcid.org/0000-0003-4004-0106"
+        },
+        {
+          "name": "Pawe\u0142 Korzy\u0144ski",
+          "openalex_id": "A5069874075",
+          "orcid": "https://orcid.org/0000-0002-6457-4965"
+        },
+        {
+          "name": "Grzegorz Mazurek",
+          "openalex_id": "A5053922801",
+          "orcid": "https://orcid.org/0000-0002-0047-6944"
+        },
+        {
+          "name": "Joanna Paliszkiewicz",
+          "openalex_id": "A5050298120",
+          "orcid": "https://orcid.org/0000-0002-6250-0583"
+        },
+        {
+          "name": "Ewa Ziemba",
+          "openalex_id": "A5056932691",
+          "orcid": "https://orcid.org/0000-0002-1084-7497"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-01",
+      "abstract": "Objective: The objective of the article is to provide a comprehensive identification and understanding of the challenges and opportunities associated with the use of generative artificial intelligence (GAI) in business. This study sought to develop a conceptual framework that gathers the negative aspects of GAI development in management and economics, with a focus on ChatGPT. Research Design & Methods: The study employed a narrative and critical literature review and developed a conceptual framework based on prior literature. We used a line of deductive reasoning in formulating our theoretical framework to make the study's overall structure rational and productive. Therefore, this article should be viewed as a conceptual article that highlights the controversies and threats of GAI in management and economics, with ChatGPT as a case study. Findings: Based on the conducted deep and extensive query of academic literature on the subject as well as professional press and Internet portals, we identified various controversies, threats, defects, and disadvantages of GAI, in particular ChatGPT. Next, we grouped the identified threats into clusters to summarize the seven main threats we see. In our opinion they are as follows: (i) no regulation of the AI market and urgent need for regulation, (ii) poor quality, lack of quality control, disinformation, deepfake content, algorithmic bias, (iii) automation-spurred job losses, (iv) personal data violation, social surveillance, and privacy violation, (v) social manipulation, weakening ethics and goodwill, (vi) widening socio-economic inequalities, and (vii) AI technostress. Implications & Recommendations: It is important to regulate the AI/GAI market. Advocating for the regulation of the AI market is crucial to ensure a level playing field, promote fair competition, protect intellectual property rights and privacy, and prevent potential geopolitical risks. The changing job market requires workers to continuously acquire new (digital) skills through education and retraining. As the training of AI systems becomes a prominent job category, it is important to adapt and take advantage of new opportunities. To mitigate the risks related to personal data violation, social surveillance, and privacy violation, GAI developers must prioritize ethical considerations and work to develop systems that prioritize user privacy and security. To avoid social manipulation and weaken ethics and goodwill, it is important to implement responsible AI practices and ethical guidelines: transparency in data usage, bias mitigation techniques, and monitoring of generated content for harmful or misleading information. Contribution & Value Added: This article may aid in bringing attention to the significance of resolving the ethical and legal considerations that arise from the use of GAI and ChatGPT by drawing attention to the controversies and hazards associated with these technologies.",
+      "cited_by_count": 441,
+      "type": "article",
+      "source": {
+        "name": "Entrepreneurial Business and Economics Review",
+        "type": "journal",
+        "issn": [
+          "2353-8821",
+          "2353-883X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://eber.uek.krakow.pl/index.php/eber/article/view/2113/852"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 117,
+      "url": "https://openalex.org/W4383959108"
+    },
+    {
+      "openalex_id": "W3207393983",
+      "doi": "10.1111/anae.15597",
+      "title": "Consensus statement on measures to promote equitable authorship in the publication of research from international partnerships",
+      "authors": [
+        {
+          "name": "Ben Morton",
+          "openalex_id": "A5083203354",
+          "orcid": "https://orcid.org/0000-0002-6164-2854",
+          "institutions": [
+            "Liverpool School of Tropical Medicine"
+          ]
+        },
+        {
+          "name": "Andr\u00e9 Vercueil",
+          "openalex_id": "A5008278799",
+          "orcid": "https://orcid.org/0000-0003-1591-4131",
+          "institutions": [
+            "King's College Hospital NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Refiloe Masekela",
+          "openalex_id": "A5090007041",
+          "orcid": "https://orcid.org/0000-0001-9665-2035",
+          "institutions": [
+            "University of Zululand",
+            "University of KwaZulu-Natal"
+          ]
+        },
+        {
+          "name": "Eva Heinz",
+          "openalex_id": "A5039780458",
+          "orcid": "https://orcid.org/0000-0003-4413-3756",
+          "institutions": [
+            "Liverpool School of Tropical Medicine"
+          ]
+        },
+        {
+          "name": "Lisa J. Reimer",
+          "openalex_id": "A5019216326",
+          "orcid": "https://orcid.org/0000-0002-9711-4981",
+          "institutions": [
+            "Liverpool School of Tropical Medicine"
+          ]
+        },
+        {
+          "name": "Sepeedeh Saleh",
+          "openalex_id": "A5083394156",
+          "orcid": "https://orcid.org/0000-0003-1944-1677",
+          "institutions": [
+            "Wellcome Trust",
+            "Liverpool School of Tropical Medicine"
+          ]
+        },
+        {
+          "name": "Chisomo Kalinga",
+          "openalex_id": "A5012338178",
+          "orcid": "https://orcid.org/0000-0003-3164-2084",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Maaike L. Seekles",
+          "openalex_id": "A5029521810",
+          "orcid": "https://orcid.org/0000-0002-7000-3624",
+          "institutions": [
+            "Liverpool School of Tropical Medicine"
+          ]
+        },
+        {
+          "name": "Bruce Biccard",
+          "openalex_id": "A5066903887",
+          "orcid": "https://orcid.org/0000-0001-5872-8369",
+          "institutions": [
+            "University of Cape Town",
+            "Groote Schuur Hospital"
+          ]
+        },
+        {
+          "name": "Jeremiah Chakaya",
+          "openalex_id": "A5025100359",
+          "orcid": "https://orcid.org/0000-0002-3229-2429",
+          "institutions": [
+            "Liverpool School of Tropical Medicine",
+            "Kenyatta University"
+          ]
+        },
+        {
+          "name": "\u1e62\u1eb9\u0300y\u1eb9 Ab\u00edmb\u1ecd\u0301l\u00e1",
+          "openalex_id": "A5065499691",
+          "orcid": "https://orcid.org/0000-0003-1294-3850",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Angela Obasi",
+          "openalex_id": "A5054517551",
+          "orcid": "https://orcid.org/0000-0001-6801-8889",
+          "institutions": [
+            "Royal Liverpool University Hospital",
+            "University of Liverpool",
+            "Liverpool School of Tropical Medicine",
+            "Aintree University Hospitals NHS Foundation Trust"
+          ]
+        },
+        {
+          "name": "Ndekya M. Oriyo",
+          "openalex_id": "A5076875992",
+          "orcid": "https://orcid.org/0000-0001-6336-9911",
+          "institutions": [
+            "National Institute for Medical Research"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-14",
+      "abstract": "Summary Despite the acknowledged injustice and widespread existence of parachute research studies conducted in low\u2010 or middle\u2010income countries by researchers from institutions in high\u2010income countries, there is currently no pragmatic guidance for how academic journals should evaluate manuscript submissions and challenge this practice. We assembled a multidisciplinary group of editors and researchers with expertise in international health research to develop this consensus statement. We reviewed relevant existing literature and held three workshops to present research data and holistically discuss the concept of equitable authorship and the role of academic journals in the context of international health research partnerships. We subsequently developed statements to guide prospective authors and journal editors as to how they should address this issue. We recommend that for manuscripts that report research conducted in low\u2010 or middle\u2010income countries by collaborations including partners from one or more high\u2010income countries, authors should submit accompanying structured reflexivity statements. We provide specific questions that these statements should address and suggest that journals should transparently publish reflexivity statements with accepted manuscripts. We also provide guidance to journal editors about how they should assess the structured statements when making decisions on whether to accept or reject submitted manuscripts. We urge journals across disciplines to adopt these recommendations to accelerate the changes needed to halt the practice of parachute research.",
+      "cited_by_count": 215,
+      "type": "article",
+      "source": {
+        "name": "Anaesthesia",
+        "type": "journal",
+        "issn": [
+          "0003-2409",
+          "1365-2044"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/anae.15597"
+      },
+      "topics": [
+        "Global Health and Surgery",
+        "Ethics in Clinical Research",
+        "Viral Infections and Outbreaks Research"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W3207393983"
+    },
+    {
+      "openalex_id": "W4383913712",
+      "doi": "10.1111/1748-8583.12524",
+      "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+      "authors": [
+        {
+          "name": "Pawan Budhwar",
+          "openalex_id": "A5055856506",
+          "orcid": "https://orcid.org/0000-0001-8915-6172",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "TBS Education"
+          ]
+        },
+        {
+          "name": "Geoffrey Wood",
+          "openalex_id": "A5034762665",
+          "orcid": "https://orcid.org/0000-0001-9709-1823",
+          "institutions": [
+            "Western University",
+            "Trinity College Dublin",
+            "Cranfield University",
+            "University of Bath"
+          ]
+        },
+        {
+          "name": "Herman Aguinis",
+          "openalex_id": "A5067660877",
+          "orcid": "https://orcid.org/0000-0002-3485-9484",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Greg J. Bamber",
+          "openalex_id": "A5018194210",
+          "orcid": "https://orcid.org/0000-0001-6646-3065",
+          "institutions": [
+            "Monash University",
+            "Monash Institute of Medical Research",
+            "Rutgers, The State University of New Jersey",
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Jose R. Beltran",
+          "openalex_id": "A5044503602",
+          "orcid": "https://orcid.org/0000-0002-3886-8142",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Paul Boselie",
+          "openalex_id": "A5023651869",
+          "orcid": "https://orcid.org/0000-0001-8507-7258",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Fang Lee Cooke",
+          "openalex_id": "A5025486785",
+          "orcid": "https://orcid.org/0000-0003-0337-6591",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Stephanie Decker",
+          "openalex_id": "A5064172786",
+          "orcid": "https://orcid.org/0000-0003-0547-9594",
+          "institutions": [
+            "Birmingham City University",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Angelo S. DeNisi",
+          "openalex_id": "A5065954019",
+          "institutions": [
+            "Tulane University"
+          ]
+        },
+        {
+          "name": "Prasanta Kumar Dey",
+          "openalex_id": "A5046908030",
+          "orcid": "https://orcid.org/0000-0002-9984-5374",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "David Guest",
+          "openalex_id": "A5091214938",
+          "orcid": "https://orcid.org/0000-0003-0457-6077",
+          "institutions": [
+            "King's College London",
+            "King's College School"
+          ]
+        },
+        {
+          "name": "Andrew J. Knoblich",
+          "openalex_id": "A5066797749",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Ashish Malik",
+          "openalex_id": "A5108813058",
+          "orcid": "https://orcid.org/0000-0002-2185-7674",
+          "institutions": [
+            "Hunter Water"
+          ]
+        },
+        {
+          "name": "Jaap Paauwe",
+          "openalex_id": "A5081370774",
+          "orcid": "https://orcid.org/0000-0003-3633-9607",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Charmi Patel",
+          "openalex_id": "A5088161716",
+          "orcid": "https://orcid.org/0000-0002-0235-9784",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Vijay Pereira",
+          "openalex_id": "A5069901933",
+          "orcid": "https://orcid.org/0000-0001-6755-0793",
+          "institutions": [
+            "NEOMA Business School"
+          ]
+        },
+        {
+          "name": "Shuang Ren",
+          "openalex_id": "A5084581187",
+          "orcid": "https://orcid.org/0000-0002-8768-8447",
+          "institutions": [
+            "Queen's University Belfast"
+          ]
+        },
+        {
+          "name": "Steven G. Rogelberg",
+          "openalex_id": "A5000877507",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Mark N. K. Saunders",
+          "openalex_id": "A5054244780",
+          "orcid": "https://orcid.org/0000-0001-5176-8317",
+          "institutions": [
+            "University of Birmingham",
+            "Birmingham City University",
+            "University College Birmingham"
+          ]
+        },
+        {
+          "name": "Rosalie L. Tung",
+          "openalex_id": "A5014893902",
+          "institutions": [
+            "Simon Fraser University"
+          ]
+        },
+        {
+          "name": "Arup Varma",
+          "openalex_id": "A5005292478",
+          "orcid": "https://orcid.org/0000-0002-6530-5564",
+          "institutions": [
+            "Loyola University Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-01",
+      "abstract": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labour by generating new, potentially trivial or practically irrelevant, information and decisions. According to the CEO of ChatGPT, the potential impact of this new family of AI technology could be as big as \u201cthe printing press\u201d, with significant implications for employment, stakeholder relationships, business models, and academic research, and its full consequences are largely undiscovered and uncertain. The introduction of more advanced and potent generative AI tools in the AI market, following the launch of ChatGPT, has ramped up the \u201cAI arms race\u201d, creating continuing uncertainty for workers, expanding their business applications, while heightening risks related to well\u2010being, bias, misinformation, context insensitivity, privacy issues, ethical dilemmas, and security. Given these developments, this perspectives editorial offers a collection of perspectives and research pathways to extend HRM scholarship in the realm of generative AI. In doing so, the discussion synthesizes the literature on AI and generative AI, connecting it to various aspects of HRM processes, practices, relationships, and outcomes, thereby contributing to shaping the future of HRM research.",
+      "cited_by_count": 655,
+      "type": "article",
+      "source": {
+        "name": "Human Resource Management Journal",
+        "type": "journal",
+        "issn": [
+          "0954-5395",
+          "1748-8583"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1748-8583.12524"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI and HR Technologies",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4383913712"
+    },
+    {
+      "openalex_id": "W3136881057",
+      "doi": "10.3390/su13063277",
+      "title": "A Bibliometric Analysis of Sustainability and Risk Management",
+      "authors": [
+        {
+          "name": "Haitham Nobanee",
+          "openalex_id": "A5043334531",
+          "orcid": "https://orcid.org/0000-0003-4424-5600",
+          "institutions": [
+            "University of Liverpool",
+            "Abu Dhabi University",
+            "University of Oxford",
+            "Oxford Centre for Mission Studies"
+          ]
+        },
+        {
+          "name": "Fatima Youssef Al Hamadi",
+          "openalex_id": "A5006194050",
+          "institutions": [
+            "Abu Dhabi University"
+          ]
+        },
+        {
+          "name": "Fatma Ali Abdulaziz",
+          "openalex_id": "A5062517106",
+          "institutions": [
+            "Abu Dhabi University"
+          ]
+        },
+        {
+          "name": "Lina Subhi Abukarsh",
+          "openalex_id": "A5062937141",
+          "orcid": "https://orcid.org/0000-0002-3898-7192",
+          "institutions": [
+            "Abu Dhabi University"
+          ]
+        },
+        {
+          "name": "Aysha Falah Alqahtani",
+          "openalex_id": "A5025777103",
+          "orcid": "https://orcid.org/0000-0001-5631-711X",
+          "institutions": [
+            "Abu Dhabi University"
+          ]
+        },
+        {
+          "name": "Shayma Khalifa AlSubaey",
+          "openalex_id": "A5077110587",
+          "orcid": "https://orcid.org/0000-0002-4128-2265",
+          "institutions": [
+            "Abu Dhabi University"
+          ]
+        },
+        {
+          "name": "Sara Mohamed Alqahtani",
+          "openalex_id": "A5056001498",
+          "institutions": [
+            "Abu Dhabi University"
+          ]
+        },
+        {
+          "name": "Hamama Abdulla Almansoori",
+          "openalex_id": "A5053833828",
+          "orcid": "https://orcid.org/0000-0003-2562-4576",
+          "institutions": [
+            "Abu Dhabi University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-16",
+      "abstract": "Sustainability practices in a working environment represent superior quality performances, while risks remain to be a challenge. Our study\u2019s primary purpose is to deploy the bibliometric method to analyze the related literature. Bibliometric parameters analyzed using the VOSviewer software were employed to identify citations relevant to sustainability and risk contexts\u2019 critical themes. From 1990\u20132020, a reflection of 1233 documents appeared in Scopus on sustainability practices and risk management. We searched the current papers, authors, institutes, and keywords on VOSviewer. The bibliometric search provided us an understanding, which reflected that the collected works on literature of sustainability and risk factors, in general, is suggestively increasing. Mainly, in our report, we highlighted six major streams, related to topics such as the moral responsibilities and sustainability development, blockchain technology and minimization of risks, social sustainability and supply chain, environmental impacts, safety engineering and risk identification, and optimization and sustainability practices. The primary purpose of using streams was to cite the key authors and their contributions to the related literature. This bibliometric analysis was developed to obtain further understanding regarding the importance of sustainability to the individual, firms, and the entire economy. Moreover, the factors associated with risk also sought to be examined to prevent or at least minimize its negative impact. It was identified in this paper that sustainability remains an issue in the global perspective that has been challenging the individual and/or the organization\u2019s point of views. Risk factors were also identified as inevitable; hence, everyone must be socially responsible to minimize the negative impact on the economy.",
+      "cited_by_count": 196,
+      "type": "article",
+      "source": {
+        "name": "Sustainability",
+        "type": "journal",
+        "issn": [
+          "2071-1050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2071-1050/13/6/3277/pdf"
+      },
+      "topics": [
+        "Sustainable Supply Chain Management",
+        "Supply Chain Resilience and Risk Management",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W3136881057"
+    },
+    {
+      "openalex_id": "W2586740827",
+      "doi": "10.1177/0308518x17694030",
+      "title": "Constructing and mobilizing \u2018the consumer\u2019: Responsibility, consumption and the politics of sustainability",
+      "authors": [
+        {
+          "name": "David M. Evans",
+          "openalex_id": "A5100719772",
+          "orcid": "https://orcid.org/0000-0001-7093-5694",
+          "institutions": [
+            "University of Sheffield"
+          ]
+        },
+        {
+          "name": "Daniel Welch",
+          "openalex_id": "A5075321549",
+          "orcid": "https://orcid.org/0000-0002-9433-863X",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Joanne Swaffield",
+          "openalex_id": "A5011389158",
+          "institutions": [
+            "Newcastle University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-02-27",
+      "abstract": "This paper advances critical perspectives on the governance of sustainable consumption by exploring the ways in which \u2018the consumer\u2019 is constructed and mobilized by strategic actors and organizations. Existing approaches draw on theories of practice to emphasize the limitations of governing through behaviour change. Whilst this provides a welcome corrective to the overemphasis on individual responsibility in sustainability research and policy, fundamental questions concerning changes over time, variation across substantive domains, and the mechanisms through which authorities and intermediaries responsibilize \u2018the consumer\u2019 are neglected. By way of rejoinder, we suggest that attention should be paid to the project of sustainable consumption and \u2013 following Clive Barnett, Nick Clarke and colleagues\u2019 analysis of ethical consumption campaigning \u2013 the ways in which it engages consuming subjects and mobilizes the rhetorical figure of \u2018the consumer\u2019. To illustrate, we present the findings from an empirical study \u2013 drawing on documentary sources as well as 38 key informant interviews \u2013 of how the challenge of food waste reduction has been framed, interpreted and responded to in the UK. Our analysis suggests that initial responses to the issue made claims on the responsibilities of individuals as consumers, but that this quickly gave way to an emergent sense of shared and distributed responsibility. To conclude we argue for the importance of exploring specific instances of sustainable consumption governance and their underlying political rationalities, as well as periodizing these accounts.",
+      "cited_by_count": 244,
+      "type": "article",
+      "source": {
+        "name": "Environment and Planning A Economy and Space",
+        "type": "journal",
+        "issn": [
+          "0308-518X",
+          "1472-3409"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0308518X17694030"
+      },
+      "topics": [
+        "Food Waste Reduction and Sustainability",
+        "Organic Food and Agriculture",
+        "Environmental Education and Sustainability"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W2586740827"
+    },
+    {
+      "openalex_id": "W2752047512",
+      "doi": "10.1371/journal.pone.0183962",
+      "title": "Relational values resonate broadly and differently than intrinsic or instrumental values, or the New Ecological Paradigm",
+      "authors": [
+        {
+          "name": "Sarah C. Klain",
+          "openalex_id": "A5064099321",
+          "orcid": "https://orcid.org/0000-0002-3798-9436",
+          "institutions": [
+            "Oregon State University"
+          ]
+        },
+        {
+          "name": "Paige Olmsted",
+          "openalex_id": "A5083666903",
+          "orcid": "https://orcid.org/0000-0002-3193-9219",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Kai M. A. Chan",
+          "openalex_id": "A5064887876",
+          "orcid": "https://orcid.org/0000-0002-7804-3276",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        },
+        {
+          "name": "Terre Satterfield",
+          "openalex_id": "A5087921844",
+          "orcid": "https://orcid.org/0000-0001-9807-6836",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-08-30",
+      "abstract": "Value orientations used to explain or justify conservation have been rooted in arguments about how much and in what context to emphasize the intrinsic versus instrumental value of nature. Equally prominent are characterizations of beliefs known as the New Ecological Paradigm (NEP), often used to help explain pro-environmental behaviour. A recent alternative to these positions has been identified as 'relational value'-broadly, values linking people and ecosystems via tangible and intangible relationships to nature as well as the principles, virtues and notions of a good life that may accompany these. This paper examines whether relational values are distinct from other value orientation and have potential to alleviate the intrinsic-instrumental debate. To test this possibility, we sought to operationalize the construct-relational values-by developing six relational statements. We ask: 1) Do the individual statements used to characterize relational values demonstrate internal coherence as either a single or multi-dimensional construct? 2) Do relational value statements (including those strongly stated) resonate with diverse populations? 3) Do people respond to relational value statements in a consistently different way than NEP scale statements? Data for this work is drawn from an online panel of residents of northeastern US (n = 400), as well as a sample of Costa Rican farmers (n = 253) and tourists in Costa Rica (n = 260). Results indicate relational values are distinct as a construct when compared to the NEP.",
+      "cited_by_count": 288,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0183962&type=printable"
+      },
+      "topics": [
+        "Environmental Education and Sustainability",
+        "Environmental Philosophy and Ethics",
+        "Urban Green Space and Health"
+      ],
+      "referenced_works_count": 62,
+      "url": "https://openalex.org/W2752047512"
+    },
+    {
+      "openalex_id": "W2622634793",
+      "doi": "10.3998/mpub.9708722",
+      "title": "Academic Ableism",
+      "authors": [
+        {
+          "name": "Jay Dolmage",
+          "openalex_id": "A5087968800"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "Academic Ableism brings together disability studies and institutional critique to recognize the ways that disability is composed in and by higher education, and rewrites the spaces, times, and economies of disability in higher education to place disability front and center. For too long, argues Jay Timothy Dolmage, disability has been constructed as the antithesis of higher education, often positioned as a distraction, a drain, a problem to be solved. The ethic of higher education encourages students and teachers alike to accentuate ability, valorize perfection, and stigmatize anything that hints at intellectual, mental, or physical weakness, even as we gesture toward the value of diversity and innovation. Examining everything from campus accommodation processes, to architecture, to popular films about college life, Dolmage argues that disability is central to higher education, and that building more inclusive schools allows better education for all.",
+      "cited_by_count": 700,
+      "type": "book",
+      "source": {
+        "name": "University of Michigan Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.fulcrum.org/ebooks/6t053h23g/download?locale=en"
+      },
+      "topics": [
+        "Disability Rights and Representation",
+        "University Challenges and Reforms"
+      ],
+      "referenced_works_count": 210,
+      "url": "https://openalex.org/W2622634793"
+    },
+    {
+      "openalex_id": "W3181202921",
+      "doi": "10.1016/j.jclepro.2021.128112",
+      "title": "The joint impact of green human resource management, leadership and organizational culture on employees\u2019 green behaviour and organisational environmental performance",
+      "authors": [
+        {
+          "name": "Abdullah Kaid Al\u2010Swidi",
+          "openalex_id": "A5068434020",
+          "orcid": "https://orcid.org/0000-0002-1718-0269",
+          "institutions": [
+            "Qatar University"
+          ]
+        },
+        {
+          "name": "Hamid Mahmood Gelaidan",
+          "openalex_id": "A5073323449",
+          "orcid": "https://orcid.org/0000-0002-9339-6184",
+          "institutions": [
+            "Qatar University"
+          ]
+        },
+        {
+          "name": "Redhwan Mohammed Saleh",
+          "openalex_id": "A5074137668",
+          "orcid": "https://orcid.org/0000-0002-6596-6717"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-01",
+      "abstract": null,
+      "cited_by_count": 432,
+      "type": "article",
+      "source": {
+        "name": "Journal of Cleaner Production",
+        "type": "journal",
+        "issn": [
+          "0959-6526",
+          "1879-1786"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://ars.els-cdn.com/content/image/1-s2.0-S0959652621023301-ga1_lrg.jpg"
+      },
+      "topics": [
+        "Environmental Sustainability in Business",
+        "Environmental Education and Sustainability",
+        "Sustainable Supply Chain Management"
+      ],
+      "referenced_works_count": 203,
+      "url": "https://openalex.org/W3181202921"
+    },
+    {
+      "openalex_id": "W3125358881",
+      "doi": "10.3354/esep00195",
+      "title": "Plagiarism in the age of massive Generative Pre-trained Transformers (GPT-3)",
+      "authors": [
+        {
+          "name": "Nassim Dehouche",
+          "openalex_id": "A5034466354",
+          "orcid": "https://orcid.org/0000-0002-0215-0622",
+          "institutions": [
+            "Mahidol University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-18",
+      "abstract": "As if 2020 was not a peculiar enough year, its fifth month saw the relatively quiet publication of a preprint describing the most powerful natural language processing (NLP) system to date\u2014GPT-3 (Generative Pre-trained Transformer-3)\u2014created by the Silicon Valley research firm OpenAI. Though the software implementation of GPT-3 is still in its initial beta release phase, and its full capabilities are still unknown as of the time of this writing, it has been shown that this artificial intelligence can comprehend prompts in natural language, on virtually any topic, and generate relevant original text content that is indistinguishable from human writing. Moreover, access to these capabilities, in a limited yet worrisome enough extent, is available to the general public. This paper presents examples of original content generated by the author using GPT-3. These examples illustrate some of the capabilities of GPT-3 in comprehending prompts in natural language and generating convincing content in response. I use these examples to raise specific fundamental questions pertaining to the intellectual property of this content and the potential use of GPT-3 to facilitate plagiarism. The goal is to instigate a sense of urgency, as well as a sense of present tardiness on the part of the academic community in addressing these questions.",
+      "cited_by_count": 293,
+      "type": "article",
+      "source": {
+        "name": "Ethics in Science and Environmental Politics",
+        "type": "journal",
+        "issn": [
+          "1611-8014",
+          "1863-5415"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.int-res.com/articles/esep2021/21/e021p017.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Explainable Artificial Intelligence (XAI)",
+        "Topic Modeling"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W3125358881"
+    },
+    {
+      "openalex_id": "W2531521677",
+      "doi": "10.1371/journal.pone.0163579",
+      "title": "Good and Bad Research Collaborations: Researchers\u2019 Views on Science and Ethics in Global Health Research",
+      "authors": [
+        {
+          "name": "Michael Parker",
+          "openalex_id": "A5069971095",
+          "orcid": "https://orcid.org/0000-0002-7054-4711",
+          "institutions": [
+            "University of Oxford"
+          ]
+        },
+        {
+          "name": "Patricia Kingori",
+          "openalex_id": "A5030558619",
+          "orcid": "https://orcid.org/0000-0001-5420-2183",
+          "institutions": [
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-13",
+      "abstract": "There has been a dramatic rise in the scale and scope of collaborative global health research. A number of structural and scientific factors explain this growth and there has been much discussion of these in the literature. Little, if any, attention has been paid, however, to the factors identified by scientists and other research actors as important to successful research collaboration. This is surprising given that their decisions are likely to play a key role in the sustainability and effectiveness of global health research initiatives. In this paper, we report on qualitative research with leading scientists involved in major international research collaborations about their views on good and bad collaborations and the factors that inform their decision-making about joining and participating actively in research networks. We identify and discuss eight factors that researchers see as essential in judging the merits of active participation in global health research collaborations: opportunities for active involvement in cutting-edge, interesting science; effective leadership; competence of potential partners in and commitment to good scientific practice; capacity building; respect for the needs, interests and agendas of partners; opportunities for discussion and disagreement; trust and confidence; and, justice and fairness in collaboration. Our findings suggest that the sustainability and effectiveness of global health research collaborations has an important ethical or moral dimension for the research actors involved.",
+      "cited_by_count": 228,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0163579&type=printable"
+      },
+      "topics": [
+        "Global Health and Surgery",
+        "Ethics in Clinical Research",
+        "Global Public Health Policies and Epidemiology"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2531521677"
+    },
+    {
+      "openalex_id": "W2256932210",
+      "doi": "10.1080/02508281.2015.1086076",
+      "title": "The collaborative economy and tourism: Critical perspectives, questionable claims and silenced voices",
+      "authors": [
+        {
+          "name": "Dianne Dredge",
+          "openalex_id": "A5083302276",
+          "orcid": "https://orcid.org/0000-0002-0151-0382",
+          "institutions": [
+            "Aalborg University"
+          ]
+        },
+        {
+          "name": "Szilvia Gyim\u00f3thy",
+          "openalex_id": "A5006268310",
+          "orcid": "https://orcid.org/0000-0002-1556-5632",
+          "institutions": [
+            "Aalborg University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-09-02",
+      "abstract": "House swapping, ridesharing, voluntourism, couchsurfing, dinner hosting and similar innovations epitomize the collaborative economy. The rise of the collaborative economy, also known as collaborative consumption, the sharing economy and peer-to-peer consumption, has been fuelled by a range of social, economic and technological factors including a shift away from ownership towards temporary access to goods; the use of technology mediated transactions between producers and consumers; direct host-guest relationships that contribute to a higher level of perceived authenticity of tourism experiences; and higher levels of consumer risk-taking balanced against mechanisms such as peer-to-peer feedback designed to engender trust between producers and consumers. This paper explores and critically assesses the collaborative economy and its implications for tourism industrial systems. It achieves this by mapping out the current knowledge dynamics characterising tourism and the collaborative economy, paying particular attention to the asymmetries of knowledge that are emerging. The paper then identifies and critically discusses five pervasive claims being made about the collaborative economy, arguing for a balanced assessment of such claims. Highlighting these claims allows us to pursue a more reflective research agenda and leads to a more informed, evidence-based assessment of the collaborative economy and tourism.",
+      "cited_by_count": 381,
+      "type": "article",
+      "source": {
+        "name": "Tourism Recreation Research",
+        "type": "journal",
+        "issn": [
+          "0250-8281",
+          "2320-0308"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://vbn.aau.dk/files/218999422/Dredge_Gyimothy_Ver10_preprint_upload.pdf"
+      },
+      "topics": [
+        "Sharing Economy and Platforms",
+        "Digital Marketing and Social Media",
+        "Digital Economy and Work Transformation"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W2256932210"
+    },
+    {
+      "openalex_id": "W2786522954",
+      "doi": "10.1007/s10676-018-9448-6",
+      "title": "Patiency is not a virtue: the design of intelligent systems and systems of ethics",
+      "authors": [
+        {
+          "name": "Joanna J. Bryson",
+          "openalex_id": "A5009631016",
+          "orcid": "https://orcid.org/0000-0003-0021-0801",
+          "institutions": [
+            "University of Bath"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-16",
+      "abstract": "The question of whether AI systems such as robots can or should be afforded moral agency or patiency is not one amenable either to discovery or simple reasoning, because we as societies constantly reconstruct our artefacts, including our ethical systems. Consequently, the place of AI systems in society is a matter of normative, not descriptive ethics. Here I start from a functionalist assumption, that ethics is the set of behaviour that maintains a society. This assumption allows me to exploit the theoretical biology of sociality and autonomy to explain our moral intuitions. From this grounding I extend to consider possible ethics for maintaining either human- or of artefact-centred societies. I conclude that while constructing AI systems as either moral agents or patients is possible, neither is desirable. In particular, I argue that we are unlikely to construct a coherent ethics in which it it is ethical to afford AI moral subjectivity. We are therefore obliged not to build AI we are obliged to.",
+      "cited_by_count": 236,
+      "type": "article",
+      "source": {
+        "name": "Ethics and Information Technology",
+        "type": "journal",
+        "issn": [
+          "1388-1957",
+          "1572-8439"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs10676-018-9448-6.pdf"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W2786522954"
+    },
+    {
+      "openalex_id": "W4385724150",
+      "doi": "10.7759/cureus.43262",
+      "title": "Unraveling the Ethical Enigma: Artificial Intelligence in Healthcare",
+      "authors": [
+        {
+          "name": "Madhan Jeyaraman",
+          "openalex_id": "A5065099262",
+          "orcid": "https://orcid.org/0000-0002-9045-9493",
+          "institutions": [
+            "ACS Medical College and Hospital",
+            "Madurai Medical College",
+            "Government Medical College"
+          ]
+        },
+        {
+          "name": "Sangeetha Balaji",
+          "openalex_id": "A5000720346",
+          "institutions": [
+            "Madurai Medical College",
+            "ACS Medical College and Hospital",
+            "Government Medical College"
+          ]
+        },
+        {
+          "name": "Naveen Jeyaraman",
+          "openalex_id": "A5024875188",
+          "orcid": "https://orcid.org/0000-0002-4362-3326",
+          "institutions": [
+            "Madurai Medical College",
+            "Government Medical College",
+            "ACS Medical College and Hospital"
+          ]
+        },
+        {
+          "name": "Sankalp Yadav",
+          "openalex_id": "A5069795388",
+          "orcid": "https://orcid.org/0000-0001-6367-7228",
+          "institutions": [
+            "Government Medical College",
+            "Madurai Medical College",
+            "ACS Medical College and Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-08-10",
+      "abstract": "The integration of artificial intelligence (AI) into healthcare promises groundbreaking advancements in patient care, revolutionizing clinical diagnosis, predictive medicine, and decision-making. This transformative technology uses machine learning, natural language processing, and large language models (LLMs) to process and reason like human intelligence. OpenAI's ChatGPT, a sophisticated LLM, holds immense potential in medical practice, research, and education. However, as AI in healthcare gains momentum, it brings forth profound ethical challenges that demand careful consideration. This comprehensive review explores key ethical concerns in the domain, including privacy, transparency, trust, responsibility, bias, and data quality. Protecting patient privacy in data-driven healthcare is crucial, with potential implications for psychological well-being and data sharing. Strategies like homomorphic encryption (HE) and secure multiparty computation (SMPC) are vital to preserving confidentiality. Transparency and trustworthiness of AI systems are essential, particularly in high-risk decision-making scenarios. Explainable AI (XAI) emerges as a critical aspect, ensuring a clear understanding of AI-generated predictions. Cybersecurity becomes a pressing concern as AI's complexity creates vulnerabilities for potential breaches. Determining responsibility in AI-driven outcomes raises important questions, with debates on AI's moral agency and human accountability. Shifting from data ownership to data stewardship enables responsible data management in compliance with regulations. Addressing bias in healthcare data is crucial to avoid AI-driven inequities. Biases present in data collection and algorithm development can perpetuate healthcare disparities. A public-health approach is advocated to address inequalities and promote diversity in AI research and the workforce. Maintaining data quality is imperative in AI applications, with convolutional neural networks showing promise in multi-input/mixed data models, offering a comprehensive patient perspective. In this ever-evolving landscape, it is imperative to adopt a multidimensional approach involving policymakers, developers, healthcare practitioners, and patients to mitigate ethical concerns. By understanding and addressing these challenges, we can harness the full potential of AI in healthcare while ensuring ethical and equitable outcomes.",
+      "cited_by_count": 218,
+      "type": "review",
+      "source": {
+        "name": "Cureus",
+        "type": "journal",
+        "issn": [
+          "2168-8184"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://assets.cureus.com/uploads/review_article/pdf/178557/20230810-7795-1otiewn.pdf"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics in Clinical Research",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W4385724150"
+    },
+    {
+      "openalex_id": "W1487731764",
+      "doi": "10.1002/14651858.mr000038.pub2",
+      "title": "Interventions to prevent misconduct and promote integrity in research and publication",
+      "authors": [
+        {
+          "name": "Ana Maru\u0161i\u0107",
+          "openalex_id": "A5046187244",
+          "orcid": "https://orcid.org/0000-0001-6272-0917",
+          "institutions": [
+            "University of Split"
+          ]
+        },
+        {
+          "name": "Elizabeth Wager",
+          "openalex_id": "A5047625766",
+          "orcid": "https://orcid.org/0000-0002-4202-7813"
+        },
+        {
+          "name": "Ana Utrobi\u010di\u0107",
+          "openalex_id": "A5032501163",
+          "orcid": "https://orcid.org/0000-0001-9015-3593",
+          "institutions": [
+            "University of Split"
+          ]
+        },
+        {
+          "name": "Hannah R. Rothstein",
+          "openalex_id": "A5068121257",
+          "orcid": "https://orcid.org/0000-0002-2808-4790",
+          "institutions": [
+            "Baruch College"
+          ]
+        },
+        {
+          "name": "Dario Sambunjak",
+          "openalex_id": "A5067257692",
+          "orcid": "https://orcid.org/0000-0002-9016-2198",
+          "institutions": [
+            "Catholic University of Croatia"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-04",
+      "abstract": "The evidence base relating to interventions to improve research integrity is incomplete and the studies that have been done are heterogeneous, inappropriate for meta-analyses and their applicability to other settings and population is uncertain. Many studies had a high risk of bias because of the choice of study design and interventions were often inadequately reported. Even when randomized designs were used, findings were difficult to generalize. Due to the very low quality of evidence, the effects of training in responsible conduct of research on reducing research misconduct are uncertain. Low quality evidence indicates that training about plagiarism, especially if it involves practical exercises and use of text-matching software, may reduce the occurrence of plagiarism.",
+      "cited_by_count": 155,
+      "type": "review",
+      "source": {
+        "name": "Cochrane Database of Systematic Reviews",
+        "type": "journal",
+        "issn": [
+          "1464-780X",
+          "1465-184X",
+          "1465-1858"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.MR000038.pub2/pdf/full"
+      },
+      "topics": [
+        "Academic integrity and plagiarism",
+        "Ethics in Clinical Research",
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 98,
+      "url": "https://openalex.org/W1487731764"
+    },
+    {
+      "openalex_id": "W2222043208",
+      "doi": "10.1371/journal.pmed.1001935",
+      "title": "Developing Global Norms for Sharing Data and Results during Public Health Emergencies",
+      "authors": [
+        {
+          "name": "Kayvon Modjarrad",
+          "openalex_id": "A5010131062",
+          "orcid": "https://orcid.org/0000-0002-6514-5572",
+          "institutions": [
+            "World Health Organization"
+          ]
+        },
+        {
+          "name": "Vasee Moorthy",
+          "openalex_id": "A5067545239",
+          "orcid": "https://orcid.org/0000-0002-6535-2854",
+          "institutions": [
+            "World Health Organization"
+          ]
+        },
+        {
+          "name": "Piers Millett",
+          "openalex_id": "A5040664630",
+          "orcid": "https://orcid.org/0000-0002-4792-2884",
+          "institutions": [
+            "World Health Organization"
+          ]
+        },
+        {
+          "name": "Pierre\u2010St\u00e9phane Gsell",
+          "openalex_id": "A5055282203",
+          "orcid": "https://orcid.org/0000-0002-8139-7710",
+          "institutions": [
+            "World Health Organization"
+          ]
+        },
+        {
+          "name": "Cathy Roth",
+          "openalex_id": "A5111853631",
+          "institutions": [
+            "World Health Organization"
+          ]
+        },
+        {
+          "name": "Marie-Paule Ki\u00e9ny",
+          "openalex_id": "A5109927367",
+          "institutions": [
+            "World Health Organization"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-05",
+      "abstract": "Vasee Moorthy and colleagues describe the outcomes of a recent, WHO-led meeting on sharing research data and results during public health emergencies.",
+      "cited_by_count": 200,
+      "type": "review",
+      "source": {
+        "name": "PLoS Medicine",
+        "type": "journal",
+        "issn": [
+          "1549-1277",
+          "1549-1676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosmedicine/article/file?id=10.1371/journal.pmed.1001935&type=printable"
+      },
+      "topics": [
+        "Viral Infections and Outbreaks Research",
+        "Disaster Response and Management",
+        "Global Security and Public Health"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W2222043208"
+    },
+    {
+      "openalex_id": "W2615740944",
+      "doi": "10.1177/1468796817709846",
+      "title": "What is so special about online (as compared to offline) hate speech?",
+      "authors": [
+        {
+          "name": "Alexander Brown",
+          "openalex_id": "A5101881151",
+          "orcid": "https://orcid.org/0000-0003-2594-0480",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-05-19",
+      "abstract": "There is a growing body of literature on whether or not online hate speech, or cyberhate, might be special compared to offline hate speech. This article aims to both critique and augment that literature by emphasising a distinctive feature of the Internet and of cyberhate that, unlike other features, such as ease of access, size of audience, and anonymity, is often overlooked: namely, instantaneousness. This article also asks whether there is anything special about online (as compared to offline) hate speech that might warrant governments and intergovernmental organisations contracting out, so to speak, the responsibility for tackling online hate speech to the very Internet companies which provide the websites and services that hate speakers utilise.",
+      "cited_by_count": 215,
+      "type": "article",
+      "source": {
+        "name": "Ethnicities",
+        "type": "journal",
+        "issn": [
+          "1468-7968",
+          "1741-2706"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://ueaeprints.uea.ac.uk/id/eprint/64133/1/Accepted_manuscript.pdf"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Freedom of Expression and Defamation",
+        "Cybersecurity and Cyber Warfare Studies"
+      ],
+      "referenced_works_count": 64,
+      "url": "https://openalex.org/W2615740944"
+    },
+    {
+      "openalex_id": "W2774860949",
+      "doi": "10.1371/journal.pone.0187394",
+      "title": "Authorship and citation manipulation in academic research",
+      "authors": [
+        {
+          "name": "Eric A. Fong",
+          "openalex_id": "A5009898962",
+          "orcid": "https://orcid.org/0000-0002-5729-8245",
+          "institutions": [
+            "University of Alabama in Huntsville"
+          ]
+        },
+        {
+          "name": "Allen Wilhite",
+          "openalex_id": "A5003786739",
+          "orcid": "https://orcid.org/0000-0002-0787-1314",
+          "institutions": [
+            "University of Alabama in Huntsville"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-06",
+      "abstract": "Some scholars add authors to their research papers or grant proposals even when those individuals contribute nothing to the research effort. Some journal editors coerce authors to add citations that are not pertinent to their work and some authors pad their reference lists with superfluous citations. How prevalent are these types of manipulation, why do scholars stoop to such practices, and who among us is most susceptible to such ethical lapses? This study builds a framework around how intense competition for limited journal space and research funding can encourage manipulation and then uses that framework to develop hypotheses about who manipulates and why they do so. We test those hypotheses using data from over 12,000 responses to a series of surveys sent to more than 110,000 scholars from eighteen different disciplines spread across science, engineering, social science, business, and health care. We find widespread misattribution in publications and in research proposals with significant variation by academic rank, discipline, sex, publication history, co-authors, etc. Even though the majority of scholars disapprove of such tactics, many feel pressured to make such additions while others suggest that it is just the way the game is played. The findings suggest that certain changes in the review process might help to stem this ethical decline, but progress could be slow.",
+      "cited_by_count": 204,
+      "type": "article",
+      "source": {
+        "name": "PLoS ONE",
+        "type": "journal",
+        "issn": [
+          "1932-6203"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0187394&type=printable"
+      },
+      "topics": [
+        "Academic integrity and plagiarism",
+        "scientometrics and bibliometrics research",
+        "Academic Publishing and Open Access"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W2774860949"
+    },
+    {
+      "openalex_id": "W2800072530",
+      "doi": "10.1007/s40122-018-0097-6",
+      "title": "A Brief History of the Opioid Epidemic and Strategies for Pain Medicine",
+      "authors": [
+        {
+          "name": "Mark R. Jones",
+          "openalex_id": "A5046234611",
+          "orcid": "https://orcid.org/0000-0002-4781-2167",
+          "institutions": [
+            "Harvard University",
+            "Beth Israel Deaconess Medical Center"
+          ]
+        },
+        {
+          "name": "Omar Viswanath",
+          "openalex_id": "A5014876140",
+          "orcid": "https://orcid.org/0000-0002-6124-7037",
+          "institutions": [
+            "Beth Israel Deaconess Medical Center",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Jacquelin Peck",
+          "openalex_id": "A5051597463",
+          "orcid": "https://orcid.org/0000-0001-6432-0554",
+          "institutions": [
+            "Johns Hopkins All Children's Hospital",
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Alan D. Kaye",
+          "openalex_id": "A5018558604",
+          "orcid": "https://orcid.org/0000-0003-2464-0187",
+          "institutions": [
+            "Louisiana State University Health Sciences Center New Orleans"
+          ]
+        },
+        {
+          "name": "Jatinder Gill",
+          "openalex_id": "A5051641216",
+          "orcid": "https://orcid.org/0000-0002-0812-5356",
+          "institutions": [
+            "Beth Israel Deaconess Medical Center",
+            "Harvard University"
+          ]
+        },
+        {
+          "name": "Thomas Simopoulos",
+          "openalex_id": "A5053487357",
+          "orcid": "https://orcid.org/0000-0001-5775-7635",
+          "institutions": [
+            "Harvard University",
+            "Beth Israel Deaconess Medical Center"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-24",
+      "abstract": "The opioid epidemic has resulted from myriad causes and will not be solved by any simple solution. Consequent to a staggering increase in opioid-related deaths in the USA, various governmental inputs and stakeholder strategies have been proposed and implemented with varying success. This article summarizes the history of opioid use and explores the causes for the present day epidemic. Recent trends in opioid-related data demonstrate an almost fourfold increase in overdose deaths from 1999 to 2008. Tragically, opioids claimed over 64,000 lives just last year. Some solutions have undergone legislation, including the limitation of numbers of opioids postsurgery, as well as growing national prevalence of enhanced recovery after surgery protocols which focus on reduced postoperative opioid consumption and shortened hospital stays. Stricter prescribing practices and prescription monitoring programs have been instituted in the recent past. Improvement in abuse deterrent strategies which is a major focus of the Food and Drug Administration (FDA) for all opioid preparations will likely play an important role by increasing the safety of these medications. Future potential strategies such as additional legislative policies, public awareness, and physician education are also detailed in this review.",
+      "cited_by_count": 391,
+      "type": "review",
+      "source": {
+        "name": "Pain and Therapy",
+        "type": "journal",
+        "issn": [
+          "2193-651X",
+          "2193-8237"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40122-018-0097-6.pdf"
+      },
+      "topics": [
+        "Opioid Use Disorder Treatment",
+        "Pain Management and Opioid Use",
+        "Anesthesia and Pain Management"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W2800072530"
+    },
+    {
+      "openalex_id": "W2327256007",
+      "doi": "10.1177/0309132516629004",
+      "title": "Forced migration and the city",
+      "authors": [
+        {
+          "name": "Jonathan Darling",
+          "openalex_id": "A5079930440",
+          "orcid": "https://orcid.org/0000-0002-6406-9555",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-02-11",
+      "abstract": "This paper explores the relationship between forced migration and the city. The paper outlines four accounts of the city centred on: displacement and the camp-city, dispersal and refugee resettlement, the \u2018re-scaling\u2019 of borders, and the city as a sanctuary. Whilst valuable, these discussions maintain a focus on sovereign authority that tends to prioritize the policing of forced migration over the possibilities for contestation that also emerge through cities. Arguing for a fuller engagement with debates in urban geography, this paper considers how discussions of urban informality and the politics of presence may better unpack the urban character of forced migration.",
+      "cited_by_count": 274,
+      "type": "article",
+      "source": {
+        "name": "Progress in Human Geography",
+        "type": "journal",
+        "issn": [
+          "0309-1325",
+          "1477-0288"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0309132516629004"
+      },
+      "topics": [
+        "Migration, Refugees, and Integration",
+        "Urban Planning and Governance",
+        "Migration and Labor Dynamics"
+      ],
+      "referenced_works_count": 146,
+      "url": "https://openalex.org/W2327256007"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "core",
+  "query": "literature review methodology philosophy",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "api_error",
+      "message": "CORE API error: 500",
+      "recoverable": false
+    }
+  ]
+}

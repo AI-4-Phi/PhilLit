@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.25159/2413-3086/3819"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.25159/2413-3086/3819",
+      "title": "QUESTIONS OF CANON FORMATION IN PHILOSOPHY: THE HISTORY OF PHILOSOPHY IN AFRICA",
+      "authors": [
+        {
+          "family": "Graness",
+          "given": "Anke"
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Phronimon",
+      "volume": "16",
+      "issue": "2",
+      "page": "78-96",
+      "publisher": "UNISA Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.25159/2413-3086/3819"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

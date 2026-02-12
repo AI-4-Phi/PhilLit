@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/s40926-024-00320-4"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s40926-024-00320-4",
+      "title": "Quiet Quitting as Compensatory Respect: Meaningful Work, Recognition, and the Entrepreneurial Ethic",
+      "authors": [
+        {
+          "family": "Corbin",
+          "given": "Thomas A."
+        },
+        {
+          "family": "Flenady",
+          "given": "Gene"
+        }
+      ],
+      "editors": [],
+      "year": 2024,
+      "container_title": "Philosophy of Management",
+      "volume": "23",
+      "issue": "4",
+      "page": "461-480",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/s40926-024-00320-4"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

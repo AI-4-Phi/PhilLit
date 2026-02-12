@@ -1,0 +1,706 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "bibliometrics philosophy",
+  "results": [
+    {
+      "paperId": "a677501b7110c0926a18c6f5f58afc9ad371b290",
+      "title": "Scientometrics, bibliometrics and infometrics: accounting of scientific research and the progress of science from the point of view of the philosophy of global sustainable development strategy",
+      "authors": [
+        {
+          "name": "M. Boichenko",
+          "authorId": "144554750"
+        },
+        {
+          "name": "V. Zinchenko",
+          "authorId": "39823114"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Scientometrics, as a rule, is considered in details \u2013 the more accurate and ex\u00adpressive the detailing, the more effective is the accounting of scientific research: the measurement of quantitative parameters of the results of scientific activity is aimed at improving the quality of scientific communication and, ultimately, the progress of science. This led to the transition from usual bibliometrics to sciento\u00admetrics, and later to other more sophisticated forms of accounting for scientific activity, which can be divided into infometrics and altmetrics. Infometrics and its modifications take into account everything that could be formalized, while altmetrics seeks to include qualitative parameters in the realm of quantitative measurements. In this article, attention is focused precisely on the analysis of the relationship between quantitative methods and quantitative indicators of scien\u00adtific activity with the progress of science thanks to a comparative assessment of bibliometrics, scientific metrics and infometrics from philosophical positions. A way out of the problematic situations in which attempts to provide a quantita\u00adtive description of the quality of scientific activity inevitably fall, should be sought beyond the quantitative methods themselves \u2013 in the identification of their ulti\u00admate goal. Such a goal is the development of humanity through the progress of science. The UN program \u201cTransforming Our World: Agenda 2030 for Sustainable Development\u201d offers a systematic vision of ways to accomplish this task, which, in particular, sets the goal of achieving equal development opportunities for every person. Bibliometrics, scientometrics and infometrics contribute to overcoming many types of social inequality \u2013 provided that people are actively involved in sci\u00adentific activity: personal scientific achievements level out property, gender, reli\u00adgious, ethnic and many other types of social inequality and give every participant of scientific research access to a public career and personal development. The development of each person on a rational basis is the ultimate goal of science, which is the basis of the philosophy of the strategy of global sustainable develop\u00adment of Mankind.",
+      "citationCount": 1,
+      "doi": "10.31874/2309-1606-2022-28-1-7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a677501b7110c0926a18c6f5f58afc9ad371b290",
+      "venue": "Filosofiya osvity. Philosophy of Education",
+      "journal": {
+        "name": "Filosofiya osvity. Philosophy of Education"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e7b04dc0e0e480d3b12b1c2e3c49aafe16c6a7b6",
+      "title": "Research and Analysis of the Achievements of Philosophy in Yunnan Universities Based on Bibliometrics",
+      "authors": [
+        {
+          "name": "Du Xiang",
+          "authorId": "2057622729"
+        },
+        {
+          "name": "Zhang Guofei",
+          "authorId": "2094802889"
+        },
+        {
+          "name": "Li Qiong",
+          "authorId": "46942240"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Based on the knowledge map technology and starting from the philosophy academic literature of colleges and universities in Yunnan province, this paper elaborates on the analysis of philosophy academic literature of colleges and universities in Yunnan province in terms of time series, distribution of core authors and research institutions, research hotspots and research frontiers. Thus deduces the research track of Yunnan province philosophy domain, reveals its research hot spot.",
+      "citationCount": 1,
+      "doi": "10.1145/3352740.3352751",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e7b04dc0e0e480d3b12b1c2e3c49aafe16c6a7b6",
+      "venue": "Proceedings of the 2019 3rd International Workshop on Education, Big Data and Information Technology",
+      "journal": {
+        "name": "Proceedings of the 2019 3rd International Workshop on Education, Big Data and Information Technology"
+      },
+      "publicationTypes": [
+        "Book"
+      ]
+    },
+    {
+      "paperId": "2cadd30c9378eaaabb8901ca87ce638ddd47a711",
+      "title": "Bibliometrics beyond citations: introducing mention extraction and analysis",
+      "authors": [
+        {
+          "name": "Eugenio Petrovich",
+          "authorId": "2276958651"
+        },
+        {
+          "name": "Sander Verhaegh",
+          "authorId": "13132027"
+        },
+        {
+          "name": "Gregor B\u00f6s",
+          "authorId": "2314602316"
+        },
+        {
+          "name": "Claudia Cristalli",
+          "authorId": "2288740731"
+        },
+        {
+          "name": "Fons Dewulf",
+          "authorId": "51314746"
+        },
+        {
+          "name": "Ties van Gemert",
+          "authorId": "2388762187"
+        },
+        {
+          "name": "Nina IJdens",
+          "authorId": "2314606898"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Standard citation-based bibliometric tools have severe limitations when they are applied to periods in the history of science and the humanities before the advent of now-current citation practices. This paper presents an alternative method involving the extracting and analysis of mentions to map and analyze links between scholars and texts in periods that fall outside the scope of citation-based studies. Focusing on one specific discipline in one particular period and language area\u2014Anglophone philosophy between 1890 and 1979\u2014we describe a procedure to create a mention index by identifying, extracting, and disambiguating mentions in academic publications. Our mention index includes 1,095,765 mention links, extracted from 22,977 articles published in 12 journals. We successfully link 93% of these mentions to specific philosophers, with an estimated precision of 82% to 91%. Moreover, we integrate the mention index into a database named EDHIPHY, which includes data and metadata from multiple sources and enables multidimensional mention analyses. In the final part of the paper, we present four case studies conducted by domain experts, demonstrating the use and the potential of both EDHIPHY and mention analyses more generally.",
+      "citationCount": 7,
+      "doi": "10.1007/s11192-024-05116-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2cadd30c9378eaaabb8901ca87ce638ddd47a711",
+      "venue": "Scientometrics",
+      "journal": {
+        "name": "Scientometrics",
+        "pages": "5731 - 5768",
+        "volume": "129"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "394bb52251ddc700299ef3412d2c700eb968c5fa",
+      "title": "Research on Discourse System in China (1998\u20132023): A Bibliometric Analysis of Discourse System Research in China\u2019s Philosophy and Social Sciences",
+      "authors": [
+        {
+          "name": "Z. Mei",
+          "authorId": "2339020501"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Over the last two decades, a large body of literature on discourse system has been published in core journals in China, aiming to address the construction of the discourse system, suggesting Chinese academic professionals\u2019 endeavors and social responsibilities to build their own body of knowledge. Using bibliometrics methods, 1,216 articles related to discourse system research in A Guide to the Core Journal of China were analyzed. This article summarizes the overall situation, research hotspots, and trends of research on discourse system in Chinese philosophy and social sciences from 1998 to 2023. It found that the \u201cdiscourse system\u201d has received growing attention within philosophy and social sciences in Chinese mainland. The related research field has undergone evolution from the nascent stage, exploratory stage, accumulation stage, to the rapid development stage. At present, the research on the discourse system in China\u2019s philosophy and social sciences is mainly grand-theory-oriented, and academic autonomy and disciplinary leadership have been improved. The burgeoning research landscape presents a series of academic initiatives worldwide, standing as a beneficial attempt for Chinese academics to go abroad and the awareness of academic independence in Global South as well. Plain language summary A bibliometric analysis of discourse system research in China (1998\u20132023) The article provides a diachronic and bibliometric analysis of research on discourse system in China from 1998 to 2023 with CiteSpace, a powerful software tool designed for visualizing and analyzing patterns and trends in academic literature. The analysis finds that the research on discourse system has received growing attention within philosophy and social sciences in Chinese mainland. The research boom, centered on the construction of discourse systems with Chinese characteristics, has been shaped by the social and economic advancements, reflecting a heightened awareness of academic independence in China.",
+      "citationCount": 0,
+      "doi": "10.1177/21582440251350431",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/394bb52251ddc700299ef3412d2c700eb968c5fa",
+      "venue": "SAGE Open",
+      "journal": {
+        "name": "SAGE Open",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "fd266428416d86f04289f3df516cdafcaf9c8b8d",
+      "title": "Is Philosophy Still Alive? Reflections on Polish Institutional Philosophy",
+      "authors": [
+        {
+          "name": "Damian Nowak",
+          "authorId": "2361580636"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This article examines the growing disconnect between contemporary academic philosophy, increasingly dominated by bibliometrics and parameterization , and its original, practical vocation as a way of life (paideia). The author argues that Polish institutional philosophy must redefine its evaluation criteria, moving beyond purely quantitative publication metrics to recognize the value of practical philosophy. This redefinition should encompass philosophy's real-world social, didactic, and popularizing impact, acknowledging it as a fundamental component of the discipline. The need for this shift is amplified by modern challenges, such as the rise of artificial intelligence and a widespread crisis of meaning, which call for philosophy's return to its transformative role. The paper highlights the work of Polish practical philosophers who, despite often being unrecognized by formal academia, have a significant societal impact through workshops, podcasts, and educational initiatives . Ultimately, the article posits that philosophy's vitality is found not merely in theoretical discourse, but in its ability to be a formative practice that shapes human existence.",
+      "citationCount": 0,
+      "doi": "10.16926/pd.2025.07.10",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fd266428416d86f04289f3df516cdafcaf9c8b8d",
+      "venue": "Philosophical Discourses",
+      "journal": {
+        "name": "Philosophical Discourses"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6fbe257feecef0a5ecfb43861fe446f74c7517a0",
+      "title": "Trend Point 11 of the SDGs: The Potential of the Giri Kedaton Site in Discussing Eco-Spiritualism Philosophy",
+      "authors": [
+        {
+          "name": "R. T. Lintangesukmanjaya",
+          "authorId": "2281177659"
+        },
+        {
+          "name": "Ilmiawan Hakim",
+          "authorId": "2387617045"
+        },
+        {
+          "name": "Nabila Nur Almaida Nasution",
+          "authorId": "2387483065"
+        },
+        {
+          "name": "B. Prahani*",
+          "authorId": "73091586"
+        },
+        {
+          "name": "D. Dwikoranto",
+          "authorId": "2081777709"
+        },
+        {
+          "name": "Khoirun Nisa\u2019",
+          "authorId": "2372809939"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Objective: Identifying global aspects of eco-spiritualism and analyzing its potential at the Giri Kedaton site to achieve SDG 11, which aims to create inclusive and sustainable settlements. Method: The research was conducted using a mixed-methods research model. This research approach combines qualitative methods (Bibliometric Analysis) and quantitative methods (Observation) in one study to gain a more comprehensive understanding of a phenomenon. Results: There is a global research trend in philosophy supporting the SDGs. The number of documents and citations increased from 2020 to 2025, resulting in 48 Scopus documents, with the highest number of citations in 2024 at 185. Bibliometric analysis findings identified three main aspects of eco-spiritualism: philosophical foundations, environmental ethics, and integration practices. The Giri Kedaton site, as a cultural heritage site, has the potential to uphold the values \u200b\u200bof eco-spiritualism and SDG 11 for global recognition. Novelty: The environmentally friendly principles of sustainable settlement management, in accordance with SDG 11, are reflected in the Giri Kedaton site. The potential for comfortable living and inclusive settlements is a key aspect of SDG 11. Analysis of the findings opens up new insights into the realm of eco-spirituality related to the beliefs and philosophy of the Giri Kedaton site.",
+      "citationCount": 0,
+      "doi": "10.63230/jolabis.1.2.90",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6fbe257feecef0a5ecfb43861fe446f74c7517a0",
+      "venue": "Journal of Law and Bibliometrics Studies",
+      "journal": {
+        "name": "Journal of Law and Bibliometrics Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e7365841aa7160f98ff25175e7c17d8f8787330f",
+      "title": "A bibliometric study and visualization of Library Philosophy and Practice during 1998-2018",
+      "authors": [
+        {
+          "name": "M. Saberi",
+          "authorId": "2512851"
+        },
+        {
+          "name": "Sana Barkhan",
+          "authorId": "134697442"
+        },
+        {
+          "name": "Ronak Hamzehei",
+          "authorId": "66158562"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 11,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e7365841aa7160f98ff25175e7c17d8f8787330f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "25003dc52eb81967636a4f663e92910889619699",
+      "title": "Bibliometrics for Social Validation",
+      "authors": [
+        {
+          "name": "Daniel J. Hicks",
+          "authorId": "143675235"
+        }
+      ],
+      "year": 2016,
+      "abstract": "This paper introduces a bibliometric, citation network-based method for assessing the social validation of novel research, and applies this method to the development of high-throughput toxicology research at the US Environmental Protection Agency. Social validation refers to the acceptance of novel research methods by a relevant scientific community; it is formally independent of the technical validation of methods, and is frequently studied in history, philosophy, and social studies of science using qualitative methods. The quantitative methods introduced here find that high-throughput toxicology methods are spread throughout a large and well-connected research community, which suggests high social validation. Further assessment of social validation involving mixed qualitative and quantitative methods are discussed in the conclusion.",
+      "citationCount": 5,
+      "doi": "10.1371/journal.pone.0168597",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/25003dc52eb81967636a4f663e92910889619699",
+      "venue": "PLoS ONE",
+      "journal": {
+        "name": "PLoS ONE",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4cf0e0cf837d2379f201b639fbf5f4a23bddb19e",
+      "title": "A Study on Academic Influence of the Chinese Translation Version of On the Philosophy of Higher Education by John S. Brubacher",
+      "authors": [
+        {
+          "name": "Fengmin Yu",
+          "authorId": "2155387714"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Using bibliometrics, this study analyzes the articles citing the Chinese translation of John S. Brubacher\u2019s seminal text, On the Philosophy of Higher Education. The purpose and significance of this study is: through a comprehensive description of the academic influence of the Chinese version in China, to provide research hotspots and shortcomings for the researchers in this area, to seek scientific cooperation with the core authors, to provide reference for building and perfecting the philosophy system of higher education. So, this study includes a discussion of their academic influence by year, source, author and institution; and finds that the book has become a time-honored research classic cited or elaborated or questioned by scholars of higher education in China, Huazhong University of Science and Technology is greatly influenced by the Chinese translation version, and Wang Jianhua from Xiamen University Higher Education Institute is much more affected than other authors. In addition, this paper examines the high frequency keywords and their co-occurrence in these citing articles to investigate the hotspots of academic influence and focus of this influential book. The hotspots of citing articles mainly include academic freedom, university autonomy, general education, professional education, university culture, value orientation, education fairness, administrative power, government, university organization, professorship, liberal education, etc. A content analysis is used as well to sort the main ideas of his research and evaluate the impact of On the Philosophy of Higher Education in China.",
+      "citationCount": 0,
+      "doi": "10.11648/j.ijecs.20180303.13",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4cf0e0cf837d2379f201b639fbf5f4a23bddb19e",
+      "venue": "",
+      "journal": {
+        "name": "The Journal of Education, Culture, and Society",
+        "pages": "53",
+        "volume": "3"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dbcb58691e0ee3ef2229ddf2a7588ab975512ce9",
+      "title": "The Philosophy of positivism in economic science",
+      "authors": [
+        {
+          "name": "A. Kyrychok",
+          "authorId": "73873364"
+        }
+      ],
+      "year": 2018,
+      "abstract": "The article deals with the results of economic research and question of their reliability. The author shows the issue of proof and verification economic research results, approaches to the verification of information. In particular, author pays attention to the principles of positivism and the possibilities of its application in economic science. The author focuses on the existence of two main areas, which are dominatenow by economic science: \"economism\" and \"bibliometric\". Since economic science is dominated by positions that can be identified as \"economics\" (the Anglo-American scientific and economic school), excessive attention is paid to the application of mathematical and statistical apparatus in research. The intensity of the use of mathematical methods identified as the quality and reliability of scientific research. There isanother tendency: due to the intensity of the use of bibliometric indicators for the evaluation of scientific results, bibliometrics has become a basic tool for verifying the reliability of scientific knowledge.",
+      "citationCount": 0,
+      "doi": "10.31174/SEND-HS2018-168VI27-13",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dbcb58691e0ee3ef2229ddf2a7588ab975512ce9",
+      "venue": "Science and Education a New Dimension",
+      "journal": {
+        "name": "Science and Education a New Dimension"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9e57ae347b913d8eb4fe8a107d1c77b286133230",
+      "title": "The limits of bibliometrics for the analysis of the social sciences and humanities literature",
+      "authors": [
+        {
+          "name": "V. Larivi\u00e8re",
+          "authorId": "1784327"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 67,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9e57ae347b913d8eb4fe8a107d1c77b286133230",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "579811449e7dafe783cb64dbcf13529c420e08b2",
+      "title": "Lean and Industry 4.0: A bibliometric analysis, opportunities for future research directions",
+      "authors": [
+        {
+          "name": "Juman Alsadi",
+          "authorId": "2200268056"
+        },
+        {
+          "name": "J. Antony",
+          "authorId": "144735074"
+        },
+        {
+          "name": "T. Mezher",
+          "authorId": "1859994"
+        },
+        {
+          "name": "R. Jayaraman",
+          "authorId": "2112132253"
+        },
+        {
+          "name": "Maher Maalouf",
+          "authorId": "3115539"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Abstract Lean is a philosophy that helps organizations develop a continuous improvement culture by eliminating waste and minimizing the use of resources. On the other hand, Industry 4.0 is a complex high-tech model that contributes to flexible organizations using different technologies such as IoT, cloud computing, blockchain, virtual reality, and Artificial Intelligence. The concept of integrating Lean Principles and Industry 4.0 is still very recent and limited, and the literature lacks a bibliometric perspective. The integration is challenging in terms of contentment-wise and is a broad multi-dimensional research area. This study aims to analyze Lean Industry 4.0 or Lean 4.0 and Lean digital transformation literature using bibliometrics, identifying its state of art, benefits, challenges, and scientific gaps. In this study, articles published between 2010 and 2022 from the Scopus database are analyzed to identify significant publications, journals, authors, institutions, and countries based on the number of publications and frequently used keywords and subject areas. This study contributes to developing the state of art of Lean Industry 4.0 and Lean digital transformation and helps researchers and practitioners direct their future studies. The literature performance is measured based on both the number of publications and the number of citations; this bibliometric analysis covers most of the published papers in both research domains.",
+      "citationCount": 27,
+      "doi": "10.1080/10686967.2022.2144785",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/579811449e7dafe783cb64dbcf13529c420e08b2",
+      "venue": "Quality Management Journal",
+      "journal": {
+        "name": "Quality Management Journal",
+        "pages": "41 - 63",
+        "volume": "30"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ca485656a7d8a20986ef0c059f523d87de7f1dda",
+      "title": "Research on Hot Spots and Development Trend of Ecological Civilization in China Based on the Bibliometrics",
+      "authors": [
+        {
+          "name": "W. Xiao",
+          "authorId": "49617143"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ca485656a7d8a20986ef0c059f523d87de7f1dda",
+      "venue": "",
+      "journal": {
+        "name": "Science and Technology Management Research",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "236be678103260af3d658f03ce2430c227521ef7",
+      "title": "Bibliometric Analysis of the Journal Library Philosophy and Practice from 2005-2009",
+      "authors": [
+        {
+          "name": "S. Thanuskodi",
+          "authorId": "52039329"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 55,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/236be678103260af3d658f03ce2430c227521ef7",
+      "venue": "",
+      "journal": {
+        "name": "Library Philosophy and Practice",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "07156d430db2fabb235bad837f67c9ffc13784a7",
+      "title": "Teaching Model of Education Management through Google Classroom: The Trend of \u201cThe Kaizen Model\u201d",
+      "authors": [
+        {
+          "name": "Elihami Elihami",
+          "authorId": "113865928"
+        },
+        {
+          "name": "Ming Lin",
+          "authorId": "2324761717"
+        },
+        {
+          "name": "Biqing Chang",
+          "authorId": "2324129956"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The incorporation of technology in education, notably through platforms like Google Classroom, has prompted significant changes in teaching methods. This includes adopting the Kaizen philosophy, which prioritizes continual improvement through small steps. This article examines how this philosophy intersects with Google Classroom, highlighting its importance. This research explained the trend of \u201cThe Kaizen Model\u201d by using bibliometrics mapping. This study aims to analyze students\u2019 perception of the technical, process, and evaluation learning of the Teaching Model of Education Management through Google Classroom.\u00a0 The research method used qualitative research. The research method was a qualitative approach through VOS viewer. The object of the research was students of Philippine Women\u2019s University\u00a0who participated from various countries in the world. The instrument used questionnaires distributed via the website. The finding shows that students\u2019 perceptions of technical indicators in the Kaizen Model learning are positive. Students\u2019 perception of learning process indicators in the Kaizen model learning on average is positive. Students can understand the Kaizen model learning materials through discussions and communication between lecturers and students goes well. Students\u2019 perception of evaluation indicators in the Kaizen Model learning on average are positive. The intense participation was well received by the students in the pilot courses, which allowed for improvements in areas like course ideas, course content, presentation style, and topic or detail selection. The study contributes to science for developing the concept of Kaizen through the education management department.",
+      "citationCount": 1,
+      "doi": "10.46843/jiecr.v5i1.858",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07156d430db2fabb235bad837f67c9ffc13784a7",
+      "venue": "Journal of Innovation in Educational and Cultural Research",
+      "journal": {
+        "name": "Journal of Innovation in Educational and Cultural Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a57a322742b6e576d6d70b620e48402bf97d5688",
+      "title": "Proceedings of the Seventh International Conference on Conceptions of Library and Information Science \u2014 \" Unity in diversity \" \u2014 Part 2 The philosophy of information as an underlying and unifying theory of information science",
+      "authors": [
+        {
+          "name": "T. Tomic",
+          "authorId": "14640176"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a57a322742b6e576d6d70b620e48402bf97d5688",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6775cdea744eb250b6286290891808c8abe0684a",
+      "title": "Topics,Methods and Development of Research of Sports Philosophy and Social Science in China",
+      "authors": [
+        {
+          "name": "Wang Jia",
+          "authorId": "47655166"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6775cdea744eb250b6286290891808c8abe0684a",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Tianjin University",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c6eaaa9900556d5b53735510510430a7f3f36675",
+      "title": "Statistic Analysis of Published Papers and Citation of Columns in Journal of Fujian Normal University(Philosophy and Social Sciences) in 2007-2011",
+      "authors": [
+        {
+          "name": "Huang Jia-yu",
+          "authorId": "2073259409"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c6eaaa9900556d5b53735510510430a7f3f36675",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Fujian Normal University",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "24443860662447bd15ea3568c58fc05f09ade8a8",
+      "title": "Analysing the theoretical roots of technology emergence: an evolutionary perspective",
+      "authors": [
+        {
+          "name": "Serhat Burmao\u011flu",
+          "authorId": "2398788"
+        },
+        {
+          "name": "Olivier Sartenaer",
+          "authorId": "47091681"
+        },
+        {
+          "name": "A. Porter",
+          "authorId": "145340104"
+        },
+        {
+          "name": "Munan Li",
+          "authorId": "40329020"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 21,
+      "doi": "10.1007/s11192-019-03033-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24443860662447bd15ea3568c58fc05f09ade8a8",
+      "venue": "Scientometrics",
+      "journal": {
+        "name": "Scientometrics",
+        "pages": "97 - 118",
+        "volume": "119"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "82667900e1e03d282916585164e1a762305e8829",
+      "title": "Correction",
+      "authors": [
+        {
+          "name": "Jen-Jou Hung",
+          "authorId": "2090743"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Article title: A Gricean Interpretation of N\u0101g\u0101rjuna\u2019s Catus.kot.i and the No-thesis View Authors: Jenny Hung Journal: History and Philosophy of Logic Bibliometrics: Volume 41, Number 3, pages 217\u2013235 DOI: http:// doi.org/10.1080/01445340.2020.1786266 The paper \u201cA Gricean Interpretation of N\u0101g\u0101rjuna\u2019s Catus.kot.i and the No-Thesis View\u201d was substantially supported by a fellowship award from the Research Grants Council of the Hong Kong Special Administrative Region, China (Project No. CUHK PDFS2021-4H02).",
+      "citationCount": 0,
+      "doi": "10.1080/01445340.2021.1907032",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/82667900e1e03d282916585164e1a762305e8829",
+      "venue": "",
+      "journal": {
+        "name": "History and Philosophy of Logic",
+        "pages": "200 - 200",
+        "volume": "42"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1f5b1b12bf99711ca511590649a605c0361e77c3",
+      "title": "What do we think about and what do we not think about",
+      "authors": [
+        {
+          "name": "Wies\u0142aw \u0141ukaszewski",
+          "authorId": "2104953878"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1f5b1b12bf99711ca511590649a605c0361e77c3",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "573-580",
+        "volume": "17"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "31f7f8c6b3cf0ec6b434474f0810136832ff290a",
+      "title": "Individual Bibliometric Assessment @ University of Vienna: From Numbers to Multidimensional Profiles",
+      "authors": [
+        {
+          "name": "J. Gorraiz",
+          "authorId": "145200610"
+        },
+        {
+          "name": "Martin Wieland",
+          "authorId": "2066972308"
+        },
+        {
+          "name": "Christian Gumpenberger",
+          "authorId": "1700524"
+        }
+      ],
+      "year": 2016,
+      "abstract": "This paper shows how bibliometric assessment can be implemented at individual level. This has been successfully done at the University of Vienna carried out by the Bibliometrics and Publication Strategies Department of the Vienna University Library. According to the department's philosophy, bibliometrics is not only a helpful evaluation instrument in order to complement the peer review system. It is also meant as a compass for researchers in the \"publish or perish\" dilemma in order to increase general visibility and to optimize publication strategies. The individual assessment comprises of an interview with the researcher under evaluation, the elaboration of a bibliometric report of the researcher's publication output, the discussion and validation of the obtained results with the researcher under evaluation as well as further optional analyses. The produced bibliometric reports are provided to the researchers themselves and inform them about the quantitative aspects of their research output. They also serve as a basis for further discussion concerning their publication strategies. These reports are eventually intended for informed peer review practices, and are therefore forwarded to the quality assurance and the rector's office and finally sent to the peers. The most important feature of the generated bibliometric report is its multidimensional and individual character. It relies on a variety of basic indicators and further control parameters in order to foster comprehensibility. Researchers, administrative staff and peers alike have confirmed the usefulness of this bibliometric approach. An increasing demand is noticeable. In total, 33 bibliometric reports have been delivered so far. Moreover, similar reports have also been produced for the bibliometric assessment of two faculties with great success.",
+      "citationCount": 0,
+      "doi": "10.5281/zenodo.45402",
+      "arxivId": "1601.08049",
+      "url": "https://www.semanticscholar.org/paper/31f7f8c6b3cf0ec6b434474f0810136832ff290a",
+      "venue": "arXiv.org",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/1601.08049"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "315daaf262d81a1c1aa701cffbe51e47ecdd770c",
+      "title": "Research on Gombrich's Academic Affinitive Community Based on Data Mining",
+      "authors": [
+        {
+          "name": "Jing Ye",
+          "authorId": "153173967"
+        }
+      ],
+      "year": 2016,
+      "abstract": "From the knowledge exchange and influence angle, taking bibliometrics as the research methods, the author selected the journal papers which cited Gombrich academic literatures as the research object. Based on the literature data mining, this article described the academic affinitive relationships and characteristics between Gombrich and other scholars in the related fields of international art history. The main finding is Gombrich's core community which can be summarized as six research groups: iconology research group of Warburg school, philosophy research group of analytic aesthetics, psychological research group of visual & perceptual theory, research group of psychoanalysis, semiotics research group of post-structuralism, Italian art masters group in different periods. This study finally reveals Grombrich\u2019s significant academic status and influence, and provides a new method for the study of academic key figures and their affinitive communities in the Arts and Humanities. Keywords-Gombrich; data mining; academic affinitive community",
+      "citationCount": 0,
+      "doi": "10.2991/AIIE-16.2016.79",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/315daaf262d81a1c1aa701cffbe51e47ecdd770c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "38c0be52c91cbcfb998e71091a20134f1c8864d7",
+      "title": "Application of Ny\u0101ya to Intelligent Systems",
+      "authors": [
+        {
+          "name": "G. Mahalakshmi",
+          "authorId": "1801930"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-319-17873-8_15",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/38c0be52c91cbcfb998e71091a20134f1c8864d7",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "225-243",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ed85032031e983ed74a09e539c1ec91771dda639",
+      "title": "Differences in Received Citations over Time and Across Fields in China",
+      "authors": [
+        {
+          "name": "Siluo Yang",
+          "authorId": "2339501"
+        },
+        {
+          "name": "Junping Qiu",
+          "authorId": "1971567"
+        },
+        {
+          "name": "Jingda Ding",
+          "authorId": "2262709"
+        },
+        {
+          "name": "Houqiang Yu",
+          "authorId": "35246507"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ed85032031e983ed74a09e539c1ec91771dda639",
+      "venue": "International Conference on Scientometrics and Informetrics",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

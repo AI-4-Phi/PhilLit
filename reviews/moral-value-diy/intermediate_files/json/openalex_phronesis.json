@@ -1,0 +1,1219 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Aristotle phronesis practical wisdom",
+  "results": [
+    {
+      "openalex_id": "W2912708568",
+      "doi": "10.1159/000496136",
+      "title": "Phronesis and the Knowledge-Action Gap in Moral Psychology and Moral Education: A New Synthesis?",
+      "authors": [
+        {
+          "name": "Catherine A. Darnell",
+          "openalex_id": "A5044136686",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Liz Gulliford",
+          "openalex_id": "A5003663744",
+          "orcid": "https://orcid.org/0000-0003-1184-1369",
+          "institutions": [
+            "University of Northampton"
+          ]
+        },
+        {
+          "name": "Kristj\u00e1n Kristj\u00e1nsson",
+          "openalex_id": "A5035396893",
+          "orcid": "https://orcid.org/0000-0002-8584-4178",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Panos Paris",
+          "openalex_id": "A5008118081",
+          "orcid": "https://orcid.org/0000-0002-2549-1075",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "This article has two aims. First, to offer a critical review of the literatures on two well-known single-component solutions to the problem of a gap between moral knowledge and moral action: &lt;i&gt;moral identity&lt;/i&gt; and &lt;i&gt;moral emotions&lt;/i&gt;. Second, to take seriously the rising interest in Aristotle-inspired virtue ethics and character development within the social sciences: approaches that seem to assume that the development of &lt;i&gt;phronesis&lt;/i&gt; (practical wisdom) bridges the gap in question. Since phronesis is a multicomponent construct, the latter part of this article offers an overview of what those different components would be, as a necessary precursor to operationalising them if the phronesis hypothesis were to be subjected to empirical scrutiny. The idea of a neo-Aristotelian multicomponent solution to the \u201cgappiness problem\u201d invites comparisons with another multicomponent candidate, the neo-Kohlbergian &lt;i&gt;four-component model&lt;/i&gt;, with which it shares at least surface similarities. Some space is thus devoted to the proposed theoretical uniqueness of a phronesis-based multicomponent model vis-\u00e0-vis the neo-Kohlbergian one. Our main conclusion is that \u2013 weaknesses in its developmental psychological grounding notwithstanding \u2013 operationalising the phronesis model for the purposes of instrument design and empirical inquiry would be a feasible and potentially productive enterprise.",
+      "cited_by_count": 201,
+      "type": "article",
+      "source": {
+        "name": "Human Development",
+        "type": "journal",
+        "issn": [
+          "0018-716X",
+          "1423-0054"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://research.birmingham.ac.uk/en/publications/7c467376-99ce-4f73-8c50-fbcb5de25b0e"
+      },
+      "topics": [
+        "Psychology of Moral and Emotional Judgment",
+        "Ethics in Business and Education",
+        "Emotions and Moral Behavior"
+      ],
+      "referenced_works_count": 101,
+      "url": "https://openalex.org/W2912708568"
+    },
+    {
+      "openalex_id": "W180180927",
+      "doi": null,
+      "title": "The wise leader.",
+      "authors": [
+        {
+          "name": "Ikujiro Nonaka",
+          "openalex_id": "A5037302894",
+          "orcid": "https://orcid.org/0000-0003-4823-5098",
+          "institutions": [
+            "Hitotsubashi University"
+          ]
+        },
+        {
+          "name": "Hirotaka Takeuchi",
+          "openalex_id": "A5011580708"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-05-01",
+      "abstract": "In an era of increasing discontinuity, wise leadership has nearly vanished. Many leaders find it difficult to reinvent their corporations rapidly enough to cope with new technologies, demographic shifts, and consumption trends. They can't develop truly global organizations that operate effortlessly across borders. And they find it tough to ensure that their people adhere to values and ethics. The authors assert that leaders must acquire practical wisdom, or what Aristotle called phronesis: experiential knowledge that enables people to make ethically sound judgments. Wise leaders demonstrate six abilities: (i) They make decisions on the basis of what is good for the organization and for society. (2) They quickly grasp the essence of a situation and fathom the nature and meaning of people, things, and events. (3) They provide contexts in which executives and employees can interact to create new meaning. (4) They employ metaphors and stories to convert their experience into tacit knowledge that others can use. (5) They exert political power to bring people together and spur them to act. (6) They use apprenticeship and mentoring to cultivate practical wisdom in orders.",
+      "cited_by_count": 178,
+      "type": "article",
+      "source": {
+        "name": "PubMed",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Leadership and Management in Organizations",
+        "Human Resource and Talent Management",
+        "Leadership, Courage, and Heroism Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W180180927"
+    },
+    {
+      "openalex_id": "W134638635",
+      "doi": "10.1007/978-94-6091-731-8_3",
+      "title": "Practitioner Reflection and Judgement as Phronesis",
+      "authors": [
+        {
+          "name": "Elizabeth Anne Kinsella",
+          "openalex_id": "A5074410848",
+          "orcid": "https://orcid.org/0000-0002-7306-7957",
+          "institutions": [
+            "Western University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "Dominant conceptions of professional knowledge appear to have largely forgotten Aristotle's conception of phronesis and its place in considerations of what it means to know in professional life. Aristotle draws attention to phronesis as a form of reflective practical wisdom that complements techne, technically oriented approaches, and episteme, scientifically oriented approaches, in considerations of what it might mean to develop and enact professional knowledge.",
+      "cited_by_count": 89,
+      "type": "book-chapter",
+      "source": {
+        "name": "SensePublishers eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Legal Education and Practice Innovations",
+        "Education and Critical Thinking Development",
+        "Counseling, Therapy, and Family Dynamics"
+      ],
+      "referenced_works_count": 71,
+      "url": "https://openalex.org/W134638635"
+    },
+    {
+      "openalex_id": "W2134739274",
+      "doi": "10.1177/0305829812441893",
+      "title": "The \u2018Practice Turn\u2019, <i>Phronesis</i> and Classical Realism: Towards a Phronetic International Political Theory?",
+      "authors": [
+        {
+          "name": "Chris Brown",
+          "openalex_id": "A5014431408",
+          "orcid": "https://orcid.org/0000-0002-3640-7449",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-05-24",
+      "abstract": "The \u2018practice turn\u2019 in International Relations seems on the face of it to be a very promising development; generally associated with Bourdieu and Foucault, it can also be seen as linked to the Aristotelian notion of phronesis (prudence or practical wisdom) and to the classical realist virtue of \u2018prudence\u2019 ( prudentia). There are family resemblances here, but also differences; for Aristotle and the realists, practical wisdom is associated more with the intellect, while the \u2018practice turn\u2019 places great emphasis on the role of habitual behaviour. Writers as diverse as Flyvbjerg and Macintyre have argued for a \u2018phronetic social science\u2019 as an alternative to neo-positivist conceptions of the role of the conduct of social enquiry \u2013 but the classical realists could argue that they have already provided a \u2018phronetic international relations theory\u2019 . Still, the implications of Aristotle\u2019s comment that \u2018prudent young people do not seem to be found\u2019 need to be confronted. Is \u2018practical wisdom\u2019 something that can be achieved by study, or is it only achievable in the context of the kind of lived experience that few students of International Relations or International Political theory of whatever age can actually claim?",
+      "cited_by_count": 74,
+      "type": "article",
+      "source": {
+        "name": "Millennium Journal of International Studies",
+        "type": "journal",
+        "issn": [
+          "0305-8298",
+          "1477-9021"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "Peacebuilding and International Security",
+        "Political Science Research and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2134739274"
+    },
+    {
+      "openalex_id": "W2981585501",
+      "doi": "10.1057/s41599-019-0331-9",
+      "title": "An Aristotelian interpretation of practical wisdom: the case of retirees",
+      "authors": [
+        {
+          "name": "Peter Massingham",
+          "openalex_id": "A5015228246",
+          "orcid": "https://orcid.org/0000-0002-4785-4535",
+          "institutions": [
+            "University of Wollongong"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-22",
+      "abstract": "Abstract This paper aims to improve understanding of the concept of practical wisdom. The theoretical lens used is Aristotle\u2019s practical rationality or \u2018phronesis\u2019. Researchers argue that practical wisdom should be used as an organising framework for professional knowledge. Aristotle believed that practical wisdom as the highest intellectual virtue. Phronesis is the complicated interactions between general (theory) and practical (judgement). The contribution of this paper is to discuss the properties of practical wisdom and how they interact based on an interpretation of retirees\u2019 knowledge. The paper summarises in-depth face-to-face interviews with nine retirees, i.e., nine separate case studies. A structured interview guideline based on a conceptual framework derived from literature was used to examine the nature of retirees\u2019 practical wisdom. People with wisdom make better decisions. Whereas episteme\u2019s technical knowledge may address complicated tasks, techne\u2019s wisdom enables people to resolve truly complex tasks. Techne provides personal judgement which enables the professional to judge their actions from an external and internal perspective. Knowing that others and the individual themselves are happy with the quality of their work creates a morality that enables an inner calm and personal satisfaction leading to eudaimonia (feeling happy about life). People with wisdom behave differently. Phronesis\u2019s cognitive properties create awareness of the knowledge that may be trusted to be seen to be behaving normally or appropriately in the organisation. The global population is ageing. This has implications for future workforce planning as experience is lost and capability gaps emerge. Retires may represent a valuable source of knowledge to help address this gap. The results are limited to nine individual case studies and four disciplines. The findings provide exciting opportunities for further research. The conceptual models may be further investigated with retirees in other disciplines.",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Palgrave Communications",
+        "type": "journal",
+        "issn": [
+          "2055-1045"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.nature.com/articles/s41599-019-0331-9.pdf"
+      },
+      "topics": [
+        "Aging and Gerontology Research",
+        "Management and Organizational Studies",
+        "Appreciative Inquiry and Organizational Change"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W2981585501"
+    },
+    {
+      "openalex_id": "W3192895266",
+      "doi": "10.1007/s10551-021-04912-2",
+      "title": "Collective Phronesis in Business Ethics Education and Managerial Practice: A Neo-Aristotelian Analysis",
+      "authors": [
+        {
+          "name": "Kristj\u00e1n Kristj\u00e1nsson",
+          "openalex_id": "A5035396893",
+          "orcid": "https://orcid.org/0000-0002-8584-4178",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-08-08",
+      "abstract": null,
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10551-021-04912-2.pdf"
+      },
+      "topics": [
+        "Ethics in Business and Education",
+        "Psychology of Moral and Emotional Judgment",
+        "Emotions and Moral Behavior"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W3192895266"
+    },
+    {
+      "openalex_id": "W4210319060",
+      "doi": "10.1139/facets-2021-0064",
+      "title": "Teaching phronesis in a research integrity course",
+      "authors": [
+        {
+          "name": "Mads Paludan Goddiksen",
+          "openalex_id": "A5026353411",
+          "orcid": "https://orcid.org/0000-0001-9790-1662",
+          "institutions": [
+            "University of Copenhagen"
+          ]
+        },
+        {
+          "name": "Mickey Gjerris",
+          "openalex_id": "A5064054406",
+          "orcid": "https://orcid.org/0000-0001-5739-5988",
+          "institutions": [
+            "University of Copenhagen"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "More and more research institutions are implementing courses in research integrity (RI). Recent studies indicate that teachers of RI courses are increasingly adopting a \u201cphronetic\u201d approach to their teaching, where the focus is on nurturing values and practical wisdom\u2014what Aristotle called phronesis. When adopting a phronetic approach, it is important to understand what phronesis in relation to RI entails and how and to what extent an RI course can contribute to the development of research phronesis. This paper contains a practice-based discussion of the realistic aims of RI courses and a first step towards a specification of the skill set necessary for developing research phronesis drawing on experiences from the PhD courses on Responsible Conduct of Research at the University of Copenhagen. We discuss the limited extent to which research phronesis can be taught in short courses and examine the broader implications of this for the role of RI courses in the training of good researchers.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "FACETS",
+        "type": "journal",
+        "issn": [
+          "2371-1671"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.facetsjournal.com/doi/pdf/10.1139/facets-2021-0064"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics in Clinical Research",
+        "Academic integrity and plagiarism"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W4210319060"
+    },
+    {
+      "openalex_id": "W357616576",
+      "doi": "10.5860/choice.186713",
+      "title": "The Cambridge companion to Aristotle's Nicomachean ethics",
+      "authors": [],
+      "publication_year": 2015,
+      "publication_date": "2015-01-21",
+      "abstract": "1. Introduction: ethics as practical science Ron Polansky 2. Beginning with eudaimonia C. D. C. Reeve 3. Happiness and the external goods T. D. Roche 4. Why is Aristotle's virtue of character a mean? Taking Aristotle at his word (NE II.6) Lesley Brown 5. Choice and moral responsibility (NE III.1-5) Susanne Bobzien 6. Courage and temperance Giles Pearson 7. The social virtues (NE IV) Helen Cullyer 8. Giving justice its due Ron Polansky 9. The book on wisdom Carolo Natali 10. Phronesis and the virtues (NE VI.12-13) Daniel Russell 11. Was Aristotle a Humean? A partisan guide to the debate Jessica Moss 12. Aristotle's analysis of akratic action Hendrik Lorenz 13. Philosophical virtue: in defense of the grand end Kristen Inglis 14. The Nicomachean Ethics on pleasure Verity Harte 15. Finding oneself with friends Patrick Miller 16. Competing ways of life and ring-composition (NE X.6-8) Thornton Lockwood 17. The relationship between Aristotle's ethical and political discourses (NE X.9) Rachana Kamtekar 18. Protreptic aspects of Aristotle's Nicomachean Ethics D. S. Hutchinson and Monte Ransome Johnson 19. The Eudemian Ethics and its controversial relationship to the Nicomachean Ethics Lawrence Jost 20. Topical bibliography to Aristotle's Nicomachean Ethics Thornton Lockwood.",
+      "cited_by_count": 100,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W357616576"
+    },
+    {
+      "openalex_id": "W2040185757",
+      "doi": "10.1080/00071005.2014.929632",
+      "title": "Virtue, Practical Wisdom and Character in Teaching",
+      "authors": [
+        {
+          "name": "Sandra Cooke",
+          "openalex_id": "A5032044304",
+          "orcid": "https://orcid.org/0000-0003-0909-8887",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "David Carr",
+          "openalex_id": "A5102932848",
+          "orcid": "https://orcid.org/0000-0002-1323-6165",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-04-03",
+      "abstract": "Recent reflection on the professional knowledge of teachers has been marked by a shift away from more reductive competence and skill-focused models of teaching towards a view of teacher expertise as involving complex context-sensitive deliberation and judgement. Much of this shift has been inspired by an Aristotelian conception of practical wisdom (phronesis) also linked by Aristotle to the development of virtue and character. This has in turn led recent educational philosophers and theorists \u2013 inspired by latter-day developments in virtue ethics and virtue epistemology \u2013 to investigate the contribution of various forms of virtue to the effective practice of teaching. In this light, the present paper undertakes further exploration of the logical geography of virtue, character and practical deliberation in teaching.",
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Educational Studies",
+        "type": "journal",
+        "issn": [
+          "0007-1005",
+          "1467-8527"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/epdf/10.1080/00071005.2014.929632?needAccess=true&role=button"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Philosophical Ethics and Theory",
+        "Education and Critical Thinking Development"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2040185757"
+    },
+    {
+      "openalex_id": "W1969390403",
+      "doi": "10.1353/pbm.0.0145",
+      "title": "Medical Education as Moral Formation: An Aristotelian Account of Medical Professionalsim",
+      "authors": [
+        {
+          "name": "Warren Kinghorn",
+          "openalex_id": "A5084705270",
+          "orcid": "https://orcid.org/0000-0002-6024-7094",
+          "institutions": [
+            "Durham VA Medical Center"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-02-28",
+      "abstract": "The medical professionalism movement, bolstered by many influential medical organizations and institutions, has in the last decade produced a number of conceptual definitions of professionalism and a number of concrete proposals for its measurement and teaching. These projects, however laudable, are misguided when they treat professionalism as a unitary descriptive concept rather than as a contested and therefore primarily evaluative one; when they conceive professionalism as a domain of medical practice separable in principle from other domains; and when they treat professionalism as, in principle, a specifiable goal or product of sufficiently well designed educational curricula. The logic of professionalism-as-product corresponds to the logic of techne (art or practical skill) in Aristotle's Nicomachean Ethics . Aristotle provides a cogent argument, however, that the moral excellences denoted by \"professionalism\" cannot be \"produced\" or even prespecified in the concrete; rather, they must be acquired through long practice under the careful concrete guidance of teachers who themselves embody these moral excellences. Phronesis (practical wisdom) rather than techne must therefore be the guiding logic of educational initiatives in medical professional formation, with particular emphasis on close mentorship and on the moral character both of students and of those who teach them.",
+      "cited_by_count": 60,
+      "type": "article",
+      "source": {
+        "name": "Perspectives in biology and medicine",
+        "type": "journal",
+        "issn": [
+          "0031-5982",
+          "1529-8795"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Innovations in Medical Education",
+        "Ethics in medical practice",
+        "Healthcare cost, quality, practices"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W1969390403"
+    },
+    {
+      "openalex_id": "W638048768",
+      "doi": "10.5860/choice.51-0202",
+      "title": "Aristotle on practical wisdom: Nicomachean ethics VI",
+      "authors": [],
+      "publication_year": 2013,
+      "publication_date": "2013-08-20",
+      "abstract": "Nicomachean Ethics VI is considered one of classical philosophy's greatest achievements. Aristotle on Practical Wisdom is the first full-scale commentary on this work to be issued in over a century, and is the most comprehensive and philosophically illuminating to date. A meticulous translation coupled with facing-page analysis enables readers to engage directly with the account of phronesis or practical wisdom that Aristotle is developing, while a full introduction locates that account in the context of his ethical thought and of later ethical thought more generally. The commentary discusses the text line by line, illuminating obscure passages, explaining technical ones, and providing a new overall interpretation of the work and the nature of practical reason. A companion volume, Action, Contemplation, and Happiness, expands on this interpretation to provide a startling new picture of Aristotle's thought as a whole. Although the two books can be approached separately, together they constitute one of the most daring and original contemporary readings of Aristotle's philosophy. Aimed at committed students of these notoriously difficult writings, C. D. C. Reeve's engaging and lucid books should find a wide audience among philosophers, classicists, and all readers willing to wrestle with a thinker of unparalleled subtlety, depth, and scope.",
+      "cited_by_count": 35,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W638048768"
+    },
+    {
+      "openalex_id": "W3005061434",
+      "doi": "10.1080/00071005.2020.1724259",
+      "title": "SEEKING THE COMMON GOOD IN EDUCATION THROUGH A POSITIVE CONCEPTION OF SOCIAL JUSTICE",
+      "authors": [
+        {
+          "name": "James Arthur",
+          "openalex_id": "A5104093354",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Kristj\u00e1n Kristj\u00e1nsson",
+          "openalex_id": "A5035396893",
+          "orcid": "https://orcid.org/0000-0002-8584-4178",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Candace Vogler",
+          "openalex_id": "A5005274233",
+          "institutions": [
+            "University of Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-03",
+      "abstract": "Many Schools and Faculties of Education in the UK and in the Western world have \u2018social justice\u2019 written into their mission statements, and some departments and research centres based in Schools of Education include \u2018social justice\u2019 in their department names. But are they concerned by questions of social justice in education, or has the term become somewhat vacuous and devoid of substantive meaning? The present article subjects recent discourses about social justice in education to scrutiny and finds them wanting in various respects, in particular when juxtaposed with historical accounts of justice by philosophers such as Aristotle or Aquinas. Among the complaints made here is that most educational accounts (a) make do with a \u2018negative\u2019 conception of social justice as focused on specific cases of injustices without any positive conception of what social justice means in its entirety, (b) foreground institutional justice at the expense of justice as a moral or civic virtue, (c) fail to connect the identification of justice or injustice to an account of phronesis or practical wisdom for integrating values, (d) shy away from associating social justice with the \u2018common good\u2019 and (e) fail to get to grips with some thorny normative questions about the role of justice in the ordering of goods in a hierarchy towards the highest good. Along the way, various remedies are suggested in order to make \u2018education for social justice\u2019 a more workable ideal.",
+      "cited_by_count": 40,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Educational Studies",
+        "type": "journal",
+        "issn": [
+          "0007-1005",
+          "1467-8527"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://pure-oai.bham.ac.uk/ws/files/90984731/Seeking_the_good_2_Author_Copy_for_Pure.pdf"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Religious Education and Schools",
+        "Peace and Human Rights Education"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W3005061434"
+    },
+    {
+      "openalex_id": "W4281712128",
+      "doi": "10.1007/s40889-022-00145-7",
+      "title": "Teaching phronesis to aspiring police officers: some preliminary philosophical, developmental and pedagogical reflections",
+      "authors": [
+        {
+          "name": "Kristj\u00e1n Kristj\u00e1nsson",
+          "openalex_id": "A5035396893",
+          "orcid": "https://orcid.org/0000-0002-8584-4178",
+          "institutions": [
+            "University of Birmingham"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-02",
+      "abstract": "Abstract According to Aristotle, the crucial meta-virtue of phronesis (practical wisdom) is cultivated through teaching and experience. But he remains mostly silent on the details of this developmental picture and its educational ramifications. This article focuses on the \u2018taught\u2019 element of phronesis development in the context of police ethics education. I begin by piecing together the developmental trajectory that Aristotle suggests towards full virtue, up to and including phronesis development. I also briefly list ten potential weaknesses of this picture. I then present a reconstructed Aristotelian model of phronesis and explain how the teaching element of phronesis education could be executed, with an illustration from an ongoing phronesis intervention for UK police-science students. However, I go on to dampen the enthusiasm about this \u2018taught\u2019 component, by explaining how relatively small the \u2018zone of proximal development\u2019 is that can be targeted by scaffolded teaching. Finally, I elicit some implications of the conclusion that most of phronesis development will need to be \u2018caught\u2019 from gradually unfolding personal and professional experiences.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Ethics Education",
+        "type": "journal",
+        "issn": [
+          "2363-9997",
+          "2364-0006"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40889-022-00145-7.pdf"
+      },
+      "topics": [
+        "Education and Critical Thinking Development",
+        "Psychology of Moral and Emotional Judgment",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4281712128"
+    },
+    {
+      "openalex_id": "W2087694610",
+      "doi": "10.1007/s11245-012-9117-z",
+      "title": "Politics and Practical Wisdom: Rethinking Aristotle\u2019s Account of Phronesis",
+      "authors": [
+        {
+          "name": "Chris W. Surprenant",
+          "openalex_id": "A5033411969",
+          "orcid": "https://orcid.org/0000-0001-5077-1346",
+          "institutions": [
+            "Tulane University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-08",
+      "abstract": null,
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Topoi",
+        "type": "journal",
+        "issn": [
+          "0167-7411",
+          "1572-8749"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2087694610"
+    },
+    {
+      "openalex_id": "W3185971162",
+      "doi": "10.1007/s40926-021-00179-9",
+      "title": "Practical and Theoretical Wisdom in Management Scholarship: Re-assesing the Use and Appropriations of Aristotle\u2019s Philosophy",
+      "authors": [
+        {
+          "name": "Tuomo Peltonen",
+          "openalex_id": "A5041751663",
+          "orcid": "https://orcid.org/0000-0001-6804-3371",
+          "institutions": [
+            "Aalto University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-07-19",
+      "abstract": "Abstract Within contemporary discussions on organizational wisdom, management scholars frequently turn to Aristotle\u2019s work to conceptualize wisdom as phronesis , or practical wisdom. Contrary to the prevailing view, this paper argues that Aristotle did not propose an exclusively practical or particularistic conception of wisdom but, instead acknowledged that wisdom broadly conceived consists of two types of intellectual virtue: theoretical wisdom ( sophia ) and practical wisdom. Aristotle\u2019s ultimate position regarding the relations between sophia and phronesis has remained, however, ambiguous, giving rise to different interpretations, and, more substantively, to the major appropriations of Aquinas, Heidegger and Gadamer. An analysis of the philosophical underpinnings of exemplary contributions to management wisdom suggests that research has predominantly applied Heideggerian and Gadamerian understandings of Aristotelian wisdom, while an Aquinian interpretation is largely absent in contemporary elaborations. Interpreting the Aristotelian notion of wisdom as dedicated purely to practical phronesis narrows the discussion on the nature of (organizational) wisdom within an Aristotelian framework in ways that do not give full credit to the breadth and complexity of Aristotle\u2019s thought.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of Management",
+        "type": "journal",
+        "issn": [
+          "1740-3812",
+          "2052-9597"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40926-021-00179-9.pdf"
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Workplace Spirituality and Leadership"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W3185971162"
+    },
+    {
+      "openalex_id": "W4210820511",
+      "doi": "10.1353/hph.2022.0000",
+      "title": "Phron\u00easis and Kalokagathia in Eudemian Ethics VIII.3",
+      "authors": [
+        {
+          "name": "Daniel Wolt",
+          "openalex_id": "A5055268648",
+          "orcid": "https://orcid.org/0000-0003-4815-3789",
+          "institutions": [
+            "Bilkent University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "In Eudemian Ethics VIII.3, Aristotle treats a virtue that he calls kalokagathia, \"nobility-and-goodness.\" This virtue appears to be quite important, and he even identifies it with \"perfect virtue\" (EEVIII.3, 1249a17). This makes it puzzling that the Nicomachean Ethics, a text that largely parallels the Eudemian Ethics, does not discuss kalokagathia at all. I argue that the reason for this difference has to do with the role that the intellectual virtue practical wisdom (phronesis) plays in these treatises. The Nicomachean Ethics, I argue, makes use of a more expansive conception of phronesis than does the Eudemian Ethics. Hence, the work that is done by kalokagathia in the Eudemian Ethics-crucially, accounting for the unity of the virtues-is done in the Nicomachean Ethics by phronesis.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Journal of the history of philosophy",
+        "type": "journal",
+        "issn": [
+          "0022-5053",
+          "1538-4586"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Classical Philosophy and Thought",
+        "Philosophical Ethics and Theory",
+        "Theology and Philosophy of Evil"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W4210820511"
+    },
+    {
+      "openalex_id": "W12404049",
+      "doi": "10.1007/978-94-6091-731-8_8",
+      "title": "Phronesis and the Practice of Science",
+      "authors": [
+        {
+          "name": "Farrukh Chishtie",
+          "openalex_id": "A5004072359",
+          "orcid": "https://orcid.org/0000-0002-6392-6084",
+          "institutions": [
+            "Western University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "Originally coined by Aristotle, and concerned with context, ethics, particulars, and practical rationality, phronesis is a rich concept. From the text Nicomachean Ethics (Aristotle, trans. 1976), it is usually translated as practical wisdom or prudence, a virtue related to moral thought.",
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": {
+        "name": "SensePublishers eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Hermeneutics and Narrative Identity",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W12404049"
+    },
+    {
+      "openalex_id": "W1553912262",
+      "doi": "10.1111/1468-5922.12004",
+      "title": "Reflections on knowledge and experience",
+      "authors": [
+        {
+          "name": "Warren Colman",
+          "openalex_id": "A5027183256",
+          "institutions": [
+            "St Albans City Hospital"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-04-01",
+      "abstract": "Abstract As analysts become more experienced, theoretical knowledge becomes more integrated and implicit and is gradually transformed into the practical wisdom ( phronesis ) described by Aristotle. While this leads to greater freedom in ways of working, it remains conditional on the consistent disciplined practice represented by the analytic attitude. In the context of my own development as an analyst, I suggest that increasingly the analyst works from the self rather than the ego and link this with Fordham's account of \u2018not knowing beforehand\u2019. Some implications for boundaries, enactment and the use of personal disclosure are discussed in relation to clinical material. I compare analysis with the wisdom traditions of religious practice and suggest that analysis is concerned with a way of living rooted in humane values of compassion and benevolence.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Journal of Analytical Psychology",
+        "type": "journal",
+        "issn": [
+          "0021-8774",
+          "1465-5922",
+          "1468-5922"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychotherapy Techniques and Applications",
+        "Mental Health and Psychiatry",
+        "Counseling, Therapy, and Family Dynamics"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W1553912262"
+    },
+    {
+      "openalex_id": "W4230042406",
+      "doi": "10.1017/cbo9781316471241",
+      "title": "Aristotle's &lt;I&gt;Ethics&lt;/I&gt; and Medieval Philosophy",
+      "authors": [
+        {
+          "name": "Anthony Celano",
+          "openalex_id": "A5114005853",
+          "institutions": [
+            "Stonehill College"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-03",
+      "abstract": "Aristotle&amp;apos;s Nicomachean Ethics had a profound influence on generations of later philosophers, not only in the ancient era but also in the medieval period and beyond. In this book, Anthony Celano explores how medieval authors recast Aristotle&amp;apos;s Ethics according to their own moral ideals. He argues that the moral standard for the Ethics is a human one, which is based upon the ethical tradition and the best practices of a given society. In the Middle Ages, this human standard was replaced by one that is universally applicable, since its foundation is eternal immutable divine law. Celano resolves the conflicting accounts of happiness in Aristotle&amp;apos;s Nicomachean Ethics, demonstrates the importance of the virtue of phronesis (practical wisdom), and shows how the medieval view of moral reasoning alters Aristotle&amp;apos;s concept of moral wisdom.",
+      "cited_by_count": 9,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religious, Philosophical, and Educational Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4230042406"
+    },
+    {
+      "openalex_id": "W4231071783",
+      "doi": "10.1007/978-3-030-00140-7_21-1",
+      "title": "Measuring Practical Wisdom",
+      "authors": [
+        {
+          "name": "Marcel Meyer",
+          "openalex_id": "A5029206467",
+          "orcid": "https://orcid.org/0000-0002-4273-7954",
+          "institutions": [
+            "Universidad de Navarra"
+          ]
+        },
+        {
+          "name": "Arm\u00e9nio Rego",
+          "openalex_id": "A5047841720",
+          "orcid": "https://orcid.org/0000-0003-0883-0511",
+          "institutions": [
+            "Universidade Cat\u00f3lica Portuguesa",
+            "Iscte \u2013 Instituto Universit\u00e1rio de Lisboa"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": {
+        "name": "International handbooks in business ethics",
+        "type": "book series",
+        "issn": [
+          "2213-106X",
+          "2213-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Workplace Spirituality and Leadership",
+        "Ethics in Business and Education",
+        "Leadership, Courage, and Heroism Studies"
+      ],
+      "referenced_works_count": 82,
+      "url": "https://openalex.org/W4231071783"
+    },
+    {
+      "openalex_id": "W1901913763",
+      "doi": "10.1007/s40926-015-0003-9",
+      "title": "Rationality in Management Theory and Practice: An Aristotelian Perspective",
+      "authors": [
+        {
+          "name": "Edwin Hartman",
+          "openalex_id": "A5014522505",
+          "institutions": [
+            "New York University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-01",
+      "abstract": null,
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of Management",
+        "type": "journal",
+        "issn": [
+          "1740-3812",
+          "2052-9597"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in Business and Education",
+        "Psychology of Moral and Emotional Judgment",
+        "Economic Theory and Institutions"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W1901913763"
+    },
+    {
+      "openalex_id": "W1977456544",
+      "doi": "10.1057/pol.2014.6",
+      "title": "The Golden Mean and the Golden Hammer: <i>Phronesis</i> and Method in Contemporary Political Science",
+      "authors": [
+        {
+          "name": "Edward W. Gimbel",
+          "openalex_id": "A5002095629",
+          "institutions": [
+            "University of Wisconsin\u2013Whitewater"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-04-01",
+      "abstract": "The Aristotelian concept of phronesis or practical wisdom has played a prominent role in the long and deep wake of the Perestroika controversy in political science, where a diverse group of practitioners rallied in opposition to the perceived hegemony of quantitative methods in the discipline. As scholars like Bent Flyvbjerg have proposed the contours of a post-Perestroikan social science, political scientists and theorists have taken his use of the idea of practical wisdom to herald the dawning of a new social science, less beholden to notions of method. This paper examines the post-Perestroikan appropriation of Aristotle using Hans-Georg Gadamer\u2019s interpretation of phronesis as a starting point. Viewed from this vantage, contemporary uses of phronesis seem less like the foundations for a new social science, and more like a new spin on the old arguments about method that have characterized social science since the mid-1800s.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Polity",
+        "type": "journal",
+        "issn": [
+          "0032-3497",
+          "1744-1684"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Science and Policy Research",
+        "Critical Realism in Sociology",
+        "Hermeneutics and Narrative Identity"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W1977456544"
+    },
+    {
+      "openalex_id": "W2788198148",
+      "doi": "10.4324/9781315182414-10",
+      "title": "The Institutional Framework of Professional Virtue 1",
+      "authors": [
+        {
+          "name": "Anne\u2010Marie S\u00f8ndergaard Christensen",
+          "openalex_id": "A5078660911",
+          "orcid": "https://orcid.org/0000-0002-1416-0051",
+          "institutions": [
+            "Instituto de Filosof\u00eda"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-03-05",
+      "abstract": "The turn to virtue in professional ethics (see, for example, Cocking & Oakley, 2001 and Banks & Gallagher, 2009) has meant greater focus on the importance of the moral character of professional practitioners as well as on the form of deliberation and judgement that Aristotle characterised as phronesis or practical wisdom. However, the case for professional exercise of practical wisdom also raises a number of issues regarding the institutional or organisational setting in which professional practices are embedded and conducted. In this chapter, I shall first indicate how and why virtue ethics may be considered especially suited to understand and address some of the ethical challenges facing contemporary professional practices, and then draw on a broadly Aristotelian understanding of phronesis or practical wisdom to explore the complex nature of professional deliberation and judgement. The main present aim is, however, to show how cultivation and employment of this form of practical reasoning is only possible in an organisational and institutional setting conducive to providing professional practitioners with scope and opportunities to consider a diverse range of professionally significant aims, issues and available courses of action. Furthermore, in the light of this exploration of the implications of organisational constraints for the cultivation and exercise of professional phronesis, it will here be shown what may happen if such opportunities are unduly restricted.",
+      "cited_by_count": 6,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Legal Education and Practice Innovations"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2788198148"
+    },
+    {
+      "openalex_id": "W2531886289",
+      "doi": "10.4324/9781315589251",
+      "title": "Intergenerational Mobilities",
+      "authors": [
+        {
+          "name": "Lesley Murray",
+          "openalex_id": "A5076742603",
+          "orcid": "https://orcid.org/0000-0001-7563-3695"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-04",
+      "abstract": "&lt;p&gt;In succumbing to a shattering existential angst, Shakespeares Hamlet asks who would bear the burdens of a weary life were it not for the&lt;/p&gt;&lt;blockquote&gt;&lt;p&gt;... dread of something after death &lt;/p&gt;&lt;p&gt;The undiscoverd country, from whose bourn &lt;/p&gt;&lt;p&gt;No traveller returns (Shakespeare c.1600, Act III, Scene I, 80)&lt;/p&gt; &lt;/blockquote&gt;&lt;p&gt;This chapter is about the geographies, mobilities and rhythms of growing up, growing old, and moving on to that undiscovered country. My reflections are motivated by the question: &lt;i&gt;As we move through the life-course how do we conduct or govern ourselves and each other in order to flourish?&lt;/i&gt; I want to provide a (contingent) response to that question by reference to two artistic interpretations about the life-course that resonate with scholarship on mobility and the geohumanities in which some of my work is positioned. I begin by considering flourishing as a form of conduct. In &lt;i&gt;The Ethics&lt;/i&gt;, Aristotle argues that everything we think, all our actions, and all our practices are intended for some higher purpose: this end is, in itself, the chief good (Book I:1). Accordingly, the virtuous capacity to flourish (&lt;i&gt;eudaimonia&lt;/i&gt;) moves well beyond gratuitous pleasure and warrants practical wisdom (&lt;i&gt;phronesis&lt;/i&gt;).&lt;/p&gt;",
+      "cited_by_count": 19,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Migration, Aging, and Tourism Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2531886289"
+    },
+    {
+      "openalex_id": "W3083904165",
+      "doi": "10.1111/1468-5922.12613",
+      "title": "Psychotherapy as a skilled practice",
+      "authors": [
+        {
+          "name": "Warren Colman",
+          "openalex_id": "A5027183256",
+          "institutions": [
+            "St Albans Museums",
+            "St Albans City Hospital",
+            "Psychometric Research & Development (United Kingdom)",
+            "St. Albans School"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-01",
+      "abstract": "Abstract While psychotherapy is related to both science and art, it is primarily a craft activity requiring the development of skilful practice, epitomized by the discipline of the analytic attitude. In terms of the forms of knowledge outlined by Aristotle, this places psychotherapy in the realm of \u2018 techn\u00ea \u2019 (arts and craft) rather than epist\u00eam\u00ea (science). In particular, the techn\u00ea of psychotherapy is concerned with the development of phronesis (practical wisdom) in both patient and analyst and its ultimate aim is concerned with the promotion of eudaimonia , a state of well\u2010being considered by Aristotle to be definitive of \u2018the good life\u2019. It is therefore fundamentally an ethical endeavour. The nature of psychotherapeutic skill is illustrated by analogy with three other forms of techn\u00ea \u2013 music, meditation and pottery. Clinical examples illustrate the crafting of interpretations and the art of patient holding.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Journal of Analytical Psychology",
+        "type": "journal",
+        "issn": [
+          "0021-8774",
+          "1465-5922",
+          "1468-5922"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Psychotherapy Techniques and Applications",
+        "Classical Philosophy and Thought",
+        "Kantian Philosophy and Modern Interpretations"
+      ],
+      "referenced_works_count": 62,
+      "url": "https://openalex.org/W3083904165"
+    },
+    {
+      "openalex_id": "W4384343765",
+      "doi": "10.2478/picbe-2023-0105",
+      "title": "Wisdom Management: A Semantic Analysis",
+      "authors": [
+        {
+          "name": "Constantin Br\u0103tianu",
+          "openalex_id": "A5073698436",
+          "orcid": "https://orcid.org/0000-0002-1029-7384",
+          "institutions": [
+            "National School of Political Science and Public Administration"
+          ]
+        },
+        {
+          "name": "Ruxandra Bejinaru",
+          "openalex_id": "A5065922305",
+          "orcid": "https://orcid.org/0000-0003-2331-155X",
+          "institutions": [
+            "\u015etefan cel Mare University of Suceava"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-01",
+      "abstract": "Abstract The purpose of this paper is to perform a semantic analysis of wisdom management that constitutes the driving force for a wise company. That is a company whose goal goes beyond the economic paradigm based on profit maximization. It is a company where managers apply practical wisdom in their decision making processes. Aristotle used to call this practical wisdom phronesis and to consider a higher-order knowledge in his knowledge ontology. Although in the literature there are many papers and books focusing on phronesis, there is no critical analysis from a semantic point of view that is necessary to understand what it is and how it can be applied in wisdom management. Also, for a deeper investigation of the semantic clusters associated with wisdom management, we perform a bibliometric analysis using VOSviewer, a specialized software for such kinds of studies. Our findings show that wisdom management represents a kind of idealistic process because it is based on o set of values that are not converging toward profit maximization but toward a sustainable company focusing on the well-being of all employees and of the community where the company operates. Wisdom management deeds wise leaders and a wise education for them, which are still far from the present reality.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the ... International Conference on Business Excellence",
+        "type": "conference",
+        "issn": [
+          "2502-0226",
+          "2558-9652"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://sciendo.com/pdf/10.2478/picbe-2023-0105"
+      },
+      "topics": [
+        "Workplace Spirituality and Leadership",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4384343765"
+    },
+    {
+      "openalex_id": "W4281563276",
+      "doi": "10.1017/9781009085724.018",
+      "title": "Wisdom in the Professions",
+      "authors": [
+        {
+          "name": "Barry Schwartz",
+          "openalex_id": "A5052719413",
+          "orcid": "https://orcid.org/0000-0001-6947-9871"
+        },
+        {
+          "name": "Kenneth Evan Sharpe",
+          "openalex_id": "A5005358811"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-26",
+      "abstract": "Aristotle, in Nicomachean Ethics, wrote of the importance of what he called practical wisdom (phronesis) as a key guide to human action. Practical wisdom is the will to do the right thing in a given situation, and the skill to figure out what the right thing is. This chapter discusses what practical wisdom is, and illustrates why it is needed for successful practice in almost all professions. Will is essential because it keeps professionals on track to pursue the proper aims of a profession (eg., healing the sick and easing suffering, in medicine), and skill is important because every situation is different and professionals need empathy, improvisation, good listening, imagination, and perspective taking to find the actions that each situation requires.",
+      "cited_by_count": 4,
+      "type": "book-chapter",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Empathy and Medical Education",
+        "Innovations in Medical Education",
+        "Health and Medical Research Impacts"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W4281563276"
+    },
+    {
+      "openalex_id": "W4293242472",
+      "doi": "10.34190/eckm.23.1.798",
+      "title": "Knowledge Dynamics and Phronesis in Performing Family Business",
+      "authors": [
+        {
+          "name": "Constantin Br\u0103tianu",
+          "openalex_id": "A5073698436",
+          "orcid": "https://orcid.org/0000-0002-1029-7384",
+          "institutions": [
+            "National School of Political Science and Public Administration"
+          ]
+        },
+        {
+          "name": "Adrian Motoc",
+          "openalex_id": "A5087197474",
+          "institutions": [
+            "National School of Political Science and Public Administration"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-25",
+      "abstract": "The purpose of this paper is to analyze the role of knowledge dynamics and phronesis in performing family business and show that both constructs constitute core competencies for these specific organizations within the Romanian economic environment. Knowledge dynamics have different interpretations depending on the metaphorical thinking used in conceptualizing knowledge. We based our research on the energy metaphor and the theory of knowledge fields, adopting a thermodynamics perspective. Rational, emotional, and spiritual knowledge interact continuously, and each form of knowledge can be transformed into another form, like in thermodynamics. Aristotle introduced Phronesis when he explained that knowledge manifests in one of the following fundamental forms: episteme, techne, and phronesis. Phronesis represents prudence or practical wisdom in making decisions. Aristotle remarks that phronesis is concerned with action about good or bad things for the human being, underlying the spiritual characteristic of this form of knowledge. Today, there is a significant trend in the knowledge management research reflecting the need to better understand the role of knowledge dynamics and phronesis in developing wise organizations (see for instance, the recent book published by Ikujiro Nonaka and Hirotaka Takeuchi, and the works published by Raysa Rocha and Paulo Pinheiro). The present research focuses on the role of knowledge dynamics and phronesis in the family business, considering that relations between the family members differ from employees' relations in a company, from emotional and spiritual points of view. We performed qualitative research based on a series of interviews with members of such a family business. We processed the qualitative data based on the grounded theory. Findings demonstrate that knowledge dynamics and phronesis play a significant role in the process of decision making and achieving a competitive advantage in the business environment.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "European Conference on Knowledge Management",
+        "type": "journal",
+        "issn": [
+          "2048-8963",
+          "2048-8971"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://papers.academic-conferences.org/index.php/eckm/article/download/798/470"
+      },
+      "topics": [
+        "Family Business Performance and Succession"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W4293242472"
+    },
+    {
+      "openalex_id": "W3082918259",
+      "doi": "10.17570/stj.2020.v6n1.a12",
+      "title": "ethics of responsibility: Fallibilism, futurity and phronesis",
+      "authors": [
+        {
+          "name": "Anton van Niekerk",
+          "openalex_id": "A5102244376",
+          "institutions": [
+            "Stellenbosch University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-28",
+      "abstract": "In this article, I deal with the issue of a possible ethics of responsibility (ER) from a philosophical perspective in general, and bioethics in particular. My aim is to explore whether an ER is able to incorporate or integrate some, if not most, of the valid (and valuable) aspects of utilitarianism and deontology, without succumbing to most of the glaring shortcomings of these two famous frameworks. If such an enterprise could be successful, I would venture to infer that the ER could indeed be highly relevant for the time in which we live. I develop three central ideas of the framework of the ethics of responsibility. These three ideas are, firstly, that an appropriate framework for moral decision-making requires us to make room for the possibility of failure; secondly, we must see the implications of Jonas\u2019 emphasis on the need for an ethics of futurity for taking cognisance of the consequences of acts, and, thirdly, that although consequences of actions may be important, as utilitarianism has always insisted, consequences are not enough. Moral actions are also of necessity guided by rules and principles when making moral decisions. It is particularly in this respect that I shall, at the end, draw on the insights of Aristotle in respect of his notion of phronesis. The crux of my argument is to be found in what Aristotle identifies as the essence of moral knowledge. Moral knowledge respects and often builds upon the norms and action guides that pervade social life. However, merely drawing on deep-seated norms and conventions is not enough. These norms and conventions require application in a host of practical situations. Exactly how they are to be applied, is far from self-evident. That is something that we learn in the practice of daily life by the deliberation that essentially characterises phronesis or prudence (practical wisdom).",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Stellenbosch Theological Journal",
+        "type": "journal",
+        "issn": [
+          "2413-9459",
+          "2413-9467"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.17570/stj.2020.v6n1.a12"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Patient Dignity and Privacy",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3082918259"
+    },
+    {
+      "openalex_id": "W2954830069",
+      "doi": "10.14321/rhetpublaffa.22.2.0177",
+      "title": "Public Health Experts, Expertise, and Ebola: A Relational Theory of Ethos",
+      "authors": [
+        {
+          "name": "Celeste M. Condit",
+          "openalex_id": "A5022383987"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-01",
+      "abstract": "Abstract The key public health officials in the United States have been criticized for their work in the Ebola outbreak of 2014\u201315 by citizens, public officials, and health scholars from multiple disciplines. There are numerous grounds for these complaints, but underlying many of them was the perception of \u201cfailed leadership\u201d that is here traced in substantial part to the embodiment of a positionality based in a presumed logos-based power instead of an ethos-based relationship between public health expert and public. Because any leader\u2019s public ethos is dependent on the cultural ethos of audiences who promote them to leadership, this essay combines the Aristotelian topoi for ethos (goodsense, goodwill, goodness) and contemporary redefinitions of ethos as cultural-level phenomena (either \u201cdwelling places,\u201d ideologies, or ethical and cultural codes) to conceptualize ethos as the activation, rebuilding, or maintenance of relationships among different social positions: publics and institutions. The complexities of the Ebola epidemic\u2014with its national and international dimensions and its partially faulty scientific grounding\u2014make visible the predisposition toward positional gaps between publics and public experts regarding interests (eunoia) and goods (ar\u00eate), with concomitant difficulties for the sharing of practical wisdom (phronesis). Aristotle was correct that such gaps cannot be bridged by logos, and the pervasive insistence on more logos as corrective therefore may contribute to public mistrust of all expertise.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Rhetoric and Public Affairs",
+        "type": "journal",
+        "issn": [
+          "1094-8392",
+          "1534-5238"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Rhetoric and Communication Studies",
+        "Misinformation and Its Impacts",
+        "Public Relations and Crisis Communication"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W2954830069"
+    }
+  ],
+  "count": 30,
+  "errors": []
+}

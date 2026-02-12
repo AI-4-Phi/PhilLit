@@ -1,0 +1,137 @@
+[s2_batch.py] Connecting to Semantic Scholar API...
+[s2_batch.py] Batch fetching 5 paper(s)...
+[s2_batch.py] Rate limited, backing off (attempt 1/5)...
+[s2_batch.py] Processing 5 responses...
+[s2_batch.py] Found 5 papers, 0 not found
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "5 paper IDs",
+  "results": [
+    {
+      "paperId": "04c1e8378bbd247ddb8d509e65f289e808a07ce6",
+      "title": "The Human Condition",
+      "authors": [
+        {
+          "name": "Hannah Arendt",
+          "authorId": "2248181601"
+        }
+      ],
+      "year": 1958,
+      "abstract": null,
+      "citationCount": 373,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/04c1e8378bbd247ddb8d509e65f289e808a07ce6",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "04c1e8378bbd247ddb8d509e65f289e808a07ce6"
+    },
+    {
+      "paperId": "e548949dac2366fd84034319e374089be7ba4d08",
+      "title": "Quiet Quitting as Compensatory Respect: Meaningful Work, Recognition, and the Entrepreneurial Ethic",
+      "authors": [
+        {
+          "name": "T. Corbin",
+          "authorId": "153651848"
+        },
+        {
+          "name": "Gene Flenady",
+          "authorId": "2287558760"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper employs Axel Honneth\u2019s recognition theory to interpret \u2018quiet quitting\u2019 \u2013 the practice of limiting work efforts to contracted requirements \u2013 as a strategic response by workers facing misrecognition in their work environment. Honneth argues that misrecognition in any one of three social spheres (the family, political society, and the workplace) constitutes disrespect and causes psychological harm. While Honneth contends that experiences of disrespect tend to motivate collective \u201cstruggles for recognition,\u201d we suggest that quiet quitters present an alternative response to disrespect, individually seeking recognition in other social spheres rather than engaging in collective action. Further, we draw on Honneth to suggest that the contemporary \u201centrepreneurial\u201d work ethic \u2013 the widespread expectation that workers invest emotionally in their work role \u2013 can in practice undermine workplace recognition, contributing to quiet quitters\u2019 compensatory emphasis on recognitive relations outside of work. This recognition-theoretical approach extends current discussions around quiet quitting and yields valuable insights for management theory and practice regarding the critical role of genuine employee recognition in promoting individual well-being and meaningful work experiences.",
+      "citationCount": 8,
+      "doi": "10.1007/s40926-024-00320-4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e548949dac2366fd84034319e374089be7ba4d08",
+      "venue": "Philosophy of Management",
+      "journal": {
+        "name": "Philosophy of Management",
+        "pages": "461 - 480",
+        "volume": "23"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "e548949dac2366fd84034319e374089be7ba4d08"
+    },
+    {
+      "paperId": "dfb42115ded990b92942fb3285220b4bea88b4bf",
+      "title": "Labor automation for fair cooperation: Why and how machines should provide meaningful work for all",
+      "authors": [
+        {
+          "name": "Denise Celentano",
+          "authorId": "115466896"
+        }
+      ],
+      "year": 2023,
+      "abstract": "By affecting work, resources, organizations, and people's lives, automation processes can be disruptive of the basic structure of society. Nonetheless, we may benefit from this disruption, as automation may offer opportunities to make social cooperation fairer. Just as philosophers have addressed the problem of which values and principles should regulate the distribution of goods, so we may consider the problem of the values and principles guiding technological change with regard to work. Indeed, automation is often addressed from a distributive perspective. A prevailing concern in the debate is about making sure that the technologically unemployed will not lose access to income through unconditional redistributive policies, while some have suggested policies like a \u201crobot tax\u201d to disincentivize companies' investment in labor-saving devices. While crucial given the massive increase in profits afforded by automation and the inequalities that go with it, concerns about income are not the only ones raised by automation. Without underestimating their relevance, in this article I leave aside problems about income to focus on automation from the perspective of work. That is, my concern here is on social cooperation from the perspective of contribution instead of distribution, within a framework that may be called technological contributive justice. If UBI advocates expect everyone to benefit from automation in their income, the contributive perspective postulates that everyone should benefit from automation in their work. There are three main reasons behind this shift. First, even in a world in which income were unconditionally accessible to all, there would be the problem of how to fairly organize the unautomated socially necessary labor (e.g., waste collection, care work, etc.). I call this the Received: 14 November 2022 Revised: 27 July 2023 Accepted: 7 August 2023",
+      "citationCount": 4,
+      "doi": "10.1111/josp.12548",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dfb42115ded990b92942fb3285220b4bea88b4bf",
+      "venue": "Journal of Social Philosophy",
+      "journal": {
+        "name": "Journal of Social Philosophy"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "dfb42115ded990b92942fb3285220b4bea88b4bf"
+    },
+    {
+      "paperId": "b6c6f4d94a61dbeb0c71a5f185b3266cc66c51cd",
+      "title": "Meaningful work, nonperfectionism, and reciprocity",
+      "authors": [
+        {
+          "name": "Caleb Althorpe",
+          "authorId": "2142207222"
+        }
+      ],
+      "year": 2022,
+      "abstract": "ABSTRACT Any liberal argument for incorporating meaningful work within a theory of justice inherits a burden of proof to show why it does not fall to the objection that privileging the work process valorizes particular ideas about the good and thereby unfairly privileges some persons over others. Existing liberal defences of meaningful work, which rely on the formative effects of work in contemporary economies, have a limited scope of appeal and do not provide a convincing reply to the objection. The paper offers an alternative reply by arguing that meaningful work, understood as a person-engaging social contribution, is intimately connected through reciprocity to the fundamental political idea of society as a system of cooperation between free and equal participating members. This makes the opportunity to engage in meaningful work a social basis of self-respect.",
+      "citationCount": 5,
+      "doi": "10.1080/13698230.2022.2137753",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b6c6f4d94a61dbeb0c71a5f185b3266cc66c51cd",
+      "venue": "Critical Review of International Social and Political Philosophy",
+      "journal": {
+        "name": "Critical Review of International Social and Political Philosophy",
+        "pages": "685 - 706",
+        "volume": "28"
+      },
+      "publicationTypes": null,
+      "_queryId": "b6c6f4d94a61dbeb0c71a5f185b3266cc66c51cd"
+    },
+    {
+      "paperId": "999d73a23c6366a71e92cc5224bd52d0c15d0e48",
+      "title": "Two Concepts of Meaningful Work",
+      "authors": [
+        {
+          "name": "Willem van der Deijl",
+          "authorId": "1656670656"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.1111/japp.12614",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/999d73a23c6366a71e92cc5224bd52d0c15d0e48",
+      "venue": "Journal of Applied Philosophy",
+      "journal": {
+        "name": "Journal of Applied Philosophy"
+      },
+      "publicationTypes": null,
+      "_queryId": "999d73a23c6366a71e92cc5224bd52d0c15d0e48"
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

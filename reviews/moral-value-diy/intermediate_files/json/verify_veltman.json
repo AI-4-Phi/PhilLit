@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Meaningful Work",
+    "author": "Veltman",
+    "year": 2016
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/acprof:oso/9780190618179.003.0004",
+      "title": "What Makes Work Meaningful?",
+      "authors": [
+        {
+          "family": "Veltman",
+          "given": "Andrea"
+        }
+      ],
+      "editors": [],
+      "year": 2016,
+      "container_title": "Meaningful Work",
+      "volume": "",
+      "issue": "",
+      "page": "105-141",
+      "publisher": "Oxford University Press",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1093/acprof:oso/9780190618179.003.0004",
+      "score": 40.228565
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

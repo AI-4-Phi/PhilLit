@@ -1,0 +1,1043 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "citation ethics citational justice epistemic injustice",
+  "results": [
+    {
+      "paperId": "61b584cd535a58eb9aa47f5a4b8a64ac9ea926f2",
+      "title": "Distributive Epistemic Injustice in AI Ethics: A Co-productionist Account of Global North-South Politics in Knowledge Production",
+      "authors": [
+        {
+          "name": "Abdullah Hasan Safir",
+          "authorId": "1752307190"
+        },
+        {
+          "name": "Kerry McInerney",
+          "authorId": "2330767744"
+        },
+        {
+          "name": "Alan F. Blackwell",
+          "authorId": "2298457480"
+        },
+        {
+          "name": "Ramit Debnath",
+          "authorId": "4923854"
+        }
+      ],
+      "year": 2025,
+      "abstract": "In this study, we analyse a comprehensive database (from 1960 to June 2024) of scientific publications in AI Ethics (n= 5755) using Web of Science (WoS) as a data source, to generate quantitative insights around the research trends within the field. We systematically curate the initial data to conduct a co-authorship and co-citation analysis with highly cited research outputs (n = 500) and a co-word analysis with most relevant research outputs (n = 1000). These bibliometric analyses result in multiple networked visualisations that map the status quo and the nature of current citational and collaborative practices among the experts, institutions and countries involved in global AI Ethics research. Using Sheila Jasanoff\u2019s co-production theory as a conceptual lens, we analyse these findings and show that the experts from the Global North currently legitimise their expertise in AI Ethics through dynamic citational and collaborative practices in knowledge production within the field. Collectively, they shape the discourses and institutional ways of understanding around the ethical development of AI technologies worldwide. This techno-politics of knowledge-making in AI Ethics culminates in creating epistemic injustice for the Global South. Drawing from Miranda Fricker and prominent feminist and postcolonial theorists, we explain how such injustice is produced and distributed through patterned pathways of co-production of AI Ethics. Thus, we show that the global project of AI Ethics fails to deliver its promise to be universally useful by keeping the global majority populations in the Southern regions marginalized as \u2018others\u2019.",
+      "citationCount": 3,
+      "doi": "10.1145/3715275.3732136",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/61b584cd535a58eb9aa47f5a4b8a64ac9ea926f2",
+      "venue": "Conference on Fairness, Accountability and Transparency",
+      "journal": {
+        "name": "Proceedings of the 2025 ACM Conference on Fairness, Accountability, and Transparency"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "f40165587ff5b1f83b4bd2537a7895846ae2f103",
+      "title": "Epistemic Injustice, Open Access, and Citational Justice",
+      "authors": [
+        {
+          "name": "C. Taswell",
+          "authorId": "1960508"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.48085/x3b678b7a",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f40165587ff5b1f83b4bd2537a7895846ae2f103",
+      "venue": "Brainiacs Journal of Brain Imaging And Computing Sciences",
+      "journal": {
+        "name": "Brainiacs Journal of Brain Imaging And Computing Sciences"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7435fad1a353528d2122841a39be094075b1de12",
+      "title": "Epistemic Injustice in and through AI",
+      "authors": [
+        {
+          "name": "Diana Chamma",
+          "authorId": "2393305404"
+        },
+        {
+          "name": "Naseem Ahmadpour",
+          "authorId": "34147093"
+        },
+        {
+          "name": "Syed Ishtiaque Ahmed",
+          "authorId": "2360541123"
+        },
+        {
+          "name": "Nusrat Jahan Mim",
+          "authorId": "2241907359"
+        },
+        {
+          "name": "Wendy Qi Zhang",
+          "authorId": "2214756282"
+        },
+        {
+          "name": "Katherine di Bona",
+          "authorId": "2393308677"
+        },
+        {
+          "name": "Thida Sachathep",
+          "authorId": "2186120027"
+        },
+        {
+          "name": "Heather A. Horst",
+          "authorId": "2241737162"
+        },
+        {
+          "name": "Jenna Imad Harb",
+          "authorId": "2393304848"
+        }
+      ],
+      "year": 2025,
+      "abstract": "AI is rapidly transforming knowledge production and practices across a range of domains, yet AI technologies often embed and perpetuate epistemic injustices\u2014privileging dominant perspectives while marginalising others. Despite growing awareness of AI biases, many frameworks used in HCI and AI ethics fail to fully account for how AI models reproduce historical and systemic exclusions. We propose to critically examine epistemic injustice in AI across six domains; generative AI, creative practice, healthcare, work, education and automated decision-making. We explore how AI systems respond to diverse sociocultural, linguistic, and epistemological inputs, revealing biases in representation, accessibility, and credibility. Through reflection and collaborative mapping, we aim to identify research priorities and intervention strategies at individual, community, and broader society levels. By fostering rich dialogue and nuanced evidencing, we seek to advance research on epistemic justice in AI and create pathways for more inclusive and equitable futures.",
+      "citationCount": 0,
+      "doi": "10.1145/3764687.3767279",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7435fad1a353528d2122841a39be094075b1de12",
+      "venue": "Australasian Computer-Human Interaction Conference",
+      "journal": {
+        "name": "Proceedings of the 37th Australian Conference on Human-Computer Interaction"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Book"
+      ]
+    },
+    {
+      "paperId": "dc7b067cd3bc21b5757ddcbd00a1411ac7dac006",
+      "title": "Are Metaphors Ethically Bad Epistemic Practice? Epistemic Injustice at the Intersections",
+      "authors": [
+        {
+          "name": "Kaitlin R. Sibbald",
+          "authorId": "2076847412"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract The COVID-19 pandemic brought the debate about the ethics of metaphors to the fore. In this article, I draw on blending theory\u2014a theory of cognition\u2014and theories of epistemic injustice to explore both the epistemic and ethical implications of metaphors. Beginning with a discussion of the conceptual alterations that may result from the use of metaphors, I argue that the effects these alterations have on available hermeneutical resources have the potential to result in a type of hermeneutical injustice distinct from the \u201clacuna\u201d described by Miranda Fricker (Fricker 2007). Following, I examine how metaphors may therefore be considered \u201cethically bad epistemic practice,\u201d as described by Rebecca Mason, because of how they may contribute to perpetuating an inequitable epistemic status quo (Mason 2011). Yet these same features may be used to promote epistemic justice in the context of intersectional power relationships. Situating the effects of metaphors within an inequitable yet dynamic epistemic system, I argue that foregrounding intersectional power dynamics enables us to interrogate the ethics of metaphors with consideration of both the epistemic and material consequences that may occur. I conclude by providing guidance for how, given that metaphors do epistemic work, we may use them to do ethical epistemic work.",
+      "citationCount": 1,
+      "doi": "10.1017/hyp.2023.90",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dc7b067cd3bc21b5757ddcbd00a1411ac7dac006",
+      "venue": "Hypatia",
+      "journal": {
+        "name": "Hypatia",
+        "pages": "801 - 821",
+        "volume": "38"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3c111dfaee93a1e80df823b4b6af0271fc7e6444",
+      "title": "Patient Participation in Clinical Ethics Interventions: A Requirement of Procedural and Epistemic Justice",
+      "authors": [
+        {
+          "name": "Marleen Eijkholt",
+          "authorId": "2372262683"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT The question whether or not patients ought to be involved in clinical ethics interventions (CEI) remains unresolved. While generally it has been recognized that patients\u2019 active participation in health care decisions and processes is important, this is not unequivocally accepted for CEIs. Patient participation in CEI (PP) is common in the United States, but PP seems far from the prevailing practice in Europe. In Europe, CEIs often involve discussions of the ethics issue by the healthcare team only; the patient or proxy is not included, consulted or even informed about such an intervention. In this paper, we submit that policies or standards which resist PP and disable it as an option conflict with procedural and epistemic justice requirements in CEIs. We conceptually develop how the two concepts of procedural justice (PJ) and epistemic justice (EJ) relate to CEIs and to PP. We also engage with four cases to illustrate the risks of injustices and how PP facilitates CEIs to meet justice requirements. We conclude that in settings where CEIs systematically do not involve PP, and where patients are neither asked about the ethics issue nor informed about the intervention, policy and practice presumptions should be adjusted.",
+      "citationCount": 0,
+      "doi": "10.1111/bioe.70027",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3c111dfaee93a1e80df823b4b6af0271fc7e6444",
+      "venue": "Bioethics",
+      "journal": {
+        "name": "Bioethics",
+        "pages": "159 - 167",
+        "volume": "40"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "cd935ee7bce07eca201934f338f72f22c04d102e",
+      "title": "Global health justice: epistemic theory and pandemic practice",
+      "authors": [
+        {
+          "name": "K. Boyd",
+          "authorId": "2479469"
+        }
+      ],
+      "year": 2023,
+      "abstract": "What does justice in global health bioethics require, and how might we achieve it? Two important contributions to this issue of the Journal address theoretical and practical aspects of these questions in different but complementary ways. From their careful analysis of \u2018epistemic injustice\u2019 in global health ethics (\u2018injustice as it applies to knowledge\u2019 which in one way or another puts a person at a disadvantage), Pratt and de Vries conclude that to achieve justice, much depends on what is meant by \u2018we\u2019 (\u2018the people designing, conducting and using knowledge from research\u2019) as well as the \u2018what\u2019 (\u2018the overall purpose/goal\u2019) and the \u2018where\u2019 (\u2018the context in which it is undertaken\u2019) of research. At present, they argue, epistemic injustice in bioethics is characterised by \u2018coloniality of knowledge\u2019: the \u2018silencing of the epistemologies, theories, principles, values, concepts, and experiences of the global South\u2019 is evident, for example, in \u2018an ignoring or rejection of the plurality of knowledge\u2019 and the \u2018presentation of the works of a few European philosophers as \u201cuniversal truths\u201d\u2019. \u2018Cognitive justice\u2019, by contrast, \u2018affirms the epistemological diversity of the world\u2019 and draws \u2018attention to inequalities in the knowledge that is valued in today\u2019s world, including emphases on technical and quantitative measures over qualitative measures rooted in lived experiences, and \u201cexpert\u201d scientific knowledge over local and indigenous ways of knowing\u2019. In seeking to remedy epistemic injustice in global health ethics, the authors first investigate, with telling examples, (1) \u2018who is producing global health knowledge at the individual, institutional, funder, and journal levels\u2019 and where in the global North or South; (2) \u2018what theories and concepts are being applied to derive ethics knowledge\u2019 and (3) \u2018whose voices are sought, recorded and used to generate ethics knowledge\u2019. They then, for each of these \u2018knowledgeproducer\u2019, \u2018knowledgeapplied\u2019 and \u2018knowledgesolicited\u2019 \u2018layers\u2019 of global health ethics, make a range of often highly practical proposals for achieving greater epistemic justice in each of them. Pratt and de Vries have issued a significant challenge to all individuals and institutions, including journals such as this, who claim to be concerned with global health ethics, and indeed to bioethics generally: the agenda they have set deserves close attention, and the commentaries on their feature article are generally supportive. One of these however, as de Vries and Pratt acknowledge in their response to the commentaries, raises a more knotty conceptual question. FrimpongMansoh questions the statement by Pratt and de Vries that \u2018it is not clear that greater epistemic justice and any transcultural framework of ethical values that emerges would necessarily give rise to universal values and principles\u2019. FrimpongMansoh argues, by contrast, that \u2018a defense of epistemic justice to make global bioethics... equitable and accommodative to inclusive voices concomitantly requires an endorsement of intercultural ethical framework (with shared values and principles). Else, global bioethics would be left without an ethical root/foundation, given the attempt to liberate and decolonize it from cultural hegemony and imperialism\u2019. Whether \u2018the reality of cultural relativism justifies \u2018the validity of ethical relativism\u2019, it might be added, is a critical question today for global bioethics and for global debate on issues as diverse as the war in Ukraine or the religions\u2019 attitudes to samesex relationships. In this issue\u2019s extended essay, on global health justice and the distribution of COVID19 Vaccines, Jecker, Atuire, Tindana and Bull critically question the influential \u2018idea that vaccine allocation is primarily a negotiation between states\u2019. This idea, they observe, is premised on the view of Western philosophy that nation states are \u2018morally free to distribute resources however they see fit unless restitution for an historical injustice is owed\u2019: but during the pandemic, the limits of this approach became clear. Many \u2018nonstate parties\u2019 also influenced \u2018the flow of healthcare resources\u2019; the very scale of the pandemic blurred \u2018the distinction between \u201cprotecting one\u2019s own\u201d and \u201cprotecting people everywhere\u201d; and the \u2018statist framework\u2019 was increasingly perceived to be \u2018perpetuating global health disparities\u2019. \u2018Within bioethics\u2019, moreover, \u2018structural injustices\u2019 resulted in a failure \u2018to conduct global justice debates in a truly global way \u2013 that is, to represent authors and institutions from diverse regions and include concerns pertinent to lowand middleincome countries\u2019. Having characterised \u2018collective action failures at each stage of vaccine development that contributed to global vaccine disparities\u2019, the authors propose in response a \u2018multilateral model of global health governance\u2019 which they constructively defend with reference to two significant philosophical principles. The principle of \u2018responsibility to protect (R2P), developed in response to human rights atrocities during the 1990\u2019, requires that \u2018states must protect the citizens of another state... where a state is unwilling or unable to halt or avert serious harms its people are suffering\u2019; this principle is supported by \u2018the sober recognition that it is in each state\u2019s interest to promote the interests of every other state\u2019. And in order to put R2P into practice, we need the much older principle of subsidiarity, according to which each human \u2018grouping, from the smallest to the largest.... should be allowed to make its unique and special contribution... without undue interference from any others, including the state\u2019. With particular reference to justice in vaccine distribution, \u2018subsidiarity recognises not only a multitude of global actors, but the intricacies of their relationships and the overlapping of their longrange aims\u2019. In this context, nation states, while \u2018they remain central\u2019 must now be seen as \u2018part of a growing ensemble of players\u2019 with \u2018subsidiarity and R2P... the normative principles best suited to orchestrating them.\u2019 Jecker et al have here outlined a substantial agenda for the theory and practice of global health ethics, no less constructive but also no less challenging than that of Pratt and de Vries.",
+      "citationCount": 2,
+      "doi": "10.1136/jme-2023-109151",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cd935ee7bce07eca201934f338f72f22c04d102e",
+      "venue": "Journal of Medical Ethics",
+      "journal": {
+        "name": "Journal of Medical Ethics",
+        "pages": "303 - 304",
+        "volume": "49"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ab628aed471dcee3bc896f6fa5bffc190d7599aa",
+      "title": "Speaking of Epistemic Injustice: A Reply",
+      "authors": [
+        {
+          "name": "M. Hopman",
+          "authorId": "2133098419"
+        },
+        {
+          "name": "Guleid Ahmed Jama",
+          "authorId": "2222637196"
+        },
+        {
+          "name": "O. Zvonareva",
+          "authorId": "11765178"
+        },
+        {
+          "name": "Art\u016brs Ho\u013cavins",
+          "authorId": "1658860468"
+        }
+      ],
+      "year": 2023,
+      "abstract": "\n In this article, we reply to \u2018Ethics and Epistemic Injustice in the Global South\u2019 (Kaur et al. 2023), a response to the original article \u2018Covert Qualitative Research as a Method to Study Human Rights Under Authoritarian Regimes\u2019 (Hopman 2022). Our reply is written by authors who have expertise and direct experience with the issues at stake (authoritarianism, Global North/Global South relations, covert research methods, epistemic injustice). We show that while there are some interesting points raised in the response article, in general, it does not do justice to the arguments presented in the original article. Instead it constructs a \u2018straw man\u2019 by misrepresenting claims in the original article, attributing to it assumptions that were not there, and lumping together notions such as authoritarian zones and Global South, that were not equated in the original article. After providing arguments for this position and discussing the main topics of the critique, we present two new elements: first, a contribution by someone from Moroccan controlled Western Sahara (MCWS), who experienced covert research as a research participant. Second, an overview of lessons learned from this exchange. These include: 1) instead of authoritarian zones, \u2018authoritarian situations\u2019 is a more appropriate concept; 2) projects using covert research should strive to include overt and participatory elements; 3) a response article alleging epistemic injustice should create space for the people concerned to speak for themselves.",
+      "citationCount": 3,
+      "doi": "10.1093/jhuman/huad019",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab628aed471dcee3bc896f6fa5bffc190d7599aa",
+      "venue": "Journal of Human Rights Practice",
+      "journal": {
+        "name": "Journal of Human Rights Practice"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "17687eb05375694da8596f9aa16859c916cbd032",
+      "title": "What type of inclusion does epistemic injustice require?",
+      "authors": [
+        {
+          "name": "A. Nyamnjoh",
+          "authorId": "120965476"
+        },
+        {
+          "name": "Cornelius Ewuoso",
+          "authorId": "9772275"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Bridget Pratt and Jantina de Vries have made an insightful contribution to enhancing epistemic justice in global health ethics. Their elaboration details intellectual (external) exclusion\u2014 described as nonrepresentation\u2014across three levels, and at its core, proposes inclusion to rectify this. To extend this work, we contend that it is worth probing the nuances and challenges associated with inclusion as a response to epistemic injustice. These include (A) the meaning of inclusion outside binary vocabularies of north and south; (B) the possibility of forms of inclusion that produce exclusion and (C) inclusion as a politics of belonging with intellectual confinement as a possible epistemic harm. How the problem of injustice is described influences the substantive meaning of inclusion. In describing epistemic injustice, north and south (centre and periphery) are used as relational markers of power, inclusion, authority and exclusion. While this binary vocabulary is seductive, it can appear to confer proprietary rights to the concepts, theories and values described as originating in the global north (and south). However, such inscriptions of ownership are not always a correct reading of the problem. Sometimes, the ostensible westernness and nonwesternness of ideas are taken for granted, particularly when histories of connection and exchange go unacknowledged. Even if we grant that an idea has its geodiscursive origin in the global north, there is the separate issue of whether it is ever fully constituted in this epistemic location. Therefore, while Pratt and de Vries are right to seek the representation of voices and debates that position themselves as southern, epistemic justice can also entail abandoning the presumption of discrete intellectual traditions by illuminating histories of interaction, exchange and connection, although in unequal encounters. This frames inclusion as an effort in reclamation and appropriation, inscribing Africa and the global south in the genealogy and intellectual history of ideas routinely taken for granted as northern. A second set of issues relates to whether including scholarship from the global south necessarily means that these perspectives are more heard. Sometimes, inclusion can be an instrument of exclusion, a way of (un)consciously weakening the radical claims being pursued. This erosion can occur through internal exclusion, which is the experience of exclusion by individuals positioned as included/represented. This shows that exclusion and inclusion are not always binaries. Increasing visibility through representation of previously excluded knowers and knowledge systems that fit the social descriptions of prime targets for inclusion may enhance optics but direct attention away from the phenomenon of exclusion itself. To consolidate inclusion that matters, internal exclusion should be central to an understanding of exclusion. In order to mitigate the appearance of inclusion, it is important to scrutinise, for example, the language of \u2018standards\u2019 and associated processes of establishing epistemic authority, as sites of internal exclusion. Although we lack the space to provide details, this more transformative inclusion regards the epistemologies that are accounted for in the construction of what is meaningful in global health ethics. In addition to which priorities are favoured and by whom, the inclusion that matters involves unravelling the politics of knowledge (production and conversion), particularly in relation to how standards are (re) influenced, (re)developed, (re)validated and fed into the priorities and discourses constitutive of global health ethics. Rather than an exhaustive statement on what constitutes inclusive practices, Pratt and de Vries\u2019 contribution should be taken as impetus to think and rethink inclusion and epistemic justice. The denuding of inclusion can also occur through elite capture, which is \u2018the control over the political agendas and resources by a group\u2019s most advantaged people.\u2019 Elite capture points to the possibility that those likely to be included/ deferred to are insufficiently representative of the material conditions and intellectual concerns of the locations they are expected to represent. More cynically, outcomes like elite capture render grammars of inclusion, like epistemic justice, as nothing more than campaigns for parochial power and esteem. Pratt and de Vries do pay some attention to this by effectively outlining epistemic justice as having beneficiaries outside academic elites. As such, epistemic justice would need to be seen as an ongoing commitment to being accountable and responsive to those who are not yet in the room by deliberately cultivating the \u2018practical and material bases for popular power over knowledge production and distribution.\u2019 Finally, it is worth paying attention to the politics of belonging that often accompanies the pursuit of inclusion. On a practical level, including voices and perspectives from the global south means making political and ethical judgements about what counts as knowledge from the global south and who qualifies for recognition as African/southern. This means generating values by which membership is judged, such that a key issue becomes the very boundedness of a particular epistemic location. Do these values broaden or constrict the canvass on which southern/ African ideas are painted? Do they constrain or expand the possibilities for negotiating inclusion? While Pratt and de Vries foreground the question of \u2018where is knowledge from the global south\u2019, the equally salient question of who/what is recognised as southern lurks around the corner. The political nature of belonging is evident, for example, in the suggestion that one may be from the south geographically but not intellectually. An interest in voices that think from a southern/African location, we imagine, would involve generating criteria of what those voices sound like, and this is inevitably a normative project. With this comes the possibility of an altogether new epistemic harm within the talk of inclusion, whereby expectations of authenticity work to enclose and confine southern scholars within a narrow set of themes, concepts, debates and intellectual traditions.",
+      "citationCount": 6,
+      "doi": "10.1136/jme-2023-109091",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/17687eb05375694da8596f9aa16859c916cbd032",
+      "venue": "Journal of Medical Ethics",
+      "journal": {
+        "name": "Journal of Medical Ethics",
+        "pages": "341 - 342",
+        "volume": "49"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f7e21d707f096cd46e3fe33464a3ca2db741c075",
+      "title": "Epistemic Injustice: Power and the Ethics of Knowing",
+      "authors": [
+        {
+          "name": "Miranda Fricker",
+          "authorId": "2251543134"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 3301,
+      "doi": "10.1093/acprof:oso/9780198237907.001.0001",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f7e21d707f096cd46e3fe33464a3ca2db741c075",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e878c284b716b1d490ede63e266a87ccd0dfd6b3",
+      "title": "Where is knowledge from the global South? An account of epistemic justice for a global bioethics",
+      "authors": [
+        {
+          "name": "Bridget Pratt",
+          "authorId": "2212395"
+        },
+        {
+          "name": "J. de Vries",
+          "authorId": "35026547"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The silencing of the epistemologies, theories, principles, values, concepts and experiences of the global South constitutes a particularly egregious epistemic injustice in bioethics. Our shared responsibility to rectify that injustice should be at the top of the ethics agenda. That it is not, or only is in part, is deeply problematic and endangers the credibility of the entire field. As a first step towards reorienting the field, this paper offers a comprehensive account of epistemic justice for global health ethics. We first introduce several different conceptions of justice and decolonisation in relation to knowledge, purposefully drawing on work emanating from the global South as well as the global North. We then apply those conceptions to the global health ethics context to generate a tripartite account of the layers of epistemic justice in the field: who is producing ethics knowledge; what theories and concepts are being applied to produce ethics knowledge; and whose voices are sought, recorded and used to generate ethics knowledge. These layers reflect that the field spans conceptual and empirical research. We conclude by proposing that, going forward, three avenues are key to achieve greater epistemic justice at each layer and to help decolonise global health ethics: namely, understanding the problem, dialogue and structural change.",
+      "citationCount": 76,
+      "doi": "10.1136/jme-2022-108291",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e878c284b716b1d490ede63e266a87ccd0dfd6b3",
+      "venue": "Journal of Medical Ethics",
+      "journal": {
+        "name": "Journal of Medical Ethics",
+        "pages": "325 - 334",
+        "volume": "49"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "86672e58339d2f23e22ef275f27f1e823acd6b73",
+      "title": "Epistemic justice: a twofold mission for human rights and social sustainability in teacher education",
+      "authors": [
+        {
+          "name": "M. Cronqvist",
+          "authorId": "49716371"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This article, based on Miranda Fricker\u2019s concept epistemic injustice to deal with human rights and social sustainability, argues that teacher education must address the twofold mission to both enhance epistemic justice for student teachers and to develop their skills to enhance justice for future pupils. Thus, development of student\u2019s ethical leadership involving transformative teaching is in focus. Based on previous research, ethical leadership is focused on self-awareness, character formation and modelling. This focus involves both verbal and bodily expressions. Verbal expressions are reinforced and developed through conceptualization, dilemmas and ethical codes while bodily expressions are reinforced and developed through modelling. In terms of modelling, Merleau-Ponty\u2019s theory of how people\u2019s embodied experiences shape their life worlds provides perspective on opportunities to develop transformative teaching to challenge norms and enable change. Empirical data from a previous phenomenological study on professional ethics in teacher education exemplifies teaching practice related to epistemic justice.",
+      "citationCount": 1,
+      "doi": "10.1080/00313831.2025.2550260",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/86672e58339d2f23e22ef275f27f1e823acd6b73",
+      "venue": "Scandinavian Journal of Educational Research",
+      "journal": {
+        "name": "Scandinavian Journal of Educational Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b7eff0d8ab7755a345e53ea82096162699bc2590",
+      "title": "The journal and the quest for epistemic justice",
+      "authors": [
+        {
+          "name": "A. Dadze\u2010Arthur",
+          "authorId": "1432227371"
+        },
+        {
+          "name": "M. Mangai",
+          "authorId": "147527829"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Recognising the growing interconnectivity of academic publishing with larger socio\u2010political shifts, this article charts the increasing momentum behind the push for greater epistemic diversity in academic journals. Our systematic review of PAD's publications from 1947 to May 2023 in Atlas.ti seeks to illuminate the operational factors steering the discourse. Using a structured approach, which is rooted in six constitutive varieties of epistemic justice, to guide a Foucauldian discourse analysis, the review gauges epistemic inclusivity in academic works. The results highlight the significance of decolonising knowledge, which is undergirded by pillars like hermeneutic and testimonial justice, the epistemic justice of interpretive burden, and metalinguistic awareness. Notably, the emphasis on citational justice emerges in the findings as an essential facet of testimonial justice.",
+      "citationCount": 11,
+      "doi": "10.1002/pad.2064",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b7eff0d8ab7755a345e53ea82096162699bc2590",
+      "venue": "Public Administration and Development",
+      "journal": {
+        "name": "Public Administration and Development",
+        "pages": "326 - 341",
+        "volume": "44"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "26bafd3d418b3bf58a0ffc11d0f7293f5b73f418",
+      "title": "Root causes of epistemic (in)justice for the global south in health ethics and bioethics",
+      "authors": [
+        {
+          "name": "G. Tangwa",
+          "authorId": "4836966"
+        }
+      ],
+      "year": 2023,
+      "abstract": "In a feature article in the Journal of Medical Ethics entitled \u2018Where is knowledge from the global South? An account of epistemic justice for a global bioethics\u2019, Pratt and de Vries give a highly persuasive account of global injustices within global bioethics especially health ethics against the global South that every bioethicist needs to read and to reflect on. The opening three sentences of the abstract of this account capture the ethical essence of the whole article.",
+      "citationCount": 5,
+      "doi": "10.1136/jme-2023-109093",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/26bafd3d418b3bf58a0ffc11d0f7293f5b73f418",
+      "venue": "Journal of Medical Ethics",
+      "journal": {
+        "name": "Journal of Medical Ethics",
+        "pages": "343 - 344",
+        "volume": "49"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e021617d771988de7ace7198ed93597efa09ba83",
+      "title": "How the notion of epistemic injustice can mitigate polarisation in a conversation about cultural, ethnic and racial categorisations",
+      "authors": [
+        {
+          "name": "I. B. \u00c5berg",
+          "authorId": "1572270817"
+        }
+      ],
+      "year": 2023,
+      "abstract": "\n It is a common contention that education done uncritically and unreflectively may serve to sustain and justify the status quo, in terms of mechanisms of cultural or racial privileging and marginalization. This article explores an argument made from within anti-oppressive education theory and advocated by theorist Kevin Kumashiro, namely that transformative education must entail altering harmful citational practices. I see two shortcomings in relation to this argument: first, its focus on discursive practice entails a prerequisite of high discursive literacy. Second, it may lead to a failure to give credit to people\u2019s intentions, risking a conflation of honest mistakes and wilful ignorance, and depriving us of theoretical nuance. While a well-argued and important call, I argue in this article that both shortcomings lead to the risk of a polarized conversation. Focusing on cultural, ethnic and racial categorization, and using social studies as an illustration, it is suggested that applying notions from the theoretical concept of epistemic injustice may open up a space for granting nuanced credit to people\u2019s intentions, thereby mitigating the risk of polarization. Rather than viewing attention to outcome and attention to intention as oppositional to one another, it is argued that both theoretical perspectives may benefit from the insights of the other. By applying needed context-specificity and nuance to categorizations of dominance and marginalization in individual discursive exchange, this can be done without granting priority to the experience of dominantly situated knowers.",
+      "citationCount": 0,
+      "doi": "10.1093/jopedu/qhad061",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e021617d771988de7ace7198ed93597efa09ba83",
+      "venue": "Journal of Philosophy of Education",
+      "journal": {
+        "name": "Journal of Philosophy of Education"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "34056a1df809f8fb4d50c81e86c998b9b2daf805",
+      "title": "Ethicists Failing Ethics: Citation Practice for Sexual Misconduct",
+      "authors": [
+        {
+          "name": "Kate Yuan",
+          "authorId": "2393278132"
+        },
+        {
+          "name": "Mary Peterson",
+          "authorId": "2393281615"
+        }
+      ],
+      "year": 2025,
+      "abstract": "\n In this article, we explore how to engage with the work of ethicists facing public allegations of professional sexual misconduct. Rather than disengaging or proceeding as usual, we propose citing their work alongside impartial information about credible allegations. We choose to isolate the work of ethicists as the target of this proposal because ethicists are distinct on two fronts: they are distinct among philosophers because they have moral authority, and distinct among others with moral authority, such as religious leaders and civil rights activists, because their power is reproduced in part through citations. Our approach offers a nuanced perspective on the power conferred through citations. We argue that individual scholars have a moral and intellectual responsibility to cite using this practice, especially when institutional enforcement of justice is lacking.",
+      "citationCount": 0,
+      "doi": "10.1017/hyp.2025.10035",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/34056a1df809f8fb4d50c81e86c998b9b2daf805",
+      "venue": "Hypatia",
+      "journal": {
+        "name": "Hypatia"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "52f72d8bc6e03a99ddfb6f2b411eb1c60c56d96e",
+      "title": "Rethinking the Large Ensemble Paradigm: Moving Toward Epistemic Justice",
+      "authors": [
+        {
+          "name": "Juliet Hess",
+          "authorId": "115114781"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1007/s11217-023-09882-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/52f72d8bc6e03a99ddfb6f2b411eb1c60c56d96e",
+      "venue": "Studies in the Philosophy of Education",
+      "journal": {
+        "name": "Studies in Philosophy and Education",
+        "pages": "411-429",
+        "volume": "42"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ea2b52e19a714781d21fdeb25177394feff396c8",
+      "title": "Epistemic justice in bioethics: interculturality and the possibility of reparations",
+      "authors": [
+        {
+          "name": "J. de Vries",
+          "authorId": "35026547"
+        },
+        {
+          "name": "Bridget Pratt",
+          "authorId": "2212395"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The topic of epistemic injustice in global health ethics is complex, important and vast. While presenting as nuanced and complete a picture of the challenge as we possibly could, we were acutely aware of our positionality and how it gave us a certain viewpoint that would need to be expanded by others with different positions and experiences. We were, therefore, delighted to receive the collected commentaries by Atuire, Abimbola, FrimpongMansoh, Nyamnjoh and Ewuoso, Tangwa, Ambrogi et al. We would like to thank these authors for furthering our account by raising questions, pointing out gaps or complementing our analysis. The points raised by these authors\u2014 and many points that will undoubtedly be raised by others in future\u2014should be critically engaged with as we collectively define and work towards a more epistemically just global health ethics. Specifically, two points stand out. First, FrimpongMansoh accurately diagnoses our ambiguity about being drawn into debates about relativism in bioethics. We drew on Atuire\u2019s previous work on pluriversality; FrimpongMansoh proposes an intercultural ethics framework. While intercultural dialogues are commonly suggested as a process for determining what a pluriversal world looks like, what is not clear to us is whether and where the attempt to develop an authoritative, yet intercultural and global, ethics framework fits in a pluriversal world. As we understand it, the proposal for pluriversality rests on the idea that many worlds exist at once, which involves keeping all ideas (concepts, knowledges and ways of being) as they are. Yet in a more intercultural tradition, as in FrimpongMansoh\u2019s proposal, the suggestion seems to be for ideas to be translated and blended to generate a new constellation of knowledge. Developing these ideas further, and interrogating their conceptual limitations and challenges, is integral to the work we proposed. However, efforts to address structural epistemic injustices need not rely on the resolution of this particular issue; many of the issues we outlined in our paper can be resolved even without addressing the important conceptual question FrimpongMansoh raises. Second, Nyamnjoh and Ewuoso remind us that any attempt at defining what it looks like to think and be from the South is a normative and political act in itself. They also warn us of the dangers of elite capture of the epistemic justice project. Tangwa, furthermore, reminds us that the academic freedom necessary to be critical in the way we were in our paper is a privilege that requires employment and security conditions that are more often guaranteed in the global North. Taken together, these commentaries raise deep questions about who defines what epistemic justice should look like in global health ethics and what roles different actors should play to get us there. For instance, what should the role of ethicists from different epistemic and geographic locations, be in attempts to define and reduce epistemic injustice in the field? Abimbola suggests that people from the South need to be able to \u2018imagine themselves in the centre\u2019; both Abimbola and Atuire suggest that what is required for epistemic justice is the ability of people and platforms in the South to address their own issues and concerns, in ways that bear some resonance with arguments for reparations for the damages inflicted by colonialism. While neither Atuire nor Abimbola uses that term, perhaps it would be useful to consider attempts at increasing epistemic justice in terms of repair or reparation. These reparations should enable scholars from the global South to create their own worlds, rather than helping them better fit into spaces created by the global North. One appealing recent contribution in this regard comes from Ol\u00faf\u1eb9\u0301mi T\u00e1\u00edw\u00f2 who presents reparations in the light of the active pursuit of justice, rather than simply doing the work of repair. One avenue of scholarly work could apply such thinking to global health ethics. Specifically, Abimbola refers to the importance of global South platforms for knowledge exchange, cultivation and curation; is it possible to think about the development of such platforms (that reach a critical mass) in terms of reparations as opposed to charity or philanthropy? And how would that change the way in which the many existing forms of exchange and collaboration already taking place in global health ethics, are shaped and executed? Finally, Ambrogi et al say \u2018it\u2019s time for all involved ... to embrace the notion of epistemic injustice\u2019. The rich contributions by the various commentaries have clearly demonstrated that the work of achieving greater epistemic justice in global health bioethics, is work that involves the activism, scholarship and contributions of people around the world, and that work is only just beginning.",
+      "citationCount": 2,
+      "doi": "10.1136/jme-2023-109149",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ea2b52e19a714781d21fdeb25177394feff396c8",
+      "venue": "Journal of Medical Ethics",
+      "journal": {
+        "name": "Journal of Medical Ethics",
+        "pages": "347 - 347",
+        "volume": "49"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "07d398c0b96e8c5524e7455f8b5dcafee1727114",
+      "title": "Miranda Fricker\u2019s Epistemic Injustice: An Attempt at Appropriation of Philippine Social Realities",
+      "authors": [
+        {
+          "name": "Menelito P. Mansueto",
+          "authorId": "134429053"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07d398c0b96e8c5524e7455f8b5dcafee1727114",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fdabd08030262926e3ab440c6005c3035197627b",
+      "title": "What an Ethics of Discourse and Recognition Can Contribute to a Critical Theory of Refugee Claim Adjudication: Reclaiming Epistemic Justice for Gender-Based Asylum Seekers",
+      "authors": [
+        {
+          "name": "David Ingram",
+          "authorId": "144715628"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-3-030-72732-1_2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fdabd08030262926e3ab440c6005c3035197627b",
+      "venue": "Migration, Recognition and Critical Theory",
+      "journal": {
+        "name": "Migration, Recognition and Critical Theory"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "11f08aec8545c900e9fc4ad77e4386124d55a2b3",
+      "title": "Global Development, Ethics, and Epistemic Injustice",
+      "authors": [
+        {
+          "name": "A. Malavisi",
+          "authorId": "118204990"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Global Development, Ethics, and Epistemic Injustice: Rethinking Theory and Practice presents a critical analysis of global development from a perspective that is both theoretical and practical, addressing both ethical and epistemic issues. Offering a unique perspective from having worked as a practitioner in global development for several years, then left the practice to ponder the deep ethical issues that shadow global development, Anna Malavisi argues that one of the problems in global development today is the absence of an ethical analysis; ethics in development today is overshadowed by economic and political interests, as well as national self-interest. The book describes how Chagas diseases, as a Neglected Tropical Disease, continues to plague vulnerable populations in poorer countries such as Bolivia due to a very limited way in how it has been conceived, understood, and addressed. Malavisi offers a strong ethical approach, comprising a feminist methodology, a social ethical praxis, political responsibility, epistemic justice, and deep-green theory. A strong ethical approach is necessary to address Chagas Disease as well as other development problems in a more effective way.",
+      "citationCount": 0,
+      "doi": "10.5771/9781793616920",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/11f08aec8545c900e9fc4ad77e4386124d55a2b3",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Book"
+      ]
+    },
+    {
+      "paperId": "120fd91f865e28e7aeb2a6445808dc650ad7873f",
+      "title": "Addressing Racism in Medicine Requires Tackling the Broader Problem of Epistemic Injustice",
+      "authors": [
+        {
+          "name": "Brandon del Pozo",
+          "authorId": "1785079617"
+        },
+        {
+          "name": "J. Rich",
+          "authorId": "2621228"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Research into epistemic injustice, the practice of discrediting people as knowers based on their social identity (Fricker 2007), has gained broad popularity in ethics. Racism in medicine often manifests as not taking the testimonial and conceptual assertions of Blacks and other patients of color seriously, and developing systems of care, resource allocations, and research agendas based on this silencing. Applying the concept of epistemic injustice to bioethics would not only operationalize the effects of racism in medicine using a novel, theoretically rich framework, but would nest it in a broader web of bioethical concerns: patients suffering from addiction and mental illness are routinely epistemically discredited due to stigma, which degrades their care, and patients of color at the intersection of these conditions fare even worse. Striving for epistemic justice lies at the heart of correcting these interconnected problems. place the needs to its apparent amnesia",
+      "citationCount": 14,
+      "doi": "10.1080/15265161.2020.1861367",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/120fd91f865e28e7aeb2a6445808dc650ad7873f",
+      "venue": "American Journal of Bioethics",
+      "journal": {
+        "name": "The American Journal of Bioethics",
+        "pages": "90 - 93",
+        "volume": "21"
+      },
+      "publicationTypes": [
+        "LettersAndComments",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0b755651133301cb3a06baf75e9aab07a089f499",
+      "title": "Generative AI and the Foregrounding of Epistemic Injustice in Bioethics",
+      "authors": [
+        {
+          "name": "C. W. Ho",
+          "authorId": "2256573391"
+        }
+      ],
+      "year": 2023,
+      "abstract": "\u201817U.S. Code \u00a7 107 Limitations on Exclusive Rights: Fair Use\u2019. n.d. LII/Legal Information Institute. Accessed 6 August 2023. https://www.law.cornell.edu/uscode/text/17/ 107. Carter, C. B., and C. F. Blanford. 2016. Plagiarism and detection. Journal of Materials Science 51 (15):7047\u20138. doi:10.1007/s10853-016-0004-7. Gao, T., H. Yen, J. Yu, and D. Chen. 2023. Enabling large language models to generate text with citations. arXiv. doi:10.48550/arXiv.2305.14627. Porsdam Mann, S., B. Earp, N. Moller, V. Suren, and J. Savulescu. 2023. AUTOGEN: A personalized large language model for academic enhancement\u2014Ethics and proof of principle. American Journal of Bioethics 23 (10): 28\u201341. doi:10.1080/15265161.2023.2233356. Quang, J. 2023. Does training AI violate copyright law? Berkeley Technology Law Journal 36 (4):1407\u201336. Samuelson, P. 2023. Generative AI meets copyright. Science (New York, N.Y.) 381 (6654):158\u201361. doi:10.1126/science. adi0656. Steven, P. 2014. \u2018Why Academics Stink at Writing\u2019. The Chronicle of Higher Education, 2014, sec. The Review. https://www.chronicle.com/article/why-academics-stinkat-writing/. US Copyright Office. n.d. \u2018What does copyright protect? (FAQ) j U.S. copyright office\u2019. Web page. Accessed 6 August 2023. https://www.copyright.gov/help/faq/faq-pro tect.html. Zohny, H., J. McMillan, and M. King. 2023. Ethics of generative AI. Journal of Medical Ethics 49 (2):79\u201380. doi:10. 1136/jme-2023-108909.",
+      "citationCount": 4,
+      "doi": "10.1080/15265161.2023.2250319",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0b755651133301cb3a06baf75e9aab07a089f499",
+      "venue": "American Journal of Bioethics",
+      "journal": {
+        "name": "The American Journal of Bioethics",
+        "pages": "99 - 102",
+        "volume": "23"
+      },
+      "publicationTypes": [
+        "LettersAndComments",
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "aa4dcd49cc263a0cc26ac67417a138e10d8baa93",
+      "title": "Unraveling hegemony digital: A framework CDA-semiotic framework for sustainable social epistemic justice",
+      "authors": [
+        {
+          "name": "Mohamad Nurul Anam",
+          "authorId": "2378230312"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Background: In an increasingly digitized world, religion and culture have transcended their traditional roles. They are now instruments of hegemony that shape\u2014and often destroy\u2014our collective perception of social sustainability. This research examines how digital media platforms, through algorithms and \"echo chambers\", perpetuate such \"organized ignorance\", a systemic erosion of critical thinking caused by structural pressures and ideological manipulation. This research is rooted in the philosophical principle of Enlightenment (Kant: \"Sapere Aude\") and the critique of epistemic passivity (Bonhoeffer, Nietzsche). The core argument is that digital ecosystems paradoxically democratize knowledge while simultaneously reinforcing cognitive conformity and threatening socio-cultural resilience. Method: Using a qualitative design, this study applies Teun van Dijk's Critical Discourse Analysis (CDA) and Saussurean semiotics to deconstruct power-laden narratives in religious-cultural content on platforms such as YouTube. Primary data are taken from one of Ardhianzy\u2019s videos on collective ignorance, and secondary metadata illustrate how algorithms reduce complex symbols (e.g., Kantian Enlightenment, Luther\u2019s Reformation) into binary myths. This process legitimizes polarization and perpetuates epistemic injustice. Findings: The findings confirm the symbiotic role of algorithmic personalization and capitalist platforms in commercializing Enlightenment rhetoric. This fuels banality malorum (Arendt) through the normalization of misinformation and affective polarization. The research also identifies historical hegemonic mechanisms\u2014such as colonial \"enlightenment\" missions and Nazi propaganda\u2014that resurface in the digital context. This is reflected in Indonesia\u2019s socio-political fragmentation, manifested through coordinated disinformation campaigns. Conclusion: This research recommends the integration of \"algorithmic literacy\" into SDG-based education, enhanced regulatory transparency (e.g., the EU Digital Services Act), and the development of virtue ethics-based platforms to restore intellectual autonomy. By synthesizing CDA, semiotics, and moral philosophy, the study maps hidden power structures in digital narratives and proposes actionable strategies. Novelty/Originality of this Article: This methodological synthesis of CDA, semiotics, and moral philosophy represents a novelty not present in previous unidisciplinary studies. Theoretically, this research bridges Kantian Enlightenment with contemporary critiques of digital hegemony.",
+      "citationCount": 0,
+      "doi": "10.61511/jscsr.v3i1.2025.2154",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aa4dcd49cc263a0cc26ac67417a138e10d8baa93",
+      "venue": "Journal of Socio-Cultural Sustainability and Resilience",
+      "journal": {
+        "name": "Journal of Socio-Cultural Sustainability and Resilience"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "99a8b2f5f7d4fd140a0b386814c4c1f9caef7bad",
+      "title": "Epistemic Injustice in Social Cognition",
+      "authors": [
+        {
+          "name": "Wesley Buckwalter",
+          "authorId": "3389176"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1080/00048402.2018.1459754",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/99a8b2f5f7d4fd140a0b386814c4c1f9caef7bad",
+      "venue": "",
+      "journal": {
+        "name": "Australasian Journal of Philosophy",
+        "pages": "294 - 308",
+        "volume": "97"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f27dfccb0aeafba6f4d5e22a29c6261a295f4f83",
+      "title": "Epistemic Mercy and Incarceration: Rethinking the Demands of Justice",
+      "authors": [
+        {
+          "name": "H. Pickett",
+          "authorId": "2075576101"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f27dfccb0aeafba6f4d5e22a29c6261a295f4f83",
+      "venue": "",
+      "journal": {
+        "name": "Journal of the Society of Christian Ethics",
+        "pages": "101 - 118",
+        "volume": "42"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "82618ec12b835740d396f73308202acb0dc02595",
+      "title": "Mapping out epistemic justice in the clinical space: using narrative techniques to affirm patients as knowers",
+      "authors": [
+        {
+          "name": "L. T. Rosen",
+          "authorId": "2135144588"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Epistemic injustice sits at the intersection of ethics, epistemology, and social justice. Generally, this philosophical term describes when a person is wrongfully discredited as a knower; and within the clinical space, epistemic injustice is the underlying reason that some patient testimonies are valued above others. The following essay seeks to connect patterns of social prejudice to the clinical realm in the United States: illustrating how factors such as race, gender identity, and socioeconomic status influence epistemic credence and associatively, the quality of healthcare a person receives. After describing how epistemic injustice disproportionately harms already vulnerable patients, I propose a narrative therapy intervention. This intervention can help providers re-frame their relationships with patients, in such that they come to view patients as valuable sources of unique knowledge. Though I identify this intervention as a valuable step in addressing clinical epistemic injustice, I call upon medical educators and practitioners to further uplift the voices, perspectives, and stories of marginalized patients.",
+      "citationCount": 28,
+      "doi": "10.1186/s13010-021-00110-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/82618ec12b835740d396f73308202acb0dc02595",
+      "venue": "Philosophy, Ethics, and Humanities in Medicine",
+      "journal": {
+        "name": "Philosophy, Ethics, and Humanities in Medicine : PEHM",
+        "volume": "16"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "81de9875f0aad8531de886108bcb400555072f49",
+      "title": "Centering Social Justice in Mental Health Practice: Epistemic Justice and Social Work Practice",
+      "authors": [
+        {
+          "name": "Marjorie Johnstone",
+          "authorId": "145508544"
+        }
+      ],
+      "year": 2021,
+      "abstract": "This article examines how mental health social work practice can move outside the hegemony of the medical model using approaches that honor the centering of social justice. By using the philosophical analysis of epistemic injustice and the ethics of knowing, I move out of the traditional psychiatric and psychological conceptual frameworks and discuss new guiding principles for practice. In the context of the radical tradition in social work and the impetus to blend theory with practice, I consider the use of narrative and anti-oppressive approaches to center social justice principles in individual dyadic work as well as in wider systems family and community work and policy advocacy. I evaluate these approaches through the principles of epistemic justice and discuss the importance of a relational collaborative approach where honoring the client and exploring lived experience are central to both the concepts of testimonial justice, hermeneutic justice and anti-oppressive practice.",
+      "citationCount": 24,
+      "doi": "10.1177/10497315211010957",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/81de9875f0aad8531de886108bcb400555072f49",
+      "venue": "",
+      "journal": {
+        "name": "Research on Social Work Practice",
+        "pages": "634 - 643",
+        "volume": "31"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "f0fa4c5de2a5b97aa8cbc2746fdae1d1953f225d",
+      "title": "\u201cWhat if There's Something Wrong with Her?\u201d\u2010How Biomedical Technologies Contribute to Epistemic Injustice in Healthcare",
+      "authors": [
+        {
+          "name": "J. Reynolds",
+          "authorId": "50102595"
+        }
+      ],
+      "year": 2020,
+      "abstract": "While there is a steadily growing literature on epistemic injustice in healthcare, there are few discussions of the role that biomedical technologies play in harming patients in their capacity as knowers. Through an analysis of newborn and pediatric genetic and genomic sequencing technologies (GSTs), I argue that biomedical technologies can lead to epistemic injustice through two primary pathways: epistemic capture and value partitioning. I close by discussing the larger ethical and political context of critical analyses of GSTs and their broader implications for just and equitable healthcare delivery. Access to basic healthcare and equal forms of medical care is considered essential on distributive theories of justice (Daniels 1979). Yet, the practice of medicine is a human affair, and humans are notoriously prone to obstinate cognitive biases (Kahneman 2013). Such biases result in medical errors that would undermine diagnosis, treatment, and care even in ideal healthcare systems. Furthermore, there is a steadily growing body of research examining how such biases give rise to medical errors that are not equally shared by all, but instead disproportionately affect the health outcomes of vulnerable medical patients and historically oppressed patient populations (Reiheld 2010; Carel and Kidd 2014; Blease et al. 2017; Maina et al. 2018, Joel Michael Reynolds is Assistant Professor of Philosophy at the University of Massachusetts Lowell and the Rice Family Fellow in Bioethics and Humanities at The Hastings Center. His areas of research include bioethics, philosophy of disability, social epistemology, and continental philosophy. He is the author of Ethics After Ableism: Disability, Pain, and the History of Morality, forthcoming with The University of Minnesota Press, and coeditor of The Disability Bioethics Reader, forthcoming with Routledge. 162 JOEL MICHAEL REYNOLDS Reynolds and Pe\u00f1a-Guzm\u00e1n 2019). This research, which typically focuses on patterns of patient-provider communication, institutional norms, and the effects of historical and sociopolitical factors on medical practice, also makes plain how such cognitive biases are rooted in oppressive systems and processes of racism, sexism, cissexism, ableism, and classism, et al. However, there is little work on the ways in which the development and use of recent biomedical technologies themselves contribute to epistemic injustice in healthcare and beyond. In this essay, I address this lacuna by exploring the role that biomedical technologies play in harming patients in their capacity as knowers. Criticisms of new technologies, including biomedical technologies, invariably run the risk of overgeneralization. To appropriately restrict the scope of my analysis, I focus upon clinical applications of genetic and genomic sequencing technologies, including whole genome and whole exome sequencing as well as chromosomal microarray, and I do so with respect to return of results of variants of unknown or highly variable significance in prenatal and pediatric settings. I believe that my arguments extend to other sorts of technology, biomedical and otherwise, but I do not put forward the case for that extension here. For shorthand, I will refer to these jointly as genetic and genomic screening technologies (GSTs). Given the purposes at hand, I group these technologies together because of the way in which they each produce excess information beyond the discrete, animating clinical concerns in any given case and thereby produce information that can be medically unactionable or fundamentally ambiguous. My central argument is that GSTs cause epistemic injustice through what I call epistemic capture and value partitioning. Epistemic capture occurs when fundamentally ambiguous information is transformed into and treated as definite knowledge. Value partitioning occurs when variously available hermeneutical resources are restricted to an inappropriately simplistic evaluative scale or set of appraisals. In the cases of GSTs, this restriction leaves open just two possible appraisals: positive or negative. I begin by analyzing a set of qualitative research detailing the psychosocial impact of GSTs in the aforementioned clinical settings. Then, I lay out the argument that GSTs cause epistemic injustice through epistemic capture and value partitioning. I close the paper by discussing the larger ethical and political context of critical analyses of GSTs as well as the 1 Of course, the concept of value partitioning could describe a situation where the scale consists of more than two values or where a given set of appraisals operates with an intricate and far more complex relationship than that discussed here. 163 HOW BIOMEDICAL TECHNOLOGIES HARM PATIENTS AS KNOWERS broader implications of this analysis for addressing epistemic injustice in healthcare and for the practice of just and equitable healthcare delivery more generally. Three initial clarificatory comments are in order. First, my use of the term \u201cepistemic injustice\u201d goes beyond its typical scope in much of the literature (Fricker 2007; Hookway 2010; Kidd et al. 2017). I focus neither on harms caused by another individual such as one\u2019s provider, nor on harms caused by institutions. Instead, I focus on harms caused by the epistemic frameworks at play in the development and use of biomedical technologies, which is to say, in the interpretation of the data and information they produce as well as in the many practices and activities such interpretations generate and shape. Put differently, my focus is on harms resulting from the specific hermeneutical resources and processes put to work by and through biomedical technologies in the sorts of cases under discussion. In this way, I hope to contribute not only to the literature on epistemic injustice, but also to the more specific project of understanding how \u201ccertain newborn screening results,\u201d as well as pediatric screening results, \u201chave been demonstrated to cause distress, alter behavior, and even to influence the formation of new parental and family identities\u201d (Grob et al. 2018). I leave open for future research the extent to which this analysis applies to GSTs in different clinical contexts and cases, including returning results other than those discussed here, and I also leave open the extent to which this analysis applies to different sorts of technology. Second, when one studies biomedical technology, one is dealing with an especially complicated phenomenon. With respect to a technology like whole-genome sequencing, for example, there are hundreds, if not thousands of people who play roles in the many processes leading up to and extending through its clinical applications as they exist today, ranging from computer scientists and lab technicians to various clinicians and genetic counselors. \u201cBiomedical technology\u201d often functions as a synecdoche for a large and labyrinthian network of interactions between a variety of actors in biomedicine and a host of technological tools and processes. In short, this complexity makes \u201cbiomedical technology\u201d a difficult object for epistemological inquiry, including \u201cgenomic sequencing technologies\u201d more specifically. Speaking of the practices and concerns captured by the umbrella terms \u201cgenetics\u201d and \u201cgenomics\u201d as well as \u201cpostgenomics,\u201d Colin Koopman rightly notes that \u201cit is by no means the case that these varied scientific projects are all, at bottom, somehow the same. Rather, there is increasing complexity in the very practice of the genetic sciences\u201d 164 JOEL MICHAEL REYNOLDS (forthcoming). One upshot of my analysis is that studies of epistemic injustice in relation to biomedical technologies may present special methodological issues and require a thoroughly interdisciplinary and transdisciplinary approach. Third, insofar as epistemic injustice contributes to distributive injustices (Coady 2017), it is a compounding form of injustice in the context of the US healthcare system, for this system is infamously unjust and inequitable both historically and today (Washington 2008). Writing about biomedical technologies is an inherently political endeavor if for no other reason than that many of the technologies discussed in journals of philosophy, sociology, anthropology, bioethics, and public policy are technologies that the majority of humans on Earth cannot access. That they cannot do so is not primarily a question of bad luck, but of histories of colonization and imperialism (Wolfe 2006). The benefits of GSTs, for instance, are typically enjoyed by a demographically small slice of the white, middleto upper-middle class in the global North. Until the profound inequality of access to such biomedical technologies is addressed, inquiries such as the one I am undertaking risk missing the actual moral and political forest for the privileged trees. I take this concern very seriously and discuss it at length in the concluding section of the paper. 1. GENETIC AND GENOMIC SEQUENCING TECHNOLOGIES GSTs have been used in clinical settings for decades. These technologies use modern computing power to analyze particular portions of the genetic material in a human organism primarily with the aim of detecting medically actionable (or potentially medically actionable) variants. Since 2010, the American College of Medical Genetics has supported chromosomal microarray as a first-tier test for individuals with several types of suspected genetic diseases (Miller et al. 2010). Whole genome sequencing (WGS) technologies, unlike chromosomal microarray and other methods that sequence individual genes or specific sets of genes, analyze the entire genome of an organism, including chromosomal as well as mitochondrial DNA. WGS 2 See \u201cAccess to Healthcare,\u201d Centers for Disease Control and Prevention, U.S. Department of Health and Human Services, https ://www.cdc.gov/nchs/fasta ts/accessto-health-care.htm. My thanks to Chris Lebron for graciously leading me to engage these conc",
+      "citationCount": 14,
+      "doi": "10.1111/sjp.12353",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f0fa4c5de2a5b97aa8cbc2746fdae1d1953f225d",
+      "venue": "",
+      "journal": {
+        "name": "Southern Journal of Philosophy",
+        "pages": "161-185",
+        "volume": "58"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "62ce3a158dcc64b5b9cba9587efa8047db036eb9",
+      "title": "Towards Epistemic Justice in the Archives",
+      "authors": [
+        {
+          "name": "J. Melanson",
+          "authorId": "2032502509"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Miranda Fricker\u2019s (2007) book, Epistemic Injustice: Power and the Ethics of Knowing, outlines how social practices of knowledge-making can cause unjust harms to people in their capacity as knowers. These harms are epistemic injustices. From the literature detailing archival collections documenting human rights abuses, it is clear that archives have the potential to transmit and perpetuate epistemic injustices that were committed in the past. Because of this, archivists have a responsibility to attempt to mitigate epistemic injustice. Activist approaches to reference services can help in this regard.",
+      "citationCount": 5,
+      "doi": "10.5206/elip.v3i1.8617",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/62ce3a158dcc64b5b9cba9587efa8047db036eb9",
+      "venue": "Emerging Library & Information Perspectives",
+      "journal": {
+        "name": "Emerging Library & Information Perspectives"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2d3f471d574bac6af46f69b012a774770beb5451",
+      "title": "Reclaiming Justice as Lived Praxis: A Phenomenological Critique of Social and Relational Justice in Nursing Practice",
+      "authors": [
+        {
+          "name": "Agness Tembo",
+          "authorId": "2292095169"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Amid rising awareness of both overt and covert racism and the persistence of epistemic injustice within healthcare systems, there is an urgent need to revisit foundational ethical concepts in nursing. This article offers a critical and respectful engagement with Megan\u2010Jane Johnstone's (2011) conceptualisation of justice as a basic human need grounded in a distributive framework. While her work significantly advanced justice as a moral imperative in nursing, it reflects an individualistic and deontological orientation that can insufficiently address the relational, embodied, and structural dimensions of injustice experienced by racialised patients and practitioners. Drawing on contemporary phenomenological philosophy, relational ethics, and post\u2010pandemic scholarship, I advance an alternative view of justice as a dynamic, intersubjective, and contextually situated practice. Engaging with thinkers such as Merleau\u2010Ponty, Carel, Fricker, and proponents of Ubuntu ethics, this article argues for a shift from distributive to relational justice, one that centres mutual recognition, epistemic humility, and ethical responsiveness. Such a reconceptualisation offers a more inclusive and situated ethical framework, capable of responding to the moral complexities and inequities shaping contemporary nursing practice.",
+      "citationCount": 1,
+      "doi": "10.1111/nup.70038",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2d3f471d574bac6af46f69b012a774770beb5451",
+      "venue": "Nursing Philosophy",
+      "journal": {
+        "name": "Nursing Philosophy",
+        "volume": "26"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b3f820742a22b364cf7993da53bbdf0017a4cd22",
+      "title": "Education and Epistemic Injustice",
+      "authors": [
+        {
+          "name": "Ben Kotzee",
+          "authorId": "9534342"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 62,
+      "doi": "10.4324/9781315212043.CH31",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b3f820742a22b364cf7993da53bbdf0017a4cd22",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "324-335",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "41eece640c4d93662d99c2a29a982c50e6437f53",
+      "title": "The Moral Architecture of Inquiry: Philosophical Reflections on Research Ethics",
+      "authors": [
+        {
+          "name": "Priyanka Rai",
+          "authorId": "2400328286"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Research is a central driver of scientific and technological progress, yet it also generates significant ethical challenges related to risk, justice, and responsibility. Traditional approaches to research ethics have largely focused on regulatory compliance and the protection of human and animal subjects. While necessary, these regulatory frameworks do not fully address the deeper philosophical questions about the aims, values, and power structures that shape contemporary knowledge production. This article argues that research ethics must be understood as the moral architecture of inquiry: an integrated set of epistemic virtues, procedural commitments, and governance principles that guide both how and why research is conducted. Drawing on classical and contemporary philosophical sources including Aristotle\u2019s conception of knowledge, Kantian respect for persons, Rawlsian justice, and Jonas\u2019s imperative of responsibility alongside feminist and postcolonial analyses of epistemic injustice, the article advances a holistic framework for ethical research. The discussion highlights the ethical significance of epistemic virtues, the challenges of evaluating uncertain consequences, the rights of human and non-human subjects, and the need for transparent and inclusive governance. Ultimately, the article calls for a proactive, philosophically grounded approach to research ethics that ensures innovation contributes to a more just and sustainable future.",
+      "citationCount": 0,
+      "doi": "10.63363/aijfr.2025.v06i06.2510",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/41eece640c4d93662d99c2a29a982c50e6437f53",
+      "venue": "Advanced International Journal for Research",
+      "journal": {
+        "name": "Advanced International Journal for Research"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6564df9739b201fe86787e8c0427b53529bbec09",
+      "title": "Transcending Epistemic Injustice: Moving to a Non-Dual Psychology of Engaging in Discourse",
+      "authors": [
+        {
+          "name": "Jason Kunen",
+          "authorId": "144108092"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.2139/ssrn.2390280",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6564df9739b201fe86787e8c0427b53529bbec09",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7f87d8c6df9a97fd4fb41a0ac4caf92467ef74ee",
+      "title": "Epistemic Injustice: Epistemic Injustice",
+      "authors": [
+        {
+          "name": "Rachel McKinnon",
+          "authorId": "113565907"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 100,
+      "doi": "10.1111/PHC3.12336",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7f87d8c6df9a97fd4fb41a0ac4caf92467ef74ee",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Compass",
+        "pages": "437-446",
+        "volume": "11"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "86c57ef4c7a8cfc65ed05d863adfeee1c9615cb9",
+      "title": "Replies to Alcoff, Goldberg, and Hookway on Epistemic Injustice",
+      "authors": [
+        {
+          "name": "M. Fricker",
+          "authorId": "32921846"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 66,
+      "doi": "10.3366/E1742360010000894",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/86c57ef4c7a8cfc65ed05d863adfeee1c9615cb9",
+      "venue": "Episteme",
+      "journal": {
+        "name": "Episteme",
+        "pages": "164 - 178",
+        "volume": "7"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "526ece3d85bf40cbd3103362b2d8708fbb167e2f",
+      "title": "The Calculus of Justice and the Machine that Cannot Hesitate: A Semiotic Critique of Algorithmic Law",
+      "authors": [
+        {
+          "name": "Olivia Ruhil",
+          "authorId": "2349836930"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11196-025-10348-y",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/526ece3d85bf40cbd3103362b2d8708fbb167e2f",
+      "venue": "International Journal for the Semiotics of Law",
+      "journal": {
+        "name": "International Journal for the Semiotics of Law - Revue internationale de S\u00e9miotique juridique",
+        "pages": "545 - 553",
+        "volume": "39"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0b08ea82000c584d7be7ff133c4e49da95bc98a3",
+      "title": "Shakespearean Tragedy, Ethics, and Social Justice",
+      "authors": [
+        {
+          "name": "M. Metzger",
+          "authorId": "116517393"
+        }
+      ],
+      "year": 2019,
+      "abstract": "How can the study of literary form shape students\u2019 understanding of ethics, justice, and community? This chapter describes a course that yokes Shakespearean tragedies to ethical philosophy from Aristotle to Patricia J. Williams. Through these pairings, students compare the benefits of cognitive and affective learning, consider questions of epistemic injustice, reasoning, and belief in historical moments of epistemological crisis, and question the roles of individuals and collectivities in precipitating tragic outcomes. Detailing her approach to teaching Othello alongside Williams\u2019 \u201cThe Obliging Shell,\u201d the author illustrates the importance of historicizing the construction of whiteness in order to illuminate the effects of systematized injustice.",
+      "citationCount": 0,
+      "doi": "10.3366/edinburgh/9781474455589.003.0011",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0b08ea82000c584d7be7ff133c4e49da95bc98a3",
+      "venue": "Teaching Social Justice Through Shakespeare",
+      "journal": {
+        "name": "Teaching Social Justice Through Shakespeare"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e996a7e3404ee21fb0f040ea28573657275207a7",
+      "title": "Epistemic Injustice in Practice",
+      "authors": [
+        {
+          "name": "Franziska D\u00fcbgen",
+          "authorId": "2083500023"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 11,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e996a7e3404ee21fb0f040ea28573657275207a7",
+      "venue": "",
+      "journal": {
+        "name": "Wagadu: a Journal of Transnational Women's and Gender Studies",
+        "pages": "1",
+        "volume": "15"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d639773564c3465c644aa1c18662f2554e7a1519",
+      "title": "Embracing Indigenous ethics as collective voices and participation: new beginnings for educational leadership",
+      "authors": [
+        {
+          "name": "Khalid H. Arar",
+          "authorId": "2260539554"
+        },
+        {
+          "name": "Ira Bogotch",
+          "authorId": "2247831467"
+        },
+        {
+          "name": "Denise Mifsud",
+          "authorId": "2269083407"
+        },
+        {
+          "name": "Miguel Guajardo",
+          "authorId": "2367862767"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT This conceptual article proposes an Indigenous ethics-driven framework for educational leadership grounded in relationality, decolonial critique, and mutual engagement. It argues that Indigenous ethics can reimagine dominant epistemologies and leadership practices and critiques Western philosophies of individualism, standardization, and managerialism that reproduce systemic injustices. The purpose is to shift the field from managerialism to a relational paradigm centered on reciprocity, community welfare, and moral obligation. Guiding questions: whose knowledge and voices are amplified, and how might relational ethics disrupt epistemic harm? Drawing on Indigenous ways of knowing, authors reconceptualize leadership as a dynamic practice that fuses theory, methodology, and praxis, and affirm leaders\u2019 ethical duty to contest hegemonic structures and create reciprocal spaces for well-being. The article calls for an \u201cethics turn\u201d privileging relationality, epistemic justice, and participatory practice, and advocates dialogic, culturally aligned, community-centered methodologies to confront systemic racism, colonial legacies, and environmental crises while reimagining the field.",
+      "citationCount": 1,
+      "doi": "10.1080/00220620.2025.2564855",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d639773564c3465c644aa1c18662f2554e7a1519",
+      "venue": "Journal of Educational Administration & History",
+      "journal": {
+        "name": "Journal of Educational Administration and History",
+        "pages": "345 - 362",
+        "volume": "57"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "17e297cc3652c6e866762b379f36e4ab5a85743a",
+      "title": "Fairness in Knowing: Science Communication and Epistemic Justice",
+      "authors": [
+        {
+          "name": "Fabien Medvecky",
+          "authorId": "3010462"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 31,
+      "doi": "10.1007/s11948-017-9977-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/17e297cc3652c6e866762b379f36e4ab5a85743a",
+      "venue": "Science and Engineering Ethics",
+      "journal": {
+        "name": "Science and Engineering Ethics",
+        "pages": "1393 - 1408",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 40,
+  "errors": []
+}

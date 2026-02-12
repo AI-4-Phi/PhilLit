@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Alienation",
+    "author": "Jaeggi",
+    "year": 2014
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.7312/jaeg15198",
+      "title": "Alienation",
+      "authors": [
+        {
+          "family": "Jaeggi",
+          "given": "RahelHG"
+        }
+      ],
+      "editors": [],
+      "year": 2014,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Columbia University Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.7312/jaeg15198",
+      "score": 32.041824
+    }
+  ],
+  "count": 1,
+  "errors": []
+}
