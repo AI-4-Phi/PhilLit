@@ -36,7 +36,21 @@
         "hooks": [
           {
             "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/beta/check_updates.py"
+          },
+          {
+            "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/setup-environment.sh"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/scripts/beta/submit_results.py"
           }
         ]
       }

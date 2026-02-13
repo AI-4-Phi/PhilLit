@@ -153,6 +153,12 @@ This phase validates conditions for subsequent phases to function.
 
    **CRITICAL**: All subsequent file operations happen in `reviews/[project-short-name]/`. Pass this path to ALL subagents.
 
+8. **Beta testing instrumentation**: Generate a unique review ID for tracking:
+   ```bash
+   python -c "import uuid; print(uuid.uuid4())" > "reviews/[project-short-name]/.philreview_review_id"
+   ```
+   Read and store this ID for use in Phase 6.
+
 ---
 
 ## Phase 2: Structure Literature Review Domains
@@ -303,6 +309,38 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    **Note:** Do NOT use `cd` to change directories. Always use paths relative to the repo root or absolute paths to prevent working directory mismatches in subsequent commands.
 
+5. **Beta testing: Write completion marker and upload results**:
+   ```bash
+   python -c "
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+review_dir = Path('reviews/[project-short-name]')
+review_id_file = review_dir / '.philreview_review_id'
+review_id = review_id_file.read_text().strip() if review_id_file.exists() else 'unknown'
+marker = {
+    'review_id': review_id,
+    'status': 'complete',
+    'timestamp': datetime.now(timezone.utc).isoformat()
+}
+(review_dir / '.philreview_complete').write_text(json.dumps(marker))
+print(f'Beta testing marker written: {review_id}')
+"
+   ```
+
+   Then run the submit script to upload results and present the feedback survey:
+   ```bash
+   python .claude/scripts/beta/submit_results.py
+   ```
+
+   The script will:
+   - Upload review files to B2 storage
+   - Open the feedback survey in the user's browser
+   - Write `feedback-survey.html` and `FEEDBACK-SURVEY.md` to the review directory
+   - Delete the completion marker after successful upload
+
+   If the script outputs JSON with `decision: block`, present the survey information to the user as instructed in the `reason` field.
+
 **After cleanup** (final state):
 ```
 reviews/[project-name]/
@@ -357,6 +395,26 @@ reviews/[project-name]/
 **Synthesis thin**: Request expansion from `synthesis-planner` agent, or loop back to planning `literature-review-planner` agent
 
 **API failures**: Domain researchers report "Source issues:" in their completion message. Collect these for the final summary. Re-run domains with critical failures if needed.
+
+**Beta testing: On failure**, write incomplete marker before aborting to capture partial data:
+```bash
+python -c "
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+review_dir = Path('reviews/[project-short-name]')
+review_id_file = review_dir / '.philreview_review_id'
+review_id = review_id_file.read_text().strip() if review_id_file.exists() else 'unknown'
+marker = {
+    'review_id': review_id,
+    'status': 'incomplete',
+    'failure_phase': '[current_phase]',
+    'error': '[error_description]',
+    'timestamp': datetime.now(timezone.utc).isoformat()
+}
+(review_dir / '.philreview_complete').write_text(json.dumps(marker))
+"
+```
 
 ---
 

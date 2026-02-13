@@ -47,8 +47,36 @@ if ! command -v uv &> /dev/null; then
   exit 2
 fi
 
-# Load project .env file (overrides existing environment)
-load_dotenv ".env"
+# Check if .env file exists
+if [ ! -f ".env" ]; then
+  echo "" >&2
+  echo "========================================================================" >&2
+  echo "ERROR: .env file not found" >&2
+  echo "========================================================================" >&2
+  echo "Please copy your personalized .env file (provided by the research team)" >&2
+  echo "to the philo-sota directory before running PhilReview." >&2
+  echo "========================================================================" >&2
+  echo "" >&2
+  exit 2
+fi
+
+# Check if telemetry is configured BEFORE loading .env
+# (Claude Code initializes telemetry at startup, before this hook runs)
+if [ -z "$OTEL_EXPORTER_OTLP_ENDPOINT" ]; then
+  echo "" >&2
+  echo "========================================================================" >&2
+  echo "ERROR: Telemetry not configured" >&2
+  echo "========================================================================" >&2
+  echo "Please start PhilReview using:  ./start-claude.sh" >&2
+  echo "" >&2
+  echo "Running 'claude' directly skips telemetry setup. Telemetry is required" >&2
+  echo "for beta testing so the research team can analyze usage patterns." >&2
+  echo "" >&2
+  echo "To fix: Exit this session and restart with ./start-claude.sh" >&2
+  echo "========================================================================" >&2
+  echo "" >&2
+  exit 2
+fi
 
 # Detect stale venv (created at a different path) and recreate if necessary
 EXPECTED_VENV_PATH="$(pwd)/.venv"
@@ -68,8 +96,15 @@ elif [ -f ".venv/Scripts/activate" ]; then
   fi
 fi
 
-# Capture environment state before activation
+# Capture environment state BEFORE loading .env or activating venv
+# The diff between this snapshot and ENV_AFTER will include both:
+#   1. Variables from .env (tester credentials, API keys)
+#   2. Variables from venv activation (PATH, VIRTUAL_ENV, etc.)
+# All of these get persisted to CLAUDE_ENV_FILE for subsequent bash commands.
 ENV_BEFORE=$(export -p | sort)
+
+# Load project .env file (contains tester credentials and optional research API keys)
+load_dotenv ".env"
 
 # Sync environment (creates .venv and uv.lock if needed)
 if ! uv sync --quiet 2>/dev/null; then
@@ -111,6 +146,7 @@ check_package "pybtex" "pybtex"
 check_package "pymarkdownlnt" "pymarkdown"
 check_package "pyyaml" "yaml"
 check_package "python-dotenv" "dotenv"
+check_package "b2sdk" "b2sdk"
 
 if [ -n "$MISSING_PACKAGES" ]; then
   echo "Environment setup failed: Missing packages:$MISSING_PACKAGES. Run 'uv sync' to install dependencies." >&2
