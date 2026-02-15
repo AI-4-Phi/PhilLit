@@ -271,7 +271,8 @@ class TestCleanBibtex:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["entries_cleaned"] == 1
@@ -297,7 +298,8 @@ class TestCleanBibtex:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_fully_hallucinated, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["entries_cleaned"] == 1
@@ -323,7 +325,8 @@ class TestCleanBibtex:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_valid_with_crossref, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["entries_cleaned"] == 0
@@ -340,7 +343,8 @@ class TestCleanBibtex:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_multiple_entries, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["entries_total"] == 2
@@ -359,48 +363,12 @@ class TestCleanBibtex:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_fully_hallucinated, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         cleaned_content = bib_file.read_text()
         assert "note" in cleaned_content.lower()
         assert "Foundational paper" in cleaned_content
-
-    def test_creates_backup(self, tmp_path, s2_nature_json, bibtex_with_hallucinated_number):
-        """Should create backup file when requested."""
-        json_dir = tmp_path / "json"
-        json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
-        )
-
-        bib_file = tmp_path / "test.bib"
-        bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
-        original_content = bib_file.read_text()
-
-        result = clean_bibtex(bib_file, json_dir, create_backup=True)
-
-        assert result["success"] is True
-        backup_file = bib_file.with_suffix('.bib.bak')
-        assert backup_file.exists()
-        assert backup_file.read_text() == original_content
-
-    def test_no_backup_when_no_changes(self, tmp_path, crossref_with_issue_json, bibtex_valid_with_crossref):
-        """Should not create backup when no changes made."""
-        json_dir = tmp_path / "json"
-        json_dir.mkdir()
-        (json_dir / "verify_caney.json").write_text(
-            json.dumps(crossref_with_issue_json), encoding='utf-8'
-        )
-
-        bib_file = tmp_path / "test.bib"
-        bib_file.write_text(bibtex_valid_with_crossref, encoding='utf-8')
-
-        result = clean_bibtex(bib_file, json_dir, create_backup=True)
-
-        assert result["success"] is True
-        assert result["total_fields_removed"] == 0
-        backup_file = bib_file.with_suffix('.bib.bak')
-        assert not backup_file.exists()
 
     def test_handles_missing_json_dir(self, tmp_path, bibtex_with_hallucinated_number):
         """Should handle missing JSON directory gracefully."""
@@ -409,7 +377,8 @@ class TestCleanBibtex:
 
         json_dir = tmp_path / "nonexistent"
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert len(result["warnings"]) > 0
@@ -423,7 +392,8 @@ class TestCleanBibtex:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert len(result["warnings"]) > 0
@@ -434,7 +404,8 @@ class TestCleanBibtex:
         json_dir = tmp_path / "json"
         json_dir.mkdir()
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is False
         assert len(result["errors"]) > 0
@@ -494,7 +465,7 @@ class TestCLI:
 
         result = subprocess.run(
             [sys.executable, str(HOOKS_DIR / "metadata_cleaner.py"),
-             str(bib_file), str(json_dir), "--no-backup"],
+             str(bib_file), str(json_dir)],
             capture_output=True,
             text=True,
         )
@@ -577,7 +548,8 @@ class TestIntegration:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(hallucinated_bib, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["entries_cleaned"] == 1
@@ -642,7 +614,8 @@ class TestIntegration:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bib_content, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["entries_total"] == 2
@@ -669,7 +642,8 @@ class TestCleanedEntryTagging:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["entries_cleaned"] == 1
@@ -699,7 +673,8 @@ class TestCleanedEntryTagging:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         cleaned_content = bib_file.read_text()
@@ -745,7 +720,8 @@ class TestYearCorrection:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["years_corrected"] == 1
@@ -783,7 +759,8 @@ class TestYearCorrection:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["years_corrected"] == 0
         cleaned_content = bib_file.read_text()
@@ -818,7 +795,8 @@ class TestYearCorrection:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["years_corrected"] == 0
 
@@ -848,7 +826,8 @@ class TestEntryTypeDowngrade:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["types_downgraded"] == 1
@@ -875,7 +854,8 @@ class TestEntryTypeDowngrade:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["types_downgraded"] == 1
@@ -900,7 +880,8 @@ class TestEntryTypeDowngrade:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["success"] is True
         assert result["types_downgraded"] == 0
@@ -925,7 +906,8 @@ class TestEntryTypeDowngrade:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, create_backup=False)
+        result = clean_bibtex(bib_file, json_dir, 
+)
 
         assert result["types_downgraded"] == 0
 

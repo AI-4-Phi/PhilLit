@@ -18,14 +18,15 @@ Preserved fields (never removed):
 - year (corrected rather than removed, via DOI lookup)
 - note, keywords, abstract_source, howpublished, url, abstract (LLM-generated)
 
-Usage: python metadata_cleaner.py <bib_file> <json_dir> [--no-backup]
+Usage: python metadata_cleaner.py <bib_file> <json_dir>
 Output: JSON to stdout with cleaning summary
 Exit codes: 0 = success, 2 = file not found/read error
 """
 
 import json
 import re
-import shutil
+
+
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -437,13 +438,12 @@ def write_bibtex(bib_data: BibliographyData, output_path: Path) -> None:
         writer.write_file(bib_data, f)
 
 
-def clean_bibtex(bib_path: Path, json_dir: Path, create_backup: bool = True) -> dict:
+def clean_bibtex(bib_path: Path, json_dir: Path) -> dict:
     """Clean unverifiable metadata from BibTeX file.
 
     Args:
         bib_path: Path to BibTeX file
         json_dir: Path to directory containing JSON API output files
-        create_backup: Whether to create a .bak backup file
 
     Returns:
         {"success": bool, "cleaned_entries": dict, "total_fields_removed": int,
@@ -518,10 +518,6 @@ def clean_bibtex(bib_path: Path, json_dir: Path, create_backup: bool = True) -> 
 
     # Write cleaned BibTeX back
     if any_changes:
-        if create_backup:
-            backup_path = bib_path.with_suffix('.bib.bak')
-            shutil.copy2(bib_path, backup_path)
-
         write_bibtex(bib_data, bib_path)
 
     return result
@@ -531,16 +527,14 @@ def main():
     if len(sys.argv) < 3:
         print(json.dumps({
             "success": False,
-            "errors": ["Usage: python metadata_cleaner.py <bib_file> <json_dir> [--no-backup]"]
+            "errors": ["Usage: python metadata_cleaner.py <bib_file> <json_dir>"]
         }))
         sys.exit(2)
 
     bib_path = Path(sys.argv[1])
     json_dir = Path(sys.argv[2])
 
-    create_backup = "--no-backup" not in sys.argv
-
-    result = clean_bibtex(bib_path, json_dir, create_backup)
+    result = clean_bibtex(bib_path, json_dir)
     print(json.dumps(result, indent=2))
 
     if not result["success"]:
