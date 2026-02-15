@@ -231,7 +231,7 @@ class TestAssembleReview:
 
     def test_utf8_preserved(self, tmp_path):
         """UTF-8 characters are preserved."""
-        (tmp_path / "section-1.md").write_text("## Über Philosophie\n\nCafé résumé.")
+        (tmp_path / "section-1.md").write_text("## Über Philosophie\n\nCafé résumé.", encoding='utf-8')
 
         output = tmp_path / "output.md"
         assemble_review(

@@ -91,7 +91,7 @@ def lint_markdown(filepath: str) -> int:
                 if match:
                     code = match.group(1)
                     if code in RULE_EXPLANATIONS:
-                        print(f"  → Fix: {RULE_EXPLANATIONS[code]}")
+                        print(f"  -> Fix: {RULE_EXPLANATIONS[code]}")
 
         if result.stderr:
             print(result.stderr, end="", file=sys.stderr)
