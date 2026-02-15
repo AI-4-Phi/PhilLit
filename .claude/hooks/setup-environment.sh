@@ -132,7 +132,7 @@ fi
 # Check system tools required by hooks
 if ! command -v jq &> /dev/null; then
   echo "Warning: jq not installed. SubagentStop hook requires jq for BibTeX validation." >&2
-  echo "Install with: brew install jq (macOS), apt install jq (Linux), or choco install jq (Windows)" >&2
+  echo "Install with: brew install jq (macOS), apt install jq (Linux), or on Windows: winget install jqlang.jq / scoop install jq / choco install jq" >&2
 fi
 
 # Success: output context for Claude (stdout is added to Claude's context)
