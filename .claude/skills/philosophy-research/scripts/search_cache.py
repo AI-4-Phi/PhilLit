@@ -80,7 +80,7 @@ def get_cache(key: str, ttl: int = DEFAULT_TTL) -> Optional[Any]:
         mtime = cache_file.stat().st_mtime
         age = time.time() - mtime
 
-        if age > ttl:
+        if age >= ttl:
             # Stale cache, remove it
             cache_file.unlink()
             return None
