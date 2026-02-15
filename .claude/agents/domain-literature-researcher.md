@@ -328,6 +328,10 @@ REVIEW_DIR="$PWD/reviews/[project-name]"
 > - Bad:  `$PYTHON script.py "query" > results.json`
 > - Good: `$PYTHON script.py "query" > "$REVIEW_DIR/results.json"`
 
+> **File extension convention**: Always use `.json` extension when saving script output to files (the content is JSON). Never use `.txt`. This ensures Phase 6 cleanup catches all intermediate files.
+
+> **No manual backups**: Do not create backup copies of `.bib` files (e.g., `cp file.bib file.bib.backup`). The workflow handles file safety through hook validation.
+
 ```bash
 # Stage 3: Run all API searches in parallel
 $PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "free will compatibilism" --field Philosophy --year 2015-2025 --limit 30 > "$REVIEW_DIR/s2_results.json" &

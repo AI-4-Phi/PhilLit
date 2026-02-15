@@ -531,7 +531,7 @@ def main():
     if len(sys.argv) < 3:
         print(json.dumps({
             "success": False,
-            "errors": ["Usage: python metadata_cleaner.py <bib_file> <json_dir> [--backup]"]
+            "errors": ["Usage: python metadata_cleaner.py <bib_file> <json_dir> [--no-backup]"]
         }))
         sys.exit(2)
 

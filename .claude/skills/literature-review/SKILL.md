@@ -323,6 +323,16 @@ Never advance to Phase 6 before all synthesis writers have completed.
    rm -f reviews/.active-review
    ```
 
+   Safety net — move any remaining non-final files to `intermediate_files/`:
+   ```bash
+   for f in "reviews/[project-name]"/*; do
+     case "$(basename "$f")" in
+       literature-review-final.md|literature-review-final.docx|literature-all.bib|intermediate_files) ;;
+       *) mv "$f" "reviews/[project-name]/intermediate_files/" 2>/dev/null || true ;;
+     esac
+   done
+   ```
+
    **Note:** Do NOT use `cd` to change directories. Always use paths relative to the repo root or absolute paths to prevent working directory mismatches in subsequent commands.
 
 **After cleanup** (final state):
