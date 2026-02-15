@@ -86,6 +86,7 @@ Run tests with: `pytest tests/`
 - **Simple and concise** — Prefer simple solutions. Keep agent/skill instructions brief and effective. Avoid verbosity.
 - **Verify assumptions empirically** — Test bash patterns and environment behavior in actual subagent context before codifying. Don't assume documentation is accurate.
 - **Cross-platform** — Implementations must work in Claude Code Cloud, Linux, macOS, and Windows. Use forward slashes in paths. Handle platform-specific paths (e.g., venv activation scripts differ between Unix and Windows).
+- **Python file I/O** — Always pass `encoding='utf-8'` to `open()`, `read_text()`, and `write_text()`. Windows defaults to `cp1252`, causing cross-platform failures. Avoid non-ASCII characters (e.g., `→`) in output that may be piped through subprocesses (Windows `cp1252` can't encode them).
 
 ## Hooks and Python
 
