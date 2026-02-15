@@ -2,7 +2,7 @@
 
 **Discovered**: 2026-02-15, during investigation of env propagation fix
 **Severity**: Low (causes unnecessary venv recreation, no data loss)
-**Status**: Open
+**Status**: Fixed
 **Platform**: Windows (Git Bash)
 
 ## Summary

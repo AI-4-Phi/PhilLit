@@ -58,7 +58,12 @@ if [ -f ".venv/bin/activate" ]; then
   fi
 elif [ -f ".venv/Scripts/activate" ]; then
   # Windows: extract VIRTUAL_ENV path from activate script
+  # Normalize both paths with cygpath — $(pwd) returns POSIX paths (/c/Users/...)
+  # but the activate script contains Windows paths (C:\Users\...), so they never
+  # match without conversion.
   VENV_PATH=$(grep "^VIRTUAL_ENV=" .venv/Scripts/activate 2>/dev/null | head -1 | cut -d"'" -f2)
+  VENV_PATH="$(cygpath -u "$VENV_PATH" 2>/dev/null || echo "$VENV_PATH")"
+  EXPECTED_VENV_PATH="$(cygpath -u "$EXPECTED_VENV_PATH" 2>/dev/null || echo "$EXPECTED_VENV_PATH")"
   if [ -n "$VENV_PATH" ] && [ "$VENV_PATH" != "$EXPECTED_VENV_PATH" ]; then
     echo "Detected stale venv (was at: $VENV_PATH). Recreating..."
     rm -rf .venv
