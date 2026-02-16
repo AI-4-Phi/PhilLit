@@ -2,9 +2,9 @@
   "permissions": {
     "defaultMode": "default",
     "deny": [
-      "Bash(sudo:*)",
-      "Bash(dd:*)",
-      "Bash(mkfs:*)"
+      "Bash(sudo *)",
+      "Bash(dd *)",
+      "Bash(mkfs *)"
     ],
     "allow": [
       "Read",
@@ -25,11 +25,20 @@
       "Write(reviews/**)",
       "Edit(reviews/**)",
       "Skill(literature-review)",
-      "Skill(philosophy-research)"
+      "Skill(philosophy-research)",
+      "Bash(REVIEW_DIR=*)",
+      "Bash(mv *)",
+      "Bash(find *)",
+      "Bash(for *)",
+      "Bash(if *)",
+      "Bash(pandoc *)",
+      "Bash(wc *)",
+      "Bash(rm -f reviews/*)",
+      "Bash(command *)"
     ],
     "ask": [
-      "Bash(rm:*)",
-      "Bash(rmdir:*)"
+      "Bash(rm *)",
+      "Bash(rmdir *)"
     ]
   },
   "hooks": {

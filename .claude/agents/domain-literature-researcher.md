@@ -120,6 +120,19 @@ Output brief status after each search phase. Users should see progress every 2-3
 
 Use the `philosophy-research` skill scripts via Bash. All scripts are in `.claude/skills/philosophy-research/scripts/`.
 
+**Set up the review directory** at the start of every Bash call that writes files:
+```bash
+REVIEW_DIR="$PWD/reviews/[project-name]"
+mkdir -p "$REVIEW_DIR/intermediate_files/json"
+```
+Substitute `[project-name]` with the actual directory name from the orchestrator prompt.
+
+> **CRITICAL: ALL output files MUST use `$REVIEW_DIR` paths.** Never redirect to bare filenames (e.g., `> results.json`). Files without the full path land in the project root, not the review directory.
+
+> **File extension convention**: Always use `.json` extension when saving script output to files (the content is JSON). Never use `.txt`. This ensures Phase 6 cleanup catches all intermediate files.
+
+> **No manual backups**: Do not create backup copies of `.bib` files (e.g., `cp file.bib file.bib.backup`). The workflow handles file safety through hook validation.
+
 ### Stage 1: SEP & IEP (Most Authoritative)
 
 ```bash
@@ -150,18 +163,23 @@ $PYTHON .claude/skills/philosophy-research/scripts/search_philpapers.py "{topic}
 ### Stage 3: Extended Academic Search
 
 ```bash
+REVIEW_DIR="$PWD/reviews/[project-name]"
+mkdir -p "$REVIEW_DIR"
+
 # Semantic Scholar - broad academic search with filtering
-$PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025
+$PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json"
 
 # OpenAlex - 250M+ works, cross-disciplinary coverage
-$PYTHON .claude/skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025
+$PYTHON .claude/skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json"
 
 # CORE - 431M papers with abstracts, excellent for finding paper content
-$PYTHON .claude/skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024
+$PYTHON .claude/skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json"
 
 # arXiv - preprints, AI ethics, recent work
-$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent
+$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json"
 ```
+
+After each search, use the **Read** tool on the JSON file to examine results and check the `status` field.
 
 **When to prioritize arXiv**: AI ethics, AI alignment, computational philosophy, cross-disciplinary CS/philosophy.
 
@@ -316,75 +334,34 @@ WebSearch: "[topic] [author/org] blog/report/whitepaper"
 
 ### How to Parallelize Searches
 
-Use bash background processes (`&`) and `wait` to run searches concurrently:
+Append `&` to each command in a single Bash call, then `wait` for all to finish:
 
 ```bash
-# Construct absolute path to review directory (substitute project name from prompt)
 REVIEW_DIR="$PWD/reviews/[project-name]"
-```
 
-> **CRITICAL: ALL output files MUST use `$REVIEW_DIR` paths.** Never redirect to bare filenames (e.g., `> results.json`). Files without the full path land in the project root, not the review directory.
->
-> - Bad:  `$PYTHON script.py "query" > results.json`
-> - Good: `$PYTHON script.py "query" > "$REVIEW_DIR/results.json"`
+$PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json" &
+$PYTHON .claude/skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json" &
+$PYTHON .claude/skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json" &
+$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json" &
 
-> **File extension convention**: Always use `.json` extension when saving script output to files (the content is JSON). Never use `.txt`. This ensures Phase 6 cleanup catches all intermediate files.
-
-> **No manual backups**: Do not create backup copies of `.bib` files (e.g., `cp file.bib file.bib.backup`). The workflow handles file safety through hook validation.
-
-```bash
-# Stage 3: Run all API searches in parallel
-$PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "free will compatibilism" --field Philosophy --year 2015-2025 --limit 30 > "$REVIEW_DIR/s2_results.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_openalex.py "free will compatibilism" --year 2015-2025 --limit 30 > "$REVIEW_DIR/openalex_results.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_core.py "free will compatibilism" --year 2020-2024 > "$REVIEW_DIR/core_results.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "moral responsibility determinism" --category cs.AI --limit 20 > "$REVIEW_DIR/arxiv_results.json" &
-
-# Wait for all searches to complete
 wait
 ```
 
-Use the **Read** tool to examine each result file:
-- Read `s2_results.json`
-- Read `openalex_results.json`
-- Read `arxiv_results.json`
+After `wait`, use the **Read** tool to examine each JSON result file.
 
-### Best Practices for Parallel Execution
+### When to Parallelize
 
-**When to use parallel mode**:
-- ✅ Stage 3 (Extended Academic Search) - all API searches are independent
+**Use parallel mode**:
+- ✅ Stage 3 (Extended Academic Search) — all API searches are independent
 - ✅ Multiple PhilPapers searches with different queries
-- ✅ Multiple arXiv searches with different categories
 - ✅ Citation chaining for multiple seed papers
 
-**When NOT to use parallel mode**:
+**Do NOT parallelize**:
 - ❌ Stages 1-2 if you need SEP results to inform PhilPapers queries
 - ❌ When searches depend on results from previous searches
 - ❌ Verification steps that depend on gathered metadata
 
-**Error handling**: Each search runs independently with its own retry logic (exponential backoff). If one fails, others continue. Check each output file for errors.
-
-**Progress monitoring**: Progress messages go to stderr, allowing you to track each search:
-```bash
-# View progress in real-time
-tail -f s2_results.json openalex_results.json arxiv_results.json
-```
-
-**Example: Complete parallel Stage 3**:
-```bash
-# Construct absolute path to review directory (substitute project name from prompt)
-REVIEW_DIR="$PWD/reviews/[project-name]"
-
-# Launch all Stage 3 searches concurrently
-$PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "mechanistic interpretability" --field Philosophy --year 2020-2025 --limit 40 > "$REVIEW_DIR/stage3_s2.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_openalex.py "mechanistic interpretability" --year 2020-2025 --min-citations 5 --limit 40 > "$REVIEW_DIR/stage3_openalex.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "interpretability neural networks" --category cs.AI --recent --limit 30 > "$REVIEW_DIR/stage3_arxiv.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "explainable AI" --category cs.AI --year 2023 --limit 20 > "$REVIEW_DIR/stage3_arxiv2.json" &
-
-# Wait for completion
-wait
-```
-
-Use **Glob** to find all `stage3_*.json` files, then use the **Read** tool to examine each result file.
+**Error handling**: Each search runs independently with its own retry logic. If one fails, others continue. Check each output file's `status` field.
 
 ## BibTeX File Structure
 
@@ -479,6 +456,10 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 - [ ] `enrich_bibliography.py` was run on the output file
 - [ ] INCOMPLETE entries noted in NOTABLE_GAPS section
 
+✅ **JSON Intermediate Files**:
+- [ ] All Stage 3 search results saved as `.json` files in `$REVIEW_DIR/`
+- [ ] Each JSON file has `status: "success"` (or failures noted in completion message)
+
 ✅ **Encyclopedia Context**:
 - [ ] `encyclopedia_entries.json` saved in Stage 1 (or noted that none found)
 - [ ] Context extracted for High importance papers matching SEP/IEP bibliographies
@@ -504,10 +485,7 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 
 ## Error Checking
 
-**After each search stage**, check script output for API/search failures:
-
-- Direct runs: Check `status` field in JSON output
-- Parallel runs: Use Read tool on each output file, check `status` field
+**After each search stage**, use the Read tool on each JSON output file and check the `status` field:
 
 **Track source failures**:
 - `status: "error"` → Source completely failed (critical)
