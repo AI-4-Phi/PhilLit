@@ -109,4 +109,4 @@ Agents specify `model` and `tools` in their frontmatter (see `.claude/agents/`):
 | `synthesis-writer` | `sonnet` | Glob, Grep, Read, Write |
 | `literature-review-planner` | `inherit` | Read, Write |
 
-Agents inherit the project-level `allow`/`deny`/`ask` rules from `settings.json`. They do not set their own `permissionMode`.
+Agents inherit the project-level `allow`/`deny`/`ask` rules from `settings.json`. They can optionally set their own `permissionMode` in their frontmatter to override the project-level default (e.g., `permissionMode: acceptEdits`).

@@ -3,7 +3,7 @@ name: domain-literature-researcher
 description: Conducts focused literature searches for specific domains in research. Searches SEP, IEP, PhilPapers, Semantic Scholar, OpenAlex, CORE, arXiv and produces accurate BibTeX bibliography files with rich content summaries and metadata for synthesis agents.
 tools: Bash, Glob, Grep, Read, Write, WebFetch, WebSearch
 model: sonnet
-permissionMode: default
+permissionMode: acceptEdits
 ---
 
 # Domain Literature Researcher
@@ -493,16 +493,18 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 - [ ] arXiv papers combine arXiv ID and annotation in a single `note` field
 
 ✅ **File Quality**:
-- [ ] Valid BibTeX syntax
+- [ ] Valid BibTeX syntax (hooks validate automatically; fix if Write is denied)
 - [ ] UTF-8 encoding preserved
 - [ ] @comment section complete
 - [ ] 10-20 papers per domain
 
 **If any check fails, fix before submitting.**
 
+**Note:** BibTeX validation happens automatically via PreToolUse and SubagentStop hooks. If your Write call is denied due to validation errors, fix the issues and retry. You do NOT need to run validation commands manually.
+
 ## Error Checking
 
-**After each search stage**, check script output for failures:
+**After each search stage**, check script output for API/search failures:
 
 - Direct runs: Check `status` field in JSON output
 - Parallel runs: Use Read tool on each output file, check `status` field
@@ -513,6 +515,11 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 - `status: "success"` with `count: 0` → No results found
 
 Report any `"error"` or `"partial"` status in your completion message.
+
+**Do NOT manually validate BibTeX syntax.** Hooks handle this automatically:
+- PreToolUse hook validates before Write (denies permission if errors found)
+- SubagentStop hook validates on exit (blocks exit if errors found)
+- If validation fails, fix the reported errors and retry
 
 ## Communication with Orchestrator
 
