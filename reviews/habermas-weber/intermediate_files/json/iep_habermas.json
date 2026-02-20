@@ -1,0 +1,73 @@
+[search_iep.py] Connecting to Brave API for iep_via_brave search...
+[search_iep.py] Searching iep.utm.edu: 'Habermas', limit=20
+[search_iep.py] Retrieved 5 entries...
+[search_iep.py] Search complete: 5 entries found
+{
+  "status": "success",
+  "source": "iep_via_brave",
+  "query": "Habermas",
+  "results": [
+    {
+      "title": "Habermas, J\u00fcrgen",
+      "url": "https://iep.utm.edu/habermas/",
+      "entry_name": "habermas",
+      "snippet": "J\u00fcrgen Habermas produced a large body of work over more than five decades. His early work was devoted to the public sphere, to modernization, and to critiques of trends in philosophy and politics. He then slowly began to articulate theories of rationality, meaning, and truth.",
+      "page_age": null,
+      "extra_snippets": [
+        "Habermas represents the second generation of Frankfurt School Critical Theory. His mature work started a \u201ccommunicative turn\u201d in Critical Theory. This turn contrasted with the approaches of his mentors, Max Horkheimer and Theodor W. Adorno, who were among the founders of Critical Theory.",
+        "Habermas sees this turn as a paradigm shift away from many assumptions within traditional ontological approaches of ancient philosophy as well as what he calls the \u201cphilosophy of the subject\u201d that characterized the early modern period.",
+        "Another contrast with early Critical Theory is that Habermas defends the \u201cunfinished\u201d emancipatory project of the Enlightenment against various critiques. One such critique arose when the moral catastrophe of WWII shattered hopes that modernity\u2019s increasing rationalization and technological innovation would yield human emancipation.",
+        "Habermas argued that a picture of Enlightenment rationality wedded to domination only arises if we conflate instrumental rationality with rationality as such\u2014if technical control is mistaken for the entirety of communication."
+      ]
+    },
+    {
+      "title": "Frankfurt School and Critical Theory",
+      "url": "https://iep.utm.edu/critical-theory-frankfurt-school/",
+      "entry_name": "critical-theory-frankfurt-school",
+      "snippet": "Some of the most prominent figures of the first generation of Critical Theorists were Max Horkheimer (1895-1973), Theodor Adorno (1903-1969), Herbert Marcuse (1898-1979), Walter Benjamin (1892-1940), Friedrich Pollock (1894-1970), Leo Lowenthal (1900-1993), and Eric Fromm (1900-1980). Since the 1970s, a second generation began with J\u00fcrgen Habermas, who, among other merits, contributed to the opening of a dialogue between so-called continental and the analytic traditions.",
+      "page_age": null,
+      "extra_snippets": [
+        "Some of the most prominent figures of the first generation of Critical Theorists were Max Horkheimer (1895-1973), Theodor Adorno (1903-1969), Herbert Marcuse (1898-1979), Walter Benjamin (1892-1940), Friedrich Pollock (1894-1970), Leo Lowenthal (1900-1993), and Eric Fromm (1900-1980). Since the 1970s, a second generation began with J\u00fcrgen Habermas, who, among other merits, contributed to the opening of a dialogue between so-called continental and the analytic traditions.",
+        "It was during this phase that Richard Bernstein, a philosopher and contemporary of Habermas, embraced the research agenda of Critical Theory and significantly helped its development in American universities starting from the New School for Social Research in New York.",
+        "The third generation of critical theorists, therefore, arose either from Habermas\u2019 research students in the United States and at Frankfurt am Main and Starnberg (1971-1982), or from a spontaneous convergence of independently educated scholars. Therefore, the third generation of Critical Theory scholars consists of two groups.",
+        "The first spans a broad time\u2014denying the possibility of establishing any sharp boundaries. It can be said to include also scholars such as Andrew Feenberg, even if he was a direct student of Marcuse, or people such as Albrecht Wellmer who became an assistant of Habermas due to the premature death of Adorno in 1969."
+      ]
+    },
+    {
+      "title": "Schelling, F. W. J. von",
+      "url": "https://iep.utm.edu/schellin/",
+      "entry_name": "schellin",
+      "snippet": "Ernst Bloch, whom J\u00fcrgen Habermas calls \u201cSchellingian Marxist\u201d, combines a certain version of Marxism and messianism that envisions a utopian fulfilment oriented towards the \u201cnot yet\u201d. His The Spirit of Utopia and his later work The Principle of Hope evoke a notion of history that is disruptive, opening to the \u201cnot yet\u201d, a fundamental affirmation of future which Schelling always insisted as the very creative, free task of philosophy.",
+      "page_age": null,
+      "extra_snippets": [
+        "Ernst Bloch, whom J\u00fcrgen Habermas calls \u201cSchellingian Marxist\u201d, combines a certain version of Marxism and messianism that envisions a utopian fulfilment oriented towards the \u201cnot yet\u201d. His The Spirit of Utopia and his later work The Principle of Hope evoke a notion of history that is disruptive, opening to the \u201cnot yet\u201d, a fundamental affirmation of future which Schelling always insisted as the very creative, free task of philosophy."
+      ]
+    },
+    {
+      "title": "Political Revolution",
+      "url": "https://iep.utm.edu/pol-rev/",
+      "entry_name": "pol-rev",
+      "snippet": "Their reflections on legitimate ... for the two main ideas of the revolutionary age: \u201cnatural\u201d human rights and national sovereignty (compare Habermas, 1990; Menke/Raimondi, 2011)....",
+      "page_age": null,
+      "extra_snippets": [
+        "Their reflections on legitimate governance and on citizens\u2019 rights go beyond earlier discussions of justified resistance to monarchs\u2014such as the 1579 Vindiciae contra Tyrannos, published under the pseudonym Stephen Junius Brutus\u2014, which rely on expertocratic leadership as opposed to political self-determination of the people. Their works thus prepare the ground for the two main ideas of the revolutionary age: \u201cnatural\u201d human rights and national sovereignty (compare Habermas, 1990; Menke/Raimondi, 2011).",
+        "A primarily democratic strand of theory is influenced by the works of Locke, takes shape in Thomas Jefferson\u2019s and J.A.N. de Condorcet\u2019s thinking, and is further developed in Kant\u2019s reflections on gradual, yet profound transformation. Throughout the 19th and 20th century, it is continued selectively in the late writings of Friedrich Engels or in Hannah Arendt\u2019s and J\u00fcrgen Habermas\u2019s considerations of the subject."
+      ]
+    },
+    {
+      "title": "Foucault, Michel: Ethics",
+      "url": "https://iep.utm.edu/fouc-eth/",
+      "entry_name": "fouc-eth",
+      "snippet": "The scholarship agrees that there is a prima facie incompatibility in Foucault\u2019s treatment of Kant, but there is disagreement about whether it is more substantial. J\u00fcrgen Habermas (1986) maintains that Foucault\u2019s alleged critique of the Kantian self-constituting subject cannot be squared with the conception of the self-constituting subject that emerges in his ethical writings.",
+      "page_age": null,
+      "extra_snippets": [
+        "The received view of this period of his work, especially the secondary thesis and The Order of Things, is that it provides decisive evidence of his rejection of Kant\u2019s attempt to place all rational conditions and constraints in the subject (for example, see Habermas 1986, Schmidt and Wartenburg 1994, Han 2002, Allen 2003).",
+        "The scholarship agrees that there is a prima facie incompatibility in Foucault\u2019s treatment of Kant, but there is disagreement about whether it is more substantial. J\u00fcrgen Habermas (1986) maintains that Foucault\u2019s alleged critique of the Kantian self-constituting subject cannot be squared with the conception of the self-constituting subject that emerges in his ethical writings.",
+        "Now, while criticisms of Foucault\u2019s philosophy are diverse (see especially Taylor 1986, Habermas 1986, Bernstein 1994, and Fraser 1994), a common complaint is that he owes his readers some explanation for why one ought to accept his evaluations of modern ethics.",
+        "His rhetoric is therefore charged not because he has some hidden normative criteria already in hand (as Habermas 1990 alleges), but because, for example, certain individuals operate in a practice (say, penitential practices) under false opinions about its supposed noble goals (for example, defending society)."
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

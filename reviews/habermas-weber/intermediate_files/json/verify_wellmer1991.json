@@ -1,0 +1,20 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='The Persistence of Modernity...' author=Wellmer year=1991
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "The Persistence of Modernity",
+    "author": "Wellmer",
+    "year": 1991
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No matching papers found",
+      "recoverable": false
+    }
+  ]
+}

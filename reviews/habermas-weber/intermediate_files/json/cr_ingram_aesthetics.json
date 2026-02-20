@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/488245"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/488245",
+      "title": "Habermas on Aesthetics and Rationality: Completing the Project of Enlightenment",
+      "authors": [
+        {
+          "family": "Ingram",
+          "given": "David"
+        }
+      ],
+      "editors": [],
+      "year": 1991,
+      "container_title": "New German Critique",
+      "volume": "",
+      "issue": "53",
+      "page": "67",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/488245"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

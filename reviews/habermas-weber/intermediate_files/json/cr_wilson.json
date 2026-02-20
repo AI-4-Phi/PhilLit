@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1016/0191-6599(86)90068-9"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1016/0191-6599(86)90068-9",
+      "title": "Critical theory's critique of social science: Episodes in a changing problematic from adorno to habermas, part I",
+      "authors": [
+        {
+          "family": "Wilson",
+          "given": "H.T."
+        }
+      ],
+      "editors": [],
+      "year": 1986,
+      "container_title": "History of European Ideas",
+      "volume": "7",
+      "issue": "2",
+      "page": "127-147",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1016/0191-6599(86)90068-9"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

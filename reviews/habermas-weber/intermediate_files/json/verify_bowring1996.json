@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Lifeworld without a Subject Habermas and the Patho...' author=Bowring year=1996
+[verify_paper.py] Paper found: A Lifeworld without a Subject: Habermas and the Pa... (score: 74.1)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Lifeworld without a Subject Habermas and the Pathologies of Modernity",
+    "author": "Bowring",
+    "year": 1996
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.3817/1296106077",
+      "title": "A Lifeworld without a Subject: Habermas and the Pathologies of Modernity",
+      "authors": [
+        {
+          "family": "Bowring",
+          "given": "F."
+        }
+      ],
+      "editors": [],
+      "year": 1996,
+      "container_title": "Telos",
+      "volume": "1996",
+      "issue": "106",
+      "page": "77-104",
+      "publisher": "Telos Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.3817/1296106077",
+      "score": 74.12558
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

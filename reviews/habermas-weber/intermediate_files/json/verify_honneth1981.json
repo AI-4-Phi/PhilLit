@@ -1,0 +1,47 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Dialectics of Rationalization An Interview with Ju...' author=Honneth year=1981
+[verify_paper.py] Paper found: The Dialectics of Rationalization: An Interview wi... (score: 68.8)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Dialectics of Rationalization An Interview with Jurgen Habermas",
+    "author": "Honneth",
+    "year": 1981
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.3817/0981049005",
+      "title": "The Dialectics of Rationalization: An Interview with Jurgen Habermas",
+      "authors": [
+        {
+          "family": "Honneth",
+          "given": "A."
+        },
+        {
+          "family": "Knodler-Bunte",
+          "given": "E."
+        },
+        {
+          "family": "Widmann",
+          "given": "A."
+        }
+      ],
+      "editors": [],
+      "year": 1981,
+      "container_title": "Telos",
+      "volume": "1981",
+      "issue": "49",
+      "page": "5-31",
+      "publisher": "Telos Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.3817/0981049005",
+      "score": 68.75442
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

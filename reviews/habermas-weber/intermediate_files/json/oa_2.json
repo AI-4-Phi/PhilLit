@@ -1,0 +1,1021 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Verstehen explanation understanding social science Habermas Weber",
+  "results": [
+    {
+      "openalex_id": "W582495104",
+      "doi": null,
+      "title": "Understanding and Social Inquiry",
+      "authors": [
+        {
+          "name": "Fred Dallmayr",
+          "openalex_id": "A5041919263"
+        },
+        {
+          "name": "Thomas McCarthy",
+          "openalex_id": "A5104364804"
+        }
+      ],
+      "publication_year": 1977,
+      "publication_date": "1977-06-01",
+      "abstract": "Introduction: The crisis of understanding.--Max Weber on Verstehen: Weber, M. Objectivity in social science and social policy. Weber, M. Basic sociologica terms. Parsons, T. Value-freedom and objectivity. Habermas, J. Discussion.-- positivist reception: Abel, T. The operation called Verstehen. Rudner, R. On the objectivity of social science. Taylor, C. Interpretation and the science of man.--The Wittgensteinian reformulation: Winch, P. The idea of a social science. Winch, P. Understanding a primitive society. Jarvie, I. C. Understanding and explanation in sociology and social anthropology. Winch, P Comment.--Phenomenology and ethnomethodology: Schutz, A. Concept and theory formation in the social sciences. Garfinkel, H. What is ethnomethodology? Mayrl, W. Ethnomethodology: sociology without society?--Hermeneutics and critical theory: Apel, K.-O. The A priori of communication and the foundatio of the humanities. Ricoeur, P. The model of the text: meaningful action considered as a text. Habermas, J.A review of Gadamer's Truth and method.",
+      "cited_by_count": 386,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical and Historical Studies",
+        "Hermeneutics and Narrative Identity",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W582495104"
+    },
+    {
+      "openalex_id": "W2151020819",
+      "doi": "10.2307/25148742",
+      "title": "The Nature of Theory in Information Systems1",
+      "authors": [
+        {
+          "name": "Gregor",
+          "openalex_id": "A5097615957",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-09-01",
+      "abstract": "The aim of this research essay is to examine the structural nature of theory in Information Systems. Despite the importance of theory, questions relating to its form and structure are neglected in comparison with questions relating to epistemology. The essay addresses issues of causality, explanation, prediction, and generalization that underlie an understanding of theory. A taxonomy is proposed that classifies information systems theories with respect to the manner in which four central goals are addressed: analysis, explanation, prediction, and prescription. Five interrelated types of theory are distinguished: (1) theory for analyzing, (2) theory for explaining, (3) theory for predicting, (4) theory for explaining and predicting, and (5) theory for design and action. Examples illustrate the nature of each theory type. The applicability of the taxonomy is demonstrated by classifying a sample of journal articles. The paper contributes by showing that multiple views of theory exist and by exposing the assumptions underlying different viewpoints. In addition, it is suggested that the type of theory under development can influence the choice of an epistemological approach. Support is given for the legitimacy and value of each theory type. The building of integrated bodies of theory that encompass all theory types is advocated.",
+      "cited_by_count": 3166,
+      "type": "article",
+      "source": {
+        "name": "MIS Quarterly",
+        "type": "journal",
+        "issn": [
+          "0276-7783",
+          "2162-9730"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openresearch-repository.anu.edu.au/bitstreams/77077d0f-f636-40a8-89fb-d2d2365ad7ad/download"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Business Process Modeling and Analysis",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 106,
+      "url": "https://openalex.org/W2151020819"
+    },
+    {
+      "openalex_id": "W570703402",
+      "doi": "10.4135/9781446262528",
+      "title": "Methods of Interpretive Sociology",
+      "authors": [
+        {
+          "name": "Matthew David",
+          "openalex_id": "A5109631228"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "VOLUME 1 SECTION ONE: THE CLASSICAL STATEMENTS AND AUTHORS The Rise of Hermeneutics - Wilhelm Dilthey and Frederic Jameson Translator's Introduction to Max Essay on Some Categories of Interpretive Sociology - Edith Graber Some Categories of Interpretive Sociology - Max Weber Anticritical Last Word on The Spirit of Capitalism, by Max Weber - Wallace Davis Capitalism in Recent German Literature: Sombart and Weber - Talcott Parsons Capitalism in Recent German Literature: Sombart and Weber (concluded) - Talcott Parsons The Role of Ideas in Social Action - Talcott Parsons The Problem of Sociology - Georg Simmel The Sociology of Sociability - Georg Simmel and Everett C. Hughes The Thesis and the Foundations of Max Methodology, History and Theory - Guy Oakes Rickert's Value Theory and the Foundations of Max Methodology - Guy Oakes SECTION TWO: THE INTERPRETERS AND CHALLENGERS OF THE CLASSIC INTERPRETIVIST IDEA OF VERSTEHEN The Operation Called Vershehen - Theodore Abel On the Method of as the Sole Method of Philosophy - Ernest Nagel Empirical Science and Max Verstehende Soziologie - Peter Munch Max Weber's Verstehen - William T. Tucker I and II, Theory and Decision - Theodore Abel and Intention in Max Theory of Social Action - Peter Munch Weber on Action - Stephen P. Turner Max 'Interpretive Sociology': A comparison of conception and practice - Mary Fulbrook Value-Relevance, Scientific Laws, and Ideal Types: The sociological methodology of Max Weber - John Rex Max Weber on Causal Analysis, Interpretation, and Comparison - Fritz Ringer Max Interpretive Sociology, the of Actions and Motives, and a Weberian View of Man - Thomas Burger Max Weber, Interpretive Sociology, and the Sense of Historical Science: A Positivistic Conception of - Thomas Burder Causality or Interaction? Simmel, Weber and Interpretive Sociology - K Lichtblau Interpretive Sociology and Rational Choice Approach - Zenonas Norkus and the History of Qualitative Research: The missing link - Jennifer Platt Weber and Interpretive Sociology in America - Peter Kivisto and William H. Swatos Jr VOLUME 2 SECTION THREE: THE PHENOMENOLOGICAL CRITICS The Stranger: An Essay in Social Psychology - Alfred Schutz Common-sense and Scientific Interpretation of Human Action - Alfred Schutz Schutz Choosing Among Projects of Action - Alfred Schutz Concept and Theory Formation in the Social Sciences - Alfred Schutz On Phenomenological Sociology - James L. Heap and Phillip A. Roth Can There Be a Phenomenological Sociology? - Edo Pivcevic Alfred Schutz and the Austrian School of Economics - Christopher Prendergast The Rationality of Everyday Behaviour: A rational choice reconstruction of the theory of action by Alfred Schutz - Hartmut Esser Rationality, Optimality and Choice: Esser's reconstruction of Alfred Schutz's theory of action - Christopher Prendergast Spontaneous Social Order: Econmics and Sch tzian sociology - Nicolai Juul Foss Alfred Schutz on a Theory of Motivation - Andrew J. Weigert Weber to Parsons and Schutz: The eclipse of history in modern social theory - David Zaret Existential Phenomenology and the Sociological Tradition - Edward Tiryakian Jiri Kolaja and Peter Berger Respond to Edward Tiryakian and he Responds Back - Jiri Kolaja and Peter Berger SECTION FOUR: THE CRITICAL PHENOMENOLOGISTS The Relation between Psychology and Sociology in the Work of Wilhelm Dilthey - Max Horkheimer Existentialism: Remarks on Jean-Paul Sartre's L'Etre et le Neant - Herbert Marcuse Towards a Reconstruction of Historical Materialism - Jurgen Habermas Some Distinctions in Universal Pragmatics - Jurgen Habermas The A Priori of Communication and the Foundation of the Humanities - Karlo Otto Apel Dilthey's Distinction Between Explanation and Understanding and the Possibility of Its Mediation - Karl Otto Apel The Hermeneutic Dimension of Social Science and its Normative Foundation - Karl Otto Apel New Developments in Phenomenology in France: The phenomenology of language - Paul Ricoeur Towards Actionist Sociology, Social Science Information - Alain Touraine The Voice and the Eye: On the relationship between actors and analysts - Alain Touraine Rationality in the Slum: An essay on interpretive sociology - Alejandro Portes Meeting or Mis-Meeting? The Dialogical Challenge to - Rob Shields VOLUME 3 SECTION FIVE: SYMBOLIC INTERACTIONISM The Mechanism of Social Consciousness - George Herbert Mead The Social Self - George Herbert Mead Social Consciousness - Charles Horton Cooley The Roots of Social Knowledge - Charles Horton Cooley Science without Concepts - Herbert Blumer Attitudes and the Social Act - Herbert Blumer Sociological Analysis and the Variable - Herbert Blumer Sociological Implications of the Thought of George Herbert Mead - Herbert Blumer Becoming a Marihuana User - Howard Becker Whose Side Are We On - Howard Becker Symbols of Class Status - Erving Goffman The Moral Career of the Mental Patient, Psychiatry: Journal for the Study of Interpersonal Processes - Erving Goffman Major Trends in Symbolic Interaction Theory in the Last Twenty Five Years - Manfred Kuhn SECTION SIX: ETHNOMETHODOLOGY Conditions of Successful Degradation Ceremonies - Harold Garfinkel Studies of the Routine Grounds of Everyday Activities - Harold Garfinkel Evidence for Locally Produced, Naturally Accountable Phenomena of Order, Logic, Reason, Meaning, Method, etc - Harold Garfinkel Ethnomethodology's Program - Harold Garfinkel A Note on the Uses of Official Statistics - Aaron Cicourel and John Kitsuse The Role of Cognitive-Linguistic Concepts in Everyday Social Interactions - Aaron Cicourel Text and Discourse - Aaron Cicourel The Interpenetration of Communicative Contexts: Examples from medical encounters - Aaron Cicourel John Rawls on Two Concepts of Rules - Aaron Cicourel Symbolic Interactionism and Ethnomethodology: A proposed synthesis - Norman Denzin Verstehen, Language and Warrants - James L. Heap Writing as Social Action, Theory into Practice - James L. Heap Practical Reason in Depression: a Practice - James L. Heap VOLUME 4 SECTION SEVEN: CULTURAL ANTHROPOLOGISTS From the Native's Point of View: On the nature of anthropological understanding - Clifford Geertz Deep Play: Notes on the Balinese cockfight - Clifford Geertz Common Sense as a Cultural System - Clifford Geertz The Way We Think Now: Toward an ethnography of modern thought - Clifford Geertz a Primitive Society - Peter Winch Social Science - Peter Winch Rhetoric and the Ethnographic Genre in Anthropological Research - George Marcus Ethnographies as Texts - George Marcus and Dick Cushman On Ethnographic Authority - James Clifford Cultural Systems, and History: Synchrony to Transformation - William H. Sewell SECTION EIGHT: CONTEMPORARY INTERPRETATIONS, EXTENSIONS, FUSIONS AND APPLICATIONS On Interpreting and Interpretation - N. Denzin Sociological Knowledge: Winch, Marxism, and Revisited - Kai Nielsen Interpretivism and Generalisation - Malcolm Williams",
+      "cited_by_count": 11,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Cross-Cultural and Social Analysis"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W570703402"
+    },
+    {
+      "openalex_id": "W2164079995",
+      "doi": "10.1017/s0020818300027363",
+      "title": "International organization: a state of the art on an art of the state",
+      "authors": [
+        {
+          "name": "Friedrich Kratochwil",
+          "openalex_id": "A5082742193",
+          "orcid": "https://orcid.org/0000-0003-2583-5963",
+          "institutions": [
+            "Columbia International University",
+            "Columbia University"
+          ]
+        },
+        {
+          "name": "John Gerard Ruggie",
+          "openalex_id": "A5067693875",
+          "orcid": "https://orcid.org/0000-0001-7679-5178",
+          "institutions": [
+            "The Century Foundation"
+          ]
+        }
+      ],
+      "publication_year": 1986,
+      "publication_date": "1986-01-01",
+      "abstract": "International organization as a field of study is where the action is. The analytical shifts leading up to the current preoccupation with international regimes have been both progressive and cumulative. And the field is pursuing its object of study in innovative ways that are bringing it closer to the theoretical core of more general international relations work. As we point out, however, the study of regimes as practiced today suffers from the fact that its epistemological approaches contradict its basic ontological posture. Accordingly, more interpretive strains, commensurate with the intersubjective basis of international regimes, should be included in the prevailing epistemological approaches. In addition, as a result of its enthusiasm for the concept of regimes, the field has tended to neglect the study of formal international organizations. Interpretive epistemologies can also help to link up the study of regimes with the study of formal international organizations by drawing attention to the roles these organizations play in creating transparency in the behavior and expectations of actors, serving as focal points for the international legitimation struggle, and providing a venue for the conduct of global epistemic politics.",
+      "cited_by_count": 1099,
+      "type": "article",
+      "source": {
+        "name": "International Organization",
+        "type": "journal",
+        "issn": [
+          "0020-8183",
+          "1531-5088"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/92762CC250BA93A521DD0FDD8EB93EB4/S0020818300027363a.pdf/div-class-title-international-organization-a-state-of-the-art-on-an-art-of-the-state-div.pdf"
+      },
+      "topics": [
+        "International Development and Aid",
+        "Political Conflict and Governance",
+        "International Relations and Foreign Policy"
+      ],
+      "referenced_works_count": 151,
+      "url": "https://openalex.org/W2164079995"
+    },
+    {
+      "openalex_id": "W2916136405",
+      "doi": "10.1007/s11133-019-9413-7",
+      "title": "What is Qualitative in Qualitative Research",
+      "authors": [
+        {
+          "name": "Patrik Aspers",
+          "openalex_id": "A5085363578",
+          "orcid": "https://orcid.org/0000-0001-9840-8669",
+          "institutions": [
+            "Uppsala University"
+          ]
+        },
+        {
+          "name": "Ugo Corte",
+          "openalex_id": "A5047468729",
+          "orcid": "https://orcid.org/0000-0002-7994-3399",
+          "institutions": [
+            "University of Stavanger"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-02-27",
+      "abstract": null,
+      "cited_by_count": 1169,
+      "type": "article",
+      "source": {
+        "name": "Qualitative Sociology",
+        "type": "journal",
+        "issn": [
+          "0162-0436",
+          "1573-7837"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11133-019-9413-7.pdf"
+      },
+      "topics": [
+        "Qualitative Research Methods and Applications",
+        "Qualitative Research Methods and Ethics",
+        "Qualitative Comparative Analysis Research"
+      ],
+      "referenced_works_count": 116,
+      "url": "https://openalex.org/W2916136405"
+    },
+    {
+      "openalex_id": "W579260420",
+      "doi": "10.4135/9781446263600",
+      "title": "The European Tradition in Qualitative Research",
+      "authors": [
+        {
+          "name": "Raymond Boudon",
+          "openalex_id": "A5082604273"
+        },
+        {
+          "name": "Mohamed Cherkaoui",
+          "openalex_id": "A5046925202",
+          "orcid": "https://orcid.org/0000-0002-4950-2533"
+        },
+        {
+          "name": "Pierre Demeulenaere",
+          "openalex_id": "A5047316369"
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-01-01",
+      "abstract": "Provisional Contents VOLUME ONE PART ONE: COLLECTING DATA SECTION ONE: USING AVAILABLE DATA An Analysis of the Verbal Content of Suicide Notes - Louis A Gottschalk and Goldine C Gleser Intellectualism, Intellectuals and the History of Religion - Max Weber The Church and the Social Classes - Bernard Groethuysen Benjamin Franklin - Kurt Samuelsson How the Spirit of Revolt Was Promoted by Well-Intentioned Efforts to Improve the People's Lot - Alexis de Tocqueville The Sorrows of Young Werther - Georg Luk[ac]acs Problems in the Histography of Science - Alexandre Koyr[ac]e Can There Be an Alternative Mathematics? - David Bloor Joy, High Spirits, Love, Tender Feelings, Devotion - Charles Darwin The Handle - Georg Simmel Designs as Signs - Ernst Hans Gombrich Recent History - Quentin Bell Understanding Errors in Perspective - Dominique Raynaud Friedrich, or, The Other Fatherland - A Besan[ce]con Structural Analysis - Siegfried Kracauer SECTION TWO: COLLECTING NEW DATA The Interview Technique in Social Anthropology - S F Nadel Sur l'utilisation de l'entretien non directif en sociologie - Guy Michelat La Formulation des questions d'enqu[ci]ete - Jean-Paul Gr[ac]emy Une r[ac]esponse m[ac]ediane et 'sans avis' How to Explain Common Feelings of Justice - Emmanuelle Betton-Gossart What Method of Empirical Analysis Shall We Choose? Affluence and the British Class Structure - John H Goldthorpe and David Lockwood The Principles of Selection of Cultural Data - Florian Znaniecki Life Stories in the Bakers' Trade - Daniel Bertaux and Isabelle Bertaux-Wiame The Observers Observed - Jean Peneff French Survey Researchers at Work Research Concerning Prisons - Bruno Milly Return to the Methodological Difficulties of Field Studies in this Area VOLUME TWO PART TWO: SELECTING A TYPE OF APPROACH SECTION ONE: CASE STUDIES On Family, Work and Social Change - Fr[ac]ed[ac]eric le Play Neighbourhood Relations in the Making - Norbert Elias When Describing is Explaining - Henri Bergeron Qualitative Methods in the Study of French Drug Addiction Treatment Policy The Gains of Irrationality - Jean-Pierre Lavaud SECTION TWO: QUALITATIVE ANALYSIS OF SMALL SOCIAL UNITS The Political System - E E Evans-Pritchard The Social System at the Shop Level - Michel Crozier The Plant Subculture and the Formal Authority System SECTION THREE: COMPARATIVE ANALYSIS How Towards the Middle of the Eighteenth Century Men of Letters Took the Lead in Politics and the Consequences of this New Development - Alexis de Tocqueville Historical Tendency of Capitalist Accumulation - Karl Marx Introduction to the Protestant Ethic and the Spirit of Capitalism - Max Weber Economic Backwardness in Historical Perspective - Alexander Gerschenkron The Kemalist Revolution in Comparative Perspective - S N Eisenstadt PART THREE: BUILDING CONCEPTS SECTION ONE: DESCRIPTION AND CONCEPTUALISATION Preface to the First Edition of Histories of the Latin and Germanic Nations from 1494-1514 - Leopold von Ranke La Pri[gr]ere - Marcel Mauss Danses et l[ac]egendes de la Chine ancienne - Marcel Granet Conceptualization and Narration - W G Runciman The Contours of High Modernity - Anthony Giddens A Typology of Nationalisms - Ernst Gellner SECTION TWO: CLASSIFYING AND BUILDING TYPOLOGIES The Multidimensional Space of Classes - Karl Marx How to Determine Social Causes and Social Types - [ac]Emile Durkheim Three Types of Christian Thought - Ernst Troeltsch General Statement of the Main Concepts - Ferdinand T[um]onnies Objectivity in Social Science and Social Policy - Max Weber Political Systems of Highland Burma - Edward Leach Polythetic Classification - Rodney Needham Ideal Types and Historical Explanation - J W N Watkins Some Functions of Qualitative Analysis in Social Research - A H Barton and P F Lazarsfeld Four Whole Persons - Mary Douglas and Steven Ney Formal and Empirical Pragmatics - J[um]urgen Habermas VOLUME THREE PART THREE: BUILDING CONCEPTS (CONTINUED) SECTION THREE: CONTENT ANALYSIS The Structure of Foreign News - Johan Galtung and Mari Holmboe Ruge The Presentation of the Congo, Cuba and Cyprus Crises in Four Norwegian Newspapers Social Class, Linguistic Codes and Grammatical Elements - Basil B Bernstein PART FOUR: BUILDING THEORIES SECTION ONE: STYLES OF THEORY Caract[gr]eres fondamentaux de la m[ac]ethode positive dans l'[ac]etude rationnelle des ph[ac]enom[gr]enes sociaux - Auguste Comte The Scientific Approach - Vilfredo Pareto Introduction to On Sociology, Numbers, Narratives and the Integration of Research and Theory - John H Goldthorpe The Debate about Quantitative and Qualitative Research - Alan Bryman A Question of Method or Epistemology? SECTION TWO: SOME GENERAL MODELS Basic Mechanisms Generating Inequality of Educational Opportunity - Raymond Boudon Relative Deprivation - Mohammed Cherkaoui Elements and Mechanism of Production - Leon Walras The General Form of Society - Vilfredo Pareto The Social Organism - Herbert Spencer The Aimlessness of Cultural Development - Konrad Lorenz The Selectionist Paradigm and its Implications for Sociology - W G Runciman Rules for the Explanation of Social Facts - Emile Durkheim On the Concept of Function in Social Science - A R Radcliffe-Brown Sur l'analogie et l'homologie - Gabriel Tarde Morphology of the Folktale - Vladimir Propp The Structural Study of Myth - Claude L[ac]evi-Strauss Introduction to the Structural Analysis of Narratives - Roland Barthes Gothic Architecture and Scholasticism - Erwin Panofsky PART FIVE: EXPLAINING AND UNDERSTANDING SECTION ONE: WHAT IS 'VERSTEHEN'? The Development of Hermeneutics - Wilhelm Dilthey The Psychological a priori and its Polar Antitheses - Georg Simmel The Definition of Sociology and of Social Action - Max Weber Methodological Foundations The Operation Called Verstehen - Theodore Abel Verstehen and the Unconscious - Alberto Izzo A Historical Overview VOLUME FOUR PART FIVE: EXPLAINING AND UNDERSTANDING (CONTINUED) SECTION ONE: WHAT IS 'VERSTEHEN'? (CONTINUED) Different Cultures, Different Rationalities? - Steven Lukes Interpretation and Hypothesis in Social Studies - Mario Bunge SECTION TWO: PHENOMENOLOGICAL SOCIOLOGY Interpretative Sociology - Alfred Schutz SECTION THREE: RATIONAL CHOICE MODEL Rational Choice and Sociological Theory - Siegwart Lindenberg New Pressures on Economics as a Social Science Contending Conceptions of the Theory of Rational Action - Karl-Dieter Opp Rational Action Theory for Sociology - John H Goldthorpe Risky Choices and Rationality - Albertina Oliverio The Case of HIV/AIDS Preventive Behaviours SECTION FOUR: COGNITIVE AND AXIOLOGICAL RATIONALITY Of the Sense of Justice, of Remorse and of the Consciousness of Merit - Adam Smith Religious Rejections of the World and Their Directions - Max Weber The Rationality Principle - Karl Popper Rational Choice Theory or Methodological Individualism? - Raymond Boudon PART SIX: FINDING OUT THE RIGHT THEORETICAL FRAME SECTION ONE: MAKING QUANTITATIVE DATA MEANINGFUL THROUGH QUALITATIVE THEORIES The Universal Welfare State as a Social Dilemma - Bo Rothstein SECTION TWO: HOW COMPETING THEORIES EXPLAIN THE SAME PHENOMENON Of the Expense of the Institutions for the Instruction of People of All Ages - Adam Smith The Example of the Americans Does Not Prove That a Democratic People Can Have No Aptitude and No Taste for Science, Literature or Art - Alexis de Tocqueville The Protestant Sects and the Spirit of Capitalism - Max Weber Imitative Rites - Emile Durkheim Conclusion to Primitive Mentality - Lucien L[ac]evy-Bruhl Ressentiment and Moral Value Judgement - Max Scheler The Social Psychology of the World Religions - Max Weber African Traditional Thought and Western Science - Robin Horton From Tradition to Science Religion and the Decline of Magic - Keith Thomas Rational Fools - Amartya K Sen A Critique of the Behavioral Foundations of Economic Theory Not Just for the Money - Bruno S Frey An Economic Theory of Personal Motivation Beyond Homo Oeconomicus and Homo Sociologicus - C Mantzavinos",
+      "cited_by_count": 9,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social and Educational Sciences"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W579260420"
+    },
+    {
+      "openalex_id": "W2090254071",
+      "doi": "10.1080/00220620600555030",
+      "title": "Educational Administration as a Historical Discipline: An<i>Apologia Pro Vita Historia</i>",
+      "authors": [
+        {
+          "name": "Eugenie A. Sam\u0131er",
+          "openalex_id": "A5071655816",
+          "orcid": "https://orcid.org/0000-0003-3565-0866"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-06-27",
+      "abstract": "Abstract This paper discusses the contributions history can make to educational administration and how history needs to be conceptualised as a humanities discipline to serve this purpose, including two aspects of the field of particular relevance to educational administration and leadership, biography and comparative studies. The value of history is presented in its interpretive power, in both investigating the particular through individual cases and how these are related to larger societal forces of change producing explanation, establishing causal relations, and achieving understanding as Verstehen in its full hermeneutic sense. Notes 1. Nietzsche, Friedrich. On the Advantage and Disadvantage of History for Life. Indianapolis: Hackett, 1980 [1874], 7. 2. Or even political economy in the case of Marxist and Critical Theory writers. 3. For a discussion of the central question as it pertains to administration, see Samier Eugenie. \"Demandarinisation in the New Public Management: Examining Changing Administrative Authority from a Weberian Perspective.\" In Max Webers Herrschaftssoziologie: Studien zu Entstehung und Wirkung. edited by E. Hanke and W. J. Mommsen. T\u00fcbingen: Mohr/Siebeck, 2001: 235\u2013263; \"Toward a Weberian Public Administration: The Infinite Web of History, Values, and Authority in Administrative Mentalities.\" Halduskultuur: Administrative Culture. \u0410\u2202\u043cu\u043ducmpamu\u0431\u043da\u044f \u043ay\u043b\u044amypa\u044e. Verwaltungskultur. Hallintokulttuuri [An Interdisciplinary Public Administration Journal], 6 (2005): 60\u201393. 4. Hennis, Wilhelm. Max Weber: Essays in Reconstruction. London: Allyn & Unwin, 1988, 183. 5. Samier, Eugenie. \"Toward Public Administration as a Humanities Discipline: A Humanistic Manifesto.\" Halduskultuur: Administrative Culture. \u0410\u2202\u043cu\u043ducmpamu\u0431\u043da\u044f \u043ay\u043b\u044amypa\u044e. Verwaltungskultur. Hallintokulttuuri [An Interdisciplinary Public Administration Journal], 6 (2005): 6\u201359. 6. See Weber's opus magnum, Economy and Society (Berkeley: University of California Press, 1968) for the classic definition of bureaucratisation \u2013 compartmentalisation is inevitable the more an organisation becomes bureaucratic. 7. Even though it has become common practice in the English\u2010speaking world to use the terms 'leadership' and 'administration' synonymously in education to denote formal positions of authority, many still maintain a distinction between the two (as one can note in the titles in note 9). Following to some extent in the Weberian tradition, but also in the public administration tradition, this author recognises the distinction as follows: administrative roles are those that are formally structured and whose legitimacy and power are sanctioned through policy regimes that do not require acceptance of the person but the responsibilities of the office; leadership roles, on the other hand, are constructed in interpersonal relationships that are not necessarily formally sanctioned, whose legitimacy is conferred by followers on individuals for their personal qualities, and whose value is not bound by existing organisational or institutional purpose and policy regimes. In other words, administration is an organisationally constituted formal category, and leadership is a personally constructed political category. 8. The International Handbook does include a few chapters that have short subsections providing historical overviews of educational programs and research approaches; however, they play a marginal role in the overall publication. 9. Davies, B., and J. West\u2013Burnham, eds. Handbook of Educational Leadership and Management. London: Pearson, 2003; Fullan, Michael., ed. The Jossey\u2010Bass Reader on Educational Leadership. San Francisco: Jossey\u2010Bass, 2000; Leithwood, K., J. Chapman, D. Corson, P. Hallinger, and A. Hart, eds. International Handbook of Educational Leadership and Administration, 2 vols. Dordrecht: Kluwer Academic Publishers, 1996; Murphy, J., and K. S. Louis, eds. Handbook of Research on Educational Administration, 2nd edn. San Francisco: Jossey Bass, 1999. 10. Adams, Guy. \"Enthralled with Modernity: The Historical Context of Knowledge and Theory Development in Public Administration.\" Public Administration Review 52, no. 4 (1992): 363\u2013373. 11. See Samier, \"Toward Public Administration as a Humanities Discipline\", for a more detailed discussion of history in public administration. 12. Waldo, Dwight. Perspectives on Administration. Tuscaloosa: University of Alabama Press, 1956; The Enterprise of Public Administration: A Summary View. Novato: Chandler & Sharpe, 1980; Nash, Gerald. Perspectives on Administration: The Vistas of History. Berkeley: Institute of Government Studies, 1969; Cooper, P., L. Brady, O. Hildalgo\u2010Hardeman, A. Hyde, K. Naff, S. Ott, and H. White. Public Administration for the Twenty\u2010First Century. New York: Harcourt Brace, 1998; Raadschelders, Jos. Handbook of Administrative History. New Brunswick: Transaction Publishers, 1998. 13. Caiden, Gerald. \"Getting at the Essence of the Administrative State.\" In Handbook of Bureaucracy, edited by A. Farazmand. New York: Marcel Dekker, 1994: 65\u201378. 14. An overview of the recent development of administrative history in other countries, accompanied by an extensive bibliography, is provided in Raadschelders, Handbook of Administrative History. 15. White, Leonard. The Federalists. New York: Macmillan, 1948; The Jeffersonians. New York: Macmillan, 1951; The Jacksonians. New York: Macmillan, 1954; The Republican Era. New York: Macmillan, 1958; Van Riper, Paul. A History of the U.S. Civil Service. Evanston: Row, Peterson, 1958; Chandler, Ralph., ed. A Centennial History of the American Administrative State. New York: The Free Press, 1987. 16. Noted for approaching the field as an idiographic discipline more akin to the humanities than the conventional social sciences, Granatstein, J. L. The Ottawa Men: The Civil Service Mandarins, 1935\u20131957. Toronto: Oxford University Press, 1982; Hodgetts, J. E., W. McCloskey, R. Whittaker, and S. Wilson. The Biography of an Institution: The Civil Service Commission of Canada, 1908\u20131967. Montreal: McGill\u2010Queen's University Press, 1972; Finer, Samuel. The History of Government. Oxford: Oxford University Press, 1997. 17. Rugge, Fabio. \"Eine Wissenschaft ohne Vergangenheit \u2013 eine Geschichte ohne Zukunft? Ein kleiner Streifung durch verwaltungswissenschaftliche Zeitschriften.\" Jahrbuch fuer Europaeische Verwaltungsgeschichte 5 (1993): 369\u2013380; Raadschelders, Handbook of Administrative History. It is important to note that in many European countries, educational administration as a separate discipline does not exist, but instead is treated as part of public administration. 18. McCurdy, Howard. Public Administration: A Bibliographic Guide to the Literature. New York: Marcel Dekker, 1986: 3\u20139. 19. Borins, Sanford. \"The Role of Universities in Public Administration Education.\" Canadian Public Administration 33, no. 3 (1990): 348\u2013365. 20. Raadschelders, Handbook of Administrative History, 30, 4. 21. Mills, C. Wright. Images of Man: The Classic Tradition in Sociological Thinking. New York: Braziller, 1960. 22. Elias, Norbert. \"The Retreat of Sociologists into the Present.\" In Modern German Sociology, edited by V. Meja, D. Misgeld and N. Stehr, eds. New York: Columbia University Press, 1987: 150\u2013172, 150. 23. Habermas, J\u00fcrgen. On the Logic of the Social Sciences. Cambridge: MIT Press, 1988, 16. 24. Weber, Max. Economy and Society: An Outline of Interpretive Sociology. Berkeley: University of California Press, 1968, 19. 25. Habermas, On the Logic of the Social Sciences, 18\u201320. 26. Granatstein, J. L. Who Killed Canadian History? Toronto: HarperCollins, 1998: 11\u201314. 27. Ibid., 33, 41. 28. Waldo, Dwight. The Study of Public Administration. New York: Random House, 1955, 16. 29. Waldo, Perspectives on Administration, 60. 30. Nash, Perspectives on Administration, 25. 31. Waldo, Perspectives on Administration, 61; Raadschelders, Handbook of Administrative History, 250. 32. Waldo, Perspectives on Administration, 67\u20138. 33. Ibid., 58\u20139. 34. Raadschelders, Handbook of Administrative History, 6\u20138, 23. 35. Greenfield, T. \"Against Group Mind: An Anarchistic Theory of Organization.\" In Greenfield on Educational Administration: Towards a Humane Science, edited by T. Greenfield and P. Ribbins. London: Routledge, 1993: 122\u201333, 129. 36. Hodgkinson, Christopher. Towards a Philosophy of Administration. Oxford: Basil Blackwell, 1978; Educational Leadership: A Moral Art. New York: SUNY, 1983; Administrative Philosophy: Values and Motivations in Administrative Life. Oxford: Pergamon, 1996. 37. Gronn, P. The Making of Educational Leaders. London: Cassell, 1999. 38. Gunter, H., and P. Ribbins. \"Leadership Studies in Education: Towards a Map of the Field.\" Educational Management & Administration 30, no. 4 (2002): 387\u2013416; Ribbins, P. and H. Gunter. \"Mapping Leadership Studies in Education: Towards a Typology of Knowledge Domains.\" Educational Management & Administration 30, no. 4 (2002): 359\u201385. 39. See for overviews and representative writings: Himmelfarb, Gertrude. The New History and the Old: Critical Essays and Reappraisals, rev. ed. Cambridge: Harvard University Press, 2004; Stern, Fritz. The Varieties of History from Voltaire to the Present. New York: Random House, 1973. 40. See Hamilton, Paul. Historicism: The New Critical Idiom. London: Routledge, 2003. 41. For one account of the debate, see Baldwin, Peter. Hitler, the Holocaust and the Historians' Dispute. Boston: Beacon Press, 1990. 42. Weber, Max. Max Weber on Law in Economy and Society. Cambridge; Harvard University Press, 1954, 2. 43. Weber, Max. The Methodology of the Social Sciences. New York: Free Press, 1949, 69. 44. Ibid., 72. 45. Ibid., 56, 61; Giddens, Anthony. Capitalism and Modern Social Theory: An Analysis of the Writings of Marx, Durkheim and Max Weber. London: Cambridge University Press, 1971, 211. 46. Pillay, Nirmala. \"The Significance of Gadamer's Hermeneutics for Cross\u2010cultural Understanding.\" South African Journal of Philosophy 21, no. 4 (2002): 330\u2013344. See Gadamer, Hans\u2010Georg. Truth and Method, 2nd ed. New York: Crossroad, 1989, 262: 'The true historical object is not an object at all, but the unity of the one and the other, a relationship in which exist both the reality of history and the reality of historical understanding.' 47. For example, Gladden, Edgar. A History of Public Administration. London: Frank Cass, 1972; Molitor, A. \"The History of Administration.\" International Review of Administrative Sciences 49, no. 1 (1983): 1\u20133. 48. Madaria, Jose. G. \"Metodologia del studio de la historia de la administracion publica Espanola y aproximacion a sus Fuentes.\" Revue International des Sciences Administratives 46, no. 1 (1980): 35\u201347; Tiihonen, Seppo. Institutions and Bureaucrats: Studies on Administrative History. Helsinki: Publications of the Commission on the History of Central Administration in Finland, 1989; Raadschelders, Handbook of Administrative History. 49. Oates, S. Biography as History, Waco: Markham Press Fund, 1991; England, F. \"Toward a Reconsideration of Biography and Other Forms of Life Writing as a Focus for Teaching Educational Administration.\" Educational Administration Quarterly 31, no. 2 (1995): 203\u201323. 50. Edinger, L. \"Political Science and Political Biography: Reflections on the Study of Leadership.\" The Journal of Politics 26 (1964): 423\u201339; Gronn, P., and P. Ribbins. \"Leaders in Context: Postpositivist Approaches to Understanding Educational Leadership.\" Educational Administration Quarterly 32, no. 3 (1996): 452\u201373; Ribbins, Peter. \"Biography and the Study of School Leader Careers: Towards a Humanistic Approach.\" In Leadership in Education, edited by M. Brundrett, N. Burton and R. Smith. London: Sage, 2003: 55\u201373; Theakston, K. \"The Biographical Approach to Public Administration: Potential, Purpose and Problems.\" In Bureaucrats and Leadership, edited by K. Theakston. Houndmills: Macmillan, 2000: 1\u201316. 51. England, \"Toward a Reconsideration of Biography,\" 213. 52. For a more detailed and comprehensive development of a theory of comparative administration, see Samier, Eugenie. \"Reconciling Canadian\u2010Russian Differences: On the Art of Comparing Public Administration Systems.\" In \u041a\u0410\u041d\u0410\u0414\u0410 \u0412\u0417\u0413\u041b\u042f\u0414 \u0418\u0417 \u0420\u041e\u0421\u0421\u0418\u0418 [Canada: Views from Russia], edited by V. I. Sokolov. Moscow: Russian Academy of Sciences, 2005. 53. Aeberhard, Jane H. Comparative Study of Contents of Civil Service Statutes. Geneva: International Labour Organisation, Department for Government and Labour Law and Administration, 2000. As an additional note, international comparisons are even difficult to make on the basis of the composition of the civil service for percentage of workforce and GDP purposes, as some countries include groups others do not, such as teachers and university professors. 54. Peters, Guy. \"Administrative Traditions.\" [cited 28 October 2004]. Available from http://www1.worldbank.org/publicsector/civilservice/traditions.htm; INTERNET. 55. See the following as an explicit attempt to contribute to this: Peters, Guy. \"Theory and Methodology in the Study of Comparative Public Administration.\" In Comparative Public Management: Putting U.S Public Policy and Implementation in Context, edited by R. Baker. Westport: Praeger, 1994. 56. Tuohy, Carolyn J. Policy and Politics in Canada: Institutionalized Ambivalence. Philadelphia: Temple University Press, 1992, 3. 57. Huttunen T., P. Pesonen, and S. Turoma. \"Modernism and Postmodernism: Means of Understanding 20th Century Russian Culture.\" In Russia: More Different than Most, edited by M. Kangaspuro. Helsinki: Kikimora Publications, 2001: 29\u201344.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Journal of Educational Administration & History",
+        "type": "journal",
+        "issn": [
+          "0022-0620",
+          "1478-7431"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Historical Education Studies Worldwide",
+        "Diverse Education Studies and Reforms",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W2090254071"
+    },
+    {
+      "openalex_id": "W1442129841",
+      "doi": "10.1007/s11625-015-0326-4",
+      "title": "The real type and ideal type of transdisciplinary processes: part I\u2014theoretical foundations",
+      "authors": [
+        {
+          "name": "Roland W. Scholz",
+          "openalex_id": "A5020171024",
+          "orcid": "https://orcid.org/0000-0003-2506-3254",
+          "institutions": [
+            "University of Zurich",
+            "Fraunhofer Institute for Interfacial Engineering and Biotechnology",
+            "Fraunhofer Society"
+          ]
+        },
+        {
+          "name": "Gerald Steiner",
+          "openalex_id": "A5035374136",
+          "orcid": "https://orcid.org/0000-0003-3340-3941",
+          "institutions": [
+            "Universit\u00e4t f\u00fcr Weiterbildung Krems",
+            "Harvard University Press"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-13",
+      "abstract": null,
+      "cited_by_count": 311,
+      "type": "article",
+      "source": {
+        "name": "Sustainability Science",
+        "type": "journal",
+        "issn": [
+          "1862-4057",
+          "1862-4065"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11625-015-0326-4.pdf"
+      },
+      "topics": [
+        "Interdisciplinary Research and Collaboration",
+        "Sustainability and Climate Change Governance",
+        "Complex Systems and Decision Making"
+      ],
+      "referenced_works_count": 115,
+      "url": "https://openalex.org/W1442129841"
+    },
+    {
+      "openalex_id": "W2121451019",
+      "doi": "10.17169/fqs-7.3.145",
+      "title": "Hermeneutics and Critical Hermeneutics: Exploring Possibilities within the Art of Interpretation",
+      "authors": [
+        {
+          "name": "Elizabeth Anne Kinsella",
+          "openalex_id": "A5074410848",
+          "orcid": "https://orcid.org/0000-0002-7306-7957",
+          "institutions": [
+            "Western University"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-06-01",
+      "abstract": "Hermeneutics has much to offer those interested in qualitative inquiry, and is especially suitable for work of a textual and interpretive nature, yet writings in hermeneutics are frequently viewed as dense and impenetrable, particularly to North American audiences and those unfamiliar with the Continental Philosophical tradition. Drawing on Hans Georg GADAMER, as well as other hermeneutic thinkers, an introductory overview of five characteristics of a hermeneutic approach is offered in this paper. Further, it is suggested that hermeneutics can fruitfully be partnered with a critical approach. In this regard, a critical attitude and a metaxological approach are explored and a conceptualization of critical hermeneutics is proposed. It is suggested that hermeneutics and critical hermeneutics implicitly underpin qualitative inquiry, both of which emphasize the interpretive act of understanding, and a dialogue on this subject is invited. URN: urn:nbn:de:0114-fqs0603190",
+      "cited_by_count": 216,
+      "type": "article",
+      "source": {
+        "name": "Forum: Qualitative Social Research (Freie Universit\u00e4t Berlin)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.17169/fqs-7.3.145"
+      },
+      "topics": [
+        "Artistic and Creative Research",
+        "Contemporary Cultural and Social Studies",
+        "Art Education and Development"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2121451019"
+    },
+    {
+      "openalex_id": "W37357152",
+      "doi": null,
+      "title": "The micro-sociological challenge of macro-sociology : towards a reconstruction of social theory and methodology",
+      "authors": [
+        {
+          "name": "Karin D. Knorr-Cetina",
+          "openalex_id": "A5113513163"
+        }
+      ],
+      "publication_year": 1981,
+      "publication_date": "1981-01-01",
+      "abstract": null,
+      "cited_by_count": 167,
+      "type": "article",
+      "source": {
+        "name": "KOPS (University of Konstanz)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://nbn-resolving.de/urn:nbn:de:bsz:352-opus-80847"
+      },
+      "topics": [
+        "Social Policy and Reform Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W37357152"
+    },
+    {
+      "openalex_id": "W2125073413",
+      "doi": null,
+      "title": "Religious Sensations. Why Media, Aesthetics and Power Matter in the Study of Contemporary Religion",
+      "authors": [
+        {
+          "name": "Birgit Meyer",
+          "openalex_id": "A5103042842",
+          "orcid": "https://orcid.org/0000-0001-7186-7865",
+          "institutions": [
+            "National Centre of Research in Social and Cultural Anthropology"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": null,
+      "cited_by_count": 233,
+      "type": "article",
+      "source": {
+        "name": "Digital Academic REpository of VU University Amsterdam (Vrije Universiteit Amsterdam)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1871/10311"
+      },
+      "topics": [
+        "Media, Religion, Digital Communication",
+        "Religious Tourism and Spaces",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2125073413"
+    },
+    {
+      "openalex_id": "W2048685308",
+      "doi": "10.1086/210089",
+      "title": "Explanation in Historical Sociology: Narrative, General Theory, and Historically Specific Theory",
+      "authors": [
+        {
+          "name": "Craig Calhoun",
+          "openalex_id": "A5000966404",
+          "orcid": "https://orcid.org/0000-0001-7218-3780",
+          "institutions": [
+            "New York University"
+          ]
+        }
+      ],
+      "publication_year": 1998,
+      "publication_date": "1998-11-01",
+      "abstract": null,
+      "cited_by_count": 112,
+      "type": "article",
+      "source": {
+        "name": "American Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "0002-9602",
+          "1537-5390"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/210089"
+      },
+      "topics": [
+        "Social and Cultural Dynamics",
+        "Historical Economic and Social Studies",
+        "Culture, Economy, and Development Studies"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2048685308"
+    },
+    {
+      "openalex_id": "W3198038580",
+      "doi": "10.1007/s11609-020-00418-2",
+      "title": "Pfadabh\u00e4ngigkeit, Bifurkationspunkte und die Rolle der Soziologie. Ein soziologischer Deutungsversuch der Corona-Krise",
+      "authors": [
+        {
+          "name": "Hartmut Rosa",
+          "openalex_id": "A5086658979",
+          "orcid": "https://orcid.org/0000-0001-8030-7405",
+          "institutions": [
+            "Friedrich Schiller University Jena",
+            "Carl Zeiss (Germany)"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-01",
+      "abstract": null,
+      "cited_by_count": 76,
+      "type": "article",
+      "source": {
+        "name": "Berliner Journal f\u00fcr Soziologie",
+        "type": "journal",
+        "issn": [
+          "0863-1808",
+          "1862-2593"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11609-020-00418-2.pdf"
+      },
+      "topics": [
+        "Economic and Social Issues",
+        "Weber, Simmel, Sociological Theory",
+        "German Social Sciences and History"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W3198038580"
+    },
+    {
+      "openalex_id": "W1968537521",
+      "doi": "10.1007/s12115-013-9709-2",
+      "title": "Beyond the Fact/Value Distinction: Ethical Naturalism and the Social Sciences",
+      "authors": [
+        {
+          "name": "Philip S. Gorski",
+          "openalex_id": "A5033521009",
+          "orcid": "https://orcid.org/0000-0002-7095-6337",
+          "institutions": [
+            "Yale University"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-10-16",
+      "abstract": null,
+      "cited_by_count": 110,
+      "type": "article",
+      "source": {
+        "name": "Society",
+        "type": "journal",
+        "issn": [
+          "0147-2011",
+          "1936-4725"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s12115-013-9709-2.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Contemporary Sociological Theory and Practice",
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W1968537521"
+    },
+    {
+      "openalex_id": "W150025560",
+      "doi": null,
+      "title": "The Sociology of Cosmopolitanism: Globalization, Identity, Culture and Government",
+      "authors": [
+        {
+          "name": "Gavin Kendall",
+          "openalex_id": "A5029147552",
+          "institutions": [
+            "Queensland University of Technology"
+          ]
+        },
+        {
+          "name": "Ian Woodward",
+          "openalex_id": "A5075693882",
+          "orcid": "https://orcid.org/0000-0003-2870-5822",
+          "institutions": [
+            "Griffith University"
+          ]
+        },
+        {
+          "name": "Zlatko Skrbi\u0161",
+          "openalex_id": "A5009471255",
+          "orcid": "https://orcid.org/0000-0002-9797-7699",
+          "institutions": [
+            "University of Queensland"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-04-28",
+      "abstract": "The dream of a cosmopolitical utopia has been around for thousands of years. Yet the promise of being locally situated and at the same time globally connected and mobile has never seemed more possible than it is today. The question remains as to whether it is positive and realistic for us to have multiple loyalties. Can we sustain community and solidarity with our neighbours while we look beyond our nation? And if we can't - or won't \u2013 consider distant strangers as part of our own world, are there increasingly dire consequences? This book reconnects classical sociological theory and contemporary ideas on mobility, otherness, material assemblages, consumption and surveillance to render the idea of a global cosmopolitan utopia amenable to sociological investigation. The book takes a realistic approach to the development of cosmopolitical arrangements. It embraces the imaginative impulses the cosmopolitan dream provides, but takes into account the political, ethical and cultural dimensions of such cosmopolitan developments. In revisiting the relevance of classical sociological approaches in the context of contemporary theoretical challenges, the distinctive approach this book takes to understanding cosmopolitanism will be of use to scholars and students alike.",
+      "cited_by_count": 135,
+      "type": "book",
+      "source": {
+        "name": "Griffith Research Online (Griffith University, Queensland, Australia)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10072/29691"
+      },
+      "topics": [
+        "Sociology and Cultural Identity Studies",
+        "Globalization and Cultural Identity",
+        "Zygmunt Bauman's Sociology"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W150025560"
+    },
+    {
+      "openalex_id": "W2086551680",
+      "doi": "10.1080/09557570903433647",
+      "title": "Sociology and international relations: legacies and prospects",
+      "authors": [
+        {
+          "name": "George Lawson",
+          "openalex_id": "A5108221464",
+          "orcid": "https://orcid.org/0000-0001-9110-1883",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        },
+        {
+          "name": "Robbie Shilliam",
+          "openalex_id": "A5067165177",
+          "orcid": "https://orcid.org/0000-0001-6821-7079",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-02-10",
+      "abstract": "While sociological concepts have often been implicitly used in International Relations (IR), recent years have seen a more explicit engagement between IR and Sociology. As with any such interdisciplinary assignation, there are both possibilities and challenges contained within this move: possibilities in terms of reducing IR's intellectual autism and opening the discipline towards potentially fertile terrain that was never, actually, that distant; challenges in that interdisciplinary raiding parties can often serve as pseudonyms for cannibalism, shallowness and dilettantism. This forum reviews the sociological turn in IR and interrogates it from a novel vantage point\u2014how sociologists themselves approach IR concepts, debates and issues. Three sociological approaches\u2014classical social theory, historical sociology and Foucauldian analysis\u2014are critically deployed to illuminate IR concerns. In this way, the forum offers the possibility of (re)establishing exchanges between the two disciplines premised on a firmer grasp of social theory itself. The result is a potentially more fruitful sociological turn, one with significant benefits for IR as a whole.",
+      "cited_by_count": 69,
+      "type": "article",
+      "source": {
+        "name": "Cambridge Review of International Affairs",
+        "type": "journal",
+        "issn": [
+          "0955-7571",
+          "1474-449X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/epdf/10.1080/09557570903433647?needAccess=true&role=button"
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "Political Conflict and Governance",
+        "Peacebuilding and International Security"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W2086551680"
+    },
+    {
+      "openalex_id": "W2797692655",
+      "doi": "10.4337/9781783472352.00005",
+      "title": "Introduction to critical policy studies",
+      "authors": [
+        {
+          "name": "Frank Fischer",
+          "openalex_id": "A5005995116",
+          "orcid": "https://orcid.org/0000-0003-0253-659X"
+        },
+        {
+          "name": "Douglas Torgerson",
+          "openalex_id": "A5001495160"
+        },
+        {
+          "name": "Anna Durnov\u00e1",
+          "openalex_id": "A5005547175",
+          "orcid": "https://orcid.org/0000-0001-5789-1850"
+        },
+        {
+          "name": "Michael Orsini",
+          "openalex_id": "A5072770710",
+          "orcid": "https://orcid.org/0000-0003-4880-1707"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-18",
+      "abstract": null,
+      "cited_by_count": 59,
+      "type": "book-chapter",
+      "source": {
+        "name": "Edward Elgar Publishing eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.elgaronline.com/downloadpdf/edcoll/9781783472345/9781783472345.00005.pdf"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Political and Economic history of UK and US"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W2797692655"
+    },
+    {
+      "openalex_id": "W1955566579",
+      "doi": null,
+      "title": "Varieties of New Legal Realism: Can a New World Order Prompt a New Legal Theory",
+      "authors": [
+        {
+          "name": "Victoria Nourse",
+          "openalex_id": "A5078231534",
+          "institutions": [
+            "Georgetown University"
+          ]
+        },
+        {
+          "name": "Gregory Shaffer",
+          "openalex_id": "A5101579635",
+          "orcid": "https://orcid.org/0000-0002-2205-2018",
+          "institutions": [
+            "University of California, Irvine"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "In 1930, during the Great Depression, Professor Karl Llewellyn declared in the Harvard Law Review that \u201cferment\u201d was abroad in the land and legal scholarship, declaring \u201crealism\u201d a powerful scholarly force. In the past year, we have seen our own ferment: the world has shown us the folly of some of legal scholarship\u2019s most powerful intellectual assumptions about the wisdom and rationality of markets and the inevitable failures of politics. Given current events, this article identifies and critiques an emerging body of legal theory that has dubbed itself \u201cnew legal realism.\u201d Over 280 articles have already used this moniker. This article surveys and analyzes this scholarship, arguing that \u201cnew legal realism\u201d is responding to a shared concept of a \u201cnew formalism\u201d - neoclassical law and economics. New legal realists are not anti-economics (some of them are economists themselves), but they are challenging the new formalism\u2019s assumptions about the state, the individual, and legal theory. The article identifies four central attributes for a new legal realism - empirical study, institutional analysis, philosophical pragmatism and critical reflexivity. It critiques various forms of new legal realist scholarship, from behavioral economics to legal empiricism, and offers suggestions about future directions for a legal theory more capable of addressing our vulnerable national order, including the possibility of new \u201cemergent\u201d legal analytics, replacing or complementing functionalism with participation-centered concepts, recognizing human vulnerability rather than assuming autonomy, moving beyond the old law/politics divide, theorizing doctrine as semi-autonomous and mediated by institutions, and recognizing that the pursuit of all goals and values is transformed by institutions with their own reflexive processes - in sum, building mediating theory that emerges recursively from empirical study and practice.",
+      "cited_by_count": 96,
+      "type": "article",
+      "source": {
+        "name": "Scholarship @ Cornell Law (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarship.law.cornell.edu/clr/vol95/iss1/8"
+      },
+      "topics": [
+        "Law, Economics, and Judicial Systems",
+        "Legal and Constitutional Studies",
+        "Property Rights and Legal Doctrine"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1955566579"
+    },
+    {
+      "openalex_id": "W2910160785",
+      "doi": "10.1007/s40685-019-0088-4",
+      "title": "Big data analytics in sustainability reports: an analysis based on the perceived credibility of corporate published information",
+      "authors": [
+        {
+          "name": "Jonas Wanner",
+          "openalex_id": "A5052644257",
+          "orcid": "https://orcid.org/0000-0002-0118-7757",
+          "institutions": [
+            "University of W\u00fcrzburg"
+          ]
+        },
+        {
+          "name": "Christian Janiesch",
+          "openalex_id": "A5048865769",
+          "orcid": "https://orcid.org/0000-0002-8050-123X",
+          "institutions": [
+            "University of W\u00fcrzburg"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-14",
+      "abstract": null,
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "BuR - Business Research",
+        "type": "journal",
+        "issn": [
+          "1866-8658",
+          "2198-2627",
+          "2198-3402"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40685-019-0088-4.pdf"
+      },
+      "topics": [
+        "Big Data and Business Intelligence",
+        "Complex Network Analysis Techniques",
+        "Innovation, Sustainability, Human-Machine Systems"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W2910160785"
+    },
+    {
+      "openalex_id": "W2187550992",
+      "doi": null,
+      "title": "Strategic Group Analysis",
+      "authors": [
+        {
+          "name": "Hans\u2010Dieter Evers",
+          "openalex_id": "A5001637120",
+          "orcid": "https://orcid.org/0000-0002-0647-9644"
+        },
+        {
+          "name": "Solvay Gerke",
+          "openalex_id": "A5065053110",
+          "orcid": "https://orcid.org/0000-0003-2982-8250"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-01-01",
+      "abstract": null,
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Econstor (Econstor)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10419/88304"
+      },
+      "topics": [
+        "Medical and Agricultural Research Studies",
+        "International Human Rights and Reproductive Law",
+        "Healthcare, Law, Governance, and Management Studies"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2187550992"
+    },
+    {
+      "openalex_id": "W2117964463",
+      "doi": "10.1111/1467-9566.ep10478961",
+      "title": "Coping and social action: theoretical reconstruction of the life\u2010event approach",
+      "authors": [
+        {
+          "name": "Uta Gerhardt",
+          "openalex_id": "A5015015280",
+          "institutions": [
+            "University of London",
+            "Universidad de Londres"
+          ]
+        }
+      ],
+      "publication_year": 1979,
+      "publication_date": "1979-09-01",
+      "abstract": "Summary Despite the wide range of literature about life\u2010events, there has been very little on life\u2010event research. This paper attempts a critical analysis of the theoretical assumptions which go into life\u2010event research. The focus is sociological, i.e. the question is asked in what way coping can be conceptualized as social action. Three types of coping are discerned in the life\u2010event literature, namely, psycho\u2010physiological, psychological, and social. It is argued that the analysis of psychological coping calls for an ethnomethodological paradigm while the study of social coping necessitates a Marxist approach.",
+      "cited_by_count": 37,
+      "type": "article",
+      "source": {
+        "name": "Sociology of Health & Illness",
+        "type": "journal",
+        "issn": [
+          "0141-9889",
+          "1467-9566"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-9566.ep10478961"
+      },
+      "topics": [
+        "Youth Education and Societal Dynamics",
+        "Resilience and Mental Health"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2117964463"
+    },
+    {
+      "openalex_id": "W2139520024",
+      "doi": "10.12759/hsr.38.2013.2.7-25",
+      "title": "The Societal Nature of Subjectivity: An Interdisciplinary Methodological Challenge",
+      "authors": [
+        {
+          "name": "Henning Salling Olesen",
+          "openalex_id": "A5042541865",
+          "orcid": "https://orcid.org/0000-0002-0984-9057",
+          "institutions": [
+            "Roskilde University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-09-28",
+      "abstract": "The HSR Focus presents a psycho-societal approach to qualitative empirical research in several areas of everyday social life. It is an approach which integrates a theory of subjectivity and an interpretation methodology which integrates hermeneutic experiences from text analysis and psychoanalysis. Its particular focus is on subjectivity - as an aspect of the research object and as an aspect of the research process. By the term 'approach' is indicated the intrinsic connection between the theorizing of an empirical object and the reflection of the research process and the epistemic subject. In terms of methodology it revives the themes originally launched in FOS exactly ten years ago: 'Subjectivity and Reflectivity in Qualitative Research' (Breuer, Mruck and Roth 2002; Mruck and Breuer 2003). This editorial introduction presents the intellectual background of the psycho-societal methodology, reflects on its relevance and critical perspectives in a contemporary landscape of social science, and comments the way in which an international and interdisciplinary research group has developed this approach to profane empirical research.",
+      "cited_by_count": 32,
+      "type": "article",
+      "source": {
+        "name": "Social Science Open Access Repository (GESIS \u2013 Leibniz Institute for the Social Sciences)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.ssoar.info/ssoar/handle/document/38774"
+      },
+      "topics": [
+        "Contemporary Sociological Theory and Practice"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2139520024"
+    },
+    {
+      "openalex_id": "W2327216771",
+      "doi": "10.3354/esep00144",
+      "title": "University rankings and the scientification of social sciences and humanities",
+      "authors": [
+        {
+          "name": "Costas Stratilatis",
+          "openalex_id": "A5034352551",
+          "orcid": "https://orcid.org/0000-0002-5601-2647",
+          "institutions": [
+            "University of Nicosia"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-11-06",
+      "abstract": "The aim of this article is to render global university rankings (GURs) as a paradigmatic instance of knowledge/power (Foucault) within our post-industrial \u2018knowledge societies\u2019. At the same time, I examine a possible connection between GURs and \u2018scientification\u2019 of social sciences and humanities (SSH), i.e. promotion of the belief that if SSH are to count as \u2018sciences\u2019 proper, they must subscribe to the epistemological and methodological tenets of positivist-empiricist natural sciences. Based on recent literature and on the methodological information that is provided by the compilers of GURs on the relevant websites, the second part of the article traces some structural features (such as underestimation of teaching and systematic biases of bibliometrics) which might be taken as supporting the hypothesis that GURs are connected with the the wider trend of scientification of social sciences and humanities. I conclude that, even if we could ever overcome the deficiencies of existing rankings, we should take seriously that there can be no ranking system that would be epistemically objective, value neutral, and politically incontestable.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "Ethics in Science and Environmental Politics",
+        "type": "journal",
+        "issn": [
+          "1611-8014",
+          "1863-5415"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.int-res.com/articles/esep2013/13/e013p177.pdf"
+      },
+      "topics": [
+        "Higher Education Governance and Development",
+        "Evaluation of Teaching Practices",
+        "Evaluation and Performance Assessment"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W2327216771"
+    },
+    {
+      "openalex_id": "W2062727227",
+      "doi": "10.1353/hph.2011.0088",
+      "title": "\u201cEven the Papuan is a Man and not a Beast\u201d: Husserl on Universalism and the Relativity of Cultures",
+      "authors": [
+        {
+          "name": "Dermot Moran",
+          "openalex_id": "A5036340958",
+          "orcid": "https://orcid.org/0000-0003-3894-3728"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-10-01",
+      "abstract": "\"Even the Papuan is a Man and not a Beast\": Husserl on Universalism and the Relativity of Cultures Dermot Moran (bio) \"[A]nd in this broad sense even the Papuan is a man and not a beast.\" ([U]nd in diesem weiten Sinne ist auch der Papua Mensch und nicht Tier, Husserl, Crisis, 290/Hua. VI.337\u201338)1 \"Reason is the specific characteristic of man, as a being living in personal activities and habitualities.\" (Vernunft ist das Spezifische des Menschen, als in personalen Aktivit\u00e4ten und Habitualit\u00e4ten lebenden Wesens, Husserl, Crisis, 338/Hua. VI.272) 1. Particular Historicities and Universal Reason In this paper2 i shall explore\u2014and suggest a way of resolving\u2014the evident tensions to be found in Husserl's Crisis of European Sciences (and associated texts) [End Page 463] between his commitment to the universality of reason as the goal or telos of European humanity (founded on the ancient Greek \"breakthrough\" to philosophy and science) and his recognition of the empirical plurality and \"relativity\" (Relativit\u00e4t) of individual peoples and nations (e.g. Indian, Chinese, Papuan, Bantu) locked into their own particular \"socialities\" (Sozialit\u00e4ten), communal worlds, and historical trajectories (what Husserl broadly calls \"historicities,\" Geschichtlichkeiten, Historizit\u00e4ten). 3 I shall examine the complex relations and tensions between Husserl's conception of universality, whereby the same reason functions in every human as animal rationale, \"no matter how primitive he is\" (\"Origin of Geometry,\" Crisis, 378/ Hua. VI.385), and his concept of the self-enclosed particularity of individual peoples with their own cultural forms. Indeed, Husserl often emphasizes that the most prominent feature of cultural plurality is precisely its relativity: \"relativity belongs to the normal course of life.\"4 I shall evaluate Husserl's response, which defends the project of realizing the ideal of a critical universal rationality, by situating his discussion in terms of the cultural conflict of the time with the rising National Socialist commitment to racial particularism, and by showing Husserl's commitment to the inherent universality of the one shared life-world. In his research manuscripts of the 1920s and 1930s Husserl frequently discusses the complex relationships that exist between different cultures and traditions; different cultures have their specific historicities (Crisis, 274/Hua. VI.320), dialects, norms, ways of life, and so on. This is simply a matter of fact. There are, furthermore, some well-known and controversial passages in Husserl's \"Vienna Lecture\" of May 1935 and also in his Crisis texts (both in the main 1936 published text, Part One [\u00a76] and in the then unpublished Crisis Part Three A \u00a7365) where Husserl speaks of the universality inherent in European philosophical culture of the logos and contrasts it with various other communal forms, which are, in his view, merely \"empirical-anthropological\" types, enclosed in their particular historicities and relativities. Indeed, in this context, Husserl regularly invokes the idea of the \"relativity of everything historical\" (die Relativit\u00e4t alles Historischen, Crisis, 373/Hua. VI.382). In addition, there are a number of related texts, collected in the Crisis supplementary volume (Hua. XXIX),6 in the Intersubjectivity volumes (especially Hua. XV),7 as well as in the recent volume on the life-world [End Page 464] (Hua. XXXIX),8 which discuss the empirical differences between peoples and also the layers and strata of social groups, nations, and even the idea of larger international collectivities or \"supernations\" (\u00dcbernationen), such as Europe, or the League of Nations. Furthermore, there are\u2014as Husserl indicates in his 1935 letter to the prominent French anthropologist Lucien L\u00e9vy-Bruhl\u2014even cultures that are completely \"self-enclosed\" (abgeschlossene) unities, cut off, some of which know no history. According to Husserl, into this classical world of closed cultures, the ancient Greeks bring a new form of universality, one that leads them, through the grasp of idealization to infinite tasks, to break through the finite horizons of their environing world (Umwelt), which presents itself to them as a \"near-world\" (Nahwelt, Crisis, 324/Hua. VI.303; Hua. XXVII.228), and to arrive at the highly refined concept of the \"true world\" or the \"scientific world [which] is a purposeful structure (Zweckgebilde) extending to infinity\" (Crisis, 382...",
+      "cited_by_count": 41,
+      "type": "article",
+      "source": {
+        "name": "Journal of the history of philosophy",
+        "type": "journal",
+        "issn": [
+          "0022-5053",
+          "1538-4586"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://muse.jhu.edu/pub/1/article/453202/pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Phenomenology and Existential Philosophy",
+        "Philosophy, Ethics, and Existentialism"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W2062727227"
+    },
+    {
+      "openalex_id": "W1500136941",
+      "doi": null,
+      "title": "Max Weber and the Concept of Legitimacy in Contemporary Jurisprudence",
+      "authors": [
+        {
+          "name": "Donald Hermann",
+          "openalex_id": "A5006496326",
+          "institutions": [
+            "DePaul University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": null,
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "The Institutional Repository at DePaul University (DePaul University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://via.library.depaul.edu/cgi/viewcontent.cgi?article=2229&context=law-review"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Political Theology and Sovereignty",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1500136941"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

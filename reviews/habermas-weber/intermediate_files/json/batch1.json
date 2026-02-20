@@ -1,0 +1,57 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "2 paper IDs",
+  "results": [
+    {
+      "paperId": "1c787403a781ef94d217cee99cffeabcab0f919f",
+      "title": "Rational Reconstruction and Social Criticism : Habermas's Model of Interpretive Social Science in Hermeneutics in Ethics and Social Theory.",
+      "authors": [
+        {
+          "name": "K. Baynes",
+          "authorId": "5929946"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c787403a781ef94d217cee99cffeabcab0f919f",
+      "venue": "",
+      "journal": {
+        "name": "The Philosophical Forum",
+        "pages": "122-145",
+        "volume": "21"
+      },
+      "publicationTypes": null,
+      "_queryId": "1c787403a781ef94d217cee99cffeabcab0f919f"
+    },
+    {
+      "paperId": "5319e368c3929889be9d8388c1d559a858b01bf2",
+      "title": "Reconstructive Science and Methodological Dualism in the Work of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "W. Outhwaite",
+          "authorId": "46684925"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.5840/PHILINQUIRY2014381/21",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5319e368c3929889be9d8388c1d559a858b01bf2",
+      "venue": "",
+      "journal": {
+        "name": "Philosophical Inquiry",
+        "pages": "2-18",
+        "volume": "38"
+      },
+      "publicationTypes": null,
+      "_queryId": "5319e368c3929889be9d8388c1d559a858b01bf2"
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

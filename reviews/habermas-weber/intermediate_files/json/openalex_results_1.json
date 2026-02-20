@@ -1,0 +1,1451 @@
+[search_openalex.py] Searching OpenAlex: 'Habermas Weber primary texts rationalization' (year=2000-2025), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_4f57d12c7e535a31)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas Weber primary texts rationalization",
+  "results": [
+    {
+      "openalex_id": "W2151020819",
+      "doi": "10.2307/25148742",
+      "title": "The Nature of Theory in Information Systems1",
+      "authors": [
+        {
+          "name": "Gregor",
+          "openalex_id": "A5097615957",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-09-01",
+      "abstract": "The aim of this research essay is to examine the structural nature of theory in Information Systems. Despite the importance of theory, questions relating to its form and structure are neglected in comparison with questions relating to epistemology. The essay addresses issues of causality, explanation, prediction, and generalization that underlie an understanding of theory. A taxonomy is proposed that classifies information systems theories with respect to the manner in which four central goals are addressed: analysis, explanation, prediction, and prescription. Five interrelated types of theory are distinguished: (1) theory for analyzing, (2) theory for explaining, (3) theory for predicting, (4) theory for explaining and predicting, and (5) theory for design and action. Examples illustrate the nature of each theory type. The applicability of the taxonomy is demonstrated by classifying a sample of journal articles. The paper contributes by showing that multiple views of theory exist and by exposing the assumptions underlying different viewpoints. In addition, it is suggested that the type of theory under development can influence the choice of an epistemological approach. Support is given for the legitimacy and value of each theory type. The building of integrated bodies of theory that encompass all theory types is advocated.",
+      "cited_by_count": 3166,
+      "type": "article",
+      "source": {
+        "name": "MIS Quarterly",
+        "type": "journal",
+        "issn": [
+          "0276-7783",
+          "2162-9730"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openresearch-repository.anu.edu.au/bitstreams/77077d0f-f636-40a8-89fb-d2d2365ad7ad/download"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Business Process Modeling and Analysis",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 106,
+      "url": "https://openalex.org/W2151020819"
+    },
+    {
+      "openalex_id": "W2058159156",
+      "doi": "10.1046/j.0020-8833.2003.00277.x",
+      "title": "Words, Images, Enemies: Securitization and International Politics",
+      "authors": [
+        {
+          "name": "Michael C. Williams",
+          "openalex_id": "A5084500200",
+          "orcid": "https://orcid.org/0000-0001-8814-8664",
+          "institutions": [
+            "Aberystwyth University"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-11-07",
+      "abstract": "The theory of \u201csecuritization\u201d developed by the Copenhagen School provides one of the most innovative, productive, and yet controversial avenues of research in contemporary security studies. This article provides an assessment of the foundations of this approach and its limitations, as well as its significance for broader areas of International Relations theory. Locating securitization theory within the context of both classical Realism influenced by Carl Schmitt, and current work on constructivist ethics, it argues that while the Copenhagen School is largely immune from the most common criticisms leveled against it, the increasing impact of televisual communication in security relations provides a fundamental challenge for understanding the processes and institutions involved in securitization, and for the political ethics advocated by the Copenhagen School.",
+      "cited_by_count": 1102,
+      "type": "article",
+      "source": {
+        "name": "International Studies Quarterly",
+        "type": "journal",
+        "issn": [
+          "0020-8833",
+          "1468-2478"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/isq/article-pdf/47/4/511/5109128/47-4-511.pdf"
+      },
+      "topics": [
+        "Global Security and Public Health",
+        "Global Peace and Security Dynamics",
+        "International Law and Human Rights"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W2058159156"
+    },
+    {
+      "openalex_id": "W1598829572",
+      "doi": "10.26192/q7w89",
+      "title": "Social Science Research: Principles, Methods and Practices",
+      "authors": [
+        {
+          "name": "Anol Bhattacherjee",
+          "openalex_id": "A5021648020",
+          "orcid": "https://orcid.org/0000-0001-9559-6027"
+        },
+        {
+          "name": "Toleman, Mark",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-0535-8103",
+          "institutions": [
+            "Vecima Technology (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Rowling, Samara",
+          "openalex_id": ""
+        },
+        {
+          "name": "Frederiks, Anita",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0001-9618-5748",
+          "institutions": [
+            "Vecima Technology (United Kingdom)"
+          ]
+        },
+        {
+          "name": "Andersen, Nikki",
+          "openalex_id": "",
+          "institutions": [
+            "Vecima Technology (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "This book is designed to introduce doctoral and postgraduate students to the process of conducting scientific research in the social sciences, business, education, public health, and related disciplines. It is a one-stop, comprehensive, and compact source for foundational concepts in behavioural research, and can serve as a standalone text or as a supplement to research readings in any doctoral seminar or research methods class. This book is currently being used as a research text at universities in 216 countries, across six continents and has been translated into seven different languages. To receive updates on this book, including the translated versions, please follow the author on Facebook or Twitter @Anol_B.",
+      "cited_by_count": 2049,
+      "type": "book",
+      "source": {
+        "name": "University of Southern Queensland ePrints (University of Southern Queensland)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://digitalcommons.usf.edu/oa_textbooks/3"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Complex Systems and Decision Making",
+        "Innovation and Knowledge Management"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W1598829572"
+    },
+    {
+      "openalex_id": "W2169571673",
+      "doi": "10.17705/1jais.00129",
+      "title": "The Anatomy of a Design Theory",
+      "authors": [
+        {
+          "name": "David Jones",
+          "openalex_id": "A5057961129",
+          "orcid": "https://orcid.org/0000-0001-5743-8562",
+          "institutions": [
+            "Central Queensland University",
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "Shirley Gregor",
+          "openalex_id": "A5065050260",
+          "orcid": "https://orcid.org/0000-0002-0686-8674",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-05-01",
+      "abstract": "Design work and design knowledge in Information Systems (IS) is important for both research and practice. Yet there has been comparatively little critical attention paid to the problem of specifying design theory so that it can be communicated, justified, and developed cumulatively. In this essay we focus on the structural components or anatomy of design theories in IS as a special class of theory. In doing so, we aim to extend the work of Walls, Widemeyer and El Sawy (1992) on the specification of information systems design theories (ISDT), drawing on other streams of thought on design research and theory to provide a basis for a more systematic and useable formulation of these theories. We identify eight separate components of design theories: (1) purpose and scope, (2) constructs, (3) principles of form and function, (4) artifact mutability, (5) testable propositions, (6) justificatory knowledge (kernel theories), (7) principles of implementation, and (8) an expository instantiation. This specification includes components missing in the Walls et al. adaptation of Dubin (1978) and Simon (1969) and also addresses explicitly problems associated with the role of instantiations and the specification of design theories for methodologies and interventions as well as for products and applications. The essay is significant as the unambiguous establishment of design knowledge as theory gives a sounder base for arguments for the rigor and legitimacy of IS as an applied discipline and for its continuing progress. A craft can proceed with the copying of one example of a design artifact by one artisan after another. A discipline cannot.",
+      "cited_by_count": 1323,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Association for Information Systems",
+        "type": "journal",
+        "issn": [
+          "1536-9323"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1413&context=jais"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Usability and User Interface Design",
+        "Business Process Modeling and Analysis"
+      ],
+      "referenced_works_count": 102,
+      "url": "https://openalex.org/W2169571673"
+    },
+    {
+      "openalex_id": "W2136756650",
+      "doi": "10.1177/1464884905051009",
+      "title": "The political j-blogger",
+      "authors": [
+        {
+          "name": "Jane B. Singer",
+          "openalex_id": "A5022660826",
+          "orcid": "https://orcid.org/0000-0002-5777-9065",
+          "institutions": [
+            "University of Iowa"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-04-27",
+      "abstract": "This study explores how the increasingly popular blog format, as adopted by journalists affiliated with mainstream media outlets, affects long-standing journalistic norms and practice. It focuses on non-partisanship, transparency and the gatekeeping role, using a content analysis of 20 weblogs dealing with politics or civic affairs. Although expressions of opinion are common, most journalists are seeking to remain gatekeepers even in this highly interactive and participatory format. Political j-bloggers use links extensively - but mostly to other mainstream media sites. At least in their early use, journalists are \u2018normalizing\u2019 the blog as a component, and in some ways an enhancement, of traditional journalistic norms and practices.",
+      "cited_by_count": 517,
+      "type": "article",
+      "source": {
+        "name": "Journalism",
+        "type": "journal",
+        "issn": [
+          "1464-8849",
+          "1741-3001"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openaccess.city.ac.uk/id/eprint/3463/6/2005JBloggerJournalismSinger.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Media Studies and Communication",
+        "Gender, Feminism, and Media"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W2136756650"
+    },
+    {
+      "openalex_id": "W4383913712",
+      "doi": "10.1111/1748-8583.12524",
+      "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+      "authors": [
+        {
+          "name": "Pawan Budhwar",
+          "openalex_id": "A5055856506",
+          "orcid": "https://orcid.org/0000-0001-8915-6172",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "TBS Education"
+          ]
+        },
+        {
+          "name": "Geoffrey Wood",
+          "openalex_id": "A5034762665",
+          "orcid": "https://orcid.org/0000-0001-9709-1823",
+          "institutions": [
+            "Western University",
+            "Trinity College Dublin",
+            "Cranfield University",
+            "University of Bath"
+          ]
+        },
+        {
+          "name": "Herman Aguinis",
+          "openalex_id": "A5067660877",
+          "orcid": "https://orcid.org/0000-0002-3485-9484",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Greg J. Bamber",
+          "openalex_id": "A5018194210",
+          "orcid": "https://orcid.org/0000-0001-6646-3065",
+          "institutions": [
+            "Monash University",
+            "Monash Institute of Medical Research",
+            "Rutgers, The State University of New Jersey",
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Jose R. Beltran",
+          "openalex_id": "A5044503602",
+          "orcid": "https://orcid.org/0000-0002-3886-8142",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Paul Boselie",
+          "openalex_id": "A5023651869",
+          "orcid": "https://orcid.org/0000-0001-8507-7258",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Fang Lee Cooke",
+          "openalex_id": "A5025486785",
+          "orcid": "https://orcid.org/0000-0003-0337-6591",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Stephanie Decker",
+          "openalex_id": "A5064172786",
+          "orcid": "https://orcid.org/0000-0003-0547-9594",
+          "institutions": [
+            "Birmingham City University",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Angelo S. DeNisi",
+          "openalex_id": "A5065954019",
+          "institutions": [
+            "Tulane University"
+          ]
+        },
+        {
+          "name": "Prasanta Kumar Dey",
+          "openalex_id": "A5046908030",
+          "orcid": "https://orcid.org/0000-0002-9984-5374",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "David Guest",
+          "openalex_id": "A5091214938",
+          "orcid": "https://orcid.org/0000-0003-0457-6077",
+          "institutions": [
+            "King's College London",
+            "King's College School"
+          ]
+        },
+        {
+          "name": "Andrew J. Knoblich",
+          "openalex_id": "A5066797749",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Ashish Malik",
+          "openalex_id": "A5108813058",
+          "orcid": "https://orcid.org/0000-0002-2185-7674",
+          "institutions": [
+            "Hunter Water"
+          ]
+        },
+        {
+          "name": "Jaap Paauwe",
+          "openalex_id": "A5081370774",
+          "orcid": "https://orcid.org/0000-0003-3633-9607",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Charmi Patel",
+          "openalex_id": "A5088161716",
+          "orcid": "https://orcid.org/0000-0002-0235-9784",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Vijay Pereira",
+          "openalex_id": "A5069901933",
+          "orcid": "https://orcid.org/0000-0001-6755-0793",
+          "institutions": [
+            "NEOMA Business School"
+          ]
+        },
+        {
+          "name": "Shuang Ren",
+          "openalex_id": "A5084581187",
+          "orcid": "https://orcid.org/0000-0002-8768-8447",
+          "institutions": [
+            "Queen's University Belfast"
+          ]
+        },
+        {
+          "name": "Steven G. Rogelberg",
+          "openalex_id": "A5000877507",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Mark N. K. Saunders",
+          "openalex_id": "A5054244780",
+          "orcid": "https://orcid.org/0000-0001-5176-8317",
+          "institutions": [
+            "University of Birmingham",
+            "Birmingham City University",
+            "University College Birmingham"
+          ]
+        },
+        {
+          "name": "Rosalie L. Tung",
+          "openalex_id": "A5014893902",
+          "institutions": [
+            "Simon Fraser University"
+          ]
+        },
+        {
+          "name": "Arup Varma",
+          "openalex_id": "A5005292478",
+          "orcid": "https://orcid.org/0000-0002-6530-5564",
+          "institutions": [
+            "Loyola University Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-01",
+      "abstract": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labour by generating new, potentially trivial or practically irrelevant, information and decisions. According to the CEO of ChatGPT, the potential impact of this new family of AI technology could be as big as \u201cthe printing press\u201d, with significant implications for employment, stakeholder relationships, business models, and academic research, and its full consequences are largely undiscovered and uncertain. The introduction of more advanced and potent generative AI tools in the AI market, following the launch of ChatGPT, has ramped up the \u201cAI arms race\u201d, creating continuing uncertainty for workers, expanding their business applications, while heightening risks related to well\u2010being, bias, misinformation, context insensitivity, privacy issues, ethical dilemmas, and security. Given these developments, this perspectives editorial offers a collection of perspectives and research pathways to extend HRM scholarship in the realm of generative AI. In doing so, the discussion synthesizes the literature on AI and generative AI, connecting it to various aspects of HRM processes, practices, relationships, and outcomes, thereby contributing to shaping the future of HRM research.",
+      "cited_by_count": 662,
+      "type": "article",
+      "source": {
+        "name": "Human Resource Management Journal",
+        "type": "journal",
+        "issn": [
+          "0954-5395",
+          "1748-8583"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1748-8583.12524"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI and HR Technologies",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4383913712"
+    },
+    {
+      "openalex_id": "W2087092323",
+      "doi": "10.1080/03057640500319040",
+      "title": "Thinking about the technical and the personal in teaching",
+      "authors": [
+        {
+          "name": "Adam Lefstein",
+          "openalex_id": "A5075022636",
+          "orcid": "https://orcid.org/0000-0002-9686-2662",
+          "institutions": [
+            "King's College London",
+            "King's College School"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-11-01",
+      "abstract": "Abstract This article is about current discourse regarding teaching and its regulation and reform. I argue that underlying most positions in current debates are two competing visions of teaching\u2014one technical and the other personal. Technical teaching is manifested in recent developments in English education\u2014for example, the National Curriculum, National Primary Strategy, accountability measures, and the drive for evidence\u2010based practice. Advocates of personal teaching tend to oppose these developments, which they see as 'deprofessionalising' teachers and 'dehumanising' educational relationships. I explore these two competing visions, examining their assumptions and assessing their strengths and weaknesses. Technical teaching and personal teaching are manifestations of broader worldviews, which I call instrumental rationality and experiential wisdom, respectively. Each vision captures critical aspects of teaching, yet each is also partial and problematic: teaching cannot and should not be reduced to either. Moreover, seeing the world in terms of one vision often blinds us to the realities and possibilities revealed by the other. When discourse is polarized between these two visions, conceptions of teaching methods and expertise are distorted, and critical questions regarding the interaction of teachers and teaching methods are eclipsed. I conclude the article with an illustration of how technical and personal teaching could be integrated in the design of curricular materials. Notes 1. I would like to gratefully acknowledge helpful comments received from Leah Austin, Noah Efron, Sharon Gilad, Josh Glazer, Yoram Harpaz, Norman Lefstein, Vally Lytra, Gemma Moss, Ben Rampton, Brian Street, Christopher Winch, Andrew Wright, members of the King's College London Research Workshop in Language and Literacy, Darrell Fraser, Diane Peck and members of the Victorian Department of Education and Training, participants in the Oxford Ethnography and Education Conference (September, 2003), two anonymous referees, and the Editors of this Special Issue. 2. My approach draws very heavily upon Foucault's work on discourse and problematisation. See, for example, his discussion of the relationships between medical gaze, discourse, knowledge categories, and practice in The Birth of the Clinic (Foucault, 1963/1994 Foucault, M. 1994. The birth of the clinic: an archaeology of medical perception, New York: Vintage books. [Google Scholar]). Although vision (as I use the term here) is not a central theme in Foucault's exposition, it certainly can be read into the text (especially in chapter 2, 'A political consciousness'). 3. Weber emphasizes that, as an analytical construct, the ideal type does not necessarily correspond to any empirical sociological reality. However, in my interpretation, the ideal type does correspond roughly with the reality of people's hopes, visions and understandings. This approach is consistent with Weber's idea of social science involving interpretation of the meanings that social action poses for its own participants. It also arises from an attempt to come to terms with a certain ambivalence in Weber's account of the ideal type. On the one hand, he warns the reader not to take 'ideal' to mean normatively desirable; on the other hand, he repeatedly uses the word 'utopia' as a synonym for an ideal type. Weber obviously doesn't mean that ideal types are utopian in the sense that they represent his own utopian yearnings. But clearly the word is loaded with value connotations: it doesn't make sense to speak of a utopia being ''ideal' in the strictly logical sense of the term'. The conception of an ideal type that I'm proposing includes an attempt to reconstruct the utopian yearnings distributed among (at least some) members of the social group studied. Thus, I add to Weber's idea that constructing ideal types is 'a matter \u2026 of constructing relationships which our imagination accepts as plausibly motivated' the requirement that ideal types be anchored in discourse evidence demonstrating the actual existence of these motivations among members of the studied society. 4. The confrontation between instrumental rationality and experiential wisdom has its roots in unresolved tension between Enlightenment and Romantic visions. 5. In my discussion of instrumental rationality, I use 'Science' in the positivist sense of so\u2010called 'hard' science, which is the ideal type at the root of this rationality. I am not claiming that this is the only legitimate form of science, or that physicists and engineers actually perform according to this scientistic vision. I do claim that this is the vision invoked when policy\u2010makers talk about rationalising education (see below). 6. My analysis draws in particular upon Weber (1914/1968 Weber, M. 1968. Economy and society: an outline of interpretive sociology, New York: Bedminster Press. (original edn 1914) [Google Scholar]), Arendt (1958/1998 Arendt, H. 1998. The human condition, Chicago, IL: University of Chicago Press. (2nd edn; original edn 1958)[Crossref] , [Google Scholar]), Gadamer (1960/1998 Gadamer, H. G. 1998. Truth and method, New York: Continuum. (2nd edn; original edn 1960) (J. Weinsheimer & D. G. Marshall, Trans.) [Google Scholar]), Habermas (1963/1974 Habermas, J. 1974. Theory and practice, London: Heinemann. (original edn 1963) [Google Scholar]), Toulmin (1990 Toulmin, S. 1990. Cosmopolis: the hidden agenda of modernity, Chicago, IL: University of Chicago Press. [Google Scholar]), Ritzer (2000 Ritzer, G. 2000. The McDonaldization of society, Thousand Oaks, CA: Pine Forge Press. [Google Scholar]) and Dunne (1997 Dunne, J. 1997. Back to the rough ground: practical judgment and the lure of technique, Revisions, Notre Dame, IN: University of Notre Dame Press. [Crossref] , [Google Scholar]). These theorists disagree in their specific diagnoses of the relevant aspects of instrumental rationality and, especially, the possibility and contours of alternative modes. My discussion is not intended as a summary of their common denominator, rather as my own attempt to select and integrate ideas from their theories. 7. Where certainty and predictability are not (yet) possible, probability and reliability become the next best alternatives. Note that exact estimations of probability are made possible by calculability (see below). This example shows the close connection between knowledge of the natural world and its technological manipulation: 'causal relationships [are] mapped onto instrumental ones' (Sch\u00f6n, 1991 Sch\u00f6n, D. A. 1991. The reflective practitioner: how professionals think in action, Aldershot: Avebury. [Google Scholar], p. 34). 8. Having failed to achieve the 2002 objective of 80% of pupils at Level 4 in Literacy by the end of Key Stage 2, the Government has begun relaxing (National) objectives\u2010driven discourse, discarding the 85% target for 2004, and instead encouraging schools to attain their targets 'as soon as possible' (Halpin, 2003 Halpin, T. (2003, May 20) National primary school targets scrapped, Times Online http://www.timesonline.co.uk/ (accessed 25 May 2003). [Google Scholar]). 9. In addition to the numerous published materials (the Framework, Planning Exemplifications, video), initial professional development included two days of training for the Headteacher, Literacy Coordinator and a Governor and tended to 'concentrate on the mode of operation and implementation' (Riley, 2001 Riley, J. 2001. The National Literacy Strategy: success with literacy for all?. The Curriculum Journal, 12(1): 29\u201358. [Taylor & Francis Online] , [Google Scholar]). There are of course at least two other possibilities to explain the short professional development program: (1) teachers are already well\u2010versed in the strategies and methods involved, and/or (2) the DfES lacks the resources (including teachers' willingness and time) to engage in in\u2010depth professional development. 10. It is noteworthy that Success for All was cited as one of the programs upon which the English National Literacy Strategy was modelled (Beard, 1999 Beard, R. 1999. National literacy strategy: review of research and other evidence, Sudbury, , UK: Department for Education and Employment. [Google Scholar]), and Slavin participated in early policy discussions. 11. Considered independently of other developments, the evidence\u2010based practice movement could be seen as yet another clash between positivist and interpretivist epistemologies (or, more narrowly, experimental and non\u2010experimental methodologies) in the chronic 'paradigm wars' (Gage, 1989 Gage, N. L. 1989. The paradigm wars and their aftermath\u2014a historical sketch of research on teaching since 1989,. Teachers College Record, 91(2): 135\u2013150. [Crossref] , [Google Scholar]) endemic to social scientific research. What distinguishes this current skirmish are the raised expectations regarding the role of research in directing practice, and the broader social and political context shaped by instrumental rationality. The editors of a recent issue of the British Educational Research Journal (Stronach & Hustler, 2001 Stronach, I. and Hustler, D. 2001. Old whine in new battles,. British Educational Research Journal, 27(5): 523\u2013525. [Google Scholar]), express a sense of d\u00e9ja\u2010vu at the re\u2010emergence of the issue, and one can sense an element of uneasiness at publishing what they consider to be essentially a rehashing of previous arguments. Hammersley (2001 Hammersley, M. 2001. On 'systematic' reviews of research literatures: a 'narrative' response to Evans & Benefield,. British Educational Research Journal, 27(5): 543\u2013554. [Taylor & Francis Online], [Web of Science \u00ae] , [Google Scholar]), however, in that same issue, after resurrecting criticisms of the drive for systematic reviews on epistemological and methodological grounds, does conclude with reflections on what is new in the current situation: i.e. changes in the wider political context, educational accountability, research funding and academic autonomy. 12. But see Machin and McNally's (2004 Machin, S. & McNally, S. (2004) 'The Literacy Hour', CEE Discussion Paper No.43; IZA Discussion Paper No. 1005 (available at http://cep.lse.ac.uk/pubs/opsp.asp?prog = CEE (http://cep.lse.ac.uk/pubs/opsp.asp?prog=CEE) ). [Google Scholar]) longitudinal study of the effects of the National Literacy Project on pupil achievement. 13. The Framework's aims are ostensibly established technically, through the study of markets and occupations, and identification of reading skills needed by high school graduates (which in turn become teaching objectives). The value lurking in the shadows of this value\u2010free rationality is that of the self\u2010regulating system (see McCarthy, 1978 McCarthy, T. 1978. The critical theory of Jurgen Habermas, London: Hutchinson & Co. [Google Scholar], pp. 8\u201312). Note the functionalist values embedded in the names Department of Education and Employment and Department of Education and Skills. See Lawn (1990 Lawn, M. 1990. From responsibility to competency\u2014a new context for curriculum studies in England and Wales,. Journal of Curriculum Studies, 22(4): 388\u2013392. [Taylor & Francis Online], [Web of Science \u00ae] , [Google Scholar]) for a critique of the implications of the English National Curriculum for teacher responsibility. 14. As with the section on instrumental rationality I am simplistically lumping together a number of different and often contradictory ideas into one construct. Similar terms, from which I draw in my explication of experiential wisdom, include reflective practice (Sch\u00f6n, 1991 Sch\u00f6n, D. A. 1991. The reflective practitioner: how professionals think in action, Aldershot: Avebury. [Google Scholar]), practical reason (Toulmin, 1990 Toulmin, S. 1990. Cosmopolis: the hidden agenda of modernity, Chicago, IL: University of Chicago Press. [Google Scholar]), and pedagogical tact (van Manen, 1995 van Manen, M. 1995. On the epistemology of reflective practice,. Teachers and Teaching: theory and practice, 1(1): 33\u201350. [Taylor & Francis Online] , [Google Scholar]). Reconstructing this ideal type is especially difficult since most experientialists tend to be more elaborate in their criticisms of instrumental rationality than in their positive suggestions of alternatives (see Squires, 1999 Squires, G. 1999. Teaching as a professional discipline, London: Falmer Press. [Google Scholar], on this point; and Eraut, 1995 Eraut, M. 1995. Sch\u00f6n shock: a case for reframing reflection\u2010in\u2010action,. Teachers and Teaching: Theory and Practice, 1(1): 9\u201322. [Taylor & Francis Online] , [Google Scholar], for a specific discussion of Sch\u00f6n and his followers). 15. This circle (and terms such as 'horizon' and 'projection') are of course based on the hermeneutic circle, in which understanding of a text (or other experience) is enabled and constrained by one's horizon of pre\u2010understandings, which in turn is shaped by the texts read (and experiences undergone) (Gadamer, 1960/1998 Gadamer, H. G. 1998. Truth and method, New York: Continuum. (2nd edn; original edn 1960) (J. Weinsheimer & D. G. Marshall, Trans.) [Google Scholar]; Heidegger, 1927/1996 Heidegger, M. and Stambaugh, J. 1996. Being and time: a translation of Sein und Zeit, SUNY series in contemporary continental philosophy, Albany, NY: State University of New York Press. (original edn 1927) [Google Scholar]). Theories of personal teaching rarely explicitly make this analogy or cast their discussions in hermeneutic terms (exceptions include Birmingham [2004 Birmingham, C. 2004. Phronesis: a model for pedagogical reflection,. Journal of Teacher Education, 55(4): 313\u2013324. [Crossref], [Web of Science \u00ae] , [Google Scholar]], who proposes phronesis as a model for reflection, and Field and Latta [2001 Field, J. C. and Latta, M. M. 2001. What constitutes becoming experienced in teaching and learning?. Teaching and Teacher Education, 17(8): 885\u2013895. [Crossref] , [Google Scholar]], who treat the problem of learning from experience as a hermeneutic problem). The affinity of practical knowledge and hermeneutics is developed by Gadamer, who employs the former as a model of the latter. 16. Note that theoretically a teacher's encounters with her colleagues, academic sources and administrative directives adhere to the same form as that of classroom experience (i.e. projection, experience, reflection and assimilation). Their location on the circle's periphery reflects the primacy of classroom experience in this way of thinking about knowledge in teaching. Similarly, a more theoretically complete account of the formation of teachers' horizons would need to discuss the critical roles of tradition and language. 17. Quoted in Halliday (1998 Halliday, J. 1998. Technicism, reflective practice and authenticity in teacher education,. Teaching and Teacher Education, 14(6): 597\u2013605. [Crossref], [Web of Science \u00ae] , [Google Scholar]), p. 598. 18. Social scientific theories about the world are partially constitutive of the reality they study. In the words of Hannah Arendt (writing about behaviourism): 'the trouble \u2026 is not that they are wrong but that they could become true, that they actually are the best possible conceptualization of certain obvious trends in modern society' (1958/1998 Arendt, H. 1998. The human condition, Chicago, IL: University of Chicago Press. (2nd edn; original edn 1958)[Crossref] , [Google Scholar], p. 322). 19. And of course confrontation between instrumentalists and experientialists, who occupy different positions in the political and social field (e.g. policy\u2010makers vs. teachers, educational psychologists vs. teacher educators). See Labaree (1992 Labaree, D. F. 1992. Power, knowledge, and the rationalization of teaching\u2014a genealogy of the movement to professionalize teaching,. Harvard Educational Review, 62(2): 123\u2013154. [Crossref], [Web of Science \u00ae] , [Google Scholar]) for a genealogical analysis of the movement to rationalise teaching in the US. He links the methodisation of instruction to an attempt to bolster the professional status of teacher education. 20. Absolute instrumentalism may also include an element of what Buchler (1961 Buchler, J. 1961. The concept of method, New York: Columbia University Press. [Crossref] , [Google Scholar]) calls 'methodalotry': 'where interest in method ceases to be merely primary and becomes militantly exclusive, where regard for a method begins to be related inversely to regard for its results'.",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "Cambridge Journal of Education",
+        "type": "journal",
+        "issn": [
+          "0305-764X",
+          "1469-3577"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Educator Training and Historical Pedagogy",
+        "Reflective Practices in Education",
+        "Teacher Education and Leadership Studies"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W2087092323"
+    },
+    {
+      "openalex_id": "W2121993559",
+      "doi": "10.1017/s1537592709992714",
+      "title": "Self-Segregation or Deliberation? Blog Readership, Participation, and Polarization in American Politics",
+      "authors": [
+        {
+          "name": "Eric Lawrence",
+          "openalex_id": "A5083282133",
+          "orcid": "https://orcid.org/0000-0002-5018-1351",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "John Sides",
+          "openalex_id": "A5050583907",
+          "orcid": "https://orcid.org/0000-0003-1268-6612",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Henry Farrell",
+          "openalex_id": "A5112468935",
+          "institutions": [
+            "George Washington University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-03-01",
+      "abstract": "Political scientists and political theorists debate the relationship between participation and deliberation among citizens with different political viewpoints. Blogs provide an important testing ground for their claims. We examine deliberation, polarization, and political participation among blog readers. We find that blog readers gravitate toward blogs that accord with their political beliefs. Few read blogs on both the left and right of the ideological spectrum. Furthermore, those who read left-wing blogs and those who read right-wing blogs are ideologically far apart. Blog readers are more polarized than either non-blog-readers or consumers of various television news programs, and roughly as polarized as US senators. Blog readers also participate more in politics than non-blog readers. Readers of blogs of different ideological dispositions do not participate less than those who read only blogs of one ideological disposition. Instead, readers of both left- and right-wing blogs and readers of exclusively leftwing blogs participate at similar levels, and both participate more than readers of exclusively right-wing blogs. This may reflect social movement-building efforts by left-wing bloggers.",
+      "cited_by_count": 350,
+      "type": "article",
+      "source": {
+        "name": "Perspectives on Politics",
+        "type": "journal",
+        "issn": [
+          "1537-5927",
+          "1541-0986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/00D2B6743AAF448CDD1DA4FBB913BB05/S1537592709992714a.pdf/div-class-title-self-segregation-or-deliberation-blog-readership-participation-and-polarization-in-american-politics-div.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Electoral Systems and Political Participation",
+        "Social Capital and Networks"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W2121993559"
+    },
+    {
+      "openalex_id": "W4252698994",
+      "doi": "10.5040/9781472544377",
+      "title": "Connected Sociologies",
+      "authors": [
+        {
+          "name": "Gurminder K. Bhambra",
+          "openalex_id": "A5064248726",
+          "orcid": "https://orcid.org/0000-0003-3658-1575"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "<JATS1:p>This book outlines what theory for a global age might look like, positing an agenda for consideration, contestation and discussion, and a framework for the research-led volumes that follow in the series.</JATS1:p> <JATS1:p>Gurmider K. Bhambra takes up the classical concerns of sociology and social theory and shows how they are being rethought through an engagement with postcolonial studies, one of the most distinctive critical approaches of the past two decades. She also discusses the significance of the research programme surrounding coloniality and modernity that has emerged recently from Latin America.</JATS1:p>",
+      "cited_by_count": 592,
+      "type": "book",
+      "source": {
+        "name": "Bloomsbury Publishing Plc eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.bloomsburycollections.com/book/connected-sociologies.pdf?dl"
+      },
+      "topics": [
+        "Contemporary Sociological Theory and Practice"
+      ],
+      "referenced_works_count": 228,
+      "url": "https://openalex.org/W4252698994"
+    },
+    {
+      "openalex_id": "W2149683492",
+      "doi": "10.1111/j.1467-8551.2006.00493.x",
+      "title": "Business Ethics as Practice",
+      "authors": [
+        {
+          "name": "Stewart Clegg",
+          "openalex_id": "A5080767366",
+          "orcid": "https://orcid.org/0000-0001-6083-4283",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Martin Kornberger",
+          "openalex_id": "A5004523722",
+          "orcid": "https://orcid.org/0000-0003-1682-770X",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Carl Rhodes",
+          "openalex_id": "A5090099364",
+          "orcid": "https://orcid.org/0000-0002-6571-2872",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-06-16",
+      "abstract": "In this article we develop a conceptualization of business ethics as practice. Starting from the view that the ethics that organizations display in practice will have been forged through an ongoing process of debate and contestation over moral choices, we examine ethics in relation to the ambiguous, unpredictable, and subjective contexts of managerial action. Furthermore, we examine how discursively constituted practice relates to managerial subjectivity and the possibilities of managers being moral agents. The article concludes by discussing how the \u2018ethics as practice\u2019 approach that we expound provides theoretical resources for studying the different ways that ethics manifest themselves in organizations as well as providing a practical application of ethics in organizations that goes beyond moralistic and legalistic approaches.",
+      "cited_by_count": 318,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Management",
+        "type": "journal",
+        "issn": [
+          "1045-3172",
+          "1467-8551"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://research.vu.nl/en/publications/77b2d316-12a4-48ba-a890-ff398d059e35"
+      },
+      "topics": [
+        "Ethics in Business and Education",
+        "Management and Organizational Studies",
+        "Management Theory and Practice"
+      ],
+      "referenced_works_count": 162,
+      "url": "https://openalex.org/W2149683492"
+    },
+    {
+      "openalex_id": "W2129719044",
+      "doi": "10.1093/ejil/14.3.437",
+      "title": "Security Council Deliberations: The Power of the Better Argument",
+      "authors": [
+        {
+          "name": "I. P. Johnstone",
+          "openalex_id": "A5065302599"
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-06-01",
+      "abstract": "Why are legal arguments used in a political forum like the United Nations Security Council? This article draws on international law and international relations theory to provide an answer to that question, supported by a case study of the debates over NATO's intervention in Kosovo. The theoretical argument is that international law operates largely through a process of justificatory discourse within and constrained by interpretive communities, composed of the participants in a field of practice who set the parameters of what constitutes reasoned argumentation for that practice. Drawing insights from the theory of communicative action, the article claims that minimal preconditions for this discursive interaction exist in and around the Security Council. The debates over Kosovo are offered as evidence that the legal discourse not only occurs but has independent influence even in that political setting. While legal considerations did not directly cause any decision, concerns about precedent and reputation did influence positions taken as well as subsequent developments in the UN and NATO. The article concludes with an illustrative suggestion as to how Security Council deliberations could be improved, namely the adoption of a set of considerations to be taken into account in debates on humanitarian intervention. The suggested reform would not do away with the influence of hard power and perceived national interest, but, to paraphrase Jurgen Habermas, would give \u2018the power of the better argument\u2019 a fighting chance in Council decision\u2010making.",
+      "cited_by_count": 213,
+      "type": "article",
+      "source": {
+        "name": "European Journal of International Law",
+        "type": "journal",
+        "issn": [
+          "0938-5428",
+          "1464-3596"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ejil/article-pdf/14/3/437/1208517/140437.pdf"
+      },
+      "topics": [
+        "Global Peace and Security Dynamics",
+        "International Law and Human Rights",
+        "Peacebuilding and International Security"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2129719044"
+    },
+    {
+      "openalex_id": "W2950765218",
+      "doi": "10.1108/aaaj-09-2017-3158",
+      "title": "Stakeholder engagement and dialogic accounting",
+      "authors": [
+        {
+          "name": "Marco Bellucci",
+          "openalex_id": "A5070096723",
+          "orcid": "https://orcid.org/0000-0002-4014-4418",
+          "institutions": [
+            "University of Florence"
+          ]
+        },
+        {
+          "name": "Lorenzo Simoni",
+          "openalex_id": "A5026093346",
+          "orcid": "https://orcid.org/0000-0002-9143-0596",
+          "institutions": [
+            "University of Florence"
+          ]
+        },
+        {
+          "name": "Diletta Acuti",
+          "openalex_id": "A5044669616",
+          "orcid": "https://orcid.org/0000-0002-4609-6736",
+          "institutions": [
+            "University of Florence"
+          ]
+        },
+        {
+          "name": "Giacomo Manetti",
+          "openalex_id": "A5000708173",
+          "orcid": "https://orcid.org/0000-0001-5660-9534",
+          "institutions": [
+            "University of Florence"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-08",
+      "abstract": "Purpose The purpose of this paper is to explain how sustainability reporting and stakeholder engagement processes serve as vehicles of dialogic accounting (DA), a form of critical accounting that creates opportunities for stakeholders to express their opinions, and the influence of dialogic interactions on the content of sustainability reports. Design/methodology/approach Content analysis is used to investigate reports published by 299 companies that have adopted Global Reporting Initiative guidelines. This paper studies how organizations engage stakeholders, the categories of stakeholders that are being addressed, the methods used to support stakeholder engagement, and other features of the stakeholder engagement process. Companies that disclose stakeholder perceptions, the difficulties met in engaging stakeholders, and actions aimed at creating opportunities for different groups of stakeholders to interact were subjects of discussion in a series of semi-structured interviews that focus on DA. Findings Companies often commit themselves to two-way dialogue with their stakeholders, but fully developed frameworks for DA are rare. However, signs of DA emerged in the analysis, thus confirming that sustainability reporting can become a platform for DA systems if stakeholder engagement is effective. Originality/value The findings contribute to the accounting literature by discussing if and how sustainability reporting and stakeholder engagement can serve as vehicles of DA. This is accomplished via a research design that is based on in-depth interviews and content analysis of various sustainability reports.",
+      "cited_by_count": 156,
+      "type": "article",
+      "source": {
+        "name": "Accounting Auditing & Accountability Journal",
+        "type": "journal",
+        "issn": [
+          "0951-3574",
+          "2051-3151"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://researchportal.port.ac.uk/ws/files/15969210/Stakeholder_engagement_and_dialogic_accounting_post_print.pdf"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Accounting and Organizational Management",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 109,
+      "url": "https://openalex.org/W2950765218"
+    },
+    {
+      "openalex_id": "W2020307081",
+      "doi": "10.1287/orsc.2015.0968",
+      "title": "What Is a \u201cFair\u201d Price? Ethics as Sensemaking",
+      "authors": [
+        {
+          "name": "Juliane Reinecke",
+          "openalex_id": "A5021897173",
+          "orcid": "https://orcid.org/0000-0001-5674-4218",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "Shaz Ansari",
+          "openalex_id": "A5008091381",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-21",
+      "abstract": "Whereas the deliberative democracy approach to ethics seeks to bridge universalist reason and contextual judgment to explain the emergence of intersubjective agreements, it remains unclear how these two are reconciled in practice. We argue that a sensemaking approach is useful for examining how ethical truces emerge in equivocal situations. To understand how actors navigate through ethical complexity, we conducted an ethnographic inquiry into the multistakeholder practices of setting Fairtrade Minimum Prices. We offer three contributions. First, we develop a process model of ethics as sensemaking that explains how actors come to collectively agree on what is ethical in complex situations, even if no complete consensus arises. Second, our findings suggest that moral intuition and affect also motivate ethical judgment alongside moral reasoning. Third, an ethical sensemaking perspective explains some of the pitfalls actors confront in coping with ethical complexities in practice and how they attend to the challenges arising from stark inequalities in extreme contexts.",
+      "cited_by_count": 127,
+      "type": "article",
+      "source": {
+        "name": "Organization Science",
+        "type": "journal",
+        "issn": [
+          "1047-7039",
+          "1526-5455"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.repository.cam.ac.uk/bitstreams/c00ff1a4-4d32-4141-8fbd-14b9e938f1bc/download"
+      },
+      "topics": [
+        "Global trade, sustainability, and social impact",
+        "Experimental Behavioral Economics Studies",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W2020307081"
+    },
+    {
+      "openalex_id": "W118539733",
+      "doi": "10.5070/t411000003",
+      "title": "Enrique Dussel's Liberation Thought in the Decolonial Turn",
+      "authors": [
+        {
+          "name": "Nelson Maldonado\u2010Torres",
+          "openalex_id": "A5079436408",
+          "orcid": "https://orcid.org/0000-0001-7738-7029",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-05-13",
+      "abstract": "Liberation philosophy, as a Latin American project for critical thought, is one among many expressions of a shift in global power dynamics and in epistemic perspective that has taken place since the Second World War.*The European crisis, or more than a crisis, its own internal devastation after the war, opened at least three paths for the train of history and thought.On the one hand, the United States -which had proven itself as an international power through the expansion from the thirteen colonies, the war with Mexico, and the Spanish-American War -became after the Second World War a hegemonic force that would both assist and displace Northwestern Europe as the power-axis of the modern world-system.With this, Americanism -the triumphalist and assimilationist ideology of the United States which had already burst onto the scene with Theodore Roosevelt in the late nineteenth century -was decisively introduced to the rest of the world.This Americanist discourse would dictate the terms for the assimilation of non-Catholic European immigrants, some of which were seen as belonging to darker races. 1 This ideology has taken various turns with McCarthyism and Reagan in the context of the Cold War, and today it takes on a new spirit in formulations like that offered by Samuel P. Huntington, who has forcefully rearticulated Americanism with respect to immigrants and ethnic minorities in the United States. 2 But today, after the Cold War and the attacks of 11 September, it is no longer European immigrants that allegedly pose a \"challenge\" to U.S.-American identity, but rather Latin American (im)migrants, particularly Spanish-speaking Mexicans and Chicana/os. 3 There is, accordingly, a particular importance today for exploring the decolonial potential of those cultural forms originating in Latin America, Mexico, and in the borderlands between Mexico and the United States, among other \"frontier\" territories both to the north and south of this border. 4e second path that opened with the decline of Europe was, clearly, that of the Cold War rival of Americanism: Soviet communism.Soviet communism, or at least socialism (which is a different but related political system/ideology), would become for many a viable option for a different future, beyond both fascist and liberal Europe.Europe itself would come to be divided between these two newly regnant ideologies and neo-imperial geo-political projects.Other regions also suffered the force of this clash of political projects, while many nations tried to find a space between or in alliance with the two dominant blocs.Now, the decline of Europe opened a third path, which we will call -following Frantz Fanon -that of the \"wretched of the earth,\" as well as the \"de-colonial turn.\" 5 This door would be definitively forced open through the combination of the internal and external devastation of Europe, that is to say, not only by the perverse force of Nazism in its interior but also by the encouraging force of the decolonization of European territories abroad.In contrast to the Latin American liberation struggles of the nineteenth century, which took place in a context in which the weakening of Southern Europe left intact the fascination with the increasing strength of Northern Europe (especially France and England), mid-twentieth century Europe was destroyed by Nazism and completely demoralized.As the",
+      "cited_by_count": 87,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt5hg8t7cj/qt5hg8t7cj.pdf?t=ll4zt0"
+      },
+      "topics": [
+        "Latin American and Latino Studies",
+        "Cultural and Social Studies in Latin America",
+        "Latin American Literature Studies"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W118539733"
+    },
+    {
+      "openalex_id": "W2125073413",
+      "doi": null,
+      "title": "Religious Sensations. Why Media, Aesthetics and Power Matter in the Study of Contemporary Religion",
+      "authors": [
+        {
+          "name": "Birgit Meyer",
+          "openalex_id": "A5103042842",
+          "orcid": "https://orcid.org/0000-0001-7186-7865",
+          "institutions": [
+            "National Centre of Research in Social and Cultural Anthropology"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": null,
+      "cited_by_count": 233,
+      "type": "article",
+      "source": {
+        "name": "Digital Academic REpository of VU University Amsterdam (Vrije Universiteit Amsterdam)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1871/10311"
+      },
+      "topics": [
+        "Media, Religion, Digital Communication",
+        "Religious Tourism and Spaces",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2125073413"
+    },
+    {
+      "openalex_id": "W2902378118",
+      "doi": "10.1093/joc/jqz023",
+      "title": "Brevity is the Soul of Twitter: The Constraint Affordance and Political Discussion",
+      "authors": [
+        {
+          "name": "Kokil Jaidka",
+          "openalex_id": "A5079154791",
+          "orcid": "https://orcid.org/0000-0002-8127-1157",
+          "institutions": [
+            "Nanyang Technological University"
+          ]
+        },
+        {
+          "name": "Alvin Zhou",
+          "openalex_id": "A5058939619",
+          "orcid": "https://orcid.org/0000-0001-5410-9712",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Yphtach Lelkes",
+          "openalex_id": "A5037708423",
+          "orcid": "https://orcid.org/0000-0003-1805-056X",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-09",
+      "abstract": "Abstract Many hoped that social networking sites would allow for the open exchange of information and a revival of the public sphere. Unfortunately, conversations on social media are often toxic and not conducive to healthy political discussions. Twitter, the most widely used social network for political discussions, doubled the limit of characters in a tweet in November 2017, which provided an opportunity to study the effect of technological affordances on political discussions using a discontinuous time series design. Using supervised and unsupervised natural language processing methods, we analyzed 358,242 tweet replies to U.S. politicians from January 2017 to March 2018. We show that doubling the permissible length of a tweet led to less uncivil, more polite, and more constructive discussions online. However, the declining trend in the empathy and respectfulness of these tweets raises concerns about the implications of the changing norms for the quality of political deliberation.",
+      "cited_by_count": 123,
+      "type": "article",
+      "source": {
+        "name": "Journal of Communication",
+        "type": "journal",
+        "issn": [
+          "0021-9916",
+          "1460-2466"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/joc/article-pdf/69/4/345/29972084/jqz023.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Misinformation and Its Impacts",
+        "Opinion Dynamics and Social Influence"
+      ],
+      "referenced_works_count": 97,
+      "url": "https://openalex.org/W2902378118"
+    },
+    {
+      "openalex_id": "W1978778927",
+      "doi": "10.1111/j.1365-2575.2008.00295.x",
+      "title": "Exploring the critical agenda in information systems research",
+      "authors": [
+        {
+          "name": "Dubravka \u0106e\u0107ez-Kecmanovi\u0107",
+          "openalex_id": "A5018723818",
+          "orcid": "https://orcid.org/0000-0001-8028-3896"
+        },
+        {
+          "name": "Heinz K. Klein",
+          "openalex_id": "A5110738780"
+        },
+        {
+          "name": "Carole Brooke",
+          "openalex_id": "A5108241955"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-03-01",
+      "abstract": "Exploring the critical agenda in information systems researchThis special issue of the Information Systems Journal (ISJ) is dedicated to critical information systems (IS) research that involves a wide range of diverse research endeavours that explore the terrain beyond functionalist and positivist approaches, with the aim to transform IS practice and IS-organization relationships.Critical IS studies share with critical management studies (CMS) deep scepticism 'regarding the moral defensibility and the social and ecological sustainability of prevailing conceptions and forms of management and organization' (Adler et al., 2006), conceptions and forms made possible to a large degree by IS research and practice.Critical IS studies aim at revealing, criticizing and explaining how the development and use of IS in organizations and society in the pursuit of efficiency, rationalization and progress also increase social control and domination, with potential detrimental consequences for some stakeholders and society as a whole.Being 'critical' in IS research also means subscribing to a much broader historical, social and political view of the IS discipline and the role of IS across all institutional levels of society.Critical research draws attention to the ways in which economic and managerial interests, ideologies and discourses, assisted by educational and research funding institutions, shape and construct IS research.Critical IS researchers are concerned with the purpose, use and misuse of IS research outcomes in organizations and society.The point has been made in the International Conference on Information Systems 2007 senior scholars' presentation that the location of many, if not most, IS programmes in business schools places certain constraints on their curriculum and research agendas.Future critical studies should also investigate IS research itself as a social activity -its practice, purpose, implications and institutional constraints under which it is currently operating.The goal of this special ISJ issue, as defined in the call for papers, is to explore the nature of the critical agenda and advance the 'critical debate' in information systems research.In order to document the breadth of current research, identifying itself as socially critical, and to encourage the widest possible debate, the editors deliberately chose not to . . .take a specific position on what should count as critical research.",
+      "cited_by_count": 67,
+      "type": "article",
+      "source": {
+        "name": "Information Systems Journal",
+        "type": "journal",
+        "issn": [
+          "1350-1917",
+          "1365-2575"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1365-2575.2008.00295.x"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Information Technology Governance and Strategy",
+        "E-Government and Public Services"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W1978778927"
+    },
+    {
+      "openalex_id": "W2062186338",
+      "doi": "10.1111/0020-8833.00184",
+      "title": "Feminism and Constructivism: Worlds Apart or Sharing the Middle Ground?",
+      "authors": [
+        {
+          "name": "Birgit Locher",
+          "openalex_id": "A5047144658"
+        },
+        {
+          "name": "Elisabeth Pr\u00fcgl",
+          "openalex_id": "A5087271288",
+          "orcid": "https://orcid.org/0000-0002-4363-3540",
+          "institutions": [
+            "Florida International University"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-03-01",
+      "abstract": "The discipline of international relations (IR) is witnessing a \"constructivist turn.\" In this article, we argue that the new preoccupation with constructivism provides a unique opportunity to further understanding between feminism and the IR mainstream. Feminism and constructivism share a commitment to an ontology of becoming that can serve as a common basis for conversation. Yet there are also profound differences between feminists and constructivists. First, most IR feminists approach gender and power as integral elements in processes of construction, whereas most constructivists consider power to be external to such processes. This failure to conceptualize power and gender as social and pervasive leads constructivists to miss an important part of the empirical reality of power politics. Second, constructivists tend to ignore the implications of a postpositivist epistemology, whereas for feminists the question of \"Who knows?\" is crucial. We argue that the constructivist failure to problematize the research process as a social (and therefore political) process of construction is logically inconsistent with an ontology of becoming. We introduce empirical materials to illustrate the advantages of feminist approaches. We hope to advance a dialogue between feminism and constructivism because the two approaches add to each other and in combination can yield better theoretical and empirical understandings of the world.",
+      "cited_by_count": 112,
+      "type": "article",
+      "source": {
+        "name": "International Studies Quarterly",
+        "type": "journal",
+        "issn": [
+          "0020-8833",
+          "1468-2478"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/isq/article-pdf/45/1/111/5071780/45-1-111.pdf"
+      },
+      "topics": [
+        "Gender, Security, and Conflict",
+        "Gender Politics and Representation",
+        "Gender Diversity and Inequality"
+      ],
+      "referenced_works_count": 138,
+      "url": "https://openalex.org/W2062186338"
+    },
+    {
+      "openalex_id": "W1967270222",
+      "doi": "10.1504/ijode.2013.053669",
+      "title": "The discipline of enterprise engineering",
+      "authors": [
+        {
+          "name": "Jan L. G. Dietz",
+          "openalex_id": "A5108747169",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Jan A. P. Hoogervorst",
+          "openalex_id": "A5013726972",
+          "institutions": [
+            "Antwerp Management School"
+          ]
+        },
+        {
+          "name": "Antonia Albani",
+          "openalex_id": "A5068844554",
+          "orcid": "https://orcid.org/0000-0002-1024-8187",
+          "institutions": [
+            "University of St. Gallen"
+          ]
+        },
+        {
+          "name": "David Aveiro",
+          "openalex_id": "A5071162953",
+          "orcid": "https://orcid.org/0000-0001-6453-3648",
+          "institutions": [
+            "Universidade da Madeira"
+          ]
+        },
+        {
+          "name": "Eduard Babkin",
+          "openalex_id": "A5023403266",
+          "orcid": "https://orcid.org/0000-0003-2597-9043",
+          "institutions": [
+            "National Research University Higher School of Economics"
+          ]
+        },
+        {
+          "name": "Joseph Barjis",
+          "openalex_id": "A5048835896",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Artur Caetano",
+          "openalex_id": "A5016586331",
+          "orcid": "https://orcid.org/0000-0002-1810-7813",
+          "institutions": [
+            "Instituto de Engenharia de Sistemas e Computadores Investiga\u00e7\u00e3o e Desenvolvimento"
+          ]
+        },
+        {
+          "name": "Philip Huysmans",
+          "openalex_id": "A5051679247",
+          "institutions": [
+            "University of Antwerp"
+          ]
+        },
+        {
+          "name": "Junichi Iijima",
+          "openalex_id": "A5113682523",
+          "institutions": [
+            "Tokyo Institute of Technology"
+          ]
+        },
+        {
+          "name": "Steven J. H. van Kervel",
+          "openalex_id": "A5032823044"
+        },
+        {
+          "name": "Hans Mulder",
+          "openalex_id": "A5019104235",
+          "institutions": [
+            "Antwerp Management School"
+          ]
+        },
+        {
+          "name": "Martin Op \u2019t Land",
+          "openalex_id": "A5010932560",
+          "orcid": "https://orcid.org/0000-0003-0024-5908",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Thomas Land",
+          "openalex_id": "A5105785346",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Henderik A. Proper",
+          "openalex_id": "A5013301538",
+          "orcid": "https://orcid.org/0000-0002-7318-2496",
+          "institutions": [
+            "Tudor Place"
+          ]
+        },
+        {
+          "name": "Jorge L. C. Sanz",
+          "openalex_id": "A5086246477",
+          "institutions": [
+            "IBM (United States)"
+          ]
+        },
+        {
+          "name": "Linda Terlouw",
+          "openalex_id": "A5105367355"
+        },
+        {
+          "name": "Jos\u00e9 Tribolet",
+          "openalex_id": "A5081955220",
+          "orcid": "https://orcid.org/0000-0003-1903-4561",
+          "institutions": [
+            "Instituto de Engenharia de Sistemas e Computadores Investiga\u00e7\u00e3o e Desenvolvimento"
+          ]
+        },
+        {
+          "name": "Jan Verelst",
+          "openalex_id": "A5039845346",
+          "orcid": "https://orcid.org/0000-0002-5791-2807",
+          "institutions": [
+            "University of Antwerp"
+          ]
+        },
+        {
+          "name": "Robert Winter",
+          "openalex_id": "A5004386505",
+          "orcid": "https://orcid.org/0000-0001-9383-2276",
+          "institutions": [
+            "University of St. Gallen"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "abstract": "A century ago, Taylor published a landmark in the organisational sciences: his Principles of Scientific Management.Many researchers have elaborated on Taylor's principles, or have been influenced otherwise.The authors of the current paper evaluate a century of enterprise development, and conclude that a paradigm shift is needed for dealing adequately with the challenges that modern enterprises face.Three generic goals are identified.The first one, intellectual manageability, is the basis for mastering complexity; current approaches fall short in assisting professionals to master the complexity of enterprises and enterprise changes.The second goal, organisational concinnity, is conditional for making strategic initiatives operational; current approaches do not, or inadequately, address this objective.The third goal, social devotion, is the basis for achieving employee empowerment as well as knowledgeable management and governance; modern employees are highly educated knowledge workers; yet, the mindset of managers has not evolved accordingly.The emerging discipline of Enterprise Engineering, as conceived by the authors, is considered to be a suitable vehicle for achieving these goals.It does so by providing new, powerful theories and effective methodologies.A theoretical framework is presented for positioning the theories, goals, and fundamentals of enterprise engineering in four classes: philosophical, ontological, ideological and technological.",
+      "cited_by_count": 152,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Organisational Design and Engineering",
+        "type": "journal",
+        "issn": [
+          "1758-9797",
+          "1758-9800"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.1504/ijode.2013.053669"
+      },
+      "topics": [
+        "Complex Systems and Decision Making",
+        "Innovation and Knowledge Management",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W1967270222"
+    },
+    {
+      "openalex_id": "W2895460965",
+      "doi": "10.1287/orsc.2018.1226",
+      "title": "Creating Common Ground: A Communicative Action Model of Dialogue in Shareholder Engagement",
+      "authors": [
+        {
+          "name": "Fabrizio Ferraro",
+          "openalex_id": "A5060163688",
+          "orcid": "https://orcid.org/0000-0002-4855-5430",
+          "institutions": [
+            "EAE Business School"
+          ]
+        },
+        {
+          "name": "Daniel Beunza",
+          "openalex_id": "A5022339012",
+          "orcid": "https://orcid.org/0000-0003-0164-7095",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-08",
+      "abstract": "Despite growing empirical evidence on the effectiveness of dialogue between activists and corporations in stakeholder engagement, scholars have not fully accounted for the mechanisms that explain its success. We address this gap by leveraging Habermas\u2019s theory of communicative action. In our longitudinal qualitative study, we explore the dialogue on climate change between the Interfaith Centre for Corporate Responsibility, a coalition of faith-based investors, Ford, and General Motors. We find that communicative action can emerge from strategic action as a result of three cycles of interaction: establishing dialogue, framing, and deliberation. Our study contributes to the literature on shareholder engagement by integrating communicative and strategic action, thereby offering a new interpretation of how reputational threat and dialogue come together to produce a common ground between activists and companies.",
+      "cited_by_count": 99,
+      "type": "article",
+      "source": {
+        "name": "Organization Science",
+        "type": "journal",
+        "issn": [
+          "1047-7039",
+          "1526-5455"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openaccess.city.ac.uk/id/eprint/21622/1/Creating%20Common%20Ground%20A%20Communicative%20Action%20Model%20of%20Dialogue%20in%20Shareholder%20Engagement%20.pdf"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Management and Organizational Studies",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W2895460965"
+    },
+    {
+      "openalex_id": "W1969166843",
+      "doi": "10.1111/j.0141-9889.2004.00421.x",
+      "title": "How sociology can save bioethics\u00a0.\u00a0.\u00a0.\u00a0maybe",
+      "authors": [
+        {
+          "name": "Jos\u00e9 Juli\u00e1n L\u00f3pez",
+          "openalex_id": "A5052513528",
+          "orcid": "https://orcid.org/0000-0002-0246-2028",
+          "institutions": [
+            "University of Ottawa"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-09-20",
+      "abstract": "Abstract This paper argues for the importance of a broad sociological engagement with bioethics. It begins by considering why sociologists should be interested in bioethics and then goes on to explore the cognitive critique of bioethics developed by ethnographers. Some of these authors have also suggested that a more robust bioethics might emerge through the incorporation of the tools of ethnographic analysis. In this paper, it is argued that this is an important claim which needs to be analysed further and that Foucault's concept of discursive formations provides a useful framework for doing so. Once bioethics is redescribed as a discursive formation, the paper explores the challenges and obstacles that sociology and ethnography face in their attempt to open up a space for themselves in bioethics. The paper concludes by suggesting that sociologists and ethnographers need to reflect on the ways in which they might democratically secure legitimacy for their own claims in the field of social ethics.",
+      "cited_by_count": 154,
+      "type": "article",
+      "source": {
+        "name": "Sociology of Health & Illness",
+        "type": "journal",
+        "issn": [
+          "0141-9889",
+          "1467-9566"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.0141-9889.2004.00421.x"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Psychology of Moral and Emotional Judgment",
+        "Patient Dignity and Privacy"
+      ],
+      "referenced_works_count": 155,
+      "url": "https://openalex.org/W1969166843"
+    },
+    {
+      "openalex_id": "W2921234024",
+      "doi": "10.3145/epi.2019.mar.04",
+      "title": "Active audiences and social discussion on the digital public sphere. Review article",
+      "authors": [
+        {
+          "name": "Pere Masip",
+          "openalex_id": "A5063206804",
+          "orcid": "https://orcid.org/0000-0002-8231-0824",
+          "institutions": [
+            "Universitat Ramon Llull"
+          ]
+        },
+        {
+          "name": "Carlos Ruiz-Caballero",
+          "openalex_id": "A5011762143",
+          "orcid": "https://orcid.org/0000-0002-1395-2145",
+          "institutions": [
+            "Universitat Ramon Llull"
+          ]
+        },
+        {
+          "name": "Jaume Suau",
+          "openalex_id": "A5054643440",
+          "orcid": "https://orcid.org/0000-0003-4480-4441",
+          "institutions": [
+            "Universitat Ramon Llull"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-13",
+      "abstract": "In little over a decade, essential concepts in research on communication have become zombie concepts (Beck &amp; Willms, 2004) and are no longer effective for understanding the profound transformation that has taken place with the arrival of the internet. Public sphere, deliberation, audiences, public... the academic literature has oscillated between an initial optimism about the potential for strengthening democracy of communication technologies to a critical scepticism. This text reviews the academic literature with regard to the forms of social deliberation adopted in the context of the media and social networks and its impact on the public sphere.",
+      "cited_by_count": 90,
+      "type": "article",
+      "source": {
+        "name": "El Profesional de la Informacion",
+        "type": "journal",
+        "issn": [
+          "1386-6710",
+          "1699-2407"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://recyt.fecyt.es/index.php/EPI/article/download/epi.2019.mar.04/43198"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Impact of Technology on Adolescents",
+        "Media Studies and Communication"
+      ],
+      "referenced_works_count": 365,
+      "url": "https://openalex.org/W2921234024"
+    },
+    {
+      "openalex_id": "W2147312315",
+      "doi": "10.17705/1jais.00028",
+      "title": "Understanding Virtual Team Development: An Interpretive Study",
+      "authors": [
+        {
+          "name": "Suprateek Sarker",
+          "openalex_id": "A5060897112",
+          "orcid": "https://orcid.org/0000-0002-8079-3121",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Sundeep Sahay",
+          "openalex_id": "A5088038382",
+          "orcid": "https://orcid.org/0000-0002-4374-9551",
+          "institutions": [
+            "Washington State University"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-01-01",
+      "abstract": "In this paper, we develop an understanding of how virtual teams develop over time by inductively studying communication transactions of 12 United States-Canadian student virtual teams involved in ISD. Our analysis is based upon two influential streams of social science research: (1) interaction analysis, which aided in the examination of the micro-processes of communication among members of a virtual team, and (2) structuration theory, which provided a meta-framework to help link the microlevel communication patterns with the more macro-structures representing the environmental context as well as the characteristics of teams over time. Based on our interpretation of the communication patterns in the virtual teams, we propose a theoretical model to describe how virtual teams develop over the life of a project, and also attempt to clarify how the concepts of communication, virtual team development, and collaboration are related.",
+      "cited_by_count": 197,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Association for Information Systems",
+        "type": "journal",
+        "issn": [
+          "1536-9323"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1203&context=jais"
+      },
+      "topics": [
+        "Team Dynamics and Performance",
+        "Knowledge Management and Sharing",
+        "Usability and User Interface Design"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W2147312315"
+    },
+    {
+      "openalex_id": "W2345795500",
+      "doi": "10.1177/1369148115612792",
+      "title": "The roots of neo-liberal resilience: Explaining continuity and change in background ideas in Europe\u2019s political economy",
+      "authors": [
+        {
+          "name": "Vivien A. Schmidt",
+          "openalex_id": "A5049812078",
+          "orcid": "https://orcid.org/0000-0001-7764-0610",
+          "institutions": [
+            "Boston University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-05-01",
+      "abstract": "Defines and elucidates the concept of \u2018background ideas\u2019; Defines and elucidates neo-liberalism and its relationship to background ideas; Uses discursive institutionalism as framework for analysis of background ideas and neo-liberalism; Explores different levels of neo-liberal ideas in terms of philosophy, program, and policy; Considers how different levels of ideas may be transformed over time through revolutionary or evolutionary change; Examines different forms of ideas, especially as philosophies, ideologies, and discourse, and different types of ideas, both cognitive and normative; Considers the different ways in which ideas are constructed and communicated by policy or political entrepreneurs and/or act in discursive policy communities; Discusses political entrepreneurs as ideological, pragmatic, or opportunistic. Neo-liberalism has come to constitute the core background idea of European political economies, as the unquestioned set of beliefs, understandings, or core philosophy exercising a seemingly incontrovertible hold since the 1980s in Europe. Using a discursive institutionalist framework, this article defines background ideas; describes their different forms, levels, and types; theorizes about the nature of continuity and change in such ideas; and considers the agents and discursive processes through which such ideas are constructed and disseminated. It illustrates throughout with examples of neo-liberalism, from the philosophical origins through its many different permutations in different institutional contexts over time. This article concludes that although \u2018background ideas\u2019 as a concept remains somewhat elusive, it is nonetheless useful as a way of understanding how neo-liberalism has managed to infuse people\u2019s deepest assumptions about the possible and thereby to set the limits of the imaginable with regard to political economic action.",
+      "cited_by_count": 120,
+      "type": "article",
+      "source": {
+        "name": "The British Journal of Politics and International Relations",
+        "type": "journal",
+        "issn": [
+          "1369-1481",
+          "1467-856X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://open.bu.edu/bitstreams/5f2ac522-ac74-44b4-b007-8de9604e4d35/download"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Regional resilience and development",
+        "Political and Economic history of UK and US"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W2345795500"
+    },
+    {
+      "openalex_id": "W1983635714",
+      "doi": "10.1016/j.histeuroideas.2005.02.002",
+      "title": "Not the <i>Protestant Ethic</i>? Max Weber at St. Louis",
+      "authors": [
+        {
+          "name": "P C Ghosh",
+          "openalex_id": "A5055633592"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "Click to increase image sizeClick to decrease image size Notes \u2606 Abbreviations and conventions: PE for Protestant Ethic; AfSS for Archiv f\u00fcr Sozialwissenschaft und Sozialpolitik; GASWg for Gesammelte Aufs\u00e4tze zur Sozial- und Wirtschaftsgeschichte (T\u00fcbingen, 1924) ed. Marianne Weber; GARS for Gesammelte Aufs\u00e4tze zur Religionssoziologie (T\u00fcbingen, 1920) vol.i; WL for Gesammelte Aufs\u00e4tze zur Wissenschaftslehre (T\u00fcbingen, 1968) ed. J. Winckelmann; WuG for Wirtschaft und Gesellschaft (T\u00fcbingen, 1972) ed. J. Winckelmann; MWG for Max Weber Gesamtausgabe ed. Horst Baier et al. (T\u00fcbingen, 1984-). Letters printed in the latter edition are cited as Briefe; unpublished letters from the Geheimes Staatsarchiv, Berlin-Dahlem, Rep.92, Nachla\u00df Max Weber are cited as \u2018Weber Nachla\u00df\u2019. The St. Louis address is cited by page references (primarily in the text) in []: this refers to the text in MWG I/8.212-43. The PE is cited in the notes in [] according to volume and page number in the Archiv f\u00fcr Sozialwissenschaft in 1904-5: eg. [XX.1]. \u2014 All translations from German are my own. No disrespect for current English language translations of the PE is intended thereby; but in my opinion none of these is framed according to sufficiently historical principles \u2014 on which point see my comment \u2018Translation as a conceptual act\u2019, Max Weber Studies 2 (2001), 59\u201363. 1 Peter Ghosh, St Anne's College, Oxford, UK, OX2 6HS. 2 Marianne Weber, Max Weber: Ein Lebensbild (T\u00fcbingen, 1926), c.IX. 3 The editor (Prof. Schluchter) was of course well aware of the textual problem, but took it for granted that one must reproduce the Urtext (although even so, he has not resisted the temptation to make occasional corrections): MWG I/8.211. The text also stands in limbo within the structure of the Gesamtausgabe. It has major links to Weber's writings on agrarian capitalism in the 1890s (vols. I/3-4); to the Protestant Ethic (vol. I/9); and to the article \u2018Der Streit um den Charakter der altgermanischen Sozialverfassung\u2019, originally conceived as the opening of the St. Louis text (vol. I/6). However, it languishes within a separate miscellany (vol. I/8) entitled \u2018Economy, State, Social Policy\u2019. There are good reasons for the underlying editorial decisions; but the text remains a casualty nonetheless. 4 His invented title ran, in full, \u2018Capitalism and Rural Society in Germany\u2019. However, the text is by no means confined to Germany and Gerth may have recognised the point: when he translated the text back into German he did so under the title, \u201cKapitalismus und Agrarverfassung\u201d, Zeitschrift f\u00fcr die gesamte Staatswissenschaft 108 (1952), 431-52. I suggest that the only usable and yet textually authentic short title is \u2018The Rural Community\u2019: see below, n.a. 5 Amongst many examples: he omits the opening two sentences of the text; he loses patience with Weber's distinction between Bauer and Farmer [218]; he will substitute \u2018feudal\u2019 for \u2018gentlemanly\u2019 [233]; and he persistently deletes of \u2018constitution\u2019 when it appears as \u2018agrarian constitution\u2019 or \u2018social constitution\u2019, replacing it by \u2018structure\u2019 (though by a curious irony Prof. Schluchter agrees with him on this: MWG I/8.211). The more general point is that he did not work as a historian but re-worked terms in accordance with what he took to be their \u201cself-evident\u201d meaning. By contrast the rude literalism of the original translation, though defective at so many points, is a real virtue. 6 We know that Weber was dictating his work to a typist at this date: see eg. to Alfred Weber, 8 Mar. 1905, Weber Nachla\u00df. Hugo M\u00fcnsterberg, the academic organizer of the Congress, also speaks of the depositing of \u2018typescripts\u2019 by speakers after the event: Congress of Arts and Science ed. Howard J. Rogers (Boston & New York, 1905-7) 8 volumes, i.130. [Hereafter, \u2018Congress\u2019]. 7 Eg. Karl Lamprecht, What is History? (New York, 1905), Lecture I cf. Preface, VII-VIII; Preface to Deutsche Geschichte vol.vi (Berlin, 1904); Ernst Troeltsch, Psychologie und Erkenntnistheorie in der Religionswissenschaft (T\u00fcbingen, 1905). In Troeltsch's case this meant that the American visit was opportunistic. The German text was three times as long as his Congress address (\u2018Psychology and theory of knowledge in the science of religion\u2019, Congress, i.275-88) and much more substantial, so that \u2018parallel\u2019 publication is not in fact accurate; only the German version was of real interest to him. Hence his remark to Wilhelm Bousset that \u2018I have accepted the request of the American committee [to speak], as otherwise I shall hardly get around to finding out about the great modern wonderland\u2019: 8 March [1904], pr. \u2018Briefe aus der Heidelberger Zeit\u2019 ed. E. Dinkler-von Schubert, Heidelberger Jahrb\u00fccher XX (1976), 41. (The letter is dated 1902 here, but this is an obvious mistake.) 8 18 March 1904, pr. MWG I/8.204. This was a typical minor Weberian inaccuracy: the allotted time \u2013 communicated to speakers in advance \u2013 was actually 45 minutes: Congress, i.50. 9 Weber to Schmoller, 14 Dec. 1904, ibid., 205 cf. 205-6. 150 invitations to foreign speakers were issued; 117 were accepted; and 96 (?98) actually came: opening address of President Harper, University of Chicago, Congress i.32. 10 Guenther Roth, Max Webers deutsch-englische Familengeschichte 1800\u20131950 (T\u00fcbingen, 2001), 486. At the then exchange rate the St. Louis honorarium came to 2000 Marks. This may be compared to \u2018about three or four thousand marks\u2019 which Weber estimated as the cost of his planned tour in 1893 (loc. cit.), or the figure of $1700 or 8500 M which was Weber's estimate of the total cost for himself and Marianne in 1904: to Helene Weber, 19 Nov. 1904, Weber Nachla\u00df. 11 Europe was divided into three for this purpose: apart from M\u00fcnsterberg, Simon Newcomb took France; and Albion Small England, Russia, Italy and non-Germanic Austria. They sailed respectively on 30 May, 6 May and 6 June: Congress i.17. 12 Jellinek to M\u00fcnsterberg 27 [June] 1903: \u2018Max Weber returned here a few days ago and has very much regretted not meeting you again. To my great joy, and probably yours as well, he is once more able to work and in the best of moods. It would, I think, benefit his state of health a great deal, if he too was invited to lecture in St. Louis. His wife told me that he would certainly accept, and could deliver one lecture with great ease.\u2019 The letter was found and published by Friedrich Wilhelm Graf with the date 27 July 1903: \u2018Die kompetentesten Gesp\u00e4chspartner?\u2019, in Religionssoziologie um 1900 (W\u00fcrzburg, 1995) ed. V. Krech & H. Tyrell, 220 n.15. \u2014 I suggest the July date must be a mistake since (a) Weber was not recently returned from anywhere then, whereas he had come back from the Netherlands c.16-17 June; (b) M\u00fcnsterberg's official invitation to Weber to attend had already been delivered on or around 23 July: MWG I/8.204; (c) Weber had himself written to M\u00fcnsterberg on 21 June (though not directly to beg for an invitation) and then to Jellinek in the wake of this letter: ibid., 205\u20136, nn.38, 45\u20137. The point of Jellinek's letter was (I suggest) more to reassure M\u00fcnsterberg that Weber would accept, despite raising worries about the fee, rather than to persuade him to admit Weber to the list of speakers in the first place. 13 The evidence for this dating is as follows: (i) at many points the St. Louis address borrows from the substance of the essay on the \u2018Fideikommi\u00dffrage in Preu\u00dfen\u2019, MWG I/8.92-188 and renders it into popular form; the overwhelming probability is that the more technical presentation came first: see n.21 below. (ii) The only letters which clearly show Weber at work on the St. Louis address are those of 17, 19 July to von Below: Weber Nachla\u00df. (iii) The second letter also shows that Weber's article, \u2018Der Streit um den Charakter der altgermanischen Sozialverfassung\u2019, originally intended as an opening to the St. Louis address, was written in July: Jahrb\u00fccher f\u00fcr National\u00f6konomie und Statistik III. Folge, 28 (1904), 433-470, repr. GASWg, 508\u201356, here 518 n.1; see n.22 below. Against all this there is only Weber's remark of the previous autumn that he would begin preparing his talk in the winter. Not only is this vague and prospective, but his idea of preparation was to go through his materials on Calvinism \u2013 evidently suggesting a primary focus on the PE \u2013 though he claimed that these might also be useful for St. Louis. The link here to actual work on the Congress address is nebulous at best: Weber to Brentano 10 Oct. 1903, Nachla\u00df Brentano, Bundesarchiv Koblenz. I am indebted to Prof. Hartmut Lehmann for a transcript of this letter. 14 The PE was plainly designed with the Archiv f\u00fcr Sozialwissenschaft in mind. But for this publishing forum it would not exist in anything like the form we know; and perhaps (like so many of Weber's draft projects) not at all. However, this is a subject of its own. 15 Respectively MWG I/4.850; I/8.385 cf. 383. 16 To Helene Weber, 27 Sept. 1904, pr. MWG I/8.208. The academic nature of the audience is confirmed by M\u00fcnsterberg's report, \u2018The Scientific Plan of the Congress\u2019, Congress i.131. Weber's own comments on the Congress as a whole are scrupulous and far from dismissive: eg. to Jellinek, 24 Sept., to M\u00fcnsterberg 14 Nov. 1904, cit. MWG ad loc. 17 Conrad was a principal editor of the Handw\u00f6rterbuch der Staatswissenschaften, where Weber published an important entry on \u2018Agrarverh\u00e4ltnisse im Altertum\u2019 in 1897 (revised in 1898); he was a political ally in the sharp debate over Fideikommisse; and he was the journal editor to whom Weber had sent what was in effect \u201cPart I\u201d of the St. Louis address or \u2018Rural Society in late antiquity\u2019 under the title \u2018Der Streit um den Charakter der altgermanischen Sozialverfassung\u2019: see the next paragraph. Lastly, he was the father-in-law of Pastor Hans Haupt of North Tonawanda, and it was through him that Weber and Troeltsch came to visit the latter: see below on the 10th page of this paper & n.35. Von Philippovich was an Austrian political economist who would later be an important collaborator on the Grundriss der Sozial\u00f6konomik. American speakers at the Congress with a connection to Weber who might also have attended include Edwin Seligman, Jacob Hollander and Jane Addams. Two speakers who could not have attended (whether they wished to or not) were Ernst Troeltsch and Karl Lamprecht, since they were due to speak at precisely the same hour as Weber: 3 p.m., September 21, 1904. 18 See the document \u2018Purpose and Plan of the Congress\u2019, which most probably dates from January 1903, when the conference arrangements were finalised, and which \u2013 as we see from Weber's letter of 18 March 1904, pr. MWG I/8.204 \u2013 was circulated to participants in advance: Congress i.50-1, here 50. Weber's text (10,000 words or over 20 pages in translation) was roughly 50% longer than that of the other Germans known to him (15 pages was about average), though the prize, if that is the word, goes to the Japanese speaker whose ardour to expound the new Japanese Civil Code caused him to run to 50 pages: Congress ii.367\u2013416. 19 He did not however neglect it entirely, and wrote to M\u00fcnsterberg that he hoped \u2018definitely to receive the proofs of the Congress lecture\u2019: 2 Dec. 1905, pr. MWG I/8.210. 20 Compare for example the lack of self-reference in Economy and Society \u2013 where there are just two references to Weber's own works throughout (WuG 4, 96) \u2013 with another magnum opus by a closely associated author: Ernst Troeltsch's Die Soziallehren der christlichen Kirchen und Gruppen (T\u00fcbingen, 1912). The density of Troeltsch's cross-references, so that his entire oeuvre becomes not merely an implicit but an explicit network and dialogue, is well brought out by Friedrich Wilhelm Graf in his introduction to Ernst Troeltsch, Rezensionen und Kritiken (1901-1914) (Berlin, 2004), Kritische Gesamtausgabe 4.6. 21 \u2018Agrarstatistische und sozialpolitische Betrachtungen zur Fideikommi\u00dffrage in Preu\u00dfen\u2019, originally in AfSS 19 (1904), 503\u201374; and now in MWG I/8.92-188. [Hereafter \u2018Fideikommi\u00dffrage\u2019.] For links between the texts see egg. nn.28, 90, 111, 131, 157; \u2018The Rural Community\u2019, nn.aw, ba, hz, jb, jt. 22 To von Below, 19 July 1904 (Weber Nachla\u00df). This does not explicitly mention the title, but an itemised list of authors, who feature in the text and are engaged in an intellectual controversy going back to the time of Caesar, leaves us in no doubt: compare GASWg, 509\u201315. 23 \u2018Der Streit um den Charakter der altgermanischen Sozialverfassung in der deutschen Literatur des letzten Jahrzehnts\u2019, III. Folge, vol.28 (1904), 433-70, 433 n.1 (also GASWg 508 n.1). Weber's piece appears in the October number, which was actually issued on 4 November 1904. 24 See esp. MWG I/4.259-71 [1893]; 912-3 [1894]; 599-601, 748-90, 803-9 [1896]; 814-8, 821-3, 830-41, 855, 902-3 [1897]. Plainly the \u201cnationalist\u201d turn taken by Weber in 1895 is an adjacent (and yet distinct) theme. \u2014 There is thus no truth in the suggestion mooted by Prof. Schluchter that Weber was \u2018narrowly confined\u2019 by the inter-disciplinary grid which was the organizational basis of the Congress: MWG I/8.209. The most that was required of Weber was a broad, synthetic handling of the subject of \u2018rural community\u2019: synthesis came easily to him; the subject was well-known to him \u2013 as M\u00fcnsterberg (an old colleague) knew when he asked Weber to contribute \u2013 and he was in any case able to reinterpret the theme to his own satisfaction [212]. 25 Compare \u2018Antikritisches Schlusswort zum \u201cGeist des Kapitalismus\u201d\u2019, AfSS 31 (1910), 554\u201399, with the uncertain evidence cited at MWG I/8.87-8. Here I enter a caution regarding Prof. Schluchter's reference to Weber's \u2018planned larger study of agrarian capitalism\u2019 at this time (87). If it was really Weber's intention to produce such a study, this would be a major finding. However, what he actually says in 1904 is that \u2018years ago\u2019 (that is, in 1893 or 1895-6 cf. MWG I/4.264-70, 646-50) he had collected statistical materials \u2018for the purpose of a larger agrarian-statistical work on rural capitalism\u2019, to which he might or might not come back later: ibid., 93 n.2. \u2014 His last major utterance on the theme of agrarian politics was \u2018Zur Lage der b\u00fcrgerlichen Demokratie in Ru\u00dfland\u2019 in 1905, though here too the origins of his interest plainly lie in the immense significance he attached to the German-Russian (German-Polish) frontier division in the 1890s: MWG I/10.86-279, see esp. 188-269. The idea that writing about Russia was a wholly new departure for Weber in 1905, though well entrenched, is an exaggeration. Hence references to the Russian obrok in 1898 and the mir in 1904: \u2018Agrarverh\u00e4ltnisse im Altertum\u2019 in ed. J. Conrad et al., Handw\u00f6rterbuch der Staatswissenschaften (Jena, 18982), i.64a; \u2018Altgermanische Sozialverfassung\u2019, GASWg 547. 26 Werner Sombart, \u2018The Industrial Group\u2019, pr. Congress vii.791-9. Not only was the piece just a third the length of Weber's, but Sombart used it in effect as a trailer to advertise his Socialism and the Social Movement: 799 cf. Friedrich Lenger, Werner Sombart 1863-1941 (Munich, 1994), 145. On Troeltsch: n.7 above. 27 PE [XXI.88n.40]; \u2018\u201cKirchen\u201d und \u201cSekten in Nordamerika\u2019, Die Christliche Welt 20 (1906) c.558; cf. \u2018Zur Lage der b\u00fcrgerlichen Demokratie in Ru\u00dfland\u2019, MWG I/10.272. \u2018Europeanization\u2019 is a precursor to the wider theme of \u2018Occidental rationalization\u2019: hence it largely disappears after 1906. 28 This is an obvious instance of the importance of the 1903 Prussian proposal to promote landed \u201centails\u201d [Fideikommisse] to Weber's thinking; cf. \u2018Fideikommi\u00dffrage\u2019, MWG I/8.92-199. 29 PE [XXI.108], my emphasis. 30 Amongst innumerable examples of the importance of Natur alongside Kultur, note (first) in his 1898 lectures on \u2018\u201ctheoretical\u201d economics in general\u2019, the predictable placement of \u2018The natural foundations of the economy\u2019 (Book (Book Grundriss den National\u00f6konomie repr. [Hereafter Weber was a of all by meant in the of he \u2013 his of a natural meant that he could in the that or we might might have a on compare eg. MWG GARS as the St. Louis text his point was with but with and historical 31 PE GARS MWG Respectively \u2018Zur Lage der b\u00fcrgerlichen MWG und Demokratie in MWG as a MWG too the of the Russian of be zum MWG is the translation, but this hardly the note of as a MWG as a ibid., on and other of and Troeltsch (New York, first cited by between in ed. & J. Max Weber and his MWG The one on that Weber here is Max Die in und but there is no evidence that he anything other than statistical from was a to Weber: see is once here but only to the of the in in Weber's lectures on the of reference is between England, and there is no mention of the ibid., The one where and are is in the of their eg. Die MWG This is for the of the but not for the St. Louis MWG cf. ibid., \u2018Die des f\u00fcr In of a in where the at was from the Weber no to American other ibid., cf. Guenther Roth, Max Webers deutsch-englische Familengeschichte 1800\u20131950 (T\u00fcbingen, 2001), esp. be directly with the subject of in Weber's at the was on the Austrian so, was in of and he \u2013 like \u2013 had returned to His of was like as as but it and all the MWG \u2018Die der deutschen MWG PE PE For a previous of the American which may well have to the of Weber's Friedrich Die (Berlin, from an American in after his to For a of what was in Weber's see \u2018The of American pr. and At this date was the first of the as a whole was to The one of Weber was in North However, this was not a from he there to his and his major there was all to with \u2018\u201cKirchen\u201d und in Nordamerika\u2019, Die Christliche Welt 20 The obvious contrast here was with Max who in on of the Prussian (and and was with American in his around \u2014 a sharp contrast to the Weber's in 1904, which was by German and an interest in American and and in of and \u2014 all of Die and his 45 des Max die die zum des MWG the that at St. Louis Weber is certainly to the more of which is \u2013 and \u2013 rather than \u2013 the of which is the of See below on the and pages of this paper & The to the St. Louis address in this in the Weber's lectures on at in However, (i) we have only rather than Weber's own text; (ii) the focus remains and more are lectures on German agrarian politics for an German there are occasional by of but no and MWG GARS for Weber's about see eg. Jellinek to M\u00fcnsterberg 27 [June] 1903, cit. above. The writings form an obvious to this from writing about the most obvious example would be and in a Germany\u2019. However, the on here \u2013 the focus on 9 of the \u2013 are in as and as those of Weber's academic when the \u2013 as it does in its on and \u2013 these and a and rather than a eg. MWG 50 eg. MWG There is no to foreign from the which does not but few were as or as For a division of German rural into from a that Weber would have with great see und in und delivered in am MWG Weber's emphasis. This is and has then to be in to the later Weber: eg. Max 2004), cf. The of Weber to as a more or to an already is a long and For this of see eg. Karl Die (Berlin, For a more \u2013 though one which to a \u2013 the through and Karl the and the this a more of Weberian than the of Weber in his own and of the in which from these associated of und und (T\u00fcbingen, The of of and The of in Russia the of the first two make here meant no more than of the Russian of as a for a foreign is by their and of the which was far in and in advance of German language For all their and Weber's and the of capitalism\u2019 the in German National\u00f6konomie which was to but not of of which and even were See also in ed. et al., Weber to 2 1905, to the PE (Weber Nachla\u00df). The entitled of the just pages in a text of pages: See eg. und im capitalism and have found other and MWG in WuG GARS Weber's emphasis. I of though it is The Protestant Ethic and the of It also be as of and despite remains by far the best English of the text of the The here is capitalism was a yet feature of the when compared to the of and political However, in an designed to advertise a text on capitalism \u2013 the PE \u2013 it to make the most of For an of the current focus of German the conference on the Die und der des March where the primary focus was on and Weber's with Troeltsch and the The and the idea of hardly at all. Wilhelm a who does the theme of by Weber as the of a of the wake of Karl he Max Weber's as on see esp. \u2018Die \u2014 pr. Max Weber und (T\u00fcbingen, these two are to be is the when \u2018Die des (also written in 1995) that the of under modern capitalism is not the same as a of capitalism as a Max Webers (T\u00fcbingen, cf. But in any this to capitalism as though most only to the that Weber's with capitalism and with are two of the same Max Weber und There is no historical on Weber's \u2013 an which goes back to textual study of the PE Webers 12 \u2013 and so no historical by Prof. \u2014 The late might have an to these had he been able to his editorial work for MWG on Weber's economics lecture from the his paper economics to the Ethic and modern at the conference \u2018Max Weber and the of \u2014 at June Weber Studies This is only a but its on the of Weber's as between the 1890s and the is with my own. See however on \u2014 The the of Weberian is in texts of a much date: eg. PE GASWg [1904], Grundriss There is no in the that Weber's intellectual in focus after 1905, or that the of which later issued into Weberian \u2013 or \u2013 was precursor for the latter is by the idea of Hence the of in the",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "History of European Ideas",
+        "type": "journal",
+        "issn": [
+          "0191-6599",
+          "1873-541X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "Critical Theory and Philosophy",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1983635714"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

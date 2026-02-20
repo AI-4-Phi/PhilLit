@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "The Critique of Instrumental Reason from Weber to Habermas",
+    "author": "Schecter",
+    "year": 2013
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (23.5) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

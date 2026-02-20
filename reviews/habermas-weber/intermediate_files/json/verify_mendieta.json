@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Axial Age, Social Evolution, and Postsecular Consciousness",
+    "author": "Mendieta",
+    "year": 2018
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/2050303218800379",
+      "title": "The Axial Age, social evolution, and postsecular consciousness",
+      "authors": [
+        {
+          "family": "Mendieta",
+          "given": "Eduardo"
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Critical Research on Religion",
+      "volume": "6",
+      "issue": "3",
+      "page": "289-308",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1177/2050303218800379",
+      "score": 60.043846
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

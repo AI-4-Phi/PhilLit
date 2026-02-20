@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1080/09672559.2011.629672
+[verify_paper.py] DOI verified: The Colonization Thesis: Habermas on Reification...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/09672559.2011.629672"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/09672559.2011.629672",
+      "title": "The Colonization Thesis: Habermas on Reification",
+      "authors": [
+        {
+          "family": "J\u00fctten",
+          "given": "Timo"
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "International Journal of Philosophical Studies",
+      "volume": "19",
+      "issue": "5",
+      "page": "701-727",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/09672559.2011.629672"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

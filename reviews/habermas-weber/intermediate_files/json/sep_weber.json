@@ -1,0 +1,449 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "weber",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/weber/",
+      "entry_name": "weber",
+      "title": "Max Weber",
+      "preamble": "Arguably the foremost social theorist of the twentieth century, Max\nWeber is known as a principal architect of modern social science along\nwith Karl Marx and \u00c9mile Durkheim. Weber\u2019s wide-ranging\ncontributions gave critical impetus to the birth of new academic\ndisciplines such as sociology as well as to the significant\nreorientation in law, economics, political science, and religious\nstudies. His methodological writings were instrumental in establishing\nthe self-identity of modern social science as a distinct field of\ninquiry; he is still claimed as the source of inspiration by empirical\npositivists and their hermeneutic detractors alike. More\nsubstantively, Weber\u2019s two most celebrated contributions were\nthe \u201crationalization thesis,\u201d a grand meta-historical\nanalysis of the dominance of the west in modern times, and the\n\u201cProtestant Ethic thesis,\u201d a non-Marxist genealogy of\nmodern capitalism. Together, these two theses helped launch his\nreputation as one of the founding theorists of modernity. In addition,\nhis avid interest and participation in politics led to a unique strand\nof political realism comparable to that of Machiavelli and Hobbes. As\nsuch, Max Weber\u2019s influence was far-reaching across the vast\narray of disciplinary, methodological, ideological and philosophical\nreflections that are still our own and increasingly more so.",
+      "bibliography": [
+        {
+          "raw": "Weber, Max. 1895/1994. \u201cThe Nations State and Economic\nPolicy (Freiburg Address)\u201d in Weber: Political\nWritings , P. Lassman and R. Speirs (ed. and trans.), Cambridge:\nCambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1903\u201306/1975. Roscher and Knies:\nThe Logical Problems of Historical Economics , G. Oakes (trans.),\nNew York: Free Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1903",
+            "title": "\u2013\u2013\u2013, 1903\u201306/1975. Roscher and Knies:\nThe Logical Problems of Historical Economics , G. Oakes (trans.),\nNew York: Free Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1904/1949. \u201cObjectivity in Social\nScience and Social Policy\u201d in The Methodology of the Social\nSciences , E. A. Shils and H. A. Finch (ed. and trans.), New York:\nFree Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1904",
+            "title": "\u2013\u2013\u2013, 1904/1949. \u201cObjectivity in Social\nScience and Social Policy\u201d in The Methodology of the Social\nSciences , E. A. Shils and H. A. Finch (ed. and trans.), New York:\nFree Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1904\u201305/1992. The Protestant\nEthic and the Spirit of Capitalism , T. Parsons (trans.), A.\nGiddens (intro), London: Routledge.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1904",
+            "title": "\u2013\u2013\u2013, 1904\u201305/1992. The Protestant\nEthic and the Spirit of Capitalism , T. Parsons (trans.), A.\nGiddens (intro), London: Routledge."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1906/1949. \u201cCritical Studies in the\nLogic of the Cultural Sciences: A Critique of Eduard Meyer\u2019s\nMethodological Views,\u201d in The Methodology of the Social\nSciences .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1906",
+            "title": "\u2013\u2013\u2013, 1906/1949. \u201cCritical Studies in the\nLogic of the Cultural Sciences: A Critique of Eduard Meyer\u2019s\nMethodological Views,\u201d in The Methodology of the Social\nSciences ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1910/1978. \u201cAntikritisches\nSchlu\u00dfwort zum Geist des Kapitalismus,\u201d in Max Weber:\nDie protestantische Ethik II: Kritiken und Antikritiken , ed. J.\nWinckelmann, Gerd Mohn: G\u00fctersloher Verlaghaus.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1910",
+            "title": "\u2013\u2013\u2013, 1910/1978. \u201cAntikritisches\nSchlu\u00dfwort zum Geist des Kapitalismus,\u201d in Max Weber:\nDie protestantische Ethik II: Kritiken und Antikritiken , ed. J.\nWinckelmann, Gerd Mohn: G\u00fctersloher Verlaghaus."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1910/2002. \u201cVoluntary Associational\nLife ( Vereinswesen ),\u201d Sung Ho Kim (ed. and\ntrans.), Max Weber Studies , 2:2 (2002).",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1910",
+            "title": "\u2013\u2013\u2013, 1910/2002. \u201cVoluntary Associational\nLife ( Vereinswesen ),\u201d Sung Ho Kim (ed. and\ntrans.), Max Weber Studies , 2:2 (2002)."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1915/1946. \u201cReligious Rejections of\nthe World and Their Directions\u201d in From Max Weber .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1915",
+            "title": "\u2013\u2013\u2013, 1915/1946. \u201cReligious Rejections of\nthe World and Their Directions\u201d in From Max Weber ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1917/1949. \u201cThe Meaning of\n\u2018Ethical Neutrality\u2019 in Sociology and Economics \u201d in The Methodology of the Social Sciences .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1917",
+            "title": "\u2013\u2013\u2013, 1917/1949. \u201cThe Meaning of\n\u2018Ethical Neutrality\u2019 in Sociology and Economics \u201d in The Methodology of the Social Sciences ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1918/1994. \u201cParliament and Government\nin Germany Under a New Political Order\u201d in Max Weber:\nPolitical Writings .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1918",
+            "title": "\u2013\u2013\u2013, 1918/1994. \u201cParliament and Government\nin Germany Under a New Political Order\u201d in Max Weber:\nPolitical Writings ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1919/1994. \u201cThe Profession and\nVocation of Politics\u201d in Max Weber: Political\nWriting .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1919",
+            "title": "\u2013\u2013\u2013, 1919/1994. \u201cThe Profession and\nVocation of Politics\u201d in Max Weber: Political\nWriting ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1919/1946. \u201cScience as a\nVocation\u201d in From Max Weber .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1919",
+            "title": "\u2013\u2013\u2013, 1919/1946. \u201cScience as a\nVocation\u201d in From Max Weber ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1920/1946. \u201cThe Protestant Sects and\nthe Spirit of Capitalism\u201d in From Max Weber .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1920",
+            "title": "\u2013\u2013\u2013, 1920/1946. \u201cThe Protestant Sects and\nthe Spirit of Capitalism\u201d in From Max Weber ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1920/1992. \u201cAuthor\u2019s\nIntroduction (Vorbemerkung to GARS),\u201d in The Protestant\nEthic and the Spirit of Capitalism .",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1920",
+            "title": "\u2013\u2013\u2013, 1920/1992. \u201cAuthor\u2019s\nIntroduction (Vorbemerkung to GARS),\u201d in The Protestant\nEthic and the Spirit of Capitalism ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1920. Gesammelte Aufs\u00e4tze\nzur Religionssoziologie , 3 volumes, T\u00fcbingen: J. C. B.\nMohr/Paul Siebeck, 1978.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1920",
+            "title": "\u2013\u2013\u2013, 1920. Gesammelte Aufs\u00e4tze\nzur Religionssoziologie , 3 volumes, T\u00fcbingen: J. C. B.\nMohr/Paul Siebeck, 1978."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1921\u201322/1978. Economy and\nSociety , 2 volumes, G. Roth and C. Wittich (eds.), Berkeley:\nUniversity of California Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1921",
+            "title": "\u2013\u2013\u2013, 1921\u201322/1978. Economy and\nSociety , 2 volumes, G. Roth and C. Wittich (eds.), Berkeley:\nUniversity of California Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1924. Gesammelte Aufs\u00e4tze\nzur Soziologie und Sozialpolitik , T\u00fcbingen: J. C. B.\nMohr/Paul Siebeck.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1924",
+            "title": "\u2013\u2013\u2013, 1924. Gesammelte Aufs\u00e4tze\nzur Soziologie und Sozialpolitik , T\u00fcbingen: J. C. B.\nMohr/Paul Siebeck."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Weber, Marianne (ed.), 1926/1988. Max Weber: A Biography ,\nH. Zohn (trans.), G. Roth (intro), New Brunswick: Transaction.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gerth, H.H., and C. Wright Mills (eds.), 1946. From Max Weber:\nEssays in Sociology , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lassman, P. and R. Speirs (eds.), 1994. Weber: Political\nWritings , Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Shils, E.A. and H. A. Finch (eds.), 1949. The Methodology of\nthe Social Sciences New York: Free Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Anter, Andreas, 2016. Max Weber und die\nStaatsrechtslehre , T\u00fcbingen: J. C. B. Mohr (Paul\nSiebeck).",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Beetham, David, 1989. \u201cMax Weber and the Liberal Political\nTradition,\u201d European Journal of Sociology , 30:\n311\u201323.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Beiser, F.C., 2011. The German Historicist Tradition ,\nOxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bellamy, Richard, 1992. Liberalism and Modern Society ,\nUniversity Park, PA: Pennsylvania State University.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Brubaker, Rogers, 1992. The Limits of Rationality ,\nLondon: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bruun, Hans Henrik, 1972 [2007]. Science, Values and Politics\nin Max Weber\u2019s Methodology , Burlington, VT: Ashgate; new\nexpanded edition, 2007.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Coady, C.A.J., 2018. \u201cThe Problem of Dirty Hands,\u201d The Stanford Encyclopedia of Philosophy (Fall 2018 Edition),\nEdward N. Zalta (ed.), URL =\n < https://plato.stanford.edu/archives/fall2018/entries/dirty-hands/ >",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Cozzaglio, Ilaria and Amanda Greene, 2019. \u201cCan Power be\nSelf-legitimating: Political Realism in Hobbes, Weber, and\nWilliams,\u201d European Journal of Philosophy , 27(4):\n1016\u201336.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Derman, Joshua, 2012. Max Weber in Politics and Social\nThought: From Charisma to Canonization , Cambridge: Cambridge\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Forst, Rainer, 2012. The Right to Justification , New\nYork: Columbia University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Galston, William, 2010. \u201cRealism in Political Theory,\u201d European Journal of Political Theory , 9(4):\n385\u2013411.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gellner, Ernest, 1974. Legitimation of Belief , Cambridge:\nCambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Goldman, Harvey, 1992. Politics, Death, and the Devil: Self\nand Power in Max Weber and Thomas Mann , Berkeley: University of\nCalifornia Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Graf, Friedrich Wilhelm, 1987. \u201cThe German Theological\nSources and Protestant Church Politics,\u201d in H. Lehmann and G.\nRoth (eds.), Weber\u2019s Protestant Ethic: Origins, Evidence,\nContents , Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Green, Jeffrey Edward, 2008. \u201cMax Weber and the Reinvention\nof Popular Power,\u201d Max Weber Studies , 8(2):\n187\u2013224.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hanke, Edith, L. Scaff, and S. Whimster (eds.), 2019, The Oxford\nHandbook of Max Weber , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hennis, Wilhelm, 1988. Max Weber: Essays in\nReconstruction , London: Allen & Unwin.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Henrich, Dieter, 1952. Die Einheit der Wissenschaftslehre Max\nWebers , T\u00fcbingen: J. C. B. Mohr (Paul Siebeck).",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Honigsheim, Paul, 2013. The Unknown Max Weber , New\nBrunswick, NJ: Transaction Publisher.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hughes, H. S., 1977. Consciousness and Society: Reorientation\nof European Social Thought , New York: Vintage Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Joose, Paul, 2014. \u201cBecoming a God: Max Weber and the Social\nConstruction of Charisma,\u201d Sociological Theory , 14(3):\n266\u201383.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "K\u00e4sler, Dirk, 1988. Max Weber: An Introduction to his\nLife and Work , P. Hurd (trans.), Chicago: University of Chicago\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kim, Sung Ho, 2007. Max Weber\u2019s Politics of Civil\nSociety , Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "L\u00f6with, Karl, 1982. Max Weber and Karl Marx , H.\nFantel (trans.), London: Allen & Unwin.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mommsen, Wolfgang, 1984. Max Weber and German Politics,\n1980\u20131920 , Michael S. Steinberg (trans.), Chicago:\nUniversity of Chicago Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Muirhead, Russel, 2014. The Promise of Party in a Polarized\nAge , Cambridge, MA: Harvard University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Palonen, Kari, 1999. \u201cMax Weber\u2019s Reconceptualization\nof Freedom,\u201d Political Theory , 27(4):\n523\u201344.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Radkau, Joachim, 2011. Max Weber: A Biography , Patrick\nCamiller (trans.), Cambridge: Polity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rehmann, Jan, 2013. Max Weber: Modernisation as Passive\nRevolution, A Gramscian Analysis , Max Henniger (trans.), Leiden:\nBrill.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rosenblum, Nancy, 2008. On the Side of the Angels: An\nAppreciation of Parties and Partisanship , Princeton, NJ:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Roth, Guenther, 2001. Max Webers deutschen-englische\nFamiliengeschichte 1800\u20131950 , T\u00fcbingen: J. C. B. Mohr\n(Paul Siebeck).",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Scaff, Lawrence, 2011. Max Weber in America , Princeton:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schluchter, Wolfgang, 1981. The Rise of Western Rationalism:\nMax Weber\u2019s Developmental History , G. Roth (trans. and\nintro.), Berkeley: University of California Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schroeder, Ralph (ed.), 1998. Max Weber, Democracy, and\nModernization , London: Palgrave Macmilan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Stammer. Otto (ed.), 1971. Max Weber and Sociology Today ,\nNew York: Harper.",
+          "parsed": {
+            "authors": [
+              "Stammer. Otto (ed.)"
+            ],
+            "year": "1971",
+            "title": "Stammer. Otto (ed.), 1971. Max Weber and Sociology Today ,\nNew York: Harper."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Strauss, Leo, 1950. Natural Right and History , Chicago:\nUniversity of Chicago Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Swedberg, Richard (ed.), 2005. The Max Weber Dictionary ,\nStanford: Stanford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Taylor, Charles, 1989. Sources of the Self: The Making of the\nModern Identity , Cambridge, MA: Harvard University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tenbruck, Friedrich H., 1980. \u201cThe Problem of Thematic Unity\nin the Works of Max Weber,\u201d British Journal of\nSociology , 31(3): 316\u201351.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vattimo, Giani, 1988. The End of Modernity: Nihilism and\nHermeneutics in Postmodern Culture , J. Snyder (trans.),\nBaltimore: Johns Hopkins University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Waldron, Jeremy, 1999. Law and Disagreements , Oxford:\nOxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Walzer, Michael, 1973. \u201cPolitical Action: The Problem of\nDirty Hands,\u201d Philosophy and Public Affairs , 2(2):\n160\u201380.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "White, Jonathan and Lea Ypi, 2016. The Meaning of\nPartisanship , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Williams, Bernard, 2007. In the Beginning was the Deed:\nRealism and Moralism in Political Argument , Geoffrey Hawthorne\n(ed.), Princeton, NJ: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wolin, Sheldon, 1981. \u201cMax Weber: Legitimation, Method, and\nthe Politics of Theory,\u201d Political Theory , 9:\n401\u201324.",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ]
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

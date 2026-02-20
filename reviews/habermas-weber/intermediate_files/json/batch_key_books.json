@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "2 paper IDs",
+  "results": [
+    {
+      "paperId": "9efb4926411ec05411d9dbafa7e4575da35cdf91",
+      "title": "Under Weber\u2019s Shadow: Modernity, Subjectivity and Politics in Habermas, Arendt and MacIntyre",
+      "authors": [
+        {
+          "name": "K. Breen",
+          "authorId": "46707570"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 13,
+      "doi": "10.4324/9781315549316",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9efb4926411ec05411d9dbafa7e4575da35cdf91",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "9efb4926411ec05411d9dbafa7e4575da35cdf91"
+    },
+    {
+      "paperId": "eec83bdcca719df58b1dcc301763ba1e5c9a010f",
+      "title": "Habermas and the Dialectic of Reason",
+      "authors": [
+        {
+          "name": "D. Ingram",
+          "authorId": "145548493"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": "10.2307/2070645",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eec83bdcca719df58b1dcc301763ba1e5c9a010f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "eec83bdcca719df58b1dcc301763ba1e5c9a010f"
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

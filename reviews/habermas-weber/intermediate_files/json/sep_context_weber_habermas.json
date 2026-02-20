@@ -1,0 +1,21 @@
+[get_sep_context.py] Fetching SEP article: weber
+[fetch_sep.py] Connecting to Stanford Encyclopedia of Philosophy...
+[fetch_sep.py] Fetching SEP article: weber
+[fetch_sep.py] Parsing article content...
+[fetch_sep.py] Article fetched: Max Weber
+[get_sep_context.py] Building citation patterns for Habermas (1984)
+[get_sep_context.py] Searching for citations...
+[get_sep_context.py] No citations found for Habermas (1984) in weber
+{
+  "status": "success",
+  "source": "sep_context",
+  "query": {
+    "entry": "weber",
+    "author": "Habermas",
+    "year": "1984",
+    "coauthor": null
+  },
+  "results": [],
+  "count": 0,
+  "errors": []
+}

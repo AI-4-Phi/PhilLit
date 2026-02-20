@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Paradoxes of Modernity Culture and Conduct in the ...' author=Schluchter year=1996
+[verify_paper.py] Paper found: Paradoxes of Modernity: Culture and Conduct in the... (score: 70.6)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Paradoxes of Modernity Culture and Conduct in the Theory of Max Weber",
+    "author": "Schluchter",
+    "year": 1996
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2580697",
+      "title": "Paradoxes of Modernity: Culture and Conduct in the Theory of Max Weber.",
+      "authors": [
+        {
+          "family": "Moore",
+          "given": "Kevin"
+        },
+        {
+          "family": "Schluchter",
+          "given": "Wolfgang"
+        }
+      ],
+      "editors": [],
+      "year": 1997,
+      "container_title": "Social Forces",
+      "volume": "75",
+      "issue": "4",
+      "page": "1495",
+      "publisher": "Oxford University Press (OUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/2580697",
+      "score": 70.64471
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

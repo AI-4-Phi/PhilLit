@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/2070645"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2070645",
+      "title": "Habermas and the Dialectic of Reason",
+      "authors": [
+        {
+          "family": "Farganis",
+          "given": "James"
+        },
+        {
+          "family": "Ingram",
+          "given": "David"
+        }
+      ],
+      "editors": [],
+      "year": 1988,
+      "container_title": "Contemporary Sociology",
+      "volume": "17",
+      "issue": "2",
+      "page": "261",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/2070645"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

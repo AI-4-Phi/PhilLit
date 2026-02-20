@@ -1,0 +1,514 @@
+[s2_search.py] Searching Semantic Scholar: 'Habermas modernity unfinished project philosophical discourse', limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_1ae691436f27edf8)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Habermas modernity unfinished project philosophical discourse",
+  "results": [
+    {
+      "paperId": "7a19a85f62276cb4074574725ce6860461728f99",
+      "title": "The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 1949,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7a19a85f62276cb4074574725ce6860461728f99",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on the Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "M. D\u2019entr\u00e8ves",
+          "authorId": "1422611260"
+        },
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8271d57440d12b3ea0df2afbb1ba854442348f8e",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on the Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "B. Sweetman",
+          "authorId": "40625536"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 24,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8271d57440d12b3ea0df2afbb1ba854442348f8e",
+      "venue": "",
+      "journal": {
+        "name": "Review of Metaphysics",
+        "pages": "472-474",
+        "volume": "52"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d09e42bc2f4becfe0b8133d3dda0e32d256078b4",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on The Philosophical Discourse of Modernity. Edited by d'Entr\u00e8ves Maurizio Passerin and Benhabib Seyla. Cambridge, MA: MIT Press, 1997. 305p. $35.00 cloth, $17.00 paper.",
+      "authors": [
+        {
+          "name": "M. Fleming",
+          "authorId": "97844943"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.2307/2585678",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d09e42bc2f4becfe0b8133d3dda0e32d256078b4",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "432 - 433",
+        "volume": "92"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a66a51f4dd9cf98e5df586df0777311a947c2638",
+      "title": "Critical Theory and poststructuralism",
+      "authors": [
+        {
+          "name": "B. Hanssen",
+          "authorId": "117252680"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1017/CCOL0521816602.012",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a66a51f4dd9cf98e5df586df0777311a947c2638",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "280-309",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "07a9b26ba2af793886a231b4d015956c69c99c38",
+      "title": "The Philosophical Discourse of Modernity: Twelve Lectures",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 1081,
+      "doi": "10.2307/2072653",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07a9b26ba2af793886a231b4d015956c69c99c38",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f957389b677889fa24caa18c67ba307a5c7527ff",
+      "title": "Normative Foundation of Modernity: Habermas\u2019 Criticism of Marx and Its Limits\u2014An Investigation Based on The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "G. Tang",
+          "authorId": "30741949"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.4236/jss.2022.102015",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f957389b677889fa24caa18c67ba307a5c7527ff",
+      "venue": "Open Journal of Social Sciences",
+      "journal": {
+        "name": "Open Journal of Social Sciences"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "441e07daf1a9b235e7133dfa9f4faa070f596ded",
+      "title": "Revisiting the Kantian legacy in Habermas: the philosophical project of modernity and decolonial critiques to rationality and cosmopolitanism",
+      "authors": [
+        {
+          "name": "Cristina Foroni Consani",
+          "authorId": "2076020763"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This paper\u00a0deals with Amy Allen\u2019s critique of Habermas's theory of modernity, democracy, and cosmopolitanism. I will focus on her arguments that touch on the role of rationality. Allen's critique of Habermas will be presented, especially where she argues that focusing on rationality is ethnocentric and promotes the political exclusion of subaltern groups. The extent to which Allen's critiques affect the emancipatory potential of Habermasian theory will next be assessed. It is finally argued that Allen's position leads to a denial of the distinction between social rationality and irrationality as legitimate criteria. The consequences of such a position for the political sphere will then be analyzed.",
+      "citationCount": 0,
+      "doi": "10.5380/sk.v21i1.91983",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/441e07daf1a9b235e7133dfa9f4faa070f596ded",
+      "venue": "Studia Kantiana",
+      "journal": {
+        "name": "Studia Kantiana"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "82316308a96d9146b027c20e43268669a5670c15",
+      "title": "REVISITING HABERMAS\u2019S THE PHILOSOPHICAL DISCOURSE OF MODERNITY AFTER 35 YEARS",
+      "authors": [
+        {
+          "name": "K. Baynes",
+          "authorId": "5929946"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.36592/9786587424163-24",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/82316308a96d9146b027c20e43268669a5670c15",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "455-464",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9417947e4d6b916809af82bc7e480ad266cdd467",
+      "title": "Semyon Frank and Karl Rahner: Religious and philosophical critique of secular utopianism and justification of modernity",
+      "authors": [
+        {
+          "name": "A. Girinskiy",
+          "authorId": "2299614615"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This study involves the analysis of the problems of secular utopianism and political ideologies of the twentieth century, as well as the future of Christianity in a modern society. The \"incompleteness\" of the modern project is stated, as well as the specificity of the forms of its \"self-understanding\" (Julius Habermas). The conflicts taking place in the world today indicate the continuation of the unfolding of the contradictory dynamics of modernity, contrary to the recently popular concepts of the \"end of history\", embodied in the linear theories of modernization and secularization of the second half of the twentieth century. Modernity is becoming a \"pluralistic project\" that implies many cultural and historical modifications (Shmuel Eisenstadt). This, among other things, implies further competition between secular ideological projects and traditional religions. Intermediate options are also possible, one of which is the concept of \"traditional values\", which is relevant in Russia, which implies the construction of a secular modification of modernity based on the values of traditional religions and Christian anthropology. In this regard, this article offers an analysis of the views of the German Catholic theologian Karl Rahner and the Russian religious philosopher Semyon Frank. The focus is on two works - \"Marxist Utopia and the Future of Christianity\" (1966) by Rahner and \"The Heresy of Utopianism\" by Frank (1946), in which the authors discuss the role and status of the Christian religion in modern society and the problem of the spread of secular utopias, which, from their point of view, represent a form of distortion of religious goal-setting. Rahner notes that Christianity does not have its own form of \"this-worldly utopia\"; therefore, Christianity is obliged to resist the dominance of \"secular ideology\", which does not tolerate competition. Secular utopia itself, in its essence, is a distortion of Christian eschatology, replacing the idea of the absolute future presented in Christianity with \"the future created\". Rahner defends the idea of ideological and religious pluralism, believing that the openness of the future, characteristic of modernity, also corresponds to the basic Christian idea. Frank notes that utopia is a form of \"heresy\", that is, a \"private\" distortion, an exaggeration of Christian ideas about the need to eradicate evil. Utopian ideology assumes the possibility of the essential and final eradication of evil \"by earthly means\", whereas this is possible only through personal effort through faith. Frank also defends the pluralism and openness of modern society, emphasizing that Christianity in modern society is given the opportunity to openly profess its views without linking its activities with the organization of church authority.",
+      "citationCount": 0,
+      "doi": "10.17223/15617793/513/8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9417947e4d6b916809af82bc7e480ad266cdd467",
+      "venue": "Vestnik Tomskogo gosudarstvennogo universiteta",
+      "journal": {
+        "name": "Vestnik Tomskogo gosudarstvennogo universiteta"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "30bfb3f8a05ea80b086bff83d712c2c38b0c84cd",
+      "title": "Dewey, Habermas, and the Unfinished Project of Modernity in Unmodern Philosophy and Modern Philosophy",
+      "authors": [
+        {
+          "name": "P. Deen",
+          "authorId": "102938197"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1093/OXFORDHB/9780190491192.013.25",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/30bfb3f8a05ea80b086bff83d712c2c38b0c84cd",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3fecbe3b352776e588c1d9f26082c9795385bf0f",
+      "title": "Habermas Contra Lyotard: The Question of Modernity",
+      "authors": [
+        {
+          "name": "Ramze Endut",
+          "authorId": "2329824248"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This paper will explore the discourse between J\u00fcrgen Habermas and Jean-Fran\u00e7ois Lyotard regarding their interpretations of modernity. Both philosophers are significant figures in contemporary thought. Habermas is recognized as a leading critical theorist, while Lyotard is identified as a prominent postmodernist. Despite their differing philosophical frameworks, both acknowledged the increasing complexity of society. In their exchange, Habermas advocated for the concept of universal emancipation, viewing modernity as an ongoing endeavor. Conversely, Lyotard outright dismissed this notion, arguing that Habermas's perspective represents yet another grand narrative that has lost its validity in the context of postmodernity. Consequently, this paper will analyze the positions of both philosophers, focusing on Habermas's critique of Lyotard's postmodernism in relation to modernity.",
+      "citationCount": 1,
+      "doi": "10.62754/joe.v3i7.4635",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3fecbe3b352776e588c1d9f26082c9795385bf0f",
+      "venue": "Journal of Ecohumanism",
+      "journal": {
+        "name": "Journal of Ecohumanism"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "97aa86223ba6d496bfcd7ed704e3d0c62bb1f458",
+      "title": "Modernity in the Mirror of Marxism: Towards the Possibility of an Actual Fundamental Social Discourse",
+      "authors": [
+        {
+          "name": "E. Korniltseva",
+          "authorId": "121676819"
+        },
+        {
+          "name": "Valery V. Lysenko",
+          "authorId": "2187347075"
+        },
+        {
+          "name": "Dmitriy V. Gryaznykh",
+          "authorId": "2393603084"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The present research work delves into elucidating the possibilities of Marxist philosophical sociology in describ-ing the sources, foundations, and prospects of modernity. The relationship of the present with the past and the future is examined through the lens of key concepts of Marxist social theory: the mode of production, forms of communication, alienation, and the natural-historical process. In this context, sociologism serves as the con-ceptual framework for the historical identification of phenomena and trends in the objective and natural devel-opment of society, clarifying the principles of the materialist understanding of history in terms of the logic of alienation. Consequently, the heuristic limitations of Marxist social science are asserted by the objective history. The Soviet project is understood as an internally contradictory attempt at subjectivity in relation to social and historical existence. The chronic course of the indigenous proletariat is considered as the system-forming con-tent of modernity, which sets the space for a balanced and relevant social discourse.",
+      "citationCount": 0,
+      "doi": "10.24158/fik.2025.10.7",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/97aa86223ba6d496bfcd7ed704e3d0c62bb1f458",
+      "venue": "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u043e \u0444\u0438\u043b\u043e\u0441\u043e\u0444\u0438\u044f \u0438\u0441\u0442\u043e\u0440\u0438\u044f \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u0430",
+      "journal": {
+        "name": "\u041e\u0431\u0449\u0435\u0441\u0442\u0432\u043e: \u0444\u0438\u043b\u043e\u0441\u043e\u0444\u0438\u044f, \u0438\u0441\u0442\u043e\u0440\u0438\u044f, \u043a\u0443\u043b\u044c\u0442\u0443\u0440\u0430"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2fbf04e51eae1fdf7d9f9025e39d8b0c1beae5c1",
+      "title": "Postmodernism and the Aesthetic Turn@@@The Philosophical Discourse of Modernity: Twelve Lectures@@@The Ideologies of Theory: Essays, 1971-1986@@@Contingency, Irony, and Solidarity",
+      "authors": [
+        {
+          "name": "R. Shusterman",
+          "authorId": "39106838"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Frederick P. Lawrence",
+          "authorId": "145352286"
+        },
+        {
+          "name": "F. Jameson",
+          "authorId": "50719416"
+        },
+        {
+          "name": "R. Rorty",
+          "authorId": "46213881"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.2307/1772906",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2fbf04e51eae1fdf7d9f9025e39d8b0c1beae5c1",
+      "venue": "",
+      "journal": {
+        "name": "Poetics Today",
+        "pages": "605",
+        "volume": "10"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8b3a3106f194f96c49b7ccd99d8b8b72a90bf14d",
+      "title": "Work on Reason@@@The Legitimacy of the Modern Age@@@Work on Myth@@@The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "G. Campbell",
+          "authorId": "2054645432"
+        },
+        {
+          "name": "H. Blumenberg",
+          "authorId": "102559182"
+        },
+        {
+          "name": "R. M. Wallace",
+          "authorId": "143826741"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Frederick P. Lawrence",
+          "authorId": "145352286"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.2307/465376",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8b3a3106f194f96c49b7ccd99d8b8b72a90bf14d",
+      "venue": "",
+      "journal": {
+        "name": "Diacritics",
+        "pages": "53",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "43fd105ea0c763aea4b1504707b4c66562eb1438",
+      "title": "Foucault versus Habermas: Modernity as an unfinished endeavor vs. the theory of power: An inevitable conflict or possibility of communication",
+      "authors": [
+        {
+          "name": "Marjan Ivkovic",
+          "authorId": "118414384"
+        }
+      ],
+      "year": 2006,
+      "abstract": "The paper considers the possibility of detecting points of contact between Michel Foucault\u2019s theory of power and the theory of communicative agency formed by Jurgen Habermas. In the beginning, the development of the philosophical discourse of modernity, which Habermas analyzes in his work bearing the same title, is laid out, with the aim to gain insight into the nature of Habermas\u2019s critique of Foucault. After having reviewed some of the basis of Foucault\u2019s theory, the author points out Habermas\u2019s depiction of the theory of power as the pinnacle of Nietzschean, anti - modernist stream of the philosophical discourse. The critique is based on Habermas\u2019s assumption that Foucault\u2019s analyses of power fails to comprehend the complexity of modernity. Foucault, according to Habermas, over - emphasizes one dimension of the process of modernization - gradual strengthening of the disciplinatory power based on the \"control of the spirit\". The author, however, wishes to point out the importance the theory of power ascribes to the preservation of insight into the complexity of history. Through the insight into multiple and divergent nature of historical processes that are responsible for the formation of modern society, the individual becomes historically self - conscious and able to step out of the paradigm of self - relating subject. As the theory of communicative agency also tends to transcend the \"limits of the subject - philosophy\", the author concludes that Foucault\u2019s work is, to the same extent as Habermas\u2019s, imbued with the idea of \"modernity as an unrealized undertaking\". Towards the end of the paper the author analyzes Foucault\u2019s relation to Enlightenment, in order to show the essentially modern nature of his thought.",
+      "citationCount": 0,
+      "doi": "10.2298/FID0630059I",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/43fd105ea0c763aea4b1504707b4c66562eb1438",
+      "venue": "",
+      "journal": {
+        "name": "Filozofija I Drustvo",
+        "pages": "59-76",
+        "volume": "2006"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e04120fcb7d68da0e8b95796d22fc3f7d081774b",
+      "title": "Habermas' Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "P. U. Hohendahl",
+          "authorId": "103981131"
+        }
+      ],
+      "year": 1986,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.3817/0986069049",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e04120fcb7d68da0e8b95796d22fc3f7d081774b",
+      "venue": "T\u00e9los",
+      "journal": {
+        "name": "Telos",
+        "pages": "49 - 65",
+        "volume": "1986"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "679bc6867dca94195046ac489149337e22b1f8dd",
+      "title": "Working in the Philosophical Discourse of Modernity: Habermas, Faoucault, and Derrida",
+      "authors": [
+        {
+          "name": "M. Fleming",
+          "authorId": "97844943"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.5840/PHILTODAY199640143",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/679bc6867dca94195046ac489149337e22b1f8dd",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Today",
+        "pages": "169-178",
+        "volume": "40"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6001efc189bb184268f23d3b857f4abeba3562fd",
+      "title": "Habermas on Heidegger and Foucault. Meaning and validity in 'The philosophical discourse of modernity'",
+      "authors": [
+        {
+          "name": "Rudi Visker",
+          "authorId": "103299907"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6001efc189bb184268f23d3b857f4abeba3562fd",
+      "venue": "",
+      "journal": {
+        "name": "Radical Philosophy",
+        "pages": "15-22",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "68eb2611c6f25a8ce3f7a298661d2bb6621b78a9",
+      "title": "Habermas and the Holy Grail of reason: The Philosophical Discourse of Modernity between theatre and theory",
+      "authors": [
+        {
+          "name": "M. Greig",
+          "authorId": "2091898095"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1080/1035033042000238240",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/68eb2611c6f25a8ce3f7a298661d2bb6621b78a9",
+      "venue": "",
+      "journal": {
+        "name": "Social Semiotics",
+        "pages": "215 - 232",
+        "volume": "14"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

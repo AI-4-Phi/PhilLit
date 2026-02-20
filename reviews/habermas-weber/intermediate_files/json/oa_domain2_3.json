@@ -1,0 +1,1405 @@
+[search_openalex.py] Searching OpenAlex: 'iron cage Weber Habermas colonization lifeworld' (year=2000-2025), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_88b244b3a7964840)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "iron cage Weber Habermas colonization lifeworld",
+  "results": [
+    {
+      "openalex_id": "W2085316518",
+      "doi": "10.1111/j.1440-1800.2005.00260.x",
+      "title": "Modes of rationality in nursing documentation: biology, biography and the \u2018voice of nursing\u2019",
+      "authors": [
+        {
+          "name": "Abbey Hyde",
+          "openalex_id": "A5018903151",
+          "orcid": "https://orcid.org/0000-0002-9040-2024",
+          "institutions": [
+            "National University of Ireland",
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Margaret Treacy",
+          "openalex_id": "A5065346308",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "P. Anne Scott",
+          "openalex_id": "A5062462706",
+          "orcid": "https://orcid.org/0000-0002-5790-8066",
+          "institutions": [
+            "Dublin City University"
+          ]
+        },
+        {
+          "name": "Michelle Butler",
+          "openalex_id": "A5077233931",
+          "orcid": "https://orcid.org/0000-0002-8336-0890",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Jonathan Drennan",
+          "openalex_id": "A5015226599",
+          "orcid": "https://orcid.org/0000-0001-7365-4345",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Kate Irving",
+          "openalex_id": "A5086706803",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Anne Byrne",
+          "openalex_id": "A5112430204",
+          "institutions": [
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "P\u00e1draig MacNeela",
+          "openalex_id": "A5022827795",
+          "orcid": "https://orcid.org/0000-0002-5382-4113",
+          "institutions": [
+            "Dublin City University"
+          ]
+        },
+        {
+          "name": "Marian Hanrahan",
+          "openalex_id": "A5110135654",
+          "orcid": "https://orcid.org/0009-0006-1800-7042",
+          "institutions": [
+            "Dublin City University"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-05-12",
+      "abstract": "Modes of rationality in nursing documentation: biology, biography, and the \u2018voice of nursing\u2019 This article is based on a discourse analysis of the complete nursing records of 45 patients, and concerns the modes of rationality that mediated text\u2010based accounts relating to patient care that nurses recorded. The analysis draws on the work of the critical theorist, J\u00fcrgen Habermas, who conceptualised rationality in the context of modernity according to two types: purposive rationality based on an instrumental logic, and value rationality based on ethical considerations and moral reasoning. Our analysis revealed that purposive rationality dominated the content of nursing documentation, as evidenced by a particularly bio\u2010centric and modernist construction of the workings of the body within the texts. There was little reference in the documentation to central themes of contemporary nursing discourses, such as notions of partnership, autonomy, and self\u2010determination, which are associated with value rationality. Drawing on Habermas, we argue that this nursing documentation depicted the colonisation of the sociocultural lifeworld by the bio\u2010technocratic system. Where nurses recorded disagreements that patients had with medical regimes, the central struggle inherent in the project of modernity became transparent \u2014 the tension between the rational and instrumental control of people through scientific regulation and the autonomy of the subject. The article concludes by problematising communicative action within the context of nursing practice.",
+      "cited_by_count": 59,
+      "type": "article",
+      "source": {
+        "name": "Nursing Inquiry",
+        "type": "journal",
+        "issn": [
+          "1320-7881",
+          "1440-1800"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10197/4185"
+      },
+      "topics": [
+        "Cultural Competency in Health Care",
+        "Ethics in medical practice",
+        "Nursing Education, Practice, and Leadership"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2085316518"
+    },
+    {
+      "openalex_id": "W2598098786",
+      "doi": "10.3389/fsoc.2017.00003",
+      "title": "Modernity and the Idea of Progress",
+      "authors": [
+        {
+          "name": "Angelos Mouzakitis",
+          "openalex_id": "A5002778904",
+          "institutions": [
+            "University of Crete",
+            "Crete University Press"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-20",
+      "abstract": "This paper aims to show the centrality the concept of progress occupies explicitly and implicitly in social theory, in relation to the theorization and understanding of modernity; it also raises the question whether in times where Eurocentrism, logocentrism and indeed almost every claim of supremacy are rightly viewed with suspicion, it is possible to think of modernity without relying on some interpretation of the notion of progress. Arguably, the theme of progress, together with the complementary notion of decline, can be considered as a key-component of discourses concerning modernity and has played a major role in the shaping of social theory. Comte and Durkheim relied in different ways in the idea of progress and the same holds for Marxist accounts of social change. Even later sociological theories address modernity from the perspective of progress, Parsons being exemplary in this respect. Moreover, theoretical discourses adopting a critical or even hostile attitude against the modern project often question the idea of progress and are woven around the representation of modernity in terms of decline and regression into unreason, as e.g. Adorno and Horkheimer's Dialectic of Enightment. Arguably, the imagery of progress informs the distinction between society and community, which is also hidden behind Habermas's more recent theorization of societies in terms of systems and lifeworlds. Finally, the question regarding the possibility of partially disentangling the theorization of modernity from the idea of progress, is pursued via a critical assessment of Eisenstadt's multiple modernities and Wagner's theorization of modernity in terms of responses given to basic probl\u00e9matiques.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Sociology",
+        "type": "journal",
+        "issn": [
+          "2297-7775"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fsoc.2017.00003/pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Economy and Marxism",
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W2598098786"
+    },
+    {
+      "openalex_id": "W2277248601",
+      "doi": "10.3126/dsaj.v9i0.14027",
+      "title": "Auto/ethnography: A Transformative Research Paradigm",
+      "authors": [
+        {
+          "name": "Sadruddin Bahadur Qutoshi",
+          "openalex_id": "A5028369393",
+          "orcid": "https://orcid.org/0000-0003-1630-428X",
+          "institutions": [
+            "Karakoram International University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-03",
+      "abstract": "This paper aims to address the key question, \u2018How far autoethnography contributes towards enriching the field of transformative learning?\u2019 Using my lived experiences as a teacher educator/autoethnographer/researcher and contextualizing self/others within a particular socio-pedagogical life courses I build the basis through addressing questions: Why auto/ethnography is one of the most suitable spaces for transformative researchers and to what extent it serves the agenda of envisioning a transformative teacher education. To achieve this objective I use autobiographies, stories, reflections and poems etc. as narratives with multiple logics and genres; pictography as art-based expression; and ethnography as methodological space within multiparadigmatic design space. In so doing autoethnographer has to delve into whole process of research along a continuum of self and beyond within a particular sociocultural context to understand the phenomena at deeper level of consciousness. This transformative paradigm holds a strong basis in the process of research as: re/reading, re/viewing, critically reflecting on self/others, re/writing for meaning making and developing a subjective understanding of phenomena under exploration. This process of research is found to be an innovative way of knowing through \u2018interpreting and constructing (Luitel, 2009)within Interpretivism, critically thinking and reflecting within Criticalism, and adding both \u2018pluralism and playfulness\u2019 (Taylor, 2013) within Postmodernism. In so doing it raises awareness, develops consciousness and improves capacities constantly that ultimately alters our way of seeing and being in the world differently- a paradigm shift in self/others. It is found to be highly rigorous, dialectically eloquent, dialogically rigorous, critically reflective, consciously awakening, and innovative critical discourse that greatly contributes to transform researcher/s. Therefore, it seems illustrious for teacher educators/teachers to embrace this paradigm in order to foster their transformative learning so that to transform self/others.",
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Dhaulagiri Journal of Sociology and Anthropology",
+        "type": "journal",
+        "issn": [
+          "1994-2664",
+          "1994-2672"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.nepjol.info/index.php/DSAJ/article/download/14027/11377"
+      },
+      "topics": [
+        "Adult and Continuing Education Topics",
+        "Innovative Education and Learning Practices",
+        "Reflective Practices in Education"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W2277248601"
+    },
+    {
+      "openalex_id": "W641840726",
+      "doi": "10.4324/9781315772226",
+      "title": "Mobility and Locative Media",
+      "authors": [
+        {
+          "name": "Adriana de Souza e Silva",
+          "openalex_id": "A5050511587",
+          "orcid": "https://orcid.org/0000-0001-7088-3994"
+        },
+        {
+          "name": "Mim\u00ed Sheller",
+          "openalex_id": "A5060009152",
+          "orcid": "https://orcid.org/0000-0001-9097-9563"
+        },
+        {
+          "name": "E Silva",
+          "openalex_id": ""
+        },
+        {
+          "name": "Fernanda Duarte",
+          "openalex_id": ""
+        },
+        {
+          "name": "Raz Schwartz",
+          "openalex_id": ""
+        },
+        {
+          "name": "Ole Jensen",
+          "openalex_id": ""
+        },
+        {
+          "name": "Teri Rueb",
+          "openalex_id": ""
+        },
+        {
+          "name": "Michael Doyle",
+          "openalex_id": ""
+        },
+        {
+          "name": "Julien Figeac",
+          "openalex_id": ""
+        },
+        {
+          "name": "Peter Hemmersam",
+          "openalex_id": ""
+        },
+        {
+          "name": "Nathan Hulsey",
+          "openalex_id": ""
+        },
+        {
+          "name": "Dale Leorke",
+          "openalex_id": ""
+        },
+        {
+          "name": "Rich Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "Andrew Morrison",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Campbell",
+          "openalex_id": ""
+        },
+        {
+          "name": "A De Souza E Silva",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Frith",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Edensor",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Gergen",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Goggin",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Habuchi",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Hannam",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Sheller",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Urry",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Hemment",
+          "openalex_id": ""
+        },
+        {
+          "name": "O Jensen",
+          "openalex_id": ""
+        },
+        {
+          "name": "O Jensen",
+          "openalex_id": ""
+        },
+        {
+          "name": "V Kaufmann",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Bergman",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Joye",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Keyani",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Farham",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Yttri",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Yttri",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Packer",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Pearce",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Puro",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Rice",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Katz",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Rueb",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Sheller",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Urry",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Sheller",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Urry",
+          "openalex_id": ""
+        },
+        {
+          "name": "I Shklovski",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Vertesi",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Troshynski",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Dourish",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Tnnies",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Tuters",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Varnelis",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Urry",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Vukov",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Sheller",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Berger",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Kellner",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Boulding",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Fairtlough",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Foster",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Hampton",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Wellman",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Ishii",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Ito",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Okabe",
+          "openalex_id": ""
+        },
+        {
+          "name": "Dong Lee",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Duk",
+          "openalex_id": ""
+        },
+        {
+          "name": "Lee",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Licoppe",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Bertel",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Sundsy",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Canright",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Bjelland",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Eng-Monsen",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Sundsy",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Livingstone",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Sheller",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Urry",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Sundsy",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Bjelland",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Canright",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Eng-Monsen",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Tnnies",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Townsend",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Weller",
+          "openalex_id": ""
+        },
+        {
+          "name": "J De Mul",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ling",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Haddon",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Silverstone",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Haddon",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Sutko",
+          "openalex_id": ""
+        },
+        {
+          "name": "A De Souza E Silva",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Van Den Akker",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Kool",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Wortham",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-08-07",
+      "abstract": "Mobilities has become an important framework to understand and analyze contemporary social, spatial, economic and political practices. Especially as mobile media become seamlessly integrated into transportation networks, navigating urban spaces, and connecting with social networks while on the move, researchers need new approaches and methods to bring together mobilities with mobile communication and locative media. Mobile communication scholars have focused on cell phones, often ignoring broader connections to urban spaces, geography, and locational media. As a result, they emphasized virtual mobility and personalized communication as a way of disconnecting from place, location and publics. The growing pervasiveness of location-aware technology urges us to rethink the intersection among location, mobile technologies and mobility. Few studies have addressed the many transformations taking place in mobile sociality and in urban spatial processes through the appropriation of these technologies.",
+      "cited_by_count": 81,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://s3-us-west-2.amazonaws.com/tandfbis/rt-files/docs/Open+Access+Chapters/9781138778139_oachapter12.pdf"
+      },
+      "topics": [
+        "Cultural, Social, and Media Studies",
+        "Geographic Information Systems Studies",
+        "Spatial and Cultural Studies"
+      ],
+      "referenced_works_count": 296,
+      "url": "https://openalex.org/W641840726"
+    },
+    {
+      "openalex_id": "W3082095280",
+      "doi": "10.1163/9789004328556",
+      "title": "Islam in a Post-Secular Society",
+      "authors": [
+        {
+          "name": "Dustin J. Byrd",
+          "openalex_id": "A5019576728",
+          "orcid": "https://orcid.org/0000-0003-4633-2767"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "Islam in the Post-Secular Society: Religion, Secularity and the Antagonism of Recalcitrant Faith critically examines the unique challenges facing Muslims in Europe and North America. From the philosophical perspective of the Frankfurt School's Critical Theory, this book attempts not only to diagnose the current problems stemming from a marginalization of Islam in the secular West, but also to offer a proposal for a Habermasian discourse between the religious and the secular. By highlighting historical examples of Islamic and western rapprochement, and rejecting the 'clash of civilization' thesis, the author attempts to find a 'common language' between the religious and the secular, which can serve as a vehicle for a future reconciliation.",
+      "cited_by_count": 22,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://brill.com/downloadpdf/title/33677.pdf"
+      },
+      "topics": [
+        "Islamic Studies and History",
+        "Education and Islamic Studies",
+        "Terrorism, Counterterrorism, and Political Violence"
+      ],
+      "referenced_works_count": 160,
+      "url": "https://openalex.org/W3082095280"
+    },
+    {
+      "openalex_id": "W1528993049",
+      "doi": "10.1515/auk-2008-0117",
+      "title": "Social Criticism and the Exclusion of Ethics",
+      "authors": [
+        {
+          "name": "Russell Keat",
+          "openalex_id": "A5010872268"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-05-01",
+      "abstract": "Abstract As Axel Honneth has recently noted, the critical concerns of social philosophers during the past three decades have been focused primarily on questions of justice, with ethical issues about the human good being largely excluded. In the first section I briefly explore this exclusion in both \u2018Anglo-American\u2019 political philosophy and \u2018German\u2019 critical theory. I then argue, in the main sections, that despite this commitment to their exclusion, distinctively ethical concepts and ideals can be identified both in Rawls\u2019s Theory of Justice and in Habermas\u2019s Theory of Communicative Action, taking these as exemplary, representative texts for each theoretical school. These ethical elements, and their implications for the critical evaluation of economic institutions, have gone largely unnoticed. In the final section I indicate the kinds of debates that might be generated, were these to be given the attention they arguably deserve. I focus especially on the significance of empirical issues, and hence on the role of social science in social criticism.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Analyse & Kritik",
+        "type": "journal",
+        "issn": [
+          "0171-5860",
+          "2365-9858"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/auk-2008-0117/pdf"
+      },
+      "topics": [
+        "Critical Realism in Sociology",
+        "Political Economy and Marxism",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W1528993049"
+    },
+    {
+      "openalex_id": "W3008235850",
+      "doi": "10.1007/s10833-020-09379-y",
+      "title": "From \"unintelligent\" to intelligent accountability",
+      "authors": [
+        {
+          "name": "S\u00f8lvi Lillejord",
+          "openalex_id": "A5052781103",
+          "orcid": "https://orcid.org/0000-0002-4262-0393",
+          "institutions": [
+            "University of Bergen"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-01",
+      "abstract": "A moral being is an accountable being.An accountable being, as the word expresses, is a being that must give an account of its actions to some other, and that consequently must regulate them according to the good-liking of this other. Adam Smith, The Theory of Moral Sentiments, 1759 (1st Edition Part III, chapter 1)Recent accountability reforms have distorted Adam Smith's interpersonal understanding of what it means, at its core, to be an accountable person.The ambitions behind this Special Issue are twofold: first, to show how the above enlightenment understanding of accountability has changed and culminated in existing dysfunctional systems and second, to build arguments for an alternative, more human accountability practice that strengthens the teaching profession.The Editorial describes why accountability systems emerge, whose interests they serve and what they are set up to achieve.It presents perspectives on the understanding of knowledge and society that underpins accountability systems, and which forms of rationality they support.As current systems favor investment in individual human capital, they tend to neglect social and cultural capital.There is an obvious need for accountability practices that are less technical, bureaucratic and ideology driven as teachers and school leaders feel caught in a one-sided system logic that overshadows essential parts of their job.The relationship between professions and accountability is discussed and arguments put forward for increased professionalization of teachers and educational leaders as a pivotal part of intelligent accountability systems.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Journal of Educational Change",
+        "type": "journal",
+        "issn": [
+          "1389-2843",
+          "1573-1812"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10833-020-09379-y.pdf"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Global Educational Policies and Reforms",
+        "Higher Education Governance and Development"
+      ],
+      "referenced_works_count": 80,
+      "url": "https://openalex.org/W3008235850"
+    },
+    {
+      "openalex_id": "W2607001891",
+      "doi": "10.26530/oapen_627438",
+      "title": "Islam in a Post-Secular Society : Religion, Secularity and the Antagonism of Recalcitrant Faith",
+      "authors": [
+        {
+          "name": "Dustin J. Byrd",
+          "openalex_id": "A5019576728",
+          "orcid": "https://orcid.org/0000-0003-4633-2767"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "Islam in the Post-Secular Society: Religion, Secularity and the Antagonism of Recalcitrant Faith critically examines the unique challenges facing Muslims in Europe and North America. From the philosophical perspective of the Frankfurt School\u2019s critical theory, this book attempts not only to diagnose the current problems stemming from a marginalization of Islam in the secular West, but also to offer a proposal for a Habermasian discourse between the religious and the secular. By highlighting historical examples of Islamic and western rapprochement, and rejecting the \u2018clash of civilization\u2019 thesis, the author attempts to find a \u2018common language\u2019 between the religious and the secular, which can serve as a vehicle for a future reconciliation.",
+      "cited_by_count": 18,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://oapen.org/download?type=document&docid=627438"
+      },
+      "topics": [
+        "Islamic Studies and History",
+        "Education and Islamic Studies"
+      ],
+      "referenced_works_count": 163,
+      "url": "https://openalex.org/W2607001891"
+    },
+    {
+      "openalex_id": "W122080657",
+      "doi": "10.46743/2160-3715/2004.1907",
+      "title": "You Were Hired to Teach! Ideological Struggle, Education, and Teacher Burnout at the New Prison for Women",
+      "authors": [
+        {
+          "name": "Randall Wright",
+          "openalex_id": "A5084724275",
+          "institutions": [
+            "California State University System"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-23",
+      "abstract": "Critical theorists consider schools as sites of ideological struggle. The following is an account of Suzettes (pseudonym) attempts to define the educational practices in a women\u2019s prison according to the democratic principles suggested in the Task Force Report on Federally Sentenced Women: Creating Choices, (Correctional Service of Canada, 1990). This report led to the construction of five new prisons for women across Canada. Suzettes case illustrates how ideological struggles are experienced personally, and how they contribute to her burnout disillusionment and resignation. Habermass critical research program and his concept of system and lifeworld undergirds this interpretation of this teachers resistance to the correctional ethos at the New Prison for Women (NPW).",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "The Qualitative Report",
+        "type": "journal",
+        "issn": [
+          "2160-3715"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://nsuworks.nova.edu/cgi/viewcontent.cgi?article=1907&context=tqr"
+      },
+      "topics": [
+        "Social Work Education and Practice",
+        "Diverse Education Studies and Reforms",
+        "Teacher Education and Leadership Studies"
+      ],
+      "referenced_works_count": 85,
+      "url": "https://openalex.org/W122080657"
+    },
+    {
+      "openalex_id": "W2972682338",
+      "doi": "10.15453/0191-5096.4227",
+      "title": "Can the Lifeworld Save us From Neoliberal Governmentality? Social work, critical theory, and Habermas",
+      "authors": [
+        {
+          "name": "Stephanie A. Bryson",
+          "openalex_id": "A5057766518",
+          "orcid": "https://orcid.org/0000-0002-5920-4572",
+          "institutions": [
+            "Portland State University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "Two years have passed since the 2016 election of Donald J. Trump, and U.S. social work is revisiting its radical stirrings and grappling with its conservative moorings. In this paper, I will argue that as U.S. social work appraises the adequacy of its intellectual leaders, the cultural relevance of its practice models, and its stance toward the Enlightenment ideals of reason, truth, and justice, it might usefully re-examine its relationship to the critical theory legacy of the Frankfurt School, especially the thinking of J\u00fcrgen Habermas. My goal is in this essay is to suggest ways in which Habermasian thinking could provide social work more viable solutions than those offered by the idea of neoliberal governmentality.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Sociology & Social Welfare",
+        "type": "journal",
+        "issn": [
+          "0191-5096"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://scholarworks.wmich.edu/cgi/viewcontent.cgi?article=4227&context=jssw"
+      },
+      "topics": [
+        "Social Work Education and Practice",
+        "Critical Theory and Philosophy",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W2972682338"
+    },
+    {
+      "openalex_id": "W2311029073",
+      "doi": "10.15408/ajis.v16i1.2897",
+      "title": "Refleksi Teori Kritis Jurgen Habermas atas Konsesus Simbolik Perda Syariah",
+      "authors": [
+        {
+          "name": "Ahmad Abrori",
+          "openalex_id": "A5077350662",
+          "institutions": [
+            "Syarif Hidayatullah State Islamic University Jakarta"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-28",
+      "abstract": "This article aims to investigate how the critical theory of Jurgen Habermas can be used to better understand the Syariah Islamic law issues in the district of Garut. Habermas is arguably one of the most powerful thinkers in contemporary sociology, particularly because of his influential ideas regarding public sphere. He believes that the absolute power of the state by which it colonizes civic daily life should not automatically silence public voices. Modern capitalism creates huge opportunity of people to connect in public spheres such as markets, cafes, and restaurants. They do economic transaction at the same time they love to talk, discuss, and argue on current social, economics, and political issues. It leads to the society that might change the power of authority as well as the established culture, starting by questioning the public policy that might lead to the authority which has a legitimacy crisis. From this perspective, the implementation of Perda Syariah (Sharia local regulation) in Garut region is analyzed. This paper uncovers the conditions in which the law enforcement of the Perda has been challenged.DOI: 10.15408/ajis.v16i1.2897",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "AHKAM Jurnal Ilmu Syariah",
+        "type": "journal",
+        "issn": [
+          "1412-4734",
+          "2407-8646"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journal.uinjkt.ac.id/index.php/ahkam/article/download/2897/2266"
+      },
+      "topics": [
+        "Islamic Finance and Communication",
+        "Legal Studies and Policies",
+        "Islamic Studies and Radicalism"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W2311029073"
+    },
+    {
+      "openalex_id": "W4220832568",
+      "doi": "10.29173/cgs81",
+      "title": "Gambling Ain\u2019t What It Used To Be: The Instrumentalization of Gambling and Late Modern Culture",
+      "authors": [
+        {
+          "name": "Jim Cosgrave",
+          "openalex_id": "A5035597725",
+          "institutions": [
+            "Trent University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-07",
+      "abstract": "This article addresses significant cultural macro-processes shaping legalized gambling as a mass consumer market, which also serve various state and private industry ends. The processes examined here are \u201cinstrumentalization\u201d and rationalization, explored through the seminal formulations of Max Weber and developed further in the work of Jurgen Habermas. Instrumentalization relates to Weber\u2019s concepts of rationalization and instrumental rationality, as well as to Habermas\u2019s distinction between the \u201csystem\u201d and \u201clifeworld\u201d. While the phenomenon of instrumentalization is approached largely from a macro-perspective, it is understood to have effects on the lifeworld, on social action, and the formation of (gambling) subjectivities. The discussion of instrumentalization and rationalization, as broad cultural processes, contributes to the genealogy of gambling in (late) modern culture. It also serves to develop a particular theoretical trajectory within critical gambling studies and indicates themes that could be opened up for further analysis.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Critical Gambling Studies",
+        "type": "journal",
+        "issn": [
+          "2563-190X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://criticalgamblingstudies.com/index.php/cgs/article/download/81/71"
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "German Social Sciences and History",
+        "Social and Cultural Dynamics"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W4220832568"
+    },
+    {
+      "openalex_id": "W4214831373",
+      "doi": "10.36657/ihcd.2022.86",
+      "title": "The Relationship Between Economic Development and Socio-Cultural Values: According to Alfred Marshall",
+      "authors": [
+        {
+          "name": "B\u00fcnyamin Duran",
+          "openalex_id": "A5103128077",
+          "orcid": "https://orcid.org/0000-0002-9639-9276",
+          "institutions": [
+            "Manisa Celal Bayar University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-31",
+      "abstract": "Alfred Marshall was an English economist who lived between 1842-1924. He is known in the literature as the founder of Neo-Classical Economic Thought and the Cambridge School. His book, Principles of Economics, is one of the few books written in economics. Marshall, like most economists, deals not only with economics itself but also examines the socio-psychological and socio-cultural conditions that affect economic development. According to him, economic development is a matter of time and context, and also a phenomenon heavily affected by various factors such as climatic conditions, tradition, social structure, family and religion. Given positive impacts of moral factors, Marshall argues that faithful, free, hopeful, patient, willful, compassionate, and helpful community is esseantial for achieving a proper economic development. As a result, unlike most of today's economists, Marshall does not see economic development only as a numerical increase in national income.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Journal of Ibn Haldun Studies Ibn Haldun University",
+        "type": "journal",
+        "issn": [
+          "2651-379X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journal.ihu.edu.tr/index.php/ihu1/article/download/125/171/479"
+      },
+      "topics": [
+        "Social Capital and Networks",
+        "Sociopolitical Dynamics in Russia",
+        "Economic Growth and Development"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W4214831373"
+    },
+    {
+      "openalex_id": "W1759292672",
+      "doi": null,
+      "title": "Habermas in the garden : broadening the scope of social movements for sustainability",
+      "authors": [
+        {
+          "name": "Sandra Villumsen",
+          "openalex_id": "A5003672179"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "This thesis explores the potential of broadening the scope of social movements for sustainability. The implicit assumptions of the causal mechanisms for strategic social change propose limits to what transformative social action can be, and risk overlooking untapped resources for change. To address these limitations I use Habermas\u2019 critical social theories on public engagement, systemic rationality crisis and new social movements supplemented with Weber\u2019s principles of the unintended consequences of social action to look broader at transformative action towards sustainability. This is exemplified by alternative food movements using food as an entry point bringing along values of sustainability. The theory-guided research complemented with a qualitative study of three value-based food movements in Copenhagen suggests that unintended consequences of social action for food, activate social mechanisms and that these mechanisms, under conditions of communicative social structures, bring about emerging values for sustainability, and unintendedly reproduce alternative social structures. These value-based social movements can therefore be important actors in shaping how sustainability is conceived in contemporary social movements, how sustainability becomes conceptualized in normative terms, as well as bridging the gap between theory and practical action. By illustrating these social mechanisms I suggest how value-based social movements can contribute to the path towards sustainability, by recognizing them as important collaborators in the strategies of political social movements.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Lund University Publications Student Papers (Lund University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://lup.lub.lu.se/student-papers/record/2798206"
+      },
+      "topics": [
+        "Organic Food and Agriculture",
+        "Social and Educational Sciences"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1759292672"
+    },
+    {
+      "openalex_id": "W1596623672",
+      "doi": "10.7146/ocps.v13i1.2938",
+      "title": "Layers of Dissent: The Meaning of Time Appropriation",
+      "authors": [
+        {
+          "name": "Roland Paulsen",
+          "openalex_id": "A5068951420",
+          "orcid": "https://orcid.org/0000-0001-9680-1002",
+          "institutions": [
+            "Uppsala University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-08-11",
+      "abstract": "Within Critical Management Theory as well as Critical Theory the possibility of individuals resisting taken for granted power asymmetries remains a highly debated subject. Intensified corporate culture programs seem to imply that within the sphere of labor, worker dissent is loosing ground. Based on a large interview material of critical cases, this notion is challenged. The interviewees mainly represent white-collar employees who spend more than half of their working hours on private activities. Studying the objectives and political ambitions behind their extensive recalcitrance reveals a range of intentional structures that result in the same activity: time appropriation. First, time appropriation may be the effect of framed dissent; a dissent intertwined with politically framed indignation. Second, the recalcitrance may spring from direct dissent in which personal indignation is the driving force whereas political formulations are not as prominent. Third, the activity of not doing your work while at work can be the effect of withdrawal in which case there is no motive other than avoiding work. Fourth, time appropriation may also be a (sometimes involuntary) consequence of adjustment: This occurs when the employee does not receive enough work assignments to fill the working day. I conclude by suggesting that the processes and leaps between these layers of dissent should be further studied.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Outlines Critical Practice Studies",
+        "type": "journal",
+        "issn": [
+          "1399-5510",
+          "1904-0210",
+          "1904-0237"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://tidsskrift.dk/outlines/article/download/2938/4788"
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Labor Movements and Unions",
+        "Management Theory and Practice"
+      ],
+      "referenced_works_count": 184,
+      "url": "https://openalex.org/W1596623672"
+    },
+    {
+      "openalex_id": "W2995852980",
+      "doi": "10.1007/s42439-019-00011-z",
+      "title": "Towards a Critical Theory of the Technosystem",
+      "authors": [
+        {
+          "name": "Raphael Meyer von Wolff",
+          "openalex_id": "A5102954229",
+          "orcid": "https://orcid.org/0000-0003-4233-6189",
+          "institutions": [
+            "Brussels School of International Studies"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-01",
+      "abstract": "Abstract Feenberg\u2019s new book, Technosystem: the social life of reason , makes an important intervention in the study of technological systems by showing that instrumental reason requires value judgement at the moment of its realization in this world. It fosters hope that technological development can be redirected towards the fulfilment of human needs through public interventions of nonexperts. However, Feenberg does not sufficiently engage with the political dilemmas that inevitably accompany these interventions as a result of the formal capitalist bias of the technosystem. The books by Bridle and Bucher underline the importance of confronting these dilemmas as they encounter them in various domains and provide possible ways for dealing with them.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Jus Cogens",
+        "type": "journal",
+        "issn": [
+          "2524-3977",
+          "2524-3985"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s42439-019-00011-z.pdf"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "University-Industry-Government Innovation Models"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W2995852980"
+    },
+    {
+      "openalex_id": "W2260090591",
+      "doi": null,
+      "title": "Pedagogy of the Privileged: Elite Universities and Dialectical Contradictions in the UK.",
+      "authors": [
+        {
+          "name": "Mark Cresswell",
+          "openalex_id": "A5064977643",
+          "orcid": "https://orcid.org/0000-0001-8503-7117"
+        },
+        {
+          "name": "Zulfia Karimova",
+          "openalex_id": "A5050438856"
+        },
+        {
+          "name": "Tom Brock",
+          "openalex_id": "A5033006315",
+          "orcid": "https://orcid.org/0000-0002-0965-0945"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-11-01",
+      "abstract": "This paper considers the role and function of Left academics within \u2018elite\u2019 (i.e. Russell Group) universities within the UK. Deploying Marxist theory and critical realism, it analyses the \u2018dialectical contradictions\u2019 experienced in such a role and reflects upon productive strategies for resisting the hegemony of neo-liberalism within those milieus",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "e-space (Manchester Metropolitan University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://e-space.mmu.ac.uk/592858/1/11-4-02.pdf"
+      },
+      "topics": [
+        "Housing, Finance, and Neoliberalism",
+        "Political and Economic history of UK and US",
+        "Elite Sociology and Global Capitalism"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2260090591"
+    },
+    {
+      "openalex_id": "W641321638",
+      "doi": "10.22215/etd/2005-06277",
+      "title": "Modernity, social movements and democracy: feminist movements in post-1980 turkey",
+      "authors": [
+        {
+          "name": "Marella Bodur \u00dcn",
+          "openalex_id": "A5007398491",
+          "orcid": "https://orcid.org/0000-0001-6828-3690"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "lnternet, preter, distribuer et vendre des theses partout dans le monde, a des fins commerciales ou autres, sur support microforme, papier, electronique et/ou autres formats.",
+      "cited_by_count": 3,
+      "type": "dissertation",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://repository.library.carleton.ca/downloads/0k225b53m"
+      },
+      "topics": [
+        "Turkey's Politics and Society",
+        "Gender Politics and Representation",
+        "Jewish and Middle Eastern Studies"
+      ],
+      "referenced_works_count": 236,
+      "url": "https://openalex.org/W641321638"
+    },
+    {
+      "openalex_id": "W805317529",
+      "doi": null,
+      "title": "The Odyssey of Instrumental Rationality: Confronting the Englightenment's Interior Other",
+      "authors": [
+        {
+          "name": "Donncha Kavanagh",
+          "openalex_id": "A5089140283",
+          "orcid": "https://orcid.org/0000-0002-7718-2303",
+          "institutions": [
+            "University College Cork"
+          ]
+        },
+        {
+          "name": "Carmen Kuhling",
+          "openalex_id": "A5055156201",
+          "institutions": [
+            "University of Limerick"
+          ]
+        },
+        {
+          "name": "Kieran Keohane",
+          "openalex_id": "A5022274871",
+          "orcid": "https://orcid.org/0000-0003-2792-5479",
+          "institutions": [
+            "University College Cork"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "In this paper we advocate and demonstrate the value of science fiction as a potent way of \u2018practicalising philosophy.\u2019 Science fiction narratives provide an ideal-typical setting through which theory can be represented, clarified and developed. They also help us link the abstraction of theory and the messiness of practice, while partly side-stepping the enigma whereby any study of the empirical world may merely reflect back the particular ontologies and epistemologies that constitute that world. In particular, we claim that the television series Star Trek provides a powerful metaphor for understanding and teaching certain themes regarding modernity, including the possibility of universal progress through economic expansion (capitalism, colonialism), technological development (industrialism, positivism), and the possibilities for universal emancipation (democracy). We especially focus on the Borg Collective, a form of life that has become one of the most enduring and critical mirrors that Star Trek has held up to contemporary society, and which can be usefully understood as a metaphor for the dark side of instrumental rationality. The paper draws on the various encounters between the Enterprise and the Borg to illustrate and engage with the diverse writings of Weber, the Frankfurt School, Habermas, Foucault, and Haraway on modernity\u2019s continuing and ambivalent struggle with instrumental rationality.",
+      "cited_by_count": 1,
+      "type": "book-chapter",
+      "source": {
+        "name": "Research Repository UCD (University College Dublin)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10197/5857"
+      },
+      "topics": [
+        "Psychoanalysis, Philosophy, and Politics",
+        "Critical Theory and Philosophy",
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W805317529"
+    },
+    {
+      "openalex_id": "W2768052939",
+      "doi": "10.1186/s40728-017-0043-8",
+      "title": "Open Science, Bandung and Ezekiel: crafting a transnational knowledge space towards the brave new world",
+      "authors": [
+        {
+          "name": "Pak Nung Wong",
+          "openalex_id": "A5042576426",
+          "orcid": "https://orcid.org/0000-0003-0657-2715",
+          "institutions": [
+            "English and Foreign Languages University",
+            "Clave (Brazil)",
+            "University of Bath"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-07",
+      "abstract": "To explore a new de-colonial option for the global future, this article grapples with three movements of our time: the \u2018Open Science\u2019 movement, the 1955 African-Asian conference and the Non-Aligned Movement, and the post-exilic prophetic movement of the Abrahamic religions. It explores an alternative intellectual project which will facilitate new research agendas and publication directions that will simultaneously speaks to the three wider audience of the present-day world: the sciences, the Global South and the Abrahamic religious traditions. My objective is to delineate a theological, geopolitical and anthropological exposition as an ethical anchorage for the present Bandung project to steadily move towards the Open Science era. I will argue for Ezekiel\u2019s prophetic model as a plausible de-colonial option for crafting the transnational open knowledge space.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Bandung",
+        "type": "journal",
+        "issn": [
+          "2198-3534",
+          "2590-0013"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://brill.com/downloadpdf/journals/bjgs/4/1/article-p1_6.pdf"
+      },
+      "topics": [
+        "African cultural and philosophical studies",
+        "Christian Theology and Mission",
+        "Religion, Society, and Development"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W2768052939"
+    },
+    {
+      "openalex_id": "W2589337360",
+      "doi": null,
+      "title": "The Ends of Union Solidarity: Undocumented Labour and German Trade Unions",
+      "authors": [
+        {
+          "name": "Markus Kip",
+          "openalex_id": "A5008211442",
+          "orcid": "https://orcid.org/0000-0001-9084-6840"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-10",
+      "abstract": "This dissertation focuses on the contested practices of union solidarity with undocumented migrant workers in Germany. Unionists part ways when it comes to the practical meaning of solidarity with workers who lack work permits. To some union members, undocumented migrant workers ought to be included in the bonds of union solidarity by virtue of being workers. To others, undocumented migrant workers are primarily illegal and unfair competitors undermining existing practices and institutions of solidarity. Since 2008, six union centres for undocumented migrant workers called MigrAr (German Migration &amp; Arbeit, English migration &amp; labour) have been established by labour activists. Their institutionalization under the umbrella of German unions continues to arouse controversies among their members.&#13;\\n&#13;\\nThis research builds on an activist ethnography following the Extended Case Method. The researcher is positioned as an activist in the MigrAr centre in Berlin. In a critical encounter with Jrgen Habermas's work, the research charts the significance of instrumental and normative rationalities in union controversies around undocumented labour, since it became a topic two decades ago. The fieldwork shows that activists engagement for expanding union solidarity cannot be properly understood in relation to Habermass account of instrumental and normative rationality alone.&#13;\\n&#13;\\nThe dissertation, moreover, contests Habermas's dismissal of material reproduction, especially in relation to work and citizenship, as significant for the development of solidarity. Contrary to Habermas's premise of symmetrical reciprocity in his notion of solidarity, this research demonstrates that activists understand their own practice as being premised on conditions of asymmetry. Differences pertain among activists, as to whether this requires holding on to established labour standards and union procedures, or whether specific measures are required to practice union solidarity under the condition of undocumented workers legal, economic, and social vulnerabilities. Affirming the latter approach, activists in the Berlin centre encounter multiple obstacles to implement it in union organizations as the ethnography details. Drawing on participant observations and interviews, I argue that the activist practice of solidarity is motivated by what I call political imagination; the ability to imagine activist practices as a contribution towards realizing an alternative form of union solidarity.",
+      "cited_by_count": 1,
+      "type": "book",
+      "source": {
+        "name": "YorkSpace (York University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10315/32243"
+      },
+      "topics": [
+        "Labor Movements and Unions",
+        "Social Policy and Reform Studies",
+        "European Union Policy and Governance"
+      ],
+      "referenced_works_count": 142,
+      "url": "https://openalex.org/W2589337360"
+    },
+    {
+      "openalex_id": "W2996672193",
+      "doi": "10.24204/ejpr.v11i4.2834",
+      "title": "Jurgen Habermas' turn to a \"post-secular society\": from sublation of the sacred to translation of the sacred",
+      "authors": [
+        {
+          "name": "Adrian Nicolae Atanasescu",
+          "openalex_id": "A5018762395",
+          "institutions": [
+            "University of Toronto"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-20",
+      "abstract": "In this article I place Jurgen Habermas' recent turn to a \"post-secular society\" in the context of his previous defence of a \"postmetaphysical\" view of modernity. My argument is that the concept of \"postsecular\" introduces significant normative tensions for the formal and pragmatic view of reason defended by Habermas in previous work. In particular, the turn to a \"post-secular society\" threatens the evolutionary narrative that Habermas (following Weber) espoused in The Theory of Communicative Action (1981, 1987), The Philosophical Discourse of Modernity (1990) or Postmetaphysical Thinking (1992), according to which modern \"communicative\" reason dialecticlly supersedes religion. If this narrative is undermined, I argue, the claim to universality of \"communicative\" reason is also undermined. Thus, the benefits Habermas seeks to obtain from translation of religion are offset by a destabilization of tenets central to a \"postmetaphysical\" view of modernity.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "European Journal for Philosophy of Religion",
+        "type": "journal",
+        "issn": [
+          "1689-8311"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://philosophy-of-religion.eu/index.php/ejpr/article/download/2834/2453"
+      },
+      "topics": [
+        "Karl Barth and Christian Theology",
+        "Religion and Society Interactions",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W2996672193"
+    },
+    {
+      "openalex_id": "W4414306232",
+      "doi": "10.3389/feduc.2025.1645119",
+      "title": "The velvet cage of reform: neoliberal discourses in Qatari education policy",
+      "authors": [
+        {
+          "name": "Abdellatif Sellami",
+          "openalex_id": "A5086403050",
+          "orcid": "https://orcid.org/0000-0002-0357-8217",
+          "institutions": [
+            "Qatar University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-09-18",
+      "abstract": "This study employs Critical Discourse Analysis to examine how neoliberal rationalities are constructed and disseminated through Qatari education policy discourse. Drawing on a corpus of policy documents published between 2005 and 2025, the analysis identifies dominant themes of marketization, accountability, and global benchmarking. These discourses frame education primarily as an instrument of economic development, downplaying issues related to equity, inclusion, and alternative epistemologies. Evidence points to a hybrid policy logic: Qatari reforms simultaneously align with global neoliberal trends while selectively integrating national cultural references to secure public legitimacy. Anchored in the strategic goals of Qatar National Vision 2030, these reforms prioritize internationalization, performance-based governance, and labor market labor market responsiveness. However, the extent to which such reforms are shaped by neoliberal rationalities remains under-examined. This study critically interrogates how language constructs reform narratives, positions stakeholders, and legitimizes market-oriented governance. Findings reveal the dominance of technocratic discourses that privilege efficiency, standardization, and performativity, at the expense of educational justice and democratic participation. The analysis also exposes discursive tensions between global competitiveness and national identity, raising questions about the localization of transnational policy scripts in Qatar and the broader Gulf context. By foregrounding the ideological work of discourse, this study contributes to critical policy sociology and the global education reform literature, illuminating how neoliberalism operates not only through policy content but through the linguistic and epistemic structures that sustain it.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Education",
+        "type": "journal",
+        "issn": [
+          "2504-284X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2025.1645119/pdf"
+      },
+      "topics": [
+        "Global Educational Policies and Reforms",
+        "Global Education and Multiculturalism",
+        "Higher Education Governance and Development"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W4414306232"
+    },
+    {
+      "openalex_id": "W393992606",
+      "doi": null,
+      "title": "LEADERSHIP CHALLENGES IN CANADIAN HEALTH CARE: EXPLORING EXEMPLARY PROFESSIONALISM UNDER THE MALAISE OF MODERNITY",
+      "authors": [
+        {
+          "name": "Mary Louise Harrigan",
+          "openalex_id": "A5021938039"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "This thesis explores the nature of leadership within the health professions and the influences upon them of the \"malaise of modernity.\" In order to address this question, significant aspects of the following are dealt with: moral and political philosophy, the influences of modernity, professionalism, the moral community, the communitarian ethic, leadership theories and organizational culture. Primarily a theoretical essay, this project uses a broad range of writings from classical and contemporary scholars. The objective of the thesis is to develop a model for contemporary health care leadership. Philosophical political frameworks and sociological images are examined to understand the complex multidimensional concept of modernity as it significantly affects all areas of society, not the least of which is health care. The predicaments that arise from the \"malaise,\" such as bureaucratization, alienation, commodification and commercialization, provide a significant backdrop for further discussions of implications for professions and leadership. An exploration of moral philosophy demonstrates that the work of Plato and Aristotle still informs contemporary scholarship on health care values and professional practice. Discussions of the quest for the good, virtue and ethical theories relate to views of professionalism and current challenges. A critique of leadership theories concludes that there is a need for further development of an alternative framework to support the practice of ethical leadership within health care. Documentary cases, the Report of the Royal Commission, Building on Values: The Future of Health Care in Canada, and the Dr. Nancy Olivieri case illustrate these current issues of leadership, professionalism and policy development. Throughout the thesis, the discussion of the foundations and challenges of educational leadership draws upon personal interviews with exemplary leaders. They join the dialogue with classical philosophers and such contemporary scholars as Charles Taylor, Alasdair Maclntyre and James MacGregor Burns. The thesis concludes with a model for leadership, in response to the central inquiry of this project. The model establishes elements necessary for developing excellence in leadership in the 21'' century to guide professional practice and health care reform in the midst of the malaise.",
+      "cited_by_count": 3,
+      "type": "dissertation",
+      "source": {
+        "name": "Summit (Simon Fraser University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://summit.sfu.ca/item/10222"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics and Legal Issues in Pediatric Healthcare",
+        "Patient Dignity and Privacy"
+      ],
+      "referenced_works_count": 148,
+      "url": "https://openalex.org/W393992606"
+    },
+    {
+      "openalex_id": "W2959973574",
+      "doi": null,
+      "title": "Conceptualizing natural resource and environmental management as deliberative democratic practice: land use planning on the east side of Lake Winnipeg, Manitoba, 2000-2013",
+      "authors": [
+        {
+          "name": "Glen Hostetler",
+          "openalex_id": "A5078219498"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "This research was motivated by the observed need for natural resource and environmental management (NREM) that, contrary to much of our experience, can reliably serve as democratically legitimate governance directing us towards outcomes that are socially, economically, and ecologically just \u2013 i.e. that are sustainable. NREM has become increasingly participatory and deliberative, which is argued to facilitate learning and lead to improved outcomes, and I sought to ground these approaches within a model of democracy. Based on an exploration of literature on deliberative democracy, particularly that of Jurgen Habermas, participatory NREM, and green political theory, I developed a conceptual framework for deliberative democratic NREM. Following this theoretical work, I conducted a case study of two successive NREM processes on the east side of Lake Winnipeg, Manitoba \u2013 the East Side Planning Initiative that ran from 2000-2004, and the Wabanong Nakaygum Okimawin that succeeded it from 2004-2013. Using document reviews and interviews with participants, these processes were described and discussion was structured around four themes. Three represented the primary dimensions of my conceptual framework \u2013 NREM internal discourse and organization, relations with political-administrative systems, and relations with public discourses \u2013 and the fourth related to Indigenous self-government and title to traditional territories, which emerged strongly in the research. This analysis was then used to refine my conceptual framework. Three key conclusions were drawn from the research. First, that the nature and means of political systems\u2019 steering of NREM processes needs to be made explicit as part of their basic description. This enables potential participants to make informed choices, facilitates accountability and public oversight, and encourages governments to minimize political interference. Second, NREM processes should be mandated to actively provide accessible feedback from their internal deliberations to public discourses. This supports sound learning within society and strengthens democratic capacity. And finally, in the interests of justice and reconciliation, NREM addressed to Indigenous communities and traditional territories ought to recognize their right to self-government, engage Indigenous governments alongside provincial and federal ones, and, in the absence of self-government or land claims agreements, acknowledge jurisdiction over traditional territories as shared or at the least as contested.",
+      "cited_by_count": 1,
+      "type": "dissertation",
+      "source": {
+        "name": "Mspace (University of Manitoba)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1993/32987"
+      },
+      "topics": [
+        "Indigenous Studies and Ecology",
+        "American Environmental and Regional History",
+        "French Urban and Social Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2959973574"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

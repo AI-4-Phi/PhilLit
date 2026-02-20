@@ -1,0 +1,448 @@
+[s2_search.py] Searching Semantic Scholar: 'Habermas Philosophical Discourse Modernity twelve lectures' (year=1985-1990), limit=20
+[s2_search.py] Retrieved 17/17 papers...
+[s2_search.py] Search complete: 17 papers found
+[s2_search.py] Cached results (cache key: s2_ec6355615cf9037d)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Habermas Philosophical Discourse Modernity twelve lectures",
+  "results": [
+    {
+      "paperId": "07a9b26ba2af793886a231b4d015956c69c99c38",
+      "title": "The Philosophical Discourse of Modernity: Twelve Lectures",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 1081,
+      "doi": "10.2307/2072653",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07a9b26ba2af793886a231b4d015956c69c99c38",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2fbf04e51eae1fdf7d9f9025e39d8b0c1beae5c1",
+      "title": "Postmodernism and the Aesthetic Turn@@@The Philosophical Discourse of Modernity: Twelve Lectures@@@The Ideologies of Theory: Essays, 1971-1986@@@Contingency, Irony, and Solidarity",
+      "authors": [
+        {
+          "name": "R. Shusterman",
+          "authorId": "39106838"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Frederick P. Lawrence",
+          "authorId": "145352286"
+        },
+        {
+          "name": "F. Jameson",
+          "authorId": "50719416"
+        },
+        {
+          "name": "R. Rorty",
+          "authorId": "46213881"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.2307/1772906",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2fbf04e51eae1fdf7d9f9025e39d8b0c1beae5c1",
+      "venue": "",
+      "journal": {
+        "name": "Poetics Today",
+        "pages": "605",
+        "volume": "10"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7a19a85f62276cb4074574725ce6860461728f99",
+      "title": "The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 1949,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7a19a85f62276cb4074574725ce6860461728f99",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5449a876e10810a266f67acc80198b47d6519283",
+      "title": "The philosophical discourse of modernity: Twelve lectures: By J\u00fcrgen Habermas. Translated by Frederick Lawrence. Cambridge, Massachusetts: M.I.T. Press, 1987, 430 pp., $27.50 (cloth).",
+      "authors": [
+        {
+          "name": "David Ashley",
+          "authorId": "115652795"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": "10.1016/0362-3319(89)90011-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5449a876e10810a266f67acc80198b47d6519283",
+      "venue": "",
+      "journal": {
+        "name": "Social Science Journal",
+        "pages": "485-489",
+        "volume": "26"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1d589471e7e87e10603555423933d2c95173af87",
+      "title": "Book Reviews: Selwyn Lloyd, Losing from the Inside: The Cost of Conflict in the British Social Democratic Party, The Philosophical Discourse of Modernity: Twelve Lectures, What is to Be Done, A History of Russian Thought: From the Enlightenment to Marxism",
+      "authors": [
+        {
+          "name": "Boyd-Carpenter",
+          "authorId": "1785381640"
+        },
+        {
+          "name": "Charles A. Kennedy",
+          "authorId": "32325924"
+        },
+        {
+          "name": "B. Parekh",
+          "authorId": "48486478"
+        },
+        {
+          "name": "Neil Harding",
+          "authorId": "118024916"
+        },
+        {
+          "name": "A. Shtromas",
+          "authorId": "114781863"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1111/j.1467-9248.1989.tb00285.x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1d589471e7e87e10603555423933d2c95173af87",
+      "venue": "",
+      "journal": {
+        "name": "Political Studies",
+        "pages": "472 - 477",
+        "volume": "37"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e04120fcb7d68da0e8b95796d22fc3f7d081774b",
+      "title": "Habermas' Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "P. U. Hohendahl",
+          "authorId": "103981131"
+        }
+      ],
+      "year": 1986,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.3817/0986069049",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e04120fcb7d68da0e8b95796d22fc3f7d081774b",
+      "venue": "T\u00e9los",
+      "journal": {
+        "name": "Telos",
+        "pages": "49 - 65",
+        "volume": "1986"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "31127a43e2a9c47ed40190ed8331a21031cf0556",
+      "title": "The Philosophical Discourse of the Modern Age. Twelve Lectures",
+      "authors": [
+        {
+          "name": "Otto P\u00f6ggeler",
+          "authorId": "114297399"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.5840/philhist1988212131",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/31127a43e2a9c47ed40190ed8331a21031cf0556",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bf0b18477691ff75b276b4a6ecf5b18eccc9a4d5",
+      "title": "The Discourse of Modernity : Hegel, Nietzsche, Heidegger (and Habermas) in Symposium on J\u00fcrgen Habermas's The Philosophical Discourse of Modernity .",
+      "authors": [
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bf0b18477691ff75b276b4a6ecf5b18eccc9a4d5",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "377-406",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1e93e8d6d43a2b6acbe3398868921b31d41a123b",
+      "title": "Review Articles : The Redemption of Modernity J\u00fcrgen Habermas, The Philosophical Discourse of Modernity (Cambridge, Polity, 1987); John F. Rundell, origins of Modernity: The Origins of Modern Social Theory from Kant to Hegel to Marx (Cambridge, Polity Press, 1987)",
+      "authors": [
+        {
+          "name": "C. Pierson",
+          "authorId": "145575303"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/072551369002500109",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1e93e8d6d43a2b6acbe3398868921b31d41a123b",
+      "venue": "",
+      "journal": {
+        "name": "Thesis Eleven",
+        "pages": "122 - 132",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "23c914ec09ac4082c2affcdc687aaa8a497a4ca9",
+      "title": "J\u00fcrgen Habermas, The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "B. Allen",
+          "authorId": "73600802"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 10,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/23c914ec09ac4082c2affcdc687aaa8a497a4ca9",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy in review",
+        "pages": "402-405",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e3362af79134280d1e74f20124b1f90cc590b678",
+      "title": "Habermas's Complaint@@@The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "J. Rajchman",
+          "authorId": "93976363"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Frederick P. Lawrence",
+          "authorId": "145352286"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.2307/488101",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e3362af79134280d1e74f20124b1f90cc590b678",
+      "venue": "",
+      "journal": {
+        "name": "New German Critique",
+        "pages": "163",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8fcc0a00100b9508623dde28c1481a3eb93f9e30",
+      "title": "The Philosophical Discourse of Modernity: Habermas's Postmodern Adventure@@@The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "George A. Trey",
+          "authorId": "48406663"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.2307/465411",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8fcc0a00100b9508623dde28c1481a3eb93f9e30",
+      "venue": "",
+      "journal": {
+        "name": "Diacritics",
+        "pages": "66",
+        "volume": "19"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "31dc1e11ece2fc0835a9c66786a5ee8621bea6ec",
+      "title": "Habermas on Modernity and Postmodernism",
+      "authors": [
+        {
+          "name": "Guenter Zoeller",
+          "authorId": "2069921931"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.17077/0021-065X.3683",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/31dc1e11ece2fc0835a9c66786a5ee8621bea6ec",
+      "venue": "",
+      "journal": {
+        "name": "The Iowa Review",
+        "pages": "151-156",
+        "volume": "18"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "58da55b63bd2d49c8652d2215983c11d6215c129",
+      "title": "On Misunderstanding Habermas: A Response to Rajchman",
+      "authors": [
+        {
+          "name": "R. Wolin",
+          "authorId": "46344218"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.2307/488378",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/58da55b63bd2d49c8652d2215983c11d6215c129",
+      "venue": "",
+      "journal": {
+        "name": "New German Critique",
+        "pages": "139",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1a9c7128ca8dc23a5661ab2b85619544e3b7b815",
+      "title": "Habermas Confronts the Deconstructionist Challenge",
+      "authors": [
+        {
+          "name": "I. Angus",
+          "authorId": "80154223"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1a9c7128ca8dc23a5661ab2b85619544e3b7b815",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "deb2cb096246489c783db4673408b8c92df31393",
+      "title": "FRANKFURTER AND FRENCH FRIES: BETWEEN MODERNITY AND MODERNISM",
+      "authors": [
+        {
+          "name": "J. Bernstein",
+          "authorId": "65750752"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1111/J.1467-8365.1988.TB00330.X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/deb2cb096246489c783db4673408b8c92df31393",
+      "venue": "",
+      "journal": {
+        "name": "Art History",
+        "pages": "586-590",
+        "volume": "11"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "34480aa22685ea46f157103c023c5ee49b700362",
+      "title": "Book Reviews : Paul Rabinow and William M. Sullivan (eds.), Interpretive Social Science: A Second Look. Berkely, CA: University of California Press, 1988, pp. viii, 395, $ 40.00 (cloth), $ 11.95 (paper)",
+      "authors": [
+        {
+          "name": "Joseph E. Behar",
+          "authorId": "70075659"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/002071529003100126",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/34480aa22685ea46f157103c023c5ee49b700362",
+      "venue": "",
+      "journal": {
+        "name": "International Journal of Comparative Sociology",
+        "pages": "129 - 130",
+        "volume": "31"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 17,
+  "errors": []
+}

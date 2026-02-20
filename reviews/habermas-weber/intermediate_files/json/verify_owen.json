@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Between Reason and History: Habermas and the Idea of Progress",
+    "author": "Owen",
+    "year": 2002
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1353/book4544",
+      "title": "Between Reason and History: Habermas and the Idea of Progress",
+      "authors": [
+        {
+          "family": "Owen",
+          "given": "David"
+        }
+      ],
+      "editors": [],
+      "year": 2002,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "State University of New York Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1353/book4544",
+      "score": 64.29088
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

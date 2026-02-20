@@ -1,0 +1,127 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Habermas Dialectic Reason Ingram",
+  "results": [
+    {
+      "paperId": "eec83bdcca719df58b1dcc301763ba1e5c9a010f",
+      "title": "Habermas and the Dialectic of Reason",
+      "authors": [
+        {
+          "name": "D. Ingram",
+          "authorId": "145548493"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": "10.2307/2070645",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eec83bdcca719df58b1dcc301763ba1e5c9a010f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "259bb2166c0d06163d74f005d22ddb4899a26332",
+      "title": "Differentiated Reason and Derationalized Science",
+      "authors": [
+        {
+          "name": "S. Wells",
+          "authorId": "48834993"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/259bb2166c0d06163d74f005d22ddb4899a26332",
+      "venue": "",
+      "journal": {
+        "name": "Criticism",
+        "pages": "5",
+        "volume": "29"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d86fe6b738164b73176afe597204b3178da2cbd7",
+      "title": "Epistemology and Exchange: Marx, Nietzsche, and Critical Theory",
+      "authors": [
+        {
+          "name": "Nancy S. Love",
+          "authorId": "108791549"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.2307/488276",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d86fe6b738164b73176afe597204b3178da2cbd7",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6c7b311d1f9873642eac4a20b525bc75663c7cd5",
+      "title": "Book reviews",
+      "authors": [
+        {
+          "name": "S. Lash",
+          "authorId": "143966007"
+        },
+        {
+          "name": "L. Birken",
+          "authorId": "117249960"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/BF00135699",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6c7b311d1f9873642eac4a20b525bc75663c7cd5",
+      "venue": "",
+      "journal": {
+        "name": "Theory and Society",
+        "pages": "305-312",
+        "volume": "16"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a8a3068062c60b291e0638575b1f0bb117ea1e3d",
+      "title": "Hans Albert and the Unfinished Enlightenment",
+      "authors": [
+        {
+          "name": "C. Alford",
+          "authorId": "49531095"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/004839318701700401",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a8a3068062c60b291e0638575b1f0bb117ea1e3d",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy of the Social Sciences",
+        "pages": "453 - 469",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

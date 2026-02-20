@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.36383/diskursus.v19i2.443"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.36383/diskursus.v19i2.443",
+      "title": "A Critical Inquiry into J\u00fcrgen Habermas\u2019 Hermeneutical Reflection as a Methodology of Social Science",
+      "authors": [
+        {
+          "family": "Shahwirman",
+          "given": "Tizar"
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "DISKURSUS - JURNAL FILSAFAT DAN TEOLOGI STF DRIYARKARA",
+      "volume": "19",
+      "issue": "2",
+      "page": "257-291",
+      "publisher": "Sekolah Tinggi Filsafat Driyarkara",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.36383/diskursus.v19i2.443"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

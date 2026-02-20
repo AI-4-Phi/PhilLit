@@ -1,0 +1,858 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Habermas Weber secondary literature review",
+  "results": [
+    {
+      "paperId": "8af90a7a678498d791e40c3ac7b5cdfabc9cc29a",
+      "title": "A systematic literature review of project-based learning in secondary school physics: theoretical foundations, design principles, and implementation strategies",
+      "authors": [
+        {
+          "name": "Fathiya Al-Kamzari",
+          "authorId": "2287619779"
+        },
+        {
+          "name": "Norlidah Alias",
+          "authorId": "34895732"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Project-Based Learning (PjBL) is a widely recognized pedagogical approach that has gained popularity for its capacity to enhance students\u2019 critical thinking, creativity, collaboration, and communication skills. PjBL is characterized by its incorporation of key elements and teaching practices that support and facilitate these outcomes. Despite its increasing use, there remains a limited comprehensive understanding of PjBL\u2019s theoretical foundations, design principles, and implementation in secondary school physics education. This study employed a systematic literature review (SLR) to investigate these aspects within this educational setting. Following the PRISMA 2020 checklist, the review analyzed papers sourced from Scopus and Web of Science. The examination of 27 SLR records indicated that 85% of the studies (23) did not address the theoretical foundations of PjBL. Approximately 48% of the studies (13) incorporated all seven core elements of PjBL. Critique and revision were present in 55.6% of the studies (15), while 29.6% (8) did not include student voice and choice. Additionally, 37% of the studies (10) applied all recommended PjBL teaching practices, with consistent implementation observed in designing and planning, managing activities, and scaffolding student learning. About 96% of the studies (26) utilized various assessment tools throughout the PjBL process, but only 37% (10) included the development of a supportive culture as part of the PjBL strategy. Moreover, 74% of the studies (20) were conducted in face-to-face settings. The implications of this study highlight the potential of PjBL to improve student engagement, curiosity, creativity, critical thinking, and scientific skills in secondary school physics. By developing effective PjBL frameworks and integrating advanced technologies, educators can enhance learning outcomes and conceptual understanding. In light of the global shift towards blended learning due to the COVID-19 pandemic, the review suggests that future applications of PjBL should incorporate blended learning strategies to improve effectiveness.",
+      "citationCount": 33,
+      "doi": "10.1057/s41599-025-04579-4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8af90a7a678498d791e40c3ac7b5cdfabc9cc29a",
+      "venue": "Humanities and Social Sciences Communications",
+      "journal": {
+        "name": "Humanities and Social Sciences Communications",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c6275acf5f5e9e3e8ebabf2e0f044e314569562d",
+      "title": "E-learning technologies at the secondary education level: literature review",
+      "authors": [
+        {
+          "name": "Sebasti\u00e1n Cardona-Acevedo",
+          "authorId": "2197299665"
+        },
+        {
+          "name": "Erica Agudelo-Ceballos",
+          "authorId": "2293535291"
+        },
+        {
+          "name": "Jorge Tom\u00e1s Cumpa V\u00e1squez",
+          "authorId": "2342093291"
+        },
+        {
+          "name": "Ezequiel Mart\u00ednez Rojas",
+          "authorId": "2376973741"
+        },
+        {
+          "name": "Alejandro Valencia-Arias",
+          "authorId": "2284257690"
+        },
+        {
+          "name": "Jes\u00fas Alberto Jim\u00e9nez Garc\u00eda",
+          "authorId": "2338450709"
+        },
+        {
+          "name": "M. Benjumea-Arias",
+          "authorId": "2096188424"
+        }
+      ],
+      "year": 2025,
+      "abstract": "E-Learning Technologies play an integral role in secondary education, providing flexible and personalized learning environments through online platforms, mobile applications, and interactive resources. These tools have transformed access to knowledge and participation in the educational process, promoting autonomy and self-directed learning. However, significant gaps in research remain, underscoring the necessity for bibliometric analysis to address these gaps. The objective is to examine the current research trends on this topic.A bibliometric analysis was conducted in accordance with the PRISMA-2020 guidelines, using the Scopus and Web of Science databases.The results demonstrate that the years of greatest interest are 2022 and 2021, with a notable increase in the number of publications. The principal references include the work of Hwang and the journal Sage Open. Thematic evolution has progressed from virtual environments to encompass a range of subjects, including the Coronavirus (COVID-19), physical education, training, and motivation. The primary cluster encompasses terms such as \u201cIntellectual Disability\u201d and \u201cStudents.\u201d The most prevalent keywords are related to the ongoing pandemic, including \u201cCOVID-19,\u201d \u201cmotivation,\u201d and \u201cphysical education.\u201dAdditionally, the emergence of new concepts such as \u201ccommunication\u201d and \u201ceffectiveness\u201d is noteworthy. These trends underscore the necessity for a research agenda that prioritizes a more profound examination of these pivotal topics and the rectification of existing deficiencies in the existing literature.",
+      "citationCount": 10,
+      "doi": "10.3389/feduc.2025.1539763",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c6275acf5f5e9e3e8ebabf2e0f044e314569562d",
+      "venue": "Frontiers in Education",
+      "journal": {
+        "name": "Frontiers in Education"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "16384263f6ea6b67efef56659e6779d908c0b2ac",
+      "title": "Literature Review of Prognostic Factors in Secondary Generalized Peritonitis",
+      "authors": [
+        {
+          "name": "Valerii Lu\u021benco",
+          "authorId": "2279564819"
+        },
+        {
+          "name": "Adrian Beznea",
+          "authorId": "2242712965"
+        },
+        {
+          "name": "R. Mihailov",
+          "authorId": "1573616712"
+        },
+        {
+          "name": "George \u021aocu",
+          "authorId": "2182718802"
+        },
+        {
+          "name": "Verginia Lu\u021benco",
+          "authorId": "2295098307"
+        },
+        {
+          "name": "O. Mihailov",
+          "authorId": "116255180"
+        },
+        {
+          "name": "Mihaela Patriciu",
+          "authorId": "2363768790"
+        },
+        {
+          "name": "Grigore Pascaru",
+          "authorId": "2364446733"
+        },
+        {
+          "name": "Liliana Baroiu",
+          "authorId": "81942660"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Generalized secondary peritonitis is a life-threatening intra-abdominal infection requiring urgent surgical intervention. Despite advances in surgical and antimicrobial therapy, morbidity and mortality remain high. Identifying key prognostic factors is crucial for improving patient outcomes. This review examines significant prognostic indicators and explores the potential role of scoring systems and artificial intelligence in risk stratification. A review was conducted using PubMed, Web of Science, Scopus, and Medline databases. Studies published from 2000 to 2024 focusing on prognostic factors in secondary peritonitis were included. A total of 145 studies were identified, with 40 selected based on relevance and methodological quality. Data extraction included patient demographics, comorbidities, severity scores, microbiological profiles, and artificial intelligence applications in peritonitis management. Poor prognosis was associated with advanced age, severe sepsis, organ failure, chronic kidney disease, cardiovascular comorbidities, and diabetes mellitus. The Mannheim Peritonitis Index (MPI) remains a widely validated prognostic tool, while APACHE II and SOFA scores also provide valuable risk estimates. Increasing multidrug-resistant infections further complicate management and impact outcomes. Emerging evidence suggests that machine learning algorithms may improve early risk stratification and individualized outcome prediction when integrated with conventional scoring systems. Identifying prognostic factors remains essential for optimizing outcomes in secondary peritonitis, and future research should prioritize the clinical validation and integration of AI-based models into perioperative management protocols.",
+      "citationCount": 3,
+      "doi": "10.3390/life15060880",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/16384263f6ea6b67efef56659e6779d908c0b2ac",
+      "venue": "Life",
+      "journal": {
+        "name": "Life",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "82c0aa35ff784ddc48a09453dd453ca89b3bcc4e",
+      "title": "Refugee agency in secondary mobility decision-making: a systematic literature review",
+      "authors": [
+        {
+          "name": "Sinem Kavak",
+          "authorId": "2309558268"
+        },
+        {
+          "name": "Mo Hamza",
+          "authorId": "2309566501"
+        },
+        {
+          "name": "T. Gammeltoft\u2010Hansen",
+          "authorId": "1405484739"
+        },
+        {
+          "name": "Russell A. Stone",
+          "authorId": "2309505330"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Decisions made by millions of refugees about where to go, how to make a living and how to secure a future are fundamental drivers of secondary movements. While a substantial body of literature addresses factors contributing to migrants\u2019 decision-making, a comprehensive understanding of the central role of refugees in secondary mobility decision-making, including agency and strategies employed, remains underexplored. This is partly due to the belief that refugees are constrained by external and structural factors and cannot exercise agency, which we challenge. This article provides a systematic analysis of the literature on refugees\u2019 secondary mobility decision-making processes. Using a systematic literature review (SLR) methodology, it presents an in-depth analysis of 40 peer-reviewed, English-language research articles selected from the Web of Science and Scopus databases published before September 2022. The article critically examines the drivers, prevailing dichotomies and conceptual frameworks surrounding refugee categorization, agency, and mobility. By synthesizing a wide range of literature, our paper presents emerging alternative concepts and frameworks that shed light on the complex dynamics of decision-making.",
+      "citationCount": 6,
+      "doi": "10.3389/fhumd.2024.1376968",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/82c0aa35ff784ddc48a09453dd453ca89b3bcc4e",
+      "venue": "Frontiers in Human Dynamics",
+      "journal": {
+        "name": "Frontiers in Human Dynamics"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "79268abda29f60815262ccb518c160234c87eeef",
+      "title": "Using Serious Games and Digital Games to Improve Students\u2019 Computational Thinking and Programming Skills in K-12 Education: A Systematic Literature Review",
+      "authors": [
+        {
+          "name": "Sindre Wennevold Gundersen",
+          "authorId": "2349692108"
+        },
+        {
+          "name": "Georgios Lampropoulos",
+          "authorId": "2238783429"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Computational thinking and problem-solving skills have become vital for students to develop. Digital games and serious games are increasingly being used in educational settings and present great potential to aid students\u2019 learning. This study aims to explore the role and impact of serious games and digital games on students\u2019 computational thinking and programming skills in primary, secondary, and K-12 education through a systematic review of the existing literature. Four research questions were set to be examined. Following the PRISMA framework, 78 studies deriving from IEEE, Scopus, and Web of Science over the period of 2011\u20132024 are examined. The studies are categorized into Theoretical and Review studies, Proposal and Showcase studies, and Experimental and Case studies. Based on the results, serious games and digital games arose as meaningful educational tools that are positively viewed by education stakeholders and that can effectively support and improve K-12 education students\u2019 computational thinking and programming skills. Among the benefits identified, it was revealed that serious games offer enjoyable and interactive learning experiences that can improve students\u2019 learning performance, engagement, and motivation, enhance students\u2019 confidence and focus, and promote self-regulated learning and personalized learning. Additionally, serious games emerged as an educational means that can effectively support social learning and provide real-time feedback. The challenges identified were related to the selection of games and the game-related design elements, decisions, and approaches. Hence, the study highlights the significance of the design of serious games and the need to cultivate students\u2019 computational thinking, problem-solving, and social skills from a young age. Finally, the study reveals key design principles and aspects to consider when developing serious games and digital games and highlights the need to involve education stakeholders throughout the design and development process.",
+      "citationCount": 12,
+      "doi": "10.3390/technologies13030113",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/79268abda29f60815262ccb518c160234c87eeef",
+      "venue": "Technologies",
+      "journal": {
+        "name": "Technologies"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "66b79bcc7ce97bdd2648be3d2a9f23d5f8d6832d",
+      "title": "The Role of Mathematics in STEM Secondary Classrooms: A Systematic Literature Review",
+      "authors": [
+        {
+          "name": "Jan Just",
+          "authorId": "2066078552"
+        },
+        {
+          "name": "Hans-Stefan Siller",
+          "authorId": "103839300"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Nowadays, science, technology, engineering, and mathematics (STEM) play a critical role in a nation\u2019s global competitiveness and prosperity. Thus, there is a need to educate students in these subjects to meet the current and future demands of personal life and society. While applications, especially in science, engineering, and technology, are directly obvious, mathematics underpins the other STEM disciplines. It is recognized that mathematics is the foundation for all other STEM disciplines; the role of mathematics in classrooms is not clear yet. Therefore, the question arises: What is the current role of mathematics in secondary STEM classrooms? To answer this question, we conducted a systematic literature review based on three publication databases (Web of Science, ERIC, and EBSCO Teacher Referral Center). This literature review paper is intended to contribute to the current state of the role of mathematics in STEM education in secondary classrooms. Through the search, starting with 1910 documents, only 14 eligible documents were found. In these, mathematics is often seen as a minor matter and a means to an end in the eyes of science educators. From this, we conclude that the role of mathematics in the STEM classroom should be further strengthened. Overall, the paper highlights a major research gap, and proposes possible initial solutions to close it.",
+      "citationCount": 36,
+      "doi": "10.3390/educsci12090629",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/66b79bcc7ce97bdd2648be3d2a9f23d5f8d6832d",
+      "venue": "Education sciences",
+      "journal": {
+        "name": "Education Sciences"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d9231df1b70a5cad6bbd5a697c81321bac2732e9",
+      "title": "Use of Medicinal Plants in the Process of Wound Healing: A Literature Review",
+      "authors": [
+        {
+          "name": "Mayra Cedillo-Cortezano",
+          "authorId": "2187535319"
+        },
+        {
+          "name": "L. Martinez-Cuevas",
+          "authorId": "2288661093"
+        },
+        {
+          "name": "Jes\u00fas A. M\u00e1rquez L\u00f3pez",
+          "authorId": "2288879148"
+        },
+        {
+          "name": "Ingrid L. Barrera L\u00f3pez",
+          "authorId": "2288633468"
+        },
+        {
+          "name": "Samantha Escutia-Perez",
+          "authorId": "2288646075"
+        },
+        {
+          "name": "V. Petricevich",
+          "authorId": "5548658"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The literature on the use of medicinal plants in wound healing was comprehensively searched to obtain and assess the data. The data were procured via clinical studies that utilized medicinal plants and their compounds in vitro and in vivo for wound healing. This review collected data from electronic databases, including Google Scholar, PubMed, Science Direct, Web of Science, SciFinder, Thesis, and Scopus, using the search terms \u201cnatural products\u201d, \u201cwound healing\u201d, and \u201cnatural compounds\u201d, along with the keywords \u201cplants\u201d, \u201cextracts\u201d, and \u201cphytochemicals\u201d. Results from the last decade reveal a total of 62 families and 109 genera of medicinal plants, and their compounds have been studied experimentally both in vivo and in vitro and clinically found to effectively promote healing. This activity is related to the presence of secondary metabolites such as flavonoids, alkaloids, saponins, tannins, terpenoids, and phenolic compounds, which act at different stages through different mechanisms to exert anti-inflammatory, antimicrobial, and antioxidant effects, confirming that the use of medicinal plants could be an adequate alternative to current conventional practices for treating wounds.",
+      "citationCount": 81,
+      "doi": "10.3390/ph17030303",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d9231df1b70a5cad6bbd5a697c81321bac2732e9",
+      "venue": "Pharmaceuticals",
+      "journal": {
+        "name": "Pharmaceuticals",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e62ede79f22ffaf15ff281f07be622a0fc49fc1e",
+      "title": "Augmented Reality in Natural Sciences and Biology Teaching: Systematic Literature Review and Meta-Analysis",
+      "authors": [
+        {
+          "name": "Ant\u00f3nio Faria",
+          "authorId": "2317247452"
+        },
+        {
+          "name": "Guilhermina Lobato Miranda",
+          "authorId": "9142367"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This article presents the results of a systematic literature review followed by a meta-analysis of studies on the use of Augmented Reality (AR) in the teaching and learning of Natural Sciences and Biology, among primary and secondary school students. The variables considered were the effects on student learning and motivation, as well as other variables like students understanding and students\u2019 perception of the cognitive load. The teaching contexts and strategies used in association with AR were also considered. The PRISMA methodology was used in articles published between 2010 and 2023, in EBSCO, Science Direct, Scopus, Springer Link, Taylor & Francis and Web of Science databases. Seven hundred and twenty-one articles (721) were found, which, after applying the inclusion and exclusion criteria, were reduced to 15. The results showed that, in most studies, AR associated with certain teaching strategies and using a quasi-experimental research methodology produced better results in learning and student motivation and other variables such as student understanding and memorization (from Bloom's taxonomy), and perception of cognitive load. The overall analysis of the data allowed us to observe a strong effect size value (d = 1.13 [0.39;1.86]) in favour of the experimental group regarding learning and a moderate effect on motivation when using AR (d = 0.52 [0.30;0.74]). The same occurred with other variables studied where students obtained better results, which translated into a small or medium effect size. For example, in the perception of cognitive load, the effect size was d= 0.73.\u00a0Doi: 10.28991/ESJ-2024-08-04-025 Full Text: PDF",
+      "citationCount": 9,
+      "doi": "10.28991/esj-2024-08-04-025",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e62ede79f22ffaf15ff281f07be622a0fc49fc1e",
+      "venue": "Emerging Science Journal",
+      "journal": {
+        "name": "Emerging Science Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "3daaae3e2159b38f1a59840045a4d70f4d5307d3",
+      "title": "Sense of place in geography and environmental education: a literature review of empirical research",
+      "authors": [
+        {
+          "name": "Dominik Rub\u00e1\u0161",
+          "authorId": "2189621627"
+        },
+        {
+          "name": "T. Mat\u011bj\u010dek",
+          "authorId": "100892749"
+        },
+        {
+          "name": "D. \u0158ezn\u00ed\u010dkov\u00e1",
+          "authorId": "2082188811"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract Research on the concept of sense of place (SOP) has become increasingly important in recent years. However, literature is dominated by studies dealing with the concept outside the field of education. Yet its potential for geography and environmental education (GEE) is considerable. The aim of this literature review is to determine how SOP is conceptualised in research, what the focus of the research objectives are, which research methods are used to validate the concept in primary and secondary GEE, and to summarize the main research findings concerning both primary and secondary school students. Fifty relevant studies from two literature databases - Web of Science, and Scopus - were searched and analysed. The results show that students\u2019 SOP is conceptualized predominantly through the sub-concept of place attachment, is examined predominantly through qualitative research methods, and that research has focused on the process of developing and fostering SOP, as well as identifying its potential in specific individuals. Place-based education and environmental education programs are effective in the process of students\u2019 SOP formation. The conceptualization of students\u2019 SOP and its empirical research can contribute to its effective implementation in GEE. This promotes the development of students\u2019 relationship with the environment, which is one of the key aspects in the process of building their geographical and environmental literacy.",
+      "citationCount": 7,
+      "doi": "10.2478/geosc-2024-0003",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3daaae3e2159b38f1a59840045a4d70f4d5307d3",
+      "venue": "GeoScape",
+      "journal": {
+        "name": "GeoScape",
+        "pages": "37 - 52",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "fb22ddfe41fca898478205df307211de2079f136",
+      "title": "A literature review of the effects of social networking sites on secondary school students\u2019 academic achievement",
+      "authors": [
+        {
+          "name": "Melese Astatke",
+          "authorId": "115015542"
+        },
+        {
+          "name": "C. Weng",
+          "authorId": "2099764379"
+        },
+        {
+          "name": "Sufen Chen",
+          "authorId": "2111236990"
+        }
+      ],
+      "year": 2021,
+      "abstract": "ABSTRACT Due to COVID- 19 pandemic, schools all over the world have gone from full face-to-face to online lessons. This paper analyzed the influences of social networking sites (SNS) on secondary school students\u2019 academic achievement. The original studies were extracted from the Web of Science database, and the review of the 27 selected journal articles revealed that the use of SNS is both positively and negatively related to secondary school students\u2019 academic achievement. However, it was found that few studies have reported the positive impacts of SNS use on students\u2019 academic achievement. On the contrary, several studies have shown that excessive usage of SNS, inappropriate SNS use, and usage of SNS for other recreational activities instead of educational purposes harmed students\u2019 academic achievement. Factors that mediate (such as internet addiction, intention to cyberbully, and sexually explicit material use) and moderate (such as gender, sleep time, learning environment, time management skill and school day and non-school day behaviors) the SNS-academic achievement link are discussed. These findings have important implications for parents, teachers, educationalists, and counselors who should be aware of the potential for inappropriate and excessive use of SNS by students, and who should develop intervention mechanisms to address the problem.",
+      "citationCount": 42,
+      "doi": "10.1080/10494820.2021.1875002",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb22ddfe41fca898478205df307211de2079f136",
+      "venue": "Interactive Learning Environments",
+      "journal": {
+        "name": "Interactive Learning Environments",
+        "pages": "2153 - 2169",
+        "volume": "31"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "12012265a6523ca398e24ab0efc44c87874d2c51",
+      "title": "Immune thrombocytopenia secondary to tuberculosis: a case and review of literature.",
+      "authors": [
+        {
+          "name": "S. Weber",
+          "authorId": "2070431947"
+        },
+        {
+          "name": "S. B\u00e9lard",
+          "authorId": "2252625677"
+        },
+        {
+          "name": "Shipra Rai",
+          "authorId": "144130819"
+        },
+        {
+          "name": "R. Reddy",
+          "authorId": "4626910"
+        },
+        {
+          "name": "S. Belurkar",
+          "authorId": "27072419"
+        },
+        {
+          "name": "K. Saravu",
+          "authorId": "6872384"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 20,
+      "doi": "10.5588/ijtld.16.0515",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/12012265a6523ca398e24ab0efc44c87874d2c51",
+      "venue": "The International Journal of Tuberculosis and Lung Disease",
+      "journal": {
+        "name": "The international journal of tuberculosis and lung disease : the official journal of the International Union against Tuberculosis and Lung Disease",
+        "pages": "\n          466-470\n        ",
+        "volume": "21 4"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle",
+        "CaseReport"
+      ]
+    },
+    {
+      "paperId": "14993cf1bdd10a0e0f7940f9eefd459c3b2841c4",
+      "title": "Secondary traumatization in criminal justice professions: a literature review",
+      "authors": [
+        {
+          "name": "H. Ko",
+          "authorId": "2150261168"
+        },
+        {
+          "name": "A. Memon",
+          "authorId": "49531664"
+        }
+      ],
+      "year": 2022,
+      "abstract": "ABSTRACT Professionals working in the criminal justice sector are vulnerable to sources of indirect trauma such as the interactions with perpetrators of crime who themselves may be traumatised and exposure to distressing events or graphic material. This systematic review aims to examine the prevalence of this secondary traumatization and related resilience and risk factors among criminal justice professions. After identifying 158 relevant studies within PubMed, Scopus, Web of Science, PsycINFO, and Cochrane, 52 studies were included in this review. Low to moderate levels of secondary traumatization was reported in criminal justice professions. The low prevalence of secondary traumatization may be explained by social desirability and the stigma of mental health issues in these professions. Risk factors (i.e. history of mental illness, work-related trauma, negative coping strategies) predicted secondary traumatization. Support strategies and interventions were moderately effective, however further research and a consensual definition of secondary traumatization is needed, so that organisations may benefit from trauma-informed approaches.",
+      "citationCount": 9,
+      "doi": "10.1080/1068316X.2021.2018444",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/14993cf1bdd10a0e0f7940f9eefd459c3b2841c4",
+      "venue": "Psychology, Crime and Law",
+      "journal": {
+        "name": "Psychology, Crime & Law",
+        "pages": "361 - 385",
+        "volume": "29"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "4dc572b096fc0a1d9213e4c347204cba63d35093",
+      "title": "Effect of Exercise on Secondary Sarcopenia: A Comprehensive Literature Review",
+      "authors": [
+        {
+          "name": "R. Supriya",
+          "authorId": "2091292845"
+        },
+        {
+          "name": "Kumar Purnendu Singh",
+          "authorId": "2240152132"
+        },
+        {
+          "name": "Yang Gao",
+          "authorId": "2145973234"
+        },
+        {
+          "name": "Yaodong Gu",
+          "authorId": "6194112"
+        },
+        {
+          "name": "J. Baker",
+          "authorId": "2142060400"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Simple Summary Sarcopenia is an inevitable component of aging. It is officially recognized as a muscle disease with an ICD-10-MC diagnosis code that can be used to bill for care in some countries. Sarcopenia can be classified into primary or age-related sarcopenia and secondary sarcopenia. The condition is referred to as secondary sarcopenia when any other comorbidities are present in conjunction with aging. Secondary sarcopenia is more prevalent than primary sarcopenia and requires special attention. Exercise interventions may help in our understanding and prevention of sarcopenia with a specific morbidity Glomerular filtration rate that exercise improves muscle mass, quality or physical function in elderly subjects with cancer, type 2 diabetes, kidney diseases and lung diseases. In this review, we summarize recent research that has studied the impact of exercise on patients with secondary sarcopenia, specifically those with one comorbid condition. We did not discover any exercise intervention specifically for subjects with secondary sarcopenia (with one comorbidity). Even though there is a strong argument for using exercise to improve muscle mass, quality or physical function in subjects with cancer, type 2 diabetes, kidney diseases, lung diseases and many more, very few studies have reported baseline sarcopenia assessments. Based on the trials summarized in this review, we may propose but not conclude that resistance, aerobic, balance training or even walking can be useful in subjects with secondary sarcopenia with only one comorbidity due to the limited number of trials. This review is significant because it reveals the need for broad-ranging research initiatives involving secondary sarcopenic patients and highlights a large secondary sarcopenia research gap. Abstract Background: Sarcopenia has been recognized as an inevitable part of aging. However, its severity and the age at which it begins cannot be predicted by age alone. The condition can be categorized into primary or age-related sarcopenia and secondary sarcopenia. Sarcopenia is diagnosed as primary when there are no other specific causes. However, secondary sarcopenia occurs if other factors, including malignancy or organ failure, are evident in addition to aging. The prevalence of secondary sarcopenia is far greater than that of primary sarcopenia and requires special attention. To date, nutrition and exercise have proven to be the best methods to combat this disease. The impact of exercise on subjects suffering from sarcopenia with a specific morbidity is worthy of examination for understanding and prevention. The purpose of this review, therefore, is to summarize recent research that has investigated the impact of exercise in patients with secondary sarcopenia, specifically with one comorbidity. Methods: Pubmed, Web of Science, Embase and Medline databases were searched comprehensively with no date limit for randomized controlled trials. The literature was specifically searched for clinical trials in which subjects were sarcopenic with only one comorbidity participating in an exercise intervention. The most visible comorbidities identified and used in the search were lung disease, kidney disease, heart disease, type 2 diabetes, cancer, neurological diseases, osteoporosis and arthritis. Results: A total of 1752 studies were identified that matched the keywords. After removing duplicates, there were 1317 articles remaining. We extracted 98 articles for full screening. Finally, we included 21 relevant papers that were used in this review. Conclusion: Despite a strong rationale for using exercise to improve muscle mass, quality or physical function in subjects with cancer, type 2 diabetes, kidney disease, lung disease and many more, baseline sarcopenia evaluation has been reported in very few trials. The limited number of studies does not allow us to conclude that exercise can improve sarcopenia in patients with other comorbidities. This review highlights the necessity for wide-ranging research initiatives involving secondary sarcopenic patients.",
+      "citationCount": 28,
+      "doi": "10.3390/biology11010051",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4dc572b096fc0a1d9213e4c347204cba63d35093",
+      "venue": "Biology",
+      "journal": {
+        "name": "Biology",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "195c2fd91c61aeed07682b58add5e1d3ffec5334",
+      "title": "The Impact of Typical School Provision of Physical Education, Physical Activity and Sports on Adolescent Physical Health: A Systematic Literature Review and Meta-Analysis",
+      "authors": [
+        {
+          "name": "Padraic Rocliffe",
+          "authorId": "2183444023"
+        },
+        {
+          "name": "M. A. Tapia-Serrano",
+          "authorId": "1581433520"
+        },
+        {
+          "name": "Luis Garcia-Gonzalez",
+          "authorId": "2280788173"
+        },
+        {
+          "name": "M. Adamakis",
+          "authorId": "26348145"
+        },
+        {
+          "name": "L. Walsh",
+          "authorId": "144008040"
+        },
+        {
+          "name": "Aine Bannon",
+          "authorId": "2223227255"
+        },
+        {
+          "name": "Emily Mulhall",
+          "authorId": "2280788376"
+        },
+        {
+          "name": "Ian Sherwin",
+          "authorId": "2240128840"
+        },
+        {
+          "name": "Brendan T. O\u2019 Keeffe",
+          "authorId": "2128136615"
+        },
+        {
+          "name": "P. Mannix-McNamara",
+          "authorId": "1403848157"
+        },
+        {
+          "name": "C. MacDonncha",
+          "authorId": "152364997"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Typical school provision of physical education, physical activity and sports may impact adolescent physical health. However, systematic literature reviews and meta-analysis have not yet considered this impact. The Web of Science, SPORTDiscus, PsychINFO, ERIC and MEDLINE databases were searched for relevant literature (2000\u20132023) pertaining to adolescents aged 12\u201318 years in secondary schools. Twenty-nine studies met the inclusion criteria, including twenty-three interventions, four cross-sectional and two longitudinal studies. Included studies contributed 268 reported effects on indicators of adolescent obesity, physical fitness, blood pressure and bone health. Fifteen studies were included in the meta-analysis and reported significantly positive effects on indicators of adiposity in experimental groups with minor modifications to typical school provision (g\u2009=\u2009\u2009\u2212\u20090.11 [95% CI\u2009\u2212\u20090.22,\u2009\u2212\u20090.01], p\u2009<\u20090.04, I2\u2009=\u200932.49%), in boys and girls. Subgroup analysis found significantly positive effects for body fat percentage (g\u2009=\u2009\u2009\u2212\u20090.28 [95% CI\u2009\u2212\u20090.49,\u2009\u2212\u20090.06], p\u2009<\u20090.01). Robust examples of best practice in schools include extended days dedicated to physical education weekly (\u2265\u20094 days), integration of theoretical components to physical education, sports field/gymnasium availability and a range of training modalities. Studies without the integration of a minor modification to typical school provision were deemed to have a limited impact on adolescent physical health. Further research that examines the additive impact of school physical activity and sports to supplement physical education is warranted.",
+      "citationCount": 9,
+      "doi": "10.1007/s40894-023-00231-x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/195c2fd91c61aeed07682b58add5e1d3ffec5334",
+      "venue": "Adolescent Research Review",
+      "journal": {
+        "name": "Adolescent Research Review",
+        "pages": "663 - 709",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8e6188d4b0ecd9d3964a648cf7e32449d1a5cf15",
+      "title": "Web-based discussion in teaching and learning organic chemistry: a scoping literature review on its current trends, cognitive, social, and teaching aspects",
+      "authors": [
+        {
+          "name": "Aloys Iyamuremye",
+          "authorId": "2091245424"
+        },
+        {
+          "name": "Froncois Niyongabo Niyonzima",
+          "authorId": "2221265921"
+        },
+        {
+          "name": "Innocent Twagilimana",
+          "authorId": "69861375"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract Web-based discussion tools have emerged as valuable platforms in teaching and learning chemistry. Despite the increasing use of web-based discussion tools, their effectiveness in enhancing cognitive, social, and teaching aspects of organic chemistry remains underexplored. Therefore, this review aims to address the gap by synthesizing relevant literature on these key dimensions. The study adopted a scoping review literature for comprehensively mapping, exploring, and clarifying the existing body of literature. PRISMA was used to extract 57 kinds of literature from electronic databases that are Scopus, ISI, Google Scholar, ERIC, Web of Science, academia, and digital citation. Descriptive statistics was used to analyze current trends and cognitive aspects while thematic analysis was used to analyze social and teaching aspects. The results revealed that web-based discussion tools are predominately used predominantly utilized at the university level (52%) compared to secondary schools (48%) and are more common in developed countries than in least developed ones. Moreover, the study revealed that web-based discussion tools have a positive impact on fostering students\u2019 conceptual understanding and interaction through the proper guidance of teachers. However, some critical issues such as poor internet, quality of discussion, lack of hands-on experience, complexity of molecular structures, and lack of tactile learning were identified as challenges hindering the effective implementation of web-based discussion tools. PUBLIC INTEREST STATEMENT This paper explores how web-based discussions are transforming the teaching and learning of organic chemistry, a subject known for its complexity and challenges. By reviewing current trends, we highlighted the cognitive and social benefits of using digital platforms in education. These online discussions not only encourage students to engage with difficult concepts but also foster collaboration among peers and enhance critical thinking skills. In resource-limited settings, web-based learning offers innovative solutions to improve educational access and quality. Our findings suggest that incorporating technology into chemistry education can create more interactive and effective learning environments, ultimately helping students better understand essential scientific principles. This research underscores the importance of adapting teaching methods to modern technologies, which can benefit both teachers and students.",
+      "citationCount": 6,
+      "doi": "10.1080/2331186X.2024.2431947",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8e6188d4b0ecd9d3964a648cf7e32449d1a5cf15",
+      "venue": "Cogent Education",
+      "journal": {
+        "name": "Cogent Education",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d74e2bc9007fc1f043a592525a179844133c87b0",
+      "title": "AI Technologies in STEAM Education for Students: Systematic Literature Review",
+      "authors": [
+        {
+          "name": "Amirah Al-Zahrani",
+          "authorId": "2318460039"
+        },
+        {
+          "name": "Ibrahim Khalil",
+          "authorId": "2318459767"
+        },
+        {
+          "name": "Bakri M. Awaji",
+          "authorId": "123169323"
+        },
+        {
+          "name": "Mohammed Mohsen",
+          "authorId": "2318457953"
+        }
+      ],
+      "year": 2024,
+      "abstract": "This study aimed to identify trends in the research conducted on Artificial Intelligence (AI), specifically in STEAM education. To this end, a total of 16 articles were reviewed from the Web of Science (WOS) database. The analysis revealed an increase in the number of educational AI studies in 2021 and 2022. Spain and South Korea emerged as the leading countries in implementing AI technologies in STEAM education. Quantitative research methods were predominantly employed in the reviewed articles. Most of the studies focused on primary and secondary students as the target sample. Among the various AI applications, educational robots were found to be the most commonly utilized in STEAM education. The findings of the study demonstrated that AI technologies contribute to the development of thinking skills such as computational and analytical thinking, enhance self-confidence, increase satisfaction and enjoyment among students, and also enhance students' deep understanding. These findings have important implications for teachers, practitioners, and policymakers in making informed decisions regarding the effective integration of AI in STEAM education. Furthermore, it is anticipated that the results obtained in this study will guide future research in this field.",
+      "citationCount": 5,
+      "doi": "10.62754/joe.v3i4.3855",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d74e2bc9007fc1f043a592525a179844133c87b0",
+      "venue": "Journal of Ecohumanism",
+      "journal": {
+        "name": "Journal of Ecohumanism"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "cbcc4afaec67cd4dee475e99146faba7f8596eb9",
+      "title": "Efficacy and safety of biological DMARDs: a systematic literature review informing the 2022 update of the ASAS-EULAR recommendations for the management of axial spondyloarthritis",
+      "authors": [
+        {
+          "name": "C. Webers",
+          "authorId": "12773114"
+        },
+        {
+          "name": "A. Ortolan",
+          "authorId": "49017786"
+        },
+        {
+          "name": "A. Sepriano",
+          "authorId": "5917430"
+        },
+        {
+          "name": "L. Falzon",
+          "authorId": "2103941"
+        },
+        {
+          "name": "X. Baraliakos",
+          "authorId": "2258762393"
+        },
+        {
+          "name": "Robert B. M. Landew\u00e9",
+          "authorId": "2073554796"
+        },
+        {
+          "name": "S. Ramiro",
+          "authorId": "145105625"
+        },
+        {
+          "name": "D. van der Heijde",
+          "authorId": "1753726452"
+        },
+        {
+          "name": "E. Nikiphorou",
+          "authorId": "5184634"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Objective To update the evidence on efficacy and safety of biological disease-modifying antirheumatic drugs (bDMARDs) in patients with axial spondyloarthritis (axSpA) to inform the 2022 update of the Assessment of SpondyloArthritis international Society/European Alliance of Associations for Rheumatology (ASAS-EULAR) recommendations for the management of axSpA. Methods Systematic literature review (2016\u20132021) on efficacy and safety of bDMARDs in axSpA (radiographic axSpA (r-axSpA)/non-radiographic axSpA (nr-axSpA)). Eligible study designs included randomised controlled trials (RCTs), strategy trials and observational studies (the latter only for safety and extra-musculoskeletal manifestations). All relevant efficacy/safety outcomes were included. Results In total, 148 publications were included. Efficacy of golimumab and certolizumab was confirmed. Tumour necrosis factor inhibitor (TNFi) biosimilar-originator equivalence was demonstrated. RCT (n=15) data on efficacy of interleukin-17 inhibitors (IL-17i) demonstrated clinically relevant effects (risk ratio vs placebo to achieve ASAS40 response 1.3\u201315.3 (r-axSpA, n=9), 1.4\u20132.1 (nr-axSpA, n=2)). Efficacy of secukinumab/ixekizumab was demonstrated in TNFi-na\u00efve and TNFi-inadequate responders. IL-23 and IL-12/23 inhibitors (risankizumab/ustekinumab) failed to show relevant benefits. Tapering of TNFi by spacing was non-inferior to standard-dose treatment. The first axSpA treat-to-target trial did not meet its primary endpoint, but showed improvements in secondary outcomes. No new risks were identified with TNFi use in observational studies (data lacking for IL-17i). Secukinumab (n=1) and etanercept (n=2) were associated with increased risk of uveitis in observational studies compared to monoclonal TNFi. Conclusions New evidence supports the efficacy and safety of TNFi (originators/biosimilars) and IL-17i in r-axSpA and nr-axSpA, while IL-23i failed to show relevant effects. Observational studies are needed to confirm long-term IL-17i safety. PROSPERO registration number CRD42021257588",
+      "citationCount": 87,
+      "doi": "10.1136/ard-2022-223298",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cbcc4afaec67cd4dee475e99146faba7f8596eb9",
+      "venue": "Annals of the Rheumatic Diseases",
+      "journal": {
+        "name": "Annals of the Rheumatic Diseases",
+        "pages": "130 - 141",
+        "volume": "82"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1ffbfb42e417b67962c51c8d89f98a9a437924f1",
+      "title": "Mental health-related telemedicine interventions for pregnant women and new mothers: a systematic literature review",
+      "authors": [
+        {
+          "name": "U. Stentzel",
+          "authorId": "7800008"
+        },
+        {
+          "name": "H. Grabe",
+          "authorId": "2115760036"
+        },
+        {
+          "name": "S. Schmidt",
+          "authorId": "1421890998"
+        },
+        {
+          "name": "S. Tomczyk",
+          "authorId": "1380149764"
+        },
+        {
+          "name": "Neeltje van den Berg",
+          "authorId": "144256682"
+        },
+        {
+          "name": "A. Beyer",
+          "authorId": "14461906"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Background Pregnancy and the postpartum period are times when women are at increased risk for depression and mental problems. This may also negatively affect the foetus. Thus, there is a need for interventions with low-threshold access and care. Telemedicine interventions are a promising approach to address these issues. This systematic literature review examined the efficacy of telemedicine interventions for pregnant women and/or new mothers to address mental health-related outcomes. The primary objective was to analyse whether telemedicine interventions can reduce mental health problems in pregnant women and new mothers. The secondary aim was to clarify the impact of type of interventions, their frequency and their targets. Methods Inclusion criteria: randomized controlled trials, with participants being pregnant women and/or new mothers (with infants up to twelve months), involving telemedicine interventions of any kind (e.g. websites, apps, chats, telephone), and addressing any mental health-related outcomes like depression, postnatal depression, anxiety, stress and others. Search terms were pregnant women, new mothers, telemedicine, RCT (randomised controlled trials), mental stress as well as numerous synonyms including medical subject headings. The literature search was conducted within the databases PubMed, Cochrane Library, Web of Science and PsycINFO. Screening, inclusion of records and data extraction were performed by two researchers according to the PRISMA guidelines, using the online tool CADIMA. Results Forty four articles were included. A majority (62%) reported significantly improved mental health-related outcomes for participants receiving telemedicine interventions compared to control. In particular (internet-delivered) Cognitive Behavioural Therapy was successful for depression and stress, and peer support improved outcomes for postnatal depression and anxiety. Interventions with preventive approaches and interventions aimed at symptom reduction were largely successful. For the most part there was no significant improvement in the symptoms of anxiety. Conclusion Telemedicine interventions evaluated within RCTs were mostly successful. However, they need to be designed to specifically target a certain mental health issue because there is no one-size-fits-all approach. Further research should focus on which specific interventions are appropriate for which mental health outcomes in terms of intervention delivery modes, content, target approaches, etc. Further investigation is needed, in particular with regard to anxiety.",
+      "citationCount": 36,
+      "doi": "10.1186/s12888-023-04790-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1ffbfb42e417b67962c51c8d89f98a9a437924f1",
+      "venue": "BMC Psychiatry",
+      "journal": {
+        "name": "BMC Psychiatry",
+        "volume": "23"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e7453519a3167490e0ea2596f88ebe3756d3fc80",
+      "title": "The Impact of Typical School Provision of Physical Education, Physical Activity and Sports on Adolescent Mental Health and Wellbeing: A Systematic Literature Review",
+      "authors": [
+        {
+          "name": "Padraic Rocliffe",
+          "authorId": "2183444023"
+        },
+        {
+          "name": "M. Adamakis",
+          "authorId": "26348145"
+        },
+        {
+          "name": "B. O\u2019Keeffe",
+          "authorId": "1402518060"
+        },
+        {
+          "name": "L. Walsh",
+          "authorId": "144008040"
+        },
+        {
+          "name": "Aine Bannon",
+          "authorId": "2223227255"
+        },
+        {
+          "name": "Luis Garc\u00eda-Gonz\u00e1lez",
+          "authorId": "2180647277"
+        },
+        {
+          "name": "F. Chambers",
+          "authorId": "39651606"
+        },
+        {
+          "name": "M. Stylianou",
+          "authorId": "12765616"
+        },
+        {
+          "name": "Ian Sherwin",
+          "authorId": "50722732"
+        },
+        {
+          "name": "P. Mannix-McNamara",
+          "authorId": "1403848157"
+        },
+        {
+          "name": "C. MacDonncha",
+          "authorId": "152364997"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Typical school provision of physical education, physical activity and sports, which is reflective of the school\u2019s response to the national curriculum, available resources and school ethos, may impact adolescent mental health and wellbeing. Systematic literature reviews have not yet considered this impact. The Web of Science, SPORTDiscus, PsychINFO, ERIC and MEDLINE databases were searched for relevant literature (2000\u20132022) pertaining to adolescents aged 12\u201318 years in secondary schools. Twenty studies met the inclusion criteria, including thirteen interventions, five cross-sectional and two longitudinal studies. Included studies contributed 108 reported effects, that examined depression, anxiety, self-esteem, self-efficacy, wellbeing, life satisfaction and positive mental health. Anxiety was the most frequently reported outcome, with 59% of the reported findings found to be non-significant, 24% significantly positive, 12% significantly negative and 6% reporting a negative trend but with no test of significance. Evidence supported the impact of physical education on adolescent mental health and wellbeing. Significantly positive effects were linked to interventions with minor modifications to typical provision such as the integration of teacher workshops and/or implementation of curriculum models. This suggests the importance of supplementing typical school provision of physical education to positively influence future impact.",
+      "citationCount": 35,
+      "doi": "10.1007/s40894-023-00220-0",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e7453519a3167490e0ea2596f88ebe3756d3fc80",
+      "venue": "Adolescent Research Review",
+      "journal": {
+        "name": "Adolescent Research Review",
+        "pages": "339 - 364",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a4b40f1079d272ac3a320bca0adc00d6111da223",
+      "title": "Robotic versus laparoscopic surgery for hiatal hernia repair: a systematic literature review and meta-analysis",
+      "authors": [
+        {
+          "name": "Longyin Ma",
+          "authorId": "2157780043"
+        },
+        {
+          "name": "Henggui Luo",
+          "authorId": "2110416133"
+        },
+        {
+          "name": "Shien Kou",
+          "authorId": "2139072993"
+        },
+        {
+          "name": "Zhenguo Gao",
+          "authorId": "2292805287"
+        },
+        {
+          "name": "Dan Bai",
+          "authorId": "1692635011"
+        },
+        {
+          "name": "Xiangzhi Qin",
+          "authorId": "2217455783"
+        },
+        {
+          "name": "Takahiro Ouchi",
+          "authorId": "2074898841"
+        },
+        {
+          "name": "Lei Gong",
+          "authorId": "2218453323"
+        },
+        {
+          "name": "Jiani Hu",
+          "authorId": "2152179429"
+        },
+        {
+          "name": "Yunhong Tian",
+          "authorId": "46879733"
+        }
+      ],
+      "year": 2023,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": "10.1007/s11701-023-01636-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a4b40f1079d272ac3a320bca0adc00d6111da223",
+      "venue": "Journal of Robotic Surgery",
+      "journal": {
+        "name": "Journal of Robotic Surgery",
+        "pages": "1879 - 1890",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

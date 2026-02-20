@@ -1,0 +1,511 @@
+[s2_search.py] Searching Semantic Scholar: 'Joas critique Habermas communicative action social theory' (year=1985-2015) (field=Philosophy), limit=20
+[s2_search.py] Rate limited, backing off (attempt 1/5)...
+[s2_search.py] Retrying after 1.3s backoff...
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_224bf1ab282cd982)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Joas critique Habermas communicative action social theory",
+  "results": [
+    {
+      "paperId": "7be12b4366fd736d4b969384e83c15c71c608eea",
+      "title": "Communicative Action, Essays on Jurgen Habermas's \"The Theory of Communicative Action\"@@@Social Theory and Modernity: Critique, Dissent, and Revolution",
+      "authors": [
+        {
+          "name": "L. Ray",
+          "authorId": "113078136"
+        },
+        {
+          "name": "A. Honneth",
+          "authorId": "92405469"
+        },
+        {
+          "name": "H. Joas",
+          "authorId": "73171929"
+        },
+        {
+          "name": "T. Luke",
+          "authorId": "2790987"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.2307/591351",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7be12b4366fd736d4b969384e83c15c71c608eea",
+      "venue": "",
+      "journal": {
+        "name": "British Journal of Sociology",
+        "pages": "688",
+        "volume": "43"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "664649597e9fcde2e632e5373bbc08c417bb5389",
+      "title": "Social Theory: Habermas' \u2018theory of communicative action\u2019",
+      "authors": [
+        {
+          "name": "H. Joas",
+          "authorId": "73171929"
+        },
+        {
+          "name": "Wolfgang Kn\u00f6bl",
+          "authorId": "100586472"
+        },
+        {
+          "name": "A. Skinner",
+          "authorId": "35921254"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1017/CBO9781139878432.011",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/664649597e9fcde2e632e5373bbc08c417bb5389",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8a787efe12496187bbbad57529c6fbff07195402",
+      "title": "The theory of communicative action. Volume 2, Lifeworld andsystem : a critique of functionalist reason",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 824,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8a787efe12496187bbbad57529c6fbff07195402",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d62f471c28c24fafb12e42271edbeda35bdad595",
+      "title": "The theory of communicative action: Lifeworld and system - A critique of functionalist reason",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 896,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d62f471c28c24fafb12e42271edbeda35bdad595",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b66320f8e16ebdbbca6e81060c4155e72b56b62d",
+      "title": "formal pragmatics and social criticism: the philosophy of language and the critique of ideology in habermas's theory of communicative action",
+      "authors": [
+        {
+          "name": "J. Bohman",
+          "authorId": "46331722"
+        }
+      ],
+      "year": 1986,
+      "abstract": null,
+      "citationCount": 229,
+      "doi": "10.1177/019145378601100402",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b66320f8e16ebdbbca6e81060c4155e72b56b62d",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "331 - 353",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "35367fba9f148348a74f9993b3f5072685a32fb6",
+      "title": "Moral Consciousness and Communicative Action",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 3358,
+      "doi": "10.2307/2220013",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/35367fba9f148348a74f9993b3f5072685a32fb6",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "74d35047e5c5323e699e8277b3f3bcbfea5dd516",
+      "title": "On the Pragmatics of Social Interaction: Preliminary Studies in the Theory of Communicative Action",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 19,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/74d35047e5c5323e699e8277b3f3bcbfea5dd516",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e0c166452af5d5438ac8b86c7deeeeb746da3fd9",
+      "title": "Critique of Habermas\u2019s Theory of Communicative Action",
+      "authors": [
+        {
+          "name": "H. Haferkamp",
+          "authorId": "90475091"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.1007/978-94-009-5263-8_14",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e0c166452af5d5438ac8b86c7deeeeb746da3fd9",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "197-205",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d8952b5b1ade209c21d9e04b3fafe162a2398b29",
+      "title": "Communicative versus Strategic Rationality: Habermas Theory of Communicative Action and the Social Brain",
+      "authors": [
+        {
+          "name": "M. Schaefer",
+          "authorId": "50787841"
+        },
+        {
+          "name": "H. Heinze",
+          "authorId": "145825580"
+        },
+        {
+          "name": "M. Rotte",
+          "authorId": "144878152"
+        },
+        {
+          "name": "C. Denke",
+          "authorId": "4308014"
+        }
+      ],
+      "year": 2013,
+      "abstract": "In the philosophical theory of communicative action, rationality refers to interpersonal communication rather than to a knowing subject. Thus, a social view of rationality is suggested. The theory differentiates between two kinds of rationality, the emancipative communicative and the strategic or instrumental reasoning. Using experimental designs in an fMRI setting, recent studies explored similar questions of reasoning in the social world and linked them with a neural network including prefrontal and parietal brain regions. Here, we employed an fMRI approach to highlight brain areas associated with strategic and communicative reasoning according to the theory of communicative action. Participants were asked to assess different social scenarios with respect to communicative or strategic rationality. We found a network of brain areas including temporal pole, precuneus, and STS more activated when participants performed communicative reasoning compared with strategic thinking and a control condition. These brain regions have been previously linked to moral sensitivity. In contrast, strategic rationality compared with communicative reasoning and control was associated with less activation in areas known to be related to moral sensitivity, emotional processing, and language control. The results suggest that strategic reasoning is associated with reduced social and emotional cognitions and may use different language related networks. Thus, the results demonstrate experimental support for the assumptions of the theory of communicative action.",
+      "citationCount": 22,
+      "doi": "10.1371/journal.pone.0065111",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d8952b5b1ade209c21d9e04b3fafe162a2398b29",
+      "venue": "PLoS ONE",
+      "journal": {
+        "name": "PLoS ONE",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5bce78a7a6cecf0a0fe7d4997f9eaaee0d0895a8",
+      "title": "Communicative Action's Democratic Deficit: A Critique of Habermas's Contribution to Democratic Theory",
+      "authors": [
+        {
+          "name": "Mart\u00edn Plot",
+          "authorId": "117390174"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5bce78a7a6cecf0a0fe7d4997f9eaaee0d0895a8",
+      "venue": "",
+      "journal": {
+        "name": "International Journal of Communication",
+        "pages": "28",
+        "volume": "3"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "01dc55446aebb01396f061fd13f9ca568842b8ae",
+      "title": "Habermas's \"Theory of Communicative Action\" and Siebren Miedema, Part Two: An Ideology Critique of Intellectual Appropriation",
+      "authors": [
+        {
+          "name": "J. Kachur",
+          "authorId": "114931028"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1023/A:1007553030979",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/01dc55446aebb01396f061fd13f9ca568842b8ae",
+      "venue": "",
+      "journal": {
+        "name": "Interchange",
+        "pages": "275-285",
+        "volume": "29"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "457c5ef2026c813eb49fd4167af6480f1bc80418",
+      "title": "NEW SOCIAL PARADIGM: HABERMAS'S THEORY OF COMMUNICATIVE ACTION UDC: 316.286:316.257",
+      "authors": [
+        {
+          "name": "Ljubi\u0161a Mitrovi",
+          "authorId": "41229109"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/457c5ef2026c813eb49fd4167af6480f1bc80418",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "4d3790471aaf0ea2280aa701651ec97ba920934d",
+      "title": "Habermas's Theory of Communicative Action and the Theory of Social Capital",
+      "authors": [
+        {
+          "name": "R. Bolton",
+          "authorId": "1752555455"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 63,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4d3790471aaf0ea2280aa701651ec97ba920934d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e43d9c3f5d082e444c362e12380885cf29265323",
+      "title": "The invisible woman : a feminist critique of Habermas's theory of communicative action",
+      "authors": [
+        {
+          "name": "A. Travers",
+          "authorId": "52174683"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.14288/1.0098569",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e43d9c3f5d082e444c362e12380885cf29265323",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b7dee35a1a9fb2c666b3bcde06fbe9300e02840b",
+      "title": "A Psychoanalytic Critique of J\u00fcrgen Habermas' Theory of Communicative Action",
+      "authors": [
+        {
+          "name": "Parker von Sternberg",
+          "authorId": "114803346"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b7dee35a1a9fb2c666b3bcde06fbe9300e02840b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dc0599dd2088e09e95da8a7aad63f1848cb27a9b",
+      "title": "Modelling Dimensions of \u2018the Social\u2019 in Knowledge Teams: An Operationalisation of Habermas\u2019 Theory of Communicative Action",
+      "authors": [
+        {
+          "name": "E. Quinlan",
+          "authorId": "46438879"
+        },
+        {
+          "name": "Susan Robertson",
+          "authorId": "3509990"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.5153/sro.2189",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dc0599dd2088e09e95da8a7aad63f1848cb27a9b",
+      "venue": "",
+      "journal": {
+        "name": "Sociological Research Online",
+        "pages": "119 - 132",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9807cfd5a0ccdae18951a21d7150adadeb7715c5",
+      "title": "Women's domination as reification: A socialist feminist critique of Habermas's theory of communicative action.",
+      "authors": [
+        {
+          "name": "Michael Palamarek",
+          "authorId": "116007812"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.20381/ruor-16348",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9807cfd5a0ccdae18951a21d7150adadeb7715c5",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7bd7540d45cad288d00ea9872bdc6bb73fc0a59e",
+      "title": "A reappraisal of Habermas's Theory of Communicative Action in light of detailed investigations of social praxis",
+      "authors": [
+        {
+          "name": "D. Bogen",
+          "authorId": "144665901"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 13,
+      "doi": "10.1111/J.1468-5914.1989.TB00135.X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7bd7540d45cad288d00ea9872bdc6bb73fc0a59e",
+      "venue": "",
+      "journal": {
+        "name": "Journal for The Theory of Social Behaviour",
+        "pages": "47-77",
+        "volume": "19"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7a4279fb50380ab400d85e39d262a78b0b40db16",
+      "title": "Crisis and critique in J\u00fcrgen Habermas\u2019s social theory",
+      "authors": [
+        {
+          "name": "Rodrigo Cordero",
+          "authorId": "66125693"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 27,
+      "doi": "10.1177/1368431013520387",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7a4279fb50380ab400d85e39d262a78b0b40db16",
+      "venue": "",
+      "journal": {
+        "name": "European Journal of Social Theory",
+        "pages": "497 - 515",
+        "volume": "17"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3b419d0401e372b55b6006caa483c7ae04f10e69",
+      "title": "ANALYTIC STUDY OF HABERMAS\u2019 VIEW ON MORAL AND SOCIAL EDUCATION GOALS: EMPHASIZING ON COMMUNICATIVE ACTION THEORY",
+      "authors": [
+        {
+          "name": "Naghibzadeh M.A.A.H.",
+          "authorId": "1489559358"
+        },
+        {
+          "name": "N. Ali",
+          "authorId": "104657080"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3b419d0401e372b55b6006caa483c7ae04f10e69",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "123-142",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

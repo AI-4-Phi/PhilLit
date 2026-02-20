@@ -1,0 +1,372 @@
+[search_core.py] Searching CORE: 'Habermas Weber rationalization modernization development' (year=2010-2025), limit=20
+[search_core.py] Rate limited, backing off (attempt 1/5)...
+[search_core.py] Retrying after 1.8s backoff...
+[search_core.py] Rate limited, backing off (attempt 2/5)...
+[search_core.py] Retrying after 2.6s backoff...
+[search_core.py] Server error 500, retrying (attempt 3/5)...
+[search_core.py] Retrying after 4.8s backoff...
+[search_core.py] Retrieved 19/20 papers...
+[search_core.py] Search complete: 19 papers found
+{
+  "status": "success",
+  "source": "core",
+  "query": "Habermas Weber rationalization modernization development",
+  "results": [
+    {
+      "core_id": "8725358",
+      "doi": "10.1111/1467-8675.12055",
+      "title": "Habermas and Markets",
+      "authors": [
+        {
+          "name": "J\u00fctten, Timo"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "publisher": "'Wiley'",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/74370250.pdf",
+      "source_url": "https://philpapers.org/archive/JTTHAM.pdf",
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "44876885",
+      "doi": "10.5901/ajis.2016.v5n1p355",
+      "title": "Modernity and Sustainability",
+      "authors": [
+        {
+          "name": "Senatore, Gianluca"
+        }
+      ],
+      "year": 2016,
+      "abstract": "Since always sociology disclaimed about the role of science and technique. First, it used to analyse the firms, making some critics, during their period of the highest expansion and industrialisation, and later focussing on their unpredictability and uncontrollability. Science and technique follow the fate of modernity. The human activities through science and technique modify the society and, as it\u2019s happening any time more, they create risks even more uncontrollable. From the risk hypothesis we pass into the threat until arriving to a real crisis. From the different crisis of the post-modernity era, the most severe seems to be the environmental one. This work analysis how, through the risks linked to the unpredictability of human actions we arrive to the modernity and post-modernity crisis. Attention is put on the consequences of this crisis, driving men to solve the existing problems, creating from the beginning the base principles of the society itself, in a sustainable path",
+      "publisher": "'Mediterranean Center of Social and Educational Research'",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/98345576.pdf",
+      "source_url": "https://iris.uniroma1.it/bitstream/11573/972784/1/Senatore_Modernity-and-Sustainability_2016.pdf",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "6104388",
+      "doi": null,
+      "title": "The fascination of authority and the authority of fascination : rationalization and legal theory in Habermas revised",
+      "authors": [
+        {
+          "name": "Blotta, Vitor"
+        }
+      ],
+      "year": 2012,
+      "abstract": "The requalification of Habermas\u2019 discussions on political philosophy and legal theory after the publication of Zwischen Naturalismus und Religion (2005), and his most recent texts and debates on religion and the public sphere, suggest a revision of the Habermasian theory of rationalization as it was firstly presented in Theorie des Kommunikativen Handelns (1982), especially on what concerns the processes of dessacralization and the linguistification of religious authority. In search of contributing to this revision, this paper intends to focus on the problem of a supposedly \u201clost\u201d aesthetic-expressive understanding of religious authority in Habermas\u2019s theory of rationalization, which may have contributed to a theory of law in Faktizit\u00e4t und Geltung (1992) that does not give satisfactory account to the aesthetical-expressive character of the modern understanding of legal authority. A better understanding of this special character, however, may contribute not only to the avoidance of fundamentalisms and new attempts of \u201caesthetization of politics\u201d, but also to a rational strengthening of the solidarity of the citizens of democratic constitutional states",
+      "publisher": "",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/14524877.pdf",
+      "source_url": null,
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "25529296",
+      "doi": null,
+      "title": "Globalization, the market and outdoor adventure",
+      "authors": [
+        {
+          "name": "Loynes, Christopher"
+        }
+      ],
+      "year": 2013,
+      "abstract": "Access to outdoor adventure in the UK has a long history of power struggles between social classes. In the late nineteenth century, the working classes were increasingly able to travel on the cheap railways and were gaining the right to have weekends off and take paid holidays. Some of the middle classes attempted to prevent them reaching places such as the Lake District by opposing the construction of the railways. They claimed that the working classes did not have the education with which to properly appreciate the sublime landscapes of the British coasts and mountains (Williams, 2002). The upper classes had an even\n\nmore effective strategy, as they owned much of the land and excluded others from it. This led to the mass trespass movements of the 1930s (Glyptis, 1991). It was only in 2000 that the law commonly known as the right to roam restored the right of access for all to open country in England and Wales (Pearlman Hougie & Dickinson, 2000). In Scotland, the \u2018right to roam\u2019 was never lost, but was bitterly fought over, nonetheless. Struggles to access land are still not fully resolved, as access to rivers and coastline continues to be a contentious issue",
+      "publisher": "Routledge Taylor & Francis",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/44313768.pdf",
+      "source_url": "https://www.routledge.com/products/9780415532679",
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "52518329",
+      "doi": "10.7916/d8dz0g1n",
+      "title": "The Role of Religious Belief in the Formation of Political Opinions: Proposal for a Study in Delhi, India",
+      "authors": [
+        {
+          "name": "Wahl, Rachel"
+        }
+      ],
+      "year": 2010,
+      "abstract": "Liberal political theorists such as John Rawls (1993) maintain that citizens engaging in political discourse should not rely on religious rationales. However in the last several decades religion has emerged as a driving force behind social movements, revolutions, and debates regarding national laws (Casanova, 1994; Applyby, 2000; Philpott, 2002; Habermas, 2006). One explanation for the global resurgence of religion is that it is a response to the factors that were predicted to secularize, such as modernization and the disorienting changes that accompany it (Huntington 1996; Fukuyama 1992). Research further suggests that religiosity does not represent a static resurgence of tradition, but rather is a dynamic response to the modern world (Casanova, 1994). India is experiencing social and economic changes brought about by a rapidly developing economy and the globalization of communication, work and education (Delong, 2001; Nandy, 2002). As a location of rapid change with high levels of religiosity, Delhi is an ideal setting to understand the way people draw from their religious beliefs to form judgments about what is just, as they negotiate tensions between inherited beliefs and the pressures of contemporary life. This paper proposes dissertation research that investigates the salience of religion for how religiously engaged citizens in Delhi, India judge what is right in their own lives, their families, issues at work and in school, in national policy, and in international issues. Particular attention will be paid to how people view the distinction between 'public' and 'private' matters, and within which spheres religion is most salient for how people make moral and political judgments",
+      "publisher": "",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/161435171.pdf",
+      "source_url": "https://academiccommons.columbia.edu/doi/10.7916/D8T440VK/download",
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "313873499",
+      "doi": "10.29173/cgs81",
+      "title": "Gambling Ain\u2019t What It Used To Be: The Instrumentalization of Gambling and Late Modern Culture",
+      "authors": [
+        {
+          "name": "Cosgrave, Jim"
+        }
+      ],
+      "year": 2022,
+      "abstract": "This article addresses significant cultural macro-processes shaping legalized gambling as a mass consumer market, which also serve various state and private industry ends. The processes examined here are \u201cinstrumentalization\u201d and rationalization, explored through the seminal formulations of Max Weber and developed further in the work of Jurgen Habermas. Instrumentalization relates to Weber\u2019s concepts of rationalization and instrumental rationality, as well as to Habermas\u2019s distinction between the \u201csystem\u201d and \u201clifeworld\u201d. While the phenomenon of instrumentalization is approached largely from a macro-perspective, it is understood to have effects on the lifeworld, on social action, and the formation of (gambling) subjectivities. The discussion of instrumentalization and rationalization, as broad cultural processes, contributes to the genealogy of gambling in (late) modern culture. It also serves to develop a particular theoretical trajectory within critical gambling studies and indicates themes that could be opened up for further analysis",
+      "publisher": "University of Alberta Library",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/698082539.pdf",
+      "source_url": "https://criticalgamblingstudies.com/index.php/cgs/article/download/81/71",
+      "language": "en",
+      "document_type": "research article"
+    },
+    {
+      "core_id": "12264561",
+      "doi": null,
+      "title": "Introduction",
+      "authors": [
+        {
+          "name": "Susen, S."
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "publisher": "Palgrave Macmillan",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/146489438.pdf",
+      "source_url": "http://openaccess.city.ac.uk/18983/1/29aa.%20CRO%20%28Cover%2C%20Promo%2C%20AAM%20Intro%29%20Simon%20Susen%20%282015%29%20The%20%E2%80%98Postmodern%20Turn%E2%80%99%20in%20the%20Social%20Sciences.pdf",
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "19193847",
+      "doi": null,
+      "title": "Max Weber\\u27s Living Legacy",
+      "authors": [
+        {
+          "name": "Kurthen, Hermann"
+        }
+      ],
+      "year": 2020,
+      "abstract": "June 14, 2020 was the hundred-year anniversary of Max Weber\\u27s death. He died in Munich at age 56 after most likely contracting the Spanish flu. He is often considered one of the founding fathers of sociology next to Marx and Durkheim, despite Weber resisting this label. Given Weber\\u27s worldwide reception, his enduring relevance for sociology and beyond is unbroken, even though he left a huge unfinished work not intended as a conventional sociological grand theory but as a historical-comparative attempt to understand how humans interact within their social environment and how they construct a social reality of their own making.\nWeber\\u27s popularity waxed and waned with the rise of positivism in the second half of the twentieth century. The current trend to critically judge hypothesis-testing as the supreme method to unlock law-like cause-and-effect social relationships now seems to be giving Weberian thought a new lifeline. The commemoration of Max Weber\\u27s death during another pandemic coincides with the publication of his Complete Edition (Max Weber Gesamtausgabe [MWG]) in 47 volumes. The MWG provides, for the first time,  a definitive historical-critical edition of the entire range of his thinking and engagements, not only a basis for a comprehensive account of his life and work but also a resource for moving beyond textual reconstruction and interpretation to new applications and possible extensions of . . . [his] ideas  (Hanke, Scaff, and Whimster 2019:3).\nThe anniversary and the publication of the MWG provide a good reason to reassess Weber\\u27s contribution and living legacy to sociology and the social sciences. In this short essay, I do not ask if Weber is still relevant (he is). Instead, I argue that it is his openness to interpretation, illustrated by the emergence of Weberology and Weberianism, that has made his work last for so many decades. Toward this end, I will examine the influence of his conceptual and methodological innovations and how they were absorbed, contextualized, revised, reinterpreted, and applied in the last 100 years. Then I will evaluate Weber\\u27s universal influence through translations and publications and his influence on the teaching of sociology. Next, I review the trivialization, exploitation, and abuse of Weber\\u27s prestige and authority for often contrary purposes, an outcome that is often ignored. The conclusion summarizes Weber\\u27s continuing relevance",
+      "publisher": "ScholarWorks@GVSU",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/401625399.pdf",
+      "source_url": "https://scholarworks.gvsu.edu/cgi/viewcontent.cgi?article=1013&amp;context=soc_articles",
+      "language": "en",
+      "document_type": null
+    },
+    {
+      "core_id": "18480525",
+      "doi": "10.18052/www.scipress.com/ilshs.28.1",
+      "title": "Globalization and Modernity",
+      "authors": [
+        {
+          "name": "Powell, Jason"
+        }
+      ],
+      "year": 2014,
+      "abstract": "As we move into the global century, several aspects of social and economic life are changing and post-industrial shifts are unparalleled by virtue of the interconnectedness that brings together the corners of the globe. New technologies, new economic relationships, new social processes, and new political developments are all characteristics of globalization (Hudson and Lowe, 2004: 22) in a post-industrial age featured by information, innovation, finance and services. As the world has contracted, people\u2019s quality of life has changed regardless of where they live. In fact, the propagation of free market mindsets in emerging economies has created collective network connections with considerable good but pervasive inequalities as well. A fundamental aim of this book is to argue that these changes are part of a economic transition to post-industrialism associated with risks and inequalities that shape human experience in the midst of a formidable global financial climate. There is an obvious tension with this. On the one hand, life expectancy, health statuses and per capital incomes are at an all-time high and many feudal practices have been relegated to the past (Phillipson, 2006). On the other hand, vast numbers of people struggle with poverty and significant pockets of poverty portend more than lack of income. Those living on the bottom of the socio-economic ladder labor under the burden of avoidable, lifestyle diseases, hunger and related maladies, not to mention myriad social risks (Turner, 2008). Those on the upper reaches of the same ladder garner disproportionate shares of the resources and are able to support comfortable lifestyles",
+      "publisher": "'SciPress Ltd'",
+      "journal": "International Letters of Social and Humanistic Sciences",
+      "download_url": "https://core.ac.uk/download/33795080.pdf",
+      "source_url": "https://chesterrep.openrepository.com/bitstream/10034/604065/1/Powell%202014%20GLob.pdf",
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "33974989",
+      "doi": "10.1080/13669877.2015.1042504",
+      "title": "Risk definition and the struggle for legitimation: a case study of Bt cotton in Andhra Pradesh, India",
+      "authors": [
+        {
+          "name": "Desmond, Elaine"
+        }
+      ],
+      "year": 2015,
+      "abstract": "This article explores the struggle for legitimation associated with the attempt to define the risk of Bt cotton, a genetically modified crop, in Andhra Pradesh, India. Beck asserts that, given the uncertainty associated with risk society, efforts to define risk are creating the need for a new political culture. This article argues that this political culture emerges from attempts to legitimate power within risk definition. This is examined using critical discourse analysis on interview excerpts with key figures in the Bt cotton debate. Legitimation is explored using the categories of legitimation developed by Van Leeuwen. These are (a) authorisation; (b) moral evaluation; (c) rationalisation; and (d) mythopoesis. The analysis highlights that the political culture which emerges in response to risk society is in a state of constant flux and contingent upon the ongoing struggle for legitimation with regard to the definition of risk",
+      "publisher": "'Informa UK Limited'",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/61582531.pdf",
+      "source_url": null,
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "27578769",
+      "doi": "10.1080/21567689.2014.948594",
+      "title": "How Secular Should Democracy Be? A Cross-Disciplinary Study of Catholicism and Islam in Promoting Public Reason",
+      "authors": [
+        {
+          "name": "Ingram, David"
+        },
+        {
+          "name": "Ingram, David"
+        }
+      ],
+      "year": 2014,
+      "abstract": "I argue that the same factors (strategic and principled) that motivated Catholicism to champion liberal democracy are the same that motivate 21st Century Islam to do the same. I defend this claim by linking political liberalism to democratic secularism. Distinguishing institutional, political, and epistemic dimensions of democratic secularism, I show that moderate forms of political and epistemic secularism are most conducive to fostering the kind of public reasoning essential to democratic legitimacy. This demonstration draws upon the ambivalent impact of Indonesia\u2019s Islamic parties in advancing universal social justice aims as against more sectarian policies",
+      "publisher": "Loyola eCommons",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/48610736.pdf",
+      "source_url": null,
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "14195974",
+      "doi": null,
+      "title": "The essence of the conceptual model of service enterprises modernization",
+      "authors": [
+        {
+          "name": "Gurfova, Rita Vanoevna"
+        },
+        {
+          "name": "Klochko, Elena Nikolaevna"
+        },
+        {
+          "name": "Nasimov, Dilmurod A."
+        },
+        {
+          "name": "Tokareva, Tatiana Y."
+        }
+      ],
+      "year": 2016,
+      "abstract": "The multiplicity of definitions of modernization due to the fact that the very concept of \u201cmodernization\u201d has very deep roots, related to the development of human civilization on its inherent social and economic laws. One of the most important laws is the development of the modernization process. Currently, the modernization process scale covers a wide field of human activity that initiates improvement of conceptual provisions of modernization. Modernization theory emerged in the 60s of XX century in the struggle for influence in the third world. Only by the middle of the 80s, when there was accumulated both positive and crisis experience a large number of third world countries that have implemented a variety of projects (both in the West and the socialist pattern) formed the theoretical concepts that are suitable to support a relatively non-ideological modernization politician. The result was the understanding of the transformation of the concept of \u201cmodernization\u201d in the subject of analysis for representatives of disciplines, from different sides of the practice of \u201cnew\u201d countries and analyse the reasons for successes and failures of the relevant development projects. \u00a9 2016, Econjournals. All rights reserved",
+      "publisher": "'EconJournals'",
+      "journal": "International Journal of Economics and Financial Issues",
+      "download_url": "https://core.ac.uk/download/43641131.pdf",
+      "source_url": "https://econjournals.com/index.php/ijefi/article/download/2377/pdf",
+      "language": "en",
+      "document_type": null
+    },
+    {
+      "core_id": "291876031",
+      "doi": "10.24193/subbeuropaea.2021.2.12",
+      "title": "THE POLITICAL CULTURE OF ROMANIA",
+      "authors": [
+        {
+          "name": "STOENESCU, Roxana-Alice"
+        }
+      ],
+      "year": 2021,
+      "abstract": "In addition to Romania\\u27s economic backwardness, the experiences of repressive political culture have contributed to restricting society\\u27s ability to act by impairing the development of its own identity for centuries. The background to the emergence of totalitarian regimes can be derived from the context of the European modernization processes, which have gripped the whole of Europe through the industrialization and consequently secularization and rationalization process. By reproducing these processes, political situations and the experiences of Romanian society on which they are based, reveals the significance of their political culture. The aim is to put together the political culture of modern Romanian society in order to ultimately understand what the problems are for their current political consciousness",
+      "publisher": "Babe\u0219-Bolyai University / Cluj University Press",
+      "journal": "Studia Universitatis Babe\u0219-Bolyai Studia Europaea",
+      "download_url": "https://core.ac.uk/download/658991522.pdf",
+      "source_url": "https://studia.reviste.ubbcluj.ro/index.php/subbeuropaea/article/download/592/563",
+      "language": "en",
+      "document_type": "research article text"
+    },
+    {
+      "core_id": "122605112",
+      "doi": "10.4314/star.v1i3.98801",
+      "title": "Habermas, Modernity and Postmodernism; A Philosophical Inquiry",
+      "authors": [
+        {
+          "name": "Merawi, F"
+        }
+      ],
+      "year": 2013,
+      "abstract": "The modern/postmodern debate is usually presented as one of\u00a0 universality vs. relativism, rationalism vs. irrationalism and emancipation vs. deconstruction. This article tries to critically expose and critique Habermas\u2019s discussion of postmodernism as a way of highlighting some of the limitations of this lively discussion. This is to be accomplished through a conceptual analysis of Habermas\u2019s defense of modernity against the postmodernism of Jacques Derrida and Michel Foucault as elaborated in Habermas\u2019s work The Philosophical Discourse of Modernity. Through such an analysis, I will argue for the following points. (1) Habermas\u2019s discourse of modernity provides better accounts of responsibility and emancipation compared to the postmodernism of Derrida and Foucault. (2) Still,\u00a0 Habermas\u2019s discourse of modernity fails to fully address asymmetrical power relations and (3)\u00a0 Habermas\u2019s modernity is Eurocentric in failing to fully deconstruct the Eurocentric tendencies of the philosophical tradition of which it\u2019s a part",
+      "publisher": "'African Journals Online (AJOL)'",
+      "journal": "Science Technology and Arts Research Journal",
+      "download_url": "https://core.ac.uk/download/478451731.pdf",
+      "source_url": "https://www.ajol.info/index.php/star/article/download/98801/88061",
+      "language": "en",
+      "document_type": null
+    },
+    {
+      "core_id": "7594755",
+      "doi": "10.17450/150302",
+      "title": "Confession and political normativity: control of subjectivity and production of the subject",
+      "authors": [
+        {
+          "name": "Avelino, Nildo"
+        }
+      ],
+      "year": 2015,
+      "abstract": "The theme of confession, present in the reflection of Michel Foucault since the early 1960s, pursued the same direction of his researches from the late 1970s concerning the problem of government and the studies of governmentality. Under this perspective, confession is taken as recognition through which the subject authenticates in himself or herself his or her own actions and thoughts. Therefore, it is not only a verbal act by means of which the subject states the truth of his or her being; confession also binds the subject to truth, throwing him or her in a relation of dependency regards the other, and, at the same time, modifying the relationship that he or she establishes with himself or herself. According to Foucault, this is what explains the massive growth of practices of confession in Western societies up until their actual inscription at the heart of procedures of individualization typical of modern political power. This paper explores Foucault\u2019s analysis of confessional practices and its recent developments in the work of Giorgio Agamben (Opus Dei. Archeologia dell\u2019Ufficio, 2012) and Roberto Esposito (Due. La macchina della teologia politica e il posto del pensiero, 2013).El tema de la confesi\u00f3n, presente en la reflexi\u00f3n de Michel Foucault desde principios del decenio de 1960, persigui\u00f3 la misma direcci\u00f3n de sus investigaciones a partir de finales de 1970 en relaci\u00f3n con el problema del gobierno y de los estudios de la gubernamentalidad. Bajo esta perspectiva, la confesi\u00f3n se toma como reconocimiento a trav\u00e9s de la cual el sujeto autentica en s\u00ed mismo sus propias acciones y pensamientos. Por lo tanto, no es solo un acto verbal por medio del cual el sujeto establece la verdad de su ser; la confesi\u00f3n tambi\u00e9n une el sujeto a la verdad, coloc\u00e1ndolo en una relaci\u00f3n de dependencia con el otro y, al mismo tiempo, cambiando la relaci\u00f3n que \u00e9l establece consigo mismo. Seg\u00fan Foucault, esto es lo que explica el crecimiento masivo de las pr\u00e1cticas de la confesi\u00f3n en las sociedades occidentales hasta su inscripci\u00f3n efectiva en el coraz\u00f3n de los procedimientos de individualizaci\u00f3n del poder pol\u00edtico moderno. Este art\u00edculo explora el an\u00e1lisis de Foucault de las pr\u00e1cticas confesionales y sus recientes avances en el trabajo de Giorgio Agamben (Opus Dei. Archeologia dell\u2019Ufficio, 2012) y Roberto Esposito (Due. La macchina della teologia politica e il posto del pensiero, 2013)",
+      "publisher": "Universidad Cat\u00f3lica de Colombia. Facultad de Derecho",
+      "journal": "Soft Power",
+      "download_url": "https://core.ac.uk/download/213560963.pdf",
+      "source_url": "https://repository.ucatolica.edu.co/bitstream/10983/23122/1/Confession%20and%20political%20normativity.pdf",
+      "language": "en",
+      "document_type": "research"
+    },
+    {
+      "core_id": "18697872",
+      "doi": "10.1177/2050303215584229",
+      "title": "Secular shadows: African, immanent, post-colonial",
+      "authors": [
+        {
+          "name": "Engelke, Matthew"
+        }
+      ],
+      "year": 2015,
+      "abstract": "Almost none of the critical theory concerned with the secular addresses it in relation to sub-Saharan Africa. This is notable not least given the extent to which other post-colonial regions, such as North Africa and South Asia, are central to such discussions. It is not, however, that the critical theorists are ignoring Africanists' work; indeed, looking at the Africanist literature in any depth makes it clear that there is not, and has never been, a field of \u201csecular studies.\u201d Taking this observation as a point of departure, and considering it in relation to a range of classic and contemporary ethnographic cases, this paper aims to shed light (and cast shadows) on some of the key terms in current debates about the secular\u2014terms such as immanence, the mundane, critique, and doubt. In doing so, it calls for further considerations of how to figure the Africanist canon in relation to the terms of critical theory",
+      "publisher": "'SAGE Publications'",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/35435989.pdf",
+      "source_url": null,
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "51227564",
+      "doi": "10.25911/5d74e72c035cf",
+      "title": "Theorising empowerment practice from the Pacific and Indigenous Australia",
+      "authors": [
+        {
+          "name": "Barcham, Richard"
+        }
+      ],
+      "year": 2012,
+      "abstract": "Since the 1970s, the concept of empowerment has been widely adopted in a range of\r\nfields from international development to education, and management to public health.\r\nThis diversity has enriched the literature on empowerment, but has also contributed to\r\na lack of precision in the way empowerment is defined and employed. In the field of\r\ncommunity psychology, empowerment is taken as the matter of central interest,\r\nassuming individual, organisational and social dimensions, as it is oriented towards\r\npeople taking collective action to improve their circumstances by rectifying disparities\r\nin power and control. Accepting the view that empowerment necessarily incorporates\r\nthese three dimensions of persons, groups and their interaction with society, this thesis asks whether there are universally applicable ways that organisations can intervene to support people to assume greater autonomy and control over their circumstances. This thesis is empirically grounded in four organisations and their social intervention practices. Three of these organisations are in the Pacific (Solomon Islands, Papua New Guinea, Fiji) and one is in Aboriginal Australia. Across this variety of historical, social\r\nand cultural settings, these groups show conceptual similarities in their operations and outreach methodologies. The case-study organisations share a philosophy that is\r\nframed positively in terms of control by people of their social development, and\r\nnegatively as constrained by the effect of structures of colonising power relations.\r\nThey have in common the aim of producing personal, group and social change that is\r\ntransformative. Interrogating these similarities, the thesis explores the diverse literature on empowerment to develop a three-dimensional model of the empowering group called \u2018the field of community control\u2019. As a foundation for this model, the thesis advances a universalist view of human need based on the classes of security, identity and autonomy. It then employs Habermas\u2019s concepts of dramaturgical, normative and teleological action to incorporate into the model a dynamic view of the group as the locus of control for personal and social change. Finally, the thesis draws on social action studies from the United States to develop the concept of social empowerment as agency. The model shows these individual, group and social dimensions in dynamic relation, and provides a framework for interpreting the change processes, indicators and outcomes of\r\nempowerment in each dimension. The thesis reveals that empowerment occurs in the\r\ntransformative domains of risk and trust, critical consciousness and structural\r\ninnovation, these being the public goods that groups must produce to mobilise personal\r\nand collective power",
+      "publisher": "",
+      "journal": null,
+      "download_url": "",
+      "source_url": null,
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "26025573",
+      "doi": "10.2139/ssrn.1805522",
+      "title": "E pluribus unum? Varieties and commonalities of capitalism",
+      "authors": [
+        {
+          "name": "Streeck, Wolfgang"
+        }
+      ],
+      "year": 2010,
+      "abstract": "The paper reviews the origins of the comparative study of capitalism and of the diverse approaches applied to it in contemporary political economy. It distinguishes four models accounting for differences in the institutional make-up of national capitalist economies, which it refers to as the social embeddedness, power resource, historicalinstitutionalist, and rationalist-functionalist model, respectively. Special attention is given to the rationalist-functionalist account of capitalist variety and its reception in the research literature. The paper concludes with remarks on the likely effect of the global financial crisis after 2007 on theories of political economy in general and of 'varieties of capitalism' in particular. It argues that in future the commonalities and interdependencies of national capitalisms deserve and are likely to receive more attention than their differences.Der Aufsatz beschreibt die Urspr\u00fcnge der vergleichenden Kapitalismusforschung und deren unterschiedliche Ans\u00e4tze in der gegenw\u00e4rtigen politischen \u00d6konomie. Vier Modelle zur Erkl\u00e4rung der Unterschiede in der institutionellen Verfassung nationaler kapitalistischer Systeme, die als Einbettungs-, Machtressourcen-, historisch-institutionalistisches und rationalistisch-funktionalistisches Modell bezeichnet werden, werden miteinander verglichen. Besondere Aufmerksamkeit gilt dem rationalistisch-funktionalistischen Modell und seiner Rezeption in der Forschungsliteratur. Der Aufsatz schlie\u00dft mit Bemerkungen zum wahrscheinlichen Einfluss der globalen Finanzkrise nach 2007 auf die Theoriebildung in der politischen \u00d6konomie und insbesondere die 'Varieties of Capitalism'-Debatte. Vermutet wird, dass in Zukunft die Gemeinsamkeiten und Interdependenzen zwischen den nationalen kapitalistischen Systemen mehr Aufmerksamkeit erfordern und erhalten werden als die Unterschiede",
+      "publisher": "Cologne: Max Planck Institute for the Study of Societies",
+      "journal": null,
+      "download_url": "https://core.ac.uk/download/210924389.pdf",
+      "source_url": "https://www.econstor.eu/dspace/bitstream/10419/43292/1/64070493X.pdf",
+      "language": null,
+      "document_type": "research"
+    },
+    {
+      "core_id": "10709590",
+      "doi": "10.1080/19409419.2018.1558495",
+      "title": "Communication, Democracy, and Intelligentsia",
+      "authors": [
+        {
+          "name": "Shalin, Dmitri N."
+        }
+      ],
+      "year": 2018,
+      "abstract": "In the early 1990s, a group of Russian and American scholars teamed up to investigate the impact of Gorbachev\u2019s reform on Soviet society, focusing especially on the role the intelligentsia played in fomenting glasnost and perestroika. Results of this collaborative study were published in a volume Russian Culture at the Crossroads: Paradoxes of Postcommunist Consciousness (Shalin, 1996a). The contributors worked on the assumption that perestroika was an irreversible achievement, that distortions the reforms wrought in Russian society would be smoothed out over time. Today, this assumption appears overoptimistic. After nearly twenty years in power, Vladimir Putin dismantled key democratic institutions, badly weakened other, and established a personalistic regime that reversed many political gains brought about by his predecessors.\nAn international team assembled for the present project starts with the premise that we live in the age of counterperestroika. Our focus is still on the intelligentsia and its contribution to dismantling the Soviet system, but now we want to explore the unanticipated consequences of social change threatening the existence of the intelligentsia as a distinct group. Our team includes prominent scholars, writers, and civil rights leaders who illuminate the political agendas and personal choices confronting intellectuals in today\u2019s Russia. Contributors look at the current trends through different lenses, they disagree about the intelligentsia\u2019s past achievements and looming future, yet they all feel the need to examine its local and world-historical significance.\nThis essay aims to place the debate in historical context and elucidate its relevance to the field of communication studies. I begin with the communication-specific conditions fortifying democratic institutions and show how distorted communications have hobbled the Russian intelligentsia throughout history. Next, I review the social context within which the intelligentsia emerged, the special place it occupies in Russian discourse, and the acute distress counterperestroika inflicted on Russian society in general and public intellectuals in particular. After examining the systematic distortions that communication suffers in repressive societies, I zero in on the intelligentsia\u2019s role in modeling emotionally intelligent conduct and scrutinize the communication sphere as the condition of possibility for a viable democracy. I close this introduction with a brief survey of the articles collected in this volume and reflections on the prospects for a communication theory in the pragmatist key",
+      "publisher": "Digital Scholarship@UNLV",
+      "journal": null,
+      "download_url": "https://digitalscholarship.unlv.edu/cgi/viewcontent.cgi?article=1155&amp;context=sociology_pubs",
+      "source_url": "https://digitalscholarship.unlv.edu/cgi/viewcontent.cgi?article=1155&amp;context=sociology_pubs",
+      "language": "en",
+      "document_type": "research"
+    }
+  ],
+  "count": 19,
+  "errors": []
+}

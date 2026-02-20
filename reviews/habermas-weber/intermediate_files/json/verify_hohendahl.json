@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.2307/488198
+[verify_paper.py] DOI verified: The Dialectic of Enlightenment Revisited: Habermas...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/488198"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/488198",
+      "title": "The Dialectic of Enlightenment Revisited: Habermas' Critique of the Frankfurt School",
+      "authors": [
+        {
+          "family": "Hohendahl",
+          "given": "Peter U."
+        }
+      ],
+      "editors": [],
+      "year": 1985,
+      "container_title": "New German Critique",
+      "volume": "",
+      "issue": "35",
+      "page": "3",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/488198"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

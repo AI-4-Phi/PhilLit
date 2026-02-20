@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Critique, Norm, and Utopia...' author=Benhabib year=1986
+[verify_paper.py] Paper found: Critique, Norm and Utopia: A Study of the Foundati... (score: 45.3)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Critique, Norm, and Utopia",
+    "author": "Benhabib",
+    "year": 1986
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/488282",
+      "title": "Critique, Norm and Utopia: A Study of the Foundations of Critical Theory",
+      "authors": [
+        {
+          "family": "Misgeld",
+          "given": "Dieter"
+        },
+        {
+          "family": "Benhabib",
+          "given": "Seyla"
+        }
+      ],
+      "editors": [],
+      "year": 1987,
+      "container_title": "New German Critique",
+      "volume": "",
+      "issue": "41",
+      "page": "178",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/488282",
+      "score": 45.26733
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

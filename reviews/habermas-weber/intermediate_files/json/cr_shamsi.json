@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.69557/ujrra.v3i4.112"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.69557/ujrra.v3i4.112",
+      "title": "INTERPRETIVE METHODOLOGY AND ITS RELATIONSHIP WITH VERSTEHEN IN MAX WEBER'S PHILOSOPHY OF SOCIAL SCIENCES METHODOLOGY",
+      "authors": [
+        {
+          "family": "Shamsi",
+          "given": "Ali"
+        }
+      ],
+      "editors": [],
+      "year": 2024,
+      "container_title": "TMP Universal Journal of Research and Review Archives",
+      "volume": "3",
+      "issue": "4",
+      "page": "",
+      "publisher": "Twisting Memoirs Publication",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.69557/ujrra.v3i4.112"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

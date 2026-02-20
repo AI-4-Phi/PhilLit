@@ -1,0 +1,1344 @@
+[search_openalex.py] Searching OpenAlex: 'Habermas quasi-evolutionary social learning Weber' (year=2000-2025), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_d16310a044c4e955)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas quasi-evolutionary social learning Weber",
+  "results": [
+    {
+      "openalex_id": "W1902236296",
+      "doi": "10.1111/1467-8675.12055",
+      "title": "Habermas and Markets",
+      "authors": [
+        {
+          "name": "Timo J\u00fctten",
+          "openalex_id": "A5077887342",
+          "orcid": "https://orcid.org/0000-0001-9865-507X"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-10-29",
+      "abstract": null,
+      "cited_by_count": 230,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12055"
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W1902236296"
+    },
+    {
+      "openalex_id": "W602224805",
+      "doi": "10.5860/choice.46-2158",
+      "title": "Two bits: the cultural significance of free software",
+      "authors": [
+        {
+          "name": "Christopher Kelty",
+          "openalex_id": "A5016045705",
+          "orcid": "https://orcid.org/0000-0003-0253-5554"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-12-01",
+      "abstract": "In Two Bits, Christopher M. Kelty investigates the history and cultural significance of Free Software, revealing the people and practices that have transformed not only software but also music, film, science, and education. Free Software is a set of practices devoted to the collaborative creation of software source code that is made openly and freely available through an unconventional use of copyright law. Kelty explains how these specific practices have reoriented the relations of power around the creation, dissemination, and authorization of all kinds of knowledge. He also makes an important contribution to discussions of public spheres and social imaginaries by demonstrating how Free Software is a \"recursive public\" - a public organized around the ability to build, modify, and maintain the very infrastructure that gives it life in the first place.",
+      "cited_by_count": 728,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://evols.library.manoa.hawaii.edu/bitstreams/2fcdaed4-bc58-4588-ba72-f094446dd574/download"
+      },
+      "topics": [
+        "Open Source Software Innovations",
+        "Digital Games and Media",
+        "Copyright and Intellectual Property"
+      ],
+      "referenced_works_count": 286,
+      "url": "https://openalex.org/W602224805"
+    },
+    {
+      "openalex_id": "W2889262254",
+      "doi": "10.1016/j.envsoft.2018.08.028",
+      "title": "Tools and methods in participatory modeling: Selecting the right tool for the job",
+      "authors": [
+        {
+          "name": "Alexey Voinov",
+          "openalex_id": "A5017742557",
+          "orcid": "https://orcid.org/0000-0002-2985-4574",
+          "institutions": [
+            "University of Twente",
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Karen E. Jenni",
+          "openalex_id": "A5079047698",
+          "orcid": "https://orcid.org/0000-0001-9927-7509",
+          "institutions": [
+            "United States Geological Survey"
+          ]
+        },
+        {
+          "name": "Steven Gray",
+          "openalex_id": "A5101745318",
+          "orcid": "https://orcid.org/0000-0001-7605-6674",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Nagesh Kolagani",
+          "openalex_id": "A5077032295",
+          "orcid": "https://orcid.org/0000-0003-3870-3230",
+          "institutions": [
+            "Indian Institute of Information Technology Sri City",
+            "Indian Institute of Information Technology Allahabad"
+          ]
+        },
+        {
+          "name": "Pierre D. Glynn",
+          "openalex_id": "A5048968895",
+          "orcid": "https://orcid.org/0000-0001-8804-7003",
+          "institutions": [
+            "United States Geological Survey"
+          ]
+        },
+        {
+          "name": "Pierre Bommel",
+          "openalex_id": "A5074289664",
+          "orcid": "https://orcid.org/0000-0002-7776-9075",
+          "institutions": [
+            "Centre de Coop\u00e9ration Internationale en Recherche Agronomique pour le D\u00e9veloppement"
+          ]
+        },
+        {
+          "name": "Christina Prell",
+          "openalex_id": "A5037616102",
+          "orcid": "https://orcid.org/0000-0003-2693-0065",
+          "institutions": [
+            "University of Maryland, College Park"
+          ]
+        },
+        {
+          "name": "Moira Zellner",
+          "openalex_id": "A5059003249",
+          "orcid": "https://orcid.org/0000-0002-4111-3357",
+          "institutions": [
+            "University of Illinois Chicago"
+          ]
+        },
+        {
+          "name": "Michael Paolisso",
+          "openalex_id": "A5020730319",
+          "orcid": "https://orcid.org/0000-0001-6921-3985",
+          "institutions": [
+            "University of Maryland, College Park"
+          ]
+        },
+        {
+          "name": "Rebecca Jordan",
+          "openalex_id": "A5101861870",
+          "orcid": "https://orcid.org/0000-0001-6684-3105",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Eleanor J. Sterling",
+          "openalex_id": "A5079759646",
+          "orcid": "https://orcid.org/0000-0003-2692-8264",
+          "institutions": [
+            "American Museum of Natural History"
+          ]
+        },
+        {
+          "name": "Laura Schmitt Olabisi",
+          "openalex_id": "A5001144440",
+          "orcid": "https://orcid.org/0000-0002-6557-9469",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Philippe J. Giabbanelli",
+          "openalex_id": "A5023496425",
+          "orcid": "https://orcid.org/0000-0001-6816-355X",
+          "institutions": [
+            "Furman University"
+          ]
+        },
+        {
+          "name": "Zhanli Sun",
+          "openalex_id": "A5006216320",
+          "orcid": "https://orcid.org/0000-0001-6204-4533",
+          "institutions": [
+            "Leibniz Institute of Agricultural Development in Transition Economies"
+          ]
+        },
+        {
+          "name": "Christophe Le Page",
+          "openalex_id": "A5048421139",
+          "orcid": "https://orcid.org/0000-0002-1920-0091",
+          "institutions": [
+            "Centre de Coop\u00e9ration Internationale en Recherche Agronomique pour le D\u00e9veloppement"
+          ]
+        },
+        {
+          "name": "Sondoss Elsawah",
+          "openalex_id": "A5073334916",
+          "orcid": "https://orcid.org/0000-0002-3485-9548",
+          "institutions": [
+            "UNSW Canberra",
+            "University of Canberra",
+            "UNSW Sydney"
+          ]
+        },
+        {
+          "name": "Todd K. BenDor",
+          "openalex_id": "A5075426884",
+          "orcid": "https://orcid.org/0000-0003-0132-7702",
+          "institutions": [
+            "University of North Carolina at Chapel Hill"
+          ]
+        },
+        {
+          "name": "Klaus Hubacek",
+          "openalex_id": "A5082646301",
+          "orcid": "https://orcid.org/0000-0003-2561-6090",
+          "institutions": [
+            "Masaryk University",
+            "International Institute for Applied Systems Analysis",
+            "University of Maryland, College Park"
+          ]
+        },
+        {
+          "name": "Bethany K. Laursen",
+          "openalex_id": "A5032516949",
+          "orcid": "https://orcid.org/0000-0001-8935-9607",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Antonie Jetter",
+          "openalex_id": "A5012176291",
+          "orcid": "https://orcid.org/0000-0002-5771-9003",
+          "institutions": [
+            "Portland State University"
+          ]
+        },
+        {
+          "name": "Laura Basco\u2010Carrera",
+          "openalex_id": "A5089282067",
+          "orcid": "https://orcid.org/0000-0003-1613-1251",
+          "institutions": [
+            "University of Twente",
+            "IHE Delft Institute for Water Education",
+            "Michigan State University",
+            "Deltares"
+          ]
+        },
+        {
+          "name": "Alison Singer",
+          "openalex_id": "A5001960715",
+          "orcid": "https://orcid.org/0000-0003-3182-5999",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Laura C. Young",
+          "openalex_id": "A5065152285",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Jessica Brunacini",
+          "openalex_id": "A5030536291",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Alex Smajgl",
+          "openalex_id": "A5037066450",
+          "orcid": "https://orcid.org/0000-0003-1818-0698",
+          "institutions": [
+            "University of Technology Sydney",
+            "University of Twente",
+            "Bangkok University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-08-27",
+      "abstract": null,
+      "cited_by_count": 442,
+      "type": "article",
+      "source": {
+        "name": "Environmental Modelling & Software",
+        "type": "journal",
+        "issn": [
+          "1364-8152",
+          "1873-6726"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.sciencedirect.com/science/article/am/pii/S1364815218303098?via%3Dihub"
+      },
+      "topics": [
+        "Complex Systems and Decision Making",
+        "Innovative Approaches in Technology and Social Development",
+        "Sustainability and Climate Change Governance"
+      ],
+      "referenced_works_count": 200,
+      "url": "https://openalex.org/W2889262254"
+    },
+    {
+      "openalex_id": "W1442129841",
+      "doi": "10.1007/s11625-015-0326-4",
+      "title": "The real type and ideal type of transdisciplinary processes: part I\u2014theoretical foundations",
+      "authors": [
+        {
+          "name": "Roland W. Scholz",
+          "openalex_id": "A5020171024",
+          "orcid": "https://orcid.org/0000-0003-2506-3254",
+          "institutions": [
+            "University of Zurich",
+            "Fraunhofer Institute for Interfacial Engineering and Biotechnology",
+            "Fraunhofer Society"
+          ]
+        },
+        {
+          "name": "Gerald Steiner",
+          "openalex_id": "A5035374136",
+          "orcid": "https://orcid.org/0000-0003-3340-3941",
+          "institutions": [
+            "Universit\u00e4t f\u00fcr Weiterbildung Krems",
+            "Harvard University Press"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-13",
+      "abstract": null,
+      "cited_by_count": 311,
+      "type": "article",
+      "source": {
+        "name": "Sustainability Science",
+        "type": "journal",
+        "issn": [
+          "1862-4057",
+          "1862-4065"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11625-015-0326-4.pdf"
+      },
+      "topics": [
+        "Interdisciplinary Research and Collaboration",
+        "Sustainability and Climate Change Governance",
+        "Complex Systems and Decision Making"
+      ],
+      "referenced_works_count": 115,
+      "url": "https://openalex.org/W1442129841"
+    },
+    {
+      "openalex_id": "W4308433048",
+      "doi": "10.1038/s41562-022-01460-1",
+      "title": "A systematic review of worldwide causal and correlational evidence on digital media and democracy",
+      "authors": [
+        {
+          "name": "Philipp Lorenz-Spreen",
+          "openalex_id": "A5026949484",
+          "orcid": "https://orcid.org/0000-0001-6319-4154",
+          "institutions": [
+            "Max Planck Institute for Human Development"
+          ]
+        },
+        {
+          "name": "Lisa Oswald",
+          "openalex_id": "A5072281431",
+          "orcid": "https://orcid.org/0000-0002-8418-282X",
+          "institutions": [
+            "Hertie School"
+          ]
+        },
+        {
+          "name": "Stephan Lewandowsky",
+          "openalex_id": "A5017914184",
+          "orcid": "https://orcid.org/0000-0003-1655-2013",
+          "institutions": [
+            "University of Bristol",
+            "University of Western Australia"
+          ]
+        },
+        {
+          "name": "Ralph Hertwig",
+          "openalex_id": "A5068556395",
+          "orcid": "https://orcid.org/0000-0002-9908-9556",
+          "institutions": [
+            "Max Planck Institute for Human Development"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-07",
+      "abstract": null,
+      "cited_by_count": 261,
+      "type": "review",
+      "source": {
+        "name": "Nature Human Behaviour",
+        "type": "journal",
+        "issn": [
+          "2397-3374"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.nature.com/articles/s41562-022-01460-1.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Media Influence and Politics",
+        "Media Studies and Communication"
+      ],
+      "referenced_works_count": 515,
+      "url": "https://openalex.org/W4308433048"
+    },
+    {
+      "openalex_id": "W2148482341",
+      "doi": "10.1111/j.1467-9221.2012.00873.x",
+      "title": "Reasoning Is for Arguing: Understanding the Successes and Failures of Deliberation",
+      "authors": [
+        {
+          "name": "Hugo Mercier",
+          "openalex_id": "A5072330860",
+          "orcid": "https://orcid.org/0000-0002-0575-7913",
+          "institutions": [
+            "University of Neuch\u00e2tel"
+          ]
+        },
+        {
+          "name": "H\u00e9l\u00e8ne Landemore",
+          "openalex_id": "A5033903696",
+          "orcid": "https://orcid.org/0000-0002-0726-4944",
+          "institutions": [
+            "Yale University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-03-27",
+      "abstract": "Theoreticians of deliberative democracy have sometimes found it hard to relate to the seemingly contradictory experimental results produced by psychologists and political scientists. We suggest that this problem may be alleviated by inserting a layer of psychological theory between the empirical results and the normative political theory. In particular, we expose the argumentative theory of reasoning that makes the observed pattern of findings more coherent. According to this theory, individual reasoning mechanisms work best when used to produce and evaluate arguments during a public deliberation. It predicts that when diverse opinions are discussed, group reasoning will outperform individual reasoning. It also predicts that individuals have a strong confirmation bias. When people reason either alone or with like\u2010minded peers, this confirmation bias leads them to reinforce their initial attitudes, explaining individual and group polarization. We suggest that the failures of reasoning are most likely to be remedied at the collective than at the individual level.",
+      "cited_by_count": 78,
+      "type": "article",
+      "source": {
+        "name": "Political Psychology",
+        "type": "journal",
+        "issn": [
+          "0162-895X",
+          "1467-9221"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://repository.upenn.edu/bitstreams/706f864f-f0ce-47a7-b5f6-01b31de9a1ee/download"
+      },
+      "topics": [
+        "Experimental Behavioral Economics Studies",
+        "Social Media and Politics",
+        "Electoral Systems and Political Participation"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W2148482341"
+    },
+    {
+      "openalex_id": "W2187550992",
+      "doi": null,
+      "title": "Strategic Group Analysis",
+      "authors": [
+        {
+          "name": "Hans\u2010Dieter Evers",
+          "openalex_id": "A5001637120",
+          "orcid": "https://orcid.org/0000-0002-0647-9644"
+        },
+        {
+          "name": "Solvay Gerke",
+          "openalex_id": "A5065053110",
+          "orcid": "https://orcid.org/0000-0003-2982-8250"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-01-01",
+      "abstract": null,
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Econstor (Econstor)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10419/88304"
+      },
+      "topics": [
+        "Medical and Agricultural Research Studies",
+        "International Human Rights and Reproductive Law",
+        "Healthcare, Law, Governance, and Management Studies"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2187550992"
+    },
+    {
+      "openalex_id": "W238161698",
+      "doi": "10.1017/9781139923880",
+      "title": "The History Manifesto",
+      "authors": [
+        {
+          "name": "Jo Guldi",
+          "openalex_id": "A5017493697",
+          "orcid": "https://orcid.org/0000-0002-5085-0738",
+          "institutions": [
+            "Brown University"
+          ]
+        },
+        {
+          "name": "David Armitage",
+          "openalex_id": "A5084804353",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-09-24",
+      "abstract": "How should historians speak truth to power - and why does it matter? Why is five hundred years better than five months or five years as a planning horizon? And why is history - especially long-term history - so essential to understanding the multiple pasts which gave rise to our conflicted present? The History Manifesto is a call to arms to historians and everyone interested in the role of history in contemporary society. Leading historians David Armitage and Jo Guldi identify a recent shift back to longer-term narratives, following many decades of increasing specialization, which they argue is vital for the future of historical scholarship and how it is communicated. This provocative and thoughtful book makes an important intervention in the debate about the role of history and the humanities in a digital age. It will provoke discussion among policymakers, activists and entrepreneurs as well as ordinary listeners, viewers, readers, students and teachers.",
+      "cited_by_count": 182,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/AC1A1EC711AE91A4F9004E7582D79AFD/9781107076341AR.pdf/The_History_Manifesto.pdf?event-type=FTLA"
+      },
+      "topics": [
+        "Educator Training and Historical Pedagogy",
+        "Philippine History and Culture",
+        "Oral History, Memory, Narrative Analysis"
+      ],
+      "referenced_works_count": 178,
+      "url": "https://openalex.org/W238161698"
+    },
+    {
+      "openalex_id": "W2598098786",
+      "doi": "10.3389/fsoc.2017.00003",
+      "title": "Modernity and the Idea of Progress",
+      "authors": [
+        {
+          "name": "Angelos Mouzakitis",
+          "openalex_id": "A5002778904",
+          "institutions": [
+            "University of Crete",
+            "Crete University Press"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-20",
+      "abstract": "This paper aims to show the centrality the concept of progress occupies explicitly and implicitly in social theory, in relation to the theorization and understanding of modernity; it also raises the question whether in times where Eurocentrism, logocentrism and indeed almost every claim of supremacy are rightly viewed with suspicion, it is possible to think of modernity without relying on some interpretation of the notion of progress. Arguably, the theme of progress, together with the complementary notion of decline, can be considered as a key-component of discourses concerning modernity and has played a major role in the shaping of social theory. Comte and Durkheim relied in different ways in the idea of progress and the same holds for Marxist accounts of social change. Even later sociological theories address modernity from the perspective of progress, Parsons being exemplary in this respect. Moreover, theoretical discourses adopting a critical or even hostile attitude against the modern project often question the idea of progress and are woven around the representation of modernity in terms of decline and regression into unreason, as e.g. Adorno and Horkheimer's Dialectic of Enightment. Arguably, the imagery of progress informs the distinction between society and community, which is also hidden behind Habermas's more recent theorization of societies in terms of systems and lifeworlds. Finally, the question regarding the possibility of partially disentangling the theorization of modernity from the idea of progress, is pursued via a critical assessment of Eisenstadt's multiple modernities and Wagner's theorization of modernity in terms of responses given to basic probl\u00e9matiques.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Sociology",
+        "type": "journal",
+        "issn": [
+          "2297-7775"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fsoc.2017.00003/pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Economy and Marxism",
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W2598098786"
+    },
+    {
+      "openalex_id": "W636942736",
+      "doi": "10.21435/sff.15",
+      "title": "Tradition through Modernity: Postmodernism and the Nation-State in Folklore Scholarship",
+      "authors": [
+        {
+          "name": "Pertti Anttonen",
+          "openalex_id": "A5022121052",
+          "orcid": "https://orcid.org/0000-0003-4866-9910",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-02-06",
+      "abstract": "\"In their study of social practices deemed traditional, scholars tend to use the concept and idea of tradition as an element of meaning in the practices under investigation. But just whose meaning is it? Is it a meaning generated by those who study tradition or those whose traditions are being studied? In both cases, particular criteria for traditionality are employed, whether these are explicated or not. Individuals and groups will no doubt continue to uphold their traditional practices or refer to their practices as traditional. While they are in no way obliged to explicate in analytical terms their criteria for traditionality, the same cannot be said for those who make the study of traditions their profession. In scholarly analysis, traditions need to be explained instead of used as explanations for apparent repetitions and replications or symbolic linking in social practice, values, history, and heritage politics. This book takes a closer look at \u2018tradition\u2019 and \u2018folklore\u2019 in order to conceptualize them within discourses on modernity and modernism. The first section discusses \u2018modern\u2019 and \u2018traditional\u2019 as modern concepts and the study of folklore as a modern trajectory. The underlying tenet here is that non-modernity cannot be represented without modern mediation, which therefore makes the representations of non-modernity epistemologically modern. The second section focuses on the nation-state of Finland and the nationalistic use of folk traditions in the discursive production of Finnish modernity and its Others. The insights are applicable worldwide in discussions on cultural representation. \"",
+      "cited_by_count": 162,
+      "type": "book",
+      "source": {
+        "name": "Finnish Literature Society eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://oa.finlit.fi/site/books/10.21435/sff.15/download/2035/"
+      },
+      "topics": [
+        "Folklore, Mythology, and Literature Studies",
+        "Culinary Culture and Tourism",
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 358,
+      "url": "https://openalex.org/W636942736"
+    },
+    {
+      "openalex_id": "W1544634010",
+      "doi": "10.4135/9781848607859.n1",
+      "title": "Introduction to E-learning Research",
+      "authors": [
+        {
+          "name": "Richard Andrews",
+          "openalex_id": "A5000533208",
+          "orcid": "https://orcid.org/0000-0003-0741-7864"
+        },
+        {
+          "name": "Caroline Haythornthwaite",
+          "openalex_id": "A5002842121",
+          "orcid": "https://orcid.org/0000-0002-7311-3140"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": "This chapter is the Introduction to the Sage Handbook of E-Learning Research (2007), edited by Richard Andrews and Caroline Haythornthwaite. The introduction, written by the editors, is a substantial work that addresses definitional issues about e-learning research; it begins with an exploration of the ???e??? and ???learning??? components in e-learning, and continues with theoretical and methodological issues, and a model and discussion of co-evolutionary processes of technology and learning. The publication of the Handbook marks a significant point in studies in e-learning. Although there has been considerable development in teaching and learning, as well as in learning design, there is as yet no coherent view of what constitutes research in the field nor of how best to undertake it. The volume this introduction begins contains state-of-the-art chapters by leading e-learning researchers which takes stock of progress in e-learning research, addressing a range of issues from student experience to policy and provides a foundation for further research and development.",
+      "cited_by_count": 61,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.ideals.illinois.edu/items/8918/bitstreams/33559/data.pdf"
+      },
+      "topics": [
+        "Online and Blended Learning",
+        "Innovative Teaching and Learning Methods",
+        "Knowledge Management and Sharing"
+      ],
+      "referenced_works_count": 180,
+      "url": "https://openalex.org/W1544634010"
+    },
+    {
+      "openalex_id": "W2318178853",
+      "doi": "10.1177/0047244114532220",
+      "title": "The Archimedean point: Science and technology in the thought of Hannah Arendt, 1951\u20131963",
+      "authors": [
+        {
+          "name": "Waseem Yaqoob",
+          "openalex_id": "A5035721407",
+          "institutions": [
+            "University of North Carolina at Pembroke",
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-07-08",
+      "abstract": "This essay examines Hannah Arendt\u2019s treatment of science and technology in her work during the 1950s and early 1960s. As scientific research acquired prominence in the United States and Germany after the Second World War, its public meaning was shaped by geopolitics and fears about nuclear weapons and the uncontrollable nature of technological development. A detailed exploration of the development of Arendt\u2019s thought in this context has not been undertaken before. This essay refines our understanding of Arendt\u2019s relationship with familiar interlocutors such as Karl Jaspers and Martin Heidegger, and challenges readings that concentrate narrowly on her analysis of totalitarianism as a reference point for understanding her thought.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "Journal of European Studies",
+        "type": "journal",
+        "issn": [
+          "0047-2441",
+          "1740-2379"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://qmro.qmul.ac.uk/xmlui/bitstream/123456789/63877/6/Yaqoob%20The%20Archimedean%20Point%202014%20Accepted.pdf"
+      },
+      "topics": [
+        "Hannah Arendt's Political Philosophy",
+        "Philosophy, Ethics, and Existentialism"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W2318178853"
+    },
+    {
+      "openalex_id": "W2895922731",
+      "doi": "10.4324/9781315666396",
+      "title": "Food Sovereignty, Agroecology And Biocultural Diversity",
+      "authors": [
+        {
+          "name": "Michel Pimbert",
+          "openalex_id": "A5008921993",
+          "orcid": "https://orcid.org/0000-0002-6214-8305"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-01",
+      "abstract": "Contestations over knowledge \u2013 and who controls its production \u2013 are a key focus of social movements and other actors that promote food sovereignty, agroecology and biocultural diversity. This book critically examines the kinds of knowledge and ways of knowing needed for food sovereignty, agroecology and biocultural diversity. \u2018Food sovereignty\u2019 is understood here as a transformative process that seeks to recreate the democratic realm and regenerate a diversity of autonomous food systems based on agroecology, biocultural diversity, equity, social justice and ecological sustainability. It is shown that alternatives to the current model of development require radically different knowledges and epistemologies from those on offer today in mainstream institutions (including universities, policy think tanks and donor organizations). To achieve food sovereignty, agroecology and biocultural diversity, there is a need to re-imagine and construct knowledge for diversity, decentralisation, dynamic adaptation and democracy. The authors critically explore the changes in organizations, research paradigms and professional practice that could help transform and co-create knowledge for a new modernity based on plural definitions of wellbeing. Particular attention is given to institutional, pedagogical and methodological innovations that can enhance cognitive justice by giving hitherto excluded citizens more power and agency in the construction of knowledge. The book thus contributes to the democratization of knowledge and power in the domain of food, environment and society.",
+      "cited_by_count": 84,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://tandfbis.s3-us-west-2.amazonaws.com/rt-files/docs/Open+Access+Chapters/9781138955356_oachapter1.pdf\u00a0and"
+      },
+      "topics": [
+        "Agriculture, Land Use, Rural Development",
+        "Organic Food and Agriculture",
+        "Environmental and Cultural Studies in Latin America and Beyond"
+      ],
+      "referenced_works_count": 959,
+      "url": "https://openalex.org/W2895922731"
+    },
+    {
+      "openalex_id": "W2141734718",
+      "doi": "10.1093/jaarel/lft052",
+      "title": "Roundtable on the Sociology of Religion: Twenty-Three Theses on the Status of Religion in American Sociology--A Mellon Working-Group Reflection",
+      "authors": [
+        {
+          "name": "Christian Smith",
+          "openalex_id": "A5012595633",
+          "orcid": "https://orcid.org/0000-0001-7551-0353",
+          "institutions": [
+            "Rice University",
+            "University of Notre Dame",
+            "Pennsylvania State University",
+            "University of California, San Diego",
+            "Yale University",
+            "Georgetown University"
+          ]
+        },
+        {
+          "name": "Brandon Vaidyanathan",
+          "openalex_id": "A5072670466",
+          "orcid": "https://orcid.org/0000-0002-5748-6051",
+          "institutions": [
+            "Georgetown University",
+            "University of Notre Dame",
+            "Yale University",
+            "Pennsylvania State University",
+            "University of California, San Diego",
+            "Rice University"
+          ]
+        },
+        {
+          "name": "Nancy T. Ammerman",
+          "openalex_id": "A5046642480",
+          "orcid": "https://orcid.org/0000-0001-6727-3319",
+          "institutions": [
+            "University of California, San Diego",
+            "Rice University",
+            "Yale University",
+            "University of Notre Dame",
+            "Pennsylvania State University",
+            "Georgetown University"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 Casanova",
+          "openalex_id": "A5081619845",
+          "orcid": "https://orcid.org/0000-0002-0561-0364",
+          "institutions": [
+            "Georgetown University",
+            "University of Notre Dame",
+            "University of California, San Diego",
+            "Pennsylvania State University",
+            "Yale University",
+            "Rice University"
+          ]
+        },
+        {
+          "name": "Hilary Davidson",
+          "openalex_id": "A5017440457",
+          "orcid": "https://orcid.org/0000-0002-4595-4719",
+          "institutions": [
+            "Yale University",
+            "Rice University",
+            "Pennsylvania State University",
+            "Georgetown University",
+            "University of Notre Dame",
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Elaine Howard Ecklund",
+          "openalex_id": "A5034416803",
+          "orcid": "https://orcid.org/0000-0002-4501-3329",
+          "institutions": [
+            "Pennsylvania State University",
+            "Georgetown University",
+            "University of Notre Dame",
+            "Yale University",
+            "University of California, San Diego",
+            "Rice University"
+          ]
+        },
+        {
+          "name": "John H. Evans",
+          "openalex_id": "A5085102537",
+          "orcid": "https://orcid.org/0000-0001-7487-3216",
+          "institutions": [
+            "Yale University",
+            "Georgetown University",
+            "University of California, San Diego",
+            "University of Notre Dame",
+            "Rice University",
+            "Pennsylvania State University"
+          ]
+        },
+        {
+          "name": "Philip S. Gorski",
+          "openalex_id": "A5033521009",
+          "orcid": "https://orcid.org/0000-0002-7095-6337",
+          "institutions": [
+            "University of Notre Dame",
+            "University of California, San Diego",
+            "Pennsylvania State University",
+            "Rice University",
+            "Yale University",
+            "Georgetown University"
+          ]
+        },
+        {
+          "name": "Mary Ellen Konieczny",
+          "openalex_id": "A5034621270",
+          "institutions": [
+            "Pennsylvania State University",
+            "Georgetown University",
+            "Yale University",
+            "University of California, San Diego",
+            "Rice University",
+            "University of Notre Dame"
+          ]
+        },
+        {
+          "name": "Jason A. Springs",
+          "openalex_id": "A5057704288",
+          "orcid": "https://orcid.org/0000-0002-3284-9311",
+          "institutions": [
+            "Pennsylvania State University",
+            "Yale University",
+            "Rice University",
+            "University of Notre Dame",
+            "Georgetown University",
+            "University of California, San Diego"
+          ]
+        },
+        {
+          "name": "Jenny Trinitapoli",
+          "openalex_id": "A5073700655",
+          "orcid": "https://orcid.org/0000-0003-2617-8176",
+          "institutions": [
+            "Georgetown University",
+            "Pennsylvania State University",
+            "Yale University",
+            "University of California, San Diego",
+            "University of Notre Dame",
+            "Rice University"
+          ]
+        },
+        {
+          "name": "Meredith C. Whitnah",
+          "openalex_id": "A5063232028",
+          "institutions": [
+            "Yale University",
+            "Georgetown University",
+            "University of Notre Dame",
+            "Pennsylvania State University",
+            "University of California, San Diego",
+            "Rice University"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-08-10",
+      "abstract": "American sociology has not taken and does not take religion as seriously as it needs to in order to do the best sociology possible. Despite religion being an important and distinctive kind of practice in human social life, both historically and in the world today, American sociologists often neglect religion or treat it reductionistically. We explore several reasons for this negligence, focusing on key historical, conceptual, methodological, and institutional factors. We then turn to offer a number of proposals to help remedy American sociology's negligence of religion, advance the study of religion in particular, and enhance sociology's broader disciplinary capacity to improve our understanding and explanation of human social life. Our purpose in this analysis is to stimulate critical and constructive discussion about the significance of religion in human life and scholarly research on it.",
+      "cited_by_count": 57,
+      "type": "article",
+      "source": {
+        "name": "Journal of the American Academy of Religion",
+        "type": "journal",
+        "issn": [
+          "0002-7189",
+          "1477-4585"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/jaar/article-pdf/81/4/903/2185695/lft052.pdf"
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Religion, Spirituality, and Psychology",
+        "Religion, Society, and Development"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2141734718"
+    },
+    {
+      "openalex_id": "W4200139555",
+      "doi": "10.4324/9781003075103-23",
+      "title": "Societal Constitutionalism: Alternatives to State-Centred Constitutional Theory?",
+      "authors": [
+        {
+          "name": "G\u00fcnther Teubner",
+          "openalex_id": "A5054209395",
+          "orcid": "https://orcid.org/0000-0002-2839-7578"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-23",
+      "abstract": "A group of globalisation critics are suing a commercial host provider of the Internet. The case ties together into a single focal point a range of fundamental problems that the digitalisation of communication is throwing up anew. It is not just technical legal questions of compulsory contracting for private providers, the right of access to internet institutions, the validity and implementation of national norms in the transnational internet, or the third party effect of fundamental rights in cyberspace that are up for debate. Rather, we are faced with the more fundamental question of a universal political right of access to digital communication. Even though the debate is only at its very beginnings in the international sphere, it indicates, in view of the massive human rights infringements by non-state actors, the necessity of an extension of constitutionalism beyond purely intergovernmental relations. The theory of societal constitutionalism developed by the American sociologist David Sciulli supplies initial starting points.",
+      "cited_by_count": 40,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.4324/9781003075103-23&type=chapterpdf"
+      },
+      "topics": [
+        "Judicial and Constitutional Studies",
+        "Political Systems and Governance",
+        "Cybersecurity and Cyber Warfare Studies"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W4200139555"
+    },
+    {
+      "openalex_id": "W2174228756",
+      "doi": null,
+      "title": "System and Lifeworld in Habermas's Theory of Law",
+      "authors": [
+        {
+          "name": "Hugh Baxter",
+          "openalex_id": "A5003766651"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-01-01",
+      "abstract": "J\u00fcrgen Habermas's recent work on law and democracy divides into two parts. With his \"discourse theory of law and democracy,\" Habermas seeks to explain the conditions under which modern constitutional legal and political orders may claim legitimacy. Here Habermas's method is primarily philosophical and legal-theoretical. The second part of the project - the part on which this article focuses - develops what Habermas calls his \"communication theory of society.\" Here Habermas seeks to \"translate\" the normative conclusions of his discourse theory into a substantive social-theoretical model. The idea is to determine whether the ambitious normative theory of democracy is plausible under contemporary conditions of social complexity. Habermas's presentation of the \"communication theory of society\" is difficult to understand, partly because he invokes, without much explanation, the \"two-level\" theory of society that he developed in his work of the 1970s and 1980s. I return to that work to excavate the basic concepts of \"communicative action,\" \"system,\" and \"lifeworld.\" I discuss the model of society developed in that earlier body of work - a model of \"interchange\" between the normatively rich \"lifeworld\" and the money- and power-driven economic and administrative systems. My account is critical. Each distinction on which Habermas relies to construct the \"interchange\" model is drawn too sharply, and the resulting model makes the normative ideal Habermas consistently has defended - radical democracy - literally inconceivable. The more recent work on law professes continued loyalty to the system/lifeworld conception of society. But at the same time, it develops a different model - the \"model of the circulation of power\" - that is designed to show the possibilities for, and resistances, to radical democracy. I argue that the new model is irreconcilable with Habermas's earlier and unretracted conceptions of \"system\" and system/lifeworld \"interchange.\" The unacknowledged amendments are significant improvements, I argue, but one effect is to leave the notion of social \"systems\" unclearly theorized. I suggest in the final part of the article that Habermas could shore up his \"system\" conception by selectively and critically appropriating insights from a more recent version of social systems theory - the \"autopoietic\" theory of Habermas's longtime theoretical sparring partner, Niklas Luhmann.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "eYLS (Yale Law School)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarship.law.bu.edu/faculty_scholarship/549"
+      },
+      "topics": [
+        "Law in Society and Culture",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2174228756"
+    },
+    {
+      "openalex_id": "W4287455327",
+      "doi": "10.5040/9781509920440",
+      "title": "Habitual Ethics?",
+      "authors": [
+        {
+          "name": "Sylvie Delacroix",
+          "openalex_id": "A5027906807",
+          "orcid": "https://orcid.org/0000-0002-8517-7782",
+          "institutions": [
+            "Bloomsbury Publishing (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "<JATS1:p>What if data-intensive technologies\u2019 ability to mould habits with unprecedented precision is also capable of triggering some mass disability of profound consequences? What if we become incapable of modifying the deeply-rooted habits that stem from our increased technological dependence?</JATS1:p> <JATS1:p>On an impoverished understanding of habit, the above questions are easily shrugged off. Habits are deemed rigid by definition: \u2018as long as our deliberative selves remain capable of steering the design of data-intensive technologies, we\u2019ll be fine\u2019. To question this assumption, this book first articulates the way in which the habitual stretches all the way from unconscious tics to purposive, intentionally acquired habits. It also highlights the extent to which our habit-reliant, pre-reflective intelligence normally supports our deliberative selves. It is when habit rigidification sets in that this complementarity breaks down.</JATS1:p> <JATS1:p>The book moves from a philosophical inquiry into the \u2018double edge\u2019 of habit \u2013 its empowering and compromising sides \u2013 to consideration of individual and collective strategies to keep habits at the service of our ethical life. Allowing the norms that structure our forms of life to be cotton-wooled in abstract reasoning is but one of the factors that can compromise ongoing social and moral transformations. Systems designed to simplify our practical reasoning can also make us \u2018sheep-like\u2019.</JATS1:p> <JATS1:p>Drawing a parallel between the moral risk inherent in both legal and algorithmic systems, the book concludes with concrete interventions designed to revive the scope for normative experimentation. It will appeal to any reader concerned with our retaining an ability to trigger change within the practices that shape our ethical sensibility.</JATS1:p>",
+      "cited_by_count": 38,
+      "type": "book",
+      "source": {
+        "name": "Hart Publishing eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.bloomsburycollections.com/book/habitual-ethics.pdf?dl"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education"
+      ],
+      "referenced_works_count": 332,
+      "url": "https://openalex.org/W4287455327"
+    },
+    {
+      "openalex_id": "W2774266734",
+      "doi": "10.1111/eulj.12230",
+      "title": "European crises of legally\u2010constituted public power: From the \u2018law of corporatism\u2019 to the \u2018law of governance\u2019",
+      "authors": [
+        {
+          "name": "Poul F. Kj\u00e6r",
+          "openalex_id": "A5050831872",
+          "orcid": "https://orcid.org/0000-0002-8027-3601"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-09-01",
+      "abstract": "Abstract The \u2018turn to corporatism\u2019 in the interwar period implied an erosion of the fragile institutionalisation of legally\u2010constituted public power due to its suspension of the legal infrastructure of society and the concomitant breakdown of the distinction between the public and private realms of society. The dual (trans\u2010)national re\u2010constitution of Western Europe in the years immediately after the Second World War, which the European integration process was an integrated part of, successfully remedied this development. However, over the last decades, Europe has experienced a \u2018turn to governance\u2019, which also implies an erosion of the distinction between the public and private realms, and increasingly challenges the normative integrity and functional capacity of law. This development has been further reinforced by the new post\u2010crisis legal and institutional architecture of the EU as it implies the emergence of a \u2018dual Union\u2019 partly based upon formality and partly upon informality and an increased suspension of open\u2010ended democratic decision\u2010making.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "European Law Journal",
+        "type": "journal",
+        "issn": [
+          "1351-5993",
+          "1468-0386"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/eulj.12230"
+      },
+      "topics": [
+        "European and International Law Studies",
+        "European Union Policy and Governance",
+        "European Criminal Justice and Data Protection"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W2774266734"
+    },
+    {
+      "openalex_id": "W3081586009",
+      "doi": "10.1111/jtsb.12254",
+      "title": "On the historicity of social ontology",
+      "authors": [
+        {
+          "name": "Heikki Patom\u00e4ki",
+          "openalex_id": "A5076369446",
+          "orcid": "https://orcid.org/0000-0001-9255-6783",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-29",
+      "abstract": "ABSTRACT The question I raise is whether the basic features of mind, social categories, and society are unchanging or changing. Some understandings of ontology would seem to suggest that social ontology is a branch of metaphysics. However, as the history of concepts such as metaphysical and ontology indicate, our concepts and knowledge are historical. It is widely held that society is concept\u2010 and activity\u2010dependent. I examine critically two strands of social ontology in terms of their answers to this problematic: (1) John Searle\u2019s theory of the construction of social reality and (2) critical realist theory of mind and society as interlaced emergent layers of reality. Apart from emergence in natural systems, there is also emergence beyond nature as consciousness, agency and society cannot be completely explained in terms of biological realities; but how and when did this emergence occur? We need an account of the emergent order of language, reflectively conscious mind, and institutions not only for its own sake, but also because the process whereby new objects and properties emerge may be on\u2010going, path\u2010dependent, diverse, and open\u2010ended. The main argument is that the object of study of social theorists is geo\u2010historically specific, liable to diversity within any given world\u2010historical epoch, and open to further changes and new forms of emergence in the future.",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "Journal for the Theory of Social Behaviour",
+        "type": "journal",
+        "issn": [
+          "0021-8308",
+          "1468-5914"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10138/322673"
+      },
+      "topics": [
+        "Critical Realism in Sociology",
+        "Emile Durkheim and Sociology",
+        "Contemporary Sociological Theory and Practice"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W3081586009"
+    },
+    {
+      "openalex_id": "W1543059698",
+      "doi": null,
+      "title": "The theatre of violence : narratives of protagonists in the South African conflict",
+      "authors": [
+        {
+          "name": "Don Foster",
+          "openalex_id": "A5059334691"
+        },
+        {
+          "name": "Paul Haupt",
+          "openalex_id": "A5078762069"
+        },
+        {
+          "name": "Mar\u00e9sa De Beer",
+          "openalex_id": "A5042162112"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-06-17",
+      "abstract": "This profound and deeply compassionate study aims to reach into the complexities of political violence in South Africa between 1960 and 1994, and to expand our understanding of the patterns of conflict that almost drew South Africans into a vortex of total disintegration during the apartheid era. This book is used in the teaching of critical and social psychology at both undergraduate and postgraduate levels. While many accounts have focused on the victims of state repression, this unique volume documents the often contradictory and confusing stories of those who acknowledge having committed some dreadful deeds. Individuals on various sides of the apartheid divide, from state security structures to the ANC, PAC and grassroots, activists, tell their own stories. The central focus is to give an account of the actions of the perpetrators, here depicted as competing protagonists in an arena of violence. It examines the violence forensically, through its public and popular representations, academically and, finally, through the narrative approach, drawing on a rich analysis of stories from different sides. The authors also offer the first critical examination of the TRC's amnesty process, show how media representations of perpetrators inform public perceptions, and scrutinise international scholarly writings on the issue of political violence. Suggestive and intriguing, The Theatre of Violence opens a fresh examination of the erstwhile taken-for-granted understandings and attempts to address a range of questions that are often not considered, and perhaps cannot be considered, in a dispassionate way. It is in many ways an optimistic study, holding out the possibility of a society that can understand and take steps to minimise the perpetration of gross violations of human rights.",
+      "cited_by_count": 129,
+      "type": "book",
+      "source": {
+        "name": "Open University of Cape Town (University of Cape Town)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11427/7661"
+      },
+      "topics": [
+        "South African History and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1543059698"
+    },
+    {
+      "openalex_id": "W2132851201",
+      "doi": "10.1007/978-3-531-90171-8_8",
+      "title": "Governance in der politischen \u00d6konomie",
+      "authors": [
+        {
+          "name": "Susanne L\u00fctz",
+          "openalex_id": "A5066813056",
+          "orcid": "https://orcid.org/0000-0002-2849-3308",
+          "institutions": [
+            "Max Planck Society",
+            "Max Planck Institute for the Study of Societies"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "This paper outlines an institutionalist political economy approach to capitalism as a specific type of social order.Social science institutionalism considers social systems to be structured by sanctioned rules of obligatory behavior.Its perspective is one of collective ordering, or governance, through regularization and normalization of social action, either by public authority or by private contract.Political economy looks at the interrelations between collective action in general and collective rule-making in particular, and the economy; it extends from economic and social policy-making to the way in which economic interests and constraints influence policy, politics and social life as a whole.The approach proposed in this article looks at society and economy as densely intertwined and closely interdependent, which is what traditional concepts of capitalism stood for.Proceeding from an institutionalist perspective, it elaborates a concept of capitalism not as a self-driven mechanism of surplus extraction and accumulation governed by objective laws, but as a set of interrelated social institutions, and as a historically specific system of structured as well as structuring social interaction within and in relation to an institutionalized social order.",
+      "cited_by_count": 41,
+      "type": "book-chapter",
+      "source": {
+        "name": "VS Verlag f\u00fcr Sozialwissenschaften eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-531-90171-8_8.pdf"
+      },
+      "topics": [
+        "Economic and Social Issues",
+        "Public Administration and Political Analysis",
+        "Political Influence and Corporate Strategies"
+      ],
+      "referenced_works_count": 123,
+      "url": "https://openalex.org/W2132851201"
+    },
+    {
+      "openalex_id": "W4285389618",
+      "doi": "10.1002/hrm.22132",
+      "title": "Toward a non\u2010organizational theory of human resource management? A complex adaptive systems perspective on the human resource management ecosystem in (con)temporary organizing",
+      "authors": [
+        {
+          "name": "Catriona M. Burke",
+          "openalex_id": "A5091297838",
+          "orcid": "https://orcid.org/0000-0002-5559-3769",
+          "institutions": [
+            "University of Limerick"
+          ]
+        },
+        {
+          "name": "Michael Morley",
+          "openalex_id": "A5054537805",
+          "orcid": "https://orcid.org/0000-0002-7478-5520",
+          "institutions": [
+            "University of Limerick"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-07-14",
+      "abstract": "Abstract The emergence of the temporary organization has ushered in a new logic of organizing accompanied by paradigm\u2010shifting challenges with respect to how the evolving nature of work, workers, and collective effort are to be understood. To capture the complexity inherent in this new order, and to broaden our focus from the organization to the enfolding ecosystem within which temporary organizing must be situated and understood, we engage in problematization to develop a multi\u2010level framework for theorizing the contemporary human resource management ecosystem. Curating insights from complexity science, we conceptualize this ecosystem as a complex adaptive one and we propose a framework that integrates key structural (open boundaries and relational constitution), emergent (contextual and complex causality), and temporal (dynamic and adaptive) properties. To deepen lines of inquiry around these defining elements, we advance a series of propositions for testing, and we outline a range of theoretical, methodological, and practical implications that arise from our work.",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Human Resource Management",
+        "type": "journal",
+        "issn": [
+          "0090-4848",
+          "1099-050X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1002/hrm.22132"
+      },
+      "topics": [
+        "Complex Systems and Decision Making",
+        "Management and Organizational Studies",
+        "Innovation and Knowledge Management"
+      ],
+      "referenced_works_count": 218,
+      "url": "https://openalex.org/W4285389618"
+    },
+    {
+      "openalex_id": "W1580038265",
+      "doi": null,
+      "title": "Freezing language : conceptualisation processes across ICT-supported organisations",
+      "authors": [
+        {
+          "name": "Stijn Hoppenbrouwers",
+          "openalex_id": "A5091838684",
+          "orcid": "https://orcid.org/0000-0002-1137-2999"
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-01-01",
+      "abstract": "The thesis concerns an aspect of the development and design of computerised information systems: the language aspect. Information systems make intensive use of natural language for human-to-human communication. We focus on the specification of \u2018language items\u2019 (mostly words and phrases) that are to be built into information systems, thus becoming \u2018means for languaging\u2019 made available to the user. \u2018Natural\u2019 language use typically involves continuous adaptation of language to its context of use. If the language requirements vary or change, the supporting means for languaging should be altered to match them. This adaptive process involves linguistic meta-communication. Means for languaging provided through computerised information systems are often not aligned very well to language needs of users, or with agreements about language that hold between them. As static language specifications and standards are often inadequate if built into information systems, adaptive approaches to language specification are required. We developed a theory that enables us to directly relate language use and development to language description activities as occur in the use and development of information systems. On the basis of the theory we developed a coherent analytical framework and a method. Our method has been shaped as a so-called architecture viewpoint: an analytical and communicative instrument that is dedicated to a particular aspect of systems architecture. We have also provided a proof of concept of the method by means of a case study in a real organisation.",
+      "cited_by_count": 33,
+      "type": "dissertation",
+      "source": {
+        "name": "Radboud Repository (Radboud University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/2066/19372"
+      },
+      "topics": [
+        "Service-Oriented Architecture and Web Services",
+        "Business Process Modeling and Analysis",
+        "Advanced Software Engineering Methodologies"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W1580038265"
+    },
+    {
+      "openalex_id": "W4283386609",
+      "doi": "10.4337/9781788977319",
+      "title": "Artificial Intelligence and Democracy",
+      "authors": [
+        {
+          "name": "J\u00e9r\u00f4me Duberry",
+          "openalex_id": "A5019982518",
+          "orcid": "https://orcid.org/0000-0002-8195-6498"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-21",
+      "abstract": "This is an open access title available under the terms of a CC BY-NC-ND 4.0 License. It is free to read, download and share on Elgaronline.com. This insightful book explores the citizen-government relation, as mediated through artificial intelligence (AI). Through a critical lens, J\u00e9r\u00f4me Duberry examines the role of AI in the relation and its implications for the quality of liberal democracy and the strength of civic capacity.",
+      "cited_by_count": 35,
+      "type": "book",
+      "source": {
+        "name": "Edward Elgar Publishing eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.elgaronline.com/downloadpdf/book/9781788977319/9781788977319.pdf"
+      },
+      "topics": [
+        "Legal and Policy Issues"
+      ],
+      "referenced_works_count": 567,
+      "url": "https://openalex.org/W4283386609"
+    },
+    {
+      "openalex_id": "W2593638699",
+      "doi": "10.1146/annurev-lawsocsci-110316-113518",
+      "title": "The Sociology of Constitutions",
+      "authors": [
+        {
+          "name": "Chris Thornhill",
+          "openalex_id": "A5031296009",
+          "orcid": "https://orcid.org/0000-0002-2286-5967",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-10-13",
+      "abstract": "This article sets out an account of the historical development and the contemporary elaboration of sociological approaches to constitutional law. It argues that recent years have seen a broad sociological turn in constitutional theory, such that sociological constitutionalism now forms a distinct field of legal research. This is due to the general increase in the importance of constitutionalism in different national societies across the globe. This is also due to the emergence of new patterns of constitutional formation, both within and beyond national societies, resulting from the interaction between national and domestic constitutional law. The article separates different constitutional-sociological approaches into two categories: those with a primarily national, and those with a primarily transnational focus. Overall, however, it claims that sociological constitutionalism is driven primarily by engagement with transnational law, and the main insights in this field relate, in different ways, to global processes of transnational norm formation.",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Law and Social Science",
+        "type": "journal",
+        "issn": [
+          "1550-3585",
+          "1550-3631"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-lawsocsci-110316-113518"
+      },
+      "topics": [
+        "Judicial and Constitutional Studies",
+        "Comparative and International Law Studies",
+        "International Law and Human Rights"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W2593638699"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

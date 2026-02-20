@@ -1,0 +1,40 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.5840/FORPHIL201116117
+[verify_paper.py] DOI verified: Disenchantment, rationality and the modernity of M...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5840/FORPHIL201116117"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5840/forphil201116117",
+      "title": "Disenchantment, rationality and the modernity of Max Weber",
+      "authors": [
+        {
+          "family": "Carroll",
+          "given": "Anthony J."
+        },
+        {
+          "family": "Akademia Ignatianum",
+          "given": ""
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "Forum Philosophicum",
+      "volume": "16",
+      "issue": "1",
+      "page": "117-137",
+      "publisher": "Philosophy Documentation Center",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5840/forphil201116117"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

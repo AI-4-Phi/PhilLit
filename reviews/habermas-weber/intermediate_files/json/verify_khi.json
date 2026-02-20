@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Knowledge and Human Interests...' author=Habermas year=1971
+[verify_paper.py] Paper found: Knowledge and Human Interests... (score: 35.5)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Knowledge and Human Interests",
+    "author": "Habermas",
+    "year": 1971
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/588338",
+      "title": "Knowledge and Human Interests",
+      "authors": [
+        {
+          "family": "Lukes",
+          "given": "Steven"
+        },
+        {
+          "family": "Habermas",
+          "given": "Jurgen"
+        }
+      ],
+      "editors": [],
+      "year": 1972,
+      "container_title": "The British Journal of Sociology",
+      "volume": "23",
+      "issue": "4",
+      "page": "499",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/588338",
+      "score": 35.507477
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

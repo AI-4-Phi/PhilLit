@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Rationalization of Action in Max Weber's Sociology...' author=Kalberg year=1990
+[verify_paper.py] Paper found: The Rationalization of Action in Max Weber's Socio... (score: 60.4)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Rationalization of Action in Max Weber's Sociology of Religion",
+    "author": "Kalberg",
+    "year": 1990
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/202195",
+      "title": "The Rationalization of Action in Max Weber's Sociology of Religion",
+      "authors": [
+        {
+          "family": "Kalberg",
+          "given": "Stephen"
+        }
+      ],
+      "editors": [],
+      "year": 1990,
+      "container_title": "Sociological Theory",
+      "volume": "8",
+      "issue": "1",
+      "page": "58",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/202195",
+      "score": 60.39848
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

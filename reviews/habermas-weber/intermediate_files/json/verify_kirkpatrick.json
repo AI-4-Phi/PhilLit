@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Evolution or Progress? A (Critical) Defence of Habermas's Theory of Social Development",
+    "author": "Kirkpatrick",
+    "year": 2002
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/0725513603072001135",
+      "title": "Evolution or Progress? A (Critical) Defence of Habermas's Theory of Social Development",
+      "authors": [
+        {
+          "family": "Kirkpatrick",
+          "given": "Graeme"
+        }
+      ],
+      "editors": [],
+      "year": 2003,
+      "container_title": "Thesis Eleven",
+      "volume": "72",
+      "issue": "1",
+      "page": "91-112",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1177/0725513603072001135",
+      "score": 52.077553
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Communication and the Evolution of Society",
+    "author": "Habermas",
+    "year": 1979
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (28.7) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

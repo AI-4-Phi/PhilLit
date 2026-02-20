@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Lawrence Scaff Weber modernity rationalization",
+  "results": [
+    {
+      "paperId": "f28fde6fcffd348f1678bacb767ee988f09ef5bc",
+      "title": "Max Weber\u2019s Theory of Modernity: The Endless Pursuit of Meaning",
+      "authors": [
+        {
+          "name": "D. Swartz",
+          "authorId": "39131390"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1177/0094306117692573mm",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f28fde6fcffd348f1678bacb767ee988f09ef5bc",
+      "venue": "",
+      "journal": {
+        "name": "Contemporary Sociology: A Journal of Reviews",
+        "pages": "221 - 223",
+        "volume": "46"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "253118c523bb4b81f20e9e552c82820bc2f93026",
+      "title": "The Cambridge Companion to Weber",
+      "authors": [
+        {
+          "name": "S. Turner",
+          "authorId": "47505199"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 88,
+      "doi": "10.2307/3089047",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/253118c523bb4b81f20e9e552c82820bc2f93026",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "836180aa9944b5e6a16116b9f885ab7291c27e31",
+      "title": "After 1989: Globalization, Normalization, and Utopia",
+      "authors": [
+        {
+          "name": "L. Ray",
+          "authorId": "113078136"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1057/9780230233607_8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/836180aa9944b5e6a16116b9f885ab7291c27e31",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "101-116",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

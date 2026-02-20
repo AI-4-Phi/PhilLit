@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1177/13684310211003192"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/13684310211003192",
+      "title": "The philosopher as engaged citizen: Habermas on the role of the public intellectual in the modern democratic public sphere",
+      "authors": [
+        {
+          "family": "Verov\u0161ek",
+          "given": "Peter J."
+        }
+      ],
+      "editors": [],
+      "year": 2021,
+      "container_title": "European Journal of Social Theory",
+      "volume": "24",
+      "issue": "4",
+      "page": "526-544",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1177/13684310211003192"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

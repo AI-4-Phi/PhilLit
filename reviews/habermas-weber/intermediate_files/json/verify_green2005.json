@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Two Meanings of Disenchantment...' author=Green year=2005
+[verify_paper.py] Paper found: Two Meanings of Disenchantment... (score: 36.7)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Two Meanings of Disenchantment",
+    "author": "Green",
+    "year": 2005
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5840/philtheol2005171/24",
+      "title": "Two Meanings of Disenchantment",
+      "authors": [
+        {
+          "family": "Green",
+          "given": "Jeffrey E."
+        },
+        {
+          "family": "Philosophy Documentation Center",
+          "given": ""
+        }
+      ],
+      "editors": [],
+      "year": 2005,
+      "container_title": "Philosophy and Theology",
+      "volume": "17",
+      "issue": "1",
+      "page": "51-84",
+      "publisher": "Philosophy Documentation Center",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.5840/philtheol2005171/24",
+      "score": 36.748066
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

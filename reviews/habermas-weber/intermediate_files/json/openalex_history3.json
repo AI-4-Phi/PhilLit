@@ -1,0 +1,1104 @@
+[search_openalex.py] Searching OpenAlex: 'modernization Eurocentrism Habermas Weber uniqueness West' (year=2000-2025), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_f67b89f292f96f4a)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "modernization Eurocentrism Habermas Weber uniqueness West",
+  "results": [
+    {
+      "openalex_id": "W4252698994",
+      "doi": "10.5040/9781472544377",
+      "title": "Connected Sociologies",
+      "authors": [
+        {
+          "name": "Gurminder K. Bhambra",
+          "openalex_id": "A5064248726",
+          "orcid": "https://orcid.org/0000-0003-3658-1575"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "<JATS1:p>This book outlines what theory for a global age might look like, positing an agenda for consideration, contestation and discussion, and a framework for the research-led volumes that follow in the series.</JATS1:p> <JATS1:p>Gurmider K. Bhambra takes up the classical concerns of sociology and social theory and shows how they are being rethought through an engagement with postcolonial studies, one of the most distinctive critical approaches of the past two decades. She also discusses the significance of the research programme surrounding coloniality and modernity that has emerged recently from Latin America.</JATS1:p>",
+      "cited_by_count": 592,
+      "type": "book",
+      "source": {
+        "name": "Bloomsbury Publishing Plc eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.bloomsburycollections.com/book/connected-sociologies.pdf?dl"
+      },
+      "topics": [
+        "Contemporary Sociological Theory and Practice"
+      ],
+      "referenced_works_count": 228,
+      "url": "https://openalex.org/W4252698994"
+    },
+    {
+      "openalex_id": "W135364984",
+      "doi": "10.5070/t413012881",
+      "title": "Transmodernity and Interculturality: An Interpretation from the Perspective of Philosophy of Liberation",
+      "authors": [
+        {
+          "name": "Enrique Dussel",
+          "openalex_id": "A5040236031",
+          "institutions": [
+            "Universidad Aut\u00f3noma Metropolitana",
+            "Autodesk (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "In search of self-identity: from Eurocentrism to developmentalist coloniality I belong to a generation of Latin Americans whose intellectual beginnings are situated in the 1950s, after the end of the Second World War.For us, in the Argentina of that era, there was no doubt that we were a part of \"Western culture.\"For that reason, some of our subsequent categorical judgments are a natural expression of someone who opposes himself.The philosophy that we studied set out from the Greeks, in whom we saw our most remote lineage.The Amerindian World had no presence in our studies, and none of our professors would have been able to articulate the origin of philosophy with reference to indigenous peoples. 2 Moreover, the ideal philosopher was one who was familiar with the precise details of classical Western philosophers and their contemporary developments.There existed no possibility whatsoever for a specifically Latin American philosophy.It is difficult to evoke in the present the firm hold that the European model of philosophy had on us (since at that moment in Argentina there was no reference to the United States, yet).Germany and France had complete hegemony, especially in South America (although this was not the case in Mexico, Central America, or the Hispanic, French, or British Caribbean).",
+      "cited_by_count": 191,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt6591j76r/qt6591j76r.pdf?t=m6aapy"
+      },
+      "topics": [
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W135364984"
+    },
+    {
+      "openalex_id": "W2022944587",
+      "doi": "10.1215/10679847-9-2-287",
+      "title": "Spectral Times: The Ghost Film As Historical Allegory",
+      "authors": [
+        {
+          "name": "Bliss Cua Lim",
+          "openalex_id": "A5001731298"
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-05-01",
+      "abstract": "Research Article| May 01 2001 Spectral Times: The Ghost Film As Historical Allegory Bliss Cua Lim Bliss Cua Lim Search for other works by this author on: This Site Google positions (2001) 9 (2): 287\u2013329. https://doi.org/10.1215/10679847-9-2-287 Cite Icon Cite Share Icon Share Facebook Twitter LinkedIn MailTo Permissions Search Site Citation Bliss Cua Lim; Spectral Times: The Ghost Film As Historical Allegory. positions 1 May 2001; 9 (2): 287\u2013329. doi: https://doi.org/10.1215/10679847-9-2-287 Download citation file: Zotero Reference Manager EasyBib Bookends Mendeley Papers EndNote RefWorks BibTex toolbar search Search Dropdown Menu toolbar search search input Search input auto suggest filter your search Books & JournalsAll Journalspositions Search Advanced Search The text of this article is only available as a PDF. 2001 by Duke University Press2001 Article PDF first page preview Close Modal You do not currently have access to this content.",
+      "cited_by_count": 59,
+      "type": "article",
+      "source": {
+        "name": "positions asia critique",
+        "type": "journal",
+        "issn": [
+          "1067-9847",
+          "1527-8271"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://read.dukeupress.edu/positions/article-pdf/9/2/287/461515/02-Lim.pdf"
+      },
+      "topics": [
+        "Gothic Literature and Media Analysis",
+        "Crime and Detective Fiction Studies",
+        "Shakespeare, Adaptation, and Literary Criticism"
+      ],
+      "referenced_works_count": 49,
+      "url": "https://openalex.org/W2022944587"
+    },
+    {
+      "openalex_id": "W4239486003",
+      "doi": "10.1057/9780230274877_8",
+      "title": "Sociology and Post-colonialism: Another \u2018Missing\u2019 Revolution?",
+      "authors": [
+        {
+          "name": "Gurminder K. Bhambra",
+          "openalex_id": "A5064248726",
+          "orcid": "https://orcid.org/0000-0003-3658-1575"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "Sociology is usually represented as having emerged alongside European modernity. The latter is frequently understood as sociology's special object with sociology itself a distinctively modern form of explanation. The period of sociology's disciplinary formation was also the heyday of European colonialism, yet the colonial relationship did not figure in the development of sociological understandings. While the recent emergence of post-colonialism appears to have initiated a reconsideration of understandings of modernity, with the development of theories of multiple modernities, I suggest, however, that this engagement is more an attempt at recuperating the transformative aspect of post-colonialism than engaging with its critiques. In setting out the challenge of post-colonialism to dominant sociological accounts, I will also address 'missing feminist/queer revolutions', suggesting that by engaging with post-colonialism there is the potential to transform sociological understandings by opening up a dialogue beyond the simple pluralism of identity claims.",
+      "cited_by_count": 15,
+      "type": "book-chapter",
+      "source": {
+        "name": "Palgrave Macmillan UK eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1057/9780230274877_8.pdf"
+      },
+      "topics": [
+        "Contemporary Sociological Theory and Practice",
+        "Social and Cultural Dynamics",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W4239486003"
+    },
+    {
+      "openalex_id": "W4389326687",
+      "doi": "10.1080/13523260.2023.2288468",
+      "title": "(En)Countering epistemic imperialism: A critique of \u201cWestsplaining\u201d and coloniality in dominant debates on Russia\u2019s invasion of Ukraine",
+      "authors": [
+        {
+          "name": "Tereza Hendl",
+          "openalex_id": "A5003016234",
+          "orcid": "https://orcid.org/0000-0002-6472-7028",
+          "institutions": [
+            "University of Augsburg"
+          ]
+        },
+        {
+          "name": "Olga Burlyuk",
+          "openalex_id": "A5079673696",
+          "orcid": "https://orcid.org/0000-0002-7477-1655",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        },
+        {
+          "name": "M\u00edla O\u2019Sullivan",
+          "openalex_id": "A5064235216",
+          "orcid": "https://orcid.org/0000-0002-9784-110X",
+          "institutions": [
+            "Institute of International Relations"
+          ]
+        },
+        {
+          "name": "Aizada Arystanbek",
+          "openalex_id": "A5018387743",
+          "orcid": "https://orcid.org/0009-0004-1282-7539",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-04",
+      "abstract": "On February 24, 2022, the world was surprised by Russia\u2019s full-scale invasion of Ukraine and, perhaps even more so, by Ukraine\u2019s fierce resistance to it. In this article, we examine mainstream and feminist International Relations (IR) debates that have emerged in response to Russia\u2019s invasion, as well as the older debates revived through them. Building on decolonial and feminist scholarship, prominently centering feminist debates from Europe\u2019s East and Central Asia, we argue that dominant Western IR debates on Russia and Ukraine are shaped by inter-imperiality. We trace issues of epistemic injustice, epistemic imperialism and coloniality of knowledge production in mainstream IR and see them replicated in feminist debates, including from global South perspectives. We conclude with a contemplation on the structural changes warranted across academia to eliminate the coloniality of knowledge production about Ukraine and fellow societies as well as Indigenous nations affected by Russian colonial and imperial violence.",
+      "cited_by_count": 72,
+      "type": "article",
+      "source": {
+        "name": "Contemporary Security Policy",
+        "type": "journal",
+        "issn": [
+          "1352-3260",
+          "1743-8764"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/13523260.2023.2288468?needAccess=true"
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "Global Peace and Security Dynamics",
+        "Global Security and Public Health"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W4389326687"
+    },
+    {
+      "openalex_id": "W4214564547",
+      "doi": "10.1590/1982-7849rac2022210014.en",
+      "title": "Decolonial Studies, Non-Extractive Methods, and Participatory Action Research in Accounting",
+      "authors": [
+        {
+          "name": "Cleia Maria da Silva",
+          "openalex_id": "A5113170028",
+          "institutions": [
+            "Universidade Federal do Rio de Janeiro",
+            "Universidade Federal Rural do Rio de Janeiro"
+          ]
+        },
+        {
+          "name": "Fernanda Filgueiras Sauerbronn",
+          "openalex_id": "A5033230315",
+          "orcid": "https://orcid.org/0000-0002-7932-2314",
+          "institutions": [
+            "Universidade Federal do Rio de Janeiro"
+          ]
+        },
+        {
+          "name": "Michel Thiollent",
+          "openalex_id": "A5112879435",
+          "institutions": [
+            "Universidade Federal do Rio de Janeiro"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "ABSTRACT Objective: this paper discusses how accounting supports financial capitalism in the Global South through neocolonialist languages and practices, aiming to put forth a decolonial agenda based on non-extractive methodologies to recover alternative knowledge and (re)build new ones. Method: we revisited critical accounting literature, connecting it to decolonial epistemology. We described the assumptions behind different non-extractive methods and contrasted participatory action research (PAR) with different approaches to knowledge production and consumption. We also outlined some PAR operational strategies, discussed action research in management and accounting studies, and examined the potential for a participatory accounting agenda. Results: non-extractive methods can respect and value different worldviews in each social phenomenon. This points to non-traditional and emancipatory research alternatives to produce a new sentipensante in accounting to decolonize knowledge, bodies, and minds. Conclusions: this paper presents PAR as allowing (re)existence of different worldviews by recognizing its ability to recover and rebuild knowledge \u2018with\u2019 participants. PAR supports programmatic engagement with subalternized voices to coproduce pluriversality in accounting - instead of reproducing universalisms - and bolsters academics and practitioners to transcend Western modernity.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "Revista de Administra\u00e7\u00e3o Contempor\u00e2nea",
+        "type": "journal",
+        "issn": [
+          "1415-6555",
+          "1982-7849"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.scielo.br/j/rac/a/zxVCFTxgMymYqG8yqT8BCmL/?lang=en&format=pdf"
+      },
+      "topics": [
+        "Microfinance and Financial Inclusion",
+        "Social and Economic Solidarity"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W4214564547"
+    },
+    {
+      "openalex_id": "W191886030",
+      "doi": null,
+      "title": "Negotiating Political Identities: Multiethnic Schools and Youth in Europe",
+      "authors": [
+        {
+          "name": "Daniel Faas",
+          "openalex_id": "A5038414872",
+          "orcid": "https://orcid.org/0000-0002-9920-9407"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-04-28",
+      "abstract": "Contents: Foreword Introduction: Political identities in a multicultural Europe Part I Germany: The Europeanization of German national identities Eurocentric education at Tannberg Hauptschule Liberal politics in Goethe Gymnasium. Part II England: Sustaining national identities in England Ethnic conflict in Millroad School Political integration in Darwin School. Conclusion: Inclusive citizenship and social cohesion Appendices Bibliography Index.",
+      "cited_by_count": 58,
+      "type": "book",
+      "source": {
+        "name": "Arrow@dit (Dublin Institute of Technology)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global Education and Multiculturalism",
+        "Religious Education and Schools"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W191886030"
+    },
+    {
+      "openalex_id": "W2613824878",
+      "doi": "10.4324/9781315584881-10",
+      "title": "Conceptualizing Circulation of Knowledge in the Social Sciences",
+      "authors": [
+        {
+          "name": "Wiebke Keim",
+          "openalex_id": "A5051707950",
+          "orcid": "https://orcid.org/0000-0003-1332-5931"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-22",
+      "abstract": "International audience",
+      "cited_by_count": 33,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.4324/9781315584881-10&type=chapterpdf"
+      },
+      "topics": [
+        "Contemporary Sociological Theory and Practice",
+        "Political Science Research and Education",
+        "Emile Durkheim and Sociology"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2613824878"
+    },
+    {
+      "openalex_id": "W3033956033",
+      "doi": "10.1007/s10767-020-09366-4",
+      "title": "A Cultural Sociology of Populism",
+      "authors": [
+        {
+          "name": "Marcus Morgan",
+          "openalex_id": "A5040137503",
+          "orcid": "https://orcid.org/0000-0001-5378-9293",
+          "institutions": [
+            "University of Bristol"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-05",
+      "abstract": null,
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Politics Culture and Society",
+        "type": "journal",
+        "issn": [
+          "0891-4486",
+          "1573-3416"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10767-020-09366-4.pdf"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Social and Cultural Dynamics",
+        "Music History and Culture"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W3033956033"
+    },
+    {
+      "openalex_id": "W612689895",
+      "doi": null,
+      "title": "Redefining public space in Hanoi: Places, practices and meaning",
+      "authors": [
+        {
+          "name": "Sandra Kurf\u00fcrst",
+          "openalex_id": "A5027051504",
+          "orcid": "https://orcid.org/0000-0001-9252-4888"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-12-18",
+      "abstract": "The introduction of the economic reform program, Doi Moi, in 1986 opened the door for private sector development in Vietnam, as well as the country\u2019s integration into the world economy. As Hanoi is the national political centre, it occupies an important role in Vietnam\u2019s transformation process. The capital has become a major hub for socio-economic development. Whereas \u201cHanoi was renowned for its quiet streets in the 1980s\u201d (Drummond 2000: 2382), nowadays it is characterised by its bustling street life. Public spaces, such as streets and sidewalks, are appropriated by private individuals for mostly small-scale economic activities. Existing green parks are privatised in order to cater to the growing demand for leisure space. At the same time, official spaces like Ba Dinh Square or Ly Thai To Square are occupied by Hanoi\u2019s residents for sports and gatherings. Thomas (2002: 1621) regards this a contestation of the state-defined landscape by local people. In other words, the state\u2019s defining power for the urban image is challenged by a multiplicity of spatial producers. This thesis focuses on the development of public spaces in Hanoi. Using the frame of an emic reconstruction , major themes such as changes in power relations between state and society and their reflection in the city\u2019s physical environment are explored. Embedded in the discipline of urban sociology, this thesis aims to contribute to the discussion about the correlation between the public sphere as a sociological/political category and the materiality and practices of public space. According to Sennett (2008), the public sphere is a crucial element of urbanism. Furthermore, as Eisenstadt and Schluchter (20021: 12) indicate, there is a strong relationship between the public sphere and civil society, along with political and economic liberalisation. Therefore, the question remains whether public spaces in Hanoi are an expression of a public sphere or a prerequisite for its development.%%%%Die Einfuhrung okonomischer Reformen im Jahr 1986 schaffte die Grundlage fur die Entwicklung des Privatsektors in Vietnam sowie die Integration des Landes in den Weltmarkt. In diesem Transformationsprozess kommt der Hauptstadt Hanoi eine wichtige Rolle zu. Hanoi ist nicht nur historisches und politisches, sondern auch soziookonomisches Zentrum. Zwar liegt das wirtschaftliche Potenzial von Ho Chi Minh Stadt im Suden Vietnams uber dem von Hanoi, fur Nordvietnam bildet die Hauptstadt jedoch den wichtigsten wirtschaftlichen Knotenpunkt. Wahrend Hanoi noch in den 1980er Jahren fur seine ruhigen Strasen bekannt war, ist das Leben auf der Strase heute ein wesentlicher Bestandteil des Alltagslebens in der Stadt. Offentliche Raume wie Burgersteige und Strasen werden fur private okonomische Aktivitaten genutzt. Parks werden privatisiert, um der wachsenden Nachfrage nach Freizeitaktivitaten gerecht zu werden. Parallel dazu eignen sich die Burger Hanois offizielle Platze wie den Ly Thai To Platz oder den Ba Dinh Platz an. Thomas (2002) bezeichnet diese Aneignung als Anfechtung der\u2026",
+      "cited_by_count": 32,
+      "type": "book",
+      "source": {
+        "name": "OPUS (University of Passau)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://opus4.kobv.de/opus4-uni-passau/files/177/Kurfuerst_Sandra.pdf"
+      },
+      "topics": [
+        "Hong Kong and Taiwan Politics",
+        "Philippine History and Culture",
+        "Vietnamese History and Culture Studies"
+      ],
+      "referenced_works_count": 124,
+      "url": "https://openalex.org/W612689895"
+    },
+    {
+      "openalex_id": "W4388555027",
+      "doi": "10.1017/s1752971923000167",
+      "title": "The United Nations of IR: power, knowledge, and empire in Global IR debates",
+      "authors": [
+        {
+          "name": "Tarak Barkawi",
+          "openalex_id": "A5002242528",
+          "orcid": "https://orcid.org/0000-0001-5526-5055",
+          "institutions": [
+            "Johns Hopkins University"
+          ]
+        },
+        {
+          "name": "Christopher Murray",
+          "openalex_id": "A5103189007",
+          "orcid": "https://orcid.org/0000-0003-0569-8658",
+          "institutions": [
+            "Aalto University"
+          ]
+        },
+        {
+          "name": "Ay\u015fe Zarakol",
+          "openalex_id": "A5058252990",
+          "orcid": "https://orcid.org/0000-0002-1236-3226",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-11-01",
+      "abstract": "Abstract This paper critiques a core premise of Global IR: the association of knowledge with geography, which we term geo-epistemology. It argues that \u2018American\u2019 and Global IR share a Eurocentric spatial imaginary, one that was a product of Western expansion and empire. Through its geo-epistemology, Global IR enables a conservative appropriation of the critique of Eurocentrism in IR. Globality becomes a matter of assembling sufficient geographic representation rather than an analysis of the discipline's political, historical, and spatial assumptions. Anglo-American policymakers and intellectuals invented the national/international world to replace the world of empires and races that came apart in the era of the world wars. This UN world of sovereign nation-states and their regional groupings was the foundational move of both what Stanley Hoffman called \u2018the American social science\u2019 \u2013 IR \u2013 and the American-centred world order. The paper uses the reception and legacy of Hoffman's classic essay to show how culture replaced power and history in the study of the discipline, obfuscating the Eurocentrism of Global IR.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "International Theory",
+        "type": "journal",
+        "issn": [
+          "1752-9719",
+          "1752-9727"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B39603D4358D9B8AC19234F129454686/S1752971923000167a.pdf/div-class-title-the-united-nations-of-ir-power-knowledge-and-empire-in-global-ir-debates-div.pdf"
+      },
+      "topics": [
+        "Globalization and political ideologies",
+        "Political Science Research and Education",
+        "International Relations and Foreign Policy"
+      ],
+      "referenced_works_count": 93,
+      "url": "https://openalex.org/W4388555027"
+    },
+    {
+      "openalex_id": "W3125221184",
+      "doi": "10.1163/21659214-bja10017",
+      "title": "Global Perspectives on Religion, Media and Public Scholarship",
+      "authors": [
+        {
+          "name": "Tim Hutchings",
+          "openalex_id": "A5030369525",
+          "orcid": "https://orcid.org/0000-0002-6618-6122",
+          "institutions": [
+            "University of Nottingham"
+          ]
+        },
+        {
+          "name": "Kwabena Asamoah-Gyadu",
+          "openalex_id": "A5038732628"
+        },
+        {
+          "name": "Giulia Evolvi",
+          "openalex_id": "A5087533569",
+          "orcid": "https://orcid.org/0000-0001-6928-5903",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        },
+        {
+          "name": "Sam Han",
+          "openalex_id": "A5077787749",
+          "orcid": "https://orcid.org/0000-0002-9666-8114",
+          "institutions": [
+            "University of Western Australia"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-10-23",
+      "abstract": "Abstract This article encourages researchers of religion, media and culture to develop new, global, comparative conversations about the meaning and purpose of public scholarship. Key terms like \u201creligion\u201d, \u201cmedia\u201d, \u201cpublicness\u201d and \u201cscholarship\u201d can be understood and articulated differently in different social, cultural and geographical locations, and dialogue across our academic contexts is needed to help explore these parallels and divergences. This article shares three reflections from scholars who have lived and worked in west Africa, southern Europe and south-east Asia. Each contributor has been asked to address two questions: How do religious communities engage public audiences? And how can (or should) scholars communicate with the public? The conclusion to the article identifies some of the central themes of their responses: secularity, colonial legacies, globalization, power, vulnerability, and the intended audience of our public interventions.",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Journal of Religion Media and Digital Culture",
+        "type": "journal",
+        "issn": [
+          "2165-9214",
+          "2588-8099"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://brill.com/downloadpdf/journals/rmdc/9/2/article-p148_148.pdf"
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Media, Religion, Digital Communication",
+        "Religion, Society, and Development"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W3125221184"
+    },
+    {
+      "openalex_id": "W3166874968",
+      "doi": "10.1007/s10460-021-10221-1",
+      "title": "Let the people decide: citizen deliberation on the role of GMOs in Mali\u2019s agriculture",
+      "authors": [
+        {
+          "name": "Michel Pimbert",
+          "openalex_id": "A5008921993",
+          "orcid": "https://orcid.org/0000-0002-6214-8305",
+          "institutions": [
+            "Coventry University"
+          ]
+        },
+        {
+          "name": "Boukary Barry",
+          "openalex_id": "A5001692253",
+          "institutions": [
+            "Mali-Folkecenter"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-07",
+      "abstract": "Abstract This paper describes and critically reflects on a participatory policy process which resulted in a government decision not to introduce genetically modified (GM) cotton in farmers\u2019 fields in Mali (West Africa). In January 2006, 45 Malian farmers gathered in Sikasso to deliberate on GM cotton and the future of farming in Mali. As an invited policy space convened by the government of Sikasso region, this first-time farmers' jury was unique in West Africa. It was known as l\u2019ECID\u2014 Espace Citoyen d\u2019Interpellation D\u00e9mocratique (Citizen\u2019s Space for Democratic Deliberation)\u2014and it had an unprecedented impact on the region. In this Deliberative and Inclusive Process (DIP), the ECID combined the citizens\u2019 jury method with indigenous methods for debate and dialogue, including the traditional African palaver. The ECID brought together male and female producers representing every district in the Sikasso region of southern Mali, specialist witnesses from various continents and a panel of independent observers, as well as resource persons and members of the national and international press and media. As an experiment in deliberative democracy, the ECID of Sikasso aimed to give men and women farmers the opportunity to share knowledge on the benefits and risks of GM cotton, and make policy recommendations on the future of GM technology in Malian agriculture. Designed as a bottom-up and participatory process, the ECID\u2019s outcomes significantly changed national policy on the release of GM technology and have had an enduring influence in Mali. In this paper, we describe our positionality as action researchers and co-organisers of the ECID. We explain the methodology used for the ECID of Sikasso and critically reflect on the safeguards that were put in place to ensure a balanced and trustworthy deliberative process. The ECID and its key outcomes are discussed in the context of the political economy of GM cotton in West Africa. Last, we briefly highlight the relevance of the ECID for current international debates on racism in the theory and practice deliberative democracy; the production of post-normal transdisciplinary knowledge for technology risk-assessments; and the politics of knowledge in participatory policy-making for food and agriculture.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Agriculture and Human Values",
+        "type": "journal",
+        "issn": [
+          "0889-048X",
+          "1572-8366"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10460-021-10221-1.pdf"
+      },
+      "topics": [
+        "CRISPR and Genetic Engineering",
+        "Genetically Modified Organisms Research",
+        "Agriculture, Land Use, Rural Development"
+      ],
+      "referenced_works_count": 154,
+      "url": "https://openalex.org/W3166874968"
+    },
+    {
+      "openalex_id": "W1917823267",
+      "doi": "10.4000/etnografica.1158",
+      "title": "Kilimanjaro\u2019s melting glaciers: on the colonial and postcolonial perception and appropriation of African nature",
+      "authors": [
+        {
+          "name": "Urte Undine Fr\u00f6mming",
+          "openalex_id": "A5061176232",
+          "institutions": [
+            "Freie Universit\u00e4t Berlin"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "Over the past decade, the melting glaciers of Kilimanjaro have come to symbolise the effects of global warming. At the same time, increased tourism in the region has an ambivalent quality as the industry capitalises on the celebration of the same nature (and its western appropriation) that is threatened by tourism\u2019s major influence on world climate. In European perceptions, Mount Kilimanjaro has, since its first discovery in the 18th century, become an epitome of overwhelming beauty, representing \u2013 until today \u2013 wilderness and adventure to the more than 20,000 international tourists who climb the mountain each year. This paper traces how these perceptions are grounded in the foundations of aesthetic modernity that continue to shape the attraction of Mount \u00adKilimanjaro. Further examinations focus on the consequences for the local population as well as the relationships between local inhabitants and international visitors attracted by the scale-making projects of an industry that continues the colonial conquest.",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Etnografica",
+        "type": "journal",
+        "issn": [
+          "0873-6561",
+          "2182-2891"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.openedition.org/etnografica/pdf/1158"
+      },
+      "topics": [
+        "Tourism, Volunteerism, and Development"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W1917823267"
+    },
+    {
+      "openalex_id": "W4242477362",
+      "doi": "10.5117/hcm2013.1.eijn",
+      "title": "Shaping the Discourse on Modernity",
+      "authors": [
+        {
+          "name": "J. van Eijnatten",
+          "openalex_id": "A5044702187",
+          "orcid": "https://orcid.org/0000-0002-8865-0002"
+        },
+        {
+          "name": "Ed Jonker",
+          "openalex_id": "A5075829293"
+        },
+        {
+          "name": "Willemijn Ruberg",
+          "openalex_id": "A5055425839",
+          "orcid": "https://orcid.org/0000-0001-9156-8889"
+        },
+        {
+          "name": "Joes Segal",
+          "openalex_id": "A5112570675"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-03-28",
+      "abstract": "In this opening article, the editors of History, Culture and Modernity provide an overview of recent debates relating to \u201cmodernity\u201d, inviting prospective authors to participate in a reflexive conversation on this contested concept, which is, at the same time, a practical reality. Modernity is on endless trial, suggesting evaluation and permanent criticism. The most disputed aspects of modernity range from its supposedly secular character and its strong connection to western science. Responses to these and other conspicuous features of modernity include Romanticism and various critiques of Enlightenment rationality, but also artistic modernism and the postcolonial attack on Eurocentrism. New approaches to the study of modernity try to accept its ambiguity, rather than reaffirm the conventional binary approach, and pay more attention to global and experiential aspects. A cultural history of modernity can help to expand such new approaches.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "International Journal for History Culture and Modernity",
+        "type": "journal",
+        "issn": [
+          "2213-0624",
+          "2214-9910",
+          "2666-6529"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://brill.com/downloadpdf/journals/hcm/1/1/article-p3_2.pdf"
+      },
+      "topics": [
+        "Scottish History and National Identity",
+        "Political and Economic history of UK and US",
+        "Australian History and Society"
+      ],
+      "referenced_works_count": 27,
+      "url": "https://openalex.org/W4242477362"
+    },
+    {
+      "openalex_id": "W4390263234",
+      "doi": "10.1093/isr/viad056",
+      "title": "Contextualizing the Contextualizers: How the Area Studies Controversy is Different in Different Places",
+      "authors": [
+        {
+          "name": "Jan Busse",
+          "openalex_id": "A5005114733",
+          "orcid": "https://orcid.org/0000-0001-8453-5675",
+          "institutions": [
+            "Universit\u00e4t der Bundeswehr M\u00fcnchen"
+          ]
+        },
+        {
+          "name": "Morten Valbj\u00f8rn",
+          "openalex_id": "A5045546678",
+          "orcid": "https://orcid.org/0000-0002-8739-5425",
+          "institutions": [
+            "Aarhus University"
+          ]
+        },
+        {
+          "name": "Asel Doolotkeldieva",
+          "openalex_id": "A5047171681",
+          "orcid": "https://orcid.org/0000-0003-4668-3890"
+        },
+        {
+          "name": "Stefanie Ortmann",
+          "openalex_id": "A5067935025",
+          "institutions": [
+            "University of Sussex"
+          ]
+        },
+        {
+          "name": "Karen Smith",
+          "openalex_id": "A5101589553",
+          "orcid": "https://orcid.org/0000-0003-2379-8513",
+          "institutions": [
+            "Leiden University",
+            "University of Cape Town"
+          ]
+        },
+        {
+          "name": "Seteney Shami",
+          "openalex_id": "A5110097099",
+          "institutions": [
+            "The Arab Council for the Social Sciences",
+            "Beirut Arab University"
+          ]
+        },
+        {
+          "name": "S\u00e9rgio Costa",
+          "openalex_id": "A5102920200",
+          "orcid": "https://orcid.org/0000-0001-6347-0614",
+          "institutions": [
+            "Freie Universit\u00e4t Berlin"
+          ]
+        },
+        {
+          "name": "Irene Weipert-Fenner",
+          "openalex_id": "A5084560349",
+          "orcid": "https://orcid.org/0000-0002-3783-6130",
+          "institutions": [
+            "Peace Research Institute Frankfurt"
+          ]
+        },
+        {
+          "name": "Jonas Wolff",
+          "openalex_id": "A5103114525",
+          "orcid": "https://orcid.org/0000-0002-7348-7206",
+          "institutions": [
+            "Peace Research Institute Frankfurt"
+          ]
+        },
+        {
+          "name": "Saskia Sch\u00e4fer",
+          "openalex_id": "A5077178365",
+          "orcid": "https://orcid.org/0000-0001-6714-5165",
+          "institutions": [
+            "Humboldt-Universit\u00e4t zu Berlin"
+          ]
+        },
+        {
+          "name": "Norma Osterberg-Kaufmann",
+          "openalex_id": "A5088620665",
+          "orcid": "https://orcid.org/0000-0003-4730-7192",
+          "institutions": [
+            "Humboldt-Universit\u00e4t zu Berlin"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-27",
+      "abstract": "Abstract As part of recent years\u2019 efforts at reaching a more context- and diversity-sensitive study of international relations, the nexus between fields of IR and Area Studies (AS) has received a renewed attention. While AS is usually presented as the \u201ccontextualizer\u201d of the disciplines, this forum reverses the perspective by suggesting that an awareness of both diversity and context is also relevant when it comes to understanding the evolution of the field of AS and its relations to IR. In this forum, a selection of scholars with diverse backgrounds (US, Middle East, Europe, Latin America, Africa, and Central Asia), different (inter)disciplinary trainings and regional orientations examines how various fields of AS and its relations to the disciplines vary, and what follows from a stronger attention to such kind of diversity. By contextualizing the contextualizers, the forum brings attention to how a context-sensitive field can also suffer from its own provincialism. While the US-centric narrative about AS might have been almost \u201chegemonic,\u201d at closer inspection, it turns out that AS in different (sub)disciplinary and geographical settings have evolved differently, and in some places the so-called Area Studies controversy (ASC) has been almost absent. A broadening of the perspective also reveals how the challenges to a successful cross-fertilization are not limited to those outlined in the \u201cclassic\u201d ASC, but the forum does simultaneously offer encouraging lessons on how dialogues between area specialists and discipline-oriented scholars can help to overcome epistemological, theoretical, or methodological blind spots. Rather than presenting the IR/AS nexus as a panacea per se, the aim of the forum is therefore to invite to a broader and more self-reflective discussion on some of the opportunities as well as challenges associated with this strategy for making the study of international relations more context-sensitive and attentive to different forms of diversity.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "International Studies Review",
+        "type": "journal",
+        "issn": [
+          "1468-2486",
+          "1521-9488"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/isr/article-pdf/26/1/viad056/54909434/viad056.pdf"
+      },
+      "topics": [
+        "International Development and Aid",
+        "Political Conflict and Governance",
+        "International Relations and Foreign Policy"
+      ],
+      "referenced_works_count": 105,
+      "url": "https://openalex.org/W4390263234"
+    },
+    {
+      "openalex_id": "W2982665044",
+      "doi": "10.14361/9783839449776",
+      "title": "Are We Comparing Yet?: On Standards, Justice, and Incomparability",
+      "authors": [
+        {
+          "name": "Haun Saussy",
+          "openalex_id": "A5026306496",
+          "orcid": "https://orcid.org/0000-0002-5220-5062",
+          "institutions": [
+            "Max Planck Institute for the History of Science",
+            "Max Planck Society"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-15",
+      "abstract": "Debates about the possibility of an open culture - or indeed about the possibility of an open debate about the openness of culture - often turn on questions of standards. But since no benchmark can be absolute, judgement is a proliferation of comparisons. Through a series of case studies in everyday and academic comparison (literature, history, politics, philosophy), the author calls out the typical vices of comparison and proposes ways to unseat them. For however much it is abused, distorted, and manipulated, comparison retains an essential link to the idea of justice.",
+      "cited_by_count": 24,
+      "type": "book",
+      "source": {
+        "name": "OAPEN (The OAPEN Foundation)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.oapen.org/search?identifier=1005790"
+      },
+      "topics": [
+        "Legal Education and Practice Innovations",
+        "Political Philosophy and Ethics",
+        "Judicial and Constitutional Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2982665044"
+    },
+    {
+      "openalex_id": "W113225338",
+      "doi": "10.5860/choice.192154",
+      "title": "Prophetic visions of the past: pan-Caribbean representations of the Haitian Revolution",
+      "authors": [
+        {
+          "name": "V\u00edctor Figueroa",
+          "openalex_id": "A5055469363",
+          "orcid": "https://orcid.org/0000-0001-8343-3802"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-09-17",
+      "abstract": "In Prophetic Visions of the Past: Pan-Caribbean Representations of the Haitian Revolution, Vi\u0301ctor Figueroa examines how the Haitian Revolution has been represented in twentieth-century literary works from across the Caribbean. Building on the scholarship of key thinkers of the Latin American \"decolonial turn\" such as Enrique Dussel, An\u00edbal Quijano, Walter Mignolo, and Nelson Maldonado-Torres, Figueroa argues that examining how Haiti's neighbors tell the story of the Revolution illuminates its role as a fundamental turning point in both the development and radical questioning of the modern/colonial world system. Prophetic Visions of the Past includes chapters on literary texts from a wide array of languages, histories, and perspectives. Figueroa addresses work by Alejo Carpentier (Cuba), C. L. R. James (Trinidad), Luis Pal\u00e9s Matos (Puerto Rico), Aim\u00e9 C\u00e9saire (Martinique), Derek Walcott (Saint Lucia), Edouard Glissant (Martinique), and Manuel Zapata Olivella (Colombia). While underscoring each writer's unique position, Figueroa also addresses their shared geographical, historical, and sociopolitical preoccupations, which are closely linked to the region's prolonged experience of colonial interventions. Ultimately, these analyses probe how, for the larger Caribbean region, the Haitian Revolution continues to reflect the tension between inspiring revolutionary hopes and an awareness of ongoing colonial objectification and exploitation.",
+      "cited_by_count": 16,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://kb.osu.edu/bitstreams/ff11ddbf-458c-5feb-8319-b72188cadf5e/download"
+      },
+      "topics": [
+        "Caribbean and African Literature and Culture",
+        "Caribbean history, culture, and politics",
+        "Colonialism, slavery, and trade"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W113225338"
+    },
+    {
+      "openalex_id": "W3197248915",
+      "doi": "10.35293/jdd.v2i2.18",
+      "title": "Did Ethiopia Survive Coloniality: Eurocentric colonial interpretations of Ethiopian history; Struggle against territorial colonialism; The three unique historical aspects of Ethiopia; Challenges of modernization; Did Ethiopia Avoid Colonialism",
+      "authors": [
+        {
+          "name": "Yerasework Kebede Hailu",
+          "openalex_id": "A5061001525",
+          "institutions": [
+            "University of South Africa"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-07",
+      "abstract": "What is unique about Ethiopia is, the history of survived colonial conquest. The Ethiopian patriotic forces defeated Italian army at the Battle of Adowa in 1896. Ethiopia has a long history of voluntarily pushing modernisation in the context of development. The major drive of modernization aimed at transforming Ethiopia from feudal \u2018traditional\u2019 society to \u2018modern\u2019 society. Hence, Ethiopia has been in-charge of its development trajectory, compared to other colonised Africans. Ironically, alike other African countries Ethiopia is still struggling with challenges of development. This is historical, an interpretive and conceptual study, executed in thematic terms. Theoretically, the study predicated on decolonial epistemic perspective, that articulates application of modernization to development, as its units of analysis. The findings indicate the need for epistimic decolonization to avoid the invasion of cognitive empire with its modernist influences of civilisation and development.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Journal of Decolonising Disciplines",
+        "type": "journal",
+        "issn": [
+          "2664-3308",
+          "2664-3405"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://upjournals.up.ac.za/index.php/jdd/article/download/18/3395"
+      },
+      "topics": [
+        "African history and culture analysis"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W3197248915"
+    },
+    {
+      "openalex_id": "W2151659799",
+      "doi": "10.4314/star.v1i3.98801",
+      "title": "Habermas, Modernity and Postmodernism; A Philosophical Inquiry",
+      "authors": [
+        {
+          "name": "Fasil Merawi",
+          "openalex_id": "A5018617538",
+          "orcid": "https://orcid.org/0000-0002-9661-4503",
+          "institutions": [
+            "Wollega University"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-12-16",
+      "abstract": "The modern/postmodern debate is usually presented as one of universality vs. relativism, rationalism vs. irrationalism and emancipation vs. deconstruction. This article tries to critically expose and critique Habermas\u2019s discussion of postmodernism as a way of highlighting some of the limitations of this lively discussion. This is to be accomplished through a conceptual analysis of Habermas\u2019s defense of modernity against the postmodernism of Jacques Derrida and Michel Foucault as elaborated in Habermas\u2019s work The Philosophical Discourse of Modernity. Through such an analysis, I will argue for the following points. (1) Habermas\u2019s discourse of modernity provides better accounts of responsibility and emancipation compared to the postmodernism of Derrida and Foucault. (2) Still, Habermas\u2019s discourse of modernity fails to fully address asymmetrical power relations and (3) Habermas\u2019s modernity is Eurocentric in failing to fully deconstruct the Eurocentric tendencies of the philosophical tradition of which it\u2019s a part.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Science Technology and Arts Research Journal",
+        "type": "journal",
+        "issn": [
+          "2226-7522",
+          "2305-3372"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.ajol.info/index.php/star/article/download/98801/88061"
+      },
+      "topics": [
+        "Philosophy, Ethics, and Existentialism",
+        "Foucault, Power, and Ethics",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W2151659799"
+    },
+    {
+      "openalex_id": "W1800331270",
+      "doi": "10.11606/issn.2176-8099.pcso.2009.75208",
+      "title": "Para al\u00e9m das M\u00faltiplas Modernidades: Eurocentrismo, Modernidade e as Sociedades Perif\u00e9ricas",
+      "authors": [
+        {
+          "name": "Jos\u00e9 Henrique Bortoluci",
+          "openalex_id": "A5034854023",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-06-01",
+      "abstract": "&lt;p&gt;Na literatura recente em Ci\u00eancias Sociais, o paradigma euroc\u00eantrico da modernidade vem sofrendo ataques de diferentes naturezas. Buscando dialogar com parte dessa literatura cr\u00edtica, este trabalho (parte de uma pesquisa de mestrado) tem por objetivos: revisar o n\u00facleo articulador da concep\u00e7\u00e3o euroc\u00eantrica de modernidade e as consequ\u00eancias dessa forma de teoriza\u00e7\u00e3o para a reflex\u00e3o sobre as sociedades perif\u00e9ricas; apresentar os avan\u00e7os fornecidos pela perspectiva das \u201cm\u00faltiplas modernidades\u201d; e, por fim, apontar os limites dessa perspectiva, a partir de outros discursos te\u00f3ricos, sobretudo a partir de teorias P\u00f3s-Coloniais e da Teoria da Depend\u00eancia. &lt;/p&gt;",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Plural",
+        "type": "journal",
+        "issn": [
+          "2176-8099"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.revistas.usp.br/plural/article/download/75208/78839"
+      },
+      "topics": [
+        "Social and Economic Solidarity",
+        "Elite Sociology and Global Capitalism",
+        "Globalization and Cultural Identity"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W1800331270"
+    },
+    {
+      "openalex_id": "W2127881656",
+      "doi": null,
+      "title": "Blackness and rural modernity in the 1920s",
+      "authors": [
+        {
+          "name": "Chiyuma Elliott",
+          "openalex_id": "A5069881199"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-12-01",
+      "abstract": null,
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Texas ScholarWorks (Texas Digital Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/2152/19824"
+      },
+      "topics": [
+        "Migration, Ethnicity, and Economy",
+        "Race, History, and American Society",
+        "Caribbean history, culture, and politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2127881656"
+    },
+    {
+      "openalex_id": "W2884411081",
+      "doi": null,
+      "title": "",
+      "authors": [
+        {
+          "name": "Hilal Kaya",
+          "openalex_id": "A5008015000",
+          "orcid": "https://orcid.org/0000-0001-6190-8694",
+          "institutions": [
+            "Ankara Y\u0131ld\u0131r\u0131m Beyaz\u0131t University"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-01",
+      "abstract": "Traversing disciplinary boundaries between literary studies, cultural studies and sociology, this study claims to be distinctive because it explores Huxley\u2019s writings in relation to the issues of modernity and modernization. The study aims to foreground Huxley\u2019s changing engagement with modernity and modernization that informs his novels, Point Counter Point (1928) and Brave New World (1932). That is, when he wrote Point Counter Point his idea of the modern was closer to the liberal narrative of modernity: Point Counter Point idealizes \u201cthe West\u201d and equates it with modernity. From Brave New World on, however, Huxley started to make a criticism of this understanding of the modern and re-conceptualized his attitude to modernity and modernization. He challenges the limits of conventional time and deconstructs the binaries between \u201cthe West\u201d and \u201cthe East:\u201d his novel, in other words, reconfigures modernity and modernization in ways that foreground multiple experiences and practices of modernity.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/77474ca7-1268-4d2d-a1ed-4bace00c8460"
+      },
+      "topics": [
+        "Joseph Conrad and Literature"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2884411081"
+    },
+    {
+      "openalex_id": "W4378714081",
+      "doi": "10.15332/21459169.8603",
+      "title": "Decolonial theories: origin, categories, and critical intents",
+      "authors": [
+        {
+          "name": "Dami\u00e1n Pach\u00f3n Soto",
+          "openalex_id": "A5089853741",
+          "orcid": "https://orcid.org/0000-0003-4809-2365"
+        },
+        {
+          "name": "Karen Yolima Torres Taf\u00far",
+          "openalex_id": "A5092046949"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-05-29",
+      "abstract": "This paper presents the epistemic and political proposal of the Modernity/ Coloniality group. I display the conformation of the group, its members and principal conceptual and theoretical elaborations. The essay exposes with thoroughness the contribution of collective Modernity/Coloniality, in special, its critic of modernity and the epistemic colonialism which Europe and the named First World has put under the \u201cperiphery\u201d",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "An\u00e1lisis",
+        "type": "journal",
+        "issn": [
+          "0120-8454",
+          "2145-9169"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.usantotomas.edu.co/index.php/analisis/article/download/8603/7809"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Globalization and Cultural Identity"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W4378714081"
+    },
+    {
+      "openalex_id": "W4293061615",
+      "doi": "10.1515/9783110733501-001",
+      "title": "Transmitting the Past to Young Minds",
+      "authors": [
+        {
+          "name": "F\u00e9lix Krawatzek",
+          "openalex_id": "A5047773910",
+          "orcid": "https://orcid.org/0000-0002-1108-6087"
+        },
+        {
+          "name": "Nina Frie\u00df",
+          "openalex_id": "A5078032985",
+          "orcid": "https://orcid.org/0000-0001-7452-3400"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-23",
+      "abstract": "Transmitting the Past to Young MindsWhen the two of us talked about the representations of history that had accompanied our own transition from childhood to adolescence and adulthood, the significance of our different socialisation, in spite of our shared German nationality, stood out.While we had a shared childhood memory of the fall of the Berlin Wall, one of us had experienced this moment in East Berlin, while the other was near Frankfurt/Main in the West.In spite of the many political, social and economic changes that occurred after 1991, the cultural environments of our childhood remained relatively stable.The historical narratives that we were exposed to remained unchanged during our transformative years and left their echo as we gradually encountered the complex historical underpinnings of the societies that we integrated in the wake of the Cold War.Growing up in a family from East Germany, one of us read Arkady Gaidar's Soviet classic Timur and his Gang (Timur und sein Trupp/Timur i ego komanda), which was part of the GDR's school curriculum but unknown in West Germany.Written in 1940, and first published in its German translation in 1947, the story is situated in a pastoral idyll of Moscow countryside in the summer of 1939.Timur revolves around the 14-year-old eponymous hero, who leads his \"gang\" of friends as if they were partisans.The book highlights the values of neighbourhood solidarity and the pacifist nature of Soviet society, but also draws attention to children's military upbringing and potential even before the Great Patriotic Warthe Soviet and Russian name for World War IIwould begin on 22 June 1941.In the West, meanwhile, the other one of us read Hans Peter Richter's novel Friedrich (Damals war es Friedrich, 1961), a tale of friendship between a German and a Jewish boy in Nazi Germany that deals with the persecution of Jews in the Third Reich.Generations of pupils in middle school read this young adult novel.Today, both Timur and Friedrich are generally considered outdated.The Soviet outlook of Timur does not conform to the historical understanding that prevails in unified Germany (Dolle-Weinkauff and Peitsch 2008) and Friedrich is criticised for its stereotypes and simplified history (Moffit 2000).However, despite sweeping institutional changes, the ideas behind these works did not cease to be influential.One of us maintains a romanticised memory ofand an almost na\u00efve fondness for -Soviet solidarity and the Russian countryside; the other one preserves a deeply embodied sense of guilt for the crimes committed by the grandparents of today's generations.Our own exposure to Timur and Friedrich and their historical ideas illustrates the intersection which this volume explores.By looking at a shared topic of concerna region or a",
+      "cited_by_count": 5,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/9783110733501-001/pdf"
+      },
+      "topics": [
+        "Religious Education and Schools"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W4293061615"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

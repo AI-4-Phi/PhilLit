@@ -1,0 +1,919 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "hermeneutics",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/hermeneutics/",
+      "entry_name": "hermeneutics",
+      "title": "Hermeneutics",
+      "preamble": "Hermeneutics is the study of interpretation. Hermeneutics plays a role\nin a number of disciplines whose subject matter demands interpretative\napproaches, characteristically, because the disciplinary subject\nmatter concerns the meaning of human intentions, beliefs, and actions,\nor the meaning of human experience as it is preserved in the arts and\nliterature, historical testimony, and other artifacts. Traditionally,\ndisciplines that rely on hermeneutics include theology, especially\nBiblical studies, jurisprudence, and medicine, as well as some of the\nhuman sciences, social sciences, and humanities. In such contexts,\nhermeneutics is sometimes described as an \u201cauxiliary\u201d\nstudy of the arts, methods, and foundations of research appropriate to\na respective disciplinary subject matter (Grondin 1994, 1). For\nexample, in theology, Biblical hermeneutics concerns the general\nprinciples for the proper interpretation of the Bible. More recently,\napplied hermeneutics has been further developed as a research method\nfor a number of disciplines (see, for example, Moules inter alia\n2015). Within philosophy, however, hermeneutics typically signifies, first, a\ndisciplinary area and, second, the historical movement in which this\narea has been developed. As a disciplinary area, and on analogy with\nthe designations of other disciplinary areas (such as \u2018the\nphilosophy of mind\u2019 or \u2018the philosophy of art\u2019),\nhermeneutics might have been named \u2018the philosophy of\ninterpretation.\u2019 Hermeneutics thus treats interpretation itself\nas its subject matter and not as an auxiliary to the study of\nsomething else. Philosophically, hermeneutics therefore concerns the\nmeaning of interpretation\u2014its basic nature, scope and validity,\nas well as its place within and implications for human existence; and\nit treats interpretation in the context of fundamental philosophical\nquestions about being and knowing, language and history, art and\naesthetic experience, and practical life.",
+      "bibliography": [
+        {
+          "raw": "Alcoff, Linda Mart\u00edn, 2006, Visible Identities: Race\nGender, and the Self , New York: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Arendt, Hannah, 1994, \u201cUnderstanding and Politics,\u201d in Essays in Understanding 1930\u20131954: Formation, Exile, and\nTotalitarianism , New York: Schocken Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bambach, Charles R., 1995, Heidegger, Dilthey, and the Crisis\nof Historicism , Ithaca, NY: Cornell University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Barthold, Lauren Swayne, 2016, A Hermeneutic Approach to\nGender and Other Social Identities , New York: Palgrave\nMacmillan.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2020, Overcoming Polarization in the\nPublic Square: Civic Dialogue , New York: Palgrave MacMillan.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2020",
+            "title": "\u2013\u2013\u2013, 2020, Overcoming Polarization in the\nPublic Square: Civic Dialogue , New York: Palgrave MacMillan."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Behler, Ernst, 1993, German Romantic Literary Theory ,\nCambridge: Cambridge University Press.",
+          "parsed": {
+            "authors": [
+              "Behler, Ernst"
+            ],
+            "year": "1993",
+            "title": "German Romantic Literary Theory ",
+            "publisher": "Cambridge: Cambridge University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Beiser, Frederick C., 2011, The German Historicist\nTradition , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Benso, Silvia, 2018, \u201cLuigi Pareyson: A Master in Italian\nHermeneutics,\u201d in Benso, Silvia and Brian Schroeder (eds.), Thinking the Inexhaustible: Art, Interpretation, and Freedom in\nthe Philosophy of Luigi Pareyson , Albany: State University of New\nYork Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Brandom, Robert, 2002, Tales of the Mighty Dead: Historical\nEssays in the Metaphysics of Intentionality , Cambridge, MA:\nHarvard University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2004, \u201cHermeneutic Practice and\nTheories of Meaning,\u201d SATS: Nordic Journal of\nPhilosophy , 5(1): 5\u201326.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2004",
+            "title": "\u2013\u2013\u2013, 2004, \u201cHermeneutic Practice and\nTheories of Meaning,\u201d SATS: Nordic Journal of\nPhilosophy , 5(1): 5\u201326."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Caputo, John D., 1987, Radical Hermeneutics: Repetition,\nDeconstruction, and the Hermeneutic Project , Bloomington: Indiana\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2018, Hermeneutics: Facts and\nInterpretation in the Age of Information , London: Pelican\nBooks.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2018",
+            "title": "\u2013\u2013\u2013, 2018, Hermeneutics: Facts and\nInterpretation in the Age of Information , London: Pelican\nBooks."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Crowell, Steven, 2013, Normativity and Phenomenology in\nHusserl and Heidegger , Cambridge: Cambridge University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2016, \u201cPhenomenology, Meaning, and\nMeasure: Response to Maxime Doyon and Thomas Sheehan,\u201d Philosophy Today , 60(1): 237\u2013252.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2016",
+            "title": "\u2013\u2013\u2013, 2016, \u201cPhenomenology, Meaning, and\nMeasure: Response to Maxime Doyon and Thomas Sheehan,\u201d Philosophy Today , 60(1): 237\u2013252."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Culbertson, Carolyn, 2024, Gadamer and the Social Turn in\nEpistemology , Albany: State University of New York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dallmayr, Fred, 1987, Critical Encounters: Between Philosophy\nand Politics , Notre Dame, IN: Notre Dame University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1996, Beyond Orientalism: Essays on\nCross-Cultural Encounter , Albany, NY: State University of New\nYork Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1996",
+            "title": "\u2013\u2013\u2013, 1996, Beyond Orientalism: Essays on\nCross-Cultural Encounter , Albany, NY: State University of New\nYork Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, \u201cHermeneutics and\ninter-cultural dialog: linking theory and practice,\u201d Ethics\nand Global Practice , 2(1): 23\u201329.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u2013\u2013\u2013, 2009, \u201cHermeneutics and\ninter-cultural dialog: linking theory and practice,\u201d Ethics\nand Global Practice , 2(1): 23\u201329."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Davey, Nicholas, 2006, Unquiet Understanding: Gadamer\u2019s\nPhilosophical Hermeneutics , Albany: State University of New York\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "DaVia, Calro and Greg Lynch, 2024, The Event of Meaning in\nGadamer\u2019s Hermeneutics , New York and London:\nRoutledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Derrida, Jacques, 1967 [1978], \u201cLa structure, le signe et le\njeu dans le discours des sciences humaines,\u201d in L\u2019\u00c9criture et la diff\u00e9rance , pp.\n409\u201328, Paris: \u00c9ditions du Seuil; translated as\n\u201cStructure, Sign, and Play in the Discourse of the Human\nSciences,\u201d in Alan Bass (ed)., Writing and Difference ,\nChicago: University of Chicago Press, pp. 278\u2013293.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1972 [1982], \u201cLa\ndiff\u00e9rance,\u201d in Marges\u2013\u2013de la\nphilosophie , Paris: Les \u00c9ditions de Minuit, pp.\n1\u201329; translated as \u201cDiff\u00e9rance,\u201d in Alan\nBass (ed.), Margins of Philosophy , Chicago: University of\nChicago Press, pp. 1\u201328.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1972",
+            "title": "\u2013\u2013\u2013, 1972 [1982], \u201cLa\ndiff\u00e9rance,\u201d in Marges\u2013\u2013de la\nphilosophie , Paris: Les \u00c9ditions de Minuit, pp.\n1\u201329; translated as \u201cDiff\u00e9rance,\u201d in Alan\nBass (ed.), Margins of Philosophy , Chicago: University of\nChicago Press, pp. 1\u201328."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1984 [1989], \u201cBonnes Volont\u00e9s\nde Puissance (Une R\u00e9sponse \u00e0 Hans-Georg Gadamer),\u201d Revue Internationale de Philosophie , Vol. 38, no. 151 (4):\n341\u2013343; translated as \u201cThree Questions to Hans-Georg\nGadamer,\u201d in Diane P. Michelfelder and Richard E. Palmer (eds.), Dialogue and Deconstruction: The Gadamer-Derrida Encounter ,\nAlbany: State University of New York Press, 1989, pp.\n52\u201354.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1984",
+            "title": "\u2013\u2013\u2013, 1984 [1989], \u201cBonnes Volont\u00e9s\nde Puissance (Une R\u00e9sponse \u00e0 Hans-Georg Gadamer),\u201d Revue Internationale de Philosophie , Vol. 38, no. 151 (4):\n341\u2013343; translated as \u201cThree Questions to Hans-Georg\nGadamer,\u201d in Diane P. Michelfelder and Richard E. Palmer (eds.), Dialogue and Deconstruction: The Gadamer-Derrida Encounter ,\nAlbany: State University of New York Press, 1989, pp.\n52\u201354."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Di Cesare, Donatella, 2003 [2013], Utopia del\ncomprendere , Genoa: Il Nuovo Melangolo; translated as Utopia\nof Understanding: Between Babel and Auschwitz , Albany: State\nUniversity of New York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dilthey, Wilhelm, 1900 [1990], \u201cDie Entstehung der\nHermeneutik,\u201d Gesammelte Schriften (Volume 1), pp.\n317\u2013338; translated as \u201cThe Rise of Hermeneutics,\u201d\nin Ormiston, Gayle L. and Alan Schrift (eds.), The Hermeneutical\nTradition from Ast to Ricoeur , Albany: State University of New\nYork Press, pp. 101\u2013115.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dostal, Robert, 2022, Gadamer\u2019s Hermeneutics: Between\nPhenomenology and Dialectic , Evanston: Northwestern University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ferraris, Maurizio, 2013 [2014], Manifesto del nuovo\nrealismo , Rome: Guis, Laterza & Figli; translated as Manifesto of New Realism , Albany, NY: State University of New\nYork Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Figal, G\u00fcnter, 2006 [2010], Gegenstandlichkeit: das\nHermeneutische und die Philosophie , T\u00fcbingen: Mohr Siebeck;\ntranslated as Objectivity: The Hermeneutical and Philosophy ,\nAlbany, NY: State University of New York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2009, \u201cSpatial Thinking,\u201d Research in Phenomenology , 39(3): 333\u2013343.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2009",
+            "title": "\u201cSpatial Thinking",
+            "publisher": "\u201d Research in Phenomenology , 39(3): 333\u2013343"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2015, Unscheinbarkeit ,\nT\u00fcbingen: Mohr Siebeck.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2015",
+            "title": "Unscheinbarkeit ",
+            "publisher": "T\u00fcbingen: Mohr Siebeck"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2023, Veildeutigkeit ,\nT\u00fcbingen: Mohr Siebeck.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2023",
+            "title": "Veildeutigkeit ",
+            "publisher": "T\u00fcbingen: Mohr Siebeck"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Forster, Michael and Kristin Gjesdal, 2019, The Cambridge\nCompanion to Hermeneutics , Cambridge: Cambridge University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fricker, Miranda, 2009, Epistemic Injustice: Power and the\nEthics of Knowing , London: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fugard, Athol, John Kani, and Winston Ntshona, 1974, The\nIsland in Statements (Three Plays) , London: Oxford\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gabriel, Markus, 2015, Fields of Sense: A New Realist\nOntology , Edinburgh: Edinburgh University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2020, Fiktionen , Frankfurt am\nMain: Suhrkamp.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2020",
+            "title": "\u2013\u2013\u2013, 2020, Fiktionen , Frankfurt am\nMain: Suhrkamp."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Gadamer, Hans-Georg, 1960 [1996], Wahrheit und\nMethode. Grundz\u00fcge einer philosophischen Hermeneutik ,\nT\u00fcbingen: Mohr Siebeck; in collected works: 1986/corrected\nversion 1990, Gesammelte Werke , Volume 1, T\u00fcbingen: Mohr\nSiebeck; translated as Truth and Method , second rvsd. ed.,\ntrans. and rvsd by Joel Weinsheimer and Donald G. Marshall, New York,\nContinuum.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1966 [2007], \u201cDie Universalit\u00e4t\ndes hermeneutischen Problems,\u201d Philosophisches Jahrbuch 73, pp. 215\u2013225; in collected works: 1986/corrected version\n1993, Gesammelte Werke (Volume 2), pp. 219\u2013231;\ntranslated as \u201cThe Universality of the Hermeneutical\nProblem,\u201d in Richard E. Palmer (ed.), The Gadamer Reader: A\nBouquet of the Later Writings , Evanston, IL: Northwestern\nUniversity Press, pp. 72\u201388.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1966",
+            "title": "\u2013\u2013\u2013, 1966 [2007], \u201cDie Universalit\u00e4t\ndes hermeneutischen Problems,\u201d Philosophisches Jahrbuch 73, pp. 215\u2013225; in collected works: 1986/corrected version\n1993, Gesammelte Werke (Volume 2), pp. 219\u2013231;\ntranslated as \u201cThe Universality of the Hermeneutical\nProblem,\u201d in Richard E. Palmer (ed.), The Gadamer Reader: A\nBouquet of the Later Writings , Evanston, IL: Northwestern\nUniversity Press, pp. 72\u201388."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1980 [2007], \u201cDas Erbe Hegels,\u201d\nin Gadamer, Hans-Georg and Habermas, J\u00fcrgen, Das Erbe\nHegels , Frankfurt am Main: Suhrkamp; in collected works: 1987, Gesammelte Werke , Volume 4, T\u00fcbingen: Mohr Siebeck, pp.\n463\u2013484; translated as \u201cHeritage of Hegel,\u201d in\nRichard E. Palmer (ed.), The Gadamer Reader: A Bouquet of the\nLater Writings , Evanston, IL: Northwestern University Press, pp.\n322\u2013344.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1980",
+            "title": "\u2013\u2013\u2013, 1980 [2007], \u201cDas Erbe Hegels,\u201d\nin Gadamer, Hans-Georg and Habermas, J\u00fcrgen, Das Erbe\nHegels , Frankfurt am Main: Suhrkamp; in collected works: 1987, Gesammelte Werke , Volume 4, T\u00fcbingen: Mohr Siebeck, pp.\n463\u2013484; translated as \u201cHeritage of Hegel,\u201d in\nRichard E. Palmer (ed.), The Gadamer Reader: A Bouquet of the\nLater Writings , Evanston, IL: Northwestern University Press, pp.\n322\u2013344."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1984 [1989], \u201cText und\nInterpretation,\u201d in P. Forget (ed.), Text und\nInterpretation. Deutsch-franz\u00f6sicher Debatte , M\u00fcnchen:\nFink; in collected works: 1986/corrected version 1993, Gesammelte\nWerke , Volume 2, pp. 330\u2013360; translated as \u201cText and\nInterpretation,\u201d in Diane P. Michelfelder and Richard E. Palmer\n(eds.), Dialogue and Deconstruction: The Gadamer-Derrida\nEncounter , Albany: State University of New York Press, pp.\n21\u201351.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1984",
+            "title": "\u2013\u2013\u2013, 1984 [1989], \u201cText und\nInterpretation,\u201d in P. Forget (ed.), Text und\nInterpretation. Deutsch-franz\u00f6sicher Debatte , M\u00fcnchen:\nFink; in collected works: 1986/corrected version 1993, Gesammelte\nWerke , Volume 2, pp. 330\u2013360; translated as \u201cText and\nInterpretation,\u201d in Diane P. Michelfelder and Richard E. Palmer\n(eds.), Dialogue and Deconstruction: The Gadamer-Derrida\nEncounter , Albany: State University of New York Press, pp.\n21\u201351."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1995 [2007], \u201cHermeneutik auf der\nSpur,\u201d in Gesammelte Werke , Volume 10, T\u00fcbingen:\nMohr Siebeck, pp. 148\u2013174; translated as \u201cHermeneutics\nTracking the Trace,\u201d in Richard E. Palmer (ed.), The Gadamer\nReader: A Bouquet of the Later Writings , Evanston: Northwestern\nUniversity Press, 2007, pp. 372\u2013406.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1995",
+            "title": "\u2013\u2013\u2013, 1995 [2007], \u201cHermeneutik auf der\nSpur,\u201d in Gesammelte Werke , Volume 10, T\u00fcbingen:\nMohr Siebeck, pp. 148\u2013174; translated as \u201cHermeneutics\nTracking the Trace,\u201d in Richard E. Palmer (ed.), The Gadamer\nReader: A Bouquet of the Later Writings , Evanston: Northwestern\nUniversity Press, 2007, pp. 372\u2013406."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1971 [1990], \u201cReplik,\u201d in Apel,\nKarl-Otto et al (eds.), Hermeneutik und Ideologiekritik ,\nFrankfurt am Main: Suhrkamp, pp. 283\u2013317; translated as\n\u201cReply to My Critics,\u201d in Gayle Ormiston and Alan Schrift\n(eds.), The Hermeneutic Tradition from Ast to Ricoeur ,\nAlbany: State University of New York Press, pp. 273\u2013297.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1971",
+            "title": "\u2013\u2013\u2013, 1971 [1990], \u201cReplik,\u201d in Apel,\nKarl-Otto et al (eds.), Hermeneutik und Ideologiekritik ,\nFrankfurt am Main: Suhrkamp, pp. 283\u2013317; translated as\n\u201cReply to My Critics,\u201d in Gayle Ormiston and Alan Schrift\n(eds.), The Hermeneutic Tradition from Ast to Ricoeur ,\nAlbany: State University of New York Press, pp. 273\u2013297."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1974 [1981], \u201cWas ist Praxis? Die\nBedingungen gesellschaftlicher Vernunft,\u201d Universitas 29, pp. 1143\u20131158; in collected works: 1987, Gesammelte\nWerke , Volume 4, pp. 216\u2013228; translated as \u201cWhat is\nPractice? The Conditions of Social Reason,\u201d in Reason in the\nAge of Science , Cambridge, MA: MIT Press, pp. 69\u201387.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1974",
+            "title": "\u2013\u2013\u2013, 1974 [1981], \u201cWas ist Praxis? Die\nBedingungen gesellschaftlicher Vernunft,\u201d Universitas 29, pp. 1143\u20131158; in collected works: 1987, Gesammelte\nWerke , Volume 4, pp. 216\u2013228; translated as \u201cWhat is\nPractice? The Conditions of Social Reason,\u201d in Reason in the\nAge of Science , Cambridge, MA: MIT Press, pp. 69\u201387."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1997, \u201cReflections on My\nPhilosophical Journey,\u201d in Lewis E. Hahn (ed.), The\nPhilosophy of Hans-Georg Gadamer (The Library of Living Philosophers\nVolume XXIV) , Chicago and La Salle: Open Court, 1997, 3\u201363;\nbased on 1973, \u201cSelbstdarstellung,\u201d in 1997 L. J. Pongratz\n(ed.), Philosophie im Darstellung , Hamburg: Felix Meiner, pp.\n59\u2013100, and 1990, \u201cMit der Sprache denken,\u201d in 1995 Gesammelte Werke , Volume 10, T\u00fcbingen: Mohr\nSiebeck.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1997",
+            "title": "\u2013\u2013\u2013, 1997, \u201cReflections on My\nPhilosophical Journey,\u201d in Lewis E. Hahn (ed.), The\nPhilosophy of Hans-Georg Gadamer (The Library of Living Philosophers\nVolume XXIV) , Chicago and La Salle: Open Court, 1997, 3\u201363;\nbased on 1973, \u201cSelbstdarstellung,\u201d in 1997 L. J. Pongratz\n(ed.), Philosophie im Darstellung , Hamburg: Felix Meiner, pp.\n59\u2013100, and 1990, \u201cMit der Sprache denken,\u201d in 1995 Gesammelte Werke , Volume 10, T\u00fcbingen: Mohr\nSiebeck."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Gaffney, Jennifer, 2018, \u201cSolidarity in Dark Times: Arendt\nand Gadamer on the Politics of Appearance,\u201d Philosophy\nCompass , 13(12): 1\u201313",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gander, Hans-Helmut, 2006 [2017], Selbstverst\u00e4ndnis und\nLebenswelt: Gr\u00fcndz\u00fcge einer ph\u00e4nomenologischen\nHermeneutik im Ausgang von Husserl und Heidegger , Frankfurt am\nMain: Vittrio Klostermann; translated as Self-understanding and\nLifeworld: Basic Traits of a Phenomenological Hermeneutics ,\nBloomington: Indiana University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "George, Theodore and Gert-Jan van der Heiden (eds.), 2022, The\nGadamerian Mind , London and New York: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gjesdal, Kristin, 2009, Gadamer and the Legacy of German\nIdealism , Cambridge: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Grondin, Jean, 1994, Introduction to Philosophical\nHermeneutics , New Haven: Yale University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2016, \u201cThe Hermeneutical\nCircle,\u201d in Keane & Lawn 2016, pp. 299\u2013305.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2016",
+            "title": "\u2013\u2013\u2013, 2016, \u201cThe Hermeneutical\nCircle,\u201d in Keane & Lawn 2016, pp. 299\u2013305."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Habermas, J\u00fcrgen, 1977 [1996], \u201cThe\nUniversalit\u00e4tsanspruch der Hermeneutik,\u201d in Karl-Otto Apel\net al (eds.), Hermeneutik und Ideologiekritik , Frankfurt am\nMain: Suhrkamp, pp. 120\u2013158; translated as \u201cThe\nHermeneutic Claim to Universality,\u201d in Gayle Ormiston and Alan\nSchrift, (eds.) The Hermeneutic Tradition from Ast to\nRicoeur , Albany: State University of New York Press, pp.\n245\u2013272.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Harman, Graham, 2018, Object-Oriented Ontology: A New Theory\nof Everything , London: Pelican Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Heidegger, Martin, 1923 [1999], Summer Semester Lecture Course, Ontologie (Hermeneutik der Faktizit\u00e4t) , Gesamtausgabe , Volume 63, Frankfurt am Main: Klostermann;\ntranslated as Ontology\u2014The Hermeneutics of Facticity ,\nBloomington, IN: Indiana University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1927 [2010], Sein und Zeit ,\nT\u00fcbingen: Max Niemeyer; translated as Being and Time ,\nAlbany: State University of New York Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1927",
+            "title": "\u2013\u2013\u2013, 1927 [2010], Sein und Zeit ,\nT\u00fcbingen: Max Niemeyer; translated as Being and Time ,\nAlbany: State University of New York Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1946 [1998], \u201cBrief \u00fcber den\nHumanismus,\u201d Letter to Jean Beaufret; 1949, revised and expanded\nversion, Frankfurt am Main: Klostermann; translated as \u201cLetter\non Humanism,\u201d in Pathmarks , Cambridge: Cambridge\nUniversity Press, pp. 239\u2013276.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1946",
+            "title": "\u2013\u2013\u2013, 1946 [1998], \u201cBrief \u00fcber den\nHumanismus,\u201d Letter to Jean Beaufret; 1949, revised and expanded\nversion, Frankfurt am Main: Klostermann; translated as \u201cLetter\non Humanism,\u201d in Pathmarks , Cambridge: Cambridge\nUniversity Press, pp. 239\u2013276."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1959 [1971], \u201cDer Weg zur\nSprache,\u201d in Unterwegs zur Sprache , Pfullingen: Verlag\nG\u00fcnter Neske, pp. 239\u2013268; translated as \u201cThe Way to\nLanguage\u201d in On the Way to Language , New York: Harper\n& Row, pp. 111\u2013138.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1959",
+            "title": "\u2013\u2013\u2013, 1959 [1971], \u201cDer Weg zur\nSprache,\u201d in Unterwegs zur Sprache , Pfullingen: Verlag\nG\u00fcnter Neske, pp. 239\u2013268; translated as \u201cThe Way to\nLanguage\u201d in On the Way to Language , New York: Harper\n& Row, pp. 111\u2013138."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Hirsch, E. D., Jr., 1967, Validity in Interpretation , New\nHaven and London: Yale University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Husserl, Edmund, 1913 [1982], Ideen zu einer reinen\nPh\u00e4nomenologie und ph\u00e4nomenologischen Philosophie, Erstes\nBuch, Allgemeine Einf\u00fchrung in die reine\nPh\u00e4nomenologie , Halle: Max Niemeyer; translated as Ideas\nPertaining to a Pure Phenomenology and to a Phenomenological\nPhilosophy, First Book: General Introduction to a Pure\nPhenomenology (Collected Works: Volume 2), The Hague: M.\nNijhoff.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1931 [1993], M\u00e9ditations Cart\u00e9siennes: Introduction \u00e0 la\nph\u00e9nom\u00e9nologie , Paris: Armand Collin; translated as Cartesian Meditations: An Introduction to Phenomenology ,\nninth impression, Dordtrecht, NL: Kluwer Academic Publishers.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1931",
+            "title": "\u2013\u2013\u2013, 1931 [1993], M\u00e9ditations Cart\u00e9siennes: Introduction \u00e0 la\nph\u00e9nom\u00e9nologie , Paris: Armand Collin; translated as Cartesian Meditations: An Introduction to Phenomenology ,\nninth impression, Dordtrecht, NL: Kluwer Academic Publishers."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Keane, Niall and Chris Lawn (eds.), 2016, The Blackwell\nCompanion to Hermeneutics , Chichester, UK: Wiley Blackwell.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kearney, Richard, \u201cThe Wager of Carnal Hermeneutics,\u201d\nin Richard Kearney and Brian Treanor (eds.), Carnal\nHermeneutics , New York: Fordham University Press, pp.\n15\u201356.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Keiling, Tobias, 2018, \u201cPhenomenology and Ontology in the\nLater Heidegger,\u201d in Dan Zahavi (ed.), The Oxford Handbook\nof the History of Phenomenology , Oxford: Oxford University Press,\npp. 251\u2013267.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Koch, Anton Friedrich, 2016, Hermeneutischer Realismus , T\u00fcbingen: Mohr Siebeck.",
+          "parsed": {
+            "authors": [
+              "Koch, Anton Friedrich"
+            ],
+            "year": "2016",
+            "title": "Hermeneutischer Realismus ",
+            "publisher": "T\u00fcbingen: Mohr Siebeck"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2019, \u201cWahrheit, Subjektivit\u00e4t\nund die Lesbarkeit der Dinge,\u201d International Yearbook for\nHermeneutics , 18: 34\u201345.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2019",
+            "title": "\u2013\u2013\u2013, 2019, \u201cWahrheit, Subjektivit\u00e4t\nund die Lesbarkeit der Dinge,\u201d International Yearbook for\nHermeneutics , 18: 34\u201345."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Lawlor, Leonard, \u201cJacques Derrida,\u201d The Stanford\nEncyclopedia of Philosophy (Fall 2019 Edition), Edward N. Zalta\n(ed.), URL =\n<https://plato.stanford.edu/archives/fall2019/entries/derrida/>.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "LaFont, Cristina, 2008, \u201cMeaning and Interpretation: Can\nBrandomian Scorekeepers be Gadamerian Hermeneuts?\u201d Philosophy Compass , (3)1: 17\u201329.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Liakos, David and Theodore George, 2019, \u201cHermeneutics in\nPost-war Continental European Philosophy,\u201d in Kelly Becker and\nIain D. Thompson (eds.), The Cambridge History of Philosophy\n1945\u20132015 , Cambridge: Cambridge University Press,\npp. 399\u2013415.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lloyd, Genevieve, 1984, The Man of Reason: \u201cMale\u201d\nand \u201cFemale\u201d in Philosophy , London: Methuen.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lotz, Christian, 2011, Review of Gadamer and the Legacy of\nGerman Idealism , Journal of the History of Philosophy ,\n49 (1), pp. 131\u2013132.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rudolf A. Makkreel, 2015, Orientation and Judgment in\nHermeneutics , Chicago: Chicago University Press.",
+          "parsed": {
+            "authors": [
+              "Rudolf A. Makkreel"
+            ],
+            "year": "2015",
+            "title": "Rudolf A. Makkreel, 2015, Orientation and Judgment in\nHermeneutics , Chicago: Chicago University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Jeff Malpas and Hans-Helmut Gander (eds.), 2015, Routledge\nCompanion to Hermeneutics , London: Routledge,",
+          "parsed": {
+            "authors": [
+              "Jeff Malpas and Hans-Helmut Gander (eds.)"
+            ],
+            "year": "2015",
+            "title": "Jeff Malpas and Hans-Helmut Gander (eds.), 2015, Routledge\nCompanion to Hermeneutics , London: Routledge,"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Marion, Jean-Luc, 2013, Givenness & Hermeneutics ,\nMarquette: Marquette University Press",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Meillassoux, Quentin, 2006 [2008], Apr\u00e8s la finitude.\nEssai sur la n\u00e9cessit\u00e9 de la contingence , Paris:\n\u00c9ditions du Seuil; translated as After Finitude: An Essay\non the Necessity of Contingency , New York: Continuum.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Moules, Nancy, Graham McCaffrey, James C. Field and Catherine M.\nLaing (eds)., 2015, Conducting Hermeneutic Research: From Theory\nto Practice , New York: Peter Lang.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Moro, Simonette (ed.), 2024, The Vattimo Dictionary ,\nEdinburgh: Edinburgh University Press.",
+          "parsed": {
+            "authors": [
+              "Moro, Simonette (ed.)"
+            ],
+            "year": "2024",
+            "title": "The Vattimo Dictionary ",
+            "publisher": "Edinburgh: Edinburgh University Press",
+            "is_edited": true
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Nelson, Eric S., 2017, Chinese and Buddhist Philosophy in\nearly Twentieth-Century Thought , London: Bloomsbury\nAcademic.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Nielson, Cynthia R., 2023, Gadamer\u2019s Hermeneutical\nAesthetics: Art as a Performative, Dynamic, and Communal Event ,\nLondon and New York: Routledge.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Nielson, Cynthia R. and Greg Lynch, 2022, Gadamer\u2019s\nTruth and Method: A Polyphonic Commentary , Lanham, Boulder, New\nYork, London: Rowman & Littlefield",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Palmer, Richard E., 1969, Hermeneutics , Evanston:\nNorthwestern University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Piercy, Robert, 2016, \u201cRichard Rorty,\u201d in Keane &\nLawn 2016, pp. 446\u2013450.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ramberg, Bj\u00f8rn Torgrim, 2015, \u201cDavidson and Rorty:\nTriangulation and Anti-foundationalism,\u201d in Jeff Malpas and\nHans-Helmut Gander (eds.), Routledge Companion to\nHermeneutics , London: Routledge, pp. 216\u2013235.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ricoeur, Paul, 1965 [1970], De l\u2019interpr\u00e9tation.\nEssai sur Freud , Paris: \u00c9ditions du Seuil; translated as Freud and Philosophy: An Essay on Interpretation , New Haven\nand London: Yale University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1969 [1974], \u201cExistence et\nHerm\u00e9neutique,\u201d in Le conflit des interpretations:\nessais d\u2019herm\u00e9neutique , Paris: \u00c9ditions du\nSeuil, 23\u201350; translated as \u201cExistence and\nHermeneutics,\u201d in Don Ihde (ed.), The Conflict of\nInterpretations: Essays in Hermeneutics , Evanston: Northwestern\nUniversity Press, pp. 3\u201324.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1969",
+            "title": "\u2013\u2013\u2013, 1969 [1974], \u201cExistence et\nHerm\u00e9neutique,\u201d in Le conflit des interpretations:\nessais d\u2019herm\u00e9neutique , Paris: \u00c9ditions du\nSeuil, 23\u201350; translated as \u201cExistence and\nHermeneutics,\u201d in Don Ihde (ed.), The Conflict of\nInterpretations: Essays in Hermeneutics , Evanston: Northwestern\nUniversity Press, pp. 3\u201324."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1973 [1990], \u201cHerm\u00e9neutique et\ncritique des ideologies,\u201d Paris: Aubier, Editions Montaigne, pp.\n25\u201364; translated as \u201cHermeneutics and the Critique of\nIdeology,\u201d in Gayle Ormiston and Alan Schrift, (eds.), The\nHermeneutic Tradition from Ast to Ricoeur , Albany: State\nUniversity of New York Press, pp. 298\u2013334.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1973",
+            "title": "\u2013\u2013\u2013, 1973 [1990], \u201cHerm\u00e9neutique et\ncritique des ideologies,\u201d Paris: Aubier, Editions Montaigne, pp.\n25\u201364; translated as \u201cHermeneutics and the Critique of\nIdeology,\u201d in Gayle Ormiston and Alan Schrift, (eds.), The\nHermeneutic Tradition from Ast to Ricoeur , Albany: State\nUniversity of New York Press, pp. 298\u2013334."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1983\u201385 [1985\u201388], Temps et\nR\u00e9cit , Paris: \u00c9ditions du Seuil; translated as Time and Narrative , Volumes 1\u20133, Chicago: University of\nChicago Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1983",
+            "title": "\u2013\u2013\u2013, 1983\u201385 [1985\u201388], Temps et\nR\u00e9cit , Paris: \u00c9ditions du Seuil; translated as Time and Narrative , Volumes 1\u20133, Chicago: University of\nChicago Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1986 [1991], \u201cDe\nl\u2019interpr\u00e9tation,\u201d in De Texte \u00e0\nl\u2019action: Essais d\u2019hermeneutique II , Paris:\n\u00c9ditions du Seuil, 13\u201340; translated as \u201cOn\nInterpretation,\u201d in From Text to Action: Essays in\nHermeneutics II , Evanston: Northwestern University Press, pp.\n1\u201320.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1986",
+            "title": "\u2013\u2013\u2013, 1986 [1991], \u201cDe\nl\u2019interpr\u00e9tation,\u201d in De Texte \u00e0\nl\u2019action: Essais d\u2019hermeneutique II , Paris:\n\u00c9ditions du Seuil, 13\u201340; translated as \u201cOn\nInterpretation,\u201d in From Text to Action: Essays in\nHermeneutics II , Evanston: Northwestern University Press, pp.\n1\u201320."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Risser, James, 1997, Hermeneutics and the Voice of the Other:\nRe-reading Gadamer\u2019s Philosophical Hermeneutics , Albany:\nState University of New York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Romano, Claude, 2010 [2015], Au coeur de la raison, La\nPh\u00e9nom\u00e9nologie , Paris: Gallimard; translated as At The Heart of Reason . Evanston: Northwestern University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rorty, Richard, 1979, Philosophy and the Mirror of\nNature , Princeton: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rush, Fred, 2019, \u201cHermeneutics and Romanticism,\u201d in The Cambridge Companion to Hermeneutics , Cambridge: Cambridge\nUniversity Press, pp. 65\u201386.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Scholtz, Gunter, \u201cAst and Schleiermacher: Hermeneutics and\nCritical Philosophy,\u201d in J. Malpas and H. Gander (eds.), The\nRoutledge Companion to Hermeneutics , London: Routledge, pp.\n62\u201373.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schmidt, Dennis J., 2008, \u201cHermeneutics as Original\nEthics,\u201d in Shannon Sullivan and Dennis J. Schmidt (eds.), Dif\ufb01culties of Ethical Life , New York: Fordham\nUniversity Press, pp. 35\u201347.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2012, \u201cOn the Sources of Ethical\nLife,\u201d Research in Phenomenology , 41(1): \n35\u201348.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2012",
+            "title": "\u2013\u2013\u2013, 2012, \u201cOn the Sources of Ethical\nLife,\u201d Research in Phenomenology , 41(1): \n35\u201348."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2016, \u201cHermeneutics and Ethical Life:\nOn the Return of Factical Life,\u201d in Keane & Lawn 2016, pp.\n65\u201371.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2016",
+            "title": "\u2013\u2013\u2013, 2016, \u201cHermeneutics and Ethical Life:\nOn the Return of Factical Life,\u201d in Keane & Lawn 2016, pp.\n65\u201371."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Schmidt, Lawrence K., 2006, Understanding Hermeneutics ,\nSlough, UK: Acumen Press.",
+          "parsed": {
+            "authors": [
+              "Schmidt, Lawrence K."
+            ],
+            "year": "2006",
+            "title": "Understanding Hermeneutics ",
+            "publisher": "Slough, UK: Acumen Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Schleiermacher, Friedrich 1819 [1990], \u201cIII: Die\nKompendienartige Darstellung von 1819,\u201d in 1974, Hermeneutik , Heidelberg: C. Winter; translated as\n\u201c The Hermeneutics : Outline of the 1819 Lectures,\u201d\nin Ormiston, Gayle L. and Alan Schrift (eds.), The Hermeneutical\nTradition from Ast to Ricoeur , Albany: State University of New\nYork Press, pp. 85\u2013100.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Steup, Matthias and Neta, Ram, \u201cEpistemology,\u201d The\nStanford Encyclopedia of Philosophy (Fall 2020 Edition), Edward\nN. Zalta (ed.), forthcoming URL =\n<https://plato.stanford.edu/archives/fall2020/entries/epistemology/>.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sypnowich, Christine, \u201cLaw and Ideology,\u201d The\nStanford Encyclopedia of Philosophy (Summer 2019 Edition), Edward\nN. Zalta (ed.), URL =\n<https://plato.stanford.edu/archives/sum2019/entries/law-ideology/>.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Taylor, Charles, 1980, \u201cUnderstanding in Human\nScience,\u201d The Review of Metaphysics , 34(1): \n25\u201338.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Thucydides, History of the Peloponnesian War , cited in\nThucydides, 1972, History of the Peloponnesian War , London:\nPenguin Classics.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u201ctradition, n,\u201d 2020, OED Online , Oxford\nUniversity Press,\nhttps://www-oed-com.srv-proxy1.library.tamu.edu/view/Entry/204302?rskey=6BvQhT&result=1&isAdvanced=false\n(accessed August 02, 2020).",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tatjana T\u00f6mmel and Maurizio Passerin d\u2019Entreves,\n2024, \u201cHannah Arent,\u201d in The Stanford Encylcopedia of\nPhilosophy (Summer 2024), edited by Edward N. Zalta and Uri\nNodelman. URL = https://plato.stanford.edu/archives/sum2024/entries/arendt/ .",
+          "parsed": {
+            "authors": [
+              "Tatjana T\u00f6mmel and Maurizio Passerin d\u2019Entreves"
+            ],
+            "year": "2024",
+            "title": "Tatjana T\u00f6mmel and Maurizio Passerin d\u2019Entreves,\n2024, \u201cHannah Arent,\u201d in The Stanford Encylcopedia of\nPhilosophy (Summer 2024), edited by Edward N. Zalta and Uri\nNodelman. URL = https://plato.stanford.edu/archives/sum2024/entries/arendt/ ."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "van der Heiden, Gert-Jan, 2019, The Voice of Misery: A\nContinental Philosophy of Testimony , Albany: State University of\nNew York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vessey, David, 2005, \u201cGadamer\u2019s Account of Friendship\nas an Alternative to an Account of Intersubjectivity,\u201d Philosophy Today , 49(5): 61\u201367.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vattimo, Gianni, 1994 [1997], Oltre l\u2019interpretazione: Il significato dell\u2019ermeneutica per\nla filosofia , Rome: Editori Laterza; translated as Beyond\nInterpretation: The Meaning of Hermeneutics for Philosophy ,\nStanford: Stanford University Press, 1997.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1985 [1988], La fine della\nmodernit\u00e0 , Milan: Garzanti; translated as The End of\nModernity: Nihilism and Hermeneutics in Postmodern Culture ,\nBaltimore: The Johns Hopkins University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1985",
+            "title": "\u2013\u2013\u2013, 1985 [1988], La fine della\nmodernit\u00e0 , Milan: Garzanti; translated as The End of\nModernity: Nihilism and Hermeneutics in Postmodern Culture ,\nBaltimore: The Johns Hopkins University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2012 [2017], Della realt\u00e0 ,\nMilan: Garzanti; translated as Of Reality: The Purposes of\nPhilosophy , New York: Columbia University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2012",
+            "title": "\u2013\u2013\u2013, 2012 [2017], Della realt\u00e0 ,\nMilan: Garzanti; translated as Of Reality: The Purposes of\nPhilosophy , New York: Columbia University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2000 [2010], Storia di una virgola:\nGadamer e il senso dell\u2019essere , Iride: Filosofia e\nDiscussione Pubblica , 13 (2): 323\u2013336; translated as\n\u201cThe Story of a Comma,\u201d in The Responsibility of the\nPhilosopher , New York: Columbia University Press, pp.\n56\u201359.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2000",
+            "title": "\u2013\u2013\u2013, 2000 [2010], Storia di una virgola:\nGadamer e il senso dell\u2019essere , Iride: Filosofia e\nDiscussione Pubblica , 13 (2): 323\u2013336; translated as\n\u201cThe Story of a Comma,\u201d in The Responsibility of the\nPhilosopher , New York: Columbia University Press, pp.\n56\u201359."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Vattimo, Gianna and Pier Aldo Rovatti (eds.), 1983 [2012], Il\npensio debole , Milan: Feltrinelli. Weak Thought , Albany:\nState University of New York Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Walhof, Darren, 2022, \u201cGadamer\u2019s Contribution to\nPolitical Theory,\u201d in Theodore George and Gert-Jan van der\nHeiden (eds.), The Gadamerian Mind , London and New York:\nRoutledge, pp. 418\u2013431.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Warnke, Georgia, 1987, Gadamer: Hermeneutics, Tradition, and\nReason , Stanford: Stanford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1993, Justice and Interpretation , Cambridge, MA: MIT Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1993",
+            "title": "Justice and Interpretation ",
+            "publisher": "Cambridge, MA: MIT Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1999, Legitimate Differences:\nInterpretation in the Abortion Controversy and Other Public\nDebates , Berkley, CA: University of California Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1999",
+            "title": "\u2013\u2013\u2013, 1999, Legitimate Differences:\nInterpretation in the Abortion Controversy and Other Public\nDebates , Berkley, CA: University of California Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2002, \u201cHermeneutics, Ethics, and\nPolitics,\u201d in Robert J. Dostal (ed.), Cambridge Companion to\nGadamer , Cambridge: Cambridge University Press, pp.\n79\u2013101.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2002",
+            "title": "\u2013\u2013\u2013, 2002, \u201cHermeneutics, Ethics, and\nPolitics,\u201d in Robert J. Dostal (ed.), Cambridge Companion to\nGadamer , Cambridge: Cambridge University Press, pp.\n79\u2013101."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2012, \u201cSolidarity and Tradition in\nGadamer\u2019s Hermeneutics,\u201d in History and Theory:\nStudies in the Philosophy of History , 51(4): \n6\u201322.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2012",
+            "title": "\u2013\u2013\u2013, 2012, \u201cSolidarity and Tradition in\nGadamer\u2019s Hermeneutics,\u201d in History and Theory:\nStudies in the Philosophy of History , 51(4): \n6\u201322."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2015, \u201cHermeneutics and\nFeminism,\u201d in Jeff Malpas and Hans-Helmut Gander (eds.), The\nRoutledge Companion to Hermeneutics , New York and London:\nRoutledge.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2015",
+            "title": "\u2013\u2013\u2013, 2015, \u201cHermeneutics and\nFeminism,\u201d in Jeff Malpas and Hans-Helmut Gander (eds.), The\nRoutledge Companion to Hermeneutics , New York and London:\nRoutledge."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Whitman, Walt, 1855, Song of Myself , cited in Gottesman,\nRonald, Laurence B. Holland, David Kalstone, Francis Murphy, Hershel\nPark, and William H. Pritchard (eds.), 1979, The Norton Anthology\nof American Literature , Volume 1, New York: W. W. Norton &\nCo., pp. 1875\u20131922.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vallega, Alejandro A., 2019, \u201cExordio: Towards a\nHermeneutics of Liberation: Understanding Liberatory Thought Out of\nthe Movement of Effected Historical Consciousness in Hans-Georg\nGadamer,\u201d Research in Phenomenology , 49(2):\n207\u2013227.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zimmerman, J., 2015, Hermeneutics: A Very Short\nIntroduction , Oxford: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ],
+      "sections": {
+        "1": {
+          "id": "1",
+          "title": "3 The Hermeneutical Circle",
+          "content": "In hermeneutics, by contrast, the emphasis is on the\n\u2018circularity\u2019 of understanding. This emphasis is familiar\nfrom the concept of the hermeneutical circle. Central to hermeneutics,\nthis concept is not only highly disputed but has also been developed\nin a number of distinct manners. Broadly, however, the concept of the\nhermeneutical circle signifies that, in interpretive experience, a new\nunderstanding is achieved not on the basis of already securely founded\nbeliefs. Instead, a new understanding is achieved through renewed\ninterpretive attention to further possible meanings of those\npresuppositions which, sometimes tacitly, inform the understanding\nthat we already\n have. [ 2 ] Philosophers have described such hermeneutically circular\npresuppositions in different ways and, since Heidegger, especially in\nterms of presuppositions of the existential and historical contexts in\nwhich we find ourselves. This contemporary significance of\nhermeneutically circular presuppositions has origins in an older (and\nperhaps more commonly known) formulation, namely, that interpretive\nexperience\u2014classically, that of text\ninterpretation\u2014involves us in a circular relation of whole and\nparts. This formulation derives from antiquity and has a place in the\napproaches of nineteenth-century figures such as Schleiermacher and\nDilthey. On the one hand, it is necessary to understand a text as a\nwhole in order properly to understand any of its parts. On the other\nhand, however, it is necessary to understand the text in each of its\nparts in order to understand it as a whole. In contemporary hermeneutics, the concept of the hermeneutical circle\nis rarely restricted to the context of text interpretation, and, too,\nthe circularity of interpretive experience is not necessarily cast in\nterms of the relation of whole and parts; indeed, even within\nhermeneutics it has been challenged whether interpretive experience is\nreally circular (Figal 2023). Nevertheless, as Grondin suggests, this\nolder formulation can help to illustrate the circular character of\ninterpretive experience (2016, 299). In text interpretation so\nconceived, our efforts to understand a text have no firm foundation\nfrom which to begin. Rather, these efforts unfold always in media\nres , through an interpretation of the whole of a text that\nproceeds from presuppositions about the parts; and, no less, through\nan interpretation of the parts that proceeds from presuppositions\nabout the whole. Understanding, then, is not pursued\n\u2018vertically\u2019 by layering beliefs on top of foundations,\nbut rather \u2018circularly,\u2019 in an interpretive movement back\nand forth through possible meanings of our presuppositions that by\nturns allow a matter to come into view. In this, the pursuit of\nunderstanding does not build \u2018higher and higher;\u2019 it goes\n\u2018deeper and deeper,\u2019 gets \u2018fuller and fuller,\u2019\nor, perhaps \u2018richer and richer.\u2019"
+        },
+        "2": {
+          "id": "2",
+          "title": "3 Hermeneutics Today",
+          "content": "Hermeneutics in our times is demarcated from the modern historical\norigins of hermeneutics by the influence of a new use Heidegger makes\nof hermeneutics in his early phenomenological inquiries into human\nexistence. In turn, contemporary hermeneutics remains largely shaped\nby Hans-Georg Gadamer\u2019s \u2018philosophical\nhermeneutics,\u2019 which he describes as an attempt further to\ndevelop and expand on Heidegger\u2019s influential breakthrough.\nCurrent research in hermeneutics also receives contour from Paul\nRicoeur\u2019s contributions to hermeneutics, from philosophical\ncontroversies with critical theory and deconstruction, and from the\nemergence of postmodern hermeneutics. Further developments include\ninnovations in hermeneutics made by some philosophers in the\nAnglo-American tradition and the development of hermeneutics in\nethical and political philosophy. Most recently, further developments\ninclude a renewal of interest in normative dimensions of interpretive\nexperience, and responses in hermeneutics to a recent rise of interest\nin realism."
+        },
+        "3": {
+          "id": "3",
+          "title": "2 Difficulties of Self-Interpretation",
+          "content": "Heidegger maintains that our attempts at the self-interpretation of\nour existence is fraught with difficulties. One reason, he believes,\nis that structures of being in the world are made inconspicuous by the\nvery involvement in the world that they enable. He famously makes this\ncase in the course of his phenomenological considerations of the way\nwe find human existence \u201cinitially and for the most part,\u201d\nnamely, in the undifferentiated \u201caverageness\u201d of everyday\nexistence (Heidegger, Being and Time , 43; \u00a7 20). In this\naverageness of everyday existence, Heidegger argues, the structure of\nthe world is given through the purposes we have, the referential\nrelations that comprise the situations in which we attempt to realize\nthese ends, and the things we employ in the service of these ends. In\nthe averageness of everyday existence, our access to this structure is\ngranted not through reflection on it but, instead, through our\nordinary affairs, as we cognize the structure indirectly through the\nthings ( Zeuge , useful things or tools) that we employ to\ncarry out our projects (Heidegger, Being and Time ,\n\u00a7\u00a7 14\u201318; see also Heidegger, Ontology ,\n\u00a7 20). Yet, as he argues, in this form of cognizance,\n\u201ccircumspection\u201d ( Umsicht ), the structure of the\nworld itself recedes from view precisely by our absorption in those\nprojects (Heidegger, Being and Time , 69). Heidegger maintains that the self-interpretation of existence is made\ndifficult, moreover, because being in the world always also entails\nbeing with others. In this, Heidegger argues that in the averageness\nof everyday existence, we tend to interpret ourselves not by what\nindividuates us from others, but, instead, by what can be attributed\nindifferently to anyone. Such interpretations may be attractive\nbecause accessible to anyone, but they come at the price of being\ndistorting and reductive. In the averageness of everyday existence,\nthe sense of self that comes into focus through self-interpretation is\nnot a self in its singular possibilities to be. It is rather a sense\nof self characterized by circumscribed possibilities, which, for\nHeidegger, finds expression in the pronoun \u2018they,\u2019 or\n\u2018one\u2019 ( das Man )\u2014so that we interpret our\nown possibilities restrictively in terms of what \u2018one\u2019\nthinks, what \u2018one\u2019 does, and no more (see Heidegger Being and Time , \u00a7 27; see also Heidegger, Ontology , \u00a7 6). Another, related difficulty of self-interpretation concerns the\nhistorical transmission of interpretations. In this, Heidegger\nmaintains that, as interpretations of being and the being of existence\nare passed down from tradition, the \u201coriginal sources\u201d of\nconcrete, existential concern at issue in these interpretations come\nto be covered over (Heidegger, Ontology , 59). Indeed, for\nthis reason, Heidegger calls for a \u201cdestruction\u201d or,\nperhaps, \u2018de-structuration\u2019 ( Destruktion ) of such\ninterpretations that have been passed down from the history of Western\nphilosophy (see Heidegger, Being and Time, \u00a76). This, to\nbe sure, is a call that has important implications for the study of\nthe history of philosophy, one that has been influential for\nphilosophers such as Jacques Derrida, John Sallis, and Claudia\nBaracchi. In view of the implications of Heidegger\u2019s call for\n\u2018de-structuration,\u2019 the point of studying philosophers\nfrom the past is not simply to clarify well-worn ideas about them, but\nto break through such ideas, wresting from these philosophers ideas\nthat are oriented by the original existential concerns that animated\ntheir thought in the first place."
+        },
+        "4": {
+          "id": "4",
+          "title": "4 Language",
+          "content": "The hermeneutical experience of truth is conditioned by not only\ntradition but also language. In Gadamer\u2019s philosophical\nhermeneutics, the relation of truth to language is described in\nreference to being. Gadamer expresses this relation in a celebrated motto , \u201cbeing that can be understood is language\u201d\n(Gadamer, Truth and Method ,\n 474). [ 7 ] According to this motto , language is primarily a\n\u2018medium\u2019 that shows us the being, or meaningful order, of\nthe world and the things we encounter in it (Gadamer, Truth and\nMethod , Part\n III.1). [ 8 ] Thus, language is only secondarily an instrument that we use, among\nother things, to represent something, communicate about it, or make\nassertions about it. The experience of language as a medium takes\nplace in what Gadamer calls \u201c hermeneutical\nconversation \u201d (Gadamer, Truth and Method , 388).\nThe primary example of such hermeneutical conversation is a\nconversation between interlocutors about something; but, he believes\nthat hermeneutical conversation also includes all interpretive\nexperience, so that the interpretation of artworks and texts is\nconceived as a conversation between the interpreter and work about the\nsubject matter of the work. In hermeneutical conversation,\ninterlocutors may, of course, use language to represent, communicate\nor make assertions. More originally, however, hermeneutical\nconversation concerns the being of the matter under consideration.\nHermeneutical conversation is thus an event of interlocution that aims\nto show something in its being, as it genuinely or truly is. The hermeneutical experience of truth can be described as the success\nof conversation so conceived. But, in this, truth is not experienced\nas a matter of \u201ccorrectness,\u201d or as this may be clarified,\na matter of correct predication (Gadamer, Truth and Method ,\n406). In the experience of truth as correct predication, truth is\ntypically conceived as the property of a proposition, statement or\nutterance that suitably connects a subject with a predicate. In the\nhermeneutical experience of truth, by contrast, the concern is not\nwith correct predication in this sense but, instead, with\nconversation, grasped as an event of interlocution concerned with the\nbeing of a subject itself. In such a conversation, truth is reached,\nif it is reached, not when a subject is suitably connected with\nsomething else, but, instead, when the subject is sufficiently shown\nin its own being, as it truly is. The measure of such sufficiency is\nestablished not in advance, but is achieved in the course of\nconversation along with the claim of truth that it measures. Philosophical hermeneutics maintains that the experience of truth as\ncorrect predication is dependent on the hermeneutical experience of\ntruth. This is because in truth as correctness, the proper connection\nof subject and predicate depends in part on the being of the subject.\nIn predication, the being of the subject is typically either left out\nof account or is presumed already to be determined or interpreted.\nBut, the being of the subject\u2014what it truly is\u2014is a matter\nof interpretation. In illustration, we may consider the fictional\nconversation presented by Plato in the Republic among\nSocrates, Glaucon and other interlocutors about justice. In conclusion\nof our interpretive experience, we may assert the proposition,\n\u2018justice is nearly impossible to achieve!\u2019 But, whether\nthis predicate can be connected with the subject of justice in this\nmanner will depend, ultimately, on the being of justice, and the truth\nof the being of justice will depend, in turn, on an interpretation of\nit. Truth as correct predication, then, depends on the truth of the\nbeing of something, and such truth is a matter of interpretation. Finally, in Gadamer\u2019s philosophical hermeneutics, it is claimed\nthat the hermeneutical experience of truth is \u2018universal.\u2019\nThis does not mean that the hermeneutical experience of truth takes\nplace every time we converse about something. Rather, it means that\nthe hermeneutical experience of truth remains always a problem,\nwhenever we wish to understand something, and even when a conversation\nculminates in an experience of truth. Each hermeneutical experience of\ntruth remains open to further interpretation (see Gadamer, \u201cThe\nUniversality of the Hermeneutical Problem\u201d)."
+        }
+      }
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

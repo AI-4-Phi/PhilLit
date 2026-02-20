@@ -1,0 +1,468 @@
+[s2_search.py] Searching Semantic Scholar: 'Habermas philosophical discourse modernity Nietzsche Heidegger Weber', limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_39c7280f6a5df481)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Habermas philosophical discourse modernity Nietzsche Heidegger Weber",
+  "results": [
+    {
+      "paperId": "07a9b26ba2af793886a231b4d015956c69c99c38",
+      "title": "The Philosophical Discourse of Modernity: Twelve Lectures",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 1081,
+      "doi": "10.2307/2072653",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07a9b26ba2af793886a231b4d015956c69c99c38",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bf0b18477691ff75b276b4a6ecf5b18eccc9a4d5",
+      "title": "The Discourse of Modernity : Hegel, Nietzsche, Heidegger (and Habermas) in Symposium on J\u00fcrgen Habermas's The Philosophical Discourse of Modernity .",
+      "authors": [
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bf0b18477691ff75b276b4a6ecf5b18eccc9a4d5",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "377-406",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6001efc189bb184268f23d3b857f4abeba3562fd",
+      "title": "Habermas on Heidegger and Foucault. Meaning and validity in 'The philosophical discourse of modernity'",
+      "authors": [
+        {
+          "name": "Rudi Visker",
+          "authorId": "103299907"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6001efc189bb184268f23d3b857f4abeba3562fd",
+      "venue": "",
+      "journal": {
+        "name": "Radical Philosophy",
+        "pages": "15-22",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on the Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "M. D\u2019entr\u00e8ves",
+          "authorId": "1422611260"
+        },
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1be2b132d1718f6144e477a87d10be53b27807ed",
+      "title": "Book Reviews : David Owen: Maturity and Modernity: Nietzsche, Weber, Foucault and the Ambivalence of Reason. London and New York: Routledge, 1997",
+      "authors": [
+        {
+          "name": "N. Gane",
+          "authorId": "52126071"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/000169939804100413",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1be2b132d1718f6144e477a87d10be53b27807ed",
+      "venue": "",
+      "journal": {
+        "name": "Acta Sociologica",
+        "pages": "389 - 391",
+        "volume": "41"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c418eadfb7d5609ae287b77c157792f816fca8f4",
+      "title": "Book Reviews : THE PHILOSOPHICAL DISCOURSE OF MODERNITY. J\u00fcrgen Habermas. Cambridge, Polity Press, 1987. 430 pp. $59.95 (cloth). HABERMAS AND THE FOUNDATIONS OF CRITICAL THEORY. Rick Roderick. Macmillan (Theoretical Traditions in the Social Sciences), 1986. 194 pp",
+      "authors": [
+        {
+          "name": "S. Crook",
+          "authorId": "95498575"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/144078339202800217",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c418eadfb7d5609ae287b77c157792f816fca8f4",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Sociology",
+        "pages": "257 - 260",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e1a8298f9b83b690e1622cb12b6034ca78c790b8",
+      "title": "Dangerous minds: Nietzsche, Heidegger, and the return of the far right",
+      "authors": [
+        {
+          "name": "L. Thiele",
+          "authorId": "88071601"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 27,
+      "doi": "10.1057/s41296-018-0269-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e1a8298f9b83b690e1622cb12b6034ca78c790b8",
+      "venue": "Contemporary Political Theory",
+      "journal": {
+        "name": "Contemporary Political Theory",
+        "pages": "63 - 66",
+        "volume": "19"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "679bc6867dca94195046ac489149337e22b1f8dd",
+      "title": "Working in the Philosophical Discourse of Modernity: Habermas, Faoucault, and Derrida",
+      "authors": [
+        {
+          "name": "M. Fleming",
+          "authorId": "97844943"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.5840/PHILTODAY199640143",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/679bc6867dca94195046ac489149337e22b1f8dd",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Today",
+        "pages": "169-178",
+        "volume": "40"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "68eb2611c6f25a8ce3f7a298661d2bb6621b78a9",
+      "title": "Habermas and the Holy Grail of reason: The Philosophical Discourse of Modernity between theatre and theory",
+      "authors": [
+        {
+          "name": "M. Greig",
+          "authorId": "2091898095"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1080/1035033042000238240",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/68eb2611c6f25a8ce3f7a298661d2bb6621b78a9",
+      "venue": "",
+      "journal": {
+        "name": "Social Semiotics",
+        "pages": "215 - 232",
+        "volume": "14"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "85937f68ceda46ebd9688f034751f2f56ae84e68",
+      "title": "Maturity and Modernity: Nietzsche, Weber, Foucault and the Ambivalence of Reason",
+      "authors": [
+        {
+          "name": "D. Owen",
+          "authorId": "144926906"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 120,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/85937f68ceda46ebd9688f034751f2f56ae84e68",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fdf01556289ae7e22992960ded238bd10525cb92",
+      "title": "Habermas on Heidegger and Bataille: Positing the Postmetaphysical Experience",
+      "authors": [
+        {
+          "name": "F. Merawi",
+          "authorId": "115700843"
+        }
+      ],
+      "year": 2019,
+      "abstract": "This article critically exposes Habermas\u2019 discussion of Martin Heidegger\u2019s philosophy of Being and George Bataille\u2019s heterology as a way of identifying the postmetaphysical stance as the guiding spirit of Habermas\u2019 modernity. In his work The Philosophical Discourse of Modernity, Habermas argues that whereas Heidegger\u2019s Being sacrifices actuality in the name of interpretation, Bataille\u2019s heterology sets up the unlimited experience which fails to provide an impetus for societal critique. Here a postmetaphysical approach is envisaged by Habermas as a way of going beyond the confines of the metaphysical tradition, although it also needs to pay attention to charges of misreading in its attempt to deconstruct the discourse of the modern.",
+      "citationCount": 0,
+      "doi": "10.32591/coas.ojsp.0302.03045m",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fdf01556289ae7e22992960ded238bd10525cb92",
+      "venue": "Open Journal for Studies in Philosophy",
+      "journal": {
+        "name": "Open Journal for Studies in Philosophy"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0e9e8b6faba6df303a4355190278ace1cf85aab0",
+      "title": "Anti-Discourse of Modernity:Inherent Logic of Habermas's Communicative Rationality Paradigm and Its Contemporary Transformation",
+      "authors": [
+        {
+          "name": "Liu Zhongq",
+          "authorId": "2094138141"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0e9e8b6faba6df303a4355190278ace1cf85aab0",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "012b85275240489ed6c195899ffdf2130ea73434",
+      "title": "Meaning and Validity Habermas on Heidegger and Foucault",
+      "authors": [
+        {
+          "name": "Rudi Visker",
+          "authorId": "103299907"
+        }
+      ],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-94-011-4467-4_4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/012b85275240489ed6c195899ffdf2130ea73434",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "73-90",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "65c43329bbf5ca72d8c3bfc175001d5cdc498f88",
+      "title": "O Nietzsche de Habermas: uma breve considera\u00e7\u00e3o acerca do quarto cap\u00edtulo de \u201cO discurso filos\u00f3fico da modernidade\u201d",
+      "authors": [
+        {
+          "name": "M. J. S. Lima",
+          "authorId": "153285531"
+        }
+      ],
+      "year": 2013,
+      "abstract": "EnglishThis study aims to analyze the thought of Friedrich Nietzsche as a tipping point in the input of post modernity in accordance with the considerations made by Jurgen Habermas in the fourth chapter of his work \"the philosophical discourse of modernity\". According to the text, Habermas discusses the structural aspects of modern thought putting the Nietzschean philosophy as a kind of rupture between the modern and the postmodern, showing his critique of modernity and its relationship with the German romanticism. In this context, we will try to generalize about the art concept in Nietzsche's philosophy and highlight their participation in the developments of contemporary philosophy. portuguesO presente trabalho tem por finalidade analisar o pensamento de Friedrich Nietzsche como ponto de inflexao na entrada da pos-modernidade segundo a analise apresentada por Jurgen Habermas no quarto capitulo de sua obra \u201cO discurso filosofico da modernidade\u201d. De acordo com o texto, Habermas discute os aspectos estruturantes do pensamento moderno colocando a filosofia nietzschiana como uma especie de ruptura entre o moderno e o pos-moderno, mostrando sua critica a modernidade e suas relacoes com o romantismo alemao. Neste contexto, tentaremos tecer consideracoes sobre o conceito de arte na filosofia de Nietzsche e evidenciar sua participacao nos desdobramentos da filosofia contempor\u00e2nea.",
+      "citationCount": 0,
+      "doi": "10.31977/grirfi.v8i2.558",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/65c43329bbf5ca72d8c3bfc175001d5cdc498f88",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "226-238",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "da844b84bbbaf0c753bdf3a13b634cf189d057c2",
+      "title": "Habermas, Foucault and Nietzsche: A Double Misunderstanding",
+      "authors": [
+        {
+          "name": "Thomas Biebricher",
+          "authorId": "15174558"
+        }
+      ],
+      "year": 2005,
+      "abstract": "The article analyses Habermas' interpretation of Foucault in the Philosophical Discourse of Modernity and argues that the former misunderstands the Foucaultian project of genealogy fundamentally. While Habermas assumes that Foucault aims at a strictly scientific approach to the writing of history it can be shown that Foucaultian genealogy is strongly characterised by rhetorical aspects, creating a hybrid model of critique that stands in between science and literature. The essay goes on arguing that this misreading can be explained with reference to Habermas' reconstruction of Nietzsche's philosophy in the Philosophical Discourse. On the basis of this clarification the article analyses what a Habermasian position vis-a-vis genealogy including the rhetorical element would look like. Making use of Habermas' remarks on Derrida in the Philosophical Discourse the essay concludes that, counter-intuitively, a rhetorically understood genealogy has to be considered a valid philosophical approach even on Habermas' own terms.",
+      "citationCount": 222,
+      "doi": "10.22439/FS.V0I3.870",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/da844b84bbbaf0c753bdf3a13b634cf189d057c2",
+      "venue": "",
+      "journal": {
+        "name": "Foucault Studies",
+        "pages": "1-26",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3b6917553ed5584b7ece591241307ae684bc8820",
+      "title": "NIETZSCHE E HABERMAS NO TECIDO DA DIAL\u00c9TICA DO ESCLARECIMENTO",
+      "authors": [
+        {
+          "name": "B. Ramacciotti",
+          "authorId": "104004083"
+        }
+      ],
+      "year": 2011,
+      "abstract": "In this article we will examine some connections between criticism of Adorno and Horkheimer to instrumental reason limited to the book Dialectic of Enlightenment and the genealogical critique of Nietzsche to the \"will to truth \", a theme explored in several books. Then resume the reading of Habermas in The Philosophical Discourse of Modernity on a Nietzsche\u2019s radical critique to modern rationality, in order to examine two points: 1) What arguments support the thesis of inconsistency and lack of foundation of Nietzsche's genealogical critique? 2) why Habermas claims that the heirs of Nietzschean critique repeat this inconsistency, including the very critical of Adorno and Horkheimer? We intend to demonstrate, unlike Habermas, Adorno and Horkheimer in demythologization program of instrumental reason resume Nietzschean critical project aiming to build a new positive and demythologized meaning for enlightenment.",
+      "citationCount": 0,
+      "doi": "10.5216/PHI.V16I2.15175",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3b6917553ed5584b7ece591241307ae684bc8820",
+      "venue": "",
+      "journal": {
+        "name": "Phil\u00f3sophos : Revista de Filosofia",
+        "volume": "16"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9699e40c55af6fdd04825a363ccc8035507597b4",
+      "title": "Nietzsche e a modernidade em Habermas",
+      "authors": [
+        {
+          "name": "Oswaldo Giac\u00f3ia J\u00fanior",
+          "authorId": "93130859"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9699e40c55af6fdd04825a363ccc8035507597b4",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "16"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d661da42876656435bf5d8cdffa31687e4026876",
+      "title": "Habermas' Perspective of Modernity",
+      "authors": [
+        {
+          "name": "Fu Yong-jun",
+          "authorId": "30684858"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d661da42876656435bf5d8cdffa31687e4026876",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Shandong University",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6d0d5bb2bb7a467e8884f1675ccc11f9a150da54",
+      "title": "Truth and Interest: On Habermas\u2019s Postscript to Nietzsche\u2019s Theory of Knowledge",
+      "authors": [
+        {
+          "name": "M. Pensky",
+          "authorId": "87583460"
+        }
+      ],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/978-94-017-2430-2_19",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6d0d5bb2bb7a467e8884f1675ccc11f9a150da54",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "265-272",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "61806c62317ac8e001d4da5abfc17cd79fd31913",
+      "title": "AYDINLANMA S\u00dcREC\u0130NDE N\u0130ETZSCHE ve ELE\u015eT\u0130REL TEOR\u0130S\u0130N\u0130N YORUMSAL ANAL\u0130Z\u0130",
+      "authors": [
+        {
+          "name": "F. Karao\u011flu",
+          "authorId": "2161060655"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The subject of this article is to reveal Nietzsche's philosophy, which interprets the individuality theme of the enlightenment process, which shifts from religious understandings to secular minds, with a different perspective from its contemporaries, and which is based on the individual's dominance over himself. The aim of the article is to establish a philosophical tradition that presents the critical analysis of the Enlightenment and modernity-oriented structures; By examining the Enlightenment critique on the basis of 'reason', Adorno, Horkheimer, and Habermas, one of the Critical Theorists, aims to reveal their positive and critical aspects of Nietzsche. A literature review was chosen as the method in the article. Nietzsche's individual-centered philosophy has been examined in terms of the morality of ressentiment, will to power, superhuman, perspectivism, and eternal return teachings, and has revived the individual thought by preparing the ground for a postmodern exit against the risk of modernism to destroy subjectivity. Nietzsche's aim is to put basic value forms into life and to give a positive meaning to them through questioning the line of causality. For this purpose, it is to continue to follow with its discourses on art, aesthetics, and myth. However, while doing this, he was dragged into a journey claiming the opposite of his own philosophy with a perspective that loved his destiny and accepted his fate, and his path to myth and art remained as an unfinished project for the pains of the modern World.",
+      "citationCount": 0,
+      "doi": "10.26450/jshsr.3006",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/61806c62317ac8e001d4da5abfc17cd79fd31913",
+      "venue": "International Journal of Social Humanities Sciences Research (JSHSR)",
+      "journal": {
+        "name": "International Journal of Social Humanities Sciences Research (JSHSR)"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

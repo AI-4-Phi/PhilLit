@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/2072653"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2072653",
+      "title": "The Philosophical Discourse of Modernity: Twelve Lectures.",
+      "authors": [
+        {
+          "family": "Roderick",
+          "given": "Rick"
+        },
+        {
+          "family": "Habermas",
+          "given": "Jurgen"
+        },
+        {
+          "family": "Lawrence",
+          "given": "Frederick"
+        }
+      ],
+      "editors": [],
+      "year": 1990,
+      "container_title": "Contemporary Sociology",
+      "volume": "19",
+      "issue": "2",
+      "page": "316",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/2072653"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

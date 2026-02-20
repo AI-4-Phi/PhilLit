@@ -1,0 +1,40 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.2307/2215446
+[verify_paper.py] DOI verified: The Critical Theory of Jurgen Habermas....
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/2215446"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2215446",
+      "title": "The Critical Theory of Jurgen Habermas.",
+      "authors": [
+        {
+          "family": "Rapaczynski",
+          "given": "Andrzej"
+        },
+        {
+          "family": "McCarthy",
+          "given": "Thomas"
+        }
+      ],
+      "editors": [],
+      "year": 1981,
+      "container_title": "No\u00fbs",
+      "volume": "15",
+      "issue": "3",
+      "page": "423",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/2215446"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,107 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "4 paper IDs",
+  "results": [
+    {
+      "paperId": "effefca4d5ba7355bfd36fafcec4a2521cdedab6",
+      "title": "Habermas and Occidental Rationalism: The Politics of Identity, Social Learning, and the Cultural Limits of Moral Universalism*",
+      "authors": [
+        {
+          "name": "Gerard Delanty",
+          "authorId": "11883750"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 49,
+      "doi": "10.1111/0735-2751.00022",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/effefca4d5ba7355bfd36fafcec4a2521cdedab6",
+      "venue": "",
+      "journal": {
+        "name": "Sociological Theory",
+        "pages": "30 - 59",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "effefca4d5ba7355bfd36fafcec4a2521cdedab6"
+    },
+    {
+      "paperId": "acb182ce34aee759a8409b5695b7d8bafcc243e4",
+      "title": "Western Civilization and Its Problems: A Dialogue between Weber, Elias and Habermas",
+      "authors": [
+        {
+          "name": "P. Geiger",
+          "authorId": "2066053229"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/acb182ce34aee759a8409b5695b7d8bafcc243e4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ],
+      "_queryId": "acb182ce34aee759a8409b5695b7d8bafcc243e4"
+    },
+    {
+      "paperId": "f1580bc5ff6c600b5bde26309c558683ea998dda",
+      "title": "Weber, Habermas, and Transformations of the European State: Conclusion: Habermas's Philosophy of History and Europe's Future",
+      "authors": [
+        {
+          "name": "John P. McCormick",
+          "authorId": "143902318"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1017/CBO9780511756047.008",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f1580bc5ff6c600b5bde26309c558683ea998dda",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "f1580bc5ff6c600b5bde26309c558683ea998dda"
+    },
+    {
+      "paperId": "b367da384a73b433923f4c09e31c2491fc29372a",
+      "title": "The rise of Western rationalism: Max Weber's developmental history",
+      "authors": [
+        {
+          "name": "W. Schluchter",
+          "authorId": "66305960"
+        },
+        {
+          "name": "G. Roth",
+          "authorId": "47894637"
+        }
+      ],
+      "year": 1981,
+      "abstract": null,
+      "citationCount": 206,
+      "doi": "10.2307/3339898",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b367da384a73b433923f4c09e31c2491fc29372a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "b367da384a73b433923f4c09e31c2491fc29372a"
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

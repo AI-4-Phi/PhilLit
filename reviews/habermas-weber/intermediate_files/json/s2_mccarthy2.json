@@ -1,0 +1,512 @@
+[s2_search.py] Searching Semantic Scholar: 'McCarthy Critical Theory Habermas Weber rationalization', limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_8865f474752363ae)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "McCarthy Critical Theory Habermas Weber rationalization",
+  "results": [
+    {
+      "paperId": "280fedb93449ab0cc6ec29cd7bfbdac15be98721",
+      "title": "Habermas and Modernity",
+      "authors": [
+        {
+          "name": "Thomas L. Dumm",
+          "authorId": "91296021"
+        },
+        {
+          "name": "R. Bernstein",
+          "authorId": "39089318"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 260,
+      "doi": "10.2307/3791048",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/280fedb93449ab0cc6ec29cd7bfbdac15be98721",
+      "venue": "",
+      "journal": {
+        "name": "Political Psychology",
+        "pages": "457",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c47833d8d860a4da0516407ae715596953217d69",
+      "title": "The Critical Theory of Jurgen Habermas",
+      "authors": [
+        {
+          "name": "T. Mccarthy",
+          "authorId": "153391868"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 566,
+      "doi": "10.2307/2215446",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c47833d8d860a4da0516407ae715596953217d69",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "aedff7a6cb06743a7714207fa3fb5bc1e1602c26",
+      "title": "THE INTELLECTUAL LEGACY OF CRITICAL THEORY: ORIGINS, TRANSFORMATIONS, AND INTERGENERATIONAL DIALOGUES",
+      "authors": [
+        {
+          "name": "M. H. Ar\u0131t\u00fcrk",
+          "authorId": "2383672785"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This article examines the intellectual legacy of the Frankfurt School and Critical Theory, focusing on its origins, transformations, and intergenerational dialogues. The School's primary objective is to philosophically analyze and critique the social pathologies and contradictions engendered by modern capitalist societies. Influenced by philosophers like Kant, Hegel, and Marx, as well as psychoanalysis and Weberian rationalization debates, the School addressed historical context, capitalism's cultural forms, and new types of social subjectivity. The article traces the evolution from the first generation's critique of modernity and domination (Horkheimer, Adorno), through the innovations of the second generation with Habermas's theory of communicative action, to the contributions of the third generation, particularly Axel Honneth's theory of recognition. It highlights Honneth's effort to center the struggle for recognition within Critical Theory\u2014addressing the perceived shortcomings of previous generations (especially the pessimism of the first generation and the moral experiences overlooked by Habermas's theory)\u2014and provide a new normative foundation. The theory of recognition reveals the moral dimensions underlying social conflicts and emancipatory struggles, emphasizing the importance of intersubjective relations.",
+      "citationCount": 0,
+      "doi": "10.69878/deuefad.1687669",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aedff7a6cb06743a7714207fa3fb5bc1e1602c26",
+      "venue": "Dokuz Eyl\u00fcl \u00dcniversitesi Edebiyat Fak\u00fcltesi Dergisi",
+      "journal": {
+        "name": "Dokuz Eyl\u00fcl \u00dcniversitesi Edebiyat Fak\u00fcltesi Dergisi"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "53e820de5ea72c488e04a58b08d42fef5ecb8dca",
+      "title": "Rationality and Relativism in Habermas' Critical Theory",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.2307/2214892",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/53e820de5ea72c488e04a58b08d42fef5ecb8dca",
+      "venue": "",
+      "journal": {
+        "name": "No\u00fbs",
+        "pages": "75",
+        "volume": "14"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "95e558613d1de9a934b8bdd42957a785b11890f6",
+      "title": "Critical Rationalism and Critical Theory: Popper, Adorno, Habermas, and Albert",
+      "authors": [
+        {
+          "name": "George E. McCarthy",
+          "authorId": "103514547"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.4324/9781351326087-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/95e558613d1de9a934b8bdd42957a785b11890f6",
+      "venue": "Objectivity and the Silence of Reason",
+      "journal": {
+        "name": "Objectivity and the Silence of Reason"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e816b02c0f9abf725a2e9159fa5708d72ff52851",
+      "title": "Between Christian Democracy and Critical Theory: Habermas, B\u00f6ckenf\u00f6rde, and the Dialectics of Secularization in Postwar Germany",
+      "authors": [
+        {
+          "name": "P. E. Gordon",
+          "authorId": "39643252"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 18,
+      "doi": "10.1353/sor.2013.0026",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e816b02c0f9abf725a2e9159fa5708d72ff52851",
+      "venue": "",
+      "journal": {
+        "name": "Social Research: An International Quarterly",
+        "pages": "173 - 202",
+        "volume": "80"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3264c80dc547a154f199c69c6969fcda0f44c07a",
+      "title": "Habermas and Hegel: Possible Contributions to a Unified Social Theory@@@The Critical Theory of Jurgen Habermas.@@@Hegel Contra Sociology.",
+      "authors": [
+        {
+          "name": "J. L. Crane",
+          "authorId": "46771108"
+        },
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        },
+        {
+          "name": "G. Rose",
+          "authorId": "144998363"
+        }
+      ],
+      "year": 1982,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.2307/2068487",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3264c80dc547a154f199c69c6969fcda0f44c07a",
+      "venue": "",
+      "journal": {
+        "name": "Contemporary Sociology",
+        "pages": "636",
+        "volume": "11"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "db021d2b44a70b78de94b49555b5f9436e3cf252",
+      "title": "Max Weber's theory of rationalization",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/db021d2b44a70b78de94b49555b5f9436e3cf252",
+      "venue": "",
+      "journal": {
+        "name": "The Russian Sociological Review",
+        "pages": "37-60",
+        "volume": "9"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "360d47f169f63a7350965c3d8b3f5b7222b5460a",
+      "title": "Reason and the rationalization of society",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1984,
+      "abstract": null,
+      "citationCount": 1140,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/360d47f169f63a7350965c3d8b3f5b7222b5460a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "95f50af316729c08971f0cd1ab3e154a519e9634",
+      "title": "Ideals and Illusions: On Reconstruction and Deconstruction in Contemporary Critical Theory",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 163,
+      "doi": "10.5860/choice.29-2049",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/95f50af316729c08971f0cd1ab3e154a519e9634",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "de0b4ff13601dbb4d8b27e55edc30db0216f045c",
+      "title": "The Critical Theory of J\u00fcrgen Habermas . By McCarthy Thomas. (Cambridge, Mass.: MIT Press, 1978. Pp. xiii + 466. $19.95.)",
+      "authors": [
+        {
+          "name": "James Miller",
+          "authorId": "2118099783"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.2307/1955424",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/de0b4ff13601dbb4d8b27e55edc30db0216f045c",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "861 - 862",
+        "volume": "73"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "434c593fe2d324bb070a6fbded69c39a041f3fbb",
+      "title": "ETHICAL RATIONALIZATION AND \"JURIDIFICATION\" - HABERMAS\u2019S CRITICAL LEGAL THEORY",
+      "authors": [],
+      "year": null,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/434c593fe2d324bb070a6fbded69c39a041f3fbb",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0fd3d9b4b0b1bc0e5c5e488cd8faf459b0122496",
+      "title": "\u201cSimulacra of translation\u201d: reflections on the publication of Jurgen Habermas\u2019 Theory of Communicative Activity",
+      "authors": [
+        {
+          "name": "V. Davydenko",
+          "authorId": "2141179843"
+        },
+        {
+          "name": "E. Andrianova",
+          "authorId": "145320817"
+        }
+      ],
+      "year": 2023,
+      "abstract": "More than forty years ago, J. Habermas published his two-volume Theory of Communicative Action in German, encapsulating over twenty years of reflection and research. The core concept of his intellectual pursuits was that the indestructible element of semantic rationality is rooted in the social form of communicative action, which served as the foundation for a comprehensive social theory, safeguarded through modern philosophy of language and science. In this book, as in his other works, J. Habermas intertwines an in-depth examination of theoretical traditions with his systematic argumentation, encompassing a wide range of scientific approaches. Reinterpreted theories from G. Mead, M. Weber, E. Durkheim, T. Parsons, and various versions of Marxism provided a system of conceptual coordinates within which J. Habermas recognized new ideas in social theory and tested those using factual arguments. After the book\u2019s publication, it garnered significant attention from the scientific community, which was remarkable considering the challenges it posed to readers. The initial published responses reflected its thematic complexity and ideological richness; the most common criticism, often expressed with the irony of a \u201chopelessly idealistic enterprise\u201d, was later refuted after deeper discussions. This criticism has persisted and is now supplemented with new arguments, which are countered by other counterarguments. Theory of Communicative Action has been translated into English, and it is hardly an exaggeration to say that it has become the focal point of international discussions about social science theory. Few authors possess the argumentative skill, intellectual history knowledge, thematic breadth, and desire to diagnose the modern world required to address a variety of areas and answer pertinent questions. Those who do not participate in today\u2019s debates or have nothing to say about this influential social theorist effectively exclude themselves from being considered serious connoisseurs. The Russian edition of J. Habermas\u2019s Theory of Communicative Action, translated by A. K. Sudakov and published by \u201cVes mir\u201d in 2022, was highly anticipated. However, disappointment soon followed when readers discovered the released version. Although the book\u2019s table of contents appears to align with the English translation by T. McCarthy (praised by both the global sociological community and J. Habermas himself), a closer examination of the Russian text reveals that it primarily consists of \u201csimulacra\u201d (semblances) of the original translation. According to J. Baudrillard\u2019s precise definition of \u201csimulacrum,\u201d this means it is merely an \u201cimitation of the non-existent\u201d and gives the impression of something that isn\u2019t truly there. The primary issue is that translator A. K. Sudakov disrupted the key semantic context by replacing the fundamental term \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 (\u201chandeln,\u201d or \u201caction\u201d in the English translation) with the unrelated term \u0434\u0435\u044f\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c (\u201ct\u00e4tigkeiten,\u201d \u201cactivity\u201d). From a modern sociological theory perspective, using the term \u043a\u043e\u043c\u043c\u0443\u043d\u0438\u043a\u0430\u0442\u0438\u0432\u043d\u0430\u044f \u0434\u0435\u044f\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c (communicative activity) instead of \u043a\u043e\u043c\u043c\u0443\u043d\u0438\u043a\u0430\u0442\u0438\u0432\u043d\u043e\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 (communicative action) is a significant violation of the logical progression and development of initial premises. Habermas formulated his concept of \u201ccommunicative action\u201d based on T. Parsons\u2019 approach to defining \u201caction\u201d as a singular social act, while the category of \u201cactivity\u201d is rooted in an extremely broad definition of \u201chuman activity\u201d. This article examines numerous glaring errors and distortions in the translations that not only affect the semantic structures of \u201ccommunicative action\u201d but also the entirety of modern sociology. As a result, the review is titled \u201cSimulacra of Translation\u201d to highlight these issues through various examples of factual \u201creinterpretations\u201d of the book\u2019s key meanings and concepts.",
+      "citationCount": 0,
+      "doi": "10.21684/2411-7897-2023-9-2-58-82",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0fd3d9b4b0b1bc0e5c5e488cd8faf459b0122496",
+      "venue": "Tyumen State University Herald Social Economic and Law Research",
+      "journal": {
+        "name": "Tyumen State University Herald. Social, Economic, and Law Research"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d891fd501d6ef307f765ea14f32241848864cf7a",
+      "title": "The Critique of Domination: The Origins and Development of Critical Theory",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1974,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.3817/0674020161",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d891fd501d6ef307f765ea14f32241848864cf7a",
+      "venue": "T\u00e9los",
+      "journal": {
+        "name": "Telos",
+        "pages": "161 - 167",
+        "volume": "1974"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "814d1e1a2adcd45e91d73a41153534b47772543d",
+      "title": "CRITICAL THEORY AND PUBLIC LIFE : REPLY TO BRANTE AND CHUNG",
+      "authors": [
+        {
+          "name": "J. Boydston",
+          "authorId": "102825876"
+        },
+        {
+          "name": "Carbondale",
+          "authorId": "2080699851"
+        },
+        {
+          "name": "K. Baynes",
+          "authorId": "5929946"
+        },
+        {
+          "name": "J. Bohman",
+          "authorId": "46331722"
+        },
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        },
+        {
+          "name": "Cam",
+          "authorId": "2080687106"
+        },
+        {
+          "name": "Geoff Ben-Nington",
+          "authorId": "2068432104"
+        },
+        {
+          "name": "Brian Massumi Minneapolis",
+          "authorId": "2080384717"
+        },
+        {
+          "name": "Willem van Reijen",
+          "authorId": "1768265275"
+        },
+        {
+          "name": "Dick Veerman",
+          "authorId": "118450661"
+        },
+        {
+          "name": "An Interview",
+          "authorId": "73031479"
+        },
+        {
+          "name": "jean-Fran\u00e7ois",
+          "authorId": "2075144986"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/814d1e1a2adcd45e91d73a41153534b47772543d",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "55b75913e758f77648bbc7dedab6e79f8f947aab",
+      "title": "Beyond instrumental rationality. For a critical theory of freedom",
+      "authors": [
+        {
+          "name": "J. Funk",
+          "authorId": "32271106"
+        }
+      ],
+      "year": 2020,
+      "abstract": "\n \n \n \nThis article will provide an illustration of Max Weber\u2019s theory of rationalization with a specific impetus on its interdependency with the development of capitalism. Following Horkheimer, I shall critically draw on Weber to outline a theory of human freedom, showing that rationalization not only implies economic and social liberation but entails a totalizing tendency that invades all spheres of socio-political life including people\u2019s mental infrastructure. This mental colonization can be framed as a process of substituting value rationality with instrumental rationality. I will claim that this substitution can be understood as an impediment for human freedom. Following contemporary theories of action (Anscombe, Foot), I will show the centrality of value orientation for understanding human freedom. Therefore, I propose a critical theory of freedom that centers value rational action as realization of freedom and can be understood as emancipative. \n \n \n \n",
+      "citationCount": 2,
+      "doi": "10.17533/UDEA.EF.N63A05",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/55b75913e758f77648bbc7dedab6e79f8f947aab",
+      "venue": "Estudios de Filosof\u00eda",
+      "journal": {
+        "name": "Estudios de Filosof\u00eda"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "20f8c6970df66fc9303bf546efb2b453c507cc11",
+      "title": "The Theory of Communicative Action: Vol. 1, Reason and the Rationalization of Society . By Jurgen Habermas. Translated by Thomas McCarthy. (Boston: Beacon Press, 1984. Pp. xlii + 465. $29.95.)",
+      "authors": [
+        {
+          "name": "Thomas L. Dumm",
+          "authorId": "91296021"
+        }
+      ],
+      "year": 1984,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.2307/1955926",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/20f8c6970df66fc9303bf546efb2b453c507cc11",
+      "venue": "",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "1185-1186",
+        "volume": "78"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "444b79d297fa4d6d9f22fe3c03527e4686dba4ce",
+      "title": "Max Weber and the New Critical Theory of Hartmut Rosa: Updating the Classics",
+      "authors": [
+        {
+          "name": "D. Kataev",
+          "authorId": "2269640284"
+        }
+      ],
+      "year": 2020,
+      "abstract": "The article discusses a key issue for Russian and international Max Weber Studies: the epistemological possibilities and place of Weberian sociology in modern social theory. Discussion articles by well-known Russian scientists \u2014 who sharply criticized the actualizing direction of Weberian studies in general, and the religious, cultural, and sociological orientation in particular \u2014 are contrasted with the re-actualization and rethinking of key Weberian themes in the \u201cNew Critical Theory\u201d of the influential German sociologist Hartmut Rosa. Such a projection will make it possible, on the one hand, to thematize the axiomatic assertion about the heuristic rather than concrete-content relevance of the classics; on the other hand, it will provide an opportunity to read Weber as a macrosociologist. In the original, criticized, and often rejected sociology of Rosa, Weber appears not only as a predecessor whose mention enhances the relevance of the new theoretical framework, but, above all, as an analyst and diagnostician of early modernity. Weber\u2019s main ideas and theoretical constructions are organically built into Rosa\u2019s methodological framework: analysis-diagnosis-praxis. The analysis of rationalization as a universal historical process of modernity in Weber\u2019s sociology is rethought by Rosa as expansion and acceleration; disenchantment becomes a diagnosis of modernity and is recoded into alienation, while the concept of charisma is transformed into the key concept of resonance.",
+      "citationCount": 0,
+      "doi": "10.22394/2074-0492-2020-4-146-166",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/444b79d297fa4d6d9f22fe3c03527e4686dba4ce",
+      "venue": "Sociology of power",
+      "journal": {
+        "name": "Sociology of Power"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1eb68b0e39baec4726ec8f3b26cbe56004da870e",
+      "title": "Study of the Rationalization Theory of Weber and Habermas",
+      "authors": [
+        {
+          "name": "LU Zi-rong",
+          "authorId": "100541899"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1eb68b0e39baec4726ec8f3b26cbe56004da870e",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ab6fac63d1cb528b653aedcdf9faae60198f1e2b",
+      "title": "On the Analysis Pattern of Sociological Rationality:A Perspective about the Rationalization Theory of Weber and Habermas",
+      "authors": [
+        {
+          "name": "LU Zi-rong",
+          "authorId": "100541899"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab6fac63d1cb528b653aedcdf9faae60198f1e2b",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Hunan University of Science & Technology",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

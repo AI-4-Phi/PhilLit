@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Legitimation Crisis",
+    "author": "Habermas",
+    "year": 1975
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (22.9) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

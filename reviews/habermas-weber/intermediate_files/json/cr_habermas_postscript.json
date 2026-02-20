@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1177/004839317300300204"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/004839317300300204",
+      "title": "A Postscript to Knowledge and Human Interests*\u2020",
+      "authors": [
+        {
+          "family": "Habermas",
+          "given": "J\u00fcrgen"
+        },
+        {
+          "family": "Lenhardt",
+          "given": "Christian"
+        }
+      ],
+      "editors": [],
+      "year": 1973,
+      "container_title": "Philosophy of the Social Sciences",
+      "volume": "3",
+      "issue": "2",
+      "page": "157-189",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1177/004839317300300204"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

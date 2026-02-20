@@ -1,0 +1,1202 @@
+[search_openalex.py] Searching OpenAlex: 'Habermas rationalization theory communicative action Weber' (year=2000-2025), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_6fed0e3c3c25fa54)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas rationalization theory communicative action Weber",
+  "results": [
+    {
+      "openalex_id": "W594187733",
+      "doi": "10.5860/choice.48-5008",
+      "title": "Habermas: introduction and analysis",
+      "authors": [],
+      "publication_year": 2011,
+      "publication_date": "2011-05-01",
+      "abstract": "1: A Public Intellectual Committed to Reason Habermas's Life From the Critique of Ideology to the Dialectic of Enlightenment Outline of Chapters2: Habermas's Defense of Psychoanalytic Social Science The Positivism Debate in German Social Science Modern Nihilism: The Crisis of Science and the Theory/ Practice Problem Knowledge and Human Interests A Critique of Knowledge and Human Interests3: The Linguistic Turn TCA and the Dialectic of Enlightenment Situating Habermas's Philosophy of Language Transcendental Philosophy of Language as Rational Reconstruction Universal Pragmatics and Formal Semantics Formal Pragmatics and Speech Act Theory Discourse Communicative and Strategic Speech Acts A Critique of Universal Pragmatics4: Knowledge and Truth Revisited Subject-Object Paradigms of Knowledge Internal Realism Reference and Meaning Knowledge and Evolution Moral Realism Is Formal Pragmatism a Defensible Alternative to Realism and Contextualism?5: Discourse Ethics Practical Reason: Delimiting the Domain of the Moral The Priority of the Right over the Good Modernity and Moral Development Deontological Moral Theory and Universalizability: Kant and Rawls Moral Cognitivism versus Moral Skepticism Moral Argumentation as Discourse Neo-Aristotelian Objections and the Abortion Controversy Justification and Application Discourse Ethics Applied: Genetic Testing and the Future of Human Nature Problems and Paradoxes Habermas's Ideal of Argumentation: A Final Assessment6: Law and Democracy: Part I: The Foundational Rights Modern Law and Morality: A Paradoxical Wedding of Facts and Norms Situating Habermas's Theory of Law and Democracy: Some Contemporary Debates The Sociological Genesis of Modern Law The System of Rights Negative and Positive Rights (Duties) Constitutional Foundations Human Rights: Subsistence as a Test Case for a Juridical Conception of Rights Final Thoughts on the Procedural Ideal of Deliberative Democracy7: Law and Democracy: Part II: Power and the Clash of Paradigms Democracy and the Powers of Government The Separation of Powers The Transmission of Communicative Power: From Public Sphere to Government Administration Discourse and Adjudication The Proceduralist Paradigm of Law and Democracy A Concluding Assessment8: Law and Democracy: Part III: Applying the Proceduralist Paradigm Separation of Church and State: The Public/ Private Distinction Gender Difference and the Law Multiculturalism Immigration9: Law and Democracy: Part IV: Social Complexity and a Critical Assessment Questioning the Proceduralist Paradigm Substantive Economic Justice and Workplace Democracy The Technological Dimension of Democracy Revolution and Democracy10: Crisis and Pathology: The Future of Democracy in a Global Age Capitalism and the Crisis of Democracy Social Pathologies and the Colonization of the Lifeworld Globalization: The New Challenge Cosmopolitan Democracy and Global Politics as a Response to Global Crisis Politics and the Rule of Law in International Relations The Constitutionalization of International Relations The Limits of Democratization: A Critical Assessment11: Postsecular Postscript: Modernity and Its Discontents Marx on the Evolution of Modern Society Weber on Modernization and the Problem of Meaning Secularization and the Rationalization of the Lifeworld Between Past and Future: Art, Religion, and the Dialectic of Enlightenment RevisitedAppendix A: Explaining Action Appendix B: Understanding Action Appendix C: Habermas and Brandom Appendix D: Developmental Psychology Appendix E: Rational Choice Theory Appendix F: Systems TheoryIndex",
+      "cited_by_count": 300,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global History, Politics, and Ideology"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W594187733"
+    },
+    {
+      "openalex_id": "W2151020819",
+      "doi": "10.2307/25148742",
+      "title": "The Nature of Theory in Information Systems1",
+      "authors": [
+        {
+          "name": "Gregor",
+          "openalex_id": "A5097615957",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-09-01",
+      "abstract": "The aim of this research essay is to examine the structural nature of theory in Information Systems. Despite the importance of theory, questions relating to its form and structure are neglected in comparison with questions relating to epistemology. The essay addresses issues of causality, explanation, prediction, and generalization that underlie an understanding of theory. A taxonomy is proposed that classifies information systems theories with respect to the manner in which four central goals are addressed: analysis, explanation, prediction, and prescription. Five interrelated types of theory are distinguished: (1) theory for analyzing, (2) theory for explaining, (3) theory for predicting, (4) theory for explaining and predicting, and (5) theory for design and action. Examples illustrate the nature of each theory type. The applicability of the taxonomy is demonstrated by classifying a sample of journal articles. The paper contributes by showing that multiple views of theory exist and by exposing the assumptions underlying different viewpoints. In addition, it is suggested that the type of theory under development can influence the choice of an epistemological approach. Support is given for the legitimacy and value of each theory type. The building of integrated bodies of theory that encompass all theory types is advocated.",
+      "cited_by_count": 3166,
+      "type": "article",
+      "source": {
+        "name": "MIS Quarterly",
+        "type": "journal",
+        "issn": [
+          "0276-7783",
+          "2162-9730"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openresearch-repository.anu.edu.au/bitstreams/77077d0f-f636-40a8-89fb-d2d2365ad7ad/download"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Business Process Modeling and Analysis",
+        "Big Data and Business Intelligence"
+      ],
+      "referenced_works_count": 106,
+      "url": "https://openalex.org/W2151020819"
+    },
+    {
+      "openalex_id": "W646398635",
+      "doi": "10.4135/9781071978047",
+      "title": "The Social Lens: An Invitation to Social and Sociological Theory",
+      "authors": [
+        {
+          "name": "Kenneth Allan",
+          "openalex_id": "A5011068582"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "Part I: Modernity and the Sociological Response Chapter 1. On Theory A Lesson From History Critical Thinking and Theory Theory in Brief Building Your Theory Toolbox Chapter 2. The Evolution of Society: Herbert Spencer (1820-1903) Theorist's Digest The Life and Times of Herbert Spencer Concepts and Theory: Social Evolution Concepts and Theory: Social Institutions Summary Building Your Theory Toolbox Chapter 3. Contradictions in Capitalism: Karl Marx (1818-1883) Theorist's Digest The Life and Times of Karl Marx Concepts and Theory: Human Nature and History Concepts and Theory: Contradictions in Capitalism Concepts and Theory: The Problem of Consciousness Summary Building Your Theory Toolbox Chapter 4. The Irrationality of Rationality: Max Weber (1864-1920) Theorist's Digest The Life and Times of Max Weber Concepts and Theory: The Rationalization of Society--Religion Concepts and Theory: The Rationalization of Society--Capitalism Concepts and Theory: The Rationalization of Society--Bureaucracy Concepts and Theory: Class, Authority, and Social Change Summary Building Your Theory Toolbox Chapter 5. The Problem With Diversity: Emile Durkheim (1858-1917) Theorist's Digest The Life and Times of Emile Durkheim Concepts and Theory: Religious Roots of Society Concepts and Theory: Social Diversity and Morality Concepts and Theory: Individualism in Modern Society Summary Building Your Theory Toolbox Chapter 6. The Modern Person: George Herbert Mead and Georg Simmel George Herbert Mead (1863-1931) Theorist's Digest Concepts and Theory: Truth, Meaning, and Action Concepts and Theory: Meaning and Interaction Concepts and Theory: Making Yourself Summary Georg Simmel (1858-1918) Theorist's Digest Concepts and Theory: The Individual in Society Concepts and Theory: The Self in the City Summary Building Your Theory Toolbox Chapter 7. The Challenges of Gender and Race: Charlotte Perkins Gilman and W. E. B. Du Bois Charlotte Perkins Gilman (1860-1935) Theorist's Digest Concepts and Theory: The Social Evolution of Gender Summary W. E. B. Du Bois (1868-1963) Theorist's Digest Concepts and Theory: Cultural Oppression Concepts and Theory: The Dark Nations and World Capitalism Summary Building Your Theory Toolbox Part II: Contemporary Sociological Theory Chapter 8. Structural Functionalism: Talcott Parsons, Robert K. Merton, and Jeffrey C. Alexander Social Systems: Talcott Parsons Theorist's Digest Concepts and Theory: Making the Social System Concepts and Theory: System Functions and Control Summary Unanticipated Consequences and Ambivalence: Robert K. Merton Theorist's Digest Concepts and Theory: Critiquing Parsons' Functionalism Concepts and Theory: Dynamic Functionalism Summary Democracy and Civil Society: Jeffrey C. Alexander Theorist's Digest Concepts and Theory: The New Civil Sphere Concepts and Theory: Civil Institutions Concepts and Theory: Civil Society Outcomes Summary Building Your Theory Toolbox Chapter 9. Conflict Theory: Lewis Coser, Ralf Dahrendorf, and Randall Collins The Functional Consequences of Conflict: Lewis Coser Theorist's Digest Concepts and Theory: Variation in Conflict Concepts and Theory: The Integrating Forces of Conflict Summary Power and Dialectical Change: Ralf Dahrendorf Theorist's Digest Concepts and Theory: Power and Group Interests Concepts and Theory: Conditions of Conflict and Social Change Summary Emotion and the World in Conflict: Randall Collins Theorist's Digest Concepts and Theory: Four Main Points in Conflict Sociology Concepts and Theory: Geopolitics Summary Building Your Theory Toolbox Chapter 10: What Happened to Class? Erik Olin Wright, Daniel Bell, and Pierre Bourdieu Making Class Count: Erik Olin Wright Theorist's Digest Concepts and Theory: Analytical Marxism Concepts and Theory: Specifying Class Summary Postindustrial Society: Daniel Bell Theorist's Digest Concepts and Theory: Rethinking Society Concepts and Theory: The Decline of Class Concepts and Theory: Polity and Culture Summary Embodying Class: Pierre Bourdieu Theorist's Digest Concepts and Theory: Structuring Class Concepts and Theory: Replicating Class Summary Building Your Theory Toolbox Chapter 11. Structures of Racial and Gender Inequality: William Julius Wilson and Janet Saltzman Chafetz The Declining Significance of Race: William Julius Wilson Theorist's Digest Concepts and Theory: American Racial History Concepts and Theory: Policy Implications Summary Structures of Gender Inequality: Janet Saltzman Chafetz Theorist's Digest Concepts and Theory: Coercive Structures of Gender Inequality Concepts and Theory: Changing Gender Inequality Summary Building Your Theory Toolbox Chapter 12. Exchange Theory: George Homans, Peter Blau, and Randall Collins Elementary Forms of Social Behavior: George Homans Theorist's Digest Concepts and Theory: Basic Principles of Behavioral Psychology Summary Social Exchanges and Power: Peter Blau Theorist's Digest Concepts and Theory: Social Exchanges Concepts and Theory: Creating Power and Social Structures Summary Ritualized Exchanges: Randall Collins Theorist's Digest Concepts and Theory: Emotion--The Generalized Media of Exchange Concepts and Theory: Interaction Ritual Chains (IRCs) Concepts and Theory: The Ritualized Production of Stratification Summary Building Your Theory Toolbox Chapter 13. Self and Situation: Erving Goffman, R. S. Perinbanayagam, and Harold Garfinkel Managing Your Self-Image: Erving Goffman Theorist's Digest Concepts and Theory: Impression Management Concepts and Theory: Frames and Keys Summary The Language of the Self: R. S. Perinbanayagam Theorist's Digest Concepts and Theory: Dialogic Acts and Agency Concepts and Theory: Language of Identity Summary Organizing Ordinary Life: Harold Garfinkel Theorist's Digest Concepts and Theory: Everyday Social Order as an Accomplishment Concepts and Theory: Doing Society--Reflexively Summary Building Your Theory Toolbox Part III: Contemporary New Visions and Critiques Chapter 14. Problems in Modernity: Jurgen Habermas and Anthony Giddens Democracy in Danger: Jurgen Habermas Theorist's Digest Concepts and Theory: Capitalism and Legitimation Concepts and Theory: The Colonization of Democracy Concepts and Theory: Communicative Action and Civil Society Summary Runaway Modernity: Anthony Giddens Theorist's Digest Concepts and Theory: The Dynamics of Modernity Concepts and Theory: The Experience of Modernity Summary Building Your Theory Toolbox Chapter 15. Globalizing Systems: Immanuel Wallerstein and Manuel Castells Global Capitalism: Immanuel Wallerstein Theorist's Digest Concepts and Theory: The Dialectics of Capitalism Concepts and Theory: The End of the World as We Know It Summary The Network Society: Manuel Castells Theorist's Digest Concepts and Theory: Information Technology Concepts and Theory: Networks, Identities, and Democracy Summary Building Your Theory Toolbox Chapter 16. Upsetting Reality: Michel Foucault and Jean Baudrillard Defining the Possible and Impossible: Michel Foucault Theorist's Digest Concepts and Theory: The Truth About Truth Concepts and Theory: The Practices of Power Concepts and Theory: Disciplining the Body Summary The End of Everything: Jean Baudrillard Theorist's Digest Concepts and Theory: Mediating the World Concepts and Theory: Losing the World Concepts and Theory: The Postmodern Person Summary Building Your Theory Toolbox Chapter 17. Politics of Identity: Dorothy E. Smith, Patricia Hill Collins, and Cornel West Gendered Consciousness: Dorothy E. Smith Theorist's Digest Concepts and Theory: The Problem With Facts Concepts and Theory: The Standpoint of Women Summary Race and Matrices of Domination: Patricia Hill Collins Theorist's Digest Concepts and Theory: The Standpoint of Black Women Concepts and Theory: Intersectionality and Matrices of Domination Summary Race and Democracy: Cornel West Theorist's Digest Concepts and Theory: Black Existence in America Concepts and Theory: The Post-Democratic Age Summary Building Your Theory Toolbox References Index About the Author",
+      "cited_by_count": 69,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Economic, financial, and policy analysis",
+        "Contemporary Sociological Theory and Practice",
+        "Globalization and Cultural Identity"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W646398635"
+    },
+    {
+      "openalex_id": "W4361251882",
+      "doi": "10.1111/1467-8675.12661",
+      "title": "Being a master of metaphors",
+      "authors": [
+        {
+          "name": "Hubertus Buchstein",
+          "openalex_id": "A5087461497",
+          "institutions": [
+            "Universit\u00e4t Greifswald"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-01",
+      "abstract": "In his political interventions, J\u00fcrgen Habermas is a first-class rhetorician. His writing style is eloquent, polemical, rich in aper\u00e7us and metaphors, and often affective, especially angry (see M\u00f6llers, 2021, p. 85). But there are also many metaphors in his contributions to philosophy, social theory, and political theory in which he clearly restrains himself rhetorically. Metaphors appear at crucial points in his theory formation. Formulations like the dialogical give and take of reasons \"in kleiner M\u00fcnze\" (small coins), the discursive \"Verfl\u00fcssigung\" (liquefaction) of traditions, the \"colonization\" of the lifeworld, the \"center and periphery\" of modern democracies, or their institutional \"sluices\"\u2014a metaphor he has adopted from Bernhard Peters\u2014create suggestive images in the minds of his readers. The author, who insists on the strict differentiation between day-to-day language, literary language, and the language of the social sciences (see Habermas, 1990a), and whose philosophical self-understanding insists on the \"unforced force of the better argument\" is a master of evocative metaphors. This attribute alone makes it a pleasure to read his texts. The German edition of his new book does not disappoint those readers in search of metaphors either. In the Marxist tradition (see Marx, 2011), a number of metaphors are borrowed from the sphere of geology: \"segments\" (p. 33)1 of the population, \"erosion\" of democracy (p. 87), normative \"slopes\" (p. 15), the \"crumbling\" of the political system (p. 109), or the \"solidified lava\" of anti-authoritarianism in Silicon Valley (p. 46). Some of the metaphors are nautical like normative \"anchors\" (p. 16), or from the theatre, like the \"grimace\" of libertarian political thought (p. 46). Only a few of them belong to organic life: the \"root ground\" of political culture (p. 32), the \"Gleichurspr\u00fcnglichkeit\" (co-originality) of democracy and the rule of law (p. 90), or the \"nesting\" of normative expectations (p. 14). Most of Habermas' metaphors belong to the vocabulary of the technical world: the \"building\" of modern democracy (p. 9), \"centrifugal\" forms of communication (p. 43), the \"architecture\" of constitutional democracy (p. 32), the \"net of historical memory\" (p. 30), the \"Sollbruchstelle\" (predetermined breaking point) of political rights (p. 92), the \"web of attitudes\" (p. 30), the \"social bond\" (p. 31), civil society as an \"early warning system\" (p. 80)\u2014and again the \"flow chart\" of the political system and its \"filters\" and \"sluices\" (p. 24, 100). One has to wait until the last paragraph of the book to find a military metaphor. Now is the time \"den Spie\u00df umzudrehen\"2 (p. 109) and fight the coalition of conspiracy theorists and right-wing populists. Taking Habermas' preference for technical metaphors into account, it comes as no surprise that he has speaks of \"echo chambers\" (p. 45) and \"fragmentation\" (p. 45) in his critical analysis of the digital public sphere. The spatial metaphor of \u00f6ffentlicher Raum (Raum can literally be translated as unlimited space and as clearly limited room) is combined with the technical vocabulary of systems-theory when he mentions the \"input,\" \"throughput,\" and \"output\" components of the institutional infrastructure of the public sphere (pp. 38\u201339). In one passage of the book, Habermas even addresses the problems of metaphorical writing and states that his metaphor Raum \"must not be overstated\" (p. 60). He may have written this sentence from an unfortunate experience. More than once he has become the victim of his metaphor-rich writing style as critics have claimed that formulations like the \"colonization of the lifeworld\" are too vague to have real analytical power in the field of social research. Another example is the term \"ideal speech situation.\" Habermas originally developed the ideal speech situation 1970 in On the Pragmatics of Social Interaction as an epistemological tool used to test the validity of what is essentially true or actually the case (see Habermas, 2001). In this new book, Habermas once again pushes back vehemently against the \"stubborn misunderstanding\" (p. 69) about this term. First, he points out that he has not used \"this misleading expression\" since his 1972 essay on theories of truth. Second, the catchy formulation was never meant to be a blueprint for political institutions, but as a metaphor for the bundle of pragmatic assumptions that we actually always have to start from when we enter into a discourse about validity claims. Nevertheless, some early advocates of the digital revolution in the first half of the 1990s like Howard Rheingold, Nicolas Negroponte, or WIRED magazine authors like John Katz used Habermas' notions of the ideal speech situation and the unrestricted flow of communication in the public sphere as justification for their dreams of a new virtual democracy.3 According to them, the World Wide Web was the technical incarnation of the ideal speech situation. In their view, the Internet matches all basic requirements of a public sphere that comes as close as possible to the normative core of deliberative democracy: The World Wide Web as the communicative infrastructure for open, unlimited, universal, anti-hierarchical, and complex political interaction. To the radical techno-optimists of those days, the Internet created a new political model, since it offered universal access, freedom of expression, unrestricted agendas, uncoerced communication, and political participation outside of traditional political institutions. Habermas reminds the readers of his new book of the big \"emancipatory promise\" of the \"egalitarian and unregulated\" (p. 45) communicative relationships that were propagated at the beginning of the digital age. And indeed, the positive qualities attributed to political communication in the Internet by Rheingold and other optimists of electronic democracy in the 1990s strikingly resemble Habermas' vocabulary (see Buchstein, 1997, pp. 250\u2013251). In his book The Theory of Communicative Action, Habermas defined the public sphere as \"a virtually present network of communication\" (Habermas, 1987, p. 390) that is freed from any spatiotemporally restricted context. Ten years later, in his outline of the deliberative democratic ideal, he advocated a \"decentred society\" in which \"subjectless forms of communication [\u2026] regulate the flow of deliberations\" (Habermas, 1994, p. 7). According to him, \"technologies of communication [\u2026] make possible a highly differentiated network of public spheres\" (Habermas, 1990b, p. 360), The public sphere should consist of an \"open and inclusive network of overlapping, subcultural politics having fluid temporal, social, and substantial boundaries\" (Habermas, 1998, p. 306). In such a \"discursive structuring of public networks and arenas,\" popular sovereignty \"becomes anonymous\" (Habermas, 1998, p. 171). In his new book, Habermas describes digital technology as a third evolutionary stage in the development of means for communication, following the writing of the spoken word a couple of thousand years ago and the introduction of the mechanical printing press at the beginning of early modernity. Despite the \"revolutionary\" (p. 41) change caused by digital technologies, he insists (again) on the social and political neutrality of new technologies. This position\u2014already taken in the late 1960s by Herbert Marcuse\u2014distinguishes Habermas' argument from two rival positions within the Frankfurt School of Critical Theory. On the one hand, it departs from the optimistic positions taken by Walter Benjamin in his famous 1936 essay about the work of art in the age of mechanical reproduction or Hans-Magnus Enzensberger's Baukasten zu einer Theorie der Medien (1970). On the other hand, it also distances itself from Theodor W. Adorno's critique of alienated consumer culture and the thesis that the essence of the public sphere has been liquidated in the system of mass media in post-liberal societies. Habermas stated in 1992 that the strong influence of Adorno's theory of mass culture was not difficult to discern in the first edition of Structural Transformation of the Public Sphere 30 years ago (see Habermas, 1992, p. 438). There is an element of coquetry in this retrospective statement because already in the early 1960s he had made the point that the consumerist public sphere in a capitalist society should and could be transformed into a more democratic postbourgeois public sphere. The solution he offered in a less known Encyclopedia article from 1964 was a call for political intervention in order to create \"a rational reorganization of social and political power\" (Habermas, 1974, p. 55). The public sphere should be brought \"under the mutual control of rival organizations committed to the public sphere in their internal structure as well as in their relations with the state and each other\" (Habermas, 1974, p. 55). This sounds like an early neo-corporatist expansion of the way public TV was organized in West Germany in those days. Based on his neutralist position, Habermas already in the very beginning of his work about the public sphere more than 60 years ago subscribed to a strategy of state intervention in order to re-regulate the media system. His considerations in The Theory of Communicative Action of 1981 followed the same pattern. Relying on empirical research, he argued\u2014explicitly against Adorno\u2014that even in shifting from writing to images and sounds, electronic media\u2014movie, radio, and TV\u2014have not turned mass media into an apparatus that completely dominates and permeates the language of everyday communication. Instead, he emphasized the \"ambivalence\" (Habermas, 1987, p. 390) of modern mass media. But the \"unleashing\" of the \"emancipatory potential,\" which is \"built into communicative structures themselves,\" (Habermas, 1987, p. 390) in the mass media has to be set into action by political measures. Habermas even mentioned Hans Magnus Enzensberger's vision of \"video pluralism\" and \"television democracy\" as attempts to overcome the centralizing media networks in this context. Since then, Habermas has stated repeatedly that modern mass media could both strengthen or undermine the rationality of political communication, depending on the way the infrastructure of the public sphere is regulated (see Habermas, 1992, p. 437). Thirty years after Habermas first published his seminal book about the public sphere stated that there was \"cause for a less pessimistic assessment\" (Habermas, 1992, p. 457) of it and of the future of democracy itself. Another 30 years later, Habermas seems to have returned to pessimism. In his new book, Habermas repeats older statements about the importance of an accommodating, enlightened liberal political culture as the necessary condition for the existence and further development of a democratic political order. His optimism about the further development of western democracies when he published the book Between Facts and Norms in 1992 was still based on his hypothesis about the long-term trend toward a rationalization of the lifeworld. Thanks to the support of post-conventional socialization patterns, families and groups of citizens enter a higher stage of cognitive and moral rationality within their everyday face-to-face communication that also radiates into political communication. As is well known, he adopted the concept of civil society from Andrew Arato and Jean Cohen and turned it into the institutional source for progressive changes of reasons, values, and topics that get transmitted via mass media to the center of the political system. He described civil society as a context of discovery of morally relevant questions arising from the lifeworld. He thus assumed that the lifeworld had a rational advantage in the perception of social problems that were to be transported via social movements and the voluntary associations of civil society into the public sphere. Habermas' overly positive evaluation of social movements and civil society in Between Facts and Norms ignored the fact that a number of voluntary associations already at that time pursued conservative, reactionary, populist, and militant right-wing political goals (see Buchstein, 1994, pp. 107\u2013108). He restricted his considerations about civil society to the question of whether, and to what extent, a public sphere dominated by mass media could provide a realistic chance for the members of civil society to bring about political changes. In Between Facts and Norms, he was relatively optimistic about the possibility of further democratization. In his new book, Habermas is less optimistic. He puts more emphasis on the \"vulnerability\" (p. 30) of the results of socialization patterns and the precarious status of liberal democracies. He states \"political regression\" (p. 41) of liberal democracies around the world seems to have less confidence in the rationalization of the lifeworld. There is a reason for this growing pessimism that has nothing to do with the current Zeitgeist, but follows from a subtle change in Habermas' theory. At first glance, it seems that he is only updating his considerations about the organizational structure of the new media in order to make his argument about the new structural transformation. Both the neutralist position and the state-intervention strategy for a politics of reform and regulation can be found in his book again. Once again, he frames his reflections about the public sphere within his theory of deliberative democracy. He argues that the democratic legitimacy of modern democracies is based on the inclusiveness of the political public sphere. Mass media have an indispensable function, as they ensure the participation of citizens in a common, albeit anonymous, mass communication. Political opinions can only condense into effective public opinions and thus have a targeted influence on political decisions via the publicity of the mass media. Thus, it is imperative that the mass media have an \"enlightening quality\" (p. 23). The centrifugal dissolution of the limits of the simultaneously accelerated political communication to any number of participants at any distance has an \"ambivalent explosive force\" (p. 43). Referring to results of empirical research, Habermas notes that the deliberative quality of political communication in the internet is still an \"open question\" (p. 40). According to Habermas, the \"platform\" (p. 44) character is what is \"actually new about the new media\" (p. 44). In other words, they enable all potential users to participate in the public sphere as independent authors with equal rights. Political communication no longer depends on traditional journalists or any other expert or institution for professional selection and discursive examination. But the services produced by new, privately owned social media platforms are \"in no way neutral services\" (p. 53). They are driven by the capitalist logic of profit-making that also puts pressure on the \"old media\" to adjust to the new format. According to Habermas, the emancipatory potential of the digital public sphere today is \"\u00fcbert\u00f6nt\" (p. 45, in the sense of dominated) by \"fragmented publics\" (p. 45), \"bubbles\" (p. 62), and \"echo chambers\" (p. 45). Both the basic standards for a rational debate and the inclusiveness of the public sphere are threatened to be lost. The stakes are high: the political integration of modern democracies is at risk. It looks like a reminder of the final paragraphs of his first book on the public sphere and to his Encyclopedia article from the 1960s, when Habermas presents a strategy that includes three proposals to overcome this (newly) alarming decline of the public sphere. The first strategy counts on civic education: Citizens have to learn how to deal with this new technology in a reasonable way; and this may take some time (cf., pp. 46\u201347). The second strategy consists of strong state regulation of the mass media, for example, to force private owners of platforms in an effective way to correct false information or to prevent hate speech. Finally, the third reform strategy is to provide alternatives to the media power of privately owned companies. He proposes an expansion of financial support for state-funded and democratically controlled TV and radio stations (cf., p. 51 and 67), and even for (printed and digital) newspapers that fulfill certain quality standards (cf., p. 67).4 This reform agenda is conservative in that it attempts to carry the media organization of the 1970s into our digital age. In his 1962 book, he glorified the bourgeois public sphere. In his new book, he is again glorifying a media system of the past. I have listed his threefold political reform agenda because it provokes a non-trivial question: How is it possible to regulate the structures of political communication in a way that strengthens enlightened discussions via legislative measures, when such regulations (at least in democracies) have to be the result of (less enlightened) political communication? In the context of this question, it is striking that face-to-face communication gains more relevance in Habermas' theory than before. It is a subtle change. But it has the potential to produce more than just subtle changes to Habermas' final evaluation of the prospects for political reform of the public sphere. In his characterization of elected parliaments Habermas notes that their members \"deliberate and decide together [emphasis in original] according to democratic procedures\" (p. 24). I will not discuss the problematic theory of parliamentarism in the context of this article, but I do want to point to his formulation \"deliberate together [emphasis in original].\" In my understanding, this formulation indicates a normative preference for political communication in social face-to-face constellations, which is typical for interaction in the lifeworld. In a different section of the book, Habermas explicitly praises the deliberative quality of parliamentary decision-making because decisions are made \"face-to-face after democratic deliberations [emphasis in original]\" (p. 102). He also attests to the courts \"comparatively high level of rationality\" (p. 78), which seems not only to be the result of its legal institutionalization but also due to the fact that court hearings and deliberations are held face-to-face. Finally, in his characterization of social movements and a vibrant civil society he emphasizes their \"face-to-face encounters\" (p. 39) in everyday life and public events. In one of the most intriguing sections of the book, Habermas speculates about a changing perception by the users of social media in which the separation between public and private communication is abolished. According to him, a significant part of digital communication today should be understood neither as public nor as private. Rather it is a sphere of communication, which has been reserved until then for private correspondences by letter, that has been bloated to a public existence. It produces a \"peculiar anonymous intimacy\" (p. 62) which Habermas coins a \"Halb\u00f6ffentlichkeit\" (p. 65\u2014semi-public sphere) of echo chambers and filter bubbles.5 However, this speculation puts Habermas in a dilemma. The lifeworld in Habermas' theory is conceptualized as a linguistically organized and culturally transmitted stock of interpretative patterns which form the symbolic core of a society. He introduces the lifeworld as a necessary correlation to the notion of communicative action (see Baynes, 2016, pp. 64\u201370). The dilemma is the following one: On the one hand, Habermas continues to base the considerations in the book on the assumption of the rational potential of the lifeworld, in particular of face-to-face communication even in different social settings. On the other hand, his speculation provides the plausible assumption that under the conditions of the current digital communication infrastructure, there will be a massive unlearning of cognitive and moral In his 1962 book, Habermas that with the of mass media, the of the capitalist and the of the (Habermas, p. This was with a neutralist position about new In his current critique of social media, he can no longer his neutralist position because he his about the sphere with the speculation that communication in such forms has the of limited and (p. moral and cognitive for its This the for Habermas' reform The longer we wait for radical political of the digital infrastructure, the less it is to the support of democratic to the problems of having to them on a we this of we with a more pessimistic than Habermas But Adorno's on mass culture from the again, we should give empirical a second because there are reasons for it be the case that Habermas is in his analysis in the metaphorical language of \"echo chambers\" and Habermas' metaphorical of the term is also He not this term for modern democratic theory. In of the of legitimacy in his of book on and legitimacy (see p. And in the early years of the of of democracy was used as a concept by constitutional to state of political (see pp. Habermas' of the term back to the late (see pp. In his it was a of term of had used the to the decline of liberal rule of law in capitalist society (see In his of the public Habermas also with a of but he structure for Both and the to historical changes in the development of capitalist as a of clearly In the way Habermas the term it is more than a or metaphor. But even a metaphor the cognitive of an in the of Habermas' of the term two First, the of or which back to the word structures are the basic that support a or the of an The second of the the concept of more than it means Thus, a structural is not just any but a change in the of the it a It is in this strong sense that Habermas understood his thesis of the structural of the public sphere in his 1962 And he the same term 60 years to a new stage in the development of the public sphere. Hans has that there is no such as a completely language (see about changing our metaphorical vocabulary when we deal with changes in the public metaphor of This metaphor a different It the of the of different the are the of our simultaneously in different movements are and their movements that structures in one but in different Some of the public sphere no longer to change with the and However, such massive changes may a or may a longer question like can only be by empirical research. Habermas himself was never to the importance of empirical for his political theory (see Buchstein, pp. to less of of this article have for better are in with current empirical about everyday digital media in modern democracies. The of do not support Habermas' pessimistic about a new quality in the of political communication. chambers\" and \"bubbles\" are than in political In as has the of the social in (see In 1992, Habermas a about his seminal 1962 of a development from a public to one into too p. 438). for the future of democracy that the in his book is once again too and Buchstein, of",
+      "cited_by_count": 29,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12661"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Populism, Right-Wing Movements",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W4361251882"
+    },
+    {
+      "openalex_id": "W2058159156",
+      "doi": "10.1046/j.0020-8833.2003.00277.x",
+      "title": "Words, Images, Enemies: Securitization and International Politics",
+      "authors": [
+        {
+          "name": "Michael C. Williams",
+          "openalex_id": "A5084500200",
+          "orcid": "https://orcid.org/0000-0001-8814-8664",
+          "institutions": [
+            "Aberystwyth University"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-11-07",
+      "abstract": "The theory of \u201csecuritization\u201d developed by the Copenhagen School provides one of the most innovative, productive, and yet controversial avenues of research in contemporary security studies. This article provides an assessment of the foundations of this approach and its limitations, as well as its significance for broader areas of International Relations theory. Locating securitization theory within the context of both classical Realism influenced by Carl Schmitt, and current work on constructivist ethics, it argues that while the Copenhagen School is largely immune from the most common criticisms leveled against it, the increasing impact of televisual communication in security relations provides a fundamental challenge for understanding the processes and institutions involved in securitization, and for the political ethics advocated by the Copenhagen School.",
+      "cited_by_count": 1102,
+      "type": "article",
+      "source": {
+        "name": "International Studies Quarterly",
+        "type": "journal",
+        "issn": [
+          "0020-8833",
+          "1468-2478"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/isq/article-pdf/47/4/511/5109128/47-4-511.pdf"
+      },
+      "topics": [
+        "Global Security and Public Health",
+        "Global Peace and Security Dynamics",
+        "International Law and Human Rights"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W2058159156"
+    },
+    {
+      "openalex_id": "W2169571673",
+      "doi": "10.17705/1jais.00129",
+      "title": "The Anatomy of a Design Theory",
+      "authors": [
+        {
+          "name": "David Jones",
+          "openalex_id": "A5057961129",
+          "orcid": "https://orcid.org/0000-0001-5743-8562",
+          "institutions": [
+            "Central Queensland University",
+            "Australian National University"
+          ]
+        },
+        {
+          "name": "Shirley Gregor",
+          "openalex_id": "A5065050260",
+          "orcid": "https://orcid.org/0000-0002-0686-8674",
+          "institutions": [
+            "Australian National University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-05-01",
+      "abstract": "Design work and design knowledge in Information Systems (IS) is important for both research and practice. Yet there has been comparatively little critical attention paid to the problem of specifying design theory so that it can be communicated, justified, and developed cumulatively. In this essay we focus on the structural components or anatomy of design theories in IS as a special class of theory. In doing so, we aim to extend the work of Walls, Widemeyer and El Sawy (1992) on the specification of information systems design theories (ISDT), drawing on other streams of thought on design research and theory to provide a basis for a more systematic and useable formulation of these theories. We identify eight separate components of design theories: (1) purpose and scope, (2) constructs, (3) principles of form and function, (4) artifact mutability, (5) testable propositions, (6) justificatory knowledge (kernel theories), (7) principles of implementation, and (8) an expository instantiation. This specification includes components missing in the Walls et al. adaptation of Dubin (1978) and Simon (1969) and also addresses explicitly problems associated with the role of instantiations and the specification of design theories for methodologies and interventions as well as for products and applications. The essay is significant as the unambiguous establishment of design knowledge as theory gives a sounder base for arguments for the rigor and legitimacy of IS as an applied discipline and for its continuing progress. A craft can proceed with the copying of one example of a design artifact by one artisan after another. A discipline cannot.",
+      "cited_by_count": 1323,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Association for Information Systems",
+        "type": "journal",
+        "issn": [
+          "1536-9323"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://aisel.aisnet.org/cgi/viewcontent.cgi?article=1413&context=jais"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Usability and User Interface Design",
+        "Business Process Modeling and Analysis"
+      ],
+      "referenced_works_count": 102,
+      "url": "https://openalex.org/W2169571673"
+    },
+    {
+      "openalex_id": "W1994808746",
+      "doi": "10.1080/03071021003795055",
+      "title": "Public sphere in Latin America: a map of the historiography",
+      "authors": [
+        {
+          "name": "Pablo Piccato",
+          "openalex_id": "A5074037897",
+          "institutions": [
+            "University of Missouri",
+            "Columbia International University",
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-01",
+      "abstract": "Abstract \"Public sphre\" is often used by historians of modern Latin America without much concern about its theoretical and methodological implications. Some historians have used it as a model to fit evidence about public debates and politics during the modern period, yet few have engaged it as a theory with deeper methodological and conceptual implications. This article will review the historical literature that has applied Habermas's ideas to Latin American history. Focusing on a few particularly important books, the article will examine potential avenues for research and comparisons. Rather than becoming a new orthodoxy for the study of the region, the theory of the public sphere is establishing a dialogue among historians interested in intellectual phenomena and political discourse (most of them centered on the history of liberalism after independence) and those historians whose interest in social formations have framed their study in terms of hegemony and class domination. The article will argue that a critical use of Habermas's ideas (one that is more systematic about the gender and class exclusions built into the bourgeois public sphere, and that problematizes the connections between the specific development of capitalism in peripheral regions and their embrace of European political traditions) could yield useful results in terms of new research and an inclusive synthesis of recent literature interested in politics, culture and hegemony in Latin America. Notes 1J\u00fcrgen Habermas, The Structural Transformation of the Public Sphere: An Inquiry into a Category of Bourgeois Society (Cambridge, MA, 1991). I am indebted to Tom Klubock, Thom Rath, Federico Sor and Mary Kay Vaughan for their comments on earlier drafts. This article was also discussed at the Columbia University's Department of History graduate faculty workshop and at the New School's workshop of Latin American Studies. I thank Karl Wennerlind, Herbert Sloan, Claudio Lomnitz and Paul Gootenberg for their comments. 2The danger, of course, is that of creating 'un Mapa del Imperio, que ten\u00eda el tama\u00f1o del imperio y coincid\u00eda puntualmente con \u00e9l'. 'El rigor de la ciencia' in Jorge Luis Borges, Obras completas II 1952\u20131972 (Barcelona, 1996). This map will have Mexico as the centre. It is a result of my background and I hope it can be excused as a geographical convention. 3See J\u00fcrgen Habermas, The Philosophical Discourse of Modernity: Twelve Lectures. Studies in Contemporary German Social Thought (Cambridge, 1987), 37. Juan Carlos Portantiero, 'Foundations of a new politics', Report on the Americas, xxv, 5 (1991), 19; Chantal Mouffe and Ernesto Laclau, Hegemon\u00eda y estrategia socialista: Hacia una radicalizaci\u00f3n de la democracia, trans. Ernesto Laclau (Buenos Aires, 2004). 4For Alan Brinkley, 'Democrats need to turn much of their attention away from culture and back toward class.' See Brinkley, 'What's next? The mourning period is over. Now, four simple guidelines for becoming a majority party', The American Prospect Online Edition, January 2004. See also forum on the election in The Nation, 20 December 2004. Available online at: http://www.thenation.com/issue.mhtml?i=20041220. See J\u00fcrgen Habermas, 'Discourse ethics: notes on a program of philosophical justification' in Moral Consciousness and Communicative Action (Cambridge, 1990). For the normative implications of the public-sphere model, see Nancy Fraser, 'Rethinking the public sphere: a contribution to the critique of actually existing democracy', Social Text, nos 25/26 (1990). See also Thomas A. McCarthy, The Critical Theory of J\u00fcrgen Habermas, first MIT Press paperback edition (Cambridge, 1981), chap. 1; J\u00fcrgen Habermas, Ciencia y t\u00e9cnica como 'ideolog\u00eda' (Mexico City, 1993). Implicit in Habermas's idea of 'communicative rationality' is 'the central experience of the unconstrained, unifying, consensus-bringing force of argumentative speech': J\u00fcrgen Habermas, The Theory of Communicative Action, vol. 1, Reason and the Rationalization of Society, trans. Thomas McCarthy (Boston, 1984), 10. 5Arthur Strum, 'A bibliography on the concept of \u00d6ffentlichkeit', New German Critique, lxi (1994). Habermas refers to 'seminal theories', like those by Freud and Marx, that 'inserted a genuinely philosophical idea like a detonator into a particular context of research' resulting in 'hybrid discourses' that may be criticized from the academic establishment but could generate 'new research traditions'. J\u00fcrgen Habermas, 'Philosophy as stand-in and interpreter' in Moral Consciousness and Communicative Action, op. cit., 15. 6The OED provides two examples of the term, both dated 1992. See entries for 'maternalize' and 'nonsensification', Oxford English Dictionary (available online at: http://www.oed.com/). For the parallel with Weber see Joan B. Landes, Women and the Public Sphere in the Age of the French Revolution (Ithaca, 1988), 10. 7Habermas links the public sphere with his theory of communicative action at a 'fundamental' level: J\u00fcrgen Habermas, 'Further reflections on the public sphere', Habermas and the Public Sphere, ed. Craig Calhoun (Cambridge, 1997), 422, 41. Other scholars, mentioned below, have already suggested the need to confront analyses based on Gramsci and Habermas. 8Habermas's initial definition is tentative and contains the diversity of issues outlined above: 'The bourgeois public sphere may be conceived above all as the sphere of private people come together as a public; they soon claimed the public sphere regulated from above against the public authorities themselves, to engage them in a debate over the general rules governing relations in the basically privatized but publicly relevant sphere of commodity exchange and social labour. The medium of this political confrontation was peculiar and without historical precedent: people's public use of their reason.' See Habermas, Structural Transformation, op. cit., 27. See also J\u00fcrgen Habermas, 'The public sphere: an encyclopaedia article', New German Critique, iii (1974). On the historical character of the definition, see Moishe Postone, 'Political theory and historical analysis' in Calhoun (ed.), Habermas and the Public Sphere, op. cit. 9James Van Horn Melton, The Rise of the Public in Enlightenment Europe (New York, 2001), 10, 12. 10For similar agendas see E. P. Thompson, The Making of the English Working Class (New York, 1966); Richard Sennett, The Fall of Public Man (New York, 1977). 11Geoff Eley, 'Nations, publics, and political cultures: placing Habermas in the nineteenth century' in Nicholas B. Dirks, Geoff Eley and Sherry B. Ortner (eds), Culture/Power/History: A Reader in Contemporary Social Theory (Princeton, 1994); also published in Calhoun (ed.), Habermas and the Public Sphere, op. cit. 12Joan B. Landes, 'The public and the private sphere: a feminist reconsideration' in Landes (ed.), Feminism, the Public and the Private (Oxford, 1998), 2, 142\u20133. See also Craig Calhoun, 'Introduction: Habermas and the public sphere' in Calhoun (ed.), Habermas and the Public Sphere, op. cit., 34\u20135; Seyla Benhabib, 'Models of public space: Hannah Arendt, the liberal tradition, and J\u00fcrgen Habermas' in ibid., 92. 13Harold Mah, 'Phantasies of the public sphere: rethinking the Habermas of historians', Journal of Modern History, lxxii, 1 (2000). I owe this reference to Samuel Moyn. 14Habermas, Structural Transformation, op. cit., 27, 55; Melton, The Rise, op. cit.; Daniel Gordon, 'Philosophy, sociology, and gender in the Enlightenment conception of public opinion', French Historical Studies, xvii, 4 (1992), 889, 901; Keith Michael Baker, 'Defining the public sphere in eighteenth-century France: variations on a theme by Habermas' in Calhoun (ed.), Habermas and the Public Sphere, op. cit., 202. 15Roger Chartier, The Cultural Origins of the French Revolution, trans. Lydia G. Cochrane (Durham, NC, 1991); Arlette Farge, Subversive Words: Public Opinion in Eighteenth-Century France, trans. Rosemary Morris (University Park, PA, 1994). See also Landes, Women and the Public Sphere, op. cit.; Keith Michael Baker, Inventing the French Revolution: Essays on French Political Culture in the Eighteenth Century (Cambridge, 1990); Sarah C. Maza, Private Lives and Public Affairs: The Causes C\u00e9l\u00e8bres of Pre-revolutionary France (Berkeley, 1993). 16For a bibliography of the diversity of work, historical and otherwise, inspired by the model see Strum, op. cit. A similar census would probably be impossible today. See also Peter Uwe Hohendahl, 'The public sphere: models and boundaries' in Calhoun (ed.), Habermas and the Public Sphere, op. cit., 108. For an example of these possibilities see Madeleine Hurd, Public Spheres, Public Mores, and Democracy: Hamburg and Stockholm, 1870\u20131914 (Ann Arbor, 2000). 17See a discussion of the implications of this from the point of view of Mexican history in Pablo Piccato, 'Introducci\u00f3n: \u00bfModelo para armar? Hacia un acercamiento cr\u00edtico a la teor\u00eda de la esfera p\u00fablica' in Cristina Sacrist\u00e1n and Pablo Piccato (eds), Actores, espacios y debates en la historia de la esfera p\u00fablica en la ciudad de M\u00e9xico (Mexico City, 2005). See also Hispanic American Historical Review, lxxix, 2 (1999); Pablo Piccato, 'Conversaci\u00f3n con los difuntos: una perspectiva Mexicana ante el debate sobre la historia cultural', Signos Hist\u00f3ricos, viii (2002). 18Fran\u00e7ois-Xavier Guerra, Modernidad e independencias: Ensayos sobre las revoluciones hisp\u00e1nicas (Madrid , 2000), 117; Francois-Xavier Guerra, M\u00e9xico: del Antiguo R\u00e9gimen a la Revoluci\u00f3n (Mexico City, 1988). 19Carmen McEvoy, La utop\u00eda republicana: Ideales y realidades en la formaci\u00f3n de la cultura pol\u00edtica peruana, 1871\u20131919 (Lima, 1997), 11; Carmen McEvoy, 'Ser\u00edamos excelentes vasallos y nunca ciudadanos: prensa republicana y cambio social en Lima, 1791\u20131822' in Ivan Jaksic (ed.), The Political Power of the Word: Press and Oratory in Nineteenth-Century Latin America (London, 2002), 37. See also Richard A. Warren, Vagrants and Citizens: Politics and the Masses in Mexico City from Colony to Republic (Wilmington, 2001), 170. After independence, 'Lo radicalmente nuevo es la creaci\u00f3n de una escena p\u00fablica': Guerra, Modernidad e independencias, op. cit., 13, 23, 87. This parallels Benedict Anderson's claim that 'the convergence of capitalism and print technology \u2026 created the possibility of a new form of imagined community, which in its basic morphology set the stage for the modern nation', and his focus on American Creole identities as early examples of this process. Benedict Anderson, Imagined Communities: Reflections on the Origin and Spread of Nationalism (New York and London, 1983), 46. Concepts like el pueblo or lo p\u00fablico also had a history that illustrated the incorporation of traditional and modern notions, as explored by Annick Lemp\u00e9ri\u00e8re in 'Reflexiones sobre la terminolog\u00eda pol\u00edtica del liberalismo' in Carlos Illades, Brian Connaughton and Sonia P\u00e9rez Toledo (eds), Construcci\u00f3n de la legitimidad pol\u00edtica en M\u00e9xico (Zamora, 1999). 20Guerra, Modernidad e independencias, op. cit., 30. See Fran\u00e7ois Furet, Penser la R\u00e9volution fran\u00e7aise (Paris, 1978). For Palti, Guerra's use of Habermas lacked a 'strong' critique of the public-sphere model and failed to recognize Raymond Kosseleck's work as a necessary antecedent. Furet and Cochin were decisive in Guerra's work to strengthen that critique, without embracing 'las teor\u00edas multiculturalistas \"posmodernas\"'. El\u00edas Jos\u00e9 Palti, 'Guerra y Habermas: ilusiones y realidad de la esfera p\u00fablica Latinoamericana' in Erika Pani and Alicia Salmer\u00f3n (eds), Conceptualizar lo que se ve: Fran\u00e7ois-Xavier Guerra historiador, homenaje (Mexico City, 2004), 466. 21See Dena Goodman, 'Public sphere and private life: toward a synthesis of current historiographical approaches to the Old Regime', History and Theory, xxxi, 1 (1992), 8, 12. Guerra's explicit rejection of Habermas's Marxism in Guerra, Modernidad e independencias, op. cit., 86n, 87, 14. For studies inspired by Guerra's insights and a closer connection to local contexts, see Francois-Xavier Guerra and Annick Lemp\u00e9ri\u00e8re (eds), Los espacios p\u00fablicos en Iberoam\u00e9rica: Ambig\u00fcedades y problemas: Siglos XVIII\u2013XIX (Mexico, 1999). For the public sphere as part of the politicization of new national societies, see Pilar Gonz\u00e1lez Bernaldo, 'Sociabilidad, espacio urbano y politizaci\u00f3n en la ciudad de Buenos Aires (1820\u20131852)' in Hilda Sabato and Alberto Rodolfo Lettieri (eds), La vida pol\u00edtica en la Argentina del siglo XIX: armas, votos y voces (Buenos Aires, 2003), 199. 22Guerra, Modernidad e independencias, op. cit., 12, 101. Such characterization of the socio-economic impact and causes of the revolutions of independence is challenged in John Tutino, From Insurrection to Revolution in Mexico: Social Bases of Agrarian Violence, 1750\u20131940 (Princeton, 1988); Eric Van Young, The Other Rebellion: Popular Violence, Ideology, and the Mexican Struggle for Independence, 1810\u20131821 (Stanford, 2001). 23Guerra, Modernidad e independencias, op. cit., 17, 91, 234. The Habermasian focus on 'a new, autonomous, free, and sovereign public' implies a marked alternative from Furet's Tocquevillian emphasis on associations and modes of sociability as the base for a modern public opinion. Chartier, Cultural Origins, op. cit., 16\u201317. 24Guerra, Modernidad e independencias, op. cit., 52, 99. Guerra's emphasis on culture fits well with older visions of 'Latin American culture' as something clearly identifiable; for Edmundo O'Gorman, this common identity meant that the influence of the United States is negligible in the emergence of a Latin American political culture. Edmundo O'Gorman, 'Hegel y el moderno panamericanismo', Letras de M\u00e9xico, ii, 8 (1939). See Charles Hale, 'Edmundo O'Gorman y la historia nacional', Signos Hist\u00f3ricos, ii, 3 (2000), 17, 24. Absent is a problematization of neo-colonialism as an informal and subordinate mode of entering modernity. See Tulio Halper\u00edn Donghi, The Contemporary History of Latin America, trans. John Charles Chasteen (Durham, NC, 1993). 25McEvoy, La utop\u00eda republicana, op. cit., 11. 26McEvoy, 'Ser\u00edamos excelentes vasallos', op. cit. For similar insights, to be examined below, see \u00c1ngel Rama, The Lettered City, trans. John Charles Chasteen (Durham, NC, 1996). 27McEvoy, 'Ser\u00edamos excelentes vasallos', op. cit. 28Rafael Rojas, La escritura de la independencia: El surgimiento de la opini\u00f3n p\u00fablica en M\u00e9xico (Mexico City, 2003), 17, 34, 35, 62. 29 ibid., 35. See also Fernando Escalante, Ciudadanos imaginarios: Memorial de los afanes y desventuras de la virtud y apolog\u00eda del vicio triunfante en la Rep\u00fablica Mexicana: Tratado de Moral P\u00fablica (Mexico, 1993). For recent studies of monarchist sentiment in Mexico see Erika Pani, Para mexicanizar el Segundo Imperio: el imaginario pol\u00edtico de los imperialistas (Mexico City, 2001); El\u00edas Jos\u00e9 Palti (ed.), La pol\u00edtica del disenso: La 'pol\u00e9mica en torno al monarquismo' (M\u00e9xico, 1848\u20131850) \u2026 y las apor\u00edas del liberalismo (Mexico City, 1998). If in the end the new nations rejected liberal monarchism, explains Rojas, it was because of the revolutionary logic of insurgency and the consequent loyalist response, but not because of any inherently democratic feature of the new public sphere. Rojas, La escritura, op. cit., 49. 30Jos\u00e9 Antonio Aguilar, 'Dos conceptos de rep\u00fablica' in Jos\u00e9 Antonio Aguilar and Rafael Rojas (eds), El republicanismo en hispanoam\u00e9rica: Ensayos de historia intelectual y pol\u00edtica (Mexico City, 2002), 63. See McEvoy, 'Ser\u00edamos excelentes vasallos', op. cit., 43. 31For the 'tradici\u00f3n republicana' as the centre of a long-term political history of Mexico that stresses local and corporative representation over democracy and equality, see Alicia Hern\u00e1ndez Ch\u00e1vez, La tradici\u00f3n republicana del buen gobierno (Mexico, 1993); Antonio Annino, 'Ciudadan\u00eda versus gobernabilidad republicana en M\u00e9xico: Los or\u00edgenes de un dilema' in Hilda S\u00e1bato (ed.), Ciudadan\u00eda pol\u00edtica y formaci\u00f3n de las naciones: Perspectivas hist\u00f3ricas de Am\u00e9rica Latina (Mexico City, 1999). For a similar perspective (the intellectual history \u00e0 la Cambridge, invoked by Aguilar), see Gordon, 'Philosophy, sociology, and gender', op. cit., 883\u20135, 888, 891. 32El\u00edas Jos\u00e9 Palti, 'Las pol\u00e9micas en el liberalismo argentino: Sobre virtud' and Aguilar and Rojas (eds), 'Republicanismo y lenguaje' in op. cit., 167. 33El\u00edas Jos\u00e9 Palti, La invenci\u00f3n de una legitimidad: Raz\u00f3n y ret\u00f3rica en el pensamiento mexicano del siglo XIX (Un estudio sobre las formas del discurso pol\u00edtico) (Mexico City, 2005). 34El\u00edas Jos\u00e9 Palti, 'La transformaci\u00f3n del liberalismo mexicano en el siglo XIX: de la opini\u00f3n p\u00fablica al de la in Sacrist\u00e1n and Piccato (eds), Actores, op. cit.; see also Carlos and (eds), y sobre la ciudad de M\u00e9xico (Mexico City, Brian Carlos and Sonia P\u00e9rez Toledo (eds), La de la legitimidad pol\u00edtica en M\u00e9xico (Mexico City, 1999). On France and public see Baker, Inventing the French Revolution, op. cit.; concept in la R\u00e9volution fran\u00e7aise (Paris, Farge, Subversive op. cit. La invenci\u00f3n de una op. cit., El\u00edas Jos\u00e9 Palti, 'La del prensa y pol\u00edtica en la Rep\u00fablica (M\u00e9xico, 4 Palti, 'La transformaci\u00f3n del op. cit. Guerra, the of discussion to the in a that links private and public and as in is Guerra, Modernidad e independencias, op. cit., For similar in see Palti, 'Las op. cit. The mode of public provides a useful for the recent interest in the history of from its to the of in the of See Jaksic (ed.), op. cit. also El\u00edas Jos\u00e9 Palti, in La pol\u00edtica del op. cit.; Palti, 'La del op. cit.; and El\u00edas Jos\u00e9 Palti, y el pol\u00edtico mexicano en de la Rep\u00fablica in (ed.), op. cit. On the interest in the history of the in Latin America see in the also op. cit.; de la prensa en el (Mexico City, \u00c1ngel (ed.), y la prensa del los 23, y de (Mexico City, 2001); y en del siglo XIX and de de en de de 'Las de la El discurso pol\u00edtico y El de las y la opini\u00f3n del in Sabato and Lettieri (eds), La vida pol\u00edtica en la op. cit., Jos\u00e9 El\u00edas Palti, studies on the emergence of a public sphere in Latin Latin American Review, 2 On the political of see McCarthy, Critical Theory of J\u00fcrgen Habermas, op. cit. de la de de at the Sobre la de la de M\u00e9xico: 'Las en la ciudad de M\u00e9xico del siglo XIX a la Mexico op. cit.; Carlos A. in Latin America, and Carlos y del in Illades, Connaughton and P\u00e9rez Toledo (eds), op. cit. After independence, the influence of to in the nineteenth On and the see Charles E. P. and his a Hispanic American Historical Review, 4 for B. of the and in Eighteenth-Century Mexico (Stanford, E. in Mexico 2004). op. cit. focus on without a reference to Guerra, in and the politics of Latin American history in the century' in G. (ed.), the Political in Latin American Essays from the (Durham, NC, 2001), 41. Guerra's not mentioned in that and his M\u00e9xico: del a la op. cit., an English It is not to the of a but the of together the mentioned in these be evidence of op. cit. and Luis Fernando de la cultura pol\u00edtica de la ciudad de in Sacrist\u00e1n and Piccato (eds), op. cit. For a critique of the in the model of the public sphere see Francois-Xavier Guerra and Annick in Guerra and Lemp\u00e9ri\u00e8re (eds), Los espacios op. cit., The not to Habermas's view of modern and its Habermas, Theory of Communicative Action, op. cit. analyses of the of those links see Peter or and national politics, Hispanic American Historical Review, 2 de la of and during the (Durham, NC, 2000). similar of the public-sphere model from the perspective of intellectual history see A. 'The the and the of in eighteenth-century French Historical Studies, xvii, 4 (1992), Gordon, 'Philosophy, sociology, and gender', op. cit., Aguilar que Aguilar, 'El op. cit., La escritura, op. cit., The of those is the of they and the of at of Jos\u00e9 de For a useful of central in Mexican ideas about and see Mexican La escritura, op. cit., and the social context of created is a by of See Chartier, Cultural Origins, op. cit.; and in London, (London, Michael The of the and the Public Sphere in Eighteenth-Century America (Cambridge, MA, 1990); Melton, The Rise, op. cit.; Pablo Piccato, The of in the of the Mexican Public Sphere (Durham, NC, Structural Transformation, op. cit., op. cit.; Palti, 'Las op. cit. at I would with the that was the concern of the Mexican public in the nineteenth Pablo Piccato, The of op. cit. See for Sarah C. From to Citizens: and Politics in (University Park, PA, 92. his critique of and Habermas's work, notes the of and of as to the critical discourse that a Habermasian model would in and op. cit., Guerra's see Annick la (Paris, Public Private and in America (Stanford, op. cit.; John The and the The Revolution in Palti, op. cit.; and Antonio Annino, 'El Los y los or\u00edgenes del liberalismo en in and (eds), y M\u00e9xico: de de (Mexico, 2002), 'The of a public sphere in Latin America during the of Studies in Society and History, 2 (2000), This is the first systematic of the public-sphere model in Latin America published in On the of see in (ed.), and Society in America during the Age of Revolution (Wilmington, 2001). For a in this see B. and local an into early Latin American social in (ed.), the The of Social History see Eric Van Young, in (ed.), op. cit., A similar for the of the English public sphere in and political Journal of Modern History, 4 On and Paul in of (Berkeley, 1993). and de political in Journal of Latin American Studies, 2 Politics in the Age of of and in Hispanic American Historical Review, 2 and Van Young, The Other op. cit. op. cit., y la y sobre pol\u00edtica y de op. cit. See the Tulio Halper\u00edn Donghi, Revoluci\u00f3n y de una en la Argentina (Mexico, the Rama, 'the had \u2026 from a of in their into a more that a of as a but Rama, The Lettered City, op. cit., On see de en la in \u00c1ngel Rama, La en Am\u00e9rica The of the that into were an example of the of public by but also a of new as in earlier of the Latin American 'La como in \u00c1ngel Rama, La del I have evidence of any exchange between Habermas and was published in in two in it is that their a concern about the of is reference to Habermas in had German in to be to in the can an See \u00c1ngel and 2001), The Lettered City, op. cit., See also Jos\u00e9 Luis las y las ideas (Buenos Aires, Buenos from to (New York, On the Claudio Mexico: An of Nationalism 2001); Antonio and Fran\u00e7ois-Xavier Guerra, la siglo XIX (Mexico City, 2003), was also a to the See y de en Am\u00e9rica Latina E. 'El de la esfera e en la del de la ciudad de M\u00e9xico, in Sacrist\u00e1n and Piccato (eds), op. cit. in that by and Luis Fernando for of the of the public sphere, and y in Carlos and (eds), y sobre la ciudad de M\u00e9xico (Mexico City, 2",
+      "cited_by_count": 78,
+      "type": "article",
+      "source": {
+        "name": "Social History",
+        "type": "journal",
+        "issn": [
+          "0307-1022",
+          "1470-1200"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Politics and Society in Latin America",
+        "Religion and Society in Latin America",
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 98,
+      "url": "https://openalex.org/W1994808746"
+    },
+    {
+      "openalex_id": "W2117702238",
+      "doi": "10.1017/s0020818305050010",
+      "title": "Power in International Politics",
+      "authors": [
+        {
+          "name": "Michael Barnett",
+          "openalex_id": "A5051458649",
+          "orcid": "https://orcid.org/0000-0002-4773-7638",
+          "institutions": [
+            "Institute of Public Affairs"
+          ]
+        },
+        {
+          "name": "Raymond Duvall",
+          "openalex_id": "A5041863509",
+          "institutions": [
+            "University of Minnesota System",
+            "Watershed"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "The concept of power is central to international relations. Yet disciplinary discussions tend to privilege only one, albeit important, form: an actor controlling another to do what that other would not otherwise do. By showing conceptual favoritism, the discipline not only overlooks the different forms of power in international politics, but also fails to develop sophisticated understandings of how global outcomes are produced and how actors are differentially enabled and constrained to determine their fates. We argue that scholars of international relations should employ multiple conceptions of power and develop a conceptual framework that encourages rigorous attention to power in its different forms. We first begin by producing a taxonomy of power. Power is the production, in and through social relations, of effects that shape the capacities of actors to determine their circumstances and fate. This general concept entails two crucial, analytical dimensions: the kinds of social relations through which power works (in relations of interaction or in social relations of constitution); and the specificity of social relations through which effects are produced (specific/direct or diffuse/indirect). These distinctions generate our taxonomy and four concepts of power: compulsory, institutional, structural, and productive. We then illustrate how attention to the multiple forms of power matters for the analysis of global governance and American empire. We conclude by urging scholars to beware of the idea that the multiple concepts are competing, and instead to see connections between them in order to generate more robust understandings of how power works in international politics.This article was first presented at a conference, \"Who Governs in Global Governance?\" at the University of Wisconsin-Madison. We thank the participants at the conference, including Emanuel Adler, Alex Wendt, Neta Crawford, Kathryn Sikkink, Helen Kinsella, Martha Finnemore, Jutta Weldes, Jon Pevehouse, Andrew Hurrell, John Ruggie, and especially Duncan Snidal, Robert Keohane, and Charles Kupchan. Other versions were presented at the University of Minnesota and the International Studies Association meetings in Budapest, Hungary in June, 2003. We also want to thank Kurt Burch, Thomas Diez, Tom Donahue, William Duvall, Ayten Gundogdu, Stefano Guzzini, Colin Kahl, Amit Ron, Latha Varadarajan, Michael Williams, Anne-Marie Slaughter, the editors of the journal, and two anonymous reviewers. We also acknowledge the bibliographic assistance of Emilie Hafner-Burton and Jonathan Havercroft.",
+      "cited_by_count": 1696,
+      "type": "article",
+      "source": {
+        "name": "International Organization",
+        "type": "journal",
+        "issn": [
+          "0020-8183",
+          "1531-5088"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/F5F3C74D30A12A5C4CC9B4EFEA152967/S0020818305050010a.pdf/div-class-title-power-in-international-politics-div.pdf"
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "International Development and Aid",
+        "Global Peace and Security Dynamics"
+      ],
+      "referenced_works_count": 140,
+      "url": "https://openalex.org/W2117702238"
+    },
+    {
+      "openalex_id": "W1568336093",
+      "doi": null,
+      "title": "MOODLE: Using learning communities to create an open source course management system",
+      "authors": [
+        {
+          "name": "Martin Dougiamas",
+          "openalex_id": "A5042920857"
+        },
+        {
+          "name": "Peter Taylor",
+          "openalex_id": "A5100700568",
+          "orcid": "https://orcid.org/0000-0002-0778-4122"
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-01-01",
+      "abstract": "This paper summarizes a PhD research project that has contributed towards the development of Moodle - a popular open-source course management system (moodle.org). In this project we applied theoretical perspectives such as \"social constructionism\" and \"connected knowing\" to the analysis of our own online classes as well as the growing learning community of other Moodle users. We used the mode of participatory action research, including techniques such as case studies, ethnography, learning environment surveys and design methodologies. This ongoing analysis is being used to guide the development of Moodle as a tool for improving processes within communities of reflective inquiry. At the time of writing (April 2003), Moodle has been translated into twenty-seven languages and is being used by many hundreds of educators around the world, including universities, schools and independent teachers.",
+      "cited_by_count": 513,
+      "type": "article",
+      "source": {
+        "name": "Murdoch Research Repository (Murdoch University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://researchrepository.murdoch.edu.au/id/eprint/36645/"
+      },
+      "topics": [
+        "Online and Blended Learning",
+        "Reflective Practices in Education",
+        "Innovative Teaching and Learning Methods"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W1568336093"
+    },
+    {
+      "openalex_id": "W1501540771",
+      "doi": null,
+      "title": "Max Weber's theory of rationalization",
+      "authors": [
+        {
+          "name": "J\u00fcrgen Habermas",
+          "openalex_id": "A5111405639"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "The article is a translation into Russian of another piece of \u201cTheory of Communicative Action\u201d by J. Habermas. Habermas continues his critical examination of M. Weber\u2019s theory of rationalization (see beginning in Vol. 8, \u2116 3 and Vol. 9, \u2116 1) by discerning in this third section the logic of Weberian analysis of modernization and showing that it is Weber\u2019s initial point of analysis (institutionalization of subsystems of purposive-rational action in the forms of the capitalist enterprise and the modern governmental institution) that allows Weber to approach modernization as societal rationalization. Habermas argues that Weber\u2019s analysis of modernization does not exhaust the explanatory potential of his own theory. If we call to mind the systematic construction that underlies the last (which Weber, according to Habermas, did not himself make), we will finally have to suggest that path of rationalization taken in Europe is just a particular historical form of rationalization which Weber, however, equates with rationalization of society as such.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "The Russian Sociological Review",
+        "type": "journal",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "Critical Theory and Philosophy",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1501540771"
+    },
+    {
+      "openalex_id": "W1495820933",
+      "doi": "10.1111/1467-8675.12057",
+      "title": "Habermas and the Project of Immanent Critique",
+      "authors": [
+        {
+          "name": "Titus Stahl",
+          "openalex_id": "A5026097274",
+          "orcid": "https://orcid.org/0000-0001-6537-2196",
+          "institutions": [
+            "Goethe University Frankfurt"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-11-11",
+      "abstract": "According to J\u00fcrgen Habermas, his Theory of Communicative Action offers a new account of the normative foundations of critical theory. Habermas' motivating insight is that neither a transcendental nor a metaphysical solution to the problem of normativity, nor a merely hermeneutic reconstruction of historically given norms, is sufficient to clarify the normative foundations of critical theory. In response to this insight, Habermas develops a novel account of normativity, which locates the normative demands of critical theory within the socially instituted practice of communicative understanding. Although Habermas has claimed otherwise, this new foundation for critical theory constitutes a novel and innovative form of \"immanent critique.\" To argue for and to clarify this claim, I offer, in section 1, a formal account of immanent critique and distinguish between two different ways of carrying out such a critique.",
+      "cited_by_count": 268,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12057"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W1495820933"
+    },
+    {
+      "openalex_id": "W1902236296",
+      "doi": "10.1111/1467-8675.12055",
+      "title": "Habermas and Markets",
+      "authors": [
+        {
+          "name": "Timo J\u00fctten",
+          "openalex_id": "A5077887342",
+          "orcid": "https://orcid.org/0000-0001-9865-507X"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-10-29",
+      "abstract": null,
+      "cited_by_count": 230,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12055"
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W1902236296"
+    },
+    {
+      "openalex_id": "W2012854000",
+      "doi": "10.1080/002017400414881",
+      "title": "Modernity and Morality in Habermas's Discourse Ethics",
+      "authors": [
+        {
+          "name": "James Gordon Finlayson",
+          "openalex_id": "A5033736964",
+          "orcid": "https://orcid.org/0000-0003-0570-6048"
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-09-01",
+      "abstract": "Discourse ethics is originally conceived as a programme of philosophical justification of morality. This depends on the formal derivation of the moral principle (U) from non-moral principles. The moral theory is supposed to fall out of a pragmatic theory of meaning. The original programme plays a central role in Habermas's social theory: the moral theory, if true, provides good evidence for the more general theory of modernization. But neither Habermas nor his followers have succeeded in providing a formal derivation. This essay shows how and why Habermas's proposed derivation is impossible. As if aware of the lacuna, Habermas has recently suggested that (U) can be derived by 'abduction' rather than deduction. The proposal draws heavily on modernization theory; hence the only justification for (U) now available to him rests on premises drawn from that theory. The original programme of the justification of morality has thus given way to the weaker programme of the philosophical elucidation of morality. Further, since Habermas's moral theory is no longer justified independently of modernization theory, but at least partly by it, the moral theory cannot without circularity provide evidence for the modernization theory.",
+      "cited_by_count": 246,
+      "type": "article",
+      "source": {
+        "name": "Inquiry",
+        "type": "journal",
+        "issn": [
+          "0020-174X",
+          "1502-3923"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/002017400414881"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2012854000"
+    },
+    {
+      "openalex_id": "W4383913712",
+      "doi": "10.1111/1748-8583.12524",
+      "title": "Human resource management in the age of generative artificial intelligence: Perspectives and research directions on ChatGPT",
+      "authors": [
+        {
+          "name": "Pawan Budhwar",
+          "openalex_id": "A5055856506",
+          "orcid": "https://orcid.org/0000-0001-8915-6172",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "Soumyadeb Chowdhury",
+          "openalex_id": "A5067653484",
+          "orcid": "https://orcid.org/0000-0002-8074-248X",
+          "institutions": [
+            "TBS Education"
+          ]
+        },
+        {
+          "name": "Geoffrey Wood",
+          "openalex_id": "A5034762665",
+          "orcid": "https://orcid.org/0000-0001-9709-1823",
+          "institutions": [
+            "Western University",
+            "Trinity College Dublin",
+            "Cranfield University",
+            "University of Bath"
+          ]
+        },
+        {
+          "name": "Herman Aguinis",
+          "openalex_id": "A5067660877",
+          "orcid": "https://orcid.org/0000-0002-3485-9484",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Greg J. Bamber",
+          "openalex_id": "A5018194210",
+          "orcid": "https://orcid.org/0000-0001-6646-3065",
+          "institutions": [
+            "Monash University",
+            "Monash Institute of Medical Research",
+            "Rutgers, The State University of New Jersey",
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Jose R. Beltran",
+          "openalex_id": "A5044503602",
+          "orcid": "https://orcid.org/0000-0002-3886-8142",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        },
+        {
+          "name": "Paul Boselie",
+          "openalex_id": "A5023651869",
+          "orcid": "https://orcid.org/0000-0001-8507-7258",
+          "institutions": [
+            "Utrecht University"
+          ]
+        },
+        {
+          "name": "Fang Lee Cooke",
+          "openalex_id": "A5025486785",
+          "orcid": "https://orcid.org/0000-0003-0337-6591",
+          "institutions": [
+            "Monash University"
+          ]
+        },
+        {
+          "name": "Stephanie Decker",
+          "openalex_id": "A5064172786",
+          "orcid": "https://orcid.org/0000-0003-0547-9594",
+          "institutions": [
+            "Birmingham City University",
+            "University of Birmingham"
+          ]
+        },
+        {
+          "name": "Angelo S. DeNisi",
+          "openalex_id": "A5065954019",
+          "institutions": [
+            "Tulane University"
+          ]
+        },
+        {
+          "name": "Prasanta Kumar Dey",
+          "openalex_id": "A5046908030",
+          "orcid": "https://orcid.org/0000-0002-9984-5374",
+          "institutions": [
+            "Aston University"
+          ]
+        },
+        {
+          "name": "David Guest",
+          "openalex_id": "A5091214938",
+          "orcid": "https://orcid.org/0000-0003-0457-6077",
+          "institutions": [
+            "King's College London",
+            "King's College School"
+          ]
+        },
+        {
+          "name": "Andrew J. Knoblich",
+          "openalex_id": "A5066797749",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Ashish Malik",
+          "openalex_id": "A5108813058",
+          "orcid": "https://orcid.org/0000-0002-2185-7674",
+          "institutions": [
+            "Hunter Water"
+          ]
+        },
+        {
+          "name": "Jaap Paauwe",
+          "openalex_id": "A5081370774",
+          "orcid": "https://orcid.org/0000-0003-3633-9607",
+          "institutions": [
+            "Tilburg University"
+          ]
+        },
+        {
+          "name": "Savvas Papagiannidis",
+          "openalex_id": "A5006679927",
+          "orcid": "https://orcid.org/0000-0003-0799-491X",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Charmi Patel",
+          "openalex_id": "A5088161716",
+          "orcid": "https://orcid.org/0000-0002-0235-9784",
+          "institutions": [
+            "University of Reading"
+          ]
+        },
+        {
+          "name": "Vijay Pereira",
+          "openalex_id": "A5069901933",
+          "orcid": "https://orcid.org/0000-0001-6755-0793",
+          "institutions": [
+            "NEOMA Business School"
+          ]
+        },
+        {
+          "name": "Shuang Ren",
+          "openalex_id": "A5084581187",
+          "orcid": "https://orcid.org/0000-0002-8768-8447",
+          "institutions": [
+            "Queen's University Belfast"
+          ]
+        },
+        {
+          "name": "Steven G. Rogelberg",
+          "openalex_id": "A5000877507",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Mark N. K. Saunders",
+          "openalex_id": "A5054244780",
+          "orcid": "https://orcid.org/0000-0001-5176-8317",
+          "institutions": [
+            "University of Birmingham",
+            "Birmingham City University",
+            "University College Birmingham"
+          ]
+        },
+        {
+          "name": "Rosalie L. Tung",
+          "openalex_id": "A5014893902",
+          "institutions": [
+            "Simon Fraser University"
+          ]
+        },
+        {
+          "name": "Arup Varma",
+          "openalex_id": "A5005292478",
+          "orcid": "https://orcid.org/0000-0002-6530-5564",
+          "institutions": [
+            "Loyola University Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-07-01",
+      "abstract": "Abstract ChatGPT and its variants that use generative artificial intelligence (AI) models have rapidly become a focal point in academic and media discussions about their potential benefits and drawbacks across various sectors of the economy, democracy, society, and environment. It remains unclear whether these technologies result in job displacement or creation, or if they merely shift human labour by generating new, potentially trivial or practically irrelevant, information and decisions. According to the CEO of ChatGPT, the potential impact of this new family of AI technology could be as big as \u201cthe printing press\u201d, with significant implications for employment, stakeholder relationships, business models, and academic research, and its full consequences are largely undiscovered and uncertain. The introduction of more advanced and potent generative AI tools in the AI market, following the launch of ChatGPT, has ramped up the \u201cAI arms race\u201d, creating continuing uncertainty for workers, expanding their business applications, while heightening risks related to well\u2010being, bias, misinformation, context insensitivity, privacy issues, ethical dilemmas, and security. Given these developments, this perspectives editorial offers a collection of perspectives and research pathways to extend HRM scholarship in the realm of generative AI. In doing so, the discussion synthesizes the literature on AI and generative AI, connecting it to various aspects of HRM processes, practices, relationships, and outcomes, thereby contributing to shaping the future of HRM research.",
+      "cited_by_count": 662,
+      "type": "article",
+      "source": {
+        "name": "Human Resource Management Journal",
+        "type": "journal",
+        "issn": [
+          "0954-5395",
+          "1748-8583"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1748-8583.12524"
+      },
+      "topics": [
+        "Artificial Intelligence in Healthcare and Education",
+        "AI and HR Technologies",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 107,
+      "url": "https://openalex.org/W4383913712"
+    },
+    {
+      "openalex_id": "W2121993559",
+      "doi": "10.1017/s1537592709992714",
+      "title": "Self-Segregation or Deliberation? Blog Readership, Participation, and Polarization in American Politics",
+      "authors": [
+        {
+          "name": "Eric Lawrence",
+          "openalex_id": "A5083282133",
+          "orcid": "https://orcid.org/0000-0002-5018-1351",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "John Sides",
+          "openalex_id": "A5050583907",
+          "orcid": "https://orcid.org/0000-0003-1268-6612",
+          "institutions": [
+            "George Washington University"
+          ]
+        },
+        {
+          "name": "Henry Farrell",
+          "openalex_id": "A5112468935",
+          "institutions": [
+            "George Washington University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-03-01",
+      "abstract": "Political scientists and political theorists debate the relationship between participation and deliberation among citizens with different political viewpoints. Blogs provide an important testing ground for their claims. We examine deliberation, polarization, and political participation among blog readers. We find that blog readers gravitate toward blogs that accord with their political beliefs. Few read blogs on both the left and right of the ideological spectrum. Furthermore, those who read left-wing blogs and those who read right-wing blogs are ideologically far apart. Blog readers are more polarized than either non-blog-readers or consumers of various television news programs, and roughly as polarized as US senators. Blog readers also participate more in politics than non-blog readers. Readers of blogs of different ideological dispositions do not participate less than those who read only blogs of one ideological disposition. Instead, readers of both left- and right-wing blogs and readers of exclusively leftwing blogs participate at similar levels, and both participate more than readers of exclusively right-wing blogs. This may reflect social movement-building efforts by left-wing bloggers.",
+      "cited_by_count": 350,
+      "type": "article",
+      "source": {
+        "name": "Perspectives on Politics",
+        "type": "journal",
+        "issn": [
+          "1537-5927",
+          "1541-0986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/00D2B6743AAF448CDD1DA4FBB913BB05/S1537592709992714a.pdf/div-class-title-self-segregation-or-deliberation-blog-readership-participation-and-polarization-in-american-politics-div.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Electoral Systems and Political Participation",
+        "Social Capital and Networks"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W2121993559"
+    },
+    {
+      "openalex_id": "W164865966",
+      "doi": "10.18052/www.scipress.com/ilshs.27.177",
+      "title": "Modernity, Communicative Action and Reconstruction of Rationality",
+      "authors": [
+        {
+          "name": "Jason L. Powell",
+          "openalex_id": "A5062168499",
+          "orcid": "https://orcid.org/0000-0002-9828-0877",
+          "institutions": [
+            "Coventry University"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-05-01",
+      "abstract": "Associated with the Frankfurt School, Jurgen Habermas's work focuses on the modern foundations of social theory and epistemology, the analysis of advanced capitalistic societies and democracy, the rule of law in a critical social-evolutionary context, and contemporary politics, particularly German politics. Habermas's theoretical system is devoted to revealing the possibility of reason, emancipation, and rational-critical communication latent in modern institutions and in the human capacity to deliberate and pursue rational interests. Habermas is known for his work on the concept of modernity, particularly with respect to the discussions of rationalization originally set forth by Max Weber. He has been influenced by American pragmatism and action theory. This paper sets out to explore the problems and possibilities of communicative action and the reconstruction of rationality which Habermas claims was lost in postmodern genre.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "International Letters of Social and Humanistic Sciences",
+        "type": "journal",
+        "issn": [
+          "2300-2697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.scipress.com/ILSHS.27.177.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Weber, Simmel, Sociological Theory",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W164865966"
+    },
+    {
+      "openalex_id": "W184605332",
+      "doi": null,
+      "title": "DESIGN THEORIES IN INFORMATION SYSTEMS - A NEED FOR MULTI-GROUNDING",
+      "authors": [
+        {
+          "name": "G\u00f6ran Goldkuhl",
+          "openalex_id": "A5005569661",
+          "orcid": "https://orcid.org/0000-0003-2235-1103"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "Within the information systems community there is growing interest in design theories. These theories are aimed to give knowledge support to design activities. Design theories are considered as theorized practical knowledge. This paper is an inquiry into the epistemology of design theories. It is an inquiry in how to justify such knowledge; the need to ground and how to ground a design theory. A distinction is made between empirical, theoretical and internal grounding. The empirical grounding has to do with the effectiveness of the application of knowledge. External theoretical grounding relates design theory to other theories. One part of this is the grounding of the design knowledge in general explanatory theories. Internal grounding means an investigation of internal warrants (e.g. as values and categories) and internal cohesion of the knowledge. Together, these different grounding processes form a coherent approach for the multi-grounding of design theory (MGDT). As illustrations some examples of design theories in IS are discussed. These are design theories concerning business interaction which are based on language action theories.",
+      "cited_by_count": 211,
+      "type": "article",
+      "source": {
+        "name": "Journal of the Association for Information Systems",
+        "type": "journal",
+        "issn": [
+          "1536-9323"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://aisel.aisnet.org/cgi/viewcontent.cgi?article=1127&context=jitta"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Usability and User Interface Design",
+        "Business Process Modeling and Analysis"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W184605332"
+    },
+    {
+      "openalex_id": "W2085277708",
+      "doi": "10.1080/0964056032000070987",
+      "title": "Outcomes of Collaborative Water Policy Making: Applying Complexity Thinking to Evaluation",
+      "authors": [
+        {
+          "name": "Sarah Connick",
+          "openalex_id": "A5033997676",
+          "institutions": [
+            "Sustainable Sciences Institute"
+          ]
+        },
+        {
+          "name": "Judith E. Innes",
+          "openalex_id": "A5016997520",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-03-01",
+      "abstract": "The California water policy arena has been a notoriously conflictual environment, in which parties frequently were at odds with one another on multiple fronts simultaneously, fighting one another through the regulatory and resource management agencies, the courts, Congress and the state legislature, and the voters. Today, however, these diverse parties are engaging in collaborative dialogues, focusing on joint problem solving rather than mutual destruction and, more often than not, going to the legislative bodies and voters with one voice in seeking remedies to their problems.\\n These collaborative dialogues have produced robust and lasting outcomes that extend well beyond the resolution of specific disputes. Together, these and other examples demonstrate how such dialogues have profoundly transformed policy making practices, as well as the way in which day-to-day decisions about on-the-ground management and operations are made.\\n When the world is viewed as a complex system, in which learning, feedback, and adaptations take place through highly linked, self-organizing networks -- as opposed to a mechanistic model of inputs and outputs -- it's easier to understand how collaborative dialogue processes function and produce a wide variety of types of results. Evaluation methods based on a mechanistic world view will fail to identify many of the most important results of these processes. If evaluation is approached as it has been done traditionally, focusing first and foremost on whether agreements were obtained and how strong the consensus was, the truly important results of these processes will be missed, including the building of social and political capital, the learning and change, the development of high quality information, new and innovative ideas, new institutions and practices that are adaptive and flexible, and the cascade of changes in attitudes, behaviors, and actions.\\n The challenge now is to approach the evaluation task from a complex systems perspective and to identify and seek to develop a robust understanding of the significance of the first-, second-, and third-order outcomes of these processes in the contexts in which they occur. Process participants themselves may be focused on agreements and not recognize the significance of some of these outcomes until much later. As the authors have discovered, first- and some second-order outcomes, such as the development of social and political capital and high-quality, trusted information, begin to occur during the collaborative dialogue process. Other second- and third-order outcomes most often emerge after the reaching of a formal agreement. And although a process may have finished in a formal sense, it can continue to produce results as the changes in attitudes and practices continue to propagate through the system. In evaluating how well the processes are working, frameworks must be developed that are flexible and allow incorporation of ongoing learning and adaptation as new and different results emerge.",
+      "cited_by_count": 315,
+      "type": "article",
+      "source": {
+        "name": "Journal of Environmental Planning and Management",
+        "type": "journal",
+        "issn": [
+          "0964-0568",
+          "1360-0559"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/0964056032000070987"
+      },
+      "topics": [
+        "Water resources management and optimization",
+        "Sustainability and Climate Change Governance"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W2085277708"
+    },
+    {
+      "openalex_id": "W2129719044",
+      "doi": "10.1093/ejil/14.3.437",
+      "title": "Security Council Deliberations: The Power of the Better Argument",
+      "authors": [
+        {
+          "name": "I. P. Johnstone",
+          "openalex_id": "A5065302599"
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-06-01",
+      "abstract": "Why are legal arguments used in a political forum like the United Nations Security Council? This article draws on international law and international relations theory to provide an answer to that question, supported by a case study of the debates over NATO's intervention in Kosovo. The theoretical argument is that international law operates largely through a process of justificatory discourse within and constrained by interpretive communities, composed of the participants in a field of practice who set the parameters of what constitutes reasoned argumentation for that practice. Drawing insights from the theory of communicative action, the article claims that minimal preconditions for this discursive interaction exist in and around the Security Council. The debates over Kosovo are offered as evidence that the legal discourse not only occurs but has independent influence even in that political setting. While legal considerations did not directly cause any decision, concerns about precedent and reputation did influence positions taken as well as subsequent developments in the UN and NATO. The article concludes with an illustrative suggestion as to how Security Council deliberations could be improved, namely the adoption of a set of considerations to be taken into account in debates on humanitarian intervention. The suggested reform would not do away with the influence of hard power and perceived national interest, but, to paraphrase Jurgen Habermas, would give \u2018the power of the better argument\u2019 a fighting chance in Council decision\u2010making.",
+      "cited_by_count": 213,
+      "type": "article",
+      "source": {
+        "name": "European Journal of International Law",
+        "type": "journal",
+        "issn": [
+          "0938-5428",
+          "1464-3596"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ejil/article-pdf/14/3/437/1208517/140437.pdf"
+      },
+      "topics": [
+        "Global Peace and Security Dynamics",
+        "International Law and Human Rights",
+        "Peacebuilding and International Security"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2129719044"
+    },
+    {
+      "openalex_id": "W4240844485",
+      "doi": "10.2307/20159076",
+      "title": "A Rhetorical Theory of Diffusion",
+      "authors": [
+        {
+          "name": "Sandy Edward Green",
+          "openalex_id": "A5077702036",
+          "institutions": [
+            "University of Southern California",
+            "Southern California University for Professional Studies"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-10-01",
+      "abstract": "I use rhetorical theory to reconceptualize the diffusion of managerial practices.Specifically, I argue that the diffusion of a practice depends on the discursive justifications used to rationalize it.When such justifications are accepted and taken for granted, a practice reaches a state of institutionalization. Furthermore, I propose that changes in justifications and diffusion provide a basis for explaining institutionalization as both a process and a state.I then develop several propositions from this model.",
+      "cited_by_count": 230,
+      "type": "article",
+      "source": {
+        "name": "Academy of Management Review",
+        "type": "journal",
+        "issn": [
+          "0363-7425",
+          "1930-3807"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 181,
+      "url": "https://openalex.org/W4240844485"
+    },
+    {
+      "openalex_id": "W2169983130",
+      "doi": "10.28945/473",
+      "title": "On the Difference or Equality of Information, Misinformation, and Disinformation: A Critical Research Perspective",
+      "authors": [
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "De Montfort University"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": "An international association advancing the multidisciplinary study of informing systems. Founded in 1998, the Informing Science Institute (ISI) is a global community of academics shaping the future of informing science.",
+      "cited_by_count": 143,
+      "type": "article",
+      "source": {
+        "name": "Informing Science The International Journal of an Emerging Transdiscipline",
+        "type": "journal",
+        "issn": [
+          "1521-4672",
+          "1547-9684",
+          "1547-9692"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.inform.nu/Articles/Vol9/v9p083-096Stahl65.pdf"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Misinformation and Its Impacts",
+        "Cybersecurity and Cyber Warfare Studies"
+      ],
+      "referenced_works_count": 89,
+      "url": "https://openalex.org/W2169983130"
+    },
+    {
+      "openalex_id": "W2321673024",
+      "doi": "10.1080/1523908x.2015.1110483",
+      "title": "Participation in Transition(s): Reconceiving Public Engagements in Energy Transitions as Co-Produced, Emergent and Diverse",
+      "authors": [
+        {
+          "name": "Jason Chilvers",
+          "openalex_id": "A5054404561",
+          "orcid": "https://orcid.org/0000-0001-9238-1653",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        },
+        {
+          "name": "Noel Longhurst",
+          "openalex_id": "A5021498978",
+          "orcid": "https://orcid.org/0000-0002-1630-0150",
+          "institutions": [
+            "University of East Anglia"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-29",
+      "abstract": "This paper brings the transitions literature into conversation with constructivist Science and Technology Studies (STS) perspectives on participation for the first time. In doing so we put forward a conception of public and civil society engagement in sustainability transitions as co-produced, relational, and emergent. Through paying close attention to the ways in which the subjects, objects, and procedural formats of public engagement are constructed through the performance of participatory collectives, our approach offers a framework to open up to and symmetrically compare diverse and interconnected forms of participation that make up wider socio-technical systems. We apply this framework in a comparative analysis of four diverse cases of civil society involvement in UK low carbon energy transitions. This highlights similarities and differences in how these distinct participatory collectives are orchestrated, mediated, and subject to exclusions, as well as their effects in producing particular visions of the issue at stake and implicit models of participation and \u2018the public\u2019. In conclusion we reflect on the value of this approach for opening up the politics of societal engagement in transitions, building systemic perspectives of interconnected \u2018ecologies of participation\u2019, and better accounting for the emergence, inherent uncertainties, and indeterminacies of all forms of participation in transitions.",
+      "cited_by_count": 332,
+      "type": "article",
+      "source": {
+        "name": "Journal of Environmental Policy & Planning",
+        "type": "journal",
+        "issn": [
+          "1522-7200",
+          "1523-908X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/1523908X.2015.1110483?needAccess=true"
+      },
+      "topics": [
+        "Social Acceptance of Renewable Energy",
+        "Sustainability and Climate Change Governance",
+        "Energy and Environment Impacts"
+      ],
+      "referenced_works_count": 75,
+      "url": "https://openalex.org/W2321673024"
+    },
+    {
+      "openalex_id": "W2942942407",
+      "doi": "10.1007/s10796-019-09921-1",
+      "title": "Socio-Technical Perspectives on Smart Working: Creating Meaningful and Sustainable Systems",
+      "authors": [
+        {
+          "name": "Peter Bedn\u00e1r",
+          "openalex_id": "A5086765619",
+          "orcid": "https://orcid.org/0000-0002-3631-2626",
+          "institutions": [
+            "University of Portsmouth",
+            "Lund University"
+          ]
+        },
+        {
+          "name": "Christine Welch",
+          "openalex_id": "A5041085011",
+          "orcid": "https://orcid.org/0000-0002-7149-3354",
+          "institutions": [
+            "University of Portsmouth"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-03",
+      "abstract": "Abstract Technological advances have made possible industrial and commercial applications of artificial intelligence, virtual reality and highly integrated manufacturing systems. It has also freed business activity from a focus on place, as both work activities and markets have been able to harness information and communication technologies in order to operate remotely. As a result, researchers have highlighted a phenomenon of \u2018smart\u2019 working. Some have pointed to a fourth Industrial Revolution (Industry 4.0) in which \u2018smart\u2019 factories use robotics to achieve high performance. There is now a suggestion of progress towards Industry 5.0, in which technological and social systems work in harmony to deliver personalised mass customization of products and services. This paper examines these developments from the perspective of unique, individual understandings of work roles and sustainability, posing the questions \u2018Smart\u2019 from whose point of view? Do smart systems promote sustainable organizations? How should design of smart systems be approached? It suggests that contemporary socio-technical systems approaches to organizational analysis are the best way to support harnessing of smart technologies in organizations.",
+      "cited_by_count": 346,
+      "type": "article",
+      "source": {
+        "name": "Information Systems Frontiers",
+        "type": "journal",
+        "issn": [
+          "1387-3326",
+          "1572-9419"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10796-019-09921-1.pdf"
+      },
+      "topics": [
+        "Digital Transformation in Industry",
+        "Collaboration in agile enterprises",
+        "Information Systems Theories and Implementation"
+      ],
+      "referenced_works_count": 119,
+      "url": "https://openalex.org/W2942942407"
+    },
+    {
+      "openalex_id": "W2168506705",
+      "doi": null,
+      "title": "Causes of corruption: Towards a contextual theory of corruption",
+      "authors": [
+        {
+          "name": "Gjalt de Graaf",
+          "openalex_id": "A5068296853",
+          "orcid": "https://orcid.org/0000-0002-7819-8972"
+        },
+        {
+          "name": "Vu",
+          "openalex_id": "A5110822037"
+        },
+        {
+          "name": "Faculteit der Sociale Wetenschappen",
+          "openalex_id": "A5061856671"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-04-01",
+      "abstract": "The more we know about the causes of corruption, the better we can decide which policy instruments to use to combat corruption. The primary question of this article is: how can the causes of corruption in Western countries be studied? Here, an overview is presented of the causes of corruption mentioned in the literature using the kind of causality of explanations of corruption as an organizing principle. Six groups of theories are distinguished concerning causes of corruption, paying attention to the discourse on corruption control these groups of theories lead to. A primary conclusion is that there are not many studies on actual, individual corruption cases. It seems, therefore, that we need more contextual corruption research; many current studies lack contingency. The overview also makes clear that the theoretical model chosen determines, for a large part, the direction of the proposed solutions. Different causal chains lead to different discourses on corruption prevention and corruption control.",
+      "cited_by_count": 237,
+      "type": "article",
+      "source": {
+        "name": "Data Archiving and Networked Services (DANS)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://research.vu.nl/en/publications/b0b4686a-08e2-46fb-8aa0-92cdca04d800"
+      },
+      "topics": [
+        "Corruption and Economic Development",
+        "Taxation and Compliance Studies",
+        "Judicial and Constitutional Studies"
+      ],
+      "referenced_works_count": 60,
+      "url": "https://openalex.org/W2168506705"
+    },
+    {
+      "openalex_id": "W2020307081",
+      "doi": "10.1287/orsc.2015.0968",
+      "title": "What Is a \u201cFair\u201d Price? Ethics as Sensemaking",
+      "authors": [
+        {
+          "name": "Juliane Reinecke",
+          "openalex_id": "A5021897173",
+          "orcid": "https://orcid.org/0000-0001-5674-4218",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "Shaz Ansari",
+          "openalex_id": "A5008091381",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-04-21",
+      "abstract": "Whereas the deliberative democracy approach to ethics seeks to bridge universalist reason and contextual judgment to explain the emergence of intersubjective agreements, it remains unclear how these two are reconciled in practice. We argue that a sensemaking approach is useful for examining how ethical truces emerge in equivocal situations. To understand how actors navigate through ethical complexity, we conducted an ethnographic inquiry into the multistakeholder practices of setting Fairtrade Minimum Prices. We offer three contributions. First, we develop a process model of ethics as sensemaking that explains how actors come to collectively agree on what is ethical in complex situations, even if no complete consensus arises. Second, our findings suggest that moral intuition and affect also motivate ethical judgment alongside moral reasoning. Third, an ethical sensemaking perspective explains some of the pitfalls actors confront in coping with ethical complexities in practice and how they attend to the challenges arising from stark inequalities in extreme contexts.",
+      "cited_by_count": 127,
+      "type": "article",
+      "source": {
+        "name": "Organization Science",
+        "type": "journal",
+        "issn": [
+          "1047-7039",
+          "1526-5455"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.repository.cam.ac.uk/bitstreams/c00ff1a4-4d32-4141-8fbd-14b9e938f1bc/download"
+      },
+      "topics": [
+        "Global trade, sustainability, and social impact",
+        "Experimental Behavioral Economics Studies",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W2020307081"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

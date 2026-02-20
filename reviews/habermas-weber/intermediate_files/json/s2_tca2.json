@@ -1,0 +1,40 @@
+[s2_batch.py] Connecting to Semantic Scholar API...
+[s2_batch.py] Batch fetching 1 paper(s)...
+[s2_batch.py] Processing 1 responses...
+[s2_batch.py] Found 1 papers, 0 not found
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "1 paper IDs",
+  "results": [
+    {
+      "paperId": "8a787efe12496187bbbad57529c6fbff07195402",
+      "title": "The theory of communicative action. Volume 2, Lifeworld andsystem : a critique of functionalist reason",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 824,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8a787efe12496187bbbad57529c6fbff07195402",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "8a787efe12496187bbbad57529c6fbff07195402"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

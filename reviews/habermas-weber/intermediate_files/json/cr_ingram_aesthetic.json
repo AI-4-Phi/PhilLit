@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Philosophy and the Aesthetic Mediation of Life Weber and Habermas",
+    "author": "Ingram"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.17161/ajp.1808.9065",
+      "title": "The Historical Genesis of the Gadamer/Habermas Controversy",
+      "authors": [
+        {
+          "family": "Ingram",
+          "given": "David"
+        }
+      ],
+      "editors": [],
+      "year": 1983,
+      "container_title": "Auslegung: a Journal of Philosophy",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "The University of Kansas",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.17161/ajp.1808.9065",
+      "score": 32.322586
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

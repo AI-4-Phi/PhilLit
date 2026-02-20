@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Critique of Instrumental Reason from Weber to Habermas",
+    "author": "Schecter",
+    "year": 2010
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5771/9783845222608-125",
+      "title": "Chapter 6 The critique of instrumental reason: Between normative and sociological approaches to legitimate law",
+      "authors": [
+        {
+          "family": "Schecter",
+          "given": "Darrow"
+        }
+      ],
+      "editors": [],
+      "year": 2010,
+      "container_title": "Legality and Legitimacy: Normative and Sociological Approaches",
+      "volume": "",
+      "issue": "",
+      "page": "125-144",
+      "publisher": "Nomos Verlagsgesellschaft mbH & Co KG",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.5771/9783845222608-125",
+      "score": 42.017242
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

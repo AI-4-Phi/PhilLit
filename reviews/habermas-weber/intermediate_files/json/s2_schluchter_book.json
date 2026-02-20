@@ -1,0 +1,157 @@
+[s2_search.py] Searching Semantic Scholar: 'Schluchter Rise Western Rationalism Weber Developmental History' (year=1979-1983), limit=20
+[s2_search.py] Retrieved 6/6 papers...
+[s2_search.py] Search complete: 6 papers found
+[s2_search.py] Cached results (cache key: s2_6a6e2591e4ae50cb)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Schluchter Rise Western Rationalism Weber Developmental History",
+  "results": [
+    {
+      "paperId": "b367da384a73b433923f4c09e31c2491fc29372a",
+      "title": "The rise of Western rationalism: Max Weber's developmental history",
+      "authors": [
+        {
+          "name": "W. Schluchter",
+          "authorId": "66305960"
+        },
+        {
+          "name": "G. Roth",
+          "authorId": "47894637"
+        }
+      ],
+      "year": 1981,
+      "abstract": null,
+      "citationCount": 206,
+      "doi": "10.2307/3339898",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b367da384a73b433923f4c09e31c2491fc29372a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cb36ce9bdd748b746d18a57b936ce9383eabccc2",
+      "title": "Weber Reconstructed@@@The Rise of Western Rationalism: Max Weber's Developmental History.",
+      "authors": [
+        {
+          "name": "G. Oakes",
+          "authorId": "83736994"
+        },
+        {
+          "name": "W. Schluchter",
+          "authorId": "66305960"
+        },
+        {
+          "name": "G. Roth",
+          "authorId": "47894637"
+        }
+      ],
+      "year": 1982,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.2307/2068787",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cb36ce9bdd748b746d18a57b936ce9383eabccc2",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d95e36b3bf63080d7ef20c91f6140a69374a4d62",
+      "title": "The Rise of Western Rationalism: Max Weber's Developmental History.Wolfgang Schluchter , Guenther Roth",
+      "authors": [
+        {
+          "name": "D. Gartman",
+          "authorId": "95143513"
+        }
+      ],
+      "year": 1983,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1086/227811",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d95e36b3bf63080d7ef20c91f6140a69374a4d62",
+      "venue": "",
+      "journal": {
+        "name": "American Journal of Sociology",
+        "pages": "1294-1296",
+        "volume": "88"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f55ad697ccf3e0fef4a8afe63f607c0f0bdc4037",
+      "title": "The Rise of Western Rationalism: Max Weber's Developmental History . By Schluchter Wolfgang. Translated By Roth Guenther. (Berkeley: University of California Press, 1981. Pp. xxvii + 178. $20.00.)",
+      "authors": [
+        {
+          "name": "S. Hekman",
+          "authorId": "117764402"
+        }
+      ],
+      "year": 1982,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1017/S0003055400189531",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f55ad697ccf3e0fef4a8afe63f607c0f0bdc4037",
+      "venue": "",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "742-742",
+        "volume": "76"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ba540b813874a4f73b96d4f141521f195b310b80",
+      "title": "DEVELOPMENT OF WESTERN RATIONALISM - AN ANALYSIS OF WEBER,MAX HISTORY-OF-SOCIETY - GERMAN - SCHLUCHTER,W",
+      "authors": [
+        {
+          "name": "M. Fulbrook",
+          "authorId": "67217807"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ba540b813874a4f73b96d4f141521f195b310b80",
+      "venue": "",
+      "journal": {
+        "name": "British Journal of Sociology",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a4055d528b663ead3ae6920835ea43712ffba0b2",
+      "title": "Rationalism:",
+      "authors": [
+        {
+          "name": "Susan Hekman",
+          "authorId": "2098916603"
+        }
+      ],
+      "year": 1982,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.2307/1963841",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a4055d528b663ead3ae6920835ea43712ffba0b2",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "742 - 742",
+        "volume": "76"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 6,
+  "errors": []
+}

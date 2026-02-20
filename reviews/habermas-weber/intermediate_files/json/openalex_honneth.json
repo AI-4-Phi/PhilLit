@@ -1,0 +1,875 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Honneth Habermas rationalization formal pragmatics",
+  "results": [
+    {
+      "openalex_id": "W1964296938",
+      "doi": "10.1177/026327692009003004",
+      "title": "The Ontogenetic Fallacy: The Immanent Critique of Habermas's Developmental Logical Theory of Evolution",
+      "authors": [
+        {
+          "name": "Piet Strydom",
+          "openalex_id": "A5013722581",
+          "orcid": "https://orcid.org/0000-0003-0581-8912"
+        }
+      ],
+      "publication_year": 1992,
+      "publication_date": "1992-08-01",
+      "abstract": "Since the emergence of neo-evolutionism in the 1960s, various critiques of the theory of social or socio-cultural evolution have been forwarded, including notably those of Immanuel Wallerstein, Alain Touraine and Anthony Giddens who decisively reject the idea of evolution. Within this context, J\u00fcrgen Habermas's theory of socio-cultural evolution has also become a specific object of critique, the best known in the English-speaking world being, perhaps, Michael Schmid's critique (1982). While the latter is ultimately based on neo-Darwinistic assumptions (1982a, 1987) which allow a non-Marxist alternative to be pitted against Habermas's position, a significant immanent critique has been taking shape during the late 1970s and 1980s the contours of which are at present starting to become visible, despite the fact that as yet it is nowhere developed and presented in a systematic manner. I have in mind here the work of younger authors belonging to the circle around Habermas, such as Johann Arnason, Axel Honneth, Hans Joas, G\u00fcnter Frankenberg, Ulrich R\u00f6del, and Klaus Eder, who have not only developed a critique of Habermas but are also engaged in developing an alternative to him within the framework of critical theory.",
+      "cited_by_count": 234,
+      "type": "article",
+      "source": {
+        "name": "Theory Culture & Society",
+        "type": "journal",
+        "issn": [
+          "0263-2764",
+          "1460-3616"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://cora.ucc.ie/bitstreams/4cbde446-10ad-4464-81d7-6464a3c54905/download"
+      },
+      "topics": [
+        "Evolution and Science Education"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W1964296938"
+    },
+    {
+      "openalex_id": "W2169983130",
+      "doi": "10.28945/473",
+      "title": "On the Difference or Equality of Information, Misinformation, and Disinformation: A Critical Research Perspective",
+      "authors": [
+        {
+          "name": "Bernd Carsten Stahl",
+          "openalex_id": "A5042194412",
+          "orcid": "https://orcid.org/0000-0002-4058-4456",
+          "institutions": [
+            "De Montfort University"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": "An international association advancing the multidisciplinary study of informing systems. Founded in 1998, the Informing Science Institute (ISI) is a global community of academics shaping the future of informing science.",
+      "cited_by_count": 143,
+      "type": "article",
+      "source": {
+        "name": "Informing Science The International Journal of an Emerging Transdiscipline",
+        "type": "journal",
+        "issn": [
+          "1521-4672",
+          "1547-9684",
+          "1547-9692"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.inform.nu/Articles/Vol9/v9p083-096Stahl65.pdf"
+      },
+      "topics": [
+        "Information Systems Theories and Implementation",
+        "Misinformation and Its Impacts",
+        "Cybersecurity and Cyber Warfare Studies"
+      ],
+      "referenced_works_count": 89,
+      "url": "https://openalex.org/W2169983130"
+    },
+    {
+      "openalex_id": "W2065965577",
+      "doi": "10.1086/229066",
+      "title": "The Normative Foundations of Emancipatory Theory: Evolutionary Versus Pragmatic Perspectives",
+      "authors": [
+        {
+          "name": "Robert J. Antonio",
+          "openalex_id": "A5032536828",
+          "orcid": "https://orcid.org/0000-0001-9617-5881",
+          "institutions": [
+            "University of Kansas"
+          ]
+        }
+      ],
+      "publication_year": 1989,
+      "publication_date": "1989-01-01",
+      "abstract": "From the start, emancipatory theory has been plagued by contradictory and incompletely elaborated normative underpinnings that weaken its sociological and ethical credibility. Jurgen Habermas, the leading contemporary critical theorist, has attempted to address this problem in an extensive reconstruction of the theories of Marx and Weber that appropriates elements of American pragmatist thought. Yet he resorts to an evolutionary normative argument that undermines the sociological powers of the two classical theories and contradicts the pragmatists' historical approach to values. This essay explains the significance of Habermasian theory for the emancipatory tradition, analyzes certain problems of the theory, and argues that an expanded dialogue with American pragmatism would strengthen both its sociological and its normative dimensions. Though the explicit focus is on the emancipatory tradition, the essay raises broader critical questions about pseudohistorical, normative justification in general sociological theory.",
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "American Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "0002-9602",
+          "1537-5390"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/229066"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Weber, Simmel, Sociological Theory",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 112,
+      "url": "https://openalex.org/W2065965577"
+    },
+    {
+      "openalex_id": "W2088167052",
+      "doi": "10.1080/002017402320947568",
+      "title": "Reason, Recognition, and Internal Critique",
+      "authors": [
+        {
+          "name": "Antti Kauppinen",
+          "openalex_id": "A5025295821",
+          "orcid": "https://orcid.org/0000-0001-6328-6374",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-12-01",
+      "abstract": "Normative political philosophy always refers to a standard against which a society's institutions are judged. In the first, analytical part of the article, the different possible forms of normative criticism are examined according to whether the standards it appeals to are external or internal to the society in question. In the tradition of Socrates and Hegel, it is argued that reconstructing the kind of norms that are implicit in practices enables a critique that does not force the critic's particular views on the addressee and can also be motivationally effective. In the second part of the article, Axel Honneth's theory of recognition is examined as a form of such reconstructive internal critique . It is argued that while the implicit norms of recognition made explicit in Honneth's philosophical anthropology help explain progressive social struggles as moral ones, his theory faces two challenges in justifying internal critique. The Priority Challenge asks for the reasons why the implicit norms of recognition should be taken as the standard against which other implicit and explicit norms are to be judged. The Application Challenge asks why a social group should, by its own lights, extend equal recognition to all its members and even non-members. The kind of functional, prudential, conceptual, and moral considerations that could serve to answer these challenges are sketched.",
+      "cited_by_count": 55,
+      "type": "article",
+      "source": {
+        "name": "Inquiry",
+        "type": "journal",
+        "issn": [
+          "0020-174X",
+          "1502-3923"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/002017402320947568"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2088167052"
+    },
+    {
+      "openalex_id": "W2439703894",
+      "doi": "10.21825/philosophica.82377",
+      "title": "How to Ground a Universalistic Ethics of Co-Responsibility for the Effects of Collective Actions and Activities?",
+      "authors": [
+        {
+          "name": "Karl\u2010Otto Apel",
+          "openalex_id": "A5111481059"
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-01-02",
+      "abstract": "L'A. essaie d'elucider, au niveau phenomenologique, les nouveaux defis de la responsabilite humaine, souleves par le stade actuel de l'evolution socio-culturelle. Les problemes de la responsabilite publique ou collective ont acquis aujourd'hui une nouvelle qualite morale et les solutions classiques ne sont plus satisfaisantes. Une nouvelle ethique est recherchee",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Philosophica",
+        "type": "journal",
+        "issn": [
+          "0379-8402",
+          "2295-9084"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://www.philosophica.ugent.be/article/82377/galley/202191/download/"
+      },
+      "topics": [
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W2439703894"
+    },
+    {
+      "openalex_id": "W2595370723",
+      "doi": null,
+      "title": "Work on a Labor Theory of Meaning",
+      "authors": [
+        {
+          "name": "Kenneth M. Casebeer",
+          "openalex_id": "A5008895646"
+        }
+      ],
+      "publication_year": 1989,
+      "publication_date": "1989-01-01",
+      "abstract": null,
+      "cited_by_count": 11,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://repository.law.miami.edu/cgi/viewcontent.cgi?article=1161&context=fac_articles"
+      },
+      "topics": [
+        "Political Economy and Marxism",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2595370723"
+    },
+    {
+      "openalex_id": "W1574421512",
+      "doi": "10.15448/1984-6746.2010.1.7329",
+      "title": "Towards a Phenomenology of Liberation: A Critical Theory of Race and the Fate of Democracy in Latin America",
+      "authors": [
+        {
+          "name": "Nythamar de Oliveira",
+          "openalex_id": "A5089503415",
+          "orcid": "https://orcid.org/0000-0001-9241-1031"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-04-30",
+      "abstract": "O artigo argumenta que o destino da democracia e o futuro do pensamento liberacionista na Am\u00e9rica Latina dependem de uma autocompreens\u00e3o dos conceitos correlativos de ra\u00e7a, etnicidade e identidade cultural. A fim de reformular o que seria uma filosofia latino-americana da liberta\u00e7\u00e3o, \u00e9 mister revisitar vers\u00f5es aut\u00f3ctones da an\u00e1lise marxista e da teoria cr\u00edtica na sua pr\u00f3pria g\u00eanese e produ\u00e7\u00e3o fenomenol\u00f3gica de significados.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Veritas (Porto Alegre)",
+        "type": "journal",
+        "issn": [
+          "0042-3955",
+          "1984-6746"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://revistaseletronicas.pucrs.br/ojs/index.php/veritas/article/download/7329/5296"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Political theory and Gramsci"
+      ],
+      "referenced_works_count": 76,
+      "url": "https://openalex.org/W1574421512"
+    },
+    {
+      "openalex_id": "W1979063710",
+      "doi": "10.5130/portal.v2i2.99",
+      "title": "What was Multiculturalism?",
+      "authors": [
+        {
+          "name": "V. Mishra",
+          "openalex_id": "A5025152762",
+          "orcid": "https://orcid.org/0000-0002-0193-9736",
+          "institutions": [
+            "Murdoch University"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-08-10",
+      "abstract": "This paper re-thinks the current imperative to theorize the (white) nation-state as a \u2018multination,\u2019 one in which the grand narrative of a nation\u2019s founding communities (and the presumption of assimilation upon which the grand narrative was always based) gives way to a multiply centred narrative attuned to questions of unequal power relations, racism, exploitation and so on. Multiculturalism as a theory has arisen out of this shift and presents itself not as an explanatory model of a given situation but as a problematic in need of continuous theorization. The paper argues that multiculturalism remains a thing of the past, a way in which the project of the Enlightenment and matters of justice may be rethought (but not radically altered) so as to accommodate the \u2018alien\u2019 within. And it is for this reason \u2013 because of its pastness \u2013 that it requires constant critique and re-evaluation, the need to specify the real, material conditions of racism and their relation to capital at every point.",
+      "cited_by_count": 17,
+      "type": "article",
+      "source": {
+        "name": "PORTAL Journal of Multidisciplinary International Studies",
+        "type": "journal",
+        "issn": [
+          "1449-2490"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://epress.lib.uts.edu.au/journals/index.php/portal/article/download/99/66"
+      },
+      "topics": [
+        "Political theory and Gramsci",
+        "Australian History and Society"
+      ],
+      "referenced_works_count": 66,
+      "url": "https://openalex.org/W1979063710"
+    },
+    {
+      "openalex_id": "W3005696266",
+      "doi": "10.36253/978-88-8453-636-5",
+      "title": "Autonomy: a Matter of Content",
+      "authors": [
+        {
+          "name": "Raffaela Giovagnoli",
+          "openalex_id": "A5072749897",
+          "orcid": "https://orcid.org/0000-0001-6468-3064",
+          "institutions": [
+            "Pontifical Lateran University"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-01-01",
+      "abstract": "Autonomy is the core of a lively debate on moral and political philosophy, where many competing perspectives and conceptual distinctions are presented. Several authors tend to override the metaphysical questions of determinism and free will: this is the right step for emphasizing the dimensions of individual choice as well as the role of socialization in developing capacities for critical reflection. In this context, the most important distinction is between \"moral\" autonomy and \"personal\" autonomy. Generally speaking, the theorists of personal autonomy try to give an account of autonomy that is conceived not only as moral agency. This move allows the consideration of several patterns of practical reasoning that imply several kinds of reasons for acting. The argumentation considers the discussion between \"procedural\" and \"substantive\" theories. Procedural theories emphasize the structural conditions of the process of \"identification\" with one's own motives. Even if these conditions are relevant, substantive theories rightly point to the role of the content of our reasons for autonomous agency. This perspective requires substantive standards according to which we can recognize and criticize oppressive norms. The main theoretical proposal of this work is to show the normative requirements for autonomy. An intersubjective model is promising if we consider socialization from the point of view of the process through which we develop the cognitive and moral capacities necessary for autonomy. The \"scorekeeping\" model, (an original variant of Wittgenstein's linguistic game as proposed by Robert Brandom) seems to offer the deontic structure of discursive practices in which the agents have the possibility of discussing and criticizing their own and others' reasons.",
+      "cited_by_count": 9,
+      "type": "book",
+      "source": {
+        "name": "Studi e saggi",
+        "type": "ebook platform",
+        "issn": [
+          "2704-5919"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.fupress.com/archivio/pdf/2408.pdf"
+      },
+      "topics": [
+        "Wittgensteinian philosophy and applications",
+        "Philosophical Ethics and Theory",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W3005696266"
+    },
+    {
+      "openalex_id": "W1507325376",
+      "doi": null,
+      "title": "The Philosophical Significance of Binary Categories in Habermas\u2019s Discourse Ethics",
+      "authors": [
+        {
+          "name": "Simon Susen",
+          "openalex_id": "A5055297764",
+          "orcid": "https://orcid.org/0000-0003-0643-1891",
+          "institutions": [
+            "City, University of London"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-09-01",
+      "abstract": "The philosophical programme associated with the discourse ethics of Jurgen Habermas has been widely discussed in the literature. The fact that Habermas has devoted a considerable part of his work to the elaboration of this philosophical programme indicates that discourse ethics can be regarded as a cornerstone of his communication-theoretic approach to society. In essence, Habermas conceives of discourse ethics as a philosophical framework which derives the coordinative power of social normativity from the discursive power of communicative rationality. Although there is an extensive literature on Habermas\u2019s communication-theoretic account of society, almost no attention has been paid to the fact that the theoretical framework which undergirds his discourse ethics is based on a number of binary conceptual divisions. It is the purpose of this paper to shed light on the philosophical significance of these binary categories in Habermas\u2019s discourse ethics and thereby demonstrate that their complexity is indicative of the subject\u2019s tension-laden immersion in social reality.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "City Research Online (City University London)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openaccess.city.ac.uk/id/eprint/2941/7/Simon%20Susen%20%282009%29%20%27The%20Philosophical%20Significance%20of%20Binary%20Categories%20in%20Habermas%27s%20Discourse%20Ethics%27%2C%20Sociological%20Analysis%2C%203%282%29%2C%20pp.%2097%E2%80%93125.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1507325376"
+    },
+    {
+      "openalex_id": "W1528728550",
+      "doi": "10.15448/1984-7289.2008.1.4320",
+      "title": "The idea of a critical social theory: Past, present and future",
+      "authors": [
+        {
+          "name": "Jonathan Trejo\u2010Mathys",
+          "openalex_id": "A5065475582"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-10-27",
+      "abstract": "Through a rereading of the development of critical theory of the Frankfurt School, the article attempts to show in which way Axel Honneth\u2019s theory is part of a process of learning and change of paradigm in the tradition of the Critical Theory of the Frankfurt School, inaugurated by Max Horkheimer in its inaugural class (Antrittsvorlesung) at the Instut for Social Research. Furthermore, the author presents the main questions that this theoretical model has to respond if it wants to present an answer to the contemporary problems. The autor also suggests that this theory needs to clarify the reasoning of his mormativity and to improve interdisciplinarity.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Civitas - Revista de Ci\u00eancias Sociais",
+        "type": "journal",
+        "issn": [
+          "1519-6089",
+          "1984-7289"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistaseletronicas.pucrs.br/ojs/index.php/civitas/article/download/4320/6865"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Hannah Arendt's Political Philosophy",
+        "Psychoanalysis and Social Critique"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W1528728550"
+    },
+    {
+      "openalex_id": "W591394162",
+      "doi": "10.2307/1431006",
+      "title": "Comrades, Friends and Companions. Utopian Projections and Social Action in German Literature for Young People 1926-1934",
+      "authors": [
+        {
+          "name": "Fritz H K\u00f6nig",
+          "openalex_id": "A5009637726"
+        },
+        {
+          "name": "Luke Springman",
+          "openalex_id": "A5022887720",
+          "institutions": [
+            "The Ohio State University"
+          ]
+        }
+      ],
+      "publication_year": 1991,
+      "publication_date": "1991-10-01",
+      "abstract": "Schenzinger's Der Hitlerjunge Quex (1932) exemplify \"realism\" in books for young people.5Similar distortions appear in a number of \"adult\" literary histories regarding \"Neue Sachlichkeit,\" the return to an objective reproduction of life in prose, a new facticity in art and literature dur ing the late Weimar period.Hence, Wilhelm Speyer and Erich Ebermayer, whose novels for young people project a decidedly volkisch5 idealism, are commonly grouped with Marxists such as Hans Fallada and Anna Seghers under the rubric of \"Neue Sachlichkeit.\"7Because of the inherent social contradictions, scholars m d critics in the GDR dispute categories of realism outside the author's ideological context.8Orthodox East German criticism distinguishes authors according to political atti tudes: Kastner belongs to the \"bourgeios-apologetic\" class of liberal authors, Schenzinger to fascist literature and Wedding has been accorded a",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "German Studies Review",
+        "type": "journal",
+        "issn": [
+          "0149-7952",
+          "2164-8646"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1487587604133714&disposition=inline"
+      },
+      "topics": [
+        "German legal, social, and political studies",
+        "German History and Society",
+        "German Literature and Culture Studies"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W591394162"
+    },
+    {
+      "openalex_id": "W2624367172",
+      "doi": "10.23689/fidgeo-739",
+      "title": "The general theory of public (spatial) planning",
+      "authors": [
+        {
+          "name": "L\u00e1szl\u00f3 Farag\u00f3",
+          "openalex_id": "A5033621859"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "This short discussion paper is a cross section or a thematic summary of a considerably longer work. The limited scope of the Discussion Papers series does not allow lengthy, detailed explanations or extensive references, only the presentation of mainly summarizing statements. In spite of the ensuing vulnerability, I did not refrain from the publication of my ideas in this form, hoping that they will become accessible to a wider readership in this way and the positive of negative feedback received will help me improve or further elaborate my theory. Hungary abandoned the practice of the former 'socialist' type planning in the early 1990s and even wound up the institutions related to it, but the development of a new planning system seems to take a longer time than expected. I believe that in a situation like this the best thing we can do to assist practice is to offer a sound theoretical foundation. A general theory can not only lead to a better understanding of the gist and possible forms of planning but can also serve as a basis for a continuously developing methodology of learning and rationalization. My purpose is to foster changes in attitudes to planning and to develop a new philosophy of planning with emphasis on teleology. I also intend to raise awareness concerning the limitations we have to face in the exploration of a given situation ...",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Geo-Leo e-docs (Deutsche Initiative f\u00fcr Netzwerkinformation)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.23689/fidgeo-739"
+      },
+      "topics": [
+        "Urbanization and City Planning"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2624367172"
+    },
+    {
+      "openalex_id": "W1567249227",
+      "doi": null,
+      "title": "Global transformation of the contemporary labour market for merchant navy seafarers : case studies of Filipino, South African and British seafaring labour markets.",
+      "authors": [
+        {
+          "name": "Shaun Ruggunan",
+          "openalex_id": "A5037965823",
+          "orcid": "https://orcid.org/0000-0001-9585-8939"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-01-01",
+      "abstract": "The central aim of this thesis is to investigate how and why labour markets are formed in specific ways under contemporary global capitalism. This thesis achieves this through a sociological analysis and explanatory account of the contemporary transformation of merchant navy seafaring labour markets for Filipino, South African and British seafarers. The study is centrally concerned with four questions relating to the restructuring of these labour markets. These questions are: 1. How has the labour market for seafarers been reshaped? 2. How has the restructuring of shipping capital facilitated this process process? 3. What has the role of labour been in this restructuring process? 4. What other labour market institutions contribute to this restructuring? Answering these four questions allows me to achieve the central aim of my thesis which is to investigate how and why labour markets are formed in specific ways under contemporary global capitalism. In answering these questions this thesis makes three theoretical interventions in industrial sociology. Firstly, this work offers a substantially different account of labour markets that advances a more fully social explanation of labour market formation that does not consider the social as a 'factor' or an 'add on' as does classical and neo classical economics (and some strands of economic sociology) but a significant shaper of global labour markets. Secondly, it fills a gap in theorising the agency of organised labour under global capitalism. The thesis demonstrated how the agency of organised labour and the importance of locality or place should also be accorded primacy in arguing how labour markets are produced. Thirdly in making my own assertions about the creation and decimation of working classes under capitalism, I draw on three detailed case studies of seafaring trade unions, capitalist and state strategies in the shaping and transformation of contemporary labour markets for seafarers and therefore demonstrate the fallibility of the 'race to the bottom' thesis using contemporary research and data.",
+      "cited_by_count": 5,
+      "type": "dissertation",
+      "source": {
+        "name": "ResearchSpace (University of KwaZulu-Natal)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10413/890"
+      },
+      "topics": [
+        "Labor Movements and Unions",
+        "Employment and Welfare Studies",
+        "Taxation and Compliance Studies"
+      ],
+      "referenced_works_count": 208,
+      "url": "https://openalex.org/W1567249227"
+    },
+    {
+      "openalex_id": "W132655925",
+      "doi": null,
+      "title": "The memory and expectation of aesthetics: a study of Adorno's aesthetic theory.",
+      "authors": [
+        {
+          "name": "Alan McPherson",
+          "openalex_id": "A5019557151",
+          "orcid": "https://orcid.org/0000-0001-6388-7399"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-10-01",
+      "abstract": "This study aims to clarify the underlying conceptual structure of Adorno\u2019s theoretical position with regard to both philosophy and art and to examine the expectation of philosophical aesthetics. I introduce Aesthetic Theory from a morphological point of view and claim that the form and structure of this unfinished text reveals a great deal about the book, as it exemplifies Adorno\u2019s theory of meaning. I claim that for Adorno dialectic is better thought of not in its Hegelian form but as a Kantian antinomy. This is because the dialectical oppositions he identifies cannot be resolved under the capitalist conditions of the administered world. I claim that philosophy understood as the construction of a form of totality, the constellation, provides the key to understanding Adorno\u2019s theory of meaning. This theory consists of three linked concepts: midpoint, constellation and&#13;\\nparataxis. I further claim that for Adorno art and philosophy are structured in the same way. Adorno has in effect developed a conception of art that depends for its ultimate justification on the concept of rank as explicated by the completion of the work of art by philosophy. Art and theory are thus entwined in a mimetic relationship. I claim there is a temporal dichotomy at the centre of Adorno\u2019s conception of the work of art, that it is both transient and absolute. This antinomy is what makes the work of art a paradoxically absolute commodity precisely because Adorno\u2019s concept of the work of art is modelled on the commodity form. I claim that Adorno\u2019s conception of the artwork as an instant is clearly closely related, in a structural and conceptual sense, to his conception of how philosophy works. Truth for Adorno is always located in the present instant. My textual analysis leads me to claim that for Adorno a utopian element is involved in writing a negative dialectical text. Finally, I claim that a theory of the art form in all its different typologies is best suited to carry out detailed critique and theoretical reflection on contemporary art. Philosophical aesthetics can only supply an historical perspective.",
+      "cited_by_count": 1,
+      "type": "dissertation",
+      "source": {
+        "name": "Middlesex University Research Repository (Middlesex University Of London)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://eprints.mdx.ac.uk/6506/1/AMcPherson-memory_%26_expectation_of_aesthetics.Phd.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Art, Politics, and Modernism",
+        "Visual Culture and Art Theory"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W132655925"
+    },
+    {
+      "openalex_id": "W4237025951",
+      "doi": "10.22215/etd/2005-08527",
+      "title": "An interrogation of Habermas' moral politics: evacuation of 'the political'",
+      "authors": [
+        {
+          "name": "Aysegul Ergul",
+          "openalex_id": "A5077120580",
+          "institutions": [
+            "Library and Archives Canada",
+            "Carleton University",
+            "Canadian Heritage"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "lnternet, preter, distribuer et vendre des theses partout dans le monde, a des fins commerciales ou autres, sur support microforme, papier, electronique et/ou autres formats.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://repository.library.carleton.ca/downloads/1r66j1794"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Hannah Arendt's Political Philosophy",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W4237025951"
+    },
+    {
+      "openalex_id": "W1579777662",
+      "doi": null,
+      "title": "Identity, Oppression, and Group Rights",
+      "authors": [
+        {
+          "name": "Andrew J. Pierce",
+          "openalex_id": "A5079431700",
+          "orcid": "https://orcid.org/0000-0003-0231-7549",
+          "institutions": [
+            "Loyola University Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "The dissertation argues for a conception of group rights based on Habermasian discourse theory, as an alternative to the dominant multicultural liberal approach to group rights, which treats group rights as instrumental to individual rights.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Loyola eCommons (Loyola University Chicago)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://ecommons.luc.edu/luc_diss/209"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Free Will and Agency",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W1579777662"
+    },
+    {
+      "openalex_id": "W845305348",
+      "doi": null,
+      "title": "So is There a Place for Morality? A Defence of Jilrgen Habermas's Discourse Ethics.",
+      "authors": [
+        {
+          "name": "Craig Faucette",
+          "openalex_id": "A5053348136"
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-09-01",
+      "abstract": "The purpose of this thesis is to offer a defence of Jlirgen Habermas's discourse ethics against rival ethical theories that are oriented toward questions of the good life. Habermas's discourse ethics is founded on the Kantian distinction between the right and good. This distinction has come under fire from hermeneutically informed theorists, such as Georgia Warnke and Charles Taylor, as being either unattainable and unnecessary (Warnke), or contradictory as it must rely on the cultural contextuality in which it is formed (Taylor). But since Habermas's discourse ethics is discursive in nature and founded on the structural pragmatics of language use, it is able to effectively answer both Warnke's and Taylor's concerns. I attempt to prove this by showing that Habermas grounds discourse ethics through linking it with the perspective in which participants partake in actual discourse; thus providing a quasi-contextual basis, while it still remains Kantian in nature, as its scope and function is cognitive, universal and formal.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": {
+        "name": "MacSphere (McMaster University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11375/13843"
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education",
+        "Critical Theory and Philosophy",
+        "Religious, Philosophical, and Educational Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W845305348"
+    },
+    {
+      "openalex_id": "W834303348",
+      "doi": null,
+      "title": "JUrgen Habermas: Discourse Ethics and the Development of a Contemporary Christian Ethic",
+      "authors": [
+        {
+          "name": "John MIchael Ford",
+          "openalex_id": "A5081294917"
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-04-01",
+      "abstract": "The purpose of this thesis is to introduce the reader to the person and work of social philosopher and social theorist J\u00fcrgen Habermas. It introduces pertinent aspects of Habermas's biography, and surveys a portion of his library of writings. It then explains Habermas's communication theory, specifically his theory of communicative action. Then, Habermas's theory of discourse ethics is introduced and explicated. This thesis culminates with an examination of the appropriateness and applicability of Habermas's theory of discourse ethics for the development of a contemporary Christian ethic.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": {
+        "name": "MacSphere (McMaster University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11375/13867"
+      },
+      "topics": [
+        "Catholicism and Religious Studies"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W834303348"
+    },
+    {
+      "openalex_id": "W200208627",
+      "doi": null,
+      "title": "Civil society, the public sphere and policy-making in a democracy: the case of the South African Human Sciences Research Council",
+      "authors": [
+        {
+          "name": "David Shepherd",
+          "openalex_id": "A5046337092"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-02-25",
+      "abstract": "Abstract&#13;\\nThe central argument in this MA research report is that arguing for a compromised or depleted political culture or space is extremely difficult if we consider the complexity of the public sphere. This involves firstly arguing that by re-interrogating the concept of the public sphere underpinning orthodox critical perspectives on democratic functioning from deliberative democratic theorists, we find notions of the critical public sphere have been corrupted by the idealism that accompanies this nonetheless important concept.&#13;\\nBy illuminating this flaw in the orthodox critical democratic perspective and applying it to critiques of South African democracy, I argue that critiquing South African politics and policy making should in general be done with more care, since what is under-contemplated in these critiques by way of the actual nature of the public sphere, is not negligible. Critics, who often start by characterising the political space as dominated by one party which allegedly renders the political space unfit for its critical purpose, ought to be fairer in their accounts. The end result of this increasingly consensual critical position is that we inhabit only a relatively meaningless formal democracy.&#13;\\nThe exploratory case study of the Human Sciences Research Council which I go on to consider was chosen on the basis of the considered guess that it was likely to throw up evidence of interesting illustrative tendencies in what I argue may constitute a \u2018new\u2019 public sphere. The theoretical possibilities I aim to highlight are arguably deserving of more focused appraisal in themselves, but the aim of this dissertation is to introduce the theoretical possibility of an under-theorised public sphere through highlighting how that situation came about, and less so, what would constitute evidence of the nascent theory\u2019s correctness.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": {
+        "name": "University of the Witwatersrand, Johannesburg Institutional Repository on DSpace (University of the Witwatersrand, Johannesburg)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10539/6452"
+      },
+      "topics": [
+        "Evaluation and Performance Assessment",
+        "Legal Issues in South Africa",
+        "Community Health and Development"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W200208627"
+    },
+    {
+      "openalex_id": "W4246629525",
+      "doi": "10.1353/book.46093",
+      "title": "Reappraisals",
+      "authors": [
+        {
+          "name": "Hohendahl, Peter Uwe",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 1991,
+      "publication_date": "1991-01-01",
+      "abstract": null,
+      "cited_by_count": 0,
+      "type": "book",
+      "source": {
+        "name": "Cornell University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://muse.jhu.edu/pub/255/oa_monograph/book/46093/pdf"
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4246629525"
+    },
+    {
+      "openalex_id": "W4235872052",
+      "doi": "10.22215/etd/2010-09585",
+      "title": "Communication as advocacy : the goals, contexts, and strategies of non-profit communication surrounding issues of homelessness in four Canadian cities",
+      "authors": [
+        {
+          "name": "Georgina Grosenick",
+          "openalex_id": "A5009262294"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "pr\u00eater, distribuer et vendre des th\u00e8ses partout dans le monde, \u00e0 des fins commerciales ou autres, sur support microforme, papier, \u00e9lectronique et/ou autres formats.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://repository.library.carleton.ca/downloads/s4655h299"
+      },
+      "topics": [
+        "Homelessness and Social Issues",
+        "Nonprofit Sector and Volunteering",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 114,
+      "url": "https://openalex.org/W4235872052"
+    },
+    {
+      "openalex_id": "W70289555",
+      "doi": null,
+      "title": "The Malaise of the modern university: Authenticity for universities in an age of instrumentalism",
+      "authors": [
+        {
+          "name": "Deborah Ann Bartlette",
+          "openalex_id": "A5050257724"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "Universities since their inception have responded to and been guided by the societies in which they were situated. A key question that arises is as follows: are the goals and purposes of Canadian universities in today's more market driven and globalized environments being fundamentally changed in a manner that represents a radical break with past ideas about liberal education and the role of the university in society? Charles Taylor's method of conceptual retrieval is used in conjunction with an historical survey of the ideals of the university throughout history to present the issue. Based on these historical ideals and the current context, a set of ideals for university education today is proposed. Further use is made of Taylor's and Jurgen Habermas' critiques of modernity in combination with Paul Ricoeur's ethical theories to provide a comprehensive analysis of the present situation in contemporary universities. Taylor's notions of authenticity and the modern social imaginary are applied to the situation of the university, as are the concepts of lifeworld and system in Habermas' Theory of Communicative Action and Ricoeur's 'just institutions'. Using the ideals for university education for today as a foundation, these aspects of the work of Taylor, Habermas and Ricoeur are utilized to suggest the framework of a covenantal organisational model for universities for the future. Covenantal models rather than those based on social contracts are shown to provide a foundation for public institutions in Canadian society which can counteract the current market driven trend in society. In the case of universities in particular, a covenantal model based on higher ideals contributes to the development of 'good citizens' and the continuation of democratic ideals for our larger society.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": {
+        "name": "Summit (Simon Fraser University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://summit.sfu.ca/item/9296"
+      },
+      "topics": [
+        "Hermeneutics and Narrative Identity",
+        "Pragmatism in Philosophy and Education",
+        "Multicultural Socio-Legal Studies"
+      ],
+      "referenced_works_count": 99,
+      "url": "https://openalex.org/W70289555"
+    },
+    {
+      "openalex_id": "W4240686892",
+      "doi": "10.22215/etd/2006-07635",
+      "title": "Sanitizing or civilizing the airwaves? Towards a regulatory ethic for the moral regulation of expression in public affairs programming",
+      "authors": [
+        {
+          "name": "Jane Britten",
+          "openalex_id": "A5037123816"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": "lnternet, preter, distribuer et vendre des theses partout dans le monde, a des fins commerciales ou autres, sur support microforme, papier, electronique et/ou autres formats.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://curve.carleton.ca/system/files/etd/3fa56b1b-4d9e-45d6-84d4-88542fc08af4/etd_pdf/0f43dea3b12356c6e368fd0ebea87d7c/britten-sanitizingorcivilizingtheairwavestowardsa.pdf"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Freedom of Expression and Defamation",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W4240686892"
+    },
+    {
+      "openalex_id": "W50260590",
+      "doi": null,
+      "title": "Political theory and social practices : G.A. Cohen, Rawls, Habermas and the problem of self-grounding",
+      "authors": [
+        {
+          "name": "James Gledhill",
+          "openalex_id": "A5087904161"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-07-01",
+      "abstract": "In a time of transitions, post-Rawlsian political philosophy is itself in transition, engaged in a methodological dispute regarding the relationship between political theory and changing social practices. This thesis enters this dispute through engaging with John Rawls\u2019s philosophical project and the two leading but contrasting critiques of Rawls\u2019s constructivist methodology. I first seek to rescue constructivism from G.A. Cohen\u2019s critique of its fact-dependence, but secondly argue with J\u00fcrgen Habermas for a shift from constructivism to reconstructivism. Part I establishes a theoretical framework. I analyse competing paradigms of the relationship between normative principles and social practices and situate them in relation to the problem of self-grounding. This is the methodological problem of how, in accordance with a conception of freedom as autonomy, philosophy can find normative foundations within existing social practices. While Cohen rejects this problem in arguing for a choice between realism and utopianism, Rawls\u2019s realistic utopianism and Habermas\u2019s utopian realism are both driven by the problem of self-grounding. Part II defends Rawls\u2019s constructivism against Cohen\u2019s criticism of its restricted focus on the basic structure of society and fact-dependence. Part III analyses and critiques the development of Rawls\u2019s project. It analyses Rawls\u2019s concern with the problem of stability and critiques from a Habermasian perspective the approach to the problem of self-grounding this represents. Part IV argues that post-Rawlsian deliberative democrats who have sought to combine ideas from Rawls and Habermas also fail to adequately address this methodological problem. Part V engages with Habermas on his own terms. I first analyse Habermas\u2019s reconstruction of the tension between facticity and validity in morality and politics. On this basis, I conclude that Habermas\u2019s procedural reconstructivism allows him to more successfully address the problem of self-grounding than Rawls\u2019s substantive constructivism, and assess the implications of this conclusion in theory and practice.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": {
+        "name": "London School of Economics and Political Science Research Online (London School of Economics and Political Science)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "Psychoanalysis, Philosophy, and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W50260590"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

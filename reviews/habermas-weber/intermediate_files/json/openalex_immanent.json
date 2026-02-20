@@ -1,0 +1,879 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas Weber normative immanent critique rationalization modernity",
+  "results": [
+    {
+      "openalex_id": "W1964296938",
+      "doi": "10.1177/026327692009003004",
+      "title": "The Ontogenetic Fallacy: The Immanent Critique of Habermas's Developmental Logical Theory of Evolution",
+      "authors": [
+        {
+          "name": "Piet Strydom",
+          "openalex_id": "A5013722581",
+          "orcid": "https://orcid.org/0000-0003-0581-8912"
+        }
+      ],
+      "publication_year": 1992,
+      "publication_date": "1992-08-01",
+      "abstract": "Since the emergence of neo-evolutionism in the 1960s, various critiques of the theory of social or socio-cultural evolution have been forwarded, including notably those of Immanuel Wallerstein, Alain Touraine and Anthony Giddens who decisively reject the idea of evolution. Within this context, J\u00fcrgen Habermas's theory of socio-cultural evolution has also become a specific object of critique, the best known in the English-speaking world being, perhaps, Michael Schmid's critique (1982). While the latter is ultimately based on neo-Darwinistic assumptions (1982a, 1987) which allow a non-Marxist alternative to be pitted against Habermas's position, a significant immanent critique has been taking shape during the late 1970s and 1980s the contours of which are at present starting to become visible, despite the fact that as yet it is nowhere developed and presented in a systematic manner. I have in mind here the work of younger authors belonging to the circle around Habermas, such as Johann Arnason, Axel Honneth, Hans Joas, G\u00fcnter Frankenberg, Ulrich R\u00f6del, and Klaus Eder, who have not only developed a critique of Habermas but are also engaged in developing an alternative to him within the framework of critical theory.",
+      "cited_by_count": 234,
+      "type": "article",
+      "source": {
+        "name": "Theory Culture & Society",
+        "type": "journal",
+        "issn": [
+          "0263-2764",
+          "1460-3616"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://cora.ucc.ie/bitstreams/4cbde446-10ad-4464-81d7-6464a3c54905/download"
+      },
+      "topics": [
+        "Evolution and Science Education"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W1964296938"
+    },
+    {
+      "openalex_id": "W2012854000",
+      "doi": "10.1080/002017400414881",
+      "title": "Modernity and Morality in Habermas's Discourse Ethics",
+      "authors": [
+        {
+          "name": "James Gordon Finlayson",
+          "openalex_id": "A5033736964",
+          "orcid": "https://orcid.org/0000-0003-0570-6048"
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-09-01",
+      "abstract": "Discourse ethics is originally conceived as a programme of philosophical justification of morality. This depends on the formal derivation of the moral principle (U) from non-moral principles. The moral theory is supposed to fall out of a pragmatic theory of meaning. The original programme plays a central role in Habermas's social theory: the moral theory, if true, provides good evidence for the more general theory of modernization. But neither Habermas nor his followers have succeeded in providing a formal derivation. This essay shows how and why Habermas's proposed derivation is impossible. As if aware of the lacuna, Habermas has recently suggested that (U) can be derived by 'abduction' rather than deduction. The proposal draws heavily on modernization theory; hence the only justification for (U) now available to him rests on premises drawn from that theory. The original programme of the justification of morality has thus given way to the weaker programme of the philosophical elucidation of morality. Further, since Habermas's moral theory is no longer justified independently of modernization theory, but at least partly by it, the moral theory cannot without circularity provide evidence for the modernization theory.",
+      "cited_by_count": 246,
+      "type": "article",
+      "source": {
+        "name": "Inquiry",
+        "type": "journal",
+        "issn": [
+          "0020-174X",
+          "1502-3923"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/002017400414881"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2012854000"
+    },
+    {
+      "openalex_id": "W2086551680",
+      "doi": "10.1080/09557570903433647",
+      "title": "Sociology and international relations: legacies and prospects",
+      "authors": [
+        {
+          "name": "George Lawson",
+          "openalex_id": "A5108221464",
+          "orcid": "https://orcid.org/0000-0001-9110-1883",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        },
+        {
+          "name": "Robbie Shilliam",
+          "openalex_id": "A5067165177",
+          "orcid": "https://orcid.org/0000-0001-6821-7079",
+          "institutions": [
+            "Victoria University of Wellington"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-02-10",
+      "abstract": "While sociological concepts have often been implicitly used in International Relations (IR), recent years have seen a more explicit engagement between IR and Sociology. As with any such interdisciplinary assignation, there are both possibilities and challenges contained within this move: possibilities in terms of reducing IR's intellectual autism and opening the discipline towards potentially fertile terrain that was never, actually, that distant; challenges in that interdisciplinary raiding parties can often serve as pseudonyms for cannibalism, shallowness and dilettantism. This forum reviews the sociological turn in IR and interrogates it from a novel vantage point\u2014how sociologists themselves approach IR concepts, debates and issues. Three sociological approaches\u2014classical social theory, historical sociology and Foucauldian analysis\u2014are critically deployed to illuminate IR concerns. In this way, the forum offers the possibility of (re)establishing exchanges between the two disciplines premised on a firmer grasp of social theory itself. The result is a potentially more fruitful sociological turn, one with significant benefits for IR as a whole.",
+      "cited_by_count": 69,
+      "type": "article",
+      "source": {
+        "name": "Cambridge Review of International Affairs",
+        "type": "journal",
+        "issn": [
+          "0955-7571",
+          "1474-449X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/epdf/10.1080/09557570903433647?needAccess=true&role=button"
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "Political Conflict and Governance",
+        "Peacebuilding and International Security"
+      ],
+      "referenced_works_count": 153,
+      "url": "https://openalex.org/W2086551680"
+    },
+    {
+      "openalex_id": "W200108960",
+      "doi": "10.1515/zfsoz-1994-0301",
+      "title": "Modern, Anti, Post, and Neo: How Social Theories Have Tried to Understand the \u201cNew World\u201d of \u201cOur Time\u201d",
+      "authors": [
+        {
+          "name": "Jeffrey C. Alexander",
+          "openalex_id": "A5058196351",
+          "orcid": "https://orcid.org/0000-0003-3600-8023"
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-06-01",
+      "abstract": "Abstract This article links the cognitive contents of the different theoretical perspectives that have emerged since World War II to their meaning-making functions, and links both to their social origins broadly understood. It views social theorists as intellectuals who try to understand the crisis of their times. In doing so, they draw not only upon the cognitive resources of earlier social theories but upon the structured traditions of cultural codes and narratives. In order to explain the new and often unnerving experiences of their changing societies, intellectuals develop binary oppositions whose constructions of sacrality and profanity allow them to place the present in relation to a simplified past and future, thus creating \u201chistory.\u201d Social theory is also built upon changing narrative forms, genres of collective heroism, romantic individualism, tragedy, comedy, realism, and irony. The author suggests that in recent years the comic and ironic perspectives of postmodern theory have been challenged by a neo-modern perspective that is more heroic and romantic and more confident about solving the \u201cproblems of our time.\u201d",
+      "cited_by_count": 96,
+      "type": "article",
+      "source": {
+        "name": "Zeitschrift f\u00fcr Soziologie",
+        "type": "journal",
+        "issn": [
+          "0340-1804",
+          "2366-0325"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/zfsoz-1994-0301/pdf"
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "Social and Cultural Dynamics",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W200108960"
+    },
+    {
+      "openalex_id": "W2915221463",
+      "doi": "10.32855/fcapital.200501.008",
+      "title": "Politics and Self in the Age of Digital (Re)producibility",
+      "authors": [
+        {
+          "name": "Robert W. Williams",
+          "openalex_id": "A5101397359",
+          "orcid": "https://orcid.org/0009-0001-8447-3643"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": null,
+      "cited_by_count": 40,
+      "type": "article",
+      "source": {
+        "name": "Fast Capitalism",
+        "type": "journal",
+        "issn": [
+          "1930-014X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://fastcapitalism.journal.library.uta.edu/index.php/fastcapitalism/article/download/22/21"
+      },
+      "topics": [
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 65,
+      "url": "https://openalex.org/W2915221463"
+    },
+    {
+      "openalex_id": "W1502393719",
+      "doi": null,
+      "title": "Max Weber, Talcott Parsons and the Sociology of Legal Reform: A Reassessment with Implications for Law and Development",
+      "authors": [
+        {
+          "name": "Chantal Thomas",
+          "openalex_id": "A5113445520",
+          "institutions": [
+            "Cornell University"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": null,
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Scholarship @ Cornell Law (Cornell University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarship.law.cornell.edu/cgi/viewcontent.cgi?article=1024&context=facpub"
+      },
+      "topics": [
+        "Law in Society and Culture",
+        "Judicial and Constitutional Studies",
+        "Legal Education and Practice Innovations"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1502393719"
+    },
+    {
+      "openalex_id": "W1520596102",
+      "doi": "10.31269/triplec.v7i2.91",
+      "title": "Towards a critical theory of information",
+      "authors": [
+        {
+          "name": "Christian Fuchs",
+          "openalex_id": "A5060268505",
+          "orcid": "https://orcid.org/0000-0003-0589-4579",
+          "institutions": [
+            "University of Salzburg"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-11-18",
+      "abstract": "Critical information theory is an endeavour that focuses ontologically on the analysis of information in the context of domination, asymmetrical power relations, exploitation, oppression, and control by employing epistemologically all theoretical and/or empirical means necessary for doing so in order to contribute at the praxeological level to the establishment of a participatory, co-operative society. Three foundational aspects of a critical theory of information are discussed in this paper: the relation of immanence and transcendence, the relation of base and superstructure, and ideology critique.The logical figure of immanent transcendence is based on the dialectic of essence and existence and poses a viable counterpart to positivistic and postmodern definitions of critique. As an example for the logic of immanent transcendence to critical information theory, a contradiction of the Internet economy is discussed.The debate on redistribution and recognition between critical theorists Nancy Fraser and Axel Honneth gives the opportunity to renew the discussion of the relationship of base and superstructure in critical social theory. Critical information theory needs to be aware of economic, political, and cultural demands that it needs to make in struggles for ending domination and oppression, and of the unifying role that the economy and class play in these demands and struggles. Objective and subjective information concepts are based on the underlying worldview of reification. Reification endangers human existence. Information as process and relation enables political and ethical alternatives that have radical implications for society.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "tripleC Communication Capitalism & Critique Open Access Journal for a Global Sustainable Information Society",
+        "type": "journal",
+        "issn": [
+          "1726-670X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.triple-c.at/index.php/tripleC/article/download/91/131"
+      },
+      "topics": [
+        "Political theory and Gramsci",
+        "Media, Communication, and Education",
+        "Information Systems Theories and Implementation"
+      ],
+      "referenced_works_count": 136,
+      "url": "https://openalex.org/W1520596102"
+    },
+    {
+      "openalex_id": "W659287061",
+      "doi": "10.1515/9781400820726",
+      "title": "The Rise of Eurocentrism: Anatomy of Interpretation",
+      "authors": [
+        {
+          "name": "Vassilis Lambropoulos",
+          "openalex_id": "A5041563039",
+          "orcid": "https://orcid.org/0000-0001-8581-5249"
+        }
+      ],
+      "publication_year": 1992,
+      "publication_date": "1992-12-14",
+      "abstract": "In the controversy over political correctness, the canon, and the curriculum, the role of Western tradition in a post-modern world is often debated. To clarify what is at stake, Vassilis Lambropoulos traces the ideology of European culture from the Reformation, focusing on a key element of Western tradition: the act of interpretation as a distinct practice of understanding and a civil right. Championed by Protestants insisting on independent interpretation of scripture, this ideal of autonomy ushered in the era of modernity with its essentialist philosophy of universal man and his aesthetic understanding of the world. After explaining the dominance of European culture through the combined archetypes of Hebraism (reason and morality) and Hellenism (spirit and art), Lambropoulos shows how the rule of autonomy has been transformed into the aesthetic, disinterested contemplation of things in themselves. Arguing that it is time to restore the socio-political dimension to the movement of autonomy, he proposes that a genealogy of the Hebraic-Hellenic archetypes can help us evaluate more recent models--like the Afrocentric one--and redefine the controversy surrounding education, Eurocentrism, and cultural politics",
+      "cited_by_count": 56,
+      "type": "book",
+      "source": {
+        "name": "Deep Blue (University of Michigan)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hdl.handle.net/2027.42/149463"
+      },
+      "topics": [
+        "Religious Education and Schools"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W659287061"
+    },
+    {
+      "openalex_id": "W2130366727",
+      "doi": "10.1590/s0102-69092000000500009",
+      "title": "Secularization in Max Weber. On current usefulness of re-accessing that old meaning",
+      "authors": [
+        {
+          "name": "Ant\u00f4nio Fl\u00e1vio de Oliveira Pierucci",
+          "openalex_id": "A5043992999"
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-01-01",
+      "abstract": "The author argues that the treatment of the secularization thesis by Brazilian empirical studies in sociology of religion is theoretically deficient. In the article, having regard to the empiricist and ill-advised celebration of recent religious ferments that are supposed to be turning our times into a \"de-secularized\" or \"post-secularized\" age, the author supports the claim for resetting the conceptual discussion. He suggests that it would be very useful to Brazilian sociology of religion to cope again with the old political-juridical meaning through which the problem of a socio-historical process of dessacralization was conceptualized, taking place above all in the sphere of political-juridical normativity. This is the meaning unfolded by Max Weber, considered the major proponent of the secularization theory, in his sociology of law.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "Revista Brasileira de Ci\u00eancias Sociais",
+        "type": "journal",
+        "issn": [
+          "0102-6909",
+          "1806-9053"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.scielo.br/j/rbcsoc/a/b8MhTgSRZ9Y5FK8tc74dqnq/?lang=en&format=pdf"
+      },
+      "topics": [
+        "Religion and Society in Latin America",
+        "Religion and Society Interactions",
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W2130366727"
+    },
+    {
+      "openalex_id": "W652013092",
+      "doi": null,
+      "title": "What can critical pedagogy learn from postmodernism? Further reflections on the impossible future of critical pedagogy",
+      "authors": [
+        {
+          "name": "Gert Biesta",
+          "openalex_id": "A5027223144",
+          "orcid": "https://orcid.org/0000-0001-8530-7105",
+          "institutions": [
+            "University of Luxembourg"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": null,
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "Open Repository and Bibliography (University of Luxembourg)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://orbilu.uni.lu/handle/10993/7043"
+      },
+      "topics": [
+        "Education and Critical Thinking Development",
+        "Critical and Liberation Pedagogy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W652013092"
+    },
+    {
+      "openalex_id": "W1883161942",
+      "doi": null,
+      "title": "Beyond Theocracy and Secularism (Part I) : Toward a New Paradigm for Law and Religion",
+      "authors": [
+        {
+          "name": "Mark C. Modak\u2010Truran",
+          "openalex_id": "A5036211144",
+          "institutions": [
+            "Mississippi College"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-07-11",
+      "abstract": "As part of a larger project challenging and moving beyond the premodern and modern paradigms, this article focuses on the modern paradigm and its notion of secularization. Section II will discuss the origin of the modern paradigm as a reaction to the religious pluralism and the religious wars in the sixteenth and seventeenth century such as the Thirty Years War in Europe (1618-48) and the English Civil War (1642-51) resulting from the Protestant Reformation. The Reformation divided the Western part of the Christian tradition into separate confessional institutions based on different theological interpretations of Christianity such as Lutheran, Calvinist, and Anabaptist. The Lutheran, Calvinist, and Anabaptist understandings of the relationship of the church and the state were substantially different from the Roman Catholic understanding. Under the pre-modern paradigm, only one of these understandings of the Christian tradition could legitimate the state. This produced conflict and eventually war among these confessional institutions for control of the state. Faced with religious conflict and devastating religious wars, the modern paradigm attempted to replace the religious legitimation under the pre-modern paradigm with a secular legitimation of law based on the Enlightenment view of reason. The secular legitimation of law under the modern paradigm attempted to separate law and religion into autonomous spheres so that a plurality of religious traditions could coexist within a state.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "MC Law Digital Commons (Mississippi College)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dc.law.mc.edu/cgi/viewcontent.cgi?article=1586&context=lawreview"
+      },
+      "topics": [
+        "American Constitutional Law and Politics",
+        "Religion and Society Interactions",
+        "Religion, Gender, and Enlightenment"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1883161942"
+    },
+    {
+      "openalex_id": "W2144712641",
+      "doi": "10.15448/1984-6746.2000.4.35093",
+      "title": "CRITIQUE OF PUBLIC REASON REVISITED: KANT AS ARBITER BETWEEN RAWLS AND HABERMAS",
+      "authors": [
+        {
+          "name": "Nythamar de Oliveira",
+          "openalex_id": "A5089503415",
+          "orcid": "https://orcid.org/0000-0001-9241-1031",
+          "institutions": [
+            "Pontif\u00edcia Universidade Cat\u00f3lica do Rio Grande do Sul"
+          ]
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-12-31",
+      "abstract": "Trata-se de revisitar o debate Rawls-Habermas,em particular, o problema da autonomia pol\u00edtica \u00e0 luz da apropria\u00e7\u00e3o que estes autores nos oferecem do procedimentalismo kantiano.Tanto John Rawls quanto J\u00fcrgen Habermas, em suas respectivas concep\u00e7\u00f5es de \"cultura pol\u00edtica\" e \"esfera p\u00fablica,\" partem de uma equivocada atribui\u00e7\u00e3o de um fundacionalismo moral em Kant (\"fato da raz\u00e3o\") de forma a preservar o princ\u00edpio normativo de universalizabilidade capaz de assegurar a estabilidade de uma \"sociedade bem ordenada\" (Rawls) e balizar o procedimentalismo democr\u00e1tico enquanto alternativa para os modelos liberais e republicanos (Habermas).",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Veritas (Porto Alegre)",
+        "type": "journal",
+        "issn": [
+          "0042-3955",
+          "1984-6746"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://revistaseletronicas.pucrs.br/ojs/index.php/veritas/article/download/35093/18422"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2144712641"
+    },
+    {
+      "openalex_id": "W1496118927",
+      "doi": null,
+      "title": "Bringing hope to crisis: critical thinking, ethical action and social change",
+      "authors": [
+        {
+          "name": "Sarah Amsler",
+          "openalex_id": "A5027325971",
+          "orcid": "https://orcid.org/0000-0003-0752-8804"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "INTRODUCTION This paper departs from this point to consider whether and how crisis thinking contributes to practices of affirmative critique and transformative social action in late-capitalist societies. I argue that different deployments of crisis thinking have different \u2018affect-effects\u2019 and consequences for ethical and political practice. Some work to mobilize political action through articulating a politics of fear, assuming that people take most responsibility for the future when they fear the alternatives. Other forms of crisis thinking work to heighten critical awareness by disrupting existential certainty, asserting an \u2018ethics of ambiguity\u2019 which assumes that the continuous production of uncertain futures is a fundamental part of the human condition (de Beauvoir, 2000). In this paper, I hope to illustrate that the first deployment of crisis thinking can easily justify the closing down of political debate, discouraging radical experimentation and critique for the sake of resolving problems in a timely and decisive way. The second approach to crisis thinking, on the other hand, has greater potential to enable intellectual and political alterity in everyday life\u2014but one that poses considerable challenges for our understandings of and responses to climate change...",
+      "cited_by_count": 7,
+      "type": "book-chapter",
+      "source": {
+        "name": "Lincoln Repository (University of Lincoln)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://eprints.lincoln.ac.uk/id/eprint/5821/1/Amsler_Bringing_Hope_to_Crisis.pdf"
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Philosophy, Ethics, and Existentialism",
+        "Posthumanist Ethics and Activism"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W1496118927"
+    },
+    {
+      "openalex_id": "W1904524394",
+      "doi": null,
+      "title": "Max Weber in the Post-World War II US and After",
+      "authors": [
+        {
+          "name": "Robert J. Antonio",
+          "openalex_id": "A5032536828",
+          "orcid": "https://orcid.org/0000-0001-9617-5881"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "This essay analyzes Max Weber\u2019s place in post-World War II US social thought, when English-language translations, interpretations, and applications of his work proliferated and it became widely known in American sociology and related fields. The focus is on shifting interpretations and meanings of Weber\u2019s work in different phases of postwar American culture, society, and politics from the Cold War era through the post-9/11 years. Weber\u2019s ideas have been fused with those of diverse thinkers and traditions and have been applied in ways that he likely would have rejected and that stricter Weberians castigate. The various Weber fusions engage modernization theory- arguably the postwar era\u2019s primary metanarrative for legitimating and challenging the liberal democratic policy regime. The historical discussion provides context for later sections on Weber\u2019s salience in the US today and for a possible Weber fusion after postwar modernization. Max Weber has been understood and constructed in divergent ways in different historical moments and contexts. His rich, multisided corpus is open to diverse interpretations, and, thus, arguments about its overall shape or main thrust have varied widely. And just when he seems to have lost relevance, like a phoenix he appears again on the horizon. This essay analyzes his place in post-World War II US social thought, when English-language translations, interpretations, and applications of his work proliferated and it became widely known in American sociology and related fields. (2) His ideas have been fused with those of other thinkers and applied in ways that he likely would have rejected and that stricter Weberians castigate. Even Weber\u2019s hostile critics often have employed facets of his thought (often unknowingly) against him. Like Nietzsche\u2019s views, Weber\u2019s ideas have been \u201cin the air, \u201d and much of his impact has been tacit. His concepts and vocabulary have been embedded in wider rationalization and modernization discourses. This essay focuses on shifting interpretations and meanings of Weber\u2019s",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "OpenstarTs (Univeristy of Trieste https://www.units.it/)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10077/5344"
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "Critical Theory and Philosophy",
+        "Political Theology and Sovereignty"
+      ],
+      "referenced_works_count": 229,
+      "url": "https://openalex.org/W1904524394"
+    },
+    {
+      "openalex_id": "W1553840984",
+      "doi": null,
+      "title": "Prospects for Inclusive Social Citizenship in an Age of Structural Inactivity",
+      "authors": [
+        {
+          "name": "Anton Hemerijck",
+          "openalex_id": "A5012904841",
+          "orcid": "https://orcid.org/0000-0001-8695-1250",
+          "institutions": [
+            "Max Planck Institute for the Study of Societies",
+            "Max Planck Society"
+          ]
+        }
+      ],
+      "publication_year": 1999,
+      "publication_date": "1999-01-01",
+      "abstract": "One of the paradoxes of contemporary European welfare states is that while today practically every adult citizen seeks gainful employment, jobs are hard to come by. There is a growing number of (economically) inactive citizens, people of working age who are structurally dependent on social policy for their livelihood. In this paper the rise of structural inactivity is analyzed from two contrasting sets of arguments about the \"unintended\" or \"perverse\" effects of social policy. The first argument revolves around the decline of the traditional work ethic in the welfare state; the second argument suggests that the predicament of structural inactivity is the consequence of accumulated rigidities and historically perverse social security policy choices. Both arguments are subsequently confronted with empirical evidence from the highly advanced welfare state of the Netherlands, which after a deep crisis of inactivity has been able to reverse the cycle of declining activity and rising inactivity through a lengthy process of negotiated social reform. Finally, the paper, in terms of normative policy advice, considers a number of \"employment-friendly\" policy initiatives which are likely to result in an increase of labour force participation in persons and a voluntary decrease in hours worked. This could foster a more nuanced and less gendered work ethic, while maintaining the moral integrity of an inclusive and rights-based conception of social citizenship.",
+      "cited_by_count": 10,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "http://hdl.handle.net/11858/00-001M-0000-0012-57B5-F"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Employment and Welfare Studies",
+        "Housing, Finance, and Neoliberalism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1553840984"
+    },
+    {
+      "openalex_id": "W2589899635",
+      "doi": null,
+      "title": "Utopia and its Discontents: Dreams of Catastrophe and the End of 'the End of History'",
+      "authors": [
+        {
+          "name": "Matthew Charles",
+          "openalex_id": "A5061992298",
+          "orcid": "https://orcid.org/0000-0001-9657-3935"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "The institutionalization of Utopia Studies in the last decade is premised upon a specifically aesthetic reception of Ernst Bloch\u2019s theory of the \u201cutopian impulse\u201d during the 1980s and 1990s. A postmodern uneasiness to both left and right formulations of the \"End of History\" during this period imposes a resistance to concepts of historical and political closure or totality, resulting in a \"Utopianism without Utopia\". For all the attractiveness of this pan-utopianism, its failure to consider the relation between historical representation and fulfillment renders it consummate with liberalism as a merely inverted conservatism.\\n\\nIn contrast to this specific recuperation of a Bloch, the continuing importance of Walter Benjamin\u2019s theory of the dialectical image and the speculative concept of historical experience which underlies it becomes apparent. The intrusion of the historical Absolute is coded throughout Benjamin\u2019s thought as the eruptive and mortuary figure of catastrophe, which stands as the dialectical counterpart to the utopian wish images of the collective dream. Indeed, the motto under which the Arcades Project was to be constructed derives from Adorno: \u201cEach epoch dreams of itself as annihilated by catastrophe\u201d.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "WestminsterResearch (University of Westminster)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://westminsterresearch.westminster.ac.uk/item/9v642/utopia-and-its-discontents-dreams-of-catastrophe-and-the-end-of-the-end-of-history"
+      },
+      "topics": [
+        "Walter Benjamin Studies Compilation",
+        "Political Economy and Marxism",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2589899635"
+    },
+    {
+      "openalex_id": "W1567651520",
+      "doi": "10.7275/democratic-communique.296",
+      "title": "Surveillance, Mass Culture and the Subject: A Systems/Lifeworld Approach",
+      "authors": [
+        {
+          "name": "Stephen M. E. Marmura",
+          "openalex_id": "A5046664531",
+          "orcid": "https://orcid.org/0000-0003-0309-376X"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-08-15",
+      "abstract": "Habermas\u2019s (1984/1989) Theory of Communicative Action provides distinct advantages for considering both the evolving character of surveillance within the context of late capitalism, andrelated changes to human subjectivity and culture. In particular, the concepts systems, lifeworld and colonization may be employed to identify key threats to democratic life within information- based, consumer-driven societies. Many recent social theoretical approaches to the study of surveillance emphasize the entanglement of human subjectivity with \u201celectronic language\u201d and computer-based practices of personal data gathering and profiling. One result is that conscious, embodied, human subjects are often not treated as potentially significant agents of progressive social change. Alternatively, Habermas makes a methodological distinction between the impersonal workings of administrative and economic systems, and the lifeworld of communally shared experience. This allows for critical attention to the potentially negative social/cultural effects of commercial surveillance practices, while preserving a role for rational human actors.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Scholarworks (University of Massachusetts Amherst)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarworks.umass.edu/democratic-communique/vol22/iss2/1"
+      },
+      "topics": [
+        "Media Studies and Communication",
+        "Social Media and Politics",
+        "Privacy, Security, and Data Protection"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W1567651520"
+    },
+    {
+      "openalex_id": "W2555944703",
+      "doi": null,
+      "title": "Teaching Contingencies: Deleuze, Creativity Discourses, and Art",
+      "authors": [
+        {
+          "name": "Soodabeh Salehi",
+          "openalex_id": "A5018501419"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-05-16",
+      "abstract": null,
+      "cited_by_count": 7,
+      "type": "dissertation",
+      "source": {
+        "name": "QSpace (Queen's University Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1974/1209"
+      },
+      "topics": [
+        "Art Education and Development"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W2555944703"
+    },
+    {
+      "openalex_id": "W3125004735",
+      "doi": null,
+      "title": "Habermas's Discourse Theory of Law and Democracy",
+      "authors": [
+        {
+          "name": "Hugh Baxter",
+          "openalex_id": "A5003766651"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-01-01",
+      "abstract": "In his 1992 book, \"Between Facts and Norms,\" J\u00fcrgen Habermas develops a two-part theory of law and democracy. This article examines the first part \u2013 the \u201creconstructive\u201d part \u2013 in which Habermas seeks the most basic principles that justify modern legal and political orders, as well as the institutions and practices through which those principles are realized. Habermas's aims in this part of his theory are ambitious. His largest goal is to reconcile classic tensions in political theory, most notably the tension between basic rights and democracy \u2013 or, in terms of American legal theory, the \u201ccountermajoritarian difficulty.\u201d He argues that, properly understood, basic individual rights and democracy do not conflict but in fact mutually presuppose one another. This reconciliation is the task of his \u201csystem of rights,\u201d i.e., his account of the basic rights that must be recognized if a modern legal and political order is to be legitimate. Habermas\u2019s reconstructive theory then turns to an account of the principles of the \u201cconstitutional state\u201d (Rechtsstaat, also translated as \u201cthe rule of law\u201d), through which the system of rights is institutionalized. According to Habermas, law is legitimate only to the extent that it emerges from a broadly inclusive process of participatory democracy. The core of Habermas\u2019s account of the \u201cconstitutional state\u201d is an analysis of how state power (\u201cadministrative power,\u201d in his terminology) may emerge from, and be limited by, the \u201ccommunicative power\u201d formed through citizens\u2019 public political discussion. Habermas reinterprets the separation-of-powers idea in terms of his \u201cdiscourse theory\u201d \u2013 that is, his theory of the kinds of reasons and arguments that appropriately may be used to defend, criticize, and justify different kinds of claims. He focuses particularly on the role of adjudication. According to Habermas, courts are limited to \u201cdiscourses of application,\u201d in which they apply democratically enacted norms to particular cases. They are not, according to Habermas, permitted to engage in \u201cdiscourses of justification,\u201d through which norms are created.\\nThis article first expresses skepticism about whether Habermas genuinely has reconciled the classical tension between basic rights and democracy. The purported reconciliation, I argue, operates largely by definitional fiat and succeeds only at a purely conceptual level. The tension between basic rights and democracy remains in the actual operation of a constitutional state. My main critical targets, however, concern the notion of separated powers and adjudication, particularly judicial review. I criticize the basic premise of Habermas\u2019s theory of the constitutional state: the so-called \u201cdiscourse principle,\u201d according to which a norm (whether legal or moral) is justified only if it could receive universal assent in an unconstrained discourse. I show that this idea is too demanding to justify any substantive legal norms, and I maintain that Habermas\u2019s recourse to procedural justification is futile.The conclusion I draw is that while modern legal orders institutionalize discourse of various kinds, and at various sites, they cannot be said to institutionalize Habermas\u2019s \u201cdiscourse principle,\u201d with its requirement of (even potential) universal assent.\\nI am more critical still of Habermas\u2019s general theory of adjudication. One difficulty I identify is that Habermas offers no account of judicial interpretation. A second and equally serious shortcoming is that Habermas\u2019s theory leaves no place for common-law adjudication. Common-law decisionmaking requires \u201cdiscourses of justification,\u201d not just the \u201cdiscourses of application\u201d to which Habermas would confine the judiciary. Further, common-law norms lack the democratic pedigree that Habermas\u2019s theory of legitimacy would require. While of course Habermas could argue straightforwardly that common-law adjudication is simply illegitimate, he makes no such argument explicitly. Moreover, I contend, if he had made such an argument, it would have been inconsistent with the premises of a \u201creconstructive\u201d theory. Such a theory cannot reject, as a simple mistake, a practice that is as basic to the reconstructed order as common-law adjudication is to Anglo-American legal systems.\\nI take issue, finally, with Habermas\u2019s account of judicial review. I maintain that the centerpiece of this account \u2013 the distinction between \u201cdiscourses of justification\u201d and \u201cdiscourses of application\u201d \u2013 cannot be drawn nearly so sharply as Habermas believes. Application of general constitutional norms inevitably requires courts to develop more specific rules that are not explicit in the text of the governing norm. Establishment of these rules is as much \u201cjustification,\u201d in Habermas\u2019s sense, as it is \u201capplication.\u201d Failure to recognize this point undermines Habermas\u2019s critique of both German constitutional practice and Frank Michelman\u2019s \u201crepublican\u201d constitutional theory. Further, despite his main theme of deference to democratically enacted legislation, Habermas\u2019s demanding criteria for democratic legitimacy push him toward a radical judicial activism. Habermas\u2019s theory of judicial review speaks with two voices, I argue, and the conflict between these voices is insoluble because the theory is developed too abstractly.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "eYLS (Yale Law School)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://digitalcommons.law.buffalo.edu/buffalolawreview/vol50/iss1/6"
+      },
+      "topics": [
+        "Law in Society and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3125004735"
+    },
+    {
+      "openalex_id": "W3125365295",
+      "doi": null,
+      "title": "The Persistence of Power and the Struggle for Dialogic Standards in Postmodern Constitutional Jurisprudence: Michelman, Habermas, and Civic Republicanism",
+      "authors": [
+        {
+          "name": "Stephen M. Feldman",
+          "openalex_id": "A5017227818",
+          "institutions": [
+            "University of Wyoming"
+          ]
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-01-01",
+      "abstract": "Since the 1950s most constitutional scholars have presumed that the American political system is pluralistic with autonomous individuals struggling in the legislative arena to maximize the satisfaction of their preexisting private interests The new republicans reject these presumptions and insist that constitutional jurisprudence must recognize the potential for virtuous citizens to engage in a political dialogue that generates public values and identifies a common good Frank I Michelman has pioneered this revival by confronting one of the most troubling and persistent difficulties of civic republican thought the likelihood that the political dialogue will be closed to segments of the community and therefore will generate public values skewed toward the interests of the already dominant social groups This article questions whether Michelmans reasoning supports his conclusion that politics should be deliberative and that the community should strive to be as inclusive and undistorted by power as possible Postmodern theories suggest that power is so pervasive and persistent that the political dialogue must always be distorted and exclusive If a postmodern critical theory is possible in constitutional jurisprudence it must accept the necessity of community and tradition of prejudices and interests and of distortion and exclusion This article explores Michelmans civic republican conception of politics and his neotranscendental approach to the problem of dialogic critique To facilitate understanding this approach it includes a brief discussion of the relationship between Jurgen Habermass neotranscendental theory of communicative action and HansGeorg Gadamers philosophical hermeneutics It explores how postmodern theories including philosophical hermeneutics reveal weaknesses in Habermass theory that are mirrored in and ultimately defeat Michelmans effort to articulate and legitimize a critical norm in constitutional jurisprudence and proceeds to discuss how Michelman eventually acknowledges this postmodern challenge to his theory suggesting that certain prereflective cognitive structures might create the possibility for undistorted and inclusive political dialogue The article presents an alternative approach to resolving the struggle for dialogic standards in constitutional jurisprudence",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "eYLS (Yale Law School)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarship.law.uwyo.edu/faculty_articles/117"
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education",
+        "Law in Society and Culture",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3125365295"
+    },
+    {
+      "openalex_id": "W2282104976",
+      "doi": null,
+      "title": "Interruption and Alterity: Dislocating Communication",
+      "authors": [
+        {
+          "name": "Amit Pinchevski",
+          "openalex_id": "A5046053110",
+          "orcid": "https://orcid.org/0000-0001-7839-1732"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-05-01",
+      "abstract": "This project attempts to question the way the relation between communication and ethics has traditionally been conceptualized, and to offer an alternative perspective on that relation. An implicit premise in many communication theories is that successful communication is ethically favorable, particularly in facilitating ideals such as greater understanding, participation and like-mindedness. Contrary to that view, this project proposes that ethical communication may lie in the interruption of communication, in instances wherein communication falls short, goes astray or even fails. Such interruptions, however, do not mark the end of ethical communication but rather its very beginning, for it is in such moments that communication faces the challenge of otherness. Mobilizing relevant ideas from the work of French philosopher Emmanuel Levinas to the field of communication studies, this project proposes the concept of interruption as the main correlative between ethics and communication. The investigation then sets out to explore three limit-cases in which the stakes of ethical communication are most crucial: understanding and misunderstanding, communicability and incommunicability, and silence and speech. The discussion employs a distinctive approach to study the place of alterity in communication: dislocation\u00e2\u0080\u0094a double gesture which implies both tampering with the proper activity of communicational procedures and pointing to the ethical possibilities opened up by interruptions. The issues above are addressed through critical analyses of themes such as: universal language or the undoing of Babel; the ethical significance of misunderstanding and the challenge introduced by translation; autism as a paradigmatic case of incommunicability in medical, scientific and social discourses; the epistemological status and the ethical stakes of incommunicability; and, finally, the ethical dimension of free speech, the significance of silence and the responsibility to the silent Other.",
+      "cited_by_count": 4,
+      "type": "dissertation",
+      "source": {
+        "name": "eScholarship@McGill (McGill)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.mcgill.ca/concern/theses/3n204135m"
+      },
+      "topics": [
+        "Philosophy, Ethics, and Existentialism",
+        "Postmodernism in Literature and Education",
+        "Rhetoric and Communication Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2282104976"
+    },
+    {
+      "openalex_id": "W198496703",
+      "doi": null,
+      "title": "Expanding the borders of democracy: Deliberative democracy and populism",
+      "authors": [
+        {
+          "name": "Mar\u00eda Esperanza Casullo",
+          "openalex_id": "A5072777390",
+          "orcid": "https://orcid.org/0000-0003-3716-5370"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "Thesis (Ph.D.)--Georgetown University, 2009.; Includes bibliographical\\n references.; Text (Electronic thesis) in PDF format. The goal of this dissertation is to\\n expand democratic theory, by comparing and contrasting two of the most important contemporary\\n paradigms of democratic thought: the theory of deliberative democracy and the theory of\\n populist democracy. The dissertation asserts that the deliberative democratic theory does not\\n discuss the issue of power as thoroughly as it should, and that it does not treat the matter\\n of inclusion and exclusion with the seriousness that it deserves. The dissertation proposes\\n that populist mobilization is a necessary corrective to the shortcomings of deliberative\\n democracy. Finally, the dissertation explores ways in which deliberation and mobilization can\\n be institutionalized in ways that are conducive to more democratization. The authors examined\\n in the course of this dissertation are: Ju\u0308rgen Habermas, John Rawls, Mark Warren, Jean Cohen\\n and Andrew Arato, Aristotle, Machiavelli, Chantal Mouffe, Ernesto Laclau, Kurt Wayland and\\n Torcuato Di Tella, among others.",
+      "cited_by_count": 4,
+      "type": "dissertation",
+      "source": {
+        "name": "DigitalGeorgetown (Georgetown University Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10822/553076"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Critical Theory and Philosophy",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W198496703"
+    },
+    {
+      "openalex_id": "W1596648290",
+      "doi": null,
+      "title": "Democracy, ideology and the construction of meaning in the electronic age : a critical analysis of the political implications of electronic means of communication.",
+      "authors": [
+        {
+          "name": "Peter Andrew. Osborn",
+          "openalex_id": "A5073450563"
+        }
+      ],
+      "publication_year": 1997,
+      "publication_date": "1997-01-01",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "dissertation",
+      "source": {
+        "name": "ResearchSpace (University of KwaZulu-Natal)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10413/7318"
+      },
+      "topics": [
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1596648290"
+    },
+    {
+      "openalex_id": "W1481555992",
+      "doi": null,
+      "title": "Knowledge entrepreneurship in universities. Practice and strategy in the case of Internet based innovation appropiation",
+      "authors": [
+        {
+          "name": "Maximilian Senges",
+          "openalex_id": "A5069489652"
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-12-10",
+      "abstract": "La tesi sost\u00e9 que la capacitat empresarial de coneixement \u00e9s un argument convenient i apte per expressar la idea de la universitat al segle XXI. Aix\u00f2 \u00e9s veritable perqu\u00e8 combina la destrucci\u00f3 creativa positiva de l'emprenedoria encara que tamb\u00e9 admet el mandat socio-transformacional d'universitats (i de l'educaci\u00f3 en la seva totalitat). Es dedueix que l'emprenedoria del coneixement consisteix d'un mindset empresarial associat amb el gestell (infraestructura). Aquests s\u00f3n els components necessaris per desenvolupar la capacitat d'explotar constantment les oportunitats estrat\u00e8giques per a la innovaci\u00f3 (com s'ha descrit en el cas de apropiaci\u00f3 de la innovaci\u00f3 basada en Internet). L'obra destaca la sent\u00e8ncia \"menys d'un 15 per cent d'universitats tenien una estrat\u00e8gia a llarg termini sobre com integrar la nova tecnologia\" (Guarda, 2004) feta el 2004 pel president del Grup de treball de tecnologia de la informaci\u00f3 dels rectors espanyols que encara \u00e9s certa per a Europa el 2007. El treball teoritza sobre les condicions f\u00edsiques i metaf\u00edsiques que poden ajudar a les universitats a corregir aquesta defici\u00e8ncia.",
+      "cited_by_count": 7,
+      "type": "dissertation",
+      "source": {
+        "name": "Tesis Doctorals en Xarxa (Consorci de Serveis Universitaris de Catalunya)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.tdx.cat/TDX-0307108-140133"
+      },
+      "topics": [
+        "E-Learning and Knowledge Management",
+        "Intellectual Capital and Performance Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1481555992"
+    },
+    {
+      "openalex_id": "W4367676127",
+      "doi": "10.32597/dissertations/55/",
+      "title": "A Critique of the Urban Mission of the Church in the Light of an Emerging Postmodern Condition",
+      "authors": [
+        {
+          "name": "Kleber Gon\u00e7alves",
+          "openalex_id": "A5114067478"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "The world is becoming an urban society. The urban expansion witnessed during the twentieth century and continuing into the twenty-first century is unprecedented in the history of the human civilization. Simultaneously, the Western world faces the paradigm shift from the modern era to a postmodern condition. Both movements have remarkable implications for the mission of the church in urbanized, postmodernizing societies. Shaped by the modern worldview, the church is now further ostracized by the postmodern condition. While the literature of urban mission has grown in the past few years, very little consideration has been given to the particular issues and implications of urban mission in the context of postmodernity. Thus, this study addresses the relationship between the urban mission of the church and the emergence of the postmodern condition. This investigation of urban mission in the light of the postmodern ethos is based on the historical, philosophical, sociological, and cultural analyses of the modern and the postmodern eras provided inchapters 2 and 3, respectively. Chapter 4 explores the relationship between the urban mission of the church and the postmodern condition primarily by locating the emergence of postmodernism in thecontext of urbanization and globalization. Some urban missiological implications and suggested principles for reaching the postmodern mind in the urban context are drawn from the findings of this research and are presented in chapter 5. At the beginning of the twenty-first century, the centralizing power of the city--added to the pervasive influence of a global market--makes the urban environment the locus of the postmodern condition. Consequently, the challenges and opportunities for urban mission have never been greater. In spite of themajor threats postmodernism poses for mission, the current urban socio-cultural outlook offers opportunities that did not exist a few decades ago. Therefore, within the context of the combined forces of urbanization, globalization, and postmodernism, an extensive review of the strategies and methods of urban mission is vital for the development of postmodern-sensitive churches as the church seeks to fulfill its calling to participate in God's mission to urbanized, postmodernizing generations.",
+      "cited_by_count": 5,
+      "type": "dissertation",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://digitalcommons.andrews.edu/cgi/viewcontent.cgi?article=1054&context=dissertations"
+      },
+      "topics": [
+        "Pentecostalism and Christianity Studies",
+        "Christian Theology and Mission",
+        "Globalization and Cultural Identity"
+      ],
+      "referenced_works_count": 256,
+      "url": "https://openalex.org/W4367676127"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

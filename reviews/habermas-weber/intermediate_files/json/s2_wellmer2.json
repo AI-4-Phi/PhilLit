@@ -1,0 +1,136 @@
+[s2_search.py] Searching Semantic Scholar: 'Wellmer reason utopia critique Habermas modernity emancipation' (year=1983-2000), limit=20
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Search complete: 5 papers found
+[s2_search.py] Cached results (cache key: s2_4d0491fb8b2576f8)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Wellmer reason utopia critique Habermas modernity emancipation",
+  "results": [
+    {
+      "paperId": "02e60f53e5a5197a6a01f5dc273e1b8966fd0a97",
+      "title": "Emancipation and Illusion: Rationality and Gender in Habermas's Theory of Modernity . By Fleming Marie. University Park, PA: Penn State University Press, 1997. 243p. $40.00 cloth, $17.95 paper.",
+      "authors": [
+        {
+          "name": "Robert W. T. Martin",
+          "authorId": "48287473"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.2307/2586318",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/02e60f53e5a5197a6a01f5dc273e1b8966fd0a97",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "929 - 930",
+        "volume": "92"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b9d10702c282c793dd3809acc05d6bbc64f7f310",
+      "title": "The Persistence of Modernity: Essays on Aesthetics, Ethics, and Postmodernism",
+      "authors": [
+        {
+          "name": "A. Wellmer",
+          "authorId": "49714581"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 87,
+      "doi": "10.2307/431534",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b9d10702c282c793dd3809acc05d6bbc64f7f310",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7e02954a07a35651bbf495db8f1174ef98b0c4cc",
+      "title": "The Philosophical Politics of the Modern-Postmodern Debate@@@Between Freiburg and Frankfurt: Toward a Critical Ontology@@@Political Theory and Postmodernism@@@The New Constellation: The Ethical-Political Horizons of Modernity/Postmodernity",
+      "authors": [
+        {
+          "name": "Wayne Gabardi",
+          "authorId": "114167572"
+        },
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        },
+        {
+          "name": "Stephen K. White",
+          "authorId": "48008852"
+        },
+        {
+          "name": "R. Bernstein",
+          "authorId": "39089318"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 304,
+      "doi": "10.2307/448854",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7e02954a07a35651bbf495db8f1174ef98b0c4cc",
+      "venue": "",
+      "journal": {
+        "name": "Political Research Quarterly",
+        "pages": "769",
+        "volume": "47"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e4d41a3d04bb71ee452c56f9759ee03d4a2c629f",
+      "title": "Books Received",
+      "authors": [],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1111/j.1527-2001.1997.tb00308.x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e4d41a3d04bb71ee452c56f9759ee03d4a2c629f",
+      "venue": "Hypatia",
+      "journal": {
+        "name": "Hypatia",
+        "pages": "231 - 235",
+        "volume": "12"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "62f8a072023b5ddd65716f3a20c87c2058c04c2c",
+      "title": "The Morality of Pluralism. By John Kekes. Princeton: Princeton University Press. 1993. 227p. $29.95.",
+      "authors": [
+        {
+          "name": "S. Lukes",
+          "authorId": "117542842"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.2307/2944814",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/62f8a072023b5ddd65716f3a20c87c2058c04c2c",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "739 - 740",
+        "volume": "88"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "semantic_scholar",
+  "query": "Habermas Weber rationalization TCA communicative action assessment evaluation",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No papers found matching query",
+      "recoverable": false
+    }
+  ]
+}

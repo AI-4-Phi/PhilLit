@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5040/9781501301759"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5040/9781501301759",
+      "title": "The Critique of Instrumental Reason from Weber to Habermas",
+      "authors": [],
+      "editors": [],
+      "year": 2010,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Bloomsbury Academic",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5040/9781501301759"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/3090088"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/3090088",
+      "title": "Objectivity and the Silence of Reason: Weber, Habermas, and the Methodological Disputes in German Sociology",
+      "authors": [
+        {
+          "family": "Stark",
+          "given": "Jerry"
+        },
+        {
+          "family": "McCarthy",
+          "given": "George E."
+        }
+      ],
+      "editors": [],
+      "year": 2002,
+      "container_title": "Contemporary Sociology",
+      "volume": "31",
+      "issue": "5",
+      "page": "618",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/3090088"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

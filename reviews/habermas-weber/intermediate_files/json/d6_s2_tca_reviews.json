@@ -1,0 +1,90 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "How theory communicative action review criticism 1985 1986 1987",
+  "results": [
+    {
+      "paperId": "f7eaf16cbe093f14de8ae6f72fb2b9a5ad6c5668",
+      "title": "The Critical Thinking Movement and Its Implication for the Teaching of Speech Communication.",
+      "authors": [
+        {
+          "name": "Ellen A. Hay",
+          "authorId": "69322812"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f7eaf16cbe093f14de8ae6f72fb2b9a5ad6c5668",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "88b5614ce1ad8c294d98501483a758c8119436b6",
+      "title": "Trade-offs in life-history evolution",
+      "authors": [
+        {
+          "name": "S. Stearns",
+          "authorId": "4354485"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 2672,
+      "doi": "10.2307/2389364",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/88b5614ce1ad8c294d98501483a758c8119436b6",
+      "venue": "",
+      "journal": {
+        "name": "Functional Ecology",
+        "pages": "259-268",
+        "volume": "3"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1e1936a0000e3b5e173081e91833ad5e3c952b67",
+      "title": "How discussion questions influence children's story understanding",
+      "authors": [
+        {
+          "name": "L. Fielding",
+          "authorId": "50056286"
+        },
+        {
+          "name": "Richard C. Anderson",
+          "authorId": "145704981"
+        },
+        {
+          "name": "P. David Pearson",
+          "authorId": "145746270"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 22,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1e1936a0000e3b5e173081e91833ad5e3c952b67",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 3,
+  "errors": []
+}
