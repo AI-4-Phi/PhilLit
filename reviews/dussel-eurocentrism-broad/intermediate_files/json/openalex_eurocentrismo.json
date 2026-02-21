@@ -1,0 +1,1028 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "eurocentrismo Dussel",
+  "results": [
+    {
+      "openalex_id": "W1816319985",
+      "doi": null,
+      "title": "HISTORIOGRAF\u00cdA, EUROCENTRISMO Y UNIVERSALIDAD EN ENRIQUE DUSSEL",
+      "authors": [
+        {
+          "name": "Dami\u00e1n Pach\u00f3n Soto",
+          "openalex_id": "A5089853741",
+          "orcid": "https://orcid.org/0000-0003-4809-2365",
+          "institutions": [
+            "Universidad Santo Tom\u00e1s"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "Se exponen las cr\u00edticas de Enrique Dussel a la historiograf\u00eda de la filosof\u00eda tradicional y a la visi\u00f3n hegem\u00f3nica de la modernidad y su eurocentrismo, que han ocultado la participaci\u00f3n de otros pueblos en la constituci\u00f3n de Europa. Esta cr\u00edtica abre las puertas a una nueva comprensi\u00f3n de la actualidad, donde la filosof\u00eda europea puede entrar en di\u00e1logo con otras tradiciones filos\u00f3ficas para construir lo que el autor llama una \"transmodernidad filos\u00f3fica\". Este prop\u00f3sito cr\u00edtico es mantenido en Francia por Michel Onfray.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/2c9920f348844c179a167c9b3973cab3"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Religious and Theological Studies",
+        "Philosophical Thought and Analysis"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W1816319985"
+    },
+    {
+      "openalex_id": "W4250269249",
+      "doi": "10.7440/2014.21",
+      "title": "Una cr\u00edtica al eurocentrismo invertido: Enrique Dussel y la invisibilidad del Caribe hisp\u00e1nico en la modernidad temprana",
+      "authors": [
+        {
+          "name": "Gabriel de la Luz Rodr\u00edguez",
+          "openalex_id": "A5047496221"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": null,
+      "cited_by_count": 2,
+      "type": "book-chapter",
+      "source": {
+        "name": "Universidad de los Andes eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Spanish Literature and Culture Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4250269249"
+    },
+    {
+      "openalex_id": "W2158030825",
+      "doi": "10.1590/s0103-33522013000200004",
+      "title": "Am\u00e9rica Latina e o giro decolonial",
+      "authors": [
+        {
+          "name": "Luciana Ballestrin",
+          "openalex_id": "A5011637604",
+          "orcid": "https://orcid.org/0000-0001-6787-8406",
+          "institutions": [
+            "Universidade Federal de Pelotas"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-07-13",
+      "abstract": "O objetivo principal do artigo \u00e9 o de apresentar a trajet\u00f3ria e o pensamento do Grupo Modernidade/Colonialidade (M/C), a partir de sua ruptura com os estudos subalternos - latino-americanos e indianos - , culturais e p\u00f3s-coloniais, no final dos anos 1990. O coletivo realizou um movimento epistemol\u00f3gico fundamental para a renova\u00e7\u00e3o cr\u00edtica e ut\u00f3pica das ci\u00eancias sociais na Am\u00e9rica Latina no s\u00e9culo XXI: a radicaliza\u00e7\u00e3o do argumento p\u00f3s-colonial no continente atrav\u00e9s da no\u00e7\u00e3o de \"giro decolonial\". O artigo est\u00e1 estruturado em duas partes. Em um primeiro momento, \u00e9 tra\u00e7ada uma breve genealogia do p\u00f3s-colonialismo. Posteriormente, apresenta-se a constitui\u00e7\u00e3o do grupo M/C e alguns conceitos centrais criados e compartilhados pelos seus principais expoentes. O trabalho pretende convidar o(a) leitor(a) para este debate, ainda incipiente na ci\u00eancia e teoria Pol\u00edtica no Brasil.",
+      "cited_by_count": 500,
+      "type": "article",
+      "source": {
+        "name": "Revista Brasileira de Ci\u00eancia Pol\u00edtica",
+        "type": "journal",
+        "issn": [
+          "0103-3352",
+          "2178-4884"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.scielo.br/pdf/rbcpol/n11/04.pdf"
+      },
+      "topics": [
+        "Urban Development and Societal Issues",
+        "Social and Political Issues",
+        "Rural and Ethnic Education"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W2158030825"
+    },
+    {
+      "openalex_id": "W4391948618",
+      "doi": "10.24140/issn.1645-7250.rle48.12",
+      "title": "A Geopol\u00edtica do Conhecimento e a Diferen\u00e7a Colonial",
+      "authors": [
+        {
+          "name": "Walter D. Mignolo",
+          "openalex_id": "A5051525798",
+          "orcid": "https://orcid.org/0000-0002-2948-0656"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-11-04",
+      "abstract": "Este ensaio* tem por objetivo fazer uma reflex\u00e3o cr\u00edtica sobre a modernidade e o modo como o Ocidente a tem entendido. A partir de alguns autores da Am\u00e9rica Latina, como Dussel e Quijano, que avan\u00e7am com os conceitos de transmodernidade e colonialidade, respetivamente, e do di\u00e1logo com Wallerstein, reassume-se a tese de que a modernidade n\u00e3o \u00e9 um fen\u00f3meno estritamente europeu, mas antes planet\u00e1rio, para o qual os \u201cb\u00e1rbaros exclu\u00eddos\u201d contribu\u00edram, ainda que o seu contributo n\u00e3o tenha sido reconhecido. Introduzimos o conceito de diferen\u00e7a colonial com o objetivo de ampliar os conceitos de transmodernidade e de colonialidade do poder. A geopol\u00edtica do conhecimento organiza-se em torno da diversifica\u00e7\u00e3o, atrav\u00e9s da hist\u00f3ria, das diferen\u00e7as coloniais e imperiais. No final do artigo introduzimos a vis\u00e3o de Slavoj \u017di\u017eek sobre \u201ceurocentrismo \u00e0 esquerda\u201d. Palavras-chave: geopol\u00edtica do conhecimento; modernidade; transmodernidade; colonialidade do poder; diferen\u00e7a colonial; eurocentrismo \u00e0 esquerda.",
+      "cited_by_count": 19,
+      "type": "article",
+      "source": {
+        "name": "Reposit\u00f3rio Cient\u00edfico Lus\u00f3fona (Grupo Lus\u00f3fona)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.24140/issn.1645-7250.rle48.12"
+      },
+      "topics": [
+        "Social and Economic Solidarity",
+        "Urban Development and Societal Issues",
+        "Literature, Culture, and Criticism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4391948618"
+    },
+    {
+      "openalex_id": "W3087628760",
+      "doi": "10.20435/inter.v21i3.2300",
+      "title": "Colonialidade do poder: a forma\u00e7\u00e3o do eurocentrismo como padr\u00e3o de poder mundial por meio da coloniza\u00e7\u00e3o da Am\u00e9rica",
+      "authors": [
+        {
+          "name": "Fernando Joaquim Ferreira Maia",
+          "openalex_id": "A5071305941",
+          "orcid": "https://orcid.org/0000-0002-5419-2031",
+          "institutions": [
+            "Universidade Federal da Para\u00edba"
+          ]
+        },
+        {
+          "name": "Mayara Helenna Verissimo de Farias",
+          "openalex_id": "A5091182051",
+          "orcid": "https://orcid.org/0000-0003-2436-4020",
+          "institutions": [
+            "Universidade Federal da Para\u00edba"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-16",
+      "abstract": "Parte-se da compreens\u00e3o de que a tradi\u00e7\u00e3o da cultura pol\u00edtica e jur\u00eddica na Am\u00e9rica Latina \u00e9 reflexo de um processo hist\u00f3rico de colonialidade, explora\u00e7\u00e3o, depend\u00eancia e exclus\u00e3o de m\u00faltiplos segmentos societ\u00e1rios. Assim, realiza-se um estudo partindo dos tr\u00eas aspectos que possibilitaram a domina\u00e7\u00e3o do norte sobre os pa\u00edses do sul global: eurocentrismo, como matriz cultural; colonialismo, como matriz institucional; e capitalismo, como matriz econ\u00f4mica. Passa-se pela compreens\u00e3o da forma\u00e7\u00e3o da modernidade, com base no eurocentrismo e no processo de coloniza\u00e7\u00e3o do continente. Em seguida, analisa-se o novo padr\u00e3o de poder. E, por fim, busca-se abordar a depend\u00eancia econ\u00f4mica como produto da colonialidade. Desta forma, o objetivo do presente trabalho \u00e9 compreender o que tem sido chamado de colonialidade do poder, enquanto produto da invas\u00e3o ib\u00e9rica do continente americano. Para tanto, utilizar-se-\u00e1, como m\u00e9todo, o materialismo hist\u00f3rico e dial\u00e9tico para auxiliar na verifica\u00e7\u00e3o das contradi\u00e7\u00f5es fundamentais e secund\u00e1rias na Am\u00e9rica Latina e na diferencia\u00e7\u00e3o das v\u00e1rias etapas de desenvolvimento dessas contradi\u00e7\u00f5es e fen\u00f4menos. Refer\u00eancias bibliogr\u00e1ficas ser\u00e3o utilizadas como instrumento de pesquisa, destacando-se os textos de An\u00edbal Quijano, Enrique Dussel e Walter Mignolo, com aten\u00e7\u00e3o \u00e0queles relativos \u00e0 colonialidade do poder.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Intera\u00e7\u00f5es (Campo Grande)",
+        "type": "journal",
+        "issn": [
+          "1518-7012",
+          "1984-042X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://interacoesucdb.emnuvens.com.br/interacoes/article/download/2300/2470"
+      },
+      "topics": [
+        "International Relations in Latin America"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W3087628760"
+    },
+    {
+      "openalex_id": "W1488973119",
+      "doi": "10.5070/t411000004",
+      "title": "Decolonizing Post-Colonial Studies and Paradigms of Political-Economy: Transmodernity, Decolonial Thinking, and Global Coloniality",
+      "authors": [
+        {
+          "name": "Ram\u00f3n Grosfoguel",
+          "openalex_id": "A5024208517",
+          "orcid": "https://orcid.org/0000-0001-9051-1573",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-05-13",
+      "abstract": "Can we produce a radical anti-systemic politics beyond identity politics? 1 Is it possible to articulate a critical cosmopolitanism beyond nationalism and colonialism?Can we produce knowledges beyond Third World and Eurocentric fundamentalisms?Can we overcome the traditional dichotomy between political-economy and cultural studies?Can we move beyond economic reductionism and culturalism?How can we overcome the Eurocentric modernity without throwing away the best of modernity as many Third World fundamentalists do?In this paper, I propose that an epistemic perspective from the subaltern side of the colonial difference has a lot to contribute to this debate.It can contribute to a critical perspective beyond the outlined dichotomies and to a redefinition of capitalism as a world-system.",
+      "cited_by_count": 1037,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt21k6t3fq/qt21k6t3fq.pdf?t=ll4zsw"
+      },
+      "topics": [
+        "Latin American and Latino Studies",
+        "Political Economy and Marxism",
+        "Cuban History and Society"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W1488973119"
+    },
+    {
+      "openalex_id": "W2376772674",
+      "doi": "10.1590/s0102-69922016000100002",
+      "title": "Decolonialidade e perspectiva negra",
+      "authors": [
+        {
+          "name": "Joaze Bernardino\u2010Costa",
+          "openalex_id": "A5068732183",
+          "orcid": "https://orcid.org/0000-0002-9937-893X",
+          "institutions": [
+            "Universidade de Bras\u00edlia"
+          ]
+        },
+        {
+          "name": "Ram\u00f3n Grosfoguel",
+          "openalex_id": "A5024208517",
+          "orcid": "https://orcid.org/0000-0001-9051-1573"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-01",
+      "abstract": "O artigo situa a decolonialidade como projeto que teve origem simult\u00e2nea ao in\u00edcio do sistema-mundo moderno/colonial, sendo que este organiza diferen\u00e7as e desigualdades entre povos a partir da ideia de ra\u00e7a. O artigo destaca como caracter\u00edstica distintiva do projeto decolonial a produ\u00e7\u00e3o do conhecimento e as narrativas a partir de loci geopol\u00edticos e corpos-pol\u00edticos de enuncia\u00e7\u00e3o. Entre esses loci de enuncia\u00e7\u00e3o chamamos a aten\u00e7\u00e3o para o conhecimento produzido a partir de uma perspectiva negra das Am\u00e9ricas e Caribe.",
+      "cited_by_count": 359,
+      "type": "article",
+      "source": {
+        "name": "Sociedade e Estado",
+        "type": "journal",
+        "issn": [
+          "0102-6992",
+          "1980-5462"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.scielo.br/j/se/a/wKkj6xkzPZHGcFCf8K4BqCr/?lang=pt&format=pdf"
+      },
+      "topics": [
+        "Race, Identity, and Education in Brazil",
+        "Anthropological Studies and Insights",
+        "Caribbean history, culture, and politics"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W2376772674"
+    },
+    {
+      "openalex_id": "W1811214251",
+      "doi": "10.4000/rccs.697",
+      "title": "Para descolonizar os estudos de economia pol\u00edtica e os estudos p\u00f3s-coloniais: Transmodernidade, pensamento de fronteira e colonialidade global",
+      "authors": [
+        {
+          "name": "Ram\u00f3n Grosfoguel",
+          "openalex_id": "A5024208517",
+          "orcid": "https://orcid.org/0000-0001-9051-1573",
+          "institutions": [
+            "University of Coimbra"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-03-01",
+      "abstract": "This article discusses the epistemic implications of the de-colonial turn of the decolonization of the \u201cglobal capitalism\u201d concept, as it has been used in the paradigms of political economy and cultural studies. Other terms that are discussed include \u201ccolonization of power\u201d, \u201cborder epistemologies\u201d and \u201ctransmodernity\u201d to start thinking not in \u201cnew utopias\u201d, but rather in \u201cother utopias\u201d based on a different cartography of global power relationships of the \u201cworldsystem Europe/Euro-Northamerican modern/colonial capitalist/patriarchical\u201d. The article argues that there is a necessity to use the aforementioned concept (even though it is more extensive) and to abandon the category of \u201ccapitalist world-system\u201d or \u201dglobal capitalism\u201d.",
+      "cited_by_count": 353,
+      "type": "article",
+      "source": {
+        "name": "Revista cri\u0301tica de cie\u0302ncias sociais/Revista cr\u00edtica de ci\u00eancias sociais",
+        "type": "journal",
+        "issn": [
+          "0254-1106",
+          "2182-7435"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://journals.openedition.org/rccs/pdf/697"
+      },
+      "topics": [
+        "Economic Theory and Policy",
+        "Social and Economic Solidarity",
+        "Brazilian History and Foreign Policy"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W1811214251"
+    },
+    {
+      "openalex_id": "W2810253893",
+      "doi": "10.5377/typ.v0i32.6389",
+      "title": "El ego conquiro como inicio de la modernidad",
+      "authors": [
+        {
+          "name": "Rudy Montano",
+          "openalex_id": "A5023218995",
+          "institutions": [
+            "Universidad Don Bosco"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-31",
+      "abstract": "En este art\u00edculo se pretende demostrar los elementos que caracterizan el ego conquiro, es decir un sujeto \u201cpre-moderno\u201d. El an\u00e1lisis se hace a partir del hecho de la conquista de Am\u00e9rica por parte de los europeos. El objetivo de la conquista es adquirir territorios, y al mismo tiempo, colonizar al ind\u00edgena de Am\u00e9rica no s\u00f3lo f\u00edsicamente, sino ideol\u00f3gicamente. Este tema corresponde a uno de los aspectos que conforman la filosof\u00eda de la liberaci\u00f3n de Enrique Dussel.El objetivo de este escrito es demostrar que la constituci\u00f3n del ego conquiro es el punto de partida, el inicio del proceso de constituci\u00f3n del victimario en sujeto. Es de vital importancia, para poder abordar la liberaci\u00f3n de la v\u00edctima, hablar sobre c\u00f3mo el victimario se constituye en sujeto desde la dial\u00e9ctica de la dominaci\u00f3n. La racionalidad del ego conquiro genera pr\u00e1cticas que desembocan en la generaci\u00f3n de v\u00edctimas. El art\u00edculo se desarrollar\u00e1 en cuatro partes. La primera explica en qu\u00e9 consiste el proceso de constituci\u00f3n del ego conquiro. La segunda hace referencia, a consecuencia de ese proceso, a la relaci\u00f3n dial\u00e9ctica descubrimiento-encubrimiento del otro que obliga a preguntarnos por la dial\u00e9ctica racionalidad-irracionalidad. La tercera plantea el problema de la colonizaci\u00f3n y el eurocentrismo como elementos propios del ego conquiro. Finalmente, la Conclusi\u00f3n recoger\u00e1 las afirmaciones trabajadas y se centrar\u00e1 en la cr\u00edtica a la afirmaci\u00f3n de Enrique Dussel: \u201cel ego conquiro es el inicio de la modernidad.TEOR\u00cdA Y PRAXIS a\u00f1o 16, No.32, Enero-Mayo de 2018, pp.13-27",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Teor\u00eda y Praxis",
+        "type": "journal",
+        "issn": [
+          "1994-733X",
+          "2707-7411"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.camjol.info/index.php/TyP/article/download/6389/6159"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Religious and Theological Studies",
+        "Cultural and Social Dynamics"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2810253893"
+    },
+    {
+      "openalex_id": "W1521701366",
+      "doi": "10.21057/repam.v8i2.12609",
+      "title": "Paulo Freire no pensamento decolonial: um olhar pedag\u00f3gico sobre a teoria p\u00f3s-colonial latino-americana",
+      "authors": [
+        {
+          "name": "Camila Penna",
+          "openalex_id": "A5048471863",
+          "orcid": "https://orcid.org/0000-0001-5579-1653",
+          "institutions": [
+            "Universidade de Bras\u00edlia"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-12-30",
+      "abstract": "Resumo O artigo retoma alguns pontos de converg\u00eancia entre a obra de Paulo Freire \u201cPedagogia do Oprimido\u201d (1968) e a perspectiva p\u00f3s-colonial latino-americana (ou decolonial) com vistas a assinalar para o car\u00e1ter pedag\u00f3gico que esta tem no campo das ci\u00eancias sociais. A partir da identifica\u00e7\u00e3o e discuss\u00e3o de alguns aspectos convergentes na obra de Freire e nos trabalhos de Franz Fanon, Aim\u00e9 Ces\u00e1ire, Enrique Dussel, An\u00edbal Quijano e Walter Mignolo, argumento que o pensamento destes autores p\u00f3s-coloniais contribui para o ensino no campo das ci\u00eancias sociais ao propor um novo lugar de fala a partir do paradigma colonialidade-modernidade. Assim como a \u201cPedagogia do Oprimido\u201d prop\u00f5e formas de descontruir o mito da estrutura opressora, a perspectiva p\u00f3s-colonial assinala diferentes estrat\u00e9gias para a desconstru\u00e7\u00e3o do mito do eurocentrismo. O artigo aponta algumas dessas estrat\u00e9gias ressaltando sua contribui\u00e7\u00e3o pedag\u00f3gica para um ensino menos colonizado no campo das ci\u00eancias sociais.Palavras-chaveP\u00f3s-colonialismo; pedagogia; Paulo Freire; ci\u00eancias sociais.--- Abstract This article observes converging points between Paulo Freire\u2019s \u201cPedagogia do Oprimido\u201d (1968) and the latin-american post-colonial perspective, pointing to the pedagogical contribution the latter has had in social sciences. Through the identification and discussion of converging aspects in Paulo Freire\u2019s work as well as in Franz Fanon\u2019s, Aim\u00e9 Ces\u00e1ire\u2019s, Enrique Dussel\u2019s, An\u00edbal Quijano\u2019s and Walter Mignolo\u2019s work, I sustain that these authors contribute to the social sciences field when they propose a shift to the modernity-coloniality paradigm. As \u201cPedagogia do Oprimido\u201d addresses forms of deconstructing the myth of the structure of oppression; the decolonial perspective points to different strategies for deconstructing the Eurocentric myth. This article recovers some of these strategies highlighting its pedagogical contribution to a less \u201ccolonized\u201d teaching process in social sciences.KeywordsPost-colonialism; pedagogy; Paulo Freire; social sciences.---Resumen El presente articulo retoma algunos puntos de convergencia entre la obra de Paulo Freire \u201cPedagogia do Oprimido\u201d (1968) y la perspectiva pos-colonial latinoamericana (o decolonial) con el objetivo de se\u00f1alar para el car\u00e1cter pedag\u00f3gico que este tiene en el campo de las ciencias sociales. Se parte de la identificaci\u00f3n y discusi\u00f3n de algunos aspectos convergentes en la obra de Freire y en los trabajos de Franz Fanon, Aim\u00e9 Ces\u00e1ire, Enrique Dussel, An\u00edbal Quijano e Walter Mignolo, argumento que el pensamiento de estos autores pos-coloniales contribuyen para la ense\u00f1anza en el campo de las ciencias sociales al proponer el paradigma colonialidad-modernidad. As\u00ed como la \u201cPedagogia do Oprimido\u201d propone formas de desconstrucci\u00f3n del mito de la estructura opresora, la perspectiva pos-colonial se\u00f1ala diferentes estrategias para la desconstrucci\u00f3n del mito del eurocentrismo. El articulo apunta algunas de estas estrategias resaltando su contribuci\u00f3n pedag\u00f3gica para una ense\u00f1anza menos colonizada en el campo de las ciencias sociales.Palabras-clavepos-colonialismo; pedagog\u00eda; Paulo Freire; ciencias sociales.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "Revista de Estudos e Pesquisas sobre as Am\u00e9ricas",
+        "type": "journal",
+        "issn": [
+          "1984-1639"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.21057/repam.v8i2.12609"
+      },
+      "topics": [
+        "Rural and Ethnic Education",
+        "Race, Identity, and Education in Brazil",
+        "Education Pedagogy and Practices"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1521701366"
+    },
+    {
+      "openalex_id": "W2903503404",
+      "doi": "10.15304/ag.38.1.4417",
+      "title": "Enrique Dussel: Entre Latinoam\u00e9rica y la hermen\u00e9utica de la otredad",
+      "authors": [
+        {
+          "name": "Francisco Javier Castillejos Rodr\u00edguez",
+          "openalex_id": "A5049263154",
+          "orcid": "https://orcid.org/0000-0001-6143-4644",
+          "institutions": [
+            "Universidad Westhill"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-28",
+      "abstract": "El objetivo del presente ensayo es exponer los fundamentos de la filosof\u00eda de la liberaci\u00f3n de Enrique Dussel y explicar sus aportaciones en el contexto del pensamiento latinoamericano. En un nivel postmetaf\u00edsico de fundamentaci\u00f3n, la filosof\u00eda de la liberaci\u00f3n adopta el ethos del pensamiento semita y la hermen\u00e9utica del \"Otro\" de Levinas con el prop\u00f3sito de formular una cr\u00edtica al eurocentrismo y edificar un modelo filos\u00f3fico alternativo. Frente a los paradigmas tradicionales de filosof\u00eda e historiograf\u00eda filos\u00f3fica, Enrique Dussel desarrolla una nueva arquitect\u00f3nica para dar cuenta de la especificidad de nuestro pensamiento.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Agora papeles de Filosof\u00eda",
+        "type": "journal",
+        "issn": [
+          "0211-6642",
+          "2174-3347"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://revistas.usc.gal/index.php/agora/article/download/4417/5954"
+      },
+      "topics": [
+        "Philosophy and Education Pedagogy",
+        "Philosophical and Cultural Analysis",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W2903503404"
+    },
+    {
+      "openalex_id": "W2187149354",
+      "doi": null,
+      "title": "Historiograf\u00eda, eurocentrismo y universalidad en Enrique Dussel * Historiography, Eurocentrism, and Universality in Enrique Dussel",
+      "authors": [
+        {
+          "name": "Dami\u00e1n Pach\u00f3n Soto",
+          "openalex_id": "A5089853741",
+          "orcid": "https://orcid.org/0000-0003-4809-2365"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "The article examines Enrique Dussel's critique of the traditional historiography of philosophy and of the hegemonic, Eurocentric view of modernity, both of which have served to conceal the participation of other peoples in the constitution of Europe. This critique makes possible a new understanding of the present, in which European philosophy can enter into dialogue with other traditions in order to build what Dussel calls a philosophical transmodernity. This is pre - cisely the critical objective pursued in France by Michel Onfray.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Dialnet (Universidad de la Rioja)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical Thought and Analysis",
+        "Spanish Philosophy and Literature",
+        "Philosophical and Cultural Analysis"
+      ],
+      "referenced_works_count": 13,
+      "url": "https://openalex.org/W2187149354"
+    },
+    {
+      "openalex_id": "W3213334643",
+      "doi": "10.5007/2175-795x.2021.e67913",
+      "title": "Capoeira em di\u00e1spora: capturas, insurg\u00eancias e (re)exist\u00eancias por uma educa\u00e7\u00e3o decolonial e inclusiva",
+      "authors": [
+        {
+          "name": "Norma Silvia Trindade de Lima",
+          "openalex_id": "A5076631981",
+          "orcid": "https://orcid.org/0000-0001-6728-4675",
+          "institutions": [
+            "Universidade Estadual de Campinas (UNICAMP)"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-08",
+      "abstract": "Este artigo discute uma pr\u00e1tica insurgente no per\u00edodo colonial-escravocrata no Brasil, constitu\u00edda em linguagem de (re)exist\u00eancia, tornada Patrim\u00f4nio Cultural Imaterial da Humanidade e difundida mundialmente. Trata-se da Capoeira, um legado diasp\u00f3rico cuja ancestralidade evoca diferentes matrizes africanas. Interessa indagar se as pr\u00e1ticas culturais \u2013 nomeadamente, as que surgiram como resist\u00eancia ao sistema colonial, como a capoeira \u2013 seriam pot\u00eancias para (re)exist\u00eancias, capazes de contribuir com a forma\u00e7\u00e3o humana e acad\u00eamica, pensada numa perspectiva decolonial e inclusiva. Visa, ainda, apontar aspectos formativos deste bem cultural no \u00e2mbito educacional, tendo em vista problematiza\u00e7\u00f5es epist\u00eamicas e \u00e9tnico-raciais desenvolvidas na esteira do pensamento de autores como: Fanon, Hall, Sousa Santos, Quijano, Dussel, Mignolo e outros. Vale-se, ainda, de excertos de narrativas (auto)biogr\u00e1ficas, visando articular no campo da experi\u00eancia as no\u00e7\u00f5es de: pensamento abissal, modernidade, eurocentrismo e colonialidade. Conclui que a capoeira evoca aspectos outros de viver, ser e dizer na diferen\u00e7a colonial, impulsionando um alargamento e tensionamento de fronteiras sociais, culturais e epist\u00eamicas. O \"outro\" se faz presente, ocupando tempos/espa\u00e7os e (re)inventando linguagens, culturas, comunidades e processos educacionais pautados em valores ancestrais afro-diasp\u00f3ricos e pluriversais.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Perspectiva",
+        "type": "journal",
+        "issn": [
+          "0102-5473",
+          "2175-795X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos.ufsc.br/index.php/perspectiva/article/download/67913/47599"
+      },
+      "topics": [
+        "Physical Education and Sports Studies",
+        "Martial Arts: Techniques, Psychology, and Education",
+        "Physical Education and Pedagogy"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W3213334643"
+    },
+    {
+      "openalex_id": "W31580584",
+      "doi": "10.6028/jres.067a.025",
+      "title": "Historiograf\u00eda, eurocentrismo y universalidad de la filosof\u00eda en Enrique Dussel",
+      "authors": [
+        {
+          "name": "Dami\u00e1n Pach\u00f3n Soto",
+          "openalex_id": "A5089853741",
+          "orcid": "https://orcid.org/0000-0003-4809-2365"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "Visual observation of the freezing and melting of compounds in cells used for the determination of purity has uncovered some heretofore unexpected behavior. This behavior has been correlated with certain difficulties experienced in the measurement of purity, particularly when the sample is very pure. Means for partially reducing these difficulties are proposed and procedures for increasing the accuracy of purity measurements are described.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Dialnet (Universidad de la Rioja)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophical Thought and Analysis",
+        "Religious and Theological Studies",
+        "Philosophical and Cultural Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W31580584"
+    },
+    {
+      "openalex_id": "W3155275405",
+      "doi": "10.3389/fpubh.2021.637897",
+      "title": "From Modern Planetary Health to Decolonial Promotion of One Health of Peripheries",
+      "authors": [
+        {
+          "name": "Oswaldo Santos Baquero",
+          "openalex_id": "A5053163274",
+          "orcid": "https://orcid.org/0000-0003-2695-7946",
+          "institutions": [
+            "Universidade de S\u00e3o Paulo"
+          ]
+        },
+        {
+          "name": "Mario Nestor Benavidez Fern\u00e1ndez",
+          "openalex_id": "A5057527410",
+          "institutions": [
+            "Universidad de San Buenaventura, Bogota"
+          ]
+        },
+        {
+          "name": "Myriam Acero Aguilar",
+          "openalex_id": "A5052991628",
+          "orcid": "https://orcid.org/0000-0003-0107-4960",
+          "institutions": [
+            "Universidad Nacional de Colombia"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-10",
+      "abstract": "The concept of Planetary Health has recently emerged in the global North as a concern with the global effects of degraded natural systems on human health. It calls for urgent and transformative actions. However, the problem and the call to solve it are far from new. Planetary health is a colonial approach that disregards alternative knowledge that over millennia have accumulated experiences of sustainable and holistic lifestyles. It reinforces the monolog of modernity without realizing that threats to \u201cplanetary health\u201d reside precisely in its very approach. It insists on imposing its recipes on political, epistemological, and ontological peripheries created and maintained through coloniality. The Latin American decolonial turn has a long tradition in what could be called a \u201ctransformative action,\u201d going beyond political and economic crises to face a more fundamental crisis of civilization. It deconstructs, with other decolonial movements, the fallacy of a dual world in which the global North produces epistemologies, while the rest only benefit from and apply those epistemologies. One Health of Peripheries is a field of praxis in which the health of multispecies collectives and the environment they comprise is experienced, understood, and transformed within symbolic and geographic peripheries, ensuing from marginalizing apparatuses. In the present article, we show how the decolonial promotion of One Health of Peripheries contributes to think and advance decentralized and plural practices to attend to glocal realities. We propose seven actions for such promotion.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Public Health",
+        "type": "journal",
+        "issn": [
+          "2296-2565"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpubh.2021.637897/pdf"
+      },
+      "topics": [
+        "Zoonotic diseases and public health",
+        "Geographies of human-animal interactions",
+        "Race, Genetics, and Society"
+      ],
+      "referenced_works_count": 50,
+      "url": "https://openalex.org/W3155275405"
+    },
+    {
+      "openalex_id": "W2613324419",
+      "doi": "10.12957/rep.2016.27859",
+      "title": "A ecologia pol\u00edtica de Enrique Dussel: aproxima\u00e7\u00f5es para as lutas sociais na Am\u00e9rica Latina",
+      "authors": [
+        {
+          "name": "C\u00e9sar Augusto Soares da Costa",
+          "openalex_id": "A5101988102",
+          "orcid": "https://orcid.org/0000-0002-7190-6606",
+          "institutions": [
+            "Universidade Cat\u00f3lica de Pelotas"
+          ]
+        },
+        {
+          "name": "Carlos Frederico Bernardo Loureiro",
+          "openalex_id": "A5039110365",
+          "orcid": "https://orcid.org/0000-0003-4640-6455",
+          "institutions": [
+            "Universidade Federal do Rio de Janeiro"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-30",
+      "abstract": "Nesse texto abordamos a filosofia de Enrique Dussel, visando a aproxima\u00e7\u00f5es te\u00f3ricas entre a ecologia pol\u00edtica e as lutas sociais na Am\u00e9rica Latina. O pensador discute a quest\u00e3o ambiental partindo da degrada\u00e7\u00e3o instaurada pelo modo de produ\u00e7\u00e3o capitalista e rela\u00e7\u00f5es institu\u00eddas pelo sistema-mundo moderno colonial. Dussel, assim, fornece elementos para compreendermos os processos de expropria\u00e7\u00e3o capitalista e domina\u00e7\u00e3o euroc\u00eantrica, que culminam na explora\u00e7\u00e3o dos povos e dimensionam a din\u00e2mica das lutas sociais. Nessa linha de argumenta\u00e7\u00e3o, ap\u00f3s breve introdu\u00e7\u00e3o ao tema, versamos sobre a categoria \u201cencobrimento do Outro\u201d como crit\u00e9rio para o reconhecimento dos povos na din\u00e2mica das lutas ambientais latino-americanas. Em seguida, abordamos a ecologia pol\u00edtica e as lutas sociais \u00e0 luz do pensamento dusseliano. Por fim, pontuamos referenciais filos\u00f3ficos e pol\u00edticos do autor, que contribuem para refletir criticamente acerca das lutas sociais e da rela\u00e7\u00e3o sociedade-natureza diante do padr\u00e3o de acumula\u00e7\u00e3o capitalista na Am\u00e9rica Latina. Palavras-chave: Enrique Dussel; modo de produ\u00e7\u00e3o capitalista; eurocentrismo; lutas sociais; ecologia pol\u00edtica. Abstract: In this article, we approach the philosophy of Enrique Dussel, aiming at the theoretical approximations between political ecology and social struggles in Latin America. The thinker approaches the environmental issue from the degradation established by the capitalist mode of production and the relations instituted by the modern colonial world-system. Dussel thus provides elements for understanding the processes of capitalist expropriation and Eurocentric domination, culminating in the exploitation of peoples and dimensioning the dynamics of social struggles. Following this line of argument, after a brief introduction, we deal with the eclipse of \u201cthe Other\u201d as a criterion for the recognition of peoples in the dynamics of Latin American environmental struggles. Next, we address political ecology and social struggles in light of Dusselian thought. Finally, we point out philosophical and political references of the author, which contribute to reflect critically on social struggles and the relationship between society and nature in the face of the pattern of capitalist accumulation in Latin America. Keywords: Enrique Dussel; capitalist mode of production; Eurocentrism; social struggles; political ecology.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Revista Em Pauta",
+        "type": "journal",
+        "issn": [
+          "1414-8609",
+          "2238-3786"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.e-publicacoes.uerj.br/index.php/revistaempauta/article/download/27859/20031"
+      },
+      "topics": [
+        "Environmental Sustainability and Education",
+        "Agriculture, Land Use, Rural Development",
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2613324419"
+    },
+    {
+      "openalex_id": "W2887254372",
+      "doi": "10.7202/1050851ar",
+      "title": "The Coloniality of Migration and the \u201cRefugee Crisis\u201d: On the Asylum-Migration Nexus, the Transatlantic White European Settler Colonialism-Migration and Racial Capitalism",
+      "authors": [
+        {
+          "name": "Encarnaci\u00f3n Guti\u00e9rrez Rodr\u00edguez",
+          "openalex_id": "A5057355045",
+          "orcid": "https://orcid.org/0000-0003-0662-0596",
+          "institutions": [
+            "University of Giessen"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-01",
+      "abstract": "This article departs from the discussion by Stephen Castles on the migration-asylum nexus by focusing on the political and cultural effects of the summer of immigration in 2015. It argues for a conceptualization of the asylum-migration nexus within the framework of Anibal Quijano\u2019s \u201ccoloniality of power\u201d by developing the analytical framework of the \u201ccoloniality of migration.\u201d Through the analytical framework of the \u201ccoloniality of migration\u201d the connection between racial capitalism and the asylum-migration nexus is explored. It does so by first focusing on the economic and political links between asylum and migration, and how both constitute each other. On these grounds, it discusses how asylum and migration policies produce hierarchical categories of migrants and refugees, producing a nomenclature drawing on an imaginary reminiscent of the orientalist and racialized practices of European colonialism and imperialism. In a second step, it focuses on migration and asylum policies as inherent to a logic of racialization of the workforce. It does so by first exploring the racial coding of immigration policies within the context of settler colonial-ism and transatlantic White European migration to the Am\u00e9ricas and Oceania in the nineteenth and twentieth centuries, and second, by discussing migration policies in post-1945 Western Europe.",
+      "cited_by_count": 242,
+      "type": "article",
+      "source": {
+        "name": "Refuge Canada s Journal on Refuge",
+        "type": "journal",
+        "issn": [
+          "0229-5113",
+          "1920-7336"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.erudit.org/fr/revues/refuge/2018-v34-n1-refuge03925/1050851ar.pdf"
+      },
+      "topics": [
+        "Migration, Refugees, and Integration",
+        "Race, History, and American Society",
+        "Migration, Ethnicity, and Economy"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W2887254372"
+    },
+    {
+      "openalex_id": "W135364984",
+      "doi": "10.5070/t413012881",
+      "title": "Transmodernity and Interculturality: An Interpretation from the Perspective of Philosophy of Liberation",
+      "authors": [
+        {
+          "name": "Enrique Dussel",
+          "openalex_id": "A5040236031",
+          "institutions": [
+            "Universidad Aut\u00f3noma Metropolitana",
+            "Autodesk (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "In search of self-identity: from Eurocentrism to developmentalist coloniality I belong to a generation of Latin Americans whose intellectual beginnings are situated in the 1950s, after the end of the Second World War.For us, in the Argentina of that era, there was no doubt that we were a part of \"Western culture.\"For that reason, some of our subsequent categorical judgments are a natural expression of someone who opposes himself.The philosophy that we studied set out from the Greeks, in whom we saw our most remote lineage.The Amerindian World had no presence in our studies, and none of our professors would have been able to articulate the origin of philosophy with reference to indigenous peoples. 2 Moreover, the ideal philosopher was one who was familiar with the precise details of classical Western philosophers and their contemporary developments.There existed no possibility whatsoever for a specifically Latin American philosophy.It is difficult to evoke in the present the firm hold that the European model of philosophy had on us (since at that moment in Argentina there was no reference to the United States, yet).Germany and France had complete hegemony, especially in South America (although this was not the case in Mexico, Central America, or the Hispanic, French, or British Caribbean).",
+      "cited_by_count": 191,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt6591j76r/qt6591j76r.pdf?t=m6aapy"
+      },
+      "topics": [
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W135364984"
+    },
+    {
+      "openalex_id": "W1529669390",
+      "doi": "10.5964/jspp.v3i1.564",
+      "title": "Decolonizing Psychological Science: Introduction to the Special Thematic Section",
+      "authors": [
+        {
+          "name": "Glenn Adams",
+          "openalex_id": "A5046540478",
+          "orcid": "https://orcid.org/0000-0002-9487-6999",
+          "institutions": [
+            "University of Kansas"
+          ]
+        },
+        {
+          "name": "Ignacio Dobles",
+          "openalex_id": "A5010657113",
+          "institutions": [
+            "Universidad de Costa Rica"
+          ]
+        },
+        {
+          "name": "Luis H. G\u00f3mez",
+          "openalex_id": "A5082410770",
+          "institutions": [
+            "Universidad Nacional"
+          ]
+        },
+        {
+          "name": "Tu\u011f\u00e7e Kurti\u015f",
+          "openalex_id": "A5027505110",
+          "institutions": [
+            "University of West Georgia"
+          ]
+        },
+        {
+          "name": "Ludwin E. Molina",
+          "openalex_id": "A5071109136",
+          "orcid": "https://orcid.org/0000-0001-7651-5797",
+          "institutions": [
+            "University of Kansas"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-20",
+      "abstract": "Despite unprecedented access to information and diffusion of knowledge across the globe, the bulk of work in mainstream psychological science still reflects and promotes the interests of a privileged minority of people in affluent centers of the modern global order. Compared to other social science disciplines, there are few critical voices who reflect on the Euro-American colonial character of psychological science, particularly its relationship to ongoing processes of domination that facilitate growth for a privileged minority but undermine sustainability for the global majority. Moved by mounting concerns about ongoing forms of multiple oppression (including racialized violence, economic injustice, unsustainable over-development, and ecological damage), we proposed a special thematic section and issued a call for papers devoted to the topic of \"decolonizing psychological science\". In this introduction to the special section, we first discuss two perspectives\u2014liberation psychology and cultural psychology\u2014that have informed our approach to the topic. We then discuss manifestations of coloniality in psychological science and describe three approaches to decolonization\u2014indigenization, accompaniment, and denaturalization\u2014that emerge from contributions to the special section. We conclude with an invitation to readers to submit their own original contributions to an ongoing effort to create an online collection of digitally linked articles on the topic of decolonizing psychological science.",
+      "cited_by_count": 337,
+      "type": "article",
+      "source": {
+        "name": "Journal of Social and Political Psychology",
+        "type": "journal",
+        "issn": [
+          "2195-3325"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://jspp.psychopen.eu/index.php/jspp/article/download/4851/4851.pdf"
+      },
+      "topics": [
+        "Cultural Differences and Values",
+        "Community Health and Development",
+        "Social Representations and Identity"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W1529669390"
+    },
+    {
+      "openalex_id": "W1706991950",
+      "doi": null,
+      "title": "De la cr\u00edtica a la normatividad? Materialidad y exterioridad como puntos de partida para una \u00e9tica universal?",
+      "authors": [
+        {
+          "name": "Stefan Knau\u00df",
+          "openalex_id": "A5034702717",
+          "orcid": "https://orcid.org/0000-0003-2158-2487"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "abstract": "El siguiente texto analiza el enfoque de Enrique Dussel en su obra La etica de la liberacion, en tanto que proyecto filosofico politico critico. El punto de partida performativo de la filosofia de Dussel es una critica al liberalismo occidental, y a su eurocentrismo inherente, desde la perspectiva de las personas excluidas en las antiguas colonias. Por tanto, Dussel utiliza el criterio material de la vida para mostrar la injusta distribucion de los bienes politicos y economicos. La pretendida negacion de la dignidad de los pobres funciona, entonces, como un valor negativa en la evaluacion comparativa de la calidad de la teoria y la practica politicas. Desde un fundamento factico, la misma existencia de seres humanos excluidos cuestiona la normatividad de teorias de la justicia. Normatividad que, por otra parte, para Dussel se puede empoderar gracias a las demandas de estos grupos criticos que anhelan su reconocimiento cultural, economico y politico.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Astrolabio: revista internacional de filosofia",
+        "type": "journal",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1706991950"
+    },
+    {
+      "openalex_id": "W1564751119",
+      "doi": "10.15448/2178-3748.2014.2.13670",
+      "title": "P\u00d3S-COLONIALISMO E O MUNDO PLURAL NA OBRA DE WALTER MIGNOLO",
+      "authors": [
+        {
+          "name": "Marcos Costa Lima",
+          "openalex_id": "A5007056377",
+          "orcid": "https://orcid.org/0000-0002-3831-7631"
+        },
+        {
+          "name": "Ant\u00f4nio Manoel El\u00edbio",
+          "openalex_id": "A5051046170",
+          "orcid": "https://orcid.org/0000-0001-6616-6730",
+          "institutions": [
+            "Universidade Federal de Pernambuco"
+          ]
+        },
+        {
+          "name": "Carolina Soccio Di Manno de Almeida",
+          "openalex_id": "A5069303475",
+          "institutions": [
+            "Universidade Federal de Pernambuco"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-12-04",
+      "abstract": "Esse artigo pretende discutir a proposta de Walter Mignolo no que se refere aquilo que o autor chama de \u201cdescoloniza\u00e7\u00e3o\u201d. O autor argentino Walter Mignolo est\u00e1 inserido no projeto de modernidade/colonialidade ao lado de outros autores latino-americanos das diversas \u00e1reas das ci\u00eancias sociais como Artur Escobar, Edgardo Lander, Fernando Coronil e t\u00eam em An\u00edbal Quijano e Enrique Dussel as figuras que lideram esse projeto. Tais autores acusam a l\u00f3gica da colonialidade existente nas rela\u00e7\u00f5es sociais, pol\u00edticas e econ\u00f4micas que tiveram in\u00edcio na coloniza\u00e7\u00e3o da Am\u00e9rica no s\u00e9culo dezesseis e se perpetuam at\u00e9 o presente e, mais importante: a colonialidade do conhecimento. N\u00e3o s\u00f3 visando a constata\u00e7\u00e3o da colonialidade, o projeto intenta ir al\u00e9m da acusa\u00e7\u00e3o: procura alternativas ao eurocentrismo e ao colonialismo no pensamento.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Oficina do Historiador",
+        "type": "journal",
+        "issn": [
+          "2178-3748"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistaseletronicas.pucrs.br/ojs/index.php/oficinadohistoriador/article/download/13670/12416"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W1564751119"
+    },
+    {
+      "openalex_id": "W4389461829",
+      "doi": "10.29181/2594-6463-2023-v7-n3-p196-210",
+      "title": "Escreviv\u00eancias na andarilhagem de uma pesquisadora em pr\u00e1ticas sociais e processos educativos",
+      "authors": [
+        {
+          "name": "Francinalda Maria Rodrigues da Rocha",
+          "openalex_id": "A5045789401",
+          "orcid": "https://orcid.org/0009-0001-8234-0556",
+          "institutions": [
+            "Universidade Federal de S\u00e3o Carlos"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-07",
+      "abstract": "Escreviv\u00eancias na andarilhagem de uma pesquisadora em pr\u00e1ticas sociais e processos educativos ResumoEste ensaio apresenta uma discuss\u00e3o sobre pr\u00e1ticas sociais e processos educativos atrav\u00e9s das escreviv\u00eancias de uma pesquisadora, na andarilhagem dos saberes, a partir de situa\u00e7\u00f5es da realidade, em uma escrita po\u00e9tica pautada pela subjetividade e intersubjetividade que parte do ato de \u201cescre-viver\u201d, inspirado na escritora preta Concei\u00e7\u00e3o Evaristo. Partimos de um posicionamento nas discuss\u00f5es das obras de Ailton Krenak, Paulo Freire, Ernani Maria Fiori, Enrique Dussel e Nelson Maldonado-Torres em busca de nossa reflex\u00e3o sobre os aspectos conceituais, em tempos nos quais lutar pela liberta\u00e7\u00e3o se mostra como quest\u00e3o urgente para a humanidade que se encontra violentada pelo capitalismo, eurocentrismo e colonialismo que afetam a democracia e a cidadania.Palavras-chave: Processos Educativos. Pr\u00e1ticas Sociais. Colonialismo. Writings in the wandering of a researcher in social practices and educational processes AbstractThis essay presents a discussion of social practices and educational processes through the lived experiences of a researcher, in the wanderings of knowledge, based on situations from reality, in a poetic writing guided by subjectivity and intersubjectivity which comes from the act of writing the experience, inspired by the Black writer Concei\u00e7\u00e3o Evaristo. We start from a position in the discussions of the works of Ailton Krenak, Paulo Freire, Ernani Maria Fiori, Enrique Dussel and Nelson Maldonado-Torres in search of our reflection on conceptual aspects, in times when fighting for liberation appears as an urgent matter for humanity, which is violated by capitalism, eurocentrism, and colonialism that affect democracy and citizenship.Keywords: Educational Processes. Social Practices. Colonialism. Escribiendo en el deambular de una investigadora en pr\u00e1cticas sociales y procesos educativos ResumenEn este ensayo se presenta una discusi\u00f3n sobre pr\u00e1cticas sociales y procesos educativos a trav\u00e9s de los escritos y de las vivencias de una investigadora, en el deambular del conocimiento, a partir de situaciones reales, en una escritura po\u00e9tica guiada por la subjetividad y la intersubjetividad que surge del acto de escribir la experiencia, inspirado en la escritora negra Concei\u00e7\u00e3o Evaristo. Partimos de un posicionamiento en las discusiones de las obras de Ailton Krenak, Paulo Freire, Ernani Maria Fiori, Enrique Dussel y Nelson Maldonado-Torres, en busca de nuestra reflexi\u00f3n sobre los aspectos conceptuales, en tiempos en que la lucha por la liberaci\u00f3n se muestra como un tema urgente para la humanidad, vulnerado por el capitalismo, el eurocentrismo y el colonialismo que afectan la democracia y la ciudadan\u00eda.Palabras clave: Procesos Educativos. Pr\u00e1cticas Sociales. Colonialismo.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "MOTRICIDADES Revista da Sociedade de Pesquisa Qualitativa em Motricidade Humana",
+        "type": "journal",
+        "issn": [
+          "2594-6463"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.motricidades.org/journal/index.php/journal/article/download/2594-6463-2023-v7-n3-p196-210/444"
+      },
+      "topics": [
+        "Education Pedagogy and Practices",
+        "Rural and Ethnic Education",
+        "Linguistics and Education Research"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W4389461829"
+    },
+    {
+      "openalex_id": "W2933195229",
+      "doi": "10.5772/intechopen.81612",
+      "title": "Discourses Analysis by a Decolonial Perspective",
+      "authors": [
+        {
+          "name": "Mar\u00ed\u00ada Noel M\u00ed\u00adguez Passada",
+          "openalex_id": "A5042597288",
+          "institutions": [
+            "Duke University",
+            "Pontificia Universidad Javeriana"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-03",
+      "abstract": "In the last years in Latin America, the decolonial perspective has been growing up to analyze discourses in qualitative research. This theoretical, methodological, and epistemological way to deconstruction has done an interesting way to analyze social topics. Some authors like Dussel, Quijano, etc. have done the bases about this decolonial regard, which provides Latin American researchers a way to analyze social problems taking the North Global theories but also increasing them with our decolonial perspective. We call it the South Global regard. It is not only to know that the classifications and qualifications of the north global reproduce the inequalities in the material life, but also the theoretical and epistemological way to analyze it. The decolonial theory, used also to analyze discourses, gives the possibility to understand people's feelings, emotions, and sensations; meanwhile, words are given in the speeches, interviews, participating observation, focus group, etc.",
+      "cited_by_count": 19,
+      "type": "book-chapter",
+      "source": {
+        "name": "IntechOpen eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.intechopen.com/citation-pdf-url/65832"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Latin American socio-political dynamics",
+        "Gender, Health, and Social Inequality"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W2933195229"
+    },
+    {
+      "openalex_id": "W304143536",
+      "doi": "10.22409/geographia2006.v8i16.a13521",
+      "title": "De saberes e de territ\u00f3rios: diversidade e emancipa\u00e7\u00e3o a partir da experi\u00eancia Latino-Americano",
+      "authors": [
+        {
+          "name": "Carlos Walter Porto-Gon\u00e7alves",
+          "openalex_id": "A5052872626",
+          "orcid": "https://orcid.org/0000-0002-7308-8934",
+          "institutions": [
+            "Universidade Federal Fluminense"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-02-04",
+      "abstract": "O artigo problematiza a rela\u00e7\u00e3o entre saberes e territ\u00f3rios pondo em quest\u00e3o a id\u00e9ia euroc\u00eantrica de conhecimento universal. Com isso o autor pretende: (1) retirar o car\u00e1ter unidirecional que os europeus impuseram a essa ideia (eurocentrismo) e (2) afirmarque as diferentes matrizes de racionalidade constituidas a partir de diferentes lugares s\u00e3o pass\u00edveis de serem universalizadas, o que nos obriga a considerar os processos por meio dos quais os conhecimentos podem dialogar, se relacionar. Enfim, o que se visa \u00e9 um di\u00e1logo de saberes que supere a colonialidade do saber e do poder.AbstractThis article renders problematic the relation between knowledges and territories, by putting in question the eurocentric idea of universal knowledge. In so doing the author intends: (1) remove the unidirectional character Europeans have impose to this idea (eurocentrism), and (2) arguing that different matrixes of rationality constituted through distinct places are liable to be universalized. This can obligate.us to consider processes through which knowledges can dialogue, construct relationships. Finally, it aims a dialogue of knowledges to overcome the coloniality of knowledge and power.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "GEOgraphia",
+        "type": "journal",
+        "issn": [
+          "1517-7793",
+          "2674-8126"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://periodicos.uff.br/geographia/article/download/13521/8721"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W304143536"
+    },
+    {
+      "openalex_id": "W3047906635",
+      "doi": "10.21723/riaee.v15i4.13761",
+      "title": "Ensino a dist\u00e2ncia, dificuldades presencias: perspectivas em tempos de COVID-19",
+      "authors": [
+        {
+          "name": "Tha\u00eds Janaina Wenczenovicz",
+          "openalex_id": "A5080402199",
+          "orcid": "https://orcid.org/0000-0001-9405-3995",
+          "institutions": [
+            "Universidade Estadual do Rio Grande do Sul"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-08-26",
+      "abstract": "Por causa da pandemia, as escolas brasileiras suspenderam as aulas presenciais em meados de mar\u00e7o de 2020 e passaram a buscar formas alternativas de manter o processo de ensino-aprendizagem durante a quarentena. Ou seja, as tecnologias \u2013 aplicativos e plataformas on-line \u2013 recepcionaram status de excel\u00eancia nos espa\u00e7os educacionais. O estudo analisa as dificuldades impostas \u00e0 concretiza\u00e7\u00e3o do processo de ensino-aprendizagem em raz\u00e3o das imposi\u00e7\u00f5es da pandemia incidindo sobre o Direito Humano \u00e0 educa\u00e7\u00e3o. Do ponto de vista metodol\u00f3gico, o recorte temporal escolhido para tratar do tema ser\u00e1 de dezembro de 2019 at\u00e9 maio de 2020, contexto que receber\u00e1 uma abordagem cr\u00edtico-cient\u00edfica, desvelando-se, assim, o Direito Humano \u00e0 educa\u00e7\u00e3o como discurso e n\u00e3o apenas como norma. Utiliza-se do procedimento metodol\u00f3gico bibliogr\u00e1fico-investigativo com acr\u00e9scimo de banco de dados e estat\u00edsticas do INEP, acrescidos da fala de dez educadores (entrevistas on-line).",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Revista Ibero-Americana de Estudos em Educa\u00e7\u00e3o",
+        "type": "journal",
+        "issn": [
+          "1982-5587",
+          "2446-8606"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos.fclar.unesp.br/iberoamericana/article/download/13761/9551"
+      },
+      "topics": [
+        "Social and Political Issues",
+        "Education during COVID-19 pandemic",
+        "Race, Identity, and Education in Brazil"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W3047906635"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

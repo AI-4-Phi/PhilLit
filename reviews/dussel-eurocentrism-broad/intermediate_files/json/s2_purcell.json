@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Sebastian Purcell Space Narrative Dussel Ricoeur",
+  "results": [
+    {
+      "paperId": "35b662989593a5f02b5a3a9f8fe4d6d1e5623e2c",
+      "title": "SPACE AND NARRATIVE: ENRIQUE DUSSEL AND PAUL RICOEUR: THE MISSED ENCOUNTER",
+      "authors": [
+        {
+          "name": "Sebastian Purcell",
+          "authorId": "118467835"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.5840/PHILTODAY201054316",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/35b662989593a5f02b5a3a9f8fe4d6d1e5623e2c",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Today",
+        "pages": "289-298",
+        "volume": "54"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

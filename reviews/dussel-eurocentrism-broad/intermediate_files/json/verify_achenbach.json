@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5195/ERRS.2021.535"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5195/errs.2021.535",
+      "title": "Non-Europeans and their Presence to History. Universality, Modernity and Decolonization in Ric\u0153ur\u2019s Political Philosophy",
+      "authors": [
+        {
+          "family": "Achenbach",
+          "given": "Alina"
+        }
+      ],
+      "editors": [],
+      "year": 2021,
+      "container_title": "\u00c9tudes Ricoeuriennes / Ricoeur Studies",
+      "volume": "12",
+      "issue": "1",
+      "page": "106-123",
+      "publisher": "University Library System, University of Pittsburgh",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5195/errs.2021.535"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

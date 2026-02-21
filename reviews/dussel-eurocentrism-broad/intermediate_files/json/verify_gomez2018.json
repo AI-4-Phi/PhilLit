@@ -1,0 +1,16 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5281/zenodo.1577618"
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "DOI 10.5281/zenodo.1577618 not found in CrossRef",
+      "recoverable": false
+    }
+  ]
+}

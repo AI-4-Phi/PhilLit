@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4067/s0717-554x2017000300339"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4067/s0717-554x2017000300339",
+      "title": "Epistemolog\u00eda de las ciencias sociales en la filosof\u00eda de la liberaci\u00f3n de Enrique Dussel",
+      "authors": [
+        {
+          "family": "Retamozo",
+          "given": "Mart\u00edn"
+        }
+      ],
+      "editors": [],
+      "year": 2017,
+      "container_title": "Cinta de moebio",
+      "volume": "",
+      "issue": "60",
+      "page": "339-345",
+      "publisher": "SciELO Agencia Nacional de Investigacion y Desarrollo (ANID)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4067/s0717-554x2017000300339"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

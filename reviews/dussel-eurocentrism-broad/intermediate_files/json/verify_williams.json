@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1353/phi.2023.a919599"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1353/phi.2023.a919599",
+      "title": "Outside and Outside: Plastic Passages\u2014of Philosophy and Literature",
+      "authors": [
+        {
+          "family": "Williams",
+          "given": "Tyler M."
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "philoSOPHIA",
+      "volume": "13",
+      "issue": "1",
+      "page": "99-123",
+      "publisher": "Project MUSE",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1353/phi.2023.a919599"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

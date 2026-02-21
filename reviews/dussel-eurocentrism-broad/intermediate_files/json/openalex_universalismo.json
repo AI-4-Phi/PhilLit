@@ -1,0 +1,42 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "universalismo Dussel \u00e9tica",
+  "results": [
+    {
+      "openalex_id": "W2587942830",
+      "doi": null,
+      "title": "Di\u00e1logos filos\u00f3ficos Europa-Am\u00e9rica Latina: hacia un universalismo abierto a la diversidad. Enrique Dussel y la \u00e9tica de la liberaci\u00f3n",
+      "authors": [
+        {
+          "name": "F\u00e1tima Hurtado L\u00f3pez",
+          "openalex_id": "A5062151910"
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-01-01",
+      "abstract": "Nuestro proposito en esta investigacion es doble. Por un lado, se trata de examinar las relaciones que mantiene el concepto de universalidad con la propuesta latinoamericana de una filosofia situada, inculturada, y, por lo tanto, de examinar los aportes de las filosofias criticas latinoamericanas a los debates sobre universalismo y particularismo cultural. En un contexto en el que el universalismo factico es resultado de una globalizacion homogeneizadora y etnocentrica (universalismo monologico), y frente a las reivindicaciones de la diferencia como identidad prefijada y cerrada con riesgos fundamentalistas, un nuevo y verdadero universalismo como dialogo intercultural se presenta hoy como una alternativa a la oposicion entre universalismo y particularidad. Por otro lado, nuestro proposito es presentar el pensamiento critico latinoamericano actual. Ahora bien, este trabajo queda nucleado en torno a la sola figura de Enrique Dussel, con el fin de poder profundizar en la relacion entre la filosofia latinoamericana de la liberacion y determinadas corrientes de filosofia europeas (en concreto, la metafisica de la alteridad de Emmanuel Levinas y la etica del discurso de Karl-Otto Apel) y latinoamericanas (Leopoldo Zea y Augusto Salazar Bondy de un lado, y la corriente llamada grupo Modernidad/Colonialidad, posoccidentalismo o tambien teorias decoloniales de otro. Para conseguir los objetivos propuestos, el trabajo quedara estructurado de la manera siguiente. Con la finalidad de facilitar la comprension del cambio de paradigma que pretende la filosofia de la liberacion en America latina, tomaremos como punto de partida la exposicion de los diferentes contextos (filosofico, historico, politico, economico, cultural, etc.) y de los origenes de la filosofia de la liberacion. En la segunda parte estudiamos de manera especifica, siguiendo un enfoque diacronico, la etica de la liberacion que Dussel ha desarrollado en dialogo con diferentes autores. Estudiamos especialmente, y de manera critica, la influencia de Levinas en la filosofia de la liberacion asi como el largo dialogo entre la etica de la liberacion (Dussel) y la etica del discurso de Apel. Cierra el trabajo una tercera parte donde se plantea la cuestion de la actualidad, o mas bien de la problematicidad actual de la filosofia de la liberacion a traves de las criticas, internas y externas, que esta corriente de pensamiento ha recibido a lo largo de las ultimas cuatro decadas. A partir de la problematica planteada, esta investigacion quiere contribuir a la tarea, desde nuestro punto de vista urgente y necesaria, de pensar filosoficamente desde un horizonte mundial.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Dialnet (Universidad de la Rioja)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Philosophy and Education Pedagogy",
+        "Latin American Cultural Politics",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2587942830"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

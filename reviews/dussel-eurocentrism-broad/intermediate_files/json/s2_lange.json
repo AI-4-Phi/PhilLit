@@ -1,0 +1,61 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Lynda Lange Burnt Offerings Rationality Dussel",
+  "results": [
+    {
+      "paperId": "9f5bdc252e022065f83b84bf785dc99c3d6bfc89",
+      "title": "Thinking from the Underside of History: Enrique Dussel's Philosophy of Liberation",
+      "authors": [
+        {
+          "name": "L. Alcoff",
+          "authorId": "88623159"
+        },
+        {
+          "name": "E. Mendieta",
+          "authorId": "50489593"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 43,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9f5bdc252e022065f83b84bf785dc99c3d6bfc89",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "985026535efa117704ece3113184bd47c618c313",
+      "title": "Decentering the center : philosophy for a multicultural, postcolonial, and feminist world",
+      "authors": [
+        {
+          "name": "Uma Narayan",
+          "authorId": "65853099"
+        },
+        {
+          "name": "S. Harding",
+          "authorId": "38766353"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 232,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/985026535efa117704ece3113184bd47c618c313",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

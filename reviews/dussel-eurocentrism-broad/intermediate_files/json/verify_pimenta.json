@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.33871/nupem.2025.17.40.8514"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.33871/nupem.2025.17.40.8514",
+      "title": "Enrique Dussel\u2019s concept of modernity: the intellectual evolution of a complex understanding of our age",
+      "authors": [
+        {
+          "family": "Pimenta",
+          "given": "Tom\u00e1s Lima"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Revista NUPEM",
+      "volume": "17",
+      "issue": "40",
+      "page": "",
+      "publisher": "Universidade Estadual do Parana - Unespar",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.33871/nupem.2025.17.40.8514"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

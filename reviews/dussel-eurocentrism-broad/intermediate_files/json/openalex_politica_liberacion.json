@@ -1,0 +1,949 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "pol\u00edtica de la liberaci\u00f3n Dussel",
+  "results": [
+    {
+      "openalex_id": "W2586265589",
+      "doi": null,
+      "title": "Lo pol\u00edtico y la pol\u00edtica. Desdoblamiento del poder pol\u00edtico en la Pol\u00edtica de la Liberaci\u00f3n de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Hugo Amador Herrera Torres",
+          "openalex_id": "A5089399117",
+          "orcid": "https://orcid.org/0000-0003-3685-4043",
+          "institutions": [
+            "Universidad Michoacana de San Nicol\u00e1s de Hidalgo"
+          ]
+        },
+        {
+          "name": "Daniela Arias Torres",
+          "openalex_id": "A5028506344",
+          "orcid": "https://orcid.org/0000-0002-9887-4296"
+        },
+        {
+          "name": "Ren\u00e9 Col\u00edn Mart\u00ednez",
+          "openalex_id": "A5008976093",
+          "orcid": "https://orcid.org/0000-0003-3096-4516",
+          "institutions": [
+            "Universidad Michoacana de San Nicol\u00e1s de Hidalgo"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "Lo pol\u00edtico tiene una relaci\u00f3n directa con el poder instituyente. La pol\u00edtica, por su parte, tiene una relaci\u00f3n directa con el poder instituido. Los v\u00ednculos entre ambos poderes son dial\u00e9cticos y las l\u00edneas que los separan son endebles. El poder instituyente no desaparece -por tanto- con la formaci\u00f3n del poder instituido. El punto de partida para el desarrollo de lo pol\u00edtico y la pol\u00edtica es el poder pol\u00edtico de la comunidad, cuya sustancia es el consenso racional. Lo racional es lo real y, lo real, es la corporalidad viviente del ser humano. El objetivo -entonces- del proceso pol\u00edtico en su conjunto (lo pol\u00edtico y la pol\u00edtica) es mantener y acrecentar la vida humana. Este objetivo constituye la base de la Pol\u00edtica de la Liberaci\u00f3n de Enrique Dussel. La sustancia del poder pol\u00edtico -de manera inevitable- se invisibiliza -principalmente- con el desarrollo de la pol\u00edtica, dando lugar al poder fetichizado. Se trata de un poder donde lo racional queda oculto. La comunidad que decide hacer frente a los embates de la fetichizaci\u00f3n del poder y que decide instalar otro poder instituido se erige como pueblo. En este proceso retorna el poder instituyente.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "RePEc: Research Papers in Economics",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dialnet.unirioja.es/descarga/articulo/5803048.pdf"
+      },
+      "topics": [
+        "Political Theory and Democracy",
+        "Public Policy and Governance"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2586265589"
+    },
+    {
+      "openalex_id": "W4323915050",
+      "doi": "10.4067/s0718-43602022000100061",
+      "title": "Desde las \u00e9ticas hacia la pol\u00edtica de la liberaci\u00f3n de Enrique Dussel. Aproximaci\u00f3n cr\u00edtica y debates sobre su filosof\u00eda de la liberaci\u00f3n",
+      "authors": [
+        {
+          "name": "Jos\u00e9 D\u00edaz Fern\u00e1ndez",
+          "openalex_id": "A5023479699",
+          "orcid": "https://orcid.org/0000-0002-5378-6508",
+          "institutions": [
+            "Universidad Andr\u00e9s Bello"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "Este art\u00edculo presenta una lectura cr\u00edtica de la filosof\u00eda de Enrique Dussel, donde se consideran los quiebres y continuidades de su proyecto \u00e9tico temprano y maduro. El objetivo de la investigaci\u00f3n es explorar y exponer el pensamiento del autor en relaci\u00f3n con las problem\u00e1ticas, cr\u00edticas y pol\u00e9micas que presenta. Para esto se esclarecen las posiciones \u00e9ticas y pol\u00edticas tempranas de su filosof\u00eda, la atingencia de la cr\u00edtica de Horacio Cerutti, la estructura de la \u00e9tica madura, el debate con Karl-Otto Apel, la estructura de la pol\u00edtica de la liberaci\u00f3n y la cr\u00edtica de Santiago Castro-G\u00f3mez. El texto presenta una lectura secular y cr\u00edtica de una de las filosof\u00edas de la liberaci\u00f3n m\u00e1s relevantes en Latinoam\u00e9rica.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Revista de filosofi\u0301a",
+        "type": "journal",
+        "issn": [
+          "0034-8236",
+          "0718-4360"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.scielo.cl/pdf/rfilosof/v79/0718-4360-rfilosof-79-00061.pdf"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Religious and Theological Studies",
+        "Religion and Society in Latin America"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W4323915050"
+    },
+    {
+      "openalex_id": "W2916826004",
+      "doi": "10.5281/zenodo.1577618",
+      "title": "El pasaje del fetichismo del capital de Marx al fetichismo del poder en el momento cr\u00edtico de la Pol\u00edtica de la Liberaci\u00f3n de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Omar Alejandro G\u00f3mez Carbajal",
+          "openalex_id": "A5001206788",
+          "institutions": [
+            "Universidad Nacional Aut\u00f3noma de M\u00e9xico"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-11-30",
+      "abstract": "<strong>Resumen:</strong> En el presente trabajo nos proponemos explorar el pasaje de la cr\u00edtica al <em>fetichismo de la mercanc\u00eda</em> y, en general, del <em>capital</em> en Karl Marx a la cr\u00edtica del <em>fetichismo del poder</em> en Enrique Dussel. La categor\u00eda de fetichismo de Marx y su uso en el campo pol\u00edtico ha sido sugerida por el fil\u00f3sofo latinoamericano para el momento cr\u00edtico negativo de su <em>Pol\u00edtica de la Liberaci\u00f3n</em>, sin embargo, no ha sido expl\u00edcitamente desarrollado su pasaje del campo econ\u00f3mico al campo pol\u00edtico. Pensamos que es importante su tratamiento tem\u00e1tico expl\u00edcito ya que nos parece la categor\u00eda central en la cr\u00edtica de la pol\u00edtica y de las posibles alternativas hacia un <em>nuevo orden.</em> El texto se expone en tres partes. La primera parte revisa la necesidad hist\u00f3rica de la forma Estado y su inevitable posibilidad de fetichizaci\u00f3n. En la segunda, recuperamos la categor\u00eda <em>Pueblo</em> y su <em>Voluntad-de-vida</em> como fundamento antifetichista del poder pol\u00edtico. Y, en la tercera, realizamos la exposici\u00f3n del pasaje l\u00f3gico del campo econ\u00f3mico al campo pol\u00edtico, es decir, del <em>fetichismo del capital</em> al <em>fetichismo del poder</em> entre Marx y Dussel. <strong>Abstract</strong>: In the present work, we propose to explore the passage from critique to <em>commodity fetishism</em> and, in general, <em>of capital</em> in Karl Marx to the critique of the <em>fetishism of power</em> in Enrique Dussel. Marx's category of fetishism and its use in the political field has been suggested by the Latin American philosopher for the negative critique moment of his <em>Politics of Liberation</em>, however, it has not been explicitly developed in his passage from the economic field to the political field. We think that its explicit thematic treatment is important since it seems to us the central category in the critique of politics and the possible alternatives towards a <em>new order.</em> The text is presented in three parts: The first part reviews the historical necessity of the State form and its inevitable possibility of fetishization. In the second one, it recovers the category <em>People</em> and their <em>Will-of-life</em> as anti-fetishist fundament of the political power. And, in the third, we made the exposition of the logical passage from the economic field to the political field, that is, from the <em>fetishism of capital</em> to the <em>fetishism of power</em> between Marx and Dussel.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "SHILAP Revista de lepidopterolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0300-5267",
+          "2340-4078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/02f909e05c5945d4aaf29a7ff011870c"
+      },
+      "topics": [
+        "Marxism and Critical Theory",
+        "Latin American socio-political dynamics",
+        "Political and Social Dynamics in Chile and Latin America"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2916826004"
+    },
+    {
+      "openalex_id": "W2034985669",
+      "doi": "10.11606/issn.1984-4867.v22i3p497-515",
+      "title": "Estudos transmodernos cr\u00edticos do turismo: um chamado \u00e0 esperan\u00e7a e transforma\u00e7\u00e3o",
+      "authors": [
+        {
+          "name": "Irena Ateljevi\u0107",
+          "openalex_id": "A5004804997",
+          "orcid": "https://orcid.org/0000-0002-6131-8085"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-12-01",
+      "abstract": "En este trabajo, se compromete con una amplia gama de literatura que proporciona evidencia de un emergente y significativo cambio de paradigma en la evoluci\u00f3n humana cuando nos enfrentamos a un mundo cada vez m\u00e1s angustiado e insostenible que pide a gritos algo de esperanza y transformaci\u00f3n. Para describir este cambio, los diferentes autores utilizan una variedad de t\u00e9rminos, como paradigma de la transmodernidad (Ghisi); filosof\u00eda transmoderna de la liberaci\u00f3n pol\u00edtica (Dussel); tr\u00edada hegeliana dial\u00e9ctica de la tesis, ant\u00edtesis y s\u00edntesis (Magda), paradigma de los sistemas de vida/reflexivos (Elgin), modelo de asociaci\u00f3n de la econom\u00eda del cuidado (Eisler), conciencia global de las relaciones y pol\u00edticas de la biosfera (Rifkin). En la revisi\u00f3n de una amplia gama de estas perspectivas, voy a argumentar que el turismo es actualmente uno de los principales indicadores que pone de manifiesto el cambio global en la conciencia humana. En consecuencia, un compromiso con la cr\u00edtica transmoderna en los estudios del turismo y esperanzados en que las becas en turismo nos den un enorme peso pol\u00edtico para apuntar a la agencia y la autoridad del turismo un posible cambio al mundo, contribuir\u00e1 para mejorar y ayudar en los anhelos por una econom\u00eda mundial m\u00e1s solidaria y de la sociedad. De este modo, por fin podremos penetrar en los discursos p\u00fablicos y cambiar sus interpretaciones dominantes del turismo como nada m\u00e1s que una actividad de ocio fr\u00edvolo o, tambi\u00e9n, como otra forma de desarrollo econ\u00f3mico.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Revista Turismo em An\u00e1lise",
+        "type": "journal",
+        "issn": [
+          "0103-5541",
+          "1984-4867"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.revistas.usp.br/rta/article/download/14260/16078"
+      },
+      "topics": [
+        "Social and Economic Solidarity",
+        "Environmental Sustainability and Education",
+        "Business and Management Studies"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W2034985669"
+    },
+    {
+      "openalex_id": "W1566904674",
+      "doi": null,
+      "title": "Pol\u00edticas p\u00fablicas cr\u00edticas para y desde Am\u00e9rica Latina",
+      "authors": [
+        {
+          "name": "Francisca G\u00f3mez Lechaptois",
+          "openalex_id": "A5039477675",
+          "institutions": [
+            "Pontificia Universidad Cat\u00f3lica de Chile"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-11-06",
+      "abstract": "ste art\u00edculo presenta los resultados de una investigaci\u00f3n realizada con el objetivo de plausibilizar la idea de una pol\u00edtica p\u00fablica cr\u00edtica en Am\u00e9rica Latina, a la luz de la \u00e9tica y pol\u00edtica de la liberaci\u00f3n de Enrique Dussel. A partir de la construcci\u00f3n de un modelo conceptual que recoge sus planteamientos, se interroga la pol\u00edtica p\u00fablica tradicional en la forma del modelo racional de an\u00e1lisis de pol\u00edticas p\u00fablicas, y desde ah\u00ed se definen algunas caracter\u00edsticas que debiera tener una pol\u00edtica p\u00fablica cr\u00edtica.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Americanae (AECID Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.redalyc.org/articulo.oa?id=26728947005"
+      },
+      "topics": [
+        "Public Policy and Governance",
+        "Cultural and political discourse analysis",
+        "Comparative constitutional jurisprudence studies"
+      ],
+      "referenced_works_count": 4,
+      "url": "https://openalex.org/W1566904674"
+    },
+    {
+      "openalex_id": "W2916753462",
+      "doi": "10.51359/2179-7501.2018.239157",
+      "title": "Filosof\u00eda y pol\u00edtica de liberaci\u00f3n en la obra de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Jaime Antonio Coronado Preciado",
+          "openalex_id": "A5012024352",
+          "institutions": [
+            "Universidad de Guadalajara"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-09",
+      "abstract": "La filosof\u00eda y pol\u00edtica de liberaci\u00f3n de Enrique Dussel, supera las filosof\u00edas pol\u00edticas \u201ccivilizatorias\u201d de la modernidad occidental. Indaga sus ra\u00edces filos\u00f3ficas y pol\u00edticas euroc\u00e9ntricas, que terminaron por subordinar a Am\u00e9rica Latina, sin reconocer el quiebre epistemol\u00f3gico que signific\u00f3 la invasi\u00f3n de Am\u00e9rica, al fundar la modernidad como totalidad del sistema mundo. Su pensamiento cr\u00edtico, como contra-relato, da voz a los olvidados o excluidos, revaloriza saberes m\u00faltiples, heterog\u00e9neos, donde el poder, o la pluralidad de contrapoderes, tienden a ser negados o acallados, pero resisten y re-sienten la dominaci\u00f3n. Dussel, imagina la realidad otramente; aqu\u00ed se destacan seis tesis: 1) La herencia de Las Casas, Su\u00e1rez y Vitoria; de la teolog\u00eda pol\u00edtica a la modernidad colonial(izada); 2) El an\u00e1lisis desde la exterioridad en el pensamiento euroc\u00e9ntrico; 3) La contemporaneidad de la filosof\u00eda y la pol\u00edtica de la liberaci\u00f3n; 4) Eurocentrismo y \u00e9tica liberadora; 5) El pensamiento geopol\u00edtico y la modernidad en la pol\u00edtica de la liberaci\u00f3n; 6) La Transmodernidad en Dussel, que supera la modernidad-colonialidad del Sistema Mundo. En conclusi\u00f3n, la filosof\u00eda y la pol\u00edtica de la liberaci\u00f3n, ofrecen un campo contra hegem\u00f3nico frente a la modernidad opresora, excluyente, depredadora, patriarcal y colonizadora del poder y del pensamiento.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Revista de Estudos AntiUtilitaristas e PosColoniais",
+        "type": "journal",
+        "issn": [
+          "2179-7501"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos.ufpe.br/revistas/realis/article/download/239157/30878"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2916753462"
+    },
+    {
+      "openalex_id": "W4408295598",
+      "doi": "10.4025/dialogos.v29i1.74745",
+      "title": "La Pol\u00edtica Latinoamericana de Enrique Dussel (1979): el primer paso hacia la Pol\u00edtica de la Liberaci\u00f3n",
+      "authors": [
+        {
+          "name": "Mario Ruiz-Sotelo",
+          "openalex_id": "A5098402099",
+          "orcid": "https://orcid.org/0000-0003-2399-678X",
+          "institutions": [
+            "Universidad Nacional Aut\u00f3noma de M\u00e9xico"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-03-07",
+      "abstract": "La Pol\u00edtica de la Liberaci\u00f3n de Enrique Dussel tiene en Pol\u00edtica Latinoamericana (1979) el volumen inicial de un notable esfuerzo filos\u00f3fico que ha devenido en una filosof\u00eda pol\u00edtica transmoderna. Esta obra (editada bajo el t\u00edtulo de Filosof\u00eda \u00c9tica Latinoamericana IV) es la simiente que veremos profundizada tres d\u00e9cadas despu\u00e9s, en especial en sus tres vol\u00famenes de la Pol\u00edtica de la Liberaci\u00f3n. Pol\u00edtica Latinoamericana plantea conceptos que reconocen la necesidad de estudiar a Latinoam\u00e9rica y en general a los pa\u00edses que se mantienen en una situaci\u00f3n de alteridad con una reflexi\u00f3n cr\u00edtica de la filosof\u00eda hegem\u00f3nica. Retomaremos los temas en el orden expuesto por el autor.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Di\u00e1logos",
+        "type": "journal",
+        "issn": [
+          "1415-9945",
+          "2177-2940"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos.uem.br/ojs/index.php/Dialogos/article/download/74745/751375159359"
+      },
+      "topics": [
+        "Public Policy and Governance",
+        "International Relations in Latin America",
+        "Social and Political Issues"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W4408295598"
+    },
+    {
+      "openalex_id": "W4416916914",
+      "doi": "10.15332/25005375.11251",
+      "title": "La transformaci\u00f3n pol\u00edtica en Enrique Dussel y el nuevo derecho de la liberaci\u00f3n. In memoriam",
+      "authors": [
+        {
+          "name": "Dami\u00e1n Pach\u00f3n Soto",
+          "openalex_id": "A5089853741",
+          "orcid": "https://orcid.org/0000-0003-4809-2365",
+          "institutions": [
+            "Industrial University of Santander"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-02",
+      "abstract": "La Filosof\u00eda de la liberaci\u00f3n de Enrique Dussel no hizo en su obra un tratamiento sistem\u00e1tico y profundo del derecho, tal como si lo hizo de la \u00e9tica, la pol\u00edtica o de la econom\u00eda. Sin embargo, dedic\u00f3 a lo largo de su obra algunas reflexiones y art\u00edculos sobre el mismo. En ese sentido, el presente texto asume la tarea de articular lo que ser\u00eda un \u201cnuevo derecho de la liberaci\u00f3n\u201d o \u201cderecho transmoderno\u201d al interior de la teor\u00eda de las tres constelaciones de la transformaci\u00f3n pol\u00edtica que teoriz\u00f3 Dussel en su Pol\u00edtica de la liberaci\u00f3n III, publicada en el a\u00f1o 2022. De esta manera, el derecho queda incorporado a su filosof\u00eda pol\u00edtica, a la vez que se articula con los tres principios \u00e9ticos normativos, espec\u00edficamente, con el material, el de legitimidad o procedimental formal y el de factibilidad. Tambi\u00e9n se plantean algunas de las exigencias que deber\u00eda asumir y cumplir un derecho para los tiempos futuros, ya sea para la constelaci\u00f3n pol\u00edtica n\u00famero 3 o la llamada futura transmodernidad intercultural y diversa.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Cuadernos de Filosof\u00eda Latinoamericana",
+        "type": "journal",
+        "issn": [
+          "0120-8462",
+          "2500-5375"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.usantotomas.edu.co/index.php/cfla/article/download/11251/9226"
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4416916914"
+    },
+    {
+      "openalex_id": "W4399986227",
+      "doi": "10.59614/acief42024154",
+      "title": "Corporalidad en las pedagog\u00edas latinoamericanas",
+      "authors": [
+        {
+          "name": "Felipe Nicol\u00e1s Mujica Johnson",
+          "openalex_id": "A5088072504",
+          "orcid": "https://orcid.org/0000-0002-6956-2357",
+          "institutions": [
+            "University of Chile"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-06-01",
+      "abstract": "El estudio de la corporalidad en las pedagog\u00edas y en el campo de la Educaci\u00f3n F\u00edsica latinoamericana tiene diferentes tradiciones, las cuales se suelen asociar a escuelas filos\u00f3ficas concretas. A pesar de aquellas diferenciaciones, es preciso destacar que existe una intencionalidad de realzar el valor del cuerpo desde una concepci\u00f3n situada, cultural, subjetiva y compleja. En este contexto, se elabora este estudio que tiene por objetivo reflexionar sobre el giro narrativo corporal en perspectiva descolonial desde la filosof\u00eda de la liberaci\u00f3n de Paulo Freire y Enrique Dussel. Se abordan los sentidos de la pedagog\u00eda corporal moderna y euroc\u00e9ntrica, como antecedente del giro corporal latinoamericano. Posteriormente, se discute el dualismo de la subjetividad y objetividad desde la dial\u00e9ctica de Paulo Freire, aportando una visi\u00f3n cr\u00edtica, relacional y compleja para la corporalidad. Este an\u00e1lisis se complementa con el constructo de totalidad de Enrique Dussel, permitiendo entender la corporalidad como una totalidad dial\u00e9ctica que incorpora m\u00faltiples dimensiones. Entre esas dimensiones se reconocen la afectividad, la racionalidad, la cultura, la biolog\u00eda, la historia y la pol\u00edtica. A su vez, se considera que, en el marco de una totalidad dial\u00e9ctica, la corporalidad ha de ser conceptualizada por sentidos situados que no se orientan por principios universales y abstractos, por lo que es coherente que existan diferentes tradiciones epistemol\u00f3gicas en torno a ella. De alg\u00fan modo, representan la alteridad presente en el mundo y el reconocimiento de esta misma, la cual exige la apertura a di\u00e1logos pluralistas.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Revista Acad\u00e9mica Internacional de Educaci\u00f3n F\u00edsica",
+        "type": "journal",
+        "issn": [
+          "2745-1887"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revista-acief.com/index.php/articulos/article/download/154/87"
+      },
+      "topics": [
+        "Educational Practices and Policies",
+        "Educational theories and practices",
+        "Education in Rural Contexts"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W4399986227"
+    },
+    {
+      "openalex_id": "W4256470635",
+      "doi": "10.34096/iice.n45.7129",
+      "title": "La pedag\u00f3gica de la liberaci\u00f3n de Enrique Dussel: Inakayal y lo que la pedagog\u00eda nos neg\u00f3",
+      "authors": [
+        {
+          "name": "Nadia Heredia",
+          "openalex_id": "A5080872028"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-18",
+      "abstract": "La Pedag\u00f3gica dusseliana se desprende de la primera relaci\u00f3n \u00e9tica, que es el cara-a-cara. Esta relaci\u00f3n se da en determinado sistema ideol\u00f3gico (Totalidad) que es el que selecciona lo que se transmite de una generaci\u00f3n a otra, el legado educativo-cultural.Lo que Dussel hace en la Pedag\u00f3gica es repensar esta relaci\u00f3n cara-a-cara a partir de las formas de dominio que inaugura la llegada de los espa\u00f1oles en 1492 al territorio Latinoamericano, donde \u201cel var\u00f3n conquistador se transform\u00f3 en padre opresor, en maestro dominador\u201d (1980, p. 18). \u00c9tica y pol\u00edtica se constituyen aqu\u00ed en aspectos indisociables para repensar desde la filosof\u00eda de la liberaci\u00f3n las relaciones de dominio que van desde el plano er\u00f3tico familiar (madre-padre/hijx), al plano pol\u00edtico institu-cional (maestrx/estudiante).Ahora bien, \u00bfqu\u00e9 lugar ocupa en nuestras constituciones subjetivas el origen de dominaci\u00f3n y opresi\u00f3n que portamos a partir de 1492? \u00bfEn qu\u00e9 medida esta pri-mera relaci\u00f3n \u00e9tica, transformada en relaci\u00f3n de dominio y negaci\u00f3n condiciona nuestras formas de posicionarnos geopol\u00edticamente en esta distribuci\u00f3n impuesta del sistema-mundo universal?En este trabajo, analizar\u00e9 la vigencia cr\u00edtica de los principios \u00e9tico-pol\u00edticos que dan origen a la pedag\u00f3gica de la liberaci\u00f3n de Enrique Dussel para resignificarlos en la postulaci\u00f3n de una educaci\u00f3n que revalorice lo hist\u00f3ricamente excluido. La historia del cacique Tehuelche Inakayal, ser\u00e1 la que d\u00e9 contenido a la Pedag\u00f3gica dusseliana, como parte de una reflexi\u00f3n \u00e9tico-pol\u00edtica de liberaci\u00f3n situada, desde la Patagonia Argentina.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Revista del IICE",
+        "type": "journal",
+        "issn": [
+          "0327-7763",
+          "2451-5434"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://revistascientificas.filo.uba.ar/index.php/iice/article/download/7229/6471"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Indigenous Cultures and History",
+        "Indigenous Cultures and Socio-Education"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W4256470635"
+    },
+    {
+      "openalex_id": "W1511542525",
+      "doi": null,
+      "title": "Transmodern Critical Tourism Studies: A Call for Hope and Transformation",
+      "authors": [
+        {
+          "name": "Irena Ateljevi\u0107",
+          "openalex_id": "A5004804997",
+          "orcid": "https://orcid.org/0000-0002-6131-8085",
+          "institutions": [
+            "Institute for Tourism"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-12-01",
+      "abstract": "&lt;font size=\"3\"&gt;&lt;strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;Abstract&lt;/span&gt;&lt;/strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;&lt;/span&gt;&lt;/font&gt;&lt;font size=\"3\"&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;In this paper I engage with a broad range of literature that provides evidence of an emerging and significant paradigm shift in human evolution as we face an increasingly distressed and unsustainable world that screams for some hope and transformation. To describe this shift, different authors use a variety of terms, such as transmodernity paradigm (Ghisi); transmodern philosophy of political liberation (Dussel); Hegelian dialectical triad of thesis, antithesis and synthesis (Magda); reflective/living-systems paradigm (Elgin); partnership model of caring economics (Eisler); relational global consciousness and biosphere politics (Rifkin). Reviewing a broad range of these perspectives, I will argue that &lt;span style=\"color: black\"&gt;tourism is actually one of the key indicators that manifest the global shift in human consciousness. In consequence, &lt;/span&gt;an engagement with transmodern critical tourism studies and hopeful tourism scholarship &lt;span style=\"color: black\"&gt;gives us an enormous political weight to point to the agency and authority of tourism to possibly change the world for the better and assist it in its longings for more caring global economy and society. In doing so, &lt;/span&gt;&lt;/span&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;we can finally penetrate public discourses and change their dominant interpretations of tourism as being nothing more than a frivolous leisure activity or yet another form of economic development&lt;/span&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;&lt;/span&gt;&lt;/font&gt;&lt;font size=\"3\"&gt;&lt;strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;Keywords: &lt;/span&gt;&lt;/strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;t&lt;/span&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;ourism; &lt;/span&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;transmodernity; critical studies.&lt;span style=\"color: black\"&gt;&lt;/span&gt;&lt;/span&gt;&lt;/font&gt;&lt;strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;&lt;font size=\"3\"&gt; &lt;/font&gt;&lt;/span&gt;&lt;/strong&gt;&lt;strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;&lt;font size=\"3\"&gt; &lt;/font&gt;&lt;/span&gt;&lt;/strong&gt;&lt;strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;&lt;font size=\"3\"&gt; &lt;/font&gt;&lt;/span&gt;&lt;/strong&gt;&lt;strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;&lt;font size=\"3\"&gt;Resumo&lt;/font&gt;&lt;/span&gt;&lt;/strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;&lt;font size=\"3\"&gt;Neste texto, se analisa uma ampla literatura que aponta para a configura\u00e7\u00e3o de um paradigma emergente e significativo na evolu\u00e7\u00e3o humana, tendo em vista um mundo cada vez mais problem\u00e1tico e n\u00e3o sustent\u00e1vel que grita por esperan\u00e7a e transforma\u00e7\u00e3o. Para descrever esta mudan\u00e7a, diferentes autores usam uma variedade de termos, tais como paradigma da transmodernidade (Ghisi); filosofia transmoderna de liberta\u00e7\u00e3o pol\u00edtica (Dussel); tr\u00edade da tese, ant\u00edtese e s\u00edntese da dial\u00e9tica Hegeliana (Magda); paradigma reflexivo/dos sistemas vivos (Elgin); modelo de parceria de capacidade econ\u00f4mica (Eisler); consci\u00eancia global relacional e pol\u00edtica da biosfera (Rifkin). Ao revisar uma gama destas perspectivas, argumento que o turismo \u00e9, na realidade, um dos indicadores chave que se manifestam na mudan\u00e7a global de consci\u00eancia humana. Assim, um envolvimento com estudos cr\u00edticos transmodernos do turismo e atividades tur\u00edsticas de esperan\u00e7a nos d\u00e3o um peso pol\u00edtico enorme para apontar a fun\u00e7\u00e3o e autoridade do turismo para possivelmente mudar o mundo para melhor e ajud\u00e1-lo no desejo de uma economia e sociedade global mais consciente. Ao fazer isso, n\u00f3s podemos, finalmente, penetrar os discursos p\u00fablicos e mudar a sua perspectiva dominante do turismo como sendo nada mais que uma atividade f\u00fatil de lazer ou mais uma forma de desenvolvimento econ\u00f4mico.&lt;/font&gt;&lt;/span&gt;&lt;font size=\"3\"&gt;&lt;strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;Palavras-chave: &lt;/span&gt;&lt;/strong&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;turismo; transmodernidade; estudos cr\u00edticos.&lt;/span&gt;&lt;/font&gt;&lt;span style=\"font-family: 'Times New Roman','serif'; color: black\"&gt;&lt;font size=\"3\"&gt; &lt;/font&gt;&lt;/span&gt;&lt;strong&gt;&lt;em&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;&lt;font size=\"3\"&gt;Resumen&lt;/font&gt;&lt;/span&gt;&lt;/em&gt;&lt;/strong&gt;&lt;em&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;&lt;font size=\"3\"&gt;En este trabajo, se compromete con una amplia gama de literatura que proporciona evidencia de un emergente y significativo cambio de paradigma en la evoluci\u00f3n humana cuando nos enfrentamos a un mundo cada vez m\u00e1s angustiado e insostenible que pide a gritos algo de esperanza y transformaci\u00f3n. Para describir este cambio, los diferentes autores utilizan una variedad de t\u00e9rminos, como paradigma de la transmodernidad (Ghisi); filosof\u00eda transmoderna de la liberaci\u00f3n pol\u00edtica (Dussel); tr\u00edada hegeliana dial\u00e9ctica de la tesis, ant\u00edtesis y s\u00edntesis (Magda), paradigma de los sistemas de vida/reflexivos (Elgin), modelo de asociaci\u00f3n de la econom\u00eda del cuidado (Eisler), conciencia global de las relaciones y pol\u00edticas de la biosfera (Rifkin). En la revisi\u00f3n de una amplia gama de estas perspectivas, voy a argumentar que el turismo es actualmente uno de los principales indicadores que pone de manifiesto el cambio global en la conciencia humana. En consecuencia, un compromiso con la cr\u00edtica transmoderna en los estudios del turismo y esperanzados en que las becas en turismo nos den un enorme peso pol\u00edtico para apuntar a la agencia y la autoridad del turismo un posible cambio al mundo, contribuir\u00e1 para mejorar y ayudar en los anhelos por una econom\u00eda mundial m\u00e1s solidaria y de la sociedad. De este modo, por fin podremos penetrar en los discursos p\u00fablicos y cambiar sus interpretaciones dominantes del turismo como nada m\u00e1s que una actividad de ocio fr\u00edvolo o, tambi\u00e9n, como otra forma de desarrollo econ\u00f3mico.&lt;/font&gt;&lt;/span&gt;&lt;/em&gt; &lt;p style=\"margin: 6pt 0cm\" class=\"MsoNormal\"&gt;&lt;font size=\"3\"&gt;&lt;strong&gt;&lt;em&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt;Palabras clave:&lt;/span&gt;&lt;/em&gt;&lt;/strong&gt;&lt;em&gt;&lt;span style=\"font-family: 'Times New Roman','serif'\"&gt; turismo; transmodernidad; estudios cr\u00edticos.&lt;/span&gt;&lt;/em&gt;&lt;/font&gt;&lt;/p&gt;",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "SHILAP Revista de lepidopterolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0300-5267",
+          "2340-4078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/4ecd289308aa4ae795d117ca0b872783"
+      },
+      "topics": [
+        "Globalization and Cultural Identity",
+        "Environmental, Ecological, and Cultural Studies",
+        "Social Issues and Policies"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W1511542525"
+    },
+    {
+      "openalex_id": "W4404637584",
+      "doi": "10.53439/stdfyt33.17.2014.87-97",
+      "title": "fundamentaci\u00f3n anal\u00f3gica de la pol\u00edtica de la liberaci\u00f3n de E. Dussel como subparte de la hermen\u00e9utica anal\u00f3gica de M. Beuchot",
+      "authors": [
+        {
+          "name": "Eduardo Ov\u00eddio Romero",
+          "openalex_id": "A5103536232"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-09-06",
+      "abstract": "En el presente trabajo se expondr\u00e1n, en primer lugar, algunos puntos clave de la fundamentaci\u00f3n de la propuesta de E. Dussel en torno a la Pol\u00edtica de la Liberaci\u00f3n. En segundo lugar, se desarrollar\u00e1n algunas tesis centrales de M. Beuchot referidas a la fundamentaci\u00f3n de la hermen\u00e9utica anal\u00f3gica. Finalmente, se mostrar\u00e1 que algunos elementos centrales de los desarrollos dusselianos pueden ser entendidos como una subparte de la hermen\u00e9utica anal\u00f3gica.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Studium Filosof\u00eda y Teolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0329-8930",
+          "2591-426X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://revistas.unsta.edu.ar/index.php/Studium/article/download/429/448"
+      },
+      "topics": [
+        "Religious and Theological Studies",
+        "Philosophical Thought and Analysis",
+        "Philosophical and Cultural Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4404637584"
+    },
+    {
+      "openalex_id": "W4406259042",
+      "doi": "10.21500/22563202.7107",
+      "title": "Nietzsche en la pol\u00edtica de la liberaci\u00f3n de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Jairo Alberto Merlo Pinz\u00f3n",
+          "openalex_id": "A5091292791",
+          "orcid": "https://orcid.org/0000-0002-1957-3218"
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-19",
+      "abstract": "Nietzsche es una figura destacada en la filosof\u00eda contempor\u00e1nea, a la que tambi\u00e9n recurre el fil\u00f3sofo latinoamericano Enrique Dussel para examinar c\u00f3mo opera la voluntad en la construcci\u00f3n pol\u00edtica. Ambos fil\u00f3sofos coinciden en la existencia de una relaci\u00f3n fundamental entre el poder y la voluntad. Esta potentia-voluntad act\u00faa mediante la introducci\u00f3n de mediaciones, como condiciones condicionadas (valores o entidades valiosas), que se manifiestan en la potestas. Sin embargo, la actitud dionis\u00edaca y vital que Nietzsche identifica \u00fanicamente en un sujeto aristocr\u00e1tico (un superhombre), superior al reba\u00f1o de los d\u00e9biles, es reconsiderada por Dussel, quien sit\u00faa a las v\u00edctimas del sistema como capaces de potenciaci\u00f3n pol\u00edtica a trav\u00e9s de su consenso cr\u00edtico. Este acto, denominado hiperpotencia, trasciende la cr\u00edtica euroc\u00e9ntrica de Nietzsche y parece demostrar que la tercera transformaci\u00f3n del esp\u00edritu (la del ni\u00f1o que crea desde cero) se encarna en las acciones de las v\u00edctimas al replantear el sistema pol\u00edtico.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Revista Guillermo de Ockham",
+        "type": "journal",
+        "issn": [
+          "1794-192X",
+          "2256-3202"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.21500/22563202.7107"
+      },
+      "topics": [
+        "Religious and Theological Studies",
+        "Philosophical and Cultural Analysis",
+        "Literary and Philosophical Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4406259042"
+    },
+    {
+      "openalex_id": "W227949349",
+      "doi": "10.53439/stdfyt33.17.2014.87-97",
+      "title": "La fundamentaci\u00f3n anal\u00f3gica de la pol\u00edtica de la liberaci\u00f3n de E. Dussel como subparte de la Hermen\u00e9utica anal\u00f3gica de M. Beuchot",
+      "authors": [
+        {
+          "name": "Eduardo Ov\u00eddio Romero",
+          "openalex_id": "A5103536232"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "En el presente trabajo se expondr\u00e1n, en primer lugar, algunos puntos clave de la fundamentaci\u00f3n de la propuesta de E. Dussel en torno a la Pol\u00edtica de la Liberaci\u00f3n. En segundo lugar, se desarrollar\u00e1n algunas tesis centrales de M. Beuchot referidas a la fundamentaci\u00f3n de la hermen\u00e9utica anal\u00f3gica. Finalmente, se mostrar\u00e1 que algunos elementos centrales de los desarrollos dusselianos pueden ser entendidos como una subparte de la hermen\u00e9utica anal\u00f3gica.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "SHILAP Revista de lepidopterolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0300-5267",
+          "2340-4078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/bf6edd187cae4f3287c01e197377c598"
+      },
+      "topics": [
+        "Religious and Theological Studies",
+        "Philosophical Thought and Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W227949349"
+    },
+    {
+      "openalex_id": "W2529728805",
+      "doi": null,
+      "title": "Dr. Enrique Dussel. Pol\u00edtica de la liberaci\u00f3n (10 de 13)",
+      "authors": [
+        {
+          "name": "Enrique Dussel",
+          "openalex_id": "A5040236031"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Programa \r\nPARTE 1\r\nLA NEGATIVIDAD: LA PRAXIS MESIANICA Y LOS PRINCIPIOS\r\nNORMATIVOS CRITICOS\r\n\r\nPARTE 2\r\nLA POSITIVIDAD: EL PUEBLO COMO ACTOR HISTORICOS Y LOS PRINCIPIOS\r\nNORMATIVOS CREATIVOS\r\n\r\nPARTE 3\r\nEL GOBIERNO EN LA TRANSFORMACION INSTITUCIONAL\r\n\r\nCONCLUSION\r\nLA TRANSICION AL NUEVO ORDEN POLITICO",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Dynamics in Latin America"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2529728805"
+    },
+    {
+      "openalex_id": "W2536795669",
+      "doi": null,
+      "title": "Enrique Dussel. Pol\u00edtica de la liberaci\u00f3n (10 de 13 / Video)",
+      "authors": [
+        {
+          "name": "Enrique Dussel",
+          "openalex_id": "A5040236031"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "Programa desglosado en 13 temas &#13;\\nPARTE 1&#13;\\nLA NEGATIVIDAD: LA PRAXIS MESI\u00c1NICA Y LOS PRINCIPIOS&#13;\\nNORMATIVOS CR\u00cdTICOS&#13;\\n&#13;\\n\u00a7 1. La fetichizaci\u00f3n del sistema pol\u00edtico. La miseria de la multitud y la ruptura mesi\u00e1nica&#13;\\n(comunitaria y como liderazgo). Memoria, redenci\u00f3n y lucha&#13;\\n&#13;\\n\u00a7 2. El principio material cr\u00edtico negativo [460-]&#13;\\nLa \u201cpraxis liberadora I\u201d, deconstructiva o revolucionaria&#13;\\nEl segundo acontecimiento m\u00e1s all\u00e1 de Badiou&#13;\\n&#13;\\n\u00a7 3. Del \u201cEstado de derecho\u201d como dominaci\u00f3n a la ilegalidad leg\u00edtima. El \u201cEstado de rebeli\u00f3n\u201d como efecto del consenso cr\u00edtico. El principio formal negativo de legitimidad cr\u00edtica&#13;\\n&#13;\\n\u00a7 4. El principio de factibilidad cr\u00edtico-negativo. La estrat\u00e9gica de los \u201cd\u00e9biles\u201d. La deconstrucci\u00f3n de las instituciones. El \u201ctiempo\u201d peligroso y negativo de disoluci\u00f3n de las instituciones&#13;\\n&#13;\\nPARTE 2&#13;\\nLA POSITIVIDAD: EL PUEBLO COMO ACTOR HIST\u00d3RICOS Y LOS PRINCIPIOS&#13;\\nNORMATIVOS CREATIVOS&#13;\\n&#13;\\n\u00a7 5. El \u201cPueblo\u201d como actor pol\u00edtico. La ruptura en el seno de la comunidad pol\u00edtica. El&#13;\\n\u201cresto\u201d y el hegem\u00f3n anal\u00f3gico&#13;\\n&#13;\\n\u00a7 6. La voluntad creadora como hiper-potentia. El principio material cr\u00edtico positivo de la pol\u00edtica. La \u201cvida perpetua\u201d de la comunidad. Del \u201cReino de la libertad\u201d de Marx al \u201cReino de Dios\u201dde Kant. Solidaridad m\u00e1s all\u00e1 de la fraternidad.&#13;\\n&#13;\\n\u00a7 7. El principio de legitimidad cr\u00edtica positiva: el consenso fundamento de la nueva legitimidad democr\u00e1tica de la soberan\u00eda popular. La \u201cpaz perpetua\u201d. Alteridad m\u00e1s all\u00e1 de la igualdad&#13;\\n&#13;\\n\u00a7 8. El principio estrat\u00e9gico cr\u00edtico. Liberaci\u00f3n m\u00e1s all\u00e1 de la libertad&#13;\\n&#13;\\nPARTE 3&#13;\\nEL GOBIERNO EN LA TRANSFORMACI\u00d3N INSTITUCIONAL&#13;\\n&#13;\\n\u00a7 9. La transici\u00f3n: la \u201cpraxis de liberaci\u00f3n II\u201d: participaci\u00f3n ciudadana y los Nuevos Movimiento Sociales. La raz\u00f3n pol\u00edtica cr\u00edtico anal\u00f3gico transversal. El gobierno creativo en la transici\u00f3n.&#13;\\n&#13;\\n\u00a7 10. Transformaci\u00f3n del sistema del derecho desde la nueva instancia de legitimaci\u00f3n. El nuevo poder constituyente y la nueva legalidad. La Democracia participativa y representativa.&#13;\\n&#13;\\n\u00a7 11. Transformaci\u00f3n ecol\u00f3gica, econ\u00f3mica y cultural. La nueva vida como \u201cvida buena\u201d&#13;\\nde los pueblos originarios&#13;\\n&#13;\\n\u00a7 12. Transformaci\u00f3n del Estado y mutaci\u00f3n de la sociedad civil. El gobierno eficaz como servicio, como participaci\u00f3n responsable y como representaci\u00f3n obediencial&#13;\\n&#13;\\nCONCLUSI\u00d3N&#13;\\nLA TRANSICION AL NUEVO ORDEN POL\u00cdTICO&#13;\\n&#13;\\n\u00a7 13. \u201cPretensi\u00f3n cr\u00edtico-pol\u00edtica de justicia\u201d",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Facultad de Filosof\u00eda y Letras (Universidad Nacional Aut\u00f3noma de M\u00e9xico)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Theory and Democracy",
+        "Social Sciences and Policies",
+        "Philosophical and Cultural Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2536795669"
+    },
+    {
+      "openalex_id": "W2736759084",
+      "doi": "10.54255/lim.vol5.num10.288",
+      "title": "El mandar obedeciendo en clave decolonial: una pol\u00edtica otra. / To Lead by Obeying in a colonial key: an \u201cother\u201d politics.",
+      "authors": [
+        {
+          "name": "Aldo Ahumada Infante",
+          "openalex_id": "A5015200631",
+          "orcid": "https://orcid.org/0000-0001-7354-2896"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-11-01",
+      "abstract": "El presente trabajo analiza la concepci\u00f3n zapatista del \u201cmandar obedeciendo\u201d como ejemplo de una forma decolonizadora de hacer pol\u00edtica. As\u00ed, se vinculanlas perspectivas de pensadores como Enrique Dussel y Walter Mignolo, entre otros, que optan por lo que se ha denominado opci\u00f3n decolonial o giro decolonizador, con el pensamiento emanado del Ej\u00e9rcito Zapatista de Liberaci\u00f3n Nacional (EZLN). Argumentaremos el por qu\u00e9 un proyecto como el que se est\u00e1 llevando a cabo por el EZLN, puede ser ejemplo de una pol\u00edtica decolonial, ya que al tomar experiencias tanto ind\u00edgenas como de una variante de la izquierda cr\u00edtica, se situar\u00edan, desde una perspectiva te\u00f3rica, en las fronteras de la modernidad.&#x0D; In this paper, we analyze the Zapatist conception of \u201cgiving orders while obeying\u201d as an example of a decolonizing way of doing politics. As such, we articulate the perspectives of thinkers like Enrique Dussel and Walter Mignolo, among others, that adhere to what has been called decolonial option or decolonizing turn, with the thought that emanates from the Zapatist Army of National Liberation (EZLN, in Spanish).We present an argumentation as to why a project as that of the EZLN can be an example of decolonial politics, since by taking experiences from both indigenous culture and a variant of the critical left, they appear to be situated, from a theoretical perspective, at the boundaries of modernity.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Liminales",
+        "type": "journal",
+        "issn": [
+          "0719-1758",
+          "0719-7748"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "http://revistafacso.ucentral.cl/index.php/liminales/article/download/288/280"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Latin American socio-political dynamics",
+        "Indigenous Cultures and History"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2736759084"
+    },
+    {
+      "openalex_id": "W2948696898",
+      "doi": "10.29076/issn.2528-7737vol12iss30.2019pp130-142p",
+      "title": "Incorporaci\u00f3n de los saberes ancestrales en la educaci\u00f3n ordinaria.//Incorporation of ancestral knowledge in ordinary education.",
+      "authors": [
+        {
+          "name": "Pablo Alfredo Su\u00e1rez-Guerra",
+          "openalex_id": "A5017450078"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-16",
+      "abstract": "El presente trabajo discute esenciales fundamentos hist\u00f3ricos, antropol\u00f3gicos, econ\u00f3micos e ideol\u00f3gicos del modo de producci\u00f3n de conocimiento a partir del modo de producci\u00f3n de vida general del ser humano, a fin de cuestionar las matrices de la hegemon\u00eda epistemol\u00f3gica racionalista de la modernidad capitalista, que ancla su raz\u00f3n de ser en una estructura econ\u00f3mico-pol\u00edtica dominante que destruye material e intelectualmente al Otro para construirlo como objeto dominado y de conocimiento, lo cual se traduce en el posicionamiento centenario de una dicotom\u00eda jer\u00e1rquica conocimiento/\u201dsaberes ancestrales\u201d, y realiza, finalmente, algunas sugerencias respecto de la incorporaci\u00f3n de los denominados saberes ancestrales en la educaci\u00f3n ordinaria. Con base en las premisas cr\u00edticas del materialismo hist\u00f3rico de Karl Marx y la filosof\u00eda y la \u00e9tica de la liberaci\u00f3n de Enrique Dussel, entre otros, se apunta brevemente la necesidad de replantear el problema de la validaci\u00f3n de todo saber o conocimiento en la vida, lo cual implica subvertir las bases epistemol\u00f3gicas de las diversas disciplinas con base en un di\u00e1logo te\u00f3rico-pr\u00e1ctico intercultural en equidad, y los fundamentos econ\u00f3micos, \u00e9ticos, pol\u00edticos e ideol\u00f3gicos que nutren tales bases y que destruyen, invisibilizan, discriminan e instrumentalizan las producciones materiales e intelectuales contrarias o contradictorias al statu quo del capital. AbstractThis paper discusses essential historical, anthropological, economic and ideological foundations of the mode of production of knowledge from the general mode of production of life of the human being, in order to question the matrices of the epistemological rationalist hegemony of capitalist modernity, which anchors its raison d'\u00eatre in a dominant economic-political structure that materially and intellectually destroys the other in order to construct it as a dominated and knowledge object, which translates into the centenary positioning of a hierarchical knowledge/\"ancestral knowledge\" dichotomy, and finally makes some suggestions regarding the incorporation of so-called ancestral knowledge into ordinary education. Based on the critical premises of Karl Marx's historical materialism and Enrique Dussel's philosophy and ethics of liberation, among others, the need to rethink the problem of the validation of all knowledge or knowledge in life is briefly pointed out, which implies subverting the epistemological bases of the diverse disciplines based on an intercultural theoretical-practical dialogue in equity, and the economic, ethical, political and ideological foundations that nourish such bases and that destroy, invisibilize, discriminate and instrumentalize the material and intellectual productions contrary or contradictory to the status quo of capital.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Ciencia Unemi",
+        "type": "journal",
+        "issn": [
+          "1390-4272",
+          "2528-7737"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://ojs.unemi.edu.ec/index.php/cienciaunemi/article/download/800/779"
+      },
+      "topics": [
+        "Indigenous Cultures and Socio-Education",
+        "Education in Rural Contexts",
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2948696898"
+    },
+    {
+      "openalex_id": "W2628793130",
+      "doi": "10.5070/t472035432",
+      "title": "El fetichismo del Capital-Estado-Naci\u00f3n: de la transcr\u00edtica a la transmodernidad",
+      "authors": [
+        {
+          "name": "Jos\u00e9 Romero-Lossaco",
+          "openalex_id": "A5081018702",
+          "institutions": [
+            "Instituto de Historia"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "ResumenLa actual crisis civilizatoria hace necesario re-evaluar nuestros marcos interpretativos, tras siglos de dependencia epist\u00e9mica los pueblos del sur global se esfuerzan por verse cara-a-cara sin mediaciones metropolitanas.Este art\u00edculo intenta ser un aporte a la luz de los di\u00e1logos sursur, al seguir los pasos de varias generaciones de cr\u00edtica al eurocentrismo, hoy encontramos la Pol\u00edtica de la Liberaci\u00f3n en voz de un fil\u00f3sofo latinoamericano, quien ha emprendido la empresa de construir una filosof\u00eda pol\u00edtica positiva, esto es que no tenga al poder como dominaci\u00f3n, mientras por otro lado tenemos la Filosof\u00eda de la Historia de Kojin Karatani, que desde Jap\u00f3n nos permite revitaliza el concepto de naci\u00f3n para realizar un giro que al ponerse, como intentamos en este art\u00edculo, a dialogar con Enrique Dussel nos permiten comprender la conjunci\u00f3n entre el Estado, la Naci\u00f3n y el Capital como un proceso de fetichizaci\u00f3n, as\u00ed intentamos comprender la cr\u00edtica a la s\u00edntesis Capital-Estado-Naci\u00f3n en tanto cr\u00edtica al fetichismo de la modernidad.Palabras clave: Modos de Intercambio, Fetichismo, Capital-Estado-Naci\u00f3n, Transcr\u00edtica Transmodernidad",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt0zw9862f/qt0zw9862f.pdf?t=os73tt"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Latin American socio-political dynamics",
+        "Political Theory and Democracy"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W2628793130"
+    },
+    {
+      "openalex_id": "W1536783074",
+      "doi": null,
+      "title": "EL CONCEPTO DE SOLIDARIDAD EN ENRIQUE DUSSEL COMO RESISTENCIA A LAS PR\u00c1CTICAS HEGEM\u00d3NICAS",
+      "authors": [
+        {
+          "name": "Gloria Silvana El\u00edas",
+          "openalex_id": "A5065678107",
+          "orcid": "https://orcid.org/0000-0002-5992-844X",
+          "institutions": [
+            "National University of Jujuy"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "El siguiente estudio trata sobre la fi losof\u00eda de Enrique Dussel. Este pensador, mediante la lectura de Levinas, propone superar la noci\u00f3n moderna de fraternidad desde una solidaridad con los enemigos del sistema. La categor\u00eda de solidaridad es la que gu\u00eda este escrito en su af\u00e1n de promover una pol\u00edtica aut\u00e9nticamente alterativa que se conmueve ante el sufrimiento del enemigo radical, y se mueve hacia \u00e9l en busca de la liberaci\u00f3n mutua.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Americanae (AECID Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11336/36388"
+      },
+      "topics": [
+        "Philosophical and Cultural Analysis",
+        "Religious and Theological Studies",
+        "Philosophy and Education Pedagogy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1536783074"
+    },
+    {
+      "openalex_id": "W4408295595",
+      "doi": "10.4025/dialogos.v29i1.74705",
+      "title": "\u00c9tica, pol\u00edtica y liberaci\u00f3n: apuntes sobre los aportes de la obra de Enrique Dussel para las luchas de los pueblos originarios en Am\u00e9rica Latina",
+      "authors": [
+        {
+          "name": "Andr\u00e9s MacAdoo-Espinoza",
+          "openalex_id": "A5075254310",
+          "orcid": "https://orcid.org/0000-0001-9550-8576",
+          "institutions": [
+            "Temuco Catholic University"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-03-07",
+      "abstract": "Se analiza el aporte de la etapa final de la obra de Enrique Dussel para las luchas de los Pueblos Originarios mediante una hermen\u00e9utica filos\u00f3fica de \u00c9tica de la liberaci\u00f3n en la edad de la globalizaci\u00f3n y de la exclusi\u00f3n (1998), Pol\u00edtica de la liberaci\u00f3n. Vol I (2007), Pol\u00edtica de la liberaci\u00f3n. Vol II (2009) y producciones decoloniales del 2000. Destaca su abordaje de las instituciones, subjetividad y la legitimidad de las normas, su propuesta \u00e9tica basada en la materialidad de la vida como principio universal y la raz\u00f3n \u00e9tico cr\u00edtica inspirada en el sufrimiento de las v\u00edctimas como puente para las posibilidades del di\u00e1logo intercultural y la praxis de liberaci\u00f3n.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Di\u00e1logos",
+        "type": "journal",
+        "issn": [
+          "1415-9945",
+          "2177-2940"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos.uem.br/ojs/index.php/Dialogos/article/download/74705/751375159357"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Indigenous Studies in Latin America",
+        "Indigenous Cultures and History"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W4408295595"
+    },
+    {
+      "openalex_id": "W3159747134",
+      "doi": "10.5209/rpub.70315",
+      "title": "El vac\u00edo del populismo latinoamericano frente a la ontolog\u00eda pol\u00edtica europea",
+      "authors": [
+        {
+          "name": "Adri\u00e0 Porta Caball\u00e9",
+          "openalex_id": "A5020689346",
+          "orcid": "https://orcid.org/0000-0002-0578-7362",
+          "institutions": [
+            "Universitat de Barcelona"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-11",
+      "abstract": "El presente art\u00edculo pretende mirar a Latinoam\u00e9rica desde la perspectiva de la ontolog\u00eda. Y como hay algo que no acaba de encajar, busca en el inexplorado terreno de la meontolog\u00eda y el no-ser a partir de dos pensadores pol\u00edticos latinoamericanos recientes, Dussel y Laclau. Por un lado, la Filosof\u00eda de la Liberaci\u00f3n asocia el centro con la ontolog\u00eda y el ser, as\u00ed como la periferia con lo Otro y el no-ser. De esto se desprende que, aun y asumiendo el heideggeriano \u201colvido del ser\u201d, la ontolog\u00eda helenoc\u00e9ntrica se basa en la negaci\u00f3n a\u00fan m\u00e1s originaria y fundamental de la nada. A continuaci\u00f3n, se intenta demostrar c\u00f3mo esta renegaci\u00f3n ha ido de la mano de la exclusi\u00f3n de lo b\u00e1rbaro, lo popular y lo femenino, principalmente. Tras un breve ex cursus sobre Schmitt en tanto que la forma m\u00e1s acabada de horror vacui dentro de la ontolog\u00eda pol\u00edtica europea, el art\u00edculo concluye con un an\u00e1lisis pormenorizado de la reconceptualizaci\u00f3n del vac\u00edo en la obra de Laclau, que puede permitir una mejor comprensi\u00f3n del populismo en general, y de su vertiente latinoamericana en particular.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Res Publica Revista de Historia de las Ideas Pol\u00edticas",
+        "type": "journal",
+        "issn": [
+          "1576-4184",
+          "1989-6115"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.5209/rpub.70315"
+      },
+      "topics": [
+        "Political Theology and Sovereignty",
+        "Marxism and Critical Theory",
+        "Seventeenth-Century Political and Philosophical Thought"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W3159747134"
+    },
+    {
+      "openalex_id": "W2977305860",
+      "doi": "10.14483/25009311.14984",
+      "title": "Para decolonizar las geopol\u00edticas del sentir",
+      "authors": [
+        {
+          "name": "Pedro Pablo G\u00f3mez",
+          "openalex_id": "A5011483282",
+          "orcid": "https://orcid.org/0000-0002-9651-7682",
+          "institutions": [
+            "District University of Bogot\u00e1",
+            "ORCID"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-19",
+      "abstract": "Intentemos relacionar la colonialidad del espacio y del tiempo con la geopol\u00edtica del conocimiento y la geopol\u00edtica del sentir. En 1977 en su Filosof\u00eda de la liberaci\u00f3n, Enrique Dussel, hizo evidente su conciente geopol\u00edtico, al hablar del espacio como campo de batalla, social, pol\u00edtica y epist\u00e9mica (Dussel, 1996). En t\u00e9rminos geopol\u00edticos entonces, no es lo mismo nacer en el Polo Norte, en Chiapas o en Bolivia que, en Nueva York, pues hay un muro de diferencia colonial construido durante 500 a\u00f1os de modernidad. La gepol\u00edtica del conocimiento es la espacializaci\u00f3n epistemol\u00f3gica del saber, y as\u00ed como la econom\u00eda produce centros y periferias, la epistemolog\u00eda tambi\u00e9n lo hace. En el Norte geogr\u00e1fico hay sures epist\u00e9micos as\u00ed como en el Sur geogr\u00e1fico hay nortes epist\u00e9micos.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Estudios Art\u00edsticos",
+        "type": "journal",
+        "issn": [
+          "2500-6975",
+          "2500-9311"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.udistrital.edu.co/index.php/estart/article/download/14984/14843"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2977305860"
+    },
+    {
+      "openalex_id": "W4324046018",
+      "doi": "10.22481/praxisedu.v19i50.12002",
+      "title": "La soberan\u00eda del encargo: responsabilidad en Dussel y Ellacur\u00eda. Implicaciones para una pol\u00edtica mundial",
+      "authors": [
+        {
+          "name": "Enrique T\u00e9llez Fabiani",
+          "openalex_id": "A5043879074",
+          "orcid": "https://orcid.org/0000-0002-8498-1322",
+          "institutions": [
+            "Universidad Nacional Aut\u00f3noma de M\u00e9xico"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-02-03",
+      "abstract": "En el siguiente texto se hace especial \u00e9nfasis entre la responsabilidad de acuerdo a Ellacur\u00eda y Dussel. La primera parte presenta la visi\u00f3n de la responsabilidad y su lugar en la \u00e9tica de la liberaci\u00f3n de Enrique Dussel. Se trata del v\u00ednculo entre el significado de estar consciente y la responsabilidad, ubicado en la primera parte, de seis, de la arquitect\u00f3nica; esto es, es el punto de partida de su principio material positivo. Por su parte, en la segunda parte del trabajo, Ellacur\u00eda nos ofrece una reflexi\u00f3n, breve pero muy densa, de la fundamentaci\u00f3n biol\u00f3gica de la \u00e9tica que retoma de Zubiri. Quiz\u00e1 es la expresi\u00f3n m\u00e1s l\u00facida del autor para aproximarse a una \u00e9tica impl\u00edcita y que dej\u00f3 de lado, a pesar de asumirla en la praxis propia. Finalmente, se trata de problematizar los conceptos de responsabilidad y de encargo, entendiendo por esto, la recuperaci\u00f3n decidida en la pol\u00edtica.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Pr\u00e1xis Educacional",
+        "type": "journal",
+        "issn": [
+          "1809-0249",
+          "2178-2679"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos2.uesb.br/index.php/praxis/article/download/12002/7342"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Law, Ethics, and AI Impact",
+        "Economic and Social Development"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W4324046018"
+    },
+    {
+      "openalex_id": "W2993674750",
+      "doi": "10.18041/1909-2288/revista_cultural.2.2018.5776",
+      "title": "Derecho y Liberaci\u00f3n Aproximaci\u00f3n de los Usos Emancipatorios del Derecho al Interior de la Pol\u00edtica de la Liberaci\u00f3n de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Luis Daniel Londo\u00f1o",
+          "openalex_id": "A5043252892"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-03",
+      "abstract": "El derecho planteado en t\u00e9rminos de intervenci\u00f3n es necesario hasta el punto de considerarse, desde el dolor de las v\u00edctimas, una opci\u00f3n necesaria y con capacidad para reivindicar los derechos humanos. La reivindicaci\u00f3n de derechos humanos es una acci\u00f3n emancipatoria, teniendo en cuenta que la percepci\u00f3n generalizada de un modelo de sociedad se fundamenta en ciertos valores ideol\u00f3gicos que niegan la extensi\u00f3n de los derechos, valores que hemos interiorizado como si fueran verdades (p.e. \u201clo privado es mejor que lo p\u00fablico\u201d, \u201cel estado funciona peor que las empresas\u201d, \u201cel pez grande tiene derecho a comerse el pez peque\u00f1o\u201d, \u201cel ser humano es malo por naturaleza; por lo tanto el ego\u00edsmo es productivo\u201d, \u201ces mejor pensar en el bienestar propio y no en el bienestar colectivo\u201d, entre otros).",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Revista Cultural Unilibre",
+        "type": "journal",
+        "issn": [
+          "1909-2288",
+          "2382-333X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.unilibre.edu.co/index.php/revista_cultural/article/download/5776/5364"
+      },
+      "topics": [
+        "Comparative constitutional jurisprudence studies",
+        "Criminal Justice and Penology",
+        "Political Dynamics in Latin America"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2993674750"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

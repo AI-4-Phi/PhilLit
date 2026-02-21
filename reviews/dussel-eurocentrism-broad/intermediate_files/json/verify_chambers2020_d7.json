@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1590/dados.2020.63.4.221"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1590/dados.2020.63.4.221",
+      "title": "Epistemology and Domination: Problems with the Coloniality of Knowledge Thesis in Latin American Decolonial Theory",
+      "authors": [
+        {
+          "family": "Chambers",
+          "given": "Paul Anthony"
+        }
+      ],
+      "editors": [],
+      "year": 2020,
+      "container_title": "Dados",
+      "volume": "63",
+      "issue": "4",
+      "page": "",
+      "publisher": "FapUNIFESP (SciELO)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1590/dados.2020.63.4.221"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

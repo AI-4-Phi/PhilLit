@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5070/t412011805"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5070/t412011805",
+      "title": "Thinking through the Decolonial Turn: Post-continental Interventions in  Theory, Philosophy, and Critique\u2014An Introduction",
+      "authors": [
+        {
+          "family": "Maldonado-Torres",
+          "given": "Nelson. Guest Editor"
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "TRANSMODERNITY: Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+      "volume": "1",
+      "issue": "2",
+      "page": "",
+      "publisher": "California Digital Library (CDL)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5070/t412011805"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

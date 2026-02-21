@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5070/t412011810"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5070/t412011810",
+      "title": "Shifting the Geography of Reason in an Age of Disciplinary Decadence",
+      "authors": [
+        {
+          "family": "Gordon",
+          "given": "Lewis R."
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "TRANSMODERNITY: Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+      "volume": "1",
+      "issue": "2",
+      "page": "",
+      "publisher": "California Digital Library (CDL)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5070/t412011810"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

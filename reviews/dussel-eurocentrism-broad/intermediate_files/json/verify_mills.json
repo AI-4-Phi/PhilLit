@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/978-3-319-94550-7"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/978-3-319-94550-7",
+      "title": "Enrique Dussel\u2019s Ethics of Liberation",
+      "authors": [
+        {
+          "family": "Mills",
+          "given": "Frederick B."
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Springer International Publishing",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/978-3-319-94550-7"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

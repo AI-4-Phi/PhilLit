@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5070/t411000003"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5070/t411000003",
+      "title": "Enrique Dussel's Liberation Thought in the Decolonial Turn",
+      "authors": [
+        {
+          "family": "Maldonado-Torres",
+          "given": "Nelson"
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "TRANSMODERNITY: Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+      "volume": "1",
+      "issue": "1",
+      "page": "",
+      "publisher": "California Digital Library (CDL)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5070/t411000003"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

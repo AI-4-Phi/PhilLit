@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1017/S0017816025000069"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1017/s0017816025000069",
+      "title": "A Neo-Confucian \u201cTheology of Liberation\u201d? Humanism and Ethics in Levinas, Liberation Theology, and Wang Yangming",
+      "authors": [
+        {
+          "family": "Hoston",
+          "given": "Germaine A."
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Harvard Theological Review",
+      "volume": "118",
+      "issue": "1",
+      "page": "85-109",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1017/s0017816025000069"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

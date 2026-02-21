@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/1462317X.2025.2463281"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/1462317x.2025.2463281",
+      "title": "Decolonizing Political Theology: Enrique Dussel\u2019s\n            <i>The Theological Metaphors of Marx</i>",
+      "authors": [
+        {
+          "family": "Rizzo",
+          "given": "Steven Anthony"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Political Theology",
+      "volume": "26",
+      "issue": "4",
+      "page": "451-459",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/1462317x.2025.2463281"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

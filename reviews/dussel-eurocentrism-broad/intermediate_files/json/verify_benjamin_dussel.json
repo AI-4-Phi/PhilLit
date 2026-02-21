@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.18041/1692-5726/sin_fundamento.32.2024.12515"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.18041/1692-5726/sin_fundamento.32.2024.12515",
+      "title": "Walter Benjamin y el materialismo mesi\u00e1nico: di\u00e1logo desde\u00a0las lecturas de Bol\u00edvar Echeverr\u00eda y Enrique Dussel",
+      "authors": [
+        {
+          "family": "Orrego Machuca",
+          "given": "Pablo Arturo"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Sin Fundamento",
+      "volume": "",
+      "issue": "32",
+      "page": "57-71",
+      "publisher": "Universidad Libre",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.18041/1692-5726/sin_fundamento.32.2024.12515"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}
