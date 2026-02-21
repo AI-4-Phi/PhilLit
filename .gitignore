@@ -86,7 +86,6 @@ logs/
 
 
 # Reviews (kept locally, not tracked in git; example reviews are negated below)
-reviews/*
 !reviews/extended-mind-cognitive-offloading/
 !reviews/metaphilosophy-literature-reviews/
 !reviews/moral-value-diy/
