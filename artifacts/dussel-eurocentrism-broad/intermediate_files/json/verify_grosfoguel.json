@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5070/t411000004"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5070/t411000004",
+      "title": "Decolonizing Post-Colonial Studies and Paradigms of Political-Economy: Transmodernity, Decolonial Thinking, and Global Coloniality",
+      "authors": [
+        {
+          "family": "Grosfoguel",
+          "given": "Ram\u00f3n"
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "TRANSMODERNITY: Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+      "volume": "1",
+      "issue": "1",
+      "page": "",
+      "publisher": "California Digital Library (CDL)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5070/t411000004"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

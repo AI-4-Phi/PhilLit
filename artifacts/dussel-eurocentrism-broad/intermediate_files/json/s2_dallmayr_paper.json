@@ -1,0 +1,104 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Dallmayr Underside Modernity Adorno Heidegger Dussel",
+  "results": [
+    {
+      "paperId": "c59335d295c29e6ff31ea82ebe1cfdc85fe4e3ba",
+      "title": "The Underside of Modernity: Adorno, Heidegger, and Dussel",
+      "authors": [
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 19,
+      "doi": "10.1111/J.1351-0487.2004.00365.X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c59335d295c29e6ff31ea82ebe1cfdc85fe4e3ba",
+      "venue": "",
+      "journal": {
+        "name": "Constellations",
+        "pages": "102-120",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "11e7db0e8f0d80460e953040c606d63b5395fe43",
+      "title": "Small Wonder: Global Power and Its Discontents",
+      "authors": [
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/11e7db0e8f0d80460e953040c606d63b5395fe43",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "934e699ec4678b16ebbf2bc3874213d7d42a4a2b",
+      "title": "Adorno and Heidegger: Philosophical Questions",
+      "authors": [
+        {
+          "name": "Iain Macdonald",
+          "authorId": "2071459611"
+        },
+        {
+          "name": "Krzysztof Ziarek",
+          "authorId": "116833707"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 20,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/934e699ec4678b16ebbf2bc3874213d7d42a4a2b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "23670a666b0dff60d6494d54f898bf07767a2f1a",
+      "title": "Theodor W. Adorno",
+      "authors": [
+        {
+          "name": "Gerard Delanty",
+          "authorId": "11883750"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.4135/9781446263631",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/23670a666b0dff60d6494d54f898bf07767a2f1a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5840/PHILTODAY201054316"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5840/philtoday201054316",
+      "title": "Space And Narrative\u2014Enrique Dussel And Paul Ricoeur",
+      "authors": [
+        {
+          "family": "Purcell",
+          "given": "Sebastian"
+        },
+        {
+          "family": "DePaul University",
+          "given": ""
+        }
+      ],
+      "editors": [],
+      "year": 2010,
+      "container_title": "Philosophy Today",
+      "volume": "54",
+      "issue": "3",
+      "page": "289-298",
+      "publisher": "Philosophy Documentation Center",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5840/philtoday201054316"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

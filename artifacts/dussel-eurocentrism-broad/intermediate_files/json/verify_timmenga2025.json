@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1017/S0031819125000087"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1017/s0031819125000087",
+      "title": "Critique and Alterity in Enrique Dussel\u2019s Decolonial Philosophy",
+      "authors": [
+        {
+          "family": "Timmenga",
+          "given": "Friso"
+        },
+        {
+          "family": "Van der Zande",
+          "given": "Indira"
+        },
+        {
+          "family": "Zwitter",
+          "given": "Andrej"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Philosophy",
+      "volume": "100",
+      "issue": "2",
+      "page": "221-247",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1017/s0031819125000087"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.14482/EIDOS.34.199.8"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.14482/eidos.34.199.8",
+      "title": "Transmodernity: Method for a Decolonial Political Project. From Enrique Dussel to Santiago Castro-G\u00f3mez",
+      "authors": [
+        {
+          "family": "Lozano Su\u00e1rez",
+          "given": "Luz Mar\u00eda"
+        }
+      ],
+      "editors": [],
+      "year": 2021,
+      "container_title": "Eidos",
+      "volume": "34",
+      "issue": "",
+      "page": "322-350",
+      "publisher": "Universidad del Norte",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.14482/eidos.34.199.8"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

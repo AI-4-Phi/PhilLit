@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1215/9780822378426-001"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1215/9780822378426-001",
+      "title": "Beyond Eurocentrism",
+      "authors": [],
+      "editors": [],
+      "year": 1998,
+      "container_title": "The Cultures of Globalization",
+      "volume": "",
+      "issue": "",
+      "page": "3-31",
+      "publisher": "Duke University Press",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1215/9780822378426-001"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

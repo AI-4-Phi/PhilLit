@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1017/hyp.2022.26"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1017/hyp.2022.26",
+      "title": "The Epistemology of the South, Coloniality of Gender, and Latin American Feminism",
+      "authors": [
+        {
+          "family": "Mendoza",
+          "given": "Breny"
+        },
+        {
+          "family": "Paredes Grijalva",
+          "given": "Daniela"
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Hypatia",
+      "volume": "37",
+      "issue": "3",
+      "page": "510-522",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1017/hyp.2022.26"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

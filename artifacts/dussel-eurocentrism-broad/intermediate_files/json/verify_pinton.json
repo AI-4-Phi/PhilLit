@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.22363/2313-2302-2025-29-3-704-719"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.22363/2313-2302-2025-29-3-704-719",
+      "title": "From Ego Conquiro to Ego Cogito: Dussel\u2019s Latin American History of Philosophy",
+      "authors": [
+        {
+          "family": "Pinton",
+          "given": "Clara Isabel"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "RUDN Journal of Philosophy",
+      "volume": "29",
+      "issue": "3",
+      "page": "704-719",
+      "publisher": "Peoples' Friendship University of Russia",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.22363/2313-2302-2025-29-3-704-719"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

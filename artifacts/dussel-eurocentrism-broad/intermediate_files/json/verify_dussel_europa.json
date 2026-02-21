@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.19176/rct.v0i4.14105"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.19176/rct.v0i4.14105",
+      "title": "Europa, Modernidad y Eurocentrismo",
+      "authors": [
+        {
+          "family": "Dussel",
+          "given": "Enrique"
+        }
+      ],
+      "editors": [],
+      "year": 2013,
+      "container_title": "Revista de Cultura Teol\u00f3gica. ISSN (impresso) 0104-0529 (eletr\u00f4nico) 2317-4307",
+      "volume": "",
+      "issue": "4",
+      "page": "69",
+      "publisher": "Pontifical Catholic University of Sao Paulo (PUC-SP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.19176/rct.v0i4.14105"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

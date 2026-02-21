@@ -1,0 +1,15 @@
+{
+  "status": "partial",
+  "source": "openalex",
+  "query": "v\u00edctima \u00e9tica liberaci\u00f3n",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "rate_limit",
+      "message": "Rate limit exceeded during pagination",
+      "recoverable": true
+    }
+  ],
+  "warning": "Completed with 1 error(s). Found 0 papers."
+}

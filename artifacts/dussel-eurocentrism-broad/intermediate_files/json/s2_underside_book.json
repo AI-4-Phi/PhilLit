@@ -1,0 +1,111 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Thinking from the Underside Dussel",
+  "results": [
+    {
+      "paperId": "9f5bdc252e022065f83b84bf785dc99c3d6bfc89",
+      "title": "Thinking from the Underside of History: Enrique Dussel's Philosophy of Liberation",
+      "authors": [
+        {
+          "name": "L. Alcoff",
+          "authorId": "88623159"
+        },
+        {
+          "name": "E. Mendieta",
+          "authorId": "50489593"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 43,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9f5bdc252e022065f83b84bf785dc99c3d6bfc89",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "df852446e3f92fb63ce7ff5879df9399a87f8365",
+      "title": "Thinking From the Underside of History: Enrique Dussel's Philosophy of Liberation",
+      "authors": [
+        {
+          "name": "K. Apel",
+          "authorId": "46248066"
+        },
+        {
+          "name": "Michael D. Barber",
+          "authorId": "50005007"
+        },
+        {
+          "name": "Enrique D. Dussel",
+          "authorId": "16563475"
+        },
+        {
+          "name": "Roberto S. Goizueta",
+          "authorId": "113320165"
+        },
+        {
+          "name": "L. Lange",
+          "authorId": "1406277666"
+        },
+        {
+          "name": "J. Marsh",
+          "authorId": "145478622"
+        },
+        {
+          "name": "Walter D. Mignolo",
+          "authorId": "73605293"
+        },
+        {
+          "name": "Mario S\u00e1enz",
+          "authorId": "144801708"
+        },
+        {
+          "name": "Hans Schelkshorn",
+          "authorId": "2085375907"
+        },
+        {
+          "name": "E. Vuola",
+          "authorId": "15353220"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/df852446e3f92fb63ce7ff5879df9399a87f8365",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "066b6254365a56c0eecba85ca69566c13fa05843",
+      "title": "Books received",
+      "authors": [],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/019145370102700607",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/066b6254365a56c0eecba85ca69566c13fa05843",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "119 - 128",
+        "volume": "27"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

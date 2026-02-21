@@ -1,0 +1,110 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Fred Dallmayr Underside Modernity Dussel",
+  "results": [
+    {
+      "paperId": "c59335d295c29e6ff31ea82ebe1cfdc85fe4e3ba",
+      "title": "The Underside of Modernity: Adorno, Heidegger, and Dussel",
+      "authors": [
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 19,
+      "doi": "10.1111/J.1351-0487.2004.00365.X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c59335d295c29e6ff31ea82ebe1cfdc85fe4e3ba",
+      "venue": "",
+      "journal": {
+        "name": "Constellations",
+        "pages": "102-120",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "11e7db0e8f0d80460e953040c606d63b5395fe43",
+      "title": "Small Wonder: Global Power and Its Discontents",
+      "authors": [
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/11e7db0e8f0d80460e953040c606d63b5395fe43",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3ea19b4e7aa6e83fb6fae0ac168575cb700b44f7",
+      "title": "TO DUSSEL THE FOUR DRAFTS OF CAPITAL : Towards a new interpretation of the dialectical thought of Marx by Fred Moseley Mount Holyoke College \" Criticism starts from the negativity of the victim",
+      "authors": [
+        {
+          "name": "Enrique D. Dussel",
+          "authorId": "16563475"
+        },
+        {
+          "name": "Edward Kennedy",
+          "authorId": "133900036"
+        },
+        {
+          "name": "C. Fuentes",
+          "authorId": "120610658"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3ea19b4e7aa6e83fb6fae0ac168575cb700b44f7",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4f02c35de86f84221c670d7d03c5a24de33e6ff5",
+      "title": "Enrique Dussel and Manuel Zapata Olivella: An Exploration of Decolonial, Diasporic, and Transmodern Selves and the Politics of",
+      "authors": [
+        {
+          "name": "Enrique D. Dussel",
+          "authorId": "16563475"
+        },
+        {
+          "name": "Manuel",
+          "authorId": "2071434471"
+        },
+        {
+          "name": "James Allen",
+          "authorId": "82992758"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4f02c35de86f84221c670d7d03c5a24de33e6ff5",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

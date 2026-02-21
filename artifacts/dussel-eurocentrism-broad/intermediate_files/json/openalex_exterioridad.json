@@ -1,0 +1,1036 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "exterioridad alteridad Dussel",
+  "results": [
+    {
+      "openalex_id": "W2507833703",
+      "doi": "10.11600/1692715x.14208160615",
+      "title": "La alteridad desde la perspectiva de la transmodernidad de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Mar\u00eda Eugenia C\u00f3rdoba",
+          "openalex_id": "A5071150958",
+          "orcid": "https://orcid.org/0000-0001-6758-5312"
+        },
+        {
+          "name": "Claudia V\u00e9lez\u2012De La Calle",
+          "openalex_id": "A5070090501",
+          "institutions": [
+            "Universidad de San Buenaventura, Bogota"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-29",
+      "abstract": "(descriptivo): La Transmodernidad es una perspectiva te\u00f3rica, metodol\u00f3gica y \u00e9tica de Enrique Dussel, que pretende romper con la colonialidad del poder, del saber y del ser en el mundo Occidental. Se basa en el reconocimiento de la exterioridad negada que surge como categor\u00eda de an\u00e1lisis de la alteridad desde el paradigma del Alter T\u00fa, que Dussel aplica a la realidad latinoamericana a partir de los planteamientos de los postmodernistas que reconocen el momento final de la Modernidad, pero se separa de dicha escuela en lo que respecta a la persistencia en su visi\u00f3n helenocentrista y hegem\u00f3nica de los paradigmas euroc\u00e9ntricos y en la falta de di\u00e1logo con las culturas no Occidentales. De esta manera, Dussel propone la \u00c9tica de la Liberaci\u00f3n como un paradigma que parte del otro como v\u00edctima de la Modernidad.",
+      "cited_by_count": 14,
+      "type": "paratext",
+      "source": {
+        "name": "Revista Latinoamericana de Ciencias Sociales Ni\u00f1ez y Juventud",
+        "type": "journal",
+        "issn": [
+          "1692-715X",
+          "2027-7679"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.11600/1692715x.14208160615"
+      },
+      "topics": [
+        "Philosophy and Education Pedagogy",
+        "Religious and Theological Studies",
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2507833703"
+    },
+    {
+      "openalex_id": "W2350446973",
+      "doi": "10.5294/edu.2016.19.1.4",
+      "title": "Pedagog\u00edas cr\u00edticas latinoamericanas y filosof\u00eda de la liberaci\u00f3n: potencialidades de un di\u00e1logo te\u00f3rico-pol\u00edtico",
+      "authors": [
+        {
+          "name": "Fabi\u00e1n Cabaluz",
+          "openalex_id": "A5054796135",
+          "orcid": "https://orcid.org/0000-0003-0398-7819",
+          "institutions": [
+            "Academy of Christian Humanism University",
+            "Praxis",
+            "Universit\u00e9 P\u00e9dagogique Nationale",
+            "Departamento de Educaci\u00f3n",
+            "Universidad de La Sabana",
+            "Artistic Realization Technologies",
+            "Applied Poleramic (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-05-01",
+      "abstract": "22 p\u00e1ginas",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Educaci\u00f3n y Educadores",
+        "type": "journal",
+        "issn": [
+          "0123-1294",
+          "2027-5358"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://educacionyeducadores.unisabana.edu.co/index.php/eye/article/download/5061/4190/31437"
+      },
+      "topics": [
+        "Educational theories and practices",
+        "Latin American Cultural Politics",
+        "Philosophy and Education Pedagogy"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W2350446973"
+    },
+    {
+      "openalex_id": "W4235437783",
+      "doi": "10.1632/pmla.2009.124.2.556",
+      "title": "Postcolonial Critique in a Multispecies World",
+      "authors": [
+        {
+          "name": "Neel Ahuja",
+          "openalex_id": "A5067123890"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-03-01",
+      "abstract": "Histories of race and empire have shaped the field imaginary of species studies from its inception. Politically, the field's animal-activist heritage models its critique on movements for racial justice. Historically, this move links to Enlightenment conceptions of animals that relied on the same objectifying methods used to represent slaves and the poor: sentimentality, representations of cruelty, humane manifestos. Epistemologically, the taxonomic tools that name the objects of analysis have been deployed to define non-Europeans as subspecies or independent species. Geographically, the field's intellectual production is centered in the United States, Australia, and Britain, tied to neocolonial institutions of animal advocacy, and slow in recognizing internal critiques of animal and ecological movements by activists of color.",
+      "cited_by_count": 101,
+      "type": "article",
+      "source": {
+        "name": "PMLA/Publications of the Modern Language Association of America",
+        "type": "journal",
+        "issn": [
+          "0030-8129",
+          "1938-1530"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://roderic.uv.es/bitstreams/b0561b08-e755-4f92-8f1b-602f01345bdb/download"
+      },
+      "topics": [
+        "Geographies of human-animal interactions",
+        "Wildlife Ecology and Conservation",
+        "Anthropological Studies and Insights"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W4235437783"
+    },
+    {
+      "openalex_id": "W1974121479",
+      "doi": "10.4067/s0049-34492009000100006",
+      "title": "La filosof\u00eda de la liberaci\u00f3n: historia, caracter\u00edsticas, vigencia actual",
+      "authors": [
+        {
+          "name": "Juan Carlos Scannone",
+          "openalex_id": "A5049208906",
+          "institutions": [
+            "Pontificia Universidad Cat\u00f3lica Argentina"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "Resumen es: Primeramente se presentan el surgimiento de la filosofia de la liberacion (FL) en Argentina, 1971, y su ampliacion al resto de America Latina, sus caract...",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Teolog\u00eda y vida",
+        "type": "journal",
+        "issn": [
+          "0049-3449",
+          "0717-6295"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://scielo.conicyt.cl/pdf/tv/v50n1-2/art06.pdf"
+      },
+      "topics": [
+        "Religious and Theological Studies",
+        "Social Skills and Education",
+        "Philosophy and Education Pedagogy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1974121479"
+    },
+    {
+      "openalex_id": "W2969272706",
+      "doi": "10.12795/astragalo.2016.i21.02",
+      "title": "Transmodernidad e interculturalidad.",
+      "authors": [
+        {
+          "name": "Enrique Dussel",
+          "openalex_id": "A5098104696"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": null,
+      "cited_by_count": 43,
+      "type": "article",
+      "source": {
+        "name": "Astr\u00e1galo Cultura de la Arquitectura y la Ciudad",
+        "type": "journal",
+        "issn": [
+          "1134-3672",
+          "2469-0503"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.12795/astragalo.2016.i21.02"
+      },
+      "topics": [
+        "Immigration and Intercultural Education",
+        "Social Sciences and Policies",
+        "Employment, Labor, and Gender Studies"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2969272706"
+    },
+    {
+      "openalex_id": "W2922268463",
+      "doi": "10.15332/s1794-3841.2019.0031.06",
+      "title": "Hacer decolonial: desobedecer a la metodolog\u00eda de investigaci\u00f3n",
+      "authors": [
+        {
+          "name": "Alexander Ort\u00edz Oca\u00f1a",
+          "openalex_id": "A5014965497",
+          "orcid": "https://orcid.org/0000-0001-5594-9422",
+          "institutions": [
+            "University of Magdalena"
+          ]
+        },
+        {
+          "name": "Mar\u00eda Isabel Arias L\u00f3pez",
+          "openalex_id": "A5014713848"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-01",
+      "abstract": "En este art\u00edculo, reflexionamos sobre la urgencia de decolonizar las ciencias sociales. Es necesario crear formas \u201cotras\u201d de pensar, sentir y existir, lo cual requiere la configuraci\u00f3n de nuevos tipos de conocimiento y nuevas \u201cciencias\u201d, cuya estructura categorial se sustente en el saber del otro, considerado inferior, y no solo en la episteme del logos moderno/colonial, considerado superior. Caracterizamos el hacer decolonial, que se despliega mediante sus acciones/huellas constitutivas: contemplar comunal, conversar alterativo y reflexionar configurativo, las cuales caracterizan la vocaci\u00f3n decolonial, que permite el desprendimiento de la metodolog\u00eda de investigaci\u00f3n.",
+      "cited_by_count": 49,
+      "type": "article",
+      "source": {
+        "name": "Hallazgos",
+        "type": "journal",
+        "issn": [
+          "1794-3841",
+          "2422-409X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.usantotomas.edu.co/index.php/hallazgos/article/download/4991/pdf"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Social Skills and Education",
+        "Social Sciences and Humanities"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2922268463"
+    },
+    {
+      "openalex_id": "W2408209448",
+      "doi": "10.4067/s0717-73562016005000018",
+      "title": "EPISTEME DECOLONIAL EN DOS OBRAS DEL PENSAMIENTO MAPUCHE: RE-ESCRIBIENDO LA INTERCULTURALIDAD",
+      "authors": [
+        {
+          "name": "Claudio Maldonado Rivera",
+          "openalex_id": "A5037150997",
+          "orcid": "https://orcid.org/0000-0003-3381-9963",
+          "institutions": [
+            "Temuco Catholic University"
+          ]
+        },
+        {
+          "name": "Carlos del Valle Rojas",
+          "openalex_id": "A5010456203",
+          "orcid": "https://orcid.org/0000-0002-9905-672X",
+          "institutions": [
+            "Universidad de La Frontera"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "El trabajo aborda las epistemes decoloniales como pr\u00e1cticas antag\u00f3nicas al estado de relaciones (inter)culturales impuestos por la colonialidad. A partir de un an\u00e1lisis semi\u00f3tico aplicado a dos obras del pensamiento mapuche, se propone la dimensi\u00f3n epist\u00e9mico decolonial como basal en su organizaci\u00f3n de sentidos, comprendiendo que son sistemas de conocimientos en oposici\u00f3n a las formas de dominaci\u00f3n que desde el mundo moderno-colonial se han ejercido en desmedro del pueblo mapuche. Se concluye proponiendo que este tipo de epistemes contribuyen a re-escribir la interculturalidad, construyendo, as\u00ed, un nuevo marco de convivencia humana.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Chungara",
+        "type": "journal",
+        "issn": [
+          "0716-1182",
+          "0717-7356"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://scielo.conicyt.cl/pdf/chungara/v48n2/aop1816.pdf"
+      },
+      "topics": [
+        "Cultural and Social Studies in Latin America",
+        "Migration, Education, Indigenous Social Dynamics",
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W2408209448"
+    },
+    {
+      "openalex_id": "W2309835204",
+      "doi": "10.17163/soph.n8.2010.05",
+      "title": "Corazonar desde las sabidur\u00edas insurgentes el sentido de las epistemolog\u00edas dominantes, para construir sentidos otros de la existencia",
+      "authors": [
+        {
+          "name": "Patricio Guerrero Arias",
+          "openalex_id": "A5030389705",
+          "institutions": [
+            "Politecnica Salesiana University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-06-30",
+      "abstract": "&lt;div id=\"aui_3_2_0_1191\" class=\"size_text\" align=\"left\"&gt;Corazonar desde las sabidur\u00edas insurgentes el sentido de las epistemolog\u00edas dominantes, para construir sentidos otros de la existencia&lt;/div&gt;",
+      "cited_by_count": 28,
+      "type": "article",
+      "source": {
+        "name": "Soph\u00eda",
+        "type": "journal",
+        "issn": [
+          "1390-3861",
+          "1390-8626"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.ups.edu.ec/index.php/sophia/article/download/8.2010.05/456"
+      },
+      "topics": [
+        "Education and Teacher Training",
+        "Social Sciences and Policies",
+        "Higher Education and Sustainability"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2309835204"
+    },
+    {
+      "openalex_id": "W1976455075",
+      "doi": "10.4067/s0718-65682013000100015",
+      "title": "Transmodernidad: dos proyectos dis\u00edmiles bajo un mismo concepto",
+      "authors": [
+        {
+          "name": "Aldo Ahumada Infante",
+          "openalex_id": "A5015200631",
+          "orcid": "https://orcid.org/0000-0001-7354-2896",
+          "institutions": [
+            "Academy of Christian Humanism University"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-04-01",
+      "abstract": "El presente trabajo aborda el concepto de Transmodernidad bajodos puntos de vista diferentes. Por un lado, la mirada de Rosa Mar\u00eda Rodr\u00edguezMagda, la cual nos plantea la Transmodernidad como una tr\u00edada dial\u00e9ctica entreModernidad-Postmodernidad-Transmodernidad, siendo esta \u00faltima tanto una continuaci\u00f3n como una superaci\u00f3n de la Postmodernidad. El otro punto de vista corresponde a Enrique Dussel, el cual nos plantea la Transmodernidad como un proyecto ut\u00f3pico que es transversal a la Modernidad/Postmodernidad; est\u00e1 antes de laModernidad y a la vez la trasciende, siendo una categor\u00eda de exterioridad quepretende sacar la voz propia de las culturas no europeo-norteamericanas, para as\u00edpoder establecer di\u00e1logos interculturales sim\u00e9tricos que llevan consigo caracter\u00edsticas de la propia cultura inconmensurables al proyecto moderno europeo. As\u00ed enfrentamos ambas concepciones de la Transmodernidad para destacar sus diferencias y contraposiciones.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Polis (Santiago)",
+        "type": "journal",
+        "issn": [
+          "0717-6554",
+          "0718-6568"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.scielo.cl/pdf/polis/v12n34/art15.pdf"
+      },
+      "topics": [
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W1976455075"
+    },
+    {
+      "openalex_id": "W2774728020",
+      "doi": "10.15517/aie.v18i1.31771",
+      "title": "Acogida y proximidad: Algunos aportes de Emmanuel Levinas a la Educaci\u00f3n",
+      "authors": [
+        {
+          "name": "Diego Armando Jaramillo Ocampo",
+          "openalex_id": "A5080152194",
+          "orcid": "https://orcid.org/0000-0002-3949-7697",
+          "institutions": [
+            "Universidad Cat\u00f3lica de Manizales"
+          ]
+        },
+        {
+          "name": "Lu\u00eds Guillermo Jaramillo Echeverri",
+          "openalex_id": "A5048772635",
+          "orcid": "https://orcid.org/0000-0002-8433-4002",
+          "institutions": [
+            "University of Cauca"
+          ]
+        },
+        {
+          "name": "Napole\u00f3n Murc\u00eda Pe\u00f1a",
+          "openalex_id": "A5047881213",
+          "orcid": "https://orcid.org/0000-0001-9657-2086",
+          "institutions": [
+            "University of Caldas"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-24",
+      "abstract": "El presente ensayo es el resultado de la incorporaci\u00f3n de las obras de Emmanuel Levinas al campo educativo en distintos ejercicios investigativos en clave pedag\u00f3gica. Emerge, como posibilidad, para reflexionar cr\u00edticamente la Educaci\u00f3n como un asunto de relaci\u00f3n trascendente orientada hacia la fragilidad de un otro que aprende. El escrito trata de poner-en-cuesti\u00f3n pedagog\u00edas verticales de la ense\u00f1anza como adecuaci\u00f3n de un conocimiento que asimila al otro a partir de una relaci\u00f3n pensar-ser. Producto de este cuestionamiento, se propugna por una acogida y una proximidad como categor\u00edas de an\u00e1lisis que nos permiten considerar la educaci\u00f3n como encuentro relacional que desborda todo acto de objetivaci\u00f3n pensante, para ubicarla en los escenarios de una alteridad radical que lleva impl\u00edcita el infinito del otro que aprende",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Actualidades Investigativas en Educaci\u00f3n",
+        "type": "journal",
+        "issn": [
+          "1409-4703"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.ucr.ac.cr/index.php/aie/article/download/31771/31454"
+      },
+      "topics": [
+        "Philosophy and Education Pedagogy",
+        "Philosophy, Ethics, and Existentialism",
+        "Educational theories and practices"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W2774728020"
+    },
+    {
+      "openalex_id": "W2785919075",
+      "doi": "10.15332/25005375/3208",
+      "title": "Enrique Dussel y el mito de la modernidad",
+      "authors": [
+        {
+          "name": "Diego Fernando Camelo",
+          "openalex_id": "A5089319781"
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-01-28",
+      "abstract": "En el art\u00edculo se presenta una descripci\u00f3n de la cr\u00edtica a la modernidad demostrada por el fil\u00f3sofo argentino Enrique Dussel se\u00f1alando el proceso mediante el cual se fue configurando como un proyecto europeo. En efecto, el art\u00edculo plantea que dicho proyecto se postula en el marco de una centralidad que ir\u00eda a justificar las pr\u00e1cticas coloniales implementadas. Para lograr mantenerse dentro de la din\u00e1mica hist\u00f3rica, estos h\u00e1bitos empezaron a circunscribirse en discursos m\u00edticos so pretexto de justificar la violencia efectuada en las pr\u00e1cticas. Dussel, por su parte, propone la categor\u00eda de Transmodernidad como proyecto alternativo emergente a la modernidad europea. No obstante, esta propuesta es objeto de cr\u00edticas como las del fil\u00f3sofo colombiano Santiago Castro-G\u00f3mez.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Cuadernos de Filosof\u00eda Latinoamericana",
+        "type": "journal",
+        "issn": [
+          "0120-8462",
+          "2500-5375"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.usantotomas.edu.co/index.php/cfla/article/download/3208/3847"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Cultural and Social Studies in Latin America",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2785919075"
+    },
+    {
+      "openalex_id": "W2125852358",
+      "doi": "10.1590/0103-166x2015000100013",
+      "title": "De la otredad a la praxis liberadora: la construcci\u00f3n de m\u00e9todos para la conciencia",
+      "authors": [
+        {
+          "name": "Maritza Montero",
+          "openalex_id": "A5111807473",
+          "institutions": [
+            "Central University of Venezuela"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-04",
+      "abstract": "En esta conferencia se presentan las bases anal\u00e9cticas de las formas de producir en la praxis cambios conducentes a la concientizaci\u00f3n: esto es, a la transformaci\u00f3n de la conciencia en cuanto a formas consideradas como modos \u00fanicos y cotidianos de producir la vida social. En tal sentido, se definen y analizan cuatro modos que son parte de la vida cotidiana: la habituaci\u00f3n y la naturalizaci\u00f3n, as\u00ed como la ideologizaci\u00f3n y la alienaci\u00f3n, cuyas bases se afirman en los primeros modos citados. Asimismo se presentan las caracter\u00edsticas del m\u00e9todo anal\u00e9ctico construidas en la praxis, indicando la posibilidad de aplicar la acci\u00f3n a otros modos de interpretar la vida cotidiana, igualmente alienadores.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Estudos de Psicologia (Campinas)",
+        "type": "journal",
+        "issn": [
+          "0103-166X",
+          "1982-0275"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.scielo.br/j/estpsi/a/rbcg5JPVBr97jTwrq6w8bmJ/?lang=es&format=pdf"
+      },
+      "topics": [
+        "Social Sciences and Policies"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2125852358"
+    },
+    {
+      "openalex_id": "W2157389728",
+      "doi": "10.5565/rev/athenead/v1n0.1",
+      "title": "\u00c9tica y Pol\u00edtica en Psicolog\u00eda: Las dimensiones no reconocidas",
+      "authors": [
+        {
+          "name": "Maritza Montero",
+          "openalex_id": "A5111807473",
+          "institutions": [
+            "Central University of Venezuela"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-01-01",
+      "abstract": "Se plantea una revisi\u00f3n de la concepci\u00f3n paradigm\u00e1tica tripartita de la psicolog\u00eda (tres dimensiones: ontol\u00f3gica, epistemol\u00f3gica y metodol\u00f3gica), dominante en el campo a partir de la propuesta de Lincoln y Guba (1985), la cual es contrastada con experiencias provenientes de la praxis (acci\u00f3n e investigaci\u00f3n que producen teor\u00eda). En particular se presenta una estructura paradigm\u00e1tica de cinco dimensiones: ontolog\u00eda, epistemolog\u00eda, metodolog\u00eda, \u00e9tica y pol\u00edtica y se analiza la propuesta ontol\u00f3gica que plantea una reconceptualizaci\u00f3n del Ser y de la Relaci\u00f3n, discutiendo las dimensiones \u00e9tica y pol\u00edtica, desde una perspectiva cr\u00edtica.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Dip\u00f2sit Digital de Documents de la UAB (Universitat Aut\u00f2noma de Barcelona)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://ddd.uab.cat/record/5434"
+      },
+      "topics": [
+        "Psychological Treatments and Disorders",
+        "Ethics and bioethics in healthcare",
+        "Educational theories and practices"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W2157389728"
+    },
+    {
+      "openalex_id": "W1591615545",
+      "doi": "10.17227/01203916.1627",
+      "title": "Memorias de la violencia pol\u00edtica y formaci\u00f3n \u00e9tico-pol\u00edtica de j\u00f3venes y maestros en Colombia",
+      "authors": [
+        {
+          "name": "Piedad Ortega Valencia",
+          "openalex_id": "A5075289389",
+          "orcid": "https://orcid.org/0000-0002-4985-0976",
+          "institutions": [
+            "National Pedagogic University"
+          ]
+        },
+        {
+          "name": "Martha Cecilia Herrera",
+          "openalex_id": "A5074855706",
+          "orcid": "https://orcid.org/0000-0003-4170-7822",
+          "institutions": [
+            "National Pedagogic University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-08-24",
+      "abstract": "Este art\u00edculo presenta un avance sobre el proyecto investigativo \u201cMemorias de la violencia pol\u00edtica y formaci\u00f3n \u00e9tico-pol\u00edtica de j\u00f3venes y maestros\u201d, el cual se desarrolla en la ciudad de Bogot\u00e1. El problema de investigaci\u00f3n se sit\u00faa en la pregunta en torno a: \u00bfC\u00f3mo las memorias acerca de la violencia pol\u00edtica configuran subjetividades y se relacionan con la formaci\u00f3n \u00e9tica-pol\u00edtica de los j\u00f3venes y maestros en Colombia? Este avance se estructura entonces en relaci\u00f3n con la explicitaci\u00f3n de su relevancia, el reconocimiento de un contexto sociohist\u00f3rico, la definici\u00f3n de una ruta metodol\u00f3gica y, finalmente, se da cuenta de algunas tematizaciones inscritas en el proceso de construcci\u00f3n te\u00f3rica. El marco temporal de la investigaci\u00f3n se sit\u00faa en el periodo entre 2000 y 20112.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Revista Colombiana de Educaci\u00f3n",
+        "type": "journal",
+        "issn": [
+          "0120-3916",
+          "2323-0134"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.pedagogica.edu.co/index.php/RCE/article/download/1627/1577"
+      },
+      "topics": [
+        "Memory, violence, and history",
+        "Youth, Politics, and Society",
+        "Conflict, Peace, and Violence in Colombia"
+      ],
+      "referenced_works_count": 18,
+      "url": "https://openalex.org/W1591615545"
+    },
+    {
+      "openalex_id": "W2290642310",
+      "doi": "10.12957/dep.2016.21825",
+      "title": "Repensar derechos humanos desde la liberaci\u00f3n y la descolonialidad / Rethinking human rights from the liberation and the descoloniality",
+      "authors": [
+        {
+          "name": "Alejandro Rosillo Mart\u00ednez",
+          "openalex_id": "A5103872929",
+          "orcid": "https://orcid.org/0000-0001-9854-0942",
+          "institutions": [
+            "Autonomous University of San Luis Potos\u00ed"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-03",
+      "abstract": "DOI: 10.12957/dep.2016.21825Resumen A partir de la cr\u00edtica a la Modernidad que realiza el pensamiento descolonial, se asume que el discurso de derechos humanos es parte del sistema moderno/colonial. En efecto, se entiende que si bien se les ha dado un uso dentro de luchas de emancipaci\u00f3n (Modernidad) tambi\u00e9n se han utilizado para justificar procesos de colonizaci\u00f3n y han acompa\u00f1ado a la colonialidad del poder. No obstante, se reconoce el potencial descolonizante de su discurso, y por eso se analizan algunas categor\u00edas del pensamiento descolonial y de la Filosof\u00eda de la Liberaci\u00f3n que pueden contribuir en un discurso de derechos humanos que vaya en camino hacia el uso de los movimientos sociales del Sur. Palabras clave: Colonialidad del poder, derechos humanos, liberaci\u00f3n, interculturalidad, descolonizaci\u00f3n. Abstract From the critique of modernity that makes the descolonial thinking, it is assumed that the language of human rights is part of the modern/colonial system. Indeed, it is understood that while it has been given a use within struggles for emancipation (Modernity) have also been used to justify colonization processes and have accompanied the coloniality of power. However, the decolonizing potential of his speech is recognized, and therefore we are analyzed some categories of descolonial thinking and philosophy of liberation that can contribute in a human rights discourse that goes on the road to using social movements of South. Keywords: Coloniality of power, human rights, liberation, multiculturalism, decolonization.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Revista Direito e Pr\u00e1xis",
+        "type": "journal",
+        "issn": [
+          "2179-8966"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.e-publicacoes.uerj.br/index.php/revistaceaju/article/download/21825/15936"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Comparative constitutional jurisprudence studies"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W2290642310"
+    },
+    {
+      "openalex_id": "W3159716556",
+      "doi": "10.17502/mrcs.v9i1.448",
+      "title": "Interculturalidad cr\u00edtica y decolonialidad epist\u00e9mica. Propuestas desde el pensamiento latinoamericano para un di\u00e1logo sim\u00e9trico",
+      "authors": [
+        {
+          "name": "Mar\u00eda Sim\u00f3n",
+          "openalex_id": "A5071841512",
+          "orcid": "https://orcid.org/0000-0001-5290-2733",
+          "institutions": [
+            "Universidad Carlos III de Madrid"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-04-30",
+      "abstract": "En el presente trabajo se defiende que todo di\u00e1logo intercultural debe ser sim\u00e9trico. Para que esto sea posible es necesaria una decolonialidad epist\u00e9mica, una ruptura con el eurocentrismo y un reconocimiento del enorme y diverso mosaico cultural que existe en el Sur global. A trav\u00e9s de las propuestas de Fornet-Betancourt, Walsh y Tubino se indaga en modelos de interculturalidad cr\u00edtica y se reconocen, a la vez, aportaciones del pensamiento emancipador latinoamericano. Se concluye que el di\u00e1logo para ser sim\u00e9trico, por un lado, debe tomar en cuenta la huella que ejercen las condiciones m\u00faltiples de dominio y dependencia; por el otro, debe abrirse a la diversidad cultural y epist\u00e9mica de sus interlocutores. Finalmente, se sostiene que el pensamiento intercultural cr\u00edtico y decolonial latinoamericano tambi\u00e9n tiene que hacer su propia autocr\u00edtica.",
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "methaodos revista de ciencias sociales",
+        "type": "journal",
+        "issn": [
+          "2340-8413"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.methaodos.org/revista-methaodos/index.php/methaodos/article/download/448/677"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Cultural and Social Studies in Latin America",
+        "Indigenous Studies in Latin America"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W3159716556"
+    },
+    {
+      "openalex_id": "W3016515010",
+      "doi": "10.4000/rccs.10084",
+      "title": "Alteridad: la reinvenci\u00f3n de la paz en las Relaciones Internacionales",
+      "authors": [
+        {
+          "name": "Elizabete Sanches Rocha",
+          "openalex_id": "A5065191231",
+          "orcid": "https://orcid.org/0000-0003-1291-4419",
+          "institutions": [
+            "University of Coimbra"
+          ]
+        },
+        {
+          "name": "Tchella Fernandes Maso",
+          "openalex_id": "A5086676636",
+          "orcid": "https://orcid.org/0000-0002-4453-6902",
+          "institutions": [
+            "University of Coimbra"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "El presente trabajo tiene por objetivo reflexionar sobre la paz y la alteridad en el terreno de las Relaciones Internacionales (RR. II.). Esta tentativa se construye alrededor del av\u00ednculo existente entre los estudios cr\u00edticos para la paz y las perspectivas poscoloniales, descoloniales y feministas. Partiendo de una revisi\u00f3n bibliogr\u00e1fica, se propone una reflexi\u00f3n sobre el car\u00e1cter colonial, belicista y patriarcal de las producciones acad\u00e9micas y las pr\u00e1cticas pol\u00edticas. Espec\u00edficamente, en este estudio se analizan las teor\u00edas realistas y liberales de las RR. II. y c\u00f3mo estas descalifican al/a la Otro/Otra en cuanto sujeto activo y diversificado, al tratar a los Estados con igualdad formal y como enemigos en potencia. En esta perspectiva, se intenta esbozar c\u00f3mo la noci\u00f3n de alteridad contribuye para lograr una concepci\u00f3n m\u00e1s libertaria de la paz.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Revista cri\u0301tica de cie\u0302ncias sociais/Revista cr\u00edtica de ci\u00eancias sociais",
+        "type": "journal",
+        "issn": [
+          "0254-1106",
+          "2182-7435"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://journals.openedition.org/rccs/pdf/10084"
+      },
+      "topics": [
+        "Peace and Human Rights Education",
+        "Political Conflict and Governance",
+        "Peacebuilding and International Security"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W3016515010"
+    },
+    {
+      "openalex_id": "W2739686693",
+      "doi": "10.4067/s0719-09482017000100141",
+      "title": "La diplomacia ind\u00edgena: un enfoque transdiplom\u00e1tico",
+      "authors": [
+        {
+          "name": "Gabriel Andr\u00e9s Ar\u00e9valo Robles",
+          "openalex_id": "A5013526288",
+          "orcid": "https://orcid.org/0000-0002-4389-5997",
+          "institutions": [
+            "Universidad Antonio Nari\u00f1o"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-06-30",
+      "abstract": "El presente trabajo pretende discutir el relato diplom\u00e1tico ancestral desde el particular \u00e1ngulo de la transdiplomacia. Con este objetivo, presentar\u00e1 aspectos hist\u00f3ricos de la diplomacia ind\u00edgena a lo largo de la historia del sistema mundial, concentrando los esfuerzos finales en la emergencia diplom\u00e1tica ind\u00edgena contempor\u00e1nea de finales del siglo XX y principios del siglo XXI. Navegando la pr\u00e1ctica diplom\u00e1tica ind\u00edgena, debatir\u00e1 las nociones de la diplomacia occidental, demostrando que la idea de diplomacia es mucho m\u00e1s amplia y cr\u00edtica que las usadas por los cl\u00e1sicos enfoques, y relevante para las luchas contempor\u00e1neas contrahegem\u00f3nicas de la globalizaci\u00f3n.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Si Somos Americanos",
+        "type": "journal",
+        "issn": [
+          "0718-2910",
+          "0719-0948"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://scielo.conicyt.cl/pdf/ssa/v17n1/0719-0948-ssa-17-01-00141.pdf"
+      },
+      "topics": [
+        "International Relations in Latin America",
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W2739686693"
+    },
+    {
+      "openalex_id": "W3177438003",
+      "doi": "10.1590/2526-8910.ctoen1961",
+      "title": "Reflexiones sobre la idea de Am\u00e9rica Latina y sus contribuciones a las terapias ocupacionales del sur",
+      "authors": [
+        {
+          "name": "M\u00f3nica Matilde D\u00edaz-Leiva",
+          "openalex_id": "A5007937509",
+          "orcid": "https://orcid.org/0000-0001-7235-8077",
+          "institutions": [
+            "Academy of Christian Humanism University"
+          ]
+        },
+        {
+          "name": "Ana Paula Serrata Malfitano",
+          "openalex_id": "A5060019695",
+          "orcid": "https://orcid.org/0000-0002-0502-3194",
+          "institutions": [
+            "Universidade Federal de S\u00e3o Carlos"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "Resumen Se presenta una reflexi\u00f3n sobre las narrativas que se han elaborado en torno a Am\u00e9rica Latina y desde las cuales han emergido una serie de categor\u00edas que posibilitan determinadas y diferentes lecturas sobre nuestro continente. El objetivo es analizar estas narrativas e identificar lo que nos ofrecen para contribuir al debate sobre las Terapias Ocupacionales del Sur considerando que su despliegue tiene directa relaci\u00f3n con las discusiones que, desde hace varias d\u00e9cadas, se vienen produciendo en nuestra regi\u00f3n. Para ello se realiza un ensayo reflexivo en torno a teor\u00edas sociales que incluyen narrativas anticoloniales, poscoloniales, estudios subalternos, decoloniales, entre otras, seleccionando cuatro asuntos que contribuyen a la reflexi\u00f3n de las Terapias Ocupacionales del Sur: la heterogeneidad contradictoria de Am\u00e9rica Latina, la colonialidad como legado trans-generacional de la colonizaci\u00f3n, la pol\u00edtica de representaci\u00f3n que ha asumido el mundo letrado o intelectual para observar, estudiar y representar la \u201calteridad\u201d y la colonialidad interna como punto de arranque de procesos de descolonizaci\u00f3n. Se concluye que las terapias ocupacionales del sur se han configurado como un lugar de habla y reconocimiento de las narrativas y pr\u00e1cticas locales-regionales, teniendo una gran potencialidad para movilizar las relaciones y asimetr\u00edas de poder tanto a nivel local como global. La idea de Am\u00e9rica Latina nos permite identificar las maneras en que se ha transformado el curso de la profesi\u00f3n y se siguen produciendo nuevos sentidos y pr\u00e1cticas en respuesta a los contextos hist\u00f3ricos y temporalidades en este continente.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Cadernos Brasileiros de Terapia Ocupacional\u00a0",
+        "type": "journal",
+        "issn": [
+          "2526-8910"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.scielo.br/j/cadbto/a/zQqK83TGRJQwzcFNcVp5P3B/?lang=es&format=pdf"
+      },
+      "topics": [
+        "Migration, Education, Indigenous Social Dynamics",
+        "Occupational Therapy Practice and Research",
+        "Stress and Burnout Research"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W3177438003"
+    },
+    {
+      "openalex_id": "W2522198947",
+      "doi": "10.21830/19006586.9",
+      "title": "Una educaci\u00f3n desde la otredad",
+      "authors": [
+        {
+          "name": "Pedro Jos\u00e9 Vargas Manrique",
+          "openalex_id": "A5000341121",
+          "institutions": [
+            "District University of Bogot\u00e1"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-30",
+      "abstract": "El objetivo del presente art\u00edculo es ofrecer una propuesta para una educaci\u00f3n desde la otredad a partir del pensamiento dial\u00f3gico; de este se toman algunos conceptos para determinar los principios, los principales actores, las pr\u00e1cticas educativas, el m\u00e9todo de ense\u00f1anza-aprendizaje y los contenidos pedag\u00f3gicos, factores esenciales para una formaci\u00f3n de esta naturaleza. Adem\u00e1s, se tienen en cuenta los aportes a la educaci\u00f3n de tres pensadores latinoamericanos: Dussel, Freire y Skliar, para quienes el papel activo de la otredad es fundamental en cualquier proceso educativo. Como conclusi\u00f3n se puede decir que una educaci\u00f3n aut\u00e9ntica es la que se realiza desde la otredad en el universo de las relaciones dial\u00f3gicas.",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Revista Cient\u00edfica General Jos\u00e9 Mar\u00eda C\u00f3rdova",
+        "type": "journal",
+        "issn": [
+          "1900-6586",
+          "2500-7645"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistacientificaesmic.com/index.php/esmic/article/download/9/496"
+      },
+      "topics": [
+        "Educational theories and practices",
+        "Educational Innovations and Technology",
+        "Social Skills and Education"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W2522198947"
+    },
+    {
+      "openalex_id": "W4365139805",
+      "doi": "10.15536/reducarmais.7.2023.3236",
+      "title": "Epistemes de los transm\u00e9todos decoloniales planetario-complejos",
+      "authors": [
+        {
+          "name": "Milagros Elena Rodr\u00edguez",
+          "openalex_id": "A5091346258",
+          "orcid": "https://orcid.org/0000-0002-0311-1705",
+          "institutions": [
+            "Universidad de Oriente"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-12",
+      "abstract": "En la decolonialidad planetaria-complejidad nacen los transm\u00e9todos in\u00e9ditos de la autora de la investigaci\u00f3n; as\u00ed como objetivo complejo, a fin recorrer las investigaciones afinar y dejar nuevamente en escena ante la comunidad planetaria que investiga, sustentamos epistemes de los transm\u00e9todos decoloniales planetario-complejos; en las l\u00edneas de investigaci\u00f3n: transepistemolog\u00edas de los conocimientos-saberes y transmetodolog\u00edas transcomplejas y Decolonialidad planetaria-complejidad en re-ligaje. Investigamos ac\u00e1 con el transm\u00e9todo: la hermen\u00e9utica comprensiva, ecos\u00f3fica y diat\u00f3pica, pasando por los momentos de Boaventura De Sousa: anal\u00edticos, emp\u00edricos y propositivos. Sustentamos en inicio diez (10) epistemes de los transm\u00e9todos decoloniales planetario-complejos.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Revista Educar Mais",
+        "type": "journal",
+        "issn": [
+          "2237-9185"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos.ifsul.edu.br/index.php/educarmais/article/download/3236/2229"
+      },
+      "topics": [
+        "Social Skills and Education",
+        "Higher Education and Sustainability",
+        "Environmental and sustainability education"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W4365139805"
+    },
+    {
+      "openalex_id": "W2669579064",
+      "doi": null,
+      "title": "Trascendencia \u00e9tica en la \"obra temprana\" filos\u00f3fica de E. Dussel: Irrupci\u00f3n mesi\u00e1nica y praxis liberadora",
+      "authors": [
+        {
+          "name": "Juan Mat\u00edas Zielinski",
+          "openalex_id": "A5002552776",
+          "orcid": "https://orcid.org/0000-0002-0581-5458",
+          "institutions": [
+            "Universidad Cat\u00f3lica de C\u00f3rdoba"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": "Esta breve contribucion tiene como objetivo principal, presentar y sistematizar analiticamente la categoria de trascendencia en la obra temprana filosofica de E. Dussel. La misma sera caracterizada bajo la nocion de mesianica y en relacion con la praxis de liberacion. En primer lugar, y a partir del abordaje de su etica de la presentare y analizare el sentido que Dussel le atribuye a las siguientes categorias: Otro, Alteridad, Exterioridad, cara-a-cara, irrupcion temporalizante, revelacion, interpelacion y conciencia etica, novedad historica, trascendentalidad interna y eticidad. En segundo lugar, analizare la cuestion de la liberacion (trabajo como servicio) retomando los analisis precedentes sobre la meta-fisica de la Alteridad.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Stromata",
+        "type": "journal",
+        "issn": [
+          "0049-2353"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://bibdigital.uccor.edu.ar/ojs/index.php/STRO/article/view/1395"
+      },
+      "topics": [
+        "Ethics and bioethics in healthcare",
+        "Philosophical Thought and Analysis",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2669579064"
+    },
+    {
+      "openalex_id": "W2117257086",
+      "doi": "10.4067/s0717-554x2011000300006",
+      "title": "Cambio Social y Totalidad",
+      "authors": [
+        {
+          "name": "Esteban Torres",
+          "openalex_id": "A5012462809",
+          "orcid": "https://orcid.org/0000-0002-6040-562X",
+          "institutions": [
+            "Universidad Nacional de C\u00f3rdoba"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-12-01",
+      "abstract": "En el siguiente art\u00edculo proponemos recuperar en t\u00e9rminos generales una serie de problemas de m\u00e9todo relacionados con el cl\u00e1sico tema del cambio social, relativamente apartado de la discusi\u00f3n te\u00f3rica de las ciencias sociales desde mediados de la d\u00e9cada del 80 del siglo pasado. Luego de establecer un marco introductorio, se explora la relaci\u00f3n entre cambio social y teor\u00eda, y se profundiza en el v\u00ednculo con una categor\u00eda central y pol\u00e9mica de la epistemolog\u00eda y la teor\u00eda social, como es la de totalidad o totalidad social. Orienta el desarrollo del art\u00edculo el prop\u00f3sito de contribuir a la cr\u00edtica y al estudio de las posibilidades de reformulaci\u00f3n de la categor\u00eda de cambio social o bien de elementos centrales de la misma, como alternativas te\u00f3ricas para repensar la urgente e hist\u00f3rica cuesti\u00f3n del Desarrollo (principalmente en su dimensi\u00f3n econ\u00f3mica) y con ello hacer frente a los nuevos desaf\u00edos culturales y pol\u00edticos que se presentan en las sociedades latinoamericanas.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Cinta de moebio",
+        "type": "journal",
+        "issn": [
+          "0717-554X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.scielo.cl/pdf/cmoebio/n42/art06.pdf"
+      },
+      "topics": [
+        "Social Sciences and Policies",
+        "Economic and Social Development",
+        "Latin American socio-political dynamics"
+      ],
+      "referenced_works_count": 12,
+      "url": "https://openalex.org/W2117257086"
+    },
+    {
+      "openalex_id": "W2010694242",
+      "doi": "10.3989/isegoria.2014.051.13",
+      "title": "Geopol\u00edtica de la alteridad. Levinas y la filosof\u00eda de la liberaci\u00f3n de E. Dussel",
+      "authors": [
+        {
+          "name": "Pedro Enrique Garc\u00ed\u00ada Ruiz",
+          "openalex_id": "A5112025209"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-12-30",
+      "abstract": "La relevancia del pensamiento de Emmanuel Levinas para comprender el surgimiento de la filosof\u00eda de la liberaci\u00f3n \u2013uno de los movimientos filos\u00f3ficos m\u00e1s importantes de Am\u00e9rica Latina durante la segunda mitad del siglo XX\u2013 es innegable. En este art\u00edculo se analiza la interpretaci\u00f3n geopol\u00edtica y anal\u00f3gica que Enrique Dussel realiz\u00f3 de los conceptos levinasianos de \u201cAlteridad\u201d (Alterit\u00e9) y \u201cOtro\u201d (Autrui) para mostrar su equivocidad en el \u00e1mbito de lo pol\u00edtico.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Isegor\u00eda",
+        "type": "journal",
+        "issn": [
+          "1130-2097",
+          "1988-8376"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://isegoria.revistas.csic.es/index.php/isegoria/article/download/882/883/888"
+      },
+      "topics": [
+        "Philosophy and Education Pedagogy",
+        "Philosophy, Ethics, and Existentialism",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W2010694242"
+    },
+    {
+      "openalex_id": "W3022550715",
+      "doi": "10.19053/01227238.10901",
+      "title": "Resignificar Al Otro: Configuraciones de la interculturalidad en la formaci\u00f3n e intervenci\u00f3n del trabajo social",
+      "authors": [
+        {
+          "name": "Myriam Fernanda Torres G\u00f3mez",
+          "openalex_id": "A5073526755",
+          "orcid": "https://orcid.org/0000-0003-1861-7191"
+        },
+        {
+          "name": "Gerardo V\u00e9lez Villafa\u00f1e",
+          "openalex_id": "A5000707574",
+          "orcid": "https://orcid.org/0000-0002-7619-9752"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-23",
+      "abstract": "Objetivo: Resignificar \u00e9tico - pol\u00edticamente la trayectoria en la comprensi\u00f3n del \u201cotro\u201d desde la formaci\u00f3n e intervenci\u00f3n del trabajo social, a partir del tr\u00e1nsito de la interculturalidad funcional hacia la interculturalidad cr\u00edtica para tejer una lectura emancipadora de la alteridad que habilite la insurgencia de relaciones y subjetividades otras. M\u00e9todo: se recurre al an\u00e1lisis cr\u00edtico del discurso para objetivar las comprensiones antropol\u00f3gicas presentes en algunos referentes te\u00f3rico-conceptuales adoptados y adaptados en el proceso de profesionalizaci\u00f3n del trabajo social latinoamericano. Estrategia: Se rastrea un doble proceso de subjetivaci\u00f3n en la formaci\u00f3n y pr\u00e1ctica del trabajo social, identificando su contig\u00fcidad con la interculturalidad funcional, cuya superaci\u00f3n es habilitada por la interculturalidad cr\u00edtica. Originalidad: el articulo aporta de manera original a la renovaci\u00f3n del acervo profesional cr\u00edtico del trabajo social a trav\u00e9s del problematizar la producci\u00f3n de alteridades en la formaci\u00f3n y pr\u00e1ctica profesional, aspecto altamente relevante, pero pocas veces abordado rigurosamente. Se concluye que la interculturalidad cr\u00edtica emerge a modo de categor\u00eda fundante que permite resignificar la alteridad como invenci\u00f3n urdida en concepciones antropol\u00f3gicas euroc\u00e9ntricas, abriendo paso a su multiplicidad y la emergencia de su potencia pol\u00edtica, lo que involucra complejos desaf\u00edos a la formaci\u00f3n profesional y la humanizaci\u00f3n de la universidad.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Revista Historia de la Educaci\u00f3n Latinoamericana",
+        "type": "journal",
+        "issn": [
+          "0122-7238",
+          "2256-5248"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.uptc.edu.co/index.php/historia_educacion_latinamerican/article/download/10901/9586"
+      },
+      "topics": [
+        "Social Sciences and Policies",
+        "Social Work Education and Practice",
+        "Resilience and Mental Health"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W3022550715"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

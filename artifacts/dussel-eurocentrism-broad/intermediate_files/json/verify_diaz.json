@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4067/s0718-43602022000100061"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4067/s0718-43602022000100061",
+      "title": "Desde las \u00e9ticas hacia la pol\u00edtica de la liberaci\u00f3n de Enrique Dussel. Aproximaci\u00f3n cr\u00edtica y debates sobre su filosof\u00eda de la liberaci\u00f3n",
+      "authors": [
+        {
+          "family": "D\u00edaz Fern\u00e1ndez",
+          "given": "Jos\u00e9"
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Revista de filosof\u00eda",
+      "volume": "79",
+      "issue": "",
+      "page": "61-85",
+      "publisher": "Universidad de Chile",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4067/s0718-43602022000100061"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

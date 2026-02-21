@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "An Ontological Critique of the Trans-Ontology of Enrique Dussel",
+    "author": "Irvine"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s11841-010-0210-8",
+      "title": "An Ontological Critique of the Trans-Ontology of Enrique Dussel",
+      "authors": [
+        {
+          "family": "Irvine",
+          "given": "Andrew B."
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "Sophia",
+      "volume": "50",
+      "issue": "4",
+      "page": "603-624",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1007/s11841-010-0210-8",
+      "score": 70.00697
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4013/fsu.2012.132(suppl).09"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4013/fsu.2012.132(suppl).09",
+      "title": "Rethinking Kant\u2019s Concept of Human Rights as Freedom",
+      "authors": [
+        {
+          "family": "Demenchonok",
+          "given": "Edward"
+        }
+      ],
+      "editors": [],
+      "year": 2012,
+      "container_title": "Filosofia Unisinos",
+      "volume": "13",
+      "issue": "2 - suppl.",
+      "page": "",
+      "publisher": "UNISINOS - Universidade do Vale do Rio Dos Sinos",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4013/fsu.2012.132(suppl).09"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

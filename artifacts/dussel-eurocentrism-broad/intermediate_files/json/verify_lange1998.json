@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Burnt Offerings to Rationality",
+    "author": "Lange",
+    "year": 1998
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/j.1527-2001.1998.tb01374.x",
+      "title": "Burnt Offerings to Rationality: A Feminist Reading of the Construction of Indigenous Peoples in Enrique Dussel's Theory of Modernity",
+      "authors": [
+        {
+          "family": "Lange",
+          "given": "Lynda"
+        }
+      ],
+      "editors": [],
+      "year": 1998,
+      "container_title": "Hypatia",
+      "volume": "13",
+      "issue": "3",
+      "page": "132-145",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1111/j.1527-2001.1998.tb01374.x",
+      "score": 41.191124
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

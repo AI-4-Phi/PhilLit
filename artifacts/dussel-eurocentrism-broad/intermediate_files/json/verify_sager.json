@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1163/18758185-01304005"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1163/18758185-01304005",
+      "title": "Liberation Pragmatism: Dussel and Dewey in Dialogue",
+      "authors": [
+        {
+          "family": "Sager",
+          "given": "Alex"
+        },
+        {
+          "family": "Spencer",
+          "given": "Albert R."
+        }
+      ],
+      "editors": [],
+      "year": 2016,
+      "container_title": "Contemporary Pragmatism",
+      "volume": "13",
+      "issue": "4",
+      "page": "420-439",
+      "publisher": "Walter de Gruyter GmbH",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1163/18758185-01304005"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

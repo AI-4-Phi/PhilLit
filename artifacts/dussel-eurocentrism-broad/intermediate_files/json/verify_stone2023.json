@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Global Ethics, Epistemic Colonialism",
+    "author": "Stone-Mediatore",
+    "year": 2023
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (29.0) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

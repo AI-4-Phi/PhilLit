@@ -1,0 +1,760 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "filosof\u00eda de la liberaci\u00f3n epistemolog\u00eda",
+  "results": [
+    {
+      "openalex_id": "W2771639616",
+      "doi": "10.4067/s0717-554x2017000300339",
+      "title": "Epistemolog\u00eda de las ciencias sociales en la filosof\u00eda de la liberaci\u00f3n de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Mart\u00edn Retamozo",
+          "openalex_id": "A5027769547",
+          "orcid": "https://orcid.org/0000-0001-8778-7667",
+          "institutions": [
+            "Centro Cient\u00edfico Tecnol\u00f3gico - La Plata"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-01",
+      "abstract": "La filosof\u00eda de la liberaci\u00f3n de Enrique Dussel ha propuesto a la anal\u00e9ctica como su m\u00e9todo de reflexi\u00f3n filos\u00f3fica. Sin embargo, a la hora de pensar una epistemolog\u00eda para las ciencias sociales cr\u00edticas (consistente con esta filosof\u00eda) se evidencian varios temas no estudiados. Este art\u00edculo propone observar tres de estos aspectos epistemol\u00f3gicos claves: la construcci\u00f3n de la objetividad, el criterio de demarcaci\u00f3n y de verdad, y la l\u00f3gica de la investigaci\u00f3n. A partir de identificar alcances y limitaciones en el tratamiento del tema en la obra de Dussel, se espera contribuir a clarificar la agenda para una fundamentaci\u00f3n de las ciencias sociales cr\u00edticas en el paradigma de la filosof\u00eda de la liberaci\u00f3n.",
+      "cited_by_count": 5,
+      "type": "article",
+      "source": {
+        "name": "Cinta de moebio",
+        "type": "journal",
+        "issn": [
+          "0717-554X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://scielo.conicyt.cl/pdf/cmoebio/n60/0717-554X-cmoebio-60-00339.pdf"
+      },
+      "topics": [
+        "Social Skills and Education",
+        "Latin American Cultural Politics",
+        "Higher Education and Sustainability"
+      ],
+      "referenced_works_count": 4,
+      "url": "https://openalex.org/W2771639616"
+    },
+    {
+      "openalex_id": "W1591354028",
+      "doi": null,
+      "title": "Sujetos pol\u00edticos: teor\u00eda y epistemolog\u00eda : Un di\u00e1logo entre la teor\u00eda del discurso, el (re)constructivismo y la filosof\u00eda de la liberaci\u00f3n en perspectiva latinoamericana",
+      "authors": [
+        {
+          "name": "Mart\u00edn Retamozo",
+          "openalex_id": "A5027769547",
+          "orcid": "https://orcid.org/0000-0001-8778-7667",
+          "institutions": [
+            "Universidad Nacional de La Plata"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-01",
+      "abstract": "Se propone una discusi\u00f3n de los aportes de tres teorias actuales influyentes en el pensamiento critico latinoamericano: la teoria del discurso de Ernesto Laclau, la epistemologia del presente potencial de Hugo Zemelman y la filosofia de la liberaci\u00f3n de Enrique Dussel. El objetivo del articulo es analizar en estas propuestas el lugar te\u00f3rico e hist\u00f3rico que tienen los sujetos politicos que disputan la constituci\u00f3n del orden social y los aportes de estas teorias para la comprensi\u00f3n de los movimientos sociales en Am\u00e9rica Latina.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Americanae (AECID Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://americanae.aecid.es/americanae/es/registros/registro.do?tipoRegistro=MTD&amp;idBib=3002762"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Religious and Theological Studies",
+        "Educational theories and practices"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W1591354028"
+    },
+    {
+      "openalex_id": "W4283366012",
+      "doi": "10.5281/zenodo.6616128",
+      "title": "Filosof\u00eda de la Liberaci\u00f3n y epistemolog\u00eda: contribuciones a las ciencias sociales cr\u00edticas",
+      "authors": [
+        {
+          "name": "Mart\u00edn Retamozo",
+          "openalex_id": "A5027769547",
+          "orcid": "https://orcid.org/0000-0001-8778-7667"
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-06-06",
+      "abstract": "Desde sus comienzos, la Filosof\u00eda de la Liberaci\u00f3n ha tenido como objetivo la construcci\u00f3n de un conocimiento cr\u00edtico a partir de la situaci\u00f3n de Am\u00e9rica Latina. Sin embargo, los esfuerzos por fundamentar epistemol\u00f3gicamente y metodol\u00f3gicamente una ciencia social cr\u00edtica desde esta perspectiva ha sido considerablemente menor. Este art\u00edculo busca aportar a esta cuesti\u00f3n. A partir de un estudio de los aportes de Enrique Dussel, se propone distinguir la reflexi\u00f3n del m\u00e9todo como ruptura te\u00f3rica y como propuesta metodol\u00f3gica. El tratamiento de estos asuntos replantea un conjunto de problemas cruciales para la fundamentaci\u00f3n de un programa de ciencias sociales cr\u00edticas.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.6616128"
+      },
+      "topics": [
+        "Social Sciences and Policies",
+        "Ethics and bioethics in healthcare",
+        "Philosophical and Cultural Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4283366012"
+    },
+    {
+      "openalex_id": "W2977305860",
+      "doi": "10.14483/25009311.14984",
+      "title": "Para decolonizar las geopol\u00edticas del sentir",
+      "authors": [
+        {
+          "name": "Pedro Pablo G\u00f3mez",
+          "openalex_id": "A5011483282",
+          "orcid": "https://orcid.org/0000-0002-9651-7682",
+          "institutions": [
+            "District University of Bogot\u00e1",
+            "ORCID"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-19",
+      "abstract": "Intentemos relacionar la colonialidad del espacio y del tiempo con la geopol\u00edtica del conocimiento y la geopol\u00edtica del sentir. En 1977 en su Filosof\u00eda de la liberaci\u00f3n, Enrique Dussel, hizo evidente su conciente geopol\u00edtico, al hablar del espacio como campo de batalla, social, pol\u00edtica y epist\u00e9mica (Dussel, 1996). En t\u00e9rminos geopol\u00edticos entonces, no es lo mismo nacer en el Polo Norte, en Chiapas o en Bolivia que, en Nueva York, pues hay un muro de diferencia colonial construido durante 500 a\u00f1os de modernidad. La gepol\u00edtica del conocimiento es la espacializaci\u00f3n epistemol\u00f3gica del saber, y as\u00ed como la econom\u00eda produce centros y periferias, la epistemolog\u00eda tambi\u00e9n lo hace. En el Norte geogr\u00e1fico hay sures epist\u00e9micos as\u00ed como en el Sur geogr\u00e1fico hay nortes epist\u00e9micos.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Estudios Art\u00edsticos",
+        "type": "journal",
+        "issn": [
+          "2500-6975",
+          "2500-9311"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.udistrital.edu.co/index.php/estart/article/download/14984/14843"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2977305860"
+    },
+    {
+      "openalex_id": "W2969373296",
+      "doi": "10.5281/zenodo.3241393",
+      "title": "Hacia la vida digna: La situaci\u00f3n colonial y las posibilidades de liberaci\u00f3n desde la Filosof\u00eda Latinoamericana.",
+      "authors": [
+        {
+          "name": "Claudia Anal\u00eda Sanchez Reche",
+          "openalex_id": "A5003620341",
+          "orcid": "https://orcid.org/0000-0001-5211-0488"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-07",
+      "abstract": "In the present paper, we intend to make a review of the most relevant ideas of some contemporary Latin American philosophers: Boaventura de Souza Santos, Arturo Roig, Ra\u00fal Fornet Betancourt y Silvia Rivera Cusicanqui. There is an emergency, in the communities oppressed by the colonial mentality, to produce and claim an epistemology from the margins, we mean, to bet for a counter-hegemonic globalization, that returns us our stolen dignity since 1492. The possibility of creating a philosophy from our situation of colonized, is presented as a political program by the philosophy of liberation, and as a manifestation of the dignified life for Latin American people. - En el siguiente art\u00edculo, nos proponemos realizar un recorrido por las ideas m\u00e1s relevantes de algunos referentes de la Filosof\u00eda Latinoamericana contempor\u00e1nea: Boaventura de Souza Santos, Arturo Roig, Ra\u00fal Fornet Betancourt y Silvia Rivera Cusicanqui. En los pueblos oprimidos por la mentalidad colonial, existe una urgencia de producir y reivindicar una epistemolog\u00eda desde los m\u00e1rgenes, esto es, la apuesta por una globalizaci\u00f3n contrahegem\u00f3nica que nos devuelva la dignidad arrebatada desde 1492. La posibilidad de filosofar desde nuestra situaci\u00f3n de colonizados y colonizadas se presenta entonces como un programa pol\u00edtico de la filosof\u00eda de la liberaci\u00f3n y como una manifestaci\u00f3n de la vida digna de los pueblos latinoamericanos.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Dialnet (Universidad de la Rioja)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doaj.org/article/0a917197dd224ed4b7e9cce7bb04e246"
+      },
+      "topics": [
+        "Religious and Theological Studies",
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2969373296"
+    },
+    {
+      "openalex_id": "W7116743158",
+      "doi": "10.5281/zenodo.18011563",
+      "title": "\u00c9tica de la liberaci\u00f3n y construcci\u00f3n de conocimientos en Salud Colectiva",
+      "authors": [
+        {
+          "name": "LEIDYS ELOISA PEDRAJA VALD\u00c9S",
+          "openalex_id": "A5120906425"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-21",
+      "abstract": "RESUMEN La \u00e9tica de la liberaci\u00f3n, formulada por Enrique Dussel, constituye un horizonte cr\u00edtico que cuestiona las estructuras de dominaci\u00f3n y exclusi\u00f3n propias del Sistema\u2011Mundo moderno, sustentado en la colonialidad del saber, del ser y del poder. En este art\u00edculo se analizan los siete principios \u00e9ticos de la liberaci\u00f3n: material, formal, factibilidad, cr\u00edtico, esperanza, discursivo y liberaci\u00f3n y se aplican al campo de la Salud Colectiva, mostrando c\u00f3mo su integraci\u00f3n orienta la producci\u00f3n de conocimientos hacia la afirmaci\u00f3n de la vida en comunidad y la transformaci\u00f3n cr\u00edtica de las condiciones que generan sufrimiento y exclusi\u00f3n. El estudio se sustenta en la Filosof\u00eda de la liberaci\u00f3n de Dussel, en los aportes de la \u00e9tica discursiva y en la visi\u00f3n cr\u00edtica latinoamericana de la Salud Colectiva, desarrollando un an\u00e1lisis te\u00f3rico\u2011cr\u00edtico que vincula categor\u00edas filos\u00f3ficas con categor\u00edas epidemiol\u00f3gicas y sociales. Los resultados evidencian que la construcci\u00f3n de conocimientos en salud, asumida desde un pensamiento complejo y decolonial, se convierte en praxis liberadora que acompa\u00f1a a las comunidades en su lucha por la justicia social y la dignidad humana. Se concluye que la \u00e9tica de la liberaci\u00f3n aplicada a la Salud Colectiva constituye un fundamento indispensable para construir saberes liberadores, situados y responsables, capaces de superar la colonialidad y afirmar la vida en todas sus dimensiones. Palabras clave: \u00c9tica de la liberaci\u00f3n; Principios \u00e9ticos, Salud Colectiva; Colonialidad; Pensamiento cr\u00edtico; Praxis liberadora; Epistemolog\u00eda del Sur; Justicia social.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.18011563"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Public Health and Social Inequalities",
+        "Health, Nursing, Elderly Care"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7116743158"
+    },
+    {
+      "openalex_id": "W7116747509",
+      "doi": "10.5281/zenodo.18011564",
+      "title": "\u00c9tica de la liberaci\u00f3n y construcci\u00f3n de conocimientos en Salud Colectiva",
+      "authors": [
+        {
+          "name": "LEIDYS ELOISA PEDRAJA VALD\u00c9S",
+          "openalex_id": "A5120906425"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-21",
+      "abstract": "RESUMEN La \u00e9tica de la liberaci\u00f3n, formulada por Enrique Dussel, constituye un horizonte cr\u00edtico que cuestiona las estructuras de dominaci\u00f3n y exclusi\u00f3n propias del Sistema\u2011Mundo moderno, sustentado en la colonialidad del saber, del ser y del poder. En este art\u00edculo se analizan los siete principios \u00e9ticos de la liberaci\u00f3n: material, formal, factibilidad, cr\u00edtico, esperanza, discursivo y liberaci\u00f3n y se aplican al campo de la Salud Colectiva, mostrando c\u00f3mo su integraci\u00f3n orienta la producci\u00f3n de conocimientos hacia la afirmaci\u00f3n de la vida en comunidad y la transformaci\u00f3n cr\u00edtica de las condiciones que generan sufrimiento y exclusi\u00f3n. El estudio se sustenta en la Filosof\u00eda de la liberaci\u00f3n de Dussel, en los aportes de la \u00e9tica discursiva y en la visi\u00f3n cr\u00edtica latinoamericana de la Salud Colectiva, desarrollando un an\u00e1lisis te\u00f3rico\u2011cr\u00edtico que vincula categor\u00edas filos\u00f3ficas con categor\u00edas epidemiol\u00f3gicas y sociales. Los resultados evidencian que la construcci\u00f3n de conocimientos en salud, asumida desde un pensamiento complejo y decolonial, se convierte en praxis liberadora que acompa\u00f1a a las comunidades en su lucha por la justicia social y la dignidad humana. Se concluye que la \u00e9tica de la liberaci\u00f3n aplicada a la Salud Colectiva constituye un fundamento indispensable para construir saberes liberadores, situados y responsables, capaces de superar la colonialidad y afirmar la vida en todas sus dimensiones. Palabras clave: \u00c9tica de la liberaci\u00f3n; Principios \u00e9ticos, Salud Colectiva; Colonialidad; Pensamiento cr\u00edtico; Praxis liberadora; Epistemolog\u00eda del Sur; Justicia social.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.18011564"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Public Health and Social Inequalities",
+        "Health, Nursing, Elderly Care"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7116747509"
+    },
+    {
+      "openalex_id": "W4405668847",
+      "doi": "10.21703/2735-634520242622992",
+      "title": "Los fundamentos epistemol\u00f3gicos del m\u00e9todo de la Teolog\u00eda de la Liberaci\u00f3n y la Teolog\u00eda del Pueblo",
+      "authors": [
+        {
+          "name": "Guillermo Santiago Salinas",
+          "openalex_id": "A5015823835",
+          "orcid": "https://orcid.org/0000-0001-6227-1576",
+          "institutions": [
+            "Universidad Cat\u00f3lica de C\u00f3rdoba"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-12-21",
+      "abstract": "La Teolog\u00eda de la Liberaci\u00f3n, como teolog\u00eda contempor\u00e1nea surgida en el siglo XX, todav\u00eda se mantiene en el debate actual respecto de la epistemolog\u00eda y metodolog\u00eda propias de la teolog\u00eda. Su influencia sigue teniendo gran relevancia a nivel mundial, por ejemplo, a trav\u00e9s de la Teolog\u00eda del Pueblo, que aqu\u00ed analizamos en sus conceptos principales. Realizamos una aproximaci\u00f3n formal respecto de su m\u00e9todo a partir de sus fundamentos epistemol\u00f3gicos, a fin de dar cuenta de su teor\u00eda surgida de la praxis cristiana. En la descripci\u00f3n de sus aspectos m\u00e1s importantes, destacamos el rol de sus relaciones con la filosof\u00eda y las ciencias. Para ello, nos enfocamos en los aportes ofrecidos por el autor brasile\u00f1o Agenor Brighenti y el pensador argentino Juan Carlos Scannone. Por \u00faltimo, investigamos el papel que juega la praxis como horizonte desde el que surge la reflexi\u00f3n teol\u00f3gica.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Anales de Teolog\u00eda",
+        "type": "journal",
+        "issn": [
+          "0717-4152",
+          "2735-6345"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.ucsc.cl/index.php/analesdeteologia/article/download/2992/2014"
+      },
+      "topics": [
+        "Religious and Theological Studies",
+        "Philosophy, Health, and Society",
+        "Religion and Society in Latin America"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W4405668847"
+    },
+    {
+      "openalex_id": "W3048464371",
+      "doi": "10.15332/dt.inv.2020.00661",
+      "title": "Cap\u00edtulo 1. Pueblo como categor\u00eda filos\u00f3fica, movimientos sociales y praxis de liberaci\u00f3n en Colombia. Un acercamiento al pensamiento filos\u00f3fico de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Diego Fernando Camelo Perdomo",
+          "openalex_id": "A5045999704",
+          "orcid": "https://orcid.org/0000-0003-3068-1997"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "El presente cap\u00edtulo busca constituirse como un acercamiento al pensamiento filos\u00f3fico de Enrique Dussel en tres categor\u00edas principales: pueblo, movimientos sociales y praxis de liberaci\u00f3n. Lo que se procurar\u00e1 es demostrar la relaci\u00f3n convergente que existe entre las categor\u00edas se\u00f1alando los rasgos te\u00f3ricos y pr\u00e1cticos de dicha relaci\u00f3n. Para este cometido, primero se especificar\u00e1 las categor\u00edas de pueblo y naci\u00f3n desde la filosof\u00eda y c\u00f3mo hacen parte de una propuesta pol\u00edtica; segundo, la pol\u00edtica como praxis y formaci\u00f3n social; tercero, retomar las categor\u00edas de pueblo pero en un marco pol\u00edtico para ser entendidas como exterioridades de esta naturaleza. Cuarto, encaminar esta interpretaci\u00f3n a la necesidad de imprimirle una re-significancia, un pensamiento a contrapelo a lo que se viene entendiendo por pueblo en el marco de una epistemolog\u00eda situada y una utop\u00eda no como imposible sino en tanto que pro-yecto. Una vez hecho esto se entablar\u00e1 la relaci\u00f3n entre la categor\u00eda pol\u00edtica de pueblo y los movimientos sociales. Quinto, se buscar\u00e1 identificar a los movimientos sociales como el Bloque social. Como sexto punto, se explicar\u00e1 el proceso como este bloque social de los oprimidos se convierten en actores pol\u00edticos en donde se entablar\u00e1 la reciprocidad entre la praxis de liberaci\u00f3n y los movimientos sociales. Por \u00faltimo, se concluir\u00e1 analizando c\u00f3mo dicha praxis de liberaci\u00f3n se hace evidente en el contexto colombiano.",
+      "cited_by_count": 0,
+      "type": "book",
+      "source": {
+        "name": "Universidad Santo Tom\u00e1s eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://repository.usta.edu.co/bitstream/11634/23935/1/capitulo1pueblocomocategoria2016diegocamelo.pdf"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Economic and Social Development",
+        "Educational theories and practices"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3048464371"
+    },
+    {
+      "openalex_id": "W7120287564",
+      "doi": null,
+      "title": "Filosof\u00eda de la praxis y educaci\u00f3n: una dial\u00e1tica de la educaci\u00f3n formal y no formal",
+      "authors": [
+        {
+          "name": "Edcleide da Rocha Silva",
+          "openalex_id": "A5122510687"
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-05",
+      "abstract": "RESUMEN: Esta disertaci\u00f3n es el resultado de un trabajo intenso y colectivo, entre orientaciones y orientanda del curso de m\u00e1ster en educaci\u00f3n del PPGE, de la UFAL. Trabaja con la concepci\u00f3n acerca de la Pr\u00e1xis como Educaci\u00f3n y Filosof\u00eda en movimiento continuo entre la teor\u00eda y la pr\u00e1ctica, cabiendo una mirada m\u00e1s atenta a la cuesti\u00f3n de la dial\u00e9ctica de la educaci\u00f3n entre el proceso hist\u00f3rico de nosotros los otros latinoamericanos. Como propuesta, buscamos calificar la investigaci\u00f3n en la investigaci\u00f3n entre tres nombres que rodean el concepto de praxis que son ellos: Enrique D. Dussel, Paulo Freire y Adolfo S\u00e1nchez V\u00e1zquez, teniendo en vista la conexi\u00f3n entre Filosof\u00eda de la praxis y la liberaci\u00f3n resultando en una conexi\u00f3n educativa con la mirada a la esperanza como categor\u00eda motivadora de la existencia y de la transformaci\u00f3n. En esta perspectiva, nuestro estudio propuso apuntar la superaci\u00f3n de la dicotom\u00eda, o escisi\u00f3n entre lo pr\u00e1ctico-te\u00f3rico. con la praxis como m\u00e9todo investigativo del contexto socio-hist\u00f3rico, en el escenario de miradas tenemos a Am\u00e9rica Latina como lugar de nuestra alteridad, pensamientos y b\u00fasquedas. Adem\u00e1s de la preocupaci\u00f3n de no negamos la construcci\u00f3n del conocimiento en el recorrido hist\u00f3rico de formaci\u00f3n humana nuestra investigaci\u00f3n hace an\u00e1lisis por medio te\u00f3rica e influencias de lo que comprendemos sobre hegem\u00f3nica y eurocentrismo. Buscando superar la manipulaci\u00f3n que es de restricci\u00f3n de la epistemolog\u00eda, por medio de la negaci\u00f3n, explotaci\u00f3n y violencia de un sistema opresor. Con el sentido de promover un principio de reflexiones de la educaci\u00f3n formal, con la no formal y caminos para la transformaci\u00f3n de los imperativos de un sistema de colonizaci\u00f3n. en ese sentido el trabajo, se fundamenta b\u00e1sicamente en tres puntos: i) nuestra concepci\u00f3n de praxis; ii) la dial\u00e9ctica de la educaci\u00f3n formal y no formal; y por \u00faltimo, iii) la filosof\u00eda de la liberaci\u00f3n y las miradas a nuestra cultura educativa socio-hist\u00f3rica. Esperamos entonces que podamos atender las perspectivas propuestas ayud\u00e1ndonos en las reflexiones de la praxis.",
+      "cited_by_count": 0,
+      "type": "dissertation",
+      "source": {
+        "name": "LA Referencia (Red Federada de Repositorios Institucionales de Publicaciones Cient\u00edficas)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://www.repositorio.ufal.br/handle/riufal/5968"
+      },
+      "topics": [
+        "Social Skills and Education",
+        "Latin American Cultural Politics",
+        "Social impacts of COVID-19"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7120287564"
+    },
+    {
+      "openalex_id": "W7105932164",
+      "doi": "10.17613/jzcvj-xjm37",
+      "title": "La Filosof\u00eda en el Giro de Nuestra Am\u00e9rica",
+      "authors": [
+        {
+          "name": "Pernalete Lugo, Josefrank",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-6625-1334",
+          "institutions": [
+            "Universidad del Caribe"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-05",
+      "abstract": "Es con un profundo sentido de responsabilidad intelectual y un vibrante entusiasmo que presentamos al mundo acad\u00e9mico el volumen 1, n\u00famero 1, de la Revista del Mar Caribe. Este nacimiento editorial no es un evento aislado; es la respuesta a una necesidad hist\u00f3rica y un compromiso con el porvenir de nuestro pensamiento. Durante siglos, Am\u00e9rica Latina y el Caribe han sido m\u00e1s a menudo objeto de estudio filos\u00f3fico que sujeto soberano de su propia enunciaci\u00f3n. Hemos habitado una tensi\u00f3n constante entre la adopci\u00f3n de c\u00e1nones universales \u2014casi siempre de cu\u00f1o europeo o norteamericano\u2014 y la urgente necesidad de forjar herramientas conceptuales que respondan a nuestras realidades concretas: nuestras historias de resistencia, nuestras estructuras sociales \u00fanicas, nuestras ontolog\u00edas mestizas y nuestras urgencias pol\u00edticas. La filosof\u00eda en nuestra regi\u00f3n nunca ha sido un mero ejercicio especulativo de sal\u00f3n. Ha sido, y debe ser, un arma de liberaci\u00f3n, una herramienta de diagn\u00f3stico cr\u00edtico y un horizonte de utop\u00eda. Esta revista nace con una vocaci\u00f3n clara: ser el \u00e1gora rigurosa en la que converjan estas b\u00fasquedas. No aspiramos simplemente a ser un repositorio de filosof\u00eda sobre la regi\u00f3n. Aspiramos a ser una plataforma para la filosof\u00eda desde y para Am\u00e9rica Latina y el Caribe. Buscamos fomentar un di\u00e1logo que trascienda las fronteras ling\u00fc\u00edsticas que han fragmentado nuestro continente intelectual \u2014conectando el pensamiento en espa\u00f1ol, portugu\u00e9s, franc\u00e9s, ingl\u00e9s y en las lenguas originarias\u2014. Nuestra apuesta es por un rigor \"cient\u00edfico\" que no teme dialogar con la decolonialidad; por una epistemolog\u00eda que reconoce los \"saberes del sur\" y por una \u00e9tica anclada en la justicia social y la ecolog\u00eda integral. En las p\u00e1ginas que siguen y en las que vendr\u00e1n, el lector encontrar\u00e1 un espacio dedicado a la deconstrucci\u00f3n de los relatos hegem\u00f3nicos, pero, sobre todo, a la construcci\u00f3n de nuevas categor\u00edas. Exploraremos desde las relecturas de la tradici\u00f3n filos\u00f3fica occidental a la luz de nuestras experiencias, hasta las formulaciones m\u00e1s originales de la filosof\u00eda intercultural, la \u00e9tica de la liberaci\u00f3n, las epistemolog\u00edas marxistas y los debates ontol\u00f3gicos que surgen de nuestro complejo presente. Este primer n\u00famero es un cimiento. Es una invitaci\u00f3n abierta a investigadores, profesores y estudiantes para que se unan a esta conversaci\u00f3n vital. Estamos convencidos de que la filosof\u00eda latinoamericana y caribe\u00f1a tiene una voz indispensable en el debate global, no por un sentido de particularismo ex\u00f3tico, sino porque las encrucijadas que enfrentamos hoy \u2014la desigualdad, la crisis clim\u00e1tica, la migraci\u00f3n y la identidad\u2014 son, en gran medida, las encrucijadas del mundo. Bienvenidos a este espacio de pensamiento cr\u00edtico. Bienvenidos a la filosof\u00eda en su giro latinoamericano.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Knowledge Commons (Lakehead University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.17613/jzcvj-xjm37"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Social Skills and Education",
+        "Philosophy and Phenomenology Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7105932164"
+    },
+    {
+      "openalex_id": "W7104288478",
+      "doi": "10.17613/a1hzy-esp57",
+      "title": "Revista del Mar Caribe",
+      "authors": [
+        {
+          "name": "Pernalete Lugo, Josefrank",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-6625-1334",
+          "institutions": [
+            "University of the Southern Caribbean"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-05",
+      "abstract": "Es con un profundo sentido de responsabilidad intelectual y un vibrante entusiasmo que presentamos al mundo acad\u00e9mico el volumen 1, n\u00famero 1, de la Revista del Mar Caribe. Este nacimiento editorial no es un evento aislado; es la respuesta a una necesidad hist\u00f3rica y un compromiso con el porvenir de nuestro pensamiento. Durante siglos, Am\u00e9rica Latina y el Caribe han sido m\u00e1s a menudo objeto de estudio filos\u00f3fico que sujeto soberano de su propia enunciaci\u00f3n. Hemos habitado una tensi\u00f3n constante entre la adopci\u00f3n de c\u00e1nones universales \u2014casi siempre de cu\u00f1o europeo o norteamericano\u2014 y la urgente necesidad de forjar herramientas conceptuales que respondan a nuestras realidades concretas: nuestras historias de resistencia, nuestras estructuras sociales \u00fanicas, nuestras ontolog\u00edas mestizas y nuestras urgencias pol\u00edticas. La filosof\u00eda en nuestra regi\u00f3n nunca ha sido un mero ejercicio especulativo de sal\u00f3n. Ha sido, y debe ser, un arma de liberaci\u00f3n, una herramienta de diagn\u00f3stico cr\u00edtico y un horizonte de utop\u00eda. Esta revista nace con una vocaci\u00f3n clara: ser el \u00e1gora rigurosa en la que converjan estas b\u00fasquedas. No aspiramos simplemente a ser un repositorio de filosof\u00eda sobre la regi\u00f3n. Aspiramos a ser una plataforma para la filosof\u00eda desde y para Am\u00e9rica Latina y el Caribe. Buscamos fomentar un di\u00e1logo que trascienda las fronteras ling\u00fc\u00edsticas que han fragmentado nuestro continente intelectual \u2014conectando el pensamiento en espa\u00f1ol, portugu\u00e9s, franc\u00e9s, ingl\u00e9s y en las lenguas originarias\u2014. Nuestra apuesta es por un rigor \"cient\u00edfico\" que no teme dialogar con la decolonialidad; por una epistemolog\u00eda que reconoce los \"saberes del sur\" y por una \u00e9tica anclada en la justicia social y la ecolog\u00eda integral. En las p\u00e1ginas que siguen y en las que vendr\u00e1n, el lector encontrar\u00e1 un espacio dedicado a la deconstrucci\u00f3n de los relatos hegem\u00f3nicos, pero, sobre todo, a la construcci\u00f3n de nuevas categor\u00edas. Exploraremos desde las relecturas de la tradici\u00f3n filos\u00f3fica occidental a la luz de nuestras experiencias, hasta las formulaciones m\u00e1s originales de la filosof\u00eda intercultural, la \u00e9tica de la liberaci\u00f3n, las epistemolog\u00edas marxistas y los debates ontol\u00f3gicos que surgen de nuestro complejo presente. Este primer n\u00famero es un cimiento. Es una invitaci\u00f3n abierta a investigadores, profesores y estudiantes para que se unan a esta conversaci\u00f3n vital. Estamos convencidos de que la filosof\u00eda latinoamericana y caribe\u00f1a tiene una voz indispensable en el debate global, no por un sentido de particularismo ex\u00f3tico, sino porque las encrucijadas que enfrentamos hoy \u2014la desigualdad, la crisis clim\u00e1tica, la migraci\u00f3n y la identidad\u2014 son, en gran medida, las encrucijadas del mundo. Bienvenidos a este espacio de pensamiento cr\u00edtico. Bienvenidos a la filosof\u00eda en su giro latinoamericano.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Knowledge Commons (Lakehead University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.17613/a1hzy-esp57"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Afro-Latin American Studies",
+        "Caribbean history, culture, and politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7104288478"
+    },
+    {
+      "openalex_id": "W7105884580",
+      "doi": "10.17613/z14nx-php76",
+      "title": "Revista del Mar Caribe",
+      "authors": [
+        {
+          "name": "Pernalete Lugo, Josefrank",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-6625-1334",
+          "institutions": [
+            "University of the Southern Caribbean"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-05",
+      "abstract": "Es con un profundo sentido de responsabilidad intelectual y un vibrante entusiasmo que presentamos al mundo acad\u00e9mico el volumen 1, n\u00famero 1, de la Revista del Mar Caribe. Este nacimiento editorial no es un evento aislado; es la respuesta a una necesidad hist\u00f3rica y un compromiso con el porvenir de nuestro pensamiento. Durante siglos, Am\u00e9rica Latina y el Caribe han sido m\u00e1s a menudo objeto de estudio filos\u00f3fico que sujeto soberano de su propia enunciaci\u00f3n. Hemos habitado una tensi\u00f3n constante entre la adopci\u00f3n de c\u00e1nones universales \u2014casi siempre de cu\u00f1o europeo o norteamericano\u2014 y la urgente necesidad de forjar herramientas conceptuales que respondan a nuestras realidades concretas: nuestras historias de resistencia, nuestras estructuras sociales \u00fanicas, nuestras ontolog\u00edas mestizas y nuestras urgencias pol\u00edticas. La filosof\u00eda en nuestra regi\u00f3n nunca ha sido un mero ejercicio especulativo de sal\u00f3n. Ha sido, y debe ser, un arma de liberaci\u00f3n, una herramienta de diagn\u00f3stico cr\u00edtico y un horizonte de utop\u00eda. Esta revista nace con una vocaci\u00f3n clara: ser el \u00e1gora rigurosa en la que converjan estas b\u00fasquedas. No aspiramos simplemente a ser un repositorio de filosof\u00eda sobre la regi\u00f3n. Aspiramos a ser una plataforma para la filosof\u00eda desde y para Am\u00e9rica Latina y el Caribe. Buscamos fomentar un di\u00e1logo que trascienda las fronteras ling\u00fc\u00edsticas que han fragmentado nuestro continente intelectual \u2014conectando el pensamiento en espa\u00f1ol, portugu\u00e9s, franc\u00e9s, ingl\u00e9s y en las lenguas originarias\u2014. Nuestra apuesta es por un rigor \"cient\u00edfico\" que no teme dialogar con la decolonialidad; por una epistemolog\u00eda que reconoce los \"saberes del sur\" y por una \u00e9tica anclada en la justicia social y la ecolog\u00eda integral. En las p\u00e1ginas que siguen y en las que vendr\u00e1n, el lector encontrar\u00e1 un espacio dedicado a la deconstrucci\u00f3n de los relatos hegem\u00f3nicos, pero, sobre todo, a la construcci\u00f3n de nuevas categor\u00edas. Exploraremos desde las relecturas de la tradici\u00f3n filos\u00f3fica occidental a la luz de nuestras experiencias, hasta las formulaciones m\u00e1s originales de la filosof\u00eda intercultural, la \u00e9tica de la liberaci\u00f3n, las epistemolog\u00edas marxistas y los debates ontol\u00f3gicos que surgen de nuestro complejo presente. Este primer n\u00famero es un cimiento. Es una invitaci\u00f3n abierta a investigadores, profesores y estudiantes para que se unan a esta conversaci\u00f3n vital. Estamos convencidos de que la filosof\u00eda latinoamericana y caribe\u00f1a tiene una voz indispensable en el debate global, no por un sentido de particularismo ex\u00f3tico, sino porque las encrucijadas que enfrentamos hoy \u2014la desigualdad, la crisis clim\u00e1tica, la migraci\u00f3n y la identidad\u2014 son, en gran medida, las encrucijadas del mundo. Bienvenidos a este espacio de pensamiento cr\u00edtico. Bienvenidos a la filosof\u00eda en su giro latinoamericano.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Knowledge Commons (Lakehead University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.17613/z14nx-php76"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Afro-Latin American Studies",
+        "Caribbean history, culture, and politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7105884580"
+    },
+    {
+      "openalex_id": "W7104260573",
+      "doi": "10.17613/pc384-edn27",
+      "title": "La Filosof\u00eda en el Giro de Nuestra Am\u00e9rica",
+      "authors": [
+        {
+          "name": "Pernalete Lugo, Josefrank",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-6625-1334",
+          "institutions": [
+            "Universidad del Caribe"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-05",
+      "abstract": "Es con un profundo sentido de responsabilidad intelectual y un vibrante entusiasmo que presentamos al mundo acad\u00e9mico el volumen 1, n\u00famero 1, de la Revista del Mar Caribe. Este nacimiento editorial no es un evento aislado; es la respuesta a una necesidad hist\u00f3rica y un compromiso con el porvenir de nuestro pensamiento. Durante siglos, Am\u00e9rica Latina y el Caribe han sido m\u00e1s a menudo objeto de estudio filos\u00f3fico que sujeto soberano de su propia enunciaci\u00f3n. Hemos habitado una tensi\u00f3n constante entre la adopci\u00f3n de c\u00e1nones universales \u2014casi siempre de cu\u00f1o europeo o norteamericano\u2014 y la urgente necesidad de forjar herramientas conceptuales que respondan a nuestras realidades concretas: nuestras historias de resistencia, nuestras estructuras sociales \u00fanicas, nuestras ontolog\u00edas mestizas y nuestras urgencias pol\u00edticas. La filosof\u00eda en nuestra regi\u00f3n nunca ha sido un mero ejercicio especulativo de sal\u00f3n. Ha sido, y debe ser, un arma de liberaci\u00f3n, una herramienta de diagn\u00f3stico cr\u00edtico y un horizonte de utop\u00eda. Esta revista nace con una vocaci\u00f3n clara: ser el \u00e1gora rigurosa en la que converjan estas b\u00fasquedas. No aspiramos simplemente a ser un repositorio de filosof\u00eda sobre la regi\u00f3n. Aspiramos a ser una plataforma para la filosof\u00eda desde y para Am\u00e9rica Latina y el Caribe. Buscamos fomentar un di\u00e1logo que trascienda las fronteras ling\u00fc\u00edsticas que han fragmentado nuestro continente intelectual \u2014conectando el pensamiento en espa\u00f1ol, portugu\u00e9s, franc\u00e9s, ingl\u00e9s y en las lenguas originarias\u2014. Nuestra apuesta es por un rigor \"cient\u00edfico\" que no teme dialogar con la decolonialidad; por una epistemolog\u00eda que reconoce los \"saberes del sur\" y por una \u00e9tica anclada en la justicia social y la ecolog\u00eda integral. En las p\u00e1ginas que siguen y en las que vendr\u00e1n, el lector encontrar\u00e1 un espacio dedicado a la deconstrucci\u00f3n de los relatos hegem\u00f3nicos, pero, sobre todo, a la construcci\u00f3n de nuevas categor\u00edas. Exploraremos desde las relecturas de la tradici\u00f3n filos\u00f3fica occidental a la luz de nuestras experiencias, hasta las formulaciones m\u00e1s originales de la filosof\u00eda intercultural, la \u00e9tica de la liberaci\u00f3n, las epistemolog\u00edas marxistas y los debates ontol\u00f3gicos que surgen de nuestro complejo presente. Este primer n\u00famero es un cimiento. Es una invitaci\u00f3n abierta a investigadores, profesores y estudiantes para que se unan a esta conversaci\u00f3n vital. Estamos convencidos de que la filosof\u00eda latinoamericana y caribe\u00f1a tiene una voz indispensable en el debate global, no por un sentido de particularismo ex\u00f3tico, sino porque las encrucijadas que enfrentamos hoy \u2014la desigualdad, la crisis clim\u00e1tica, la migraci\u00f3n y la identidad\u2014 son, en gran medida, las encrucijadas del mundo. Bienvenidos a este espacio de pensamiento cr\u00edtico. Bienvenidos a la filosof\u00eda en su giro latinoamericano.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Knowledge Commons (Lakehead University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.17613/pc384-edn27"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Social Skills and Education",
+        "Philosophy and Phenomenology Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7104260573"
+    },
+    {
+      "openalex_id": "W7104263356",
+      "doi": "10.17613/7c6gc-yq520",
+      "title": "La Filosof\u00eda en el Giro de Nuestra Am\u00e9rica",
+      "authors": [
+        {
+          "name": "Pernalete Lugo, Josefrank",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-6625-1334",
+          "institutions": [
+            "Universidad del Caribe"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-05",
+      "abstract": "Es con un profundo sentido de responsabilidad intelectual y un vibrante entusiasmo que presentamos al mundo acad\u00e9mico el volumen 1, n\u00famero 1, de la Revista del Mar Caribe. Este nacimiento editorial no es un evento aislado; es la respuesta a una necesidad hist\u00f3rica y un compromiso con el porvenir de nuestro pensamiento. Durante siglos, Am\u00e9rica Latina y el Caribe han sido m\u00e1s a menudo objeto de estudio filos\u00f3fico que sujeto soberano de su propia enunciaci\u00f3n. Hemos habitado una tensi\u00f3n constante entre la adopci\u00f3n de c\u00e1nones universales \u2014casi siempre de cu\u00f1o europeo o norteamericano\u2014 y la urgente necesidad de forjar herramientas conceptuales que respondan a nuestras realidades concretas: nuestras historias de resistencia, nuestras estructuras sociales \u00fanicas, nuestras ontolog\u00edas mestizas y nuestras urgencias pol\u00edticas. La filosof\u00eda en nuestra regi\u00f3n nunca ha sido un mero ejercicio especulativo de sal\u00f3n. Ha sido, y debe ser, un arma de liberaci\u00f3n, una herramienta de diagn\u00f3stico cr\u00edtico y un horizonte de utop\u00eda. Esta revista nace con una vocaci\u00f3n clara: ser el \u00e1gora rigurosa en la que converjan estas b\u00fasquedas. No aspiramos simplemente a ser un repositorio de filosof\u00eda sobre la regi\u00f3n. Aspiramos a ser una plataforma para la filosof\u00eda desde y para Am\u00e9rica Latina y el Caribe. Buscamos fomentar un di\u00e1logo que trascienda las fronteras ling\u00fc\u00edsticas que han fragmentado nuestro continente intelectual \u2014conectando el pensamiento en espa\u00f1ol, portugu\u00e9s, franc\u00e9s, ingl\u00e9s y en las lenguas originarias\u2014. Nuestra apuesta es por un rigor \"cient\u00edfico\" que no teme dialogar con la decolonialidad; por una epistemolog\u00eda que reconoce los \"saberes del sur\" y por una \u00e9tica anclada en la justicia social y la ecolog\u00eda integral. En las p\u00e1ginas que siguen y en las que vendr\u00e1n, el lector encontrar\u00e1 un espacio dedicado a la deconstrucci\u00f3n de los relatos hegem\u00f3nicos, pero, sobre todo, a la construcci\u00f3n de nuevas categor\u00edas. Exploraremos desde las relecturas de la tradici\u00f3n filos\u00f3fica occidental a la luz de nuestras experiencias, hasta las formulaciones m\u00e1s originales de la filosof\u00eda intercultural, la \u00e9tica de la liberaci\u00f3n, las epistemolog\u00edas marxistas y los debates ontol\u00f3gicos que surgen de nuestro complejo presente. Este primer n\u00famero es un cimiento. Es una invitaci\u00f3n abierta a investigadores, profesores y estudiantes para que se unan a esta conversaci\u00f3n vital. Estamos convencidos de que la filosof\u00eda latinoamericana y caribe\u00f1a tiene una voz indispensable en el debate global, no por un sentido de particularismo ex\u00f3tico, sino porque las encrucijadas que enfrentamos hoy \u2014la desigualdad, la crisis clim\u00e1tica, la migraci\u00f3n y la identidad\u2014 son, en gran medida, las encrucijadas del mundo. Bienvenidos a este espacio de pensamiento cr\u00edtico. Bienvenidos a la filosof\u00eda en su giro latinoamericano.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Knowledge Commons (Lakehead University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.17613/7c6gc-yq520"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Social Skills and Education",
+        "Philosophy and Phenomenology Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7104263356"
+    },
+    {
+      "openalex_id": "W7104254814",
+      "doi": "10.17613/mngn8-2qp14",
+      "title": "Revista del Mar Caribe",
+      "authors": [
+        {
+          "name": "Pernalete Lugo, Josefrank",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0002-6625-1334",
+          "institutions": [
+            "University of the Southern Caribbean"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-11-05",
+      "abstract": "Es con un profundo sentido de responsabilidad intelectual y un vibrante entusiasmo que presentamos al mundo acad\u00e9mico el volumen 1, n\u00famero 1, de la Revista del Mar Caribe. Este nacimiento editorial no es un evento aislado; es la respuesta a una necesidad hist\u00f3rica y un compromiso con el porvenir de nuestro pensamiento. Durante siglos, Am\u00e9rica Latina y el Caribe han sido m\u00e1s a menudo objeto de estudio filos\u00f3fico que sujeto soberano de su propia enunciaci\u00f3n. Hemos habitado una tensi\u00f3n constante entre la adopci\u00f3n de c\u00e1nones universales \u2014casi siempre de cu\u00f1o europeo o norteamericano\u2014 y la urgente necesidad de forjar herramientas conceptuales que respondan a nuestras realidades concretas: nuestras historias de resistencia, nuestras estructuras sociales \u00fanicas, nuestras ontolog\u00edas mestizas y nuestras urgencias pol\u00edticas. La filosof\u00eda en nuestra regi\u00f3n nunca ha sido un mero ejercicio especulativo de sal\u00f3n. Ha sido, y debe ser, un arma de liberaci\u00f3n, una herramienta de diagn\u00f3stico cr\u00edtico y un horizonte de utop\u00eda. Esta revista nace con una vocaci\u00f3n clara: ser el \u00e1gora rigurosa en la que converjan estas b\u00fasquedas. No aspiramos simplemente a ser un repositorio de filosof\u00eda sobre la regi\u00f3n. Aspiramos a ser una plataforma para la filosof\u00eda desde y para Am\u00e9rica Latina y el Caribe. Buscamos fomentar un di\u00e1logo que trascienda las fronteras ling\u00fc\u00edsticas que han fragmentado nuestro continente intelectual \u2014conectando el pensamiento en espa\u00f1ol, portugu\u00e9s, franc\u00e9s, ingl\u00e9s y en las lenguas originarias\u2014. Nuestra apuesta es por un rigor \"cient\u00edfico\" que no teme dialogar con la decolonialidad; por una epistemolog\u00eda que reconoce los \"saberes del sur\" y por una \u00e9tica anclada en la justicia social y la ecolog\u00eda integral. En las p\u00e1ginas que siguen y en las que vendr\u00e1n, el lector encontrar\u00e1 un espacio dedicado a la deconstrucci\u00f3n de los relatos hegem\u00f3nicos, pero, sobre todo, a la construcci\u00f3n de nuevas categor\u00edas. Exploraremos desde las relecturas de la tradici\u00f3n filos\u00f3fica occidental a la luz de nuestras experiencias, hasta las formulaciones m\u00e1s originales de la filosof\u00eda intercultural, la \u00e9tica de la liberaci\u00f3n, las epistemolog\u00edas marxistas y los debates ontol\u00f3gicos que surgen de nuestro complejo presente. Este primer n\u00famero es un cimiento. Es una invitaci\u00f3n abierta a investigadores, profesores y estudiantes para que se unan a esta conversaci\u00f3n vital. Estamos convencidos de que la filosof\u00eda latinoamericana y caribe\u00f1a tiene una voz indispensable en el debate global, no por un sentido de particularismo ex\u00f3tico, sino porque las encrucijadas que enfrentamos hoy \u2014la desigualdad, la crisis clim\u00e1tica, la migraci\u00f3n y la identidad\u2014 son, en gran medida, las encrucijadas del mundo. Bienvenidos a este espacio de pensamiento cr\u00edtico. Bienvenidos a la filosof\u00eda en su giro latinoamericano.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Knowledge Commons (Lakehead University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.17613/mngn8-2qp14"
+      },
+      "topics": [
+        "Latin American Cultural Politics",
+        "Afro-Latin American Studies",
+        "Caribbean history, culture, and politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7104254814"
+    },
+    {
+      "openalex_id": "W7117868352",
+      "doi": "10.5281/zenodo.18112147",
+      "title": "De la perversi\u00f3n del cristianismo al cristianismo ken\u00f3tico: Cr\u00edtica, tr\u00e1nsito y repercusiones",
+      "authors": [
+        {
+          "name": "Sergio Ruvalcaba Solorio",
+          "openalex_id": "A5121708196",
+          "institutions": [
+            "Instituto de Filosof\u00eda"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-31",
+      "abstract": "Este trabajo presenta una cr\u00edtica filos\u00f3fica al cristianismo hist\u00f3rico como mecanismo de poder y exclusi\u00f3n, proponiendo un tr\u00e1nsito hacia un \"cristianismo ken\u00f3tico\" que integra la filosof\u00eda de la liberaci\u00f3n latinoamericana con perspectivas antiesencialistas postmodernas. A partir de un an\u00e1lisis interdisciplinario que abarca la teolog\u00eda, la epistemolog\u00eda y la \u00e9tica pol\u00edtica, se examina la trayectoria del pensamiento cristiano desde su apropiaci\u00f3n plat\u00f3nica y burocratizaci\u00f3n hasta su entrelazamiento con la modernidad secular, influenciada por figuras como Kant y Foucault.El texto estructura su argumento en siete cap\u00edtulos: se inicia con el tr\u00e1nsito del conocimiento religioso al secular, destacando huellas postseculares; aborda la formaci\u00f3n de consensos mediante exclusi\u00f3n y sacrificio (inspirado en Girard); desarrolla claves epistemol\u00f3gicas y morales ken\u00f3ticas, redefiniendo conceptos como lo cierto, lo bueno, la subjetividad y la temporalidad; critica el \"cristianismo plat\u00f3nico\" como instrumento de dominaci\u00f3n; explora las din\u00e1micas de poder y verdad en la modernidad; retorna al cristianismo ken\u00f3tico como propuesta subjetiva y pol\u00edtica, enfatizando la pobreza, el amor y la fe relacional; y culmina en una \"\u00e9tica del estar\" (inspirada en Scannone y Kusch), que promueve el populismo aut\u00f3nomo, la fagocitaci\u00f3n cr\u00edtica y la vulnerabilidad compartida como v\u00edas para superar la opresi\u00f3n.Las conclusiones generales contrastan categor\u00edas del cristianismo plat\u00f3nico con el pensamiento ken\u00f3tico, subrayando el uso del temor como control y proponiendo una \u00e9tica basada en la indigencia existencial y el di\u00e1logo no jer\u00e1rquico. Esta contribuci\u00f3n avanza en el debate postsecular y decolonial, ofreciendo una reinterpretaci\u00f3n evang\u00e9lica que desactiva l\u00f3gicas de imposici\u00f3n y fomenta comunidades sin soberan\u00eda absoluta.",
+      "cited_by_count": 0,
+      "type": "book",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.18112147"
+      },
+      "topics": [
+        "Christian Theology and Mission",
+        "Violence, Religion, and Philosophy",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7117868352"
+    },
+    {
+      "openalex_id": "W7117931825",
+      "doi": "10.5281/zenodo.18112148",
+      "title": "De la perversi\u00f3n del cristianismo al cristianismo ken\u00f3tico: Cr\u00edtica, tr\u00e1nsito y repercusiones",
+      "authors": [
+        {
+          "name": "Sergio Ruvalcaba Solorio",
+          "openalex_id": "A5121708196",
+          "institutions": [
+            "Instituto de Filosof\u00eda"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-31",
+      "abstract": "Este trabajo presenta una cr\u00edtica filos\u00f3fica al cristianismo hist\u00f3rico como mecanismo de poder y exclusi\u00f3n, proponiendo un tr\u00e1nsito hacia un \"cristianismo ken\u00f3tico\" que integra la filosof\u00eda de la liberaci\u00f3n latinoamericana con perspectivas antiesencialistas postmodernas. A partir de un an\u00e1lisis interdisciplinario que abarca la teolog\u00eda, la epistemolog\u00eda y la \u00e9tica pol\u00edtica, se examina la trayectoria del pensamiento cristiano desde su apropiaci\u00f3n plat\u00f3nica y burocratizaci\u00f3n hasta su entrelazamiento con la modernidad secular, influenciada por figuras como Kant y Foucault.El texto estructura su argumento en siete cap\u00edtulos: se inicia con el tr\u00e1nsito del conocimiento religioso al secular, destacando huellas postseculares; aborda la formaci\u00f3n de consensos mediante exclusi\u00f3n y sacrificio (inspirado en Girard); desarrolla claves epistemol\u00f3gicas y morales ken\u00f3ticas, redefiniendo conceptos como lo cierto, lo bueno, la subjetividad y la temporalidad; critica el \"cristianismo plat\u00f3nico\" como instrumento de dominaci\u00f3n; explora las din\u00e1micas de poder y verdad en la modernidad; retorna al cristianismo ken\u00f3tico como propuesta subjetiva y pol\u00edtica, enfatizando la pobreza, el amor y la fe relacional; y culmina en una \"\u00e9tica del estar\" (inspirada en Scannone y Kusch), que promueve el populismo aut\u00f3nomo, la fagocitaci\u00f3n cr\u00edtica y la vulnerabilidad compartida como v\u00edas para superar la opresi\u00f3n.Las conclusiones generales contrastan categor\u00edas del cristianismo plat\u00f3nico con el pensamiento ken\u00f3tico, subrayando el uso del temor como control y proponiendo una \u00e9tica basada en la indigencia existencial y el di\u00e1logo no jer\u00e1rquico. Esta contribuci\u00f3n avanza en el debate postsecular y decolonial, ofreciendo una reinterpretaci\u00f3n evang\u00e9lica que desactiva l\u00f3gicas de imposici\u00f3n y fomenta comunidades sin soberan\u00eda absoluta.",
+      "cited_by_count": 0,
+      "type": "book",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.18112148"
+      },
+      "topics": [
+        "Christian Theology and Mission",
+        "Violence, Religion, and Philosophy",
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7117931825"
+    },
+    {
+      "openalex_id": "W7115065799",
+      "doi": "10.5281/zenodo.17922467",
+      "title": "Epistemolog\u00eda y \u00e9tica de la atenci\u00f3n. Una genealog\u00eda cr\u00edtica del programa enactivista desde la cibern\u00e9tica hasta la cognici\u00f3n social.",
+      "authors": [
+        {
+          "name": "Cincunegui, Juan Manuel",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0003-2061-5806"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": "Este art\u00edculo constituye la base te\u00f3rica de la ponencia presentada en la Universidad de La Laguna en el marco del III Seminario de Est\u00e9tica y Teor\u00eda de las Artes, titulado El arte de la atenci\u00f3n II. La percepci\u00f3n en la era cibern\u00e9tica. El texto propone una reflexi\u00f3n cr\u00edtica sobre la atenci\u00f3n entendida no como un simple mecanismo psicol\u00f3gico o neurocognitivo, sino como una categor\u00eda epistemol\u00f3gica, \u00e9tica y pol\u00edtica central para comprender las formas contempor\u00e1neas de percepci\u00f3n, subjetivaci\u00f3n y control. El trabajo desarrolla una genealog\u00eda del programa enactivista en las ciencias cognitivas, rastreando sus or\u00edgenes en la cibern\u00e9tica de posguerra, la teor\u00eda de la autopoiesis y la fenomenolog\u00eda, as\u00ed como su di\u00e1logo expl\u00edcito \u2014aunque ambivalente\u2014 con tradiciones contemplativas, especialmente el budismo. A partir de este recorrido, se sostiene que el enactivismo, pese a su cr\u00edtica al representacionalismo y al computacionalismo, tiende a reproducir una l\u00f3gica de clausura inmanente que dificulta pensar la exterioridad, las asimetr\u00edas de poder y la negatividad hist\u00f3rica del sufrimiento. Desde esta cr\u00edtica, el art\u00edculo introduce la noci\u00f3n de una epistemolog\u00eda y una \u00e9tica de la atenci\u00f3n inspiradas en la filosof\u00eda de la liberaci\u00f3n, particularmente en la obra de Enrique Dussel. La atenci\u00f3n es reinterpretada como apertura a la exterioridad y como condici\u00f3n del juicio \u00e9tico y pol\u00edtico, en contraste con los enfoques contempor\u00e1neos que la reducen a una t\u00e9cnica de autorregulaci\u00f3n individual o a un recurso explotable dentro de la econom\u00eda de la atenci\u00f3n. En este marco, se argumenta que una \u00e9tica de la atenci\u00f3n genuinamente cr\u00edtica no puede limitarse a la gesti\u00f3n de la experiencia ni a la optimizaci\u00f3n cognitiva, sino que debe orientarse hacia aquello que el orden vigente invisibiliza: la v\u00edctima, la herida y las condiciones materiales de exclusi\u00f3n. El art\u00edculo concluye defendiendo que solo una atenci\u00f3n concebida como responsabilidad frente a la exterioridad sufriente puede fundamentar una cr\u00edtica radical de las sociedades de control y abrir el horizonte de una transformaci\u00f3n \u00e9tica y pol\u00edtica efectiva.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.17922467"
+      },
+      "topics": [
+        "Cultural and Social Dynamics",
+        "Digital Media and Philosophy",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7115065799"
+    },
+    {
+      "openalex_id": "W7127971851",
+      "doi": "10.5281/zenodo.18509473",
+      "title": "Epistemolog\u00eda y \u00e9tica de la atenci\u00f3n. Una genealog\u00eda cr\u00edtica del programa enactivista desde la cibern\u00e9tica hasta la cognici\u00f3n social.",
+      "authors": [
+        {
+          "name": "Cincunegui, Juan Manuel",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0003-2061-5806"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-01-01",
+      "abstract": "Este art\u00edculo constituye la base te\u00f3rica de la ponencia presentada en la Universidad de La Laguna en el marco del III Seminario de Est\u00e9tica y Teor\u00eda de las Artes, titulado El arte de la atenci\u00f3n II. La percepci\u00f3n en la era cibern\u00e9tica. El texto propone una reflexi\u00f3n cr\u00edtica sobre la atenci\u00f3n entendida no como un simple mecanismo psicol\u00f3gico o neurocognitivo, sino como una categor\u00eda epistemol\u00f3gica, \u00e9tica y pol\u00edtica central para comprender las formas contempor\u00e1neas de percepci\u00f3n, subjetivaci\u00f3n y control. El trabajo desarrolla una genealog\u00eda del programa enactivista en las ciencias cognitivas, rastreando sus or\u00edgenes en la cibern\u00e9tica de posguerra, la teor\u00eda de la autopoiesis y la fenomenolog\u00eda, as\u00ed como su di\u00e1logo expl\u00edcito \u2014aunque ambivalente\u2014 con tradiciones contemplativas, especialmente el budismo. A partir de este recorrido, se sostiene que el enactivismo, pese a su cr\u00edtica al representacionalismo y al computacionalismo, tiende a reproducir una l\u00f3gica de clausura inmanente que dificulta pensar la exterioridad, las asimetr\u00edas de poder y la negatividad hist\u00f3rica del sufrimiento. Desde esta cr\u00edtica, el art\u00edculo introduce la noci\u00f3n de una epistemolog\u00eda y una \u00e9tica de la atenci\u00f3n inspiradas en la filosof\u00eda de la liberaci\u00f3n, particularmente en la obra de Enrique Dussel. La atenci\u00f3n es reinterpretada como apertura a la exterioridad y como condici\u00f3n del juicio \u00e9tico y pol\u00edtico, en contraste con los enfoques contempor\u00e1neos que la reducen a una t\u00e9cnica de autorregulaci\u00f3n individual o a un recurso explotable dentro de la econom\u00eda de la atenci\u00f3n. En este marco, se argumenta que una \u00e9tica de la atenci\u00f3n genuinamente cr\u00edtica no puede limitarse a la gesti\u00f3n de la experiencia ni a la optimizaci\u00f3n cognitiva, sino que debe orientarse hacia aquello que el orden vigente invisibiliza: la v\u00edctima, la herida y las condiciones materiales de exclusi\u00f3n. El art\u00edculo concluye defendiendo que solo una atenci\u00f3n concebida como responsabilidad frente a la exterioridad sufriente puede fundamentar una cr\u00edtica radical de las sociedades de control y abrir el horizonte de una transformaci\u00f3n \u00e9tica y pol\u00edtica efectiva.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.18509473"
+      },
+      "topics": [
+        "Cultural and Social Dynamics",
+        "Digital Media and Philosophy",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7127971851"
+    },
+    {
+      "openalex_id": "W7115074227",
+      "doi": "10.5281/zenodo.17922468",
+      "title": "Epistemolog\u00eda y \u00e9tica de la atenci\u00f3n: una genealog\u00eda cr\u00edtica del programa enactivista desde la cibern\u00e9tica hasta la cognici\u00f3n social.",
+      "authors": [
+        {
+          "name": "Cincunegui, Juan Manuel",
+          "openalex_id": "",
+          "orcid": "https://orcid.org/0000-0003-2061-5806"
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-12-13",
+      "abstract": "Esta es una versi\u00f3n anterior del trabajo.La versi\u00f3n actual y accesible est\u00e1 disponible en la versi\u00f3n m\u00e1s reciente de este registro. Este art\u00edculo constituye la base te\u00f3rica de la ponencia presentada en la Universidad de La Laguna en el marco del III Seminario de Est\u00e9tica y Teor\u00eda de las Artes, titulado El arte de la atenci\u00f3n II. La percepci\u00f3n en la era cibern\u00e9tica. El texto propone una reflexi\u00f3n cr\u00edtica sobre la atenci\u00f3n entendida no como un simple mecanismo psicol\u00f3gico o neurocognitivo, sino como una categor\u00eda epistemol\u00f3gica, \u00e9tica y pol\u00edtica central para comprender las formas contempor\u00e1neas de percepci\u00f3n, subjetivaci\u00f3n y control. El trabajo desarrolla una genealog\u00eda del programa enactivista en las ciencias cognitivas, rastreando sus or\u00edgenes en la cibern\u00e9tica de posguerra, la teor\u00eda de la autopoiesis y la fenomenolog\u00eda, as\u00ed como su di\u00e1logo expl\u00edcito \u2014aunque ambivalente\u2014 con tradiciones contemplativas, especialmente el budismo. A partir de este recorrido, se sostiene que el enactivismo, pese a su cr\u00edtica al representacionalismo y al computacionalismo, tiende a reproducir una l\u00f3gica de clausura inmanente que dificulta pensar la exterioridad, las asimetr\u00edas de poder y la negatividad hist\u00f3rica del sufrimiento. Desde esta cr\u00edtica, el art\u00edculo introduce la noci\u00f3n de una epistemolog\u00eda y una \u00e9tica de la atenci\u00f3n inspiradas en la filosof\u00eda de la liberaci\u00f3n, particularmente en la obra de Enrique Dussel. La atenci\u00f3n es reinterpretada como apertura a la exterioridad y como condici\u00f3n del juicio \u00e9tico y pol\u00edtico, en contraste con los enfoques contempor\u00e1neos que la reducen a una t\u00e9cnica de autorregulaci\u00f3n individual o a un recurso explotable dentro de la econom\u00eda de la atenci\u00f3n. En este marco, se argumenta que una \u00e9tica de la atenci\u00f3n genuinamente cr\u00edtica no puede limitarse a la gesti\u00f3n de la experiencia ni a la optimizaci\u00f3n cognitiva, sino que debe orientarse hacia aquello que el orden vigente invisibiliza: la v\u00edctima, la herida y las condiciones materiales de exclusi\u00f3n. El art\u00edculo concluye defendiendo que solo una atenci\u00f3n concebida como responsabilidad frente a la exterioridad sufriente puede fundamentar una cr\u00edtica radical de las sociedades de control y abrir el horizonte de una transformaci\u00f3n \u00e9tica y pol\u00edtica efectiva.",
+      "cited_by_count": 0,
+      "type": "preprint",
+      "source": {
+        "name": "Zenodo (CERN European Organization for Nuclear Research)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.5281/zenodo.17922468"
+      },
+      "topics": [
+        "Cultural and Social Dynamics",
+        "Digital Media and Philosophy",
+        "Embodied and Extended Cognition"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W7115074227"
+    }
+  ],
+  "count": 21,
+  "errors": []
+}

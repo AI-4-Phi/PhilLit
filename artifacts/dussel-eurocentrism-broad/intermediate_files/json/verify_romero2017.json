@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5070/t472035432"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5070/t472035432",
+      "title": "El fetichismo del Capital-Estado-Naci\u00f3n: de la transcr\u00edtica a la transmodernidad",
+      "authors": [
+        {
+          "family": "Romero-Lossaco",
+          "given": "Jos\u00e9"
+        }
+      ],
+      "editors": [],
+      "year": 2017,
+      "container_title": "TRANSMODERNITY: Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+      "volume": "7",
+      "issue": "2",
+      "page": "",
+      "publisher": "California Digital Library (CDL)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5070/t472035432"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

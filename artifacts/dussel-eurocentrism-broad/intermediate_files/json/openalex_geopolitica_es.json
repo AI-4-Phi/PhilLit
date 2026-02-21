@@ -1,0 +1,48 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "geopol\u00edtica del conocimiento Dussel",
+  "results": [
+    {
+      "openalex_id": "W2977305860",
+      "doi": "10.14483/25009311.14984",
+      "title": "Para decolonizar las geopol\u00edticas del sentir",
+      "authors": [
+        {
+          "name": "Pedro Pablo G\u00f3mez",
+          "openalex_id": "A5011483282",
+          "orcid": "https://orcid.org/0000-0002-9651-7682",
+          "institutions": [
+            "District University of Bogot\u00e1",
+            "ORCID"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-06-19",
+      "abstract": "Intentemos relacionar la colonialidad del espacio y del tiempo con la geopol\u00edtica del conocimiento y la geopol\u00edtica del sentir. En 1977 en su Filosof\u00eda de la liberaci\u00f3n, Enrique Dussel, hizo evidente su conciente geopol\u00edtico, al hablar del espacio como campo de batalla, social, pol\u00edtica y epist\u00e9mica (Dussel, 1996). En t\u00e9rminos geopol\u00edticos entonces, no es lo mismo nacer en el Polo Norte, en Chiapas o en Bolivia que, en Nueva York, pues hay un muro de diferencia colonial construido durante 500 a\u00f1os de modernidad. La gepol\u00edtica del conocimiento es la espacializaci\u00f3n epistemol\u00f3gica del saber, y as\u00ed como la econom\u00eda produce centros y periferias, la epistemolog\u00eda tambi\u00e9n lo hace. En el Norte geogr\u00e1fico hay sures epist\u00e9micos as\u00ed como en el Sur geogr\u00e1fico hay nortes epist\u00e9micos.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Estudios Art\u00edsticos",
+        "type": "journal",
+        "issn": [
+          "2500-6975",
+          "2500-9311"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.udistrital.edu.co/index.php/estart/article/download/14984/14843"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2977305860"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,83 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "\u00e9tica de la liberaci\u00f3n eurocentrismo",
+  "results": [
+    {
+      "openalex_id": "W2916753462",
+      "doi": "10.51359/2179-7501.2018.239157",
+      "title": "Filosof\u00eda y pol\u00edtica de liberaci\u00f3n en la obra de Enrique Dussel",
+      "authors": [
+        {
+          "name": "Jaime Antonio Coronado Preciado",
+          "openalex_id": "A5012024352",
+          "institutions": [
+            "Universidad de Guadalajara"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-12-09",
+      "abstract": "La filosof\u00eda y pol\u00edtica de liberaci\u00f3n de Enrique Dussel, supera las filosof\u00edas pol\u00edticas \u201ccivilizatorias\u201d de la modernidad occidental. Indaga sus ra\u00edces filos\u00f3ficas y pol\u00edticas euroc\u00e9ntricas, que terminaron por subordinar a Am\u00e9rica Latina, sin reconocer el quiebre epistemol\u00f3gico que signific\u00f3 la invasi\u00f3n de Am\u00e9rica, al fundar la modernidad como totalidad del sistema mundo. Su pensamiento cr\u00edtico, como contra-relato, da voz a los olvidados o excluidos, revaloriza saberes m\u00faltiples, heterog\u00e9neos, donde el poder, o la pluralidad de contrapoderes, tienden a ser negados o acallados, pero resisten y re-sienten la dominaci\u00f3n. Dussel, imagina la realidad otramente; aqu\u00ed se destacan seis tesis: 1) La herencia de Las Casas, Su\u00e1rez y Vitoria; de la teolog\u00eda pol\u00edtica a la modernidad colonial(izada); 2) El an\u00e1lisis desde la exterioridad en el pensamiento euroc\u00e9ntrico; 3) La contemporaneidad de la filosof\u00eda y la pol\u00edtica de la liberaci\u00f3n; 4) Eurocentrismo y \u00e9tica liberadora; 5) El pensamiento geopol\u00edtico y la modernidad en la pol\u00edtica de la liberaci\u00f3n; 6) La Transmodernidad en Dussel, que supera la modernidad-colonialidad del Sistema Mundo. En conclusi\u00f3n, la filosof\u00eda y la pol\u00edtica de la liberaci\u00f3n, ofrecen un campo contra hegem\u00f3nico frente a la modernidad opresora, excluyente, depredadora, patriarcal y colonizadora del poder y del pensamiento.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Revista de Estudos AntiUtilitaristas e PosColoniais",
+        "type": "journal",
+        "issn": [
+          "2179-7501"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://periodicos.ufpe.br/revistas/realis/article/download/239157/30878"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W2916753462"
+    },
+    {
+      "openalex_id": "W4297820425",
+      "doi": "10.17561/rae.v22.6377",
+      "title": "Marxismo cr\u00edtico en el sur de Europa",
+      "authors": [
+        {
+          "name": "Jos\u00e9 Manuel L\u00f3pez Alcaraz",
+          "openalex_id": "A5038280580",
+          "institutions": [
+            "Universidad de Ja\u00e9n",
+            "National University of Distance Education"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-04-01",
+      "abstract": "Este art\u00edculo propone un di\u00e1logo de vida y de textos de dos autores que, aun coincidiendo en el tiempo y, a veces, en el espacio de un mismo pa\u00eds, no se conocieron. Vida y textos en di\u00e1logo (im)posible que, recogiendo lo mejor (por riguroso y antidogm\u00e1tico) del marxismo del sur de Europa que representa Manuel Sacrist\u00e1n, y las aportaciones de la Filosof\u00eda de la Liberaci\u00f3n de Enrique Dussel como uno de los pilares fundamentales del \u00abgiro decolonial\u00bb, concluyen en la pertinencia de Marx y de El Capital en el siglo XXI, y en llevar su cr\u00edtica-\u00e9tica a la modernidad como fundamento del sistema capitalista. A la modernidad y al capitalismo como dos aspectos de lo mismo.&#x0D; Palabras clave: Modernidad. Eurocentrismo. Antidogm\u00e1tico. Decolonial. Praxeolog\u00eda.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "Antropolog\u00eda Experimental",
+        "type": "journal",
+        "issn": [
+          "1578-4282",
+          "1695-9884"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistaselectronicas.ujaen.es/index.php/rae/article/download/6377/6630"
+      },
+      "topics": [
+        "Latin American Cultural Politics"
+      ],
+      "referenced_works_count": 6,
+      "url": "https://openalex.org/W4297820425"
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

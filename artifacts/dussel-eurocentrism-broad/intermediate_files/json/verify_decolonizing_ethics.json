@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1515/9780271090320"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1515/9780271090320",
+      "title": "Decolonizing Ethics",
+      "authors": [],
+      "editors": [
+        {
+          "family": "Allen",
+          "given": "Amy"
+        },
+        {
+          "family": "Mendieta",
+          "given": "Eduardo"
+        }
+      ],
+      "year": 2021,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Penn State University Press",
+      "type": "edited-book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1515/9780271090320"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

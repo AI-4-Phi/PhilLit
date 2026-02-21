@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5070/t4.42496"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5070/t4.42496",
+      "title": "Epistemological Decolonization of World History and Decolonizing the Conception of Modernity: Towards Transmodernity",
+      "authors": [
+        {
+          "family": "Dussel",
+          "given": "Enrique"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "TRANSMODERNITY",
+      "volume": "12",
+      "issue": "2",
+      "page": "",
+      "publisher": "California Digital Library (CDL)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5070/t4.42496"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

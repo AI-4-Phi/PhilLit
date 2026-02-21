@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "The Underside of Modernity",
+    "author": "Dussel",
+    "year": 1996
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (27.2) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

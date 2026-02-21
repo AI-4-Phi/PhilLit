@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/1369801X.2023.2290573"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/1369801x.2023.2290573",
+      "title": "Political theology from the global south: Enrique Dussel and the poetics of liberation",
+      "authors": [
+        {
+          "family": "Padilla",
+          "given": "Javier"
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "Interventions",
+      "volume": "26",
+      "issue": "3-4",
+      "page": "490-512",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/1369801x.2023.2290573"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}
