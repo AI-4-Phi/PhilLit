@@ -90,6 +90,7 @@ reviews/*
 !reviews/extended-mind-cognitive-offloading/
 !reviews/metaphilosophy-literature-reviews/
 !reviews/moral-value-diy/
+!reviews/profiling-bias-feedback-loops/
 
 # Claude Code local files (not shared)
 .claude/settings.local.json
