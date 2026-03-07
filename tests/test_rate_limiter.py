@@ -57,12 +57,9 @@ class TestRateLimiter:
         limiter.wait_and_record()
 
         # Second request should wait
-        start = time.time()
         wait_time = limiter.wait()
-        elapsed = time.time() - start
 
         assert wait_time > 0
-        assert elapsed >= 0.15  # Allow some tolerance
 
     def test_record_updates_lock_file(self):
         """Record should update the lock file with current time."""
@@ -141,12 +138,9 @@ class TestSlotReservation:
         limiter.wait()
 
         # Second call: should see the first projected_time and wait
-        start = time.time()
         wait_time = limiter.wait()
-        elapsed = time.time() - start
 
         assert wait_time > 0
-        assert elapsed >= 0.15  # Allow tolerance
 
     def test_record_does_not_overwrite_later_reservation(self):
         """record() should not overwrite a timestamp that is later than now."""

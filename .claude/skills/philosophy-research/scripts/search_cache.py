@@ -68,7 +68,12 @@ def get_cache(key: str, ttl: int = DEFAULT_TTL) -> Optional[Any]:
         ttl: Time-to-live in seconds (default: 7 days)
 
     Returns:
-        Cached result if found and fresh, None otherwise
+        Cached result if found and fresh, None otherwise.
+
+    Limitation: returns None for both a cache miss and a cached None value.
+    Callers cannot distinguish the two cases. Caching None values is therefore
+    unsupported — put_cache(key, None) will appear to succeed but get_cache
+    will always look like a miss for that key.
     """
     cache_file = CACHE_DIR / f"{key}.pkl"
 
@@ -107,7 +112,10 @@ def put_cache(key: str, result: Any) -> bool:
         result: Result to cache (must be picklable)
 
     Returns:
-        True if successful, False otherwise
+        True if successful, False otherwise.
+
+    Note: caching None values is unsupported. get_cache() cannot distinguish
+    a cached None from a cache miss, so callers will always see a miss.
     """
     try:
         # Ensure cache directory exists
