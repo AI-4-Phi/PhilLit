@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "History and Evolution",
+    "author": "Habermas",
+    "year": 1979
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.3817/0379039005",
+      "title": "History and Evolution",
+      "authors": [
+        {
+          "family": "Habermas",
+          "given": "J."
+        }
+      ],
+      "editors": [],
+      "year": 1979,
+      "container_title": "Telos",
+      "volume": "1979",
+      "issue": "39",
+      "page": "5-44",
+      "publisher": "Telos Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.3817/0379039005",
+      "score": 30.009346
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

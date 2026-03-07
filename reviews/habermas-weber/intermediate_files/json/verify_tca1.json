@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Theory of Communicative Action, Volume 1: Reason and the Rationalization of Society",
+    "author": "Habermas",
+    "year": 1984
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/978-94-009-5263-8_11",
+      "title": "Remarks on the Concept of Communicative Action",
+      "authors": [
+        {
+          "family": "Habermas",
+          "given": "J\u00fcrgen"
+        }
+      ],
+      "editors": [],
+      "year": 1985,
+      "container_title": "Social Action",
+      "volume": "",
+      "issue": "",
+      "page": "151-178",
+      "publisher": "Springer Netherlands",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1007/978-94-009-5263-8_11",
+      "score": 38.012177
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

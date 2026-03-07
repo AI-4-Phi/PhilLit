@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Towards a Reconstruction of Historical Materialism",
+    "author": "Habermas",
+    "year": 1976
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/bf00212739",
+      "title": "Towards a reconstruction of historical materialism",
+      "authors": [
+        {
+          "family": "Habermas",
+          "given": "J\ufffdrgen"
+        }
+      ],
+      "editors": [],
+      "year": 1975,
+      "container_title": "Theory and Society",
+      "volume": "2",
+      "issue": "1",
+      "page": "287-300",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1007/bf00212739",
+      "score": 47.716454
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

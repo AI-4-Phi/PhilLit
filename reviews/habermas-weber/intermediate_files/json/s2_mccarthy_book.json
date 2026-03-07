@@ -1,0 +1,491 @@
+[s2_search.py] Searching Semantic Scholar: 'McCarthy Critical Theory Jurgen Habermas' (year=1977-1980), limit=20
+[s2_search.py] Rate limited, backing off (attempt 1/5)...
+[s2_search.py] Retrying after 1.7s backoff...
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_0f0d05824a2dda7e)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "McCarthy Critical Theory Jurgen Habermas",
+  "results": [
+    {
+      "paperId": "c47833d8d860a4da0516407ae715596953217d69",
+      "title": "The Critical Theory of Jurgen Habermas",
+      "authors": [
+        {
+          "name": "T. Mccarthy",
+          "authorId": "153391868"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 566,
+      "doi": "10.2307/2215446",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c47833d8d860a4da0516407ae715596953217d69",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "de0b4ff13601dbb4d8b27e55edc30db0216f045c",
+      "title": "The Critical Theory of J\u00fcrgen Habermas . By McCarthy Thomas. (Cambridge, Mass.: MIT Press, 1978. Pp. xiii + 466. $19.95.)",
+      "authors": [
+        {
+          "name": "James Miller",
+          "authorId": "2118099783"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.2307/1955424",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/de0b4ff13601dbb4d8b27e55edc30db0216f045c",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "861 - 862",
+        "volume": "73"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0573dd3ed760e0a57ccb271700fc0c1532c57f6d",
+      "title": "The Critical Theory of J\u00fcrgen Habermas.Thomas McCarthy",
+      "authors": [
+        {
+          "name": "S. Hines",
+          "authorId": "144765948"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.2307/2130496",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0573dd3ed760e0a57ccb271700fc0c1532c57f6d",
+      "venue": "",
+      "journal": {
+        "name": "The Journal of Politics",
+        "pages": "619-620",
+        "volume": "42"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "aa76832eb5509d6b1f89150590579b7445e4f5e2",
+      "title": "The Critical Theory of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "Seyla Ben Habib",
+          "authorId": "115209370"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.3817/0679040177",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aa76832eb5509d6b1f89150590579b7445e4f5e2",
+      "venue": "T\u00e9los",
+      "journal": {
+        "name": "Telos",
+        "pages": "177 - 187",
+        "volume": "1979"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "548bfd168e84a02d5307585f4b6446d7d8a67e9d",
+      "title": "La Teoria Critica de la Sociedad de Habermas: La Crisis de la Sociedad Industrializada",
+      "authors": [
+        {
+          "name": "J. Rodr\u00edguez-Ib\u00e1\u00f1ez",
+          "authorId": "1423302631"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.3817/0379039218",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/548bfd168e84a02d5307585f4b6446d7d8a67e9d",
+      "venue": "T\u00e9los",
+      "journal": {
+        "name": "Telos",
+        "pages": "218 - 221",
+        "volume": "1979"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "effc216fb96917acf489efbe8a28e18a4209adaa",
+      "title": "History and Evolution: On the Changing Relation of Theory to Practice in the Work of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1978,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1086/psaprocbienmeetp.1978.2.192480",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/effc216fb96917acf489efbe8a28e18a4209adaa",
+      "venue": "PSA Proceedings of the Biennial Meeting of the Philosophy of Science Association",
+      "journal": {
+        "name": "PSA: Proceedings of the Biennial Meeting of the Philosophy of Science Association",
+        "pages": "397 - 423",
+        "volume": "1978"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "53e820de5ea72c488e04a58b08d42fef5ecb8dca",
+      "title": "Rationality and Relativism in Habermas' Critical Theory",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.2307/2214892",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/53e820de5ea72c488e04a58b08d42fef5ecb8dca",
+      "venue": "",
+      "journal": {
+        "name": "No\u00fbs",
+        "pages": "75",
+        "volume": "14"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dfc0de5ff7072257e886378e4d890a9889ad23ec",
+      "title": "The Critical Theory of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "R. Keat",
+          "authorId": "103848503"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 400,
+      "doi": "10.1111/J.1468-0149.1980.TB01863.X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dfc0de5ff7072257e886378e4d890a9889ad23ec",
+      "venue": "",
+      "journal": {
+        "name": "Philosophical Books",
+        "pages": "216-221",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0e1b4d91488702cc3ebc41d2d3c3d17bb3f591fe",
+      "title": "Critical Theory, Public Sphere and Culture. Jurgen Habermas and His Critics",
+      "authors": [
+        {
+          "name": "P. U. Hohendahl",
+          "authorId": "103981131"
+        },
+        {
+          "name": "M. Silberman",
+          "authorId": "144897273"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 299,
+      "doi": "10.2307/487878",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0e1b4d91488702cc3ebc41d2d3c3d17bb3f591fe",
+      "venue": "",
+      "journal": {
+        "name": "New German Critique",
+        "pages": "89",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6adadb4969a10f386937e76cdd8cc8d5682b083c",
+      "title": "The Critical Theory of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "E. Sullivan",
+          "authorId": "6571582"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 63,
+      "doi": "10.5840/intstudphil198012114",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6adadb4969a10f386937e76cdd8cc8d5682b083c",
+      "venue": "",
+      "journal": {
+        "name": "International Studies in Philosophy",
+        "pages": "97-99",
+        "volume": "12"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8f0b921297da5324826e7cd0d204a240208e1b36",
+      "title": "A theory of inquiry for educational development: an application of the critical theory of J\u00fcrgen Habermas /",
+      "authors": [
+        {
+          "name": "G. Milczarek",
+          "authorId": "82005708"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8f0b921297da5324826e7cd0d204a240208e1b36",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8aac50a0eccb798057ceb5a428353bdef98130ca",
+      "title": "An application of critical theory to the foundations of educational thought : an examination of the ideas of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "George I. J. Dixon",
+          "authorId": "2068509709"
+        }
+      ],
+      "year": 1977,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8aac50a0eccb798057ceb5a428353bdef98130ca",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "360581f5ec6e53b81854b13ce507a90c038325c6",
+      "title": "Offensive Critical Theory? Reply to Honneth in In Honor of J\u00fcrgen Habermas on the Occasion of his 50 Birthday.",
+      "authors": [
+        {
+          "name": "J. Schmidt",
+          "authorId": "108301206"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/360581f5ec6e53b81854b13ce507a90c038325c6",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8625356d636d904abfcf165c103e9a031feeffd8",
+      "title": "The Critical Theory of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "Jerald W\u1ea1llulis",
+          "authorId": "116424431"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.5840/newscholas198054233",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8625356d636d904abfcf165c103e9a031feeffd8",
+      "venue": "",
+      "journal": {
+        "name": "American Catholic Philosophical Quarterly",
+        "pages": "249-251",
+        "volume": "54"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f120b50fe9e2c32da7f3a6b7549a5d9a51a09127",
+      "title": "[Special Issue: Critical Social Theory of Jurgen Habermas and Its Implications for Argumentation Theory and Practice].",
+      "authors": [
+        {
+          "name": "D. Zarefsky",
+          "authorId": "69523185"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f120b50fe9e2c32da7f3a6b7549a5d9a51a09127",
+      "venue": "",
+      "journal": {
+        "name": "The Journal of the American Forensic Association",
+        "volume": "16"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f4ae93aa11f027aae608b181b4c2ac8888641c1c",
+      "title": "A discussion on democracy and critical theory",
+      "authors": [
+        {
+          "name": "H. Marcuse",
+          "authorId": "71271475"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Friends",
+          "authorId": "87378814"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1080/07393147908429454",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f4ae93aa11f027aae608b181b4c2ac8888641c1c",
+      "venue": "",
+      "journal": {
+        "name": "New Political Science",
+        "pages": "19-29",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "167e042a3c12d9992992a3a7cab77b7be48a1bee",
+      "title": "J\u00fcrgen Habermas and the Dialectical Perspective on Argumentation",
+      "authors": [
+        {
+          "name": "Joseph W. Wenzel",
+          "authorId": "103111070"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 55,
+      "doi": "10.1080/00028533.1979.11951161",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/167e042a3c12d9992992a3a7cab77b7be48a1bee",
+      "venue": "",
+      "journal": {
+        "name": "Argumentation and Advocacy",
+        "pages": "83-94",
+        "volume": "16"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bf3b2ec269911e1195239c92ebb802c755497724",
+      "title": "Metacritique: The Philosophical Argument of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "Garbis Kortian",
+          "authorId": "134014353"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 15,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bf3b2ec269911e1195239c92ebb802c755497724",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9047f0bc0f4387b2e56958fde749b241c4601677",
+      "title": "J\u00fcrgen Habermas: An International Bibliography",
+      "authors": [
+        {
+          "name": "James Goulding",
+          "authorId": "70022798"
+        },
+        {
+          "name": "Susan L. Kline",
+          "authorId": "12792022"
+        },
+        {
+          "name": "C. Nederman",
+          "authorId": "69897080"
+        }
+      ],
+      "year": 1980,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1177/009059178000800212",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9047f0bc0f4387b2e56958fde749b241c4601677",
+      "venue": "",
+      "journal": {
+        "name": "Political Theory",
+        "pages": "259 - 285",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1e3c8a8202695a9688542782f9e5666daf603391",
+      "title": "Habermas' Theory of Communication: A Critical Explication.",
+      "authors": [
+        {
+          "name": "B. Burleson",
+          "authorId": "9650846"
+        },
+        {
+          "name": "Susan L. Kline",
+          "authorId": "12792022"
+        }
+      ],
+      "year": 1979,
+      "abstract": null,
+      "citationCount": 56,
+      "doi": "10.1080/00335637909383492",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1e3c8a8202695a9688542782f9e5666daf603391",
+      "venue": "",
+      "journal": {
+        "name": "Quarterly Journal of Speech",
+        "pages": "412-428",
+        "volume": "65"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

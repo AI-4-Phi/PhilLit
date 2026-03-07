@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Theory of Communicative Action Volume 2 Lifeworld ...' author=Habermas year=1987
+[verify_paper.py] Paper found: The Theory of Communicative Action, Vol. 1, Reason... (score: 34.9)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Theory of Communicative Action Volume 2 Lifeworld and System",
+    "author": "Habermas",
+    "year": 1987
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/590724",
+      "title": "The Theory of Communicative Action, Vol. 1, Reason and the Rationalization of Society",
+      "authors": [
+        {
+          "family": "Boyne",
+          "given": "Roy"
+        },
+        {
+          "family": "Habermas",
+          "given": "Jurgen"
+        }
+      ],
+      "editors": [],
+      "year": 1986,
+      "container_title": "The British Journal of Sociology",
+      "volume": "37",
+      "issue": "4",
+      "page": "599",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/590724",
+      "score": 34.88604
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,40 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Rise of Western Rationalism: Max Weber's Developmental History",
+    "author": "Schluchter",
+    "year": 1981
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/3339898",
+      "title": "The Rise of Western Rationalism: Max Weber's Developmental History",
+      "authors": [
+        {
+          "family": "Burger",
+          "given": "Thomas"
+        },
+        {
+          "family": "Schluchter",
+          "given": "Wolfgang"
+        }
+      ],
+      "editors": [],
+      "year": 1982,
+      "container_title": "Canadian Journal of Sociology / Cahiers canadiens de sociologie",
+      "volume": "7",
+      "issue": "4",
+      "page": "434",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/3339898",
+      "score": 57.174847
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

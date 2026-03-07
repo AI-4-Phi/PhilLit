@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='The Rise of Western Rationalism...' author=Schluchter year=1981
+[verify_paper.py] Paper found: The Rise of Western Rationalism: Max Weber's Devel... (score: 39.6)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Rise of Western Rationalism",
+    "author": "Schluchter",
+    "year": 1981
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/3339898",
+      "title": "The Rise of Western Rationalism: Max Weber's Developmental History",
+      "authors": [
+        {
+          "family": "Burger",
+          "given": "Thomas"
+        },
+        {
+          "family": "Schluchter",
+          "given": "Wolfgang"
+        }
+      ],
+      "editors": [],
+      "year": 1982,
+      "container_title": "Canadian Journal of Sociology / Cahiers canadiens de sociologie",
+      "volume": "7",
+      "issue": "4",
+      "page": "434",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/3339898",
+      "score": 39.55393
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

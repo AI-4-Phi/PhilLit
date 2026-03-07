@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Under Weber's Shadow Modernity Subjectivity and Politics in Habermas Arendt and MacIntyre",
+    "author": "Breen",
+    "year": 2012
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (22.9) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

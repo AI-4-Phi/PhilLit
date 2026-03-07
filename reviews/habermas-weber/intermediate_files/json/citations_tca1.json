@@ -1,0 +1,2099 @@
+[s2_citations.py] Connecting to Semantic Scholar API...
+[s2_citations.py] Found paper: Reason and the rationalization of society...
+[s2_citations.py] Fetching references...
+[s2_citations.py] Fetching citing papers...
+[s2_citations.py] Retrieved 11 citing papers, fetching more...
+[s2_citations.py] Retrieved 15 citing papers, fetching more...
+[s2_citations.py] Retrieved 20 citing papers, fetching more...
+[s2_citations.py] Retrieved 25 citing papers, fetching more...
+[s2_citations.py] Retrieved 37 citing papers, fetching more...
+[s2_citations.py] Retrieved 40 citing papers, fetching more...
+[s2_citations.py] Retrieved 45 citing papers, fetching more...
+[s2_citations.py] Retrieved 48 citing papers, fetching more...
+[s2_citations.py] Retrieved 55 citing papers, fetching more...
+[s2_citations.py] Retrieved 59 citing papers, fetching more...
+[s2_citations.py] Retrieved 60 citing papers, fetching more...
+[s2_citations.py] Retrieved 61 citing papers
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "360d47f169f63a7350965c3d8b3f5b7222b5460a",
+  "results": [
+    {
+      "paper": {
+        "paperId": "360d47f169f63a7350965c3d8b3f5b7222b5460a",
+        "title": "Reason and the rationalization of society",
+        "authors": [
+          {
+            "name": "J. Habermas",
+            "authorId": "41210391"
+          },
+          {
+            "name": "Thomas Mccarthy",
+            "authorId": "144991709"
+          }
+        ],
+        "year": 1984,
+        "abstract": null,
+        "citationCount": 1140,
+        "doi": null,
+        "arxivId": null,
+        "url": "https://www.semanticscholar.org/paper/360d47f169f63a7350965c3d8b3f5b7222b5460a",
+        "venue": ""
+      },
+      "references": [],
+      "citations": [
+        {
+          "paperId": "c5cc95fd2080c67c61b676f215ef6866fc7d6b28",
+          "title": "A Discourse Analysis Framework for Legislative and Social Media Debates",
+          "authors": [
+            {
+              "name": "Arman Irani",
+              "authorId": "2150498598"
+            },
+            {
+              "name": "Ju Yeon Park",
+              "authorId": "2299485722"
+            },
+            {
+              "name": "Kevin E. Esterling",
+              "authorId": "2111961815"
+            },
+            {
+              "name": "Michalis Faloutsos",
+              "authorId": "2226786000"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1145/3717867.3717918",
+          "arxivId": "2407.06149",
+          "url": "https://www.semanticscholar.org/paper/c5cc95fd2080c67c61b676f215ef6866fc7d6b28",
+          "venue": "Web Science Conference",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026lies in the confluence of the three following characteristics: (a) its design principles are rooted in the theory of deliberative democracy [7], focusing on the role of argumentation and reason-giving in democratic politics; (b) it follows an argument-centric approach, using the argument\u2026"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "f423fdedad1b9f072ac1de27cc696806eb3db90c",
+          "title": "Adapting Habermas\u2019 construct of communicative rationality into a framework for analyzing students\u2019 statistical literacy",
+          "authors": [
+            {
+              "name": "Christian B\u00fcscher",
+              "authorId": "2303909939"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1007/s10649-024-10325-5",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f423fdedad1b9f072ac1de27cc696806eb3db90c",
+          "venue": "Educational Studies in Mathematics",
+          "isInfluential": true,
+          "contexts": [
+            "To conceptualize such a view on the communicative component of statistical literacy, this paper draws on the works of Habermas (1981, 1984, 1998).",
+            "In his influential work Theory of Communicative Action (Habermas, 1981) as well as in related works (Habermas, 1984, 1998), Habermas develops the foundations of a social theory building on the notion of communicative action , in which interlocutors coordinate their action based on a discursively established shared understanding of their lifeworld.",
+            "For this, this study developed the framework of communicative rationality for statistical literacy which adapts the works of Habermas (1981, 1984, 1998).",
+            "By drawing on general theoretical constructs of Habermas (1981, 1984, 1998) and relating them to research in mathematics education (Fischer, 1988; Gal, 2002; Gal & Geiger, 2022; Jablonka, 2003; Weiland, 2017), a content-specific framework of communicative rationality for statistical literacy was\u2026",
+            "These questions focus on a statement and different \u201cworld references\u201d (Habermas, 1981, p. 439): the objective world for truth, the social world for rightness, and the subjective world for truthfulness.",
+            "In his influential work Theory of Communicative Action (Habermas, 1981) as well as in related works (Habermas, 1984, 1998), Habermas develops the foundations of a social theory building on the notion of communicative action , in which interlocutors coordinate their action based on a discursively\u2026",
+            "( Habermas, 1998, p. 315) Habermas (1981, 1998) specifies three validity claims for communicative rationality which a hearer employs in accepting or rejecting speech acts produced by a speaker: (1) Truth , in which a statement is evaluated based on the relation to the external objective world:\u2026"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "c0683db83cff94cfb990ddff7e14639f83f4e665",
+          "title": "Popularity Abracadabra and Communication Ethics on Social Media (A Study of Rhetoric on the Content of YouTube Account @Kaesang)",
+          "authors": [
+            {
+              "name": "Andika Mustaqim",
+              "authorId": "2237512941"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.55227/ijhess.v3i1.633",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c0683db83cff94cfb990ddff7e14639f83f4e665",
+          "venue": "International Journal Of Humanities Education and Social Sciences (IJHESS)",
+          "isInfluential": true,
+          "contexts": [
+            "This concept plays with additional presuppositions, namely the\nlinguistic medium that reflects actor-world relations (Habermas, 1984).",
+            "In this way, the content of Kaesong does indeed show the truth as revealed by Habermas\n(1984), that a person's utterances focus on truth and facts.",
+            "Basically, according to Habermas (1984), certain conditions (states of affairs) are\nproportional content representations of sentences that express beliefs or intentions.",
+            "Kaesang's statement model represents three language concepts in communicative action as expressed by Habermas (1984).",
+            "Actions Regulated Normatively\nHabermas (1984) classifies normatively regulated action as a normative confirmative\naction concept assuming that agents can distinguish factors from normative elements of action situations in which conditions form values.",
+            "The concept of normatively governed action\npresupposes the relationship between actors and worlds (Habermas, 1984).",
+            "Seen from the perspective of communication ethics, Habermas (1984) shows that what Kaesang expressed contains truth and facts.",
+            "To analyze ethics in the context of communication, the validity claims expressed by\nHabermas (1984) consist of truth, accuracy, and honesty which are very fundamental.",
+            "Habermas (1984) emphasizes interaction to convey the truth by conveying facts,\nnormative context, and clear intentions.",
+            "Habermas (1984) revealed four concepts of communicative action, namely the\nteleological action model, normatively regulated action, dramaturgical action, and communicative action.",
+            "Habermas (1984) revealed a model of action related to participants interacting by\nmobilizing the potential of rationality to achieve the goal of understanding in communication.",
+            "Claim Validity\nTo analyze ethics in the context of communication, the validity claims expressed by\nHabermas (1984) consisting of truth, rightness and sincerity are very fundamental.",
+            "According to Habermas (1984), teleological action considers\nthe relationship between actors and the world that exists in a state of affairs (a certain situation or combination of circumstances).",
+            "Habermas also describes three worlds in which actors take relations with their statements\n(Habermas, 1984).",
+            "At the semantic level, according to Habermas (1984), these certain conditions are representations of the proportional content of sentences that express beliefs or intentions.",
+            "According to Habermas (1984), from the perspective of dramaturgical action, we can understand social action as bringing together participants forming public appearances with each other or performing for each other.",
+            "Does the actor succeed in bringing his beliefs and perceptions into agreement with what is in the world or does he succeed in bringing what is the problem in the world into agreement with what he wants and believes (Habermas, 1984)?",
+            "This shows that there is a dramaturgical aspect according to Habermas (1984),\ndramaturgical action is carried out by the principle of dramaturgical performance according to the project to make someone's impression.",
+            "Then, Habermas (1984) explains the concept of communicative action assuming the\nperspectives of the speaker and listener.",
+            "The starting point for the normative model is that participatory actions can simultaneously adopt an objective value of something or not a case and non-confirmation actions that are ordered (Habermas, 1984).",
+            "Habermas (1984) describes three language concepts in communicative action."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "c82cdcc59f57d7301a844d1ce7622351f10cd2da",
+          "title": "Integrating refugee students into Ugandan higher education: Language, othering and everyday enactments of participation",
+          "authors": [
+            {
+              "name": "Rebecca Nambi",
+              "authorId": "2302300641"
+            },
+            {
+              "name": "Rovincer Najjuma",
+              "authorId": "51340174"
+            },
+            {
+              "name": "Michael Gallagher",
+              "authorId": "2057173242"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 8,
+          "doi": "10.1177/17454999231185647",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c82cdcc59f57d7301a844d1ce7622351f10cd2da",
+          "venue": "Research in Comparative and International Education",
+          "isInfluential": true,
+          "contexts": [
+            "It is critiqued not by expression of facts in the objective world but rather by the reliability, insightfulness and \u2018 normally right \u2019 qualities in the context of the expression (Habermas, 1984).",
+            "Communicative action submits that language can empower the individual if used effectively (Habermas, 1984, 1987).",
+            "Within the Theory of Communicative Action, criteria are presented in which to understand action as either rational or irrational, communicative or strategic (Habermas, 1984) in relation to the cultural normativity of the social context in which it is being expressed.",
+            "It is critiqued not by expression of facts in the objective world but rather by the reliability, insightfulness and \u2018normally right\u2019 qualities in the context of the expression (Habermas, 1984)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "7f7070746360874d22f06cb9268e4fa1eb2a9ccb",
+          "title": "Reimagining the Public Sphere: Commensurability and Communicative Rationality under Colonialism",
+          "authors": [
+            {
+              "name": "S. Biswas",
+              "authorId": "2075434343"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1017/S0021911822001188",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7f7070746360874d22f06cb9268e4fa1eb2a9ccb",
+          "venue": "Journal of Asian Studies",
+          "isInfluential": true,
+          "contexts": [
+            "He also states that \u201ca person is rational . . . if he can adopt a reflective attitude to the value standards through which desires and feelings are interpreted\u201d (Habermas 1984, 20).",
+            "Moreover, Habermas (1984, 15) says,\nIn the contexts of communicative action, we call someone rational not only if he is able to put forward an assertion and, when criticised, to provide grounds for it by pointing to appropriate evidence, but also if he is following an established norm and is able,\u2026",
+            "\u2026that all interlocutors in the \u00a9 The Association for Asian Studies, Inc. 2022\nconversation have \u201cequal chances to assume dialogue roles\u201d (McCarthy 1978, 325) and that communication must eliminate any external or internal force other than the \u201cforce of the better argument\u201d (Habermas 1984, 25).",
+            "This highlights its role as a \u201creservoir of simple interactions\u201d (Habermas 1996, 360) and beliefs, or as a social worldview (Habermas 1984, xxvi) employed by interlocutors in communication aimed at achieving understanding."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "2c70e3833e6501edc2adf98ce8b623112e251f39",
+          "title": "Types of Rationality in Discourses on Work in (Post)Transformation Poland",
+          "authors": [
+            {
+              "name": "Konrad Kubala",
+              "authorId": "2104823744"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.18778/1733-8077.18.3.03",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/2c70e3833e6501edc2adf98ce8b623112e251f39",
+          "venue": "Qualitative Sociology Review",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026the conceptualizations present in the works of Max Weber (2002; 2019), Talcott Parsons (1991), Alfred Sch\u00fctz (1982; 2008), Harold Garfinkel (1984), Michel Foucault (2010), J\u00fcrgen Habermas (2007a; 2007b), Charles W. Mills (2000), Pierre Bourdieu and Lo\u00efc Wacquant (2008), and Niklas Luhmann (1995).",
+            "\u2026from the constructivist view of the world and analysis of the hermeneutic category of pre-understanding have become the basis of my belief that rationality is nowadays the basic modal concept, and the forms of its existence shape the order of social life (Foucault 1988; Habermas 2007a; Weber 2019).",
+            "Habermas, J\u00fcrgen.",
+            "In pursuit of my theoretical goals, I started with the analysis of inter- and intra-disciplinary differences in defining rationality, and then looked at the conceptualizations present in the works of Max Weber (2002; 2019), Talcott Parsons (1991), Alfred Sch\u00fctz (1982; 2008), Harold Garfinkel (1984), Michel Foucault (2010), J\u00fcrgen Habermas (2007a; 2007b), Charles W. Mills (2000), Pierre Bourdieu and Lo\u00efc Wacquant (2008), and Niklas Luhmann (1995)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "b0d893b08f3cceec4fe58799877b3abdc5903e41",
+          "title": "Competitive Team Sport Without External Referees: The Case of the Flying Disc Sport Ultimate",
+          "authors": [
+            {
+              "name": "G. Thonhauser",
+              "authorId": "1720131"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1080/17511321.2022.2101682",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/b0d893b08f3cceec4fe58799877b3abdc5903e41",
+          "venue": "Sport, Ethics and Philosophy",
+          "isInfluential": true,
+          "contexts": [
+            "(Habermas 1984, 99) For Habermas these three validity claims correspond to three world-relations: The validity claim of truth stands in relation to the objective world; rightness relates to the social world; and truthfulness relates to the subjective or internal world (Habermas 1984, 100).",
+            "(Habermas 1984, 308) Another difference between the earlier formulation and the mature position in The Theory of Communicative Action\nconcerns the following: Whereas Habermas previously maintained that every speech act has four components which can be reconstructed in terms of validity claims, he\u2026",
+            "Moreover, Habermas assumes that in order for communicative rationality to work, participants need to share a rich background of mutual understanding which he subsumes under the term \u2018lifeworld\u2019 (Habermas 1984, ch. 6).",
+            "\u2026he can challenge the truth of certain propositions that the professor needs to presuppose in his request; for instance, the student might point out that the closest water tap is too far away for the student to make it to the water tap and back before the end of the session (Habermas 1984, 306\u2013307)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "ffa9e238fef792f5b4fa06b061e894b84ca27567",
+          "title": "Social Evolution in\n J\u00fcrgen Habermas\n : Towards a Weak Anthropological Naturalism between\n Kant and Darwin",
+          "authors": [
+            {
+              "name": "Ricardo Mej\u00eda Fern\u00e1ndez",
+              "authorId": "2150894985"
+            },
+            {
+              "name": "Javier Romero",
+              "authorId": "2140432604"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1111/theo.12383",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/ffa9e238fef792f5b4fa06b061e894b84ca27567",
+          "venue": "Theoria",
+          "isInfluential": true,
+          "contexts": [
+            "In the first volume of The Theory of Communicative Action, he began to work on the concept of comprehension (Verstehen) as integrating first and third person perspectives in scientific methodological research:\nThe problem of Verstehen is of methodological importance in the humanities and social sciences primarily because the scientist cannot gain access to a symbolically prestructured reality through observation alone, and because understanding meaning [Sinnverstehen] cannot be methodologically brought under control in the same way as can observation in the course of experimentation.",
+            "(Habermas, 1984, p. 1)\nWith this, a philosophical thought aimed at consciousness has withdrawn self-critically behind itself; it has become metaphilosophy (Dryzek, 1990a; Habermas, 1984; Rorty, 1979).",
+            "In this line, Habermas\u2019s philosophy approximates the reconstructive science associated with figures such as Noam Chomsky, Lawrence Kohlberg, and Jean Piaget (Habermas, 1975, 1984, 2007).",
+            "The latter do invite us to see the science as \u201can organism, population, or system [that] maintains itself through demarcation from and adaptation to a changeable, hypercomplex environment\u201d (Habermas, 1984, p. 388).",
+            "This is what distinguishes the Newtonian science from the second group of considerations: Darwinian science and contemporary systems theory (as Habermas, 1984 puts it).",
+            "Thanks to the socialisation of communicative action (Habermas, 1984, 1987), the monological morality, which is often attributed to a formalist Kant, profoundly transforms into a dialogical morality grounded in an embodied/embedded and innerwordly rationality: what matters now is not the\u2026",
+            "This anthropological idea is present in The Theory of Communicative Action, when he affirms that \u201caccording to the basic assumptions of Darwinian biology and of contemporary systems theory, an organism, population, or system maintains itself through demarcation from and adaptation to a changeable, hypercomplex environment\u201d (Habermas, 1984, p. 388).",
+            "(Habermas, 1984, p. 108)\nThereby, and mostly in The theory of communicative action II, the author gets round the Husserlian subject of a lifeworld by conceptualising it as the irreducible scope for a different naturalism and realism which could be valid for nearly matching up different scientific\u2026",
+            "For Varela and for Habermas as well, \u201cmeanings \u2014 whether embodied in actions, institutions, products of labour, words, networks or cooperation, or documents \u2014 can be made accessible only from the inside\u201d (Habermas, 1984, p. 112).",
+            "\u2026a certain kind of symbolic interaction drawing on Mead (1992), but also the role system of kinship presupposes a coordinated and structured language constituting the specific domain of communicative activity as opposed to the instrumental activity of material production (cf. Habermas, 1975, 1984).",
+            "We will extensively draw upon the whole body of Habermas\u2019s work, much of which is sadly neglected in discussions of The Theory of Communicative Action(1982), although it illuminates many of the issues discussed there.",
+            "In this case, when Homo sapiens emits a \u201cspeech act,\u201d he is saying something about the world to others, either about the objective world, the social world, or the subjective or mental world (Habermas, 1984, p. 137).",
+            "In The Theory of Communicative Action, Habermas emphasises that the first generation of critical theory is characterised by strong opposition to scientific thought, pragmatism, and analytical philosophy.",
+            "For Habermas, whoever observes is primordially an interpretant and participant in the lifeworld (Habermas, 1984, 1987).",
+            "This adaptation, let us not forget, responds to a changeable and hypercomplex environment as embedding three integrated systems: the physical, the biological, and the socio-cultural (Habermas, 1984, p. 250 et seq.).",
+            "\u2026of Communicative Action, when he affirms that \u201caccording to the basic assumptions of Darwinian biology and of contemporary systems theory, an organism, population, or system maintains itself through demarcation from and adaptation to a changeable, hypercomplex environment\u201d (Habermas, 1984, p. 388).",
+            "This anthropological idea helps him to present the concepts of \u201cinstrumental rationality\u201d and \u201ccommunicative rationality\u201d that he synthesises in \u201cThe Theory of Communicative Action\u201d (Habermas, 1984, 1987).",
+            "Authors like Max Horkheimer, Theodor W. Adorno, and Herbert Marcuse take those general tendencies that \u201cthe rationalized world contracts to a \u2018false totality\u2019 (Habermas, 1984, p. 368).\u201d",
+            "Particularly from The Theory of Communicative Action, and before that time as well, Habermas saw the necessity of engaging himself in a thoughtful dialogue that transmutes the disagreement, and even the antagonism between logocentrism and biocentrism."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "e717a24ed4dbe9a4ac444941a6f8e92229f70d64",
+          "title": "Experiences of Opening Up Communicative Spaces for Large-Scope Issues",
+          "authors": [
+            {
+              "name": "Satu Kalliola",
+              "authorId": "4525330"
+            },
+            {
+              "name": "T. Heiskanen",
+              "authorId": "145137820"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.3390/challe12020025",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/e717a24ed4dbe9a4ac444941a6f8e92229f70d64",
+          "venue": "Challenges",
+          "isInfluential": true,
+          "contexts": [
+            "The relevant themes in carrying out free communication [22,23] are how communicative spaces were structured, how participant recruitment was organised, and how the agenda to be discussed emerged.",
+            "Even though all the participants\u2019 focus was somehow on their work and the challenges of change, there was a clear difference in perspectives, which is characterised by Habermas\u2019s (1984; 1987) [22,23] differentiation of the lifeworld and the system.",
+            "In our interpretation of the differences of the cases, we rely on the notion of Habermas (1984; 1987) [22,23] about lifeworld and the system.",
+            "In Habermasian [22,23] terms, this would mean that the participants are encouraged to bring their lifeworlds, referring to a person\u2019s subjective experiences and to what people experience together, into interaction with the system, referring to the strategic action of societies\u2014for example, to\u2026",
+            "From the point of view of the theory of AR, we have shown that the method has vital roots in the Habermasian [22,23] ideal of free communication and that the element of power, usually connected to domination, may be used to promote emancipation.",
+            "Although Habermas\u2019s (1984; 1987) [22,23] critical theory and ideas of communicative action are often seen as too abstract and idealistic [17]) to be applied in practice, ideality is also seen as a valuable starting point to create something new.",
+            "In Case 1 the pursuit of free communication [22,23] was carried out in compliance with AR approaches used in the \ufb01eld of education e.g., [4].",
+            "According to Habermas [22,23], lifeworlds and systems differ in the way they use communicative processes."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "9844f0b0129e594d79d856bf75b62867ae7380df",
+          "title": "Multiple Dimensions of Strategic Spatial Planning: Local Authorities Navigating between Rationalities in Competitive and Collaborative Settings",
+          "authors": [
+            {
+              "name": "K. Granqvist",
+              "authorId": "94595137"
+            },
+            {
+              "name": "H. Mattila",
+              "authorId": "2068448287"
+            },
+            {
+              "name": "R. M\u00e4ntysalo",
+              "authorId": "152376812"
+            },
+            {
+              "name": "A. Hirvensalo",
+              "authorId": "2625238"
+            },
+            {
+              "name": "S. Teerikangas",
+              "authorId": "52465162"
+            },
+            {
+              "name": "H. Kalliom\u00e4ki",
+              "authorId": "113480992"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 11,
+          "doi": "10.1080/14649357.2021.1904148",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9844f0b0129e594d79d856bf75b62867ae7380df",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Ideally, the only force influencing the process of reaching understanding is the \u201cforce of the better argument\u201d (Habermas, 1981, p. 25).",
+            "Given especially that Habermas claims this form of rationality covers not only questions concerning facts, but also normative questions concerning the ends and goals of our actions (Habermas, 1981, pp. 18\u201319), communicative action can form a basis for coordinating social action.",
+            "According to Habermas, this understanding-oriented type of rationality \u2013 communicative rationality \u2013 is inherent in human capability to use language argumentatively (Habermas, 1981, Chapter I).",
+            "Instead, strategic rationality typically coordinates interaction through mediation by power or money (Habermas, 1981, Chapter IV).",
+            "With his theory, Habermas (1981, 1981) challenged the modern tradition in philosophy and social sciences, where it has been typical to argue that along the advances of human mastery of nature through science and technology, rationality has been gradually reduced to instrumental meansends\u2026",
+            "\u2026relies on inter-subjective validity criteria, including ones concerning shared or generalizable values or conceptions of morality, the sincerity of the speaker, and shared or generalizable understandings of valid knowledge and the determinants of its production (Habermas, 1981, pp. 15\u201316, 99\u2013100).",
+            "Strategic rationality still has a crucial place in Habermas\u2019 theory of action coordination because communicative rationality alone would be an insufficient \u2013 and above all inefficient \u2013 medium for coordinating all action in the modern society (Habermas, 1981, p. 239).",
+            "In communicatively rational action, social coordination is sought in the public sphere by means of argumentation, which is oriented towards reaching mutual understanding and agreement (Habermas, 1981, 1981; see also Johnson, 1991).",
+            "In this case, at issue is \u201ccommunicative action\u201d (see especially Habermas, 1981, p. 101).",
+            "\u2026context of the system; his argument was that the system, as a whole, needs to be anchored in the context of the lifeworld, and that this anchoring should take place through communicatively rational creation of the norms and rules that steer the system (Habermas, 1981, 1992; see also Mattila, 2020).",
+            "The medium of power, in turn, operates through such mechanisms as legislation, authorised institutions, organizational hierarchies, and chains of command (Habermas, 1981, Chapter IV).",
+            "Strategic rationality enjoys priority in the contexts of the system, those of economy and administration, whereas communicative rationality is the primary mode of rationality in the contexts of the lifeworld (Habermas, 1981, Chapter VI).",
+            "Such communicative action entails mutual understanding and trust, which, according to Habermas, is reproduced by argumentative speech, with the presupposition that the speakers are committed to justifying their claims by recourse to the shared validity criteria (Habermas, 1981, p. 302; 1981, p. 77)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "036e1a22f5101154a0eefd6936c430f8c8fe1229",
+          "title": "Agency in Circular City Ecosystems\u2014A Rationalities Perspective",
+          "authors": [
+            {
+              "name": "A. Hirvensalo",
+              "authorId": "2625238"
+            },
+            {
+              "name": "S. Teerikangas",
+              "authorId": "144748695"
+            },
+            {
+              "name": "N. Reynolds",
+              "authorId": "98073110"
+            },
+            {
+              "name": "H. Kalliom\u00e4ki",
+              "authorId": "113480992"
+            },
+            {
+              "name": "R. M\u00e4ntysalo",
+              "authorId": "152376812"
+            },
+            {
+              "name": "H. Mattila",
+              "authorId": "2068448287"
+            },
+            {
+              "name": "K. Granqvist",
+              "authorId": "94595137"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 7,
+          "doi": "10.3390/SU13052544",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/036e1a22f5101154a0eefd6936c430f8c8fe1229",
+          "venue": "Sustainability",
+          "isInfluential": true,
+          "contexts": [
+            "Mutual coordination is mediated by power and money, and the actors are free to maximize their own self-interest [23,68].",
+            "In this paper, we adopt Habermas\u2019s perspective on rationality as a means for dealing with the demands of transitioning toward a circular economy.",
+            "Here, Habermas followed the linguistic turn in philosophy where it is proposed that the central task of philosophical analysis is the analysis of language use and the communicative conditions.",
+            "We bridge the Habermasian perspectives on rationality (i.e., instrumental and communicative rationality) with the predominantly economic rationality conceptions from management (i.e., collaboration and competition).",
+            "In this article, we offer a fresh approach to sorting out coexisting collaborative and competitive motives by revisiting Habermas\u2019s theory and its connections to recent developments in organization studies.",
+            "His theory deals with democracies and free discussion, which have been presented by Habermas himself as incompatible with management or hierarchical organizations [72].",
+            "Via the Habermasian lens, our paper introduces a dyadic perspective on rationality to the literature on coopetition which includes both the communicative and strategic rationalities.",
+            "Habermas [23,68] in particular pointed out that social rules and institutions emerge and change by means of communication.",
+            "Within organization studies, interest in Habermas\u2019s theory has remained rare.",
+            "Habermas aimed for a pluralistic model of rationality.",
+            "In The Theory of Communicative Action [23], Habermas drew a distinction between strategic action, in which actors seek to achieve their own goals, and communicative action, which is based on mutual agreement on actors\u2019 goals.",
+            "To this end, we combined theory about coopetition (i.e., collaboration and competition) with Habermasian theorizing, taking into account the societal and communicative characteristics of rationality.",
+            "We elaborate our understanding of the concept of rationality by importing ideas from management research and critical theory, particularly exploring the potential of communicative rationality of Habermas [23].",
+            "In this section, we draw on both the above-presented theory on competition and collaboration as well as rationality in order to develop a theoretical model along two dimensions which juxtaposes the Habermasian model of rationality (instrumental\u2013communicative rationality) on the vertical axis against coopetition (collaborative and competitive action orientations) on the horizontal axis."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "52d8cba1a9b29f7df7535b4a5fa62a2cc79a21af",
+          "title": "Habermas revisited: Resurrecting the contested roots of communicative planning theory",
+          "authors": [
+            {
+              "name": "H. Mattila",
+              "authorId": "2068448287"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 35,
+          "doi": "10.1016/J.PROGRESS.2019.04.001",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/52d8cba1a9b29f7df7535b4a5fa62a2cc79a21af",
+          "venue": "Progress in Planning",
+          "isInfluential": true,
+          "contexts": [
+            "This becomes most evident in The Theory of Communicative Action (1984; 1987a).",
+            "In answering these questions, it is obviously necessary to look not only at The Theory of Communicative Action but also at Habermas\u2019s works published before and after his famous and much-cited major work.",
+            "Habermas identifies three kinds of validity claims: claims related to truth, authenticity or sincerity and normative rightness (Habermas, 1984, 15\u201316, 99\u2013100; see also Forester 1993, 27).",
+            "\u2026of his preceding works, Habermas\u2019s assessments of communicative rationality are based on a reconstructive method wherein the \u201cpresuppositions of speech acts oriented to understanding\u201d and the \u201cpre-theoretical knowledge\u201d of competent speakers are given a form of explicit rules (Habermas 1984, 138).",
+            "This seems to be so even though The Theory of Communicative Action (Habermas 1984; 1987a) presents law not primarily as a means for protecting lifeworlds against systemic intrusions but rather as a source of juridification and colonization of the lifeworld, given that it spreads systemic\u2026",
+            "For Habermas, this question is ultimately tied to the fate of human species: \u201cIf we assume that the human species maintains itself through the socially coordinated activities of its members and that this coordination has to be established through communication \u2013 and in certain central spheres through communication aimed at reaching agreement \u2013 then the reproduction of the species also requires satisfying the conditions of a rationality that is inherent in communicative action\u201d, Habermas (1984, 397) writes in his Theory of Communicative Action (emphasis in the original text).",
+            "They have built their critical-communicative planning theories not only on The Theory of Communicative Action but also on Habermas\u2019s earlier works, wherein considerable emphasis is put on the ways in which communication is inclined to become systematically distorted in late-capitalist welfare states (see e.g. Forester 1985; 1993; Sager 1994).",
+            "John Forester had applied Habermas\u2019s philosophy in the context of U.S. planning already in the early 1980s, before the publication of the English translation of Habermas\u2019s Theory of Communicative Action (see e.g. Forester 1982a; 1982b; 1985).",
+            "Habermas has himself recommended in some of his earlier works the use of communicative practices in the context of everyday administrative work, such as the context of urban planning (see e.g. Habermas 1985); however, in his works published after The Theory of Communicative Action, especially in his most recent major work Between Facts and Norms, his ideas concerning the proper scale and place of deliberative practices seem to have changed considerably (see Habermas 1996).",
+            "Habermas touches upon this theme in The Theory of Communicative Action, where he discusses validity claims related to truthfulness or sincerity of a speaker.",
+            "Habermas himself has seriously engaged in the topic of pluralism only after the publication of The Theory of Communicative Action, partly because feminist theorists had challenged Habermas on the theme of pluralism frequently.",
+            "In The Theory of Communicative Action, as with some of his preceding works, Habermas\u2019s assessments of communicative rationality are based on a reconstructive method wherein the \u201cpresuppositions of speech acts oriented to understanding\u201d and the \u201cpre-theoretical knowledge\u201d of competent speakers are given a form of explicit rules (Habermas 1984, 138).",
+            "Most importantly, instead of beginning from face-to-face communicative interactions and single discourses as he did in The Theory of Communicative Action, in Between Facts and Norms, Habermas provides a bird\u2019s-eye perspective to deliberative democracy and views the public sphere as a space where the public appears as \u201csubjectless\u201d and communication as an \u201canonymous\u201d flow of reasons stemming from different types of discourses (Habermas, 1996).",
+            "This concept gains a more central position in The Theory of Communicative Action, where it provides the context for \u201ccommunicative rationality\u201d (Habermas 1984; 1987a).",
+            "This seems to be so even though The Theory of Communicative Action (Habermas 1984; 1987a) presents law not primarily as a means for protecting lifeworlds against systemic intrusions but rather as a source of juridification and colonization of the lifeworld, given that it spreads systemic rationality into the unorganized action contexts of everyday life (Deflem 2008; Scheuerman 2013).",
+            "Legitimation still remains a key theme for Habermas in The Theory of Communicative Action, and the interplay of the system and the lifeworld becomes now central for the analysis of legitimation problems.",
+            "The core element in The Theory of Communicative Action is the theory of communicative rationality, a theory containing the famous and much debated argument that consensus is the \u201cinherent telos\u201d of rational speech (Habermas 1984, 287).",
+            "The fact that speakers are able to raise and redeem these three kinds of validity claims means also that the speakers know how to relate to the world in three corresponding aspects: they know how to relate to the objective world, the subjective world, and the social world (Habermas 1984, 98\u2013100).",
+            "Even though attention is directed here to explanatory-diagnostic aspects in Habermas\u2019s works, the anticipatory-utopian aspects of Habermas\u2019s theory are introduced in this chapter as well, the focus being on the oft-criticized contrafactual ideals presented especially in those Habermas works that have emerged out of his linguistic turn culminating in The Theory of Communicative Action (1984; 1987a) as well as in the works dealing with discourse ethics (see e.g. Habermas 1990; 1993).",
+            "These claims are raised on the basis of speaker\u2019s own experience, his or her subjective world, to which the speaker has \u201cprivileged access\u201d (Habermas 1984, 15\u201316).",
+            "\u2026work laid out a theory of \u201ccommunicative rationality\u201d, a form of rationality that is inherent in our language use and that \u201ccarries with it connotations based ultimately on the central experience of the unconstrained, unifying, consensus-bringing force of argumentative speech\u201d (Habermas 1984, 10).",
+            "Although Habermas (1984) by no means denies the central role of strategic and instrumental rationality in contemporary societies, and although he well recognizes that we also often utilize language to pursue our goals strategically, he maintains that strategic language use is derivative of the\u2026",
+            "\u2026of \u201ccommunicative action\u201d, a concept referring to a form of collective action that is coordinated rationally through speech, and more precisely, through harmonization of our action plans on the basis of normative agreement and shared definition of the situation at hand (Habermas 1984, 86, 101).",
+            "Habermas (1984; 1987a) argues that this \u201ccommunicative\u201d and emancipatory form of rationality exists in modern capitalist societies, even though its realization is often severely hindered because of the intrusion of the strategic and instrumental rationalities of the systems of economy and\u2026",
+            "Therefore, the concept of the lifeworld largely replaces the concept of the socio-cultural system in The Theory of Communicative Action.",
+            "Habermas starts from this differentiation, prioritizing illocutionary acts, which are related in his theory to the practice of understanding and accepting speech acts (Habermas 1984, 11; see also Warnke 1995, 121).",
+            "Does the language-use in the internet-based fora have \u201cbinding\u201d and \u201cbonding\u201d force in the same way that Habermas argues it to have in the face-to-face communication (cf. Habermas 1984, 302; 1987a, 77)?",
+            "The raising of these three different validity claims means that the speaker is at least implicitly claiming that what he says is true, that he means what he says, and what he says fits its normative context or that the normative context is itself legitimate (Habermas 1984, 99).",
+            "Communicative planning theory made its breakthrough during the late 1980s and 1990s, soon after the publication of the English translation of J\u00fcrgen Habermas\u2019s colossal two-volume work The Theory of Communicative Action (Habermas 1984; 1987a).",
+            "Because of this implicit warranty that speakers offer in validity claims for their hearers, Habermas calls illocutionary force a \u201cbinding\u201d and \u201cbonding\u201d force (see e.g. Habermas 1984, 302; 1987a, 77).",
+            "The plurality of identities is a theme that Habermas assesses particularly in his works published after The Theory of Communicative Action, such as Between Facts and Norms (Habermas 1996; see also Habermas 1998a; Hillier 2002, 39\u201342).",
+            "After The Theory of Communicative Action, however, Habermas revises his view on this issue and begins to assess law primarily as an institution belonging to the context of the lifeworld (section 2.7; see also Deflem 2008; 2013; Habermas 1996).",
+            "\u2026see also section 2.3.2) to discursive justifiability of the exercise of power (Habermas 1979), or from the legality of the use of power to the questions related to normative justifiability of legal norms and of the institution of law in general (Habermas 1984; 1987a; 1996; see also section 2.7).",
+            "Furthermore, the participants of discourses must presuppose that there are no other motives involved in the process than the one of reaching understanding, and that the only force influencing the processes is \u201cthe force of the better argument\u201d (Habermas 1984, 25).",
+            "However, this claim can also be associated with the contextual conditions of an utterance (Habermas 1984, 22).",
+            "As previously mentioned, in The Theory of Communicative Action, the concepts of the system and of the lifeworld refer to two different research approaches or two different perspectives to society.",
+            "Habermas maintains, contrary to many modern moral theorists\u2019 views, that questions concerning normative validity, just as questions concerning truth, can be assessed rationally and cognitively (Habermas 1984, 18).",
+            "We can assess the expressions of self, for instance, by observing what kinds of consequences they have and whether they are consistent with the speaker\u2019s behaviour (cf. Habermas 1984, 15)."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "79352aa390af40f848887638b130775a1acb6b2b",
+          "title": "Transformative dimensions of lifelong learning: Mezirow, Rorty and COVID-19",
+          "authors": [
+            {
+              "name": "Saskia Eschenbacher",
+              "authorId": "104345172"
+            },
+            {
+              "name": "T. Fleming",
+              "authorId": "47819986"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 71,
+          "doi": "10.1007/s11159-020-09859-6",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/79352aa390af40f848887638b130775a1acb6b2b",
+          "venue": "International Review of Education",
+          "isInfluential": true,
+          "contexts": [
+            "Mezirow (1991, pp. 64\u201398) relies on Habermas\u2019 notion of rational discourse (Habermas 1971, 1984, 1987) to promote TL by exchanging arguments in an environment free from coercion.",
+            "Mezirow (1991) draws heavily on the work of German philosopher and sociologist J\u00fcrgen Habermas (1971, 1984, 1987) and builds on the Habermasian ideas of discourse, instrumental, communicative and emancipatory knowledge, and the role of argument and rationality as key concepts in his TL theory.",
+            "In this article we present the theory of transformative learning (TL) as a way forward and expand on its possibilities in the context of COVID-19 by linking concepts from J\u00fcrgen Habermas and Richard Rorty in order to bring current educational insights to bear on tackling the crisis rather than join forces with the pestilences.",
+            "Ils s\u2019inspirent des travaux du philosophe am\u00e9ricain Richard Rorty et du philosophe et sociologue allemand J\u00fcrgen Habermas pour refondre l\u2019apprentissage transformateur de sorte qu\u2019il accompagne un type d\u2019apprentissage suffisamment complexe et nuanc\u00e9 qui nous permette de faire face aux contradictions, \u00e0 l\u2019ambivalence et la recherche de sens dans un monde o\u00f9 ne pas savoir est la nouvelle norme."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "f7d5ff3d50761b3105b54bfb9561ab74dc2d6121",
+          "title": "\u2018Culture for Sale\u2019: The Effects of Corporate Colonization on the UK Museum Sector",
+          "authors": [
+            {
+              "name": "Jeremy Aroles",
+              "authorId": "2002643"
+            },
+            {
+              "name": "J. Hassard",
+              "authorId": "31935291"
+            },
+            {
+              "name": "P. Hyde",
+              "authorId": "2196402"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 20,
+          "doi": "10.1177/0170840621989001",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f7d5ff3d50761b3105b54bfb9561ab74dc2d6121",
+          "venue": "Organization Studies",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026corporate ideologies and practices into most aspects of everyday life.1\nConceptually informed by Foucault\u2019s (1972, 1979) work on power and discipline and Habermas\u2019 (1984, 1987) theory of communication, Deetz (1992) explored the manifold ramifications of the corporate colonization of the lifeworld.",
+            "For Deetz (1992), this corresponds to a process of inner colonization (see Habermas, 1984, 1987).",
+            "\u2026of democracy, communication and politics in the United States context, he proposed the notion of corporate colonization of the lifeworld (sensu Habermas, 1984) to both depict and make sense of the spread of organizational and corporate ideologies and practices into most aspects of everyday\u2026",
+            "Importantly, discursive closure lays the ground for systematically distorted communication, which happens when genuine conversation (sensu Habermas, 1984) cannot take place."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "9f8016129c37517f175f7108e4cfad58e5062259",
+          "title": "From Competing Institutional Logics to the Action Horizons of Mediatised Political Performance: A New Approach to the Relationship between Media and Political Action",
+          "authors": [
+            {
+              "name": "Ville Kumpu",
+              "authorId": "2097498447"
+            },
+            {
+              "name": "Risto Kunelius",
+              "authorId": "70080878"
+            },
+            {
+              "name": "E. Reunanen",
+              "authorId": "92364984"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1080/13183222.2019.1588497",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9f8016129c37517f175f7108e4cfad58e5062259",
+          "venue": "Javnost - The Public",
+          "isInfluential": true,
+          "contexts": [
+            "Drawing from this analysis, we will illustrate how the discursive, institutional and argumentative limits of public performances related to an environmental conflict can be identified in order to shed light on the actor horizons that shaped the public arena of an environmental conflict at the time.",
+            "These two additional elements are the discursive resources related to a given political issue in a given time (e.g. J\u00f8rgensen and Phillips 2002; Laclau and Mouffe 1985) and argumentative rules of legitimation implicated in the use of natural language (Habermas 1991, 273\u2013337).",
+            "In this horizon, linguistic communication always refers to implicit validity claims of truth, rightness and sincerity (Habermas 1991, 273\u2013337).",
+            "\u2026authority disputes\u2014the points in the coverage when an actor\u2019s public performance involved a direct dispute of other actors\u2019 deeds or words.9 Drawing on Habermas\u2019 (1991) general typology of validity claims in communicative action, we investigated how authority disputes were justified in relation to\u2026",
+            "Our analysis focused on authority disputes\u2014the points in the coverage when an actor\u2019s public performance involved a direct dispute of other actors\u2019 deeds or words.9 Drawing on Habermas\u2019 (1991) general typology of validity claims in communicative action, we investigated how authority disputes were justified in relation to (1) knowledge and facts (truth), (2) value commitments and justifications (rightfulness) and (3) relations of trust or suspicion (truthfulness)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "7c61ecd46b0fe6bd902416d233fd65ad8ddf2bdd",
+          "title": "Stakeholder Theory: A Deliberative Perspective",
+          "authors": [
+            {
+              "name": "Ulf H. Richter",
+              "authorId": "32030628"
+            },
+            {
+              "name": "K. Dow",
+              "authorId": "47700767"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 63,
+          "doi": "10.1111/beer.12164",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7c61ecd46b0fe6bd902416d233fd65ad8ddf2bdd",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "I Theory of Communicative Action\n5c An organization shall adhere to the conditions of an ideal speech in its stakeholder communications and problem solving processes to guarantee the inclusion of marginalized stakeholders.",
+            "\u2026two bodies of theoretical work: (a) Habermas I: the concepts of discourse and communicative action, outlined in the Theory of Communicative Action (Habermas, 1984, 1987) and elsewhere (Habermas, 1976, 1979), and (b) Habermas II: the concept of deliberative democracy and its relevance in times of\u2026",
+            "I Theory of Communicative Action\n4 Every communicative action shall include pragmatic, ethical, and moral reasoning, as well as pragmatic, ethical, and moral argumentations and aim at agreeable action and mutual advantage as an expression of communicative reasoning.",
+            "According to Habermas (1984),\nvalidity can only be determined intersubjectively.",
+            "Communicative action aims at establishing communicative reason and represents, therefore, the basis for the analysis of our communicative practice (Habermas, 1984).",
+            "\u2026plans of all participants are oriented toward mutual understanding in order to achieve a discursive consent over a norm (Habermas, 1976), what in turn makes defining situations \u201can essential component of the interpretive accomplishments required for communicative action\u201d (Habermas,\n1984, p. 285).",
+            "They mainly refer to two bodies of theoretical work: (a) Habermas I: the concepts of discourse and communicative action, outlined in the Theory of Communicative Action (Habermas, 1984, 1987) and elsewhere (Habermas, 1976, 1979), and (b) Habermas II: the concept of deliberative democracy and its relevance in times of globalization (Habermas, 1996, 1998a, 2001).",
+            "In the original proposition of discourse ethics, Habermas (1984) argues for an \u201cideal speech situation,\u201d in which all participants must have the equal opportunity to enter into a communicative discourse, to receive responses through speech and objection, to justify, confute, to expound a problem,\u2026",
+            "According to Habermas, communicative action is accomplished if strategic goals and an openly declared exertion of influence can be excluded and one can assume an understanding-oriented attitude of the actors and criticizable validity claims (Habermas, 1984).",
+            "I Theory of Communicative Action\n6 Processes of deliberation with internal and external stakeholders should follow the premises of deliberative democracy to achieve a maximum level of corporate legitimacy.",
+            "I Theory of Communicative Action\n5a An organization shall provide incentives and mutual reciprocity to its stakeholders in a situation of conflict to motivate participants to reach a consensus.",
+            "Stakeholder theory redefines the firm intersubjectively, paralleling one of Habermas\u2019 most important works on language and discourse (Haber-\nmas, 1976, 1979, 1984, 1987, 1996)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "60b53f99e0ec8a53710266fd9f74ad59c323ea4d",
+          "title": "Kreiranje europskog identiteta kroz teorijski koncept komunikativnog djelovanja J\u00fcrgena Habermasa",
+          "authors": [
+            {
+              "name": "Natalija Ve\u010deri\u0107",
+              "authorId": "117749233"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/60b53f99e0ec8a53710266fd9f74ad59c323ea4d",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Stoga, \u010din komunikacije pravi razliku pripada li to djelovanje teleolo\u0161kom ili komunikativnom djelovanju (Habermas, 1984, str: 295).",
+            "(Habermas, 1984, str: 101) Dramatur\u0161ko djelovanje, kao tre\u0107e karakteristi\u010dno djelovanje, odnosilo bi se na sliku pojedinca koju on sam stvara o sebi, u kojoj on ima privilegirani pristup svim svojim dosada\u0161njim znanjima i vje\u0161tinama, me\u0111utim u interakciji koju vodi s drugima ima nadzor nad onime\u2026",
+            "(Habermas, 1984, str: 101).",
+            "Teoriju komunikativnog djelovanja zami\u0161lja prvenstveno kroz zajedni\u010dko razumijevanje te koordinaciju svojeg djelovanja u argumentaciji, dogovoru i suradnji, te negira strategijsko djelovanje koje ovisi isklju\u010divo o sebi\u010dnom cilju sudionika (Habermas, 1984, str: 86).",
+            "(Habermas, 1984) Ve\u0107 se onda za Habermasa govorilo da je posljednji racionalist, me\u0111utim njegov racionalizam uklju\u010duje jednu va\u017enu karakteristiku koja se do tada ne nalazi u teoretiziranju racionalnosti \u2013 kritiku racionalnosti.",
+            "\u2026kojima se stvara pojam europskog identiteta polaze\u0107i ne samo od govornih struktura, ve\u0107 i od pojedinaca koji djeluju kroz komunikaciju.\nb) Svijet \u017eivota (lifeworld)\nSudionici koji komuniciraju u svakome \u0107e trenutku do\u0107i do razumijevanja neodvojivo od pojma svijeta \u017eivota (Habermas, 1984, str: 70).",
+            "Komunikativna teorija, ipak, pokazuje tendenciju kori\u0161tenja europskih pojmova u svojoj gramatici, a simbolikom se nastoji uvu\u0107i u svakodnevni regulativni govor (Habermas, 1984).",
+            "Ovaj pristup stvaranju teorije o govoru radije proizlazi primarno iz komunikativne prakse svakodnevnog \u017eivota, nego iz racionalne rekonstrukcije izoliranih i idealiziranih govornih radnji (Habermas 1984, str: 328).",
+            "Vratimo li se na teorijski okvir komunikativnog djelovanja vidljivo je kako ono ima vi\u0161e razina na kojima mo\u017ee po\u010divati izgradnja europskog identiteta (Habermas, 1984; 1987)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "f62ad51ebbc5b83c74c689cc01124b6077fa9c06",
+          "title": "Communicative planning as counter-power",
+          "authors": [
+            {
+              "name": "Bo Elling",
+              "authorId": "104906402"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 9,
+          "doi": "10.1080/13563475.2016.1253458",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f62ad51ebbc5b83c74c689cc01124b6077fa9c06",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Actions within the lifeworld are assessed in relation to communicative rationality, which includes all the above-mentioned aspects of rationality in a non-differentiated form (Habermas 1984, 99).",
+            "They are both characterized by the fact that the intention of an action within them is always pre-determined by a goal or a purpose that is given for the system (Habermas 1984, 94\u201395, 332\u2013334).",
+            "They are: truth, rightness and truthfulness, respectively, and they are based, respectively, on cognitive-instrumental, moral-practical, and aesthetic-expressive rationality (Habermas 1984, 329)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "13244f5a1163f3961dc52a16b47c329dfe2233ee",
+          "title": "Validity in mixed methods research in education: the application of Habermas' critical theory",
+          "authors": [
+            {
+              "name": "Haiying Long",
+              "authorId": "31943361"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 26,
+          "doi": "10.1080/1743727X.2015.1088518",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/13244f5a1163f3961dc52a16b47c329dfe2233ee",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The speech act of one person succeeds only if the other accepts the offer contained in it by taking (however explicitly) a \u201cyes\u201d or \u201cno\u201d position on a validity claim that is in principle ciriticizable\u2019\n(Habermas 1984, 287, emphasis in original).",
+            "Based on the assumptions of Habermas\u2019 theories, truth claims are made through communicative actions and they are immediately translated into validity claims, which are \u2018equivalent to the assertion(s) that the conditions for the validity of an utterance are fulfilled\u2019 (Habermas 1984, 38).",
+            "Readers who are interested in the detailed description of Habermas\u2019 critical theory and TCA can refer to other works (e.g. Habermas 1984, 1988; Carspecken 1996, 2003; Dennis 2013; McCarthy 1981; Steinhoff 2009).",
+            "He notes that \u2018in communicative action a speaker selects a comprehensible linguistic expression only in order to come to an understanding with a hearer about something and thereby to make himself understandable\u2019 (Habermas 1984, 307, emphasis in original).",
+            "Second, understanding and truth are not generated from visual perception or speech, but from communicative actions, which are processes of \u2018reaching understanding among members of a lifeworld\u2019 (Habermas 1984, 286).",
+            "(Habermas 1984, 286\u2013287)\nHere Habermas suggests that intersubjectivity is involved in the process of reaching understanding, or more specifically, the agreement is reached only when a shared knowledge of the situation is obtained among all the participants."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "7e225fef71875f7c393c9d08f6c79a9a2b15a8cd",
+          "title": "Theorizing Modern Society as an Inverted Reality: How Critical Theory and Indigenous Critiques of Globalization Must Learn From Each Other",
+          "authors": [
+            {
+              "name": "Asafa Jalata",
+              "authorId": "104011433"
+            },
+            {
+              "name": "Harry F. Dahms",
+              "authorId": "72103919"
+            }
+          ],
+          "year": 2015,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": "10.1108/S0278-120420150000033004",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7e225fef71875f7c393c9d08f6c79a9a2b15a8cd",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "My research began with an interest in the indigenous Oromo people who had practiced an egalitarian and participatory democracy known as the gadaa/siqqee system(19) (Jalata & Schaffer, 2013), before their colonization by the combined forces of European imperialism and Ethiopian colonialism during the last decades of the nineteenth century (Holcomb & Ibssa, 1990; Jalata, 1993, 2010). The historical legacy of Oromo political leadership is the sovereignty the Oromo people experienced under the siqqee/gadaa government and its egalitarian framework. I also have been studying the relationship between various indigenous peoples and the capitalist world system (Jalata, 2013a). Because of my varied research experiences, I have come to understand and appreciate the importance of developing multicultural-centric and critical interdisciplinary scholarship, and submitting my methods to critical scrutiny as necessary steps for developing a human-centric emancipatory social theory. As Edward Said (2001 [1978], p.",
+            "societies are purported to foster (see Ingram, 2010; this applies to an even greater extent to Honneth\u2019s recognition paradigm; see Petherbridge, 2013). In terms of the analysis presented in this essay, however, such a theory of modern society inevitably replicates features of this form of social organization and process in general, and more importantly, features that are highly problematic and likely to drop out of sight, especially if and to the degree that they suggest that the link between modern society and humanist and justice-oriented values is more disconcerting than commonly recognized, in a very specific manner that is neither immediately apparent, nor readily discernible. Still, in two regards, the above-quoted passage from The Theory of Communicative Action (Habermas, 1984 [1981], 1987 [1981]) is astonishingly pertinent, though not in the manner intended.",
+            "In fact, the reason that there was a need for the kind of critique he developed, especially in the form of his critique of political economy, was that the idea of science that inspired political economy in the sense of Adam Smith and David Ricardo, in particular, was categorically incapable of assessing, explaining, and evaluating the social and historical significance of the process they claimed to illuminate: the modern capitalist market economy (Marx, 1978 [1844]).",
+            "nation-states have \u201cstandardized time and space and codified race, gender, and class into law\u201d (Roy, 2001, p. xvii). Mainstream Euro-American elites and their collaborators in the Rest have constructed various social theories to naturalize and justify the socially constructed reality of race, gender, and class hierarchies. \u201cSubordinate groups, especially subordinate races, are often seen as \u2018primitive\u2019 or \u2018backward\u2019 belonging to the past. If they work hard and play by the (white) rules, they can eventually \u2018catch up.\u2019 Similarly, the upper classes are seen as \u2018head\u2019 of the poor. They use the newest technology, wear the newest fashions, and understand the latest trends\u201d (Roy, 2001, p. 27). Racist and some modernist theorists have denied that the concepts and practices of race, gender, and class have been socially constructed by elites as well as by dominant institutions (see Harrison, 1998; Jalata, 2001). By denying that somebody\u2019s knowledge and skills depend on accessibility to resources and education, they assert that people who belong to subaltern social categories are intellectually deficient because of their lack of intelligence. For them, consequently, social hierarchies are natural and investable. These theorists have established intelligence tests based on their cultural experiences that cannot measure \u201ca person\u2019s general ability to interact in the real world .... Psychologists have ... challenged the notion of intelligence implicit in intelligence testing by questioning whether there is a single quality that people have or whether there are multiple intelligences\u201d (Roy, 2001, p. 2). Racists and some modernists have also denied the existence of multicultural knowledge and wisdoms and promoted the notion of the intellectual superiority of Euro-Americans; they have also denied the diversity of intelligences. According to Gardner (1983), there are seven forms of intelligence, namely linguistic (i.",
+            "in a two-fold sense predetermined by the fact of growing up in a society: on the one hand he [or she] finds a readymade situation and on the other he [or she] in that situation performed patterns of thought and of conduct\u201d (Mannheim, 1936 [1929], p."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "95529824fe5276be72b8f7a2a9d64caa18dbed1f",
+          "title": "Women of Mystery",
+          "authors": [
+            {
+              "name": "Patricia A. Gouthro",
+              "authorId": "73924757"
+            }
+          ],
+          "year": 2014,
+          "abstract": null,
+          "citationCount": 8,
+          "doi": "10.1177/0741713614549573",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/95529824fe5276be72b8f7a2a9d64caa18dbed1f",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "As Habermas (1981) discusses, the human capacity for critical rational thought is connected to the need to make sense out of our lives by exploring matters that are important to us.",
+            "As Habermas (1981) explains, \u201cit is the task of critique to recognize domination as unreconciled nature even within thought itself\u201d (p. 384).",
+            "Habermas (1981) believes we must challenge this limited conceptualization of the human capacity for reason by fostering our communicative ability to explore alternative perspectives or worldviews.",
+            "Habermas (1981) believes that through communicative action, we may challenge existing power structures to develop to our fullest capacity as learners and citizens.",
+            "This patriarchal viewpoint validates a masculine perspective that is reflective of what Habermas (1981) refers to as a \u201cworldview\u201d\u2014an overarching understanding of the world that is so pervasive people take for granted the underlying values and assumptions that shape their attitudes and beliefs."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "e0372e64fa0772bea9baf28bfb0a501fe2313824",
+          "title": "The Ethical Implications of Personal Health Monitoring",
+          "authors": [
+            {
+              "name": "B. Mittelstadt",
+              "authorId": "3127701"
+            }
+          ],
+          "year": 2014,
+          "abstract": null,
+          "citationCount": 46,
+          "doi": "10.4018/ijt.2014070104",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/e0372e64fa0772bea9baf28bfb0a501fe2313824",
+          "venue": "International Journal of Technoethics",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026said to exist wherever it is understood that some actors in communication will pursue strategic action, often for shared purposes or mutual benefit (Habermas, 1984, Chapter 6): medical practice, in which communication is structured in a certain way to facilitate clinicians receiving required\u2026",
+            "The lifeworld is concerned with quality of life and qualitative communication (Habermas, 1984, Chapter 6), and is formed and maintained through social communication in which relationships with communities are established (Edgar, 2002), often with an emphasis on the private and the hidden.",
+            "The colonisation of the lifeworld occurs when the system seeks to exert its influence on the lifeworld and impinge controls and monitors (Habermas, 1984, 1985).",
+            "\u2026lifeworld of the patient concerns the personal domain of the user of PHM, or the values, traditions, culture, accepted ways of behaving and being which are developed within families and cultures and expressed within the home and through cultural and social norms (Edgar, 2002; Habermas, 1984, 1985).",
+            "A delicate balance must be struck between two separate elements which Habermas characterises as the lifeworld and the system (Habermas, 1984, 1985)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "6e40c28fe8d1eceebbcae26900640e15a59567c6",
+          "title": "Nature of Conflicts, Tensions and Exploitation in Sharecropping in Rural Sindh",
+          "authors": [
+            {
+              "name": "Ghulam Hussain",
+              "authorId": "144905203"
+            },
+            {
+              "name": "Anwaar Mohyuddin",
+              "authorId": "78716529"
+            },
+            {
+              "name": "Shuja Ahmed",
+              "authorId": "2109161629"
+            }
+          ],
+          "year": 2013,
+          "abstract": null,
+          "citationCount": 5,
+          "doi": "10.4236/OJAPPS.2013.38058",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/6e40c28fe8d1eceebbcae26900640e15a59567c6",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas proposes to promote cooperation over \u201cstrategic action\u201d which aims at the acquisition of personal or private [4].",
+            "It is required assess the validity of claims on rational grounds instead of on faith [4].",
+            "communicatively achieved understanding\u201d [4]."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "774cb329d614caaf14a8302ae3bde73ebe9d9969",
+          "title": "Between the social and the selfish: learner autonomy in online environments",
+          "authors": [
+            {
+              "name": "T. Lewis",
+              "authorId": "144212883"
+            }
+          ],
+          "year": 2013,
+          "abstract": null,
+          "citationCount": 19,
+          "doi": "10.1080/17501229.2013.836202",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/774cb329d614caaf14a8302ae3bde73ebe9d9969",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "(Habermas 1984, 88)\nThe cogency of Habermas\u2019s argument can be measured by attempting to imagine a world in which individuals ignore social norms and behave teleologically, or strategically, towards one another.",
+            "In his influential work, The Theory of Communicative Action, the German sociologist and philosopher Ju\u0308rgen Habermas (1984) identifies four fundamental types of action, which he labels as teleological, normatively regulated, dramaturgical and communicative (75 96).",
+            "Using distinctions originally drawn by Ju\u0308rgen Habermas, it argues that classic accounts of learner autonomy as teleological action are inadequate to explain learner activity in group settings."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "9f4a7e7ce899a53f2b14d89e4746d3ccc8550828",
+          "title": "Integrating Western and non-Western cultural expressions to further cultural and creative tourism: a case study",
+          "authors": [
+            {
+              "name": "A. Catalani",
+              "authorId": "14305858"
+            }
+          ],
+          "year": 2013,
+          "abstract": null,
+          "citationCount": 8,
+          "doi": "10.1080/04419057.2013.820505",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9f4a7e7ce899a53f2b14d89e4746d3ccc8550828",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Festivals are organised events, promoting innovative experiences, typically staging an international context for the exchange of cultural practices and knowledge as well as the broadening of tastes (Habermas, 1984).",
+            "Festivals can be considered as vehicles of communicative actions (Habermas, 1984), providing the context both for the deployment of cultural and social capital as well as for the \u2018\u2018exchange of ideas and the construction of reasoned consensus about art and society\u2019\u2019 (English, 2011, p. 64).",
+            "Festivals can be considered as vehicles of communicative actions (Habermas, 1984), providing the context both for the deployment of cultural and social capital as well as for the \u2018\u2018exchange of ideas and the construction of reasoned consensus about art and society\u2019\u2019 (English, 2011, p.",
+            "In this way, the We Face Forward festival became a vehicle of \u2018\u2018communicative action\u2019\u2019 (Habermas, 1984), an \u2018\u2018international arena for the exchange of new cultural forms and the broadening of taste\u2019\u2019 (Giorgi & Sassatelli, 2011, p. 8).",
+            "In this way, the We Face Forward festival became a vehicle of \u2018\u2018communicative action\u2019\u2019 (Habermas, 1984), an \u2018\u2018international arena for the exchange of new cultural forms and the broadening of taste\u2019\u2019 (Giorgi & Sassatelli, 2011, p."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "d1d4e8ed14a20a7d2fd9350869b019fd9d6ac634",
+          "title": "Organizational sacralization and discursive use of corporate mission statements",
+          "authors": [
+            {
+              "name": "F. Vizeu",
+              "authorId": "2083927705"
+            },
+            {
+              "name": "Q. Matitz",
+              "authorId": "2105235340"
+            }
+          ],
+          "year": 2013,
+          "abstract": null,
+          "citationCount": 16,
+          "doi": "10.1590/S1807-76922013000200005",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/d1d4e8ed14a20a7d2fd9350869b019fd9d6ac634",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Furthermore, it was common to compare missionaries with soldiers and to develop plans and missionary strategies.",
+            "At this point, Habermas\u2019 (1985) Theory of Communicative Action helps to clarify this process\nof manipulation of meanings.",
+            "At the same time, we can look at such statements as illustrations of communicative distortion which set out to create a false consciousness (Forester, 1983; Habermas, 1985).",
+            "With an analysis based on Habermas\u2019 (1985) work, we conclude that, as a communicative tool, a corporate mission statement helps organizations manipulate meanings about their purposes and legitimacy in Christianity-based societies."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "64be3edae8f6f0f2e91ad13f4860d59b88f27be4",
+          "title": "Critical Communicative Methodology: including vulnerable voices in research through dialogue",
+          "authors": [
+            {
+              "name": "L\u00eddia Puigvert",
+              "authorId": "7140125"
+            },
+            {
+              "name": "Miranda Christou",
+              "authorId": "103388936"
+            },
+            {
+              "name": "J. Holford",
+              "authorId": "2019940"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 80,
+          "doi": "10.1080/0305764X.2012.733341",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/64be3edae8f6f0f2e91ad13f4860d59b88f27be4",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "This dialogic shift challenges the modern bureaucratization of institutions, which Habermas (1987) sees as having resulted in the \u2018systemic colonization of the lifeworld.\u2019",
+            "Thus, Habermas places\nmore emphasis on the possibility of social transformation and emancipation (Habermas, 1987).",
+            "Furthermore, CCM is based on the epistemological position that social science research is the result of dialogue which can lead, through communicative action (Habermas, 1987), to the transformation of social structures that perpetuate social and educational inequality."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "2189adfaf737c42692972e3c72adc80e4cb55fd2",
+          "title": "Pagans and Satan and Goths, oh my: dark leisure as communicative agency and communal identity on the fringes of the modern Goth scene",
+          "authors": [
+            {
+              "name": "K. Spracklen",
+              "authorId": "81574607"
+            },
+            {
+              "name": "Beverley Spracklen",
+              "authorId": "115390457"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 28,
+          "doi": "10.1080/04419057.2012.720585",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/2189adfaf737c42692972e3c72adc80e4cb55fd2",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In the second volume of The Theory of Communicative Action, Habermas (1987) describes how leisure, culture, recreation and tourism are key areas of struggle between the communicative, freethinking of the lifeworld and the brutal commodification and consumption of capitalism:\nThe thesis of internal colonisation states that the subsystems of the economy and state become more and more complex as a consequence of capitalist growth, and penetrate ever deeper into the symbolic reproduction of the lifeworld.",
+            "That is, following Habermas (1984, 1987), there is a communicative rationality at work agency that is freely spent making a reasoned decision about beliefs and tastes.",
+            "We will use the\nwork of Habermas (1984, 1987) to explore the tension between the freedoms\nassociated with this turn and the compromises with the mundane, instrumentalised world of popular culture.",
+            "Unlike Rojek, however, who has chosen to retreat into a leisure theory of intentionality (Rojek, 2010), we prefer to see dark leisure as the site of a struggle between Habermasian communicative and instrumental rationalities (Habermas, 1984, 1987).",
+            "Against the lifeworld of communicative action and rationality, in The Theory of Communicative Action, Habermas (1984, 1987) presents what he calls the system: a symbolic construction that is created entirely from the workings of instrumentality on modernity.",
+            "\u2026to the construction of the public sphere, the way in which we discuss and make choices about the things we do in life (such as the sports we play and the books we read, or the parties we vote for), ideally free from constraint: a rationality that constructs what Habermas (1984) calls the lifeworld.",
+            "What Horkheimer (1947) described as objective reason is, for Habermas, only possible where there is a free interaction of ideas and debate (Habermas, 1984, 1987)."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "3d6726311889a1474af66131a22d770097709034",
+          "title": "Through the lens of the rural lifeworld: a phenomenological investigation of the rural school principalship",
+          "authors": [
+            {
+              "name": "Jeremy Morrow",
+              "authorId": "114826751"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 7,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/3d6726311889a1474af66131a22d770097709034",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Every speech act aimed at mutual understanding contains three validity claims, although one is usually dominant in a particular act of speech (Habermas, 1984).",
+            "It is the theory of communicative action that led Habermas (1984) to conclude\n23\nthat society will inevitability disintegrate if we do not make room for actions oriented to reaching understanding\u2026therefore we must, alongside the system areas, operate with a lifeworld which is communicatively\u2026",
+            "Observations Habermas (1989) makes regarding the increasing acceptance of the transformation of the citizen into a client of the state apply equally well to the increased tendency to consider educational issues and schools through a mindset as consumer. Schools are increasingly viewed as service providers, not as sources of shared identity. When this happens, the systemsworld becomes parasitic of the lifeworld. As in all parasitic relationships, the concern is that the systemsworld has the potential to completely destroy the host, or as Habermas (1989) refers to it, the systems colonizes the lifeworld.",
+            "Habermas (1984) described this validation:\nWe understand speech acts when we know what makes it acceptable.",
+            "Every speech act aimed at mutual understanding contains three validity claims,\nalthough one is usually dominant in a particular act of speech (Habermas, 1984).",
+            "The complementary function of communicative action with the lifeworld is best left to Habermas (1987) who wrote:",
+            "Observations Habermas (1989) makes regarding the increasing acceptance of the transformation of the citizen into a client of the state apply equally well to the increased tendency to consider educational issues and schools through a mindset as consumer.",
+            "It is my intent to provide the reader with a simplified understanding of what Habermas introduced us to in the use of the terms \u201csystemsworld\u201d and \u201clifeworld\u201d and how this framework situates this study. In order to do so, it is necessary to provide the context of Habermas\u2019 lifeworld within the context of his theory of communicative action. I found Eriksen and Weig\u00e5rd\u2019s (2003) Understanding Habermas to be particularly useful.",
+            "It is the theory of communicative action that led Habermas (1984) to conclude",
+            "Many definitions of school culture demonstrate a significant similarity to Habermas\u2019 description of the lifeworld. School culture has been defined as the \u201cdeep patterns of values, beliefs, and traditions that have been formed over the course of the school\u2019s history\u201d (Deal & Peterson, 1990, p. 3). Polischuk, (2002) described school culture simply, as: \u201cThe way we do things around here\u201d (p.",
+            "22 Further, distinguishing these speech acts is important because \u201clanguage and action take place against a shared and implicit background which Habermas calls the lifeworld\u201d (Thomassen, 2010, p. 66). In fact, anyone \u201cacting communicatively must, in performing any speech action, raise universal validity claims and suppose that they can be vindicated\u201d (Habermas, as cited in Eriksen & Weig\u00e5rd, 2003). This vindication occurs in the commonly held beliefs, culture, and understanding of the individuals involved in the speech act. In other words, the speech act can only be validated by the lifeworld. Habermas (1984) described this validation:"
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "a019bc87350beae447a9e79d0ac371df7b2cd014",
+          "title": "Discourse or Dialogue? Habermas, the Bakhtin Circle, and the question of concrete utterances",
+          "authors": [
+            {
+              "name": "J. Roberts",
+              "authorId": "81563468"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1007/s11186-012-9172-x",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/a019bc87350beae447a9e79d0ac371df7b2cd014",
+          "venue": "Theory and society",
+          "isInfluential": true,
+          "contexts": [
+            "(Habermas 1984, p. 289).",
+            "A basis is therefore created for consensus to be arrived at (see Habermas 1984, p. 293).",
+            "Hearer-Speaker 2: \u201cYes, I shall comply\u201d (Habermas 1984, p. 296).",
+            "\u2026their argument through rational reflection based on three universal validity claims: that the propositional content of what is said is true; that the performative content is normatively correct; and that the intentions expressed are sincere (Habermas 1984, pp. 69\u201370; see also the next sections).",
+            "Illocutionary speech acts are thus \u201cachieved at the level of interpersonal relations on which participants in communication come to an understanding with something in the world\u201d (Habermas 1984, p. 293).",
+            "Communicative action, which itself is located in this horizon, is the reflective moment of taken-for-granted assumptions evident in the lifeworld (see also Habermas 1984, pp. 70-71).",
+            "Indeed, Habermas often integrates one of his key analytical terms, namely speech acts, with that of utterances (e.g., Habermas 1984, p. 278).",
+            "\u2026also aware that \u201c(l)iteral meanings are \u2026 relative to deep-seated, implicit knowledge about which we normally know nothing, because it is simply unproblematic and does not pass the threshold of communicative utterances that can be valid or invalid\u201d (Habermas 1984, p. 337, italics in the original).",
+            "Thus a speaker owes the binding \u2026 force of his illocutionary act not to the validity of what is said but to the coordinating effect of the warranty that he offers; namely to redeem, if necessary, the validity raised with his speech act (Habermas 1984, p. 302, italics in the original).",
+            "This is because illocutionary speech acts\u2014\u201cto act in saying something\u201d (Habermas 1984, p. 289; italics in the original)\u2014open up the possibility to arrive at consensus and understanding between individuals through argumentation within the very structure of language itself.",
+            "Lifeworld assumptions come together to form \u201cthe horizon of everyday action\u201d (Habermas 1984, p. 335) made up of implicit knowledge.",
+            "\u2026of language the speaker also enters into a speech-act-immanent obligation\u2026 to prove trustworthy \u2026 to show in the consequences of his action that he has expressed just that intention which actually guides his behaviour\u201d (Habermas 1979, p. 64; italics in the original; see also Habermas 1984, p. 309)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "8fe68512da02ade8c257b3d5d015ca3acc5478e5",
+          "title": "Communicative Rationality, Strategy, and Intersubjectivity: Results From a Quasi-Experimental Investigation",
+          "authors": [
+            {
+              "name": "W. White",
+              "authorId": "48366425"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.1080/15456870.2012.665348",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/8fe68512da02ade8c257b3d5d015ca3acc5478e5",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Recall that\nHabermas (1984) envisioned communicative rationality as emerging from\nancient conceptions of logos [that carry] connotations based ultimately on the central experience of the unconstrained, unifying, consensus-bringing force of argumentative speech, in which different participants\u2026",
+            "Habermas (1984) noted that the \u201cparasitic\u201d character of strategic action means that perlocutionary (i.e., manipulative) utterances are on the surface identical in form to illocutionary (i.e., meaningful) ones but are distinguishable at the level of intentionality: Illocutionary effects are a\u2026",
+            "\u2014Steuerman (2000, p. 30)\nThe concept of \u201ccommunicative rationality\u201d (Habermas, 1984) has generated a great deal of interest among scholars of political communication and political scientists more generally, who see in it an opportunity to produce a more fruitful conception of rational choice\u2026"
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "016e417ce90f9904cc5349f73c86e2b3f31b49fe",
+          "title": "Linking the Academy and Activism: From constructed subjectivities to participatory, communicative agency.",
+          "authors": [
+            {
+              "name": "M. McKeown",
+              "authorId": "145928620"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/016e417ce90f9904cc5349f73c86e2b3f31b49fe",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas\u2019s theory of communicative action (Habermas 1986a, 1987) is critically examined to illuminate reflections on the notion of supportive conditions for deliberative discussions and decision making amongst service user activists engaged in involvement activities with university personnel.",
+            "\u2026of communicative acts, where language is privileged and brings about social relations in an exchange of ideas tending towards problem-solving in a process of critical agreement or rational negotiation of consensus (Habermas 1986a, 1987, White 1995, Outhwaite 1996, Sitton 2003, Delanty 2005).",
+            "For Habermas the term communicative is deployed to indicate a form of social relations oriented towards the development of understanding through dialogue (Habermas 1986a, 1987).",
+            "Both Foucault and Habermas hold different appeal in this regard, and Habermas was to engage in a continuing, vigorous debate with Foucault in his lifetime (see Habermas 1986c, Kelly 1994, Flyvbjerg 1998).",
+            "Habermas thoroughly developed his thinking about communicative action in two volumes published in English a year apart in the late 1980s and these ideas are central to his wider social theory (Habermas 1979, 1981, 1986a, 1986b, 1987, 1988, 1989, 1990, 1996, 1998a).",
+            "By a process of reflection and deliberative argument, agreement comes about as people work to resolve differences (Habermas 1986a, 1987, White 1995, Sitton 2003, Delanty 2005)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "03f6c3b35c61d593e56ebcd2853f890760bab808",
+          "title": "Learning and Teaching as Communicative Actions: A Mixed-Methods Twitter Study",
+          "authors": [
+            {
+              "name": "Jenny S. Wakefield",
+              "authorId": "33324168"
+            },
+            {
+              "name": "S. Warren",
+              "authorId": "143799249"
+            },
+            {
+              "name": "M. Alsobrook",
+              "authorId": "1869612"
+            }
+          ],
+          "year": 2011,
+          "abstract": null,
+          "citationCount": 50,
+          "doi": "10.34105/j.kmel.2011.03.038",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/03f6c3b35c61d593e56ebcd2853f890760bab808",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "This theory builds on German sociologist and pragmatist J\u00fcrgen Habermas\u201f Theory of Communicative Action (TCA) with the goal of comprehending and furthering the usefulness of human understanding towards a goal (Habermas 1981/1984, Habermas, 1998).",
+            "These lifeworld experiences provide the learner with access to two worlds: the subjective inner world through which the speaker may express personal identity and understanding, and the objective world through utterances (Habermas, 1981/1984, p. 93).",
+            "Normative actions provide learners with \u201ctwo worlds, the objective and the social world\u201d (Habermas 1981/1984, p.89).",
+            "Habermas explains discourse as a give and take of validity claims that forces interlocutors to presume there will emerge recognition and acceptance or consensus after these reflective speech acts (Habermas, 1981/1984, p.42).",
+            "Such dialogue provides learners\nvoice in a sociocultural setting and allows for the construction of knowledge through discourse and negotiations (Habermas, 1981/1984)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "2aa556f9fada4dbf08ae485dd32b1dc18a20a6c7",
+          "title": "Albania's Journey into the Bologna Process: Europeanizing Higher Education Policies and the role of Epistemic Communities",
+          "authors": [
+            {
+              "name": "Sibora Dhima",
+              "authorId": "119186060"
+            }
+          ],
+          "year": 2011,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/2aa556f9fada4dbf08ae485dd32b1dc18a20a6c7",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Moreover, while developing his theory on communicative action, Habermas (1984) observed that actors in society more often than not aim for a shared understanding and try to coordinate their actions by rational, consensual cooperation rather than simply aiming to maximize their own self-centered goals.",
+            "While the literature on networks, policy communities, ECs, politics of expertise, role of intellectuals and deliberative practices sees knowledge as merely being applied to policy processes, other lines of research based on the work of, for example, Jurgen Habermas and Michel Foucault depict an expertise that is just as much shaped and constituted by power and politics. Of crucial importance to this paper is Habermas\u2019 (1987) call for a \u2018repolitization of the public sphere\u2019 through argumentative and communicative practices making expertise the terrain of politics and vice-versa.",
+            "Moreover, while developing his theory on communicative action, Habermas (1984) observed that actors in society more often than not aim for a shared understanding and try to coordinate their actions by rational, consensual cooperation rather than simply aiming to maximize their own self-centered goals. And as the line of research building on Heclo\u2019s (1978) work on issue networks has also noted, their material self-interest is often subordinate to intellectual convictions or value-related commitments.",
+            "While the literature on networks, policy communities, ECs, politics of expertise, role of intellectuals and deliberative practices sees knowledge as merely being applied to policy processes, other lines of research based on the work of, for example, Jurgen Habermas and Michel Foucault depict an expertise that is just as much shaped and constituted by power and politics."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "d30902adcb80de35133c0b144441db5de9fe77a8",
+          "title": "Habermas and information systems research: New directions",
+          "authors": [
+            {
+              "name": "Alain Ross",
+              "authorId": "35564079"
+            },
+            {
+              "name": "M. Chiasson",
+              "authorId": "145692203"
+            }
+          ],
+          "year": 2011,
+          "abstract": null,
+          "citationCount": 33,
+          "doi": "10.1016/j.infoandorg.2011.06.001",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/d30902adcb80de35133c0b144441db5de9fe77a8",
+          "venue": "Information and organization",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas (1984) calls these guarantees validity claims and suggests that there are three(3) \u2014 truthfulness, legitimacy and truth.",
+            "That is, Habermas wants to build a theory of society that remains grounded in a concept of rationality, but a rationality that depends upon neither an \u201cultimate foundation\u201d (Habermas, 1984: 2) like religion or philosophy nor on the knowing subject capable of using that knowledge to achieve specific ends. Habermas instead seeks a concept of rationality as intersubjectively defined through communication, or what he calls communicative rationality. To do this, Habermas builds on the speech act theory contributions of both Austin (1962) and Searle (1969) in first developing his concept of communicative action (Habermas, 1984).",
+            "Habermas (1984) calls these guarantees validity claims and suggests that there are three(3) \u2014 truthfulness, legitimacy and truth. The claim of truthfulness asks whether the speaker is sincere. The claim of legitimacy asks whether the speaker is making a statement that is \u201cright in respect to the given normative context\u201d (Habermas, 1984: 307). The claim of truth asks whether the speaker makes true statements and makes correct assumptions. Habermas (1976) describes these three validity claims as representing and testing utterances within appropriate world-views. The claim to truth makes claims about \u201c\u2018the\u2019 world of external nature\u201d (p. 92) (that is, the objective world). The claim to truthfulness makes claims about \u201c\u2018my\u2019 world of internal nature\u201d (p. 92) (i.e., the subjectiveworld). The claim to legitimacymakes claims about \u201c\u2018our\u2019world of society\u201d (p. 92) (i.e., the social world). This view of communication \u2013 initially termed \u201cuniversal pragmatics\u201d and later \u201cformal pragmatics\u201d \u2013 characterizes speech acts as representing, simultaneously, \u201cthe\u201d world, \u201cmy\u201d world and \u201cour\u201d world (Habermas, 1976). In communicative action, all three claims to validity are embedded within each speech act. As outlined in Table 1, Habermas (1984) classifies speech acts based on which validity claim is made \u201cfirst and foremost\u201d (p.",
+            "\u2026to be able to support this coordination, however, Habermas suggests general conditions that must be satisfied \u2014 comprehensibility of the utterance, acceptance of the guarantees implicit within the speech act, and acceptance of the obligations arising from the interaction (Habermas, 1984).",
+            "In this way, Habermas (1984) says that strategic action is \u201cparasitic\u201d (p. 288) upon communicative action.",
+            "Habermas (1984) calls these guarantees validity claims and suggests that there are three(3) \u2014 truthfulness, legitimacy and truth. The claim of truthfulness asks whether the speaker is sincere. The claim of legitimacy asks whether the speaker is making a statement that is \u201cright in respect to the given normative context\u201d (Habermas, 1984: 307). The claim of truth asks whether the speaker makes true statements and makes correct assumptions. Habermas (1976) describes these three validity claims as representing and testing utterances within appropriate world-views.",
+            "In this way, Habermas (1984) says that strategic action is \u201cparasitic\u201d (p.",
+            "Habermas contrasts communicative action with strategic action (Habermas, 1984).",
+            "Having developedhis theory of communication action,Habermas' next concerns are to present a two-level conceptof society (systemand lifeworld) anddemonstrate the pathologies that arisewhen the steeringmedia of the system (money and power) replace and disturb the communicative action in the lifeworld. These concerns are addressed by first understanding that communicative action takes place against the backdrop of the lifeworld \u2014 a background of implicit, pre-reflective knowledge (Habermas, 1987). Habermas uses Husserl's definition of lifeworld as consisting of \u201cindividual skills, the intuitive knowledge of how one deals with a situation; and from socially acquired practices, the intuitive knowledge of what one can rely on in a situation, not less than, in a trivial sense, the underlying convictions\u201d (Habermas, 1987: 35). As we have seen, when people fail to reach agreement in communication (that is, when validity claims have become problematic), they move to discourse to re-establish agreement. When the background of knowledge upon which individuals draw is (relatively) shared, the need to move to discourse is less frequently experienced. However, as societies have grown increasingly complex and diverse, Habermas argues that the ability to reach agreement becomesmore strained and the need tomove communication to the level of discourse becomes more frequent. As a result, systems have emergedwhich relieve thenecessity of having to reach agreement on every issue. In Theory of Communicative Action, Habermas (1987) identifies two main sub-systems: the economic system and thepolitical system.",
+            "For an interaction to be able to support this coordination, however, Habermas suggests general conditions that must be satisfied \u2014 comprehensibility of the utterance, acceptance of the guarantees implicit within the speech act, and acceptance of the obligations arising from the interaction (Habermas, 1984).",
+            "To do this, Habermas builds on the speech act theory contributions of both Austin (1962) and Searle (1969) in first developing his concept of communicative action (Habermas, 1984).",
+            "As outlined in Table 1, Habermas (1984) classifies speech acts based on which validity claim is made \u201cfirst and foremost\u201d (p. 308).",
+            "Toundertake argumentation, participantsmust approacheachother assuming that all participants arewilling to be swayed solely by \u201cthe force of the better argument\u201d (Habermas, 1984:24).",
+            "The Theory of Communication Action (Habermas, 1984, 1987) is not Habermas' first work but is certainly considered one of his most important.",
+            "Habermas (1984) calls these guarantees validity claims and suggests that there are three3 \u2014 truthfulness, legitimacy and truth.",
+            "\u2026argumentative speech, in which different participants overcome their merely subjective views and, owing to the mutuality of rationally motivated conviction, assure themselves of both the unity of the objective world and the intersubjectivity of their lifeworld (Habermas, 1984: 10, italics added).",
+            "The claim of legitimacy asks whether the speaker is making a statement that is \u201cright in respect to the given normative context\u201d (Habermas, 1984: 307).",
+            "He arrives at a definition of communicative action as \u201clinguistically mediated interactions in which all participants pursue illocutionary aims, and only illocutionary aims, with their mediating actions of communication\u201d (Habermas, 1984: 295, emphasis in the original).",
+            "\u2026Habermas wants to build a theory of society that remains grounded in a concept of rationality, but a rationality that depends upon neither an \u201cultimate foundation\u201d (Habermas, 1984: 2) like religion or philosophy nor on the knowing subject capable of using that knowledge to achieve specific ends.",
+            "Communicative action, then, lays a foundation for \u201ca consensual coordination of individually pursued plans of action\u201d (Habermas, 1984: 295\u20136)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "fdea7e3d7f6b3e443b8cbaf376cb73c0c27df5e6",
+          "title": "Applying Habermas' theory to public relations : potentials and challenges",
+          "authors": [
+            {
+              "name": "Alexander Buhmann",
+              "authorId": "48892004"
+            }
+          ],
+          "year": 2011,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/fdea7e3d7f6b3e443b8cbaf376cb73c0c27df5e6",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "(Habermas, 1984b: 515f)xxiv\nHabermas here refers to a feeling of compassion that is stimulated by commemorating past sacrifice and suffering: even a far developed and perfectly just world could not cancel out past sacrifice.",
+            "Comprehensibility (by some also refered to as \u2018intelligibility\u2019 or \u2018understandability\u2019), however, does not constitute one of the validity claims\u2014inevitably raised in communications\u2014but is a precondition of communication in general (cf. Habermas, 1981a, 1984a).",
+            "The utopian perspective of reconciliation and freedom is [...] built into the linguistic mechanism of the reproduction of\nthe species\u201d (Habermas, 1984a: 398). iv Trans.",
+            "\u2026to attribute rationality to a speaker first, before being able to coherently discuss the truth, rightness, and truthfulness of his or her utterances, leads Habermas to his claim of the universality of communicative rationality which is central to his concept of society (cf. Habermas, 1981a, 1984a).",
+            "\u2026an internal connection between validity, validity claim, and redemption of a validity claim\u2014he can assume the warranty [Gew\u00e4hr] for providing, if necessary, convincing reasons that would stand up to a hearer\u2019s criticism of the validity claim\u201d (Habermas,\n1984a: 302, italics in original). iii Trans.",
+            "Mediated communication is directed at mostly passive recipients, and it \u2018overrides\u2019 instantaneous glances, gestures, thoughts, and reactions of present speakers and addressees: \u201cAbgekoppelt von einfachen Interaktionen, beginnen die semantischen Gehalte jenseits der imperativen Kraft von reziprok erhobenen Geltungsanspr\u00fcchen frei zu flotttieren\u201d (160).xxx On the other hand, the structures of mediated mass communication are asymmetrical in the sense that they sharply separate the roles of actors in the arena from the roles of spectators in the gallery (cf. Habermas, 1992a: 453).",
+            "To Habermas rationality, which is proper to the communicative practice of everyday life, seems to point \u201cto the practice of argumentation as a court of appeal\u201d (Habermas, 1984a: 17).",
+            "\u2026is rooted in the fact that the propositional and the illocutionary elements of an utterance can vary independently of each other: in a conversation, people combine communication of a particular content with communication about the role in which the content is used (cf. Habermas, 1984b: 407).",
+            "\u2026in \u00e4hnlicher Weise ein Grenzbegriff der Diskursethik wie \u201aNatur an sich\u2019 ein Grenzbegriff der transzendentalpragmatischen Erkenntnistheorie ist (Habermas, 1984b: 517).xxv\nNevertheless, to Habermas\u2019 program of discourse ethics, the concept of anamnetic solidarity can only serve as a\u2026",
+            "\u2026be proved\u2014to be true or right or sincere, and at any rate\n16 Habermas referred to his central program of justification first as universal pragmatics (Universalpragmatik) (cf. e.g.\nHabermas, 1976, 1979) and later as formal pragmatics (Formalpragmatik) (cf. e.g. Habermas, 1981a, 1983, 1984a, 1991).",
+            "He does so by competing two arguments, one centered around the concept of anamnetic solidarity (cf. Habermas, 1982; 1984: 475\u2013570), the other based on the capacity to suffer (cf. Habermas, 1991:",
+            "The substantiation of this far-reaching claim constitutes the essential challenge to Habermas\u2019 theoretical efforts (cf. Habermas, 1984b: 605).",
+            "[...] They no longer relate straightaway to something in the objective, social, or subjective worlds; instead they relativize their utterances against the possibility that their validity will be contested by other ac-\ntors\u201d (Habermas, 1984a: 98f, italics in original). ii Trans.",
+            "\u2026claims that have been challenged, the interaction needs to shift from the instrumental mode of everyday communication (that e.g. also involves gestures, mimic, etc.) to the reflexive mode of discourse, where only the persuasive force of the better argument is allowed (cf. Habermas, 1984b: 159\u2013174).",
+            "Whereas validity claims are internally connected with grounds and give the illocutionary act a rationally motivating force, power claims have to be covered by a potential for sanc-\ntion if they are to be successful\u201d (Habermas, 1984a: 304). xvi Trans.",
+            "The official version, however, is so narrowly conceived that in its framework social action can be assessed only under the aspect of purposive-\nrationality\u201d (Habermas, 1984a: 284). xvii Trans.",
+            "Daher m\u00f6chte ich \u201aVerst\u00e4ndlichkeit\u2019 zu den Bedingungen der Kommunikation rechnen und nicht zu den in der Kommunikation erhobenen, sei es diskursiven oder nichtdiskursiven Geltungsanspr\u00fcchen (Habermas, 1984b: 139, italics in original).xiii\nComprehensibility is something that precedes communication; it is not a validity claim we raise in communication.",
+            "\u2026leads to \u2018true\u2019 or \u2018false\u2019 consensus can be answered by reviewing whether the foregone discourse situation allowed for all participants to argue without any external or internal coercion, i.e. whether it meets the conditions of the ideal speech situation (cf. Habermas, 1984b: 176; 1990a: 86\u201394).",
+            "\u2026Bedingungen der Kommunikation rechnen und nicht zu den in der Kommunikation erhobenen, sei es diskursiven oder nichtdiskursiven Geltungsanspr\u00fcchen (Habermas, 1984b: 139, italics in original).xiii\nComprehensibility is something that precedes communication; it is not a validity claim we raise in\u2026",
+            "22 To be precise, only the validity claims to truth and rightness can be subject to discourse since one cannot argue for\ntruthfulness but has to prove it through consistent behavior (cf. Habermas, 1984: 139)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "b653d55df1620833ce341388a9ade9bce5dc425b",
+          "title": "Negotiating a \u2018democratic ethos\u2019",
+          "authors": [
+            {
+              "name": "Sophie Bond",
+              "authorId": "108706571"
+            }
+          ],
+          "year": 2011,
+          "abstract": null,
+          "citationCount": 130,
+          "doi": "10.1177/1473095210383081",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/b653d55df1620833ce341388a9ade9bce5dc425b",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "For Habermas, consensus is the inevitable outcome of the ideal speech situation so long as argumentation can be \u2018conducted openly enough and continued long enough\u2019 (Habermas, 1984: 42).",
+            "\u2026an utterance that is right with respect to prevailing norms and values so that the hearer can accept the utterance, and both speaker and hearer can, in the utterance, thereby agree with one another with respect to a recognized normative background (emphasis original; see also Habermas 1984: 307\u20138).",
+            "Thus communicative rationality is understood as the universal disposition of all individuals who communicate through language (Habermas, 1984).",
+            "The rationality is implicit \u2018in the fact that a communicatively achieved agreement must be based in the end on reasons\u2019 that are provided \u2018under suitable circumstances\u2019 (Habermas, 1984: 17\u201318, emphasis in original).",
+            "(Habermas, 1984: 25)\nWhere force enters the communicative arena communication becomes distorted.",
+            "Habermas (1984) himself posits communicative rationality as an ideal that is unlikely to be achieved and Dryzek (2001: 661) notes that the \u2018ideal of consensus has long been rejected by most deliberative democrats \u2026 though their opponents have not always noticed\u2019."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "9e77144fac0f4e8150b8f7252c2ff70ad7becd1c",
+          "title": "Some thoughts for a new critical language of education",
+          "authors": [
+            {
+              "name": "Klas Roth",
+              "authorId": "113860112"
+            }
+          ],
+          "year": 2009,
+          "abstract": null,
+          "citationCount": 9,
+          "doi": "10.1177/0191453709104453",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9e77144fac0f4e8150b8f7252c2ff70ad7becd1c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In his early writing \u2013 \u2018Warhheitstheorien\u2019 (Habermas, 1984a) \u2013 he put forward a consensus theory of truth, which he later changed and labelled a discourse theory of truth as ideally warranted assertability in the late 1990s.",
+            "4 See, for example, Ramsey (1950).",
+            "12 See Habermas (1984b, 1987) for an elaborate discussion of the concept of communicative and strategic action and Habermas (1992) for an extensive discussion on the concept of discourse.",
+            "7 See Roth (2006) for a discussion on this issue.",
+            "9 See Davidson (2001e) for a discussion on this issue.",
+            "3 See Wittgenstein\u2019s discussion on and critique of the possibility of a private language in Philosophical Investigations (1997: \u00a7 197\u2013293).",
+            "10 See Davidson (2001f, 2001g) for a discussion on the relevance and importance of triangulation.",
+            "2 See, for example, Carr (1995: 79\u201380), Biesta (2002, 2004), Gur-Ze\u2019ev (2002, 2005), Ramaekers (2002) for a discussion on this and similar issues.",
+            "6 See Davidson (2001e, 2001f, 2001g) for a discussion on these issues.",
+            "11 See, for example, Habermas (2003), for a discussion on this issue, especially the Introduction and chapters 2 and 6.",
+            "8 See Davidson (2001d) and Gl\u00fcer (2001) for a discussion on this issue.",
+            "Department of Education, Stockholm University, Sweden\nNotes\n1 See Neale (2001) for an extensive and elaborate discussion on the slingshot argument.",
+            "5 See Davidson (2001c, 2001e) for a discussion on the relevance and impor-\ntance of these conditions under which we reasonably could be said to know the meaning of a sentence."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "686dc3a98711059846b683ca4052ac5590d61154",
+          "title": "Revisiting the Concept of Practice: Toward an Argumentative Understanding of Practicing",
+          "authors": [
+            {
+              "name": "Daniel Geiger",
+              "authorId": "50680708"
+            }
+          ],
+          "year": 2009,
+          "abstract": null,
+          "citationCount": 176,
+          "doi": "10.1177/1350507608101228",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/686dc3a98711059846b683ca4052ac5590d61154",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In a consecutive step the article unfolds a complementary perspective by drawing on Habermas\u2019 (1984) theory of communicative action, an author who has so far not received much attention in practice-based studies.",
+            "While rejecting the positivist idea of objectivity in terms of correspondence with the world out there Habermas (1984) instead proposes relying on intersubjective agreement as a reference for \u2018objectivity\u2019.",
+            "In his early writings Habermas has argued that validity claims can only be assessed and evaluated in discourses, which have to meet three essential requirements of an ideal speech situation (Habermas, 1984).",
+            "It forms the \u2018culturally transmitted and linguistically organized stock of interpretive patterns\u2019 (Habermas, 1984: xxvi).",
+            "Second, in order to substantiate an argument, participants have to provide (good) reasons to support or falsify a specifi c claim: \u2018. . . only with reasons, whether the claim defended by the proponents rightfully stands or not\u2019 (Habermas, 1984: 25).",
+            "More generally speaking, in his theoretical framework, which takes communication as the central element of our construction of the world, every speech act puts forward a so-called validity claim (Toulmin, 1958; Habermas, 1984).",
+            "The reason this allows for movement beyond subjectivity basically draws on the idea that language is no solipsistic endeavour; rather it is intersubjective/social by its very nature (Habermas, 1984).",
+            "The question of what the criteria are and where they come from deserves some particular attention since it represents a specifi c approach developed by Habermas (1984) in his theory of communicative action.",
+            "According to his view, the only possibility of gaining objectivity is through intersubjectivity, that is, objectivity in terms of intersubjectivity constituted by the joint linguistic constructions of a community (Habermas, 1984).",
+            "In his view argumentation means \u2018that type of speech in which participants thematize contested validity claims and attempt to vindicate or criticize them through arguments\u2019 (Habermas, 1984: 18; see also Toulmin, 1958).",
+            "This questioning of the implicit validity claims involves a switch in the mode of communication from a narrative to a discursive one and thereby triggers a process of refl ection which differs from the actual reproduction of implicit norms and practices (Habermas, 1984)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "1b92adc02f33a1481d8692fa2f838cf780044b0c",
+          "title": "The Creative Dimension of Lay Thinking in the Case of the Representation of Democracy for Greek Youth",
+          "authors": [
+            {
+              "name": "T. Magioglou",
+              "authorId": "117547744"
+            }
+          ],
+          "year": 2008,
+          "abstract": null,
+          "citationCount": 16,
+          "doi": "10.1177/1354067X08096510",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/1b92adc02f33a1481d8692fa2f838cf780044b0c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "He also differentiates himself from the ideal condition of discourse, elaborated by Habermas (1985, 1987), because dialogue should not always lead to a consensus.",
+            "On the other hand, another tradition, with scholars such as Habermas (1985, 1987) and Castoriadis (1975/1987), but also representatives of the communitarian current (e.g. Taylor, 1998), considers lay thinking to be the foundation of a democratic system.",
+            "The deliberative tradition is inspired, partially, by the work of Habermas (1985, 1987).",
+            "Habermas (1985, 1987) proposes a discursive model of democracy and a conception of politics where major importance is attributed to the expression of multiple points of view and dissent.",
+            "Habermas (1985, 1987) distinguishes ideological from lay thinking, without devaluating it."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "e34b869ab7d60cb04a3a94a9a57d28bee13b3ed6",
+          "title": "SaveDisney.com and Activist Challenges: A Habermasian Perspective on Corporate Legitimacy",
+          "authors": [
+            {
+              "name": "S. B. Feldner",
+              "authorId": "97873556"
+            },
+            {
+              "name": "R. Meisenbach",
+              "authorId": "13666043"
+            }
+          ],
+          "year": 2007,
+          "abstract": null,
+          "citationCount": 15,
+          "doi": "10.1080/15531180701623569",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/e34b869ab7d60cb04a3a94a9a57d28bee13b3ed6",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas (1984) laid out his remedy in the form of a proposal for the ideal speech situation.",
+            "\u2026the veracity of the information presented in the utterance; rightness incorporates a sense of the normative understanding of a particular way of acting (i.e., consensus on underlying values); and the sincerity entails the appropriateness and sincerity of the utterance being made (Habermas, 1984).",
+            ", consensus on underlying values); and the sincerity entails the appropriateness and sincerity of the utterance being made (Habermas, 1984).",
+            "Habermas (1984, 1987) was concerned with systemic barriers to communicative action in the lifeworld, such as financial and bureaucratic forces.",
+            "\u2026since (a) all examples discussed under intelligibility were also discussed and part of consideration of the rightness and sincerity claims, and (b) Habermas (1984, 1987) dropped the intelligibility claim in his later development of validity claims, we do not develop it as a separate claim in this\u2026"
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "ff14c2a63abc72df7a8b78c7ddd2268d82ae7d06",
+          "title": "The Leaps of Faith in Social Science: Study of the Imagined in the Discourse of the Real",
+          "authors": [
+            {
+              "name": "Barbara Korth",
+              "authorId": "113255631"
+            }
+          ],
+          "year": 2007,
+          "abstract": null,
+          "citationCount": 8,
+          "doi": "10.1177/160940690700600106",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/ff14c2a63abc72df7a8b78c7ddd2268d82ae7d06",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The imagined is paradigmatically and intersubjectively linked to actions that can be described with space and time coordinates, or what I will also refer to as the discourse of the real (reality here is a presupposition to the claims) (Habermas, 1981; McCarthy,1994; Tugendhat, 1986). Schutz\u2019s (1966) ideas help us see this.",
+            "It deepens our understanding of internal interpretability without stepping outside of it (Habermas, 1981).",
+            "In line with Habermas (1981), however, I am trying to suggest not that reality is an ontology-first concept but, rather, that reality is pragmatic supposition to any truth claims.",
+            "Reality is explained in terms of \u201cuse\u201d for theorists like Harr\u00e9 (1998) and Habermas (1981, 1987).",
+            "\u2026methodology\nThe imagined is paradigmatically and intersubjectively linked to actions that can be described with space and time coordinates, or what I will also refer to as the discourse of the real (reality here is a presupposition to the claims) (Habermas, 1981; McCarthy,1994; Tugendhat, 1986).",
+            "In agreement with Habermas (1981, 1987), it is expected that research investigations into actors\u2019 lived experiences reconstruct in a radical way what is already internal to participants\u2019 lived experiences.",
+            "The imagined is paradigmatically and intersubjectively linked to actions that can be described with space and time coordinates, or what I will also refer to as the discourse of the real (reality here is a presupposition to the claims) (Habermas, 1981; McCarthy,1994; Tugendhat, 1986).",
+            "Often enough Habermas\u2019s (1981, 1987) ideal speech situation is interpreted as if it is an idealistic belief in what might be possible within actual speech situations. This misinterpretation results in people thinking that Habermas\u2019s theory is very unrealistic and renders the ideal speech situation as something akin to either (a) Schutz\u2019s (1966) empirical universalization as an empirical universalization of speech situations or (b) Weber\u2019s (1949) ideal types, where the ideal speech situation is the situation that would obtain in the empirical world if all distorting elements were eliminated.",
+            "According to Habermas (1981, 1987), the ideal speech situation is presupposed by any communicative act precisely because it is the way in which intersubjective sensemaking\ncan be constituted.",
+            "Following Schutz (1966) and others, the empirical will refer to claims that are dependent on space and time coordinates and are, in principle, accessible to multiple witnesses (Habermas, 1981)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "539ccef859f84ad5e7e87d47a09d818ac2fccaa8",
+          "title": "The Significance of Distinctiveness: A Proposal for Rethinking Organizational Knowledge",
+          "authors": [
+            {
+              "name": "Georg Schrey\u00f6gg",
+              "authorId": "2006265311"
+            },
+            {
+              "name": "Daniel Geiger",
+              "authorId": "50680708"
+            }
+          ],
+          "year": 2007,
+          "abstract": null,
+          "citationCount": 79,
+          "doi": "10.1177/1350508407071861",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/539ccef859f84ad5e7e87d47a09d818ac2fccaa8",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In contrast to Sch\u00fctz (1989) and Berger and Luckmann (1967), the philosophy of language does not stop at describing and explaining the functioning of life-world, it rather introduces a second level (see for a comprehensive overview Habermas, 1984).",
+            "The very reason for being able to transcend subjectivity basically draws\u2014again roughly speaking\u2014on the fact that language is no solipsistic endeavour it rather is inter-subjective/social by its very nature (Habermas, 1984).",
+            "Good reasons and argumentation processes are at the centre of this understanding: \u2018Arguments are the means by which inter-subjective recognition of a\nproponent\u2019s hypothetically raised validity claim can be brought about and opinion thereby transformed into knowledge\u2019 (Habermas, 1984: 25).",
+            "It forms the \u2018\u2026culturally transmitted and linguistically organized stock of interpretive patterns\u2019 (Habermas, 1984: xxvi).",
+            "In this view argumentation means \u2018\u2026that type of speech in which participants thematize contested validity claims and attempt to vindicate or criticize them through arguments\u2019 (Habermas, 1984: 18; see also Toulmin 1958).",
+            "Reasons can be of varying nature: empirical, logical, aesthetical, but it is \u2018\u2026only with reasons, whether the claim defended by the proponents rightfully stands or not\u2019 (Habermas, 1984: 25)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "c321cd0f2fb02e2e4f415166e3be9e7fea943371",
+          "title": "Making sense of e-commerce as social action",
+          "authors": [
+            {
+              "name": "M. Janson",
+              "authorId": "1746898"
+            },
+            {
+              "name": "D. Cecez-Kecmanovic",
+              "authorId": "1399090864"
+            }
+          ],
+          "year": 2005,
+          "abstract": null,
+          "citationCount": 44,
+          "doi": "10.1108/09593840510633301",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c321cd0f2fb02e2e4f415166e3be9e7fea943371",
+          "venue": "Information Technology and People",
+          "isInfluential": true,
+          "contexts": [
+            "Such interpretation has no basis in Habermas's TCA and contradicts the definition and numerous explanations by Habermas (1984) and other authors (Cooke, 1998; Koningsveld and Mertens, 1992; Rasmussen, 1990; Roderick, 1986).",
+            "\u2026by taking into account the customer's expected behavior, a strategically acting salesperson seeks to influence the customer so as to meet his/her sales goals (e.g. increased sales or maximized profit) (Habermas, 1984, pp. 85-86; Koningsveld and Mertens, 1992; Rasmussen, 1990; Roderick, 1986).",
+            "\u201cInstrumental action\u201d (Table I) occurs when a success-oriented actor seeks to attain goals by intervening in the objective world using pre-dic-tions drawn from physical or behavioral models (Habermas, 1984, pp. 285-286).",
+            "The meaning of and the difference between actions oriented to success (instrumental and strategic actions) and actions oriented to understanding (communicative actions), as defined by Habermas (1984), will be further explained in the context of ecommerce.",
+            "Put differently, the more ecommerce purchasing involves social interaction via the internet and face-to-face communication that approximates the \u201cideal speech situation\u201d (Habermas, 1984), the greater the likelihood of successful and satisfying transactions and customer loyalty.",
+            "Habermas (1984) makes clear that by \u201csocial action\u201d he means symbolic expression by which actors achieve their goals by relating to and changing their objective, social, and subjective worlds.",
+            "The model of communicative action, as defined by Habermas (1984), assumes that actors have different interests, views and values and can take actions to achieve their different or even opposing goals.",
+            "\u2026the objective world (that something is/is not the case or true), the social world (that something is/is not right or legitimate), and their individual subjective worlds (that the speaker is/is not sincere) (Habermas, 1984, p. 99, pp. 286-288; Habermas, 1987, pp. 126-129; Rasmussen, 1990).",
+            "\u201cStrategic action\u201d (Table I) occurs when a success-oriented actor aims to achieve goals by influencing other actors who are perceived to be rational opponents (Habermas, 1984, pp. 85-86, 285-286)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "07b3468b942db61e4155d9b3475dbdf39f79b27c",
+          "title": "Formalization of ethics : the issue of standardization",
+          "authors": [
+            {
+              "name": "Juliette Arnal",
+              "authorId": "2074653855"
+            }
+          ],
+          "year": 2005,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/07b3468b942db61e4155d9b3475dbdf39f79b27c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In a perspective of \u201cCommunicative Action\u201d [Habermas (1984)], it seems obvious that a debate is necessary between the various stakeholders within the organisation to legitimize its choices.",
+            "In order to establish the legitimacy of standards, there is in the \u201cCommunicative Action\u201d conception, the necessity of a global collaboration between various actors.",
+            "\u201cCommunicative Action\u201d establishes a frame for communication and rules reached by consensus.",
+            "Another branch is the one of the German School, that is build on \u201cCommunicative Action\u201d developed by Habermas (1984).",
+            "This approach is present in the German School that proposes a \u201cCommunicative Action\u201d that is built on Habermas writings (1984).",
+            "Two others approaches can be mentioned: The German school of \u201cCommunicative Action\u201d and the critical French school [Ballet & De Bry (2001)].",
+            "The originality of \u201cCommunicative Action\u201d is the role given to moral standards."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "c16ccbc563b5f37617510d5aac281910c652280c",
+          "title": "'Like a tangled mobile'",
+          "authors": [
+            {
+              "name": "A. Horowitz",
+              "authorId": "107622115"
+            }
+          ],
+          "year": 1998,
+          "abstract": null,
+          "citationCount": 5,
+          "doi": "10.1177/019145379802400101",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c16ccbc563b5f37617510d5aac281910c652280c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026relations is what makes intersubjective understanding possible: \u2019Through it participants in communication assign the various elements of an action situation to one of the three worlds and thereby incorporate the actual action situation into their preinterpreted life-world\u2019 (Habermas, 1983: 100).",
+            "This is so because it is only within each of the three domains that objects are constituted\n12\nin such a way that there is a \u2019direction of fit\u2019 relative to our assertions (see Habermas, 1983: Ch. 1, sec.",
+            "\u2026that objective reason is impossible and virtually rests his entire case for the rationality of the modern understanding of the world on the presumption that it recognizes nothing secure from doubt, that there are \u2019no exemptions from the critical power of hypothetical thought\u2019 (Habermas, 1983: 212).",
+            "\u2019In our own terminology: the form of objectivity that predominates in capitalist society prejudices the world relations, the ways in which speaking and acting subjects can relate to things in the objective, the social and their own subjective worlds\u2019 (Habermas, 1983: 355).",
+            "\u2026have followed the derivations of the universal pragmatics of speech) necessarily refer to, or, better, presuppose a system of three formal world-relations, and they \u2019presuppose this system in common as a framework of interpretation within which they can reach an understanding\u2019 (Habermas, 1983: 98).",
+            "He cannot because quasi-transcendentality entails what Habermas actually accuses the Frankfurt School of invoking, \u2019a reason that is before reason\u2019 (Habermas, 1983: 382)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "c9fc081621bfd1c34aa337c0c2d045aa3710ca13",
+          "title": "Introduction: law in Habermas's theory of communicative action",
+          "authors": [
+            {
+              "name": "M. Deflem",
+              "authorId": "5131181"
+            }
+          ],
+          "year": 1994,
+          "abstract": null,
+          "citationCount": 29,
+          "doi": "10.1177/019145379402000401",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c9fc081621bfd1c34aa337c0c2d045aa3710ca13",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas\u2019s identification of law as an institution, which is still in need of moral justification, and law as a medium, as a system detached from moral-practical concerns, precisely points out the central \u2019ambiguity in the rationalization of law\u2019 (Habermas, 1984: 270).",
+            "He distinguishes the following validity claims: comprehensible and wellformed speech-acts make an objective claim to truth, a normative claim to rightness, and expressive and evaluative claims to authenticity and sincerity (Habermas, 1984: 319-28).",
+            "I The theory of communicative action: concepts and theses\nHabermas\u2019s theory of communicative action fundamentally rests on a distinction between two concepts of rationality that shape knowledge to guide action (Habermas, 1984: 8-22, 168-85).",
+            "The underlying viewpoint of Habermas\u2019s discussion of law as the normative legalization of the independent functioning of systems is that law can formally be conceived as an institutionalization of practical discourse on social norms (Habermas, 1984: 243-71).",
+            "\u2026to\n7 discussion: \u2019The particular accomplishment of the positivization of the legal order consists in displacing problems of justification, that is, in relieving the technical administration of the law of such problems over broad expanses - but not in doing away with them\u2019 (Habermas, 1984: 261 ).",
+            "Different types of discourse serve to explicitly address these claims: theoretical discourse on truth; moral-practical discourse on normative rightness; and aesthetic and therapeutic critique on authenticity and sincerity (Habermas, 1984: 22-42)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "23f8e056e20b83f1404a439d0036aa3f07da30ac",
+          "title": "Modernity, Morality, and the Logic of Competing",
+          "authors": [
+            {
+              "name": "Juha Heikkala",
+              "authorId": "114610941"
+            }
+          ],
+          "year": 1993,
+          "abstract": null,
+          "citationCount": 13,
+          "doi": "10.1177/101269029302800402",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/23f8e056e20b83f1404a439d0036aa3f07da30ac",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "As Habermas puts it, &dquo;in place of social integration through belief, we have social integration through cooperation &dquo; (Habermas 1987, 84).",
+            "\u2026of this everyday life can become subordinated to the imperatives of autonomous, formally organized action-systems &dquo;replacing communal social action [Gemeinschaftshandeln] with rationally regulated action [Gesellschaftshandeln]&dquo; (Habermas 1984, 341) with the consequences depicted above.",
+            "Before turning to the context of sport, it is worth noting that the potential of communicative rationalization is challenged by a counteracting tendency of purposive-rational action systems and their rationality (Habermas 1984, 340-3).",
+            "Relating to the issues above, when turning from the problem of order to that of coordination of actions (Habermas 1984, 273-4, 279) Habermas\u2019 central concern is the issue of binding social norms.",
+            "The weakening of the forces of traditional social bonding signal the progressive unfolding of privatization and individualization (Frisby 1992, 47-54, 64-66; Sayer 1991, 2, 16-18; Habermas 1990, 139; Habermas 1987, 84).",
+            "Increasingly differentiated and autonomous organizations - especially in economics and administration - replace language with their own steering media - money and power - as the mechanism for coordinating action (Habermas 1984, 342).",
+            "Thus the consensus based on the authority of tradition breaks down and the traditionally certified interpretations of norm-validity become open to discursive questioning (Habermas 1984, 340; 1987, 83)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "d6b82aaf9c1fbcc18c30ee98a0fe3ae2dda58556",
+          "title": "The Blind Men and the Elephant: Towards an Organization of Epistemic Contexts",
+          "authors": [
+            {
+              "name": "M. Kleineberg",
+              "authorId": "2704894"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 10,
+          "doi": "10.5771/0943-7444-2013-5-340",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/d6b82aaf9c1fbcc18c30ee98a0fe3ae2dda58556",
+          "venue": "Biosemiotics",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas (1984, 68) writes: As is well known, Piaget distinguishes among stages of cognitive development that are characterized not in terms of new contents but in terms of structurally described levels of learning ability.",
+            "\u2026discontinuities occur, but at the same time we are able to reconstruct an overarching coherence within the long-term development of human cognition (Habermas 1984; Lerner and Kauffman 1985; Bickhard 1993; Oesterdiekhoff 1997; Dux 2011; Wenzel 2000; Wilber 2000b; Robinson 2004; Quilley 2010; Bamm\u00e9\u2026",
+            "\u2026hardly accessible from the inside by direct methodologies such as phenomenology (zone 1) or hermeneutics (zone 3), but demand a distant look from the outside by indirect methodologies such as developmental structuralism (zone 2) or variants of eth-nomethodology (zone 4) (Habermas 1984, 102-142).",
+            "Here, the crucial point is the distinction between the content of worldviews (cultural variant surface structures) and the underlying modes of thinking or types of rationality (cultural invariant sequence of deep structures) (Habermas 1984; Dux 2011; Wilber 2000b).",
+            "\u2026historico-genetic approach in sociology of knowledge which also leads to stage models following the principle of integrative levels (Piaget 1973; Hallpike 1979; Habermas 1984; Kitchener 1987; Piaget and Garcia 1989; Oesterdiekhoff 1997; Dux 2011; Wenzel 2000; Robinson 2005; Tsou 2006; Bamm\u00e9 2011).",
+            "Habermas (1984, 68) writes: With the transition to a new stage the interpretations of the superseded stage are, no matter what their content, categorically devalued .",
+            "\u2026is seen as an integral part of complex ecosystems and as an autopoietic form of life which constitutes its own species-typical construction of reality (for a detailed reconstruction of worldview structures see Habermas 1984, 43-74; Wilber 2000b, 210-261; Bamm\u00e9 2011, 73-250; Dux 2011, 257-374).",
+            "\u2026methodologies seem to be promising, in particular, the more advanced approaches rooted in the Piagetian tradition (Pia-get 1973; Hallpike 1979; Habermas 1984; Campbell and Bickhard 1986; Piaget and Garcia 1989; Kitchener 1987; Oesterdiekhoff 1997; Dux 2011; Wenzel 2000; Wilber 2000a, 2000b;\u2026"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "827bdf83d7fd1b1ba86ceb1b8536e919826d1231",
+          "title": "The Sociology of Phenomenological Structuralism",
+          "authors": [
+            {
+              "name": "Paul C. Mocombe",
+              "authorId": "114149381"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.36348/jaep.2021.v05i02.001",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/827bdf83d7fd1b1ba86ceb1b8536e919826d1231",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In sum, the structurationist or praxis school in\nthe social sciences is commonly associated with J\u00fcrgen Habermas [16-18], Pierre Bourdieu [9-11], and Anthony Giddens [15] in sociology, and Marshall Sahlins [12-14] in anthropology [8, 7].",
+            "Anthony Giddens [15] through his theory of structuration, and J\u00fcrgen Habermas [16-18] with his theory of \u201ccommunicative action,\u201d however, attempt to do just that, \u201cexplain the relationship(s) that obtain between human action, on the one hand, and some global entity which we may call the system, [or social structure, structure, or culture] on the other\u201d in order to capture the nature of social action, reproduction, transformation, and differentiation within structures of signification.",
+            "Neo-structuralists or structurationists in the likes of Pierre Bourdieu [9-11], with his theory of practice (habitus or constructivist structuralism), Marshall Sahlins [12-14] through mythopraxis, Anthony Giddens [15] through his theory of structuration, and J\u00fcrgen Habermas [16-18] with his theory of \u201ccommunicative action,\u201d however, attempt to do just that, \u201cexplain the relationship(s) that obtain between human action, on the one hand, and some global entity which we may call the system, [or social structure, structure, or culture] on the other\u201d in order to capture the nature of social action, reproduction, transformation, and differentiation within structures of signification.",
+            "\u00a9 2021 |Published by Scholars Middle East Publishers, Dubai, United Arab Emirates 34\nConsidering this action-oriented response to account for the different provinces of meaning within systems or structures of signification, the term praxis or structurationist theorists will serve as the dominant label for the arguments expounded in opposition to Parsonian structural-functionalism and variants of structural Marxism by prominent theorists such as Pierre Bourdieu, Marshall Sahlins, Anthony Giddens, and J\u00fcrgen Habermas [8, 7].",
+            "To put it simply, whereas Habermas, building on the works of George Herbert Mead, Emile Durkheim, and Max Weber, sees the \u201clinguistification of the sacred, as an unfettering of the rationality potential of action oriented to mutual understanding\u201d [16, 17], i.",
+            "J\u00fcrgen Habermas\u201fs [16, 17] ought to be\n\u201corganic\u201d conclusion regarding the constitution of present modern conditions, unlike Giddens, account for the constitution of alternative practices through the distinction he draws between system and lifeworld.",
+            "In sum, the structurationist or praxis school in the social sciences is commonly associated with J\u00fcrgen Habermas [16-18], Pierre Bourdieu [9-11], and Anthony Giddens [15] in sociology, and Marshall",
+            "J\u00fcrgen Habermas J\u00fcrgen Habermas\u201fs [16, 17] ought to be \u201corganic\u201d conclusion regarding the constitution of present modern conditions, unlike Giddens, account for the constitution of alternative practices through the",
+            "drives of the body, phenomenal properties of embodied subatomic particles, and the deferment of meaning in ego-centered communicative discourse during the internalization process of signifiers [16-18, 21, 20].",
+            "These problems have not adequately been addressed by Marxist social theorists in the social sciences like Louis Althusser, Pierre Bourdieu, J\u00fcrgen Habermas, Anthony Giddens, and Marshall Sahlins working to resolve this structure/agency issue by attempting to synthesize the rationality of the individual with the phenomenological discourses of the former theorists, and Marxist and structural Marxist philosophy."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": null,
+          "title": "NORMATIVE INTERCULTURAL DISCOURSE IN THE CORDILLERA REGION 1 TOWARDS A NORMATIVE INTERCULTURAL DISCOURSE IN THE CORDILLERA AUTONOMOUS REGION1",
+          "authors": [],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": null,
+          "doi": null,
+          "arxivId": null,
+          "url": null,
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Reason and the rationalization of society by J\u00fcrgen Habermas.",
+            "For further readings, see Jurgen Habermas (1984), John Rawls (1996), Jon Elster (1998), Joshua Cohen (1989), and Maeve Cooke (2002).",
+            "Habermas, J\u00fcrgen.",
+            "Following these processes, J\u00fcrgen Habermas (2005, 2) believes that \u201cthe political ethos of the community is reproduced and revitalized.\u201d",
+            "Of course, some theorists suggest that every culture should pass through a rigorous critique by carefully examining its contents through the \u201cunforced force of the better argument\u201d (Habermas 1984, 285-86)."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "30450f830d4292b0a0f9fd4fdeaa7382e0c9527f",
+          "title": "Enhancing the care pathway for older patients with fractured femur : an action research study",
+          "authors": [
+            {
+              "name": "M. Mifsud",
+              "authorId": "39556604"
+            }
+          ],
+          "year": 2018,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/30450f830d4292b0a0f9fd4fdeaa7382e0c9527f",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026Core useful databases 23 Table 3.1 Comparison of other frameworks besides\nHabermas\u2019 Theory of Communicative Action 71\nTable 3.2 Types of action (Habermas, 1984) 75 Table 4.1 Main components of the four worldviews 84 Table 4.2 Characteristics of AR (Holter & Schwartz-Barcott, 1993) 92 Table\u2026",
+            "The Habermas (1984) Theory of Communicative Action and the Theory of Systems Lifeworld was used as a guide in this participatory action research.",
+            "A Participatory Action Research (PAR) Cycle was conducted which was guided by the Habermas (1984) Theory of Communicative Action."
+          ],
+          "intents": [
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "564212d0be943aed6decbc136d443f7b56aa0ad4",
+          "title": "An overview of major microsociological contributions in the field of sociology of communication",
+          "authors": [
+            {
+              "name": "Kire Sharlamanov",
+              "authorId": "118466511"
+            },
+            {
+              "name": "A. Tomi\u010di\u0107",
+              "authorId": "27039638"
+            }
+          ],
+          "year": 2018,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.2298/SOC1803583K",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/564212d0be943aed6decbc136d443f7b56aa0ad4",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas Jurgen (1987) The Theory of Communicative Action, Volume 2, Lifeworld and Sysem: Critique of Functionalist Reason; Beacon Press: Boston",
+            "Habermas Jurgen (1983) The Theory of The Communicative Action, Volume 1, Reason and The Rationalization of Society; Beacon Press: Boston",
+            "Habermas Jurgen (1998) On the Pragmatics of Communication, Essays translated from German, edited by Maeve Cooke; The MIT Press: Cambridge"
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "c64b635fafd288052e9d90a91d36b203c5da44b1",
+          "title": "Updating Ethics Expertise : Supervision of Ethics as a Communicative Action",
+          "authors": [
+            {
+              "name": "A. Frunz\u0103",
+              "authorId": "1398468729"
+            }
+          ],
+          "year": 2016,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c64b635fafd288052e9d90a91d36b203c5da44b1",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas\u2019s theory system is aimed at the empowerment of latent communication contained by modern institutions and rational analysis of the human capacity to deliberate critically in the pursuit of rational interests. There is a distinction made by Habermas (1987) between moral agents \u2013 seen as subjects capable of communicative action and moral patients \u2013 subjects on whom moral action is exercised.",
+            "Based on the work of Habermas (1984, 1987, 2000), discourse ethics or communication ethics proposes an effective participation of\nall those involved (listening to all voices), a real ethical deliberation replacing the old theory of ethical decision.",
+            "Habermas (2000) believes communication is crucial for building the relationship with Otherness, an expression of",
+            "Communicative Action Theory habermas (1984) highlighted the idea\nthat social actors seek to reach a common understanding and coordinate actions, based on consensus and cooperation, rather than being strategic-action-oriented strictly to achieve their objectives.",
+            "Habermas\u2019s theory system is aimed at the empowerment of latent communication contained by modern institutions and rational analysis of the human capacity to deliberate critically in the pursuit of rational interests. There is a distinction made by Habermas (1987) between moral agents \u2013 seen as subjects capable of communicative action and moral patients \u2013 subjects on whom moral action is exercised. The philosopher states three distinct types of action aimed at individual and social success. In the economic field, the search for success, manifested through wealth, generates instrumental activity (action), which is seen by Habermas as success in an unsociable plan (personal wealth). The second type of action is determined by the desire to gain success in the social sphere, where power can be manifested as influence, generating strategic activity (action). Communicative action, as a third type of action set out by Habermas in his critical reading of Weber on success, subscribes to sphere of mutual understanding (1984; 1987; 2000). Habermas (1987) introduces a \u201cparadigmatic turn\u201d bypassing ethics in the field of consciousness, in a constituent frame of communication."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "754bfda0a2f4b79e01cf792428b73ac76b32d82e",
+          "title": "Democracy the Destroyer of Worlds: Carter\u2019s Presidential Directive-59, Habermas, and the Legitimation of Nuclear Secrecy",
+          "authors": [
+            {
+              "name": "M. Rich",
+              "authorId": "113869078"
+            }
+          ],
+          "year": 2015,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/754bfda0a2f4b79e01cf792428b73ac76b32d82e",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas\u2019s third period is his mature theory, beginning by his two volume magnum opus\nThe Theory of Communicative Action (1984/1981; 1987/1981).",
+            "In Habermas\u2019s work he directly discusses rhetoric in two places, first in the Theory of\nCommunicative Action (1984), next in his discussion of Derrida\u2019s use of literary theory as philosophy (1990b).",
+            "Habermas directly identifies the rhetorical process as part of a triadic model of\nargumentative speech that analyzes argumentation through the fields of rhetoric, logic, and dialectic (Habermas, 1984, p. 25).",
+            "individuals can reach understanding (Habermas, 1984).",
+            "\u2026attempts to answer the question of how someone can judge an argument as stronger or weaker from another argument on the basis of good reasons (Habermas, 1984, p. 24) and is aligned with the basic presuppositions within\nChapter 2, Habermasian Framework 41\nargumentation (Habermas, 1990a, p.\u2026",
+            "Another distinct argument against Habermas analyzes Habermas\u2019s use of speech act\ntheory where he appropriates speech acts to explain strategic and communicative action (Habermas, 1984, pp. 286-337).",
+            "Habermas argues that each of these stances constitutes a communicative claim founded in a subject position within the world (Habermas, 1984), and those claims are backed up by good reasons (1990a, p. 59).",
+            "Other notable works in this period include Moral Consciousness and Communicative Action (1990b/1983), The Philosophical Discourse of Modernity (1987/1985), Postmetaphysical Thinking (1992/1988), and\nChapter 2, Habermasian Framework 13\nJustification and Application (1993/1991).",
+            "Habermas, contra to Farrell\u2019s claims, argues both that making reference to the shared world is necessary to coordinate action (Habermas, 1984, pp. 96), and that context also forms part of the speech act to coordinate action (Habermas, 1984, p. 335).",
+            "In The Theory of Communicative Action (Habermas, 1984; 1987) Habermas doesn\u2019t offer us an operational version of his model because his intent is not to develop a heuristic for understanding human interactions.",
+            "This study itself will take place using the Habermasian framework of democracy and\nsociety, with a focus on his 1980 theory of communicative action (Habermas, 1984; 1987) and his 1992 understandings of deliberative politics (Habermas, 1996).",
+            "The difference between texts can be seen as a difference between a strictly theoretical study, The Theory of Communicative Action, and the application of that theory, Between Facts and Norms, or it could be seen as an inconsistency within Habermas\u2019s thought.",
+            "Habermas makes the specific theoretical claim is that everyone who could make a reasonable contribution to the discussion has been included (Habermas, 1984, p. 25; 1990a, p. 89; 2002, pp. 106-107;\nChapter 5, Discursive politics 154\n2008, p. 82); if there appears to be an obvious violation of this\u2026",
+            "Habermas explicitly addresses distinctions between the performance and analysis of rhetoric; or\nChapter 2, Habermasian Framework 40\nas shaping discourse for a particular audience (Habermas, 1984) and the study of texts in general that has a world creating function (1990, p. 190).",
+            "In The Theory of Communicative Action (Habermas, 1984; 1987) Habermas doesn\u2019t offer\nus an operational version of his model because his intent is not to develop a heuristic for understanding human interactions.",
+            "This study itself will take place using the Habermasian framework of democracy and society, with a focus on his 1980 theory of communicative action (Habermas, 1984; 1987) and his 1992 understandings of deliberative politics (Habermas, 1996).",
+            "The Theory of Communicative Action set the foundation for the rest of his work, and offered a reformulated critique of modernity.",
+            "While Habermas only directly mentions rhetoric in two pieces (Habermas, 1984; 1990b) his work when read as a whole doesn\u2019t have any theoretical conflicts with rhetoric.",
+            "\u2026loyalties \u201cseem to overwhelm [Habermas\u2019s] praxis\u201d (p. 192); as well as Habermas makes some modifications to speech act theory that separates illocutionary and perlocutionary acts along a rational strategic divide, respectfully (Farrell, 1993, pp. 193-197; see also Habermas, 1984, pp. 286-305).",
+            "\u2026insulting, telling stories versus giving testimony, being ironic versus being misleading are all based in how rhetoric\u2019s world disclosing function suspends part of an illocutionary act while maintaining the binding force of coordinating action (Habermas, 1984, pp. 331-332; 1990b, pp. 202-203).",
+            "When a validity claim is engaged through argumentation actors each use standards and language developed by experts who specialize in science, therapy and aesthetics, and morality (Habermas, 1984, p. 23).",
+            "Carrying over from his earlier work in the Theory of Communicative Action v.2 (Habermas, 1987) Habermas maintains that the political sphere is tied to the public sphere through the system of law.",
+            "The lifeworld allows society to coordinate though communicative action that operates under the assumption that communication functions so that\nChapter 2, Habermasian Framework 17\nindividuals can reach understanding (Habermas, 1984).",
+            "The validity claims gain their rational character due to the claim that a speaker is acting\nin accordance to good reasons (Habermas, 1984, p. 22) and that they can, if challenged, make efforts to redeem the claim that has been presented (1990a, p. 58).",
+            "\u2026doesn\u2019t explicitly explore the rhetorical space opened up by his theory of\nargumentation but he does have a conception of rhetoric, theorized as linguistic forms (Habermas, 1984, p. 25) as well as a process or practice (1990b, pp. 187-210), that engage the complexities of everyday public discourse.",
+            "Later, in his mature period after his linguistic turn, Habermas again touched on the public sphere when he outlined his theory of communicative action and critique of modernity in The Theory of Communicative Action (1984; 1987).",
+            "Habermas uses the triadic model to back up the assumption that good arguments follow a\ndialectical process of proposing and addressing arguments, producing logical statements that translate into knowledge, and rhetorically addressing an ideal audience (Habermas, 1984, pp. 25; Rehg, 2003, p. 165).",
+            "as shaping discourse for a particular audience (Habermas, 1984) and the study of texts in general that has a world creating function (1990, p.",
+            "\u2026rational communication: publicity and inclusiveness, equality of all participants, the lack of deception or illusion, and the absence of coercion (Habermas, 1984, p. 25; 1990a, p. 89; 2002, pp. 106-107; 2008, p. 82).3 Habermas argues that if anyone in the discussion observes a violation in one\u2026",
+            "These are also called theoretical discourse, therapeutic critique, practical discourse, aesthetic criticism, and explicative discourse, respectfully, identifying the forms of argumentation that relate to each validity claim (Habermas, 1984, p. 23).",
+            "These three actor world relations are a teleological stance, a normative stance, or a dramaturgical stance (Habermas, 1984; 1987).",
+            "However Habermas is not arguing, as Farrell\u2019s examples explicitly state, that I must front end every communicative act with full verbal disclosure on my intentions in order to avoid the critical distinction of acting strategically (see: Habermas, 1984, p. 331).",
+            "Moral claims are correct if they support some type of universal morality (Habermas, 1984, pp. 15-20).",
+            "subject position within the world (Habermas, 1984), and those claims are backed up by good reasons (1990a, p."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "4ac1412da5c9aca96567acc4d63952b5ca31ed1b",
+          "title": "The role of emerging educational technology in the transformation of educational programmes and structures at a South African university: The case of STEPS at the Central University of Technology",
+          "authors": [
+            {
+              "name": "PhD Patient Rambe",
+              "authorId": "2285275767"
+            },
+            {
+              "name": "Rolline Ndjike",
+              "authorId": "2285275426"
+            },
+            {
+              "name": "PhD. Dennis Yao Dzansi",
+              "authorId": "2285275691"
+            }
+          ],
+          "year": 2015,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/4ac1412da5c9aca96567acc4d63952b5ca31ed1b",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The study employs Critical Discourse Analysis (CDA) to unveil the ways in which emerging technology roles or contributions are portrayed in purposively selected STEPS documents.",
+            "The hard data employed in this study which was subjected to CDA was drawn from the Central University of Technology websites and from the Internet.",
+            "Tenorio (2011) highlights that CDA refers to the communication expected in one situation context, alongside one field and register.",
+            "Critical Discourse Analysis (CDA) (Habermas, 1984) was used to understand the discourse on the contribution of technology to transformation of teaching, learning and the curricula, the motivations and interests represented in the statements on technology, the sincerity of the statements including\u2026",
+            "Critical Discourse Analysis (CDA) (Habermas, 1984) was used to understand the discourse on the contribution of technology to transformation of teaching, learning and the curricula, the motivations and interests represented in the statements on technology, the sincerity of the statements including the significance of technology in pedagogical delivery and curricula transformation.",
+            "Partly therefore, Habermas\u201f (1984) work focuses on circumstances contexts under which ideal speech could be communicated to improve mutual understanding between the hearer(s) and the speaker.",
+            "From a strategic perspective, Habermas conceives social action by rational purposive agents to involve \u201cstrategic action,\u201d (Habermas, 1984: 85), one in which agents aim to influence the other and follow the speaker\u201fs perlocutionary intentions with regards to an objective world (Forchtner, 2010).",
+            "For the purpose of data collection and analysis, an adaptation of CDA of Cukier, Bauer and Middleton (2004), Stahl et al (2005) and Nyemba and Chigona (2012) provided a useful heuristic for the analysis of the data (see Table 1 below).",
+            "Drawing on CDA, all the recurring findings across the different documents that related to truthfulness of statements were examined."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "067b24e37ec2cac88d4e8b2a574d7ee37b954ccf",
+          "title": "Western Australian Graduate Diploma of Education (Primary) Students' Perceptions of Sustainability",
+          "authors": [
+            {
+              "name": "Judith Clare Odgaard",
+              "authorId": "79677538"
+            }
+          ],
+          "year": 2014,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/067b24e37ec2cac88d4e8b2a574d7ee37b954ccf",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "It could be assumed that positive lifeworld relationships (Habermas, 1984) developed at universities centring around Sustainability praxis (ARIES, 2012), would lead to a situation in which graduating primary teachers would naturally think of others as part of enhancing social sustainable awareness (ACARA, 2012; ARIES, 2012; United Nations Conference on Trade and Development (UNCTAD, 2012; UNESCO, 2002).",
+            "88 individual\u2019s community or lifeworld (Habermas, 1984).",
+            "Therefore, lifeworld interactions result in the cognitive constructivism of how an individual interprets their world from the influential collaborative effect of diverse social interactions, including by the language of ideas, values and symbols (Vygotsky, 1978; Habermas, 1984).",
+            "Within the sociocultural dimension of the UN Declaration, the researcher underscores the importance of understanding a university student\u2019s lifeworld (Habermas, 1984) in terms of perceptions of social Sustainability (UNESCO, 2002)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "6ae78c0893f57ec16bcc35dab16b0dfddef63bdf",
+          "title": "Pending between Destructivity and Constructivity in Disagreements on Land Management in China -- A Case Study of the Wukan Protests",
+          "authors": [
+            {
+              "name": "Yuliu Chen",
+              "authorId": "2142746318"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/6ae78c0893f57ec16bcc35dab16b0dfddef63bdf",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Habermas (1984) states that\n11\nactor \u201cchallenges the interpreter to examine not only the actual norm-conformity of his action, or the de facto currency of the norm in question, but the rightness of this norm itself\u201d.",
+            "(Habermas, 1984 & 2001) A rational consensus refers to mutual understanding, which is ensured by an ideal speech situation.",
+            "(Habermas, 1984)",
+            "In fact, a discourse ought to be constituted by \u201ccommunicatively achieved agreement[s]\u201d, the validity of which is criticisable by the participants\u2019 \u201cautonomous yes/no responses\u201d (Habermas, 1984)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "bdc98c728be37b62a1f754fce0b9885677dfd971",
+          "title": "Recognition of prior learning practices within the public further education and training college sector",
+          "authors": [
+            {
+              "name": "Nigel Prinsloo",
+              "authorId": "118599120"
+            }
+          ],
+          "year": 2009,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/bdc98c728be37b62a1f754fce0b9885677dfd971",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "These are based on the \u2015lifeworld\u2016 of the RPL practitioner and on practices which were prevalent in the former Technical College \u2015system\u2016 (Habermas 1984).",
+            "Superimposing Luckett\u2018s Habermasian perspective on Osman\u2018s (2003) three RPL models, Luckett (1999) applying Habermas\u2018 theory of knowledgeconstitutive interests (1972) to education, identifies three different educational paradigms based on different uses and understandings of knowledge. Firstly Luckett introduces the \u2015Technical Paradigm\u2016 within which Osman frames the Credit Exchange Model (Osman 2003). This model develops knowledge primarily to control. It generates instrumental knowledge usually in the form of causal explanation, e.g. the empirical-analytical sciences. In this paradigm the curriculum tends to be understood as a product, as teaching inputs as learning outcomes. Secondly Luckett is instrumental for introducing the \u2015Practical or Hermeneutic Paradigm\u2016 in which Osman (2003) frames the Developmental Model which develops knowledge to understand human social action. Within this paradigm knowledge is used to build mutual understanding and wise action within a framework of values. Finally, Luckett notes the \u2015Critical Paradigm\u2016 which frames Osman\u2018s Radical Transformative Model (2003) which extends the hermeneutic paradigm to include critical reflection on the social and historical shaping of our ideas, actions and institutions (ideology critique) with a view to emancipating ourselves from past irrationality and injustice (1999, pp.",
+            "Superimposing Luckett\u2018s Habermasian perspective on Osman\u2018s (2003) three RPL models, Luckett (1999) applying Habermas\u2018 theory of knowledgeconstitutive interests (1972) to education, identifies three different educational paradigms based on different uses and understandings of knowledge.",
+            "Key findings arose by analyzing the research data with the Habermasian notion of \u2015Lifeworld\u2016 and \u2015System\u2016 (Habermas 1984) as well as the literature on RPL and policy implementation.",
+            "Superimposing Luckett\u2018s Habermasian perspective on Osman\u2018s (2003) three RPL models, Luckett (1999) applying Habermas\u2018 theory of knowledgeconstitutive interests (1972) to education, identifies three different educational paradigms based on different uses and understandings of knowledge. Firstly Luckett introduces the \u2015Technical Paradigm\u2016 within which Osman frames the Credit Exchange Model (Osman 2003). This model develops knowledge primarily to control. It generates instrumental knowledge usually in the form of causal explanation, e.g. the empirical-analytical sciences. In this paradigm the curriculum tends to be understood as a product, as teaching inputs as learning outcomes. Secondly Luckett is instrumental for introducing the \u2015Practical or Hermeneutic Paradigm\u2016 in which Osman (2003) frames the Developmental Model which develops knowledge to understand human social action."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "faeff25f23ad941fc227fd7b6b8b501327440626",
+          "title": "Of Global Cause and Consequence: The Organic Farmers of Saskatchewan Versus Monsanto and Bayer",
+          "authors": [
+            {
+              "name": "K. Bronson",
+              "authorId": "4826893"
+            }
+          ],
+          "year": 2005,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/faeff25f23ad941fc227fd7b6b8b501327440626",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026his work, social actors who seek resolution to practical situations communicatively do so in \u201ca cooperative process of interpretation aimed at attaining intersubjectively recognized definitions of situations,\u201d with the effect that the resulting action is motivated by reason (Habermas, 1984, 14).",
+            "They raise issues concerned with the democratization of structures of \u201cthe grammar of forms of life\u201d and focus on communication and collective identity (Habermas, 1984, 391; Touraine, 1985, Crook et al., 1992).",
+            "It is the latter that constitutes what Habermas means by the lifeworld (Habermas, 1979; Habermas, 1984; Baxter, 1987).",
+            "All of this evidences what post modernists might term the presence of a risk society (Beck, Giddens and Lash, 1994; Beck, 1995), or \u201cgrowing system complexity and the post-industrial nature of contemporary society\u201d (Habermas, 1984).",
+            "\u2026spheres of social life while at the same time they continue to demand higher levels of rational justification in the moral and cultural spheres; where \u201cthe new problems have to do with quality of life, equal rights, individual self-realization, participation and human rights\u201d (Habermas, 1984, 392).",
+            "Habermas (1984, 47) is interested in how language can function as \u201ca medium of unhindered understanding.\u201d",
+            "The lifeworld is the background or \u201chorizon\u201d of common assumptions that people draw on in their everyday conduct, and it represents the patchwork which, through communicative action, draws together the different strands of social life (Habermas, 1984)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "0e7ff6e7c2971bcb98d5753478febe28e7a773d2",
+          "title": "An Evaluation of an Intervention Program for Juvenile Probationers",
+          "authors": [
+            {
+              "name": "K. I. Minor",
+              "authorId": "34834571"
+            }
+          ],
+          "year": 1988,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/0e7ff6e7c2971bcb98d5753478febe28e7a773d2",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "works of Currie (1985), Kramer (1984), and H. Schwendinger and J. Schwendinger (1985). These writers are in agreement with Friday's (1983) role relations model.",
+            "Similar to the manner in which Hirschi (1969) operationalized his abstract social bond concept, Friday (1983, pp.",
+            "First, each of Hirschi's (1969) elements of the bond are, with the exception of involvement, attitudinal rather than behavioral constructs.",
+            "Whereas Hirschi's (1969) social bond theory downplays learning, Friday's (1983) role relations theory does not."
+          ],
+          "intents": [
+            "background",
+            "result"
+          ]
+        }
+      ],
+      "references_count": 0,
+      "citations_count": 61
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

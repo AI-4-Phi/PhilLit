@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1177/0048393111408779"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/0048393111408779",
+      "title": "Interpreting Weber\u2019s Ideal-Types",
+      "authors": [
+        {
+          "family": "Aronovitch",
+          "given": "Hilliard"
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "Philosophy of the Social Sciences",
+      "volume": "42",
+      "issue": "3",
+      "page": "356-369",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1177/0048393111408779"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

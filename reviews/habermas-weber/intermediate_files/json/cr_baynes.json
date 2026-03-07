@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Rational Reconstruction and Social Criticism",
+    "author": "Baynes",
+    "year": 1989
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/019145378801400304",
+      "title": "the liberal/communitarian controversy and communicative ethics",
+      "authors": [
+        {
+          "family": "baynes",
+          "given": "kenneth"
+        }
+      ],
+      "editors": [],
+      "year": 1988,
+      "container_title": "Philosophy &amp; Social Criticism",
+      "volume": "14",
+      "issue": "3-4",
+      "page": "293-313",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1177/019145378801400304",
+      "score": 34.043198
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

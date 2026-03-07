@@ -1,0 +1,1809 @@
+[s2_citations.py] Connecting to Semantic Scholar API...
+[s2_citations.py] Found paper: Max Weber's Types of Rationality: Cornerstones for...
+[s2_citations.py] Fetching references...
+[s2_citations.py] Fetching citing papers...
+[s2_citations.py] Retrieved 9 citing papers, fetching more...
+[s2_citations.py] Retrieved 14 citing papers, fetching more...
+[s2_citations.py] Retrieved 25 citing papers, fetching more...
+[s2_citations.py] Retrieved 32 citing papers, fetching more...
+[s2_citations.py] Retrieved 41 citing papers, fetching more...
+[s2_citations.py] Retrieved 46 citing papers, fetching more...
+[s2_citations.py] Retrieved 50 citing papers, fetching more...
+[s2_citations.py] Retrieved 55 citing papers
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "0bfd227426b06a78ccc32edf7d9fc35bc1404b8c",
+  "results": [
+    {
+      "paper": {
+        "paperId": "0bfd227426b06a78ccc32edf7d9fc35bc1404b8c",
+        "title": "Max Weber's Types of Rationality: Cornerstones for the Analysis of Rationalization Processes in History",
+        "authors": [
+          {
+            "name": "Stephen Kalberg",
+            "authorId": "100981749"
+          }
+        ],
+        "year": 1980,
+        "abstract": null,
+        "citationCount": 746,
+        "doi": "10.1086/227128",
+        "arxivId": null,
+        "url": "https://www.semanticscholar.org/paper/0bfd227426b06a78ccc32edf7d9fc35bc1404b8c",
+        "venue": "American Journal of Sociology"
+      },
+      "references": [],
+      "citations": [
+        {
+          "paperId": "f9f9a9fd10c6933c58b46cc5f17dc12b4cec578b",
+          "title": "The mission of life: Max Weber on rationalization, ideal type and power",
+          "authors": [
+            {
+              "name": "R. Calia",
+              "authorId": "2037029094"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1080/03906701.2025.2496984",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f9f9a9fd10c6933c58b46cc5f17dc12b4cec578b",
+          "venue": "International Review of Sociology",
+          "isInfluential": true,
+          "contexts": [
+            "According to Weber, this relationship of pure exchange, as it existed in sacrifice and prayer was similar, in the form of calculation, to that of the modern businessman of the most efficient means to acquire profit (Kalberg, 1980: 1148).",
+            "Four types of rationality are at the centre of Weber\u2019s theory (Brubaker, 1984; Haber-mas, 1984; Kalberg, 1980; Levine, 1981): practical \u2013 in accordance with the purpose of individual actors, theoretical \u2013 achieved through the use of concepts suitable for acting effectively, substantial, concordance\u2026",
+            "\u2026the purpose of individual actors, theoretical \u2013 achieved through the use of concepts suitable for acting effectively, substantial, concordance with values; formal, in accordance with established norms, such as those found in bureaucratic organizations (Kalberg, 1980; Segre, 2022; Hammersley, 2017).",
+            "According to Kalberg (1980), Weber, in contrast to French anthropology, argued that man had not acquired his \u2018rationality\u2019 with the Enlightenment, and that rational action had always been present in the history of humanity."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "769336dd429f9907472bf8fc73646e8d6edf7d67",
+          "title": "Hiatus irrationalis in assessing adolescent converts\u2019 asylum claims in Swedish migration courts",
+          "authors": [
+            {
+              "name": "Ebru \u00d6zt\u00fcrk",
+              "authorId": "2355323545"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.1093/jrs/feaf001",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/769336dd429f9907472bf8fc73646e8d6edf7d67",
+          "venue": "Journal of Refugee Studies",
+          "isInfluential": true,
+          "contexts": [
+            "Kalberg (1980) contends that Weber, rather than employing \u2018rationality\u2019 and \u2018rationalization\u2019 in a broad sense to explain the overall advancement of civilizations, discerns specific processes of rationalization that advance autonomously across diverse sociocultural levels.",
+            "Practical, formal, and substantive rationalities fall into the former group, whereas theoretical rationality, owing to its cognitive essence, is categorized as an indirect influencer (Kalberg 1980).",
+            "Moreover, variability within each sphere is possible (Kalberg 1980)."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "7e2c9de5327d27af0d67a2e5ea4311c76cfd2a6e",
+          "title": "Rationalities of conspiracy theories: A Weberian analysis of Turkish parliamentary debates",
+          "authors": [
+            {
+              "name": "T. Nefes",
+              "authorId": "116839504"
+            }
+          ],
+          "year": 2025,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1177/13540688251316067",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7e2c9de5327d27af0d67a2e5ea4311c76cfd2a6e",
+          "venue": "Party Politics",
+          "isInfluential": true,
+          "contexts": [
+            "It involves a deliberate understanding of reality by developing accurate abstract concepts, attributing causality, and creating symbolic meanings, rather than through direct action (Kalberg, 1980).",
+            "While practical rationality can respond to the diverse realities of everyday situations, it lacks this methodical component introduced when actions are governed by internalised ethical values (Kalberg 1980).",
+            "The shared goal of these rationalities is to make sense of reality by turning scattered perceptions into clear and meaningful patterns (Kalberg, 1980)."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "5127c42b98f3d272ebc8628319da05d8bfbd8604",
+          "title": "Diet as a challenge and a strategy: on the phenomenon of diet rationalisation in everyday life",
+          "authors": [
+            {
+              "name": "Agnieszka Maj",
+              "authorId": "2316821778"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.18778/0208-600x.89.04",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/5127c42b98f3d272ebc8628319da05d8bfbd8604",
+          "venue": "Acta Universitatis Lodziensis Folia Sociologica",
+          "isInfluential": true,
+          "contexts": [
+            "Rationalization processes of historic significance in societies and in entire civilizations have often originated when a constellation of factors crystallized that rewarded methodological, rational ways of life (Kalberg 1980: 1148\u20131149).",
+            "Weber used the notion of rationalization as a conceptual scheme to analyze \u201cregularities of action\u201d within institutions, organizations, strata, classes, and groups (Kalberg 1980: 1148).",
+            "Sets of such values are at the root of modern capitalism (see: Kalberg 1980; Kury\u0142owicz 2021: 85\u201386)."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "ae3b8adeea8fe61b012ebe4e24c7283647d83add",
+          "title": "Understanding North American curriculum reforms through theory of rationality",
+          "authors": [
+            {
+              "name": "Dan-Lauren\u021biu Carda\u015f-R\u0103du\u021ba",
+              "authorId": "2307265834"
+            }
+          ],
+          "year": 2024,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.35923/jes.2024.1.06",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/ae3b8adeea8fe61b012ebe4e24c7283647d83add",
+          "venue": "Journal of education and science",
+          "isInfluential": true,
+          "contexts": [
+            "Theoretical rationality refers to: \"conscious mastery of reality through the construction of increasingly precise abstract concepts rather than through action\" (Kalberg, 1980, p. 1152).",
+            "Practical rationality refers to identifying the most suitable means to achieve goals and address everyday problems (Kalberg, 1980, p. 1152).",
+            "Kalberg (1980) maintains that the term rationality is polymorphic and underscores this by identifying four types of rationality: theoretical, practical, substantive, and formal (pp. 1146 - 1152).",
+            "Although they differ in content, all four types of rationality have the same goal: controlling reality by \"dispelling particularized perceptions\" (Kalberg, 1980, p. 1159)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "5ed26f2f7cc162694726d801314857f7710832ef",
+          "title": "Perceived Life Satisfaction and Illegal Forest Use in the Virunga Landscape of Rwanda and Uganda",
+          "authors": [
+            {
+              "name": "E. Sabuhoro",
+              "authorId": "107699046"
+            },
+            {
+              "name": "Gastor J. Lyakurwa",
+              "authorId": "2020019434"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": "10.3390/f15010053",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/5ed26f2f7cc162694726d801314857f7710832ef",
+          "venue": "Forests",
+          "isInfluential": true,
+          "contexts": [
+            "The Weberian theory argues that individuals are not driven exclusively by economic gain but rather by a combination of formal rationality (economic benefit) and substantive rationality (non-economic values and beliefs) [22].",
+            "The formal rationality dimension suggests that an individual\u2019s careful weighing of options to determine the end objective, such as to secure livelihoods, in quantifiable terms, drives their motivations and way of life [22].",
+            "Meanwhile, substantive rationality suggests that a cluster of values drives an individual\u2019s motives and way of life [22].",
+            "For example, considering the Weberian theory of substantive rationality, the factors influencing perceived life satisfaction could encompass material and non-material human values and needs [22,45].",
+            "The substantive rationality perspective would consider economic gain [22] to be only one of many motivations for illegal forest use.",
+            "Commonly referred to as the Weberian theory, the theory of formal and substantive rationality explains an individual\u2019s motivation to engage in different forms of activity [21,22]."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "cb149f5c56c5a74e7b73bcd493cb9e9e5d76dc3e",
+          "title": "Mask sociology as a way of action theory: Voices of the face mask among social individuals in the COVID-19 masquerade in South Korea",
+          "authors": [
+            {
+              "name": "Jae-Mahn Shim",
+              "authorId": "2264767887"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1371/journal.pone.0293758",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/cb149f5c56c5a74e7b73bcd493cb9e9e5d76dc3e",
+          "venue": "PLoS ONE",
+          "isInfluential": true,
+          "contexts": [
+            "It spans the Weberian rationality of multiple kinds for a subject\u2019s mastery over life matters in the world [22\u201324]; the Parsonian human efforts to orient personal needs to institutional requirements [25]; the Swidlerian pragmatic problem-solving with multiple cultures in action [26, see also the\u2026",
+            "According to the Maussian perspective, the mask in itself is the self and individuality which can be properly formulated as a whole \u201ccourse\u201d [30: 22] or a social process of self-making [83: 87, 84] that involves individual and supra-individual entities (i.e., masquerade the social drama).",
+            "\u2026the same matter under other sociological subjects, such as the rationalization and elective affinities among various values and individuals [see 22, 23 for a comprehensive review of Max Weber\u2019s take on affinities, 48], the dual process of governmentalization and subjectification of different\u2026",
+            "\u2026the capacity for individuals to engage the social world [21] or the Webe-rian rationality for individuals to wield the mastery over life matters [22], agency and individuality among atomists are placed outside the will of supra-individual powers, such as God\u2019s Providence [33: 64], and instead\u2026"
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "0092ce6867c7bac79b51fe02c46159f752537a8c",
+          "title": "Resident Empowerment and Support for Gaming Tourism: Comparisons of Resident Attitudes Pre- and Amid-Covid-19 Pandemic",
+          "authors": [
+            {
+              "name": "Xiangping Li",
+              "authorId": "2262195286"
+            },
+            {
+              "name": "B. B. Boley",
+              "authorId": "90459383"
+            },
+            {
+              "name": "Fiona X. Yang",
+              "authorId": "2262200265"
+            }
+          ],
+          "year": 2023,
+          "abstract": null,
+          "citationCount": 26,
+          "doi": "10.1177/10963480221076474",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/0092ce6867c7bac79b51fe02c46159f752537a8c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Kalberg (1980, p. 1159) adds that formal rationality is driven by boosting economic gain through the \u201claws of the market,\u201d \u201cregardless of either their effect on individual persons or the degree to which they may violate ethical substantive rationalities.\u201d",
+            "Kalberg (1980, p. 1155) describes Weber\u2019s conceptualization of substantive rationality as being guided by the need for internal consistency, and that one\u2019s actions are consistent with the values that they hold.",
+            "\u2026depicts decision making as being simultaneously influenced by both market (i.e., formal rationality) and nonmarket (i.e., substantive rationality) factors, such as values, beliefs, and morals in the explanation of why humans engage in economic transactions (Andereck et al., 2005; Kalberg, 1980).",
+            "In essence, WTFSR acknowledges that there are tensions between the economic aspects of any transaction and the transaction\u2019s congruence with one\u2019s values, resulting in a continuum that balances motivation between the demands for economic gain with the desire to live out their values (Kalberg, 1980).",
+            "WTFSR provides a holistic framework because it does not partition human rationality as solely driven by economic gain but allows for the addition of noneconomic factors that also affect human rationality and support for activities (Kalberg, 1980).",
+            "Weber portrays rationality as something innate to being human, and acknowledges that rationality is universal to all, comprising of means-end rational action (formal rationality), as well as value-rational action (substantive rationality; Kalberg, 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "0e9d9f7dcf54a0372a210a4ed19641a42799803e",
+          "title": "MacIntyre, Weber and institutional logics",
+          "authors": [
+            {
+              "name": "Irene Chu",
+              "authorId": "88456809"
+            }
+          ],
+          "year": 2022,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.3389/fsoc.2022.983190",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/0e9d9f7dcf54a0372a210a4ed19641a42799803e",
+          "venue": "Frontiers in Sociology",
+          "isInfluential": true,
+          "contexts": [
+            "The types of social action are also associated with Weber\u2019s types of rationality; Kalberg (1980) links value-rational action to substantive rationality and instrumentally rational action to practical and formal rationality, with different rationalization processes taking place in the different\u2026",
+            "\u2026(2004) also analyzed the relationship between Weber\u2019s substantive and formal rationality and describes how the latter came to be prioritized, and Kalberg (1980) summarized Weber\u2019s argument\n4 This is analogous to MacIntyre\u2019s view of the impossibility of an a-\nhistoric and abstract\u2026",
+            "\u2026associated with Weber\u2019s types of rationality; Kalberg (1980) links value-rational action to substantive rationality and instrumentally rational action to practical and formal rationality, with different rationalization processes taking place in the different value-spheres (Kalberg, 1980, p. 1,150)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "a45ed40dbf37b8687446653eefee1d347424a161",
+          "title": "Peer-to-peer accommodation hosts: an identity framework",
+          "authors": [
+            {
+              "name": "E. Yeager",
+              "authorId": "119741197"
+            },
+            {
+              "name": "B. B. Boley",
+              "authorId": "90459383"
+            },
+            {
+              "name": "Cari Goetcheus",
+              "authorId": "98358961"
+            },
+            {
+              "name": "M. Welch-Devine",
+              "authorId": "1413314192"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 6,
+          "doi": "10.4337/JQRT.2021.01.02",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/a45ed40dbf37b8687446653eefee1d347424a161",
+          "venue": "Journal of Qualitative Research in Tourism",
+          "isInfluential": true,
+          "contexts": [
+            "The first identity positions hosts as\n\u00a9 2021 The Author Journal compilation \u00a9 2021 Edward Elgar Publishing Ltd The Lypiatts, 15 Lansdown Road, Cheltenham, Glos GL50 2JA, UK\nand The William Pratt House, 9 Dewey Court, Northampton MA 01060-3815, USA\nColumns Design XML Ltd / Job: JQRT_2021_01 / Division: jqrt_2021_01_02_for_ts /Pg. Position: 1 / Date: 29/3\nDownloaded from Elgar Online at 06/07/2021 02:37:58AM via free access\nentrepreneurs in their communities, and specifically aims to understand the formal (extrinsic) and substantive (intrinsic) motivations for their participation in the peer-topeer accommodation marketplace through the lens of Weber\u2019s Theory of Formal and Substantive Rationality (Kalberg 1980).",
+            "\u2026access\nentrepreneurs in their communities, and specifically aims to understand the formal (extrinsic) and substantive (intrinsic) motivations for their participation in the peer-topeer accommodation marketplace through the lens of Weber\u2019s Theory of Formal and Substantive Rationality (Kalberg 1980).",
+            "Prior research argues that the formal motivations of hosts are nuanced (Dubois 2015; Ikkala/Lampinen 2015; Hamari et al. 2015; Schor/Fitzmaurice 2015; Kalberg 1980).",
+            "Through Weber\u2019s Theory of Formal and Substantive Rationality (Kalberg 1980), the entrepreneurial identity was proposed to already exist within hosts.",
+            "entrepreneurs in their communities, and specifically aims to understand the formal (extrinsic) and substantive (intrinsic) motivations for their participation in the peer-topeer accommodation marketplace through the lens of Weber\u2019s Theory of Formal and Substantive Rationality (Kalberg 1980).",
+            "To simultaneously explore and expand hosts\u2019 range of extrinsic and intrinsic motivations, this study draws upon Weber\u2019s Theory of Formal and Substantive Rationality (Kalberg 1980)."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        },
+        {
+          "paperId": "89b913982089a8ac3bc50a25a06521f95d15fc76",
+          "title": "\u2018Profit Is Not a Dirty Word\u2019: Social Entrepreneurship and Community Development",
+          "authors": [
+            {
+              "name": "A. D. Duarte Alonso",
+              "authorId": "2240498759"
+            },
+            {
+              "name": "S. Kok",
+              "authorId": "101043530"
+            },
+            {
+              "name": "S. O\u2019Brien",
+              "authorId": "1388662286"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 11,
+          "doi": "10.1080/19420676.2019.1579753",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/89b913982089a8ac3bc50a25a06521f95d15fc76",
+          "venue": "Journal of Social Entrepreneurship",
+          "isInfluential": true,
+          "contexts": [
+            "Strong associations between the findings and the four\ntypes of rationality discussed in the academic literature (e.g. Boley et al. 2014; Cockerham, Abel, and L\u20acuschen 1993; Goldkuhl 2004; Kalberg 1980; Olson 2012; Phelan 1960; Townley 2002) were revealed.",
+            "Theoretical rationality is, therefore, more deep-rooted in cognitive processes as opposed to action; indeed, it is the only rationality type that is not based on value-rational or mean-end rational action (Kalberg 1980).",
+            "Formal rationality is applicable \u2018\u2026 to structured business decision-making in a market system\u2019 (Olson 2012, 217) where maximizing returns is the main goal; thus formal rationality focuses on maximizing economic gains (Boley et al. 2014; Kalberg 1980).",
+            "Practical rationality exists as a demonstration of people\u2019s capacity to engage in \u2018means-end rational action\u2019 (Kalberg 1980, 1152).",
+            "Theoretical rationality infers the conscious mastering of reality by constructing gradually accurate abstract concepts (Kalberg 1980).",
+            "In contrast to previous studies that only consider substantial and formal types of rationality, in the present research, all four types postulated by Kalberg (1980) were found to be strongly associated with the findings.",
+            "Furthermore, substantive rationality exists as a demonstration of people\u2019s \u2018inherent capacity for value-rational action\u2019 (Kalberg 1980, 1155).",
+            "Practical rational ways of life both accept realities and calculate the most practical means to deal with difficulties (Kalberg 1980).",
+            "Furthermore, it represents \u2018the purposeful calculation of the most efficient means to an end\u2019 (Cockerham, Abel, and L\u20acuschen 1993, 413), legitimizing such calculation by referring back to universal laws, regulations, or rules (Kalberg 1980).",
+            "From a theoretical point of view, the proposed refinement (Figure 1) demonstrates the value of considering all four types of rationality discussed by Kalberg (1980) in his interpretative contribution of Weber\u2019s work.",
+            "Sources: Kalberg (1980), Goldkuhl (2004), Weber (1978).\nincluding in paying higher-than-average living wages."
+          ],
+          "intents": [
+            "result",
+            "background"
+          ]
+        },
+        {
+          "paperId": "0c2c99780534ea8e5e8378b8d7c8887b0a79433b",
+          "title": "Insights From \u201cThe Machine Stops\u201d to Better Understand Rational Assumptions in Algorithmic Decision Making and Its Implications for Organizations",
+          "authors": [
+            {
+              "name": "Dirk Lindebaum",
+              "authorId": "119062856"
+            },
+            {
+              "name": "M. Vesa",
+              "authorId": "46214928"
+            },
+            {
+              "name": "F. D. Hond",
+              "authorId": "73404204"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 202,
+          "doi": "10.5465/AMR.2018.0181",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/0c2c99780534ea8e5e8378b8d7c8887b0a79433b",
+          "venue": "Academy of Management Review",
+          "isInfluential": true,
+          "contexts": [
+            "The large number of value postulates underlines a critical characteristic of Weber\u2019s substantive rationality, namely, that of radical perspectivism (Kalberg, 1980).",
+            "\u2026on formal rationality is not based upon the qualities of the individual concerned \u2013 neither the judgment of the decisionmaker, nor the specific conditions of the decision-taker \u2013 but predicated upon universalism and calculation with reference to formal rules and regulations (Kalberg, 1980).",
+            "translate into regularities and patterns of action in social life (Kalberg, 1980).",
+            "\u2026antagonism shines acutely through in Weber\u2019s work when he writes about the dominance of an impersonal formal rationality in spheres of social life that gained particular status in the industrialized era, and whose status has remained dominant to the present day (Kalberg, 1980; Weber, 1921/1946).",
+            "\u2026fateful role\u201d that \u201cthe recurrent conflict of these types of rationality has played . . . in the unfolding of rationalization processes in the West\u201d (Kalberg, 1980: 1157), a diversity of rationalities is needed to \u2018master fragmented and disconnected realities\u2019 and prevent the possible\u2026",
+            "From a theoretical perspective, assumptions around the theoretical parameters of formal\nand substantive rationality do not remain assumptions alone; whichever type of rationality is dominant, it crystalizes into conscious regularities of action over time (Kalberg, 1980).",
+            "To the extent that brute calculation reigns with regard to abstract rules, decisions are arrived at \u201cwithout regard to persons\u201d (Kalberg, 1980: 1158).",
+            "\u2026suggests that formal and substantive rationalities are often treated as\nantagonistic or opposites (Weber, 1922/1978); they inform in radically distinct ways the conscious regularities of action that are needed to \u201cmaster (beherrschen) fragmented and disconnected realities\u201d (Kalberg, 1980: 1148).",
+            "We are grateful to Nikos Gorogiannis from Facebook for clarifying these differences for us.\ninto patterns through appeals to a cluster of past, present, or potential value postulates that vary in content, comprehensiveness and consistency (Kalberg, 1980).",
+            "Therefore, substantive rationality constitutes a domain in contemporary life where the \u201cautonomous individual confronts his \u2018own demons\u2019\u201d (Kalberg, 1980: 1157) and where one has to think for oneself.",
+            "rationality; it is also understood as a historical accomplishment (Kalberg, 1980), the result of a process of formalization of substantive rationality.",
+            "6 into patterns through appeals to a cluster of past, present, or potential value postulates that vary in content, comprehensiveness and consistency (Kalberg, 1980).",
+            "This neglect comes at a cost, since these assumptions of rationality do not remain mere assumptions; they translate into regularities and patterns of action in social life (Kalberg, 1980).",
+            "Second, and implicit in our writing so far, formal rationality is not just another type of\nrationality; it is also understood as a historical accomplishment (Kalberg, 1980), the result of a process of formalization of substantive rationality.",
+            "calculation with reference to formal rules and regulations (Kalberg, 1980).",
+            "In a way, Kuno was a tragic \u201chistorical subject . . . which embodied Western civilization\u2019s highest ideal: the autonomous and free individual whose actions were given continuity by their reference to ultimate values\u201d (Kalberg, 1980: 1176).",
+            "Yet, the ability to deal with contingencies is vital for the survival of societies as it helps manage the multiplicity of value postulates that maintains rather than destroys the essence of humanity (Dewey, 1922; Elster, 1994; Kalberg, 1980).",
+            "dominant, it crystalizes into conscious regularities of action over time (Kalberg, 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "838d9250c19f6471b192fdcedd3e0bb90b3d2234",
+          "title": "Neo-Weberianism, Professional Formation and the State: Inside the Black Box",
+          "authors": [
+            {
+              "name": "M. Saks",
+              "authorId": "144684286"
+            },
+            {
+              "name": "T. Adams",
+              "authorId": "40449239"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 20,
+          "doi": "10.7577/PP.3190",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/838d9250c19f6471b192fdcedd3e0bb90b3d2234",
+          "venue": "Professions and Professionalism",
+          "isInfluential": true,
+          "contexts": [
+            "Here much reliance is placed on the Kalberg (1980) interpretation, but there is significant accord with other Weberian scholars drawing on these concepts (Geva, 2015; Levine, 1981; Ritzer & Walczak, 1988; Sterling & Moore, 1987).",
+            "Subsequently, scholars have relied on scattered discussions of rationality in Weber\u2019s work to produce a more coherent theory (Brubaker, 1984; Kalberg, 1980; Levine, 1981).",
+            "So, individuals pursuing their interests, or acting according to their values and beliefs, may shape policy in establishing formal rules (Geva, 2015; Kalberg, 1980).",
+            "Indeed, although Weber highlighted the emergence of formal rationality in many spheres of life (Kalberg, 1980; Sterling & Moore, 1987), he did not predict that it would undermine all other forms of rationality (Anter, 2015; H\u00fcbinger, 2009)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "b992d9eb314994d1970851c27816aba9dd87da7a",
+          "title": "Care order cases in the European Court of Human Rights - Parents' vs. children's rights",
+          "authors": [
+            {
+              "name": "Trond Helland",
+              "authorId": "151231594"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/b992d9eb314994d1970851c27816aba9dd87da7a",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "He argued that \u201cprimitive\u201d men\u2019s specific religious rituals in order to favor a specific God, were indeed subjectively rational (Kalberg, 1980, p.1148).",
+            "Weber divided rationality in to four typologies of social action: affectual, traditional, value-rational and purposive-rational.30 (Eriksen and Weig\u00e5rd, 2014, p.34 - 36, Kalberg, 1980, p.1148 - 1149).",
+            "One knows what means to use, but goal, value and consequences are unclear (Kalberg, 1980, p.1147 - 1150, Eriksen and Weig\u00e5rd, 2014, p.34 - 37)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "56e8ace1f7bdd98df32e7e864c0501cfb0bd2237",
+          "title": "Terror in West Africa: a threat assessment of the new Al Qaeda affiliate in Mali",
+          "authors": [
+            {
+              "name": "Megan Zimmerer",
+              "authorId": "2337739743"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 12,
+          "doi": "10.1080/17539153.2019.1599531",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/56e8ace1f7bdd98df32e7e864c0501cfb0bd2237",
+          "venue": "Critical Studies on Terrorism",
+          "isInfluential": true,
+          "contexts": [
+            "The study then brie \ufb02 y examines JNIM from the standpoint of Weberian rationality (Kalberg 1980) in order to forecast what types of cost-bene \ufb01 t analysis JNIM might engage in during target selection.",
+            "Substantive rationality can be described as conscious action in accordance with a value postulate (1980, 1155).",
+            "Max Weber categorizes rationality into four distinct categories: theoretical, substantive, formal, and practical (Kalberg 1980).",
+            "Finally, JNIM uses practical rationality, de \ufb01 ned as \u201c pragmatic and egoistic interests \u201d (Kalberg 1980, 1151), which allows intelligence experts to determine which targets might be most attractive from the standpoint of a terrorist engaging in cost-bene \ufb01 t analysis while planning an attack."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "28218af79d3ff0dce23079fe3472cfb02279855f",
+          "title": "A neglected gap in the Weber thesis? The long economic lag of capitalism from Protestantism",
+          "authors": [
+            {
+              "name": "M. Zafirovski",
+              "authorId": "13845921"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 7,
+          "doi": "10.1177/0539018419838492",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/28218af79d3ff0dce23079fe3472cfb02279855f",
+          "venue": "Social Science Information",
+          "isInfluential": true,
+          "contexts": [
+            "\u20261975; Parsons and Smelser, 1956) and his disciples (Mayhew, 1984; Smelser, 1997) and other Weberian sociologists and economists (Anderson, 1988; Bendix, 1946, 1965, 1977; Campbell, 2009; Davis, 1978; Jonassen, 1947; Kalberg, 1980; Barro and McCleary, 2003; McCleary and Barro, 2006; Stark, 1964).",
+            "Weber in General Economic History downgrades Calvinism from the most powerful factor in the genesis (Bendix, 1977; Kalberg, 1980; McCleary and Barro, 2006; Landes, 1998; Munch, 2001; Parsons, 1937) and development of capitalism to just one among multiple factors.",
+            "\u2026primarily owing to the powerful impact of the Calvinist cardinal theological dogma, Calvin\u2019s doctrine of predestination (Bendix, 1977; Gorski, 2000; Kalberg, 1980; McCleary and Barro, 2006; Fourcade and Healy, 2007; Friedman, 2011; Parsons, 1938; Stokes, 1975; Swidler, 1986; Zaret, 1985).",
+            "\u2026as the main theological foundation of Protestant societal asceticism and consequently of the spirit of capitalism (also, Akerlof, 2007; Bendix, 1977; McCleary and Barro, 2006; Fourcade and Healy, 2007; Kalberg, 1980; Parsons, 1938; Young, 2009; yet see Collins, 1980; Samuelsson,18 1961).",
+            "This typology of multiple factors of capitalism dethrones ascetic Protestantism to a supplementary, even if necessary condition (Becker and Woessmann, 2009; Kalberg, 1980; Landes, 1998; McCleary and Barro, 2006; Means, 1965; Parsons, 1937).",
+            "\u2026the interaction and mutual adaptation, thus interdependence, interconnection, and interpenetration (Bendix, 1946; Collins, 1980; Howe, 1978; Kalberg, 1980; Merton, 1968; Munch, 2001; Parsons, 1935, 1937; Smelser, 1997; Smelser and Swedberg, 2005; Swedberg, 1998, 2005; Swidler, 1986;\u2026",
+            "This indicates a large gap of several centuries between the genesis of Calvinism\n(Benedict, 2002; Heller, 1986; Walzer, 1965) and of modern industrial capitalism (Kalberg, 1980; Munch, 2001; Parsons, 1938).",
+            "\u2026of an individual\u2019s predestination15 for salvation or damnation, generating the pattern of ascetic behavior (Weber, 1978; also, Scheler, 1964; Troeltsch, 1966) through a calling as proof of the elect (Ay and Dolphin, 1994; Kalberg, 1980; McCleary and Barro, 2006; Parsons, 1938; Stark, 1964)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "d8cee7a604258af9619080229bce5ea55b055f95",
+          "title": "Comparative analysis of the emerging projects in Latin America after the crisis of the neoliberal modernity project in the early 21st century",
+          "authors": [
+            {
+              "name": "Gustavo Morales",
+              "authorId": "2054385139"
+            }
+          ],
+          "year": 2018,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1177/0725513618813382",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/d8cee7a604258af9619080229bce5ea55b055f95",
+          "venue": "Thesis Eleven",
+          "isInfluential": true,
+          "contexts": [
+            "What is at stake is the validity of liberal values applied as \u2018unique standards against which reality\u2019s flow of unending empirical events may be selected, measured, and judged\u2019 (Kalberg, 1980: 1155).",
+            "Although modernity projects present themselves as processes that respond to sheer rationality, if they are seen closely, there are always ultimate values behind their \u2018universally applied laws\u2019 (Kalberg, 1980).",
+            "\u2026that organizes actions \u2018not on the basis of a purely means-end calculation of solutions to routine problems but in relation to a past, present, or potential \u201cvalue postulate\u201d\u2019 (Kalberg, 1980: 1155), is called \u2018substantive rationality\u2019 and is also present, but often covered within modernity."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "7833ddbbd34786a771be437253ec5769b5ef9c0b",
+          "title": "Competing institutional logics in Soviet industrial location policy",
+          "authors": [
+            {
+              "name": "Nooa Nyk\u00e4nen",
+              "authorId": "97721888"
+            }
+          ],
+          "year": 2018,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1080/15387216.2019.1581631",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7833ddbbd34786a771be437253ec5769b5ef9c0b",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The economic logic bound together various arguments, representing a formal type of rationality (Kalberg 1980) from the perspective of economic profitability.",
+            "Each logic was translated into the institutional field in the form of theories, frames and narratives (Thornton, Ocasio, and Lounsbury 2012), which utilized different\ntypes of rationality (Kalberg 1980).",
+            "During the early period of industrialization, when the institutional field of industrial location policy was developing, the conflict of logics emerged in different ways to interpret and rationalize (Kalberg 1980) location problems.",
+            "In many ways, the argumentation of regional logic employed a theoretical type of rationality (Kalberg 1980, 1152\u20131155), grounding its central beliefs in the Marxist doctrine of social equality."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "68e4d21506bece3a4f04ca10fe174217bd105d20",
+          "title": "From Values to Value: Value Rationality and the Creation of Great Strategies",
+          "authors": [
+            {
+              "name": "V. Rindova",
+              "authorId": "2852306"
+            },
+            {
+              "name": "L. Martins",
+              "authorId": "38899167"
+            }
+          ],
+          "year": 2018,
+          "abstract": null,
+          "citationCount": 44,
+          "doi": "10.1287/STSC.2017.0038",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/68e4d21506bece3a4f04ca10fe174217bd105d20",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026theorized four types of rationality that organize these action capacities in patterns of social action\u2014practical, theoretical, substantive, and formal (Kalberg 1980, 2012).2 While different in content, all four types of rationality refer to mental processes through which people give coherence and\u2026",
+            "As a result, it can directly shape action patterns but \u201cnot on the basis of a purely means-end\ncalculation of solutions to routine problems but in relation to a past, present, or potential \u2018value postulate\u2019 \u201d (Kalberg 1980, p. 1155; Weber 1968, pp. 85\u201386).",
+            "\u2026encompasses \u201cevery way of life that views and judges worldly activity in relation to the individual\u2019s purely pragmatic and egoistic interests\u201d and \u201caccepts given realities and calculates the most expedient means of dealing with the difficulties they present\u201d (Kalberg 1980, pp. 1151\u20131152).",
+            "Substantive rationality therefore supplies \u201ca unique \u2018standard\u2019 against which reality\u2019s flow of unending empirical events may be selected, measured, and judged\u201d (Kalberg 1980, p. 1155; Weber 1946, p. 294).",
+            "\u2026contrasted instrumental actions that are \u201cmore or less universally based on principles of deductive reasoning and means-end relations\u201d (Von Scheve 2016, p. 186) with value-rational actions that are motivated and rationalized with reference to \u201cinternally binding values\u201d (Kalberg 1980, p. 1167).",
+            "Furthermore, societal doctrines also create variation by placing \u201cpsychological premiums\u201d on different patterns of instrumental actions (Kalberg 1980, p. 1152)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "d274189075a9c0da26b14b9815a93ddc1570f5fb",
+          "title": "Seres do Subterr\u00e2neo: Os Invis\u00edveis do Mundo Moderno",
+          "authors": [
+            {
+              "name": "Felipe Borges Amaral",
+              "authorId": "146682799"
+            },
+            {
+              "name": "Ketlle Duarte Paes",
+              "authorId": "118176857"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.21714/1679-18272016V14N2.P367-380",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/d274189075a9c0da26b14b9815a93ddc1570f5fb",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Josefina se afirma \u2013 esse nada de voz, esse nada de desempenho se afirma e abre caminho at\u00e9 n\u00f3s: faz bem pensar nisso (KAFKA, 1998. p. 47).",
+            "O povo segue tranquilo, sem desilus\u00e3o aparente, \u201cuma massa que encontra em si mesma o equil\u00edbrio\u201d, certos de que n\u00e3o perder\u00e3o muito (KAFKA, 1998. p. 59).",
+            "Introdu\u00e7\u00e3o\nEm Josefina, a Cantora ou O Povo dos Camundongos, Franz Kafka (1998) narra a hist\u00f3ria de uma comunidade de ratos, onde Josefina, ao exercitar seu assobiar, ao emitir seus singelos ru\u00eddos, consegue deter a audi\u00eancia de toda sua comunidade."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "c9b078d85293953dfe1809deff9b7c67b2b2a2ea",
+          "title": "Islamic Family Business: The Constitutive Role of Religion in Business",
+          "authors": [
+            {
+              "name": "M. Kavas",
+              "authorId": "38540548"
+            },
+            {
+              "name": "P. Jarzabkowski",
+              "authorId": "2142253"
+            },
+            {
+              "name": "Amit Nigam",
+              "authorId": "3484367"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 44,
+          "doi": "10.1007/s10551-019-04384-5",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c9b078d85293953dfe1809deff9b7c67b2b2a2ea",
+          "venue": "Journal of Business Ethics",
+          "isInfluential": true,
+          "contexts": [
+            "We suggest that family members in family firms operating in a faith-led context are likely to take valuerational business actions in conformity with their religious values (Kalberg 1980; Weber 1968).",
+            "We thus extend existing understandings of rational action in business (Cabantous and Gond 2011) to include religious beliefs as a form of value rationality, which refers to the process through which an action is guided by values intrinsic to actors, rather than by its mere means-end calculation (Kalberg 1980).",
+            "To explain how these firms rationalise their actions, we reintroduce the notion of value rationality (Kalberg 1980; Weber 1968) into organisation studies.",
+            "In doing so, people go beyond a pure means-end calculation of an action; instead, they rationalise their actions based on the value content of those actions (Kalberg 1980; Satow 1975).",
+            "\u2026existing understandings of rational action in business (Cabantous and Gond 2011) to include religious beliefs as a form of value rationality, which refers to the process through which an action is guided by values intrinsic to actors, rather than by its mere means-end calculation (Kalberg 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "d0852aadd2f8c5b386925946748daed3f2bc7f20",
+          "title": "ESPIRITUALIDADE NO AMBIENTE DE TRABALHO: ESTUDO BIBLIOM\u00c9TRICO DA PRODU\u00c7\u00c3O ACAD\u00caMICA NACIONAL 2010-2014",
+          "authors": [
+            {
+              "name": "A. C. D. Silva",
+              "authorId": "1570259256"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.7769/GESEC.V8I2.594",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/d0852aadd2f8c5b386925946748daed3f2bc7f20",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Max Weber indicava os preceitos da \u00e9tica protestante como forte influ\u00eancia na constru\u00e7\u00e3o de uma l\u00f3gica da vida em sociedade que percorria todas as esferas sociais como a economia, pol\u00edtica, ci\u00eancia e religi\u00e3o.",
+            "Esses argumentos parecem refletir sobre o dilema apresentado ao in\u00edcio deste\nartigo, quando questiona a possibilidade de supera\u00e7\u00e3o de concep\u00e7\u00f5es fortemente impressas num imagin\u00e1rio socialmente constru\u00eddo em torno do que Weber apontava como esp\u00edrito do capitalismo moderno (Kalberg, 1980).",
+            "Max Weber\u201fs types of rationality: cornerstones for the analysis of rationalization Processes in History.",
+            "A rela\u00e7\u00e3o de impessoalidade e efici\u00eancia sugeridas como essenciais ao desempenho organizacional desde a proposta de Max Weber (Kalberg, 1980) sobre burocracia reflete nas condi\u00e7\u00f5es de supera\u00e7\u00e3o dos problemas ocupacionais que afligem a sociedade."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "e887e1637bd58992d6008559941ff05274504249",
+          "title": "IT-enabled rationalization of public administration in developing countries: essays on Ghana\u2019s customs modernization",
+          "authors": [
+            {
+              "name": "Atta Addo",
+              "authorId": "145304629"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.21953/LSE.7TY0QUA61INU",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/e887e1637bd58992d6008559941ff05274504249",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\uf0b7 General values, rationalities and cultural perspectives of situated actors (individuals, organizations and even the state) (Kalberg 1980; Weber 1946; Avgerou 2000b; Avgerou 2002).",
+            "Substantive rationality on the other hand, guides action by providing \u2018value postulates\u2019 that enable standards against which reality is judged (Kalberg 1980).",
+            "Rationalization might be broadly conceived as the replacement of tradition and affectionbased social behaviours with calculative ones (Weber 2002; Kalberg 1980; Weber 1968).",
+            "be seen as \u2018ideal types\u2019 (Kalberg 1980; Weber 1968), that is, hypothetical conceptualizations of best practice principles to guide action in given domains (Gerth & Wright Mills 1958, p.",
+            "According to Weber, rationalization therefore occurs at various levels of society and are driven by specific modes of rationality: practical, theoretical, substantive and formal (Kalberg 1980) which correspond to ideal types of social organization.",
+            "substantive and formal\u2013 are pertinent to the achievement of organizational goals such as the bureaucracy by calculated, systematic means (Kalberg 1980; Weber 1968).",
+            "Formal rationality was said to enable the most precise and efficient means for resolving problems by providing universal and abstract regulations; rather than arbitrary, personalised and idiosyncratic ones (Weber 1968; Kalberg 1980).",
+            "For example, from the point of view of a free market economy, monopolies are \u2018irrational\u2019 because they prevent competition; similarly, from the point of view of science, religion is \u2018irrational\u2019 because it does not subscribe to empiricism (Kalberg 1980).",
+            "Such logics of IT are \u2018ideal types\u2019 (Kalberg 1980; Weber 1968) because they are abstract, hypothetical conceptualizations of principles to guide action in host domains."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "0d3dbe8add52ca633c4f46140d42d52e50640f2d",
+          "title": "Empowerment and resident support for tourism in rural Central and Eastern Europe (CEE): the case of Pomerania, Poland",
+          "authors": [
+            {
+              "name": "M. Strzelecka",
+              "authorId": "104807419"
+            },
+            {
+              "name": "B. B. Boley",
+              "authorId": "90459383"
+            },
+            {
+              "name": "Celina Strzelecka",
+              "authorId": "116439426"
+            }
+          ],
+          "year": 2017,
+          "abstract": null,
+          "citationCount": 149,
+          "doi": "10.1080/09669582.2016.1224891",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/0d3dbe8add52ca633c4f46140d42d52e50640f2d",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Thus, substantive rationality exists as an individual\u2019s inherent capacity for value-rational action in certain areas of life, leaving all other areas such as economic needs untouched (Weber, 1968, pp. 44\u201345 [85], in Kalberg, 1980).",
+            "\u2026and their focus on capitalism, and subsequently labeling non-Western societies as irrational, Weber acknowledged that rationality is inherent in all and is comprised of means-end rational action (formal rationality) as well as value-rational action (substantive rationality) (Kalberg, 1980).",
+            "The WFSR was developed by the famous sociologist, Max Weber, as a means to explain a person\u2019s motives behind engaging in different forms of economic activity (Jagd, 2002; Kalberg, 1980).",
+            "Weber developed his idea through examining the differences between the rationalization processes of \u201cChinese, Indian and ancient Near East civilizations and the rationalization processes that characterize European-American civilization\u201d (Kalberg, 1980, p. 1149).",
+            "behind engaging in different forms of economic activity (Jagd, 2002; Kalberg, 1980).",
+            "Rather than limiting rationality to Western societies and their focus on capitalism, and subsequently labeling non-Western societies as irrational, Weber acknowledged that rationality is inherent in all and is comprised of means-end rational action (formal rationality) as well as value-rational action (substantive rationality) (Kalberg, 1980).",
+            "According to Kalberg (1980), Weber\u2019s substantive rationality implies that human action can be guided by the necessity for internal consistency and that one\u2019s actions are consistent with the value postulate that he or she holds.",
+            "Formal rationality focuses upon maximizing economic gain through the laws of the market (Kalberg, 1980, p. 1159)."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "fc8251cb8fdf36aa9fe8a34be4bc783e1e1e7124",
+          "title": "Selective Regulator Decoupling and Organizations\u2019 Strategic Responses",
+          "authors": [
+            {
+              "name": "Jonas Heese",
+              "authorId": "71124072"
+            },
+            {
+              "name": "Ranjani Krishnan",
+              "authorId": "40012096"
+            },
+            {
+              "name": "F. Moers",
+              "authorId": "20425125"
+            }
+          ],
+          "year": 2016,
+          "abstract": null,
+          "citationCount": 56,
+          "doi": "10.5465/AMJ.2015.0446",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/fc8251cb8fdf36aa9fe8a34be4bc783e1e1e7124",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026regulator to exhibit formal rationality with attendant demands for universal application of rules, laws, and regulation \u201cwithout regard to persons\u201d (Kalberg, 1980: 1158), while others force the regulator to think about substantial rationality in the form of \u201cvalue\nElectronic copy available at:\u2026",
+            "\u20261980: 1158), while others force the regulator to think about substantial rationality in the form of \u201cvalue\nElectronic copy available at: https://ssrn.com/abstract=3345166\npostulates\u201d, i.e., \u201cclusters of values that vary in comprehensiveness, internal consistency, and content\u201d (Kalberg, 1980: 1158).",
+            "First, conflicting pressures to maximize technical efficiency on the one hand and social welfare on the other give rise to competing forms of rationality within the regulatory organization\u2014that is formal rationality and substantive rationality (Bromley, Hwang, & Powell, 2013; Bromley & Powell, 2012; Kalberg, 1980; Weber, 1978).",
+            "\u2026maximize technical efficiency on the one hand and social welfare on the other give rise to competing forms of rationality within the regulatory organization\u2014that is formal rationality and substantive rationality (Bromley, Hwang, & Powell, 2013; Bromley & Powell, 2012; Kalberg, 1980; Weber, 1978)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "236f9347f1e74646fc38d560e0fd456f3e7542af",
+          "title": "Social Protest under Authoritarianism: A Critique of Regime Type and Instrumental Rationality-based Explanations",
+          "authors": [
+            {
+              "name": "Ahmad H. Sa\u2019di",
+              "authorId": "153319604"
+            }
+          ],
+          "year": 2015,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": "10.1177/0038038514540372",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/236f9347f1e74646fc38d560e0fd456f3e7542af",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Moreover, these acts reflect the human agent\u2019s inherent capacity for value-rational action (Kalberg, 1980: 1155).",
+            "Weber created a four-fold typology of social action: affectual, traditional, value-rational, and means-end (instrumental or Practical Rationality) (Kalberg, 1980: 1148\u201351).",
+            "Furthermore, although Weber was dismissive of the notion that instrumental rationality is rooted in modernity (Kalberg, 1980: 1148), the question is why only this form of rationality was attributed to the actions of protestors."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "ebc436ddf8e5d85acac0d0fbc2979df30f991c67",
+          "title": "Rewards in organizations: a bibliometric analysis of Brazilian literature from 2000-2011",
+          "authors": [
+            {
+              "name": "Andrea Val\u00e9ria Steil",
+              "authorId": "143993814"
+            },
+            {
+              "name": "C. E. Garcia",
+              "authorId": "2111096624"
+            },
+            {
+              "name": "Tha\u00eds Cristine Farsen",
+              "authorId": "2091780694"
+            },
+            {
+              "name": "Mar\u00eda Alejandra Maldonado Bonilla",
+              "authorId": "2058454227"
+            }
+          ],
+          "year": 2014,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/ebc436ddf8e5d85acac0d0fbc2979df30f991c67",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Considerando-se o fato da gest\u00e3o das organiza\u00e7\u00f5es burocr\u00e1ticas ser norteada pela racionalidade formal (Kalberg, 1980), \u00e9 questionado se a maior quantidade de artigos em ve\u00edculos da administra\u00e7\u00e3o n\u00e3o estaria atrelada a uma vis\u00e3o puramente instrumental (Ramos, 1981) das recompensas.",
+            "O balizamento das a\u00e7\u00f5es pela racionalidade (substantiva ou formal) reflete-se tanto nas rela\u00e7\u00f5es organizacionais como em sua estrutura e processos (Kalberg, 1980), por isso a necessidade da reflex\u00e3o acerca de qual a racionalidade subjacente dos estudos sobre recompensas.",
+            "\u2026que possam promover, preservar e restabelecer a qualidade de vida e o bem estar das pessoas (Zanelli & Bastos, 2004, pp. 466-467), pode-se supor que a pesquisa e a interven\u00e7\u00e3o em POT equacionam-se com uma racionalidade diferente da formal, denominada substantiva (Kalberg, 1980; Ramos, 1981)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "9e86394e1d80c34d119466625f154d8b0e5958b2",
+          "title": "Social action theory for understanding information security non-compliance in hospitals: The importance of user rationale",
+          "authors": [
+            {
+              "name": "Karin Hedstr\u00f6m",
+              "authorId": "2617486"
+            },
+            {
+              "name": "F. Karlsson",
+              "authorId": "35383870"
+            },
+            {
+              "name": "Ella Kolkowska",
+              "authorId": "2915891"
+            }
+          ],
+          "year": 2013,
+          "abstract": null,
+          "citationCount": 33,
+          "doi": "10.1108/IMCS-08-2012-0043",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9e86394e1d80c34d119466625f154d8b0e5958b2",
+          "venue": "Information Management & Computer Security",
+          "isInfluential": true,
+          "contexts": [
+            "These methods of controlling information security depend on how a potential security breach is perceived and explained.",
+            "Information security researchers who are socially oriented tend to lean on organizational and social theories, such as deterrence theory (Lee et al., 2004) or theory of planned based behaviour (Bulgurcu et al., 2010), in order to explain non-compliance and suggest countermeasures.",
+            "However, instead of accepting given realities and choosing from preconceived means, these decisions are anchored in specific value systems that vary \u201cin comprehensiveness, internal consistency and content\u201d (Kalberg, 1980).",
+            "Value-oriented and instrumental actions can be associated with Weber\u2019s types of rationality, whereby mental processes can be categorized as: practical, theoretical, substantive, or formal (Kalberg, 1980).",
+            "The second type of rationality, theoretical rationality, is used by individuals to master reality through conceptual models \u201crather than through actions\u201d (Kalberg, 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "76171df5a9358cf1078724e083c09c9d802dd1eb",
+          "title": "Sustainability, Empowerment, and Resident Attitudes toward Tourism: Developing and Testing the Resident Empowerment through Tourism Scale (RETS)",
+          "authors": [
+            {
+              "name": "B. B. Boley",
+              "authorId": "90459383"
+            }
+          ],
+          "year": 2013,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/76171df5a9358cf1078724e083c09c9d802dd1eb",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "41\nHistory of Weber\u2019s Theory of Formal and Substantive Rationality\nThe theory of formal and substantive rationality was developed by the historical\nsociologist Max Weber, who is considered to be one of the founding fathers of sociology (Kalberg, 1980; Jagd, 2002).",
+            "Formal rationality is concerned with the maximization of personal economic gain (Kalberg, 1980).",
+            "influenced by a balance in the tension between one\u2019s formal (economic) motivations and their substantive (non-economic) motivations (Kalberg, 1980; Jagd, 2002).",
+            "Weber saw this difference in rationalization first hand through examining the differences between the rationalization processes of \u201cChinese, Indian and ancient Near East civilizations and the rationalization processes that characterize European-American civilization\u201d (Kalberg, 1980, p. 1149).",
+            "Formal rationality focuses on the purely economic motivations to engage in economic activity while substantive rationality emphasizes those non-economic factors affecting ones motivations such as values and morals (Kalberg, 1980).",
+            "41 History of Weber\u2019s Theory of Formal and Substantive Rationality The theory of formal and substantive rationality was developed by the historical sociologist Max Weber, who is considered to be one of the founding fathers of sociology (Kalberg, 1980; Jagd, 2002).",
+            "civilizations as irrational, Weber acknowledged that rationality is inherent in all and is comprised of means-end rational action (formal rationality) as well as value-rational action (substantive rationality) (Kalberg, 1980).",
+            "Weber portrays rationality as something inherent to being human, which is in stark contrast to Enlightenment thinking which believed that previous eras were incapable of rational action (Kalberg, 1980, p. 1148).",
+            "\u2026attitude research is derived from its explanation of human rationality that includes both market (formal) and nonmarket variables (substantive) such as values, beliefs, morals, and philosophy in the explanation of why humans engage in economic transactions (Andereck et al. 2005; Kalberg, 1980).",
+            "substantive rationality explains that humans engage in relational exchanges for both market based (formal) and non-market (substantive) reasons (Andereck et al. 2005; Kalberg, 1980).",
+            "\u2026and their focus on capitalism, and subsequently labeling non-Western civilizations as irrational, Weber acknowledged that rationality is inherent in all and is comprised of means-end rational action (formal rationality) as well as value-rational action (substantive rationality) (Kalberg, 1980).",
+            "Weber\u2019s Theory of Formal and Substantive Rationality: Weber\u2019s theory of rationality\ndescribes the reasoning/motivation for engaging in any type of economic activity as function of either formal or substantive motivations (McGehee, 2007, Kalberg, 1980).",
+            "Weber\u2019s theory conceptualizes human rationality as being influenced by a balance in the tension between one\u2019s formal (economic) motivations and their substantive (non-economic) motivations (Kalberg, 1980; Jagd, 2002).",
+            "derived from its explanation of human rationality that includes both market (formal) and nonmarket variables (substantive) such as values, beliefs, morals, and philosophy in the explanation of why humans engage in economic transactions (Andereck et al. 2005; Kalberg, 1980)."
+          ],
+          "intents": [
+            "background",
+            "result"
+          ]
+        },
+        {
+          "paperId": "8edae01e1fb98310aea0f53fe7ab5929e5e1f61c",
+          "title": "From Smoke and Mirrors to Walking the Talk: Decoupling in the Contemporary World",
+          "authors": [
+            {
+              "name": "Patricia Bromley",
+              "authorId": "39624092"
+            },
+            {
+              "name": "W. Powell",
+              "authorId": "3276126"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 1073,
+          "doi": "10.1080/19416520.2012.684462",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/8edae01e1fb98310aea0f53fe7ab5929e5e1f61c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The goal is to \u201ccalculate the most precise and efficient means for the resolution of problems by ordering them under universal and abstract regulations\u201d (Kalberg, 1980, p. 1158). In contrast, actions driven by substantive rationality reflect deeply held values such as love or friendship. In cases where the trappings of formal rationality take on substantive value over and above their known direct contribution to achieving desired ends (e.g. in education testing), we observe means\u2013ends decoupling. Similarly, when substantive values in the environment (e.g. protecting the natural world or human rights) emerge in formally rational organizations, the clear link between means and ends becomes blurred. Below, we flesh out our conception of means\u2013ends decoupling and then discuss three consequences for organizations\u2014greater internal complexity, endemic reform, and the diversion of resources. We believe that instances of means\u2013ends decoupling are on the rise in the contemporary world. Conversely, instances of policy\u2013practice decoupling may become less common. In a rationalizing world, with heightened emphasis on transparency and accountability, policy\u2013practice decoupling is increasingly likely to be seen as a moral and operational failure, in contrast to early conceptual depictions that emphasized the legitimacy benefits of decoupling. Although it is largely overlooked, Meyer and Rowan\u2019s (1977) classic theorization was not limited just to policy\u2013practice decoupling.",
+            "The goal is to \u201ccalculate the most precise and efficient means for the resolution of problems by ordering them under universal and abstract regulations\u201d (Kalberg, 1980, p. 1158).",
+            "He recognized an everpresent tension between modernity and the process of modernization, and saw rationality as a multi-faceted enterprise, with practical, substantive, theoretical, and formal components (Kalberg, 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "f0348f468c829b8c39de80a2c24aec08288bcd72",
+          "title": "Sentidos do trabalho e racionalidades instrumental e substantiva: interfaces entre a administra\u00e7\u00e3o e a psicologia",
+          "authors": [
+            {
+              "name": "Silvia Patricia Cavalheiro de Andrade",
+              "authorId": "115961766"
+            },
+            {
+              "name": "Suzana da Rosa Tolfo",
+              "authorId": "80639923"
+            },
+            {
+              "name": "E. H. L. Dellagnelo",
+              "authorId": "95379386"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 40,
+          "doi": "10.1590/S1415-65552012000200003",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f0348f468c829b8c39de80a2c24aec08288bcd72",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Kalberg (1980) destaca que, segundo o pensamento weberiano, as diferentes formas organizacionais encontradas na realidade social podem ser explicadas pela predomin\u00e2ncia do uso de tipos espec\u00edficos de racionalidades.",
+            "\u2026an\u00e1lise da literatura de autores cl\u00e1ssicos e de pesquisadores contempor\u00e2neos (A. G. Ramos, 1989; Clegg, 1990; Dellagnelo & Machado-da-Silva, 2000; Kalberg, 1980; Serva, 1993, 1996, 1997a, 1997b; Weber, 1994), s\u00e3o caracterizadas por tra\u00e7os que possibilitam aproxima\u00e7\u00f5es com os elementos\u2026",
+            "O conceito de racionalidade, na literatura sociol\u00f3gica cl\u00e1ssica, representa o elemento mais\nimportante do pensamento weberiano (Kalberg, 1980).",
+            "Kalberg (1980) explica que esta \u00faltima \u00e9 conhecida tamb\u00e9m como racionalidade instrumental, e predomina nas chamadas organiza\u00e7\u00f5es burocr\u00e1ticas.",
+            "\u201cWeber refere-se \u00e0 domina\u00e7\u00e3o burocr\u00e1tica como formalmente racional porque nela domina a a\u00e7\u00e3o orientada para regras e estatutos gerais intelectualmente analis\u00e1veis, assim como a sele\u00e7\u00e3o dos meios mais adequados para o cont\u00ednuo seguimento deles\u201d (Kalberg, 1980, p. 1158)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "420abfa06d9920b001c4a34825809a45582b8b49",
+          "title": "Breaking up is hard to do: Irrational inconsistency in commitment to an industry peer network",
+          "authors": [
+            {
+              "name": "Stoyan V. Sgourev",
+              "authorId": "3315725"
+            },
+            {
+              "name": "Ezra W. Zuckerman",
+              "authorId": "32644683"
+            }
+          ],
+          "year": 2011,
+          "abstract": null,
+          "citationCount": 18,
+          "doi": "10.1177/1043463110396444",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/420abfa06d9920b001c4a34825809a45582b8b49",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026important aspect of what it means for an actor to be rational, as reflected in Weber\u2019s distinction between substantive and practical rationality (see Kalberg 1980; Levine 1981).17 Thus, while external standards of rationality should continue to command attention, there are important reasons to\u2026",
+            "\u2026to some standard that is independent of the actor\u2019s preferences; and internal standards, whereby the actor is judged irrational if she acts in a manner that is inconsistent with her preferences (cf. Weber\u2019s distinction between substantive and practical rationality; Kalberg 1980; Levine 1981).",
+            "Following Hollis (1987), it is useful to distinguish between external standards for rationality, which evaluate an actor\u2019s actions according to some standard that is independent of the actor\u2019s preferences; and internal standards, whereby the actor is judged irrational if she acts in a manner that is inconsistent with her preferences (cf. Weber\u2019s distinction between substantive and practical rationality; Kalberg 1980; Levine 1981)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "103765e0ce8cedf0fc3e3719d652b7116bcb724b",
+          "title": "Competing rationalities in the diversity project of the UK judiciary: The politics of assessment centres",
+          "authors": [
+            {
+              "name": "G. Healy",
+              "authorId": "39091295"
+            },
+            {
+              "name": "G. Kirton",
+              "authorId": "51043752"
+            },
+            {
+              "name": "Mustafa F. O\u0308zbilgin",
+              "authorId": "70533915"
+            },
+            {
+              "name": "Franklin Oikelome",
+              "authorId": "82872690"
+            }
+          ],
+          "year": 2010,
+          "abstract": null,
+          "citationCount": 18,
+          "doi": "10.1177/0018726709343335",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/103765e0ce8cedf0fc3e3719d652b7116bcb724b",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Theoretical rationality involves \u2018a conscious mastery of reality through the construction of increasingly precise abstract concepts\u2019 (Kalberg, 1980: 1152).",
+            "Like Townley (2002) we draw on Kalberg (1980) who sought to reconstruct at the purely conceptual level, Weber\u2019s vision of a multiplicity of rationalization processes that variously conflict and coalesce with one another at all societal and civilizational levels with the discrete types of\u2026",
+            "Moreover, rationalization processes take place each independently of the other and at their own rate (Kalberg, 1980).",
+            "Practical rationality accepts given realities and calculates the most expedient means of dealing with the difficulties they present (Kalberg, 1980).",
+            "\u2026paper was treated fairly; in essence the anonymizing process would be tantamount to a rejection of any arbitrariness in the way that theoretical tests would be activated through formal rationalities associated with universally applied rules, laws and regulations (as cited earlier by Kalberg, 1980).",
+            "Kalberg (1980) states that theoretical rationalization processes may also be carried out by judges who interpret the incipient world view found in political constitution.",
+            "Formal rationality is characterized by an orientation of action to formal rules and laws and is tantamount to a rejection of all arbitrariness so that a means-end rational calculation is made by reference back to universally applied rules, laws or regulations (Kalberg, 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "82400ee9a1de4cbb75edcd8a1e255d653aa30b70",
+          "title": "The Disregard for Weber's Herrschaft",
+          "authors": [
+            {
+              "name": "Koen P. R. Bartels",
+              "authorId": "118816287"
+            }
+          ],
+          "year": 2009,
+          "abstract": null,
+          "citationCount": 22,
+          "doi": "10.2753/ATP1084-1806310401",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/82400ee9a1de4cbb75edcd8a1e255d653aa30b70",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026development that \u201can impersonal substantive rationality itself became a means appropriate for the fulfillment of formal rational patterns of action\u201d (Kalberg, 1980, p. 1162) fundamentally inhibits the enactment of substantive rationality: \u201ca tendency of officials to treat their official function\u2026",
+            "On the one hand, bureaucratic power is constrained through its formal system that requires substantive rational debatable reasons for every action (Elster, 2000, pp. 22\u201324; Kalberg, 1980, pp. 1155\u20131162).",
+            "Substantive rationality manifests itself through value-rational behavior that depends on acting according to the value postulates that constitute the \u201cstandard against which reality\u2019s flow of understanding empirical events may be selected, measured, and judged\u201d (Kalberg, 1980, p. 1155).",
+            "Types of rationality are institutionalized as normative regularities of action into an organizational \u201clife-order\u201d (lebensordnung) (De Valk, 1980; Goddijn, 1980; Kalberg, 1980).",
+            "The goal of formal rational behavior is to maximize predictability and minimize personal preferences (Kalberg, 1980).",
+            "Organizations embody \u201ccommon action orientations\u201d (Kalberg, 1980, p. 1161 n18) that increase the chance of particular kinds of behavior."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "089889681b4ab7c83e3f3218c53e05e2a07422dd",
+          "title": "Rationalizing Responsibility: Weber's Theory of Rationality and the Corporate Social Responsibility Debate",
+          "authors": [
+            {
+              "name": "Daniel B. Ahlquist",
+              "authorId": "104404917"
+            }
+          ],
+          "year": 2007,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/089889681b4ab7c83e3f3218c53e05e2a07422dd",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026means-end rational calculation but, unlike practical rationality, where means-end rational action is taken strictly in relation to an actor\u2019s own pragmatic and egoistic wants and needs, formal rationality occurs with reference to universally applied laws, regulations, and rules (Kalberg 1980).",
+            "This is particularly true in the economic, legal, and scientific spheres, as well as in the bureaucratic form of domination (Kalberg 1980).",
+            "In Weber\u2019s eyes, this pure exchange relationship as it existed in sacrifice and prayer\u2026 was identical in form to the modern businessman\u2019s calculation of the most efficient means to acquire profit (Kalberg 1980, p. 1148).",
+            "68\nnot directly pattern one\u2019s actions, although Kalberg suggests that \u201cit contains a potential indirectly to introduce patterns of action\u201d (Kalberg 1980, p. 1154).",
+            "Unlike the first three types of rationality, which are all \u201cintercivilizational and epoch-transcending\u2026 formal rationality generally relates to spheres of life and a structure of domination that acquired specific and delineated boundaries only with industrialization\u201d (Kalberg 1980, p. 1158).",
+            "In their quest to supply coherent meaning to the random events of everyday life, those who employ theoretical rationality seek \u201cconscious mastery of reality through the construction of increasingly precise abstract concepts rather than through action\u201d (Kalberg 1980, p. 1152)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "9636f79e3ef6e40b397eb2fb2f62ec0adf171d55",
+          "title": "The Morality of Value- and Purpose-Rationality",
+          "authors": [
+            {
+              "name": "M. Rutgers",
+              "authorId": "84658772"
+            },
+            {
+              "name": "Petra Schreurs",
+              "authorId": "39397129"
+            }
+          ],
+          "year": 2006,
+          "abstract": null,
+          "citationCount": 21,
+          "doi": "10.1177/0095399706290632",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9636f79e3ef6e40b397eb2fb2f62ec0adf171d55",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Our approach differs from the one taken by, for instance, Brubaker (1984), Kalberg (1980), and Levine (1981).",
+            "These subjective manifestations have to be distinguished from objective or objectified manifestations of rationality that show up in various spheres of life or institutional spheres, such as economic organization, political order, legal systems, religion, ethics, and science (cf. Brubaker, 1984; Kalberg, 1980; Levine, 1981; Sadri, 1982).",
+            "\u2026be distinguished from objective or objectified manifestations of rationality that show up in various spheres of life or institutional spheres, such as economic organization, political order, legal systems, religion, ethics, and science (cf. Brubaker, 1984; Kalberg, 1980; Levine, 1981; Sadri, 1982).",
+            "These authors examine different types and forms of rationality in Weber\u2019s works, such as formal, substantive, theoretical, and practical rationality (Kalberg, 1980, pp. 1151- 1159) and conceptual, instrumental, substantive, and formal rationality (Levine, 1981, p. 13), subsequently illustrating\u2026",
+            "The terms Wert and Zweck rationality are usually translated as value and instrumental rationality (e.g., Harmon & Mayer, 1986; Sadri, 1982) or as value and means-ends rationality (e.g., Kalberg, 1980; Levine, 1981)."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "c31230720688d2a58d00a2e16e5100d4def901f1",
+          "title": "A Weberian Account of Social Norms and Trust in Financial Markets",
+          "authors": [
+            {
+              "name": "Sandro Segre",
+              "authorId": "74125794"
+            }
+          ],
+          "year": 2005,
+          "abstract": null,
+          "citationCount": 3,
+          "doi": "10.15543/MWS/2005/2/10",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c31230720688d2a58d00a2e16e5100d4def901f1",
+          "venue": "Max Weber Studies",
+          "isInfluential": true,
+          "contexts": [
+            "1.4 The Weberian notion of rationality A number of Weberian interpreters have expatiated on this notion (See Brubaker 1984; Eisen 1978; Kalberg 1980; Levine 1981; Lindner 1986: 156-58)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "2a2f417e8acdf2e67dbebb91694fa41845309547",
+          "title": "The Past and Present Influence of World Views",
+          "authors": [
+            {
+              "name": "Stephen Kalberg",
+              "authorId": "100981749"
+            }
+          ],
+          "year": 2004,
+          "abstract": null,
+          "citationCount": 18,
+          "doi": "10.1177/1468795X04043931",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/2a2f417e8acdf2e67dbebb91694fa41845309547",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "This is the case in 20th-century Western societies, he argues, owing to a new social configuration characterized by the dominance of the formal and practical types of rationality (see Kalberg, 1980; Levine, 1985).",
+            "To the extent that there arises a unified personality oriented to values \u2013 a life organized in a methodical-rational manner \u2013 the \u2018practical rational\u2019 mode of organizing life oriented to the ad hoc calculation of interests is devalued and circumscribed (see Kalberg, 1980, 1990: 61\u20133).",
+            "The following paragraphs in part rely on a previous analysis (see Kalberg, 1980, 1990, 2001a).",
+            "As \u2018rational religious systems of thought\u2019, doctrines generally originate\nJOURNAL OF CLASSICAL SOCIOLOGY VOL 4(2)148\nfrom theoretical rationalization processes undertaken by priests in reference to the problem of theodicy (see Kalberg, 1980, 1990, 2001a; Levine, 1985)."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "ca4092889dc973e0da85f5191f7eae0bbca66695",
+          "title": "Comment on \"Top Executives' Reactions to Change\"",
+          "authors": [
+            {
+              "name": "Kai Lamertz",
+              "authorId": "7607200"
+            }
+          ],
+          "year": 2004,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1080/00208825.2004.11043720",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/ca4092889dc973e0da85f5191f7eae0bbca66695",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The starting point for my ruminations is rooted in Weber\u2019s patterns of rationalization, as exposed by Kalberg (1980) and then applied to institutional change by Townley (2002).",
+            "The application of a universalistic principle or framework for attaining economic, legal, or scientific ends with the best means possible is the basis for a second sense-making rationality rooted in what Kalberg (1980) terms formal rationality.",
+            "The primary means through which such sense-making occurs is through articulation of meaningful explanations for experiences in reference to symbolic or tacit knowledge about how the world works (Kalberg 1980).",
+            "There are four types of rationality in Weber\u2019s work (Kalberg 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "aa86f7840447a2e5625f89039003d1b3d8a1a01c",
+          "title": "Caracter\u00edsticas culturais nacionais em organiza\u00e7\u00f5es industriais do setor aliment\u00edcio Paranaense",
+          "authors": [
+            {
+              "name": "Patricia Oliveira",
+              "authorId": "8883419"
+            },
+            {
+              "name": "Cl\u00f3vis L. Machado da Silva",
+              "authorId": "113351306"
+            }
+          ],
+          "year": 2001,
+          "abstract": null,
+          "citationCount": 13,
+          "doi": "10.1590/S1984-92302001000300002",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/aa86f7840447a2e5625f89039003d1b3d8a1a01c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "De acordo com Holanda (1995), a jornada de coloniza\u00e7\u00e3o nas terras brasileiras baseou-se, essencialmente, no tipo aventureiro, para quem a relev\u00e2ncia se encontra no objeto final e os meios intermedi\u00e1rios s\u00e3o, o quanto poss\u00edvel, dispens\u00e1veis, uma vez que a \u00e2nsia \u00e9 de prosperidade sem custo, n\u00e3o de\u2026",
+            "Em conseq\u00fc\u00eancia, a no\u00e7\u00e3o de entidade privada precede sempre \u00e0 da p\u00fablica, prevalecendo as prefer\u00eancias fundadas em la\u00e7os afetivos, marcando a sociedade e a vida p\u00fablica nacional (Holanda,1995).",
+            "\u20261985, 1986);\nFreyre (1984); Avelino Filho (1990); Gomes (1990); Serva (1990); Amado e Brasil (1991); Barbosa (1992, 1996); Aidar et al. (1995); Holanda (1995); Ribeiro (1995); Vasconcellos (1995); Machado (1996); Caldas (1997); Caldas e Wood Jr. (1997, 1998); Matheus (1997); Prates e Barros\u2026",
+            "Holanda (1995) observa que desde o descobrimento j\u00e1 se pode notar essa caracter\u00edstica, uma vez que, na \u00e9poca, os portugueses j\u00e1 constitu\u00edam uma ra\u00e7a de mesti\u00e7os, em decorr\u00eancia da constante situa\u00e7\u00e3o de conquista e reconquista de Portugal e do contato com outros povos.",
+            "\u2026heran\u00e7a de Portugal, que possu\u00eda, como tra\u00e7o\nmarcante, a cultura da personalidade: uma forma radical de individualismo, que se reflete no princ\u00edpio hier\u00e1rquico, capaz de abrir brechas e de assimilar novas id\u00e9ias sem transformar seu tradicional modo de pensar e de agir (Gomes, 1990; Holanda, 1995).",
+            "\u201cA explora\u00e7\u00e3o dos tr\u00f3picos n\u00e3o se processou, em verdade, por um empreendimento met\u00f3dico e racional, n\u00e3o emanou de uma vontade construtora e en\u00e9rgica: fez-se antes com desleixo e certo abandono\u201d (Holanda, 1995, p. 43).",
+            "Desse modo, parece persistir a particularidade da elite brasileira, que desde os seus prim\u00f3rdios apelava para o governo por considerar o Estado como for\u00e7a de amparo e de prote\u00e7\u00e3o (Azevedo, 1971; Holanda, 1995).",
+            "Pode-se dizer que os ideais de civilidade sobrep\u00f5em-se aos ideais de cordialidade, minimizando a manifesta\u00e7\u00e3o do personalismo, como afirmam Avelino Filho (1990) e Holanda (1995)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "bfe785315e0be892f396f15ef4e17e5cbf45ea81",
+          "title": "Consumer Rationality and Consumer Sovereignty",
+          "authors": [
+            {
+              "name": "W. Redmond",
+              "authorId": "12285056"
+            }
+          ],
+          "year": 2000,
+          "abstract": null,
+          "citationCount": 44,
+          "doi": "10.1080/003467600402530",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/bfe785315e0be892f396f15ef4e17e5cbf45ea81",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In other words, affectual and traditional are essentially nonrational modes of action (Kalberg 1980).",
+            "In general terms (i.e. not specific to a particular theory), rationality is descriptive of those mental processes which consciously strive to master reality (Kalberg 1980).",
+            "rationality is descriptive of those mental processes which consciously strive to master reality (Kalberg 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "35cd1c110bbe5ae6941775c1b5d09a1f2c9dcd13",
+          "title": "is not a dirty word\u201d: Social entrepreneurship and community development\u201d",
+          "authors": [
+            {
+              "name": "A. D. Duarte Alonso",
+              "authorId": "2240498759"
+            },
+            {
+              "name": "O'Brien",
+              "authorId": "2240498822"
+            },
+            {
+              "name": "Ljmu Research",
+              "authorId": "2220019850"
+            },
+            {
+              "name": "Online",
+              "authorId": "2220019230"
+            }
+          ],
+          "year": 2021,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/35cd1c110bbe5ae6941775c1b5d09a1f2c9dcd13",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "413), legitimising such calculation by referring back to universal laws, regulations, or rules (Kalberg 1980).",
+            "Strong associations between the findings and the four types of rationality discussed in the academic literature (e.g., Boley et al. 2014; Cockerham et al. 1993; Goldkuhl 2004; Kalberg 1980; Olson 2012; Phelan 1960; Townley 2002; Weber 1968) were revealed.",
+            "Practical rational ways of life both accept realities, and calculate the most practical means to deal with difficulties (Kalberg 1980).",
+            "Theoretical rationality is therefore more deeprooted in cognitive processes as opposed to action; indeed, it is the only rationality type that is not based on value-rational or mean-end rational action (Kalberg 1980).",
+            "rationality focuses on maximising economic gains (Boley et al. 2014; Kalberg 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "f5d3d052b5c5b7baddfb5ebfbac0b5718071e7bd",
+          "title": "Entrepreneurial Relativity of Rationality: A Theoretical Analysis of Rationality in Entrepreneurship Education",
+          "authors": [
+            {
+              "name": "Anh Dinh",
+              "authorId": "2064224077"
+            },
+            {
+              "name": "A. Liening",
+              "authorId": "98861515"
+            }
+          ],
+          "year": 2020,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f5d3d052b5c5b7baddfb5ebfbac0b5718071e7bd",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "In his works Economy and Society and Collected Essays in the Sociology of Religion, the German sociologist Max Weber promoted the idea of rationality and \u201crationalization\u201d in the economy and in the societal and civilizational process (Kalberg, 1980, p. 1145).",
+            "Rationality endows the formation of \u201cmodern businessman\u201d (Kalberg, 1980, p. 1148).",
+            "Weber\u2018s conception of rationality implies a systematization of the entire societal process, culminating in a high degree of bureaucratization and a corresponding \u201cincreasing lack of freedom\u201d (Kalberg, 1980, p. 1146)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "db65acf8506a2d005af7406a5ee239cfe736f17e",
+          "title": "Professional Formation and the State : Inside the Black Box",
+          "authors": [
+            {
+              "name": "M. Saks",
+              "authorId": "144684286"
+            }
+          ],
+          "year": 2019,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/db65acf8506a2d005af7406a5ee239cfe736f17e",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Here much reliance is placed on the Kalberg (1980) interpretation, but there is significant accord with other Weberian scholars drawing on these concepts (Geva, 2015; Levine, 1981; Ritzer & Walczak, 1988; Sterling & Moore, 1987).",
+            "Subsequently, scholars have relied on scattered discussions of rationality in Weber\u2019s work to produce a more coherent theory (Brubaker, 1984; Kalberg, 1980; Levine, 1981).",
+            "So, individuals pursuing their interests, or acting according to their values and beliefs, may shape policy in establishing formal rules (Geva, 2015; Kalberg, 1980).",
+            "Indeed, although Weber highlighted the emergence of formal rationality in many spheres of life (Kalberg, 1980; Sterling & Moore, 1987), he did not predict that it would undermine all other forms of rationality (Anter, 2015; H\u00fcbinger, 2009)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "129b060b8fd3e9450b9e5ce34b163778f6b6ae1a",
+          "title": "Residents and urban greenways: Modeling support for the Atlanta BeltLine",
+          "authors": [
+            {
+              "name": "Nathan Palardy",
+              "authorId": "114885479"
+            },
+            {
+              "name": "B. B. Boley",
+              "authorId": "90459383"
+            },
+            {
+              "name": "C. Gaither",
+              "authorId": "9959222"
+            }
+          ],
+          "year": 2018,
+          "abstract": null,
+          "citationCount": 33,
+          "doi": "10.1016/J.LANDURBPLAN.2017.09.006",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/129b060b8fd3e9450b9e5ce34b163778f6b6ae1a",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "According to Weber, these two types of rationality coexist and the existing tension between the two result in how people make economic decisions (Jagd, 2002; Kalberg, 1980).",
+            "This implies that human action can be guided by the necessity for internal consistency and that one\u2019s actions are consistent with the values that he or she holds (Kalberg, 1980).",
+            "Weber saw this difference in rationalization first hand through examining the differences between the rationalization processes of \u201cChinese, Indian and ancient Near East civilizations and the rationalization processes that characterize European-American civilization\u201d (Kalberg, 1980, p. 1149).",
+            "Rather than limiting rationality to Western societies and their focus on capitalism, and subsequently labeling non-Western civilizations as irrational, Weber acknowledged that rationality is inherent in all and is comprised of means-end rational action (formal rationality) as well as value-rational action (substantive rationality) (Kalberg, 1980).",
+            "\u2026and their focus on capitalism, and subsequently labeling non-Western civilizations as irrational, Weber acknowledged that rationality is inherent in all and is comprised of means-end rational action (formal rationality) as well as value-rational action (substantive rationality) (Kalberg, 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "04f00c964d313895d97bf26720f93a75eab1952f",
+          "title": "Rationality and Decision Making From Normative Rules to Heuristics",
+          "authors": [
+            {
+              "name": "Jean Jacko",
+              "authorId": "152779078"
+            },
+            {
+              "name": "Ant\u00f3nio Zilh\u00e3o",
+              "authorId": "102608446"
+            },
+            {
+              "name": "A. W\u00f3jtowicz",
+              "authorId": "1491640962"
+            },
+            {
+              "name": "Jan Winkowski",
+              "authorId": "41096802"
+            },
+            {
+              "name": "J. Sokolowska",
+              "authorId": "2076588965"
+            }
+          ],
+          "year": 2018,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/04f00c964d313895d97bf26720f93a75eab1952f",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "(Callahan 2007; Kalberg 1980; Kim 2007; Kronman 1983; Oakes 2003; Peukert 2004; Weber 1985, p. 565; 2011; 2012) Thus, a comprehensive assessment of the efficiency is not complete without taking account of those values that the agent considers to be autotelic.",
+            "(Callahan 2007; Kalberg 1980; Kim 2007; Kronman 1983; Oakes 2003; Peukert 2004; Weber 1985, p. 565; 2011, 2012).",
+            "Nevertheless, it is recognized as a point of reference in literature (Danielson 1998; Habermas 1984; Kalberg 1980; Oakes 2003).",
+            "\u2026case, decisions do not have the afore-mentioned intention but they are the practical or logical contradiction of the aims determined by the autotelic values acknowledged by their entity (Callahan 2007; Kalberg 1980; Kim 2007; Kronman 1983; Oakes 2003; Peukert 2004; Weber 1985, p. 565; 2011, 2012).",
+            "In the latter case, decisions do not have the afore-mentioned intention but they are the practical or logical contradiction of the aims determined by the autotelic values acknowledged by their entity (Callahan 2007; Kalberg 1980; Kim 2007; Kronman 1983; Oakes 2003; Peukert 2004; Weber 1985, p. 565; 2011, 2012)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "3014eac5127844a4319f6b64681e1612e1e68b07",
+          "title": "Max Weber and the Moral Dimensions of Politics as a Vocation",
+          "authors": [
+            {
+              "name": "G. Brassard",
+              "authorId": "72097387"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.20381/RUOR-5698",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/3014eac5127844a4319f6b64681e1612e1e68b07",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "(Kalberg, 1980; Parsons, 1964) Rational society requires a \u2018creature from the system\u2019 (Peters, 2010, p.",
+            "(Kalberg, 1980; Parsons, 1964) Rational society requires a \u2018creature from the system\u2019 (Peters, 2010, p. 519), requires individuals who deal with the world as it is.",
+            "(Weber in Kalberg, 1980, p. 1156)\nThe sequence by which I shall develop my arguments is, in outline, as follows.",
+            "(Kalberg, 1980, p. 1170) For such reasons, Weber opposed the claim that modern capitalism had been a by-product of the economic model which existed before the Reformation."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "45381836932afdb0f9454513db76517c592839a9",
+          "title": "Corporate social responsibility: A perspective from Weberian economic sociology",
+          "authors": [
+            {
+              "name": "Jann Boeddeling",
+              "authorId": "113832554"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/45381836932afdb0f9454513db76517c592839a9",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u201cRationality\u201d is one of the analytical constructs with which Weber typifies \u201cregularities\u201d (Regelm\u00e4\u00dfigkeiten) of social action (Kalberg 1980, p. 1148).",
+            "\u201crationality\u201d in the following) as it is masterly distilled by Kalberg (1980). \u201cRationality\u201d is one of the analytical constructs with which Weber typifies \u201cregularities\u201d (Regelm\u00e4\u00dfigkeiten)",
+            "In the Protestant Ethic itself, Weber suggests that the ideal interests of the PE were fading and can thus not influence modern capitalisms\u2019 continued existence (Weber 1978, pp. 202-04; Weber 1924, pp. 314-15; Collins 1980, p. 935; Kalberg 1980, p. 1163).",
+            "In an interesting twist, this would contradict Weber who himself believed that substantive rationalization had come to an end, partially because of his own notion of valueneutrality (Wertfreihei )of social sciences (Kalberg 1980, pp. 1173-74; Swedberg 1998, pp. 175-77).",
+            "If one takes into account what Weber understands the drivers of rationalizations processes to be, namely a conflict between the \u201crationality\u201d of different \u201cspheres of life\u201d (Weber 1978, pp. 536-73; Schluchter 1988, pp. 70-71; Kalberg 1980, pp. 1150-51), it seems conceivable to approach CSR this way.",
+            "This first dialectical element in Weber\u2019s theory of action is central to his analysis of larger processes of societal change (Kalberg 1980, pp. 1169-70).",
+            "\u2026(Weber 1976, p. 1).2 It is essential for the argument presented here to note that all subsequently discussed social constructs that Weber uses, including organizations and institutions, are the results of such individual social action (Kalberg 1980, p. 1161; Smelser & Swedberg 2005, p. 4).",
+            "It alone can bring about the specific kind of regularities that can be institutionalized as \u2018methodical ways of life that subjugate the practical rational way of life based on [material] interests,\u2026and reality\u2019s stream of disjointed occurrences [to values]\u2019 (Kalberg 1980, p. 1165).",
+            "\u2026and substantive rationalization, as well as indirectly through theoretical rationalization, and thereby become \u201clegitimate orders\u201d (institutions) (Kalberg 1980, pp. 1160-61; Weber 1976, pp. 16-20; cf. Swedberg 2003a, pp. 293-94 for equating legitimate orders with the modern notion of\u2026",
+            "Its core is that for Weber, regularities of action,\n10\n\u201cinstitutions\u201d (Ordnungen), and \u201corganizations\u201d (Verb\u00e4nde) are both the objects and results of such orientation (Weber 1976, pp. 16-20; Swedberg 2003a, pp. 293-94; Kalberg 1980, pp. 1161-62).",
+            "If the psychological premiums effectively overwrite material interests, thus subordinating instrumentally rational action, Weber describes the ethic underlying them as a \u201cpractical ethic\u201d (Weber 1978, pp. 258-59, 266, 537-38; Weber 1976, pp. 19, 321; Kalberg 1980, p. 1166).",
+            "The first is his concept of rationality and rationalization processes (jointly referred to as \u201crationality\u201d in the following) as it is masterly distilled by Kalberg (1980).",
+            "If instrumentally rational or value-rational actions give rise to a regularity, than this process is conscious and constitutes \u201crationality\u201d (Kalberg 1980, pp. 1148-48).",
+            "Put differently, for Weber \u201eaction motivated by values and resistant to\u2026 [material] interests has been of the greatest historical consequence\u201d (Kalberg 1980, p. 1170).",
+            "According to Weber\u2019s theory, actions can be driven by emotions (affectual action), habits (traditional action), as well as by material (instrumentally rational action) or ideal interests (value-rational action) (Weber 1976, pp. 12-13; Swedberg 1998, p. 23; Kalberg 1980, p. 1148)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "b0cfb7ee3c6f93c2d06b463bec88b792ba402a14",
+          "title": "The Continuing Anglican Metamorphosis: Introducing The Adapted Integrated Model",
+          "authors": [
+            {
+              "name": "Jonathan H. L\u2019Hommedieu",
+              "authorId": "1484973884"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/b0cfb7ee3c6f93c2d06b463bec88b792ba402a14",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "According to Ross Lindsay (2011) the Anglican Mission was part of a larger plan to form\na new North American Anglican province, one that would be fully in communion with at least a majority of Anglican Provinces worldwide.",
+            "According to Ross Lindsay (2011) the Anglican Mission was part of a larger plan to form a new North American Anglican province, one that would be fully in communion with at least a majority of Anglican Provinces worldwide.",
+            "From early on there have been calls for revival (Johnson 1963; Swatos 1976) and reconstruction (Swatos 1976, 1998; Kalberg 1980, 1994) as well as rebuttal (Stark and Bainbridge 1979).",
+            "its honored beginnings, even if we are assured of \u201ca worldwide renascence of interest\u201d in this approach in recent literature (Kalberg 1994a). This is a different concept of \u201cordering\u201d than that declared by Stark and Bainbridge (1979) as requisite to sociological theory\u2014the quantitative \u201cordering\u201d of institutions relative to each other in a general sociology of religion, as opposed to the qualitative \u201cordering\u201d of the",
+            "According to Ross Lindsay (2011), a real estate attorney and credentialed canon\n(ecclesiastical) lawyer as well as a member of All Saints and personal associate of Bishop Murphy:\n73\nThe case was unique because the Diocese of South Carolina was orthodox, as was the leadership of All Saints Church.",
+            "\u2026the dynamic sect pays no real price for its historic opposition to the presumed monopolistic culture, except where it expends energy \u201cmethodically\u201d (Kalberg 1980) to maintain its nonconformist identity when it could just as easily drift into the practical denominational world of means-ends\u2026",
+            "\u2026problems, even weighing the cost of settling disputes with sectarian challengers\u2014the entrenched sect has the psychological advantage of being motivated by ethical or value-based concerns, which tend to be more powerful motivators than the more mundane concerns of staid institutions (Kalberg 1980).",
+            "During the 1970\u2019s, in a sect-like defiance of a perceived \u201cdominant culture,\u201d the ascendant leadership of TEC summoned sufficient \u201cethical rationality\u201d to motivate a break with the traditional status quo of a very traditional mainline denomination (Kalberg 1980; Weber\n9\n2011).",
+            "Meanwhile the sectarian organization has a decided advantage, even if it turns out to be\nshort-lived: her interactions with the parent are characterized by an ethical rather than a practical form of \u201crationality\u201d (citing Kalberg 1980 and 1994).",
+            "In December 2011 \u201camid a dispute over authority\u201d AMiA voted to withdraw from\nRwanda (Ross 2011).",
+            "Unlike the entrenched sect-type the dynamic sect pays no real price for its historic opposition to the presumed monopolistic culture, except where it expends energy \u201cmethodically\u201d (Kalberg 1980) to maintain its nonconformist identity when it could just as easily drift into the practical denominational world of means-ends",
+            "She has a deeper motivation and access to richer psychological \u201cpremiums\u201d than do those whose motivation for social action is determined through pure \u201cmeans-end\u201d calculations (Kalberg 1980)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "ee54b70df7a98096272ce5aeadb9f69409bb837c",
+          "title": "The Weberian Theory of Rationalization and the McDonaldization of Contemporary Society",
+          "authors": [
+            {
+              "name": "G. Ritzer",
+              "authorId": "1957024"
+            }
+          ],
+          "year": 2007,
+          "abstract": null,
+          "citationCount": 26,
+          "doi": "10.4135/9781506335483.n3",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/ee54b70df7a98096272ce5aeadb9f69409bb837c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The fading away of substantive rationality was regretted by Weber because it \u201cembodied Western civilization\u2019s highest ideals: the autonomous and free individual whose actions were given continuity by their reference to ultimate values\u201d (quoted in  Kalberg, 1980, p. 1176 ).",
+            "Four types of rationality lie at the heart of Weber\u2019s theory of rationalization (Brubaker, 1984; Habermas, 1984;  Kalberg, 1980;  Levine, 1981).",
+            "Formal rationality involves the rational calculation of means to ends based on universally applied rules, regulations, and laws ( Kalberg, 1980 ).",
+            "It is derived from the inherent need of actors to give some logical meaning to a world that appears haphazard ( Kalberg, 1980 ).",
+            "These clusters of values are rational when they are consistent with specific value postulates preferred by actors ( Kalberg, 1980 )."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "b958d796695a9f68776b72e697ba138e2e7bfc95",
+          "title": "Novas formas organizacionais: a necessidade de supera\u00e7\u00e3o das perspectivas sobressocializadas e subsocializadas",
+          "authors": [
+            {
+              "name": "Mariana Baldi",
+              "authorId": "88039746"
+            }
+          ],
+          "year": 2004,
+          "abstract": null,
+          "citationCount": 5,
+          "doi": "10.1590/S1679-39512004000100003",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/b958d796695a9f68776b72e697ba138e2e7bfc95",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Para Kalberg (1980), a capacidade e a disposi\u00e7\u00e3o das pessoas para padr\u00f5es de a\u00e7\u00e3o desse tipo permeiam todas as \u00e9pocas e existem como uma manifesta\u00e7\u00e3o da capacidade do homem para a a\u00e7\u00e3o racional meio-fim.",
+            "Para Kalberg (1980), a racionalidade e suas diversas manifesta\u00e7\u00f5es no processo de racionaliza\u00e7\u00e3o talvez seja o tema principal de Weber.",
+            "Para Kalberg (1980), essa orienta\u00e7\u00e3o para regras e leis equivale \u00e0 rejei\u00e7\u00e3o da arbitrariedade.",
+            "Para Kalberg (1980), tal como a racionalidade pr\u00e1tica \u2212 ao contr\u00e1rio da racionalidade teor\u00e9tica \u2212, a racionalidade substantiva diretamente ordena a\u00e7\u00e3o em padr\u00f5es."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "8896960c395783d94250b8b01b4395b2176a7c9d",
+          "title": "Science vs. religion in classical Ayurveda",
+          "authors": [
+            {
+              "name": "S. Engler",
+              "authorId": "34769725"
+            }
+          ],
+          "year": 2003,
+          "abstract": null,
+          "citationCount": 28,
+          "doi": "10.1163/156852703322446679",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/8896960c395783d94250b8b01b4395b2176a7c9d",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The Vedas, above all the Atharva Veda, contain many similar passages.",
+            "For example, even in passages where the \u201crational\u201d nature of the ayurvedic texts is emphasized exclusively, a look at the source text often indicates a striking admixture of magical elements whose origin is not obviously the Vedas (e.g., Caraka, Su.",
+            "\u201cCow\u201d is used in the Vedas as a metaphor for \u201crays of light,\u201d \u201crays of dawn,\u201d and \u201cdawn\u201d because of the animal\u2019s bright and light-like milk (Srinivasan 1979:45, 118).",
+            "In the Vedas, the cow was a potent symbol of the \u201ccooking of the world,\u201d the creative role that sacri ce had in shaping\n8 See, for example, Caraka, Su.",
+            "Another approach would be to suggest that the texts re ected contemporary popular beliefs at these points, rather than the Vedas themselves: the later history of Ayurveda demonstrates the inclusion of such elements (Leslie 1976).",
+            "This was explicitly enjoined in the Dharma-shastras, where dana is held to be the special duty of householders (Kane 1975, 2:837; cf. Gonda 1965:216).",
+            "These two related religious traditions are characterized to a large extent by normative ideas, practices, and social structures as set out in two sets of scriptures: (1) the Vedas, dating from well before the development of Ayurveda, which include a vibrant polytheism, an emphasis on rituals to maintain the natural and social order, the correlated high status of the priestly (brahminic) caste, religio-magical protections from harm and diseases (e.g., spells and amulets), astrology, and a complex symbolism linking food, cooking, divinity, ritual and salvation; and (2) the Upanishads (elaborated slightly earlier than the ayurvedic texts), which developed the concepts of reincarnation, karma (the positive or negative causal in uence of previous actions, including those from past lives), and moksha (salvation by liberation from the karmic cycle of rebirth and redeath).",
+            "Brahmins were the most worthy recipients, but only if they are morally upright and well educated in the Vedas (Kane 1975, 5:937\u2013938; cf. 2:116, 746, 845\u20136; Gonda 1965:226).",
+            "In the Vedic period, it was closely linked to ritual sacri ce nanced by wealthy patrons (Thapar 1976:39; cf. Kane 1975, 2:837ff.; Gonda 1965:212).",
+            "The emergence of \u201cthe Ideal Brahman\u201d has been a central factor in the historical emergence of \u201cHinduism\u201d as an object of academic study: but the resulting picture of a static social and religious order, with priestly brahmins holding supreme rank in a rigid caste society originally ordained by the Vedas, does not re ect the historical facts (Van der Veer 1989).",
+            "It is especially important to consider social and economic dimensions of science, in addition to its distinctive world-view, in discussions of non-western science (Jamison 1994).\nelites \u2014 whose traditional status was due to their mastery of \u201cclean\u201d knowledge, above all the Vedas \u2014 sought to regain status through appropriating the new Western knowledge of science within their traditional paradigm of expertise: \u201cFor them science was experimental only in theory.",
+            "Second, a reciprocity between dana and merit arose in the classical period, perhaps in uenced by the spread of Buddhism: giving to appropriate recipients, de ned in terms of moral worth and caste, came to be seen as resulting in merit for the donor (Thapar 1976; cf. Kane 1975, 2:115)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "7a438a20b113b6e8e61e642f0fd33d33f6c4cd23",
+          "title": "La trascendencia te\u00f3rica de la sociolog\u00eda de la m\u00fasica. El caso de Max Weber",
+          "authors": [
+            {
+              "name": "Arturo Rodr\u00edguez Morat\u00f3",
+              "authorId": "2079160484"
+            }
+          ],
+          "year": 1988,
+          "abstract": null,
+          "citationCount": 4,
+          "doi": "10.5565/REV/PAPERS/V29N0.1460",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7a438a20b113b6e8e61e642f0fd33d33f6c4cd23",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Cabe destacar, entre otras contribuciones sobre el tema de la racionalidad en Weber, las de Kalberg (1980), Levine (1981), Brubaker (1984), y sobte todo Habermas (1984).",
+            "Un punto, por 10 dem\u00e1s, que es generativo a un lado y a otro de la escala continua de abstracci\u00f3n propia del planteamiento weberiano.4' Resulta as\u00ed plenamente coherente el intento de Kalberg (1980) de establecer una correspondencia entre conceptos de acci\u00f3n y conceptos de racionalidad.",
+            "Por 10 que hace a la dicotomia entre hecho y valor, podemos verla aqu\u00ed expresada en 10 que Kalberg denomina el <{radical perspectivisme)> de Weber, ingrediente esencial de su noci\u00f3n de racionalidad <{substantiva)> (Kalberg, 1980, pp. 1155-1157).",
+            "Kalberg tambi\u00e9n advierte, al comenzar su articulo, que ctla acci\u00f3n individual es para Weber el \"\u00e1tomo\" fundamental de todos 10s procesos sociales y de civiiizaci\u00f3n* (Kalberg, 1980, nota 8, p. 1149)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "658c943929a3fdff48519b31a86f5c7a1b98967d",
+          "title": "Journal of Sumatera Sociological Indicators",
+          "authors": [
+            {
+              "name": "Saleh Sjafei",
+              "authorId": "2305057259"
+            },
+            {
+              "name": "Bakti Siahaan",
+              "authorId": "2305057217"
+            },
+            {
+              "name": "M. Simanihuruk",
+              "authorId": "2067984286"
+            }
+          ],
+          "year": null,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/658c943929a3fdff48519b31a86f5c7a1b98967d",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "These various components are contained in the formal rationality measures reviewed by Kalberg (1980).",
+            "In Arnold Eisen\u2019s essay (1978, in (Ritzer, 1983) and other works (Antonio, 1979; Kalberg, 1980) it is said that rationality is characterized by main components which include efficiency, calculability, demystification, and dehumanization.",
+            "Kalberg (Kalberg, 1980) calls traditional actions formal rationality because this type involves means-end calculations (Cockherham, Abel, and Luschen, 1993).",
+            "Kalberg (1980: 1150-1154; see also in Ritzer, 1996a: 243-244) calls practical rationality for instrumental action."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "95b9f0185689aacf2511ef060a8523f4fdb69047",
+          "title": "Recognizing and accommodating multiple rationalities in patient oriented health information system design",
+          "authors": [
+            {
+              "name": "Lars Kristian Roland",
+              "authorId": "2886857"
+            },
+            {
+              "name": "T. Sanner",
+              "authorId": "2366775"
+            },
+            {
+              "name": "Prosper Behumbiize",
+              "authorId": "7274523"
+            },
+            {
+              "name": "Z. Namukwaya",
+              "authorId": "8224076"
+            }
+          ],
+          "year": null,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/95b9f0185689aacf2511ef060a8523f4fdb69047",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u201cSomething is not of itself\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 irrational, but rather becomes so when examined from a specific rational standpoint\u201d\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 (Weber, 1930 translated by Kalberg, 1980).",
+            "However, our theoretical approach is informed\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 by a broadranging concept of rationality based on Max Weber\u2019s work (Kalberg,\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 1980\u037e Weber 1978).",
+            "Max Weber, in his critique of neoclassical works\u2019 limited exploration of rationality, distinguishes between several types of rationality; formal, substantive, theoretical and practical (Kalberg 1980).",
+            "Max\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 Weber, in his critique of neoclassical works\u2019 limited exploration of rationality,\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 distinguishes between several types of rationality\u037e formal, substantive, theoretical and\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 practical (Kalberg 1980).",
+            "However, our theoretical approach is informed by a broad\u00adranging concept of rationality based on Max Weber\u2019s work (Kalberg, 1980; Weber 1978)."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        }
+      ],
+      "references_count": 0,
+      "citations_count": 55
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

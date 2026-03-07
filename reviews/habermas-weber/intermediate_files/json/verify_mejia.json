@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Social Evolution in Jurgen Habermas: Towards a Weak Anthropological Naturalism between Kant and Darwin",
+    "author": "Mejia Fernandez",
+    "year": 2022
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (21.7) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

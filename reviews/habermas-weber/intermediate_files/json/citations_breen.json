@@ -1,0 +1,37 @@
+[s2_citations.py] Connecting to Semantic Scholar API...
+[s2_citations.py] Found paper: Under Weber’s Shadow: Modernity, Subjectivity and ...
+[s2_citations.py] Fetching references...
+[s2_citations.py] Fetching citing papers...
+[s2_citations.py] Retrieved 0 citing papers
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "9efb4926411ec05411d9dbafa7e4575da35cdf91",
+  "results": [
+    {
+      "paper": {
+        "paperId": "9efb4926411ec05411d9dbafa7e4575da35cdf91",
+        "title": "Under Weber\u2019s Shadow: Modernity, Subjectivity and Politics in Habermas, Arendt and MacIntyre",
+        "authors": [
+          {
+            "name": "K. Breen",
+            "authorId": "46707570"
+          }
+        ],
+        "year": 2012,
+        "abstract": null,
+        "citationCount": 13,
+        "doi": "10.4324/9781315549316",
+        "arxivId": null,
+        "url": "https://www.semanticscholar.org/paper/9efb4926411ec05411d9dbafa7e4575da35cdf91",
+        "venue": ""
+      },
+      "references": [],
+      "citations": [],
+      "references_count": 0,
+      "citations_count": 0
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

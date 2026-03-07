@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Max Weber rationalization processes disenchantment...' author=Etzrodt year=2024
+[verify_paper.py] Paper found: Max Weber’s rationalization processes disenchantme... (score: 82.5)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Max Weber rationalization processes disenchantment alienation anomie",
+    "author": "Etzrodt",
+    "year": 2024
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/s11186-024-09554-7",
+      "title": "Max Weber\u2019s rationalization processes disenchantment, alienation, or anomie?",
+      "authors": [
+        {
+          "family": "Etzrodt",
+          "given": "Christian"
+        }
+      ],
+      "editors": [],
+      "year": 2024,
+      "container_title": "Theory and Society",
+      "volume": "53",
+      "issue": "3",
+      "page": "653-671",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1007/s11186-024-09554-7",
+      "score": 82.46598
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,1094 @@
+{
+  "status": "success",
+  "source": "sep",
+  "query": "history",
+  "results": [
+    {
+      "url": "https://plato.stanford.edu/entries/history/",
+      "entry_name": "history",
+      "title": "Philosophy of History",
+      "preamble": "The concept of history plays a fundamental role in human thought. It\ninvokes notions of human agency, change, the role of material\ncircumstances in human affairs, and the putative meaning of historical\nevents. It raises the possibility of \u201clearning from\nhistory\u201d. And it suggests the possibility of better\nunderstanding ourselves in the present, by understanding the forces,\nchoices, and circumstances that brought us to our current situation.\nIt is therefore unsurprising that philosophers have sometimes turned\ntheir attention to efforts to examine history itself and the nature of\nhistorical knowledge. These reflections can be grouped together into a\nbody of work called \u201cphilosophy of history\u201d. This work is\nheterogeneous, comprising analyses and arguments of idealists,\npositivists, logicians, theologians, and others, and moving back and\nforth over the divides between European and Anglo-American philosophy,\nand between hermeneutics and positivism. Given the plurality of voices within the \u201cphilosophy of\nhistory\u201d, it is impossible to give one definition of the field\nthat suits all these approaches. In fact, it is misleading to imagine\nthat we refer to a single philosophical tradition when we invoke the\nphrase, \u201cphilosophy of history\u201d, because the strands of\nresearch characterized here rarely engage in dialogue with each other.\nStill, we can usefully think of philosophers\u2019 writings about\nhistory as clustering around several large questions, involving\nmetaphysics, hermeneutics, epistemology, and ethics: (1) What does\nhistory consist of\u2014individual actions, social structures,\nperiods and regions, civilizations, large causal processes, divine\nintervention? (2) Does history as a whole have meaning, structure, or\ndirection, beyond the individual events and actions that make it up?\n(3) What is involved in our knowing, representing, and explaining\nhistory? (4) To what extent do facts about human history create moral\nresponsibilities for the present generation?",
+      "bibliography": [
+        {
+          "raw": "Anderson, Benedict, 1983, Imagined Communities: Reflections on\nthe Origin and Spread of Nationalism , London: Verso.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Applebaum, Anne, 2003, Gulag: A History , New York:\nDoubleday.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2017, Red Famine: Stalin\u2019s War on\nUkraine , New York: Doubleday.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2017",
+            "title": "\u2013\u2013\u2013, 2017, Red Famine: Stalin\u2019s War on\nUkraine , New York: Doubleday."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Ankersmit, F. R., 1983, Narrative Logic: A Semantic Analysis\nof the Historian\u2019s Language (Martinus Nijhoff Philosophy\nLibrary 7), The Hague /Boston: M. Nijhoff.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006, \u201cLanguage and Historical\nExperience\u201d, in Meaning and Representation in History ,\nJ\u00f6rn R\u00fcsen (ed.), New York: Berghahn Books, 137\u2013152.\ndoi:10.1515/9780857455550-011",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006, \u201cLanguage and Historical\nExperience\u201d, in Meaning and Representation in History ,\nJ\u00f6rn R\u00fcsen (ed.), New York: Berghahn Books, 137\u2013152.\ndoi:10.1515/9780857455550-011"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Ankersmit, F. R. and Hans Kellner (eds), 1995, A New\nPhilosophy of History , London: Reaktion Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Avineri, Shlomo, 1972, Hegel\u2019s Theory of the Modern\nState (Cambridge Studies in the History and Theory of Politics),\nCambridge: Cambridge University Press.\ndoi:10.1017/CBO9781139171441",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bentley, Michael (ed.), 1997, Companion to\nHistoriography , London/New York: Routledge.\ndoi:10.4324/9780203991459",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Berkhofer, Robert F., 1995, Beyond the Great Story: History as\nText and Discourse , Cambridge, MA: Belknap Press of Harvard\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Berlin, Isaiah, 2000, Three Critics of the Enlightenment:\nVico, Hamann, Herder , Henry Hardy (ed.), Princeton, N.J:\nPrinceton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bikont, Anna, 2004 [2015], My z Jedwabnego , Poland:\nWydawnictwo Pr\u00f3szy\u0144ski i Ska. Translated as The Crime\nand the Silence: Confronting the Massacre of Jews in Wartime\nJedwabne , Alissa Valles (trans.), New York: Farrar, Straus and\nGiroux, 2015.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Bloch, Marc, 1946 [1949], L\u2019\u00e9trange\nd\u00e9faite: t\u00e9moignage \u00e9crit en 1940 , Paris:\nSoci\u00e9t\u00e9 des \u00c9ditions Franc-tireur. Translated as Strange Defeat: A Statement of Evidence Written in 1940 ,\nGerard Hopkins (trans.), London/New York: Oxford University Press,\n1949.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1952 [1953], Apologie pour\nl\u2019histoire: ou, M\u00e9tier d\u2019historien (Cahiers\ndes Annales 3), Paris: A. Colin, published after his death. Translated\nas The Historian\u2019s Craft , Peter Putnam (trans.), New\nYork: Knopf, 1953.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1952",
+            "title": "\u2013\u2013\u2013, 1952 [1953], Apologie pour\nl\u2019histoire: ou, M\u00e9tier d\u2019historien (Cahiers\ndes Annales 3), Paris: A. Colin, published after his death. Translated\nas The Historian\u2019s Craft , Peter Putnam (trans.), New\nYork: Knopf, 1953."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Bouton, Christophe, 2016, \u201cThe Critical Theory of History:\nRethinking the Philosophy of History in the Light of Koselleck\u2019s\nWork\u201d, History and Theory , 55(2): 163\u2013184.\ndoi:10.1111/hith.10795",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Breisach, Ernst (ed.), 2007, Historiography: Ancient,\nMedieval, & Modern , third edition, Chicago: University of\nChicago Press. First edition, 1983.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Browning, Christopher R., 1992, Ordinary Men: Reserve Police\nBattalion 101 and the Final Solution in Poland , New York: Aaron\nAsher Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Brunner, Otto, Werner Conze, and Reinhart Koselleck (eds),\n1972\u201397, Geschichtliche Grundbegriffe. Historisches Lexikon\nzur politisch-sozialen Sprache in Deutschland , 8 volumes,\nStuttgart: E. Klett.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Burgui\u00e8re, Andr\u00e9, 2006 [2009], L\u2019\u00e9cole des annales: une histoire intellectuelle (Histoire), Paris: O. Jacob. Translated as The Annales School: An\nIntellectual History , Jane Marie Todd (trans.), Ithaca, NY:\nCornell University Press, 2009.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Cardim, Pedro, 2023, \u201cReassessing the Portuguese Imperial\nPast: Scholarly Perspectives and Civic Engagement\u201d, Journal\nof Lusophone Studies , 8(1): 176\u2013205.\ndoi:10.21471/jls.v8i1.538",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Collingwood, R. G., 1946, The Idea of History , Oxford:\nClarendon Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Condorcet, Jean-Antoine-Nicolas de Caritat, 1795 [1979], Esquisse d\u2019un tableau historique des progr\u00e8s de\nl\u2019esprit humain , A Paris: Chez Agasse. Translated as Sketch for a Historical Picture of the Progress of the Human\nMind (Library of Ideas), June Barraclough (trans.), London:\nWeidenfeld and Nicolson, 1955. English translation reprinted Westport,\nCT: Greenwood Press, 1979.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Creyghton, Camille, Pieter Huistra, Sarah Keymeulen, and Herman\nPaul, 2016, \u201cVirtue Language in Historical Scholarship: The\nCases of Georg Waitz, Gabriel Monod and Henri Pirenne\u201d, History of European Ideas , 42(7): 924\u2013936.\ndoi:10.1080/01916599.2016.1161536",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Cronon, William, 1991, Nature\u2019s Metropolis: Chicago and\nthe Great West , New York: W. W. Norton.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Danto, Arthur Coleman, 1965, Analytical Philosophy of\nHistory , Cambridge: [Cambridge] University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Darnton, Robert, 1984, The Great Cat Massacre and Other\nEpisodes in French Cultural History , New York: Basic Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Davidson, Donald, 1963, \u201cActions, Reasons, and\nCauses\u201d, The Journal of Philosophy , 60(23):\n685\u2013700. doi:10.2307/2023177",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dawidowicz, Lucy S., 1975, The War against the Jews,\n1933\u20131945 , New York: Holt, Rinehart and Winston.",
+          "parsed": {
+            "authors": [
+              "Dawidowicz, Lucy S."
+            ],
+            "year": "1975",
+            "title": "The War against the Jews",
+            "publisher": "1933\u20131945 , New York: Holt, Rinehart and Winston"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Dawson, Christopher, 1929, Progress and Religion, An\nHistorical Enquiry , New York: Sheed and Ward.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "De Vries, Bert and Johan Goudsblom (eds), 2002, Mappae Mundi:\nHumans and Their Habitats in a Long-Term Socio-Ecological Perspective:\nMyths, Maps and Models , Amsterdam: Amsterdam University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dentella, Vittoria, Fritz G\u00fcnther, Elliot Murphy, Gary\nMarcus, and Evelina Leivada, 2024, \u201cTesting AI on Language\nComprehension Tasks Reveals Insensitivity to Underlying\nMeaning\u201d, Scientific Reports , 14: article 28083.\ndoi:10.1038/s41598-024-79531-8",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Diamond, Jared M., 1997, Guns, Germs, and Steel: The Fates of\nHuman Societies , New York: W. W. Norton.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dilthey, Wilhelm, 1883 [1989], Einleitung in die\nGeisteswissenschaften: Versuch einer Grundlegung f\u00fcr das Studium\nder Gesellschaft und der Geschichte , Leipzig: Duncker &\nHumblot. Translated as Introduction to the Human Sciences (Selected Works / Wilhelm Dilthey 1), Rudolf A. Makkreel and Frithjof\nRodi (eds), Princeton, NJ/Oxford: Princeton University Press,\n1989.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1860\u20131903 [1996], Hermeneutics\nand the Study of History (Selected Works / Wilhelm Dilthey 4),\nRudolf A. Makkreel and Frithjof Rodi (eds), Princeton, NJ: Princeton\nUniversity Press. Includes 1860, \u201cSchleiermacher\u2019s Hermeneutical System in\nRelation to Earlier Protestant Hermeneutics\u201d 1862, \u201cHistory and Science\u201d 1862, \u201cOn Jacob Burckhardt\u2019s The Civilization of\nthe Renaissance in Italy \u201d 1862, \u201cFriedrich Christoph Schlosser and the Problem of\nUniversal History\u201d 1867\u201368, \u201cOn Understanding and Hermeneutics : Student\nLecture Notes (1867\u201368)\u201d 1900, \u201cThe Rise of Hermeneutics\u201d 1901, \u201cThe Eighteenth Century and the Historical\nWorld\u201d 1903, \u201cReminiscences on Historical Studies at the University\nof Berlin\u201d",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1860",
+            "title": "\u2013\u2013\u2013, 1860\u20131903 [1996], Hermeneutics\nand the Study of History (Selected Works / Wilhelm Dilthey 4),\nRudolf A. Makkreel and Frithjof Rodi (eds), Princeton, NJ: Princeton\nUniversity Press. Includes 1860, \u201cSchleiermacher\u2019s Hermeneutical System in\nRelation to Earlier Protestant Hermeneutics\u201d 1862, \u201cHistory and Science\u201d 1862, \u201cOn Jacob Burckhardt\u2019s The Civilization of\nthe Renaissance in Italy \u201d 1862, \u201cFriedrich Christoph Schlosser and the Problem of\nUniversal History\u201d 1867\u201368, \u201cOn Understanding and Hermeneutics : Student\nLecture Notes (1867\u201368)\u201d 1900, \u201cThe Rise of Hermeneutics\u201d 1901, \u201cThe Eighteenth Century and the Historical\nWorld\u201d 1903, \u201cReminiscences on Historical Studies at the University\nof Berlin\u201d"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "1860, \u201cSchleiermacher\u2019s Hermeneutical System in\nRelation to Earlier Protestant Hermeneutics\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1862, \u201cHistory and Science\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1862, \u201cOn Jacob Burckhardt\u2019s The Civilization of\nthe Renaissance in Italy \u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1862, \u201cFriedrich Christoph Schlosser and the Problem of\nUniversal History\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1867\u201368, \u201cOn Understanding and Hermeneutics : Student\nLecture Notes (1867\u201368)\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1900, \u201cThe Rise of Hermeneutics\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1901, \u201cThe Eighteenth Century and the Historical\nWorld\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1903, \u201cReminiscences on Historical Studies at the University\nof Berlin\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1910 [2002], Der Aufbau der\ngeschichtlichen Welt in den Geisteswissenschaften . Translated as The Formation of the Historical World in the Human Sciences (Selected Works / Wilhelm Dilthey 3),, Rudolf A. Makkreel and Frithjof\nRodi (eds), Princeton, NJ: Princeton University Press, 2002.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1910",
+            "title": "\u2013\u2013\u2013, 1910 [2002], Der Aufbau der\ngeschichtlichen Welt in den Geisteswissenschaften . Translated as The Formation of the Historical World in the Human Sciences (Selected Works / Wilhelm Dilthey 3),, Rudolf A. Makkreel and Frithjof\nRodi (eds), Princeton, NJ: Princeton University Press, 2002."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Donagan, Alan, 1964 [1966], \u201cHistorical Explanation: The\nPopper-Hempel Theory Reconsidered\u201d, History and Theory ,\n4(1): 3\u201326. Reprinted as \u201cThe Popper-Hempel Theory\nReconsidered\u201d, in Dray 1966 ,\n 127\u2013159 (ch. 5). doi:10.2307/2504200",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Donovan, Moira, 2023, \u201cHow AI is Helping Historians Better\nUnderstand Our Past: the Historians of Tomorrow are Using Computer\nScience to Analyze How People Lived Centuries Ago\u201d, MIT\nTechnology Review , 11 April 2023. Donovan 2023 available online .",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Dray, William H., 1957, Laws and Explanation in History (Oxford Classical & Philosophical Monographs), London: Oxford\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1964, Philosophy of History (Foundations of Philosophy Series), Englewood Cliffs, NJ:\nPrentice-Hall.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1964",
+            "title": "\u2013\u2013\u2013, 1964, Philosophy of History (Foundations of Philosophy Series), Englewood Cliffs, NJ:\nPrentice-Hall."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013 (ed.), 1966, Philosophical\nAnalysis and History (Sources in Contemporary Philosophy), New\nYork: Harper & Row.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013 (ed.)"
+            ],
+            "year": "1966",
+            "title": "\u2013\u2013\u2013 (ed.), 1966, Philosophical\nAnalysis and History (Sources in Contemporary Philosophy), New\nYork: Harper & Row."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Elster, Jon, 1989, Nuts and Bolts for the Social\nSciences , Cambridge/New York: Cambridge University Press.\ndoi:10.1017/CBO9780511812255",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fay, Brian, 2004, \u201cHistorians and Ethics: A Short\nIntroduction to the Theme Issue\u201d, History and Theory ,\n43(4): 1\u20132. Fay is also editor for this theme issue.\ndoi:10.1111/j.1468-2303.2004.00294.x",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Fogel, Robert William and G. R. Elton, 1983, Which Road to the\nPast? Two Views of History , New Haven, CT: Yale University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Foucault, Michel, 1966 [1971], Les mots et les choses: une\narch\u00e9ologie des sciences humaines (Biblioth\u00e8que des\nsciences humaines), Paris: Gallimard. Translated as The Order of\nThings: An Archaeology of the Human Sciences (World of Man), New\nYork: Pantheon Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gardiner, Patrick L., 1952, The Nature of Historical\nExplanation (Oxford Classical & Philosophical Monographs),\nLondon: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013 (ed.), 1974, The Philosophy of\nHistory (Oxford Readings in Philosophy), London/New York: Oxford\nUniversity Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013 (ed.)"
+            ],
+            "year": "1974",
+            "title": "\u2013\u2013\u2013 (ed.), 1974, The Philosophy of\nHistory (Oxford Readings in Philosophy), London/New York: Oxford\nUniversity Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Geertz, Clifford, 1980, Negara: The Theatre State in\nNineteenth-Century Bali , Princeton, NJ: Princeton University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Goldhagen, Daniel Jonah, 1996, Hitler\u2019s Willing\nExecutioners: Ordinary Germans and the Holocaust , New York: A.A.\nKnopf.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Goyal, Archana, Vishal Gupta, and Manish Kumar, 2018,\n\u201cRecent Named Entity Recognition and Classification Techniques:\nA Systematic Review\u201d, Computer Science Review , 29:\n21\u201343. doi:10.1016/j.cosrev.2018.06.001",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Gross, Jan Tomasz, 2000 [2001], S\u0105siedzi: historia\nzag\u0142ady \u017cydowskiego miasteczka , Sejny: Pogranicze.\nEnglish version by the author published as Neighbors: The\nDestruction of the Jewish Community in Jedwabne, Poland ,\nPrinceton, NJ: Princeton University Press, 2001.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hacking, Ian, 1999, The Social Construction of What? ,\nCambridge, MA: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "Hacking, Ian"
+            ],
+            "year": "1999",
+            "title": "The Social Construction of What? ",
+            "publisher": "Cambridge, MA: Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2002, Historical Ontology ,\nCambridge, MA/London: Harvard University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2002",
+            "title": "Historical Ontology ",
+            "publisher": "Cambridge, MA/London: Harvard University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Hart, H. L. A. and Tony Honor\u00e9, 1959, Causation in the\nLaw , Oxford: Clarendon Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hedstr\u00f6m, Peter and Richard Swedberg (eds), 1998, Social\nMechanisms: An Analytical Approach to Social Theory (Studies in\nRationality and Social Change), Cambridge/New York: Cambridge\nUniversity Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hegel, Georg Wilhelm Friedrich, 1807 [1977], Ph\u00e4nomenologie des Geistes , Hamurg und W\u00fcrsburg:\nJoseph Anton Goebhardt. Translated as Phenomenology of\nSpirit , Arnold V. Miller (trans.), J. N. Findlay (ed.), Oxford:\nClarendon Press, 1977.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1821 [1967], Grundlinien der\nPhilosophie des Rechts , Berlin. Translated as The Philosophy\nof Right , T. M. Knox (trans.), London: Oxford University Press,\n1967.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1821",
+            "title": "\u2013\u2013\u2013, 1821 [1967], Grundlinien der\nPhilosophie des Rechts , Berlin. Translated as The Philosophy\nof Right , T. M. Knox (trans.), London: Oxford University Press,\n1967."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1824a [1953], Reason in History: A\nGeneral Introduction to the Philosophy of History (The Library of\nLiberal Arts 35), Robert S. Hartman (trans.), New York: Liberal Arts\nPress, 1953. Introduction to Hegel 1824b.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1824",
+            "title": "\u2013\u2013\u2013, 1824a [1953], Reason in History: A\nGeneral Introduction to the Philosophy of History (The Library of\nLiberal Arts 35), Robert S. Hartman (trans.), New York: Liberal Arts\nPress, 1953. Introduction to Hegel 1824b."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1824b [1956], Lectures on the\nPhilosophy of History (Bohn\u2019s Philosophical Library), John\nSibree (trans.), London, 1890; 1899 edition reprinted in New York:\nDover Publications, 1956. Translated from the third edition of Vorlesungen \u00fcber die Geschichte der Philosophie , Berlin:\nDuncker und Humblot.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1824",
+            "title": "\u2013\u2013\u2013, 1824b [1956], Lectures on the\nPhilosophy of History (Bohn\u2019s Philosophical Library), John\nSibree (trans.), London, 1890; 1899 edition reprinted in New York:\nDover Publications, 1956. Translated from the third edition of Vorlesungen \u00fcber die Geschichte der Philosophie , Berlin:\nDuncker und Humblot."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1837 [1975], Vorlesungen \u00fcber die\nPhilosophie der Geschichte. Einleitung , posthumous edition, first\nof several editions based on lecture notes. Translated as Lectures\non the Philosophy of World History: Introduction, Reason in\nHistory (Cambridge Studies in the History and Theory of Politics),\nHugh Barr Nisbet (trans.), Cambridge/New York: Cambridge University\nPress. Based on the 1955 German edition by Johannes Hoffmeister.\ndoi:10.1017/CBO9781139167567",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1837",
+            "title": "\u2013\u2013\u2013, 1837 [1975], Vorlesungen \u00fcber die\nPhilosophie der Geschichte. Einleitung , posthumous edition, first\nof several editions based on lecture notes. Translated as Lectures\non the Philosophy of World History: Introduction, Reason in\nHistory (Cambridge Studies in the History and Theory of Politics),\nHugh Barr Nisbet (trans.), Cambridge/New York: Cambridge University\nPress. Based on the 1955 German edition by Johannes Hoffmeister.\ndoi:10.1017/CBO9781139167567"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Hempel, Carl G., 1942, \u201cThe Function of General Laws in\nHistory\u201d, The Journal of Philosophy , 39(2):\n35\u201348. doi:10.2307/2017635",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Herder, Johann Gottfried, 1784\u201391 [1968], , \u201cIdeen zur\nPhilosophie der Geschichte der Menschheit\u201d, in four parts in Allgemeine Literatur-Zeitung . Abridged and translated in Reflections on the Philosophy of the History of Mankind (Classic European Historians), Frank E. Manuel (ed.), Chicago:\nUniversity of Chicago Press, 1968.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Herder, Johan Gottfried, [OWH] 1997, On World History: An\nAnthology (Sources and Studies in World History), Hans Adler and\nErnest A. Menze (eds), Ernest A. Menze and Michael Palma (trans.),\nArmonk, NY: M.E. Sharpe. [Excerpts from his writings.]",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hilberg, Raul, 1961, The Destruction of the European\nJews , Chicago: Quadrangle Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hinton, William, 1966, Fanshen: A Documentary of Revolution in\na Chinese Village , New York: Vintage Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Huang, Philip C., 1990, The Peasant Family and Rural\nDevelopment in the Yangzi Delta, 1350\u20131988 , Stanford, CA:\nStanford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Hume, David, 1754\u20131762, The History of England , 6\nvolumes, London: A. Millar. Reprinted, W. B. Todd (ed.), Indianapolis:\nLiberty Classics, 1983.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Judt, Tony, 1992, \u201cThe Past Is Another Country: Myth and\nMemory in Postwar Europe\u201d, Daedalus , 121(4):\n83\u2013118.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2006, Postwar: A History of Europe\nSince 1945 , New York: Penguin Books.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2006",
+            "title": "\u2013\u2013\u2013, 2006, Postwar: A History of Europe\nSince 1945 , New York: Penguin Books."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Judt, Tony, and Timothy Snyder, 2012, Thinking the\nTwentieth Century . New York: Penguin Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kamath, Uday, Kevin Keenan, Garrett Somers, and Sarah Sorenson,\n2024, Large Language Models: A Deep Dive. Bridging Theory and\nPractice , Cham, Switzerland: Springer.\ndoi:10.1007/978-3-031-65647-7",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kammen, Michael G., 1991, Mystic Chords of Memory: The\nTransformation of Tradition in American Culture , New York:\nKnopf.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Kant, Immanuel, 1784\u20136 [1963], On History , L. W.\nBeck (ed.), Indianapolis: Bobbs-Merrill, 1963. Includes 1784, \u201cBeantwortung der Frage: Was ist\nAufkl\u00e4rung?\u201d translated as \u201cWhat is\nenlightenment?\u201d 1784, \u201cIdee zu einer allgemeinen Geschichte in\nweltb\u00fcrgerlicher Absicht\u201d, translated as \u201cIdea for a\nuniversal history from a cosmopolitan point of view\u201d 1785, \u201cReviews of Herder\u2019s Ideas for a philosophy of the\nhistory of mankind \u201d 1786, \u201cConjectural beginning of human history\u201d 1794, \u201cDas Ende aller Dinge\u201d, translated as \u201cThe\nend of all things\u201d 1795, Zum ewigen Frieden. Ein philosophischer Entwurf ,\ntranslated as \u201cPerpetual peace\u201d 1798, \u201cAn old question raised again: Is the human race\nconstantly progressing?\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1784, \u201cBeantwortung der Frage: Was ist\nAufkl\u00e4rung?\u201d translated as \u201cWhat is\nenlightenment?\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1784, \u201cIdee zu einer allgemeinen Geschichte in\nweltb\u00fcrgerlicher Absicht\u201d, translated as \u201cIdea for a\nuniversal history from a cosmopolitan point of view\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1785, \u201cReviews of Herder\u2019s Ideas for a philosophy of the\nhistory of mankind \u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1786, \u201cConjectural beginning of human history\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1794, \u201cDas Ende aller Dinge\u201d, translated as \u201cThe\nend of all things\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1795, Zum ewigen Frieden. Ein philosophischer Entwurf ,\ntranslated as \u201cPerpetual peace\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1798, \u201cAn old question raised again: Is the human race\nconstantly progressing?\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1784\u20135 [1990], Foundations of the\nMetaphysics of Morals and, What is Enlightenment? (The Library of\nliberal arts), second revised edition, Lewis White Beck (trans.), New\nYork: Macmillan, 1990 (first edition 1959). Includes 1784, \u201cBeantwortung der Frage: Was ist\nAufkl\u00e4rung?\u201d, translated as \u201cWhat is\nEnlightenment?\u201d 1785, \u201cGrundlegung zur Metaphysik der Sitten\u201d,\ntranslated as \u201cFoundations of the Metaphysics of\nMorals\u201d.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1784",
+            "title": "\u2013\u2013\u2013, 1784\u20135 [1990], Foundations of the\nMetaphysics of Morals and, What is Enlightenment? (The Library of\nliberal arts), second revised edition, Lewis White Beck (trans.), New\nYork: Macmillan, 1990 (first edition 1959). Includes 1784, \u201cBeantwortung der Frage: Was ist\nAufkl\u00e4rung?\u201d, translated as \u201cWhat is\nEnlightenment?\u201d 1785, \u201cGrundlegung zur Metaphysik der Sitten\u201d,\ntranslated as \u201cFoundations of the Metaphysics of\nMorals\u201d."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "1784, \u201cBeantwortung der Frage: Was ist\nAufkl\u00e4rung?\u201d, translated as \u201cWhat is\nEnlightenment?\u201d",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1785, \u201cGrundlegung zur Metaphysik der Sitten\u201d,\ntranslated as \u201cFoundations of the Metaphysics of\nMorals\u201d.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Koj\u00e8ve, Alexandre, 1947 [1969], Introduction \u00e0\nla lecture de Hegel: le\u00e7ons sur La ph\u00e9nom\u00e9nologie\nde l\u2019esprit, profess\u00e9es de 1933 \u00e0 1939 \u00e0\nl\u2019\u00c9cole des hautes-\u00e9tudes (Biblioth\u00e8que des idees), Raymond Queneau (ed.), Paris:\nGallimard. Abbreviated and translated as Introduction to the\nReading of Hegel , Allan Bloom (ed.). James H. Nichols, Jr\n(trans.), New York: Basic Books, 1969.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Koselleck, Reinhart, 1959 [1988], Kritik und Krise , 1959,\nfrom his 1954 doctoral thesis, University of Heidelberg. Translated as Critique and Crisis: Enlightenment and the Pathogenesis of Modern\nSociety (Studies in Contemporary German Social Thought),\nCambridge, MA: MIT Press, 1988.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2002, The Practice of Conceptual\nHistory: Timing History, Spacing Concepts (Cultural Memory in the\nPresent), Todd Samuel Presner (trans.), Stanford, CA: Stanford\nUniversity Press. Translations of 18 of his essays.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2002",
+            "title": "\u2013\u2013\u2013, 2002, The Practice of Conceptual\nHistory: Timing History, Spacing Concepts (Cultural Memory in the\nPresent), Todd Samuel Presner (trans.), Stanford, CA: Stanford\nUniversity Press. Translations of 18 of his essays."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1979 [2004], Vergangene Zukunft: zur\nSemantik geschichtl. Zeiten , Frankfurt am Main: Suhrkamp; A\ncollection of material originally published 1965\u20131977. Translated as Futures Past: On the Semantics of Historical Time (Studies in\nContemporary German Social Thought), Keith Tribe (trans.), Cambridge,\nMass: MIT Press, 1985. Reprinted New York: Columbia University Press,\n2004.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1979",
+            "title": "\u2013\u2013\u2013, 1979 [2004], Vergangene Zukunft: zur\nSemantik geschichtl. Zeiten , Frankfurt am Main: Suhrkamp; A\ncollection of material originally published 1965\u20131977. Translated as Futures Past: On the Semantics of Historical Time (Studies in\nContemporary German Social Thought), Keith Tribe (trans.), Cambridge,\nMass: MIT Press, 1985. Reprinted New York: Columbia University Press,\n2004."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Kuukkanen, Jouni-Matti, 2015, Postnarrativist Philosophy of\nHistoriography , Houndmills, UK/New York: Palgrave Macmillan.\ndoi:10.1057/9781137409874",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "LaCapra, Dominick, 1994, Representing the Holocaust: History,\nTheory, Trauma , Ithaca, NY: Cornell University Press.",
+          "parsed": {
+            "authors": [
+              "LaCapra, Dominick"
+            ],
+            "year": "1994",
+            "title": "Representing the Holocaust: History",
+            "publisher": "Theory, Trauma , Ithaca, NY: Cornell University Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1998, History and Memory after\nAuschwitz , Ithaca, NY: Cornell University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1998",
+            "title": "\u2013\u2013\u2013, 1998, History and Memory after\nAuschwitz , Ithaca, NY: Cornell University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Lattimore, Owen, 1932, Manchuria, Cradle of Conflict , New\nYork: The Macmillan Company.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Lee, James Z. and Wang Feng, 1999, One Quarter of Humanity:\nMalthusian Mythology and Chinese Realities, 1700\u20132000 ,\nCambridge, MA: Harvard University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Leibniz, Gottfried Wilhelm, 1710 [1985], Essais de\nTh\u00e9odic\u00e9e sur la bont\u00e9 de Dieu, la libert\u00e9\nde l\u2019homme et l\u2019origine du mal . Translated as Theodicy: Essays on the Goodness of God, the Freedom of Man, and\nthe Origin of Evil , Austin Farrer (ed.). E. M. Huggard (trans.),\nLa Salle, IL: Open Court, 1985.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Le Roy Ladurie, Emmanuel, 1975 [1979], Montaillou, village\noccitan de 1294 a 1324 (Bibliotheque des histoires), Paris:\nGallimard. Translated as Montaillou, the Promised Land of\nError , Barbara Bray (trans.), New York: Vintage Books, 1979.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Little, Daniel, 2010, New Contributions to the Philosophy of\nHistory (Methodos Series, 6), Dordrecht/New York: Springer.\ndoi:10.1007/978-90-481-9410-0",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2017, \u201cMicrofoundations\u201d, in The Routledge Companion to Philosophy of Social Science , Lee\nMcIntyre and Alex Rosenberg (eds), London/New York: Routledge,\n228\u2013239.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2017",
+            "title": "\u2013\u2013\u2013, 2017, \u201cMicrofoundations\u201d, in The Routledge Companion to Philosophy of Social Science , Lee\nMcIntyre and Alex Rosenberg (eds), London/New York: Routledge,\n228\u2013239."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2018, \u201cDisaggregating Historical\nExplanation: The Move to Social Mechanisms\u201d, in Routledge\nHandbook of Mechanisms and Mechanical Philosophy , Stuart Glennan\nand Phyllis Illari (eds.), New York: Routledge, 413\u2013422.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2018",
+            "title": "\u2013\u2013\u2013, 2018, \u201cDisaggregating Historical\nExplanation: The Move to Social Mechanisms\u201d, in Routledge\nHandbook of Mechanisms and Mechanical Philosophy , Stuart Glennan\nand Phyllis Illari (eds.), New York: Routledge, 413\u2013422."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2022, Confronting Evil in History (Cambridge Elements. Elements in Historical Theory and Practice),\nCambridge/New York: Cambridge University Press.\ndoi:10.1017/9781009104265",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2022",
+            "title": "\u2013\u2013\u2013, 2022, Confronting Evil in History (Cambridge Elements. Elements in Historical Theory and Practice),\nCambridge/New York: Cambridge University Press.\ndoi:10.1017/9781009104265"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Livi-Bacci, Massimo, 2007, A Concise History of World\nPopulation , fourth edition, Malden, MA: Blackwell. Translation of Storia minima della popolazione del mondo .",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mackie, J. L., 1965, \u201cCauses and Conditions\u201d, American Philosophical Quarterly , 2(4): 245\u2013264.",
+          "parsed": {
+            "authors": [
+              "Mackie, J. L."
+            ],
+            "year": "1965",
+            "title": "\u201cCauses and Conditions\u201d",
+            "publisher": "American Philosophical Quarterly , 2(4): 245\u2013264"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1974, The Cement of the Universe: A\nStudy of Causation (The Clarendon Library of Logic and\nPhilosophy), Oxford: Clarendon Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1974",
+            "title": "\u2013\u2013\u2013, 1974, The Cement of the Universe: A\nStudy of Causation (The Clarendon Library of Logic and\nPhilosophy), Oxford: Clarendon Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Mandelbaum, Maurice, 1971, History, Man, & Reason: A Study\nin Nineteenth-Century Thought , Baltimore, MD: Johns Hopkins\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mann, Michael, 1986, The Sources of Social Power, Volume 1: A\nHistory of Power from the Beginning to A.D. 1760 , Cambridge:\nCambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Maritain, Jacques, 1957, On the Philosophy of History ,\nJoseph W. Evans (ed.), New York: Scribner.",
+          "parsed": {
+            "authors": [
+              "Maritain, Jacques"
+            ],
+            "year": "1957",
+            "title": "On the Philosophy of History ",
+            "publisher": "Joseph W. Evans (ed.), New York: Scribner"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Marx, Karl, 1852 [2005], \u201cDer 18te Brumaire des Louis\nNapoleon\u201d, Die Revolution , 1852. Translated as The\nEighteenth Brumaire of Louis Bonaparte , New York: Mondial,\n2005.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Marx, Karl and Friedrich Engels, 1845\u201349 [1970], The\nGerman Ideology , third revised edition, Moscow: Progress\nPublishers, 1970. A collection of manuscripts unpublished until\n1932.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1848, Manifest der Kommunistischen\nPartei , London. Translated as The Communist Manifesto ,\nin Karl Marx\u2019s The Revolutions of 1848: Political Writings,\nVolume 1 , David Fernbach (ed.), New York: Penguin Classics, 1974,\n62\u201398.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1848",
+            "title": "\u2013\u2013\u2013, 1848, Manifest der Kommunistischen\nPartei , London. Translated as The Communist Manifesto ,\nin Karl Marx\u2019s The Revolutions of 1848: Political Writings,\nVolume 1 , David Fernbach (ed.), New York: Penguin Classics, 1974,\n62\u201398."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "McNeill, William Hardy, 1976, Plagues and Peoples , Garden\nCity, N.Y: Anchor Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Mink, Louis O., 1966, \u201cThe Autonomy of Historical\nUnderstanding\u201d, History and Theory , 5(1): 24\u201347.\ndoi:10.2307/2504434",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1987, Historical Understanding ,\nBrian Fay, Eugene O. Golob, and Richard T. Vann (eds), Ithaca, NY:\nCornell University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1987",
+            "title": "\u2013\u2013\u2013, 1987, Historical Understanding ,\nBrian Fay, Eugene O. Golob, and Richard T. Vann (eds), Ithaca, NY:\nCornell University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Mohoney, Jason, Anil Pacaci, Shihabur Rahman Chowdhury, Ali\nMousavi, Ihab F. Ilyas, Umar Farooq Minhas, Jeffrey Pound, and\nTheodoros Rekatsinas, 2023, \u201cHigh-Throughput Vector Similarity\nSearch in Knowledge Graphs\u201d, Proceedings of the ACM on\nManagement of Data , 1(2): 1\u201325. doi:10.1145/3589777",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Momigliano, Arnaldo, 1990, The Classical Foundations of Modern\nHistoriography (Sather Classical Lectures 54), Berkeley, CA:\nUniversity of California Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Montesquieu, Charles de Secondat, 1748, De l\u2019esprit des\nloix [lois] , 2 volumes., Geneve. Translated as The Spirit of\nthe Laws (Cambridge Texts in the History of Political Thought),,\nAnne M. Cohler, Basia C. Miller, and Harold Samuel Stone (trans),\nCambridge/New York: Cambridge University Press, 1989.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Nagel, Ernest, 1961, The Structure of Science: Problems in the\nLogic of Scientific Explanation , New York: Harcourt, Brace &\nWorld.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "O\u2019Brien, Dennis, 1975, Hegel on Reason and History: A\nContemporary Interpretation , Chicago, University of Chicago\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "O\u2019Brien, Patrick and \u00c7a\u011flar Keyder, 1978, Economic Growth in Britain and France, 1780\u20131914: Two Paths\nto the Twentieth Century , London/Boston: G. Allen &\nUnwin.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ohara, Jo\u00e3o, 2022, The Theory and Philosophy of\nHistory: Global Variations (Cambridge Elements. Elements in\nHistorical Theory and Practice), Cambridge/New York: Cambridge\nUniversity Press. doi:10.1017/9781009036313",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Olsen, Niklas, 2012, History in the Plural: An Introduction to\nthe Work of Reinhart Koselleck , New York: Berghahn Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Outhwaite, William, 1975, Understanding Social Life: The\nMethod Called \u201cVerstehen\u201d , London: George Allen &\nUnwin.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pankakoski, Timo, 2010, \u201cConflict, Context, Concreteness:\nKoselleck and Schmitt on Concepts\u201d, Political Theory ,\n38(6): 749\u2013779. doi:10.1177/0090591710378572",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Passmore, J. A., 1958 [1966], \u201cThe Objectivity Of\nHistory\u201d, Philosophy , 33(125): 97\u2013111. Reprinted\nin Dray 1966 :\n 75\u201394 (ch. 3). doi:10.1017/S0031819100038213",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Paul, Herman, 2015, Key Issues in Historical Theory ,\nLondon/New York: Routledge. doi:10.4324/9781315720609",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pierson, Paul, 2004, Politics in Time: History, Institutions,\nand Social Analysis , Princeton, NJ: Princeton University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Pompa, Leon, 1990, Human Nature and Historical Knowledge:\nHume, Hegel, and Vico , Cambridge/New York: Cambridge University\nPress. doi:10.1017/CBO9780511597930",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Prusin, Alexander Victor, 2010, The Lands Between: Conflict in\nthe East European Borderlands, 1870\u20131992 , New York: Oxford\nUniversity Press. doi:10.1093/acprof:oso/9780199297535.001.0001",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rabinbach, Anson, 2020, Staging the Third Reich: Essays in\nCultural and Intellectual History , Stefanos Geroulanos and Dagmar\nHerzog (eds), London/New York: Routledge.\ndoi:10.4324/9781003010692",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ranke, Leopold von. 1884 [1973]. \u201cPreface\u201d to Universal\nHistory, The Oldest Historical Group of Nations and the Greeks ,\nG. W. Prothero (ed.), D. C. Tovey and G. W. Prothero (trans.), New\nYork: Charles Scribner\u2019s Sons, 1884. Reprinted in The Theory\nand Practice of History (European Historiography Series), Georg\nG. Iggers and Konrad von Moltke (eds.), Wilma A. Iggers and Konrad von\nMoltke (trans.), Indianapolis: Bobbs-Merrill.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Ric\u0153ur, Paul, 1983\u20131985 [1984\u20131988], Temps\net r\u00e9cit (Ordre philosophique), 3 volumes, Paris: Seuil.\nTranslated as Time and Narrative , 3 volumes, Kathleen Blamey\nand David Pellauer (trans), Chicago: University of Chicago Press,\n1984\u20131988.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2000 [2004], La m\u00e9moire,\nl\u2019histoire, l\u2019oubli (Ordre philosophique), Paris: Ed.\ndu Seuil. Translated as Memory, History, Forgetting , Kathleen\nBlamey and David Pellauer (trans.), Chicago: University of Chicago\nPress.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2000",
+            "title": "\u2013\u2013\u2013, 2000 [2004], La m\u00e9moire,\nl\u2019histoire, l\u2019oubli (Ordre philosophique), Paris: Ed.\ndu Seuil. Translated as Memory, History, Forgetting , Kathleen\nBlamey and David Pellauer (trans.), Chicago: University of Chicago\nPress."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Rorty, Richard, 1979, Philosophy and the Mirror of\nNature , Princeton, NJ: Princeton University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Roth, Paul Andrew, 2020, The Philosophical Structure of\nHistorical Explanation , Evanston, IL: Northwestern University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rousseau, Jean-Jacques, 1762a [1983], Du contrat social ou\nPrincipes du droit politique , Amsterdam. Translated as \u201cOn\nthe Social Contract\u201d in On the Social Contract; Discourse on\nthe Origin of Inequality; Discourse on Political Economy , Donald\nA. Cress (trans.), Indianapolis, IN: Hackett, 1983.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1762b [2003], \u00c9mile: ou de\nl\u2019\u00e9ducation , Amsterdam. Translated as Emile, or,\nTreatise on Education , William H. Payne (trans.), Amherst,\nNY\u202f: Prometheus Books.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1762",
+            "title": "\u2013\u2013\u2013, 1762b [2003], \u00c9mile: ou de\nl\u2019\u00e9ducation , Amsterdam. Translated as Emile, or,\nTreatise on Education , William H. Payne (trans.), Amherst,\nNY\u202f: Prometheus Books."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Rowe, William T., 2007, \u201cOwen Lattimore, Asia, and\nComparative History\u201d, The Journal of Asian Studies ,\n66(3): 759\u2013786. doi:10.1017/S0021911807000952",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Rust, E. C., 1947, The Christian Understanding of History (Lutterworth Library 30), London: Lutterworth Press.",
+          "parsed": {
+            "authors": [
+              "Rust, E. C."
+            ],
+            "year": "1947",
+            "title": "The Christian Understanding of History (Lutterworth Library 30)",
+            "publisher": "London: Lutterworth Press"
+          },
+          "confidence": "high"
+        },
+        {
+          "raw": "Sachsenmaier, Dominic, 2011, Global Perspectives on Global\nHistory: Theories and Approaches in a Connected World ,\nCambridge/New York: Cambridge University Press.\ndoi:10.1017/CBO9780511736544",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Said, Edward W., 1978, Orientalism , New York: Vintage\nBooks.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schama, Simon, 1991, Dead Certainties: Unwarranted\nSpeculations , New York: Knopf.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schleiermacher, Friedrich, 1838 [1998], Hermeneutik und\nKritik , Berlin: Reimer. Translated in Hermeneutics and\nCriticism and Other Writings (Cambridge Texts in the History of\nPhilosophy), Andrew Bowie (ed./tran.), Cambridge/New York: Cambridge\nUniversity Press. doi:10.1017/CBO9780511814945",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Schreibman, Susan, Raymond George Siemens, and John Unsworth\n(eds), 2016, A New Companion to Digital Humanities (Blackwell\nCompanions to Literature and Culture 93), Chichester, UK:\nWiley-Blackwell. doi:10.1002/9781118680605",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Scriven, Michael, 1962, \u201cExplanations, Predictions, and\nLaws\u201d, in Scientific Explanation, Space, and Time (Minnesota Studies in the Philosophy of Science 3), Herbert Feigl and\nGrover Maxwell (eds), Minneapolis, MN: University of Minnesota Press,\n170\u2013230.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Sherratt, Yvonne, 2006, Continental Philosophy of Social\nScience: Hermeneutics, Genealogy, Critical Theory , Cambridge/New\nYork: Cambridge University Press. doi:10.1017/CBO9780511610691",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Skinner, G. William, 1977, \u201cRegional Urbanization in\nNineteenth-Century China\u201d, in The City in Late Imperial\nChina (Studies in Chinese Society), G. William Skinner (ed.),\nStanford, CA: Stanford University Press, 211\u2013249.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Smith, Adam, 1776 [1976], An Inquiry into the Nature and\nCauses of the Wealth of Nations (The Glasgow Edition of the Works\nand Correspondence of Adam Smith, 2), 2 volumes, William B. Todd\n(ed.), doi:10.1093/actrade/9780199269563.book.1\ndoi:10.1093/actrade/9780199269570.book.1",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Snyder, Timothy, 2010, Bloodlands: Europe between Hitler and\nStalin , London: Bodley Head & New York: Basic Books.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 2015, Black Earth: The Holocaust as\nHistory and Warning , New York: Tim Duggan Books.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "2015",
+            "title": "\u2013\u2013\u2013, 2015, Black Earth: The Holocaust as\nHistory and Warning , New York: Tim Duggan Books."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Spengler, Oswald, 1918\u201323, Der Untergang des\nAbendlandes: umrisse einer Morphologie der Weltgeschichte , 2\nvolumes, M\u00fcnchen: Beck. Translated as The Decline of the\nWest , Charles Francis Atkinson (trans.), 2 volumes, New York: A.\nA. Knopf, 1926\u201328.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Taylor, Charles, 1971 [1985], \u201cInterpretation and the\nSciences of Man\u201d, The Review of Metaphysics , 25(1):\n3\u201351. Collected in his Philosophy and the Human Sciences:\nPhilosophical Papers 2 , Cambridge: Cambridge University Press,\n15\u201357 (ch. 1).",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1975, Hegel , Cambridge/New York:\nCambridge University Press. doi:10.1017/CBO9781139171465",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1975",
+            "title": "\u2013\u2013\u2013, 1975, Hegel , Cambridge/New York:\nCambridge University Press. doi:10.1017/CBO9781139171465"
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Toynbee, Arnold, 1934\u201361, A Study of History , 12\nvolumes, London: Oxford University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Tucker, Aviezer (ed.), 2009, A Companion to the Philosophy of\nHistory and Historiography (Blackwell Companions to Philosophy\n41), Chichester, UK/Malden, MA: Wiley-Blackwell.\ndoi:10.1002/9781444304916",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vico, Giambattista, 1725, Principa di una scienza nuova ,\nNaples. Translated as The First New Science (Cambridge Texts\nin the History of Political Thought), Leon Pompa (ed./tran.),\nCambridge: Cambridge University Press.\ndoi:10.1017/CBO9781139163705",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Vieweg, Klaus, 2019 [2023], Hegel: der Philosoph der Freiheit:\nBiographie , M\u00fcnchen: C.H. Beck. Translated as Hegel: The\nPhilosopher of Freedom , Sophia Kottman (trans.), Stanford, CA:\nStanford University Press, 2023.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Waldron, Arthur, 1990, The Great Wall of China: From History\nto Myth (Cambridge Studies in Chinese History, Literature, and\nInstitutions), Cambridge/New York: Cambridge University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Walsh, William Henry, 1951 [1960], An Introduction to\nPhilosophy of History (Hutchinson\u2019s University Library),\nLondon: Hutchinson. Revised edition, 1958. American edition retitled Philosophy of History: An Introduction , New York: Harper,\n1960.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Weber, Max, 1949, Max Weber on the Methodology of the Social\nSciences , Edward Shils and Henry A. Finch (eds/trans), Glencoe,\nIL: Free Press. Includes 1917, \u201cDer Sinn der \u2018Wertfreiheit\u2019 der\nsoziologischen und \u00f6konomischen Wissenschaften\u201d. Translated\nas \u201cThe Meaning of \u2018Ethical Neutrality\u2019 in Sociology\nand Economics\u201d. 1904, \u201cDie \u2018Objektivit\u00e4t\u2019\nsozialwissenschaftlicher und sozialpolitischer Erkenntnis\u201d, Archiv f\u00fcr Sozialwissenschaft und Sozialpolitik , 19:\n22\u201387. Translated as \u201c\u2018Objectivity\u2019 in Social\nScience and Social Policy\u201d. 1906, \u201cKritische Studien auf dem Gebiet der\nkulturwissenschaftlichen Logik\u201d, Archiv f\u00fcr\nSozialwissenschaft und Sozialpolitik , 22: 143\u2013207.\nTranslated as \u201cCritical Studies in the Logic of the Cultural\nSciences\u201d.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1917, \u201cDer Sinn der \u2018Wertfreiheit\u2019 der\nsoziologischen und \u00f6konomischen Wissenschaften\u201d. Translated\nas \u201cThe Meaning of \u2018Ethical Neutrality\u2019 in Sociology\nand Economics\u201d.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1904, \u201cDie \u2018Objektivit\u00e4t\u2019\nsozialwissenschaftlicher und sozialpolitischer Erkenntnis\u201d, Archiv f\u00fcr Sozialwissenschaft und Sozialpolitik , 19:\n22\u201387. Translated as \u201c\u2018Objectivity\u2019 in Social\nScience and Social Policy\u201d.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "1906, \u201cKritische Studien auf dem Gebiet der\nkulturwissenschaftlichen Logik\u201d, Archiv f\u00fcr\nSozialwissenschaft und Sozialpolitik , 22: 143\u2013207.\nTranslated as \u201cCritical Studies in the Logic of the Cultural\nSciences\u201d.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Whatmore, Richard and B. W. Young (eds), 2016, A Companion to\nIntellectual History (Wiley Blackwell Companions to World\nHistory), Chichester, UK: Wiley Blackwell.\ndoi:10.1002/9781118508091",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "White, Hayden V., 1973, Metahistory: The Historical\nImagination in Nineteenth-Century Europe , Baltimore, MD: Johns\nHopkins University Press.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "\u2013\u2013\u2013, 1987, The Content of the Form:\nNarrative Discourse and Historical Representation , Baltimore, MD:\nJohns Hopkins University Press.",
+          "parsed": {
+            "authors": [
+              "\u2013\u2013\u2013"
+            ],
+            "year": "1987",
+            "title": "\u2013\u2013\u2013, 1987, The Content of the Form:\nNarrative Discourse and Historical Representation , Baltimore, MD:\nJohns Hopkins University Press."
+          },
+          "confidence": "low"
+        },
+        {
+          "raw": "Wittfogel, Karl A., 1935, \u201cThe Foundations and Stages of\nChinese Economic History\u201d, Zeitschrift f\u00fcr\nSozialforschung , 4(1): 26\u201360. Reprinted in part as\n\u201cThe Stages of Development in Chinese Economic and Social\nHistory\u201d, in The Asiatic Mode of Production: Science and\nPolitics , Anne M. Bailey and Josep R. Llobera (eds.),\nLondon/Boston: Routledge and Kegan Paul, 1981, 113\u2013140.\ndoi:10.5840/zfs193541113 (1935)",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wong, Roy Bin, 1997, China Transformed: Historical Change and\nthe Limits of European Experience , Ithaca, NY: Cornell University\nPress.",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Wylega\u0142a, Anna, 2017, \u201cManaging the Difficult Past:\nUkrainian Collective Memory and Public Debates on History\u201d, Nationalities Papers , 45(5): 780\u2013797.\ndoi:10.1080/00905992.2016.1273338",
+          "parsed": null,
+          "confidence": "unparseable"
+        },
+        {
+          "raw": "Zahle, Julie and Finn Collin (eds), 2014, Rethinking the\nIndividualism-Holism Debate: Essays in the Philosophy of Social\nScience (Synthese Library 372), Cham/Heidelberg: Springer.\ndoi:10.1007/978-3-319-05344-8",
+          "parsed": null,
+          "confidence": "unparseable"
+        }
+      ]
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,558 @@
+[s2_search.py] Searching Semantic Scholar: 'Brubaker Limits Rationality Weber formal substantive', limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_2097617243968b69)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Brubaker Limits Rationality Weber formal substantive",
+  "results": [
+    {
+      "paperId": "cf471177c6c7af41377d325bb89b8f0ee07b7b99",
+      "title": "Max Weber\u2019s Outer World/Inner World and the Principle of Rationality",
+      "authors": [
+        {
+          "name": "Steven Gerardi",
+          "authorId": "2334111706"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Max Weber (1864-1920) revealed his major Sociological observation, of the \u201cPrinciple of Rationality\u201d.\nThe Principle of Rationality consisted of two social movements, Substantive (traditional culture/inner\nworld) and Formal Rationality (modern society, Money Economy (Outer world).",
+      "citationCount": 0,
+      "doi": "10.34257/ljrhssvol24is14pg1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cf471177c6c7af41377d325bb89b8f0ee07b7b99",
+      "venue": "Global Journal of Human-Social Science Research",
+      "journal": {
+        "name": "Global Journal of Human-Social Science"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "546a1ba8d05ebbee6e140cfaa98e23cda3c49a9e",
+      "title": "The limits of rationality: An essay on the social and moral thought of Max Weber",
+      "authors": [
+        {
+          "name": "Rogers Brubaker",
+          "authorId": "47099466"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 338,
+      "doi": "10.2307/590417",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/546a1ba8d05ebbee6e140cfaa98e23cda3c49a9e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2cbf84625c7969723f7593ceb8c0177d1f2b3f19",
+      "title": "Rationalizing \u2018Vivir Bien\u2019: The Modern State and the formal limits to transformative rationalism in Bolivia",
+      "authors": [
+        {
+          "name": "Rub\u00e9n D. Castellano-Dur\u00e1n",
+          "authorId": "2278875775"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Drawing on the 2011 march against a highway project through the Isiboro S\u00e9cure National Park and IndigenousTerritory (TIPNIS) in Bolivia, this paper reviews Max Weber\u2019s conceptions on rationality, situating the TIPNIS protestin the interface between the modern formal-instrumental rationality of Bolivian State with the Substantive rationalityproposed as \u2018Vivir Bien\u2019; an umbrella term for a conglomeration of Latin American indigenous proposals for asustainable human and nature relationship beyond neoliberalism,\ufff9 colonialism, and their cultural and environmentalconsequences. As any modern institution, the Bolivian State seeks to impose modern means-ends calculations,discourses and practices, thus subduing the original transformational potential of \u2018Vivir Bien\u2019 as a different rationality,with its means-ends framework, knowledge and patterns of action.In this regard, from a Weberian critique of Modernity, two questions will be raised. First, to recognize the modernstate as the institutional embodiment of modern formal-instrumental rationality, bounded to the means-ends frameworksettled by Modernity. Secondly, to evaluate the conditions for the possibility of incorporating other rationalities into themodern state, allowing another means-ends calculation for state policy-making as well as other patterns of action andsociality.From these considerations, this paper realizes modern rationalism in front of other rationalisms, other humanworldviews and practices in a critical search of alternative approaches and proposals to attend to local and globalproblems that threaten sustainable human existence, from environmental devaluation to social inequality.",
+      "citationCount": 0,
+      "doi": "10.17356/ieejsp.v9i3.1139",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2cbf84625c7969723f7593ceb8c0177d1f2b3f19",
+      "venue": "Intersections",
+      "journal": {
+        "name": "Intersections"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "df26269988460c62d30b82ec645a1c078eeb1500",
+      "title": "Max Weber\u00b4s Formal and Substantive Rationality",
+      "authors": [
+        {
+          "name": "J. Savelsberg",
+          "authorId": "14232015"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.5771/9783465143017-493",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/df26269988460c62d30b82ec645a1c078eeb1500",
+      "venue": "Recht als Kultur? Beitr\u00e4ge zu Max Webers Soziologie des Rechts",
+      "journal": {
+        "name": "Recht als Kultur? Beitr\u00e4ge zu Max Webers Soziologie des Rechts"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f18656375c25b7101c5d9c5c8b372b863f2ace62",
+      "title": "The formal rationality of artificial intelligence-based algorithms and the problem of bias",
+      "authors": [
+        {
+          "name": "R. Nishant",
+          "authorId": "1773633"
+        },
+        {
+          "name": "Dirk Schneckenberg",
+          "authorId": "1917309"
+        },
+        {
+          "name": "M. Ravishankar",
+          "authorId": "2219297826"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This paper presents a new perspective on the problem of bias in artificial intelligence (AI)-driven decision-making by examining the fundamental difference between AI and human rationality in making sense of data. Current research has focused primarily on software engineers\u2019 bounded rationality and bias in the data fed to algorithms but has neglected the crucial role of algorithmic rationality in producing bias. Using a Weberian distinction between formal and substantive rationality, we inquire why AI-based algorithms lack the ability to display common sense in data interpretation, leading to flawed decisions. We first conduct a rigorous text analysis to uncover and exemplify contextual nuances within the sampled data. We then combine unsupervised and supervised learning, revealing that algorithmic decision-making characterizes and judges data categories mechanically as it operates through the formal rationality of mathematical optimization procedures. Next, using an AI tool, we demonstrate how formal rationality embedded in AI-based algorithms limits its capacity to perform adequately in complex contexts, thus leading to bias and poor decisions. Finally, we delineate the boundary conditions and limitations of leveraging formal rationality to automatize algorithmic decision-making. Our study provides a deeper understanding of the rationality-based causes of AI\u2019s role in bias and poor decisions, even when data is generated in a largely bias-free context.",
+      "citationCount": 60,
+      "doi": "10.1177/02683962231176842",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f18656375c25b7101c5d9c5c8b372b863f2ace62",
+      "venue": "Journal of Information and Technology",
+      "journal": {
+        "name": "Journal of Information Technology",
+        "pages": "19 - 40",
+        "volume": "39"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ac23bb19d7bbba14cd7f31989148b30673834f33",
+      "title": "The Politics of Rationality in Early Neoliberalism: Max Weber, Ludwig von Mises, and the Socialist Calculation Debate",
+      "authors": [
+        {
+          "name": "William Callison",
+          "authorId": "1573322033"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Abstract:Initiated by Mises and popularized by Hayek, the socialist calculation debate staked a political position on a methodological axiom: the \"irrationality\" of state planning. This article argues that Weber's typology of \"formal\" vs. \"substantive\" rationality at once drew from Austrian School marginalism and helped frame Mises and Hayek's critiques in the calculation debate. In turn, this debate shaped an anti-socialist front among the early neoliberals before their vaunted gatherings in Paris and Mont P\u00e8lerin. Through social scientific interventions, early neoliberalism split economics (qua market rationality) from politics (qua social justice) so as to place the latter beyond the epistemological pale.",
+      "citationCount": 3,
+      "doi": "10.1353/jhi.2022.0013",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ac23bb19d7bbba14cd7f31989148b30673834f33",
+      "venue": "Journal of the History of Ideas",
+      "journal": {
+        "name": "Journal of the History of Ideas",
+        "pages": "269 - 291",
+        "volume": "83"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "536b88add7c768467487e159bacc645148839ec1",
+      "title": "MAX WEBER, FORMAL RATIONALITY, AND HEALTH LIFESTYLES",
+      "authors": [
+        {
+          "name": "W. Cockerham",
+          "authorId": "5336612"
+        },
+        {
+          "name": "T. Abel",
+          "authorId": "32340591"
+        },
+        {
+          "name": "G. L\u00fcschen",
+          "authorId": "93559958"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 110,
+      "doi": "10.1111/J.1533-8525.1993.TB00119.X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/536b88add7c768467487e159bacc645148839ec1",
+      "venue": "",
+      "journal": {
+        "name": "Sociological Quarterly",
+        "pages": "413-425",
+        "volume": "34"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "36b2896d881e6aa99c1f4af375b98a1e76744b5c",
+      "title": "Max Weber and the Complexity of Parliamentary Democracy: Applying Formal and Substantive Rationality to the English and Welsh Education Policy-making Process",
+      "authors": [
+        {
+          "name": "R. Race",
+          "authorId": "115846697"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.12759/HSR.28.2003.3.213-225",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/36b2896d881e6aa99c1f4af375b98a1e76744b5c",
+      "venue": "",
+      "journal": {
+        "name": "Historical Social Research",
+        "pages": "213-225",
+        "volume": "28"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e5271a8f5719bb555eb9ea71ff1077fd84b35dea",
+      "title": "Book Reviews : LIMITS OF RATIONALITY: AN ESSAY ON THE SOCIAL AND MORAL THOUGHTS OF MAX WEBER, by Rogers Brubaker. London, George Allen & Unwin, 1984. 119 pp. $35.95 (cloth), $13.95 (paper)",
+      "authors": [
+        {
+          "name": "B. Turner",
+          "authorId": "5067230"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/144078338502100221",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e5271a8f5719bb555eb9ea71ff1077fd84b35dea",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Sociology",
+        "pages": "303 - 305",
+        "volume": "21"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2e92ee07f44eaf253448f9a664709b9f01793f11",
+      "title": "Unpacking the Impact of Capitalism on Human Subjectivity: A Qualitative Analysis of Marx and Weber\u2019s Ideas",
+      "authors": [
+        {
+          "name": "Abdullah Farooq",
+          "authorId": "2358094741"
+        },
+        {
+          "name": "Mudasar Ali Nadeem",
+          "authorId": "2193198356"
+        },
+        {
+          "name": "Kiram Ikram",
+          "authorId": "2358147396"
+        }
+      ],
+      "year": 2025,
+      "abstract": "This article examines how human subjectivity is impacted by capitalism through the perspectives of two significant intellectuals, Marx and Weber. Marx analyzes capitalism's effects by focusing on the alienation it causes. He argues that humans are inherently productive and interact with each other to fulfill their basic needs, making them inherently social. According to Marx, capitalism creates a separation between individuals and their labor, leading them to feel disconnected from their own creation. Conversely, Weber approaches capitalism from a different perspective. He critiques the system based on its formal rationality, influenced by Nietzsche's sense of cultural disenchantment. Weber highlights how capitalism\u2019s emphasis on rationality and efficiency can impact human experiences and values. In Max Weber's canon, rationality has been acknowledged as possibly the central theme. Practical, theoretical, substantive, and formal rationality are recognized as four different types of rationality. According to Weber, the prominence of formal and theoretical rationality should be attributed to the capitalist system.",
+      "citationCount": 0,
+      "doi": "10.62843/jssr.v5i1.506",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2e92ee07f44eaf253448f9a664709b9f01793f11",
+      "venue": "journal of social sciences review",
+      "journal": {
+        "name": "Journal of Social Sciences Review"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "103360528779d385740eb6dd99ecd0d8aa5ec5df",
+      "title": "Chapter Six: The Limits of Formal Legal Rationality: An Interpretation of Weber's Theory of Modern Politics",
+      "authors": [
+        {
+          "name": "Cary Boucock",
+          "authorId": "113655339"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.3138/9781442676077-009",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/103360528779d385740eb6dd99ecd0d8aa5ec5df",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bb9a9d5437df155bd7d24ae7c28d4194efba3b87",
+      "title": "Examining the motivations for social entrepreneurship using Max Weber\u2019s typology of rationality",
+      "authors": [
+        {
+          "name": "M. Mody",
+          "authorId": "120991273"
+        },
+        {
+          "name": "J. Day",
+          "authorId": "145882049"
+        },
+        {
+          "name": "S. Sydnor",
+          "authorId": "87778733"
+        },
+        {
+          "name": "W. Jaff\u00e9",
+          "authorId": "2060159318"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 35,
+      "doi": "10.1108/IJCHM-05-2014-0238",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bb9a9d5437df155bd7d24ae7c28d4194efba3b87",
+      "venue": "",
+      "journal": {
+        "name": "International Journal of Contemporary Hospitality Management",
+        "pages": "1094-1114",
+        "volume": "28"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6d1dfe7d9db948895b0fa660e5f8938676c24e94",
+      "title": "The Rationalization of \u2018Gef\u00fchlsinhalten\u2019: Dynamics of Cultural Change in Weber\u2019s Sociology of Music",
+      "authors": [
+        {
+          "name": "Jiangnan Liu",
+          "authorId": "2323003263"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract:Weber did not publish works on the sociology of music during his lifetime, yet he recognized that a specific rationalism influenced even this most intrinsic human experience. This article uses formal and substantive rationality to explore how Weber linked the final harmonious chord structure\u2019s emotional content (Gef\u00fchlsinhalten) to modern capitalist society in the West. The late Renaissance saw a demand for expressive music, integrating new melodic elements within a framework emphasizing vertical harmonic consonance. This reflects the Western tendency to rationalize music\u2019s emotional content, intertwined with ascetic rationalism\u2019s ethical orientation. While Weber did not empirically analyze music\u2019s connection to individual meaning extensively, his insights provide a lens to examine musical forms\u2019 aesthetic features and cultural significance from a comparative civilizational perspective.",
+      "citationCount": 1,
+      "doi": "10.1353/max.2024.a938238",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6d1dfe7d9db948895b0fa660e5f8938676c24e94",
+      "venue": "Max Weber Studies",
+      "journal": {
+        "name": "Max Weber Studies",
+        "pages": "217 - 239",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "2daeed15d40b72d3ed62dd742f536b90bb567d1b",
+      "title": "Hapless victims or empowered citizens? Understanding residents\u2019 attitudes towards Airbnb using Weber\u2019s Theory of Rationality and Foucauldian concepts",
+      "authors": [
+        {
+          "name": "M. Mody",
+          "authorId": "120991273"
+        },
+        {
+          "name": "K. Woosnam",
+          "authorId": "83518629"
+        },
+        {
+          "name": "Courtney Suess",
+          "authorId": "83316121"
+        },
+        {
+          "name": "T. Dogru",
+          "authorId": "100967821"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Abstract Airbnb has been criticized about its negative impacts on residents\u2019 quality of life. Yet, extant research on the topic is limited, both in volume and theoretical and empirical efficacy. In light of the need to advance theory-driven research on resident attitudes in tourism, the present study develops and tests an innovative theoretical framework that combines the tenets of Weber\u2019s Theory of Rationality and Foucauldian concepts of power, knowledge, and governmentality, to examine non-hosting residents\u2019 attitudes towards Airbnb. Findings show that, contrary to popular discourse, non-hosting residents who do not directly participate in Airbnb perceive higher positive than negative impacts. A higher level of psychological, social, and political empowerment\u2014a manifestation of Weber\u2019s substantive rationality and the Foucauldian concept of power\u2014both directly and indirectly impacted non-hosting residents\u2019 support for Airbnb, while their knowledge of Airbnb and the potential for personal benefits\u2014a manifestation of Weber\u2019s formal rationality\u2014 had significant direct effects on their levels of Airbnb support. Interestingly, trust in political decision-making\u2014a facet of Foucault\u2019s concept of governmentality\u2014did not impact residents\u2019 support for Airbnb either directly or indirectly, indicating that the prospect of better governance is not a pre-requisite for residents to support the homesharing phenomenon. Moderation testing along three demographic and three situational moderators reveals differences among sub-groups of residents, and contributes to a theoretically- and empirically-rigorous nomological framework of residents\u2019 attitudes towards Airbnb, which can be used by researchers to examine the dynamics of other types of tourism development. For practitioners, including sharing economy platforms, hosts, and policy makers, our findings emphasize the need for strategies that enhance non-hosting residents\u2019 sense of agency vis-\u00e0-vis the sharing economy as critical to garnering their support.",
+      "citationCount": 30,
+      "doi": "10.1080/09669582.2020.1834567",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2daeed15d40b72d3ed62dd742f536b90bb567d1b",
+      "venue": "Journal of Sustainable Tourism",
+      "journal": {
+        "name": "Journal of Sustainable Tourism",
+        "pages": "284 - 306",
+        "volume": "31"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4150e8c3480786bf2398a8ec49300da990bb6690",
+      "title": "Examining the Motivations for Social Entrepreneurship in Tourism using Max Weber\u2019s Typology of Rationality",
+      "authors": [
+        {
+          "name": "M. Mody",
+          "authorId": "120991273"
+        },
+        {
+          "name": "J. Day",
+          "authorId": "145882049"
+        },
+        {
+          "name": "S. Sydnor",
+          "authorId": "121841122"
+        },
+        {
+          "name": "Xinran Y. Lehto",
+          "authorId": "2763224"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4150e8c3480786bf2398a8ec49300da990bb6690",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2cfa7590548281d921d7b247c43d02186626a3ce",
+      "title": "Formal and Substantive Rationality in American Law: a Weberian Perspective",
+      "authors": [
+        {
+          "name": "R. Shamir",
+          "authorId": "1723209"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 13,
+      "doi": "10.1177/096466399300200103",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2cfa7590548281d921d7b247c43d02186626a3ce",
+      "venue": "",
+      "journal": {
+        "name": "Social & Legal Studies",
+        "pages": "45 - 72",
+        "volume": "2"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9289970e566e282763eb2cad35d6e6e45cbc2181",
+      "title": "Use Value and Substantive Rationality in the Work of Marx and Weber",
+      "authors": [
+        {
+          "name": "H. Wilson",
+          "authorId": "116654157"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.1177/1468795X04040650",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9289970e566e282763eb2cad35d6e6e45cbc2181",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Classical Sociology",
+        "pages": "30 - 5",
+        "volume": "4"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "dfab1dce80b86434582726a29c562e45d924e6cb",
+      "title": "From formal rationality to the digital one: Sideeffects, ambivalences, and vulnerabilities",
+      "authors": [
+        {
+          "name": "S. Kravchenko",
+          "authorId": "102959407"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The article considers challenges for man, society and nature, which appeared under the new types of rationality and bring not only the desired achievements but also unintended consequences in the form of side-effects, ambivalences, and vulnerabilities that become more complex. Thus, formal rationality became a factor of transition from traditional societies to industrial ones, which facilitated the establishment of high standards of living, but at the same time had side-effects such as the \u2018iron cage\u2019 of bureaucratization that made social relationships impersonal and without binding values. The growing formal rationality produced more complex side-effects such as \u2018legitimation crisis\u2019, \u2018colonization\u2019 of the essential functions of people\u2019s life-worlds, and dependence on legal and administrative bureaucracies. Formal rationality led to ambivalences: rationalization helped people to adapt to the dynamics of social life but also had irrational consequences - achievements in scientific knowledge and technologies advanced beyond moral limits. Formal rationality gave birth to \u2018society of normalization\u2019 and biopower which generated the system of total control in the form of the Panapticon spreading its influence throughout the whole society. McDonaldization as a form of modern formal rationality worsened the situation by producing globally dehumanized nothings. Digital rationality creates objective conditions for complex vulnerabilities to society and nature in the form of \u2018normal accidents\u2019 and \u2018collateral damage\u2019. The author argues that digital rationality acquires two basic types that are culturally determined: pragmatic type - hybrid rationality rooted in the principles of practical, formal, instrumental rationality and McDonaldization; substantive digital type with an emphasis on human needs and ontological safety. To minimize the vulnerabilities of the pragmatic digital rationality and to avoid the digital \u2018iron cage\u2019, the author suggests: rejection of radicalism and pragmatism in relation to digital technologies and artificial intelligence; humanistic modernization; eco-digital policy; interdisciplinary research of complex nonlinear vulnerabilities.",
+      "citationCount": 7,
+      "doi": "10.22363/2313-2272-2021-21-1-7-17",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dfab1dce80b86434582726a29c562e45d924e6cb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "7-17",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "930f29b8f57bf5b553aecd9e1c452501018b5bb9",
+      "title": "Administrative Justice in the Perspective of Islamic Legal Philosophy: A Comparative Study of Ethical Legitimacy and Bureaucratic Rationality",
+      "authors": [
+        {
+          "name": "Surahman Surahman",
+          "authorId": "89319044"
+        },
+        {
+          "name": "Abdurrahim Abdurrahim",
+          "authorId": "2078147468"
+        },
+        {
+          "name": "Widyatmi Anandy",
+          "authorId": "2294072976"
+        },
+        {
+          "name": "Fathul Hamdani",
+          "authorId": "2382412740"
+        },
+        {
+          "name": "U. Nnawulezi",
+          "authorId": "134822124"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The debate about justice in legal systems and public administration concerns not only the normative-procedural aspects but also touches on the moral, ethical, and spiritual dimensions of government practice. In the modern context, administrative law develops based on bureaucratic rationality as formulated by Max Weber, which emphasizes procedural legality, efficiency, and institutional hierarchy as sources of legitimacy for state action. In this paradigm, administrative justice is measured through adherence to written rules, procedural clarity, and impersonal administrative accountability mechanisms. However, despite guaranteeing order and efficiency, this system is often criticized for its tendency to ignore the moral substance and human values that are at the core of justice itself. Conversely, in Islamic legal philosophy, justice holds a higher and transcendental status. Justice is not merely the result of legal procedures, but rather a manifestation of divine will ('adl) and an integral part of the objectives of Islamic law (maq\u0101\u1e63id al-shar\u012b\u2018ah). Within this framework, bureaucratic actions\u2014whether legislative, executive, or administrative\u2014cannot be judged just solely because they conform to the rules, but must reflect ethical legitimacy, namely conformity to moral principles, honesty, social responsibility, and orientation toward the public good (ma\u1e63la\u1e25ah \u02bf\u0101mmah). Thus, legitimacy in Islamic law is moral-spiritual, not merely legal-formal. The gap between these two paradigms raises a fundamental question in the study of legal philosophy: is modern bureaucratic rationality capable of producing substantive justice, or does it require a deeper ethical foundation as offered by Islamic legal philosophy? In the context of public administration in Muslim countries, this question becomes increasingly relevant given the demand to integrate sharia values with the principles of efficient and transparent modern governance. Through this comparative study, the research aims to explore how Islamic legal philosophy interprets administrative justice and bureaucratic legitimacy from an ethical and theological perspective, and to identify fundamental differences between ethical legitimacy in Islamic law and bureaucratic rationality in modern administrative law. This approach is expected to provide a philosophical basis for the formation of a legal and bureaucratic system that is not only structurally rational, but also morally and spiritually just",
+      "citationCount": 2,
+      "doi": "10.29300/mzn.v12i2.8269",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/930f29b8f57bf5b553aecd9e1c452501018b5bb9",
+      "venue": "Jurnal Ilmiah Mizani Wacana Hukum Ekonomi Dan Keagamaan",
+      "journal": {
+        "name": "Jurnal Ilmiah Mizani: Wacana Hukum, Ekonomi Dan Keagamaan"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fb28f65a46afbe942610301b29fa7c070ab71be3",
+      "title": "Rationality of social entrepreneurs in tourism: Max Weber and the sociology of tourism development",
+      "authors": [
+        {
+          "name": "M. Mody",
+          "authorId": "120991273"
+        },
+        {
+          "name": "J. Day",
+          "authorId": "145882049"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 23,
+      "doi": "10.1504/IJTA.2014.059839",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb28f65a46afbe942610301b29fa7c070ab71be3",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "227-244",
+        "volume": "3"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

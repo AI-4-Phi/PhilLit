@@ -1,0 +1,303 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'Habermas Weber rationalization', limit=20
+[search_philpapers.py] Retrieved 17 entries...
+[search_philpapers.py] Search complete: 17 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "Habermas Weber rationalization",
+  "results": [
+    {
+      "title": "J. Habermas, Max Weber\u2019s Theory of Rationalization",
+      "url": "https://philpapers.org/rec/HABMWT",
+      "philpapers_id": "HABMWT",
+      "snippet": "Habermas argues that Weber\u2019s analysis of modernization does not exhaust the explanatory potential of his own theory. If we call to mind the systematic construction that underlies the last, we will finally have to suggest that path of rationalization taken in Europe is just a particular historical form of rationalization which Weber, however, equates with rationalization of society as such.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J. Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "Habermas continues his critical examination of M. Weber\u2019s theory of rationalization by discerning in this third section the logic of Weberian analysis of modernization and showing that it is Weber\u2019s initial point of analysis that allows Weber to approach modernization as societal rationalization.",
+        "Habermas argues that Weber\u2019s analysis of modernization does not exhaust the explanatory potential of his own theory. If we call to mind the systematic construction that underlies the last, we will finally have to suggest that path of rationalization taken in Europe is just a particular historical form of rationalization which Weber, however, equates with rationalization of society as such.",
+        "The rationalization of law and diagnosis of the times.J. Habermas - 2011 - Russian Sociological Review 10 (3):131-154. Theory in Weberian Marxism: Patterns of Critical Social Theory in Luk\u00e1cs and Habermas.Harry F.",
+        "Max Weber and Postmodern Theory: Rationalization versus Re-enchantment.N. Gane - 2002 - Springer. Habermas: Communicative Reason and the Moral Realization of a Normative Order.Albert Frederick Hart - 1989 - Dissertation, Mcgill University (Canada)"
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Theory of Communicative Action: Reason and the Rationalization of Society",
+      "url": "https://philpapers.org/rec/HABTTO-4",
+      "philpapers_id": "HABTTO",
+      "snippet": "In the introductory chapter Habermas sets out a powerful series of arguments on such foundational issues as cultural and historical relativism, the methodology of Verstehen, the inseparabilty of interpretation from critique. In addition to clarifying the normative foundations of critical social inquiry, this sets the stage for a systematic appropriation of Weber&#x27;s theory of rationalization and its Marxist reception by Lukacs, Horkheimer and Adorno.",
+      "page_age": null,
+      "extra_snippets": [
+        "Habermas approaches these tasks through a combination of conceptual analyses, systematic reflections, and critical reconstructions of such predecessors as Marx and Weber, Durkheim and Mead, Horkheimer and Adorno, Schutz and Parsons. Reason and the Rationalization of Society develops a sociological theory of action that stresses not its means-ends or teleological aspect, but the need to coordinate action socially via communication.",
+        "In the introductory chapter Habermas sets out a powerful series of arguments on such foundational issues as cultural and historical relativism, the methodology of Verstehen, the inseparabilty of interpretation from critique. In addition to clarifying the normative foundations of critical social inquiry, this sets the stage for a systematic appropriation of Weber's theory of rationalization and its Marxist reception by Lukacs, Horkheimer and Adorno.",
+        "The rationalization of law and diagnosis of the times.J. Habermas - 2011 - Russian Sociological Review 10 (3):131-154. Max Weber\u2019s Theory of Rationalization.J.",
+        "Here, for the first time in English, is volume one of Jurgen Habermas's long-awaited magnum opus: The Theory of Communicative Action. This pathbreaking work is guided by three interrelated concerns: to ..."
+      ]
+    },
+    {
+      "title": "J. Habermas, The Disenchantment of Religious-Metaphysical Worldviews and the Emergence of Modern Structures of Consciousness",
+      "url": "https://philpapers.org/rec/HABTDO-3",
+      "philpapers_id": "HABTDO",
+      "snippet": "Habermas shows that the background of Weber\u2019s theory of rationalization is the neokantian philosophy of values with the help of which Weber analyses a process of religious-metaphysical disenchantment of the worldviews as a result of differentiation of the cultural value spheres.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J. Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "J. Habermas ... In the second part of his essay on Max Weber\u2019s theory of rationalization J.",
+        "Habermas shows that the background of Weber\u2019s theory of rationalization is the neokantian philosophy of values with the help of which Weber analyses a process of religious-metaphysical disenchantment of the worldviews as a result of differentiation of the cultural value spheres.",
+        "This theoretical perspective allows Weber to conduct his analysis simultaneously on two levels: first, from the point of view of universal-historic emergence of modern structures of consciousness; second, from the point of view of embodiment of these structures of rationality in social institutions. Habermas makes a systematic attempts to reconstruct a complex connections between these two levels emphasizing that the logic of Weber\u2019s historical-empirical analysis of the process of disenchantment of the religious worldviews can be adequately grasped on the basis of constitutive meaning of the philosophical concept \u201cvalues embodiment.\u201d For this purpose, Habermas reveals two main restrictions of this analysis.",
+        "Max Weber\u2019s Theory of Rationalization.J. Habermas - 2010 - Russian Sociological Review 9 (3):3-25."
+      ]
+    },
+    {
+      "title": "J. Habermas, The rationalization of law and diagnosis of the times",
+      "url": "https://philpapers.org/rec/HABTRO-3",
+      "philpapers_id": "HABTRO",
+      "snippet": "These three structural properties refer to the mode of legal validity and legal enactment, to criteria of culpability and the mode of sanction, and finally to the way in which legal action is organized. The dominance of purposive rationality in Weber\u2019s view of the law allows Habermas to suggest a series of critical arguments.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J. Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "In this section of his book \u00abThe theory of communicative action\u00bb J\u00fcrgen Habermas considers Max Weber\u2019s legalistic views. According to Habermas, Weber treats law in such a way that it is detached from evaluative sphere and can appear from the start as an institutional embodiment of cognitive-instrumental rationality.",
+        "These three structural properties refer to the mode of legal validity and legal enactment, to criteria of culpability and the mode of sanction, and finally to the way in which legal action is organized. The dominance of purposive rationality in Weber\u2019s view of the law allows Habermas to suggest a series of critical arguments.",
+        "The rationalization of action in Max Weber's sociology of religion.Stephen Kalberg - 1990 - Sociological Theory 8 (1):58-84. The Disenchantment of Religious-Metaphysical Worldviews and the Emergence of Modern Structures of Consciousness.J. Habermas - 2010 - Russian Sociological Review 9 (1):27-52.",
+        "Habermas: Communicative Reason and the Moral Realization of a Normative Order.Albert Frederick Hart - 1989 - Dissertation, Mcgill University (Canada) The city: Rationalization and freedom in Max Weber.Jos\u00e9 Maur\u00edcio Domingues - 2000 - Philosophy and Social Criticism 26 (4):107-126."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Rationalization of the Lifeworld [1981]",
+      "url": "https://philpapers.org/rec/HABTRO",
+      "philpapers_id": "HABTRO",
+      "snippet": "The Theory of Communicative Action: Reason and the Rationalization of Society.J\u00fcrgen Habermas - 1991 - Polity. Introduction to Habermas.Sandro Segre (ed.) - 2013 - Upa. Max Weber\u2019s Theory of Rationalization.J.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J\u00fcrgen Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "Habermas\u2019 sociological theory of law and democracy: A reply to Wirts, Flynn and Zurn.Hugh Baxter - 2014 - Philosophy and Social Criticism 40 (2):225-234. The Dialectics of Rationalization: An Interview with Jurgen Habermas.Jurgen Habermas - 1981 - Telos: Critical Theory of the Contemporary 49.",
+        "A Lifeworld without a Subject: Habermas and the Pathologies of Modernity.Finn Bowring - 1996 - Telos: Critical Theory of the Contemporary 1996 (106):77-104. The Theory of Communicative Action. Volume I. Reason and the Rationalization of Society, by Jurgen Habermas.Alan How - 1987 - Journal of the British Society for Phenomenology 18 (2):192-194.",
+        "The Dialectics of Rationalization: An Interview with J\u00fcrgen Habermas.Axel Honneth - 1981 - Telos: Critical Theory of the Contemporary 49:5."
+      ]
+    },
+    {
+      "title": "Christian Etzrodt, Max Weber\u2019s rationalization processes disenchantment, alienation, or anomie?",
+      "url": "https://philpapers.org/rec/ETZMWR",
+      "philpapers_id": "ETZMWR",
+      "snippet": "The first, in the economic and political sphere, can be characterized as Marxist alienation, whereas the second, in the religious sphere, can be interpreted as de-magification and Hegelian alienation. It is possible to regard Weber\u2019s statement in Science as a Vocation as a third rationalization process, in the sphere of knowledge production, which would suggest the concepts of de-magification and anomie.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Christian Etzrodt"
+        }
+      ],
+      "extra_snippets": [
+        "Max Weber\u2019s Theory of Rationalization.J. Habermas - 2010 - Russian Sociological Review 9 (3):3-25.",
+        "The aim of this paper is to analyze which concept describes the central theme in Max Weber\u2019s works \u2014 the rationalization processes \u2014 best: disenchantment, alienation, or anomie. I first describe how Weber\u2019s rationalization processes were understood in the past.",
+        "Since the majority have regarded disenchantment as the central theme of Weber\u2019s legacy, I discuss Weber\u2019s rare statements about the disenchantment process, most of which appear in a speech that was published later as Science as a Vocation. I then introduce definitions of key concepts (Hegelian alienation, Marxist alienation, Durkheimian anomie, and de-magification) to provide a more varied and precise vocabulary. This will aid in describing at least two different rationalization processes that can be derived from Webers theoretical framework (Economy and Society) and his historical studies.",
+        "The first, in the economic and political sphere, can be characterized as Marxist alienation, whereas the second, in the religious sphere, can be interpreted as de-magification and Hegelian alienation. It is possible to regard Weber\u2019s statement in Science as a Vocation as a third rationalization process, in the sphere of knowledge production, which would suggest the concepts of de-magification and anomie."
+      ]
+    },
+    {
+      "title": "Antoon Braeckman, The ordinary and the extraordinary: The \u2018religious\u2019 imprint of Weber's concept of rationalization",
+      "url": "https://philpapers.org/rec/BRATOA",
+      "philpapers_id": "BRATOA",
+      "snippet": "Taking as point of departure the expression \u2018the disenchantment of the world\u2019 I argue that this expression, and the concept of rationalization, which is connected with it, have to be understood as elements of a categorical field of tension that is dominated precisely by the mentioned opposition. Referring to the sociology of religion, in which Weber for the first time developed and deployed this opposition as an analytical tool, it appears that 1) the concept of rationalization in Weber is multivocal; 2) that the extraordinary and the ordinary relate to one another as do charisma and institution; and finally 3) that the description of the western rationalization process in terms of \u2018disenchantment of the world\u2019 by no means signifies that modern society is no longer characterized by the relationship between the extraordinary and the ordinary.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Antoon Braeckman"
+        }
+      ],
+      "extra_snippets": [
+        "The Disenchantment of Religious-Metaphysical Worldviews and the Emergence of Modern Structures of Consciousness.J. Habermas - 2010 - Russian Sociological Review 9 (1):27-52. Max Weber\u2019s rationalization processes disenchantment, alienation, or anomie?Christian Etzrodt - 2024 - Theory and Society 53 (3):653-671.",
+        "Max Weber\u2019s Theory of Rationalization.J. Habermas - 2010 - Russian Sociological Review 9 (3):3-25.",
+        "Weber\u2019s concept of rationalization internally relies on an opposition that is borrowed from a religious semantics: the opposition between the extraordinary and the ordinary. Taking as point of departure the expression ...",
+        "Taking as point of departure the expression \u2018the disenchantment of the world\u2019 I argue that this expression, and the concept of rationalization, which is connected with it, have to be understood as elements of a categorical field of tension that is dominated precisely by the mentioned opposition. Referring to the sociology of religion, in which Weber for the first time developed and deployed this opposition as an analytical tool, it appears that 1) the concept of rationalization in Weber is multivocal; 2) that the extraordinary and the ordinary relate to one another as do charisma and institution; and finally 3) that the description of the western rationalization process in terms of \u2018disenchantment of the world\u2019 by no means signifies that modern society is no longer characterized by the relationship between the extraordinary and the ordinary."
+      ]
+    },
+    {
+      "title": "Keith Breen, Under Weber's shadow: modernity, subjectivity and politics in Habermas, Arendt and MacIntyre",
+      "url": "https://philpapers.org/rec/BREUWS",
+      "philpapers_id": "BREUWS",
+      "snippet": "Introduction -- Modernity, politics and Max Weber -- One-sided rationalization: Habermas on modernity, discourse and emancipation -- Critiquing Habermas: intersubjectivity, ethics and norm-free sociality -- The burden of our times: Arendt ...",
+      "page_age": null,
+      "extra_snippets": [
+        "Introduction -- Modernity, politics and Max Weber -- One-sided rationalization: Habermas on modernity, discourse and emancipation -- Critiquing Habermas: intersubjectivity, ethics and norm-free sociality -- The burden of our times: Arendt on modern oblivion and the promise of politics -- Judging Arendt: citizenship, action and the scope of politics -- The new dark age: MacIntyre on bureaucratic individualism and the hope for an ethical polity -- Engaging MacIntyre: flourishing, modernity and political struggle -- Closing reflections: ethics, politics and strategy in the present.",
+        "The separation between ethics and politics: Max Weber on ancient Judaism and modernity.Eyal Chowers - 2022 - European Journal of Social Theory 25 (3):477-495.",
+        "Paradoxes of modernity: culture and conduct in the theory of Max Weber.Wolfgang Schluchter - 1996 - Stanford, Calif.: Stanford University Press."
+      ]
+    },
+    {
+      "title": "Anatolii Yermolenko, The concept of rationality in the sociology of Max Weber and its impact on modern social sciences",
+      "url": "https://philpapers.org/rec/YERTCO-2",
+      "philpapers_id": "YERTCO",
+      "snippet": "The paper analyzes Max Weber\u2019s concepts of rationality and rationalization as components of modernization processes in modern society. The author reconstructs Weber\u2019s interpretation of \u201cspiritual factors\u201d of social development, which emerge in the ethos of Protestantism.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Anatolii Yermolenko"
+        }
+      ],
+      "extra_snippets": [
+        "On the Theory of Rationality, an Analysis of its Problem Areas and Their Elaboration in Max Weber's Sociology of Rationality.Mahmoud Sadri - 1989 - Dissertation, New School for Social Research \u00b7 Ethos versus Habitus: the Ethical Component in Max Weber\u2019s \u201cThe Protestant Ethic and the Spirit of Capitalism\u201d.I. V. Zabaev & E. A. Kostrova - 2020 - Sociology of Power 32 (4):45-67. The Disenchantment of Religious-Metaphysical Worldviews and the Emergence of Modern Structures of Consciousness.J. Habermas - 2010 - Russian Sociological Review 9 (1):27-52.",
+        "The paper analyzes Max Weber\u2019s concepts of rationality and rationalization as components of modernization processes in modern society. The author reconstructs Weber\u2019s interpretation of \u201cspiritual factors\u201d of social development, which emerge in the ethos of Protestantism.",
+        "The research demonstrates how Weber\u2019s study of capitalism in terms of rationality corresponds with concepts of other classics of German sociology, such as Ferdinand To\u0308nnies, Werner Sombart, Georg Simmel and others.",
+        "The article emphasizes the relevance of Weber\u2019s sociology for XX\u2014 XXI centuries and how its basic concepts and methodological approaches have been further developed by scholars, including Ukrainian ones. Weber\u2019s concept of rationality is applicable not only to the mental-epistemological sphere, it also acquires a social meaning."
+      ]
+    },
+    {
+      "title": "Richard A. Hilbert, Bureaucracy as belief, rationalization as repair: Max Weber in a post-functionalist age",
+      "url": "https://philpapers.org/rec/HILBAB",
+      "philpapers_id": "HILBAB",
+      "snippet": "Moreover, it helps to focus current research away from bureaucracy as an existent entity and toward a phenomenon Weber identifies as the central process of Western civilization: the rationalization (bureaucratization) of human behavior, a process both unfulfillable and unstoppable",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Richard A. Hilbert"
+        }
+      ],
+      "extra_snippets": [
+        "Weber's discussion of bureaucracy is generally taken as descriptive of organized social structure within a rational-legal society. This is understandable; yet elsewhere in Weber's sociology he cautions against precisely this kind of analysis.",
+        "The city: Rationalization and freedom in Max Weber.Jos\u00e9 Maur\u00edcio Domingues - 2000 - Philosophy and Social Criticism 26 (4):107-126.",
+        "Moreover, it helps to focus current research away from bureaucracy as an existent entity and toward a phenomenon Weber identifies as the central process of Western civilization: the rationalization (bureaucratization) of human behavior, a process both unfulfillable and unstoppable",
+        "Max Weber's sociology of civilizations: a reconstruction.Stephen Kalberg - 2021 - New York, NY: Routledge."
+      ]
+    },
+    {
+      "title": "Stephen Kalberg, The rationalization of action in Max Weber's sociology of religion",
+      "url": "https://philpapers.org/rec/KALTRO-2",
+      "philpapers_id": "KALTRO",
+      "snippet": "The rationalization of law and diagnosis of the times.J. Habermas - 2011 - Russian Sociological Review 10 (3):131-154. Max Weber\u2019s Theory of Rationalization.J.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Stephen Kalberg"
+        }
+      ],
+      "extra_snippets": [
+        "Habermas - 2010 - Russian Sociological Review 9 (3):3-25. From creative action to the social rationalization of the economy: Joseph A. Schumpeter's social theory.Harry F. Dahms - 1995 - Sociological Theory 13 (1):1-13. Weber's Lacuna: Medieval Religion and the Roots of Rationalization.Lutz Kaelber - 1996 - Journal of the History of Ideas 57 (3):465-485.",
+        "The ordinary and the extraordinary: The \u2018religious\u2019 imprint of Weber's concept of rationalization.Antoon Braeckman - 2004 - Bijdragen 65 (3):283-302. Added to PP 2009-01-28 Downloads 102 (#170,873) 6 months 11 (#349,363) ... The effect of religiosity on life satisfaction: A meta-analysis.Muhammad Sholihin, Hardivizon Hardivizon, Deri Wanto & Hasep Saputra - 2022 - HTS Theological Studies 78 (4):1\u201310. Religion, rationality, and language : a critical analysis of J\u00fcrgen Habermas' theory of communicative action.Ali Mesbah - unknown",
+        "Those few salvation paths that do so articulate an acute tension between the world view and human suffering, yet \"virtuoso religious qualifications\" must also be present if the methodical rational way of life is to arise. Throughout, the analyses by Tenbruck, Schluchter, and Habermas are critiqued as incomplete and misleading",
+        "An analysis of the manner in which believers' \"relations to the supernatural\" influence and even rationalize their action is central to Weber's sociology as a whole as well as his analysis ..."
+      ]
+    },
+    {
+      "title": "Juergen Habermas, The Theory of Communicative Action, Vol. 1, 'Reason and the Rationalization of Society'",
+      "url": "https://philpapers.org/rec/HABTTO",
+      "philpapers_id": "HABTTO",
+      "snippet": "Habermas as a Philosopher. [REVIEW]Jurgen Habermas - 1990 - Ethics 100 (3):641-657. The Theory of Communicative Action: Reason and the Rationalization of Society.J\u00fcrgen Habermas - 1991 - Polity.",
+      "page_age": null,
+      "extra_snippets": [
+        "Not only does it provide a compelling critique of some of the main perspectives in 20th century philosophy and social science, but it also presents a systematic synthesis of the many themse which have preoccupied Habermas for thirty years. --Times Literary Supplement. ... Theodor W. Adorno in Continental Philosophy \u00b7 Communication Functionalism Rationalism Social action Sociology",
+        "Habermas as a Philosopher. [REVIEW]Jurgen Habermas - 1990 - Ethics 100 (3):641-657. The Theory of Communicative Action: Reason and the Rationalization of Society.J\u00fcrgen Habermas - 1991 - Polity.",
+        "Rationalization and Social Pathology in The Theory of Communicative Action.David A. Borman - 2012 - In The Idolatry of the Actual: Habermas, Socialization, and the Possibility of Autonomy. State University of New York Press.",
+        "The Theory of Communicative Action. Vol. 1: Reason and the Rationalization of Society.Nanette Funk, Jurgen Habermas & Thomas McCarthy - 1986 - Philosophical Review 95 (2):269."
+      ]
+    },
+    {
+      "title": "N. Gane, Max Weber and Postmodern Theory: Rationalization versus Re-enchantment",
+      "url": "https://philpapers.org/rec/GANMWA",
+      "philpapers_id": "GANMWA",
+      "snippet": "It is suggested that these three &#x27;postmoden&#x27; thinkers develop and respond to Weber&#x27;s analysis of modernity by pursuing radical strategies of affirmation and re-enchantment. Examining the work of these three key thinkers in this way casts new light both on postmodern theory and on Weber&#x27;s sociology of rationalization.",
+      "page_age": null,
+      "extra_snippets": [
+        "This book explores the contemporary nature of Max Weber's work by looking in detail at his key concepts of rationalization and disenchantment. Thematic parallels are drawn between Weber's rationalization thesis and the critiques of contemporary culture developed by Jean-Francois Lyotard, Michel Foucault and Jean Baudrillard.",
+        "The city: Rationalization and freedom in Max Weber.Jos\u00e9 Maur\u00edcio Domingues - 2000 - Philosophy and Social Criticism 26 (4):107-126. Max Weber\u2019s rationalization processes disenchantment, alienation, or anomie?Christian Etzrodt - 2024 - Theory and Society 53 (3):653-671.",
+        "The political economy of social psychiatry: Max Weber's conception of disenchantment.Vincentas R. Giedraitis - 2008 - Saarbru\u0308cken, Germany: VDM Verlag Dr. Mu\u0308ller. Rationalization and Images of the World: Rethinking Max Weber\u2019s account of Disenchantment.Antonio Cerella - unknown",
+        "It is suggested that these three 'postmoden' thinkers develop and respond to Weber's analysis of modernity by pursuing radical strategies of affirmation and re-enchantment. Examining the work of these three key thinkers in this way casts new light both on postmodern theory and on Weber's sociology of rationalization."
+      ]
+    },
+    {
+      "title": "Max Weber, Remarks on Technology and Culture",
+      "url": "https://philpapers.org/rec/WEBROT-3",
+      "philpapers_id": "WEBROT",
+      "snippet": "Max Weber\u2019s Theory of Rationalization.J. Habermas - 2010 - Russian Sociological Review 9 (3):3-25.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Max Weber"
+        }
+      ],
+      "extra_snippets": [
+        "Weber\u2019s improvised reply to Werner Sombart\u2019s lecture on \u2018Technology and Culture\u2019, presented at the first meeting of the German Sociological Society in 1910, opens and closes with an appeal to uphold ...",
+        "The editorial notes to this translation place Weber\u2019s remarks in the context of his critical relationship to predecessors and contemporaries (including many of those present at the conference) and within the thematic development of his career-long studies on the rise of occidental rationalism.",
+        "Max Weber and the Iron Cage of Technology.Terry Maley - 2004 - Bulletin of Science, Technology and Society 24 (1):69-86. The city: Rationalization and freedom in Max Weber.Jos\u00e9 Maur\u00edcio Domingues - 2000 - Philosophy and Social Criticism 26 (4):107-126.",
+        "The Rise of Western Rationalism: Max Weber's Developmental History.N."
+      ]
+    },
+    {
+      "title": "Jeffrey E. Green, Two Meanings of Disenchantment",
+      "url": "https://philpapers.org/rec/EGRTMO",
+      "philpapers_id": "EGRTMO",
+      "snippet": "Although the primary meaning of Max Weber\u2019s concept of disenchantment is as a sociological condition (the retreat of magic and myth from social life through processes of secularization and rationalization), as Weber himself makes clear in his address, \u201cScience as a Vocation,\u201d disenchantment can also be a philosophical act: an unusual form of moral discourse that derives new ethical direction out of the very untenability of a previously robust moral tradition.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Jeffrey E. Green"
+        }
+      ],
+      "extra_snippets": [
+        "The Disenchantment of Religious-Metaphysical Worldviews and the Emergence of Modern Structures of Consciousness.J. Habermas - 2010 - Russian Sociological Review 9 (1):27-52. Max Weber\u2019s rationalization processes disenchantment, alienation, or anomie?Christian Etzrodt - 2024 - Theory and Society 53 (3):653-671.",
+        "Although the primary meaning of Max Weber\u2019s concept of disenchantment is as a sociological condition (the retreat of magic and myth from social life through processes of secularization and rationalization), as Weber himself makes clear in his address, \u201cScience as a Vocation,\u201d disenchantment can also be a philosophical act: an unusual form of moral discourse that derives new ethical direction out of the very untenability of a previously robust moral tradition.",
+        "The ordinary and the extraordinary: The \u2018religious\u2019 imprint of Weber's concept of rationalization.Antoon Braeckman - 2004 - Bijdragen 65 (3):283-302."
+      ]
+    },
+    {
+      "title": "David Ingram, Habermas and the Dialectic of Reason",
+      "url": "https://philpapers.org/rec/INGHAT-6",
+      "philpapers_id": "INGHAT",
+      "snippet": "2. Rationality, Reality, and Action. (pages 19-31) 3. Understanding and Language. (pages 32-42) 4. Weber&#x27;s Theory of Rationalization. (pages 43-59) 5. From Lukacs to Adorno: Rationalization as Reification. (pages 60-74) 6. Discourse on Modernity: A Philosophical Interlude.",
+      "page_age": null,
+      "extra_snippets": [
+        "2. Rationality, Reality, and Action. (pages 19-31) 3. Understanding and Language. (pages 32-42) 4. Weber's Theory of Rationalization. (pages 43-59) 5. From Lukacs to Adorno: Rationalization as Reification. (pages 60-74) 6. Discourse on Modernity: A Philosophical Interlude.",
+        "David Ingram here summarizes the themes of Habermas's masterwork, placing them in the context of the philosopher's other work, relating them to poststructuralism, hermeneutics, and Neo-Aristotelianism, and surveying what other critics have said about Habermas.",
+        "George Kirkpatrick, _American Journal of Sociology_ \"Likely to be and to remain the leading study on Habermas's Theory of Communicative Action. What McCarthy did for Habermas's earlier writings, Ingram accomplishes for his more recent work.\"\u2014Fred R.",
+        "David Ingram, Habermas and the Dialectic of Reason."
+      ]
+    },
+    {
+      "title": "Reihan Salam, Habermas vs. Weber on democracy",
+      "url": "https://philpapers.org/rec/SALHVW",
+      "philpapers_id": "SALHVW",
+      "snippet": "But Habermas overlooks the opaque nature of our interests under complex modern conditions, and the difficulty of even knowing what the modern state is doing\u2014let alone judging whether what it is doing serves our interests well. These overlooked sources of public ignorance buttress Weber&#x27;s more pessimistic understanding of democracy, and like the theatrics surrounding popular sovereignty, public ignorance both enables and masks the autonomy that allows state officials and non\u2010state opinion leaders to shape public policy undemocratically.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Reihan Salam"
+        }
+      ],
+      "extra_snippets": [
+        "Negative autonomy and the intuitions of democracy.Bryce Weber - 2006 - Philosophy and Social Criticism 32 (3):325-346. Between deliberative and participatory democracy: A contribution on Habermas.Denise Vitale - 2006 - Philosophy and Social Criticism 32 (6):739-766. A critique of Habermas' theory of practical rationality.Nader Saiedi - 1987 - Studies in East European Thought 33 (3):251-265.",
+        "Habermas endorses democracy as a way to rescue modern life from the economic and bureaucratic compulsion that Weber saw as an inescapable condition of modernity. This rescue mission requires that Habermas ...",
+        "The limits of communicative rationality and deliberative democracy.Mark Devenney - unknown \u00b7 Added to PP 2011-10-18 Downloads 38 (#357,637) 6 months 3 (#413,377) ... Popper, Weber, and Hayek: The epistemology and politics of ignorance.Jeffrey Friedman - 2005 - Critical Review: A Journal of Politics and Society 17 (1-2):1-58.",
+        "But Habermas overlooks the opaque nature of our interests under complex modern conditions, and the difficulty of even knowing what the modern state is doing\u2014let alone judging whether what it is doing serves our interests well. These overlooked sources of public ignorance buttress Weber's more pessimistic understanding of democracy, and like the theatrics surrounding popular sovereignty, public ignorance both enables and masks the autonomy that allows state officials and non\u2010state opinion leaders to shape public policy undemocratically."
+      ]
+    }
+  ],
+  "count": 17,
+  "errors": []
+}

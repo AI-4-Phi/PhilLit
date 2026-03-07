@@ -1,0 +1,303 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'selective rationalization lifeworld', limit=20
+[search_philpapers.py] Retrieved 19 entries...
+[search_philpapers.py] Search complete: 19 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "selective rationalization lifeworld",
+  "results": [
+    {
+      "title": "J\u00fcrgen Habermas, The Rationalization of the Lifeworld [1981]",
+      "url": "https://philpapers.org/rec/HABTRO",
+      "philpapers_id": "HABTRO",
+      "snippet": "The Dialectics of Rationalization: An Interview with J\u00fcrgen Habermas.Axel Honneth - 1981 - Telos: Critical Theory of the Contemporary 49:5. A Lifeworld without a Subject: Habermas and the Pathologies of Modernity.Finn Bowring - 1996 - Telos: Critical Theory of the Contemporary 1996 (106):77-104.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J\u00fcrgen Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "The Dialectics of Rationalization: An Interview with Jurgen Habermas.Jurgen Habermas - 1981 - Telos: Critical Theory of the Contemporary 49.",
+        "The Theory of Communicative Action: Reason and the Rationalization of Society.J\u00fcrgen Habermas - 1991 - Polity.",
+        "Max Weber\u2019s Theory of Rationalization.J."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Theory of Communicative Action: Reason and the Rationalization of Society",
+      "url": "https://philpapers.org/rec/HABTTO-4",
+      "philpapers_id": "HABTTO",
+      "snippet": "This pathbreaking work is guided ... premises of modern social and political theory; to construct a two-level concept of society that integrates the &#x27;lifeworld&#x27; ......",
+      "page_age": null,
+      "extra_snippets": [
+        "This pathbreaking work is guided by three interrelated concerns: to develop a concept of communicative rationality that is no longer tied to the subjective and individualistic premises of modern social and political theory; to construct a two-level concept of society that integrates the 'lifeworld' and 'system' paradigms; and to sketch out a critical theory of modernity that explains its sociopathologies in a new way.",
+        "The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University \u00b7 The Philosophy of J\u00fcrgen Habermas: A Critical Introduction.Uwe Steinhoff - 2009 - Oxford, GB: Oxford University Press. The Theory of Communicative Action. Volume I. Reason and the Rationalization of Society, by Jurgen Habermas.Alan How - 1987 - Journal of the British Society for Phenomenology 18 (2):192-194.",
+        "Here, for the first time in English, is volume one of Jurgen Habermas's long-awaited magnum opus: The Theory of Communicative Action. This pathbreaking work is guided by three interrelated concerns: to ...",
+        "In the introductory chapter Habermas sets out a powerful series of arguments on such foundational issues as cultural and historical relativism, the methodology of Verstehen, the inseparabilty of interpretation from critique. In addition to clarifying the normative foundations of critical social inquiry, this sets the stage for a systematic appropriation of Weber's theory of rationalization and its Marxist reception by Lukacs, Horkheimer and Adorno."
+      ]
+    },
+    {
+      "title": "J. Habermas, Max Weber\u2019s Theory of Rationalization",
+      "url": "https://philpapers.org/rec/HABMWT",
+      "philpapers_id": "HABMWT",
+      "snippet": "Max Weber modernization institutionalization of subsystems of purposive-rational action selective pattern of societal rationalization capitalist enterprise protestant ethics",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J. Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "Max Weber modernization institutionalization of subsystems of purposive-rational action selective pattern of societal rationalization capitalist enterprise protestant ethics",
+        "Habermas continues his critical examination of M. Weber\u2019s theory of rationalization by discerning in this third section the logic of Weberian analysis of modernization and showing that it is Weber\u2019s initial point of analysis that allows Weber to approach modernization as societal rationalization.",
+        "If we call to mind the systematic construction that underlies the last, we will finally have to suggest that path of rationalization taken in Europe is just a particular historical form of rationalization which Weber, however, equates with rationalization of society as such.",
+        "V. Duration and Rationalization: Fern and Braudel and Max Weber.Guenther Roth & Wolfgang Schluchter - 1979 - In Guenther Roth & Wolfgang Schluchter, Max Weber's Vision of History: Ethics and Methods. Berkeley: University of California Press."
+      ]
+    },
+    {
+      "title": "Juergen Habermas, The Theory of Communicative Action, Volume 2: Lifeworld and System: A Critique of Functionalist Reason",
+      "url": "https://philpapers.org/rec/HABTTO-3",
+      "philpapers_id": "HABTTO",
+      "snippet": "The Theory of Communicative Action: Reason and the Rationalization of Society, Volume 1.J\u00fcrgen Habermas - 1991 - Polity. The concept of lifeworld and education in post-modernity : a critical appraisal of Habermas&#x27; theory of communicative action.Sigmund Ongstad - 2010 - In Mark T.",
+      "page_age": null,
+      "extra_snippets": [
+        "Review of Juergen Habermas: The Theory of Communicative Action, Vol. 1, 'Reason and the Rationalization of Society'. [REVIEW]Steven B. Smith - 1986 - Ethics 96 (3):638-641. The Theory of Communicative Action: Lifeworld and Systems, a Critique of Functionalist Reason, Volume 2.J\u00fcrgen Habermas - 1991 - Polity.",
+        "A defense of the lifeworld.Amelia M. Wirts - 2014 - Philosophy and Social Criticism 40 (2):215-223. The Theory of Communicative Action. Volume I. Reason and the Rationalization of Society, by Jurgen Habermas.Alan How - 1987 - Journal of the British Society for Phenomenology 18 (2):192-194.",
+        "The Theory of Communicative Action: Reason and the Rationalization of Society, Volume 1.J\u00fcrgen Habermas - 1991 - Polity. The concept of lifeworld and education in post-modernity : a critical appraisal of Habermas' theory of communicative action.Sigmund Ongstad - 2010 - In Mark T.",
+        "Theory of Communicative Action, Volume 2 is a Beacon Press publication."
+      ]
+    },
+    {
+      "title": "Deborah Cook, The sundered totality of system and lifeworld",
+      "url": "https://philpapers.org/rec/DEBTST-2",
+      "philpapers_id": "DEBTST",
+      "snippet": "The Theory of Communicative Action, Vol. 1, &#x27;Reason and the Rationalization of Society&#x27;.Juergen Habermas - 1984 - Polity..",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Deborah Cook"
+        }
+      ]
+    },
+    {
+      "title": "Juergen Habermas, The Theory of Communicative Action, Vol. 1, 'Reason and the Rationalization of Society'",
+      "url": "https://philpapers.org/rec/HABTTO",
+      "philpapers_id": "HABTTO",
+      "snippet": "Rationalization and Social Pathology in The Theory of Communicative Action.David A. Borman - 2012 - In The Idolatry of the Actual: Habermas, Socialization, and the Possibility of Autonomy. State University of New York Press. pp. 55-102. The Theory of Communicative Action: Lifeworld and Systems, a Critique of Functionalist Reason, Volume 2.J\u00fcrgen Habermas - 1991 - Polity.",
+      "page_age": null,
+      "extra_snippets": [
+        "Rationalization and Social Pathology in The Theory of Communicative Action.David A. Borman - 2012 - In The Idolatry of the Actual: Habermas, Socialization, and the Possibility of Autonomy. State University of New York Press. pp. 55-102. The Theory of Communicative Action: Lifeworld and Systems, a Critique of Functionalist Reason, Volume 2.J\u00fcrgen Habermas - 1991 - Polity.",
+        "A major contribution to contemporary social theory. Not only does it provide a compelling critique of some of the main perspectives in 20th century philosophy and social science, but it also ...",
+        "The Theory of Communicative Action. Vol. 1: Reason and the Rationalization of Society.Nanette Funk, Jurgen Habermas & Thomas McCarthy - 1986 - Philosophical Review 95 (2):269.",
+        "Review of Juergen Habermas: The Theory of Communicative Action, Vol. 1, 'Reason and the Rationalization of Society'. [REVIEW]Steven B."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Theory of Communicative Action: Lifeworld and Systems, a Critique of Functionalist Reason, Volume 2",
+      "url": "https://philpapers.org/rec/HABTTO-10",
+      "philpapers_id": "HABTTO",
+      "snippet": "The Theory of Communicative Action: Reason and the Rationalization of Society.J\u00fcrgen Habermas - 1991 - Polity. Out of Africa: Communication Theory and Cultural Hegemony.Emmanuel C. Eze - 1998 - Telos: Critical Theory of the Contemporary 1998 (111):139-161. Habermas, J\u00fcrgen (1929\u2013 ).Douglas Kellner - unknown \u00b7 The Philosophy of J\u00fcrgen Habermas: A Critical Introduction.Uwe Steinhoff - 2009 - Oxford, GB: Oxford University Press. The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University",
+      "page_age": null,
+      "extra_snippets": [
+        "The Theory of Communicative Action: Reason and the Rationalization of Society.J\u00fcrgen Habermas - 1991 - Polity. Out of Africa: Communication Theory and Cultural Hegemony.Emmanuel C. Eze - 1998 - Telos: Critical Theory of the Contemporary 1998 (111):139-161. Habermas, J\u00fcrgen (1929\u2013 ).Douglas Kellner - unknown \u00b7 The Philosophy of J\u00fcrgen Habermas: A Critical Introduction.Uwe Steinhoff - 2009 - Oxford, GB: Oxford University Press. The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University",
+        "Selected Bibliography.Michael Liegl - 2012 - In William Egginton & Mike Sandbothe, The Pragmatic Turn in Philosophy: Contemporary Engagements Between Analytic and Continental Thought. SUNY Press. pp."
+      ]
+    },
+    {
+      "title": "Edward Moser, The Problem of the Lifeworld in Husserl's \"Crisis\"",
+      "url": "https://philpapers.org/rec/MOSTPO-15",
+      "philpapers_id": "MOSTPO",
+      "snippet": "Only the properly executed transcendental epoche and reduction makes possible a science of the lifeworld that resolves these paradoxes. The lifeworld is a transcendental phenomenon, i.e., the system of object-poles of intentionality, which itself ...",
+      "page_age": null,
+      "extra_snippets": [
+        "The importance of Edmund Husserl's concept of the lifeworld, especially as it appears in The Crisis of European Sciences and Transcendental Phenomenology, is widely acknowledged. Yet there is also wide agreement among Husserl scholars that his treatment of the lifeworld is marred by deep faults.",
+        "When you find and tap these faults Husserl's presentation of the lifeworld falls to pieces, thereby revealing distinct, incommensurable concepts. The main thrust of my dissertation is to challenge this commonly held opinion. Limiting my analysis to the Crisis alone, I argue that Husserl's treatment of the lifeworld is consistent and coherent.",
+        "In order to make this argument, as well as to understand it, it is imperative that one pay special attention to the contexts in which Husserl discusses the theme of the lifeworld. The failure to do this accounts for much of the confusion about the lifeworld found in the secondary literature.",
+        "Only the properly executed transcendental epoche and reduction makes possible a science of the lifeworld that resolves these paradoxes. The lifeworld is a transcendental phenomenon, i.e., the system of object-poles of intentionality, which itself is nothing other than transcendental subjectivity."
+      ]
+    },
+    {
+      "title": "David Ingram, Habermas and the Dialectic of Reason",
+      "url": "https://philpapers.org/rec/INGHAT-6",
+      "philpapers_id": "INGHAT",
+      "snippet": "5. From Lukacs to Adorno: Rationalization as Reification. (pages 60-74) 6. Discourse on Modernity: A Philosophical Interlude. (pages 75-103) 7. From Purposive to Communicative Action in the Social Theories of Mead and Durkheim. (pages 104-114) 8. System and Lifeworld.",
+      "page_age": null,
+      "extra_snippets": [
+        "5. From Lukacs to Adorno: Rationalization as Reification. (pages 60-74) 6. Discourse on Modernity: A Philosophical Interlude. (pages 75-103) 7. From Purposive to Communicative Action in the Social Theories of Mead and Durkheim. (pages 104-114) 8. System and Lifeworld."
+      ]
+    },
+    {
+      "title": "Axel Seemann, Lifeworld, discourse, and realism: On J\u00fcrgen habermas\u2019s theory of truth",
+      "url": "https://philpapers.org/rec/SEELDA",
+      "philpapers_id": "SEELDA",
+      "snippet": "In this paper, I give a systematic account of the core features of J\u00fcrgen Habermas\u2019s revised approach to truth that comprises both realist and epistemic components. While agents in the lifeworld are pragmatic realists and work on the basic assumption that their beliefs about the world are true, beliefs that have become problematic can be scrutinized only in the form of validity-claims in rational discourses.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Axel Seemann"
+        }
+      ],
+      "extra_snippets": [
+        "In this paper, I give a systematic account of the core features of J\u00fcrgen Habermas\u2019s revised approach to truth that comprises both realist and epistemic components. While agents in the lifeworld are pragmatic realists and work on the basic assumption that their beliefs about the world are true, beliefs that have become problematic can be scrutinized only in the form of validity-claims in rational discourses.",
+        "This paper is concerned with the tension between truth-in-the-lifeworld and discursive truth. I argue that Habermas\u2019s account is troubled by two problems: firstly an unclear conception of the role of the truth predicate; and secondly, the suggestion that agents in discourse temporarily abandon their lifeworldly realism.",
+        "While the first problem can be remedied by exploring the distinction between a truth predicate and a truth criterion, the second difficulty requires a modification of Habermas\u2019s account. I show that the consistency of his approach depends on the acceptance of the principle of bivalence throughout, and hence on the subscription to a certain kind of realism that extends beyond the lifeworld.",
+        "Key Words: bivalence \u2022 discourse \u2022 Habermas \u2022 lifeworld \u2022 pragmatism \u2022 realism \u2022 truth"
+      ]
+    },
+    {
+      "title": "C. Galli, Threshold of understanding: disease as the interface of lifeworld and science",
+      "url": "https://philpapers.org/rec/GALTOU",
+      "philpapers_id": "GALTOU",
+      "snippet": "Disease, this essay contends, lives at the threshold where the felt immediacy of the lifeworld touches the measured abstractions of science, each continually shaping the other. Seen from that border, a lesion or lab value is never complete without its human resonance, and a story of pain or fear is never fully told until its biological underpinnings come into view.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "C. Galli"
+        }
+      ],
+      "extra_snippets": [
+        "Disease, this essay contends, lives at the threshold where the felt immediacy of the lifeworld touches the measured abstractions of science, each continually shaping the other. Seen from that border, a lesion or lab value is never complete without its human resonance, and a story of pain or fear is never fully told until its biological underpinnings come into view.",
+        "Who has a meaningful life? A care ethics analysis of selective trait abortion.Riley Clare Valentine - 2024 - Medicine, Health Care and Philosophy 27 (2):205-216."
+      ]
+    },
+    {
+      "title": "James Craig Hanks, Juergen Habermas and the Colonization of the Lifeworld",
+      "url": "https://philpapers.org/rec/HANJHA",
+      "philpapers_id": "HANJHA",
+      "snippet": "The relationship between being and consciousness has been characterised as one of alienation , reification , instrumentalization , and &#x27;one dimensionalization&#x27; . More recently Jurgen Habermas has described the &#x27;colonization of the lifeworld&#x27;. Each ...",
+      "page_age": null,
+      "extra_snippets": [
+        "The relationship between being and consciousness has been characterised as one of alienation , reification , instrumentalization , and 'one dimensionalization' . More recently Jurgen Habermas has described the 'colonization of the lifeworld'. Each of these theorists argues that social and political philosophy has two primary tasks.",
+        "In his account of 'the colonization of the lifeworld', Habermas attempts to explain the relation between being and consciousness in terms of his theory of communicative action and to locate possible points of social and political crisis in advanced capitalist society.",
+        "A defense of the lifeworld.Amelia M.",
+        "The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University"
+      ]
+    },
+    {
+      "title": "Sebastian Luft, Subjectivity and Lifeworld in Transcendental Phenomenology",
+      "url": "https://philpapers.org/rec/LUFSAL",
+      "philpapers_id": "LUFSAL",
+      "snippet": "Part 1. Husserl: the outlines of the transcendental-phenomenological system -- 1. Husserl&#x27;s phenomenological discovery of the natural attitude -- 2. Husserl&#x27;s theory of the phenomenological reduction: between lifeworld and Cartesianism -- ...",
+      "page_age": null,
+      "extra_snippets": [
+        "Part 1. Husserl: the outlines of the transcendental-phenomenological system -- 1. Husserl's phenomenological discovery of the natural attitude -- 2. Husserl's theory of the phenomenological reduction: between lifeworld and Cartesianism -- 3. Some methodological problems arising in Husserl's late reflections on the phenomenological reduction -- 4.",
+        "Facticity and historicity as constituents of the lifeworld in Husserl's late philosophy -- 5. Husserl's concept of the \"transcendental person\": another look at the Husserl-Heidegger relationship -- 6. Dialectics of the absolute: the systematics of the phenomenological system in Husserl's last period -- Part 2.",
+        "Husserl, Kant, and neo-Kantianism: from subjectivity to lifeworld as a world of culture -- 7. From being to givenness and back: some remarks on the meaning of transcendental idealism in Kant and Husserl -- 8. Reconstruction and reduction: Natorp and Husserl on method and the question of subjectivity -- 9.",
+        "Luft, Sebastian. Subjectivity and Lifeworld in Transcendental Phenomenology."
+      ]
+    },
+    {
+      "title": "Ilsup Ahn, Decolonization of the Lifeworld by Reconstructing the System: a Critical Dialogue Between Jurgen Habermas and Reinhold Niebuhr",
+      "url": "https://philpapers.org/rec/AHNDOT",
+      "philpapers_id": "AHNDOT",
+      "snippet": "I also develop the argument that in order to `decolonize&#x27; the colonized lifeworld, we need the substantive ethical ideals as well as the communicatively established law to guide the moral conduct of these system managers.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Ilsup Ahn"
+        }
+      ],
+      "extra_snippets": [
+        "The exclusion of money and power from the domain of moral discourse has also motivated Habermas to develop an idea of `colonization of lifeworld by system' by giving us the impression that the delinguistified media are the main culprit of colonizing the lifeworld.",
+        "In this article, by drawing on Reinhold Niebuhr's theological ethics, I argue that the lifeworld is colonized not by the delinguistified media as such, but, rather, by the people who mismanage money and power.",
+        "I also develop the argument that in order to `decolonize' the colonized lifeworld, we need the substantive ethical ideals as well as the communicatively established law to guide the moral conduct of these system managers.",
+        "A defense of the lifeworld.Amelia M."
+      ]
+    },
+    {
+      "title": "Jeffrey E. Green, Two Meanings of Disenchantment",
+      "url": "https://philpapers.org/rec/GRETMO-2",
+      "philpapers_id": "GRETMO",
+      "snippet": "Although the primary meaning of Max Weber\u2019s concept of disenchantment is as a sociological condition (the retreat of magic and myth from social life through processes of secularization and rationalization), as ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Jeffrey E. Green"
+        }
+      ],
+      "extra_snippets": [
+        "Although the primary meaning of Max Weber\u2019s concept of disenchantment is as a sociological condition (the retreat of magic and myth from social life through processes of secularization and rationalization), as Weber himself makes clear in his address, \u201cScience as a Vocation,\u201d disenchantment can also be a philosophical act: an unusual form of moral discourse that derives new ethical direction out of the very untenability of a previously robust moral tradition.",
+        "Max Weber\u2019s rationalization processes disenchantment, alienation, or anomie?Christian Etzrodt - 2024 - Theory and Society 53 (3):653-671.",
+        "Disenchantment, Rationality and the Modernity of Max Weber.Anthony J.",
+        "The ordinary and the extraordinary: The \u2018religious\u2019 imprint of Weber's concept of rationalization.Antoon Braeckman - 2004 - Bijdragen 65 (3):283-302."
+      ]
+    },
+    {
+      "title": "James Bohman, \"System\" and \"lifeworld\": Habermas and the problem of holism",
+      "url": "https://philpapers.org/rec/BOHSAL",
+      "philpapers_id": "BOHSAL",
+      "snippet": "System and lifeworld in Habermas&#x27; theory of democracy.Jeffrey Flynn - 2014 - Philosophy and Social Criticism 40 (2):205-214.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "James Bohman"
+        }
+      ],
+      "extra_snippets": [
+        "Educating social workers for lifeworld and system.Barry Cooper - 2010 - In Mark T. F. Murphy & Ted Fleming, Habermas, critical theory and education.",
+        "Solidarity as fact or norm?: Social integration between system and lifeworld.Max Pensky - 2006 - Philosophy and Social Criticism 32 (7):819-823.",
+        "System and lifeworld in Habermas' theory of democracy.Jeffrey Flynn - 2014 - Philosophy and Social Criticism 40 (2):205-214."
+      ]
+    },
+    {
+      "title": "Gregor Schiemann, One cognitive style among others. Towards a phenomenology of the lifeworld and of other experiences",
+      "url": "https://philpapers.org/rec/SCHOCS-3",
+      "philpapers_id": "SCHOCS",
+      "snippet": "A consequence of this approach is that the lifeworld appears as a socially definable context that is detached from other experiences but on an equal footing with them with respect to their claim of validity.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Gregor Schiemann"
+        }
+      ],
+      "extra_snippets": [
+        "A consequence of this approach is that the lifeworld appears as a socially definable context that is detached from other experiences but on an equal footing with them with respect to their claim of validity. The term \"lifeworld\" does not denote a category that encompasses culture or nature but refers to a delimited action-space.",
+        "Finally, I draw upon Sch\u00fctz' s criterion-catalogue to characterize two domains of experience outside of the lifeworld, which play a central role for the process of differentiation of experience in modernity and for the phenomenological analysis of types of experience: experimental science and subjectivity.",
+        "The Typicality and Habituality of Everyday Cognitive Experience in Alfred Schutz\u2019s Phenomenology of the Lifeworld.Alexis Emanuel Gros - 2017 - Meta: Research in Hermeneutics, Phenomenology, and Practical Philosophy 9 (1):60-85.",
+        "My aim here is to further develop this pluralist theory of experience by buttressing and extending the elements of diversity that it includes, and by eliminating or minimizing lingering imbalances among the domains of experience. After a critical discussion of the criterion-catalogue Sch\u00fctz develops for the purpose of characterizing different cognitive styles, I move on to examine its application to one special style, the lifeworld."
+      ]
+    },
+    {
+      "title": "Dionysis Christias, Normativity, Lifeworld, and Science in Sellars\u2019 Synoptic Vision",
+      "url": "https://philpapers.org/rec/CHRNLA-3",
+      "philpapers_id": "CHRNLA",
+      "snippet": "Through an extended discussion of Sellars\u2019 relevance for contemporary continental philosophy and phenomenology, in which his views on perception, the commonsense \u2018lifeworld\u2019, science, normativity, personhood, morality and process metaphysics are presented and extended, the book sketches a novel view about what a stereoscopic fusion of the manifest and the scientific image would amount to at the level of our lifeworld experience.",
+      "page_age": null,
+      "extra_snippets": [
+        "Through an extended discussion of Sellars\u2019 relevance for contemporary continental philosophy and phenomenology, in which his views on perception, the commonsense \u2018lifeworld\u2019, science, normativity, personhood, morality and process metaphysics are presented and extended, the book sketches a novel view about what a stereoscopic fusion of the manifest and the scientific image would amount to at the level of our lifeworld experience.",
+        "Normativity, Lifeworld, and Science in Sellars\u2019 Synoptic Vision: by Dionysis Christias, London, Palgrave Macmillan, 2023, vii + 321 pp., \u20ac128.39 hbk, \u20ac96.29 Ebook, ISBN 978-3-031-27025-3; ISBN 978-3-031-27026-0 (eBook). https://doi.org/10.1007/978-3-031-27026-0."
+      ]
+    },
+    {
+      "title": "Jeffrey Flynn, System and lifeworld in Habermas' theory of democracy",
+      "url": "https://philpapers.org/rec/FLYSAL",
+      "philpapers_id": "FLYSAL",
+      "snippet": "In this article I challenge two arguments central to Hugh Baxter&#x27;s critical interpretation of Habermas in his recent book, Habermas: The Discourse Theory of Law and Democracy (2011). Both arguments focus on whether Habermas\u2019 system -lifeworld model of society can successfully make space for democratic politics.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Jeffrey Flynn"
+        }
+      ],
+      "extra_snippets": [
+        "In this article I challenge two arguments central to Hugh Baxter's critical interpretation of Habermas in his recent book, Habermas: The Discourse Theory of Law and Democracy (2011). Both arguments focus on whether Habermas\u2019 system -lifeworld model of society can successfully make space for democratic politics.",
+        "A defense of the lifeworld.Amelia M.",
+        "Colonisation of the Lifeworld and the Dilemma of Welfare State Law.Mikael Sp\u00e5ng - 2018 - In Emancipation, Democracy and the Modern Critique of Law: Reconsidering Habermas. Cham: Springer Verlag.",
+        "Lifeworld, Civilisation, System: Pato\u010dka and Habermas on Europe and its Crisis.Francesco Tava - 2016 - HORIZON."
+      ]
+    }
+  ],
+  "count": 19,
+  "errors": []
+}

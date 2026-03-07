@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Collective Learning: Habermas's Concessions and Their Theoretical Implications",
+    "author": "Strydom",
+    "year": 1987
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/019145378701300304",
+      "title": "collective learning: habermas's concessions and their theoretical implications",
+      "authors": [
+        {
+          "family": "strydom",
+          "given": "piet"
+        }
+      ],
+      "editors": [],
+      "year": 1987,
+      "container_title": "Philosophy &amp; Social Criticism",
+      "volume": "13",
+      "issue": "3",
+      "page": "265-281",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1177/019145378701300304",
+      "score": 52.05432
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1163/187226307X229380"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1163/187226307x229380",
+      "title": "Ideal Types as Hermeneutic Concepts",
+      "authors": [
+        {
+          "family": "Kedar",
+          "given": "Asaf"
+        }
+      ],
+      "editors": [],
+      "year": 2007,
+      "container_title": "Journal of the Philosophy of History",
+      "volume": "1",
+      "issue": "3",
+      "page": "318-345",
+      "publisher": "Walter de Gruyter GmbH",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1163/187226307x229380"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

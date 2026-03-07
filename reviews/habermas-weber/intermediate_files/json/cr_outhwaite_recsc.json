@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5840/PHILINQUIRY2014381/21"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5840/philinquiry2014381/21",
+      "title": "Reconstructive Science and Methodological Dualism in the Work of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "family": "Outhwaite",
+          "given": "William"
+        },
+        {
+          "family": "Philosophical Inquiry",
+          "given": ""
+        }
+      ],
+      "editors": [],
+      "year": 2014,
+      "container_title": "Philosophical Inquiry",
+      "volume": "38",
+      "issue": "1",
+      "page": "2-18",
+      "publisher": "Philosophy Documentation Center",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5840/philinquiry2014381/21"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

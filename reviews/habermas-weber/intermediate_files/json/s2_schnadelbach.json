@@ -1,0 +1,369 @@
+[s2_search.py] Searching Semantic Scholar: 'Schnadelbach Habermas rational reconstruction rationalization critique' (year=1981-1995), limit=20
+[s2_search.py] Retrieved 15/15 papers...
+[s2_search.py] Search complete: 15 papers found
+[s2_search.py] Cached results (cache key: s2_4c895aa2d824ae6a)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Schnadelbach Habermas rational reconstruction rationalization critique",
+  "results": [
+    {
+      "paperId": "1c787403a781ef94d217cee99cffeabcab0f919f",
+      "title": "Rational Reconstruction and Social Criticism : Habermas's Model of Interpretive Social Science in Hermeneutics in Ethics and Social Theory.",
+      "authors": [
+        {
+          "name": "K. Baynes",
+          "authorId": "5929946"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c787403a781ef94d217cee99cffeabcab0f919f",
+      "venue": "",
+      "journal": {
+        "name": "The Philosophical Forum",
+        "pages": "122-145",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "360d47f169f63a7350965c3d8b3f5b7222b5460a",
+      "title": "Reason and the rationalization of society",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1984,
+      "abstract": null,
+      "citationCount": 1140,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/360d47f169f63a7350965c3d8b3f5b7222b5460a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "75cb03d9dd9599f2699425b160a0e6af4d1ecf1f",
+      "title": "Critique of Habermas's Contribution to the Sociology of Law",
+      "authors": [
+        {
+          "name": "K. Eder",
+          "authorId": "1809489920"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": "10.2307/3053642",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/75cb03d9dd9599f2699425b160a0e6af4d1ecf1f",
+      "venue": "",
+      "journal": {
+        "name": "Law & Society Review",
+        "pages": "931",
+        "volume": "22"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b15b79843cf9374b2e2c2b841503085eea8dfdff",
+      "title": "Rationality and Relativism: Habermas\u2019s \u2018Overcoming\u2019 of Hermeneutics",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 1982,
+      "abstract": null,
+      "citationCount": 266,
+      "doi": "10.1007/978-1-349-16763-0_4",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b15b79843cf9374b2e2c2b841503085eea8dfdff",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "57-78",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ebff1bba39f7b8d52a237f8638a347c5653497d0",
+      "title": "Contemporary Sociological Theory: Expanding the Classical Tradition",
+      "authors": [
+        {
+          "name": "R. Wallace",
+          "authorId": "98117437"
+        },
+        {
+          "name": "A. Wolf",
+          "authorId": "72964950"
+        }
+      ],
+      "year": 1986,
+      "abstract": null,
+      "citationCount": 262,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ebff1bba39f7b8d52a237f8638a347c5653497d0",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bf09d1199e6bb04ef64990175d8cf372f5deffe5",
+      "title": "The Rationalization of Action in Max Weber's Sociology of Religion",
+      "authors": [
+        {
+          "name": "Stephen Kalberg",
+          "authorId": "100981749"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 36,
+      "doi": "10.2307/202195",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bf09d1199e6bb04ef64990175d8cf372f5deffe5",
+      "venue": "",
+      "journal": {
+        "name": "Sociological Theory",
+        "pages": "58",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "70a4e7902c956adfc093deec2b317a5ab5407d96",
+      "title": "Habermas's Retreat from Hermeneutics: Systems Integration, Social Integration and the Crisis of Legitimation",
+      "authors": [
+        {
+          "name": "Diester Misgeld",
+          "authorId": "118926290"
+        }
+      ],
+      "year": 1981,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/70a4e7902c956adfc093deec2b317a5ab5407d96",
+      "venue": "",
+      "journal": {
+        "name": "Ctheory",
+        "pages": "8-44",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5b936ce7dea85d5c40e54f2d093246462112f593",
+      "title": "Rationality and irrationality: New directions in Weberian theory, critique, and research",
+      "authors": [
+        {
+          "name": "Thomas W. Segady",
+          "authorId": "114331894"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1080/02732173.1988.9981841",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5b936ce7dea85d5c40e54f2d093246462112f593",
+      "venue": "",
+      "journal": {
+        "name": "Sociological Spectrum",
+        "pages": "85-100",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "64a3da15dc26076421c89affe7d6d279c13fdcac",
+      "title": "Philosophical Interventions in the Unfinished Project of Enlightenment",
+      "authors": [
+        {
+          "name": "A. Honneth",
+          "authorId": "92405469"
+        },
+        {
+          "name": "William Rehg",
+          "authorId": "1841833"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 45,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/64a3da15dc26076421c89affe7d6d279c13fdcac",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "afbe14f9364e8f426266bb49b3897e53845e7f5e",
+      "title": "The Element of Irrationality: Max Weber's Diagnosis of Modern Culture",
+      "authors": [
+        {
+          "name": "J. Gronow",
+          "authorId": "11897818"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 29,
+      "doi": "10.1177/000169938803100403",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/afbe14f9364e8f426266bb49b3897e53845e7f5e",
+      "venue": "",
+      "journal": {
+        "name": "Acta Sociologica",
+        "pages": "319 - 331",
+        "volume": "31"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "04fb210ca6239ed0096782edf45495458ca4d85a",
+      "title": "Political discourse : explorations in Indian and Western political thought",
+      "authors": [
+        {
+          "name": "Frank E. Myers",
+          "authorId": "116930915"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 10,
+      "doi": "10.2307/1961773",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/04fb210ca6239ed0096782edf45495458ca4d85a",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "1359 - 1360",
+        "volume": "82"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0b7f2120de8b50e573e095d4ebf3f01dbefab29d",
+      "title": "Reconstructing reason in the aftermath of deconstruction",
+      "authors": [
+        {
+          "name": "Calvin O. Schrag",
+          "authorId": "103118297"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1080/08913819108443224",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0b7f2120de8b50e573e095d4ebf3f01dbefab29d",
+      "venue": "",
+      "journal": {
+        "name": "Critical Review",
+        "pages": "247-260",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4b62d84a7e9dac6c140aa256c6d16961944520f6",
+      "title": "interpretation, dialogue and the just citizen*",
+      "authors": [
+        {
+          "name": "M. Kingwell",
+          "authorId": "100797185"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1177/019145379301900203",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4b62d84a7e9dac6c140aa256c6d16961944520f6",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "115 - 144",
+        "volume": "19"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5838c45474d96c27737e43ae5a68e7841cb3855e",
+      "title": "Hermeneutics and Critical Theory in Ethics and Politics",
+      "authors": [
+        {
+          "name": "M. Kelly",
+          "authorId": "47560979"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 37,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5838c45474d96c27737e43ae5a68e7841cb3855e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "33ea498258e0921edcda987919a7832aa8ead4fb",
+      "title": "Citizen participation and the democratization of policy expertise: From theoretical inquiry to practical cases",
+      "authors": [
+        {
+          "name": "Frank nSCHER",
+          "authorId": "117115036"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/33ea498258e0921edcda987919a7832aa8ead4fb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 15,
+  "errors": []
+}

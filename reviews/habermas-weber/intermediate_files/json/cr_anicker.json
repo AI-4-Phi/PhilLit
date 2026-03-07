@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1515/auk-2025-2006"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1515/auk-2025-2006",
+      "title": "Between Hermeneutics and Systematicity: The Habermasian Method of Theorizing",
+      "authors": [
+        {
+          "family": "Anicker",
+          "given": "Fabian"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Analyse &amp; Kritik",
+      "volume": "47",
+      "issue": "1",
+      "page": "161-178",
+      "publisher": "Walter de Gruyter GmbH",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1515/auk-2025-2006"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

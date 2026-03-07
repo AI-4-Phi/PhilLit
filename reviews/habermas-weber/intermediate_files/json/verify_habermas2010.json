@@ -1,0 +1,20 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Max Weber Theory Rationalization...' author=Habermas year=2010
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Max Weber Theory Rationalization",
+    "author": "Habermas",
+    "year": 2010
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (22.6) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

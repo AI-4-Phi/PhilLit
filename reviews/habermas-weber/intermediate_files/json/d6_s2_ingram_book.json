@@ -1,0 +1,79 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Ingram Habermas dialectic reason Yale 1987",
+  "results": [
+    {
+      "paperId": "eec83bdcca719df58b1dcc301763ba1e5c9a010f",
+      "title": "Habermas and the Dialectic of Reason",
+      "authors": [
+        {
+          "name": "D. Ingram",
+          "authorId": "145548493"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": "10.2307/2070645",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/eec83bdcca719df58b1dcc301763ba1e5c9a010f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c3ed00a225df164b4605857ec53933db4025a9e7",
+      "title": "David Ingram , Habermas and the Dialectic of Reason . Reviewed by",
+      "authors": [
+        {
+          "name": "R. Morrow",
+          "authorId": "152606057"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c3ed00a225df164b4605857ec53933db4025a9e7",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy in review",
+        "pages": "50-53",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "a0c290bf989776f9339abbe80023d53fd5e6ce6d",
+      "title": "Habermas on Aesthetics and Rationality: Completing the Project of Enlightenment",
+      "authors": [
+        {
+          "name": "David Ingram",
+          "authorId": "144715628"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 236,
+      "doi": "10.2307/488245",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a0c290bf989776f9339abbe80023d53fd5e6ce6d",
+      "venue": "",
+      "journal": {
+        "name": "New German Critique",
+        "pages": "67",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

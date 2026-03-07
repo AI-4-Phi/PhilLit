@@ -1,0 +1,40 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.2307/431534
+[verify_paper.py] DOI verified: The Persistence of Modernity: Essays on Aesthetics...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/431534"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/431534",
+      "title": "The Persistence of Modernity: Essays on Aesthetics, Ethics, and Postmodernism",
+      "authors": [
+        {
+          "family": "Wellmer",
+          "given": "Albrecht"
+        },
+        {
+          "family": "Midgley",
+          "given": "David"
+        }
+      ],
+      "editors": [],
+      "year": 1993,
+      "container_title": "The Journal of Aesthetics and Art Criticism",
+      "volume": "51",
+      "issue": "3",
+      "page": "529",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/431534"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

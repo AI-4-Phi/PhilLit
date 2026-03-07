@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Objectivity and the Silence of Reason Weber Habermas methodological disputes",
+    "author": "McCarthy George",
+    "year": 2001
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Author 'McCarthy George' not found in result authors",
+      "recoverable": false
+    }
+  ]
+}

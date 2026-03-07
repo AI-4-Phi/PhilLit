@@ -1,0 +1,158 @@
+[s2_search.py] Searching Semantic Scholar: 'Wellmer persistence modernity essays postmodernity' (year=1985-2000) (field=Philosophy), limit=20
+[s2_search.py] Retrieved 6/6 papers...
+[s2_search.py] Search complete: 6 papers found
+[s2_search.py] Cached results (cache key: s2_a3a223748991501f)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Wellmer persistence modernity essays postmodernity",
+  "results": [
+    {
+      "paperId": "b9d10702c282c793dd3809acc05d6bbc64f7f310",
+      "title": "The Persistence of Modernity: Essays on Aesthetics, Ethics, and Postmodernism",
+      "authors": [
+        {
+          "name": "A. Wellmer",
+          "authorId": "49714581"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 87,
+      "doi": "10.2307/431534",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b9d10702c282c793dd3809acc05d6bbc64f7f310",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "502b177c5ed1bfc08dcbae6ff0a4299401f83209",
+      "title": "Reviews : Albrecht Wellmer, The Persistence of Modernity: Essays on Aesthetics, Ethics and Postmodernism, trans. David Midgley (Oxford, Polity Press, 1991)",
+      "authors": [
+        {
+          "name": "David W. Roberts",
+          "authorId": "145129933"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/072551369203200114",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/502b177c5ed1bfc08dcbae6ff0a4299401f83209",
+      "venue": "",
+      "journal": {
+        "name": "Thesis Eleven",
+        "pages": "158 - 161",
+        "volume": "32"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "77dee18e15cc86a16144980021f25743a81a9595",
+      "title": "Book Review:The Persistence of Modernity: Essays on Aesthetics, Ethics, and Postmodernism. Albrecht Wellmer",
+      "authors": [
+        {
+          "name": "M. Kelly",
+          "authorId": "50582953"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1086/293532",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/77dee18e15cc86a16144980021f25743a81a9595",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "586e1af63e63c0b4b84cc4d4d7c265da5ff69026",
+      "title": "The Persistence of Modernity: Essays on Aesthetics, Ethics, and Postmodernism",
+      "authors": [
+        {
+          "name": "M. Youngerman",
+          "authorId": "14060032"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.5840/intstudphil199527470",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/586e1af63e63c0b4b84cc4d4d7c265da5ff69026",
+      "venue": "",
+      "journal": {
+        "name": "International Studies in Philosophy",
+        "pages": "149-150",
+        "volume": "27"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "280fedb93449ab0cc6ec29cd7bfbdac15be98721",
+      "title": "Habermas and Modernity",
+      "authors": [
+        {
+          "name": "Thomas L. Dumm",
+          "authorId": "91296021"
+        },
+        {
+          "name": "R. Bernstein",
+          "authorId": "39089318"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 260,
+      "doi": "10.2307/3791048",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/280fedb93449ab0cc6ec29cd7bfbdac15be98721",
+      "venue": "",
+      "journal": {
+        "name": "Political Psychology",
+        "pages": "457",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "62f8a072023b5ddd65716f3a20c87c2058c04c2c",
+      "title": "The Morality of Pluralism. By John Kekes. Princeton: Princeton University Press. 1993. 227p. $29.95.",
+      "authors": [
+        {
+          "name": "S. Lukes",
+          "authorId": "117542842"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.2307/2944814",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/62f8a072023b5ddd65716f3a20c87c2058c04c2c",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "739 - 740",
+        "volume": "88"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 6,
+  "errors": []
+}

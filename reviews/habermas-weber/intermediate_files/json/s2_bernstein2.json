@@ -1,0 +1,525 @@
+[s2_search.py] Searching Semantic Scholar: 'Bernstein Habermas Modernity edited volume critical essays', limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_5b5bbd3847b30741)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Bernstein Habermas Modernity edited volume critical essays",
+  "results": [
+    {
+      "paperId": "d09e42bc2f4becfe0b8133d3dda0e32d256078b4",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on The Philosophical Discourse of Modernity. Edited by d'Entr\u00e8ves Maurizio Passerin and Benhabib Seyla. Cambridge, MA: MIT Press, 1997. 305p. $35.00 cloth, $17.00 paper.",
+      "authors": [
+        {
+          "name": "M. Fleming",
+          "authorId": "97844943"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.2307/2585678",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d09e42bc2f4becfe0b8133d3dda0e32d256078b4",
+      "venue": "American Political Science Review",
+      "journal": {
+        "name": "American Political Science Review",
+        "pages": "432 - 433",
+        "volume": "92"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "280fedb93449ab0cc6ec29cd7bfbdac15be98721",
+      "title": "Habermas and Modernity",
+      "authors": [
+        {
+          "name": "Thomas L. Dumm",
+          "authorId": "91296021"
+        },
+        {
+          "name": "R. Bernstein",
+          "authorId": "39089318"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 260,
+      "doi": "10.2307/3791048",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/280fedb93449ab0cc6ec29cd7bfbdac15be98721",
+      "venue": "",
+      "journal": {
+        "name": "Political Psychology",
+        "pages": "457",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "7e02954a07a35651bbf495db8f1174ef98b0c4cc",
+      "title": "The Philosophical Politics of the Modern-Postmodern Debate@@@Between Freiburg and Frankfurt: Toward a Critical Ontology@@@Political Theory and Postmodernism@@@The New Constellation: The Ethical-Political Horizons of Modernity/Postmodernity",
+      "authors": [
+        {
+          "name": "Wayne Gabardi",
+          "authorId": "114167572"
+        },
+        {
+          "name": "F. Dallmayr",
+          "authorId": "94323506"
+        },
+        {
+          "name": "Stephen K. White",
+          "authorId": "48008852"
+        },
+        {
+          "name": "R. Bernstein",
+          "authorId": "39089318"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 304,
+      "doi": "10.2307/448854",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7e02954a07a35651bbf495db8f1174ef98b0c4cc",
+      "venue": "",
+      "journal": {
+        "name": "Political Research Quarterly",
+        "pages": "769",
+        "volume": "47"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on the Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "M. D\u2019entr\u00e8ves",
+          "authorId": "1422611260"
+        },
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d42acb1b67eb9b4c3a72f7a05bd55688b3e13da5",
+      "title": "Religion and Rationality: Essays on Reason, God and Modernity",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "E. Mendieta",
+          "authorId": "50489593"
+        }
+      ],
+      "year": 2002,
+      "abstract": null,
+      "citationCount": 203,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d42acb1b67eb9b4c3a72f7a05bd55688b3e13da5",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e4505d358808a76f3d1dd64f8317b6ee0ae2f2c9",
+      "title": "Shanghai between Modernity and Postmodernity",
+      "authors": [
+        {
+          "name": "Lei Ping",
+          "authorId": "50468926"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Shanghai, an unequivocally distinctive cosmopolitan city, has been a critical subject of scholarly studies and popular interest since the nineteenth century. \u201cShanghai fever\u201d (Shanghaire), coupled with Shanghai nostalgia, became a sensational literary, cinematic, and cultural phenomenon in the \uf644\uf64c\uf64c\uf643s and has continued throughout the turn of the twenty-first century as the post-Mao era unfolds. After a few temporarily dormant years following the culmination of the fervor, Shanghai has reemerged in recent global scholarship as a path to understand Chinese modernity and China\u2019s rise to the world\u2019s second largest economy. The question as to what kind of pivotal role Shanghai plays in conjuring the so-called China\u2019s lost modernity causes a resurfacing of intellectual debates about Shanghai\u2014\u201cthe other China.\u201d Book publications in \uf645\uf643\uf645\uf643 such as Justin O\u2019Connor and Xin Gu\u2019s Red Creative: Culture and Modernity in China and Lisa Bernstein and Chu-chueh Cheng\u2019s edited volume Revealing/Reveiling Shanghai: Cultural Representations from the Twentieth and Twenty-First Centuries are two distinct examples. Shanghai is rediscovered as an overdetermined city where culture, commerce, and politics converge to herald China\u2019s search for modernity.",
+      "citationCount": 1,
+      "doi": "10.1353/cri.2020.0022",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e4505d358808a76f3d1dd64f8317b6ee0ae2f2c9",
+      "venue": "China Review International",
+      "journal": {
+        "name": "China Review International",
+        "pages": "83 - 94",
+        "volume": "27"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "422a25262a23d0146bd2547c5d81a74594c28205",
+      "title": "Hirabayashi Hatsunosuke Reader",
+      "authors": [],
+      "year": 2025,
+      "abstract": "This edited volume assembles a wide array of writings by Hirabayashi Hatsunosuke, one of 20th-century Japan\u2019s foremost intellectuals, translated for the first time into English. It begins with an introduction by the editors, Seth Jacobowitz and Aaron William Moore, that contextualizes Hirabayashi\u2019s significance as a non-doctrinaire Marxist cultural critic, visionary thinker, and much-beloved popular fiction writer. The \u2018Short Stories\u2019, features a selection of Hirabayashi\u2019s literary work, including science fiction (\u2018The Artificial Human\u2019), detective fiction (\u2018This is How I Died!\u2019), and more idiosyncratic works such as \u2018Demon at the Pulpit\u2019, an antitheist and anticlerical story.\n The \u2018Essays\u2019 provides a range of groundbreaking critical and theoretical tracts that address such topics as \u2018The Social Basis of Modernism\u2019, \u2018The Feminisation of Culture\u2019, \u2018Political Value and Artistic Value: A Re-Appraisal of Marxist Literary Theory\u2019, \u2018Film as a Mechanism of Americanization\u2019, \u2018The Technological Revolution in Literature and the Arts\u2019, and many more. Hirabayashi\u2019s systematic approach to cultural theory befitting the era of massification in the 1920s places him front and centre in the hothouse intellectual climate of pre-war Japan. It also affords striking parallels to the leading thinkers in Europe such as Walter Benjamin and Antonio Gramsci, thereby forming an integral part of the history of global modernity.",
+      "citationCount": 0,
+      "doi": "10.5040/9781350378186",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/422a25262a23d0146bd2547c5d81a74594c28205",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Book"
+      ]
+    },
+    {
+      "paperId": "6a9d100d0f9b706bd6ea140e45405f068d03e058",
+      "title": "Book Review: Habermas on Law and Democracy: Critical Exchanges",
+      "authors": [
+        {
+          "name": "Lindsay Farmer",
+          "authorId": "2240901262"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/096466390000900406",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6a9d100d0f9b706bd6ea140e45405f068d03e058",
+      "venue": "",
+      "journal": {
+        "name": "Social & Legal Studies",
+        "pages": "583 - 586",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "f2c5c59d55a614f593ffc197716b3cbfc7d93b5d",
+      "title": "Critical Theory between Modernity and Postmodernity",
+      "authors": [
+        {
+          "name": "M. Fleming",
+          "authorId": "97844943"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.5840/PHILTODAY199741116",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f2c5c59d55a614f593ffc197716b3cbfc7d93b5d",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Today",
+        "pages": "31-39",
+        "volume": "41"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "28a0f2ec27b6fa245486041b3a04ee154b67694f",
+      "title": "Queer theory impossible",
+      "authors": [
+        {
+          "name": "Minwoo Jung",
+          "authorId": "2298420425"
+        }
+      ],
+      "year": 2024,
+      "abstract": "ABSTRACT This essay examines the institutional construction of \u201cqueer theory\u201d as a field in the United States and its translation and subsequent failure outside the U.S. Despite presenting itself as a critical field of inquiry, queer theory has been centered in the most privileged institutions in the global North, primarily in the U.S. I investigate how U.S.-centric queer theory has built upon the international division between \u201ctheory\u201d and \u201ccase,\u201d rooted in colonial science and knowledge production, particularly in relation to sexuality and race. To address these issues, I analyze the controversy surrounding the publication and translation of the edited volume, Queer Korea, from Duke University Press\u2019s acclaimed Perverse Modernities series, focusing on research ethics and hegemonic whiteness. I argue that this controversy demonstrates how contemporary U.S.-centric queer theory appropriates and capitalizes on the language of \u201cdecentering,\u201d \u201cprovincializing,\u201d or \u201cdecolonizing\u201d at the expense of marginalized queer lives, struggles, and knowledge outside the U.S.",
+      "citationCount": 6,
+      "doi": "10.1080/14649373.2024.2336736",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/28a0f2ec27b6fa245486041b3a04ee154b67694f",
+      "venue": "Inter-Asia Cultural Studies",
+      "journal": {
+        "name": "Inter-Asia Cultural Studies",
+        "pages": "517 - 532",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "6adcacf44758b0fc62e71290e6c6daf4dbfd2e0e",
+      "title": "Book Reviews : British Political Sociology Yearbook: Volume 2, The Politics of Race. Edited by IvoR CREWE. (New York and Toronto: John Wiley, a Halstead Book, 1975, Pp. v, 298. $23.50.)",
+      "authors": [
+        {
+          "name": "Carl F. Pinkele",
+          "authorId": "105075505"
+        }
+      ],
+      "year": 1977,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/106591297703000317",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6adcacf44758b0fc62e71290e6c6daf4dbfd2e0e",
+      "venue": "",
+      "journal": {
+        "name": "Political Research Quarterly",
+        "pages": "436 - 437",
+        "volume": "30"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "de8d0609acc5bcdfc6d6e7e4fdad75fabdfde315",
+      "title": "Critical Theory and Public Life",
+      "authors": [
+        {
+          "name": "J. Forester",
+          "authorId": "102807285"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 115,
+      "doi": "10.2307/3340715",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/de8d0609acc5bcdfc6d6e7e4fdad75fabdfde315",
+      "venue": "",
+      "journal": {
+        "name": "Canadian Journal of Sociology-cahiers Canadiens De Sociologie",
+        "pages": "304",
+        "volume": "12"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "57fb3f743da68ae96984f50676ee845f8d8666c1",
+      "title": "Feasts and Fasts: Towards a Modernist Food Studies",
+      "authors": [
+        {
+          "name": "R. Bowler",
+          "authorId": "88540985"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Modernist food studies is an emerging field, and it is thriving. It is a significant new subfield because, as these three volumes demonstrate, food is richly significant for material, cultural, and political examinations of formal modernism. The books under review here contribute to a rapidly growing site of inquiry; they join, most notably, the special issue of Resilience: A Journal of the Environmental Humanities, \u201cTasting Modernism\u201d (2014), the \u201cModernist Food Studies\u201d special issue of Modernism/modernity on the Print Plus platform (May 2019), and the edited collection Modernism and Food Studies: Politics, Aesthetics, and the Avant-Garde (2019).1 Like Modernism and Food Studies, GastroModernism: Food, Literature, Culture (2019) is a collection of critical essays. Each volume groups its essays in thematic clusters, addressing the cultural, the aesthetic, the affective and the social elements of diet. Artificial Color: Modern Food and Racial Fictions (2019) examines the intersection of food studies and race in American modernisms. And The Art of Hunger: Aesthetic Autonomy and the Afterlives of Modernism (2018) provides a retrospective on modernism via some postmodern authors who acknowledged themselves indebted to a certain mythology of what modernism was or could have been. In this version of modernism, hunger is an aesthetic and food is vulgar because material. In the modernism / modernity",
+      "citationCount": 1,
+      "doi": "10.1353/mod.2020.0029",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/57fb3f743da68ae96984f50676ee845f8d8666c1",
+      "venue": "Modernism/Modernity",
+      "journal": {
+        "name": "Modernism/modernity",
+        "pages": "399 - 405",
+        "volume": "27"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5638375f78f4386c0119faceae8ccedefe426fe9",
+      "title": "Regionalism and Modernity: Architecture in Western Europe 1914\u20131940",
+      "authors": [
+        {
+          "name": "Vincent B. Canizaro",
+          "authorId": "97729712"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1080/10464883.2014.864900",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5638375f78f4386c0119faceae8ccedefe426fe9",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Architectural Education",
+        "pages": "116 - 118",
+        "volume": "68"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "d8738dc5979d3655c7aebc2fe286d8fce10ac7df",
+      "title": "Charles Dickens. Modernism, Modernity ed. by Christine Huguet and Nathalie Vanfasse (review)",
+      "authors": [
+        {
+          "name": "Saverio Tomaiuolo",
+          "authorId": "66841286"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1353/DQT.2015.0010",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d8738dc5979d3655c7aebc2fe286d8fce10ac7df",
+      "venue": "",
+      "journal": {
+        "name": "Dickens Quarterly",
+        "pages": "71 - 76",
+        "volume": "32"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "8d13168f9c4a5b3f06975b6a76b819b4379165c0",
+      "title": "Ideas, Ideologies and Public Consent: Introducing the Issue",
+      "authors": [
+        {
+          "name": "V. Gutorov",
+          "authorId": "89389886"
+        },
+        {
+          "name": "Alexander A. Shirinyants",
+          "authorId": "118972872"
+        },
+        {
+          "name": "Daria B. Kazarinova",
+          "authorId": "117234779"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The concept of consent is essential for every society society, affecting almost all its spheres - from everyday life to socio-political bases. Therefore, it cannot be considered accidental that both the idea itself and the diverse directions of its interpretation, dating back to the era of early modernity, today constitute one of the most priorities, intellectually saturated segments in modern socio-political theory. It is impossible to deny the appeal of the doctrine of personal consent (and the parallel thesis that no government is legitimate unless it acts without the consent of the governed). It has had a great influence on the political institutions of many modern states and has been a major factor in the direction that political theory has taken since 1600. In the second half of the 20th century, two approaches prevailed in political theory, within the framework of which the process of formation of the consensus tradition: personal and historical ones. The most impact to the theory is made by criticism of the unilinear model of consent analysis in the works of George Klosko, analysis by R.D. Bernstein of the problem of consent in the form of critical remarks on the philosophical position of R. Rorty, the concept of socialist \u201cconsent strategy\u201d developed in the 1980s by E. Laclau and Sh. Mouffe, the controversy of the Canadian political philosopher James Tully with neo-Marxist theorists, the philosophical interpretation of consent by J\u00fcrgen Habermas as part of his analysis of the \u201crationalization paradox\u201d etc. This theoretical and methodological frame becomes a basis for the thematic volume, where the articles on the history of socio-political thought are followed by the chapter devoted to the problems of Russia between cleavages and social harmony. Russian problems are blended with an international context, and the issue ends with an attempt to understand the ideological attitudes of modern youth.",
+      "citationCount": 3,
+      "doi": "10.22363/2313-1438-2023-25-1-9-20",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8d13168f9c4a5b3f06975b6a76b819b4379165c0",
+      "venue": "RUDN Journal of Political Science",
+      "journal": {
+        "name": "RUDN Journal of Political Science"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4daf4138a0807522f060a84293b80d8cbac41019",
+      "title": "Political economy, literature and the formation of knowledge, 1720-1850",
+      "authors": [
+        {
+          "name": "Rick Adelman",
+          "authorId": "1390186096"
+        },
+        {
+          "name": "Catherine Packham",
+          "authorId": "97607353"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": "10.4324/9781351009522",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4daf4138a0807522f060a84293b80d8cbac41019",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ef7018aa546c654cb46afff528b52bd8bc0e98dc",
+      "title": "Marxism and Critical Theory",
+      "authors": [
+        {
+          "name": "David Held",
+          "authorId": "145641013"
+        }
+      ],
+      "year": 1981,
+      "abstract": null,
+      "citationCount": 16,
+      "doi": "10.1111/j.1467-9248.1981.tb00498.x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ef7018aa546c654cb46afff528b52bd8bc0e98dc",
+      "venue": "",
+      "journal": {
+        "name": "Political Studies",
+        "pages": "292 - 299",
+        "volume": "29"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "4406a53d915a4ae0ddb6ae061cfccaa99f221f20",
+      "title": "Chaim Potok: Confronting Modernity Through the Lens of Tradition ed. by Daniel Walden (review)",
+      "authors": [
+        {
+          "name": "D. Vanderwerken",
+          "authorId": "118105725"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4406a53d915a4ae0ddb6ae061cfccaa99f221f20",
+      "venue": "",
+      "journal": {
+        "name": "Studies in American Jewish Literature",
+        "pages": "300 - 305",
+        "volume": "34"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "64d2545c02f9b1a52d8ec46f6e1a3900a2a8dd8a",
+      "title": "From Art Nouveau to Surrealism: Belgian Modernity in the Making",
+      "authors": [
+        {
+          "name": "Nathalie Aubert",
+          "authorId": "40431245"
+        },
+        {
+          "name": "Pierre-Philippe Fraiture",
+          "authorId": "98608462"
+        },
+        {
+          "name": "P. Mcguinness",
+          "authorId": "144804354"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.2307/20468070",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/64d2545c02f9b1a52d8ec46f6e1a3900a2a8dd8a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "1130",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

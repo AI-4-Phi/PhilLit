@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Critical Theory of Jurgen Habermas...' author=McCarthy year=1978
+[verify_paper.py] Paper found: The Critical Theory of Jurgen Habermas.... (score: 47.6)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Critical Theory of Jurgen Habermas",
+    "author": "McCarthy",
+    "year": 1978
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2504537",
+      "title": "The Critical Theory of Jurgen Habermas.",
+      "authors": [
+        {
+          "family": "Connolly",
+          "given": "William E."
+        },
+        {
+          "family": "McCarthy",
+          "given": "Thomas"
+        }
+      ],
+      "editors": [],
+      "year": 1979,
+      "container_title": "History and Theory",
+      "volume": "18",
+      "issue": "3",
+      "page": "397",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/2504537",
+      "score": 47.601784
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

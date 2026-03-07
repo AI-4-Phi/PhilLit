@@ -1,0 +1,1449 @@
+[search_openalex.py] Searching OpenAlex: 'Habermas engagement Weber critical theory modernity' (year=2000-2025), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_01f92595dc5606e2)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas engagement Weber critical theory modernity",
+  "results": [
+    {
+      "openalex_id": "W2122387224",
+      "doi": "10.1111/j.1467-6486.2010.00950.x",
+      "title": "The New Political Role of Business in a Globalized World: A Review of a New Perspective on CSR and its Implications for the Firm, Governance, and Democracy",
+      "authors": [
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-01",
+      "abstract": "abstract Scholars in management and economics widely share the assumption that business firms focus on profits only, while it is the task of the state system to provide public goods. In this view business firms are conceived of as economic actors, and governments and their state agencies are considered the only political actors. We suggest that, under the conditions of globalization, the strict division of labour between private business and nation\u2010state governance does not hold any more. Many business firms have started to assume social and political responsibilities that go beyond legal requirements and fill the regulatory vacuum in global governance. Our review of the literature shows that there are a growing number of publications from various disciplines that propose a politicized concept of corporate social responsibility. We consider the implications of this new perspective for theorizing about the business firm, governance, and democracy.",
+      "cited_by_count": 2013,
+      "type": "review",
+      "source": {
+        "name": "Journal of Management Studies",
+        "type": "journal",
+        "issn": [
+          "0022-2380",
+          "1467-6486"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-6486.2010.00950.x"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Corporate Law and Human Rights",
+        "Global trade, sustainability, and social impact"
+      ],
+      "referenced_works_count": 324,
+      "url": "https://openalex.org/W2122387224"
+    },
+    {
+      "openalex_id": "W2058159156",
+      "doi": "10.1046/j.0020-8833.2003.00277.x",
+      "title": "Words, Images, Enemies: Securitization and International Politics",
+      "authors": [
+        {
+          "name": "Michael C. Williams",
+          "openalex_id": "A5084500200",
+          "orcid": "https://orcid.org/0000-0001-8814-8664",
+          "institutions": [
+            "Aberystwyth University"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-11-07",
+      "abstract": "The theory of \u201csecuritization\u201d developed by the Copenhagen School provides one of the most innovative, productive, and yet controversial avenues of research in contemporary security studies. This article provides an assessment of the foundations of this approach and its limitations, as well as its significance for broader areas of International Relations theory. Locating securitization theory within the context of both classical Realism influenced by Carl Schmitt, and current work on constructivist ethics, it argues that while the Copenhagen School is largely immune from the most common criticisms leveled against it, the increasing impact of televisual communication in security relations provides a fundamental challenge for understanding the processes and institutions involved in securitization, and for the political ethics advocated by the Copenhagen School.",
+      "cited_by_count": 1102,
+      "type": "article",
+      "source": {
+        "name": "International Studies Quarterly",
+        "type": "journal",
+        "issn": [
+          "0020-8833",
+          "1468-2478"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/isq/article-pdf/47/4/511/5109128/47-4-511.pdf"
+      },
+      "topics": [
+        "Global Security and Public Health",
+        "Global Peace and Security Dynamics",
+        "International Law and Human Rights"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W2058159156"
+    },
+    {
+      "openalex_id": "W2027360481",
+      "doi": "10.1080/09672550500169232",
+      "title": "A Substantivist Construal of Discourse Ethics",
+      "authors": [
+        {
+          "name": "Pablo Gilabert",
+          "openalex_id": "A5005751449",
+          "orcid": "https://orcid.org/0000-0002-0183-8716",
+          "institutions": [
+            "Concordia University"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-09-01",
+      "abstract": "Abstract Abstract This paper presents a substantivist construal of discourse ethics, which claims that we should see our engagement in public deliberation as expressing and elaborating a substantive commitment to basic moral ideas of solidarity, equality, and freedom. This view is different from Habermas\u2019s standard formalist defence of discourse ethics, which attempts to derive the principle of discursive moral justification from primarily non\u2010moral presuppositions of rational argumentation as such. After explicating the difference between the substantivist and the formalist construal, I defend the former by showing that it is not only intuitively compelling, but also particularly well equipped for addressing four important objections recently levelled against discourse ethics and its political applications (Rawls\u2019s concern that it lacks substantive guidelines, Gunnarsson\u2019s challenge that it has not been proven to be superior to alternative moral conceptions such as utilitarianism, Scanlon\u2019s complaint that it lacks an account of moral motivation, and Galston\u2019s and Young\u2019s worries that it could lead to political practices of cultural imposition). I conclude by pointing out some consequences of the previous discussion for the future of Critical Theory. Keywords: discourse ethicsdeliberative democracyHabermasRawlssubstanceprocedure Notes I thank Arash Abizadeh, Jeffrey Flynn, Matthias Fritsch, John Kerkhoven, and referees for IJPS for comments and suggestions on earlier drafts of this paper. Research for this paper was supported by grants from the Social Sciences and Humanities Research Council of Canada and the Fonds Qu\u00e9becois de la Recherche sur la Soci\u00e9t\u00e9 et la Culture. 1 See Habermas, 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: pp. 86, 92\u20133, and 96\u20137; 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: pp. 43\u20135. My reconstruction is slightly different from the formulation in Habermas (1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: p. 96), which goes as follows: \u2018(1) A definition of a universalization principle that functions as a rule of argumentation. (2) The identification of pragmatic presuppositions of argumentation that are inescapable and have a normative content. (3) The explicit statement of the normative content (e.g. in the form of discourse rules). (4) Proof that a relation of material implication holds between steps (3) and (1) in connection with the idea of justification of norms\u2019. Steps 2 and 3 in this formulation are put together in step 2 in my formulation. The assumption about the \u2018idea of justification of norms\u2019 which Habermas mentions as an auxiliary hypothesis in step 4 is mentioned in my reconstruction as step 3. These changes do not affect the content of Habermas\u2019s proof, and make more explicit the importance of the assumption of a certain view of the justification of norms. 2 (U) \u2018operationalizes\u2019, at the level of moral argumentation, what Habermas calls the general principle of discourse ethics (or of the discourse theory of morality) (D), according to which \u2018Only those norms can claim to be valid that meet (or could meet) with the approval of all affected in their capacity as participants in a practical discourse\u2019 (Habermas, 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: pp. 66, 93; see also 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 41). The term \u2018operationalization\u2019 appears in Habermas (1998a \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]: p. 42; 1996 \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]: p. 109; 2003a \u2014\u2014. 2003a. \u201c\u2018Rightness versus Truth: On the Sense of Normative Validity in Moral Judgments and Norms\u2019\u201d. In Truth and Justification, Edited by: Habermas. 237\u201375. Cambridge, Mass: The MIT Press. trans. B. Fultner [Google Scholar]: p. 268). (U) operationalizes (D) in the domain of moral discourses, whereas a different principle of democratic legitimacy would operationalize (D) in the domain of political discourse. 3 Habermas (1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 42). Habermas uses \u2018interests\u2019 in a wide sense, allowing for moral discourse to range over all kinds of reasons for action, including desires, needs, and conceptions of the good life. For an excellent discussion of Habermas\u2019s demand that norms protect \u2018common\u2019, \u2018general\u2019, or \u2018universalizable\u2019 interests, see Lafont (2004 Lafont, C. 2004. \u2018Moral Objectivity and Reasonable Agreement: Can Realism Be Reconciled with Kantian Constructivism?\u2019. Ratio Juris, 17(1): 27\u201351. [Crossref] , [Google Scholar]). For an important challenge to Habermas\u2019s stark contrast between the \u2018good\u2019 and the \u2018right\u2019, see McCarthy (1991 McCarthy, T. 1991. Ideals and Illusions, Cambridge, Mass: The MIT Press. [Google Scholar]: Ch. 7). 4 For a detailed discussion of Habermas\u2019s re\u2010elaboration of Kant\u2019s moral theory, see Gilabert (2005c \u2014\u2014. 2005c. \u2018Considerations on the Notion of \u201cMoral Validity\u201d in the Moral Theories of Kant and Habermas\u2019. Kant\u2010Studien, (forthcoming) [Google Scholar]). 5 At this stage Habermas is not yet considering practical discourses (i.e. argumentative communication assessing moral validity claims), but discourses as such (i.e. any argumentative communication assessing universal validity claims \u2013 claims viewed as meriting rational acceptance by every rational person on thebasis of shared reasons). The reference to practical discourses emerges in the third step of the argument. The normative presuppositions reconstructed in the second step are not normative in the moral sense: \u2018the equal distribution of communicative freedoms and the requirement of truthfulness in discourse have the status of argumentative duties and rights, not of moral duties and rights\u2019 (Habermas, 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: pp. 44\u20135; see also 1993 \u2014\u2014. 1993. \u201c\u2018Remarks on Discourse Ethics\u2019\u201d. In Justification and Application, Edited by: Habermas. 19\u2013111. Cambridge, Mass: The MIT Press. trans. C. Cronin [Google Scholar]: p. 31; 1996 \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]: p. 4; 2003b \u2014\u2014. 2003b. \u201c\u2018From Kant\u2019s \u201cIdeas\u201d of Pure Reason to \u201cIdealizing\u201d Presuppositions of Communicative Action: Reflections on the Detranscendentalized \u201cUse of Reason\u201d \u2019\u201d. In Truth and Justification Edited by: Habermas. 83\u2013130. [Google Scholar]: pp. 105\u20136). 6 For detailed and critically illuminating reconstructions of this argument see Finlayson (2000 Finlayson, J. G. 2000. \u2018Modernity and Morality in Habermas\u2019s Discourse Ethics\u2019. Inquiry, 43: 319\u201340. [Taylor & Francis Online], [Web of Science \u00ae] , [Google Scholar]); Gunnarsson (2000 Gunnarsson, L. 2000. Making Moral Sense: Beyond Habermas and Gauthier, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]: Chs 8\u20139); and Rehg (1994 Rehg, W. 1994. Insight and Solidarity, Berkeley: The University of California Press. [Crossref] , [Google Scholar]: Ch. 3). 7 I rely here on Gunnarsson (2000 Gunnarsson, L. 2000. Making Moral Sense: Beyond Habermas and Gauthier, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]). Despite using Gunnarsson\u2019s distinction between formalist and substantivist approaches, I depart from his view of the latter in two ways. First, I endorse Habermas\u2019s distinction between the ethical and the moral (i.e. between recommendations about how to live a good life and prescriptions about how we ought to treat each other). (It is due to this distinction that in his later works Habermas names his approach \u2018a discourse theory of morality\u2019 rather than \u2018discourse ethics\u2019.) My substantivism is moral, not ethical. Ideals of the good life are allowed as inputs of moral reasoning (see n. 3 above), but not as grounds for shaping and justifying its structure. Second, though I agree with Gunnarsson\u2019s general claim that a substantivist approach to moral thinking is desirable, I develop a substantivist account of discourse ethics itself. This is something that Gunnarsson himself does not do, though there is nothing in his text entailing that it could not or should not be done. 8 I assume here a minimal definition of solidarity as people\u2019s willingness to \u2018give each other\u2019s interests some non\u2010instrumental weight in their practical reasoning\u2019 (Mason, 2000 Mason, A. 2000. Community, Solidarity and Belonging, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]: p. 27). 9 The formal structure of the arguments can be presented in the following way. Take \u2018p\u2019 to mean \u2018I endorse the discursive procedure of universalization\u2019; \u2018q\u2019 to mean \u2018I endorse the substantive ideas\u2019; and \u2018\u00ac\u2019 \u2018&\u2019, and \u2018\u2192\u2019 to mean, respectively, the logical operators of negation, conjunction, and the conditional. Now, the Normative Point Argument would yield \u2018\u00acq \u2192 \u00acp\u2019, from which \u2018p \u2192 q\u2019 follows. The Outrage Argument, on the other hand, would yield \u2018\u00ac (\u00acp & q)\u2019, from which \u2018q \u2192 p\u2019 follows. From the conjunction of the conclusions of the two arguments it follows, in turn, \u2018p \u2194 q\u2019, i.e. the general claim that the discursive procedure of universalization and the substantive ideas involve each other. This is not a knock\u2010out transcendental argument, but a reconstructive or maieutic one appealing to our deepest moral convictions. The productivity of this approach will become evident in section III when we consider its help in defending discourse ethics against some recent criticisms. 10 For an attempt to provide an external justification of a discursive principle of justification, see Larmore (1999 Larmore, C. 1999. \u2018The Moral Basis of Political Liberalism\u2019. Journal of Philosophy, 96(12): 599\u2013625. [Crossref], [Web of Science \u00ae] , [Google Scholar]). 11 A more detailed account of the notions of expression and elaboration of the three substantive ideas (including a more detailed elucidation of the ideas themselves) is given in Gilabert (2005a \u2014\u2014. 2005a. \u2018The Substantive Dimension of Deliberative Practical Rationality\u2019. Philosophy and Social Criticism, 31(2): 185\u2013210. [Google Scholar]). 12 Unfortunately, Habermas does not explicitly distinguish between these two strands. This failure makes the understanding and discussion of his views unnecessarily difficult. 13 \u2018All contents, no matter how fundamental the action norm involved may be, must be made to depend on real discourses\u2019 (Habermas, 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: p. 94; see also 1990b \u2014\u2014. 1990b. \u201c\u2018Moral Consciousness and Communicative Action\u2019\u201d. In Moral Consciousness and Communicative Action Edited by: Habermas. 116\u201394. [Google Scholar]: p. 122). This assertion seems to entail that even the most basic substantive ideas that one may claim underlie the motivation to join moral discussion with others in the first place are themselves in need of discursive justification. I return to the issue of substantive guidelines in section III.1 below. 14 According to this interpretation, Habermas\u2019s formalist approach is not focused on the question of what makes the duty to enter moral dialogue a moral besides a general rational requirement. His approach would then be different from Apel\u2019s (1980 Apel, K. O. 1980. \u201c\u2018The A Priori of the Communication Community and the Foundations of Ethics: The Problem of a Rational Foundation in the Scientific Age\u2019, in Apel\u201d. In Towards a Transformation of Philosophy, 225\u2013300. London: Routledge & Kegan Paul. trans. G. Adey and D. Frisby [Google Scholar]: sec. 2.3.4), seeing the duty to enter into public deliberation as emerging from extra\u2010moral requirements of coordination of actions in the lifeworld, rather than as having a straightforwardly moral dimension. 15 For examples of the three concerns see Habermas (1990b \u2014\u2014. 1990b. \u201c\u2018Moral Consciousness and Communicative Action\u2019\u201d. In Moral Consciousness and Communicative Action Edited by: Habermas. 116\u201394. [Google Scholar]: pp. 120\u20131 and 1993 \u2014\u2014. 1993. \u201c\u2018Remarks on Discourse Ethics\u2019\u201d. In Justification and Application, Edited by: Habermas. 19\u2013111. Cambridge, Mass: The MIT Press. trans. C. Cronin [Google Scholar]: p. 76; 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 41; 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: p. 94). 16 This complaint is echoed in Benhabib (1992 Benhabib, S. 1992. Situating the Self, New York: Routledge. [Google Scholar]: Ch. 1) and in Cohen (1999 Cohen, J. 1999. \u2018Reflections on Habermas on Democracy\u2019. Ratio Juris, 12(4): 385\u2013416. [Crossref] , [Google Scholar]: pp. 395). 17 Actually, Habermas recently recognized that \u2018the participants [in moral discourse] themselves will perhaps be satisfied with this (or a similar) rule of argumentation [the principle of universalization (U)] as long as it proves useful and does not lead to counterintuitive results\u2019 (Habermas, 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 43). The substantivist account helps explain why this otherwise unsystematic remark is quite important. 18 Premises (a) and (b) correspond to steps 2 and 3 in my reconstruction of the formalist argument for discourse ethics. It is important to note that Gunnarsson is not criticizing (U) itself, but only its formalist derivation (Gunnarsson, 2000 Gunnarsson, L. 2000. Making Moral Sense: Beyond Habermas and Gauthier, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]: p. 97). His argument is also not a defence of utilitarianism, but a thought experiment challenging the claim that (U), instead of other fundamental moral theories (like utilitarianism), would necessarily follow from premises (a) and (b). The upshot is that the only way to justify (U) is by appealing to further, substantive premises other than (a) and (b), or by advancing \u2018thicker\u2019 substantive interpretations of either of them (e.g. a more specious notion of impartiality than the one presented in (b)). 19 Gunnarsson has the discoursing utilitarian saying: \u2018I am trying to be impartial. And I have reached the conclusion that the only way to be impartial is to let the decision rest on what produces more happiness, not on what we would agree to in discourse\u2019 (p. 113). 20 On the distinction between aggregative and distributive conceptions of equal treatment see Kagan (1998 Kagan, S. 1998. Normative Ethics, Boulder, Colo: Westview Press. [Google Scholar]: sec. 2.4). \u2018Disrespectful preferences\u2019 are those whose satisfaction involves a lack of recognition of other people\u2019s status as free and equal. For a critique of an account of preference satisfaction that includes such kinds of preferences see Dworkin (2000 Dworkin, R. 2000. Sovereign Virtue, Cambridge, Mass: Harvard University Press. [Google Scholar]: Ch. 2). Utilitarians can, however, avoid this criticism by adopting a definition of \u2018utility\u2019 in terms of objective \u2018goods\u2019 rather than \u2018preferences\u2019. The problem of aggregation would, however, remain. 21 I agree with Barry\u2019s remark that \u2018the whole idea that we should seek the agreement of everybody rests upon a fundamental commitment to the equality of all human beings. \u2026 The criterion of reasonable acceptability of principles gives some substance to the idea of fundamental equality while at the same time flowing from it\u2019 (Barry, 1995 Barry, B. 1995. Justice as Impartiality, Oxford: Oxford University Press. [Google Scholar]: p. 8). Barry applies this remark to Scanlonian contractualism, but it also fits discourse ethics perfectly well. 22 Habermas (1998a: p. 41). See n. 26 below. Habermas does mention, however, that participation in moral discourse has a \u2018motivating aspect\u2019 in connection with participants\u2019 \u2018freedom\u2019 and \u2018autonomy\u2019 (Habermas, 2003a \u2014\u2014. 2003a. \u201c\u2018Rightness versus Truth: On the Sense of Normative Validity in Moral Judgments and Norms\u2019\u201d. In Truth and Justification, Edited by: Habermas. 237\u201375. Cambridge, Mass: The MIT Press. trans. B. Fultner [Google Scholar]: p. 270). 23 I follow here the account of the problem of moral motivation given in Scanlon (1998 Scanlon, T. M. 1998. What We Owe to Each Other, Cambridge, Mass: Harvard University Press. [Google Scholar]: secs. 4.1\u20132). Like Scanlon, I think that what we need is not to ground morality on something external to it, but to clarify the moral significance (the importance and priority) of behaving morally by depicting more fully what kind of treatment of others it involves. I do not, however, follow Scanlon\u2019s proposal that we account for moral motivation by appealing to an \u2018ideal of justifiability to others\u2019 (p. 156). I take the force of that ideal to be itself in need of clarification, and argue that a reference to the project of justice (PJ), given the fact of disagreement (FD), provides the elucidation that we need. I agree with Kumar\u2019s (2003 Kumar, R. 2003. \u2018Reasonable Reasons in Contractualist Moral Argument\u2019. Ethics, 114(1): 6\u201337. [Crossref], [Web of Science \u00ae] , [Google Scholar]: p. 33) suggestion that Scanlon\u2019s contractualism is actually \u2018animated\u2019 by a substantive \u2018normative commitment\u2019 to the idea of \u2018individuals being able to live rationally self\u2010governed meaningful lives on terms of mutual respect for one another\u2019s value as persons\u2019. 24 So the way in which we should defend discourse ethics is by depicting (or elucidating) its own moral force as a \u2018normative package\u2019 including the ideas and the procedures working in tandem. If this package is the basis of morality, then we could not appeal to something else to justify it morally. At this point the spade should be turned. If Kant appeals to the \u2018fact of pure reason\u2019, and Habermas appeals to the \u2018fact of communicative rationality\u2019, we appeal to the fact of the normative package comprising the three substantive ideas and the discursive procedure under conditions of moral disagreement. If the sceptic really thinks that this package has no appeal, then we would not be able to convince her with moral arguments, but would have to turn to other forms of persuasion (based, for example, on prudential and strategic, or even existential, considerations). But then we would be answering a different question than the one with which we started, and our answer would not avoid the horns of Prichard\u2019s Dilemma. 25 A sense of justice includes moral ideal conceptions of persons and social life that constitute high\u2010order desires having motivational power alongside more specific, principle\u2010 and object\u2010dependent desires. See Rawls (1996 Rawls, J. 1996. Political Liberalism, , rev. edn, New York: Columbia University Press. [Google Scholar]: sec. II.7; 2000 \u2014\u2014. 2000. Lectures on the History of Moral Philosophy, Cambridge, Mass: Harvard University Press. [Google Scholar]: pp. 45\u20138, 148\u201352). 26 We should distinguish the political charge of cultural imposition from the sociological charge that a universalist defender of discourse ethics mistakenly assumes that all agents in all historical and social contexts already have a full and explicit commitment to a discursive procedure of normative justification. Habermas has a powerful answer to the latter, showing that procedural commitments to argumentative communication develop historically in ontogenetic and phylogenetic learning processes (Habermas, 1987 Habermas, J. 1987. The Theory of Communicative Action, 2 vols, Boston, Mass: Beacon Press. trans. T. McCarthy [Google Scholar]: secs. I.3 and and 1990b \u2014\u2014. 1990b. \u201c\u2018Moral Consciousness and Communicative Action\u2019\u201d. In Moral Consciousness and Communicative Action Edited by: Habermas. 116\u201394. [Google see also Finlayson 2000 Finlayson, J. G. 2000. \u2018Modernity and Morality in Habermas\u2019s Discourse Ethics\u2019. Inquiry, 43: 319\u201340. [Taylor & Francis Online], [Web of Science \u00ae] , [Google and J. Communicative Action and Rational Cambridge, Mass: The MIT Press. [Crossref] , [Google Scholar]: Ch. 8). Habermas that the of substantive moral commitments to a universalist goes in with the of procedural commitments to argumentation as such (Habermas, 2003a \u2014\u2014. 2003a. \u201c\u2018Rightness versus Truth: On the Sense of Normative Validity in Moral Judgments and Norms\u2019\u201d. In Truth and Justification, Edited by: Habermas. 237\u201375. Cambridge, Mass: The MIT Press. trans. B. Fultner [Google Scholar]: sec. the substantivist construal has no with Habermas\u2019s social theory of but can be as as a of Communicative coordination the of the force of in the of at the same time that it the of discursive argumentation the whole of validity The distinction between a \u2018discourse theory of and a \u2018discourse theory of morality\u2019 is in Habermas (1996 \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]). Habermas that political should not only discourses\u2019 focused on but also focused on conceptions of the good as well as forms of We can these important discourse ethics and see J. Communicative Action and Rational Cambridge, Mass: The MIT Press. [Crossref] , [Google and Gilabert \u2014\u2014. Discourse a of Philosophical [Google What however, important is that we are in the political moral discourses are to the of and this the of addressing the charge of cultural See the distinction between and in Benhabib (1992 Benhabib, S. 1992. Situating the Self, New York: Routledge. [Google Scholar]). This is not an of in their to be more involved in than impartial communicative put it in his and Critical M. and Critical In Critical Edited by: New York: & [Google at \u2018the rational of \u2018a rationally future (p. The substantive of this notion of is evident in reference to \u2018the idea of a reasonable of that will meet the of the whole (p. of free in which each has the same of (p. For a useful account of the between and justice in the of Critical see (1996 R. 1996. and of Critical In of Critical Edited by: D. Oxford: [Google Scholar]). Critical Theory from other that also endorse this idea of a rational in a of ways. them are a approach of our rather than of some of their and the demand that the be as well as morally The latter with the of Critical Theory as of comprising the social besides I thank for to clarify this",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0967-2559",
+          "1466-4542"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2027360481"
+    },
+    {
+      "openalex_id": "W4239032587",
+      "doi": "10.4324/9781315587875",
+      "title": "Imaginaries of Modernity",
+      "authors": [
+        {
+          "name": "John Rundell",
+          "openalex_id": "A5084048565",
+          "orcid": "https://orcid.org/0000-0002-8072-6797"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-01",
+      "abstract": "This book offers a new perspective on the issue of modernity through a series of interconnected essays. Drawing centrally on the works of Castoriadis, Luhmann, Heller and Lefort, and in critical discussion with Weber, Durkheim, Simmel, Adorno, Habermas and Taylor, the author argues that modernity is not only a unique historical creation but also a multiple one. With a focus on five broad themes - the problem of understanding of modernity after the decline of grand narratives; the complexity of the modern condition; politics, especially with reference to freedom and totalitarian regimes; the variety and density of modern life; and the centrality of a concept of culture to social and critical theory - John Rundell advances the view that modernity is not the outcome of an evolutionary process or historical development, but is unique and indeterminate, as are the constitutive dimensions that can be identified as 'modern'. There are, then, different modernities. A rigorous engagement with a range of prominent and contemporary social theorists, Imaginaries of Modernity casts new light on the significance of understanding the multidimensional character of modernity and the plurality of its forms beyond the conventional paradigms associated with only the West. As such, it will appeal to scholars of social theory, critical theory, sociology and philosophy concerned with questions of culture, politics and modernity.",
+      "cited_by_count": 6,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Australian History and Society"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4239032587"
+    },
+    {
+      "openalex_id": "W4252698994",
+      "doi": "10.5040/9781472544377",
+      "title": "Connected Sociologies",
+      "authors": [
+        {
+          "name": "Gurminder K. Bhambra",
+          "openalex_id": "A5064248726",
+          "orcid": "https://orcid.org/0000-0003-3658-1575"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "<JATS1:p>This book outlines what theory for a global age might look like, positing an agenda for consideration, contestation and discussion, and a framework for the research-led volumes that follow in the series.</JATS1:p> <JATS1:p>Gurmider K. Bhambra takes up the classical concerns of sociology and social theory and shows how they are being rethought through an engagement with postcolonial studies, one of the most distinctive critical approaches of the past two decades. She also discusses the significance of the research programme surrounding coloniality and modernity that has emerged recently from Latin America.</JATS1:p>",
+      "cited_by_count": 592,
+      "type": "book",
+      "source": {
+        "name": "Bloomsbury Publishing Plc eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.bloomsburycollections.com/book/connected-sociologies.pdf?dl"
+      },
+      "topics": [
+        "Contemporary Sociological Theory and Practice"
+      ],
+      "referenced_works_count": 228,
+      "url": "https://openalex.org/W4252698994"
+    },
+    {
+      "openalex_id": "W2104357911",
+      "doi": "10.15215/aupress/9781897425084.01",
+      "title": "The Theory and Practice of Online Learning",
+      "authors": [
+        {
+          "name": "Terry Anderson",
+          "openalex_id": "A5106182363",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "Mohamed Ally",
+          "openalex_id": "",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "M Ally",
+          "openalex_id": "",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "M Ally",
+          "openalex_id": "",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "P Fahy",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Ausubel",
+          "openalex_id": ""
+        },
+        {
+          "name": "Z Berge",
+          "openalex_id": ""
+        },
+        {
+          "name": "Z Berge",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Beynon",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Bonk",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Reynolds",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Cassidy",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Chittaro",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ranon",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Clark",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Clark",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Cooper",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Craik",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Lockhart",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Craik",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Tulving",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Duffy",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Cunningham",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Ertmer",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Newby",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Garrison",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Gilbert",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Moore",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Hirumi",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Holley",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Dansereau",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Mcdonald",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Garland",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Collins",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Hooper",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Hannafin",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Hung",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Looi",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Koh",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Janicki",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Liegle",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Johnson",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Johnson",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Keller",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Keller",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Suzuki",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Khan",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Kozma",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Malone",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Mayer",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Mayer",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Miller",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Moore",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Mukhopadhyay",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Parhar",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Murphy",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Cifuentes",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Phillips",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Ring",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Mathieux",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Ritchie",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Hoffman",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Rossett",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Rourke",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Anderson",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Garrison",
+          "openalex_id": ""
+        },
+        {
+          "name": "W Archer",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Rovai",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schmidt",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Werner",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Simmons",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Sternberg",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Stoyanova",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Kommers",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Wiley",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Wilson",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Witkin",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Moore",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Goodenough",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Cox",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Yorke",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Knight",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Baxter",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Elder",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Glaser",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Benedikt",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Byrne",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Flood",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Willis",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Christenson",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Menzel",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Clements",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Nastassi",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Cutler",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Dixon",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Eggins",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Slade",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Esposito",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Farmer",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Feng",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-12-31",
+      "abstract": "The revised version of the Theory and Practice of Online Learning, edited by Terry Anderson, brings together recent developments in both the practice and our understanding of online learning.Five years have since passed between this new edition and the first version.Five years is certainly a long time in this business as this second edition illustrates.The improvement in versatility and sophistication of the technologies that have been coming into common use has been so significant that a revisit of our knowledge of learning technologies and their application was becoming increasingly necessary.Anderson and the other authors of this text have responded to the need and have done the higher education community a great service by bringing it out in the electronic open access format under a Creative Commons License.Those of us from the other world are beneficiaries of this generosity and intellectual benevolence.Online learning has begun to embed itself as a part of our educational environment, especially in the higher education and training Theory and Practice of Online Learning",
+      "cited_by_count": 1805,
+      "type": "book",
+      "source": {
+        "name": "Athabasca University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.aupress.ca/app/uploads/120146_99Z_Anderson_2008-Theory_and_Practice_of_Online_Learning.pdf"
+      },
+      "topics": [
+        "Online and Blended Learning",
+        "Innovative Teaching and Learning Methods",
+        "Online Learning and Analytics"
+      ],
+      "referenced_works_count": 668,
+      "url": "https://openalex.org/W2104357911"
+    },
+    {
+      "openalex_id": "W3123667852",
+      "doi": "10.5840/beq200616446",
+      "title": "Global Rules and Private Actors: Toward a New Role of the Transnational Corporation in Global Governance",
+      "authors": [
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Doroth\u00e9e Baumann",
+          "openalex_id": "A5112753227",
+          "institutions": [
+            "University of Zurich"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-10-01",
+      "abstract": "Abstract: We discuss the role that transnational corporations (TNCs) should play in developing global governance, creating a framework of rules and regulations for the global economy. The central issue is whether TNCs should provide global rules and guarantee individual citizenship rights, or instead focus on maximizing profits. First, we describe the problems arising from the globalization process that affect the relationship between public rules and private firms. Next we consider the position of economic and management theories in relation to the social responsibility of the firm. We argue that instrumental stakeholder theory and business and society research can only partially solve the global governance issue, and that more recent concepts of corporate citizenship and republican business ethics deliver theoretically and practically helpful, fresh insights. However, even these need further development, especially with regard to the legitimacy of corporate political activity.",
+      "cited_by_count": 562,
+      "type": "article",
+      "source": {
+        "name": "Business Ethics Quarterly",
+        "type": "journal",
+        "issn": [
+          "1052-150X",
+          "2153-3326"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D32E2226B43F68FF7DD3C140DC624ACF/S1052150X00011040a.pdf/div-class-title-global-rules-and-private-actors-toward-a-new-role-of-the-transnational-corporation-in-global-governance-div.pdf"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Ethics in Business and Education",
+        "Corporate Law and Human Rights"
+      ],
+      "referenced_works_count": 193,
+      "url": "https://openalex.org/W3123667852"
+    },
+    {
+      "openalex_id": "W602224805",
+      "doi": "10.5860/choice.46-2158",
+      "title": "Two bits: the cultural significance of free software",
+      "authors": [
+        {
+          "name": "Christopher Kelty",
+          "openalex_id": "A5016045705",
+          "orcid": "https://orcid.org/0000-0003-0253-5554"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-12-01",
+      "abstract": "In Two Bits, Christopher M. Kelty investigates the history and cultural significance of Free Software, revealing the people and practices that have transformed not only software but also music, film, science, and education. Free Software is a set of practices devoted to the collaborative creation of software source code that is made openly and freely available through an unconventional use of copyright law. Kelty explains how these specific practices have reoriented the relations of power around the creation, dissemination, and authorization of all kinds of knowledge. He also makes an important contribution to discussions of public spheres and social imaginaries by demonstrating how Free Software is a \"recursive public\" - a public organized around the ability to build, modify, and maintain the very infrastructure that gives it life in the first place.",
+      "cited_by_count": 728,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://evols.library.manoa.hawaii.edu/bitstreams/2fcdaed4-bc58-4588-ba72-f094446dd574/download"
+      },
+      "topics": [
+        "Open Source Software Innovations",
+        "Digital Games and Media",
+        "Copyright and Intellectual Property"
+      ],
+      "referenced_works_count": 286,
+      "url": "https://openalex.org/W602224805"
+    },
+    {
+      "openalex_id": "W1588506270",
+      "doi": "10.1111/j.1468-4446.2009.01288.x",
+      "title": "The odd couple: Margaret Archer, Anthony Giddens and British social theory",
+      "authors": [
+        {
+          "name": "Anthony King",
+          "openalex_id": "A5008930821",
+          "orcid": "https://orcid.org/0000-0001-7735-7014",
+          "institutions": [
+            "University of Exeter"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "In 1982, the British Journal of Sociology published an important article by Margaret Archer, 'Morphogenesis versus Structuration: on combining structure and action' (2010 [l982]), which had an impact at the time and remains widely cited to this day. It was also Archer's first statement of what would become her major contribution to social theory. The article was the germ from which three monographs (Culture and Agency (1988), Reality Social Theory (1995) and Being Human (2000)) playfully entitled 'The Archers' by her readers, developed. In those works, she laid out what she initially described as her morphogenetic approach but later, under the influence of Roy Bhaskar, re-named as critical realism. Reading the article again in 2009, its continued prominence is obvious. Towards the end of the 1970s, Anthony Giddens had established himself as a major figure in British sociology. Decisively, he introduced strands of continental philosophy into British sociology and by the early 1980s had developed a distinctive theoretical approach, structuration theory. While sociology remains indebted to Giddens for his Europeanization of the discipline, structuration theory raised many problems. Structuration theory sought to unite functionalist and interactive traditions in a single theoretical framework which would explain social reproduction without derogating the lay actor (Giddens 1979: 71). To that end, Giddens proposed three fundamental concepts; system, structure and structuration. For Giddens, the social system, as an institutional reality is reproduced or changed in coherent ways because individual action is always already patterned by 'structure'; a virtual order of differences or rules. Accordingly, when individuals instantiate structure into practice, they simultaneously affirm not only the structure of rules but also the system itself; there is a 'duality of structure' (Giddens 1984: 19). Structuration referred to the active process by which individuals, informed by (virtual) structure, acted in the world to reproduce (or change) the social structures which confronted them. Archer's article was one of the first serious critiques of Giddens' theoretical project; it remains one of the most insightful. Structuration theory was undoubtedly clever and intricate but Archer noted a profound problem at its very core. The concept of 'structure' as a virtual order of difference was central to Giddens' approach. Archer was, like many critics, rightly sceptical about the status and function of this virtual structure but, even bracketing these concerns, she noted that the concept involved troubling theoretical implications. Decisively, through the concept of structure, Giddens 'conflated' the human agent with the system. Through structure, individual agency was constituted by the system: 'Ideally what he wants to integrate is the way in which the active creation of social conditions is itself unavoidably conditioned by needing to draw upon structural factors in the process' (Archer 2010 [1982]: 229 [459]). Thus, 'Giddens commits himself to an enormous coherence of the structural properties, such that actors' inescapable use of them embroils everyone in the stable reproduction of social systems' (Archer 2010 [1982]: 230 [460]). For Archer, Giddens 'over-socializes'1 agents who have thoroughly interiorized their social conditions. On Archer's morphogenetic approach, such a conflation is fundamentally wrong for one of the principles of this approach is the distinctive properties of social structure and human agency have distinctive purposes. Indeed Archer wants to develop the distinction between the two in order to explore their interaction (Archer 1996). Archer also insightfully recognized a contradication at the heart of structuration theory. Since conditions are no more than internalised rules, an individual is free at any point to follow the rules differently: 'the individual could have acted otherwise' (Giddens 1976: 75). For Archer, the implication of voluntarism is objectionable: 'the systematic underplaying of constraints artificially inflates the degrees of freedom for action' (Archer 2010 [1982]: 234 [464]). The result of Giddens' assertions of individual freedom is a curious and unresolved oscillation between determinism and voluntarism in Giddens' work because he fails to maintain a distinction between the individual and social reality. Archer's criticisms were insightful in 1982 and many scholars have subsequently noted the conceptual dubiousness of the concept of structure (and its duality with the system). Connecting either explicitly or implicitly with Archer's comments, they have also stressed the unresolved voluntarism\u2013determinism dyad in Giddens work (Pleasants 1997, 1999; King 2004; Mestrovic 1998). Giddens seems committed to both a form of sociological determinism and to the assertion of individual agency at the same time. Archer's article stands as an important intervention into the debate. The article is also more than a little ironic, however. Although, as Archer demonstrated, Giddens' concept of structure is deeply problematic, with its presumption that somehow the system distilled itself into a set of virtual repertoires, the fundamental contours of structuration theory were always close to morphogenesis. Giddens did not ignore the institutional realities of the social system. He did not deny the existence of social conditions which transcended the individual. On the contrary, with the concept of the system, these realities were always present in his theory; 'society is not the creation of individual subjects' (Giddens 1984: xl). Rather, he wanted to explain how this vast institutional complex was reproduced by the individual, without reducing the agency of the human subject, as the functionalist tradition had been accused of doing. Giddens' structuration theory worked around two poles, as did morphogenesis; system or structure and agency. Archer rejected Giddens' mediation of structure and agency, not his fundamental social ontology. It is not difficult to align morphogenetic social theory and structuration theory. Both theories imply three moments of social reproduction; the system, structure, structuration for Giddens or structural conditioning, social interaction and structural elaboration for Archer. For both Giddens and Archer, social structure, irreducible to the individual, was reproduced and changed by conditioned individual action. This underlying connection between Archer and Giddens became increasingly clear in the 1990s as Archer came under the influence of Roy Bhaskar. Although Archer has not recognized the point, as Bhaskar developed his critical realism, he explicitly pointed up the parallels between his own Transformation Model of Social Action and structuration theory (Bhaskar 1979). By aligning herself with Bhaskar (Archer 1995), she also unwittingly signalled a rapprochement with Giddens. In this, Archer was part of a much wider theoretical consensus which was then emerging and was manifest in the works of a wider range of scholars at the time. The ontology of structure and agency is evident in Habermas' theory of communicative action, Foucault's archaeology, Bourdieu's concept of the habitus and, at certain points, Alexander's multi-dimensional sociology. In each case, social reality is investigated as a duality of structure and agency. Archer's BJS article was prominent in sociology at the time and her subsequent development of morphogenesis has remained a significant contribution to the discipline. It remains a reference point for sociologists who both support or reject the structure\u2013agency dichotomy. The paradigm of critical realism which Archer has played a major role in promoting has had even more impact, not only in sociology but across the disciplines. Since the 1980s, some international relations theorists have sought to overcome the neo-realist hegemony in that discipline through the development of 'constructivism'. In contrast to the rationalist presumption of realism, constructivism, drawing on a version of sociology, maintained that states were, in fact, substantially influenced by norms; state policy was the normative product of states (and the elites which comprised them) understood their world. Alex Wendt (1999) has been a key figure here and he has specifically employed Giddens and his concept of structure and agency in his development of international relations theory (Wendt 1987). More recently, a group of international relations scholars have explicitly identified themselves as critical realists and sought to analysis the international system \u2013 and the actions of states within it \u2013 in precisely the manner which Archer has advocated from 1982 (Wight 2006; Hay: 2002). They regard the international system as an irreducible emergent system which individual states reproduce and change through their at least partly autonomous action. The social theories of Archer and Giddens had unseen parallels at the time and those similarities continue today. One of Archer's major objections to structuration theory was its individualism. It seemed to conflate social reality and the individual. Giddens' work in the 1990s seemed to confirm her point. After the publication of The Constitution of Society in 1984 and especially after 1987, Giddens' interests, methods and prose changed dramatically. In place of the dense engagement with difficult theoretical literature to answer fundamental problems in social theory, 'Giddens lite' appeared (Alexander 1996: 135). Giddens sought to examine individual \u2013 and indeed possibly \u2013 his own personal experience in late twentieth century modernity. Decisively, he released the individual from structural constraints: 'The self is seen as a reflexive project, for which individuals are responsible. We are, not what we are, but what we make of ourselves' (Giddens 1995: 75). Archer's 1982 critique seems to have been vindicated. For Giddens, the social world did seem to revolve around the self. Ironically, however, just as Archer's morphogenetic approach of the 1980s unwittingly paralleled Gidden's structuration theory, so has her intellectual development since that time traversed a similar course to Giddens. In short, she moved from a structural orientation in the 1980s to a pre-occupation with reflexive individual agency in the late 1990s and early 2000s. In her monographs on human agency (Archer 2000; 2003), Archer frames her analysis from two basic assumptions. She affirms the validity of the morphogenetic-realist ontology. Despite numerous criticisms, she reproduces her three-phase model of morphogenesis without revision to emphasize that the agent is always situated in an irreducible social context. Social reality exists independently of the individual. However, at the same time, she affirms not merely the existence of self-conscious human agency but its very dignity. She rejects the anti-humanist claims of many contemporary philosophers like Foucault, Baudrillard or Rorty that the 'self does not amount to much' (Lyotard 1984).2'As a social realist, I would seek to rescue social theory from both the postmodernists and their charitable humanistic defenders' (Archer 2000: 21). For Archer, that rescue of social theory is synonymous with the rescue of the individual, although her individual is explicitly not the debased agent of Rational Choice Theory (Modernity's Man) or the cipher of social norms (Society's Being) (Archer 2000: 51\u201385, 86\u2013117). In her later work, Archer maintains that in the first instance, practice is the central means by which the self is created; 'the self emerges, meaning someone with a sense of the self formed through our embodied relations with the natural world' (Archer 2000: 152). For Archer, practice is 'pivotal' (Archer 2000: 184). Plausibly, she claims that 'what is central to human beings are not meanings, but doings' (Archer 2000: 189). Of course, other animals are involved in 'doing' as well. For Archer, humans are distinctive because implicit in their doings are conscious intention and, in the course of their activities from birth onwards, they begin to develop self-consciousness; they become reflexive. As they engage in practice, humans develop emotions and a personal identity. This personal identity is not forced on them from outside, however. It is an emergent property of individual human action. Decisively, in this process of self-creation, humans are able to engage eventually in an internal conversation. As they develop a conscious 'I' who acts and a self-conscious 'Me' who experiences that action, it is possible for selves to consider the society around them, their place in and their actions. Selves are not simply the dupes of social groups, therefore; they are able to judge for themselves and adapt their perspectives and practices. Signally, Archer asserts that 'social identity is necessarily a sub-set of personal identity' (Archer 2003: 120). For her, personal identity has a priority and authority over group identity. Significantly, precisely because personal identity \u2013 the product of an internal reflexive conversation \u2013 is independent of social circumstances, it is a vital to the transformation of society. Humans are fundamentally un-determined because whatever the social conditions in which they exist, they always possess the sanctuary of their personal identity. Archer's critical realism has become very Sartrean. Indeed, although its tone is very different, Archer's assertions about the status of the self are finally very close to Giddens. Like Giddens, she finally maintains that the individual is free. In Archer's later work as in Giddens' writings, individuals are not what they are but what they make of themselves. The individual is able to choose their own destiny through an internal conversation. There is a strange loneliness in her sociology where the agent wanders as an isolated figure, engaged in a private conversation. This emptiness accentuates her closeness to Giddens. Even in his discussion of intimacy, his work is focused on the self. Interestingly, two experiences are identified by Archer as particularly important for the formation of the self; encounters with nature and with the divine (Archer 2004). As she discusses the experience of horse-riding (Archer 2000: 163\u20134), one of her personal interests, the convergence with Giddens becomes even stronger. For both, the arena of reflexive self-expression is the sphere of leisure and consumption, not work and class. Archer sees herself as a fundamentally different kind of social theorist to Giddens but, in fact, there are many surprising parallels between them. It is a potentially unlikely intellectual pairing, especially given Archer's recurrent critique of structuration theory yet from the BJS article in 1982 to the present, Archer and Giddens have traversed a similar intellectual trajectory. From an original advocacy of ontological dualism, in which structural conditions seemed to have been given the primary weight, they have moved to the other dimension and now prioritize the autonomous self. Archer's contribution to social theory nationally and internationally is irrefutable. As part of a critical realist programme and wider structure\u2013agency paradigm, she has played an important role in promoting British sociology internationally. Yet, current trends in social theory outside Britain might suggest that it may now be necessary to go beyond structure and agency and the framework which Archer has done so much to develop. A new consensus is apparent in sociology globally which no longer understands social reality in terms of structure and agency but in terms of networks. Instead of the closed systems so favoured by functionalist sociology in the middle of the twentieth century, many sociologists are now more interested in the open and indeterminate social webs which transcend national borders, precipitating particular kinds of activity at specific locations. These networks have emergent properties in the way which Archer has described; they are irreducible to their component individuals and must be understood as open-ended totalities. Decisively, the individual agent does not confront an already completed network. Rather, agents should be understood collectively as joint participants in the network, recurrently and mutually constituting themselves through their interactions. In Europe and America, this new network sociology is apparent in the work of a number of prominent scholars. Most obviously in Europe, Bruno Latour's 'Actor Network Theory' explicitly seeks to understand any particular form of social practice not as the product of some determining background condition which is 'always already present' (Latour 2005: 37). Rather, social reality is a dynamic and often quite contingent 'assemblages' of very wide social networks (Latour 2005). For 'sociologists of associations', 'there exists no society to begin with, no reservoir of ties, no big reassuring pot of glue to keep all those ties together' (Latour 2005: 37). Consequently, Latour radically claims that in order to have a 'complete list of people who are doing science', it is necessary not only to include everyone in the laboratory but also all institutions which support the active research; 'Shall we say that De Castro, the Ministry of Health, the Board of Directors, the President are all doing science? Certainly yes' (Latour 1987: 158). Scientific research is influenced by all these agents and consequently, they are all ultimately involved in the production of science. Manuel Castells has explicitly forwarded a theory of social networks (Castells 1998). In America, a similar approach is observable. Although Randall Collins has not explored connections between his interaction ritual chain theory (2004) and Actor Network Theory, these parallels are particularly evident in his sociology of philosophy (2000). There he argues that intellectual innovation arises not out of individual genius but is collectively created in dense intellectual clusters, themselves located in networks spanning time and space. For these sociologists, the aim of the discipline is not to demonstrate how structure is reproduced or changed by the individual agent. Rather they are concerned with demonstrating how distinctive forms of collective agency arise in particular milieus. With the structure and agency paradigm, Margaret Archer has helped establish British sociology internationally. To sustain the discipline globally, it may be necessary for British social theory to move forward from a dualistic to a 'network-centric' ontology. The vertical paradigm of structure and agency dominant in the twentieth century might be usefully replaced by a horizontal perspective. In the twenty-first century, British sociologists might usefully 'think sideways'. They could start to understand social reality not in terms of an individual confronting a pre-formed structure but in terms of multiple participants negotiating as they interact with and co-operate or struggle with each other. To this end, the next episode of the Archer's might be entitled Being Social: Collective Action and the Public Conversation.",
+      "cited_by_count": 76,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "0007-1315",
+          "1468-4446"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Realism in Sociology",
+        "Contemporary Sociological Theory and Practice",
+        "Social and Cultural Dynamics"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W1588506270"
+    },
+    {
+      "openalex_id": "W1814867318",
+      "doi": "10.4324/9781315716299",
+      "title": "The Routledge Companion to Social Media and Politics",
+      "authors": [
+        {
+          "name": "Axel Bruns",
+          "openalex_id": "A5025254950",
+          "orcid": "https://orcid.org/0000-0002-3943-133X"
+        },
+        {
+          "name": "Gunn Enli",
+          "openalex_id": "A5014797024",
+          "orcid": "https://orcid.org/0000-0002-9458-6983"
+        },
+        {
+          "name": "Eli Skogerb\u00f8",
+          "openalex_id": "A5034950807",
+          "orcid": "https://orcid.org/0000-0001-6803-5021"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-22",
+      "abstract": "The social media platforms Facebook and Twitter include political areas, for example presentations of political parties or elected representatives, or political hashtags linking tweets to specific political public spheres. In a sense, such areas might not be considered as third spaces because they are explicitly political. This chapter argues that everyday political talk\u2014particularly in third spaces\u2014has the potential to overcome many of the identified issues with online deliberation, including political polarisation and the avoidance of political talk. Content analysis of political, and particularly partisan-framed online groups, has also found polarization. One of the most prominent debates, to date, has been whether the Internet will become polarized, with like-minded people flocking together, enabling them to ignore alternative viewpoints. Moreover, as the use and understanding of the Internet as a space for political debate expanded, this was accompanied by more refined theorizing of the Internet as a public sphere and space for deliberation.",
+      "cited_by_count": 384,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11343/124284"
+      },
+      "topics": [
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W1814867318"
+    },
+    {
+      "openalex_id": "W2144158050",
+      "doi": "10.1111/j.1468-2427.2005.00568.x",
+      "title": "Cyborg Urbanization: Complexity and Monstrosity in the Contemporary City",
+      "authors": [
+        {
+          "name": "Matthew Gandy",
+          "openalex_id": "A5044112273",
+          "orcid": "https://orcid.org/0000-0002-8478-9808",
+          "institutions": [
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-01",
+      "abstract": "She referred to the high-rise as if it were some kind of huge animate presence, brooding over them and keeping a magisterial eye on the events taking place. There was something in this feeling \u2014 the elevators pumping up and down the long shafts resembled pistons in the chamber of a heart. The residents moving along the corridors were the cells in a network of arteries, the lights in their apartments the neurones of a brain (J.G. Ballard, 1975: 40). Now, the boundaries between the organic and the inorganic, blurred by cybernetic and bio-technologies, seem less sharp; the body, itself invaded and re-shaped by technology, invades and permeates the space outside, even as this space takes on dimensions that themselves confuse the inner and the outer, visually, mentally and physically (Anthony Vidler, 1990: 37\u20138). The body-territory [corpo-territorio] poses a problematic form of corporeal identity that in becoming ever more routinized has tended to dissolve the distinctions that formerly existed between the organic and the inorganic (Tiziana Villani, 1995: 118). As she tentatively begins to play the piano, the replicant, named Rachel, recalls that she once had lessons but cannot be sure whether these memories are her own or simply the implanted memories of someone else. In this poignant scene in Ridley Scott's Blade Runner (1982) we explore the possibility that human identities might be artificially created in order to produce advanced androids whose intelligence and sensitivity is comparable with that of their human creators. The figure of the cyborg, as represented in science fiction cinema, is not an automaton or robot but a sophisticated creation that seems to simultaneously extend but also threaten our understanding of what it means to be human. If we were to locate the cyborg as an idea, we could say that it is clearly linked to fantastical combinations of bodies and machines but is nonetheless a way of thinking about the world. It is, in other words, an ontological strategy for extending the limits to human knowledge as well as an apposite means of describing those phenomena that appear to reside outside conventional frameworks of understanding. If a cyborgian sensibility is explored within the context of the contemporary city, we find that it has developed out of several interconnecting strands of thought as a trope of critical reflection which uncovers a series of anomalies, fractures and tensions lurking within dominant modes of urban and architectural thinking. Since the early 1960s the potential applications of the cyborg concept have proliferated to include developments such as whole organism cloning, in vitro fertilization, gene sequencing, advanced prosthetics and other sophisticated medical technologies. In tandem with these technological manifestations, the imaginative field of the cyborg has expanded through literature, cinema and the fantasy spaces of contemporary culture.1 It is since the mid-1980s, however, that the idea of the cyborg has been associated with a more densely argued series of theoretical applications as a means to explore the interface between technology and the body. The key intervention here is Donna Haraway's article entitled 'A Cyborg Manifesto', first published in the Socialist Review in 1985, and later included in her influential collection of essays Simians, Cyborgs and Women where she writes in her introduction (1991a: 1): A cyborg is a hybrid creature, composed of organism and machine. But, cyborgs are compounded of special kinds of machines and special kinds of organisms appropriate to the late twentieth century. Cyborgs are post-Second World War hybrid entities made of, first, ourselves and other organic creatures in our unchosen \"high-technological\" guise as information systems, texts, and ergonomically controlled labouring, desiring, and reproducing systems. The second essential ingredient in cyborgs is machines in their guise, also, as communications systems, texts, and self-acting, ergonomically designed apparatuses. This succinct and revealing definition reminds us that the idea of the cyborg, as originally elaborated by Haraway, is at root a political as well as an intellectual project, an idea which originated in and from the 'belly of the monster' (1991a: 4), that nexus of political and economic entanglements that we might term the 'first world' in distinction to the proliferating spaces of marginality that lie beyond.2 Since its inception as a critical intellectual concept in the 1980s the cyborg metaphor has been deployed to challenge disembodied, dualistic, masculinist and teleological bodies of knowledge. It has infused science and technology studies with feminist epistemological strategies. It has opened up new possibilities for the understanding of relations between nature and culture. And it has facilitated greater sensitivity towards social and spatial complexity through its emphasis on 'situated knowledges'. The idea of the cyborg shares an affinity with related concepts such as 'cyberspace', 'cybernetics' and 'cyberpunk'. Yet the contemporary use of the term 'cyborg' is different from these virtual, analytical and fictional constructs because it is grounded in the living and breathing flesh of the human body. Whilst the 'cyber-' metaphor has tended to be associated with various forms of virtuality, the idea of the cyborg is closely linked with the corporeal experience of space.3 In this sense the cyborg can be read as an alternative way of conceptualizing the growth and development of cities that serves to destabilize the pervasive narratives of dematerialization, spatial malleability and virtualization. The underlying materiality of the cyborg metaphor has acquired heightened significance now that the earlier polarity between virtual space and 'meat space' articulated in the first wave of cyber literature is losing its conceptual utility and now that the very idea of 'virtual reality' is itself imploding as it becomes either relocated in the context of a heightened dimension of the real (see, for example, \u017di\u017eek, 2002) or simply derided as an inherently oxymoronic formulation (see Grosz, 2001).4 The emphasis of the cyborg on the material interface between the body and the city is perhaps most strikingly manifested in the physical infrastructure that links the human body to vast technological networks. If we understand the cyborg to be a cybernetic creation, a hybrid of machine and organism, then urban infrastructures can be conceptualized as a series of interconnecting life-support systems (see Swyngedouw, 1996; Marras, 1999; Gandy, 2002; Mitchell, 2003). The modern home, for example, has become a complex exoskeleton for the human body with its provision of water, warmth, light and other essential needs. The home can be conceived as 'prosthesis and prophylactic' in which modernist distinctions between nature and culture, and between the organic and the inorganic, become blurred (Vidler, 1990: 37). And beyond the boundaries of the home itself we find a vast interlinked system of networks, pipes and wires that enable the modern city to function. These interstitial spaces of connectivity within individual buildings extend through urban space to produce a multi-layered structure of extraordinary complexity and utility. The figure of the cyborg is at root a spatial metaphor. But how does the idea of the cyborg intersect with spatial theory? In what ways does the cyborg reinforce or contradict other emerging strands of urban thought that also emphasize urban complexity and hybridity? Has the epistemological subtlety and political prescience of the cyborg, as originally formulated in the 1980s, been realized in practice or simply been diffused through the term's widening usage? And should we ultimately reject the idea of the cyborg as an anachronism derived from cold war science and the first generation of twentieth-century cyberpunk culture? In the rest of this article I will try to address these issues through an exploration of the somewhat haphazard presence of the cyborg in contemporary urban discourse. I will focus in particular on the example of urban infrastructure as a concrete manifestation of the cyborg idea in order to explore different facets of the relationship between the city, the body and the human subject. My aim is not to foreclose discussions surrounding the 'cyborg city' but to open up a series of dialogues in order to explore contemporary thinking around these questions. One of the principal difficulties with delineating the cyborg city as a clearly defined entity is derived from the entanglement of the cyborg idea with a variety of urban metaphors ranging from organicist conceptions of the nineteenth-century city to 'neo-organicist' representations of the post-industrial metropolis. In its classic nineteenth-century form the organicist conception of the city emerged out of a functional analogy, originating within the medical sciences, wherein spatial differentiation corresponded with a distinctive arrangement of human organs. We find that Kantian notions of the self-organizational characteristics of animate matter were combined with new insights into the human vascular and arterial system and an emerging circulatory emphasis within the nascent science of political economy. In recent years, however, the organicist emphasis on the city as an integrated body with identifiable organs, which emerged in response to the nineteenth-century industrial city, has been increasingly displaced by the idea of urban space as a prosthetic extension to the human body. The body-city problematic has been reconceptualized in the context of post-Cartesian and post-positivist modes of thinking. The emphasis on the city as a self-contained body or machine has been challenged by a hybridized conception of space as a system of technological devices that enhances human productive and imaginative capabilities. The cyborg metaphor not only reworks the metabolic preoccupations of the nineteenth-century industrial city but also extends to a contemporary body of ideas that we can term 'neo-organicist' on account of the deployment of biophysical metaphors for the interpretation of social and spatial complexity. In the neo-organicist city we encounter a shift of emphasis away from an anatomical conception of space as an assemblage of individual organs towards a neurological reading of space as a diffuse and interconnected realm of human interaction. The film maker Michael Burke, for example, director of Cyborg City (1999), describes how beneath the 'glass and concrete' of the future city there will be a 'humming mass of technology' acting as a central nervous system, 'constantly monitoring and controlling both its own functions and those of its citizens' (Burke, 1998).5 The mechanical and hierarchical model of the relationship between the body and the city has been supplanted by a more complex and non-linear pattern of urban development in response to the spread of new information technologies (see Gille, 1986; Rabinbach, 1990; Akira, 2001). The organicist city of the modern era was founded on a clear separation between mind and body that enabled the city to be conceptualized as a coherent entity to be acted upon, disciplined, regulated and shaped according to human will. The emergence of the neo-organicist city, in contrast, is founded on the blurring of boundaries rather than their repeated delineation. At the same time, however, there remain important continuities between the kind of machine-based metaphors associated with the early twentieth-century futurism of figures such as Mario Chiattone, Filippo Tommaso Marinetti and Antoniono Sant'Elia and the elaborate computer-based metaphors deployed in the contemporary city (see Villani, 1995; Boyer, 1996; Schaub, 1998). Other significant continuities include, for example, the avant-garde bricolage of early cinema and the surrealist bodies depicted in the art of Hans Bellmer, Francis Picabia and other responses to 'a sterile and over rationalised technological realism' (Vidler, 1990: 42).6 These interconnecting strands between cultural modernism and the emergence of the cyborg metaphor are significant because they underlie the centrality of corporeal metaphors for the critical interpretation of urban form. The current emphasis on corporeal and neurological analogies in the neo-organicist literature owes more to earlier developments than is widely acknowledged. We can detect two principal dimensions to contemporary neo-organicist urban thought. A first strand, rooted in the bio-physical sciences, perceives the city to be a special kind of complex, yet intricately ordered system. This homeostatic perspective, which is inflected by ecological thinking and recent developments in evolutionary biology, has diffused through parts of the architectural literature and is only tangentially linked with the epistemological challenge of cyborg theory.7 A second and more intellectually significant development is represented by the convergence of ideas surrounding the 'thinking space' of the city and the indeterminacy of spatial forms. If the body-city nexus is conceptualized as a thinking machine then the analytical focus shifts towards the identification of those critical networks or 'neurones' that sustain the relationship between the body and the city (Kurokawa, 2001a). Though this dimension to the neo-organicist perspective shares important continuities with the technological preoccupations of early twentieth-century modernism, it extends its conceptual purview into different aspects of cultural modernism. The influential speculations of Gilles Deleuze and Felix Guattari, for example, develop Antonin Artaud's conception of the 'body without organs' to produce a philosophy of spatial complexity quite different from that associated with dominant modernist traditions (Deleuze and Guattari, 1986; 1987; Rajchman, 2000; Uno, 2001). Their philosophical challenge is to perceive space in the absence of any previously existent categories, hierarchies or systems as a form of 'anarchic non-identical proliferation' (Luckhurst, 1997: 128). The organic metaphor of the 'rhizome' is deployed in distinction to 'arborescent' conceptions of cities as hierarchical structures (Teysott, 1990; Akira, 2001; Kurokawa, 2001a). In addition to this emphasis on non-hierarchical structures of difference Deleuze and Guattari's conception of concrete space also seeks to incorporate the imaginary, libidinous and oneiric realms of human experience. From their 'neo-vitalist' perspective, which builds on the philosophical ideas of Henri Bergson, the virtual realm is not simply a mimesis or reflection of physical reality but an independent domain that generates new kinds of spaces and ideas. The political significance of the virtual realm lies in its experimental and emergent role as part of an envisioned space that has yet to be realized within the taken-for-granted realm of concrete reality (Boundas, 1996; Massumi, 2001). The role of the diagram or 'abstract machine' takes on special significance in this context as an attempt to give visual expression to new models of reality.8 In the case of architecture, for example, there has been an intense dialogue between developments in building design and the speculative possibilities engendered by computer-aided simulations so that 'physical space increasingly resembles cyberspace' (Mitchell, 2003: 197). Some architectural practices have deployed so-called 'genetic algorithms' in order to generate a form of 'in vitro' architecture which derives its inspiration from nature yet remains autonomous from it as a purely digitized space of imaginative exploration (see Chu, 2002; De Landa, 2002).9 Examples of architectural practice inflected by post-structuralist ideas which move beyond purely 'in vitro' speculations to fully realized projects include the work of Peter Eisenman, Frank Gehry and Bernard Tschumi, where sophisticated combinations of form, structure and materials have been achieved, which are quite at odds with modernist conceptions of architectural form. A conceptual synthesis can be discerned in some of the recent literature between post-structuralist philosophies of space and Latourian conceptions of actor-network theory to produce a new kind of urban theorization which eschews the meta-narratives associated with neo-Marxian approaches. Building on the insights of Deleuze and Guattari these approaches have sought to remove all the extrinsic or foundational aspects to urban theory and pare analysis down to the movements and interactions that constitute 'the city' as a particular kind of spatial form or activity that is independent of conventional accounts of scale, structure or order.10 The brain or 'thinking space' of the city persists yet is dispersed through innumerable nodes and networks in contrast with the embodied cyborg citizen to be found in the more technophile literature. We can trace these developments back to the emerging critique of architectural modernism in the 1970s and 1980s that increasingly drew on the theoretical ontologies of post-structuralism in order to advance a radically unplanned built form.11 From this perspective the role of 'chaos', for example, takes on a very different significance from that associated with the modernist city and is perceived as a field of evolutionary and radical experimentation. Chaos is no longer seen as an anomalous dimension to the urban experience to be problematized or excluded from analysis but a rich vein of social and spatial interaction through which we may perceive signs of alternative or hitherto overlooked urban forms. Chaos may also be characterized as a more sophisticated, resilient and adaptable form of order as Rem Koolhaas has suggested with respect to the dynamics of West African urbanism (Koolhaas et al., 2001; Koolhaas, 2002). The theoretical novelty of such a perspective sits sharply at odds, however, with the capacity for what one might term 'avant-garde urbanism' to actually explicate any substantial dimensions to urban change (see, for example, Rauterberg, 2002; Gandy, 2004b). We can detect within urban and architectural discourse an emerging counter current to post-structuralist and avant-garde urbanism led by a of and political (see 1996; and 1998). Though the post-structuralism of Deleuze and Guattari seeks to between the and the and is in this respect a significant advance on the and of there is a in any kind of political critique of the cyborg The emphasis on the characteristics of urban space the particular combinations of and human that enable nodes within the urban system to play in the of cultural and economic The of structure the of the theoretical and significance of these insights the between post-structuralism and a cyborg sensibility towards the entanglement of the real and the We are with an between the reading of the industrial city and a 'neo-organicist' with the design of space that quite in architectural The emerging of the interface as a technological is associated with nineteenth-century over science and technology, for example, form part of a counter discourse to modernist of technological 1996; 2003). In recent years, however, the trope of technological has tended to between a of new towards excluded on the one and the of towards technology and its on the other The of the cyborg has engendered a new wave of and towards the of the body by technologies that threaten to or the human subject. In the of for example, we move beyond the and critique of technology towards a political of technology and its with the human body. the of the body by new technologies as a of that the critical of the earlier in and communications technologies 1997: the advance of a in which the of towards an of the human body itself so that we no longer of the body in the city but of the in the (see 1995; The cyborg figure becomes a for the of we are no longer with a cold war but with the of the around the of buildings in of and their The of the have been radically by new technologies of and in order to the of the century. structures have developed that of social such as with forms of social through a of and The significance of urban in particular is now towards which the of essential technological networks such as and in order to and of political A of modern from urban technological networks or to use expression is to a of so that they are no longer political but for (see also a of from whole the of through a of and of the more of technology we can an emphasis on the cyborg as a means of becoming in order to the human body from the boundaries of the autonomous In the work of Mitchell, for example, we can trace a from through the experience of to the contemporary urban citizen as 'a (Mitchell, 2003: writes have been with the body and its now they virtual bodies that can sense and at a but that also remain in their In this sense builds on the inflected of earlier such as and depicted as a series of on infrastructures the extraordinary technological of the cyber city and the interaction of with of human activity (Mitchell, 2003). Yet this is a future in which the and of space are for example, that we are 'the shift from a by boundaries and to a at scale, by networks, and but the between the of and that of to economic In the perspective is so by technological change that it begins to the role of an independent in The blurring of boundaries between the body and the city in to our understanding of the human and the characteristics of human conception of human include, for the role of biophysical and technological systems that the social of for example, has different of analysis to the extension of our conception of to include those structures and that have been excluded from both and epistemological traditions the work of has tended to emphasize the between human and nature the of has been the or of between different kinds of networks or structures The cyborg can be conceived in a Latourian sense as both a new kind of social interaction with space but also a concept to be conceived in to the realm of modernist urban thought. Yet a Latourian with its hybridized conceptions of is quite different from that within philosophical traditions because of the radical extension of human to those and systems which the sought to from the realm of and political The concept of also its own its own of between its The idea of the cyborg as a hybrid can be conceived as a problematic of derived from or some teleological for urban change but it can also a of ideas and developments from the to the The of and for example, can be explored in of combinations of practices and ideas from (see, for example, 1995; 1995; 2003). The cyborg metaphor can be in this sense as an of the limits to or teleological architectural rooted in and conceptions of cultural that we have been we could that we have led a cyborg since human has a of cultural and technological ranging from the of to the developments in materials But if we any or to the cyborg idea we its analytical utility as a means to with the cultural and technological complexity of the contemporary The of human in the cyborg city to the between technological change and the of the from the industrial But can the cyborg idea us to understand the dynamics of infrastructure provision in to a digitized or diffuse conception of the If the interactions between human and have the idea that is the of human then this of the insights of cultural that have quite on the of material and systems of cultural The made by for example, over the of locate these within the context of a more experience of within which to a different of and the other are in a sense is that new forms of are a more integrated rather than system of that the of modern and experience. political discourse is grounded within the context of the of the of the realm and the radical indeterminacy of the human subject. If the can be as an and and realm of human we are with the of delineating the characteristics of the human in a cyborg If the body-city interface is conceptualized as a then the distinction between mind and body and between the material and the virtual becomes But what the human is increasingly with the of the city Whilst it is to that our hybridized interactions with space a greater role for and (Mitchell, 2003: it is to of as a digitized of interactions with not only other but also machines and networks. The for example, describes a emerging between an",
+      "cited_by_count": 459,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Urban and Regional Research",
+        "type": "journal",
+        "issn": [
+          "0309-1317",
+          "1468-2427"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1468-2427.2005.00568.x"
+      },
+      "topics": [
+        "Cybernetics and Technology in Society",
+        "Posthumanist Ethics and Activism",
+        "Geographies of human-animal interactions"
+      ],
+      "referenced_works_count": 205,
+      "url": "https://openalex.org/W2144158050"
+    },
+    {
+      "openalex_id": "W1495820933",
+      "doi": "10.1111/1467-8675.12057",
+      "title": "Habermas and the Project of Immanent Critique",
+      "authors": [
+        {
+          "name": "Titus Stahl",
+          "openalex_id": "A5026097274",
+          "orcid": "https://orcid.org/0000-0001-6537-2196",
+          "institutions": [
+            "Goethe University Frankfurt"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-11-11",
+      "abstract": "According to J\u00fcrgen Habermas, his Theory of Communicative Action offers a new account of the normative foundations of critical theory. Habermas' motivating insight is that neither a transcendental nor a metaphysical solution to the problem of normativity, nor a merely hermeneutic reconstruction of historically given norms, is sufficient to clarify the normative foundations of critical theory. In response to this insight, Habermas develops a novel account of normativity, which locates the normative demands of critical theory within the socially instituted practice of communicative understanding. Although Habermas has claimed otherwise, this new foundation for critical theory constitutes a novel and innovative form of \"immanent critique.\" To argue for and to clarify this claim, I offer, in section 1, a formal account of immanent critique and distinguish between two different ways of carrying out such a critique.",
+      "cited_by_count": 268,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12057"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W1495820933"
+    },
+    {
+      "openalex_id": "W2012854000",
+      "doi": "10.1080/002017400414881",
+      "title": "Modernity and Morality in Habermas's Discourse Ethics",
+      "authors": [
+        {
+          "name": "James Gordon Finlayson",
+          "openalex_id": "A5033736964",
+          "orcid": "https://orcid.org/0000-0003-0570-6048"
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-09-01",
+      "abstract": "Discourse ethics is originally conceived as a programme of philosophical justification of morality. This depends on the formal derivation of the moral principle (U) from non-moral principles. The moral theory is supposed to fall out of a pragmatic theory of meaning. The original programme plays a central role in Habermas's social theory: the moral theory, if true, provides good evidence for the more general theory of modernization. But neither Habermas nor his followers have succeeded in providing a formal derivation. This essay shows how and why Habermas's proposed derivation is impossible. As if aware of the lacuna, Habermas has recently suggested that (U) can be derived by 'abduction' rather than deduction. The proposal draws heavily on modernization theory; hence the only justification for (U) now available to him rests on premises drawn from that theory. The original programme of the justification of morality has thus given way to the weaker programme of the philosophical elucidation of morality. Further, since Habermas's moral theory is no longer justified independently of modernization theory, but at least partly by it, the moral theory cannot without circularity provide evidence for the modernization theory.",
+      "cited_by_count": 246,
+      "type": "article",
+      "source": {
+        "name": "Inquiry",
+        "type": "journal",
+        "issn": [
+          "0020-174X",
+          "1502-3923"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/002017400414881"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2012854000"
+    },
+    {
+      "openalex_id": "W4254399372",
+      "doi": "10.1080/0968776042000216183",
+      "title": "What are the affordances of information and communication technologies?",
+      "authors": [
+        {
+          "name": "Gr\u00e1\u00ecnne Conole",
+          "openalex_id": "A5110432831",
+          "institutions": [
+            "University of Southampton"
+          ]
+        },
+        {
+          "name": "Martin Dyke",
+          "openalex_id": "A5090182115",
+          "institutions": [
+            "University of Southampton"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-06-01",
+      "abstract": "The paper examines the notion that Information and Communication Technologies (ICT) have affordances that epitomize the features of our late modern age (Giddens, 1991) and explores whether these affordances (Salomon, 1993, p. 51) can be used to facilitate particular approaches to educational practice. It argues that a clear articulation of these affordances would enable us to understand how these technologies can be most effectively used to support learning and teaching. We believe that any one affordance can be considered to have both positive and negative connotations and the paper draws on social and educational theory to provide an initial taxonomy of these affordances.",
+      "cited_by_count": 163,
+      "type": "article",
+      "source": {
+        "name": "ALT-J",
+        "type": "journal",
+        "issn": [
+          "0968-7769",
+          "1741-1629"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journal.alt.ac.uk/index.php/rlt/article/download/1058/1308"
+      },
+      "topics": [
+        "Innovative Education and Learning Practices",
+        "Education Systems and Policy",
+        "Online and Blended Learning"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W4254399372"
+    },
+    {
+      "openalex_id": "W2524046809",
+      "doi": "10.1007/s11024-016-9308-7",
+      "title": "The Problem of Expertise in Knowledge Societies",
+      "authors": [
+        {
+          "name": "Reiner Grundmann",
+          "openalex_id": "A5036479753",
+          "orcid": "https://orcid.org/0000-0003-0266-9296",
+          "institutions": [
+            "University of Nottingham"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-09-27",
+      "abstract": "This paper puts forward a theoretical framework for the analysis of expertise and experts in contemporary societies. It argues that while prevailing approaches have come to see expertise in various forms and functions, they tend to neglect the broader historical and societal context, and importantly the relational aspect of expertise. This will be discussed with regard to influential theoretical frameworks, such as laboratory studies, regulatory science, lay expertise, post-normal science, and honest brokers. An alternative framework of expertise is introduced, showing the limitations of existing frameworks and emphasizing one crucial element of all expertise, which is their role in guiding action.",
+      "cited_by_count": 221,
+      "type": "article",
+      "source": {
+        "name": "Minerva",
+        "type": "journal",
+        "issn": [
+          "0026-4695",
+          "1573-1871"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11024-016-9308-7.pdf"
+      },
+      "topics": [
+        "Education, Healthcare and Sociology Research"
+      ],
+      "referenced_works_count": 113,
+      "url": "https://openalex.org/W2524046809"
+    },
+    {
+      "openalex_id": "W2125073413",
+      "doi": null,
+      "title": "Religious Sensations. Why Media, Aesthetics and Power Matter in the Study of Contemporary Religion",
+      "authors": [
+        {
+          "name": "Birgit Meyer",
+          "openalex_id": "A5103042842",
+          "orcid": "https://orcid.org/0000-0001-7186-7865",
+          "institutions": [
+            "National Centre of Research in Social and Cultural Anthropology"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": null,
+      "cited_by_count": 233,
+      "type": "article",
+      "source": {
+        "name": "Digital Academic REpository of VU University Amsterdam (Vrije Universiteit Amsterdam)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1871/10311"
+      },
+      "topics": [
+        "Media, Religion, Digital Communication",
+        "Religious Tourism and Spaces",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2125073413"
+    },
+    {
+      "openalex_id": "W1582040408",
+      "doi": "10.31269/triplec.v12i1.552",
+      "title": "Social Media and the Public Sphere",
+      "authors": [
+        {
+          "name": "Christian Fuchs",
+          "openalex_id": "A5060268505",
+          "orcid": "https://orcid.org/0000-0003-0589-4579",
+          "institutions": [
+            "University of Westminster"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-02-19",
+      "abstract": "Social media has become a key term in Media and Communication Studies and public discourse for characterising platforms such as Facebook, Twitter, YouTube, Wikipedia, LinkedIn, Wordpress, Blogspot, Weibo, Pinterest, Foursquare and Tumblr. This paper discusses the role of the concept of the public sphere for understanding social media critically. It argues against an idealistic interpretation of Habermas and for a cultural-materialist understanding of the public sphere concept that is grounded in political economy. It sets out that Habermas\u2019 original notion should best be understood as a method of immanent critique that critically scrutinises limits of the media and culture grounded in power relations and political economy. The paper introduces a theoretical model of public service media that it uses as foundation for identifying three antagonisms of the contemporary social media sphere in the realms of the economy, the state and civil society. It concludes that these limits can only be overcome if the colonisation of the social media lifeworld is countered politically so that social media and the Internet become public service and commons-based media.Acknowledgement: This paper is the extended version of Christian Fuchs\u2019 inaugural lecture for his professorship of social media at the University of Westminster that he took up on February 1st, 2013. He gave the lecture on February 19th, 2014, at the University of Westminster.The video version of the inaugural lecture is available at:https://vimeo.com/97173645",
+      "cited_by_count": 187,
+      "type": "article",
+      "source": {
+        "name": "tripleC Communication Capitalism & Critique Open Access Journal for a Global Sustainable Information Society",
+        "type": "journal",
+        "issn": [
+          "1726-670X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.triple-c.at/index.php/tripleC/article/download/552/529"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Gender, Feminism, and Media",
+        "Impact of Technology on Adolescents"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W1582040408"
+    },
+    {
+      "openalex_id": "W2036604521",
+      "doi": "10.1007/s10551-006-9044-2",
+      "title": "Corporate Legitimacy as Deliberation: A Communicative Framework",
+      "authors": [
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        },
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich",
+            "Zurich University of Applied Sciences in Business Administration"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-05-22",
+      "abstract": null,
+      "cited_by_count": 166,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10551-006-9044-2.pdf"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Ethics in Business and Education",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 108,
+      "url": "https://openalex.org/W2036604521"
+    },
+    {
+      "openalex_id": "W2772839085",
+      "doi": "10.1007/978-3-319-66659-4_4",
+      "title": "Reconsidering Different Visions of Scientific Literacy and Science Education Based on the Concept of Bildung",
+      "authors": [
+        {
+          "name": "Jesper Sj\u00f6str\u00f6m",
+          "openalex_id": "A5072176466",
+          "orcid": "https://orcid.org/0000-0002-3083-1716",
+          "institutions": [
+            "Malm\u00f6 University"
+          ]
+        },
+        {
+          "name": "Ingo Eilks",
+          "openalex_id": "A5077406641",
+          "orcid": "https://orcid.org/0000-0003-0453-4491",
+          "institutions": [
+            "University of Bremen"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-01",
+      "abstract": "Abstract Over the last 50 years, policy makers and STEM educators have argued for Scientific Literacy (SL). SL is a typical boundary object that everyone can agree on, but that is filled with different meanings by different stakeholders. Roberts (as published in Abell SK, Lederman NG (eds), Handbook of research on science education. Lawrence Erlbaum, Mahwah, pp. 729\u2013780, 2007) has identified two main orientations of SL: Vision I starts from and focuses on scientific content and scientific processes to learn about corresponding applications later, while Vision II focuses on contextualizing scientific knowledge for giving its use in life and society meaning. The tension between Vision I and II can also be related to the tension between \u201cpipeline science \u2013 preparing future scientists\u201d and \u201cscience for all\u201d. Recently, a more advanced vision of SL was suggested. It is called Vision III and emphasizes philosophical values, politicization and critical global citizenship education. Such an orientation can be well justified by the Central/Northern European educational and cultural tradition called Bildung . In its most contemporary understanding, it is agency-oriented. Bildung -oriented science education aims at making the student capable of a self-determined life in his/her socio-cultural environment, participation in a democratic society, and of empathy and solidarity with others. This concept is also closely connected to more recent educational paradigms that were defined also beyond Europe, e.g. the ideas of Education for Sustainability (EfS) and transformative learning. Both concepts aim on skills development for critical-democratic participation and for shaping our society and culture in a sustainable way. The different visions of SL have consequences for the content and culture of teaching and learning of science and technology. Accepting Vision III requires awareness that our view of selecting and teaching certain content is dependent on our culture, for example our norms, values and worldviews, and on the society we are living in. Learning (cognition) must be complemented with not only meta-learning (metacognition), but also transformative learning, where things are considered from multifaceted (e.g., cultural) perspectives. The discussion in this chapter focuses on educational implications of Vision III of SL and its connection to critical-reflexive Bildung , EfS and transformative learning.",
+      "cited_by_count": 279,
+      "type": "book-chapter",
+      "source": {
+        "name": "Innovations in science education and technology",
+        "type": "book series",
+        "issn": [
+          "1873-1058",
+          "2213-2236"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-319-66659-4_4.pdf"
+      },
+      "topics": [
+        "Educational Strategies and Epistemologies",
+        "Education and Critical Thinking Development",
+        "Adult and Continuing Education Topics"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W2772839085"
+    },
+    {
+      "openalex_id": "W2568822603",
+      "doi": "10.1177/0267323116682804",
+      "title": "From digital positivism and administrative big data analytics towards critical digital and social media research!",
+      "authors": [
+        {
+          "name": "Christian Fuchs",
+          "openalex_id": "A5060268505",
+          "orcid": "https://orcid.org/0000-0003-0589-4579",
+          "institutions": [
+            "University of Westminster"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-08",
+      "abstract": "This essay argues for a paradigm shift in the study of the Internet and digital/social media. Big data analytics is the dominant paradigm. It receives large amounts of funding, is administrative and a form of digital positivism. Critical social media research is an alternative approach that combines critical social media theory, critical digital methods and critical-realist social media research ethics. Strengthening the second approach is a material question of power in academia.",
+      "cited_by_count": 144,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Communication",
+        "type": "journal",
+        "issn": [
+          "0267-3231",
+          "1460-3705"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/0267323116682804"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Privacy, Security, and Data Protection",
+        "Digital Games and Media"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W2568822603"
+    },
+    {
+      "openalex_id": "W1489390093",
+      "doi": null,
+      "title": "Mediation and the genesis of presence. Towards a material approach to religion",
+      "authors": [
+        {
+          "name": "Birgit Meyer",
+          "openalex_id": "A5103042842",
+          "orcid": "https://orcid.org/0000-0001-7186-7865"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-10-19",
+      "abstract": "Oratie in verkorte vorm uitgesproken bij de aanvaarding van het ambt van hoogleraar in de Religiewetenschap aan de Universiteit Utrecht op vrijdag 19 oktober 2012.",
+      "cited_by_count": 164,
+      "type": "article",
+      "source": {
+        "name": "Data Archiving and Networked Services (DANS)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dspace.library.uu.nl/handle/1874/257546"
+      },
+      "topics": [
+        "Religious Education and Schools",
+        "Religion and Society Interactions",
+        "Religion, Society, and Development"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W1489390093"
+    },
+    {
+      "openalex_id": "W3027848310",
+      "doi": "10.1038/s41562-020-0889-7",
+      "title": "How behavioural sciences can promote truth, autonomy and democratic discourse online",
+      "authors": [
+        {
+          "name": "Philipp Lorenz-Spreen",
+          "openalex_id": "A5026949484",
+          "orcid": "https://orcid.org/0000-0001-6319-4154",
+          "institutions": [
+            "Max Planck Institute for Human Development"
+          ]
+        },
+        {
+          "name": "Stephan Lewandowsky",
+          "openalex_id": "A5017914184",
+          "orcid": "https://orcid.org/0000-0003-1655-2013",
+          "institutions": [
+            "University of Western Australia",
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Cass R. Sunstein",
+          "openalex_id": "A5052372722",
+          "orcid": "https://orcid.org/0000-0003-4194-3008",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        },
+        {
+          "name": "Ralph Hertwig",
+          "openalex_id": "A5068556395",
+          "orcid": "https://orcid.org/0000-0002-9908-9556",
+          "institutions": [
+            "Max Planck Institute for Human Development"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-06-15",
+      "abstract": null,
+      "cited_by_count": 219,
+      "type": "review",
+      "source": {
+        "name": "Nature Human Behaviour",
+        "type": "journal",
+        "issn": [
+          "2397-3374"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.nature.com/articles/s41562-020-0889-7.pdf"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Social Media and Politics",
+        "Opinion Dynamics and Social Influence"
+      ],
+      "referenced_works_count": 115,
+      "url": "https://openalex.org/W3027848310"
+    },
+    {
+      "openalex_id": "W2142412780",
+      "doi": "10.1086/596123",
+      "title": "Materiality in the Future of History: Things, Practices, and Politics",
+      "authors": [
+        {
+          "name": "Frank Trentmann",
+          "openalex_id": "A5064257872",
+          "institutions": [
+            "Birkbeck, University of London"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-03-25",
+      "abstract": "An abstract is not available for this content so a preview has been provided. Please use the Get access link above for information on how to access this content.",
+      "cited_by_count": 160,
+      "type": "article",
+      "source": {
+        "name": "Journal of British Studies",
+        "type": "journal",
+        "issn": [
+          "0021-9371",
+          "1545-6986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FF48A456738EB0635FBDF2022F48C71F/S0021937100013277a.pdf/div-class-title-materiality-in-the-future-of-history-things-practices-and-politics-div.pdf"
+      },
+      "topics": [
+        "Art, Politics, and Modernism",
+        "Photography and Visual Culture",
+        "History, Culture, and Diplomacy"
+      ],
+      "referenced_works_count": 142,
+      "url": "https://openalex.org/W2142412780"
+    },
+    {
+      "openalex_id": "W2124166566",
+      "doi": "10.1007/s10551-006-9210-6",
+      "title": "The Ethical Backlash of Corporate Branding",
+      "authors": [
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        },
+        {
+          "name": "Kunal Basu",
+          "openalex_id": "A5061675122",
+          "institutions": [
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-12-12",
+      "abstract": null,
+      "cited_by_count": 110,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10551-006-9210-6.pdf"
+      },
+      "topics": [
+        "Consumer Behavior in Brand Consumption and Identification",
+        "Corporate Identity and Reputation",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 117,
+      "url": "https://openalex.org/W2124166566"
+    },
+    {
+      "openalex_id": "W3084198316",
+      "doi": "10.1016/j.erss.2020.101768",
+      "title": "Energy democracy as a process, an outcome and a goal: A conceptual review",
+      "authors": [
+        {
+          "name": "Kacper Szulecki",
+          "openalex_id": "A5040161319",
+          "orcid": "https://orcid.org/0000-0002-1835-3758",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Indra \u00d8verland",
+          "openalex_id": "A5015932555",
+          "orcid": "https://orcid.org/0000-0002-5955-4759",
+          "institutions": [
+            "Norwegian Institute of International Affairs"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-09-07",
+      "abstract": null,
+      "cited_by_count": 222,
+      "type": "review",
+      "source": {
+        "name": "Energy Research & Social Science",
+        "type": "journal",
+        "issn": [
+          "2214-6296",
+          "2214-6326"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.sciencedirect.com/science/article/pii/S2214629620303431?via%3Dihub"
+      },
+      "topics": [
+        "Energy and Environment Impacts",
+        "Sustainability and Climate Change Governance",
+        "Social Acceptance of Renewable Energy"
+      ],
+      "referenced_works_count": 274,
+      "url": "https://openalex.org/W3084198316"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

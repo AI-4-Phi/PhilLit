@@ -1,0 +1,47 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='The Philosophical Discourse of Modernity...' author=Habermas year=1987
+[verify_paper.py] Paper found: The Philosophical Discourse of Modernity: Twelve L... (score: 36.0)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Philosophical Discourse of Modernity",
+    "author": "Habermas",
+    "year": 1987
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2026591",
+      "title": "The Philosophical Discourse of Modernity: Twelve Lectures.",
+      "authors": [
+        {
+          "family": "Benhabib",
+          "given": "Seyla"
+        },
+        {
+          "family": "Habermas",
+          "given": "Jurgen"
+        },
+        {
+          "family": "Lawrence",
+          "given": "Frederick G."
+        }
+      ],
+      "editors": [],
+      "year": 1987,
+      "container_title": "The Journal of Philosophy",
+      "volume": "84",
+      "issue": "12",
+      "page": "752",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/2026591",
+      "score": 36.005234
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

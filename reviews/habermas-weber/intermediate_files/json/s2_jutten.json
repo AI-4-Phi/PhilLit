@@ -1,0 +1,105 @@
+[s2_search.py] Searching Semantic Scholar: 'Jutten Juten colonization Habermas reification lifeworld system', limit=20
+[s2_search.py] Retrieved 4/4 papers...
+[s2_search.py] Search complete: 4 papers found
+[s2_search.py] Cached results (cache key: s2_223899584375f216)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Jutten Juten colonization Habermas reification lifeworld system",
+  "results": [
+    {
+      "paperId": "d142cede54c3fba7f1121b96127f2fa7df729a48",
+      "title": "The Colonization Thesis: Habermas on Reification",
+      "authors": [
+        {
+          "name": "Timo J\u00fctten",
+          "authorId": "115515565"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 240,
+      "doi": "10.1080/09672559.2011.629672",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d142cede54c3fba7f1121b96127f2fa7df729a48",
+      "venue": "",
+      "journal": {
+        "name": "International Journal of Philosophical Studies",
+        "pages": "701 - 727",
+        "volume": "19"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "04bd582535383445818365d49eab73c8da0fa27e",
+      "title": "Reframing Habermas\u2019s colonization thesis: Neoliberalism as relinguistification",
+      "authors": [
+        {
+          "name": "Roderick Condon",
+          "authorId": "116118931"
+        }
+      ],
+      "year": 2020,
+      "abstract": "While the critique of neoliberalism, as the form of contemporary capitalism, has been advanced from Marxian and Foucauldian perspectives, it has had limited attention from the perspective of Critical Theory. Largely unrecognized is the suitability of the theory of reification for this critique, specifically, Habermas\u2019s version. This article reconsiders Habermas\u2019s colonization thesis as the basis for a critical theory of neoliberalism, refining its theoretical framework to deepen its critical diagnosis. Against the dismissal of the system\u2013lifeworld concept, a novel critique is advanced to suggest its original elaboration fell confusedly between two versions of social systems theory. Drawing from late developments, the scheme is reinterpreted as distinguishing two forms of communication in capitalist society: delinguistified and linguistic. This opens the way to reframe and communicatively transform colonization as relinguistification; that is, the translation of monetary coding into ordinary language such that communicative action is distorted from within by reifying concepts.",
+      "citationCount": 2,
+      "doi": "10.1177/1368431020970780",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/04bd582535383445818365d49eab73c8da0fa27e",
+      "venue": "European Journal of Social Theory",
+      "journal": {
+        "name": "European Journal of Social Theory",
+        "pages": "507 - 525",
+        "volume": "24"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d205ea911795ba88bb342a664b649f3564edba59",
+      "title": "Reification and Reconciliation in Habermas\u2019 Theory of Law and Democracy",
+      "authors": [
+        {
+          "name": "T. Hedrick",
+          "authorId": "117218454"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Habermas\u2019 theory represents the most coherent combination of reconciliation and reification considered herein. Habermas remains attuned to the concerns raised by Adorno that the functional differentiation of society may undermine the autonomy of the individual (through \u201cthe colonization of the lifeworld\u201d), but resists the inexorability of Adorno\u2019s conclusions by conceiving of a democratic society\u2019s legal system as the medium through which discourse could consensually shape the \u201cinterchanges\u201d between system and lifeworld. However, Habermas effects this synthesis by abstracting away from the psychoanalytic issues that concerned Adorno and Honneth, and by thinking of his proceduralist paradigm of law as ungrounded in the type of substantive legal paradigms that normally allow persons to identify with the system\u2019s underlying values. The chapter concludes that Habermas is left with a too-attenuated relationship between the rationality of socialization and democratic governance, and persons\u2019 usual first-order notions of meaning and value, to be genuinely emancipatory.",
+      "citationCount": 0,
+      "doi": "10.1093/OSO/9780190634025.003.0006",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d205ea911795ba88bb342a664b649f3564edba59",
+      "venue": "Reconciliation and Reification",
+      "journal": {
+        "name": "Reconciliation and Reification"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fd3906ac63eaceb6a548b08bd900958cf650b3d6",
+      "title": "J\u00fcrgen Habermas e a guinada normativa no enunciado da autonomiza\u00e7\u00e3o das esferas sociais",
+      "authors": [
+        {
+          "name": "Lucas Trindade da Silva",
+          "authorId": "117692720"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The aim here is to single out the theory of communicative action as a normative shift in the statement of the autonomization of social spheres. The argument is structured in three stages: in a first, the habermasian understanding of the distinction between pre-modern and modern is presented as a transition from the undifferentiated to the differentiated, more particularly from the mythical reification to the uncoupling of system and lifeworld; in a second, it presents its definition of modern reification as systemic colonization of the lifeworld; finally, it demonstrates how his theory of dual rationalization is also an investigation of the foundations for a normative defense of decolonization/autonomization of the lifeworld as an emancipatory horizon, which will even lead him to abandon, in the course of his work, the very tradition of the critique of reification.",
+      "citationCount": 1,
+      "doi": "10.1590/S0102-6992-202136010011",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fd3906ac63eaceb6a548b08bd900958cf650b3d6",
+      "venue": "",
+      "journal": {
+        "name": "Sociedade E Estado",
+        "pages": "217-243",
+        "volume": "36"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

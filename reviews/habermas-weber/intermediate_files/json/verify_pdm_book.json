@@ -1,0 +1,18 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.7551/mitpress/5316.001.0001
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "doi": "10.7551/mitpress/5316.001.0001"
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "DOI 10.7551/mitpress/5316.001.0001 not found in CrossRef",
+      "recoverable": false
+    }
+  ]
+}

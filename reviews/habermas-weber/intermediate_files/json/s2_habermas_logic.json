@@ -1,0 +1,55 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Habermas On Logic Social Sciences Zur Logik Sozialwissenschaften",
+  "results": [
+    {
+      "paperId": "ec7f8739a142f9ab98e7123b80c3af40fcdf31b5",
+      "title": "Zur Problematik der Ableitung in sozialwissenschaftlichen Aussagensystemen / On the Problem of Deducing Valid Conclusions in Systems of Social Science Propositions. Part 2",
+      "authors": [
+        {
+          "name": "Hans J. Hummell",
+          "authorId": "50287572"
+        }
+      ],
+      "year": 1972,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1515/zfsoz-1972-0202",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ec7f8739a142f9ab98e7123b80c3af40fcdf31b5",
+      "venue": "",
+      "journal": {
+        "name": "Zeitschrift f\u00fcr Soziologie",
+        "pages": "118 - 138",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a89355a16af69bea2ba1cbc24fab44c828618e2b",
+      "title": "Zur Problematik der Ableitung in sozialwissenschaftlichen Aussagensystemen",
+      "authors": [
+        {
+          "name": "Hans J. Hummell",
+          "authorId": "50287572"
+        }
+      ],
+      "year": 1972,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.1515/zfsoz-1972-0103",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a89355a16af69bea2ba1cbc24fab44c828618e2b",
+      "venue": "",
+      "journal": {
+        "name": "Zeitschrift f\u00fcr Soziologie",
+        "pages": "31 - 46",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

@@ -1,0 +1,34 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Anicker Habermas hermeneutics systematicity theorizing",
+  "results": [
+    {
+      "paperId": "9aad6d9a3b1a2fd21219a5c555db84723a89f2ba",
+      "title": "Between Hermeneutics and Systematicity: The Habermasian Method of Theorizing",
+      "authors": [
+        {
+          "name": "Fabian Anicker",
+          "authorId": "2268923809"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract J\u00fcrgen Habermas\u2019s work is analyzed as an outstanding combination of hermeneutic sensitivity to different theories and systematic theory integration. Habermas\u2019s theoretical method revolves around a problem-centered understanding of theory that interprets it as a response to specific problems. The methodological reconstruction of key texts shows that he used the distinction of theory and problem as an all-purpose device for interpretation, critique, and theory construction. This method is superior to other, more common ways of integrating theoretical plurality.",
+      "citationCount": 1,
+      "doi": "10.1515/auk-2025-2006",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9aad6d9a3b1a2fd21219a5c555db84723a89f2ba",
+      "venue": "Analyse &amp; Kritik",
+      "journal": {
+        "name": "Analyse & Kritik",
+        "pages": "161 - 178",
+        "volume": "47"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

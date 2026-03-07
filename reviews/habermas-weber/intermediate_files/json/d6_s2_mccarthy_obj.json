@@ -1,0 +1,97 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "McCarthy objectivity silence reason Weber Habermas methodological",
+  "results": [
+    {
+      "paperId": "c7f99d4e8c37282248c775fe6a44cf74538ee954",
+      "title": "Objectivity and the Silence of Reason: Weber, Habermas, and the Methodological Disputes in German Sociology",
+      "authors": [
+        {
+          "name": "George E. McCarthy",
+          "authorId": "103514547"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.2307/3090088",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c7f99d4e8c37282248c775fe6a44cf74538ee954",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c26fbfb71c9d6a881f93c5e4a277721c88fbd1c0",
+      "title": "Marx\u2019 Critique of Science and Positivism: The Methodological Foundations of Political Economy",
+      "authors": [
+        {
+          "name": "George E. McCarthy",
+          "authorId": "103514547"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c26fbfb71c9d6a881f93c5e4a277721c88fbd1c0",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fb5d2e5ec8abacc24b544bc47ad9bec3078b0e12",
+      "title": "Stories Adult Learners Tell \u2026Recent Research on How and Why Adults Learn",
+      "authors": [
+        {
+          "name": "P. Paul",
+          "authorId": "38880599"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb5d2e5ec8abacc24b544bc47ad9bec3078b0e12",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "cffcd1d2bd19c04b3071cd5bfe36df123bd6f60e",
+      "title": "Cultural Anthropology",
+      "authors": [],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/000134550605200302",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cffcd1d2bd19c04b3071cd5bfe36df123bd6f60e",
+      "venue": "",
+      "journal": {
+        "name": "Abstracts in Anthropology",
+        "pages": "417 - 571",
+        "volume": "52"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

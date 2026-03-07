@@ -1,0 +1,40 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.7551/mitpress/2010.001.0001
+[verify_paper.py] DOI verified: The Computational Brain...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.7551/mitpress/2010.001.0001"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.7551/mitpress/2010.001.0001",
+      "title": "The Computational Brain",
+      "authors": [
+        {
+          "family": "Churchland",
+          "given": "Patricia S."
+        },
+        {
+          "family": "Sejnowski",
+          "given": "Terrence J."
+        }
+      ],
+      "editors": [],
+      "year": 1992,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "The MIT Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.7551/mitpress/2010.001.0001"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

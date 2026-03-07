@@ -1,0 +1,65 @@
+[s2_batch.py] Connecting to Semantic Scholar API...
+[s2_batch.py] Batch fetching 2 paper(s)...
+[s2_batch.py] Processing 2 responses...
+[s2_batch.py] Found 2 papers, 0 not found
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "2 paper IDs",
+  "results": [
+    {
+      "paperId": "5420e2e08c7fa89484961f51a411e2475348e0f1",
+      "title": "Disenchantment, rationality and the modernity of Max Weber",
+      "authors": [
+        {
+          "name": "A. Carroll",
+          "authorId": "144639431"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 68,
+      "doi": "10.5840/FORPHIL201116117",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5420e2e08c7fa89484961f51a411e2475348e0f1",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "117-137",
+        "volume": "16"
+      },
+      "publicationTypes": [
+        "Review"
+      ],
+      "_queryId": "5420e2e08c7fa89484961f51a411e2475348e0f1"
+    },
+    {
+      "paperId": "82dcfa939cd6046dd2765d5acaa224e43a0ca09d",
+      "title": "Theory in Weberian Marxism: Patterns of Critical Social Theory in Luk\u00e1cs and Habermas*",
+      "authors": [
+        {
+          "name": "Harry F. Dahms",
+          "authorId": "72103919"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 35,
+      "doi": "10.1111/0735-2751.00032",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/82dcfa939cd6046dd2765d5acaa224e43a0ca09d",
+      "venue": "",
+      "journal": {
+        "name": "Sociological Theory",
+        "pages": "181 - 214",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "82dcfa939cd6046dd2765d5acaa224e43a0ca09d"
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

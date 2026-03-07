@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "philpapers_via_brave",
+  "query": "Habermas Weber Weberian rationalization normative critique",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No PhilPapers entries found",
+      "recoverable": false
+    }
+  ]
+}

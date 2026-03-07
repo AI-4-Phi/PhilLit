@@ -1,0 +1,362 @@
+[s2_citations.py] Connecting to Semantic Scholar API...
+[s2_citations.py] Found paper: The Critical Theory of Jurgen Habermas...
+[s2_citations.py] Fetching references...
+[s2_citations.py] Fetching citing papers...
+[s2_citations.py] Retrieved 4 citing papers, fetching more...
+[s2_citations.py] Retrieved 6 citing papers, fetching more...
+[s2_citations.py] Retrieved 7 citing papers, fetching more...
+[s2_citations.py] Retrieved 7 citing papers, fetching more...
+[s2_citations.py] Retrieved 10 citing papers, fetching more...
+[s2_citations.py] Retrieved 10 citing papers
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "c47833d8d860a4da0516407ae715596953217d69",
+  "results": [
+    {
+      "paper": {
+        "paperId": "c47833d8d860a4da0516407ae715596953217d69",
+        "title": "The Critical Theory of Jurgen Habermas",
+        "authors": [
+          {
+            "name": "T. Mccarthy",
+            "authorId": "153391868"
+          }
+        ],
+        "year": 1979,
+        "abstract": null,
+        "citationCount": 566,
+        "doi": "10.2307/2215446",
+        "arxivId": null,
+        "url": "https://www.semanticscholar.org/paper/c47833d8d860a4da0516407ae715596953217d69",
+        "venue": ""
+      },
+      "references": [],
+      "citations": [
+        {
+          "paperId": "a6538f42bd15cb0bfc02de0e40bc603975cb6c72",
+          "title": "Talanoa and Habermas's Theory of Communicative Action: journalistic practices in the tropical Pacific",
+          "authors": [
+            {
+              "name": "Marie M'Balla-Ndi",
+              "authorId": "1418951905"
+            },
+            {
+              "name": "M. Newlands",
+              "authorId": "49147864"
+            }
+          ],
+          "year": 2016,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.25120/ETROPIC.15.2.2016.3543",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/a6538f42bd15cb0bfc02de0e40bc603975cb6c72",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\u2026regards \u201cstrategic\u201d forms of communication (such as lying, misleading, deceiving, manipulating, and the like) as derivative; since they involve the suspension of certain claims (especially truthfulness), they are parasitic on speech oriented to genuine understanding\u201d (McCarthy, 1978, p. 287).",
+            "\u2026communicatively competent space in which \u201cthe competence to use language interactively is a pre-condition of the ability to mark a third distinction fundamental to the definition of any speech situation: the distinction between what is (Sen) and what ought to be (Sollen)\u201d (McCarthy, 1978, p. 282).",
+            "\u2026also reverberates with Habermas\u2019s Theory of Communicative Action, according to which \u201cthe conditions of discourse and rational-consensus\u2026. rest on the supposition of an ideal speech situation characterised by an effective equality of chances to assume dialogue roles\u201d (McCarthy, 1978, p. 325)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "0c230c2f857a9e4e6fc12e469395f0aa2a6e29f1",
+          "title": "A Comparison of Some of the Themes of Irrationality, Illusion and Mystification Identified or Inferred by Karl Marx and Max Weber in Their Explanations of the Rise of Capitalism",
+          "authors": [
+            {
+              "name": "J Forbes Farmer",
+              "authorId": "2267552855"
+            }
+          ],
+          "year": 2012,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": "10.5296/JSR.V3I2.2124",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/0c230c2f857a9e4e6fc12e469395f0aa2a6e29f1",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "There is, said Habermas, \u201ca core of irrationality in the orientation to values, goals, and needs\u201d (McCarthy, 1978:9).",
+            "It is important now, however to reemphasize what Habermas called \u201cthe peculiar tension between rationality and irrationality that haunts the positivist understanding of the relation of theory to practice in general\u201d (McCarthy, 1978:6).",
+            "\u202618\nOne final thought on this question comes in contrast to Aquinas\u201f position (Pegis, 1948:190) and that is Habermas on Hegel\u201fs experience of reflection when he said \u201cthe conditions of rationality change irrationally, according to time and place, epoch and culture\u201d (McCarthy, 1978:182).",
+            "(McCarthy 1978:7)\n2012, Vol. 3, No.2\nwww.macrothink.org/jsr 18\nOne final thought on this question comes in contrast to Aquinas\u201f position (Pegis, 1948:190) and that is Habermas on Hegel\u201fs experience of reflection when he said \u201cthe conditions of rationality change irrationally, according to time and\u2026"
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "558cf4cd35c55f1fd8b4afac667843a319223f85",
+          "title": "Bullshit, Social Integration, and Political Legitimation: Habermasian Reflections",
+          "authors": [
+            {
+              "name": "D. Borman",
+              "authorId": "3455052"
+            }
+          ],
+          "year": 2011,
+          "abstract": null,
+          "citationCount": 2,
+          "doi": "10.1017/S001221731100014X",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/558cf4cd35c55f1fd8b4afac667843a319223f85",
+          "venue": "Dialogue",
+          "isInfluential": true,
+          "contexts": [
+            "4 See Lemann.",
+            "21 , 22\nNotes 1 See the interview with Luntz in The Persuaders (see references).",
+            "See Allen, chapter 5.",
+            "See also Nicholas\nLemann.",
+            "6 See Karl Otto Apel, 276.",
+            "7 See also Habermas 1984 , 77-92.",
+            "See Habermas 1998 , especially chapter 7, but also chapter 3 and Cooke\u2019s helpful introduction.",
+            "20 See McCarthy 1978 , 377; Held, 188.",
+            "See The Persuaders .",
+            "2 See The Persuaders .",
+            "See Weisman.",
+            "See Honneth.",
+            "See, for instance, Apel, 275-6."
+          ],
+          "intents": []
+        },
+        {
+          "paperId": "4ae2d7036fb31a88c85d0ce934df927852fab00c",
+          "title": "La recherche critique en \u00e9ducation relative \u00e0 l'environnement au sein du mouvement de r\u00e9sistance sociale face au projet minier Pascua Lama",
+          "authors": [
+            {
+              "name": "Isabel Orellana",
+              "authorId": "11907161"
+            },
+            {
+              "name": "L. Sauv\u00e9",
+              "authorId": "144676303"
+            },
+            {
+              "name": "Marie-\u00c8ve Marleau",
+              "authorId": "117703338"
+            },
+            {
+              "name": "R. Labra\u00f1a",
+              "authorId": "90494834"
+            }
+          ],
+          "year": 2008,
+          "abstract": null,
+          "citationCount": 7,
+          "doi": "10.4000/ERE.3135",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/4ae2d7036fb31a88c85d0ce934df927852fab00c",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "LA RECHERCHE CRITIQUE EN \u00c9DUCATION RELATIVE \u00c0 L\u2019ENVIRONNEMENT ... 27\nLe chercheur est appel\u00e9 \u00e0 aller au-del\u00e0 des explications de type \u00ab cause \u2013 effet \u00bb (Sauv\u00e9, 2005) et \u00e0 d\u00e9passer les savoirs qui, selon J\u00fcrgen Habermas (1975), seraient qualifi\u00e9s de \u00ab savoirs instrumentaux et pratiques \u00bb, pour construire des savoirs signifiants qui contribuent \u00e0 changer les attitudes et les conduites individuelles et collectives, en lien avec le d\u00e9veloppement de nouvelles valeurs.",
+            "The critical theory of Jurgen Habermas.",
+            "Les personnes sont alors consid\u00e9r\u00e9es comme des sujets critiques, capables de d\u00e9velopper un positionnement critique, de produire des transformations et de se transformer, tel que propos\u00e9 par J\u00fcrgen Habermas (McCarthy, 1978) et Paulo Freire (1997, 1999)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "f83d2ef5d72f4be3a1c22fc7f625132422446ab7",
+          "title": "The critical social theory of J\u00fcrgen Habermas and its implications for IS research",
+          "authors": [
+            {
+              "name": "Minh Q. Huynh",
+              "authorId": "3043790"
+            },
+            {
+              "name": "H. Klein",
+              "authorId": "118326082"
+            }
+          ],
+          "year": 2004,
+          "abstract": null,
+          "citationCount": 110,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/f83d2ef5d72f4be3a1c22fc7f625132422446ab7",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The very concept of critical social theory (CST from now on) often is associated with the name of J\u00fcrgen Habermas (McCarthy 1978).",
+            "It is this fundamental concept that leads us to the Frankfurt School and ultimately to Habermas\u2019 seminal works on what has become known as \u201cHabermas\u2019 Critical Social Theory\u201d (McCarthy 1978).",
+            "(5) The social action aspect reveals the connection between a type of social action and the cognitive interest with which it is associated (McCarthy 1978; Bernstein 1976).",
+            "Second, actions oriented towards success have a powerful means-ends relationship and are based on technical knowledge (McCarthy 1978)."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "8d2960b7abf39ecaa9ec7c4091a6b387fb111991",
+          "title": "Appreciating Stockbroking: Constructing Conceptions to Make Sense of Performance",
+          "authors": [
+            {
+              "name": "Jesper Blomberg",
+              "authorId": "28749170"
+            }
+          ],
+          "year": 2004,
+          "abstract": null,
+          "citationCount": 20,
+          "doi": "10.1111/J.1467-6486.2004.00425.X",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/8d2960b7abf39ecaa9ec7c4091a6b387fb111991",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            " McCarthy (1988, p. 27)  suggests that we can see the two types as aspects of the same activity.",
+            "...g overned by technical rules and decision maxims that imply conditional predictions, as well as preference rules and decision maxims that imply conditional imperatives; it is directed to the attainment of goals through the evaluation of alternative choices and the organization of appropriate means; it is sanctioned by success or failure in reality. ( McCarthy, 1988, p. 26 )",
+            "Habermas \u2018communicative action\u2019, by  McCarthy (1988)  renamed \u2018social interaction\u2019, designates activity similar to Hegel\u2019s \u2018interaction\u2019.",
+            "For the purpose here, understanding stockbrokers\u2019 different performances, one of the interpretations suggested by McCarthy (1988, pp. 16\u201040) is useful: Habermas \u2018instrumental action\u2019, renamed by  McCarthy (1988, p. 26)  to \u2018purposive-rational action\u2019, designates activity similar to Hegel\u2019s \u2018work\u2019."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "c7ccc294c85486507c2b9251914a7f78f60239e3",
+          "title": "A Critical Theory of Organization Science",
+          "authors": [
+            {
+              "name": "B. Steffy",
+              "authorId": "8900490"
+            },
+            {
+              "name": "A. J. Grimes",
+              "authorId": "66627417"
+            }
+          ],
+          "year": 1986,
+          "abstract": null,
+          "citationCount": 141,
+          "doi": "10.5465/AMR.1986.4283115",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/c7ccc294c85486507c2b9251914a7f78f60239e3",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "\"interpretation\" is itself a reappropriation; a further development of the tradition to which the researcher and research-domain belong (McCarthy, 1978).",
+            "No absolute system of inquiry exists (McCarthy, 1978).",
+            "Third, both approaches fail to be an \"inquiry of change\" (Habermas, 1970; McCarthy, 1978).",
+            "Under such conditions, organizational knowledge is validated, not by shared consensus, but along a priori, objective criteria (McCarthy, 1978).",
+            "First-level constructs are those thoughts and experiences that organizational actors have already preinterpreted and prestructured; they are socially-constructed phenomena prior to scientific observation (Fassnacht, 1982; McCarthy, 1978).",
+            "Criticisms of methods are answered by checking the rules of inquiry specified by the methodology (Bunge, 1983; McCarthy, 1978).",
+            "There will never occur a reproduction of original meanings (McCarthy, 1978).",
+            "political-ethical community (McCarthy, 1978).",
+            "It also is suggested the interpretive agenda is as suspect as the natural science approach because it, too, employs a monological form of reasoning which may exclude certain topics of discourse (McCarthy, 1978).",
+            "In this sense, critical theory is \"self-reflective\" (McCarthy, 1978)."
+          ],
+          "intents": [
+            "background",
+            "methodology"
+          ]
+        },
+        {
+          "paperId": "b725e0f5e121aaf284a6dc9eca771cf920df71cb",
+          "title": "Voices of parents : the lived experience of caring for a child with a life-threatening and life-limiting diagnosis within existing social policies",
+          "authors": [
+            {
+              "name": "S. Fowler-Kerry",
+              "authorId": "1402196597"
+            }
+          ],
+          "year": 2008,
+          "abstract": null,
+          "citationCount": 0,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/b725e0f5e121aaf284a6dc9eca771cf920df71cb",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "The critical theory of Jurgen Habermas.",
+            "Recommendations\nThe recommendations proposed in this study are supported with the basic tenets\nadvocated by the critical social theorist Jurgen Habermas (1984), who also provided the critical perspective for viewing the lives of parents with children diagnosed with life\u2013 limiting and life\u2013threatening diagnoses within their lived sociopolitical contexts.",
+            "Habermas (1970) contends that there has been a failure of these two epistemological spheres of thought to transpose theoretical causal knowledge into practical life\u2013world meanings (McCarthy, 1978; Fischer, 1995).",
+            "Committed to improving the current state of affairs with these children and their\nfamilies, I undertook this study, using a critical social theory perspective proposed by the contemporary philosopher Jurgen Habermas (1979).",
+            "Such an examination was inspired by contributions of the critical theorist Jurgen Habermas (McCarthy, 1978) who offers an epistemological base for a critical theory of society by combining practical discourse with an assumption of communicative competence."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "e5760a011923045c97f14688f0d1e6c5dc0e23a4",
+          "title": "The discourse of musicology",
+          "authors": [
+            {
+              "name": "Giles Hooper",
+              "authorId": "82241565"
+            }
+          ],
+          "year": 2006,
+          "abstract": null,
+          "citationCount": 20,
+          "doi": "10.4324/9781315615523",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/e5760a011923045c97f14688f0d1e6c5dc0e23a4",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "If they are not arbitrary, there must exist rules for attaining such agreement, forms of argument that are appropriate to supporting or challenging it, standards and values that might be appealed to in such argument, and so on\u2019 (McCarthy, 1978, p.48).",
+            "\u2026appears to be caught in a dilemma: either nature has the transcendental status of a constituted objectivity and cannot, therefore, be the ground of the constituting subject; or nature is the ground of subjectivity and cannot, therefore, be simply a constituted objectivity\u2019 (McCarthy, 1978, p.111).",
+            "(McCarthy, 1978, pp.138\u20139)\nIt is unlikely that many scholars strictly and explicitly adhere to such a set of axioms; and, in practice, where the humanities and social sciences are concerned, it would seem that applications of positivism tend instead to vacillate between a less commonly encountered\u2026",
+            "As Thomas McCarthy observed: \u2018Although commitments, values, rules, conventions, attitudes, frames, and so forth clearly do arise and develop under empirical conditions, they are just as clearly conditions of possibility of scientific knowledge\u2019 (McCarthy, 1978, p.52).",
+            "Thomas McCarthy has observed that \u2018the term positivism now functions more as a polemical epithet than as a designation for a distinct philosophical movement\u2019 (McCarthy, 1978, p.137) \u2013 and this is certainly true of contemporary musicology."
+          ],
+          "intents": [
+            "background"
+          ]
+        },
+        {
+          "paperId": "7decd3d33d7af24ae9b1902b5034f8181998d91e",
+          "title": "The Categorical Imperative Analyzing Immanuel Kant\u2019s Grounding for A Metaphysics of Morals",
+          "authors": [
+            {
+              "name": "Anders Bordum",
+              "authorId": "2073741527"
+            }
+          ],
+          "year": 2002,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": null,
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/7decd3d33d7af24ae9b1902b5034f8181998d91e",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "They all agree on the last part of the title \u2013 the Metaphysics of Morals.",
+            "The Categorical Imperative Analyzing Immanuel Kant\u2019s Grounding for\nA Metaphysics of Morals\nAnders Bordum\nWP 4/2002\nJanuary 2002",
+            "\u2026has been said, that the discourse ethics as developed by J\u00fcrgen Habermas can be understood as a dialogical continuation of the monological ethics developed by Immanuel Kant (1724-1804) as it was formulated in the categorical imperative in Grounding for the Metaphysics of Morals (McCarthy 1978:326).",
+            "H. J. Paton translates it to Groundwork of the Metaphysics of Morals.",
+            "The task for Kant in Grounding for the Metaphysics of Morals, from 1785, is to construct the possibility of a moral philosophy that fits the conception of reason as developed in the Critique of Pure Reason, giving room for human freedom based on willful action and self-imposed reason.",
+            "Published in association with Blackwell Publishers Ltd.\nThomas McCarthy (1978): The Critical Theory of J\u00fcrgen Habermas.",
+            "www.cbs.dk/departments/mpp\nThe Categorical Imperative\nAnalyzing Immanuel Kant's Grounding for a Metaphysics of Morals\nBy Anders Bordum\nKeywords: Categorical imperative, discourse ethics, duty, ethics, monologic, dialogic, Immanuel Kant, J\u00fcrgen Habermas, self-legislation, self-reference.",
+            "H.J. Paton (1964) finds three formulations in Groundwork of the Metaphysics of Morals, p.27 (to be found at p.70, p.96, and p.98-99).",
+            "It has been said, that the discourse ethics as developed by J\u00fcrgen Habermas can be understood as a dialogical continuation of the monological ethics developed by Immanuel Kant (1724-1804) as it was formulated in the categorical imperative in Grounding for the Metaphysics of Morals (McCarthy 1978:326).",
+            "James W. Ellington translates it into Grounding for the Metaphysics of Morals.",
+            "Grounding for the Metaphysics of Morals.",
+            "I can, through a reading of Grounding for the Metaphysics of Morals2 from 1785, find four different types of formulations3 of the categorical imperative, which are consistent with and may all be argumentatively derived from the basic formulation of the imperative as a principle of universalization.",
+            "Lewis White Beck translates it into Foundations of the Metaphysics of Morals.",
+            "Kant begins his Grounding for the Metaphysics of Morals with the assertion that \u201cThere is no possibility of thinking of anything at all in the world, or even out of it, which can be regarded as good without qualification, except a good will\u201d (Kant 1994:7, 393)."
+          ],
+          "intents": [
+            "methodology",
+            "background"
+          ]
+        }
+      ],
+      "references_count": 0,
+      "citations_count": 10
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

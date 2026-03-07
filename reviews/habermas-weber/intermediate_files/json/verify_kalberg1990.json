@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.2307/202063
+[verify_paper.py] DOI verified: The Mundanity of Excellence: An Ethnographic Repor...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/202063"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/202063",
+      "title": "The Mundanity of Excellence: An Ethnographic Report on Stratification and Olympic Swimmers",
+      "authors": [
+        {
+          "family": "Chambliss",
+          "given": "Daniel F."
+        }
+      ],
+      "editors": [],
+      "year": 1989,
+      "container_title": "Sociological Theory",
+      "volume": "7",
+      "issue": "1",
+      "page": "70",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/202063"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

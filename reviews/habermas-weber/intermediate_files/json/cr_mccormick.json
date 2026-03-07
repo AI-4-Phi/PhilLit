@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1017/cbo9780511756047"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1017/cbo9780511756047",
+      "title": "Weber, Habermas and Transformations of the European State",
+      "authors": [
+        {
+          "family": "McCormick",
+          "given": "John P."
+        }
+      ],
+      "editors": [],
+      "year": 2007,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Cambridge University Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1017/cbo9780511756047"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,1491 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas Weber relationship comparison modernity",
+  "results": [
+    {
+      "openalex_id": "W4252698994",
+      "doi": "10.5040/9781472544377",
+      "title": "Connected Sociologies",
+      "authors": [
+        {
+          "name": "Gurminder K. Bhambra",
+          "openalex_id": "A5064248726",
+          "orcid": "https://orcid.org/0000-0003-3658-1575"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "<JATS1:p>This book outlines what theory for a global age might look like, positing an agenda for consideration, contestation and discussion, and a framework for the research-led volumes that follow in the series.</JATS1:p> <JATS1:p>Gurmider K. Bhambra takes up the classical concerns of sociology and social theory and shows how they are being rethought through an engagement with postcolonial studies, one of the most distinctive critical approaches of the past two decades. She also discusses the significance of the research programme surrounding coloniality and modernity that has emerged recently from Latin America.</JATS1:p>",
+      "cited_by_count": 592,
+      "type": "book",
+      "source": {
+        "name": "Bloomsbury Publishing Plc eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.bloomsburycollections.com/book/connected-sociologies.pdf?dl"
+      },
+      "topics": [
+        "Contemporary Sociological Theory and Practice"
+      ],
+      "referenced_works_count": 228,
+      "url": "https://openalex.org/W4252698994"
+    },
+    {
+      "openalex_id": "W3123667852",
+      "doi": "10.5840/beq200616446",
+      "title": "Global Rules and Private Actors: Toward a New Role of the Transnational Corporation in Global Governance",
+      "authors": [
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Doroth\u00e9e Baumann",
+          "openalex_id": "A5112753227",
+          "institutions": [
+            "University of Zurich"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-10-01",
+      "abstract": "Abstract: We discuss the role that transnational corporations (TNCs) should play in developing global governance, creating a framework of rules and regulations for the global economy. The central issue is whether TNCs should provide global rules and guarantee individual citizenship rights, or instead focus on maximizing profits. First, we describe the problems arising from the globalization process that affect the relationship between public rules and private firms. Next we consider the position of economic and management theories in relation to the social responsibility of the firm. We argue that instrumental stakeholder theory and business and society research can only partially solve the global governance issue, and that more recent concepts of corporate citizenship and republican business ethics deliver theoretically and practically helpful, fresh insights. However, even these need further development, especially with regard to the legitimacy of corporate political activity.",
+      "cited_by_count": 562,
+      "type": "article",
+      "source": {
+        "name": "Business Ethics Quarterly",
+        "type": "journal",
+        "issn": [
+          "1052-150X",
+          "2153-3326"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D32E2226B43F68FF7DD3C140DC624ACF/S1052150X00011040a.pdf/div-class-title-global-rules-and-private-actors-toward-a-new-role-of-the-transnational-corporation-in-global-governance-div.pdf"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Ethics in Business and Education",
+        "Corporate Law and Human Rights"
+      ],
+      "referenced_works_count": 193,
+      "url": "https://openalex.org/W3123667852"
+    },
+    {
+      "openalex_id": "W602224805",
+      "doi": "10.5860/choice.46-2158",
+      "title": "Two bits: the cultural significance of free software",
+      "authors": [
+        {
+          "name": "Christopher Kelty",
+          "openalex_id": "A5016045705",
+          "orcid": "https://orcid.org/0000-0003-0253-5554"
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-12-01",
+      "abstract": "In Two Bits, Christopher M. Kelty investigates the history and cultural significance of Free Software, revealing the people and practices that have transformed not only software but also music, film, science, and education. Free Software is a set of practices devoted to the collaborative creation of software source code that is made openly and freely available through an unconventional use of copyright law. Kelty explains how these specific practices have reoriented the relations of power around the creation, dissemination, and authorization of all kinds of knowledge. He also makes an important contribution to discussions of public spheres and social imaginaries by demonstrating how Free Software is a \"recursive public\" - a public organized around the ability to build, modify, and maintain the very infrastructure that gives it life in the first place.",
+      "cited_by_count": 728,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://evols.library.manoa.hawaii.edu/bitstreams/2fcdaed4-bc58-4588-ba72-f094446dd574/download"
+      },
+      "topics": [
+        "Open Source Software Innovations",
+        "Digital Games and Media",
+        "Copyright and Intellectual Property"
+      ],
+      "referenced_works_count": 286,
+      "url": "https://openalex.org/W602224805"
+    },
+    {
+      "openalex_id": "W2104357911",
+      "doi": "10.15215/aupress/9781897425084.01",
+      "title": "The Theory and Practice of Online Learning",
+      "authors": [
+        {
+          "name": "Terry Anderson",
+          "openalex_id": "A5106182363",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "Mohamed Ally",
+          "openalex_id": "",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "M Ally",
+          "openalex_id": "",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "M Ally",
+          "openalex_id": "",
+          "institutions": [
+            "Athabasca University"
+          ]
+        },
+        {
+          "name": "P Fahy",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Ausubel",
+          "openalex_id": ""
+        },
+        {
+          "name": "Z Berge",
+          "openalex_id": ""
+        },
+        {
+          "name": "Z Berge",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Beynon",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Bonk",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Reynolds",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Cassidy",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Chittaro",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Ranon",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Clark",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Clark",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Cooper",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Craik",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Lockhart",
+          "openalex_id": ""
+        },
+        {
+          "name": "F Craik",
+          "openalex_id": ""
+        },
+        {
+          "name": "E Tulving",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Duffy",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Cunningham",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Ertmer",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Newby",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Garrison",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Gilbert",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Moore",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Hirumi",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Holley",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Dansereau",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Mcdonald",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Garland",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Collins",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Hooper",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Hannafin",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Hung",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Looi",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Koh",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Janicki",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Liegle",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Johnson",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Johnson",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Keller",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Keller",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Suzuki",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Khan",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Kozma",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Malone",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Mayer",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Mayer",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Miller",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Moore",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Mukhopadhyay",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Parhar",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Murphy",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Cifuentes",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Phillips",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Ring",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Mathieux",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Ritchie",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Hoffman",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Rossett",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Rourke",
+          "openalex_id": ""
+        },
+        {
+          "name": "T Anderson",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Garrison",
+          "openalex_id": ""
+        },
+        {
+          "name": "W Archer",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Rovai",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Schmidt",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Werner",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Simmons",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Sternberg",
+          "openalex_id": ""
+        },
+        {
+          "name": "N Stoyanova",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Kommers",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Wiley",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Wilson",
+          "openalex_id": ""
+        },
+        {
+          "name": "H Witkin",
+          "openalex_id": ""
+        },
+        {
+          "name": "C Moore",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Goodenough",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Cox",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Yorke",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Knight",
+          "openalex_id": ""
+        },
+        {
+          "name": "G Baxter",
+          "openalex_id": ""
+        },
+        {
+          "name": "A Elder",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Glaser",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Benedikt",
+          "openalex_id": ""
+        },
+        {
+          "name": "M Byrne",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Flood",
+          "openalex_id": ""
+        },
+        {
+          "name": "P Willis",
+          "openalex_id": ""
+        },
+        {
+          "name": "L Christenson",
+          "openalex_id": ""
+        },
+        {
+          "name": "K Menzel",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Clements",
+          "openalex_id": ""
+        },
+        {
+          "name": "B Nastassi",
+          "openalex_id": ""
+        },
+        {
+          "name": "R Cutler",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Dixon",
+          "openalex_id": ""
+        },
+        {
+          "name": "S Eggins",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Slade",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Esposito",
+          "openalex_id": ""
+        },
+        {
+          "name": "J Farmer",
+          "openalex_id": ""
+        },
+        {
+          "name": "D Feng",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-12-31",
+      "abstract": "The revised version of the Theory and Practice of Online Learning, edited by Terry Anderson, brings together recent developments in both the practice and our understanding of online learning.Five years have since passed between this new edition and the first version.Five years is certainly a long time in this business as this second edition illustrates.The improvement in versatility and sophistication of the technologies that have been coming into common use has been so significant that a revisit of our knowledge of learning technologies and their application was becoming increasingly necessary.Anderson and the other authors of this text have responded to the need and have done the higher education community a great service by bringing it out in the electronic open access format under a Creative Commons License.Those of us from the other world are beneficiaries of this generosity and intellectual benevolence.Online learning has begun to embed itself as a part of our educational environment, especially in the higher education and training Theory and Practice of Online Learning",
+      "cited_by_count": 1805,
+      "type": "book",
+      "source": {
+        "name": "Athabasca University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.aupress.ca/app/uploads/120146_99Z_Anderson_2008-Theory_and_Practice_of_Online_Learning.pdf"
+      },
+      "topics": [
+        "Online and Blended Learning",
+        "Innovative Teaching and Learning Methods",
+        "Online Learning and Analytics"
+      ],
+      "referenced_works_count": 668,
+      "url": "https://openalex.org/W2104357911"
+    },
+    {
+      "openalex_id": "W1814867318",
+      "doi": "10.4324/9781315716299",
+      "title": "The Routledge Companion to Social Media and Politics",
+      "authors": [
+        {
+          "name": "Axel Bruns",
+          "openalex_id": "A5025254950",
+          "orcid": "https://orcid.org/0000-0002-3943-133X"
+        },
+        {
+          "name": "Gunn Enli",
+          "openalex_id": "A5014797024",
+          "orcid": "https://orcid.org/0000-0002-9458-6983"
+        },
+        {
+          "name": "Eli Skogerb\u00f8",
+          "openalex_id": "A5034950807",
+          "orcid": "https://orcid.org/0000-0001-6803-5021"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-22",
+      "abstract": "The social media platforms Facebook and Twitter include political areas, for example presentations of political parties or elected representatives, or political hashtags linking tweets to specific political public spheres. In a sense, such areas might not be considered as third spaces because they are explicitly political. This chapter argues that everyday political talk\u2014particularly in third spaces\u2014has the potential to overcome many of the identified issues with online deliberation, including political polarisation and the avoidance of political talk. Content analysis of political, and particularly partisan-framed online groups, has also found polarization. One of the most prominent debates, to date, has been whether the Internet will become polarized, with like-minded people flocking together, enabling them to ignore alternative viewpoints. Moreover, as the use and understanding of the Internet as a space for political debate expanded, this was accompanied by more refined theorizing of the Internet as a public sphere and space for deliberation.",
+      "cited_by_count": 384,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11343/124284"
+      },
+      "topics": [
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 57,
+      "url": "https://openalex.org/W1814867318"
+    },
+    {
+      "openalex_id": "W2144158050",
+      "doi": "10.1111/j.1468-2427.2005.00568.x",
+      "title": "Cyborg Urbanization: Complexity and Monstrosity in the Contemporary City",
+      "authors": [
+        {
+          "name": "Matthew Gandy",
+          "openalex_id": "A5044112273",
+          "orcid": "https://orcid.org/0000-0002-8478-9808",
+          "institutions": [
+            "University College London"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-03-01",
+      "abstract": "She referred to the high-rise as if it were some kind of huge animate presence, brooding over them and keeping a magisterial eye on the events taking place. There was something in this feeling \u2014 the elevators pumping up and down the long shafts resembled pistons in the chamber of a heart. The residents moving along the corridors were the cells in a network of arteries, the lights in their apartments the neurones of a brain (J.G. Ballard, 1975: 40). Now, the boundaries between the organic and the inorganic, blurred by cybernetic and bio-technologies, seem less sharp; the body, itself invaded and re-shaped by technology, invades and permeates the space outside, even as this space takes on dimensions that themselves confuse the inner and the outer, visually, mentally and physically (Anthony Vidler, 1990: 37\u20138). The body-territory [corpo-territorio] poses a problematic form of corporeal identity that in becoming ever more routinized has tended to dissolve the distinctions that formerly existed between the organic and the inorganic (Tiziana Villani, 1995: 118). As she tentatively begins to play the piano, the replicant, named Rachel, recalls that she once had lessons but cannot be sure whether these memories are her own or simply the implanted memories of someone else. In this poignant scene in Ridley Scott's Blade Runner (1982) we explore the possibility that human identities might be artificially created in order to produce advanced androids whose intelligence and sensitivity is comparable with that of their human creators. The figure of the cyborg, as represented in science fiction cinema, is not an automaton or robot but a sophisticated creation that seems to simultaneously extend but also threaten our understanding of what it means to be human. If we were to locate the cyborg as an idea, we could say that it is clearly linked to fantastical combinations of bodies and machines but is nonetheless a way of thinking about the world. It is, in other words, an ontological strategy for extending the limits to human knowledge as well as an apposite means of describing those phenomena that appear to reside outside conventional frameworks of understanding. If a cyborgian sensibility is explored within the context of the contemporary city, we find that it has developed out of several interconnecting strands of thought as a trope of critical reflection which uncovers a series of anomalies, fractures and tensions lurking within dominant modes of urban and architectural thinking. Since the early 1960s the potential applications of the cyborg concept have proliferated to include developments such as whole organism cloning, in vitro fertilization, gene sequencing, advanced prosthetics and other sophisticated medical technologies. In tandem with these technological manifestations, the imaginative field of the cyborg has expanded through literature, cinema and the fantasy spaces of contemporary culture.1 It is since the mid-1980s, however, that the idea of the cyborg has been associated with a more densely argued series of theoretical applications as a means to explore the interface between technology and the body. The key intervention here is Donna Haraway's article entitled 'A Cyborg Manifesto', first published in the Socialist Review in 1985, and later included in her influential collection of essays Simians, Cyborgs and Women where she writes in her introduction (1991a: 1): A cyborg is a hybrid creature, composed of organism and machine. But, cyborgs are compounded of special kinds of machines and special kinds of organisms appropriate to the late twentieth century. Cyborgs are post-Second World War hybrid entities made of, first, ourselves and other organic creatures in our unchosen \"high-technological\" guise as information systems, texts, and ergonomically controlled labouring, desiring, and reproducing systems. The second essential ingredient in cyborgs is machines in their guise, also, as communications systems, texts, and self-acting, ergonomically designed apparatuses. This succinct and revealing definition reminds us that the idea of the cyborg, as originally elaborated by Haraway, is at root a political as well as an intellectual project, an idea which originated in and from the 'belly of the monster' (1991a: 4), that nexus of political and economic entanglements that we might term the 'first world' in distinction to the proliferating spaces of marginality that lie beyond.2 Since its inception as a critical intellectual concept in the 1980s the cyborg metaphor has been deployed to challenge disembodied, dualistic, masculinist and teleological bodies of knowledge. It has infused science and technology studies with feminist epistemological strategies. It has opened up new possibilities for the understanding of relations between nature and culture. And it has facilitated greater sensitivity towards social and spatial complexity through its emphasis on 'situated knowledges'. The idea of the cyborg shares an affinity with related concepts such as 'cyberspace', 'cybernetics' and 'cyberpunk'. Yet the contemporary use of the term 'cyborg' is different from these virtual, analytical and fictional constructs because it is grounded in the living and breathing flesh of the human body. Whilst the 'cyber-' metaphor has tended to be associated with various forms of virtuality, the idea of the cyborg is closely linked with the corporeal experience of space.3 In this sense the cyborg can be read as an alternative way of conceptualizing the growth and development of cities that serves to destabilize the pervasive narratives of dematerialization, spatial malleability and virtualization. The underlying materiality of the cyborg metaphor has acquired heightened significance now that the earlier polarity between virtual space and 'meat space' articulated in the first wave of cyber literature is losing its conceptual utility and now that the very idea of 'virtual reality' is itself imploding as it becomes either relocated in the context of a heightened dimension of the real (see, for example, \u017di\u017eek, 2002) or simply derided as an inherently oxymoronic formulation (see Grosz, 2001).4 The emphasis of the cyborg on the material interface between the body and the city is perhaps most strikingly manifested in the physical infrastructure that links the human body to vast technological networks. If we understand the cyborg to be a cybernetic creation, a hybrid of machine and organism, then urban infrastructures can be conceptualized as a series of interconnecting life-support systems (see Swyngedouw, 1996; Marras, 1999; Gandy, 2002; Mitchell, 2003). The modern home, for example, has become a complex exoskeleton for the human body with its provision of water, warmth, light and other essential needs. The home can be conceived as 'prosthesis and prophylactic' in which modernist distinctions between nature and culture, and between the organic and the inorganic, become blurred (Vidler, 1990: 37). And beyond the boundaries of the home itself we find a vast interlinked system of networks, pipes and wires that enable the modern city to function. These interstitial spaces of connectivity within individual buildings extend through urban space to produce a multi-layered structure of extraordinary complexity and utility. The figure of the cyborg is at root a spatial metaphor. But how does the idea of the cyborg intersect with spatial theory? In what ways does the cyborg reinforce or contradict other emerging strands of urban thought that also emphasize urban complexity and hybridity? Has the epistemological subtlety and political prescience of the cyborg, as originally formulated in the 1980s, been realized in practice or simply been diffused through the term's widening usage? And should we ultimately reject the idea of the cyborg as an anachronism derived from cold war science and the first generation of twentieth-century cyberpunk culture? In the rest of this article I will try to address these issues through an exploration of the somewhat haphazard presence of the cyborg in contemporary urban discourse. I will focus in particular on the example of urban infrastructure as a concrete manifestation of the cyborg idea in order to explore different facets of the relationship between the city, the body and the human subject. My aim is not to foreclose discussions surrounding the 'cyborg city' but to open up a series of dialogues in order to explore contemporary thinking around these questions. One of the principal difficulties with delineating the cyborg city as a clearly defined entity is derived from the entanglement of the cyborg idea with a variety of urban metaphors ranging from organicist conceptions of the nineteenth-century city to 'neo-organicist' representations of the post-industrial metropolis. In its classic nineteenth-century form the organicist conception of the city emerged out of a functional analogy, originating within the medical sciences, wherein spatial differentiation corresponded with a distinctive arrangement of human organs. We find that Kantian notions of the self-organizational characteristics of animate matter were combined with new insights into the human vascular and arterial system and an emerging circulatory emphasis within the nascent science of political economy. In recent years, however, the organicist emphasis on the city as an integrated body with identifiable organs, which emerged in response to the nineteenth-century industrial city, has been increasingly displaced by the idea of urban space as a prosthetic extension to the human body. The body-city problematic has been reconceptualized in the context of post-Cartesian and post-positivist modes of thinking. The emphasis on the city as a self-contained body or machine has been challenged by a hybridized conception of space as a system of technological devices that enhances human productive and imaginative capabilities. The cyborg metaphor not only reworks the metabolic preoccupations of the nineteenth-century industrial city but also extends to a contemporary body of ideas that we can term 'neo-organicist' on account of the deployment of biophysical metaphors for the interpretation of social and spatial complexity. In the neo-organicist city we encounter a shift of emphasis away from an anatomical conception of space as an assemblage of individual organs towards a neurological reading of space as a diffuse and interconnected realm of human interaction. The film maker Michael Burke, for example, director of Cyborg City (1999), describes how beneath the 'glass and concrete' of the future city there will be a 'humming mass of technology' acting as a central nervous system, 'constantly monitoring and controlling both its own functions and those of its citizens' (Burke, 1998).5 The mechanical and hierarchical model of the relationship between the body and the city has been supplanted by a more complex and non-linear pattern of urban development in response to the spread of new information technologies (see Gille, 1986; Rabinbach, 1990; Akira, 2001). The organicist city of the modern era was founded on a clear separation between mind and body that enabled the city to be conceptualized as a coherent entity to be acted upon, disciplined, regulated and shaped according to human will. The emergence of the neo-organicist city, in contrast, is founded on the blurring of boundaries rather than their repeated delineation. At the same time, however, there remain important continuities between the kind of machine-based metaphors associated with the early twentieth-century futurism of figures such as Mario Chiattone, Filippo Tommaso Marinetti and Antoniono Sant'Elia and the elaborate computer-based metaphors deployed in the contemporary city (see Villani, 1995; Boyer, 1996; Schaub, 1998). Other significant continuities include, for example, the avant-garde bricolage of early cinema and the surrealist bodies depicted in the art of Hans Bellmer, Francis Picabia and other responses to 'a sterile and over rationalised technological realism' (Vidler, 1990: 42).6 These interconnecting strands between cultural modernism and the emergence of the cyborg metaphor are significant because they underlie the centrality of corporeal metaphors for the critical interpretation of urban form. The current emphasis on corporeal and neurological analogies in the neo-organicist literature owes more to earlier developments than is widely acknowledged. We can detect two principal dimensions to contemporary neo-organicist urban thought. A first strand, rooted in the bio-physical sciences, perceives the city to be a special kind of complex, yet intricately ordered system. This homeostatic perspective, which is inflected by ecological thinking and recent developments in evolutionary biology, has diffused through parts of the architectural literature and is only tangentially linked with the epistemological challenge of cyborg theory.7 A second and more intellectually significant development is represented by the convergence of ideas surrounding the 'thinking space' of the city and the indeterminacy of spatial forms. If the body-city nexus is conceptualized as a thinking machine then the analytical focus shifts towards the identification of those critical networks or 'neurones' that sustain the relationship between the body and the city (Kurokawa, 2001a). Though this dimension to the neo-organicist perspective shares important continuities with the technological preoccupations of early twentieth-century modernism, it extends its conceptual purview into different aspects of cultural modernism. The influential speculations of Gilles Deleuze and Felix Guattari, for example, develop Antonin Artaud's conception of the 'body without organs' to produce a philosophy of spatial complexity quite different from that associated with dominant modernist traditions (Deleuze and Guattari, 1986; 1987; Rajchman, 2000; Uno, 2001). Their philosophical challenge is to perceive space in the absence of any previously existent categories, hierarchies or systems as a form of 'anarchic non-identical proliferation' (Luckhurst, 1997: 128). The organic metaphor of the 'rhizome' is deployed in distinction to 'arborescent' conceptions of cities as hierarchical structures (Teysott, 1990; Akira, 2001; Kurokawa, 2001a). In addition to this emphasis on non-hierarchical structures of difference Deleuze and Guattari's conception of concrete space also seeks to incorporate the imaginary, libidinous and oneiric realms of human experience. From their 'neo-vitalist' perspective, which builds on the philosophical ideas of Henri Bergson, the virtual realm is not simply a mimesis or reflection of physical reality but an independent domain that generates new kinds of spaces and ideas. The political significance of the virtual realm lies in its experimental and emergent role as part of an envisioned space that has yet to be realized within the taken-for-granted realm of concrete reality (Boundas, 1996; Massumi, 2001). The role of the diagram or 'abstract machine' takes on special significance in this context as an attempt to give visual expression to new models of reality.8 In the case of architecture, for example, there has been an intense dialogue between developments in building design and the speculative possibilities engendered by computer-aided simulations so that 'physical space increasingly resembles cyberspace' (Mitchell, 2003: 197). Some architectural practices have deployed so-called 'genetic algorithms' in order to generate a form of 'in vitro' architecture which derives its inspiration from nature yet remains autonomous from it as a purely digitized space of imaginative exploration (see Chu, 2002; De Landa, 2002).9 Examples of architectural practice inflected by post-structuralist ideas which move beyond purely 'in vitro' speculations to fully realized projects include the work of Peter Eisenman, Frank Gehry and Bernard Tschumi, where sophisticated combinations of form, structure and materials have been achieved, which are quite at odds with modernist conceptions of architectural form. A conceptual synthesis can be discerned in some of the recent literature between post-structuralist philosophies of space and Latourian conceptions of actor-network theory to produce a new kind of urban theorization which eschews the meta-narratives associated with neo-Marxian approaches. Building on the insights of Deleuze and Guattari these approaches have sought to remove all the extrinsic or foundational aspects to urban theory and pare analysis down to the movements and interactions that constitute 'the city' as a particular kind of spatial form or activity that is independent of conventional accounts of scale, structure or order.10 The brain or 'thinking space' of the city persists yet is dispersed through innumerable nodes and networks in contrast with the embodied cyborg citizen to be found in the more technophile literature. We can trace these developments back to the emerging critique of architectural modernism in the 1970s and 1980s that increasingly drew on the theoretical ontologies of post-structuralism in order to advance a radically unplanned built form.11 From this perspective the role of 'chaos', for example, takes on a very different significance from that associated with the modernist city and is perceived as a field of evolutionary and radical experimentation. Chaos is no longer seen as an anomalous dimension to the urban experience to be problematized or excluded from analysis but a rich vein of social and spatial interaction through which we may perceive signs of alternative or hitherto overlooked urban forms. Chaos may also be characterized as a more sophisticated, resilient and adaptable form of order as Rem Koolhaas has suggested with respect to the dynamics of West African urbanism (Koolhaas et al., 2001; Koolhaas, 2002). The theoretical novelty of such a perspective sits sharply at odds, however, with the capacity for what one might term 'avant-garde urbanism' to actually explicate any substantial dimensions to urban change (see, for example, Rauterberg, 2002; Gandy, 2004b). We can detect within urban and architectural discourse an emerging counter current to post-structuralist and avant-garde urbanism led by a of and political (see 1996; and 1998). Though the post-structuralism of Deleuze and Guattari seeks to between the and the and is in this respect a significant advance on the and of there is a in any kind of political critique of the cyborg The emphasis on the characteristics of urban space the particular combinations of and human that enable nodes within the urban system to play in the of cultural and economic The of structure the of the theoretical and significance of these insights the between post-structuralism and a cyborg sensibility towards the entanglement of the real and the We are with an between the reading of the industrial city and a 'neo-organicist' with the design of space that quite in architectural The emerging of the interface as a technological is associated with nineteenth-century over science and technology, for example, form part of a counter discourse to modernist of technological 1996; 2003). In recent years, however, the trope of technological has tended to between a of new towards excluded on the one and the of towards technology and its on the other The of the cyborg has engendered a new wave of and towards the of the body by technologies that threaten to or the human subject. In the of for example, we move beyond the and critique of technology towards a political of technology and its with the human body. the of the body by new technologies as a of that the critical of the earlier in and communications technologies 1997: the advance of a in which the of towards an of the human body itself so that we no longer of the body in the city but of the in the (see 1995; The cyborg figure becomes a for the of we are no longer with a cold war but with the of the around the of buildings in of and their The of the have been radically by new technologies of and in order to the of the century. structures have developed that of social such as with forms of social through a of and The significance of urban in particular is now towards which the of essential technological networks such as and in order to and of political A of modern from urban technological networks or to use expression is to a of so that they are no longer political but for (see also a of from whole the of through a of and of the more of technology we can an emphasis on the cyborg as a means of becoming in order to the human body from the boundaries of the autonomous In the work of Mitchell, for example, we can trace a from through the experience of to the contemporary urban citizen as 'a (Mitchell, 2003: writes have been with the body and its now they virtual bodies that can sense and at a but that also remain in their In this sense builds on the inflected of earlier such as and depicted as a series of on infrastructures the extraordinary technological of the cyber city and the interaction of with of human activity (Mitchell, 2003). Yet this is a future in which the and of space are for example, that we are 'the shift from a by boundaries and to a at scale, by networks, and but the between the of and that of to economic In the perspective is so by technological change that it begins to the role of an independent in The blurring of boundaries between the body and the city in to our understanding of the human and the characteristics of human conception of human include, for the role of biophysical and technological systems that the social of for example, has different of analysis to the extension of our conception of to include those structures and that have been excluded from both and epistemological traditions the work of has tended to emphasize the between human and nature the of has been the or of between different kinds of networks or structures The cyborg can be conceived in a Latourian sense as both a new kind of social interaction with space but also a concept to be conceived in to the realm of modernist urban thought. Yet a Latourian with its hybridized conceptions of is quite different from that within philosophical traditions because of the radical extension of human to those and systems which the sought to from the realm of and political The concept of also its own its own of between its The idea of the cyborg as a hybrid can be conceived as a problematic of derived from or some teleological for urban change but it can also a of ideas and developments from the to the The of and for example, can be explored in of combinations of practices and ideas from (see, for example, 1995; 1995; 2003). The cyborg metaphor can be in this sense as an of the limits to or teleological architectural rooted in and conceptions of cultural that we have been we could that we have led a cyborg since human has a of cultural and technological ranging from the of to the developments in materials But if we any or to the cyborg idea we its analytical utility as a means to with the cultural and technological complexity of the contemporary The of human in the cyborg city to the between technological change and the of the from the industrial But can the cyborg idea us to understand the dynamics of infrastructure provision in to a digitized or diffuse conception of the If the interactions between human and have the idea that is the of human then this of the insights of cultural that have quite on the of material and systems of cultural The made by for example, over the of locate these within the context of a more experience of within which to a different of and the other are in a sense is that new forms of are a more integrated rather than system of that the of modern and experience. political discourse is grounded within the context of the of the of the realm and the radical indeterminacy of the human subject. If the can be as an and and realm of human we are with the of delineating the characteristics of the human in a cyborg If the body-city interface is conceptualized as a then the distinction between mind and body and between the material and the virtual becomes But what the human is increasingly with the of the city Whilst it is to that our hybridized interactions with space a greater role for and (Mitchell, 2003: it is to of as a digitized of interactions with not only other but also machines and networks. The for example, describes a emerging between an",
+      "cited_by_count": 459,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Urban and Regional Research",
+        "type": "journal",
+        "issn": [
+          "0309-1317",
+          "1468-2427"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1468-2427.2005.00568.x"
+      },
+      "topics": [
+        "Cybernetics and Technology in Society",
+        "Posthumanist Ethics and Activism",
+        "Geographies of human-animal interactions"
+      ],
+      "referenced_works_count": 205,
+      "url": "https://openalex.org/W2144158050"
+    },
+    {
+      "openalex_id": "W2070250811",
+      "doi": "10.1080/00071310020023037",
+      "title": "The myth of the best argument: power, deliberation and reason<sup>1</sup>",
+      "authors": [
+        {
+          "name": "Luigi Pellizzoni",
+          "openalex_id": "A5055162961",
+          "orcid": "https://orcid.org/0000-0003-1077-2293"
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-03-01",
+      "abstract": "ABSTRACT Power in communication takes two main forms. As \u2018external\u2019 power, it consists in the ability to acknowledge or disregard a speaker or a discourse. As \u2018internal\u2019 power, it is the ability of an argument to eliminate other arguments by demonstrating its superiority. A positive or negative value may be ascribed to these forms of power. Four ideal\u2010typical positions are discussed \u2013 strategy, technocracy, constructionism, and deliberation. Public deliberation has three virtues \u2013 civic virtue, governance virtue and cognitive virtue. Deliberation lowers the propensity to, and the benefit of, strategic behaviour. It also increases knowledge, enhancing the quality of decisions. For Habermas, the unity of reason is expressed in the possibility of agreement on the most convincing argument. However, sometimes conflicts are deeplying, principles and factual descriptions are profoundly different, and uncertainty is radical. The best argument cannot be found. There is no universal reason. The question is whether non\u2010strategic agreement may spring from the incommensurability of languages. In search of an answer, Rawls's concept of overlapping consensus, the feminist theory of the public sphere, and the idea of deliberation as co\u2010operation are discussed. The argument developed is that the approach to deliberative democracy may be renewed by rethinking its motivational and cognitive elements. Public deliberation is grounded on a pre\u2010political level of co\u2010operation. Intractable controversies may be faced at the level of practices, looking for local, contextual answers.",
+      "cited_by_count": 218,
+      "type": "review",
+      "source": {
+        "name": "British Journal of Sociology",
+        "type": "journal",
+        "issn": [
+          "0007-1315",
+          "1468-4446"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ricerca.sns.it/bitstream/11384/128069/1/myth%20of%20best%20argument-preprint.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2070250811"
+    },
+    {
+      "openalex_id": "W2149683492",
+      "doi": "10.1111/j.1467-8551.2006.00493.x",
+      "title": "Business Ethics as Practice",
+      "authors": [
+        {
+          "name": "Stewart Clegg",
+          "openalex_id": "A5080767366",
+          "orcid": "https://orcid.org/0000-0001-6083-4283",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Martin Kornberger",
+          "openalex_id": "A5004523722",
+          "orcid": "https://orcid.org/0000-0003-1682-770X",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        },
+        {
+          "name": "Carl Rhodes",
+          "openalex_id": "A5090099364",
+          "orcid": "https://orcid.org/0000-0002-6571-2872",
+          "institutions": [
+            "University of Technology Sydney"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-06-16",
+      "abstract": "In this article we develop a conceptualization of business ethics as practice. Starting from the view that the ethics that organizations display in practice will have been forged through an ongoing process of debate and contestation over moral choices, we examine ethics in relation to the ambiguous, unpredictable, and subjective contexts of managerial action. Furthermore, we examine how discursively constituted practice relates to managerial subjectivity and the possibilities of managers being moral agents. The article concludes by discussing how the \u2018ethics as practice\u2019 approach that we expound provides theoretical resources for studying the different ways that ethics manifest themselves in organizations as well as providing a practical application of ethics in organizations that goes beyond moralistic and legalistic approaches.",
+      "cited_by_count": 318,
+      "type": "article",
+      "source": {
+        "name": "British Journal of Management",
+        "type": "journal",
+        "issn": [
+          "1045-3172",
+          "1467-8551"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://research.vu.nl/en/publications/77b2d316-12a4-48ba-a890-ff398d059e35"
+      },
+      "topics": [
+        "Ethics in Business and Education",
+        "Management and Organizational Studies",
+        "Management Theory and Practice"
+      ],
+      "referenced_works_count": 162,
+      "url": "https://openalex.org/W2149683492"
+    },
+    {
+      "openalex_id": "W2125073413",
+      "doi": null,
+      "title": "Religious Sensations. Why Media, Aesthetics and Power Matter in the Study of Contemporary Religion",
+      "authors": [
+        {
+          "name": "Birgit Meyer",
+          "openalex_id": "A5103042842",
+          "orcid": "https://orcid.org/0000-0001-7186-7865",
+          "institutions": [
+            "National Centre of Research in Social and Cultural Anthropology"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": null,
+      "cited_by_count": 233,
+      "type": "article",
+      "source": {
+        "name": "Digital Academic REpository of VU University Amsterdam (Vrije Universiteit Amsterdam)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1871/10311"
+      },
+      "topics": [
+        "Media, Religion, Digital Communication",
+        "Religious Tourism and Spaces",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2125073413"
+    },
+    {
+      "openalex_id": "W2131564699",
+      "doi": "10.1075/prag.21.4.01bre",
+      "title": "Critical discourse analysis and its critics",
+      "authors": [
+        {
+          "name": "Ruth Breeze",
+          "openalex_id": "A5049031148",
+          "orcid": "https://orcid.org/0000-0002-8132-225X"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-18",
+      "abstract": "This article briefly reviews the rise of Critical Discourse Analysis and teases out a detailed analysis of the various critiques that have been levelled at CDA and its practitioners over the last twenty years, both by scholars working within the \u201ccritical\u201d paradigm and by other critics. A range of criticisms are discussed which target the underlying premises, the analytical methodology and the disputed areas of reader response and the integration of contextual factors. Controversial issues such as the predominantly negative focus of much CDA scholarship, and the status of CDA as an emergent \u201cintellectual orthodoxy\u201d, are also reviewed. The conclusions offer a summary of the principal criticisms that emerge from this overview, and suggest some ways in which these problems could be attenuated.",
+      "cited_by_count": 275,
+      "type": "article",
+      "source": {
+        "name": "Pragmatics Quarterly Publication of the International Pragmatics Association (IPrA)",
+        "type": "journal",
+        "issn": [
+          "1018-2101",
+          "2406-4238"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.jbe-platform.com/deliver/fulltext/prag.21.4.01bre.pdf?itemId=%2Fcontent%2Fjournals%2F10.1075%2Fprag.21.4.01bre&mimeType=pdf&containerItemId=content/journals/24064238"
+      },
+      "topics": [
+        "Discourse Analysis in Language Studies",
+        "Multilingual Education and Policy",
+        "Language, Discourse, Communication Strategies"
+      ],
+      "referenced_works_count": 108,
+      "url": "https://openalex.org/W2131564699"
+    },
+    {
+      "openalex_id": "W1582040408",
+      "doi": "10.31269/triplec.v12i1.552",
+      "title": "Social Media and the Public Sphere",
+      "authors": [
+        {
+          "name": "Christian Fuchs",
+          "openalex_id": "A5060268505",
+          "orcid": "https://orcid.org/0000-0003-0589-4579",
+          "institutions": [
+            "University of Westminster"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-02-19",
+      "abstract": "Social media has become a key term in Media and Communication Studies and public discourse for characterising platforms such as Facebook, Twitter, YouTube, Wikipedia, LinkedIn, Wordpress, Blogspot, Weibo, Pinterest, Foursquare and Tumblr. This paper discusses the role of the concept of the public sphere for understanding social media critically. It argues against an idealistic interpretation of Habermas and for a cultural-materialist understanding of the public sphere concept that is grounded in political economy. It sets out that Habermas\u2019 original notion should best be understood as a method of immanent critique that critically scrutinises limits of the media and culture grounded in power relations and political economy. The paper introduces a theoretical model of public service media that it uses as foundation for identifying three antagonisms of the contemporary social media sphere in the realms of the economy, the state and civil society. It concludes that these limits can only be overcome if the colonisation of the social media lifeworld is countered politically so that social media and the Internet become public service and commons-based media.Acknowledgement: This paper is the extended version of Christian Fuchs\u2019 inaugural lecture for his professorship of social media at the University of Westminster that he took up on February 1st, 2013. He gave the lecture on February 19th, 2014, at the University of Westminster.The video version of the inaugural lecture is available at:https://vimeo.com/97173645",
+      "cited_by_count": 187,
+      "type": "article",
+      "source": {
+        "name": "tripleC Communication Capitalism & Critique Open Access Journal for a Global Sustainable Information Society",
+        "type": "journal",
+        "issn": [
+          "1726-670X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.triple-c.at/index.php/tripleC/article/download/552/529"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Gender, Feminism, and Media",
+        "Impact of Technology on Adolescents"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W1582040408"
+    },
+    {
+      "openalex_id": "W2090254071",
+      "doi": "10.1080/00220620600555030",
+      "title": "Educational Administration as a Historical Discipline: An<i>Apologia Pro Vita Historia</i>",
+      "authors": [
+        {
+          "name": "Eugenie A. Sam\u0131er",
+          "openalex_id": "A5071655816",
+          "orcid": "https://orcid.org/0000-0003-3565-0866"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-06-27",
+      "abstract": "Abstract This paper discusses the contributions history can make to educational administration and how history needs to be conceptualised as a humanities discipline to serve this purpose, including two aspects of the field of particular relevance to educational administration and leadership, biography and comparative studies. The value of history is presented in its interpretive power, in both investigating the particular through individual cases and how these are related to larger societal forces of change producing explanation, establishing causal relations, and achieving understanding as Verstehen in its full hermeneutic sense. Notes 1. Nietzsche, Friedrich. On the Advantage and Disadvantage of History for Life. Indianapolis: Hackett, 1980 [1874], 7. 2. Or even political economy in the case of Marxist and Critical Theory writers. 3. For a discussion of the central question as it pertains to administration, see Samier Eugenie. \"Demandarinisation in the New Public Management: Examining Changing Administrative Authority from a Weberian Perspective.\" In Max Webers Herrschaftssoziologie: Studien zu Entstehung und Wirkung. edited by E. Hanke and W. J. Mommsen. T\u00fcbingen: Mohr/Siebeck, 2001: 235\u2013263; \"Toward a Weberian Public Administration: The Infinite Web of History, Values, and Authority in Administrative Mentalities.\" Halduskultuur: Administrative Culture. \u0410\u2202\u043cu\u043ducmpamu\u0431\u043da\u044f \u043ay\u043b\u044amypa\u044e. Verwaltungskultur. Hallintokulttuuri [An Interdisciplinary Public Administration Journal], 6 (2005): 60\u201393. 4. Hennis, Wilhelm. Max Weber: Essays in Reconstruction. London: Allyn & Unwin, 1988, 183. 5. Samier, Eugenie. \"Toward Public Administration as a Humanities Discipline: A Humanistic Manifesto.\" Halduskultuur: Administrative Culture. \u0410\u2202\u043cu\u043ducmpamu\u0431\u043da\u044f \u043ay\u043b\u044amypa\u044e. Verwaltungskultur. Hallintokulttuuri [An Interdisciplinary Public Administration Journal], 6 (2005): 6\u201359. 6. See Weber's opus magnum, Economy and Society (Berkeley: University of California Press, 1968) for the classic definition of bureaucratisation \u2013 compartmentalisation is inevitable the more an organisation becomes bureaucratic. 7. Even though it has become common practice in the English\u2010speaking world to use the terms 'leadership' and 'administration' synonymously in education to denote formal positions of authority, many still maintain a distinction between the two (as one can note in the titles in note 9). Following to some extent in the Weberian tradition, but also in the public administration tradition, this author recognises the distinction as follows: administrative roles are those that are formally structured and whose legitimacy and power are sanctioned through policy regimes that do not require acceptance of the person but the responsibilities of the office; leadership roles, on the other hand, are constructed in interpersonal relationships that are not necessarily formally sanctioned, whose legitimacy is conferred by followers on individuals for their personal qualities, and whose value is not bound by existing organisational or institutional purpose and policy regimes. In other words, administration is an organisationally constituted formal category, and leadership is a personally constructed political category. 8. The International Handbook does include a few chapters that have short subsections providing historical overviews of educational programs and research approaches; however, they play a marginal role in the overall publication. 9. Davies, B., and J. West\u2013Burnham, eds. Handbook of Educational Leadership and Management. London: Pearson, 2003; Fullan, Michael., ed. The Jossey\u2010Bass Reader on Educational Leadership. San Francisco: Jossey\u2010Bass, 2000; Leithwood, K., J. Chapman, D. Corson, P. Hallinger, and A. Hart, eds. International Handbook of Educational Leadership and Administration, 2 vols. Dordrecht: Kluwer Academic Publishers, 1996; Murphy, J., and K. S. Louis, eds. Handbook of Research on Educational Administration, 2nd edn. San Francisco: Jossey Bass, 1999. 10. Adams, Guy. \"Enthralled with Modernity: The Historical Context of Knowledge and Theory Development in Public Administration.\" Public Administration Review 52, no. 4 (1992): 363\u2013373. 11. See Samier, \"Toward Public Administration as a Humanities Discipline\", for a more detailed discussion of history in public administration. 12. Waldo, Dwight. Perspectives on Administration. Tuscaloosa: University of Alabama Press, 1956; The Enterprise of Public Administration: A Summary View. Novato: Chandler & Sharpe, 1980; Nash, Gerald. Perspectives on Administration: The Vistas of History. Berkeley: Institute of Government Studies, 1969; Cooper, P., L. Brady, O. Hildalgo\u2010Hardeman, A. Hyde, K. Naff, S. Ott, and H. White. Public Administration for the Twenty\u2010First Century. New York: Harcourt Brace, 1998; Raadschelders, Jos. Handbook of Administrative History. New Brunswick: Transaction Publishers, 1998. 13. Caiden, Gerald. \"Getting at the Essence of the Administrative State.\" In Handbook of Bureaucracy, edited by A. Farazmand. New York: Marcel Dekker, 1994: 65\u201378. 14. An overview of the recent development of administrative history in other countries, accompanied by an extensive bibliography, is provided in Raadschelders, Handbook of Administrative History. 15. White, Leonard. The Federalists. New York: Macmillan, 1948; The Jeffersonians. New York: Macmillan, 1951; The Jacksonians. New York: Macmillan, 1954; The Republican Era. New York: Macmillan, 1958; Van Riper, Paul. A History of the U.S. Civil Service. Evanston: Row, Peterson, 1958; Chandler, Ralph., ed. A Centennial History of the American Administrative State. New York: The Free Press, 1987. 16. Noted for approaching the field as an idiographic discipline more akin to the humanities than the conventional social sciences, Granatstein, J. L. The Ottawa Men: The Civil Service Mandarins, 1935\u20131957. Toronto: Oxford University Press, 1982; Hodgetts, J. E., W. McCloskey, R. Whittaker, and S. Wilson. The Biography of an Institution: The Civil Service Commission of Canada, 1908\u20131967. Montreal: McGill\u2010Queen's University Press, 1972; Finer, Samuel. The History of Government. Oxford: Oxford University Press, 1997. 17. Rugge, Fabio. \"Eine Wissenschaft ohne Vergangenheit \u2013 eine Geschichte ohne Zukunft? Ein kleiner Streifung durch verwaltungswissenschaftliche Zeitschriften.\" Jahrbuch fuer Europaeische Verwaltungsgeschichte 5 (1993): 369\u2013380; Raadschelders, Handbook of Administrative History. It is important to note that in many European countries, educational administration as a separate discipline does not exist, but instead is treated as part of public administration. 18. McCurdy, Howard. Public Administration: A Bibliographic Guide to the Literature. New York: Marcel Dekker, 1986: 3\u20139. 19. Borins, Sanford. \"The Role of Universities in Public Administration Education.\" Canadian Public Administration 33, no. 3 (1990): 348\u2013365. 20. Raadschelders, Handbook of Administrative History, 30, 4. 21. Mills, C. Wright. Images of Man: The Classic Tradition in Sociological Thinking. New York: Braziller, 1960. 22. Elias, Norbert. \"The Retreat of Sociologists into the Present.\" In Modern German Sociology, edited by V. Meja, D. Misgeld and N. Stehr, eds. New York: Columbia University Press, 1987: 150\u2013172, 150. 23. Habermas, J\u00fcrgen. On the Logic of the Social Sciences. Cambridge: MIT Press, 1988, 16. 24. Weber, Max. Economy and Society: An Outline of Interpretive Sociology. Berkeley: University of California Press, 1968, 19. 25. Habermas, On the Logic of the Social Sciences, 18\u201320. 26. Granatstein, J. L. Who Killed Canadian History? Toronto: HarperCollins, 1998: 11\u201314. 27. Ibid., 33, 41. 28. Waldo, Dwight. The Study of Public Administration. New York: Random House, 1955, 16. 29. Waldo, Perspectives on Administration, 60. 30. Nash, Perspectives on Administration, 25. 31. Waldo, Perspectives on Administration, 61; Raadschelders, Handbook of Administrative History, 250. 32. Waldo, Perspectives on Administration, 67\u20138. 33. Ibid., 58\u20139. 34. Raadschelders, Handbook of Administrative History, 6\u20138, 23. 35. Greenfield, T. \"Against Group Mind: An Anarchistic Theory of Organization.\" In Greenfield on Educational Administration: Towards a Humane Science, edited by T. Greenfield and P. Ribbins. London: Routledge, 1993: 122\u201333, 129. 36. Hodgkinson, Christopher. Towards a Philosophy of Administration. Oxford: Basil Blackwell, 1978; Educational Leadership: A Moral Art. New York: SUNY, 1983; Administrative Philosophy: Values and Motivations in Administrative Life. Oxford: Pergamon, 1996. 37. Gronn, P. The Making of Educational Leaders. London: Cassell, 1999. 38. Gunter, H., and P. Ribbins. \"Leadership Studies in Education: Towards a Map of the Field.\" Educational Management & Administration 30, no. 4 (2002): 387\u2013416; Ribbins, P. and H. Gunter. \"Mapping Leadership Studies in Education: Towards a Typology of Knowledge Domains.\" Educational Management & Administration 30, no. 4 (2002): 359\u201385. 39. See for overviews and representative writings: Himmelfarb, Gertrude. The New History and the Old: Critical Essays and Reappraisals, rev. ed. Cambridge: Harvard University Press, 2004; Stern, Fritz. The Varieties of History from Voltaire to the Present. New York: Random House, 1973. 40. See Hamilton, Paul. Historicism: The New Critical Idiom. London: Routledge, 2003. 41. For one account of the debate, see Baldwin, Peter. Hitler, the Holocaust and the Historians' Dispute. Boston: Beacon Press, 1990. 42. Weber, Max. Max Weber on Law in Economy and Society. Cambridge; Harvard University Press, 1954, 2. 43. Weber, Max. The Methodology of the Social Sciences. New York: Free Press, 1949, 69. 44. Ibid., 72. 45. Ibid., 56, 61; Giddens, Anthony. Capitalism and Modern Social Theory: An Analysis of the Writings of Marx, Durkheim and Max Weber. London: Cambridge University Press, 1971, 211. 46. Pillay, Nirmala. \"The Significance of Gadamer's Hermeneutics for Cross\u2010cultural Understanding.\" South African Journal of Philosophy 21, no. 4 (2002): 330\u2013344. See Gadamer, Hans\u2010Georg. Truth and Method, 2nd ed. New York: Crossroad, 1989, 262: 'The true historical object is not an object at all, but the unity of the one and the other, a relationship in which exist both the reality of history and the reality of historical understanding.' 47. For example, Gladden, Edgar. A History of Public Administration. London: Frank Cass, 1972; Molitor, A. \"The History of Administration.\" International Review of Administrative Sciences 49, no. 1 (1983): 1\u20133. 48. Madaria, Jose. G. \"Metodologia del studio de la historia de la administracion publica Espanola y aproximacion a sus Fuentes.\" Revue International des Sciences Administratives 46, no. 1 (1980): 35\u201347; Tiihonen, Seppo. Institutions and Bureaucrats: Studies on Administrative History. Helsinki: Publications of the Commission on the History of Central Administration in Finland, 1989; Raadschelders, Handbook of Administrative History. 49. Oates, S. Biography as History, Waco: Markham Press Fund, 1991; England, F. \"Toward a Reconsideration of Biography and Other Forms of Life Writing as a Focus for Teaching Educational Administration.\" Educational Administration Quarterly 31, no. 2 (1995): 203\u201323. 50. Edinger, L. \"Political Science and Political Biography: Reflections on the Study of Leadership.\" The Journal of Politics 26 (1964): 423\u201339; Gronn, P., and P. Ribbins. \"Leaders in Context: Postpositivist Approaches to Understanding Educational Leadership.\" Educational Administration Quarterly 32, no. 3 (1996): 452\u201373; Ribbins, Peter. \"Biography and the Study of School Leader Careers: Towards a Humanistic Approach.\" In Leadership in Education, edited by M. Brundrett, N. Burton and R. Smith. London: Sage, 2003: 55\u201373; Theakston, K. \"The Biographical Approach to Public Administration: Potential, Purpose and Problems.\" In Bureaucrats and Leadership, edited by K. Theakston. Houndmills: Macmillan, 2000: 1\u201316. 51. England, \"Toward a Reconsideration of Biography,\" 213. 52. For a more detailed and comprehensive development of a theory of comparative administration, see Samier, Eugenie. \"Reconciling Canadian\u2010Russian Differences: On the Art of Comparing Public Administration Systems.\" In \u041a\u0410\u041d\u0410\u0414\u0410 \u0412\u0417\u0413\u041b\u042f\u0414 \u0418\u0417 \u0420\u041e\u0421\u0421\u0418\u0418 [Canada: Views from Russia], edited by V. I. Sokolov. Moscow: Russian Academy of Sciences, 2005. 53. Aeberhard, Jane H. Comparative Study of Contents of Civil Service Statutes. Geneva: International Labour Organisation, Department for Government and Labour Law and Administration, 2000. As an additional note, international comparisons are even difficult to make on the basis of the composition of the civil service for percentage of workforce and GDP purposes, as some countries include groups others do not, such as teachers and university professors. 54. Peters, Guy. \"Administrative Traditions.\" [cited 28 October 2004]. Available from http://www1.worldbank.org/publicsector/civilservice/traditions.htm; INTERNET. 55. See the following as an explicit attempt to contribute to this: Peters, Guy. \"Theory and Methodology in the Study of Comparative Public Administration.\" In Comparative Public Management: Putting U.S Public Policy and Implementation in Context, edited by R. Baker. Westport: Praeger, 1994. 56. Tuohy, Carolyn J. Policy and Politics in Canada: Institutionalized Ambivalence. Philadelphia: Temple University Press, 1992, 3. 57. Huttunen T., P. Pesonen, and S. Turoma. \"Modernism and Postmodernism: Means of Understanding 20th Century Russian Culture.\" In Russia: More Different than Most, edited by M. Kangaspuro. Helsinki: Kikimora Publications, 2001: 29\u201344.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Journal of Educational Administration & History",
+        "type": "journal",
+        "issn": [
+          "0022-0620",
+          "1478-7431"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Historical Education Studies Worldwide",
+        "Diverse Education Studies and Reforms",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W2090254071"
+    },
+    {
+      "openalex_id": "W135364984",
+      "doi": "10.5070/t413012881",
+      "title": "Transmodernity and Interculturality: An Interpretation from the Perspective of Philosophy of Liberation",
+      "authors": [
+        {
+          "name": "Enrique Dussel",
+          "openalex_id": "A5040236031",
+          "institutions": [
+            "Universidad Aut\u00f3noma Metropolitana",
+            "Autodesk (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "In search of self-identity: from Eurocentrism to developmentalist coloniality I belong to a generation of Latin Americans whose intellectual beginnings are situated in the 1950s, after the end of the Second World War.For us, in the Argentina of that era, there was no doubt that we were a part of \"Western culture.\"For that reason, some of our subsequent categorical judgments are a natural expression of someone who opposes himself.The philosophy that we studied set out from the Greeks, in whom we saw our most remote lineage.The Amerindian World had no presence in our studies, and none of our professors would have been able to articulate the origin of philosophy with reference to indigenous peoples. 2 Moreover, the ideal philosopher was one who was familiar with the precise details of classical Western philosophers and their contemporary developments.There existed no possibility whatsoever for a specifically Latin American philosophy.It is difficult to evoke in the present the firm hold that the European model of philosophy had on us (since at that moment in Argentina there was no reference to the United States, yet).Germany and France had complete hegemony, especially in South America (although this was not the case in Mexico, Central America, or the Hispanic, French, or British Caribbean).",
+      "cited_by_count": 191,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt6591j76r/qt6591j76r.pdf?t=m6aapy"
+      },
+      "topics": [
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W135364984"
+    },
+    {
+      "openalex_id": "W2524046809",
+      "doi": "10.1007/s11024-016-9308-7",
+      "title": "The Problem of Expertise in Knowledge Societies",
+      "authors": [
+        {
+          "name": "Reiner Grundmann",
+          "openalex_id": "A5036479753",
+          "orcid": "https://orcid.org/0000-0003-0266-9296",
+          "institutions": [
+            "University of Nottingham"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-09-27",
+      "abstract": "This paper puts forward a theoretical framework for the analysis of expertise and experts in contemporary societies. It argues that while prevailing approaches have come to see expertise in various forms and functions, they tend to neglect the broader historical and societal context, and importantly the relational aspect of expertise. This will be discussed with regard to influential theoretical frameworks, such as laboratory studies, regulatory science, lay expertise, post-normal science, and honest brokers. An alternative framework of expertise is introduced, showing the limitations of existing frameworks and emphasizing one crucial element of all expertise, which is their role in guiding action.",
+      "cited_by_count": 221,
+      "type": "article",
+      "source": {
+        "name": "Minerva",
+        "type": "journal",
+        "issn": [
+          "0026-4695",
+          "1573-1871"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007%2Fs11024-016-9308-7.pdf"
+      },
+      "topics": [
+        "Education, Healthcare and Sociology Research"
+      ],
+      "referenced_works_count": 113,
+      "url": "https://openalex.org/W2524046809"
+    },
+    {
+      "openalex_id": "W1442129841",
+      "doi": "10.1007/s11625-015-0326-4",
+      "title": "The real type and ideal type of transdisciplinary processes: part I\u2014theoretical foundations",
+      "authors": [
+        {
+          "name": "Roland W. Scholz",
+          "openalex_id": "A5020171024",
+          "orcid": "https://orcid.org/0000-0003-2506-3254",
+          "institutions": [
+            "University of Zurich",
+            "Fraunhofer Institute for Interfacial Engineering and Biotechnology",
+            "Fraunhofer Society"
+          ]
+        },
+        {
+          "name": "Gerald Steiner",
+          "openalex_id": "A5035374136",
+          "orcid": "https://orcid.org/0000-0003-3340-3941",
+          "institutions": [
+            "Universit\u00e4t f\u00fcr Weiterbildung Krems",
+            "Harvard University Press"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-13",
+      "abstract": null,
+      "cited_by_count": 311,
+      "type": "article",
+      "source": {
+        "name": "Sustainability Science",
+        "type": "journal",
+        "issn": [
+          "1862-4057",
+          "1862-4065"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11625-015-0326-4.pdf"
+      },
+      "topics": [
+        "Interdisciplinary Research and Collaboration",
+        "Sustainability and Climate Change Governance",
+        "Complex Systems and Decision Making"
+      ],
+      "referenced_works_count": 115,
+      "url": "https://openalex.org/W1442129841"
+    },
+    {
+      "openalex_id": "W2079778878",
+      "doi": "10.3390/info2010140",
+      "title": "An Alternative View of Privacy on Facebook",
+      "authors": [
+        {
+          "name": "Christian Fuchs",
+          "openalex_id": "A5060268505",
+          "orcid": "https://orcid.org/0000-0003-0589-4579",
+          "institutions": [
+            "Uppsala University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-02-09",
+      "abstract": "The predominant analysis of privacy on Facebook focuses on personal information revelation. This paper is critical of this kind of research and introduces an alternative analytical framework for studying privacy on Facebook, social networking sites and web 2.0. This framework is connecting the phenomenon of online privacy to the political economy of capitalism\u2014a focus that has thus far been rather neglected in research literature about Internet and web 2.0 privacy. Liberal privacy philosophy tends to ignore the political economy of privacy in capitalism that can mask socio-economic inequality and protect capital and the rich from public accountability. Facebook is in this paper analyzed with the help of an approach, in which privacy for dominant groups, in regard to the ability of keeping wealth and power secret from the public, is seen as problematic, whereas privacy at the bottom of the power pyramid for consumers and normal citizens is seen as a protection from dominant interests. Facebook\u2019s privacy concept is based on an understanding that stresses self-regulation and on an individualistic understanding of privacy. The theoretical analysis of the political economy of privacy on Facebook in this paper is based on the political theories of Karl Marx, Hannah Arendt and J\u00fcrgen Habermas. Based on the political economist Dallas Smythe\u2019s concept of audience commodification, the process of prosumer commodification on Facebook is analyzed. The political economy of privacy on Facebook is analyzed with the help of a theory of drives that is grounded in Herbert Marcuse\u2019s interpretation of Sigmund Freud, which allows to analyze Facebook based on the concept of play labor (= the convergence of play and labor).",
+      "cited_by_count": 117,
+      "type": "article",
+      "source": {
+        "name": "Information",
+        "type": "journal",
+        "issn": [
+          "2078-2489"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2078-2489/2/1/140/pdf?version=1297247496"
+      },
+      "topics": [
+        "Privacy, Security, and Data Protection",
+        "Sexuality, Behavior, and Technology",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W2079778878"
+    },
+    {
+      "openalex_id": "W636942736",
+      "doi": "10.21435/sff.15",
+      "title": "Tradition through Modernity: Postmodernism and the Nation-State in Folklore Scholarship",
+      "authors": [
+        {
+          "name": "Pertti Anttonen",
+          "openalex_id": "A5022121052",
+          "orcid": "https://orcid.org/0000-0003-4866-9910",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-02-06",
+      "abstract": "\"In their study of social practices deemed traditional, scholars tend to use the concept and idea of tradition as an element of meaning in the practices under investigation. But just whose meaning is it? Is it a meaning generated by those who study tradition or those whose traditions are being studied? In both cases, particular criteria for traditionality are employed, whether these are explicated or not. Individuals and groups will no doubt continue to uphold their traditional practices or refer to their practices as traditional. While they are in no way obliged to explicate in analytical terms their criteria for traditionality, the same cannot be said for those who make the study of traditions their profession. In scholarly analysis, traditions need to be explained instead of used as explanations for apparent repetitions and replications or symbolic linking in social practice, values, history, and heritage politics. This book takes a closer look at \u2018tradition\u2019 and \u2018folklore\u2019 in order to conceptualize them within discourses on modernity and modernism. The first section discusses \u2018modern\u2019 and \u2018traditional\u2019 as modern concepts and the study of folklore as a modern trajectory. The underlying tenet here is that non-modernity cannot be represented without modern mediation, which therefore makes the representations of non-modernity epistemologically modern. The second section focuses on the nation-state of Finland and the nationalistic use of folk traditions in the discursive production of Finnish modernity and its Others. The insights are applicable worldwide in discussions on cultural representation. \"",
+      "cited_by_count": 162,
+      "type": "book",
+      "source": {
+        "name": "Finnish Literature Society eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://oa.finlit.fi/site/books/10.21435/sff.15/download/2035/"
+      },
+      "topics": [
+        "Folklore, Mythology, and Literature Studies",
+        "Culinary Culture and Tourism",
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 358,
+      "url": "https://openalex.org/W636942736"
+    },
+    {
+      "openalex_id": "W2108624909",
+      "doi": "10.1177/1741659012443227",
+      "title": "Crime, media and the will-to-representation: Reconsidering relationships in the new media age",
+      "authors": [
+        {
+          "name": "Majid Yar",
+          "openalex_id": "A5032096870",
+          "orcid": "https://orcid.org/0000-0002-5680-3801",
+          "institutions": [
+            "University of Hull"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-07-18",
+      "abstract": "This paper considers the ways in which the rise of new media might challenge commonplace criminological assumptions about the crime\u2013media interface. Established debates around crime and media have long been based upon a fairly clear demarcation between production and consumption, between object and audience \u2013 the media generates and transmits representations of crime, and audiences engage with them. However, one of the most noticeable changes occurring in the wake of the development of new media is the proliferation of self-organised production by \u2018ordinary people\u2019 \u2013 everything ranging from self-authored web pages and \u2018blogs\u2019, to self-produced video created using hand-held camcorders, camera-phones and \u2018webcams\u2019. Today we see the spectacle of people performing acts of crime and deviance in order to record them, send them and upload them to the Internet. This kind of \u2018will to representation\u2019 may be seen in itself as a new kind of causal inducement to law- and rule-breaking behaviour. It may be that, in the new media age, the terms of criminological questioning need to be sometimes reversed: instead of asking whether \u2018media\u2019 instigates crime or fear of crime, we must ask how the very possibility of mediating oneself to an audience through self-representation might be bound up with the genesis of criminal behaviour.",
+      "cited_by_count": 129,
+      "type": "article",
+      "source": {
+        "name": "Crime Media Culture An International Journal",
+        "type": "journal",
+        "issn": [
+          "1741-6590",
+          "1741-6604"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hull-repository.worktribe.com/output/466240"
+      },
+      "topics": [
+        "Crime, Deviance, and Social Control",
+        "Crime Patterns and Interventions",
+        "Cybercrime and Law Enforcement Studies"
+      ],
+      "referenced_works_count": 91,
+      "url": "https://openalex.org/W2108624909"
+    },
+    {
+      "openalex_id": "W2142412780",
+      "doi": "10.1086/596123",
+      "title": "Materiality in the Future of History: Things, Practices, and Politics",
+      "authors": [
+        {
+          "name": "Frank Trentmann",
+          "openalex_id": "A5064257872",
+          "institutions": [
+            "Birkbeck, University of London"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-03-25",
+      "abstract": "An abstract is not available for this content so a preview has been provided. Please use the Get access link above for information on how to access this content.",
+      "cited_by_count": 160,
+      "type": "article",
+      "source": {
+        "name": "Journal of British Studies",
+        "type": "journal",
+        "issn": [
+          "0021-9371",
+          "1545-6986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/FF48A456738EB0635FBDF2022F48C71F/S0021937100013277a.pdf/div-class-title-materiality-in-the-future-of-history-things-practices-and-politics-div.pdf"
+      },
+      "topics": [
+        "Art, Politics, and Modernism",
+        "Photography and Visual Culture",
+        "History, Culture, and Diplomacy"
+      ],
+      "referenced_works_count": 142,
+      "url": "https://openalex.org/W2142412780"
+    },
+    {
+      "openalex_id": "W2772839085",
+      "doi": "10.1007/978-3-319-66659-4_4",
+      "title": "Reconsidering Different Visions of Scientific Literacy and Science Education Based on the Concept of Bildung",
+      "authors": [
+        {
+          "name": "Jesper Sj\u00f6str\u00f6m",
+          "openalex_id": "A5072176466",
+          "orcid": "https://orcid.org/0000-0002-3083-1716",
+          "institutions": [
+            "Malm\u00f6 University"
+          ]
+        },
+        {
+          "name": "Ingo Eilks",
+          "openalex_id": "A5077406641",
+          "orcid": "https://orcid.org/0000-0003-0453-4491",
+          "institutions": [
+            "University of Bremen"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-01",
+      "abstract": "Abstract Over the last 50 years, policy makers and STEM educators have argued for Scientific Literacy (SL). SL is a typical boundary object that everyone can agree on, but that is filled with different meanings by different stakeholders. Roberts (as published in Abell SK, Lederman NG (eds), Handbook of research on science education. Lawrence Erlbaum, Mahwah, pp. 729\u2013780, 2007) has identified two main orientations of SL: Vision I starts from and focuses on scientific content and scientific processes to learn about corresponding applications later, while Vision II focuses on contextualizing scientific knowledge for giving its use in life and society meaning. The tension between Vision I and II can also be related to the tension between \u201cpipeline science \u2013 preparing future scientists\u201d and \u201cscience for all\u201d. Recently, a more advanced vision of SL was suggested. It is called Vision III and emphasizes philosophical values, politicization and critical global citizenship education. Such an orientation can be well justified by the Central/Northern European educational and cultural tradition called Bildung . In its most contemporary understanding, it is agency-oriented. Bildung -oriented science education aims at making the student capable of a self-determined life in his/her socio-cultural environment, participation in a democratic society, and of empathy and solidarity with others. This concept is also closely connected to more recent educational paradigms that were defined also beyond Europe, e.g. the ideas of Education for Sustainability (EfS) and transformative learning. Both concepts aim on skills development for critical-democratic participation and for shaping our society and culture in a sustainable way. The different visions of SL have consequences for the content and culture of teaching and learning of science and technology. Accepting Vision III requires awareness that our view of selecting and teaching certain content is dependent on our culture, for example our norms, values and worldviews, and on the society we are living in. Learning (cognition) must be complemented with not only meta-learning (metacognition), but also transformative learning, where things are considered from multifaceted (e.g., cultural) perspectives. The discussion in this chapter focuses on educational implications of Vision III of SL and its connection to critical-reflexive Bildung , EfS and transformative learning.",
+      "cited_by_count": 279,
+      "type": "book-chapter",
+      "source": {
+        "name": "Innovations in science education and technology",
+        "type": "book series",
+        "issn": [
+          "1873-1058",
+          "2213-2236"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-319-66659-4_4.pdf"
+      },
+      "topics": [
+        "Educational Strategies and Epistemologies",
+        "Education and Critical Thinking Development",
+        "Adult and Continuing Education Topics"
+      ],
+      "referenced_works_count": 120,
+      "url": "https://openalex.org/W2772839085"
+    },
+    {
+      "openalex_id": "W1489390093",
+      "doi": null,
+      "title": "Mediation and the genesis of presence. Towards a material approach to religion",
+      "authors": [
+        {
+          "name": "Birgit Meyer",
+          "openalex_id": "A5103042842",
+          "orcid": "https://orcid.org/0000-0001-7186-7865"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-10-19",
+      "abstract": "Oratie in verkorte vorm uitgesproken bij de aanvaarding van het ambt van hoogleraar in de Religiewetenschap aan de Universiteit Utrecht op vrijdag 19 oktober 2012.",
+      "cited_by_count": 164,
+      "type": "article",
+      "source": {
+        "name": "Data Archiving and Networked Services (DANS)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://dspace.library.uu.nl/handle/1874/257546"
+      },
+      "topics": [
+        "Religious Education and Schools",
+        "Religion and Society Interactions",
+        "Religion, Society, and Development"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W1489390093"
+    },
+    {
+      "openalex_id": "W2107349476",
+      "doi": "10.1353/sof.2005.0096",
+      "title": "Privileged Access, Privileged Accounts: Toward a Socially Structured Theory of Resources and Discourses",
+      "authors": [
+        {
+          "name": "William R. Freudenburg",
+          "openalex_id": "A5109332493",
+          "institutions": [
+            "University of California, Santa Barbara"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-09-01",
+      "abstract": "Environmental harms involve a \"double diversion\" - two forms of privilege that deserve greater attention. The first involves disproportionality, or the privileged diversion of rights/resources: Contrary to common assumptions, much environmental damage is not economically \"necessary\" - instead, it represents privileged access to the environment. It is made possible in part by the second diversion - the diversion of attention, or distraction - largely through taken-for-granted or privileged accounts, which are rarely questioned, even in leftist critiques. Data show that, rather than producing advanced materials, major polluters tend to be inefficient producers of low-value commodities, and rather than being major employers, they can have emissions-to-jobs ratios a thousand times worse than the economy as a whole. Instead of simply focusing on overall/average levels of environmental problems, sociologists also need to examine disproportionalities, analyzing the socially structured nature Of environmental and discursive privileges. Doing so can offer important opportunities for insights, not just about nature, but also about the nature of power, and about the power of the naturalized.",
+      "cited_by_count": 197,
+      "type": "article",
+      "source": {
+        "name": "Social Forces",
+        "type": "journal",
+        "issn": [
+          "0037-7732",
+          "1534-7605"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.org/content/qt3mv1z5n8/qt3mv1z5n8.pdf?t=lnpz6m"
+      },
+      "topics": [
+        "Environmental Justice and Health Disparities",
+        "Risk Perception and Management",
+        "Mining and Resource Management"
+      ],
+      "referenced_works_count": 86,
+      "url": "https://openalex.org/W2107349476"
+    },
+    {
+      "openalex_id": "W2053473173",
+      "doi": "10.2139/ssrn.1265582",
+      "title": "Mining and Social Movements: Struggles over Livelihood and Rural Territorial Development in the Andes",
+      "authors": [
+        {
+          "name": "Anthony Bebbington",
+          "openalex_id": "A5090791653",
+          "orcid": "https://orcid.org/0000-0003-3342-7898",
+          "institutions": [
+            "University of Colorado Boulder"
+          ]
+        },
+        {
+          "name": "Jeffrey Bury",
+          "openalex_id": "A5111950653",
+          "institutions": [
+            "University of California, Santa Cruz"
+          ]
+        },
+        {
+          "name": "Denise Humphreys Bebbington",
+          "openalex_id": "A5014396118",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Jeannet Ling\u00e1n",
+          "openalex_id": "A5047486799",
+          "institutions": [
+            "London School of Economics and Political Science",
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Juan P. Mu\u00f1oz",
+          "openalex_id": "A5101754856",
+          "orcid": "https://orcid.org/0009-0004-1612-171X"
+        },
+        {
+          "name": "Martin Scurrah",
+          "openalex_id": "A5065772314",
+          "orcid": "https://orcid.org/0000-0002-5991-5446",
+          "institutions": [
+            "University of Manchester",
+            "Centro Peruano de Estudios Sociales"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-01-01",
+      "abstract": null,
+      "cited_by_count": 114,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=1265582"
+      },
+      "topics": [
+        "Mining and Resource Management",
+        "Politics and Society in Latin America",
+        "Indigenous Cultures and History"
+      ],
+      "referenced_works_count": 35,
+      "url": "https://openalex.org/W2053473173"
+    },
+    {
+      "openalex_id": "W2007664553",
+      "doi": "10.5539/jms.v4n3p79",
+      "title": "Positivist and Non-Positivist Paradigm in Social Science Research: Conflicting Paradigms or Perfect Partners?",
+      "authors": [
+        {
+          "name": "Aliyu Ahmad Aliyu",
+          "openalex_id": "A5079658396",
+          "institutions": [
+            "Abubakar Tafawa Balewa University"
+          ]
+        },
+        {
+          "name": "Muhammad Umar Bello",
+          "openalex_id": "A5001918562",
+          "orcid": "https://orcid.org/0000-0003-3474-8335",
+          "institutions": [
+            "Abubakar Tafawa Balewa University"
+          ]
+        },
+        {
+          "name": "Rozilah Kasim",
+          "openalex_id": "A5056603957",
+          "orcid": "https://orcid.org/0000-0002-3931-5507",
+          "institutions": [
+            "Tun Hussein Onn University of Malaysia"
+          ]
+        },
+        {
+          "name": "David Mart\u00edn",
+          "openalex_id": "A5101584545",
+          "orcid": "https://orcid.org/0000-0002-2914-8063",
+          "institutions": [
+            "Tun Hussein Onn University of Malaysia"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-08-28",
+      "abstract": "The idea of a paradigm or worldview as an overarching framework which organizes our entire approach to beingin the globe has become usual since Kuhn published The Structure of Scientific Revolutions in 1962. This papertherefore critically examined the positivist and a non positivist research paradigm in social science research. Itwas revealed that the two paradigms are opposing each other. The findings show that positivist and a nonpositivist research are conflicting paradigms and a researcher needs to cortically evaluate each and everyparadigm before employing it in his research activities. Conclusion was eventually drawn based on the literaturefindings.",
+      "cited_by_count": 171,
+      "type": "article",
+      "source": {
+        "name": "Journal of Management and Sustainability",
+        "type": "journal",
+        "issn": [
+          "1925-4725",
+          "1925-4733"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://ccsenet.org/journal/index.php/jms/article/download/39893/22135"
+      },
+      "topics": [
+        "Complex Systems and Decision Making",
+        "Information Systems Theories and Implementation"
+      ],
+      "referenced_works_count": 132,
+      "url": "https://openalex.org/W2007664553"
+    },
+    {
+      "openalex_id": "W2921234024",
+      "doi": "10.3145/epi.2019.mar.04",
+      "title": "Active audiences and social discussion on the digital public sphere. Review article",
+      "authors": [
+        {
+          "name": "Pere Masip",
+          "openalex_id": "A5063206804",
+          "orcid": "https://orcid.org/0000-0002-8231-0824",
+          "institutions": [
+            "Universitat Ramon Llull"
+          ]
+        },
+        {
+          "name": "Carlos Ruiz-Caballero",
+          "openalex_id": "A5011762143",
+          "orcid": "https://orcid.org/0000-0002-1395-2145",
+          "institutions": [
+            "Universitat Ramon Llull"
+          ]
+        },
+        {
+          "name": "Jaume Suau",
+          "openalex_id": "A5054643440",
+          "orcid": "https://orcid.org/0000-0003-4480-4441",
+          "institutions": [
+            "Universitat Ramon Llull"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-13",
+      "abstract": "In little over a decade, essential concepts in research on communication have become zombie concepts (Beck &amp; Willms, 2004) and are no longer effective for understanding the profound transformation that has taken place with the arrival of the internet. Public sphere, deliberation, audiences, public... the academic literature has oscillated between an initial optimism about the potential for strengthening democracy of communication technologies to a critical scepticism. This text reviews the academic literature with regard to the forms of social deliberation adopted in the context of the media and social networks and its impact on the public sphere.",
+      "cited_by_count": 90,
+      "type": "article",
+      "source": {
+        "name": "El Profesional de la Informacion",
+        "type": "journal",
+        "issn": [
+          "1386-6710",
+          "1699-2407"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://recyt.fecyt.es/index.php/EPI/article/download/epi.2019.mar.04/43198"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Impact of Technology on Adolescents",
+        "Media Studies and Communication"
+      ],
+      "referenced_works_count": 365,
+      "url": "https://openalex.org/W2921234024"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/theo.12383"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/theo.12383",
+      "title": "Social Evolution in <scp>J\u00fcrgen Habermas</scp>: Towards a Weak Anthropological Naturalism between <scp>Kant and Darwin</scp>",
+      "authors": [
+        {
+          "family": "Mej\u00eda Fern\u00e1ndez",
+          "given": "Ricardo"
+        },
+        {
+          "family": "Romero",
+          "given": "Javier"
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Theoria",
+      "volume": "88",
+      "issue": "3",
+      "page": "607-628",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/theo.12383"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,51 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Communicative Action Essays on Habermas Theory of ...' author=Honneth year=1991
+[verify_paper.py] Paper found: Communicative Action, Essays on Jurgen Habermas's ... (score: 62.0)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Communicative Action Essays on Habermas Theory of Communicative Action",
+    "author": "Honneth",
+    "year": 1991
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/591351",
+      "title": "Communicative Action, Essays on Jurgen Habermas's \"The Theory of Communicative Action\"",
+      "authors": [
+        {
+          "family": "Ray",
+          "given": "Larry"
+        },
+        {
+          "family": "Honneth",
+          "given": "Axel"
+        },
+        {
+          "family": "Joas",
+          "given": "Hans"
+        },
+        {
+          "family": "Luke",
+          "given": "Timothy W."
+        }
+      ],
+      "editors": [],
+      "year": 1992,
+      "container_title": "The British Journal of Sociology",
+      "volume": "43",
+      "issue": "4",
+      "page": "688",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/591351",
+      "score": 62.005173
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

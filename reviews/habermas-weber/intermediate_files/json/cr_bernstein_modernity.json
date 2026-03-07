@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/3791048"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/3791048",
+      "title": "Habermas and Modernity",
+      "authors": [
+        {
+          "family": "Dumm",
+          "given": "Thomas L."
+        },
+        {
+          "family": "Bernstein",
+          "given": "Richard J."
+        }
+      ],
+      "editors": [],
+      "year": 1987,
+      "container_title": "Political Psychology",
+      "volume": "8",
+      "issue": "3",
+      "page": "457",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/3791048"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,306 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'Habermas appropriation Weber', limit=20
+[search_philpapers.py] Retrieved 17 entries...
+[search_philpapers.py] Search complete: 17 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "Habermas appropriation Weber",
+  "results": [
+    {
+      "title": "J\u00fcrgen Habermas, The Theory of Communicative Action: Reason and the Rationalization of Society",
+      "url": "https://philpapers.org/rec/HABTTO-4",
+      "philpapers_id": "HABTTO",
+      "snippet": "In the introductory chapter Habermas sets out a powerful series of arguments on such foundational issues as cultural and historical relativism, the methodology of Verstehen, the inseparabilty of interpretation from critique. In addition to clarifying the normative foundations of critical social inquiry, this sets the stage for a systematic appropriation of Weber&#x27;s theory of rationalization and its Marxist reception by Lukacs, Horkheimer and Adorno.",
+      "page_age": null,
+      "extra_snippets": [
+        "In the introductory chapter Habermas sets out a powerful series of arguments on such foundational issues as cultural and historical relativism, the methodology of Verstehen, the inseparabilty of interpretation from critique. In addition to clarifying the normative foundations of critical social inquiry, this sets the stage for a systematic appropriation of Weber's theory of rationalization and its Marxist reception by Lukacs, Horkheimer and Adorno.",
+        "Here, for the first time in English, is volume one of Jurgen Habermas's long-awaited magnum opus: The Theory of Communicative Action. This pathbreaking work is guided by three interrelated concerns: to ...",
+        "The rationalization of law and diagnosis of the times.J. Habermas - 2011 - Russian Sociological Review 10 (3):131-154. Max Weber\u2019s Theory of Rationalization.J.",
+        "Review of Habermas Theory of Communicative Action.Eugene Halton - 1989 - Symbolic Interaction 12:333-360."
+      ]
+    },
+    {
+      "title": "J. Habermas, Max Weber\u2019s Theory of Rationalization",
+      "url": "https://philpapers.org/rec/HABMWT",
+      "philpapers_id": "HABMWT",
+      "snippet": "Habermas continues his critical examination of M. Weber\u2019s theory of rationalization by discerning in this third section the logic of Weberian analysis of modernization and showing that it is Weber\u2019s initial point of analysis that allows Weber to approach modernization as societal rationalization.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J. Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "Habermas continues his critical examination of M. Weber\u2019s theory of rationalization by discerning in this third section the logic of Weberian analysis of modernization and showing that it is Weber\u2019s initial point of analysis that allows Weber to approach modernization as societal rationalization.",
+        "The rationalization of law and diagnosis of the times.J. Habermas - 2011 - Russian Sociological Review 10 (3):131-154. Theory in Weberian Marxism: Patterns of Critical Social Theory in Luk\u00e1cs and Habermas.Harry F.",
+        "Max Weber and Postmodern Theory: Rationalization versus Re-enchantment.N. Gane - 2002 - Springer. Habermas: Communicative Reason and the Moral Realization of a Normative Order.Albert Frederick Hart - 1989 - Dissertation, Mcgill University (Canada)",
+        "Habermas argues that Weber\u2019s analysis of modernization does not exhaust the explanatory potential of his own theory."
+      ]
+    },
+    {
+      "title": "Reihan Salam, Habermas vs. Weber on democracy",
+      "url": "https://philpapers.org/rec/SALHVW",
+      "philpapers_id": "SALHVW",
+      "snippet": "But Habermas overlooks the opaque nature of our interests under complex modern conditions, and the difficulty of even knowing what the modern state is doing\u2014let alone judging whether what it is doing serves our interests well. These overlooked sources of public ignorance buttress Weber&#x27;s more pessimistic understanding of democracy, and like the theatrics surrounding popular sovereignty, public ignorance both enables and masks the autonomy that allows state officials and non\u2010state opinion leaders to shape public policy undemocratically.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Reihan Salam"
+        }
+      ],
+      "extra_snippets": [
+        "But Habermas overlooks the opaque nature of our interests under complex modern conditions, and the difficulty of even knowing what the modern state is doing\u2014let alone judging whether what it is doing serves our interests well. These overlooked sources of public ignorance buttress Weber's more pessimistic understanding of democracy, and like the theatrics surrounding popular sovereignty, public ignorance both enables and masks the autonomy that allows state officials and non\u2010state opinion leaders to shape public policy undemocratically.",
+        "Habermas II.David Rasmussen & James Swindal (eds.) - 2009 - Los Angeles: SAGE. Weber: political writings.Max Weber - 1994 - New York: Cambridge University Press.",
+        "Habermas: The Discourse Theory of Law and Democracy.Hugh Baxter - 2011 - Stanford Law Books. Under Weber's shadow: modernity, subjectivity and politics in Habermas, Arendt and MacIntyre.Keith Breen - 2012 - Burlington, VT: Ashgate.",
+        "Modernization, Rights, and Democratic Society: The Limits of Habermas\u2019s Democratic Theory. [REVIEW]Jeff Noonan - 2005 - Res Publica 11 (2):101-123. Democracy despite voter ignorance: A Weberian reply to Somin and Friedman.David Ciepley - 1999 - Critical Review: A Journal of Politics and Society 13 (1-2):191-227."
+      ]
+    },
+    {
+      "title": "Darrow Schecter, The critique of instrumental reason from Weber to Habermas",
+      "url": "https://philpapers.org/rec/SCHTCO-25",
+      "philpapers_id": "SCHTCO",
+      "snippet": "Book Review: The Critique of Instrumental Reason from Weber to Habermas. [REVIEW]Kevin W.",
+      "page_age": null,
+      "extra_snippets": [
+        "Book Review: The Critique of Instrumental Reason from Weber to Habermas. [REVIEW]Kevin W.",
+        "Die Kritik der instrumentellen Vernunft von Weber bis Habermas.Darrow Schecter - unknown",
+        "Habermas, Discourse Ethics, and Normative Validity.Dennis A."
+      ]
+    },
+    {
+      "title": "Barbara Weber, J. Habermas and the Art of Dialogue: The Practicability of the Ideal Speech Situation",
+      "url": "https://philpapers.org/rec/WEBJHA",
+      "philpapers_id": "WEBJHA",
+      "snippet": "Habermas on Understanding: Virtual Participation, Dialogue and the Universality of Truth.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Barbara Weber"
+        }
+      ],
+      "extra_snippets": [
+        "The Philosophy of J\u00fcrgen Habermas: A Critical Introduction.Uwe Steinhoff - 2009 - Oxford University Press.",
+        "Habermas on Understanding: Virtual Participation, Dialogue and the Universality of Truth.",
+        "Habermas and the Grounding of Critical Theory.Dominick LaCapra - 1977 - History and Theory 16 (3):237-264.",
+        "Communicative Praxis Beside Postmodernism. Foucault and Habermas: Communicative Action as Trans-Cultural Politics.Seonghwa Lee - 1991 - Dissertation, Purdue University"
+      ]
+    },
+    {
+      "title": "Eduardo Mendieta, The Axial Age, social evolution, and postsecular consciousness",
+      "url": "https://philpapers.org/rec/MENTAA-8",
+      "philpapers_id": "MENTAA",
+      "snippet": "This article focuses on Karl Jaspers\u2019s notion of the Axial Age, some of its critical appropriation, and how in particular Habermas has returned to this idea, after several critical engagements with ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Eduardo Mendieta"
+        }
+      ],
+      "extra_snippets": [
+        "This article focuses on Karl Jaspers\u2019s notion of the Axial Age, some of its critical appropriation, and how in particular Habermas has returned to this idea, after several critical engagements with Jaspers\u2019s work through his long scholarly productivity.",
+        "Habermas and Religion.Craig J. Calhoun, Eduardo Mendieta & Jonathan VanAntwerpen (eds.) - 2012 - Malden, MA: Polity. Diversity in unity in post-truth times: Max Weber\u2019s challenge and Karl Jaspers\u2019s response.Carmen Lea Dege - 2020 - Philosophy and Social Criticism 46 (6):703-733.",
+        "Myth, Modernity, and the Legacy of the Axial Age: Taylor, Habermas, Assmann, and Jaspers.Carmen Lea Dege - 2023 - Journal of the History of Ideas 84 (4):743-773.",
+        "Intersubjectivity and ecology: Habermas on natural history.Felix K\u00e4mper - forthcoming - Constellations."
+      ]
+    },
+    {
+      "title": "Tarc\u00edsio Amorim Carvalho, The Metaphysics of Communicative Action: A Critique of Habermas\u2019s Moral Theory",
+      "url": "https://philpapers.org/rec/CARTMO-61",
+      "philpapers_id": "CARTMO",
+      "snippet": "J\u00fcrgen Habermas\u2019s communicative theory is characterised by a postmetaphysical account of morality. This perspective stems from Habermas\u2019s appropriation of Modernisation Theory, with the Weberian distinction between questions of taste, truth and rightness.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Tarc\u00edsio Amorim Carvalho"
+        }
+      ],
+      "extra_snippets": [
+        "As I demonstrate, such distinction between ethical and moral reasons takes the validity of MT, along with its epistemological assumptions, as a presupposition for the requirement of universal and impartial normative claims in discourse acts. However, this aprioristic validation of MT is at odds with Habermas\u2019s own view that particular linguistic schemes of reason determine epistemological and truth standards of validity \u2013 as in accordance with a Pragmatic Theory of Meaning.",
+        "Thus, by challenging Habermas\u2019s differentiation of ethics and morality, I argue that communicative rationality should allow for a substantive account of normative validation, which in my theoretical framework combines elements of Alasdair MacIntyre\u2019s theory of traditions, reconfigured into a universalistic project of ethical learning.",
+        "Truth, Moral Rightness, and Justification: A Habermasian Perspective on Decolonizing the University.Anniina Leivisk\u00e4 - 2023 - Educational Theory 73 (2):223-244.",
+        "From Normative Spheres to Normative Practices: New Prospects for Normative Theory after Habermas.Roberto Frega - 2013 - International Journal of Philosophical Studies 21 (5):680-712."
+      ]
+    },
+    {
+      "title": "George E. McCarthy (ed.), Romancing Antiquity: German Critique of the Enlightenment from Weber to Habermas",
+      "url": "https://philpapers.org/rec/GEORAG",
+      "philpapers_id": "GEORAG",
+      "snippet": "In this unique and comprehensive book, George McCarthy examines the influence of Greek philosophy, literature, arts, and politics on the development of twentieth-century German social thought. McCarthy demonstrates that the classical spirit vitalized thinkers such as Weber, Heidegger, Freud, Marcuse, Arendt, Gadamer, and Habermas.",
+      "page_age": null,
+      "extra_snippets": [
+        "In this unique and comprehensive book, George McCarthy examines the influence of Greek philosophy, literature, arts, and politics on the development of twentieth-century German social thought. McCarthy demonstrates that the classical spirit vitalized thinkers such as Weber, Heidegger, Freud, Marcuse, Arendt, Gadamer, and Habermas.",
+        "Romancing Antiquity: German Critique of the Enlightenment from Weber to Habermas. [REVIEW]Richard L.",
+        "Objectivity and the Silence of Reason: Weber, Habermas, and the Methodological Disputes in German Sociology.George E.",
+        "Book reviews : Legitimation crisis. By Jurgen Habermas (tr. Thomas mccarthy). London: Heinemann, 1976. Pp. 166. 2.80. [REVIEW]Patrick D."
+      ]
+    },
+    {
+      "title": "J. Habermas, The Disenchantment of Religious-Metaphysical Worldviews and the Emergence of Modern Structures of Consciousness",
+      "url": "https://philpapers.org/rec/HABTDO-3",
+      "philpapers_id": "HABTDO",
+      "snippet": "This theoretical perspective allows Weber to conduct his analysis simultaneously on two levels: first, from the point of view of universal-historic emergence of modern structures of consciousness; second, from the point of view of embodiment of these structures of rationality in social institutions. Habermas makes a systematic attempts to reconstruct a complex connections between these two levels emphasizing that the logic of Weber\u2019s historical-empirical analysis of the process of disenchantment of the religious worldviews can be adequately grasped on the basis of constitutive meaning of the philosophical concept \u201cvalues embodiment.\u201d For this purpose, Habermas reveals two main restrictions of this analysis.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J. Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "J. Habermas ... In the second part of his essay on Max Weber\u2019s theory of rationalization J.",
+        "Habermas shows that the background of Weber\u2019s theory of rationalization is the neokantian philosophy of values with the help of which Weber analyses a process of religious-metaphysical disenchantment of the worldviews as a result of differentiation of the cultural value spheres.",
+        "This theoretical perspective allows Weber to conduct his analysis simultaneously on two levels: first, from the point of view of universal-historic emergence of modern structures of consciousness; second, from the point of view of embodiment of these structures of rationality in social institutions. Habermas makes a systematic attempts to reconstruct a complex connections between these two levels emphasizing that the logic of Weber\u2019s historical-empirical analysis of the process of disenchantment of the religious worldviews can be adequately grasped on the basis of constitutive meaning of the philosophical concept \u201cvalues embodiment.\u201d For this purpose, Habermas reveals two main restrictions of this analysis.",
+        "Rationalisation.Shivdeep Grewal - 2012 - In Habermas and European integration: Social and cultural modernity beyond the nation state. Manchester: Manchester University Press. pp. 57-63. The Power of the Sacred.Joshua Derman, Peter E. Gordon, Axel Honneth, Daniela K. Helbig, Hans Joas, Lawrence A. Scaff, Christopher A. McAuley, Sam Whimster, Edith Hanke, Stephen Turner, Isaac Ariail Reed & Julia Adams - 2025 - In Joshua Derman & Peter Eli Gordon, Max Weber at 100: legacies and prospects."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The New Conservatism: Cultural Criticism and the Historians' Debate",
+      "url": "https://philpapers.org/rec/HABTNC",
+      "philpapers_id": "HABTNC",
+      "snippet": "Edited by Shierry Weber Nicholsen (1991) ... Essays discuss denial of Germany&#x27;s Nazi past, the rise of the neoconservative movement in Europe and America, and the welfare state. ... Setup an account with your affiliations in order to access resources via your University&#x27;s proxy server \u00b7 Sign in / register and customize your OpenURL resolver ... Habermas and the Unfinished Project of Democracy.David Ingram - 2005 - Human Studies 28 (2):223-225.",
+      "page_age": null,
+      "extra_snippets": [
+        "Edited by Shierry Weber Nicholsen (1991) ... Essays discuss denial of Germany's Nazi past, the rise of the neoconservative movement in Europe and America, and the welfare state. ... Setup an account with your affiliations in order to access resources via your University's proxy server \u00b7 Sign in / register and customize your OpenURL resolver ... Habermas and the Unfinished Project of Democracy.David Ingram - 2005 - Human Studies 28 (2):223-225.",
+        "Notes on Jurgen Habermas' Participation in the Historians' Debate.M.",
+        "Die Habermas-Kontroverse: ein deutscher Streit.Imanuel Geiss - 1988 - Berlin: Siedler.",
+        "Debating the State of Philosophy: Habermas, Rorty, and Ko\u0142akowski.J\u00f3zef Niznik & John T."
+      ]
+    },
+    {
+      "title": "Fr\u00e9d\u00e9ric Vandenberghe, A philosophical history of German sociology",
+      "url": "https://philpapers.org/rec/VANAPH",
+      "philpapers_id": "VANAPH",
+      "snippet": "Introduction -- 1e Intermed consid -- Marx -- Simmel -- Weber -- Luk\u00e1cs -- 2e intermed consid -- Horkheimer -- Adorno -- 3e intermed consid -- Habermas I -- Habermas II ...",
+      "page_age": null,
+      "extra_snippets": [
+        "Introduction -- 1e Intermed consid -- Marx -- Simmel -- Weber -- Luk\u00e1cs -- 2e intermed consid -- Horkheimer -- Adorno -- 3e intermed consid -- Habermas I -- Habermas II -- Habermas III -- Conclusion -- Postscript -- Bibliography.",
+        "Raymond Geuss; Introduction to Critical Theory: Horkheimer to Habermas. David Held. [REVIEW]Andrzej Rapaczynski - 1983 - Ethics 93 (4):811-. Hegel and the Frankfurt School.Paul Giladi (ed.) - 2020 - New York: Routledge. Pyonjungpopchok Pip an Iron P Urangk Up Urutu Hakp Arul Chungsim Uro.Sung-Gyun Paek - 1990 - Kyongmunsa. Objectivity and the Silence of Reason: Weber, Habermas, and the Methodological Disputes in German Sociology.George E.",
+        "Critical Theory and Political Possibilities: Conceptions of Emancipatory Politics in the Works of Horkheimer, Adorno, Marcuse, and Habermas.Joan Alway - 1995 - Praeger.",
+        "The Frankfurt School and the young Habermas: Traces of an intellectual path (1956\u20131964).Luca Corchia - 2015 - Journal of Classical Sociology 15 (1):191-208."
+      ]
+    },
+    {
+      "title": "Keith Breen, Under Weber's shadow: modernity, subjectivity and politics in Habermas, Arendt and MacIntyre",
+      "url": "https://philpapers.org/rec/BREUWS",
+      "philpapers_id": "BREUWS",
+      "snippet": "Introduction -- Modernity, politics and Max Weber -- One-sided rationalization: Habermas on modernity, discourse and emancipation -- Critiquing Habermas: intersubjectivity, ethics and norm-free sociality -- The burden of our times: Arendt ...",
+      "page_age": null,
+      "extra_snippets": [
+        "Introduction -- Modernity, politics and Max Weber -- One-sided rationalization: Habermas on modernity, discourse and emancipation -- Critiquing Habermas: intersubjectivity, ethics and norm-free sociality -- The burden of our times: Arendt on modern oblivion and the promise of politics -- Judging Arendt: citizenship, action and the scope of politics -- The new dark age: MacIntyre on bureaucratic individualism and the hope for an ethical polity -- Engaging MacIntyre: flourishing, modernity and political struggle -- Closing reflections: ethics, politics and strategy in the present.",
+        "The separation between ethics and politics: Max Weber on ancient Judaism and modernity.Eyal Chowers - 2022 - European Journal of Social Theory 25 (3):477-495.",
+        "Paradoxes of modernity: culture and conduct in the theory of Max Weber.Wolfgang Schluchter - 1996 - Stanford, Calif.: Stanford University Press."
+      ]
+    },
+    {
+      "title": "J. Habermas, The rationalization of law and diagnosis of the times",
+      "url": "https://philpapers.org/rec/HABTRO-3",
+      "philpapers_id": "HABTRO",
+      "snippet": "In this section of his book \u00abThe theory of communicative action\u00bb J\u00fcrgen Habermas considers Max Weber\u2019s legalistic views. According to Habermas, Weber treats law in such a way that it is detached from evaluative sphere and can appear from the start as an institutional embodiment of cognitive-instrumental rationality.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J. Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "In this section of his book \u00abThe theory of communicative action\u00bb J\u00fcrgen Habermas considers Max Weber\u2019s legalistic views. According to Habermas, Weber treats law in such a way that it is detached from evaluative sphere and can appear from the start as an institutional embodiment of cognitive-instrumental rationality.",
+        "These three structural properties refer to the mode of legal validity and legal enactment, to criteria of culpability and the mode of sanction, and finally to the way in which legal action is organized. The dominance of purposive rationality in Weber\u2019s view of the law allows Habermas to suggest a series of critical arguments.",
+        "The rationalization of action in Max Weber's sociology of religion.Stephen Kalberg - 1990 - Sociological Theory 8 (1):58-84. The Disenchantment of Religious-Metaphysical Worldviews and the Emergence of Modern Structures of Consciousness.J. Habermas - 2010 - Russian Sociological Review 9 (1):27-52.",
+        "Habermas: Communicative Reason and the Moral Realization of a Normative Order.Albert Frederick Hart - 1989 - Dissertation, Mcgill University (Canada) The city: Rationalization and freedom in Max Weber.Jos\u00e9 Maur\u00edcio Domingues - 2000 - Philosophy and Social Criticism 26 (4):107-126."
+      ]
+    },
+    {
+      "title": "Max Weber, Remarks on Technology and Culture",
+      "url": "https://philpapers.org/rec/WEBROT-3",
+      "philpapers_id": "WEBROT",
+      "snippet": "Referring to the capitalist development of antiquity as an illustration, Weber argues for a factually precise conception of technology and against a Marxist definition in terms of economic causality or property relations.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Max Weber"
+        }
+      ],
+      "extra_snippets": [
+        "Weber\u2019s improvised reply to Werner Sombart\u2019s lecture on \u2018Technology and Culture\u2019, presented at the first meeting of the German Sociological Society in 1910, opens and closes with an appeal to uphold the principle of \u2018value-freedom\u2019 in academic discussions.",
+        "Max Weber\u2019s Theory of Rationalization.J. Habermas - 2010 - Russian Sociological Review 9 (3):3-25.",
+        "Referring to the capitalist development of antiquity as an illustration, Weber argues for a factually precise conception of technology and against a Marxist definition in terms of economic causality or property relations.",
+        "The editorial notes to this translation place Weber\u2019s remarks in the context of his critical relationship to predecessors and contemporaries (including many of those present at the conference) and within the thematic development of his career-long studies on the rise of occidental rationalism."
+      ]
+    },
+    {
+      "title": "Petra Hedberg, Freedom, Reason and History: The Hegelian heritage in Gadamer and Habermas",
+      "url": "https://philpapers.org/rec/HEDFRA",
+      "philpapers_id": "HEDFRA",
+      "snippet": "Freedom, Reason and History: The Hegelian heritage in Gadamer and Habermas. This essay aims at an elaboration of the theme of freedom by taking into account Gadamer&quot;s and Habermas&quot;s appropriation of Hegel.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Petra Hedberg"
+        }
+      ],
+      "extra_snippets": [
+        "Freedom, Reason and History: The Hegelian heritage in Gadamer and Habermas. This essay aims at an elaboration of the theme of freedom by taking into account Gadamer\"s and Habermas\"s appropriation of Hegel.",
+        "I will approach this theme by dividing it into three main topics: 1) The question of historical reconstruction of the idea(s) of freedom, 2) The question of justification of the idea of freedom, 3) The question of application (of the idea of freedom). The question of historical reconstruction will deal with the Gadamerian appropriation of Hegel\"s idea of freedom in his concept of tradition. This will be confronted with Habermas\"s twofold critique against Gadamer.",
+        "The question of justification will deal with Habermas\"s and Gadamer\"s approach to Hegel\"s conception of freedom through recognition. The Habermasian approach to the Hegelian theme is a non-contextualised one, thereby aiming at a non-relative foundation for critical thinking.",
+        "The third topic relates to the Gadamerian and also Habermasian question of how to apply a certain (non-contextual) freedom-based concept of recognition to different contexts."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, Christian Lenhardt & Shierry Weber Nicholsen, Moral Consciousness and Communicative Action. Studies in Contemporary German Thought",
+      "url": "https://philpapers.org/rec/HABMCA",
+      "philpapers_id": "HABMCA",
+      "snippet": "Handlungstypen und Kriterien. Zu Habermas&#x27; &quot;Theorie des kommunikativen Handelns&quot;.Andreas Dorschel - 1990 - Zeitschrift f\u00fcr Philosophische Forschung 44 (2):220-252.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J\u00fcrgen Habermas"
+        },
+        {
+          "type": "person",
+          "name": "Christian Lenhardt"
+        },
+        {
+          "type": "person",
+          "name": "Shierry Weber Nicholsen"
+        }
+      ],
+      "extra_snippets": [
+        "Beyond Habermas, with Habermas: Adjudicating Ethical Issues in Sport through a Discourse Ethics-based Normative Theory of Sport.Francisco Javier Lopez Frias - 2021 - Sport, Ethics and Philosophy 15 (1):43-58.",
+        "Reviews : J\u00fcrgen Habermas, Moral Consciousness and Communicative Action. Cambridge: Polity Press, 1992. paper \u00a311.95, xiii + 225 pp.",
+        "Sport as strategic action: A Habermasian perspective.Andrew Edgar - 2007 - Sport, Ethics and Philosophy 1 (1):33 \u2013 46.",
+        "Handlungstypen und Kriterien. Zu Habermas' \"Theorie des kommunikativen Handelns\".Andreas Dorschel - 1990 - Zeitschrift f\u00fcr Philosophische Forschung 44 (2):220-252."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Rationalization of the Lifeworld [1981]",
+      "url": "https://philpapers.org/rec/HABTRO",
+      "philpapers_id": "HABTRO",
+      "snippet": "Introduction to Habermas.Sandro Segre (ed.) - 2013 - Upa. Max Weber\u2019s Theory of Rationalization.J.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J\u00fcrgen Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "Habermas\u2019 sociological theory of law and democracy: A reply to Wirts, Flynn and Zurn.Hugh Baxter - 2014 - Philosophy and Social Criticism 40 (2):225-234.",
+        "The Dialectics of Rationalization: An Interview with Jurgen Habermas.Jurgen Habermas - 1981 - Telos: Critical Theory of the Contemporary 49.",
+        "The Dialectics of Rationalization: An Interview with J\u00fcrgen Habermas.Axel Honneth - 1981 - Telos: Critical Theory of the Contemporary 49:5.",
+        "A Lifeworld without a Subject: Habermas and the Pathologies of Modernity.Finn Bowring - 1996 - Telos: Critical Theory of the Contemporary 1996 (106):77-104."
+      ]
+    }
+  ],
+  "count": 17,
+  "errors": []
+}

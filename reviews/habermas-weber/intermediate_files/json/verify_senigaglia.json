@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/02606755.2019.1558569"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/02606755.2019.1558569",
+      "title": "Normes, d\u00e9bat et d\u00e9lib\u00e9ration dans la d\u00e9mocratie parlementaire : Max Weber et J\u00fcrgen Habermas [Norms, debate and deliberation in parliamentary democracy: Max Weber and J\u00fcrgen Habermas]",
+      "authors": [
+        {
+          "family": "Senigaglia",
+          "given": "Cristiana"
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Parliaments, Estates and Representation",
+      "volume": "39",
+      "issue": "2",
+      "page": "213-225",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/02606755.2019.1558569"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

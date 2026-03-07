@@ -1,0 +1,334 @@
+[s2_search.py] Searching Semantic Scholar: 'selective rationalization lifeworld colonization' (year=1981-2025) (field=Philosophy), limit=20
+[s2_search.py] Retrieved 13/13 papers...
+[s2_search.py] Search complete: 13 papers found
+[s2_search.py] Cached results (cache key: s2_593e203678d8cccd)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "selective rationalization lifeworld colonization",
+  "results": [
+    {
+      "paperId": "108e7fa0562058a0452c98dfcdc3e3d0ddc3c886",
+      "title": "Role of patients\u2019 organizations in Health Technology Assessment: a Habermasian system and lifeworld perspective",
+      "authors": [
+        {
+          "name": "N. Milevska-Kostova",
+          "authorId": "1420607413"
+        },
+        {
+          "name": "Sita Ratna Devi Duddi",
+          "authorId": "2037425960"
+        },
+        {
+          "name": "R. Cooper",
+          "authorId": "49910096"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Abstract Patient and public involvement in Health Technology Assessment (HTA) is gaining increased interest among research and policy communities. Patients\u2019 organizations represent an important link between individual patients and the health system. Social theories are increasingly being used to explain doctor\u2013patient\u2013system interactions, expanding understanding beyond the mere clinical perspective. In this sense, patient involvement in HTA can also be considered through the Habermas\u2019s theory of communicative action. From a Habermasian perspective, HTA as part of the instrumental rationality contributes to an increased efficiency of resource use within the system; however, such rationalization threatens to colonize the lifeworld by making it \u201cincreasingly state administered with attenuated possibilities for communicative action as a result of the commercialization and rationalization in terms of immediate returns.\u201d Using Habermasian system/lifeworld framework, this paper explores opportunities and obstacles to patient involvement in HTA, whereby trying to understand current and possible roles of patients\u2019 organizations as a mediating force between HTA as a function of the system and the lifeworld represented by patients.",
+      "citationCount": 3,
+      "doi": "10.1017/S0266462320002147",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/108e7fa0562058a0452c98dfcdc3e3d0ddc3c886",
+      "venue": "International Journal of Technology Assessment in Health Care",
+      "journal": {
+        "name": "International Journal of Technology Assessment in Health Care",
+        "volume": "37"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fdb7e36589667553d0cc639094ca6fd7b2ee7a48",
+      "title": "Der sanfte Individualismus in den Theorien von Yamazaki Masakazu und J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "C. Etzrodt",
+          "authorId": "117488256"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Abstract The aim of this paper is to compare the theories of Yamazaki Masakazu und J\u00fcrgen Habermas. Yamazaki believed that the hard, ascetic individualism with a focus on production would alienate us from our humanity. He saw in a slowed down consumption a way out of this regressive development. Habermas on the other hand believed that system-oriented rationalization process would colonize the communication-oriented lifeworld. This negative trend could be overcome by developing a discourse free of power interference that enables consensus-building. This gentle individualism of Yamazaki and Habermas corresponds to a compromise between the extremes of a hard individualism (capitalism) and collectivism (communism or nationalism). The surprising result of the analysis is that Yamazaki\u2019s theory is not only easier to realize than Habermas\u2019s, but also more universally applicable.",
+      "citationCount": 0,
+      "doi": "10.1515/asia-2023-0038",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fdb7e36589667553d0cc639094ca6fd7b2ee7a48",
+      "venue": "Asiatische Studien - \u00c9tudes Asiatiques",
+      "journal": {
+        "name": "Asiatische Studien - \u00c9tudes Asiatiques",
+        "pages": "277 - 306",
+        "volume": "79"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "fd3906ac63eaceb6a548b08bd900958cf650b3d6",
+      "title": "J\u00fcrgen Habermas e a guinada normativa no enunciado da autonomiza\u00e7\u00e3o das esferas sociais",
+      "authors": [
+        {
+          "name": "Lucas Trindade da Silva",
+          "authorId": "117692720"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The aim here is to single out the theory of communicative action as a normative shift in the statement of the autonomization of social spheres. The argument is structured in three stages: in a first, the habermasian understanding of the distinction between pre-modern and modern is presented as a transition from the undifferentiated to the differentiated, more particularly from the mythical reification to the uncoupling of system and lifeworld; in a second, it presents its definition of modern reification as systemic colonization of the lifeworld; finally, it demonstrates how his theory of dual rationalization is also an investigation of the foundations for a normative defense of decolonization/autonomization of the lifeworld as an emancipatory horizon, which will even lead him to abandon, in the course of his work, the very tradition of the critique of reification.",
+      "citationCount": 1,
+      "doi": "10.1590/S0102-6992-202136010011",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fd3906ac63eaceb6a548b08bd900958cf650b3d6",
+      "venue": "",
+      "journal": {
+        "name": "Sociedade E Estado",
+        "pages": "217-243",
+        "volume": "36"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "303570c4b847e988a58a854f5f8f01718f3044b0",
+      "title": "The Force of Reason: An Introduction to Habermas' Theory of Communicative Action",
+      "authors": [
+        {
+          "name": "A. Brand",
+          "authorId": "96443006"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 87,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/303570c4b847e988a58a854f5f8f01718f3044b0",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "47250b676c4398399eac65b733048bd76da6d66e",
+      "title": "J\u00fcrgen Habermas and the dilemmas of experience of disability",
+      "authors": [
+        {
+          "name": "Krzysztof Pezdek",
+          "authorId": "14024610"
+        },
+        {
+          "name": "W. Doli\u0144ski",
+          "authorId": "16006571"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1111/nup.12171",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/47250b676c4398399eac65b733048bd76da6d66e",
+      "venue": "Nursing Philosophy",
+      "journal": {
+        "name": "Nursing Philosophy",
+        "pages": "&NA;",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5d736d08504b9b72820af9f17dcb804c810b4a59",
+      "title": "INSTRUMENTAL RATIONALITY AND SOCIAL STRUCTURE WITH REFERENCE TO FEMALE SUBJUGATION IN MANTO'S SHORT STORIES: A HABERMASIAN LENS",
+      "authors": [
+        {
+          "name": "Tabassum Maqbool",
+          "authorId": "2144958887"
+        },
+        {
+          "name": "U. Farwa",
+          "authorId": "2193528616"
+        },
+        {
+          "name": "Saira Akhter",
+          "authorId": "108763431"
+        }
+      ],
+      "year": 2022,
+      "abstract": "In this research work, Saadat Hasan Manto's short stories are textually analyzed using a Habermasian lens. Manto's ideas on female subordination, societal supremacy, and freedom are stressed in this paper. The main goal of this qualitative study is to demonstrate the applicability of Manto's discovery in the modern day within the context of Habermas' critical social theory. This study illustrates unequivocally how social institutions' instrumental rationality colonizes and rationalizes the lifeworld. According to Habermas, societal structures like political and economic systems are encroaching on our daily lives. He is worried about the lines separating the lifeworld and the system. Additionally, Habermas' realistic objective for critical theory is for human liberty to be unhindered by any superfluous shackles. The short stories of Saadat Hasan Manto are drawn from Mottled Dawn: Fifty Sketches and Stories of Partition translated by Khalid Hasan and Manto's Selected Short Stories translated by Aatish Taseer. According to the study's findings, Manto and Habermas both reject social structures that oppress people and exert unjust dominance or colonization. The goal of maximizing human emancipation is shared by both. According to the results of the textual analysis, Manto's characters like Saughandi, Nesti, Raadha, and Mozail do not accept submission and advocate for independence from ideological, political, and social restraints. Keywords: Life world and System, instrumental rationality, social structures, domination, emancipation",
+      "citationCount": 0,
+      "doi": "10.52567/pjsr.v4i04.813",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5d736d08504b9b72820af9f17dcb804c810b4a59",
+      "venue": "Pakistan Journal of Social Research",
+      "journal": {
+        "name": "Pakistan Journal of Social Research"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fd242fdf4a5846fc58616cc35d42b5e9a05e83c9",
+      "title": "Habermas (1): A Neoliberal Post-secular Project",
+      "authors": [
+        {
+          "name": "A. Possamai",
+          "authorId": "14644813"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-981-10-5942-1_10",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fd242fdf4a5846fc58616cc35d42b5e9a05e83c9",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "149-167",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "49ae8db7bffe86f5c60a088624c31e9f634c7c20",
+      "title": "EL GIRO JUR\u00cdDICO DE HABERMAS, UNA MODERACI\u00d3N DE SU TEOR\u00cdA CR\u00cdTICA",
+      "authors": [
+        {
+          "name": "Rodr\u00edguez Navarro",
+          "authorId": "144965521"
+        },
+        {
+          "name": "Jorge Edwin",
+          "authorId": "113738742"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/49ae8db7bffe86f5c60a088624c31e9f634c7c20",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1560316a11901658a3686ec3dd042b794e03901a",
+      "title": "O Estado na democracia deliberativa: as ra\u00edzes de uma antinomia",
+      "authors": [
+        {
+          "name": "Francisco Mata Machado",
+          "authorId": "2068167302"
+        }
+      ],
+      "year": 2015,
+      "abstract": "The paper aims at identifying, back in the Theory of Communicative Action, an explanation for the ambiguous accounts of the State detected along the different versions of the theory of deliberative democracy. By the means of a theoretical critique, it is realized that deliberationism implies political practices not only distinct but reciprocally antagonistic. It is proposed that the indefinition over the precise meaning of deliberative democracy is a consequence of this theory\u00b4s Habermasian grounds. In the philosophy of Habermas, the lifeworld is rationalized to create the state, but is also colonized or destroyed by this system. This antinomy implies a political theory to which the state may be both a space for mere informal influence reasons that come from the public sphere as its opposite, as an apparatus aimed to establish participatory forums.",
+      "citationCount": 2,
+      "doi": "10.1590/0102-6445225-257/95",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1560316a11901658a3686ec3dd042b794e03901a",
+      "venue": "",
+      "journal": {
+        "name": "Lua Nova: Revista de Cultura e Pol\u00edtica",
+        "pages": "225-258",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "30b404dcf41efd21788ce6422442c6b064140e21",
+      "title": "Modernity and Postmodernity Related Issues in Developing Ideas and Tasks of Adult Education in Korean Context.",
+      "authors": [
+        {
+          "name": "K. Kim",
+          "authorId": "77011005"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/30b404dcf41efd21788ce6422442c6b064140e21",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "543edc56e20d6973ccf97f8a48d9a36981c28af0",
+      "title": "On Ju\u0308rgen Habermas\u2019s Between Facts and Norms",
+      "authors": [
+        {
+          "name": "Konstantinos Kavoulakos",
+          "authorId": "118503890"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/543edc56e20d6973ccf97f8a48d9a36981c28af0",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "aeab2040ee31656d6caf37e829c7d5c0a1046dc0",
+      "title": "Siegfried Kracauer: Documentary Realist and Critic of Ideological \u2018Homelessness\u2019",
+      "authors": [
+        {
+          "name": "A. Martins",
+          "authorId": "103141560"
+        },
+        {
+          "name": "L. Fischer",
+          "authorId": "46445611"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.4135/9781526436122.n14",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aeab2040ee31656d6caf37e829c7d5c0a1046dc0",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "3fa42858b80e3a6fd4517ea126153e5b4d109fb6",
+      "title": "THE SOCIOLOGY OF DISCOURSE ETHICS",
+      "authors": [
+        {
+          "name": "Felipe Curc\u00f3 Cobos",
+          "authorId": "2083473171"
+        },
+        {
+          "name": "G. Spivak",
+          "authorId": "65744613"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3fa42858b80e3a6fd4517ea126153e5b4d109fb6",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 13,
+  "errors": []
+}

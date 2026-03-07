@@ -1,0 +1,301 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'colonization lifeworld Weber', limit=20
+[search_philpapers.py] Retrieved 17 entries...
+[search_philpapers.py] Search complete: 17 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "colonization lifeworld Weber",
+  "results": [
+    {
+      "title": "James Craig Hanks, Juergen Habermas and the Colonization of the Lifeworld",
+      "url": "https://philpapers.org/rec/HANJHA",
+      "philpapers_id": "HANJHA",
+      "snippet": "The relationship between being and consciousness has been characterised as one of alienation , reification , instrumentalization , and &#x27;one dimensionalization&#x27; . More recently Jurgen Habermas has described the &#x27;colonization of the lifeworld&#x27;. Each ...",
+      "page_age": null,
+      "extra_snippets": [
+        "The relationship between being and consciousness has been characterised as one of alienation , reification , instrumentalization , and 'one dimensionalization' . More recently Jurgen Habermas has described the 'colonization of the lifeworld'. Each of these theorists argues that social and political philosophy has two primary tasks.",
+        "In his account of 'the colonization of the lifeworld', Habermas attempts to explain the relation between being and consciousness in terms of his theory of communicative action and to locate possible points of social and political crisis in advanced capitalist society.",
+        "The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University \u00b7 The Colonization Thesis: Habermas on Reification.Timo J\u00fctten - 2011 - International Journal of Philosophical Studies 19 (5):701 - 727.",
+        "A defense of the lifeworld.Amelia M."
+      ]
+    },
+    {
+      "title": "Ilsup Ahn, Decolonization of the Lifeworld by Reconstructing the System: a Critical Dialogue Between Jurgen Habermas and Reinhold Niebuhr",
+      "url": "https://philpapers.org/rec/AHNDOT",
+      "philpapers_id": "AHNDOT",
+      "snippet": "In this article, by drawing on Reinhold Niebuhr&#x27;s theological ethics, I argue that the lifeworld is colonized not by the delinguistified media as such, but, rather, by the people who mismanage money and power.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Ilsup Ahn"
+        }
+      ],
+      "extra_snippets": [
+        "The exclusion of money and power from the domain of moral discourse has also motivated Habermas to develop an idea of `colonization of lifeworld by system' by giving us the impression that the delinguistified media are the main culprit of colonizing the lifeworld.",
+        "In this article, by drawing on Reinhold Niebuhr's theological ethics, I argue that the lifeworld is colonized not by the delinguistified media as such, but, rather, by the people who mismanage money and power.",
+        "I also develop the argument that in order to `decolonize' the colonized lifeworld, we need the substantive ethical ideals as well as the communicatively established law to guide the moral conduct of these system managers.",
+        "The Colonization Thesis: Habermas on Reification.Timo J\u00fctten - 2011 - International Journal of Philosophical Studies 19 (5):701 - 727. A defense of the lifeworld.Amelia M."
+      ]
+    },
+    {
+      "title": "Timo J\u00fctten, The Colonization Thesis: Habermas on Reification",
+      "url": "https://philpapers.org/rec/JTTTCT",
+      "philpapers_id": "JTTTCT",
+      "snippet": "Abstract According to Habermas&#x27; colonization thesis, reification is a social pathology that arises when the communicative infrastructure of the lifeworld is &#x27;colonized&#x27; by money and power.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Timo J\u00fctten"
+        }
+      ],
+      "extra_snippets": [
+        "Abstract According to Habermas' colonization thesis, reification is a social pathology that arises when the communicative infrastructure of the lifeworld is 'colonized' by money and power. In this paper I argue that, thirty years after the publication of the Theory of Communicative Action, this thesis remains compelling.",
+        "Juergen Habermas and the Colonization of the Lifeworld.James Craig Hanks - 1991 - Dissertation, Duke University",
+        "In particular, he suggests that reification effects result from the juridification of communicatively structured domains of action but not from the commodification of labour power. I criticize this argument and suggest that if the normative dimension of the colonization thesis is made explicit, a more nuanced explanation of reification becomes possible",
+        "However, while Habermas offers a functionalist explanation of reification, his normative criticism of it remains largely implicit: he never explains what is wrong with reification from the perspective of the people whose social relations are reified. As a result, Habermas cannot explain why only some forms of colonization lead to reification effects."
+      ]
+    },
+    {
+      "title": "Arie Brand, The \"Colonization of the Lifeworld\" and the Disappearance of Politics \u2014 Arendt and Habermas",
+      "url": "https://philpapers.org/rec/BRATCO-30",
+      "philpapers_id": "BRATCO",
+      "snippet": "The Colonization Thesis: Habermas on Reification.Timo J\u00fctten - 2011 - International Journal of Philosophical Studies 19 (5):701 - 727. Habermas and the Normative Foundations of a Radical Politics.Robert Shelly - 1993 - Thesis Eleven 35 (1):62-83. Decolonization of the Lifeworld by Reconstructing ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Arie Brand"
+        }
+      ],
+      "extra_snippets": [
+        "The Colonization Thesis: Habermas on Reification.Timo J\u00fctten - 2011 - International Journal of Philosophical Studies 19 (5):701 - 727. Habermas and the Normative Foundations of a Radical Politics.Robert Shelly - 1993 - Thesis Eleven 35 (1):62-83. Decolonization of the Lifeworld by Reconstructing the System: a Critical Dialogue Between Jurgen Habermas and Reinhold Niebuhr.Ilsup Ahn - 2009 - Studies in Christian Ethics 22 (3):290-313.",
+        "Review Essay: Laughter From the Lifeworld: Hans Blumenberg's Theory of Nonconceptuality.Robert Savage - 2008 - Thesis Eleven 94 (1):119-131."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Rationalization of the Lifeworld [1981]",
+      "url": "https://philpapers.org/rec/HABTRO",
+      "philpapers_id": "HABTRO",
+      "snippet": "A Lifeworld without a Subject: Habermas and the Pathologies of Modernity.Finn Bowring - 1996 - Telos: Critical Theory of the Contemporary 1996 (106):77-104.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "J\u00fcrgen Habermas"
+        }
+      ],
+      "extra_snippets": [
+        "Max Weber\u2019s Theory of Rationalization.J."
+      ]
+    },
+    {
+      "title": "Jeffrey Flynn, System and lifeworld in Habermas' theory of democracy",
+      "url": "https://philpapers.org/rec/FLYSAL",
+      "philpapers_id": "FLYSAL",
+      "snippet": "Colonisation of the Lifeworld and the Dilemma of Welfare State Law.Mikael Sp\u00e5ng - 2018 - In Emancipation, Democracy and the Modern Critique of Law: Reconsidering Habermas. Cham: Springer Verlag.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Jeffrey Flynn"
+        }
+      ],
+      "extra_snippets": [
+        "In this article I challenge two arguments central to Hugh Baxter's critical interpretation of Habermas in his recent book, Habermas: The Discourse Theory of Law and Democracy (2011). Both arguments focus on whether Habermas\u2019 system -lifeworld model of society can successfully make space for democratic politics.",
+        "Colonisation of the Lifeworld and the Dilemma of Welfare State Law.Mikael Sp\u00e5ng - 2018 - In Emancipation, Democracy and the Modern Critique of Law: Reconsidering Habermas. Cham: Springer Verlag.",
+        "A defense of the lifeworld.Amelia M.",
+        "Lifeworld, Civilisation, System: Pato\u010dka and Habermas on Europe and its Crisis.Francesco Tava - 2016 - HORIZON."
+      ]
+    },
+    {
+      "title": "Francesco Tava, Lifeworld, Civilisation, System: Pato\u010dka and Habermas on Europe and its Crisis",
+      "url": "https://philpapers.org/rec/TAVLCS",
+      "philpapers_id": "TAVLCS",
+      "snippet": "The aim of this article is to show how both Jan Pato\u010dka and J\u00fcrgen Habermas, starting from a reinterpretation of the idea of \u00ablifeworld\u00bb, engaged a critique of modern civilisation, aiming ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Francesco Tava"
+        }
+      ],
+      "extra_snippets": [
+        "The aim of this article is to show how both Jan Pato\u010dka and J\u00fcrgen Habermas, starting from a reinterpretation of the idea of \u00ablifeworld\u00bb, engaged a critique of modern civilisation, aiming (with different outcomes) at a redefinition of the concept of political community.",
+        "The Problem of the Lifeworld in Husserl's \"Crisis\".Edward Moser - 2000 - Dissertation, Duquesne University \u00b7 Juergen Habermas and the Colonization of the Lifeworld.James Craig Hanks - 1991 - Dissertation, Duke University",
+        "In order to achieve this goal, I firstly focus on Pato\u010dka\u2019s understanding of modern rational civilisation and its attempt to fix the fracture between \u00ablife\u00bb and \u00abworld\u00bb. At this stage, I take also advantage of Hans Blumenberg\u2019s distinction between these two terms, in order to better clarify Pato\u010dka\u2019s stance on this problem. Secondly, I analyse Habermas\u2019 ideas of lifeworld and system, and their uncoupling in modern societies, as well as the reemergence of this issue in Habermas\u2019 recent works on the European economic and political crisis.",
+        "Decolonization of the Lifeworld by Reconstructing the System: A Critical Dialogue Between Jurgen Habermas and Reinhold Niebuhr.Ilsup Ahn - 2009 - Studies in Christian Ethics 22 (3):290-313."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Theory of Communicative Action: Lifeworld and Systems, a Critique of Functionalist Reason, Volume 2",
+      "url": "https://philpapers.org/rec/HABTTO-10",
+      "philpapers_id": "HABTTO",
+      "snippet": "Communicative Action and Sustainability: Grassroots Responses to Colonization of the Life-World.Craig Stewart Leedham - 1996 - Dissertation, Colorado State University",
+      "page_age": null,
+      "extra_snippets": [
+        "The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University",
+        "Communicative Action and Sustainability: Grassroots Responses to Colonization of the Life-World.Craig Stewart Leedham - 1996 - Dissertation, Colorado State University"
+      ]
+    },
+    {
+      "title": "Amelia M. Wirts, A defense of the lifeworld",
+      "url": "https://philpapers.org/rec/WIRADO-2",
+      "philpapers_id": "WIRADO",
+      "snippet": "The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University \u00b7 Habermas: The Discourse Theory of Law and Democracy.Hugh Baxter - 2011 - Stanford Law Books. The Communicative Action.Kire Sharlamanov - 2024 - In Habermas between Critical Theory and Liberalism. Cham: Springer Nature Switzerland. pp. 115-148. Colonisation of the Lifeworld and the Dilemma of Welfare State Law.Mikael Sp\u00e5ng - 2018 - In Emancipation, Democracy and the Modern Critique of Law: Reconsidering Habermas.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Amelia M. Wirts"
+        }
+      ],
+      "extra_snippets": [
+        "Hugh Baxter\u2019s book Habermas: A Discourse Theory of Law and Democracy not only carefully recounts Habermas\u2019 political and legal theory, but also raises several insightful criticisms of Habermas. Of particular note is Baxter\u2019s criticism of Habermas\u2019 system\u2013lifeworld model originally presented in Theory of Communicative Action.",
+        "The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University \u00b7 Habermas: The Discourse Theory of Law and Democracy.Hugh Baxter - 2011 - Stanford Law Books. The Communicative Action.Kire Sharlamanov - 2024 - In Habermas between Critical Theory and Liberalism. Cham: Springer Nature Switzerland. pp. 115-148. Colonisation of the Lifeworld and the Dilemma of Welfare State Law.Mikael Sp\u00e5ng - 2018 - In Emancipation, Democracy and the Modern Critique of Law: Reconsidering Habermas.",
+        "Baxter argues that Habermas ought to discard the concept of the lifeworld because the distinction between lifeworld and system is no longer tenable in the model of political power presented in Habermas\u2019 later work, Between Facts and Norms, which focuses more explicitly on law as a social system.",
+        "Baxter contends that the lifeworld, which Habermas describes as those parts of our lives that are structured by communicative action and shared norms, is an unhelpful way of understanding our social world because, in reality, most of our interactions are structured both by communicative norms and by the strategic action typical of \u2018the system\u2019. I argue, however, that Habermas must retain the theoretical distinction between system and lifeworld, though in everyday practice they are not so neatly disentangled, because without such an element there would be no source of legitimacy for the law."
+      ]
+    },
+    {
+      "title": "Carlos Figueiredo & C\u00e9sar Bola\u00f1o, Social Media and Algorithms: Configurations of the Lifeworld Colonization by New Media",
+      "url": "https://philpapers.org/rec/FIGSMA",
+      "philpapers_id": "FIGSMA",
+      "snippet": "Social media is a pervasive part of everyday life. That is, new media occupies more and more spaces in individuals\u2019 lives both in intimate and work sphere. In addition, due to ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Carlos Figueiredo"
+        },
+        {
+          "type": "person",
+          "name": "C\u00e9sar Bola\u00f1o"
+        }
+      ]
+    },
+    {
+      "title": "Ruyu Hung & Andrew Stables, Can we experience nature in the lifeworld? An interrogation of Husserl's notion of lifeworld and its implication for environmental and educational thinking",
+      "url": "https://philpapers.org/rec/HUNCWE",
+      "philpapers_id": "HUNCWE",
+      "snippet": "Subjectivity and Lifeworld in Transcendental Phenomenology.Sebastian Luft - 2011 - Northwestern University Press. Systemic Colonization of the Educational Lifeworld: An example in literacy education.L.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Ruyu Hung"
+        },
+        {
+          "type": "person",
+          "name": "Andrew Stables"
+        }
+      ],
+      "extra_snippets": [
+        "Given the tendency for the \"lifeworld approach\" to be adopted in the domain of environmental theory and education without critical examination of the key concept \"lifeworld\", this paper attempts to elucidate the ambiguity apparent in Husserl's development of the notion and the implications of this for teaching and learning about nature.",
+        "Subjectivity and Lifeworld in Transcendental Phenomenology.Sebastian Luft - 2011 - Northwestern University Press. Systemic Colonization of the Educational Lifeworld: An example in literacy education.L.",
+        "The first section deals with the meaning and limitations of the current lifeworld approach to nature and the implications for environmental and educational thinking. In the second section, the confusion surrounding the concept of lifeworld is traced back to the later Husserl's philosophy.",
+        "Exploring the meaning of lifeworld in Husserl's philosophy reveals that there may be two lifeworld orientations: one is explicit and objective in its emphasis on the shared and universal; the other is implicit and subjective in its emphasis on the idiosyncratically personal."
+      ]
+    },
+    {
+      "title": "Christopher Latiolais, Habermas's Concept of the Lifeworld",
+      "url": "https://philpapers.org/rec/LATHCO",
+      "philpapers_id": "LATHCO",
+      "snippet": "System and Lifeworld in Habermas&#x27; Theory of Democracy.Jeffrey Flynn - 2014 - Philosophy and Social Criticism 40 (2):205-214. Habermas: The Discourse Theory of Law and Democracy.Hugh Baxter - 2011 - Stanford Law Books. The Colonization Thesis: Habermas on Reification.Timo J\u00fctten - 2011 - International Journal of Philosophical Studies 19 (5):701 - 727.",
+      "page_age": null,
+      "extra_snippets": [
+        "Intelligibility and Conflict Resolution in the Lifeworld.Barbara Fultner - 2001 - Continental Philosophy Review 34 (4):419-436. The Philosophy of J\u00fcrgen Habermas: A Critical Introduction.Uwe Steinhoff - 2009 - Oxford University Press. Juergen Habermas and the Colonization of the Lifeworld.James Craig Hanks - 1991 - Dissertation, Duke University",
+        "System and Lifeworld in Habermas' Theory of Democracy.Jeffrey Flynn - 2014 - Philosophy and Social Criticism 40 (2):205-214. Habermas: The Discourse Theory of Law and Democracy.Hugh Baxter - 2011 - Stanford Law Books. The Colonization Thesis: Habermas on Reification.Timo J\u00fctten - 2011 - International Journal of Philosophical Studies 19 (5):701 - 727.",
+        "Decolonization of the Lifeworld by Reconstructing the System: A Critical Dialogue Between Jurgen Habermas and Reinhold Niebuhr.Ilsup Ahn - 2009 - Studies in Christian Ethics 22 (3):290-313.",
+        "Lifeworld, Discourse, and Realism: On J\u00fcrgen Habermas\u2019s Theory of Truth.Axel Seemann - 2004 - Philosophy and Social Criticism 30 (4):503-514."
+      ]
+    },
+    {
+      "title": "Edward Moser, The Problem of the Lifeworld in Husserl's \"Crisis\"",
+      "url": "https://philpapers.org/rec/MOSTPO-15",
+      "philpapers_id": "MOSTPO",
+      "snippet": "When you find and tap these faults Husserl&#x27;s presentation of the lifeworld falls to pieces, thereby revealing distinct, incommensurable concepts. The main thrust of my dissertation is to challenge this commonly held opinion. Limiting my analysis to the Crisis alone, I argue that Husserl&#x27;s treatment of the lifeworld is consistent and coherent.",
+      "page_age": null,
+      "extra_snippets": [
+        "The importance of Edmund Husserl's concept of the lifeworld, especially as it appears in The Crisis of European Sciences and Transcendental Phenomenology, is widely acknowledged. Yet there is also wide agreement among Husserl scholars that his treatment of the lifeworld is marred by deep faults.",
+        "When you find and tap these faults Husserl's presentation of the lifeworld falls to pieces, thereby revealing distinct, incommensurable concepts. The main thrust of my dissertation is to challenge this commonly held opinion. Limiting my analysis to the Crisis alone, I argue that Husserl's treatment of the lifeworld is consistent and coherent.",
+        "In order to make this argument, as well as to understand it, it is imperative that one pay special attention to the contexts in which Husserl discusses the theme of the lifeworld. The failure to do this accounts for much of the confusion about the lifeworld found in the secondary literature.",
+        "Only the properly executed transcendental epoche and reduction makes possible a science of the lifeworld that resolves these paradoxes. The lifeworld is a transcendental phenomenon, i.e., the system of object-poles of intentionality, which itself is nothing other than transcendental subjectivity."
+      ]
+    },
+    {
+      "title": "Max Weber, Gesamtausgabe",
+      "url": "https://philpapers.org/rec/WEBDWD",
+      "philpapers_id": "WEBDWD",
+      "snippet": "The Lifeworld and Lived Experience.Martin Jay - 2006 - In Hubert L. Dreyfus &amp; Mark A. Wrathall, A Companion to Phenomenology and Existentialism. Oxford: Wiley-Blackwell.",
+      "page_age": null,
+      "extra_snippets": [
+        "English summary: The Max Weber-Studienausgabe (MWS) renders Max Weber's works and speeches accessible to a large audience, using the complete and reliable Max Weber-Gesamtausgabe (MWG) as its basis while deliberately dispensing with its editional apparatus.",
+        "The Lifeworld and Lived Experience.Martin Jay - 2006 - In Hubert L. Dreyfus & Mark A. Wrathall, A Companion to Phenomenology and Existentialism. Oxford: Wiley-Blackwell.",
+        "It has however been laid out in such a manner that the reader can easily fall back on the MWG.This is a critical edition of Max Weber's Hinduism and Buddhism, the second of Max Weber's studies on the Economic Ethics of World Religions which followed his famous studies on the relationship between the Protestant ethic and sectarian Protestantism and the spirit of capitalism.",
+        "This edition offers not only the original text but also an introduction, an editorial report and editorial comments and is thus indispensable for Indologists, for cultural anthropologists and for all those studying the history of various religions. German description: Die Max Weber-Studienausgabe (MWS) will die Schriften und Reden Max Webers auf der gesicherten Textgrundlage der Max Weber-Gesamtausgabe (MWG) allgemein zuganglich machen, unter Verzicht auf den editorischen Apparat."
+      ]
+    },
+    {
+      "title": "Austin Harrington, Habermas\u2019 Concept of the Lifeworld: a Defense",
+      "url": "https://philpapers.org/rec/HARHCO-13",
+      "philpapers_id": "HARHCO",
+      "snippet": "An interrogation of Husserl&#x27;s notion of lifeworld and its implication for environmental and educational thinking.Ruyu Hung &amp; Andrew Stables - 2008 - Indo-Pacific Journal of Phenomenology: Phenomenology and Education: Special Edition 8:1-8. Habermas: The Discourse Theory of Law and Democracy.Hugh Baxter - 2011 - Stanford Law Books. The Colonization ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Austin Harrington"
+        }
+      ],
+      "extra_snippets": [
+        "An interrogation of Husserl's notion of lifeworld and its implication for environmental and educational thinking.Ruyu Hung & Andrew Stables - 2008 - Indo-Pacific Journal of Phenomenology: Phenomenology and Education: Special Edition 8:1-8. Habermas: The Discourse Theory of Law and Democracy.Hugh Baxter - 2011 - Stanford Law Books. The Colonization Thesis: Habermas on Reification.Timo J\u00fctten - 2011 - International Journal of Philosophical Studies 19 (5):701 - 727.",
+        "The concept of lifeworld and education in post-modernity : a critical appraisal of Habermas' theory of communicative action.Sigmund Ongstad - 2010 - In Mark Murphy & Ted Fleming (eds.), Habermas, Critical Theory and Education.",
+        "Habermas\u2019 Concept of the Lifeworld.Austin Harrington - 1998 - Social Philosophy Today 13:39-53.",
+        "Intelligibility and conflict resolution in the lifeworld.Barbara Fultner - 2001 - Continental Philosophy Review 34 (4):419-436."
+      ]
+    },
+    {
+      "title": "Jan Bengtsson, Guest Editorial: Special Edition on the Lifeworld Approach for Empirical Research in Education \u2013 the Gothenburg Tradition",
+      "url": "https://philpapers.org/rec/BENGES-2",
+      "philpapers_id": "BENGES",
+      "snippet": "An interrogation of Husserl&#x27;s notion of lifeworld and its implication for environmental and educational thinking.Ruyu Hung &amp; Andrew Stables - 2008 - Indo-Pacific Journal of Phenomenology: Phenomenology and Education: Special Edition 8:1-8. Special Edition on Education: editorial.Hennie Van der Mescht - 2008 - Indo-Pacific Journal of Phenomenology: Phenomenology and Education: Special Edition 8:1-3. Systemic Colonization of the Educational Lifeworld: An example in literacy education.L.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Jan Bengtsson"
+        }
+      ],
+      "extra_snippets": [
+        "This paper outlines the history of the lifeworld tradition since its initiation in the Nordic countries during the 1980s at the University of Gothenburg in Sweden.In this presentation, the tradition of the lifeworld approach focuses mainly on doctoral theses within the tradition although it should be noted that publications in the tradition are not limited to only these kinds of writings.",
+        "An interrogation of Husserl's notion of lifeworld and its implication for environmental and educational thinking.Ruyu Hung & Andrew Stables - 2008 - Indo-Pacific Journal of Phenomenology: Phenomenology and Education: Special Edition 8:1-8. Special Edition on Education: editorial.Hennie Van der Mescht - 2008 - Indo-Pacific Journal of Phenomenology: Phenomenology and Education: Special Edition 8:1-3. Systemic Colonization of the Educational Lifeworld: An example in literacy education.L.",
+        "Many lifeworld researchers have published extensively in books and journals as well as other forums, and have been enormously successful in the academic world.Although the lifeworld approach largely had its origins in philosophy and education at the University of Gothenburg, it has rapidly spread to other disciplines and universities as well as other countries, even beyond the Nordic regions.",
+        "An outline of the Gothenburg tradition of the lifeworld approach.Jan Bengtsson - 2013 - Indo-Pacific Journal of Phenomenology: Lifeworld Approach for Empirical Research in Education-the Gothenburg Tradition: Special Edition 1 13:1-9."
+      ]
+    },
+    {
+      "title": "Marcelo Neves, 75. System and Lifeworld",
+      "url": "https://philpapers.org/rec/NEVSAC",
+      "philpapers_id": "NEVSAC",
+      "snippet": "System and lifeworld in Habermas&#x27; theory of democracy.Jeffrey Flynn - 2014 - Philosophy and Social Criticism 40 (2):205-214. Colonisation of the Lifeworld and the Dilemma of Welfare State Law.Mikael Sp\u00e5ng - 2018 - In Emancipation, Democracy and the Modern Critique of Law: Reconsidering Habermas.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Marcelo Neves"
+        }
+      ],
+      "extra_snippets": [
+        "A defense of the lifeworld.Amelia M.",
+        "System and Lifeworld.David Ingram - 1987 - In Habermas and the Dialectic of Reason. New Haven: Yale University Press.",
+        "Educating social workers for lifeworld and system.Barry Cooper - 2010 - In Mark T. F. Murphy & Ted Fleming, Habermas, critical theory and education.",
+        "Decolonization of the Lifeworld by Reconstructing the System: a Critical Dialogue Between Jurgen Habermas and Reinhold Niebuhr.Ilsup Ahn - 2009 - Studies in Christian Ethics 22 (3):290-313."
+      ]
+    }
+  ],
+  "count": 17,
+  "errors": []
+}

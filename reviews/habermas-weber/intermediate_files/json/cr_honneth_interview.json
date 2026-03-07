@@ -1,0 +1,44 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.3817/0981049005
+[verify_paper.py] DOI verified: The Dialectics of Rationalization: An Interview wi...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.3817/0981049005"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.3817/0981049005",
+      "title": "The Dialectics of Rationalization: An Interview with Jurgen Habermas",
+      "authors": [
+        {
+          "family": "Honneth",
+          "given": "A."
+        },
+        {
+          "family": "Knodler-Bunte",
+          "given": "E."
+        },
+        {
+          "family": "Widmann",
+          "given": "A."
+        }
+      ],
+      "editors": [],
+      "year": 1981,
+      "container_title": "Telos",
+      "volume": "1981",
+      "issue": "49",
+      "page": "5-31",
+      "publisher": "Telos Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.3817/0981049005"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

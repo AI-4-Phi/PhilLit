@@ -1,0 +1,120 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Baxter Habermas Weber modernity rationalization",
+  "results": [
+    {
+      "openalex_id": "W2099610959",
+      "doi": "10.17161/str.1808.5149",
+      "title": "Authoritarianism, Critical Theory, and Political Psychology: Past, Present, Future",
+      "authors": [
+        {
+          "name": "Mark P. Worrell",
+          "openalex_id": "A5034203619",
+          "institutions": [
+            "University of Kansas"
+          ]
+        }
+      ],
+      "publication_year": 1998,
+      "publication_date": "1998-04-01",
+      "abstract": "Psychoanalytic Marxism is responsible for developing the notion of the \"authoritarian personality.\"Recognizing that Marx's theory of revolution contained limiranons.the members of the Institute of Sodal Research or \"Frankfurt School\" (along with other kindred but unaffiliated spirits such as Wilhelm Reich) revised traditional theories of society and psyche during the early part of this century in an effort to account for the failure of revolutionary political practice amongst segments of the Germanworking class and, relatedly, the rise of fascism.Characteristically disenchanted with orthodoxies and dogma.Reich echoed sentiments common to Institute members when he complained that \"The theoretical thinking of the Comintern leaders, in whose hands lies the fate of world revolution.has degenerated, becoming economist and mechanical; as a result.the Comintem has been regularly overtaken by events\" ([1934] 1972, p.30).In the case of the Frankfurt School, the product of revisionist synthesizing and jettisoning of dogma was a unique set of theoretical optics that gathered together, inter alia. 1 Hegelian philosophy, Marx's theory of capitalism, and Freudian psychoanalytic theory into what we may now call classical critical theory. 2 1Not widely acknowledged by the Institute was its debt to the interpre rive sociology of Max Weber.Along with Marx and Freud\" Weber is undoubtedly the unadvertised but powerful influence we feel in the writings of many of the institute members (cf Kellner 1985) as well as many other varieties of \"Western Marxism\" (Dahms 1997).It might also be recalled that Erich Fromm was a sociology student at the University of Heidelberg and earned his doctorate under the guidance of Max Weber's brother, Alfred (Burston 1991, p.lS).The tide of Fromm's Ph.D. dissertations was \"Das jiidische Gesetz.Ein Beitrag zur Soziologie des Diasporajudenroms\" (1922).2My use of the phrase \"classical critical theory\" is virtually synonymous with what Wolfgang Bonss calls \"early critical theory\": the period between 1929 and 1936.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Social Thought and Research",
+        "type": "journal",
+        "issn": [
+          "1094-5830",
+          "2469-8466"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://kuscholarworks.ku.edu/bitstream/1808/5149/1/STARV21N1-2A1.pdf"
+      },
+      "topics": [
+        "Philosophy, Sociology, Political Theory",
+        "Marxism and Critical Theory",
+        "Political Theory and Influence"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W2099610959"
+    },
+    {
+      "openalex_id": "W1964672540",
+      "doi": "10.2307/40184226",
+      "title": "Max Weber y Georg Simmel: \u00bfdos teor\u00edas sociol\u00f3gicas de la modernidad?",
+      "authors": [
+        {
+          "name": "Jos\u00e9 Mar\u00eda Gonz\u00e1lez Garc\u00eda",
+          "openalex_id": "A5103601383",
+          "institutions": [
+            "Instituto de Filosof\u00eda"
+          ]
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-01-01",
+      "abstract": "A pesar de reconocer las diferencias entre Simmel y Weber en el an\u00e1lisis de la modernidad, el art\u00edculo aboga por la complementariedad de los dos enfoques: el an\u00e1lisis fragmentario y ensay\u00edstico de la sociedad moderna realizado por Simmel tendr\u00eda su complemento m\u00e1s sistem\u00e1tico en el an\u00e1lisis del proceso de racionalizaci\u00f3n occidental hecho por Weber: Despu\u00e9s de se\u00f1alar la matriz intelectual com\u00fan marcada por la herencia de Goethe y de Kant, as\u00ed como por la recepci\u00f3n cr\u00edtica de Marx y de Nietzsche, se estudian las cr\u00edticas que Weber realiz\u00f3 de la obra de su amigo y colega Simmel, as\u00ed como la influencia que la concepci\u00f3n Simmeliana de la tragedia de la cultura moderna ejerci\u00f3 sobre el diagn\u00f3stico desencantado de Weber acerca de la sociedad moderna como jaula de hierro de la raz\u00f3n burocratizada. Finalmente se contraponen la perspectiva de Weber en el an\u00e1lisis de la modernidad desde el paradigma de la producci\u00f3n con el an\u00e1lisis de Simmel desde el paradigma del consumo, se\u00f1alando las novedades introducidas por \u00e9ste en el estudio de la mercanc\u00eda, del consumidor y de la moda o de los cambios en la gran ciudad. Simmel construye una teor\u00eda de la modernidad basada en las vivencias del individuo, en lo nuevo, en la fragmentaci\u00f3n y en la est\u00e9tica.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Revista Espa\u00f1ola de Investigaciones Sociol\u00f3gicas",
+        "type": "journal",
+        "issn": [
+          "0210-5233",
+          "1988-5903"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.jstor.org/institutionSearch?redirectUri=%2fstable%2f40184226"
+      },
+      "topics": [
+        "Weber, Simmel, Sociological Theory",
+        "Religion and Society in Latin America",
+        "Literary and Cultural Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1964672540"
+    },
+    {
+      "openalex_id": "W2806782177",
+      "doi": null,
+      "title": "An analysis of North Sea oil development and Scottish island youth: Postmaterialism as an identifiable and measurable dimension",
+      "authors": [
+        {
+          "name": "John Alan Anderson",
+          "openalex_id": "A5013707307"
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-01-01",
+      "abstract": "This study examines opinions and attitudes of high school age youth living in the Shetland and Orkney islands and explores aspects of rapid growth associated with North Sea oil development. Only a minimal amount of research regarding post-impacts and rapid growth appears in the literature. Studies that do exist lack in theory and methodological consistency. This study draws ideas from mainstream sociology, Social Impact Assessment (SIA), Quality of Life (QoL) and Inglehart's materialism/postmaterialism to develop a working theory of social values and rapid growth. This study further reviews and applies six methodological considerations useable in future SIA, QoL, or boomtown research.\\nThe results of this study are consistent with the notion that materialism/postmaterialism constitutes an identifiable, internally consistent, and continuous dimension. This study also investigates the complex ways postmaterialism varies. Results further indicate that historical, planning, and policy differences played an important role with island youths regarding their social values and manifestations of social solidarity and anomie.",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "University of New Hampshire Scholars Repository (University of New Hampshire at Manchester)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholars.unh.edu/cgi/viewcontent.cgi?article=2750&context=dissertation"
+      },
+      "topics": [
+        "Island Studies and Pacific Affairs",
+        "Arctic and Russian Policy Studies",
+        "Indigenous Studies and Ecology"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W2806782177"
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

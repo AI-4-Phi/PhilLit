@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.17990/rpf/2025_81_3_0805"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.17990/rpf/2025_81_3_0805",
+      "title": "Nueva filosof\u00eda geneal\u00f3gica y sociol\u00f3gica de la religi\u00f3n",
+      "authors": [
+        {
+          "family": "Conill-Sancho",
+          "given": "Jes\u00fas"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Revista Portuguesa de Filosofia",
+      "volume": "81",
+      "issue": "3",
+      "page": "805-826",
+      "publisher": "Aletheia - Associacao Cientifica e Cultural",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.17990/rpf/2025_81_3_0805"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

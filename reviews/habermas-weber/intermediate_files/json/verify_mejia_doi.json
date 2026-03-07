@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/theo.12395"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/theo.12395",
+      "title": "Demarcation without Dogmas",
+      "authors": [
+        {
+          "family": "Hirvonen",
+          "given": "Ilmari"
+        },
+        {
+          "family": "Karisto",
+          "given": "Janne"
+        }
+      ],
+      "editors": [],
+      "year": 2022,
+      "container_title": "Theoria",
+      "volume": "88",
+      "issue": "3",
+      "page": "701-720",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/theo.12395"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

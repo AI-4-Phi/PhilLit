@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "A developmental logic: Habermas's theory of social evolution",
+    "author": "Oh",
+    "year": 2024
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/theo.12509",
+      "title": "A developmental logic: Habermas's theory of social evolution",
+      "authors": [
+        {
+          "family": "Oh",
+          "given": "Keunchang"
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "Theoria",
+      "volume": "90",
+      "issue": "1",
+      "page": "81-97",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1111/theo.12509",
+      "score": 40.16883
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

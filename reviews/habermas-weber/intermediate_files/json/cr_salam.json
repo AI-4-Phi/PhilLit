@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/08913810308443574"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/08913810308443574",
+      "title": "Habermas vs. Weber on democracy",
+      "authors": [
+        {
+          "family": "Salam",
+          "given": "Reihan"
+        }
+      ],
+      "editors": [],
+      "year": 2003,
+      "container_title": "Critical Review",
+      "volume": "15",
+      "issue": "1-2",
+      "page": "59-85",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/08913810308443574"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

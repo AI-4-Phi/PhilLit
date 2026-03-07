@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1177/0048393108319024"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/0048393108319024",
+      "title": "Habermas' Method: Rational Reconstruction",
+      "authors": [
+        {
+          "family": "Pedersen",
+          "given": "J\u00f8rgen"
+        }
+      ],
+      "editors": [],
+      "year": 2008,
+      "container_title": "Philosophy of the Social Sciences",
+      "volume": "38",
+      "issue": "4",
+      "page": "457-485",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1177/0048393108319024"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

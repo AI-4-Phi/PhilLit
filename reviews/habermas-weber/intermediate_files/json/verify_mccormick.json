@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1017/CBO9780511756047.008"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1017/cbo9780511756047.008",
+      "title": "Conclusion: Habermas's Philosophy of History and Europe's Future",
+      "authors": [],
+      "editors": [],
+      "year": 2007,
+      "container_title": "Weber, Habermas and Transformations of the European State",
+      "volume": "",
+      "issue": "",
+      "page": "287-294",
+      "publisher": "Cambridge University Press",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1017/cbo9780511756047.008"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -90,6 +90,8 @@ reviews/*
 !reviews/extended-mind-cognitive-offloading/
 !reviews/metaphilosophy-literature-reviews/
 !reviews/moral-value-diy/
+!reviews/habermas-weber/
+!reviews/habermas-weber/**
 
 # Claude Code local files (not shared)
 .claude/settings.local.json
