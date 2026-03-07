@@ -1,0 +1,975 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Edgar Habermas key concepts guide",
+  "results": [
+    {
+      "paperId": "38acc9118a5e92287592d01eefb0cf314518af2c",
+      "title": "Habermas: The Key Concepts",
+      "authors": [
+        {
+          "name": "A. Edgar",
+          "authorId": "48981116"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 126,
+      "doi": "10.4324/9780203608715",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/38acc9118a5e92287592d01eefb0cf314518af2c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "68146e0273d3fbd1432272e888c30757d22339a0",
+      "title": "Concepts, Characterizations, and Cautions: A Public Health Guide and Glossary for Planning Food Environment Measurement.",
+      "authors": [
+        {
+          "name": "Sarah Boise",
+          "authorId": "2197354385"
+        },
+        {
+          "name": "Aldo Crossa",
+          "authorId": "2253736026"
+        },
+        {
+          "name": "Analee J. Etheredge",
+          "authorId": "46847660"
+        },
+        {
+          "name": "Edwin M. McCulley",
+          "authorId": "1431735355"
+        },
+        {
+          "name": "G. Lovasi",
+          "authorId": "2490085"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Background\nThere is no singular approach to measuring the food environment suitable for all studies. Understanding terminology, methodology, and common issues is crucial to choosing the best approach.\n\n\nObjective\nThis review is designed to support a shared understanding so diverse multi-institutional teams engaged in food environment measurement can justify their measurement choices and have informed discussions about reasons for measurement strategies to vary across projects.\n\n\nMethods\nThis guide defines key terms and provides annotated resources identified as a useful starting point for exploring the food environment literature. The writing team was an academic-practice collaboration, reflecting on the experience of a multi-institutional team focused on retail environments across the US relevant to cardiovascular disease.\n\n\nResults\nTerms and annotated resources are divided into three sections: food environment constructs, classification and measures, and errors and strategies to reduce error. Two examples of methods and challenges encountered while measuring the food environment in the context of a US health department are provided. Researchers and practice professionals are directed to the Food Environment Electronic Database Directory (https://www.foodenvironmentdirectory.com/) for comparing available data resources for food environment measurement, focused on the US; this resource incorporates updates informed by user input and literature reviews.\n\n\nDiscussion\nMeasuring the food environment is complex and risks oversimplification. This guide serves as a starting point but only partially captures some aspects of neighborhood food environment measurement.\n\n\nConclusions\nNo single food environment measure or data source meets all research and practice objectives. This shared starting point can facilitate theoretically grounded food environment measurement.",
+      "citationCount": 3,
+      "doi": "10.2174/18749445-v16-230821-2023-51",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/68146e0273d3fbd1432272e888c30757d22339a0",
+      "venue": "The Open Public Health Journal",
+      "journal": {
+        "name": "The open public health journal",
+        "volume": "16"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9657bde847b5f2917bed962300595363e560d8f0",
+      "title": "The MAHEC Research Certificate Program: A Brief and Introductory Exposure to Key Research Topics for Diverse Learners.",
+      "authors": [
+        {
+          "name": "Grace E Flinchum",
+          "authorId": "2390274901"
+        },
+        {
+          "name": "Emily S Mazure",
+          "authorId": "2390276608"
+        },
+        {
+          "name": "Chelsea C. Atkins",
+          "authorId": "2360326194"
+        },
+        {
+          "name": "Wendy Nuzzo",
+          "authorId": "2235640637"
+        },
+        {
+          "name": "C. M. Belden",
+          "authorId": "2360326085"
+        },
+        {
+          "name": "Edward C. Jauch",
+          "authorId": "2287409656"
+        },
+        {
+          "name": "Jacqueline R. Halladay",
+          "authorId": "66468330"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Background\nResearch is a core component of health profession training programs, but few efficient training resources exist that provide introductory research training that is brief, freely accessible, and supportive of learners with varying levels of research experience.\n\n\nMethods\nWe set out to create the Mountain Area Health Education Center (MAHEC) Research Certificate program to support Graduate Medical Education (GME) residents and other learners. We initially explored existing curricula used to instruct medical and doctor of pharmacy students in order to identify foundational research topics to include in our introductory research program. We were guided by stakeholders to create a curriculum for interdisciplinary learners that avoided costs to the user, kept learning sessions under 30 minutes, could be fully completed online, and could be incorporated into larger research courses. We created 8 modules by vetting freely available online resources or produced original content if existing resources were deemed inadequate. Additionally, we developed our evaluation processes.\n\n\nResults\nThe MAHEC Research Certificate Curriculum was implemented, and several GME programs, and other educational programs, incorporated the modules into their research curriculum. Preliminary results demonstrate that learner confidence on all 8 research topics improved after module completion. Overall, participants were highly satisfied with the curriculum and were likely to recommend the modules to peers.\n\n\nConclusion\nThis research curriculum fills a need for a free, brief, accessible, and asynchronous online research training program for learners. The curriculum can be used to supplement existing research didactic training in professional programs, to support researchers reviewing specific research topics, and/or to introduce research concepts to inexperienced researchers, all of whom can receive an automatically generated certificate of completion.",
+      "citationCount": 0,
+      "doi": "10.36518/2689-0216.1966",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9657bde847b5f2917bed962300595363e560d8f0",
+      "venue": "HCA Healthcare Journal of Medicine",
+      "journal": {
+        "name": "HCA healthcare journal of medicine",
+        "pages": "\n          485-492\n        ",
+        "volume": "6 5"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "c247193a2ad55d57cd05e8e3e497181eea4590af",
+      "title": "Roadmap for Condensates in Cell Biology",
+      "authors": [
+        {
+          "name": "Dilimulati Aierken",
+          "authorId": "2039129466"
+        },
+        {
+          "name": "Sebastian Aland",
+          "authorId": "2286904556"
+        },
+        {
+          "name": "Stefano Bo",
+          "authorId": "2403071831"
+        },
+        {
+          "name": "S. Boeynaems",
+          "authorId": "6069889"
+        },
+        {
+          "name": "Danfeng Cai",
+          "authorId": "2403071532"
+        },
+        {
+          "name": "S. Carr\u00e1",
+          "authorId": "2403071771"
+        },
+        {
+          "name": "Lindsay B. Case",
+          "authorId": "2288613198"
+        },
+        {
+          "name": "Hue Sun Chan",
+          "authorId": "2404469533"
+        },
+        {
+          "name": "J. R. Espinosa",
+          "authorId": "2387258977"
+        },
+        {
+          "name": "Trevor GrandPre",
+          "authorId": "2316125919"
+        },
+        {
+          "name": "A. Grosberg",
+          "authorId": "33836178"
+        },
+        {
+          "name": "I. S. Haugerud",
+          "authorId": "2175098979"
+        },
+        {
+          "name": "William M. Jacobs",
+          "authorId": "2403071764"
+        },
+        {
+          "name": "Jerelle A. Joseph",
+          "authorId": "47263075"
+        },
+        {
+          "name": "Frank Julicher",
+          "authorId": "1891100"
+        },
+        {
+          "name": "Kurt Kremer",
+          "authorId": "2403071854"
+        },
+        {
+          "name": "Guido Kusters",
+          "authorId": "2383163191"
+        },
+        {
+          "name": "Liedewij Laan",
+          "authorId": "39743902"
+        },
+        {
+          "name": "Keren Lasker",
+          "authorId": "2258706527"
+        },
+        {
+          "name": "Katrin S. Laxhuber",
+          "authorId": "2403071698"
+        },
+        {
+          "name": "Hyun O. Lee",
+          "authorId": "2279247696"
+        },
+        {
+          "name": "Kathy F. Liu",
+          "authorId": "2404958704"
+        },
+        {
+          "name": "D. Notani",
+          "authorId": "6509901"
+        },
+        {
+          "name": "Yicheng Qiang",
+          "authorId": "2290848931"
+        },
+        {
+          "name": "Paul Robustelli",
+          "authorId": "2642853"
+        },
+        {
+          "name": "Leonor Saiz",
+          "authorId": "2403071662"
+        },
+        {
+          "name": "Omar A. Saleh",
+          "authorId": "2253653375"
+        },
+        {
+          "name": "Helmut Schiessel",
+          "authorId": "2238038357"
+        },
+        {
+          "name": "Jeremy Schmit",
+          "authorId": "2387306017"
+        },
+        {
+          "name": "Meng Shen",
+          "authorId": "2403161950"
+        },
+        {
+          "name": "Krishna Shrinivas",
+          "authorId": "2320226108"
+        },
+        {
+          "name": "A. Statt",
+          "authorId": "2378130559"
+        },
+        {
+          "name": "Andr\u00e9s R. Tejedor",
+          "authorId": "152725037"
+        },
+        {
+          "name": "Tatjana Trcek",
+          "authorId": "2403071726"
+        },
+        {
+          "name": "Christoph A. Weber",
+          "authorId": "2385468778"
+        },
+        {
+          "name": "Stephanie Weber",
+          "authorId": "2070432158"
+        },
+        {
+          "name": "N. Wingreen",
+          "authorId": "1781591"
+        },
+        {
+          "name": "Huaiying Zhang",
+          "authorId": "4271881"
+        },
+        {
+          "name": "Yaojun Zhang",
+          "authorId": "2404523536"
+        },
+        {
+          "name": "Huan Xiang Zhou",
+          "authorId": "2403516085"
+        },
+        {
+          "name": "David Zwicker",
+          "authorId": "2299327731"
+        }
+      ],
+      "year": 2026,
+      "abstract": "Biomolecular condensates govern essential cellular processes yet elude description by traditional equilibrium models. This roadmap, distilled from structured discussions at a workshop and reflecting the consensus of its participants, clarifies key concepts for researchers, funding bodies, and journals. After unifying terminology that often separates disciplines, we outline the core physics of condensate formation, review their biological roles, and identify outstanding challenges in nonequilibrium theory, multiscale simulation, and quantitative in-cell measurements. We close with a forward-looking outlook to guide coordinated efforts toward predictive, experimentally anchored understanding and control of biomolecular condensates.",
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": "2601.03677",
+      "url": "https://www.semanticscholar.org/paper/c247193a2ad55d57cd05e8e3e497181eea4590af",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "ebbd1c0be71723657ea63d072de9453793d44cf4",
+      "title": "Measuring what matters in healthcare: a practical guide to psychometric principles and instrument development",
+      "authors": [
+        {
+          "name": "Katina Swan",
+          "authorId": "39717590"
+        },
+        {
+          "name": "Ren\u00e9e Speyer",
+          "authorId": "2077138602"
+        },
+        {
+          "name": "M. Scharitzer",
+          "authorId": "2244433671"
+        },
+        {
+          "name": "Daniele Farneti",
+          "authorId": "2244428692"
+        },
+        {
+          "name": "Ted Brown",
+          "authorId": "2243694668"
+        },
+        {
+          "name": "Virginie Woisard",
+          "authorId": "2244428644"
+        },
+        {
+          "name": "Reinie Cordier",
+          "authorId": "2125323055"
+        }
+      ],
+      "year": 2023,
+      "abstract": "The provision of quality healthcare relies on scales and measures with robust evidence of their psychometric properties. Using measurement instruments with poor reliability, validity, or feasibility, or those that are not appropriate for the target diagnostic group or construct/dimension under consideration, may be unfavorable for patients, unproductive, and hinder empirical advancement. Resources from the COnsensus-based Standards for the selection of health status Measurement INstruments (COSMIN) group can assist in identifying and developing psychometrically sound measures. The COSMIN initiative is the only international, research-based practice taxonomy and methodological guidelines for measurement in healthcare. This manuscript aims to provide an accessible introduction to theories, principles and practices of psychometrics, instrument properties, and scale development, with applied examples from the COSMIN recommendations. It describes why measurement in healthcare is critical to good practice, explains the concepts of the latent variable and hypothetical construct and their importance in healthcare assessments, explores issues of flawed measurement and briefly explains key theories relevant to psychometrics. The paper also outlines a ten-step process to develop and validate a new measurement instrument, with examples drawn from a recently developed visuoperceptual measure for analysis of disordered swallowing to demonstrate key concepts and provides a guide for understanding properties of and terminology related to measurement instruments. This manuscript serves as a resource for healthcare clinicians, educators, and researchers who seek to develop and validate new measurement instruments or improve the properties of existing ones. It highlights the importance of using psychometrically sound measurement instruments to ensure high-quality healthcare assessments.",
+      "citationCount": 69,
+      "doi": "10.3389/fpsyg.2023.1225850",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ebbd1c0be71723657ea63d072de9453793d44cf4",
+      "venue": "Frontiers in Psychology",
+      "journal": {
+        "name": "Frontiers in Psychology",
+        "volume": "14"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d1b2846d78615635ad93cd1b279310b3cfc4e5ed",
+      "title": "Acute Diverticulitis: From Basic Concepts to Current Treatment",
+      "authors": [
+        {
+          "name": "Alexis Emir Noguera Echeverr\u00eda",
+          "authorId": "2218040068"
+        },
+        {
+          "name": "Andrea Polett Quiroz- Dom\u00ednguez",
+          "authorId": "2276259961"
+        },
+        {
+          "name": "Ariadna del Jes\u00fas Arcos- Garc\u00eda",
+          "authorId": "2276266326"
+        },
+        {
+          "name": "Alix Fernanda Castellanos- Ortega",
+          "authorId": "2276255479"
+        },
+        {
+          "name": "Mar\u00eda Fernanda Ibarra- Guerrero",
+          "authorId": "2271318316"
+        },
+        {
+          "name": "Mauricio Gerardo Mart\u00ednez Morales",
+          "authorId": "2271324977"
+        },
+        {
+          "name": "Sergio Heinar Rodr\u00edguez- Sosa",
+          "authorId": "2271308441"
+        },
+        {
+          "name": "Jes\u00fas Albertinio Jarquin- Delgado",
+          "authorId": "2271304120"
+        },
+        {
+          "name": "J. E. E. Hern\u00e1ndez- Luna",
+          "authorId": "2271310761"
+        },
+        {
+          "name": "Ileana Marisol V\u00e1squez- Mu\u00f1oz",
+          "authorId": "2276263268"
+        },
+        {
+          "name": "Cristobal Aldair C\u00e1ceres- Moreno",
+          "authorId": "2276260206"
+        },
+        {
+          "name": "Felipe de Jes\u00fas Triay -Novelo",
+          "authorId": "2276256448"
+        },
+        {
+          "name": "Enzo Alejandro Herrera- Villase\u00f1or",
+          "authorId": "2276260750"
+        },
+        {
+          "name": "Mathilda Giorgia Forfori- Palomo",
+          "authorId": "2271313949"
+        },
+        {
+          "name": "Kevin Omar Salazar- Ramos",
+          "authorId": "2276259959"
+        },
+        {
+          "name": "Carlos Enrique Luna- Guerrero",
+          "authorId": "2276265297"
+        },
+        {
+          "name": "Luis Armando L\u00f3pez -Rico",
+          "authorId": "2276267039"
+        },
+        {
+          "name": "Jackeline Garc\u00eda- Glaxiola",
+          "authorId": "2276265519"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Acute diverticulitis (AD) is a common gastrointestinal disease characterized by abdominal symptoms that can lead to complications such as perforation, peritonitis, and sepsis. Risk factors include a low-fiber diet, high intake of red meat, obesity, sedentarism, alcoholism, and smoking. Computed tomography (CT) imaging is considered key for diagnosis and staging. Different scoring systems help guide treatment decisions, The Hinchey Classification, has been adapted for imaging interpretation. This system categorizes the severity of the disease into stages and helps predict postoperative morbidity and mortality rates, as well as the likelihood of recurrence in patients who are not managed operatively, therefore it\u2019s the most used classification worldwide. Management of acute diverticulitis depends on disease severity. Antibiotics are recommended for mild cases to reduce recovery time and complications, especially for patients with multiple risk factors and comorbidities. On the other hand, complicated cases require surgical treatment based on the presence of abscesses, perforation, obstruction, or fistulas.",
+      "citationCount": 0,
+      "doi": "10.47191/ijmscrs/v3-i12-32",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d1b2846d78615635ad93cd1b279310b3cfc4e5ed",
+      "venue": "International Journal of Medical Science and Clinical Research Studies",
+      "journal": {
+        "name": "INTERNATIONAL JOURNAL OF MEDICAL SCIENCE AND CLINICAL RESEARCH STUDIES"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "d1006f7e9e48a0930d39d649945d23ade52ff5fc",
+      "title": "ISLAMIC FINANCE: INSTRUMENT SYSTEMS AND THEIR APPLICATIONS IN THE GLOBAL MARKET",
+      "authors": [
+        {
+          "name": "Muhammad Kusnady Tabsir",
+          "authorId": "2407679745"
+        },
+        {
+          "name": "Loso Judijanto",
+          "authorId": "119062980"
+        },
+        {
+          "name": "Sapinah Sapinah",
+          "authorId": "2287376539"
+        },
+        {
+          "name": "Muhammad Syafri",
+          "authorId": "2258492578"
+        },
+        {
+          "name": "Edwin Basmar",
+          "authorId": "2407679182"
+        },
+        {
+          "name": "Retno Agustina Ekaputri",
+          "authorId": "2407679761"
+        }
+      ],
+      "year": 2026,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d1006f7e9e48a0930d39d649945d23ade52ff5fc",
+      "venue": "",
+      "journal": {
+        "pages": "1 - 198"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "aa2146fe0fb21a2fca07772992fa171696891d5c",
+      "title": "The Joint Venture Model of Knowledge Utilization: a guide for change in nursing.",
+      "authors": [
+        {
+          "name": "L. Edgar",
+          "authorId": "95192144"
+        },
+        {
+          "name": "R. Herbert",
+          "authorId": "96223296"
+        },
+        {
+          "name": "S. Lambert",
+          "authorId": "35928968"
+        },
+        {
+          "name": "Jo-Ann MacDonald",
+          "authorId": "143965552"
+        },
+        {
+          "name": "Sylvie Dubois",
+          "authorId": "5167223"
+        },
+        {
+          "name": "M. Latimer",
+          "authorId": "32530155"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 27,
+      "doi": "10.12927/CJNL.2006.18172",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/aa2146fe0fb21a2fca07772992fa171696891d5c",
+      "venue": "Nursing Leadership",
+      "journal": {
+        "name": "Nursing leadership",
+        "pages": "\n          41-55\n        ",
+        "volume": "19 2"
+      },
+      "publicationTypes": [
+        "Review",
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "b6b9206ac40d3e9788efb41c62da25072864bbca",
+      "title": "Development Communication and Participation: Applying Habermas to a Case Study of Population Programs in Nepal",
+      "authors": [
+        {
+          "name": "Thomas L. Jacobson",
+          "authorId": "2239369842"
+        },
+        {
+          "name": "J. Douglas Storey",
+          "authorId": "2244831859"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 97,
+      "doi": "10.1111/J.1468-2885.2004.TB00307.X",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b6b9206ac40d3e9788efb41c62da25072864bbca",
+      "venue": "",
+      "journal": {
+        "name": "Communication Theory",
+        "pages": "99-121",
+        "volume": "14"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2e86cbafc12a1a523bed895a6afe87af7634bdbb",
+      "title": "Efficiency and Cost Management in Solid Waste: the Impact of Public Consortia in Northern Minas Gerais",
+      "authors": [
+        {
+          "name": "Marina Ferreira Lapa de Oliveira",
+          "authorId": "2333173205"
+        },
+        {
+          "name": "Elisangela Martins de S\u00e1",
+          "authorId": "1855281"
+        },
+        {
+          "name": "E. Carrasco",
+          "authorId": "2310160167"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Objective: This study aims to investigate the relationship between solid waste management indicators and the participation in public consortia in the northern region of Minas Gerais, seeking to identify characteristics of both consortium and non-consortium municipalities in terms of efficiency and cost management. \n\u00a0 \nTheoretical Framework: Key concepts and theories on municipal solid waste management, public consortia, and economies of scale are presented, providing a solid foundation for understanding the research context. \nMethod: The study employs a documentary and statistical approach, analyzing data from municipalities in northern Minas Gerais. Data collection was conducted through platforms like the National Solid Waste Management Information System (SINIR) and the Spatial Data Infrastructure IDE-SISEMA, covering indicators such as collected mass, management and collection costs, and socioeconomic data. \n\u00a0 \nResults and Discussion: The results showed that consortium municipalities had lower per capita management costs and less cost variability, while Montes Claros, a non-consortium municipality, stood out with better indicators than the regional average. The discussion contextualizes these results with the theoretical framework, highlighting the efficiency of consortia in reducing costs and improving management. Discrepancies and study limitations are also considered. \n\u00a0 \nResearch Implications: The study provides insights into how the results can influence practices in solid waste management, impacting public policies and municipal consortium strategies. \n\u00a0 \nOriginality/Value: This study is pioneering in analyzing this specific relationship in the region, demonstrating the effectiveness of public consortia and guiding municipal managers in decision-making regarding consortia and waste management.",
+      "citationCount": 0,
+      "doi": "10.24857/rgsa.v18n11-223",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2e86cbafc12a1a523bed895a6afe87af7634bdbb",
+      "venue": "Revista de Gest\u00e3o Social e Ambiental",
+      "journal": {
+        "name": "Revista de Gest\u00e3o Social e Ambiental"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "a2dc903de8559fde0e32e163fb267d228735cd43",
+      "title": "Text Guide: Improving the Quality of Long Text Classification by a Text Selection Method Based on Feature Importance",
+      "authors": [
+        {
+          "name": "K. Fiok",
+          "authorId": "1443767581"
+        },
+        {
+          "name": "W. Karwowski",
+          "authorId": "1733749"
+        },
+        {
+          "name": "Edgar Guti\u00e9rrez-Franco",
+          "authorId": "1403609170"
+        },
+        {
+          "name": "Mohammad Reza Davahli",
+          "authorId": "1879149348"
+        },
+        {
+          "name": "Maciej Wilamowski",
+          "authorId": "25060184"
+        },
+        {
+          "name": "T. Ahram",
+          "authorId": "1717374"
+        },
+        {
+          "name": "Awad M. Aljuaid",
+          "authorId": "2077432173"
+        },
+        {
+          "name": "Jozef Zurada",
+          "authorId": "21854865"
+        }
+      ],
+      "year": 2021,
+      "abstract": "The performance of text classification methods has improved greatly over the last decade for text instances of less than 512 tokens. This limit has been adopted by most state-of-the-research transformer models due to the high computational cost of analyzing longer text instances. To mitigate this problem and to improve classification for longer texts, researchers have sought to resolve the underlying causes of the computational cost and have proposed optimizations for the attention mechanism, which is the key element of every transformer model. In our study, we are not pursuing the ultimate goal of long text classification, i.e., the ability to analyze entire text instances at one time while preserving high performance at a reasonable computational cost. Instead, we propose a text truncation method called Text Guide, in which the original text length is reduced to a predefined limit in a manner that improves performance over naive and semi-naive approaches while preserving low computational costs. Text Guide benefits from the concept of feature importance, a notion from the explainable artificial intelligence domain. We demonstrate that Text Guide can be used to improve the performance of recent language models specifically designed for long text classification, such as Longformer. Moreover, we discovered that parameter optimization is the key to Text Guide performance and must be conducted before the method is deployed. Future experiments may reveal additional benefits provided by this new method.",
+      "citationCount": 34,
+      "doi": "10.1109/ACCESS.2021.3099758",
+      "arxivId": "2104.07225",
+      "url": "https://www.semanticscholar.org/paper/a2dc903de8559fde0e32e163fb267d228735cd43",
+      "venue": "IEEE Access",
+      "journal": {
+        "name": "IEEE Access",
+        "pages": "105439-105450",
+        "volume": "9"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "01251bed2ef42fdfaffc52ba5b73aab7d6627d10",
+      "title": "Monetary Policy, Uncertainty, and Communications",
+      "authors": [
+        {
+          "name": "Vaishali Garga",
+          "authorId": "2376708091"
+        },
+        {
+          "name": "Edward P. Herbst",
+          "authorId": "2376700195"
+        },
+        {
+          "name": "Alisdair McKay",
+          "authorId": "2376706959"
+        },
+        {
+          "name": "Giovanni Nicolo",
+          "authorId": "2376700273"
+        },
+        {
+          "name": "Matthias Paustian",
+          "authorId": "98165561"
+        }
+      ],
+      "year": 2025,
+      "abstract": "We review the design and communication of monetary policy strategies that take into account risks and uncertainty. A key element in a robust monetary strategy is the concept of risk management, which is the weighing of key risks when setting policy. When risks to the outlook are balanced, the baseline outlook may be sufficient to guide policy decisions. However, risk-management considerations become important when risks are asymmetric. We discuss how robust simple interest rate rules and optimal control policy can incorporate risk-management considerations into the design of a monetary policy strategy. Alternative scenarios can illustrate salient risks and how monetary policy might respond if those risks were to materialize. However, using alternative scenarios in policy deliberations and communications requires important implementation choices.",
+      "citationCount": 1,
+      "doi": "10.17016/feds.2025.074",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/01251bed2ef42fdfaffc52ba5b73aab7d6627d10",
+      "venue": "Finance and Economics Discussion Series",
+      "journal": {
+        "name": "Finance and Economics Discussion Series"
+      },
+      "publicationTypes": [
+        "CaseReport",
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "f236a2fed5cecaa2be115ed4e78dc3e090749f00",
+      "title": "Evoluci\u00f3n Hist\u00f3rica de la Geometr\u00eda Plana.",
+      "authors": [
+        {
+          "name": "Edwin Michael Santana-Mero",
+          "authorId": "2390739268"
+        },
+        {
+          "name": "Renato Eduardo Vivas-Alc\u00edvar",
+          "authorId": "2390742455"
+        },
+        {
+          "name": "Maydelin Tamayo-Batista",
+          "authorId": "2390736651"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Plane geometry has been fundamental to the development of mathematical thinking and the advancement of civilizations, although its historical evolution is often ignored in formal education. This article provides a qualitative historical review of five key stages in its development, with the aim of analyzing its impact on current education and questioning traditional approaches. The analysis is guided by three questions: What information exists about plane geometry? How has it evolved historically? And how have bibliographic sources on the subject been treated? To this end, a systematic review of 80 sources was conducted, selecting 40 relevant documents through platforms such as Google Scholar, Scielo, Redalyc, Jstor, Dialnet, Reciffuna, and others. Although there is abundant information on the subject, there is evidence of a lack of integration of this historical perspective in the classroom, wasting its pedagogical potential to enrich the understanding of the fundamental concepts of geometry.",
+      "citationCount": 0,
+      "doi": "10.63618/omd/isj/v3/n4/143",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f236a2fed5cecaa2be115ed4e78dc3e090749f00",
+      "venue": "Innova Science Journal",
+      "journal": {
+        "name": "Innova Science Journal"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "6146962fc19023adc35dedb76e7104b58a00a767",
+      "title": "Fromm and Habermas: Allies for Adult Education and Democracy",
+      "authors": [
+        {
+          "name": "T. Fleming",
+          "authorId": "47819986"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 24,
+      "doi": "10.1007/S11217-011-9268-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6146962fc19023adc35dedb76e7104b58a00a767",
+      "venue": "",
+      "journal": {
+        "name": "Studies in Philosophy and Education",
+        "pages": "123-136",
+        "volume": "31"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "86465afba2af32c5815f1619c4046530d1436d0e",
+      "title": "Teaching Environmental Values in Multi-Grade Classrooms: A Qualitative Study of Teacher Experiences and Strategies in the Philippine Edukasyon sa Pagpapakatao (ESP) Curriculum",
+      "authors": [
+        {
+          "name": "Ivy O. Cayunda",
+          "authorId": "2385870881"
+        },
+        {
+          "name": "Stephen Edward D. Alvaro",
+          "authorId": "2385866144"
+        },
+        {
+          "name": "R. J. Quezada",
+          "authorId": "2203215180"
+        }
+      ],
+      "year": 2025,
+      "abstract": "A multigrade classroom is an educational setting where students from two or more different grade levels are taught by the same teacher in the same learning environment. In the Philippines, the K\u201312 curriculum includes Edukasyon sa Pagpapakatao (EsP), a subject that focuses on character development, ethical decision-making, and values education. This study investigates the experiences of primary teachers in teaching environmental literacy in multi-grade classes under the Edukasyon sa Pagpapakatao (EsP) curriculum in Davao del Sur. This is a qualitative phenomenological study. The study involved 8\u201312 participants who were selected through purposive sampling and interview guide questions as part of the process. The data was interpreted using Colaizzi's Data Analysis Approach. The results showed that teachers face challenges in addressing students' diverse developmental stages, learning needs, and social and emotional maturity levels. One of the key difficulties identified in the study is the challenge of aligning instruction with multiple learning objectives while simultaneously integrating character development with environmental literacy. Implemented effective strategies supported by the use of visual aids and experiential learning, which helped students better grasp abstract environmental concepts. In addition, the creation of inclusive learning environments played a crucial role in sustaining student engagement and enhancing their understanding of environmental issues. There is a necessity to create holistic and supportive learning environments. Drawing from these findings, the study recommends that educators adopt adaptable teaching strategies and engage in careful instructional planning to successfully foster environmental literacy and cultivate responsible, ecologically conscious learners.",
+      "citationCount": 0,
+      "doi": "10.9734/ajess/2025/v51i102545",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/86465afba2af32c5815f1619c4046530d1436d0e",
+      "venue": "Asian Journal of Education and Social Studies",
+      "journal": {
+        "name": "Asian Journal of Education and Social Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "39cfc1468a99e84a0d02b46be57b9f3b32cf865b",
+      "title": "Tax conversations : a guide to the key issues in the tax reform debate : essays in honour of John G. Head",
+      "authors": [
+        {
+          "name": "R. Krever",
+          "authorId": "66817358"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 12,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/39cfc1468a99e84a0d02b46be57b9f3b32cf865b",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "13d44b87efd2488be98f3b8e0eb3efa78ab66047",
+      "title": "The Participatory Processes in Public Policy-Making: A Scoping Review",
+      "authors": [
+        {
+          "name": "Teddy Moysan",
+          "authorId": "2331885951"
+        },
+        {
+          "name": "Francisco R\u00f3denas-Rigla",
+          "authorId": "1434968207"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The topic of participatory processes in public policy-making is becoming increasingly common, yet their quality remains disputed. There is as yet no reproducible quantitative assessment method that can be generalized to all such processes. This article proposes a scoping review, guided by the PRISMA research protocol, to identify key concepts linked with the democratic quality of participatory processes. The key concepts which appear are accountability, comprehensiveness, influence, results, deliberation, inclusiveness, representativeness, transparency and context. We conclude that this scoping review provides a rigorous basis upon which a generalizable quantitative evaluation framework can be developed.",
+      "citationCount": 2,
+      "doi": "10.3390/soc14120244",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/13d44b87efd2488be98f3b8e0eb3efa78ab66047",
+      "venue": "Societies",
+      "journal": {
+        "name": "Societies"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "5ffd5762dc2a91030de753b036ea5874ed3d80dd",
+      "title": "Towards a Digital Twin for Gas Turbines: Thermodynamic Modeling, Critical Parameter Estimation, and Performance Optimization Using PINN and PSO",
+      "authors": [
+        {
+          "name": "Jian Tiong Lim",
+          "authorId": "2193668295"
+        },
+        {
+          "name": "A. Habibullah",
+          "authorId": "144188087"
+        },
+        {
+          "name": "E. Ng",
+          "authorId": "2244294498"
+        }
+      ],
+      "year": 2025,
+      "abstract": "Gas turbine (GT) modeling and optimization have been widely studied at the design level but still lacks focus on real-world operational cases. The concept of a digital twin (DT) allows for the interaction between operation data and the system dynamic performance. Among many DT studies, only a few focus on GT for thermal power plants. This study proposes a digital twin prototype framework including the following modules: process modeling, parameter estimation, and performance optimization. Provided with real-world power plant operational data, key performance parameters such as turbine inlet temperature (TIT) and specific fuel consumption (SFC) were initially unavailable, therefore necessitating further calculation using thermodynamic analysis. These parameters are then used as a target label for developing artificial neural networks (ANNs). Three ANN models with different structures are developed to predict TIT, SFC, and turbine power output (GTPO), achieving high R2 scores of 94.03%, 82.27%, and 97.59%, respectively. Physics-informed neural networks (PINNs) are then employed to estimate the values of the air\u2013fuel ratio and combustion efficiency for each time index. The PINN-based estimation resulted in estimated values that align with the literature. Subsequently, an unconventional method of detecting alarms by using conformal prediction were also proposed, resulting in a significantly reduced number of alarms. The developed ANNs are then combined with particle swarm optimization (PSO) to carry out performance optimization in real time. GTPO and SFC are selected as the primary metrics for the optimization, with controllable parameters such as AFR and a fine-tuned inlet guide vane position. The results demonstrated that GTPO could be optimized with the application of conformal prediction when the true GTPO is detected to be higher than the upper range of GTPO obtained from the ANN model with a conformal prediction of a 95% confidence level. Multiple PSO variants were also compared and benchmarked to ensure an enhanced performance. The proposed PSO in this study has a lower mean loss compared to GEP. Furthermore, PSO has a lower computational cost compared to RS for hyperparameter tuning, as shown in this study. Ultimately, the proposed methods aim to enhance GT operations via a data-driven digital twin concept combination of deep learning and optimization algorithms.",
+      "citationCount": 4,
+      "doi": "10.3390/en18143721",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5ffd5762dc2a91030de753b036ea5874ed3d80dd",
+      "venue": "Energies",
+      "journal": {
+        "name": "Energies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "91a5f529fb692edfacaf69cd7605badff108d384",
+      "title": "Assessing the security implications of the ECOWAS protocol on free movement in Nigeria",
+      "authors": [
+        {
+          "name": "Ochoga Edwin Ochoga",
+          "authorId": "1506815583"
+        },
+        {
+          "name": "G. Osimen",
+          "authorId": "120670052"
+        },
+        {
+          "name": "Ibiso Pokubo",
+          "authorId": "2335706785"
+        }
+      ],
+      "year": 2025,
+      "abstract": "The study is designed to assess whether the ECOWAS Protocol on Free Movement of Persons has had negative implications for Nigeria\u2019s national security. The study used key informant interviews and secondary sources as instruments to collect qualitative and quantitative data. The study critiqued the economic integration theory, and the assumption of the theory is premised on the removal of tariff and non-tariff barriers among member states for the free movement of factors of production across national borders. It used the obtained qualitative and quantitative data to demonstrate how Nigeria\u2019s national security has been negatively affected by the free movement regime of ECOWAS. The study reveals that there is a relationship between the free movement enabled by the Protocol and the spread of Boko Haram terrorism, cattle rustling, armed banditry, and the activities of violent herders in Nigeria. Poor implementation of the Protocol by Nigeria, arising from the non-enforcement of Article 4 of the Protocol, the absence of a migration central database, porous borders, and socio-cultural affinities among border communities, are the challenges associated with the implementation of the Protocol in Nigeria. This study argues that proponents of the ECOWAS Protocol on free movement are mainly concerned about the economic benefits of the Protocol for member states without considering the socio-economic complexities associated with the window provided by the free movement regime occasioned by ECOWAS. It is upon this contextual premise that the study reveals that, unlike previous studies, every region has its own specificities to take into account when addressing the concept of free movement. Indeed, given the specific character of migratory movements in each region, there are perhaps as many different approaches to the subject as there are regions. In conclusion, despite the socio-economic benefits of the free movement regime, it has shown that the Protocol has been poorly implemented by Nigeria, with its attendant consequences on Nigeria\u2019s national security. This finding was arrived at by subjecting the conventional perspective of regional economic integration to scrutiny, using Nigeria as a case study. The study recommends that guided economic integration is more desirable for Nigeria\u2019s national security than the ideological allegory of the economic integration theory.",
+      "citationCount": 1,
+      "doi": "10.53894/ijirss.v8i2.5254",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/91a5f529fb692edfacaf69cd7605badff108d384",
+      "venue": "International journal of innovative research and scientific studies",
+      "journal": {
+        "name": "International Journal of Innovative Research and Scientific Studies"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "21cc3ff3f3c6b1f0488345296b23f303b08dbd5d",
+      "title": "Reverse molecular pharmacology identifies the non-canonical axis of IRAK as a chemoresistance factor in neuroblastoma",
+      "authors": [
+        {
+          "name": "M. Le Grand",
+          "authorId": "50764627"
+        },
+        {
+          "name": "C. Buxbaum",
+          "authorId": "2278015467"
+        },
+        {
+          "name": "M. Kerherv\u00e9",
+          "authorId": "2403974936"
+        },
+        {
+          "name": "F. Gaucher",
+          "authorId": "2403974788"
+        },
+        {
+          "name": "\u00c1. Mart\u00ednez-Rubio",
+          "authorId": "1833626274"
+        },
+        {
+          "name": "M. Taha",
+          "authorId": "2202387484"
+        },
+        {
+          "name": "K. Muller",
+          "authorId": "2197209091"
+        },
+        {
+          "name": "B. Mouysset",
+          "authorId": "2197300642"
+        },
+        {
+          "name": "A. Bomane",
+          "authorId": "2247233185"
+        },
+        {
+          "name": "S. Letard",
+          "authorId": "2403996206"
+        },
+        {
+          "name": "T. W. Failes",
+          "authorId": "2266727554"
+        },
+        {
+          "name": "G.M Arndt",
+          "authorId": "2403972817"
+        },
+        {
+          "name": "S. Chebbi",
+          "authorId": "2212432617"
+        },
+        {
+          "name": "E. Labaronne",
+          "authorId": "2403972824"
+        },
+        {
+          "name": "Florence M. G. Cavalli",
+          "authorId": "2361455289"
+        },
+        {
+          "name": "N. Andr\u00e9",
+          "authorId": "2178414221"
+        },
+        {
+          "name": "L. Broutier",
+          "authorId": "3727858"
+        },
+        {
+          "name": "Y. Shaked",
+          "authorId": "2326569976"
+        },
+        {
+          "name": "E. Pasquier",
+          "authorId": "2291427946"
+        }
+      ],
+      "year": 2026,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.64898/2026.01.09.697473",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/21cc3ff3f3c6b1f0488345296b23f303b08dbd5d",
+      "venue": "bioRxiv",
+      "journal": {
+        "name": "bioRxiv"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

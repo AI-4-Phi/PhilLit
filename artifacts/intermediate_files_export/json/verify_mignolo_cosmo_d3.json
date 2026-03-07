@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1215/08992363-12-3-721
+[verify_paper.py] DOI verified: The Many Faces of Cosmo-polis: Border Thinking and...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1215/08992363-12-3-721"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1215/08992363-12-3-721",
+      "title": "The Many Faces of Cosmo-polis: Border Thinking and Critical Cosmopolitanism",
+      "authors": [
+        {
+          "family": "Mignolo",
+          "given": "Walter D."
+        }
+      ],
+      "editors": [],
+      "year": 2000,
+      "container_title": "Public Culture",
+      "volume": "12",
+      "issue": "3",
+      "page": "721-748",
+      "publisher": "Duke University Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1215/08992363-12-3-721"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

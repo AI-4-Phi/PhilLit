@@ -1,0 +1,40 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Structural Transformation of the Public Sphere",
+    "author": "Habermas",
+    "year": 1989
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/466251",
+      "title": "The Public's Fear, or Media as Monster in Habermas, Negt, and Kluge. Jurgen Habermas's The Structural Transformation of the Public Sphere: An Inquiry into a Category of Bourgeois Society",
+      "authors": [
+        {
+          "family": "Polan",
+          "given": "Dana"
+        },
+        {
+          "family": "Habermas",
+          "given": "Jurgen"
+        }
+      ],
+      "editors": [],
+      "year": 1990,
+      "container_title": "Social Text",
+      "volume": "",
+      "issue": "25/26",
+      "page": "260",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/466251",
+      "score": 42.999146
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

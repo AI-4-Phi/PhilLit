@@ -1,0 +1,912 @@
+[search_openalex.py] Searching OpenAlex: 'Landes Women Public Sphere French Revolution Cornell' (year=1985-1995), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_7884455fe2463696)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Landes Women Public Sphere French Revolution Cornell",
+  "results": [
+    {
+      "openalex_id": "W3108094357",
+      "doi": "10.1086/ahr/96.2.528",
+      "title": "<scp>joan b. landes</scp>. <i>Women and the Public Sphere in the Age of the French Revolution</i>. Ithaca: Cornell University Press. 1988. Pp. xi, 276. Cloth $31.95, paper $10.95",
+      "authors": [
+        {
+          "name": "Olwen Hufton",
+          "openalex_id": "A5086718084",
+          "institutions": [
+            "Harvard University Press"
+          ]
+        }
+      ],
+      "publication_year": 1991,
+      "publication_date": "1991-04-01",
+      "abstract": "Journal Article joan b. landes. Women and the Public Sphere in the Age of the French Revolution. Ithaca: Cornell University Press. 1988. Pp. xi, 276. Cloth $31.95, paper $10.95 Get access Landes Joan B.. Women and the Public Sphere in the Age of the French Revolution. Ithaca: Cornell University Press. 1988. Pp. xi, 276. Cloth $31.95, paper $10.95. Olwen Hufton Olwen Hufton Harvard University Search for other works by this author on: Oxford Academic Google Scholar The American Historical Review, Volume 96, Issue 2, April 1991, Pages 528\u2013529, https://doi.org/10.1086/ahr/96.2.528 Published: 01 April 1991",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "The American Historical Review",
+        "type": "journal",
+        "issn": [
+          "0002-8762",
+          "1937-5239"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "European Political History Analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3108094357"
+    },
+    {
+      "openalex_id": "W1995453178",
+      "doi": "10.1007/bf00992905",
+      "title": "The narrative constitution of identity: A relational and network approach",
+      "authors": [
+        {
+          "name": "Margaret R. Somers",
+          "openalex_id": "A5075342025",
+          "orcid": "https://orcid.org/0000-0003-4751-6808",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-10-01",
+      "abstract": null,
+      "cited_by_count": 2839,
+      "type": "article",
+      "source": {
+        "name": "Theory and Society",
+        "type": "journal",
+        "issn": [
+          "0304-2421",
+          "1573-7853"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/BF00992905.pdf"
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Religion and Society Interactions",
+        "Community Health and Development"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W1995453178"
+    },
+    {
+      "openalex_id": "W2081314276",
+      "doi": "10.1257/jep.3.4.99",
+      "title": "Social Norms and Economic Theory",
+      "authors": [
+        {
+          "name": "Jon Elster",
+          "openalex_id": "A5066316449",
+          "orcid": "https://orcid.org/0000-0002-9543-1780"
+        }
+      ],
+      "publication_year": 1989,
+      "publication_date": "1989-11-01",
+      "abstract": "One of the most persistent cleavages in the social sciences is the opposition between two lines of thought conveniently associated with Adam Smith and Emile Durkheim, between homo economicus and homo sociologicus. Of these, the former is supposed to be guided by instrumental rationality, while the behavior of the latter is dictated by social norms. In this paper I characterize this contrast more fully, and discuss attempts by economists to reduce normoriented action to some type of optimizing behavior. Social norms, as I understand them here, are emotional and behavioral propensities of individuals. Are norms rationalizations of self-interest? Are norms followed out of self-interest? Do norms exist to promote self-interest? Do norms exist to promote common interests? Do norms exist to promote genetic fitness?",
+      "cited_by_count": 2017,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Economic Perspectives",
+        "type": "journal",
+        "issn": [
+          "0895-3309",
+          "1944-7965"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.aeaweb.org/articles/pdf/doi/10.1257/jep.3.4.99"
+      },
+      "topics": [
+        "Experimental Behavioral Economics Studies",
+        "Economic Theory and Institutions",
+        "Decision-Making and Behavioral Economics"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W2081314276"
+    },
+    {
+      "openalex_id": "W2025388448",
+      "doi": "10.1075/prag.5.2.01gal",
+      "title": "Constructing languages and publics",
+      "authors": [
+        {
+          "name": "Susan G\u00e1l",
+          "openalex_id": "A5020634680",
+          "orcid": "https://orcid.org/0000-0003-1160-6502"
+        },
+        {
+          "name": "Kathryn A. Woolard",
+          "openalex_id": "A5074430949"
+        }
+      ],
+      "publication_year": 1995,
+      "publication_date": "1995-06-01",
+      "abstract": "Preview this article: Constructing languages and publics, Page 1 of 1 < Previous page | Next page > /docserver/preview/fulltext/prag.5.2.01gal-1.gif",
+      "cited_by_count": 229,
+      "type": "article",
+      "source": {
+        "name": "Pragmatics Quarterly Publication of the International Pragmatics Association (IPrA)",
+        "type": "journal",
+        "issn": [
+          "1018-2101",
+          "2406-4238"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.jbe-platform.com/deliver/fulltext/prag.5.2.01gal.pdf?itemId=%2Fcontent%2Fjournals%2F10.1075%2Fprag.5.2.01gal&mimeType=pdf&containerItemId=content/journals/24064238"
+      },
+      "topics": [
+        "Multilingual Education and Policy",
+        "Second Language Learning and Teaching"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W2025388448"
+    },
+    {
+      "openalex_id": "W4230970196",
+      "doi": "10.1017/cbo9780511665158",
+      "title": "Women, the State and Revolution",
+      "authors": [
+        {
+          "name": "Wendy Z. Goldman",
+          "openalex_id": "A5034272343",
+          "orcid": "https://orcid.org/0000-0001-8673-7908",
+          "institutions": [
+            "Carnegie Mellon University"
+          ]
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-11-26",
+      "abstract": "When the Bolsheviks came to power in 1917, they believed that under socialism the family would 'wither away.' They envisioned a society in which communal dining halls, daycare centres, and public laundries would replace the unpaid labour of women in the home. Yet by 1936 legislation designed to liberate women from their legal and economic dependence had given way to increasingly conservative solutions aimed at strengthening traditional family ties and women's reproductive role. This book explains the reversal, focusing on how women, peasants, and orphans responded to Bolshevik attempts to remake the family, and how their opinions and experiences in turn were used by the state to meet its own needs.",
+      "cited_by_count": 215,
+      "type": "book",
+      "source": {
+        "name": "Cambridge University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7813438C26991B590627661501C0EAC9/9780511665158c1_p1-58_CBO.pdf/origins_of_the_bolshevik_vision_love_unfettered_women_free.pdf"
+      },
+      "topics": [
+        "Historical Gender and Feminism Studies"
+      ],
+      "referenced_works_count": 1,
+      "url": "https://openalex.org/W4230970196"
+    },
+    {
+      "openalex_id": "W2044550271",
+      "doi": "10.1525/ae.1989.16.4.02a00080",
+      "title": "from free labor to family allowances: labor and African society in colonial discourse",
+      "authors": [
+        {
+          "name": "Frederick Cooper",
+          "openalex_id": "A5110784615",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 1989,
+      "publication_date": "1989-11-01",
+      "abstract": "From the early 19th century, the European debate over the slave trade and slavery pioneered a new international discourse in which the concept of free labor defined a universalistic standard for the conduct of Europeans in colonies and non\u2010European societies. Implementing free labor, however, entailed a confrontation with the particular work culture and values of local communities, from ex\u2010slaves to independent peasants. This article examines the connection between imperial powers' critiques of each others' conduct\u2014and the role of international fora in defining imperial morality\u2014and their encounter with African social structures. Colonial states were inextricably drawn into confronting Africans as social beings: first in trying to induce them to become disciplined wage workers, then to contain the conflicts unleashed in places of work and urban residence. By the 1940s, this meant exporting to Africa European approaches to containing class conflict. Colonial cities became less the realm of the colonial expert and more that of the \u201cindustrial relations\u201d specialist, who argued against migratory labor and in favor of taking Africans out of their cultural milieu and reproducing their families under the eyes of European welfare experts, even if this implied paying family wages or family allowances that exceeded the free market price of labor. Only with decolonization did France and Britain take themselves out of the social and political intimacy of the workers' milieu and participate in a new\u2014or rather old\u2014international discourse on the moral and social virtue of the free market.[labor, migration, reproduction, slavery, welfare, decolonization]",
+      "cited_by_count": 80,
+      "type": "article",
+      "source": {
+        "name": "American Ethnologist",
+        "type": "journal",
+        "issn": [
+          "0094-0496",
+          "1548-1425"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hdl.handle.net/2027.42/136392"
+      },
+      "topics": [
+        "African history and culture studies",
+        "Global Maritime and Colonial Histories",
+        "Colonialism, slavery, and trade"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W2044550271"
+    },
+    {
+      "openalex_id": "W2163140770",
+      "doi": "10.1017/s0020859000112349",
+      "title": "Gender and Labor History: The nineteenth-century legacy",
+      "authors": [
+        {
+          "name": "Sonya O. Rose",
+          "openalex_id": "A5042005220"
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-04-01",
+      "abstract": "All disciplines and sub-disciplines are defined through a series of inclusions and exclusions. They are based on specific assumptions and conventions that delineate their appropriate objects and methods of study. Historians, like scholars in other fields, including the so-called \u201cnatural sciences\u201d, do not simply record some objective reality that exists independently of their taken-for-granted ideas about the nature of that reality. Rather, their decisions as to which subjects and events will be objects of study and how they will be conceptualized are shaped both by widely accepted philosophical tenets and common-sense understandings of the nature of human society.",
+      "cited_by_count": 33,
+      "type": "article",
+      "source": {
+        "name": "International Review of Social History",
+        "type": "journal",
+        "issn": [
+          "0020-8590",
+          "1469-512X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/6F1761103B77D0851E7876E1D6225486/S0020859000112349a.pdf/div-class-title-gender-and-labor-history-the-nineteenth-century-legacy-div.pdf"
+      },
+      "topics": [
+        "Historical Gender and Feminism Studies",
+        "Historical Studies on Reproduction, Gender, Health, and Societal Changes",
+        "Historical Economic and Social Studies"
+      ],
+      "referenced_works_count": 109,
+      "url": "https://openalex.org/W2163140770"
+    },
+    {
+      "openalex_id": "W2080028017",
+      "doi": "10.1111/j.1468-5914.1995.tb00267.x",
+      "title": "Social Representations in and of the Public Sphere: Towards a Theoretical Articulation",
+      "authors": [
+        {
+          "name": "Sandra Jovchelovitch",
+          "openalex_id": "A5028343419",
+          "orcid": "https://orcid.org/0000-0002-0073-2792"
+        }
+      ],
+      "publication_year": 1995,
+      "publication_date": "1995-03-01",
+      "abstract": null,
+      "cited_by_count": 50,
+      "type": "article",
+      "source": {
+        "name": "Journal for the Theory of Social Behaviour",
+        "type": "journal",
+        "issn": [
+          "0021-8308",
+          "1468-5914"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1468-5914.1995.tb00267.x"
+      },
+      "topics": [
+        "Hannah Arendt's Political Philosophy",
+        "Critical Theory and Philosophy",
+        "Social Representations and Identity"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2080028017"
+    },
+    {
+      "openalex_id": "W1996603277",
+      "doi": "10.1017/s0010417500018934",
+      "title": "Regulation Theory, Post-Marxism, and the New Social Movements",
+      "authors": [
+        {
+          "name": "George Steinmetz",
+          "openalex_id": "A5030763609",
+          "orcid": "https://orcid.org/0000-0002-5081-1114",
+          "institutions": [
+            "University of Chicago"
+          ]
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-01-01",
+      "abstract": "An abstract is not available for this content so a preview has been provided. As you have access to this content, a full PDF is available via the 'Save PDF' action button.",
+      "cited_by_count": 74,
+      "type": "article",
+      "source": {
+        "name": "Comparative Studies in Society and History",
+        "type": "journal",
+        "issn": [
+          "0010-4175",
+          "1475-2999"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1A8BB5C9B3F4B4582D1FA54B520F7497/S0010417500018934a.pdf/div-class-title-regulation-theory-post-marxism-and-the-new-social-movements-div.pdf"
+      },
+      "topics": [
+        "Political Economy and Marxism",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 168,
+      "url": "https://openalex.org/W1996603277"
+    },
+    {
+      "openalex_id": "W2159023659",
+      "doi": null,
+      "title": "The Red and the Black: The Sandinistas and the Nicaraguan Revolution",
+      "authors": [
+        {
+          "name": "John H. Weeks",
+          "openalex_id": "A5015399148"
+        },
+        {
+          "name": "Elizabeth Dore",
+          "openalex_id": "A5112199202"
+        }
+      ],
+      "publication_year": 1992,
+      "publication_date": "1992-01-01",
+      "abstract": null,
+      "cited_by_count": 66,
+      "type": "book",
+      "source": {
+        "name": "SOAS Research Online (SOAS University of London)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://eprints.soas.ac.uk/6529/1/112804.pdf"
+      },
+      "topics": [
+        "Cuban History and Society",
+        "Politics and Society in Latin America",
+        "Caribbean history, culture, and politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2159023659"
+    },
+    {
+      "openalex_id": "W2582895470",
+      "doi": "10.1075/prag.5.2.02irv",
+      "title": "The family romance of colonial linguistics",
+      "authors": [
+        {
+          "name": "Judith T. Irvine",
+          "openalex_id": "A5038597464",
+          "orcid": "https://orcid.org/0000-0001-5096-5124"
+        }
+      ],
+      "publication_year": 1995,
+      "publication_date": "1995-06-01",
+      "abstract": "Preview this article: The family romance of colonial linguistics, Page 1 of 1 < Previous page | Next page > /docserver/preview/fulltext/prag.5.2.02irv-1.gif",
+      "cited_by_count": 31,
+      "type": "article",
+      "source": {
+        "name": "Pragmatics Quarterly Publication of the International Pragmatics Association (IPrA)",
+        "type": "journal",
+        "issn": [
+          "1018-2101",
+          "2406-4238"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.jbe-platform.com/deliver/fulltext/prag.5.2.02irv.pdf?itemId=%2Fcontent%2Fjournals%2F10.1075%2Fprag.5.2.02irv&mimeType=pdf&containerItemId=content/journals/24064238"
+      },
+      "topics": [
+        "Multilingual Education and Policy",
+        "Linguistic Variation and Morphology",
+        "Historical Linguistics and Language Studies"
+      ],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W2582895470"
+    },
+    {
+      "openalex_id": "W297881055",
+      "doi": "10.17953/aicr.14.1.38033m5812pv6853",
+      "title": "Fur Production as a Specialized Activity in a World System: Indians in the North American Fur Trade",
+      "authors": [
+        {
+          "name": "P. Nick Kardulias",
+          "openalex_id": "A5026098857"
+        }
+      ],
+      "publication_year": 1990,
+      "publication_date": "1990-01-01",
+      "abstract": "Views Icon Views Article contents Figures & tables Video Audio Supplementary Data Peer Review Share Icon Share Facebook Twitter LinkedIn Email Tools Icon Tools Get Permissions Cite Icon Cite Search Site Citation P. Nick Kardulias; Fur Production as a Specialized Activity in a World System: Indians in the North American Fur Trade. American Indian Culture and Research Journal 1 January 1990; 14 (1): 25\u201360. doi: https://doi.org/10.17953/aicr.14.1.38033m5812pv6853 Download citation file: Ris (Zotero) Reference Manager EasyBib Bookends Mendeley Papers EndNote RefWorks BibTex toolbar search Search Dropdown Menu toolbar search search input Search input auto suggest Search",
+      "cited_by_count": 49,
+      "type": "article",
+      "source": {
+        "name": "American Indian Culture and Research Journal",
+        "type": "journal",
+        "issn": [
+          "0161-6463"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://meridian.allenpress.com/aicrj/article-pdf/14/1/25/1358647/aicr_14_1_38033m5812pv6853.pdf"
+      },
+      "topics": [
+        "Archaeology and ancient environmental studies",
+        "Historical Economic and Social Studies",
+        "Anthropological Studies and Insights"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W297881055"
+    },
+    {
+      "openalex_id": "W9373452",
+      "doi": "10.1046/j.1365-2265.1997.2521050.x",
+      "title": "Trade-related employment for women in industry and services in developing countries",
+      "authors": [
+        {
+          "name": "Susan Joekes",
+          "openalex_id": "A5063465127"
+        }
+      ],
+      "publication_year": 1995,
+      "publication_date": "1995-01-01",
+      "abstract": "This study demonstrates the very satisfactory clinical acceptability of testosterone pellet implants for androgen replacement therapy within a single unit with experienced operators. The only regular adverse effect is extrusion, which may be related to mechanical factors such as habitual work activity but also possibly procedural factors. Other adverse effects such as bleeding, infection and fibrosis were rare. An improved method of implant delivery would enhance this old but durable technology.",
+      "cited_by_count": 95,
+      "type": "article",
+      "source": {
+        "name": "Clinical Endocrinology",
+        "type": "journal",
+        "issn": [
+          "0300-0664",
+          "1365-2265"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10419/148777"
+      },
+      "topics": [
+        "Global trade and economics",
+        "Indian Economic and Social Development",
+        "Global trade, sustainability, and social impact"
+      ],
+      "referenced_works_count": 24,
+      "url": "https://openalex.org/W9373452"
+    },
+    {
+      "openalex_id": "W2030749622",
+      "doi": "10.1017/s0010417500019071",
+      "title": "Trading States, Trading Places: The Role of Patrimonialism in Early Modern Dutch Development",
+      "authors": [
+        {
+          "name": "Julia Adams",
+          "openalex_id": "A5103544340",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-04-01",
+      "abstract": "The decline of Iberia in the sixteenth century shook the foundations of world trade and politics, undermining Spain's Asian and American trade monopolies and creating the international opening that spurred other European states and merchants in the contest for overseas markets. After the waves had subsided in the seventeenth century, the world system had been reconfigured. The United Provinces of the Netherlands had become the first truly global commercial power\u2014the first hegemon. The rise of the Netherlands to the position of world hegemony is at first glance startling. The seven provinces had a relatively small population (some 1.5 million inhabitants in 1600, compared to 10 million in Spain and Portugal, and 16 to 20 million in neighboring France), and had formed part of the Low Countries, an uneasily aggregated group of seigneuries, cities, and provinces under Spanish rule until the 1570 s.",
+      "cited_by_count": 36,
+      "type": "article",
+      "source": {
+        "name": "Comparative Studies in Society and History",
+        "type": "journal",
+        "issn": [
+          "0010-4175",
+          "1475-2999"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E8BF77C13FC12BF5D2C70C10EDF7999F/S0010417500019071a.pdf/div-class-title-trading-states-trading-places-the-role-of-patrimonialism-in-early-modern-dutch-development-div.pdf"
+      },
+      "topics": [
+        "Historical Economic and Social Studies"
+      ],
+      "referenced_works_count": 126,
+      "url": "https://openalex.org/W2030749622"
+    },
+    {
+      "openalex_id": "W2029833777",
+      "doi": "10.1093/fs/44.2.221",
+      "title": "Review. Women and the Public Sphere in the Age of the French Revolution. Landes, Joan B.",
+      "authors": [
+        {
+          "name": "J. H. BLOCH",
+          "openalex_id": "A5112629692",
+          "institutions": [
+            "Transnational Press London"
+          ]
+        }
+      ],
+      "publication_year": 1990,
+      "publication_date": "1990-04-01",
+      "abstract": "Journal Article REVIEWS Get access Women and the Public Sphere in the Age of the French Revolution. By JOAN B. LANDES. Ithaca-London, Cornell University Press, 1988. xi + 275 pp. Hb $31.95. Pb$10.95. JEAN BLOCH JEAN BLOCH LONDON Search for other works by this author on: Oxford Academic Google Scholar French Studies, Volume XLIV, Issue 2, April 1990, Pages 221\u2013222, https://doi.org/10.1093/fs/XLIV.2.221 Published: 01 April 1990",
+      "cited_by_count": 0,
+      "type": "article",
+      "source": {
+        "name": "French Studies",
+        "type": "journal",
+        "issn": [
+          "0016-1128",
+          "1468-2931"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Historical Studies and Socio-cultural Analysis",
+        "European Political History Analysis",
+        "Historical Gender and Feminism Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2029833777"
+    },
+    {
+      "openalex_id": "W2727966932",
+      "doi": "10.53300/001c.6051",
+      "title": "Citizenship, Sovereignty and Globalisation: Teaching International Law in the Post-Soviet Era",
+      "authors": [
+        {
+          "name": "Anne Orford",
+          "openalex_id": "A5055081040",
+          "orcid": "https://orcid.org/0000-0003-2449-4001"
+        }
+      ],
+      "publication_year": 1995,
+      "publication_date": "1995-01-01",
+      "abstract": "This article will deal with one aspect of feminist research and teaching about international law in the post-Soviet era: the need to think about international law ethically in ways that take account of how international lawyers are located in global networks of power. While international law has long been involved in \u201cthe organisation of power relations between white and \u2018other\u2019\u2019\u2019, it is particularly important in an era of global economic restructuring to study international law as a process that is implicated in the reproduction of inequality. As Andrea Rhodes-Little suggests: For feminists \u2026 the further challenge thrown down by \u201cother\u201d women is that of how to resist those social practices which produce inequality and divide women against each other within a global context as well as in local contexts. In short, feminists search for ethical practices which are answerable for the power relations they produce. We also search for law which acknowledges its position in the organisation of power relations between women and women and between white and \u201cother\u201d. My argument about the need for \u201cethical\u201d practices of teaching and research about international law, practices \u201cwhich are answerable for the power relations they produce\u201d, can be read as part of a larger debate about the need to reorient legal education and the production of knowledge about legality generally. It also draws on the work of those feminist and critical theorists who argue for the development of an ethical approach to education and to the production of knowledge in areas such as literary theory and cultural studies. The particular focus of this article is on the ways in which that approach to teaching international law can be explored through the inclusion, in international legal curricula, of material that questions the central notions of citizenship and sovereignty. In the first section, I will sketch some of the ways in which feminist theorists have attempted to ask a different set of questions about citizenship and sovereignty, by contesting the dominant conception of the citizen as a neutral disembodied individual, and by considering the implications of citizenship in a global context. Secondly, I will make some necessarily brief comments about teaching method, addressing the pedagogical issues that are raised when feminist, critical and postcolonial material is included in the law curriculum.",
+      "cited_by_count": 7,
+      "type": "article",
+      "source": {
+        "name": "Legal Education Review",
+        "type": "journal",
+        "issn": [
+          "1033-2839",
+          "1839-3713"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ler.scholasticahq.com/article/6051.pdf"
+      },
+      "topics": [
+        "Gender, Security, and Conflict",
+        "Gender Politics and Representation",
+        "Historical and Contemporary Political Dynamics"
+      ],
+      "referenced_works_count": 11,
+      "url": "https://openalex.org/W2727966932"
+    },
+    {
+      "openalex_id": "W2784833389",
+      "doi": "10.5287/ora-9r0jadjw9",
+      "title": "Gender, power and the body : some figurations of femininity in Milton and seventeenth-century women's writing",
+      "authors": [
+        {
+          "name": "Diane Purkiss",
+          "openalex_id": "A5081253986"
+        }
+      ],
+      "publication_year": 1991,
+      "publication_date": "1991-01-01",
+      "abstract": "This thesis deals with gender, the body and political power in the seventeenth century through readings of selected nonliterary texts set against readings of the writings of Milton and seventeenth-century women. Milton's poems and even his prose have most often been contextualized with reference to the higher reaches of literary history; here they are placed in more unfamiliar contexts: certain seventeenth-century women's writings, the emerging discourses of feminine conduct, and the discourses of 'news' produced in and around the Civil War. I show how both Milton and women writers struggle to come to terms with the implications of the new and powerful ideological formulations which result from the explosion of print culture which produces these texts. [Please consult .pdf for the complete abstract]",
+      "cited_by_count": 9,
+      "type": "dissertation",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ora.ox.ac.uk/objects/uuid:9f4386a3-ec54-4ef2-aaf7-ffb09ee4439e"
+      },
+      "topics": [
+        "Literature: history, themes, analysis"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2784833389"
+    },
+    {
+      "openalex_id": "W2513918221",
+      "doi": null,
+      "title": "History of Consciousness and Civilization Analysis",
+      "authors": [
+        {
+          "name": "Vytautas Kavolis",
+          "openalex_id": "A5062278751"
+        }
+      ],
+      "publication_year": 1987,
+      "publication_date": "1987-10-01",
+      "abstract": "Both terms of my topic may not generally be held in clear focus. I will therefore begin with names of some of those I take to be, by their main accents, representative of each of two perspectives. Civilization analysis stands for Max Weber, Norbert Elias, Louis Dumont, Benjamin Nelson, S. N. Eisenstadt. History of consciousness is represented by Michel Foucault, Philippe Aries, Hayden White, Fredric Jameson, H. D. Harootunian. The second list could be greatly expanded: it points to a currently fashionable approach. Most of those listed (to their own credit) are not pure representatives of one of these perspectives. Foucault in his substantive works on madness, clinicalization of medicine, and imprisonment is almost as much a civilization analyst as historian of consciousness. Among those who can be identified with civilizational approach, Elias (in his studies of the civilizing process) is closest to history of consciousness, Eisenstadt wholly alien to it. Shifts occur over time. Dumont in his later work on European political philosophy has moved toward history of consciousness, as have several others. Any movement in opposite direction is barely perceptible. I have chosen to compare these two scientific programs because, first, both are important to civilizational studies, capable of grasping what is essential to civilizations as distinguished from other entities, and second, both are more than merely technical disciplines, rather constituting broad intellectual and human orientations. It is not possible to be a cultured person, in sense in which nineteenth-century east Europeans used term, without having become deeply engaged with both history of consciousness and civilization analysis. I will focus on two tendencies both of which may exist in same author, but which carry him or her in different directions. I will touch upon their logics, phenomenologies, points of contact, and critical evaluations.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "ScholarsArchive  (Brigham Young University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarsarchive.byu.edu/ccr/vol17/iss17/2"
+      },
+      "topics": [
+        "Sociology and Norbert Elias"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W2513918221"
+    },
+    {
+      "openalex_id": "W2274442166",
+      "doi": null,
+      "title": "Wansalawara: soundings in Melanesian history",
+      "authors": [
+        {
+          "name": "Brij V. Lal",
+          "openalex_id": "A5111473925",
+          "orcid": "https://orcid.org/0009-0002-2037-3405"
+        }
+      ],
+      "publication_year": 1987,
+      "publication_date": "1987-01-01",
+      "abstract": "were few such specialists at that time anywhere in the world with the exception of the Australian National University where the first systematic Pacific Islands study began under the direction of Professors J.W. Davidson and H",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "ScholarSpace (University of Hawaii at Manoa)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/10125/15535"
+      },
+      "topics": [
+        "Island Studies and Pacific Affairs",
+        "Pacific and Southeast Asian Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2274442166"
+    },
+    {
+      "openalex_id": "W2928426979",
+      "doi": null,
+      "title": "The Antinomies of Poverty Law and a Theory of Dialogic Empowerment",
+      "authors": [
+        {
+          "name": "Anthony V. Alfieri",
+          "openalex_id": "A5032881461",
+          "orcid": "https://orcid.org/0009-0009-0808-3764"
+        }
+      ],
+      "publication_year": 1987,
+      "publication_date": "1987-01-01",
+      "abstract": null,
+      "cited_by_count": 13,
+      "type": "article",
+      "source": {
+        "name": "University of Miami School of Law Institutional Repository (University of Miami)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://repository.law.miami.edu/cgi/viewcontent.cgi?article=1589&context=fac_articles"
+      },
+      "topics": [
+        "Human Rights and Development",
+        "Foucault, Power, and Ethics",
+        "Income, Poverty, and Inequality"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2928426979"
+    },
+    {
+      "openalex_id": "W2072564710",
+      "doi": "10.1086/495000",
+      "title": "Fearful Bodies into Disciplined Subjects: Pleasure, Romance, and the Family Drama of Colonial Reform in Mary Carpenter's \"Six Months in India\"",
+      "authors": [
+        {
+          "name": "Antoinette Burton",
+          "openalex_id": "A5052384298",
+          "orcid": "https://orcid.org/0000-0002-9638-2263"
+        }
+      ],
+      "publication_year": 1995,
+      "publication_date": "1995-04-01",
+      "abstract": "Everywhere the appearance of men, women, and children was sufficiently novel and curious. The deficiency of clothing in the men struck me peculiarly. They seemed to consider that a black skin supersedes the necessity of raiment, and in this respect the lower orders appear perfectly devoid of any sense of decency. I never became reconciled to this, and believe now, as I did then, that living thus in a sort of savage state in the midst of a civilised people increases that want of proper selfrespect and that separation from the higher classes which is so painfully characteristic of Hindu society. . . .",
+      "cited_by_count": 11,
+      "type": "article",
+      "source": {
+        "name": "Signs",
+        "type": "journal",
+        "issn": [
+          "0097-9740",
+          "1545-6943"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/495000"
+      },
+      "topics": [
+        "Literature: history, themes, analysis",
+        "Race, History, and American Society",
+        "American History and Culture"
+      ],
+      "referenced_works_count": 70,
+      "url": "https://openalex.org/W2072564710"
+    },
+    {
+      "openalex_id": "W2006908484",
+      "doi": "10.2307/463010",
+      "title": "Reading between Worlds: Contemporary Greek Women's Writing and Censorship",
+      "authors": [
+        {
+          "name": "Karen Van Dyck",
+          "openalex_id": "A5027391915"
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-01-01",
+      "abstract": "This essay accounts for the recent prominence of women's writing in Greece by examining how women writers applied writing strategies developed under the dictatorship (1967\u201374) to their critique of fixed gender roles. Margarita Karapanou's novel Kassandra and the Wolf deconstructs the victor-victim opposition and poses the process of inversion itself as a position from which to write. Jenny Mastoraki's collection of poems Tales of the Deep works out a similar perspective formally, suggesting that such a position requires that the order of language also be disturbed. By analyzing these texts in the historical context of the dictatorship and in the theoretical contexts of feminist works such as Christa Wolf's Cassandra and Luce Irigaray's Speculum of the Other Woman , I show how Karapanou's and Mastoraki's responses to censorship are not individual exceptions but key components of recent Greek women's writing.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "PMLA/Publications of the Modern Language Association of America",
+        "type": "journal",
+        "issn": [
+          "0030-8129",
+          "1938-1530"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/A2C6E412E5DDA94312F9359B42E35B0A/S0030812900058387a.pdf/div-class-title-reading-between-worlds-contemporary-greek-women-s-writing-and-censorship-div.pdf"
+      },
+      "topics": [
+        "Contemporary and Historical Greek Studies"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W2006908484"
+    },
+    {
+      "openalex_id": "W2015462822",
+      "doi": "10.1163/22134379-90003098",
+      "title": "The sociology of South-East Asia; A critical review of some concepts and issues",
+      "authors": [
+        {
+          "name": "Victor T. King",
+          "openalex_id": "A5113613252",
+          "orcid": "https://orcid.org/0000-0002-0583-1976",
+          "institutions": [
+            "Royal Netherlands Institute of Southeast Asian and Caribbean Studies"
+          ]
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-01-01",
+      "abstract": "A Critical Review of Some Concepts and Issues*In the field of South-East Asian Studies, as in other area studies programmes, we usually examine the realities of the region under study from our different disciplinary perspectives, though, wherever possible, we use interdisciplinary approaches as well.The study of South-East Asia has generated some quite remarkable scholarly contributions in certain I wish to acknowledge the helpful comments of the two anonymous referees of this paper.I have duly followed some of their constructive criticisms and made revisions as well as included additional information and discussion.I hope that I have responded to their main observation; this tumed on the issue of which authors and literature should be covered in a review of this kind.In any review in article form it is difficult to be comprehensive and it has been impossible to consider the substantial literature in applied sociology and the sociology of rural development.This must be the subject of a separate paper on which I am presently engaged.It was also feit that my initial paper gave too much emphasis to English-language publications written by Western observers to the neglect of publications in other European languages and more especially writings by South-East Asians in both English and local languages.As I have stated in the text of the paper, my review is a personal one, and I have tried to cover literature which, in my view, has had theoretical significance within and without the region and generated much scholarly debate.I shall be happy to engage in",
+      "cited_by_count": 8,
+      "type": "review",
+      "source": {
+        "name": "Bijdragen tot de taal- land- en volkenkunde / Journal of the Humanities and Social Sciences of Southeast Asia",
+        "type": "journal",
+        "issn": [
+          "0006-2294",
+          "2213-4379"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://brill.com/downloadpdf/journals/bki/150/1/article-p171_8.pdf"
+      },
+      "topics": [
+        "Southeast Asian Sociopolitical Studies",
+        "Social and Economic Development in India",
+        "Vietnamese History and Culture Studies"
+      ],
+      "referenced_works_count": 83,
+      "url": "https://openalex.org/W2015462822"
+    },
+    {
+      "openalex_id": "W1574772235",
+      "doi": null,
+      "title": "The bushrangers and the convict system of Van Diemen's Land, 1803-1846",
+      "authors": [
+        {
+          "name": "Hamish Maxwell\u2010Stewart",
+          "openalex_id": "A5014119624",
+          "orcid": "https://orcid.org/0000-0001-7336-0953"
+        }
+      ],
+      "publication_year": 1991,
+      "publication_date": "1991-01-01",
+      "abstract": "The thesis seeks to examine the nature of the Australian transportation system through&#13;\\nan assessment of the the records of 330 convicts transported between 1800 and 1845.&#13;\\nThese individuals were selected on the basis of their colonial experience: they all&#13;\\nabsconded from their place of servitude and spent a period of time illegally at large&#13;\\nunder-arms. Known generically as the bushrangers of Van Diemen's Land. these&#13;\\nconvicts have maintained a high profile in Australia's historical tradition. However, few&#13;\\nattempts have been to distinguish between the mythical elements of that tradition and the&#13;\\nreality of convict bushranging.&#13;\\n&#13;\\nChapter One is reserved for an assessment of the historiography of bushranging.&#13;\\nChapter Two examines the convicts in the data set in terms of their human capital. It is&#13;\\nargued that the stereotype of the bushranger prevalent in the literature is not supported&#13;\\nby an analysis of the convict indents. It is maintained that the bushrangers were&#13;\\nrepresentative of the convicts who arrived in Van Diemen's Land over the period of the&#13;\\nstudy. The chapter assesses the potential utility of the bushrangers as unfree workers.&#13;\\nChapter Three examines the economic rationale of transportation. It seeks to investigate&#13;\\nits origins and apply recent developments in the literature of unfree labour to Van&#13;\\nDiemen's Land. In particular. three key areas of the economy are addressed: the&#13;\\noperation of the labour market; the labour extraction process and the allocation of unfree&#13;\\nworkers to job openings. Chapter Four tests the theoretical approach adopted in the&#13;\\nprevious chapter and provides an interpretation of the interaction between convicts,&#13;\\nprivate employers and the state. The purpose of Chapter Five is to make a critical&#13;\\nassessment of previous attempts to locate convict bushranging within the political&#13;\\neconomy of early white Australia. It will demonstrate the shortcomings of previous&#13;\\nstudies in this area and outline a fresh approach. Chapter Six will explore this theme in&#13;\\ngreater depth. Drawing on the findings of the previous chapters it will provide a new&#13;\\nanalysis of bushranging which throws fresh light on the operation of the convict system&#13;\\nin Eastern Australia.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Edinburgh Research Archive (University of Edinburgh)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1842/6893"
+      },
+      "topics": [
+        "Cultural History and Identity Formation"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1574772235"
+    },
+    {
+      "openalex_id": "W1555212004",
+      "doi": null,
+      "title": "Rediscovering Conservatism: Burkean Political Theory and Constitutional Interpretation",
+      "authors": [
+        {
+          "name": "Ernest A. Young",
+          "openalex_id": "A5108597228"
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-01-01",
+      "abstract": "Recent decisions of the Rehnquist Court-particularly the Court's 1992 decision in Planned Parenthood v. Casey-have caused many to question widely-held assumptions about the meaning of judicial conservatism.In this Article, Ernest Young argues that the views of modern judicial \"conservatives\" such as Judge Robert Bork and Justice Antonin Scalia are antithetical to classical conservative political theory, as exemplified by the writings and speeches of the eighteenth-century British philosopher!politician Edmund Burke.In particular, Mr. Young argues that strict adherence to the original understanding of the Constitution, judicial deference to democratic majorities, and formulation of legal directives as bright-line rules are all inconsistent with classical conservatism.Instead, Mr. Young advocates an approach to constitutional interpretation inspired by Burke's emphasis on tradition and evolutionary reform.Moreover, Mr. Young speculates that it is precisely this \"common-law constitutionalism\" that may be driving the emerging center of today's Supreme Court.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "North Carolina law review",
+        "type": "journal",
+        "issn": [
+          "0029-2524"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarship.law.unc.edu/nclr/vol72/iss3/4"
+      },
+      "topics": [
+        "American Constitutional Law and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1555212004"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

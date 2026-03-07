@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1057/cpt.2011.11"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1057/cpt.2011.11",
+      "title": "Making disability public in deliberative democracy",
+      "authors": [
+        {
+          "family": "Clifford",
+          "given": "Stacy"
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "Contemporary Political Theory",
+      "volume": "11",
+      "issue": "2",
+      "page": "211-228",
+      "publisher": "Springer Science and Business Media LLC",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1057/cpt.2011.11"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

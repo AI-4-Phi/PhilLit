@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Habermas and the Public Sphere...' author=Calhoun year=1992
+[verify_paper.py] Paper found: Habermas and the Public Sphere.... (score: 39.2)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Habermas and the Public Sphere",
+    "author": "Calhoun",
+    "year": 1992
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2074464",
+      "title": "Habermas and the Public Sphere.",
+      "authors": [
+        {
+          "family": "Jessop",
+          "given": "Bob"
+        },
+        {
+          "family": "Calhoun",
+          "given": "Craig"
+        }
+      ],
+      "editors": [],
+      "year": 1993,
+      "container_title": "Contemporary Sociology",
+      "volume": "22",
+      "issue": "4",
+      "page": "614",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/2074464",
+      "score": 39.20565
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

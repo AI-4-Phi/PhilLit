@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Polity and Group Difference: A Critique of the Ide...' author=Young year=1989
+[verify_paper.py] Paper found: Polity and Group Difference: A Critique of the Ide... (score: 62.8)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Polity and Group Difference: A Critique of the Ideal of Universal Citizenship",
+    "author": "Young",
+    "year": 1989
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1086/293065",
+      "title": "Polity and Group Difference: A Critique of the Ideal of Universal Citizenship",
+      "authors": [
+        {
+          "family": "Young",
+          "given": "Iris Marion"
+        }
+      ],
+      "editors": [],
+      "year": 1989,
+      "container_title": "Ethics",
+      "volume": "99",
+      "issue": "2",
+      "page": "250-274",
+      "publisher": "University of Chicago Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1086/293065",
+      "score": 62.760754
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

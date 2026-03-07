@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Feminism as Critique",
+    "author": "Benhabib",
+    "year": 1987
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (26.6) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+[s2_search.py] Searching Semantic Scholar: 'Fraser Honneth Redistribution Recognition', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_007b8a4efb4589f6)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Fraser Honneth Redistribution Recognition",
+  "results": [
+    {
+      "paperId": "940ba30502cf3835877438876e1729aaed73f642",
+      "title": "Nancy Fraser and Axel Honneth ,Redistribution or Recognition? A Political-Philosophical Exchange(London and New York: Verso, 2003).",
+      "authors": [
+        {
+          "name": "Paul Voice",
+          "authorId": "118236096"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 634,
+      "doi": "10.3366/PER.2005.1.2.215",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/940ba30502cf3835877438876e1729aaed73f642",
+      "venue": "",
+      "journal": {
+        "name": "Politics and Ethics Review",
+        "pages": "215-217",
+        "volume": "1"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d903f3b432c88c46b306fc07fcad957813585457",
+      "title": "Is redistribution a form of recognition? comments on the Fraser\u2013Honneth debate",
+      "authors": [
+        {
+          "name": "S. Thompson",
+          "authorId": "50770285"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 27,
+      "doi": "10.1080/1369823042000335876",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d903f3b432c88c46b306fc07fcad957813585457",
+      "venue": "",
+      "journal": {
+        "name": "Critical Review of International Social and Political Philosophy",
+        "pages": "102 - 85",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "109d0cfcf72a45fbe5a4caa862188949c096dd99",
+      "title": "AXEL HONNETH AND NANCY FRASER: DILEMMAS BETWEEN RECOGNITION AND REDISTRIBUTION AXEL HONNETH E NANCY FRASER: DILEMAS ENTRE O RECONHECIMENTO E A REDISTRIBUIC\u0327A\u0303O AXEL HONNETH Y NANCY FRASER: DILEMAS ENTRE RECONOCIMIENTO Y REDISTRIBUCIO\u0301N",
+      "authors": [
+        {
+          "name": "Pedro Lu\u00eds Panigassi",
+          "authorId": "2124432514"
+        }
+      ],
+      "year": 2021,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/109d0cfcf72a45fbe5a4caa862188949c096dd99",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "4f96cd85b65606bc84209a1a0d133e59ac189adb",
+      "title": "Redistribution or Recognition?: A Political-Philosophical Exchange",
+      "authors": [
+        {
+          "name": "N. Fraser",
+          "authorId": "152514243"
+        },
+        {
+          "name": "A. Honneth",
+          "authorId": "92405469"
+        },
+        {
+          "name": "J. Golb",
+          "authorId": "118545232"
+        },
+        {
+          "name": "J. Ingram",
+          "authorId": "50253631"
+        },
+        {
+          "name": "C. Wilke",
+          "authorId": "51248276"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 2311,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4f96cd85b65606bc84209a1a0d133e59ac189adb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "14746615a28e112848c905958e8e42bbfad51b69",
+      "title": "PARA AL\u00c9M DO DILEMA REDISTRIBUI\u00c7\u00c3O-RECONHECIMENTO: NANCY FRASER E A CONCEP\u00c7\u00c3O BIDIMENSIONAL DE JUSTI\u00c7A BEYOND THE DILEMMA REDISTRIBUTION-RECOGNITION: NANCY FRASER AND THE TWO-DIMENSIONAL CONCEPTION OF JUSTICE",
+      "authors": [
+        {
+          "name": "Francisco Jozivan Guedes de Lima",
+          "authorId": "117219606"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/14746615a28e112848c905958e8e42bbfad51b69",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

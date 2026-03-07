@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Rethinking Modernity Postcolonialism Global Histor...' author=Bhambra year=2007
+[verify_paper.py] Paper found: Introduction: Postcolonialism, Sociology, and the ... (score: 49.4)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Rethinking Modernity Postcolonialism Global Histories",
+    "author": "Bhambra",
+    "year": 2007
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1057/9780230206410_1",
+      "title": "Introduction: Postcolonialism, Sociology, and the Politics of Knowledge Production",
+      "authors": [
+        {
+          "family": "Bhambra",
+          "given": "Gurminder K."
+        }
+      ],
+      "editors": [],
+      "year": 2007,
+      "container_title": "Rethinking Modernity",
+      "volume": "",
+      "issue": "",
+      "page": "1-12",
+      "publisher": "Palgrave Macmillan UK",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1057/9780230206410_1",
+      "score": 49.38247
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.4324/9781003059516
+[verify_paper.py] DOI verified: Situating the Self...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4324/9781003059516"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9781003059516",
+      "title": "Situating the Self",
+      "authors": [
+        {
+          "family": "Benhabib",
+          "given": "Seyla"
+        }
+      ],
+      "editors": [],
+      "year": 2020,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Routledge",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4324/9781003059516"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

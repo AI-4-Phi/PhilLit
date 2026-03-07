@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Redistribution or Recognition? A Political-Philoso...' author=Fraser year=2003
+[verify_paper.py] Paper found: Recognition or Redistribution?... (score: 36.7)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Redistribution or Recognition? A Political-Philosophical Exchange",
+    "author": "Fraser",
+    "year": 2003
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4135/9781446215272.n24",
+      "title": "Recognition or Redistribution?",
+      "authors": [
+        {
+          "family": "Fraser",
+          "given": "Nancy"
+        }
+      ],
+      "editors": [],
+      "year": 2004,
+      "container_title": "Contemporary Political Theory: A Reader",
+      "volume": "",
+      "issue": "",
+      "page": "205-220",
+      "publisher": "SAGE Publications Ltd",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.4135/9781446215272.n24",
+      "score": 36.66697
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

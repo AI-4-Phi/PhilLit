@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Race Empire Idea Human Development...' author=McCarthy year=2009
+[verify_paper.py] Paper found: Race, Empire, and the Idea of Human Development... (score: 49.7)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Race Empire Idea Human Development",
+    "author": "McCarthy",
+    "year": 2009
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1017/cbo9780511814044",
+      "title": "Race, Empire, and the Idea of Human Development",
+      "authors": [
+        {
+          "family": "McCarthy",
+          "given": "Thomas"
+        }
+      ],
+      "editors": [],
+      "year": 2009,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Cambridge University Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1017/cbo9780511814044",
+      "score": 49.68016
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

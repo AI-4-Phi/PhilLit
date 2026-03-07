@@ -1,0 +1,133 @@
+[s2_batch.py] Connecting to Semantic Scholar API...
+[s2_batch.py] Batch fetching 5 paper(s)...
+[s2_batch.py] Processing 5 responses...
+[s2_batch.py] Found 5 papers, 0 not found
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "5 paper IDs",
+  "results": [
+    {
+      "paperId": "b82b376018c69c5946556d4a2cd633380662a210",
+      "title": "Coloniality of Power and Eurocentrism in Latin America",
+      "authors": [
+        {
+          "name": "A. Quijano",
+          "authorId": "114654158"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 1910,
+      "doi": "10.1177/0268580900015002005",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b82b376018c69c5946556d4a2cd633380662a210",
+      "venue": "",
+      "journal": {
+        "name": "International Sociology",
+        "pages": "215 - 232",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "DOI:10.1177/0268580900015002005"
+    },
+    {
+      "paperId": "c7ed7f1588fd51147de0c0dfe9ab2bd1f9434faf",
+      "title": "Unsettling the Coloniality of Being/Power/Truth/Freedom: Towards the Human, After Man, Its Overrepresentation--An Argument",
+      "authors": [
+        {
+          "name": "Sylvia Wynter",
+          "authorId": "2259298404"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 3132,
+      "doi": "10.1353/NCR.2004.0015",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c7ed7f1588fd51147de0c0dfe9ab2bd1f9434faf",
+      "venue": "",
+      "journal": {
+        "name": "CR: The New Centennial Review",
+        "pages": "257 - 337",
+        "volume": "3"
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.1353/ncr.2004.0015"
+    },
+    {
+      "paperId": "003c1e8c1aff2ab0e872f3e34a5c3b5f6de12933",
+      "title": "ON THE COLONIALITY OF BEING",
+      "authors": [
+        {
+          "name": "Nelson Maldonado-Torres",
+          "authorId": "1416367758"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 1708,
+      "doi": "10.1080/09502380601162548",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/003c1e8c1aff2ab0e872f3e34a5c3b5f6de12933",
+      "venue": "",
+      "journal": {
+        "name": "Cultural Studies",
+        "pages": "240 - 270",
+        "volume": "21"
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.1080/09502380601162548"
+    },
+    {
+      "paperId": "5ec668e4b88bceb19c8193d05d699cff63f941a7",
+      "title": "The End of Progress: Decolonizing the Normative Foundations of Critical Theory",
+      "authors": [
+        {
+          "name": "Amy Allen",
+          "authorId": "2263527999"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 96,
+      "doi": "10.7312/alle17324",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5ec668e4b88bceb19c8193d05d699cff63f941a7",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.7312/alle17324"
+    },
+    {
+      "paperId": "05090dbf6c6c2b788d409e38bcfb472b7854c573",
+      "title": "Deprovincializing Habermas : Global Perspectives",
+      "authors": [
+        {
+          "name": "T. Bailey",
+          "authorId": "92219779"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.4324/9781315734194",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/05090dbf6c6c2b788d409e38bcfb472b7854c573",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "DOI:10.4324/9781315734194"
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

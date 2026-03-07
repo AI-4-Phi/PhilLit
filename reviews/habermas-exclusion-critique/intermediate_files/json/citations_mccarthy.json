@@ -1,0 +1,59 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "b51d92c62e7805ef6b87a15c6b7cbce5e578d8d3",
+  "results": [
+    {
+      "paper": {
+        "paperId": "b51d92c62e7805ef6b87a15c6b7cbce5e578d8d3",
+        "title": "Kantian Constructivism and Reconstructivism: Rawls and Habermas in Dialogue",
+        "authors": [
+          {
+            "name": "Thomas Mccarthy",
+            "authorId": "144991709"
+          }
+        ],
+        "year": 1994,
+        "abstract": null,
+        "citationCount": 376,
+        "doi": "10.1086/293678",
+        "arxivId": null,
+        "url": "https://www.semanticscholar.org/paper/b51d92c62e7805ef6b87a15c6b7cbce5e578d8d3",
+        "venue": "Ethics: An International Journal of Social, Political, and Legal Philosophy"
+      },
+      "references": [],
+      "citations": [
+        {
+          "paperId": "9728eab0a0ed253c42062866f121bdea7891992a",
+          "title": "Darwall, Habermas, and the Fluidity of Respect",
+          "authors": [
+            {
+              "name": "A. Koppelman",
+              "authorId": "12636088"
+            }
+          ],
+          "year": 2013,
+          "abstract": null,
+          "citationCount": 1,
+          "doi": "10.1111/RAJU.12026",
+          "arxivId": null,
+          "url": "https://www.semanticscholar.org/paper/9728eab0a0ed253c42062866f121bdea7891992a",
+          "venue": "",
+          "isInfluential": true,
+          "contexts": [
+            "Thomas McCarthy (1994, 49) summarizes Habermas\u2019s objection: \u201cBecause the public use of reason is ineluctably open and reflexive, our understanding of the principles of justice must remain so as well.",
+            "Majorities may prevail under these circumstances, but what is doing the work, McCarthy (1994, 56) delicately observes, will not be \u201cmerely the forceless force of the better argument\u201d (the Athenians were bargaining with the Melians).12 The other is to seek agreement at a higher level of\u2026",
+            "But \u201cthis move, if pushed far enough, lands Habermas closer to Rawls\u201d (McCarthy, 1994).13\nThis second move evidently is what Habermas is up to in his work on cultural rights."
+          ],
+          "intents": [
+            "background"
+          ]
+        }
+      ],
+      "references_count": 0,
+      "citations_count": 1
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,16 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "doi": "10.7312/benha12380"
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "DOI 10.7312/benha12380 not found in CrossRef",
+      "recoverable": false
+    }
+  ]
+}

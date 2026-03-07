@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/hypa.12173"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/hypa.12173",
+      "title": "Epistemic Justice and Democratic Legitimacy",
+      "authors": [
+        {
+          "family": "Dieleman",
+          "given": "Susan"
+        }
+      ],
+      "editors": [],
+      "year": 2015,
+      "container_title": "Hypatia",
+      "volume": "30",
+      "issue": "4",
+      "page": "794-810",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/hypa.12173"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

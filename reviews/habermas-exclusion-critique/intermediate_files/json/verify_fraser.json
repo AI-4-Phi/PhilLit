@@ -1,0 +1,28 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4324/9781315822174-11"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9781315822174-11",
+      "title": "Rethinking the Public Sphere: A Contribution to the Critique of Actually Existing Democracy",
+      "authors": [],
+      "editors": [],
+      "year": 2014,
+      "container_title": "Justice Interruptus",
+      "volume": "",
+      "issue": "",
+      "page": "79-108",
+      "publisher": "Routledge",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4324/9781315822174-11"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

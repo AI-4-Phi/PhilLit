@@ -1,0 +1,20 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Unruly Practices: Power, Discourse and Gender in C...' author=Fraser year=1989
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Unruly Practices: Power, Discourse and Gender in Contemporary Social Theory",
+    "author": "Fraser",
+    "year": 1989
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (20.3) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

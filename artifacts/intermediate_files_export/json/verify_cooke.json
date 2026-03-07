@@ -1,0 +1,40 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Re-Presenting the Good Society",
+    "author": "Cooke",
+    "year": 2006
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.7551/mitpress/5762.001.0001",
+      "title": "Re-Presenting the Good Society",
+      "authors": [
+        {
+          "family": "Cooke",
+          "given": "Maeve"
+        },
+        {
+          "family": "McCarthy",
+          "given": "Thomas"
+        }
+      ],
+      "editors": [],
+      "year": 2006,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "The MIT Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.7551/mitpress/5762.001.0001",
+      "score": 43.021786
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Epistemology of Resistance Gender and Racial Oppression Epistemic Injustice",
+    "author": "Medina",
+    "year": 2012
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/acprof:oso/9780199929023.001.0001",
+      "title": "The Epistemology of Resistance",
+      "authors": [
+        {
+          "family": "Medina",
+          "given": "Jos\u00e9"
+        }
+      ],
+      "editors": [],
+      "year": 2013,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Oxford University PressNew York",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1093/acprof:oso/9780199929023.001.0001",
+      "score": 76.622826
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

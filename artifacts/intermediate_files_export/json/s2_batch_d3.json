@@ -1,0 +1,90 @@
+[s2_batch.py] Connecting to Semantic Scholar API...
+[s2_batch.py] Batch fetching 3 paper(s)...
+[s2_batch.py] Processing 3 responses...
+[s2_batch.py] Found 3 papers, 0 not found
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "3 paper IDs",
+  "results": [
+    {
+      "paperId": "baed6d2fceabfbeb2c9dd34105206a9963442e3c",
+      "title": "Coloniality of Power, Eurocentrism, and Latin America",
+      "authors": [
+        {
+          "name": "A. Quijano",
+          "authorId": "114654158"
+        },
+        {
+          "name": "M. Ennis",
+          "authorId": "114715851"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 2258,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/baed6d2fceabfbeb2c9dd34105206a9963442e3c",
+      "venue": "",
+      "journal": {
+        "name": "Nepantla: Views from South",
+        "pages": "533 - 580",
+        "volume": "1"
+      },
+      "publicationTypes": null,
+      "_queryId": "baed6d2fceabfbeb2c9dd34105206a9963442e3c"
+    },
+    {
+      "paperId": "b82b376018c69c5946556d4a2cd633380662a210",
+      "title": "Coloniality of Power and Eurocentrism in Latin America",
+      "authors": [
+        {
+          "name": "A. Quijano",
+          "authorId": "114654158"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 1910,
+      "doi": "10.1177/0268580900015002005",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b82b376018c69c5946556d4a2cd633380662a210",
+      "venue": "",
+      "journal": {
+        "name": "International Sociology",
+        "pages": "215 - 232",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ],
+      "_queryId": "b82b376018c69c5946556d4a2cd633380662a210"
+    },
+    {
+      "paperId": "c5fbb2ab8825b20a8c9f0d1cf021355cc5e7fcfb",
+      "title": "Provincializing Europe: Postcolonial Thought and Historical Difference",
+      "authors": [
+        {
+          "name": "D. Chakrabarty",
+          "authorId": "81694690"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 2649,
+      "doi": "10.2307/2692957",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c5fbb2ab8825b20a8c9f0d1cf021355cc5e7fcfb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null,
+      "_queryId": "c5fbb2ab8825b20a8c9f0d1cf021355cc5e7fcfb"
+    }
+  ],
+  "count": 3,
+  "errors": []
+}

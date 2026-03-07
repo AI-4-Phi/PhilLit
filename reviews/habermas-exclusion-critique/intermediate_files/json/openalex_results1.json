@@ -1,0 +1,1032 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas universalism postcolonial response defense",
+  "results": [
+    {
+      "openalex_id": "W4243971884",
+      "doi": "10.1023/a:1007068714468",
+      "title": "Beyond \u201cidentity\u201d",
+      "authors": [
+        {
+          "name": "Rogers Brubaker",
+          "openalex_id": "A5070575348",
+          "orcid": "https://orcid.org/0000-0003-2804-493X",
+          "institutions": [
+            "University of California, Los Angeles",
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Frederick Cooper",
+          "openalex_id": "A5110784615",
+          "institutions": [
+            "University of California, Los Angeles",
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-02-01",
+      "abstract": null,
+      "cited_by_count": 2709,
+      "type": "article",
+      "source": {
+        "name": "Theory and Society",
+        "type": "journal",
+        "issn": [
+          "0304-2421",
+          "1573-7853"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hdl.handle.net/2027.42/43651"
+      },
+      "topics": [],
+      "referenced_works_count": 32,
+      "url": "https://openalex.org/W4243971884"
+    },
+    {
+      "openalex_id": "W1488973119",
+      "doi": "10.5070/t411000004",
+      "title": "Decolonizing Post-Colonial Studies and Paradigms of Political-Economy: Transmodernity, Decolonial Thinking, and Global Coloniality",
+      "authors": [
+        {
+          "name": "Ram\u00f3n Grosfoguel",
+          "openalex_id": "A5024208517",
+          "orcid": "https://orcid.org/0000-0001-9051-1573",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-05-13",
+      "abstract": "Can we produce a radical anti-systemic politics beyond identity politics? 1 Is it possible to articulate a critical cosmopolitanism beyond nationalism and colonialism?",
+      "cited_by_count": 1040,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt21k6t3fq/qt21k6t3fq.pdf?t=ll4zsw"
+      },
+      "topics": [
+        "Latin American and Latino Studies",
+        "Political Economy and Marxism",
+        "Cuban History and Society"
+      ],
+      "referenced_works_count": 36,
+      "url": "https://openalex.org/W1488973119"
+    },
+    {
+      "openalex_id": "W2297886560",
+      "doi": "10.1111/joms.12203",
+      "title": "Managing for Political Corporate Social Responsibility: New Challenges and Directions for PCSR 2.0",
+      "authors": [
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Andreas Rasche",
+          "openalex_id": "A5043489468",
+          "orcid": "https://orcid.org/0000-0003-2160-8130",
+          "institutions": [
+            "Copenhagen Business School"
+          ]
+        },
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        },
+        {
+          "name": "Andr\u00e9 Spicer",
+          "openalex_id": "A5055962469",
+          "institutions": [
+            "City, University of London"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-11",
+      "abstract": "ABSTRACT This article takes stock of the discourse on \u2018political CSR\u2019 (PCSR), reconsiders some of its assumptions, and suggests new directions for what we call \u2018PCSR 2.0\u2019. We start with a definition of PCSR, focusing on firms\u2019 contribution to public goods. We then discuss historical antecedents to the debate and outline the original economic and political context. The following section explores emerging changes in the institutional context relevant to PCSR and reconsiders some of the assumptions underlying Habermas\u2019 thesis of the postnational constellation. This highlights some neglected issues in previous works on PCSR, including the influence of nationalism and fundamentalism, the role of various types of business organisations, the return of government regulation, the complexity of institutional contexts, the efficiency of private governance, the financialization and digitalization of the economy, and the relevance of managerial sensemaking. Finally, we discuss the contributions to this special issue and relate them to the newly emerging research agenda.",
+      "cited_by_count": 413,
+      "type": "article",
+      "source": {
+        "name": "Journal of Management Studies",
+        "type": "journal",
+        "issn": [
+          "0022-2380",
+          "1467-6486"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/joms.12203"
+      },
+      "topics": [
+        "Political Influence and Corporate Strategies",
+        "Corporate Social Responsibility Reporting"
+      ],
+      "referenced_works_count": 210,
+      "url": "https://openalex.org/W2297886560"
+    },
+    {
+      "openalex_id": "W135364984",
+      "doi": "10.5070/t413012881",
+      "title": "Transmodernity and Interculturality: An Interpretation from the Perspective of Philosophy of Liberation",
+      "authors": [
+        {
+          "name": "Enrique Dussel",
+          "openalex_id": "A5040236031",
+          "institutions": [
+            "Universidad Aut\u00f3noma Metropolitana",
+            "Autodesk (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "In search of self-identity: from Eurocentrism to developmentalist coloniality I belong to a generation of Latin Americans whose intellectual beginnings are situated in the 1950s, after the end of the Second World War. For us, in the Argentina of that era, there was no doubt that we were a part of \"Western culture.\" For that reason, some of our subsequent categorical judgments are a natural expression of someone who opposes himself.",
+      "cited_by_count": 191,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt6591j76r/qt6591j76r.pdf?t=m6aapy"
+      },
+      "topics": [
+        "Religious and Theological Studies"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W135364984"
+    },
+    {
+      "openalex_id": "W1992318433",
+      "doi": "10.1086/ahr.111.3.692",
+      "title": "Modernity and Enchantment: A Historiographic Review",
+      "authors": [
+        {
+          "name": "Michael Saler",
+          "openalex_id": "A5059497611"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-06-01",
+      "abstract": "SPECTERS ARE ONCE AGAIN HAUNTING EUROPE AND AMERICA\u2014as are magicians, mermaids, mesmerists, and a melange of marvels once thought to have been exorcised by the rational and secular processes of modernity. In recent years, historians from disparate fields have independently challenged the long-standing sociological view that modernity is characterized by \u201cdisenchantment.\u201d This view, in its broadest terms, maintains that wonders and marvels have been demystified by science, spirituality has been supplanted by secularism, spontaneity has been replaced by bureaucratization, and the imagination has been subordinated to instrumental reason. In the past decade, however, a new historiographic position, if not consensus, has emerged that presents Western modernity as \u201cenchanted.\u201d The ongoing redefinition of such an established view is of consequence for a variety of reasons, not the least of which has to do with the master narratives underlying the stories that historians choose to tell. As Dipesh Chakrabarty usefully reminds us, \u201cThe moment we think of the world as disenchanted . . . we set limits to the ways the past can be narrated.\u201d1 The emergent view that modernity is as enchanted as it is disenchanted may conjure alternative vistas to the historical imagination, and at the very least offers the possibility of pulling new rabbits out of old hats. Narrating a historiography of \u201cmodernity and enchantment\u201d has limitations of its own, however. Those historians who challenge the equation of modernity with disenchantment often present their views within the context of topical debates in their respective fields. It will therefore be useful to tease out some of the common concerns and findings that have appeared in otherwise distinct areas of study, such as the histories of science, religion, and mass culture. The works examined here are necessarily eclectic, drawn primarily from European and American histories of these subfields, but they are nevertheless representative of how the topic is currently being handled across historical specialties. A second challenge has to do with defining such inherently vague and complex terms as \u201cmodernity\u201d and \u201cenchantment.\u201d Taken separately, each term has manifold meanings. When the two terms are paired under a particular interpretation of the relationship between \u201cmodernity and enchantment,\u201d however, each assumes greater",
+      "cited_by_count": 224,
+      "type": "review",
+      "source": {
+        "name": "The American Historical Review",
+        "type": "journal",
+        "issn": [
+          "0002-8762",
+          "1937-5239"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ahr/article-pdf/111/3/692/35623/111-3-692.pdf"
+      },
+      "topics": [
+        "Religious Studies and Spiritual Practices",
+        "Weber, Simmel, Sociological Theory",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 24,
+      "url": "https://openalex.org/W1992318433"
+    },
+    {
+      "openalex_id": "W2125073413",
+      "doi": null,
+      "title": "Religious Sensations. Why Media, Aesthetics and Power Matter in the Study of Contemporary Religion",
+      "authors": [
+        {
+          "name": "Birgit Meyer",
+          "openalex_id": "A5103042842",
+          "orcid": "https://orcid.org/0000-0001-7186-7865",
+          "institutions": [
+            "National Centre of Research in Social and Cultural Anthropology"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-01-01",
+      "abstract": "Rector, ladies and gentlemen,Two years ago I was appointed to the chair of Cultural Anthropology, with special emphasis on the study of religion and identity.Having cooperated with my predecessor Andr Droogers on",
+      "cited_by_count": 233,
+      "type": "article",
+      "source": {
+        "name": "Digital Academic REpository of VU University Amsterdam (Vrije Universiteit Amsterdam)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/1871/10311"
+      },
+      "topics": [
+        "Media, Religion, Digital Communication",
+        "Religious Tourism and Spaces",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2125073413"
+    },
+    {
+      "openalex_id": "W2518508064",
+      "doi": "10.1525/luminos.15",
+      "title": "Scale: Discourse and Dimensions of Social Life",
+      "authors": [
+        {
+          "name": "E. Summerson Carr",
+          "openalex_id": "A5056331829",
+          "orcid": "https://orcid.org/0000-0001-7015-0758",
+          "institutions": [
+            "University of Chicago"
+          ]
+        },
+        {
+          "name": "Michael Lempert",
+          "openalex_id": "A5064652213",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-17",
+      "abstract": "Wherever we turn, we see diverse things scaled for us, from cities to economies, from history to love. We know scale by many names and through many familiar antinomies: local and global, micro and macro events. Even the most critical among us often proceed with our analysis as if such scales were the ready-made platforms of social life, rather than asking how, why, and to what effect are scalar distinctions forged in the first place. How do scalar distinctions help actors and analysts alike make sense of and navigate their social worlds? What do these distinctions reveal and what do they conceal? How are scales construed and what effects do they have on the way those who abide by them think and act? This pathbreaking volume attends to the practical labor of scale-making and the communicative practices this labor requires. From an ethnographic perspective, the authors demonstrate that scale is practice and process before it becomes product, whether in the work of projecting the commons, claiming access to the big picture, or scaling the seriousness of a crime. \u201cHow shall we fathom the world, bringing its varied scales into analytic perspective? The authors collected in this bold and subtle volume slow down the question, arguing that \u2018scale\u2019 is made, not born, and that \u2018perspectives\u2019 are semiotic accomplishments and not stable points of anchor.\u201d STEFAN HELMREICH, Elting E. Morison Professor of Anthropology, MIT \u201c<i>Scale</i> will be a fundamental book for thinking about scalar processes. . . . Its engaging, readable chapters offer a range of theoretical considerations of how scales arise and work in a variety of social settings.\u201d ROBERT OPPENHEIM, author of Kyongju Things: Assembling Place \u201cThis highly original volume sheds new light on language and scale. . . . The authors show how the scalar aspects of language and the linguistic dimensions of scale work together to produce the social logic of extent.\u201d ARJUN APPADURAI, Paulette Goddard Professor of Media, Culture and Communication, New York University \"This groundbreaking collection of essays by leading linguistic anthropologists demonstrates the vital contribution of semiotics to the ongoing multidisciplinary theorizing of scale and scale-making.\" MIYAKO INOUE, author of <i>Vicarious Language: Gender and Linguistic Modernity in Japan</i> E. SUMMERSON CARR is Associate Professor, School of Social Service Administration, University of Chicago. MICHAEL LEMPERT is Associate Professor of Anthropology, University of Michigan.",
+      "cited_by_count": 604,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.luminosoa.org/site/books/10.1525/luminos.15/download/1047/"
+      },
+      "topics": [
+        "Digital Communication and Language",
+        "Discourse Analysis in Language Studies"
+      ],
+      "referenced_works_count": 249,
+      "url": "https://openalex.org/W2518508064"
+    },
+    {
+      "openalex_id": "W2165110853",
+      "doi": "10.1086/ahr.115.5.1364",
+      "title": "Making Men: Enlightenment Ideas of Racial Engineering",
+      "authors": [
+        {
+          "name": "William Max Nelson",
+          "openalex_id": "A5052069790",
+          "institutions": [
+            "Trinity College",
+            "The University of Texas at Austin"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-12-01",
+      "abstract": "This essay suggests a colonial and Enlightenment genealogy for racial ideas more commonly associated with the nineteenth and twentieth centuries. Nelson exposes unfulfilled pseudo-eugenic plans, focused on the French Caribbean colony of Saint-Domingue, in which racial engineering through controlled \"breeding\" was seen as a solution to challenges to stability after the Seven Years' War.",
+      "cited_by_count": 134,
+      "type": "article",
+      "source": {
+        "name": "The American Historical Review",
+        "type": "journal",
+        "issn": [
+          "0002-8762",
+          "1937-5239"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ahr/article-pdf/115/5/1364/25735335/115-5-1364.pdf"
+      },
+      "topics": [
+        "History of Medicine and Tropical Health"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W2165110853"
+    },
+    {
+      "openalex_id": "W2164427456",
+      "doi": "10.1525/9780520932111",
+      "title": "The Politics of Knowledge: Area Studies and the Disciplines",
+      "authors": [
+        {
+          "name": "David L Szanton",
+          "openalex_id": "A5034730508"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-01-01",
+      "abstract": "This volume argues that the fundamental role of Area Studies in the United States has been -and continues to be -to deparochialize US-and Euro-centric visions of the world in the core social science and humanities disciplines, among policy makers, and in the public at large.Within the US university, Area Studies scholarship attempts to document the existence, internal logic, and theoretical implications of the distinctive social and cultural values, expressions, structures, and dynamics that shape the societies and nations beyond Europe and the United States.The broad goals are twofold.One, to generate new knowledge and new forms of knowledge for their intrinsic and practical value.Two, and more reflexively, to historicize and contextualize -in effect, to de-naturalize -the formulations and universalizing tendencies of the US social science and humanities disciplines which continue to draw largely on US and European experience.When successful, Area Studies research and teaching demonstrates the limitations of fashioning analyses based largely on the particular and contingent histories, structures, power formations, and selective, and often idealized, narratives of \"the West.\"Still more ambitiously, Area Studies can provide the materials and ideas to help reconstruct the disciplines so that they become more inclusive and more effective tools for social and cultural analysis.Area Studies communities have not always succeeded in this; there have been many failures, and other agendas as well.As an intellectual movement, Area Studies has been heterogeneous and itself must be historicised, contextualized, and continually reconstructed to meet the changing dynamics of the world.But the deparochialization of the US social sciences and humanities has been a central concern from the beginning.1 Furthermore, given post-1989 Western triumphalism, intertwined with current processes and claims of economic, social and cultural \"globalization,\" reinvigorating and recasting Area Studies to meet its original goal of translating back to us the continuing diversities of the world is an ever more complex and challenging intellectual and political enterprise.Within the universities of the United States Area Studies represents a major social invention.Area Studies research and teaching on Africa, Asia, Latin America, the Middle East, and the Soviet Union has repeatedly challenged the institutional and the intellectual hegemony of the US and Euro-centric social science and humanities disciplines.By generating new kinds of data, questions, and insights into social formations, political dynamics, and cultural constructions (e.g.Anderson's \"Imagined Communities,\" The Rudolphs' \"Modernity of Tradition,\" Geertz' \"Theatre State,\" O'Donnell's \"Bureaucratic Authoritarianism\", Scott's \"Weapons of the Weak\" Turner's \"Liminal Spaces\"), Area Studies scholars have frequently undermined received wisdom and established theories, replacing them with more context sensitive formulations.By creating new interdisciplinary academic programs, and developing close collaborations with colleagues overseas rooted in different national and intellectual cultures, Area Studies scholars press the social science and humanities disciplines in the US to look beyond, even sometimes recast unstated presumptions and easy interpretations.At times the challenges to the disciplines have often involved sharp intellectual, institutional, and political struggles.Despite, or perhaps because of, its successes, tensions between Area Studies and certain disciplines continue over intellectual issues, economic resources, and the structure of academic programs.The debates over the appropriate content and organization of internationally oriented university-based teaching and research rise and fall, and never quite seem to be resolved, though over time they do shift ground.To complicate matters, the individual Area Studies fields are neither internally homogeneous, nor are they similar to each other.Indeed examined up close, they are strikingly distinctive in their political, institutional, and intellectual histories, and in their relationships with the disciplines.This volume then is an effort to illuminate the divergent trajectories, agendas, strengths, and weaknesses of the individual fields in order to provide a concrete sense of their intellectual substance, a framework for defining their contributions, limits, and relations to the core disciplines (themselves changing over time), and a fresh basis for thinking about --even attempting to shape --where Area Studies might be headed.As the nine chapters that follow suggest, \"Area Studies\" is best understood as a cover term for a family of academic fields and activities joined by a common commitment to: (1) intensive language study; (2) in-depth field research in the local language(s); (3) close attention to local histories, viewpoints, materials, and interpretations; (4) testing, elaborating, critiquing, or developing grounded theory against detailed observation; and (5) multi-disciplinary conversations often crossing the boundaries of the social sciences and humanities.Most Area Studies scholars concentrate their own research and teaching on one or a number of related countries, but generally try to contextualize their efforts in large regions of the world (e.g., Africa, Latin America, Southeast Asia), beyond the US and Western Europe.Scholars working on the three one-country Area Studies fields (China, Japan, and Korea), often engage in at least implicit comparisons among them, and often command literatures in languages from two or more of these countries.2 As the essays will demonstrate, the boundaries of the Area Studies fieldsand especially the African, East European, Soviet, and Southeast Asian fields -are historically contingent, pragmatic, and highly contestable.The conventional boundaries have often been intellectually generative, but they clearly have limits as well.Always controversial for the challenges it poses to the disciplines, recently Area Studies has itself been challenged from various directions as a vestigial remnant of the Cold War, as politically tainted, as a-theoretical exotica, or as increasingly irrelevant in the face of hegemonic and homogenizing globalization and transnational forces.This volume responds to and rejects these charges by laying out the divergent and productive intellectual and institutional trajectories of the major fields over the last several decades, and many of the most significant debates in and around them.The nine essays that follow --on the African, Chinese, Eastern European, Japanese, Latin American, Middle Eastern, South Asian, Southeast Asian, and the Soviet studies fields 3 --are varied in approach and style.The authors were selected for their interest in and knowledge of the intellectual history of their own specific area studies field, and were charged to write freely from their own particular vantage point.As part of the collective enterprise, they all attempt to describe the key issues, contributions, and controversies within their field and its engagements and interactions with the core social science and humanities disciplines.They also deal with their fields' relationships to the private foundations, US government agencies, national and international politics, generational changes, new domestic constituencies, and colleagues and institutions overseas.At the same time, coming from a wide range of disciplines and intellectual perspectives, they vary in their emphases.Read together, and comparatively, they should provide a reasonable sense of the heterogeneity, multiple trajectories, tensions, problems, and productivity of US area studies.clearly by the 1970s, the overwhelming majority of MA and PhD students specializing on the non-Western world were being trained in, and then hired to teach in, the core social science and humanities departments; anthropology, art history, geography, history, language and literature, music, sociology, political science, etc. 6 One result is that nearly all Area Studies faculty have at least double identities, e.g., as an historian and as a China scholar, as a sociologist but also as a Latin Americanist.Institutionally, this has meant that Area Studies departments have often shrunk and become increasingly marginalized and embattled.They continue to produce small numbers of MAs and PhDs, but provide many fewer employment opportunities in the university and beyond than internationally oriented degrees in the social science and humanities disciplines.As a result many Area Studies departments -the hope and key means for developing Area Studies in the 1940s and 1950s -were by the 1980s and 1990s, struggling to maintain their students and status within their universities.In contrast, Area Studies Centers, Institutes, and Programs have been institutionally far more successful.US universities now house hundreds of these units dealing with every region and all the major countries of the world.These Centers and Institutes may sponsor a few courses, but they do not usually grant degrees.However, they draw in and on faculty and graduate students from all across the social sciences, humanities, and professional schools by organizing or supporting multi-disciplinary lecture series, workshops, conferences, research and curriculum development projects, advanced language and topical courses, publication and library collection programs, and a wide variety of public outreach activities.By these various means, they often become active intellectual and programmatic focal points for both new and established scholars concerned with a particular area of the world.Despite this dramatic growth of area and other international studies in US colleges and universities debates continue on whether there is enough international and foreign language content in the curriculum; whether it is the right content; how it should be related to undergraduate majors or advanced deg",
+      "cited_by_count": 268,
+      "type": "article",
+      "source": {
+        "name": "eScholarship (California Digital Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://escholarship.org/uc/item/59n2d2n1"
+      },
+      "topics": [
+        "Island Studies and Pacific Affairs",
+        "Japanese History and Culture",
+        "Southeast Asian Sociopolitical Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2164427456"
+    },
+    {
+      "openalex_id": "W2154224507",
+      "doi": "10.1146/annurev-polisci-082112-141250",
+      "title": "Political Islam: Theory",
+      "authors": [
+        {
+          "name": "Andrew F. March",
+          "openalex_id": "A5068415844",
+          "orcid": "https://orcid.org/0000-0002-2632-1094",
+          "institutions": [
+            "Yale University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-03-06",
+      "abstract": "This essay focuses on questions that pertain to the ideological, normative, symbolic, and epochal aspects of political Islam. Political theorists, historians, sociologists, and anthropologists have disagreed on whether political Islam is an exclusively modern political phenomenon or is indebted to long-standing Islamic religious commitments. More specifically, they have also disagreed on whether the shape and ambitions of political Islam are entirely determined by the powers and institutions of the modern, bureaucratic state, particularly its secular desire to control, regulate, and reshape religion. These interpretive debates have often sat uneasily with ongoing normative debates about what kind of secularism democracy requires and whether democracy has priority over liberal rights and freedoms.",
+      "cited_by_count": 74,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Political Science",
+        "type": "journal",
+        "issn": [
+          "1094-2939",
+          "1545-1577"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-polisci-082112-141250"
+      },
+      "topics": [
+        "Islamic Studies and History",
+        "Turkey's Politics and Society",
+        "Jewish and Middle Eastern Studies"
+      ],
+      "referenced_works_count": 179,
+      "url": "https://openalex.org/W2154224507"
+    },
+    {
+      "openalex_id": "W4389326687",
+      "doi": "10.1080/13523260.2023.2288468",
+      "title": "(En)Countering epistemic imperialism: A critique of \u201cWestsplaining\u201d and coloniality in dominant debates on Russia\u2019s invasion of Ukraine",
+      "authors": [
+        {
+          "name": "Tereza Hendl",
+          "openalex_id": "A5003016234",
+          "orcid": "https://orcid.org/0000-0002-6472-7028",
+          "institutions": [
+            "University of Augsburg"
+          ]
+        },
+        {
+          "name": "Olga Burlyuk",
+          "openalex_id": "A5079673696",
+          "orcid": "https://orcid.org/0000-0002-7477-1655",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        },
+        {
+          "name": "M\u00edla O\u2019Sullivan",
+          "openalex_id": "A5064235216",
+          "orcid": "https://orcid.org/0000-0002-9784-110X",
+          "institutions": [
+            "Institute of International Relations"
+          ]
+        },
+        {
+          "name": "Aizada Arystanbek",
+          "openalex_id": "A5018387743",
+          "orcid": "https://orcid.org/0009-0004-1282-7539",
+          "institutions": [
+            "Rutgers, The State University of New Jersey"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-12-04",
+      "abstract": "On February 24, 2022, the world was surprised by Russia's full-scale invasion of Ukraine and, perhaps even more so, by Ukraine's fierce resistance to it. In this article, we examine mainstream and feminist International Relations (IR) debates that have emerged in response to Russia's invasion, as well as the older debates revived through them. Building on decolonial and feminist scholarship, prominently centering feminist debates from Europe's East and Central Asia, we argue that dominant Western IR debates on Russia and Ukraine are shaped by inter-imperiality. We trace issues of epistemic injustice, epistemic imperialism and coloniality of knowledge production in mainstream IR and see them replicated in feminist debates, including from global South perspectives. We conclude with a contemplation on the structural changes warranted across academia to eliminate the coloniality of knowledge production about Ukraine and fellow societies as well as Indigenous nations affected by Russian colonial and imperial violence.",
+      "cited_by_count": 74,
+      "type": "article",
+      "source": {
+        "name": "Contemporary Security Policy",
+        "type": "journal",
+        "issn": [
+          "1352-3260",
+          "1743-8764"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.tandfonline.com/doi/pdf/10.1080/13523260.2023.2288468?needAccess=true"
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "Global Peace and Security Dynamics",
+        "Global Security and Public Health"
+      ],
+      "referenced_works_count": 88,
+      "url": "https://openalex.org/W4389326687"
+    },
+    {
+      "openalex_id": "W2125983650",
+      "doi": "10.7833/91-0-1103",
+      "title": "WHY NOT POSTCOLONIAL BIBLICAL CRITICISM IN (SOUTH) AFRICA: STATING THE OBVIOUS OR LOOKING FOR THE IMPOSSIBLE?",
+      "authors": [
+        {
+          "name": "Jeremy Punt",
+          "openalex_id": "A5084565805",
+          "orcid": "https://orcid.org/0000-0001-9488-7850",
+          "institutions": [
+            "Stellenbosch University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-08-01",
+      "abstract": "During the last five decades of the 20th century, the African continent has systematically rid itself of the direct control of the colonial powers. Yet in (South) Africa and elsewhere on the continent, there has until now been very few attempts to introduce postcolonial biblical criticism as a credible hermeneutical approach for the subcontinent. In the South African theological context with its two dominant theological approaches, African and Black Theology, a variety of hermeneutical approaches is represented across a wide spectrum. However, the traditional approaches has until now largely carried the day, both in hermeneutical positioning and its application to and use for interpreting biblical texts. This is certainly true of the wider, popular and ecclesial arena where the Bible is used, but is also the case in the academy. Postcolonial criticism has not been seized upon as a productive method for reading and interpreting the Bible, although its use has obvious benefits also within South Africa\u2019s post-Apartheid society. Postcolonial biblical criticism is nevertheless eminently suitable for a context characterised by the lingering colonial legacy, the continuous threat of neo-colonialism, and the position of displaced persons and refugees. This article considers possible reasons for the failure of postcolonial criticism to impact upon biblical studies in (South) Africa on a large scale, when it offers such obvious hermeneutical potential, spin-offs, as well as the opportunity to approach the Bible from a different than the traditional vantage point.",
+      "cited_by_count": 53,
+      "type": "article",
+      "source": {
+        "name": "Scriptura",
+        "type": "journal",
+        "issn": [
+          "0254-1807",
+          "2305-445X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://scriptura.journals.ac.za/pub/article/download/1103/1055"
+      },
+      "topics": [
+        "Christian Theology and Mission",
+        "African cultural and philosophical studies",
+        "South African History and Culture"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W2125983650"
+    },
+    {
+      "openalex_id": "W3201218217",
+      "doi": "10.1177/13540661211049491",
+      "title": "Critical theory in crisis? a reconsideration",
+      "authors": [
+        {
+          "name": "Beate Jahn",
+          "openalex_id": "A5081891717",
+          "orcid": "https://orcid.org/0000-0001-5087-5911",
+          "institutions": [
+            "University of Sussex"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-10-08",
+      "abstract": "The recent rise of populism has generated a resurgence of interest in critical theory, in the wider public debate and in academia\u2014with critical theory being variously accused of paving the way for post-truth politics, hailed as explaining the rise of populism, or criticized for failing to achieve its emancipatory political goals. Failure of the latter kind, many International Relations scholars argue, calls for a fundamental reform of critical theory if it is to address current political developments. Investigating this claim, this article makes three contributions: First, an empirical account shows that, far from failing, critical theory has been politically highly successful. Second, a theoretical reconstruction of critical theory shows that it is precisely this success that leads to the alienation of critical theorists from their own approach. In light of this analysis, third, the article concludes that the task of critical theory in times of Brexit and Trump does not lie in abandoning its core principles but in systematically applying them to a new historical conjuncture.",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": {
+        "name": "European Journal of International Relations",
+        "type": "journal",
+        "issn": [
+          "1354-0661",
+          "1460-3713"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/13540661211049491"
+      },
+      "topics": [
+        "Historical and Contemporary Political Dynamics",
+        "International Relations and Foreign Policy",
+        "Global Security and Public Health"
+      ],
+      "referenced_works_count": 116,
+      "url": "https://openalex.org/W3201218217"
+    },
+    {
+      "openalex_id": "W4214850670",
+      "doi": "10.1215/9781478090250",
+      "title": "Theft Is Property!",
+      "authors": [
+        {
+          "name": "Robert Nichols",
+          "openalex_id": "A5024151218",
+          "orcid": "https://orcid.org/0009-0003-8653-0247",
+          "institutions": [
+            "American Political Science Association",
+            "\u00c9cole Pratique des Hautes \u00c9tudes",
+            "Duke University",
+            "University of California, Santa Cruz",
+            "American Philosophical Association",
+            "Columbia University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "Drawing on Indigenous peoples' struggles against settler colonialism, Theft Is Property! reconstructs the concept of dispossession as a means of explaining how shifting configurations of law, property, race, and rights have functioned as modes of governance, both historically and in the present. Through close analysis of arguments by Indigenous scholars and activists from the nineteenth century to the present, Robert Nichols argues that dispossession has come to name a unique recursive process whereby systematic theft is the mechanism by which property relations are generated. In so doing, Nichols also brings long-standing debates in anarchist, Black radical, feminist, Marxist, and postcolonial thought into direct conversation with the frequently overlooked intellectual contributions of Indigenous peoples.",
+      "cited_by_count": 221,
+      "type": "book",
+      "source": {
+        "name": "Directory of Open access Books (OAPEN Foundation)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.doabooks.org/doab?func=search&query=rid:44679"
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 245,
+      "url": "https://openalex.org/W4214850670"
+    },
+    {
+      "openalex_id": "W636942736",
+      "doi": "10.21435/sff.15",
+      "title": "Tradition through Modernity: Postmodernism and the Nation-State in Folklore Scholarship",
+      "authors": [
+        {
+          "name": "Pertti Anttonen",
+          "openalex_id": "A5022121052",
+          "orcid": "https://orcid.org/0000-0003-4866-9910",
+          "institutions": [
+            "University of Helsinki"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-02-06",
+      "abstract": "In their study of social practices deemed traditional, scholars tend to use the concept and idea of tradition as an element of meaning in the practices under investigation. But just whose meaning is it? Is it a meaning generated by those who study tradition or those whose traditions are being studied? In both cases, particular criteria for traditionality are employed, whether these are explicated or not. Individuals and groups will no doubt continue to uphold their traditional practices or refer to their practices as traditional. While they are in no way obliged to explicate in analytical terms their criteria for traditionality, the same cannot be said for those who make the study of traditions their profession. In scholarly analysis, traditions need to be explained instead of used as explanations for apparent repetitions and replications or symbolic linking in social practice, values, history, and heritage politics. This book takes a closer look at \u2018tradition\u2019 and \u2018folklore\u2019 in order to conceptualize them within discourses on modernity and modernism. The first section discusses \u2018modern\u2019 and \u2018traditional\u2019 as modern concepts and the study of folklore as a modern trajectory. The underlying tenet here is that non-modernity cannot be represented without modern mediation, which therefore makes the representations of non-modernity epistemologically modern. The second section focuses on the nation-state of Finland and the nationalistic use of folk traditions in the discursive production of Finnish modernity and its Others. The insights are applicable worldwide in discussions on cultural representation.",
+      "cited_by_count": 162,
+      "type": "book",
+      "source": {
+        "name": "Finnish Literature Society eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://oa.finlit.fi/site/books/10.21435/sff.15/download/2035/"
+      },
+      "topics": [
+        "Folklore, Mythology, and Literature Studies",
+        "Culinary Culture and Tourism",
+        "Philippine History and Culture"
+      ],
+      "referenced_works_count": 358,
+      "url": "https://openalex.org/W636942736"
+    },
+    {
+      "openalex_id": "W3110701880",
+      "doi": "10.1017/s0963180120000882",
+      "title": "Just Better Utilitarianism",
+      "authors": [
+        {
+          "name": "Matti H\u00e4yry",
+          "openalex_id": "A5085584076",
+          "orcid": "https://orcid.org/0000-0003-4276-4757"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-12-07",
+      "abstract": "Utilitarianism could still be a viable moral and political theory, although an emphasis on justice as distributing burdens and benefits has hidden this from current conversations. The traditional counterexamples prove that we have good grounds for rejecting classical, aggregative forms of consequentialism. A nonaggregative, liberal form of utilitarianism is immune to this rejection. The cost is that it cannot adjudicate when the basic needs of individuals or groups are in conflict. Cases like this must be solved by other methods. This is not a weakness in liberal utilitarianism, on the contrary. The theory clarifies what we should admit to begin with: that ethical doctrines do not have universally acceptable solutions to all difficult problems or hard cases. The theory also reminds us that not all problems are in this sense difficult or cases hard. We could alleviate the plight of nonhuman animals by reducing meat eating. We could mitigate climate change and its detrimental effects by choosing better ways of living. These would imply that most people's desire satisfaction would be partly frustrated, but liberal utilitarianism holds that this would be justified by the satisfaction of the basic needs of other people and nonhuman animals.",
+      "cited_by_count": 45,
+      "type": "article",
+      "source": {
+        "name": "Cambridge Quarterly of Healthcare Ethics",
+        "type": "journal",
+        "issn": [
+          "0963-1801",
+          "1469-2147"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/7A424C37D9FBA0F32B780C7010C818FB/S0963180120000882a.pdf/div-class-title-just-better-utilitarianism-div.pdf"
+      },
+      "topics": [
+        "Philosophical Ethics and Theory",
+        "Political Philosophy and Ethics",
+        "Psychology of Moral and Emotional Judgment"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W3110701880"
+    },
+    {
+      "openalex_id": "W2135078900",
+      "doi": "10.5070/t413012882",
+      "title": "Enrique Dussel\u2019s Transmodernism",
+      "authors": [
+        {
+          "name": "Linda Mart\u00edn Alcoff",
+          "openalex_id": "A5075880379",
+          "orcid": "https://orcid.org/0000-0003-4260-3400"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "According to some of his critics, the work of Enrique Dussel fails to escape the illusions of modernism, despite his vigorous and revisionary critiques of it. For Horacio Cerutti Guldberg, Ofelia Schutte, and Santiago Castro-Gomez, Dussel\u2019s invocation of a we-subject among the poor, indeed, his very reference to macro-identities such as \u201cthe poor, women, blacks, and Indians,\u201dreturns us to a modernist meta-narrative. And the problem with this meta-narrative is that it works to reify and fetishize the evident symptoms of disciplinary structures of representation, playing into the hands of such constituting structures, that is, rather than deconstructing them. As Castro-Gomez has put it, \u201cWith this, Dussel creates a second reduction: that of converting the poor in some kind of transcendent subject, through which Latin American history will find its meaning. This is the opposite side of postmodernity, because Dussel attempts not to de-centralize the Enlightened subject, but to replace it by another absolute subject\u201d(Critica 39-40; quoted in Dussel,\u201cPhilosophy\u201d338).",
+      "cited_by_count": 27,
+      "type": "article",
+      "source": {
+        "name": "TRANSMODERNITY Journal of Peripheral Cultural Production of the Luso-Hispanic World",
+        "type": "journal",
+        "issn": [
+          "2154-1353",
+          "2154-1361"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt58k9k17t/qt58k9k17t.pdf?t=m6aaq1"
+      },
+      "topics": [
+        "Cultural and Social Studies in Latin America",
+        "Latin American Literature Studies",
+        "Comparative Literary Analysis and Criticism"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W2135078900"
+    },
+    {
+      "openalex_id": "W2326455938",
+      "doi": "10.1086/ahr.116.3.727",
+      "title": "Modernity's Failings, Political Claims, and Intermediate Concepts",
+      "authors": [
+        {
+          "name": "Lynn M. Thomas",
+          "openalex_id": "A5039037166"
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-06-01",
+      "abstract": "AFRICA HAS LONG BEEN FOUNDATIONAL to discussions of the modern.For many Enlightenment thinkers, \"Negroes\" embodied the antithesis of modern reason.In the nineteenth century, Georg Hegel posited Africa as outside of \"universal history.\"Karl Marx and Sigmund Freud ironically deployed \"fetish,\" a term developed by European travelers and traders to gloss West Africans' seemingly irrational beliefs, to diagnose the ills of modern life.In a somewhat more positive vein, Pablo Picasso, at the height of Europe's imperial conquest of the continent, found inspiration for his modern art in \"primitive\" African sculpture.Decades later, social scientists turned to late colonial and early postcolonial Africa as a laboratory for testing theories of modernization.Throughout, popular discourses generated by imperial and international reformers, politicians, and journalists tended to figure Africa as the inverse of all things modern: a bastion of backwardness, or at best, tradition. 1 African history as a disciplinary subfield came into being partly by challenging racist, teleological, and condescending presumptions embedded in such conceptions of the modern.This genealogy helps explain why recent discussions of modernity among Africa scholars have been so contentious. 2Drawing insight from those debates, historians of Africa and elsewhere are well positioned to make scholarly discussions of modernity more concrete and analytically productive by developing two approaches.The first involves examining how historical actors have embraced var-",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "The American Historical Review",
+        "type": "journal",
+        "issn": [
+          "0002-8762",
+          "1937-5239"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/ahr/article-pdf/116/3/727/90800/116-3-727.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Economy and Marxism",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W2326455938"
+    },
+    {
+      "openalex_id": "W2594781055",
+      "doi": "10.1111/nana.12296",
+      "title": "Dreaming as a critical discourse of national belonging: China Dream, American Dream and world dream",
+      "authors": [
+        {
+          "name": "William A. Callahan",
+          "openalex_id": "A5010026549",
+          "orcid": "https://orcid.org/0000-0001-6103-0586",
+          "institutions": [
+            "London School of Economics and Political Science"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-03",
+      "abstract": "Abstract This article explores the normative politics of national belonging through an analysis of the \u2018China Dream\u2019 and the \u2018American Dream\u2019. It traces how politicians and public intellectuals employ such slogans to highlight how national dreams emerge in times of crisis and involve a combination of aspirations and anxieties. It compares parallel rhetorical strategies \u2013 \u2018patriotic worrying\u2019 in China and the American Jeremiad in the US \u2013 to examine how belonging to these two nations involves a nostalgic longing for the past as a model for the future. Debates about the meaning of these national dreams highlight the tension between freedom and equality in the US, between the individual and the collective in China, and between longing for the true nation, and belonging in the actual nation for both countries. It concludes that while this quest for redemption through past models limits opportunities for critical discourse in China, the American Dream still contains much \u2018promise\u2019. The China Dream and the American Dream thus are, at the same time, 1) familiar expressions of nationalism and national belonging, and 2) ongoing self/Other coherence\u2010producing performances that help us to question received notions of nationalism and national belonging.",
+      "cited_by_count": 61,
+      "type": "article",
+      "source": {
+        "name": "Nations and Nationalism",
+        "type": "journal",
+        "issn": [
+          "1345-5078",
+          "1354-5078",
+          "1469-8129"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/nana.12296"
+      },
+      "topics": [
+        "Philippine History and Culture",
+        "Asian Studies and History",
+        "Diaspora, migration, transnational identity"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W2594781055"
+    },
+    {
+      "openalex_id": "W4382599877",
+      "doi": "10.7551/mitpress/14983.001.0001",
+      "title": "Person, Thing, Robot",
+      "authors": [
+        {
+          "name": "David J. Gunkel",
+          "openalex_id": "A5044271294",
+          "orcid": "https://orcid.org/0000-0002-9385-4536"
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-29",
+      "abstract": "Why robots defy our existing moral and legal categories and how to revolutionize the way we think about them. Robots are a curious sort of thing. On the one hand, they are technological artifacts\u2014and thus, things. On the other hand, they seem to have social presence, because they talk and interact with us, and simulate the capabilities commonly associated with personhood. In Person, Thing, Robot, David J. Gunkel sets out to answer the vexing question: What exactly is a robot? Rather than try to fit robots into the existing categories by way of arguing for either their reification or personification, however, Gunkel argues for a revolutionary reformulation of the entire system, developing a new moral and legal ontology for the twenty-first century and beyond. In this book, Gunkel investigates how and why efforts to use existing categories to classify robots fail, argues that \u201crobot\u201d designates an irreducible anomaly in the existing ontology, and formulates an alternative that restructures the ontological order in both moral philosophy and law. Person, Thing, Robot not only addresses the issues that are relevant to students, teachers, and researchers working in the fields of moral philosophy, philosophy of technology, science and technology studies (STS), and AI/robot law and policy but it also speaks to controversies that are important to AI researchers, robotics engineers, and computer scientists concerned with the social consequences of their work.",
+      "cited_by_count": 76,
+      "type": "book",
+      "source": {
+        "name": "The MIT Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://direct.mit.edu/books/oa-monograph/5641/bookpreview-pdf/2156682"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations"
+      ],
+      "referenced_works_count": 281,
+      "url": "https://openalex.org/W4382599877"
+    },
+    {
+      "openalex_id": "W2082953163",
+      "doi": "10.1057/sub.2012.17",
+      "title": "Introduction: Posthumanist subjectivities, or, coming after the subject \u2026",
+      "authors": [
+        {
+          "name": "Ivan Callus",
+          "openalex_id": "A5069204771",
+          "institutions": [
+            "University of Malta"
+          ]
+        },
+        {
+          "name": "Stefan Herbrechter",
+          "openalex_id": "A5018372873",
+          "orcid": "https://orcid.org/0000-0003-0094-0740",
+          "institutions": [
+            "Coventry University"
+          ]
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-08-23",
+      "abstract": null,
+      "cited_by_count": 42,
+      "type": "article",
+      "source": {
+        "name": "Subjectivity",
+        "type": "journal",
+        "issn": [
+          "1755-6341",
+          "1755-635X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1057/sub.2012.17.pdf"
+      },
+      "topics": [
+        "Posthumanist Ethics and Activism",
+        "Philosophy, Ethics, and Existentialism",
+        "Geographies of human-animal interactions"
+      ],
+      "referenced_works_count": 73,
+      "url": "https://openalex.org/W2082953163"
+    },
+    {
+      "openalex_id": "W3121988383",
+      "doi": "10.1215/9781478090274",
+      "title": "Revolution and Disenchantment",
+      "authors": [
+        {
+          "name": "Fadi A. Bardawil",
+          "openalex_id": "A5087570318"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-01-01",
+      "abstract": "The Arab Revolutions that began in 2011 reignited interest in the question of theory and practice, imbuing it with a burning political urgency. In Revolution and Disenchantment Fadi A. Bardawil redescribes for our present how an earlier generation of revolutionaries, the 1960s Arab New Left, addressed this question. Bardawil excavates the long-lost archive of the Marxist organization Socialist Lebanon and its main theorist, Waddah Charara, who articulated answers in their political practice to fundamental issues confronting revolutionaries worldwide: intellectuals as vectors of revolutionary theory; political organizations as mediators of theory and praxis; and nonemancipatory attachments as impediments to revolutionary practice. Drawing on historical and ethnographic methods and moving beyond familiar reception narratives of Marxist thought in the postcolony, Bardawil engages in \"fieldwork in theory\" that analyzes how theory seduces intellectuals, cultivates sensibilities, and authorizes political practice. Throughout, Bardawil underscores the resonances and tensions between Arab intellectual traditions and Western critical theory and postcolonial theory, deftly placing intellectuals from those traditions into a much-needed conversation.",
+      "cited_by_count": 47,
+      "type": "book",
+      "source": {
+        "name": "Directory of Open access Books (OAPEN Foundation)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.doabooks.org/doab?func=search&query=rid:44677"
+      },
+      "topics": [
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 116,
+      "url": "https://openalex.org/W3121988383"
+    },
+    {
+      "openalex_id": "W2133548582",
+      "doi": "10.7202/037773ar",
+      "title": "Learning to Sleep without Perching: Reflections by activist-educators on learning in social action in Ghanaian social movements1",
+      "authors": [
+        {
+          "name": "Jonathan Langdon",
+          "openalex_id": "A5063773867",
+          "institutions": [
+            "McGill University"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-07-27",
+      "abstract": "This article conveys results from a participatory action research (PAR) engagement with activist/educators working in Ghanaian social movements. First, this PAR group has articulated two typologies from which to understand Ghanaian social movements based on their processes of organization, communication and learning rather than merely the issues, resources or populations that occupy their focus. Second, expanding on Griff Foley\u2019s (1999) notion of learning in struggle, the PAR group provides three lenses from which to view learning in social movements in Ghana. Both of these contributions help to present a much needed African inflection to ongoing discussions of learning in social movements, especially as these contributions attempt to maintain a complex view of learning based on the shifting characteristics of power and capital.",
+      "cited_by_count": 20,
+      "type": "article",
+      "source": {
+        "name": "McGill Journal of Education / Revue des sciences de l \u00e9ducation de McGill",
+        "type": "journal",
+        "issn": [
+          "0024-9033",
+          "1916-0666"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.erudit.org/fr/revues/mje/2009-v44-n1-mje3328/037773ar.pdf"
+      },
+      "topics": [
+        "Adult and Continuing Education Topics",
+        "Innovative Education and Learning Practices",
+        "Global Educational Policies and Reforms"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W2133548582"
+    },
+    {
+      "openalex_id": "W2999927584",
+      "doi": "10.1007/978-3-030-24021-9",
+      "title": "Energy Justice Across Borders",
+      "authors": [
+        {
+          "name": "Gunter Bombaerts",
+          "openalex_id": "A5008251243",
+          "orcid": "https://orcid.org/0000-0002-8006-1617",
+          "institutions": [
+            "Eindhoven University of Technology"
+          ]
+        },
+        {
+          "name": "Kirsten Jenkins",
+          "openalex_id": "A5063008708",
+          "orcid": "https://orcid.org/0000-0002-3681-647X",
+          "institutions": [
+            "University of Brighton"
+          ]
+        },
+        {
+          "name": "Yekeen A. Sanusi",
+          "openalex_id": "A5083500472",
+          "institutions": [
+            "Federal University of Technology Minna"
+          ]
+        },
+        {
+          "name": "Guoyu Wang",
+          "openalex_id": "A5100769323",
+          "orcid": "https://orcid.org/0000-0002-4330-2629",
+          "institutions": [
+            "Fudan University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-10-18",
+      "abstract": null,
+      "cited_by_count": 65,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/978-3-030-24021-9.pdf?pdf=button"
+      },
+      "topics": [
+        "Global Energy Security and Policy"
+      ],
+      "referenced_works_count": 503,
+      "url": "https://openalex.org/W2999927584"
+    },
+    {
+      "openalex_id": "W1984663509",
+      "doi": "10.14506/ca30.1.06",
+      "title": "Totalitarian Tears: Does the Crowd Really Mean It?",
+      "authors": [
+        {
+          "name": "William Mazzarella",
+          "openalex_id": "A5033287340",
+          "orcid": "https://orcid.org/0000-0002-2500-6316",
+          "institutions": [
+            "University of Chicago"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-09",
+      "abstract": "In this essay I explore the reaction, in Western media commentary, to the announcement of North Korean premier Kim Jong-il\u2019s death in December 2011. I focus in particular on responses to the widely circulated images of crowds crying on the streets of Pyongyang. These responses obsessively returned to a single question: Do they really mean it? I do not attempt to answer this question. Rather, by considering a series of subsidiary questions that clustered around it (Can these tears be real? Are these people insane? Why are they such good/such bad actors? Is mass crying something that Asians are particularly likely to engage in?), I ask in turn why the sincerity of the North Korean crying crowds came to seem at once so necessary and so impossible to Western observers. I argue that the obsessive return to the question about whether they really meant it expressed a deep liberal anxiety\u2014not, as one might suppose, an anxiety that North Korean totalitarianism would continue indefinitely, but a much more profound worry that it would come to a sudden end.",
+      "cited_by_count": 43,
+      "type": "article",
+      "source": {
+        "name": "Cultural Anthropology",
+        "type": "journal",
+        "issn": [
+          "0886-7356",
+          "1548-1360"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journal.culanth.org/index.php/ca/article/download/ca30.1.06/265"
+      },
+      "topics": [
+        "Korean Peninsula Historical and Political Studies",
+        "Literature and Cultural Memory",
+        "Communism, Protests, Social Movements"
+      ],
+      "referenced_works_count": 69,
+      "url": "https://openalex.org/W1984663509"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

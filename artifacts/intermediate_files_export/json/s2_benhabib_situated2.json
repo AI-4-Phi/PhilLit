@@ -1,0 +1,136 @@
+[s2_search.py] Searching Semantic Scholar: 'Situating the Self Benhabib postmodernism ethics', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_6746b46da1652d6e)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Situating the Self Benhabib postmodernism ethics",
+  "results": [
+    {
+      "paperId": "f5198dd7a221b84d7e31d65f46f39ebe16713ae7",
+      "title": "Situating the Self: Gender, Community and Postmodernism in Contemporary Ethics.",
+      "authors": [
+        {
+          "name": "G. Warnke",
+          "authorId": "14221652"
+        },
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 1264,
+      "doi": "10.2307/2956405",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f5198dd7a221b84d7e31d65f46f39ebe16713ae7",
+      "venue": "",
+      "journal": {
+        "name": "The Philosophical Quarterly",
+        "pages": "273",
+        "volume": "46"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "30beb8715553d72a91468cbc80b295b8ad1e2d4f",
+      "title": "Situating the Self: Gender, Community and Postmodernism in Contemporary Ethics.Seyla Benhabib",
+      "authors": [
+        {
+          "name": "M. Mclaren",
+          "authorId": "88708745"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 28,
+      "doi": "10.1086/293619",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/30beb8715553d72a91468cbc80b295b8ad1e2d4f",
+      "venue": "",
+      "journal": {
+        "name": "Ethics",
+        "pages": "410-412",
+        "volume": "104"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "52e5f2b7a2fb655e041bc423c1074702a58ac6dc",
+      "title": "Seyla Benhabib , Situating the Self: Gender, Community, and Postmodernism in Contemporary Ethics . Reviewed by",
+      "authors": [
+        {
+          "name": "R. Schott",
+          "authorId": "16227242"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/52e5f2b7a2fb655e041bc423c1074702a58ac6dc",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy in review",
+        "pages": "212-215",
+        "volume": "13"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "9b702d4618245b335cf22dce193b5070bb68869e",
+      "title": "Book Reviews : SITUATING THE SELF: GENDER, COM MUNITY AND POSTMODERNISM IN CONTEMPORARY ETHICS Seyla Benhabib, Cambridge, Polity, 1992, pp. 266 $34.95 (paper)",
+      "authors": [
+        {
+          "name": "Anna Yeatman",
+          "authorId": "66584901"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1177/144078339403000309",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9b702d4618245b335cf22dce193b5070bb68869e",
+      "venue": "",
+      "journal": {
+        "name": "Journal of Sociology",
+        "pages": "341 - 342",
+        "volume": "30"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "b71f89010859c1b2b6d64e802d2798c91ba8d833",
+      "title": "Book Review:Situating the Self: Gender, Community and Postmodernism in Contemporary Ethics. Seyla Benhabib",
+      "authors": [
+        {
+          "name": "Margaret A. McLaren",
+          "authorId": "2251916289"
+        }
+      ],
+      "year": 1994,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b71f89010859c1b2b6d64e802d2798c91ba8d833",
+      "venue": "",
+      "journal": {
+        "name": "Ethics",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

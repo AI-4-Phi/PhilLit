@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Having it Both Ways: The Incompatibility of Narrat...' author=McNay year=2003
+[verify_paper.py] Paper found: Having it Both Ways... (score: 77.7)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Having it Both Ways: The Incompatibility of Narrative Identity and Communicative Ethics",
+    "author": "McNay",
+    "year": 2003
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/0263276403206001",
+      "title": "Having it Both Ways",
+      "authors": [
+        {
+          "family": "McNay",
+          "given": "Lois"
+        }
+      ],
+      "editors": [],
+      "year": 2003,
+      "container_title": "Theory, Culture &amp; Society",
+      "volume": "20",
+      "issue": "6",
+      "page": "1-20",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1177/0263276403206001",
+      "score": 77.74912
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

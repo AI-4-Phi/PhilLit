@@ -1,0 +1,14 @@
+{
+  "status": "error",
+  "source": "semantic_scholar",
+  "query": "Habermas reply critics feminist postcolonial response",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "api_error",
+      "message": "S2 API error: 500",
+      "recoverable": false
+    }
+  ]
+}

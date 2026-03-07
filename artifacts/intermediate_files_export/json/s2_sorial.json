@@ -1,0 +1,128 @@
+[s2_search.py] Searching Semantic Scholar: 'Sorial Habermas feminism law', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_06514dcba763c6a2)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Sorial Habermas feminism law",
+  "results": [
+    {
+      "paperId": "4ee9e48cb181efe153374e5f78b847fc78149739",
+      "title": "Habermas, Feminism, and Law: Beyond Equality and Difference?",
+      "authors": [
+        {
+          "name": "Sarah Sorial",
+          "authorId": "14540761"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1111/j.1467-9337.2010.00472.x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4ee9e48cb181efe153374e5f78b847fc78149739",
+      "venue": "",
+      "journal": {
+        "name": "Microeconomics: Welfare Economics & Collective Decision-Making eJournal"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "385c7d534564440842fe4fdd63a7082f9b7ecf32",
+      "title": "Habermas: Rescuing the Public Sphere",
+      "authors": [
+        {
+          "name": "E. Johnson",
+          "authorId": "119717503"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 50,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/385c7d534564440842fe4fdd63a7082f9b7ecf32",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8af75678b95756bbe4cefa282e2aeaee99b8493a",
+      "title": "Law, Modernity, Postmodernity: Legal Change in the Contracting State",
+      "authors": [
+        {
+          "name": "Brendan Edgeworth",
+          "authorId": "116996948"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 29,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8af75678b95756bbe4cefa282e2aeaee99b8493a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2abf28bd92889ec62bb73dd424d52bf84292a0bc",
+      "title": "Law, Cosmopolitan Law and the Protection of Human Rights",
+      "authors": [
+        {
+          "name": "Sarah Sorial",
+          "authorId": "14540761"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.3366/E1755088208000232",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2abf28bd92889ec62bb73dd424d52bf84292a0bc",
+      "venue": "",
+      "journal": {
+        "name": "Journal of International Political Theory",
+        "pages": "241 - 264",
+        "volume": "4"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "758f465ad84625b235f9b0115f789f18b935fa2e",
+      "title": "News and Feminism: A Historic Dialog",
+      "authors": [
+        {
+          "name": "Bernadette Barker-Plummer",
+          "authorId": "1404869110"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 32,
+      "doi": "10.1177/152263791001200302",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/758f465ad84625b235f9b0115f789f18b935fa2e",
+      "venue": "",
+      "journal": {
+        "name": "Journalism & Mass Communication Monographs",
+        "pages": "144 - 203",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

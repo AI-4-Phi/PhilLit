@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1353/NCR.2004.0015
+[verify_paper.py] DOI verified: Unsettling the Coloniality of Being/Power/Truth/Fr...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1353/NCR.2004.0015"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1353/ncr.2004.0015",
+      "title": "Unsettling the Coloniality of Being/Power/Truth/Freedom: Towards the Human, After Man, Its Overrepresentation--An Argument",
+      "authors": [
+        {
+          "family": "Wynter",
+          "given": "Sylvia"
+        }
+      ],
+      "editors": [],
+      "year": 2003,
+      "container_title": "CR: The New Centennial Review",
+      "volume": "3",
+      "issue": "3",
+      "page": "257-337",
+      "publisher": "Project MUSE",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1353/ncr.2004.0015"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

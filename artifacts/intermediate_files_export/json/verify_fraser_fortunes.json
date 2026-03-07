@@ -1,0 +1,20 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Fortunes of Feminism: From State-Managed Capitalis...' author=Fraser year=2013
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Fortunes of Feminism: From State-Managed Capitalism to Neoliberal Crisis",
+    "author": "Fraser",
+    "year": 2013
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (22.4) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.4324/9780429027239-11
+[verify_paper.py] DOI verified: The Social Sciences, Epistemic Violence, and the P...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4324/9780429027239-11"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9780429027239-11",
+      "title": "The Social Sciences, Epistemic Violence, and the Problem of the \"Invention of the Other\"",
+      "authors": [
+        {
+          "family": "Castro-G\u00f3mez",
+          "given": "Santiago"
+        }
+      ],
+      "editors": [],
+      "year": 2019,
+      "container_title": "Unbecoming Modern",
+      "volume": "",
+      "issue": "",
+      "page": "211-227",
+      "publisher": "Routledge",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4324/9780429027239-11"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

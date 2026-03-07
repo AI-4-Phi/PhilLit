@@ -1,0 +1,54 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "McCarthy race imperialism Frankfurt critique",
+  "results": [
+    {
+      "paperId": "0b97c586918c175ae498b3f063963201e40902c1",
+      "title": "Critical Theory and the critique of anti-imperialism",
+      "authors": [
+        {
+          "name": "Marcel Stoetzler",
+          "authorId": "71234691"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.4135/9781526436122.n89",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0b97c586918c175ae498b3f063963201e40902c1",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "1467-1486",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d2ce8fda143de9a578deb6bfeea8eaf3d16bfe3e",
+      "title": "Social Theory: A Historical Introduction",
+      "authors": [
+        {
+          "name": "A. Callinicos",
+          "authorId": "104296665"
+        }
+      ],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 100,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d2ce8fda143de9a578deb6bfeea8eaf3d16bfe3e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 2,
+  "errors": []
+}

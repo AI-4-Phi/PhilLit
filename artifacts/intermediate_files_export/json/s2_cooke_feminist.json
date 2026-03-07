@@ -1,0 +1,128 @@
+[s2_search.py] Searching Semantic Scholar: 'Cooke Habermas autonomy feminist' (field=Philosophy), limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_d1f22700c0bc5c53)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Cooke Habermas autonomy feminist",
+  "results": [
+    {
+      "paperId": "f50cbfee44a0529c2d91d7af4bd3fa7ece194d8b",
+      "title": "Annual Index Volume 25, 1999",
+      "authors": [],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/019145379902500606",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f50cbfee44a0529c2d91d7af4bd3fa7ece194d8b",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "141 - 142",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "919b1a14a648e287889c87392ca45bc49c4c1c6f",
+      "title": "habermas, autonomy and the identity of the self",
+      "authors": [
+        {
+          "name": "Maeve Cooke",
+          "authorId": "34654830"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 226,
+      "doi": "10.1177/019145379201800304",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/919b1a14a648e287889c87392ca45bc49c4c1c6f",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "269 - 291",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9beae18ff471640fb323704a2e497b9ab977c14b",
+      "title": "Private Autonomy and Public Autonomy: Tensions in Habermas\u2019 Discourse Theory of Law and Politics",
+      "authors": [
+        {
+          "name": "Maeve Cooke",
+          "authorId": "34654830"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Abstract Habermas dialogically recasts the Kantian conception of moral autonomy. In a legal-political context, his dialogical approach has the potential to redress certain troubling features of liberal and communitarian approaches to democratic politics. Liberal approaches attach greater normative weight to negatively construed individual freedoms, which they seek to protect against the interventions of political authority. Communitarian approaches prioritize the positively construed freedoms of communal political participation, viewing legal-political institutions as a means for collective ethical self-realization. Habermas\u2019 discourse theory of law and democracy seeks to overcome this competition between the negative and positive liberties. Doing so entails reconciling private and public autonomy at a fundamental conceptual level. This is his co-originality thesis, which seeks to show that private and public autonomy are internally connected and evenly balanced. I support his aim but argue that he fails to achieve it due to an unsatisfactory account of private autonomy. I suggest an alternative dialogical conception of autonomy as ethically self-determining agency that would enable him to establish his thesis.",
+      "citationCount": 17,
+      "doi": "10.1017/S1369415420000412",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9beae18ff471640fb323704a2e497b9ab977c14b",
+      "venue": "Kantian Review",
+      "journal": {
+        "name": "Kantian Review",
+        "pages": "559 - 582",
+        "volume": "25"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0a97127f7e73c7535214137efc221cafb661a389",
+      "title": "Salvaging and secularizing the semantic contents of religion: the limitations of Habermas\u2019s postmetaphysical proposal",
+      "authors": [
+        {
+          "name": "Maeve Cooke",
+          "authorId": "34654830"
+        }
+      ],
+      "year": 2007,
+      "abstract": "The article considers J\u00fcrgen Habermas\u2019s views on the relationship between postmetaphysical philosophy and religion. It outlines Habermas\u2019s shift from his earlier, apparently dismissive attitude towards religion to his presently more receptive stance. This more receptive stance is evident in his recent emphasis on critical engagement with the semantic contents of religion and may be characterized by two interrelated theses: (a) the view that religious contributions should be included in political deliberations in the informally organized public spheres of contemporary democracies, though translated into a secular language for the purposes of legislation and formal decision making and (b) the view that postmetaphysical philosophy should seek to salvage the semantic contents of religious traditions in order to supply the evocative images, exemplary figures, and inspirational narratives it needs for its social and political projects. With regard to (a), it argues that the translation requirement impairs the political autonomy of religious believers and other metaphysically inclined citizens, suggesting that this difficulty could be alleviated by making a distinction between epistemologically authoritarian and non-authoritarian religious beliefs. With regard to (b), it argues that the salvaging operation is not as straightforward as Habermas seems to suppose and that social and political philosophy may not be able to tap the semantic power of religious traditions without relying on metaphysical assumptions; it concludes that, here, too, a distinction between authoritarian and non-authoritarian approaches to knowledge and validity may be useful.",
+      "citationCount": 272,
+      "doi": "10.1007/S11153-006-0006-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0a97127f7e73c7535214137efc221cafb661a389",
+      "venue": "",
+      "journal": {
+        "name": "International Journal for Philosophy of Religion",
+        "pages": "187-207",
+        "volume": "60"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "cd37d2847643d3930e81c58524b3d47b4d1d301d",
+      "title": "A space of one\u2019s own: autonomy, privacy, liberty",
+      "authors": [
+        {
+          "name": "Maeve Cooke",
+          "authorId": "34654830"
+        }
+      ],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 40,
+      "doi": "10.1177/019145379902500102",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/cd37d2847643d3930e81c58524b3d47b4d1d301d",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "22 - 53",
+        "volume": "25"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

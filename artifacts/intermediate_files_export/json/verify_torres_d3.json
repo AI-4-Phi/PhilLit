@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1080/21598282.2025.2554700
+[verify_paper.py] DOI verified: Critical Theory in Transition: From Eurocentrism t...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/21598282.2025.2554700"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/21598282.2025.2554700",
+      "title": "Critical Theory in Transition: From Eurocentrism to Postcolonial World Society",
+      "authors": [
+        {
+          "family": "Torres",
+          "given": "Esteban"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "International Critical Thought",
+      "volume": "15",
+      "issue": "3",
+      "page": "387-403",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/21598282.2025.2554700"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

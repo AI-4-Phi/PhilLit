@@ -1,0 +1,137 @@
+[s2_search.py] Searching Semantic Scholar: 'Calhoun Habermas Public Sphere MIT Press', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_7cc56c118494d4f9)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Calhoun Habermas Public Sphere MIT Press",
+  "results": [
+    {
+      "paperId": "d3537a70edcd919f074f116839cf4213b60cbd63",
+      "title": "Repenser la sph\u00e8re publique: Une contribution \u00e0 la critique de la d\u00e9mocratie telle qu'elle existe r\u00e9ellement : Extrait de Habermas and the public sphere, sous la direction de Craig Calhoun, Cambridge, MIT Press, 1992, p. 109-142",
+      "authors": [
+        {
+          "name": "Nancy Fraser",
+          "authorId": "2067066820"
+        },
+        {
+          "name": "Muriel Valenta",
+          "authorId": "90701298"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 70,
+      "doi": "10.4267/2042/14548",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d3537a70edcd919f074f116839cf4213b60cbd63",
+      "venue": "",
+      "journal": {
+        "name": "Hermes",
+        "pages": "125-156",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9f45551ccaa070c04560e909aebdbd4538515794",
+      "title": "Habermas and the Public Sphere, edited by Craig Calhoun. Cambridge, MA: MIT Press, 1992, x + 498 pp. $45",
+      "authors": [
+        {
+          "name": "D. Watt",
+          "authorId": "144643504"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.2307/3711450",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9f45551ccaa070c04560e909aebdbd4538515794",
+      "venue": "",
+      "journal": {
+        "name": "Sociology of Religion",
+        "pages": "466-468",
+        "volume": "53"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ba58d32ed159cd9a91a771940ec9fa4c5a6dcf5a",
+      "title": "Habermas and the Public Sphere.Edited by Craig Calhoun. MIT Press, 1992. 498 pp. $45.00",
+      "authors": [
+        {
+          "name": "Kenneth H. Tucker",
+          "authorId": "2071593642"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1093/SF/71.4.1080",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ba58d32ed159cd9a91a771940ec9fa4c5a6dcf5a",
+      "venue": "",
+      "journal": {
+        "name": "Social Forces",
+        "pages": "1080-1082",
+        "volume": "71"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c75ce8ac61502eaa57bcfbfde206a0921c687877",
+      "title": "Review essay: Studies in the public sphere",
+      "authors": [
+        {
+          "name": "G. T. Goodnight",
+          "authorId": "40997912"
+        },
+        {
+          "name": "David B. Hingstman",
+          "authorId": "118601806"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 24,
+      "doi": "10.1080/00335639709384190",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c75ce8ac61502eaa57bcfbfde206a0921c687877",
+      "venue": "",
+      "journal": {
+        "name": "Quarterly Journal of Speech",
+        "pages": "351-370",
+        "volume": "83"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e4870d8ce305d85241faf556290c3e7d36f7ed8b",
+      "title": "Habermas and the public sphere",
+      "authors": [
+        {
+          "name": "C. Calhoun",
+          "authorId": "50363150"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 1825,
+      "doi": "10.2307/1431942",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e4870d8ce305d85241faf556290c3e7d36f7ed8b",
+      "venue": "",
+      "journal": {
+        "name": "German Studies Review",
+        "pages": "613",
+        "volume": "17"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

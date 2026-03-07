@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1111/1467-8675.00119"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/1467-8675.00119",
+      "title": "The Basic Right to Justification: Towards a Constructivist Conception of Human Rights",
+      "authors": [
+        {
+          "family": "Forst",
+          "given": "Rainer"
+        }
+      ],
+      "editors": [],
+      "year": 1999,
+      "container_title": "Constellations",
+      "volume": "6",
+      "issue": "1",
+      "page": "35-60",
+      "publisher": "Wiley",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1111/1467-8675.00119"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

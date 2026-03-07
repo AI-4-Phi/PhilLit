@@ -1,0 +1,18 @@
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Moral Consciousness and Communicative Action",
+    "author": "Habermas",
+    "year": 1990
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (28.4) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

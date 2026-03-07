@@ -1,0 +1,260 @@
+[s2_search.py] Searching Semantic Scholar: 'Bhabha Location Culture postcolonial hybridity' (year=2000-2025) (field=Philosophy), limit=10
+[s2_search.py] Rate limited, backing off (attempt 1/5)...
+[s2_search.py] Retrying after 1.8s backoff...
+[s2_search.py] Retrieved 10/10 papers...
+[s2_search.py] Cached results (cache key: s2_221209eef7d9ea3f)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Bhabha Location Culture postcolonial hybridity",
+  "results": [
+    {
+      "paperId": "1921a6c6dcda27c4b076438f27d908a29de3f540",
+      "title": "\u2018To Move Through \u2014 and Beyond \u2014 Theory\u2019: Bhabha, Hybridity, and Agency",
+      "authors": [
+        {
+          "name": "Philip Leonard",
+          "authorId": "81567140"
+        }
+      ],
+      "year": 2005,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1057/9780230503854_6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1921a6c6dcda27c4b076438f27d908a29de3f540",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "127-156",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6de842ef36d1dd16eb204dbe208d9803da775a2c",
+      "title": "Post-colonial Theory of Homi K. Bhabha: Translator's and Translatologist's Reflection",
+      "authors": [
+        {
+          "name": "A. Milostivaya",
+          "authorId": "98624538"
+        },
+        {
+          "name": "E. Nazarenko",
+          "authorId": "120060974"
+        },
+        {
+          "name": "I. Makhova",
+          "authorId": "97663338"
+        }
+      ],
+      "year": 2017,
+      "abstract": "The article is devoted to the translatological features of the monograph of famous modern philosopher Homi K. Bhabha \u201cThe Location of Culture\u201d in the translation into the Russian language. In the current context of globalisation, the issue of interaction between representatives of different backgrounds becomes more important. Cultural interaction is most visibly reflected in migrant literature created in a so-called \u201cthird space\u201d. The theory of Homi K. Bhabha is based on the existence of such space where cultural borders open up to each other, and creation of a new hybrid culture that combines their features and atones their differences. The term hybridity has become one of the most recurrent concepts in postcolonial cultural criticism and facilitates the revealing the understanding of the world of bilingual translators related to several cultures. Homi K. Bhabha does not claim that translated texts are hybrid. He considers that the process of translation itself leads to hybridity. More than that, the article gives special attention to English-Russian translational reflection in the process of communicative content transfer of the discussed monograph of Homi K. Bhabha. The authors\u2019 observations reveal that the communicative equivalence accomplishment is possible on conditions of the line of translational transformations (concretization, generalisation, calquing, omission, etc.) and transliteration. The results of the research provide added value in developing such key problems in modern translatology as a description of extended meanings in the communicative act, the study of linguistic means for creating a worldview of authors of scientific texts. Keywords\u2014post-colonial discourse; Homi K. Bhabha; equivalence; scientific text; terminology system; system of translational means",
+      "citationCount": 6,
+      "doi": "10.2991/CILDIAH-17.2017.31",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6de842ef36d1dd16eb204dbe208d9803da775a2c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "175-180",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b59aa2e18e53895c2e959d9262b0742356d65aa8",
+      "title": "Liminality, hybridity and \u2018Third Space:\u2019 Bessie Head\u2019s A question of power",
+      "authors": [
+        {
+          "name": "S. R. Moosavinia",
+          "authorId": "114875703"
+        },
+        {
+          "name": "Sayyede Maryam Hosseini",
+          "authorId": "113996813"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1007/S11059-017-0387-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b59aa2e18e53895c2e959d9262b0742356d65aa8",
+      "venue": "",
+      "journal": {
+        "name": "Neohelicon",
+        "pages": "333-349",
+        "volume": "45"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "38898fdea3376faa9052975e44e89d23a093f714",
+      "title": "Hybridity, Redux",
+      "authors": [
+        {
+          "name": "Deepika Bahri",
+          "authorId": "49816613"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1632/pmla.2017.132.1.142",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/38898fdea3376faa9052975e44e89d23a093f714",
+      "venue": "Pmla-publications of The Modern Language Association of America",
+      "journal": {
+        "name": "PMLA/Publications of the Modern Language Association of America",
+        "pages": "142 - 148",
+        "volume": "132"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "1287cb5ad0cee682f8d4b6b49f73a02b67086b25",
+      "title": "Liminality, hybridity and \u2018Third Space:\u2019 Bessie Head\u2019s A question of power",
+      "authors": [
+        {
+          "name": "S. R. Moosavinia",
+          "authorId": "114875703"
+        },
+        {
+          "name": "Sayyede Maryam Hosseini",
+          "authorId": "113996813"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11059-017-0387-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1287cb5ad0cee682f8d4b6b49f73a02b67086b25",
+      "venue": "Neohelicon",
+      "journal": {
+        "name": "Neohelicon",
+        "pages": "333 - 349",
+        "volume": "45"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "88fe7c07b08acf2d92a25cdfde46c2a044b05d3b",
+      "title": "BHABHA\u2019S AMBIVALENCE AND HYBRIDITY IN ANDREA LEVY\u2019S THE LONG SONG",
+      "authors": [
+        {
+          "name": "Karenjit Kaur",
+          "authorId": "113908725"
+        }
+      ],
+      "year": 2018,
+      "abstract": "The theory of hybridity and ambivalence is not something that is alien to the postcolonial world. First derived from power relations between the colonizer and the colonized, it has now evolved into many different branches. What is understood from it is that it shows that the relationship between those who hold power and those who are under the rule of a people is never clear-cut. It is a give and take relationship and gives many illusions as to how one views the other. Cross-cultural relations are definitely very complex and we can see this in The Long Song . We are always creating new identities as the world becomes more and more globalized. The notion that a culture has to remain unadulterated is a concept that is almost irrelevant. We are constantly creating new identities to help us cope with the different experiences that we have and once we are exposed to it, our way of thinking can never go back to the original. In this paper, I will draw a connection between July\u2019s belonging, identity, and her ability to connect with the many people in her life, from her Mistress Caroline to Massa Robert Goodwin and later, her son and other black or Mulatto people, to the theory on ambivalence and hybridity by Homi Bhabha. At the end of the paper, one will be able to articulate that, given the history of Jamaica, the traits that many postcolonial subjects display go hand in hand with Bhabha\u2019s theories on ambivalence and hybridity. The discourse on postcolonial subjects, even more recent ones, has shown a tendency to correlate with the experiences of their predecessors such as those who were colonized.",
+      "citationCount": 0,
+      "doi": "10.18769/ijasos.455678",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/88fe7c07b08acf2d92a25cdfde46c2a044b05d3b",
+      "venue": "IJASOS- International E-journal of Advances in Social Sciences",
+      "journal": {
+        "name": "IJASOS- International E-journal of Advances in Social Sciences"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a1b33a32cf3ef060834394b9812970c544bed00d",
+      "title": "Locations of Culture: the Postcolonial and the Postmodern",
+      "authors": [
+        {
+          "name": "Homi K. Bhabha",
+          "authorId": "66089253"
+        }
+      ],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1057/978-1-137-04505-8_14",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a1b33a32cf3ef060834394b9812970c544bed00d",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "136-144",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b805630c3da2832520f921f0db909567bf61c783",
+      "title": "Homi K. Bhabha 3.0 Introduction: 3.1 Theory of Hybridity",
+      "authors": [
+        {
+          "name": "Homi K. Bhabha",
+          "authorId": "66089253"
+        },
+        {
+          "name": "J. Derrida",
+          "authorId": "65895397"
+        },
+        {
+          "name": "J. Lacan",
+          "authorId": "40606948"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b805630c3da2832520f921f0db909567bf61c783",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "86f4b4ffce817d394456ac19b8078a635af5ac75",
+      "title": "Building a Third Space in Hybridity:On Seamus Heaney' s Beowulf from the Perspective of Homi Bhabha' s Hybridity",
+      "authors": [
+        {
+          "name": "Deng Hon",
+          "authorId": "71406799"
+        }
+      ],
+      "year": 2007,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/86f4b4ffce817d394456ac19b8078a635af5ac75",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2ec232438d0f098af462fcb8a4190d4096911666",
+      "title": "\u201cHybridity is Heresy:\u201d Homi Bhabha and The Satanic Verses",
+      "authors": [
+        {
+          "name": "Summer Pervez",
+          "authorId": "114454139"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": "10.1080/02759527.2004.11932351",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2ec232438d0f098af462fcb8a4190d4096911666",
+      "venue": "",
+      "journal": {
+        "name": "South Asian Review",
+        "pages": "153 - 164",
+        "volume": "25"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 10,
+  "errors": []
+}

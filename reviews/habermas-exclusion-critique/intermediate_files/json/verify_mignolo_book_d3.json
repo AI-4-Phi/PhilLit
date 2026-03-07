@@ -1,0 +1,47 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Local Histories Global Designs...' author=Mignolo year=2000
+[verify_paper.py] Paper found: Local Histories and Global Designs: An Interview w... (score: 41.8)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Local Histories Global Designs",
+    "author": "Mignolo",
+    "year": 2000
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1353/dis.2000.0004",
+      "title": "Local Histories and Global Designs: An Interview with Walter Mignolo",
+      "authors": [
+        {
+          "family": "Delgado",
+          "given": "Luisa Elena"
+        },
+        {
+          "family": "Romero",
+          "given": "Rolando J"
+        },
+        {
+          "family": "Mignolo",
+          "given": "Walter"
+        }
+      ],
+      "editors": [],
+      "year": 2000,
+      "container_title": "Discourse",
+      "volume": "22",
+      "issue": "3",
+      "page": "7-33",
+      "publisher": "Project MUSE",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1353/dis.2000.0004",
+      "score": 41.83416
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

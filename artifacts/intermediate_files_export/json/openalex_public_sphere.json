@@ -1,0 +1,921 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas public sphere",
+  "results": [
+    {
+      "openalex_id": "W1493830050",
+      "doi": "10.5860/choice.42-3953",
+      "title": "After Habermas: new perspectives on the public sphere",
+      "authors": [],
+      "publication_year": 2005,
+      "publication_date": "2005-03-01",
+      "abstract": "Introduction: John Michael Roberts and Nick Crossley. 1. Wild Publics and Grotesque Symposiums: Habermas and Bahktin on Dialogue, Everyday Life and the Public Sphere: Michael. E. Gardiner (Department of Sociology, University of Western Ontario, Canada). 2. Justice and Drama: On Bakhtin as a Complement to Habermas: Ken Hirschkop (Department of English and American Studies, University of Manchester, UK). 3. John Stuart Mill, Free Speech and the Public Sphere: A Bakhtinian Critique: John Michael Roberts (Department of Sociology, University of Leeds, UK). 4. On Systematically Distorted Communication: Bourdieu and the Socio--Analysis of Publics: Nick Crossley (Department of Sociology, University of Manchester, UK). 5. Habermas and Social Movements -- What's New?: Gemma Edwards (Department of Sociology, University of Manchester, UK). 6. Expanding Dialogue: the Internet, the Public Sphere and Prospects for Transnational Democracy: James Bohman (Department of Philosophy, St Louis University, USA). 7. Feminism and the Political Economy of Transnational Public Space: Lisa McLaughlin. Notes on contributors. Index.",
+      "cited_by_count": 328,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Globalization and Cultural Identity"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1493830050"
+    },
+    {
+      "openalex_id": "W2343860314",
+      "doi": "10.36643/mjrl.21.1.habermas",
+      "title": "Habermas, the Public Sphere, and the Creation of a Racial Counterpublic",
+      "authors": [
+        {
+          "name": "Guy-Uriel E. Charles",
+          "openalex_id": "A5113449468",
+          "institutions": [
+            "Indiana University"
+          ]
+        },
+        {
+          "name": "Luis Fuentes\u2010Rohwer",
+          "openalex_id": "A5012083755",
+          "orcid": "https://orcid.org/0000-0002-1318-6348",
+          "institutions": [
+            "Indiana University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "In The Structural Transformation of the Public Sphere, J\u00fcrgen Habermas documented the historical emergence and fall of what he called the bourgeois public sphere, which he defined as \u201c[a] sphere of private people come together as a public . . . to engage [public authorities] in a debate over the general rules governing relations in the basically privatized but publicly relevant sphere of commodity exchange and social labor.\u201d This was a space where individuals gathered to discuss with each other, and sometimes with public officials, matters of shared concern. The aim of these gatherings was not simply discourse; these gatherings allowed the bourgeoisie to use their reason to determine the boundaries of public and private and to self-consciously develop the public sphere. As Habermas writes, \u201c[t]he medium of this political confrontation was . . . people\u2019s public use of their reason.\u201d The bourgeois public didn\u2019t simply participate, but it did so both directly and critically. The development of the bourgeois public as a critical, intellectual public took place in coffeehouses, in salons, and table societies. In Great Britain, Germany, and France, particularly, the coffeehouses and the salons \u201cwere centers of criticism\u2014literary at first, then also political\u2014in which began to emerge, between aristocratic society and bourgeois intellectuals, a certain parity of the educated.\u201d Intellectual equals came together and deliberated, an equality that was key in ensuring the requisite openness and deliberation. No one person dominated the discussion due to his status within the deliberative community. Instead, and above all else, the \u201cpower of the better argument\u201d won out. Two conditions were critical to these deliberations. First, equality was key to the public sphere. Membership in the public sphere meant that no one person was above the other and all arguments were similarly treated and scrutinized. Second, the principle of universal access was crucial.8The doors of the deliberative space were open to all comers and no group or person was purposefully shut out. Seen together, these two conditions provide a blueprint for deliberative practices in a democratic society.",
+      "cited_by_count": 231,
+      "type": "article",
+      "source": {
+        "name": "Michigan Journal of Race & Law",
+        "type": "journal",
+        "issn": [
+          "1095-2721",
+          "2688-5492"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://repository.law.umich.edu/cgi/viewcontent.cgi?article=1048&context=mjrl"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2343860314"
+    },
+    {
+      "openalex_id": "W2074328989",
+      "doi": "10.1177/0191453707081685",
+      "title": "Rawls and Habermas on religion in the public sphere",
+      "authors": [
+        {
+          "name": "Melissa Yates",
+          "openalex_id": "A5030800621",
+          "institutions": [
+            "Northwestern University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-11-01",
+      "abstract": "In recent essays, J\u00fcrgen Habermas endorses an account of political liberalism much like John Rawls'. Like Rawls, he argues that laws and public policies should be justified only in neutral terms, i.e. in terms of reasons that people holding conflicting world-views could accept. Habermas also, much like Rawls, distinguishes reasonable religious citizens, whose views should be included in public discourse, from unreasonable citizens in his expectation that religious citizens self-modernize. But in sharing these Rawlsian features, Habermas is vulnerable to some of the same objections posed to Rawls. In this article I assess Habermas' ability to overcome two objections frequently posed to Rawls: (1) that religious citizens are unfairly expected to split their identities in public discourse, and (2) that the burdens of citizenship are asymmetrically distributed. I conclude that while he may be able to overcome the second, the first remains a problem for him.",
+      "cited_by_count": 262,
+      "type": "article",
+      "source": {
+        "name": "Philosophy & Social Criticism",
+        "type": "journal",
+        "issn": [
+          "0191-4537",
+          "1461-734X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Religious Education and Schools",
+        "Religious Freedom and Discrimination"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2074328989"
+    },
+    {
+      "openalex_id": "W2072004141",
+      "doi": "10.1177/1742766507078417",
+      "title": "Habermas and the public sphere",
+      "authors": [
+        {
+          "name": "Nich\u00f2las Garnham",
+          "openalex_id": "A5008930837",
+          "institutions": [
+            "University of Westminster"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-07-19",
+      "abstract": "It is now over 20 years since Habermas\u2019 concept of the public sphere was introduced to Anglo-Saxon media studies, since when it has undoubtedly become and, on the evidence of the books under review, continues to be a major thematic perspective in media analysis. Over that period Habermas\u2019 original conception of the public sphere, as stated in The Structural Transformation of the Public Sphere has been subjected to a number of critiques which are well outlined by Goode as well as Crossley and Roberts. Habermas has himself accepted many of these critiques. Indeed, as his own thought has developed, he has in many cases moved beyond them. Again, both Goode and Crossley and Roberts take good account of these developments in Habermas\u2019 thinking. I will return in a moment to these critiques and debates, in order to assess where I think we have now got to with public sphere theory. REVIEW ESSAY",
+      "cited_by_count": 119,
+      "type": "article",
+      "source": {
+        "name": "Global Media and Communication",
+        "type": "journal",
+        "issn": [
+          "1742-7665",
+          "1742-7673"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Media Studies and Communication",
+        "Media, Religion, Digital Communication"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2072004141"
+    },
+    {
+      "openalex_id": "W3004139447",
+      "doi": null,
+      "title": "Habermas\u2019 Public Sphere",
+      "authors": [
+        {
+          "name": "mwengenmeir",
+          "openalex_id": "A5021410048"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": null,
+      "cited_by_count": 12,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3004139447"
+    },
+    {
+      "openalex_id": "W1975853537",
+      "doi": "10.1017/s0003055405051749",
+      "title": "Reading Habermas in Anarchy: Multilateral Diplomacy and Global Public Spheres",
+      "authors": [
+        {
+          "name": "Jennifer Mitzen",
+          "openalex_id": "A5034155607",
+          "orcid": "https://orcid.org/0000-0003-1322-5033",
+          "institutions": [
+            "The Ohio State University"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-08-01",
+      "abstract": "States routinely justify their policies in interstate forums, and this reason-giving seems to serve a legitimating function. But how could this be? For Habermas and other global public sphere theorists, the exchange of reasons oriented toward understanding\u2014communicative action\u2014is central to public sphere governance, where political power is held accountable to those affected. But most global public sphere theory considers communicative action only among nonstate actors. Indeed, anarchy is a hard case for public spheres. The normative potential of communicative action rests on its instability: only where consensus can be undone by better reasons, through argument, can we say speakers are holding one another accountable to reason. But argument means disagreement, and especially in anarchy disagreement can mean violence. Domestically, the state backstops argument to prevent violence. Internationally, I propose that international society and publicity function similarly. Public talk can mitigate the security dilemma and enable interstate communicative action. Viewing multilateral diplomacy as a legitimation process makes sense of the intuition that interstate talk matters, while tempering a potentially aggressive cosmopolitanism.",
+      "cited_by_count": 145,
+      "type": "article",
+      "source": {
+        "name": "American Political Science Review",
+        "type": "journal",
+        "issn": [
+          "0003-0554",
+          "1537-5943"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Global Peace and Security Dynamics",
+        "International Relations and Foreign Policy"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W1975853537"
+    },
+    {
+      "openalex_id": "W1996764793",
+      "doi": "10.1086/315932",
+      "title": "Phantasies of the Public Sphere: Rethinking the Habermas of Historians",
+      "authors": [
+        {
+          "name": "Harold Mah",
+          "openalex_id": "A5035164558",
+          "institutions": [
+            "Queen's University"
+          ]
+        }
+      ],
+      "publication_year": 2000,
+      "publication_date": "2000-03-01",
+      "abstract": null,
+      "cited_by_count": 162,
+      "type": "article",
+      "source": {
+        "name": "The Journal of Modern History",
+        "type": "journal",
+        "issn": [
+          "0022-2801",
+          "1537-5358"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Historical Studies and Socio-cultural Analysis",
+        "European Political History Analysis",
+        "Reformation and Early Modern Christianity"
+      ],
+      "referenced_works_count": 16,
+      "url": "https://openalex.org/W1996764793"
+    },
+    {
+      "openalex_id": "W2036349381",
+      "doi": "10.1007/s12108-009-9071-4",
+      "title": "Shaping the Public Sphere: Habermas and Beyond",
+      "authors": [
+        {
+          "name": "Rodney Benson",
+          "openalex_id": "A5070554702",
+          "orcid": "https://orcid.org/0000-0003-0876-2707",
+          "institutions": [
+            "New York University"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-07-14",
+      "abstract": null,
+      "cited_by_count": 109,
+      "type": "article",
+      "source": {
+        "name": "The American Sociologist",
+        "type": "journal",
+        "issn": [
+          "0003-1232",
+          "1936-4784"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Critical Theory and Philosophy",
+        "Media Studies and Communication"
+      ],
+      "referenced_works_count": 145,
+      "url": "https://openalex.org/W2036349381"
+    },
+    {
+      "openalex_id": "W575272228",
+      "doi": null,
+      "title": "Jurgen Habermas: Democracy and the Public Sphere",
+      "authors": [
+        {
+          "name": "Luke Goode",
+          "openalex_id": "A5036570532"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-11-29",
+      "abstract": "INTRODUCTION CHAPTER 1 - EXCAVATIONS: THE HISTORY OF A CONCEPT i) Introduction ii) The bourgeois public sphere iii) The fall of the bourgeois public sphere iv) Critical publicity and late capitalism CHAPTER 2 - DISCURSIVE TESTING: THE PUBLIC SPHERE AND ITS CRITICS i) Introduction ii) Lessons from history iii) Equality and emancipation iv) Rationality and embodiment CHAPTER 3 - RECONFIGURATIONS: THE PUBLIC SPHERE SINCE STRUCTURAL TRANSFORMATION i) Introduction ii) Scientism and politics iii) System, lifeworld and communicative action iv) The politics of the other CHAPTER 4 - MEDIATIONS: FROM THE COFFEE HOUSE TO THE INTERNET CAFE i) Introduction ii) The fall of the agora iii) A public sphere in bits? CHAPTER 5 - UNFINISHED PROJECTS: REFLEXIVE DEMOCRACY i) Introduction ii) Reflexive agency iii) Risk and reflexivity iv) Revisiting the public sphere BIBLIOGRAPHY.",
+      "cited_by_count": 110,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W575272228"
+    },
+    {
+      "openalex_id": "W1968963290",
+      "doi": "10.5210/fm.v10i9.1280",
+      "title": "Habermas\u2019 heritage: The future of the public sphere in the network society",
+      "authors": [
+        {
+          "name": "Pieter Boeder",
+          "openalex_id": "A5037861786"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-09-05",
+      "abstract": "In the digital age, the discussion about the public sphere has at the same time become increasingly relevant and increasingly problematic. The validity and relevance of post\u2013modern critique to Habermas\u2019 concept of the public sphere cannot be denied, yet the concept of a public sphere and Habermas\u2019 notion of a critical publicity is still extremely valuable for media theory today. The public sphere is subject to dramatic change; one might even argue that it is on the verge of extinction. Computer\u2013mediated communication has taken the place of coffeehouse discourse, and issues such as media ownership and commodification pose serious threats to the free flow of information and freedom of speech on the Web. I don't believe the situation is quite that serious. I will give an introductory overview of Habermas\u2019 theoretical concept and point out that it is conceptual rather than physical. I will describe why Habermas\u2019 key concept is valuable for media theory today. Further, I will give an overview of the main issues, debates and problems that arose around the concept of the public sphere in the decades that followed. I will conclude that the notion of the public sphere is not a static one, but subject to change, and show how the theoretical concept of the public sphere is being used to work out viable options for a digital future and models for positive change.",
+      "cited_by_count": 72,
+      "type": "article",
+      "source": {
+        "name": "First Monday",
+        "type": "journal",
+        "issn": [
+          "1396-0458",
+          "1396-0466"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://doi.org/10.5210/fm.v10i9.1280"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Critical Theory and Philosophy",
+        "Information Society and Technology Trends"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1968963290"
+    },
+    {
+      "openalex_id": "W603695481",
+      "doi": null,
+      "title": "Habermas: Rescuing the Public Sphere",
+      "authors": [
+        {
+          "name": "Pauline Johnson",
+          "openalex_id": "A5087132640",
+          "orcid": "https://orcid.org/0000-0001-7914-1217"
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-04-18",
+      "abstract": "If we are to believe what many sociologists are telling us, the public sphere is in a near terminal state. Our ability to build solidarities with strangers and to agree on the general significance of needs and problems seems to be collapsing. These cultural potentials appear endangered by a newly aggressive attempt to universalize and extend the norms of the market. For four decades Habermas has been trying to bring the claims of a modern public sphere before us. His vast oeuvre has investigated its historical, sociological and theoretical preconditions, has explored its relevance and meaning as well as diagnosing its on-going crises. In the contemporary climate, a systematic look at Habermas\u2019 lifelong project of rescuing the modern public sphere seems an urgent task. \n\nThis study reconstructs major developments in Habermas\u2019 thinking about the public sphere, and is a contribution to the current vigorous debate over its plight. It marshals the significance of Habermas\u2019 lifetime of work on this topic to illuminate what is at stake in a contemporary interest in rescuing an embattled modern public sphere.\n\nHabermas\u2019 project of rescuing the neglected potentials of Enlightenment legacies has been deeply controversial. For many, it is too lacking in radical commitments to warrant its claim to a contemporary place within a critical theory tradition. Against this developing consensus, Pauline Johnson describes Habermas\u2019 project as one that is still informed by utopian energies, even though his own construction of emancipatory hopes itself proves to be too narrow and one-sided.",
+      "cited_by_count": 49,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W603695481"
+    },
+    {
+      "openalex_id": "W1548941810",
+      "doi": "10.1111/j.1467-954x.2004.00472.x",
+      "title": "Wild Publics and Grotesque Symposiums: Habermas and Bakhtin on Dialogue, Everyday Life and the Public Sphere",
+      "authors": [
+        {
+          "name": "Michael Gardiner",
+          "openalex_id": "A5110888318"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-06-01",
+      "abstract": null,
+      "cited_by_count": 128,
+      "type": "article",
+      "source": {
+        "name": "The Sociological Review",
+        "type": "journal",
+        "issn": [
+          "0038-0261",
+          "1467-954X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Russian Literature and Bakhtin Studies",
+        "Philosophy, Ethics, and Existentialism",
+        "Literature, Culture, and Criticism"
+      ],
+      "referenced_works_count": 44,
+      "url": "https://openalex.org/W1548941810"
+    },
+    {
+      "openalex_id": "W2940324318",
+      "doi": "10.1386/jams.11.1.35_1",
+      "title": "Watch my back and I watch yours\u2019: Beyond Habermas\u2019 public sphere concept in democratic and participatory dimensions of pre-colonial Shona society public spaces",
+      "authors": [
+        {
+          "name": "Lyton Ncube",
+          "openalex_id": "A5087578256",
+          "orcid": "https://orcid.org/0000-0001-8754-3080",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        },
+        {
+          "name": "Keyan G. Tomaselli",
+          "openalex_id": "A5035835239",
+          "orcid": "https://orcid.org/0000-0002-2995-0726",
+          "institutions": [
+            "University of Johannesburg"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-03-01",
+      "abstract": "Debates on communication media and democracy including in Africa are largely anchored in the western Habermasian public sphere concept. Studies employing indigenous African communication platforms and symbols are scarce, prompting Zimbabwean philosopher Tafataona Mahoso to argue that while Africans have a philosophy, we have become \u2018illiterate\u2019 such that we cannot read our constructions and symbols. Thus, this article broadens discussions on participatory communication practices and democratic principles by engaging pre-colonial Zimbabwe communication and solidarity relational philosophies of Dariro and Dare (ubiquitous circle) largely located in traditional Shona societies. The philosophical democratic dimensions of these platforms are discussed in relation to Habermas\u2019 public sphere theory. We show that despite western thought generally regarding the non-West as a place of antiquarian traditions and unprocessed data, pre-colonial indigenous African communication systems were characterized by democratic participation, agency and public contest; at times beyond democratic practices and principles espoused by the Habermasian public sphere.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Journal of African Media Studies",
+        "type": "journal",
+        "issn": [
+          "1751-7974",
+          "2040-199X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "African studies and sociopolitical issues",
+        "Media Influence and Politics",
+        "Media Studies and Communication"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2940324318"
+    },
+    {
+      "openalex_id": "W2052771890",
+      "doi": "10.1191/0266355406gh381oa",
+      "title": "The Public Sphere and the Habermas Debate",
+      "authors": [
+        {
+          "name": "Andreas Gestrich",
+          "openalex_id": "A5017062965",
+          "institutions": [
+            "Universit\u00e4t Trier"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-07-02",
+      "abstract": "Journal Article The Public Sphere and the Habermas Debate Get access Andreas Gestrich Andreas Gestrich Trier University Search for other works by this author on: Oxford Academic Google Scholar German History, Volume 24, Issue 3, July 2006, Pages 413\u2013430, https://doi.org/10.1191/0266355406gh381oa Published: 01 July 2006",
+      "cited_by_count": 41,
+      "type": "article",
+      "source": {
+        "name": "German History",
+        "type": "journal",
+        "issn": [
+          "0266-3554",
+          "1477-089X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2052771890"
+    },
+    {
+      "openalex_id": "W2329333124",
+      "doi": "10.1111/j.1468-2273.2011.00496.x",
+      "title": "Higher Education and Public Good",
+      "authors": [
+        {
+          "name": "Simon Marginson",
+          "openalex_id": "A5052685450",
+          "orcid": "https://orcid.org/0000-0002-6738-3128",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-08-05",
+      "abstract": "Policy debate about whether to maintain public subsidies for higher education has stimulated reconsideration of the public mission of higher education institutions, especially those that provide student places conferring private benefits. If the work of higher education institutions is defined simply as the aggregation of private interests, this evaporates the rationale for higher education institutions as distinctive social foundations with multiple public and private roles. The private benefits could be produced elsewhere. If that is all there is to higher education institutions, they could follow the Tudor monasteries into oblivion. But what is 'public' in higher education institutions? What could be 'public'? What should be 'public'? The paper reviews the main notions of 'public' (public goods in economics, public understood as collective good and Habermas' public sphere) noting the contested and politicised environment in which notions of 'public' must find purchase. A turn to global public goods offers the most promising strategy for re-grounding the 'public' character of higher education.",
+      "cited_by_count": 477,
+      "type": "article",
+      "source": {
+        "name": "Higher Education Quarterly",
+        "type": "journal",
+        "issn": [
+          "0951-5224",
+          "1468-2273"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Higher Education Governance and Development",
+        "Higher Education Research Studies",
+        "Doctoral Education Challenges and Solutions"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2329333124"
+    },
+    {
+      "openalex_id": "W4200131596",
+      "doi": "10.20935/al4223",
+      "title": "Revisiting Habermas' Public Sphere: Welcome to the Virtual Sphere",
+      "authors": [
+        {
+          "name": "Gabriel Martin Telleria",
+          "openalex_id": "A5091779222",
+          "orcid": "https://orcid.org/0000-0001-5657-3084"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-17",
+      "abstract": "Jorge Adriano in his article on the Public Sphere 50 years later, argues that \"what is configured in the manipulated public sphere is just an \"opinion atmosphere\", in general, manipulated mostly by the calculation of socio-psychological tendencies which, however, provoke expected reactions.\" Lubenow adds that \"\u2026the mass media hierarchize the horizon of possible communications, establish obstacles and substitute the structures of communication that had enabled the public discussion\". Finally, Lubenow points to two very important necessary conditions that need to be present in a Habermasian public sphere. \"\u2026a self-regulating media system needs to maintain its independence with their surrounding while it links political communication in public sphere with civil society and political center; the inclusive civil society needs to encourage citizens to participate and respond in public discourse that, in turn, cannot degenerate into a mode of colonized communication\".",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Academia Letters",
+        "type": "journal",
+        "issn": [
+          "2771-9359"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Critical Theory and Philosophy",
+        "Communication and COVID-19 Impact"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4200131596"
+    },
+    {
+      "openalex_id": "W2260247774",
+      "doi": null,
+      "title": "Publicity Without the Public?: The Promise and Problems of Habermas' Public Sphere",
+      "authors": [
+        {
+          "name": "Lida Maxwell",
+          "openalex_id": "A5037268177"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-03-29",
+      "abstract": "In this paper, I examine Jurgen Habermas' understanding of publicity in both his early and later work. Habermas' work on publicity receives less attention in contemporary democratic theory than his work on communicative rationality and discourse ethics. This lack of attention is a mistake. Habermas' work on publicity is instructive on importance of the as an authoritative figure for contemporary democracies as well as on problems with and decline of the Habermas also makes an important call for rejuvenating spaces and practices of publicity as a condition of modern democratic freedom. However, Habermas' arguments for what a rejuvenated public would look like tend to orient citizens not to public, itself, but to seeking publicity and transparency from governmental institutions and institutions of opinion formation (parties, interest groups, press). I argue that Habermas' focus on publicity of institutions rather than on publicity of public itself - that is, how public is claimed, articulated, and called upon by citizens (i.e. |made| public) - is ultimately detrimental to Habermas' interest in reinvigorating citizens' sense of themselves as part of an empowered public.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "SSRN Electronic Journal",
+        "type": "repository",
+        "issn": [
+          "1556-5068"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=1580849"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Rhetoric and Communication Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2260247774"
+    },
+    {
+      "openalex_id": "W3138812846",
+      "doi": "10.20511/pyr2021.v9nspe3.1115",
+      "title": "Investigating the Management of the Formation of Habermas Public Sphere Theory in Instagram and Telegram Networks",
+      "authors": [
+        {
+          "name": "Ali Asadnezhad",
+          "openalex_id": "A5008011787"
+        },
+        {
+          "name": "Nahid Kordi",
+          "openalex_id": "A5068608343",
+          "institutions": [
+            "Islamic Azad University South Tehran Branch"
+          ]
+        },
+        {
+          "name": "Ali Ashraf Jafari",
+          "openalex_id": "A5049274977",
+          "orcid": "https://orcid.org/0000-0002-1211-3796",
+          "institutions": [
+            "Islamic Azad University Ardabil"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "The purpose of this study is to examining the management of the formation of Habermas public Sphere theory in Instagram and Telegram networks. The research method is survey. Statistical Society of this research is the users of social networks (telegram and Instagram). according to the Cochrane formula statistical sample is 384 people. Using purposive non-random sampling method the Statistical samples was selected and the data were analyzed by Pearson correlation method. The results showed that There is a significant relationship between free access to the Internet and social networks, rational critique of political economic social and cultural issues, rational criticism of the government, free dialogue and the formation of the public sphere. There is a difference between the formation of the public Sphere in social networks and the level of education. There is a difference between the formation of the public Sphere in social networks and individuals' age, but There is not much difference between the formation of the public Sphere in social networks and gender.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": {
+        "name": "Prop\u00f3sitos y Representaciones",
+        "type": "journal",
+        "issn": [
+          "2307-7999",
+          "2310-4635"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://revistas.usil.edu.pe/index.php/pyr/article/download/1115/1375"
+      },
+      "topics": [
+        "Islamic Finance and Communication",
+        "Media, Religion, Digital Communication",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 5,
+      "url": "https://openalex.org/W3138812846"
+    },
+    {
+      "openalex_id": "W2166590435",
+      "doi": null,
+      "title": "Historicising Habermas' Public Sphere: Conceptual Distinction between the Public Spheres of Habermas and Turkey",
+      "authors": [
+        {
+          "name": "Eduard Alan Bulut",
+          "openalex_id": "A5035172716"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-12-16",
+      "abstract": "This study argues that it is necessary to historicise Habermas\u2019 concept of \u201cpublic sphere\u201d and not to apply it to the present day in the form defined by Habermas, at least to all countries. Rather, a clear line should be drawn between the contextually-varying concept of public sphere in Habermas\u2019 works and the recent understanding of public sphere in countries with assertive secularism in order to understand what is actually meant by this particular concept. There is a world of dif ference between the key terms of discussions on-going in Turkey and in Habermasian politicophilosophical works with regard to public sphere. In Turkey, the State has transformed the meaning of public sphere, has monopolised the sphere of the public and has developed oversensitivity to it; therefore, the term has undergone a loss of meaning. The public sphere, meaning of which has been shaped by Turkish founding fathers\u2019 unitary ideology and secured by their subsequent heirs as a result of their status quo concerns, has gone far from the public sphere defined by Habermas.",
+      "cited_by_count": 2,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Turkey's Politics and Society",
+        "Religion and Society Interactions"
+      ],
+      "referenced_works_count": 59,
+      "url": "https://openalex.org/W2166590435"
+    },
+    {
+      "openalex_id": "W2891966433",
+      "doi": "10.4324/9780203876527-8",
+      "title": "Social Network Sites as Networked Publics: Affordances, Dynamics, and Implications",
+      "authors": [
+        {
+          "name": "DANAH BOYD",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-09-10",
+      "abstract": "Networked publics must be understood in terms of \u201cpublics,\u201d a contested and \nmessy term with multiple meanings that is used across different disciplines to \nsignal different concepts. One approach is to construct \u201cpublic\u201d as a collection \nof people who share \u201ca common understanding of the world, a shared identity, \na claim to inclusiveness, a consensus regarding the collective interest\u201d (Livingstone, 2005, p. 9). In this sense, a public may refer to a local collection of \npeople (e.g., one\u2019s peers) or a much broader collection of people (e.g., \nmembers of a nation-state). Those invested in the civic functioning of publics \noften concern themselves with the potential accessibility of spaces and \ninformation to wide audiences-\u201cthe public\u201d\u2014and the creation of a shared \n\u201cpublic sphere\u201d (Habermas, 1991). Yet, as Benedict Anderson (2006) argues, \nthe notion of a public is in many ways an \u201cimagined community.\u201d Some scholars contend that there is no single public, but many publics to which some \npeople are included and others excluded (Warner, 2002).\n Cultural and media studies offer a different perspective on the notion of \nwhat constitutes a public. In locating the term \u201cpublic\u201d as synonymous with \n\u201caudience,\u201d Sonia Livingstone (2005) uses the term to refer to a group \nbounded by a shared text, whether a worldview or a performance. The audience produced by media is often by its very nature a public, but not necessarily a passive one. For example, Michel de Certeau (2002) argues that \nconsumption and production of cultural objects are intimately connected, and \nHenry Jenkins (2006) applies these ideas to the creation and dissemination of \nmedia. Mizuko Ito extends this line of thinking to argue that \u201cpublics can bereactors, (re)makers and (re)distributors, engaging in shared culture and \nknowledge through discourse and social exchange as well as through acts of \nmedia reception\u201d (Ito, 2008, p. 3).\n It is precisely this use of public that upsets political theorists like Jurgen Habermas, who challenge the legitimacy of any depoliticized public preoccupied \u201cwith \nconsumption of culture\u201d (Habermas, 1991, p. 177). Of course, not all political \nscholars agree with Habermas\u2019 objection to the cultural significance of publics. \nFeminist scholar Nancy Fraser argues that publics are not only a site of discourse \nand opinion but \u201carenas for the formation and enactment of social identities\u201d \n(Fraser, 1992), while Craig Calhoun argues that one of Habermas\u2019 weaknesses is \nhis naive view that \u201cidentities and interests [are] settled within the private world \nand then brought fully formed into the public sphere\u201d (Calhoun, 1992, p. 35).\n Networked publics exist against this backdrop. Mizuko Ito introduces the \nnotion of networked publics to \u201creference a linked set of social, cultural, and \ntechnological developments that have accompanied the growing engagement \nwith digitally networked media\u201d (Ito, 2008, p. 2). Ito emphasizes the networked media, but I believe we must also focus on the ways in which this \nshapes publics-both in terms of space and collectives. In short, I contend that \nnetworked publics are publics that are restructured by networked technologies; they are simultaneously a space and a collection of people.\n In bringing forth the notion of networked publics, I am not seeking to \nresolve the different discursive threads around the notion of publics. My \napproach accepts the messiness and, instead, focuses on the ways in which networked technologies extend and complicate publics in all of their forms. What \ndistinguishes networked publics from other types of publics is their underlying \nstructure. Networked technologies reorganize how information flows and how \npeople interact with information and each other. In essence, the architecture of \nnetworked publics differentiates them from more traditional notions of publics.",
+      "cited_by_count": 1706,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Media Studies and Communication",
+        "Media, Communication, and Education"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2891966433"
+    },
+    {
+      "openalex_id": "W2166478009",
+      "doi": "10.1080/13183222.2001.11008767",
+      "title": "Habermas and the Public Sphere: From a German to a European Perspective",
+      "authors": [
+        {
+          "name": "Hans J. Kleinst\u00fcber",
+          "openalex_id": "A5039520664"
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-01-01",
+      "abstract": "This article examines the nature and relevance of Habermas\u2019 theory of the public sphere in the present European situation. The paper notes that the current debate in the English-speaking world is not matched by a similar discussion in Germany. This is partly because Habermas\u2019 classic text was first published in Germany in 1962, and the considerable discussion it provoked ran out of steam some years ago. The Anglo-Saxon debate differs from its German predecessor in two important ways. In the first place, the choice of the phrase public sphere as a translation for the original \u00d6ffentlichkeit introduced issues into the English discussion, notably the spatial metaphor, that were absent from the German original. Secondly, in the German-speaking world there has been a much longer and broader discussion of \u00d6ffentlichkeit, lasting for more than two centuries, and concentrating particularly on literary and aesthetic issues. Very far from appearing as a startlingly original insight, as it did in the English-speaking world, Habermas\u2019 work was understood in Germany as a small part of this more general tradition.",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "Javnost - The Public",
+        "type": "journal",
+        "issn": [
+          "1854-8377"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 9,
+      "url": "https://openalex.org/W2166478009"
+    },
+    {
+      "openalex_id": "W1504210231",
+      "doi": null,
+      "title": "Beyond Habermas : democracy, knowledge, and the public sphere",
+      "authors": [
+        {
+          "name": "Christian J. Emden",
+          "openalex_id": "A5053820439",
+          "orcid": "https://orcid.org/0000-0001-5457-5334"
+        },
+        {
+          "name": "David Midgley",
+          "openalex_id": "A5032070756"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "Introduction: Beyond Habermas? From the Bourgeois Public Sphere to Global Publics Christian J. Emden and David Midgley Part I: Public Opinion in the Democratic Polity Chapter 1. Public Sphere and Political Experience Lord (Richard) Wilson Chapter 2. Public Opinion and Public Sphere Gordon Graham Chapter 3. The Tyranny of Majority Opinion in the Public Sphere Gary Wihl Part II: Knowledge and the Public Sphere Chapter 4. Epistemic Publics: On the Trading Zones of Knowledge Christian J. Emden Chapter 5. The Public in Public Health Anne Hardy Chapter 6. Geeks and Recursive Publics: How the Internet and Free Software Make Things Public Christopher Kelty Part III: Democracy, Philosophy, and Global Publics Chapter 7. Mediating the Public Sphere: Digitization, Pluralism, and Communicative Democracy Georgina Born Chapter 8. Critique of Public Reason: Normativity, Legitimation, and Meaning in the Public Sphere Steven G. Crowell Chapter 9. On the Global Multiplicity of Public Spheres: The Democratic Transformation of the Public Sphere? James Tully Contributors Bibliography Index",
+      "cited_by_count": 22,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Rhetoric and Communication Studies",
+        "Globalization and Cultural Identity",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1504210231"
+    },
+    {
+      "openalex_id": "W2330637273",
+      "doi": "10.1177/1527476411415291",
+      "title": "Facebook as a Tool for Producing Sociality and Connectivity",
+      "authors": [
+        {
+          "name": "Jos\u00e9 van Dijck",
+          "openalex_id": "A5031080224",
+          "orcid": "https://orcid.org/0000-0003-0499-9045",
+          "institutions": [
+            "University of Amsterdam",
+            "Amsterdam University of the Arts"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-09-22",
+      "abstract": "This article investigates whether social media in general\u2014using Facebook as an example\u2014warrant identification of a new public sphere, another private sphere, or a different corporate sphere, as some scholars have argued. It is argued that social media platforms neither warrant a recalibration of Habermas\u2019 public sphere, nor a conscious blending of spheres. Rather, social media platforms form a contested space where private, public and corporate interests compete to produce new norms of sociality and connectivity. In order to understand the dynamics of social media, it is not enough to revamp existing social theory of networks, to polish up legal frames, or to reintroduce political-economic schemes. We need to connect these theories and come up with an analytical model that accounts for the complexities of the various interests interpenetrating the new space of mediated communication.",
+      "cited_by_count": 229,
+      "type": "article",
+      "source": {
+        "name": "Television & New Media",
+        "type": "journal",
+        "issn": [
+          "1527-4764",
+          "1552-8316"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://dare.uva.nl/personal/pure/en/publications/facebook-as-a-tool-for-producing-sociality-and-connectivity(7cb65b5d-1195-4db2-b112-34b86c04ffd5).html"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "E-Government and Public Services",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2330637273"
+    },
+    {
+      "openalex_id": "W3126583678",
+      "doi": "10.1177/1368431020983224",
+      "title": "Habermas and the public sphere: Rethinking a key theoretical concept",
+      "authors": [
+        {
+          "name": "Patrick O\u2019Mahony",
+          "openalex_id": "A5020384483",
+          "orcid": "https://orcid.org/0000-0001-9883-5425",
+          "institutions": [
+            "National University of Ireland",
+            "University College Cork"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-03",
+      "abstract": "The challenge of realizing the democratic power of publics through public sphere remains acute but not hopeless. While claiming that Habermas communicative social theory offers a way forward in spite of a productive but constraining turn towards a modified social liberal frame, nonetheless three limitations of the theory are identified. The first bears on the insufficiency of the sociological evolutionist description of society relevant to the public sphere drawn from classical sociological accounts of differentiation and integration. The second identifies learning theoretical limitations of the normative interactionist, proceduralist account of democracy and democratization potentials. And the third observes on the disconnection between the theory of communicative reasoning from, on the one hand, the critique of pathologies of reasoning, and, on the other, from its implications for lifeworld rationalization. These identified limitations are intended to provide new impetus to radically rethink the public sphere as intrinsic to solving contemporary problems of democracy that Habermas\u2019s more recent account of deliberative theory, with the public sphere merely supplementary, cannot fully do. Yet, with Habermas, this should be on the basis of advancing the communication theory of democracy.",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Social Theory",
+        "type": "journal",
+        "issn": [
+          "1368-4310",
+          "1461-7137"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W3126583678"
+    },
+    {
+      "openalex_id": "W2410436543",
+      "doi": "10.1057/9781137373311_2",
+      "title": "Habermas, the Public Sphere, and Democracy",
+      "authors": [
+        {
+          "name": "Douglas Kellner",
+          "openalex_id": "A5084229007",
+          "orcid": "https://orcid.org/0000-0002-1643-6744"
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "J\u00fcrgen Habermas's The Structural Transformation of the Public Sphere (1989b; 1962) is an immensely rich and influential book that has had a major impact in a variety of disciplines. It has also received detailed critique and generated extremely productive discussions of liberal democracy, civil society, public life, social changes in the twentieth century, and other issues. Few books of the second half of the twentieth century have been so seriously discussed in so many different fields and continue, more than 50 years after its initial publication in 1962, to create controversy and insight.KeywordsCivil SocietyStructural TransformationPublic SphereCritical TheoryDeliberative DemocracyThese keywords were added by machine and not by the authors. This process is experimental and the keywords may be updated as the learning algorithm improves.",
+      "cited_by_count": 23,
+      "type": "book-chapter",
+      "source": {
+        "name": "Palgrave Macmillan US eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Hannah Arendt's Political Philosophy",
+        "Weber, Simmel, Sociological Theory"
+      ],
+      "referenced_works_count": 48,
+      "url": "https://openalex.org/W2410436543"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

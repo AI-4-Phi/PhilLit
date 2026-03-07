@@ -1,0 +1,124 @@
+[s2_search.py] Searching Semantic Scholar: 'Dean Solidarity Strangers Feminism Identity Politics', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_39c3fd4d9cb92eef)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Dean Solidarity Strangers Feminism Identity Politics",
+  "results": [
+    {
+      "paperId": "fc87b6e1df9d1f020c5352d3a7f033d815f278f8",
+      "title": "Solidarity of Strangers: Feminism after Identity Politics",
+      "authors": [
+        {
+          "name": "J. Dean",
+          "authorId": "39729742"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 205,
+      "doi": "10.5860/choice.33-6607",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fc87b6e1df9d1f020c5352d3a7f033d815f278f8",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a3a8f42c5300d40b861dffbbd56c257f04269838",
+      "title": "[Review of the book Solidarity of strangers: feminism after identity politics]",
+      "authors": [
+        {
+          "name": "L. Yates",
+          "authorId": "145404945"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a3a8f42c5300d40b861dffbbd56c257f04269838",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "541790740f7f7609c2b54a3cb4182a4f4516d7fb",
+      "title": "Solidarity Of Strangers Feminism After Identity Politics",
+      "authors": [
+        {
+          "name": "A. Schmid",
+          "authorId": "71304104"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/541790740f7f7609c2b54a3cb4182a4f4516d7fb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "548d40503fc1845d467927e0253fa1bea0e288c4",
+      "title": "Ludic Feminism and After: Postmodernism, Desire, and Labor in Late Capitalism. Teresa L. EbertSolidarity of Strangers: Feminism after Identity Politics. Jodi Dean",
+      "authors": [
+        {
+          "name": "Eva Cherniavsky",
+          "authorId": "101851001"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1086/495338",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/548d40503fc1845d467927e0253fa1bea0e288c4",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "691246d39814fbd4f181f977c024713d86a42629",
+      "title": "Narrow bridges: Jewish lesbian feminism, identity politics, and the \u201chard ground\u201d of alliance",
+      "authors": [
+        {
+          "name": "B. Lober",
+          "authorId": "2247664"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Abstract The emergence of Jewish feminism in the late twentieth century produced a contradictory site for engagement with the Israeli state and its claims to both Jewish identity and the territory of historic Palestine. While some mobilizations of Jewish feminist identity politics promoted nationalism, others engaged the self-reflexive mode to question the coherence of group identity, to work against its codification in the state-national form, and to engender empathy and solidarity with targets of both U.S. and Israeli racial states. This essay maps two forms of Jewish feminist praxis: one liberal, normatively white, invested in both heteronormativity and Zionism; the other radical, emerging in close collaboration with women of color feminism, attuned to comparative racial relations, lesbian-led, and saturated with discourse and debate on U.S. and Israeli racism, and Zionism\u2019s connection to Jewish identity.",
+      "citationCount": 5,
+      "doi": "10.1080/10894160.2018.1501537",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/691246d39814fbd4f181f977c024713d86a42629",
+      "venue": "Journal of Lesbian Studies",
+      "journal": {
+        "name": "Journal of Lesbian Studies",
+        "pages": "101 - 83",
+        "volume": "23"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

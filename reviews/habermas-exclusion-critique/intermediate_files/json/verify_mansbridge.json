@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1007/978-3-319-52386-6_6
+[verify_paper.py] DOI verified: The Long Life of Nancy Fraser’s “Rethinking the Pu...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1007/978-3-319-52386-6_6"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1007/978-3-319-52386-6_6",
+      "title": "The Long Life of Nancy Fraser\u2019s \u201cRethinking the Public Sphere\u201d",
+      "authors": [
+        {
+          "family": "Mansbridge",
+          "given": "Jane"
+        }
+      ],
+      "editors": [],
+      "year": 2017,
+      "container_title": "Feminism, Capitalism, and Critique",
+      "volume": "",
+      "issue": "",
+      "page": "101-118",
+      "publisher": "Springer International Publishing",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1007/978-3-319-52386-6_6"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

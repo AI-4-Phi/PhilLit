@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1177/152263790600800201"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/152263790600800201",
+      "title": "Public Sphere and Communicative Rationality: Interrogating Habermas's Eurocentrism",
+      "authors": [
+        {
+          "family": "Gunaratne",
+          "given": "Shelton A."
+        }
+      ],
+      "editors": [],
+      "year": 2006,
+      "container_title": "Journalism &amp; Communication Monographs",
+      "volume": "8",
+      "issue": "2",
+      "page": "93-156",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1177/152263790600800201"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

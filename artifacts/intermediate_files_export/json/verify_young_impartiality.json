@@ -1,0 +1,20 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Impartiality and the Civic Public: Some Implicatio...' author=Young year=1987
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Impartiality and the Civic Public: Some Implications of Feminist Critiques of Moral and Political Theory",
+    "author": "Young",
+    "year": 1987
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "Best match score (22.5) below threshold (30)",
+      "recoverable": false
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1086/293678"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1086/293678",
+      "title": "Kantian Constructivism and Reconstructivism: Rawls and Habermas in Dialogue",
+      "authors": [
+        {
+          "family": "McCarthy",
+          "given": "Thomas"
+        }
+      ],
+      "editors": [],
+      "year": 1994,
+      "container_title": "Ethics",
+      "volume": "105",
+      "issue": "1",
+      "page": "44-63",
+      "publisher": "University of Chicago Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1086/293678"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

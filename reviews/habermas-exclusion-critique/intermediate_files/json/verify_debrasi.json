@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5840/logos-episteme20231411"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5840/logos-episteme20231411",
+      "title": "Deliberative Democracy, Epistemic Injustice, and Epistemic Disenfranchisement",
+      "authors": [
+        {
+          "family": "De Brasi",
+          "given": "Leandro"
+        },
+        {
+          "family": "Warman",
+          "given": "Jack"
+        },
+        {
+          "family": "Romanian Academy - Iasi Branch",
+          "given": ""
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "Logos &amp; Episteme",
+      "volume": "14",
+      "issue": "1",
+      "page": "7-27",
+      "publisher": "Philosophy Documentation Center",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5840/logos-episteme20231411"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

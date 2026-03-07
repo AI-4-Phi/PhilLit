@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Frontiers of Justice Disability Nationality Species Membership",
+    "author": "Nussbaum",
+    "year": 2006
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/j.ctv1c7zftw",
+      "title": "Frontiers of Justice",
+      "authors": [
+        {
+          "family": "Nussbaum",
+          "given": "Martha C."
+        }
+      ],
+      "editors": [],
+      "year": 2007,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Harvard University Press",
+      "type": "monograph",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/j.ctv1c7zftw",
+      "score": 68.99447
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

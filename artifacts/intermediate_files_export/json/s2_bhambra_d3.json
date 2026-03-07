@@ -1,0 +1,145 @@
+[s2_search.py] Searching Semantic Scholar: 'Bhambra rethinking modernity postcolonialism connected sociologies' (year=2005-2025) (field=Philosophy), limit=8
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Search complete: 5 papers found
+[s2_search.py] Cached results (cache key: s2_182bbe84f537b34b)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Bhambra rethinking modernity postcolonialism connected sociologies",
+  "results": [
+    {
+      "paperId": "ece200e20f5c4eac1c78b85dc30f4785b596b810",
+      "title": "Rethinking modernity: A postcolonial critique",
+      "authors": [
+        {
+          "name": "Gurminder K. Bhambra",
+          "authorId": "6612254"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ece200e20f5c4eac1c78b85dc30f4785b596b810",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d16c57da465254ca1e7fef8a8d53375bc0ac71d6",
+      "title": "The great convergence: science, modernity and the dilemmas of ethnocentrism",
+      "authors": [
+        {
+          "name": "Gennaro Ascione",
+          "authorId": "114964389"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.1080/13688790.2015.1153024",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d16c57da465254ca1e7fef8a8d53375bc0ac71d6",
+      "venue": "",
+      "journal": {
+        "name": "Postcolonial Studies",
+        "pages": "279 - 298",
+        "volume": "18"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fe00359b195fec998a6d8c26d78a72941266db64",
+      "title": "INTRODUCTION:THE VULNERABILITY CHALLENGE",
+      "authors": [
+        {
+          "name": "L. Re",
+          "authorId": "118394913"
+        }
+      ],
+      "year": 2016,
+      "abstract": "The essay presents a discussion of vulnerability theory from a philosophical and a sociological perspective. The success of this new paradigm in the social sciences and even in the public discourse appears justified by the need to rethink the institutions and social ties of late modernity, also from a gender perspective. It is undoubtedly a fascinating prospect, but one that conceals numerous pitfalls. In particular, ideas of agency, conflict, emancipation and solidarity, which are closely connected with fundamental rights theory and the development of constitutionalism may lose importance. The vulnerability paradigm, rather than eclipsing the language of rights, could then be used to interpret these rights, to define them with increasing accuracy and reinforce their effectiveness. In particular, the bottom-up construction of an emancipatory notion of vulnerability may well lead to an auspicious update of the interpretation of the principles of dignity, equality and solidarity, principles that nevertheless still appear today as indispensable",
+      "citationCount": 1,
+      "doi": "10.18351/2179-7137/GED.V5N3P1-14",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fe00359b195fec998a6d8c26d78a72941266db64",
+      "venue": "",
+      "journal": {
+        "name": "Revista G\u00eanero & Direito",
+        "pages": "1-14",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "712fb01c211d1ca50ff888b6873a08bae82c0797",
+      "title": "Vulnerability: possible uses of a philosophical, legal, political and social concept",
+      "authors": [
+        {
+          "name": "M. Bernardini",
+          "authorId": "78266756"
+        },
+        {
+          "name": "Brunella Casalini",
+          "authorId": "2075962402"
+        },
+        {
+          "name": "O. Giolo",
+          "authorId": "2092837758"
+        },
+        {
+          "name": "Felipe Lins dos Santos",
+          "authorId": "2111873377"
+        },
+        {
+          "name": "R. Lucia",
+          "authorId": "87373903"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/712fb01c211d1ca50ff888b6873a08bae82c0797",
+      "venue": "",
+      "journal": {
+        "name": "Revista G\u00eanero & Direito",
+        "pages": "1-230",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fbd4ea8a4379f4e18afcf56c4cb160beda236485",
+      "title": "Books Received 2006",
+      "authors": [
+        {
+          "name": "R. Tiedemann",
+          "authorId": "101110483"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/1368431008093294",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fbd4ea8a4379f4e18afcf56c4cb160beda236485",
+      "venue": "",
+      "journal": {
+        "name": "European Journal of Social Theory",
+        "pages": "275 - 279",
+        "volume": "11"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

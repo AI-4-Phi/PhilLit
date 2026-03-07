@@ -1,0 +1,342 @@
+[search_philpapers.py] Connecting to Brave API for philpapers_via_brave search...
+[search_philpapers.py] Searching philpapers.org: 'decolonial communicative action', limit=20
+[search_philpapers.py] Retrieved 19 entries...
+[search_philpapers.py] Search complete: 19 entries found
+{
+  "status": "success",
+  "source": "philpapers_via_brave",
+  "query": "decolonial communicative action",
+  "results": [
+    {
+      "title": "Gabriela Veronelli, A Coalitional Approach to Theorizing Decolonial Communication",
+      "url": "https://philpapers.org/rec/VERACA-7",
+      "philpapers_id": "VERACA",
+      "snippet": "By articulating the relations between coalitional methodologies and a global sense of connection the article proposes a nondialogical theory of decolonial communication: a way of orienting ourselves with a sense of permeability and recognition of being on the same side that doesn&#x27;t need to be politically motivated but is always active.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Gabriela Veronelli"
+        }
+      ],
+      "extra_snippets": [
+        "On the one hand, if one imagines such situations to be communicative exchanges \u00e0 la Bakhtin that put logos at the center, given what is termed the coloniality of language and speech, the possibility of such exchanges is feasible only as an abstract gesture. On the other hand, when one faces the complications of the erasure of dialogue produced by coloniality, the kind of decolonial communicative relations that seem possible among people thinking and acting from the colonial difference are less conscious or agential than emotive.",
+        "By articulating the relations between coalitional methodologies and a global sense of connection the article proposes a nondialogical theory of decolonial communication: a way of orienting ourselves with a sense of permeability and recognition of being on the same side that doesn't need to be politically motivated but is always active.",
+        "This article begins by examining the importance that critical intercultural dialogues have within the Modernity/Coloniality Research Program toward reaching an alternative geopolitics and body-politics of knowledge, in order to raise the ...",
+        "On Complex Communication.Mar\u00eda Lugones - 2006 - Hypatia 21 (3):75-85."
+      ]
+    },
+    {
+      "title": "Jos\u00e9 Medina, Complex Communication and Decolonial Struggles: The Forging of Deep Coalitions through Emotional Echoing and Resistant Imaginations",
+      "url": "https://philpapers.org/rec/MEDCCA-2",
+      "philpapers_id": "MEDCCA",
+      "snippet": "This article elucidates and expands on Mar\u00eda Lugones&#x27;s account of complex communication across liminal sites as the basis for deep coalitions among oppressed groups. The analysis underscores the crucial role that ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Jos\u00e9 Medina"
+        }
+      ],
+      "extra_snippets": [
+        "It elucidates Gloria Anzald\u00faa's storytelling and Doris Salcedo's visual art as exemplary forms of epistemic activism that issue coalitional gestures and critical provocations that can wake people up from their epistemic slumbers and instigate forms of complex communication that can create new possibilities for coalitional politics. ... Setup an account with your affiliations in order to access resources via your University's proxy server \u00b7 Sign in / register and customize your OpenURL resolver ... On Aesth-ethic Activism as Epistemic Resistance in Conversation with Jos\u00e9 Medina.Mar\u00eda Del Rosario Acosta L\u00f3pez - 2025 - Social Epistemology 39 (4):358-371. Decolonial Philosophies and Complex Communication as Praxis.Colette Sybille Jung - 2024 - Philosophies 9 (5):142.",
+        "Resisting Racist Propaganda: Distorted Visual Communication and Epistemic Activism.Jos\u00e9 Medina - 2018 - Southern Journal of Philosophy 56 (4):50-75.",
+        "Theorizing government communication with regard to the Dutch nature policy.P. Jansen, Stoep Jan & H.",
+        "Jochemsen - 2017 - Empedocles: European Journal for the Philosophy of Communication 8 (1):95-113."
+      ]
+    },
+    {
+      "title": "Mar\u00eda Lugones, On Complex Communication",
+      "url": "https://philpapers.org/rec/LUGOCC",
+      "philpapers_id": "LUGOCC",
+      "snippet": "Refusing the assumption of transparency and operating with relational identities, the complex communication that occurs in the limen\u2014often invisible to dominant groups\u2014can enable genuine coalition and effective resistance to domination.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Mar\u00eda Lugones"
+        }
+      ],
+      "extra_snippets": [
+        "Complex Communication and Decolonial Struggles: The Forging of Deep Coalitions through Emotional Echoing and Resistant Imaginations.Jos\u00e9 Medina - 2020 - Critical Philosophy of Race 8 (1-2):212-236.",
+        "This essay examines liminality as space of which dominant groups largely are ignorant. The limen is at the edge of hardened structures, a place where transgression of the reigning order is possible. As such, it both offers communicative openings and presents communicative impasses to liminal beings.",
+        "For the limen to be a coalitional space, complex communication is required. This requires praxical awareness of one's own multiplicity and a recognition of the other's opacity that does not attempt to assimilate it into one's own familiar meanings.",
+        "Refusing the assumption of transparency and operating with relational identities, the complex communication that occurs in the limen\u2014often invisible to dominant groups\u2014can enable genuine coalition and effective resistance to domination."
+      ]
+    },
+    {
+      "title": "Fernanda Frizzo Bragato & Lewis R. Gordon (eds.), Geopolitics and Decolonization: Perspectives From the Global South",
+      "url": "https://philpapers.org/rec/BRAGAD-2",
+      "philpapers_id": "BRAGAD",
+      "snippet": "This volume presents timely commentaries on issues relating to Africa and Latin America, demonstrating the value of intercultural dialogue amongst voices from the Global South on decoloniality, cultural rights and politics.",
+      "page_age": null,
+      "extra_snippets": [
+        "Education for Decoloniality and Decolonisation in Africa.Chikumbutso Herbert Manthalu & Yusef Waghid (eds.) - 2019 - Cham: Springer Verlag."
+      ]
+    },
+    {
+      "title": "Robin Dunford, Toward a decolonial global ethics",
+      "url": "https://philpapers.org/rec/DUNTAD-4",
+      "philpapers_id": "DUNTAD",
+      "snippet": "Where cosmopolitan approaches tend to articulate abstract principles developed from within a particular Western tradition, decolonial approaches reject abstract global designs in favour of inter-cultural dialogue amongst multiple people, including ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Robin Dunford"
+        }
+      ],
+      "extra_snippets": [
+        "This paper argues that decolonial theory can offer a distinctive and valuable ethical lens. Decolonial perspectives give rise to an ethics that is fundamentally global but distinct from, and critical of, moral cosmopolitanism. Decolonial ethics shares with cosmopolitanism a refusal to circumscribe normative commitments on the basis of existing political and cultural boundaries.",
+        "Ethics in global research: Creating a toolkit to support integrity and ethical action throughout the research journey.Corinne Reid, Clara Calia, Crist\u00f3bal Guerra, Liz Grant, Matilda Anderson, Khama Chibwana, Paul Kawale & Action Amos - 2021 - Research Ethics 17 (3):359-374. Decolonizing Global Ethics: Thinking with the Pluriverse.Kimberly Hutchings - 2019 - Ethics and International Affairs 33 (2):115-125.",
+        "Where cosmopolitan approaches tend to articulate abstract principles developed from within a particular Western tradition, decolonial approaches reject abstract global designs in favour of inter-cultural dialogue amongst multiple people, including peoples who deem collective and non-human entities to be of fundamental moral importance.",
+        "In addition, decolonial global ethics rejects universality in favour of \u2018pluriversality\u2019."
+      ]
+    },
+    {
+      "title": "Nokuthula Hlabangane, Can a Methodology Subvert the Logics of its Principal? Decolonial Meditations",
+      "url": "https://philpapers.org/rec/HLACAM",
+      "philpapers_id": "HLACAM",
+      "snippet": "Decolonising Science Communication in the Caribbean: Challenges and Transformations in Community-Based Engagement with Research on the ABCSSS Islands.Tibisay Sankatsing Nava, Roxanne-Liana Francisca, Krista T. Oplaat &amp; Tadzio Bervoets - 2023 - In Elizabeth Rasekoala, Race and Sociocultural ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Nokuthula Hlabangane"
+        }
+      ],
+      "extra_snippets": [
+        "Decolonising Science Communication in the Caribbean: Challenges and Transformations in Community-Based Engagement with Research on the ABCSSS Islands.Tibisay Sankatsing Nava, Roxanne-Liana Francisca, Krista T. Oplaat & Tadzio Bervoets - 2023 - In Elizabeth Rasekoala, Race and Sociocultural Inclusion in Science Communication: Innovation, Decolonisation, and Transformation.",
+        ". This paper raises a question that is fundamental in the relationship between Euro-Western knowledge as a system of knowing, spawned and refined under particular historical circumstances, and the methodologies that ...",
+        "Practical Knowledge and Perception.Evgenia Mylonaki - 2016 - In Jose\u0301 Mari\u0301a Torralba & Mark Alznauer, Theories of Action and Morality: Perspectives from Philosophy and Social Theory. Hildesheim: Georg Olms."
+      ]
+    },
+    {
+      "title": "Jan McArthur, Critical theory in a decolonial age",
+      "url": "https://philpapers.org/rec/MCACTI-5",
+      "philpapers_id": "MCACTI",
+      "snippet": "Mindful of not wishing to perpetuate colonial impulses to appropriate Indigenous philosophies, this article harnesses the twin ideas of a decolonial conversation and interacting in a third space, both of which foreground historical power imbalances and injustices.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Jan McArthur"
+        }
+      ],
+      "extra_snippets": [
+        "This article considers the critical theory of the Frankfurt School in the context of decolonisation and asks whether it can have continuing relevance given its foundations in white, western traditions which bear the hallmarks of colonialism.",
+        "Mindful of not wishing to perpetuate colonial impulses to appropriate Indigenous philosophies, this article harnesses the twin ideas of a decolonial conversation and interacting in a third space, both of which foreground historical power imbalances and injustices.",
+        "By highlighting intersections, while acknowledging crucial differences, between critical theory and Indigenous philosophies I seek to show that critical theory can play a crucial role in how western scholars respond to and embrace the necessary and compelling movement of decolonialisation, but only first by acknowledging their own shortcomings, particularly in relation to race, racism and colonialism.",
+        "Only on that basis can a genuine engagement occur between western and Indigenous thought. My aim, as a western scholar, is to explore the relevance of critical theory in this decolonial age."
+      ]
+    },
+    {
+      "title": "Cristiano Codeiro Cruz, Decolonizing Philosophy of Technology: Learning from Bottom-Up and Top-Down Approaches to Decolonial Technical Design",
+      "url": "https://philpapers.org/rec/CRUDPO-3",
+      "philpapers_id": "CRUDPO",
+      "snippet": "I call them top-down approaches. Second is some technical design initiatives that, being developed alongside marginalized/subalternate people, intend to co-construct decolonial sociotechnical solutions through a committed, decolonizing, and careful dialog of knowledge.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Cristiano Codeiro Cruz"
+        }
+      ],
+      "extra_snippets": [
+        "The decolonial theory understands that Western Modernity keeps imposing itself through a triple mutually reinforcing and shaping imprisonment: coloniality of power, coloniality of knowledge, and coloniality of being. Technical design has an essential role in either maintaining or overcoming coloniality.",
+        "First is Yuk Hui\u2019s and Ahmed Ansari\u2019s proposals that, revisiting or recovering the different histories and philosophies of technology produced by humankind, intend to decolonize the minds of philosophers and engineers/architects/designers as a pre-condition for such decolonial designs to take place.",
+        "I call them top-down approaches. Second is some technical design initiatives that, being developed alongside marginalized/subalternate people, intend to co-construct decolonial sociotechnical solutions through a committed, decolonizing, and careful dialog of knowledge.",
+        "Even though both top-down and bottom-up approaches are considered, the article\u2019s main contributions are associated with decolonial technical design practices, whose methodologies and outcomes are important study cases for PT and whose practitioners can be taken as inspiring examples for philosophers who want to decolonize/enlarge PT or make it decolonial."
+      ]
+    },
+    {
+      "title": "Mariana Ortega, Decolonial Woes and Practices of Un-knowing",
+      "url": "https://philpapers.org/rec/ORTDWA",
+      "philpapers_id": "ORTDWA",
+      "snippet": "It matters that we learn to walk our brave decolonizing talks. \u2026 Coalitions that are productive are based on principled associations of mutual understanding and respect, not just declarations of solidarity ...",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Mariana Ortega"
+        }
+      ],
+      "extra_snippets": [
+        "Decolonizing is being present, decolonizing is fleeing.Olivier Marboeuf & Translation From French by Aliya Ram - 2025 - In Zahra Ali & Sonia Dayan-Herzbrun, Decolonial pluriversalism: epistemes, aesthetics, and practices.",
+        "Decolonial Feminist Movidas: A Caribe\u00f1a (Re)thinks \"Privilege,\" the Wages of Gender, and Building Complex Coalitions.Xhercis M\u00e9ndez - 2020 - In Andrea J. Pitts, Mariana Ortega & Jos\u00e9 Medina, Theories of the Flesh: Latinx and Latin American Feminisms, Transformation, and Resistance.",
+        "Enrique Dussel's Etica de la liberac\u00edon, US Women of Color Decolonizing Practices, and Coalitionary Politics amid Difference.Laura E. P\u00e9rez - 2020 - In Andrea J. Pitts, Mariana Ortega & Jos\u00e9 Medina, Theories of the Flesh: Latinx and Latin American Feminisms, Transformation, and Resistance.",
+        "Secular Decolonial Woes.Rafael Vizca\u00edno - 2021 - Journal of Speculative Philosophy 35 (1):71-92."
+      ]
+    },
+    {
+      "title": "I. I. I. Lee A. McBride, Culture, Acquisitiveness, and Decolonial Philosophy",
+      "url": "https://philpapers.org/rec/LEECAA-4",
+      "philpapers_id": "LEECAA",
+      "snippet": "There has been a recent surge in decolonial discourse. Decolonial thought is touted in op-ed pieces and blogs and shared via social media. At university, one is prodded to decolonize the curriculum, the canon, the faculty.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "I. I. I. Lee A. McBride"
+        }
+      ],
+      "extra_snippets": [
+        "There has been a recent surge in decolonial discourse. Decolonial thought is touted in op-ed pieces and blogs and shared via social media. At university, one is prodded to decolonize the curriculum, the canon, the faculty. In broader contexts, some suggest decolonizing your diet, your sexuality, your future.",
+        "Hoping to dispel superficial and enigmatic evocations, McBride articulates what he takes to be core features of decolonial philosophy. Decolonial philosophy is described as an oppositional reaction to teleological colonial systems of development designed to promulgate European cultural imperialism and amass capital.",
+        "In closing, McBride briefly highlights three potentially problematic issues worthy of attention: one dealing with the way decolonial populations are conceived, a second regarding the reciprocity of cultural products, and a third reaffirming the need to challenge the acquisitive tendencies and material conditions of capitalist cultures.",
+        "On Decolonizing Philosophy and the Arts.Rolf Elberfeld - 2023 - In Michaela Ott & Babacar Mbaye Diop, Decolonial Aesthetics I: Tangled Humanism in the Afro-European Context. Berlin, Heidelberg: Springer Berlin Heidelberg."
+      ]
+    },
+    {
+      "title": "J\u00fcrgen Habermas, The Theory of Communicative Action: Reason and the Rationalization of Society",
+      "url": "https://philpapers.org/rec/HABTTO-4",
+      "philpapers_id": "HABTTO",
+      "snippet": "Habermas approaches these tasks through a combination of conceptual analyses, systematic reflections, and critical reconstructions of such predecessors as Marx and Weber, Durkheim and Mead, Horkheimer and Adorno, Schutz and Parsons. Reason and the Rationalization of Society develops a sociological theory of action that stresses not its means-ends or teleological aspect, but the need to coordinate action socially via communication.",
+      "page_age": null,
+      "extra_snippets": [
+        "Habermas approaches these tasks through a combination of conceptual analyses, systematic reflections, and critical reconstructions of such predecessors as Marx and Weber, Durkheim and Mead, Horkheimer and Adorno, Schutz and Parsons. Reason and the Rationalization of Society develops a sociological theory of action that stresses not its means-ends or teleological aspect, but the need to coordinate action socially via communication.",
+        "Communicative Action: Essays on J\u00fcrgen Habermas's The Theory of Communicative Action.Axel Kommunikatives Handeln, Hans Honneth & Joas - 1991 - MIT Press.",
+        "Review of Habermas Theory of Communicative Action.Eugene Halton - 1989 - Symbolic Interaction 12:333-360.",
+        "The Speech of the Lifeworld: Communicative Action and Critical Social Life.Kevin Paul Geiman - 1988 - Dissertation, Washington University"
+      ]
+    },
+    {
+      "title": "Scott L. Pratt, Logic: Inquiry, Argument, and Order",
+      "url": "https://philpapers.org/rec/L-953",
+      "philpapers_id": "L",
+      "snippet": "Using the logical theories of C. S. Peirce, John Dewey, and Josiah Royce to frame the investigation, subsequent chapters outline the process of inquiry, the concept of communicative action, the nature of validity, categorical reasoning through the theory of the syllogism, and inductive reasoning and probability.",
+      "page_age": null,
+      "extra_snippets": [
+        "Using the logical theories of C. S. Peirce, John Dewey, and Josiah Royce to frame the investigation, subsequent chapters outline the process of inquiry, the concept of communicative action, the nature of validity, categorical reasoning through the theory of the syllogism, and inductive reasoning and probability.",
+        "The book concludes with a presentation of modal logic, propositional logic, and quantification. Logic is presented as emerging from the activities of inquiry and communication, allowing readers to understand even the most difficult aspects of formal logic as straightforward developments of the process of anticipating and taking action."
+      ]
+    },
+    {
+      "title": "Juergen Habermas, The Theory of Communicative Action, Vol. 1, 'Reason and the Rationalization of Society'",
+      "url": "https://philpapers.org/rec/HABTTO",
+      "philpapers_id": "HABTTO",
+      "snippet": "Review of Juergen Habermas: The Theory of Communicative Action, Vol. 1, &#x27;Reason and the Rationalization of Society&#x27;. [REVIEW]Steven B.",
+      "page_age": null,
+      "extra_snippets": [
+        "Rationalization and Social Pathology in The Theory of Communicative Action.David A. Borman - 2012 - In The Idolatry of the Actual: Habermas, Socialization, and the Possibility of Autonomy. State University of New York Press.",
+        "Review of Juergen Habermas: The Theory of Communicative Action, Vol. 1, 'Reason and the Rationalization of Society'. [REVIEW]Steven B.",
+        "The Force of Reason: An Introduction to Habermas' Theory of Communicative Action.Arie Brand - 1990 - Unwin Hyman.",
+        "Communicative Action: Essays on J\u00fcrgen Habermas's The Theory of Communicative Action.Axel Kommunikatives Handeln, Hans Honneth & Joas - 1991 - MIT Press."
+      ]
+    },
+    {
+      "title": "Alyssa Adamson, C.L.R. James\u2019s Decolonial Humanism in Theory and Practice",
+      "url": "https://philpapers.org/rec/ADACJD-2",
+      "philpapers_id": "ADACJD",
+      "snippet": "In exploring the concept of decolonial humanism, the paper moves through three major sections dealing with some of the definitive epistemic and political aspects of James\u2019s work: a critique of Enlightenment Humanism and European Marxism without disavowing the aspirations of universal human emancipation; James\u2019s work with the Johnson-Forest Tendency, the Pan-Africanist movement, and his attempts at labor organizing in Trinidad first alongside Eric Williams in the People\u2019s National Movement and later in his own Workers and Farmer\u2019s Party ; and the practicality of decolonial humanism in terms of its adoption by Tim Hector and the Antigua Caribbean Liberation Movement.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Alyssa Adamson"
+        }
+      ],
+      "extra_snippets": [
+        "In exploring the concept of decolonial humanism, the paper moves through three major sections dealing with some of the definitive epistemic and political aspects of James\u2019s work: a critique of Enlightenment Humanism and European Marxism without disavowing the aspirations of universal human emancipation; James\u2019s work with the Johnson-Forest Tendency, the Pan-Africanist movement, and his attempts at labor organizing in Trinidad first alongside Eric Williams in the People\u2019s National Movement and later in his own Workers and Farmer\u2019s Party ; and the practicality of decolonial humanism in terms of its adoption by Tim Hector and the Antigua Caribbean Liberation Movement.",
+        "\u2018Can the subaltern speak?\u2019: COVID-19 and decolonial pedagogy in Palestinian universities.Bilal Hamamra & Ahmad Qabaha - 2021 - Journal for Cultural Research 25 (2):189-201."
+      ]
+    },
+    {
+      "title": "Subhabrata Bobby Banerjee, Decolonizing Deliberative Democracy: Perspectives from Below",
+      "url": "https://philpapers.org/rec/BANDDD",
+      "philpapers_id": "BANDDD",
+      "snippet": "In this paper I provide a decolonial critique of received knowledge about deliberative democracy. Legacies of colonialism have generally been overlooked in theories of democracy. These omissions challenge several key assumptions of deliberative democracy. I argue that deliberative democracy does not travel well outside Western sites and its key assumptions begin to unravel in the \u2018developing\u2019 regions of the world.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Subhabrata Bobby Banerjee"
+        }
+      ],
+      "extra_snippets": [
+        "In this paper I provide a decolonial critique of received knowledge about deliberative democracy. Legacies of colonialism have generally been overlooked in theories of democracy. These omissions challenge several key assumptions of deliberative democracy. I argue that deliberative democracy does not travel well outside Western sites and its key assumptions begin to unravel in the \u2018developing\u2019 regions of the world.",
+        "The context for a decolonial critique of deliberative democracy is the ongoing violent conflicts over resource extraction in the former colonies of Africa, Asia and Latin America. I argue that deliberative democracy cannot take into account the needs of marginalized stakeholders who are defending their lands and livelihoods.",
+        "Decolonizing Deliberative Democracy.Ricardo Fabrino Mendon\u00e7a & Hans Asenbaum - 2025 - European Journal of Social Theory (Online first):1-22.",
+        "Neither Na\u00efve Nor Fatalistic: Decolonizing Mining Partnerships With Indigenous Communities in Mongolia and Australia.Natalya Turkina - 2026 - Business and Society 65 (1):232-276."
+      ]
+    },
+    {
+      "title": "Michael Onyebuchi Eze, Decolonizing \u201cDecolonization\u201d and Knowledge Production beyond Eurocentrism",
+      "url": "https://philpapers.org/rec/ONYDDA",
+      "philpapers_id": "ONYDDA",
+      "snippet": "My argument is that decolonization studies, as understood in contemporary African philosophy, has remained afflicted with the same disease it seeks to cure by (i) uncritical affiliation with historical generalizations, (ii) failure to recognize that history is no location of innocence and (iii) recolonization of non-Western ontologies through epistemic imperialism and network legitimation.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Michael Onyebuchi Eze"
+        }
+      ],
+      "extra_snippets": [
+        "I offer a critical appraisal of decolonization as simulated within Western academic institutions and argue that the current tempo of decolonization movements is by no means an accident of history; it is, in fact, a residual narrative of colonial epistemology.",
+        "I offer internal critique and discuss the limitations of decolonization as an intellectual strategy, before addressing how Western academics have appropriated the discourse in a manner fitting an intellectual crusade. The decolonial scholar is, at the same time, perpetuating the mandate of colonial epistemology by substituting coloniality with subjective displacement.",
+        "My argument is that decolonization studies, as understood in contemporary African philosophy, has remained afflicted with the same disease it seeks to cure by (i) uncritical affiliation with historical generalizations, (ii) failure to recognize that history is no location of innocence and (iii) recolonization of non-Western ontologies through epistemic imperialism and network legitimation.",
+        "Decolonizing Aesthetics via Relating and (Dis-In)dividuating?Michaela Ott - 2023 - In Patrick Oloko, Michaela Ott, Peter Simatei & Clarissa Vierke, Decolonial Aesthetics II: Modes of Relating. Berlin, Heidelberg: Springer Berlin Heidelberg."
+      ]
+    },
+    {
+      "title": "Walter D. Mignolo, Epistemic Disobedience, Independent Thought and Decolonial Freedom",
+      "url": "https://philpapers.org/rec/MIGEDI",
+      "philpapers_id": "MIGEDI",
+      "snippet": "As we know: the first world has knowledge, the third world has culture; Native Americans have wisdom, Anglo Americans have science. The need for political and epistemic de-linking here comes to the fore, as well as decolonializing and decolonial knowledges, necessary steps for imagining and building democratic, just, and nonimperial/colonial societies.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Walter D. Mignolo"
+        }
+      ],
+      "extra_snippets": [
+        "As we know: the first world has knowledge, the third world has culture; Native Americans have wisdom, Anglo Americans have science. The need for political and epistemic de-linking here comes to the fore, as well as decolonializing and decolonial knowledges, necessary steps for imagining and building democratic, just, and nonimperial/colonial societies.",
+        "A Critique of the Coloniality of Theological Knowledge: Rereading Latin American Liberation Theology as Thinking Otherwise.Nicol\u00e1s Panotto - 2019 - In Raimundo Barreto & Roberto Sirvent, Decolonial Christianities: Latinx and Latin American Perspectives. Cham: Springer Verlag.",
+        "Learning to Unlearn: Decolonial Reflections from Eurasia and the Americas.Madina V. Tlostanova & Walter D.",
+        "The Politics of Decolonial Investigations.Walter D. Mignolo & Walter D. Mignolo Walter D."
+      ]
+    },
+    {
+      "title": "Enrique Dussel, Epistemological Decolonization of Theology",
+      "url": "https://philpapers.org/rec/DUSEDO",
+      "philpapers_id": "DUSEDO",
+      "snippet": "Epistemic decolonization is important not only because it unmasks the racism hidden in the universalistic claims made by Eurocentric epistemologies, along with the distortion it causes, but also because it brings to the fore other knowledges and ways of knowing hitherto made invisible.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Enrique Dussel"
+        }
+      ],
+      "extra_snippets": [
+        "This chapter discusses the theoretical rupture originated with the epistemological turn in the realm of the sciences produced by Latin American and Latinx theories of decolonization, and its impact on theology. The Epistemological decolonization of Christianity requires the relocation of theological thinking moving its epicenter from imperial Christendom to the oppressed colonial subjectivity.",
+        "Epistemic decolonization is important not only because it unmasks the racism hidden in the universalistic claims made by Eurocentric epistemologies, along with the distortion it causes, but also because it brings to the fore other knowledges and ways of knowing hitherto made invisible.",
+        "A Critique of the Coloniality of Theological Knowledge: Rereading Latin American Liberation Theology as Thinking Otherwise.Nicol\u00e1s Panotto - 2019 - In Raimundo Barreto & Roberto Sirvent, Decolonial Christianities: Latinx and Latin American Perspectives. Cham: Springer Verlag.",
+        "Enacting a Latinx Decolonial Politic of Belonging: Latinx Community Workers\u2019 Experiences Negotiating Identity and Citizenship in Toronto, Canada.Madelaine Cahuas & Alexandra Arraiz Matute - 2021 - Studies in Social Justice 14 (2):268-286."
+      ]
+    },
+    {
+      "title": "Troy A. Richardson, Indigenous Political Difference, Colonial Perspectives and the Challenge of Diplomatic Relations: Toward a Decolonial Diplomacy in Multicultural Educational Theory",
+      "url": "https://philpapers.org/rec/RICIPD-2",
+      "philpapers_id": "RICIPD",
+      "snippet": "Focusing on Native American peoples in particular, I argue that the multiculturalist emphasis on cultural diplomacy overlooks the political difference of First Nations peoples. In contrast to a multiculturalist cultural diplomacy, the article develops diplomacy according to a decolonial framework that seeks to dismantle colonial perspectives of Native American political difference.",
+      "page_age": null,
+      "author": [
+        {
+          "type": "person",
+          "name": "Troy A. Richardson"
+        }
+      ],
+      "extra_snippets": [
+        "Focusing on Native American peoples in particular, I argue that the multiculturalist emphasis on cultural diplomacy overlooks the political difference of First Nations peoples. In contrast to a multiculturalist cultural diplomacy, the article develops diplomacy according to a decolonial framework that seeks to dismantle colonial perspectives of Native American political difference.",
+        "Indigenous Christianities: Ritual, Resilience, and Resistance Among the Nahuas in Sixteenth-Century Mexico.Ver\u00f3nica A. Guti\u00e9rrez - 2019 - In Raimundo Barreto & Roberto Sirvent, Decolonial Christianities: Latinx and Latin American Perspectives. Cham: Springer Verlag.",
+        "Exploding Individuals: Engaging Indigenous Logic and Decolonizing Science.Rebekah Sinclair - 2020 - Hypatia 35 (1):58-74.",
+        "Decolonizing radical democracy.Jakeet Singh - 2019 - Contemporary Political Theory 18 (3):331-356."
+      ]
+    }
+  ],
+  "count": 19,
+  "errors": []
+}

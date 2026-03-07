@@ -1,0 +1,135 @@
+[s2_search.py] Searching Semantic Scholar: 'Justice Politics Difference Young 1990', limit=5
+[s2_search.py] Rate limited, backing off (attempt 1/5)...
+[s2_search.py] Retrying after 1.8s backoff...
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_221ab1eea8a68fc0)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Justice Politics Difference Young 1990",
+  "results": [
+    {
+      "paperId": "6fbeace47196d8244717c9926a7c788366062fd1",
+      "title": "Justice and the Politics of Difference",
+      "authors": [
+        {
+          "name": "I. Young",
+          "authorId": "144258638"
+        }
+      ],
+      "year": 1990,
+      "abstract": "This book challenges the prevailing philosophical reduction of social justice to distributive justice. It critically analyzes basic concepts underlying most theories of justice, including impartiality, formal equality, and the unitary moral subjectivity. Starting from claims of excluded groups about decision making, cultural expression, and division of labor, Iris Young defines concepts of domination and oppression to cover issues eluding the distributive model. Democratic theorists, according to Young do not adequately address the problem of an inclusive participatory framework. By assuming a homogeneous public, they fail to consider institutional arrangements for including people not culturally identified with white European male norms of reason and respectability. Young urges that normative theory and public policy should undermine group-based oppression by affirming rather than suppressing social group difference. Basing her vision of the good society on the differentiated, culturally plural network of contemporary urban life, she argues for a principle of group representation in democratic publics and for group-differentiated policies. \"This is an innovative work, an important contribution to feminist theory and political thought, and one of the most impressive statements of the relationship between postmodernist critiques of universalism and concrete thinking.... Iris Young makes the most convincing case I know of for the emancipatory implications of postmodernism.\" --Seyla Benhabib, State University of New York at Stony Brook",
+      "citationCount": 3110,
+      "doi": "10.2307/j.ctvcm4g4q",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6fbeace47196d8244717c9926a7c788366062fd1",
+      "venue": "The New Social Theory Reader",
+      "journal": {
+        "name": "The New Social Theory Reader"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "49d14157854902ae85bc017833601214762bfd9c",
+      "title": "Throwing like a girl and other essays in feminist philosophy and social theory",
+      "authors": [
+        {
+          "name": "I. Young",
+          "authorId": "144258638"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 833,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/49d14157854902ae85bc017833601214762bfd9c",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "51f297d2fedd1293b9482a8d0911706f8c89c125",
+      "title": "Introduction: The Politics of Policy",
+      "authors": [
+        {
+          "name": "J. Pitts",
+          "authorId": "47303847"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/978-1-349-20485-4_1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/51f297d2fedd1293b9482a8d0911706f8c89c125",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "1-8",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a17979b4c77dabf09d78c13c0096bc823c574f75",
+      "title": "Adolescent fertility in Kenya and Nigeria final report for a study tour conducted June-July 1990.",
+      "authors": [
+        {
+          "name": "G. Barker",
+          "authorId": "48125979"
+        },
+        {
+          "name": "S. Rich",
+          "authorId": "121025951"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 6,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a17979b4c77dabf09d78c13c0096bc823c574f75",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "546930437fcf3c3e60130ada245fc1b4a4eb6d8a",
+      "title": "ATTITUDINAL SOURCES OF PROTEST BEHAVIOR IN FRANCE: DIFFERENCES BETWEEN BEFORE AND AFTER MEASUREMENT",
+      "authors": [
+        {
+          "name": "R. Pierce",
+          "authorId": "46829054"
+        },
+        {
+          "name": "P. Converse",
+          "authorId": "38963011"
+        }
+      ],
+      "year": 1990,
+      "abstract": null,
+      "citationCount": 25,
+      "doi": "10.1086/269208",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/546930437fcf3c3e60130ada245fc1b4a4eb6d8a",
+      "venue": "",
+      "journal": {
+        "name": "Public Opinion Quarterly",
+        "pages": "295-316",
+        "volume": "54"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

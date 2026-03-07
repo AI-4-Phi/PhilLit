@@ -1,0 +1,41 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1177/0263276420961146"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1177/0263276420961146",
+      "title": "Moral Universalism at a Time of Political Regression: A Conversation with J\u00fcrgen Habermas about the Present and His Life\u2019s Work",
+      "authors": [
+        {
+          "family": "Czingon",
+          "given": "Claudia"
+        },
+        {
+          "family": "Diefenbach",
+          "given": "Aletta"
+        },
+        {
+          "family": "Kempf",
+          "given": "Victor"
+        }
+      ],
+      "editors": [],
+      "year": 2020,
+      "container_title": "Theory, Culture &amp; Society",
+      "volume": "37",
+      "issue": "7-8",
+      "page": "11-36",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1177/0263276420961146"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

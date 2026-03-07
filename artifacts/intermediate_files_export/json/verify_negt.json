@@ -1,0 +1,43 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Public Sphere and Experience Toward an Analysis of the Bourgeois and Proletarian Public Sphere",
+    "author": "Negt"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2075150",
+      "title": "Public Sphere and Experience: Toward an Analysis of the Bourgeois and Proletarian Public Sphere.",
+      "authors": [
+        {
+          "family": "Vromen",
+          "given": "Suzanne"
+        },
+        {
+          "family": "Negt",
+          "given": "Oskar"
+        },
+        {
+          "family": "Kluge",
+          "given": "Alexander"
+        }
+      ],
+      "editors": [],
+      "year": 1995,
+      "container_title": "Contemporary Sociology",
+      "volume": "24",
+      "issue": "1",
+      "page": "118",
+      "publisher": "SAGE Publications",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/2075150",
+      "score": 88.815445
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

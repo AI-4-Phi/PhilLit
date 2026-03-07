@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Democratizing Disability Achieving Inclusion through Participatory Parity",
+    "author": "Knight"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/hypa.12120",
+      "title": "Democratizing Disability: Achieving Inclusion (without Assimilation) through \u201cParticipatory Parity\u201d",
+      "authors": [
+        {
+          "family": "Knight",
+          "given": "Amber"
+        }
+      ],
+      "editors": [],
+      "year": 2015,
+      "container_title": "Hypatia",
+      "volume": "30",
+      "issue": "1",
+      "page": "97-114",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1111/hypa.12120",
+      "score": 73.3999
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

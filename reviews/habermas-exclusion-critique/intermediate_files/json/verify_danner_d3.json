@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.15210/dissertatio.v47i0.9644
+[verify_paper.py] DOI verified: Decolonial philosophy and the historical-sociologi...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.15210/dissertatio.v47i0.9644"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.15210/dissertatio.v47i0.9644",
+      "title": "Decolonial philosophy and the historical-sociological blindness of the theories of modernity: a new way to Latin-American philosophy",
+      "authors": [
+        {
+          "family": "Danner",
+          "given": "Leno Francisco"
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Revista Dissertatio de Filosofia",
+      "volume": "47",
+      "issue": "",
+      "page": "222-252",
+      "publisher": "Universidade Federal de Pelotas",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.15210/dissertatio.v47i0.9644"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

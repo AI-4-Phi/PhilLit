@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5817/soc2025-41021"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5817/soc2025-41021",
+      "title": "Class, Power, and Knowledge: Toward a Broader Framework of Epistemic Justice",
+      "authors": [
+        {
+          "family": "Petr Zapletal",
+          "given": ""
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "Soci\u00e1ln\u00ed studia / Social Studies",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Masaryk University Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5817/soc2025-41021"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

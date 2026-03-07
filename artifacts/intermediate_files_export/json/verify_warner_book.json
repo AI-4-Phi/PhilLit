@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Publics and Counterpublics",
+    "author": "Warner",
+    "year": 2002
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1215/08992363-14-1-49",
+      "title": "Publics and Counterpublics",
+      "authors": [
+        {
+          "family": "Warner",
+          "given": "Michael"
+        }
+      ],
+      "editors": [],
+      "year": 2002,
+      "container_title": "Public Culture",
+      "volume": "14",
+      "issue": "1",
+      "page": "49-90",
+      "publisher": "Duke University Press",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1215/08992363-14-1-49",
+      "score": 39.220505
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

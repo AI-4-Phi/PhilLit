@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Capable deliberators towards inclusion of minority minds in discourse practices",
+    "author": "Schramme"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/13698230.2021.2020550",
+      "title": "Capable deliberators: towards inclusion of minority minds in discourse practices",
+      "authors": [
+        {
+          "family": "Schramme",
+          "given": "Thomas"
+        }
+      ],
+      "editors": [],
+      "year": 2021,
+      "container_title": "Critical Review of International Social and Political Philosophy",
+      "volume": "27",
+      "issue": "5",
+      "page": "835-858",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1080/13698230.2021.2020550",
+      "score": 81.96512
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

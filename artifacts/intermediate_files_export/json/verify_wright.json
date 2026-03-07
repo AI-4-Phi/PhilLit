@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Particularity and Perspective Taking: On Feminism and Habermas's Discourse Theory of Morality",
+    "author": "Wright",
+    "year": 2004
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1111/j.1527-2001.2004.tb00148.x",
+      "title": "Particularity and Perspective Taking: On Feminism and Habermas's Discourse Theory of Morality",
+      "authors": [
+        {
+          "family": "Wright",
+          "given": "Charles"
+        }
+      ],
+      "editors": [],
+      "year": 2004,
+      "container_title": "Hypatia",
+      "volume": "19",
+      "issue": "4",
+      "page": "49-76",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1111/j.1527-2001.2004.tb00148.x",
+      "score": 68.30904
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1080/13183222.2024.2314841
+[verify_paper.py] DOI verified: The Caring Public Sphere: Reframing the Concept in...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/13183222.2024.2314841"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/13183222.2024.2314841",
+      "title": "The Caring Public Sphere: Reframing the Concept in an Era of Care Crises",
+      "authors": [
+        {
+          "family": "Kavada",
+          "given": "Anastasia"
+        }
+      ],
+      "editors": [],
+      "year": 2024,
+      "container_title": "Javnost - The Public",
+      "volume": "31",
+      "issue": "1",
+      "page": "158-175",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/13183222.2024.2314841"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

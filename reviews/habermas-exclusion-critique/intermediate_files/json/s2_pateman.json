@@ -1,0 +1,149 @@
+[s2_search.py] Searching Semantic Scholar: 'Pateman sexual contract feminist', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_a79281e50ff294bc)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Pateman sexual contract feminist",
+  "results": [
+    {
+      "paperId": "ab1e00f5c7fbf920babf7da875cafe716ad97887",
+      "title": "KEYNOTE The Sexual Contract: 30 Years On",
+      "authors": [
+        {
+          "name": "C. Pateman",
+          "authorId": "117109728"
+        }
+      ],
+      "year": 2018,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.22024/UNIKENT/03/FAL.592",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab1e00f5c7fbf920babf7da875cafe716ad97887",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "48f07ae2ecae044803dfc9c95e7b6180d831e538",
+      "title": "The Role of Pateman\u2019s Sexual Contract in Beneficial Interests in Property",
+      "authors": [
+        {
+          "name": "Kate Galloway",
+          "authorId": "6536326"
+        }
+      ],
+      "year": 2019,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1007/s10691-019-09413-2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/48f07ae2ecae044803dfc9c95e7b6180d831e538",
+      "venue": "Feminist Legal Studies",
+      "journal": {
+        "name": "Feminist Legal Studies",
+        "pages": "263 - 285",
+        "volume": "27"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ac99b632648beac127468dcee7adc9d009d9c07a",
+      "title": "The Sexual Contract",
+      "authors": [
+        {
+          "name": "Carole Pateman",
+          "authorId": "2364207352"
+        }
+      ],
+      "year": 1988,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ac99b632648beac127468dcee7adc9d009d9c07a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "24f2f98f3b01449b549ce439ba10a5057e0dcbd0",
+      "title": "The Sexual Contract 30 Years on: A Conversation with Carole Pateman",
+      "authors": [
+        {
+          "name": "S. Thompson",
+          "authorId": "118482045"
+        },
+        {
+          "name": "L. Hayes",
+          "authorId": "118574607"
+        },
+        {
+          "name": "Dan Newman",
+          "authorId": "47853435"
+        },
+        {
+          "name": "C. Pateman",
+          "authorId": "117109728"
+        }
+      ],
+      "year": 2018,
+      "abstract": "This reflection is based on a conversation with Professor Carole Pateman on 4th December 2017 as we prepared for a conference at Cardiff University to celebrate the thirtieth anniversary of her seminal work, The Sexual Contract (1988). As socio-legal scholars, The Sexual Contract has been formative in, and transformative of, our understandings of law and gender. We explore Professor Pateman\u2019s academic journey and consider how she came to write a ground-breaking book that has made major impacts on socio-legal and feminist legal studies. The paper is structured around the main themes arising in conversation with Pateman, with each section centred on her own account taken from our conversation in late 2017.",
+      "citationCount": 6,
+      "doi": "10.1007/S10691-018-9368-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/24f2f98f3b01449b549ce439ba10a5057e0dcbd0",
+      "venue": "",
+      "journal": {
+        "name": "Feminist Legal Studies",
+        "pages": "93-104",
+        "volume": "26"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "986a00832fc4f63169210f7b25f1d6d2e91d607d",
+      "title": "The Sexual Contract 30 Years on: A Conversation with Carole Pateman",
+      "authors": [
+        {
+          "name": "S. Thompson",
+          "authorId": "118482045"
+        },
+        {
+          "name": "L. Hayes",
+          "authorId": "118574607"
+        },
+        {
+          "name": "Dan Newman",
+          "authorId": "47853435"
+        },
+        {
+          "name": "C. Pateman",
+          "authorId": "117109728"
+        }
+      ],
+      "year": 2018,
+      "abstract": "This reflection is based on a conversation with Professor Carole Pateman on 4th December 2017 as we prepared for a conference at Cardiff University to celebrate the thirtieth anniversary of her seminal work, The Sexual Contract (1988). As socio-legal scholars, The Sexual Contract has been formative in, and transformative of, our understandings of law and gender. We explore Professor Pateman\u2019s academic journey and consider how she came to write a ground-breaking book that has made major impacts on socio-legal and feminist legal studies. The paper is structured around the main themes arising in conversation with Pateman, with each section centred on her own account taken from our conversation in late 2017.",
+      "citationCount": 0,
+      "doi": "10.1007/s10691-018-9368-1",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/986a00832fc4f63169210f7b25f1d6d2e91d607d",
+      "venue": "Feminist Legal Studies",
+      "journal": {
+        "name": "Feminist Legal Studies",
+        "pages": "93 - 104",
+        "volume": "26"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

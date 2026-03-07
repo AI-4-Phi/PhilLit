@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4324/9780203094006"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9780203094006",
+      "title": "Feminists Read Habermas (RLE Feminist Theory)",
+      "authors": [],
+      "editors": [
+        {
+          "family": "Johanna Meehan",
+          "given": ""
+        }
+      ],
+      "year": 2013,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Routledge",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4324/9780203094006"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

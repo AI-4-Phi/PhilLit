@@ -1,0 +1,137 @@
+[s2_search.py] Searching Semantic Scholar: 'Young impartiality civic public feminist critiques moral political theory', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_641317b23eb8cfce)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Young impartiality civic public feminist critiques moral political theory",
+  "results": [
+    {
+      "paperId": "a06be6078e22f4cafc3e45e2c3ce8d4f57c8d613",
+      "title": "Impartiality and the Civic Public: Some Implications of Feminist Critiques of Moral and Political Theory",
+      "authors": [
+        {
+          "name": "I. Young",
+          "authorId": "144258638"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 193,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a06be6078e22f4cafc3e45e2c3ce8d4f57c8d613",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "381-401",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "d28769cd391aa1850c729a7e9c60a6a95eec3aad",
+      "title": "Feminism as Critique: Essays on the Politics of Gender in Late-Capitalist Societies",
+      "authors": [
+        {
+          "name": "Drucilla Cornell",
+          "authorId": "48256625"
+        },
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 73,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/d28769cd391aa1850c729a7e9c60a6a95eec3aad",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "390f051e3e23fb8a1c7d2696c6168dcf236d6905",
+      "title": "Impartiality and the Civil Public : Some Implications of Feminist Critiques of Moral and Political Theory in Feminism As Critique.",
+      "authors": [
+        {
+          "name": "I. Young",
+          "authorId": "144258638"
+        }
+      ],
+      "year": 1986,
+      "abstract": null,
+      "citationCount": 19,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/390f051e3e23fb8a1c7d2696c6168dcf236d6905",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "381-401",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e959c463c96343f1007a09b776222c408fe6b5f5",
+      "title": "Jennifer Cooke, Contemporary Feminist Life-Writing: The New Audacity",
+      "authors": [
+        {
+          "name": "Malin Lidstr\u00f6m Brock",
+          "authorId": "2158564046"
+        }
+      ],
+      "year": 2022,
+      "abstract": "The first two decades of the twenty-first century have seen a plethora of writers, who have challenged and expanded previous notions of feminist life writing. In Contemporary Feminist Life-Writing: The New Audacity, Jennifer Cooke identifies works by thirteen contemporary writers as examples of what she refers to as a new audacity in life writing. Several of these writers are young, early in their careers, and already connected with each other through reviewers or publishers. Defining audacity as a \u2018public challenge to conventions, characterized by a disregard for decorum, protocol, or moral restraints,\u2019 Cooke refers to the thirteen writers as feminists, even when they do not directly engage with politics. Unlike their predecessors, she clarifies further, these writers are writing in the wake of queer, gender and trauma theory, and post-structural critiques of binary thinking. They view identity as social constructions manifested both materially and bodily. Through the perspectives that these writers offer on their lives and the experimental form their writing takes, Cooke argues, they are reshaping feminism and its concerns.",
+      "citationCount": 0,
+      "doi": "10.21827/ejlw.11.38362",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e959c463c96343f1007a09b776222c408fe6b5f5",
+      "venue": "European journal of life writing",
+      "journal": {
+        "name": "European Journal of Life Writing"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "7fdeae523bb1c5112c47c2979979687c0c411352",
+      "title": "Foundations of Civic Engagement: Rethinking Social and Political Philosophy",
+      "authors": [
+        {
+          "name": "R. Ellis",
+          "authorId": "144971658"
+        },
+        {
+          "name": "J. Sauer",
+          "authorId": "117445704"
+        },
+        {
+          "name": "N. Fischer",
+          "authorId": "32270488"
+        }
+      ],
+      "year": 2006,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7fdeae523bb1c5112c47c2979979687c0c411352",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

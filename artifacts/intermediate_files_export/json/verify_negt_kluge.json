@@ -1,0 +1,20 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Public Sphere and Experience: Toward an Analysis o...' author=Negt year=1993
+{
+  "status": "error",
+  "source": "crossref",
+  "query": {
+    "title": "Public Sphere and Experience: Toward an Analysis of the Bourgeois and Proletarian Public Sphere",
+    "author": "Negt",
+    "year": 1993
+  },
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "not_found",
+      "message": "No matching papers found",
+      "recoverable": false
+    }
+  ]
+}

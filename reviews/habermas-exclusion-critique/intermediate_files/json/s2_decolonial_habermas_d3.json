@@ -1,0 +1,515 @@
+[s2_search.py] Searching Semantic Scholar: 'decolonial Habermas' (year=2000-2025) (field=Philosophy), limit=20
+[s2_search.py] Retrieved 20/20 papers...
+[s2_search.py] Cached results (cache key: s2_fd9605db804eccab)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "decolonial Habermas",
+  "results": [
+    {
+      "paperId": "441e07daf1a9b235e7133dfa9f4faa070f596ded",
+      "title": "Revisiting the Kantian legacy in Habermas: the philosophical project of modernity and decolonial critiques to rationality and cosmopolitanism",
+      "authors": [
+        {
+          "name": "Cristina Foroni Consani",
+          "authorId": "2076020763"
+        }
+      ],
+      "year": 2023,
+      "abstract": "This paper\u00a0deals with Amy Allen\u2019s critique of Habermas's theory of modernity, democracy, and cosmopolitanism. I will focus on her arguments that touch on the role of rationality. Allen's critique of Habermas will be presented, especially where she argues that focusing on rationality is ethnocentric and promotes the political exclusion of subaltern groups. The extent to which Allen's critiques affect the emancipatory potential of Habermasian theory will next be assessed. It is finally argued that Allen's position leads to a denial of the distinction between social rationality and irrationality as legitimate criteria. The consequences of such a position for the political sphere will then be analyzed.",
+      "citationCount": 0,
+      "doi": "10.5380/sk.v21i1.91983",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/441e07daf1a9b235e7133dfa9f4faa070f596ded",
+      "venue": "Studia Kantiana",
+      "journal": {
+        "name": "Studia Kantiana"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4cc9a7b90d885db2d270f5bec2c3cad04760f959",
+      "title": "Habermas und Fanon \u00fcber koloniale Herrschaft",
+      "authors": [
+        {
+          "name": "Victor Kempf",
+          "authorId": "117371059"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Abstract From a decolonial perspective, Habermas\u2019 theory is seen by many as Eurocentric and in philosophical alliance with colonial rule. In particular, his theory of progress is seen as offensive because it devalues non-Western ways of understanding in comparison to their modern Western counterparts. On the one hand, this is true. On the other hand, Habermas\u2019 actual concept of progress can also be used to formulate a critique of colonialist development imperatives. Moreover, his concept of \u201csystematically distorted communication\u201d can make an interesting contribution to understanding colonial rule: even colonial rule is communicatively mediated, with the constant risk of dissent precariously held in check by racist discourse barriers. Fanon already provides strong starting points for this communication-theoretical view of colonial rule. With him, the decolonial struggles against racist discourse barriers also come into view.",
+      "citationCount": 0,
+      "doi": "10.1515/dzph-2024-0026",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4cc9a7b90d885db2d270f5bec2c3cad04760f959",
+      "venue": "Deutsche Zeitschrift f\u00fcr Philosophie",
+      "journal": {
+        "name": "Deutsche Zeitschrift f\u00fcr Philosophie",
+        "pages": "344 - 362",
+        "volume": "72"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "4fbf1c6de2463a99c8d0aeecf99d770dcba74581",
+      "title": "Defending Habermas against Eurocentrism: Latin America and Mignolo\u2019s Decolonial Challenge",
+      "authors": [
+        {
+          "name": "R. Morrow",
+          "authorId": "152606057"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.4324/9781315734194-13",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4fbf1c6de2463a99c8d0aeecf99d770dcba74581",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "127-146",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9966322c0f7ea81a893d641c60b5b7c29ba7f9ae",
+      "title": "Defending Habermas against Eurocentrism: Latin America and Mignolo\u2019s Decolonial Challenge",
+      "authors": [
+        {
+          "name": "L. Rensmann",
+          "authorId": "7689615"
+        },
+        {
+          "name": "K. Mahadevan",
+          "authorId": "117238333"
+        }
+      ],
+      "year": 2013,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9966322c0f7ea81a893d641c60b5b7c29ba7f9ae",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5b90bcf6df032f310837ec6289f528c4f7982066",
+      "title": "Como o pensar decolonial pode ofertar novas perspectivas sobre a religi\u00e3o no sul global",
+      "authors": [
+        {
+          "name": "Danieli Lima da Cunha",
+          "authorId": "2081738521"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5b90bcf6df032f310837ec6289f528c4f7982066",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "21-35",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fc792f5d84325f5da7bccb941c772ae5bcee4e65",
+      "title": "Decolonial philosophy and the historical-sociological blindness of the theories of modernity: a new way to Latin-American philosophy",
+      "authors": [
+        {
+          "name": "Leno Francisco Danner",
+          "authorId": "113281659"
+        }
+      ],
+      "year": 2018,
+      "abstract": "The paper argues on the Latin-American philosophy as a decolonial praxis which unveils and overcomes the historical-sociological blindness of the theories of modernity (such as Max Weber and J\u00fcrgen Habermas). This historical-sociological blindness is characterized (a) by the separation between European culture and the modern Realpolitik of the colonialism as non-dependent and non-mutually-supported moments, and (b) by the reconstruction of the process of constitution of the European modernity as an endogenous, self-referential and basically internal movement of evolution, ignoring again its correlation and profound linking with colonialism. The paper argues that the critical and emancipatory role of the modernity\u2019s normative paradigm only is possible by that historical-sociological blindness. So, the Latin-American philosophy, the moment it denounces and unveils the historical-sociological blindness of the theories of modernity, points directly to the self-restraint of the modernity\u2019s normative paradigm as the basic theoretical-political agenda and praxis for a decolonial philosophy, as condition also to the correction of the modernity itself. Contrarily to Habermas, who defends the renewal of the modernity\u2019s normative paradigm as a non-fundamentalist epistemological-moral universalism, the decolonial philosophy will show that the historical-sociological blindness only can be resolved from the self-restraint of the modernity and from an anti-colonial politics based on the reparation for colonialism as a critical-normative concept for theoretical analysis and political praxis regarding modernity-modernization as a totalizing epistemological-cultural-societal movement towards colonialism.\u00a0 \u00a0\u00a0",
+      "citationCount": 0,
+      "doi": "10.15210/dissertatio.v47i0.9644",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fc792f5d84325f5da7bccb941c772ae5bcee4e65",
+      "venue": "Revista Dissertatio de Filosofia",
+      "journal": {
+        "name": "Revista Dissertatio de Filosofia"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "05090dbf6c6c2b788d409e38bcfb472b7854c573",
+      "title": "Deprovincializing Habermas : Global Perspectives",
+      "authors": [
+        {
+          "name": "T. Bailey",
+          "authorId": "92219779"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 7,
+      "doi": "10.4324/9781315734194",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/05090dbf6c6c2b788d409e38bcfb472b7854c573",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ffa09858cdca833e156236c68606cb0fbadf3c06",
+      "title": "Ricoeurian Hermeneutics and Indian Thought: Analyzing Evil in Cross-Cultural Philosophy",
+      "authors": [
+        {
+          "name": "P. Bilimoria",
+          "authorId": "10357632"
+        },
+        {
+          "name": "Meera Baindur",
+          "authorId": "2377156648"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1007/s11841-025-01075-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ffa09858cdca833e156236c68606cb0fbadf3c06",
+      "venue": "Sophia",
+      "journal": {
+        "name": "Sophia",
+        "pages": "513 - 537",
+        "volume": "64"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "5ec668e4b88bceb19c8193d05d699cff63f941a7",
+      "title": "The End of Progress: Decolonizing the Normative Foundations of Critical Theory",
+      "authors": [
+        {
+          "name": "Amy Allen",
+          "authorId": "2263527999"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 96,
+      "doi": "10.7312/alle17324",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5ec668e4b88bceb19c8193d05d699cff63f941a7",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9b3b4ccbc88730d3bcce4eb4f72f0cd6c7d05763",
+      "title": "The end of progress: Decolonizing the normative foundations of critical theory",
+      "authors": [
+        {
+          "name": "Antonio Y. V\u00e1zquez-Arroyo",
+          "authorId": "1437991176"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 57,
+      "doi": "10.1057/s41296-017-0152-9",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9b3b4ccbc88730d3bcce4eb4f72f0cd6c7d05763",
+      "venue": "Contemporary Political Theory",
+      "journal": {
+        "name": "Contemporary Political Theory",
+        "pages": "224 - 227",
+        "volume": "17"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fe8cb361b8e241a9f795b370718e72329a331d98",
+      "title": "The topology of being and the geopolitics of knowledge",
+      "authors": [
+        {
+          "name": "Nelson Maldonado-Torres",
+          "authorId": "1416367758"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 189,
+      "doi": "10.1080/1360481042000199787",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fe8cb361b8e241a9f795b370718e72329a331d98",
+      "venue": "",
+      "journal": {
+        "name": "City",
+        "pages": "29 - 56",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "19e0ff3b29775d158461fc2cdfbe0ee77b359a07",
+      "title": "Decolonial pathways in education: Walter Mignolo, epistemic delinking, and the risks of ethno-essentialism",
+      "authors": [
+        {
+          "name": "Michalinos Zembylas",
+          "authorId": "31556728"
+        }
+      ],
+      "year": 2025,
+      "abstract": null,
+      "citationCount": 16,
+      "doi": "10.1080/14767724.2025.2459110",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/19e0ff3b29775d158461fc2cdfbe0ee77b359a07",
+      "venue": "Globalisation, Societies and Education",
+      "journal": {
+        "name": "Globalisation, Societies and Education"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "1c95cb964fd409861b2ae323318c308230447907",
+      "title": "Decolonial hope and planetary solidarity: Fostering sustainability through African life narratives",
+      "authors": [
+        {
+          "name": "Goutam Karmakar",
+          "authorId": "116782196"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT This article argues that an engagement with the life writings of eco-activists from the Global South serve as potential epistemic sources to envision alternative modes of developmentalism, a future grounded in sustainability, and to formulate anti-capitalist ethics. It revisits Ken Saro-Wiwa\u2019s A Month and A Day: A Detention Diary and Wangari Maathai\u2019s Unbowed: A Memoir as significant life narratives that, besides critiquing the colonial and neocolonial models of growth, assert the importance of acknowledging the voices of disadvantaged communities and excluded knowledge systems in order to cultivate an equitable sense of development. The article argues that their life writings, rather than being mere chronologies of their personal experiences, thus emerge as alternative methods of knowledge production and testimonies of decolonial ecological ethics. In making such claims of these life narratives it offers an alternative conception of hope that is more aligned with plural knowledge generation, non-anthropocentric perspectives, and planetary principles.",
+      "citationCount": 8,
+      "doi": "10.1080/17449855.2025.2454571",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1c95cb964fd409861b2ae323318c308230447907",
+      "venue": "Journal of Postcolonial Writing",
+      "journal": {
+        "name": "Journal of Postcolonial Writing",
+        "pages": "313 - 330",
+        "volume": "61"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e5ebc22140bf450e3c87b9956d0cff1384bf3a1a",
+      "title": "Inviting a decolonial praxis for future imaginaries of nature: Introducing the Entangled Time Tree",
+      "authors": [
+        {
+          "name": "Naomi Terry",
+          "authorId": "2262319851"
+        },
+        {
+          "name": "Azucena Castro",
+          "authorId": "2262422105"
+        },
+        {
+          "name": "Bwalya Chibwe",
+          "authorId": "2216926035"
+        },
+        {
+          "name": "G. Karuri-Sebina",
+          "authorId": "1412036976"
+        },
+        {
+          "name": "Codru\u021ba Savu",
+          "authorId": "152790516"
+        },
+        {
+          "name": "Laura M. Pereira",
+          "authorId": "2150191422"
+        }
+      ],
+      "year": 2024,
+      "abstract": null,
+      "citationCount": 58,
+      "doi": "10.1016/j.envsci.2023.103615",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e5ebc22140bf450e3c87b9956d0cff1384bf3a1a",
+      "venue": "Environmental Science &amp; Policy",
+      "journal": {
+        "name": "Environmental Science &amp; Policy"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "3d168575dc7f3d8b7873eb9c9e14bdab653583a9",
+      "title": "Re-thinking decolonial concepts & practices: towards critical research and pedagogy",
+      "authors": [
+        {
+          "name": "Vineeta Sinha",
+          "authorId": "2343406671"
+        }
+      ],
+      "year": 2025,
+      "abstract": "ABSTRACT This article is grounded in my equal commitment to decolonising projects and academic freedom and makes four interventions in the current and ongoing efforts to decolonize knowledge production. The first is to interrogate and, call for re-conceptualising the taken-for-granted concepts that underpin decolonial movements. I argue that abstract, ways of thinking about the categories emerging from the notion of the \u2018decolonial\u2019 and \u2018decolonisation\u2019 are limited. I propose that it is meaningful to centre the principles of multiplicity and inclusion in conceptions and practices of a \u2018decolonial\u2019. The second critiques the expectation that all projects should be decolonial. I make a case for resisting a normative stance in the expectation that all academics must privilege the problematic of decoloniality in their work. The third is to demonstrate concretely how scholars can incorporate critical decolonial concepts into their everyday academic practices relating to research and education efforts. I caution that concepts \u2013 like \u2018decolonial\u2019 - and \u2018decolonisation\u2019 \u2013 and their dominant characterisations could themselves become co-opted by the very institutions and systems of oppression that these critique. This would ironically, undermine democratising impulses inherent in calls to decolonisation. Thus, the fourth intervention specifies how institutional attempts to appropriate decolonisation agendas can be resisted.",
+      "citationCount": 4,
+      "doi": "10.1080/13645579.2025.2569260",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/3d168575dc7f3d8b7873eb9c9e14bdab653583a9",
+      "venue": "International Journal of Social Research Methodology",
+      "journal": {
+        "name": "International Journal of Social Research Methodology",
+        "pages": "725 - 743",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "597f3c3cb1bebfc9043ff0fc002c01d695e69cd9",
+      "title": "Creative data justice: a decolonial and indigenous framework to assess creativity and artificial intelligence",
+      "authors": [
+        {
+          "name": "Payal Arora",
+          "authorId": "2278529793"
+        }
+      ],
+      "year": 2024,
+      "abstract": "ABSTRACT In the last decade, the Global South has emerged as a significant player in the data economy due to their majority user base, and studying its role is crucial to comprehend the future of AI. As societies grapple with the implications of AI on creative life, there is an opportunity to reevaluate the creative contributions of Global South cultures, ensuring they are acknowledged and foregrounded in the evolving landscape of human and machine creativity. This paper calls for reimagining and restructuring creative value with the emergence of AI enabled technologies by broadening who and what counts as creative in this data-driven era. To democratize creativity, a decolonial and indigenous framework of cross-cultural creative value is needed which critically intersects and examines the relations between creative labor, rights, and learning. The study of the Global South\u2019s data economies is important not only to harness its potential but also to address the cross-cultural ethics of building Creative AI tools with data from their underrepresented communities. At its core, the creative data justice framework emphasizes the need to challenge the existing power imbalances in global data governance. This paper proposes that fair creative value can be achieved by drawing inspiration from indigenous systems of care as a counterforce to neoliberal values of efficiency and utility. This framework will help scholars, policymakers and designers in their inclusive approaches to creativity in the age of AI.",
+      "citationCount": 11,
+      "doi": "10.1080/1369118X.2024.2420041",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/597f3c3cb1bebfc9043ff0fc002c01d695e69cd9",
+      "venue": "Information, Communication &amp; Society",
+      "journal": {
+        "name": "Information, Communication & Society",
+        "pages": "2231 - 2247",
+        "volume": "28"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "18bfa08cda8f3fa6251d91dd7ad42d7f5b2dbf58",
+      "title": "Building a Pluriverse of Nursologies: A paradigm for decolonial theory and knowledge development in nursing.",
+      "authors": [
+        {
+          "name": "J. Cleofas",
+          "authorId": "77269184"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The imperative to decolonise health disciplines underscores the need for a critical examination of the coloniality of nursing knowledge development. Decolonising nursing requires epistemic resistance aimed at exposing and dismantling epistemological hierarchies that marginalise indigenous knowledges. This paper introduces the 'Pluriverse of Nursologies' as paradigm to guide decolonial theorising in nursing. Through a four-part exploration, I first elucidate the coloniality embedded in mainstream nursing knowledge. Next, I offer a decolonial critique of Fawcett's nursing metaparadigm as an exemplar of pyramidal epistemology. I then discuss pluriversality as an approach to decolonising nursing knowledge. Finally, I introduce the Pluriverse of Nursologies (PoN) as a meta-theoretical paradigm for theory and knowledge development that decentres and dismantles the pyramidal epistemology of colonial/modern nursing, and relinks diverse nursologies from marginalised communities to the centre of intellectual nursing discourse, thereby revitalising the theoretical landscape of the discipline.",
+      "citationCount": 9,
+      "doi": "10.1111/nup.12497",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/18bfa08cda8f3fa6251d91dd7ad42d7f5b2dbf58",
+      "venue": "Nursing Philosophy",
+      "journal": {
+        "name": "Nursing philosophy : an international journal for healthcare professionals",
+        "pages": "\n          e12497\n        ",
+        "volume": "25 4"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "23a7fa3a7f3eb5c94bf602d09a4f527ddac3d18f",
+      "title": "Time, transition, and planetary decolonial justice as invention",
+      "authors": [
+        {
+          "name": "Anna M. Agathangelou",
+          "authorId": "101728197"
+        }
+      ],
+      "year": 2024,
+      "abstract": "ABSTRACT Contestations over temporal categories are marginalized in transition debates. This article reorients such debates by exploring the structural relationship between time and just transition or planetary justice. I demonstrate how transition, defined as governments and inter-state institutions\u2019 efforts to shift to a lower carbon future, is inscribed with categories of time and certain notions of justice. I argue the recent acknowledgement of the link of colonization with climate change by the Intergovernmental Panel on Climate Change does not necessarily disrupt the deployment of a linear and recursive (universal) notion of capital time nor does it challenge the co-constitution of racialized accumulation institutions and governance power technologies, with dire effects on a \u2018just transition.\u2019 I then draw on Frantz Fanon\u2019s idea of invention as an event without sense or content, a decolonial violence whose subject plunges into an abyss and whose \u2018measure\u2019 or possibility is always unprecedented.",
+      "citationCount": 7,
+      "doi": "10.1080/09644016.2024.2404377",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/23a7fa3a7f3eb5c94bf602d09a4f527ddac3d18f",
+      "venue": "Environmental Politics",
+      "journal": {
+        "name": "Environmental Politics",
+        "pages": "1265 - 1285",
+        "volume": "33"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "0eaed975743a61d53b2d357b12dadb1182fa9b63",
+      "title": "Peace in Plural: Towards Decolonial and Feminist Approaches to Peace",
+      "authors": [
+        {
+          "name": "Sladjana Lazic",
+          "authorId": "118221412"
+        },
+        {
+          "name": "Elena B. Stavrevska",
+          "authorId": "108677431"
+        }
+      ],
+      "year": 2024,
+      "abstract": "ABSTRACT This Special Issue delves into the concept of peace beyond traditional definitions, engaging with decolonial and feminist perspectives to emphasize peace not merely as the absence of war or conflict but as a broader notion encompassing the absence of all forms of violence, the presence of justice, and the pursuit of liberation. Drawing from diverse geopolitical and epistemological backgrounds, this collection of articles proposes a transition towards pluriversality, plurivocality, and pluritudes in understanding peace, aiming to disrupt disciplinary boundaries and foster a more comprehensive, nuanced, just, and liberatory understanding of peace.",
+      "citationCount": 6,
+      "doi": "10.1080/17502977.2024.2365121",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0eaed975743a61d53b2d357b12dadb1182fa9b63",
+      "venue": "Journal of Intervention and Statebuilding",
+      "journal": {
+        "name": "Journal of Intervention and Statebuilding",
+        "pages": "367 - 385",
+        "volume": "18"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "18b29a125272cc3267f71ca3f69132ad1bdaeaab",
+      "title": "Decolonial AI as Disenclosure",
+      "authors": [
+        {
+          "name": "Warmhold Jan Thomas Mollema",
+          "authorId": "2289416486"
+        }
+      ],
+      "year": 2024,
+      "abstract": "The development and deployment of machine learning and AI engender 'AI colonialism', a term that conceptually overlaps with 'data colonialism', as a form of injustice. AI colonialism is in need of decolonization for three reasons. Politically, because it enforces digital capitalism's hegemony. Ecologically, as it negatively impacts the environment and intensifies the extraction of natural resources and consumption of energy. Epistemically, since the social systems within which AI is embedded reinforce Western universalism by imposing Western colonial values on the global South when these manifest in the digital realm is a form of digital capitalism. These reasons require a new conceptualization of AI decolonization. First this paper draws from the historical debates on the concepts of colonialism and decolonization. Secondly it retrieves Achille Mbembe's notion of decolonization as disenclosure to argue that the decolonization of AI will have to be the abolishment of political, ecological and epistemic borders erected and reinforced in the phases of its design, production, development of AI in the West and drawing from the knowledge from the global South. In conclusion, it is discussed how conceiving of decolonial AI as form of disenclosure opens up new ways to think about and intervene in colonial instantiations of AI development and deployment, in order to empower 'the wretched of AI', re-ecologise the unsustainable ecologies AI depends on and to counter the colonial power structures unreflective AI deployment risks to reinforce.",
+      "citationCount": 16,
+      "doi": "10.4236/jss.2024.122032",
+      "arxivId": "2407.13050",
+      "url": "https://www.semanticscholar.org/paper/18b29a125272cc3267f71ca3f69132ad1bdaeaab",
+      "venue": "Open Journal of Social Sciences",
+      "journal": {
+        "name": "ArXiv",
+        "volume": "abs/2407.13050"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

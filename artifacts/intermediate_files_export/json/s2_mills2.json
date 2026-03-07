@@ -1,0 +1,104 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Charles Mills Blackness Invisible Man racial contract white supremacy",
+  "results": [
+    {
+      "paperId": "2cb6ff8f2099c3d50096c21922fbd663e5a647d9",
+      "title": "The Life and Work of Charles Mills Conference Program & Abstracts",
+      "authors": [
+        {
+          "name": "B. Meeks",
+          "authorId": "103543775"
+        }
+      ],
+      "year": 2022,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2cb6ff8f2099c3d50096c21922fbd663e5a647d9",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "38fdbd72f435c9fc0ba71e1755201bdda73b7f39",
+      "title": "From Class to Race and Back Again: A Critique of Charles Mills\u2019 Black Radical Liberalism",
+      "authors": [
+        {
+          "name": "Gregory Slack",
+          "authorId": "134035459"
+        }
+      ],
+      "year": 2020,
+      "abstract": "Charles Mills\u2019 philosophical position has undergone a number of subtle shifts over the past 30 years. Nevertheless, there has been a relative consistency in his thought over the past two decades, at least since The Racial Contract of 1997. That consistency consists in his turn towards social contract theory and its liberal values and away from Marxism with its focus on class and political economy. Mills notes that this turn does not constitute a \u201ca complete repudiation of Marxism, since I do think that a modified historical materialism might be able to carry out an adequate conceptualization of the significance of race.\u201d Some of the claims Mills makes about Marx and Engels, however, should be challenged; they (or their views) are not as \u201cwhite\u201d as Mills attests. Indeed, Marx and Engels made a considerable start at theorizing white supremacy as an outgrowth of modern capitalism.",
+      "citationCount": 2,
+      "doi": "10.1521/siso.2020.84.1.67",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/38fdbd72f435c9fc0ba71e1755201bdda73b7f39",
+      "venue": "Science & society (New York. 1936)",
+      "journal": {
+        "name": "Science & Society",
+        "pages": "67 - 94",
+        "volume": "84"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c24865d119a7f73da539959edb41cbfec2590a18",
+      "title": "BOOK REVIEWS",
+      "authors": [
+        {
+          "name": "M. Harris",
+          "authorId": "144205074"
+        },
+        {
+          "name": "B. Santich",
+          "authorId": "2340347574"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1080/13504630902778800",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c24865d119a7f73da539959edb41cbfec2590a18",
+      "venue": "",
+      "journal": {
+        "name": "Social Identities",
+        "pages": "285 - 290",
+        "volume": "15"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "dae8fbf853d9d193e02708ce2805aabbdb23df29",
+      "title": "Social Theory: The Multicultural And Classic Readings",
+      "authors": [
+        {
+          "name": "Charles C. Lemert",
+          "authorId": "12499594"
+        }
+      ],
+      "year": 1993,
+      "abstract": null,
+      "citationCount": 30,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dae8fbf853d9d193e02708ce2805aabbdb23df29",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 4,
+  "errors": []
+}

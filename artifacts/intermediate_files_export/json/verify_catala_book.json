@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1093/9780197776353.001.0001"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/9780197776353.001.0001",
+      "title": "The Dynamics of Epistemic Injustice",
+      "authors": [
+        {
+          "family": "Catala",
+          "given": "Amandine"
+        }
+      ],
+      "editors": [],
+      "year": 2025,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Oxford University PressNew York, NY",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1093/9780197776353.001.0001"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

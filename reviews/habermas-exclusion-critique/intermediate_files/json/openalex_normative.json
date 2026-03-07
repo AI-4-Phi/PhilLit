@@ -1,0 +1,972 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Habermas communicative action normative theory",
+  "results": [
+    {
+      "openalex_id": "W1977905103",
+      "doi": "10.7551/mitpress/1564.001.0001",
+      "title": "Between Facts and Norms",
+      "authors": [
+        {
+          "name": "J\u00fcrgen Habermas",
+          "openalex_id": "A5111405639"
+        }
+      ],
+      "publication_year": 1996,
+      "publication_date": "1996-01-01",
+      "abstract": "In Between Facts and Norms Jurgen Habermas works out the legal and political implications of his Theory of Communicative Action (1981), bringing to fruition the project announced with his publication of The Structural Transformation of the Public Sphere in 1962. This new work is a major contribution to recent debates on the rule of law and the possibilities of democracy in postindustrial societies, but it is much more.The introduction by William Rehg succinctly captures the special nature of the work, noting that it offers a sweeping, sociologically informed conceptualization of law and basic rights, a normative account of the rule of law and the constitutional state, an attempt to bridge normative and empirical approaches to democracy, and an account of the social context required for democracy. Finally, the work frames and caps these arguments with a bold proposal for a new paradigm of law that goes beyond the dichotomies that have afflicted modern political theory from its inception and that still underlie current controversies between so- called liberals and civic republicans.The book includes a postscript written in 1994, which restates the argument in light of its initial reception, and two appendixes, which cover key developments that preceded the book. Habermas himself was actively involved in the translation, adapting the text as necessary to make it more accessible to English-speaking readers.",
+      "cited_by_count": 4119,
+      "type": "book",
+      "source": {
+        "name": "The MIT Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Law in Society and Culture",
+        "Judicial and Constitutional Studies",
+        "Political Theology and Sovereignty"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1977905103"
+    },
+    {
+      "openalex_id": "W1495820933",
+      "doi": "10.1111/1467-8675.12057",
+      "title": "Habermas and the Project of Immanent Critique",
+      "authors": [
+        {
+          "name": "Titus Stahl",
+          "openalex_id": "A5026097274",
+          "orcid": "https://orcid.org/0000-0001-6537-2196",
+          "institutions": [
+            "Goethe University Frankfurt"
+          ]
+        }
+      ],
+      "publication_year": 2013,
+      "publication_date": "2013-11-11",
+      "abstract": "According to J\u00fcrgen Habermas, his Theory of Communicative Action offers a new account of the normative foundations of critical theory. Habermas' motivating insight is that neither a transcendental nor a metaphysical solution to the problem of normativity, nor a merely hermeneutic reconstruction of historically given norms, is sufficient to clarify the normative foundations of critical theory. In response to this insight, Habermas develops a novel account of normativity, which locates the normative demands of critical theory within the socially instituted practice of communicative understanding. Although Habermas has claimed otherwise, this new foundation for critical theory constitutes a novel and innovative form of \"immanent critique.\" To argue for and to clarify this claim, I offer, in section 1, a formal account of immanent critique and distinguish between two different ways of carrying out such a critique.",
+      "cited_by_count": 268,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12057"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W1495820933"
+    },
+    {
+      "openalex_id": "W1528625230",
+      "doi": "10.5860/choice.41-5219",
+      "title": "Truth and justification",
+      "authors": [],
+      "publication_year": 2004,
+      "publication_date": "2004-05-01",
+      "abstract": "Jurgen Habermas has developed the theory of communicative action primarily in the context of critical social and political theory and discourse ethics. The essays collected in this volume, however, focus on the theory's implications for epistemology and metaphysics. They address two fundamental issues that have not figured prominently in his work since the early 1970s. One is the question of naturalism: How can the ineluctable normativity of the perspective of agents interacting in a linguistically structured lifeworld be reconciled with the contingency of the emergence and evolution of forms of life? The other is a key problem facing epistemological realism after the linguistic turn: How can the assumption that there is an independently existing world be reconciled with the linguistic insight that we cannot have unmediated access to brute reality?Truth and Justification collects Habermas's major essays on these topics published since the mid-1990s. They offer detailed discussions of truth and objectivity as well as an account of the representational function of language in terms of the formal-pragmatic framework he has developed. In defending his post-Kantian pragmatism, Habermas draws on both the continental and analytic traditions and endorses a weak naturalism and a form of epistemological realism.",
+      "cited_by_count": 567,
+      "type": "article",
+      "source": {
+        "name": "Choice Reviews Online",
+        "type": "journal",
+        "issn": [
+          "0009-4978",
+          "1523-8253",
+          "1943-5975"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1528625230"
+    },
+    {
+      "openalex_id": "W2090863559",
+      "doi": "10.1080/09672559.2011.629672",
+      "title": "The Colonization Thesis: Habermas on Reification",
+      "authors": [
+        {
+          "name": "Timo J\u00fctten",
+          "openalex_id": "A5077887342",
+          "orcid": "https://orcid.org/0000-0001-9865-507X",
+          "institutions": [
+            "University of Essex"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-12-01",
+      "abstract": "Abstract According to Habermas' colonization thesis, reification is a social pathology that arises when the communicative infrastructure of the lifeworld is 'colonized' by money and power. In this paper I argue that, thirty years after the publication of the Theory of Communicative Action, this thesis remains compelling. However, while Habermas offers a functionalist explanation of reification, his normative criticism of it remains largely implicit: he never explains what is wrong with reification from the perspective of the people whose social relations are reified. As a result, Habermas cannot explain why only some forms of colonization lead to reification effects. In particular, he suggests that reification effects result from the juridification of communicatively structured domains of action but not from the commodification of labour power. I criticize this argument and suggest that if the normative dimension of the colonization thesis is made explicit, a more nuanced explanation of reification becomes possible.",
+      "cited_by_count": 263,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0967-2559",
+          "1466-4542"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2090863559"
+    },
+    {
+      "openalex_id": "W2051272060",
+      "doi": "10.1080/09672550500080462",
+      "title": "Habermas and validity claims",
+      "authors": [
+        {
+          "name": "Jari I. Niemi",
+          "openalex_id": "A5020405437"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-06-01",
+      "abstract": "Abstract At the heart of J\u00fcrgen Habermas's explication of communicative rationality is the contention that all speech acts oriented to understanding raise three different kinds of validity claims simultaneously: claims to truth, truthfulness, and normative rightness. This paper argues that Habermas presents exactly three distinct, logically independent arguments for his simultaneity thesis: an argument from structure; an argument from criticizability/rejectability; and an argument from understanding/reaching understanding. It is further maintained that the simultaneity thesis receives cogent support only from the Argument from understanding/reaching understanding, and only if the notion of 'understanding' is expanded to that of 'agreement'. Keywords: Habermasunderstandingvalidityagreementrationalitynormativity Notes Habermas makes a distinction between strategic action and communicative action, and I shall only discuss the latter in this paper. The alleged dependence of strategic action on communicative action is a separate matter and, while important, does not fall within the purview of the paper. Maeve Cooke, Language and Reason (Cambridge, Mass.: MIT Press, 1997), pp. 52\u20133. I believe that Habermas has also to defend the priority of communicative use of language over the instrumental use, but an analysis of this argument is beyond the scope of this paper. For Habermas's argument for communicative priority, see J\u00fcrgen Habermas, Theory of Communicative Action, Vol. 1, trans. Thomas McCarthy (Boston, Mass.: Beacon Press, 1985), pp. 293ff. All of the related claims are lucidly articulated by Maeve Cooke in Language and Reason, pp. 52ff. Ibid., p. 52. My claim here is that while there are many fine scholarly works either on the foundational aspects of Habermas's theory or purely on the practical consequences of those foundations, more work needs to be done on the interconnections of the foundations and the practical connections. For the latter see, e.g., James Bohman, 'The Globalization of the Public Sphere: Cosmopolitan Publicity and the Problem of Cultural Pluralism', Thomas McCarthy, 'Practical Discourse: On the Relation of Morality to Politics', Jean L. Cohen and Andrew Arato, 'From a Literary to a Political Public Sphere: J\u00fcrgen Habermas', all in David Rasmussen and James Swindal (eds) J\u00fcrgen Habermas, Vol. 2 (Thousand Oaks, Calif.: Sage Publications, 2002), pp. 337\u201369, 389\u2013407. Also, with similar concerns, see Simone Chambers, Reasonable Democracy: J\u00fcrgen Habermas and the Politics of Discourse (Cornell: Cornell University Press, 1996). For works on the foundations, consult the rest of the footnotes in this paper. I have argued elsewhere that Habermas's thesis not only implies that intersubjective understanding is impossible unless the simultaneity thesis is true, but also that self\u2010understanding depends, to a considerable degree, on dialogical argumentation. See Jari Niemi, 'The Foundations of J\u00fcrgen Habermas's Theory of Communicative Rationality: A Defense' (Dissertation, Purdue University, Indiana, 2004), pp. 78ff. Some critics have argued that this implication of Habermas's thesis commits him to a distinction between 'real' and 'spurious' preferences, with obvious illiberal consequences. For a brief discussion of this and an opposing view, see Chambers, Reasonable Democracy, pp.155ff. Cooke, Language and Reason, Ch. 3. Naturally, one could also attempt to deny the existence of a truth claim in constative speech acts, the presence of truthfulness in expressive speech acts, or the normative rightness claim in regulative speech acts by perhaps insisting that speech acts do not make any claims whatsoever, but if such attempts exist, I am unaware of them. The denial of the presence of truth claims in non\u2010constative speech acts and the rejection of the claim to truthfulness in constative speech acts show up in Habermas, Theory of Communicative Action, Vol. 1, pp. 311\u201315. Habermas identifies A. Leist and Ernst Tugenhadt, respectively, as criticizing him on such grounds and attempts to rebut the criticism on the pages cited. Ibid., pp. 307\u20138. Habermas refers to the idea of three formal worlds in several places, but his most recent mention of this concept, as far as I can tell, is in 'Toward a Critique of the Theory of Meaning', in J\u00fcrgen Habermas, On the Pragmatics of Communication, ed. Maeve Cooke (Cambridge, Mass.: MIT Press, 1998), p. 295. A useful, albeit incomplete, account of Habermas's critique of various theories of meaning can be found in Cooke, Language and Reason, pp. 95\u2013130. Habermas, Theory of Communicative Action, Vol. 1, p. 308. Cooke, Language and Reason, p. 61. Habermas, 'Toward a Critique of the Theory of Meaning', p. 295. Habermas makes this point in numerous places. For example, see 'Actions, Speech Acts, Linguistically Mediated Interactions, and the Lifeworld', in On the Pragmatics of Communication, pp. 230, 231; 'Toward a Critique of the Theory of Meaning', in On the Pragmatics of Communication, p. 296; 'Some Further Clarification on the Concept of Communicative Rationality', in On the Pragmatics of Communication, p. 317. Naturally, the same point is also made in his magnum opus, Theory of Communicative Action, Vol. 1, pp. 306\u201318. In addition to this, Habermas appears also, at least on one occasion, to claim that the rejectability thesis receives support from the three\u2010world thesis: We can examine every utterance to see whether it is true or untrue, justified, or unjustified, and truthful or untruthful because in speech, no matter what the emphasis, grammatical sentences are embedded in relations to reality in such a way that in an acceptable speech act segments of external nature, society, and internal nature always appear simultaneously. ('What is Universal Pragmatics', in On the Pragmatics of Communication, p. 91. My italics.) Habermas, Theory of Communicative Action, Vol. 1, p. 306. Ibid., p. 307. Andreas Dorschel, 'Is There Any Normative Claim Internal to Stating Facts?', in Rasmussen and Swindal, J\u00fcrgen Habermas, Vol. 4, p. 204. Dorschel actually takes Habermas to claim that a speaker uttering a communicative speech act raises four and only four claims. This is, of course, strictly speaking true, since every speaker, in addition to the three claims mentioned, also asserts the intelligibility of her utterance. I have omitted the discussion regarding the intelligibility claim raised because it is clearly not central, or sufficient, to Habermas's much more ambitious project. For a fuller discussion of the intelligibility claim, see Dorschel, 'Is There Any Normative Claim Internal to Stating Facts?'. Ibid., p. 204. The only criterion for criticizability seems to be that of intelligibility. Thus, speech acts are not criticizable from any perspective one can think of, hence the qualification 'almost'. For example, it hardly makes sense to criticize an utterance by saying that it wasn't green enough. Habermas, Theory of Communicative Action, Vol. 1, p. 297. Ibid., p. 298. Habermas only explicitly names the first condition (ibid., p. 299). For the second, I have chosen to adopt Maeve Cooke's usage (Language and Reason, p. 101). Habermas, 'Toward a Critique of the Theory of Meaning', p. 297. Habermas implies that understanding can be partial as well as full by explicitly talking about full understanding. Perhaps 'full understanding' should be understood as 'reaching understanding', which Habermas distinguishes from mere 'understanding'. For the talk regarding 'full understanding', see Theory of Communicative Action, Vol. 1, p. 300. For Habermas's distinction between 'understanding' and 'reaching understanding', see 'Comments on John Searle's \"Meaning, Communication, and Representation\" ', in On the Pragmatics of Communication, pp. 269ff. Habermas, Theory of Communicative Action, Vol. 1, p. 301. What follows immediately should be regarded as my interpretation of Habermas's thesis. While I stand by it, I am not aware of this kind of presentation of the issue anywhere in Habermas's work. Again, this is not how Habermas classifies the claims. There is not, in his system, anything called an 'epistemic claim'. However, this is not to say that Habermas does not recognize the necessity of such a claim in order to account for mutual understanding. This is not quite how Andreas Dorschel puts it, for he has no category of 'epistemic intelligibility' and he lists four conditions necessary for understanding: (1) that the assertion is intelligible; (2) that one is able to give backing for the assertion (this is what I have called 'the epistemic claim' or the epistemic intelligibility); (3) that one believes in the assertion; and (4) that the assertion is true (this is not to say that one must only assert true statements, only that one must claim that the assertion is true. So, while I am not giving an entirely accurate account of Dorschel's description of necessary conditions for understanding, I am nevertheless accurately portraying his position on the matter: no condition of 'normative rightness' is necessary for understanding. See Dorschel in 'Is There Any Normative Claim Internal to Stating Facts?'. Theory of Communicative Action, Vol. 1, p. 298. This is an example used by Dorschel. He naturally draws different conclusions from it from mine. See Dorschel, 'Is There Any Normative Claim Internal to Stating Facts?', p. 209. Habermas, Theory of Communicative Action, Vol. 1, pp. 311\u201312. Cooke, Language and Reason, p. 87. For a similar account, see ibid., pp. 87ff.",
+      "cited_by_count": 230,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0967-2559",
+          "1466-4542"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2051272060"
+    },
+    {
+      "openalex_id": "W2314575925",
+      "doi": "10.2307/3054001",
+      "title": "Complexity, Pluralism, and the Constitutional State: On Habermas's <i>Faktizit\u00e4t und Geltung</i>",
+      "authors": [
+        {
+          "name": "James Bohman",
+          "openalex_id": "A5090078969"
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-01-01",
+      "abstract": "J\u00fcrgen Habermas has from the start had the goal of developing a normative democratic theory based on rational consensus. From The Structural Transformation of the Public Sphere (1989a; first published in 1961) to The Theory of Communicative Action (1984, 1987), Habermas has sought to elaborate the underpinnings for such a critical theory of democracy, one that is oriented to the participation of reasoning citizens. In many respects, Habermas's recent Faktizit\u00e4t und Geltung , while cast as a philosophy of law, bears the fruit of that labor by offering his long-awaited \u201cradical\u201d democratic theory. Habermas calls his theory of democracy \u201cdeliberative politics,\u201d clearly aligning himself with those contemporary political theorists who emphasize public deliberation and participation. However, many faithful readers of Habermas may find his approach to legal and political legitimacy in Faktizit\u00e4t und Geltung somewhat surprising. Rather than defending participatory democracy directly, he instead embeds these radical democratic principles in a complex account of the political and legal institutions of constitutional democracies.",
+      "cited_by_count": 254,
+      "type": "article",
+      "source": {
+        "name": "Law & Society Review",
+        "type": "journal",
+        "issn": [
+          "0023-9216",
+          "1540-5893"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Law and Political Science"
+      ],
+      "referenced_works_count": 33,
+      "url": "https://openalex.org/W2314575925"
+    },
+    {
+      "openalex_id": "W2152058734",
+      "doi": "10.1007/s10551-006-9316-x",
+      "title": "Moral Discourse and Corporate Social Responsibility Reporting",
+      "authors": [
+        {
+          "name": "Mary Ann Reynolds",
+          "openalex_id": "A5108273981",
+          "institutions": [
+            "Western Washington University"
+          ]
+        },
+        {
+          "name": "Kristi Yuthas",
+          "openalex_id": "A5010439397",
+          "orcid": "https://orcid.org/0000-0001-7675-9425",
+          "institutions": [
+            "Portland State University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-03-16",
+      "abstract": null,
+      "cited_by_count": 367,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Ethics in Business and Education",
+        "Management and Organizational Studies"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W2152058734"
+    },
+    {
+      "openalex_id": "W1989266883",
+      "doi": "10.1177/0090591791019002003",
+      "title": "Habermas on Strategic and Communicative Action",
+      "authors": [
+        {
+          "name": "James Turner Johnson",
+          "openalex_id": "A5101932909",
+          "orcid": "https://orcid.org/0000-0003-3555-169X"
+        }
+      ],
+      "publication_year": 1991,
+      "publication_date": "1991-05-01",
+      "abstract": "In The Theory of Communicative Action, Jurgen Habermas articulates an expansive critical social theory.' He anchors his project in a comprehensive of communicative rationality intended to remedy what he takes to be limitations in the concept of cognitive-instrumental rationality informing much of traditional social and political thought.2 I wish to question whether Habermas's project is conceptually well-founded. My concerns are analytical.3 Although it is only one of the three interrelated themes that Habermas pursues in TCA, I focus exclusively on the typology of action that he constructs around the of communicative rationality. Habermas's discussion of rational action is the fulcrum for his broader empirical and normative concerns. If his conceptual analysis of rational action is faulty, his larger theoretical project, at least as it currently is formulated, is jeopardized. I adopt as my point of entry the place Habermas assigns to strategic action in his typology. This issue typically is neglected in treatments of Habermas's work.4 I then scrutinize more directly his of communicative action. My approach to Habermas proceeds from what I see as theoretical commitments and aspirations that he establishes for his work. He correctly claims that strategic is an ineliminable aspect of the social and political world.5 And he aspires to accommodate strategic and communicative action -as two equally fundamental elements of social interaction -",
+      "cited_by_count": 122,
+      "type": "article",
+      "source": {
+        "name": "Political Theory",
+        "type": "journal",
+        "issn": [
+          "0090-5917",
+          "1552-7476"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1989266883"
+    },
+    {
+      "openalex_id": "W2039417307",
+      "doi": "10.1111/j.1365-2575.2008.00296.x",
+      "title": "A critical analysis of media discourse on information technology: preliminary results of a proposed method for critical discourse analysis",
+      "authors": [
+        {
+          "name": "Wendy Cukier",
+          "openalex_id": "A5083347809",
+          "orcid": "https://orcid.org/0000-0002-4917-850X",
+          "institutions": [
+            "Toronto Metropolitan University"
+          ]
+        },
+        {
+          "name": "Ojelanki Ngwenyama",
+          "openalex_id": "A5068801389",
+          "orcid": "https://orcid.org/0000-0001-7124-430X",
+          "institutions": [
+            "Aarhus University",
+            "Toronto Metropolitan University"
+          ]
+        },
+        {
+          "name": "Robert O. Bauer",
+          "openalex_id": "A5113477594",
+          "institutions": [
+            "Johannes Kepler University of Linz"
+          ]
+        },
+        {
+          "name": "Catherine A. Middleton",
+          "openalex_id": "A5030608571",
+          "orcid": "https://orcid.org/0000-0003-1296-2613",
+          "institutions": [
+            "Toronto Metropolitan University"
+          ]
+        }
+      ],
+      "publication_year": 2008,
+      "publication_date": "2008-03-11",
+      "abstract": "Abstract Since the 1980s, there has been a growing body of critical theory in information systems research. A central theoretical foundation of this research is Habermas\u2019 theory of communicative action, which focuses on implications of speech and proposes general normative standards for communication. Habermas also places particular emphasis on the importance of the public sphere in a democratic society, critiquing the role of the media and other actors in shaping public discourse. While there has been growing emphasis on critical discourse analysis (CDA), there has been limited effort to systematically apply Habermas\u2019 validity claims to empirical research. Moreover, while critical research in information systems has examined communication within the organizational context, public discourse on information technology has received little attention. The paper makes three primary contributions: (1) it responds to Habermas\u2019 call for empirical research to ground and extend his theory of communication in every day critical practice; (2) it proposes an approach to applying Habermas\u2019 theory of communication to CDA; and (3) it extends the reach of critical research in information systems beyond micro\u2010level organizational concerns and opens up to critical reflection and debate on the impact of systematically distorted communication about technology in the public sphere.",
+      "cited_by_count": 145,
+      "type": "article",
+      "source": {
+        "name": "Information Systems Journal",
+        "type": "journal",
+        "issn": [
+          "1350-1917",
+          "1365-2575"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Knowledge Management and Sharing",
+        "Information Systems Theories and Implementation"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2039417307"
+    },
+    {
+      "openalex_id": "W1975853537",
+      "doi": "10.1017/s0003055405051749",
+      "title": "Reading Habermas in Anarchy: Multilateral Diplomacy and Global Public Spheres",
+      "authors": [
+        {
+          "name": "Jennifer Mitzen",
+          "openalex_id": "A5034155607",
+          "orcid": "https://orcid.org/0000-0003-1322-5033",
+          "institutions": [
+            "The Ohio State University"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-08-01",
+      "abstract": "States routinely justify their policies in interstate forums, and this reason-giving seems to serve a legitimating function. But how could this be? For Habermas and other global public sphere theorists, the exchange of reasons oriented toward understanding\u2014communicative action\u2014is central to public sphere governance, where political power is held accountable to those affected. But most global public sphere theory considers communicative action only among nonstate actors. Indeed, anarchy is a hard case for public spheres. The normative potential of communicative action rests on its instability: only where consensus can be undone by better reasons, through argument, can we say speakers are holding one another accountable to reason. But argument means disagreement, and especially in anarchy disagreement can mean violence. Domestically, the state backstops argument to prevent violence. Internationally, I propose that international society and publicity function similarly. Public talk can mitigate the security dilemma and enable interstate communicative action. Viewing multilateral diplomacy as a legitimation process makes sense of the intuition that interstate talk matters, while tempering a potentially aggressive cosmopolitanism.",
+      "cited_by_count": 145,
+      "type": "article",
+      "source": {
+        "name": "American Political Science Review",
+        "type": "journal",
+        "issn": [
+          "0003-0554",
+          "1537-5943"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Global Peace and Security Dynamics",
+        "International Relations and Foreign Policy"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W1975853537"
+    },
+    {
+      "openalex_id": "W2405061534",
+      "doi": null,
+      "title": "Critical theory: critical methodology to disciplinary foundations in nursing.",
+      "authors": [
+        {
+          "name": "Judy Mill",
+          "openalex_id": "A5110333395",
+          "institutions": [
+            "University of Alberta"
+          ]
+        },
+        {
+          "name": "Marion Allen",
+          "openalex_id": "A5003208229"
+        },
+        {
+          "name": "Raymond A. Morrow",
+          "openalex_id": "A5068433838",
+          "orcid": "https://orcid.org/0000-0003-2722-3063"
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-09-01",
+      "abstract": "Increasingly in the nursing literature, theorists have examined the use of critical theory in nursing (especially as understood by Habermas) and many have advocated it as a research approach to guide knowledge development in nursing. There has been limited analysis, however, of critical theory's broader foundational implications for the discipline of nursing. Part of the difficulty stems from a failure to differentiate between the implications of Habermas's earlier work on knowledge interests and his later theory of communicative action. In this paper, Habermas's critical theory is explored along two dimensions: as a metatheoretical account of a methodology of critical theory as a research tradition; and as a theory of communicative action whose dialogical and normative assumptions have profound implications for a postfoundationalist grounding of nursing as a discipline and professional practice. The authors argue that critical theory is necessary for nursing and may be sufficient as a paradigmatic philosophical base for the discipline.",
+      "cited_by_count": 53,
+      "type": "article",
+      "source": {
+        "name": "PubMed",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical and Liberation Pedagogy",
+        "Critical Theory and Philosophy",
+        "Adult and Continuing Education Topics"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W2405061534"
+    },
+    {
+      "openalex_id": "W2066293028",
+      "doi": "10.1046/j.1365-2648.2001.01930.x",
+      "title": "Caring in nursing: a different interpretation",
+      "authors": [
+        {
+          "name": "Jane Sumner",
+          "openalex_id": "A5111368929",
+          "institutions": [
+            "Louisiana State University Health Sciences Center New Orleans"
+          ]
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-09-04",
+      "abstract": "Caring in nursing: a different interpretation Aim. To apply Habermas\u2019 (1995) Theory of Moral Consciousness and Communicative Action to the nurse\u2013patient relationship, offering a different interpretation to the nurse\u2013patient relationship that is caring in nursing. Rationale. Many authors have described the nurse\u2013patient relationship, but Habermas\u2019 theory synthesizes the components into a complex matrix that is caring in nursing. Findings. The theory offers three claims to normative validity: the claim to truth which is the factual objective knowledge; the claim to truthfulness which refers to the intrasubjective self; and the claim to right which is the intersubjective interaction. The validity claims explain the patient\u2019s personal and illness self, the nurse\u2019s personal and professional self, and the interaction/discourse. The interaction is situation specific, and is identified as moral because dialogue/discourse requires a \u2018considerateness\u2019 of each for the other. \u2018Considerateness\u2019 in discourse requires certain rules, including that each participant has an equal voice, be followed in order for the Principle of Universalization to occur. Habermas draws on Kohlberg\u2019s (1981) , and Selman\u2019s (1980) work to develop three levels of moral maturity of communication. These are preconventional, conventional, and postconventional. Initial moral maturity is egocentric, subjective, and obedient to authority. Maturity develops with recognition of other and reciprocity. At the postconventional level there is mutuality and the ability for abstract reasoning. There is a third person objectivity combining speaker and addressee/listener perspectives. Norms are not just accepted, they are reasoned through. This leads to justification of the norm, which is then accepted as valid. When the three validity claims are met and there is genuine \u2018considerateness\u2019 in the interaction there is communicative action. The reverse is strategic action, where the communication is coercive. When there is communicative action both patient and nurse are validated with a sense of fulfillment or &lt; physis &gt;. Conclusion. Habermas\u2019 (1995) theory offers a new paradigm for caring in nursing.",
+      "cited_by_count": 59,
+      "type": "article",
+      "source": {
+        "name": "Journal of Advanced Nursing",
+        "type": "journal",
+        "issn": [
+          "0309-2402",
+          "1365-2648"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Nursing education and management",
+        "Interprofessional Education and Collaboration"
+      ],
+      "referenced_works_count": 38,
+      "url": "https://openalex.org/W2066293028"
+    },
+    {
+      "openalex_id": "W2319733237",
+      "doi": "10.2307/1963631",
+      "title": "Communication, Ideology, and Democratic Theory",
+      "authors": [
+        {
+          "name": "James Bohman",
+          "openalex_id": "A5090078969",
+          "institutions": [
+            "Saint Louis University"
+          ]
+        }
+      ],
+      "publication_year": 1990,
+      "publication_date": "1990-03-01",
+      "abstract": "Using Habermas' theory of communicative action and his remarks on the legitimacy of the state under modern social conditions as a starting point, I combine normative democratic theory with the critique of ideology. I first outline four necessary-but-not-sufficient conditions of communication for democratic decision making: such agreements must (1) be formally and procedurally correct, (2) be cognitively adequate, (3) concern issues on which consensus or compromise can be reached, and (4) be free of ideology. The first three conditions form the core of a normative democratic theory, one that is not purely procedural, as many have argued it is. I then discuss the fourth condition and establish the relation between ideology and democracy. Taken together, these conditions not only provide an answer to troubling questions for democratic theory but also delineate the extent to which politics is rational and political claims are \u201ctruthlike.\u201d",
+      "cited_by_count": 48,
+      "type": "article",
+      "source": {
+        "name": "American Political Science Review",
+        "type": "journal",
+        "issn": [
+          "0003-0554",
+          "1537-5943"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Philosophy and Ethics",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W2319733237"
+    },
+    {
+      "openalex_id": "W2129539301",
+      "doi": "10.1080/02619760120055862",
+      "title": "The Rationality of Narrative Inquiry in Research and Professional Development",
+      "authors": [
+        {
+          "name": "Carola Conle",
+          "openalex_id": "A5072723762"
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-03-01",
+      "abstract": "SUMMARY SUMMARY As researchers follow the hermeneutic turn to narrative, are they also obliged to join what Richard Bernstein calls the 'rage against reason'? Taking criteria from Habermas's Theory of Communicative Action and his concept of communicative rationality, I propose that narrative inquiry can indeed be a rational enterprise. Habermas recreates a standpoint from which critiques are possible, for he detects and analyses the implicit rationality built into everyday communicative practices in which conversation partners orient themselves toward understanding rather than the success of their own points of view. In these practices, as in narrative inquiry, participants claim that each could challenge the other's implicit claims to truth, sincerity and social appropriateness. I give examples to illustrate how such challenges can be met in one specific line of narrative research . R\u00c9SUM\u00c9 Suivant la transformation de l'herm\u00e9neutique en r\u00e9cit, les chercheurs se voient-ils oblig\u00e9s de partager ce que Richard Bernstein appelle 'la fureur contre la raison'? Prenant de crit\u00e8res de la th\u00e9orie de l'action communicative d\u00e9velopp\u00e9e par Habermas, et son concept de rationalit\u00e9 communicative, je sugg\u00e8re que l'enqu\u00eate narrative peut \u00eatre une entreprise rationnelle. En d\u00e9tectant et analysant la rationalit\u00e9 implicite ancr\u00e9e dans les pratiques communicatives de la vie quotidienne, Habermas \u00e9tablit un point de vue qui rend possible les critiques si, dans leurs \u00e9changes, les partenaires s'efforcent de s'orienter vers la compr\u00e9hension plut\u00f4t que faire gagner leurs propres points de vue. Dans ce genre de pratique, tout comme dans l'enqu\u00eate narrative, les participants proclament que chacun est capable de d\u00e9fier les garanties de v\u00e9rit\u00e9, sinc\u00e9rit\u00e9 et correction sociale impliqu\u00e9es dans les affirmations de l'autre. Je pr\u00e9sente des exemples pour illustrer comment de tels d\u00e9fis peuvent \u00eatre surmont\u00e9s dans une ligne particuli\u00e8re de recherche narrative. RESUMEN Cuando investigadores siguen la transformaci\u00f3n de la hermen\u00e9utica en narrativa, se ver\u00e1n tambi\u00e9n forzados a aceptar lo que Richard Bernstein llama 'la furia contra la raz\u00f3n'? Tomando los criterios de la 'Teor\u00eda de Acci\u00f3n Comunicativa' de Habermas y su concepto de racionalidad comunicativa propongo que la investigaci\u00f3n narrativa de hecho s\u00ed puede ser un proyecto racional. Habermas crea un punto de vista desde donde la cr\u00edtica es posible, porque detecta y analiza la impl\u00edcita racionalidad de las pr\u00e1cticas comunicativas diarias en las cuales los participantes de una conversaci\u00f3n se orientan a la comprensi\u00f3n mutua y no a buscar de hacer prevalecer sus propios puntos de vista. En estas pra\u00b4cticas as\u00edcomo en la investigaci\u00f3n narrativa, los participantes pretenden que cada cual puede desafiar las suposiciones impl\u00edcitas de veracidad, sinceridad y correcci\u00f3n social del otro. Doy ejemplos para mostrar como los desaf\u00edos pueden ser satisfechos en una tradici\u00f3n espec\u00edfica de la investigaci\u00f3n narrativa. ZUSAMMENFASSUNG Sind Forscher in einer hermeneutischen Wende zur Erz\u00e4hlung auch gezwungen jegliche Rationalit\u00e4t aufzugeben? Zur\u00fcckgreifend auf Kriterien aus Habermases 'Theorie des kommunikativen Handelns' und sein Konzept der kommunikativen Rationalit\u00e4t, schlage ich vor, dass narrative Forschung doch ein rationales Unternehmen sein kann. Habermas erschafft einen Standpunkt, der Kritik erm\u00f6glicht, indem er die implizite Rationalit\u00e4t aufdeckt und analysiert, die allt\u00e4glicher kommunikativen Praxis innewohnt, wenn Gespr\u00e4chspartner auf gegenseitiges Verstehen anstatt auf den Erfolg der eigenen Ziele aus sind. In solcher Praxis wie auch in narrativer Forschung, erheben Kommunikationsteilnehmer vier, gegenseitig unterstellte Geltungsanspr\u00fcche, Verst\u00e4ndlichkeit, Wahrheit, Wahrhaftigkeit und normative Richtigkeit; Anspr\u00fcche die jederzeit auch in einer bestimmten Tradition der narrativen Forschung einl\u00f6sbar sind.",
+      "cited_by_count": 91,
+      "type": "article",
+      "source": {
+        "name": "European Journal of Teacher Education",
+        "type": "journal",
+        "issn": [
+          "0261-9768",
+          "1469-5928"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Discourse Analysis in Language Studies",
+        "Language, Discourse, Communication Strategies",
+        "Language, Metaphor, and Cognition"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W2129539301"
+    },
+    {
+      "openalex_id": "W1971994611",
+      "doi": "10.1007/s10551-007-9405-5",
+      "title": "Stakeholder Management Capability: A Discourse\u2013Theoretical Approach",
+      "authors": [
+        {
+          "name": "Abe Zakhem",
+          "openalex_id": "A5014526364",
+          "institutions": [
+            "Seton Hall University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-04-11",
+      "abstract": null,
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Transactional Analysis in Psychotherapy",
+        "Ethics in Business and Education"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W1971994611"
+    },
+    {
+      "openalex_id": "W2091413865",
+      "doi": "10.1057/palgrave.sth.8700055",
+      "title": "Competence, Identity and Intersubjectivity: Applying Habermas's Theory of Communicative Action to Service User Involvement in Mental Health Policy Making",
+      "authors": [
+        {
+          "name": "Suzanne Hodge",
+          "openalex_id": "A5016363902",
+          "orcid": "https://orcid.org/0000-0003-0416-8188",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-07-25",
+      "abstract": null,
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "Social Theory & Health",
+        "type": "journal",
+        "issn": [
+          "1477-8211",
+          "1477-822X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Mental Health and Patient Involvement",
+        "Foucault, Power, and Ethics",
+        "Mental Health and Psychiatry"
+      ],
+      "referenced_works_count": 22,
+      "url": "https://openalex.org/W2091413865"
+    },
+    {
+      "openalex_id": "W2089184732",
+      "doi": "10.3817/0309146007",
+      "title": "Morality and Critical Theory: On the Normative Problem of Frankfurt School Social Criticism",
+      "authors": [
+        {
+          "name": "James Gordon Finlayson",
+          "openalex_id": "A5033736964",
+          "orcid": "https://orcid.org/0000-0003-0570-6048"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-03-01",
+      "abstract": "Abstract I. The Problem of Normative Foundations: Habermas's Original Criticism of Adorno and Horkheimer In The Theory of Communicative Action, J\u00fcrgen Habermas writes:From the beginning, critical theory labored over the difficulty of giving an account of its own normative foundations \u20261 Call this Habermas's original objection to the problem of normative foundations. It has been hugely influential both in the interpretation and assessment of Frankfurt School critical theory and in the development of later variants of it. Nowadays it is a truth almost universally acknowledged that any critical social theory in possession of normative\u2026",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "Telos",
+        "type": "journal",
+        "issn": [
+          "0090-6514",
+          "1940-459X"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2089184732"
+    },
+    {
+      "openalex_id": "W2174228756",
+      "doi": null,
+      "title": "System and Lifeworld in Habermas's Theory of Law",
+      "authors": [
+        {
+          "name": "Hugh Baxter",
+          "openalex_id": "A5003766651"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-01-01",
+      "abstract": "J\u00fcrgen Habermas's recent work on law and democracy divides into two parts. With his \"discourse theory of law and democracy,\" Habermas seeks to explain the conditions under which modern constitutional legal and political orders may claim legitimacy. Here Habermas's method is primarily philosophical and legal-theoretical. The second part of the project - the part on which this article focuses - develops what Habermas calls his \"communication theory of society.\" Here Habermas seeks to \"translate\" the normative conclusions of his discourse theory into a substantive social-theoretical model. The idea is to determine whether the ambitious normative theory of democracy is plausible under contemporary conditions of social complexity. Habermas's presentation of the \"communication theory of society\" is difficult to understand, partly because he invokes, without much explanation, the \"two-level\" theory of society that he developed in his work of the 1970s and 1980s. I return to that work to excavate the basic concepts of \"communicative action,\" \"system,\" and \"lifeworld.\" I discuss the model of society developed in that earlier body of work - a model of \"interchange\" between the normatively rich \"lifeworld\" and the money- and power-driven economic and administrative systems. My account is critical. Each distinction on which Habermas relies to construct the \"interchange\" model is drawn too sharply, and the resulting model makes the normative ideal Habermas consistently has defended - radical democracy - literally inconceivable. The more recent work on law professes continued loyalty to the system/lifeworld conception of society. But at the same time, it develops a different model - the \"model of the circulation of power\" - that is designed to show the possibilities for, and resistances, to radical democracy. I argue that the new model is irreconcilable with Habermas's earlier and unretracted conceptions of \"system\" and system/lifeworld \"interchange.\" The unacknowledged amendments are significant improvements, I argue, but one effect is to leave the notion of social \"systems\" unclearly theorized. I suggest in the final part of the article that Habermas could shore up his \"system\" conception by selectively and critically appropriating insights from a more recent version of social systems theory - the \"autopoietic\" theory of Habermas's longtime theoretical sparring partner, Niklas Luhmann.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "eYLS (Yale Law School)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarship.law.bu.edu/faculty_scholarship/549"
+      },
+      "topics": [
+        "Law in Society and Culture",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2174228756"
+    },
+    {
+      "openalex_id": "W2112361476",
+      "doi": "10.1007/s10588-006-9540-z",
+      "title": "Speech acts, commitment and multi-agent communication",
+      "authors": [
+        {
+          "name": "Rodger Kibble",
+          "openalex_id": "A5037300741",
+          "institutions": [
+            "Goldsmiths University of London",
+            "University of London"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-08-08",
+      "abstract": null,
+      "cited_by_count": 46,
+      "type": "article",
+      "source": {
+        "name": "Computational and Mathematical Organization Theory",
+        "type": "journal",
+        "issn": [
+          "1381-298X",
+          "1572-9346"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Multi-Agent Systems and Negotiation",
+        "Language, Discourse, Communication Strategies",
+        "Speech and dialogue systems"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2112361476"
+    },
+    {
+      "openalex_id": "W2018374698",
+      "doi": "10.1108/eb023445",
+      "title": "The inter\u2010subjective and the social systemic public relations paradigms",
+      "authors": [
+        {
+          "name": "Susanne Holmstr\u00f6m",
+          "openalex_id": "A5037150909",
+          "institutions": [
+            "Roskilde University"
+          ]
+        }
+      ],
+      "publication_year": 1997,
+      "publication_date": "1997-03-01",
+      "abstract": "To get beneath the surface of the focal concepts of public relations practice today, the major sociological theories of J\u00fcrgen Habermas and Niklas Luhmann have been fruitful as frames of interpretation. Two paradigms for reflection on the public relations phenomenon have been developed on their theories: the inter\u2010subjective and the social systemic public relations paradigms. These paradigms indicate fundamentally different interpretations of the concepts of conflict and social responsibility, with crucial consequences for the role of public relations in today's social order. Each perspective has its blind spots but the switching of perspectives allows us to see more. Habermas's theories make it possible to disclose the ideal perception which seems to prevail in the self\u2010understanding of public relations practice while, at the same time, setting out normative ideals for the practice. The ideal in the inter\u2010subjective paradigm is to re\u2010establish the system's coupling to the lifeworld. The public relations practitioner must act as an individual through communicative action. Public relations is a matter of ethical issues in a normative perspective. We might also call this the ethical, communicative or normative paradigm of public relations. The keyword is legitimation in post\u2010conventional discourse society. Luhmann's theories make it possible to disclose the social systemic mechanisms that can be viewed as the framework for public relations practice, and to set out functional conditions for that practice. The functions of the social systemic paradigm are to assist in maintaining the boundaries of the organisation system through strategic reflection and to assist in ensuring that society's differentiated system logics can function autonomously because they also understand how to function together. The sphere of action of the public relations practitioner is defined by the social systems. Public relations is a matter of functional issues in a cognitive perspective. We might also call this the functional, reflective or cognitive paradigm of public relations. The keyword is public trust in the context\u2010regulated society. This paper is based on a thesis by the author entitled: \u2018The Inter\u2010subjective and the Social Systemic Public Relations Paradigms\u2019, University of Roskilde, April 1996, also to be published in English.",
+      "cited_by_count": 41,
+      "type": "article",
+      "source": {
+        "name": "Journal of Communication Management",
+        "type": "journal",
+        "issn": [
+          "1363-254X",
+          "1478-0852"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Public Relations and Crisis Communication"
+      ],
+      "referenced_works_count": 7,
+      "url": "https://openalex.org/W2018374698"
+    },
+    {
+      "openalex_id": "W4241895188",
+      "doi": "10.1093/acprof:oso/9780199547807.001.0001",
+      "title": "The Philosophy of J\u00fcrgen Habermas",
+      "authors": [
+        {
+          "name": "Uwe Steinhoff",
+          "openalex_id": "A5046714620",
+          "orcid": "https://orcid.org/0000-0001-5805-6945"
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-06-18",
+      "abstract": "J\u00fcrgen Habermas seeks to defend the Enlightenment and with it an \"emphatical\", \"uncurtailed\" conception of reason against the post-modern critique of reason on the one hand, and against so-called scientism (which would include critical rationalism and the greater part of analytical philosophy) on the other. His objection to the former is that it is self-contradictory and politically defeatist; his objection to the latter is that, thanks to a standard of rationality derived from the natural sciences or from Weber's concept of purposive rationality, it leaves normative questions to irrational decisions. Wishing to offer an alternative, Habermas tries to develop a theory of communicative action that can clarify the normative foundations of a critical theory of society as well as provide a fruitful theoretical framework for empirical social research. This study is a comprehensive and detailed analysis and a sustained critique of Habermas' philosophical system starting with his pragmatist turn in the seventies. It clearly and precisely depicts its long path from an analysis of speech acts to a discourse theory of law and the democratic constitutional state via the theory of communicative action, discourse ethics, and the attempts to apply the approach to, and support it with, empirical theories.",
+      "cited_by_count": 19,
+      "type": "book",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4241895188"
+    },
+    {
+      "openalex_id": "W2058479894",
+      "doi": "10.1080/09672550500169182",
+      "title": "Avoiding Authoritarianism: On the Problem of Justification in Contemporary Critical Social Theory",
+      "authors": [
+        {
+          "name": "Maeve Cooke",
+          "openalex_id": "A5022186048",
+          "orcid": "https://orcid.org/0000-0002-3168-4375",
+          "institutions": [
+            "University College Dublin"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-09-01",
+      "abstract": "Abstract Critical social theories look critically at the ways in which particular social arrangements hinder human flourishing, with a view to bringing about social change for the better. In this they are guided by the idea of a good society in which the identified social impediments to human flourishing would once and for all have been removed. The question of how these guiding ideas of the good life can be justified as valid across socio\u2010cultural contexts and historical epochs is the most fundamental difficulty facing critical social theories today. This problem of justification, which can be traced back to certain key shifts in the modern Western social imaginary, calls on contemporary theories to negotiate the tensions between the idea of context\u2010transcendent validity and their own anti\u2010authoritarian impulses. Habermas makes an important contribution towards resolving the problem, but takes a number of wrong turnings. Keywords: Critical theorynon\u2010authoritarian theoryautonomyHabermasformal pragmaticsHabermas's theory of justice Notes 1 In situating critical social theory within the modern Western social imaginary, I do not wish to imply that this form of modernity is in any sense superior to other forms. I follow S. N. Eisenstadt in confining myself to the thesis that it is distinctive; I also follow Eisenstadt in recognizing 'the great variability of the symbolic, ideological and institutional responses to it [Western modernity], of the ways in which different civilizations and societies interpret different symbolic premises of modernity and different modern institutional patterns and dynamics'. S. N. Eisenstadt, 'Introduction', in S. N. Eisenstadt (ed.) Patterns of Modernity, Vol. 1: The West (London: Frances Pinter, 1987), pp. 1\u201311, here, p. 5. 2 Here I am guided by Cornelius Castoriadis's view that every society creates a social imaginary that determines society's values and the institutions that embody them. However, I use the term in a general way without committing myself to other aspects of Castoriadis's account of the social imaginary. See C. Castoriadis, The Imaginary Institution of Society (Cambridge, MA: MIT Press, 1987). My use of the term is closer to that of Charles Taylor. See C. Taylor, Modern Social Imaginaries (Durham, NC: Duke University Press, 2004). 3 A well\u2010known example here is Nietzsche, who challenged key elements of the modern world\u2010view, for example, the assumptions that human beings are equal and that historical time is progressive, and took on the task of reorienting our perceptions with regard to these. See F. Nietzsche, Thus Spoke Zarathustra, trans. T. Common (London: Allen and Unwin, 1967) and F. Nietzsche, Beyond Good and Evil, trans. R. J. Hollingdale (Harmondsworth: Penguin Books, 1973). 4 R. Rorty, Contingency, Irony, and Solidarity (Cambridge: Cambridge University Press, 1989). 5 This is Robert Brandom's gloss on Rorty's utopian idea of unfettered imaginative activity in his 'Vocabularies of Pragmatism: Synthesizing Naturalism and Historicism', in R. Brandom (ed.) Rorty and his Critics (Oxford: Blackwell, 2000), p. 179. Rorty claims to be in enthusiastic agreement with the sections of Brandom's essays from which this quotation is taken in his 'Response to Robert Brandom', in Rorty and his Critics, pp. 184 and 189. 6 See Butler's contributions to J. Butler, E. Laclau and S. \u017di\u017eek, Contingency, Hegemony, Universality (London: Verso, 2000). 7 J. Habermas, The Theory of Communicative Action, Vols. 1 and 2, trans. T. McCarthy (Boston, MA: Beacon Press, 1984 and 1987). 8 Examples here are A. Honneth, Struggle for Recognition, trans. J. Anderson (Cambridge, MA: MIT Press, 1995), J. Habermas, 'Individuation through Socialization: On George Herbert Mead's Theory of Subjectivity', in his Postmetaphysical Thinking, trans. W. M. Hohengarten (Cambridge, MA: MIT Press, 1992), pp. 149\u2013204, and J. Habermas, 'Morality and Ethical Life: Does Hegel's Critique of Kant Apply to Discourse Ethics?', in his Moral Consciousness and Communicative Action, trans. C. Lenhardt and S. Weber Nicholsen (Cambridge, MA: MIT Press, 1990), pp. 195\u2013215. 9 M. Cooke, Re\u2010Presenting the Good Society (Cambridge, MA: MIT Press, 2006). For an earlier effort in the same direction, see M. Cooke, 'A Space of One's Own: Autonomy, Privacy, Liberty', Philosophy and Social Criticism, 25 (1) (1999), pp. 23\u201353. 10 More precisely, the 'us' refers to 'us educated, sophisticated, tolerant, wet liberals, the people who are always willing to hear the other side, to think out all the implications, etc.' R. Rorty, 'Putnam and the Relativist Menace', Journal of Philosophy, 90 (9) (1993), 443\u201361, here, pp. 451\u20132. 11 For Butler, the normative and optimistic aspect of critical social thinking consists 'in the possibilities for expanding the key terms of liberalism, rendering them more inclusive, more dynamic and more concrete'. See J. Butler, 'Restaging the Universal', in Butler, Laclau and \u017di\u017eek, Contingency, Hegemony, Universality, pp. 11\u201343, here, p. 13. Butler actually refers to 'the normative and optimistic moment' of hegemony; however, her formulation seems equally applicable to critical social thinking as she conceives it. 12 'Dogmatic' is used in the 'harmless sense' that for us, who have developed our identities within the socio\u2010cultural context of Western modernity, it cannot be circumvented. J. Habermas, Between Facts and Norms, trans. W. Rehg (Cambridge, MA: MIT Press, 1996), pp. 445\u201356. 13 See J. Butler, 'Gender Trouble, Feminist Theory, and Psychoanalytic Discourse', in L. Nicholson (ed.) Feminism/Postmodernism (New York: Routledge, 1990), p. 324\u201340. In her most recent writings, however, there is some evidence that Butler is now less hostile to the notions of subjectivity with which the idea of autonomy is linked and may even be prepared to view autonomy as one of the key terms of liberal modernity that are open to creative rearticulation and re\u2010enactment. See J. Butler, Antigone's Claim: Kinship between Life and Death (New York: Columbia University Press, 2000) and J. Butler, Undoing Gender (London and New York: Routledge, 2004). 14 I outline the concept of autonomy that in my view best takes account of this intuition in Cooke, Re\u2010Presenting the Good Society, Ch. 6. 15 Ferrara posits coherence and depth as two of the four normative requirements of authentic identity: A. Ferrara, Reflective Authenticity (London: Routledge, 1998). 16 Butler is likely to reject the very terms in which this disagreement is cast. Nor is it clear on which side of the divide she would position herself, even if she were to accept its terms. In Cooke, Re\u2010Presenting the Good Society, Ch. 4, I argue, nonetheless, that this is an issue of central concern to her theory and that a context\u2010transcending position would make best sense of her idea of universality as radical translation (see Butler, 'Restaging the Universal'). 17 For Butler, all forms of identity \u2013 for example, the identity of individual subjects \u2013 are constituted differentially. That is, their constitution produces a constitutive outside that can never become fully inside or immanent. On the 'incompletion' of what she calls the subject position, see Butler, 'Restaging the Universal', p. 12. 18 Butler, 'Dynamic Conclusions', in Butler, Laclan and \u017di\u017eek, Contingency, Hegemony, Universality, pp. 263\u2013280, here, p. 268. 19 Habermas, who defends a context\u2010transcending position, accuses radically contextualist approaches such as Rorty's of collapsing the distinction between the strategic and non\u2010strategic uses of language. J. Habermas, 'Richard Rorty's Pragmatic Turn', in his On the Pragmatics of Communication, edited and with an introduction by M. Cooke (Cambridge, MA: MIT Press, 1998), pp. 343\u201382. Rorty replies in his 'Response to Habermas', in Brandom, Rorty and his Critics, p. 58. 20 These objections to a radically contextualist critical approach are tailored to discursive \u2013 argumentation\u2010based \u2013 models of social criticism. However, as I point out in Cooke, Re\u2010Presenting the Good Society, Ch. 4, there are equivalent objections to non\u2010argumentative models of social criticism. 21 Other contemporary thinkers who explicitly endorse a context\u2010transcending approach include Axel Honneth and Nancy Fraser. See their respective contributions in N. Fraser and A. Honneth, Redistribution or Recognition? A Political\u2010Philosophical Exchange (London: Verso, 2003). 22 The term Habermas uses to describe what I call the anti\u2010authoritarian impulse of contemporary critical social theory is 'post\u2010metaphysical'. See Habermas, Postmetaphysical Thinking. For a brief account of the postmetaphysical character of Habermas's idea of communicative rationality see M. Cooke, Language and Reason (Cambridge, MA: MIT Press, 1994), pp. 38\u201343. As I point out below, Habermas's postmetaphysical approach goes beyond anti\u2010authoritarian approaches by leaving no room for the postulate of a transcendent \u2013 metaphysical \u2013 object. 23 Axel Honneth uses the term 'Left\u2010Hegelian' to describe the tradition of critical social thinking out of which the critical theory of the Frankfurt School emerges. The term has the advantage that it makes explicit the Frankfurt School's concern to rearticulate the critical social thinking of Hegel, as interpreted above all by Marx and Luk\u00e1cs. See A. Honneth, 'Eine Soziale Pathologie der Vernunft. Zur intellektuellen Erbschaft der Kritischen Theorie', in C. Halbig and M. Quante (eds), Sozialphilosophie zwischen Kritik und Anerkennung (M\u00fcnster, Hamburg, Berlin, Wien, London: LIT Verlag, 2003). 24 Cf. A. Honneth, 'The Social Dynamics of Disrespect: On the Location of Critical Theory Today', Constellations, 1 (2) (1994), pp. 255\u201369. 25 M. Horkheimer and Theodor W. Adorno, The Dialectic of Enlightenment, trans. J. Cumming (London: Allen Lane, 1973). 26 Evidently, it also gives rise to a problem of motivation since the authors eliminate the possibility of any kind of human reflection on, or conscious human resistance to, the oppressive, dehumanizing effects of twentieth\u2010century capitalism. 27 Habermas, The Theory of Communicative Action, Vols 1 and 2. 28 J. Habermas, 'What is Universal Pragmatics?', in Habermas, On the Pragmatics of Communication, pp. 21\u2013103. See also Cooke, Language and Reason. It should be noted that Habermas sees reconstructive theories as dependent on indirect validation by other theories. See J. Habermas, 'Moral Consciousness and Communicative Action', in his Moral Consciousness and Communicative Action, pp. 116\u201394, here, pp. 116\u201318. 29 Habermas's clearest statement of the role which formal pragmatics plays in justifying his theory of communicative action can be found his writings on discourse ethics. See J. Habermas, 'Discourse Ethics: Notes on A Program of Philosophical Justification', in his Moral Consciousness and Communicative Action, pp. 42\u2013115 (esp. pp. 82\u201398). Here, the universalist character of his formal\u2010pragmatic hypotheses is evident, for example, when he states that 'the principle of universalization [\u2026] is implied by the presuppositions of argumentation in general' (p.86, my italics). To be sure, it is not clear how exactly this statement is to be understood. On occasion, he suggests that certain of the strong idealizations on which his theory depends are the result of socio\u2010cultural learning processes; these learning processes, which come about for historically contingent reasons, can be seen as developing the inherent logic of normative intuitions that are features of communication in all socio\u2010cultural contexts and historical epochs. However, this qualification merely increases his burden of proof, for he now has to show not only that the normative intuitions in question are a feature of communication in general but also that there is an inherent logic to their development along the reflexive and universalist lines he describes. In his writings of the 1970s and 1980s Habermas held the view that reconstructive theories of individual moral development of the kind proposed by Lawrence Kohlberg could help him in this regard, while acknowledging that the difficulties involved in developing any such theory on a socio\u2010cultural level were considerable (see J. Habermas, Communication and the Evolution of Society, trans. T. McCarthy (London: Heinemann, 1979) and Habermas, 'Moral Consciousness and Communicative Action'). Since then, however, he has made no attempt to develop the required theory of socio\u2010cultural learning and has, moreover, expressed reservations about a number of fundamental aspects of Kohlberg's theory (see J. Habermas, 'A Philosophico\u2010Political Profile', in his Autonomy and Solidarity, ed. Peter Dews (London: Verso, 1986), pp. 149\u201389, here, p. 168 and J. Habermas, 'Lawrence Kohlberg and Neo\u2010Aristotelianism', in his Justification and Application: Remarks on Discourse Ethics, trans. C. Cronin (Cambridge, MA: MIT Press, 1993), pp. 113\u201332). For these reasons, I leave aside this complication in the following. 30 Cooke, Language and Reason, esp. pp. 29\u201338. To be sure, this constitutes an objection to his theory only in the absence of a theory of socio\u2010cultural learning that would show the idealizations in question to be the logical necessary development of normative intuitions that are features of communicative practices in general (see n. 29 above). 31 Seyla Benhabib makes this point with regard to the idealizing suppositions guiding moral argumentation in her Situating the Self (New York: Routledge, 1992), pp. 29\u201332. Cf. Cooke, Language and Reason, pp. 31\u20134. 32 See Cooke, Language and Reason, esp. pp. 150\u201362. 33 See Habermas, Between Facts and Norms, p. 109. Here he explicitly endorses the formal\u2010pragmatic justification of the moral principle of universalizability that he conducted in his earlier work. 34 In his writings subsequent to The Theory of Communicative Action there is some evidence that Habermas is prepared to accept that formal pragmatics provides only limited support for his concept of communicative rationality. Although he continues to affirm the importance of formal pragmatics as a justificatory strategy, on occasion he seems willing to admit that, on its own, formal pragmatics, cannot justify the emancipatory perspective offered by his critical social theory. See, for example, J. Habermas, 'A Genealogical Analysis of the Cognitive Content of Morality', in his The Inclusion of the Other, ed. C. Cronin and P. de Greiff (Cambridge, MA: MIT Press, 2000), pp. 3\u201346, here, p. 45. Furthermore, I discern evidence of an implicit acknowledgment of the limited justificatory power of formal pragmatics in Habermas's recent metatheoretical writings, in particular in the 'weak' naturalist argument he outlines in his Wahrheit und Rechtfertigung (Frankfurt am Main: Suhrkamp, 1999), pp. 27\u201340. This argument aims to shed light on the question of how we can uphold a conception of objectivity notwithstanding the multiplicity and contingency of world\u2010generating grammars. In the course of the argument Habermas acknowledges his theory's reliance on the assumption that human beings unavoidably conceive of the progress of history as the possibility of learning. I regard this acknowledgment as a definite step in the right direction. See my discussion in M. Cooke, 'Socio\u2010Cultural Learning as a \"Transcendental\" Fact: Habermas's Postmetaphysical Perspective', International Journal of Philosophical Studies, 9 (1) (2001), pp. 63\u201383 and M. Cooke, 'Between \"Objectivism\" and \"Contextualism\": the Normative Foundations of Social Philosophy', Critical Horizons, 1 (2) (2000), pp. 193\u2013227. 35 See especially Habermas, Between Facts and Norms, Chs 7 and 8. 36 See my discussion in M. Cooke, 'The Weaknesses of Strong Intersubjectivism: Habermas's Conception of Justice', European Journal of Political Theory, 2 (3) (2003), pp. 298\u2013300. 37 J. Rawls, Political Liberalism (New York: Columbia University Press, 1993). It is noteworthy that Habermas criticizes (what I call) the radically contextualist aspect of Rawls's theory. See J. Habermas, 'Reconciliation through the Public Use of Reason: Remarks on John Rawls's Political Liberalism', Journal of Philosophy, 92 (3) (1995), pp. 109\u201331. Reprinted in Habermas, The Inclusion of the Other, pp. 49\u201373. 38 See nn 30 and 29 above. 39 Benhabib makes a similar point in her Situating the Self, p. 32. Indeed, the justificatory strategy I propose is similar to Benhabib's in a number of respects. The differences between our positions have to do with my proposed conceptualization of the idea of context\u2010transcending validity that is operative in argumentation. In M. Cooke, 'Habermas and Consensus', European Journal of Philosophy, 1 (3) (1993), pp. 247\u201367, I argue that this aspect of Benhabib's theory is underdeveloped. In Re\u2010Presenting the Good Society, Ch. 7, I make some concrete suggestions as to how it should be developed. 40 I develop it further in Cooke, Re\u2010Presenting the Good Society, Ch. 6. 41 I develop it further ibid., Chs 1 and 2. 42 I discuss his theory of truth in some detail in M. Cooke, 'Habermas on Meaning and Truth', European Journal of Philosophy, 9 (1) (2001), pp. 1\u201323, in Cooke, 'The Weaknesses of Strong Intersubjectivism' and in Cooke, Re\u2010Presenting the Good Society, Ch. 5. 43 Habermas, Postmetaphysical Thinking, p. 8. 44 Ibid., p. 139. 45 It has been criticized, for example, for its restriction of moral discourse to discussion from the standpoint of the 'generalized other', neglecting the standpoint of the 'concrete other' (in Benhabib, Situating the Self, pp. 340\u20132); for its proposal that the idea of an agreement reached in an idealized process of moral discourse can be used as a standard for testing the validity of actual moral norms and principles (in A. Wellmer, 'Ethics and Dialogue', in his The Persistence of Modernity, trans. D. Midgley (Cambridge, MA, MIT Press, 1991), pp. 113\u2013231 and in C. Lafont, 'Realismus und Konstruktivismus in der kantianischen Moralphilosophie \u2013 das Beispiel der Diskursethik', Deutsche Zeitschrift f\u00fcr Philosophie, 50 (1) (2002), pp. 39\u201352); and for making moral insight dependent on the exchange of arguments in moral discourse (in Cooke, 'The Weaknesses of Strong Intersubjectivism', pp. 294\u20138). 46 Cooke, Re\u2010Presenting the Good Society, esp. Chs 5, 6 and 7. 47 See J. Habermas, 'Richtigkeit versus Wahrheit', in his Wahrheit und Rechtfertigung, pp. 271\u2013317, esp. 296\u2013301. 48 See Habermas, 'Richtigkeit versus Wahrheit'. 49 J. Habermas, 'Einf\u00fchrung: Realismus nach der pragmatischen Wende', in his Wahrheit und Rechtfertigung, pp. 7\u201364, here, pp. 56\u201357; see also 'Richtigkeit versus Wahrheit', esp. pp. 293\u20135. The German word normally used by Habermas is unverf\u00fcgbar. 50 The main elements of Habermas's revised theory of truth are set out in his 'Richtigkeit versus Wahrheit' and in his 'Richard Rorty's Pragmatic Turn'. 51 Judith Butler gives examples of ways in which the concept of universality has been vigorously contested, resulting in creative new articulations and restagings of it (see Butler, 'Restaging the Universal'). Similarly, the concept of autonomy has been the subject of vigorous contestation and rearticulation. Even the concept of contestability can be the object of socio\u2010cultural learning: Albrecht Wellmer, for example, suggests that the question of which 'truths' can be contested is itself a contested matter, suggesting the need to reconsider the concept of contestability itself (see A. Wellmer, Sprachphilosophie (Frankfurt am Main: Suhrkamp, 2004), pp. 250\u201377). 52 See Cooke, 'The Weaknesses of Strong Intersubjectivism', and Cooke, Re\u2010Presenting the Good Society, esp. Ch. 7. 53 K. Marx, 'Theses on Feuerbach', in D. McLellan (ed.) Karl Marx: Selected Writings (Oxford: Oxford University Press, 1977), pp. 156\u20138. 54 However, in Cooke, Re\u2010Presenting the Good Society, Ch. 8, I argue that a non\u2010authoritarian conception of theory calls on critical social theory to rearticulate the traditional Marxian notion of praxis. 55 In Cooke, Re\u2010Presenting the Good Society, Ch. 8, I suggest that contemporary critical social theories are well advised to give up the aspiration of providing a 'grand explanation' of what is wrong with the existing social order and to concentrate, instead, on analysing how the impediments to human flourishing are reproduced and disseminated.",
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0967-2559",
+          "1466-4542"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Political Economy and Marxism"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2058479894"
+    },
+    {
+      "openalex_id": "W2122387224",
+      "doi": "10.1111/j.1467-6486.2010.00950.x",
+      "title": "The New Political Role of Business in a Globalized World: A Review of a New Perspective on CSR and its Implications for the Firm, Governance, and Democracy",
+      "authors": [
+        {
+          "name": "Andreas Georg Scherer",
+          "openalex_id": "A5012262713",
+          "orcid": "https://orcid.org/0000-0002-8671-1721",
+          "institutions": [
+            "University of Zurich"
+          ]
+        },
+        {
+          "name": "Guido Palazzo",
+          "openalex_id": "A5112390691",
+          "institutions": [
+            "University of Lausanne"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-01",
+      "abstract": "abstract Scholars in management and economics widely share the assumption that business firms focus on profits only, while it is the task of the state system to provide public goods. In this view business firms are conceived of as economic actors, and governments and their state agencies are considered the only political actors. We suggest that, under the conditions of globalization, the strict division of labour between private business and nation\u2010state governance does not hold any more. Many business firms have started to assume social and political responsibilities that go beyond legal requirements and fill the regulatory vacuum in global governance. Our review of the literature shows that there are a growing number of publications from various disciplines that propose a politicized concept of corporate social responsibility. We consider the implications of this new perspective for theorizing about the business firm, governance, and democracy.",
+      "cited_by_count": 2015,
+      "type": "review",
+      "source": {
+        "name": "Journal of Management Studies",
+        "type": "journal",
+        "issn": [
+          "0022-2380",
+          "1467-6486"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/j.1467-6486.2010.00950.x"
+      },
+      "topics": [
+        "Corporate Social Responsibility Reporting",
+        "Corporate Law and Human Rights",
+        "Global trade, sustainability, and social impact"
+      ],
+      "referenced_works_count": 324,
+      "url": "https://openalex.org/W2122387224"
+    },
+    {
+      "openalex_id": "W573163770",
+      "doi": "10.4324/9781315614939",
+      "title": "The Concept of Law from a Transnational Perspective",
+      "authors": [
+        {
+          "name": "Detlef von Daniels",
+          "openalex_id": "A5087897971"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-23",
+      "abstract": "Contents: Preface Introduction Part I Habermas's Understanding of Law: Law in the theory of communicative action Law in between facts and norms Law in the postnational constellation. Part II Hart's Concept of Law Reconsidered: Situating the debate between Habermas and Hart Primary rules of obligation Establishing institutions The variety of legal systems Relations between legal systems. Part III Law in a Transnational Perspective: The quest for normative foundations Conceiving general jurisprudence Bibliography Index.",
+      "cited_by_count": 22,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Conflict of Laws and Jurisdiction",
+        "European and International Contract Law",
+        "Comparative and International Law Studies"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W573163770"
+    },
+    {
+      "openalex_id": "W2027360481",
+      "doi": "10.1080/09672550500169232",
+      "title": "A Substantivist Construal of Discourse Ethics",
+      "authors": [
+        {
+          "name": "Pablo Gilabert",
+          "openalex_id": "A5005751449",
+          "orcid": "https://orcid.org/0000-0002-0183-8716",
+          "institutions": [
+            "Concordia University"
+          ]
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-09-01",
+      "abstract": "Abstract Abstract This paper presents a substantivist construal of discourse ethics, which claims that we should see our engagement in public deliberation as expressing and elaborating a substantive commitment to basic moral ideas of solidarity, equality, and freedom. This view is different from Habermas\u2019s standard formalist defence of discourse ethics, which attempts to derive the principle of discursive moral justification from primarily non\u2010moral presuppositions of rational argumentation as such. After explicating the difference between the substantivist and the formalist construal, I defend the former by showing that it is not only intuitively compelling, but also particularly well equipped for addressing four important objections recently levelled against discourse ethics and its political applications (Rawls\u2019s concern that it lacks substantive guidelines, Gunnarsson\u2019s challenge that it has not been proven to be superior to alternative moral conceptions such as utilitarianism, Scanlon\u2019s complaint that it lacks an account of moral motivation, and Galston\u2019s and Young\u2019s worries that it could lead to political practices of cultural imposition). I conclude by pointing out some consequences of the previous discussion for the future of Critical Theory. Keywords: discourse ethicsdeliberative democracyHabermasRawlssubstanceprocedure Notes I thank Arash Abizadeh, Jeffrey Flynn, Matthias Fritsch, John Kerkhoven, and referees for IJPS for comments and suggestions on earlier drafts of this paper. Research for this paper was supported by grants from the Social Sciences and Humanities Research Council of Canada and the Fonds Qu\u00e9becois de la Recherche sur la Soci\u00e9t\u00e9 et la Culture. 1 See Habermas, 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: pp. 86, 92\u20133, and 96\u20137; 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: pp. 43\u20135. My reconstruction is slightly different from the formulation in Habermas (1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: p. 96), which goes as follows: \u2018(1) A definition of a universalization principle that functions as a rule of argumentation. (2) The identification of pragmatic presuppositions of argumentation that are inescapable and have a normative content. (3) The explicit statement of the normative content (e.g. in the form of discourse rules). (4) Proof that a relation of material implication holds between steps (3) and (1) in connection with the idea of justification of norms\u2019. Steps 2 and 3 in this formulation are put together in step 2 in my formulation. The assumption about the \u2018idea of justification of norms\u2019 which Habermas mentions as an auxiliary hypothesis in step 4 is mentioned in my reconstruction as step 3. These changes do not affect the content of Habermas\u2019s proof, and make more explicit the importance of the assumption of a certain view of the justification of norms. 2 (U) \u2018operationalizes\u2019, at the level of moral argumentation, what Habermas calls the general principle of discourse ethics (or of the discourse theory of morality) (D), according to which \u2018Only those norms can claim to be valid that meet (or could meet) with the approval of all affected in their capacity as participants in a practical discourse\u2019 (Habermas, 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: pp. 66, 93; see also 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 41). The term \u2018operationalization\u2019 appears in Habermas (1998a \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]: p. 42; 1996 \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]: p. 109; 2003a \u2014\u2014. 2003a. \u201c\u2018Rightness versus Truth: On the Sense of Normative Validity in Moral Judgments and Norms\u2019\u201d. In Truth and Justification, Edited by: Habermas. 237\u201375. Cambridge, Mass: The MIT Press. trans. B. Fultner [Google Scholar]: p. 268). (U) operationalizes (D) in the domain of moral discourses, whereas a different principle of democratic legitimacy would operationalize (D) in the domain of political discourse. 3 Habermas (1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 42). Habermas uses \u2018interests\u2019 in a wide sense, allowing for moral discourse to range over all kinds of reasons for action, including desires, needs, and conceptions of the good life. For an excellent discussion of Habermas\u2019s demand that norms protect \u2018common\u2019, \u2018general\u2019, or \u2018universalizable\u2019 interests, see Lafont (2004 Lafont, C. 2004. \u2018Moral Objectivity and Reasonable Agreement: Can Realism Be Reconciled with Kantian Constructivism?\u2019. Ratio Juris, 17(1): 27\u201351. [Crossref] , [Google Scholar]). For an important challenge to Habermas\u2019s stark contrast between the \u2018good\u2019 and the \u2018right\u2019, see McCarthy (1991 McCarthy, T. 1991. Ideals and Illusions, Cambridge, Mass: The MIT Press. [Google Scholar]: Ch. 7). 4 For a detailed discussion of Habermas\u2019s re\u2010elaboration of Kant\u2019s moral theory, see Gilabert (2005c \u2014\u2014. 2005c. \u2018Considerations on the Notion of \u201cMoral Validity\u201d in the Moral Theories of Kant and Habermas\u2019. Kant\u2010Studien, (forthcoming) [Google Scholar]). 5 At this stage Habermas is not yet considering practical discourses (i.e. argumentative communication assessing moral validity claims), but discourses as such (i.e. any argumentative communication assessing universal validity claims \u2013 claims viewed as meriting rational acceptance by every rational person on thebasis of shared reasons). The reference to practical discourses emerges in the third step of the argument. The normative presuppositions reconstructed in the second step are not normative in the moral sense: \u2018the equal distribution of communicative freedoms and the requirement of truthfulness in discourse have the status of argumentative duties and rights, not of moral duties and rights\u2019 (Habermas, 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: pp. 44\u20135; see also 1993 \u2014\u2014. 1993. \u201c\u2018Remarks on Discourse Ethics\u2019\u201d. In Justification and Application, Edited by: Habermas. 19\u2013111. Cambridge, Mass: The MIT Press. trans. C. Cronin [Google Scholar]: p. 31; 1996 \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]: p. 4; 2003b \u2014\u2014. 2003b. \u201c\u2018From Kant\u2019s \u201cIdeas\u201d of Pure Reason to \u201cIdealizing\u201d Presuppositions of Communicative Action: Reflections on the Detranscendentalized \u201cUse of Reason\u201d \u2019\u201d. In Truth and Justification Edited by: Habermas. 83\u2013130. [Google Scholar]: pp. 105\u20136). 6 For detailed and critically illuminating reconstructions of this argument see Finlayson (2000 Finlayson, J. G. 2000. \u2018Modernity and Morality in Habermas\u2019s Discourse Ethics\u2019. Inquiry, 43: 319\u201340. [Taylor & Francis Online], [Web of Science \u00ae] , [Google Scholar]); Gunnarsson (2000 Gunnarsson, L. 2000. Making Moral Sense: Beyond Habermas and Gauthier, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]: Chs 8\u20139); and Rehg (1994 Rehg, W. 1994. Insight and Solidarity, Berkeley: The University of California Press. [Crossref] , [Google Scholar]: Ch. 3). 7 I rely here on Gunnarsson (2000 Gunnarsson, L. 2000. Making Moral Sense: Beyond Habermas and Gauthier, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]). Despite using Gunnarsson\u2019s distinction between formalist and substantivist approaches, I depart from his view of the latter in two ways. First, I endorse Habermas\u2019s distinction between the ethical and the moral (i.e. between recommendations about how to live a good life and prescriptions about how we ought to treat each other). (It is due to this distinction that in his later works Habermas names his approach \u2018a discourse theory of morality\u2019 rather than \u2018discourse ethics\u2019.) My substantivism is moral, not ethical. Ideals of the good life are allowed as inputs of moral reasoning (see n. 3 above), but not as grounds for shaping and justifying its structure. Second, though I agree with Gunnarsson\u2019s general claim that a substantivist approach to moral thinking is desirable, I develop a substantivist account of discourse ethics itself. This is something that Gunnarsson himself does not do, though there is nothing in his text entailing that it could not or should not be done. 8 I assume here a minimal definition of solidarity as people\u2019s willingness to \u2018give each other\u2019s interests some non\u2010instrumental weight in their practical reasoning\u2019 (Mason, 2000 Mason, A. 2000. Community, Solidarity and Belonging, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]: p. 27). 9 The formal structure of the arguments can be presented in the following way. Take \u2018p\u2019 to mean \u2018I endorse the discursive procedure of universalization\u2019; \u2018q\u2019 to mean \u2018I endorse the substantive ideas\u2019; and \u2018\u00ac\u2019 \u2018&\u2019, and \u2018\u2192\u2019 to mean, respectively, the logical operators of negation, conjunction, and the conditional. Now, the Normative Point Argument would yield \u2018\u00acq \u2192 \u00acp\u2019, from which \u2018p \u2192 q\u2019 follows. The Outrage Argument, on the other hand, would yield \u2018\u00ac (\u00acp & q)\u2019, from which \u2018q \u2192 p\u2019 follows. From the conjunction of the conclusions of the two arguments it follows, in turn, \u2018p \u2194 q\u2019, i.e. the general claim that the discursive procedure of universalization and the substantive ideas involve each other. This is not a knock\u2010out transcendental argument, but a reconstructive or maieutic one appealing to our deepest moral convictions. The productivity of this approach will become evident in section III when we consider its help in defending discourse ethics against some recent criticisms. 10 For an attempt to provide an external justification of a discursive principle of justification, see Larmore (1999 Larmore, C. 1999. \u2018The Moral Basis of Political Liberalism\u2019. Journal of Philosophy, 96(12): 599\u2013625. [Crossref], [Web of Science \u00ae] , [Google Scholar]). 11 A more detailed account of the notions of expression and elaboration of the three substantive ideas (including a more detailed elucidation of the ideas themselves) is given in Gilabert (2005a \u2014\u2014. 2005a. \u2018The Substantive Dimension of Deliberative Practical Rationality\u2019. Philosophy and Social Criticism, 31(2): 185\u2013210. [Google Scholar]). 12 Unfortunately, Habermas does not explicitly distinguish between these two strands. This failure makes the understanding and discussion of his views unnecessarily difficult. 13 \u2018All contents, no matter how fundamental the action norm involved may be, must be made to depend on real discourses\u2019 (Habermas, 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: p. 94; see also 1990b \u2014\u2014. 1990b. \u201c\u2018Moral Consciousness and Communicative Action\u2019\u201d. In Moral Consciousness and Communicative Action Edited by: Habermas. 116\u201394. [Google Scholar]: p. 122). This assertion seems to entail that even the most basic substantive ideas that one may claim underlie the motivation to join moral discussion with others in the first place are themselves in need of discursive justification. I return to the issue of substantive guidelines in section III.1 below. 14 According to this interpretation, Habermas\u2019s formalist approach is not focused on the question of what makes the duty to enter moral dialogue a moral besides a general rational requirement. His approach would then be different from Apel\u2019s (1980 Apel, K. O. 1980. \u201c\u2018The A Priori of the Communication Community and the Foundations of Ethics: The Problem of a Rational Foundation in the Scientific Age\u2019, in Apel\u201d. In Towards a Transformation of Philosophy, 225\u2013300. London: Routledge & Kegan Paul. trans. G. Adey and D. Frisby [Google Scholar]: sec. 2.3.4), seeing the duty to enter into public deliberation as emerging from extra\u2010moral requirements of coordination of actions in the lifeworld, rather than as having a straightforwardly moral dimension. 15 For examples of the three concerns see Habermas (1990b \u2014\u2014. 1990b. \u201c\u2018Moral Consciousness and Communicative Action\u2019\u201d. In Moral Consciousness and Communicative Action Edited by: Habermas. 116\u201394. [Google Scholar]: pp. 120\u20131 and 1993 \u2014\u2014. 1993. \u201c\u2018Remarks on Discourse Ethics\u2019\u201d. In Justification and Application, Edited by: Habermas. 19\u2013111. Cambridge, Mass: The MIT Press. trans. C. Cronin [Google Scholar]: p. 76; 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 41; 1990a \u2014\u2014. 1990a. \u201c\u2018Discourse Ethics: Notes on a Program of Philosophical Justification\u2019\u201d. In Moral Consciousness and Communicative Action, Edited by: Habermas. 43\u2013115. Cambridge, Mass: The MIT Press. trans. C. Lenhardt and S. Weber Nicholsen [Google Scholar]: p. 94). 16 This complaint is echoed in Benhabib (1992 Benhabib, S. 1992. Situating the Self, New York: Routledge. [Google Scholar]: Ch. 1) and in Cohen (1999 Cohen, J. 1999. \u2018Reflections on Habermas on Democracy\u2019. Ratio Juris, 12(4): 385\u2013416. [Crossref] , [Google Scholar]: pp. 395). 17 Actually, Habermas recently recognized that \u2018the participants [in moral discourse] themselves will perhaps be satisfied with this (or a similar) rule of argumentation [the principle of universalization (U)] as long as it proves useful and does not lead to counterintuitive results\u2019 (Habermas, 1998a \u2014\u2014. 1998a. \u201c\u2018A Genealogical Analysis of the Cognitive Content of Morality\u2019, in J. Habermas\u201d. In The Inclusion of the Other, Edited by: Cronin, C. and De Greiff, P. 3\u201346. Cambridge, Mass: The MIT Press. [Google Scholar]: p. 43). The substantivist account helps explain why this otherwise unsystematic remark is quite important. 18 Premises (a) and (b) correspond to steps 2 and 3 in my reconstruction of the formalist argument for discourse ethics. It is important to note that Gunnarsson is not criticizing (U) itself, but only its formalist derivation (Gunnarsson, 2000 Gunnarsson, L. 2000. Making Moral Sense: Beyond Habermas and Gauthier, Cambridge: Cambridge University Press. [Crossref] , [Google Scholar]: p. 97). His argument is also not a defence of utilitarianism, but a thought experiment challenging the claim that (U), instead of other fundamental moral theories (like utilitarianism), would necessarily follow from premises (a) and (b). The upshot is that the only way to justify (U) is by appealing to further, substantive premises other than (a) and (b), or by advancing \u2018thicker\u2019 substantive interpretations of either of them (e.g. a more specious notion of impartiality than the one presented in (b)). 19 Gunnarsson has the discoursing utilitarian saying: \u2018I am trying to be impartial. And I have reached the conclusion that the only way to be impartial is to let the decision rest on what produces more happiness, not on what we would agree to in discourse\u2019 (p. 113). 20 On the distinction between aggregative and distributive conceptions of equal treatment see Kagan (1998 Kagan, S. 1998. Normative Ethics, Boulder, Colo: Westview Press. [Google Scholar]: sec. 2.4). \u2018Disrespectful preferences\u2019 are those whose satisfaction involves a lack of recognition of other people\u2019s status as free and equal. For a critique of an account of preference satisfaction that includes such kinds of preferences see Dworkin (2000 Dworkin, R. 2000. Sovereign Virtue, Cambridge, Mass: Harvard University Press. [Google Scholar]: Ch. 2). Utilitarians can, however, avoid this criticism by adopting a definition of \u2018utility\u2019 in terms of objective \u2018goods\u2019 rather than \u2018preferences\u2019. The problem of aggregation would, however, remain. 21 I agree with Barry\u2019s remark that \u2018the whole idea that we should seek the agreement of everybody rests upon a fundamental commitment to the equality of all human beings. \u2026 The criterion of reasonable acceptability of principles gives some substance to the idea of fundamental equality while at the same time flowing from it\u2019 (Barry, 1995 Barry, B. 1995. Justice as Impartiality, Oxford: Oxford University Press. [Google Scholar]: p. 8). Barry applies this remark to Scanlonian contractualism, but it also fits discourse ethics perfectly well. 22 Habermas (1998a: p. 41). See n. 26 below. Habermas does mention, however, that participation in moral discourse has a \u2018motivating aspect\u2019 in connection with participants\u2019 \u2018freedom\u2019 and \u2018autonomy\u2019 (Habermas, 2003a \u2014\u2014. 2003a. \u201c\u2018Rightness versus Truth: On the Sense of Normative Validity in Moral Judgments and Norms\u2019\u201d. In Truth and Justification, Edited by: Habermas. 237\u201375. Cambridge, Mass: The MIT Press. trans. B. Fultner [Google Scholar]: p. 270). 23 I follow here the account of the problem of moral motivation given in Scanlon (1998 Scanlon, T. M. 1998. What We Owe to Each Other, Cambridge, Mass: Harvard University Press. [Google Scholar]: secs. 4.1\u20132). Like Scanlon, I think that what we need is not to ground morality on something external to it, but to clarify the moral significance (the importance and priority) of behaving morally by depicting more fully what kind of treatment of others it involves. I do not, however, follow Scanlon\u2019s proposal that we account for moral motivation by appealing to an \u2018ideal of justifiability to others\u2019 (p. 156). I take the force of that ideal to be itself in need of clarification, and argue that a reference to the project of justice (PJ), given the fact of disagreement (FD), provides the elucidation that we need. I agree with Kumar\u2019s (2003 Kumar, R. 2003. \u2018Reasonable Reasons in Contractualist Moral Argument\u2019. Ethics, 114(1): 6\u201337. [Crossref], [Web of Science \u00ae] , [Google Scholar]: p. 33) suggestion that Scanlon\u2019s contractualism is actually \u2018animated\u2019 by a substantive \u2018normative commitment\u2019 to the idea of \u2018individuals being able to live rationally self\u2010governed meaningful lives on terms of mutual respect for one another\u2019s value as persons\u2019. 24 So the way in which we should defend discourse ethics is by depicting (or elucidating) its own moral force as a \u2018normative package\u2019 including the ideas and the procedures working in tandem. If this package is the basis of morality, then we could not appeal to something else to justify it morally. At this point the spade should be turned. If Kant appeals to the \u2018fact of pure reason\u2019, and Habermas appeals to the \u2018fact of communicative rationality\u2019, we appeal to the fact of the normative package comprising the three substantive ideas and the discursive procedure under conditions of moral disagreement. If the sceptic really thinks that this package has no appeal, then we would not be able to convince her with moral arguments, but would have to turn to other forms of persuasion (based, for example, on prudential and strategic, or even existential, considerations). But then we would be answering a different question than the one with which we started, and our answer would not avoid the horns of Prichard\u2019s Dilemma. 25 A sense of justice includes moral ideal conceptions of persons and social life that constitute high\u2010order desires having motivational power alongside more specific, principle\u2010 and object\u2010dependent desires. See Rawls (1996 Rawls, J. 1996. Political Liberalism, , rev. edn, New York: Columbia University Press. [Google Scholar]: sec. II.7; 2000 \u2014\u2014. 2000. Lectures on the History of Moral Philosophy, Cambridge, Mass: Harvard University Press. [Google Scholar]: pp. 45\u20138, 148\u201352). 26 We should distinguish the political charge of cultural imposition from the sociological charge that a universalist defender of discourse ethics mistakenly assumes that all agents in all historical and social contexts already have a full and explicit commitment to a discursive procedure of normative justification. Habermas has a powerful answer to the latter, showing that procedural commitments to argumentative communication develop historically in ontogenetic and phylogenetic learning processes (Habermas, 1987 Habermas, J. 1987. The Theory of Communicative Action, 2 vols, Boston, Mass: Beacon Press. trans. T. McCarthy [Google Scholar]: secs. I.3 and and 1990b \u2014\u2014. 1990b. \u201c\u2018Moral Consciousness and Communicative Action\u2019\u201d. In Moral Consciousness and Communicative Action Edited by: Habermas. 116\u201394. [Google see also Finlayson 2000 Finlayson, J. G. 2000. \u2018Modernity and Morality in Habermas\u2019s Discourse Ethics\u2019. Inquiry, 43: 319\u201340. [Taylor & Francis Online], [Web of Science \u00ae] , [Google and J. Communicative Action and Rational Cambridge, Mass: The MIT Press. [Crossref] , [Google Scholar]: Ch. 8). Habermas that the of substantive moral commitments to a universalist goes in with the of procedural commitments to argumentation as such (Habermas, 2003a \u2014\u2014. 2003a. \u201c\u2018Rightness versus Truth: On the Sense of Normative Validity in Moral Judgments and Norms\u2019\u201d. In Truth and Justification, Edited by: Habermas. 237\u201375. Cambridge, Mass: The MIT Press. trans. B. Fultner [Google Scholar]: sec. the substantivist construal has no with Habermas\u2019s social theory of but can be as as a of Communicative coordination the of the force of in the of at the same time that it the of discursive argumentation the whole of validity The distinction between a \u2018discourse theory of and a \u2018discourse theory of morality\u2019 is in Habermas (1996 \u2014\u2014. 1996. Between Facts and Norms, Cambridge, Mass: The MIT Press. trans. W. Rehg [Google Scholar]). Habermas that political should not only discourses\u2019 focused on but also focused on conceptions of the good as well as forms of We can these important discourse ethics and see J. Communicative Action and Rational Cambridge, Mass: The MIT Press. [Crossref] , [Google and Gilabert \u2014\u2014. Discourse a of Philosophical [Google What however, important is that we are in the political moral discourses are to the of and this the of addressing the charge of cultural See the distinction between and in Benhabib (1992 Benhabib, S. 1992. Situating the Self, New York: Routledge. [Google Scholar]). This is not an of in their to be more involved in than impartial communicative put it in his and Critical M. and Critical In Critical Edited by: New York: & [Google at \u2018the rational of \u2018a rationally future (p. The substantive of this notion of is evident in reference to \u2018the idea of a reasonable of that will meet the of the whole (p. of free in which each has the same of (p. For a useful account of the between and justice in the of Critical see (1996 R. 1996. and of Critical In of Critical Edited by: D. Oxford: [Google Scholar]). Critical Theory from other that also endorse this idea of a rational in a of ways. them are a approach of our rather than of some of their and the demand that the be as well as morally The latter with the of Critical Theory as of comprising the social besides I thank for to clarify this",
+      "cited_by_count": 25,
+      "type": "article",
+      "source": {
+        "name": "International Journal of Philosophical Studies",
+        "type": "journal",
+        "issn": [
+          "0967-2559",
+          "1466-4542"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W2027360481"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

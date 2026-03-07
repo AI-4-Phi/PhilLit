@@ -1,0 +1,39 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Communication and the Other: Beyond Deliberative D...' author=Young year=1996
+[verify_paper.py] Paper found: Communication and the other: Beyond Deliberative D... (score: 50.4)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Communication and the Other: Beyond Deliberative Democracy",
+    "author": "Young",
+    "year": 1996
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.7810/9780908912605_9",
+      "title": "Communication and the other: Beyond Deliberative Democracy",
+      "authors": [
+        {
+          "family": "Young",
+          "given": "Iris"
+        }
+      ],
+      "editors": [],
+      "year": 1995,
+      "container_title": "Justice and Identity: Antipodean Practices",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Bridget Williams Books",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.7810/9780908912605_9",
+      "score": 50.39182
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

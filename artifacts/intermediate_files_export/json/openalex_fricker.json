@@ -1,0 +1,1250 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Fricker epistemic injustice deliberative",
+  "results": [
+    {
+      "openalex_id": "W4229373738",
+      "doi": "10.1007/s11024-022-09467-8",
+      "title": "Citizen Science in Deliberative Systems: Participation, Epistemic Injustice, and Civic Empowerment",
+      "authors": [
+        {
+          "name": "Lisa Herzog",
+          "openalex_id": "A5054177371",
+          "orcid": "https://orcid.org/0000-0001-9348-1154",
+          "institutions": [
+            "University of Groningen"
+          ]
+        },
+        {
+          "name": "Robert Lepenies",
+          "openalex_id": "A5029106423",
+          "orcid": "https://orcid.org/0000-0002-4454-5921",
+          "institutions": [
+            "Karlshochschule International University"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-05-09",
+      "abstract": "In this paper, we bring together the literature on citizen science and on deliberative democracy and epistemic injustice. We argue that citizen science can be seen as one element of \"deliberative systems,\" as described by Mansbridge et al. But in order to fulfil its democratic potential, citizen science needs to be attentive to various forms of exclusion and epistemic injustice, as analyzed by Fricker, Medina and others. Moreover, to tap the potentials of citizen science from the perspective of deliberative democracy, it needs to move towards a more empowered approach, in which citizens do not only deliver data points, but also, in invited or uninvited settings, participate in discussions about the goals and implications of research. Integrating citizen science into the deliberative systems approach embeds it in a broader framework of democratic theory and suggests the transmission of certain practical strategies (e.g., randomized sampling). It can also contribute to realism about both the potentials and the limits of citizen science. As part of a deliberative system, citizen science cannot, and need not, be the only place in which reforms are necessary for creating stronger ties between science and society and for aligning science with democratic values.",
+      "cited_by_count": 45,
+      "type": "article",
+      "source": {
+        "name": "Minerva",
+        "type": "journal",
+        "issn": [
+          "0026-4695",
+          "1573-1871"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11024-022-09467-8.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Species Distribution and Climate Change",
+        "Mobile Crowdsensing and Crowdsourcing"
+      ],
+      "referenced_works_count": 81,
+      "url": "https://openalex.org/W4229373738"
+    },
+    {
+      "openalex_id": "W4200361519",
+      "doi": "10.1080/13698230.2021.2020550",
+      "title": "Capable deliberators: towards inclusion of minority minds in discourse practices",
+      "authors": [
+        {
+          "name": "Thomas Schramme",
+          "openalex_id": "A5033671888",
+          "orcid": "https://orcid.org/0000-0001-6319-6635",
+          "institutions": [
+            "University of Liverpool"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-12-27",
+      "abstract": "It is widely assumed that severe mental disabilities prevent relevant deliberative capacities from developing or persisting. Accordingly, excluding many people with mental disabilities from discourse practices seems justified. Against this common assumption I wish to show that the general exclusion is not justified and amounts to a form of epistemic injustice, as theorised by Miranda Fricker. The received norm of capable deliberators is connected to a specific model of deliberation. I introduce an alternative model of deliberation, which I dub the joint effort model. According to this model, people with minority minds (as I call them) add valuable cognitive diversity to the process of deliberation, which is a relevant element of epistemic improvement. In this part of the argument I rely on empirically informed theoretical work by H\u00e9l\u00e8ne Landemore. I scrutinise the minimal requirements of capable deliberators from the perspective of a joint effort model of deliberation, and I highlight specific beneficial contributions people with minority minds can make to discourse practices. I will argue that people with minority minds can be presumptively deemed capable deliberators and that therefore their general exclusion is unjustified.",
+      "cited_by_count": 8,
+      "type": "article",
+      "source": {
+        "name": "Critical Review of International Social and Political Philosophy",
+        "type": "journal",
+        "issn": [
+          "1369-8230",
+          "1743-8772"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1080/13698230.2021.2020550"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Political Philosophy and Ethics",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4200361519"
+    },
+    {
+      "openalex_id": "W2560478717",
+      "doi": "10.1136/medethics-2016-103691",
+      "title": "Epistemic injustice in healthcare encounters: evidence from chronic fatigue syndrome",
+      "authors": [
+        {
+          "name": "Charlotte Blease",
+          "openalex_id": "A5046065519",
+          "orcid": "https://orcid.org/0000-0002-0205-1165",
+          "institutions": [
+            "Harvard University",
+            "University College Dublin"
+          ]
+        },
+        {
+          "name": "Havi Carel",
+          "openalex_id": "A5062294875",
+          "orcid": "https://orcid.org/0000-0002-1260-2362",
+          "institutions": [
+            "University of Bristol"
+          ]
+        },
+        {
+          "name": "Keith Geraghty",
+          "openalex_id": "A5067232191",
+          "orcid": "https://orcid.org/0000-0001-5060-5022",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-05",
+      "abstract": "Chronic fatigue syndrome or myalgic encephalomyelitis (CFS/ME) remains a controversial illness category. This paper surveys the state of knowledge and attitudes about this illness and proposes that epistemic concerns about the testimonial credibility of patients can be articulated using Miranda Fricker's concept of epistemic injustice. While there is consensus within mainstream medical guidelines that there is no known cause of CFS/ME, there is continued debate about how best to conceive of CFS/ME, including disagreement about how to interpret clinical studies of treatments. Against this background, robust qualitative and quantitative research from a range of countries has found that many doctors (and medical students) display uncertainty about whether CFS/ME is real, which may result in delays in diagnosis and treatment for patients. Strikingly, qualitative research evinces that patients with CFS/ME often experience suspicion by healthcare professionals, and many patients vocally oppose the effectiveness, and the conceptualisation, of their illness as psychologically treatable. We address the intersection of these issues and healthcare ethics, and claim that this state of affairs can be explained as a case of epistemic injustice (2007). We find evidence that healthcare consultations are fora where patients with CFS/ME may be particularly vulnerable to epistemic injustice. We argue that the (often unintentional) marginalisation of many patients is a professional failure that may lead to further ethical and practical consequences both for progressive research into CFS/ME, and for ethical care and delivery of current treatments among individuals suffering from this debilitating illness.",
+      "cited_by_count": 247,
+      "type": "article",
+      "source": {
+        "name": "Journal of Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "0306-6800",
+          "1473-4257"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://jme.bmj.com/content/medethics/43/8/549.full.pdf"
+      },
+      "topics": [
+        "Fibromyalgia and Chronic Fatigue Syndrome Research",
+        "Health Systems, Economic Evaluations, Quality of Life",
+        "Optimism, Hope, and Well-being"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2560478717"
+    },
+    {
+      "openalex_id": "W2810850036",
+      "doi": "10.1136/medhum-2017-011398",
+      "title": "The Participatory Zeitgeist: an explanatory theoretical model of change in an era of coproduction and codesign in healthcare improvement",
+      "authors": [
+        {
+          "name": "Victoria Palmer",
+          "openalex_id": "A5042647449",
+          "orcid": "https://orcid.org/0000-0001-7212-932X",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Wayne Weavell",
+          "openalex_id": "A5070682347",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Rosemary Callander",
+          "openalex_id": "A5041550656",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Donella Piper",
+          "openalex_id": "A5010852534",
+          "orcid": "https://orcid.org/0000-0002-5802-6380",
+          "institutions": [
+            "University of New England"
+          ]
+        },
+        {
+          "name": "Lauralie Richard",
+          "openalex_id": "A5027683545",
+          "orcid": "https://orcid.org/0000-0002-2497-3857",
+          "institutions": [
+            "University of Melbourne",
+            "University of Otago"
+          ]
+        },
+        {
+          "name": "Lynne Maher",
+          "openalex_id": "A5103702854",
+          "institutions": [
+            "Counties Manukau District Health Board",
+            "University of Auckland"
+          ]
+        },
+        {
+          "name": "Hilary Boyd",
+          "openalex_id": "A5112158949",
+          "orcid": "https://orcid.org/0009-0007-5808-6862",
+          "institutions": [
+            "Auckland District Health Board"
+          ]
+        },
+        {
+          "name": "Helen Herrman",
+          "openalex_id": "A5001367640",
+          "orcid": "https://orcid.org/0000-0003-3064-1813",
+          "institutions": [
+            "Orygen Youth Health",
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "John Furler",
+          "openalex_id": "A5034991878",
+          "orcid": "https://orcid.org/0000-0003-0339-5848",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Jane Gunn",
+          "openalex_id": "A5025969837",
+          "orcid": "https://orcid.org/0000-0001-8836-7525",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        },
+        {
+          "name": "Rick Iedema",
+          "openalex_id": "A5115599254",
+          "orcid": "https://orcid.org/0000-0001-9028-5780",
+          "institutions": [
+            "King's College London"
+          ]
+        },
+        {
+          "name": "Glenn Robert",
+          "openalex_id": "A5105024363",
+          "orcid": "https://orcid.org/0000-0001-8781-6675",
+          "institutions": [
+            "Florence Nightingale Foundation",
+            "King's College London"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-06-28",
+      "abstract": "Healthcare systems redesign and service improvement approaches are adopting participatory tools, techniques and mindsets. Participatory methods increasingly used in healthcare improvement coalesce around the concept of coproduction, and related practices of cocreation, codesign and coinnovation. These participatory methods have become the new Zeitgeist\u2014the spirit of our times in quality improvement. The rationale for this new spirit of participation relates to voice and engagement (those with lived experience should be engaged in processes of development, redesign and improvements), empowerment (engagement in codesign and coproduction has positive individual and societal benefits) and advancement (quality of life and other health outcomes and experiences of services for everyone involved should improve as a result). This paper introduces Mental Health Experience Co-design (MH ECO), a peer designed and led adapted form of Experience-based Co-design (EBCD) developed in Australia. MH ECO is said to facilitate empowerment, foster trust, develop autonomy, self-determination and choice for people living with mental illnesses and their carers, including staff at mental health services. Little information exists about the underlying mechanisms of change; the entities, processes and structures that underpin MH ECO and similar EBCD studies. To address this, we identified eight possible mechanisms from an assessment of the activities and outcomes of MH ECO and a review of existing published evaluations. The eight mechanisms, recognition, dialogue, cooperation, accountability, mobilisation, enactment, creativity and attainment, are discussed within an \u2018explanatory theoretical model of change\u2019 that details these and ideal relational transitions that might be observed or not with MH ECO or other EBCD studies. We critically appraise the sociocultural and political movement in coproduction and draw on interdisciplinary theories from the humanities\u2014narrative theory, dialogical ethics, cooperative and empowerment theory. The model advances theoretical thinking in coproduction beyond motivations and towards identifying underlying processes and entities that might impact on process and outcome. Trial registration number The Australian and New Zealand Clinical Trials Registry, ACTRN12614000457640 (results).",
+      "cited_by_count": 341,
+      "type": "article",
+      "source": {
+        "name": "Medical Humanities",
+        "type": "journal",
+        "issn": [
+          "1468-215X",
+          "1473-4265"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://mh.bmj.com/content/medhum/45/3/247.full.pdf"
+      },
+      "topics": [
+        "Mental Health and Patient Involvement",
+        "Health Policy Implementation Science",
+        "Mental Health and Psychiatry"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W2810850036"
+    },
+    {
+      "openalex_id": "W4403980236",
+      "doi": "10.1177/10659129241297272",
+      "title": "Expressive Epistemic Injustice: Definition, Measurement, and Deliberative Cure",
+      "authors": [
+        {
+          "name": "John S. Dryzek",
+          "openalex_id": "A5011467777",
+          "orcid": "https://orcid.org/0000-0001-6358-0047",
+          "institutions": [
+            "University of Canberra"
+          ]
+        },
+        {
+          "name": "Simon Niemeyer",
+          "openalex_id": "A5015736894",
+          "orcid": "https://orcid.org/0000-0003-3048-5697",
+          "institutions": [
+            "University of Canberra"
+          ]
+        }
+      ],
+      "publication_year": 2024,
+      "publication_date": "2024-11-01",
+      "abstract": "Epistemic injustice means that knowledge relevant to collective decisions gets discounted, thus inflicting harm on disadvantaged groups. The most familiar kinds (established by Fricker 2007) are testimonial (dismissing arguments because of the social characteristics of the speaker) and hermeneutical (lack of collective interpretive resources to make sense of oppression). We develop the idea of expressive epistemic justice, which exists when social forces induce a systematic failure for an individual or group\u2019s values and beliefs to be reflected in what the individual or group expresses as its wants. Expressive epistemic injustice can persist even if testimonial and hermeneutic injustice were to be eliminated. The degree of failure can be quantified, enabling us in an empirical analysis of multiple cases to locate the source of expressive epistemic injustice in the conditions of discourse in a public sphere awash in symbolic manipulations by relatively powerful actors. We then show how citizen deliberation can remedy expressive epistemic justice. Our analysis adds to existing epistemic arguments for deliberative democracy, for it shows that deliberation increases the likelihood that collective decisions will respond to the values and beliefs that define these decisions as good to begin with.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Political Research Quarterly",
+        "type": "journal",
+        "issn": [
+          "1065-9129",
+          "1938-274X",
+          "1938-2758"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://journals.sagepub.com/doi/pdf/10.1177/10659129241297272"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Political Philosophy and Ethics",
+        "Social and Intergroup Psychology"
+      ],
+      "referenced_works_count": 39,
+      "url": "https://openalex.org/W4403980236"
+    },
+    {
+      "openalex_id": "W3000350826",
+      "doi": "10.4324/9781315717937",
+      "title": "The Routledge Handbook of Social Epistemology",
+      "authors": [
+        {
+          "name": "Holroyd,  Jules",
+          "openalex_id": ""
+        },
+        {
+          "name": "Puddifoot,  Katherine",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-19",
+      "abstract": "Empirical research has substantiated the finding that very many of us harbour implicit biases: fast, automatic, and difficult to control processes that encode stereotypes and evaluative content, and influence how we think and behave. The influence of implicit bias on perception may operate under the radar of consciousness: therefore it is irrelevant to the justification of epistemologists\u2018 beliefs according to accessibility. The person whose beliefs and judgements are influenced by implicit bias displays epistemic vices like negligence and lack of thoroughness. And since implicit biases often encode stereotypes, they are a hindrance to the achievement of virtues such as open-mindedness, leading to prejudice and closed-minded responses. It is worth noting that in various endeavours to address under-representation it has been argued that implicit biases are part of the explanations for continued marginalisation and exclusion of individuals \u2013 in particular women and Black and minority ethnicity individuals \u2013 from communities of enquirers.",
+      "cited_by_count": 133,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://durham-repository.worktribe.com/preview/1662791/36841.pdf"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W3000350826"
+    },
+    {
+      "openalex_id": "W2907060594",
+      "doi": "10.3389/fsoc.2018.00041",
+      "title": "Public Participation in Health and Social Care: Exploring the Co-production of Knowledge",
+      "authors": [
+        {
+          "name": "Peter Beresford",
+          "openalex_id": "A5054277316",
+          "orcid": "https://orcid.org/0000-0001-6052-033X",
+          "institutions": [
+            "University of Essex"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-01-04",
+      "abstract": "Efforts to advance public participation in health and other policies have been associated with the production of many models and how-to-do-it guides for change. While these may have a helpful part to play in improving public and patient/user involvement in research, in this article it will be suggested that they tend to over-simplify things. Instead it is argued that an essential first step to advancing public participation in health is to put it in the context of developing modern democracy more generally. This article will seek to do this by identifying four key stages in the development of public participation in health and social care. These phases will be headlined as: - Working for universal suffrage in representative democracy and the achievement of social rights, like the right to decent housing, education and health;- Provisions for participatory democracy and community development;- Specific provisions for participation in health and social care;- State reaction and service user-led renewal as conflicts and competing agendas develop.While the proposed article will look particularly at UK developments to do this, it will also draw upon international experience and highlight the wider relevance of these phases of development. It will make connections between the extension of representative and participatory democracy, considering the different locations in which efforts to extend participation have helpfully developed, for example, in learning and training, and research and knowledge production. It will also consider how efforts to extend participation have also been undermined by pressures to tokenise and co-opt them; the continuing barriers discriminating against some groups and, ways in which service users and allies have nonetheless sought to overcome these difficulties to take forward more inclusive and diverse participation in health and social care. It will focus on some particularly promising areas of development internationally in order to do this in which co-production and the development of user-led knowledge are key.",
+      "cited_by_count": 123,
+      "type": "article",
+      "source": {
+        "name": "Frontiers in Sociology",
+        "type": "journal",
+        "issn": [
+          "2297-7775"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fsoc.2018.00041/pdf"
+      },
+      "topics": [
+        "Mental Health and Patient Involvement",
+        "Healthcare innovation and challenges",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W2907060594"
+    },
+    {
+      "openalex_id": "W4317497835",
+      "doi": "10.1136/jme-2022-108291",
+      "title": "Where is knowledge from the global South? An account of epistemic justice for a global bioethics",
+      "authors": [
+        {
+          "name": "Bridget Pratt",
+          "openalex_id": "A5020008265",
+          "orcid": "https://orcid.org/0000-0002-4934-3560",
+          "institutions": [
+            "Center for Practical Bioethics",
+            "Australian Catholic University"
+          ]
+        },
+        {
+          "name": "Jantina de Vries",
+          "openalex_id": "A5038277030",
+          "orcid": "https://orcid.org/0000-0001-7192-2633",
+          "institutions": [
+            "University of Cape Town",
+            "Ethics and Public Policy Center",
+            "Neuroscience Institute"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-19",
+      "abstract": "The silencing of the epistemologies, theories, principles, values, concepts and experiences of the global South constitutes a particularly egregious epistemic injustice in bioethics. Our shared responsibility to rectify that injustice should be at the top of the ethics agenda. That it is not, or only is in part, is deeply problematic and endangers the credibility of the entire field. As a first step towards reorienting the field, this paper offers a comprehensive account of epistemic justice for global health ethics. We first introduce several different conceptions of justice and decolonisation in relation to knowledge, purposefully drawing on work emanating from the global South as well as the global North. We then apply those conceptions to the global health ethics context to generate a tripartite account of the layers of epistemic justice in the field: who is producing ethics knowledge; what theories and concepts are being applied to produce ethics knowledge; and whose voices are sought, recorded and used to generate ethics knowledge. These layers reflect that the field spans conceptual and empirical research. We conclude by proposing that, going forward, three avenues are key to achieve greater epistemic justice at each layer and to help decolonise global health ethics: namely, understanding the problem, dialogue and structural change.",
+      "cited_by_count": 83,
+      "type": "article",
+      "source": {
+        "name": "Journal of Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "0306-6800",
+          "1473-4257"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://jme.bmj.com/content/medethics/early/2023/01/18/jme-2022-108291.full.pdf"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Ethics in Clinical Research",
+        "Biomedical Ethics and Regulation"
+      ],
+      "referenced_works_count": 55,
+      "url": "https://openalex.org/W4317497835"
+    },
+    {
+      "openalex_id": "W2896280782",
+      "doi": "10.1093/oso/9780198869757.001.0001",
+      "title": "Democratic Speech in Divided Times",
+      "authors": [
+        {
+          "name": "Maxime Lepoutre",
+          "openalex_id": "A5071069856",
+          "orcid": "https://orcid.org/0000-0001-7573-8585",
+          "institutions": [
+            "University of Reading"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-16",
+      "abstract": "Abstract Democratic Speech in Divided Times offers a comprehensive account of the norms that should govern public discourse in circumstances marked by deep and often unjust social divisions. Part I investigates what forms of democratic speech are desirable in these settings. This part shows, firstly, that some forms of public discourse that are symptomatic of division can nevertheless play a crucial democratic function. In particular, it argues that emotionally charged speech\u2014and most notably, speech voicing deep anger\u2014plays a fundamental role in overcoming entrenched epistemic divisions and in facilitating the exchange of shared reasons. This part also examines how, in contrast, other characteristic features of the public discourse of divided societies endanger democratic life. Here, the argument considers the proliferation of hate speech and misinformation, and examines what forms of democratic speech should be used to combat them. Part II considers how realistic the foregoing account of public discourse is. Specifically, it assesses the complications that arise from intergroup antipathy, pervasive political ignorance, and the fragmentation of the public sphere. The normative picture of public discourse that this book defends can largely withstand these problems. And, while these social conditions do qualify the value of democratic speech in some respects, they are at least as problematic for political ideals that give up on inclusive democratic speech altogether. Accordingly, while realising the ideal of democratic speech that this book outlines is challenging, we should not lose patience with this task.",
+      "cited_by_count": 68,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.repository.cam.ac.uk/handle/1810/283602"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Hate Speech and Cyberbullying Detection",
+        "Rhetoric and Communication Studies"
+      ],
+      "referenced_works_count": 281,
+      "url": "https://openalex.org/W2896280782"
+    },
+    {
+      "openalex_id": "W3162190284",
+      "doi": "10.1136/medethics-2021-107275",
+      "title": "Patients, clinicians and open notes: information blocking as a case of epistemic injustice",
+      "authors": [
+        {
+          "name": "Charlotte Blease",
+          "openalex_id": "A5090414480",
+          "orcid": "https://orcid.org/0000-0003-3657-2476",
+          "institutions": [
+            "Beth Israel Deaconess Medical Center"
+          ]
+        },
+        {
+          "name": "Liz Salmi",
+          "openalex_id": "A5048964453",
+          "orcid": "https://orcid.org/0000-0003-3798-7438",
+          "institutions": [
+            "Beth Israel Deaconess Medical Center"
+          ]
+        },
+        {
+          "name": "Hanife Rexhepi",
+          "openalex_id": "A5027196141",
+          "orcid": "https://orcid.org/0000-0001-8957-9853",
+          "institutions": [
+            "University of Sk\u00f6vde"
+          ]
+        },
+        {
+          "name": "Maria H\u00e4gglund",
+          "openalex_id": "A5080445565",
+          "orcid": "https://orcid.org/0000-0002-6839-3651",
+          "institutions": [
+            "Uppsala University"
+          ]
+        },
+        {
+          "name": "Catherine M. DesRoches",
+          "openalex_id": "A5018598333",
+          "orcid": "https://orcid.org/0000-0001-5373-855X",
+          "institutions": [
+            "Beth Israel Deaconess Medical Center",
+            "Harvard University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-14",
+      "abstract": "In many countries, including patients are legally entitled to request copies of their clinical notes. However, this process remains time-consuming and burdensome, and it remains unclear how much of the medical record must be made available. Online access to notes offers a way to overcome these challenges and in around 10 countries worldwide, via secure web-based portals, many patients are now able to read at least some of the narrative reports written by clinicians (\u2018open notes\u2019). However, even in countries that have implemented the practice many clinicians have resisted the idea remaining doubtful of the value of opening notes, and anticipating patients will be confused or anxious by what they read. Against this scepticism, a growing body of qualitative and quantitative research reveals that patients derive multiple benefits from reading their notes. We address the contrasting perceptions of this practice innovation, and claim that the divergent views of patients and clinicians can be explained as a case of epistemic injustice. Using a range of evidence, we argue that patients are vulnerable to (oftentimes, non-intentional) epistemic injustice. Nonetheless, we conclude that the marginalisation of patients\u2019 access to their health information exemplifies a form of epistemic exclusion, one with practical and ethical consequences including for patient safety.",
+      "cited_by_count": 75,
+      "type": "article",
+      "source": {
+        "name": "Journal of Medical Ethics",
+        "type": "journal",
+        "issn": [
+          "0306-6800",
+          "1473-4257"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://jme.bmj.com/content/medethics/early/2021/05/13/medethics-2021-107275.full.pdf"
+      },
+      "topics": [
+        "Ethics in Clinical Research",
+        "Patient-Provider Communication in Healthcare",
+        "Mental Health and Patient Involvement"
+      ],
+      "referenced_works_count": 80,
+      "url": "https://openalex.org/W3162190284"
+    },
+    {
+      "openalex_id": "W3168780031",
+      "doi": "10.1038/s41560-021-00856-z",
+      "title": "Achieving just transitions to low-carbon urban mobility",
+      "authors": [
+        {
+          "name": "Tim Schwanen",
+          "openalex_id": "A5102715151",
+          "orcid": "https://orcid.org/0000-0002-2999-0883",
+          "institutions": [
+            "University of Oxford"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-06-07",
+      "abstract": null,
+      "cited_by_count": 81,
+      "type": "article",
+      "source": {
+        "name": "Nature Energy",
+        "type": "journal",
+        "issn": [
+          "2058-7546"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.nature.com/articles/s41560-021-00856-z.pdf"
+      },
+      "topics": [
+        "Urban Transport and Accessibility",
+        "Energy, Environment, and Transportation Policies",
+        "Sustainability and Climate Change Governance"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W3168780031"
+    },
+    {
+      "openalex_id": "W2968165607",
+      "doi": "10.1007/s40737-019-00145-9",
+      "title": "The Legitimacy of User Knowledge in Decision-Making Processes in Mental Health Care: An Analysis of Epistemic Injustice",
+      "authors": [
+        {
+          "name": "Katarina Grim",
+          "openalex_id": "A5063484692",
+          "orcid": "https://orcid.org/0000-0002-7236-0836",
+          "institutions": [
+            "Dalarna University",
+            "Karlstad University"
+          ]
+        },
+        {
+          "name": "Malin Tistad",
+          "openalex_id": "A5033923054",
+          "orcid": "https://orcid.org/0000-0003-0581-2895",
+          "institutions": [
+            "Dalarna University"
+          ]
+        },
+        {
+          "name": "Ulla\u2010Karin Sch\u00f6n",
+          "openalex_id": "A5025444359",
+          "orcid": "https://orcid.org/0000-0002-3866-5636",
+          "institutions": [
+            "Dalarna University",
+            "Stockholm University"
+          ]
+        },
+        {
+          "name": "David Rosenberg",
+          "openalex_id": "A5059777309",
+          "orcid": "https://orcid.org/0000-0002-0790-9386",
+          "institutions": [
+            "Ume\u00e5 University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-16",
+      "abstract": null,
+      "cited_by_count": 58,
+      "type": "article",
+      "source": {
+        "name": "Journal of Psychosocial Rehabilitation and Mental Health",
+        "type": "journal",
+        "issn": [
+          "2198-963X",
+          "2198-9834"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s40737-019-00145-9.pdf"
+      },
+      "topics": [
+        "Patient-Provider Communication in Healthcare",
+        "Feminist Epistemology and Gender Studies",
+        "Ethics in Clinical Research"
+      ],
+      "referenced_works_count": 42,
+      "url": "https://openalex.org/W2968165607"
+    },
+    {
+      "openalex_id": "W4309712795",
+      "doi": "10.1007/s43681-022-00239-4",
+      "title": "Democracy, epistemic agency, and AI: political epistemology in times of artificial intelligence",
+      "authors": [
+        {
+          "name": "Mark Coeckelbergh",
+          "openalex_id": "A5003571713",
+          "orcid": "https://orcid.org/0000-0001-9576-1002",
+          "institutions": [
+            "University of Vienna"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-11-22",
+      "abstract": null,
+      "cited_by_count": 71,
+      "type": "article",
+      "source": {
+        "name": "AI and Ethics",
+        "type": "journal",
+        "issn": [
+          "2730-5953",
+          "2730-5961"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s43681-022-00239-4.pdf"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Social Media and Politics",
+        "Digital Education and Society"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W4309712795"
+    },
+    {
+      "openalex_id": "W4297381123",
+      "doi": "10.1007/s11229-022-03896-4",
+      "title": "There are no epistemic norms of inquiry",
+      "authors": [
+        {
+          "name": "David Thorstad",
+          "openalex_id": "A5086945842",
+          "orcid": "https://orcid.org/0000-0003-1985-8931",
+          "institutions": [
+            "Kellogg's (United Kingdom)"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-09-27",
+      "abstract": "Abstract Epistemic nihilism for inquiry is the claim that there are no epistemic norms of inquiry. Epistemic nihilism was once the received stance towards inquiry, and I argue that it should be taken seriously again. My argument is that the same considerations which led us away from epistemic nihilism in the case of belief not only cannot refute epistemic nihilism for inquiry, but in fact may well support it. These include the argument from non-existence that there are no non-epistemic reasons for belief; the linguistic argument that epistemic norms of belief are needed to capture the semantics of ordinary epistemic talk; and the argument from theoretical roles that epistemic norms are needed to play key theoretical roles for rational belief. I conclude by sketching an alternative Gibbardian picture on which norms of inquiry are all-things-considered norms governing action.",
+      "cited_by_count": 60,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11229-022-03896-4.pdf"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Feminist Epistemology and Gender Studies",
+        "Philosophy and Theoretical Science"
+      ],
+      "referenced_works_count": 90,
+      "url": "https://openalex.org/W4297381123"
+    },
+    {
+      "openalex_id": "W2970461392",
+      "doi": "10.1017/s1537592719002615",
+      "title": "Celebrity, Democracy, and Epistemic Power",
+      "authors": [
+        {
+          "name": "Alfred Archer",
+          "openalex_id": "A5046399653",
+          "orcid": "https://orcid.org/0000-0001-9398-6427",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        },
+        {
+          "name": "Amanda Cawston",
+          "openalex_id": "A5027329910",
+          "orcid": "https://orcid.org/0000-0002-1028-0697",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        },
+        {
+          "name": "Benjamin Matheson",
+          "openalex_id": "A5081728433",
+          "orcid": "https://orcid.org/0000-0001-5047-5803",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        },
+        {
+          "name": "Machteld Geuskens",
+          "openalex_id": "A5066251023",
+          "orcid": "https://orcid.org/0000-0002-3409-2084",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-08-29",
+      "abstract": "What, if anything, is problematic about the involvement of celebrities in democratic politics? While a number of theorists have criticized celebrity involvement in politics, none so far have examined this issue using the tools of social epistemology, the study of the effects of social interactions, practices, and institutions on knowledge and belief acquisition. We will draw on these resources to investigate the issue of celebrity involvement in politics, specifically as this involvement relates to democratic theory and its implications for democratic practice. We will argue that an important and underexplored form of power, which we will call epistemic power, can explain one important way in which celebrity involvement in politics is problematic. This is because unchecked uses and unwarranted allocations of epistemic power, which celebrities tend to enjoy, threaten the legitimacy of existing democracies and raise important questions regarding core commitments of deliberative, epistemic, and plebiscitary models of democratic theory. We will finish by suggesting directions that democratic theorists could pursue when attempting to address some of these problems.",
+      "cited_by_count": 64,
+      "type": "article",
+      "source": {
+        "name": "Perspectives on Politics",
+        "type": "journal",
+        "issn": [
+          "1537-5927",
+          "1541-0986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/5A5C8CE586D7826BEB22916CF3BD6B35/S1537592719002615a.pdf/div-class-title-celebrity-democracy-and-epistemic-power-div.pdf"
+      },
+      "topics": [
+        "Gender, Feminism, and Media",
+        "Feminist Epistemology and Gender Studies",
+        "Rhetoric and Communication Studies"
+      ],
+      "referenced_works_count": 84,
+      "url": "https://openalex.org/W2970461392"
+    },
+    {
+      "openalex_id": "W4293860312",
+      "doi": "10.1515/ijsl-2022-0026",
+      "title": "Linguistic justice and global English: theoretical and empirical approaches",
+      "authors": [
+        {
+          "name": "Josep Soler",
+          "openalex_id": "A5020403076",
+          "orcid": "https://orcid.org/0000-0002-2813-0101",
+          "institutions": [
+            "Stockholm University"
+          ]
+        },
+        {
+          "name": "Sergi Morales\u2010G\u00e1lvez",
+          "openalex_id": "A5063886827",
+          "orcid": "https://orcid.org/0000-0001-5790-5837",
+          "institutions": [
+            "University of Limerick"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-08-30",
+      "abstract": "Abstract The global spread of English and its impact on the pursuit of linguistic justice has been a topic of concern for scholars in a wide range of different fields in the humanities and social sciences. Firmly convinced of the usefulness of cross-field collaboration to advance our understanding of the expansion of English globally, in this special issue we bring together experts in sociolinguistics and political theory with two goals in mind: (1) to illustrate, empirically, its consequences for speakers in situated contexts; and (2) to propose potential normative responses to the global spread of English. In order to frame the overarching theme of the special issue, and to show our stance as guest editors in connection to global English, in this opening piece we develop a critique to Philippe Van Parijs\u2019 notion of linguistic justice. In particular, we take issue with his vision that promoting English as a global lingua franca is a good idea in order to enhance everyone\u2019s equality of opportunities (e.g., in the labour market). We question such an assumption from both a theoretical and empirical point of view, and argue that having equal access to English is not sufficient to equalize everyone\u2019s opportunities.",
+      "cited_by_count": 56,
+      "type": "article",
+      "source": {
+        "name": "International Journal of the Sociology of Language",
+        "type": "journal",
+        "issn": [
+          "0165-2516",
+          "1613-3668"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.degruyter.com/document/doi/10.1515/ijsl-2022-0026/pdf"
+      },
+      "topics": [
+        "Multilingual Education and Policy",
+        "Second Language Learning and Teaching",
+        "EFL/ESL Teaching and Learning"
+      ],
+      "referenced_works_count": 41,
+      "url": "https://openalex.org/W4293860312"
+    },
+    {
+      "openalex_id": "W940248834",
+      "doi": "10.5206/fpq/2015.1.1",
+      "title": "Care, Concern, and Advocacy: Is There a Place for Epistemic Responsibility?",
+      "authors": [
+        {
+          "name": "Lorraine Code",
+          "openalex_id": "A5000826571",
+          "institutions": [
+            "York University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-07-22",
+      "abstract": "Departing from an epistemological tradition for which knowledge properly achieved must be objective, especially in eschewing affect and/or special interests; and against a backdrop of my thinking about epistemic responsibility, I focus on two situations where care informs and enables good knowing. The implicit purpose of this reclamation of care as epistemically vital is to show emphatically that standard alignments of care with femininity\u2014the female\u2014are simply misguided. Proposing that the efficacy of epistemic practices is often enhanced when would-be knowers care about the outcomes of investigation, I suggest that epistemic responsibility need not be compromised when caring motivates and animates research. Indeed, the background inspiration comes from the thought, integral to feminist and post-colonial theory and practice that, despite often-justified condemnations of research that serves \"special interests,\" particularities do matter, epistemically. Such thoughts, variously articulated, are integral to enacting a shift in epistemology away from formal abstraction and toward engaging with the specificities of real-world, situated knowledge projects. They are not unequivocally benign, for villains too care about the outcomes of their projects. Hence multi-faceted engagements with epistemic practices and processes are urgently required across the social-political world.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Feminist Philosophy Quarterly",
+        "type": "journal",
+        "issn": [
+          "2371-2570"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ojs.lib.uwo.ca/index.php/fpq/article/download/2975/3573"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics",
+        "Ethics in medical practice"
+      ],
+      "referenced_works_count": 26,
+      "url": "https://openalex.org/W940248834"
+    },
+    {
+      "openalex_id": "W2800800546",
+      "doi": "10.1007/s10551-018-3897-z",
+      "title": "Epistemic Vices in Organizations: Knowledge, Truth, and Unethical Conduct",
+      "authors": [
+        {
+          "name": "C. Lexi Baird",
+          "openalex_id": "A5065187684",
+          "orcid": "https://orcid.org/0000-0003-0972-8906",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Thomas Calvard",
+          "openalex_id": "A5032756734",
+          "orcid": "https://orcid.org/0000-0002-9631-6258",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-04-30",
+      "abstract": null,
+      "cited_by_count": 41,
+      "type": "article",
+      "source": {
+        "name": "Journal of Business Ethics",
+        "type": "journal",
+        "issn": [
+          "0167-4544",
+          "1573-0697"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.1007/s10551-018-3897-z"
+      },
+      "topics": [
+        "Ethics in Business and Education",
+        "Management and Organizational Studies",
+        "Epistemology, Ethics, and Metaphysics"
+      ],
+      "referenced_works_count": 158,
+      "url": "https://openalex.org/W2800800546"
+    },
+    {
+      "openalex_id": "W3022448566",
+      "doi": "10.1007/s11229-020-02669-1",
+      "title": "Objectivity, trust and social responsibility",
+      "authors": [
+        {
+          "name": "Kristina Rolin",
+          "openalex_id": "A5002101705",
+          "orcid": "https://orcid.org/0000-0003-3893-7184",
+          "institutions": [
+            "University of the Arts Helsinki",
+            "University of Helsinki",
+            "Tampere University"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-04-28",
+      "abstract": "Abstract I examine ramifications of the widespread view that scientific objectivity gives us a permission to trust scientific knowledge claims. According to a widely accepted account of trust and trustworthiness, trust in scientific knowledge claims involves both reliance on the claims and trust in scientists who present the claims, and trustworthiness depends on expertise, honesty, and social responsibility. Given this account, scientific objectivity turns out to be a hybrid concept with both an epistemic and a moral-political dimension. The epistemic dimension tells us when scientific knowledge claims are reliable, and the moral-political dimension tells us when we can trust scientists to be socially responsible. While the former dimension has received a fair amount of attention, the latter is in need of analysis. I examine what it means for scientists to be socially responsible, that is, to follow \u201csound\u201d moral and social values in different stages of scientific inquiry (Kourany in Philosophy of science after feminism, Oxford University Press, New York, 2010). Social responsibility is especially important when scientists function as experts in society. Members of the public and policymakers do not want to rely on scientific research shaped by moral and social values they have good reasons to reject. Moreover, social responsibility is important in social research in which moral and social values can legitimately play many roles. I discuss the strengths and weaknesses of different answers to the question of how social scientists can identify appropriate moral and social values to inform their research. I argue that procedural accounts of social responsibility, such as well-ordered science and deliberative polling, have limitations.",
+      "cited_by_count": 41,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11229-020-02669-1.pdf"
+      },
+      "topics": [
+        "Feminist Epistemology and Gender Studies",
+        "Epistemology, Ethics, and Metaphysics",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 67,
+      "url": "https://openalex.org/W3022448566"
+    },
+    {
+      "openalex_id": "W3130818118",
+      "doi": "10.1111/papa.12187",
+      "title": "Virtue Signaling and Moral Progress",
+      "authors": [
+        {
+          "name": "Evan Westra",
+          "openalex_id": "A5066751823",
+          "orcid": "https://orcid.org/0000-0003-2005-7998",
+          "institutions": [
+            "Bridge University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-02-23",
+      "abstract": "Virtue signaling' is the practice of using moral talk in order to enhance one's moral reputation.Many find this kind of behavior irritating.However, some philosophers have gone further, arguing that virtue signaling actively undermines the proper functioning of public moral discourse and impedes moral progress.Against this view, I argue that widespread virtue signaling is not a social ill, and that it can actually serve as an invaluable instrument for moral change, especially in cases where moral argument alone does not suffice.Specifically, virtue signaling can change the broader public's social expectations, which can in turn motivate the adoption of new, positive social norms.I also argue that the reputation-seeking motives underlying virtue signaling impose important constraints on virtue signalers' behavior, which serve to keep the worst excesses of virtue signaling in check.One engages in virtue signaling in the hopes of seeing one's moral reputation improve in the eyes of one's peers (or potential customers); the desire to make a constructive, sincere contribution to public moral discourse is at best a secondary motivation. 2 It is easy to see why 'virtue signaling' is a pejorative term, and why many find it annoying.But for some, the prospect of widespread virtue signaling represents something much darker.Recently, philosophers Justin Tosi and Brandon Warmke have argued that virtue signaling (or, as they call it, moral grandstanding 3 ) is not just irritating, but actively harmful to the proper functioning of public moral discourse itself, such that it impairs our collective ability to improve our moral beliefs and promote positive moral changes in the world. 4 When contributions to public debate are driven by status-seeking goals, these authors argue, this leads to a series of increasingly inflated moral claims, exaggerated expressions of outrage, and aggressive piling on and public shaming.This causes onlookers to disengage from moral discourse, either because of increased cynicism about their would-be interlocutors' motives, increased political polarization, or sheer exhaustion.In short, when the sphere of public moral discourse ceases to be a forum for",
+      "cited_by_count": 63,
+      "type": "article",
+      "source": {
+        "name": "Philosophy &amp Public Affairs",
+        "type": "journal",
+        "issn": [
+          "0048-3915",
+          "1088-4963"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/papa.12187"
+      },
+      "topics": [
+        "Ethics in medical practice",
+        "Epistemology, Ethics, and Metaphysics",
+        "Free Will and Agency"
+      ],
+      "referenced_works_count": 19,
+      "url": "https://openalex.org/W3130818118"
+    },
+    {
+      "openalex_id": "W2605855003",
+      "doi": "10.1017/epi.2015.65",
+      "title": "JUSTICE IN THE DISTRIBUTION OF KNOWLEDGE",
+      "authors": [
+        {
+          "name": "Faik Kurtulmu\u015f",
+          "openalex_id": "A5002707748",
+          "orcid": "https://orcid.org/0000-0002-0973-7610",
+          "institutions": [
+            "Sabanc\u0131 \u00dcniversitesi"
+          ]
+        },
+        {
+          "name": "G\u00fcrol Irz\u0131k",
+          "openalex_id": "A5009867419",
+          "orcid": "https://orcid.org/0000-0002-0085-1724",
+          "institutions": [
+            "Sabanc\u0131 \u00dcniversitesi"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-19",
+      "abstract": "ABSTRACT In this article we develop an account of justice in the distribution of knowledge. We first argue that knowledge is a fundamental interest that grounds claims of justice due to its role in individuals\u2019 deliberations about the common good, their personal good and the pursuit thereof. Second, we identify the epistemic basic structure of a society, namely, the institutions that determine individuals\u2019 opportunities for acquiring knowledge and discuss what justice requires of them. Our main contention is that a systematic lack of opportunity to acquire knowledge one needs as an individual and a citizen because of the way the epistemic basic structure of a society is organized is an injustice. Finally, we discuss how our account relates to John Rawls's influential theory of justice.",
+      "cited_by_count": 49,
+      "type": "article",
+      "source": {
+        "name": "Episteme",
+        "type": "journal",
+        "issn": [
+          "1742-3600",
+          "1750-0117"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/35428C569CECC6AC57DE1707ECD4D556/S1742360015000659a.pdf/div-class-title-justice-in-the-distribution-of-knowledge-div.pdf"
+      },
+      "topics": [
+        "Epistemology, Ethics, and Metaphysics",
+        "Feminist Epistemology and Gender Studies",
+        "Political Philosophy and Ethics"
+      ],
+      "referenced_works_count": 53,
+      "url": "https://openalex.org/W2605855003"
+    },
+    {
+      "openalex_id": "W4317739165",
+      "doi": "10.1007/s10676-023-09676-z",
+      "title": "Automated opioid risk scores: a case for machine learning-induced epistemic injustice in healthcare",
+      "authors": [
+        {
+          "name": "Giorgia Pozzi",
+          "openalex_id": "A5044470786",
+          "orcid": "https://orcid.org/0000-0001-8928-5513",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-01-23",
+      "abstract": null,
+      "cited_by_count": 38,
+      "type": "article",
+      "source": {
+        "name": "Ethics and Information Technology",
+        "type": "journal",
+        "issn": [
+          "1388-1957",
+          "1572-8439"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10676-023-09676-z.pdf"
+      },
+      "topics": [
+        "Ethics in Clinical Research",
+        "Artificial Intelligence in Healthcare and Education",
+        "Ethics and Social Impacts of AI"
+      ],
+      "referenced_works_count": 43,
+      "url": "https://openalex.org/W4317739165"
+    },
+    {
+      "openalex_id": "W4206898590",
+      "doi": "10.1162/posc_a_00414",
+      "title": "Moral Uncertainty in Technomoral Change: Bridging the Explanatory Gap",
+      "authors": [
+        {
+          "name": "Philip J. Nickel",
+          "openalex_id": "A5086384325",
+          "orcid": "https://orcid.org/0000-0002-5173-8991",
+          "institutions": [
+            "Eindhoven University of Technology"
+          ]
+        },
+        {
+          "name": "Olya Kudina",
+          "openalex_id": "A5076588889",
+          "orcid": "https://orcid.org/0000-0001-5374-1687",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        },
+        {
+          "name": "Ibo van de Poel",
+          "openalex_id": "A5113618730",
+          "institutions": [
+            "Delft University of Technology"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-01",
+      "abstract": "Abstract This paper explores the role of moral uncertainty in explaining the morally disruptive character of new technologies. We argue that existing accounts of technomoral change do not fully explain its disruptiveness. This explanatory gap can be bridged by examining the epistemic dimensions of technomoral change, focusing on moral uncertainty and inquiry. To develop this account, we examine three historical cases: the introduction of the early pregnancy test, the contraception pill, and brain death. The resulting account highlights what we call \u201cdifferential disruption\u201d and provides a resource for fields such as technology assessment, ethics of technology, and responsible innovation.",
+      "cited_by_count": 50,
+      "type": "article",
+      "source": {
+        "name": "Perspectives on Science",
+        "type": "journal",
+        "issn": [
+          "1063-6145",
+          "1530-9274"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://direct.mit.edu/posc/article-pdf/30/2/260/2005012/posc_a_00414.pdf"
+      },
+      "topics": [
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Psychology of Moral and Emotional Judgment",
+        "Feminist Epistemology and Gender Studies"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W4206898590"
+    },
+    {
+      "openalex_id": "W4220938756",
+      "doi": "10.1007/s13347-022-00496-5",
+      "title": "Augmented Reality, Augmented Epistemology, and the Real-World Web",
+      "authors": [
+        {
+          "name": "Cody Turner",
+          "openalex_id": "A5032547303",
+          "orcid": "https://orcid.org/0000-0002-8686-1738",
+          "institutions": [
+            "University of Connecticut"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-03-01",
+      "abstract": "Abstract Augmented reality (AR) technologies function to \u2018augment\u2019 normal perception by superimposing virtual objects onto an agent\u2019s visual field. The philosophy of augmented reality is a small but growing subfield within the philosophy of technology. Existing work in this subfield includes research on the phenomenology of augmented experiences, the metaphysics of virtual objects, and different ethical issues associated with AR systems, including (but not limited to) issues of privacy, property rights, ownership, trust, and informed consent. This paper addresses some epistemological issues posed by AR systems. I focus on a near-future version of AR technology called the Real-World Web, which promises to radically transform the nature of our relationship to digital information by mixing the virtual with the physical. I argue that the Real-World Web (RWW) threatens to exacerbate three existing epistemic problems in the digital age: the problem of digital distraction, the problem of digital deception, and the problem of digital divergence. The RWW is poised to present new versions of these problems in the form of what I call the augmented attention economy, augmented skepticism, and the problem of other augmented minds. The paper draws on a range of empirical research on AR and offers a phenomenological analysis of virtual objects as perceptual affordances to help ground and guide the speculative nature of the discussion. It also considers a few policy-based and designed-based proposals to mitigate the epistemic threats posed by AR technology.",
+      "cited_by_count": 54,
+      "type": "article",
+      "source": {
+        "name": "Philosophy & Technology",
+        "type": "journal",
+        "issn": [
+          "2210-5433",
+          "2210-5441"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s13347-022-00496-5.pdf"
+      },
+      "topics": [
+        "Ethics and Social Impacts of AI",
+        "Neuroethics, Human Enhancement, Biomedical Innovations",
+        "Privacy, Security, and Data Protection"
+      ],
+      "referenced_works_count": 78,
+      "url": "https://openalex.org/W4220938756"
+    },
+    {
+      "openalex_id": "W3004499016",
+      "doi": "10.1007/s11229-020-02549-8",
+      "title": "Motivated ignorance, rationality, and democratic politics",
+      "authors": [
+        {
+          "name": "Daniel R. Williams",
+          "openalex_id": "A5101716563",
+          "orcid": "https://orcid.org/0000-0002-9774-2910",
+          "institutions": [
+            "University of Antwerp",
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-02-04",
+      "abstract": "Abstract When the costs of acquiring knowledge outweigh the benefits of possessing it, ignorance is rational. In this paper I clarify and explore a related but more neglected phenomenon: cases in which ignorance is motivated by the anticipated costs of possessing knowledge, not acquiring it. The paper has four aims. First, I describe the psychological and social factors underlying this phenomenon of motivated ignorance. Second, I describe those conditions in which it is instrumentally rational. Third, I draw on evidence from the social sciences to argue that this phenomenon of rational motivated ignorance plays an important but often unappreciated role in one of the most socially harmful forms of ignorance today: voter ignorance of societal risks such as climate change. Finally, I consider how to address the high social costs associated with rational motivated ignorance.",
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Synthese",
+        "type": "journal",
+        "issn": [
+          "0039-7857",
+          "1573-0964"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s11229-020-02549-8.pdf"
+      },
+      "topics": [
+        "Misinformation and Its Impacts",
+        "Experimental Behavioral Economics Studies",
+        "Social and Intergroup Psychology"
+      ],
+      "referenced_works_count": 68,
+      "url": "https://openalex.org/W3004499016"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

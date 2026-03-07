@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "The Claims of Culture: Equality and Diversity in the Global Era",
+    "author": "Benhabib",
+    "year": 2002
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1515/9780691186542",
+      "title": "The Claims of Culture",
+      "authors": [
+        {
+          "family": "Benhabib",
+          "given": "Seyla"
+        }
+      ],
+      "editors": [],
+      "year": 2002,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Princeton University Press",
+      "type": "edited-book",
+      "suggested_bibtex_type": "book",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1515/9780691186542",
+      "score": 65.656815
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

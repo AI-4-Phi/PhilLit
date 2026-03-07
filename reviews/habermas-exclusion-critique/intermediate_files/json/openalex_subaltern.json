@@ -1,0 +1,1059 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "subaltern counterpublics feminist Nancy Fraser",
+  "results": [
+    {
+      "openalex_id": "W2036939890",
+      "doi": "10.3102/00028312040001123",
+      "title": "Practicing Democracy in the Margins of School: The Teenage Parents Program as Feminist Counterpublic",
+      "authors": [
+        {
+          "name": "Deirdre M. Kelly",
+          "openalex_id": "A5012000325",
+          "orcid": "https://orcid.org/0000-0002-7280-277X",
+          "institutions": [
+            "University of British Columbia"
+          ]
+        }
+      ],
+      "publication_year": 2003,
+      "publication_date": "2003-01-01",
+      "abstract": "Many barriers to realizing a vision of inclusive and deliberative democracy exist. But even in stratified societies, one can find relatively safe discursive arenas within schools where members of subordinated groups can explore who they are and want to become and can prepare to voice their needs, concerns, and issues in wider public realms. Nancy Fraser (1997) conceptualizes such arenas as \u201csubaltern counterpublics\u201d capable of expanding our \u201cactually existing democracy.\u201d Drawing on ethnographic data, this article analyzes the Teenage Parents Program as a feminist counterpublic within a Canadian public high school. It argues that youths need to learn to recognize the power of dominant as well as alternative or oppositional discourses and to articulate and strategically pursue their needs and interests.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "American Educational Research Journal",
+        "type": "journal",
+        "issn": [
+          "0002-8312",
+          "1935-1011"
+        ]
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Global Education and Multiculturalism",
+        "Gender Politics and Representation",
+        "Gender, Feminism, and Media"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W2036939890"
+    },
+    {
+      "openalex_id": "W2343860314",
+      "doi": "10.36643/mjrl.21.1.habermas",
+      "title": "Habermas, the Public Sphere, and the Creation of a Racial Counterpublic",
+      "authors": [
+        {
+          "name": "Guy-Uriel E. Charles",
+          "openalex_id": "A5113449468",
+          "institutions": [
+            "Indiana University"
+          ]
+        },
+        {
+          "name": "Luis Fuentes\u2010Rohwer",
+          "openalex_id": "A5012083755",
+          "orcid": "https://orcid.org/0000-0002-1318-6348",
+          "institutions": [
+            "Indiana University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "In The Structural Transformation of the Public Sphere, J\u00fcrgen Habermas documented the historical emergence and fall of what he called the bourgeois public sphere, which he defined as \u201c[a] sphere of private people come together as a public . . . to engage [public authorities] in a debate over the general rules governing relations in the basically privatized but publicly relevant sphere of commodity exchange and social labor.\u201d This was a space where individuals gathered to discuss with each other, and sometimes with public officials, matters of shared concern. The aim of these gatherings was not simply discourse; these gatherings allowed the bourgeoisie to use their reason to determine the boundaries of public and private and to self-consciously develop the public sphere. As Habermas writes, \u201c[t]he medium of this political confrontation was . . . people\u2019s public use of their reason.\u201d The bourgeois public didn\u2019t simply participate, but it did so both directly and critically. The development of the bourgeois public as a critical, intellectual public took place in coffeehouses, in salons, and table societies. In Great Britain, Germany, and France, particularly, the coffeehouses and the salons \u201cwere centers of criticism\u2014literary at first, then also political\u2014in which began to emerge, between aristocratic society and bourgeois intellectuals, a certain parity of the educated.\u201d Intellectual equals came together and deliberated, an equality that was key in ensuring the requisite openness and deliberation. No one person dominated the discussion due to his status within the deliberative community. Instead, and above all else, the \u201cpower of the better argument\u201d won out. Two conditions were critical to these deliberations. First, equality was key to the public sphere. Membership in the public sphere meant that no one person was above the other and all arguments were similarly treated and scrutinized. Second, the principle of universal access was crucial.8The doors of the deliberative space were open to all comers and no group or person was purposefully shut out. Seen together, these two conditions provide a blueprint for deliberative practices in a democratic society.",
+      "cited_by_count": 231,
+      "type": "article",
+      "source": {
+        "name": "Michigan Journal of Race & Law",
+        "type": "journal",
+        "issn": [
+          "1095-2721",
+          "2688-5492"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://repository.law.umich.edu/cgi/viewcontent.cgi?article=1048&context=mjrl"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2343860314"
+    },
+    {
+      "openalex_id": "W2129145258",
+      "doi": "10.1093/sp/jxi019",
+      "title": "Displacement and Empowerment: Reflections on the Concept and Practice of the Council of Europe Approach to Gender Mainstreaming and Gender Equality",
+      "authors": [
+        {
+          "name": "Mieke Verloo",
+          "openalex_id": "A5006555859",
+          "orcid": "https://orcid.org/0000-0002-0152-416X"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-11-08",
+      "abstract": "\\n Contains fulltext :\\n 46880.pdf (Publisher\u2019s version ) (Open Access)\\n",
+      "cited_by_count": 276,
+      "type": "article",
+      "source": {
+        "name": "Social Politics International Studies in Gender State & Society",
+        "type": "journal",
+        "issn": [
+          "1072-4745",
+          "1468-2893"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://academic.oup.com/sp/article-pdf/12/3/344/4709848/jxi019.pdf"
+      },
+      "topics": [
+        "Gender Politics and Representation",
+        "Social Policy and Reform Studies",
+        "European Union Policy and Governance"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W2129145258"
+    },
+    {
+      "openalex_id": "W2461584219",
+      "doi": "10.1017/s0023879100019531",
+      "title": "Forging an Indigenous Counterpublic Sphere: The Taller de Historia Oral Andina in Bolivia",
+      "authors": [
+        {
+          "name": "Marcia Stephenson",
+          "openalex_id": "A5109492640",
+          "institutions": [
+            "Purdue University West Lafayette"
+          ]
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-01-01",
+      "abstract": "Abstract This essay analyzes the impact of an indigenous counterpublic sphere in contemporary Bolivia, arguing that it functions as an arena of differential consciousness for Aymara intellectuals and activists. In examining the work carried out by the Aymara nongovernmental organization known as the Taller de Historia Oral Andina (THOA), the essay highlights this sphere's importance as both a discursive and territorial arena where agency is expressed in the collaborative spirit of community. THOA's work is significant in strategically formulating a methodology of decolonization based on revisionist Andean historiography, territorial demands, and collective political action.",
+      "cited_by_count": 139,
+      "type": "article",
+      "source": {
+        "name": "Latin American Research Review",
+        "type": "journal",
+        "issn": [
+          "0023-8791",
+          "1542-4278"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/32DA0D9C777C089215D42BD3D9CAEE15/S0023879100019531a.pdf/div-class-title-forging-an-indigenous-counterpublic-sphere-the-taller-de-historia-oral-andina-in-bolivia-div.pdf"
+      },
+      "topics": [
+        "Politics and Society in Latin America",
+        "Indigenous Cultures and History",
+        "Anthropological Studies and Insights"
+      ],
+      "referenced_works_count": 21,
+      "url": "https://openalex.org/W2461584219"
+    },
+    {
+      "openalex_id": "W2100335669",
+      "doi": "10.1080/01436590220108199",
+      "title": "The devil's in the theory: A critical assessment of Robert Chambers' work on participatory development",
+      "authors": [
+        {
+          "name": "Ilan Kapoor",
+          "openalex_id": "A5006343899",
+          "orcid": "https://orcid.org/0000-0001-5495-5038"
+        }
+      ],
+      "publication_year": 2002,
+      "publication_date": "2002-02-01",
+      "abstract": "The practice orientation of Robert Chambers' work on Participatory Rural Appraisal (PRA), which aims at enabling local people and communities to take control over their own development, has received much attention in development circles. This article attempts to shift the emphasis away from PRA's practice towards its theoretical underpinnings. The article argues that PRA's practice/ empiricist orientation causes it to be insufficiently theorised and politicised. As a result, questions about inclusiveness, the role of PRA facilitators, and the personal behaviour of elites overshadow, or sometimes ignore, questions of legitimacy, justice, power and the politics of gender and difference. The article draws on arguments and debates involving Habermasian 'deliberative democracy' and post- structuralist notions of power.",
+      "cited_by_count": 262,
+      "type": "article",
+      "source": {
+        "name": "Third World Quarterly",
+        "type": "journal",
+        "issn": [
+          "0143-6597",
+          "1360-2241"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.tandfonline.com/doi/abs/10.1080/01436590220108199"
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Tourism, Volunteerism, and Development",
+        "Agriculture, Land Use, Rural Development"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W2100335669"
+    },
+    {
+      "openalex_id": "W2162080980",
+      "doi": "10.7282/t3st7nnj",
+      "title": "Youth movements, autonomy and the oppositional identity in global women's activism",
+      "authors": [
+        {
+          "name": "Theresa Hunt",
+          "openalex_id": "A5050206296"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "While literature examining the significance of age and generation in transnational social movements continues to grow, few studies focus specifically on young women and their involvement with global feminism. Making the empirical observation that \u201cyoung women\u201fs\u201d transnational feminist networks have emerged and gained more visibility in the last decade, this dissertation investigates their existence, asking why young women identifying as part of a \u201ctransnational feminist class\u201d form youth-only networks rather than joining \u2013 or maintaining membership within \u2013 existing and established networks. Data was collected from five young women\u201fs transnational feminist networks using qualitative methods, including semi-structured interview, participant observation and triangulated digital writing analysis. Analysis of this data yielded several findings. First, young women are likely to form \u201cyouth-only\u201d feminist networks in three circumstances: 1) when they feel under- and misrepresented within the discursive and political forums of global feminism; 2) when they feel the education they need to further their goals and establish their identities as activists is inadequate; and 3) when they find generation gaps create perceived irreconcilable \u201cdifferences\u201d of tactical and organizational preference between older and younger activists. Second, young feminists foreground age as an identity marker quite consciously in order to supersede other \u201cdifferences\u201d historically dividing transnational women\u201fs organizing, such as those of nationality, religion, sexuality and social class. These patterns suggest young women are deploying \u201cessentialist\u201d and collective movement identities strategically, and thus construct a praxis reflective of established but contentious feminist theoretical discussions such as Gayatri Spivak\u201fs \u201cstrategic essentialism\u201d (1990), Nancy Fraser\u201fs \u201csubaltern counterpublic\u201d(1990) and Rita Felski\u201fs \u201cself-consciously oppositional identity\u201d (1989) . The three main chapters of this dissertation examine 1) the creation and articulation of a \u201cyoung transnational feminist\u201d counterpublic sphere; 2) the discourse of \u201cdifference\u201d permeating young women\u201fs transnational feminist networks; and 3) the effort to construct more \u201cdemocratic\u201d, \u201cinclusive\u201d and \u201cself-directed\u201d educational programs for young feminist activists. I conclude with the observation that young activist women within the transnational feminist movement draw on but re-conceptualize existing theories of globalization, social movements and transnational feminist activism, and offer suggestions for the ways in which scholars might be more inclusive of young women\u201fs practices and preferences in future studies of transnational activism.",
+      "cited_by_count": 1,
+      "type": "article",
+      "source": {
+        "name": "Rutgers University Community Repository (Rutgers University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://doi.org/10.7282/t3st7nnj"
+      },
+      "topics": [
+        "Gender Politics and Representation",
+        "Gender, Feminism, and Media",
+        "Historical Gender and Feminism Studies"
+      ],
+      "referenced_works_count": 121,
+      "url": "https://openalex.org/W2162080980"
+    },
+    {
+      "openalex_id": "W4381251556",
+      "doi": "10.1093/ct/qtad004",
+      "title": "Recentering power: conceptualizing counterpublics and defensive publics",
+      "authors": [
+        {
+          "name": "Sarah J. Jackson",
+          "openalex_id": "A5059487953",
+          "orcid": "https://orcid.org/0000-0001-5996-0346",
+          "institutions": [
+            "University of Pennsylvania"
+          ]
+        },
+        {
+          "name": "Daniel Kreiss",
+          "openalex_id": "A5084028459",
+          "orcid": "https://orcid.org/0000-0003-2533-195X",
+          "institutions": [
+            "University of North Carolina at Chapel Hill",
+            "Center for Information Technology",
+            "Life University"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-06-19",
+      "abstract": "Abstract In this manuscript we consider the inconsistent ways the concept of \u201ccounterpublics\u201d has been taken up in the field to make the claim that considerations of social power must be recentered in the theorization of publics. To do this we provide an in-depth genealogy of the concept of counterpublics, analyze its use by critical scholars, and then consider its application in empirical studies of digital networks and right-wing publics. We argue that scholars studying digital and far-right publics in particular must take the critical analysis of power seriously. Through this lens, we show that classifying right-wing movements as \u201cdefensive\u201d is more theoretically and empirically accurate. In doing so, we conceptualize public spheres as indelible outgrowths of social structures, even as they work to transform them in turn, and provide a framework for scholars to understand public spheres through the lens of history, social differentiation, relations, resources, and access.",
+      "cited_by_count": 62,
+      "type": "article",
+      "source": {
+        "name": "Communication Theory",
+        "type": "journal",
+        "issn": [
+          "1050-3293",
+          "1468-2885"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://academic.oup.com/ct/advance-article-pdf/doi/10.1093/ct/qtad004/50646928/qtad004.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Populism, Right-Wing Movements",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 72,
+      "url": "https://openalex.org/W4381251556"
+    },
+    {
+      "openalex_id": "W4245366069",
+      "doi": "10.1017/s0145553200011287",
+      "title": "The Public Sphere in the Field of Power",
+      "authors": [
+        {
+          "name": "Craig Calhoun",
+          "openalex_id": "A5000966404",
+          "orcid": "https://orcid.org/0000-0001-7218-3780"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-01-01",
+      "abstract": "In this article I ask (1) whether the ways in which the early bourgeois public sphere was structured\u2014precisely by exclusion\u2014are instructive for considering its later development, (2) how a consideration of the social foundations of public life calls into question abstract formulations of it as an escape from social determination into a realm of discursive reason, (3) to what extent \u201ccounterpublics\u201d may offer useful accommodations to failures of larger public spheres without necessarily becoming completely attractive alternatives, and (4) to what extent considering the organization of the public sphere as a field might prove helpful in analyzing differentiated publics, rather than thinking of them simply as parallel but each based on discrete conditions. These considerations are informed by an account of the way that the public sphere developed as a concrete ideal and an object of struggle in late-eighteenth- and early-nineteenth-century Britain.",
+      "cited_by_count": 71,
+      "type": "article",
+      "source": {
+        "name": "Social Science History",
+        "type": "journal",
+        "issn": [
+          "0145-5532",
+          "1527-8034"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/8F69793698C91CD7A0769148C2C639DD/S0145553200011287a.pdf/div-class-title-the-public-sphere-in-the-field-of-power-div.pdf"
+      },
+      "topics": [
+        "Historical Economic and Social Studies",
+        "Historical Studies on Reproduction, Gender, Health, and Societal Changes"
+      ],
+      "referenced_works_count": 34,
+      "url": "https://openalex.org/W4245366069"
+    },
+    {
+      "openalex_id": "W1534715663",
+      "doi": "10.1111/j.1469-8676.2010.00136.x",
+      "title": "The anthropology of media and the question of ethnic and religious pluralism",
+      "authors": [
+        {
+          "name": "Patrick Eisenlohr",
+          "openalex_id": "A5033301788",
+          "orcid": "https://orcid.org/0000-0003-4843-4169",
+          "institutions": [
+            "Utrecht University"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-01-25",
+      "abstract": "This essay discusses anthropological approaches to the study of media interacting with contexts of ethnic and religious diversity. The main argument is that not only issues of access to and exclusion from public spheres are relevant for an understanding of media and pluralism. Background assumptions and ideologies about media technologies and their functioning also require more comparative analysis, as they impact public spheres and claims to authority and authenticity that ultimately produce and shape scenarios of ethnic and religious diversity. This additional dimension of diversity in the question of media and ethnic and religious pluralism is particularly apparent in crises of political and religious mediation. The latter often result in desires to bypass established forms of political and religious mediation that are in turn often projected on new media technologies.",
+      "cited_by_count": 70,
+      "type": "article",
+      "source": {
+        "name": "Social Anthropology",
+        "type": "journal",
+        "issn": [
+          "0964-0282",
+          "1469-8676"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.berghahnjournals.com/downloadpdf/journals/saas/19/1/j.1469-8676.2010.00136.x.pdf"
+      },
+      "topics": [
+        "Anthropological Studies and Insights",
+        "Asian Culture and Media Studies",
+        "Diaspora, migration, transnational identity"
+      ],
+      "referenced_works_count": 62,
+      "url": "https://openalex.org/W1534715663"
+    },
+    {
+      "openalex_id": "W1980029683",
+      "doi": "10.1075/prag.5.2.09url",
+      "title": "Outlaw language",
+      "authors": [
+        {
+          "name": "Jacqueline Urla",
+          "openalex_id": "A5049190402",
+          "orcid": "https://orcid.org/0000-0002-2469-9931"
+        }
+      ],
+      "publication_year": 1995,
+      "publication_date": "1995-06-01",
+      "abstract": "Preview this article: Outlaw language, Page 1 of 1 < Previous page | Next page > /docserver/preview/fulltext/prag.5.2.09url-1.gif",
+      "cited_by_count": 80,
+      "type": "article",
+      "source": {
+        "name": "Pragmatics Quarterly Publication of the International Pragmatics Association (IPrA)",
+        "type": "journal",
+        "issn": [
+          "1018-2101",
+          "2406-4238"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.jbe-platform.com/deliver/fulltext/prag.5.2.09url.pdf?itemId=%2Fcontent%2Fjournals%2F10.1075%2Fprag.5.2.09url&mimeType=pdf&containerItemId=content/journals/24064238"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Law in Society and Culture",
+        "Judicial and Constitutional Studies"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W1980029683"
+    },
+    {
+      "openalex_id": "W2501208233",
+      "doi": "10.7330/9781607324430.c003",
+      "title": "Disambiguating Uptake: Toward a Tactical Research Agenda on Citizens\u2019 Writing",
+      "authors": [
+        {
+          "name": "Dylan B. Dryer",
+          "openalex_id": "A5075396263",
+          "orcid": "https://orcid.org/0000-0002-7612-3037"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-01-01",
+      "abstract": null,
+      "cited_by_count": 29,
+      "type": "book-chapter",
+      "source": {
+        "name": "Utah State University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Discourse Analysis in Language Studies",
+        "Rhetoric and Communication Studies",
+        "Literacy, Media, and Education"
+      ],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2501208233"
+    },
+    {
+      "openalex_id": "W4408300201",
+      "doi": "10.1111/1467-8675.12773",
+      "title": "Social Media, Democracy, and the Popular Public Sphere",
+      "authors": [
+        {
+          "name": "Antoine Sander",
+          "openalex_id": "A5116576580",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2025,
+      "publication_date": "2025-02-27",
+      "abstract": "In April 2022, Barack Obama was invited by Stanford University's Cyber Policy Center to deliver a keynote address on the \u201cChallenges to Democracy in the Digital Information Realm.\u201d The former US president made the trip to the \u201cheart of the Silicon Valley,\u201d as he put it, to issue a stern warning: social media are \u201cone of the biggest reasons for democracies weakening\u201d (Obama 2022). Coming from someone widely recognized to have employed digital technology to great effect in his presidential campaigns (Cogburn and Espinoza-Vasquez 2011; Harfoush 2009), this statement echoes a broader disenchantment with the Internet's democratic promises. Gone are the days when the Web was seen as a panacea to democratic deficit. Only a decade ago, social and political theorists predicted that new, networked, communicative processes would improve collective decision-making, challenge the top-down logic of mass media, and provide activists with means to resist excessive state authority (Castells 2013; Shirky 2009). Today, social media are most often associated with misinformation, the rise of populism, polarization, and democratic decay (Bimber and Gil de Z\u00fa\u00f1iga 2020; Boulianne et al. 2020; McKay and Tenove 2021; Sunstein 2018). Underlying these debates is the question of digital technology's impact on politics. Like newspapers two centuries ago or broadcast media in the past century,1 social media have altered the functioning of representative democracies in manifold ways. At the empirical level, extensive research has explored whether they favor the creation of \u201cecho chambers\u201d (Barber\u00e1 2020; Dubois and Blank 2018; Garrett 2009), whether they amplify radical content (Halpern and Gibbs 2013; Husz\u00e1r et al. 2021), or whether increased social media use induces polarization (Bail 2021; Boxell et al. 2017; Dubois and Blank 2018; Yardi and Boyd 2010). For their part, political theorists have overwhelmingly attempted to make sense of the impact of digital technology on democracy with reference to J\u00fcrgen Habermas's work on the public sphere (Chambers and Gastil 2021; Dahlgren 2005; Dean 2003; Dommett and Verov\u0161ek 2021; Fuchs 2014; McKay and Tenove 2021; Sevignani 2022). This should not come as a surprise since Habermas was the first to comprehensively theorize the importance of the public sphere to democracy and dedicated considerable attention to the constitutive role of media in structuring it (Habermas 2015). However, the substantial evolution of his theories over four decades and his later contributions to the deliberative tradition of democratic thought have also muddied the waters and led many theorists to conflate the public sphere with deliberative democracy. The tendency has as a result been to measure\u2014even if sometimes only implicitly\u2014social media practices against deliberative norms (Chambers and Gastil 2021; Dahlgren 2001; Dean 2003; Papacharissi 2002; Rosa 2022), foreclosing the possibilities generated by the more open use of the concept of the public sphere that had been prevalent in political theory until the turn of the 21st century. I argue in this article that recovering such definition sheds new light on social media's impact on the public sphere by pointing to the role of digital technology in altering the balance of power between the liberal, bourgeois public sphere portrayed in Habermas's Structural Transformation of the Public Sphere and its oppositional nemesis, called \u201cplebeian\u201d by Habermas in the work's preface (Habermas 2015, xviii) or \u201cproletarian\u201d by some of his German critics such as Alexandre Kluge and Oskar Negt (Negt and Kluge 2016). Drawing on their insights but justifying a conscious departure from their terminology, I submit that we might have good reason to see social media as having bolstered the \u201cpopular public sphere,\u201d at once deeply enmeshed in consumerist logics but also the bearer of an emancipatory promise that remains unfulfilled in the current media environment. My aims in doing such work are twofold. First, that it may provide new orientations for the burgeoning scholarship on the contemporary public sphere by recovering a rich body of work on popular and its to digital that it may open new in democratic theory by a on social media the the to The first of the article an of the public sphere that not to the deliberative tradition and the of such an for a of the effect of on democracy. the public sphere to to democratic theory and it is from its deliberative it also to popular practices and from to Habermas's the a theory of the public a is between the or public and its oppositional on I argue that in a digital the \u201cpopular public the contemporary of and The the impact of social media on the popular public sphere in its against the bourgeois public First, it that social media's favor the popular public sphere that digital a for popular that is to the public sphere of in the tradition of as Habermas with the bourgeois public in the and I the contemporary functioning of social media from the popular public I argue as this social media's emancipatory and in a new the in of the Structural Transformation of the Public Sphere more since its in the concept of the has a role in democratic theory and has generated debates media and or political to only a Dahlgren 2001; Papacharissi the from the it is often as a with deliberative that to by that whether social media, or the public Dean 2003; et al. 2018; Papacharissi the Habermas the public sphere as a concept that a of public from norms but remains open to and This that it is to between the broader concept of the public sphere and the deliberative from a of the bourgeois public sphere since that of social media's impact on democracy to deliberative democracy and to The public sphere is most often associated with Habermas's with his from his the Structural Transformation the of the public sphere to a bourgeois in the and when a public of and state in the or of The these their to that to public for Habermas the of the bourgeois public the the bourgeois public sphere was to a role in the of the an on but not and the Structural Transformation is a of this public sphere and an of its decay in with the rise of mass However, the also more at the that Habermas in the of the liberal, bourgeois public sphere a communicative that as a to representative Habermas later the between empirical and in the Structural Transformation (Habermas et al. he also the in and the of the public sphere that he in his (Habermas 2015, the Structural Habermas the public sphere in an as of social in public is (Habermas a definition four decades later in when he the public sphere as between state and (Habermas it was in a in to the of the Structural Transformation that Habermas this question most was in for and The concept of the public is as an for and in a as of a (Habermas et al. In the public sphere is as and a communicative of public The bourgeois of the public by in to the of this public sphere that has been since the from to representative Habermas was to make this and was of bourgeois in but his a of for norms in their and later in the in with and the was and the bourgeois a of democracy et al. 2018; The tradition of democratic as it to is to the liberal, of the public sphere by Habermas in the Structural the of the bourgeois public sphere of and its theorists have a of democracy in is and deliberative processes in their and to come to with an on In their the norms that the bourgeois public sphere in the of a their in the of the bourgeois public deliberative theorists have their critics to the concept of public sphere The of the in work this of the most of deliberative theories in the and not from Habermas's in on the public such as Public Sphere for a or an public that the question was not whether the public sphere was a concept but of public sphere was in democracy. in in an from public as as to use in as put it, between the and the I to put and the of the evolution in we see the of the public sphere the between communicative practices and the of democratic that Habermas's work to associated with the deliberative of democracy in his later work (Habermas such the between social media and the public sphere are to deliberative and as a a of between some of social media's and deliberative some and most deliberative theorists have in it to to in the new media its (Chambers and Gastil the of the issue of dedicated to Democracy and the Digital Public of theorists often argue that social media at the of and to a polarization of political with their of Habermas has a in his on digital technology and the public the of his on the Structural Transformation of the Public Sphere and (Habermas he his of the current media with a to deliberative The on digital technology with an empirical of the current the of digital technology as a in media and in are The functioning of new media, social media with their of the of the public sphere with a political et al. with the by since the Dahlgren 2005; Dommett and Verov\u0161ek However, Habermas not at this and on to this in light of deliberative sense of the with Habermas that the emancipatory of the have been at in part, by the in chambers\u201d (Habermas The of to to the between and public and in this new work a for the good days of the public by the and and their of from when these media, and for a of the public Habermas the bourgeois of the public sphere and the public sphere in he in on its from the of a deliberative it is of not only but also to digital practices and against this of first the question of social media's impact on the public sphere to deliberative democracy new in and democratic the of the between the of the bourgeois public sphere and deliberative democracy has also led most from a question he might have in new media the between the bourgeois public sphere and he called the public In the Structural Habermas that the public only a of the broader public sphere the since the of and that his the public (Habermas 2015, The of from a of the public sphere of Habermas's the of the and that of its decades to the role and in the and contemporary functioning of the public these an oppositional public sphere called \u201cplebeian\u201d or \u201cproletarian\u201d but I would more as in This on the and Habermas's and theory of the public sphere to put called a of the public the public as a of is by a between two public the the or public and its oppositional nemesis, the popular public Habermas in the Structural Transformation to the and of the of the bourgeois public more for the public sphere,\u201d to has been in (Habermas 2015, Habermas as as the public sphere is only that it was to the or to of and that its its from the However, this to is that Habermas not the liberal, bourgeois public sphere to the only public sphere and that his of the of the bourgeois public sphere public also that Habermas had an from his work may he later to his critics in the Habermas an excessive on bourgeois at the of and at the work the of the German two and a decades of its In its German the Habermas's on the bourgeois public sphere at the of the \u201cproletarian\u201d Oskar Habermas's former and of his in his to an The Habermas In Oskar Negt with he would Public Sphere and of the and Public Negt and Kluge on the importance of a of of the the and of the sphere of the they that the bourgeois public sphere from the logics that it (Negt and Kluge 2016). in its they see a public sphere,\u201d from the that and in by (Negt and Kluge This with the of the Structural Transformation in the the of the in the led a of scholarship on Habermas that his of the public from its in the of the and was on that of the in the is not only that Habermas the public sphere but also that he to public this public sphere as by a later by that not For the of not in the sense of the are against they as the of with and social are but a of in is that they are a to the and we might that the oppositional public sphere of some are Habermas recognized the of his work in the of its in decades its in In an to and some of the he (Habermas that if from the the of processes of that are from the public sphere The of the and a of the public sphere in the of its and the public a the that the public sphere to the of the bourgeois public sphere is is a in two public for this of Habermas and that of some of his most the public sphere the is as the between state and public is in democratic and in (Negt and Kluge are by means it a is between two public on the the public Habermas of and on the an oppositional public sphere made of Habermas \u201cplebeian\u201d and I to as At this may the of the public by Habermas or that of the public by his German the of a democracy is a at the of contemporary theorists 2001; with a turn to the and the between and first in the by and by a of his However, and this in political of a public to the would we for by the of the sphere the public The that in political been by the of mass democracy and the turn the by Negt and Kluge in the The \u201cproletarian\u201d public sphere they of has been in in the of and it and The of the between media and the of media such as or the has made for a more and of political of and the was to media that by and for The mass we by is the of and 2018; 2017; In social media are often and are deeply in the of it to the of or the of contemporary and justifying a turn to theorists of a concept that the contemporary of the oppositional public I on the and the by was of the to popular the that it was by and of to popular in the sense of or However, for the of an popular from logic to is the of of the of power and this of political and to it in the of recovering a of as from the of the an of as a of from a of or of it the the of is that and on many that popular was of such and dedicated a of his scholarship and the of the he led at the of to popular media, in of a between or that the popular an it also the and of the would the a or if it not at in part, his or these as and having political the is that popular an of against the of his the and the of popular in a is to the that of the This definition it in a of over and this when it to the work the of the popular public a communicative of public media enmeshed with in an oppositional he the The between definition of popular and that of the oppositional public sphere from Habermas and his critics a with to the of the public In the the public sphere from its been by and between two public in the the and the oppositional public the as might have been to as \u201cplebeian\u201d or \u201cproletarian\u201d in the its contemporary is by the concept of public the of and that the this has for the of social media's role in democracy. the of these debates only a decades ago, have to over the rich body of scholarship on and the oppositional public sphere a of social more theorists they might have a the between popular and bourgeois public by the of new an oppositional public sphere had the public its past to and in the media that The popular public this from a more communicative past of popular of media, I turn to digital to social media have I submit that to in to this media have the of the bourgeois public sphere over the popular public sphere their and by in and have an increased over politics. are in the public The of favor of and by over In the Structural Habermas for the role by media, in in the rise of the bourgeois public The of on the evolution of political newspapers that also of state In his these the and the of the the bourgeois public (Habermas 2015, the media in the rise of the bourgeois public they also a in its the on it a to media for in the of a of and that on the made by the bourgeois public sphere of the to many whether social media are public Habermas newspapers they the days of representative bourgeois In by in media to structuring the public the or a public sphere or as the was the bourgeois public (Habermas 2015, the popular public sphere was also communicative practices and The of the in to of in newspapers such as de the the of radical such as a role in the of the or more the de et the these of media However, the also that the popular public sphere has a rich this was of or media to but their bourgeois to the and the of public they had a on the turn of the the media has been altered by the rise of the more by the mass of social media, have not only the the to the of public may not to the public as a or to a of they might to on their on a or on or However, these contributions to a new of the public in the top-down logics of mass media are by the logics of the and (Castells that communicative practices that the between and public and This is by most theorists of democracy in a digital as deliberative However, the only see a of the bourgeois public also these as of a in the balance of power between the bourgeois public sphere and its popular In have if they had only the Structural Transformation that Habermas might have that and his of the popular public a from deliberative norms and first the on an we are in a to a in the between the popular and bourgeois public to have this is the public sphere has he \u201cplebeian\u201d 2022). not with the as work is in attention to for a of social attention to the that would the increased of these to a between the of and the 2022, this and logics of social media have against their and media's are a of the role in in Habermas's of the bourgeois public The of the between the state and he was public use of their (Habermas 2015, and the of is the in and to or the of media, not the of by Habermas and deliberative and In a et al. that are more to by the content on et al. that the of social media such as that of Papacharissi Papacharissi scholarship on social media for with the of the public sphere and and the political of social media against the deliberative that their is to that the and in but when on to that this the public sphere of the is only to the of the bourgeois public to deliberative of democracy are the popular public social media's have an for against 2018). The between social media and the between social media's and popular of not of also from to their in social media have also the popular public sphere by it with a to popular of had been to sometimes The of these to the when the of against a that was to of the of the of the and for an in popular However, the their more (Habermas the or the of the as by and to of the a oppositional This oppositional from a political Negt in when on popular in and is is the of the practices of the oppositional public media have of their is that they are political in This from media are to and the political communicative by it practices as of and of a result of these has on politics. some of the social media a impact on is this is that social media to the of public with the to this in the or of the public sphere by Habermas in his later work (Habermas social media have public in the to have public with an increased on the of more popular the to the of political debates and by power or not have on the public sphere of that social media have The of the public sphere and deliberative democracy in social media's role in democracy with a of the public it on an social media have the popular public sphere at the of its bourgeois However, as theorists often practices from their as content to in practices The new for public sphere from I the of the popular public sphere deliberative For the bourgeois public sphere was in the tradition of the Structural in that bourgeois has been by a of that by its and by its and 2022, In a this the of the popular public sphere to a and some on their in the contemporary media environment. the as that of the and of the Habermas but it the of the popular public sphere social media on these on deliberative I open and put of digital technology's and the of the bourgeois public Habermas to political thought and to and (Habermas 2015). The popular public is not by the on representative and the of the power of the the of the from the of to contemporary social that and have to the power of have to in of have it is in this to the of the popular public sphere the of political I we might to a that as The the functioning of social media against that I as constitutive to most theories and a of the popular public deliberative that is open to and that the is that its and that it that the of the many to the of In these in social media they to the public not they promise are by and their and they the promise of the many to the power of the to the democracy as the of and was the biggest promise of social their radical In to such as newspapers or broadcast media, the to the public sphere in by social media to the of content more of on content by media, the of the current media This is a In this new of public a the of this content at is a new of of more the of in many and 2013; in this new of the an on public by the theorists of such as the or 2010). the of the has been a by the logics of the digital its and have in social media also provide a to the public to media Shirky 2009), social media not in open to in they power and new may but are or the turn political many from the public for the public they are by most the to provide with the means to to use terminology, in the public this is only by a of the body (Chambers In social media, in their current not the public sphere but only and as such their promise of radical In the of broadcast media, over in the of public as a between and the public The promise of social media was to these by public that from and in their such as the of the or until social media, this is most in the practices and of social media in and and by from the was and invited to as they considerable in and the on the In its the the of to the radical tradition and most in The for of a to make their and to to echoes his statement that democracy a that not once and for but had to its in the of public and of its on the in social media in the their and are in by their a on these This practices and the to but also in their with research pointing to the impact of on their political 2018; 2021; et al. this to with a public role in The promise of social the of as it has these had been with new to public the of in the public sphere and by new in against digital technology to to the in the political sense of and but also in the the the between social media and mass and that social media's logics make to in their of by or 2018). the of radical the between mass and social media only come as to or of the would as the of the or the the political in their against the and for the in the of a state of This has often been in the as an between and social media, by the many are social et al. 2011; Boulianne et al. 2020; et al. the often a this should not the role social media in to by media and political when a decade the of its on he called the of social media, he only but also their democratic these are also to by and logics provide political they or with an the public but also means such as or these in and that mass means and This social media have not popular against or but have also the of with the they of their promise to the against the and have often the the at the of the In the of digital of social media in made it more to practices to deliberative democracy and at social media a the their this social media as with as they are sometimes but as the of a democratic promise that is by their logic and should not seen as but as pointing the to a of democracy and with digital The new of the public sphere by digital technology has considerable political but more not of it is not to see of the against social media as a of a of to democracy for it a in the logic of power and its by the The for the in the theory and of representative from to with this deliberative theorists have a of to the democratic of the new digital media with its many The that social media the role of and an to with the of a public sphere in and of and may to a and more the the emancipatory of social media a of their current logics and or are against the of democratic and is to social media's to a role in the social media's emancipatory this article research First, the debates the new of the public sphere by recovering Habermas's of the public sphere and a of the popular public sphere that had been but in scholarship on democracy in a digital the of to digital The on a between empirical and work empirical research contemporary practices to the article also to the impact of on democracy from a from the norms of the bourgeois public in doing to research from of media in or The of this might of more to of to its social media have altered the balance of power between the and popular public this a for on the bourgeois at a when mass democracy was a or a to the by digital or that also in that For of this should seen as of mass not the of the also as the promise for a in technology to democracy with of its popular The and the of the on and the Digital Public and the in for their on of the but not are to the two for their and this The of",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12773"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Gender, Feminism, and Media",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 101,
+      "url": "https://openalex.org/W4408300201"
+    },
+    {
+      "openalex_id": "W3168534634",
+      "doi": "10.1590/1981-3821202100030004",
+      "title": "Jair Bolsonaro and the Dominant Counterpublicity",
+      "authors": [
+        {
+          "name": "Camila Rocha",
+          "openalex_id": "A5087921226",
+          "orcid": "https://orcid.org/0000-0001-8291-9149",
+          "institutions": [
+            "Universidade de S\u00e3o Paulo"
+          ]
+        },
+        {
+          "name": "Jonas Medeiros",
+          "openalex_id": "A5038757545",
+          "orcid": "https://orcid.org/0000-0002-7021-8393",
+          "institutions": [
+            "Centro Brasileiro de An\u00e1lise e Planejamento"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-01-01",
+      "abstract": "This article focuses on the controversial and infamous behavior of Brazilian President Jair Bolsonaro in the public sphere. Based on an understanding that there exists something specific in relation to his strategy of rhetorical mobilization and the discursive domination related to broader dynamics in the Brazilian public sphere, we seek to analyze here the use of what we consider to be a \u2018dominant counterpublicity\u2019.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Brazilian Political Science Review",
+        "type": "journal",
+        "issn": [
+          "1981-3821"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.scielo.br/j/bpsr/a/wwVCBLPmFwksW4JQJsqz6rB/?lang=en&format=pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Politics and Society in Latin America",
+        "Political theory and Gramsci"
+      ],
+      "referenced_works_count": 10,
+      "url": "https://openalex.org/W3168534634"
+    },
+    {
+      "openalex_id": "W2111668199",
+      "doi": "10.18740/s44g7k",
+      "title": "Hegemony, Counter-hegemony, Anti-hegemony",
+      "authors": [
+        {
+          "name": "William K. Carroll",
+          "openalex_id": "A5042845329",
+          "orcid": "https://orcid.org/0000-0003-4456-4396",
+          "institutions": [
+            "University of Victoria"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-02",
+      "abstract": "This article takes a critical realist stance in exploring the changing conditions for and forms of hegemony and counter-hegemony in \u201cpostmodern\u201d, \u201cneoliberal\u201d, \u201cglobalized\u201d times. Current hegemonic practices and projects make common sense of a market-driven politics and a fragmented culture, infusing into them an organization of consent that operates both locally and globally. Yet this amounts only to a thin hegemony, a weak and ecologically unsustainable basis for social cohesion and material reproduction. If contemporary hegemony is deeply yet perilously grounded then counter-hegemony needs to address those grounds. This stricture points to the articulation of various subaltern and progressive-democratic currents into a counter-hegemonic bloc that organizes dissent across space and time. Counter-hegemony needs to walk on both legs, taking up statecentred issues as well as issues resident in national and transnational civil societies. Its durability across conjunctures requires not only a shared ethical vision but a political form appropriate to its tasks. A range of recent developments relevant to these issues is discussed. The article concludes with a critique of the anti-hegemonic politics of dispersed singularities, whose insights, particularly on the value of direct action and prefiguration, need to be integrated into a strategically coherent form.",
+      "cited_by_count": 72,
+      "type": "article",
+      "source": {
+        "name": "Socialist studies",
+        "type": "journal",
+        "issn": [
+          "1717-2616",
+          "1918-2821"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://socialiststudies.com/index.php/sss/article/download/23790/17675"
+      },
+      "topics": [
+        "Social Policy and Reform Studies",
+        "Housing, Finance, and Neoliberalism",
+        "Political and Economic history of UK and US"
+      ],
+      "referenced_works_count": 54,
+      "url": "https://openalex.org/W2111668199"
+    },
+    {
+      "openalex_id": "W4254717740",
+      "doi": "10.13169/islastudj.6.1.0078",
+      "title": "Claiming our Space: Muslim Women, Activism, and Social Media",
+      "authors": [
+        {
+          "name": "Faiza Hirji",
+          "openalex_id": "A5059891567",
+          "orcid": "https://orcid.org/0000-0003-1277-7688",
+          "institutions": [
+            "McMaster University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-17",
+      "abstract": "This paper addresses the ways in which Muslim women seek to employ online media, particularly social media, to reclaim narratives around space, embodiment, and power. I argue that digital space is, like any other form of media, structured essentially by racism and patriarchy, but I also note the crucial potential for resistance exhibited by Muslim activists such as political leaders Ilhan Omar and Rashida Tlaib, Instagram influencer Ayesha Malik, and the largely anonymous women who participated in #MosqueMeToo, encouraged by the journalist and activist Mona Eltahawy. I draw upon a post/anti-colonial feminist framework and the tools of critical discourse analysis in examining specific instances where such women perform acts of resistance that, in turn, trigger a gendered and raced reaction. I note the ways in which some Muslim women, such as Saudi teenager Rahaf Mohammed, are constructed as media heroes, given that their stories can be co-opted to validate notions of the white colonial savior, while others directly challenge narratives of colonialism and oppression and are thus subjected to backlash. I point to the ways in which some of this vitriol continues to refer back to the notion that Muslim women should be silent, and to the fetishized Muslim woman's body: how it should look, where it can/should go, and what can be done to it.",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "Islamophobia Studies Journal",
+        "type": "journal",
+        "issn": [
+          "2325-8381",
+          "2325-839X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://www.scienceopen.com/document_file/af056052-d9ea-445b-8721-2d853583633b/ScienceOpen/islastudj.6.1.0078.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Gender, Feminism, and Media",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 15,
+      "url": "https://openalex.org/W4254717740"
+    },
+    {
+      "openalex_id": "W2106871891",
+      "doi": null,
+      "title": "Critical Notes on Habermas's Theory of the Public Sphere",
+      "authors": [
+        {
+          "name": "Simon Susen",
+          "openalex_id": "A5055297764",
+          "orcid": "https://orcid.org/0000-0003-0643-1891",
+          "institutions": [
+            "City, University of London"
+          ]
+        }
+      ],
+      "publication_year": 2011,
+      "publication_date": "2011-02-14",
+      "abstract": "The main purpose of this paper is to examine Habermas\u2019s account of the transformation of the public sphere in modern society. More specifically, the study aims to demonstrate that, whilst Habermas\u2019s approach succeeds in offering useful insights into the structural transformation of the public sphere in the early modern period, it does not provide an adequate theoretical framework for understanding the structural transformation of public spheres in late modern societies. To the extent that the gradual differentiation of social life manifests itself in the proliferation of multiple public spheres, a critical theory of public normativity needs to confront the challenges posed by the material and ideological complexity of late modernity in order to account for the polycentric nature of advanced societies. With the aim of showing this, the paper is divided into three sections. The first section elucidates the sociological meaning of the public/private dichotomy. The second section scrutinizes the key features of Habermas\u2019s theory of the public sphere by reflecting on (i) the concept of the public sphere, (ii) the normative specificity of the bourgeois public sphere, and (iii) the structural transformation of the public sphere in modern society. The third section explores the most substantial shortcomings of Habermas\u2019s theory of the public sphere, particularly its inability to explain the historical emergence and political function of differentiated public spheres in advanced societies.",
+      "cited_by_count": 82,
+      "type": "article",
+      "source": {
+        "name": "City Research Online (City University London)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openaccess.city.ac.uk/id/eprint/1101/1/Simon%20Susen%20%27Critical%20Notes%20on%20Habermass%20Theory%20of%20the%20Public%20Sphere%27%20SA%205%281%29%20pp%20%2037-62.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Social Media and Politics",
+        "Contemporary Sociological Theory and Practice"
+      ],
+      "referenced_works_count": 52,
+      "url": "https://openalex.org/W2106871891"
+    },
+    {
+      "openalex_id": "W2067484730",
+      "doi": "10.1525/ae.2004.31.4.497",
+      "title": "Accountable democracy: Citizens' impact on public decision making in postdictatorship chile",
+      "authors": [
+        {
+          "name": "Julia Paley",
+          "openalex_id": "A5042270604",
+          "orcid": "https://orcid.org/0009-0002-1973-8673",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-11-01",
+      "abstract": "ABSTRACT Using a Santiago, Chile, health group as an ethnographic case study, I propose \u201caccountable democracy\u201d as an alternative normative project to the theory of deliberative democracy outlined by Habermas in Between Facts and Norms . Accountable democracy has at its center the impact of public\u2010sphere opinion formation on decision making by officials in elected governments.",
+      "cited_by_count": 82,
+      "type": "article",
+      "source": {
+        "name": "American Ethnologist",
+        "type": "journal",
+        "issn": [
+          "0094-0496",
+          "1548-1425"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1525/ae.2004.31.4.497"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Foucault, Power, and Ethics"
+      ],
+      "referenced_works_count": 17,
+      "url": "https://openalex.org/W2067484730"
+    },
+    {
+      "openalex_id": "W4365999062",
+      "doi": "10.1145/3579526",
+      "title": "Sustained Harm Over Time and Space Limits the External Function of Online Counterpublics for American Muslims",
+      "authors": [
+        {
+          "name": "Niloufar Salehi",
+          "openalex_id": "A5018318827",
+          "orcid": "https://orcid.org/0000-0003-1237-5814",
+          "institutions": [
+            "University of California, Berkeley"
+          ]
+        },
+        {
+          "name": "Roya Pakzad",
+          "openalex_id": "A5085328022",
+          "orcid": "https://orcid.org/0000-0001-7392-4595"
+        },
+        {
+          "name": "Nazita Lajevardi",
+          "openalex_id": "A5017957204",
+          "orcid": "https://orcid.org/0000-0001-7201-4354",
+          "institutions": [
+            "Michigan State University"
+          ]
+        },
+        {
+          "name": "Mariam Asad",
+          "openalex_id": "A5052405554",
+          "orcid": "https://orcid.org/0000-0003-0989-6774",
+          "institutions": [
+            "Flex (United States)"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-04-14",
+      "abstract": "Social media platforms are celebrated for their capacity to empower those with marginalized or disenfranchised identities and support them to create counterpublics. We focus on one such group, Muslim Americans, and ask how visible Muslim Americans, such as journalists, activists, and aspiring politicians, use social media to craft counter-narratives, reclaim control of their stories, and mitigate the harm directed at them. Through a series of 19 interviews, we found that visible Muslim Americans' ability to craft and sustain counter narratives is largely hampered by sustained online harm (e.g. harassment). We found that these public figures were harmed repeatedly over long periods of time and through the weaponization of platform affordances such as replying, tagging, and hashtag takeovers, as well as the weaponization of their gender and identity. Our findings shed light on the serious limitations of social media to provide a safe platform for counterpublics to engage externally with wider publics. Finally, we discuss the limitations of content moderation as the dominant framework for addressing harm online and suggest alternative paths forward based on restorative and transformative justice.",
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the ACM on Human-Computer Interaction",
+        "type": "journal",
+        "issn": [
+          "2573-0142"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://dl.acm.org/doi/pdf/10.1145/3579526"
+      },
+      "topics": [
+        "Hate Speech and Cyberbullying Detection",
+        "Social Media and Politics",
+        "Terrorism, Counterterrorism, and Political Violence"
+      ],
+      "referenced_works_count": 114,
+      "url": "https://openalex.org/W4365999062"
+    },
+    {
+      "openalex_id": "W4289764340",
+      "doi": "10.37062/sf.55.18193",
+      "title": "Unveiling the radical right online",
+      "authors": [
+        {
+          "name": "Anton T\u00f6rnberg",
+          "openalex_id": "A5006268406",
+          "orcid": "https://orcid.org/0000-0002-5847-3033",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        },
+        {
+          "name": "Mattias Wahlstr\u00f6m",
+          "openalex_id": "A5050812403",
+          "orcid": "https://orcid.org/0000-0002-7721-8046",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-07-03",
+      "abstract": "Radical right online discussion groups have grown in importance in the Swedish political landscape, yet the dynamics of these groups are still poorly understood. Apart from their topical import, these groups provide a unique entrance to grassroots discourses of the radical right movement and the mechanisms for radical nationalist mobilization. In this paper, we present an analysis of the largest current anti-immigrant online discussion group in Sweden by using a combination of quantitative and qualitative content analysis. We argue that this type of social media group needs to be approached as both a \u201ccounterpublic\u201d within a wider public sphere and as a \u201cfree social space\u201d for social movements. The analysis reveals that the use of external links in the group reflects an active negotiation of frames that both confirm and contradict those of the group, thereby challenging a simplistic understanding of the so-called \u201cecho chamber\u201d dynamics. A form of collective identity can be discerned, mainly through the opposition to various outgroups and through an implicit form of nationalism expressed through the concern of \u201csacred objects\u201d typically perceived to be under threat.",
+      "cited_by_count": 22,
+      "type": "article",
+      "source": {
+        "name": "Sociologisk Forskning",
+        "type": "journal",
+        "issn": [
+          "0038-0342",
+          "2002-066X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://sociologiskforskning.se/sf/article/view/18193/16465"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 61,
+      "url": "https://openalex.org/W4289764340"
+    },
+    {
+      "openalex_id": "W3212684452",
+      "doi": "10.1007/s10606-021-09410-7",
+      "title": "Organizing Safe Spaces: #MeToo Activism in Sweden",
+      "authors": [
+        {
+          "name": "Karin Hansson",
+          "openalex_id": "A5014183452",
+          "orcid": "https://orcid.org/0000-0002-5962-1536",
+          "institutions": [
+            "S\u00f6dert\u00f6rn University"
+          ]
+        },
+        {
+          "name": "Malin Sveningsson",
+          "openalex_id": "A5003422125",
+          "institutions": [
+            "University of Gothenburg"
+          ]
+        },
+        {
+          "name": "Hillevi Ganetz",
+          "openalex_id": "A5018518241",
+          "orcid": "https://orcid.org/0000-0003-4774-5555",
+          "institutions": [
+            "Stockholm University"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-11-03",
+      "abstract": "Abstract Networked online environments can effectively support political activism. In Sweden, the #metoo movement resulted in over 100,000 people participating in activities challenging sexual harassment and abuse, including collecting testimonies via social media and drafting and discussing petitions published in print news media. Participation involved many risks, such as social stigma, losing one\u2019s job, or misogynist terrorism, which meant that participation required a high level of trust among peers. Human-computer interaction (HCI) research on trust generally focuses on technical systems or user-generated data, less focus has been given to trust among peers in vulnerable communities. This study, based on semi-structured interviews and surveys of participants and organizers of 47 petitions representing different sectors in society, found that trust was aggregated over networks of people, practices, institutions, shared values, and technical systems. Although a supportive culture based on a feeling of solidarity and shared feminist values was central for safe spaces for participation, when activism was scaled up, social interaction had to be limited due to increased risk. HCI research views trust as a process of crossing distances, increasing over time; however, our results reveal that trust decreased over time as the movement grew and public exposure increased, a trend most evident when the participants actually came from a tightly knit community. Therefore, this study points out the significance to balance the need for transparency and community with the need for anonymity and distance in the development of tools to support large-scale deliberative processes that involve conflicts and risks.",
+      "cited_by_count": 23,
+      "type": "article",
+      "source": {
+        "name": "Computer Supported Cooperative Work (CSCW)",
+        "type": "journal",
+        "issn": [
+          "0925-9724",
+          "1573-7551"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10606-021-09410-7.pdf"
+      },
+      "topics": [
+        "Social Media and Politics",
+        "Privacy, Security, and Data Protection",
+        "Hate Speech and Cyberbullying Detection"
+      ],
+      "referenced_works_count": 61,
+      "url": "https://openalex.org/W3212684452"
+    },
+    {
+      "openalex_id": "W3138361416",
+      "doi": "10.1086/712078",
+      "title": "Colorblind Feminisms: Ansari-Grace and the Limits of #MeToo Counterpublics",
+      "authors": [
+        {
+          "name": "Vrushali Patil",
+          "openalex_id": "A5024241963",
+          "institutions": [
+            "Florida International University"
+          ]
+        },
+        {
+          "name": "Jyoti Puri",
+          "openalex_id": "A5108678628"
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-01",
+      "abstract": "This article focuses on the uproar over the sexual encounter between actor/comedian Aziz Ansari and a woman known publicly as Grace as a lens onto the colorblind counterpublic feminisms driving the #MeToo movement. Tracing the ways that this sexual encounter between a Brown Muslim man and an anonymous, presumably white, woman were spotlighted, we show that race is superficially absent even as it informs the range of feminist counterpublics that emerged around this case. Extending feminist theories of counter/publics, we explore the ways that the hybrid media system, including traditional as well as digital media, enables colorblind feminisms. Focusing on Facebook as an index of these plural feminist perspectives, we examine eighty-four of the most shared links on this platform to show that, regardless of the positions taken, issues of gender and sexuality dominate framings of the Ansari-Grace encounter, even as race and racialization implicitly mediate the public conversations on heterosexual violence and misconduct. Situating these conversations within the broader history of US racisms and the politics of sexual assault, we also point to how mediated technologies are contributing to the hypervisibility of men of color and shaping which cases occupy the limelight and the feminist counterpublics emerging around them. We argue that these colorblind feminist counterpublics, in effect, center the pain of white women.",
+      "cited_by_count": 12,
+      "type": "article",
+      "source": {
+        "name": "Signs",
+        "type": "journal",
+        "issn": [
+          "0097-9740",
+          "1545-6943"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.journals.uchicago.edu/doi/epdf/10.1086/712078"
+      },
+      "topics": [
+        "Gender, Feminism, and Media",
+        "Social Media and Politics",
+        "Media Studies and Communication"
+      ],
+      "referenced_works_count": 40,
+      "url": "https://openalex.org/W3138361416"
+    },
+    {
+      "openalex_id": "W2405366603",
+      "doi": "10.5771/0038-6073-2005-4-347",
+      "title": "For Public Sociology",
+      "authors": [
+        {
+          "name": "Michael Burawoy",
+          "openalex_id": "A5068108654",
+          "orcid": "https://orcid.org/0000-0002-7195-7278"
+        }
+      ],
+      "publication_year": 2005,
+      "publication_date": "2005-01-01",
+      "abstract": "Soziale Welt is one of the important journals within German sociology and is even read in foreign countries. It includes empirical and theoretical contributions from all areas of the subject and tries to portray the development of sociology and to give a new impetus. In addition to the quarterly published issues, there are special issues with a unified theme.",
+      "cited_by_count": 34,
+      "type": "article",
+      "source": {
+        "name": "Soziale Welt",
+        "type": "journal",
+        "issn": [
+          "0038-6073"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "http://www.nomos-elibrary.de/10.5771/0038-6073-2005-4-347.pdf"
+      },
+      "topics": [],
+      "referenced_works_count": 46,
+      "url": "https://openalex.org/W2405366603"
+    },
+    {
+      "openalex_id": "W4312203101",
+      "doi": "10.18326/ijims.v12i2.257-283",
+      "title": "Sharia in power: non-Muslims and the performance of Islamic politics in Aceh public Sphere, Indonesia",
+      "authors": [
+        {
+          "name": "Zulkarnaini Zulkarnaini",
+          "openalex_id": "A5036488463",
+          "orcid": "https://orcid.org/0000-0002-4862-0722",
+          "institutions": [
+            "Institut Agama Islam Negeri Bengkulu"
+          ]
+        },
+        {
+          "name": "Muhammad Ansor",
+          "openalex_id": "A5000518258",
+          "orcid": "https://orcid.org/0000-0002-7674-0326",
+          "institutions": [
+            "Institut Agama Islam Negeri Bengkulu"
+          ]
+        },
+        {
+          "name": "Laila Sari Masyhur",
+          "openalex_id": "A5080862871",
+          "orcid": "https://orcid.org/0000-0002-7972-6167",
+          "institutions": [
+            "Universitas Islam Negeri Sultan Syarif Kasim Riau"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-12-17",
+      "abstract": "A structural transformation of the public sphere in contemporary Aceh is marked by the monopoly over religious interpretations by the state and ulema through the enactment of Islamic sharia. This article examines the performance of Aceh\u2019s public sphere with reference to non-Muslim discourses in practising Islamic politics. The data were collected through observations, in-depth interviews, and literature study. Based on the concept of multiple public spheres, this paper argues that the government\u2019s attempts to restrict the performance of public space based on Islamic values and identities is not only unsuccessful but also triggers a counter-public sphere to emerge. The counterpublic sphere has become an arena where its proponents promote their valuable ideas, negotiate identity, or being resistant to in realising aspirations. This study finds out that the visibility of public space is in layers and there may be no connections between one contingent and another, or they even contest. Although they may have similarities in being resistant to dominant narratives, the proponents of public space have many ways, perspectives, or strategies to share their ideas and increase their participation in the more prominent public space.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Indonesian Journal of Islam and Muslim Societies",
+        "type": "journal",
+        "issn": [
+          "2089-1490",
+          "2406-825X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ijims.iainsalatiga.ac.id/index.php/ijims/article/download/5952/pdf"
+      },
+      "topics": [
+        "Asian Studies and History",
+        "Islamic Studies and Radicalism",
+        "Islamic Finance and Communication"
+      ],
+      "referenced_works_count": 56,
+      "url": "https://openalex.org/W4312203101"
+    },
+    {
+      "openalex_id": "W2941573960",
+      "doi": "10.14746/prt.2018.4.2",
+      "title": "The Black Protests: a Struggle for (Re)Definition of Intimate Citizenship.",
+      "authors": [
+        {
+          "name": "Rados\u0142aw Nawojski",
+          "openalex_id": "A5079676079",
+          "orcid": "https://orcid.org/0000-0003-1712-2752",
+          "institutions": [
+            "Institute of Philosophy and Sociology"
+          ]
+        },
+        {
+          "name": "Magdalena Pluta",
+          "openalex_id": "A5103147292",
+          "orcid": "https://orcid.org/0000-0003-0821-062X",
+          "institutions": [
+            "Institute of Philosophy and Sociology"
+          ]
+        },
+        {
+          "name": "Katarzyna Zieli\u0144ska",
+          "openalex_id": "A5090505231",
+          "orcid": "https://orcid.org/0000-0002-8356-8800",
+          "institutions": [
+            "Institute of Philosophy and Sociology"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-05-19",
+      "abstract": "Pr\u00f3by zmiany prawa reguluj\u0105cego dost\u0119p do aborcji w Polsce, podj\u0119te przez polski Sejm w 2016 i 2018, zainicjowa\u0142y intensywn\u0105 spo\u0142eczn\u0105 mobilizacj\u0119 i szerokie protesty spo\u0142eczne, okre\u015blane wsp\u00f3ln\u0105 nazw\u0105 \u201eCzarnych Protest\u00f3w\u201d. T\u0119 mobilizacj\u0119 traktujemy jako pr\u00f3b\u0119 (prze)definiowania obowi\u0105zuj\u0105cych poj\u0119\u0107 obywatelstwa, a w szczeg\u00f3lno\u015bci jako wyraz poszukiwania nowego modelu obywatelstwa intymnego, czyli publicznego przedefiniowania praw dotycz\u0105cych prywatnej, intymnej sfery. Celem autorek artyku\u0142u jest analiza wspomnianych (re)artykulacji intymnego obywatelstwa. W pierwszej cz\u0119\u015bci tekstu autorki opisuj\u0105, czym by\u0142y Czarne Protesty oraz Og\u00f3lnopolski Strajk Kobiet, a tak\u017ce przybli\u017caj\u0105 kontekst ich powstania oraz postulaty. W drugiej cz\u0119\u015bci zdefiniowana zostaje kategoria obywatelstwa, a w szczeg\u00f3lno\u015bci obywatelstwa intymnego. Nast\u0119pnie przedstawiona zostaje metodologia bada\u0144. W ostatniej, analitycznej cz\u0119\u015bci artyku\u0142u autorki rekonstruuj\u0105 wizje obywatelstwa intymnego wy\u0142aniaj\u0105ce si\u0119 z analizowanego materia\u0142u empirycznego.",
+      "cited_by_count": 15,
+      "type": "article",
+      "source": {
+        "name": "Praktyka Teoretyczna",
+        "type": "journal",
+        "issn": [
+          "2081-8130"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://pressto.amu.edu.pl/index.php/prt/article/download/19008/18733"
+      },
+      "topics": [
+        "Polish Law and Legal System"
+      ],
+      "referenced_works_count": 29,
+      "url": "https://openalex.org/W2941573960"
+    },
+    {
+      "openalex_id": "W2137259445",
+      "doi": null,
+      "title": "The Publicness of Public Space: On the Public Domain",
+      "authors": [
+        {
+          "name": "Andrea Mubi Brighenti",
+          "openalex_id": "A5033359794",
+          "orcid": "https://orcid.org/0000-0002-7498-9857"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-03-01",
+      "abstract": "This essay attempts to elaborate a notion of \u2018public domain\u2019 in order to capture the elusive features of \u2018public-ness\u2019. Its leading question can thus be put as follows: \u2018what is specifically public in public situations and public spaces? What is the specific dynamic that contradistinguishes the public?\u2019 A series of empirical cases taken from different contexts, which functions as thought-provoking illustration of the theoretical issues at stakes, is discussed. Theoretically, the essay draws from, and suggests a critical synthesis of, four major threads of research: political and social philosophy (notion of \u2018public sphere\u2019), interaction sociology and cultural studies (notion of \u2018public realm\u2019), urban studies (notion of \u2018public space\u2019) and the literature on governance and policing (notion of \u2018public order\u2019). Accordingly, the public domain is conceptualised as an ecology of three ecologies; in other words, it is regarded as composed of a media ecology (or, an ecology of mediations), an urban ecology and an ecology of attentions. An evental perspective on the public domain is proposed, which takes into account the convergences and the tensions that exist within the social between material and immaterial dimensions. From this perspective, the public domain is inherently defined by the events of visibility, accessibility, circulation, appropriation and resistance.",
+      "cited_by_count": 24,
+      "type": "article",
+      "source": {
+        "name": "Unitn Eprints Research (Universit\u00e0 Degli Studi di Trento)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://eprints.biblio.unitn.it/1844/1/quad49.pdf"
+      },
+      "topics": [
+        "Public Spaces through Art",
+        "Urban Planning and Governance",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 101,
+      "url": "https://openalex.org/W2137259445"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

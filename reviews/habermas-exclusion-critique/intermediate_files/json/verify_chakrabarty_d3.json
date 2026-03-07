@@ -1,0 +1,43 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Searching CrossRef: title='Provincializing Europe...' author=Chakrabarty year=2000
+[verify_paper.py] Paper found: Provincializing Europe: Postcolonial Thought and H... (score: 33.1)
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Provincializing Europe",
+    "author": "Chakrabarty",
+    "year": 2000
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2692957",
+      "title": "Provincializing Europe: Postcolonial Thought and Historical Difference",
+      "authors": [
+        {
+          "family": "Wong",
+          "given": "R. Bin"
+        },
+        {
+          "family": "Chakrabarty",
+          "given": "Dipesh"
+        }
+      ],
+      "editors": [],
+      "year": 2001,
+      "container_title": "The American Historical Review",
+      "volume": "106",
+      "issue": "4",
+      "page": "1322",
+      "publisher": "JSTOR",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.2307/2692957",
+      "score": 33.0656
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

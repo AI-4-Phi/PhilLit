@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1080/09502380601162548
+[verify_paper.py] DOI verified: ON THE COLONIALITY OF BEING...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/09502380601162548"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/09502380601162548",
+      "title": "ON THE COLONIALITY OF BEING",
+      "authors": [
+        {
+          "family": "Maldonado-Torres",
+          "given": "Nelson"
+        }
+      ],
+      "editors": [],
+      "year": 2007,
+      "container_title": "Cultural Studies",
+      "volume": "21",
+      "issue": "2-3",
+      "page": "240-270",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/09502380601162548"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

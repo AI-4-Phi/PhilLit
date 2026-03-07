@@ -1,0 +1,1223 @@
+[search_openalex.py] Searching OpenAlex: 'feminist critique public sphere exclusion gender' (year=2015-2025), limit=25
+[search_openalex.py] Retrieved 25 papers...
+[search_openalex.py] Search complete: 25 papers found
+[search_openalex.py] Cached results (cache key: openalex_db8e22b4109eccda)
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "feminist critique public sphere exclusion gender",
+  "results": [
+    {
+      "openalex_id": "W1846891760",
+      "doi": "10.4324/9781351154208-9",
+      "title": "Spiritual and Menial Housework",
+      "authors": [
+        {
+          "name": "Dorothy E. Roberts",
+          "openalex_id": "A5109800693",
+          "institutions": [
+            "Yale University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-28",
+      "abstract": "Feminists have demonstrated how the ideological dichotomy between home and work has helped to subordinate women .This critique is part of a larger feminist project of shattering the mythical separation of public and private spheres that has justified women 's exclusion from the market, sheltered male violence from public scrutiny, and disqualified women's needs from public support.This critique overlooks, however, how work inside the home is itself the subject of an ideological split.Domestic labor is divided into two aspects-the spiritual and the menial.Some work in the home is considered spiritual: it is valued highly because it is thought to be essential to the proper functioning of the household and the moral upbringing of children.Other domestic work is considered menial: it is devalued because it is strenuous and unpleasant and is thought to require little moral or intellectual skill.While the ideological opposition of home and work distinguishes men from women, the ideological di stinction between spiritual and menial housework fosters inequality among women.Spiritual housework is associated with privileged white women ; menial housework is associated with minority, immigrant, and working class women.Recent welfare reform laws, which require poor women to leave home to assume menial jobs, highlight the importance of identifying and shattering this dichotomy in women's domestic labor.This Article explores the relationship between the spiritual/menial dichotomy and the racialized structure of women 's work.I describe the forces that assign different women to each category, how the distinction between menial and spiritual housework reflects and supports a racial division of domestic labor, and how this dichotomy ultimately helps to depress the value of all women's work.In Part I, I provide background about the gendered separation of work in the home and work in the market.The public/private dichotomy of all labor and the spiritual/menial dichotomy of housework overlap and reinforce each other.I discuss how my focus on spiritual and menial housework relates to the feminist critique of the distinction made between public and private labor.Part II explains the fragmentation of domestic labor into its spiritual and menial elements.I demonstrate how privileged women have delegated their menial household duties to other women while retaining their roles as spiritual housekeepers and mothers.Part III argues that this spiritual/menial dichotomy is inextricably connected to a racialized hierarchy among women workers.I trace the history of women's domestic labor from its confinement to the home to its t Profe ssor,",
+      "cited_by_count": 117,
+      "type": "book-chapter",
+      "source": null,
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Marriage and Sexual Relationships",
+        "Multiculturalism, Politics, Migration, Gender"
+      ],
+      "referenced_works_count": 2,
+      "url": "https://openalex.org/W1846891760"
+    },
+    {
+      "openalex_id": "W2994172804",
+      "doi": "10.1186/s12889-019-7884-9",
+      "title": "The coin model of privilege and critical allyship: implications for health",
+      "authors": [
+        {
+          "name": "Stephanie Nixon",
+          "openalex_id": "A5073166346",
+          "orcid": "https://orcid.org/0000-0002-8987-0920",
+          "institutions": [
+            "University of Toronto"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-01",
+      "abstract": "Health inequities are widespread and persistent, and the root causes are social, political and economic as opposed to exclusively behavioural or genetic. A barrier to transformative change is the tendency to frame these inequities as unfair consequences of social structures that result in disadvantage, without also considering how these same structures give unearned advantage, or privilege, to others. Eclipsing privilege in discussions of health equity is a crucial shortcoming, because how one frames the problem sets the range of possible solutions that will follow. If inequity is framed exclusively as a problem facing people who are disadvantaged, then responses will only ever target the needs of these groups without redressing the social structures causing disadvantages. Furthermore, responses will ignore the complicity of the corollary groups who receive unearned and unfair advantage from these same structures. In other words, we are missing the bigger picture. In this conceptualization of health inequity, we have limited the potential for disruptive action to end these enduring patterns.The goal of this article is to advance understanding and action on health inequities and the social determinants of health by introducing a framework for transformative change: the Coin Model of Privilege and Critical Allyship. First, I introduce the model, which explains how social structures produce both unearned advantage and disadvantage. The model embraces an intersectional approach to understand how systems of inequality, such as sexism, racism and ableism, interact with each other to produce complex patterns of privilege and oppression. Second, I describe principles for practicing critical allyship to guide the actions of people in positions of privilege for resisting the unjust structures that produce health inequities. The article is a call to action for all working in health to (1) recognize their positions of privilege, and (2) use this understanding to reorient their approach from saving unfortunate people to working in solidarity and collective action on systems of inequality.",
+      "cited_by_count": 413,
+      "type": "article",
+      "source": {
+        "name": "BMC Public Health",
+        "type": "journal",
+        "issn": [
+          "1471-2458"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://bmcpublichealth.biomedcentral.com/track/pdf/10.1186/s12889-019-7884-9"
+      },
+      "topics": [
+        "Obesity and Health Practices",
+        "Food Security and Health in Diverse Populations",
+        "Health and Conflict Studies"
+      ],
+      "referenced_works_count": 63,
+      "url": "https://openalex.org/W2994172804"
+    },
+    {
+      "openalex_id": "W4210771594",
+      "doi": "10.4324/9781003133520",
+      "title": "",
+      "authors": [
+        {
+          "name": "Agnieszka Graff",
+          "openalex_id": "A5018131335",
+          "orcid": "https://orcid.org/0000-0003-0468-0376",
+          "institutions": [
+            "S\u00f6dert\u00f6rn University",
+            "Sant Gadge Baba Amravati University",
+            "Asociaci\u00f3n por los Derechos Civiles"
+          ]
+        },
+        {
+          "name": "El\u017cbieta Korolczuk",
+          "openalex_id": "A5086856279",
+          "orcid": "https://orcid.org/0000-0002-8263-5530",
+          "institutions": [
+            "S\u00f6dert\u00f6rn University",
+            "Sant Gadge Baba Amravati University",
+            "Asociaci\u00f3n por los Derechos Civiles"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-09-07",
+      "abstract": "This book charts the new phase of global struggles around gender equality and sexual democracy: the ultraconservative mobilization against \"gender ideology\" and feminist efforts to counteract it. It argues that anti-gender campaigns, which emerged around 2010 in Europe, are not a simple continuation of the anti-feminist backlash dating back to the 1970s, but part of a new political configuration. Opposition to \"gender\" has become a key element of the rise of right-wing populism, which successfully harnesses the anxiety, shame and anger caused by neoliberalism and threatens to destroy liberal democracy. Anti-Gender Politics in the Populist Moment offers a novel conceptualization of the relationship between the ultraconservative anti-gender movement and right-wing populist parties, examining the opportunistic synergy between these actors. The authors map the anti-gender campaigns as a global movement, putting the Polish case in a comparative perspective. They show that the anti-gender rhetoric is best understood as a reactionary critique of neoliberalism as a socio-cultural formation. The book also studies the recent wave of feminist mass mobilizations, viewing the transnational revolt of women as a left populist movement. This is an important study for those doing research in politics, cultural studies, gender and sexuality studies and sociology. It will also be useful for activists and policy makers.",
+      "cited_by_count": 466,
+      "type": "book",
+      "source": {
+        "name": "BiblioBoard Library Catalog (Open Research Library)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://library.oapen.org/handle/20.500.12657/50542"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Gender Politics and Representation"
+      ],
+      "referenced_works_count": 196,
+      "url": "https://openalex.org/W4210771594"
+    },
+    {
+      "openalex_id": "W2622634793",
+      "doi": "10.3998/mpub.9708722",
+      "title": "Academic Ableism",
+      "authors": [
+        {
+          "name": "Jay Dolmage",
+          "openalex_id": "A5087968800"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "Academic Ableism brings together disability studies and institutional critique to recognize the ways that disability is composed in and by higher education, and rewrites the spaces, times, and economies of disability in higher education to place disability front and center. For too long, argues Jay Timothy Dolmage, disability has been constructed as the antithesis of higher education, often positioned as a distraction, a drain, a problem to be solved. The ethic of higher education encourages students and teachers alike to accentuate ability, valorize perfection, and stigmatize anything that hints at intellectual, mental, or physical weakness, even as we gesture toward the value of diversity and innovation. Examining everything from campus accommodation processes, to architecture, to popular films about college life, Dolmage argues that disability is central to higher education, and that building more inclusive schools allows better education for all.",
+      "cited_by_count": 701,
+      "type": "book",
+      "source": {
+        "name": "University of Michigan Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.fulcrum.org/ebooks/6t053h23g/download?locale=en"
+      },
+      "topics": [
+        "Disability Rights and Representation",
+        "University Challenges and Reforms"
+      ],
+      "referenced_works_count": 210,
+      "url": "https://openalex.org/W2622634793"
+    },
+    {
+      "openalex_id": "W2782318340",
+      "doi": "10.23987/sts.60425",
+      "title": "\u201cCitizen Science\u201d? Rethinking Science and Public Participation",
+      "authors": [
+        {
+          "name": "Bruno J. Strasser",
+          "openalex_id": "A5004158395",
+          "orcid": "https://orcid.org/0000-0002-2773-6670",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "J\u00e9r\u00f4me Baudry",
+          "openalex_id": "A5023212588",
+          "orcid": "https://orcid.org/0000-0002-9949-0681",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "Dana Mahr",
+          "openalex_id": "A5019327660",
+          "orcid": "https://orcid.org/0000-0001-7482-465X",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "Gabriela S\u00e1nchez",
+          "openalex_id": "A5034730917",
+          "orcid": "https://orcid.org/0000-0002-4738-9485",
+          "institutions": [
+            "University of Geneva"
+          ]
+        },
+        {
+          "name": "\u00c9lise Tancoigne",
+          "openalex_id": "A5091215027",
+          "orcid": "https://orcid.org/0000-0002-4168-4352",
+          "institutions": [
+            "University of Geneva"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-30",
+      "abstract": "Since the late twentieth century, \u201ccitizen science\u201d has become an increasingly fashionable label for a growing number of participatory research activities. This paper situates the origins and rise of the term \u201ccitizen science\u201d and contextualises \u201ccitizen science\u201d within the broader history of public participation in science. It analyses critically the current promises \u2014 democratisation, education, discoveries \u2014 emerging within the \u201ccitizen science\u201d discourse and offers a new framework to better understand the diversity of epistemic practices involved in these participatory projects. Finally, it maps a number of historical, political, and social questions for future research in the critical studies of \u201ccitizen science\u201d.",
+      "cited_by_count": 407,
+      "type": "article",
+      "source": {
+        "name": "Science & Technology Studies",
+        "type": "journal",
+        "issn": [
+          "2243-4690"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://sciencetechnologystudies.journal.fi/article/download/60425/37504"
+      },
+      "topics": [
+        "Species Distribution and Climate Change"
+      ],
+      "referenced_works_count": 158,
+      "url": "https://openalex.org/W2782318340"
+    },
+    {
+      "openalex_id": "W2769436221",
+      "doi": "10.11647/obp.0130",
+      "title": "Wellbeing, Freedom and Social Justice",
+      "authors": [
+        {
+          "name": "Ingrid Robeyns",
+          "openalex_id": "A5050270181",
+          "orcid": "https://orcid.org/0000-0002-2893-1814",
+          "institutions": [
+            "Utrecht University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-11-27",
+      "abstract": "Notions such as wellbeing, freedom, and social justice are integral to evaluating social progress and developing policies. One increasingly influential way to think about these concepts is the capability approach, a theoretical framework which was pioneered by the philosopher and economist Amartya Sen in the 1980s. In this book Ingrid Robeyns orientates readers new to the capability approach through offering an explanation of this framework. Wellbeing, Freedom and Social Justice also endeavors to resolve historical disputes in the literature and thus will be equally engaging to those familiar with the field. The author offers a novel and illuminating account of how the capability approach can be understood in a variety of academic disciplines and fields of application. Special attention is paid to clarifying misunderstandings that have been caused by different disciplinary assumptions and the interpretive consequences they have for our consideration of the capability approach. Robeyns argues that respecting the distinction between the general capability approach, and more specific capability theories or applications, helps to clear up confusion and misinterpretation. In addition, the author presents detailed analyses of well-known objections to the capability approach, and also discusses how it relates to other schools of analysis such as theories of justice, human rights, basic needs, and the human development approach. Wellbeing, Freedom and Social Justice offers an original and comprehensive account of the field. The book will appeal to scholars of the capability approach as well as new readers looking for an interdisciplinary introduction.",
+      "cited_by_count": 833,
+      "type": "book",
+      "source": {
+        "name": "Open Book Publishers",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.openbookpublishers.com/10.11647/OBP.0130.pdf"
+      },
+      "topics": [
+        "Psychological Well-being and Life Satisfaction",
+        "Income, Poverty, and Inequality",
+        "Employment and Welfare Studies"
+      ],
+      "referenced_works_count": 461,
+      "url": "https://openalex.org/W2769436221"
+    },
+    {
+      "openalex_id": "W2894119811",
+      "doi": "10.1186/s40878-018-0095-1",
+      "title": "Against \u2018immigrant integration\u2019: for an end to neocolonial knowledge production",
+      "authors": [
+        {
+          "name": "Willem Schinkel",
+          "openalex_id": "A5040080638",
+          "orcid": "https://orcid.org/0000-0002-8154-6245",
+          "institutions": [
+            "Erasmus University Rotterdam"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-09-25",
+      "abstract": null,
+      "cited_by_count": 432,
+      "type": "article",
+      "source": {
+        "name": "Comparative Migration Studies",
+        "type": "journal",
+        "issn": [
+          "2214-594X",
+          "2214-8590"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://comparativemigrationstudies.springeropen.com/track/pdf/10.1186/s40878-018-0095-1"
+      },
+      "topics": [
+        "Migration, Refugees, and Integration",
+        "Migration and Labor Dynamics",
+        "Diaspora, migration, transnational identity"
+      ],
+      "referenced_works_count": 47,
+      "url": "https://openalex.org/W2894119811"
+    },
+    {
+      "openalex_id": "W2343860314",
+      "doi": "10.36643/mjrl.21.1.habermas",
+      "title": "Habermas, the Public Sphere, and the Creation of a Racial Counterpublic",
+      "authors": [
+        {
+          "name": "Guy-Uriel E. Charles",
+          "openalex_id": "A5113449468",
+          "institutions": [
+            "Indiana University"
+          ]
+        },
+        {
+          "name": "Luis Fuentes\u2010Rohwer",
+          "openalex_id": "A5012083755",
+          "orcid": "https://orcid.org/0000-0002-1318-6348",
+          "institutions": [
+            "Indiana University"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-01-01",
+      "abstract": "In The Structural Transformation of the Public Sphere, J\u00fcrgen Habermas documented the historical emergence and fall of what he called the bourgeois public sphere, which he defined as \u201c[a] sphere of private people come together as a public . . . to engage [public authorities] in a debate over the general rules governing relations in the basically privatized but publicly relevant sphere of commodity exchange and social labor.\u201d This was a space where individuals gathered to discuss with each other, and sometimes with public officials, matters of shared concern. The aim of these gatherings was not simply discourse; these gatherings allowed the bourgeoisie to use their reason to determine the boundaries of public and private and to self-consciously develop the public sphere. As Habermas writes, \u201c[t]he medium of this political confrontation was . . . people\u2019s public use of their reason.\u201d The bourgeois public didn\u2019t simply participate, but it did so both directly and critically. The development of the bourgeois public as a critical, intellectual public took place in coffeehouses, in salons, and table societies. In Great Britain, Germany, and France, particularly, the coffeehouses and the salons \u201cwere centers of criticism\u2014literary at first, then also political\u2014in which began to emerge, between aristocratic society and bourgeois intellectuals, a certain parity of the educated.\u201d Intellectual equals came together and deliberated, an equality that was key in ensuring the requisite openness and deliberation. No one person dominated the discussion due to his status within the deliberative community. Instead, and above all else, the \u201cpower of the better argument\u201d won out. Two conditions were critical to these deliberations. First, equality was key to the public sphere. Membership in the public sphere meant that no one person was above the other and all arguments were similarly treated and scrutinized. Second, the principle of universal access was crucial.8The doors of the deliberative space were open to all comers and no group or person was purposefully shut out. Seen together, these two conditions provide a blueprint for deliberative practices in a democratic society.",
+      "cited_by_count": 231,
+      "type": "article",
+      "source": {
+        "name": "Michigan Journal of Race & Law",
+        "type": "journal",
+        "issn": [
+          "1095-2721",
+          "2688-5492"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://repository.law.umich.edu/cgi/viewcontent.cgi?article=1048&context=mjrl"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 3,
+      "url": "https://openalex.org/W2343860314"
+    },
+    {
+      "openalex_id": "W2510574275",
+      "doi": "10.3390/laws5030035",
+      "title": "Disability in a Human Rights Context",
+      "authors": [
+        {
+          "name": "Theresia Degener",
+          "openalex_id": "A5110286791",
+          "institutions": [
+            "Protestant University of Applied Sciences Rhineland-Westphalia-Lippe"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-25",
+      "abstract": "The Convention on the Rights of Persons with Disabilities (CRPD) is a modern human rights treaty with innovative components. It impacts on disability studies as well as human rights law. Two innovations are scrutinized in this article: the model of disability and the equality and discrimination concepts of the CRPD. It is argued that the CRPD manifests a shift from the medical model to the human rights model of disability. Six propositions are offered why and how the human rights model differs from the social model of disability. It is further maintained that the CRPD introduces a new definition of discrimination into international public law. The underlying equality concept can be categorized as transformative equality with both individual and group oriented components. The applied methodology of this research is legal doctrinal analysis and disability studies model analysis. The main finding is that the human rights model of disability improves the social model of disability. Three different models of disability can be attributed to different concepts of equality. The medical model corresponds with formal equality, while the social model with substantive equality and the human rights model can be linked with transformative equality.",
+      "cited_by_count": 316,
+      "type": "article",
+      "source": {
+        "name": "Laws",
+        "type": "journal",
+        "issn": [
+          "2075-471X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.mdpi.com/2075-471X/5/3/35/pdf?version=1472112123"
+      },
+      "topics": [
+        "Disability Rights and Representation",
+        "Human Rights and Immigration",
+        "Discrimination and Equality Law"
+      ],
+      "referenced_works_count": 77,
+      "url": "https://openalex.org/W2510574275"
+    },
+    {
+      "openalex_id": "W4234001222",
+      "doi": "10.1332/policypress/9781529205701.003.0002",
+      "title": "A Critical Review of Social Movement Theory: Gender and Emotion in Activist Cultures",
+      "authors": [
+        {
+          "name": "Emma Craddock",
+          "openalex_id": "A5089839894",
+          "orcid": "https://orcid.org/0000-0003-1292-8001"
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-03-11",
+      "abstract": "This chapter sets up the theoretical context of the book. It begins by establishing the key relevant debates in Social Movement Theory (SMT), including that of new versus old social movements, the influence of new media technologies on social movements and the role of emotions within social movement studies. This chapter identifies the theoretical perspective for studying activist culture, drawing on Bourdieu\u2019s (1992) theory of practice. This will serve as the basis for developing an analysis of the affective and cultural dimensions of social movement activism. It is contended that this approach enables the development of in-depth \u2018thick description\u2019 (Geertz, 1973) and an understanding of the interactions between activists as well as between the activist field and the wider social and political context, which is a theme threaded throughout the book. The chapter highlights feminist critiques of mainstream (or \u2018malestream\u2019) SMT\u2019s failure to recognise the importance of gender to theorising social movements. This is contextualised by a wider discussion about the gendered exclusions that exist within the public sphere.",
+      "cited_by_count": 2,
+      "type": "review",
+      "source": {
+        "name": "Policy Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": false,
+        "oa_status": "closed",
+        "oa_url": null
+      },
+      "topics": [
+        "Social and Cultural Dynamics",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W4234001222"
+    },
+    {
+      "openalex_id": "W2337290477",
+      "doi": "10.1111/gwao.12131",
+      "title": "The Theory and Praxis of Intersectionality in Work and Organisations: Where Do We Go From Here?",
+      "authors": [
+        {
+          "name": "Jenny K. Rodr\u00edguez",
+          "openalex_id": "A5074984919",
+          "orcid": "https://orcid.org/0000-0001-9288-6125",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Evangelina Holvino",
+          "openalex_id": "A5039170886",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Joyce K. Fletcher",
+          "openalex_id": "A5026000201",
+          "institutions": [
+            "University of Manchester"
+          ]
+        },
+        {
+          "name": "Stella M. Nkomo",
+          "openalex_id": "A5004481479",
+          "orcid": "https://orcid.org/0000-0003-3397-631X",
+          "institutions": [
+            "University of Manchester"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-04-12",
+      "abstract": "TEST 02 - Elsevier's Scopus, the largest abstract and citation database of peer-reviewed literature. Search and access research from the science, technology, medicine, social sciences and arts and humanities fields.",
+      "cited_by_count": 257,
+      "type": "article",
+      "source": {
+        "name": "Gender Work and Organization",
+        "type": "journal",
+        "issn": [
+          "0968-6673",
+          "1468-0432"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.research.manchester.ac.uk/portal/en/publications/the-theory-and-praxis-of-intersectionality-in-work-and-organisations(a0fb48b9-68fc-4ed3-9ae9-68f5e2d20161).html"
+      },
+      "topics": [
+        "Gender Diversity and Inequality",
+        "Labor Movements and Unions",
+        "Discrimination and Equality Law"
+      ],
+      "referenced_works_count": 197,
+      "url": "https://openalex.org/W2337290477"
+    },
+    {
+      "openalex_id": "W2896912381",
+      "doi": "10.1017/s0260210518000323",
+      "title": "Feminist everyday political economy: Space, time, and violence",
+      "authors": [
+        {
+          "name": "Juanita Elias",
+          "openalex_id": "A5086910343",
+          "orcid": "https://orcid.org/0000-0001-5184-4105",
+          "institutions": [
+            "University of Warwick"
+          ]
+        },
+        {
+          "name": "M. Shirin",
+          "openalex_id": "A5000939714",
+          "orcid": "https://orcid.org/0000-0001-9370-5453",
+          "institutions": [
+            "University of Warwick"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-10-23",
+      "abstract": "Abstract It goes without saying that feminist International Political Economy (IPE) is concerned in one way or another with the everyday \u2013 conceptualised as both a site of political struggle and a site within which social relations are (re)produced and governed. Given the longstanding grounding of feminist research in everyday gendered experiences, many would ask: Why do we need an explicit feminist theorisation of the everyday? After all, notions of everyday life and everyday political struggle infuse feminist analysis. This article seeks to interrogate the concept of the everyday \u2013 questioning prevalent understandings of the everyday and asking whether there is analytical and conceptual utility to be gained in articulating a specifically feminist understanding of it. We argue that a feminist political economy of the everyday can be developed in ways that push theorisations of social reproduction in new directions. We suggest that one way to do this is through the recognition that social reproduction is the everyday alongside a three-part theorisation of space, time, and violence (STV). It is an approach that we feel can play an important role in keeping IPE honest \u2013 that is, one that recognises how important gendered structures of everyday power and agency are to the conduct of everyday life within global capitalism.",
+      "cited_by_count": 207,
+      "type": "article",
+      "source": {
+        "name": "Review of International Studies",
+        "type": "journal",
+        "issn": [
+          "0260-2105",
+          "1469-9044"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/DA055681A166A4B386F140CAB9568DF4/S0260210518000323a.pdf/div-class-title-feminist-everyday-political-economy-space-time-and-violence-div.pdf"
+      },
+      "topics": [
+        "Gender, Security, and Conflict",
+        "Gender Politics and Representation",
+        "Labor Movements and Unions"
+      ],
+      "referenced_works_count": 131,
+      "url": "https://openalex.org/W2896912381"
+    },
+    {
+      "openalex_id": "W2311616869",
+      "doi": "10.1146/annurev-environ-110615-090052",
+      "title": "Trends and Directions in Environmental Justice: From Inequity to Everyday Life, Community, and Just Sustainabilities",
+      "authors": [
+        {
+          "name": "Julian Agyeman",
+          "openalex_id": "A5053377665",
+          "orcid": "https://orcid.org/0000-0002-3209-5687",
+          "institutions": [
+            "Tufts University"
+          ]
+        },
+        {
+          "name": "David Schlosberg",
+          "openalex_id": "A5001414622",
+          "orcid": "https://orcid.org/0000-0003-3547-919X",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Luke Craven",
+          "openalex_id": "A5085239473",
+          "orcid": "https://orcid.org/0000-0002-7787-8298",
+          "institutions": [
+            "University of Sydney"
+          ]
+        },
+        {
+          "name": "Caitlin Matthews",
+          "openalex_id": "A5072945761",
+          "institutions": [
+            "Tufts University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-02",
+      "abstract": "This article begins with a review and synthesis of some of the key theories, scholars, case examples, debates, methods, and (multiple) interpretations of environmental justice (EJ), as well as its expansion and globalization. We then look to some newly emerging themes, actions, and strategies for EJ and just sustainabilities. First, we look at the practices and materials of everyday life, illustrated by food and energy movements; second, the ongoing work on community and the importance of identity and attachment, informed by urban planning, food, and climate concerns; third, the growing interest in the relationship between human practices and communities and nonhuman nature. We also expand on the longstanding interest in just sustainabilities within this movement, illustrated by a wide range of concerns with food, energy, and climate justice. These new areas of work illustrate both recent developments and a set of paths forward for both the theory and practice of EJ.",
+      "cited_by_count": 641,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Environment and Resources",
+        "type": "journal",
+        "issn": [
+          "1543-5938",
+          "1545-2050"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-environ-110615-090052"
+      },
+      "topics": [
+        "Environmental Justice and Health Disparities",
+        "Geographies of human-animal interactions",
+        "Environmental Education and Sustainability"
+      ],
+      "referenced_works_count": 100,
+      "url": "https://openalex.org/W2311616869"
+    },
+    {
+      "openalex_id": "W2531857117",
+      "doi": "10.1007/s10433-016-0398-8",
+      "title": "Social exclusion of older persons: a scoping review and conceptual framework",
+      "authors": [
+        {
+          "name": "Kieran Walsh",
+          "openalex_id": "A5003534532",
+          "orcid": "https://orcid.org/0000-0002-6718-193X",
+          "institutions": [
+            "Ollscoil na Gaillimhe \u2013 University of Galway"
+          ]
+        },
+        {
+          "name": "Thomas Scharf",
+          "openalex_id": "A5102846094",
+          "orcid": "https://orcid.org/0000-0003-4909-1487",
+          "institutions": [
+            "Newcastle University"
+          ]
+        },
+        {
+          "name": "Norah Keating",
+          "openalex_id": "A5076747557",
+          "orcid": "https://orcid.org/0000-0002-2535-4564",
+          "institutions": [
+            "North-West University",
+            "Swansea University"
+          ]
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-10-11",
+      "abstract": "As a concept, social exclusion has considerable potential to explain and respond to disadvantage in later life. However, in the context of ageing populations, the construct remains ambiguous. A disjointed evidence-base, spread across disparate disciplines, compounds the challenge of developing a coherent understanding of exclusion in older age. This article addresses this research deficit by presenting the findings of a two-stage scoping review encompassing seven separate reviews of the international literature pertaining to old-age social exclusion. Stage one involved a review of conceptual frameworks on old-age exclusion, identifying conceptual understandings and key domains of later-life exclusion. Stage two involved scoping reviews on each domain (six in all). Stage one identified six conceptual frameworks on old-age exclusion and six common domains across these frameworks: neighbourhood and community; services, amenities and mobility; social relations; material and financial resources; socio-cultural aspects; and civic participation. International literature concentrated on the first four domains, but indicated a general lack of research knowledge and of theoretical development. Drawing on all seven scoping reviews and a knowledge synthesis, the article presents a new definition and conceptual framework relating to old-age exclusion.",
+      "cited_by_count": 411,
+      "type": "review",
+      "source": {
+        "name": "European Journal of Ageing",
+        "type": "journal",
+        "issn": [
+          "1613-9372",
+          "1613-9380"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10433-016-0398-8.pdf"
+      },
+      "topics": [
+        "Health disparities and outcomes",
+        "Migration, Aging, and Tourism Studies",
+        "Intergenerational Family Dynamics and Caregiving"
+      ],
+      "referenced_works_count": 188,
+      "url": "https://openalex.org/W2531857117"
+    },
+    {
+      "openalex_id": "W2989347311",
+      "doi": "10.5465/annals.2017.0033",
+      "title": "The Organizational Reproduction of Inequality",
+      "authors": [
+        {
+          "name": "John Amis",
+          "openalex_id": "A5049856906",
+          "orcid": "https://orcid.org/0000-0003-0627-0522",
+          "institutions": [
+            "University of Cambridge",
+            "University of Edinburgh"
+          ]
+        },
+        {
+          "name": "Johanna Mair",
+          "openalex_id": "A5013041323",
+          "orcid": "https://orcid.org/0000-0001-5999-9232",
+          "institutions": [
+            "Hertie School",
+            "Stanford University"
+          ]
+        },
+        {
+          "name": "Kamal A. Munir",
+          "openalex_id": "A5103520606",
+          "institutions": [
+            "University of Cambridge"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-11-01",
+      "abstract": "With societal inequalities continuing to increase and organizations providing the vast majority of people with their income, we wanted to assess the ways in which organizational practices are implicated in the burgeoning of social and economic inequality. Following an integrative review of the literature drawn from across the social sciences, we found that the multiple ways in which five major organizational practices \u2013 hiring, role allocation, promotion, compensation and structuring \u2013 are enacted emerged as being central to the reproduction of inequality. We also uncovered how the persistence of these practices, and the inequality they induce, can be largely attributed to a constellation of three highly institutionalized myths, efficiency, meritocracy and positive globalization. Our analysis further reveals how, as scholars, we bear a corresponding responsibility to reconsider how we engage in research on and teaching about organizations. The implications of this for our future work are discussed.",
+      "cited_by_count": 423,
+      "type": "article",
+      "source": {
+        "name": "Academy of Management Annals",
+        "type": "journal",
+        "issn": [
+          "1941-6067",
+          "1941-6520"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/ffe6689d-f349-4603-94d7-1ba5552e923f"
+      },
+      "topics": [
+        "Management and Organizational Studies",
+        "Gender Diversity and Inequality",
+        "Corporate Social Responsibility Reporting"
+      ],
+      "referenced_works_count": 333,
+      "url": "https://openalex.org/W2989347311"
+    },
+    {
+      "openalex_id": "W4249767345",
+      "doi": "10.1515/9783839425336-008",
+      "title": "Dis/entangling Critical Disability Studies",
+      "authors": [
+        {
+          "name": "Dan Goodley",
+          "openalex_id": "A5015299854",
+          "orcid": "https://orcid.org/0000-0002-0660-5671"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-12-31",
+      "abstract": null,
+      "cited_by_count": 223,
+      "type": "book-chapter",
+      "source": {
+        "name": "transcript Verlag eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.degruyterbrill.com/document/doi/10.1515/9783839425336-008/pdf"
+      },
+      "topics": [
+        "Disability Rights and Representation",
+        "Healthcare innovation and challenges",
+        "Disability Education and Employment"
+      ],
+      "referenced_works_count": 77,
+      "url": "https://openalex.org/W4249767345"
+    },
+    {
+      "openalex_id": "W2325121538",
+      "doi": "10.12681/grsr.9555",
+      "title": "MAINSTREAMING GENDER EQUALITY IN EUROPE. A CRITICAL FRAME ANALYSIS APPROACH",
+      "authors": [
+        {
+          "name": "Mieke Verloo",
+          "openalex_id": "A5006555859",
+          "orcid": "https://orcid.org/0000-0002-0152-416X"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-03-09",
+      "abstract": "This article analyzes implementation problems in gender mainstreaming as accentuated by a multi-level setting and assumes that one of the major factors affecting implementation problems is a discursive one. Against this backdrop a methodological approach is presented to study such divergences in policy frames on gender equality. Based upon recent literature, the article first outlines the necessity for a comparative methodology to analyze (gender equality) policy frames, and identifies some major problems in the construction of such methodology. The article then presents and explains Critical Frame Analysis as a promising methodological approach for studying and comparing the framing of gender inequality as a policy problem across Europe in a systematic way. Critical Frame Analysis builds upon social movement theory, gender theory and policy theory. This article can be considered to be an introduction to the special issue, as all articles refer to Critical Frame Analysis methodology as it has been used in the MAGEEQ research project.",
+      "cited_by_count": 235,
+      "type": "article",
+      "source": {
+        "name": "\u0395\u03c0\u03b9\u03b8\u03b5\u03ce\u03c1\u03b7\u03c3\u03b7 \u039a\u03bf\u03b9\u03bd\u03c9\u03bd\u03b9\u03ba\u03ce\u03bd \u0395\u03c1\u03b5\u03c5\u03bd\u03ce\u03bd",
+        "type": "journal",
+        "issn": [
+          "0013-9696",
+          "2241-8512"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://ejournals.epublishing.ekt.gr/index.php/ekke/article/download/9555/9742"
+      },
+      "topics": [
+        "Gender Politics and Representation",
+        "Social Policy and Reform Studies"
+      ],
+      "referenced_works_count": 25,
+      "url": "https://openalex.org/W2325121538"
+    },
+    {
+      "openalex_id": "W2900931352",
+      "doi": "10.4324/9781315726595",
+      "title": "Literature and Disability",
+      "authors": [
+        {
+          "name": "Alice Hall",
+          "openalex_id": "A5084550917"
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-08-11",
+      "abstract": "Literature and Disability introduces readers to the field of disability studies and the ways in which a focus on issues of impairment and the representation of disability can provide new approaches to reading and writing about literary texts. Disability plays a central role in much of the most celebrated literature, yet it is only in recent years that literary criticism has begun to consider the aesthetic, ethical and literary challenges that this poses.The author explores:key debates and issues in disability studies todaydifferent forms of impairment, with the aim of showing the diversity and ambiguity of the term \"disability\"the intersection between literary critical approaches to disability and feminist, post-colonial, and autobiographical writinggenre and representations of disability in relation to literary forms including novels, short stories, poems, plays and life writingThis volume provides students and academics with an accessible overview of literary critical approaches to disability representation.",
+      "cited_by_count": 264,
+      "type": "book",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://api.taylorfrancis.com/content/books/oa-mono/download?identifierName=doi&identifierValue=10.4324/9781315726595&type=webpdf"
+      },
+      "topics": [
+        "Contemporary Literature and Criticism"
+      ],
+      "referenced_works_count": 161,
+      "url": "https://openalex.org/W2900931352"
+    },
+    {
+      "openalex_id": "W2596389280",
+      "doi": "10.1146/annurev-polisci-060415-093825",
+      "title": "Police Are Our Government: Politics, Political Science, and the Policing of Race\u2013Class Subjugated Communities",
+      "authors": [
+        {
+          "name": "Joe Soss",
+          "openalex_id": "A5057374585",
+          "orcid": "https://orcid.org/0000-0002-1348-8573",
+          "institutions": [
+            "University of Minnesota"
+          ]
+        },
+        {
+          "name": "Vesla M. Weaver",
+          "openalex_id": "A5111612582",
+          "institutions": [
+            "Yale University"
+          ]
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-03-17",
+      "abstract": "Against the backdrop of Ferguson and the Black Lives Matter movement, we ask what the American politics subfield has to say about the political lives of communities subjugated by race and class. We argue that mainstream research in this subfield\u2014framed by images of representative democracy and Marshallian citizenship\u2014has provided a rich portrait of what such communities lack in political life. Indeed, by focusing so effectively on their political marginalization, political scientists have ironically made such communities marginal to the subfield's account of American democracy and citizenship. In this article, we provide a corrective by focusing on what is present in the political lives of such communities. To redress the current imbalance and advance the understandings of race and class in American politics, we argue that studies of the liberal-democratic \u201cfirst face\u201d of the state must be complemented by greater attention to the state's more controlling \u201csecond face.\u201d Focusing on policing, we seek to unsettle the mainstream of a subfield that rarely inquires into governmental practices of social control and the ways \u201crace-class subjugated communities\u201d are governed through coercion, containment, repression, surveillance, regulation, predation, discipline, and violence.",
+      "cited_by_count": 538,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Political Science",
+        "type": "journal",
+        "issn": [
+          "1094-2939",
+          "1545-1577"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-polisci-060415-093825"
+      },
+      "topics": [
+        "Policing Practices and Perceptions",
+        "Crime Patterns and Interventions",
+        "Gun Ownership and Violence Research"
+      ],
+      "referenced_works_count": 178,
+      "url": "https://openalex.org/W2596389280"
+    },
+    {
+      "openalex_id": "W2803349723",
+      "doi": "10.1146/annurev-soc-073117-041410",
+      "title": "Silence, Power, and Inequality: An Intersectional Approach to Sexual Violence",
+      "authors": [
+        {
+          "name": "Elizabeth A. Armstrong",
+          "openalex_id": "A5101863509",
+          "orcid": "https://orcid.org/0000-0003-3860-8743",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Miriam Gleckman-Krut",
+          "openalex_id": "A5087356142",
+          "orcid": "https://orcid.org/0000-0002-1363-3128",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        },
+        {
+          "name": "Lanora Johnson",
+          "openalex_id": "A5001429083",
+          "orcid": "https://orcid.org/0000-0002-4813-7749",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-05-25",
+      "abstract": "Sexual violence reproduces inequalities of gender, race/ethnicity, class, age, sexuality, ability status, citizenship status, and nationality. Yet its study has been relegated to the margins of our discipline, with consequences for knowledge about the reproduction of social inequality. We begin with an overview of key insights about sexual violence elaborated by feminists, critical race scholars, and activists. This research leads us to conceptualize sexual violence as a mechanism of inequality that is made more effective by the silencing of its usage. We trace legal and cultural contestations over the definition of sexual violence in the United States. We consider the challenges of narrating sexual violence and review how the narrow focus on gender by some anti\u2013sexual violence activism fails women of color and other marginalized groups. We conclude by interrogating the sociological silence on sexual violence.",
+      "cited_by_count": 227,
+      "type": "article",
+      "source": {
+        "name": "Annual Review of Sociology",
+        "type": "journal",
+        "issn": [
+          "0360-0572",
+          "1545-2115"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.annualreviews.org/doi/pdf/10.1146/annurev-soc-073117-041410"
+      },
+      "topics": [
+        "Sexual Assault and Victimization Studies",
+        "Gender, Security, and Conflict",
+        "Intimate Partner and Family Violence"
+      ],
+      "referenced_works_count": 171,
+      "url": "https://openalex.org/W2803349723"
+    },
+    {
+      "openalex_id": "W4210550871",
+      "doi": "10.1057/s41296-021-00490-0",
+      "title": "Intersectionality as Critical Social Theory",
+      "authors": [
+        {
+          "name": "Patr\u00edcia Hill Collins",
+          "openalex_id": "A5006360782",
+          "institutions": [
+            "University of Maryland, College Park"
+          ]
+        },
+        {
+          "name": "Elaini Cristina Gonzaga da Silva",
+          "openalex_id": "A5026469392",
+          "institutions": [
+            "Pontif\u00edcia Universidade Cat\u00f3lica de S\u00e3o Paulo"
+          ]
+        },
+        {
+          "name": "Emek Erg\u00fcn",
+          "openalex_id": "A5060428959",
+          "orcid": "https://orcid.org/0000-0001-7234-2745",
+          "institutions": [
+            "University of North Carolina at Charlotte"
+          ]
+        },
+        {
+          "name": "Inger Furseth",
+          "openalex_id": "A5061796312",
+          "orcid": "https://orcid.org/0000-0001-7496-349X",
+          "institutions": [
+            "University of Oslo"
+          ]
+        },
+        {
+          "name": "Kanisha D. Bond",
+          "openalex_id": "A5040201608",
+          "institutions": [
+            "Binghamton University"
+          ]
+        },
+        {
+          "name": "Jone Mart\u00ednez Palacios",
+          "openalex_id": "A5018566414",
+          "orcid": "https://orcid.org/0000-0002-9354-3148",
+          "institutions": [
+            "University of the Basque Country"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-05-17",
+      "abstract": null,
+      "cited_by_count": 202,
+      "type": "article",
+      "source": {
+        "name": "Contemporary Political Theory",
+        "type": "journal",
+        "issn": [
+          "1470-8914",
+          "1476-9336"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1057/s41296-021-00490-0.pdf"
+      },
+      "topics": [
+        "Gender Politics and Representation",
+        "Social Policy and Reform Studies",
+        "LGBTQ Health, Identity, and Policy"
+      ],
+      "referenced_works_count": 37,
+      "url": "https://openalex.org/W4210550871"
+    },
+    {
+      "openalex_id": "W2307667127",
+      "doi": "10.2458/v22i1.21076",
+      "title": "What does it mean to do food justice?",
+      "authors": [
+        {
+          "name": "Kirsten Valentine Cadieux",
+          "openalex_id": "A5042255418",
+          "orcid": "https://orcid.org/0000-0003-0959-8152",
+          "institutions": [
+            "University of Minnesota System"
+          ]
+        },
+        {
+          "name": "Rachel Slocum",
+          "openalex_id": "A5028539581",
+          "institutions": [
+            "Minneapolis Institute of Arts"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-01",
+      "abstract": "'Food justice' and 'food sovereignty' have become key words in food movement scholarship and activism. In the case of 'food justice', it seems the word is often substituted for work associated with projects typical of the alternative or local food movement. We argue that it is important for scholars and practitioners to be clear on how food justice differs from other efforts to seek an equitable food system. In the interests of ensuring accountability to socially just research and action, as well as mounting a tenable response to the 'feed the world' paradigm that often sweeps aside concerns with justice as distractions from the 'real' issues, scholars and practitioners need to be more clear on what it means to do food justice. In exploring that question, we identify four nodes around which food justice organizing appears to occur: trauma/inequity, exchange, land, and labor. This article sets the stage for a second one that follows, Notes on the practice of food justice in the U.S., where we discuss attempts to practice food justice. Key words: food justice, food sovereignty, food movement, food security, alternative agri-food systems",
+      "cited_by_count": 232,
+      "type": "article",
+      "source": {
+        "name": "Journal of Political Ecology",
+        "type": "journal",
+        "issn": [
+          "1073-0451"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://journals.uair.arizona.edu/index.php/JPE/article/download/21076/20664"
+      },
+      "topics": [
+        "Organic Food and Agriculture",
+        "Urban Agriculture and Sustainability",
+        "Agriculture, Land Use, Rural Development"
+      ],
+      "referenced_works_count": 208,
+      "url": "https://openalex.org/W2307667127"
+    },
+    {
+      "openalex_id": "W4205475170",
+      "doi": "10.1073/pnas.2113067119",
+      "title": "Intersectional inequalities in science",
+      "authors": [
+        {
+          "name": "Diego Kozlowski",
+          "openalex_id": "A5053919001",
+          "orcid": "https://orcid.org/0000-0002-5396-3471",
+          "institutions": [
+            "University of Luxembourg"
+          ]
+        },
+        {
+          "name": "Vincent Larivi\u00e8re",
+          "openalex_id": "A5068542997",
+          "orcid": "https://orcid.org/0000-0002-2733-0689",
+          "institutions": [
+            "Biblioth\u00e8que et Archives nationales du Qu\u00e9bec",
+            "Stellenbosch University",
+            "Universit\u00e9 du Qu\u00e9bec \u00e0 Montr\u00e9al",
+            "National Research Foundation",
+            "Universit\u00e9 de Montr\u00e9al"
+          ]
+        },
+        {
+          "name": "Cassidy R. Sugimoto",
+          "openalex_id": "A5029483412",
+          "orcid": "https://orcid.org/0000-0001-8608-3203",
+          "institutions": [
+            "Stellenbosch University",
+            "National Research Foundation",
+            "Georgia Institute of Technology"
+          ]
+        },
+        {
+          "name": "Thema Monroe\u2010White",
+          "openalex_id": "A5054518832",
+          "orcid": "https://orcid.org/0000-0001-9212-5430",
+          "institutions": [
+            "Berry College"
+          ]
+        }
+      ],
+      "publication_year": 2022,
+      "publication_date": "2022-01-04",
+      "abstract": "Significance The US scientific workforce is not representative of the population. Barriers to entry and participation have been well-studied; however, few have examined the effect of these disparities on the advancement of science. Furthermore, most studies have looked at either race or gender, failing to account for the intersection of these variables. Our analysis utilizes millions of scientific papers to study the relationship between scientists and the science they produce. We find a strong relationship between the characteristics of scientists and their research topics, suggesting that diversity changes the scientific portfolio with consequences for career advancement for minoritized individuals. Science policies should consider this relationship to increase equitable participation in the scientific workforce and thereby improve the robustness of science.",
+      "cited_by_count": 288,
+      "type": "article",
+      "source": {
+        "name": "Proceedings of the National Academy of Sciences",
+        "type": "journal",
+        "issn": [
+          "0027-8424",
+          "1091-6490"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://www.pnas.org/content/pnas/119/2/e2113067119.full.pdf"
+      },
+      "topics": [
+        "Diversity and Career in Medicine",
+        "Sex and Gender in Healthcare",
+        "scientometrics and bibliometrics research"
+      ],
+      "referenced_works_count": 96,
+      "url": "https://openalex.org/W4205475170"
+    },
+    {
+      "openalex_id": "W3043689190",
+      "doi": "10.3389/fpsyg.2020.01557",
+      "title": "Women Entrepreneurship: A Systematic Review to Outline the Boundaries of Scientific Literature",
+      "authors": [
+        {
+          "name": "Giuseppina Maria Cardella",
+          "openalex_id": "A5030876574",
+          "orcid": "https://orcid.org/0000-0002-8422-6466",
+          "institutions": [
+            "Universidad de Salamanca"
+          ]
+        },
+        {
+          "name": "Brizeida Raquel Hern\u00e1ndez-S\u00e1nchez",
+          "openalex_id": "A5023771648",
+          "orcid": "https://orcid.org/0000-0001-5397-1546",
+          "institutions": [
+            "Universidad de Salamanca"
+          ]
+        },
+        {
+          "name": "Jos\u00e9 Carlos S\u00e1nchez Garc\u00eda",
+          "openalex_id": "A5022701016",
+          "institutions": [
+            "Universidad de Salamanca"
+          ]
+        }
+      ],
+      "publication_year": 2020,
+      "publication_date": "2020-07-17",
+      "abstract": "In recent years, the study of women entrepreneurship has experienced great growth, gaining a broad consensus among academics and contributing above all to understanding all those factors that explain the difficulty of women in undertaking an entrepreneurial career. This document tries to contribute to the field of study, thanks to a systematic analysis through the publications present in the topic. For this purpose, 2,848 peer-reviewed articles were analyzed, published between 1950 and 2019, using the Scopus database (SCImago Research Group). Through the use of a series of bibliometric indicators it was possible to define the current state of research on the international scene. The analysis revealed that it is a multidisciplinary field of study and that has started to expand further since 2006, culminating in 2019, which makes it become a current and valid object of study. The analysis of the clusters allowed to isolate 6 different lines of research in which emerged, on the one hand, the importance of entrepreneurial education, social entrepreneurship and the socio-cultural context of reference (e.g., culture, family, and institutional support) as tools to overcome the gender gap, on the other, the importance that women entrepreneurship assumes in the economic growth of the country (especially in developing economies), promoting social inclusion and combating poverty and discrimination. The study presents an important contribution to reflect on current policies and to outline future lines of investigation.",
+      "cited_by_count": 328,
+      "type": "review",
+      "source": {
+        "name": "Frontiers in Psychology",
+        "type": "journal",
+        "issn": [
+          "1664-1078"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://www.frontiersin.org/articles/10.3389/fpsyg.2020.01557/pdf"
+      },
+      "topics": [
+        "Entrepreneurship Studies and Influences",
+        "Innovation and Socioeconomic Development",
+        "Family Business Performance and Succession"
+      ],
+      "referenced_works_count": 114,
+      "url": "https://openalex.org/W3043689190"
+    },
+    {
+      "openalex_id": "W2955477130",
+      "doi": "10.1017/s1537592719001397",
+      "title": "The Cost of Doing Politics? Analyzing Violence and Harassment against Female Politicians",
+      "authors": [
+        {
+          "name": "Mona Lena Krook",
+          "openalex_id": "A5049890614",
+          "orcid": "https://orcid.org/0000-0001-8347-6095",
+          "institutions": [
+            "Rutgers, The State University of New Jersey",
+            "Rutgers Sexual and Reproductive Health and Rights",
+            "Brigham Young University",
+            "Oklahoma State University",
+            "Columbia University",
+            "College of New Jersey",
+            "Johns Hopkins University",
+            "Princeton University",
+            "University of Denver"
+          ]
+        },
+        {
+          "name": "Juliana Restrepo San\u00edn",
+          "openalex_id": "A5004810770",
+          "orcid": "https://orcid.org/0000-0002-1638-7524",
+          "institutions": [
+            "Rutgers, The State University of New Jersey",
+            "Rutgers Sexual and Reproductive Health and Rights",
+            "Columbia University",
+            "University of Denver",
+            "Oklahoma State University",
+            "Johns Hopkins University",
+            "College of New Jersey",
+            "Brigham Young University",
+            "Princeton University"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-07-02",
+      "abstract": "Violence against women in politics is increasingly recognized around the world as a significant barrier to women\u2019s political participation, following a troubling rise in reports of assault, intimidation, and abuse directed at female politicians. Yet conceptual ambiguities remain as to the exact contours of this phenomenon. In this article, we seek to strengthen its theoretical, empirical, and methodological foundations. We propose that the presence of bias against women in political roles\u2014originating in structural violence, employing cultural violence, and resulting in symbolic violence\u2014distinguishes this phenomenon from other forms of political violence. We identify five types of violence against women in politics\u2014physical, psychological, sexual, economic, and semiotic\u2014and three methodological challenges related to underreporting, comparing men\u2019s and women\u2019s experiences, and intersectionality. Inspired by the literature on hate crimes, we develop an empirical approach for identifying cases of violence against women in politics, offering six criteria to ascertain whether an attack was potentially motivated by gender bias. We apply this framework to analyze three cases: the assassination of Benazir Bhutto, the impeachment of Dilma Rousseff, and the murder of Jo Cox. We conclude with the negative implications of violence against women in politics and point to emerging solutions around the globe.",
+      "cited_by_count": 235,
+      "type": "article",
+      "source": {
+        "name": "Perspectives on Politics",
+        "type": "journal",
+        "issn": [
+          "1537-5927",
+          "1541-0986"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/997569433135FA170B2789C88A48DD17/S1537592719001397a.pdf/div-class-title-the-cost-of-doing-politics-analyzing-violence-and-harassment-against-female-politicians-div.pdf"
+      },
+      "topics": [
+        "Gender Politics and Representation",
+        "Gender, Security, and Conflict",
+        "Intimate Partner and Family Violence"
+      ],
+      "referenced_works_count": 58,
+      "url": "https://openalex.org/W2955477130"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

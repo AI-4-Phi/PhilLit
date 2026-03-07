@@ -1,0 +1,35 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Prediscursive Epistemic Injury Recognizing Another Form of Epistemic Injustice",
+    "author": "Lobb"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5206/fpq/2018.4.6232",
+      "title": "\u201cPrediscursive Epistemic Injury\u201d: Recognizing Another Form of Epistemic Injustice?",
+      "authors": [
+        {
+          "family": "Lobb",
+          "given": "Andrea"
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Feminist Philosophy Quarterly",
+      "volume": "4",
+      "issue": "4",
+      "page": "",
+      "publisher": "University of Western Ontario, Western Libraries",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.5206/fpq/2018.4.6232",
+      "score": 106.76793
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

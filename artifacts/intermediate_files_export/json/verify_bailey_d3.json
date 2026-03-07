@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.4324/9781315734194
+[verify_paper.py] DOI verified: Deprovincializing Habermas...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.4324/9781315734194"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9781315734194",
+      "title": "Deprovincializing Habermas",
+      "authors": [
+        {
+          "family": "Bailey",
+          "given": "Tom"
+        }
+      ],
+      "editors": [],
+      "year": 2014,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Routledge India",
+      "type": "book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.4324/9781315734194"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

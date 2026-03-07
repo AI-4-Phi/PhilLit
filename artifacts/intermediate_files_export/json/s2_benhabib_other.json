@@ -1,0 +1,137 @@
+[s2_search.py] Searching Semantic Scholar: 'Benhabib generalized concrete other feminist ethics', limit=5
+[s2_search.py] Rate limited, backing off (attempt 1/5)...
+[s2_search.py] Retrying after 1.2s backoff...
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_c587a35145ea9d9b)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Benhabib generalized concrete other feminist ethics",
+  "results": [
+    {
+      "paperId": "7e792e26e3459fca4f23c57063de5c8f94308225",
+      "title": "Seyla Benhabib\u2019s Interactive Universalism: Fragile Hope for a Radically Democratic Conversational Model",
+      "authors": [
+        {
+          "name": "S. Bracci",
+          "authorId": "115285605"
+        }
+      ],
+      "year": 2002,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": "10.1177/10778004008004005",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7e792e26e3459fca4f23c57063de5c8f94308225",
+      "venue": "",
+      "journal": {
+        "name": "Qualitative Inquiry",
+        "pages": "463 - 488",
+        "volume": "8"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "e48d0b40747618446fabf633958c5846241b0950",
+      "title": "The Generalized and the Concrete Other : The Kohlberg-Gilligan Controversy and Feminist Theory in Feminism As Critique.",
+      "authors": [
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 1986,
+      "abstract": null,
+      "citationCount": 132,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e48d0b40747618446fabf633958c5846241b0950",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "402-424",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "f1a43b18f20b7943753587d28382edd3d423d9e8",
+      "title": "Interactive universalism, the concrete other and discourse ethics: A sociological dialogue with Seyla Benhabib\u2019s theories of morality",
+      "authors": [
+        {
+          "name": "O. Abbott",
+          "authorId": "40269003"
+        }
+      ],
+      "year": 2022,
+      "abstract": "Noting that Benhabib\u2019s ethical theory has seldom been engaged with by sociologists of morality, this article introduces and interrogates Benhabib\u2019s ethical theory from a sociological perspective. It is argued that Benhabib\u2019s critiques of Enlightenment conceptions of morality complement sociological theories of morality. Her concepts of the \u2018concrete\u2019 and \u2018generalized\u2019 other and \u2018interactive universalism\u2019 can potentially inform recurrent debates in the sociology of morality about the extent to which cultural plurality precludes the possibility of sociologists providing normative judgements, and the extent to which certain features of moral experiences can be taken to be universal. However, Benhabib\u2019s argument that discourse ethics can provide a procedural means to judge between competing moral claims leads her to prioritize the perspective of \u2018postconventional\u2019 Western modernism as the means to adjudicate between the moral tolerability of cultural beliefs and practices. This leads her to characterize \u2018conventional\u2019 moral systems as subordinate, which succumbs to postcolonial critiques of the role of processes of domination in organizing the validity of moral claims.",
+      "citationCount": 2,
+      "doi": "10.1177/13684310221129522",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/f1a43b18f20b7943753587d28382edd3d423d9e8",
+      "venue": "European Journal of Social Theory",
+      "journal": {
+        "name": "European Journal of Social Theory",
+        "pages": "335 - 353",
+        "volume": "26"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ffc1f2f54513c01082d4baa907408cae5340befb",
+      "title": "The Generalized and the Concrete Other",
+      "authors": [
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 2020,
+      "abstract": null,
+      "citationCount": 309,
+      "doi": "10.4324/9781003059516-8",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ffc1f2f54513c01082d4baa907408cae5340befb",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "148-177",
+        "volume": "5"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "a023601d1edaa56b5836a73132d2cd2f57c1f2aa",
+      "title": "Between the Generalized and the Concrete Other: Approaching Organizational Ethics from Feminist Perspectives",
+      "authors": [
+        {
+          "name": "Tanni Haas",
+          "authorId": "98802225"
+        },
+        {
+          "name": "S. Deetz",
+          "authorId": "94902837"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 20,
+      "doi": "10.4135/9781452225494.N2",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/a023601d1edaa56b5836a73132d2cd2f57c1f2aa",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "24-46",
+        "volume": ""
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

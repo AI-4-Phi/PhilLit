@@ -1,0 +1,260 @@
+[s2_search.py] Searching Semantic Scholar: 'McCarthy Race Empire Idea Human Development' (year=2000-2015) (field=Philosophy), limit=10
+[s2_search.py] Retrieved 10/10 papers...
+[s2_search.py] Cached results (cache key: s2_cdc5fc946d109881)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "McCarthy Race Empire Idea Human Development",
+  "results": [
+    {
+      "paperId": "ecf4257d43dfe0417d7cf916b78a08963d35e9ad",
+      "title": "Race, Empire, and the Idea of Human Development",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 214,
+      "doi": "10.1017/cbo9780511814044",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ecf4257d43dfe0417d7cf916b78a08963d35e9ad",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "efa2b43f89d30d058fcc4e2b3b544ef96603ac53",
+      "title": "Race, Empire, and the Idea of Human Development: What may we hope? Reflections on the idea of universal history in the wake of Kant",
+      "authors": [
+        {
+          "name": "Thomas Mccarthy",
+          "authorId": "144991709"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1017/CBO9780511814044.006",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/efa2b43f89d30d058fcc4e2b3b544ef96603ac53",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5a5da0da2ae36ec67a8f9758063bee61899d00ad",
+      "title": "Thomas McCarthy, .Race, Empire, and the Idea of Human Development.New York: Cambridge University Press, 2009. Pp. 254. $80.00 (cloth); $27.99 (paper).",
+      "authors": [
+        {
+          "name": "Naomi Zack",
+          "authorId": "69875943"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1086/652492",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5a5da0da2ae36ec67a8f9758063bee61899d00ad",
+      "venue": "",
+      "journal": {
+        "name": "Ethics",
+        "pages": "622-627",
+        "volume": "120"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "0be9fe6532f41ba7fc819849df6a71f515ea563f",
+      "title": "Development and Hope: Comments on Thomas McCarthy's Race, Empire, and the Idea of Human Development",
+      "authors": [
+        {
+          "name": "L. Mcwhorter",
+          "authorId": "2709628"
+        }
+      ],
+      "year": 2012,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.5860/choice.47-3727",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0be9fe6532f41ba7fc819849df6a71f515ea563f",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "pages": "1",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "071217912abb32d919d7eff52f63376780e5a1e5",
+      "title": "Race, Empire and the Idea of Human Development, by Thomas McCarthy. Cambridge, UK: Cambridge University Press, 2009. 254 pp. $28.99 (paperback)",
+      "authors": [
+        {
+          "name": "K. King",
+          "authorId": "115306664"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/0090591710394328",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/071217912abb32d919d7eff52f63376780e5a1e5",
+      "venue": "",
+      "journal": {
+        "name": "Political Theory",
+        "pages": "291 - 295",
+        "volume": "39"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "53db251987cf9b329157d6ef5ce63796d689cb67",
+      "title": "The anthropology of hope and the philosophy of history: Rethinking Kant\u2019s third and fourth questions with Blumenberg and McCarthy",
+      "authors": [
+        {
+          "name": "Vida Pavesich",
+          "authorId": "117361968"
+        }
+      ],
+      "year": 2011,
+      "abstract": null,
+      "citationCount": 2,
+      "doi": "10.1177/0725513610386099",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/53db251987cf9b329157d6ef5ce63796d689cb67",
+      "venue": "",
+      "journal": {
+        "name": "Thesis Eleven",
+        "pages": "20 - 39",
+        "volume": "104"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "c5106903a16be1b73087700f4421bdbebb657bb0",
+      "title": "The Myth of Race: The Troubling Persistence of an Unscientific Idea",
+      "authors": [
+        {
+          "name": "R. L. Boyd",
+          "authorId": "144578319"
+        }
+      ],
+      "year": 2015,
+      "abstract": null,
+      "citationCount": 99,
+      "doi": "10.1016/j.soscij.2015.07.002",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c5106903a16be1b73087700f4421bdbebb657bb0",
+      "venue": "",
+      "journal": {
+        "name": "The Social Science Journal",
+        "pages": "427 - 428",
+        "volume": "52"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "06c3a7422dc82ada5fb2283e7a1f80e1df2b38d7",
+      "title": "The Historical Idea of a Better Race",
+      "authors": [
+        {
+          "name": "M. H\u00e4yry",
+          "authorId": "6754734"
+        }
+      ],
+      "year": 2008,
+      "abstract": null,
+      "citationCount": 13,
+      "doi": "10.2202/1941-6008.1035",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/06c3a7422dc82ada5fb2283e7a1f80e1df2b38d7",
+      "venue": "",
+      "journal": {
+        "name": "Studies in Ethics, Law, and Technology",
+        "volume": "2"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "fb9aa29b12802469937ec9753c6c671735d188c6",
+      "title": "Ape to Apollo: Aesthetics and the Idea of Race in the 18th Century (review)",
+      "authors": [
+        {
+          "name": "Michel Chaouli",
+          "authorId": "87512529"
+        }
+      ],
+      "year": 2004,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1353/gyr.2011.0088",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/fb9aa29b12802469937ec9753c6c671735d188c6",
+      "venue": "",
+      "journal": {
+        "name": "Goethe Yearbook",
+        "pages": "307 - 309",
+        "volume": "12"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "dacfb5f049ad6c3cc912e2b2639d8bdfe7d1f825",
+      "title": "Cities, Human Well Being and the Environment: Conceiving National Regulatory Knowledge Systems to Facilitate Resilient Knowledge, Knowledge Based Development and Inter-Generational Knowing",
+      "authors": [
+        {
+          "name": "Richard Vines",
+          "authorId": "145301991"
+        },
+        {
+          "name": "G. McCarthy",
+          "authorId": "31882277"
+        },
+        {
+          "name": "C. Kirk",
+          "authorId": "51348596"
+        },
+        {
+          "name": "Michael E. Jones",
+          "authorId": "2111327951"
+        }
+      ],
+      "year": 2010,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/dacfb5f049ad6c3cc912e2b2639d8bdfe7d1f825",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 10,
+  "errors": []
+}

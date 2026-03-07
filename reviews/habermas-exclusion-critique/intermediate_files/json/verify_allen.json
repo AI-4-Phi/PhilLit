@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.7312/alle17324"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.7312/alle17324",
+      "title": "The End of Progress",
+      "authors": [
+        {
+          "family": "Allen",
+          "given": "Amy"
+        }
+      ],
+      "editors": [],
+      "year": 2016,
+      "container_title": "",
+      "volume": "",
+      "issue": "",
+      "page": "",
+      "publisher": "Columbia University Press",
+      "type": "edited-book",
+      "suggested_bibtex_type": "book",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.7312/alle17324"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

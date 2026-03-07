@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.3366/epi.2006.3.3.175"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.3366/epi.2006.3.3.175",
+      "title": "Deliberative Democracy and the Epistemic Benefits of Diversity",
+      "authors": [
+        {
+          "family": "Bohman",
+          "given": "James"
+        }
+      ],
+      "editors": [],
+      "year": 2006,
+      "container_title": "Episteme",
+      "volume": "3",
+      "issue": "3",
+      "page": "175-191",
+      "publisher": "Cambridge University Press (CUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.3366/epi.2006.3.3.175"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,1056 @@
+{
+  "status": "success",
+  "source": "openalex",
+  "query": "Benhabib communicative ethics reconstruction inclusion",
+  "results": [
+    {
+      "openalex_id": "W1995453178",
+      "doi": "10.1007/bf00992905",
+      "title": "The narrative constitution of identity: A relational and network approach",
+      "authors": [
+        {
+          "name": "Margaret R. Somers",
+          "openalex_id": "A5075342025",
+          "orcid": "https://orcid.org/0000-0003-4751-6808",
+          "institutions": [
+            "University of Michigan\u2013Ann Arbor"
+          ]
+        }
+      ],
+      "publication_year": 1994,
+      "publication_date": "1994-10-01",
+      "abstract": null,
+      "cited_by_count": 2841,
+      "type": "article",
+      "source": {
+        "name": "Theory and Society",
+        "type": "journal",
+        "issn": [
+          "0304-2421",
+          "1573-7853"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/BF00992905.pdf"
+      },
+      "topics": [
+        "Foucault, Power, and Ethics",
+        "Religion and Society Interactions",
+        "Community Health and Development"
+      ],
+      "referenced_works_count": 111,
+      "url": "https://openalex.org/W1995453178"
+    },
+    {
+      "openalex_id": "W1497823852",
+      "doi": null,
+      "title": "Reclaiming the Epistemological Other: Narrative and the Social Constitution of Identity",
+      "authors": [
+        {
+          "name": "Margaret R. Somers",
+          "openalex_id": "A5075342025",
+          "orcid": "https://orcid.org/0000-0003-4751-6808"
+        },
+        {
+          "name": "Gloria D. Gibson",
+          "openalex_id": "A5081165150"
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-05-01",
+      "abstract": "Also CSST Working Paper #94.",
+      "cited_by_count": 480,
+      "type": "article",
+      "source": {
+        "name": "Deep Blue (University of Michigan)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://hdl.handle.net/2027.42/51265"
+      },
+      "topics": [
+        "Social and Cultural Dynamics",
+        "Rhetoric and Communication Studies",
+        "Educator Training and Historical Pedagogy"
+      ],
+      "referenced_works_count": 93,
+      "url": "https://openalex.org/W1497823852"
+    },
+    {
+      "openalex_id": "W2407871514",
+      "doi": "10.1017/s0260210515000534",
+      "title": "Between Banyans and battle scenes: Liberal norms, contestation, and the limits of critique",
+      "authors": [
+        {
+          "name": "Jonas Wolff",
+          "openalex_id": "A5103114525",
+          "orcid": "https://orcid.org/0000-0002-7348-7206",
+          "institutions": [
+            "Goethe University Frankfurt",
+            "Peace Research Institute Frankfurt"
+          ]
+        },
+        {
+          "name": "Lisbeth Zimmermann",
+          "openalex_id": "A5063430796",
+          "orcid": "https://orcid.org/0000-0003-1323-8344",
+          "institutions": [
+            "Goethe University Frankfurt",
+            "Peace Research Institute Frankfurt"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-12-15",
+      "abstract": "Abstract In studying the global spread and implementation of liberal norms, scholars have moved from linear notions of norm diffusion and promotion to an emphasis on norm contestation. Contestation by the supposed beneficiaries and addressees has taken centre stage in both research on the norms that underpin global governance and in studies on democracy promotion and liberal peacebuilding. While the impetus of this scholarship is normative \u2013 to overcome the taken-for-granted nature of liberal norms \u2013 the concept of contestation itself is mainly used with an analytical interest. Yet, as we show in this article, contestation also comes with \u2013 oftentimes implicit \u2013 normative connotations. Focusing on the seminal work of Milja Kurki, Oliver Richmond, Antje Wiener, and Amitav Acharya, we reconstruct these normative connotations. It turns out that the normative take on contestation is fairly conventional in all four approaches. Contestation is largely seen as a means to enable dialogue, as illustrated by Acharya\u2019s metaphor of the Banyan tree. Fundamental conflicts over liberal norms (\u2018battle scenes\u2019) are either not considered or seen as normatively undesirable. As a way forward, we propose a typology that enables scholars to empirically analyse contestation in its different expressions and suggest two strategies to normatively assess practices of contestation.",
+      "cited_by_count": 112,
+      "type": "article",
+      "source": {
+        "name": "Review of International Studies",
+        "type": "journal",
+        "issn": [
+          "0260-2105",
+          "1469-9044"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/1C10803AF0E33E260A8492C8CE77E142/S0260210515000534a.pdf/div-class-title-between-banyans-and-battle-scenes-liberal-norms-contestation-and-the-limits-of-critique-div.pdf"
+      },
+      "topics": [
+        "Peacebuilding and International Security",
+        "Global Peace and Security Dynamics",
+        "Political Conflict and Governance"
+      ],
+      "referenced_works_count": 112,
+      "url": "https://openalex.org/W2407871514"
+    },
+    {
+      "openalex_id": "W2141374586",
+      "doi": "10.1017/s1752971914000426",
+      "title": "The co-originality of human rights and democracy in an international order",
+      "authors": [
+        {
+          "name": "Johan Karlsson Schaffer",
+          "openalex_id": "A5014655752",
+          "orcid": "https://orcid.org/0000-0002-0568-7353",
+          "institutions": [
+            "University of Oslo"
+          ]
+        }
+      ],
+      "publication_year": 2015,
+      "publication_date": "2015-02-09",
+      "abstract": "This paper analyses J\u00fcrgen Habermas\u2019s claim that democracy and human rights are co-original and its implications for his international theory. A central argument in his theory, the co-originality thesis suggests that human rights and democracy are not only both fundamental and mutually supportive, but also \u2018equi-primordial\u2019 and internally related. Reconstructing Habermas\u2019s argument as it has developed over two decades, I argue that his account of constitutional democracy has difficulties accounting for the enmeshment of constitutional and international human rights, while his three-tiered model of global governance, in the absence of democratic legitimation, amounts to a downgrade of the currently institutionalized practice of international human rights. Instead, I suggest that shifting the focus from ideal global institutions to actual processes of domestic contestation, through which groups appropriate and apply international legal norms in order to claim their rights, provides a plausible account of the practice of international human rights consistent with the co-originality thesis.",
+      "cited_by_count": 30,
+      "type": "article",
+      "source": {
+        "name": "International Theory",
+        "type": "journal",
+        "issn": [
+          "1752-9719",
+          "1752-9727"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/0680D78C0C964F680E004DE10D5799EB/S1752971914000426a.pdf/div-class-title-the-co-originality-of-human-rights-and-democracy-in-an-international-order-div.pdf"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Political Theology and Sovereignty",
+        "Judicial and Constitutional Studies"
+      ],
+      "referenced_works_count": 89,
+      "url": "https://openalex.org/W2141374586"
+    },
+    {
+      "openalex_id": "W142384719",
+      "doi": null,
+      "title": "Reconstructing the Author-Self: Some Feminist Lessons for Copyright Law",
+      "authors": [
+        {
+          "name": "Donna Craig",
+          "openalex_id": "A5025823908",
+          "orcid": "https://orcid.org/0000-0003-2035-9494",
+          "institutions": [
+            "York University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": "Copyright law currently forces all intellectual production into a doctrinal model shaped by individualistic assumptions about the authorial ideal. To the extent that the truly original author-owner is conceptualized as an individual (and not a function or fiction), he depends upon Enlightenment ideals of individuation, detachment, and unity. A competing view of the author sees her as necessarily engaged in a process of adaptation, translation and recombination. This version of authorship coheres with a view of the individual as socially constituted: her expression is the result of the complex variety of texts and discourses that she encounters (and by which her subjectivity is shaped). The tension between competing constructions of authorship thus mirrors a larger tension between competing constructions of the self. Feminists have struggled to find a conception of the self that acknowledges social embeddedness without precluding individual autonomy or creative capacity. The process of authorship encapsulates the tension between the autonomous self and the society in which she exists, because the materials of authorship are both given and created. Employing the tools of feminist dialogism and relational theory, I hope to show that we can re-imagine the author not as source, origin, or authority, but as participant, citizen. These ideas illuminate the nature of authorship as a social and formative process, but they also offer the foundation for a coherent justification of copyright: copyright law, which aims to encourage creativity and exchange, should thereby encourage participation in cultural dialogue and facilitate the relations of communication that are central to this conception of selfhood and society.",
+      "cited_by_count": 47,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://digitalcommons.osgoode.yorku.ca/scholarly_works/385"
+      },
+      "topics": [
+        "Copyright and Intellectual Property",
+        "Law in Society and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W142384719"
+    },
+    {
+      "openalex_id": "W4206618199",
+      "doi": "10.18778/1733-8077.2.1.04",
+      "title": "Theorising narratives of exile and belonging : the importance of Biography and Ethno-mimesis in \u201cunderstanding\u201d asylum",
+      "authors": [
+        {
+          "name": "Maggie O\u2019Neill",
+          "openalex_id": "A5071427569",
+          "institutions": [
+            "Loughborough University"
+          ]
+        },
+        {
+          "name": "Ramaswami Harindranath",
+          "openalex_id": "A5018958114",
+          "orcid": "https://orcid.org/0000-0003-3781-3948",
+          "institutions": [
+            "University of Melbourne"
+          ]
+        }
+      ],
+      "publication_year": 2006,
+      "publication_date": "2006-04-29",
+      "abstract": "The article explores the use and importance of taking a biographical approach to conducting participatory action research (PAR) with asylum seekers and refugees in order to: better understand lived experiences of exile and belonging; contribute to the important field of Biographical Sociology; provide a safe space for stories to be told; and in turn for these stories to feed in to policy and praxis. The authors\u2019 combined work on the asylum-migration nexus, the politics of representation and participatory action research methodology (PAR) as ethno-mimesisi argues for the use of biography to contribute to cultural politics at the level of theory, experience and praxis, and is constitutive of critical theory in praxis. PAR research undertaken with Bosnian refugees in the East Midlands and Afghan refugees in London will be the focus around which our analysis develops. We develop a case for theory building based upon lived experience using biographical materials, both narrative and visual, as critical theory in practice towards a vision of social justice that challenges the dominant knowledge/power axis embedded in current governance and media policy relating to forced migration. The dominant power/knowledge axis related to forced migration is embedded in current (New Labour) governance and re-presented in some media texts as identified below. New Labour governance is symbolised in the competing discourses of a) strong centralised control and b) more open systems, network and partnership based governance (Newman, 2003: 17-23; Clarke, 2004; Lewis, 2000). Open systems are made up of partnerships and networks \u2013 \u201cjoined up government\u201d, \u201cthat transcends the vertical, departmental structures of government itself\u201d (Newman, 2003: 20). to develop or foster a consensual style of governing. Progressive governance is defined by Newman (2003:15) as involving a significant shift from governance through hierarchy and competition to governance through networks and partnerships with an emphasis upon inclusion. Progressive governance involves the production of techniques and strategies of responsibilisation of citizens operationalised through the development of networks, alliances, and partnerships, with a strong focus upon active citizenship. Thus, spreading responsibility for social control to non state agencies and \u201ccommunities\u201d (Garland, 2001). In relation to forced migration/asylum discourses around the exclusion of the \u201cother\u201d (involving criminalisation, detention and deportation) and the maintenance and control of borders (developing ever more tighter controls on entry and asylum applications) exist in tension with discourses that speak of human rights, responsibilities and possibilities for multi-cultural citizenship especially in the community cohesion literature. There is a conflict at the heart of New Labour\u2019s approach to asylum policy linked to the \u201calterity\u201d of the asylum seeker that promulgates hegemonic ideologies and discourses around rights to belonging and citizenship, perceived access to resources (redistribution) and misrecognition fostering suspicion of the \u201cstranger\u201d. Alongside discourses of fairness and rights to enter and seek refuge, there exist regressive discourses that water down the vitally important actual and symbolic 1951 UN convention, and foster a split between \u201cbogus\u201d and \u201cgenuine\u201d refugees, making it extremely hard to seek asylum in the UK.",
+      "cited_by_count": 44,
+      "type": "article",
+      "source": {
+        "name": "Qualitative Sociology Review",
+        "type": "journal",
+        "issn": [
+          "1733-8077"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://czasopisma.uni.lodz.pl/qualit/article/download/12090/11711"
+      },
+      "topics": [
+        "Migration, Refugees, and Integration",
+        "Irish and British Studies",
+        "Participatory Visual Research Methods"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W4206618199"
+    },
+    {
+      "openalex_id": "W4248138083",
+      "doi": "10.1017/s0260210510001269",
+      "title": "Right of entry or right of refusal? Hospitality in the law of nature and nations",
+      "authors": [
+        {
+          "name": "Gideon Baker",
+          "openalex_id": "A5110822317",
+          "institutions": [
+            "Griffith University"
+          ]
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-11-29",
+      "abstract": "Abstract This article explores the account of international hospitality found in the natural law tradition from Vitoria to Kant. Rather than limit itself to intellectual history, the focus here is on a more enduring theme: the double-bind of hospitality which the natural lawyers encountered in seeking to find a place for the welcome of the foreigner in the \u2018law of nations\u2019. Although these thinkers agreed on a natural right of communication, this proved destabilising, even destructive, of the property claims by which hosts establish their domain as properly theirs in the first place. All struggled with this double-bind, though this took different forms, from the concern that the law of hospitality might thereby justify colonial appropriation to fears for how it could threaten sovereignty. Two thinkers arguably find a way out of the double-bind of right of communication-right of property in hospitality, but sacrifice the law of hospitality in the process: Pufendorf, subordinating communication to property, turns hospitality into charity and thereby effectively denies it status as a law of nature; Kant, putting communication first, makes hospitality a matter of right, not philanthropy, but also sees it as instrumental to the development of a global civil condition, where it would be redundant.",
+      "cited_by_count": 26,
+      "type": "article",
+      "source": {
+        "name": "Review of International Studies",
+        "type": "journal",
+        "issn": [
+          "0260-2105",
+          "1469-9044"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/82EDE527171C03F62BB691EC9537E24A/S0260210510001269a.pdf/div-class-title-right-of-entry-or-right-of-refusal-hospitality-in-the-law-of-nature-and-nations-div.pdf"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Seventeenth-Century Political and Philosophical Thought",
+        "International Law and Human Rights"
+      ],
+      "referenced_works_count": 30,
+      "url": "https://openalex.org/W4248138083"
+    },
+    {
+      "openalex_id": "W1802468194",
+      "doi": null,
+      "title": "Between Emancipation and Domination: Habermasian Reflections on the Empowerment and Disempowerment of the Human Subject",
+      "authors": [
+        {
+          "name": "Simon Susen",
+          "openalex_id": "A5055297764",
+          "orcid": "https://orcid.org/0000-0003-0643-1891",
+          "institutions": [
+            "City, University of London"
+          ]
+        }
+      ],
+      "publication_year": 2009,
+      "publication_date": "2009-01-01",
+      "abstract": "Habermas\u2019s \u2018linguistic turn\u2019 can be regarded as a systematic attempt to locate the normative foundations of critical theory in the rational foundations of language. This endeavour is motivated by the insight that any theoretical framework that is committed to the emancipation of the human condition needs to identify the normative grounds on which both its critique of social domination and its pursuit of social liberation can be justified. Just as Habermas\u2019s firm belief in the possibility of human emancipation manifests itself in the concept of the \u2018ideal speech situation\u2019, his radical critique of human domination cannot be separated from the concept of \u2018systematically distorted communication\u2019. Although the significance of these two concepts for Habermas\u2019s communication-theoretic approach to the social has been widely recognised and extensively debated in the literature, their overall importance for a critical theory of human empowerment and disempowerment has hardly been explored in a satisfying manner. Drawing upon Habermas\u2019s communication-theoretic conception of human coexistence, this paper makes a case for the view that a comprehensive critical theory of society needs to account for both the emancipatory and the repressive potentials of language if it seeks to do justice to both the empowering and the disempowering potentials of the subject.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "City Research Online (City University London)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://openaccess.city.ac.uk/id/eprint/560/2/Between_emancipation_and_domination.pdf"
+      },
+      "topics": [
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1802468194"
+    },
+    {
+      "openalex_id": "W2531518900",
+      "doi": "10.18261/9788215027180-2016",
+      "title": "The Internet Soapbox",
+      "authors": [
+        {
+          "name": "Terje Rasmussen",
+          "openalex_id": "A5067164869"
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-08-04",
+      "abstract": "This book reviews Internet research and political theory seeking theoretically \"cool-headed\" perspectives on the current public political spaces in advanced societies. Aspects of the political theories of Rawls and Habermas are discussed and contrasted with contestation-oriented theories. In light of how the Internet takes part in structurally transforming the public sphere, the book draws on sociological and realist insights in order to encircle a more realist view. It briefly reconsiders such strange bedfellows as sociological systems theory (Niklas Luhmann) and political realism (eg. Bernard Williams). The purpose is not to construct a realist theory of the internet-based public sphere, but to point out central insights on which such a theory can be built.",
+      "cited_by_count": 11,
+      "type": "book",
+      "source": {
+        "name": "Universitetsforlaget eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://doi.org/10.18261/9788215027180-2016"
+      },
+      "topics": [],
+      "referenced_works_count": 177,
+      "url": "https://openalex.org/W2531518900"
+    },
+    {
+      "openalex_id": "W4353072073",
+      "doi": "10.1007/s10503-023-09598-6",
+      "title": "Norms of Public Argumentation and the Ideals of Correctness and Participation",
+      "authors": [
+        {
+          "name": "Frank Zenker",
+          "openalex_id": "A5025126261",
+          "orcid": "https://orcid.org/0000-0001-7173-7964",
+          "institutions": [
+            "Nankai University"
+          ]
+        },
+        {
+          "name": "Jan Albert van Laar",
+          "openalex_id": "A5003899296",
+          "orcid": "https://orcid.org/0000-0001-8243-6921",
+          "institutions": [
+            "University of Groningen"
+          ]
+        },
+        {
+          "name": "Bianca Cepollaro",
+          "openalex_id": "A5039864091",
+          "orcid": "https://orcid.org/0000-0003-2695-2125",
+          "institutions": [
+            "Vita-Salute San Raffaele University"
+          ]
+        },
+        {
+          "name": "Anca G\u00e2\u0163\u0103",
+          "openalex_id": "A5079208832",
+          "orcid": "https://orcid.org/0000-0002-6130-7992",
+          "institutions": [
+            "\"Dunarea de Jos\" University of Galati"
+          ]
+        },
+        {
+          "name": "Martin Hinton",
+          "openalex_id": "A5064118283",
+          "orcid": "https://orcid.org/0000-0003-0374-8834",
+          "institutions": [
+            "University of \u0141\u00f3d\u017a"
+          ]
+        },
+        {
+          "name": "Colin Guthrie King",
+          "openalex_id": "A5024105461",
+          "orcid": "https://orcid.org/0000-0003-4283-9739",
+          "institutions": [
+            "University of Basel",
+            "Providence College"
+          ]
+        },
+        {
+          "name": "Brian Larson",
+          "openalex_id": "A5090540030",
+          "orcid": "https://orcid.org/0000-0001-9806-726X",
+          "institutions": [
+            "Texas A&M University School of Law"
+          ]
+        },
+        {
+          "name": "Marcin Lewi\u0144ski",
+          "openalex_id": "A5056045954",
+          "orcid": "https://orcid.org/0000-0002-7218-3948",
+          "institutions": [
+            "Universidade Nova de Lisboa"
+          ]
+        },
+        {
+          "name": "Christoph Lumer",
+          "openalex_id": "A5080355646",
+          "orcid": "https://orcid.org/0000-0001-8700-3885",
+          "institutions": [
+            "University of Siena"
+          ]
+        },
+        {
+          "name": "Steve Oswald",
+          "openalex_id": "A5049761831",
+          "orcid": "https://orcid.org/0000-0002-5946-1691",
+          "institutions": [
+            "University of Fribourg"
+          ]
+        },
+        {
+          "name": "Maciej Pichlak",
+          "openalex_id": "A5029581783",
+          "orcid": "https://orcid.org/0000-0001-5113-9537",
+          "institutions": [
+            "University of Wroc\u0142aw"
+          ]
+        },
+        {
+          "name": "Blake D. Scott",
+          "openalex_id": "A5027711111",
+          "orcid": "https://orcid.org/0000-0002-0727-3330",
+          "institutions": [
+            "KU Leuven"
+          ]
+        },
+        {
+          "name": "Mariusz Urba\u0144ski",
+          "openalex_id": "A5024503738",
+          "orcid": "https://orcid.org/0000-0002-8682-5307",
+          "institutions": [
+            "Adam Mickiewicz University in Pozna\u0144"
+          ]
+        },
+        {
+          "name": "Jean H. M. Wagemans",
+          "openalex_id": "A5045895591",
+          "orcid": "https://orcid.org/0000-0001-9304-5766",
+          "institutions": [
+            "University of Amsterdam"
+          ]
+        }
+      ],
+      "publication_year": 2023,
+      "publication_date": "2023-03-22",
+      "abstract": null,
+      "cited_by_count": 18,
+      "type": "article",
+      "source": {
+        "name": "Argumentation",
+        "type": "journal",
+        "issn": [
+          "0920-427X",
+          "1572-8374"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "hybrid",
+        "oa_url": "https://link.springer.com/content/pdf/10.1007/s10503-023-09598-6.pdf"
+      },
+      "topics": [
+        "Public Policy and Administration Research",
+        "Epistemology, Ethics, and Metaphysics",
+        "Social Media and Politics"
+      ],
+      "referenced_works_count": 176,
+      "url": "https://openalex.org/W4353072073"
+    },
+    {
+      "openalex_id": "W2267712366",
+      "doi": null,
+      "title": "Ecocentric Discourses: Problems and Future Prospects for Nature Advocacy",
+      "authors": [
+        {
+          "name": "Assoc. Professor Robyn Eckersley",
+          "openalex_id": "A5042467740"
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "This paper was originally presented to the Second Tamkang International Conference on Ecological Discourse, Tamkang University Tamsui, Taiwan, 5-6 December 2003, it is published in Tamkang Review, Vol. XXXIV, Nos. 3-4, Spring-Summer (2004): 156-186; and reprinted in Debating the Earth: The Environmental Politics Reader, edited by John S. Dryzek and David Schlosberg (Oxford University Press, 2005), 364-381.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Minerva Access (University of Melbourne)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "http://hdl.handle.net/11343/34229"
+      },
+      "topics": [
+        "Religion, Ecology, and Ethics"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W2267712366"
+    },
+    {
+      "openalex_id": "W2102346970",
+      "doi": "10.22329/il.v15i1.2468",
+      "title": "Legitimation Inferences: An Additional Component for the Toulmin Model",
+      "authors": [
+        {
+          "name": "G. Thomas Goodnight",
+          "openalex_id": "A5072780692"
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-01-01",
+      "abstract": "This paper argues that the choice of backing to certify the authority of a warrant requires a legitimation inference. When brought into question, such an inference becomes a claim defended by showing sound reasons for the selection of backing pertinent to a shared context. Legitimation controversies ensue when an attributed consensus meets objection. It is argued that attention to legitimation controversies renders the Toulmin model a more useful critical paradigm for investigating the development and risks of communicative reasoning in a public forum. The nomination of John Tower as Secretary of Defense is employed to illustrate how critical analysis of legitimation controversies reflexively expands the domain of inquiry for informal reasoning.",
+      "cited_by_count": 14,
+      "type": "article",
+      "source": {
+        "name": "Informal Logic",
+        "type": "journal",
+        "issn": [
+          "0824-2577",
+          "2293-734X"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://informallogic.ca/index.php/informal_logic/article/download/2468/1910"
+      },
+      "topics": [
+        "Rhetoric and Communication Studies",
+        "Military History and Strategy",
+        "Intelligence, Security, War Strategy"
+      ],
+      "referenced_works_count": 23,
+      "url": "https://openalex.org/W2102346970"
+    },
+    {
+      "openalex_id": "W1605756937",
+      "doi": "10.47925/2004.174",
+      "title": "On the Epistemic Grounds of Moral Discourse and Moral Education: An Examination of J\u00fcrgen Habermas\u2019s \u201cDiscourse Ethics\u201d",
+      "authors": [
+        {
+          "name": "Walter Okshevsky",
+          "openalex_id": "A5028785669",
+          "institutions": [
+            "Memorial University of Newfoundland"
+          ]
+        }
+      ],
+      "publication_year": 2004,
+      "publication_date": "2004-01-01",
+      "abstract": "It is today customary for educators and philosophers to maintain that the learning of certain fundamental normative principles \u2014 such as fair treatment, respect for the equality and dignity of individuals as rational persons, the fostering of autonomous and critical reflective judgment, reciprocity of rights and obligations, mutual recognition of informed interests and well-being \u2014 comprises an essential form of internalization or appropriation of values that must be aimed at by any genuine form of moral teaching. These principles, it is claimed, are constitutive of the very sense of morality as a normative framework and coming to learn what they mean and do is a requirement of any justifiable conception of the enterprise of moral education. To assert these views is, of course, one thing; to justify them in a noncircular manner is another. The question of justification is philosophically and educationally vital here since we understand the morality of judgment and action to be conceptually linked to the justification of beliefs and conduct in distinctly moral terms. I want to argue here that morality \u2014 understood in normative rather than simply descriptive terms \u2014 is inescapably and at its core an epistemic enterprise. Minimally, to normatively claim that an action is morally justified is to claim it is the morally right thing to do in virtue of its permissible, obligatory or altruistic character given the circumstances. And to claim moral rightness is to claim that one is justified in making that claim. Hence, to fail to justify the second-order principles and norms appealed to within the justification of first-order beliefs and judgments is to fail to satisfy an essential requirement of both morality and its respectful transmission to others within educational contexts.",
+      "cited_by_count": 9,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of education",
+        "type": "journal",
+        "issn": [
+          "2771-960X",
+          "2771-9618"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.47925/2004.174"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Philosophy, Ethics, and Existentialism",
+        "Pragmatism in Philosophy and Education"
+      ],
+      "referenced_works_count": 8,
+      "url": "https://openalex.org/W1605756937"
+    },
+    {
+      "openalex_id": "W1944712285",
+      "doi": null,
+      "title": "Caring Multiculturalism : Local Immigrant Policies and Narratives of Integration in Malm\u00f6, Birmingham and Bologna",
+      "authors": [
+        {
+          "name": "Sarah Scuzzarello",
+          "openalex_id": "A5015268245",
+          "orcid": "https://orcid.org/0000-0003-1281-8742"
+        }
+      ],
+      "publication_year": 2010,
+      "publication_date": "2010-05-21",
+      "abstract": "Western European states are faced by societies with increasing ethnic, cultural and religious diversity as a result of migration flows. Advocates of multiculturalism have tried to address these potential challenges by advocating the accommodation of minorities within the recipient society. This study argues that the normative and practical measures suggested by multiculturalists tend to be de-contextualised and rest on a static understanding of identity formation and of culture. The dissertation aims to develop an explicitly transformative approach to multiculturalism. This approach is called \u201ccaring multiculturalism\u201d. First, the author outlines a theoretical and normative framework which focuses on the possibilities to achieve social and cognitive change. Then, this framework is tested by evidence from three empirical cases which are analysed comparatively. Specifically, the empirical study looks at the institutional and narrative opportunities provided by the municipalities of Malm\u00f6 in Sweden, Birmingham in Britain, and Bologna in Italy, to adopt caring multiculturalism. First, the analysis examines the mechanisms of political participation provided to migrants by each municipality in order to gauge the extent to which migrants are formally included in the recipient society. Second, it studies the narratives expressed by public actors and in policy documents. It examines each municipality\u2019s immigrant policies and assesses how migrants\u2019 integration is narratively constructed and how migrants are constructed in relation to the majority society. This examination of the institutional and narratives opportunities supplied by the municipalities to include migrants in the polity is the body of evidence for assessing if, and in what ways, caring multiculturalism can be adopted in the cases. Finally, the dissertation considers which factors favour the adoption of caring multiculturalism, and which ones constrain it, in the light of the empirical analysis.",
+      "cited_by_count": 21,
+      "type": "article",
+      "source": {
+        "name": "Lund University Publications (Lund University)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://lup.lub.lu.se/record/1593298"
+      },
+      "topics": [
+        "Social and Educational Sciences"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1944712285"
+    },
+    {
+      "openalex_id": "W2948777327",
+      "doi": "10.1093/oxfordhb/9780190862084.013.11",
+      "title": "Time in International Relations Theory",
+      "authors": [
+        {
+          "name": "Andrew R. Hom",
+          "openalex_id": "A5049015093",
+          "orcid": "https://orcid.org/0000-0001-5979-4712",
+          "institutions": [
+            "University of Edinburgh"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-04-04",
+      "abstract": "Abstract Temporal phenomena like power shifts, wars, and confounding events characterize international politics. Yet for decades academic international relations (IR) did not consider time worthy of research or reflection. Recently things have changed, especially in critical IR, where scholars developed numerous arguments about time\u2019s political importance. However, none of that work pursued a synoptic account of time in IR theory. This chapter does so, using an ideal typology of closed and open time to understand realism, liberalism, constructivism, English School, feminism, Marxism, and critical theory. In each, tensions between open and closed time distinguish the theory from its competitors but also animate explanatory and normative debates among its proponents. The historically overlooked issue of time\u2014our assumptions about it, visions of it, and claims about how it impacts politics\u2014drives theoretical development across and within IR theories, which we can understand as attempts to time international political life.",
+      "cited_by_count": 17,
+      "type": "book-chapter",
+      "source": {
+        "name": "Oxford University Press eBooks",
+        "type": "ebook platform",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://www.research.ed.ac.uk/en/publications/ff579444-4e47-47b8-a011-00d95e22129f"
+      },
+      "topics": [
+        "International Relations and Foreign Policy",
+        "Historical and Contemporary Political Dynamics",
+        "Political Conflict and Governance"
+      ],
+      "referenced_works_count": 205,
+      "url": "https://openalex.org/W2948777327"
+    },
+    {
+      "openalex_id": "W1488901532",
+      "doi": null,
+      "title": "Symposium: Reconstructing the Author-Self: Some Feminist Lessons for Copyright Law",
+      "authors": [
+        {
+          "name": "Donna Craig",
+          "openalex_id": "A5025823908",
+          "orcid": "https://orcid.org/0000-0003-2035-9494",
+          "institutions": [
+            "American University"
+          ]
+        }
+      ],
+      "publication_year": 2007,
+      "publication_date": "2007-01-01",
+      "abstract": "The theoretical framework of intellectual property law, and copyright law in particular, is premised upon liberal and neo-liberal assumptions.At the core of copyright's functionality are the concepts of private rights, property, ownership, exclusion, and individualism.At the core of copyright's justifications are the concepts of individual entitlement or desert, on one hand, and economic rationality and self-interest on the other.Within this model, authors are individuated, proprietary personalities with a claim to ownership of their intellectual works; these works are the original, stable, and propertizable results of the authors' independent efforts. 1 Far from a situated, communicative act, the authorial activity presupposed by intellectual property is an individual act that produces a commodifiable thing and, of course, a right against all others in relation to that thing.My aim in this paper is to explore the weaknesses inherent in the law's construction of authorship.Legal doctrine has a self-perpetuating power: the power to naturalize its constructions and cement its abstractions. 2I will argue that copyright's reduction and individualization of authorial activity threatens to obscure the \"communicative function of authorship\" 3 and to undermine its role in dialogic community.Copyright's construction of authorship and its focus upon the abstract, individual rights-bearer, therefore, threatens to obscure the social purposes of the copyright system and to undermine its attempts to encourage cultural creativity.This paper consists of two parts.In Part I, I examine the romantic 1. See",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://digitalcommons.wcl.american.edu/jgspl/vol15/iss2/5"
+      },
+      "topics": [
+        "Intellectual Property Law",
+        "Copyright and Intellectual Property",
+        "Law in Society and Culture"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W1488901532"
+    },
+    {
+      "openalex_id": "W2789631638",
+      "doi": "10.1111/1467-8675.12342",
+      "title": "The purest form of communicative power. A reinterpretation of the key to the legitimacy of norms in Habermas's model of democracy",
+      "authors": [
+        {
+          "name": "Mar\u00eda Emilia Barreyro",
+          "openalex_id": "A5087681941",
+          "institutions": [
+            "University of Buenos Aires"
+          ]
+        }
+      ],
+      "publication_year": 2018,
+      "publication_date": "2018-02-14",
+      "abstract": null,
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Constellations",
+        "type": "journal",
+        "issn": [
+          "1351-0487",
+          "1467-8675"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://onlinelibrary.wiley.com/doi/pdfdirect/10.1111/1467-8675.12342"
+      },
+      "topics": [
+        "Populism, Right-Wing Movements",
+        "Critical Theory and Philosophy",
+        "Political Theology and Sovereignty"
+      ],
+      "referenced_works_count": 28,
+      "url": "https://openalex.org/W2789631638"
+    },
+    {
+      "openalex_id": "W229932539",
+      "doi": "10.22004/ag.econ.12795",
+      "title": "INDIGENOUS LAND AND COMMUNITY SECURITY: A (RADICAL) PLANNING AGENDA",
+      "authors": [
+        {
+          "name": "Marcus B. Lane",
+          "openalex_id": "A5001350758",
+          "orcid": "https://orcid.org/0000-0002-6142-4320",
+          "institutions": [
+            "University of Wisconsin\u2013Madison"
+          ]
+        },
+        {
+          "name": "Lane, Marcus",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2001,
+      "publication_date": "2001-01-01",
+      "abstract": "This paper argues that the capacity of indigenous groups to engage effectively in environmental planning activities, at different levels, is crucial to securing land justice and community security. This argument is made against the backdrop of tensions between indigenous peoples residing in post-settler societies and nation states such as Australia, Canada, and New Zealand over questions of resource sovereignty. The paper argues that effective planning is central to (i) successful acquisition of lands through legal land claim processes, (ii) protecting indigenous interests by engaging the planning activities of the state, and (iii) realization of community goals by establishment of effective community-based planning processes.",
+      "cited_by_count": 8,
+      "type": "preprint",
+      "source": null,
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "gold",
+        "oa_url": "https://ageconsearch.umn.edu/record/12795/files/ltcwp45.pdf"
+      },
+      "topics": [
+        "Indigenous Health, Education, and Rights",
+        "Geographies of human-animal interactions",
+        "Mining and Resource Management"
+      ],
+      "referenced_works_count": 31,
+      "url": "https://openalex.org/W229932539"
+    },
+    {
+      "openalex_id": "W3125365295",
+      "doi": null,
+      "title": "The Persistence of Power and the Struggle for Dialogic Standards in Postmodern Constitutional Jurisprudence: Michelman, Habermas, and Civic Republicanism",
+      "authors": [
+        {
+          "name": "Stephen M. Feldman",
+          "openalex_id": "A5017227818",
+          "institutions": [
+            "University of Wyoming"
+          ]
+        }
+      ],
+      "publication_year": 1993,
+      "publication_date": "1993-01-01",
+      "abstract": "Since the 1950s most constitutional scholars have presumed that the American political system is pluralistic with autonomous individuals struggling in the legislative arena to maximize the satisfaction of their preexisting private interests The new republicans reject these presumptions and insist that constitutional jurisprudence must recognize the potential for virtuous citizens to engage in a political dialogue that generates public values and identifies a common good Frank I Michelman has pioneered this revival by confronting one of the most troubling and persistent difficulties of civic republican thought the likelihood that the political dialogue will be closed to segments of the community and therefore will generate public values skewed toward the interests of the already dominant social groups This article questions whether Michelmans reasoning supports his conclusion that politics should be deliberative and that the community should strive to be as inclusive and undistorted by power as possible Postmodern theories suggest that power is so pervasive and persistent that the political dialogue must always be distorted and exclusive If a postmodern critical theory is possible in constitutional jurisprudence it must accept the necessity of community and tradition of prejudices and interests and of distortion and exclusion This article explores Michelmans civic republican conception of politics and his neotranscendental approach to the problem of dialogic critique To facilitate understanding this approach it includes a brief discussion of the relationship between Jurgen Habermass neotranscendental theory of communicative action and HansGeorg Gadamers philosophical hermeneutics It explores how postmodern theories including philosophical hermeneutics reveal weaknesses in Habermass theory that are mirrored in and ultimately defeat Michelmans effort to articulate and legitimize a critical norm in constitutional jurisprudence and proceeds to discuss how Michelman eventually acknowledges this postmodern challenge to his theory suggesting that certain prereflective cognitive structures might create the possibility for undistorted and inclusive political dialogue The article presents an alternative approach to resolving the struggle for dialogic standards in constitutional jurisprudence",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "eYLS (Yale Law School)",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://scholarship.law.uwyo.edu/faculty_articles/117"
+      },
+      "topics": [
+        "Pragmatism in Philosophy and Education",
+        "Law in Society and Culture",
+        "Critical Theory and Philosophy"
+      ],
+      "referenced_works_count": 0,
+      "url": "https://openalex.org/W3125365295"
+    },
+    {
+      "openalex_id": "W261424938",
+      "doi": "10.5070/t842015759",
+      "title": "Toward a Politics of American Transcultural Studies \u2013 Discourses of Diaspora and Cosmopolitanism",
+      "authors": [
+        {
+          "name": "G\u00fcnter H. Lenz",
+          "openalex_id": "A5006171738"
+        }
+      ],
+      "publication_year": 2012,
+      "publication_date": "2012-01-01",
+      "abstract": "Excerpt from Re-Framing the Transnational Turn in American Studies (2011), edited by Winfried Fluck, Donald E. Pease, and John Carlos Rowe, published by Dartmouth College Press in Re-Mapping the Transnational: A Dartmouth Series in American Studies. Used with permission. http://www.upne.com.This piece, which is drawn from G\u00fcnter Lenz's contribution to a new anthology volume on transnational American Studies, attempts to make sense of the \u201ctransnational turn\u201d by contrasting it with what he refers to as \u201ctranscultural studies\u201d and looking at how both are informed by cosmopolitanism.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "Journal of Transnational American Studies",
+        "type": "journal",
+        "issn": [
+          "1940-0764"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "https://escholarship.org/content/qt24m9n1n3/qt24m9n1n3.pdf?t=mfsppf"
+      },
+      "topics": [
+        "Race, History, and American Society"
+      ],
+      "referenced_works_count": 95,
+      "url": "https://openalex.org/W261424938"
+    },
+    {
+      "openalex_id": "W2996558477",
+      "doi": "10.24204/ejpr.v11i4.2685",
+      "title": "Transcendence in Postmetaphysical Thinking. Habermas' God",
+      "authors": [
+        {
+          "name": "Maeve Cooke",
+          "openalex_id": "A5022186048",
+          "orcid": "https://orcid.org/0000-0002-3168-4375",
+          "institutions": [
+            "University College Dublin"
+          ]
+        }
+      ],
+      "publication_year": 2019,
+      "publication_date": "2019-12-20",
+      "abstract": "Habermas emphasizes the importance for critical thinking of ideas of truth and moral validity that are at once context-transcending and immanent to human practices. in a recent review, Peter Dews queries his distinction between metaphysically construed transcendence and transcendence from within, asking provocatively in what sense Habermas does not believe in God. I answer that his conception of \u201cGod\u201d is resolutely postmetaphysical, a god that is constructed by way of human linguistic practices. I then give three reasons for why it should not be embraced by contemporary critical social theory. First, in the domain of practical reason, this conception of transcendence excludes by fiat any \u201cOther\u201d to communicative reason, blocking possibilities for mutual learning. Second, due to the same exclusion, it risks reproducing an undesirable social order. Third, it is inadequate for the purposes of a critical theory of social institutions.",
+      "cited_by_count": 4,
+      "type": "article",
+      "source": {
+        "name": "European Journal for Philosophy of Religion",
+        "type": "journal",
+        "issn": [
+          "1689-8311"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://philosophy-of-religion.eu/index.php/ejpr/article/download/2685/2449"
+      },
+      "topics": [
+        "Critical Theory and Philosophy",
+        "Phenomenology and Existential Philosophy",
+        "Hannah Arendt's Political Philosophy"
+      ],
+      "referenced_works_count": 20,
+      "url": "https://openalex.org/W2996558477"
+    },
+    {
+      "openalex_id": "W1971361664",
+      "doi": "10.4225/03/58782d5587f82",
+      "title": "Netpeace : the multifaith movement and common security",
+      "authors": [
+        {
+          "name": "Anna Halafoff",
+          "openalex_id": "A5048139256",
+          "orcid": "https://orcid.org/0000-0003-4274-5951"
+        }
+      ],
+      "publication_year": 2017,
+      "publication_date": "2017-01-01",
+      "abstract": "This thesis examines how multifaith initiatives have been implemented as cosmopolitan strategies to counter global risks\u2014such as terrorism and climate change\u2014and advance common security in ultramodern Western societies. This study is among the first to employ Ulrich Beck\u2019s (2006:91-94) model of \u2018methodological cosmopolitanism\u2019. Consequently, it incorporates a local\u2013global focus, examining the rise of the multifaith movement in Victoria, Australia within a broader \u2018global\u2019 framework of Australia, the United Kingdom (UK) and the United States of America (USA). Despite the rise of the multifaith movement and of multi-actor peacebuilding networks at the turn of the 21st century, they have received scant attention in the sociological literature. I aim to address this omission by examining the ultramodern rise of multifaith engagement from the perspective of social movement theory and cosmopolitan theory. I argue that the rise of the multifaith movement in ultramodernity, alongside other social movements of this period, provides a missing narrative within the sociological literature, which is comprised of cosmopolitan peacebuilding religious responses aimed at collaboratively countering global risks. In addition, by documenting these peacebuilding aspects of the ultramodern resurgence of religion, I contribute new evidence to further challenge the secularisation thesis. By drawing on 54 interviews with expert professionals in the field of multifaith relations gathered for this research project and by comparing previously published material with this new data, I identify four principle aims and six characteristics of the multifaith movement, examine the benefits and challenges of multifaith engagement and explain the role of multifaith initiatives in countering processes of radicalisation. Finally, by building upon cosmopolitan theories, I propose a new theoretical framework that I term netpeace. Netpeace recognises the interconnectedness of global problems and solutions and the capacity of multi-actor peacebuilding networks\u2014in which religious actors engage both critically and collaboratively with state actors\u2014to overcome the most pressing risks of our times. This study can thereby assist in building new models of activism and governance, as outmoded, oppositional frameworks of modernity are being replaced by new ultramodern, cosmopolitan possibilities, founded on a politics of understanding modelled by the multifaith movement.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Figshare",
+        "type": "repository",
+        "issn": null
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "green",
+        "oa_url": "https://figshare.com/articles/thesis/Netpeace_the_multifaith_movement_and_common_security/4546186"
+      },
+      "topics": [
+        "Religion and Society Interactions",
+        "Religion, Society, and Development",
+        "Religion, Spirituality, and Psychology"
+      ],
+      "referenced_works_count": 45,
+      "url": "https://openalex.org/W1971361664"
+    },
+    {
+      "openalex_id": "W3156106535",
+      "doi": "10.1017/s2045381720000295",
+      "title": "A transnational judicial public sphere as an idea and ideology: Critical reflections on judicial dialogue and its legitimizing potential",
+      "authors": [
+        {
+          "name": "Knut Traisbach",
+          "openalex_id": "A5043084768",
+          "orcid": "https://orcid.org/0000-0001-6850-6903",
+          "institutions": [
+            "Universitat Ramon Llull",
+            "Universitat de Barcelona"
+          ]
+        }
+      ],
+      "publication_year": 2021,
+      "publication_date": "2021-03-01",
+      "abstract": "Abstract This article sheds a critical light on judicial dialogue when its purpose and meaning are taken beyond cross-fertilization and comparative reasoning. It cautions against a conceptualization of judicial dialogue as a means to foster commonalities between courts and to legitimize judicial governance. The argument develops from an idealized notion of a \u2018transnational judicial public sphere\u2019. In this sphere, domestic, regional and international courts ideally form common opinions through dialogue and pursue common purposes. The danger of this understanding is to construct a new paradigm that not only overlooks important differences in the interest, influence and opinion of courts, but also overstates the socio-normative significance of exchanges between courts and of judicial governance in general. The critical potential of judicial dialogues lies less in the formation of commonalities or in the legitimization of judicial authority than in bringing alternatives and a plurality of opinions to the fore.",
+      "cited_by_count": 6,
+      "type": "article",
+      "source": {
+        "name": "Global Constitutionalism",
+        "type": "journal",
+        "issn": [
+          "2045-3817",
+          "2045-3825"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/40838ECA352D33A54935E5D4A236A7BB/S2045381720000295a.pdf/div-class-title-a-transnational-judicial-public-sphere-as-an-idea-and-ideology-critical-reflections-on-judicial-dialogue-and-its-legitimizing-potential-div.pdf"
+      },
+      "topics": [
+        "International Arbitration and Investment Law",
+        "European and International Law Studies",
+        "Judicial and Constitutional Studies"
+      ],
+      "referenced_works_count": 51,
+      "url": "https://openalex.org/W3156106535"
+    },
+    {
+      "openalex_id": "W2590350159",
+      "doi": "10.1590/0103-11042016s03",
+      "title": "Reflex\u00f5es sobre democracia deliberativa: contribui\u00e7\u00f5es para os conselhos de sa\u00fade num contexto de crise pol\u00edtica",
+      "authors": [
+        {
+          "name": "Marcelo Rasga Moreira",
+          "openalex_id": "A5008733064",
+          "orcid": "https://orcid.org/0000-0003-3356-7153",
+          "institutions": [
+            "Escola Nacional de Sa\u00fade P\u00fablica",
+            "Funda\u00e7\u00e3o Oswaldo Cruz"
+          ]
+        },
+        {
+          "name": "Funda\u00e7\u00e3o Oswaldo Cruz,  Brazil",
+          "openalex_id": ""
+        }
+      ],
+      "publication_year": 2016,
+      "publication_date": "2016-12-01",
+      "abstract": "RESUMO O ensaio reflete sobre a democracia deliberativa e sobre os limites e as possibilidades de os conselhos municipais de sa\u00fade tornarem-se institui\u00e7\u00f5es que a pratiquem e ambientem. Mostra-se que tais conselhos enfrentam um processo de deslegitima\u00e7\u00e3o institucional que pode subtrair sua import\u00e2ncia no processo decis\u00f3rio, risco potencializado pela crise pol\u00edtica que o Pa\u00eds atravessa. Por promover a participa\u00e7\u00e3o social e a delibera\u00e7\u00e3o como processo organizado de busca do consenso na tomada de decis\u00f5es e por considerar a decis\u00e3o consensual como base da legitima\u00e7\u00e3o institucional, conclui-se que uma virada deliberativa tem potencial para impulsionar os conselhos na supera\u00e7\u00e3o dos riscos da deslegitima\u00e7\u00e3o.",
+      "cited_by_count": 10,
+      "type": "article",
+      "source": {
+        "name": "Sa\u00fade em Debate",
+        "type": "journal",
+        "issn": [
+          "0103-1104",
+          "2358-2898"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "diamond",
+        "oa_url": "http://www.scielo.br/pdf/sdeb/v40nspe/en_0103-1104-sdeb-40-spe-0025.pdf"
+      },
+      "topics": [
+        "Public Health in Brazil",
+        "Politics and Society in Latin America",
+        "Social and Political Issues"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W2590350159"
+    },
+    {
+      "openalex_id": "W2621998074",
+      "doi": "10.47925/2014.025",
+      "title": "Designing Realistic Educational Utopias Using (Mainly) Non-ideal Theory",
+      "authors": [
+        {
+          "name": "Alison M. Jaggar",
+          "openalex_id": "A5021829281",
+          "orcid": "https://orcid.org/0000-0001-6730-7160",
+          "institutions": [
+            "University of Colorado Boulder",
+            "University of Colorado System"
+          ]
+        }
+      ],
+      "publication_year": 2014,
+      "publication_date": "2014-01-01",
+      "abstract": "The justification of normative claims is a central problem for moral and political philosophy. Western philosophers have proposed a variety of methods to address this problem, including appealing to universalizability and the principle of noncontradiction, appealing to fundamental moral principles such as the Greatest Happiness Principle, and appealing to intuitions. They have also advocated various methods that rely on \"idealization.\" In this essay, I discuss some idealizing methods with a view to determining which elements may be helpful in designing just educational institutions for real-world situations.",
+      "cited_by_count": 3,
+      "type": "article",
+      "source": {
+        "name": "Philosophy of education",
+        "type": "journal",
+        "issn": [
+          "2771-960X",
+          "2771-9618"
+        ]
+      },
+      "open_access": {
+        "is_oa": true,
+        "oa_status": "bronze",
+        "oa_url": "https://doi.org/10.47925/2014.025"
+      },
+      "topics": [
+        "Political Philosophy and Ethics",
+        "Ethics in medical practice",
+        "Philosophical Ethics and Theory"
+      ],
+      "referenced_works_count": 14,
+      "url": "https://openalex.org/W2621998074"
+    }
+  ],
+  "count": 25,
+  "errors": []
+}

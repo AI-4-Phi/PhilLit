@@ -1,0 +1,768 @@
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Bohman public deliberation pluralism complexity democracy",
+  "results": [
+    {
+      "paperId": "0658dcd033374f58ac260f4f19950ac2dad37cdf",
+      "title": "Public Deliberation: Pluralism, Complexity, and Democracy",
+      "authors": [
+        {
+          "name": "J. Bohman",
+          "authorId": "46331722"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 1219,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/0658dcd033374f58ac260f4f19950ac2dad37cdf",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "05224f7f2197f49bef4770ab8a0f3f6f807802fb",
+      "title": "Public Deliberation: Pluralism, Complexity, and Democracy, by James Bohman",
+      "authors": [
+        {
+          "name": "R. Hariman",
+          "authorId": "40386438"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/05224f7f2197f49bef4770ab8a0f3f6f807802fb",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e1524e1a985ed139813b94bd5767cfcf3da3c781",
+      "title": "Books received",
+      "authors": [],
+      "year": 2001,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1177/019145370102700107",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e1524e1a985ed139813b94bd5767cfcf3da3c781",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "115 - 122",
+        "volume": "27"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "c948452a4ebf209000c0987f903720a89ebe4422",
+      "title": "Contributors",
+      "authors": [
+        {
+          "name": "S. M. Kenney",
+          "authorId": "48557376"
+        },
+        {
+          "name": "J. Kertzer",
+          "authorId": "117669698"
+        },
+        {
+          "name": "O. Rudzik",
+          "authorId": "15331947"
+        },
+        {
+          "name": "Gabrielle Poulin",
+          "authorId": "47086330"
+        },
+        {
+          "name": "Ren\u00e9 Dionne",
+          "authorId": "32643896"
+        },
+        {
+          "name": "Michael Hornyansky",
+          "authorId": "122108393"
+        },
+        {
+          "name": "J. Blais",
+          "authorId": "145748823"
+        },
+        {
+          "name": "A. Leggatt",
+          "authorId": "116800065"
+        },
+        {
+          "name": "L. Mailhot",
+          "authorId": "116546228"
+        },
+        {
+          "name": "Geraldine Thompson",
+          "authorId": "108816970"
+        },
+        {
+          "name": "J. Mcconica",
+          "authorId": "116211644"
+        },
+        {
+          "name": "Bodo L. O. Richter",
+          "authorId": "15365672"
+        },
+        {
+          "name": "Martin Mueller",
+          "authorId": "2213591576"
+        },
+        {
+          "name": "S. Warhaft",
+          "authorId": "83838891"
+        },
+        {
+          "name": "Bill Halewood",
+          "authorId": "119944662"
+        },
+        {
+          "name": "A. A. Parker",
+          "authorId": "2053685514"
+        },
+        {
+          "name": "P. Br\u00fcckmann",
+          "authorId": "119111644"
+        },
+        {
+          "name": "P. Fleck",
+          "authorId": "122569220"
+        },
+        {
+          "name": "Germaine Warkentin",
+          "authorId": "2084792565"
+        },
+        {
+          "name": "Thomas J. Collins",
+          "authorId": "49484782"
+        },
+        {
+          "name": "W. Connor",
+          "authorId": "2213821705"
+        },
+        {
+          "name": "D. Hair",
+          "authorId": "72527578"
+        },
+        {
+          "name": "Harvey Kerpneck",
+          "authorId": "119682047"
+        },
+        {
+          "name": "N. Endicott",
+          "authorId": "123421495"
+        },
+        {
+          "name": "Douglas Lochhead",
+          "authorId": "2074830303"
+        },
+        {
+          "name": "P. Grosskurth",
+          "authorId": "2890653"
+        },
+        {
+          "name": "R\u00e9jean Robidoux",
+          "authorId": "2073614487"
+        },
+        {
+          "name": "J. A. Fleming",
+          "authorId": "145367861"
+        },
+        {
+          "name": "Demetrios Basdekis",
+          "authorId": "122784788"
+        },
+        {
+          "name": "R. Davies",
+          "authorId": "2066790065"
+        },
+        {
+          "name": "F. Watt",
+          "authorId": "145515021"
+        },
+        {
+          "name": "E. Greene",
+          "authorId": "2213827921"
+        },
+        {
+          "name": "M. Allentuck",
+          "authorId": "147398572"
+        },
+        {
+          "name": "Carlyle King",
+          "authorId": "114151599"
+        },
+        {
+          "name": "S. Kane",
+          "authorId": "2058594959"
+        },
+        {
+          "name": "Clifford Leech",
+          "authorId": "80673721"
+        },
+        {
+          "name": "E. Robbins",
+          "authorId": "123105655"
+        },
+        {
+          "name": "W. Blissett",
+          "authorId": "114703808"
+        },
+        {
+          "name": "D. Pacey",
+          "authorId": "91334314"
+        },
+        {
+          "name": "S. Pantazzi",
+          "authorId": "122774173"
+        },
+        {
+          "name": "C. Bissell",
+          "authorId": "46325929"
+        },
+        {
+          "name": "D. M. Hayne",
+          "authorId": "116100199"
+        },
+        {
+          "name": "Brian S. Merrilees",
+          "authorId": "52517159"
+        },
+        {
+          "name": "Jamie Bonenfant",
+          "authorId": "2051089025"
+        },
+        {
+          "name": "W. Oxtoby",
+          "authorId": "117559460"
+        },
+        {
+          "name": "R. Saunders",
+          "authorId": "118073406"
+        },
+        {
+          "name": "J. M. Robson",
+          "authorId": "2058032753"
+        },
+        {
+          "name": "C. H. Andrusyshen",
+          "authorId": "1394046224"
+        },
+        {
+          "name": "Jean Wilson",
+          "authorId": "2115545182"
+        }
+      ],
+      "year": 1981,
+      "abstract": "James Bohman Danforth Professor of Philosophy at Saint Louis University. He is the author of Public Deliberation: Pluralism, Complexity and Democracy (MIT Press, 1996) and New Philosophy of Social Science: Problems of Indeterminacy (MIT Press, 1991). He has also recently edited books on Deliberative Democracy (MIT Press, 1997, with William Rehg) and Perpetual Peace: Essays on Kant\u2019s Cosmopolitan Ideal (MIT Press, 1997, with Matthias Lutz-Bachmann). He is currently writing a book on cosmopolitan democracy.",
+      "citationCount": 1,
+      "doi": "10.1162/artm_x_00231",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/c948452a4ebf209000c0987f903720a89ebe4422",
+      "venue": "ARTMargins",
+      "journal": {
+        "name": "ARTMargins",
+        "pages": "117-117",
+        "volume": "8"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ab74ea6f93dcbc9a1b32972838ff599a5b9e07f8",
+      "title": "Books Received",
+      "authors": [
+        {
+          "name": "A. Dirlik",
+          "authorId": "88633065"
+        },
+        {
+          "name": "Henry A. Giroux",
+          "authorId": "72228338"
+        },
+        {
+          "name": "A. Grafton",
+          "authorId": "51008807"
+        },
+        {
+          "name": "R. A. Judy",
+          "authorId": "2214360351"
+        },
+        {
+          "name": "Faye Kicknosway",
+          "authorId": "133960813"
+        },
+        {
+          "name": "C. MacCabe",
+          "authorId": "89686481"
+        },
+        {
+          "name": "W. Spanos",
+          "authorId": "38823824"
+        },
+        {
+          "name": "Jenaro Talens",
+          "authorId": "114336109"
+        },
+        {
+          "name": "Robert Wilson",
+          "authorId": "2109033425"
+        }
+      ],
+      "year": 1987,
+      "abstract": "Ammonius. (David Blank, trans). On Aristotle on Interpretation 1-8. Duckworth. 1996. Pp. 206. \u00a340. Antonaccio, Maria and Willam Schweiker (Eds). Iris Murdoch and the Serach for Human Goodness. University of Chicago Press. 1996. Pp. xx and 266. \u00a338.50, \u00a315.25 or $48, $18.95. Aristotle, (translated, with Introduction, Notes and Glossary by Terence Irwin and Gail Fine). Introductory Readings. Hackett, 1996. Pp. xvii and 359. \u00a327.95, \u00a37.95. Bagnall, Gary. Law as Art. Dartmouth. 1996. Pp. xii and 221. \u00a339.50. Beaney, Michael. Frege: Making Sense. Duckworth. 1996. Pp. ix and 358. \u00a316.99. Beck, Ulrich. The Reinvention of Politics. Polity Press. 1996. Pp. vi and 206. \u00a345, \u00a312.95. Bethell, Leslie. (Ed.) Ideas and Ideologies in Twentieth Century Latin America. Cambridge University Press. 1996. Pp. vii and 411. \u00a345, \u00a315.95 or $64.95, $18.95. Bohm, David. (Lee Nichol, Ed.) On Dialogue. Routledge. 1996. Pp. xviii and 101. \u00a335, \u00a39.99. Bohm, David. The Special Theory of Relativity. Routledge. 1996. Pp. xiv and 236. \u00a335, \u00a39.99. Bohman, James. Public Deliberation: Pluralism, Complexity, and Democracy. MIT Press. 1996. Pp. xi and 303. \u00a325. Bond, E. J. Ethics and Human Well-Being. Blackwell. 1996. Pp. x and 270. \u00a340, \u00a312.99 or $54.95, $21.95. Boucher, David and Bruce Haddock. (Eds). Collingwood Studies, Volume III: Letters From Iceland and Other Essays. The R. G. Collingwood Society. 1996. Pp. xi and 231. No price given. Bradley, James. (Ed.) Philosophy after F. H. Bradley. Thommes Press. 1996. Pp. x and 390. \u00a348, \u00a316.95. Brandt, Reinhard. (Eric Watkins, trans and Ed.) The Table of Judgments: Critique of Pure Reason A 67-76; B 92-101. Ridgeview Publishing Company. 1996. Pp. vii and 147. No price given. Brett, Annabel S. Liberty, Right and Nature. Cambridge University Press. 1997. Pp. xii and 254. \u00a335 or $59.95. Burgess, John P. and Gideon Rosen. A Subject With No Object. Clarendon Press, Oxford. 1997. Pp. x and 259. \u00a330. Campanella, Thomas, (with an Introduction and Notes by Richard J. Blackwell, trans). A Defense of Galileo. University of Notre Dame Press. 1994. Pp. 192. \u00a322.50. Canfield, John V. (Ed.) Routledge History of Philosophy Volume X: Philosophy of Meaning, Knowledge and Value in the 20th Century. Routledge. 1996. Pp. xii and 466. \u00a355. Carr, Brian and Indira Mahalingam (Eds). Companion Encyclopedia of Asian Philosophy. Routledge. 1996. Pp. xxiii and 1136. \u00a395.",
+      "citationCount": 0,
+      "doi": "10.1017/S0031819100056990",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab74ea6f93dcbc9a1b32972838ff599a5b9e07f8",
+      "venue": "Philosophy",
+      "journal": {
+        "name": "Philosophy",
+        "pages": "337 - 343",
+        "volume": "72"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "9bf00d2eb4534211a58f657ef67c2261f56c3694",
+      "title": "Reflexive public deliberation",
+      "authors": [
+        {
+          "name": "J. Bohman",
+          "authorId": "46331722"
+        }
+      ],
+      "year": 2003,
+      "abstract": null,
+      "citationCount": 23,
+      "doi": "10.1177/0191453703029001835",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9bf00d2eb4534211a58f657ef67c2261f56c3694",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy & Social Criticism",
+        "pages": "105 - 85",
+        "volume": "29"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "ccc053c27c98b6b327144fdb5912cb18f63b899e",
+      "title": "Democratic Deliberation in the Context of Deep Pluralism and Mass Democracy. A Case for an Epistemic Idea of Public Reason",
+      "authors": [
+        {
+          "name": "Tomasz Jarymowicz",
+          "authorId": "118423272"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ccc053c27c98b6b327144fdb5912cb18f63b899e",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "e56ad427657be1c8e989dca6cf68f1770324a982",
+      "title": "Epistemic Democracy: Making Pluralism Productive",
+      "authors": [
+        {
+          "name": "Julian F. M\u00fcller",
+          "authorId": "1491565073"
+        }
+      ],
+      "year": 2023,
+      "abstract": "Abstract What, if anything, is the import of Hayek to epistemic democracy? Although Hayek is revered by epistemic democrats for his insights into the epistemic aspects of the market sphere, it is generally believed that his theory is moot with respect to democratic reason. This paper aims to challenge this verdict. I argue that a Hayekian analysis of inclusive public deliberation contributes at least three valuable lessons: (1) Hayek makes the case that under certain conditions even unbiased deliberators are permanently unable to converge on the best available policy option. Call this the problem of \u2018persistent hidden policy champions\u2019. (2) He demonstrates that to unlock hidden policy champions, reasonable minority factions need the opportunity to act on their own evidential standards. (3) He challenges epistemic democrats to think more carefully about how to design the \u201cepistemic basic structure\u201d (Kurtulmus and Irzik 2017) of society in order to account for persistent hidden policy champions.",
+      "citationCount": 2,
+      "doi": "10.1017/epi.2022.50",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e56ad427657be1c8e989dca6cf68f1770324a982",
+      "venue": "Episteme",
+      "journal": {
+        "name": "Episteme",
+        "pages": "667 - 684",
+        "volume": "20"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "75a84a9c96c29012f9d9c88c2ee510e1db03fbf6",
+      "title": "The crisis of democracy and the science of deliberation",
+      "authors": [
+        {
+          "name": "J. Dryzek",
+          "authorId": "66324536"
+        },
+        {
+          "name": "Andr\u00e9 B\u00e4chtiger",
+          "authorId": "67002751"
+        },
+        {
+          "name": "S. Chambers",
+          "authorId": "46592078"
+        },
+        {
+          "name": "Joshua Cohen",
+          "authorId": "144872052"
+        },
+        {
+          "name": "James N. Druckman",
+          "authorId": "4106384"
+        },
+        {
+          "name": "Andrea Felicetti",
+          "authorId": "51166322"
+        },
+        {
+          "name": "James S. Fishkin",
+          "authorId": "5248896"
+        },
+        {
+          "name": "D. Farrell",
+          "authorId": "30424463"
+        },
+        {
+          "name": "Archon Fung",
+          "authorId": "7819665"
+        },
+        {
+          "name": "A. Gutmann",
+          "authorId": "40037582"
+        },
+        {
+          "name": "H\u00e9l\u00e8ne Landemore",
+          "authorId": "1751047"
+        },
+        {
+          "name": "Jane J. Mansbridge",
+          "authorId": "83090337"
+        },
+        {
+          "name": "Sofie Marien",
+          "authorId": "49197149"
+        },
+        {
+          "name": "Michael Neblo",
+          "authorId": "3091574"
+        },
+        {
+          "name": "S. Niemeyer",
+          "authorId": "4994530"
+        },
+        {
+          "name": "Maija Set\u00e4l\u00e4",
+          "authorId": "40547431"
+        },
+        {
+          "name": "Rune Slothuus",
+          "authorId": "9690494"
+        },
+        {
+          "name": "Jane Suiter",
+          "authorId": "51915727"
+        },
+        {
+          "name": "Dennis Thompson",
+          "authorId": "145314520"
+        },
+        {
+          "name": "Mark E Warren",
+          "authorId": "145357962"
+        }
+      ],
+      "year": 2019,
+      "abstract": "Citizens can avoid polarization and make sound decisions That there are more opportunities than ever for citizens to express their views may be, counterintuitively, a problem facing democracy\u2014the sheer quantitative overabundance overloads policymakers and citizens, making it difficult to detect the signal amid the noise. This overload has been accompanied by marked decline in civility and argumentative complexity. Uncivil behavior by elites and pathological mass communication reinforce each other. How do we break this vicious cycle? Asking elites to behave better is futile so long as there is a public ripe to be polarized and exploited by demagogues and media manipulators. Thus, any response has to involve ordinary citizens; but are they up to the task? Social science on \u201cdeliberative democracy\u201d offers reasons for optimism about citizens' capacity to avoid polarization and manipulation and to make sound decisions. The real world of democratic politics is currently far from the deliberative ideal, but empirical evidence shows that the gap can be closed.",
+      "citationCount": 378,
+      "doi": "10.1126/science.aaw2694",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/75a84a9c96c29012f9d9c88c2ee510e1db03fbf6",
+      "venue": "Science",
+      "journal": {
+        "name": "Science",
+        "pages": "1144 - 1146",
+        "volume": "363"
+      },
+      "publicationTypes": [
+        "JournalArticle"
+      ]
+    },
+    {
+      "paperId": "22f8982cf547b48a28b85d6011a3b56f4c644de8",
+      "title": "PhD Review: Deliberative democracy amidst the Tower of Babel",
+      "authors": [
+        {
+          "name": "Nicole Curato",
+          "authorId": "35531204"
+        }
+      ],
+      "year": 2026,
+      "abstract": "Much normative and empirical work on deliberation still operates under the assumption of a monolingual public sphere. Where linguistic diversity is acknowledged, it is often treated as a logistical challenge rather than a democratic asset. Verhasselt\u2019s PhD dissertation invites readers to consider what normative frameworks and practices are required when linguistic pluralism is embraced as integral to democratic life. This piece reflects on the profound implications of Verhasselt\u2019s work for deliberative theory and practice. It concludes by calling for a broader conversation that connects scholarship pursuing similar lines of inquiry around the world.",
+      "citationCount": 0,
+      "doi": "10.54195/plc.24839",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/22f8982cf547b48a28b85d6011a3b56f4c644de8",
+      "venue": "Politics of the Low Countries",
+      "journal": {
+        "name": "Politics of the Low Countries"
+      },
+      "publicationTypes": [
+        "JournalArticle",
+        "Review"
+      ]
+    },
+    {
+      "paperId": "2af07b85e6c2ab342170f871e31bda76a3950535",
+      "title": "Challenges to democratic participation : antipolitics, deliberative democracy, and pluralism",
+      "authors": [
+        {
+          "name": "A. Campos",
+          "authorId": "49612768"
+        },
+        {
+          "name": "J. Andr\u00e9",
+          "authorId": "2059632695"
+        }
+      ],
+      "year": 2014,
+      "abstract": null,
+      "citationCount": 3,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2af07b85e6c2ab342170f871e31bda76a3950535",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "1716c575d068a581be3395665da4c85bfaf8c40a",
+      "title": "Habermas and public reason in the digital age: Technology and deliberative democracy",
+      "authors": [
+        {
+          "name": "Asaf Bar-Tura",
+          "authorId": "1406587006"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/1716c575d068a581be3395665da4c85bfaf8c40a",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "817dc4e0861d8c54b3bd97cf4902d2606e88859a",
+      "title": "Democracy across Borders: From D\u00eamos to D\u00eamoi \u2010 by James Bohman",
+      "authors": [
+        {
+          "name": "Barbara Buckinx",
+          "authorId": "113278108"
+        }
+      ],
+      "year": 2009,
+      "abstract": null,
+      "citationCount": 1,
+      "doi": "10.1111/j.1747-7093.2009.00192.x",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/817dc4e0861d8c54b3bd97cf4902d2606e88859a",
+      "venue": "Ethics and International Affairs",
+      "journal": {
+        "name": "Ethics & International Affairs",
+        "pages": "73 - 75",
+        "volume": "23"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "ab13a99a8259fd79f3f550dd4bf17a3dc9a24129",
+      "title": "Reflexive toleration in a deliberative democracy",
+      "authors": [
+        {
+          "name": "J. Bohman",
+          "authorId": "46331722"
+        }
+      ],
+      "year": 2018,
+      "abstract": "Any feasible ideal of democracy must face the unavoidable social fact that the citizenry of a modern state is heterogeneous along a number of intersecting dimensions, including race, class, religion and culture. If that ideal is also deliberative, and thus requires that citizens commit themselves to making decisions according to reasons they believe are public, then such diversity raises the possibility of deep and potentially irresolvable conflicts. When conflicts do emerge, such a form of democracy requires that all citizens should have equal standing and influence in any deliberation about their resolution. In the circumstances of wide pluralism (that is, of pluralism along a number of dimensions), toleration would seem to be both part of the ideal of public reason and an important virtue for citizens to exercise in their deliberative institutions. Yet deliberation also demands more of citizens than silent toleration regarding the reasons of those with whom they disagree, especially if they accept that an important goal of public deliberation is to find the best possible mutually acceptable solution to a problem or conflict. It demands the critical engagement of citizens in a deliberative polity. How can such engagement be critical without being intolerant, and tolerant without being uncritical? That is the task of a deliberative theory of tolerance. When is deliberative tolerance needed? In a democracy, tolerance is exercised in resolving conflicts that are motivated by differences in belief. It would seem, then, that toleration in deliberation requires that citizens adopt some impartial or neutral stance and avoid directly confronting each other on the most contentious issues. At the same time, it is also equally unlikely that citizens would be able to deliberate about the sources of their conflicts and disagreements at all if toleration entails, as Rawls holds, that \u2018central to the idea of public reason is that it neither criticises nor attacks any comprehensive doctrine, religious or non-religious\u2019. Rawls goes on to offer the following exception: criticism of any such doctrine is permissible \u2018insofar as it is incompatible with the essentials of public reason and a democratic polity\u2019. Such a doctrine would then be criticised as \u2018unreasonMCK6 1/10/2003 10:26 AM Page 111",
+      "citationCount": 6,
+      "doi": "10.7765/9781526137708.00013",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/ab13a99a8259fd79f3f550dd4bf17a3dc9a24129",
+      "venue": "The culture of toleration in diverse societies",
+      "journal": {
+        "name": "The culture of toleration in diverse societies"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "bb0917aca4c8f3c6ba1682d28c9aaad85300a025",
+      "title": "Democracy, Deliberation, and Education, by Robert Asen",
+      "authors": [
+        {
+          "name": "A. D. Savage",
+          "authorId": "101608958"
+        }
+      ],
+      "year": 2016,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1080/1041794X.2016.1167237",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/bb0917aca4c8f3c6ba1682d28c9aaad85300a025",
+      "venue": "",
+      "journal": {
+        "name": "Southern Communication Journal",
+        "pages": "347 - 350",
+        "volume": "81"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "9f35833f68a835ddb7c04584ff5e224e6d3dadbb",
+      "title": "Democracy as Inquiry, Inquiry as Democratic: Pragmatism, Social Science, and the Cognitive Division of Labor",
+      "authors": [
+        {
+          "name": "J. Bohman",
+          "authorId": "46331722"
+        }
+      ],
+      "year": 1999,
+      "abstract": null,
+      "citationCount": 123,
+      "doi": "10.2307/2991808",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/9f35833f68a835ddb7c04584ff5e224e6d3dadbb",
+      "venue": "",
+      "journal": {
+        "name": "American Journal of Political Science",
+        "pages": "590",
+        "volume": "43"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "25add0f8c17ceea900b7b7b24abb36ed074dac56",
+      "title": "Learning Public Deliberation through the Critique of Institutional Argument.",
+      "authors": [
+        {
+          "name": "Erik Doxtader",
+          "authorId": "104402556"
+        }
+      ],
+      "year": 1995,
+      "abstract": null,
+      "citationCount": 25,
+      "doi": "10.1080/00028533.1995.11951610",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/25add0f8c17ceea900b7b7b24abb36ed074dac56",
+      "venue": "",
+      "journal": {
+        "name": "Argumentation and Advocacy",
+        "pages": "185-203",
+        "volume": "31"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b28522f2eeb24cf5d8524c90e39a7ce976cb84cc",
+      "title": "Deliberative Democracy and its Discontents",
+      "authors": [
+        {
+          "name": "J. Mart\u00ed",
+          "authorId": "144162773"
+        },
+        {
+          "name": "S. Besson",
+          "authorId": "80419318"
+        }
+      ],
+      "year": 2017,
+      "abstract": null,
+      "citationCount": 13,
+      "doi": "10.4324/9781315258249",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b28522f2eeb24cf5d8524c90e39a7ce976cb84cc",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "7e19f75488af8ac01d81fde9bbb97ded6524ce2a",
+      "title": "Democracy, Constitution and Conflict: (Re)thinking articulations from the agonism",
+      "authors": [
+        {
+          "name": "Rudinei Jose Ortigara",
+          "authorId": "2151349796"
+        }
+      ],
+      "year": 2021,
+      "abstract": "Contemporary liberal democratic societies are marked by complexity and the fact of pluralism and diverse visions of goods. How to articulate them, and how to provide solutions to conflicts? The current predominant perspective of liberal theory does so through the proposal of consensual possibilities; but from this perspective a problem arises: can there be consensus without prejudice to democratic practices and political\u00a0action, which is an essential mark of a plural society, and which presupposes the non-exclusion of the other and equality as a constitutional foundation? Faced with this issue, there is a need to (re)think practices of expression of the plural, not excluding conflict, articulatory aspects and recognition of the different, as it marks a plural society, and its reflexes in the construction of a public space as a space for the expression of diversity and conflict, and, therefore, of the democratic.\u00a0The hypothesis is that the conflictive condition can and should be understood as productive for the recognition of plural expressions both in politics and in law, both in democracy and constitutionalism, and from them not being extirpated, but transformed into agonism, acceptance and plural expression. The main objective is to analyze how the conception of agonism, conceived by Chantal Mouffe, can contribute to the understanding of necessary articulations and implications between law and politics, constitutionalism and democracy in order to build meaningful and productive perspectives. Thus, for the development of the research, contributions were sought in political theory and constitutional theory, whose foundation was given, especially, from Chantal Mouffe, Post and Siegel, and Vera Karam de Chueiri. The method used was deductive, testing assumptions to verify possible conclusions; the research technique was bibliographic, developed from research in works and articles. At the end of the research, the hypothesis was confirmed.",
+      "citationCount": 0,
+      "doi": "10.18800/iusetveritas.202102.010",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7e19f75488af8ac01d81fde9bbb97ded6524ce2a",
+      "venue": "Ius Et Veritas",
+      "journal": {
+        "name": "IUS ET VERITAS"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "62945e1b872ea68f8595c2abbd1f81fa86f9eea1",
+      "title": "Polycentric Governance and the Good Society",
+      "authors": [
+        {
+          "name": "David Thunder",
+          "authorId": "2335600574"
+        },
+        {
+          "name": "Pablo Paniagua",
+          "authorId": "2262002255"
+        }
+      ],
+      "year": 2024,
+      "abstract": "Polycentric Governance and the Good Society: A Normative and Philosophical Investigationoffers an examination of the idea of polycentric governance as one of the pillars of a flourishing human society. Rather than following the conventional path of suppressing complexity and diversity for the sake of reaching agreement on justice and political stability, David Thunder and Pablo Paniagua see complexity and diversity as assets that should be leveraged to make the \"Open Society\" a more prosperous, resilient, and flourishing place to live.Polycentric Governance and the Good Societyprovides valuable food for thought for academics and students looking for a probing, cross-disciplinary discussion of the ethos and institutions of liberal democracy under conditions of social pluralism. Although the volume includes diverse disciplinary lenses, such as public choice theory, MacIntyrean social theory, and constitutional law, the driving concern is to exhibit the potential advantages of polycentric approaches to governance and social coordination for constructing a feasible and morally attractive social order. This is the first extended academic work to explore in depth the advantages, not only from an economic and organizational standpoint but also from a broader ethical, sociological, and anthropological perspective, of polycentric governance arrangements.",
+      "citationCount": 1,
+      "doi": "10.5040/9798216430452",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/62945e1b872ea68f8595c2abbd1f81fa86f9eea1",
+      "venue": "",
+      "journal": null,
+      "publicationTypes": [
+        "Book"
+      ]
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

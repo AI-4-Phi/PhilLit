@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.5380/sk.v21i1.91983"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.5380/sk.v21i1.91983",
+      "title": "Revisiting the Kantian legacy in Habermas: the philosophical project of modernity and decolonial critiques to rationality and cosmopolitanism",
+      "authors": [
+        {
+          "family": "Consani",
+          "given": "Cristina Foroni"
+        }
+      ],
+      "editors": [],
+      "year": 2023,
+      "container_title": "Studia Kantiana",
+      "volume": "21",
+      "issue": "1",
+      "page": "119",
+      "publisher": "Universidade Federal do Parana",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.5380/sk.v21i1.91983"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

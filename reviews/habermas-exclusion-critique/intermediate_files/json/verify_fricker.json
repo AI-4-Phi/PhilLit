@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Epistemic Injustice Power and the Ethics of Knowing",
+    "author": "Fricker",
+    "year": 2007
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1093/acprof:oso/9780198237907.003.0008",
+      "title": "Hermeneutical Injustice",
+      "authors": [
+        {
+          "family": "Fricker",
+          "given": "Miranda"
+        }
+      ],
+      "editors": [],
+      "year": 2007,
+      "container_title": "Epistemic Injustice",
+      "volume": "",
+      "issue": "",
+      "page": "147-175",
+      "publisher": "Oxford University PressOxford",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1093/acprof:oso/9780198237907.003.0008",
+      "score": 65.47583
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,36 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1080/1600910X.2011.621049
+[verify_paper.py] DOI verified: A powerful, opinion-forming public? Rethinking the...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1080/1600910X.2011.621049"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/1600910x.2011.621049",
+      "title": "A powerful, opinion-forming public? Rethinking the Habermasian public sphere in a perspective of feminist theory and citizenship",
+      "authors": [
+        {
+          "family": "Fiig",
+          "given": "Christina"
+        }
+      ],
+      "editors": [],
+      "year": 2011,
+      "container_title": "Distinktion: Journal of Social Theory",
+      "volume": "12",
+      "issue": "3",
+      "page": "291-308",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1080/1600910x.2011.621049"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

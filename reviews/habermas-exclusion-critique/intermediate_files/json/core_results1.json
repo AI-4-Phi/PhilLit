@@ -1,0 +1,15 @@
+{
+  "status": "partial",
+  "source": "core",
+  "query": "Habermas ideal speech situation reconstruction inclusion",
+  "results": [],
+  "count": 0,
+  "errors": [
+    {
+      "type": "server_error",
+      "message": "CORE API server error: 503",
+      "recoverable": true
+    }
+  ],
+  "warning": "Completed with 1 error(s). Found 0 papers."
+}

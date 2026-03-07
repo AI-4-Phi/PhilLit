@@ -1,0 +1,37 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.2307/2956405"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.2307/2956405",
+      "title": "Situating the Self: Gender, Community and Postmodernism in Contemporary Ethics.",
+      "authors": [
+        {
+          "family": "Warnke",
+          "given": "Georgia"
+        },
+        {
+          "family": "Benhabib",
+          "given": "Seyla"
+        }
+      ],
+      "editors": [],
+      "year": 1996,
+      "container_title": "The Philosophical Quarterly",
+      "volume": "46",
+      "issue": "183",
+      "page": "273",
+      "publisher": "Oxford University Press (OUP)",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.2307/2956405"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

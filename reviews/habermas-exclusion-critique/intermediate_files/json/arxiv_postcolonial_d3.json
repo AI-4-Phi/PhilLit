@@ -1,0 +1,430 @@
+[search_arxiv.py] Connecting to arXiv API...
+[search_arxiv.py] Searching arXiv: 'all:postcolonial Habermas critical theory', limit=20
+[search_arxiv.py] Search complete: 20 papers found
+[search_arxiv.py] Cached results (cache key: arxiv_8b62c1ec1d95c50f)
+{
+  "status": "success",
+  "source": "arxiv",
+  "query": "all:postcolonial Habermas critical theory",
+  "results": [
+    {
+      "arxiv_id": "2602.18433",
+      "title": "Quenched path limits and periodization stability for tilted Brownian motion in Poissonian potentials on $\\mathbb{H}^d$",
+      "authors": [
+        "Miklos Abert",
+        "Adam Arras",
+        "Jaelin Kim"
+      ],
+      "abstract": "We analyze the existence of Brownian motion tilted by a potential of full support on hyperbolic spaces $\\mathbb{H}^d$. On compact spaces, it is classical that these path limits, called Q-processes, exist and can be directly defined using the ground state of the corresponding Schr\u00f6dinger operator. On non-compact spaces like $\\mathbb{H}^d$, the existence fails in general.   We show that for \\emph{stationary random} potentials on $\\mathbb{H}^d$ with suitable spectral and sup norm bounds, the Q-processes exist a.s. For potentials that are factors of a Poisson point process, the method works up to sup norm $(d-1)^2/8$. In this case, we also show that the path limit can be approximated by periodic potentials.   As a tool, we use the foliated space defined by the point process. It turns out that the global ground state of this foliated space serves as a substitute for the non-existing $L^2$ ground states on the leaves of the foliation. Restricting the global ground state to a leaf gives a generalized eigenwave that can be plugged into the usual machinery to get the Q-process.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "math.PR",
+      "categories": [
+        "math.PR",
+        "math.DG",
+        "math.SP"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18433v1",
+      "url": "https://arxiv.org/abs/2602.18433"
+    },
+    {
+      "arxiv_id": "2602.18423",
+      "title": "Leading singularities of Wilson loop correlators from twistor Wilson loop diagrams",
+      "authors": [
+        "James Drummond",
+        "Matthew Rochford",
+        "Rowan Wright"
+      ],
+      "abstract": "The leading singularities of one-loop scattering amplitudes in planar $\\mathcal{N}=4$ super Yang-Mills theory are known to factorise into products of tree-level amplitudes, and this can be seen from a number of different perspectives e.g. generalised unitarity or on-shell diagrams. Here we investigate the leading singularities from the perspective of the Wilson loop expectation values to which these amplitudes are dual, in particular making use of the twistor Wilson loop formalism. We show that the factorisation of one-loop leading singularities of a null Wilson loop's expectation value into a product of tree-level objects is manifest at the level of twistor Wilson loop diagrams, and is a simple consequence of planarity, without appeal to e.g. unitarity on the amplitude side of the duality. We then use the same approach to derive compact formulae for the one-loop leading singularities of correlators of multiple light-like Wilson loop operators in terms of tree-level objects. Via the chiral box expansion, these formulae provide a simple route to writing down the $O(g^2)$ correlation function of any number of Wilson loops at any MHV degree.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "hep-th",
+      "categories": [
+        "hep-th"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18423v1",
+      "url": "https://arxiv.org/abs/2602.18423"
+    },
+    {
+      "arxiv_id": "2602.18411",
+      "title": "Weak approximation of kinetic SDEs: closing the criticality gap",
+      "authors": [
+        "Zimo Hao",
+        "Khoa L\u00ea",
+        "Chengcheng Ling"
+      ],
+      "abstract": "We study the weak convergence of a generic tamed Euler-Maruyama scheme for kinetic stochastic differential equations (SDEs) with integrable drifts. We show that the marginal density of the considered scheme converges at rate 1/2 to the corresponding marginal density of the SDE. The convergence rate is independent from the criticality gap, which is new compared to previous results.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "math.PR",
+      "categories": [
+        "math.PR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18411v1",
+      "url": "https://arxiv.org/abs/2602.18411"
+    },
+    {
+      "arxiv_id": "2602.18410",
+      "title": "An algebraic theory of Lojasiewicz exponents",
+      "authors": [
+        "Tai Huy Ha"
+      ],
+      "abstract": "We develop a unified algebraic and valuative theory of Lojasiewicz exponents for pairs of graded families and filtrations of ideals. Within this framework, local Lojasiewicz exponents, gradient exponents, and exponents at infinity are all realized as asymptotic containment thresholds between filtrations, governed by integral closure. This reformulation shows that Lojasiewicz exponents are fundamentally valuative optimization problems.   The central structural contribution of the paper is a finite-max principle. Under verifiable algebraic hypotheses, the a priori infinite valuative supremum bounding the Lojasiewicz exponent reduces to a finite maximum, and computes the Lojasiewicz exponent precisely. We identify two complementary mechanisms leading to this phenomenon: finite testing arising from normalized blowups and Noetherian Rees algebras, and attainment via compactness of normalized valuation spaces under linear boundedness assumptions.   This finite-max framework yields strong structural consequences. We prove rigidity results showing that common extremal valuations force equality of Lojasiewicz ratios, and we establish stratification and stability phenomena for Lojasiewicz exponents in families, including fractional linearity and wall-chamber behavior along natural one-parameter deformations.   The theory recovers and explains classical results in toric and Newton-polyhedral settings, particularly, for Newton nondegenete case, where the Lojasiewicz exponent is computed by finitely many toric divisorial valuations corresponding to facet data.   Finally, we illustrate why the hypotheses underlying the finite-max principle are essential, delineating the precise scope of the theory.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "math.AC",
+      "categories": [
+        "math.AC",
+        "math.AG",
+        "math.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18410v1",
+      "url": "https://arxiv.org/abs/2602.18410"
+    },
+    {
+      "arxiv_id": "2602.18405",
+      "title": "A Generalized Information Bottleneck Method: A Decision-Theoretic Perspective",
+      "authors": [
+        "Akira Kamatsuka",
+        "Takahiro Yoshida"
+      ],
+      "abstract": "The information bottleneck (IB) method seeks a compressed representation of data that preserves information relevant to a target variable for prediction while discarding irrelevant information from the original data. In its classical formulation, the IB method employs mutual information to evaluate the compression between the original and compressed data and the utility of the representation for the target variable. In this study, we investigate a generalized IB problem, where the evaluation of utility is based on the $\\mathcal{H}$-mutual information that satisfies the concave (\\texttt{CV}) and averaging (\\texttt{AVG}) conditions. This class of information measures admits a statistical decision-theoretic interpretation via its equivalence to the expected value of sample information. Based on this interpretation, we derive an alternating optimization algorithm to assess the tradeoff between compression and utility in the generalized IB problem.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cs.IT",
+      "categories": [
+        "cs.IT"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18405v1",
+      "url": "https://arxiv.org/abs/2602.18405"
+    },
+    {
+      "arxiv_id": "2602.18399",
+      "title": "Overlap locking and non-perturbative effects in spin glasses",
+      "authors": [
+        "Silvio Franz",
+        "Giorgio Parisi",
+        "Federico Ricci-Tersenghi"
+      ],
+      "abstract": "We study the phenomenon of the locking of the order parameter (or synchronization) in spin glasses at low temperatures. When two systems with independent disorders are coupled, their overlaps become similar. A crucial question is how this effect depends on the strength of the coupling between the two systems. Non-perturbative phenomena are present when $1 \\ll \u0394H \\ll N$, being $\u0394H$ the coupling Hamiltonian and $N$ the size of the system. In this intermediate-coupling region, the effect is related to finite-size free-energy corrections and to the correlations in the Dyson hierarchical spin glass, a model that mimics the physics of finite-dimensional systems. We study this phenomenon in the mean-field approach, both analytically and numerically, and we finally compute the critical exponents for finite-volume corrections in mean-field theory and for the decay of correlations in the Dyson hierarchical model.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cond-mat.dis-nn",
+      "categories": [
+        "cond-mat.dis-nn"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18399v1",
+      "url": "https://arxiv.org/abs/2602.18399"
+    },
+    {
+      "arxiv_id": "2602.18395",
+      "title": "Cartography of LNV dim-9 SMEFT: Implications for Radiative Neutrino Masses and $0\u03bd\u03b2\u03b2$",
+      "authors": [
+        "Fabian Esser",
+        "Luk\u00e1\u0161 Gr\u00e1f",
+        "Chandan Hati"
+      ],
+      "abstract": "We perform a systematic study of lepton-number-violating (LNV) dimension-9 operators in the Standard Model Effective Field Theory (SMEFT) that can mediate neutrinoless double beta decay ($0\u03bd\u03b2\u03b2$) at tree level, and map them to their possible tree-level ultraviolet completions. Using a diagram-based classification, we enumerate all such completions and isolate minimal two-particle models that avoid generating the dimension-5 Weinberg operator or dimension-7 LNV operators at tree level. We then chart how these minimal models populate the operator landscape and organise them by the loop order at which they radiatively induce lower-dimensional LNV operators, highlighting scenarios in which the tree-level dimension-9 contribution can compete with or dominate loop-suppressed neutrino-mass (dimension-5) effects. Representative one-loop and two-loop classes are matched onto the SMEFT, and their implications for neutrino masses, charged-lepton flavour violation, and the relative size of dimension-9 versus dimension-5 contributions to $0\u03bd\u03b2\u03b2$ are analysed, delineating regions of parameter space where upcoming experiments can be sensitive to genuinely short-range LNV dynamics.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "hep-ph",
+      "categories": [
+        "hep-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18395v1",
+      "url": "https://arxiv.org/abs/2602.18395"
+    },
+    {
+      "arxiv_id": "2602.18394",
+      "title": "Self-Aware Object Detection via Degradation Manifolds",
+      "authors": [
+        "Stefan Becker",
+        "Simon Weiss",
+        "Wolfgang H\u00fcbner",
+        "Michael Arens"
+      ],
+      "abstract": "Object detectors achieve strong performance under nominal imaging conditions but can fail silently when exposed to blur, noise, compression, adverse weather, or resolution changes. In safety-critical settings, it is therefore insufficient to produce predictions without assessing whether the input remains within the detector's nominal operating regime. We refer to this capability as self-aware object detection.   We introduce a degradation-aware self-awareness framework based on degradation manifolds, which explicitly structure a detector's feature space according to image degradation rather than semantic content. Our method augments a standard detection backbone with a lightweight embedding head trained via multi-layer contrastive learning. Images sharing the same degradation composition are pulled together, while differing degradation configurations are pushed apart, yielding a geometrically organized representation that captures degradation type and severity without requiring degradation labels or explicit density modeling.   To anchor the learned geometry, we estimate a pristine prototype from clean training embeddings, defining a nominal operating point in representation space. Self-awareness emerges as geometric deviation from this reference, providing an intrinsic, image-level signal of degradation-induced shift that is independent of detection confidence.   Extensive experiments on synthetic corruption benchmarks, cross-dataset zero-shot transfer, and natural weather-induced distribution shifts demonstrate strong pristine-degraded separability, consistent behavior across multiple detector architectures, and robust generalization under semantic shift. These results suggest that degradation-aware representation geometry provides a practical and detector-agnostic foundation.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cs.CV",
+      "categories": [
+        "cs.CV"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18394v1",
+      "url": "https://arxiv.org/abs/2602.18394"
+    },
+    {
+      "arxiv_id": "2602.18391",
+      "title": "The coherent-state transformation in quantum electrodynamics coupled cluster theory",
+      "authors": [
+        "Eric W. Fischer"
+      ],
+      "abstract": "We analyse the coherent-state (CS) transformation in quantum electrodynamics coupled cluster (QED-CC) theory from the perspective of its non-vanishing commutator with the polaritonic cluster operator. Specifically, we show that a QED Hartree-Fock (QED-HF) reference state parametrized by the CS-transformation leads to a QED-CC Lagrangian formally determined by CS-representations of polaritonic Hamiltonian, polaritonic cluster and polaritonic deexcitation operators. This observation augments the original formulation of QED-CC theory where the CS-representation is restricted to the polaritonic Hamiltonian. We consequently find a renormalization of both QED-CC correlation energy and QED-CC ground state induced by the CS-transformation, which depends on the mean-field expectation value of the molecular dipole operator and therefore breaks origin invariance for charged systems. Electronic contributions to correlation energy and QED-CC ground state are renormalized by CS-transformed mixed excitation and deexcitation operators. In contrast, the CS-transformed single-photon excitation affects only the QED-CC ground state but not directly the correlation energy. The fully CS-transformed QED-CC ansatz is well approximated by the original QED-CC formulation for large cavity frequencies leading to small renormalization corrections. However, it exhibits a divergent zero-frequency limit absent in the original QED-CC ansatz for molecules with a non-vanishing molecular dipole moment in agreement with the asymptotic behaviour of the CS-parametrized QED-HF reference state.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "physics.chem-ph",
+      "categories": [
+        "physics.chem-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18391v1",
+      "url": "https://arxiv.org/abs/2602.18391"
+    },
+    {
+      "arxiv_id": "2602.18389",
+      "title": "Improved Algorithms for Clustering with Noisy Distance Oracles",
+      "authors": [
+        "Pinki Pradhan",
+        "Anup Bhattacharya",
+        "Ragesh Jaiswal"
+      ],
+      "abstract": "Bateni et al. has recently introduced the weak-strong distance oracle model to study clustering problems in settings with limited distance information. Given query access to the strong-oracle and weak-oracle in the weak-strong oracle model, the authors design approximation algorithms for $k$-means and $k$-center clustering problems. In this work, we design algorithms with improved guarantees for $k$-means and $k$-center clustering problems in the weak-strong oracle model. The $k$-means++ algorithm is routinely used to solve $k$-means in settings where complete distance information is available. One of the main contributions of this work is to show that $k$-means++ algorithm can be adapted to work in the weak-strong oracle model using only a small number of strong-oracle queries, which is the critical resource in this model. In particular, our $k$-means++ based algorithm gives a constant approximation for $k$-means and uses $O(k^2 \\log^2{n})$ strong-oracle queries. This improves on the algorithm of Bateni et al. that uses $O(k^2 \\log^4n \\log^2 \\log n)$ strong-oracle queries for a constant factor approximation of $k$-means. For the $k$-center problem, we give a simple ball-carving based $6(1 + \u03b5)$-approximation algorithm that uses $O(k^3 \\log^2{n} \\log{\\frac{\\log{n}}\u03b5})$ strong-oracle queries. This is an improvement over the $14(1 + \u03b5)$-approximation algorithm of Bateni et al. that uses $O(k^2 \\log^4{n} \\log^2{\\frac{\\log{n}}\u03b5})$ strong-oracle queries. To show the effectiveness of our algorithms, we perform empirical evaluations on real-world datasets and show that our algorithms significantly outperform the algorithms of Bateni et al.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cs.DS",
+      "categories": [
+        "cs.DS"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18389v1",
+      "url": "https://arxiv.org/abs/2602.18389"
+    },
+    {
+      "arxiv_id": "2602.18387",
+      "title": "Limiting Absorption Principle and Radiation Condition for the Fractional Helmholtz Equation",
+      "authors": [
+        "Dana Zilberberg",
+        "Fioralba Cakoni",
+        "Michael S. Vogelius"
+      ],
+      "abstract": "We investigate elliptic fractional equations in the whole space, involving zero order perturbations of the fractional Laplacian $(-\u0394)^s$, $0<s<1$. Our main objective is to determine appropriate radiation conditions at infinity that ensure existence and uniqueness of solutions to the fractional type Helmholtz equation. Extending classical scattering theory for the Helmholtz equation, we introduce and analyze suitable Sommerfeld type radiation conditions for fractional orders. A central contribution is the explicit computation of the outgoing free space Greens function for the operator $(-\u0394)^s-k^{2s}$, for all $0<s<1$, any dimension and $k>0$, obtained via contour integration and a limiting absorption principle. We show that its asymptotic behavior at infinity coincides with a rescaled version of the classical Helmholtz fundamental solution, thereby justifying the standard Sommerfeld radiation condition for compactly supported sources. In addition, using resolvent estimates and a limiting absorption framework, we establish existence and uniqueness of outgoing solutions for compactly supported data, and for weighted sources. We further derive a convolution representation of the solution in terms of the outgoing fundamental solution. For inhomogeneous media with compactly supported perturbations, we reformulate the problem as a Lippmann Schwinger integral equation of Fredholm type and prove unique solvability away from a discrete set of frequencies. Our analysis provides a rigorous foundation for scattering theory of fractional Helmholtz operators and offers a framework suitable for numerical implementation of these nonlocal wave propagation models.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "math.AP",
+      "categories": [
+        "math.AP"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18387v1",
+      "url": "https://arxiv.org/abs/2602.18387"
+    },
+    {
+      "arxiv_id": "2602.18383",
+      "title": "Design-based inference for generalized causal effects in randomized experiments",
+      "authors": [
+        "Xinyuan Chen",
+        "Fan Li"
+      ],
+      "abstract": "Generalized causal effect estimands, including the Mann-Whitney parameter and causal net benefit, provide flexible summaries of treatment effects in randomized experiments with non-Gaussian or multivariate outcomes. We develop a unified design-based inference framework for regression adjustment and variance estimation of a broad class of generalized causal effect estimands defined through pairwise contrast functions. Leveraging the theory of U-statistics and finite-population asymptotics, we establish the consistency and asymptotic normality of regression estimators constructed from individual pairs and per-unit pair averages, even when the working models are misspecified. Consequently, these estimators are model-assisted rather than model-based. In contrast to classical average treatment effect estimands, we show that for nonlinear contrast functions, covariate adjustment preserves consistency but does not admit a universal efficiency guarantee. For inference, we demonstrate that standard heteroskedasticity-robust and cluster-robust variance estimators are generally inconsistent in this setting. As a remedy, we prove that a complete two-way cluster-robust variance estimator, which fully accounts for pairwise dependence and reverse comparisons, is consistent.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "stat.ME",
+      "categories": [
+        "stat.ME",
+        "math.ST"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18383v1",
+      "url": "https://arxiv.org/abs/2602.18383"
+    },
+    {
+      "arxiv_id": "2602.18380",
+      "title": "The Complexity of Sparse Win-Lose Bimatrix Games",
+      "authors": [
+        "Eleni Batziou",
+        "John Fearnley",
+        "Abheek Ghosh",
+        "Rahul Savani"
+      ],
+      "abstract": "We prove that computing an $\u03b5$-approximate Nash equilibrium of a win-lose bimatrix game with constant sparsity is PPAD-hard for inverse-polynomial $\u03b5$. Our result holds for 3-sparse games, which is tight given that 2-sparse win-lose bimatrix games can be solved in polynomial time.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cs.CC",
+      "categories": [
+        "cs.CC",
+        "cs.GT",
+        "econ.TH"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18380v1",
+      "url": "https://arxiv.org/abs/2602.18380"
+    },
+    {
+      "arxiv_id": "2602.18377",
+      "title": "Theory and interpretability of Quantum Extreme Learning Machines: a Pauli-transfer matrix approach",
+      "authors": [
+        "Markus Gross",
+        "Hans-Martin Rieser"
+      ],
+      "abstract": "Quantum reservoir computers (QRCs) have emerged as a promising approach to quantum machine learning, since they utilize the natural dynamics of quantum systems for data processing and are simple to train. Here, we consider n-qubit quantum extreme learning machines (QELMs) with continuous-time reservoir dynamics. QELMs are memoryless QRCs capable of various ML tasks, including image classification and time series forecasting. We apply the Pauli transfer matrix (PTM) formalism to theoretically analyze the influence of encoding, reservoir dynamics, and measurement operations, including temporal multiplexing, on the QELM performance. This formalism makes explicit that the encoding determines the complete set of (nonlinear) features available to the QELM, while the quantum channels linearly transform these features before they are probed by the chosen measurement operators. Optimizing a QELM can therefore be cast as a decoding problem in which one shapes the channel-induced transformations such that task-relevant features become available to the regressor. The PTM formalism allows one to identify the classical representation of a QELM and thereby guide its design towards a given training objective. As a specific application, we focus on learning nonlinear dynamical systems and show that a QELM trained on such trajectories learns a surrogate-approximation to the underlying flow map.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "quant-ph",
+      "categories": [
+        "quant-ph",
+        "cs.LG"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18377v1",
+      "url": "https://arxiv.org/abs/2602.18377"
+    },
+    {
+      "arxiv_id": "2602.18364",
+      "title": "Quantum Maximum Likelihood Prediction via Hilbert Space Embeddings",
+      "authors": [
+        "Sreejith Sreekumar",
+        "Nir Weinberger"
+      ],
+      "abstract": "Recent works have proposed various explanations for the ability of modern large language models (LLMs) to perform in-context prediction. We propose an alternative conceptual viewpoint from an information-geometric and statistical perspective. Motivated by Bach[2023], we model training as learning an embedding of probability distributions into the space of quantum density operators, and in-context learning as maximum-likelihood prediction over a specified class of quantum models. We provide an interpretation of this predictor in terms of quantum reverse information projection and quantum Pythagorean theorem when the class of quantum models is sufficiently expressive. We further derive non-asymptotic performance guarantees in terms of convergence rates and concentration inequalities, both in trace norm and quantum relative entropy. Our approach provides a unified framework to handle both classical and quantum LLMs.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cs.IT",
+      "categories": [
+        "cs.IT",
+        "cs.LG",
+        "quant-ph",
+        "stat.ML"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18364v1",
+      "url": "https://arxiv.org/abs/2602.18364"
+    },
+    {
+      "arxiv_id": "2602.18360",
+      "title": "Phase diagram of a lattice fermion model with symmetric mass generation",
+      "authors": [
+        "Sandip Maiti",
+        "Debasish Banerjee",
+        "Shailesh Chandrasekharan",
+        "Marina K. Marinkovic"
+      ],
+      "abstract": "We study the phase structure of a model containing two flavors of massless staggered fermions interacting through two independent four-fermion couplings, UI and UB, formulated on a three-dimensional Euclidean space-time lattice. At UB = 0, this model is known to exhibit a direct second-order quantum phase transition between a massless fermion (MF) phase and a phase in which fermions acquire masses through the mechanism commonly referred to as symmetric mass generation (SMG). We demonstrate that introducing a small nonzero value of UB qualitatively alters this structure: the single exotic transition at UB = 0 splits into two distinct, conventional transitions, separated by an intermediate phase in which fermion masses arise through the standard mechanism of spontaneous symmetry breaking (SSB). The first of these is a Gross-Neveu transition separating the MF phase from the SSB-induced massive phase, while the second is a three-dimensional XY transition between the SSB phase and the SMG phase. Using the fermion-bag Monte Carlo method, we verify that the critical exponents associated with both transitions are consistent with the literature, thereby yielding a quantitative characterization of the resulting phase structure of the model.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "hep-lat",
+      "categories": [
+        "hep-lat",
+        "cond-mat.str-el",
+        "hep-th"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18360v1",
+      "url": "https://arxiv.org/abs/2602.18360"
+    },
+    {
+      "arxiv_id": "2602.18358",
+      "title": "Forecasting the Evolving Composition of Inbound Tourism Demand: A Bayesian Compositional Time Series Approach Using Platform Booking Data",
+      "authors": [
+        "Harrison Katz"
+      ],
+      "abstract": "Understanding how the composition of guest origin markets evolves over time is critical for destination marketing organizations, hospitality businesses, and tourism planners. We develop and apply Bayesian Dirichlet autoregressive moving average (BDARMA) models to forecast the compositional dynamics of guest origin market shares using proprietary Airbnb booking data spanning 2017--2024 across four major destination regions. Our analysis reveals substantial pandemic-induced structural breaks in origin composition, with heterogeneous recovery patterns across markets. The BDARMA framework achieves the lowest average forecast error across all destination regions, outperforming standard benchmarks including na\u00efve forecasts, exponential smoothing, and SARIMA on log-ratio transformed data. For EMEA destinations, BDARMA achieves 23% lower forecast error than naive methods, with statistically significant improvements. By modeling compositions directly on the simplex with a Dirichlet likelihood and incorporating seasonal variation in both mean and precision parameters, our approach produces coherent forecasts that respect the unit-sum constraint while capturing complex temporal dependencies. The methodology provides destination stakeholders with probabilistic forecasts of source market shares, enabling more informed strategic planning for marketing resource allocation, infrastructure investment, and crisis response.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "stat.AP",
+      "categories": [
+        "stat.AP",
+        "q-fin.ST"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18358v1",
+      "url": "https://arxiv.org/abs/2602.18358"
+    },
+    {
+      "arxiv_id": "2602.18356",
+      "title": "Constraining the $\u039b\u039b$ interaction with terrestrial and astronomical data",
+      "authors": [
+        "Yusuke Tanimura",
+        "Chang Ho Hyun",
+        "Myung-Ki Cheoun"
+      ],
+      "abstract": "Terrestrial double-$\u039b$ hypernuclear data and astronomical observations of neutron stars provide complementary constraints on the $\u039b\u039b$ interaction. In this work, we investigate the $\u039b\u039b$ interaction within a Skyrme energy density functional framework based on the KIDS (Korea-IBS-Daegu-SKKU) models. We employ a Skyrme-type $\u039b\u039b$ interaction that includes the standard $s$- and $p$-wave terms, as well as a density-dependent term that effectively represents an $N\u039b\u039b$ three-body force. The $s$-wave terms are constrained using data on double-$\u039b$ hypernuclei supplemented by pseudodata obtained from core + $2\u039b$ three-body model calculations including heavier hypernuclei. We show that the data on heavier systems are essential to simultaneously constrain the two $s$-wave parameters. We further explore the impact of the $p$-wave and $N\u039b\u039b$ components on the neutron-star properties and find that appropriate repulsive contributions of these terms yield consistency with current neutron-star mass-radius observations. These results indicate that the present framework provides phenomenologically acceptable equations of state for dense $(N,\u039b)$ matter over a wide range of densities and highlight the importance of future experimental data on heavier double-$\u039b$ hypernuclei.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "nucl-th",
+      "categories": [
+        "nucl-th",
+        "astro-ph.HE",
+        "astro-ph.SR"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18356v1",
+      "url": "https://arxiv.org/abs/2602.18356"
+    },
+    {
+      "arxiv_id": "2602.18346",
+      "title": "Vichara: Appellate Judgment Prediction and Explanation for the Indian Judicial System",
+      "authors": [
+        "Pavithra PM Nair",
+        "Preethu Rose Anish"
+      ],
+      "abstract": "In jurisdictions like India, where courts face an extensive backlog of cases, artificial intelligence offers transformative potential for legal judgment prediction. A critical subset of this backlog comprises appellate cases, which are formal decisions issued by higher courts reviewing the rulings of lower courts. To this end, we present Vichara, a novel framework tailored to the Indian judicial system that predicts and explains appellate judgments. Vichara processes English-language appellate case proceeding documents and decomposes them into decision points. Decision points are discrete legal determinations that encapsulate the legal issue, deciding authority, outcome, reasoning, and temporal context. The structured representation isolates the core determinations and their context, enabling accurate predictions and interpretable explanations. Vichara's explanations follow a structured format inspired by the IRAC (Issue-Rule-Application-Conclusion) framework and adapted for Indian legal reasoning. This enhances interpretability, allowing legal professionals to assess the soundness of predictions efficiently. We evaluate Vichara on two datasets, PredEx and the expert-annotated subset of the Indian Legal Documents Corpus (ILDC_expert), using four large language models: GPT-4o mini, Llama-3.1-8B, Mistral-7B, and Qwen2.5-7B. Vichara surpasses existing judgment prediction benchmarks on both datasets, with GPT-4o mini achieving the highest performance (F1: 81.5 on PredEx, 80.3 on ILDC_expert), followed by Llama-3.1-8B. Human evaluation of the generated explanations across Clarity, Linking, and Usefulness metrics highlights GPT-4o mini's superior interpretability.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cs.CL",
+      "categories": [
+        "cs.CL",
+        "cs.AI"
+      ],
+      "doi": null,
+      "journal_ref": "AI and Law @ AAAI 2026",
+      "pdf_url": "https://arxiv.org/pdf/2602.18346v1",
+      "url": "https://arxiv.org/abs/2602.18346"
+    },
+    {
+      "arxiv_id": "2602.18345",
+      "title": "Mitigation of Magnetic Flux Trapping in Superconducting Electronics Using Moats",
+      "authors": [
+        "Rohan T. Kapur",
+        "Sergey K. Tolpygo",
+        "Alex Wynn",
+        "Pauli Kehayias",
+        "Adam A. Libson",
+        "Collin N. Muniz",
+        "Michael J. Gold",
+        "Justin L. Mallek",
+        "Danielle A. Braje",
+        "Jennifer M. Schloss"
+      ],
+      "abstract": "Magnetic flux (vortex) trapping remains a major obstacle to very large scale integration in superconducting electronics. Moats -- etched regions in circuit layers placed in ground planes and around critical circuitry -- offer a simple passive approach to sequester flux. Here, we systematically examine the effectiveness of moat arrays in superconducting niobium films as a function of geometry (size, shape, and density) and background magnetic field. By measuring the vortex expulsion field, we estimate the flux saturation number and flux trapping temperature for a range of geometries. We find that many moat designs effectively sequester flux in magnetically shielded environments (< 1 $\u03bc$T), with high-aspect-ratio rectangular \"slit\" moats providing the strongest mitigation at minimal area cost. However, our measurements show that moats alone do not eliminate flux trapping in non-ideal films, as vortices can preferentially pin at material defects. These results provide design guidance for flux mitigation in superconducting integrated circuits and highlight the need for combined optimization of circuit geometries and materials.",
+      "published": "2026-02-20",
+      "updated": "2026-02-20",
+      "primary_category": "cond-mat.supr-con",
+      "categories": [
+        "cond-mat.supr-con",
+        "physics.app-ph"
+      ],
+      "doi": null,
+      "journal_ref": null,
+      "pdf_url": "https://arxiv.org/pdf/2602.18345v1",
+      "url": "https://arxiv.org/abs/2602.18345"
+    }
+  ],
+  "count": 20,
+  "errors": []
+}

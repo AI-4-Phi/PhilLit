@@ -1,0 +1,277 @@
+[s2_search.py] Searching Semantic Scholar: 'Habermas Philosophical Discourse Modernity' (year=1985-2010) (field=Philosophy), limit=10
+[s2_search.py] Retrieved 10/10 papers...
+[s2_search.py] Cached results (cache key: s2_666f27af19f18841)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Habermas Philosophical Discourse Modernity",
+  "results": [
+    {
+      "paperId": "7a19a85f62276cb4074574725ce6860461728f99",
+      "title": "The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1985,
+      "abstract": null,
+      "citationCount": 1946,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/7a19a85f62276cb4074574725ce6860461728f99",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    },
+    {
+      "paperId": "e04120fcb7d68da0e8b95796d22fc3f7d081774b",
+      "title": "Habermas' Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "P. U. Hohendahl",
+          "authorId": "103981131"
+        }
+      ],
+      "year": 1986,
+      "abstract": null,
+      "citationCount": 14,
+      "doi": "10.3817/0986069049",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/e04120fcb7d68da0e8b95796d22fc3f7d081774b",
+      "venue": "T\u00e9los",
+      "journal": {
+        "name": "Telos",
+        "pages": "49 - 65",
+        "volume": "1986"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "07a9b26ba2af793886a231b4d015956c69c99c38",
+      "title": "The Philosophical Discourse of Modernity: Twelve Lectures",
+      "authors": [
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        }
+      ],
+      "year": 1987,
+      "abstract": null,
+      "citationCount": 1082,
+      "doi": "10.2307/2072653",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/07a9b26ba2af793886a231b4d015956c69c99c38",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "2fbf04e51eae1fdf7d9f9025e39d8b0c1beae5c1",
+      "title": "Postmodernism and the Aesthetic Turn@@@The Philosophical Discourse of Modernity: Twelve Lectures@@@The Ideologies of Theory: Essays, 1971-1986@@@Contingency, Irony, and Solidarity",
+      "authors": [
+        {
+          "name": "R. Shusterman",
+          "authorId": "39106838"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Frederick P. Lawrence",
+          "authorId": "145352286"
+        },
+        {
+          "name": "F. Jameson",
+          "authorId": "50719416"
+        },
+        {
+          "name": "R. Rorty",
+          "authorId": "46213881"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 5,
+      "doi": "10.2307/1772906",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/2fbf04e51eae1fdf7d9f9025e39d8b0c1beae5c1",
+      "venue": "",
+      "journal": {
+        "name": "Poetics Today",
+        "pages": "605",
+        "volume": "10"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8b3a3106f194f96c49b7ccd99d8b8b72a90bf14d",
+      "title": "Work on Reason@@@The Legitimacy of the Modern Age@@@Work on Myth@@@The Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "G. Campbell",
+          "authorId": "2054645432"
+        },
+        {
+          "name": "H. Blumenberg",
+          "authorId": "102559182"
+        },
+        {
+          "name": "R. M. Wallace",
+          "authorId": "143826741"
+        },
+        {
+          "name": "J. Habermas",
+          "authorId": "41210391"
+        },
+        {
+          "name": "Frederick P. Lawrence",
+          "authorId": "145352286"
+        }
+      ],
+      "year": 1991,
+      "abstract": null,
+      "citationCount": 4,
+      "doi": "10.2307/465376",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8b3a3106f194f96c49b7ccd99d8b8b72a90bf14d",
+      "venue": "",
+      "journal": {
+        "name": "Diacritics",
+        "pages": "53",
+        "volume": "21"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on the Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "M. D\u2019entr\u00e8ves",
+          "authorId": "1422611260"
+        },
+        {
+          "name": "S. Benhabib",
+          "authorId": "38572385"
+        }
+      ],
+      "year": 1997,
+      "abstract": null,
+      "citationCount": 53,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6efd04a0cc5435b4a6038c02dc35a08f5e66b793",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "679bc6867dca94195046ac489149337e22b1f8dd",
+      "title": "Working in the Philosophical Discourse of Modernity: Habermas, Faoucault, and Derrida",
+      "authors": [
+        {
+          "name": "M. Fleming",
+          "authorId": "97844943"
+        }
+      ],
+      "year": 1996,
+      "abstract": null,
+      "citationCount": 9,
+      "doi": "10.5840/PHILTODAY199640143",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/679bc6867dca94195046ac489149337e22b1f8dd",
+      "venue": "",
+      "journal": {
+        "name": "Philosophy Today",
+        "pages": "169-178",
+        "volume": "40"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "6001efc189bb184268f23d3b857f4abeba3562fd",
+      "title": "Habermas on Heidegger and Foucault. Meaning and validity in 'The philosophical discourse of modernity'",
+      "authors": [
+        {
+          "name": "Rudi Visker",
+          "authorId": "103299907"
+        }
+      ],
+      "year": 1992,
+      "abstract": null,
+      "citationCount": 8,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/6001efc189bb184268f23d3b857f4abeba3562fd",
+      "venue": "",
+      "journal": {
+        "name": "Radical Philosophy",
+        "pages": "15-22",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8271d57440d12b3ea0df2afbb1ba854442348f8e",
+      "title": "Habermas and the Unfinished Project of Modernity: Critical Essays on the Philosophical Discourse of Modernity",
+      "authors": [
+        {
+          "name": "B. Sweetman",
+          "authorId": "40625536"
+        }
+      ],
+      "year": 1998,
+      "abstract": null,
+      "citationCount": 24,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8271d57440d12b3ea0df2afbb1ba854442348f8e",
+      "venue": "",
+      "journal": {
+        "name": "Review of Metaphysics",
+        "pages": "472-474",
+        "volume": "52"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "5449a876e10810a266f67acc80198b47d6519283",
+      "title": "The philosophical discourse of modernity: Twelve lectures: By J\u00fcrgen Habermas. Translated by Frederick Lawrence. Cambridge, Massachusetts: M.I.T. Press, 1987, 430 pp., $27.50 (cloth).",
+      "authors": [
+        {
+          "name": "David Ashley",
+          "authorId": "115652795"
+        }
+      ],
+      "year": 1989,
+      "abstract": null,
+      "citationCount": 17,
+      "doi": "10.1016/0362-3319(89)90011-6",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/5449a876e10810a266f67acc80198b47d6519283",
+      "venue": "",
+      "journal": {
+        "name": "Social Science Journal",
+        "pages": "485-489",
+        "volume": "26"
+      },
+      "publicationTypes": null
+    }
+  ],
+  "count": 10,
+  "errors": []
+}

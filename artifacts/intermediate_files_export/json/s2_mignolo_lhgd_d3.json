@@ -1,0 +1,131 @@
+[s2_search.py] Searching Semantic Scholar: 'Mignolo 2000 Local Histories Global Designs Princeton', limit=5
+[s2_search.py] Retrieved 5/5 papers...
+[s2_search.py] Cached results (cache key: s2_ce53f47e492891c8)
+{
+  "status": "success",
+  "source": "semantic_scholar",
+  "query": "Mignolo 2000 Local Histories Global Designs Princeton",
+  "results": [
+    {
+      "paperId": "4f08c8c5a222453bcef982397663f5fe99ce00ed",
+      "title": "Mignolo, Walter D (2000), Local Histories/Global Designs. Coloniality, Subaltern Knowledges, and Border Thinking, Princeton University Press (Princeton, NJ). xix+371 pp.,$55.00, $18.95 pbk.",
+      "authors": [
+        {
+          "name": "G. Fagan",
+          "authorId": "145250475"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1016/S0261-3050(00)00042-5",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/4f08c8c5a222453bcef982397663f5fe99ce00ed",
+      "venue": "",
+      "journal": {
+        "name": "Bulletin of Latin American Research",
+        "pages": "578-579",
+        "volume": "19"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "640245e16eca1bf2cb20ec22c6bd6d47f19811cf",
+      "title": "Local Histories and Global Designs: An Interview with Walter Mignolo",
+      "authors": [
+        {
+          "name": "L. E. Delgado",
+          "authorId": "34626200"
+        },
+        {
+          "name": "Rolando J. Romero",
+          "authorId": "90232846"
+        },
+        {
+          "name": "Walter D. Mignolo",
+          "authorId": "2068611178"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 76,
+      "doi": "10.1353/DIS.2000.0004",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/640245e16eca1bf2cb20ec22c6bd6d47f19811cf",
+      "venue": "",
+      "journal": {
+        "name": "Discourse",
+        "pages": "33 - 7",
+        "volume": "22"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "71aa928d08315cb2b1a4487c34c8c265ac589208",
+      "title": "Local Histories/Global Designs: Coloniality, Subaltern Knowledges, and Border Thinking",
+      "authors": [
+        {
+          "name": "Walter D. Mignolo",
+          "authorId": "2068611178"
+        }
+      ],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 132,
+      "doi": null,
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/71aa928d08315cb2b1a4487c34c8c265ac589208",
+      "venue": "",
+      "journal": {
+        "name": "",
+        "volume": ""
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "b99c7ae49f896d105ed7b3ff0a759d9500093b21",
+      "title": "The Many Faces of Cosmo-polis: Border Thinking and Critical Cosmopolitanism",
+      "authors": [
+        {
+          "name": "Walter D. Mignolo",
+          "authorId": "73605293"
+        }
+      ],
+      "year": 2000,
+      "abstract": "How shall cosmopolitanism be conceived in relation to globalization, capitalism, and modernity? The geopolitical imaginary nourished by the term and processes of globalization lays claim to the homogeneity of the planet from above--economically, politically, and culturally. The term cosmopolitanism is, instead, used as a counter to globalization, although not necessarily in the sense of globalization from below. Globalization from below invokes, rather, the reactions to globalization from those populations and geohistorical areas of the planet that suffer the consequences of the global economy. There are, then, local histories that plan and project global designs and others that have to live with them. Cosmopolitanism is not easily aligned to either side of globalization, although the term implies a global project. How shall we understand cosmopolitanism in relation to these alternatives?",
+      "citationCount": 284,
+      "doi": "10.1215/08992363-12-3-721",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/b99c7ae49f896d105ed7b3ff0a759d9500093b21",
+      "venue": "Cosmopolitanism",
+      "journal": {
+        "name": "Public Culture",
+        "pages": "721 - 748",
+        "volume": "12"
+      },
+      "publicationTypes": null
+    },
+    {
+      "paperId": "8180b38104660f2e7aa5288ee170f2ac9b006afb",
+      "title": "Feature Reviews",
+      "authors": [],
+      "year": 2000,
+      "abstract": null,
+      "citationCount": 0,
+      "doi": "10.1080/10457090009600708",
+      "arxivId": null,
+      "url": "https://www.semanticscholar.org/paper/8180b38104660f2e7aa5288ee170f2ac9b006afb",
+      "venue": "",
+      "journal": {
+        "name": "Perspectives on Political Science",
+        "pages": "167 - 191",
+        "volume": "29"
+      },
+      "publicationTypes": [
+        "Review"
+      ]
+    }
+  ],
+  "count": 5,
+  "errors": []
+}

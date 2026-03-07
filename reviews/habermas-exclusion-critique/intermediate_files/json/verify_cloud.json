@@ -1,0 +1,36 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Standpoint Mediation and the Working-Class Public Sphere",
+    "author": "Cloud",
+    "year": 2018
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1080/13183222.2018.1418812",
+      "title": "Standpoint, Mediation and the Working-Class Public Sphere",
+      "authors": [
+        {
+          "family": "Cloud",
+          "given": "Dana L."
+        }
+      ],
+      "editors": [],
+      "year": 2018,
+      "container_title": "Javnost - The Public",
+      "volume": "25",
+      "issue": "1-2",
+      "page": "51-58",
+      "publisher": "Informa UK Limited",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.1080/13183222.2018.1418812",
+      "score": 62.64952
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

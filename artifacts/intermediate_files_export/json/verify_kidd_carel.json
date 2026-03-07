@@ -1,0 +1,39 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "title": "Epistemic Injustice in Healthcare A Philosophical Analysis",
+    "author": "Kidd"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.4324/9781315212043-33",
+      "title": "Epistemic Injustice in Medicine and Healthcare",
+      "authors": [
+        {
+          "family": "Carel",
+          "given": "Havi"
+        },
+        {
+          "family": "Kidd",
+          "given": "Ian James"
+        }
+      ],
+      "editors": [],
+      "year": 2017,
+      "container_title": "The Routledge Handbook of Epistemic Injustice",
+      "volume": "",
+      "issue": "",
+      "page": "336-346",
+      "publisher": "Routledge",
+      "type": "book-chapter",
+      "suggested_bibtex_type": "incollection",
+      "method": "bibliographic_search",
+      "url": "https://doi.org/10.4324/9781315212043-33",
+      "score": 46.602547
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

@@ -1,0 +1,33 @@
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1353/GSO.0.0079"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1353/gso.0.0079",
+      "title": "Epistemic Value and Deliberative Democracy",
+      "authors": [
+        {
+          "family": "James Bohman",
+          "given": ""
+        }
+      ],
+      "editors": [],
+      "year": 2009,
+      "container_title": "The Good Society",
+      "volume": "18",
+      "issue": "2",
+      "page": "28-34",
+      "publisher": "Project MUSE",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1353/gso.0.0079"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}
