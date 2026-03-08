@@ -32,6 +32,14 @@
             "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/setup-environment.sh"
           }
         ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-updates.sh"
+          }
+        ]
       }
     ],
     "PreToolUse": [
