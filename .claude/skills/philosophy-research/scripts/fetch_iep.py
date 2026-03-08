@@ -23,6 +23,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from rate_limiter import ExponentialBackoff, get_limiter
+from search_cache import cache_key, get_cache, put_cache
 
 IEP_BASE = "https://iep.utm.edu"
 
@@ -219,7 +220,14 @@ def extract_author_info(soup: BeautifulSoup) -> dict:
 
 
 def fetch_iep_article(entry_name: str, limiter, backoff: ExponentialBackoff, debug: bool = False) -> dict:
-    """Fetch and parse IEP article with retry logic."""
+    """Fetch and parse IEP article with retry logic and caching."""
+    # Check cache first (IEP articles change rarely, 7-day TTL is safe)
+    key = cache_key(source="iep_fetch", entry=entry_name)
+    cached = get_cache(key)
+    if cached:
+        log_progress(f"Using cached IEP article: {entry_name}")
+        return cached
+
     url = f"{IEP_BASE}/{entry_name}/"
 
     log_progress(f"Connecting to Internet Encyclopedia of Philosophy...")
@@ -281,7 +289,7 @@ def fetch_iep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
 
             log_progress(f"Article fetched: {title}")
 
-            return {
+            result = {
                 "url": url,
                 "entry_name": entry_name,
                 "title": title,
@@ -291,6 +299,9 @@ def fetch_iep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
                 "sections": extract_sections(soup),
                 "bibliography": extract_bibliography(soup),
             }
+
+            put_cache(key, result)
+            return result
 
         except requests.exceptions.RequestException as e:
             log_progress(f"Network error: {str(e)[:100]}, retrying (attempt {attempt+1}/{backoff.max_attempts})...")

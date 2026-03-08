@@ -9,7 +9,6 @@ Tests cover:
 - Batch processing
 """
 
-import tempfile
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
@@ -346,7 +345,7 @@ class TestBatchProcessing:
     """Tests for batch bibliography enrichment."""
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
-    def test_enrich_bibliography_mixed(self, mock_resolve):
+    def test_enrich_bibliography_mixed(self, mock_resolve, tmp_path):
         """Should handle mixed entries correctly."""
         # Return abstract for first call, None for subsequent
         mock_resolve.side_effect = [
@@ -359,33 +358,25 @@ class TestBatchProcessing:
         # Create temp input file
         content = f"{SAMPLE_ENTRY_NO_ABSTRACT}\n\n{SAMPLE_ENTRY_INCOMPLETE}"
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.bib', delete=False) as f:
-            f.write(content)
-            input_path = Path(f.name)
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(content, encoding='utf-8')
+        output_path = tmp_path / "output.bib"
 
-        output_path = input_path.with_suffix('.enriched.bib')
+        stats = enrich_bibliography.enrich_bibliography(
+            input_path, output_path, None, None, None
+        )
 
-        try:
-            stats = enrich_bibliography.enrich_bibliography(
-                input_path, output_path, None, None, None
-            )
+        assert stats['total'] == 2
+        assert stats['enriched'] == 1
+        assert stats['marked_incomplete'] == 1
 
-            assert stats['total'] == 2
-            assert stats['enriched'] == 1
-            assert stats['marked_incomplete'] == 1
-
-            # Check output file
-            output_content = output_path.read_text()
-            assert 'Found abstract' in output_content
-            assert 'abstract_source = {core}' in output_content
-
-        finally:
-            input_path.unlink()
-            if output_path.exists():
-                output_path.unlink()
+        # Check output file
+        output_content = output_path.read_text(encoding='utf-8')
+        assert 'Found abstract' in output_content
+        assert 'abstract_source = {core}' in output_content
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
-    def test_enrich_bibliography_preserves_comments(self, mock_resolve):
+    def test_enrich_bibliography_preserves_comments(self, mock_resolve, tmp_path):
         """Should preserve @comment entries."""
         mock_resolve.return_value = ("Abstract", "s2")
 
@@ -393,26 +384,18 @@ class TestBatchProcessing:
 
         content = f"{SAMPLE_COMMENT}\n\n{SAMPLE_ENTRY_NO_ABSTRACT}"
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.bib', delete=False) as f:
-            f.write(content)
-            input_path = Path(f.name)
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(content, encoding='utf-8')
+        output_path = tmp_path / "output.bib"
 
-        output_path = input_path.with_suffix('.enriched.bib')
+        stats = enrich_bibliography.enrich_bibliography(
+            input_path, output_path, None, None, None
+        )
 
-        try:
-            stats = enrich_bibliography.enrich_bibliography(
-                input_path, output_path, None, None, None
-            )
+        assert stats['skipped'] == 1  # Comment was skipped
 
-            assert stats['skipped'] == 1  # Comment was skipped
-
-            output_content = output_path.read_text()
-            assert 'DOMAIN: Testing Domain' in output_content
-
-        finally:
-            input_path.unlink()
-            if output_path.exists():
-                output_path.unlink()
+        output_content = output_path.read_text(encoding='utf-8')
+        assert 'DOMAIN: Testing Domain' in output_content
 
     def test_enrich_bibliography_file_not_found(self):
         """Should raise error for missing input file."""
@@ -431,8 +414,8 @@ class TestBatchProcessing:
         import enrich_bibliography
 
         input_path = tmp_path / "test.bib"
-        input_path.write_text(SAMPLE_ENTRY_NO_ABSTRACT)
-        original_content = input_path.read_text()
+        input_path.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding='utf-8')
+        original_content = input_path.read_text(encoding='utf-8')
 
         # Mock os.replace to simulate a failure after temp file is written
         with patch("enrich_bibliography.os.replace", side_effect=OSError("disk full")):
@@ -442,7 +425,7 @@ class TestBatchProcessing:
                 )
 
         # Original file should be unchanged
-        assert input_path.read_text() == original_content
+        assert input_path.read_text(encoding='utf-8') == original_content
 
         # Temp file should have been cleaned up by error handler
         temp_file = input_path.with_suffix('.bib.tmp')
@@ -456,8 +439,8 @@ class TestBatchProcessing:
         import enrich_bibliography
 
         input_path = tmp_path / "test.bib"
-        input_path.write_text(SAMPLE_ENTRY_NO_ABSTRACT)
-        original_content = input_path.read_text()
+        input_path.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding='utf-8')
+        original_content = input_path.read_text(encoding='utf-8')
 
         # Mock pybtex parse_file to raise an exception (simulating invalid BibTeX)
         with patch("pybtex.database.parse_file", side_effect=Exception("Invalid BibTeX")):
@@ -466,7 +449,7 @@ class TestBatchProcessing:
             )
 
         # Original file should be unchanged
-        assert input_path.read_text() == original_content
+        assert input_path.read_text(encoding='utf-8') == original_content
 
         # Stats should indicate validation failure
         assert stats.get('validation_failed') is True
@@ -476,26 +459,21 @@ class TestBatchProcessing:
         assert not temp_file.exists(), "Temp file should be cleaned up on validation failure"
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
-    def test_enrich_bibliography_inplace(self, mock_resolve):
+    def test_enrich_bibliography_inplace(self, mock_resolve, tmp_path):
         """Should overwrite input when no output specified."""
         mock_resolve.return_value = ("Inplace abstract", "openalex")
 
         import enrich_bibliography
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.bib', delete=False) as f:
-            f.write(SAMPLE_ENTRY_NO_ABSTRACT)
-            input_path = Path(f.name)
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding='utf-8')
 
-        try:
-            enrich_bibliography.enrich_bibliography(
-                input_path, None, None, None, None  # No output path = inplace
-            )
+        enrich_bibliography.enrich_bibliography(
+            input_path, None, None, None, None  # No output path = inplace
+        )
 
-            output_content = input_path.read_text()
-            assert 'Inplace abstract' in output_content
-
-        finally:
-            input_path.unlink()
+        output_content = input_path.read_text(encoding='utf-8')
+        assert 'Inplace abstract' in output_content
 
 
 # =============================================================================
@@ -506,7 +484,7 @@ class TestStats:
     """Tests for statistics tracking."""
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
-    def test_stats_tracks_sources(self, mock_resolve):
+    def test_stats_tracks_sources(self, mock_resolve, tmp_path):
         """Should track abstract sources in stats."""
         # Mix of sources
         mock_resolve.side_effect = [
@@ -526,19 +504,14 @@ class TestStats:
 }"""
         content = "\n\n".join(entry % (i, i, i) for i in range(3))
 
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.bib', delete=False) as f:
-            f.write(content)
-            input_path = Path(f.name)
+        input_path = tmp_path / "test.bib"
+        input_path.write_text(content, encoding='utf-8')
 
-        try:
-            stats = enrich_bibliography.enrich_bibliography(
-                input_path, None, None, None, None
-            )
+        stats = enrich_bibliography.enrich_bibliography(
+            input_path, None, None, None, None
+        )
 
-            assert stats['enriched'] == 3
-            assert stats['sources']['s2'] == 1
-            assert stats['sources']['openalex'] == 1
-            assert stats['sources']['core'] == 1
-
-        finally:
-            input_path.unlink()
+        assert stats['enriched'] == 3
+        assert stats['sources']['s2'] == 1
+        assert stats['sources']['openalex'] == 1
+        assert stats['sources']['core'] == 1

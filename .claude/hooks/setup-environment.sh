@@ -93,11 +93,13 @@ else
   exit 2
 fi
 
-# Set cross-platform $PYTHON path (captured by ENV_AFTER diff → CLAUDE_ENV_FILE)
+# Set cross-platform $PYTHON as ABSOLUTE path (captured by ENV_AFTER diff → CLAUDE_ENV_FILE)
+# Must be absolute so subagents can use it regardless of working directory,
+# and to prevent LLMs from misinterpreting a relative path as a directory to create.
 if [ -f ".venv/Scripts/python" ]; then
-  export PYTHON=".venv/Scripts/python"
+  export PYTHON="$(pwd)/.venv/Scripts/python"
 else
-  export PYTHON=".venv/bin/python"
+  export PYTHON="$(pwd)/.venv/bin/python"
 fi
 
 # Capture environment state after activation

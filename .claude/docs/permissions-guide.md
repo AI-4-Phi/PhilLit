@@ -23,45 +23,20 @@ Explicitly blocks destructive operations for safety. These cannot be approved ev
 ### Allow Rules (Auto-Approved)
 ```json
 "allow": [
-  // Core read-only exploration tools
   "Read",            // Read any file
   "Grep",            // Search file contents
   "Glob",            // Find files by pattern
-
-  // Web research for literature reviews
   "WebSearch",       // Search the web
   "WebFetch",        // Fetch web content
-
-  // Safe bash commands
-  "Bash(ls *)",      // List directory contents
-  "Bash(mkdir *)",   // Create directories (for review structure)
-  "Bash(python *)",  // Run Python scripts (for literature search)
-  "Bash(python3 *)", // Run Python 3 explicitly
-  "Bash(.venv/bin/python *)",     // Unix venv Python
-  "Bash(.venv/Scripts/python *)", // Windows venv Python
-  "Bash(source *)",  // Activate Python virtual environment
-  "Bash(echo *)",    // Output text (for debugging)
-  "Bash(cat *)",     // Concatenate files (for assembly)
-  "Bash(pytest *)",  // Run tests
-
-  // Literature review workflow
+  "Bash",            // All Bash commands (see safety layers below)
   "Write(reviews/**)",  // Create files in reviews/ and subdirectories
   "Edit(reviews/**)",   // Edit files in reviews/ and subdirectories
   "Skill(literature-review)",      // Main orchestration skill
-  "Skill(philosophy-research)",    // Academic search skill
-
-  // Workflow automation commands
-  "Bash(REVIEW_DIR=*)",   // Set review directory variable
-  "Bash(mv *)",            // Move/rename files
-  "Bash(find *)",          // Find files
-  "Bash(for *)",           // Shell loops
-  "Bash(if *)",            // Conditionals
-  "Bash(pandoc *)",        // Document conversion
-  "Bash(wc *)",            // Word count
-  "Bash(rm -f reviews/*)", // Phase 6 cleanup of review intermediates
-  "Bash(command *)"        // Check command availability
+  "Skill(philosophy-research)"     // Academic search skill
 ]
 ```
+
+**Why `Bash` (all commands)?** Individual prefix patterns like `Bash(python *)` or `Bash(REVIEW_DIR=*)` cannot match multi-line Bash scripts — the `*` wildcard doesn't cross newlines. Domain researcher subagents routinely run multi-line scripts (setting variables, then calling `$PYTHON`), causing persistent permission prompts. Using bare `Bash` allows all commands, but the `deny` and `ask` rules still provide safety (see evaluation order below).
 
 ### Ask Rules (Require Approval)
 ```json
@@ -75,27 +50,18 @@ Destructive file operations require user approval rather than being blocked enti
 ## Permission Evaluation Order
 
 1. **Deny** rules are checked first (block completely)
-2. **Allow** rules are checked next (auto-approve without prompt)
-3. **Ask** rules are checked last (require user approval)
+2. **Ask** rules are checked next (require user approval)
+3. **Allow** rules are checked last (auto-approve without prompt)
 
-Example: `Write(reviews/file.md)` matches `allow` rule, so it's auto-approved. `Bash(rm foo.txt)` matches `ask` rule, so it requires approval. `Bash(sudo apt install)` matches `deny` rule, so it's blocked entirely.
+The first matching rule wins. So `Bash(sudo *)` in `deny` blocks sudo even though `Bash` is in `allow`. And `Bash(rm *)` in `ask` still prompts even though `Bash` is in `allow`.
 
-## Bash Pattern Limitations
+## Security Layers
 
-**Important**: Bash patterns use prefix matching with ` *` wildcard suffix.
+With `Bash` in the allow list, safety comes from three layers:
 
-Current patterns like `Bash(python *)` can potentially be bypassed:
-- Variables: `$PYTHON script.py` (does not match `python *`)
-- Command chaining: `python script.py && malicious`
-
-**Mitigation**: The `ask` mode for Write/Edit operations outside `reviews/` provides a secondary security layer.
-
-## Security Principles
-
-1. **Principle of least privilege**: Only grant permissions needed for the workflow
-2. **Defense in depth**: Multiple security layers (deny rules, scoped writes, ask mode for deletion)
-3. **Explicit over implicit**: `defaultMode` and `deny` rules make security stance clear
-4. **Safe defaults**: Read-only operations allowed, destructive operations require approval or are blocked
+1. **Deny rules**: `sudo`, `dd`, `mkfs` are blocked unconditionally
+2. **Ask rules**: `rm`, `rmdir` still require approval
+3. **Scoped writes**: `Write` and `Edit` are only auto-approved in `reviews/`
 
 ## Hook Configuration
 
@@ -111,11 +77,11 @@ Beyond permissions, `settings.json` configures hooks that run automatically:
 
 Agents specify `model` and `tools` in their frontmatter (see `.claude/agents/`):
 
-| Agent | Model | Tools |
-|-------|-------|-------|
-| `domain-literature-researcher` | `sonnet` | Bash, Glob, Grep, Read, Write, WebFetch, WebSearch |
-| `synthesis-planner` | `inherit` | Glob, Grep, Read, Write |
-| `synthesis-writer` | `sonnet` | Glob, Grep, Read, Write |
-| `literature-review-planner` | `inherit` | Read, Write |
+| Agent | Model | Tools | Permission Mode |
+|-------|-------|-------|-----------------|
+| `domain-literature-researcher` | `sonnet` | Bash, Glob, Grep, Read, Write, WebFetch, WebSearch | `acceptEdits` |
+| `synthesis-planner` | `inherit` | Glob, Grep, Read, Write | `acceptEdits` |
+| `synthesis-writer` | `sonnet` | Glob, Grep, Read, Write | `acceptEdits` |
+| `literature-review-planner` | `inherit` | Read, Write | `acceptEdits` |
 
-Agents inherit the project-level `allow`/`deny`/`ask` rules from `settings.json`. They can optionally set their own `permissionMode` in their frontmatter to override the project-level default (e.g., `permissionMode: acceptEdits`).
+Agents inherit the project-level `allow`/`deny`/`ask` rules from `settings.json`. The `Bash` allow rule is inherited by all subagents, so the `domain-literature-researcher` can run multi-line Bash scripts without prompts. The `deny` and `ask` rules are also inherited, maintaining safety.

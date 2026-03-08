@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 import pytest
+from pybtex.database import parse_file as pybtex_parse_file
 
 # Add hooks directory to path
 HOOKS_DIR = Path(__file__).parent.parent / ".claude" / "hooks"
@@ -282,10 +283,10 @@ class TestCleanBibtex:
 
         # Verify the file was modified - number field removed as field, but
         # mentioned in the METADATA_CLEANED tag in keywords
-        cleaned_content = bib_file.read_text()
-        # number = {7729} should not exist as a field (but may be in keywords tag)
-        assert "number = " not in cleaned_content.lower().replace('"', '').replace('{', '').replace('}', '')
-        assert "journal" in cleaned_content.lower()  # Should still have journal
+        parsed = pybtex_parse_file(str(bib_file), bib_format='bibtex')
+        entry = parsed.entries["awad2018moral"]
+        assert 'number' not in entry.fields
+        assert 'journal' in entry.fields  # Should still have journal
 
     def test_removes_all_hallucinated_fields(self, tmp_path, s2_nature_json, bibtex_fully_hallucinated):
         """Should remove all hallucinated fields from an entry."""

@@ -166,8 +166,10 @@ class TestIEPParsing:
 class TestIEPFetching:
     """Tests for IEP article fetching."""
 
+    @patch("fetch_iep.put_cache", return_value=True)
+    @patch("fetch_iep.get_cache", return_value=None)
     @patch("fetch_iep.requests.get")
-    def test_fetch_article_success(self, mock_get):
+    def test_fetch_article_success(self, mock_get, _mock_get_cache, _mock_put_cache):
         """Should fetch and parse IEP article."""
         mock_get.return_value = MagicMock(
             status_code=200,
@@ -188,8 +190,9 @@ class TestIEPFetching:
         assert article["preamble"] is not None
         assert len(article["sections"]) > 0
 
+    @patch("fetch_iep.get_cache", return_value=None)
     @patch("fetch_iep.requests.get")
-    def test_fetch_article_404(self, mock_get):
+    def test_fetch_article_404(self, mock_get, _mock_cache):
         """Should raise LookupError on 404."""
         mock_get.return_value = MagicMock(status_code=404)
 
@@ -204,8 +207,10 @@ class TestIEPFetching:
 
         assert "not found" in str(exc_info.value).lower()
 
+    @patch("fetch_iep.put_cache", return_value=True)
+    @patch("fetch_iep.get_cache", return_value=None)
     @patch("fetch_iep.requests.get")
-    def test_fetch_article_rate_limit(self, mock_get):
+    def test_fetch_article_rate_limit(self, mock_get, _mock_cache, _mock_put_cache):
         """Should handle rate limiting with backoff."""
         # First request returns 429, second returns success
         mock_get.side_effect = [

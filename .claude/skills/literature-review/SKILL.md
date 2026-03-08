@@ -137,7 +137,7 @@ This phase validates conditions for subsequent phases to function.
    **CRITICAL**: When resuming Phase 3 or Phase 5 with partial completion, only invoke agents for MISSING files. Do not re-run completed work.
 
 6. Offer user choice of execution mode:
-   - **Full Autopilot**: Execute all phases automatically
+   - **Full Autopilot**: Execute all phases automatically without pausing for feedback between phases. Bash permissions are pre-configured in `settings.json` so no approval prompts should appear.
    - **Human-in-the-Loop**: Phase-by-phase with feedback
 
 7. Create working directory and write the active-review pointer:
@@ -331,6 +331,11 @@ Never advance to Phase 6 before all synthesis writers have completed.
        *) mv "$f" "reviews/[project-name]/intermediate_files/" 2>/dev/null || true ;;
      esac
    done
+   ```
+
+   Stray directories — agents sometimes create directories at the project root by mistake. Remove any empty directories that match the review topic:
+   ```bash
+   find . -maxdepth 1 -type d -empty -not -name '.*' -not -name 'reviews' -not -name 'tests' -not -name 'docs' -exec rmdir {} \;
    ```
 
    **Note:** Do NOT use `cd` to change directories. Always use paths relative to the repo root or absolute paths to prevent working directory mismatches in subsequent commands.

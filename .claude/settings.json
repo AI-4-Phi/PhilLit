@@ -12,29 +12,11 @@
       "Glob",
       "WebSearch",
       "WebFetch",
-      "Bash(ls *)",
-      "Bash(mkdir *)",
-      "Bash(python *)",
-      "Bash(python3 *)",
-      "Bash(.venv/bin/python *)",
-      "Bash(.venv/Scripts/python *)",
-      "Bash(source *)",
-      "Bash(echo *)",
-      "Bash(cat *)",
-      "Bash(pytest *)",
+      "Bash",
       "Write(reviews/**)",
       "Edit(reviews/**)",
       "Skill(literature-review)",
-      "Skill(philosophy-research)",
-      "Bash(REVIEW_DIR=*)",
-      "Bash(mv *)",
-      "Bash(find *)",
-      "Bash(for *)",
-      "Bash(if *)",
-      "Bash(pandoc *)",
-      "Bash(wc *)",
-      "Bash(rm -f reviews/*)",
-      "Bash(command *)"
+      "Skill(philosophy-research)"
     ],
     "ask": [
       "Bash(rm *)",
@@ -59,6 +41,15 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || echo '{\"hookSpecificOutput\": {}}'"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block_background_bash.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block_background_bash.py 2>/dev/null || echo '{}'"
           }
         ]
       }

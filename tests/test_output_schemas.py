@@ -49,10 +49,10 @@ class TestOutputSchemaCompliance:
                     else:
                         module.output_success("test query", [{"title": "Test"}])
 
-        if output:
-            errors = validate_output_schema(output, "success")
-            assert errors == [], f"{module_name}: {errors}"
-            assert output["source"] == expected_source
+        assert output is not None, f"{module_name}: no output captured"
+        errors = validate_output_schema(output, "success")
+        assert errors == [], f"{module_name}: {errors}"
+        assert output["source"] == expected_source
 
     @pytest.mark.parametrize("module_name,expected_source", SEARCH_SCRIPTS)
     def test_error_output_has_required_fields(self, module_name, expected_source):
@@ -72,9 +72,9 @@ class TestOutputSchemaCompliance:
                     else:
                         module.output_error("test query", "api_error", "Test error")
 
-        if output:
-            errors = validate_output_schema(output, "error")
-            assert errors == [], f"{module_name}: {errors}"
+        assert output is not None, f"{module_name}: no output captured"
+        errors = validate_output_schema(output, "error")
+        assert errors == [], f"{module_name}: {errors}"
 
 
 class TestExitCodeConsistency:
@@ -161,7 +161,8 @@ class TestResultsCountConsistency:
                     else:
                         module.output_success("test", test_results)
 
-        if output and "results" in output and "count" in output:
+        assert output is not None, f"{module_name}: no output captured"
+        if "results" in output and "count" in output:
             assert output["count"] == len(output["results"]), \
                 f"{module_name}: count ({output['count']}) != len(results) ({len(output['results'])})"
 
@@ -187,7 +188,8 @@ class TestErrorFieldStructure:
                     else:
                         module.output_error("test", "api_error", "Test error")
 
-        if output and output.get("errors"):
+        assert output is not None, f"{module_name}: no output captured"
+        if output.get("errors"):
             for error in output["errors"]:
                 assert "type" in error, f"{module_name}: error missing 'type'"
                 assert "message" in error, f"{module_name}: error missing 'message'"

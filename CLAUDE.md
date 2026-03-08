@@ -25,7 +25,7 @@
 - `.claude/skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains Phase 6 tools: `assemble_review.py`, `normalize_headings.py`, `dedupe_bib.py`, `enrich_bibliography.py`, `generate_bibliography.py`, `lint_md.py`.
 - `.claude/skills/philosophy-research/` — API search scripts for academic sources (Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers, NDPR), abstract resolution, encyclopedia context extraction, and citation verification (CrossRef). Includes Brave web search fallback and caching.
 - `.claude/agents/` — Specialized subagent definitions invoked by the literature-review skill.
-- `.claude/hooks/` — Git/Claude hooks: `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `subagent_stop_bib.sh`, `setup-environment.sh`.
+- `.claude/hooks/` — Git/Claude hooks: `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py`, `subagent_stop_bib.sh`, `setup-environment.sh`.
 - `.claude/docs/` — Shared specifications (ARCHITECTURE.md, conventions.md, permissions-guide.md).
 - `.claude/settings.json` — Hook definitions and permissions (checked in).
 - `.claude/settings.local.json` — Local settings overrides (gitignored).
@@ -90,6 +90,12 @@ Run tests with: `pytest tests/`
 - **Cross-platform** — Implementations must work in Claude Code Cloud, Linux, macOS, and Windows. Use forward slashes in paths. Handle platform-specific paths (e.g., venv activation scripts differ between Unix and Windows).
 - **Python file I/O** — Always pass `encoding='utf-8'` to `open()`, `read_text()`, and `write_text()`. Windows defaults to `cp1252`, causing cross-platform failures. Avoid non-ASCII characters (e.g., `→`) in output that may be piped through subprocesses (Windows `cp1252` can't encode them).
 
+## Permissions
+
+- **Evaluation order**: deny → ask → allow. First matching rule wins. An `ask` rule overrides a matching `allow` rule.
+- **Bash is allowed globally** in `settings.json`. Enumerating prefix patterns (e.g., `Bash(python *)`) is fragile — subagents construct multi-line scripts with variable prefixes that no finite pattern set can match. Safety comes from deny rules (`sudo`, `dd`, `mkfs`), ask rules (`rm`, `rmdir`), and scoped `Write`/`Edit` (only `reviews/`).
+- **Do not revert to enumerated Bash patterns.** This was attempted 4 times (Jan–Feb 2026) and failed each time. See `docs/known-issues/background-bash-tasks.md` and `.claude/docs/permissions-guide.md` for details.
+
 ## Hooks and Python
 
 Claude Code runs each hook command in its own shell process — the SessionStart venv activation does NOT carry over. **All hooks that invoke Python must use the project venv explicitly**, never bare `python`.
@@ -97,8 +103,8 @@ Claude Code runs each hook command in its own shell process — the SessionStart
 - **`.env` loading**: API keys in `.env` are loaded at two layers for defense-in-depth: (1) by `setup-environment.sh` at SessionStart — loaded after `ENV_BEFORE` capture so the before/after diff writes them to `CLAUDE_ENV_FILE`, making them available in all Bash tool calls and subagents; (2) by each Python script's `load_dotenv(override=True)` call in `main()` — kept as fallback for manual script runs, mid-session `.env` edits, and edge cases where `CLAUDE_ENV_FILE` fails (e.g., `comm` missing on Windows). The `load_dotenv` call must stay before `argparse.ArgumentParser()` since argparse defaults use `os.environ.get()` at definition time. `.env` values always take priority over shell environment.
 - **Shell hooks** (`.sh`): Resolve `$PYTHON` at the top of the script with cross-platform fallback (`.venv/bin/python` on Unix, `.venv/Scripts/python` on Windows). Gracefully skip validation if venv not found.
 - **Inline commands** (`settings.json`): Use `"$CLAUDE_PROJECT_DIR"/.venv/bin/python ... 2>/dev/null || "$CLAUDE_PROJECT_DIR"/.venv/Scripts/python ... 2>/dev/null || <fallback>`.
-- **Bash tool calls**: Use `$PYTHON` to invoke Python — it is set by `setup-environment.sh` and propagated via `CLAUDE_ENV_FILE` to all Bash tool calls (main session and subagents). Resolves to `.venv/bin/python` on Unix, `.venv/Scripts/python` on Windows. Note: `$CLAUDE_PROJECT_DIR` is NOT available in Bash tool calls.
-- **PreToolUse hooks in agent frontmatter** do NOT fire for Task-spawned subagents. Use SubagentStop hooks (project-level) for validating subagent output.
+- **Bash tool calls**: Use `$PYTHON` to invoke Python — it is set by `setup-environment.sh` as an **absolute path** and propagated via `CLAUDE_ENV_FILE` to all Bash tool calls (main session and subagents). Resolves to `<project>/.venv/bin/python` on Unix, `<project>/.venv/Scripts/python` on Windows. Note: `$CLAUDE_PROJECT_DIR` is NOT available in Bash tool calls.
+- **PreToolUse hooks**: Project-level hooks (in `settings.json`) fire for subagent tool calls. Frontmatter hooks (in agent `.md` files) do NOT fire for Task-spawned subagents. Use SubagentStop hooks for validating subagent final output.
 - **`set -e` + `jq`**: When parsing JSON output from Python scripts, guard against non-JSON output (e.g., tracebacks) with `if ! VAR=$(... | jq ... 2>/dev/null); then ... fi` to avoid silent `set -e` deaths.
 
 ## Adding Python Dependencies

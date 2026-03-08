@@ -24,6 +24,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from rate_limiter import ExponentialBackoff, get_limiter
+from search_cache import cache_key, get_cache, put_cache
 
 SEP_BASE = "https://plato.stanford.edu/entries"
 
@@ -213,7 +214,14 @@ def extract_metadata(soup: BeautifulSoup) -> dict:
 
 
 def fetch_sep_article(entry_name: str, limiter, backoff: ExponentialBackoff, debug: bool = False) -> dict:
-    """Fetch and parse SEP article with retry logic."""
+    """Fetch and parse SEP article with retry logic and caching."""
+    # Check cache first (SEP articles change rarely, 7-day TTL is safe)
+    key = cache_key(source="sep_fetch", entry=entry_name)
+    cached = get_cache(key)
+    if cached:
+        log_progress(f"Using cached SEP article: {entry_name}")
+        return cached
+
     url = f"{SEP_BASE}/{entry_name}/"
 
     log_progress(f"Connecting to Stanford Encyclopedia of Philosophy...")
@@ -249,7 +257,7 @@ def fetch_sep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
 
             log_progress(f"Article fetched: {title}")
 
-            return {
+            result = {
                 "url": url,
                 "entry_name": entry_name,
                 "title": title,
@@ -260,6 +268,9 @@ def fetch_sep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
                 "bibliography": extract_bibliography(soup),
                 "related_entries": extract_related_entries(soup),
             }
+
+            put_cache(key, result)
+            return result
 
         except requests.exceptions.RequestException as e:
             log_progress(f"Network error: {str(e)[:100]}, retrying (attempt {attempt+1}/{backoff.max_attempts})...")

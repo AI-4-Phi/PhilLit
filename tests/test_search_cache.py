@@ -217,11 +217,16 @@ class TestCacheEdgeCases:
     """Tests for edge cases and error handling."""
 
     def test_cache_handles_none_values(self, clean_cache):
-        """Cache should handle None values correctly."""
+        """Known limitation: caching None is unsupported.
+
+        get_cache() returns None for both a cache miss and a cached None value,
+        so callers cannot distinguish the two. This test documents the ambiguity —
+        put_cache(key, None) silently succeeds but the stored value is
+        indistinguishable from a miss.
+        """
         key = cache_key(source="test", query="none")
-        # Note: None is valid data to cache
         put_cache(key, None)
-        assert get_cache(key) is None  # Can't distinguish from cache miss
+        assert get_cache(key) is None  # Indistinguishable from cache miss
 
     def test_cache_handles_empty_list(self, clean_cache):
         """Cache should handle empty lists."""
