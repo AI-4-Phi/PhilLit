@@ -1,67 +1,59 @@
 # Getting Started
 
-This guide covers setup for both local development and Claude's cloud environment (Note: still needs testing).
+PhilLit runs inside [Claude Code](https://docs.anthropic.com/en/docs/claude-code). There are three ways to use Claude Code — the local CLI, the Desktop app, and the Cloud environment — and they differ in how they handle network access, which matters because PhilLit calls a dozen external APIs during a review.
 
-## Quick Start: Claude Code Cloud
+| Environment | Network access | Status |
+|---|---|---|
+| **CLI** (terminal) | Unrestricted | Fully supported |
+| **Desktop app** | Unrestricted (runs locally) | Fully supported |
+| **Cloud** (claude.ai) | Sandboxed — external APIs blocked by default | Not yet supported |
 
-If you're using [Claude Code Cloud](https://docs.anthropic.com/en/docs/claude-code/cloud) (the sandboxed environment available through claude.ai or the Claude apps):
+## Why Cloud doesn't work yet
 
-1. **Fork this repository** (optional but recommended for persistence)
-2. **Open in Claude Code** via the GitHub integration
-3. **Provide your API keys** by pasting them in the chat:
+Claude Code Cloud runs in a sandboxed VM where outbound network requests are restricted to a default allowlist (package registries, GitHub). PhilLit's search scripts call 12 external APIs via Python/Bash — these are blocked by the sandbox. There is currently no way for users to add custom domains to the cloud allowlist. We are tracking this and will update the guide when cloud support becomes viable.
 
-Tell Claude:
+---
+
+## Local Setup (CLI or Desktop)
+
+### Prerequisites
+
+1. **[Claude Code](https://claude.ai/code)** — the CLI or [Desktop app](https://claude.ai/download)
+2. **[uv](https://github.com/astral-sh/uv)** — fast Python package manager
+3. **Python 3.9+**
+
+### Clone and enter the repository
+
+```bash
+git clone https://github.com/AI-4-Phi/PhilLit.git
+cd PhilLit
 ```
-Please create a .env file with these keys:
 
+### Environment Setup
+
+The Python environment is **automatically configured** when you start Claude Code in this repository. The startup hook creates a virtual environment, installs dependencies, and sets environment variables.
+
+### API Keys
+
+PhilLit searches academic databases using external APIs. Create a `.env` file in the project root with the variables listed below. Variables in `.env` take priority over your shell environment and are available to all processes including subagents.
+
+**Required:**
+- **BRAVE_API_KEY**: Get one at https://brave.com/search/api/ (free tier available)
+- **CROSSREF_MAILTO**: Your email address (no signup required; used for CrossRef's polite pool)
+
+**Recommended:**
+- **S2_API_KEY**: Get one at https://www.semanticscholar.org/product/api (free; improves rate limits from 1 to 10 requests/sec)
+- **OPENALEX_EMAIL**: Your email address (no signup required; enables polite pool access)
+
+Example `.env` file:
+```
 BRAVE_API_KEY=your-brave-api-key
 CROSSREF_MAILTO=your@email.com
 S2_API_KEY=your-semantic-scholar-key
 OPENALEX_EMAIL=your@email.com
 ```
 
-**Note:**
-- The environment is ephemeral—`.env` files do not persist between sessions
-- You'll need to provide API keys at the start of each new session
-
-**Alternative: Persistent keys via private fork**
-1. Fork this repo and make it *private*
-2. Remove `.env` from `.gitignore` in your fork
-3. Create and commit your `.env` file with API keys
-4. Use your private fork with Claude Code
-
----
-
-## Local Setup
-
-### Prerequisites
-
-1. **[Claude Code CLI](https://claude.ai/code)** installed and configured
-2. **[uv](https://github.com/astral-sh/uv)** - Fast Python package manager
-3. **Python 3.9+**
-
-Clone this repository 
-
-```bash
-git clone https://github.com/AI-4-Phi/PhilLit.git
-```
-### Environment Setup
-
-The Python environment is **automatically configured** when you start Claude Code in this repository.
-
-### API Keys
-
-The literature search scripts require API keys. Create a `.env` file in the project root with the variables listed below. Variables in `.env` take priority over your shell environment. They are loaded both at session startup and by each search script directly, so they are available to all processes including subagents.
-
-**Required:**
-- **BRAVE_API_KEY**: Get one at https://brave.com/search/api/
-- **CROSSREF_MAILTO**: Your email address (no signup required; used for CrossRef's polite pool)
-
-**Recommended:**
-- **S2_API_KEY**: Get one at https://www.semanticscholar.org/product/api (improves rate limits)
-- **OPENALEX_EMAIL**: Your email address (no signup required; enables polite pool access)
-
-**Verify your setup:** (optional, Claude Code will run this before any review)
+**Verify your setup** (optional — Claude Code will run this before any review):
 ```bash
 # Unix (macOS/Linux):
 .venv/bin/python .claude/skills/philosophy-research/scripts/check_setup.py
@@ -70,6 +62,8 @@ The literature search scripts require API keys. Create a `.env` file in the proj
 .venv/Scripts/python .claude/skills/philosophy-research/scripts/check_setup.py
 ```
 
+---
+
 ## Your First Review
 
 1. Start Claude Code *in the project directory* (`PhilLit/`).
@@ -77,7 +71,7 @@ The literature search scripts require API keys. Create a `.env` file in the proj
    cd PhilLit
    claude
    ```
-   Select **Sonnet** as the model (type `/model`) to save tokens.
+   Select **Sonnet** as the model (type `/model`) to save on API costs.
 
 2. Tell Claude what literature review you need:
 

@@ -10,6 +10,11 @@
   <a href="https://claude.com/product/claude-code"><img src="https://img.shields.io/badge/Built_with-Claude_Code-D97757?logo=claude&logoColor=white" alt="Built with Claude Code"></a>
 </p>
 
+<p align="center">
+  <a href="https://dailynous.com/2026/02/12/can-ai-write-a-useful-philosophical-literature-review-guest-post/"><strong>Read the blog post</strong></a> &nbsp;·&nbsp;
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScBWy8XdrwdkFuWQ_3o5d6ETAzSgrT-s0FvmwmTZPWpDgT5sg/viewform"><strong>Sign up for our research study</strong></a>
+</p>
+
 PhilLit generates analytical literature reviews with verified bibliographies for philosophy research. Give it a topic description, and it searches academic databases, collects and checks references, and writes a structured review — typically in half an hour.
 
 PhilLit is free and open-source. You only pay Anthropic for using Claude. This is a research project evaluating AI-generated literature reviews for philosophy ([see below](#participate-in-research)).
