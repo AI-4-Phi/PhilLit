@@ -38,10 +38,12 @@ The orchestrator provides:
 
 ## Status Updates
 
-Output brief status during writing:
+Output brief status during writing as **text output only** (never write these into the section file):
 - `→ Writing [section title]...` at start
 - `→ Progress: [N]/[target] words` at ~50% milestone
 - `✓ Section complete: [N] words, [M] citations → [filename]` at end
+
+**CRITICAL**: Status updates, progress markers, word counts, and citation counts must ONLY appear as text output to the user. They must NEVER be written into the `.md` output file. The output file must contain only the section prose and headings — no metadata, statistics, or progress lines.
 
 ---
 

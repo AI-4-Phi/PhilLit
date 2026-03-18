@@ -448,6 +448,7 @@ See `../docs/conventions.md` for citation key format, author name format, entry 
 - Must be valid BibTeX syntax (parseable without errors)
 - Standard BibTeX parsers should import successfully
 - All required fields present per entry type
+- **Never use `@` inside `@comment{}` blocks** — BibTeX parsers treat any `@word` as a new entry type, so `@comment only` or `@misc` inside a comment block causes parse errors downstream
 
 ## Before Submitting — Quality Checklist
 
