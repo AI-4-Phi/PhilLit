@@ -1,6 +1,7 @@
 #!/bin/bash
 # Check if AI-4-Phi/PhilLit main branch has updates the user hasn't pulled yet.
-# Runs as a SessionStart hook — stdout is injected into Claude's context.
+# Runs as a SessionStart hook. Outputs JSON with systemMessage (shown to the
+# user in the terminal) and additionalContext (injected into Claude's context).
 # Fails silently on any error so it never blocks session startup.
 
 CANONICAL_REPO="AI-4-Phi/PhilLit"
@@ -91,8 +92,12 @@ else
   UPDATE_CMD="git checkout main && git pull --ff-only $CANONICAL_REMOTE main"
 fi
 
-cat <<MSG
-UPDATE AVAILABLE: A newer version of PhilLit is available ($BEHIND new commit(s)). Ask the user: 'A newer version of PhilLit is available. Do you want to update?' If they agree, run: $UPDATE_CMD$DIRTY_WARNING If they want to disable update checks, run: touch $PROJECT_DIR/.phillit-no-update-check
-MSG
+# JSON-escape a string (handles \ and " which are the only problematic chars)
+json_escape() { printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'; }
+
+USER_MSG=$(json_escape "PhilLit update available (${BEHIND} new commit(s)).${DIRTY_WARNING} To update: ${UPDATE_CMD}")
+CLAUDE_CTX=$(json_escape "UPDATE AVAILABLE: A newer version of PhilLit is available (${BEHIND} new commit(s)). Ask the user: 'A newer version of PhilLit is available. Do you want to update?' If they agree, run: ${UPDATE_CMD}${DIRTY_WARNING} If they want to disable update checks, run: touch ${PROJECT_DIR}/.phillit-no-update-check")
+
+printf '{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"%s"},"systemMessage":"%s"}\n' "$CLAUDE_CTX" "$USER_MSG"
 
 exit 0
