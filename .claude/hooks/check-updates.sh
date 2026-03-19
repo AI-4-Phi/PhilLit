@@ -23,18 +23,6 @@ git rev-parse --git-dir &>/dev/null || exit 0
 CACHE_FILE="$(git rev-parse --git-dir)/phillit-update-cache"
 LOCAL_HEAD=$(git rev-parse HEAD 2>/dev/null) || exit 0
 
-# Cache: skip fetch if last check was recent AND on the same commit.
-# Storing the HEAD hash means switching branches invalidates the cache.
-if [ -f "$CACHE_FILE" ]; then
-  NOW=$(date +%s)
-  # macOS stat uses -f %m, Linux uses -c %Y
-  LAST_CHECK=$(stat -f %m "$CACHE_FILE" 2>/dev/null || stat -c %Y "$CACHE_FILE" 2>/dev/null || echo "0")
-  CACHED_HEAD=$(head -n 1 "$CACHE_FILE" 2>/dev/null)
-  if [ "$CACHED_HEAD" = "$LOCAL_HEAD" ] && [ $((NOW - LAST_CHECK)) -lt "$CACHE_MAX_AGE" ]; then
-    exit 0
-  fi
-fi
-
 # Find the remote that points to the canonical repo.
 # Direct clones: origin = AI-4-Phi/PhilLit
 # Forks: origin = user's fork, upstream = AI-4-Phi/PhilLit (may need to be added)
@@ -63,23 +51,50 @@ if [ -z "$CANONICAL_REMOTE" ]; then
   fi
 fi
 
-# Fetch latest main from the canonical remote (non-blocking on network failure)
-git fetch "$CANONICAL_REMOTE" main --quiet 2>/dev/null || exit 0
+# Cache stores two lines: HEAD hash and BEHIND count.
+# On cache hit: skip the fetch but still notify if BEHIND > 0.
+# On cache miss (different HEAD or expired): fetch and recompute.
+CACHED_BEHIND=0
+NEED_FETCH=true
+if [ -f "$CACHE_FILE" ]; then
+  NOW=$(date +%s)
+  # macOS stat uses -f %m, Linux uses -c %Y
+  LAST_CHECK=$(stat -f %m "$CACHE_FILE" 2>/dev/null || stat -c %Y "$CACHE_FILE" 2>/dev/null || echo "0")
+  CACHED_HEAD=$(sed -n '1p' "$CACHE_FILE" 2>/dev/null)
+  CACHED_BEHIND=$(sed -n '2p' "$CACHE_FILE" 2>/dev/null || echo "0")
+  CACHED_BEHIND=${CACHED_BEHIND:-0}
+  if [ "$CACHED_HEAD" = "$LOCAL_HEAD" ] && [ $((NOW - LAST_CHECK)) -lt "$CACHE_MAX_AGE" ]; then
+    NEED_FETCH=false
+  fi
+fi
 
-# Update cache with current HEAD hash
-echo "$LOCAL_HEAD" > "$CACHE_FILE" 2>/dev/null
+if [ "$NEED_FETCH" = true ]; then
+  # Fetch latest main from the canonical remote (non-blocking on network failure)
+  git fetch "$CANONICAL_REMOTE" main --quiet 2>/dev/null || exit 0
 
-# Compare current HEAD to the canonical remote's main
-REMOTE=$(git rev-parse "$CANONICAL_REMOTE/main" 2>/dev/null) || exit 0
+  # Compare current HEAD to the canonical remote's main
+  REMOTE=$(git rev-parse "$CANONICAL_REMOTE/main" 2>/dev/null) || exit 0
 
-[ "$LOCAL_HEAD" = "$REMOTE" ] && exit 0
+  if [ "$LOCAL_HEAD" = "$REMOTE" ]; then
+    BEHIND=0
+  else
+    BEHIND=$(git rev-list --count "HEAD..$CANONICAL_REMOTE/main" 2>/dev/null || echo "0")
+  fi
 
-BEHIND=$(git rev-list --count "HEAD..$CANONICAL_REMOTE/main" 2>/dev/null || echo "0")
+  # Update cache with HEAD hash and BEHIND count
+  printf '%s\n%s\n' "$LOCAL_HEAD" "$BEHIND" > "$CACHE_FILE" 2>/dev/null
+else
+  BEHIND=$CACHED_BEHIND
+fi
+
 [ "$BEHIND" -eq 0 ] && exit 0
 
 # Check if working tree is clean (unstaged or uncommitted changes)
 if [ -n "$(git status --porcelain 2>/dev/null)" ]; then
-  DIRTY_WARNING=" The working tree has uncommitted changes -- stash or commit them first."
+  DIRTY_WARNING="
+
+  The working tree has uncommitted changes.
+  Stash or commit them first."
 else
   DIRTY_WARNING=""
 fi
@@ -92,10 +107,21 @@ else
   UPDATE_CMD="git checkout main && git pull --ff-only $CANONICAL_REMOTE main"
 fi
 
-# JSON-escape a string (handles \ and " which are the only problematic chars)
-json_escape() { printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'; }
+# JSON-escape a string (handles \, ", and newlines)
+json_escape() {
+  printf '%s' "$1" | \
+    sed -e 's/\\/\\\\/g' -e 's/"/\\"/g' | \
+    awk -v ORS='\\n' '1' | \
+    sed 's/\\n$//'
+}
 
-USER_MSG=$(json_escape "PhilLit update available (${BEHIND} new commit(s)).${DIRTY_WARNING} To update: ${UPDATE_CMD}")
+USER_MSG=$(json_escape "
+
+===================================================
+  PhilLit update available (${BEHIND} new commit(s))
+  To update, run:
+  ${UPDATE_CMD}${DIRTY_WARNING}
+===================================================")
 CLAUDE_CTX=$(json_escape "UPDATE AVAILABLE: A newer version of PhilLit is available (${BEHIND} new commit(s)). Ask the user: 'A newer version of PhilLit is available. Do you want to update?' If they agree, run: ${UPDATE_CMD}${DIRTY_WARNING} If they want to disable update checks, run: touch ${PROJECT_DIR}/.phillit-no-update-check")
 
 printf '{"hookSpecificOutput":{"hookEventName":"SessionStart","additionalContext":"%s"},"systemMessage":"%s"}\n' "$CLAUDE_CTX" "$USER_MSG"
