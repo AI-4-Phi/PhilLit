@@ -327,7 +327,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    ```bash
    for f in "reviews/[project-name]"/*; do
      case "$(basename "$f")" in
-       literature-review-final.md|literature-review-final.docx|literature-all.bib|intermediate_files) ;;
+       literature-review-*.md|literature-review-*.docx|literature-*.bib|intermediate_files) ;;
        *) mv "$f" "reviews/[project-name]/intermediate_files/" 2>/dev/null || true ;;
      esac
    done
@@ -343,9 +343,9 @@ Never advance to Phase 6 before all synthesis writers have completed.
 **After cleanup** (final state):
 ```
 reviews/[project-name]/
-├── literature-review-final.md    # Final review (markdown)
-├── literature-review-final.docx  # Final review (if pandoc available)
-├── literature-all.bib            # Aggregated bibliography
+├── literature-review-[project-name].md    # Final review (markdown)
+├── literature-review-[project-name].docx  # Final review (if pandoc available)
+├── literature-[project-name].bib          # Aggregated bibliography
 └── intermediate_files/           # Workflow artifacts
     ├── json/                     # JSON files archived here
     │   ├── s2_results.json
@@ -371,13 +371,13 @@ reviews/[project-name]/
 8. **Optional: Convert to DOCX** (if pandoc is installed):
    ```bash
    if command -v pandoc &> /dev/null; then
-     pandoc "reviews/[project-name]/literature-review-final.md" \
+     pandoc "reviews/[project-name]/literature-review-[project-name].md" \
        --from markdown \
        --to docx \
-       --output "reviews/[project-name]/literature-review-final.docx" \
+       --output "reviews/[project-name]/literature-review-[project-name].docx" \
        --citeproc \
-       --bibliography="reviews/[project-name]/literature-all.bib" \
-       && echo "Converted to DOCX: literature-review-final.docx"
+       --bibliography="reviews/[project-name]/literature-[project-name].bib" \
+       && echo "Converted to DOCX: literature-review-[project-name].docx"
    else
      echo "Pandoc not installed, skipping DOCX conversion"
    fi
@@ -425,10 +425,10 @@ Output status updates directly as text (visible to user in real-time):
 | **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
 | **Phase completion** | `Phase [N] complete: [summary]` |
 | **Assembly** | `Assembling final review with YAML frontmatter...` |
-| **BibTeX aggregation** | `Aggregating BibTeX files -> literature-all.bib` |
+| **BibTeX aggregation** | `Aggregating BibTeX files -> literature-[project-name].bib` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
-| **DOCX conversion** | `Converted to DOCX: literature-review-final.docx` |
-| **Workflow complete** | `Literature review complete: literature-review-final.md ([wordcount])` |
+| **DOCX conversion** | `Converted to DOCX: literature-review-[project-name].docx` |
+| **Workflow complete** | `Literature review complete: literature-review-[project-name].md ([wordcount])` |
 | **Source issues (if any)** | `⚠️ Source issues: [aggregated list from domain researchers]` |
 
 ---
