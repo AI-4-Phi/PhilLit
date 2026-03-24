@@ -109,7 +109,7 @@ This phase validates conditions for subsequent phases to function.
    **Resume logic** (check files in the review directory, in order):
 
    ```
-   1. If literature-review-final.md exists -> Workflow complete, inform user
+   1. If literature-review-[project-name].md exists -> Workflow complete, inform user
 
    2. If synthesis-section-*.md files exist:
       - Count existing section files
@@ -147,7 +147,7 @@ This phase validates conditions for subsequent phases to function.
    ```
    Use a short, descriptive name (e.g., `epistemic-autonomy-ai`, `mechanistic-interp`).
 
-   **Guard — name collision**: If `reviews/[project-short-name]/literature-review-final.md` already exists, warn the user that a completed review occupies that path. Ask whether to overwrite or choose a different name (e.g., append `-2`).
+   **Guard — name collision**: If `reviews/[project-short-name]/literature-review-[project-short-name].md` already exists, warn the user that a completed review occupies that path. Ask whether to overwrite or choose a different name (e.g., append `-2`).
 
    **Guard — concurrent review**: If `reviews/.active-review` already exists and points to a *different* directory, warn the user that another review appears to be in progress. Ask whether to abandon the previous review or resume it instead.
 
