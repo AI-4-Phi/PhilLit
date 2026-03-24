@@ -82,9 +82,9 @@ Each review is saved in its own directory under `reviews/`:
 
 ```
 reviews/[topic]/
-├── literature-review-final.md        # Complete review (markdown)
-├── literature-review-final.docx      # Complete review (Word, requires pandoc)
-├── literature-all.bib                # Aggregated bibliography
+├── literature-review-[topic].md      # Complete review (markdown)
+├── literature-review-[topic].docx    # Complete review (Word, requires pandoc)
+├── literature-[topic].bib            # Aggregated bibliography
 └── intermediate_files/
     ├── json/                         # API response files (archived)
     ├── lit-review-plan.md            # Domain decomposition
