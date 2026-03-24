@@ -233,15 +233,15 @@ Never advance to Phase 6 before all synthesis writers have completed.
 **Working directory**: `reviews/[project-name]/`
 
 **Expected outputs of this phase** (final):
-- `literature-review-final.md` — complete review with YAML frontmatter
-- `literature-review-final.docx` — DOCX version (if pandoc is installed)
-- `literature-all.bib` — aggregated bibliography
+- `literature-review-[project-name].md` — complete review with YAML frontmatter
+- `literature-review-[project-name].docx` — DOCX version (if pandoc is installed)
+- `literature-[project-name].bib` — aggregated bibliography
 
 1. Assemble final review with YAML frontmatter:
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/assemble_review.py \
-     "reviews/[project-name]/literature-review-final.md" \
+     "reviews/[project-name]/literature-review-[project-name].md" \
      --title "[Research Topic]" \
      reviews/[project-name]/synthesis-section-*.md
    ```
@@ -252,7 +252,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/normalize_headings.py \
-     "reviews/[project-name]/literature-review-final.md"
+     "reviews/[project-name]/literature-review-[project-name].md"
    ```
 
    The script enforces consistent numbering: `## Section N: Title` for body sections,
@@ -262,11 +262,11 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
 3. Aggregate and deduplicate all domain BibTeX files:
 
-   Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-all.bib`:
+   Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-[project-name].bib`:
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/dedupe_bib.py \
-     "reviews/[project-name]/literature-all.bib" \
+     "reviews/[project-name]/literature-[project-name].bib" \
      reviews/[project-name]/literature-domain-*.bib
    ```
 
@@ -282,8 +282,8 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/generate_bibliography.py \
-     "reviews/[project-name]/literature-review-final.md" \
-     "reviews/[project-name]/literature-all.bib"
+     "reviews/[project-name]/literature-review-[project-name].md" \
+     "reviews/[project-name]/literature-[project-name].bib"
    ```
 
    The script will:
@@ -296,7 +296,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/lint_md.py \
-     "reviews/[project-name]/literature-review-final.md"
+     "reviews/[project-name]/literature-review-[project-name].md"
    ```
 
    Fix any reported issues before proceeding. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
