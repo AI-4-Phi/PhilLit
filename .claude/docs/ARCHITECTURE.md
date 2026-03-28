@@ -122,8 +122,8 @@ Orchestrator:
 **Final state** (after cleanup):
 ```
 reviews/[project-name]/
-├── literature-review-final.md            # Final review (pandoc-ready, YAML frontmatter)
-├── literature-all.bib                    # Aggregated BibTeX
+├── literature-review-[project-name].md   # Final review (pandoc-ready, YAML frontmatter)
+├── literature-[project-name].bib         # Aggregated BibTeX
 │
 ├── intermediate_files/                   # Archived workflow artifacts
 │   ├── json/                             # API response files (archived)
@@ -133,7 +133,7 @@ reviews/[project-name]/
 │   ├── synthesis-section-*.md
 │   └── literature-domain-*.bib
 │
-└── literature-review-final.docx          # (Optional) DOCX conversion
+└── literature-review-[project-name].docx # (Optional) DOCX conversion
 ```
 
 **During workflow** (before cleanup):
@@ -158,8 +158,8 @@ reviews/[project-name]/
 ├── synthesis-section-3.md
 ├── synthesis-section-4.md
 ├── synthesis-section-5.md
-├── literature-all.bib                    # Phase 6: Aggregated BibTeX
-└── literature-review-final.md            # Phase 6: Assembled with YAML frontmatter
+├── literature-[project-name].bib         # Phase 6: Aggregated BibTeX
+└── literature-review-[project-name].md   # Phase 6: Assembled with YAML frontmatter
 
 
 .claude/skills/literature-review/

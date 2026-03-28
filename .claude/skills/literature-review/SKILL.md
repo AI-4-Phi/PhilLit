@@ -109,7 +109,7 @@ This phase validates conditions for subsequent phases to function.
    **Resume logic** (check files in the review directory, in order):
 
    ```
-   1. If literature-review-final.md exists -> Workflow complete, inform user
+   1. If literature-review-[project-name].md exists -> Workflow complete, inform user
 
    2. If synthesis-section-*.md files exist:
       - Count existing section files
@@ -147,7 +147,7 @@ This phase validates conditions for subsequent phases to function.
    ```
    Use a short, descriptive name (e.g., `epistemic-autonomy-ai`, `mechanistic-interp`).
 
-   **Guard — name collision**: If `reviews/[project-short-name]/literature-review-final.md` already exists, warn the user that a completed review occupies that path. Ask whether to overwrite or choose a different name (e.g., append `-2`).
+   **Guard — name collision**: If `reviews/[project-short-name]/literature-review-[project-short-name].md` already exists, warn the user that a completed review occupies that path. Ask whether to overwrite or choose a different name (e.g., append `-2`).
 
    **Guard — concurrent review**: If `reviews/.active-review` already exists and points to a *different* directory, warn the user that another review appears to be in progress. Ask whether to abandon the previous review or resume it instead.
 
@@ -233,15 +233,15 @@ Never advance to Phase 6 before all synthesis writers have completed.
 **Working directory**: `reviews/[project-name]/`
 
 **Expected outputs of this phase** (final):
-- `literature-review-final.md` — complete review with YAML frontmatter
-- `literature-review-final.docx` — DOCX version (if pandoc is installed)
-- `literature-all.bib` — aggregated bibliography
+- `literature-review-[project-name].md` — complete review with YAML frontmatter
+- `literature-review-[project-name].docx` — DOCX version (if pandoc is installed)
+- `literature-[project-name].bib` — aggregated bibliography
 
 1. Assemble final review with YAML frontmatter:
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/assemble_review.py \
-     "reviews/[project-name]/literature-review-final.md" \
+     "reviews/[project-name]/literature-review-[project-name].md" \
      --title "[Research Topic]" \
      reviews/[project-name]/synthesis-section-*.md
    ```
@@ -252,7 +252,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/normalize_headings.py \
-     "reviews/[project-name]/literature-review-final.md"
+     "reviews/[project-name]/literature-review-[project-name].md"
    ```
 
    The script enforces consistent numbering: `## Section N: Title` for body sections,
@@ -262,11 +262,11 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
 3. Aggregate and deduplicate all domain BibTeX files:
 
-   Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-all.bib`:
+   Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-[project-name].bib`:
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/dedupe_bib.py \
-     "reviews/[project-name]/literature-all.bib" \
+     "reviews/[project-name]/literature-[project-name].bib" \
      reviews/[project-name]/literature-domain-*.bib
    ```
 
@@ -282,8 +282,8 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/generate_bibliography.py \
-     "reviews/[project-name]/literature-review-final.md" \
-     "reviews/[project-name]/literature-all.bib"
+     "reviews/[project-name]/literature-review-[project-name].md" \
+     "reviews/[project-name]/literature-[project-name].bib"
    ```
 
    The script will:
@@ -296,7 +296,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    ```bash
    $PYTHON .claude/skills/literature-review/scripts/lint_md.py \
-     "reviews/[project-name]/literature-review-final.md"
+     "reviews/[project-name]/literature-review-[project-name].md"
    ```
 
    Fix any reported issues before proceeding. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
@@ -327,7 +327,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    ```bash
    for f in "reviews/[project-name]"/*; do
      case "$(basename "$f")" in
-       literature-review-final.md|literature-review-final.docx|literature-all.bib|intermediate_files) ;;
+       literature-review-*.md|literature-review-*.docx|literature-*.bib|intermediate_files) ;;
        *) mv "$f" "reviews/[project-name]/intermediate_files/" 2>/dev/null || true ;;
      esac
    done
@@ -343,9 +343,9 @@ Never advance to Phase 6 before all synthesis writers have completed.
 **After cleanup** (final state):
 ```
 reviews/[project-name]/
-├── literature-review-final.md    # Final review (markdown)
-├── literature-review-final.docx  # Final review (if pandoc available)
-├── literature-all.bib            # Aggregated bibliography
+├── literature-review-[project-name].md    # Final review (markdown)
+├── literature-review-[project-name].docx  # Final review (if pandoc available)
+├── literature-[project-name].bib          # Aggregated bibliography
 └── intermediate_files/           # Workflow artifacts
     ├── json/                     # JSON files archived here
     │   ├── s2_results.json
@@ -371,13 +371,13 @@ reviews/[project-name]/
 8. **Optional: Convert to DOCX** (if pandoc is installed):
    ```bash
    if command -v pandoc &> /dev/null; then
-     pandoc "reviews/[project-name]/literature-review-final.md" \
+     pandoc "reviews/[project-name]/literature-review-[project-name].md" \
        --from markdown \
        --to docx \
-       --output "reviews/[project-name]/literature-review-final.docx" \
+       --output "reviews/[project-name]/literature-review-[project-name].docx" \
        --citeproc \
-       --bibliography="reviews/[project-name]/literature-all.bib" \
-       && echo "Converted to DOCX: literature-review-final.docx"
+       --bibliography="reviews/[project-name]/literature-[project-name].bib" \
+       && echo "Converted to DOCX: literature-review-[project-name].docx"
    else
      echo "Pandoc not installed, skipping DOCX conversion"
    fi
@@ -425,10 +425,10 @@ Output status updates directly as text (visible to user in real-time):
 | **Agent completion** | `Domain [N] complete: literature-domain-[N].bib ([number of sources included] sources)` |
 | **Phase completion** | `Phase [N] complete: [summary]` |
 | **Assembly** | `Assembling final review with YAML frontmatter...` |
-| **BibTeX aggregation** | `Aggregating BibTeX files -> literature-all.bib` |
+| **BibTeX aggregation** | `Aggregating BibTeX files -> literature-[project-name].bib` |
 | **Cleanup** | `Moving intermediate files -> intermediate_files/` |
-| **DOCX conversion** | `Converted to DOCX: literature-review-final.docx` |
-| **Workflow complete** | `Literature review complete: literature-review-final.md ([wordcount])` |
+| **DOCX conversion** | `Converted to DOCX: literature-review-[project-name].docx` |
+| **Workflow complete** | `Literature review complete: literature-review-[project-name].md ([wordcount])` |
 | **Source issues (if any)** | `⚠️ Source issues: [aggregated list from domain researchers]` |
 
 ---
