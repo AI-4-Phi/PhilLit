@@ -37,9 +37,12 @@ The Python environment is **automatically configured** when you start Claude Cod
 
 PhilLit searches academic databases using external APIs. Create a `.env` file in the project root with the variables listed below. Variables in `.env` take priority over your shell environment and are available to all processes including subagents.
 
-**Required:**
+**Required (at least one web search key):**
 - **BRAVE_API_KEY**: Get one at https://brave.com/search/api/ (free tier available)
+- **TAVILY_API_KEY**: Alternative to Brave. Get one at https://app.tavily.com (1,000 free credits/month)
 - **CROSSREF_MAILTO**: Your email address (no signup required; used for CrossRef's polite pool)
+
+At least one of `BRAVE_API_KEY` or `TAVILY_API_KEY` is required for SEP/PhilPapers/IEP discovery. When both are set, Brave is preferred.
 
 **Recommended:**
 - **S2_API_KEY**: Get one at https://www.semanticscholar.org/product/api (free; improves rate limits from 1 to 10 requests/sec)
@@ -48,6 +51,7 @@ PhilLit searches academic databases using external APIs. Create a `.env` file in
 Example `.env` file:
 ```
 BRAVE_API_KEY=your-brave-api-key
+TAVILY_API_KEY=tvly-your-tavily-api-key
 CROSSREF_MAILTO=your@email.com
 S2_API_KEY=your-semantic-scholar-key
 OPENALEX_EMAIL=your@email.com
