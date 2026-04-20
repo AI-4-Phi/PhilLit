@@ -99,7 +99,7 @@ CLEANING_SUMMARY=""
 
 for bib_file in "${BIB_FILES[@]}"; do
     # Step 1: BibTeX syntax validation (blocks on errors)
-    RESULT=$($PYTHON "$CLAUDE_PROJECT_DIR/.claude/hooks/bib_validator.py" "$bib_file" 2>&1 || true)
+    RESULT=$("$PYTHON" "$CLAUDE_PROJECT_DIR/.claude/hooks/bib_validator.py" "$bib_file" 2>&1 || true)
     if ! VALID=$(echo "$RESULT" | jq -r '.valid // "true"' 2>/dev/null); then
         echo "WARNING: bib_validator.py produced non-JSON output: $RESULT" >&2
         SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file: $RESULT
@@ -139,7 +139,7 @@ for bib_file in "${BIB_FILES[@]}"; do
     shopt -u nullglob
 
     if [[ -n "$JSON_DIR" ]]; then
-        CLEAN_RESULT=$($PYTHON "$CLAUDE_PROJECT_DIR/.claude/hooks/metadata_cleaner.py" "$bib_file" "$JSON_DIR" 2>&1 || true)
+        CLEAN_RESULT=$("$PYTHON" "$CLAUDE_PROJECT_DIR/.claude/hooks/metadata_cleaner.py" "$bib_file" "$JSON_DIR" 2>&1 || true)
         FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0' 2>/dev/null || echo "0")
         ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0' 2>/dev/null || echo "0")
 
