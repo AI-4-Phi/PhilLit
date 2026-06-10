@@ -25,7 +25,7 @@
 - `.claude/skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains Phase 6 tools: `assemble_review.py`, `normalize_headings.py`, `dedupe_bib.py`, `enrich_bibliography.py`, `generate_bibliography.py`, `lint_md.py`.
 - `.claude/skills/philosophy-research/` — API search scripts for academic sources (Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers, NDPR), abstract resolution, encyclopedia context extraction, and citation verification (CrossRef). Includes Brave web search fallback and caching.
 - `.claude/agents/` — Specialized subagent definitions invoked by the literature-review skill.
-- `.claude/hooks/` — Git/Claude hooks: `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py`, `subagent_stop_bib.sh`, `setup-environment.sh`.
+- `.claude/hooks/` — Git/Claude hooks: `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py`, `subagent_stop_bib.sh`, `setup-environment.sh`, `check-updates.sh` (SessionStart upstream-update notification).
 - `.claude/docs/` — Shared specifications (ARCHITECTURE.md, conventions.md, permissions-guide.md).
 - `.claude/settings.json` — Hook definitions and permissions (checked in).
 - `.claude/settings.local.json` — Local settings overrides (gitignored).
