@@ -121,3 +121,46 @@ class TestPreToolUseWrite:
         out, code = run_hook(payload)
         assert out == {}
         assert code == 0
+
+
+def edit_payload(file_path: str) -> str:
+    return json.dumps(
+        {
+            "hook_event_name": "PostToolUse",
+            "tool_name": "Edit",
+            "tool_input": {
+                "file_path": file_path,
+                "old_string": "x",
+                "new_string": "y",
+            },
+        }
+    )
+
+
+class TestPostToolUseEdit:
+    def test_edit_valid_bib_file_allows(self, tmp_path):
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(VALID_BIB, encoding="utf-8")
+        out, code = run_hook(edit_payload(str(bib)))
+        assert out == {}
+        assert code == 0
+
+    def test_edit_invalid_bib_file_blocks_with_reason(self, tmp_path):
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(INVALID_BIB, encoding="utf-8")
+        out, code = run_hook(edit_payload(str(bib)))
+        assert code == 0
+        assert out["decision"] == "block"
+        assert "journal" in out["reason"]
+
+    def test_edit_missing_file_allows(self, tmp_path):
+        out, code = run_hook(edit_payload(str(tmp_path / "nope.bib")))
+        assert out == {}
+        assert code == 0
+
+    def test_edit_non_bib_file_allows(self, tmp_path):
+        md = tmp_path / "notes.md"
+        md.write_text("# notes", encoding="utf-8")
+        out, code = run_hook(edit_payload(str(md)))
+        assert out == {}
+        assert code == 0

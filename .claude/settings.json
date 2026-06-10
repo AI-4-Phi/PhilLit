@@ -48,7 +48,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || echo '{\"hookSpecificOutput\": {}}'"
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || echo '{}'"
           }
         ]
       },
@@ -58,6 +58,17 @@
           {
             "type": "command",
             "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block_background_bash.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block_background_bash.py 2>/dev/null || echo '{}'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || echo '{}'"
           }
         ]
       }
