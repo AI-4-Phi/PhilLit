@@ -97,3 +97,27 @@ class TestPreToolUseWrite:
         out, code = run_hook("this is not json")
         assert out == {}
         assert code == 0
+
+    def test_non_string_file_path_allows(self):
+        payload = json.dumps(
+            {
+                "hook_event_name": "PreToolUse",
+                "tool_name": "Write",
+                "tool_input": {"file_path": 123, "content": "x"},
+            }
+        )
+        out, code = run_hook(payload)
+        assert out == {}
+        assert code == 0
+
+    def test_non_string_content_allows(self):
+        payload = json.dumps(
+            {
+                "hook_event_name": "PreToolUse",
+                "tool_name": "Write",
+                "tool_input": {"file_path": "reviews/x/d1.bib", "content": 123},
+            }
+        )
+        out, code = run_hook(payload)
+        assert out == {}
+        assert code == 0

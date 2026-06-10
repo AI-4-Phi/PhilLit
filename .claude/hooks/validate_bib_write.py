@@ -70,7 +70,7 @@ def validate_content(content: str, file_path: str) -> list[str]:
 def handle_write(tool_input: dict) -> None:
     """PreToolUse(Write): validate content before it reaches disk."""
     content = tool_input.get("content", "")
-    if not content:
+    if not isinstance(content, str) or not content:
         allow()
         return
 
@@ -130,7 +130,8 @@ def main():
     tool_name = hook_input.get("tool_name", "")
     tool_input = hook_input.get("tool_input", {})
 
-    if not tool_input.get("file_path", "").endswith(".bib"):
+    file_path = tool_input.get("file_path", "")
+    if not isinstance(file_path, str) or not file_path.endswith(".bib"):
         allow()
         return
 
