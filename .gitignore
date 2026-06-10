@@ -94,5 +94,8 @@ reviews/*
 # Claude Code local files (not shared)
 .claude/settings.local.json
 
+# User opt-out for update checks
+.phillit-no-update-check
+
 # uv
 uv.lock
