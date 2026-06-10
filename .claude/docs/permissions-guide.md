@@ -36,7 +36,7 @@ Explicitly blocks destructive operations for safety. These cannot be approved ev
 ]
 ```
 
-**Why `Bash` (all commands)?** Individual prefix patterns like `Bash(python *)` or `Bash(REVIEW_DIR=*)` cannot match multi-line Bash scripts — the `*` wildcard doesn't cross newlines. Domain researcher subagents routinely run multi-line scripts (setting variables, then calling `$PYTHON`), causing persistent permission prompts. Using bare `Bash` allows all commands, but the `deny` and `ask` rules still provide safety (see evaluation order below).
+**Why `Bash` (all commands)?** Domain researcher subagents construct multi-line scripts with variable prefixes (setting variables, then calling `$PYTHON`) that no finite set of prefix patterns can enumerate, causing persistent permission prompts. (Note: current Claude Code splits compound commands — `&&`, `;`, pipes, newlines — and matches each subcommand against rules independently, and wildcards may appear at any position. That makes patterns more capable than when this design was chosen, but enumerating every command shape agents generate remains fragile — this design decision stands; see CLAUDE.md "Do not revert to enumerated Bash patterns".) Using bare `Bash` allows all commands, but the `deny` and `ask` rules still provide safety (see evaluation order below).
 
 ### Ask Rules (Require Approval)
 ```json
@@ -69,9 +69,12 @@ Beyond permissions, `settings.json` configures hooks that run automatically:
 
 | Hook | Trigger | Script | Purpose |
 |------|---------|--------|---------|
-| SessionStart | Session begins | `setup-environment.sh` | Activate venv |
-| PreToolUse (Write) | Before any Write tool call | `validate_bib_write.py` | Validate BibTeX syntax before writing `.bib` files |
-| SubagentStop | After subagent finishes | `subagent_stop_bib.sh` | Validate BibTeX output from domain researchers |
+| SessionStart (all events) | Session begins, resumes, clears, compacts | `setup-environment.sh` | Activate venv, load `.env`, set `$PYTHON` |
+| SessionStart (`startup\|resume\|clear`) | Session begins (not compact) | `check-updates.sh` | Notify about upstream PhilLit updates |
+| PreToolUse (`Write`) | Before any Write tool call | `validate_bib_write.py` | Validate BibTeX content before writing `.bib` files (deny with reasons) |
+| PreToolUse (`Bash`) | Before any Bash tool call | `block_background_bash.py` | Block `run_in_background` in subagents |
+| PostToolUse (`Edit`) | After any Edit tool call | `validate_bib_write.py` | Validate `.bib` files after edits (block with reasons) |
+| SubagentStop (`domain-literature-researcher`) | After a domain researcher finishes | `subagent_stop_bib.sh` | Validate BibTeX output; clean hallucinated metadata |
 
 ## Agent-Specific Configuration
 
