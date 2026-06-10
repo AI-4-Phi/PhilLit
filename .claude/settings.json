@@ -75,6 +75,7 @@
     ],
     "SubagentStop": [
       {
+        "matcher": "domain-literature-researcher",
         "hooks": [
           {
             "type": "command",
