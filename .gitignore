@@ -96,6 +96,3 @@ reviews/*
 
 # User opt-out for update checks
 .phillit-no-update-check
-
-# uv
-uv.lock
