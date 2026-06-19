@@ -200,9 +200,11 @@ reviews/[project-name]/
     └── check_setup.py                    # Environment verification
 
 .claude/hooks/
-├── setup-environment.sh                  # SessionStart: activate venv
-├── subagent_stop_bib.sh                  # SubagentStop: validate BibTeX
-├── validate_bib_write.py                 # PreToolUse: validate BibTeX on Write
+├── setup-environment.sh                  # SessionStart: activate venv, load .env
+├── check-updates.sh                      # SessionStart (startup|resume|clear): upstream update notice
+├── subagent_stop_bib.sh                  # SubagentStop (domain-literature-researcher): validate BibTeX
+├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
+├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
 ├── bib_validator.py                      # BibTeX validation logic
 ├── metadata_validator.py                 # Metadata provenance validation
 └── metadata_cleaner.py                   # Metadata year/type cleanup
