@@ -1,0 +1,12 @@
+{
+  "name": "phillit",
+  "owner": { "name": "Johannes Himmelreich" },
+  "plugins": [
+    {
+      "name": "phillit",
+      "description": "Multi-agent system for authoring academic philosophy literature reviews.",
+      "version": "0.1.0",
+      "source": "."
+    }
+  ]
+}
