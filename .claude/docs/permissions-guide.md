@@ -85,6 +85,6 @@ Agents specify `model` and `tools` in their frontmatter (see `.claude/agents/`):
 | `domain-literature-researcher` | `sonnet` | Bash, Glob, Grep, Read, Write, WebFetch, WebSearch | `acceptEdits` |
 | `synthesis-planner` | `inherit` | Glob, Grep, Read, Write | `acceptEdits` |
 | `synthesis-writer` | `sonnet` | Glob, Grep, Read, Write | `acceptEdits` |
-| `literature-review-planner` | `inherit` | Read, Write | `acceptEdits` |
+| `literature-review-planner` | `sonnet` | Read, Write | `acceptEdits` |
 
 Agents inherit the project-level `allow`/`deny`/`ask` rules from `settings.json`. The `Bash` allow rule is inherited by all subagents, so the `domain-literature-researcher` can run multi-line Bash scripts without prompts. The `deny` and `ask` rules are also inherited, maintaining safety.
