@@ -14,7 +14,7 @@ This skill coordinates the production of a focused, insight-driven, rigorous, an
 
 **ALWAYS maintain a todo list and a `task-progress.md` file to enable resume across conversations.**
 
-At workflow start, create `task-progress.md` in the working directory:
+Once the review directory `reviews/[project-short-name]/` is established (Phase 1, step 7), create the tracker at `reviews/[project-short-name]/task-progress.md`. The first setup steps of Phase 1 (environment check, resume detection, mode choice) run untracked because the review directory does not exist yet. The tracker template:
 
 ```markdown
 # Literature Review Progress Tracker
@@ -146,6 +146,9 @@ This phase validates conditions for subsequent phases to function.
    echo "reviews/[project-short-name]" > reviews/.active-review
    ```
    Use a short, descriptive name (e.g., `epistemic-autonomy-ai`, `mechanistic-interp`).
+
+   Then create the progress tracker inside the review directory (see the template in "Critical: Task List Management" above):
+   `reviews/[project-short-name]/task-progress.md`
 
    **Guard — name collision**: If `reviews/[project-short-name]/literature-review-[project-short-name].md` already exists, warn the user that a completed review occupies that path. Ask whether to overwrite or choose a different name (e.g., append `-2`).
 
