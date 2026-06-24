@@ -166,6 +166,7 @@ reviews/[project-name]/
 ├── SKILL.md                              # Orchestration skill (main entry point)
 └── scripts/
     ├── assemble_review.py                # Assemble sections into final review
+    ├── normalize_headings.py             # Normalize section/subsection heading numbering
     ├── dedupe_bib.py                     # Deduplicate and merge BibTeX
     ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
     ├── generate_bibliography.py          # Generate Chicago-style references
@@ -192,6 +193,7 @@ reviews/[project-name]/
     ├── get_abstract.py                   # Multi-source abstract resolution
     ├── get_sep_context.py                # SEP citation context extraction
     ├── get_iep_context.py                # IEP citation context extraction
+    ├── citation_context.py               # Shared SEP/IEP citation-context helpers
     ├── search_ndpr.py                    # NDPR discovery
     ├── fetch_ndpr.py                     # NDPR content extraction
     ├── search_cache.py                   # Search result caching

@@ -96,3 +96,6 @@ reviews/*
 
 # User opt-out for update checks
 .phillit-no-update-check
+
+# Local direnv / per-machine env (e.g. CLAUDE_CONFIG_DIR account selector)
+.envrc
