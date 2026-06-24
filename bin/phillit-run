@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+# Single entry point for running bundled PhilLit Python scripts in the plugin's
+# locked uv project environment. Self-locating, so it works whether invoked with
+# $PHILLIT_ROOT (skill/agent prose) or ${CLAUDE_PLUGIN_ROOT} (hooks.json).
+#
+# Usage:
+#   bash phillit-run <root-relative-script> [args...]
+#   bash phillit-run --if-active <root-relative-script> [args...]
+#     --if-active: no-op (exit 0) unless the cwd is a PhilLit workspace (.phillit marker).
+#     Used by hooks so they stay silent in unrelated projects; checked BEFORE uv starts.
+set -euo pipefail
+
+if [ "${1:-}" = "--if-active" ]; then
+  shift
+  if [ ! -d "${CLAUDE_PROJECT_DIR:-$PWD}/.phillit" ]; then
+    exit 0
+  fi
+fi
+
+# Self-locate the plugin root (bin/.. = root).
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+
+# Prefer the absolute uv path bridged by the bootstrap; else fall back to PATH.
+UV="${PHILLIT_UV:-uv}"
+
+# Per-install env keyed by a checksum of the root path: the installed copy, a
+# --plugin-dir dev checkout, and different versions never share one venv. cksum is POSIX.
+KEY="$(printf '%s' "$ROOT" | cksum | cut -d' ' -f1)"
+
+if [ "$#" -eq 0 ]; then
+  echo "phillit-run: missing script path" >&2
+  exit 2
+fi
+script="$1"; shift
+
+exec env UV_PROJECT_ENVIRONMENT="${HOME}/.venvs/phillit-plugin-${KEY}" \
+  "$UV" run --locked --project "$ROOT" "$ROOT/$script" "$@"
