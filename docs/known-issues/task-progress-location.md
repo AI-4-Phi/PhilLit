@@ -2,7 +2,7 @@
 
 **Observed**: 2026-06-19, during permissions investigation
 **Severity**: Low (no data loss; caused a stray permission prompt, since worked around)
-**Status**: Open (deferred — out of scope when filed)
+**Status**: Resolved 2026-06-24 — see "Resolution" below
 
 ## Summary
 
@@ -37,3 +37,13 @@ Make the tracker live inside the review folder, consistent with the resume scan:
 ## Notes
 
 The chicken-and-egg wrinkle: the review directory name is derived during Phase 2, but the tracker is meant to exist from "workflow start." The fix needs to either (a) move tracker creation to just after the review directory is named, accepting that the first moments of Phase 1/2 run untracked, or (b) establish the review directory earlier in the flow.
+
+## Resolution
+
+Fixed via option (a). The review directory is established in Phase 1, step 7 (`mkdir -p reviews/[project-short-name]`), so tracker creation was moved to run immediately after:
+
+- `SKILL.md` "Critical: Task List Management" now instructs creating the tracker at `reviews/[project-short-name]/task-progress.md` once the review directory exists, and notes that the first setup steps of Phase 1 (environment check, resume detection, mode choice) run untracked.
+- `SKILL.md` Phase 1, step 7 now explicitly creates the tracker right after writing the `.active-review` pointer.
+- The workaround `Write(task-progress.md)` / `Edit(task-progress.md)` rules were removed from `.claude/settings.json`; the path is now covered by the existing `Write(reviews/**)` / `Edit(reviews/**)` rules.
+
+The resume scan (`reviews/*/task-progress.md`) and `ARCHITECTURE.md` already assumed the in-review location, so they needed no change. Do not re-add the root-level permission rules — they are redundant under the corrected write location.
