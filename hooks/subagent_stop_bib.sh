@@ -1,7 +1,9 @@
 #!/bin/bash
 # BibTeX validation and cleaning hook for SubagentStop.
-# Scoped to domain-literature-researcher via the SubagentStop matcher in
-# settings.json. When the researcher exits:
+# Fires for ALL SubagentStop events (hooks.json registers it with no matcher)
+# and self-scopes: it no-ops unless the cwd is a PhilLit workspace (.phillit
+# marker), the agent_type contains domain-literature-researcher, and an
+# .active-review pointer exists. When the researcher exits:
 #   1. Validates BibTeX syntax — blocks on errors (agent must fix them)
 #   2. Cleans hallucinated metadata fields — informational, does not block
 #
@@ -20,17 +22,9 @@ allow() {
     exit 0
 }
 
-# Resolve project Python. A pre-set $PYTHON (e.g., from tests) wins;
-# otherwise fall back to the project venv (cross-platform).
-if [[ -z "$PYTHON" || ! -x "$PYTHON" ]]; then
-    if [[ -x "$CLAUDE_PROJECT_DIR/.venv/bin/python" ]]; then
-        PYTHON="$CLAUDE_PROJECT_DIR/.venv/bin/python"
-    elif [[ -x "$CLAUDE_PROJECT_DIR/.venv/Scripts/python" ]]; then
-        PYTHON="$CLAUDE_PROJECT_DIR/.venv/Scripts/python"
-    else
-        echo "WARNING: Project venv not found — skipping BibTeX validation" >&2
-        allow
-    fi
+# Plugin hooks fire in every session; no-op outside a PhilLit workspace.
+if [ ! -d "${CLAUDE_PROJECT_DIR:-$PWD}/.phillit" ]; then
+    allow
 fi
 
 # Require jq for JSON parsing
@@ -48,12 +42,12 @@ if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
     allow
 fi
 
-# Backward-compat guard: settings.json scopes this hook to
-# domain-literature-researcher via the SubagentStop matcher, but older
-# Claude Code versions ignore matchers. Validate only when agent_type
-# matches; empty/missing agent_type (very old versions) also allows.
+# Self-scoping guard: this hook has no matcher, so it fires for every
+# SubagentStop. Validate only when agent_type contains
+# domain-literature-researcher (substring tolerates plugin namespacing, e.g.
+# phillit:domain-literature-researcher); empty/missing agent_type also allows.
 AGENT_TYPE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.agent_type // empty')
-if [[ "$AGENT_TYPE" != "domain-literature-researcher" ]]; then
+if [[ "$AGENT_TYPE" != *"domain-literature-researcher"* ]]; then
     allow
 fi
 
@@ -102,8 +96,10 @@ SYNTAX_ERRORS=""
 CLEANING_SUMMARY=""
 
 for bib_file in "${BIB_FILES[@]}"; do
-    # Step 1: BibTeX syntax validation (blocks on errors)
-    RESULT=$("$PYTHON" "$CLAUDE_PROJECT_DIR/.claude/hooks/bib_validator.py" "$bib_file" 2>&1 || true)
+    # Step 1: BibTeX syntax validation (blocks on errors). Capture stdout only —
+    # the wrapper's uv writes warnings/build progress to stderr (e.g. a cold venv
+    # on first run), which would otherwise corrupt the JSON parsed below.
+    RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/bib_validator.py "$bib_file" 2>/dev/null || true)
     if ! VALID=$(echo "$RESULT" | jq -r 'if has("valid") then .valid | tostring else "true" end' 2>/dev/null); then
         echo "WARNING: bib_validator.py produced non-JSON output: $RESULT" >&2
         SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file: $RESULT
@@ -143,7 +139,7 @@ for bib_file in "${BIB_FILES[@]}"; do
     shopt -u nullglob
 
     if [[ -n "$JSON_DIR" ]]; then
-        CLEAN_RESULT=$("$PYTHON" "$CLAUDE_PROJECT_DIR/.claude/hooks/metadata_cleaner.py" "$bib_file" "$JSON_DIR" 2>&1 || true)
+        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "$JSON_DIR" 2>/dev/null || true)
         FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0' 2>/dev/null || echo "0")
         ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0' 2>/dev/null || echo "0")
 
