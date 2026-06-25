@@ -5,7 +5,7 @@ from pathlib import Path
 
 import pytest
 
-SCRIPT_DIR = Path(__file__).parent.parent / ".claude" / "skills" / "literature-review" / "scripts"
+SCRIPT_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 from normalize_headings import (
     strip_section_prefix,

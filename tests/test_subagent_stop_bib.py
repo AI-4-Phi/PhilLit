@@ -21,7 +21,7 @@ from pathlib import Path
 import pytest
 
 REPO_ROOT = Path(__file__).parent.parent
-SCRIPT = REPO_ROOT / ".claude" / "hooks" / "subagent_stop_bib.sh"
+SCRIPT = REPO_ROOT / "hooks" / "subagent_stop_bib.sh"
 HOOK_DEPS = ["bib_validator.py", "metadata_cleaner.py"]
 
 BASH = shutil.which("bash")
@@ -85,7 +85,7 @@ def project(tmp_path):
     hooks_dir = tmp_path / ".claude" / "hooks"
     hooks_dir.mkdir(parents=True)
     for dep in HOOK_DEPS:
-        shutil.copy(REPO_ROOT / ".claude" / "hooks" / dep, hooks_dir / dep)
+        shutil.copy(REPO_ROOT / "hooks" / dep, hooks_dir / dep)
 
     review_dir = tmp_path / "reviews" / "test-review"
     review_dir.mkdir(parents=True)

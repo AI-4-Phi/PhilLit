@@ -13,7 +13,7 @@ import pytest
 from pybtex.database import parse_file as pybtex_parse_file
 
 # Add hooks directory to path
-HOOKS_DIR = Path(__file__).parent.parent / ".claude" / "hooks"
+HOOKS_DIR = Path(__file__).parent.parent / "hooks"
 sys.path.insert(0, str(HOOKS_DIR))
 
 from metadata_cleaner import (
