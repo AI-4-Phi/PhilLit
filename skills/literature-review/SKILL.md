@@ -79,11 +79,11 @@ Do NOT read agent definition files before invoking them. Agent definitions are f
 
 This phase validates conditions for subsequent phases to function.
 
-1. Check if file `.claude/CLAUDE.local.md` contains instructions about environment setup. Follow these instructions for environment verification and all phases in the literature review workflow.
+1. Check if file `CLAUDE.local.md` contains instructions about environment setup. Follow these instructions for environment verification and all phases in the literature review workflow.
 
 2. Run the environment verification check:
    ```bash
-   $PYTHON .claude/skills/philosophy-research/scripts/check_setup.py --json
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/check_setup.py --json
    ```
 
 3. Parse the JSON output and check the `status` field:
@@ -243,7 +243,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 1. Assemble final review with YAML frontmatter:
 
    ```bash
-   $PYTHON .claude/skills/literature-review/scripts/assemble_review.py \
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/assemble_review.py \
      "reviews/[project-name]/literature-review-[project-name].md" \
      --title "[Research Topic]" \
      reviews/[project-name]/synthesis-section-*.md
@@ -254,7 +254,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 2. **Normalize section headings**:
 
    ```bash
-   $PYTHON .claude/skills/literature-review/scripts/normalize_headings.py \
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/normalize_headings.py \
      "reviews/[project-name]/literature-review-[project-name].md"
    ```
 
@@ -268,7 +268,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    Use **Glob** to find all `literature-domain-*.bib` files. Run the deduplication script to create `literature-[project-name].bib`:
 
    ```bash
-   $PYTHON .claude/skills/literature-review/scripts/dedupe_bib.py \
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/dedupe_bib.py \
      "reviews/[project-name]/literature-[project-name].bib" \
      reviews/[project-name]/literature-domain-*.bib
    ```
@@ -284,7 +284,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 4. Generate bibliography and append to final review:
 
    ```bash
-   $PYTHON .claude/skills/literature-review/scripts/generate_bibliography.py \
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/generate_bibliography.py \
      "reviews/[project-name]/literature-review-[project-name].md" \
      "reviews/[project-name]/literature-[project-name].bib"
    ```
@@ -298,7 +298,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
 5. Lint the final markdown file:
 
    ```bash
-   $PYTHON .claude/skills/literature-review/scripts/lint_md.py \
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/lint_md.py \
      "reviews/[project-name]/literature-review-[project-name].md"
    ```
 

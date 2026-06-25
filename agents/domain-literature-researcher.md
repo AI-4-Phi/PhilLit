@@ -118,9 +118,9 @@ Output brief status after each search phase. Users should see progress every 2-3
 
 ## Search Process
 
-Use the `philosophy-research` skill scripts via Bash. All scripts are in `.claude/skills/philosophy-research/scripts/`.
+Use the `philosophy-research` skill scripts via Bash. Invoke every bundled script through the plugin wrapper: `bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/<script>.py [args]` (the script path is relative to the plugin root). The literature-review scripts live under `skills/literature-review/scripts/`.
 
-> **CRITICAL: `$PYTHON` must already be set** (by the SessionStart hook). Do NOT attempt to set, create, or `mkdir` the `$PYTHON` path yourself. If `$PYTHON` is empty or the binary doesn't exist, **STOP and report the error to the orchestrator** — do not try to fix it.
+> **CRITICAL: `$PHILLIT_ROOT` must already be set** (by the SessionStart bootstrap). Do NOT attempt to set or create it yourself. If `$PHILLIT_ROOT` is empty, **STOP and report the error to the orchestrator** — do not try to fix it. The wrapper resolves the Python environment on its own; never call `python` directly.
 
 **Set up the review directory** at the start of every Bash call that writes files:
 ```bash
@@ -141,12 +141,12 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 
 ```bash
 # Discover relevant SEP articles
-$PYTHON .claude/skills/philosophy-research/scripts/search_sep.py "{topic}"
-$PYTHON .claude/skills/philosophy-research/scripts/fetch_sep.py {entry_name} --sections "preamble,1,2,bibliography"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_sep.py "{topic}"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py {entry_name} --sections "preamble,1,2,bibliography"
 
 # Discover relevant IEP articles (different coverage from SEP)
-$PYTHON .claude/skills/philosophy-research/scripts/search_iep.py "{topic}"
-$PYTHON .claude/skills/philosophy-research/scripts/fetch_iep.py {entry_name} --sections "1,2,3,bibliography"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_iep.py "{topic}"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py {entry_name} --sections "1,2,3,bibliography"
 ```
 
 - Read preamble and key sections for domain overview
@@ -157,8 +157,8 @@ $PYTHON .claude/skills/philosophy-research/scripts/fetch_iep.py {entry_name} --s
 ### Stage 2: PhilPapers
 
 ```bash
-$PYTHON .claude/skills/philosophy-research/scripts/search_philpapers.py "{topic}"
-$PYTHON .claude/skills/philosophy-research/scripts/search_philpapers.py "{topic}" --recent
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}" --recent
 ```
 
 - Cross-reference with SEP bibliography entries
@@ -171,16 +171,16 @@ REVIEW_DIR="$PWD/reviews/[project-name]"
 mkdir -p "$REVIEW_DIR"
 
 # Semantic Scholar - broad academic search with filtering
-$PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json"
 
 # OpenAlex - 250M+ works, cross-disciplinary coverage
-$PYTHON .claude/skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json"
 
 # CORE - 431M papers with abstracts, excellent for finding paper content
-$PYTHON .claude/skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json"
 
 # arXiv - preprints, AI ethics, recent work
-$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json"
 ```
 
 After each search, use the **Read** tool on the JSON file to examine results and check the `status` field.
@@ -195,10 +195,10 @@ After each search, use the **Read** tool on the JSON file to examine results and
 
 ```bash
 # Get references and citing papers for foundational works
-$PYTHON .claude/skills/philosophy-research/scripts/s2_citations.py {paper_id} --both --influential-only
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py {paper_id} --both --influential-only
 
 # Find recommendations based on seed papers
-$PYTHON .claude/skills/philosophy-research/scripts/s2_recommend.py --positive "{paper_id1},{paper_id2}"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_recommend.py --positive "{paper_id1},{paper_id2}"
 ```
 
 - Identify foundational papers from SEP bibliography + PhilPapers + S2 search
@@ -212,7 +212,7 @@ For every paper with a DOI, use CrossRef to get authoritative publication metada
 
 ```bash
 # Get authoritative metadata from CrossRef (journal name, volume, pages)
-$PYTHON .claude/skills/philosophy-research/scripts/verify_paper.py --doi "10.2307/2024717"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.2307/2024717"
 ```
 
 CrossRef returns:
@@ -228,10 +228,10 @@ CrossRef returns:
 
 ```bash
 # Efficiently fetch metadata for multiple papers from S2
-$PYTHON .claude/skills/philosophy-research/scripts/s2_batch.py --ids "{id1},{id2},DOI:10.xxx/yyy"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_batch.py --ids "{id1},{id2},DOI:10.xxx/yyy"
 
 # Search for DOI when paper has none (fallback)
-$PYTHON .claude/skills/philosophy-research/scripts/verify_paper.py --title "Paper Title" --author "Author" --year 2020
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --title "Paper Title" --author "Author" --year 2020
 ```
 
 ### Stage 5.5: Abstract Resolution
@@ -241,7 +241,7 @@ After writing the initial BibTeX file (with all entries and notes), run the enri
 **CRITICAL: Run this in the foreground (no `&`, no `run_in_background`).** Background tasks outlive your session and their results won't be read. The orchestrator proceeds to synthesis immediately after you finish — enrichment must complete before you return.
 
 ```bash
-$PYTHON .claude/skills/literature-review/scripts/enrich_bibliography.py "$REVIEW_DIR/literature-domain-N.bib"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/enrich_bibliography.py "$REVIEW_DIR/literature-domain-N.bib"
 ```
 
 This script automatically:
@@ -271,13 +271,13 @@ Extract how High importance papers are discussed in authoritative philosophy enc
 ENTRIES_FILE="$REVIEW_DIR/intermediate_files/json/encyclopedia_entries.json"
 
 # Extract context for each High importance paper from each relevant SEP entry
-for sep_slug in $($PYTHON -c "import json; d=json.load(open('$ENTRIES_FILE')); print(' '.join(d.get('sep_entries',[])))"); do
-  $PYTHON .claude/skills/philosophy-research/scripts/get_sep_context.py "$sep_slug" --author "{Author}" --year {YYYY}
+for sep_slug in $(jq -r '.sep_entries[]?' "$ENTRIES_FILE"); do
+  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_sep_context.py "$sep_slug" --author "{Author}" --year {YYYY}
 done
 
 # Same for IEP entries
-for iep_slug in $($PYTHON -c "import json; d=json.load(open('$ENTRIES_FILE')); print(' '.join(d.get('iep_entries',[])))"); do
-  $PYTHON .claude/skills/philosophy-research/scripts/get_iep_context.py "$iep_slug" --author "{Author}" --year {YYYY}
+for iep_slug in $(jq -r '.iep_entries[]?' "$ENTRIES_FILE"); do
+  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_iep_context.py "$iep_slug" --author "{Author}" --year {YYYY}
 done
 ```
 
@@ -345,10 +345,10 @@ Append `&` to each command in a single Bash call, then `wait` for all to finish:
 ```bash
 REVIEW_DIR="$PWD/reviews/[project-name]"
 
-$PYTHON .claude/skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json" &
-$PYTHON .claude/skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json" &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json" &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json" &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json" &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json" &
 
 wait
 ```
@@ -530,4 +530,4 @@ Results written to: [filename.bib]
 - **Target**: 10-20 entries per domain with complete metadata
 - **Quality over quantity**: 10 highly relevant papers > 30 tangential ones
 - **CRITICAL**: Only cite real papers found via skill scripts. Never fabricate.
-- **Skill scripts location**: `.claude/skills/philosophy-research/scripts/`
+- **Skill scripts location**: `skills/philosophy-research/scripts/` (run via `bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/<script>.py`)

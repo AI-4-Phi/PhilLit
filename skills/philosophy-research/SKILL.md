@@ -23,18 +23,18 @@ Use this skill when:
 
 ```bash
 # Discover relevant SEP articles
-$PYTHON scripts/search_sep.py "free will"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_sep.py "free will"
 
 # Extract structured content from an SEP entry
-$PYTHON scripts/fetch_sep.py freewill --sections "preamble,1,2,bibliography"
-$PYTHON scripts/fetch_sep.py freewill --bibliography-only
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py freewill --sections "preamble,1,2,bibliography"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py freewill --bibliography-only
 
 # Discover relevant IEP articles (different coverage from SEP)
-$PYTHON scripts/search_iep.py "free will"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_iep.py "free will"
 
 # Extract structured content from an IEP entry
-$PYTHON scripts/fetch_iep.py freewill --sections "1,2,3,bibliography"
-$PYTHON scripts/fetch_iep.py freewill --bibliography-only
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py freewill --sections "1,2,3,bibliography"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py freewill --bibliography-only
 ```
 
 Parse the bibliographies for foundational works, then search for those papers.
@@ -43,26 +43,26 @@ Parse the bibliographies for foundational works, then search for those papers.
 
 ```bash
 # Philosophy-specific paper search
-$PYTHON scripts/search_philpapers.py "epistemic injustice"
-$PYTHON scripts/search_philpapers.py "virtue epistemology" --recent
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "epistemic injustice"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "virtue epistemology" --recent
 ```
 
 ### Phase 3: Extended Academic Search
 
 ```bash
 # Semantic Scholar - broad academic search
-$PYTHON scripts/s2_search.py "moral responsibility" --field Philosophy --year 2015-2025
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "moral responsibility" --field Philosophy --year 2015-2025
 
 # OpenAlex - 250M+ works, cross-disciplinary
-$PYTHON scripts/search_openalex.py "consciousness" --year 2020-2024 --min-citations 10
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "consciousness" --year 2020-2024 --min-citations 10
 
 # CORE - 431M+ research outputs, 46M full texts, excellent for abstracts
-$PYTHON scripts/search_core.py "epistemic injustice" --year 2020-2024
-$PYTHON scripts/search_core.py --doi "10.1111/nous.12191"
-$PYTHON scripts/search_core.py --title "Freedom of the Will" --author "Frankfurt"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "epistemic injustice" --year 2020-2024
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py --doi "10.1111/nous.12191"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py --title "Freedom of the Will" --author "Frankfurt"
 
 # arXiv - preprints, AI ethics, recent work
-$PYTHON scripts/search_arxiv.py "AI alignment ethics" --category cs.AI --recent
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "AI alignment ethics" --category cs.AI --recent
 ```
 
 **Note**: CORE API is rate-limited to 5 requests per 10 seconds (free tier, no API key required).
@@ -71,17 +71,17 @@ $PYTHON scripts/search_arxiv.py "AI alignment ethics" --category cs.AI --recent
 
 ```bash
 # Get references and citations for a paper
-$PYTHON scripts/s2_citations.py PAPER_ID --both --influential-only
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py PAPER_ID --both --influential-only
 
 # Find recommendations based on seed papers
-$PYTHON scripts/s2_recommend.py --positive "PAPER_ID1,PAPER_ID2"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_recommend.py --positive "PAPER_ID1,PAPER_ID2"
 ```
 
 ### Phase 5: Batch Details
 
 ```bash
 # Efficiently fetch metadata for multiple papers
-$PYTHON scripts/s2_batch.py --ids "PAPER_ID1,PAPER_ID2,DOI:10.xxx/yyy"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_batch.py --ids "PAPER_ID1,PAPER_ID2,DOI:10.xxx/yyy"
 ```
 
 ### Phase 6: Content Enrichment
@@ -92,24 +92,24 @@ Enrich entries that lack abstracts. Two sub-steps:
 
 ```bash
 # Single paper
-$PYTHON scripts/get_abstract.py --doi "10.1111/nous.12191"
-$PYTHON scripts/get_abstract.py --title "Freedom of the Will" --author "Frankfurt" --year 1971
-$PYTHON scripts/get_abstract.py --s2-id "abc123def"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_abstract.py --doi "10.1111/nous.12191"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_abstract.py --title "Freedom of the Will" --author "Frankfurt" --year 1971
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_abstract.py --s2-id "abc123def"
 ```
 
 For batch processing, use `enrich_bibliography.py` (in literature-review scripts):
 ```bash
-$PYTHON .claude/skills/literature-review/scripts/enrich_bibliography.py input.bib
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/enrich_bibliography.py input.bib
 ```
 
 **6b. NDPR Enrichment** — For `@book` entries that still lack an abstract after step 6a and have **High or Medium importance** (as noted in the `keywords` field), use NDPR (Notre Dame Philosophical Reviews) to extract opening summary paragraphs from book reviews:
 
 ```bash
 # Discover NDPR reviews for a book
-$PYTHON scripts/search_ndpr.py "book title or author"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_ndpr.py "book title or author"
 
 # Extract content from an NDPR review
-$PYTHON scripts/fetch_ndpr.py REVIEW_URL
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ndpr.py REVIEW_URL
 ```
 
 NDPR extracts are tagged with `abstract_source = {ndpr}` in BibTeX entries. Note: NDPR content is primarily descriptive of the book's arguments but may include reviewer evaluation.
@@ -122,19 +122,19 @@ For important papers, extract how they're discussed in authoritative philosophy 
 
 ```bash
 # Extract SEP citation context for a specific paper
-$PYTHON scripts/get_sep_context.py freewill --author "Frankfurt" --year 1971
-$PYTHON scripts/get_sep_context.py freewill --author "Fischer" --year 1998 --coauthor "Ravizza"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_sep_context.py freewill --author "Frankfurt" --year 1971
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_sep_context.py freewill --author "Fischer" --year 1998 --coauthor "Ravizza"
 
 # Extract IEP citation context
-$PYTHON scripts/get_iep_context.py freewill --author "Frankfurt" --year 1971
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_iep_context.py freewill --author "Frankfurt" --year 1971
 ```
 
 ### Phase 8: Verification
 
 ```bash
 # Verify a paper exists via CrossRef
-$PYTHON scripts/verify_paper.py --title "The Title" --author "Smith" --year 2020
-$PYTHON scripts/verify_paper.py --doi "10.1093/mind/fzv123"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --title "The Title" --author "Smith" --year 2020
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.1093/mind/fzv123"
 ```
 
 ## SEP Content Access
@@ -149,10 +149,10 @@ $PYTHON scripts/verify_paper.py --doi "10.1093/mind/fzv123"
 
 ```bash
 # Get specific sections
-$PYTHON scripts/fetch_sep.py compatibilism --sections "preamble,1,2"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py compatibilism --sections "preamble,1,2"
 
 # Get bibliography only
-$PYTHON scripts/fetch_sep.py freewill --bibliography-only
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py freewill --bibliography-only
 ```
 
 ## IEP Content Access
@@ -163,8 +163,8 @@ $PYTHON scripts/fetch_sep.py freewill --bibliography-only
 - Preamble, individual sections, bibliography, author information
 
 ```bash
-$PYTHON scripts/fetch_iep.py compatibilism --sections "1,2,3"
-$PYTHON scripts/fetch_iep.py freewill --bibliography-only
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py compatibilism --sections "1,2,3"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py freewill --bibliography-only
 ```
 
 **Note**: IEP has different coverage than SEP. Use both for comprehensive encyclopedia coverage.
@@ -240,5 +240,5 @@ OPENALEX_EMAIL       # Recommended for OpenAlex polite pool
 
 Check setup with:
 ```bash
-$PYTHON scripts/check_setup.py
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/check_setup.py
 ```
