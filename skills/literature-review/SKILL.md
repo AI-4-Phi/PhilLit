@@ -10,6 +10,15 @@ allowed-tools: Bash, Read, Write, Grep, Glob, Edit
 
 This skill coordinates the production of a focused, insight-driven, rigorous, and accurate literature review for philosophy research proposals. The skill coordinates specialized subagents using the Task tool to execute a structured 6-phase workflow.
 
+## Objectives (priority order)
+
+1. **Accurate** — Only cite verified papers; never fabricate references
+2. **Comprehensive** — Cover all major positions and key debates
+3. **Rigorous and concise** — Analytical depth, tight prose; balanced presentation of positions
+4. **Reproducible** — Structured workflow, standard BibTeX output, Chicago author-date citations
+
+Quality over speed; use full context as needed (do not optimize for token savings).
+
 ## Critical: Task List Management
 
 **ALWAYS maintain a todo list and a `task-progress.md` file to enable resume across conversations.**

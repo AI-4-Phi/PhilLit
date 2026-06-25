@@ -2,7 +2,7 @@
 
 ## Orchestration: Skill-Based Design
 
-The literature review workflow is coordinated by the `/literature-review` skill (`.claude/skills/literature-review/SKILL.md`), which runs in the main conversation context.
+The literature review workflow is coordinated by the `/literature-review` skill (`skills/literature-review/SKILL.md`), which runs in the main conversation context.
 
 **Why a skill, not a subagent?**
 - Subagents cannot spawn other subagents (Claude Code constraint)
@@ -22,7 +22,7 @@ User request
     └── synthesis-writer ×N (subagents)
 ```
 
-Specialized subagents (in `.claude/agents/`) are invoked via Task tool and cannot themselves invoke other subagents.
+Specialized subagents (in `agents/`) are invoked via Task tool and cannot themselves invoke other subagents.
 
 ## Design Pattern: Multi-File-Then-Assemble
 
@@ -30,7 +30,7 @@ This workflow uses a consistent architectural pattern for computationally intens
 
 ## Philosophy-Research Skill
 
-Domain researchers and citation validators use the `philosophy-research` skill (`.claude/skills/philosophy-research/`) which provides structured API access to academic sources:
+Domain researchers and citation validators use the `philosophy-research` skill (`skills/philosophy-research/`) which provides structured API access to academic sources:
 
 | Script | Purpose | API |
 |--------|---------|-----|
@@ -162,7 +162,7 @@ reviews/[project-name]/
 └── literature-review-[project-name].md   # Phase 6: Assembled with YAML frontmatter
 
 
-.claude/skills/literature-review/
+skills/literature-review/
 ├── SKILL.md                              # Orchestration skill (main entry point)
 └── scripts/
     ├── assemble_review.py                # Assemble sections into final review
@@ -172,7 +172,7 @@ reviews/[project-name]/
     ├── generate_bibliography.py          # Generate Chicago-style references
     └── lint_md.py                        # Lint markdown review files
 
-.claude/skills/philosophy-research/
+skills/philosophy-research/
 ├── SKILL.md                              # API search skill
 └── scripts/
     ├── s2_search.py                      # Semantic Scholar search
@@ -201,7 +201,7 @@ reviews/[project-name]/
     ├── output.py                         # Shared output utilities
     └── check_setup.py                    # Environment verification
 
-.claude/hooks/
+hooks/
 ├── setup-environment.sh                  # SessionStart: activate venv, load .env
 ├── check-updates.sh                      # SessionStart (startup|resume|clear): upstream update notice
 ├── subagent_stop_bib.sh                  # SubagentStop (domain-literature-researcher): validate BibTeX
@@ -211,7 +211,7 @@ reviews/[project-name]/
 ├── metadata_validator.py                 # Metadata provenance validation
 └── metadata_cleaner.py                   # Metadata year/type cleanup
 
-.claude/agents/
+agents/
 ├── literature-review-planner.md          # Decomposes research into domains
 ├── domain-literature-researcher.md       # Searches and produces BibTeX
 ├── synthesis-planner.md                  # Creates review outline
