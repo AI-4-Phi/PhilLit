@@ -396,7 +396,7 @@ def main():
         )
 
     if not args.api_key:
-        log_progress("Warning: S2_API_KEY not set. Using slower unauthenticated rate limit. See GETTING_STARTED.md.")
+        log_progress("Warning: S2_API_KEY not set. Using slower unauthenticated rate limit. Add S2_API_KEY to .env for higher rate limits.")
 
     # Generate cache key from query parameters
     cache_params = {

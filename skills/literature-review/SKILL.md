@@ -103,7 +103,7 @@ This phase validates conditions for subsequent phases to function.
    ```
    Environment verification failed. Cannot proceed with literature review.
 
-   See GETTING_STARTED.md on how to set up the environment.
+   Run /phillit:setup in this directory, then make sure uv and jq are installed and your API keys are filled into .env.
    ```
 
 **Why this matters**: If the environment isn't configured, the `philosophy-research` skill scripts used by the domain researchers will fail, causing agents to fall back to unstructured web searches, undermining review quality.
@@ -146,7 +146,7 @@ This phase validates conditions for subsequent phases to function.
    **CRITICAL**: When resuming Phase 3 or Phase 5 with partial completion, only invoke agents for MISSING files. Do not re-run completed work.
 
 6. Offer user choice of execution mode:
-   - **Full Autopilot**: Execute all phases automatically without pausing for feedback between phases. Bash permissions are pre-configured in `settings.json` so no approval prompts should appear.
+   - **Full Autopilot**: Execute all phases automatically without pausing for feedback between phases. With `/phillit:setup` having merged PhilLit's permission rules into this directory's `.claude/settings.json`, no approval prompts should appear.
    - **Human-in-the-Loop**: Phase-by-phase with feedback
 
 7. Create working directory and write the active-review pointer:

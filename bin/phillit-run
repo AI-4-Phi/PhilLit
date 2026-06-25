@@ -33,5 +33,7 @@ if [ "$#" -eq 0 ]; then
 fi
 script="$1"; shift
 
+# --no-dev: bundled scripts never need the dev (test) group, so the per-install
+# venv stays lean. Developers still get dev deps via `uv sync` / `uv run --locked pytest`.
 exec env UV_PROJECT_ENVIRONMENT="${HOME}/.venvs/phillit-plugin-${KEY}" \
-  "$UV" run --locked --project "$ROOT" "$ROOT/$script" "$@"
+  "$UV" run --locked --no-dev --project "$ROOT" "$ROOT/$script" "$@"

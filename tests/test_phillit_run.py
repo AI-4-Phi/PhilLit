@@ -39,9 +39,9 @@ def test_wrapper_builds_locked_project_command(tmp_path):
     uvpe_line = next(l for l in result.stdout.splitlines() if l.startswith("UVPE="))
     # Assert the CONTRACT, not the literal root (macOS /var vs /private/var symlink skew):
     # locked+project flags, script path = <project>/skills/x.py, trailing args preserved.
-    assert args_line.startswith("ARGS=run --locked --project ")
+    assert args_line.startswith("ARGS=run --locked --no-dev --project")
     assert args_line.endswith("/skills/x.py hello world")
-    tail = args_line[len("ARGS=run --locked --project "):].split(" ")
+    tail = args_line[len("ARGS=run --locked --no-dev --project "):].split(" ")
     project = tail[0]
     assert tail[1] == f"{project}/skills/x.py"
     # HOME is used verbatim by the wrapper, so this prefix is stable.
@@ -85,7 +85,7 @@ def test_if_active_runs_with_marker(tmp_path):
              "CLAUDE_PROJECT_DIR": str(proj)},
     )
     assert result.returncode == 0
-    assert "ARGS=run --locked --project" in result.stdout
+    assert "ARGS=run --locked --no-dev --project" in result.stdout
 
 
 def test_wrapper_forwards_stdin_to_script(tmp_path):
@@ -101,7 +101,7 @@ def test_wrapper_forwards_stdin_to_script(tmp_path):
     fakebin = tmp_path / "fakebin"
     fakebin.mkdir()
     (fakebin / "uv").write_text(
-        "#!/usr/bin/env bash\nshift 4  # drop: run --locked --project <ROOT>\nexec python3 \"$@\"\n",
+        "#!/usr/bin/env bash\nshift 5  # drop: run --locked --no-dev --project <ROOT>\nexec python3 \"$@\"\n",
         encoding="utf-8")
     (fakebin / "uv").chmod(0o755)
 

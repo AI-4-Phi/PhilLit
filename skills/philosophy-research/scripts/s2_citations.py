@@ -323,7 +323,7 @@ def main():
     fetch_citations = args.citations or args.both
 
     if not args.api_key:
-        log_progress("Warning: S2_API_KEY not set. Using slower unauthenticated rate limit. See GETTING_STARTED.md.")
+        log_progress("Warning: S2_API_KEY not set. Using slower unauthenticated rate limit. Add S2_API_KEY to .env for higher rate limits.")
 
     # Initialize rate limiter and backoff (slower when unauthenticated)
     limiter = get_limiter("semantic_scholar", authenticated=bool(args.api_key))
