@@ -69,7 +69,7 @@ Strictly follow this workflow consisting of six distinct phases:
 
 Advance only to a subsequent phase after completing the current phase.
 
-**Shared conventions**: See `conventions.md` for BibTeX format, UTF-8 encoding, and citation style.
+**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for BibTeX format, UTF-8 encoding, and citation style.
 
 ## Task Tool Usage
 
