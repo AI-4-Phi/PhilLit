@@ -1,0 +1,80 @@
+# Plugin clean-install parity gate (plan Task 10)
+
+Recorded results per assertion. `main` keeps clone-and-run until **every** assertion passes.
+
+**Environment for headless runs (2026-07-13):** macOS (dove), Claude Code CLI 2.1.207, uv 0.8+, dev checkout at `~/github-repos/PhilLit` loaded via `--plugin-dir`, sessions run headless (`claude -p`). Headless runs validate *mechanics*, not the interactive approval UX — permission modes were `acceptEdits` with a scoped `--allowedTools` list, so prompt counts and the trust dialog remain interactive-only assertions.
+
+## Status summary
+
+| Step | Assertion | Status |
+|------|-----------|--------|
+| 1 | Local plugin-dir smoke (naming, `/phillit:setup`, researcher spawns) | **PASS** (headless; interactive UX pending) |
+| 2 | Hooks no-op outside a workspace | **PASS** (with positive control) |
+| 3 | Env bridge reaches subagents | **PASS** |
+| 4 | Deterministic content assertions | **PASS (headless)** — full pipeline end-to-end, all scripts exit 0, pybtex clean; permission-prompt count **pending interactive run** |
+| 5 | Environment lifecycle | **PASS** |
+| 6 | Windows/Git Bash | **PENDING** (needs a Windows machine) |
+| 7 | Second-machine clean install | **PENDING** (needs a machine that never cloned the repo) |
+| 8 | Record + decide | this document |
+
+## Step 1 — Local plugin-dir smoke ✅ (headless)
+
+- **Naming:** skills register namespaced — `phillit:literature-review`, `phillit:philosophy-research`, `phillit:setup`. Agents likewise: `phillit:domain-literature-researcher`, `phillit:literature-review-planner`, `phillit:synthesis-planner`, `phillit:synthesis-writer` (confirmed by the Task tool's own error listing).
+- **Spawn:** bare `domain-literature-researcher` fails (`Agent type not found`); `phillit:domain-literature-researcher` spawns successfully. **Fix applied** (commit `10b9cad`): all five `subagent_type` references in `skills/literature-review/SKILL.md` now carry the `phillit:` prefix. Suite stays 736 green.
+- **`/phillit:setup`:** dry-run runs through the wrapper, presents the trust boundary, and (correctly) stops for confirmation. With confirmation given, it created `.phillit/`, scaffolded `.env` (empty values), and wrote `.claude/settings.json` matching `PHILLIT_RULES` exactly — including correctly namespaced `Skill(phillit:…)` allow rules, so the Task 8 naming guess was right, no change needed.
+- **Bonus findings:**
+  - Claude Code adds the plugin's `bin/` to `PATH` automatically in plugin sessions.
+  - **Workspace trust caveat:** in an untrusted directory, `claude -p` *ignores* the workspace `.claude/settings.json` `allow` entries ("Ignoring 10 permissions.allow entries … workspace has not been trusted"). Setup's merged permissions only take effect after the user accepts the trust dialog interactively once. Worth a line in the README/setup skill output.
+- **Pending (interactive, user):** approval-flow UX, unexpected skill-invocation prompts, prompt counts.
+
+## Step 2 — Hooks no-op outside a workspace ✅
+
+In a directory with **no** `.phillit/` marker, under `--plugin-dir`:
+
+- Normal `Bash` tool call: ran clean (`block_background_bash` no-op).
+- `Write` of a deliberately **malformed** `.bib`: succeeded, content landed byte-for-byte (`validate_bib_write` no-op).
+- Spawned a `phillit:domain-literature-researcher` subagent and let it stop: `SubagentStop` fired and did nothing — a pre-placed malformed `stray.bib` had an identical checksum before/after.
+- SessionStart: no PhilLit output.
+
+**Positive control:** the *same* malformed `.bib` write **inside** the `.phillit` workspace was blocked with `BibTeX validation failed: … premature end of file` — proving the hooks are live and the marker gate is what differentiates.
+
+## Step 3 — Bridge → subagent ✅
+
+A spawned `phillit:domain-literature-researcher` subagent reported `PHILLIT_ROOT=/…/PhilLit` in its Bash environment and ran `bash "$PHILLIT_ROOT/bin/phillit-run" …` with exit 0. (`PHILLIT_UV` also bridged; `PHILLIT_ACTIVE` correctly absent outside a workspace.)
+
+## Step 4 — Deterministic content assertions ✅ (headless; prompt count pending)
+
+- End-to-end tiny review (1 domain, ≤8 papers, 2 sections) run headless via the `phillit:literature-review` skill: see results below. All script invocations exit 0; no unresolved `$PHILLIT_ROOT`/`.claude/` paths anywhere in `reviews/`; expected intermediate files present; final bibliography parses with pybtex 0.25.1.
+- **Pending (interactive, user):** permission-prompt count before vs. after `/phillit:setup`.
+
+### Tiny-review results
+
+Topic: "Moral responsibility gaps in automated decision-making", 1 domain, ≤8 papers, 2 sections, headless.
+
+- Phases 1–3 (first session): environment verified; `phillit:literature-review-planner` produced a 1-domain plan; `phillit:domain-literature-researcher` produced `literature-domain-1.bib` — 8 entries, parses clean with pybtex 0.25.1 (matthias2004responsibility, sparrow2007killer, …). No unresolved `$PHILLIT_ROOT` or `.claude/` paths in any output.
+- **Headless-only finding:** the orchestrator ran the researcher as a background task, and `claude -p` terminates still-running background tasks after 600 s ("Background tasks still running after 600s; terminating"), cutting the run off before Phase 4. Interactive sessions are unaffected. Workaround for headless/automation use: set `CLAUDE_CODE_PRINT_BG_WAIT_CEILING_MS=0` (or instruct synchronous subagents). Relevant to any PhilLit-as-a-service automation.
+- Phases 4–6 (resumed session, ceiling disabled, subagents synchronous): `phillit:synthesis-planner` ×1 and `phillit:synthesis-writer` ×4 spawned; all six Phase 6 scripts exited 0 (`assemble_review.py`, `normalize_headings.py`, `dedupe_bib.py`, `generate_bibliography.py` ×2, `lint_md.py`). Final review: 3,142 words, 8/8 references matched, lint clean. Final `literature-moral-responsibility-gaps-adm.bib` parses with pybtex (8 entries). Intermediate files archived to `intermediate_files/` as specified.
+- **Hooks live during a real review:** `validate_bib_write.py` fired in-workspace and blocked an interim bad bib write (LaTeX-escaped umlaut broke the surname matcher; the orchestrator fixed to unicode and re-ran — first `generate_bibliography.py` pass matched 7/8, second 8/8).
+- Minor leftover: `reviews/.active-review` couldn't be removed headless (`rm` is an *ask* rule by design, and headless denies asks) — harmless; interactive runs will prompt and clear it.
+
+## Step 5 — Environment lifecycle ✅
+
+- **Cold build:** after `rm -rf ~/.venvs/phillit-plugin-*`, the wrapper rebuilt the venv from a foreign cwd (26 packages) and `check_setup.py` exited 0, total 7.4 s.
+- **Warm run:** ~0.1 s, no rebuild.
+- **Lock change under `--locked`:** bumped `version` 0.1.0→0.1.1, regenerated `uv.lock`, wrapper re-ran with exit 0; reverted cleanly and re-ran with exit 0.
+- **Maintenance note:** the committed `uv.lock` was written by an older uv (lockfile `revision = 1`); current uv rewrites it to revision 3, churning the whole file on the next `uv lock`. Harmless (`--locked` accepts revision 1), but expect a big one-time diff.
+- Note: `phillit` itself is a virtual project (no `build-system`), so the venv holds dependencies only — the re-sync assertion is about lock validation + dependency sync, which is the behavior that matters.
+
+## Step 6 — Windows/Git Bash ⏳ PENDING
+
+Needs a Windows machine (all local machines are macOS). `/plugin install`, `/phillit:setup`, one review end-to-end.
+
+The symlink risk named in the plan is **already eliminated**: `skills/literature-review/conventions.md` (the repo's only tracked symlink) was removed in commit `94a2ed0`; `SKILL.md` now references `$PHILLIT_ROOT/docs/conventions.md` directly, like the agents always did.
+
+## Step 7 — Second-machine clean install ⏳ PENDING
+
+Teammate installs via `/plugin marketplace add` + `/plugin install phillit` on a machine that never cloned the repo; record prompt count and friction.
+
+## Step 8 — Decision
+
+Blocked on Steps 6, 7, and the interactive assertions in Steps 1/4. Only when all pass: remove `.claude/` remnants, retire `GETTING_STARTED.md` clone-and-run, merge `plugin-conversion` → `main`.
