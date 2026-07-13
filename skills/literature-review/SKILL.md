@@ -74,7 +74,7 @@ Advance only to a subsequent phase after completing the current phase.
 ## Task Tool Usage
 
 Invoke subagents using the Task tool with these parameters:
-- `subagent_type`: The agent name (e.g., "literature-review-planner")
+- `subagent_type`: The agent name with the plugin prefix (e.g., "phillit:literature-review-planner")
 - `prompt`: The instructions for the agent (include working directory and output filename)
 - `description`: Short description (3-5 words)
 
@@ -171,7 +171,7 @@ This phase validates conditions for subsequent phases to function.
 
 1. Receive and review research idea from user. If you require further information, clarification or direction, ask the user. 
 2. Use Task tool to invoke `literature-review-planner` agent with research idea:
-   - subagent_type: "literature-review-planner"
+   - subagent_type: "phillit:literature-review-planner"
    - prompt: Include full research idea, requirements, AND working directory path
    - Example prompt: "Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to reviews/[project-name]/lit-review-plan.md"
 3. Wait for `literature-review-planner` agent to structure the literature review into domains
@@ -187,7 +187,7 @@ Never advance to a next step in this phase before completing the current step.
 
 1. Identify and enumerate N domains (typically 3-8) listed in `reviews/[project-name]/lit-review-plan.md`
 2. **Launch all N domain researchers in parallel** using a single message with multiple Task tool calls:
-   - subagent_type: "domain-literature-researcher"
+   - subagent_type: "phillit:domain-literature-researcher"
    - prompt: Include domain focus, key questions, research idea, working directory, AND output filename
    - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
    - description: "Domain [N]: [domain name]"
@@ -202,7 +202,7 @@ Never advance to Phase 4 before all domain researchers have completed.
 ## Phase 4: Outline Synthesis Review Across Domains
 
 1. Use Task tool to invoke `synthesis-planner` agent:
-   - subagent_type: "synthesis-planner"
+   - subagent_type: "phillit:synthesis-planner"
    - prompt: Include research idea, working directory, list of BibTeX files, and original plan path
    - Example prompt: "Research idea: [idea]. Working directory: reviews/[project-name]/. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: reviews/[project-name]/synthesis-outline.md"
    - description: "Plan synthesis structure"
@@ -219,7 +219,7 @@ Never advance to a next step in this phase before completing the current step.
 1. Read synthesis outline `reviews/[project-name]/synthesis-outline.md` to identify sections
 2. For each section: identify relevant BibTeX .bib files from the outline
 3. **Launch all N synthesis writers in parallel** using a single message with multiple Task tool calls:
-   - subagent_type: "synthesis-writer"
+   - subagent_type: "phillit:synthesis-writer"
    - prompt: Include working directory, section heading (exactly as it appears in the outline),
      outline path, and relevant BibTeX files
    - **CRITICAL**: Use the outline's own section headings verbatim (e.g., "## Introduction",
