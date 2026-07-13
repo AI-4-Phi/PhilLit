@@ -27,10 +27,13 @@ if [ ! -d "${CLAUDE_PROJECT_DIR:-$PWD}/.phillit" ]; then
     allow
 fi
 
-# Require jq for JSON parsing
+# Require jq for JSON parsing. Without it we cannot parse stdin (not even to
+# scope by agent_type), so we allow — but LOUDLY: a stderr line on exit 0 is
+# never surfaced by Claude Code, so carry the warning as a user-visible
+# systemMessage instead (gate-failure policy: no gate failure is ever silent).
 if ! command -v jq &> /dev/null; then
-    echo "WARNING: jq not installed — skipping BibTeX validation. Install with: brew install jq (macOS), apt install jq (Linux), or choco install jq (Windows)" >&2
-    allow
+    echo '{"systemMessage": "PhilLit: jq is not installed - BibTeX validation was SKIPPED for this researcher. Install jq: brew install jq (macOS), apt install jq (Linux), choco install jq (Windows)."}'
+    exit 0
 fi
 
 # Parse subagent context from stdin (Claude Code passes JSON via stdin)
@@ -98,8 +101,21 @@ CLEANING_SUMMARY=""
 for bib_file in "${BIB_FILES[@]}"; do
     # Step 1: BibTeX syntax validation (blocks on errors). Capture stdout only —
     # the wrapper's uv writes warnings/build progress to stderr (e.g. a cold venv
-    # on first run), which would otherwise corrupt the JSON parsed below.
-    RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/bib_validator.py "$bib_file" 2>/dev/null || true)
+    # on first run), which would otherwise corrupt the JSON parsed below. Keep
+    # stderr in a temp file so a crash can be reported with its cause.
+    STDERR_LOG=$(mktemp)
+    RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/bib_validator.py "$bib_file" 2>"$STDERR_LOG" || true)
+    if [[ -z "$RESULT" ]]; then
+        # Fail CLOSED (gate-failure policy): empty output means the validator or
+        # uv crashed before emitting JSON. jq exits 0 on empty input, so without
+        # this check the crash would silently count as valid.
+        ERR_TAIL=$(tail -c 400 "$STDERR_LOG" 2>/dev/null || true)
+        rm -f "$STDERR_LOG"
+        SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py produced no output for $bib_file (uv or the validator crashed): ${ERR_TAIL}
+"
+        continue
+    fi
+    rm -f "$STDERR_LOG"
     if ! VALID=$(echo "$RESULT" | jq -r 'if has("valid") then .valid | tostring else "true" end' 2>/dev/null); then
         echo "WARNING: bib_validator.py produced non-JSON output: $RESULT" >&2
         SYNTAX_ERRORS="${SYNTAX_ERRORS}bib_validator.py crashed for $bib_file: $RESULT

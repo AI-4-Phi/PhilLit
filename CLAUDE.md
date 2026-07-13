@@ -4,7 +4,7 @@
 
 # Mode
 
-**Production mode** (default): When the user asks for a literature review, invoke the `/literature-review` skill to begin the 6-phase workflow.
+**Production mode** (default): When the user asks for a literature review, invoke the `/phillit:literature-review` skill to begin the 6-phase workflow. Skills and agents register only when the plugin is loaded — a bare dev clone registers none of them. To run a review against your checkout, launch `claude --plugin-dir /path/to/PhilLit` from a scratch directory (see CONTRIBUTING.md, Getting Started).
 
 **Development mode**: Only if user explicitly asks to develop, improve, or test agents/skills. Work on definitions in `agents/` and `skills/`.
 
@@ -23,7 +23,7 @@
 
 # File Structure
 
-- `reviews/` — All existing and new literature reviews. Each review has its own subdirectory with an informative short name. Gitignored (local only).
+- `reviews/` — All existing and new literature reviews. Each review has its own subdirectory with an informative short name. Gitignored (local only), except the three example reviews linked from the README.
 - `.claude-plugin/` — Plugin manifest (`plugin.json`) and single-plugin marketplace (`marketplace.json`).
 - `bin/phillit-run` — Self-locating wrapper that runs every bundled Python script in the plugin's locked `uv` project environment (see "Hooks and Python").
 - `skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains Phase 6 tools: `assemble_review.py`, `normalize_headings.py`, `dedupe_bib.py`, `enrich_bibliography.py`, `generate_bibliography.py`, `lint_md.py`.
@@ -114,13 +114,14 @@ Bump `version` in `.claude-plugin/plugin.json` for every user-facing release —
 
 **All bundled Python runs through the wrapper — never bare `python`, never `$PYTHON`.**
 
-- **The wrapper** (`bin/phillit-run`): `bash "<root>/bin/phillit-run" <root-relative-script> [args]` execs `uv run --locked --project <root>` against the single `pyproject.toml`/`uv.lock`, in a per-install venv keyed to the root path (`~/.venvs/phillit-plugin-<cksum>`). It self-locates the root (works from any cwd) and uses `$PHILLIT_UV` if set, else `uv` from PATH. `--if-active <script>` makes it a no-op unless the cwd is a PhilLit workspace (`.phillit/` marker) — used by intrusive hooks.
+- **The wrapper** (`bin/phillit-run`): `bash "<root>/bin/phillit-run" <root-relative-script> [args]` execs `uv run --locked --no-dev --project <root>` against the single `pyproject.toml`/`uv.lock`, in a per-install venv keyed to the root path (`~/.venvs/phillit-plugin-<cksum>`). It self-locates the root (works from any cwd) and self-resolves uv: `$PHILLIT_UV` if set, else PATH, else the fallback dirs in `$PHILLIT_BREW_DIRS`. Self-resolution is load-bearing: hook processes never see `CLAUDE_ENV_FILE` exports, so the wrapper cannot rely on the bootstrap's bridging. `--if-active <script>` makes it a no-op unless the cwd is a PhilLit workspace (`.phillit/` marker) — used by intrusive hooks.
 - **Path references**: skill/agent prose uses `$PHILLIT_ROOT` (`bash "$PHILLIT_ROOT/bin/phillit-run" skills/…`); `hooks/hooks.json` uses `${CLAUDE_PLUGIN_ROOT}` (only hooks receive it).
 - **The SessionStart bootstrap** (`hooks/setup-environment.sh`) is thin: it bridges `PHILLIT_ROOT`, `PHILLIT_UV` (and `PHILLIT_ACTIVE` inside a workspace) into `$CLAUDE_ENV_FILE` for later Bash tool calls and subagents. No venv build, no `.env` load, no package checks — it must stay cheap because plugin hooks fire in *every* session.
-- **`.env` loading**: each Python script calls `load_dotenv(override=True)` in `main()`, before `argparse.ArgumentParser()` (argparse defaults read `os.environ` at definition time). `.env` values take priority over the shell environment.
+- **`.env` loading**: each Python script calls `load_dotenv(find_dotenv(usecwd=True), override=True)` in `main()`, before `argparse.ArgumentParser()` (argparse defaults read `os.environ` at definition time). `usecwd=True` is load-bearing: it searches upward from the *workspace* (cwd). The bare default walks up from the script's own directory — in an installed plugin that is the plugin cache, and the workspace `.env` silently never loads. `.env` values take priority over the shell environment. Pinned by `tests/test_dotenv_loading.py`.
 - **All hooks live in `hooks/hooks.json`**, never in agent frontmatter (plugin subagents ignore frontmatter hooks) — single source of truth, plugin-compatible.
+- **Gate-failure policy**: a gate's failure direction is a per-gate design decision, and never silent. *Accuracy gates* (SubagentStop BibTeX validation) fail **closed**: a crashed/empty validator is a block with an explicit "crashed" reason, never a silent allow. *Plumbing gates* (PreToolUse/PostToolUse helpers) fail **open**: a broken uv/venv must never brick the workspace — hook commands carry an `|| echo '{"systemMessage": …}'` fallback so the failure surfaces to the user without blocking.
 - **Marker gating**: intrusive hooks no-op outside a workspace. PreToolUse/PostToolUse use `phillit-run --if-active`; `subagent_stop_bib.sh` checks `"$CLAUDE_PROJECT_DIR/.phillit"` directly (it has no matcher and fires for every SubagentStop, so it must self-scope).
-- **Shell hooks + `jq`**: when parsing a script's JSON output, capture **stdout only** (`2>/dev/null` — the wrapper's `uv` writes warnings/build progress to stderr, which would corrupt the JSON), and guard against non-JSON output with `if ! VAR=$(… | jq … 2>/dev/null); then …` to avoid silent `set -e` deaths.
+- **Shell hooks + `jq`**: when parsing a script's JSON output, capture **stdout only** (`2>/dev/null` — the wrapper's `uv` writes warnings/build progress to stderr, which would corrupt the JSON), and guard against non-JSON output with `if ! VAR=$(… | jq … 2>/dev/null); then …` to avoid silent `set -e` deaths. Note `jq` exits **0 on empty input**, so an empty capture slips through that guard — check for empty output explicitly first and treat it as a crash.
 - **SubagentStop protocol**: all decisions are stdout JSON with exit 0 (JSON is ignored on exit 2).
 
 ## Adding Python Dependencies

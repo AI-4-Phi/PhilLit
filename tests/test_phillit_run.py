@@ -88,6 +88,55 @@ def test_if_active_runs_with_marker(tmp_path):
     assert "ARGS=run --locked --no-dev --project" in result.stdout
 
 
+def test_wrapper_is_executable():
+    # Claude Code puts the plugin's bin/ on PATH in plugin sessions; without the
+    # exec bit, direct `phillit-run ...` fails with "permission denied" and the
+    # model's natural fallback is bare python — the pattern the project forbids.
+    assert os.access(WRAPPER, os.X_OK)
+
+
+def test_resolves_uv_from_fallback_dirs_when_not_on_path(tmp_path):
+    # Hook processes never see CLAUDE_ENV_FILE exports, so PHILLIT_UV can be
+    # unset and PATH minimal: the wrapper must self-resolve uv from the
+    # PHILLIT_BREW_DIRS fallback list (review finding, 2026-07-13).
+    root = tmp_path / "plugin"
+    (root / "bin").mkdir(parents=True)
+    (root / "skills").mkdir()
+    (root / "bin" / "phillit-run").write_text(WRAPPER.read_text(encoding="utf-8"), encoding="utf-8")
+    (root / "skills" / "x.py").write_text("print('hi')", encoding="utf-8")
+    fake = _fake_uv(tmp_path)
+
+    env = {k: v for k, v in os.environ.items() if k != "PHILLIT_UV"}
+    env.update({"HOME": str(tmp_path), "PATH": "/usr/bin:/bin",
+                "PHILLIT_BREW_DIRS": str(fake.parent)})
+    result = subprocess.run(
+        ["bash", str(root / "bin" / "phillit-run"), "skills/x.py"],
+        capture_output=True, text=True, env=env,
+    )
+    assert result.returncode == 0, result.stderr
+    assert "ARGS=run --locked --no-dev --project" in result.stdout
+
+
+def test_missing_uv_fails_with_install_hint(tmp_path):
+    # No PHILLIT_UV, no uv on PATH, fallback disabled: fail with an actionable
+    # message, not env's cryptic "uv: No such file or directory".
+    root = tmp_path / "plugin"
+    (root / "bin").mkdir(parents=True)
+    (root / "skills").mkdir()
+    (root / "bin" / "phillit-run").write_text(WRAPPER.read_text(encoding="utf-8"), encoding="utf-8")
+    (root / "skills" / "x.py").write_text("print('hi')", encoding="utf-8")
+
+    env = {k: v for k, v in os.environ.items() if k != "PHILLIT_UV"}
+    env.update({"HOME": str(tmp_path), "PATH": "/usr/bin:/bin",
+                "PHILLIT_BREW_DIRS": ""})
+    result = subprocess.run(
+        ["bash", str(root / "bin" / "phillit-run"), "skills/x.py"],
+        capture_output=True, text=True, env=env,
+    )
+    assert result.returncode != 0
+    assert "Install uv" in result.stderr
+
+
 def test_wrapper_forwards_stdin_to_script(tmp_path):
     # The hook chain depends on PreToolUse/PostToolUse JSON reaching the Python hook
     # through the wrapper. Stub uv with one that drops the `run --locked --project <ROOT>`

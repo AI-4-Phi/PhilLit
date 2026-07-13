@@ -67,9 +67,9 @@ Topic: "Moral responsibility gaps in automated decision-making", 1 domain, ≤8 
 
 ## Step 6 — Windows/Git Bash — DEFERRED
 
-Deferred 2026-07-13 (user decision): no Windows machine available, and macOS coverage is complete. The cross-platform conventions (forward-slash paths, `uv`-resolved interpreters, UTF-8 I/O) are enforced by tests; revisit on first Windows bug report or when a Windows machine is available. Assertion when run: `/plugin install`, `/phillit:setup`, one review end-to-end.
+Deferred 2026-07-13 (user decision): no Windows machine available, and macOS coverage is complete. The cross-platform conventions (forward-slash paths, `uv`-resolved interpreters, UTF-8 I/O) are enforced by tests; revisit on first Windows bug report or when a Windows machine is available. Assertion when run: `/plugin install`, `/phillit:setup`, one review end-to-end. Also check then: `$PHILLIT_BREW_DIRS` is expanded unquoted (space-separated list), so a `$HOME` containing spaces (e.g. `/c/Users/John Smith`) word-splits the `~/.local/bin` fallback entry in `bin/phillit-run` and `hooks/setup-environment.sh` — PATH resolution still works, only the fallback breaks (2026-07-13 review, deferred).
 
-The symlink risk named in the plan is **already eliminated**: `skills/literature-review/conventions.md` (the repo's only tracked symlink) was removed in commit `94a2ed0`; `SKILL.md` now references `$PHILLIT_ROOT/docs/conventions.md` directly, like the agents always did.
+The symlink risk named in the plan is **already eliminated**: `skills/literature-review/conventions.md` (the repo's only tracked symlink) was removed in commit `94a2ed0`; `SKILL.md` now references `$PHILLIT_ROOT/docs/conventions.md` directly. (The agents did NOT — they carried `../docs/conventions.md` paths that don't resolve from a plugin workspace; caught by the 2026-07-13 review and fixed to the `$PHILLIT_ROOT` form, pinned by `tests/test_agent_definitions.py`.)
 
 ## Step 7 — Second-machine clean install ✅ (2026-07-13)
 

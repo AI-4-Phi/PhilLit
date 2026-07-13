@@ -20,8 +20,25 @@ fi
 # Self-locate the plugin root (bin/.. = root).
 ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
 
-# Prefer the absolute uv path bridged by the bootstrap; else fall back to PATH.
-UV="${PHILLIT_UV:-uv}"
+# Resolve uv: $PHILLIT_UV -> PATH -> fallback install dirs. Self-resolution is
+# load-bearing: hook processes never see $CLAUDE_ENV_FILE exports, so the
+# bootstrap's PHILLIT_UV bridge reaches only Bash tool calls and subagents.
+# Keep the fallback list in sync with hooks/setup-environment.sh. No-colon `=`
+# so an explicitly-empty PHILLIT_BREW_DIRS disables the fallback (used by tests).
+: "${PHILLIT_BREW_DIRS=/opt/homebrew/bin /usr/local/bin $HOME/.local/bin}"
+UV="${PHILLIT_UV:-}"
+if [ -z "$UV" ] && command -v uv >/dev/null 2>&1; then
+  UV=uv
+fi
+if [ -z "$UV" ]; then
+  for d in $PHILLIT_BREW_DIRS; do
+    if [ -x "$d/uv" ]; then UV="$d/uv"; break; fi
+  done
+fi
+if [ -z "$UV" ]; then
+  echo "phillit-run: 'uv' not found on PATH or in: ${PHILLIT_BREW_DIRS:-<no fallback dirs>}. Install uv: https://docs.astral.sh/uv/getting-started/installation/" >&2
+  exit 127
+fi
 
 # Per-install env keyed by a checksum of the root path: the installed copy, a
 # --plugin-dir dev checkout, and different versions never share one venv. cksum is POSIX.

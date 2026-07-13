@@ -28,6 +28,18 @@ def test_intrusive_hooks_are_gated_and_use_wrapper():
         assert "${CLAUDE_PLUGIN_ROOT}" in c
 
 
+def test_plumbing_hooks_fail_open_with_visible_message():
+    # Gate-failure policy (CLAUDE.md): plumbing gates fail OPEN and loud. uv
+    # exits 2 when the cold venv build fails (e.g. offline); propagated from a
+    # PreToolUse hook, exit 2 hard-blocks the tool call and bricks the
+    # workspace. Every wrapper-routed command needs an || echo fallback that
+    # surfaces the failure as a systemMessage instead.
+    for c in _commands("PreToolUse") + _commands("PostToolUse"):
+        if "phillit-run" in c:
+            assert "|| echo" in c, f"no fail-open fallback: {c}"
+            assert "systemMessage" in c, f"fallback is silent: {c}"
+
+
 def test_subagentstop_routes_to_bib_hook():
     # No matcher: the hook fires for all SubagentStop events and self-scopes internally
     # (.phillit marker + tolerant agent_type + .active-review). Robust to plugin namespacing.

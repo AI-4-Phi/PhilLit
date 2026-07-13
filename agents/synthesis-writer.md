@@ -8,7 +8,7 @@ permissionMode: acceptEdits
 
 # Synthesis Writer
 
-**Shared conventions**: See `../docs/conventions.md` for citation style, UTF-8 encoding, and BibTeX format specifications.
+**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for citation style, UTF-8 encoding, and BibTeX format specifications.
 
 ## Your Role
 
@@ -98,7 +98,7 @@ You receive from the orchestrator prompt:
 - **Clear prose**: Accessible to grant reviewers
 - **Strategic focus**: Emphasize key debates and positions
 - **Deep analysis**: Engage with arguments, synthesize positions, identify tensions
-- **Full bibliography**: Chicago-style at end (see `../docs/conventions.md`)
+- **Full bibliography**: Chicago-style at end (see `$PHILLIT_ROOT/docs/conventions.md`)
 
 ### 2. Strategic Positioning
 
@@ -131,7 +131,7 @@ Write to specified filename:
 
 For full draft mode, include:
 - Word count at end
-- Complete References section in Chicago Author-Date format (see `../docs/conventions.md`)
+- Complete References section in Chicago Author-Date format (see `$PHILLIT_ROOT/docs/conventions.md`)
 
 ## Writing Guidelines
 

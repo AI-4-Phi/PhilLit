@@ -20,7 +20,7 @@ import os
 import sys
 from typing import Any
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 # Add parent directory to path for rate_limiter import
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -365,7 +365,7 @@ def main():
     args = parser.parse_args()
 
     # Load .env file so keys are available even outside SessionStart
-    load_dotenv(override=True)
+    load_dotenv(find_dotenv(usecwd=True), override=True)
 
     # Run checks
     env_results = check_env_vars()

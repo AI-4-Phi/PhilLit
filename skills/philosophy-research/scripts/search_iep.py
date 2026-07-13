@@ -13,7 +13,7 @@ import argparse
 import os
 import sys
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 try:
     from .output import (
@@ -60,7 +60,7 @@ def output_error(query: str, error_type: str, message: str, exit_code: int = 2) 
 
 
 def main():
-    load_dotenv(override=True)  # must run before argparse defaults read os.environ
+    load_dotenv(find_dotenv(usecwd=True), override=True)  # must run before argparse defaults read os.environ
     parser = argparse.ArgumentParser(description="Search IEP via Brave API")
     parser.add_argument("query", help="Search terms")
     parser.add_argument("--limit", type=int, default=20, help="Max results (default: 20, max: 200)")

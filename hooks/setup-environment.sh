@@ -5,9 +5,11 @@
 # No venv build, no .env load, no package checks.
 set -e
 
-# Overridable list of fallback dirs to locate a Homebrew-installed uv. No-colon `=` so an
-# explicitly-empty value (PHILLIT_BREW_DIRS="") disables the fallback — used by tests.
-: "${PHILLIT_BREW_DIRS=/opt/homebrew/bin /usr/local/bin}"
+# Overridable list of fallback dirs to locate uv (Homebrew, uv's own installer).
+# No-colon `=` so an explicitly-empty value (PHILLIT_BREW_DIRS="") disables the
+# fallback — used by tests. Keep in sync with bin/phillit-run, which self-resolves
+# uv with the same list (hook processes never see $CLAUDE_ENV_FILE exports).
+: "${PHILLIT_BREW_DIRS=/opt/homebrew/bin /usr/local/bin $HOME/.local/bin}"
 
 # CLAUDE_ENV_FILE is only present during SessionStart; without it we cannot bridge.
 [ -n "${CLAUDE_ENV_FILE:-}" ] || exit 0

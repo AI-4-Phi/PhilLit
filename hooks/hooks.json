@@ -16,7 +16,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/validate_bib_write.py"
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/validate_bib_write.py || echo '{\"systemMessage\": \"PhilLit: .bib write-time validation could not run (uv failure) - the write was allowed unvalidated.\"}'"
           }
         ]
       },
@@ -25,7 +25,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/block_background_bash.py"
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/block_background_bash.py || echo '{\"systemMessage\": \"PhilLit: background-bash gate could not run (uv failure) - the call was allowed.\"}'"
           }
         ]
       }
@@ -36,7 +36,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/validate_bib_write.py"
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/validate_bib_write.py || echo '{\"systemMessage\": \"PhilLit: post-edit .bib validation could not run (uv failure) - the edit was not validated.\"}'"
           }
         ]
       }

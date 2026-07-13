@@ -30,7 +30,7 @@ import sys
 from pathlib import Path
 from typing import Optional
 
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 # Add philosophy-research scripts to path for imports
 PHIL_SCRIPTS = Path(__file__).parent.parent.parent / "philosophy-research" / "scripts"
@@ -529,7 +529,7 @@ def enrich_bibliography(
 
 
 def main():
-    load_dotenv(override=True)  # must run before argparse defaults read os.environ
+    load_dotenv(find_dotenv(usecwd=True), override=True)  # must run before argparse defaults read os.environ
     parser = argparse.ArgumentParser(
         description="Enrich BibTeX bibliography with abstracts"
     )

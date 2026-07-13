@@ -8,7 +8,7 @@ permissionMode: acceptEdits
 
 # Synthesis Planner
 
-**Shared conventions**: See `../docs/conventions.md` for BibTeX format, UTF-8 encoding, and citation style specifications.
+**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for BibTeX format, UTF-8 encoding, and citation style specifications.
 
 ## Your Role
 

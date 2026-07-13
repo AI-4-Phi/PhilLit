@@ -38,7 +38,7 @@ import sys
 from typing import Optional
 
 import requests
-from dotenv import load_dotenv
+from dotenv import find_dotenv, load_dotenv
 
 try:
     from .output import (
@@ -255,7 +255,7 @@ def get_citations(
 
 
 def main():
-    load_dotenv(override=True)  # must run before argparse defaults read os.environ
+    load_dotenv(find_dotenv(usecwd=True), override=True)  # must run before argparse defaults read os.environ
     parser = argparse.ArgumentParser(
         description="Traverse citations and references for a paper"
     )

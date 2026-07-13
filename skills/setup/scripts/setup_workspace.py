@@ -14,7 +14,7 @@ from pathlib import Path
 
 # Keys scripts read from .env; scaffolding pre-fills these from the shell environment.
 # Without pre-fill, the empty `KEY=` lines from .env.example would override real shell
-# values (every script calls load_dotenv(override=True)).
+# values (every script calls load_dotenv(find_dotenv(usecwd=True), override=True)).
 ENV_KEYS = ("S2_API_KEY", "CROSSREF_MAILTO", "OPENALEX_EMAIL", "BRAVE_API_KEY", "CORE_API_KEY")
 
 PHILLIT_RULES = {

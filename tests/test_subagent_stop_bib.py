@@ -207,6 +207,71 @@ class TestValidation:
         assert code == 0
 
 
+class TestGateFailurePolicy:
+    """Accuracy gates fail CLOSED and loud (CLAUDE.md gate-failure policy).
+
+    Review finding (2026-07-13): a validator/uv crash yields empty stdout, and
+    jq exits 0 on empty input — so the crash silently counted as valid BibTeX.
+    """
+
+    def test_validator_crash_blocks_not_allows(self, project):
+        # A .bib exists (content is irrelevant — the validator never runs), and
+        # uv is broken: the hook must block with a "crashed" reason, not allow.
+        (project / "reviews" / "test-review" / "d1.bib").write_text(
+            VALID_BIB, encoding="utf-8"
+        )
+        broken = project / "brokenbin"
+        broken.mkdir()
+        fake_uv = broken / "uv"
+        fake_uv.write_text(
+            "#!/usr/bin/env bash\necho 'uv: simulated venv build failure' >&2\nexit 2\n",
+            encoding="utf-8",
+        )
+        fake_uv.chmod(0o755)
+        env = {
+            **os.environ,
+            "CLAUDE_PROJECT_DIR": str(project),
+            "CLAUDE_PLUGIN_ROOT": str(REPO_ROOT),
+            "PHILLIT_UV": str(fake_uv),
+        }
+        proc = subprocess.run(
+            [BASH, str(SCRIPT)],
+            input=json.dumps(RESEARCHER),
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            env=env,
+        )
+        assert proc.returncode == 0, proc.stderr
+        out = json.loads(proc.stdout)
+        assert out["decision"] == "block"
+        assert "produced no output" in out["reason"]
+
+    def test_missing_jq_emits_visible_system_message(self, project):
+        # Without jq the hook cannot parse stdin (not even to scope the event),
+        # so it allows — but the skip must surface as a user-visible
+        # systemMessage, never as a silent stderr line on exit 0.
+        env = {
+            **os.environ,
+            "CLAUDE_PROJECT_DIR": str(project),
+            "CLAUDE_PLUGIN_ROOT": str(REPO_ROOT),
+            "PATH": "/nonexistent",  # no jq (bash builtins suffice up to the check)
+        }
+        proc = subprocess.run(
+            [BASH, str(SCRIPT)],
+            input="{}",
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            env=env,
+        )
+        assert proc.returncode == 0
+        out = json.loads(proc.stdout)
+        assert "jq" in out.get("systemMessage", ""), (
+            f"expected a user-visible systemMessage about jq, got: {proc.stdout}"
+        )
+
+
 class TestMetadataCleaning:
     def test_cleaning_summary_in_additional_context(self, project):
         review = project / "reviews" / "test-review"

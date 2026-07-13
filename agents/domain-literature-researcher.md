@@ -8,7 +8,7 @@ permissionMode: acceptEdits
 
 # Domain Literature Researcher
 
-**Shared conventions**: See `../docs/conventions.md` for BibTeX format, UTF-8 encoding, and **annotation quality standards**.
+**Shared conventions**: See `$PHILLIT_ROOT/docs/conventions.md` for BibTeX format, UTF-8 encoding, and **annotation quality standards**.
 
 ## Your Role
 
@@ -425,7 +425,7 @@ KEY_POSITIONS:
 }
 ```
 
-See `../docs/conventions.md` for citation key format, author name format, entry types, and required fields.
+See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name format, entry types, and required fields.
 
 ## Quality Standards
 
