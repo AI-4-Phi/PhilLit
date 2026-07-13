@@ -4,44 +4,15 @@
 **Status**: Deferred — revisit later. None of these are implemented; decisions are out of scope for now.
 **Origin**: Audit of PhilLit's Claude Code feature usage against current Claude Code capabilities (docs verified 2026-06-10: hooks.md, sub-agents.md, sandboxing.md, plugins.md at code.claude.com/docs).
 
-This document records improvement opportunities identified in the audit that were deliberately **not** acted on. Protocol-level hook fixes from the same audit were handled separately (see git history of `.claude/hooks/`).
+This document records improvement opportunities identified in the audit that were deliberately **not** acted on. Protocol-level hook fixes from the same audit were handled separately (see git history of `hooks/`, formerly `.claude/hooks/`).
 
 ---
 
-## 1. Package PhilLit as a Claude Code plugin (major, strategic)
+## 1. Package PhilLit as a Claude Code plugin — DONE (2026-07)
 
-### Current state
-
-PhilLit is distributed as "clone this repo and open Claude Code in it." Update notification is hand-rolled: `.claude/hooks/check-updates.sh` (~130 lines) detects the canonical remote, auto-adds `upstream` for forks, caches fetch results, and builds escaped JSON for `systemMessage`/`additionalContext`.
-
-### What plugins now offer
-
-Claude Code plugins bundle **skills + agents + hooks + MCP servers + settings** in one installable unit:
-
-- Install via marketplace (`/plugin install`) or git repo; `--plugin-dir` for development.
-- **Auto-update**: if the plugin tracks a git branch, users get updates automatically; with a `version` field in `plugin.json`, updates ship on version bumps. This replaces `check-updates.sh` entirely.
-- Plugin hooks and settings apply automatically when the plugin is enabled.
-- Namespacing: skills become `phillit:literature-review`, etc.
-- Since v2.1.157, plugins in `.claude/skills/` load automatically ("skills-directory plugins"), and `claude plugin init` scaffolds a manifest.
-
-The official docs' criteria for converting to a plugin — share with a community, version control and easy updates, same skills/agents across multiple projects — describe PhilLit's distribution model exactly. Users could run literature reviews in **any** project directory instead of working inside a clone of this repo.
-
-### Why it's deferred (real migration costs)
-
-- **Repo-rooted assumptions**: Python scripts, the `uv`-managed `.venv`, `.env` API keys, `reviews/` output, and `tests/` all assume the project root is the PhilLit repo. A plugin runs from `${CLAUDE_PLUGIN_ROOT}`, which is not the user's working directory.
-- **SessionStart hook rework**: `setup-environment.sh` would need to create/activate a venv keyed to the plugin dir (or `~/.venvs/phillit`), not `$(pwd)/.venv`. `$PYTHON` propagation via `CLAUDE_ENV_FILE` still works, but every hardcoded `"$CLAUDE_PROJECT_DIR"/.venv/...` path in `settings.json` hooks changes.
-- **Where do reviews go?** Today `reviews/` lives in the repo (gitignored). As a plugin, output would land in whatever project the user has open — arguably better, but conventions (`.active-review` pointer, scoped `Write(reviews/**)` permission) need rethinking.
-- **`.env` / API key location**: per-user config (e.g., `~/.phillit/.env`) instead of repo-root `.env`; `GETTING_STARTED.md` and `check_setup.py` change accordingly.
-- **Testing/CI**: `pytest tests/` and the dev workflow assume the repo layout; the dev loop (this repo) and the distribution artifact (plugin) would diverge.
-
-### Suggested path when revisited
-
-1. Prototype with `--plugin-dir` pointing at a restructured copy (manifest + `skills/` + `agents/` + `hooks/hooks.json`).
-2. Solve venv + `.env` location first; everything else is mechanical.
-3. Keep this repo as the dev source of truth; publish the plugin from it (marketplace or git). Delete `check-updates.sh` once plugin updates work.
+Implemented on the `plugin-conversion` branch: manifest + marketplace in `.claude-plugin/`, per-install venv via `bin/phillit-run` (uv), hooks in `hooks/hooks.json` with `.phillit/` marker gating, `/phillit:setup` for workspace scaffolding and permissions. Clean-install parity gate recorded in `known-issues/plugin-parity-gate.md`. Note: plugin auto-update is off by default for third-party marketplaces — updates ship on `plugin.json` version bumps via `/plugin update` (see CLAUDE.md "Releasing").
 
 ---
-
 ## 2. Bash sandboxing as the safety layer (medium, platform-constrained)
 
 **Also deferred** (was recommended for a separate decision alongside the plugin question).
@@ -94,6 +65,6 @@ SessionStart hooks can set a session title. When resuming an active review (`rev
 
 ## Revisit triggers
 
-- **Plugin**: when distribution friction (collaborators cloning/forking, update-check maintenance) outweighs migration cost, or when reviews need to live in users' own project directories.
+- **Plugin**: done (2026-07, `plugin-conversion` branch).
 - **Sandboxing**: when Windows support lands, or if the deny/ask layer proves insufficient in practice.
 - **Memory / prompt hooks / effort**: when iterating on review quality with evals in place.

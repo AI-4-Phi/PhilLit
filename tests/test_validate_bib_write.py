@@ -12,7 +12,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-HOOK = Path(__file__).parent.parent / ".claude" / "hooks" / "validate_bib_write.py"
+HOOK = Path(__file__).parent.parent / "hooks" / "validate_bib_write.py"
 
 VALID_BIB = """@article{frankfurt1971freedom,
   author = {Frankfurt, Harry G.},

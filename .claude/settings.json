@@ -1,89 +1,12 @@
 {
   "permissions": {
     "defaultMode": "default",
-    "deny": [
-      "Bash(sudo *)",
-      "Bash(dd *)",
-      "Bash(mkfs *)"
-    ],
+    "deny": ["Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)"],
     "allow": [
-      "Read",
-      "Grep",
-      "Glob",
-      "WebSearch",
-      "WebFetch",
-      "Bash",
-      "Write(reviews/**)",
-      "Edit(reviews/**)",
-      "Skill(literature-review)",
-      "Skill(philosophy-research)"
+      "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
+      "Write(reviews/**)", "Edit(reviews/**)",
+      "Skill(phillit:literature-review)", "Skill(phillit:philosophy-research)"
     ],
-    "ask": [
-      "Bash(rm *)",
-      "Bash(rmdir *)"
-    ]
-  },
-  "hooks": {
-    "SessionStart": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/setup-environment.sh"
-          }
-        ]
-      },
-      {
-        "matcher": "startup|resume|clear",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/check-updates.sh"
-          }
-        ]
-      }
-    ],
-    "PreToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || echo '{}'"
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block_background_bash.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/block_background_bash.py 2>/dev/null || echo '{}'"
-          }
-        ]
-      }
-    ],
-    "PostToolUse": [
-      {
-        "matcher": "Edit",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.venv/bin/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || \"$CLAUDE_PROJECT_DIR\"/.venv/Scripts/python \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/validate_bib_write.py 2>/dev/null || echo '{}'"
-          }
-        ]
-      }
-    ],
-    "SubagentStop": [
-      {
-        "matcher": "domain-literature-researcher",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/subagent_stop_bib.sh"
-          }
-        ]
-      }
-    ]
+    "ask": ["Bash(rm *)", "Bash(rmdir *)"]
   }
 }

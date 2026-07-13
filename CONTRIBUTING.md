@@ -8,13 +8,18 @@ PhilLit is a multi-agent system that generates academic literature reviews for p
 2. Set up your environment:
    ```bash
    uv sync          # installs all dependencies including dev (pytest)
-   $PYTHON .claude/skills/philosophy-research/scripts/check_setup.py
+   bash bin/phillit-run skills/philosophy-research/scripts/check_setup.py
    ```
-   See `GETTING_STARTED.md` for API key configuration and platform-specific details.
+   See `README.md` (Quick Start) and `.env.example` for API key configuration.
 3. Run the test suite to confirm everything works:
    ```bash
-   pytest tests/
+   uv run --locked pytest
    ```
+4. To try your changes as users experience them, load your checkout as the plugin in a scratch directory:
+   ```bash
+   claude --plugin-dir /path/to/your/PhilLit
+   ```
+   then run `/phillit:setup` there and request a review.
 
 ## What to Contribute
 
@@ -22,7 +27,7 @@ Anything that improves the project in line with its objectives—accuracy first,
 
 - **Bug fixes** — Broken API scripts, hook failures, cross-platform issues
 - **Agent and skill improvements** — Better prompts, search strategies, synthesis quality
-- **New academic source integrations** — Additional APIs in `.claude/skills/philosophy-research/`
+- **New academic source integrations** — Additional APIs in `skills/philosophy-research/`
 - **Hook and validation improvements** — Stricter BibTeX validation, better error handling
 - **Token efficiency** — Reducing API costs without sacrificing review quality
 - **Platform compatibility** — Fixing platform-specific issues, making the tool available on more systems
@@ -45,7 +50,7 @@ Open a [GitHub Issue](https://github.com/AI-4-Phi/PhilLit/issues). For bug repor
 1. Fork the repository
 2. Create a branch from `main` for your changes
 3. Make your changes
-4. Run `pytest tests/` and confirm all tests pass
+4. Run `uv run --locked pytest` and confirm all tests pass
 5. Open a pull request against `main`
 
 PRs are reviewed by the maintainers (Johannes Himmelreich and Marco Meyer). We aim to respond within a week.
@@ -54,12 +59,12 @@ PRs are reviewed by the maintainers (Johannes Himmelreich and Marco Meyer). We a
 
 - Keep PRs focused. One fix or feature per PR.
 - Follow the project principles below.
-- If adding a Python dependency, update all four locations listed under "Adding Python Dependencies" in `CLAUDE.md`.
-- If modifying agents or skills, test with an actual literature review run—not just unit tests.
+- If adding a Python dependency, update the locations listed under "Adding Python Dependencies" in `CLAUDE.md`.
+- If modifying agents or skills, test with an actual literature review run (Getting Started, step 4)—not just unit tests.
 
 ## Architecture
 
-The 6-phase workflow, agent definitions, and design patterns are documented in `.claude/docs/ARCHITECTURE.md`. Read this before modifying agents or skills.
+The 6-phase workflow, agent definitions, and design patterns are documented in `docs/ARCHITECTURE.md`. Read this before modifying agents or skills.
 
 ## License
 

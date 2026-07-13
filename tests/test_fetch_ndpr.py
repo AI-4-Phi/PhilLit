@@ -13,7 +13,7 @@ from unittest.mock import patch, MagicMock
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).parent.parent / ".claude" / "skills" / "philosophy-research" / "scripts"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "skills" / "philosophy-research" / "scripts"))
 
 import fetch_ndpr
 

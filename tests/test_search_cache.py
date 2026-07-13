@@ -15,7 +15,7 @@ import pytest
 
 # Import the module under test
 import sys
-sys.path.insert(0, str(Path(__file__).parent.parent / ".claude" / "skills" / "philosophy-research" / "scripts"))
+sys.path.insert(0, str(Path(__file__).parent.parent / "skills" / "philosophy-research" / "scripts"))
 
 from search_cache import (
     cache_key,

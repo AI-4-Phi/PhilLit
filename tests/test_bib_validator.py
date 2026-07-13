@@ -16,7 +16,7 @@ from pathlib import Path
 import pytest
 
 # Add hooks directory to path
-HOOKS_DIR = Path(__file__).parent.parent / ".claude" / "hooks"
+HOOKS_DIR = Path(__file__).parent.parent / "hooks"
 sys.path.insert(0, str(HOOKS_DIR))
 
 from bib_validator import (

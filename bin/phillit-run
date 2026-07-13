@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+# Single entry point for running bundled PhilLit Python scripts in the plugin's
+# locked uv project environment. Self-locating, so it works whether invoked with
+# $PHILLIT_ROOT (skill/agent prose) or ${CLAUDE_PLUGIN_ROOT} (hooks.json).
+#
+# Usage:
+#   bash phillit-run <root-relative-script> [args...]
+#   bash phillit-run --if-active <root-relative-script> [args...]
+#     --if-active: no-op (exit 0) unless the cwd is a PhilLit workspace (.phillit marker).
+#     Used by hooks so they stay silent in unrelated projects; checked BEFORE uv starts.
+set -euo pipefail
+
+if [ "${1:-}" = "--if-active" ]; then
+  shift
+  if [ ! -d "${CLAUDE_PROJECT_DIR:-$PWD}/.phillit" ]; then
+    exit 0
+  fi
+fi
+
+# Self-locate the plugin root (bin/.. = root).
+ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+
+# Resolve uv: $PHILLIT_UV -> PATH -> fallback install dirs. Self-resolution is
+# load-bearing: hook processes never see $CLAUDE_ENV_FILE exports, so the
+# bootstrap's PHILLIT_UV bridge reaches only Bash tool calls and subagents.
+# Keep the fallback list in sync with hooks/setup-environment.sh. No-colon `=`
+# so an explicitly-empty PHILLIT_BREW_DIRS disables the fallback (used by tests).
+: "${PHILLIT_BREW_DIRS=/opt/homebrew/bin /usr/local/bin $HOME/.local/bin}"
+UV="${PHILLIT_UV:-}"
+if [ -z "$UV" ] && command -v uv >/dev/null 2>&1; then
+  UV=uv
+fi
+if [ -z "$UV" ]; then
+  for d in $PHILLIT_BREW_DIRS; do
+    if [ -x "$d/uv" ]; then UV="$d/uv"; break; fi
+  done
+fi
+if [ -z "$UV" ]; then
+  echo "phillit-run: 'uv' not found on PATH or in: ${PHILLIT_BREW_DIRS:-<no fallback dirs>}. Install uv: https://docs.astral.sh/uv/getting-started/installation/" >&2
+  exit 127
+fi
+
+# Per-install env keyed by a checksum of the root path: the installed copy, a
+# --plugin-dir dev checkout, and different versions never share one venv. cksum is POSIX.
+KEY="$(printf '%s' "$ROOT" | cksum | cut -d' ' -f1)"
+
+if [ "$#" -eq 0 ]; then
+  echo "phillit-run: missing script path" >&2
+  exit 2
+fi
+script="$1"; shift
+
+# --no-dev: bundled scripts never need the dev (test) group, so the per-install
+# venv stays lean. Developers still get dev deps via `uv sync` / `uv run --locked pytest`.
+exec env UV_PROJECT_ENVIRONMENT="${HOME}/.venvs/phillit-plugin-${KEY}" \
+  "$UV" run --locked --no-dev --project "$ROOT" "$ROOT/$script" "$@"

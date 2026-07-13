@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-SCRIPT_PATH = Path(__file__).parent.parent / ".claude" / "skills" / "literature-review" / "scripts" / "lint_md.py"
+SCRIPT_PATH = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts" / "lint_md.py"
 
 
 class TestLintMarkdown:

@@ -41,18 +41,40 @@ PhilLit itself is free. Running it requires [Claude Code](https://docs.anthropic
 **What you need:**
 
 - [Claude Code](https://docs.anthropic.com/en/docs/claude-code) — the AI coding tool that runs PhilLit
-- A [Brave Search API key](https://brave.com/search/api/) (free tier available)
-- Optionally, a [Semantic Scholar API key](https://www.semanticscholar.org/product/api#api-key) (free) for better search results
+- [`uv`](https://docs.astral.sh/uv/getting-started/installation/) and [`jq`](https://jqlang.github.io/jq/download/) on your PATH — PhilLit runs its Python through `uv` and parses JSON with `jq`
+- A [Brave Search API key](https://brave.com/search/api/) (free tier) and, optionally, a [Semantic Scholar key](https://www.semanticscholar.org/product/api#api-key) for better search results
 
-Setup takes about 10 minutes. See [GETTING_STARTED.md](GETTING_STARTED.md) for step-by-step instructions.
+**1. Install the plugin** in Claude Code:
 
-**Once set up**, describe your topic and PhilLit does the rest (~45 minutes):
+```
+/plugin marketplace add AI-4-Phi/PhilLit
+/plugin install phillit@phillit
+```
+
+**2. Set up a working directory** — create or open the folder where your reviews will live, then run once:
+
+```
+/phillit:setup
+```
+
+This creates a `.phillit/` marker and a `.env` for your API keys, and merges PhilLit's permission rules into that directory's `.claude/settings.json` (see [Trust model](#trust-model)). Then add your keys to `.env`. If Claude Code asks whether you trust this folder, accept — the merged permission rules only take effect in trusted folders.
+
+**3. Request a review** — describe your topic and PhilLit does the rest (~45 minutes):
 
 ```
 I need a literature review on [topic].
 
 [Describe the topic in 1-5 paragraphs]
 ```
+
+**Updating**: plugins from third-party marketplaces do not auto-update by default. To get the newest version:
+
+```
+/plugin marketplace update phillit
+/plugin update phillit@phillit
+```
+
+Or enable auto-update for the phillit marketplace in the `/plugin` → Marketplaces tab to pick up new versions at startup.
 
 ## What does it look like?
 
@@ -70,10 +92,35 @@ I need a literature review on [topic].
 4. **Write** — Drafts each section of the review
 5. **Assemble** — Combines sections into a final document with a complete bibliography
 
+## Trust model
+
+PhilLit runs as a Claude Code plugin, so its skills, agents, and hooks execute with the same shell privileges as Claude Code itself.
+
+- **`/phillit:setup` writes only to the current directory.** It creates `.phillit/` and `.env`, and merges permission rules into `./.claude/settings.json` (backing up any existing file first). It never touches anything outside that folder.
+- **The merged rules grant broad `Bash`** (plus `Write`/`Edit` scoped to `reviews/`, and `deny`/`ask` rules for dangerous commands) **in that directory only**, so reviews run without a prompt on every command. Broad `Bash` is required because the research agents build many short shell commands that no finite allowlist can enumerate.
+- **PhilLit writes review output only to `./reviews/`** and pushes nothing anywhere. Searches hit public academic APIs using the keys in your `.env`.
+
+Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` instead. You still need the workspace marker that activates PhilLit's hooks — it is just an empty folder, so run `mkdir .phillit` in your working directory — plus a `.env` with your API keys (copy the plugin's `.env.example`; the plugin folder prints with `echo $PHILLIT_ROOT` in any Claude Code session):
+
+```json
+{
+  "permissions": {
+    "defaultMode": "default",
+    "deny": ["Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)"],
+    "allow": [
+      "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
+      "Write(reviews/**)", "Edit(reviews/**)",
+      "Skill(phillit:literature-review)", "Skill(phillit:philosophy-research)"
+    ],
+    "ask": ["Bash(rm *)", "Bash(rmdir *)"]
+  }
+}
+```
+
 ## Development
 
 - Instructions on contributing: `CONTRIBUTING.md`
-- Agent architecture: `.claude/docs/ARCHITECTURE.md`
+- Agent architecture: `docs/ARCHITECTURE.md`
 - Claude instructions: `CLAUDE.md`
 
 ### Output Structure

@@ -2,7 +2,7 @@
 
 **Observed**: 2026-02-10, during "What are data?" literature review (two separate runs)
 **Severity**: Medium (no data loss, but causes sustained 100% CPU and user confusion)
-**Status**: Open
+**Status**: Mitigated — Options D and E below are implemented: `hooks/block_background_bash.py` (PreToolUse on Bash, wired in `hooks/hooks.json`, marker-gated to `.phillit/` workspaces) hard-blocks `run_in_background` in subagents, and `fetch_sep.py` now uses a request timeout. The options text below is kept as the original analysis.
 
 ## Summary
 

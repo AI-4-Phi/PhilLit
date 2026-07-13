@@ -17,7 +17,7 @@ from typing import Optional
 # Paths
 # =============================================================================
 
-SCRIPTS_DIR = Path(__file__).parent.parent / ".claude" / "skills" / "philosophy-research" / "scripts"
+SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "philosophy-research" / "scripts"
 
 # Add scripts directory to path for imports
 if str(SCRIPTS_DIR) not in sys.path:

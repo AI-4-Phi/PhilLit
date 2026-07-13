@@ -1,0 +1,55 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/setup-environment.sh\""
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/validate_bib_write.py || echo '{\"systemMessage\": \"PhilLit: .bib write-time validation could not run (uv failure) - the write was allowed unvalidated.\"}'"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/block_background_bash.py || echo '{\"systemMessage\": \"PhilLit: background-bash gate could not run (uv failure) - the call was allowed.\"}'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/bin/phillit-run\" --if-active hooks/validate_bib_write.py || echo '{\"systemMessage\": \"PhilLit: post-edit .bib validation could not run (uv failure) - the edit was not validated.\"}'"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/subagent_stop_bib.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

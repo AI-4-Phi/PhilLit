@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 
 # Add script directory to path
-SCRIPT_DIR = Path(__file__).parent.parent / ".claude" / "skills" / "literature-review" / "scripts"
+SCRIPT_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
 from generate_bibliography import (

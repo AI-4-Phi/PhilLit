@@ -11,7 +11,7 @@ from pathlib import Path
 import pytest
 
 # Add script directory to path
-SCRIPTS_DIR = Path(__file__).parent.parent / ".claude" / "skills" / "philosophy-research" / "scripts"
+SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "philosophy-research" / "scripts"
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 from citation_context import (

@@ -6,7 +6,7 @@ from pathlib import Path
 
 import pytest
 
-SCRIPT_PATH = Path(__file__).parent.parent / ".claude" / "skills" / "literature-review" / "scripts" / "assemble_review.py"
+SCRIPT_PATH = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts" / "assemble_review.py"
 
 # Add script directory to path for unit tests
 sys.path.insert(0, str(SCRIPT_PATH.parent))
