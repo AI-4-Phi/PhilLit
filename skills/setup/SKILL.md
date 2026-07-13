@@ -14,10 +14,16 @@ only they can provide.
 1. **Open with what this is.** Before running anything, tell the user in 1–2 sentences,
    e.g.: "Let's set up PhilLit in this folder — a one-time step. I'll create the
    configuration for you; I'll only need your email address and one free API key."
-2. **Check uv and jq.** Run `command -v uv` and `command -v jq`. If either is absent,
-   give a one-line install instruction (uv: https://docs.astral.sh/uv/getting-started/installation/ ;
-   jq: `brew install jq` / `apt install jq` / `choco install jq`) and stop — `jq` is
-   required by the BibTeX-validation hook and is otherwise a silent clean-install failure.
+2. **Check the environment.** Run `echo "${PHILLIT_ROOT:-unset}"`, `command -v uv`, and
+   `command -v jq`.
+   - If `PHILLIT_ROOT` prints `unset`, the plugin was installed mid-session — its
+     environment bridge only runs at session start, so every later step would fail with a
+     cryptic "No such file or directory". Tell the user: "One quick step: please restart
+     Claude Code in this folder, then run /phillit:setup again." and stop.
+   - If uv or jq is absent, give a one-line install instruction (uv:
+     https://docs.astral.sh/uv/getting-started/installation/ ; jq: `brew install jq` /
+     `apt install jq` / `choco install jq`) and stop — `jq` is required by the
+     BibTeX-validation hook and is otherwise a silent clean-install failure.
 3. **Preview and ask consent.** Run:
    `bash "$PHILLIT_ROOT/bin/phillit-run" skills/setup/scripts/setup_workspace.py --plugin-root "$PHILLIT_ROOT" --dry-run`
    Then summarize what will happen in 2–3 short bullets — do not dump the settings JSON
@@ -45,10 +51,13 @@ only they can provide.
    and report in one line: "Setup complete — ask me for a literature review whenever you're
    ready", or exactly what is still missing and how to fix it.
 7. **Trust check.** Settings changes reload live, but Claude Code ignores the new `allow`
-   rules until the workspace is trusted. Check:
+   rules until the workspace is trusted. Check (both path forms: under a symlinked cwd —
+   OneDrive, `/var` → `/private/var` — `.claude.json` may key either):
    ```bash
    CFG="${CLAUDE_CONFIG_DIR:+$CLAUDE_CONFIG_DIR/.claude.json}"
-   jq -r --arg d "$PWD" '.projects[$d].hasTrustDialogAccepted // false' "${CFG:-$HOME/.claude.json}"
+   jq -r --arg d "$PWD" --arg p "$(pwd -P)" \
+     '(.projects[$d].hasTrustDialogAccepted // .projects[$p].hasTrustDialogAccepted // false)' \
+     "${CFG:-$HOME/.claude.json}"
    ```
    - If `true` (or the check itself fails): say nothing — permissions are already live.
    - If `false`: end the setup with this, prominently, as the final line:

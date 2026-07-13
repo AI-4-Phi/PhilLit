@@ -100,7 +100,7 @@ PhilLit runs as a Claude Code plugin, so its skills, agents, and hooks execute w
 - **The merged rules grant broad `Bash`** (plus `Write`/`Edit` scoped to `reviews/`, and `deny`/`ask` rules for dangerous commands) **in that directory only**, so reviews run without a prompt on every command. Broad `Bash` is required because the research agents build many short shell commands that no finite allowlist can enumerate.
 - **PhilLit writes review output only to `./reviews/`** and pushes nothing anywhere. Searches hit public academic APIs using the keys in your `.env`.
 
-Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` instead (you still need the `.phillit/` marker that `/phillit:setup` creates for PhilLit's hooks to activate):
+Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` instead. You still need the workspace marker that activates PhilLit's hooks — it is just an empty folder, so run `mkdir .phillit` in your working directory — plus a `.env` with your API keys (copy the plugin's `.env.example`):
 
 ```json
 {

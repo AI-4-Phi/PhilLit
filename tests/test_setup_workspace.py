@@ -25,6 +25,18 @@ def test_merge_dedupes_and_preserves_existing_order():
     assert merged["defaultMode"] == "acceptEdits"        # user's value preserved
 
 
+def test_merge_tolerates_string_valued_rule_list():
+    # A hand-edited settings.json may hold "allow": "Bash" (a bare string);
+    # list("Bash") would explode it into single characters.
+    existing = {"allow": "Bash", "deny": "Bash(sudo *)", "ask": None}
+    merged = sw.merge_permissions(existing, RULES)
+    assert merged["allow"][0] == "Bash"
+    assert "B" not in merged["allow"]
+    assert merged["deny"][0] == "Bash(sudo *)"
+    assert merged["deny"].count("Bash(sudo *)") == 1
+    assert merged["ask"] == RULES["ask"]
+
+
 def test_apply_creates_marker_and_scaffolds_env(tmp_path, monkeypatch):
     monkeypatch.delenv("S2_API_KEY", raising=False)
     plugin_root = tmp_path / "plugin"
@@ -85,6 +97,23 @@ def test_apply_merges_and_backs_up_existing_settings(tmp_path):
     settings = json.loads((ws / ".claude" / "settings.json").read_text(encoding="utf-8"))
     assert "Read" in settings["permissions"]["allow"]
     assert "Bash" in settings["permissions"]["allow"]
+
+
+def test_rerun_preserves_pristine_backup(tmp_path):
+    plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
+    (plugin_root / ".env.example").write_text("", encoding="utf-8")
+    ws = tmp_path / "ws"; (ws / ".claude").mkdir(parents=True)
+    pristine = json.dumps({"permissions": {"allow": ["Read"]}})
+    (ws / ".claude" / "settings.json").write_text(pristine, encoding="utf-8")
+
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+    bak = ws / ".claude" / "settings.json.bak"
+    assert bak.read_text(encoding="utf-8") == pristine
+
+    # Re-running setup must not overwrite the pristine pre-PhilLit backup
+    # with the already-merged settings.
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+    assert bak.read_text(encoding="utf-8") == pristine
 
 
 def test_malformed_settings_fails_closed(tmp_path):

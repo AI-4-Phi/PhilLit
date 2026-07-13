@@ -31,6 +31,12 @@ PHILLIT_RULES = {
 
 def _union(existing, new):
     """Existing items first (order preserved), then new items not already present."""
+    if existing is None:
+        existing = []
+    elif isinstance(existing, str):
+        # A hand-edited rule list may be a bare string; list() would explode
+        # it into single characters.
+        existing = [existing]
     out = list(existing)
     for item in new:
         if item not in out:
@@ -114,10 +120,13 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
         if filled:
             print(f"Pre-filled .env from environment: {', '.join(filled)}")
 
-    # 3. settings merge (back up an existing file, then atomic write)
+    # 3. settings merge (back up an existing file, then atomic write). Keep the
+    # first backup: a re-run must not overwrite the pristine pre-PhilLit settings
+    # with the already-merged file.
     settings_path.parent.mkdir(parents=True, exist_ok=True)
-    if settings_path.exists():
-        shutil.copyfile(settings_path, settings_path.with_suffix(".json.bak"))
+    backup_path = settings_path.with_suffix(".json.bak")
+    if settings_path.exists() and not backup_path.exists():
+        shutil.copyfile(settings_path, backup_path)
     _atomic_write_json(settings_path, new_settings)
     return 0
 
