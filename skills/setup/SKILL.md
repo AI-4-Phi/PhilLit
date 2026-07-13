@@ -54,5 +54,8 @@ only they can provide.
    - If `false`: end the setup with this, prominently, as the final line:
      **"One last step: restart Claude Code in this folder and choose 'Yes, I trust this
      folder' when asked — PhilLit's permissions only take effect after that."**
+8. **Updates tip.** Close with one sentence: "PhilLit doesn't update automatically — to
+   change that, open `/plugin`, go to Marketplaces, and turn on auto-update for phillit
+   (or run `/plugin update phillit@phillit` whenever you want the latest)."
 
 If Claude still prompts for every command later (or PhilLit runs non-interactively), the workspace trust dialog was likely declined — Claude Code ignores `allow` rules in `.claude/settings.json` in untrusted directories.
