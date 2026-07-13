@@ -5,7 +5,7 @@
     "allow": [
       "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
       "Write(reviews/**)", "Edit(reviews/**)",
-      "Skill(literature-review)", "Skill(philosophy-research)"
+      "Skill(phillit:literature-review)", "Skill(phillit:philosophy-research)"
     ],
     "ask": ["Bash(rm *)", "Bash(rmdir *)"]
   }

@@ -36,7 +36,6 @@
 - `.claude/settings.json` — Dev-clone permissions only (no hooks block; the plugin's hooks live in `hooks/hooks.json`). A convenience for working in this repo, not shipped behavior.
 - `.claude/settings.local.json` — Local settings overrides (gitignored).
 - `tests/` — pytest tests for API scripts and hooks.
-- `GETTING_STARTED.md` — Clone-and-run setup guide (the pre-plugin model; retired once the plugin parity gate passes).
 
 # Typical Usage: Literature Review
 

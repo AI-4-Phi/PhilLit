@@ -10,7 +10,7 @@ PhilLit is a multi-agent system that generates academic literature reviews for p
    uv sync          # installs all dependencies including dev (pytest)
    bash bin/phillit-run skills/philosophy-research/scripts/check_setup.py
    ```
-   See `GETTING_STARTED.md` for API key configuration and platform-specific details.
+   See `README.md` (Get started) and `.env.example` for API key configuration.
 3. Run the test suite to confirm everything works:
    ```bash
    uv run --locked pytest

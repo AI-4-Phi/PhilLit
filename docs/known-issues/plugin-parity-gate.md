@@ -8,14 +8,14 @@ Recorded results per assertion. `main` keeps clone-and-run until **every** asser
 
 | Step | Assertion | Status |
 |------|-----------|--------|
-| 1 | Local plugin-dir smoke (naming, `/phillit:setup`, researcher spawns) | **PASS** (headless; interactive UX pending) |
+| 1 | Local plugin-dir smoke (naming, `/phillit:setup`, researcher spawns) | **PASS** (headless + interactive, see Step 7) |
 | 2 | Hooks no-op outside a workspace | **PASS** (with positive control) |
 | 3 | Env bridge reaches subagents | **PASS** |
-| 4 | Deterministic content assertions | **PASS (headless)** — full pipeline end-to-end, all scripts exit 0, pybtex clean; permission-prompt count **pending interactive run** |
+| 4 | Deterministic content assertions | **PASS** (headless + interactive, see Step 7) |
 | 5 | Environment lifecycle | **PASS** |
-| 6 | Windows/Git Bash | **PENDING** (needs a Windows machine) |
-| 7 | Second-machine clean install | **PENDING** (needs a machine that never cloned the repo) |
-| 8 | Record + decide | this document |
+| 6 | Windows/Git Bash | **DEFERRED** (2026-07-13, user decision — no Windows machine available; revisit on first Windows bug report or hardware access) |
+| 7 | Second-machine clean install | **PASS** (2026-07-13, interactive user run) |
+| 8 | Record + decide | **Gate passed** (Step 6 explicitly deferred) — proceed with merge to `main` |
 
 ## Step 1 — Local plugin-dir smoke ✅ (headless)
 
@@ -65,16 +65,22 @@ Topic: "Moral responsibility gaps in automated decision-making", 1 domain, ≤8 
 - **Maintenance note:** the committed `uv.lock` was written by an older uv (lockfile `revision = 1`); current uv rewrites it to revision 3, churning the whole file on the next `uv lock`. Harmless (`--locked` accepts revision 1), but expect a big one-time diff.
 - Note: `phillit` itself is a virtual project (no `build-system`), so the venv holds dependencies only — the re-sync assertion is about lock validation + dependency sync, which is the behavior that matters.
 
-## Step 6 — Windows/Git Bash ⏳ PENDING
+## Step 6 — Windows/Git Bash — DEFERRED
 
-Needs a Windows machine (all local machines are macOS). `/plugin install`, `/phillit:setup`, one review end-to-end.
+Deferred 2026-07-13 (user decision): no Windows machine available, and macOS coverage is complete. The cross-platform conventions (forward-slash paths, `uv`-resolved interpreters, UTF-8 I/O) are enforced by tests; revisit on first Windows bug report or when a Windows machine is available. Assertion when run: `/plugin install`, `/phillit:setup`, one review end-to-end.
 
 The symlink risk named in the plan is **already eliminated**: `skills/literature-review/conventions.md` (the repo's only tracked symlink) was removed in commit `94a2ed0`; `SKILL.md` now references `$PHILLIT_ROOT/docs/conventions.md` directly, like the agents always did.
 
-## Step 7 — Second-machine clean install ⏳ PENDING
+## Step 7 — Second-machine clean install ✅ (2026-07-13)
 
-Teammate installs via `/plugin marketplace add` + `/plugin install phillit` on a machine that never cloned the repo; record prompt count and friction.
+Interactive clean install on a second machine that never cloned the repo, via
+`/plugin marketplace add https://github.com/AI-4-Phi/PhilLit#plugin-conversion` +
+`/plugin install phillit@phillit` (the `#branch` fragment is pre-merge only; plain
+`AI-4-Phi/PhilLit` once the plugin is on `main`). A fresh-session review ran end-to-end
+with no blocking friction. This interactive run also discharges the interactive
+assertions left pending in Steps 1 and 4 (trust dialog, `/phillit:setup` approval UX,
+permission prompts).
 
 ## Step 8 — Decision
 
-Blocked on Steps 6, 7, and the interactive assertions in Steps 1/4. Only when all pass: remove `.claude/` remnants, retire `GETTING_STARTED.md` clone-and-run, merge `plugin-conversion` → `main`.
+**Gate passed** (2026-07-13): Steps 1–5 and 7 pass; Step 6 (Windows) explicitly deferred by user decision. Proceed: retire `GETTING_STARTED.md` clone-and-run, merge `plugin-conversion` → `main`. Post-merge: second-machine installs that used the `#plugin-conversion` fragment should re-add the marketplace without it.
