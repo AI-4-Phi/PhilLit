@@ -8,6 +8,8 @@ allowed-tools: Bash, Read, Write, Grep, WebFetch
 
 Search and retrieve academic philosophy literature using structured APIs instead of WebSearch.
 
+**Setup check**: If the current directory has no `.phillit/` marker, PhilLit has not been set up here — offer to run `/phillit:setup` (a quick one-time step) before continuing.
+
 ## When to Use This Skill
 
 Use this skill when:

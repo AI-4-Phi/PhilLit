@@ -12,6 +12,11 @@ import shutil
 import sys
 from pathlib import Path
 
+# Keys scripts read from .env; scaffolding pre-fills these from the shell environment.
+# Without pre-fill, the empty `KEY=` lines from .env.example would override real shell
+# values (every script calls load_dotenv(override=True)).
+ENV_KEYS = ("S2_API_KEY", "CROSSREF_MAILTO", "OPENALEX_EMAIL", "BRAVE_API_KEY", "CORE_API_KEY")
+
 PHILLIT_RULES = {
     "defaultMode": "default",
     "deny": ["Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)"],
@@ -44,6 +49,26 @@ def merge_permissions(existing: dict, rules: dict) -> dict:
     return merged
 
 
+def scaffold_env(example: Path, env_path: Path) -> list[str]:
+    """Write .env from .env.example, pre-filling keys already set in the environment.
+
+    Returns the names of pre-filled keys (values are never printed).
+    """
+    filled = []
+    out_lines = []
+    for line in example.read_text(encoding="utf-8").splitlines():
+        stripped = line.strip()
+        key = stripped.split("=", 1)[0] if "=" in stripped and not stripped.startswith("#") else None
+        value = os.environ.get(key, "") if key in ENV_KEYS else ""
+        if value:
+            out_lines.append(f"{key}={value}")
+            filled.append(key)
+        else:
+            out_lines.append(line)
+    env_path.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
+    return filled
+
+
 def _atomic_write_json(path: Path, data: dict) -> None:
     tmp = path.with_suffix(path.suffix + ".tmp")
     tmp.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
@@ -69,9 +94,13 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
     new_settings = dict(existing_settings)
     new_settings["permissions"] = merged_perms
 
+    inherited = [k for k in ENV_KEYS if os.environ.get(k)]
+
     if dry_run:
         print("DRY RUN - would create .phillit/, scaffold .env, and write:")
         print(json.dumps(new_settings, indent=2))
+        if inherited:
+            print(f"Would pre-fill .env from environment: {', '.join(inherited)}")
         return 0
 
     # 1. marker
@@ -81,7 +110,9 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
     env_path = workspace / ".env"
     example = plugin_root / ".env.example"
     if not env_path.exists() and example.exists():
-        shutil.copyfile(example, env_path)
+        filled = scaffold_env(example, env_path)
+        if filled:
+            print(f"Pre-filled .env from environment: {', '.join(filled)}")
 
     # 3. settings merge (back up an existing file, then atomic write)
     settings_path.parent.mkdir(parents=True, exist_ok=True)

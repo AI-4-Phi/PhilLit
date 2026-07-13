@@ -88,6 +88,8 @@ Do NOT read agent definition files before invoking them. Agent definitions are f
 
 This phase validates conditions for subsequent phases to function.
 
+**Setup check**: If the current directory has no `.phillit/` marker, PhilLit has not been set up here — offer to run `/phillit:setup` (a quick one-time step) before continuing.
+
 1. Check if file `CLAUDE.local.md` contains instructions about environment setup. Follow these instructions for environment verification and all phases in the literature review workflow.
 
 2. Run the environment verification check:
