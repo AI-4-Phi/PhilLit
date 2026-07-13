@@ -1,7 +1,7 @@
 # Plugin-Conversion Review: Findings and Roadmap
 
 **Origin**: Comprehensive code review of `plugin-conversion` vs `main`, 2026-07-13 (workflow-backed, xhigh effort; 6 finder angles, every candidate independently verified — 15 confirmed root causes, 1 candidate refuted).
-**Status**: Merge to `main` is gated on Phases 1–3. Phase 4 may follow the merge.
+**Status**: Phases 1–3 complete (2026-07-13) — merge gate cleared; merged to `main` as plugin version 0.2.0. Phase 4 (findings 14, 15) remains open, post-merge.
 
 Theme: the conversion inverted the gate-failure directions — the accuracy-critical BibTeX gate failed *open* (silently) when its tooling crashed, while low-stakes helper hooks failed *closed* (bricking the workspace). The corrective policy is documented in `CLAUDE.md` ("Hooks and Python" → gate-failure policy).
 
