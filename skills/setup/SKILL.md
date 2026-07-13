@@ -22,3 +22,5 @@ Run this once in the directory where the user will create reviews.
 5. **Verify.** Run
    `bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/check_setup.py`
    and report the result.
+
+If Claude still prompts for every command (or PhilLit runs non-interactively), make sure the workspace trust dialog has been accepted — Claude Code ignores `allow` rules in `.claude/settings.json` in untrusted directories.
