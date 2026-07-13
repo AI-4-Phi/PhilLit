@@ -1,6 +1,6 @@
 ---
 name: philosophy-research
-description: Search philosophy literature across SEP, IEP, PhilPapers, Semantic Scholar, OpenAlex, CORE, arXiv, and NDPR. Supports paper discovery, citation traversal, content enrichment, and recommendations. Verifies citations via CrossRef.
+description: Search philosophy literature across SEP, IEP, PhilPapers, Semantic Scholar, OpenAlex, CORE, arXiv, and NDPR. Supports paper discovery, citation traversal, content enrichment, and recommendations. Verifies citations via CrossRef. Use when searching for philosophy papers or encyclopedia entries, verifying that a citation exists, or collecting literature for a review.
 allowed-tools: Bash, Read, Write, Grep, WebFetch
 ---
 

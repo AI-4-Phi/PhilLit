@@ -22,4 +22,6 @@ def test_marketplace_lists_one_plugin_sourced_at_repo_root():
     plugin = mk["plugins"][0]
     assert plugin["name"] == "phillit"
     assert plugin["source"] == "."
-    assert plugin["version"] == "0.1.0"
+    # Version is declared ONLY in plugin.json: a duplicate in marketplace.json is a
+    # stale-value trap (plugin.json silently wins), and update detection pins to it.
+    assert "version" not in plugin

@@ -44,5 +44,15 @@ only they can provide.
    `bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/check_setup.py`
    and report in one line: "Setup complete — ask me for a literature review whenever you're
    ready", or exactly what is still missing and how to fix it.
+7. **Trust check.** Settings changes reload live, but Claude Code ignores the new `allow`
+   rules until the workspace is trusted. Check:
+   ```bash
+   CFG="${CLAUDE_CONFIG_DIR:+$CLAUDE_CONFIG_DIR/.claude.json}"
+   jq -r --arg d "$PWD" '.projects[$d].hasTrustDialogAccepted // false' "${CFG:-$HOME/.claude.json}"
+   ```
+   - If `true` (or the check itself fails): say nothing — permissions are already live.
+   - If `false`: end the setup with this, prominently, as the final line:
+     **"One last step: restart Claude Code in this folder and choose 'Yes, I trust this
+     folder' when asked — PhilLit's permissions only take effect after that."**
 
-If Claude still prompts for every command (or PhilLit runs non-interactively), make sure the workspace trust dialog has been accepted — Claude Code ignores `allow` rules in `.claude/settings.json` in untrusted directories.
+If Claude still prompts for every command later (or PhilLit runs non-interactively), the workspace trust dialog was likely declined — Claude Code ignores `allow` rules in `.claude/settings.json` in untrusted directories.

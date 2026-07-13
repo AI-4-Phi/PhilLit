@@ -67,6 +67,15 @@ I need a literature review on [topic].
 [Describe the topic in 1-5 paragraphs]
 ```
 
+**Updating**: plugins from third-party marketplaces do not auto-update by default. To get the newest version:
+
+```
+/plugin marketplace update phillit
+/plugin update phillit@phillit
+```
+
+Or enable auto-update for the phillit marketplace in the `/plugin` → Marketplaces tab to pick up new versions at startup.
+
 ## What does it look like?
 
 <p align="center">

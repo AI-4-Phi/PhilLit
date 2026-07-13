@@ -91,6 +91,10 @@ API keys are required for literature searches (see `.env.example`).
 
 Run tests with: `uv run --locked pytest`
 
+## Releasing
+
+Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. Do not declare `version` in `marketplace.json` as well: `plugin.json` silently wins, so a duplicate is a stale-value trap.
+
 ## Principles
 
 - **Keep the repository lean** — Do not keep files only for reference if the functionality is already documented elsewhere (e.g., in `pyproject.toml`). Remove deprecated files rather than marking them as such.
