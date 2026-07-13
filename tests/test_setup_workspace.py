@@ -116,6 +116,36 @@ def test_rerun_preserves_pristine_backup(tmp_path):
     assert bak.read_text(encoding="utf-8") == pristine
 
 
+def test_rerun_after_fresh_install_creates_no_backup(tmp_path):
+    # No settings.json existed before setup: the pristine state is absence-of-file.
+    # A re-run must not back up PhilLit's own merged output as if it were pristine.
+    plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
+    (plugin_root / ".env.example").write_text("", encoding="utf-8")
+    ws = tmp_path / "ws"; ws.mkdir()
+
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+
+    assert not (ws / ".claude" / "settings.json.bak").exists()
+    settings = json.loads((ws / ".claude" / "settings.json").read_text(encoding="utf-8"))
+    assert "Bash" in settings["permissions"]["allow"]
+
+
+def test_non_dict_permissions_fails_closed(tmp_path):
+    plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
+    (plugin_root / ".env.example").write_text("", encoding="utf-8")
+    ws = tmp_path / "ws"; (ws / ".claude").mkdir(parents=True)
+    bad = ws / ".claude" / "settings.json"
+    original = json.dumps({"permissions": None})
+    bad.write_text(original, encoding="utf-8")
+
+    rc = sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+
+    assert rc == 2                                       # clean error, no traceback
+    assert bad.read_text(encoding="utf-8") == original   # untouched
+    assert not (ws / ".phillit").exists()                # nothing else written either
+
+
 def test_malformed_settings_fails_closed(tmp_path):
     plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
     (plugin_root / ".env.example").write_text("", encoding="utf-8")

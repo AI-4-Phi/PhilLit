@@ -95,6 +95,12 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
             print(f"ERROR: {settings_path} is not valid JSON ({e}). Aborting; nothing changed.",
                   file=sys.stderr)
             return 2
+    if not isinstance(existing_settings, dict) or not isinstance(
+        existing_settings.get("permissions", {}), dict
+    ):
+        print(f"ERROR: {settings_path} does not hold a JSON object with an object-valued "
+              f'"permissions" key. Aborting; nothing changed.', file=sys.stderr)
+        return 2
 
     merged_perms = merge_permissions(existing_settings.get("permissions", {}), PHILLIT_RULES)
     new_settings = dict(existing_settings)
@@ -120,14 +126,17 @@ def apply(workspace: Path, plugin_root: Path, dry_run: bool) -> int:
         if filled:
             print(f"Pre-filled .env from environment: {', '.join(filled)}")
 
-    # 3. settings merge (back up an existing file, then atomic write). Keep the
-    # first backup: a re-run must not overwrite the pristine pre-PhilLit settings
-    # with the already-merged file.
-    settings_path.parent.mkdir(parents=True, exist_ok=True)
-    backup_path = settings_path.with_suffix(".json.bak")
-    if settings_path.exists() and not backup_path.exists():
-        shutil.copyfile(settings_path, backup_path)
-    _atomic_write_json(settings_path, new_settings)
+    # 3. settings merge (back up an existing file, then atomic write). Idempotent:
+    # when nothing would change, neither rewrite the file nor make a backup — so a
+    # re-run never backs up PhilLit's own merged output as if it were pristine.
+    # Keep the first backup: a re-run must not overwrite the pristine pre-PhilLit
+    # settings with the already-merged file.
+    if not settings_path.exists() or new_settings != existing_settings:
+        settings_path.parent.mkdir(parents=True, exist_ok=True)
+        backup_path = settings_path.with_suffix(".json.bak")
+        if settings_path.exists() and not backup_path.exists():
+            shutil.copyfile(settings_path, backup_path)
+        _atomic_write_json(settings_path, new_settings)
     return 0
 
 
