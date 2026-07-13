@@ -57,7 +57,7 @@ PhilLit itself is free. Running it requires [Claude Code](https://docs.anthropic
 /phillit:setup
 ```
 
-This creates a `.phillit/` marker and a `.env` for your API keys, and merges PhilLit's permission rules into that directory's `.claude/settings.json` (see [Trust model](#trust-model)). Then add your keys to `.env`.
+This creates a `.phillit/` marker and a `.env` for your API keys, and merges PhilLit's permission rules into that directory's `.claude/settings.json` (see [Trust model](#trust-model)). Then add your keys to `.env`. If Claude Code asks whether you trust this folder, accept — the merged permission rules only take effect in trusted folders.
 
 **3. Request a review** — describe your topic and PhilLit does the rest (~45 minutes):
 

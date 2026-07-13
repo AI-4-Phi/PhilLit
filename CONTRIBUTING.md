@@ -10,11 +10,16 @@ PhilLit is a multi-agent system that generates academic literature reviews for p
    uv sync          # installs all dependencies including dev (pytest)
    bash bin/phillit-run skills/philosophy-research/scripts/check_setup.py
    ```
-   See `README.md` (Get started) and `.env.example` for API key configuration.
+   See `README.md` (Quick Start) and `.env.example` for API key configuration.
 3. Run the test suite to confirm everything works:
    ```bash
    uv run --locked pytest
    ```
+4. To try your changes as users experience them, load your checkout as the plugin in a scratch directory:
+   ```bash
+   claude --plugin-dir /path/to/your/PhilLit
+   ```
+   then run `/phillit:setup` there and request a review.
 
 ## What to Contribute
 
@@ -55,7 +60,7 @@ PRs are reviewed by the maintainers (Johannes Himmelreich and Marco Meyer). We a
 - Keep PRs focused. One fix or feature per PR.
 - Follow the project principles below.
 - If adding a Python dependency, update the locations listed under "Adding Python Dependencies" in `CLAUDE.md`.
-- If modifying agents or skills, test with an actual literature review run—not just unit tests.
+- If modifying agents or skills, test with an actual literature review run (Getting Started, step 4)—not just unit tests.
 
 ## Architecture
 

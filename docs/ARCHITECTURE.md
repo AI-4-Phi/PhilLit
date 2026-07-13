@@ -1,8 +1,14 @@
 # Literature Review Architecture
 
+## Plugin Packaging
+
+PhilLit ships as a Claude Code plugin, and this repository *is* the plugin: `.claude-plugin/` holds the manifest (`plugin.json`) and single-plugin marketplace (`marketplace.json`); `skills/`, `agents/`, and `hooks/` at the repo root are what Claude Code loads. When installed, everything is namespaced `phillit:` — skills are invoked as `/phillit:literature-review`, and subagents are spawned with `subagent_type: phillit:domain-literature-researcher` (the bare name fails).
+
+All bundled Python runs through `bin/phillit-run`, which execs `uv run --locked` against the repo's `pyproject.toml`/`uv.lock` in a per-install venv. Hooks are wired in `hooks/hooks.json` and marker-gated: the intrusive ones no-op unless the working directory is a PhilLit workspace (a `.phillit/` directory created by `/phillit:setup`). See `CLAUDE.md` ("Hooks and Python") for the wrapper and hook conventions.
+
 ## Orchestration: Skill-Based Design
 
-The literature review workflow is coordinated by the `/literature-review` skill (`skills/literature-review/SKILL.md`), which runs in the main conversation context.
+The literature review workflow is coordinated by the `literature-review` skill (`skills/literature-review/SKILL.md`), which runs in the main conversation context.
 
 **Why a skill, not a subagent?**
 - Subagents cannot spawn other subagents (Claude Code constraint)
@@ -14,7 +20,7 @@ The literature review workflow is coordinated by the `/literature-review` skill 
 ```
 User request
     ↓
-/literature-review skill (main conversation, has Task access)
+/phillit:literature-review skill (main conversation, has Task access)
     ↓ Task tool
     ├── literature-review-planner (subagent)
     ├── domain-literature-researcher ×N (subagents)
@@ -201,15 +207,27 @@ skills/philosophy-research/
     ├── output.py                         # Shared output utilities
     └── check_setup.py                    # Environment verification
 
+skills/setup/
+├── SKILL.md                              # /phillit:setup workspace scaffolding
+└── scripts/
+    └── setup_workspace.py                # Creates .phillit/ + .env; merges PHILLIT_RULES into .claude/settings.json
+
 hooks/
-├── setup-environment.sh                  # SessionStart: activate venv, load .env
-├── check-updates.sh                      # SessionStart (startup|resume|clear): upstream update notice
-├── subagent_stop_bib.sh                  # SubagentStop (domain-literature-researcher): validate BibTeX
+├── hooks.json                            # Hook wiring (single source of truth)
+├── setup-environment.sh                  # SessionStart: thin bootstrap — bridge PHILLIT_ROOT/PHILLIT_UV into CLAUDE_ENV_FILE
+├── subagent_stop_bib.sh                  # SubagentStop: validate researcher BibTeX, clean metadata (self-scoped to .phillit workspaces)
 ├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
 ├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
 ├── bib_validator.py                      # BibTeX validation logic
 ├── metadata_validator.py                 # Metadata provenance validation
 └── metadata_cleaner.py                   # Metadata year/type cleanup
+
+bin/
+└── phillit-run                           # uv wrapper: runs bundled Python in the per-install venv
+
+.claude-plugin/
+├── plugin.json                           # Plugin manifest (bump version per release)
+└── marketplace.json                      # Single-plugin marketplace
 
 agents/
 ├── literature-review-planner.md          # Decomposes research into domains

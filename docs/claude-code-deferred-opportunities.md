@@ -4,7 +4,7 @@
 **Status**: Deferred — revisit later. None of these are implemented; decisions are out of scope for now.
 **Origin**: Audit of PhilLit's Claude Code feature usage against current Claude Code capabilities (docs verified 2026-06-10: hooks.md, sub-agents.md, sandboxing.md, plugins.md at code.claude.com/docs).
 
-This document records improvement opportunities identified in the audit that were deliberately **not** acted on. Protocol-level hook fixes from the same audit were handled separately (see git history of `.claude/hooks/`).
+This document records improvement opportunities identified in the audit that were deliberately **not** acted on. Protocol-level hook fixes from the same audit were handled separately (see git history of `hooks/`, formerly `.claude/hooks/`).
 
 ---
 
@@ -65,6 +65,6 @@ SessionStart hooks can set a session title. When resuming an active review (`rev
 
 ## Revisit triggers
 
-- **Plugin**: when distribution friction (collaborators cloning/forking, update-check maintenance) outweighs migration cost, or when reviews need to live in users' own project directories.
+- **Plugin**: done (2026-07, `plugin-conversion` branch).
 - **Sandboxing**: when Windows support lands, or if the deny/ask layer proves insufficient in practice.
 - **Memory / prompt hooks / effort**: when iterating on review quality with evals in place.
