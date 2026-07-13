@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -11,7 +12,8 @@ def _load(rel):
 def test_plugin_json_has_required_fields():
     m = _load(".claude-plugin/plugin.json")
     assert m["name"] == "phillit"
-    assert m["version"] == "0.1.0"
+    # Shape only, not a pinned value: the version bumps with every release.
+    assert re.fullmatch(r"\d+\.\d+\.\d+", m["version"])
     assert m["description"]
 
 
