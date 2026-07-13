@@ -4,6 +4,8 @@ Recorded results per assertion. `main` keeps clone-and-run until **every** asser
 
 **Environment for headless runs (2026-07-13):** macOS (dove), Claude Code CLI 2.1.207, uv 0.8+, dev checkout at `~/github-repos/PhilLit` loaded via `--plugin-dir`, sessions run headless (`claude -p`). Headless runs validate *mechanics*, not the interactive approval UX — permission modes were `acceptEdits` with a scoped `--allowedTools` list, so prompt counts and the trust dialog remain interactive-only assertions.
 
+> **Method caveat (review finding 7) and re-run:** the original Steps 1–5 pointed `--plugin-dir` at the *dev checkout*, so the repo-root `.env` masked the workspace-`.env` loading bug (finding 1) and hook-process env resolution (finding 4) was never exercised. After the Phase 1 fixes, the gate was **re-run 2026-07-13 with a hardened method** — see "Phase 2 re-run" at the end. All assertions pass.
+
 ## Status summary
 
 | Step | Assertion | Status |
@@ -84,3 +86,20 @@ permission prompts).
 ## Step 8 — Decision
 
 **Gate passed** (2026-07-13): Steps 1–5 and 7 pass; Step 6 (Windows) explicitly deferred by user decision. Proceed: retire `GETTING_STARTED.md` clone-and-run, merge `plugin-conversion` → `main`. Post-merge: second-machine installs that used the `#plugin-conversion` fragment should re-add the marketplace without it.
+
+## Phase 2 re-run — hardened method (2026-07-13, post-Phase-1 fixes)
+
+Addresses review finding 7. Same machine/CLI as above; every check ran against a **plugin copy outside the repo** (`git archive HEAD | tar -x` into a scratch dir — tracked files only, exec bits preserved, no gitignored `.env`), from a scratch **workspace** with a `.phillit/` marker and a `.env` whose values deliberately conflict with the launching shell's env.
+
+| Check | Method | Result |
+|-------|--------|--------|
+| Workspace `.env` loads and wins over shell env (finding 1) | `check_setup.py --json` via the wrapper; shell exported `CORE_API_KEY=shellBBBB2222`, workspace `.env` had `wsenvAAAA1111` | **PASS** — preview `wsen...1111`; shell-only key stays visible when absent from `.env`; `.env` overrides even an empty-string shell export |
+| Hook process self-resolves uv (finding 4) | Exact `hooks.json` commands run via `env -i` — no `CLAUDE_ENV_FILE`/`PHILLIT_UV`, PATH without any uv | **PASS** — PreToolUse denies a malformed `.bib` write, allows a valid one; SubagentStop blocks a malformed bib |
+| Gate-failure policy | `PHILLIT_UV=/nonexistent/uv` (broken uv) | **PASS** — SubagentStop fails **closed** (block, "produced no output … crashed" + stderr tail); PreToolUse fails **open** with the loud `systemMessage` fallback |
+| jq absent (finding 10) | `PATH=/var/empty` (note: macOS 15+ ships `/usr/bin/jq`, so merely stripping Homebrew from PATH does *not* simulate a jq-less host) | **PASS** — loud `systemMessage` "validation was SKIPPED", exit 0; also pinned by `test_missing_jq_emits_visible_system_message` |
+| Real session: bridge + `.env` + live Write hook | Headless `claude -p --plugin-dir <copy>` from the workspace, shell `CORE_API_KEY` conflicting | **PASS** — `PHILLIT_ROOT` = copy path in Bash tool calls; `check_setup.py` reports the workspace `.env` value; malformed `.bib` Write blocked, file absent after session |
+| Real session: hook works with uv off PATH | Same, launched with `PATH=$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin` (no Homebrew) | **PASS** — `command -v uv` fails in-session, yet the PreToolUse hook still blocks the malformed write (wrapper fallback-dir resolution inside a real hook process) |
+| Real session: SubagentStop researcher gate | Pre-placed malformed `stray.bib` at workspace root, valid bib in review dir, spawned `phillit:domain-literature-researcher` told to just finish | **PASS** — stop blocked; subagent quoted "BibTeX syntax error: … premature end of file"; `stray.bib` checksum unchanged |
+| Control: no `.phillit` marker | Same malformed write from a marker-less scratch dir | **PASS** — write lands byte-for-byte (hooks no-op) |
+
+Headless invocation notes for reproducing: pass the prompt on **stdin** (`--allowedTools` is variadic and swallows a trailing positional prompt), and `env -u ANTHROPIC_API_KEY` if the shell exports one (it would silently take auth precedence over the claude.ai login).
