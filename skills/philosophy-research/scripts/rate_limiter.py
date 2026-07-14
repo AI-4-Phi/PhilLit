@@ -29,7 +29,6 @@ For retry logic with exponential backoff:
 """
 
 import random
-import tempfile
 import time
 from pathlib import Path
 from typing import Optional
@@ -52,8 +51,10 @@ class RateLimiter:
     callers queue behind it.
     """
 
-    # Lock file directory - use system temp dir for cross-platform compatibility
-    LOCK_DIR = Path(tempfile.gettempdir()) / "philosophy_research_ratelimits"
+    # Lock file directory - per-user, under home: a world-shared temp dir breaks
+    # multi-user hosts (PermissionError on another user's lock files) and invites
+    # name-squatting.
+    LOCK_DIR = Path.home() / ".cache" / "phillit" / "ratelimits"
 
     def __init__(self, api_name: str, min_interval: float):
         """
@@ -65,7 +66,7 @@ class RateLimiter:
         """
         self.api_name = api_name
         self.min_interval = min_interval
-        self.LOCK_DIR.mkdir(exist_ok=True)
+        self.LOCK_DIR.mkdir(parents=True, exist_ok=True)
         self.lock_file = self.LOCK_DIR / f".ratelimit_{api_name}.lock"
         self._last_wait_time: Optional[float] = None
 
@@ -301,7 +302,7 @@ def list_active_limiters() -> list[str]:
     Returns:
         List of API names with active lock files
     """
-    lock_dir = Path(tempfile.gettempdir()) / "philosophy_research_ratelimits"
+    lock_dir = RateLimiter.LOCK_DIR
     if not lock_dir.exists():
         return []
 
@@ -336,7 +337,7 @@ def clear_all_limiters() -> int:
     Returns:
         Number of lock files removed
     """
-    lock_dir = Path(tempfile.gettempdir()) / "philosophy_research_ratelimits"
+    lock_dir = RateLimiter.LOCK_DIR
     if not lock_dir.exists():
         return 0
 

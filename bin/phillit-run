@@ -5,17 +5,9 @@
 #
 # Usage:
 #   bash phillit-run <root-relative-script> [args...]
-#   bash phillit-run --if-active <root-relative-script> [args...]
-#     --if-active: no-op (exit 0) unless the cwd is a PhilLit workspace (.phillit marker).
-#     Used by hooks so they stay silent in unrelated projects; checked BEFORE uv starts.
+# (Per-call hooks are marker-gated and needle-filtered by hooks/fast_gate.sh
+# BEFORE this wrapper — and uv — ever starts.)
 set -euo pipefail
-
-if [ "${1:-}" = "--if-active" ]; then
-  shift
-  if [ ! -d "${CLAUDE_PROJECT_DIR:-$PWD}/.phillit" ]; then
-    exit 0
-  fi
-fi
 
 # Self-locate the plugin root (bin/.. = root).
 ROOT="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"

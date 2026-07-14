@@ -17,14 +17,24 @@ import pytest
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent / "skills" / "philosophy-research" / "scripts"))
 
+import search_cache
 from search_cache import (
     cache_key,
     get_cache,
     put_cache,
     clear_cache,
     cache_stats,
-    CACHE_DIR,
 )
+
+# Captured at import time, BEFORE the autouse isolation fixture (conftest)
+# monkeypatches search_cache.CACHE_DIR to tmp_path.
+SHIPPED_CACHE_DIR = search_cache.CACHE_DIR
+
+
+def test_cache_dir_is_per_user():
+    """A world-shared temp dir breaks multi-user hosts (PermissionError on
+    another user's cache files, name-squatting); the cache lives under home."""
+    assert SHIPPED_CACHE_DIR.is_relative_to(Path.home())
 
 
 class TestCacheKey:
@@ -63,7 +73,7 @@ class TestCacheKey:
 class TestPutGetCache:
     """Tests for cache storage and retrieval."""
 
-    def test_put_and_get_simple(self, clean_cache):
+    def test_put_and_get_simple(self):
         """Should store and retrieve simple data."""
         key = cache_key(source="test", query="simple")
         data = {"results": [1, 2, 3], "count": 3}
@@ -72,7 +82,7 @@ class TestPutGetCache:
         retrieved = get_cache(key)
         assert retrieved == data
 
-    def test_put_and_get_complex(self, clean_cache):
+    def test_put_and_get_complex(self):
         """Should store and retrieve complex nested data."""
         key = cache_key(source="test", query="complex")
         data = {
@@ -88,29 +98,26 @@ class TestPutGetCache:
         retrieved = get_cache(key)
         assert retrieved == data
 
-    def test_get_nonexistent_returns_none(self, clean_cache):
+    def test_get_nonexistent_returns_none(self):
         """Getting non-existent key should return None."""
         key = cache_key(source="test", query="nonexistent")
         assert get_cache(key) is None
 
-    def test_put_creates_cache_dir(self, clean_cache):
+    def test_put_creates_cache_dir(self):
         """put_cache should create cache directory if needed."""
-        # Remove cache dir if exists
-        if CACHE_DIR.exists():
-            for f in CACHE_DIR.glob("*"):
-                f.unlink()
-            CACHE_DIR.rmdir()
+        # Runtime lookups must use the (isolation-patched) module attribute.
+        assert not search_cache.CACHE_DIR.exists()
 
         key = cache_key(source="test", query="create_dir")
         put_cache(key, {"test": True})
 
-        assert CACHE_DIR.exists()
+        assert search_cache.CACHE_DIR.exists()
 
 
 class TestCacheTTL:
     """Tests for cache TTL (time-to-live) behavior."""
 
-    def test_fresh_cache_returned(self, clean_cache):
+    def test_fresh_cache_returned(self):
         """Fresh cache entries should be returned."""
         key = cache_key(source="test", query="fresh")
         put_cache(key, {"fresh": True})
@@ -119,7 +126,7 @@ class TestCacheTTL:
         result = get_cache(key)
         assert result == {"fresh": True}
 
-    def test_stale_cache_returns_none(self, clean_cache):
+    def test_stale_cache_returns_none(self):
         """Stale cache entries should return None."""
         key = cache_key(source="test", query="stale")
         put_cache(key, {"stale": True})
@@ -128,12 +135,12 @@ class TestCacheTTL:
         result = get_cache(key, ttl=0)
         assert result is None
 
-    def test_stale_cache_removed(self, clean_cache):
+    def test_stale_cache_removed(self):
         """Stale cache entries should be removed from disk."""
         key = cache_key(source="test", query="stale_remove")
         put_cache(key, {"data": True})
 
-        cache_file = CACHE_DIR / f"{key}.pkl"
+        cache_file = search_cache.CACHE_DIR / f"{key}.pkl"
         assert cache_file.exists()
 
         # Access with expired TTL
@@ -146,7 +153,7 @@ class TestCacheTTL:
 class TestClearCache:
     """Tests for cache clearing."""
 
-    def test_clear_all(self, clean_cache):
+    def test_clear_all(self):
         """clear_cache() should remove all entries."""
         # Add some entries
         put_cache(cache_key(source="s2", query="1"), {"a": 1})
@@ -161,7 +168,7 @@ class TestClearCache:
         assert get_cache(cache_key(source="openalex", query="2")) is None
         assert get_cache(cache_key(source="arxiv", query="3")) is None
 
-    def test_clear_by_source(self, clean_cache):
+    def test_clear_by_source(self):
         """clear_cache(source) should only remove entries for that source."""
         put_cache(cache_key(source="s2", query="1"), {"a": 1})
         put_cache(cache_key(source="s2", query="2"), {"b": 2})
@@ -177,7 +184,7 @@ class TestClearCache:
         # OpenAlex entry should remain
         assert get_cache(cache_key(source="openalex", query="3")) == {"c": 3}
 
-    def test_clear_empty_cache(self, clean_cache):
+    def test_clear_empty_cache(self):
         """Clearing empty cache should return 0."""
         count = clear_cache()
         assert count == 0
@@ -186,13 +193,13 @@ class TestClearCache:
 class TestCacheStats:
     """Tests for cache statistics."""
 
-    def test_stats_empty_cache(self, clean_cache):
+    def test_stats_empty_cache(self):
         """Stats for empty cache should show zero entries."""
         stats = cache_stats()
         assert stats["entry_count"] == 0
         assert stats["total_size_bytes"] == 0
 
-    def test_stats_with_entries(self, clean_cache):
+    def test_stats_with_entries(self):
         """Stats should reflect actual cache contents."""
         put_cache(cache_key(source="test", query="1"), {"data": "a" * 100})
         put_cache(cache_key(source="test", query="2"), {"data": "b" * 200})
@@ -202,7 +209,7 @@ class TestCacheStats:
         assert stats["entry_count"] == 2
         assert stats["total_size_bytes"] > 0
 
-    def test_stats_includes_timestamps(self, clean_cache):
+    def test_stats_includes_timestamps(self):
         """Stats should include age information."""
         put_cache(cache_key(source="test", query="1"), {"data": True})
 
@@ -216,7 +223,7 @@ class TestCacheStats:
 class TestCacheEdgeCases:
     """Tests for edge cases and error handling."""
 
-    def test_cache_handles_none_values(self, clean_cache):
+    def test_cache_handles_none_values(self):
         """Known limitation: caching None is unsupported.
 
         get_cache() returns None for both a cache miss and a cached None value,
@@ -228,20 +235,20 @@ class TestCacheEdgeCases:
         put_cache(key, None)
         assert get_cache(key) is None  # Indistinguishable from cache miss
 
-    def test_cache_handles_empty_list(self, clean_cache):
+    def test_cache_handles_empty_list(self):
         """Cache should handle empty lists."""
         key = cache_key(source="test", query="empty")
         put_cache(key, [])
         assert get_cache(key) == []
 
-    def test_cache_handles_unicode(self, clean_cache):
+    def test_cache_handles_unicode(self):
         """Cache should handle unicode strings."""
         key = cache_key(source="test", query="unicode")
         data = {"title": "Über die Freiheit", "author": "Müller"}
         put_cache(key, data)
         assert get_cache(key) == data
 
-    def test_cache_key_with_special_chars(self, clean_cache):
+    def test_cache_key_with_special_chars(self):
         """Cache key generation should handle special characters."""
         # Should not raise
         key = cache_key(source="test", query="free will & moral responsibility")
