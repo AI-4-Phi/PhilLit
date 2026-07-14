@@ -215,6 +215,7 @@ skills/setup/
 hooks/
 ├── hooks.json                            # Hook wiring (single source of truth)
 ├── setup-environment.sh                  # SessionStart: thin bootstrap — bridge PHILLIT_ROOT/PHILLIT_UV into CLAUDE_ENV_FILE
+├── fast_gate.sh                          # Shell pre-filter for per-call gates: .phillit marker + stdin needle before uv starts
 ├── subagent_stop_bib.sh                  # SubagentStop: validate researcher BibTeX, clean metadata (self-scoped to .phillit workspaces)
 ├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
 ├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents

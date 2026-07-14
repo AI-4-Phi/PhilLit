@@ -40,6 +40,11 @@ class TestRateLimiter:
         limiter = RateLimiter("test_api", 0.1)
         assert limiter.LOCK_DIR.exists()
 
+    def test_lock_dir_is_per_user(self):
+        """A world-shared temp dir breaks multi-user hosts (PermissionError on
+        another user's lock files, name-squatting); locks live under home."""
+        assert RateLimiter.LOCK_DIR.is_relative_to(Path.home())
+
     def test_first_request_no_wait(self):
         """First request should not wait."""
         limiter = RateLimiter("test_first", 1.0)

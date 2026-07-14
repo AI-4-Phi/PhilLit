@@ -21,13 +21,14 @@ import hashlib
 import json
 import os
 import pickle
-import tempfile
 import time
 from pathlib import Path
 from typing import Any, Optional
 
-# Cache configuration - use system temp dir for cross-platform compatibility
-CACHE_DIR = Path(tempfile.gettempdir()) / "philosophy_research_cache"
+# Cache configuration - per-user, under home: a world-shared temp dir breaks
+# multi-user hosts (PermissionError on another user's cache files) and invites
+# name-squatting. Home also survives reboots, matching the 7-day TTL.
+CACHE_DIR = Path.home() / ".cache" / "phillit" / "search_cache"
 DEFAULT_TTL = 7 * 24 * 60 * 60  # 7 days in seconds
 
 

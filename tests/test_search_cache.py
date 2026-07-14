@@ -27,6 +27,12 @@ from search_cache import (
 )
 
 
+def test_cache_dir_is_per_user():
+    """A world-shared temp dir breaks multi-user hosts (PermissionError on
+    another user's cache files, name-squatting); the cache lives under home."""
+    assert CACHE_DIR.is_relative_to(Path.home())
+
+
 class TestCacheKey:
     """Tests for cache key generation."""
 

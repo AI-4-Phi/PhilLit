@@ -48,46 +48,6 @@ def test_wrapper_builds_locked_project_command(tmp_path):
     assert uvpe_line.startswith(f"UVPE={tmp_path}/.venvs/phillit-plugin-")
 
 
-def test_if_active_noops_without_marker(tmp_path):
-    root = tmp_path / "plugin"
-    (root / "bin").mkdir(parents=True)
-    (root / "hooks").mkdir()
-    (root / "bin" / "phillit-run").write_text(WRAPPER.read_text(encoding="utf-8"), encoding="utf-8")
-    (root / "hooks" / "h.py").write_text("print('ran')", encoding="utf-8")
-    _fake_uv(tmp_path)
-    proj = tmp_path / "someproject"
-    proj.mkdir()
-
-    result = subprocess.run(
-        ["bash", str(root / "bin" / "phillit-run"), "--if-active", "hooks/h.py"],
-        capture_output=True, text=True,
-        env={**os.environ, "PHILLIT_UV": str(tmp_path / "fakebin" / "uv"), "HOME": str(tmp_path),
-             "CLAUDE_PROJECT_DIR": str(proj)},
-    )
-    assert result.returncode == 0
-    assert result.stdout.strip() == ""  # no uv invocation
-
-
-def test_if_active_runs_with_marker(tmp_path):
-    root = tmp_path / "plugin"
-    (root / "bin").mkdir(parents=True)
-    (root / "hooks").mkdir()
-    (root / "bin" / "phillit-run").write_text(WRAPPER.read_text(encoding="utf-8"), encoding="utf-8")
-    (root / "hooks" / "h.py").write_text("print('ran')", encoding="utf-8")
-    _fake_uv(tmp_path)
-    proj = tmp_path / "workspace"
-    (proj / ".phillit").mkdir(parents=True)
-
-    result = subprocess.run(
-        ["bash", str(root / "bin" / "phillit-run"), "--if-active", "hooks/h.py"],
-        capture_output=True, text=True,
-        env={**os.environ, "PHILLIT_UV": str(tmp_path / "fakebin" / "uv"), "HOME": str(tmp_path),
-             "CLAUDE_PROJECT_DIR": str(proj)},
-    )
-    assert result.returncode == 0
-    assert "ARGS=run --locked --no-dev --project" in result.stdout
-
-
 def test_wrapper_is_executable():
     # Claude Code puts the plugin's bin/ on PATH in plugin sessions; without the
     # exec bit, direct `phillit-run ...` fails with "permission denied" and the
