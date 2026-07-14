@@ -31,6 +31,10 @@ from rate_limiter import (
     LIMITERS,
 )
 
+# Captured at import time, BEFORE the autouse isolation fixture (conftest)
+# monkeypatches RateLimiter.LOCK_DIR to tmp_path.
+SHIPPED_LOCK_DIR = RateLimiter.LOCK_DIR
+
 
 class TestRateLimiter:
     """Tests for the RateLimiter class."""
@@ -43,7 +47,7 @@ class TestRateLimiter:
     def test_lock_dir_is_per_user(self):
         """A world-shared temp dir breaks multi-user hosts (PermissionError on
         another user's lock files, name-squatting); locks live under home."""
-        assert RateLimiter.LOCK_DIR.is_relative_to(Path.home())
+        assert SHIPPED_LOCK_DIR.is_relative_to(Path.home())
 
     def test_first_request_no_wait(self):
         """First request should not wait."""

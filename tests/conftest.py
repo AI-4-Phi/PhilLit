@@ -23,10 +23,10 @@ from test_utils import (
     run_script,
 )
 
-# Import the modules' own dir constants so cleanup stays in lockstep with the code
+# Import the modules themselves so the isolation fixture stays in lockstep with the code
 sys.path.insert(0, str(SCRIPTS_DIR))
+import search_cache  # noqa: E402
 from rate_limiter import RateLimiter  # noqa: E402
-from search_cache import CACHE_DIR  # noqa: E402
 
 
 # =============================================================================
@@ -158,52 +158,18 @@ def mock_crossref_response():
 
 
 # =============================================================================
-# Cleanup Fixtures
+# Isolation Fixtures
 # =============================================================================
 
 @pytest.fixture(autouse=True)
-def clean_rate_limit_files():
-    """Clean up rate limit files before and after each test."""
-    lock_dir = RateLimiter.LOCK_DIR
+def isolated_phillit_dirs(tmp_path, monkeypatch):
+    """Redirect the per-user cache/lock dirs to tmp_path for every test.
 
-    # Cleanup before test
-    if lock_dir.exists():
-        for f in lock_dir.glob("*.lock"):
-            try:
-                f.unlink()
-            except OSError:
-                pass
-
-    yield
-
-    # Cleanup after test
-    if lock_dir.exists():
-        for f in lock_dir.glob("*.lock"):
-            try:
-                f.unlink()
-            except OSError:
-                pass
-
-
-@pytest.fixture
-def clean_cache():
-    """Clean up cache files for tests."""
-    cache_dir = CACHE_DIR
-
-    # Cleanup before test
-    if cache_dir.exists():
-        for f in cache_dir.glob("*.pkl"):
-            try:
-                f.unlink()
-            except OSError:
-                pass
-
-    yield
-
-    # Cleanup after test
-    if cache_dir.exists():
-        for f in cache_dir.glob("*.pkl"):
-            try:
-                f.unlink()
-            except OSError:
-                pass
+    The suite must never touch — let alone wipe — the developer's live
+    ~/.cache/phillit: the search cache is a durable asset (7-day TTL), and
+    deleting live rate-limit locks mid-review would let a concurrent session
+    burst an API. Per-test tmp_path isolation also replaces the old
+    delete-before-and-after cleanup fixtures.
+    """
+    monkeypatch.setattr(RateLimiter, "LOCK_DIR", tmp_path / "phillit-ratelimits")
+    monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path / "phillit-search-cache")
