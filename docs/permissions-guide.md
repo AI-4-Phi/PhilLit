@@ -29,12 +29,13 @@ Explicitly blocks destructive operations for safety. These cannot be approved ev
   "WebSearch",       // Search the web
   "WebFetch",        // Fetch web content
   "Bash",            // All Bash commands (see safety layers below)
-  "Write(reviews/**)",  // Create files in reviews/ and subdirectories
-  "Edit(reviews/**)",   // Edit files in reviews/ and subdirectories
+  "Edit(reviews/**)",   // Create and edit files in reviews/ and subdirectories
   "Skill(phillit:literature-review)",   // Main orchestration skill
   "Skill(phillit:philosophy-research)"  // Academic search skill
 ]
 ```
+
+**Why `Edit(reviews/**)` and no `Write(reviews/**)`?** Claude Code matches file permission checks against `Edit(path)` rules only — an `Edit` rule covers all file-editing tools (Write, Edit, NotebookEdit). A `Write(path)` rule is never consulted and triggers a startup warning in every session (verified in Claude Code 2.1.210). Earlier PhilLit versions shipped `Write(reviews/**)` alongside; `/phillit:setup` now removes it on re-run (`OBSOLETE_RULES` in `setup_workspace.py`).
 
 **Why `Bash` (all commands)?** Domain researcher subagents construct multi-line scripts with variable prefixes (setting variables, then invoking the `bin/phillit-run` wrapper) that no finite set of prefix patterns can enumerate, causing persistent permission prompts. (Note: current Claude Code splits compound commands — `&&`, `;`, pipes, newlines — and matches each subcommand against rules independently, and wildcards may appear at any position. That makes patterns more capable than when this design was chosen, but enumerating every command shape agents generate remains fragile — this design decision stands; see CLAUDE.md "Do not revert to enumerated Bash patterns".) Using bare `Bash` allows all commands, but the `deny` and `ask` rules still provide safety (see evaluation order below).
 
@@ -61,7 +62,7 @@ With `Bash` in the allow list, safety comes from three layers:
 
 1. **Deny rules**: `sudo`, `dd`, `mkfs` are blocked unconditionally
 2. **Ask rules**: `rm`, `rmdir` still require approval
-3. **Scoped writes**: `Write` and `Edit` are only auto-approved in `reviews/`
+3. **Scoped writes**: file-editing tools are only auto-approved in `reviews/` (via `Edit(reviews/**)`)
 
 ## Hook Configuration
 

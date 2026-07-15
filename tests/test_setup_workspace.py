@@ -17,6 +17,49 @@ def test_merge_into_empty_adds_all_rules():
     assert merged["defaultMode"] == "default"
 
 
+def test_rules_carry_no_dead_file_permission_patterns():
+    # Claude Code matches file permission checks against Edit(path) rules only;
+    # Write(path)/NotebookEdit(path)/MultiEdit(path) rules are never consulted and
+    # trigger a startup warning in every workspace (verified in CLI 2.1.210).
+    for rule in RULES["allow"] + RULES["deny"] + RULES["ask"]:
+        assert not rule.startswith(("Write(", "NotebookEdit(", "MultiEdit(", "Glob(")), rule
+    assert "Edit(reviews/**)" in RULES["allow"]
+
+
+def test_merge_strips_phillits_own_obsolete_rules():
+    # A workspace set up by an older PhilLit carries Write(reviews/**); a re-run
+    # of setup must remove it, or the startup warning never goes away.
+    existing = {"allow": ["Read", "Write(reviews/**)", "Edit(reviews/**)"]}
+    merged = sw.merge_permissions(existing, RULES)
+    assert "Write(reviews/**)" not in merged["allow"]
+    assert "Edit(reviews/**)" in merged["allow"]
+
+
+def test_merge_keeps_user_authored_write_rules():
+    # Only rules PhilLit itself shipped are stripped — a user's own dead rule is
+    # their call (Claude Code warns them directly).
+    existing = {"allow": ["Write(drafts/**)"]}
+    merged = sw.merge_permissions(existing, RULES)
+    assert "Write(drafts/**)" in merged["allow"]
+
+
+def test_rerun_on_stale_workspace_is_idempotent(tmp_path):
+    # First re-run migrates the stale rule away; a second re-run changes nothing
+    # (and therefore must not rewrite the file or touch the backup).
+    plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
+    (plugin_root / ".env.example").write_text("", encoding="utf-8")
+    ws = tmp_path / "ws"; (ws / ".claude").mkdir(parents=True)
+    stale = {"permissions": dict(RULES, allow=["Write(reviews/**)"] + RULES["allow"])}
+    (ws / ".claude" / "settings.json").write_text(json.dumps(stale), encoding="utf-8")
+
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+    migrated = (ws / ".claude" / "settings.json").read_text(encoding="utf-8")
+    assert "Write(reviews/**)" not in migrated
+
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+    assert (ws / ".claude" / "settings.json").read_text(encoding="utf-8") == migrated
+
+
 def test_merge_dedupes_and_preserves_existing_order():
     existing = {"allow": ["Read", "Bash"], "defaultMode": "acceptEdits"}
     merged = sw.merge_permissions(existing, RULES)
