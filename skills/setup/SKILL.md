@@ -1,6 +1,6 @@
 ---
 name: setup
-description: One-time PhilLit workspace setup — checks uv and jq, scaffolds .env (pre-filling keys already set in the environment), and merges the permission rules into this directory's settings so literature reviews run without per-command prompts. Use when a user first runs PhilLit in a directory, or when reviews prompt repeatedly for Bash.
+description: One-time PhilLit workspace setup — checks uv and jq, scaffolds .env for any API keys not already set in the environment, and merges the permission rules into this directory's settings so literature reviews run without per-command prompts. Use when a user first runs PhilLit in a directory, or when reviews prompt repeatedly for Bash.
 ---
 
 # PhilLit workspace setup
@@ -31,14 +31,18 @@ only they can provide.
    `bash "$PHILLIT_ROOT/bin/phillit-run" skills/setup/scripts/setup_workspace.py --plugin-root "$PHILLIT_ROOT" --dry-run`
    Then summarize what will happen in 2–3 short bullets — do not dump the settings JSON
    (show it only if the user asks for details):
-   - Creates a `.phillit` folder marker and a `.env` file for API keys
+   - Creates a `.phillit` folder marker and, for any API keys not already set in the
+     environment, a `.env` file to hold them (keys found in the environment are used
+     from there — never copied into a file)
    - Lets Claude run PhilLit's research tools **in this folder** without asking permission
      each time; deleting files and system-level commands still require approval
    - Nothing is sent or published anywhere
    Ask whether to proceed.
-4. **Apply.** On approval, run the same command without `--dry-run`. The script pre-fills
-   `.env` with any keys already set in the user's environment and prints which ones; if it
-   found some, tell the user (e.g. "Your Brave key was already set up — I reused it.").
+4. **Apply.** On approval, run the same command without `--dry-run`. Keys already set in
+   the user's environment stay there — the script never copies their values into `.env`;
+   it prints which ones it found (and skips creating `.env` when it found them all). If it
+   found some, tell the user (e.g. "Your Brave key was already set up — I'm using it from
+   your environment.").
 5. **Collect the rest.** Ask only for what is still missing, and be explicit about
    required vs. optional. Edit `.env` yourself with the answers — don't make the user
    open a file.
