@@ -14,12 +14,13 @@ import shutil
 import sys
 from pathlib import Path
 
-# Keys scripts read from .env. Keys already set in the shell environment are left
-# there: their values are never copied into .env (the file may sit in a synced or
-# committed folder, and — every script calls load_dotenv(find_dotenv(usecwd=True),
-# override=True) — a copied value would shadow later key rotations). Their `KEY=`
-# lines become comments instead, because an active empty line would override the
-# real shell value with "".
+# Keys scripts read from .env. The scaffolded file must never contain an ACTIVE
+# empty `KEY=` line: every script calls load_dotenv(find_dotenv(usecwd=True),
+# override=True), so such a line clobbers the real shell value — whether the key
+# is set now or exported later — with "". Keys already set in the environment are
+# left there (their values are never copied into .env: the file may sit in a
+# synced or committed folder, and a copied value would shadow later key
+# rotations); keys still missing stay commented as `# KEY=` fill-in slots.
 ENV_KEYS = ("S2_API_KEY", "CROSSREF_MAILTO", "OPENALEX_EMAIL", "BRAVE_API_KEY", "CORE_API_KEY")
 
 # File permission checks match Edit(path) rules only — Edit rules cover all
@@ -71,21 +72,27 @@ def merge_permissions(existing: dict, rules: dict) -> dict:
 
 
 def scaffold_env(example: Path, env_path: Path) -> list[str]:
-    """Write .env from .env.example for keys still missing from the environment.
+    """Write .env from .env.example without any active `KEY=` line.
 
-    Keys already set in the environment keep working from there: their `KEY=`
-    lines become comments (an active empty line would override the real value
-    with ""), and their values are never copied into the file.
+    Keys already set in the environment keep working from there — their lines
+    become an explanatory comment and their values are never copied into the
+    file. Keys still missing stay commented (`# KEY=`) as fill-in slots, never
+    as active empty lines (which would override a value exported later with "").
+    Lines for keys PhilLit does not own pass through untouched.
     Returns the names of the environment-provided keys.
     """
     inherited = []
     out_lines = []
     for line in example.read_text(encoding="utf-8").splitlines():
         stripped = line.strip()
-        key = stripped.split("=", 1)[0] if "=" in stripped and not stripped.startswith("#") else None
-        if key in ENV_KEYS and os.environ.get(key):
+        body = stripped.lstrip("#").strip() if stripped.startswith("#") else stripped
+        candidate, _, value = body.partition("=")
+        key = candidate.strip() if "=" in body and candidate.strip() in ENV_KEYS else None
+        if key and os.environ.get(key):
             out_lines.append(f"# {key} is read from your environment; set it here only if that changes.")
             inherited.append(key)
+        elif key and not stripped.startswith("#") and not value.strip():
+            out_lines.append(f"# {key}=")
         else:
             out_lines.append(line)
     env_path.write_text("\n".join(out_lines) + "\n", encoding="utf-8")
