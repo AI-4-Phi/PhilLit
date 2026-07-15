@@ -57,7 +57,7 @@ PhilLit itself is free. Running it requires [Claude Code](https://docs.anthropic
 /phillit:setup
 ```
 
-This creates a `.phillit/` marker and a `.env` for your API keys, and merges PhilLit's permission rules into that directory's `.claude/settings.json` (see [Trust model](#trust-model)). Then add your keys to `.env`. If Claude Code asks whether you trust this folder, accept — the merged permission rules only take effect in trusted folders.
+This creates a `.phillit/` marker and a `.env` for any API keys not already set in your environment (keys found there are used as-is and never copied into a file), and merges PhilLit's permission rules into that directory's `.claude/settings.json` (see [Trust model](#trust-model)). Then add the missing keys to `.env`. If Claude Code asks whether you trust this folder, accept — the merged permission rules only take effect in trusted folders.
 
 **3. Request a review** — describe your topic and PhilLit does the rest (~45 minutes):
 
@@ -96,11 +96,11 @@ Or enable auto-update for the phillit marketplace in the `/plugin` → Marketpla
 
 PhilLit runs as a Claude Code plugin, so its skills, agents, and hooks execute with the same shell privileges as Claude Code itself.
 
-- **`/phillit:setup` writes only to the current directory.** It creates `.phillit/` and `.env`, and merges permission rules into `./.claude/settings.json` (backing up any existing file first). It never touches anything outside that folder.
+- **`/phillit:setup` writes only to the current directory.** It creates `.phillit/` and (when API keys are missing from your environment) `.env`, and merges permission rules into `./.claude/settings.json` (backing up any existing file first). It never touches anything outside that folder, and never copies API-key values from your environment into files.
 - **The merged rules grant broad `Bash`** (plus file edits scoped to `reviews/` via `Edit(reviews/**)`, which covers all file-editing tools, and `deny`/`ask` rules for dangerous commands) **in that directory only**, so reviews run without a prompt on every command. Broad `Bash` is required because the research agents build many short shell commands that no finite allowlist can enumerate.
-- **PhilLit writes review output only to `./reviews/`** and pushes nothing anywhere. Searches hit public academic APIs using the keys in your `.env`.
+- **PhilLit writes review output only to `./reviews/`** and pushes nothing anywhere. Searches hit public academic APIs using the keys in your `.env` or environment.
 
-Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` instead. You still need the workspace marker that activates PhilLit's hooks — it is just an empty folder, so run `mkdir .phillit` in your working directory — plus a `.env` with your API keys (copy the plugin's `.env.example`; the plugin folder prints with `echo $PHILLIT_ROOT` in any Claude Code session):
+Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` instead. You still need the workspace marker that activates PhilLit's hooks — it is just an empty folder, so run `mkdir .phillit` in your working directory — plus your API keys, either exported in your environment or in a `.env` (copy the plugin's `.env.example`; the plugin folder prints with `echo $PHILLIT_ROOT` in any Claude Code session):
 
 ```json
 {

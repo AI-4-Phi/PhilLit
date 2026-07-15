@@ -105,7 +105,7 @@ This phase validates conditions for subsequent phases to function.
    ```
    Environment verification failed. Cannot proceed with literature review.
 
-   Run /phillit:setup in this directory, then make sure uv and jq are installed and your API keys are filled into .env.
+   Run /phillit:setup in this directory, then make sure uv and jq are installed and your API keys are set (in .env or your environment).
    ```
 
 **Why this matters**: If the environment isn't configured, the `philosophy-research` skill scripts used by the domain researchers will fail, causing agents to fall back to unstructured web searches, undermining review quality.

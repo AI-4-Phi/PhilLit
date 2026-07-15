@@ -96,7 +96,10 @@ def test_apply_creates_marker_and_scaffolds_env(tmp_path, monkeypatch):
     assert "Bash" in settings["permissions"]["allow"]
 
 
-def test_scaffold_env_prefills_from_environment(tmp_path, monkeypatch):
+def test_scaffold_env_never_copies_env_values(tmp_path, monkeypatch):
+    # Keys already set in the environment must not be duplicated into .env:
+    # the file may live in a synced or committed folder, and (override=True)
+    # a copied value would shadow later key rotations in the environment.
     monkeypatch.setenv("BRAVE_API_KEY", "brave-123")
     monkeypatch.setenv("CROSSREF_MAILTO", "user@example.edu")
     monkeypatch.delenv("S2_API_KEY", raising=False)
@@ -105,14 +108,47 @@ def test_scaffold_env_prefills_from_environment(tmp_path, monkeypatch):
         "# Brave key\nBRAVE_API_KEY=\nCROSSREF_MAILTO=\nS2_API_KEY=\n", encoding="utf-8")
     env_path = tmp_path / ".env"
 
-    filled = sw.scaffold_env(example, env_path)
+    inherited = sw.scaffold_env(example, env_path)
 
-    assert filled == ["BRAVE_API_KEY", "CROSSREF_MAILTO"]
+    assert inherited == ["BRAVE_API_KEY", "CROSSREF_MAILTO"]
     content = env_path.read_text(encoding="utf-8")
-    assert "BRAVE_API_KEY=brave-123" in content
-    assert "CROSSREF_MAILTO=user@example.edu" in content
-    assert "S2_API_KEY=\n" in content        # unset key left blank
+    assert "brave-123" not in content        # secret never written to disk
+    assert "user@example.edu" not in content
+    assert "S2_API_KEY=\n" in content        # unset key left fillable
     assert "# Brave key" in content          # comments preserved
+
+
+def test_scaffolded_env_never_clobbers_environment_values(tmp_path, monkeypatch):
+    # Every script loads .env with override=True, so an active `KEY=` line for
+    # an env-set key would wipe the real value to "". The scaffold must leave
+    # no active line for keys it found in the environment.
+    from dotenv import dotenv_values
+
+    monkeypatch.setenv("BRAVE_API_KEY", "brave-123")
+    example = tmp_path / ".env.example"
+    example.write_text("BRAVE_API_KEY=\nS2_API_KEY=\n", encoding="utf-8")
+    env_path = tmp_path / ".env"
+
+    sw.scaffold_env(example, env_path)
+
+    assert "BRAVE_API_KEY" not in dotenv_values(env_path)
+
+
+def test_apply_skips_env_when_environment_complete(tmp_path, monkeypatch):
+    # With every key already in the environment there is nothing to collect,
+    # so no .env is created at all — the environment stays authoritative.
+    for key in sw.ENV_KEYS:
+        monkeypatch.setenv(key, "some-value")
+    plugin_root = tmp_path / "plugin"; plugin_root.mkdir()
+    (plugin_root / ".env.example").write_text(
+        "".join(f"{k}=\n" for k in sw.ENV_KEYS), encoding="utf-8")
+    ws = tmp_path / "ws"; ws.mkdir()
+
+    sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
+
+    assert not (ws / ".env").exists()
+    assert (ws / ".phillit").is_dir()        # rest of setup still runs
+    assert (ws / ".claude" / "settings.json").exists()
 
 
 def test_apply_never_overwrites_existing_env(tmp_path, monkeypatch):

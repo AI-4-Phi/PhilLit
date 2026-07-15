@@ -210,7 +210,7 @@ skills/philosophy-research/
 skills/setup/
 ├── SKILL.md                              # /phillit:setup workspace scaffolding
 └── scripts/
-    └── setup_workspace.py                # Creates .phillit/ + .env; merges PHILLIT_RULES into .claude/settings.json
+    └── setup_workspace.py                # Creates .phillit/ (+ .env for keys missing from the environment); merges PHILLIT_RULES into .claude/settings.json
 
 hooks/
 ├── hooks.json                            # Hook wiring (single source of truth)
