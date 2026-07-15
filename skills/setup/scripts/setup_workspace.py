@@ -17,15 +17,24 @@ from pathlib import Path
 # values (every script calls load_dotenv(find_dotenv(usecwd=True), override=True)).
 ENV_KEYS = ("S2_API_KEY", "CROSSREF_MAILTO", "OPENALEX_EMAIL", "BRAVE_API_KEY", "CORE_API_KEY")
 
+# File permission checks match Edit(path) rules only — Edit rules cover all
+# file-editing tools (Write, Edit, NotebookEdit). A Write(path) rule is never
+# consulted and triggers a startup warning (verified in Claude Code 2.1.210).
 PHILLIT_RULES = {
     "defaultMode": "default",
     "deny": ["Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)"],
     "allow": [
         "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
-        "Write(reviews/**)", "Edit(reviews/**)",
+        "Edit(reviews/**)",
         "Skill(phillit:literature-review)", "Skill(phillit:philosophy-research)",
     ],
     "ask": ["Bash(rm *)", "Bash(rmdir *)"],
+}
+
+# Rules earlier PhilLit versions shipped that must be removed on re-setup.
+# Only PhilLit's own rules go here — user-authored rules are never touched.
+OBSOLETE_RULES = {
+    "allow": ["Write(reviews/**)"],
 }
 
 
@@ -48,7 +57,8 @@ def merge_permissions(existing: dict, rules: dict) -> dict:
     """Merge `rules` into an existing permissions dict without clobbering user values."""
     merged = dict(existing)
     for key in ("allow", "deny", "ask"):
-        merged[key] = _union(existing.get(key, []), rules.get(key, []))
+        union = _union(existing.get(key, []), rules.get(key, []))
+        merged[key] = [r for r in union if r not in OBSOLETE_RULES.get(key, [])]
     # Only set defaultMode if the user has not chosen one.
     if "defaultMode" not in merged and "defaultMode" in rules:
         merged["defaultMode"] = rules["defaultMode"]
