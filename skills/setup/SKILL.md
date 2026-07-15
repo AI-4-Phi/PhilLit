@@ -44,8 +44,10 @@ only they can provide.
    found some, tell the user (e.g. "Your Brave key was already set up — I'm using it from
    your environment.").
 5. **Collect the rest.** Ask only for what is still missing, and be explicit about
-   required vs. optional. Edit `.env` yourself with the answers — don't make the user
-   open a file.
+   required vs. optional. Edit `.env` yourself with the answers (uncomment the key's
+   `# KEY=` line and add the value) — don't make the user open a file. Keys the user
+   skips stay commented: an active empty `KEY=` line would override that key with ""
+   if the user ever exports it in their shell.
    - **Required:**
      - `CROSSREF_MAILTO` — just the user's email address; ask for it and fill
        `OPENALEX_EMAIL` with the same address

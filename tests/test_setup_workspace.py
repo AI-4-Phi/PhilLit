@@ -91,7 +91,7 @@ def test_apply_creates_marker_and_scaffolds_env(tmp_path, monkeypatch):
     sw.apply(workspace=ws, plugin_root=plugin_root, dry_run=False)
 
     assert (ws / ".phillit").is_dir()
-    assert (ws / ".env").read_text(encoding="utf-8") == "S2_API_KEY=\n"
+    assert (ws / ".env").read_text(encoding="utf-8") == "# S2_API_KEY=\n"
     settings = json.loads((ws / ".claude" / "settings.json").read_text(encoding="utf-8"))
     assert "Bash" in settings["permissions"]["allow"]
 
@@ -114,24 +114,69 @@ def test_scaffold_env_never_copies_env_values(tmp_path, monkeypatch):
     content = env_path.read_text(encoding="utf-8")
     assert "brave-123" not in content        # secret never written to disk
     assert "user@example.edu" not in content
-    assert "S2_API_KEY=\n" in content        # unset key left fillable
+    assert "# S2_API_KEY=" in content        # unset key kept as a fill-in slot
     assert "# Brave key" in content          # comments preserved
 
 
 def test_scaffolded_env_never_clobbers_environment_values(tmp_path, monkeypatch):
-    # Every script loads .env with override=True, so an active `KEY=` line for
-    # an env-set key would wipe the real value to "". The scaffold must leave
-    # no active line for keys it found in the environment.
+    # Every script loads .env with override=True, so any active `KEY=` line —
+    # for an env-set key OR one exported later — would wipe the real value
+    # to "". A freshly scaffolded .env must therefore define no keys at all.
     from dotenv import dotenv_values
 
     monkeypatch.setenv("BRAVE_API_KEY", "brave-123")
+    monkeypatch.delenv("S2_API_KEY", raising=False)
     example = tmp_path / ".env.example"
     example.write_text("BRAVE_API_KEY=\nS2_API_KEY=\n", encoding="utf-8")
     env_path = tmp_path / ".env"
 
     sw.scaffold_env(example, env_path)
 
-    assert "BRAVE_API_KEY" not in dotenv_values(env_path)
+    assert dotenv_values(env_path) == {}
+
+
+def test_scaffold_env_comments_out_empty_lines_of_missing_keys(tmp_path, monkeypatch):
+    # A key missing from the environment must not stay as an active empty
+    # `KEY=` line: if the user exports it later, that line would clobber it.
+    # Lines for keys PhilLit does not own pass through untouched.
+    monkeypatch.delenv("S2_API_KEY", raising=False)
+    example = tmp_path / ".env.example"
+    example.write_text("S2_API_KEY=\nMY_OWN_VAR=keepme\n", encoding="utf-8")
+    env_path = tmp_path / ".env"
+
+    sw.scaffold_env(example, env_path)
+
+    content = env_path.read_text(encoding="utf-8")
+    assert "# S2_API_KEY=" in content
+    assert "\nS2_API_KEY=" not in "\n" + content.replace("# S2_API_KEY=", "")
+    assert "MY_OWN_VAR=keepme" in content
+
+
+def test_scaffold_env_handles_commented_example_keys(tmp_path, monkeypatch):
+    # .env.example ships keys pre-commented (`# KEY=`). Env-set keys still get
+    # the explanatory note and count as inherited; missing keys pass through.
+    monkeypatch.setenv("BRAVE_API_KEY", "brave-123")
+    monkeypatch.delenv("S2_API_KEY", raising=False)
+    example = tmp_path / ".env.example"
+    example.write_text("# BRAVE_API_KEY=\n# S2_API_KEY=\n", encoding="utf-8")
+    env_path = tmp_path / ".env"
+
+    inherited = sw.scaffold_env(example, env_path)
+
+    assert inherited == ["BRAVE_API_KEY"]
+    content = env_path.read_text(encoding="utf-8")
+    assert "BRAVE_API_KEY is read from your environment" in content
+    assert "brave-123" not in content
+    assert "# S2_API_KEY=" in content
+
+
+def test_shipped_env_example_defines_no_keys():
+    # The template itself must never carry active KEY= lines: users copying it
+    # by hand would inherit the override-to-"" trap the scaffold avoids.
+    from dotenv import dotenv_values
+
+    example = Path(__file__).parent.parent / ".env.example"
+    assert dotenv_values(example) == {}
 
 
 def test_apply_skips_env_when_environment_complete(tmp_path, monkeypatch):
