@@ -22,7 +22,7 @@ import requests
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rate_limiter import ExponentialBackoff, get_limiter
+from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
 from search_cache import cache_key, get_cache, put_cache
 
 IEP_BASE = "https://iep.utm.edu"
@@ -242,9 +242,7 @@ def fetch_iep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
             response = requests.get(
                 url,
                 timeout=30,
-                headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; +https://github.com/AI-4-Phi/PhilLit)"
-                }
+                headers={"User-Agent": USER_AGENT}
             )
             limiter.record()
 

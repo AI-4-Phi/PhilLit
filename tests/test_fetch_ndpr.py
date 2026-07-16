@@ -156,3 +156,18 @@ class TestFetchNdprReview:
 
         with pytest.raises(RuntimeError, match="Network error"):
             fetch_ndpr.fetch_ndpr_review("https://ndpr.nd.edu/reviews/test/")
+
+
+@patch("fetch_ndpr.requests.get")
+def test_fetch_ndpr_routes_request_through_user_agent(mock_get):
+    import fetch_ndpr
+    mock_get.return_value = MagicMock(
+        status_code=200,
+        text="<html><body><div class='entry-content'>"
+        "<p>This substantive opening paragraph is well over fifty characters long "
+        "so the extractor keeps it.</p></div></body></html>",
+    )
+    sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
+    with patch.object(fetch_ndpr, "USER_AGENT", sentinel):
+        fetch_ndpr.fetch_ndpr_review("https://ndpr.nd.edu/reviews/example/", limiter=MagicMock())
+    assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel

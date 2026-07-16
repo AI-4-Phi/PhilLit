@@ -278,3 +278,18 @@ class TestIEPRateLimiter:
         limiter = get_limiter("iep_fetch")
         assert limiter is not None
         assert limiter.min_interval >= 1.0  # At least 1 second between requests
+
+
+@patch("fetch_iep.put_cache", return_value=True)
+@patch("fetch_iep.get_cache", return_value=None)
+@patch("fetch_iep.requests.get")
+def test_fetch_iep_routes_request_through_user_agent(mock_get, _get_cache, _put_cache):
+    import fetch_iep
+    from rate_limiter import ExponentialBackoff
+    mock_get.return_value = MagicMock(
+        status_code=200, text="<html><body><h1>Free Will</h1></body></html>"
+    )
+    sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
+    with patch.object(fetch_iep, "USER_AGENT", sentinel):
+        fetch_iep.fetch_iep_article("freewill", MagicMock(), ExponentialBackoff(max_attempts=2))
+    assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel
