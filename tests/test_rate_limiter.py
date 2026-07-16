@@ -450,3 +450,14 @@ class TestConcurrentAccess:
         # limiter2 should not wait
         wait_time = limiter2.wait()
         assert wait_time == 0.0
+
+
+def test_sep_fetch_honors_crawl_delay():
+    """SEP robots.txt asks for crawl-delay: 5; the limiter must match it."""
+    assert LIMITERS["sep_fetch"]().min_interval == 5.0
+
+
+def test_iep_and_ndpr_intervals_unchanged():
+    """IEP and NDPR request no crawl-delay; both stay at the conservative 1.0s."""
+    assert LIMITERS["iep_fetch"]().min_interval == 1.0
+    assert LIMITERS["ndpr"]().min_interval == 1.0

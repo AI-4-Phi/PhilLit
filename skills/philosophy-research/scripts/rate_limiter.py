@@ -260,7 +260,7 @@ LIMITERS = {
     "crossref": lambda: RateLimiter("crossref", 0.05),  # 50/sec but conservative
     "openalex": lambda: RateLimiter("openalex", 0.11),  # 10/sec
     "arxiv": lambda: RateLimiter("arxiv", 3.0),
-    "sep_fetch": lambda: RateLimiter("sep_fetch", 1.0),
+    "sep_fetch": lambda: RateLimiter("sep_fetch", 5.0),  # robots.txt crawl-delay: 5 (was 1.0)
     "iep_fetch": lambda: RateLimiter("iep_fetch", 1.0),
     "core": lambda: RateLimiter("core", 2.0),  # 5 req/10 sec = 1 req/2 sec
     "ndpr": lambda: RateLimiter("ndpr", 1.0),  # 1 req/sec, conservative for web scraping
