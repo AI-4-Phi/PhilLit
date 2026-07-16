@@ -583,3 +583,18 @@ class TestSEPRateLimiter:
 
         limiter = get_limiter("sep_fetch")
         assert limiter.api_name == "sep_fetch"
+
+
+@patch("fetch_sep.put_cache", return_value=True)
+@patch("fetch_sep.get_cache", return_value=None)
+@patch("fetch_sep.requests.get")
+def test_fetch_sep_routes_request_through_user_agent(mock_get, _get_cache, _put_cache):
+    import fetch_sep
+    from rate_limiter import ExponentialBackoff
+    mock_get.return_value = MagicMock(
+        status_code=200, text="<html><body><h1>Free Will</h1></body></html>"
+    )
+    sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
+    with patch.object(fetch_sep, "USER_AGENT", sentinel):
+        fetch_sep.fetch_sep_article("freewill", MagicMock(), ExponentialBackoff(max_attempts=2))
+    assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel

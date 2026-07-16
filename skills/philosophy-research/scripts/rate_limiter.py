@@ -28,6 +28,7 @@ For retry logic with exponential backoff:
         break
 """
 
+import os
 import random
 import time
 from pathlib import Path
@@ -39,6 +40,16 @@ try:
     HAS_FCNTL = True
 except ImportError:
     HAS_FCNTL = False
+
+
+# Honest, contactable User-Agent for direct fetches of scraped sites (SEP, IEP,
+# NDPR). Read once at import; overridable via PHILLIT_FETCH_USER_AGENT so a
+# downstream packaging (e.g. a hosted service) can identify itself distinctly
+# with its own contact address. The default stays the repo-linked bot UA.
+USER_AGENT = (
+    os.environ.get("PHILLIT_FETCH_USER_AGENT")
+    or "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; +https://github.com/AI-4-Phi/PhilLit)"
+)
 
 
 class RateLimiter:
@@ -260,7 +271,7 @@ LIMITERS = {
     "crossref": lambda: RateLimiter("crossref", 0.05),  # 50/sec but conservative
     "openalex": lambda: RateLimiter("openalex", 0.11),  # 10/sec
     "arxiv": lambda: RateLimiter("arxiv", 3.0),
-    "sep_fetch": lambda: RateLimiter("sep_fetch", 1.0),
+    "sep_fetch": lambda: RateLimiter("sep_fetch", 5.0),  # robots.txt crawl-delay: 5 (was 1.0)
     "iep_fetch": lambda: RateLimiter("iep_fetch", 1.0),
     "core": lambda: RateLimiter("core", 2.0),  # 5 req/10 sec = 1 req/2 sec
     "ndpr": lambda: RateLimiter("ndpr", 1.0),  # 1 req/sec, conservative for web scraping

@@ -23,7 +23,7 @@ import requests
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rate_limiter import ExponentialBackoff, get_limiter
+from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
 from search_cache import cache_key, get_cache, put_cache
 
 SEP_BASE = "https://plato.stanford.edu/entries"
@@ -233,7 +233,7 @@ def fetch_sep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
             print(f"DEBUG: GET {url}", file=sys.stderr)
 
         try:
-            response = requests.get(url, timeout=30, headers={"User-Agent": "PhiloResearchBot/1.0"})
+            response = requests.get(url, timeout=30, headers={"User-Agent": USER_AGENT})
             limiter.record()
 
             if response.status_code == 404:

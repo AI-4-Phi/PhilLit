@@ -22,7 +22,7 @@ import requests
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rate_limiter import ExponentialBackoff, get_limiter
+from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
 from search_cache import cache_key, get_cache, put_cache
 
 IEP_BASE = "https://iep.utm.edu"
@@ -242,30 +242,12 @@ def fetch_iep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
             response = requests.get(
                 url,
                 timeout=30,
-                headers={
-                    "User-Agent": "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; +https://github.com/AI-4-Phi/PhilLit)"
-                }
+                headers={"User-Agent": USER_AGENT}
             )
             limiter.record()
 
             if response.status_code == 404:
                 raise LookupError(f"IEP entry not found: {entry_name}")
-            elif response.status_code == 403:
-                log_progress(f"Access denied (403), trying with different headers...")
-                # Try with different headers (respect rate limiter)
-                limiter.wait()
-                response = requests.get(
-                    url,
-                    timeout=30,
-                    headers={
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                        "Accept": "text/html,application/xhtml+xml",
-                        "Accept-Language": "en-US,en;q=0.9",
-                    }
-                )
-                limiter.record()
-                if response.status_code != 200:
-                    raise RuntimeError(f"HTTP error: {response.status_code} (access denied)")
             elif response.status_code == 429:
                 log_progress(f"Rate limited, backing off (attempt {attempt+1}/{backoff.max_attempts})...")
                 if not backoff.wait(attempt):

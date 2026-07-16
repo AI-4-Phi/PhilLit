@@ -24,7 +24,7 @@ import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from output import log_progress as _log_progress, output_success, output_error
-from rate_limiter import ExponentialBackoff, get_limiter
+from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
 
 SCRIPT_NAME = "search_ndpr.py"
 SITEMAP_URL = "https://ndpr.nd.edu/sitemap.xml"
@@ -131,7 +131,7 @@ def fetch_sitemap(limiter, backoff: ExponentialBackoff) -> list[str]:
             response = requests.get(
                 SITEMAP_URL,
                 timeout=30,
-                headers={"User-Agent": "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; +https://github.com/AI-4-Phi/PhilLit)"},
+                headers={"User-Agent": USER_AGENT},
             )
             limiter.record()
 

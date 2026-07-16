@@ -11,6 +11,7 @@ Tests cover:
 - parse_retry_after utility
 """
 
+import os
 import time
 from pathlib import Path
 from unittest.mock import patch
@@ -450,3 +451,59 @@ class TestConcurrentAccess:
         # limiter2 should not wait
         wait_time = limiter2.wait()
         assert wait_time == 0.0
+
+
+def test_sep_fetch_honors_crawl_delay():
+    """SEP robots.txt asks for crawl-delay: 5; the limiter must match it."""
+    assert LIMITERS["sep_fetch"]().min_interval == 5.0
+
+
+def test_iep_and_ndpr_intervals_unchanged():
+    """IEP and NDPR request no crawl-delay; both stay at the conservative 1.0s."""
+    assert LIMITERS["iep_fetch"]().min_interval == 1.0
+    assert LIMITERS["ndpr"]().min_interval == 1.0
+
+
+def _load_rate_limiter_isolated():
+    """Exec rate_limiter.py into a throwaway module so USER_AGENT reflects the
+    current os.environ without touching the shared sys.modules['rate_limiter']."""
+    import importlib.util
+    path = (
+        Path(__file__).parent.parent
+        / "skills" / "philosophy-research" / "scripts" / "rate_limiter.py"
+    )
+    spec = importlib.util.spec_from_file_location("rate_limiter_isolated", path)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module
+
+
+def test_user_agent_default():
+    """Default UA is the honest, contactable repo-linked bot string."""
+    with patch.dict(os.environ, {}, clear=False):
+        os.environ.pop("PHILLIT_FETCH_USER_AGENT", None)
+        module = _load_rate_limiter_isolated()
+        assert module.USER_AGENT == (
+            "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; "
+            "+https://github.com/AI-4-Phi/PhilLit)"
+        )
+
+
+def test_user_agent_env_override():
+    """PHILLIT_FETCH_USER_AGENT overrides the default UA at import time."""
+    with patch.dict(
+        os.environ,
+        {"PHILLIT_FETCH_USER_AGENT": "PhilLitService/2.0 (+mailto:ops@example.org)"},
+    ):
+        module = _load_rate_limiter_isolated()
+        assert module.USER_AGENT == "PhilLitService/2.0 (+mailto:ops@example.org)"
+
+
+def test_user_agent_empty_override_falls_back_to_default():
+    """An explicitly-empty PHILLIT_FETCH_USER_AGENT falls back to the default, not ''."""
+    with patch.dict(os.environ, {"PHILLIT_FETCH_USER_AGENT": ""}):
+        module = _load_rate_limiter_isolated()
+        assert module.USER_AGENT == (
+            "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; "
+            "+https://github.com/AI-4-Phi/PhilLit)"
+        )

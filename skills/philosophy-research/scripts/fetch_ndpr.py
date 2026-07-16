@@ -30,7 +30,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from output import log_progress as _log_progress, output_success, output_error
-from rate_limiter import ExponentialBackoff, get_limiter
+from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
 
 SCRIPT_NAME = "fetch_ndpr.py"
 NDPR_BASE = "https://ndpr.nd.edu/reviews"
@@ -164,7 +164,7 @@ def fetch_ndpr_review(
             response = requests.get(
                 url,
                 timeout=30,
-                headers={"User-Agent": "PhiloResearchBot/1.0"},
+                headers={"User-Agent": USER_AGENT},
             )
             limiter.record()
 

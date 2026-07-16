@@ -240,3 +240,23 @@ class TestSearchNdpr:
 
         assert result is not None
         assert result["slug"] == "reasons-and-persons"
+
+
+@patch("search_ndpr.requests.get")
+def test_search_ndpr_sitemap_routes_request_through_user_agent(mock_get):
+    import search_ndpr
+    from rate_limiter import ExponentialBackoff
+    sitemap = (
+        '<?xml version="1.0" encoding="UTF-8"?>'
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+        "<url><loc>https://ndpr.nd.edu/reviews/being-and-time/</loc></url></urlset>"
+    )
+    mock_get.return_value = MagicMock(status_code=200, text=sitemap)
+    sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
+    search_ndpr.clear_sitemap_cache()
+    try:
+        with patch.object(search_ndpr, "USER_AGENT", sentinel):
+            search_ndpr.fetch_sitemap(MagicMock(), ExponentialBackoff(max_attempts=2))
+        assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel
+    finally:
+        search_ndpr.clear_sitemap_cache()
