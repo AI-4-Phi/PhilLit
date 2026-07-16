@@ -293,3 +293,26 @@ def test_fetch_iep_routes_request_through_user_agent(mock_get, _get_cache, _put_
     with patch.object(fetch_iep, "USER_AGENT", sentinel):
         fetch_iep.fetch_iep_article("freewill", MagicMock(), ExponentialBackoff(max_attempts=2))
     assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel
+
+
+@patch("fetch_iep.get_cache", return_value=None)
+@patch("fetch_iep.requests.get")
+def test_fetch_iep_403_no_disguise(mock_get, _get_cache):
+    """A 403 is treated as any other HTTP error: one honest request, no browser disguise."""
+    import fetch_iep
+    from rate_limiter import ExponentialBackoff
+    mock_get.return_value = MagicMock(status_code=403, text="Forbidden")
+    limiter = MagicMock()
+    with pytest.raises(RuntimeError) as exc_info:
+        fetch_iep.fetch_iep_article(
+            "freewill", limiter, ExponentialBackoff(max_attempts=3)
+        )
+    assert "403" in str(exc_info.value)
+    # Exactly one request/wait cycle: the 403 must not trigger a second, disguised request.
+    assert mock_get.call_count == 1
+    limiter.wait.assert_called_once()
+    # No request ever carries a browser-disguise UA; the honest UA is used throughout.
+    for call in mock_get.call_args_list:
+        ua = call.kwargs["headers"]["User-Agent"]
+        assert ua == fetch_iep.USER_AGENT
+        assert "Windows NT" not in ua

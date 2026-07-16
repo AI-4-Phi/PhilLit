@@ -248,22 +248,6 @@ def fetch_iep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
 
             if response.status_code == 404:
                 raise LookupError(f"IEP entry not found: {entry_name}")
-            elif response.status_code == 403:
-                log_progress(f"Access denied (403), trying with different headers...")
-                # Try with different headers (respect rate limiter)
-                limiter.wait()
-                response = requests.get(
-                    url,
-                    timeout=30,
-                    headers={
-                        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36",
-                        "Accept": "text/html,application/xhtml+xml",
-                        "Accept-Language": "en-US,en;q=0.9",
-                    }
-                )
-                limiter.record()
-                if response.status_code != 200:
-                    raise RuntimeError(f"HTTP error: {response.status_code} (access denied)")
             elif response.status_code == 429:
                 log_progress(f"Rate limited, backing off (attempt {attempt+1}/{backoff.max_attempts})...")
                 if not backoff.wait(attempt):
