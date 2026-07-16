@@ -497,3 +497,13 @@ def test_user_agent_env_override():
     ):
         module = _load_rate_limiter_isolated()
         assert module.USER_AGENT == "PhilLitService/2.0 (+mailto:ops@example.org)"
+
+
+def test_user_agent_empty_override_falls_back_to_default():
+    """An explicitly-empty PHILLIT_FETCH_USER_AGENT falls back to the default, not ''."""
+    with patch.dict(os.environ, {"PHILLIT_FETCH_USER_AGENT": ""}):
+        module = _load_rate_limiter_isolated()
+        assert module.USER_AGENT == (
+            "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; "
+            "+https://github.com/AI-4-Phi/PhilLit)"
+        )
