@@ -48,6 +48,12 @@ CLEANABLE_FIELDS = {
 BREAKER_MIN_ENTRIES = 5
 BREAKER_FRACTION = 0.30
 
+# A6: strip any existing METADATA_CLEANED marker before writing a fresh one.
+# pybtex round-trips the underscore as \_ (and \\_ on a second pass), so match
+# METADATA + any run of backslashes + _CLEANED. All markers are appended at the
+# keywords tail, so removing from the first marker to end drops them all.
+_MARKER_RE = re.compile(r",?\s*METADATA\\*_CLEANED:.*$", re.DOTALL)
+
 # Fields exempt from cleaning (LLM-generated content is OK)
 EXEMPT_FIELDS = {
     'note', 'keywords', 'abstract_source', 'howpublished', 'url', 'abstract'
@@ -548,7 +554,9 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
 
 
 def _apply_cleaned_marker(entry, plan: dict) -> None:
-    """Append a METADATA_CLEANED tag to keywords (W4 makes this dedupe)."""
+    """Set a single METADATA_CLEANED tag on keywords, REPLACING any existing
+    marker(s) rather than appending (item-13 A6) - a re-parsed bib re-cleaned
+    on a second SubagentStop must not accumulate duplicate markers."""
     all_changes = list(plan["removed_field_names"])
     if plan["year_corrected"]:
         all_changes.append(f"year:{plan['year_corrected'][0]}->{plan['year_corrected'][1]}")
@@ -557,8 +565,10 @@ def _apply_cleaned_marker(entry, plan: dict) -> None:
     if not all_changes:
         return
     cleaned_tag = f"METADATA_CLEANED: {', '.join(all_changes)}"
-    if 'keywords' in entry.fields:
-        entry.fields['keywords'] += f", {cleaned_tag}"
+    existing = entry.fields.get('keywords')
+    if existing:
+        base = _MARKER_RE.sub("", existing).rstrip().rstrip(",")
+        entry.fields['keywords'] = f"{base}, {cleaned_tag}" if base else cleaned_tag
     else:
         entry.fields['keywords'] = cleaned_tag
 
