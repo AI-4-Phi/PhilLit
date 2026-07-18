@@ -130,32 +130,26 @@ for bib_file in "${BIB_FILES[@]}"; do
     fi
 
     # Step 2: Metadata provenance cleaning (removes hallucinated fields, does NOT block)
-    # Find JSON files via 3-location fallback:
-    #   1. Same directory as .bib file
-    #   2. $REVIEW_DIR/intermediate_files/json/
-    #   3. Project root
+    # Item-13 A3: pass the UNION of JSON dirs (same dir as .bib AND
+    # $REVIEW_DIR/intermediate_files/json) so directory shadowing no longer
+    # starves the verification index. metadata_cleaner.py accepts one-or-more.
+    # (The old $CLAUDE_PROJECT_DIR third fallback is dropped: a processed .bib
+    # only ever sits at $REVIEW_DIR root or project root, so its own dir is
+    # already indexed as (a).)
     BIB_DIR=$(dirname "$bib_file")
-    JSON_DIR=""
+    JSON_DIRS=()
 
     shopt -s nullglob
     json_matches=("$BIB_DIR"/*.json)
-    if [[ ${#json_matches[@]} -gt 0 ]]; then
-        JSON_DIR="$BIB_DIR"
-    else
-        json_matches=("$REVIEW_DIR/intermediate_files/json"/*.json)
-        if [[ -d "$REVIEW_DIR/intermediate_files/json" ]] && [[ ${#json_matches[@]} -gt 0 ]]; then
-            JSON_DIR="$REVIEW_DIR/intermediate_files/json"
-        else
-            json_matches=("$CLAUDE_PROJECT_DIR"/*.json)
-            if [[ ${#json_matches[@]} -gt 0 ]]; then
-                JSON_DIR="$CLAUDE_PROJECT_DIR"
-            fi
-        fi
+    [[ ${#json_matches[@]} -gt 0 ]] && JSON_DIRS+=("$BIB_DIR")
+    json_matches=("$REVIEW_DIR/intermediate_files/json"/*.json)
+    if [[ -d "$REVIEW_DIR/intermediate_files/json" ]] && [[ ${#json_matches[@]} -gt 0 ]]; then
+        JSON_DIRS+=("$REVIEW_DIR/intermediate_files/json")
     fi
     shopt -u nullglob
 
-    if [[ -n "$JSON_DIR" ]]; then
-        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "$JSON_DIR" 2>/dev/null || true)
+    if [[ ${#JSON_DIRS[@]} -gt 0 ]]; then
+        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "${JSON_DIRS[@]}" 2>/dev/null || true)
         FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0' 2>/dev/null || echo "0")
         ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0' 2>/dev/null || echo "0")
 
@@ -164,6 +158,18 @@ for bib_file in "${BIB_FILES[@]}"; do
             CLEANING_SUMMARY="${CLEANING_SUMMARY}
 Cleaned $(basename "$bib_file"): Removed $FIELDS_REMOVED unverifiable field(s) from $ENTRIES_CLEANED entry(ies):
 $CLEANED_ENTRIES
+"
+        fi
+
+        # Item-13 A3 (never-silent policy): surface cleaner warnings — salvage/
+        # skip notices and, after W3, a circuit-breaker trip — to the model.
+        # Without this a tripped breaker is byte-identical to a clean run (the
+        # original incident's silence). Reuses the additionalContext emission.
+        CLEAN_WARNINGS=$(echo "$CLEAN_RESULT" | jq -r '.warnings[]?' 2>/dev/null || true)
+        if [[ -n "$CLEAN_WARNINGS" ]]; then
+            CLEANING_SUMMARY="${CLEANING_SUMMARY}
+Cleaner warnings for $(basename "$bib_file"):
+$CLEAN_WARNINGS
 "
         fi
     fi

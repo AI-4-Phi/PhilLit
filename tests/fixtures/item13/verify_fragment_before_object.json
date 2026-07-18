@@ -1,0 +1,11 @@
+[verify_paper.py] request params: {"mailto": "x@y.z", "rows": 5}
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {"doi": "10.1000/xyz"},
+  "results": [
+    {"verified": true, "doi": "10.1000/xyz", "title": "Fragment Test Paper", "container_title": "Test Journal", "volume": "7", "year": 2020}
+  ],
+  "count": 1,
+  "errors": []
+}

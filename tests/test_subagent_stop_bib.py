@@ -19,9 +19,11 @@ import subprocess
 from pathlib import Path
 
 import pytest
+from pybtex.database import parse_file as pybtex_parse_file
 
 REPO_ROOT = Path(__file__).parent.parent
 SCRIPT = REPO_ROOT / "hooks" / "subagent_stop_bib.sh"
+FIXTURES = Path(__file__).parent / "fixtures" / "item13"
 
 BASH = shutil.which("bash")
 JQ = shutil.which("jq")
@@ -284,3 +286,79 @@ class TestMetadataCleaning:
         ctx = out["hookSpecificOutput"]["additionalContext"]
         assert out["hookSpecificOutput"]["hookEventName"] == "SubagentStop"
         assert "awad2018moral" in ctx
+
+    def test_union_of_json_dirs_passed_to_cleaner(self, project):
+        # Item-13 A3: a field verifiable ONLY via intermediate_files/json must
+        # survive — proving the hook passes the UNION of both dirs. The old
+        # first-match logic picked the review root alone and would have shadowed
+        # (starved) the verify JSON, stripping the field.
+        review = project / "reviews" / "test-review"
+        bib = review / "d1.bib"
+        bib.write_text(
+            "@article{awad2018moral,\n"
+            "  author = {Awad, Edmond},\n"
+            "  title = {The Moral Machine experiment},\n"
+            "  journal = {Nature},\n"
+            "  year = {2018},\n"
+            "  number = {5},\n"
+            "  doi = {10.1038/s41586-018-0637-6}\n"
+            "}\n",
+            encoding="utf-8",
+        )
+        # An UNRELATED json at the review root so BIB_DIR is non-empty (this is
+        # what the old first-match logic would have selected, shadowing below).
+        (review / "s2_other.json").write_text(
+            json.dumps({"source": "s2", "results": [
+                {"title": "Other", "year": 1999, "doi": "10.9/other",
+                 "journal": {"name": "Other J"}}]}),
+            encoding="utf-8",
+        )
+        # The MATCHING verify json, carrying issue 5, ONLY under intermediate_files/json.
+        jdir = review / "intermediate_files" / "json"
+        jdir.mkdir(parents=True)
+        (jdir / "verify_awad.json").write_text(
+            json.dumps({"source": "crossref", "results": [
+                {"container_title": "Nature", "issue": "5", "year": 2018,
+                 "doi": "10.1038/s41586-018-0637-6"}]}),
+            encoding="utf-8",
+        )
+        out, code, _ = run_hook(RESEARCHER, project)
+        assert code == 0
+        data = pybtex_parse_file(str(bib), bib_format="bibtex")
+        fields = {k.lower() for k in data.entries["awad2018moral"].fields}
+        assert "number" in fields, (
+            "number=5 (verifiable only via the second dir) was stripped — "
+            "the hook did not pass the union of JSON dirs"
+        )
+
+    def test_no_json_dirs_skips_cleaner_and_leaves_bib_untouched(self, project):
+        # Neither the .bib's own dir nor intermediate_files/json holds JSON, so
+        # JSON_DIRS is empty and the cleaner is never invoked — no summary, and
+        # (crucially) no field is stripped without evidence.
+        review = project / "reviews" / "test-review"
+        bib = review / "d1.bib"
+        original = HALLUCINATED_NUMBER_BIB
+        bib.write_text(original, encoding="utf-8")
+        out, code, _ = run_hook(RESEARCHER, project)
+        assert code == 0
+        assert out == {"decision": "allow"}
+        assert bib.read_text(encoding="utf-8") == original  # untouched
+
+    def test_cleaner_warnings_surface_in_additional_context(self, project):
+        # Item-13 A3 (never-silent): a salvage/skip notice from the cleaner must
+        # reach the model via additionalContext even when no field is removed.
+        review = project / "reviews" / "test-review"
+        (review / "d1.bib").write_text(VALID_BIB, encoding="utf-8")
+        jdir = review / "intermediate_files" / "json"
+        jdir.mkdir(parents=True)
+        # A log-polluted but salvageable verify JSON -> cleaner emits "Salvaged N".
+        (jdir / "verify_a.json").write_text(
+            (FIXTURES / "verify_amorosotamburrini2017.json").read_text(encoding="utf-8"),
+            encoding="utf-8",
+        )
+        out, code, _ = run_hook(RESEARCHER, project)
+        assert code == 0
+        ctx = out.get("hookSpecificOutput", {}).get("additionalContext", "")
+        assert "Salvaged" in ctx or "Cleaner warnings" in ctx, (
+            f"cleaner salvage warning did not surface in additionalContext: {out}"
+        )
