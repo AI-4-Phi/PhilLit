@@ -22,10 +22,9 @@ from metadata_cleaner import (
     normalize_doi,
     build_metadata_index,
     clean_bibtex,
-    clean_entry,
     is_field_verifiable,
     find_api_entry_by_doi,
-    should_downgrade_to_misc,
+    find_api_entry_for_bib_entry,
     CLEANABLE_FIELDS,
     EXEMPT_FIELDS,
     IDENTITY_FIELDS,
@@ -288,32 +287,44 @@ class TestCleanBibtex:
         assert 'number' not in entry.fields
         assert 'journal' in entry.fields  # Should still have journal
 
-    def test_removes_all_hallucinated_fields(self, tmp_path, s2_nature_json, bibtex_fully_hallucinated):
-        """Should remove all hallucinated fields from an entry."""
+    def test_removes_all_hallucinated_fields(self, tmp_path, bibtex_fully_hallucinated):
+        """A matched entry (by DOI) whose bibliographic fields are hallucinated
+        loses the unconfirmable ones but keeps its verified DOI (entry-scoped:
+        the DOI proves identity, so @article is not demoted)."""
+        # Matches bonnefon by DOI but carries NONE of the claimed
+        # journal/volume/issue/pages, so those bib values are unconfirmable.
+        api_json = {
+            "source": "crossref",
+            "results": [
+                {"doi": "10.1126/science.aaf2654",
+                 "title": "The social dilemma of autonomous vehicles",
+                 "year": 2016}
+            ],
+        }
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
+        (json_dir / "verify_bonnefon.json").write_text(
+            json.dumps(api_json), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_fully_hallucinated, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
         assert result["success"] is True
         assert result["entries_cleaned"] == 1
-        # Should remove: journal, volume, number, pages, doi (5 fields)
-        assert result["total_fields_removed"] == 5
+        # journal, volume, number, pages unconfirmable -> removed (4).
+        # doi MATCHES the API record -> kept (the verified identity).
+        assert result["total_fields_removed"] == 4
 
-        # Verify identity fields preserved
-        cleaned_content = bib_file.read_text()
-        assert "author" in cleaned_content.lower()
-        assert "title" in cleaned_content.lower()
-        assert "year" in cleaned_content.lower()
-        # Verify exempt fields preserved
-        assert "note" in cleaned_content.lower()
+        parsed = pybtex_parse_file(str(bib_file), bib_format='bibtex')
+        entry = parsed.entries["bonnefon2016social"]
+        fields = {c.lower() for c in entry.fields}
+        assert not ({"journal", "volume", "number", "pages"} & fields)
+        assert "doi" in fields            # verified DOI kept
+        assert "note" in fields           # exempt field preserved
+        assert entry.type == "article"    # matched DOI -> @article guard, no demote
 
     def test_preserves_valid_entry(self, tmp_path, crossref_with_issue_json, bibtex_valid_with_crossref):
         """Should not modify entry that matches API data."""
@@ -333,42 +344,61 @@ class TestCleanBibtex:
         assert result["entries_cleaned"] == 0
         assert result["total_fields_removed"] == 0
 
-    def test_cleans_only_hallucinated_entry(self, tmp_path, s2_nature_json, bibtex_multiple_entries):
-        """Should clean only the entry with hallucinated data."""
+    def test_cleans_only_hallucinated_entry(self, tmp_path, bibtex_multiple_entries):
+        """Both entries match by title+year; only the one carrying a field
+        absent from its API record is cleaned."""
+        # Both match by title+year; the first's journal checks out, the second's
+        # volume+number are absent from its API record (hallucinated).
+        api_json = {
+            "source": "semantic_scholar",
+            "results": [
+                {"title": "A Valid Entry", "year": 2018,
+                 "journal": {"name": "Nature"}},
+                {"title": "Paper with fake metadata", "year": 2016,
+                 "journal": {"name": "Science"}},
+            ],
+        }
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
-        )
+        (json_dir / "s2_papers.json").write_text(json.dumps(api_json), encoding='utf-8')
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_multiple_entries, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
         assert result["success"] is True
         assert result["entries_total"] == 2
+        assert result["matched_entries"] == 2
         assert result["entries_cleaned"] == 1
         assert "hallucinatedentry" in result["cleaned_entries"]
         assert "validentry" not in result["cleaned_entries"]
 
-    def test_preserves_note_field(self, tmp_path, s2_nature_json, bibtex_fully_hallucinated):
-        """Should preserve note field even when other fields are removed."""
+    def test_preserves_note_field(self, tmp_path, bibtex_fully_hallucinated):
+        """Should preserve the exempt note field even while other fields are
+        removed from a matched entry."""
+        api_json = {
+            "source": "crossref",
+            "results": [
+                {"doi": "10.1126/science.aaf2654",
+                 "title": "The social dilemma of autonomous vehicles",
+                 "year": 2016}
+            ],
+        }
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
+        (json_dir / "verify_bonnefon.json").write_text(
+            json.dumps(api_json), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_fully_hallucinated, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
+        assert result["entries_cleaned"] == 1  # fields WERE removed...
         cleaned_content = bib_file.read_text()
-        assert "note" in cleaned_content.lower()
+        assert "note" in cleaned_content.lower()      # ...but note survived
         assert "Foundational paper" in cleaned_content
 
     def test_handles_missing_json_dir(self, tmp_path, bibtex_with_hallucinated_number):
@@ -512,12 +542,11 @@ class TestIntegration:
     """Integration tests simulating real-world scenarios."""
 
     def test_real_world_hallucination_pattern(self, tmp_path):
-        """Test the Gardiner hallucination pattern from the investigation.
-
-        API returns: journal="Environmental Values", year=2011
-        LLM writes: booktitle="Climate Ethics: Essential Readings", year=2010
-        """
-        # S2 API output
+        """Gardiner pattern: the LLM cited the anthology (booktitle/publisher)
+        for a paper the API shows as a journal article. Matched by title+year,
+        the hallucinated container fields are stripped and the @incollection
+        demotes to @misc (container types get no @article no-demote guard)."""
+        # S2 API output — the real record is a journal article.
         s2_json = {
             "status": "success",
             "source": "semantic_scholar",
@@ -531,13 +560,14 @@ class TestIntegration:
             ]
         }
 
-        # Hallucinated BibTeX (cites anthology version instead of journal)
+        # Hallucinated BibTeX: cites the anthology (booktitle/publisher). Year
+        # MATCHES the API (2011) so the entry is identified by title+year.
         hallucinated_bib = """@incollection{gardiner2011early,
   author = {Gardiner, Stephen},
   title = {Some Early Ethics of Geoengineering},
   booktitle = {Climate Ethics: Essential Readings},
   publisher = {Oxford University Press},
-  year = {2010},
+  year = {2011},
   pages = {163--175},
   note = {Examines moral hazard.}
 }"""
@@ -549,23 +579,24 @@ class TestIntegration:
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(hallucinated_bib, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
         assert result["success"] is True
+        assert result["matched_entries"] == 1
         assert result["entries_cleaned"] == 1
 
-        # Should remove: booktitle, publisher, pages (hallucinated)
-        # Note: year=2010 doesn't match year=2011 in API, but year is an identity field
+        # Should remove the hallucinated container fields booktitle + publisher.
         cleaned_entries = result["cleaned_entries"]["gardiner2011early"]
         assert any("booktitle" in field for field in cleaned_entries)
         assert any("publisher" in field for field in cleaned_entries)
 
-        # Verify identity fields preserved
-        cleaned_content = bib_file.read_text()
-        assert "author" in cleaned_content.lower()
-        assert "title" in cleaned_content.lower()
-        assert "note" in cleaned_content.lower()
+        parsed = pybtex_parse_file(str(bib_file), bib_format='bibtex')
+        entry = parsed.entries["gardiner2011early"]
+        assert entry.type == "misc"                 # demoted (container type)
+        # Identity + exempt fields preserved (author is a pybtex person field).
+        fields = {c.lower() for c in entry.fields}
+        assert "title" in fields and "note" in fields
+        assert entry.persons.get("author")          # author preserved
 
     def test_mixed_valid_and_hallucinated(self, tmp_path):
         """Test file with both valid and hallucinated entries."""
@@ -655,7 +686,7 @@ class TestCleanedEntryTagging:
         assert "METADATA_CLEANED" in cleaned_content or "METADATA\\_CLEANED" in cleaned_content
         assert "number" in cleaned_content  # The field name should be in the tag
 
-    def test_tag_appended_to_existing_keywords(self, tmp_path, s2_nature_json):
+    def test_tag_appended_to_existing_keywords(self, tmp_path):
         """Should append tag to existing keywords field."""
         bibtex = """@article{test2018,
   author = {Test Author},
@@ -665,19 +696,27 @@ class TestCleanedEntryTagging:
   number = {999},
   keywords = {ethics, AI}
 }"""
+        # Matches test2018 by title+year; journal Nature checks out, number 999
+        # is absent from the API record -> stripped -> a marker is written.
+        api_json = {
+            "source": "semantic_scholar",
+            "results": [
+                {"title": "Test Title", "year": 2018, "journal": {"name": "Nature"}}
+            ],
+        }
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
+        (json_dir / "s2_test.json").write_text(
+            json.dumps(api_json), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
         assert result["success"] is True
+        assert result["entries_cleaned"] == 1
         cleaned_content = bib_file.read_text()
         # Should preserve original keywords and add tag
         assert "ethics" in cleaned_content or "AI" in cleaned_content
@@ -809,26 +848,33 @@ class TestYearCorrection:
 class TestEntryTypeDowngrade:
     """Tests for downgrading entry types to @misc."""
 
-    def test_article_downgraded_to_misc(self, tmp_path, s2_nature_json):
-        """@article without journal should be downgraded to @misc."""
-        # This BibTeX has a hallucinated journal (Science, not in API)
+    def test_article_downgraded_to_misc(self, tmp_path):
+        """A matched @article whose journal is hallucinated AND has no verified
+        DOI to save it is downgraded to @misc."""
+        # This BibTeX has a hallucinated journal (Science; the API says Nature)
+        # and no DOI, so the @article no-demote guard does not apply.
         bibtex = """@article{hallucinated,
   author = {Test Author},
   title = {Test Paper},
   journal = {Science},
   year = {2020}
 }"""
+        api_json = {
+            "source": "semantic_scholar",
+            "results": [
+                {"title": "Test Paper", "year": 2020, "journal": {"name": "Nature"}}
+            ],
+        }
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
+        (json_dir / "s2_test.json").write_text(
+            json.dumps(api_json), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
         assert result["success"] is True
         assert result["types_downgraded"] == 1
@@ -838,25 +884,32 @@ class TestEntryTypeDowngrade:
         # Note: pybtex escapes special chars
         assert "type:@article" in cleaned_content and "misc" in cleaned_content
 
-    def test_inproceedings_downgraded_to_misc(self, tmp_path, s2_nature_json):
-        """@inproceedings without booktitle should be downgraded to @misc."""
+    def test_inproceedings_downgraded_to_misc(self, tmp_path):
+        """A matched @inproceedings whose booktitle is hallucinated is
+        downgraded to @misc (the no-demote guard is @article-only)."""
         bibtex = """@inproceedings{confpaper,
   author = {Test Author},
   title = {Test Paper},
   booktitle = {Fake Conference},
   year = {2020}
 }"""
+        api_json = {
+            "source": "crossref",
+            "results": [
+                {"title": "Test Paper", "year": 2020,
+                 "container_title": "Real Proceedings"}
+            ],
+        }
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
+        (json_dir / "verify_conf.json").write_text(
+            json.dumps(api_json), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
         assert result["success"] is True
         assert result["types_downgraded"] == 1
@@ -864,27 +917,34 @@ class TestEntryTypeDowngrade:
         cleaned_content = bib_file.read_text()
         assert "@misc{" in cleaned_content.lower()
 
-    def test_article_with_journal_not_downgraded(self, tmp_path, s2_nature_json):
-        """@article with valid journal should stay @article."""
+    def test_article_with_journal_not_downgraded(self, tmp_path):
+        """A matched @article whose journal is CONFIRMED stays @article."""
         bibtex = """@article{valid,
   author = {Test Author},
   title = {Test Paper},
   journal = {Nature},
   year = {2020}
 }"""
+        # Matches by title+year and the journal is confirmed -> journal kept.
+        api_json = {
+            "source": "semantic_scholar",
+            "results": [
+                {"title": "Test Paper", "year": 2020, "journal": {"name": "Nature"}}
+            ],
+        }
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "s2_nature.json").write_text(
-            json.dumps(s2_nature_json), encoding='utf-8'
+        (json_dir / "s2_test.json").write_text(
+            json.dumps(api_json), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
-)
+        result = clean_bibtex(bib_file, json_dir)
 
         assert result["success"] is True
+        assert result["matched_entries"] == 1
         assert result["types_downgraded"] == 0
 
         cleaned_content = bib_file.read_text()
@@ -943,24 +1003,27 @@ class TestHelperFunctions:
         entry = find_api_entry_by_doi(None, index)
         assert entry is None
 
-    def test_should_downgrade_to_misc(self):
-        """Test entry type downgrade logic."""
+    def test_find_api_entry_for_bib_entry_by_doi(self, tmp_path, crossref_with_issue_json):
+        """Entry-scoped matcher finds THIS entry's own API record by DOI, and
+        returns None for an entry with no matching DOI or title+year."""
         from pybtex.database import Entry
 
-        # Article without journal should downgrade
-        article_no_journal = Entry('article')
-        article_no_journal.fields['author'] = 'Test'
-        article_no_journal.fields['title'] = 'Test'
-        assert should_downgrade_to_misc(article_no_journal) is True
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "crossref.json").write_text(
+            json.dumps(crossref_with_issue_json), encoding='utf-8'
+        )
+        index = build_metadata_index(json_dir)
 
-        # Article with journal should not downgrade
-        article_with_journal = Entry('article')
-        article_with_journal.fields['author'] = 'Test'
-        article_with_journal.fields['title'] = 'Test'
-        article_with_journal.fields['journal'] = 'Nature'
-        assert should_downgrade_to_misc(article_with_journal) is False
+        matched = Entry('article')
+        matched.fields['title'] = 'Something Else Entirely'
+        matched.fields['year'] = '1900'
+        matched.fields['doi'] = '10.1177/1470594X14542566'  # matches by DOI
+        api = find_api_entry_for_bib_entry(matched, index)
+        assert api is not None and api["year"] == 2014
 
-        # Misc should not downgrade (not in REQUIRED_FIELDS)
-        misc_entry = Entry('misc')
-        misc_entry.fields['author'] = 'Test'
-        assert should_downgrade_to_misc(misc_entry) is False
+        # No DOI and a title/year that match nothing -> None (left untouched).
+        unmatched = Entry('article')
+        unmatched.fields['title'] = 'Nonexistent Paper'
+        unmatched.fields['year'] = '1850'
+        assert find_api_entry_for_bib_entry(unmatched, index) is None

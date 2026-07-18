@@ -25,9 +25,8 @@ Exit codes: 0 = success, 2 = file not found/read error
 
 import json
 import re
-
-
 import sys
+import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -41,6 +40,13 @@ from pybtex.scanner import PybtexSyntaxError
 CLEANABLE_FIELDS = {
     'journal', 'booktitle', 'volume', 'number', 'pages', 'publisher', 'doi'
 }
+
+# Circuit breaker (item-13 A4.3): if a .bib would lose fields from more than
+# BREAKER_FRACTION of its entries AND from at least BREAKER_MIN_ENTRIES, the
+# cleaner writes nothing (a systemic index failure must not mass-strip verified
+# data). Constants, not config - thresholds are a safety floor, not a knob.
+BREAKER_MIN_ENTRIES = 5
+BREAKER_FRACTION = 0.30
 
 # Fields exempt from cleaning (LLM-generated content is OK)
 EXEMPT_FIELDS = {
@@ -150,16 +156,6 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     return None
 
 
-def should_downgrade_to_misc(entry) -> bool:
-    """Check if entry should be downgraded due to missing required fields."""
-    entry_type = entry.type.lower()
-    if entry_type not in REQUIRED_FIELDS:
-        return False
-    required = REQUIRED_FIELDS[entry_type]
-    present_fields = {f.lower() for f in entry.fields.keys()}
-    return not required.issubset(present_fields)
-
-
 def parse_s2_result(data: dict, source_file: str) -> list[dict]:
     """Parse Semantic Scholar JSON format."""
     results = data.get("results", [])
@@ -167,6 +163,7 @@ def parse_s2_result(data: dict, source_file: str) -> list[dict]:
     for item in results:
         journal_info = item.get("journal") or {}
         entries.append({
+            "title": item.get("title"),
             "container_title": journal_info.get("name") or item.get("venue"),
             "volume": str(journal_info.get("volume")) if journal_info.get("volume") else None,
             "issue": None,
@@ -185,6 +182,7 @@ def parse_openalex_result(data: dict, source_file: str) -> list[dict]:
     for item in results:
         source = item.get("source") or {}
         entries.append({
+            "title": item.get("title"),
             "container_title": source.get("name"),
             "volume": None,
             "issue": None,
@@ -202,6 +200,7 @@ def parse_crossref_result(data: dict, source_file: str) -> list[dict]:
     entries = []
     for item in results:
         entries.append({
+            "title": item.get("title"),
             "container_title": item.get("container_title"),
             "volume": item.get("volume"),
             "issue": item.get("issue"),
@@ -225,6 +224,7 @@ def parse_arxiv_result(data: dict, source_file: str) -> list[dict]:
             except (ValueError, TypeError):
                 pass
         entries.append({
+            "title": item.get("title"),
             "container_title": item.get("journal_ref"),
             "volume": None,
             "issue": None,
@@ -242,6 +242,7 @@ def parse_philpapers_result(data: dict, source_file: str) -> list[dict]:
     entries = []
     for item in results:
         entries.append({
+            "title": item.get("title"),
             "container_title": item.get("journal") or item.get("source"),
             "volume": item.get("volume"),
             "issue": item.get("issue"),
@@ -413,79 +414,166 @@ def is_field_verifiable(field_name: str, value: str, index: MetadataIndex) -> bo
     return True
 
 
-def clean_entry(entry_key: str, entry, index: MetadataIndex) -> dict:
-    """Clean unverifiable fields from a single BibTeX entry.
+def _normalize_title(title: str) -> str:
+    """Unicode-aware, punctuation/subtitle-insensitive title key (item-13 B3).
 
-    Returns dict with:
-        - removed_fields: list of removed field descriptions (e.g., "volume=99")
-        - year_corrected: tuple (old, new) if corrected, None otherwise
-        - type_downgraded: tuple (old, new) if downgraded, None otherwise
-    """
-    result = {
+    NFKD-normalize, drop combining marks (accent-insensitive so a bib title
+    'Davidovic' matches an API 'Davidović'), keep every letter/digit including
+    non-Latin (Greek, Cyrillic, Latin Extended-A stroke letters), casefold, and
+    collapse punctuation/whitespace runs to single spaces. The old ASCII-only
+    fold both erased non-Latin titles to '' (matching everything) and equated
+    distinct stroke letters (Đ/Ł both dropped)."""
+    if not title:
+        return ""
+    out = []
+    for ch in unicodedata.normalize('NFKD', title):
+        if unicodedata.combining(ch):
+            continue
+        out.append(ch if ch.isalnum() else ' ')
+    return ' '.join(''.join(out).casefold().split())
+
+
+def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
+    """Find THIS bib entry's own API record in the index (entry-scoped
+    evidence, item-13 A4.1): first by DOI (exact normalized match), else by
+    normalized title + year. Returns None when no affirmative match exists -
+    the entry is then left completely untouched by the cleaner."""
+    doi_value = entry.fields.get('doi')
+    if doi_value:
+        api = find_api_entry_by_doi(doi_value, index)
+        if api is not None:
+            return api
+    norm_title = _normalize_title(entry.fields.get('title', ''))
+    if not norm_title:
+        return None
+    bib_year = str(entry.fields.get('year', '')).strip()
+    for api_entry in index.entries:
+        if _normalize_title(api_entry.get('title') or '') != norm_title:
+            continue
+        api_year = str(api_entry.get('year') or '').strip()
+        # B3: the title+year fallback requires BOTH years present AND equal.
+        # A missing year on either side is NOT a match - a bare title is too
+        # weak an identifier to authorize destructive cleaning.
+        if not bib_year or not api_year or bib_year != api_year:
+            continue
+        return api_entry
+    return None
+
+
+def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
+    """Does this cleanable field's value match the entry's OWN matched API
+    record (normalized)? Empty API values never match (can't confirm)."""
+    if field_lower in ('journal', 'booktitle'):
+        nv = normalize_journal(value)
+        return bool(nv) and nv == normalize_journal(api_entry.get('container_title') or '')
+    if field_lower == 'volume':
+        nv = str(value).strip()
+        return bool(nv) and nv == str(api_entry.get('volume') or '').strip()
+    if field_lower == 'number':
+        nv = str(value).strip()
+        return bool(nv) and nv == str(api_entry.get('issue') or '').strip()
+    if field_lower == 'pages':
+        nv = normalize_pages(value)
+        return bool(nv) and nv == normalize_pages(api_entry.get('pages') or '')
+    if field_lower == 'publisher':
+        nv = value.lower().strip()
+        return bool(nv) and nv == str(api_entry.get('publisher') or '').lower().strip()
+    if field_lower == 'doi':
+        nv = normalize_doi(value)
+        return bool(nv) and nv == normalize_doi(api_entry.get('doi') or '')
+    return True
+
+
+def _plan_type_downgrade(entry, surviving_fields: set, api_entry: dict) -> Optional[tuple]:
+    """Post-removal type-downgrade decision (item-13 A4.2). Returns
+    (old_type, 'misc') or None.
+
+    @article guard: an article that would lose its required 'journal' is NOT
+    demoted when it retains a DOI matching its own API record - a verified DOI
+    proves the work is identifiable and @article degrades cleanly to
+    author/year/title. Container types keep the existing demotion (their
+    formatter's dangling 'In.' is suppressed downstream)."""
+    entry_type = entry.type.lower()
+    if entry_type not in REQUIRED_FIELDS:
+        return None
+    if REQUIRED_FIELDS[entry_type].issubset(surviving_fields):
+        return None
+    if entry_type == 'article':
+        doi_value = entry.fields.get('doi')
+        if ('doi' in surviving_fields and doi_value and api_entry.get('doi')
+                and normalize_doi(doi_value) == normalize_doi(api_entry['doi'])):
+            return None
+    return (entry.type, 'misc')
+
+
+def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
+    """Compute (WITHOUT mutating) the cleaning plan for a MATCHED entry, so the
+    circuit breaker can inspect the whole .bib before anything is written.
+
+    A cleanable field is KEPT when it matches the entry's own API record OR
+    appears in the global buckets (a value legitimately sourced from another
+    file); otherwise it is a matched-entry mismatch - the hallucination class
+    the cleaner exists for - and removed."""
+    plan = {
+        "removed_field_names": [],
         "removed_fields": [],
         "year_corrected": None,
         "type_downgraded": None,
     }
 
-    # Step 1: Year correction via DOI lookup
-    doi_value = entry.fields.get('doi')
-    if doi_value:
-        api_entry = find_api_entry_by_doi(doi_value, index)
-        if api_entry and api_entry.get("year"):
-            api_year = str(api_entry["year"])
-            bib_year = entry.fields.get('year', '')
-            if bib_year and bib_year != api_year:
-                entry.fields['year'] = api_year
-                result["year_corrected"] = (bib_year, api_year)
+    if api_entry.get("year"):
+        api_year = str(api_entry["year"])
+        bib_year = entry.fields.get('year', '')
+        if bib_year and bib_year != api_year:
+            plan["year_corrected"] = (bib_year, api_year)
 
-    # Step 2: Remove unverifiable fields
-    fields_to_remove = []
+    surviving: set = set()
     for field_name in list(entry.fields.keys()):
         field_lower = field_name.lower()
-        # Skip identity, exempt, and correctable fields
-        if field_lower in IDENTITY_FIELDS or field_lower in EXEMPT_FIELDS or field_lower in CORRECTABLE_FIELDS:
+        if (field_lower in IDENTITY_FIELDS or field_lower in EXEMPT_FIELDS
+                or field_lower in CORRECTABLE_FIELDS or field_lower not in CLEANABLE_FIELDS):
+            surviving.add(field_lower)
             continue
-
-        # Only clean fields we're configured to clean
-        if field_lower not in CLEANABLE_FIELDS:
-            continue
-
         value = entry.fields[field_name]
+        keep = _field_matches_api(field_lower, value, api_entry) or \
+            is_field_verifiable(field_lower, value, index)
+        if keep:
+            surviving.add(field_lower)
+        else:
+            plan["removed_field_names"].append(field_name)
+            plan["removed_fields"].append(f"{field_name}={value}")
 
-        if not is_field_verifiable(field_lower, value, index):
-            fields_to_remove.append(field_name)
-            result["removed_fields"].append(f"{field_name}={value}")
+    plan["type_downgraded"] = _plan_type_downgrade(entry, surviving, api_entry)
+    return plan
 
-    for field_name in fields_to_remove:
-        del entry.fields[field_name]
 
-    # Step 3: Entry type downgrade check
-    if should_downgrade_to_misc(entry):
-        old_type = entry.type
+def _apply_cleaned_marker(entry, plan: dict) -> None:
+    """Append a METADATA_CLEANED tag to keywords (W4 makes this dedupe)."""
+    all_changes = list(plan["removed_field_names"])
+    if plan["year_corrected"]:
+        all_changes.append(f"year:{plan['year_corrected'][0]}->{plan['year_corrected'][1]}")
+    if plan["type_downgraded"]:
+        all_changes.append(f"type:@{plan['type_downgraded'][0]}->@{plan['type_downgraded'][1]}")
+    if not all_changes:
+        return
+    cleaned_tag = f"METADATA_CLEANED: {', '.join(all_changes)}"
+    if 'keywords' in entry.fields:
+        entry.fields['keywords'] += f", {cleaned_tag}"
+    else:
+        entry.fields['keywords'] = cleaned_tag
+
+
+def apply_entry_cleaning(entry, plan: dict) -> None:
+    """Mutate the pybtex entry per a plan from plan_entry_cleaning, then tag."""
+    if plan["year_corrected"]:
+        entry.fields['year'] = plan["year_corrected"][1]
+    for fname in plan["removed_field_names"]:
+        if fname in entry.fields:
+            del entry.fields[fname]
+    if plan["type_downgraded"]:
         entry.type = 'misc'
         entry.original_type = 'misc'  # pybtex Writer uses original_type
-        result["type_downgraded"] = (old_type, 'misc')
-
-    # Step 4: Add tag to indicate cleaning was performed
-    all_changes = []
-    if result["removed_fields"]:
-        # Extract just field names from "field=value" format
-        all_changes.extend([f.split('=')[0] for f in result["removed_fields"]])
-    if result["year_corrected"]:
-        old_yr, new_yr = result["year_corrected"]
-        all_changes.append(f"year:{old_yr}->{new_yr}")
-    if result["type_downgraded"]:
-        old_type, new_type = result["type_downgraded"]
-        all_changes.append(f"type:@{old_type}->@{new_type}")
-
-    if all_changes:
-        cleaned_tag = f"METADATA_CLEANED: {', '.join(all_changes)}"
-        if 'keywords' in entry.fields:
-            entry.fields['keywords'] += f", {cleaned_tag}"
-        else:
-            entry.fields['keywords'] = cleaned_tag
-
-    return result
+    _apply_cleaned_marker(entry, plan)
 
 
 def write_bibtex(bib_data: BibliographyData, output_path: Path) -> None:
@@ -599,32 +687,62 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
 
     result["entries_total"] = len(bib_data.entries)
 
-    # Clean each entry
-    any_changes = False
+    # Entry-scoped planning: only entries with an affirmative API match are
+    # cleaned; unmatched entries pass through untouched and are counted.
+    plans = []  # (entry_key, entry, plan)
     for entry_key, entry in bib_data.entries.items():
-        entry_result = clean_entry(entry_key, entry, index)
+        api_entry = find_api_entry_for_bib_entry(entry, index)
+        if api_entry is None:
+            result["unmatched_entries"] += 1
+            continue
+        result["matched_entries"] += 1
+        plans.append((entry_key, entry, plan_entry_cleaning(entry, index, api_entry)))
 
-        # Check if any changes were made to this entry
-        entry_changed = (
-            entry_result["removed_fields"] or
-            entry_result["year_corrected"] or
-            entry_result["type_downgraded"]
+    # B2: compute the PLANNED metrics (by field name) BEFORE the breaker check,
+    # so an aborted plan is fully recorded even when nothing is written
+    # (applied_* stay 0 on a trip; planned_* survive).
+    for _, _, plan in plans:
+        if plan["removed_field_names"]:
+            result["planned_entries_cleaned"] += 1
+        for fname in plan["removed_field_names"]:
+            result["planned_fields_removed_by_name"][fname] = (
+                result["planned_fields_removed_by_name"].get(fname, 0) + 1)
+        if plan["type_downgraded"]:
+            result["planned_demotions"] += 1
+
+    # Circuit breaker: refuse a mass strip (systemic index failure). Keyed on
+    # the planned count computed above.
+    entries_with_strips = result["planned_entries_cleaned"]
+    total = len(bib_data.entries)
+    if (entries_with_strips >= BREAKER_MIN_ENTRIES and total > 0
+            and entries_with_strips / total > BREAKER_FRACTION):
+        result["breaker_tripped"] = True
+        result["warnings"].append(
+            f"Circuit breaker tripped: would strip fields from {entries_with_strips}"
+            f"/{total} entries (> {BREAKER_FRACTION:.0%} and >= {BREAKER_MIN_ENTRIES}); "
+            f"wrote nothing to {bib_path.name}."
         )
+        return result  # applied_* stay 0; planned_* survive
 
-        if entry_changed:
-            any_changes = True
-            result["entries_cleaned"] += 1
-            # Store removed fields for backwards compatibility
-            result["cleaned_entries"][entry_key] = entry_result["removed_fields"]
-            result["total_fields_removed"] += len(entry_result["removed_fields"])
+    # Apply the planned changes, tallying applied_* alongside the legacy totals.
+    for entry_key, entry, plan in plans:
+        if not (plan["removed_field_names"] or plan["year_corrected"] or plan["type_downgraded"]):
+            continue
+        apply_entry_cleaning(entry, plan)
+        result["entries_cleaned"] += 1
+        result["applied_entries_cleaned"] += 1
+        result["cleaned_entries"][entry_key] = plan["removed_fields"]
+        result["total_fields_removed"] += len(plan["removed_field_names"])
+        for fname in plan["removed_field_names"]:
+            result["applied_fields_removed_by_name"][fname] = (
+                result["applied_fields_removed_by_name"].get(fname, 0) + 1)
+        if plan["year_corrected"]:
+            result["years_corrected"] += 1
+        if plan["type_downgraded"]:
+            result["types_downgraded"] += 1
+            result["applied_demotions"] += 1
 
-            if entry_result["year_corrected"]:
-                result["years_corrected"] += 1
-            if entry_result["type_downgraded"]:
-                result["types_downgraded"] += 1
-
-    # Write cleaned BibTeX back
-    if any_changes:
+    if result["applied_entries_cleaned"]:
         write_bibtex(bib_data, bib_path)
 
     return result
