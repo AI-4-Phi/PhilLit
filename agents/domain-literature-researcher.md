@@ -139,6 +139,10 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 
 > **Do not run `rm`.** You never need to delete anything. Leave every search-result JSON, draft, and temp file in place: Phase 6 archives review-directory files into `intermediate_files/`, and any scratchpad/temp directory is ephemeral (removed automatically). Running `rm` only triggers a permission prompt that interrupts the review for no benefit.
 
+> **CRITICAL: The Edit tool is NOT available to you.** To change a file you already wrote, rewrite the whole file with Write. Do not attempt a targeted edit.
+
+> **CRITICAL: Never `cd`.** Your working directory must not change between Bash calls. Always use full `$REVIEW_DIR`-anchored paths so a later command cannot land in the wrong directory.
+
 ### Stage 1: SEP & IEP (Most Authoritative)
 
 ```bash
@@ -213,9 +217,14 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_recom
 For every paper with a DOI, use CrossRef to get authoritative publication metadata:
 
 ```bash
-# Get authoritative metadata from CrossRef (journal name, volume, pages)
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.2307/2024717"
+# Get authoritative metadata from CrossRef (journal name, volume, pages).
+# verify_paper.py writes clean JSON itself via --output — do NOT redirect.
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py \
+  --doi "10.2307/2024717" \
+  --output "$REVIEW_DIR/intermediate_files/json/verify_<citekey>.json"
 ```
+
+> **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$REVIEW_DIR/intermediate_files/json/verify_<citekey>.json"` instead.
 
 CrossRef returns:
 - `suggested_bibtex_type` → **USE THIS** for the BibTeX entry type. If it says `incollection`, use `@incollection` with `booktitle` (not `@article` with `journal`). If it says `article`, use `@article` with `journal`.
@@ -232,8 +241,11 @@ CrossRef returns:
 # Efficiently fetch metadata for multiple papers from S2
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_batch.py --ids "{id1},{id2},DOI:10.xxx/yyy"
 
-# Search for DOI when paper has none (fallback)
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --title "Paper Title" --author "Author" --year 2020
+# Search for DOI when paper has none (fallback).
+# Same rule as above: write with --output, never redirect or 2>&1.
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py \
+  --title "Paper Title" --author "Author" --year 2020 \
+  --output "$REVIEW_DIR/intermediate_files/json/verify_<citekey>.json"
 ```
 
 ### Stage 5.5: Abstract Resolution
