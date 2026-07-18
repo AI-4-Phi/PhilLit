@@ -26,12 +26,14 @@ Exit Codes:
     1: Paper not found
     2: Configuration error (missing env var, invalid args)
     3: API error (network, rate limit after retries)
+    4: --output file write failed (JSON still printed to stdout)
 """
 
 import argparse
 import json
 import os
 import sys
+import tempfile
 from typing import Any, Optional
 
 import requests
@@ -48,44 +50,83 @@ def log_progress(message: str) -> None:
     print(f"[verify_paper.py] {message}", file=sys.stderr, flush=True)
 
 
+# A1 (item 13): the script owns its output file so a researcher's shell
+# redirection (`> f.json 2>&1`) can no longer merge stderr logs into the JSON.
+# Set by main() from --output; None means stdout-only (upstream default).
+_OUTPUT_PATH: Optional[str] = None
+
+
+def write_output_file(payload: dict, path: str) -> bool:
+    """Atomically write payload as pretty JSON to path (tmp + os.replace,
+    encoding='utf-8'). Returns True on success, False on any failure (the
+    caller then warns and exits 4)."""
+    try:
+        directory = os.path.dirname(os.path.abspath(path))
+        os.makedirs(directory, exist_ok=True)
+        fd, tmp = tempfile.mkstemp(dir=directory, suffix=".tmp")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(payload, f, indent=2)
+            os.replace(tmp, path)
+        except Exception:
+            try:
+                os.unlink(tmp)
+            except OSError:
+                pass
+            raise
+        return True
+    except Exception as e:
+        print(f"[verify_paper.py] Failed to write --output file {path}: {e}",
+              file=sys.stderr, flush=True)
+        return False
+
+
+def _emit(payload: dict, exit_code: int) -> None:
+    """Print payload JSON to stdout (always, upstream-compatible), and if
+    --output was given also write it atomically. A failed --output write is a
+    hard error: the JSON is still on stdout, but the exit code becomes 4
+    (output write failed) so the researcher retries with a good path."""
+    print(json.dumps(payload, indent=2))
+    if _OUTPUT_PATH is not None and not write_output_file(payload, _OUTPUT_PATH):
+        sys.exit(4)
+    sys.exit(exit_code)
+
+
 # Standard output helpers
 def output_success(query: dict, result: dict) -> None:
     """Output successful verification result."""
-    print(json.dumps({
+    _emit({
         "status": "success",
         "source": "crossref",
         "query": query,
         "results": [result],
         "count": 1,
         "errors": []
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_not_found(query: dict, message: str) -> None:
     """Output when paper is not found."""
-    print(json.dumps({
+    _emit({
         "status": "error",
         "source": "crossref",
         "query": query,
         "results": [],
         "count": 0,
         "errors": [{"type": "not_found", "message": message, "recoverable": False}]
-    }, indent=2))
-    sys.exit(1)
+    }, 1)
 
 
 def output_error(query: dict, error_type: str, message: str, exit_code: int = 2) -> None:
     """Output error result."""
-    print(json.dumps({
+    _emit({
         "status": "error",
         "source": "crossref",
         "query": query,
         "results": [],
         "count": 0,
         "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
-    }, indent=2))
-    sys.exit(exit_code)
+    }, exit_code)
 
 
 def normalize_doi(doi: str) -> str:
@@ -408,8 +449,16 @@ def main():
         action="store_true",
         help="Print debug information"
     )
+    parser.add_argument(
+        "--output",
+        help="Write the result JSON to this file atomically (stderr logs stay "
+             "on stderr). Use this instead of shell redirection.",
+    )
 
     args = parser.parse_args()
+
+    global _OUTPUT_PATH
+    _OUTPUT_PATH = args.output
 
     # Build query dict for output
     query = {}
