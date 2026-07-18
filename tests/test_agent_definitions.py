@@ -28,3 +28,23 @@ def test_no_relative_docs_paths_in_agents_or_skills():
         "relative ../docs/ paths do not resolve from a plugin workspace "
         "(use $PHILLIT_ROOT/docs/...):\n" + "\n".join(offenders)
     )
+
+
+def test_researcher_teaches_verify_paper_output_convention():
+    """verify_paper.py owns its output file via --output (item 13, A2/D4);
+    a researcher piping stdout to a file (or worse, `2>&1`) corrupts the
+    JSON with interleaved progress logs. The agent definition must both
+    show the --output invocation and explicitly forbid the redirect
+    footgun. We only assert positive markers (never `"2>&1" not in text`)
+    because the prohibition sentence itself quotes `2>&1`.
+    """
+    path = REPO_ROOT / "agents" / "domain-literature-researcher.md"
+    text = path.read_text(encoding="utf-8")
+
+    assert "verify_paper.py" in text and "--output" in text, (
+        "researcher agent must show verify_paper.py invoked with --output"
+    )
+    assert "never redirect" in text.lower() or "do not redirect" in text.lower(), (
+        "researcher agent must explicitly instruct never to redirect "
+        "verify_paper.py output (e.g. `> f.json 2>&1`) instead of using --output"
+    )

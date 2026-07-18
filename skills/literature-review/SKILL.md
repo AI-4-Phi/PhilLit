@@ -83,6 +83,8 @@ Invoke subagents using the Task tool with these parameters:
 
 Do NOT read agent definition files before invoking them. Agent definitions are for the system, not for you to read.
 
+**Do NOT use `cd`** in any Bash call across all phases. Always use paths relative to the repo root or absolute paths — a `cd` changes the working directory for later commands too, which is how stray directories and misplaced files happen.
+
 ---
 
 ## Phase 1: Verify Environment and Determine Execution Mode
@@ -355,7 +357,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    find . -maxdepth 1 -type d -empty -not -name '.*' -not -name 'reviews' -not -name 'tests' -not -name 'docs' -exec rmdir {} \;
    ```
 
-   **Note:** Do NOT use `cd` to change directories. Always use paths relative to the repo root or absolute paths to prevent working directory mismatches in subsequent commands.
+   **Note:** Never `cd` here either — see the rule under Task Tool Usage above.
 
 **After cleanup** (final state):
 ```
