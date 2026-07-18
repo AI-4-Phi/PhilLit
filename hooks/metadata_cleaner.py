@@ -18,7 +18,7 @@ Preserved fields (never removed):
 - year (corrected rather than removed, via DOI lookup)
 - note, keywords, abstract_source, howpublished, url, abstract (LLM-generated)
 
-Usage: python metadata_cleaner.py <bib_file> <json_dir>
+Usage: python metadata_cleaner.py <bib_file> <json_dir> [<json_dir> ...]
 Output: JSON to stdout with cleaning summary
 Exit codes: 0 = success, 2 = file not found/read error
 """
@@ -77,6 +77,8 @@ class MetadataIndex:
     years: dict = field(default_factory=dict)
     dois: dict = field(default_factory=dict)
     entries: list = field(default_factory=list)
+    skipped_files: list = field(default_factory=list)   # unparseable after salvage
+    salvaged_files: list = field(default_factory=list)  # recovered from log pollution
 
 
 def normalize_pages(pages: str) -> str:
@@ -108,6 +110,32 @@ def normalize_doi(doi: str) -> str:
         if doi.startswith(prefix):
             doi = doi[len(prefix):]
     return doi
+
+
+def _salvage_json(text: str) -> Optional[dict]:
+    """Recover a JSON result object from log-polluted text.
+
+    Researchers redirected `verify_paper.py ... > f.json 2>&1`, prepending
+    `[verify_paper.py] ...` stderr lines to a well-formed JSON object. Iterate
+    over EVERY '{' offset attempting json.JSONDecoder().raw_decode; accept the
+    first decoded value that is a dict containing a "results" key (the shape
+    every producer script emits). Trailing content after the object is ignored
+    (stderr can interleave after as well as before). Returns None when no such
+    object exists (truncated file, or only look-alike fragments without
+    "results") - the file is then skipped, never guessed at.
+    """
+    decoder = json.JSONDecoder()
+    idx = text.find('{')
+    while idx != -1:
+        try:
+            obj, _end = decoder.raw_decode(text, idx)
+        except json.JSONDecodeError:
+            idx = text.find('{', idx + 1)
+            continue
+        if isinstance(obj, dict) and 'results' in obj:
+            return obj
+        idx = text.find('{', idx + 1)
+    return None
 
 
 def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
@@ -255,76 +283,105 @@ def detect_api_source(data: dict, filename: str) -> str:
     return "unknown"
 
 
-def build_metadata_index(json_dir: Path) -> MetadataIndex:
-    """Build index of all metadata from JSON files in directory."""
+def build_metadata_index(json_dirs) -> MetadataIndex:
+    """Build a presence-based index of metadata from JSON files across one or
+    more directories.
+
+    json_dirs may be a single Path (back-compat) or a list of Paths (item-13
+    union: the review root AND intermediate_files/json both feed one index, so
+    directory shadowing no longer starves verification). Files failing
+    json.loads are salvaged via _salvage_json (log-pollution tolerance);
+    unsalvageable files are recorded in index.skipped_files, salvaged ones in
+    index.salvaged_files.
+    """
     index = MetadataIndex()
 
-    if not json_dir.exists():
-        return index
+    if isinstance(json_dirs, (str, Path)):
+        json_dirs = [json_dirs]
 
-    for json_file in json_dir.glob("*.json"):
-        try:
-            data = json.loads(json_file.read_text(encoding='utf-8'))
-        except (json.JSONDecodeError, UnicodeDecodeError):
+    seen: set = set()
+    for json_dir in json_dirs:
+        json_dir = Path(json_dir)
+        if not json_dir.exists():
             continue
+        for json_file in sorted(json_dir.glob("*.json")):
+            resolved = str(json_file.resolve())
+            if resolved in seen:
+                continue
+            seen.add(resolved)
 
-        api_source = detect_api_source(data, json_file.name)
+            try:
+                raw = json_file.read_text(encoding='utf-8')
+            except (UnicodeDecodeError, OSError):
+                index.skipped_files.append(json_file.name)
+                continue
 
-        if api_source == "s2":
-            entries = parse_s2_result(data, json_file.name)
-        elif api_source == "openalex":
-            entries = parse_openalex_result(data, json_file.name)
-        elif api_source == "crossref":
-            entries = parse_crossref_result(data, json_file.name)
-        elif api_source == "arxiv":
-            entries = parse_arxiv_result(data, json_file.name)
-        elif api_source == "philpapers":
-            entries = parse_philpapers_result(data, json_file.name)
-        else:
-            entries = parse_s2_result(data, json_file.name)
+            try:
+                data = json.loads(raw)
+            except json.JSONDecodeError:
+                data = _salvage_json(raw)
+                if data is None:
+                    index.skipped_files.append(json_file.name)
+                    continue
+                index.salvaged_files.append(json_file.name)
 
-        for entry in entries:
-            index.entries.append(entry)
+            api_source = detect_api_source(data, json_file.name)
 
-            if entry.get("container_title"):
-                norm = normalize_journal(entry["container_title"])
-                if norm not in index.journals:
-                    index.journals[norm] = []
-                index.journals[norm].append(entry["container_title"])
+            if api_source == "s2":
+                entries = parse_s2_result(data, json_file.name)
+            elif api_source == "openalex":
+                entries = parse_openalex_result(data, json_file.name)
+            elif api_source == "crossref":
+                entries = parse_crossref_result(data, json_file.name)
+            elif api_source == "arxiv":
+                entries = parse_arxiv_result(data, json_file.name)
+            elif api_source == "philpapers":
+                entries = parse_philpapers_result(data, json_file.name)
+            else:
+                entries = parse_s2_result(data, json_file.name)
 
-            if entry.get("volume"):
-                vol = str(entry["volume"]).strip()
-                if vol not in index.volumes:
-                    index.volumes[vol] = []
-                index.volumes[vol].append(json_file.name)
+            for entry in entries:
+                index.entries.append(entry)
 
-            if entry.get("issue"):
-                iss = str(entry["issue"]).strip()
-                if iss not in index.issues:
-                    index.issues[iss] = []
-                index.issues[iss].append(json_file.name)
+                if entry.get("container_title"):
+                    norm = normalize_journal(entry["container_title"])
+                    if norm not in index.journals:
+                        index.journals[norm] = []
+                    index.journals[norm].append(entry["container_title"])
 
-            if entry.get("pages"):
-                norm = normalize_pages(entry["pages"])
-                if norm not in index.pages:
-                    index.pages[norm] = []
-                index.pages[norm].append(entry["pages"])
+                if entry.get("volume"):
+                    vol = str(entry["volume"]).strip()
+                    if vol not in index.volumes:
+                        index.volumes[vol] = []
+                    index.volumes[vol].append(json_file.name)
 
-            if entry.get("publisher"):
-                pub = entry["publisher"].lower().strip()
-                if pub not in index.publishers:
-                    index.publishers[pub] = []
-                index.publishers[pub].append(entry["publisher"])
+                if entry.get("issue"):
+                    iss = str(entry["issue"]).strip()
+                    if iss not in index.issues:
+                        index.issues[iss] = []
+                    index.issues[iss].append(json_file.name)
 
-            if entry.get("year"):
-                yr = str(entry["year"])
-                if yr not in index.years:
-                    index.years[yr] = []
-                index.years[yr].append(json_file.name)
+                if entry.get("pages"):
+                    norm = normalize_pages(entry["pages"])
+                    if norm not in index.pages:
+                        index.pages[norm] = []
+                    index.pages[norm].append(entry["pages"])
 
-            if entry.get("doi"):
-                norm = normalize_doi(entry["doi"])
-                index.dois[norm] = json_file.name
+                if entry.get("publisher"):
+                    pub = entry["publisher"].lower().strip()
+                    if pub not in index.publishers:
+                        index.publishers[pub] = []
+                    index.publishers[pub].append(entry["publisher"])
+
+                if entry.get("year"):
+                    yr = str(entry["year"])
+                    if yr not in index.years:
+                        index.years[yr] = []
+                    index.years[yr].append(json_file.name)
+
+                if entry.get("doi"):
+                    norm = normalize_doi(entry["doi"])
+                    index.dois[norm] = json_file.name
 
     return index
 
@@ -438,16 +495,35 @@ def write_bibtex(bib_data: BibliographyData, output_path: Path) -> None:
         writer.write_file(bib_data, f)
 
 
-def clean_bibtex(bib_path: Path, json_dir: Path) -> dict:
-    """Clean unverifiable metadata from BibTeX file.
+def _count_entries_as_unmatched(bib_path: Path, result: dict) -> dict:
+    """B1 truthfulness: when there is no usable index (no dirs, or no parseable
+    results), still PARSE the .bib and count every entry as UNMATCHED so the
+    result is honest, never a silent no-op that reads like 'nothing to clean'.
+    No entry is mutated and no METADATA_CLEANED marker is written on this path.
+    """
+    try:
+        bib_data = parse_file(str(bib_path), bib_format='bibtex')
+    except Exception as e:
+        result["warnings"].append(f"Could not parse {bib_path.name} to count entries: {e}")
+        return result
+    result["entries_total"] = len(bib_data.entries)
+    result["matched_entries"] = 0
+    result["unmatched_entries"] = len(bib_data.entries)
+    return result
+
+
+def clean_bibtex(bib_path: Path, json_dirs) -> dict:
+    """Clean unverifiable metadata from a BibTeX file.
 
     Args:
         bib_path: Path to BibTeX file
-        json_dir: Path to directory containing JSON API output files
+        json_dirs: a single Path (back-compat) OR a list of Paths holding JSON
+            API output. All existing dirs' parseable/salvageable files feed one
+            presence-based index (item-13 union: fixes directory shadowing).
 
-    Returns:
-        {"success": bool, "cleaned_entries": dict, "total_fields_removed": int,
-         "years_corrected": int, "types_downgraded": int, "errors": list}
+    Returns a result dict. Item-13 keys: skipped_files, salvaged_files (A3);
+    matched_entries, unmatched_entries, breaker_tripped, and the
+    planned_*/applied_* metrics (A4, populated by the W3 loop).
     """
     result = {
         "success": True,
@@ -457,9 +533,26 @@ def clean_bibtex(bib_path: Path, json_dir: Path) -> dict:
         "types_downgraded": 0,
         "entries_cleaned": 0,
         "entries_total": 0,
+        "matched_entries": 0,
+        "unmatched_entries": 0,
+        "breaker_tripped": False,
+        # planned_* is computed BEFORE the breaker check (W3); applied_* only on
+        # writes. On a breaker trip applied_* stay 0 but planned_* survive so the
+        # aborted plan (by field name) is fully recorded.
+        "planned_entries_cleaned": 0,
+        "planned_fields_removed_by_name": {},
+        "planned_demotions": 0,
+        "applied_entries_cleaned": 0,
+        "applied_fields_removed_by_name": {},
+        "applied_demotions": 0,
+        "skipped_files": [],
+        "salvaged_files": [],
         "errors": [],
         "warnings": []
     }
+
+    if isinstance(json_dirs, (str, Path)):
+        json_dirs = [json_dirs]
 
     # Check files exist
     if not bib_path.exists():
@@ -467,16 +560,30 @@ def clean_bibtex(bib_path: Path, json_dir: Path) -> dict:
         result["errors"].append(f"BibTeX file not found: {bib_path}")
         return result
 
-    if not json_dir.exists():
-        result["warnings"].append(f"JSON directory not found: {json_dir} - skipping cleaning")
-        return result
+    existing_dirs = [Path(d) for d in json_dirs if Path(d).exists()]
+    if not existing_dirs:
+        shown = ", ".join(str(d) for d in json_dirs) if json_dirs else "(none passed)"
+        result["warnings"].append(f"No JSON directory found ({shown}) - skipping cleaning")
+        return _count_entries_as_unmatched(bib_path, result)  # B1: still count
 
-    # Build metadata index
-    index = build_metadata_index(json_dir)
+    # Build metadata index (union across dirs, salvage log-polluted files)
+    index = build_metadata_index(existing_dirs)
+    result["skipped_files"] = list(index.skipped_files)
+    result["salvaged_files"] = list(index.salvaged_files)
+    if index.salvaged_files:
+        result["warnings"].append(
+            "Salvaged " + str(len(index.salvaged_files))
+            + " log-polluted JSON file(s): " + ", ".join(index.salvaged_files)
+        )
+    if index.skipped_files:
+        result["warnings"].append(
+            "Skipped " + str(len(index.skipped_files))
+            + " unparseable JSON file(s): " + ", ".join(index.skipped_files)
+        )
 
     if not index.entries:
         result["warnings"].append("No API results found in JSON directory - skipping cleaning")
-        return result
+        return _count_entries_as_unmatched(bib_path, result)  # B1: still count
 
     # Parse BibTeX file
     try:
@@ -527,14 +634,14 @@ def main():
     if len(sys.argv) < 3:
         print(json.dumps({
             "success": False,
-            "errors": ["Usage: python metadata_cleaner.py <bib_file> <json_dir>"]
+            "errors": ["Usage: python metadata_cleaner.py <bib_file> <json_dir> [<json_dir> ...]"]
         }))
         sys.exit(2)
 
     bib_path = Path(sys.argv[1])
-    json_dir = Path(sys.argv[2])
+    json_dirs = [Path(a) for a in sys.argv[2:]]
 
-    result = clean_bibtex(bib_path, json_dir)
+    result = clean_bibtex(bib_path, json_dirs)
     print(json.dumps(result, indent=2))
 
     if not result["success"]:

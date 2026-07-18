@@ -1,0 +1,34 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] Verifying DOI: 10.1515/gj-2017-0012
+[verify_paper.py] DOI verified: The Ethical and Legal Case Against Autonomy in Wea...
+{
+  "status": "success",
+  "source": "crossref",
+  "query": {
+    "doi": "10.1515/gj-2017-0012"
+  },
+  "results": [
+    {
+      "verified": true,
+      "doi": "10.1515/gj-2017-0012",
+      "title": "The Ethical and Legal Case Against Autonomy in Weapons Systems",
+      "authors": [
+        {"family": "Amoroso", "given": "Daniele"},
+        {"family": "Tamburrini", "given": "Guglielmo"}
+      ],
+      "editors": [],
+      "year": 2017,
+      "container_title": "Global Jurist",
+      "volume": "18",
+      "issue": "1",
+      "page": "",
+      "publisher": "Walter de Gruyter GmbH",
+      "type": "journal-article",
+      "suggested_bibtex_type": "article",
+      "method": "doi_lookup",
+      "url": "https://doi.org/10.1515/gj-2017-0012"
+    }
+  ],
+  "count": 1,
+  "errors": []
+}

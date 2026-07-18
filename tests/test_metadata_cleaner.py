@@ -383,7 +383,7 @@ class TestCleanBibtex:
 
         assert result["success"] is True
         assert len(result["warnings"]) > 0
-        assert "not found" in result["warnings"][0].lower()
+        assert "no json directory found" in result["warnings"][0].lower()
 
     def test_handles_empty_json_dir(self, tmp_path, bibtex_with_hallucinated_number):
         """Should handle empty JSON directory gracefully."""

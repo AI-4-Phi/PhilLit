@@ -1,0 +1,11 @@
+[verify_paper.py] Connecting to CrossRef API...
+[verify_paper.py] DOI verified: The {Ethical} and Legal Case...
+{
+  "status": "success",
+  "source": "crossref",
+  "results": [
+    {"verified": true, "doi": "10.1515/gj-2017-0012", "container_title": "Global Jurist", "volume": "18"}
+  ],
+  "count": 1,
+  "errors": []
+}
