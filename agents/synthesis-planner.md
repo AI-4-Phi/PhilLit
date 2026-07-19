@@ -189,6 +189,13 @@ Write to `synthesis-outline.md`:
 
 The outline should use analytical and descriptive language. Do not make sweeping evaluations of works or positions — including superlatives ("most developed," "most important") and evaluative adjectives ("seminal," "groundbreaking") — unless grounded in: (a) a consensus in the literature, (b) evidence obtained from tool use, (c) arguments in the literature, or (d) self-evident facts. Describe what authors argue; do not evaluate how good their arguments are.
 
+### Section Titles
+
+Titles are **reader-facing**: they describe the content for someone reading the finished review, not the planning process that produced it. Never leave a structural or process label in a title — the writer reproduces headings verbatim, so any planning shorthand ships straight into the published review.
+
+❌ `## Section 1: Moral Responsibility (Core Analytical Section)`
+✅ `## Section 1: Moral Responsibility and the Control Condition`
+
 ### Quality Checks
 
 Before finalizing:

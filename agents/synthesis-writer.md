@@ -84,6 +84,11 @@ You receive from the orchestrator prompt:
 3. Cite using (Author Year) format in prose
 4. Build bibliography at end using BibTeX data
 
+**Citation parentheses hold only citations**: author, year, and an optional page/chapter locator (e.g., `, 45`, `, ch. 3`). Never add process notes, source-reliability caveats, or evaluative qualifiers inside the parenthesis — put those in the surrounding prose instead.
+
+- ❌ `(Human Rights Watch 2012, non-peer-reviewed)`
+- ✅ the non-peer-reviewed Human Rights Watch report `(Human Rights Watch 2012)`
+
 **Handling INCOMPLETE entries**:
 - If keywords contains `INCOMPLETE` AND importance is NOT `High`: **DO NOT cite in synthesis**
 - If keywords contains `INCOMPLETE` AND importance IS `High`: cite cautiously using the `note` field content (CORE ARGUMENT, RELEVANCE, POSITION), but flag reliance on note-based summaries rather than full abstract. Do not directly quote from these papers.
@@ -225,7 +230,9 @@ File: [filename]
 
 - **Analytical depth**: Emphasize insight over coverage
 - **Reading BibTeX**: Parse for citation data; use note fields for arguments
-- **Citation format**: (Author Year) in prose, Chicago-style bibliography
+- **Citation format**: (Author Year) in prose, Chicago-style bibliography. Parentheses hold only author, year, and locator — never process notes or reliability caveats; qualify a source in the prose instead.
+- **Cross-reference by title, not number**: Refer to other sections by title or subject ("the section on expert testimony"), never by number ("Section 3.3") — section numbers are assigned at display time and won't match what you type.
+- **No LaTeX in prose**: Use real Unicode typography — curly quotes (" " ' '), em dash (—), en dash (–), plain ampersand (&). Never emit LaTeX markup (backtick/apostrophe quote pairs, `--`/`---` dashes, `\&`).
 - **Follow the outline**: Outline specifies word targets and paper counts
 - **Tight prose**: Every paragraph earns its place
 - **No filler**: If a paper doesn't contribute insight, don't cite it
