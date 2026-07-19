@@ -11,6 +11,8 @@ import re
 import sys
 from pathlib import Path
 
+from pybtex.database import parse_string
+
 IMPORTANCE_ORDER = {'High': 3, 'Medium': 2, 'Low': 1}
 
 
@@ -214,6 +216,157 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
     return base, reason, winner
 
 
+# Substantive fields a survivor UNIONs in from a loser (spec v2.1 / ADV-A0).
+_SUBSTANTIVE_FIELDS = (
+    "journal", "booktitle", "volume", "number", "pages",
+    "publisher", "doi", "url", "abstract",
+)
+
+
+def _normalize_title(text: str) -> str:
+    """Lowercase, collapse non-alphanumerics to single spaces (dedup key form)."""
+    t = re.sub(r"[^a-z0-9]+", " ", text.lower())
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _entry_fields(entry_text: str) -> dict:
+    """Parse an entry's fields with pybtex (robust to quoted values and nested
+    braces). Returns a lowercase-keyed field->value dict, or {} on parse
+    failure."""
+    try:
+        db = parse_string(entry_text, "bibtex")
+    except Exception:
+        return {}
+    for _key, entry in db.entries.items():
+        return {name.lower(): val for name, val in entry.fields.items()}
+    return {}
+
+
+def _fallback_key(entry_text: str) -> tuple[str, str, str] | None:
+    """Title-axis dedup key: (normalized_title, year, first-author surname).
+
+    Parsed with pybtex so quoted values (title = "...") and nested braces
+    ({The {AI} Problem}) are handled — the regex extractors elsewhere in this
+    file are brace-only and non-nested. Returns None if any component is
+    empty. Duplicated from generate_bibliography._fallback_key by design —
+    the two scripts do not import each other.
+    """
+    try:
+        db = parse_string(entry_text, "bibtex")
+    except Exception:
+        return None
+    entry = None
+    for _key, e in db.entries.items():
+        entry = e
+        break
+    if entry is None:
+        return None
+    title = _normalize_title(entry.fields.get("title", "") or "")
+    year = (entry.fields.get("year", "") or "").strip()
+    persons = entry.persons.get("author", []) or entry.persons.get("editor", [])
+    surname = ""
+    if persons:
+        surname = _normalize_title(
+            " ".join(persons[0].prelast_names + persons[0].last_names)
+        )
+    if not title or not year or not surname:
+        return None
+    return (title, year, surname)
+
+
+def _insert_field_text(entry_text: str, field: str, value: str) -> str:
+    """Insert `field = {value},` immediately after the entry's opening line
+    (`@type{key,`). The opening line is never inside a field value, so a
+    multi-line value can't swallow the insertion."""
+    lines = entry_text.split("\n")
+    for i, line in enumerate(lines):
+        if re.match(r'\s*@\w+\s*\{', line):
+            indent = "  "
+            for j in range(i + 1, len(lines)):
+                body = lines[j].strip()
+                if body and not body.startswith("}"):
+                    m = re.match(r'^(\s*)', lines[j])
+                    if m and m.group(1):
+                        indent = m.group(1)
+                    break
+            stripped = lines[i].rstrip()
+            if not stripped.endswith(","):
+                stripped += ","
+            lines[i] = stripped
+            lines.insert(i + 1, f"{indent}{field} = {{{value}}},")
+            return "\n".join(lines)
+    return entry_text
+
+
+def _union_substantive_fields_text(winner_text: str, loser_text: str) -> str:
+    """Union the loser's substantive fields into the winner's text (spec v2.1 /
+    ADV-A0): insert every field in _SUBSTANTIVE_FIELDS the loser has and the
+    winner lacks. Field extraction uses pybtex so quoted/nested-brace values
+    are handled."""
+    winner_fields = _entry_fields(winner_text)
+    loser_fields = _entry_fields(loser_text)
+    out = winner_text
+    for f in _SUBSTANTIVE_FIELDS:
+        w = (winner_fields.get(f) or "").strip()
+        l = (loser_fields.get(f) or "").strip()
+        if not w and l:
+            out = _insert_field_text(out, f, loser_fields[f])
+            winner_fields[f] = loser_fields[f]
+    return out
+
+
+def dedupe_by_title_key(seen: dict[str, str]) -> list[str]:
+    """Third dedup pass: catch same-work duplicates that share no DOI, keyed on
+    (normalized_title, year, first-author surname). Winner via merge_entries()
+    (abstract-preference, then importance); the survivor then UNIONs in any
+    substantive field the loser had and it lacked (spec v2.1 / ADV-A0 —
+    merge_entries alone is winner-take-all). DOI identity is tracked per GROUP:
+    a merge is refused when the two groups' non-empty DOI sets differ.
+    Mutates `seen` in place; returns removed keys.
+    """
+    seen_titles: dict[tuple, str] = {}
+    group_dois: dict[str, set] = {}
+    title_dupes: list[str] = []
+    for key, entry in list(seen.items()):
+        if key not in seen:  # already removed as a loser earlier this pass
+            continue
+        fkey = _fallback_key(entry)
+        if fkey is None:
+            continue
+        doi = extract_doi(entry)
+        new_dois = {doi} if doi else set()
+        if fkey in seen_titles:
+            existing_key = seen_titles[fkey]
+            existing_dois = group_dois.get(existing_key, set())
+            # Distinct non-empty DOI sets => genuinely different works; keep both.
+            if new_dois and existing_dois and new_dois != existing_dois:
+                continue
+            merged, reason, winner = merge_entries(seen[existing_key], entry)
+            merged_dois = existing_dois | new_dois
+            if winner == 2:
+                # New entry (key) won; union the loser's (existing) fields in.
+                merged = _union_substantive_fields_text(merged, seen[existing_key])
+                print(f"  [DEDUPE-TITLE] '{key}' and '{existing_key}' share title-key - keeping '{key}' ({reason})")
+                del seen[existing_key]
+                seen[key] = merged
+                seen_titles[fkey] = key
+                group_dois.pop(existing_key, None)
+                group_dois[key] = merged_dois
+                title_dupes.append(existing_key)
+            else:
+                # Existing entry won; union the loser's (new) fields in.
+                merged = _union_substantive_fields_text(merged, entry)
+                print(f"  [DEDUPE-TITLE] '{key}' and '{existing_key}' share title-key - keeping '{existing_key}' ({reason})")
+                seen[existing_key] = merged
+                del seen[key]
+                group_dois[existing_key] = merged_dois
+                title_dupes.append(key)
+        else:
+            seen_titles[fkey] = key
+            group_dois[key] = new_dois
+    return title_dupes
+
+
 def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
     """
     Deduplicate BibTeX entries across files.
@@ -223,6 +376,7 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
     - Upgrades importance to highest among duplicates
     - Removes INCOMPLETE flag if merged entry has abstract
     - Second pass catches same paper with different keys via DOI
+    - Third pass catches same paper with no shared DOI via title/year/author
 
     Returns list of duplicate keys that were removed.
     """
@@ -293,6 +447,11 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
             seen_dois[doi] = key
 
     duplicates.extend(doi_dupes)
+
+    # Third pass: title-key deduplication (catches the same work with no shared
+    # DOI — e.g. after a cleaner stripped DOIs from both copies).
+    title_dupes = dedupe_by_title_key(seen)
+    duplicates.extend(title_dupes)
 
     # Write output
     with output_file.open('w', encoding='utf-8') as f:
