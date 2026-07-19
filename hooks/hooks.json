@@ -28,6 +28,24 @@
             "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fast_gate.sh\" run_in_background hooks/block_background_bash.py || echo '{\"systemMessage\": \"PhilLit: background-bash gate could not run (uv failure) - the call was allowed.\"}'"
           }
         ]
+      },
+      {
+        "matcher": "Agent",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fast_gate.sh\" run_in_background hooks/block_subagent_background_dispatch.py || echo '{\"systemMessage\": \"PhilLit: background-dispatch gate could not run (uv failure) - the dispatch was allowed.\"}'"
+          }
+        ]
+      },
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fast_gate.sh\" run_in_background hooks/block_subagent_background_dispatch.py || echo '{\"systemMessage\": \"PhilLit: background-dispatch gate could not run (uv failure) - the dispatch was allowed.\"}'"
+          }
+        ]
       }
     ],
     "PostToolUse": [
