@@ -77,8 +77,9 @@ Invoke subagents using the Task tool with these parameters:
 - `subagent_type`: The agent name with the plugin prefix (e.g., "phillit:literature-review-planner")
 - `prompt`: The instructions for the agent (include working directory and output filename)
 - `description`: Short description (3-5 words)
+- `run_in_background`: Always `false` (see below)
 
-**Do NOT use `run_in_background`**. Foreground execution streams status updates to the user. Parallel execution is achieved by including multiple Task calls in a single message.
+**Pass `run_in_background: false` explicitly on every subagent dispatch.** Recent Claude Code versions default subagent dispatch to *background* execution, so omitting this parameter will NOT give you foreground behavior — you must set it to `false`. Foreground execution streams status updates to the user and guarantees that every agent in a phase finishes before the workflow advances. Achieve parallelism by putting multiple dispatch calls — each with `run_in_background: false` — in a single message; foreground calls batched this way run concurrently and block until all return. Do NOT background them and poll for results.
 
 Do NOT read agent definition files before invoking them. Agent definitions are for the system, not for you to read.
 
@@ -194,7 +195,7 @@ Never advance to a next step in this phase before completing the current step.
    - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
    - description: "Domain [N]: [domain name]"
    - **CRITICAL**: Include ALL Task tool calls in a single message to enable parallel execution
-3. Wait for all N agents to finish using TaskOutput (block until complete). Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
+3. With foreground dispatch (`run_in_background: false`), all N calls in the single message block until every agent finishes and their results return inline — there is no separate wait step. Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
 4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary
 
 Never advance to Phase 4 before all domain researchers have completed.
@@ -209,7 +210,7 @@ Never advance to Phase 4 before all domain researchers have completed.
    - Example prompt: "Research idea: [idea]. Working directory: reviews/[project-name]/. BibTeX files: literature-domain-1.bib through literature-domain-N.bib. Plan: lit-review-plan.md. Write output to: reviews/[project-name]/synthesis-outline.md"
    - description: "Plan synthesis structure"
 2. Planner reads BibTeX files and creates tight outline
-3. Wait for agent to finish using TaskOutput. Expected output: `reviews/[project-name]/synthesis-outline.md` (800-1500 words outline for a 3000-4000 word review)
+3. With foreground dispatch (`run_in_background: false`), the call blocks until the agent finishes and its result returns inline. Expected output: `reviews/[project-name]/synthesis-outline.md` (800-1500 words outline for a 3000-4000 word review)
 4. **Update task-progress.md**
 
 Never advance to a next step in this phase before completing the current step.
@@ -236,7 +237,7 @@ Never advance to a next step in this phase before completing the current step.
      reviews/[project-name]/synthesis-section-1.md"
    - description: "Write section [N]: [section name]"
    - **CRITICAL**: Include ALL Task tool calls in a single message to enable parallel execution
-4. Wait for all N agents to finish using TaskOutput (block until complete). Expected outputs: `reviews/[project-name]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
+4. With foreground dispatch (`run_in_background: false`), all N calls in the single message block until every agent finishes and their results return inline — there is no separate wait step. Expected outputs: `reviews/[project-name]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
 
 Never advance to Phase 6 before all synthesis writers have completed.
 

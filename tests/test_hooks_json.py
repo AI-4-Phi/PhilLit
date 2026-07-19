@@ -11,6 +11,14 @@ def _commands(event):
     return [h["command"] for entry in HOOKS.get(event, []) for h in entry["hooks"]]
 
 
+def _matchers_for(event, script):
+    return [
+        entry.get("matcher")
+        for entry in HOOKS.get(event, [])
+        if any(script in h["command"] for h in entry["hooks"])
+    ]
+
+
 def test_sessionstart_runs_bootstrap_only():
     cmds = _commands("SessionStart")
     assert any("setup-environment.sh" in c for c in cmds)
@@ -31,6 +39,24 @@ def test_intrusive_hooks_are_gated_by_fast_gate():
         assert '" .bib ' in c        # needle argument precedes the script
     for c in bash:
         assert '" run_in_background ' in c
+
+
+def test_background_dispatch_gate_wired_for_agent_and_task():
+    # The dispatch tool was renamed Task -> Agent in v2.1.198; wire BOTH
+    # matchers so the gate survives version drift. Each routes through
+    # fast_gate.sh with the run_in_background needle, like the Bash gate.
+    matchers = set(_matchers_for("PreToolUse", "block_subagent_background_dispatch.py"))
+    assert matchers == {"Agent", "Task"}
+    cmds = [
+        c
+        for c in _commands("PreToolUse")
+        if "block_subagent_background_dispatch.py" in c
+    ]
+    assert len(cmds) == 2
+    for c in cmds:
+        assert "fast_gate.sh" in c
+        assert "${CLAUDE_PLUGIN_ROOT}" in c
+        assert '" run_in_background ' in c  # needle argument precedes the script
 
 
 def test_plumbing_hooks_fail_open_with_visible_message():
