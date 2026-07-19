@@ -15,11 +15,19 @@ PhilLit is a multi-agent system that generates academic literature reviews for p
    ```bash
    uv run --locked pytest
    ```
-4. To try your changes as users experience them, load your checkout as the plugin in a scratch directory:
+4. **Beta-test your changes as an end user would.** `--plugin-dir` loads your working tree as the installed plugin, so your uncommitted changes are picked up directly — no reinstall needed. Run it from a *scratch* directory, not the repo itself (running inside the repo is development mode, which does not register the skills/agents):
    ```bash
+   # 1. Make a scratch workspace (persistent, so you can inspect the output afterward)
+   mkdir -p ~/phillit-test && cd ~/phillit-test
+
+   # 2. Launch Claude Code with your checkout loaded as the plugin
    claude --plugin-dir /path/to/your/PhilLit
    ```
-   then run `/phillit:setup` there and request a review.
+   Then, inside that session:
+   ```
+   /phillit:setup
+   ```
+   `/phillit:setup` scaffolds the workspace (a `.phillit` marker, a `.env`, and merged permission rules). Add your API keys to the scratch `.env` (see `.env.example`), then request a review with `/phillit:literature-review`. Output lands in `reviews/<name>/` for you to inspect. Confirm the plugin loaded by typing `/` and checking that the `/phillit:*` commands appear. After editing plugin code, **restart the `claude` session** to reload it — the plugin is loaded at startup (a script or hook change also rebuilds the per-install venv on the next call if `pyproject.toml`/`uv.lock` changed).
 
 ## What to Contribute
 
