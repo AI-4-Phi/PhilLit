@@ -258,28 +258,43 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
             flags=re.IGNORECASE
         )
     else:
-        # Add new field before closing brace
-        # Find the last field line and add after it
+        # Add new field immediately after the entry's opening line (@type{key,).
+        # The opening line is never inside a field value, so a multi-line value
+        # (e.g. a wrapped abstract) can no longer swallow the next insertion
+        # (item 13 D2).
         lines = entry_text.split('\n')
-        for i in range(len(lines) - 1, -1, -1):
-            if '=' in lines[i] and not lines[i].strip().startswith('}'):
-                # Ensure preceding field line ends with a comma
-                stripped = lines[i].rstrip()
-                if stripped.endswith('}') and not stripped.endswith('},'):
-                    lines[i] = stripped + ','
-                # Insert after this line
-                indent = '  '  # Default indent
-                match = re.match(r'^(\s+)', lines[i])
-                if match:
-                    indent = match.group(1)
-                lines.insert(i + 1, f'{indent}{field_name} = {{{field_value}}},')
+        opening_idx = None
+        for i, line in enumerate(lines):
+            if re.match(r'\s*@\w+\s*\{', line):
+                opening_idx = i
                 break
-        else:
-            # No existing fields found, add before closing brace
+
+        if opening_idx is None:
+            # No recognizable opening line: fall back to before the closing brace.
             for i in range(len(lines) - 1, -1, -1):
                 if lines[i].strip() == '}':
                     lines.insert(i, f'  {field_name} = {{{field_value}}},')
                     break
+            return '\n'.join(lines)
+
+        # Derive indentation from the first existing field line, if any.
+        indent = '  '
+        for j in range(opening_idx + 1, len(lines)):
+            body = lines[j].strip()
+            if body and not body.startswith('}'):
+                m = re.match(r'^(\s*)', lines[j])
+                if m and m.group(1):
+                    indent = m.group(1)
+                break
+
+        # The opening line should end with a comma ("@type{key,"); ensure it.
+        stripped = lines[opening_idx].rstrip()
+        if not stripped.endswith(','):
+            lines[opening_idx] = stripped + ','
+        else:
+            lines[opening_idx] = stripped
+
+        lines.insert(opening_idx + 1, f'{indent}{field_name} = {{{field_value}}},')
         return '\n'.join(lines)
 
 
