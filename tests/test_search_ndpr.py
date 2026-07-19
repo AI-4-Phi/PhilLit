@@ -78,42 +78,48 @@ class TestScoreMatch:
     """Tests for title-slug scoring."""
 
     def test_exact_match(self):
-        score = search_ndpr.score_match("being and time", "being-and-time")
+        score, _ = search_ndpr.score_match("being and time", "being-and-time")
         assert score >= 0.8
 
     def test_partial_match(self):
-        score = search_ndpr.score_match("being and time", "being-and-time-a-revised-translation")
+        score, _ = search_ndpr.score_match("being and time", "being-and-time-a-revised-translation")
         assert score >= 0.6
 
     def test_no_match(self):
-        score = search_ndpr.score_match("being and time", "critique-of-pure-reason")
+        score, _ = search_ndpr.score_match("being and time", "critique-of-pure-reason")
         assert score < 0.3
 
     def test_author_bonus(self):
-        # Use a case where base token overlap is moderate so author bonus is visible
-        score_without = search_ndpr.score_match("reasons and persons", "reasons-persons-parfit")
-        score_with = search_ndpr.score_match("reasons and persons", "reasons-persons-parfit", author="Parfit")
+        # Use a case where base token overlap is moderate (< 1.0 coverage even
+        # after stopword filtering) so the author bonus is visible and not
+        # swallowed by the min(..., 1.0) cap.
+        score_without, confirmed_without = search_ndpr.score_match("reasons and persons", "persons-ethics-parfit")
+        score_with, confirmed_with = search_ndpr.score_match("reasons and persons", "persons-ethics-parfit", author="Parfit")
         assert score_with > score_without
+        assert confirmed_without is False
+        assert confirmed_with is True
 
     def test_empty_inputs(self):
-        assert search_ndpr.score_match("", "some-slug") == 0.0
-        assert search_ndpr.score_match("a b", "") == 0.0
+        assert search_ndpr.score_match("", "some-slug") == (0.0, False)
+        assert search_ndpr.score_match("a b", "") == (0.0, False)
 
     def test_single_token_title_rejected_without_author(self):
         """Single-token titles without author should score 0 to avoid false positives."""
         # "On Liberty" normalizes to "on liberty", but "on" is dropped (len < 3)
         # leaving only {"liberty"} — too ambiguous to match without author
-        score = search_ndpr.score_match("liberty", "liberty-equality-fraternity")
+        score, confirmed = search_ndpr.score_match("liberty", "liberty-equality-fraternity")
         assert score == 0.0
+        assert confirmed is False
 
     def test_single_token_title_allowed_with_author(self):
         """Single-token titles can match if author is confirmed in slug."""
-        score = search_ndpr.score_match("liberty", "on-liberty-mill", author="Mill")
+        score, confirmed = search_ndpr.score_match("liberty", "on-liberty-mill", author="Mill")
         assert score > 0.0
+        assert confirmed is True
 
     def test_two_token_title_works(self):
         """Two-token titles should still match normally."""
-        score = search_ndpr.score_match("after virtue", "after-virtue")
+        score, _ = search_ndpr.score_match("after virtue", "after-virtue")
         assert score >= 0.8
 
 

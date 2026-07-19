@@ -32,6 +32,15 @@ SITEMAP_URL = "https://ndpr.nd.edu/sitemap.xml"
 # Module-level sitemap cache for batch use within a single process
 _sitemap_cache: Optional[list[str]] = None
 
+# Pure function words: dropped from title/slug tokens so coincidental overlap
+# on "and"/"the"/"for" can't inflate the match score (item 13 D1). Content-
+# bearing short words philosophy titles use (why, what, not, how, new) stay.
+STOPWORDS = frozenset({
+    "and", "the", "for", "with", "from", "that", "this", "its",
+    "are", "was", "has", "have", "but", "all", "can", "one",
+    "two", "own", "out", "who",
+})
+
 
 def log_progress(message: str) -> None:
     _log_progress(SCRIPT_NAME, message)
@@ -67,51 +76,49 @@ def slug_from_url(url: str) -> str:
 
 
 def title_to_tokens(title: str) -> set[str]:
-    """Convert normalized title to a set of meaningful tokens (len >= 3)."""
-    return {t for t in title.split() if len(t) >= 3}
+    """Meaningful tokens: len >= 3, excluding pure function words (STOPWORDS)."""
+    return {t for t in title.split() if len(t) >= 3 and t not in STOPWORDS}
 
 
-def score_match(normalized_title: str, slug: str, author: Optional[str] = None) -> float:
+def score_match(
+    normalized_title: str, slug: str, author: Optional[str] = None
+) -> tuple[float, bool]:
     """Score how well a sitemap slug matches a normalized book title.
 
-    Returns a score between 0.0 and 1.0. Higher is better.
-    Single-token titles (e.g., "On Liberty" → {"liberty"}) require author
-    confirmation in the slug to avoid false positives.
+    Returns (score, author_confirmed). Score is 0.0-1.0 (one-directional title
+    coverage + author bonus). author_confirmed is True when the author surname
+    substring appears in the slug. Single-token titles require author
+    confirmation (else (0.0, False)).
     """
-    # Convert slug to space-separated form for comparison
     slug_text = slug.replace("-", " ")
 
     title_tokens = title_to_tokens(normalized_title)
     slug_tokens = title_to_tokens(slug_text)
 
     if not title_tokens or not slug_tokens:
-        return 0.0
+        return 0.0, False
 
-    # Token overlap (Jaccard-like but weighted toward title coverage)
     overlap = title_tokens & slug_tokens
     if not overlap:
-        return 0.0
+        return 0.0, False
 
-    # Coverage: what fraction of the title's tokens appear in the slug
+    # Coverage: fraction of the title's tokens present in the slug.
     title_coverage = len(overlap) / len(title_tokens)
 
-    # Author bonus: if author's last name appears in slug
     author_bonus = 0.0
-    if author:
-        author_lower = author.lower()
-        if author_lower in slug_text:
-            author_bonus = 0.15
+    author_confirmed = False
+    if author and author.lower() in slug_text:
+        author_bonus = 0.15
+        author_confirmed = True
 
-    # Single-token titles (e.g., "On Liberty" → {"liberty"}) are too ambiguous
-    # for token coverage alone. Only allow if author confirms the match.
+    # Single-token titles are too ambiguous for coverage alone.
     if len(title_tokens) < 2:
-        if not (author and author_bonus > 0):
-            return 0.0
-        # With author confirmed in slug, cap the score to require high threshold
-        return min(title_coverage * 0.5 + author_bonus, 1.0)
+        if not author_confirmed:
+            return 0.0, False
+        return min(title_coverage * 0.5 + author_bonus, 1.0), author_confirmed
 
     score = min(title_coverage + author_bonus, 1.0)
-    return score
+    return score, author_confirmed
 
 
 def fetch_sitemap(limiter, backoff: ExponentialBackoff) -> list[str]:
@@ -221,22 +228,26 @@ def search_ndpr(
     best_score = 0.0
     best_url = None
     best_slug = None
+    best_confirmed = False
 
     for url in urls:
         slug = slug_from_url(url)
         if not slug:
             continue
-        score = score_match(normalized, slug, author)
+        score, confirmed = score_match(normalized, slug, author)
         if score > best_score:
             best_score = score
             best_url = url
             best_slug = slug
+            best_confirmed = confirmed
 
     if debug:
         print(f"DEBUG: Best match: {best_slug} (score={best_score:.3f})", file=sys.stderr)
 
-    # Threshold for accepting a match
-    if best_score >= 0.6:
+    # Tiered acceptance: 0.75 outright, or 0.6 when the author is confirmed in
+    # the slug (item 13 D1). The stopword-inflated Wallace/Adam-Smith pair
+    # (0.667, no author) now rejects; descriptive-slug book matches still pass.
+    if best_score >= 0.75 or (best_confirmed and best_score >= 0.6):
         return {"url": best_url, "slug": best_slug, "score": best_score}
 
     return None
