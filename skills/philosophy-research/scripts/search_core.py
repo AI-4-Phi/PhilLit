@@ -377,6 +377,12 @@ def main():
 
     args = parser.parse_args()
 
+    # CORE is optional (BYOK posture). Without a key the unauthenticated tier
+    # only rate-limits (429 + ~18s backoff), so skip entirely (item 13 D3).
+    if not args.api_key:
+        print(json.dumps({"status": "skipped", "reason": "no CORE_API_KEY"}))
+        sys.exit(0)
+
     # Validate arguments
     if not args.query and not args.doi and not args.title:
         output_error(

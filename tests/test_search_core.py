@@ -429,13 +429,21 @@ class TestCoreCLI:
     """Tests for command-line interface."""
 
     def test_cli_requires_query_or_options(self, run_skill_script):
-        """Should fail when neither query nor --doi/--title provided."""
-        result = run_skill_script("search_core.py")
+        """Should fail when neither query nor --doi/--title provided (with a
+        CORE key configured — otherwise the item-13 D3 no-key skip fires
+        first, which is covered separately in test_engine_core_skip.py)."""
+        result = run_skill_script("search_core.py", env={"CORE_API_KEY": "test-key"})
         assert result.returncode == 2
 
         output = result.json
         assert output["status"] == "error"
         assert "Must provide" in output["errors"][0]["message"]
+
+    def test_cli_skips_without_key_even_when_args_missing(self, run_skill_script):
+        """The no-key skip (item 13 D3) fires before argument validation."""
+        result = run_skill_script("search_core.py", env={"CORE_API_KEY": ""})
+        assert result.returncode == 0
+        assert result.json == {"status": "skipped", "reason": "no CORE_API_KEY"}
 
     def test_cli_help(self, run_skill_script):
         """Should show help with --help."""
