@@ -178,10 +178,15 @@ class TestEntryModification:
         assert 'abstract = {This is a test abstract.}' in result
 
     def test_add_field_ensures_preceding_comma(self):
-        """Should add comma to preceding field when it lacks one."""
+        """Should add comma to the opening line when it lacks one.
+
+        New fields are inserted right after the opening `@type{key,` line
+        (item 13 D2), so it is that line - not the last existing field -
+        whose trailing comma is ensured.
+        """
         import enrich_bibliography
 
-        entry_no_trailing_comma = """@article{test2024,
+        entry_no_opening_comma = """@article{test2024
   author = {Test Author},
   title = {Test Title},
   year = {2024},
@@ -189,14 +194,14 @@ class TestEntryModification:
 }"""
 
         result = enrich_bibliography.add_field_to_entry(
-            entry_no_trailing_comma,
+            entry_no_opening_comma,
             'abstract',
             'This is a test abstract.'
         )
 
         assert 'abstract = {This is a test abstract.}' in result
-        # The preceding keywords field must now have a trailing comma
-        assert 'High},' in result
+        # The opening line must now have a trailing comma
+        assert '@article{test2024,' in result
         # Validate with pybtex
         from pybtex.database import parse_string
         parse_string(result, bib_format='bibtex')
