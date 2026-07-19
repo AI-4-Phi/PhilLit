@@ -387,13 +387,22 @@ def resolve_abstract(
         if abstract:
             return abstract, "openalex"
 
-    # Source 3: CORE (by DOI or title+author)
-    abstract = get_abstract_from_core(
-        doi=doi, title=title, author=author, year=year,
-        api_key=core_api_key, limiter=core_limiter, backoff=other_backoff, debug=debug
-    )
-    if abstract:
-        return abstract, "core"
+    # Source 3: CORE (by DOI or title+author) — only when a CORE key was
+    # resolved (from the environment OR an explicit --core-api-key). Without a
+    # key the unauthenticated tier only rate-limits, so skip rather than burn
+    # futile "Trying CORE" attempts (item 13 D3). Gate on the resolved param,
+    # not os.environ, so an explicit key with CORE_API_KEY unset in the
+    # environment still works (mirrors search_core.py, which gates on
+    # args.api_key).
+    if core_api_key:
+        abstract = get_abstract_from_core(
+            doi=doi, title=title, author=author, year=year,
+            api_key=core_api_key, limiter=core_limiter, backoff=other_backoff, debug=debug
+        )
+        if abstract:
+            return abstract, "core"
+    elif debug:
+        log_progress("Skipping CORE (no CORE_API_KEY configured)")
 
     return None, None
 

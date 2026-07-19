@@ -426,7 +426,8 @@ class TestFallbackChain:
     def test_core_fallback_when_openalex_fails(
         self, mock_s2, mock_openalex, mock_core
     ):
-        """CORE should be tried when OpenAlex returns None."""
+        """CORE should be tried when OpenAlex returns None (with a CORE key
+        configured — item 13 D3 gates CORE on the resolved core_api_key)."""
         mock_s2.return_value = None
         mock_openalex.return_value = None
         mock_core.return_value = "CORE abstract"
@@ -435,7 +436,8 @@ class TestFallbackChain:
 
         abstract, source = get_abstract.resolve_abstract(
             s2_id="abc123",
-            doi="10.1234/test"
+            doi="10.1234/test",
+            core_api_key="test-key"
         )
 
         assert abstract == "CORE abstract"
@@ -514,7 +516,8 @@ class TestFallbackChain:
     def test_full_fallback_s2_doi_to_openalex_to_core(
         self, mock_s2, mock_openalex, mock_core
     ):
-        """Full fallback: S2-by-DOI -> OpenAlex -> CORE."""
+        """Full fallback: S2-by-DOI -> OpenAlex -> CORE (with a CORE key
+        configured — item 13 D3 gates CORE on the resolved core_api_key)."""
         mock_s2.return_value = None
         mock_openalex.return_value = None
         mock_core.return_value = "CORE abstract"
@@ -524,7 +527,8 @@ class TestFallbackChain:
         abstract, source = get_abstract.resolve_abstract(
             doi="10.1234/test",
             title="Test Paper",
-            author="Author"
+            author="Author",
+            core_api_key="test-key"
         )
 
         assert abstract == "CORE abstract"
@@ -535,14 +539,16 @@ class TestFallbackChain:
 
     @patch("get_abstract.get_abstract_from_core")
     def test_title_only_uses_core(self, mock_core):
-        """Should use CORE when only title provided."""
+        """Should use CORE when only title provided (with a CORE key
+        configured — item 13 D3 gates CORE on the resolved core_api_key)."""
         mock_core.return_value = "CORE abstract"
 
         import get_abstract
 
         abstract, source = get_abstract.resolve_abstract(
             title="Freedom of the Will",
-            author="Frankfurt"
+            author="Frankfurt",
+            core_api_key="test-key"
         )
 
         assert abstract == "CORE abstract"

@@ -97,6 +97,78 @@ def check_dependencies() -> dict[str, dict[str, Any]]:
     return results
 
 
+_REQUIRED_APIS = ("brave", "crossref")
+
+
+def check_core_connectivity() -> dict:
+    """Probe CORE only when a key is configured. CORE is optional; without a
+    key the unauthenticated tier merely rate-limits (429/backoff), so we skip
+    the probe entirely and report a skipped state instead of a failure."""
+    api_key = os.environ.get("CORE_API_KEY", "")
+    if not api_key:
+        return {
+            "reachable": None,
+            "skipped_no_key": True,
+            "status_code": None,
+            "authenticated": False,
+            "message": "Skipped (no CORE_API_KEY configured)",
+        }
+    import requests
+    try:
+        limiter = get_limiter("core")
+        limiter.wait()
+        response = requests.get(
+            "https://api.core.ac.uk/v3/search/works",
+            params={"q": "test", "limit": 1},
+            headers={"Authorization": f"Bearer {api_key}"},
+            timeout=10,
+        )
+        limiter.record()
+        if response.status_code == 200:
+            msg = "Responding (authenticated)"
+        else:
+            msg = f"Error: {response.status_code}"
+        return {
+            "reachable": response.status_code == 200,
+            "skipped_no_key": False,
+            "status_code": response.status_code,
+            "authenticated": True,
+            "message": msg,
+        }
+    except Exception as e:
+        return {
+            "reachable": False,
+            "skipped_no_key": False,
+            "status_code": None,
+            "authenticated": False,
+            "message": str(e),
+        }
+
+
+def _json_status(env_results: dict, dep_results: dict, api_results: dict) -> tuple[str, list[str]]:
+    """Compute --json overall status + optional-failure list.
+
+    Only required env vars, all deps, and the required APIs (brave, crossref)
+    gate status — matching text mode. A required API whose record is ABSENT
+    fails the check (never silently passes — GPT-SF10). Optional APIs that are
+    unreachable (and not skipped for a missing key) are reported in
+    optional_failures but never flip status to error (item 13 D3)."""
+    required_env_ok = all(info["set"] for info in env_results.values() if info["required"])
+    deps_ok = all(info["installed"] for info in dep_results.values())
+    required_apis_ok = all(
+        a in api_results and api_results[a].get("reachable") is True
+        for a in _REQUIRED_APIS
+    )
+    optional_failures = [
+        api for api, info in api_results.items()
+        if api not in _REQUIRED_APIS
+        and not info.get("skipped_no_key")
+        and not info.get("reachable")
+    ]
+    status = "ok" if (required_env_ok and deps_ok and required_apis_ok) else "error"
+    return status, optional_failures
+
+
 def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
     """Check API connectivity with minimal requests."""
     import requests
@@ -251,41 +323,8 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
             "message": str(e),
         }
 
-    # CORE
-    try:
-        limiter = get_limiter("core")
-        limiter.wait()
-        api_key = os.environ.get("CORE_API_KEY", "")
-        headers = {}
-        if api_key:
-            headers["Authorization"] = f"Bearer {api_key}"
-
-        response = requests.get(
-            "https://api.core.ac.uk/v3/search/works",
-            params={"q": "test", "limit": 1},
-            headers=headers,
-            timeout=10,
-        )
-        limiter.record()
-
-        authenticated = bool(api_key)
-        if response.status_code == 200:
-            msg = "Responding" + (" (authenticated)" if authenticated else " (unauthenticated)")
-        else:
-            msg = f"Error: {response.status_code}"
-        results["core"] = {
-            "reachable": response.status_code == 200,
-            "status_code": response.status_code,
-            "authenticated": authenticated,
-            "message": msg,
-        }
-    except Exception as e:
-        results["core"] = {
-            "reachable": False,
-            "status_code": None,
-            "authenticated": False,
-            "message": str(e),
-        }
+    # CORE (optional — probed only when a key is configured; item 13 D3)
+    results["core"] = check_core_connectivity()
 
     return results
 
@@ -384,14 +423,9 @@ def main():
             "apis": api_results,
         }
 
-        # Calculate overall status
-        required_env_ok = all(
-            info["set"] for info in env_results.values() if info["required"]
-        )
-        deps_ok = all(info["installed"] for info in dep_results.values())
-        apis_ok = all(info["reachable"] for info in api_results.values()) if api_results else True
-
-        output["status"] = "ok" if (required_env_ok and deps_ok and apis_ok) else "error"
+        status, optional_failures = _json_status(env_results, dep_results, api_results)
+        output["status"] = status
+        output["optional_failures"] = optional_failures
 
         print(json.dumps(output, indent=2))
         sys.exit(0 if output["status"] == "ok" else 1)
