@@ -79,7 +79,7 @@ Invoke subagents using the Task tool with these parameters:
 - `description`: Short description (3-5 words)
 - `run_in_background`: Always `false` (see below)
 
-**Pass `run_in_background: false` explicitly on every subagent dispatch.** Recent Claude Code versions default subagent dispatch to *background* execution, so omitting this parameter will NOT give you foreground behavior — you must set it to `false`. Foreground execution streams status updates to the user and guarantees that every agent in a phase finishes before the workflow advances. Achieve parallelism by putting multiple dispatch calls — each with `run_in_background: false` — in a single message; foreground calls batched this way run concurrently and block until all return. Do NOT background them and poll for results.
+**Pass `run_in_background: false` explicitly on every subagent dispatch.** Foreground execution streams status updates to the user.
 
 Do NOT read agent definition files before invoking them. Agent definitions are for the system, not for you to read.
 
