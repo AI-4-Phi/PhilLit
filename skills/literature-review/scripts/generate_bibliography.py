@@ -247,17 +247,26 @@ def _format_incollection(author_str, year, title, entry, editors) -> str:
     doi = _get_field(entry, "doi")
 
     parts = [f'{author_str} {year}. {_quoted_title(title)}']
-    container = f"In *{booktitle}*" if booktitle else "In"
 
-    if editors:
-        ed_str = format_author_list(editors)
-        # Remove trailing period from editor string for inline use
-        ed_str = ed_str.rstrip(".")
-        container += f", edited by {ed_str}"
-    if pages:
-        container += f", {pages}"
-    container += "."
-    parts.append(container)
+    # Build the container clause only when a container title survives. When a
+    # demotion stripped the booktitle, suppress the dangling "In." connective
+    # (item 13 A7): emit editors/pages without the orphaned "In".
+    if booktitle:
+        container = f"In *{booktitle}*"
+        if editors:
+            ed_str = format_author_list(editors).rstrip(".")
+            container += f", edited by {ed_str}"
+        if pages:
+            container += f", {pages}"
+        container += "."
+        parts.append(container)
+    elif editors:
+        ed_str = format_author_list(editors).rstrip(".")
+        container = f"Edited by {ed_str}"
+        if pages:
+            container += f", {pages}"
+        container += "."
+        parts.append(container)
 
     if address and publisher:
         parts.append(f"{address}: {publisher}.")
@@ -317,14 +326,79 @@ def _sort_key(entry_tuple):
     return (surname, year)
 
 
-def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
-    """Find BibTeX entries that are cited in the review text.
+# Substantive fields that count toward the dedup "richer entry wins" policy and
+# that a survivor UNIONs in from a loser (spec v2.1). Markers/keywords/notes are
+# excluded so METADATA_CLEANED noise cannot win a duplicate contest.
+_SUBSTANTIVE_FIELDS = (
+    "journal", "booktitle", "volume", "number", "pages",
+    "publisher", "doi", "url", "abstract",
+)
 
-    Returns list of (key, entry) tuples for cited entries, deduplicated by DOI.
+
+def _normalize_title_for_key(title: str) -> str:
+    """Fold to ascii, lowercase, collapse non-alphanumerics to single spaces."""
+    t = _normalize_for_matching(title).lower()
+    t = re.sub(r"[^a-z0-9]+", " ", t)
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _fallback_key(entry) -> tuple[str, str, str] | None:
+    """Title-axis dedup key: (normalized_title, year, first-author surname).
+
+    Returns None if any component is empty (an entry with no fallback key is
+    never title-deduped — GPT S4).
+    """
+    title = _normalize_title_for_key(_get_field(entry, "title"))
+    year = _get_field(entry, "year").strip()
+    persons = entry.persons.get("author", []) or entry.persons.get("editor", [])
+    surname = ""
+    if persons:
+        surname = _normalize_title_for_key(_get_full_surname(persons[0]))
+    if not title or not year or not surname:
+        return None
+    return (title, year, surname)
+
+
+def _substantive_field_count(entry) -> int:
+    """Count populated substantive fields (dedup winner metric)."""
+    return sum(1 for f in _SUBSTANTIVE_FIELDS if _get_field(entry, f))
+
+
+def _union_substantive_fields(winner, loser) -> None:
+    """Union the loser's substantive fields into the winner (spec v2.1 / ADV-A0).
+
+    Copies every field in _SUBSTANTIVE_FIELDS that the loser has and the winner
+    lacks (or has empty). Operates on raw field values so the merged entry
+    re-serializes cleanly.
+    """
+    for f in _SUBSTANTIVE_FIELDS:
+        if not _get_field(winner, f) and _get_field(loser, f):
+            winner.fields[f] = loser.fields[f]
+
+
+def _remap_index(mapping: dict, old_key: str, new_key: str) -> None:
+    """Repoint any dedup-index entries from old_key to new_key (winner swap)."""
+    for k, v in list(mapping.items()):
+        if v == old_key:
+            mapping[k] = new_key
+
+
+def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
+    """Find BibTeX entries cited in the review text.
+
+    Returns list of (key, entry) tuples for cited entries, deduplicated by DOI
+    and, as a fallback, by (normalized title, year, first-author surname).
+    Winner of a duplicate pair is the entry with more populated substantive
+    fields (tie-break: lexicographically-first citation key); the survivor
+    additionally UNIONs in any substantive field only the loser had (spec v2.1).
+    DOI identity is tracked per dedup GROUP: a fallback-key merge is refused when
+    the two groups' non-empty DOI sets differ (GPT-B4).
     """
     norm_text = _normalize_for_matching(review_text)
     cited = {}  # key -> entry
     seen_dois = {}  # normalized_doi -> citation_key
+    seen_titles = {}  # (title, year, surname) -> citation_key
+    group_dois = {}  # citation_key -> set of normalized DOIs across the group
 
     for key, entry in bib_data.entries.items():
         # Get first person (author or editor fallback)
@@ -351,7 +425,6 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
 
         matched = False
         for m in pattern.finditer(norm_text):
-            # Check bidirectional: surname near year OR year near surname
             start = max(0, m.start() - _MATCH_WINDOW)
             end = min(len(norm_text), m.end() + _MATCH_WINDOW)
             window = norm_text[start:end]
@@ -362,24 +435,61 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
         if not matched:
             continue
 
-        # DOI deduplication (defense-in-depth; dedupe_bib.py handles this upstream)
+        # Deduplication (defense-in-depth; dedupe_bib.py handles this upstream).
+        # Two entries are duplicates when their DOIs match OR their fallback keys
+        # match — EXCEPT never merge two GROUPS whose non-empty DOI sets differ.
         doi = _get_field(entry, "doi")
-        if doi:
-            norm_doi = _normalize_doi(doi)
-            if norm_doi in seen_dois:
-                # Keep the one with the alphabetically first key
-                existing_key = seen_dois[norm_doi]
-                if key < existing_key:
-                    # Replace
-                    del cited[existing_key]
-                    cited[key] = entry
-                    seen_dois[norm_doi] = key
-                    print(f"  [DEDUP] {key} replaces {existing_key} (same DOI)", file=sys.stderr)
-                else:
-                    print(f"  [DEDUP] {key} skipped, keeping {existing_key} (same DOI)", file=sys.stderr)
-                continue
-            seen_dois[norm_doi] = key
+        norm_doi = _normalize_doi(doi) if doi else ""
+        new_dois = {norm_doi} if norm_doi else set()
+        fkey = _fallback_key(entry)
 
+        existing_key = None
+        if norm_doi and norm_doi in seen_dois:
+            existing_key = seen_dois[norm_doi]
+        elif fkey is not None and fkey in seen_titles:
+            candidate = seen_titles[fkey]
+            cand_dois = group_dois.get(candidate, set())
+            # Distinct non-empty DOI sets => genuinely different works; keep both.
+            if not (new_dois and cand_dois and new_dois != cand_dois):
+                existing_key = candidate
+
+        if existing_key is not None:
+            existing_entry = cited[existing_key]
+            merged_dois = group_dois.get(existing_key, set()) | new_dois
+            new_score = _substantive_field_count(entry)
+            old_score = _substantive_field_count(existing_entry)
+            if new_score > old_score or (new_score == old_score and key < existing_key):
+                # New entry wins the pair; union the loser's substantive fields in.
+                _union_substantive_fields(entry, existing_entry)
+                del cited[existing_key]
+                cited[key] = entry
+                _remap_index(seen_dois, existing_key, key)
+                _remap_index(seen_titles, existing_key, key)
+                group_dois.pop(existing_key, None)
+                group_dois[key] = merged_dois
+                if norm_doi:
+                    seen_dois[norm_doi] = key
+                if fkey is not None:
+                    seen_titles[fkey] = key
+                print(f"  [DEDUP] {key} replaces {existing_key} (duplicate)", file=sys.stderr)
+            else:
+                # Existing entry wins; union the loser's (new) substantive fields in.
+                _union_substantive_fields(existing_entry, entry)
+                group_dois[existing_key] = merged_dois
+                if norm_doi:
+                    # A DOI the loser carried now resolves to the surviving winner.
+                    seen_dois[norm_doi] = existing_key
+                print(f"  [DEDUP] {key} skipped, keeping {existing_key} (duplicate)", file=sys.stderr)
+            continue
+
+        # New dedup group.
+        if norm_doi:
+            seen_dois[norm_doi] = key
+        # Only claim the title key if unclaimed — a merge refused on DOI-set
+        # grounds must not steal the first group's title pointer (GPT-B4).
+        if fkey is not None and fkey not in seen_titles:
+            seen_titles[fkey] = key
+        group_dois[key] = new_dois
         cited[key] = entry
 
     return list(cited.items())
