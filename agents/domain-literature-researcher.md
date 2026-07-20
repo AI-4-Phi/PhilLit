@@ -137,6 +137,8 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 
 > **No manual backups**: Do not create backup copies of `.bib` files (e.g., `cp file.bib file.bib.backup`). The workflow handles file safety through hook validation.
 
+> **Do not run `rm`.** You never need to delete anything. Leave every search-result JSON, draft, and temp file in place: Phase 6 archives review-directory files into `intermediate_files/`, and any scratchpad/temp directory is ephemeral (removed automatically). Running `rm` only triggers a permission prompt that interrupts the review for no benefit.
+
 ### Stage 1: SEP & IEP (Most Authoritative)
 
 ```bash
