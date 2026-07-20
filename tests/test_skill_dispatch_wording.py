@@ -34,3 +34,12 @@ def test_no_deprecated_taskoutput_wait_idiom():
     # TaskOutput is deprecated (Claude Code v2.1.203+) and is a background-task
     # idiom that contradicts the foreground-batched execution model.
     assert "TaskOutput" not in TEXT
+
+
+def test_dispatch_steps_proactively_mandate_foreground():
+    # Beyond *describing* foreground after the fact, both parallel-dispatch steps
+    # (Phase 3 researchers, Phase 5 writers) carry a terse imperative at the
+    # point of dispatch: set run_in_background: false on every call. Kept
+    # minimal deliberately -- verbose rationale here risks crowding out the
+    # adjacent "all calls in one message" batching imperative.
+    assert TEXT.count("Set `run_in_background: false` (or omit it) on EVERY call") >= 2

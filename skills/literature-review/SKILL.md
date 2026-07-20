@@ -197,6 +197,7 @@ Never advance to a next step in this phase before completing the current step.
    - Example prompt for domain 1: "Domain: [name]. Focus: [focus]. Key questions: [questions]. Research idea: [idea]. Working directory: reviews/[project-name]/. Write output to: reviews/[project-name]/literature-domain-1.bib"
    - description: "Domain [N]: [domain name]"
    - **CRITICAL**: Include ALL Task tool calls in a single message to enable parallel execution
+   - **CRITICAL — foreground, never background**: Set `run_in_background: false` (or omit it) on EVERY call.
 3. With foreground dispatch (`run_in_background: false`), all N calls in the single message block until every agent finishes and their results return inline — there is no separate wait step. Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
 4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary
 
@@ -239,6 +240,7 @@ Never advance to a next step in this phase before completing the current step.
      reviews/[project-name]/synthesis-section-1.md"
    - description: "Write section [N]: [section name]"
    - **CRITICAL**: Include ALL Task tool calls in a single message to enable parallel execution
+   - **CRITICAL — foreground, never background**: Set `run_in_background: false` (or omit it) on EVERY call.
 4. With foreground dispatch (`run_in_background: false`), all N calls in the single message block until every agent finishes and their results return inline — there is no separate wait step. Expected outputs: `reviews/[project-name]/synthesis-section-1.md` through `synthesis-section-N.md`. **Update task-progress.md after all sections complete**
 
 Never advance to Phase 6 before all synthesis writers have completed.
