@@ -21,6 +21,8 @@ try:
         output_partial as _output_partial,
         output_error as _output_error,
         log_progress as _log_progress,
+        set_output_path,
+        add_output_arg,
     )
     from .brave_search import brave_site_search, SEP_CONFIG
     from .rate_limiter import ExponentialBackoff, get_limiter
@@ -31,6 +33,8 @@ except ImportError:
         output_partial as _output_partial,
         output_error as _output_error,
         log_progress as _log_progress,
+        set_output_path,
+        add_output_arg,
     )
     from brave_search import brave_site_search, SEP_CONFIG
     from rate_limiter import ExponentialBackoff, get_limiter
@@ -68,7 +72,9 @@ def main():
     parser.add_argument("--api-key", default=os.environ.get("BRAVE_API_KEY", ""))
     parser.add_argument("--debug", action="store_true")
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     if not args.api_key:
         output_error(args.query, "config_error", "BRAVE_API_KEY not set", 2)

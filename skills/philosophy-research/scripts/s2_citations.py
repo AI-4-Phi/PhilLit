@@ -46,6 +46,8 @@ try:
         output_partial as _output_partial,
         output_error as _output_error,
         log_progress as _log_progress,
+        set_output_path,
+        add_output_arg,
     )
     from .s2_formatters import (
         format_paper as _format_paper,
@@ -62,6 +64,8 @@ except ImportError:
         output_partial as _output_partial,
         output_error as _output_error,
         log_progress as _log_progress,
+        set_output_path,
+        add_output_arg,
     )
     from s2_formatters import (
         format_paper as _format_paper,
@@ -300,7 +304,9 @@ def main():
         help="Print debug information"
     )
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     # Validate arguments
     if not (args.references or args.citations or args.both):

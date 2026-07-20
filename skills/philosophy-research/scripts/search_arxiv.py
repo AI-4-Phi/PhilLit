@@ -22,6 +22,7 @@ import arxiv
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from rate_limiter import get_limiter
 from search_cache import cache_key, get_cache, put_cache
+from output import emit, set_output_path, add_output_arg
 
 
 def log_progress(message: str) -> None:
@@ -30,20 +31,18 @@ def log_progress(message: str) -> None:
 
 
 def output_success(query: str, results: list) -> None:
-    print(json.dumps({
+    emit({
         "status": "success", "source": "arxiv", "query": query,
         "results": results, "count": len(results), "errors": []
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_error(query: str, error_type: str, message: str, exit_code: int = 2) -> None:
-    print(json.dumps({
+    emit({
         "status": "error", "source": "arxiv", "query": query,
         "results": [], "count": 0,
         "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
-    }, indent=2))
-    sys.exit(exit_code)
+    }, exit_code)
 
 
 def format_result(result: arxiv.Result) -> dict:
@@ -81,7 +80,9 @@ def main():
     parser.add_argument("--debug", action="store_true")
     parser.add_argument("--no-cache", action="store_true", help="Disable result caching")
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     if not args.query and not args.id and not args.author and not args.title:
         output_error("", "config_error", "Must provide query, --id, --author, or --title")

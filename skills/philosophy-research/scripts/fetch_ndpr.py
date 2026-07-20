@@ -29,7 +29,7 @@ import requests
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from output import log_progress as _log_progress, output_success, output_error
+from output import log_progress as _log_progress, output_success, output_error, set_output_path, add_output_arg
 from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
 
 SCRIPT_NAME = "fetch_ndpr.py"
@@ -208,7 +208,9 @@ def main():
     group.add_argument("--slug", help="Review slug (e.g., 'being-and-time')")
     parser.add_argument("--debug", action="store_true", help="Print debug info")
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     url = args.url if args.url else f"{NDPR_BASE}/{args.slug}/"
     query = args.url or args.slug

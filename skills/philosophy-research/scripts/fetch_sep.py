@@ -13,7 +13,6 @@ Exit Codes: 0=success, 1=not found, 2=config error, 3=network error
 """
 
 import argparse
-import json
 import re
 import sys
 import os
@@ -25,6 +24,7 @@ from bs4 import BeautifulSoup
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
 from search_cache import cache_key, get_cache, put_cache
+from output import emit, set_output_path, add_output_arg
 
 SEP_BASE = "https://plato.stanford.edu/entries"
 
@@ -35,20 +35,18 @@ def log_progress(message: str) -> None:
 
 
 def output_success(entry: str, result: dict) -> None:
-    print(json.dumps({
+    emit({
         "status": "success", "source": "sep", "query": entry,
         "results": [result], "count": 1, "errors": []
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_error(entry: str, error_type: str, message: str, exit_code: int = 2) -> None:
-    print(json.dumps({
+    emit({
         "status": "error", "source": "sep", "query": entry,
         "results": [], "count": 0,
         "errors": [{"type": error_type, "message": message, "recoverable": False}]
-    }, indent=2))
-    sys.exit(exit_code)
+    }, exit_code)
 
 
 def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
@@ -291,7 +289,9 @@ def main():
     parser.add_argument("--related-only", action="store_true")
     parser.add_argument("--debug", action="store_true")
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     # Extract entry name from URL if needed
     entry_name = args.entry
