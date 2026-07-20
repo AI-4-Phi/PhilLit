@@ -116,7 +116,7 @@ def upgrade_importance(entry: str, new_importance: str) -> str:
 
 def extract_doi(entry: str) -> str | None:
     """Extract and normalize DOI from a BibTeX entry."""
-    match = re.search(r'doi\s*=\s*\{([^}]+)\}', entry, re.IGNORECASE)
+    match = re.search(r'doi\s*=\s*[{"]([^}"]+)["}]', entry, re.IGNORECASE)
     if not match:
         return None
     doi = match.group(1).strip().lower()
