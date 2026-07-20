@@ -174,20 +174,23 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_p
 
 ```bash
 REVIEW_DIR="$PWD/reviews/[project-name]"
-mkdir -p "$REVIEW_DIR"
+JSON_DIR="$REVIEW_DIR/intermediate_files/json"
+mkdir -p "$JSON_DIR"
 
 # Semantic Scholar - broad academic search with filtering
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 --output "$JSON_DIR/s2_results.json" > /dev/null
 
 # OpenAlex - 250M+ works, cross-disciplinary coverage
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 --output "$JSON_DIR/openalex_results.json" > /dev/null
 
 # CORE - 431M papers with abstracts, excellent for finding paper content
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 --output "$JSON_DIR/core_results.json" > /dev/null
 
 # arXiv - preprints, AI ethics, recent work
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent --output "$JSON_DIR/arxiv_results.json" > /dev/null
 ```
+
+> **CRITICAL: capture search JSON with `--output`, never with a bare `>` and never with `2>&1`.** Every search script writes clean JSON to the path given by `--output` and sends progress logs to *stderr*. If you instead pipe stdout to a file with `2>&1`, the progress lines corrupt the JSON and the metadata cleaner has to salvage it. `--output` makes the script own the file, so a stray redirect can no longer corrupt it. The trailing `> /dev/null` just discards the redundant stdout echo (the real output is the `--output` file); progress still shows on your terminal.
 
 After each search, use the **Read** tool on the JSON file to examine results and check the `status` field.
 
@@ -360,14 +363,18 @@ Append `&` to each command in a single Bash call, then `wait` for all to finish:
 
 ```bash
 REVIEW_DIR="$PWD/reviews/[project-name]"
+JSON_DIR="$REVIEW_DIR/intermediate_files/json"
+mkdir -p "$JSON_DIR"
 
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 > "$REVIEW_DIR/s2_results.json" &
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 > "$REVIEW_DIR/openalex_results.json" &
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 > "$REVIEW_DIR/core_results.json" &
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent > "$REVIEW_DIR/arxiv_results.json" &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 --output "$JSON_DIR/s2_results.json" > /dev/null &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 --output "$JSON_DIR/openalex_results.json" > /dev/null &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 --output "$JSON_DIR/core_results.json" > /dev/null &
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent --output "$JSON_DIR/arxiv_results.json" > /dev/null &
 
 wait
 ```
+
+> **Why `--output` matters most here.** Running four searches concurrently interleaves their stderr progress lines. With a bare `> file` redirect you might be tempted to add `2>&1` to tame that noise — which merges the progress lines into the JSON and corrupts every file. `--output` sidesteps the problem entirely: each script writes its own clean JSON file regardless of what happens on stdout/stderr, and the interleaved progress simply scrolls past on your terminal.
 
 After `wait`, use the **Read** tool to examine each JSON result file.
 

@@ -13,7 +13,6 @@ Exit Codes: 0=success, 1=not found, 2=config error, 3=network error
 """
 
 import argparse
-import json
 import re
 import sys
 import os
@@ -25,6 +24,7 @@ from citation_context import (
 )
 from fetch_iep import fetch_iep_article
 from rate_limiter import ExponentialBackoff, get_limiter
+from output import emit, set_output_path, add_output_arg
 
 
 def log_progress(message: str) -> None:
@@ -33,27 +33,25 @@ def log_progress(message: str) -> None:
 
 
 def output_success(query: dict, contexts: list) -> None:
-    print(json.dumps({
+    emit({
         "status": "success",
         "source": "iep_context",
         "query": query,
         "results": contexts,
         "count": len(contexts),
         "errors": []
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_error(query: dict, error_type: str, message: str, exit_code: int = 2) -> None:
-    print(json.dumps({
+    emit({
         "status": "error",
         "source": "iep_context",
         "query": query,
         "results": [],
         "count": 0,
         "errors": [{"type": error_type, "message": message, "recoverable": False}]
-    }, indent=2))
-    sys.exit(exit_code)
+    }, exit_code)
 
 
 def main():
@@ -65,7 +63,9 @@ def main():
     parser.add_argument("--window", type=int, default=500, help="Context window size")
     parser.add_argument("--debug", action="store_true")
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     # Extract entry name from URL if needed
     entry_name = args.entry

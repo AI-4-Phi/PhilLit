@@ -33,7 +33,6 @@ Rate Limits (free tier, no API key):
 """
 
 import argparse
-import json
 import os
 import sys
 from typing import Optional
@@ -45,6 +44,7 @@ from dotenv import find_dotenv, load_dotenv
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from rate_limiter import ExponentialBackoff, get_limiter
+from output import emit, set_output_path, add_output_arg
 
 # CORE API configuration
 CORE_BASE_URL = "https://api.core.ac.uk/v3"
@@ -58,20 +58,19 @@ def log_progress(message: str) -> None:
 
 def output_success(query: str, results: list) -> None:
     """Output successful search results."""
-    print(json.dumps({
+    emit({
         "status": "success",
         "source": SOURCE,
         "query": query,
         "results": results,
         "count": len(results),
         "errors": []
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_partial(query: str, results: list, errors: list, warning: str) -> None:
     """Output partial results with errors."""
-    print(json.dumps({
+    emit({
         "status": "partial",
         "source": SOURCE,
         "query": query,
@@ -79,21 +78,19 @@ def output_partial(query: str, results: list, errors: list, warning: str) -> Non
         "count": len(results),
         "errors": errors,
         "warning": warning
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_error(query: str, error_type: str, message: str, exit_code: int = 2) -> None:
     """Output error result."""
-    print(json.dumps({
+    emit({
         "status": "error",
         "source": SOURCE,
         "query": query,
         "results": [],
         "count": 0,
         "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
-    }, indent=2))
-    sys.exit(exit_code)
+    }, exit_code)
 
 
 def format_work(work: dict) -> dict:
@@ -375,13 +372,14 @@ def main():
         help="Print debug information"
     )
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     # CORE is optional (BYOK posture). Without a key the unauthenticated tier
     # only rate-limits (429 + ~18s backoff), so skip entirely (item 13 D3).
     if not args.api_key:
-        print(json.dumps({"status": "skipped", "reason": "no CORE_API_KEY"}))
-        sys.exit(0)
+        emit({"status": "skipped", "reason": "no CORE_API_KEY"}, 0)
 
     # Validate arguments
     if not args.query and not args.doi and not args.title:

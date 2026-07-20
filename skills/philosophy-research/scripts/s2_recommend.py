@@ -43,6 +43,8 @@ try:
         output_partial as _output_partial,
         output_error as _output_error,
         log_progress as _log_progress,
+        set_output_path,
+        add_output_arg,
     )
     from .s2_formatters import format_paper as _format_paper, S2_RECOMMEND_FIELDS
     from .rate_limiter import ExponentialBackoff, get_limiter, parse_retry_after
@@ -53,6 +55,8 @@ except ImportError:
         output_partial as _output_partial,
         output_error as _output_error,
         log_progress as _log_progress,
+        set_output_path,
+        add_output_arg,
     )
     from s2_formatters import format_paper as _format_paper, S2_RECOMMEND_FIELDS
     from rate_limiter import ExponentialBackoff, get_limiter, parse_retry_after
@@ -326,7 +330,9 @@ def main():
         help="Print debug information"
     )
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     # Validate arguments
     if not args.positive and not args.for_paper:

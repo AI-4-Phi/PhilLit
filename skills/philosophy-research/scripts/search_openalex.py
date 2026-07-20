@@ -47,6 +47,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from rate_limiter import ExponentialBackoff, get_limiter
 from search_cache import cache_key, get_cache, put_cache
+from output import emit, set_output_path, add_output_arg
 
 # OpenAlex API configuration
 OPENALEX_BASE_URL = "https://api.openalex.org"
@@ -59,20 +60,19 @@ def log_progress(message: str) -> None:
 
 def output_success(query: str, results: list) -> None:
     """Output successful search results."""
-    print(json.dumps({
+    emit({
         "status": "success",
         "source": "openalex",
         "query": query,
         "results": results,
         "count": len(results),
         "errors": []
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_partial(query: str, results: list, errors: list, warning: str) -> None:
     """Output partial results with errors."""
-    print(json.dumps({
+    emit({
         "status": "partial",
         "source": "openalex",
         "query": query,
@@ -80,21 +80,19 @@ def output_partial(query: str, results: list, errors: list, warning: str) -> Non
         "count": len(results),
         "errors": errors,
         "warning": warning
-    }, indent=2))
-    sys.exit(0)
+    }, 0)
 
 
 def output_error(query: str, error_type: str, message: str, exit_code: int = 2) -> None:
     """Output error result."""
-    print(json.dumps({
+    emit({
         "status": "error",
         "source": "openalex",
         "query": query,
         "results": [],
         "count": 0,
         "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
-    }, indent=2))
-    sys.exit(exit_code)
+    }, exit_code)
 
 
 def reconstruct_abstract(inverted_index: dict) -> str:
@@ -446,7 +444,9 @@ def main():
         help="Disable result caching"
     )
 
+    add_output_arg(parser)
     args = parser.parse_args()
+    set_output_path(args.output)
 
     # Validate arguments
     if not args.query and not args.doi and not args.id and not args.cites:
