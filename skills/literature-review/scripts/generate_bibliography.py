@@ -40,8 +40,8 @@ def clean_bibtex_str(s: str) -> str:
     # Step 2: Strip remaining BibTeX braces
     s = s.replace("{", "").replace("}", "")
 
-    # Step 3: \& → &
-    s = s.replace("\\&", "&")
+    # Step 3: \& → & (handles both \& and double-escaped \\&)
+    s = re.sub(r"\\+&", "&", s)
 
     # Step 4: After step 2, \url{X} became \urlX — strip the residual \url prefix
     s = re.sub(r"\\url\s*", "", s)

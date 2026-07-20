@@ -203,6 +203,18 @@ class TestExtractDoi:
         entry = '@article{test,\n  DOI = {10.1007/s13347}\n}'
         assert extract_doi(entry) == '10.1007/s13347'
 
+    def test_quote_delimited_doi(self):
+        entry = '@article{simpsonmuller2016justwar,\n  doi = "10.1093/pq/pqv075"\n}'
+        assert extract_doi(entry) == '10.1093/pq/pqv075'
+
+    def test_brace_delimited_doi_still_works(self):
+        entry = '@article{simpsonMuller2015justwar,\n  doi = {10.1093/pq/pqv075}\n}'
+        assert extract_doi(entry) == '10.1093/pq/pqv075'
+
+    def test_quote_delimited_doi_with_url_prefix(self):
+        entry = '@article{test,\n  doi = "https://doi.org/10.x/y"\n}'
+        assert extract_doi(entry) == '10.x/y'
+
 
 # =============================================================================
 # Tests for abstract handling
@@ -468,6 +480,34 @@ class TestDOIDeduplication:
         deduplicate_bib([bib1, bib2], output)
         content = output.read_text()
         assert content.count('10.1234/test') == 1
+
+    def test_mixed_delimiter_same_doi_different_years(self, tmp_path):
+        """Same DOI, different citekeys AND different years, one quote-delimited
+        and one brace-delimited: must still collapse to a single entry."""
+        bib1 = tmp_path / "test1.bib"
+        bib1.write_text(
+            '@article{simpsonmuller2016justwar,\n'
+            '  title = {Just War and Guerrilla War},\n'
+            '  year = {2016},\n'
+            '  doi = "10.1093/pq/pqv075",\n'
+            '  keywords = {war, Medium}\n'
+            '}'
+        )
+        bib2 = tmp_path / "test2.bib"
+        bib2.write_text(
+            '@article{simpsonMuller2015justwar,\n'
+            '  title = {Just War and Guerrilla War},\n'
+            '  year = {2015},\n'
+            '  doi = {10.1093/pq/pqv075},\n'
+            '  keywords = {war, High}\n'
+            '}'
+        )
+        output = tmp_path / "output.bib"
+        duplicates = deduplicate_bib([bib1, bib2], output)
+        content = output.read_text()
+        assert content.count('10.1093/pq/pqv075') == 1
+        assert len([d for d in duplicates
+                    if 'simpsonmuller2016justwar' in d or 'simpsonMuller2015justwar' in d]) == 1
 
     def test_entries_without_doi_not_affected(self, tmp_path):
         bib1 = tmp_path / "test1.bib"

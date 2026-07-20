@@ -23,6 +23,7 @@ Output: JSON to stdout with cleaning summary
 Exit codes: 0 = success, 2 = file not found/read error
 """
 
+import html
 import json
 import re
 import sys
@@ -34,6 +35,8 @@ from typing import Optional
 from pybtex.database import parse_file, BibliographyData
 from pybtex.database.output.bibtex import Writer
 from pybtex.scanner import PybtexSyntaxError
+
+from bib_validator import LATEX_ESCAPES
 
 
 # Fields that should be cleaned if not verifiable
@@ -101,15 +104,31 @@ def normalize_pages(pages: str) -> str:
     return normalized.strip()
 
 
+# \^{u} -> \^u so the no-brace LATEX_ESCAPES keys (and the accent safety net
+# below) can match the braced accent form real bibs actually use (No\^{u}s).
+_INNER_BRACE_ACCENT = re.compile(r'(\\["\'`^~])\{([A-Za-z])\}')
+
+
 def normalize_journal(name: str) -> str:
-    """Normalize journal name for comparison."""
+    """Normalize journal name for comparison. Decodes HTML entities and LaTeX
+    escapes so LaTeX-encoded bib values (e.g. 'Philosophy \\& Technology',
+    'No\\^{u}s') compare equal to CrossRef's precomposed/entity forms
+    ('Philosophy &amp; Technology', 'Noûs')."""
     if not name:
         return ""
-    normalized = name.lower().strip()
+    s = html.unescape(name)                       # &amp;->&, &#251;->û
+    s = _INNER_BRACE_ACCENT.sub(r'\1\2', s)        # \^{u} -> \^u so dict keys match
+    for latex, uni in LATEX_ESCAPES.items():       # \^u -> û, \c{c} -> ç, {\ss} -> ß
+        s = s.replace(latex, uni)
+    s = re.sub(r'\\["\'`^~=.]\{?([A-Za-z])\}?', r'\1', s)  # safety net: unknown accent -> base letter
+    s = re.sub(r'\\+&', '&', s)                    # \& and \\& -> &
+    s = s.replace('{', '').replace('}', '')        # residual braces
+    # NFKD-fold so decoded-Unicode and CrossRef-precomposed reduce to base letters
+    s = ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c))
+    normalized = s.lower().strip()
     if normalized.startswith("the "):
         normalized = normalized[4:]
-    normalized = " ".join(normalized.split())
-    return normalized
+    return " ".join(normalized.split())
 
 
 def normalize_doi(doi: str) -> str:

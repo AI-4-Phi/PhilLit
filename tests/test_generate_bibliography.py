@@ -74,6 +74,14 @@ class TestCleanBibtexStr:
         """\\& → &"""
         assert clean_bibtex_str(r"Philosophy \& Public Affairs") == "Philosophy & Public Affairs"
 
+    def test_double_backslash_ampersand(self):
+        """Double-escaped \\\\& → & (regression: stray backslash leaked into References)."""
+        assert clean_bibtex_str("Philosophy \\\\& Technology") == "Philosophy & Technology"
+
+    def test_single_backslash_ampersand_still_works(self):
+        """Single-escaped \\& still normalizes correctly after the fix."""
+        assert clean_bibtex_str("Philosophy \\& Technology") == "Philosophy & Technology"
+
     def test_url_wrapper(self):
         """\\url{...} → bare URL."""
         result = clean_bibtex_str(r"\url{https://example.com}")

@@ -221,10 +221,12 @@ For every paper with a DOI, use CrossRef to get authoritative publication metada
 # verify_paper.py writes clean JSON itself via --output — do NOT redirect.
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py \
   --doi "10.2307/2024717" \
-  --output "$REVIEW_DIR/intermediate_files/json/verify_<citekey>.json"
+  --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey>.json"
 ```
 
-> **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$REVIEW_DIR/intermediate_files/json/verify_<citekey>.json"` instead.
+> **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey>.json"` instead.
+>
+> **CRITICAL: namespace your verify files with `<domain>` to avoid collisions.** All parallel domain researchers write into the *same shared* `intermediate_files/json/` directory. If you use a bare `verify_<citekey>.json`, a sibling researcher covering an overlapping paper will silently overwrite your CrossRef record with theirs (a different paper's data) — destroying the verified metadata that protects your `journal` field from being stripped. Set `<domain>` to the unique stem of your assigned output bib filename **after** `literature-domain-` (e.g. output `literature-domain-1.bib` → `<domain>` = `1`, so `verify_1_<citekey>.json`; output `literature-domain-compatibilism.bib` → `<domain>` = `compatibilism`). This is unique per researcher, so no two agents ever collide. The metadata cleaner still indexes these — it globs `*.json` and recognizes any filename containing `verify_`. (Optional future hardening: append a short DOI/title hash if the same citekey could recur within one domain.)
 
 CrossRef returns:
 - `suggested_bibtex_type` → **USE THIS** for the BibTeX entry type. If it says `incollection`, use `@incollection` with `booktitle` (not `@article` with `journal`). If it says `article`, use `@article` with `journal`.

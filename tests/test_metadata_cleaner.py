@@ -238,6 +238,22 @@ class TestIsFieldVerifiable:
         assert is_field_verifiable('number', '4', index) is True
         assert is_field_verifiable('number', '999', index) is False
 
+    def test_domain_prefixed_verify_file_is_indexed(self, tmp_path, crossref_with_issue_json):
+        """Fix 2a: researchers namespace verify files as verify_<domain>_<citekey>.json
+        to avoid cross-agent collisions. The cleaner must still index them — it globs
+        *.json and detects CrossRef records by the 'verify_' substring, so a
+        domain-prefixed name is recognized exactly like the bare form."""
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "verify_3_caney.json").write_text(
+            json.dumps(crossref_with_issue_json), encoding='utf-8'
+        )
+
+        index = build_metadata_index(json_dir)
+
+        assert is_field_verifiable('number', '4', index) is True
+        assert is_field_verifiable('number', '999', index) is False
+
     def test_number_not_verifiable_without_crossref(self, tmp_path, s2_nature_json):
         """Should not verify issue number when only S2 data available."""
         json_dir = tmp_path / "json"
@@ -459,6 +475,34 @@ class TestNormalization:
         """Should normalize journal names."""
         assert normalize_journal("The Journal of Philosophy") == "journal of philosophy"
         assert normalize_journal("Nature") == "nature"
+
+    def test_journal_normalization_does_not_collapse_distinct_names(self):
+        """Regression: a normal journal name must not normalize to empty."""
+        assert normalize_journal("Mind") == "mind"
+
+    def test_journal_normalization_latex_ampersand(self):
+        """LaTeX '\\&' and HTML '&amp;' must compare equal to a bare '&'."""
+        a = normalize_journal(r"Philosophy \& Technology")
+        b = normalize_journal("Philosophy &amp; Technology")
+        c = normalize_journal("Philosophy & Technology")
+        assert a == b == c
+
+    def test_journal_normalization_double_backslash_ampersand(self):
+        """Round-tripped bibs sometimes carry a doubled backslash before '&'."""
+        a = normalize_journal(r"Philosophy \\& Technology")
+        b = normalize_journal("Philosophy & Technology")
+        assert a == b
+
+    def test_journal_normalization_braced_circumflex_accent(self):
+        """'No\\^{u}s' (braced accent, as real bibs write it) must equal 'Noûs'."""
+        assert normalize_journal(r"No\^{u}s") == normalize_journal("Noûs")
+
+    def test_journal_normalization_ampersand_case_insensitive(self):
+        assert normalize_journal(r"AI \& SOCIETY") == normalize_journal("AI &amp; Society")
+
+    def test_journal_normalization_cedilla(self):
+        """LaTeX cedilla escape '\\c{c}' must equal the precomposed 'ç'."""
+        assert normalize_journal(r"\c{c}") == normalize_journal("ç")
 
     def test_doi_normalization(self):
         """Should normalize DOI formats."""
