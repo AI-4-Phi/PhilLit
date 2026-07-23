@@ -21,10 +21,8 @@ from metadata_cleaner import (
     build_metadata_index,
     clean_bibtex,
     find_api_entry_by_doi,
+    find_doi_year_conflicts,
 )
-# NOTE: Task 4 adds `find_doi_year_conflicts` to this import block when the
-# helper exists. Do not import it earlier - the file must stay runnable at
-# every task boundary.
 
 
 SPARROW_DOI = "10.1111/j.1468-5930.2007.00346.x"
@@ -214,3 +212,57 @@ class TestYearCorrectionAuthority:
         assert result["years_corrected"] == 0
         content = bib_file.read_text(encoding="utf-8")
         assert "2007" in content
+
+
+class TestConflictVisibility:
+    def test_conflicting_years_produce_warning(self, tmp_path):
+        """Option D: a same-DOI year disagreement across pooled sources is
+        logged in the cleaning report, naming values and files - even when
+        the resolution leaves the bib untouched."""
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        conflict_warnings = [w for w in result["warnings"] if "disagree" in w]
+        assert len(conflict_warnings) == 1
+        w = conflict_warnings[0]
+        assert "sparrow2007" in w
+        assert "2007" in w and "2019" in w
+        assert "verify_3_sparrow2007.json" in w and "s2_roff.json" in w
+
+    def test_no_warning_when_sources_agree(self, tmp_path):
+        """A single source (or agreeing sources) produces no conflict noise."""
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert not [w for w in result["warnings"] if "disagree" in w]
+
+    def test_helper_returns_empty_without_conflict(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {"s2_roff.json": S2_DUMP})
+        index = build_metadata_index(json_dir)
+        assert find_doi_year_conflicts(SPARROW_DOI, index) == {}
+        assert find_doi_year_conflicts("", index) == {}
+
+    def test_helper_maps_years_to_source_files(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+
+        conflicts = find_doi_year_conflicts(SPARROW_DOI, index)
+
+        assert conflicts == {
+            "2007": ["verify_3_sparrow2007.json"],
+            "2019": ["s2_roff.json"],
+        }

@@ -190,6 +190,29 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     return fallback
 
 
+def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
+    """Distinct year values (with their source files) across pooled entries
+    sharing this DOI. Returns {} unless at least two distinct years exist.
+
+    Option D of the year-corruption fix: a same-DOI disagreement should be
+    visible in the cleaning report however it is resolved - silent
+    resolution is what let bad broad-dump years overwrite verified ones."""
+    if not doi:
+        return {}
+    norm_doi = normalize_doi(doi)
+    years: dict = {}
+    for api_entry in index.entries:
+        api_doi = api_entry.get("doi")
+        if not api_doi or normalize_doi(api_doi) != norm_doi:
+            continue
+        year = str(api_entry.get("year") or "").strip()
+        if year:
+            years.setdefault(year, set()).add(api_entry.get("source_file") or "?")
+    if len(years) < 2:
+        return {}
+    return {y: sorted(files) for y, files in years.items()}
+
+
 def parse_s2_result(data: dict, source_file: str) -> list[dict]:
     """Parse Semantic Scholar JSON format."""
     results = data.get("results", [])
@@ -748,6 +771,15 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             result["unmatched_entries"] += 1
             continue
         result["matched_entries"] += 1
+        doi_value = entry.fields.get('doi', '')
+        conflicts = find_doi_year_conflicts(doi_value, index)
+        if conflicts:
+            detail = "; ".join(
+                f"{year} ({', '.join(files)})"
+                for year, files in sorted(conflicts.items()))
+            result["warnings"].append(
+                f"{entry_key}: indexed sources disagree on year for DOI "
+                f"{normalize_doi(doi_value)}: {detail}")
         plans.append((entry_key, entry, plan_entry_cleaning(entry, index, api_entry)))
 
     # B2: compute the PLANNED metrics (by field name) BEFORE the breaker check,
