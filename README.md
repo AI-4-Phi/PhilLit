@@ -47,8 +47,8 @@ PhilLit itself is free. Running it requires [Claude Code](https://docs.anthropic
 **1. Install the plugin** in Claude Code:
 
 ```
-/plugin marketplace add AI-4-Phi/PhilLit
-/plugin install phillit@phillit
+/plugin marketplace add AI-4-Phi/plugins
+/plugin install phillit@ai4phi
 ```
 
 **2. Set up a working directory** — create or open the folder where your reviews will live, then run once:
@@ -70,11 +70,13 @@ I need a literature review on [topic].
 **Updating**: plugins from third-party marketplaces do not auto-update by default. To get the newest version:
 
 ```
-/plugin marketplace update phillit
-/plugin update phillit@phillit
+/plugin marketplace update ai4phi
+/plugin update phillit@ai4phi
 ```
 
-Or enable auto-update for the phillit marketplace in the `/plugin` → Marketplaces tab to pick up new versions at startup.
+Or enable auto-update for the ai4phi marketplace in the `/plugin` → Marketplaces tab to pick up new versions at startup.
+
+> **Installed before the `ai4phi` marketplace existed?** If you added this repo directly (`/plugin marketplace add AI-4-Phi/PhilLit`, installing `phillit@phillit`), that keeps working and updating for now. To migrate to the new marketplace: `/plugin uninstall phillit@phillit`, `/plugin marketplace remove phillit`, then install as above. The legacy in-repo marketplace will be removed in a future release.
 
 ## What does it look like?
 
