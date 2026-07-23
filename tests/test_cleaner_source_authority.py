@@ -106,3 +106,49 @@ class TestSourceTagging:
         index = build_metadata_index(json_dir)
 
         assert index.entries[0]["entry_scoped"] is True
+
+
+class TestDoiLookupPriority:
+    def test_verify_record_outranks_earlier_broad_dump(self, tmp_path):
+        """s2_roff.json sorts alphabetically before verify_*.json, so pool
+        order alone would return the wrong (2019) record. The entry-scoped
+        verify record must win regardless of filename sort."""
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+
+        api_entry = find_api_entry_by_doi(SPARROW_DOI, index)
+
+        assert api_entry["source_file"] == "verify_3_sparrow2007.json"
+        assert api_entry["year"] == 2007
+
+    def test_broad_dump_still_matches_when_no_verify_file(self, tmp_path):
+        """Without a verify file, first-match behavior is unchanged (broad
+        dumps still gate cleaning; they just lose correction authority in
+        plan_entry_cleaning, Task 3)."""
+        json_dir = make_json_dir(tmp_path, {"s2_roff.json": S2_DUMP})
+        index = build_metadata_index(json_dir)
+
+        api_entry = find_api_entry_by_doi(SPARROW_DOI, index)
+
+        assert api_entry is not None
+        assert api_entry["source_file"] == "s2_roff.json"
+
+    def test_two_verify_files_first_in_pool_order_wins(self, tmp_path):
+        """Tie-break pin: when two entry-scoped verify files carry the same
+        DOI, the alphabetically-earlier one wins (pool order among equal
+        rank). Task 4's conflict warning makes any disagreement visible."""
+        other_verify = json.loads(json.dumps(VERIFY_RESULT))
+        other_verify["results"][0]["year"] = 2008
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_sparrow2007.json": other_verify,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+
+        api_entry = find_api_entry_by_doi(SPARROW_DOI, index)
+
+        assert api_entry["source_file"] == "verify_1_sparrow2007.json"
+        assert api_entry["year"] == 2008

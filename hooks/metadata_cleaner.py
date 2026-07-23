@@ -170,15 +170,24 @@ def _salvage_json(text: str) -> Optional[dict]:
 
 
 def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
-    """Find the API entry that matches the given DOI."""
+    """Find the API entry that matches the given DOI.
+
+    Entry-scoped verification records (verify_*.json - a direct CrossRef
+    lookup on this exact DOI) outrank broad search-result dumps, which can
+    carry another API's bad metadata for the same DOI (year-corruption fix).
+    Among records of equal rank, pool order (filename sort) still decides."""
     if not doi:
         return None
     norm_doi = normalize_doi(doi)
+    fallback = None
     for api_entry in index.entries:
         api_doi = api_entry.get("doi")
         if api_doi and normalize_doi(api_doi) == norm_doi:
-            return api_entry
-    return None
+            if api_entry.get("entry_scoped"):
+                return api_entry
+            if fallback is None:
+                fallback = api_entry
+    return fallback
 
 
 def parse_s2_result(data: dict, source_file: str) -> list[dict]:
