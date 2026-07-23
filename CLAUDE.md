@@ -30,7 +30,7 @@
 - `skills/philosophy-research/` — API search scripts for academic sources (Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers, NDPR), abstract resolution, encyclopedia context extraction, and citation verification (CrossRef). Includes Brave web search fallback and caching.
 - `skills/setup/` — The `/phillit:setup` skill: scaffolds a workspace (`.phillit/` marker, `.env`) and safely merges permission rules into the workspace's `.claude/settings.json`.
 - `agents/` — Specialized subagent definitions invoked by the literature-review skill.
-- `hooks/` — Hook scripts: `fast_gate.sh` (shell pre-filter for per-call gates), `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py`, `subagent_stop_bib.sh`, and the thin `setup-environment.sh` SessionStart bootstrap.
+- `hooks/` — Hook scripts: `fast_gate.sh` (shell pre-filter for per-call gates), `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py` (guards Bash-tool background calls inside subagents), `block_subagent_background_dispatch.py` (guards Agent/Task background dispatch at the orchestrator — the four PhilLit review agents must run foreground), `subagent_stop_bib.sh`, and the thin `setup-environment.sh` SessionStart bootstrap.
 - `hooks/hooks.json` — Plugin hook definitions (single source of truth): SessionStart bootstrap; marker-gated PreToolUse/PostToolUse/SubagentStop.
 - `docs/` — Project documentation: shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`) and `known-issues/`.
 - `.claude/settings.json` — Dev-clone permissions only (no hooks block; the plugin's hooks live in `hooks/hooks.json`). A convenience for working in this repo, not shipped behavior.
@@ -93,6 +93,8 @@ Run tests with: `uv run --locked pytest`
 ## Releasing
 
 Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. Do not declare `version` in `marketplace.json` as well: `plugin.json` silently wins, so a duplicate is a stale-value trap.
+
+Installs go through the external `ai4phi` marketplace ([AI-4-Phi/plugins](https://github.com/AI-4-Phi/plugins)) since 2026-07-22; this repo is the plugin source only. Keep the legacy `.claude-plugin/marketplace.json` here — existing installs registered this repo as their marketplace and poll it; remove only after a deprecation window.
 
 ## Principles
 
