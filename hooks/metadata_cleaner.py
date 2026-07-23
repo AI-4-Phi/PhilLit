@@ -366,7 +366,15 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
             else:
                 entries = parse_s2_result(data, json_file.name)
 
+            # Source-authority tagging (year-corruption fix): record where
+            # each pooled record came from. verify_* files are entry-scoped
+            # CrossRef lookups (item-13 A4.1) and outrank broad search dumps
+            # for correction purposes (same "verify_" filename convention
+            # detect_api_source already relies on).
+            entry_scoped = "verify_" in json_file.name.lower()
             for entry in entries:
+                entry["source_file"] = json_file.name
+                entry["entry_scoped"] = entry_scoped
                 index.entries.append(entry)
 
                 if entry.get("container_title"):
