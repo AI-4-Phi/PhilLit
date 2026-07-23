@@ -563,7 +563,13 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         "type_downgraded": None,
     }
 
-    if api_entry.get("year"):
+    # Year-corruption fix (Option C): only an entry-scoped verification
+    # record (a direct CrossRef lookup on this DOI) may OVERWRITE a
+    # populated year. Broad search dumps are discovery evidence, not
+    # correction authority - they were never queried for this entry, and
+    # their per-DOI metadata is sometimes wrong (docs/known-issues/
+    # metadata-cleaner-year-corruption.md).
+    if api_entry.get("year") and api_entry.get("entry_scoped"):
         api_year = str(api_entry["year"])
         bib_year = entry.fields.get('year', '')
         if bib_year and bib_year != api_year:

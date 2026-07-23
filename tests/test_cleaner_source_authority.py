@@ -152,3 +152,65 @@ class TestDoiLookupPriority:
 
         assert api_entry["source_file"] == "verify_1_sparrow2007.json"
         assert api_entry["year"] == 2008
+
+
+SPARROW_BIB_WRONG_YEAR = """@article{sparrow2007,
+  author = {Sparrow, Robert},
+  title = {Killer Robots},
+  journal = {Journal of Applied Philosophy},
+  year = {1999},
+  doi = {10.1111/j.1468-5930.2007.00346.x}
+}"""
+
+
+class TestYearCorrectionAuthority:
+    def test_regression_correct_year_not_overwritten_by_broad_dump(self, tmp_path):
+        """The observed corruption (Sparrow 2007 -> 2019): bib year is correct
+        and CrossRef-verified; an s2 dump with the same DOI and a wrong year
+        sorts first. The year must stay 2007 with no METADATA_CLEANED marker."""
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["success"] is True
+        assert result["years_corrected"] == 0
+        content = bib_file.read_text(encoding="utf-8")
+        assert "2007" in content
+        assert "METADATA_CLEANED" not in content
+
+    def test_wrong_bib_year_corrected_from_verify_not_broad_dump(self, tmp_path):
+        """When the bib year is genuinely wrong, correction still fires - and
+        takes the verify file's value (2007), not the s2 dump's (2019)."""
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_WRONG_YEAR, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["years_corrected"] == 1
+        content = bib_file.read_text(encoding="utf-8")
+        assert "2007" in content
+        assert "year:1999" in content  # marker records the old value
+
+    def test_no_correction_when_only_broad_dump_has_doi(self, tmp_path):
+        """Option C conservatism: with no entry-scoped record at all, a
+        year mismatch against a broad dump is NOT corrected - the dump was
+        never queried for this entry and may be wrong (both confirmed
+        instances were). The bib's original year survives."""
+        json_dir = make_json_dir(tmp_path, {"s2_roff.json": S2_DUMP})
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["years_corrected"] == 0
+        content = bib_file.read_text(encoding="utf-8")
+        assert "2007" in content
