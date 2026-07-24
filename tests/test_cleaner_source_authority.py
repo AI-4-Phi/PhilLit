@@ -152,6 +152,27 @@ class TestDoiLookupPriority:
         assert api_entry["year"] == 2008
 
 
+# Sparse entry-scoped record: a verify_paper.py --doi lookup that resolved
+# only partial metadata (year missing). Must NOT authorize a correction,
+# and must NOT let the broad dump's wrong year through either (gate #3
+# requires api_entry.get("year") truthy on the SELECTED record).
+VERIFY_RESULT_NO_YEAR = {
+    "status": "success",
+    "source": "crossref",
+    "results": [
+        {
+            "title": "Killer Robots",
+            "container_title": "Journal of Applied Philosophy",
+            "year": None,
+            "doi": SPARROW_DOI,
+            "volume": "24",
+            "issue": "1",
+            "page": "62-77",
+            "publisher": "Wiley",
+        }
+    ],
+}
+
 SPARROW_BIB_WRONG_YEAR = """@article{sparrow2007,
   author = {Sparrow, Robert},
   title = {Killer Robots},
@@ -212,6 +233,28 @@ class TestYearCorrectionAuthority:
         assert result["years_corrected"] == 0
         content = bib_file.read_text(encoding="utf-8")
         assert "2007" in content
+
+    def test_no_correction_when_verify_record_has_no_year(self, tmp_path):
+        """Sparse verify record (lacks year - e.g. a --doi lookup that only
+        resolved partial metadata) must not authorize an overwrite. Gates
+        #2 (lookup priority) and #3 (entry_scoped gate) interact here: #2
+        selects this yearless verify record over the broad dump (it is
+        entry-scoped), and #3 then blocks correction because the selected
+        record's year is falsy - the broad dump's wrong year is never
+        consulted because it was never selected."""
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT_NO_YEAR,
+        })
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["years_corrected"] == 0
+        content = bib_file.read_text(encoding="utf-8")
+        assert "2007" in content
+        assert "METADATA_CLEANED" not in content
 
 
 class TestConflictVisibility:

@@ -175,7 +175,17 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     Entry-scoped verification records (verify_*.json - a direct CrossRef
     lookup on this exact DOI) outrank broad search-result dumps, which can
     carry another API's bad metadata for the same DOI (year-corruption fix).
-    Among records of equal rank, pool order (filename sort) still decides."""
+    Among records of equal rank, pool order (filename sort) still decides.
+
+    Known limitation: this preference governs the api_entry used for ALL
+    field corrections (container_title, volume, pages, etc.), not just
+    year - plan_entry_cleaning only gates the *year* overwrite on
+    entry_scoped (see the Option C comment there). A sparse verify_*
+    record (e.g. a --doi lookup that resolved only partial metadata) can
+    therefore shadow a richer broad-dump record for this entry's other
+    fields. Accepted for now since CrossRef verify records are typically
+    complete; revisit if this proves to reduce correction coverage in
+    practice."""
     if not doi:
         return None
     norm_doi = normalize_doi(doi)
@@ -402,8 +412,16 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
             # each pooled record came from. verify_* files are entry-scoped
             # CrossRef lookups (item-13 A4.1) and outrank broad search dumps
             # for correction purposes (same "verify_" filename convention
-            # detect_api_source already relies on).
-            entry_scoped = "verify_" in json_file.name.lower()
+            # detect_api_source already relies on). The filename substring
+            # alone is not enough - it would also match a hypothetical
+            # other-source filename like "s2_verify_results.json" - so we
+            # additionally require the already-computed api_source to be
+            # "crossref": verify_paper.py's JSON always sets "source":
+            # "crossref", which detect_api_source checks before falling
+            # back to filename heuristics, so genuine verify_*.json files
+            # are unaffected while a same-named non-CrossRef file is
+            # correctly rejected.
+            entry_scoped = "verify_" in json_file.name.lower() and api_source == "crossref"
             for entry in entries:
                 entry["source_file"] = json_file.name
                 entry["entry_scoped"] = entry_scoped
@@ -591,7 +609,9 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
     # populated year. Broad search dumps are discovery evidence, not
     # correction authority - they were never queried for this entry, and
     # their per-DOI metadata is sometimes wrong (docs/known-issues/
-    # metadata-cleaner-year-corruption.md).
+    # metadata-cleaner-year-corruption.md). (See the entry_scoped-preference
+    # docstring on find_api_entry_by_doi for the corresponding limitation
+    # on non-year fields.)
     if api_entry.get("year") and api_entry.get("entry_scoped"):
         api_year = str(api_entry["year"])
         bib_year = entry.fields.get('year', '')
