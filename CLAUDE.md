@@ -24,7 +24,7 @@
 # File Structure
 
 - `reviews/` — All existing and new literature reviews. Each review has its own subdirectory with an informative short name. Gitignored (local only), except the three example reviews linked from the README.
-- `.claude-plugin/` — Plugin manifest (`plugin.json`) and single-plugin marketplace (`marketplace.json`).
+- `.claude-plugin/` — Plugin manifest (`plugin.json`).
 - `bin/phillit-run` — Self-locating wrapper that runs every bundled Python script in the plugin's locked `uv` project environment (see "Hooks and Python").
 - `skills/literature-review/` — Main orchestration skill for the 6-phase workflow. `scripts/` contains Phase 6 tools: `assemble_review.py`, `normalize_headings.py`, `dedupe_bib.py`, `enrich_bibliography.py`, `generate_bibliography.py`, `lint_md.py`.
 - `skills/philosophy-research/` — API search scripts for academic sources (Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers, NDPR), abstract resolution, encyclopedia context extraction, and citation verification (CrossRef). Includes Brave web search fallback and caching.
@@ -32,33 +32,19 @@
 - `agents/` — Specialized subagent definitions invoked by the literature-review skill.
 - `hooks/` — Hook scripts: `fast_gate.sh` (shell pre-filter for per-call gates), `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py` (guards Bash-tool background calls inside subagents), `block_subagent_background_dispatch.py` (guards Agent/Task background dispatch at the orchestrator — the four PhilLit review agents must run foreground), `subagent_stop_bib.sh`, and the thin `setup-environment.sh` SessionStart bootstrap.
 - `hooks/hooks.json` — Plugin hook definitions (single source of truth): SessionStart bootstrap; marker-gated PreToolUse/PostToolUse/SubagentStop.
-- `docs/` — Project documentation: shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`) and `known-issues/`.
-- `.claude/settings.json` — Dev-clone permissions only (no hooks block; the plugin's hooks live in `hooks/hooks.json`). A convenience for working in this repo, not shipped behavior.
-- `.claude/settings.local.json` — Local settings overrides (gitignored).
+- `docs/` — Project documentation: shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`), `known-issues/`, and `ideas/` (design ideas and deferred plans).
 - `tests/` — pytest tests for API scripts and hooks.
 
 # Typical Usage: Literature Review
 
 When asked to perform a new literature review:
-1. Invoke the `/literature-review` skill to begin the 6-phase workflow
+1. Invoke the `/phillit:literature-review` skill to begin the 6-phase workflow
 2. The skill creates a new directory in `reviews/` with an informative short name (e.g., `reviews/epistemic-autonomy-ai/`)
 3. The skill coordinates specialized subagents via the Task tool to complete all phases
 
 # Workflow Architecture
 
-**`/literature-review` skill** — Main entry point. Runs in main conversation with Task tool access. Coordinates the 6-phase workflow:
-- Phase 1: Verify environment and determine execution mode
-- Phase 2: Task tool invokes `literature-review-planner` — Decomposes topic into domains
-- Phase 3: Task tool invokes `domain-literature-researcher` ×N (parallel) — Uses `philosophy-research` skill for API searches; outputs BibTeX files
-- Phase 4: Task tool invokes `synthesis-planner` — Reads BibTeX files; designs outline emphasizing debates and positions
-- Phase 5: Task tool invokes `synthesis-writer` ×N (parallel) — Writes sections using relevant BibTeX subsets
-- Phase 6: Assemble final review, deduplicate BibTeX, generate bibliography, lint, clean up, optional DOCX
-
-**Specialized subagents** (invoked via Task tool, cannot spawn other subagents):
-- `literature-review-planner` — Decomposes topic into domains and search strategies
-- `domain-literature-researcher` — Searches academic sources, produces BibTeX with rich annotations
-- `synthesis-planner` — Designs tight outline from collected literature
-- `synthesis-writer` — Writes individual sections of the review
+The `/phillit:literature-review` skill runs in the main conversation and coordinates the 6-phase workflow (verify environment → plan domains → parallel domain research → synthesis outline → parallel section writing → assemble/lint), dispatching the four subagents in `agents/` via the Task tool (`literature-review-planner`, `domain-literature-researcher`, `synthesis-planner`, `synthesis-writer` — subagents cannot spawn other subagents). Phase-by-phase design: `docs/ARCHITECTURE.md`.
 
 # Development
 
@@ -96,9 +82,9 @@ Run tests with: `uv run --locked pytest`
 
 ## Releasing
 
-Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. Do not declare `version` in `marketplace.json` as well: `plugin.json` silently wins, so a duplicate is a stale-value trap.
+Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. There is no CHANGELOG and there are no git tags — the `Plugin: bump version to X` commits are the release history.
 
-Installs go through the external `ai4phi` marketplace ([AI-4-Phi/plugins](https://github.com/AI-4-Phi/plugins)) since 2026-07-22; this repo is the plugin source only. Keep the legacy `.claude-plugin/marketplace.json` here — existing installs registered this repo as their marketplace and poll it; remove only after a deprecation window.
+Installs go through the external `ai4phi` marketplace ([AI-4-Phi/plugins](https://github.com/AI-4-Phi/plugins)) since 2026-07-22; this repo is the plugin source only. The legacy in-repo `.claude-plugin/marketplace.json` was removed; installs that registered this repo directly no longer receive updates, and the README migration note tells them how to switch. Do not reintroduce a `marketplace.json` here — and never declare `version` in a marketplace entry: `plugin.json` silently wins, so a duplicate is a stale-value trap.
 
 ## Commit Messages
 
@@ -117,7 +103,7 @@ Convention: `<Area>: short description` (e.g. `Hooks: ...`, `Docs: ...`, `Deps: 
 
 - **Evaluation order**: deny → ask → allow. First matching rule wins. An `ask` rule overrides a matching `allow` rule.
 - **A plugin cannot ship permissions.** `/phillit:setup` merges PhilLit's rules into the user's workspace `.claude/settings.json` (parse / merge / dedupe / back up / atomic write). The canonical rule set lives in `skills/setup/scripts/setup_workspace.py` (`PHILLIT_RULES`).
-- **Bash is allowed broadly** (not enumerated). Enumerating prefix patterns (e.g., `Bash(python *)`) is fragile — subagents construct multi-line scripts with variable prefixes that no finite pattern set can match. Safety comes from deny rules (`sudo`, `dd`, `mkfs`), ask rules (`rm`, `rmdir`), and scoped `Write`/`Edit` (only `reviews/`).
+- **Bash is allowed broadly** (not enumerated). Enumerating prefix patterns (e.g., `Bash(python *)`) is fragile — subagents construct multi-line scripts with variable prefixes that no finite pattern set can match. Safety comes from deny rules (`sudo`, `dd`, `mkfs`), ask rules (`rm`, `rmdir`), and a scoped `Edit(reviews/**)` rule. Edit rules cover all file-editing tools (Write, Edit, NotebookEdit); `Write(path)` rules are never consulted and trigger a startup warning — never add one.
 - **Do not revert to enumerated Bash patterns.** This was attempted 4 times (Jan–Feb 2026) and failed each time. See `docs/known-issues/background-bash-tasks.md` and `docs/permissions-guide.md` for details.
 
 ## Hooks and Python

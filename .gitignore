@@ -93,6 +93,10 @@ reviews/*
 
 # Claude Code local files (not shared)
 .claude/settings.local.json
+.claude/worktrees/
+
+# Agent-workflow artifacts (plans, specs) — local process scaffolding, never tracked
+docs/superpowers/
 
 # User opt-out for update checks
 .phillit-no-update-check

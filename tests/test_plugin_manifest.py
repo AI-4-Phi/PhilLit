@@ -17,13 +17,8 @@ def test_plugin_json_has_required_fields():
     assert m["description"]
 
 
-def test_marketplace_lists_one_plugin_sourced_at_repo_root():
-    mk = _load(".claude-plugin/marketplace.json")
-    assert mk["name"] == "phillit"
-    assert len(mk["plugins"]) == 1
-    plugin = mk["plugins"][0]
-    assert plugin["name"] == "phillit"
-    assert plugin["source"] == "."
-    # Version is declared ONLY in plugin.json: a duplicate in marketplace.json is a
-    # stale-value trap (plugin.json silently wins), and update detection pins to it.
-    assert "version" not in plugin
+def test_no_legacy_in_repo_marketplace():
+    # Installs go through the external ai4phi marketplace (AI-4-Phi/plugins).
+    # A marketplace.json here would re-register this repo as its own marketplace
+    # and reopen the duplicate-version stale-value trap.
+    assert not (ROOT / ".claude-plugin" / "marketplace.json").exists()

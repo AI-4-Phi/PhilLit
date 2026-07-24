@@ -76,7 +76,7 @@ I need a literature review on [topic].
 
 Or enable auto-update for the ai4phi marketplace in the `/plugin` → Marketplaces tab to pick up new versions at startup.
 
-> **Installed before the `ai4phi` marketplace existed?** If you added this repo directly (`/plugin marketplace add AI-4-Phi/PhilLit`, installing `phillit@phillit`), that keeps working and updating for now. To migrate to the new marketplace: `/plugin uninstall phillit@phillit`, `/plugin marketplace remove phillit`, then install as above. The legacy in-repo marketplace will be removed in a future release.
+> **Installed before the `ai4phi` marketplace existed?** If you added this repo directly (`/plugin marketplace add AI-4-Phi/PhilLit`, installing `phillit@phillit`), the legacy in-repo marketplace has been removed: your installed copy keeps working, but it no longer receives updates. To migrate: `/plugin uninstall phillit@phillit`, `/plugin marketplace remove phillit`, then install as above.
 
 ## What does it look like?
 

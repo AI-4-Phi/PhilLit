@@ -2,7 +2,7 @@
 
 ## Plugin Packaging
 
-PhilLit ships as a Claude Code plugin, and this repository *is* the plugin: `.claude-plugin/` holds the manifest (`plugin.json`) and single-plugin marketplace (`marketplace.json`); `skills/`, `agents/`, and `hooks/` at the repo root are what Claude Code loads. When installed, everything is namespaced `phillit:` — skills are invoked as `/phillit:literature-review`, and subagents are spawned with `subagent_type: phillit:domain-literature-researcher` (the bare name fails).
+PhilLit ships as a Claude Code plugin, and this repository *is* the plugin: `.claude-plugin/` holds the manifest (`plugin.json`); `skills/`, `agents/`, and `hooks/` at the repo root are what Claude Code loads. When installed, everything is namespaced `phillit:` — skills are invoked as `/phillit:literature-review`, and subagents are spawned with `subagent_type: phillit:domain-literature-researcher` (the bare name fails).
 
 All bundled Python runs through `bin/phillit-run`, which execs `uv run --locked` against the repo's `pyproject.toml`/`uv.lock` in a per-install venv. Hooks are wired in `hooks/hooks.json` and marker-gated: the intrusive ones no-op unless the working directory is a PhilLit workspace (a `.phillit/` directory created by `/phillit:setup`). See `CLAUDE.md` ("Hooks and Python") for the wrapper and hook conventions.
 
@@ -227,8 +227,7 @@ bin/
 └── phillit-run                           # uv wrapper: runs bundled Python in the per-install venv
 
 .claude-plugin/
-├── plugin.json                           # Plugin manifest (bump version per release)
-└── marketplace.json                      # Single-plugin marketplace
+└── plugin.json                           # Plugin manifest (bump version per release)
 
 agents/
 ├── literature-review-planner.md          # Decomposes research into domains

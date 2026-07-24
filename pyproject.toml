@@ -1,6 +1,6 @@
 [project]
 name = "phillit"
-version = "0.1.0"
+version = "0.1.0"  # unused boilerplate, intentionally frozen — the release version is .claude-plugin/plugin.json
 description = "Multi-agent system for generating literature reviews in philosophy"
 readme = "README.md"
 requires-python = ">=3.10"
