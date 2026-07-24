@@ -776,7 +776,11 @@ class TestYearCorrection:
     """Tests for DOI-based year correction."""
 
     def test_year_corrected_from_api(self, tmp_path):
-        """Entry with DOI should have year corrected when API has different year."""
+        """Entry with DOI should have year corrected when API has different year.
+
+        The API record must come from an entry-scoped verify_* file - broad
+        search dumps no longer carry year-correction authority (see
+        tests/test_cleaner_source_authority.py)."""
         api_json = {
             "status": "success",
             "source": "crossref",
@@ -799,12 +803,12 @@ class TestYearCorrection:
 }"""
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        (json_dir / "crossref.json").write_text(json.dumps(api_json), encoding='utf-8')
+        (json_dir / "verify_test.json").write_text(json.dumps(api_json), encoding='utf-8')
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
+        result = clean_bibtex(bib_file, json_dir,
 )
 
         assert result["success"] is True

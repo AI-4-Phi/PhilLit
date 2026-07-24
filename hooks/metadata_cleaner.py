@@ -170,15 +170,57 @@ def _salvage_json(text: str) -> Optional[dict]:
 
 
 def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
-    """Find the API entry that matches the given DOI."""
+    """Find the API entry that matches the given DOI.
+
+    Entry-scoped verification records (verify_*.json - a direct CrossRef
+    lookup on this exact DOI) outrank broad search-result dumps, which can
+    carry another API's bad metadata for the same DOI (year-corruption fix).
+    Among records of equal rank, pool order (filename sort) still decides.
+
+    Known limitation: this preference governs the api_entry used for ALL
+    field corrections (container_title, volume, pages, etc.), not just
+    year - plan_entry_cleaning only gates the *year* overwrite on
+    entry_scoped (see the Option C comment there). A sparse verify_*
+    record (e.g. a --doi lookup that resolved only partial metadata) can
+    therefore shadow a richer broad-dump record for this entry's other
+    fields. Accepted for now since CrossRef verify records are typically
+    complete; revisit if this proves to reduce correction coverage in
+    practice."""
     if not doi:
         return None
     norm_doi = normalize_doi(doi)
+    fallback = None
     for api_entry in index.entries:
         api_doi = api_entry.get("doi")
         if api_doi and normalize_doi(api_doi) == norm_doi:
-            return api_entry
-    return None
+            if api_entry.get("entry_scoped"):
+                return api_entry
+            if fallback is None:
+                fallback = api_entry
+    return fallback
+
+
+def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
+    """Distinct year values (with their source files) across pooled entries
+    sharing this DOI. Returns {} unless at least two distinct years exist.
+
+    Option D of the year-corruption fix: a same-DOI disagreement should be
+    visible in the cleaning report however it is resolved - silent
+    resolution is what let bad broad-dump years overwrite verified ones."""
+    if not doi:
+        return {}
+    norm_doi = normalize_doi(doi)
+    years: dict = {}
+    for api_entry in index.entries:
+        api_doi = api_entry.get("doi")
+        if not api_doi or normalize_doi(api_doi) != norm_doi:
+            continue
+        year = str(api_entry.get("year") or "").strip()
+        if year:
+            years.setdefault(year, set()).add(api_entry.get("source_file") or "?")
+    if len(years) < 2:
+        return {}
+    return {y: sorted(files) for y, files in years.items()}
 
 
 def parse_s2_result(data: dict, source_file: str) -> list[dict]:
@@ -366,7 +408,23 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
             else:
                 entries = parse_s2_result(data, json_file.name)
 
+            # Source-authority tagging (year-corruption fix): record where
+            # each pooled record came from. verify_* files are entry-scoped
+            # CrossRef lookups (item-13 A4.1) and outrank broad search dumps
+            # for correction purposes (same "verify_" filename convention
+            # detect_api_source already relies on). The filename substring
+            # alone is not enough - it would also match a hypothetical
+            # other-source filename like "s2_verify_results.json" - so we
+            # additionally require the already-computed api_source to be
+            # "crossref": verify_paper.py's JSON always sets "source":
+            # "crossref", which detect_api_source checks before falling
+            # back to filename heuristics, so genuine verify_*.json files
+            # are unaffected while a same-named non-CrossRef file is
+            # correctly rejected.
+            entry_scoped = "verify_" in json_file.name.lower() and api_source == "crossref"
             for entry in entries:
+                entry["source_file"] = json_file.name
+                entry["entry_scoped"] = entry_scoped
                 index.entries.append(entry)
 
                 if entry.get("container_title"):
@@ -546,7 +604,15 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         "type_downgraded": None,
     }
 
-    if api_entry.get("year"):
+    # Year-corruption fix (Option C): only an entry-scoped verification
+    # record (a direct CrossRef lookup on this DOI) may OVERWRITE a
+    # populated year. Broad search dumps are discovery evidence, not
+    # correction authority - they were never queried for this entry, and
+    # their per-DOI metadata is sometimes wrong (docs/known-issues/
+    # metadata-cleaner-year-corruption.md). (See the entry_scoped-preference
+    # docstring on find_api_entry_by_doi for the corresponding limitation
+    # on non-year fields.)
+    if api_entry.get("year") and api_entry.get("entry_scoped"):
         api_year = str(api_entry["year"])
         bib_year = entry.fields.get('year', '')
         if bib_year and bib_year != api_year:
@@ -725,6 +791,15 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             result["unmatched_entries"] += 1
             continue
         result["matched_entries"] += 1
+        doi_value = entry.fields.get('doi', '')
+        conflicts = find_doi_year_conflicts(doi_value, index)
+        if conflicts:
+            detail = "; ".join(
+                f"{year} ({', '.join(files)})"
+                for year, files in sorted(conflicts.items()))
+            result["warnings"].append(
+                f"{entry_key}: indexed sources disagree on year for DOI "
+                f"{normalize_doi(doi_value)}: {detail}")
         plans.append((entry_key, entry, plan_entry_cleaning(entry, index, api_entry)))
 
     # B2: compute the PLANNED metrics (by field name) BEFORE the breaker check,
