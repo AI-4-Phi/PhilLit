@@ -68,6 +68,10 @@ For agent architecture and design patterns, see `docs/ARCHITECTURE.md`.
 
 PhilLit must work in Claude Code Cloud, Linux, macOS, and Windows. On Windows, Claude Code uses Git Bash to run hooks and Bash tool calls. Use forward-slash paths everywhere. Python is never invoked directly — the `bin/phillit-run` wrapper runs it through `uv`, which resolves the correct interpreter per platform, so there is no `.venv/bin` vs `.venv/Scripts` branching to maintain.
 
+## Git Worktrees
+
+`git worktree add` (and `EnterWorktree`) only checks out tracked files. `docs/superpowers/` (plans, specs) and the local-only files under `docs/known-issues/` are untracked, so a fresh worktree won't have them — copy them over manually before running a plan-driven workflow (e.g. subagent-driven-development) that needs to read a plan file from inside the worktree.
+
 ## Setup
 
 **Plugin users** run `/phillit:setup` once in their working directory; the first script call builds a per-install venv at `~/.venvs/phillit-plugin-<cksum>` via `uv run --locked`.
@@ -95,6 +99,10 @@ Run tests with: `uv run --locked pytest`
 Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. Do not declare `version` in `marketplace.json` as well: `plugin.json` silently wins, so a duplicate is a stale-value trap.
 
 Installs go through the external `ai4phi` marketplace ([AI-4-Phi/plugins](https://github.com/AI-4-Phi/plugins)) since 2026-07-22; this repo is the plugin source only. Keep the legacy `.claude-plugin/marketplace.json` here — existing installs registered this repo as their marketplace and poll it; remove only after a deprecation window.
+
+## Commit Messages
+
+Convention: `<Area>: short description` (e.g. `Hooks: ...`, `Docs: ...`, `Deps: ...`, `Philosophy-research: ...`, `Plugin: ...`) — capitalized component name matching what's touched, colon, lowercase imperative description.
 
 ## Principles
 
