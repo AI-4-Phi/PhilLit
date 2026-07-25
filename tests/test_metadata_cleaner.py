@@ -16,6 +16,8 @@ from pybtex.database import parse_file as pybtex_parse_file
 HOOKS_DIR = Path(__file__).parent.parent / "hooks"
 sys.path.insert(0, str(HOOKS_DIR))
 
+import metadata_cleaner as mc  # noqa: E402 - module handle for monkeypatching internals
+
 from metadata_cleaner import (
     normalize_pages,
     normalize_journal,
@@ -1178,6 +1180,7 @@ class TestCleaningLedger:
         result, ledger_path = self._run(tmp_path, entries, {"c.json": api_json})
         assert result["breaker_tripped"] is True
         assert ledger_path.exists()
+        assert result["ledger_path"] == str(ledger_path)
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
         assert ledger["breaker_tripped"] is True
         assert len(ledger["entries"]) == 6
@@ -1186,6 +1189,49 @@ class TestCleaningLedger:
             assert ent["api_matched"] is True
             assert ent["verified_identifier"] == "doi"
             assert ent["verified_identifier_value"] == f"10.1/{i}"
+
+    def test_matched_book_with_verified_publisher(self, tmp_path, crossref_with_issue_json):
+        """A MATCHED @book entry whose publisher is confirmed by its own API
+        record (shared-contract kuhn1962structure example shape). The entry
+        carries no doi field of its own, so it matches by title+year (only
+        CrossRef's parser populates 'publisher'); the ledger must then record
+        the 'publisher' branch of _verified_identifier, not 'doi'."""
+        rec = crossref_with_issue_json["results"][0]
+        bib = (
+            "@book{caney2014climate,\n"
+            "  author = {Caney, Simon},\n"
+            f"  title = {{{rec['title']}}},\n"
+            f"  publisher = {{{rec['publisher']}}},\n"
+            f"  year = {{{rec['year']}}}\n"
+            "}\n"
+        )
+        result, ledger_path = self._run(
+            tmp_path, bib, {"crossref_x.json": crossref_with_issue_json}
+        )
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        ent = ledger["entries"]["caney2014climate"]
+        assert ent["api_matched"] is True
+        assert ent["verified_identifier"] == "publisher"
+        assert ent["verified_identifier_value"] == rec["publisher"].lower().strip()
+        assert ent["entry_type"] == "book"
+
+    def test_ledger_write_failure_is_fail_open(self, tmp_path, s2_nature_json, monkeypatch):
+        """A ledger-write OSError must not fail cleaning itself (plumbing gate
+        fails open, per the shared-contract gate-failure policy): the failure
+        surfaces only as a warning, result['ledger_path'] stays None, and
+        cleaning still reports success - the missing ledger then demotes
+        downstream, which is the safe direction."""
+        def _boom(*args, **kwargs):
+            raise OSError("disk full")
+        monkeypatch.setattr(mc, "write_cleaning_ledger", _boom)
+
+        bib = '@book{clean1,\n  author = {A},\n  title = {T},\n  year = {2000}\n}\n'
+        result, ledger_path = self._run(tmp_path, bib, {"s2_x.json": s2_nature_json})
+
+        assert result["success"] is True
+        assert not ledger_path.exists()
+        assert result["ledger_path"] is None
+        assert any("ledger" in w.lower() for w in result["warnings"])
 
     def test_reclean_overwrites_ledger_with_final_pass(self, tmp_path, s2_nature_json):
         """A re-clean run (second SubagentStop on a regenerated .bib) must
