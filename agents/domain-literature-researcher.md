@@ -158,7 +158,7 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ie
 - Read preamble and key sections for domain overview
 - Parse bibliography for foundational works cited
 - Use bibliography entries as seeds for further search
-- **Save discovered entry slugs** for Stage 5.6: write a JSON file at `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries.json` with format `{"sep_entries": ["slug1", ...], "iep_entries": ["slug1", ...]}`. Create the directory if needed. This enables context extraction later.
+- **Save discovered entry slugs** (REQUIRED): write a JSON file at `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries-domain-N.json` — use the same N as your output filename (`literature-domain-N.bib`) — with format `{"sep_entries": ["slug1", ...], "iep_entries": ["slug1", ...]}`. Create the directory if needed. **Write the file even if you found no entries** (`{"sep_entries": [], "iep_entries": []}`): a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically.
 
 ### Stage 2: PhilPapers
 
@@ -273,36 +273,10 @@ After running, read the enriched file to check results. Note any INCOMPLETE entr
 
 **Handling INCOMPLETE entries**:
 - Entries marked `INCOMPLETE` **remain in the BibTeX file** (for transparency and reference manager import)
-- Entries marked `INCOMPLETE` are **excluded from literature review synthesis**
+- `INCOMPLETE` is a Phase-3-only working flag: after your domain completes, the orchestrator's evidence barrier replaces it with an `EVIDENCE-*` tier that governs citability. Do not remove or add tier tokens yourself.
 - Update your CORE ARGUMENT notes to be grounded in the abstract where available
 
-### Stage 5.6: Encyclopedia Context Extraction (REQUIRED for High importance papers)
-
-Extract how High importance papers are discussed in authoritative philosophy encyclopedias. This provides synthesis agents with expert framing of each paper's significance.
-
-**Steps**:
-1. Read `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries.json` (saved in Stage 1)
-2. Identify High importance BibTeX entries whose authors/years match SEP/IEP bibliography references
-3. For each match, run the context extraction script:
-
-```bash
-# Read saved encyclopedia entries
-ENTRIES_FILE="$REVIEW_DIR/intermediate_files/json/encyclopedia_entries.json"
-
-# Extract context for each High importance paper from each relevant SEP entry
-for sep_slug in $(jq -r '.sep_entries[]?' "$ENTRIES_FILE"); do
-  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_sep_context.py "$sep_slug" --author "{Author}" --year {YYYY}
-done
-
-# Same for IEP entries
-for iep_slug in $(jq -r '.iep_entries[]?' "$ENTRIES_FILE"); do
-  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_iep_context.py "$iep_slug" --author "{Author}" --year {YYYY}
-done
-```
-
-4. Add results to BibTeX entries as `sep_context` or `iep_context` fields
-
-**Skip conditions**: Only skip if Stage 1 found zero SEP/IEP entries for this domain, or if no High importance papers match any encyclopedia bibliography.
+Encyclopedia context (sep_context/iep_context) is attached mechanically by the orchestrator after all domains complete — never write those fields yourself.
 
 ### Stage 6: Web Search Fallback (When Needed)
 
@@ -448,6 +422,8 @@ KEY_POSITIONS:
 }
 ```
 
+**Never write `abstract` or `abstract_source` fields yourself** — `enrich_bibliography.py` (Stage 5.5) is their sole author. The evidence barrier ignores hand-written abstracts: they earn no citability tier.
+
 See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name format, entry types, and required fields.
 
 ## Quality Standards
@@ -491,8 +467,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 - [ ] Each JSON file has `status: "success"` (or failures noted in completion message)
 
 ✅ **Encyclopedia Context**:
-- [ ] `encyclopedia_entries.json` saved in Stage 1 (or noted that none found)
-- [ ] Context extracted for High importance papers matching SEP/IEP bibliographies
+- [ ] `encyclopedia_entries-domain-N.json` saved in Stage 1 (valid-empty `{"sep_entries": [], "iep_entries": []}` if none found)
 
 ✅ **Citation Verification**:
 - [ ] Every paper verified through skill scripts

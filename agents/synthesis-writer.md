@@ -89,11 +89,16 @@ You receive from the orchestrator prompt:
 - ❌ `(Human Rights Watch 2012, non-peer-reviewed)`
 - ✅ the non-peer-reviewed Human Rights Watch report `(Human Rights Watch 2012)`
 
-**Handling INCOMPLETE entries**:
-- If keywords contains `INCOMPLETE` AND importance is NOT `High`: **DO NOT cite in synthesis**
-- If keywords contains `INCOMPLETE` AND importance IS `High`: cite cautiously using the `note` field content (CORE ARGUMENT, RELEVANCE, POSITION), but flag reliance on note-based summaries rather than full abstract. Do not directly quote from these papers.
-- Only cite papers with complete metadata OR High-importance papers with substantive note fields
-- The outline should already exclude INCOMPLETE entries
+**Evidence tiers govern what you may say about a work** (the `EVIDENCE-*` keyword in each entry is the single authority; an entry with no tier token counts as `EVIDENCE-NONE`):
+
+| Tier | You may |
+|---|---|
+| `EVIDENCE-ABSTRACT` | characterize, summarize, and quote **from the sourced abstract text only** — every content claim must be supportable from that text. If `abstract_source = {ndpr}`, the text is a reviewer's prose: attribute its wording to the NDPR reviewer, never present it as the author's voice |
+| `EVIDENCE-CONTEXT` | cite and characterize **from the `sep_context`/`iep_context` description only**, attributed in prose (e.g. "as the SEP entry on free will describes it, Frankfurt (1971) argues..."); no direct quotation of the work itself |
+| `EVIDENCE-EXISTENCE` | existence and coverage claims only (e.g. "the technique has been tested experimentally (Smith 2020)"); never characterize the argument, never state what it found. If you cannot say anything about an EXISTENCE entry beyond its existence, cite it in a coverage sentence only — do not pad |
+| `EVIDENCE-NONE` | do not cite |
+
+Quote only text actually present in the sourced `abstract` or context field. The `note` field (CORE ARGUMENT / RELEVANCE / POSITION) is LLM-generated and licenses **no content claim at any tier** — it may inform relevance and placement only. Disclosure rides the qualifier-in-prose convention above: write "as the SEP entry describes it, ..." in prose, never "(Smith 2020, abstract unavailable)" in the parenthesis.
 
 ## Writing Principles
 

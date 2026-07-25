@@ -173,8 +173,13 @@ skills/literature-review/
 └── scripts/
     ├── assemble_review.py                # Assemble sections into final review
     ├── normalize_headings.py             # Normalize section/subsection heading numbering
-    ├── dedupe_bib.py                     # Deduplicate and merge BibTeX
+    ├── dedupe_bib.py                     # Deduplicate and merge BibTeX (re-stamps tiers via --evidence-report)
     ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
+    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, stamp EVIDENCE-* tiers
+    ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
+    ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
+    ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
+    ├── sanitize_bib.py                   # Strip engine-internal EVIDENCE-* tokens from delivered .bib
     ├── generate_bibliography.py          # Generate Chicago-style references
     └── lint_md.py                        # Lint markdown review files
 

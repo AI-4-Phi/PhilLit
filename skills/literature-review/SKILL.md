@@ -200,8 +200,15 @@ Never advance to a next step in this phase before completing the current step.
    - **CRITICAL — foreground, never background**: Set `run_in_background: false` (or omit it) on EVERY call.
 3. With foreground dispatch (`run_in_background: false`), all N calls in the single message block until every agent finishes and their results return inline — there is no separate wait step. Expected outputs: `reviews/[project-name]/literature-domain-1.bib` through `literature-domain-N.bib`. **Update task-progress.md after all domains complete**
 4. **Collect source issues**: Note any "Source issues:" reported by domain researchers for the final summary
+5. **Evidence barrier (REQUIRED, after all researchers complete)**: run
 
-Never advance to Phase 4 before all domain researchers have completed.
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/evidence_barrier.py "reviews/[project-name]" --domains N
+   ```
+
+   The barrier validates every domain's outputs, mechanically acquires SEP/IEP citation context for entries lacking attested content evidence, writes `intermediate_files/json/evidence_report.json`, and stamps every entry with an `EVIDENCE-*` citability tier. **If it exits nonzero, do NOT proceed to Phase 4** — report the failure to the user and stop. If the summary reports `"status": "degraded"`, continue but include the degraded domains in the final summary.
+
+Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 
 ---
 
@@ -286,6 +293,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    ```bash
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/dedupe_bib.py \
      "reviews/[project-name]/literature-[project-name].bib" \
+     --evidence-report "reviews/[project-name]/intermediate_files/json/evidence_report.json" \
      reviews/[project-name]/literature-domain-*.bib
    ```
 
@@ -293,7 +301,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    - Keep the first occurrence of each citation key
    - Prefer entries with abstracts over entries without (abstract-aware merging)
    - Upgrade importance level if a later domain assigned higher importance
-   - Remove INCOMPLETE flags when merged entry has an abstract
+   - Re-stamp each merged entry's `EVIDENCE-*` tier attestation-aware from the evidence report
    - Deduplicate by DOI (catches same paper with different keys)
    - Log which duplicates were removed to console
 
@@ -320,7 +328,21 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    Fix any reported issues before proceeding. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
 
-6. Clean up intermediate files (use absolute paths to avoid cwd issues):
+6. **Evidence checker (telemetry)**: run
+
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/check_evidence.py "reviews/[project-name]/literature-review-[project-name].md" "reviews/[project-name]/literature-[project-name].bib"
+   ```
+
+   Include any `CHECK` findings in the final summary (they are telemetry, not blockers).
+
+7. **Sanitize the delivered bibliography** (engine-internal tier tokens must not ship):
+
+   ```bash
+   bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/sanitize_bib.py "reviews/[project-name]/literature-[project-name].bib"
+   ```
+
+8. Clean up intermediate files (use absolute paths to avoid cwd issues):
 
    Move JSON API response files to `intermediate_files/json/` for archival (allows debugging while keeping review directory clean):
    ```bash
@@ -382,14 +404,14 @@ reviews/[project-name]/
     └── [other intermediate files, if they exist]
 ```
 
-7. **Report source issues**: If any domain researchers reported source issues (API errors, partial results), output a summary:
+9. **Report source issues**: If any domain researchers reported source issues (API errors, partial results), output a summary:
    ```
    ⚠️ Source issues during literature search:
    - Domain [name]: [source]: [issue]
    ```
    If no issues: omit this message.
 
-8. **Optional: Convert to DOCX** (if pandoc is installed):
+10. **Optional: Convert to DOCX** (if pandoc is installed):
    ```bash
    if command -v pandoc &> /dev/null; then
      pandoc "reviews/[project-name]/literature-review-[project-name].md" \

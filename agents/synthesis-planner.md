@@ -64,17 +64,17 @@ Output brief status during planning:
    - `note` field: CORE ARGUMENT, RELEVANCE, POSITION
    - `keywords` field: Topic tags and importance (High/Medium/Low)
    - `abstract` field: Paper's actual abstract (if available)
-   - `abstract_source` field: Source of abstract (s2|openalex|core)
+   - `abstract_source` field: Source of abstract (s2|openalex|core|ndpr)
 
 **How to read**:
 - Parse @comment for domain overview and synthesis guidance
 - Check `keywords` for importance level — prioritize High
 - Use citation keys to reference papers in outline
 
-**Handling INCOMPLETE entries**:
-- If keywords contains `INCOMPLETE`: **DO NOT include in outline**
-- Note the gap if the paper would have been important
-- Focus outline on papers with complete metadata (those with abstracts)
+**Handling evidence tiers** (the `EVIDENCE-*` keyword is the single authority on citability — see conventions.md):
+- `EVIDENCE-ABSTRACT` or `EVIDENCE-CONTEXT`: outline-eligible normally.
+- `EVIDENCE-EXISTENCE`: eligible as a coverage anchor only — the review may assert the work exists and what area it covers, never what it argues or found. You may consider placing such an entry where the outline would otherwise assert an absence of work; any coverage claim must name the entry's domain.
+- `EVIDENCE-NONE`, or no `EVIDENCE-*` token at all: **DO NOT include in outline**; note the gap if the work would have been important.
 
 ## Key Principles
 

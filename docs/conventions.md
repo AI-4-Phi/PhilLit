@@ -138,7 +138,7 @@ Example: `keywords = {compatibilism, free-will, High}`
 
 The paper's actual abstract. Must come from API sources only (S2, OpenAlex, CORE).
 
-- Populated from API `abstract` field or via `enrich_bibliography.py`
+- Populated ONLY by `enrich_bibliography.py` (Stage 5.5) — researchers never write `abstract` or `abstract_source` by hand; the enrichment ledger attests source and text hash, and unattested abstracts earn no citability tier.
 - Never written by agent from memory
 - If missing from all sources: Omit field, add INCOMPLETE to keywords
 
@@ -157,7 +157,7 @@ Example: `abstract_source = {openalex}`
 Citation context extracted from Stanford Encyclopedia of Philosophy entries.
 Contains how the paper is discussed in authoritative SEP articles.
 
-- Source: `get_sep_context.py` script
+- Source: the evidence barrier (`evidence_barrier.py`) — sole author. No agent writes these fields; pre-existing values are stripped before acquisition.
 - Use for High importance papers to capture how experts position them
 
 Example:
@@ -170,18 +170,22 @@ sep_context = {Cited in 'freewill' entry: "Frankfurt (1971) argues that alternat
 Citation context extracted from Internet Encyclopedia of Philosophy entries.
 Similar to sep_context but from IEP.
 
-- Source: `get_iep_context.py` script
+- Source: the evidence barrier (`evidence_barrier.py`) — sole author. No agent writes these fields; pre-existing values are stripped before acquisition.
 
-### INCOMPLETE Keyword Flag
+### Evidence Tiers (EVIDENCE-* keyword)
 
-Added to `keywords` field when entry lacks required content:
-- `INCOMPLETE` — Entry missing abstract
-- `no-abstract` — Specifically missing abstract
+The `EVIDENCE-*` token in `keywords` is the **single authority on citability**, stamped mechanically by the evidence barrier at the Phase 3-to-4 boundary (and re-stamped attestation-aware on dedup merge — the one sanctioned mutation after the barrier; no stage adds content-evidence fields after it):
 
-Entries with INCOMPLETE flag:
-- **REMAIN in BibTeX file** (for transparency, reference manager import)
-- Are **EXCLUDED from literature review synthesis**
-- Should be noted in domain's NOTABLE_GAPS section
+- `EVIDENCE-ABSTRACT` — ledger-attested abstract: characterize/summarize/quote from the sourced abstract text
+- `EVIDENCE-CONTEXT` — barrier-written `sep_context`/`iep_context`: characterize from that description only, attributed in prose
+- `EVIDENCE-EXISTENCE` — identity positively verified (cleaning-ledger API match + surviving identifier): existence and coverage claims only
+- `EVIDENCE-NONE` — no verified evidence: not citable; stays in the `.bib` for transparency
+
+An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed). Canonical keyword order: `topic-tags, Importance, EVIDENCE-*`, with any `METADATA_CLEANED:` marker last. Tier tokens are engine-internal — the delivered `.bib` has them stripped (`sanitize_bib.py`).
+
+### INCOMPLETE Keyword Flag (Phase-3-only artifact)
+
+`INCOMPLETE` / `no-abstract` are added by `enrich_bibliography.py` when no abstract is found. They exist only for Phase 3 reporting (NOTABLE_GAPS): the evidence barrier consumes and strips them when it stamps tiers. No downstream stage may key any decision off `INCOMPLETE`.
 
 ---
 
