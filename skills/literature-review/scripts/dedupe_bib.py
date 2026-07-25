@@ -7,6 +7,8 @@ Also handles:
 - Removing INCOMPLETE flag when merged entry has abstract
 """
 
+import argparse
+import json
 import re
 import sys
 from pathlib import Path
@@ -217,10 +219,24 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
 
 
 # Substantive fields a survivor UNIONs in from a loser (spec v2.1 / ADV-A0).
+# Keep byte-identical to generate_bibliography._SUBSTANTIVE_FIELDS (the two
+# scripts do not import each other by design; pinned by
+# tests/test_dedupe_bib.py::TestSubstantiveFieldsIncludeContext).
 _SUBSTANTIVE_FIELDS = (
     "journal", "booktitle", "volume", "number", "pages",
-    "publisher", "doi", "url", "abstract",
+    "publisher", "doi", "url", "abstract", "sep_context", "iep_context",
 )
+
+
+def _absorb(merged_from: dict, survivor_id: tuple, loser_id: tuple) -> None:
+    """Transfer the loser's accumulated contributors to the survivor,
+    transitively: everything the loser had absorbed now belongs to the
+    survivor, plus the loser itself. Entry ids are (bib_filename, key)."""
+    if loser_id == survivor_id:
+        return
+    absorbed = merged_from.pop(loser_id, set())
+    merged_from.setdefault(survivor_id, set())
+    merged_from[survivor_id] |= absorbed | {loser_id}
 
 
 def _normalize_title(text: str) -> str:
@@ -315,7 +331,11 @@ def _union_substantive_fields_text(winner_text: str, loser_text: str) -> str:
     return out
 
 
-def dedupe_by_title_key(seen: dict[str, str]) -> list[str]:
+def dedupe_by_title_key(
+    seen: dict[str, str],
+    origin: dict[str, tuple] | None = None,
+    merged_from: dict[tuple, set] | None = None,
+) -> list[str]:
     """Third dedup pass: catch same-work duplicates that share no DOI, keyed on
     (normalized_title, year, first-author surname). Winner via merge_entries()
     (abstract-preference, then importance); the survivor then UNIONs in any
@@ -323,6 +343,10 @@ def dedupe_by_title_key(seen: dict[str, str]) -> list[str]:
     merge_entries alone is winner-take-all). DOI identity is tracked per GROUP:
     a merge is refused when the two groups' non-empty DOI sets differ.
     Mutates `seen` in place; returns removed keys.
+
+    When `origin`/`merged_from` are given (see deduplicate_bib), contributor
+    tracking is maintained across merges: the removed key's provenance is
+    absorbed transitively into the survivor's.
     """
     seen_titles: dict[tuple, str] = {}
     group_dois: dict[str, set] = {}
@@ -353,6 +377,8 @@ def dedupe_by_title_key(seen: dict[str, str]) -> list[str]:
                 group_dois.pop(existing_key, None)
                 group_dois[key] = merged_dois
                 title_dupes.append(existing_key)
+                if origin is not None and merged_from is not None:
+                    _absorb(merged_from, origin[key], origin.pop(existing_key))
             else:
                 # Existing entry won; union the loser's (new) fields in.
                 merged = _union_substantive_fields_text(merged, entry)
@@ -361,13 +387,19 @@ def dedupe_by_title_key(seen: dict[str, str]) -> list[str]:
                 del seen[key]
                 group_dois[existing_key] = merged_dois
                 title_dupes.append(key)
+                if origin is not None and merged_from is not None:
+                    _absorb(merged_from, origin[existing_key], origin.pop(key))
         else:
             seen_titles[fkey] = key
             group_dois[key] = new_dois
     return title_dupes
 
 
-def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
+def deduplicate_bib(
+    input_files: list[Path],
+    output_file: Path,
+    evidence_report: Path | None = None,
+) -> list[str]:
     """
     Deduplicate BibTeX entries across files.
 
@@ -378,11 +410,22 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
     - Second pass catches same paper with different keys via DOI
     - Third pass catches same paper with no shared DOI via title/year/author
 
+    When `evidence_report` is given, every surviving entry's EVIDENCE-* token
+    is re-stamped from the report's attestations, re-verified against the
+    MERGED field values (see restamp_merged).
+
     Returns list of duplicate keys that were removed.
     """
     seen: dict[str, str] = {}  # key -> entry_text
     comments: list[str] = []
     duplicates: list[str] = []
+    # Contributor tracking for the attestation-aware re-stamp. An entry's
+    # identity is (source_bib_filename, key) — citation keys are only unique
+    # within one file (shared contract). `origin` maps each current seen-key
+    # to the identity of the entry occupying it; `merged_from` maps a
+    # surviving identity to every identity absorbed into it (transitive).
+    origin: dict[str, tuple] = {}
+    merged_from: dict[tuple, set] = {}
 
     for bib_file in input_files:
         content = bib_file.read_text(encoding='utf-8')
@@ -413,11 +456,19 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
 
             if key in seen:
                 duplicates.append(key)
-                merged, reason, _winner = merge_entries(seen[key], entry)
+                merged, reason, winner = merge_entries(seen[key], entry)
+                incoming_id = (bib_file.name, key)
+                if winner == 2:
+                    survivor_id, loser_id = incoming_id, origin[key]
+                else:
+                    survivor_id, loser_id = origin[key], incoming_id
+                origin[key] = survivor_id
+                _absorb(merged_from, survivor_id, loser_id)
                 seen[key] = merged
                 print(f"  [DEDUPE] Duplicate '{key}' - {reason}")
             else:
                 seen[key] = entry
+                origin[key] = (bib_file.name, key)
 
     # Second pass: DOI-based deduplication (catches same paper with different keys)
     seen_dois: dict[str, str] = {}  # normalized_doi -> key
@@ -437,12 +488,14 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
                 seen[key] = merged
                 seen_dois[doi] = key
                 doi_dupes.append(existing_key)
+                _absorb(merged_from, origin[key], origin.pop(existing_key))
             else:
                 # Existing entry won
                 print(f"  [DEDUPE-DOI] '{key}' and '{existing_key}' share DOI {doi} - keeping '{existing_key}' ({reason})")
                 seen[existing_key] = merged
                 del seen[key]
                 doi_dupes.append(key)
+                _absorb(merged_from, origin[existing_key], origin.pop(key))
         else:
             seen_dois[doi] = key
 
@@ -450,8 +503,12 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
 
     # Third pass: title-key deduplication (catches the same work with no shared
     # DOI — e.g. after a cleaner stripped DOIs from both copies).
-    title_dupes = dedupe_by_title_key(seen)
+    title_dupes = dedupe_by_title_key(seen, origin, merged_from)
     duplicates.extend(title_dupes)
+
+    # Attestation-aware re-stamp of the merged entries (before writing).
+    if evidence_report is not None:
+        restamp_merged(seen, origin, merged_from, evidence_report)
 
     # Write output
     with output_file.open('w', encoding='utf-8') as f:
@@ -466,21 +523,104 @@ def deduplicate_bib(input_files: list[Path], output_file: Path) -> list[str]:
     return duplicates
 
 
-def main():
-    if len(sys.argv) < 3:
-        print("Usage: dedupe_bib.py output.bib input1.bib [input2.bib ...]")
-        sys.exit(1)
+def restamp_merged(
+    seen: dict[str, str],
+    origin: dict[str, tuple],
+    merged_from: dict[tuple, set],
+    report_path: Path,
+) -> None:
+    """Re-stamp every surviving entry's EVIDENCE-* token after dedup.
 
-    output = Path(sys.argv[1])
-    inputs = [Path(f) for f in sys.argv[2:]]
+    For each entry, take the highest tier computable over the MERGED fields
+    under any contributing (bib_file, key)'s attestation — where each
+    attestation is first RE-VERIFIED against the merged values (spec §9,
+    hardened): a bare boolean from one contributor must never authorize
+    another contributor's (possibly fabricated) field value. Abstract and
+    context attestations re-check the value hash; the identifier attestation
+    is value-bound inside compute_tier. Every failure path demotes (an entry
+    whose attestation no longer matches computes EVIDENCE-NONE).
+    """
+    sys.path.insert(0, str(Path(__file__).parent))
+    import stamp_evidence as se
+    try:
+        atts = json.loads(Path(report_path).read_text(encoding="utf-8")).get("attestations", {})
+    except (json.JSONDecodeError, OSError):
+        atts = {}
+    if not isinstance(atts, dict):
+        atts = {}
+
+    def _blob(entry_id):
+        bib_file, key = entry_id
+        return (atts.get(bib_file) or {}).get(key)
+
+    def _reverified_att(blob, fields):
+        """Rebuild an EntryAttestation valid for the MERGED fields."""
+        if not blob:
+            return se.EntryAttestation()
+        abstract_ok = se.attest_abstract(fields, {
+            "abstract_source": blob.get("abstract_source"),
+            "abstract_sha256": blob.get("abstract_sha256"),
+        })
+        cf = blob.get("context_field")
+        context_ok = bool(
+            blob.get("context_written") and cf and fields.get(cf)
+            and se.abstract_hash(fields[cf]) == blob.get("context_sha256")
+        )
+        return se.EntryAttestation(
+            abstract_attested=abstract_ok,
+            context_written=context_ok,
+            api_matched=bool(blob.get("api_matched")),
+            verified_identifier=blob.get("verified_identifier"),
+            verified_identifier_value=blob.get("verified_identifier_value"),
+            breaker_tripped=bool(blob.get("breaker_tripped")),
+        )
+
+    for key, entry in seen.items():
+        header = se.entry_header(entry)
+        if not header:
+            continue
+        etype, _ = header
+        fields = se.parse_entry_fields(entry)
+        me = origin[key]
+        contributing = {me} | merged_from.get(me, set())
+        best = max(
+            (se.compute_tier(etype, fields, _reverified_att(_blob(c), fields))
+             for c in contributing),
+            key=lambda t: se.TIER_RANK[t],
+        )
+        seen[key] = se.stamp_entry_text(entry, best)
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Deduplicate BibTeX entries across files.",
+    )
+    parser.add_argument("output", type=Path, help="output .bib file")
+    parser.add_argument("inputs", nargs="+", type=Path, help="input .bib files")
+    parser.add_argument(
+        "--evidence-report", type=Path, default=None,
+        help="evidence_report.json for attestation-aware tier re-stamping",
+    )
+    try:
+        args = parser.parse_args()
+    except SystemExit as exc:
+        if exc.code not in (0, None):  # keep --help exiting 0
+            print("Usage: dedupe_bib.py output.bib input1.bib [input2.bib ...] [--evidence-report report.json]")
+            sys.exit(1)
+        raise
 
     # Validate input files exist
-    for f in inputs:
+    for f in args.inputs:
         if not f.exists():
             print(f"Error: Input file not found: {f}")
             sys.exit(1)
 
-    duplicates = deduplicate_bib(inputs, output)
+    if args.evidence_report is None:
+        print("[DEDUPE] warning: no --evidence-report; tier tokens not re-stamped",
+              file=sys.stderr)
+
+    duplicates = deduplicate_bib(args.inputs, args.output,
+                                 evidence_report=args.evidence_report)
 
     if duplicates:
         print(f"\n  Removed {len(duplicates)} duplicate entries")
