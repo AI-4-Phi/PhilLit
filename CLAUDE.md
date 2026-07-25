@@ -90,6 +90,20 @@ API keys are required for literature searches (see `.env.example`).
 
 Run tests with: `uv run --locked pytest`
 
+## Headless review runs (free end-to-end test runs)
+
+Scaffold a scratch workspace, then drive a full review headless:
+
+```bash
+bash <checkout>/bin/phillit-run skills/setup/scripts/setup_workspace.py --plugin-root <checkout> --workspace .
+env -u ANTHROPIC_API_KEY claude --plugin-dir <checkout> --model sonnet \
+  --permission-mode bypassPermissions -p "/phillit:literature-review <topic> -- Full Autopilot: run all 6 phases without asking anything."
+```
+
+- `env -u ANTHROPIC_API_KEY` is load-bearing: if set, it silently outranks subscription auth and bills the API.
+- Bake "Full Autopilot, no questions" into the prompt — any AskUserQuestion ends a `-p` run mid-workflow.
+- Headless runs share the account's 5-hour usage window with the session driving them.
+
 ## Releasing
 
 Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. There is no CHANGELOG and there are no git tags — the `Plugin: bump version to X` commits are the release history.
@@ -108,6 +122,7 @@ Convention: `<Area>: short description` (e.g. `Hooks: ...`, `Docs: ...`, `Deps: 
 - **Verify assumptions empirically** — Test bash patterns and environment behavior in actual subagent context before codifying. Don't assume documentation is accurate.
 - **Cross-platform** — Implementations must work in Claude Code Cloud, Linux, macOS, and Windows. Use forward slashes in paths. Python runs through the `bin/phillit-run` wrapper (uv), so there are no platform-specific interpreter paths to maintain.
 - **Python file I/O** — Always pass `encoding='utf-8'` to `open()`, `read_text()`, and `write_text()`. Windows defaults to `cp1252`, causing cross-platform failures. Avoid non-ASCII characters (e.g., `→`) in output that may be piped through subprocesses (Windows `cp1252` can't encode them).
+- **pybtex Writer emits quoted fields** (`field = "value"`) on round-trip, not just braced — any regex over `.bib` text must match both forms (pattern: `stamp_evidence.py::_FIELD_RE`).
 
 ## Permissions
 
