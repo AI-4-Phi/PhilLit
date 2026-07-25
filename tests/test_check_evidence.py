@@ -99,6 +99,27 @@ def test_summary_line_present(tmp_path):
     assert lines[-1].startswith("CHECK-SUMMARY: ")
 
 
+def test_year_digit_run_across_window_boundary_not_flagged(tmp_path):
+    """Regression: a digit run like "91962" must not be read as a bare 1962
+    just because a pre-sliced 60-char window happens to cut off the leading
+    "9". The window here is built so the OLD (buggy) implementation's slice
+    boundary lands exactly at the "1" of "1962" -- one past the "9" -- making
+    the sliced text look like a bare, unguarded year. The FIX must search
+    the year regex over the full text first, so the leading "9" always
+    disqualifies this run as a real 1962 occurrence.
+    """
+    prefix = "x" * 10
+    digit_run = "91962"
+    year_start_in_run = 1  # index of "1" within "91962" (right after the "9")
+    year_pos = len(prefix) + year_start_in_run
+    surname_start = year_pos + 60  # old code's window start lands on year_pos
+    pad_len = surname_start - (len(prefix) + len(digit_run))
+    assert pad_len >= 1
+    md_text = prefix + digit_run + (" " * pad_len) + "Kuhn wrote a lot."
+    r = _run(tmp_path, md_text)
+    assert "kuhn1962structure" not in r.stdout
+
+
 def test_no_author_entry_skipped(tmp_path):
     r = _run(tmp_path, "Some prose mentioning nobody in particular.",
              bib_text=BIB_NO_AUTHOR)

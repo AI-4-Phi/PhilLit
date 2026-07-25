@@ -39,17 +39,26 @@ def rc_surname(author_field: str) -> str:
 
 
 def find_cites(md: str, surname: str, year: str) -> list[int]:
-    """Positions (in md) of surname occurrences within 60 chars of year."""
+    """Positions (in md) of surname occurrences within 60 chars of year.
+
+    The year regex is run over the FULL text (not a pre-sliced window): a
+    window carved out first would let a longer digit run straddling the
+    slice boundary (e.g. "91962") satisfy (?<!\\d)/(?!\\d) spuriously at the
+    cut edge, producing a false-positive citation. Matching globally, then
+    filtering by position, keeps the digit-boundary check honest.
+    """
     if not surname or not re.fullmatch(r"\d{4}", year or ""):
         return []
     surname_re = re.compile(rf"\b{re.escape(surname)}\b")
     year_re = re.compile(rf"(?<!\d){re.escape(year)}(?!\d)")
+    year_positions = [m.start() for m in year_re.finditer(md)]
+    if not year_positions:
+        return []
     positions = []
     for m in surname_re.finditer(md):
         start = max(0, m.start() - _MATCH_WINDOW)
         end = min(len(md), m.end() + _MATCH_WINDOW)
-        window = md[start:end]
-        if year_re.search(window):
+        if any(start <= yp <= end for yp in year_positions):
             positions.append(m.start())
     return positions
 
@@ -86,6 +95,9 @@ def main() -> int:
     md = Path(sys.argv[1]).read_text(encoding="utf-8")
     bib_content = Path(sys.argv[2]).read_text(encoding="utf-8")
 
+    # Bare-key map is safe here (unlike the barrier's per-domain maps): this
+    # checker consumes one already-merged .bib, where citation keys are
+    # unique post-dedupe, not several per-domain files with overlapping keys.
     entries = {}
     for chunk in se.split_entries(bib_content):
         header = se.entry_header(chunk)
@@ -102,7 +114,6 @@ def main() -> int:
         entries[key] = {"tier": tier, "surname": surname, "year": year}
 
     counts = {"unstamped": 0, "none_cited": 0, "reporting_verb": 0}
-    reported_sentences: set[tuple[str, str]] = set()
 
     for key, info in entries.items():
         positions = find_cites(md, info["surname"], info["year"])
@@ -116,12 +127,11 @@ def main() -> int:
             print(f"CHECK none-cited: {key}")
             counts["none_cited"] += 1
         if tier in _LOW_TRUST_TIERS:
+            # cite_sentences() already dedupes per-key sentences (its own
+            # `seen` set); keys themselves are unique here (dict iteration),
+            # so no cross-key (key, sentence) dedupe is needed on top.
             for sentence in cite_sentences(md, positions):
-                dedupe_key = (key, sentence)
-                if dedupe_key in reported_sentences:
-                    continue
                 if _VERB_RE.search(sentence):
-                    reported_sentences.add(dedupe_key)
                     label = tier or "unstamped"
                     snippet = _ascii(sentence[:120])
                     print(f"CHECK reporting-verb: {key} ({label}): {snippet}")
