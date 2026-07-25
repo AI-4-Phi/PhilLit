@@ -167,6 +167,9 @@ _FETCH_ERRORS = (LookupError, RuntimeError, OSError)
 
 
 def strip_context_fields(entry_text):
+    # Limits: the field must start on its own line (newline-anchored) and
+    # braced values match one nesting level only; the barrier's value-hash
+    # binding is the backstop for anything that slips through.
     return _CONTEXT_FIELD_RE.sub("", entry_text)
 
 
@@ -195,6 +198,11 @@ def fetch_articles(union, debug=False):
 
 
 def acquire_context(entries, articles):
+    """Try every article (sorted id order) per entry until one yields a
+    match+passage. Ambiguity is per-article: an ambiguous match records
+    "ambiguous-skipped" but a later clean article may still match; matched
+    outcomes carry encyclopedia/slug/field/value/match_score/
+    bibliography_line/section/position, others carry only "outcome"."""
     results = {}
     for key, info in entries.items():
         fields = info["fields"]

@@ -212,6 +212,37 @@ class TestAcquireContext:
                    "fields": {"author": "Ghost, G.", "year": "1999", "title": "Nothing"}}}
         assert acquire_context(entries, articles)["ghost1999"]["outcome"] == "unmatched"
 
+    LEWIS_ENTRY = {"lewis1979counterfactual": {
+        "entry_type": "article",
+        "fields": {"author": "Lewis, David", "year": "1979",
+                   "title": "Counterfactual Dependence and Time's Arrow"}}}
+    # both lines contain all of the bib title's tokens -> ambiguous sentinel
+    AMBIG_LINES = [
+        "Lewis, D., 1979a, Counterfactual Dependence and Time's Arrow, reprint.",
+        "Lewis, D., 1979b, More on Counterfactual Dependence and Time's Arrow.",
+    ]
+
+    def test_only_article_ambiguous_yields_ambiguous_skipped(self):
+        articles = {"sep:test-entry": _article(self.AMBIG_LINES)}
+        res = acquire_context(dict(self.LEWIS_ENTRY), articles)
+        assert res["lewis1979counterfactual"] == {"outcome": "ambiguous-skipped"}
+
+    def test_ambiguous_article_does_not_block_later_clean_match(self):
+        # "iep:..." sorts before "sep:...", so the ambiguous article is tried
+        # first; the later clean article must still win with a matched outcome
+        ambiguous_art = _article(self.AMBIG_LINES)
+        clean_art = _article(
+            ["Lewis, D., 1979a, Counterfactual Dependence and Time's Arrow."],
+            sections=LEWIS_SECTIONS)
+        articles = {"iep:lewis-ambig": ambiguous_art,
+                    "sep:counterfactuals": clean_art}
+        res = acquire_context(dict(self.LEWIS_ENTRY), articles)
+        r = res["lewis1979counterfactual"]
+        assert r["outcome"] == "matched"
+        assert r["slug"] == "counterfactuals"
+        assert r["field"] == "sep_context"
+        assert "asymmetry" in r["value"]
+
 
 class TestFetchOnce:
     def test_each_slug_fetched_exactly_once(self, monkeypatch):
