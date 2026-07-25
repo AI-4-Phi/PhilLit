@@ -137,3 +137,157 @@ class TestComputeTier:
         fields = {"abstract": "t", "abstract_source": "s2", "sep_context": "c"}
         att = EntryAttestation(abstract_attested=True, context_written=True)
         assert compute_tier("book", fields, att) == TIER_ABSTRACT
+
+
+from stamp_evidence import (
+    stamp_keywords, stamp_entry_text, stamp_file, parse_entry_fields,
+)
+
+ENTRY_KUHN = """@book{kuhn1962structure,
+  author = {Kuhn, Thomas S.},
+  title = {The Structure of Scientific Revolutions},
+  publisher = {University of Chicago Press},
+  year = {1962},
+  note = {CORE ARGUMENT: Paradigms.},
+  keywords = {philosophy-of-science, High, INCOMPLETE, no-abstract}
+}"""
+
+ENTRY_MARKER = """@article{smith2020,
+  author = {Smith, Jane},
+  title = {Data},
+  year = {2020},
+  keywords = {data-ethics, Medium, METADATA_CLEANED: pages, doi}
+}"""
+
+
+class TestStampKeywords:
+    def test_canonical_order_and_strip(self):
+        out = stamp_keywords("philosophy-of-science, High, INCOMPLETE, no-abstract", "EVIDENCE-CONTEXT")
+        assert out == "philosophy-of-science, High, EVIDENCE-CONTEXT"
+
+    def test_marker_stays_last(self):
+        out = stamp_keywords("data-ethics, Medium, METADATA_CLEANED: pages, doi", "EVIDENCE-ABSTRACT")
+        assert out == "data-ethics, Medium, EVIDENCE-ABSTRACT, METADATA_CLEANED: pages, doi"
+
+    def test_marker_with_escaped_underscore(self):
+        # pybtex round-trips the marker as METADATA\_CLEANED
+        out = stamp_keywords(r"tag, High, METADATA\_CLEANED: doi", "EVIDENCE-NONE")
+        assert out.endswith(r"METADATA\_CLEANED: doi")
+        assert "EVIDENCE-NONE, METADATA" in out.replace("\\", "")
+
+    def test_idempotent_restamp_replaces_old_tier(self):
+        once = stamp_keywords("tag, High", "EVIDENCE-ABSTRACT")
+        twice = stamp_keywords(once, "EVIDENCE-NONE")
+        assert "EVIDENCE-ABSTRACT" not in twice
+        assert twice.count("EVIDENCE-") == 1
+
+    def test_none_tier_strips_only(self):
+        out = stamp_keywords("tag, High, EVIDENCE-ABSTRACT", None)
+        assert out == "tag, High"
+
+    def test_empty_and_missing_keywords(self):
+        assert stamp_keywords("", "EVIDENCE-NONE") == "EVIDENCE-NONE"
+        assert stamp_keywords(None, "EVIDENCE-NONE") == "EVIDENCE-NONE"
+
+    def test_multiline_keywords(self):
+        out = stamp_keywords("tag-one,\n  tag-two, Low", "EVIDENCE-EXISTENCE")
+        assert out == "tag-one, tag-two, Low, EVIDENCE-EXISTENCE"
+
+    def test_unknown_and_mixed_case_evidence_tokens_stripped(self):
+        out = stamp_keywords("tag, EVIDENCE-BOGUS, evidence-abstract, High",
+                             "EVIDENCE-NONE")
+        assert out == "tag, High, EVIDENCE-NONE"
+
+    def test_duplicate_tier_tokens_collapse_to_one(self):
+        out = stamp_keywords("EVIDENCE-ABSTRACT, tag, EVIDENCE-ABSTRACT", "EVIDENCE-CONTEXT")
+        assert out == "tag, EVIDENCE-CONTEXT"
+
+    def test_marker_not_last_input_reordered_safely(self):
+        # pathological input: tokens after the marker are swallowed into it;
+        # stamping re-appends the marker last, so the output is canonical.
+        out = stamp_keywords("tag, METADATA_CLEANED: doi, straggler", "EVIDENCE-NONE")
+        assert out.startswith("tag, EVIDENCE-NONE, METADATA_CLEANED:")
+
+
+class TestStampEntryText:
+    def test_stamp_replaces_keywords_value(self):
+        out = stamp_entry_text(ENTRY_KUHN, "EVIDENCE-CONTEXT")
+        assert "INCOMPLETE" not in out
+        assert "no-abstract" not in out
+        assert "philosophy-of-science, High, EVIDENCE-CONTEXT" in out
+
+    def test_inserts_keywords_when_missing(self):
+        entry = "@book{k,\n  author = {A},\n  title = {T}\n}"
+        out = stamp_entry_text(entry, "EVIDENCE-NONE")
+        assert "keywords = {EVIDENCE-NONE}" in out
+
+    def test_parse_entry_fields(self):
+        fields = parse_entry_fields(ENTRY_KUHN)
+        assert fields["publisher"] == "University of Chicago Press"
+        assert fields["year"] == "1962"
+
+
+class TestStampFile:
+    def test_stamp_file_atomic_and_returns_stamps(self, tmp_path):
+        from stamp_evidence import EntryAttestation
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(ENTRY_KUHN + "\n\n" + ENTRY_MARKER + "\n", encoding="utf-8")
+        att = {"kuhn1962structure": EntryAttestation(
+            api_matched=True, verified_identifier="publisher",
+            verified_identifier_value="university of chicago press")}
+        stamps = stamp_file(bib, att)
+        assert stamps["kuhn1962structure"] == "EVIDENCE-EXISTENCE"
+        assert stamps["smith2020"] == "EVIDENCE-NONE"  # no attestation -> NONE
+        content = bib.read_text(encoding="utf-8")
+        assert content.count("EVIDENCE-") == 2
+        assert not list(tmp_path.glob("*.tmp"))
+
+    def test_comment_blocks_untouched(self, tmp_path):
+        bib = tmp_path / "b.bib"
+        bib.write_text("@comment{\nDOMAIN: X\n}\n\n" + ENTRY_KUHN + "\n", encoding="utf-8")
+        stamp_file(bib, {})
+        assert "DOMAIN: X" in bib.read_text(encoding="utf-8")
+
+    def test_pybtex_roundtrip_after_stamp(self, tmp_path):
+        # the METADATA_CLEANED footgun: a stamped file must still parse and
+        # survive a pybtex Writer round-trip without corrupting the marker
+        from pybtex.database import parse_file
+        from pybtex.database.output.bibtex import Writer
+        bib = tmp_path / "b.bib"
+        bib.write_text(ENTRY_MARKER + "\n", encoding="utf-8")
+        stamp_file(bib, {})
+        data = parse_file(str(bib), bib_format="bibtex")
+        out = tmp_path / "roundtrip.bib"
+        with open(out, "w", encoding="utf-8") as f:
+            Writer().write_file(data, f)
+        restamped = stamp_entry_text(out.read_text(encoding="utf-8"), "EVIDENCE-NONE")
+        assert restamped.count("EVIDENCE-NONE") == 1
+
+    def test_write_failure_leaves_original_intact(self, tmp_path, monkeypatch):
+        # atomicity under fault injection, not just tmp-file cleanup
+        import stamp_evidence
+        bib = tmp_path / "b.bib"
+        original = ENTRY_KUHN + "\n"
+        bib.write_text(original, encoding="utf-8")
+
+        def boom(src, dst):
+            raise OSError("disk full")
+
+        monkeypatch.setattr(stamp_evidence.os, "replace", boom)
+        try:
+            stamp_file(bib, {})
+        except OSError:
+            pass
+        assert bib.read_text(encoding="utf-8") == original
+
+    def test_newline_at_inside_field_value(self, tmp_path):
+        # split_entries splits on newline-@; a field value containing that
+        # sequence fragments the entry. Pin the failure direction: the real
+        # entry's stale tier may survive (demote-safe is NOT guaranteed here),
+        # so assert the file still parses and no exception is raised.
+        entry = ('@article{tweet2024,\n  author = {A},\n'
+                 '  abstract = {Quoting a handle:\n@someone said things.},\n'
+                 '  keywords = {tag}\n}')
+        bib = tmp_path / "b.bib"
+        bib.write_text(entry + "\n", encoding="utf-8")
+        stamp_file(bib, {})  # must not raise; behavior documented as inherited

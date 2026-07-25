@@ -99,3 +99,100 @@ def compute_tier(entry_type: str, fields: dict, att: EntryAttestation) -> str:
         ):
             return TIER_EXISTENCE
     return TIER_NONE
+
+
+import os
+from pathlib import Path
+
+IMPORTANCE_TOKENS = {"High", "Medium", "Low"}
+DROP_TOKENS = {"INCOMPLETE", "no-abstract"}
+
+# Same footgun handling as hooks/metadata_cleaner.py:_MARKER_RE -- pybtex
+# escapes the underscore on round-trip, so match any run of backslashes.
+_MARKER_RE = re.compile(r",?\s*(METADATA\\*_CLEANED:.*)$", re.DOTALL)
+# Strip ANY evidence-shaped token (unknown/mixed-case included); only the
+# four canonical uppercase tiers are ever emitted.
+_EVIDENCE_TOKEN_RE = re.compile(r"^EVIDENCE-[A-Za-z0-9_-]+$", re.IGNORECASE)
+# Matches braced AND quoted keywords values (a forging agent may use quotes).
+_KEYWORDS_FIELD_RE = re.compile(
+    r"(keywords\s*=\s*)(\{((?:[^{}]|\{[^{}]*\})*)\}|\"([^\"]*)\")",
+    re.IGNORECASE | re.DOTALL,
+)
+_FIELD_RE = re.compile(r"(\w+)\s*=\s*\{((?:[^{}]|\{[^{}]*\})*)\}", re.DOTALL)
+_HEADER_RE = re.compile(r"@(\w+)\s*\{([^,\s]+)\s*,")
+
+
+def stamp_keywords(keywords_value: str | None, tier: str | None) -> str:
+    body = keywords_value or ""
+    marker = ""
+    m = _MARKER_RE.search(body)
+    if m:
+        marker = m.group(1).strip()
+        body = body[: m.start()]
+    tokens = [t.strip() for t in re.split(r"\s*,\s*", body) if t.strip()]
+    topics = [
+        t for t in tokens
+        if t not in IMPORTANCE_TOKENS and t not in DROP_TOKENS
+        and not _EVIDENCE_TOKEN_RE.match(t)
+    ]
+    importance = [t for t in tokens if t in IMPORTANCE_TOKENS][:1]
+    parts = topics + importance + ([tier] if tier else [])
+    if marker:
+        parts.append(marker)
+    return ", ".join(parts)
+
+
+def parse_entry_fields(entry_text: str) -> dict:
+    return {k.lower(): v.strip() for k, v in _FIELD_RE.findall(entry_text)}
+
+
+def split_entries(content: str) -> list[str]:
+    return re.split(r"\n(?=@)", content)
+
+
+def entry_header(entry_text: str) -> tuple[str, str] | None:
+    m = _HEADER_RE.match(entry_text.strip())
+    if not m or m.group(1).lower() == "comment":
+        return None
+    return m.group(1), m.group(2)
+
+
+def stamp_entry_text(entry_text: str, tier: str | None) -> str:
+    m = _KEYWORDS_FIELD_RE.search(entry_text)
+    if m:
+        # group 3 = braced content, group 4 = quoted content
+        old_val = m.group(3) if m.group(3) is not None else m.group(4)
+        new_val = stamp_keywords(old_val, tier)
+        return (entry_text[: m.start(2)] + "{" + new_val + "}"
+                + entry_text[m.end(2):])
+    if tier is None:
+        return entry_text
+    # Insert after the opening "@type{key," line (same insertion point
+    # rationale as enrich_bibliography.add_field_to_entry).
+    lines = entry_text.split("\n")
+    for i, line in enumerate(lines):
+        if _HEADER_RE.match(line.strip()):
+            lines.insert(i + 1, f"  keywords = {{{tier}}},")
+            return "\n".join(lines)
+    return entry_text
+
+
+def stamp_file(bib_path: Path, attestations: dict) -> dict:
+    content = bib_path.read_text(encoding="utf-8")
+    chunks = split_entries(content)
+    stamps: dict = {}
+    out = []
+    for chunk in chunks:
+        header = entry_header(chunk)
+        if header is None:
+            out.append(chunk)
+            continue
+        etype, key = header
+        att = attestations.get(key) or EntryAttestation()
+        tier = compute_tier(etype, parse_entry_fields(chunk), att)
+        out.append(stamp_entry_text(chunk, tier))
+        stamps[key] = tier
+    tmp = bib_path.with_suffix(".bib.tmp")
+    tmp.write_text("\n".join(out), encoding="utf-8")
+    os.replace(str(tmp), str(bib_path))
+    return stamps
