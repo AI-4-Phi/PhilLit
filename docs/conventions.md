@@ -158,7 +158,6 @@ Citation context extracted from Stanford Encyclopedia of Philosophy entries.
 Contains how the paper is discussed in authoritative SEP articles.
 
 - Source: the evidence barrier (`evidence_barrier.py`) — sole author. No agent writes these fields; pre-existing values are stripped before acquisition.
-- Use for High importance papers to capture how experts position them
 
 Example:
 ```bibtex
