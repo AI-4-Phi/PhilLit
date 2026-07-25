@@ -6,6 +6,12 @@ title corroboration) and extracts body passages around the disambiguated
 in-text citation mentions. Conservative by design: ambiguity attaches
 nothing -- a missed enrichment costs one tier; a wrong one manufactures a
 sanctioned mischaracterization.
+
+Known accepted limitation (revisit with A/B evidence): the *first* mention of
+a work in the article may be a passing "see also" reference, so a CONTEXT
+passage can be thin. The writer prompt limits the harm (characterize only
+from the passage, attributed), and the A/B protocol includes eyeballing real
+sep_context values before trusting the tier.
 """
 from __future__ import annotations
 
@@ -116,3 +122,109 @@ def match_entry_to_article(fields: dict, article: dict):
         "ambiguous": False,
         "n_candidates": len(candidates),
     }
+
+
+def extract_passage(article, surname, year, suffix, n_candidates):
+    """First attributable in-text mention of surname+year(+suffix), or None.
+
+    find_citations sorts hits lexicographically by (section id, position),
+    which approximates document order ("10" sorts before "2", and the
+    preamble sorts after digit-keyed sections). Accepted: the pick only
+    shifts between genuine mentions of the same disambiguated work.
+    """
+    from citation_context import build_citation_patterns, find_citations
+    if not suffix and n_candidates > 1:
+        return None  # bare-year mention cannot be tied to the matched line
+    patterns = build_citation_patterns(surname, f"{year}{suffix}")
+    hits = find_citations(article, patterns)
+    if not hits:
+        return None
+    first = hits[0]
+    return {
+        "passage": first["context"],
+        "section": first["section"],
+        "position": first["position_in_text"],
+    }
+
+
+def format_context_value(slug, passage):
+    cleaned = re.sub(r"\s+", " ", passage.replace("{", "").replace("}", "")).strip()
+    return f"Cited in '{slug}' entry: \"{cleaned}\""
+
+
+# Braced (one nesting level) OR quoted values -- a forging agent may use
+# either form; both must be stripped for sole-author to hold.
+_CONTEXT_FIELD_RE = re.compile(
+    r"\n\s*(sep_context|iep_context)\s*=\s*"
+    r"(\{(?:[^{}]|\{[^{}]*\})*\}|\"[^\"]*\")\s*,?",
+    re.IGNORECASE,
+)
+
+# Expected fetch failures only; anything else is a programming error and must
+# propagate (the barrier turns it into a run-level failure, not a silent
+# degraded fetch).
+_FETCH_ERRORS = (LookupError, RuntimeError, OSError)
+
+
+def strip_context_fields(entry_text):
+    return _CONTEXT_FIELD_RE.sub("", entry_text)
+
+
+def fetch_articles(union, debug=False):
+    """Fetch each slug in the union exactly once; (articles, failed_slug_ids).
+
+    Imports resolve at call time so tests can monkeypatch the fetchers.
+    """
+    import fetch_iep
+    import fetch_sep
+    from rate_limiter import ExponentialBackoff, get_limiter
+    articles, failed = {}, []
+    for enc, module in (("sep", fetch_sep), ("iep", fetch_iep)):
+        slugs = sorted(union.get(enc, ()))
+        if not slugs:
+            continue
+        limiter = get_limiter(f"{enc}_fetch")
+        backoff = ExponentialBackoff(max_attempts=5)
+        fetch = getattr(module, f"fetch_{enc}_article")
+        for slug in slugs:
+            try:
+                articles[f"{enc}:{slug}"] = fetch(slug, limiter, backoff, debug=debug)
+            except _FETCH_ERRORS:
+                failed.append(f"{enc}:{slug}")
+    return articles, failed
+
+
+def acquire_context(entries, articles):
+    results = {}
+    for key, info in entries.items():
+        fields = info["fields"]
+        surname = first_author_surname(fields.get("author", ""))
+        year = (fields.get("year") or "").strip()
+        outcome = {"outcome": "unmatched"}
+        for art_id in sorted(articles):
+            article = articles[art_id]
+            m = match_entry_to_article(fields, article)
+            if m is None:
+                continue
+            if m.get("ambiguous"):
+                outcome = {"outcome": "ambiguous-skipped"}
+                continue
+            passage = extract_passage(
+                article, surname, year, m["suffix"], m.get("n_candidates", 1))
+            if passage is None:
+                continue  # bibliography hit, no extractable body passage
+            enc, slug = art_id.split(":", 1)
+            outcome = {
+                "outcome": "matched",
+                "encyclopedia": enc,
+                "slug": slug,
+                "field": f"{enc}_context",
+                "value": format_context_value(slug, passage["passage"]),
+                "match_score": m["score"],
+                "bibliography_line": m["line"],
+                "section": passage["section"],
+                "position": passage["position"],
+            }
+            break
+        results[key] = outcome
+    return results

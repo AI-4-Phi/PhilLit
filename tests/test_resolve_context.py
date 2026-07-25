@@ -8,6 +8,7 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 
 from resolve_context import (
     load_slug_files, first_author_surname, title_score, match_entry_to_article,
+    extract_passage, format_context_value, strip_context_fields, acquire_context,
 )
 
 
@@ -122,3 +123,117 @@ class TestMatchEntry:
                   "title": "Counterfactual Dependence and Time's Arrow"}
         m = match_entry_to_article(fields, art)
         assert m["suffix"] == "a"
+
+
+# Real fetch_sep.py/fetch_iep.py sections are keyed by id with
+# {"id", "title", "content"} -- find_citations reads section["content"].
+KUHN_SECTIONS = {
+    "2": {"id": "2", "title": "Paradigms", "content":
+          "In his landmark study, Kuhn (1962) argues that normal science "
+          "proceeds under a paradigm until anomalies accumulate. This view "
+          "reshaped philosophy of science."},
+}
+LEWIS_SECTIONS = {
+    "3": {"id": "3", "title": "Time", "content":
+          "Lewis (1979a) proposes an asymmetry of counterfactual dependence. "
+          "Later, Lewis (1979b) turns to de se attitudes."},
+}
+
+
+class TestExtractPassage:
+    def test_basic_extraction(self):
+        art = _article([], sections=KUHN_SECTIONS)
+        p = extract_passage(art, "Kuhn", "1962", suffix="", n_candidates=1)
+        assert p and "normal science" in p["passage"]
+        assert p["section"] == "2"
+
+    def test_bibliography_hit_no_body_passage_returns_none(self):
+        art = _article(["Kuhn, T., 1962, The Structure of Scientific Revolutions."])
+        assert extract_passage(art, "Kuhn", "1962", suffix="", n_candidates=1) is None
+
+    def test_suffix_attribution(self):
+        art = _article([], sections=LEWIS_SECTIONS)
+        p = extract_passage(art, "Lewis", "1979", suffix="a", n_candidates=2)
+        assert p and "asymmetry" in p["passage"]
+        pb = extract_passage(art, "Lewis", "1979", suffix="b", n_candidates=2)
+        assert pb and "de se" in pb["passage"]
+
+    def test_bare_year_with_multiple_candidates_not_attributable(self):
+        art = _article([], sections=LEWIS_SECTIONS)
+        assert extract_passage(art, "Lewis", "1979", suffix="", n_candidates=2) is None
+
+    def test_two_mentions_first_in_document_order(self):
+        sections = {"1": {"id": "1", "title": "A", "content": "Kuhn (1962) argues first-thing."},
+                    "5": {"id": "5", "title": "B", "content": "Kuhn (1962) also argues later-thing."}}
+        art = _article([], sections=sections)
+        p = extract_passage(art, "Kuhn", "1962", suffix="", n_candidates=1)
+        assert "first-thing" in p["passage"]
+
+
+class TestContextFieldWrite:
+    def test_format_context_value_strips_braces(self):
+        v = format_context_value("freewill", 'He {argues}  that "X".')
+        assert v == 'Cited in \'freewill\' entry: "He argues that "X"."'
+
+    def test_strip_context_fields_removes_fabricated(self):
+        entry = ('@book{k,\n  author = {A},\n'
+                 '  sep_context = {FORGED CLAIM},\n'
+                 '  iep_context = {ALSO FORGED},\n  year = {1962}\n}')
+        out = strip_context_fields(entry)
+        assert "FORGED" not in out and "sep_context" not in out
+        assert "author = {A}" in out
+
+    def test_strip_context_fields_removes_quoted_form(self):
+        entry = ('@book{k,\n  author = {A},\n'
+                 '  sep_context = "QUOTED FORGERY",\n  year = {1962}\n}')
+        out = strip_context_fields(entry)
+        assert "QUOTED FORGERY" not in out and "sep_context" not in out
+
+
+class TestAcquireContext:
+    def test_matched_entry_gets_sep_context(self):
+        art = _article(
+            ["Kuhn, T., 1962, The Structure of Scientific Revolutions, Chicago."],
+            sections=KUHN_SECTIONS)
+        articles = {"sep:test-entry": art}
+        entries = {"kuhn1962structure": {
+            "entry_type": "book",
+            "fields": {"author": "Kuhn, Thomas S.", "year": "1962",
+                       "title": "The Structure of Scientific Revolutions"}}}
+        res = acquire_context(entries, articles)
+        r = res["kuhn1962structure"]
+        assert r["outcome"] == "matched"
+        assert r["field"] == "sep_context"
+        assert "normal science" in r["value"]
+
+    def test_unmatched_entry(self):
+        articles = {"sep:test-entry": _article(["Someone else, 2001, Other."])}
+        entries = {"ghost1999": {"entry_type": "book",
+                   "fields": {"author": "Ghost, G.", "year": "1999", "title": "Nothing"}}}
+        assert acquire_context(entries, articles)["ghost1999"]["outcome"] == "unmatched"
+
+
+class TestFetchOnce:
+    def test_each_slug_fetched_exactly_once(self, monkeypatch):
+        # union across domains is a set; the same slug in three domain files
+        # triggers one fetch (spec: fetch once, match many)
+        import fetch_sep  # importable via resolve_context's sys.path insert
+        calls = []
+        # real signature: fetch_sep_article(entry_name, limiter, backoff, debug=False)
+        monkeypatch.setattr(fetch_sep, "fetch_sep_article",
+                            lambda slug, *a, **k: calls.append(slug) or _article([]))
+        from resolve_context import fetch_articles
+        articles, failed = fetch_articles({"sep": {"freewill"}, "iep": set()})
+        assert calls == ["freewill"]
+        assert "sep:freewill" in articles and failed == []
+
+    def test_fetch_failure_recorded_not_raised(self, monkeypatch):
+        import fetch_sep
+
+        def boom(slug, *a, **k):
+            raise LookupError("404")
+
+        monkeypatch.setattr(fetch_sep, "fetch_sep_article", boom)
+        from resolve_context import fetch_articles
+        articles, failed = fetch_articles({"sep": {"gone"}, "iep": set()})
+        assert failed == ["sep:gone"] and articles == {}
