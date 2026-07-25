@@ -118,7 +118,10 @@ _KEYWORDS_FIELD_RE = re.compile(
     r"(keywords\s*=\s*)(\{((?:[^{}]|\{[^{}]*\})*)\}|\"([^\"]*)\")",
     re.IGNORECASE | re.DOTALL,
 )
-_FIELD_RE = re.compile(r"(\w+)\s*=\s*\{((?:[^{}]|\{[^{}]*\})*)\}", re.DOTALL)
+_FIELD_RE = re.compile(
+    r'(\w+)\s*=\s*(?:\{((?:[^{}]|\{[^{}]*\})*)\}|"([^"]*)")',
+    re.DOTALL,
+)
 _HEADER_RE = re.compile(r"@(\w+)\s*\{([^,\s]+)\s*,")
 
 
@@ -143,7 +146,13 @@ def stamp_keywords(keywords_value: str | None, tier: str | None) -> str:
 
 
 def parse_entry_fields(entry_text: str) -> dict:
-    return {k.lower(): v.strip() for k, v in _FIELD_RE.findall(entry_text)}
+    """Field name -> value, tolerating both brace- and quote-delimited
+    values (pybtex's bibtex Writer emits quoted values on round-trip)."""
+    fields: dict = {}
+    for name, braced, quoted in _FIELD_RE.findall(entry_text):
+        value = braced if braced else quoted
+        fields[name.lower()] = value.strip()
+    return fields
 
 
 def split_entries(content: str) -> list[str]:

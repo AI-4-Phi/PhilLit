@@ -9,6 +9,7 @@ Tests cover:
 - Batch processing
 """
 
+import json
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
@@ -51,6 +52,17 @@ SAMPLE_ENTRY_INCOMPLETE = """@article{test2020paper,
 SAMPLE_COMMENT = """@comment{
   DOMAIN: Testing Domain
   NOTABLE_GAPS: None identified
+}"""
+
+# A @book entry with no abstract and High importance: after the main pass
+# marks it INCOMPLETE (resolve_abstract_for_entry finds nothing), it is a
+# candidate for the NDPR enrichment pass.
+SAMPLE_BOOK_INCOMPLETE_HIGH = """@book{parfit1984reasons,
+  author = {Parfit, Derek},
+  title = {Reasons and Persons},
+  publisher = {Oxford University Press},
+  year = {1984},
+  keywords = {personal-identity, ethics, High},
 }"""
 
 
@@ -520,3 +532,154 @@ class TestStats:
         assert stats['sources']['s2'] == 1
         assert stats['sources']['openalex'] == 1
         assert stats['sources']['core'] == 1
+
+
+# =============================================================================
+# Enrichment Ledger Tests (evidence-tier: attests source + hash of the
+# abstract this script itself wrote, so the barrier can tell a
+# ledger-attested abstract from a hand-written/fabricated one).
+# =============================================================================
+
+class TestEnrichmentLedger:
+    """Tests for the enrichment ledger written to
+    <bib_dir>/intermediate_files/json/enrichment_ledger-<bib_stem>.json.
+
+    Sibling of the cleaning ledger (hooks/metadata_cleaner.py): written on
+    every parse-successful run (empty entries is valid), merged with any
+    prior ledger (new writes win per key, stale keys pruned), skipped only
+    when stats['validation_failed'] is True.
+    """
+
+    def _ledger_path(self, tmp_path, stem="test"):
+        return tmp_path / "intermediate_files" / "json" / f"enrichment_ledger-{stem}.json"
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_ledger_records_source_and_hash(self, mock_resolve, tmp_path):
+        """API-source enrichment site (~line 386) must record the exact
+        abstract text and source it wrote."""
+        import enrich_bibliography
+        import stamp_evidence
+        mock_resolve.return_value = ("A found abstract text.", "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        assert ledger["schema_version"] == 1
+        assert ledger["bib_file"] == "test.bib"
+        ent = ledger["entries"]["frankfurt1971freedom"]
+        assert ent["abstract_source"] == "s2"
+        assert ent["abstract_sha256"] == stamp_evidence.abstract_hash("A found abstract text.")
+
+    @patch("enrich_bibliography.resolve_ndpr_abstract")
+    def test_ledger_records_ndpr_source_and_hash(self, mock_ndpr, tmp_path):
+        """NDPR enrichment site (~line 492) must also record its write."""
+        import enrich_bibliography
+        import stamp_evidence
+        mock_ndpr.return_value = ("Summary of the book from NDPR review.", "ndpr")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_BOOK_INCOMPLETE_HIGH, encoding="utf-8")
+
+        with patch("enrich_bibliography.resolve_abstract_for_entry", return_value=(None, None)):
+            enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        ent = ledger["entries"]["parfit1984reasons"]
+        assert ent["abstract_source"] == "ndpr"
+        assert ent["abstract_sha256"] == stamp_evidence.abstract_hash(
+            "Summary of the book from NDPR review."
+        )
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_rerun_on_enriched_file_preserves_ledger(self, mock_resolve, tmp_path):
+        """Second run skips has_abstract entries; ledger must NOT be
+        clobbered back to empty."""
+        import enrich_bibliography
+        mock_resolve.return_value = ("A found abstract text.", "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)  # no-op pass
+
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        assert "frankfurt1971freedom" in ledger["entries"]
+
+    def test_stale_keys_pruned(self, tmp_path):
+        """Keys no longer present in the bib are dropped from the ledger."""
+        import enrich_bibliography
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_text(json.dumps({
+            "schema_version": 1, "bib_file": "test.bib",
+            "entries": {"gone2000": {"abstract_source": "s2", "abstract_sha256": "x"}},
+        }), encoding="utf-8")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert "gone2000" not in ledger["entries"]
+
+    def test_researcher_written_abstract_not_attested(self, tmp_path):
+        """Entry already has an abstract -> enrichment skips it -> ledger is
+        still written (always-write) but contains no entry for it."""
+        import enrich_bibliography
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        p = self._ledger_path(tmp_path)
+        assert p.exists()
+        assert json.loads(p.read_text(encoding="utf-8"))["entries"] == {}
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_ledger_skipped_on_validation_failure(self, mock_resolve, tmp_path):
+        """No ledger write (and no clobber of an existing one) when the bib
+        write itself was aborted by pybtex validation."""
+        import enrich_bibliography
+        mock_resolve.return_value = ("Abstract text", "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        with patch("pybtex.database.parse_file", side_effect=Exception("Invalid BibTeX")):
+            stats = enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        assert stats.get("validation_failed") is True
+        assert not self._ledger_path(tmp_path).exists()
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_ledger_hash_survives_pybtex_roundtrip(self, mock_resolve, tmp_path):
+        """The attestation must still verify after the SubagentStop cleaner
+        rewrites the file via pybtex Writer (reflow/escaping)."""
+        import enrich_bibliography
+        import stamp_evidence
+        from pybtex.database import parse_file
+        from pybtex.database.output.bibtex import Writer
+
+        abstract = "An abstract with special chars: 5% & #2, A_B."
+        mock_resolve.return_value = (abstract, "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        data = parse_file(str(bib), bib_format="bibtex")
+        with open(bib, "w", encoding="utf-8") as f:
+            Writer().write_file(data, f)
+
+        roundtripped = stamp_evidence.parse_entry_fields(bib.read_text(encoding="utf-8"))
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        ent = ledger["entries"]["frankfurt1971freedom"]
+        assert stamp_evidence.attest_abstract(roundtripped, ent) is True

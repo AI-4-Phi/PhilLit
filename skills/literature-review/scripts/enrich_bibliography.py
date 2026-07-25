@@ -24,6 +24,7 @@ Exit Codes:
 """
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -37,6 +38,10 @@ PHIL_SCRIPTS = Path(__file__).parent.parent.parent / "philosophy-research" / "sc
 sys.path.insert(0, str(PHIL_SCRIPTS))
 
 from rate_limiter import ExponentialBackoff, get_limiter
+
+# stamp_evidence lives alongside this script (same skills/literature-review/scripts dir).
+sys.path.insert(0, str(Path(__file__).parent))
+from stamp_evidence import abstract_hash
 
 
 def log_progress(message: str) -> None:
@@ -356,13 +361,18 @@ def enrich_entry(
     s2_api_key: Optional[str],
     openalex_email: Optional[str],
     core_api_key: Optional[str],
-    debug: bool = False
+    debug: bool = False,
+    ledger_writes: Optional[dict] = None
 ) -> tuple[str, bool, Optional[str]]:
     """
     Enrich a single BibTeX entry with abstract if missing.
 
     Returns:
         Tuple of (enriched_entry_text, was_enriched, abstract_source)
+
+    If `ledger_writes` is given, records {key: {abstract_source,
+    abstract_sha256}} for this entry when an abstract is written -- the
+    enrichment-ledger attestation the evidence barrier later consumes.
     """
     entry_text = entry['raw']
 
@@ -384,6 +394,11 @@ def enrich_entry(
         # Add abstract and source fields
         entry_text = add_field_to_entry(entry_text, 'abstract', abstract)
         entry_text = add_field_to_entry(entry_text, 'abstract_source', source)
+        if ledger_writes is not None:
+            ledger_writes[entry['key']] = {
+                "abstract_source": source,
+                "abstract_sha256": abstract_hash(abstract),
+            }
         log_progress(f"  Added abstract from {source} ({len(abstract)} chars)")
         return entry_text, True, source
     else:
@@ -433,6 +448,10 @@ def enrich_bibliography(
     }
 
     enriched_entries = []
+    # citation key -> {abstract_source, abstract_sha256} for abstracts this
+    # run wrote (shared-contract "Enrichment ledger" schema); merged with any
+    # prior ledger by _update_enrichment_ledger at the end of this function.
+    ledger_writes: dict = {}
 
     for entry in entries:
         # Skip comments
@@ -449,7 +468,8 @@ def enrich_bibliography(
 
         # Try to enrich
         enriched_text, was_enriched, source = enrich_entry(
-            entry, s2_api_key, openalex_email, core_api_key, debug
+            entry, s2_api_key, openalex_email, core_api_key, debug,
+            ledger_writes=ledger_writes
         )
         enriched_entries.append(enriched_text)
 
@@ -492,6 +512,10 @@ def enrich_bibliography(
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract_source', 'ndpr')
                 enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'INCOMPLETE')
                 enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'no-abstract')
+                ledger_writes[entry['key']] = {
+                    "abstract_source": "ndpr",
+                    "abstract_sha256": abstract_hash(abstract),
+                }
                 # Stats: enriched/marked_incomplete are cumulative across all passes
                 stats['enriched'] += 1
                 stats['marked_incomplete'] -= 1
@@ -538,9 +562,51 @@ def enrich_bibliography(
             pass
         log_progress(f"WARNING: Validation failed — original file unchanged")
 
+    # Enrichment ledger: written on every parse-successful run, symmetric
+    # with the cleaning ledger (metadata_cleaner.py) -- an empty entries
+    # dict is valid (obscure domains legitimately enrich nothing; a missing
+    # ledger would spuriously demote everything under the evidence barrier).
+    # Skipped only when the bib write itself was aborted by validation.
+    if not stats.get('validation_failed'):
+        current_keys = {e['key'] for e in entries if e['entry_type'] != 'comment'}
+        try:
+            _update_enrichment_ledger(output_path, ledger_writes, current_keys)
+        except OSError as e:
+            stats.setdefault('warnings', []).append(f"Could not write enrichment ledger: {e}")
+
     log_progress(f"Stats: {stats['enriched']} enriched, {stats['marked_incomplete']} incomplete, {stats['already_had_abstract']} already had abstract")
 
     return stats
+
+
+def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_keys: set) -> None:
+    """Atomically merge-write the enrichment ledger (tmp + os.replace) --
+    the per-entry abstract-source/hash attestation the evidence barrier
+    later consumes (shared-contract 'Enrichment ledger' schema). Existing
+    entries for keys still present in the bib are kept; keys no longer
+    present are pruned; new writes from this run win per key."""
+    ledger_dir = output_path.parent / "intermediate_files" / "json"
+    ledger_dir.mkdir(parents=True, exist_ok=True)
+    final = ledger_dir / f"enrichment_ledger-{output_path.stem}.json"
+
+    old_entries: dict = {}
+    if final.exists():
+        try:
+            old_entries = json.loads(final.read_text(encoding='utf-8')).get('entries', {})
+        except (json.JSONDecodeError, OSError):
+            old_entries = {}
+
+    entries = {k: v for k, v in old_entries.items() if k in current_keys}
+    entries.update(ledger_writes)
+
+    payload = {
+        "schema_version": 1,
+        "bib_file": output_path.name,
+        "entries": entries,
+    }
+    tmp = final.with_name(final.name + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=2), encoding='utf-8')
+    os.replace(str(tmp), str(final))
 
 
 def main():
