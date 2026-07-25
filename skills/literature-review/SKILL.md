@@ -206,6 +206,8 @@ Never advance to a next step in this phase before completing the current step.
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/evidence_barrier.py "reviews/[project-name]" --domains N
    ```
 
+   **CRITICAL — foreground, never background**: run this command in the foreground (never set `run_in_background`) and wait for its one-line JSON summary — encyclopedia fetches can take a few minutes. A backgrounded barrier can be orphaned when the session ends, leaving every entry unstamped (all `EVIDENCE-NONE`).
+
    The barrier validates every domain's outputs, mechanically acquires SEP/IEP citation context for entries lacking attested content evidence, writes `intermediate_files/json/evidence_report.json`, and stamps every entry with an `EVIDENCE-*` citability tier. **If it exits nonzero, do NOT proceed to Phase 4** — report the failure to the user and stop. If the summary reports `"status": "degraded"`, continue but include the degraded domains in the final summary.
 
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
