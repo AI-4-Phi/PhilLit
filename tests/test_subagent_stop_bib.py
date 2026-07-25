@@ -145,7 +145,9 @@ def test_no_marker_allows_and_does_not_touch_bib(tmp_path):
 
 
 class TestGuards:
-    def test_stop_hook_active_allows(self, project):
+    def test_stop_hook_active_with_no_bibs_allows(self, project):
+        # A resumed pass still runs the full flow (validation + cleaning) but
+        # with no .bib files present it falls through to a plain allow.
         out, code, _ = run_hook(
             {"agent_type": "domain-literature-researcher", "stop_hook_active": True},
             project,
@@ -343,6 +345,73 @@ class TestMetadataCleaning:
         assert code == 0
         assert out == {"decision": "allow"}
         assert bib.read_text(encoding="utf-8") == original  # untouched
+
+    def test_blocked_resume_still_writes_final_pass_ledger(self, project):
+        """Spec section 8 pre-merge checklist: a researcher whose SubagentStop
+        BLOCKED on a BibTeX syntax error and then resumed must still end with a
+        cleaned file AND a cleaning ledger reflecting the FINAL pass.
+
+        The old stop_hook_active guard short-circuited to allow BEFORE the
+        validator/cleaner loop, so the resumed (fixed) bib was never re-cleaned
+        and the ledger stayed stale from the blocked pass — silently breaking
+        the evidence barrier's assumption that cleaning precedes it.
+        """
+        review = project / "reviews" / "test-review"
+        bib = review / "d1.bib"
+        # API JSON present so the cleaner runs on both passes.
+        (review / "s2_results.json").write_text(
+            json.dumps(S2_NATURE_JSON), encoding="utf-8"
+        )
+        # Pass 1: validation error (missing `journal`) -> block. The cleaner
+        # still parses this bib fine and seeds a STALE ledger (wolf1990freedom).
+        bib.write_text(INVALID_BIB, encoding="utf-8")
+        out1, code1, _ = run_hook(RESEARCHER, project)
+        assert code1 == 0
+        assert out1["decision"] == "block"
+        # Pass 2 (resumed): the agent replaced the file with a fixed bib; the
+        # hook fires again with stop_hook_active=true. It must not block, and
+        # the cleaner must run again so the ledger reflects THIS pass.
+        bib.write_text(HALLUCINATED_NUMBER_BIB, encoding="utf-8")
+        out2, code2, _ = run_hook(
+            {"agent_type": "domain-literature-researcher", "stop_hook_active": True},
+            project,
+        )
+        assert code2 == 0
+        assert out2.get("decision") != "block"
+        # Cleaning happened on the resumed pass: hallucinated `number` removed.
+        data = pybtex_parse_file(str(bib), bib_format="bibtex")
+        fields = {k.lower() for k in data.entries["awad2018moral"].fields}
+        assert "number" not in fields, "resumed pass did not run the cleaner"
+        # Ledger exists and reflects the final pass, not the blocked one.
+        ledger = review / "intermediate_files" / "json" / "cleaning_ledger-d1.json"
+        assert ledger.exists()
+        ldata = json.loads(ledger.read_text(encoding="utf-8"))
+        assert ldata["schema_version"] == 1
+        assert ldata["bib_file"] == "d1.bib"
+        assert "awad2018moral" in ldata["entries"]
+        assert "wolf1990freedom" not in ldata["entries"], (
+            "ledger is stale from the blocked pass — the resumed pass "
+            "skipped the cleaner"
+        )
+
+    def test_resumed_pass_never_reblocks_but_surfaces_errors(self, project):
+        # Loop prevention: a still-invalid bib on a resumed pass must NOT emit
+        # another block — but per the never-silent gate policy the unresolved
+        # errors must surface as a user-visible systemMessage.
+        (project / "reviews" / "test-review" / "d1.bib").write_text(
+            INVALID_BIB, encoding="utf-8"
+        )
+        out, code, _ = run_hook(
+            {"agent_type": "domain-literature-researcher", "stop_hook_active": True},
+            project,
+        )
+        assert code == 0
+        assert out.get("decision") != "block", (
+            "re-blocking on stop_hook_active=true risks an infinite stop-hook loop"
+        )
+        assert "journal" in out.get("systemMessage", ""), (
+            f"unresolved BibTeX errors must surface in a systemMessage: {out}"
+        )
 
     def test_cleaner_warnings_surface_in_additional_context(self, project):
         # Item-13 A3 (never-silent): a salvage/skip notice from the cleaner must

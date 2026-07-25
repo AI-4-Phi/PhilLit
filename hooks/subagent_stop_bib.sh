@@ -14,6 +14,9 @@
 #     "SubagentStop", "additionalContext": "<summary>"}}
 # Never exit 2: Claude Code ignores stdout JSON on exit 2, so the reason
 # would be lost and the agent would see only stderr.
+# Resumed pass (stop_hook_active=true): validation + cleaning still run (the
+# cleaning ledger must reflect the FINAL pass), but a block is never emitted
+# again — unresolved errors surface as a systemMessage instead.
 
 set -e
 
@@ -39,11 +42,13 @@ fi
 # Parse subagent context from stdin (Claude Code passes JSON via stdin)
 SUBAGENT_CONTEXT=$(cat)
 
-# Guard: if this is a re-invocation after a previous block, allow to prevent loops
+# Guard: on a re-invocation after a previous block (stop_hook_active), never
+# emit another block (loop prevention) — but validation and cleaning STILL run,
+# so the resumed (fixed) bib gets its final cleaning pass and the cleaning
+# ledger reflects the final state. An early allow here would skip the cleaner
+# on every resumed pass, leaving a stale ledger from the blocked pass — the
+# evidence barrier assumes cleaning (and its ledger) precede it.
 STOP_HOOK_ACTIVE=$(echo "$SUBAGENT_CONTEXT" | jq -r '.stop_hook_active // false')
-if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
-    allow
-fi
 
 # Self-scoping guard: this hook has no matcher, so it fires for every
 # SubagentStop. Validate only when agent_type contains
@@ -178,6 +183,14 @@ done
 # Block only on syntax errors (not on metadata cleaning).
 # Exit 0: the decision is carried in the JSON, not the exit code.
 if [[ -n "$SYNTAX_ERRORS" ]]; then
+    if [[ "$STOP_HOOK_ACTIVE" == "true" ]]; then
+        # Resumed pass: never re-block (infinite-loop prevention), but never
+        # silent either (gate-failure policy) — surface the unresolved errors
+        # to the user as a systemMessage.
+        jq -cn --arg msg "PhilLit: BibTeX errors remain after the researcher's resumed pass (not re-blocking to avoid a stop-hook loop): $SYNTAX_ERRORS" \
+            '{"systemMessage": $msg}'
+        exit 0
+    fi
     jq -cn --arg reason "$SYNTAX_ERRORS" '{"decision": "block", "reason": $reason}'
     exit 0
 fi
