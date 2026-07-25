@@ -1075,3 +1075,162 @@ class TestHelperFunctions:
         unmatched.fields['title'] = 'Nonexistent Paper'
         unmatched.fields['year'] = '1850'
         assert find_api_entry_for_bib_entry(unmatched, index) is None
+
+
+# =============================================================================
+# Tests for the cleaning ledger (positive-match attestation)
+# =============================================================================
+
+class TestCleaningLedger:
+    """Tests for the cleaning ledger clean_bibtex writes on every
+    parse-successful invocation - the attestation source the evidence
+    barrier later consumes (docs/superpowers/sdd .../shared-contract.md).
+
+    Note: clean_bibtex's real signature takes bib_path/json_dirs as Path
+    objects (bib_path.exists() is called directly on the argument), not
+    strings - unlike the task brief's pseudocode, which passed str(...).
+    """
+
+    def _run(self, tmp_path, bib_text, json_payloads, bib_name="literature-domain-1.bib"):
+        json_dir = tmp_path / "json"
+        json_dir.mkdir(exist_ok=True)
+        for name, payload in json_payloads.items():
+            (json_dir / name).write_text(json.dumps(payload), encoding="utf-8")
+        bib = tmp_path / bib_name
+        bib.write_text(bib_text, encoding="utf-8")
+        result = clean_bibtex(bib, [json_dir])
+        ledger_path = tmp_path / "intermediate_files" / "json" / f"cleaning_ledger-{bib.stem}.json"
+        return result, ledger_path
+
+    def test_matched_entry_with_verified_doi(self, tmp_path, s2_nature_json):
+        """s2_nature_json (real fixture) carries a DOI; a bib entry with the
+        SAME title/doi/year positively matches it, so the ledger records a
+        verified 'doi' identifier with its normalized value."""
+        rec = s2_nature_json["results"][0]
+        bib = (
+            "@article{nature2018,\n"
+            "  author = {A},\n"
+            f"  title = {{{rec['title']}}},\n"
+            f"  doi = {{{rec['doi']}}},\n"
+            f"  year = {{{rec['year']}}}\n"
+            "}\n"
+        )
+        result, ledger_path = self._run(tmp_path, bib, {"s2_x.json": s2_nature_json})
+        assert ledger_path.exists()
+        assert result["ledger_path"] == str(ledger_path)
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        assert ledger["schema_version"] == 1
+        assert ledger["bib_file"] == "literature-domain-1.bib"
+        assert ledger["breaker_tripped"] is False
+        ent = ledger["entries"]["nature2018"]
+        assert ent["api_matched"] is True
+        assert ent["verified_identifier"] == "doi"
+        # value binding: the normalized confirmed DOI itself is recorded
+        assert ent["verified_identifier_value"] == normalize_doi(rec["doi"])
+        assert ent["entry_type"] == "article"
+
+    def test_unmatched_entry_recorded_no_match(self, tmp_path, s2_nature_json):
+        """An entry that matches no API record at all (no DOI, and a
+        title/year present in no pooled record) is recorded as unmatched
+        with a null identifier - never silently omitted from the ledger."""
+        bib = (
+            "@book{ghost1999,\n"
+            "  author = {Ghost, G.},\n"
+            "  title = {Nonexistent},\n"
+            "  publisher = {Oxford University Press},\n"
+            "  year = {1999}\n"
+            "}\n"
+        )
+        result, ledger_path = self._run(tmp_path, bib, {"s2_x.json": s2_nature_json})
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        ent = ledger["entries"]["ghost1999"]
+        assert ent["api_matched"] is False
+        assert ent["verified_identifier"] is None
+        assert ent["verified_identifier_value"] is None
+        assert ent["entry_type"] == "book"
+
+    def test_ledger_written_even_when_nothing_cleaned(self, tmp_path, s2_nature_json):
+        """The ledger is written on EVERY parse-successful invocation, even
+        one where nothing was cleaned (here: the entry doesn't match
+        anything in the pool, so clean_bibtex touches nothing)."""
+        bib = '@book{clean1,\n  author = {A},\n  title = {T},\n  year = {2000}\n}\n'
+        result, ledger_path = self._run(tmp_path, bib, {"s2_x.json": s2_nature_json})
+        assert ledger_path.exists()
+        assert result["entries_cleaned"] == 0
+
+    def test_ledger_written_on_breaker_trip_with_flag(self, tmp_path):
+        """Breaker-trip case, adapted from the existing
+        test_circuit_breaker_writes_nothing template in
+        tests/test_item13_cleaner_gating.py: 6 matched entries would each
+        lose a hallucinated 'number' field (6/6 > 30% and >= 5), tripping
+        the breaker. The ledger must STILL be written (with the flag set)
+        even though clean_bibtex writes nothing to the .bib itself."""
+        results = [
+            {"doi": f"10.1/{i}", "title": f"P{i}", "container_title": "J", "year": 2020}
+            for i in range(6)
+        ]
+        api_json = {"source": "crossref", "results": results}
+        entries = "".join(
+            f'@article{{k{i}, author = {{A, B}}, title = {{P{i}}}, journal = {{J}}, '
+            f'year = {{2020}}, number = {{99}}, doi = {{10.1/{i}}}}}\n'
+            for i in range(6)
+        )
+        result, ledger_path = self._run(tmp_path, entries, {"c.json": api_json})
+        assert result["breaker_tripped"] is True
+        assert ledger_path.exists()
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        assert ledger["breaker_tripped"] is True
+        assert len(ledger["entries"]) == 6
+        for i in range(6):
+            ent = ledger["entries"][f"k{i}"]
+            assert ent["api_matched"] is True
+            assert ent["verified_identifier"] == "doi"
+            assert ent["verified_identifier_value"] == f"10.1/{i}"
+
+    def test_reclean_overwrites_ledger_with_final_pass(self, tmp_path, s2_nature_json):
+        """A re-clean run (second SubagentStop on a regenerated .bib) must
+        OVERWRITE the ledger to reflect only the final pass - stale entries
+        from a prior run must not linger."""
+        bib1 = '@book{clean1,\n  author = {A},\n  title = {T},\n  year = {2000}\n}\n'
+        _, ledger_path = self._run(tmp_path, bib1, {"s2_x.json": s2_nature_json})
+        assert "clean1" in json.loads(ledger_path.read_text(encoding="utf-8"))["entries"]
+
+        bib2 = '@book{clean2,\n  author = {B},\n  title = {U},\n  year = {2001}\n}\n'
+        _, ledger_path = self._run(tmp_path, bib2, {"s2_x.json": s2_nature_json})
+        entries = json.loads(ledger_path.read_text(encoding="utf-8"))["entries"]
+        assert "clean2" in entries and "clean1" not in entries
+
+    def test_ledger_written_when_no_json_dir(self, tmp_path, bibtex_with_hallucinated_number):
+        """The 'no JSON directory' short-circuit (_count_entries_as_unmatched)
+        still parses the .bib successfully, so it must also emit a ledger -
+        every entry recorded unmatched with a null identifier."""
+        bib_file = tmp_path / "literature-domain-1.bib"
+        bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
+        missing_json_dir = tmp_path / "nonexistent"
+
+        result = clean_bibtex(bib_file, [missing_json_dir])
+
+        ledger_path = tmp_path / "intermediate_files" / "json" / "cleaning_ledger-literature-domain-1.json"
+        assert ledger_path.exists()
+        assert result["ledger_path"] == str(ledger_path)
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        assert ledger["breaker_tripped"] is False
+        ent = ledger["entries"]["awad2018moral"]
+        assert ent["api_matched"] is False
+        assert ent["verified_identifier"] is None
+
+    def test_ledger_written_when_no_api_results(self, tmp_path, bibtex_with_hallucinated_number):
+        """The 'JSON dir exists but has no parseable API results' short-circuit
+        also parses the .bib successfully and must emit a ledger."""
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        bib_file = tmp_path / "literature-domain-1.bib"
+        bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
+
+        result = clean_bibtex(bib_file, [json_dir])
+
+        ledger_path = tmp_path / "intermediate_files" / "json" / "cleaning_ledger-literature-domain-1.json"
+        assert ledger_path.exists()
+        ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
+        ent = ledger["entries"]["awad2018moral"]
+        assert ent["api_matched"] is False
