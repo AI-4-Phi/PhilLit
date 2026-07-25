@@ -711,6 +711,33 @@ class TestEvidenceRestamp:
                                {"smith2020dup": dict(self.NO_ATT)})
         assert "EVIDENCE-ABSTRACT" not in merged
 
+    def test_context_laundering_blocked(self, tmp_path):
+        # Same-field context laundering: the survivor (B, wins on abstract)
+        # carries a FABRICATED sep_context; the loser's (A's) attestation
+        # binds sep_context to a DIFFERENT genuine value. A's context_written
+        # boolean must NOT authorize B's value: hash mismatch -> not CONTEXT
+        # (and B's unattested abstract -> not ABSTRACT) -> NONE.
+        import stamp_evidence
+        genuine = "Cited in 'real' entry."
+        a = ('@book{ctx2018,\n  author = {Ctx, Cal},\n'
+             '  title = {A Context Study},\n  year = {2018},\n'
+             '  sep_context = {' + genuine + '},\n'
+             '  keywords = {High, EVIDENCE-CONTEXT}\n}')
+        b = ('@book{ctx2018dup,\n  author = {Ctx, Cal},\n'
+             '  title = {A Context Study},\n  year = {2018},\n'
+             '  abstract = {An abstract long enough to win the merge.},\n'
+             '  sep_context = {FABRICATED CONTEXT CLAIM.},\n'
+             '  keywords = {High, EVIDENCE-NONE}\n}')
+        att_a = dict(self.NO_ATT, context_written=True,
+                     context_field="sep_context",
+                     context_sha256=stamp_evidence.abstract_hash(genuine))
+        merged = self._run_cli(tmp_path, a, b, {"ctx2018": att_a},
+                               {"ctx2018dup": dict(self.NO_ATT)})
+        assert "FABRICATED CONTEXT CLAIM" in merged  # B's value won the merge
+        assert "EVIDENCE-CONTEXT" not in merged  # A's boolean not laundered
+        assert "EVIDENCE-ABSTRACT" not in merged  # B's abstract unattested
+        assert "EVIDENCE-NONE" in merged
+
     def test_resurrected_identifier_on_no_match_entry_stays_none(self, tmp_path):
         # glm-5.2's dedup-resurrection path: loser's doi is unioned into the
         # survivor, but neither key was api-matched -> still NONE.

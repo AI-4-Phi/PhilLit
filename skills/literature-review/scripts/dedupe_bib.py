@@ -540,7 +540,9 @@ def restamp_merged(
     is value-bound inside compute_tier. Every failure path demotes (an entry
     whose attestation no longer matches computes EVIDENCE-NONE).
     """
-    sys.path.insert(0, str(Path(__file__).parent))
+    script_dir = str(Path(__file__).parent)
+    if script_dir not in sys.path:
+        sys.path.insert(0, script_dir)
     import stamp_evidence as se
     try:
         atts = json.loads(Path(report_path).read_text(encoding="utf-8")).get("attestations", {})
@@ -550,8 +552,15 @@ def restamp_merged(
         atts = {}
 
     def _blob(entry_id):
+        """Attestation dict for (bib_file, key), or None. Malformed report
+        structure (non-dict at either level) reads as no attestation —
+        demote-only, never a crash."""
         bib_file, key = entry_id
-        return (atts.get(bib_file) or {}).get(key)
+        inner = atts.get(bib_file)
+        if not isinstance(inner, dict):
+            return None
+        blob = inner.get(key)
+        return blob if isinstance(blob, dict) else None
 
     def _reverified_att(blob, fields):
         """Rebuild an EntryAttestation valid for the MERGED fields."""
