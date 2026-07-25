@@ -20,17 +20,42 @@ encyclopedia-context acquisition pass (`resolve_context.py`).
   path/line map, and seven implementation catches.
 - **Full spec:** sibling repo,
   `phillit-service/docs/superpowers/specs/2026-07-24-evidence-tier-citability-design.md`
-  (v3, dual-repo — carries the path/line maps for both trees).
+  (v5.1, dual-repo — carries the path/line maps for both trees; four
+  adversarial reviews committed alongside).
 - **The fix lands in BOTH repos at the same time; BUILD HERE FIRST** — runs
   here are free under Claude Code, the service bills every run through the
   Agent SDK. Then port to the service's vendored `engine/.claude/`. The free
   Sonnet control run here also settles an external reviewer's blocking
   objection to the downstream spec.
-- Supersedes the INCOMPLETE-keyed parts of item 2's Issue C (the no-marker
-  case); C's residual — a *forged* `abstract_source` — stays open and is
-  revisited together with this spec (service roadmap item 23).
+- Supersedes the INCOMPLETE-keyed parts of item 3's Issue C (the no-marker
+  case); as of spec v5, `abstract_source` is enrichment-ledger attested,
+  narrowing C's residual to a forged-*ledger* attack — full provenance
+  re-verification stays with item 3 (service roadmap item 23).
 
-## 2. Bibliography-pipeline integrity fixes
+## 2. Web-source evidence — citability for `@misc`/url-only entries (dual-repo, spec-first)
+
+Descoped from the evidence-tier spec in v5.1 (Johannes, 2026-07-24): under
+item 1's design, every abstract-less web source (blog posts, org reports,
+working papers not on arXiv) stamps `EVIDENCE-NONE` and is uncitable —
+measured at **~3–17 entries per AI-adjacent review, near zero for classic
+topics** (arXiv preprints get API abstracts via normal enrichment and are
+unaffected). The barrier report from item 1 counts affected entries per
+run, so this item starts from data.
+
+- A first mechanism (`verify_web.py` fetch-and-match) was cut from the spec
+  after one round: no alternatives evaluation, A/B contamination, and naive
+  fetching fails on the legitimate targets (JS-rendered pages, PDFs,
+  bot-blocking hosts). Full autopsy: the spec's Cut section.
+- **Spec-first** — brainstorm alternatives (researcher-side page capture,
+  Wayback snapshot pinning, archive-fallback fetch, title-in-page match,
+  existence-only citability, PDF extraction), decide the earned tier and
+  licensed claims, then external review, like item 1.
+- **Dual-repo, same path as item 1**: spec lives in the sister repo
+  (`phillit-service/docs/superpowers/specs/`), build and validate HERE
+  first (free runs), then port. Service roadmap tracks the mirror as
+  item 24. Sequence after item 1 ships.
+
+## 3. Bibliography-pipeline integrity fixes
 
 Four related gaps, surfaced 2026-07-24 by the downstream `phillit-service`
 model-experiment audit and written up in

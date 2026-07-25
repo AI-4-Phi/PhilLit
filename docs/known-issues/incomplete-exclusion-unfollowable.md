@@ -109,8 +109,12 @@ required" — but does not close it fully.
 
 Full spec, including rejected alternatives and the reasons they were rejected:
 `phillit-service/docs/superpowers/specs/2026-07-24-evidence-tier-citability-design.md`
-(**v3, dual-repo** — it carries a path/line map for both trees), with two
-external adversarial reviews committed alongside it.
+(**v5, dual-repo** — it carries a path/line map for both trees), with four
+external adversarial reviews committed alongside it (kimi-k3 and glm-5.2 on
+v2; kimi-k3 on v3, folded into v4; gpt-5.6-sol on v4 — three blockers —
+folded into v5 with the owner decision on positive-verification identity;
+v5.1 descoped web-source verification to its own roadmap item — PhilLit
+item 2 / service item 24).
 
 **Core idea:** citability stops keying off `INCOMPLETE` and keys off an
 explicit *evidence tier* recording what grounding an entry actually carries.
@@ -119,10 +123,10 @@ this paper" stops meaning "we must pretend it does not exist."
 
 | Tier | Entry carries | Synthesis may |
 |---|---|---|
-| `EVIDENCE-ABSTRACT` | `abstract` **with** `abstract_source` | cite normally — characterize, summarize, quote |
-| `EVIDENCE-CONTEXT` | no sourced abstract, but `sep_context`/`iep_context` | characterize **from that third-party description only**, attributed in prose; no direct quotation |
-| `EVIDENCE-EXISTENCE` | identity only — surviving `doi`, or surviving `publisher` for `@book`/`@incollection`/`@inbook` | existence and coverage claims only ("this has been studied experimentally (Smith 2020)"); never characterize the argument |
-| `EVIDENCE-NONE` | no content evidence, no surviving identifier | not citable; stays in the `.bib` for transparency |
+| `EVIDENCE-ABSTRACT` | `abstract` with **ledger-attested** `abstract_source` | cite normally — characterize, summarize, quote *from the sourced abstract text* |
+| `EVIDENCE-CONTEXT` | `sep_context`/`iep_context` written by the barrier driver (sole author) | characterize **from that third-party description only**, attributed in prose; no direct quotation |
+| `EVIDENCE-EXISTENCE` | identity **positively verified** — cleaning ledger records an API-record match, plus surviving `doi` (or `publisher` for `@book`/`@incollection`/`@inbook`) | existence and coverage claims only ("this has been studied experimentally (Smith 2020)"); never characterize the argument |
+| `EVIDENCE-NONE` | none of the above — including no-API-match and circuit-breaker-skipped entries | not citable; stays in the `.bib` for transparency |
 
 Net effect: **looser on coverage, stricter on characterization.** The tier is
 computed by a script (`stamp_evidence.py`) and written as a literal token, so
@@ -150,13 +154,24 @@ turns `EVIDENCE-EXISTENCE` into a real epistemic claim ("every channel was
 tried, none yielded a description") and the restraint into a legitimate,
 followable rule.
 
-The design therefore adds a `resolve_context.py` pass that replaces Stage
-5.6's agent loop: for every entry lacking a sourced abstract — **not just
-High-importance ones** — match author + year against the review's SEP/IEP
-entries and attach `sep_context`/`iep_context` on a hit. It fetches each
-encyclopedia article **once** and matches all candidates in memory, rather
-than re-invoking per (entry × paper) pair; `fetch_sep.py` already caches with
-a 7-day TTL (line 216-219), so this should cost less than today's loop.
+The design therefore mechanizes acquisition; Stage 5.6's agent loop is
+**deleted**. As of v5 a single transactional driver (`evidence_barrier.py`)
+runs **orchestrator-side at the Phase 3→4 barrier** — a script that exists to
+eliminate agent-invocation flakiness must not itself be agent-invoked or fail
+silently. It validates a manifest of per-domain inputs, then for every entry
+lacking attested content evidence — **not just High-importance ones**, across
+**all domains at once** — matches author + year **+ fuzzy title
+corroboration** against the review's SEP/IEP entries, extracts body passages
+around the disambiguated citation mentions, and attaches
+`sep_context`/`iep_context` (sole author — pre-existing context fields are
+stripped; ambiguous same-author-same-year candidates attach nothing).
+Each encyclopedia article is fetched **once per review** and all candidates
+match in memory (`fetch_sep.py` caches with a 7-day TTL, line 216-219), so
+this costs less than today's loop. It emits `evidence_report.json`
+(manifest state, matched/unmatched/ambiguous lists, the abstract-less
+web-source count feeding roadmap item 2, all attestations) and stamps
+**only after** acquisition completes; run-level failure exits nonzero and
+stamps nothing.
 
 The tier-2 / tier-3 decision then makes itself, with no judgment and no model
 knowledge: any third-party description obtained → `EVIDENCE-CONTEXT`
@@ -201,12 +216,14 @@ against code in **this repo** at the paths given, not merely carried over.
    precisely to prevent this. Whatever rule you adopt, test it against
    Hanson/Kuhn/Leonelli/van Fraassen/Popper from the NDPR issue before
    shipping.
-4. **The circuit breaker opens the identity gate.** When it trips, the
-   cleaner writes nothing (`applied_*` stay 0), so a fabricated `doi` or
-   `publisher` that should have been stripped survives and the entry stamps
-   `EVIDENCE-EXISTENCE`. The gate is "survived cleaning", never "proved to
-   exist". Same for an entry that matched no API record at all — its
-   cleanable fields are skipped, not stripped.
+4. **The circuit breaker opens a field-presence identity gate** — when it
+   trips, the cleaner writes nothing (`applied_*` stay 0), so a fabricated
+   `doi` or `publisher` survives; same for an entry that matched no API
+   record (skipped, not stripped). **v5 closes this**: the cleaner emits a
+   per-entry ledger and `EVIDENCE-EXISTENCE` requires a *positive* API-record
+   match — no-match and breaker-tripped entries stamp `EVIDENCE-NONE`. The
+   catch survives as a warning: never let "survived cleaning" stand in for
+   "proved to exist".
 5. **Strip `INCOMPLETE` when you stamp; do not leave both tokens in
    `keywords`.** The first draft kept `INCOMPLETE` for backward compatibility.
    An external reviewer flagged this as the single most likely reason an A/B
@@ -224,7 +241,17 @@ against code in **this repo** at the paths given, not merely carried over.
    repo's own definition (`docs/conventions.md:151` — book-review prose,
    "not author/publisher abstracts"). It was cut from the downstream spec so a
    single A/B run could attribute its result. Given this repo's heavy book
-   population, it deserves its own change and its own test.
+   population, it deserves its own change and its own test. (v4 ships the
+   interim one-liner instead: the writer prompt says NDPR-sourced abstracts
+   are review prose, never to be quoted as the author's voice.)
+8. **Every parallel researcher writes the same
+   `intermediate_files/json/encyclopedia_entries.json`** — a last-writer-wins
+   clobber race (`agents/domain-literature-researcher.md:161` and `:284`),
+   pre-existing but harmless-looking until acquisition depends on the union
+   of all domains' discoveries. v5 switches Stage 1 to per-domain filenames
+   (`encyclopedia_entries-domain-N.json`, valid-empty required when none
+   found) and has the barrier driver read them via an explicit manifest —
+   no globbing, so stale or stray files cannot contaminate the match set.
 
 ## Residual, not closed
 
@@ -251,14 +278,18 @@ lines).
 | `hooks/metadata_cleaner.py` | 43, 51-52, 61, 563 | `CLEANABLE_FIELDS`, breaker, `EXEMPT_FIELDS`, publisher check |
 | `skills/literature-review/scripts/dedupe_bib.py` | `_SUBSTANTIVE_FIELDS` | The context-field omission |
 
-**Stamp placement:** the downstream design stamps **once**, orchestrator-run
-at the Phase 3→4 barrier (SKILL.md:204). Earlier drafts stamped at three
+**Stamp placement:** the design stamps **once**, orchestrator-run at the
+Phase 3→4 barrier (SKILL.md:204) — and as of v5 acquisition
+and the stamp are one transactional driver at that barrier, so
+none of it depends on researcher compliance and a run-level failure stamps
+nothing (fail-closed: unstamped entries read as `EVIDENCE-NONE`). Earlier drafts stamped at three
 sites and needed a SubagentStop hook change; collapsing to one removed that
 entirely, along with the staleness window and a Phase-5 concurrency hazard.
 The barrier is downstream of every researcher's SubagentStop cleaning, so the
 stamp sees final field values — **verify that a researcher whose SubagentStop
 blocked on a BibTeX syntax error and then resumed still ends with cleaned
-files**, since the single-stamp architecture assumes it.
+files**, since the single-stamp architecture assumes it. (v4 promotes this
+from a footnote to a pre-merge checklist item.)
 
 ## Suggested adaptation for this repo
 
