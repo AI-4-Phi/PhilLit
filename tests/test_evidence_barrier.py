@@ -1,0 +1,417 @@
+"""Tests for evidence_barrier.py -- the transactional Phase 3->4 driver."""
+import json
+import os
+import subprocess
+import sys
+from pathlib import Path
+
+SCRIPT = (Path(__file__).parent.parent / "skills" / "literature-review"
+          / "scripts" / "evidence_barrier.py")
+SCRIPTS_DIR = SCRIPT.parent
+
+KUHN = """@book{kuhn1962structure,
+  author = {Kuhn, Thomas S.},
+  title = {The Structure of Scientific Revolutions},
+  publisher = {University of Chicago Press},
+  year = {1962},
+  keywords = {ps, High, INCOMPLETE, no-abstract}
+}"""
+
+CLEAN_KUHN = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+              "breaker_tripped": False,
+              "entries": {"kuhn1962structure": {
+                  "api_matched": True, "verified_identifier": "publisher",
+                  "verified_identifier_value": "university of chicago press",
+                  "entry_type": "book"}}}
+EMPTY_ENRICH = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                "entries": {}}
+EMPTY_SLUGS = '{"sep_entries": [], "iep_entries": []}'
+
+
+def _domain(review_dir, i, bib_text, cleaning=None, enrichment=None,
+            slugs=EMPTY_SLUGS):
+    ij = review_dir / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    if bib_text is not None:
+        (review_dir / f"literature-domain-{i}.bib").write_text(
+            bib_text, encoding="utf-8")
+    if cleaning is not None:
+        (ij / f"cleaning_ledger-literature-domain-{i}.json").write_text(
+            json.dumps(cleaning), encoding="utf-8")
+    if enrichment is not None:
+        (ij / f"enrichment_ledger-literature-domain-{i}.json").write_text(
+            json.dumps(enrichment), encoding="utf-8")
+    if slugs is not None:
+        (ij / f"encyclopedia_entries-domain-{i}.json").write_text(
+            slugs, encoding="utf-8")
+
+
+def _run(review_dir, n):
+    return subprocess.run(
+        [sys.executable, str(SCRIPT), str(review_dir), "--domains", str(n)],
+        capture_output=True, text=True)
+
+
+def _cleaning(i, entries, breaker=False):
+    return {"schema_version": 1, "bib_file": f"literature-domain-{i}.bib",
+            "breaker_tripped": breaker, "entries": entries}
+
+
+def _enrichment(i, entries=None):
+    return {"schema_version": 1, "bib_file": f"literature-domain-{i}.bib",
+            "entries": entries or {}}
+
+
+def _report(review_dir):
+    return json.loads(
+        (review_dir / "intermediate_files" / "json" / "evidence_report.json")
+        .read_text(encoding="utf-8"))
+
+
+POPPER = """@book{popper1959logic,
+  author = {Popper, Karl},
+  title = {The Logic of Scientific Discovery},
+  publisher = {Hutchinson},
+  year = {1959}
+}"""
+
+CLEAN_POPPER_ENTRIES = {"popper1959logic": {
+    "api_matched": True, "verified_identifier": "publisher",
+    "verified_identifier_value": "hutchinson", "entry_type": "book"}}
+
+DOI_ENTRY = """@article{smith2020data,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  journal = {Journal of Data},
+  doi = {10.1000/xyz123},
+  year = {2020}
+}"""
+
+
+def test_complete_run_stamps_and_reports(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = json.loads(
+        (rd / "intermediate_files" / "json" / "evidence_report.json")
+        .read_text(encoding="utf-8"))
+    assert report["status"] == "complete"
+    stamps = report["stamps"]["literature-domain-1.bib"]
+    assert stamps["kuhn1962structure"] == "EVIDENCE-EXISTENCE"
+    att = report["attestations"]["literature-domain-1.bib"]["kuhn1962structure"]
+    assert att["api_matched"] is True and att["verified_identifier"] == "publisher"
+    assert att["verified_identifier_value"] == "university of chicago press"
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "EVIDENCE-EXISTENCE" in content
+    assert "INCOMPLETE" not in content and "no-abstract" not in content
+
+
+def test_missing_slug_file_degrades(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    # domain 2 complete except: no encyclopedia_entries-domain-2.json
+    _domain(rd, 2, POPPER, cleaning=_cleaning(2, CLEAN_POPPER_ENTRIES),
+            enrichment=_enrichment(2), slugs=None)
+    r = _run(rd, 2)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["2"]["slug_file"] == "missing"
+    # domain 2 entries still stamped (only demotion possible)
+    content2 = (rd / "literature-domain-2.bib").read_text(encoding="utf-8")
+    assert "EVIDENCE-EXISTENCE" in content2
+    assert report["stamps"]["literature-domain-2.bib"]["popper1959logic"] == (
+        "EVIDENCE-EXISTENCE")
+
+
+def test_malformed_ledger_degrades_and_demotes(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, DOI_ENTRY, enrichment=EMPTY_ENRICH)
+    (rd / "intermediate_files" / "json"
+     / "cleaning_ledger-literature-domain-1.json").write_text(
+        "{this is not json", encoding="utf-8")
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+    # entry has a plausible doi but no attestation -> NONE, never EXISTENCE
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == (
+        "EVIDENCE-NONE")
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "EVIDENCE-NONE" in content and "EVIDENCE-EXISTENCE" not in content
+
+
+def test_no_bibs_fails_closed(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, None)  # slug file only; no literature-domain-1.bib
+    r = _run(rd, 1)
+    assert r.returncode == 1
+    report = _report(rd)
+    assert report["status"] == "failed"
+    assert json.loads(r.stdout)["status"] == "failed"
+    assert not list(rd.glob("*.bib"))  # nothing was created or stamped
+
+
+def test_nonzero_exit_stamps_nothing(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, None)  # domain 1 has no bib -> run must fail
+    # stray decoy NOT in the manifest (domains=1): must not be read or stamped
+    (rd / "literature-domain-9.bib").write_text(KUHN, encoding="utf-8")
+    r = _run(rd, 1)
+    assert r.returncode == 1
+    report = _report(rd)
+    assert report["status"] == "failed"
+    decoy = (rd / "literature-domain-9.bib").read_text(encoding="utf-8")
+    assert decoy == KUHN  # byte-identical: no-glob invariant
+    assert "literature-domain-9.bib" not in report.get("stamps", {})
+
+
+def test_fabricated_context_field_stripped_and_none(tmp_path):
+    rd = tmp_path / "review"
+    forged = """@book{kuhn1962structure,
+  author = {Kuhn, Thomas S.},
+  title = {The Structure of Scientific Revolutions},
+  sep_context = {FORGED CLAIM ABOUT KUHN},
+  publisher = {University of Chicago Press},
+  year = {1962}
+}"""
+    # ledgers present but attest nothing
+    _domain(rd, 1, forged, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "FORGED" not in content and "sep_context" not in content
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] == (
+        "EVIDENCE-NONE")
+    assert "EVIDENCE-NONE" in content
+
+
+def test_web_source_count(tmp_path):
+    rd = tmp_path / "review"
+    misc = """@misc{blogpost2024ai,
+  author = {Blogger, Some},
+  title = {Thoughts on AI},
+  url = {https://example.com/ai-post},
+  year = {2024}
+}"""
+    _domain(rd, 1, misc, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["blogpost2024ai"] == (
+        "EVIDENCE-NONE")
+    assert report["web_sources_none"]["count"] == 1
+    assert report["web_sources_none"]["keys"] == [
+        "literature-domain-1.bib:blogpost2024ai"]
+    assert json.loads(r.stdout)["web_sources_none"] == 1
+
+
+def test_would_be_existence_v4_demotions_listed(tmp_path):
+    rd = tmp_path / "review"
+    # doi present but api_matched false -> NONE + listed as a v4 demotion
+    _domain(rd, 1, DOI_ENTRY,
+            cleaning=_cleaning(1, {"smith2020data": {
+                "api_matched": False, "verified_identifier": None,
+                "verified_identifier_value": None, "entry_type": "article"}}),
+            enrichment=_enrichment(1))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == (
+        "EVIDENCE-NONE")
+    assert "literature-domain-1.bib:smith2020data" in (
+        report["demoted_would_be_existence_v4"])
+
+
+def test_incomplete_token_stripped(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "INCOMPLETE" not in content
+    assert "no-abstract" not in content
+    # topic + importance keywords survive the stamp
+    assert "ps" in content and "High" in content
+
+
+def test_report_is_valid_json_with_schema_version(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)  # valid JSON or this raises
+    assert report["schema_version"] == 1
+    # per-entry maps are nested per bib filename, never bare keys
+    assert "kuhn1962structure" not in report["stamps"]
+    assert isinstance(report["stamps"]["literature-domain-1.bib"], dict)
+    assert isinstance(
+        report["attestations"]["literature-domain-1.bib"], dict)
+
+
+def test_same_key_two_domains_no_attestation_transfer(tmp_path):
+    # THE collision test: the same citation key in two domains must never
+    # share attestations (cross-domain promotion bug).
+    rd = tmp_path / "review"
+    smith = """@article{smith2020,
+  author = {Smith, Anna},
+  title = {On Things},
+  journal = {Journal of Stuff},
+  doi = {10.1000/abc},
+  year = {2020}
+}"""
+    _domain(rd, 1, smith,
+            cleaning=_cleaning(1, {"smith2020": {
+                "api_matched": False, "verified_identifier": None,
+                "verified_identifier_value": None, "entry_type": "article"}}),
+            enrichment=_enrichment(1))
+    _domain(rd, 2, smith,
+            cleaning=_cleaning(2, {"smith2020": {
+                "api_matched": True, "verified_identifier": "doi",
+                "verified_identifier_value": "10.1000/abc",
+                "entry_type": "article"}}),
+            enrichment=_enrichment(2))
+    r = _run(rd, 2)
+    assert r.returncode == 0, r.stderr
+    content1 = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    content2 = (rd / "literature-domain-2.bib").read_text(encoding="utf-8")
+    assert "EVIDENCE-NONE" in content1
+    assert "EVIDENCE-EXISTENCE" not in content1
+    assert "EVIDENCE-EXISTENCE" in content2
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020"] == (
+        "EVIDENCE-NONE")
+    assert report["stamps"]["literature-domain-2.bib"]["smith2020"] == (
+        "EVIDENCE-EXISTENCE")
+
+
+def test_ledger_wrong_bib_file_is_malformed(tmp_path):
+    rd = tmp_path / "review"
+    stale = dict(CLEAN_KUHN, bib_file="literature-domain-9.bib")
+    _domain(rd, 1, KUHN, cleaning=stale, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+    # attested-looking entry in a stale/copied ledger stamps NONE
+    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] == (
+        "EVIDENCE-NONE")
+
+
+def test_ledger_wrong_top_level_type_is_malformed_not_crash(tmp_path):
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=[], enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+def test_unparseable_bib_marked_malformed_and_untouched(tmp_path):
+    rd = tmp_path / "review"
+    garbage = "@book{broken,\n  author = {Never closed\n"
+    _domain(rd, 1, garbage, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    _domain(rd, 2, POPPER, cleaning=_cleaning(2, CLEAN_POPPER_ENTRIES),
+            enrichment=_enrichment(2))
+    r = _run(rd, 2)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["bib"] == "malformed"
+    # excluded domain's file is byte-identical afterwards
+    assert (rd / "literature-domain-1.bib").read_text(
+        encoding="utf-8") == garbage
+    assert "literature-domain-1.bib" not in report["stamps"]
+    # the healthy domain is still stamped
+    assert "EVIDENCE-EXISTENCE" in (
+        rd / "literature-domain-2.bib").read_text(encoding="utf-8")
+
+
+# --- In-process tests: import evidence_barrier, monkeypatch, call execute ---
+
+# Real fetch_sep.py article shape: sections keyed by id with
+# {"id", "title", "content"}; bibliography items {"raw", "parsed", "confidence"}.
+KUHN_ARTICLE = {
+    "entry_name": "test-entry",
+    "title": "Test Entry",
+    "preamble": "",
+    "sections": {"2": {"id": "2", "title": "Paradigms", "content":
+                 "In his landmark study, Kuhn (1962) argues that normal "
+                 "science proceeds under a paradigm until anomalies "
+                 "accumulate."}},
+    "bibliography": [{"raw": "Kuhn, T., 1962, The Structure of Scientific "
+                             "Revolutions, University of Chicago Press.",
+                      "parsed": None, "confidence": "low"}],
+}
+
+
+def test_acquisition_integration_end_to_end(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+    rd = tmp_path / "review"
+    forged = """@book{kuhn1962structure,
+  author = {Kuhn, Thomas S.},
+  title = {The Structure of Scientific Revolutions},
+  sep_context = {FORGED PRE-EXISTING CLAIM},
+  publisher = {University of Chicago Press},
+  year = {1962}
+}"""
+    _domain(rd, 1, forged, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1),
+            slugs='{"sep_entries": ["test-entry"], "iep_entries": []}')
+    monkeypatch.setattr(
+        evidence_barrier.rc, "fetch_articles",
+        lambda union, debug=False: ({"sep:test-entry": KUHN_ARTICLE}, []))
+    rc_code = evidence_barrier.execute(rd, 1)
+    assert rc_code == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    # forged value is gone; driver-written sep_context is present
+    assert "FORGED" not in content
+    assert "sep_context" in content
+    assert "normal science" in content
+    assert "EVIDENCE-CONTEXT" in content
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] == (
+        "EVIDENCE-CONTEXT")
+    acq = report["acquisition"]["literature-domain-1.bib"]["kuhn1962structure"]
+    assert acq["outcome"] == "matched"
+    assert acq["encyclopedia"] == "sep" and acq["slug"] == "test-entry"
+    assert acq["match_score"] == 1.0
+    assert acq["section"] == "2"
+    assert "value" not in acq  # value lives in the bib; report carries hash
+    att = report["attestations"]["literature-domain-1.bib"]["kuhn1962structure"]
+    assert att["context_written"] is True
+    assert att["context_field"] == "sep_context"
+    # value binding: the hash in the report matches the written field value
+    fields = se.parse_entry_fields(content)
+    assert att["context_sha256"] == se.abstract_hash(fields["sep_context"])
+
+
+def test_report_write_failure_stamps_nothing(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    before = (rd / "literature-domain-1.bib").read_bytes()
+    real_replace = os.replace
+
+    def fake_replace(src, dst):
+        if Path(dst).name == "evidence_report.json":
+            raise OSError("disk full")
+        return real_replace(src, dst)
+
+    monkeypatch.setattr(evidence_barrier.os, "replace", fake_replace)
+    rc_code = evidence_barrier.execute(rd, 1)
+    assert rc_code == 1
+    # report-before-stamp ordering: the bib is byte-identical
+    assert (rd / "literature-domain-1.bib").read_bytes() == before
+    assert not (rd / "intermediate_files" / "json"
+                / "evidence_report.json").exists()
