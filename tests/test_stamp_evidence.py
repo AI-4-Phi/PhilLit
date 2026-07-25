@@ -8,8 +8,49 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 from stamp_evidence import (
     TIER_ABSTRACT, TIER_CONTEXT, TIER_EXISTENCE, TIER_NONE,
     EntryAttestation, abstract_hash, attest_abstract, compute_tier,
-    normalize_abstract_for_hash,
+    normalize_abstract_for_hash, normalize_doi,
 )
+
+HOOKS_DIR = Path(__file__).parent.parent / "hooks"
+sys.path.insert(0, str(HOOKS_DIR))
+from metadata_cleaner import normalize_doi as cleaner_normalize_doi  # noqa: E402
+
+
+class TestNormalizeDoiEquivalence:
+    """stamp_evidence.normalize_doi must be byte-equivalent to
+    metadata_cleaner.normalize_doi (finding 1): a cleaner-verified DOI value
+    is compared against the ledger value stamp_evidence computes, so any
+    divergence causes a spurious EVIDENCE-NONE demotion."""
+
+    CASES = [
+        "10.1000/X",
+        "https://doi.org/10.1000/x",
+        "http://doi.org/10.1000/x",
+        "doi:10.1000/x",
+        "doi.org/10.1000/x",
+        "https://dx.doi.org/10.1000/x",
+        "http://dx.doi.org/10.1000/x",
+        "  10.1000/X  ",
+        "  https://doi.org/10.1000/x  ",
+        "  https://dx.doi.org/10.1000/x  ",
+        "DOI:10.1000/X",
+        "",
+        None,
+    ]
+
+    def test_equivalent_over_battery(self):
+        for case in self.CASES:
+            assert normalize_doi(case) == cleaner_normalize_doi(case), (
+                f"mismatch for {case!r}: "
+                f"stamp_evidence={normalize_doi(case)!r} "
+                f"cleaner={cleaner_normalize_doi(case)!r}"
+            )
+
+    def test_dx_doi_org_stripped(self):
+        assert normalize_doi("https://dx.doi.org/10.1000/x") == "10.1000/x"
+        assert cleaner_normalize_doi("https://dx.doi.org/10.1000/x") == "10.1000/x"
+        assert normalize_doi("http://dx.doi.org/10.1000/x") == "10.1000/x"
+        assert cleaner_normalize_doi("http://dx.doi.org/10.1000/x") == "10.1000/x"
 
 
 class TestHashNormalization:

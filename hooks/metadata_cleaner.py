@@ -137,7 +137,14 @@ def normalize_doi(doi: str) -> str:
     if not doi:
         return ""
     doi = doi.strip().lower()
-    prefixes = ["https://doi.org/", "http://doi.org/", "doi:", "doi.org/"]
+    # dx.doi.org forms first so the bare-form check below can't shadow them
+    # (longest-prefix-wins; kept byte-equivalent with
+    # stamp_evidence.normalize_doi — pinned by
+    # tests/test_stamp_evidence.py::TestNormalizeDoiEquivalence).
+    prefixes = [
+        "https://dx.doi.org/", "http://dx.doi.org/",
+        "https://doi.org/", "http://doi.org/", "doi:", "doi.org/",
+    ]
     for prefix in prefixes:
         if doi.startswith(prefix):
             doi = doi[len(prefix):]

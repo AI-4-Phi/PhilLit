@@ -34,8 +34,24 @@ class EntryAttestation:
 
 
 def normalize_doi(value: str) -> str:
-    v = (value or "").strip().lower()
-    return re.sub(r"^https?://(dx\.)?doi\.org/", "", v)
+    """Normalize DOI for comparison. Byte-equivalent with
+    hooks.metadata_cleaner.normalize_doi -- pinned by
+    tests/test_stamp_evidence.py::TestNormalizeDoiEquivalence. A mismatch
+    here would make a cleaner-verified DOI compare unequal to the ledger
+    value stamp_evidence computes, causing spurious EVIDENCE-NONE demotion."""
+    if not value:
+        return ""
+    v = value.strip().lower()
+    # dx.doi.org forms first so the bare-form checks below can't shadow them
+    # (longest-prefix-wins).
+    prefixes = [
+        "https://dx.doi.org/", "http://dx.doi.org/",
+        "https://doi.org/", "http://doi.org/", "doi:", "doi.org/",
+    ]
+    for prefix in prefixes:
+        if v.startswith(prefix):
+            v = v[len(prefix):]
+    return v
 
 
 def normalize_publisher(value: str) -> str:

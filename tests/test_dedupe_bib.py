@@ -807,3 +807,26 @@ class TestEvidenceRestamp:
                                {"x2": dict(self.NO_ATT), "x3": att_x3})
         assert merged.count("@article") == 1
         assert "EVIDENCE-CONTEXT" in merged
+
+
+class TestRestampMergedUnreadableReport:
+    """Finding 2: an unreadable/corrupt --evidence-report must not silently
+    demote every entry to EVIDENCE-NONE -- restamp_merged's except branch
+    must warn on stderr so the operator notices."""
+
+    def test_corrupt_report_warns_on_stderr(self, tmp_path):
+        bib = tmp_path / "a.bib"
+        bib.write_text(
+            '@article{smith2020,\n  author = {Smith, Sam},\n'
+            '  title = {A Study},\n  year = {2020},\n'
+            '  keywords = {EVIDENCE-NONE}\n}', encoding="utf-8")
+        report = tmp_path / "evidence_report.json"
+        report.write_text("{ not valid json", encoding="utf-8")
+        out = tmp_path / "merged.bib"
+        r = subprocess.run(
+            [sys.executable, str(SCRIPT_PATH), str(out), str(bib),
+             "--evidence-report", str(report)],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        assert "warning: evidence report unreadable" in r.stderr
+        assert str(report) in r.stderr

@@ -628,6 +628,47 @@ class TestEnrichmentLedger:
         ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
         assert "gone2000" not in ledger["entries"]
 
+    def test_json_list_typed_ledger_recovers_instead_of_crashing(self, tmp_path):
+        """Finding 3: a malformed on-disk ledger whose top-level JSON parses
+        but isn't a dict (e.g. a bare list) must fall back to an empty
+        ledger, not raise AttributeError past the (JSONDecodeError, OSError)
+        except clause."""
+        import enrich_bibliography
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_text(
+            json.dumps(["not", "a", "dict"]), encoding="utf-8")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        # Must not raise.
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert ledger["entries"] == {}
+
+    def test_dict_ledger_with_non_dict_entries_recovers(self, tmp_path):
+        """Same guard, other malformed shape: top-level dict but 'entries'
+        itself isn't a dict."""
+        import enrich_bibliography
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_text(json.dumps({
+            "schema_version": 1, "bib_file": "test.bib",
+            "entries": ["not", "a", "dict"],
+        }), encoding="utf-8")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert ledger["entries"] == {}
+
     def test_researcher_written_abstract_not_attested(self, tmp_path):
         """Entry already has an abstract -> enrichment skips it -> ledger is
         still written (always-write) but contains no entry for it."""

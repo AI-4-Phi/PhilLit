@@ -592,7 +592,9 @@ def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_ke
     old_entries: dict = {}
     if final.exists():
         try:
-            old_entries = json.loads(final.read_text(encoding='utf-8')).get('entries', {})
+            payload = json.loads(final.read_text(encoding='utf-8'))
+            candidate = payload.get('entries', {}) if isinstance(payload, dict) else {}
+            old_entries = candidate if isinstance(candidate, dict) else {}
         except (json.JSONDecodeError, OSError):
             old_entries = {}
 

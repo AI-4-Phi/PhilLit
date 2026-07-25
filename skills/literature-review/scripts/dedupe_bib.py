@@ -547,6 +547,11 @@ def restamp_merged(
     try:
         atts = json.loads(Path(report_path).read_text(encoding="utf-8")).get("attestations", {})
     except (json.JSONDecodeError, OSError):
+        print(
+            f"[DEDUPE] warning: evidence report unreadable at {report_path}; "
+            "all entries re-stamp EVIDENCE-NONE",
+            file=sys.stderr,
+        )
         atts = {}
     if not isinstance(atts, dict):
         atts = {}
