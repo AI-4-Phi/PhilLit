@@ -32,7 +32,7 @@
 - `agents/` — Specialized subagent definitions invoked by the literature-review skill.
 - `hooks/` — Hook scripts: `fast_gate.sh` (shell pre-filter for per-call gates), `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py` (guards Bash-tool background calls inside subagents), `block_subagent_background_dispatch.py` (guards Agent/Task background dispatch at the orchestrator — the four PhilLit review agents must run foreground), `subagent_stop_bib.sh`, and the thin `setup-environment.sh` SessionStart bootstrap.
 - `hooks/hooks.json` — Plugin hook definitions (single source of truth): SessionStart bootstrap; marker-gated PreToolUse/PostToolUse/SubagentStop.
-- `docs/` — Project documentation: shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`), `known-issues/`, and `ideas/` (design ideas and deferred plans).
+- `docs/` — Project documentation: `ROADMAP.md` (open work, priority-ordered), shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`), `known-issues/`, and `ideas/` (design ideas and deferred plans).
 - `tests/` — pytest tests for API scripts and hooks.
 
 # Typical Usage: Literature Review
@@ -49,6 +49,16 @@ The `/phillit:literature-review` skill runs in the main conversation and coordin
 # Development
 
 For agent architecture and design patterns, see `docs/ARCHITECTURE.md`.
+
+## Sister repo: phillit-service
+
+The downstream service (`~/github-repos/phillit-service`) vendors this repo's
+skills/agents/hooks under `engine/.claude/` (near-identical files; this repo's
+plugin layout has no `.claude/` prefix). Fixes are cherry-picked between the
+two, in either direction. **Engine/prompt fixes that need test runs are built
+and validated HERE first** — reviews here run under Claude Code (free), while
+the service bills every run through the Agent SDK — then ported. Open
+cross-repo work is listed in `docs/ROADMAP.md`.
 
 ## Cross-Platform
 
