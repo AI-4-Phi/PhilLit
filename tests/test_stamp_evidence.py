@@ -226,6 +226,16 @@ class TestStampEntryText:
         assert fields["publisher"] == "University of Chicago Press"
         assert fields["year"] == "1962"
 
+    def test_quoted_keywords_value_stamped(self):
+        # a forging agent may use quotes instead of braces; the whole
+        # quoted value must be replaced with a braced canonical one, no
+        # quoted remnant left behind.
+        entry = '@article{q2020,\n  author = {A},\n  keywords = "tag, High, EVIDENCE-BOGUS"\n}'
+        out = stamp_entry_text(entry, "EVIDENCE-NONE")
+        assert 'keywords = {tag, High, EVIDENCE-NONE}' in out
+        assert '"' not in out
+        assert "EVIDENCE-BOGUS" not in out
+
 
 class TestStampFile:
     def test_stamp_file_atomic_and_returns_stamps(self, tmp_path):
