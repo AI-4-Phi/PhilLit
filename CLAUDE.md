@@ -54,11 +54,25 @@ For agent architecture and design patterns, see `docs/ARCHITECTURE.md`.
 
 The downstream service (`~/github-repos/phillit-service`) vendors this repo's
 skills/agents/hooks under `engine/.claude/` (near-identical files; this repo's
-plugin layout has no `.claude/` prefix). Fixes are cherry-picked between the
-two, in either direction. **Engine/prompt fixes that need test runs are built
-and validated HERE first** — reviews here run under Claude Code (free), while
-the service bills every run through the Agent SDK — then ported. Open
-cross-repo work is listed in `docs/ROADMAP.md`.
+plugin layout has no `.claude/` prefix).
+
+**Every fix or improvement made here must be implemented or mirrored in
+phillit-service, mutatis mutandis** (Johannes, 2026-07-28) — code, docs,
+and roadmap items alike. Adapt rather than copy: paths gain the
+`engine/.claude/` prefix, roadmap sub-items renumber (PhilLit item 3 ↔
+service item 23), and a file may not exist there yet. Mirroring holds in
+both directions; a fix that lands in the service comes back here.
+
+**Engine/prompt fixes that need test runs are built and validated HERE
+first** — reviews here run under Claude Code (free), while the service bills
+every run through the Agent SDK — then ported. Open cross-repo work is
+listed in `docs/ROADMAP.md`.
+
+Gotcha: the service tracks its roadmap as **`docs/roadmap.md` (lowercase)**.
+On macOS's case-insensitive filesystem, editing `docs/ROADMAP.md` there
+writes the right file but `git add docs/ROADMAP.md` stages *nothing* — the
+change silently misses the commit. Use the lowercase path, and check
+`git show --stat` after committing.
 
 ## Cross-Platform
 
