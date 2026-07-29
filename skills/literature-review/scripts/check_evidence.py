@@ -21,9 +21,61 @@ _MATCH_WINDOW = 60  # mirrors generate_bibliography._MATCH_WINDOW
 
 _TIER_RE = re.compile(r"EVIDENCE-[A-Za-z0-9_-]+")
 
+# Reporting verbs, in two senses: ATTRIBUTION ("X contends that P") and
+# SUCCESS ("X shows that P"). Both attach claim content to a source, which a
+# low-trust tier does not license.
+#
+# This list is a RECALL FLOOR, not a precision instrument -- every hit is
+# adjudicated by a human, so a false positive costs seconds while a miss ships
+# an unlicensed claim. Widened 2026-07-28 after the evidence-tier A/B spot
+# check: 4 of the 5 violations the checker missed were missed solely because
+# the verb was absent ("presses", "occupies", "developed", "identify").
+#
+# Two deliberate choices:
+#  - Bare plural forms ("argue", "identify") are included. Multi-author works
+#    are cited with plural subjects constantly ("Adams and Aizawa argue"), and
+#    the original list carried only the -s/-ed forms.
+#  - Forms whose NOUN sense dominates this corpus are excluded even though the
+#    verb sense is real: "objects" (physical objects), "challenges" (the
+#    challenges of X), "established"/"proven"/"held" (adjectival: a
+#    well-established view, a widely held assumption). Their unambiguous
+#    siblings ("objected", "challenged", "establishes", "proves", "holds")
+#    carry the recall.
+_ATTRIBUTION_VERBS = (
+    "argue", "argues", "argued",
+    "assert", "asserts", "asserted",
+    "claim", "claims", "claimed",
+    "concede", "concedes", "conceded",
+    "contend", "contends", "contended",
+    "defend", "defends", "defended",
+    "deny", "denies", "denied",
+    "endorse", "endorses", "endorsed",
+    "hold", "holds",
+    "maintain", "maintains", "maintained",
+    "objected",
+    "press", "presses", "pressed",
+    "propose", "proposes", "proposed",
+    "reject", "rejects", "rejected",
+    "reply", "replies", "replied",
+    "respond", "responds", "responded",
+)
+
+_SUCCESS_VERBS = (
+    "challenged",
+    "conclude", "concludes", "concluded",
+    "demonstrate", "demonstrates", "demonstrated",
+    "develop", "develops", "developed",
+    "establish", "establishes",
+    "find", "finds", "found",
+    "identify", "identifies", "identified",
+    "occupy", "occupies", "occupied",
+    "prove", "proves", "proved",
+    "show", "shows", "showed", "shown",
+    "trace", "traces", "traced",
+)
+
 _VERB_RE = re.compile(
-    r"\b(argues|argued|shows|showed|shown|finds|found|"
-    r"demonstrates|demonstrated|concludes|concluded)\b",
+    r"\b(?:" + "|".join(_ATTRIBUTION_VERBS + _SUCCESS_VERBS) + r")\b",
     re.IGNORECASE,
 )
 

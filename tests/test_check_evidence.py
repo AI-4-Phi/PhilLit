@@ -5,6 +5,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+import pytest
+
 SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
 CHECKER = SCRIPTS_DIR / "check_evidence.py"
 SANITIZER = SCRIPTS_DIR / "sanitize_bib.py"
@@ -85,6 +87,44 @@ def test_abstract_tier_with_verb_ok(tmp_path):
 def test_unstamped_cited_flagged(tmp_path):
     r = _run(tmp_path, "See Ghost (2019).")
     assert "CHECK unstamped-cited: ghost2019" in r.stdout
+
+
+@pytest.mark.parametrize("verb_phrase", [
+    # The four verbs whose absence caused real misses in the evidence-tier
+    # A/B spot check (2026-07-28) -- regression guard for the widened list.
+    "presses an anti-realist reading",
+    "occupies a more qualified position",
+    "developed a formal measure of informativeness",
+    "identify what they call the creator's advantage",
+    # Attribution verbs named as absent during the same adjudication.
+    "contends that paradigms shift",
+    "claims that paradigms shift",
+    "maintains that paradigms shift",
+    "traces the term's early modern history",
+])
+def test_widened_reporting_verbs_flagged(tmp_path, verb_phrase):
+    r = _run(tmp_path, f"Kuhn (1962) {verb_phrase}.")
+    assert "CHECK reporting-verb: kuhn1962structure" in r.stdout
+
+
+def test_bare_plural_verb_form_flagged(tmp_path):
+    # Multi-author citations take a plural subject; the pre-2026-07-28 list
+    # carried only -s/-ed forms, so these were invisible.
+    r = _run(tmp_path, "Kuhn and Smith (1962) argue that paradigms shift.")
+    assert "CHECK reporting-verb: kuhn1962structure" in r.stdout
+
+
+@pytest.mark.parametrize("sentence", [
+    # Noun senses deliberately excluded from the verb list -- see the
+    # _ATTRIBUTION_VERBS docstring. These must stay quiet.
+    "The objects of inquiry were physical (Kuhn 1962).",
+    "The challenges of the era were many (Kuhn 1962).",
+    "This is a well-established view (Kuhn 1962).",
+    "That assumption is widely held (Kuhn 1962).",
+])
+def test_noun_homograph_not_flagged(tmp_path, sentence):
+    r = _run(tmp_path, sentence)
+    assert "reporting-verb" not in r.stdout
 
 
 def test_known_false_positive_documented(tmp_path):
