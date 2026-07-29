@@ -57,9 +57,10 @@ run, so this item starts from data.
 
 ## 3. Bibliography-pipeline integrity fixes
 
-Four related gaps, surfaced 2026-07-24 by the downstream `phillit-service`
-model-experiment audit and written up in
-`docs/known-issues/bib-pipeline-integrity-gaps.md`:
+Six related gaps. A–D were surfaced 2026-07-24 by the downstream
+`phillit-service` model-experiment audit and written up in
+`docs/known-issues/bib-pipeline-integrity-gaps.md`; E–F were added later
+(see below).
 
 - **A — cleaner-unaware dedup** (`dedupe_bib.py`): cross-domain duplicate
   merging can resurrect a field the metadata cleaner stripped as
@@ -81,8 +82,71 @@ model-experiment audit and written up in
   keyword + writer rule) would turn observed good model behavior into a
   pipeline guarantee.
 
-Suggested order: A+B first (small, testable, deterministic), then C
-(mechanical validator rule), then D (heuristics + prompt rules).
+Two further sub-items, added 2026-07-28 from a side finding during
+evidence-tier A/B adjudication, then measured across all 32 delivered
+reviews. Write-up:
+`docs/known-issues/author-year-collision.md` (evidence tables, the three
+failure modes, and why the fix cannot live in Phase 6).
+
+The pipeline identifies a work in prose by *first-author surname within 60
+characters of a 4-digit year* — `find_cited_entries` and
+`check_evidence.find_cites`, both on `_MATCH_WINDOW = 60`. Nothing
+distinguishes two works sharing that pair, and no stage assigns Chicago
+`2019a`/`2019b` suffixes. Two defects are visible in delivered output:
+
+Collisions come in two kinds, and they need *different* mechanisms — E
+handles those the prose can already distinguish, F those it cannot. Both
+close a phantom-reference hole for their own class. Measurements: 21/32
+reviews contain at least one collision group; in **7 groups** the prose
+carries strictly fewer distinct citation forms than the group has entries,
+so a listed work is confirmed uncited.
+
+- **E — matcher collisions / phantom references**
+  (`generate_bibliography.py`): every entry sharing `(first-author surname,
+  year)` matches whenever any one of them is cited, so uncited works get
+  rendered into References *even when the prose was unambiguous*. Scope:
+  collisions where the works have **different authors**. Two sub-shapes,
+  both needing a fix:
+  - *Different author lists* — `Muldoon et al. 2023` vs. `Muldoon and Wu
+    2023`; also Moore 2020, Li 2022, Wang 2023, Adams 2010. Fix: require a
+    discriminating token (second-author surname, or `et al.`) in the window
+    before matching.
+  - *Different people, same surname, both solo* — Gabbrielle vs. Rebecca
+    **Johnson** 2024; no author-list token can separate these. Chicago's own
+    rule is first initials (`G. Johnson 2024` / `R. Johnson 2024`), which
+    means E also needs an initial-aware match and a writer-facing note.
+
+  Where the prose form stays ambiguous, warn rather than guess.
+  Self-contained in `generate_bibliography.py`, no agent-prompt change, no
+  live run — natural companion to B's every-citation-resolves check in
+  `lint_md.py`.
+- **F — no Chicago a/b disambiguation**: scope is collisions where the
+  works have the **same author**, which E cannot touch — nothing in the
+  citation distinguishes them, so suffixes are the only fix. Flagship case:
+  `extended-mind-cognitive-offloading` cites `Menary (2006, 2010, 2013)`
+  while References lists **three** distinct solo-author Menary 2010 works
+  (two chapters + the edited volume) — unresolvable for a reader, and two
+  of the three are phantoms. Separately, 8/32 reviews contain prose cites
+  like `Wiens (2015a; 2015b)` while **zero** reference lists carry a
+  lettered entry, so the citation resolves to nothing (the mirror image of
+  B). Writers are already trying to disambiguate; the renderer never emits
+  suffixes. The information is lost at write time, so suffixes must be
+  assigned on the merged bib *before* Phase 5, into a dedicated field —
+  **not** `year`, whose `\d{4}` guards in `check_evidence.py` and
+  `stamp_evidence.py` would reject `2019a`. Touches `conventions.md` and
+  `agents/synthesis-writer.md`, so it needs a live headless run to confirm
+  writer compliance before the port.
+
+Suggested order: A+B first (small, testable, deterministic), then E (same
+shape, and it pairs with B), then C (mechanical validator rule), then D
+(heuristics + prompt rules). F last — it is the only one of the six that
+needs a live run, and that run should not be entangled with the
+evidence-tier A/B experiment.
+
+Related out-of-scope find (2026-07-28, recorded in the same write-up): 5/32
+reviews carry near-identical *undeduped* entries surviving on diacritic
+variance (`Milliere`/`Millière`) and arXiv-vs-journal pairs. Overlaps A but
+is a distinct failure; not folded into A's scope.
 Cross-repo: fixes land here or in the service's vendored engine and are
 cherry-picked to the other side — same path as the metadata-cleaner year
 fix (plugin 0.2.6 ↔ service `7369880`). The service tracks the mirror item
