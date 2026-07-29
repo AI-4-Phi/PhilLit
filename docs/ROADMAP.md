@@ -6,7 +6,41 @@ line); forward-looking design sketches live in `docs/ideas/`. This file
 exists so open work has a single place to be listed — it was created
 2026-07-24 alongside the bib-pipeline item below.
 
-## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (NEXT UP, dual-repo)
+## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (BUILT + A/B'd HERE, unmerged; dual-repo)
+
+> **Status 2026-07-28 — read this before starting anything.** The build is
+> DONE on branch **`worktree-evidence-tier`** (worktree at
+> `.claude/worktrees/evidence-tier`, tip `f9e3fda`, 23 commits ahead of
+> `main`, unmerged and unpushed). All 11 plan tasks executed; **unit suite
+> 1069 green**. The free Sonnet two-arm A/B has run ("What are data?"), and
+> Johannes adjudicated **three of the four rubric items** on 2026-07-28.
+> Provisional outcome cell: **"Works. Proceed."**
+>
+> **Two things gate the merge, both open:**
+> **(b) writer-guidance follow-ups** — the A/B doc forward-references a
+> section that was never written. Raw material: 7 violation sentences across
+> 8 of 27 recovered low-tier entries, the CONTEXT in-prose attribution rule
+> followed only 1 of 4 times, and a "strip or fence unattested abstract text
+> at sanitize time" candidate. **Johannes's call: pre-merge prompt edits, or
+> deferred?** This one goes first — it gates the downstream port.
+> **(c) blind holistic coherence comparison** — rubric item 3, the last open
+> pre-registered gate item. Arms archived at
+> `~/phillit-ab/archives/{control,treatment}-*-20260725.tar.gz`.
+>
+> **DO NOT REMOVE THE `evidence-tier` WORKTREE.** `docs/superpowers/` is
+> gitignored here, so the A/B results + adjudication record exist ONLY inside
+> that worktree, at
+> `docs/superpowers/plans/2026-07-25-evidence-tier-ab-results.md`. Johannes
+> decided on 2026-07-28 to leave them untracked (sole developer, one machine,
+> daily backups) — that decision is made, don't re-raise it.
+>
+> **Two post-A/B fixes on the branch must survive the downstream port** — a
+> merge conflict resolved against the old 11-verb regex silently reverts the
+> first: `6ee2566` (widened `check_evidence._VERB_RE`; violation-sentence
+> recall 2/7 → 6/7, precision 33% → 47%) and `f9e3fda` (SEP `–––`
+> repeated-author resolution in `resolve_context`, which had cost Leonelli
+> 2016 its CONTEXT tier). Sister-repo status: `phillit-service`
+> `docs/roadmap.md` item 20 + its `HANDOVER.md` top entry.
 
 The agreed next build (Johannes, 2026-07-24). The `INCOMPLETE` exclusion is
 unfollowable and fails in both directions — Claude cites excluded canon
