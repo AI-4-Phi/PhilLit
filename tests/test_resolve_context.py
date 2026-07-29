@@ -103,6 +103,70 @@ class TestMatchEntry:
         assert m is not None
         assert m.get("ambiguous") is True
 
+    def test_repeated_author_dash_line_matches(self):
+        # SEP's repeated-author convention: the second-and-later works of an
+        # author carry no surname. Regression for the Leonelli 2016 gate miss
+        # in the 2026-07-25 A/B run -- zero candidates -> EXISTENCE, not CONTEXT.
+        art = _article([
+            "Leonelli, S., 2015, What Counts as Scientific Data?, Philosophy of Science.",
+            "–––, 2016, Data-Centric Biology: A Philosophical Study, Chicago.",
+        ])
+        fields = {"author": "Leonelli, Sabina", "year": "2016",
+                  "title": "Data-Centric Biology: A Philosophical Study"}
+        m = match_entry_to_article(fields, art)
+        assert m and not m.get("ambiguous")
+        assert "Data-Centric Biology" in m["line"]
+
+    def test_dash_line_inherits_nearest_explicit_author_only(self):
+        # The carried author must be the immediately preceding explicit line,
+        # not any earlier one: a neighbouring dash line of a DIFFERENT author
+        # in the same year must not become a candidate (that neighbour is what
+        # kept the real Leonelli match unambiguous).
+        art = _article([
+            "Leonelli, S., 2015, What Counts as Scientific Data?, Philosophy of Science.",
+            "–––, 2016, Data-Centric Biology: A Philosophical Study, Chicago.",
+            "Woodward, J., 2011, Data and Phenomena, Synthese.",
+            "–––, 2016, Data-Centric Biology Reconsidered, Synthese.",
+        ])
+        fields = {"author": "Leonelli, Sabina", "year": "2016",
+                  "title": "Data-Centric Biology: A Philosophical Study"}
+        m = match_entry_to_article(fields, art)
+        # Woodward's 2016 dash line inherits Woodward, so only one candidate
+        # survives despite the near-identical title.
+        assert m and not m.get("ambiguous")
+        assert "Chicago" in m["line"]
+
+    def test_dash_carries_author_prefix_not_previous_title(self):
+        # Only the author segment may be carried. If the whole previous line
+        # were inherited, its TITLE tokens would manufacture a surname hit.
+        art = _article([
+            "Smith, A., 1990, A Study of Leonelli's Method, Journal of Things.",
+            "–––, 2016, Data-Centric Biology: A Philosophical Study, Chicago.",
+        ])
+        fields = {"author": "Leonelli, Sabina", "year": "2016",
+                  "title": "Data-Centric Biology: A Philosophical Study"}
+        assert match_entry_to_article(fields, art) is None
+
+    def test_leading_dash_line_without_preceding_explicit_author(self):
+        # A dash line before any explicit line has nothing to inherit; it must
+        # not match and must not raise.
+        art = _article([
+            "–––, 2016, Data-Centric Biology: A Philosophical Study, Chicago.",
+        ])
+        fields = {"author": "Leonelli, Sabina", "year": "2016",
+                  "title": "Data-Centric Biology: A Philosophical Study"}
+        assert match_entry_to_article(fields, art) is None
+
+    def test_hyphen_bullet_line_is_not_a_repeated_author_line(self):
+        # A single leading hyphen is list punctuation, not the repeat rule.
+        art = _article([
+            "Smith, A., 1990, Some Other Work, Journal of Things.",
+            "- 2016, Data-Centric Biology: A Philosophical Study, Chicago.",
+        ])
+        fields = {"author": "Leonelli, Sabina", "year": "2016",
+                  "title": "Data-Centric Biology: A Philosophical Study"}
+        assert match_entry_to_article(fields, art) is None
+
     def test_surname_substring_does_not_match(self):
         # word boundary: 'Mill' must not match 'Miller'; year must not match
         # inside a page range

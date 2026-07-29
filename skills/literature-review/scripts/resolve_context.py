@@ -78,14 +78,51 @@ def title_score(bib_title: str, candidate_line: str) -> float:
     return len(overlap) / len(bt)
 
 
+# SEP lists an author's second-and-later works with a repeated-author rule:
+# `–––, 2016, Data-Centric Biology, …`. The surname is nowhere on such a line,
+# so a naive surname search skips every one of them -- and the convention
+# applies to exactly the authors with 2+ listed works, i.e. the canonical
+# figures context acquisition most needs to reach. (This cost Leonelli 2016
+# its CONTEXT tier in the 2026-07-25 A/B run; see the results write-up.)
+# Dash class escaped rather than literal: ASCII hyphen plus U+2010..U+2015
+# (hyphen, non-breaking hyphen, figure/en/em dash, horizontal bar). SEP uses
+# en dashes today; the escapes keep the source ASCII and the intent explicit.
+_REPEATED_AUTHOR_RE = re.compile("^\\s*[-\\u2010-\\u2015]{2,}\\s*[,.]?\\s*")
+
+_YEAR_RE = re.compile(r"(?<!\d)\d{4}(?!\d)")
+
+
+def _author_prefix(raw: str) -> str:
+    """The author segment of a bibliography line: everything before its first
+    4-digit year. Used to carry an author across `–––` lines without dragging
+    the previous entry's title and publisher along."""
+    m = _YEAR_RE.search(raw)
+    return raw[:m.start()] if m else raw
+
+
 def _candidate_lines(article: dict, surname: str, year: str) -> list:
-    """Bibliography lines mentioning surname (word-bounded) + year (digit-bounded)."""
+    """Bibliography lines mentioning surname (word-bounded) + year (digit-bounded).
+
+    Repeated-author (`–––`) lines inherit the author of the nearest preceding
+    explicit line. The inheritance is *additive*: a line still matches on its
+    own raw text exactly as before, so nothing that matched previously can
+    stop matching. Only the author prefix is carried, never the whole line,
+    or a previous entry's title tokens could manufacture a surname hit.
+    """
     out = []
     surname_re = re.compile(rf"\b{re.escape(surname)}\b", re.IGNORECASE)
     year_re = re.compile(rf"(?<!\d){re.escape(year)}(?!\d)")
+    carried = ""  # author prefix of the last explicit line, "" before the first
     for item in article.get("bibliography") or []:
         raw = item.get("raw") or ""
-        if surname_re.search(raw) and year_re.search(raw):
+        if _REPEATED_AUTHOR_RE.match(raw):
+            inherited = carried
+        else:
+            carried = _author_prefix(raw)
+            inherited = ""  # explicit line: the surname is already in raw
+        if not year_re.search(raw):
+            continue
+        if surname_re.search(raw) or (inherited and surname_re.search(inherited)):
             out.append(item)
     return out
 
