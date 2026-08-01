@@ -252,13 +252,18 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
     unbalanced, which API-sourced content won't have. Escaping would corrupt
     LaTeX markup (e.g. \\textit{...}) in abstracts.
     """
-    # Check if field already exists
-    pattern = rf'(\s+){field_name}\s*=\s*\{{[^}}]*\}}'
+    # Check if field already exists -- brace- OR quote-delimited (pybtex's
+    # writer emits quoted values on round-trip; researchers hand-write both
+    # forms). One-level brace nesting, same tolerance as
+    # stamp_evidence._FIELD_RE.
+    pattern = (rf'(\s+){field_name}\s*=\s*'
+               r'(?:\{(?:[^{}]|\{[^{}]*\})*\}|"[^"]*")')
     if re.search(pattern, entry_text, re.IGNORECASE):
-        # Replace existing field
+        # Function replacement, NOT a template string: abstracts carry
+        # LaTeX backslashes, and a template would interpret \1, \g<...>.
         return re.sub(
             pattern,
-            rf'\1{field_name} = {{{field_value}}}',
+            lambda m: f'{m.group(1)}{field_name} = {{{field_value}}}',
             entry_text,
             flags=re.IGNORECASE
         )

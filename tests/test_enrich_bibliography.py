@@ -724,3 +724,50 @@ class TestEnrichmentLedger:
         ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
         ent = ledger["entries"]["frankfurt1971freedom"]
         assert stamp_evidence.attest_abstract(roundtripped, ent) is True
+
+
+def test_add_field_replaces_quoted_value():
+    """pybtex round-trips write quoted fields; replace must not duplicate."""
+    import enrich_bibliography
+
+    entry = ('@article{k1,\n'
+             '    author = "McAllister, James W.",\n'
+             '    abstract_source = "semantic\\_scholar",\n'
+             '    title = "T"\n'
+             '}')
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract_source', 's2')
+    assert out.lower().count('abstract_source') == 1
+    assert 'abstract_source = {s2}' in out
+    assert 'semantic' not in out
+
+
+def test_add_field_replace_is_backslash_safe():
+    r"""Abstracts carry LaTeX; a template re.sub would eat \1 or \g."""
+    import enrich_bibliography
+
+    entry = '@article{k1,\n  abstract = {old text},\n  title = {T}\n}'
+    value = r'uses \textit{emphasis} and a literal \1 sequence'
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', value)
+    assert value in out
+
+
+def test_add_field_replaces_braced_value_with_nested_braces():
+    import enrich_bibliography
+
+    entry = '@article{k1,\n  abstract = {outer {nested} text},\n  title = {T}\n}'
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', 'replaced')
+    assert 'abstract = {replaced}' in out
+    assert 'nested' not in out
+
+
+def test_add_field_replace_all_occurrences_pinned():
+    """Pins existing semantics: re.sub without count replaces EVERY
+    occurrence of the field within the entry text. Callers rely on
+    entry_text being a SINGLE entry (split_entries chunks) -- this test
+    documents that invariant by showing what happens when it's violated."""
+    import enrich_bibliography
+
+    entry = ('@article{k1,\n  abstract = {first},\n  title = {T},\n'
+             '  abstract = {second}\n}')
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', 'new')
+    assert out.count('abstract = {new}') == 2
