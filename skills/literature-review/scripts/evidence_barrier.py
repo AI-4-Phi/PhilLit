@@ -127,6 +127,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         "attestations": {}, "stamps": {},
         "web_sources_none": {"count": 0, "keys": []},
         "demoted_would_be_existence_v4": [],
+        "healed": {},
     }
     degraded = False
     domains = {}
@@ -175,6 +176,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     parsed = {}        # i -> list[chunk]
     atts = {}          # i -> {key: EntryAttestation}
     needs_context = {} # "bib_name::key" -> {"entry_type", "fields"}
+    healed = {}         # (i, key) -> (restored_text, canonical_source)
     for i, d in domains.items():
         chunks = [rc.strip_context_fields(c) if se.entry_header(c) else c
                   for c in se.split_entries(d["bib"].read_text(encoding="utf-8"))]
@@ -182,7 +184,11 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         atts[i] = {}
         c_entries = (d["cleaning"] or {}).get("entries", {})
         breaker = bool((d["cleaning"] or {}).get("breaker_tripped"))
-        e_entries = (d["enrichment"] or {}).get("entries", {})
+        e_entries = {
+            k: v
+            for k, v in ((d["enrichment"] or {}).get("entries", {}) or {}).items()
+            if isinstance(v, dict)
+        }
         report["acquisition"].setdefault(d["bib_name"], {})
         for chunk in chunks:
             header = se.entry_header(chunk)
@@ -198,6 +204,23 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 verified_identifier_value=cl.get("verified_identifier_value"),
                 breaker_tripped=breaker,
             )
+            e_rec = e_entries.get(key)
+            if (not att.abstract_attested and e_rec
+                    and e_rec.get("abstract_sha256")):
+                restored = _heal_abstract(fields, e_rec, debug=debug)
+                src = ((e_rec.get("abstract_source") or "").strip().lower())
+                if restored is not None:
+                    # The FIELD must carry the ledger's source -- that is
+                    # what attest_abstract compares against. Which resolver
+                    # actually served the text is integrity-irrelevant
+                    # (hash-gated) and is not recorded in the bib.
+                    att.abstract_attested = True
+                    healed[(i, key)] = (restored, src)
+                    report["healed"].setdefault(d["bib_name"], {})[key] = {
+                        "outcome": "restored", "source": src}
+                else:
+                    report["healed"].setdefault(d["bib_name"], {})[key] = {
+                        "outcome": "unhealed", "source": src}
             atts[i][key] = att
             if att.abstract_attested:
                 report["acquisition"][d["bib_name"]][key] = {"outcome": "not-needed"}
@@ -221,7 +244,11 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     outputs = {}
     for i, d in domains.items():
         bib_name = d["bib_name"]
-        e_entries = (d["enrichment"] or {}).get("entries", {})
+        e_entries = {
+            k: v
+            for k, v in ((d["enrichment"] or {}).get("entries", {}) or {}).items()
+            if isinstance(v, dict)
+        }
         report["attestations"][bib_name] = {}
         report["stamps"][bib_name] = {}
         final_chunks = []
@@ -234,8 +261,16 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             cv = context_values.get((i, key))
             if cv:
                 chunk = add_field_to_entry(chunk, cv[0], cv[1])
+            h = healed.get((i, key))
+            if h:
+                chunk = add_field_to_entry(chunk, "abstract", h[0])
+                chunk = add_field_to_entry(chunk, "abstract_source", h[1])
             fields = se.parse_entry_fields(chunk)
             att = atts[i].get(key) or se.EntryAttestation()
+            # Re-derive from the final text: the stamp must never trust a
+            # flag set in the attestation loop if the corresponding splice
+            # did not land in THIS chunk (fail-closed against index skew).
+            att.abstract_attested = se.attest_abstract(fields, e_entries.get(key))
             tier = se.compute_tier(etype, fields, att)
             final_chunks.append(se.stamp_entry_text(chunk, tier))
             report["stamps"][bib_name][key] = tier
@@ -296,6 +331,8 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
 
 
 def main() -> int:
+    from dotenv import find_dotenv, load_dotenv
+    load_dotenv(find_dotenv(usecwd=True), override=True)
     ap = argparse.ArgumentParser(description="Evidence barrier (Phase 3->4)")
     ap.add_argument("review_dir")
     ap.add_argument("--domains", type=int, required=True)

@@ -492,3 +492,225 @@ def test_report_write_failure_stamps_nothing(tmp_path, monkeypatch):
     assert (rd / "literature-domain-1.bib").read_bytes() == before
     assert not (rd / "intermediate_files" / "json"
                 / "evidence_report.json").exists()
+
+
+def test_barrier_heals_mutated_abstract_end_to_end(tmp_path, monkeypatch):
+    """A post-attestation mutation (root cause 2) is healed at the barrier:
+    text restored, EVIDENCE-ABSTRACT stamped, report records the heal."""
+    import importlib, sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    true_text = ("Open access to data is predicated on assumptions "
+                 "that data can be reused. (See Supplementary Materials.)")
+    mutated = ("Open access to data is predicated on assumptions "
+               "that data can be reused.")
+    bib = ('@article{pasq2019,\n'
+           '  abstract_source = {s2},\n'
+           f'  abstract = {{{mutated}}},\n'
+           '  author = {Pasquetto, Irene V.},\n'
+           '  title = {Uses and Reuses},\n'
+           '  doi = {10.1162/99608f92.fc14bf2d},\n'
+           '  year = {2019},\n'
+           '  keywords = {data-reuse, Medium}\n'
+           '}')
+    enrichment = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                  "entries": {"pasq2019": {
+                      "abstract_source": "s2",
+                      "abstract_sha256": se.abstract_hash(true_text)}}}
+    cleaning = _cleaning(1, {"pasq2019": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1162/99608f92.fc14bf2d",
+        "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning, enrichment=enrichment)
+
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (true_text, "s2"))
+
+    rc_code = evidence_barrier.execute(tmp_path, 1)
+    assert rc_code == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    assert report["healed"]["literature-domain-1.bib"]["pasq2019"] == {
+        "outcome": "restored", "source": "s2"}
+    assert report["stamps"]["literature-domain-1.bib"]["pasq2019"] == "EVIDENCE-ABSTRACT"
+    out = (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert true_text in out
+    assert mutated + "}" not in out          # old truncated text replaced
+    assert out.lower().count("abstract =") == 1
+
+
+def test_barrier_unhealed_mismatch_still_demotes(tmp_path, monkeypatch):
+    """Fetched text that fails the ledger hash must NOT be written; the
+    entry demotes exactly as before the heal feature (fail-closed)."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    bib = ('@article{pasq2019,\n'
+           '  abstract_source = {s2},\n'
+           '  abstract = {mutated text},\n'
+           '  author = {Pasquetto, Irene V.},\n'
+           '  title = {Uses and Reuses},\n'
+           '  doi = {10.1162/99608f92.fc14bf2d},\n'
+           '  year = {2019},\n'
+           '  keywords = {data-reuse, Medium}\n'
+           '}')
+    enrichment = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                  "entries": {"pasq2019": {
+                      "abstract_source": "s2", "abstract_sha256": "0" * 64}}}
+    cleaning = _cleaning(1, {"pasq2019": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1162/99608f92.fc14bf2d",
+        "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning, enrichment=enrichment)
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: ("wrong text entirely", "s2"))
+    assert evidence_barrier.execute(tmp_path, 1) == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    assert report["healed"]["literature-domain-1.bib"]["pasq2019"]["outcome"] == "unhealed"
+    assert report["stamps"]["literature-domain-1.bib"]["pasq2019"] == "EVIDENCE-EXISTENCE"
+    assert "mutated text" in (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
+
+
+def test_barrier_no_heal_attempt_without_ledger_record(tmp_path, monkeypatch):
+    """mcallister-shape (no ledger record at all): the barrier must not
+    fetch -- there is no attested hash to heal toward."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    bib = ('@article{mc2011,\n'
+           '  abstract = {hand-written text},\n'
+           '  abstract_source = {semantic_scholar},\n'
+           '  author = {McAllister, James W.},\n'
+           '  title = {Patterns},\n'
+           '  doi = {10.1007/s11229-009-9613-x},\n'
+           '  year = {2009},\n'
+           '  keywords = {patterns, Medium}\n'
+           '}')
+    cleaning = _cleaning(1, {"mc2011": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1007/s11229-009-9613-x",
+        "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning,
+            enrichment={"schema_version": 1,
+                        "bib_file": "literature-domain-1.bib", "entries": {}})
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    def fail(*a, **k):
+        raise AssertionError("no heal fetch may happen without a ledger record")
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry", fail)
+    assert evidence_barrier.execute(tmp_path, 1) == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    assert report["healed"].get("literature-domain-1.bib", {}) == {}
+    assert report["stamps"]["literature-domain-1.bib"]["mc2011"] == "EVIDENCE-EXISTENCE"
+
+
+def test_barrier_heals_quoted_style_bib_two_entries(tmp_path, monkeypatch):
+    """The Task 1 x Task 4 interaction the wild data actually has: a
+    pybtex-QUOTED bib (cleaner round-trip style), TWO entries in one
+    domain -- one heals, one stays unhealed. Catches (a) quoted-value
+    replacement inside run_barrier (no duplicate fields), (b) any
+    (i, key) skew between the attestation and output loops, and (c)
+    healed entries skipping context acquisition."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    true_text = "The original attested abstract, full and intact."
+    bib = ('@article{healme2020,\n'
+           '    author = "Doe, Jane",\n'
+           '    title = "Healable",\n'
+           '    doi = "10.1/heal",\n'
+           '    year = "2020",\n'
+           '    abstract = "mutated remnant",\n'
+           '    abstract_source = "s2",\n'
+           '    keywords = "topic, High"\n'
+           '}\n'
+           '\n'
+           '@article{leaveme2021,\n'
+           '    author = "Roe, Riley",\n'
+           '    title = "Unhealable",\n'
+           '    doi = "10.1/leave",\n'
+           '    year = "2021",\n'
+           '    abstract = "also mutated",\n'
+           '    abstract_source = "s2",\n'
+           '    keywords = "topic, Medium"\n'
+           '}')
+    enrichment = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                  "entries": {
+                      "healme2020": {"abstract_source": "s2",
+                                     "abstract_sha256": se.abstract_hash(true_text)},
+                      "leaveme2021": {"abstract_source": "s2",
+                                      "abstract_sha256": "0" * 64}}}
+    cleaning = _cleaning(1, {
+        "healme2020": {"api_matched": True, "verified_identifier": "doi",
+                       "verified_identifier_value": "10.1/heal",
+                       "entry_type": "article"},
+        "leaveme2021": {"api_matched": True, "verified_identifier": "doi",
+                        "verified_identifier_value": "10.1/leave",
+                        "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning, enrichment=enrichment)
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (true_text, "s2"))
+    assert evidence_barrier.execute(tmp_path, 1) == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    stamps = report["stamps"]["literature-domain-1.bib"]
+    assert stamps["healme2020"] == "EVIDENCE-ABSTRACT"
+    assert stamps["leaveme2021"] == "EVIDENCE-EXISTENCE"
+    # healed entries skip context acquisition
+    assert report["acquisition"]["literature-domain-1.bib"]["healme2020"] == {
+        "outcome": "not-needed"}
+    out = (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert true_text in out
+    assert out.lower().count("abstract =") == 2          # no duplicates
+    assert "also mutated" in out                          # unhealed untouched
+    # restored text landed ONLY in the healed entry
+    healme_chunk = out.split("@article{leaveme2021")[0]
+    assert true_text in healme_chunk
+
+
+def test_barrier_heals_deleted_abstract_field(tmp_path, monkeypatch):
+    """A re-emission that DELETED the abstract outright (ABSTRACT-GONE
+    shape): the heal must re-insert the field (insert branch, not
+    replace) and stamp EVIDENCE-ABSTRACT."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+    true_text = "The abstract a re-emission deleted."
+    bib = ('@article{gone2020,\n'
+           '  author = {Doe, Jane},\n'
+           '  title = {Gone},\n'
+           '  doi = {10.1/gone},\n'
+           '  year = {2020},\n'
+           '  abstract_source = {s2},\n'
+           '  keywords = {topic, High}\n'
+           '}')
+    enrichment = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                  "entries": {"gone2020": {
+                      "abstract_source": "s2",
+                      "abstract_sha256": se.abstract_hash(true_text)}}}
+    cleaning = _cleaning(1, {"gone2020": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1/gone", "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning, enrichment=enrichment)
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (true_text, "s2"))
+    assert evidence_barrier.execute(tmp_path, 1) == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    assert report["stamps"]["literature-domain-1.bib"]["gone2020"] == "EVIDENCE-ABSTRACT"
+    assert true_text in (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
