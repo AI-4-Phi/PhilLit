@@ -91,3 +91,18 @@ def test_researcher_has_edit_tool_and_guidance():
     assert "Prefer `Edit` for targeted changes" in text or "Edit` to a `.bib`" in text, (
         "new guidance about Edit post-edit validation must be present"
     )
+
+
+def test_writer_tier_rules_carry_b2_edits():
+    """Adjudication 2026-07-28 + decision b2 2026-08-01: CONTEXT
+    attribution was followed 1 of 4 times, and EXISTENCE-tier
+    over-characterization needed a title-derivable clarifier plus
+    calibration examples from the adjudicated run."""
+    path = REPO_ROOT / "agents" / "synthesis-writer.md"
+    text = path.read_text(encoding="utf-8")
+    assert "title-derivable" in text
+    assert "every sentence" in text.lower()
+    assert "Calibration examples" in text
+    assert "Sequoiah-Grayson" in text          # CONTEXT exemplar present
+    assert "announces, in its very title" in text  # EXISTENCE exemplar present
+    assert "data creators" in text             # negative exemplar present
