@@ -1,7 +1,7 @@
 ---
 name: domain-literature-researcher
 description: Conducts focused literature searches for specific domains in research. Searches SEP, IEP, PhilPapers, Semantic Scholar, OpenAlex, CORE, arXiv and produces accurate BibTeX bibliography files with rich content summaries and metadata for synthesis agents.
-tools: Bash, Glob, Grep, Read, Write, WebFetch, WebSearch
+tools: Bash, Edit, Glob, Grep, Read, Write, WebFetch, WebSearch
 model: sonnet
 permissionMode: acceptEdits
 ---
@@ -139,7 +139,7 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 
 > **Do not run `rm`.** You never need to delete anything. Leave every search-result JSON, draft, and temp file in place: Phase 6 archives review-directory files into `intermediate_files/`, and any scratchpad/temp directory is ephemeral (removed automatically). Running `rm` only triggers a permission prompt that interrupts the review for no benefit.
 
-> **CRITICAL: The Edit tool is NOT available to you.** To change a file you already wrote, rewrite the whole file with Write. Do not attempt a targeted edit.
+> **Prefer `Edit` for targeted changes to files you already wrote.** Every Edit to a `.bib` file is validated on disk immediately afterwards (post-edit hook) and blocked back to you on failure — same gate as Write. Reserve full-file `Write` for creating a file; re-writing a whole existing file risks silently corrupting content you are not looking at.
 
 > **CRITICAL: Never `cd`.** Your working directory must not change between Bash calls. Always use full `$REVIEW_DIR`-anchored paths so a later command cannot land in the wrong directory.
 
@@ -278,7 +278,7 @@ context. Note any INCOMPLETE entries in the NOTABLE_GAPS section of your
 abstract it writes by content hash; re-emitting the file re-serializes
 those abstracts from your context (straightened quotes, dropped
 sentences) and silently voids their attestation — the entries demote to
-EVIDENCE-EXISTENCE at the barrier. Concretely:
+EVIDENCE-EXISTENCE at best (EVIDENCE-NONE without a verified identifier) at the barrier. Concretely:
 
 - **Never `Write` the whole bib file again after enrichment has run.**
   Use a surgical `Edit` (exact old/new strings) for any fix — updating

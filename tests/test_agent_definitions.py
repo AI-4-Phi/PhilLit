@@ -61,3 +61,33 @@ def test_researcher_forbids_post_enrichment_reemission():
     assert "Never `Write` the whole bib file again" in text
     assert "Bash file operations" in text
     assert "surgical" in text.lower()
+
+
+def test_researcher_has_edit_tool_and_guidance():
+    """Critical finding from reviewer (2026-08-01): researchers need Edit
+    for surgical changes to .bib files after enrichment. The tool must be
+    listed in frontmatter and guidance must replace the stale "Edit is NOT
+    available" note with new guidance about post-edit validation."""
+    path = REPO_ROOT / "agents" / "domain-literature-researcher.md"
+    text = path.read_text(encoding="utf-8")
+
+    # Extract frontmatter
+    lines = text.split("\n")
+    tools_line = None
+    for line in lines:
+        if line.startswith("tools:"):
+            tools_line = line
+            break
+
+    assert tools_line is not None, "could not find 'tools:' line in frontmatter"
+    assert "Edit" in tools_line, "Edit tool must be in the frontmatter tools list"
+
+    # Verify stale guidance is gone
+    assert "The Edit tool is NOT available to you" not in text, (
+        "stale guidance asserting Edit is unavailable must be removed"
+    )
+
+    # Verify new guidance is present
+    assert "Prefer `Edit` for targeted changes" in text or "Edit` to a `.bib`" in text, (
+        "new guidance about Edit post-edit validation must be present"
+    )
