@@ -90,6 +90,14 @@ API keys are required for literature searches (see `.env.example`).
 
 Run tests with: `uv run --locked pytest`
 
+**Post-mortem forensics for headless runs:** every `claude -p` run leaves
+full transcripts under `~/.claude-work/projects/<encoded-cwd>/` —
+`<session-id>.jsonl` (main agent) plus `<session-id>/subagents/agent-*.jsonl`
+with `.meta.json` sidecars naming each subagent's domain. Tool_use blocks
+carry complete Write/Edit inputs, so you can reconstruct exactly who wrote
+what into a bib and when. Gotcha: transcript timestamps are UTC; workspace
+file mtimes are local.
+
 ## Headless review runs (free end-to-end test runs)
 
 Scaffold a scratch workspace, then drive a full review headless:
