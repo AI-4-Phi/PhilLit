@@ -48,3 +48,16 @@ def test_researcher_teaches_verify_paper_output_convention():
         "researcher agent must explicitly instruct never to redirect "
         "verify_paper.py output (e.g. `> f.json 2>&1`) instead of using --output"
     )
+
+
+def test_researcher_forbids_post_enrichment_reemission():
+    """A/B root cause 2 (2026-07-25): researchers re-emit the whole bib
+    after enrichment, silently mutating hash-attested abstracts. The
+    guidance must freeze the file, name the Write AND the Bash-workaround
+    paths, and give the surgical-Edit alternative."""
+    path = REPO_ROOT / "agents" / "domain-literature-researcher.md"
+    text = path.read_text(encoding="utf-8")
+    assert "FROZEN after enrichment" in text
+    assert "Never `Write` the whole bib file again" in text
+    assert "Bash file operations" in text
+    assert "surgical" in text.lower()

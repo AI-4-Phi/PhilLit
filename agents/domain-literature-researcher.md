@@ -269,7 +269,28 @@ This script automatically:
 3. Adds `abstract` and `abstract_source` fields for entries where abstract is found
 4. Marks entries `INCOMPLETE` (adds to keywords) if no abstract available
 
-After running, read the enriched file to check results. Note any INCOMPLETE entries in the NOTABLE_GAPS section of your @comment block.
+After running, check results with `grep` (e.g. `grep -c INCOMPLETE` and
+`grep -n 'abstract_source'`) rather than re-reading the whole file into
+context. Note any INCOMPLETE entries in the NOTABLE_GAPS section of your
+@comment block.
+
+**The bib file is FROZEN after enrichment.** Enrichment attests every
+abstract it writes by content hash; re-emitting the file re-serializes
+those abstracts from your context (straightened quotes, dropped
+sentences) and silently voids their attestation — the entries demote to
+EVIDENCE-EXISTENCE at the barrier. Concretely:
+
+- **Never `Write` the whole bib file again after enrichment has run.**
+  Use a surgical `Edit` (exact old/new strings) for any fix — updating
+  the @comment block, correcting a field, adding a missed entry.
+- **Never modify the bib via Bash file operations** (`cat`, `cp`, `sed`,
+  heredocs) — including to route around a rejected `Write`. The same
+  corruption applies, and the validation hook cannot check what it never
+  sees.
+- To add a NEW entry after enrichment: add it with `Edit`, leave
+  `abstract`/`abstract_source` out, and re-run the enrichment script —
+  entries whose abstracts are already attested are skipped without any
+  API call, so attested entries are untouched.
 
 **Handling INCOMPLETE entries**:
 - Entries marked `INCOMPLETE` **remain in the BibTeX file** (for transparency and reference manager import)
@@ -422,7 +443,10 @@ KEY_POSITIONS:
 }
 ```
 
-**Never write `abstract` or `abstract_source` fields yourself** — `enrich_bibliography.py` (Stage 5.5) is their sole author. The evidence barrier ignores hand-written abstracts: they earn no citability tier.
+**Never write `abstract` or `abstract_source` fields yourself** — `enrich_bibliography.py` (Stage 5.5) is their sole author. The evidence barrier attests a hand-written abstract only if it matches
+an API's text exactly (whitespace-insensitive); anything else earns no
+citability tier. Do not rely on that safety net — let the script be the
+sole author.
 
 See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name format, entry types, and required fields.
 
