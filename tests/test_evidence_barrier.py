@@ -497,7 +497,7 @@ def test_report_write_failure_stamps_nothing(tmp_path, monkeypatch):
 def test_barrier_heals_mutated_abstract_end_to_end(tmp_path, monkeypatch):
     """A post-attestation mutation (root cause 2) is healed at the barrier:
     text restored, EVIDENCE-ABSTRACT stamped, report records the heal."""
-    import importlib, sys as _sys
+    import sys as _sys
     _sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     import stamp_evidence as se

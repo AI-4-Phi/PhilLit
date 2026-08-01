@@ -272,6 +272,58 @@ class TestEntryModification:
         # Should only have one INCOMPLETE
         assert result.count('INCOMPLETE') == 1
 
+    def test_add_keyword_to_entry_quoted_preserves_existing_tokens(self):
+        """Quote-delimited keywords field: appending must preserve every
+        existing token (topic tags + importance level), not replace them.
+
+        Regression (reviewer-reproduced): the field-existence check only
+        matched brace-delimited `keywords = {...}`. A quote-delimited
+        field fell through to add_field_to_entry, which REPLACES a field
+        wholesale on a hit -- silently destroying all existing tokens and
+        leaving only the newly added keyword.
+        """
+        import enrich_bibliography
+
+        entry_quoted_keywords = """@article{test,
+  author = {Test},
+  title = {Test},
+  year = {2020},
+  keywords = "topic-tag, position-tag, High",
+}"""
+
+        result = enrich_bibliography.add_keyword_to_entry(
+            entry_quoted_keywords,
+            'INCOMPLETE'
+        )
+
+        assert 'topic-tag' in result
+        assert 'position-tag' in result
+        assert 'High' in result
+        assert 'INCOMPLETE' in result
+        assert result.lower().count('keywords') == 1
+
+    def test_remove_keyword_from_entry_quoted_preserves_other_tokens(self):
+        """Symmetric fix on the remove path: a quote-delimited keywords
+        field must lose only the target keyword, keeping the rest."""
+        import enrich_bibliography
+
+        entry_quoted_keywords = """@article{test,
+  author = {Test},
+  title = {Test},
+  year = {2020},
+  keywords = "topic-tag, position-tag, INCOMPLETE",
+}"""
+
+        result = enrich_bibliography.remove_keyword_from_entry(
+            entry_quoted_keywords,
+            'INCOMPLETE'
+        )
+
+        assert 'INCOMPLETE' not in result
+        assert 'topic-tag' in result
+        assert 'position-tag' in result
+        assert result.lower().count('keywords') == 1
+
 
 # =============================================================================
 # Abstract Resolution Passthrough Tests
@@ -715,6 +767,31 @@ class TestEnrichmentLedger:
 
         assert stats.get("validation_failed") is True
         assert not self._ledger_path(tmp_path).exists()
+
+    def test_undecodable_ledger_file_does_not_crash_enrichment(self, tmp_path, monkeypatch):
+        """_update_enrichment_ledger's read guard must be as wide as
+        _load_prior_ledger's: an undecodable (invalid-UTF-8) ledger file
+        raises UnicodeDecodeError, which the narrower
+        `except (json.JSONDecodeError, OSError)` clause does not catch --
+        crashing enrichment AFTER the bib write already happened. The run
+        must complete and rewrite the ledger cleanly instead."""
+        import enrich_bibliography
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_bytes(
+            b'\xff\xfe\x00invalid utf-8 \x80\x81')
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        # Must not raise.
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert ledger["entries"] == {}
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
     def test_ledger_hash_survives_pybtex_roundtrip(self, mock_resolve, tmp_path):

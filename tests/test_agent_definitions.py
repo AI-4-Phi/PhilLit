@@ -106,3 +106,7 @@ def test_writer_tier_rules_carry_b2_edits():
     assert "Sequoiah-Grayson" in text          # CONTEXT exemplar present
     assert "announces, in its very title" in text  # EXISTENCE exemplar present
     assert "data creators" in text             # negative exemplar present
+
+    planner_path = REPO_ROOT / "agents" / "synthesis-planner.md"
+    planner_text = planner_path.read_text(encoding="utf-8")
+    assert "title-derivable" in planner_text   # mirrors the writer's carve-out

@@ -361,31 +361,46 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
         return '\n'.join(lines)
 
 
+# Quote-aware keywords-field matcher: brace-delimited value in group(1),
+# quote-delimited value in group(2) (never both). Brace-only matching here
+# previously let a quote-delimited `keywords = "..."` field fall through to
+# add_field_to_entry, which REPLACES a field wholesale on a hit -- silently
+# destroying every existing token (topic tags + importance level) and
+# leaving only the newly added/removed keyword (reviewer-reproduced). Both
+# add_keyword_to_entry and remove_keyword_from_entry must find the field in
+# EITHER delimiter style and edit its value in place; only add_keyword_to_entry
+# delegates to add_field_to_entry, and only when no keywords field exists at
+# all.
+_KEYWORDS_FIELD_RE = re.compile(
+    r'keywords\s*=\s*(?:\{([^{}]*)\}|"([^"]*)")',
+    re.IGNORECASE
+)
+
+
 def remove_keyword_from_entry(entry_text: str, keyword: str) -> str:
-    """Remove a keyword from the keywords field."""
-    pattern = r'keywords\s*=\s*\{([^}]*)\}'
-    match = re.search(pattern, entry_text, re.IGNORECASE)
+    """Remove a keyword from the keywords field (brace- or quote-delimited;
+    see _KEYWORDS_FIELD_RE)."""
+    match = _KEYWORDS_FIELD_RE.search(entry_text)
 
     if not match:
         return entry_text
 
-    existing = match.group(1)
+    existing = match.group(1) if match.group(1) is not None else match.group(2)
     # Split, filter, rejoin
     keywords = [k.strip() for k in existing.split(',')]
     keywords = [k for k in keywords if k and k != keyword]
 
     if keywords:
         new_keywords = ', '.join(keywords)
-        return re.sub(
-            pattern,
-            f'keywords = {{{new_keywords}}}',
-            entry_text,
-            flags=re.IGNORECASE
+        return (
+            entry_text[:match.start()]
+            + f'keywords = {{{new_keywords}}}'
+            + entry_text[match.end():]
         )
     else:
         # Remove the entire keywords field if empty
         return re.sub(
-            r'\n\s*keywords\s*=\s*\{[^}]*\},?',
+            r'\n\s*keywords\s*=\s*(?:\{[^{}]*\}|"[^"]*"),?',
             '',
             entry_text,
             flags=re.IGNORECASE
@@ -393,20 +408,20 @@ def remove_keyword_from_entry(entry_text: str, keyword: str) -> str:
 
 
 def add_keyword_to_entry(entry_text: str, keyword: str) -> str:
-    """Add a keyword to the keywords field."""
-    # Check if keywords field exists
-    pattern = r'keywords\s*=\s*\{([^}]*)\}'
-    match = re.search(pattern, entry_text, re.IGNORECASE)
+    """Add a keyword to the keywords field (brace- or quote-delimited;
+    see _KEYWORDS_FIELD_RE). Appends inside the existing value, preserving
+    every other token; only delegates to add_field_to_entry (which
+    replaces a field wholesale) when no keywords field exists at all."""
+    match = _KEYWORDS_FIELD_RE.search(entry_text)
 
     if match:
-        existing = match.group(1)
+        existing = match.group(1) if match.group(1) is not None else match.group(2)
         if keyword not in existing:
             new_keywords = f'{existing}, {keyword}' if existing.strip() else keyword
-            return re.sub(
-                pattern,
-                f'keywords = {{{new_keywords}}}',
-                entry_text,
-                flags=re.IGNORECASE
+            return (
+                entry_text[:match.start()]
+                + f'keywords = {{{new_keywords}}}'
+                + entry_text[match.end():]
             )
         return entry_text
     else:
@@ -743,7 +758,7 @@ def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_ke
             payload = json.loads(final.read_text(encoding='utf-8'))
             candidate = payload.get('entries', {}) if isinstance(payload, dict) else {}
             old_entries = candidate if isinstance(candidate, dict) else {}
-        except (json.JSONDecodeError, OSError):
+        except (json.JSONDecodeError, OSError, UnicodeDecodeError, ValueError):
             old_entries = {}
 
     entries = {k: v for k, v in old_entries.items() if k in current_keys}
