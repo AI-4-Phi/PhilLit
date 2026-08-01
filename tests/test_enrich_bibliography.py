@@ -609,9 +609,13 @@ class TestEnrichmentLedger:
         ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
         assert "frankfurt1971freedom" in ledger["entries"]
 
-    def test_stale_keys_pruned(self, tmp_path):
+    def test_stale_keys_pruned(self, tmp_path, monkeypatch):
         """Keys no longer present in the bib are dropped from the ledger."""
         import enrich_bibliography
+        # This entry now hits the pre-filled-attestation path (Task 2) --
+        # keep this test about pruning only, not attestation, so no network.
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
 
         ledger_dir = tmp_path / "intermediate_files" / "json"
         ledger_dir.mkdir(parents=True)
@@ -628,12 +632,16 @@ class TestEnrichmentLedger:
         ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
         assert "gone2000" not in ledger["entries"]
 
-    def test_json_list_typed_ledger_recovers_instead_of_crashing(self, tmp_path):
+    def test_json_list_typed_ledger_recovers_instead_of_crashing(self, tmp_path, monkeypatch):
         """Finding 3: a malformed on-disk ledger whose top-level JSON parses
         but isn't a dict (e.g. a bare list) must fall back to an empty
         ledger, not raise AttributeError past the (JSONDecodeError, OSError)
         except clause."""
         import enrich_bibliography
+        # Pre-filled-attestation path (Task 2) would otherwise hit the API;
+        # this test is about the malformed-ledger guard, not attestation.
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
 
         ledger_dir = tmp_path / "intermediate_files" / "json"
         ledger_dir.mkdir(parents=True)
@@ -649,10 +657,14 @@ class TestEnrichmentLedger:
         ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
         assert ledger["entries"] == {}
 
-    def test_dict_ledger_with_non_dict_entries_recovers(self, tmp_path):
+    def test_dict_ledger_with_non_dict_entries_recovers(self, tmp_path, monkeypatch):
         """Same guard, other malformed shape: top-level dict but 'entries'
         itself isn't a dict."""
         import enrich_bibliography
+        # Pre-filled-attestation path (Task 2) would otherwise hit the API;
+        # this test is about the malformed-ledger guard, not attestation.
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
 
         ledger_dir = tmp_path / "intermediate_files" / "json"
         ledger_dir.mkdir(parents=True)
@@ -669,16 +681,21 @@ class TestEnrichmentLedger:
         ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
         assert ledger["entries"] == {}
 
-    def test_researcher_written_abstract_not_attested(self, tmp_path):
-        """Entry already has an abstract -> enrichment skips it -> ledger is
-        still written (always-write) but contains no entry for it."""
+    def test_researcher_written_abstract_not_attested(self, tmp_path, monkeypatch):
+        """Entry already has an abstract; the API confirms nothing (no
+        network in this unit test) -> pre-filled attestation (Task 2) is a
+        no-op -> ledger is still written (always-write) but contains no
+        entry for it, and the entry text passes through unchanged."""
         import enrich_bibliography
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
 
         bib = tmp_path / "test.bib"
         bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
 
         enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
 
+        assert bib.read_text(encoding="utf-8").strip() == SAMPLE_ENTRY_WITH_ABSTRACT.strip()
         p = self._ledger_path(tmp_path)
         assert p.exists()
         assert json.loads(p.read_text(encoding="utf-8"))["entries"] == {}
@@ -771,3 +788,178 @@ def test_add_field_replace_all_occurrences_pinned():
              '  abstract = {second}\n}')
     out = enrich_bibliography.add_field_to_entry(entry, 'abstract', 'new')
     assert out.count('abstract = {new}') == 2
+
+
+# =============================================================================
+# Pre-filled Abstract Attestation Tests (Task 2)
+# =============================================================================
+
+def _prefilled_bib(tmp_path, abstract='Same text here.', source_field='semantic_scholar'):
+    bib = tmp_path / "literature-domain-1.bib"
+    bib.write_text(
+        '@article{k1,\n'
+        '  author = {McAllister, James W.},\n'
+        '  title = {What Do Patterns Tell Us},\n'
+        '  doi = {10.1007/s11229-009-9613-x},\n'
+        f'  abstract = {{{abstract}}},\n'
+        f'  abstract_source = {{{source_field}}},\n'
+        '  keywords = {patterns, Medium}\n'
+        '}\n', encoding='utf-8')
+    return bib
+
+
+def test_prefilled_abstract_attested_on_hash_match(tmp_path, monkeypatch):
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    # Fetched text differs only in whitespace -> abstract_hash-equal.
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Same  text here.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    out = bib.read_text(encoding='utf-8')
+    assert stats['prefilled_attested'] == 1
+    assert stats['prefilled_unverified'] == 0
+    assert stats['already_had_abstract'] == 1
+    assert 'abstract_source = {s2}' in out
+    assert out.lower().count('abstract_source') == 1
+    ledger = json.loads(
+        (tmp_path / "intermediate_files" / "json"
+         / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    rec = ledger['entries']['k1']
+    assert rec['abstract_source'] == 's2'
+    from stamp_evidence import abstract_hash
+    assert rec['abstract_sha256'] == abstract_hash('Same text here.')
+
+
+def test_prefilled_abstract_mismatch_left_unattested(tmp_path, monkeypatch):
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Entirely different abstract text.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    out = bib.read_text(encoding='utf-8')
+    assert stats['prefilled_attested'] == 0
+    assert stats['prefilled_unverified'] == 1
+    assert 'abstract_source = {semantic_scholar}' in out  # untouched
+    ledger = json.loads(
+        (tmp_path / "intermediate_files" / "json"
+         / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    assert ledger['entries'] == {}  # nothing attested
+
+
+def test_prefilled_abstract_fetch_failure_is_noop(tmp_path, monkeypatch):
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    def boom(*a, **k):
+        raise RuntimeError("API down")
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry', boom)
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_unverified'] == 1
+    assert 'abstract = {Same text here.}' in bib.read_text(encoding='utf-8')
+
+
+def test_rerun_skips_already_attested_entries(tmp_path, monkeypatch):
+    """Re-running enrichment on an already-enriched file must cost ZERO
+    API calls for entries whose text the prior ledger already attests
+    (Task 5 guidance tells researchers to re-run after adding entries)."""
+    import enrich_bibliography
+    from stamp_evidence import abstract_hash
+
+    bib = _prefilled_bib(tmp_path, source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": {"abstract_source": "s2",
+                           "abstract_sha256": abstract_hash('Same text here.')}},
+    }), encoding='utf-8')
+    def fail(*a, **k):
+        raise AssertionError("attested entries must not be re-fetched")
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry', fail)
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_attested'] == 1
+    ledger = json.loads(
+        (ij / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    assert ledger['entries']['k1']['abstract_sha256'] == abstract_hash('Same text here.')
+
+
+def test_source_mismatch_falls_through_to_api_check(tmp_path, monkeypatch):
+    """Ledger says openalex, bib field says s2, hash matches: the fast
+    path must NOT fire (field==ledger-source is part of what the barrier
+    checks); the API path runs and re-normalizes the field."""
+    import enrich_bibliography
+    from stamp_evidence import abstract_hash
+
+    bib = _prefilled_bib(tmp_path, source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": {"abstract_source": "openalex",
+                           "abstract_sha256": abstract_hash('Same text here.')}},
+    }), encoding='utf-8')
+    calls = []
+    def resolver(*a, **k):
+        calls.append(1)
+        return ('Same text here.', 'openalex')
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry', resolver)
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert calls, "API check must run on source mismatch"
+    assert stats['prefilled_attested'] == 1
+    assert 'abstract_source = {openalex}' in bib.read_text(encoding='utf-8')
+
+
+def test_drifted_text_keeps_prior_ledger_record(tmp_path, monkeypatch):
+    """Pre-filled text that matches NOTHING (drifted since attestation)
+    stays unattested -- but the PRIOR ledger record must survive the
+    merge, or the barrier's self-heal has nothing to heal toward."""
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path, abstract='Drifted mutated text.',
+                         source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": {"abstract_source": "s2",
+                           "abstract_sha256": "a" * 64}},
+    }), encoding='utf-8')
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('The true original text.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_unverified'] == 1
+    ledger = json.loads(
+        (ij / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    assert ledger['entries']['k1']['abstract_sha256'] == "a" * 64  # preserved
+
+
+def test_non_dict_ledger_value_degrades_to_api_check(tmp_path, monkeypatch):
+    """A malformed ledger record (string value) must not crash the run --
+    it degrades to the API path (review finding 1b)."""
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path, source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": "garbage"},
+    }), encoding='utf-8')
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Same text here.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_attested'] == 1  # API path attested it
+
+
+def test_resolver_none_source_rejected(tmp_path, monkeypatch):
+    """(text, None) from the resolver must not attest (the `not source`
+    guard) -- a sourceless record would fail attest_abstract anyway."""
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Same text here.', None))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_unverified'] == 1

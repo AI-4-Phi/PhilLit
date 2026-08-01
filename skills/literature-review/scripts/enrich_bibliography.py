@@ -414,6 +414,48 @@ def enrich_entry(
         return entry_text, False, None
 
 
+def attest_prefilled_entry(
+    entry: dict,
+    s2_api_key: Optional[str],
+    openalex_email: Optional[str],
+    core_api_key: Optional[str],
+    debug: bool = False,
+    ledger_writes: Optional[dict] = None,
+) -> tuple[str, bool]:
+    """Attest an entry whose abstract was written by the researcher.
+
+    The enrichment skip path made such abstracts structurally
+    unattestable (2026-07-25 A/B root cause 1: mcallister2011patterns).
+    Fetches the abstract from the APIs; if the fetched text hash-matches
+    the pre-filled text (whitespace/backslash-insensitive), records the
+    ledger attestation and normalizes abstract_source to the canonical
+    source. Any miss is a no-op: fail-closed, unattested stays unattested.
+
+    Returns (entry_text, attested).
+    """
+    entry_text = entry['raw']
+    existing = entry['fields'].get('abstract', '')
+    log_progress(f"Attesting pre-filled abstract for: {entry['key']}")
+    try:
+        fetched, source = resolve_abstract_for_entry(
+            entry, s2_api_key, openalex_email, core_api_key, debug)
+    except Exception as e:
+        log_progress(f"  Attestation fetch failed ({e}) -- left unattested")
+        return entry_text, False
+    if not fetched or not source or (
+            abstract_hash(fetched) != abstract_hash(existing)):
+        log_progress("  Pre-filled abstract matches no API text -- left unattested")
+        return entry_text, False
+    entry_text = add_field_to_entry(entry_text, 'abstract_source', source)
+    if ledger_writes is not None:
+        ledger_writes[entry['key']] = {
+            "abstract_source": source,
+            "abstract_sha256": abstract_hash(existing),
+        }
+    log_progress(f"  Pre-filled abstract attested via {source}")
+    return entry_text, True
+
+
 # =============================================================================
 # Main Processing
 # =============================================================================
@@ -449,6 +491,8 @@ def enrich_bibliography(
         'enriched': 0,
         'marked_incomplete': 0,
         'skipped': 0,
+        'prefilled_attested': 0,
+        'prefilled_unverified': 0,
         'sources': {'s2': 0, 'openalex': 0, 'core': 0, 'ndpr': 0}
     }
 
@@ -457,6 +501,7 @@ def enrich_bibliography(
     # run wrote (shared-contract "Enrichment ledger" schema); merged with any
     # prior ledger by _update_enrichment_ledger at the end of this function.
     ledger_writes: dict = {}
+    prior_ledger = _load_prior_ledger(output_path or input_path)
 
     for entry in entries:
         # Skip comments
@@ -465,10 +510,30 @@ def enrich_bibliography(
             stats['skipped'] += 1
             continue
 
-        # Check if already has abstract
+        # Entry already has an abstract. If the prior ledger already
+        # attests exactly this text and source, it needs no re-check --
+        # re-running enrichment must not re-fetch attested entries.
+        # Otherwise (researcher-transcribed, or text drifted) try to
+        # attest it in place instead of skipping -- a correct pre-filled
+        # abstract was otherwise structurally unattestable (A/B root
+        # cause 1). Fail-closed: on any miss the entry is untouched.
         if has_abstract(entry):
-            enriched_entries.append(entry['raw'])
+            prior = prior_ledger.get(entry['key']) or {}
+            cur_source = (entry['fields'].get('abstract_source') or '').strip().lower()
+            if (prior.get('abstract_sha256') == abstract_hash(entry['fields']['abstract'])
+                    and cur_source
+                    and cur_source == (prior.get('abstract_source') or '').strip().lower()):
+                enriched_entries.append(entry['raw'])
+                stats['already_had_abstract'] += 1
+                stats['prefilled_attested'] += 1
+                continue
+            new_text, attested = attest_prefilled_entry(
+                entry, s2_api_key, openalex_email, core_api_key, debug,
+                ledger_writes=ledger_writes)
+            enriched_entries.append(new_text)
             stats['already_had_abstract'] += 1
+            stats['prefilled_attested' if attested
+                  else 'prefilled_unverified'] += 1
             continue
 
         # Try to enrich
@@ -582,6 +647,31 @@ def enrich_bibliography(
     log_progress(f"Stats: {stats['enriched']} enriched, {stats['marked_incomplete']} incomplete, {stats['already_had_abstract']} already had abstract")
 
     return stats
+
+
+def _load_prior_ledger(output_path: Path) -> dict:
+    """The existing enrichment ledger's entries dict ({} if absent or
+    malformed). Used to skip API calls for entries a prior run already
+    attested -- re-running enrichment must stay cheap.
+
+    Non-dict values are dropped, not passed through: a malformed record
+    must degrade to "not attested" (an API re-check), never crash the
+    run. NOTE the trust model: this file is agent-writable and is the
+    attestation authority for the zero-fetch fast path, the same trust
+    boundary the evidence barrier already places on it.
+    """
+    final = (output_path.parent / "intermediate_files" / "json"
+             / f"enrichment_ledger-{output_path.stem}.json")
+    if not final.exists():
+        return {}
+    try:
+        payload = json.loads(final.read_text(encoding='utf-8'))
+        entries = payload.get('entries', {}) if isinstance(payload, dict) else {}
+        if not isinstance(entries, dict):
+            return {}
+        return {k: v for k, v in entries.items() if isinstance(v, dict)}
+    except (json.JSONDecodeError, OSError, UnicodeDecodeError, ValueError):
+        return {}
 
 
 def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_keys: set) -> None:
