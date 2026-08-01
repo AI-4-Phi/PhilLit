@@ -244,6 +244,44 @@ def resolve_ndpr_abstract(
 # BibTeX Modification
 # =============================================================================
 
+def _field_value_end(entry_text: str, value_start: int):
+    """Index just past the closing delimiter of a field value that begins
+    at value_start, or None if it can't be bounded there (no recognizable
+    delimiter, or an unbalanced brace-delimited value).
+
+    Brace-delimited values are bounded by explicit depth counting, not a
+    regex character class -- a class like `(?:[^{}]|\\{[^{}]*\\})*` only
+    tolerates ONE level of interior nesting; deepening it just moves the
+    wall further out, it never removes it (review finding 1, Task 4: a
+    two-level-nested existing abstract like
+    `{We show {\\it Kant's {a priori}} fails.}` silently failed to match,
+    falling through to the insert branch below and leaving BOTH the stale
+    and the newly inserted field in the entry -- a duplicate `abstract =`
+    that pybtex rejects, invisible to `stamp_evidence.parse_entry_fields`'
+    own one-level-tolerant regex, which is why the stamp went out wrong
+    too). Depth counting handles nesting at any depth because it isn't
+    matching a fixed shape -- it just tracks a counter.
+    """
+    if value_start >= len(entry_text):
+        return None
+    delim = entry_text[value_start]
+    if delim == '{':
+        depth = 0
+        for i in range(value_start, len(entry_text)):
+            c = entry_text[i]
+            if c == '{':
+                depth += 1
+            elif c == '}':
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+        return None  # unbalanced -- can't safely bound this occurrence
+    if delim == '"':
+        end = entry_text.find('"', value_start + 1)
+        return None if end == -1 else end + 1
+    return None
+
+
 def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> str:
     """Add or update a field in a BibTeX entry.
 
@@ -254,19 +292,34 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
     """
     # Check if field already exists -- brace- OR quote-delimited (pybtex's
     # writer emits quoted values on round-trip; researchers hand-write both
-    # forms). One-level brace nesting, same tolerance as
-    # stamp_evidence._FIELD_RE.
-    pattern = (rf'(\s+){field_name}\s*=\s*'
-               r'(?:\{(?:[^{}]|\{[^{}]*\})*\}|"[^"]*")')
-    if re.search(pattern, entry_text, re.IGNORECASE):
+    # forms). Brace-delimited values are located by depth-counting
+    # (_field_value_end), not a shallow-nesting regex, so an existing value
+    # nested at ANY depth is found and replaced whole rather than silently
+    # missed. Every occurrence of the field is replaced (not just the
+    # first) -- pinned by
+    # tests/test_enrich_bibliography.py::test_add_field_replace_all_occurrences_pinned,
+    # which documents that callers rely on entry_text being a SINGLE entry.
+    head_pattern = re.compile(rf'(\s+){re.escape(field_name)}\s*=\s*', re.IGNORECASE)
+    pieces = []
+    pos = 0
+    replaced_any = False
+    while True:
+        m = head_pattern.search(entry_text, pos)
+        if not m:
+            break
+        value_end = _field_value_end(entry_text, m.end())
+        if value_end is None:
+            break  # can't safely bound this occurrence -- stop; fall through
+        pieces.append(entry_text[pos:m.start(1)])
+        pieces.append(m.group(1))
         # Function replacement, NOT a template string: abstracts carry
         # LaTeX backslashes, and a template would interpret \1, \g<...>.
-        return re.sub(
-            pattern,
-            lambda m: f'{m.group(1)}{field_name} = {{{field_value}}}',
-            entry_text,
-            flags=re.IGNORECASE
-        )
+        pieces.append(f'{field_name} = {{{field_value}}}')
+        pos = value_end
+        replaced_any = True
+    if replaced_any:
+        pieces.append(entry_text[pos:])
+        return ''.join(pieces)
     else:
         # Add new field immediately after the entry's opening line (@type{key,).
         # The opening line is never inside a field value, so a multi-line value

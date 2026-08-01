@@ -777,6 +777,29 @@ def test_add_field_replaces_braced_value_with_nested_braces():
     assert 'nested' not in out
 
 
+def test_add_field_replaces_two_level_nested_braced_value():
+    """Review finding 1 (Task 4): a value nested TWO levels deep -- e.g. a
+    LaTeX emphasis command wrapping a further-nested phrase -- fails the
+    old one-level-tolerant regex outright, falling through to the insert
+    branch and leaving the stale field behind (a duplicate `abstract =`
+    pybtex rejects). The depth-counting locator must find and replace it
+    whole, regardless of nesting depth."""
+    import enrich_bibliography
+
+    entry = (
+        "@article{k1,\n"
+        "  abstract = {We show {\\it Kant's {a priori}} fails.},\n"
+        "  title = {T}\n"
+        "}"
+    )
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', 'replaced')
+    assert out.count('abstract =') == 1
+    assert 'abstract = {replaced}' in out
+    assert 'Kant' not in out
+    from pybtex.database import parse_string
+    parse_string(out, bib_format='bibtex')  # must not raise (no duplicate field)
+
+
 def test_add_field_replace_all_occurrences_pinned():
     """Pins existing semantics: re.sub without count replaces EVERY
     occurrence of the field within the entry text. Callers rely on

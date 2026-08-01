@@ -714,3 +714,157 @@ def test_barrier_heals_deleted_abstract_field(tmp_path, monkeypatch):
                          / "evidence_report.json").read_text(encoding="utf-8"))
     assert report["stamps"]["literature-domain-1.bib"]["gone2020"] == "EVIDENCE-ABSTRACT"
     assert true_text in (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
+
+
+# --- Review round 2 (2026-08-01): fix-verification tests -------------------
+
+def test_barrier_heals_two_level_nested_mutated_abstract_end_to_end(tmp_path, monkeypatch):
+    """Review finding 1's own reproduction case, run end-to-end through the
+    REAL (fixed) add_field_to_entry -- no monkeypatch of the splice itself.
+    The CURRENT (mutated) abstract is nested two levels deep, which the
+    old shallow-nesting regex silently failed to locate, falling through
+    to the insert branch and leaving a duplicate `abstract =` field (a
+    file pybtex rejects) with a FALSE EVIDENCE-ABSTRACT stamp. With the
+    depth-counting locator, this must heal cleanly: single field, restored
+    text, parseable output."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    true_text = "The plain original abstract, no braces at all."
+    mutated = "We show {\\it Kant's {a priori}} fails."
+    bib = ('@article{nested2020,\n'
+           '  author = {Doe, Jane},\n'
+           '  title = {Nested},\n'
+           '  doi = {10.1/nested},\n'
+           '  year = {2020},\n'
+           f'  abstract = {{{mutated}}},\n'
+           '  abstract_source = {s2},\n'
+           '  keywords = {topic, High}\n'
+           '}')
+    enrichment = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                  "entries": {"nested2020": {
+                      "abstract_source": "s2",
+                      "abstract_sha256": se.abstract_hash(true_text)}}}
+    cleaning = _cleaning(1, {"nested2020": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1/nested", "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning, enrichment=enrichment)
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (true_text, "s2"))
+    assert evidence_barrier.execute(tmp_path, 1) == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    assert report["healed"]["literature-domain-1.bib"]["nested2020"] == {
+        "outcome": "restored", "source": "s2"}
+    assert report["stamps"]["literature-domain-1.bib"]["nested2020"] == "EVIDENCE-ABSTRACT"
+    out = (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert true_text in out
+    assert "Kant" not in out
+    assert out.count("abstract =") == 1  # no duplicate field
+    from pybtex.database import parse_string
+    parse_string(out, bib_format="bibtex")  # must not raise
+
+
+def test_barrier_guard_drops_heal_on_unbalanced_restored_value(tmp_path, monkeypatch):
+    """Even after the depth-counting locator fix, a restored value that
+    itself contains an unbalanced brace (a malformed API response, say)
+    would splice into a syntactically broken chunk that the field-count
+    check alone can't see (count is still exactly 1). The Task-4-local
+    well-formedness guard must catch this via the pybtex parseability
+    check, drop the heal, demote the entry, and correct the report."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    # The ledger attests exactly this (unbalanced) text -- hash-gated
+    # legitimacy, independent of whether it happens to be well-formed.
+    broken_text = "Restored text with a rogue { brace."
+    bib = ('@article{broken2020,\n'
+           '  author = {Doe, Jane},\n'
+           '  title = {Broken},\n'
+           '  doi = {10.1/broken},\n'
+           '  year = {2020},\n'
+           '  abstract = {mutated text},\n'
+           '  abstract_source = {s2},\n'
+           '  keywords = {topic, High}\n'
+           '}')
+    enrichment = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                  "entries": {"broken2020": {
+                      "abstract_source": "s2",
+                      "abstract_sha256": se.abstract_hash(broken_text)}}}
+    cleaning = _cleaning(1, {"broken2020": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1/broken", "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning, enrichment=enrichment)
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (broken_text, "s2"))
+    assert evidence_barrier.execute(tmp_path, 1) == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    assert report["healed"]["literature-domain-1.bib"]["broken2020"] == {
+        "outcome": "unhealed", "source": "s2"}
+    assert report["stamps"]["literature-domain-1.bib"]["broken2020"] == "EVIDENCE-EXISTENCE"
+    out = (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert out.count("abstract =") == 1
+    assert "mutated text" in out          # original text left in place
+    assert "rogue" not in out             # broken restore never landed
+    from pybtex.database import parse_string
+    parse_string(out, bib_format="bibtex")  # must not raise
+
+
+def test_barrier_rederivation_demotes_when_splice_is_noop(tmp_path, monkeypatch):
+    """Regression coverage for the defense-in-depth re-derivation line
+    (review finding 2): with add_field_to_entry monkeypatched to a no-op,
+    the heal splice never lands, yet the attestation-loop flag was set
+    True when the fetch hash-matched. The FINAL text must be what decides
+    the stamp: demoted to EVIDENCE-EXISTENCE with abstract_attested False.
+    Deleting `att.abstract_attested = se.attest_abstract(...)` in the
+    output-build loop turns this test red (confirmed by hand)."""
+    import sys as _sys
+    _sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    true_text = "The original attested abstract text, restored."
+    bib = ('@article{pasq2019,\n'
+           '  abstract_source = {s2},\n'
+           '  abstract = {mutated text},\n'
+           '  author = {Pasquetto, Irene V.},\n'
+           '  title = {Uses and Reuses},\n'
+           '  doi = {10.1162/99608f92.fc14bf2d},\n'
+           '  year = {2019},\n'
+           '  keywords = {data-reuse, Medium}\n'
+           '}')
+    enrichment = {"schema_version": 1, "bib_file": "literature-domain-1.bib",
+                  "entries": {"pasq2019": {
+                      "abstract_source": "s2",
+                      "abstract_sha256": se.abstract_hash(true_text)}}}
+    cleaning = _cleaning(1, {"pasq2019": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1162/99608f92.fc14bf2d",
+        "entry_type": "article"}})
+    _domain(tmp_path, 1, bib, cleaning=cleaning, enrichment=enrichment)
+    monkeypatch.setattr(evidence_barrier.rc, "fetch_articles",
+                        lambda slugs, debug=False: ({}, []))
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (true_text, "s2"))
+    # The splice never lands: add_field_to_entry becomes a no-op. (The
+    # attestation loop already recorded "restored" -- production code
+    # never no-ops here, so the report keeping that label is an accepted
+    # test-only residual; what this test pins is the STAMP outcome.)
+    monkeypatch.setattr(evidence_barrier, "add_field_to_entry",
+                        lambda text, *a, **k: text)
+
+    assert evidence_barrier.execute(tmp_path, 1) == 0
+    report = json.loads((tmp_path / "intermediate_files" / "json"
+                         / "evidence_report.json").read_text(encoding="utf-8"))
+    assert report["stamps"]["literature-domain-1.bib"]["pasq2019"] == "EVIDENCE-EXISTENCE"
+    att = report["attestations"]["literature-domain-1.bib"]["pasq2019"]
+    assert att["abstract_attested"] is False

@@ -16,6 +16,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -58,6 +59,36 @@ def _parseable_bib(path: Path) -> bool:
         return True
     except (PybtexError, OSError, UnicodeDecodeError):
         return False
+
+
+_ABSTRACT_FIELD_RE = re.compile(r'\babstract\s*=', re.IGNORECASE)
+
+
+def _heal_splice_is_well_formed(chunk: str) -> bool:
+    """Defense-in-depth check run after a heal splice (review finding 1b):
+    the splice must have produced EXACTLY ONE `abstract =` field, AND the
+    resulting single-entry chunk must be pybtex-parseable.
+
+    Neither check alone suffices. A duplicate field -- the exact review
+    finding 1 shape, a stale nested-brace field the locator couldn't bound
+    left behind alongside a newly INSERTED one -- is not guaranteed to
+    raise in pybtex, so the count is the guaranteed catch for that case.
+    Conversely a restored value that itself contains an unbalanced brace
+    produces a single (correctly-counted) but unparseable field, which
+    only the pybtex check catches. Fail-closed: any exception from pybtex
+    counts as NOT well-formed. (Accepted residual: a restored abstract
+    whose prose happens to literally contain the substring "abstract ="
+    would trip the count and spuriously drop a good heal -- fail-closed is
+    the right default here.)
+    """
+    if len(_ABSTRACT_FIELD_RE.findall(chunk)) != 1:
+        return False
+    from pybtex.database import parse_string
+    try:
+        parse_string(chunk, bib_format="bibtex")
+    except Exception:
+        return False
+    return True
 
 
 def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
@@ -263,8 +294,19 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 chunk = add_field_to_entry(chunk, cv[0], cv[1])
             h = healed.get((i, key))
             if h:
+                pre_heal_chunk = chunk
                 chunk = add_field_to_entry(chunk, "abstract", h[0])
                 chunk = add_field_to_entry(chunk, "abstract_source", h[1])
+                if not _heal_splice_is_well_formed(chunk):
+                    # The splice did not land cleanly -- never emit a bib
+                    # the real parser rejects (or a hidden duplicate
+                    # field). Drop the heal: revert to the pre-splice
+                    # chunk, let the entry demote via the re-derivation
+                    # below, and correct the report so it never claims a
+                    # restore that did not land (review finding 1b).
+                    chunk = pre_heal_chunk
+                    report["healed"][bib_name][key] = {
+                        "outcome": "unhealed", "source": h[1]}
             fields = se.parse_entry_fields(chunk)
             att = atts[i].get(key) or se.EntryAttestation()
             # Re-derive from the final text: the stamp must never trust a
