@@ -21,6 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import enrich_bibliography as eb
 from enrich_bibliography import add_field_to_entry
 import resolve_context as rc
 import stamp_evidence as se
@@ -57,6 +58,45 @@ def _parseable_bib(path: Path) -> bool:
         return True
     except (PybtexError, OSError, UnicodeDecodeError):
         return False
+
+
+def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
+    """Restore an attested abstract after a post-attestation mutation.
+
+    A/B root cause 2 (2026-07-25, domain 5): a researcher re-emitted its
+    bib after enrichment and mutated 7 attested abstracts. Re-fetch by the
+    entry's identifiers; the gate is HASH EQUALITY with the ledger value,
+    so which API returns the text is irrelevant to integrity. Returns the
+    restored text or None. Never raises (fail-closed: no heal, entry
+    proceeds unattested exactly as before this feature). The resolver
+    stub below assumes resolve_abstract_for_entry reads only
+    entry['fields'] (true today) -- if it ever reads key/raw, resolution
+    degrades to a failed heal, never a crash.
+    """
+    if not isinstance(ledger_entry, dict):
+        return None
+    target = ledger_entry.get("abstract_sha256")
+    source = (ledger_entry.get("abstract_source") or "").strip().lower()
+    if not target or not source:
+        return None
+    entry = {"key": "", "fields": fields, "raw": ""}
+    try:
+        if source == "ndpr":
+            fetched, _ = eb.resolve_ndpr_abstract(
+                fields.get("title", ""), eb.get_author_last_name(entry), debug)
+        else:
+            fetched, _ = eb.resolve_abstract_for_entry(
+                entry,
+                os.environ.get("S2_API_KEY", ""),
+                os.environ.get("OPENALEX_EMAIL", ""),
+                os.environ.get("CORE_API_KEY", ""),
+                debug,
+            )
+    except Exception:
+        return None
+    if fetched and se.abstract_hash(fetched) == target:
+        return fetched
+    return None
 
 
 def _att_blob(att: se.EntryAttestation, enrich_entry, context_value):

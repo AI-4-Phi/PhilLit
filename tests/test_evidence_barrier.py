@@ -336,6 +336,83 @@ def test_unparseable_bib_marked_malformed_and_untouched(tmp_path):
 
 # --- In-process tests: import evidence_barrier, monkeypatch, call execute ---
 
+def test_heal_abstract_restores_on_hash_match(monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+    true_text = "The original attested abstract text."
+    ledger_entry = {"abstract_source": "s2",
+                    "abstract_sha256": se.abstract_hash(true_text)}
+    fields = {"title": "T", "author": "Doe, Jane",
+              "doi": "10.1/x", "year": "2020",
+              "abstract": "The mutated abstract text."}
+    monkeypatch.setattr(
+        evidence_barrier.eb, "resolve_abstract_for_entry",
+        lambda *a, **k: (true_text, "openalex"))
+    assert evidence_barrier._heal_abstract(fields, ledger_entry) == true_text
+
+
+def test_heal_abstract_refuses_on_hash_mismatch(monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    ledger_entry = {"abstract_source": "s2", "abstract_sha256": "0" * 64}
+    fields = {"title": "T", "doi": "10.1/x", "abstract": "whatever"}
+    monkeypatch.setattr(
+        evidence_barrier.eb, "resolve_abstract_for_entry",
+        lambda *a, **k: ("some other text", "s2"))
+    assert evidence_barrier._heal_abstract(fields, ledger_entry) is None
+
+
+def test_heal_abstract_never_raises(monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    ledger_entry = {"abstract_source": "s2", "abstract_sha256": "0" * 64}
+    def boom(*a, **k):
+        raise RuntimeError("network down")
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry", boom)
+    assert evidence_barrier._heal_abstract({"title": "T", "doi": "10.1/x"},
+                                           ledger_entry) is None
+
+
+def test_heal_abstract_uses_ndpr_resolver_for_ndpr_source(monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+    true_text = "Reviewer summary text from NDPR."
+    ledger_entry = {"abstract_source": "ndpr",
+                    "abstract_sha256": se.abstract_hash(true_text)}
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_ndpr_abstract",
+                        lambda *a, **k: (true_text, "ndpr"))
+    def fail(*a, **k):
+        raise AssertionError("API resolver must not be called for ndpr")
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry", fail)
+    fields = {"title": "Book Title", "author": "Doe, Jane"}
+    assert evidence_barrier._heal_abstract(fields, ledger_entry) == true_text
+
+
+def test_heal_abstract_non_dict_ledger_entry_is_none(monkeypatch):
+    """Malformed ledger record (review finding 1b): never raises."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    def fail(*a, **k):
+        raise AssertionError("no fetch may happen for a malformed record")
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry", fail)
+    assert evidence_barrier._heal_abstract({"title": "T"}, "garbage") is None
+    assert evidence_barrier._heal_abstract({"title": "T"}, None) is None
+
+
+def test_heal_abstract_missing_source_is_none(monkeypatch):
+    """A record with a hash but no abstract_source cannot be healed
+    (the restored field could not satisfy attest_abstract anyway)."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    def fail(*a, **k):
+        raise AssertionError("no fetch without a recorded source")
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_abstract_for_entry", fail)
+    assert evidence_barrier._heal_abstract(
+        {"title": "T"}, {"abstract_sha256": "0" * 64}) is None
+
+
 # Real fetch_sep.py article shape: sections keyed by id with
 # {"id", "title", "content"}; bibliography items {"raw", "parsed", "confidence"}.
 KUHN_ARTICLE = {
