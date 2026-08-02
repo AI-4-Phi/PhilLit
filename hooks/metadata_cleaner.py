@@ -211,7 +211,11 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
 
 # Integral-year grammar for _year_key: optional sign, digits, and an
 # optional ALL-ZERO fractional part. Deliberately excludes exponent notation.
-_INTEGRAL_YEAR_RE = re.compile(r"^([+-]?)(\d+)(?:\.(0*))?$")
+# Integral-year grammar for _year_key: optional sign, ASCII digits, and an
+# optional fractional part of one-or-more zeros. `[0-9]` not `\d` (which also
+# matches non-ASCII decimal digits that lstrip("0") would not normalize), and
+# `0+` not `0*` so a bare trailing dot ("2007.") is NOT treated as integral.
+_INTEGRAL_YEAR_RE = re.compile(r"^([+-]?)([0-9]+)(?:\.0+)?$")
 
 
 def _year_key(value) -> str:
@@ -221,11 +225,14 @@ def _year_key(value) -> str:
     (2007) or a float (2007.0) depending on how a producer parsed it. Compare
     those equal instead of registering a phantom disagreement.
 
-    EXACT BY CONSTRUCTION - deliberately not float-based. float() cannot
-    represent large integers, so a float round-trip turns 9007199254740993
-    into ...992 and collapses "2007.0000000000001" to "2007".
-    plan_entry_cleaning WRITES this value into the .bib as the corrected
-    year, so the canonicalizer must never invent one. Match sign + digits +
+    Canonicalizes WITHOUT a binary-float round-trip, so a string or an
+    arbitrary-precision int is never rewritten into a different number:
+    str(int(float("9007199254740993"))) is ...992, and float() collapses
+    "2007.0000000000001" to "2007". Note the limit of that guarantee - if the
+    JSON loader already parsed the value INTO a float, the precision is gone
+    before this function sees it; only `parse_float=Decimal` would preserve
+    it. Exactness here means "adds no new rounding", not "recovers what json
+    already discarded". Match sign + digits +
     an optional all-zero fractional part; return the digits with sign and
     leading zeros normalized. Everything else - "2007.5", "n.d.", "MMVII",
     "2,007" - round-trips verbatim. Exponent notation ("2.007e3", "1e999") is
@@ -240,8 +247,10 @@ def _year_key(value) -> str:
     match = _INTEGRAL_YEAR_RE.match(text)
     if not match:
         return text
-    sign, digits, _zero_fraction = match.groups()
-    return ("-" if sign == "-" else "") + (digits.lstrip("0") or "0")
+    sign, digits = match.group(1), match.group(2)
+    digits = digits.lstrip("0") or "0"
+    # -0 and 0 are the same year; do not let a sign survive on zero.
+    return ("-" if sign == "-" and digits != "0" else "") + digits
 
 
 def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
@@ -658,6 +667,16 @@ def _normalize_title(title: str) -> str:
     return ' '.join(''.join(out).casefold().split())
 
 
+# Fields an api_entry supplies for verification. Used to compare how COMPLETE
+# two equally-authoritative records are before swapping between them.
+_AUTHORITY_FIELDS = ("container_title", "volume", "issue", "pages", "publisher")
+
+
+def _record_completeness(record: dict) -> int:
+    """How many verification-bearing fields this record actually supplies."""
+    return sum(1 for name in _AUTHORITY_FIELDS if record.get(name))
+
+
 def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
     """Find THIS bib entry's own API record in the index (entry-scoped
     evidence, item-13 A4.1): first by DOI (exact normalized match), else by
@@ -682,34 +701,48 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
             # this DOI: it carries correction authority and settles a
             # same-DOI disagreement on its own.
             if api.get("entry_scoped"):
-                # ...but only when the scoped records AGREE. Two verify_*
-                # snapshots can differ (CrossRef corrects records between
-                # crawls; a partial response can be persisted; print vs
-                # online dates get selected differently). Letting filename
-                # order pick the winner would restore the arbitrary-authority
-                # bug one tier up - where it CAN rewrite the bib year.
+                # A scoped record settles a same-DOI disagreement only when it
+                # actually SUPPLIES a year, and only when the scoped records
+                # agree. Two verify_* snapshots can differ (CrossRef corrects
+                # records between crawls; a partial response can be persisted;
+                # print vs online dates get selected differently) - letting
+                # filename order pick the winner would restore the
+                # arbitrary-authority bug one tier up, where it CAN rewrite
+                # the bib year.
                 scoped = [
                     other for other in index.entries
                     if other.get("entry_scoped")
                     and _field_matches_api('doi', doi_value, other)
                 ]
+                # Canonicalize BEFORE testing emptiness: `" "` is raw-truthy
+                # but is not a year, and must not read as a disagreement.
                 scoped_years = {
-                    _year_key(other["year"]) for other in scoped
-                    if other.get("year")
+                    key for key in
+                    (_year_key(other.get("year") or "") for other in scoped)
+                    if key
                 }
                 if len(scoped_years) > 1:
                     return None
-                # Prefer a scoped record that HAS a year: otherwise a partial
-                # snapshot sorting first silently suppresses the correction a
-                # complete one would authorize. (Two scoped records agreeing
-                # on year but differing on journal/volume/pages are still
-                # first-wins - a documented residual needing a full
-                # selection policy.)
-                if not api.get("year") and scoped_years:
-                    for other in scoped:
-                        if other.get("year"):
-                            return other
-                return api
+                if scoped_years:
+                    # Prefer a scoped record that HAS a year, so a partial
+                    # snapshot sorting first cannot silently suppress the
+                    # correction a complete one would authorize - but NEVER
+                    # swap to a LESS complete record: the winner governs
+                    # verification of every field, so trading completeness
+                    # for a year would delete metadata the first record
+                    # verified. (Equally complete records agreeing on year
+                    # but differing on journal/volume/pages remain
+                    # first-wins: a documented residual.)
+                    if not _year_key(api.get("year") or ""):
+                        for other in scoped:
+                            if (_year_key(other.get("year") or "")
+                                    and _record_completeness(other)
+                                    >= _record_completeness(api)):
+                                return other
+                    return api
+                # Every scoped record is yearless: none of them can say which
+                # of two disagreeing broad years is right, so fall through to
+                # the pooled-conflict check rather than granting authority.
             # No authority, and the pooled sources disagree: there is no basis
             # to prefer either record, so abstain. Return None WITHOUT falling
             # through to the title+year heuristic below - when the bib's own
@@ -821,7 +854,12 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         # always one the record actually supplied.
         api_year = _year_key(api_entry["year"])
         bib_year = entry.fields.get('year', '')
-        if bib_year and _year_key(bib_year) != api_year:
+        # A comparison KEY is not automatically a writable value. `" "` is
+        # raw-truthy but canonicalizes to "", and "n.d."/"2007." round-trip
+        # verbatim - writing any of those would corrupt or empty a populated
+        # year. Only a valid integral canonical year may be written.
+        if (api_year.lstrip("-").isdigit()
+                and bib_year and _year_key(bib_year) != api_year):
             plan["year_corrected"] = (bib_year, api_year)
 
     surviving: set = set()

@@ -334,7 +334,10 @@ def build_metadata_index(json_dir: Path) -> MetadataIndex:
     for json_file in json_dir.glob("*.json"):
         try:
             data = json.loads(json_file.read_text(encoding='utf-8'))
-        except (json.JSONDecodeError, UnicodeDecodeError):
+        except (json.JSONDecodeError, UnicodeDecodeError, OSError):
+            # Unreadable is also "could not be parsed" - record it, so the
+            # skip is countable rather than silent.
+            index.skipped_files.append(json_file.name)
             continue
 
         # A non-object envelope has no "results" to parse - a researcher's
@@ -369,56 +372,86 @@ def build_metadata_index(json_dir: Path) -> MetadataIndex:
             index.skipped_files.append(json_file.name)
             continue
 
-        # Add entries to index
-        for entry in entries:
-            index.entries.append(entry)
+        # Stage into a throwaway index and merge only on complete success.
+        # Indexing itself can raise on a badly typed field, and ingesting
+        # straight into `index` would leave a half-read file's records behind
+        # - a file reported as skipped would still be supplying evidence.
+        staged = MetadataIndex()
+        try:
+            _index_entries(staged, entries)
+        except Exception:
+            index.skipped_files.append(json_file.name)
+            continue
+        _merge_index(index, staged)
 
-            # Index journal/container title
-            if entry.container_title:
-                norm = normalize_journal(entry.container_title)
-                if norm not in index.journals:
-                    index.journals[norm] = []
-                index.journals[norm].append((entry.container_title, entry.source_file))
+    return index
 
-            # Index volume
-            if entry.volume:
-                vol = str(entry.volume).strip()
-                if vol not in index.volumes:
-                    index.volumes[vol] = []
-                index.volumes[vol].append(entry.source_file)
 
-            # Index issue
-            if entry.issue:
-                iss = str(entry.issue).strip()
-                if iss not in index.issues:
-                    index.issues[iss] = []
-                index.issues[iss].append(entry.source_file)
+def _merge_index(dst: MetadataIndex, src: MetadataIndex) -> None:
+    """Fold a fully-indexed file's staged records into the shared index.
 
-            # Index pages
-            if entry.pages:
-                norm = normalize_pages(entry.pages)
-                if norm not in index.pages:
-                    index.pages[norm] = []
-                index.pages[norm].append((entry.pages, entry.source_file))
+    File order is preserved, so bucket lists accumulate exactly as before and
+    `dois` keeps its last-writer-wins behaviour."""
+    dst.entries.extend(src.entries)
+    for bucket in ("journals", "volumes", "issues", "pages", "publishers", "years"):
+        target, source = getattr(dst, bucket), getattr(src, bucket)
+        for key, values in source.items():
+            target.setdefault(key, []).extend(values)
+    dst.dois.update(src.dois)
 
-            # Index publisher
-            if entry.publisher:
-                pub = entry.publisher.lower().strip()
-                if pub not in index.publishers:
-                    index.publishers[pub] = []
-                index.publishers[pub].append((entry.publisher, entry.source_file))
 
-            # Index year
-            if entry.year:
-                yr = str(entry.year)
-                if yr not in index.years:
-                    index.years[yr] = []
-                index.years[yr].append(entry.source_file)
+def _index_entries(index: MetadataIndex, entries: list) -> None:
+    """Fold parsed records into `index`. Raises on a badly typed field, which
+    build_metadata_index isolates per file."""
+    for entry in entries:
+        index.entries.append(entry)
 
-            # Index DOI
-            if entry.doi:
-                norm = normalize_doi(entry.doi)
-                index.dois[norm] = entry.source_file
+        # Index journal/container title
+        if entry.container_title:
+            norm = normalize_journal(entry.container_title)
+            if norm not in index.journals:
+                index.journals[norm] = []
+            index.journals[norm].append((entry.container_title, entry.source_file))
+
+        # Index volume
+        if entry.volume:
+            vol = str(entry.volume).strip()
+            if vol not in index.volumes:
+                index.volumes[vol] = []
+            index.volumes[vol].append(entry.source_file)
+
+        # Index issue
+        if entry.issue:
+            iss = str(entry.issue).strip()
+            if iss not in index.issues:
+                index.issues[iss] = []
+            index.issues[iss].append(entry.source_file)
+
+        # Index pages
+        if entry.pages:
+            norm = normalize_pages(entry.pages)
+            if norm not in index.pages:
+                index.pages[norm] = []
+            index.pages[norm].append((entry.pages, entry.source_file))
+
+        # Index publisher
+        if entry.publisher:
+            pub = entry.publisher.lower().strip()
+            if pub not in index.publishers:
+                index.publishers[pub] = []
+            index.publishers[pub].append((entry.publisher, entry.source_file))
+
+        # Index year
+        if entry.year:
+            yr = str(entry.year)
+            if yr not in index.years:
+                index.years[yr] = []
+            index.years[yr].append(entry.source_file)
+
+        # Index DOI
+        if entry.doi:
+            norm = normalize_doi(entry.doi)
+            index.dois[norm] = entry.source_file
 
     return index
 

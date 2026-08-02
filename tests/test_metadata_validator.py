@@ -640,3 +640,54 @@ class TestMalformedShapeTolerance:
         assert index.entries
         assert not index.skipped_files
         assert index.entries[0].container_title == "Philosophy Compass"
+
+    def test_unparseable_json_is_recorded_not_silently_dropped(self, tmp_path):
+        """Review finding: the skipped_files docstring promised these were
+        recorded, but decode failures still `continue`d silently."""
+        from metadata_validator import build_metadata_index
+
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "truncated.json").write_text("{not json", encoding="utf-8")
+
+        index = build_metadata_index(json_dir)
+
+        assert "truncated.json" in index.skipped_files
+
+    def test_a_raising_record_costs_only_its_own_file(self, monkeypatch, tmp_path):
+        """Isolation must extend THROUGH indexing, not just parsing: a badly
+        typed field raising mid-ingest previously killed the whole build."""
+        import json as _json
+        import metadata_validator as mv
+
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        for name in ("a_bad.json", "z_good.json"):
+            (json_dir / name).write_text(_json.dumps({
+                "source": "semantic_scholar",
+                "results": [{"title": "T", "year": 2007}],
+            }), encoding="utf-8")
+
+        real = mv.normalize_journal
+
+        def boom(value):
+            if value == "EXPLODE":
+                raise TypeError("unhashable")
+            return real(value)
+
+        monkeypatch.setattr(mv, "normalize_journal", boom)
+        real_parse = mv.parse_s2_result
+
+        def parse(data, source_file):
+            out = real_parse(data, source_file)
+            if source_file == "a_bad.json":
+                out[0].container_title = "EXPLODE"
+            return out
+
+        monkeypatch.setattr(mv, "parse_s2_result", parse)
+
+        index = mv.build_metadata_index(json_dir)
+
+        assert "a_bad.json" in index.skipped_files
+        assert index.entries          # z_good.json still indexed
+        assert all(e.source_file == "z_good.json" for e in index.entries)

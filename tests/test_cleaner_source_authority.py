@@ -762,3 +762,137 @@ class TestDualEntryScopedDisagreement:
         assert result["years_corrected"] == 0
         assert "2007" in bib.read_text(encoding="utf-8")
         assert any("disagree on year" in w for w in result["warnings"])
+
+
+class TestYearKeyWriteSafety:
+    """Review findings (gpt-5.6-sol, 2026-08-02): a comparison KEY is not
+    automatically a value that may be written into the .bib."""
+
+    def test_whitespace_scoped_year_never_erases_a_populated_year(self, tmp_path):
+        """`" "` is raw-truthy but canonicalizes to "". Testing raw truthiness
+        and then writing the canonical form planned year_corrected
+        ("2007" -> "") - it emptied a populated year."""
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        index = build_metadata_index(tmp_path / "nonexistent")
+        entry = parse_string(
+            "@article{x,author={A, B},title={T},year={2007},doi={10.1/x}}",
+            "bibtex").entries["x"]
+        api = {"year": " ", "entry_scoped": True, "doi": "10.1/x", "title": "T"}
+
+        plan = plan_entry_cleaning(entry, index, api)
+
+        assert plan["year_corrected"] is None
+
+    def test_non_numeric_scoped_year_is_never_written(self, tmp_path):
+        """"n.d." is a legitimate key for comparison but must not be written
+        into the bib as a corrected year."""
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        index = build_metadata_index(tmp_path / "nonexistent")
+        entry = parse_string(
+            "@article{x,author={A, B},title={T},year={2007},doi={10.1/x}}",
+            "bibtex").entries["x"]
+        api = {"year": "n.d.", "entry_scoped": True, "doi": "10.1/x", "title": "T"}
+
+        plan = plan_entry_cleaning(entry, index, api)
+
+        assert plan["year_corrected"] is None
+
+    def test_a_real_year_is_still_corrected(self, tmp_path):
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        index = build_metadata_index(tmp_path / "nonexistent")
+        entry = parse_string(
+            "@article{x,author={A, B},title={T},year={2019},doi={10.1/x}}",
+            "bibtex").entries["x"]
+        api = {"year": 2007, "entry_scoped": True, "doi": "10.1/x", "title": "T"}
+
+        plan = plan_entry_cleaning(entry, index, api)
+
+        assert plan["year_corrected"] == ("2019", "2007")
+
+    @pytest.mark.parametrize("value,expected", [
+        ("2007.", "2007."),      # `0+`: a bare trailing dot is NOT an integral year
+        (-0.0, "0"),             # signed zero normalizes
+        ("-000", "0"),
+        ("-2007", "-2007"),
+    ])
+    def test_grammar_edges(self, value, expected):
+        assert _year_key(value) == expected
+
+
+class TestYearlessScopedRecordCannotSettleAConflict:
+    """A scoped record with no usable year supplies no evidence about which
+    of two disagreeing broad years is right, so it must not suppress the
+    pooled-conflict abstention."""
+
+    def _index(self, tmp_path, scoped_year=None):
+        scoped = {"title": "T", "doi": "10.1/y"}
+        if scoped_year is not None:
+            scoped["year"] = scoped_year
+        return build_metadata_index(make_json_dir(tmp_path, {
+            "s2_a.json": {"source": "semantic_scholar",
+                          "results": [{"title": "T", "year": 2007, "doi": "10.1/y"}]},
+            "s2_b.json": {"source": "semantic_scholar",
+                          "results": [{"title": "T", "year": 2019, "doi": "10.1/y"}]},
+            "verify_1.json": {"source": "crossref", "results": [scoped]},
+        }))
+
+    def _entry(self):
+        from pybtex.database import parse_string
+        return parse_string(
+            "@article{y,author={A, B},title={T},year={2007},doi={10.1/y}}",
+            "bibtex").entries["y"]
+
+    def test_yearless_scoped_record_falls_through_to_abstention(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+
+        assert find_api_entry_for_bib_entry(
+            self._entry(), self._index(tmp_path)) is None
+
+    def test_whitespace_scoped_year_counts_as_yearless(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+
+        assert find_api_entry_for_bib_entry(
+            self._entry(), self._index(tmp_path, scoped_year="  ")) is None
+
+    def test_a_scoped_year_does_settle_the_conflict(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+
+        api = find_api_entry_for_bib_entry(
+            self._entry(), self._index(tmp_path, scoped_year=2007))
+
+        assert api is not None
+        assert api["year"] == 2007
+
+
+class TestScopedPreferenceDoesNotIncreaseDestruction:
+    def test_year_bearing_swap_never_picks_a_less_complete_record(self, tmp_path):
+        """The selected record governs verification of EVERY field. Swapping
+        to a sparse record just because it carries a year would let the
+        cleaner delete journal/volume/pages the first record verified."""
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1.json": {"source": "crossref", "results": [{
+                "title": "T", "doi": "10.1/z",
+                "container_title": "Mind", "volume": "120", "page": "1-20",
+            }]},
+            "verify_9.json": {"source": "crossref", "results": [{
+                "title": "T", "doi": "10.1/z", "year": 2011,
+            }]},
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(
+            "@article{z,author={A, B},title={T},year={2011},"
+            "journal={Mind},volume={120},doi={10.1/z}}", "bibtex").entries["z"]
+
+        api = find_api_entry_for_bib_entry(entry, index)
+
+        assert api is not None
+        assert api["container_title"] == "Mind"   # kept the complete record
