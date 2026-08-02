@@ -11,7 +11,8 @@ exists so open work has a single place to be listed — it was created
 > **Status 2026-08-02 (post-merge; supersedes all earlier figures) — read
 > this before starting anything.** The build is DONE on branch
 > **`worktree-evidence-tier`** (worktree at `.claude/worktrees/evidence-tier`,
-> tip **`9842f2d`** = catch-up merge of `main` + Option C, unmerged into
+> tip = the catch-up merge of `main` + Option C (`ee5f12c`+`9842f2d`) plus
+> follow-up commits, unmerged into
 > `main` and unpushed). All 11 plan tasks executed; **unit suite 1192 green**
 > (2026-08-02, post-merge). The free Sonnet two-arm A/B has run ("What are
 > data?"), and Johannes adjudicated **three of the four rubric items** on
@@ -40,7 +41,8 @@ exists so open work has a single place to be listed — it was created
 > goes on the branch (which now carries main's hardening) or waits.
 > Sister-repo instructions for the port (the service has no evidence-tier
 > layer yet, so Option C is a condition on its pending port item 20):
-> `~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
+> `docs/known-issues/phillit-abstention-attestation-decision-2026-08-02.md`
+> (local-only; original in ~/Downloads).
 >
 > **One thing gates the merge:**
 > **(b) writer-guidance follow-ups — CLOSED, PASSED 2026-08-02.** The b2
@@ -166,7 +168,7 @@ detection, the title+year fallback AND the year correction that writes to the
 H**: a float round-trip turns `9007199254740993` into `...992` and collapses
 `"2007.0000000000001"`, so the version phillit-service originally shipped had
 to be replaced, not copied — done, service `edaef51` (report:
-`~/Downloads/phillit-service-cleaner-findings-2026-08-02.md`). (c) A
+`docs/known-issues/phillit-service-cleaner-findings-2026-08-02.md` (local-only)). (c) A
 conflicted DOI with no entry-scoped record now abstains terminally - no
 title+year fall-through, or the bib's own bad year confirms the wrong source -
 and the conflict warning moved above the match check so abstention is never
@@ -213,7 +215,7 @@ differ locally, both benign aliases. Dry-run over all 43 bibs: matched
 3109→3130, planned fields removed 1292→1293, breaker trips 11→11, zero errors.
 Refusals are now countable (`years_declined` + warning, mirrored from the
 service) and a starved index sets `index_starved` (review finding E). Full
-write-up: `~/Downloads/phillit-review-findings-for-sister-repo-2026-08-02.md`.
+write-up: `docs/known-issues/phillit-review-findings-for-sister-repo-2026-08-02.md` (local-only).
 
 **K — the CrossRef year was the ONLINE-FIRST year, so 64% of "corrections"
 corrupted a correct bibliography: FIXED 2026-08-02.** Found while measuring I.

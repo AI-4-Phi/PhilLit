@@ -305,7 +305,7 @@ test per abstention path, each verified to fail without the fix.
 
 Sister-repo instructions (the service has **no** evidence-tier layer yet, so
 this is a condition on its pending port, not a bug fix there):
-`~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
+`docs/known-issues/phillit-abstention-attestation-decision-2026-08-02.md` (local-only; original in ~/Downloads).
 
 ## 10. RESOLUTION 2026-08-02 — executed and measured
 
