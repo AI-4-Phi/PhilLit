@@ -149,20 +149,28 @@ for bib_file in "${BIB_FILES[@]}"; do
     shopt -u nullglob
 
     if [[ ${#JSON_DIRS[@]} -gt 0 ]]; then
-        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "${JSON_DIRS[@]}" 2>&1 || true)
+        # Capture stdout only, for the same reason step 1 does: uv writes
+        # warnings/build progress to stderr on a cold venv, and merging that
+        # into the JSON would make every first run look like a crash.
+        CLEAN_STDERR_LOG=$(mktemp)
+        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "${JSON_DIRS[@]}" 2>"$CLEAN_STDERR_LOG" || true)
 
-        # Never-silent policy (same guard step 1 applies to bib_validator):
-        # a crashed cleaner emits a traceback, `jq` then fails, and without
-        # this the `|| echo 0` fallback makes the run byte-identical to a
-        # clean one. Cleaning does not block, so this warns and moves on.
+        # Never-silent policy (the guard step 1 applies to bib_validator): a
+        # crashed cleaner emits a traceback or nothing, `jq` then fails, and
+        # without this the `|| echo 0` fallback makes the run byte-identical
+        # to a clean one. `jq -e .` catches both (empty input exits 4).
+        # Cleaning does not block, so this warns and moves on.
         if ! echo "$CLEAN_RESULT" | jq -e . >/dev/null 2>&1; then
-            echo "WARNING: metadata_cleaner.py produced non-JSON output for $bib_file: $CLEAN_RESULT" >&2
+            CLEAN_ERR_TAIL=$(tail -c 400 "$CLEAN_STDERR_LOG" 2>/dev/null || true)
+            rm -f "$CLEAN_STDERR_LOG"
+            echo "WARNING: metadata_cleaner.py produced non-JSON output for $bib_file: ${CLEAN_RESULT}${CLEAN_ERR_TAIL}" >&2
             CLEANING_SUMMARY="${CLEANING_SUMMARY}
 metadata_cleaner.py FAILED for $(basename "$bib_file") - metadata was NOT verified:
-$CLEAN_RESULT
+${CLEAN_RESULT}${CLEAN_ERR_TAIL}
 "
             continue
         fi
+        rm -f "$CLEAN_STDERR_LOG"
 
         FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0' 2>/dev/null || echo "0")
         ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0' 2>/dev/null || echo "0")

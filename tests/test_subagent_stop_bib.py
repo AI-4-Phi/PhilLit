@@ -450,3 +450,19 @@ class TestCleanerFailureIsNeverSilent:
         assert "produced non-JSON output" in stderr
         assert "FAILED for d1.bib" in out.get(
             "hookSpecificOutput", {}).get("additionalContext", "")
+
+    def test_stderr_noise_alongside_valid_json_is_not_a_failure(self, project, tmp_path):
+        # uv writes build progress to stderr on a cold venv (see step 1's own
+        # comment). Merging that into the result would make every first run
+        # look like a crash AND skip cleaning.
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path,
+            "echo 'Building phillit-run v0.1 (cold venv)' >&2; "
+            "echo '{\"total_fields_removed\": 0, \"entries_cleaned\": 0, "
+            "\"warnings\": [], \"cleaned_entries\": {}}'",
+            0)
+        out, code, stderr = self._run(project, root)
+        assert code == 0
+        assert "produced non-JSON output" not in stderr
+        assert out == {"decision": "allow"}
