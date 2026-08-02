@@ -44,6 +44,17 @@ exists so open work has a single place to be listed — it was created
 > `api_matched` flips; 28 other entries *gain* the gate). The trial resolution
 > passes 1185 tests with cleaner metrics identical to `main`.
 >
+> **DECIDED 2026-08-02 (Johannes) — the merge must implement "Option C: attest
+> existence, decline the year."** Cleaner abstention currently records
+> `api_matched: False`, the same ledger fact as "no API record found", even
+> though both abstention paths run *after* an exact DOI match against ≥2 indexed
+> sources. Measured consequence of leaving it: 9 of the 11 distinct affected
+> works fall to `NONE`, i.e. **become uncitable**, for a year disagreement.
+> Rationale, acceptance criteria and the no-majority-rule constraint are in §9
+> of the write-up. Sister-repo instructions (the service has no evidence-tier
+> layer yet, so this is a condition on its pending port item 20):
+> `~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
+>
 > **Two things gate the merge, both open:**
 > **(b) writer-guidance follow-ups** — the A/B doc forward-references a
 > section that was never written. Raw material: 7 violation sentences across

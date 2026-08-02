@@ -195,12 +195,11 @@ whose failure would announce it.
    contribution is additive.
 3. **Keep the warning hoisted above the match check.** Non-negotiable — that
    ordering *is* 3J(c).
-4. **Decide the abstention ledger semantics before writing the resolution.**
-   An abstained entry is not the same as "no API record found", and the ledger
-   currently has no third state. Options: a distinct `api_matched: null` /
-   `abstained: true`, or a deliberate decision that abstention reads as
-   unmatched. This is a design call, not a merge mechanic — it is the reason
-   this needs a planning session rather than a careful merge.
+4. **Implement Option C for the abstention ledger semantics — DECIDED, see §9.**
+   Abstention attests existence (the DOI is confirmed) and declines cleaning;
+   it must no longer be recorded as "no API record found". This requires
+   changing `find_api_entry_for_bib_entry`'s return contract, so it is part of
+   the resolution, not a follow-up.
 5. **Acceptance gates**: both suites (1004 + 1102 → merged count), the 3J
    year/abstention tests specifically, and a fresh 42-corpus dry-run compared
    against `main`'s recorded baseline (matched 3109, fields removed 1292,
@@ -209,15 +208,8 @@ whose failure would announce it.
 
 ## 8. Open questions for the planning session
 
-- **The ledger's third state** (§7 item 4) — the one genuine design decision.
-  Now quantified: 43 entries abstain, 17 of which lose attestation. Is
-  "abstained" the same ledger fact as "no API record found"? It is currently
-  recorded as the latter.
-- **The 17.** Worth eyeballing whether losing attestation is right for them.
-  3J's premise says yes — a conflicted DOI with no entry-scoped record should
-  not be treated as verified — in which case the 17 are a *correction*, not a
-  regression, and the only open question is whether the tier drop is surfaced
-  or silent.
+- ~~The ledger's third state~~ — **DECIDED 2026-08-02 (Johannes): Option C,
+  split the axes.** See §9. No longer open.
 - **Should these two workstreams run in parallel on `metadata_cleaner.py` at
   all?** The divergence is the symptom; two active branches editing one file is
   the cause. This is the durable question behind the whole item.
@@ -233,6 +225,62 @@ whose failure would announce it.
   dir + `intermediate_files/json`), and dumps per-entry `api_matched` /
   `verified_identifier_value` for diffing. Rebuild rather than trust these
   numbers if a decision turns on them.
+
+## 9. DECISION 2026-08-02 — Option C: attest existence, decline the year
+
+**Johannes's call. Made, not open.** The merge resolution must implement it.
+
+**The defect.** `find_api_entry_for_bib_entry` returns a bare `None` for two
+opposite reasons, and the ledger collapses both to `api_matched: False`:
+
+| | evidence of existence | evidence about the year |
+|---|---|---|
+| no-match | none | none |
+| **abstained** | **strong — ≥2 indexed sources carry the exact DOI** | contradictory |
+
+Both abstention sites sit *after* `find_api_entry_by_doi` returned a record, and
+`find_doi_year_conflicts` can only find a conflict among records sharing that
+normalized DOI. So abstention is a year-scoped refusal that the ledger converts
+into an existence-scoped penalty — and `NONE` means uncitable.
+
+**Measured cost of leaving it:** of the 17 gate-losing rows (11 distinct works),
+**0** hold any `sep_context`/`iep_context` and only 4 hold an `abstract` with a
+source in `ATTESTED_ABSTRACT_SOURCES = {"s2","openalex","core","ndpr"}` (two
+works: `preston2013ethics`, `lin2020pacgan`). So **≥13 of 17 rows — 9 of 11
+distinct works — fall to `NONE` and become uncitable**, among them
+`slack2020fooling`, `mcmanus2018/2019autonomous`, `darwiche1997iterated`,
+`frank2019ethics`, `levendusky2018american`, `mason2015disrespectful`,
+`autor2020importing`, `shanahan2024talking`.
+
+**The fix.** On the two abstention paths only, record
+`api_matched: True`, `verified_identifier: "doi"`,
+`verified_identifier_value: normalize_doi(doi_value)` (plus an additive
+`cleaning_abstained` reason), while **cleaning behaviour changes not at all** —
+no field removal, no downgrade, no year correction, no marker.
+`compute_tier`'s value binding still re-checks the DOI, so no extra trust is
+granted. This does not weaken the locked positive-verification rule: an exact
+DOI match against ≥2 sources *is* affirmative evidence of existence, and
+`EXISTENCE` never claimed the year.
+
+**House style precedent:** the service cleaner already does this for the
+adjacent case — at the year gate it keeps the matched record and stores
+`plan["year_correction_declined"] = (..., reason)`, commented *"COUNTABLE, not
+silent … a refusal is itself information."* C is that principle one level up.
+Keep the refusal visible in the evidence report too (the retained half of
+Option D).
+
+**Do not** relax the conflict test into majority rule (the code comment forbids
+it), and **do not** attest existence on the two genuine no-match paths.
+
+**Acceptance:** metric identity with `main` (matched 6611, fields removed 2668,
+breaker trips 86, years corrected 0, errors 0 over 319 bibs) — C changes
+attestation only; ledger diff showing *only* abstained entries flipping; tier
+diff showing `EXISTENCE` regained and no new `ABSTRACT`/`CONTEXT`; one negative
+test per abstention path, each verified to fail without the fix.
+
+Sister-repo instructions (the service has **no** evidence-tier layer yet, so
+this is a condition on its pending port, not a bug fix there):
+`~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
 
 ## Related
 
