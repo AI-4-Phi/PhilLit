@@ -155,8 +155,8 @@ sites H did not cover. (b) `_year_key` canonicalizes years across conflict
 detection, the title+year fallback AND the year correction that writes to the
 .bib - by exact string grammar, NOT `float()`. **This supersedes the advice in
 H**: a float round-trip turns `9007199254740993` into `...992` and collapses
-`"2007.0000000000001"`, so the version phillit-service ships must be replaced,
-not copied (report:
+`"2007.0000000000001"`, so the version phillit-service originally shipped had
+to be replaced, not copied — done, service `edaef51` (report:
 `~/Downloads/phillit-service-cleaner-findings-2026-08-02.md`). (c) A
 conflicted DOI with no entry-scoped record now abstains terminally - no
 title+year fall-through, or the bib's own bad year confirms the wrong source -
@@ -234,22 +234,24 @@ existing `.warnings[]` pass-through. (`metadata_validator.py` needed no mirror �
 it was read-only with no year-overwrite path — and is moot since its deletion
 2026-08-02.)
 
-> **⚠ SUPERSEDED BY ITEM J — do not act on the paragraph below.** It says to
-> copy the service's `float()` + `is_integer()` `_year_key`. That version has
-> a third defect of its own: binary float cannot represent large integers, so
-> it returns a value nobody supplied (`9007199254740993` → `...992`,
-> `"2007.0000000000001"` → `"2007"`) — and the year correction WRITES its
-> output into the .bib. J replaced it with an exact string grammar in both
-> repos (service `edaef51`). Kept below only for the reasoning about the
+> **⚠ SUPERSEDED BY ITEM J — do not act on the paragraph below.** It was
+> written against the service's interim `float()` + `is_integer()`
+> `_year_key`, which has a third defect of its own: binary float cannot
+> represent large integers, so it returns a value nobody supplied
+> (`9007199254740993` → `...992`, `"2007.0000000000001"` → `"2007"`) — and
+> the year correction WRITES its output into the .bib. J replaced it with an
+> exact string grammar in both repos (service `edaef51`), so there is
+> nothing left to copy. Kept below only for the reasoning about the
 > ORIGINAL `str(int(float(value)))`, which is still correct.
 
 **IF THE PORT PLAN'S TASK 2 PROCEEDS, carry the CORRECTED `_year_key`** — not
 the version the service shipped before 2026-08-02. The original
 `str(int(float(value)))` collapses genuinely different values (`"2007.9"` →
 `"2007"`) and lets `OverflowError` escape (it is not a `ValueError` subclass,
-and `float("1e999")` is `inf`). The service's current version canonicalizes
-only integral values and catches it — copy that one, and apply it at all four
-year-comparison sites, not just the two conflict-detection ones. Note the
+and `float("1e999")` is `inf`). The service's interim version canonicalized
+only integral values and caught it; J's exact string grammar (now in both
+repos) is what must be carried, applied at all four year-comparison sites,
+not just the two conflict-detection ones. Note the
 service also now gates its year overwrite on `entry_scoped`, ported FROM
 here, but keeps its stronger conflict abstention: where this repo lets a
 verify record win a same-DOI year conflict, the service abstains entirely.
@@ -273,8 +275,9 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   INCOMPLETE-keyed cite-cautiously rule. Structural; the observed exploit
   was under a non-Anthropic orchestrator, but nothing model-specific closes
   the gap. *Partly superseded by item 1*: the tier design closes the
-  no-marker case (top tier requires `abstract_source`); the forged-marker
-  residual remains and is revisited with the item-1 spec.
+  no-marker case (top tier requires `abstract_source`), and as of spec v5
+  `abstract_source` is enrichment-ledger attested — narrowing the residual
+  to a forged-*ledger* attack, revisited with the item-1 spec.
 - **D — no venue-quality vetting**: predatory-venue papers pass DOI
   verification; flag-and-caveat heuristics (DOAJ lookup, `VENUE_UNVETTED`
   keyword + writer rule) would turn observed good model behavior into a
@@ -288,7 +291,8 @@ failure modes, and why the fix cannot live in Phase 6).
 
 The pipeline identifies a work in prose by *first-author surname within 60
 characters of a 4-digit year* — `find_cited_entries` and
-`check_evidence.find_cites`, both on `_MATCH_WINDOW = 60`. Nothing
+`check_evidence.find_cites` (the latter on the `worktree-evidence-tier`
+branch), both on `_MATCH_WINDOW = 60`. Nothing
 distinguishes two works sharing that pair, and no stage assigns Chicago
 `2019a`/`2019b` suffixes. Two defects are visible in delivered output:
 
@@ -331,7 +335,7 @@ so a listed work is confirmed uncited.
   suffixes. The information is lost at write time, so suffixes must be
   assigned on the merged bib *before* Phase 5, into a dedicated field —
   **not** `year`, whose `\d{4}` guards in `check_evidence.py` and
-  `stamp_evidence.py` would reject `2019a`. Touches `conventions.md` and
+  `resolve_context.py` (both branch-side) would reject `2019a`. Touches `conventions.md` and
   `agents/synthesis-writer.md`, so it needs a live headless run to confirm
   writer compliance before the port.
 
@@ -364,7 +368,7 @@ normalization, all disagreeing:
 | `Millière` | `milliere` | `milli re` | `milliere` |
 | `Davidović` | `davidovic` | `davidovi` | `davidovic` |
 | `Łącki on agency` | `łacki on agency` | `cki on agency` | `acki on agency` |
-| `Η ηθική της τεχνολογίας` | `η ηθικη τησ τεχνολογιασ` | `''` | `''` |
+| `Η ηθική της τεχνολογίας` | `η ηθικη τησ τεχνολογιασ` | `''` | `'   '` (3 spaces, truthy) |
 
 **This explains two already-measured symptoms whose cause was recorded as
 unknown:**
@@ -374,17 +378,21 @@ unknown:**
   the three that applies no Unicode normalization at all — a bare
   `re.sub(r"[^a-z0-9]+", " ", s.lower())`, so any non-ASCII letter becomes a
   space. The other two match these pairs correctly.
-- A **new mode inside Issue B** (`bib-pipeline-integrity-gaps.md`): a title or
-  first-author surname in a wholly non-Latin script ASCII-folds to `''`, and
-  `generate_bibliography.py:417` (`if not norm_surname: continue`) then skips
-  the entry, so a cited work is **deterministically absent** from the rendered
-  References. Issue B's recorded fix directions (transliteration-aware
-  normalization, fuzzy near-miss fallback) **do not cover this** — there is
-  nothing to be near when the key is empty. The `lint_md.py` post-check does
-  cover it, which breaks the tie between B's two fix directions.
+- A **new mode inside Issue B** (`bib-pipeline-integrity-gaps.md`): a
+  first-author surname in a wholly non-Latin script ASCII-folds to `''`
+  (titles fold to bare whitespace), and `generate_bibliography.py:417`
+  (`if not norm_surname: continue`) then skips the entry, so a cited work is
+  **deterministically absent** from the rendered References. Issue B's
+  recorded fix directions (transliteration-aware normalization, fuzzy
+  near-miss fallback) **do not cover this** — there is nothing to be near
+  when the key is empty. An every-citation-resolves post-check in
+  `lint_md.py` (Issue B's proposed but NOT-yet-built check) *would* cover
+  it, which breaks the tie between B's two fix directions.
 
-The `metadata_cleaner` versions are the hardened ones (item-13 B3 fixed exactly
-this ASCII-fold bug there and the fix was never propagated — its docstring
+The `metadata_cleaner` versions are the hardened ones (item-13 B3 — item-13
+is the gitignored bib-quality backport spec under `docs/superpowers/`; the
+tag survives in code comments and `tests/test_item13_*.py` — fixed exactly
+this ASCII-fold bug there and the fix was never propagated; its docstring
 still documents the defect the other two carry). Scope: one module owning
 `normalize_doi`, title normalization, `normalize_pages`, `normalize_journal`,
 `_year_key`, and fallback-key construction; four import sites
@@ -407,5 +415,10 @@ refactoring first manufactures a conflict where there is none. See
 
 Other open items are tracked in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open (e.g.
-`ndpr-enrichment-underused.md`, `recent-publication-indexing.md`,
-`philpapers-rate-limiting.md`).
+`philpapers-rate-limiting.md` (re-scoped to Brave quota), and the
+local-only `workflow-findings-softmax-review.md`).
+
+**If resuming an interrupted session, check the local-only
+`docs/known-issues/doc-rot-audit-2026-08-02.md` first** — it carries the
+agreed post-merge sequence (fix-wave → push → item-1 gates (b)/(c) → land
+the branch → item 4) with live checkboxes.

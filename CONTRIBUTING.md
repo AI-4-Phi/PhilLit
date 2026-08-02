@@ -72,7 +72,7 @@ PRs are reviewed by the maintainers (Johannes Himmelreich and Marco Meyer). We a
 
 ## Architecture
 
-The 6-phase workflow, agent definitions, and design patterns are documented in `docs/ARCHITECTURE.md`. Read this before modifying agents or skills.
+The phase-by-phase workflow procedure lives in `skills/literature-review/SKILL.md`; agent design patterns and rationale in `docs/ARCHITECTURE.md`. Read both before modifying agents or skills.
 
 ## License
 

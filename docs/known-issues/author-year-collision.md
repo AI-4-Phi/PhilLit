@@ -10,7 +10,8 @@ service port.
 
 The pipeline identifies a work in prose by **first-author surname within 60
 characters of a 4-digit year** (`generate_bibliography.find_cited_entries`,
-`check_evidence.find_cites`, both using `_MATCH_WINDOW = 60`). Nothing
+`check_evidence.find_cites` — the latter branch-side, on
+`worktree-evidence-tier` — both using `_MATCH_WINDOW = 60`). Nothing
 downstream can distinguish two works that share that pair. Nothing upstream
 assigns Chicago `2019a`/`2019b` suffixes. This produces three distinct
 defects, two of them visible in delivered output.
@@ -127,8 +128,9 @@ no live run, which is why it is sequenced first (roadmap 3E vs 3F):
 - **A → roadmap 3F (suffixes)** — four coordinated pieces:
   1. Assign suffixes on the merged bib after dedupe, before Phase 5, into a
      dedicated field (**not** the `year` field — `re.fullmatch(r"\d{4}", …)`
-     guards in `check_evidence.py` and `stamp_evidence.py` would reject
-     `2019a`). Order by title, per Chicago.
+     guards in `check_evidence.py` and `resolve_context.py`, both on the
+     `worktree-evidence-tier` branch, would reject `2019a`). Order by
+     title, per Chicago.
   2. Tell writers to use them (`docs/conventions.md`,
      `agents/synthesis-writer.md`).
   3. Render the suffix in `format_entry`; extend `_sort_key`.

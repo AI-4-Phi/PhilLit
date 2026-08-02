@@ -2,7 +2,16 @@
 
 **Observed**: 2026-02-10, during "What are data?" literature review (run 2)
 **Severity**: Medium (reduces synthesis quality for key works)
-**Status**: Open
+**Status**: Resolved in design — **both recommended options shipped.**
+Option A landed the day this was filed (`1a97b65` 2026-02-10, gated to
+`book` + no-abstract + INCOMPLETE + High/Medium importance in
+`enrich_bibliography.py`; narrowed `8424551`, matching improved `6390794`).
+Option B is the evidence-tier design (ROADMAP item 1, built on
+`worktree-evidence-tier`): `INCOMPLETE` stops meaning "exclude" and is
+consumed/stripped by the barrier. The headline numbers below (~38
+INCOMPLETE, 3 enriched) describe the pre-fix state; the post-fix enrichment
+rate has not been re-measured — that re-measurement is the only thing left
+here.
 
 ## Summary
 
@@ -32,7 +41,7 @@ The synthesis outline explicitly states INCOMPLETE entries should be "excluded f
 ## Root Cause
 
 1. **Agent behavior**: Domain researchers attempt abstract resolution via Semantic Scholar, OpenAlex, and CORE, but do not systematically fall back to NDPR for books. The `fetch_ndpr.py` script exists and works, but agents invoke it inconsistently.
-2. **No automated fallback**: The `get_abstract.py` resolution chain (S2 -> OpenAlex -> CORE) does not include NDPR as a final fallback step for books.
+2. **No automated fallback** *(fixed — see Status)*: at filing, nothing fell back to NDPR automatically. The `get_abstract.py` chain (S2 -> OpenAlex -> CORE) still ends at CORE, but the book-scoped NDPR fallback lives one layer up, in `enrich_bibliography.py` (`resolve_ndpr_abstract`), which is the layer that runs in Phase 3/5.5.
 3. **INCOMPLETE convention mismatch**: Marking seminal books as INCOMPLETE and instructing synthesis-writers to skip them creates a conflict — these are precisely the works that must appear in any competent review.
 
 ## Options to Address

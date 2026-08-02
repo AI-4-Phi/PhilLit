@@ -9,7 +9,11 @@ against **this repo's current `main`**, not just the snapshot.
 **Severity**: Medium overall (per-issue below). None fails a run; all
 silently degrade bibliography/References integrity — the part of the output a
 reader is least able to audit.
-**Status**: Open. See `docs/ROADMAP.md`.
+**Status**: Open. See `docs/ROADMAP.md`. **Sequencing constraint
+(2026-08-02):** any fix touching `hooks/metadata_cleaner.py` or
+`dedupe_bib.py` must be done on branch `worktree-evidence-tier` (or wait for
+it to land) — the cleaner is frozen on `main` until then, and `dedupe_bib.py`
+carries +180 branch-side lines.
 **Cross-repo**: `phillit-service/docs/known-issues/bib-pipeline-integrity-gaps.md`
 is the sister write-up with the full evidence pointers (its experiment
 harness holds the artifacts). Fixes should land in one repo and be

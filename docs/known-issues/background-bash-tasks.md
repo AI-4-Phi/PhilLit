@@ -28,15 +28,24 @@ During Phase 3 (domain research), multiple `domain-literature-researcher` agents
 
 ## Existing Prohibitions (Ignored by Agents)
 
-Two explicit prohibitions already exist:
+Two explicit prohibitions existed at the time (quoted as then written; both
+have since moved/evolved — current state noted per item):
 
-1. **`SKILL.md`** (line 72):
+1. **`skills/literature-review/SKILL.md`** (then line 72):
    > **Do NOT use `run_in_background`**. Foreground execution streams status updates to the user.
 
-2. **`domain-literature-researcher.md`** (line 310):
+   *Current state (2026-08-02): this exact sentence no longer exists. Its
+   successor at `SKILL.md:82` governs SUBAGENT dispatch instead ("Pass
+   `run_in_background: false` explicitly on every subagent dispatch") — the
+   Bash-call case is now enforced mechanically by the hooks below, not by
+   skill prose.*
+
+2. **`agents/domain-literature-researcher.md`** (now ~line 356):
    > **NEVER use `run_in_background: true` on Bash tool calls.** Background Bash tasks outlive your session — they keep running after you finish but nobody reads their output. Use bash `&` with `wait` instead.
 
-   The agent definition provides a detailed recommended pattern (lines 312–337) for achieving parallelism with bash `&` + `wait` within a single Bash tool call.
+   The agent definition provides a detailed recommended pattern (now
+   ~lines 360–380) for achieving parallelism with bash `&` + `wait` within a
+   single Bash tool call.
 
 Despite the explicit `NEVER` instruction in their own definition, the agents used `run_in_background: true` anyway. This is a model compliance failure.
 

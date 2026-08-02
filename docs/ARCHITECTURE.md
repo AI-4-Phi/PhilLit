@@ -62,6 +62,8 @@ Domain researchers and citation validators use the `philosophy-research` skill (
 | `search_cache.py` | Search result caching | — |
 | `rate_limiter.py` | Shared rate limiting | — |
 | `output.py` | Shared output utilities | — |
+| `s2_formatters.py` | Shared S2 formatters/constants | — |
+| `citation_context.py` | Shared SEP/IEP citation-context utilities | — |
 | `check_setup.py` | Environment verification | — |
 
 **Key benefit**: Papers discovered via structured APIs are verified at search time, eliminating the need for a separate validation phase.
@@ -120,7 +122,7 @@ Each invocation:
 
 Orchestrator:
 - Tracks completion in task-progress.md
-- After all sections complete: Use Glob+Read+Write to assemble synthesis-section-*.md into final review
+- After all sections complete: run `assemble_review.py` (via `phillit-run`) to assemble synthesis-section-*.md into the final review
 ```
 
 ## File Organization
@@ -219,6 +221,7 @@ hooks/
 ├── subagent_stop_bib.sh                  # SubagentStop: validate researcher BibTeX, clean metadata (self-scoped to .phillit workspaces)
 ├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
 ├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
+├── block_subagent_background_dispatch.py # PreToolUse (Agent/Task): review agents must dispatch foreground
 ├── bib_validator.py                      # BibTeX validation logic
 └── metadata_cleaner.py                   # Metadata provenance cleaning: year/type/field cleanup
 

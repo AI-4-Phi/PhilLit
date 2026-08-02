@@ -1,6 +1,10 @@
 # Plugin clean-install parity gate (plan Task 10)
 
-Recorded results per assertion. `main` keeps clone-and-run until **every** assertion passes.
+Recorded results per assertion. **Historical record — the gate PASSED
+2026-07-13** (with Step 6, Windows, explicitly deferred), the plugin merged
+to `main` (0.2.0/0.2.1), and `GETTING_STARTED.md` has since been retired.
+The original operative rule ("`main` keeps clone-and-run until **every**
+assertion passes") no longer binds anything.
 
 **Environment for headless runs (2026-07-13):** macOS (dove), Claude Code CLI 2.1.207, uv 0.8+, dev checkout at `~/github-repos/PhilLit` loaded via `--plugin-dir`, sessions run headless (`claude -p`). Headless runs validate *mechanics*, not the interactive approval UX — permission modes were `acceptEdits` with a scoped `--allowedTools` list, so prompt counts and the trust dialog remain interactive-only assertions.
 

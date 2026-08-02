@@ -2,7 +2,18 @@
 
 **Observed**: 2026-02-12, during "Algorithmic Fairness (2023-Present)" literature review
 **Severity**: Low (degrades gracefully to other sources; no data loss)
-**Status**: Open
+**Status**: Open, **re-scoped 2026-08-02** — the original root-cause section
+was wrong at filing, and Option C already exists. `search_philpapers.py` has
+gone through the **Brave Search API** (`philpapers_via_brave`, SERP-filtered
+to `philpapers.org/rec/`) since `8a2efe6` (2026-01-07, five weeks before the
+observation); philpapers.org is never contacted directly, so PhilPapers
+cannot be throttling us. The errors were **Brave API quota/429 behaviour**
+under 7 parallel agents sharing one key. The script also already carries
+`ExponentialBackoff(max_attempts=5)` plus the shared `brave` rate limiter —
+Option C is done. What genuinely remains open: whether the shared Brave
+quota needs sizing/serializing across parallel researchers (Options A/B/E),
+or whether Option D (accept) stands. The recommendation (D now, C if worse)
+has effectively been followed.
 
 ## Summary
 
@@ -24,11 +35,17 @@ During Phase 3 (domain research), multiple `domain-literature-researcher` agents
 
 ## Why This Happens
 
-PhilPapers is designed for human interactive use via a web interface, not high-frequency API access. The site likely implements rate limiting to prevent abuse:
+**(Corrected 2026-08-02 — the original version of this section blamed
+PhilPapers throttling/scraping; that was wrong at filing, see Status.)**
 
-1. **Per-IP limits**: Multiple concurrent requests from the same IP address may trigger throttling
-2. **No authenticated API**: Unlike Semantic Scholar, OpenAlex, and CORE, PhilPapers does not offer an authenticated API with dedicated rate limits
-3. **Scraping-based approach**: The `search_philpapers.py` script uses web scraping rather than a formal API, making it more susceptible to blocking
+The searches run through the Brave Search API: `search_philpapers.py` calls
+`brave_site_search(..., PHILPAPERS_CONFIG)`, where `PHILPAPERS_CONFIG`
+(`brave_search.py`) is a SERP filter (`site_domain`, `url_path_filter="/rec/"`,
+id regex) — the only network call is to the Brave endpoint, gated on
+`BRAVE_API_KEY`. Seven parallel researchers share that one key, so a burst of
+~15-25 queries in a 5-minute window can hit Brave's per-key rate/quota
+limits, which surface to the agents as search errors. PhilPapers itself is
+never contacted.
 
 ## Current Mitigation
 
@@ -49,9 +66,11 @@ Modify the orchestrator (Phase 3 workflow) to stagger domain researcher launches
 
 Have the orchestrator pre-run all PhilPapers queries sequentially during Phase 2 (planning), then pass cached results to domain researchers during Phase 3. This separates PhilPapers access from the parallel research phase.
 
-### Option C: Exponential backoff retry in `search_philpapers.py`
+### Option C: Exponential backoff retry in `search_philpapers.py` — DONE
 
-Add retry logic with exponential backoff (e.g., 2s, 4s, 8s delays) when PhilPapers returns errors. This allows individual agents to self-throttle rather than relying on orchestration changes.
+Implemented: `ExponentialBackoff(max_attempts=5)` in `search_philpapers.py`,
+plus the shared `get_limiter("brave")` rate limiter. Individual agents
+self-throttle without orchestration changes.
 
 ### Option D: Accept current behavior
 

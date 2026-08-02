@@ -34,4 +34,8 @@ Theme: the conversion inverted the gate-failure directions — the accuracy-crit
 - **Phase 3 — setup robustness**: findings 8, 9, 11, 12, 13. Status: **done** (2026-07-13). Setup skill guards an unset `PHILLIT_ROOT` (restart-session message, finding 8); trust check tries `$PWD` then `pwd -P` (verified against a symlinked cwd, finding 9); `_union` tolerates string/null-valued rule lists (11) and re-runs preserve the pristine `settings.json.bak` (12) — both pinned in `tests/test_setup_workspace.py`; README opt-out documents `mkdir .phillit` + `.env` (13).
 - **Phase 4 — efficiency + doc sweep (post-merge OK)**: findings 14, 15. Status: **done** (2026-07-13). Rate-limiter locks and the search cache moved to per-user `~/.cache/phillit/` (14); new `hooks/fast_gate.sh` fronts the per-call gates — `.phillit` marker + literal stdin needle (`.bib` / `run_in_background`) before uv starts, so non-matching tool calls answer in ~15 ms with uv untouched; `phillit-run` drops `--if-active` (15). Docs updated (CLAUDE.md, ARCHITECTURE.md, permissions-guide.md). Adversarially reviewed: needle over-approximation confirmed sound (needle and Python gate agree even on `.BIB` casing); one review-caught defect fixed (tests now isolate `~/.cache/phillit` via monkeypatched tmp_path dirs). Re-verified with the Phase 2 harness (outside-repo copy, `env -i` sims, headless session with stripped PATH).
 
-After Phase 3: bump `version` in `.claude-plugin/plugin.json`, merge to `main`.
+After Phase 3: bump `version` in `.claude-plugin/plugin.json`, merge to
+`main`. *(Done — 0.2.0/0.2.1 merged 2026-07-13; version has moved on since.
+Line refs above have drifted with the file: finding 2's guard is now at
+`subagent_stop_bib.sh:~107`, finding 10's jq check at `:34-36`; both fixes
+verify at the new offsets.)*

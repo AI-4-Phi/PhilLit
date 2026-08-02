@@ -4,10 +4,17 @@
 service, third-party-model runs)
 **Severity**: High — affects every review; the rule provides no protection
 where protection is most needed
-**Status**: Open — **to be fixed in this repo and the downstream service at
-the same time** (Johannes, 2026-07-24). The affected files are near-identical
-in both. **Build here first**: this repo runs under Claude Code, so test runs
-are free, whereas the service bills them through the Agent SDK.
+**Status**: Fix **BUILT and A/B-tested** on branch `worktree-evidence-tier`
+(unmerged into `main`; live status = `docs/ROADMAP.md` item 1, which is the
+authority). The build-here-first plan below was executed: all 11 plan tasks
+done, the free Sonnet two-arm A/B ran on "What are data?" (book-heavy, as
+this doc suggests), and Johannes adjudicated three of the four rubric items
+on 2026-07-28 — provisional outcome "Works. Proceed." Remaining gates before
+the branch lands on `main`: (b) writer-guidance follow-ups, (c) the blind
+coherence read. **Everything below is the problem analysis and design
+record** — read passages that sound like future work ("suggested test",
+"where the fix gets tested") as the plan that was carried out, not as open
+work.
 
 ## Summary
 
@@ -109,7 +116,7 @@ required" — but does not close it fully.
 
 Full spec, including rejected alternatives and the reasons they were rejected:
 `phillit-service/docs/superpowers/specs/2026-07-24-evidence-tier-citability-design.md`
-(**v5, dual-repo** — it carries a path/line map for both trees), with four
+(**v5.1, dual-repo** — it carries a path/line map for both trees), with four
 external adversarial reviews committed alongside it (kimi-k3 and glm-5.2 on
 v2; kimi-k3 on v3, folded into v4; gpt-5.6-sol on v4 — three blockers —
 folded into v5 with the owner decision on positive-verification identity;
@@ -194,9 +201,10 @@ against code in **this repo** at the paths given, not merely carried over.
 
 1. **Do not move `url` into `CLEANABLE_FIELDS`.** It looks like the obvious
    way to verify identity for DOI-less entries. It cannot work here: the
-   cleaner normalizes every API record to a fixed 8-key schema (`title`,
-   `container_title`, `volume`, `issue`, `pages`, `publisher`, `year`, `doi`)
-   in all five parsers (`hooks/metadata_cleaner.py:226-306`) — **there is no
+   cleaner normalizes every API record to a fixed schema (`title`,
+   `container_title`, `volume`, `issue`, `pages`, `publisher`, `year`, `doi`,
+   plus `year_basis` on CrossRef records since the 3K work) in all its
+   parsers (six since 3G added `parse_core_result`) — **there is no
    `url` key** anywhere in that file to match against. And
    `_field_matches_api`'s contract is that empty API values never match, so
    enabling it would strip URLs from every entry whose API record lacks one:
@@ -235,7 +243,9 @@ against code in **this repo** at the paths given, not merely carried over.
 6. **`_SUBSTANTIVE_FIELDS` in `skills/literature-review/scripts/dedupe_bib.py`
    omits `sep_context` and `iep_context`.** Today that silently loses
    encyclopedia context when merging cross-domain duplicates. Under a tier
-   system it silently *demotes a tier*. Add both fields.
+   system it silently *demotes a tier*. Add both fields. *(Done on the
+   branch — `dedupe_bib.py` there includes both; `main` still omits them,
+   which is correct only until the branch lands.)*
 7. **Do not bundle the NDPR demotion.** Reclassifying `abstract_source = ndpr`
    as third-party context rather than an author abstract is defensible on this
    repo's own definition (`docs/conventions.md:151` — book-review prose,
@@ -252,6 +262,8 @@ against code in **this repo** at the paths given, not merely carried over.
    (`encyclopedia_entries-domain-N.json`, valid-empty required when none
    found) and has the barrier driver read them via an explicit manifest —
    no globbing, so stale or stray files cannot contaminate the match set.
+   *(Done on the branch — researcher prompt + checklist write per-domain
+   files there; `main` still has the single clobber-prone file.)*
 
 ## Residual, not closed
 
@@ -267,6 +279,12 @@ Verified against `main` on 2026-07-24. Note this repo's plugin layout has no
 `.claude/` prefix; the downstream service vendors the same files under
 `engine/.claude/`, and the prompt files are near-identical (4-16 differing
 lines).
+
+**Line-number caveat (2026-08-02):** `hooks/metadata_cleaner.py` has taken
+~20 commits since this map was made (the 3G-3K hardening); every line number
+in its row has drifted — locate by identifier instead (`CLEANABLE_FIELDS`,
+`BREAKER_FRACTION`, `EXEMPT_FIELDS`, `_field_matches_api`). The prompt-file
+rows re-verified exact on 2026-08-02.
 
 | File | Lines | What |
 |---|---|---|

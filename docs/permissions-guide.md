@@ -73,8 +73,10 @@ Beyond permissions, `hooks/hooks.json` configures hooks that run automatically (
 | SessionStart (all events) | Session begins, resumes, clears, compacts | `setup-environment.sh` | Thin bootstrap: bridge `$PHILLIT_ROOT`/`$PHILLIT_UV` into `$CLAUDE_ENV_FILE` |
 | PreToolUse (`Write`) | Before any Write tool call | `validate_bib_write.py` (via `fast_gate.sh`, needle `.bib`, then `phillit-run`) | Validate BibTeX before writing `.bib` files (deny with reasons) |
 | PreToolUse (`Bash`) | Before any Bash tool call | `block_background_bash.py` (via `fast_gate.sh`, needle `run_in_background`, then `phillit-run`) | Block `run_in_background` in subagents |
+| PreToolUse (`Agent`) | Before any Agent dispatch | `block_subagent_background_dispatch.py` (via `fast_gate.sh`, needle `run_in_background`, then `phillit-run`) | Block backgrounded dispatch of the four review agents (they must run foreground) |
+| PreToolUse (`Task`) | Before any Task dispatch | `block_subagent_background_dispatch.py` (same wiring) | Same guard for the Task-tool spelling of dispatch |
 | PostToolUse (`Edit`) | After any Edit tool call | `validate_bib_write.py` (via `fast_gate.sh`, needle `.bib`, then `phillit-run`) | Validate `.bib` files after edits (block with reasons) |
-| SubagentStop (no matcher) | After any subagent finishes | `subagent_stop_bib.sh` | Self-scopes via `.phillit` + `agent_type`; validate BibTeX, clean metadata |
+| SubagentStop (no matcher) | After any subagent finishes | `subagent_stop_bib.sh` | Validate BibTeX, clean metadata. Self-scopes via `.phillit` + `agent_type`, and additionally requires `jq` (absent → emits a `systemMessage` and SKIPS validation for the run), `stop_hook_active` false, and a valid `reviews/.active-review` pointer to an existing directory |
 
 ## Agent-Specific Configuration
 

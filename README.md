@@ -6,7 +6,7 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg" alt="License: Apache 2.0"></a>
-  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.9%2B-blue.svg" alt="Python 3.9+"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg" alt="Python 3.10+"></a>
   <a href="https://claude.com/product/claude-code"><img src="https://img.shields.io/badge/Built_with-Claude_Code-D97757?logo=claude&logoColor=white" alt="Built with Claude Code"></a>
 </p>
 
@@ -15,7 +15,7 @@
   <a href="https://docs.google.com/forms/d/e/1FAIpQLScBWy8XdrwdkFuWQ_3o5d6ETAzSgrT-s0FvmwmTZPWpDgT5sg/viewform"><strong>Sign up for our research study</strong></a>
 </p>
 
-PhilLit generates analytical literature reviews with verified bibliographies for philosophy research. Give it a topic description, and it searches academic databases, collects and checks references, and writes a structured review — typically in half an hour.
+PhilLit generates analytical literature reviews with verified bibliographies for philosophy research. Give it a topic description, and it searches academic databases, collects and checks references, and writes a structured review — typically in about 45 minutes.
 
 PhilLit is free and open-source. You only pay Anthropic for using Claude. This is a research project evaluating AI-generated literature reviews for philosophy ([see below](#participate-in-research)).
 
