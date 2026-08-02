@@ -119,6 +119,22 @@ The same commit replaces two vacuous `assert "METADATA_CLEANED" not in
 content` assertions (pybtex escapes the underscore, so they could never fail)
 with a backslash-tolerant helper plus a control test that pins the vacuity.
 
+**I — `entry_scoped` authority is keyed on a FILENAME substring: OPEN, needs
+a decision.** Flagged by both kimi-k3 and gpt-5.6-sol reviewing the 2026-08-02
+branch. `entry_scoped = "verify_" in filename.lower() and api_source ==
+"crossref"` has two failure modes: a genuine per-DOI CrossRef lookup saved as
+`crossref_*.json` silently loses correction authority (observed in the local
+corpora), and a *broad* CrossRef search saved as `verify_*.json` grants
+authority to every record in it — which can recreate the year corruption the
+gate exists to prevent. Recommended fix needs a `verify_paper.py` change:
+record the lookup mode + requested DOI in the payload and grant authority on
+content, keeping the filename rule as a legacy fallback. Cheap interim that
+kills the false-authority half alone: additionally require the envelope to
+hold exactly one result. The service now at least records refusals
+(`years_declined` + warning) so the residual is countable; mirroring that here
+is the smaller first step. Full write-up:
+`~/Downloads/phillit-review-findings-for-sister-repo-2026-08-02.md`.
+
 **IF THE PORT PLAN'S TASK 2 PROCEEDS, carry the CORRECTED `_year_key`** — not
 the version the service shipped before 2026-08-02. The original
 `str(int(float(value)))` collapses genuinely different values (`"2007.9"` →
