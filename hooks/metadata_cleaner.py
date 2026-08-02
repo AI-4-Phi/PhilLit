@@ -178,6 +178,11 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     carry another API's bad metadata for the same DOI (year-corruption fix).
     Among records of equal rank, pool order (filename sort) still decides.
 
+    find_api_entry_for_bib_entry's conflict/abstention logic DEPENDS on this
+    preference: it inspects `entry_scoped` on the single record returned here,
+    so an authoritative record must win over pool order or the authority model
+    silently degrades to filename order. Do not make this first-match.
+
     Known limitation: this preference governs the api_entry used for ALL
     field corrections (container_title, volume, pages, etc.), not just
     year - plan_entry_cleaning only gates the *year* overwrite on
@@ -232,12 +237,23 @@ def _year_key(value) -> str:
     JSON loader already parsed the value INTO a float, the precision is gone
     before this function sees it; only `parse_float=Decimal` would preserve
     it. Exactness here means "adds no new rounding", not "recovers what json
-    already discarded". Match sign + digits +
+    already discarded".
+
+    The grammar composes with repr(float), so the effective boundary is where
+    str() switches to exponent form: str(1e15) is "1000000000000000.0" and
+    canonicalizes, str(1e16) is "1e+16" and does not. Unreachable for real
+    years; noted so the contract is not mistaken for a pure-grammar one. Match sign + digits +
     an optional all-zero fractional part; return the digits with sign and
     leading zeros normalized. Everything else - "2007.5", "n.d.", "MMVII",
     "2,007" - round-trips verbatim. Exponent notation ("2.007e3", "1e999") is
     out of scope by design, so the contract comes from this grammar rather
     than from binary-float range.
+
+    KNOWN LIMITATION (predates this helper, now routed through it): a
+    disambiguating BibTeX year like "2007a" canonicalizes verbatim and so
+    compares unequal to "2007". A scoped record would "correct" it to "2007"
+    and destroy the suffix. There is no plausibility gate on the correction
+    path beyond "must be an integral canonical year".
 
     NOTE: no PhilLit producer is currently known to emit a float year. This
     is boundary hardening for external JSON, not a fix for an observed
@@ -247,6 +263,7 @@ def _year_key(value) -> str:
     match = _INTEGRAL_YEAR_RE.match(text)
     if not match:
         return text
+    # A leading "+" is dropped; a negative sign is retained (except on zero).
     sign, digits = match.group(1), match.group(2)
     digits = digits.lstrip("0") or "0"
     # -0 and 0 are the same year; do not let a sign survive on zero.
@@ -254,8 +271,10 @@ def _year_key(value) -> str:
 
 
 def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
-    """Distinct year values (with their source files) across pooled entries
-    sharing this DOI. Returns {} unless at least two distinct years exist.
+    """Distinct CANONICAL year values (with their source files) across pooled
+    entries sharing this DOI, compared via _year_key so an int/float encoding
+    split is not a disagreement. Returns {} unless at least two distinct
+    canonical years exist.
 
     Option D of the year-corruption fix: a same-DOI disagreement should be
     visible in the cleaning report however it is resolved - silent

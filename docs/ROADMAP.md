@@ -139,9 +139,13 @@ one. `metadata_validator.py` gets G's full shape-tolerance too.
 
 Dry-run over all 42 corpora (43 bibs, 4073 entries, writes stubbed):
 matched 3179->3109, fields removed 1313->1292, **years corrected 36->36**,
-breaker trips 11->11, conflict warnings 140->140, zero errors. So 70 entries
-newly abstain, only 19 of which were receiving any cleaning - and no
-legitimate year correction was lost. Only (c) has measured harm behind it; the
+breaker trips 11->11, zero errors. So 70 entries newly abstain, only 19 of
+which were receiving any cleaning - and no legitimate year correction was
+lost. Warning SETS (not just counts) are identical old vs new: 0 added, 0
+removed, 0 retext. All 70 abstentions are (c); Task 1 and the scoped-conflict
+path account for none. (An earlier figure of 24 was the same phenomenon
+measured over only the 15 corpora that parsed before G fixed the index
+crash.) Only (c) has measured harm behind it; the
 DOI guard had **zero** real-world incidence and the year work is boundary
 hardening (no PhilLit producer emits a float year). Residual, documented not
 fixed: two scoped records agreeing on year but differing on

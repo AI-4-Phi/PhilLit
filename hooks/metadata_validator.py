@@ -81,8 +81,11 @@ class MetadataIndex:
     entries: list = field(default_factory=list)
 
     # Files whose envelope or records could not be parsed. Recorded rather
-    # than crashing the build - see build_metadata_index.
+    # than crashing the build - see build_metadata_index. skip_reasons keeps
+    # the exception text: a fail-soft path that discards the reason turns a
+    # loud crash into a silent data-loss channel.
     skipped_files: list = field(default_factory=list)
+    skip_reasons: dict = field(default_factory=dict)
 
 
 def normalize_pages(pages: str) -> str:
@@ -140,8 +143,9 @@ def parse_s2_result(data: dict, source_file: str) -> list[SourceMetadata]:
         # Also the fallback parser for unrecognized sources, so `journal` may
         # arrive as a bare STRING rather than S2's {name, volume, pages}
         # object (CORE writes it that way). Coerce instead of dropping: the
-        # string IS the container title, and treating it as {} would both
-        # lose the datum and raise AttributeError below.
+        # string IS the container title. The old `or {}` only caught FALSY
+        # values, so a truthy non-dict (CORE's bare string) flowed straight
+        # through and raised AttributeError on `.get` below.
         # Mirrors hooks/metadata_cleaner.py.
         journal_info = item.get("journal")
         if isinstance(journal_info, str):
@@ -334,16 +338,18 @@ def build_metadata_index(json_dir: Path) -> MetadataIndex:
     for json_file in json_dir.glob("*.json"):
         try:
             data = json.loads(json_file.read_text(encoding='utf-8'))
-        except (json.JSONDecodeError, UnicodeDecodeError, OSError):
+        except (json.JSONDecodeError, UnicodeDecodeError, OSError) as exc:
             # Unreadable is also "could not be parsed" - record it, so the
             # skip is countable rather than silent.
             index.skipped_files.append(json_file.name)
+            index.skip_reasons[json_file.name] = f"{type(exc).__name__}: {exc}"
             continue
 
         # A non-object envelope has no "results" to parse - a researcher's
         # top-level-list final_selection.json is the real shape that hit this.
         if not isinstance(data, dict):
             index.skipped_files.append(json_file.name)
+            index.skip_reasons[json_file.name] = "envelope is not a JSON object"
             continue
 
         # Detect source and parse accordingly. Fail SOFT per file: an
@@ -368,8 +374,9 @@ def build_metadata_index(json_dir: Path) -> MetadataIndex:
             else:
                 # Try S2 format as default (most common)
                 entries = parse_s2_result(data, json_file.name)
-        except Exception:
+        except Exception as exc:
             index.skipped_files.append(json_file.name)
+            index.skip_reasons[json_file.name] = f"{type(exc).__name__}: {exc}"
             continue
 
         # Stage into a throwaway index and merge only on complete success.
@@ -379,8 +386,9 @@ def build_metadata_index(json_dir: Path) -> MetadataIndex:
         staged = MetadataIndex()
         try:
             _index_entries(staged, entries)
-        except Exception:
+        except Exception as exc:
             index.skipped_files.append(json_file.name)
+            index.skip_reasons[json_file.name] = f"{type(exc).__name__}: {exc}"
             continue
         _merge_index(index, staged)
 
