@@ -30,7 +30,7 @@
 - `skills/philosophy-research/` — API search scripts for academic sources (Semantic Scholar, OpenAlex, CORE, arXiv, SEP, IEP, PhilPapers, NDPR), abstract resolution, encyclopedia context extraction, and citation verification (CrossRef). Includes Brave web search fallback and caching.
 - `skills/setup/` — The `/phillit:setup` skill: scaffolds a workspace (`.phillit/` marker, `.env`) and safely merges permission rules into the workspace's `.claude/settings.json`.
 - `agents/` — Specialized subagent definitions invoked by the literature-review skill.
-- `hooks/` — Hook scripts: `fast_gate.sh` (shell pre-filter for per-call gates), `bib_validator.py`, `validate_bib_write.py`, `metadata_validator.py`, `metadata_cleaner.py`, `block_background_bash.py` (guards Bash-tool background calls inside subagents), `block_subagent_background_dispatch.py` (guards Agent/Task background dispatch at the orchestrator — the four PhilLit review agents must run foreground), `subagent_stop_bib.sh`, and the thin `setup-environment.sh` SessionStart bootstrap.
+- `hooks/` — Hook scripts: `fast_gate.sh` (shell pre-filter for per-call gates), `bib_validator.py`, `validate_bib_write.py`, `metadata_cleaner.py`, `block_background_bash.py` (guards Bash-tool background calls inside subagents), `block_subagent_background_dispatch.py` (guards Agent/Task background dispatch at the orchestrator — the four PhilLit review agents must run foreground), `subagent_stop_bib.sh`, and the thin `setup-environment.sh` SessionStart bootstrap.
 - `hooks/hooks.json` — Plugin hook definitions (single source of truth): SessionStart bootstrap; marker-gated PreToolUse/PostToolUse/SubagentStop.
 - `docs/` — Project documentation: `ROADMAP.md` (open work, priority-ordered), shared specs (`ARCHITECTURE.md`, `conventions.md`, `permissions-guide.md`), `known-issues/`, and `ideas/` (design ideas and deferred plans).
 - `tests/` — pytest tests for API scripts and hooks.
@@ -54,11 +54,25 @@ For agent architecture and design patterns, see `docs/ARCHITECTURE.md`.
 
 The downstream service (`~/github-repos/phillit-service`) vendors this repo's
 skills/agents/hooks under `engine/.claude/` (near-identical files; this repo's
-plugin layout has no `.claude/` prefix). Fixes are cherry-picked between the
-two, in either direction. **Engine/prompt fixes that need test runs are built
-and validated HERE first** — reviews here run under Claude Code (free), while
-the service bills every run through the Agent SDK — then ported. Open
-cross-repo work is listed in `docs/ROADMAP.md`.
+plugin layout has no `.claude/` prefix).
+
+**Every fix or improvement made here must be implemented or mirrored in
+phillit-service, mutatis mutandis** (Johannes, 2026-07-28) — code, docs,
+and roadmap items alike. Adapt rather than copy: paths gain the
+`engine/.claude/` prefix, roadmap sub-items renumber (PhilLit item 3 ↔
+service item 23), and a file may not exist there yet. Mirroring holds in
+both directions; a fix that lands in the service comes back here.
+
+**Engine/prompt fixes that need test runs are built and validated HERE
+first** — reviews here run under Claude Code (free), while the service bills
+every run through the Agent SDK — then ported. Open cross-repo work is
+listed in `docs/ROADMAP.md`.
+
+Gotcha: the service tracks its roadmap as **`docs/roadmap.md` (lowercase)**.
+On macOS's case-insensitive filesystem, editing `docs/ROADMAP.md` there
+writes the right file but `git add docs/ROADMAP.md` stages *nothing* — the
+change silently misses the commit. Use the lowercase path, and check
+`git show --stat` after committing.
 
 ## Cross-Platform
 

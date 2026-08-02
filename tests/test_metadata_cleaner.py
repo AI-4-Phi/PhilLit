@@ -791,6 +791,7 @@ class TestYearCorrection:
                     "doi": "10.1234/test.2020",
                     "title": "Test Paper",
                     "year": 2020,
+                    "year_basis": "published-print",
                     "container_title": "Test Journal"
                 }
             ]
@@ -866,6 +867,7 @@ class TestYearCorrection:
                     "doi": "10.1234/test.2020",
                     "title": "Test Paper",
                     "year": 2020,
+                    "year_basis": "published-print",
                     "container_title": "Test Journal"
                 }
             ]
@@ -1280,3 +1282,176 @@ class TestCleaningLedger:
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
         ent = ledger["entries"]["awad2018moral"]
         assert ent["api_matched"] is False
+# --- CORE parsing + per-file isolation ---------------------------------
+# `search_core.py` writes `journal` as a STRING; detect_api_source had no
+# `core` branch, so core_*.json fell through to parse_s2_result, whose
+# journal_info.get("name") raised AttributeError. Nothing caught it, so ONE
+# such file killed the index -- and all cleaning -- for the whole review
+# (130 of 7087 files across the local corpora; 27 of 42 reviews).
+
+CORE_JSON = {
+    "status": "success",
+    "source": "core",
+    "query": "moral agency",
+    "results": [{
+        "core_id": "123", "doi": "10.1111/phis.12345",
+        "title": "Moral Agency and Machines", "authors": ["A. Author"],
+        "year": 2019, "abstract": "x", "publisher": "Wiley",
+        "journal": "Philosophical Issues", "download_url": None,
+        "source_url": None, "language": "en", "document_type": "research",
+    }],
+    "count": 1, "errors": [],
+}
+
+
+class TestCoreResults:
+    def test_detect_api_source_recognizes_core_by_source_field(self):
+        from metadata_cleaner import detect_api_source
+        assert detect_api_source({"source": "core"}, "whatever.json") == "core"
+
+    def test_detect_api_source_recognizes_core_by_filename(self):
+        from metadata_cleaner import detect_api_source
+        assert detect_api_source({}, "core_accountability.json") == "core"
+
+    def test_detect_api_source_tolerates_non_string_source(self):
+        from metadata_cleaner import detect_api_source
+        assert detect_api_source({"source": None}, "s2_x.json") == "s2"
+        assert detect_api_source({"source": ["core"]}, "unknown.json") == "unknown"
+
+    def test_parse_core_result_reads_journal_publisher_doi(self):
+        from metadata_cleaner import parse_core_result
+        entry = parse_core_result(CORE_JSON, "core_x.json")[0]
+        assert entry["title"] == "Moral Agency and Machines"
+        assert entry["container_title"] == "Philosophical Issues"
+        assert entry["publisher"] == "Wiley"
+        assert entry["doi"] == "10.1111/phis.12345"
+        assert entry["year"] == 2019
+
+    def test_parse_s2_result_tolerates_string_journal(self):
+        from metadata_cleaner import parse_s2_result
+        entries = parse_s2_result(
+            {"results": [{"title": "T", "journal": "Philosophical Issues"}]}, "x.json")
+        assert entries[0]["container_title"] == "Philosophical Issues"
+
+    def test_core_json_feeds_the_index_instead_of_crashing(self, tmp_path):
+        from metadata_cleaner import normalize_doi, normalize_journal
+        jdir = tmp_path / "json"
+        jdir.mkdir()
+        (jdir / "core_moral_agency.json").write_text(
+            json.dumps(CORE_JSON), encoding="utf-8")
+        index = build_metadata_index([jdir])
+        assert index.skipped_files == []
+        assert normalize_journal("Philosophical Issues") in index.journals
+        assert "wiley" in index.publishers
+        assert normalize_doi("10.1111/phis.12345") in index.dois
+
+
+class TestPerFileIsolation:
+    def test_a_file_with_the_wrong_results_shape_is_skipped_not_fatal(self, tmp_path):
+        from metadata_cleaner import normalize_journal
+        jdir = tmp_path / "json"
+        jdir.mkdir()
+        (jdir / "s2_bad.json").write_text(
+            '{"source": "s2", "results": ["not-a-dict"]}', encoding="utf-8")
+        (jdir / "s2_good.json").write_text(
+            '{"source": "s2", "results": [{"journal": {"name": "Journal A"}}]}',
+            encoding="utf-8")
+        index = build_metadata_index(jdir)
+        assert "s2_bad.json" in index.skipped_files
+        assert normalize_journal("Journal A") in index.journals
+
+    def test_json_that_is_not_an_object_is_skipped(self, tmp_path):
+        # Real shape: reviews/algorithmic-fairness/.../final_selection.json is
+        # a researcher-authored top-level LIST, not an API envelope.
+        from metadata_cleaner import normalize_journal
+        jdir = tmp_path / "json"
+        jdir.mkdir()
+        (jdir / "final_selection.json").write_text('[["a"], ["b"]]', encoding="utf-8")
+        (jdir / "s2_good.json").write_text(
+            '{"source": "s2", "results": [{"journal": {"name": "Journal A"}}]}',
+            encoding="utf-8")
+        index = build_metadata_index(jdir)
+        assert "final_selection.json" in index.skipped_files
+        assert normalize_journal("Journal A") in index.journals
+
+    def test_clean_bibtex_survives_and_warns_about_a_poisoned_file(self, tmp_path):
+        jdir = tmp_path / "json"
+        jdir.mkdir()
+        (jdir / "s2_bad.json").write_text(
+            '{"source": "s2", "results": ["not-a-dict"]}', encoding="utf-8")
+        (jdir / "verify_a.json").write_text(
+            '{"source": "crossref", "results": [{"title": "T1", '
+            '"container_title": "J", "year": 2020}]}', encoding="utf-8")
+        bib = tmp_path / "d.bib"
+        bib.write_text('@article{a, author="A, B", title="T1", journal="J", '
+                       'year="2020"}\n', encoding="utf-8")
+        res = clean_bibtex(bib, [jdir])
+        assert res["success"] is True
+        assert "s2_bad.json" in res["skipped_files"]
+        assert any("s2_bad.json" in w for w in res["warnings"])
+
+    def test_cli_reports_an_unexpected_failure_as_json(self, tmp_path):
+        """The CLI's contract with subagent_stop_bib.sh is JSON on stdout: a
+        bare traceback makes the hook's `jq` fail, which reads as a clean run."""
+        bib = tmp_path / "d.bib"
+        bib.write_text('@article{a, author="A, B", title="T"}\n', encoding="utf-8")
+        script = HOOKS_DIR / "metadata_cleaner.py"
+        proc = subprocess.run(
+            [sys.executable, "-c",
+             "import sys, runpy\n"
+             f"sys.path.insert(0, {str(HOOKS_DIR)!r})\n"
+             "import metadata_cleaner as mc\n"
+             "def boom(*a, **k):\n"
+             "    raise RuntimeError('unexpected')\n"
+             "mc.clean_bibtex = boom\n"
+             f"sys.argv = [{str(script)!r}, {str(bib)!r}, {str(tmp_path)!r}]\n"
+             "mc.main()\n"],
+            capture_output=True, text=True, encoding="utf-8")
+        assert proc.returncode == 2
+        payload = json.loads(proc.stdout)
+        assert payload["success"] is False
+        assert any("unexpected" in e for e in payload["errors"])
+
+
+class TestLoadFailuresOutsideJSONDecodeError:
+    """3G made the parser dispatch fail-soft per file, but the LOAD step still
+    named only JSONDecodeError. json.loads can raise a plain ValueError
+    (integer digit limit) or RecursionError (deep nesting) - neither is a
+    JSONDecodeError, so one such file killed the whole index build, which is
+    exactly the 3G failure class one layer up. Found by kimi-k3/gpt-5.6-sol
+    reviewing the dormant validator, then reproduced HERE, in the live
+    destructive path."""
+
+    def _dir(self, tmp_path, bad_name, bad_text):
+        import json as _json
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / bad_name).write_text(bad_text, encoding="utf-8")
+        (json_dir / "s2_ok.json").write_text(_json.dumps({
+            "source": "semantic_scholar",
+            "results": [{"title": "T", "year": 2007}],
+        }), encoding="utf-8")
+        return json_dir
+
+    def test_oversized_integer_is_skipped_not_fatal(self, tmp_path):
+        from metadata_cleaner import build_metadata_index
+
+        json_dir = self._dir(
+            tmp_path, "a_huge.json",
+            '{"results":[{"year":' + "9" * 5000 + "}]}")
+
+        index = build_metadata_index(json_dir)
+
+        assert "a_huge.json" in index.skipped_files
+        assert index.entries          # the good file still indexed
+
+    def test_deeply_nested_json_is_skipped_not_fatal(self, tmp_path):
+        from metadata_cleaner import build_metadata_index
+
+        json_dir = self._dir(
+            tmp_path, "a_deep.json", "[" * 200000 + "]" * 200000)
+
+        index = build_metadata_index(json_dir)
+
+        assert "a_deep.json" in index.skipped_files
+        assert index.entries

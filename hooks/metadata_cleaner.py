@@ -4,8 +4,9 @@
 Removes BibTeX bibliographic metadata that cannot be verified against API output,
 preventing hallucinated data from persisting in the bibliography.
 
-This is the "fix" counterpart to metadata_validator.py - instead of blocking,
-it automatically removes unverifiable fields while preserving verified data.
+This is a fix, not a block: it automatically removes unverifiable fields while
+preserving verified data. (An earlier blocking design, metadata_validator.py,
+was never wired into any hook and was deleted 2026-08-02.)
 
 Features:
 1. Removes unverifiable fields (journal, booktitle, volume, number, pages, publisher, doi)
@@ -28,6 +29,7 @@ import json
 import os
 import re
 import sys
+import traceback
 import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -185,6 +187,11 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     carry another API's bad metadata for the same DOI (year-corruption fix).
     Among records of equal rank, pool order (filename sort) still decides.
 
+    find_api_entry_for_bib_entry's conflict/abstention logic DEPENDS on this
+    preference: it inspects `entry_scoped` on the single record returned here,
+    so an authoritative record must win over pool order or the authority model
+    silently degrades to filename order. Do not make this first-match.
+
     Known limitation: this preference governs the api_entry used for ALL
     field corrections (container_title, volume, pages, etc.), not just
     year - plan_entry_cleaning only gates the *year* overwrite on
@@ -197,6 +204,14 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     if not doi:
         return None
     norm_doi = normalize_doi(doi)
+    # An empty normalized DOI matches nothing. normalize_doi maps "doi:",
+    # "https://doi.org/", "DOI: " and "  " all to "", so without this guard
+    # any two records carrying a malformed DOI match each other and one
+    # becomes the other's "API record". Same non-empty rule _field_matches_api
+    # applies per field, hoisted out of the loop: the scan is dead work when
+    # the key is empty.
+    if not norm_doi:
+        return None
     fallback = None
     for api_entry in index.entries:
         api_doi = api_entry.get("doi")
@@ -208,9 +223,115 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     return fallback
 
 
+# Integral-year grammar for _year_key: optional sign, digits, and an
+# optional ALL-ZERO fractional part. Deliberately excludes exponent notation.
+# Integral-year grammar for _year_key: optional sign, ASCII digits, and an
+# optional fractional part of one-or-more zeros. `[0-9]` not `\d` (which also
+# matches non-ASCII decimal digits that lstrip("0") would not normalize), and
+# `0+` not `0*` so a bare trailing dot ("2007.") is NOT treated as integral.
+_INTEGRAL_YEAR_RE = re.compile(r"^([+-]?)([0-9]+)(?:\.0+)?$")
+
+# A year that may be WRITTEN into a .bib. Deliberately narrower than the
+# comparison grammar above: canonical form only (no leading zeros, no sign),
+# 1-4 digits, non-zero. `str.isdigit()` must NOT be used here - it accepts
+# Arabic-Indic and superscript digits that _INTEGRAL_YEAR_RE rejects, and
+# `lstrip("-")` would swallow "--2007", so the write gate would re-admit
+# exactly what the comparison grammar was tightened to exclude.
+_WRITABLE_YEAR_RE = re.compile(r"[1-9][0-9]{0,3}\Z")
+
+
+# Date fields whose year IS the citation year of the version of record.
+# `created` is CrossRef's registration timestamp and never qualifies;
+# `published-online` alone qualifies only because verify_paper.py reaches it
+# solely when there is no print date at all (see its _YEAR_FIELDS order).
+_VERSION_OF_RECORD_BASES = frozenset(
+    {"published-print", "published", "published-online"})
+
+
+def _year_is_overwritable(record: dict) -> bool:
+    """May this record's year OVERWRITE a populated bibliography year?
+
+    Requires POSITIVE provenance: the producer must say which date field the
+    year came from, and it must be a version-of-record field. A record with no
+    `year_basis` is refused - not because it is known bad, but because it is
+    unknown, and the failure it guards against was measured, not hypothetical.
+
+    Before verify_paper.py recorded a basis it took CrossRef's `published`
+    first, which is the EARLIEST of print and online. 27 of 42 year rewrites
+    across the local corpora therefore replaced a correct print-issue year with
+    the online-first year (docs/known-issues/metadata-cleaner-year-corruption.md,
+    "online-first" section). Those records are still on disk in delivered
+    reviews; nothing in them distinguishes the good years from the bad, so the
+    only safe rule is to require the evidence the fixed producer now supplies.
+    Refusals are counted in `years_declined` and warned about, never silent.
+    """
+    return record.get("year_basis") in _VERSION_OF_RECORD_BASES
+
+
+def _year_of(record: dict) -> str:
+    """Canonical year of a pooled record, or "" when it supplies none.
+
+    Tests `is None` rather than truthiness: a raw `0`/`0.0` is falsy but IS a
+    value, and `record.get("year") or ""` therefore made numeric zero read as
+    yearless while the string "0" read as year-bearing - reintroducing the
+    int/str split _year_key exists to erase.
+    """
+    raw = record.get("year")
+    return "" if raw is None else _year_key(raw)
+
+
+def _year_key(value) -> str:
+    """Canonical form of a year, for comparing values from different producers.
+
+    Pooled JSON is external data: the same real year can arrive as an int
+    (2007) or a float (2007.0) depending on how a producer parsed it. Compare
+    those equal instead of registering a phantom disagreement.
+
+    Canonicalizes WITHOUT a binary-float round-trip, so a string or an
+    arbitrary-precision int is never rewritten into a different number:
+    str(int(float("9007199254740993"))) is ...992, and float() collapses
+    "2007.0000000000001" to "2007". Note the limit of that guarantee - if the
+    JSON loader already parsed the value INTO a float, the precision is gone
+    before this function sees it; only `parse_float=Decimal` would preserve
+    it. Exactness here means "adds no new rounding", not "recovers what json
+    already discarded".
+
+    The grammar composes with repr(float), so the effective boundary is where
+    str() switches to exponent form: str(1e15) is "1000000000000000.0" and
+    canonicalizes, str(1e16) is "1e+16" and does not. Unreachable for real
+    years; noted so the contract is not mistaken for a pure-grammar one. Match sign + digits +
+    an optional all-zero fractional part; return the digits with sign and
+    leading zeros normalized. Everything else - "2007.5", "n.d.", "MMVII",
+    "2,007" - round-trips verbatim. Exponent notation ("2.007e3", "1e999") is
+    out of scope by design, so the contract comes from this grammar rather
+    than from binary-float range.
+
+    KNOWN LIMITATION (predates this helper, now routed through it): a
+    disambiguating BibTeX year like "2007a" canonicalizes verbatim and so
+    compares unequal to "2007". A scoped record would "correct" it to "2007"
+    and destroy the suffix. There is no plausibility gate on the correction
+    path beyond "must be an integral canonical year".
+
+    NOTE: no PhilLit producer is currently known to emit a float year. This
+    is boundary hardening for external JSON, not a fix for an observed
+    failure.
+    """
+    text = str(value).strip()
+    match = _INTEGRAL_YEAR_RE.match(text)
+    if not match:
+        return text
+    # A leading "+" is dropped; a negative sign is retained (except on zero).
+    sign, digits = match.group(1), match.group(2)
+    digits = digits.lstrip("0") or "0"
+    # -0 and 0 are the same year; do not let a sign survive on zero.
+    return ("-" if sign == "-" and digits != "0" else "") + digits
+
+
 def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
-    """Distinct year values (with their source files) across pooled entries
-    sharing this DOI. Returns {} unless at least two distinct years exist.
+    """Distinct CANONICAL year values (with their source files) across pooled
+    entries sharing this DOI, compared via _year_key so an int/float encoding
+    split is not a disagreement. Returns {} unless at least two distinct
+    canonical years exist.
 
     Option D of the year-corruption fix: a same-DOI disagreement should be
     visible in the cleaning report however it is resolved - silent
@@ -218,12 +339,17 @@ def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
     if not doi:
         return {}
     norm_doi = normalize_doi(doi)
+    # Empty normalizes to "" and would collide with every other malformed
+    # DOI - see find_api_entry_by_doi.
+    if not norm_doi:
+        return {}
     years: dict = {}
     for api_entry in index.entries:
         api_doi = api_entry.get("doi")
         if not api_doi or normalize_doi(api_doi) != norm_doi:
             continue
-        year = str(api_entry.get("year") or "").strip()
+        raw_year = api_entry.get("year")
+        year = _year_key(raw_year) if raw_year else ""
         if year:
             years.setdefault(year, set()).add(api_entry.get("source_file") or "?")
     if len(years) < 2:
@@ -232,11 +358,22 @@ def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
 
 
 def parse_s2_result(data: dict, source_file: str) -> list[dict]:
-    """Parse Semantic Scholar JSON format."""
+    """Parse Semantic Scholar JSON format.
+
+    Also the fallback parser for unrecognized sources, so `journal` may arrive
+    as a bare STRING rather than S2's {name, volume, pages} object (CORE writes
+    it that way). Coerce instead of dropping: the string IS the container
+    title, and treating it as `{}` would both lose the datum and — before the
+    isinstance guard — raise AttributeError.
+    """
     results = data.get("results", [])
     entries = []
     for item in results:
-        journal_info = item.get("journal") or {}
+        journal_info = item.get("journal")
+        if isinstance(journal_info, str):
+            journal_info = {"name": journal_info}
+        elif not isinstance(journal_info, dict):
+            journal_info = {}
         entries.append({
             "title": item.get("title"),
             "container_title": journal_info.get("name") or item.get("venue"),
@@ -270,7 +407,12 @@ def parse_openalex_result(data: dict, source_file: str) -> list[dict]:
 
 
 def parse_crossref_result(data: dict, source_file: str) -> list[dict]:
-    """Parse CrossRef JSON format."""
+    """Parse CrossRef JSON format.
+
+    `year_basis` is read through when the producer supplies it: it names the
+    CrossRef date field the year came from, and only a version-of-record field
+    licenses OVERWRITING a bibliography's own year (see _year_is_overwritable).
+    """
     results = data.get("results", [])
     entries = []
     for item in results:
@@ -282,6 +424,7 @@ def parse_crossref_result(data: dict, source_file: str) -> list[dict]:
             "pages": item.get("page"),
             "publisher": item.get("publisher"),
             "year": item.get("year"),
+            "year_basis": item.get("year_basis"),
             "doi": item.get("doi"),
         })
     return entries
@@ -329,9 +472,38 @@ def parse_philpapers_result(data: dict, source_file: str) -> list[dict]:
     return entries
 
 
+def parse_core_result(data: dict, source_file: str) -> list[dict]:
+    """Parse CORE JSON format (search_core.py's `_format_work`).
+
+    CORE's `journal` is a plain string (the first journal's title), and it
+    carries `publisher` — both of which the S2 fallback parser used to lose or
+    choke on.
+    """
+    results = data.get("results", [])
+    entries = []
+    for item in results:
+        entries.append({
+            "title": item.get("title"),
+            "container_title": item.get("journal"),
+            # Read through rather than hardcoding None: search_core.py's
+            # _format_work does not emit these today, but CORE work objects
+            # carry them, and a hardcoded None would silently DISCARD that
+            # evidence the day the writer starts including it — which means
+            # more stripping, not less.
+            "volume": item.get("volume"),
+            "issue": item.get("issue"),
+            "pages": item.get("pages"),
+            "publisher": item.get("publisher"),
+            "year": item.get("year"),
+            "doi": item.get("doi"),
+        })
+    return entries
+
+
 def detect_api_source(data: dict, filename: str) -> str:
     """Detect which API produced this JSON file."""
-    source = data.get("source", "").lower()
+    raw_source = data.get("source")
+    source = raw_source.lower() if isinstance(raw_source, str) else ""
 
     if "semantic_scholar" in source or "s2" in source:
         return "s2"
@@ -343,6 +515,8 @@ def detect_api_source(data: dict, filename: str) -> str:
         return "arxiv"
     elif "philpapers" in source:
         return "philpapers"
+    elif "core" in source:
+        return "core"
 
     fname = filename.lower()
     if "s2_" in fname or fname.startswith("s2"):
@@ -355,6 +529,8 @@ def detect_api_source(data: dict, filename: str) -> str:
         return "arxiv"
     elif "philpapers" in fname or "pp_" in fname:
         return "philpapers"
+    elif "core_" in fname or fname.startswith("core"):
+        return "core"
 
     return "unknown"
 
@@ -369,6 +545,12 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
     json.loads are salvaged via _salvage_json (log-pollution tolerance);
     unsalvageable files are recorded in index.skipped_files, salvaged ones in
     index.salvaged_files.
+
+    Every file is processed in ISOLATION: one that is not a JSON *object*, or
+    whose contents a parser cannot handle, joins index.skipped_files and the
+    build continues. Without that isolation a single malformed file killed the
+    index — and so ALL cleaning — for the whole review; a string-shaped CORE
+    `journal` did exactly that on 27 of 42 real corpora.
     """
     index = MetadataIndex()
 
@@ -400,82 +582,158 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
                     index.skipped_files.append(json_file.name)
                     continue
                 index.salvaged_files.append(json_file.name)
+            except Exception:   # noqa: BLE001 - per-file fail-soft
+                # json.loads can also raise a plain ValueError (integer digit
+                # limit) or RecursionError (deep nesting). Neither is a
+                # JSONDecodeError, so before this they escaped and killed the
+                # whole index - the 3G failure class one layer up, in the
+                # live destructive path. Salvage is pointless for these
+                # (the text parsed as JSON, it is the VALUE that is refused),
+                # so skip the file.
+                index.skipped_files.append(json_file.name)
+                continue
 
-            api_source = detect_api_source(data, json_file.name)
+            # Not an API envelope at all (e.g. a researcher's own top-level
+            # list, as in final_selection.json) — nothing to index.
+            if not isinstance(data, dict):
+                index.skipped_files.append(json_file.name)
+                continue
 
-            if api_source == "s2":
-                entries = parse_s2_result(data, json_file.name)
-            elif api_source == "openalex":
-                entries = parse_openalex_result(data, json_file.name)
-            elif api_source == "crossref":
-                entries = parse_crossref_result(data, json_file.name)
-            elif api_source == "arxiv":
-                entries = parse_arxiv_result(data, json_file.name)
-            elif api_source == "philpapers":
-                entries = parse_philpapers_result(data, json_file.name)
-            else:
-                entries = parse_s2_result(data, json_file.name)
-
-            # Source-authority tagging (year-corruption fix): record where
-            # each pooled record came from. verify_* files are entry-scoped
-            # CrossRef lookups (item-13 A4.1) and outrank broad search dumps
-            # for correction purposes (same "verify_" filename convention
-            # detect_api_source already relies on). The filename substring
-            # alone is not enough - it would also match a hypothetical
-            # other-source filename like "s2_verify_results.json" - so we
-            # additionally require the already-computed api_source to be
-            # "crossref": verify_paper.py's JSON always sets "source":
-            # "crossref", which detect_api_source checks before falling
-            # back to filename heuristics, so genuine verify_*.json files
-            # are unaffected while a same-named non-CrossRef file is
-            # correctly rejected.
-            entry_scoped = "verify_" in json_file.name.lower() and api_source == "crossref"
-            for entry in entries:
-                entry["source_file"] = json_file.name
-                entry["entry_scoped"] = entry_scoped
-                index.entries.append(entry)
-
-                if entry.get("container_title"):
-                    norm = normalize_journal(entry["container_title"])
-                    if norm not in index.journals:
-                        index.journals[norm] = []
-                    index.journals[norm].append(entry["container_title"])
-
-                if entry.get("volume"):
-                    vol = str(entry["volume"]).strip()
-                    if vol not in index.volumes:
-                        index.volumes[vol] = []
-                    index.volumes[vol].append(json_file.name)
-
-                if entry.get("issue"):
-                    iss = str(entry["issue"]).strip()
-                    if iss not in index.issues:
-                        index.issues[iss] = []
-                    index.issues[iss].append(json_file.name)
-
-                if entry.get("pages"):
-                    norm = normalize_pages(entry["pages"])
-                    if norm not in index.pages:
-                        index.pages[norm] = []
-                    index.pages[norm].append(entry["pages"])
-
-                if entry.get("publisher"):
-                    pub = entry["publisher"].lower().strip()
-                    if pub not in index.publishers:
-                        index.publishers[pub] = []
-                    index.publishers[pub].append(entry["publisher"])
-
-                if entry.get("year"):
-                    yr = str(entry["year"])
-                    if yr not in index.years:
-                        index.years[yr] = []
-                    index.years[yr].append(json_file.name)
-
-                if entry.get("doi"):
-                    norm = normalize_doi(entry["doi"])
-                    index.dois[norm] = json_file.name
+            # TRANSACTIONAL: stage into a throwaway index and merge only on
+            # complete success. Ingesting straight into `index` would leave a
+            # half-read file's records behind when a later record raises — so
+            # a file reported as skipped would still be supplying DOI matches
+            # and presence evidence that authorize destructive cleaning.
+            staged = MetadataIndex()
+            try:
+                _index_one_file(staged, data, json_file.name)
+            except Exception:
+                # Fail SOFT, per file: an unexpected shape costs this file's
+                # records, never the whole index. clean_bibtex surfaces the
+                # name in result["warnings"], so the skip is never silent.
+                index.skipped_files.append(json_file.name)
+                continue
+            _merge_index(index, staged)
 
     return index
+
+
+def _merge_index(dst: MetadataIndex, src: MetadataIndex) -> None:
+    """Fold a fully-parsed file's staged index into the shared one.
+
+    Merging in file order preserves the previous semantics exactly: bucket
+    lists accumulate in the order files are read, and `dois` keeps its
+    last-writer-wins behaviour."""
+    dst.entries.extend(src.entries)
+    for bucket in ("journals", "volumes", "issues", "pages", "publishers", "years"):
+        target, source = getattr(dst, bucket), getattr(src, bucket)
+        for key, values in source.items():
+            target.setdefault(key, []).extend(values)
+    dst.dois.update(src.dois)
+
+
+def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
+    """Parse one API JSON envelope and fold its records into `index`.
+
+    Split out of build_metadata_index so a single try/except can isolate the
+    whole per-file path — dispatch, parsing, and ingestion alike.
+    """
+    api_source = detect_api_source(data, filename)
+
+    if api_source == "s2":
+        entries = parse_s2_result(data, filename)
+    elif api_source == "openalex":
+        entries = parse_openalex_result(data, filename)
+    elif api_source == "crossref":
+        entries = parse_crossref_result(data, filename)
+    elif api_source == "arxiv":
+        entries = parse_arxiv_result(data, filename)
+    elif api_source == "philpapers":
+        entries = parse_philpapers_result(data, filename)
+    elif api_source == "core":
+        entries = parse_core_result(data, filename)
+    else:
+        entries = parse_s2_result(data, filename)
+
+    # Source-authority tagging (year-corruption fix): record where each pooled
+    # record came from, and which records may OVERWRITE a populated year.
+    # Authority is keyed on the envelope's CONTENT, not on its filename
+    # (ROADMAP 3I): a CrossRef envelope that resolved exactly ONE work is a
+    # targeted single-work lookup, which is precisely the evidence class the
+    # gate trusts; a multi-result envelope is a broad dump, which is precisely
+    # the class it exists to refuse.
+    #
+    # The old rule was `"verify_" in filename.lower() and api_source ==
+    # "crossref"`, and the filename half was wrong in both directions.
+    # Measured over the 45 local corpora (7109 JSON files):
+    #   * 262 files are genuine single-work CrossRef lookups saved WITHOUT a
+    #     `verify_` name (`cr_*.json`, `<author>_<year>.json`, ...). Every one
+    #     was trusted to acquit (its journal/volume/pages still protected
+    #     fields from stripping) but not to convict (it could not correct a
+    #     wrong year). They gain authority here.
+    #   * 181 `verify_*` CrossRef files lose the tag - and ALL 181 carry
+    #     `results: []` (not_found / error envelopes), contributing zero
+    #     records to the index. So no record loses authority, which is why the
+    #     filename rule needs no legacy fallback.
+    # `api_source == "crossref"` is retained and load-bearing: 11 multi-result
+    # `verify_*.json` files in the corpora are Semantic Scholar dumps, the very
+    # source class that caused the original corruption.
+    #
+    # Deliberately NOT required (the external review recommended both): that
+    # the lookup mode be `doi`, and that the requested DOI equal the record's.
+    # `verify_paper.py --title` is still a targeted single-work query (227 such
+    # files here), and once a record's DOI matches the bib entry's, the record
+    # IS CrossRef's own metadata for that DOI - identification path does not
+    # change provenance. The requested-vs-returned DOI check would buy nothing
+    # either: 2 of 981 differ locally, both benign aliases (a `10.1037//` typo
+    # CrossRef canonicalized, and a JSTOR->publisher redirect).
+    results = data.get("results")
+    entry_scoped = (api_source == "crossref"
+                    and isinstance(results, list) and len(results) == 1)
+    for entry in entries:
+        entry["source_file"] = filename
+        entry["entry_scoped"] = entry_scoped
+        index.entries.append(entry)
+
+        if entry.get("container_title"):
+            norm = normalize_journal(entry["container_title"])
+            if norm not in index.journals:
+                index.journals[norm] = []
+            index.journals[norm].append(entry["container_title"])
+
+        if entry.get("volume"):
+            vol = str(entry["volume"]).strip()
+            if vol not in index.volumes:
+                index.volumes[vol] = []
+            index.volumes[vol].append(filename)
+
+        if entry.get("issue"):
+            iss = str(entry["issue"]).strip()
+            if iss not in index.issues:
+                index.issues[iss] = []
+            index.issues[iss].append(filename)
+
+        if entry.get("pages"):
+            norm = normalize_pages(entry["pages"])
+            if norm not in index.pages:
+                index.pages[norm] = []
+            index.pages[norm].append(entry["pages"])
+
+        if entry.get("publisher"):
+            pub = entry["publisher"].lower().strip()
+            if pub not in index.publishers:
+                index.publishers[pub] = []
+            index.publishers[pub].append(entry["publisher"])
+
+        if entry.get("year"):
+            yr = str(entry["year"])
+            if yr not in index.years:
+                index.years[yr] = []
+            index.years[yr].append(filename)
+
+        if entry.get("doi"):
+            norm = normalize_doi(entry["doi"])
+            index.dois[norm] = filename
 
 
 def is_field_verifiable(field_name: str, value: str, index: MetadataIndex) -> bool:
@@ -524,24 +782,116 @@ def _normalize_title(title: str) -> str:
     return ' '.join(''.join(out).casefold().split())
 
 
+# Fields an api_entry supplies for verification. Used to compare how COMPLETE
+# two equally-authoritative records are before swapping between them.
+_AUTHORITY_FIELDS = ("container_title", "volume", "issue", "pages", "publisher")
+
+
+def _supplied_fields(record: dict) -> set:
+    """Which verification-bearing fields this record actually supplies.
+
+    Whitespace is not a supplied value - it verifies nothing.
+    """
+    return {name for name in _AUTHORITY_FIELDS
+            if str(record.get(name) or "").strip()}
+
+
+def _record_completeness(record: dict) -> int:
+    """How many verification-bearing fields this record actually supplies."""
+    return len(_supplied_fields(record))
+
+
 def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
     """Find THIS bib entry's own API record in the index (entry-scoped
     evidence, item-13 A4.1): first by DOI (exact normalized match), else by
     normalized title + year. Returns None when no affirmative match exists -
-    the entry is then left completely untouched by the cleaner."""
+    the entry is then left completely untouched by the cleaner.
+
+    A DOI whose pooled evidence CONFLICTS on year, with no entry-scoped
+    verify_* record to settle it, also returns None - and does so without
+    trying the title+year fallback (see the inline comment on that branch).
+    Abstention deliberately trades correction coverage for safety: when the
+    pool is self-inconsistent, filename order is not a valid authority rule.
+
+    Note the conflict test is EXISTENCE-based, not plurality-based: two
+    records saying 2007 and one saying 2019 still abstain. That is
+    intentional for a destructive fixer - do not "optimize" it into majority
+    rule without evidence that the majority is right."""
     doi_value = entry.fields.get('doi')
     if doi_value:
         api = find_api_entry_by_doi(doi_value, index)
         if api is not None:
+            # An entry-scoped verify_* record is a direct CrossRef lookup on
+            # this DOI: it carries correction authority and settles a
+            # same-DOI disagreement on its own.
+            if api.get("entry_scoped"):
+                # A scoped record settles a same-DOI disagreement only when it
+                # actually SUPPLIES a year, and only when the scoped records
+                # agree. Two verify_* snapshots can differ (CrossRef corrects
+                # records between crawls; a partial response can be persisted;
+                # print vs online dates get selected differently) - letting
+                # filename order pick the winner would restore the
+                # arbitrary-authority bug one tier up, where it CAN rewrite
+                # the bib year.
+                scoped = [
+                    other for other in index.entries
+                    if other.get("entry_scoped")
+                    and _field_matches_api('doi', doi_value, other)
+                ]
+                # Canonicalize BEFORE testing emptiness: `" "` is raw-truthy
+                # but is not a year, and must not read as a disagreement.
+                scoped_years = {
+                    key for key in (_year_of(other) for other in scoped) if key
+                }
+                if len(scoped_years) > 1:
+                    return None
+                if scoped_years:
+                    # Prefer a scoped record that HAS a year, so a partial
+                    # snapshot sorting first cannot silently suppress the
+                    # correction a complete one would authorize - but NEVER
+                    # swap to a LESS complete record: the winner governs
+                    # verification of every field, so trading completeness
+                    # for a year would delete metadata the first record
+                    # verified. Residual: two records supplying the SAME
+                    # fields with different VALUES are still first-wins - a
+                    # superset gate protects coverage, not agreement.
+                    if not _year_of(api):
+                        for other in scoped:
+                            # A SUPERSET, not a bigger count: an equally-sized
+                            # but disjoint record cannot verify what `api`
+                            # could, so swapping to it deletes exactly the
+                            # fields this gate exists to protect.
+                            if (_year_of(other)
+                                    and _supplied_fields(other)
+                                    >= _supplied_fields(api)):
+                                return other
+                    return api
+                # Every scoped record is yearless: none of them can say which
+                # of two disagreeing broad years is right, so fall through to
+                # the pooled-conflict check rather than granting authority.
+            # Reached either with no entry-scoped record at all, OR with a
+            # yearless one that cannot settle a year disagreement. Do NOT
+            # re-gate this on entry_scoped: that is exactly the hole the
+            # yearless fall-through above was added to close.
+            # The pooled sources disagree: there is no basis
+            # to prefer either record, so abstain. Return None WITHOUT falling
+            # through to the title+year heuristic below - when the bib's own
+            # year already equals the bad value (common, since an earlier run
+            # may have written it), that weaker signal would "confirm" the
+            # wrong source and reintroduce the very failure this prevents.
+            if find_doi_year_conflicts(doi_value, index):
+                return None
             return api
     norm_title = _normalize_title(entry.fields.get('title', ''))
     if not norm_title:
         return None
-    bib_year = str(entry.fields.get('year', '')).strip()
+    raw_bib_year = str(entry.fields.get('year', '')).strip()
+    bib_year = _year_key(raw_bib_year) if raw_bib_year else ""
     for api_entry in index.entries:
         if _normalize_title(api_entry.get('title') or '') != norm_title:
             continue
-        api_year = str(api_entry.get('year') or '').strip()
+        raw_api_year = api_entry.get('year')
+        api_year = _year_key(raw_api_year) if raw_api_year else ""
         # B3: the title+year fallback requires BOTH years present AND equal.
         # A missing year on either side is NOT a match - a bare title is too
         # weak an identifier to authorize destructive cleaning.
@@ -583,7 +933,14 @@ def _plan_type_downgrade(entry, surviving_fields: set, api_entry: dict) -> Optio
     demoted when it retains a DOI matching its own API record - a verified DOI
     proves the work is identifiable and @article degrades cleanly to
     author/year/title. Container types keep the existing demotion (their
-    formatter's dangling 'In.' is suppressed downstream)."""
+    formatter's dangling 'In.' is suppressed downstream).
+
+    The DOI comparison goes through `_field_matches_api`, NOT a local
+    `normalize_doi(a) == normalize_doi(b)`: normalize_doi maps `doi:`,
+    `https://doi.org/` and `"  "` all to `""`, so a raw equality test reads
+    two MALFORMED DOIs as a verified match and suppresses a demotion that
+    should happen. `_field_matches_api` already carries the `bool(nv)`
+    non-empty guard every other comparison site uses."""
     entry_type = entry.type.lower()
     if entry_type not in REQUIRED_FIELDS:
         return None
@@ -591,8 +948,8 @@ def _plan_type_downgrade(entry, surviving_fields: set, api_entry: dict) -> Optio
         return None
     if entry_type == 'article':
         doi_value = entry.fields.get('doi')
-        if ('doi' in surviving_fields and doi_value and api_entry.get('doi')
-                and normalize_doi(doi_value) == normalize_doi(api_entry['doi'])):
+        if ('doi' in surviving_fields and doi_value
+                and _field_matches_api('doi', doi_value, api_entry)):
             return None
     return (entry.type, 'misc')
 
@@ -609,22 +966,56 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         "removed_field_names": [],
         "removed_fields": [],
         "year_corrected": None,
+        "year_correction_declined": None,
         "type_downgraded": None,
     }
 
-    # Year-corruption fix (Option C): only an entry-scoped verification
-    # record (a direct CrossRef lookup on this DOI) may OVERWRITE a
-    # populated year. Broad search dumps are discovery evidence, not
-    # correction authority - they were never queried for this entry, and
-    # their per-DOI metadata is sometimes wrong (docs/known-issues/
-    # metadata-cleaner-year-corruption.md). (See the entry_scoped-preference
-    # docstring on find_api_entry_by_doi for the corresponding limitation
-    # on non-year fields.)
-    if api_entry.get("year") and api_entry.get("entry_scoped"):
-        api_year = str(api_entry["year"])
+    # Year-corruption fix (Option C): overwriting a populated year takes TWO
+    # independent licences, because it has failed in two independent ways.
+    #   1. WHO says so - only an entry-scoped record (a targeted single-work
+    #      CrossRef lookup). Broad search dumps are discovery evidence, not
+    #      correction authority: they were never queried for this entry, and
+    #      their per-DOI metadata is sometimes wrong (a Semantic Scholar dump
+    #      rewrote Sparrow 2007 to 2019).
+    #   2. WHAT they are saying - the record's year must be a version-of-record
+    #      year, not an online-first or registration date. CrossRef's own
+    #      `published` field is the EARLIEST of print and online, so a record
+    #      built from it carries the pre-issue year and "corrects" correct
+    #      bibliographies (Mind 130(517): print 2021, online 2019).
+    # Both failures are documented in
+    # docs/known-issues/metadata-cleaner-year-corruption.md. (See the
+    # entry_scoped-preference docstring on find_api_entry_by_doi for the
+    # corresponding limitation on non-year fields.)
+    if _year_of(api_entry):
+        # Compare AND write the canonical form: a record carrying 2007.0 must
+        # neither read as a disagreement with a bib year of 2007 nor land in
+        # the .bib as "2007.0". _year_key is exact, so the written value is
+        # always one the record actually supplied.
+        api_year = _year_of(api_entry)
         bib_year = entry.fields.get('year', '')
-        if bib_year and bib_year != api_year:
-            plan["year_corrected"] = (bib_year, api_year)
+        # A comparison KEY is not automatically a writable value. `" "` is
+        # raw-truthy but canonicalizes to "", and "n.d."/"2007."/"--2007" and
+        # non-ASCII digits round-trip verbatim - writing any of those would
+        # corrupt or empty a populated year. Only a plausible publication
+        # year may be written; see _WRITABLE_YEAR_RE.
+        if (_WRITABLE_YEAR_RE.match(api_year)
+                and bib_year and _year_key(bib_year) != api_year):
+            if api_entry.get("entry_scoped") and _year_is_overwritable(api_entry):
+                plan["year_corrected"] = (bib_year, api_year)
+            else:
+                # COUNTABLE, not silent. A refusal is itself information, and
+                # until it is recorded there is no way to tell "corruption
+                # prevented" from "a legitimate correction refused". Recorded
+                # behind the SAME writability and difference guards as the
+                # correction itself, so non-changes ("n.d.", an equal year)
+                # never inflate the count. The reason travels with it: the two
+                # licences fail for different causes and want different fixes
+                # (re-verify the entry vs. re-run under the fixed producer).
+                reason = ("unscoped" if not api_entry.get("entry_scoped")
+                          else "no-version-of-record-date")
+                plan["year_correction_declined"] = (
+                    bib_year, api_year, api_entry.get("source_file") or "?",
+                    reason)
 
     surviving: set = set()
     for field_name in list(entry.fields.keys()):
@@ -787,6 +1178,14 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         "cleaned_entries": {},  # entry_key -> [removed fields]
         "total_fields_removed": 0,
         "years_corrected": 0,
+        # Countable residual: corrections refused because the only DOI-matched
+        # evidence was a broad dump, with no entry-scoped CrossRef lookup.
+        # Each item is [bib_year, api_year, source_file].
+        "years_declined": [],
+        # True when JSON files were present but NONE of them yielded a usable
+        # record - "cleaning ran and found nothing to fix" and "the evidence
+        # base collapsed" must not read identically to a machine consumer.
+        "index_starved": False,
         "types_downgraded": 0,
         "entries_cleaned": 0,
         "entries_total": 0,
@@ -836,10 +1235,11 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     if index.skipped_files:
         result["warnings"].append(
             "Skipped " + str(len(index.skipped_files))
-            + " unparseable JSON file(s): " + ", ".join(index.skipped_files)
+            + " unusable JSON file(s): " + ", ".join(index.skipped_files)
         )
 
     if not index.entries:
+        result["index_starved"] = True
         result["warnings"].append("No API results found in JSON directory - skipping cleaning")
         return _count_entries_as_unmatched(bib_path, result)  # B1: still count
 
@@ -862,6 +1262,19 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     plans = []  # (entry_key, entry, plan)
     ledger_entries = {}  # entry_key -> cleaning-ledger record (shared-contract schema)
     for entry_key, entry in bib_data.entries.items():
+        # Emit the same-DOI year-disagreement warning BEFORE the match check:
+        # a conflicted DOI with no entry-scoped record now abstains, and this
+        # warning is the only signal that it did.
+        doi_value = entry.fields.get('doi', '')
+        conflicts = find_doi_year_conflicts(doi_value, index)
+        if conflicts:
+            detail = "; ".join(
+                f"{year} ({', '.join(files)})"
+                for year, files in sorted(conflicts.items()))
+            result["warnings"].append(
+                f"{entry_key}: indexed sources disagree on year for DOI "
+                f"{normalize_doi(doi_value)}: {detail}")
+
         api_entry = find_api_entry_for_bib_entry(entry, index)
         if api_entry is None:
             result["unmatched_entries"] += 1
@@ -875,15 +1288,6 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             "verified_identifier_value": verified_value,
             "entry_type": entry.type.lower(),
         }
-        doi_value = entry.fields.get('doi', '')
-        conflicts = find_doi_year_conflicts(doi_value, index)
-        if conflicts:
-            detail = "; ".join(
-                f"{year} ({', '.join(files)})"
-                for year, files in sorted(conflicts.items()))
-            result["warnings"].append(
-                f"{entry_key}: indexed sources disagree on year for DOI "
-                f"{normalize_doi(doi_value)}: {detail}")
         plans.append((entry_key, entry, plan_entry_cleaning(entry, index, api_entry)))
 
     # B2: compute the PLANNED metrics (by field name) BEFORE the breaker check,
@@ -897,6 +1301,29 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
                 result["planned_fields_removed_by_name"].get(fname, 0) + 1)
         if plan["type_downgraded"]:
             result["planned_demotions"] += 1
+        if plan["year_correction_declined"]:
+            result["years_declined"].append(list(plan["year_correction_declined"]))
+
+    # Recorded with the other PLANNED metrics, i.e. BEFORE the breaker check: a
+    # refusal is a planning-time fact, and a breaker trip (which writes nothing)
+    # must not also erase the record of what the gate declined. NOTE the
+    # deliberate divergence from phillit-service, which tallies these after the
+    # breaker's early return and so reports none on a trip.
+    if result["years_declined"]:
+        unscoped = sum(1 for d in result["years_declined"] if d[3] == "unscoped")
+        undated = len(result["years_declined"]) - unscoped
+        parts = []
+        if unscoped:
+            parts.append(f"{unscoped} where the only DOI-matched evidence was a "
+                         "broad search dump, not a targeted CrossRef lookup")
+        if undated:
+            parts.append(f"{undated} where the CrossRef record does not say which "
+                         "date field its year came from, so it may be an "
+                         "online-first date rather than the citation year "
+                         "(re-run verification to resolve)")
+        result["warnings"].append(
+            f"Declined {len(result['years_declined'])} year correction(s): "
+            + "; ".join(parts) + ".")
 
     # Circuit breaker: refuse a mass strip (systemic index failure). Keyed on
     # the planned count computed above.
@@ -950,7 +1377,21 @@ def main():
     bib_path = Path(sys.argv[1])
     json_dirs = [Path(a) for a in sys.argv[2:]]
 
-    result = clean_bibtex(bib_path, json_dirs)
+    try:
+        result = clean_bibtex(bib_path, json_dirs)
+    except Exception as e:
+        # The contract with subagent_stop_bib.sh is JSON on stdout. A bare
+        # traceback makes the hook's `jq` fail, and the hook treats that as
+        # "nothing cleaned" — silence byte-identical to a clean run. Report
+        # the failure in-band instead.
+        traceback.print_exc(file=sys.stderr)
+        print(json.dumps({
+            "success": False,
+            "errors": [f"metadata_cleaner crashed on {bib_path.name}: "
+                       f"{type(e).__name__}: {e}"],
+        }, indent=2))
+        sys.exit(2)
+
     print(json.dumps(result, indent=2))
 
     if not result["success"]:
