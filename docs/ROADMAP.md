@@ -135,7 +135,9 @@ title+year fall-through, or the bib's own bad year confirms the wrong source -
 and the conflict warning moved above the match check so abstention is never
 silent. (d) Two entry-scoped records disagreeing on a non-empty canonical year
 also abstain, and a yearless scoped record no longer shadows a year-bearing
-one. `metadata_validator.py` gets G's full shape-tolerance too.
+one **that is at least as complete** - the winner governs verification of
+every field, so trading completeness for a year would delete metadata the
+first record verified. `metadata_validator.py` gets G's full shape-tolerance too.
 
 Dry-run over all 42 corpora (43 bibs, 4073 entries, writes stubbed):
 matched 3179->3109, fields removed 1313->1292, **years corrected 36->36**,
