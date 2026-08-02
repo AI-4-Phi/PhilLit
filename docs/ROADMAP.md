@@ -91,6 +91,24 @@ run, so this item starts from data.
 
 ## 3. Bibliography-pipeline integrity fixes
 
+**G — metadata cleaning was dead on 64% of real reviews: FIXED 2026-08-02**
+(`aca9d33`; mirrored to phillit-service `8ed7cba`). CORE writes `journal` as
+a string, `detect_api_source` had no `core` branch, and the S2 fallback
+parser raised AttributeError with nothing catching it — so one `core_*.json`
+killed the whole index (**27 of 42 local corpora**), while
+`subagent_stop_bib.sh` `jq`-swallowed the traceback into "0 fields removed",
+byte-identical to a clean run. Fix: per-file isolation in
+`build_metadata_index`, JSON-not-traceback from `main()`, a non-JSON guard in
+the hook, a real `parse_core_result`, and a string-tolerant
+`parse_s2_result`. Gated on a dry-run over all 42 corpora (writes stubbed):
+the 113 bibs that already worked are unchanged, the 206 newly-activated ones
+strip *less* (20.7% vs 29.7%). Two things left open on purpose: `unknown`
+sources still fall through to `parse_s2_result` (479 non-paper files inject
+928 bare-title entries — narrowing it would shrink the index and strip MORE,
+so it needs its own evidence), and the dormant `metadata_validator.py` still
+carries the identical defect. Details: phillit-service `HANDOVER.md`,
+2026-08-02.
+
 Six related gaps. A–D were surfaced 2026-07-24 by the downstream
 `phillit-service` model-experiment audit and written up in
 `docs/known-issues/bib-pipeline-integrity-gaps.md`; E–F were added later
