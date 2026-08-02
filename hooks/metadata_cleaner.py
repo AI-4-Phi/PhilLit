@@ -682,6 +682,33 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
             # this DOI: it carries correction authority and settles a
             # same-DOI disagreement on its own.
             if api.get("entry_scoped"):
+                # ...but only when the scoped records AGREE. Two verify_*
+                # snapshots can differ (CrossRef corrects records between
+                # crawls; a partial response can be persisted; print vs
+                # online dates get selected differently). Letting filename
+                # order pick the winner would restore the arbitrary-authority
+                # bug one tier up - where it CAN rewrite the bib year.
+                scoped = [
+                    other for other in index.entries
+                    if other.get("entry_scoped")
+                    and _field_matches_api('doi', doi_value, other)
+                ]
+                scoped_years = {
+                    _year_key(other["year"]) for other in scoped
+                    if other.get("year")
+                }
+                if len(scoped_years) > 1:
+                    return None
+                # Prefer a scoped record that HAS a year: otherwise a partial
+                # snapshot sorting first silently suppresses the correction a
+                # complete one would authorize. (Two scoped records agreeing
+                # on year but differing on journal/volume/pages are still
+                # first-wins - a documented residual needing a full
+                # selection policy.)
+                if not api.get("year") and scoped_years:
+                    for other in scoped:
+                        if other.get("year"):
+                            return other
                 return api
             # No authority, and the pooled sources disagree: there is no basis
             # to prefer either record, so abstain. Return None WITHOUT falling

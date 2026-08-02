@@ -683,3 +683,82 @@ class TestConflictedDoiAbstention:
         result = clean_bibtex(bib, json_dir)
 
         assert any("disagree on year" in w for w in result["warnings"])
+
+
+VERIFY_RESULT_DISAGREEING = {
+    "status": "success",
+    "source": "crossref",
+    "results": [
+        {
+            "title": "Killer Robots",
+            "container_title": "Journal of Applied Philosophy",
+            "year": 2011,
+            "doi": SPARROW_DOI,
+        }
+    ],
+}
+
+
+class TestDualEntryScopedDisagreement:
+    def test_two_disagreeing_verify_records_abstain(self, tmp_path):
+        """Filename order must not decide which CrossRef snapshot may rewrite
+        the bib year. CrossRef records are mutable across runs."""
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+            "verify_9_sparrow2007.json": VERIFY_RESULT_DISAGREEING,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        assert find_api_entry_for_bib_entry(entry, index) is None
+
+    def test_two_agreeing_verify_records_still_resolve(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+            "verify_9_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        assert find_api_entry_for_bib_entry(entry, index) is not None
+
+    def test_yearless_scoped_record_does_not_shadow_a_year_bearing_one(self, tmp_path):
+        """A partial verify_* snapshot sorting first must not suppress the
+        correction a complete one would authorize."""
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_sparrow2007.json": {
+                "status": "success", "source": "crossref",
+                "results": [{"title": "Killer Robots", "doi": SPARROW_DOI}],
+            },
+            "verify_9_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        api = find_api_entry_for_bib_entry(entry, index)
+
+        assert api is not None
+        assert api["year"] == 2007
+
+    def test_disagreeing_scoped_records_do_not_rewrite_the_year(self, tmp_path):
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+            "verify_9_sparrow2007.json": VERIFY_RESULT_DISAGREEING,
+        })
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 0
+        assert "2007" in bib.read_text(encoding="utf-8")
+        assert any("disagree on year" in w for w in result["warnings"])
