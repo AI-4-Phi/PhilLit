@@ -227,6 +227,33 @@ def test_would_be_existence_v4_demotions_listed(tmp_path):
         report["demoted_would_be_existence_v4"])
 
 
+def test_cleaning_abstention_attests_existence_and_stays_visible(tmp_path):
+    """Option C (divergence write-up §9): a cleaner abstention attests
+    existence (api_matched True + verified DOI), so the entry regains
+    EVIDENCE-EXISTENCE - and the refusal itself stays visible in the
+    evidence report (the retained half of Option D)."""
+    rd = tmp_path / "review"
+    _domain(rd, 1, DOI_ENTRY,
+            cleaning=_cleaning(1, {"smith2020data": {
+                "api_matched": True, "verified_identifier": "doi",
+                "verified_identifier_value": "10.1000/xyz123",
+                "entry_type": "article",
+                "cleaning_abstained": "pooled_year_conflict"}}),
+            enrichment=_enrichment(1))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"]["smith2020data"] == (
+        "EVIDENCE-EXISTENCE")
+    att = report["attestations"]["literature-domain-1.bib"]["smith2020data"]
+    assert att["cleaning_abstained"] == "pooled_year_conflict"
+    assert report["cleaning_abstained"] == [
+        "literature-domain-1.bib:smith2020data"]
+    # Attested now, so it must NOT read as a would-be-existence demotion.
+    assert "literature-domain-1.bib:smith2020data" not in (
+        report["demoted_would_be_existence_v4"])
+
+
 def test_incomplete_token_stripped(tmp_path):
     rd = tmp_path / "review"
     _domain(rd, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)

@@ -142,6 +142,7 @@ def _att_blob(att: se.EntryAttestation, enrich_entry, context_value):
         "verified_identifier": att.verified_identifier,
         "verified_identifier_value": att.verified_identifier_value,
         "breaker_tripped": att.breaker_tripped,
+        "cleaning_abstained": att.cleaning_abstained,
     }
 
 
@@ -158,6 +159,10 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         "attestations": {}, "stamps": {},
         "web_sources_none": {"count": 0, "keys": []},
         "demoted_would_be_existence_v4": [],
+        # Option C: entries whose cleaner abstention attests existence -- the
+        # refusal must stay visible however the tier lands (§9, the retained
+        # half of Option D).
+        "cleaning_abstained": [],
         "healed": {},
     }
     degraded = False
@@ -234,6 +239,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 verified_identifier=cl.get("verified_identifier"),
                 verified_identifier_value=cl.get("verified_identifier_value"),
                 breaker_tripped=breaker,
+                cleaning_abstained=cl.get("cleaning_abstained"),
             )
             e_rec = e_entries.get(key)
             if (not att.abstract_attested and e_rec
@@ -319,6 +325,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             report["attestations"][bib_name][key] = _att_blob(
                 att, e_entries.get(key), cv)
             qual = f"{bib_name}:{key}"
+            if att.cleaning_abstained:
+                report["cleaning_abstained"].append(qual)
             if tier == se.TIER_NONE:
                 if etype.lower() == "misc" and (
                     fields.get("url") or "url" in (fields.get("howpublished") or "").lower()
@@ -367,6 +375,7 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         "stamped": sum(len(v) for v in (report.get("stamps") or {}).values()),
         "tiers": tiers,
         "web_sources_none": (report.get("web_sources_none") or {}).get("count", 0),
+        "cleaning_abstained": len(report.get("cleaning_abstained") or []),
         "report": str(report_path),
     }))
     return 1 if report["status"] == "failed" else 0

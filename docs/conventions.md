@@ -177,7 +177,7 @@ The `EVIDENCE-*` token in `keywords` is the **single authority on citability**, 
 
 - `EVIDENCE-ABSTRACT` — ledger-attested abstract: characterize/summarize/quote from the sourced abstract text
 - `EVIDENCE-CONTEXT` — barrier-written `sep_context`/`iep_context`: characterize from that description only, attributed in prose
-- `EVIDENCE-EXISTENCE` — identity positively verified (cleaning-ledger API match + surviving identifier): existence and coverage claims only
+- `EVIDENCE-EXISTENCE` — identity positively verified (cleaning-ledger API match + surviving identifier): existence and coverage claims only. A cleaner *abstention* (exact DOI match, contradictory year evidence) also attests existence — the ledger records `api_matched: true` plus a `cleaning_abstained` reason, and the refusal stays visible in the evidence report (`cleaning_abstained` list). Abstention never claims the year; cleaning behaviour is identical to no-match.
 - `EVIDENCE-NONE` — no verified evidence: not citable; stays in the `.bib` for transparency
 
 An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed). Canonical keyword order: `topic-tags, Importance, EVIDENCE-*`, with any `METADATA_CLEANED:` marker last. Tier tokens are engine-internal — the delivered `.bib` has them stripped (`sanitize_bib.py`).

@@ -801,17 +801,39 @@ def _record_completeness(record: dict) -> int:
     return len(_supplied_fields(record))
 
 
-def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
+class CleaningAbstention:
+    """Third outcome of find_api_entry_for_bib_entry (Option C, evidence-tier
+    divergence write-up §9): this entry's DOI matched indexed records - its
+    existence is confirmed - but the year evidence is contradictory, so the
+    cleaner declines to clean. Falsy on purpose: for every cleaning decision
+    an abstention behaves exactly like no-match; only the cleaning ledger
+    records the difference (api_matched: True + cleaning_abstained), so a
+    year-scoped refusal is never converted into an existence-scoped penalty
+    downstream."""
+    __slots__ = ("reason", "normalized_doi")
+
+    def __init__(self, reason: str, normalized_doi: str):
+        self.reason = reason  # "scoped_year_disagreement" | "pooled_year_conflict"
+        self.normalized_doi = normalized_doi
+
+    def __bool__(self) -> bool:
+        return False
+
+
+def find_api_entry_for_bib_entry(entry, index: MetadataIndex):
     """Find THIS bib entry's own API record in the index (entry-scoped
     evidence, item-13 A4.1): first by DOI (exact normalized match), else by
-    normalized title + year. Returns None when no affirmative match exists -
-    the entry is then left completely untouched by the cleaner.
+    normalized title + year. Returns the matched record dict, None when no
+    affirmative match exists, or a CleaningAbstention - in both of the
+    latter cases the entry is left completely untouched by the cleaner.
 
     A DOI whose pooled evidence CONFLICTS on year, with no entry-scoped
-    verify_* record to settle it, also returns None - and does so without
-    trying the title+year fallback (see the inline comment on that branch).
-    Abstention deliberately trades correction coverage for safety: when the
-    pool is self-inconsistent, filename order is not a valid authority rule.
+    verify_* record to settle it, returns a CleaningAbstention - and does so
+    without trying the title+year fallback (see the inline comment on that
+    branch). Abstention deliberately trades correction coverage for safety:
+    when the pool is self-inconsistent, filename order is not a valid
+    authority rule. But the DOI itself DID match, so the abstention carries
+    the normalized DOI for the ledger to attest existence (Option C).
 
     Note the conflict test is EXISTENCE-based, not plurality-based: two
     records saying 2007 and one saying 2019 still abstain. That is
@@ -844,7 +866,8 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
                     key for key in (_year_of(other) for other in scoped) if key
                 }
                 if len(scoped_years) > 1:
-                    return None
+                    return CleaningAbstention(
+                        "scoped_year_disagreement", normalize_doi(doi_value))
                 if scoped_years:
                     # Prefer a scoped record that HAS a year, so a partial
                     # snapshot sorting first cannot silently suppress the
@@ -880,7 +903,8 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
             # may have written it), that weaker signal would "confirm" the
             # wrong source and reintroduce the very failure this prevents.
             if find_doi_year_conflicts(doi_value, index):
-                return None
+                return CleaningAbstention(
+                    "pooled_year_conflict", normalize_doi(doi_value))
             return api
     norm_title = _normalize_title(entry.fields.get('title', ''))
     if not norm_title:
@@ -1191,6 +1215,10 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         "entries_total": 0,
         "matched_entries": 0,
         "unmatched_entries": 0,
+        # Option C: abstained entries are a SUBSET of unmatched_entries (the
+        # cleaner declined; metrics stay identical to a no-match) - counted
+        # separately so the refusal is countable, never silent.
+        "abstained_entries": 0,
         "breaker_tripped": False,
         # planned_* is computed BEFORE the breaker check (W3); applied_* only on
         # writes. On a breaker trip applied_* stay 0 but planned_* survive so the
@@ -1276,6 +1304,23 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
                 f"{normalize_doi(doi_value)}: {detail}")
 
         api_entry = find_api_entry_for_bib_entry(entry, index)
+        if isinstance(api_entry, CleaningAbstention):
+            # Option C (§9): the DOI matched - existence is confirmed - but
+            # the year evidence is contradictory, so cleaning declines. The
+            # ledger attests existence with an additive refusal reason;
+            # cleaner behaviour and metrics are IDENTICAL to no-match (no
+            # plan, still counted unmatched). compute_tier's value binding
+            # re-checks the DOI, so no extra trust is granted downstream.
+            result["unmatched_entries"] += 1
+            result["abstained_entries"] += 1
+            ledger_entries[entry_key] = {
+                "api_matched": True,
+                "verified_identifier": "doi",
+                "verified_identifier_value": api_entry.normalized_doi,
+                "entry_type": entry.type.lower(),
+                "cleaning_abstained": api_entry.reason,
+            }
+            continue
         if api_entry is None:
             result["unmatched_entries"] += 1
             ledger_entries[entry_key] = _ledger_entry_for_unmatched(entry)

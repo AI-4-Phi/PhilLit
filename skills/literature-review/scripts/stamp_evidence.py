@@ -31,6 +31,11 @@ class EntryAttestation:
     verified_identifier: str | None = None  # "doi" | "publisher" | None
     verified_identifier_value: str | None = None  # normalized confirmed value
     breaker_tripped: bool = False
+    # Option C (divergence write-up §9): set when the cleaner matched the DOI
+    # but declined to clean over contradictory year evidence. Informational
+    # only - compute_tier ignores it (existence is attested via api_matched +
+    # the value binding); it exists so the refusal stays visible downstream.
+    cleaning_abstained: str | None = None
 
 
 def normalize_doi(value: str) -> str:
