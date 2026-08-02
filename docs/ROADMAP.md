@@ -208,6 +208,15 @@ existing `.warnings[]` pass-through. (`metadata_validator.py` needed no mirror �
 it was read-only with no year-overwrite path — and is moot since its deletion
 2026-08-02.)
 
+> **⚠ SUPERSEDED BY ITEM J — do not act on the paragraph below.** It says to
+> copy the service's `float()` + `is_integer()` `_year_key`. That version has
+> a third defect of its own: binary float cannot represent large integers, so
+> it returns a value nobody supplied (`9007199254740993` → `...992`,
+> `"2007.0000000000001"` → `"2007"`) — and the year correction WRITES its
+> output into the .bib. J replaced it with an exact string grammar in both
+> repos (service `edaef51`). Kept below only for the reasoning about the
+> ORIGINAL `str(int(float(value)))`, which is still correct.
+
 **IF THE PORT PLAN'S TASK 2 PROCEEDS, carry the CORRECTED `_year_key`** — not
 the version the service shipped before 2026-08-02. The original
 `str(int(float(value)))` collapses genuinely different values (`"2007.9"` →
