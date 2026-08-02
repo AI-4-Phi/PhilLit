@@ -7,6 +7,7 @@ Tests cover:
 - Fetching with mocked HTTP responses
 """
 
+import os
 import sys
 from pathlib import Path
 from unittest.mock import patch, MagicMock
@@ -168,6 +169,6 @@ def test_fetch_ndpr_routes_request_through_user_agent(mock_get):
         "so the extractor keeps it.</p></div></body></html>",
     )
     sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
-    with patch.object(fetch_ndpr, "USER_AGENT", sentinel):
+    with patch.dict(os.environ, {"PHILLIT_FETCH_USER_AGENT": sentinel}):
         fetch_ndpr.fetch_ndpr_review("https://ndpr.nd.edu/reviews/example/", limiter=MagicMock())
     assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel

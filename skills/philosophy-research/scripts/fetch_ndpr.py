@@ -20,6 +20,8 @@ Exit Codes: 0=success, 1=not found, 2=config error, 3=network error
 """
 
 import argparse
+
+from dotenv import find_dotenv, load_dotenv
 import os
 import re
 import sys
@@ -30,7 +32,7 @@ from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from output import log_progress as _log_progress, output_success, output_error, set_output_path, add_output_arg
-from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
+from rate_limiter import ExponentialBackoff, get_limiter, user_agent
 
 SCRIPT_NAME = "fetch_ndpr.py"
 NDPR_BASE = "https://ndpr.nd.edu/reviews"
@@ -164,7 +166,7 @@ def fetch_ndpr_review(
             response = requests.get(
                 url,
                 timeout=30,
-                headers={"User-Agent": USER_AGENT},
+                headers={"User-Agent": user_agent()},
             )
             limiter.record()
 
@@ -202,6 +204,7 @@ def fetch_ndpr_review(
 
 
 def main():
+    load_dotenv(find_dotenv(usecwd=True), override=True)  # before argparse defaults read os.environ
     parser = argparse.ArgumentParser(description="Fetch NDPR review and extract summary")
     group = parser.add_mutually_exclusive_group(required=True)
     group.add_argument("--url", help="Full NDPR review URL")

@@ -464,46 +464,33 @@ def test_iep_and_ndpr_intervals_unchanged():
     assert LIMITERS["ndpr"]().min_interval == 1.0
 
 
-def _load_rate_limiter_isolated():
-    """Exec rate_limiter.py into a throwaway module so USER_AGENT reflects the
-    current os.environ without touching the shared sys.modules['rate_limiter']."""
-    import importlib.util
-    path = (
-        Path(__file__).parent.parent
-        / "skills" / "philosophy-research" / "scripts" / "rate_limiter.py"
+# The old import-time USER_AGENT constant tests (and their isolated-exec
+# helper) were removed 2026-08-02 with the constant itself: the UA is now
+# resolved per call by user_agent() - see the call-time tests below.
+
+
+def test_user_agent_reads_env_at_call_time(monkeypatch):
+    """A workspace .env is loaded in main(), AFTER import - the UA must be
+    resolved per call, not frozen into a module constant at import time
+    (doc-rot audit 2026-08-02, finding F)."""
+    import rate_limiter
+
+    monkeypatch.setenv(
+        "PHILLIT_FETCH_USER_AGENT", "PhilLitService/2.0 (+mailto:ops@example.org)")
+    assert rate_limiter.user_agent() == (
+        "PhilLitService/2.0 (+mailto:ops@example.org)")
+
+    monkeypatch.delenv("PHILLIT_FETCH_USER_AGENT")
+    assert "PhiloResearchBot" in rate_limiter.user_agent()
+
+
+def test_user_agent_empty_env_falls_back_at_call_time(monkeypatch):
+    """An explicitly-empty PHILLIT_FETCH_USER_AGENT falls back to the
+    default, not ''."""
+    import rate_limiter
+
+    monkeypatch.setenv("PHILLIT_FETCH_USER_AGENT", "")
+    assert rate_limiter.user_agent() == (
+        "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; "
+        "+https://github.com/AI-4-Phi/PhilLit)"
     )
-    spec = importlib.util.spec_from_file_location("rate_limiter_isolated", path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
-def test_user_agent_default():
-    """Default UA is the honest, contactable repo-linked bot string."""
-    with patch.dict(os.environ, {}, clear=False):
-        os.environ.pop("PHILLIT_FETCH_USER_AGENT", None)
-        module = _load_rate_limiter_isolated()
-        assert module.USER_AGENT == (
-            "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; "
-            "+https://github.com/AI-4-Phi/PhilLit)"
-        )
-
-
-def test_user_agent_env_override():
-    """PHILLIT_FETCH_USER_AGENT overrides the default UA at import time."""
-    with patch.dict(
-        os.environ,
-        {"PHILLIT_FETCH_USER_AGENT": "PhilLitService/2.0 (+mailto:ops@example.org)"},
-    ):
-        module = _load_rate_limiter_isolated()
-        assert module.USER_AGENT == "PhilLitService/2.0 (+mailto:ops@example.org)"
-
-
-def test_user_agent_empty_override_falls_back_to_default():
-    """An explicitly-empty PHILLIT_FETCH_USER_AGENT falls back to the default, not ''."""
-    with patch.dict(os.environ, {"PHILLIT_FETCH_USER_AGENT": ""}):
-        module = _load_rate_limiter_isolated()
-        assert module.USER_AGENT == (
-            "Mozilla/5.0 (compatible; PhiloResearchBot/1.0; "
-            "+https://github.com/AI-4-Phi/PhilLit)"
-        )

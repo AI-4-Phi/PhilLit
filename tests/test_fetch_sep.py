@@ -9,6 +9,7 @@ Tests cover:
 """
 
 import io
+import os
 import json
 from unittest.mock import patch, MagicMock
 
@@ -595,6 +596,36 @@ def test_fetch_sep_routes_request_through_user_agent(mock_get, _get_cache, _put_
         status_code=200, text="<html><body><h1>Free Will</h1></body></html>"
     )
     sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
-    with patch.object(fetch_sep, "USER_AGENT", sentinel):
+    with patch.dict(os.environ, {"PHILLIT_FETCH_USER_AGENT": sentinel}):
         fetch_sep.fetch_sep_article("freewill", MagicMock(), ExponentialBackoff(max_attempts=2))
     assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel
+
+
+def test_fetch_sends_env_user_agent_set_after_import(monkeypatch):
+    """The env override must reach the actual request header even when set
+    AFTER import (the real .env timeline) - a from-import of a module-level
+    constant silently pins the default (doc-rot audit 2026-08-02, F)."""
+    import fetch_sep
+
+    captured = {}
+
+    def fake_get(url, timeout=None, headers=None, **kwargs):
+        captured["ua"] = (headers or {}).get("User-Agent")
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.text = "<html><div id='main-text'></div></html>"
+        return resp
+
+    monkeypatch.setenv(
+        "PHILLIT_FETCH_USER_AGENT", "PhilLitService/2.0 (+mailto:ops@example.org)")
+    monkeypatch.setattr(fetch_sep.requests, "get", fake_get)
+
+    limiter = MagicMock()
+    backoff = MagicMock()
+    backoff.max_attempts = 1
+    try:
+        fetch_sep.fetch_sep_article("test-entry", limiter, backoff)
+    except Exception:
+        pass  # parsing of the stub page may fail; the header capture is the point
+
+    assert captured["ua"] == "PhilLitService/2.0 (+mailto:ops@example.org)"

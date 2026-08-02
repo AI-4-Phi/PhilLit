@@ -13,6 +13,8 @@ Exit Codes: 0=success, 1=not found, 2=config error, 3=network error
 """
 
 import argparse
+
+from dotenv import find_dotenv, load_dotenv
 import re
 import sys
 import os
@@ -55,6 +57,7 @@ def output_error(query: dict, error_type: str, message: str, exit_code: int = 2)
 
 
 def main():
+    load_dotenv(find_dotenv(usecwd=True), override=True)  # before argparse defaults read os.environ
     parser = argparse.ArgumentParser(description="Extract IEP citation contexts for a paper")
     parser.add_argument("entry", help="IEP entry name or URL")
     parser.add_argument("--author", required=True, help="Primary author last name")

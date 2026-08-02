@@ -14,6 +14,8 @@ Exit Codes: 0=success (match or not_found), 2=config error, 3=network error
 """
 
 import argparse
+
+from dotenv import find_dotenv, load_dotenv
 import os
 import re
 import sys
@@ -24,7 +26,7 @@ import requests
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from output import log_progress as _log_progress, output_success, output_error, set_output_path, add_output_arg
-from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
+from rate_limiter import ExponentialBackoff, get_limiter, user_agent
 
 SCRIPT_NAME = "search_ndpr.py"
 SITEMAP_URL = "https://ndpr.nd.edu/sitemap.xml"
@@ -138,7 +140,7 @@ def fetch_sitemap(limiter, backoff: ExponentialBackoff) -> list[str]:
             response = requests.get(
                 SITEMAP_URL,
                 timeout=30,
-                headers={"User-Agent": USER_AGENT},
+                headers={"User-Agent": user_agent()},
             )
             limiter.record()
 
@@ -260,6 +262,7 @@ def clear_sitemap_cache() -> None:
 
 
 def main():
+    load_dotenv(find_dotenv(usecwd=True), override=True)  # before argparse defaults read os.environ
     parser = argparse.ArgumentParser(description="Search NDPR for book reviews")
     parser.add_argument("--title", required=True, help="Book title to search for")
     parser.add_argument("--author", help="Author last name (improves matching)")

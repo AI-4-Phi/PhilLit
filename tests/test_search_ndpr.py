@@ -9,6 +9,7 @@ Tests cover:
 - End-to-end search with mocked sitemap
 """
 
+import os
 import sys
 from pathlib import Path
 from unittest.mock import patch, MagicMock
@@ -261,7 +262,7 @@ def test_search_ndpr_sitemap_routes_request_through_user_agent(mock_get):
     sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
     search_ndpr.clear_sitemap_cache()
     try:
-        with patch.object(search_ndpr, "USER_AGENT", sentinel):
+        with patch.dict(os.environ, {"PHILLIT_FETCH_USER_AGENT": sentinel}):
             search_ndpr.fetch_sitemap(MagicMock(), ExponentialBackoff(max_attempts=2))
         assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel
     finally:

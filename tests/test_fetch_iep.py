@@ -9,6 +9,7 @@ Tests cover:
 """
 
 import json
+import os
 from unittest.mock import patch, MagicMock
 
 import pytest
@@ -290,7 +291,7 @@ def test_fetch_iep_routes_request_through_user_agent(mock_get, _get_cache, _put_
         status_code=200, text="<html><body><h1>Free Will</h1></body></html>"
     )
     sentinel = "SentinelUA/9.9 (+https://example.test/bot)"
-    with patch.object(fetch_iep, "USER_AGENT", sentinel):
+    with patch.dict(os.environ, {"PHILLIT_FETCH_USER_AGENT": sentinel}):
         fetch_iep.fetch_iep_article("freewill", MagicMock(), ExponentialBackoff(max_attempts=2))
     assert mock_get.call_args.kwargs["headers"]["User-Agent"] == sentinel
 
@@ -314,5 +315,5 @@ def test_fetch_iep_403_no_disguise(mock_get, _get_cache):
     # No request ever carries a browser-disguise UA; the honest UA is used throughout.
     for call in mock_get.call_args_list:
         ua = call.kwargs["headers"]["User-Agent"]
-        assert ua == fetch_iep.USER_AGENT
+        assert ua == fetch_iep.user_agent()
         assert "Windows NT" not in ua

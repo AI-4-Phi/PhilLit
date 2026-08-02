@@ -13,6 +13,8 @@ Exit Codes: 0=success, 1=not found, 2=config error, 3=network error
 """
 
 import argparse
+
+from dotenv import find_dotenv, load_dotenv
 import re
 import sys
 import os
@@ -22,7 +24,7 @@ import requests
 from bs4 import BeautifulSoup
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from rate_limiter import ExponentialBackoff, USER_AGENT, get_limiter
+from rate_limiter import ExponentialBackoff, get_limiter, user_agent
 from search_cache import cache_key, get_cache, put_cache
 from output import emit, set_output_path, add_output_arg
 
@@ -231,7 +233,7 @@ def fetch_sep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
             print(f"DEBUG: GET {url}", file=sys.stderr)
 
         try:
-            response = requests.get(url, timeout=30, headers={"User-Agent": USER_AGENT})
+            response = requests.get(url, timeout=30, headers={"User-Agent": user_agent()})
             limiter.record()
 
             if response.status_code == 404:
@@ -282,6 +284,7 @@ def fetch_sep_article(entry_name: str, limiter, backoff: ExponentialBackoff, deb
 
 
 def main():
+    load_dotenv(find_dotenv(usecwd=True), override=True)  # before argparse defaults read os.environ
     parser = argparse.ArgumentParser(description="Fetch SEP article content")
     parser.add_argument("entry", help="Entry name or full URL")
     parser.add_argument("--sections", help="Comma-separated sections to extract (e.g., 'preamble,1,2,bibliography')")
