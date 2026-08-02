@@ -42,13 +42,20 @@ exists so open work has a single place to be listed — it was created
 > layer yet, so Option C is a condition on its pending port item 20):
 > `~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
 >
-> **Two things gate the merge, both open:**
-> **(b) writer-guidance follow-ups** — the A/B doc forward-references a
-> section that was never written. Raw material: 7 violation sentences across
-> 8 of 27 recovered low-tier entries, the CONTEXT in-prose attribution rule
-> followed only 1 of 4 times, and a "strip or fence unattested abstract text
-> at sanitize time" candidate. **Johannes's call: pre-merge prompt edits, or
-> deferred?** This one goes first — it gates the downstream port.
+> **Two things gate the merge, both open (gate (b) re-scoped 2026-08-02):**
+> **(b) writer-guidance validation run** — the prompt edits themselves are
+> BUILT (Johannes's 2026-08-01 "full pre-port edit": every-sentence CONTEXT
+> attribution, EXISTENCE title-derivable clarifier, both calibration
+> exemplars, planner mirror — all verified present on the branch). What
+> remains, per Johannes's 2026-08-02 decision: **one live headless review on
+> the branch (book-heavy topic), spot-checking CONTEXT attribution and
+> EXISTENCE discipline post-edit** — the pre-edit baseline was 1-of-4
+> attribution compliance, and house rule is that prompt edits get a live
+> compliance run before the port. The "strip or fence unattested abstract
+> text at sanitize time" candidate is **CLOSED — REJECTED** (Johannes,
+> 2026-08-02, adopting the 2026-08-01 root-cause analysis: it would have
+> suppressed 7 correct abstracts; self-heal + prefilled attestation +
+> anti-re-emission guidance address the real mechanism).
 > **(c) blind holistic coherence comparison** — rubric item 3, the last open
 > pre-registered gate item. Arms archived at
 > `~/phillit-ab/archives/{control,treatment}-*-20260725.tar.gz`.
