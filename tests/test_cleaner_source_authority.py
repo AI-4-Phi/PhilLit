@@ -23,6 +23,7 @@ from metadata_cleaner import (
     clean_bibtex,
     find_api_entry_by_doi,
     find_doi_year_conflicts,
+    _year_key,
 )
 
 
@@ -430,3 +431,133 @@ class TestEmptyNormalizedDoiGuard:
         index = build_metadata_index(json_dir)
 
         assert find_api_entry_by_doi(SPARROW_DOI, index)["year"] == 2007
+
+
+class TestYearKey:
+    """Canonicalization must be EXACT: the correction path writes this value
+    into the .bib, so the helper must never return a number it was not given."""
+
+    @pytest.mark.parametrize("value,expected", [
+        (2007, "2007"),
+        (2007.0, "2007"),
+        ("2007", "2007"),
+        ("  2007  ", "2007"),
+        ("2007.0", "2007"),
+        ("2007.00", "2007"),
+        ("0002007", "2007"),
+        ("+2007", "2007"),
+        ("-2007", "-2007"),
+        ("2007.5", "2007.5"),        # non-integral: do NOT collapse to 2007
+        ("2.007e3", "2.007e3"),      # exponent notation is out of scope by design
+        ("1e999", "1e999"),
+        ("n.d.", "n.d."),
+        ("forthcoming", "forthcoming"),
+        ("MMVII", "MMVII"),
+        ("2,007", "2,007"),
+        ("", ""),
+        (None, "None"),
+        (True, "True"),              # a bool must not become "1"
+    ])
+    def test_canonical_forms(self, value, expected):
+        assert _year_key(value) == expected
+
+    @pytest.mark.parametrize("value", [
+        9007199254740993,            # > 2**53: float() would return ...992
+        12345678901234567890,
+        10 ** 400,                   # float() would overflow
+    ])
+    def test_large_integers_are_exact(self, value):
+        assert _year_key(value) == str(value)
+
+    def test_near_integral_float_string_is_not_collapsed(self):
+        """A float round-trip rounds this to 2007.0 and collapses it."""
+        assert _year_key("2007.0000000000001") == "2007.0000000000001"
+
+    def test_equivalences_and_distinctions(self):
+        assert _year_key(2007) == _year_key(2007.0) == _year_key("0002007") == "2007"
+        assert _year_key("2007") != _year_key("2007.5")
+
+
+class TestYearNormalizationAcrossComparisons:
+    def test_int_and_float_years_are_not_a_conflict(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "s2_int.json": {
+                "status": "success", "source": "semantic_scholar",
+                "results": [
+                    {"title": "Killer Robots", "year": 2007, "doi": SPARROW_DOI}
+                ],
+            },
+            "s2_float.json": {
+                "status": "success", "source": "semantic_scholar",
+                "results": [
+                    {"title": "Killer Robots", "year": 2007.0, "doi": SPARROW_DOI}
+                ],
+            },
+        })
+        index = build_metadata_index(json_dir)
+
+        assert find_doi_year_conflicts(SPARROW_DOI, index) == {}
+
+    def test_genuine_disagreement_is_still_a_conflict(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+
+        assert set(find_doi_year_conflicts(SPARROW_DOI, index)) == {"2007", "2019"}
+
+    def test_non_numeric_year_still_conflicts_as_itself(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "s2_nd.json": {
+                "status": "success", "source": "semantic_scholar",
+                "results": [
+                    {"title": "Killer Robots", "year": "n.d.", "doi": SPARROW_DOI}
+                ],
+            },
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+
+        assert set(find_doi_year_conflicts(SPARROW_DOI, index)) == {"n.d.", "2007"}
+
+    def test_float_api_year_does_not_plan_a_phantom_correction(self, tmp_path):
+        """A phantom CORRECTION is worse than a phantom conflict: it rewrites
+        the .bib. An entry-scoped record carrying 2007.0 against a bib year of
+        2007 must plan nothing."""
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {"verify_3_sparrow2007.json": VERIFY_RESULT})
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+        api_entry = {
+            "year": 2007.0, "entry_scoped": True, "doi": SPARROW_DOI,
+            "title": "Killer Robots",
+            "container_title": "Journal of Applied Philosophy",
+            "source_file": "verify_3_sparrow2007.json",
+        }
+
+        plan = plan_entry_cleaning(entry, index, api_entry)
+
+        assert plan["year_corrected"] is None
+
+    def test_title_year_fallback_tolerates_float_api_year(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "s2_nodoi.json": {
+                "status": "success", "source": "semantic_scholar",
+                "results": [{"title": "Killer Robots", "year": 2007.0}],
+            },
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(
+            "@article{s2007,\n"
+            "  author = {Sparrow, Robert},\n"
+            "  title = {Killer Robots},\n"
+            "  year = {2007}\n"
+            "}", "bibtex").entries["s2007"]
+
+        assert find_api_entry_for_bib_entry(entry, index) is not None

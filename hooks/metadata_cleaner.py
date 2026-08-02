@@ -209,6 +209,41 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     return fallback
 
 
+# Integral-year grammar for _year_key: optional sign, digits, and an
+# optional ALL-ZERO fractional part. Deliberately excludes exponent notation.
+_INTEGRAL_YEAR_RE = re.compile(r"^([+-]?)(\d+)(?:\.(0*))?$")
+
+
+def _year_key(value) -> str:
+    """Canonical form of a year, for comparing values from different producers.
+
+    Pooled JSON is external data: the same real year can arrive as an int
+    (2007) or a float (2007.0) depending on how a producer parsed it. Compare
+    those equal instead of registering a phantom disagreement.
+
+    EXACT BY CONSTRUCTION - deliberately not float-based. float() cannot
+    represent large integers, so a float round-trip turns 9007199254740993
+    into ...992 and collapses "2007.0000000000001" to "2007".
+    plan_entry_cleaning WRITES this value into the .bib as the corrected
+    year, so the canonicalizer must never invent one. Match sign + digits +
+    an optional all-zero fractional part; return the digits with sign and
+    leading zeros normalized. Everything else - "2007.5", "n.d.", "MMVII",
+    "2,007" - round-trips verbatim. Exponent notation ("2.007e3", "1e999") is
+    out of scope by design, so the contract comes from this grammar rather
+    than from binary-float range.
+
+    NOTE: no PhilLit producer is currently known to emit a float year. This
+    is boundary hardening for external JSON, not a fix for an observed
+    failure.
+    """
+    text = str(value).strip()
+    match = _INTEGRAL_YEAR_RE.match(text)
+    if not match:
+        return text
+    sign, digits, _zero_fraction = match.groups()
+    return ("-" if sign == "-" else "") + (digits.lstrip("0") or "0")
+
+
 def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
     """Distinct year values (with their source files) across pooled entries
     sharing this DOI. Returns {} unless at least two distinct years exist.
@@ -228,7 +263,8 @@ def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
         api_doi = api_entry.get("doi")
         if not api_doi or normalize_doi(api_doi) != norm_doi:
             continue
-        year = str(api_entry.get("year") or "").strip()
+        raw_year = api_entry.get("year")
+        year = _year_key(raw_year) if raw_year else ""
         if year:
             years.setdefault(year, set()).add(api_entry.get("source_file") or "?")
     if len(years) < 2:
@@ -635,11 +671,13 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
     norm_title = _normalize_title(entry.fields.get('title', ''))
     if not norm_title:
         return None
-    bib_year = str(entry.fields.get('year', '')).strip()
+    raw_bib_year = str(entry.fields.get('year', '')).strip()
+    bib_year = _year_key(raw_bib_year) if raw_bib_year else ""
     for api_entry in index.entries:
         if _normalize_title(api_entry.get('title') or '') != norm_title:
             continue
-        api_year = str(api_entry.get('year') or '').strip()
+        raw_api_year = api_entry.get('year')
+        api_year = _year_key(raw_api_year) if raw_api_year else ""
         # B3: the title+year fallback requires BOTH years present AND equal.
         # A missing year on either side is NOT a match - a bare title is too
         # weak an identifier to authorize destructive cleaning.
@@ -726,9 +764,13 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
     # docstring on find_api_entry_by_doi for the corresponding limitation
     # on non-year fields.)
     if api_entry.get("year") and api_entry.get("entry_scoped"):
-        api_year = str(api_entry["year"])
+        # Compare AND write the canonical form: a record carrying 2007.0 must
+        # neither read as a disagreement with a bib year of 2007 nor land in
+        # the .bib as "2007.0". _year_key is exact, so the written value is
+        # always one the record actually supplied.
+        api_year = _year_key(api_entry["year"])
         bib_year = entry.fields.get('year', '')
-        if bib_year and bib_year != api_year:
+        if bib_year and _year_key(bib_year) != api_year:
             plan["year_corrected"] = (bib_year, api_year)
 
     surviving: set = set()
