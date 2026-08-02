@@ -1,10 +1,10 @@
 # `worktree-evidence-tier` has diverged from `main` — analysis before the merge
 
-**Status: OPEN, analysis + trial merge measured 2026-08-02.** Input for a
-dedicated planning session. `main` and `worktree-evidence-tier` are both
-untouched — the trial merge was done on a throwaway branch (`merge-trial`,
-worktree `.claude/worktrees/merge-trial`, commit `6e84aa1`) which is **not for
-shipping**. ROADMAP item 1 points here.
+**Status: RESOLVED 2026-08-02 — the catch-up merge landed on the branch as
+`ee5f12c` (resolution from the verified trial) with Option C implemented on
+top as `9842f2d`; all §9 acceptance criteria measured and met (see §10).**
+Sections 1–9 are the pre-merge analysis, kept as the record of why the
+resolution looks the way it does. ROADMAP item 1 points here.
 
 **Headline, measured over all 319 local bibs: merging is strongly net-positive
 and the delay is what costs you.** The branch runs the *pre-3G* cleaner, so
@@ -47,7 +47,7 @@ Citations to `hooks/metadata_cleaner.py`, `dedupe_bib.py` and
 | worktree | branch | status |
 |---|---|---|
 | `.claude/worktrees/evidence-tier` | `worktree-evidence-tier` | **DO NOT REMOVE** — holds the only copy of the A/B results and adjudication record (gitignored, so not in any commit) |
-| `.claude/worktrees/merge-trial` | `merge-trial` | **throwaway.** Safe to delete once the real merge lands: `git worktree remove .claude/worktrees/merge-trial && git branch -D merge-trial` |
+| `.claude/worktrees/merge-trial` | `merge-trial` | **removed 2026-08-02** after the real merge landed (was the throwaway trial @ `6e84aa1`) |
 
 ## 1. Topology (all figures measured 2026-08-02)
 
@@ -306,6 +306,52 @@ test per abstention path, each verified to fail without the fix.
 Sister-repo instructions (the service has **no** evidence-tier layer yet, so
 this is a condition on its pending port, not a bug fix there):
 `~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
+
+## 10. RESOLUTION 2026-08-02 — executed and measured
+
+Executed exactly per §7, on the evidence-tier worktree:
+
+1. **`ee5f12c`** — catch-up merge of `main` (`fa6cde4`) into the branch. The
+   two conflicted files were resolved by taking `merge-trial` @ `6e84aa1`'s
+   verified versions (`git checkout 6e84aa1 -- hooks/metadata_cleaner.py
+   tests/test_metadata_cleaner.py`); the staged tree was verified
+   code-identical to the trial (`git diff 6e84aa1 -- . ':!docs'` empty —
+   only main's three newer docs-only commits differ). Warning-hoist (3J(c))
+   preserved. 1185 tests green, matching the trial.
+2. **`9842f2d`** — Option C (§9), TDD. `find_api_entry_for_bib_entry` returns
+   a falsy `CleaningAbstention(reason, normalized_doi)` on both abstention
+   paths; `clean_bibtex` records `api_matched: True`, `verified_identifier:
+   "doi"`, the normalized DOI, and an additive `cleaning_abstained` reason —
+   cleaning behaviour and metrics unchanged (abstained still counts
+   unmatched; new additive `abstained_entries` counter). The refusal is
+   visible in the barrier report (`attestations` blob, top-level
+   `cleaning_abstained` list, stdout summary count). `compute_tier`
+   untouched. One negative test per abstention path, each watched to fail
+   with `api_matched: False` before the fix; genuine no-match paths tested
+   to stay unattested. **1192 tests green.**
+
+**§9 acceptance, measured over all 319 local bibs** (harness rebuilt per §8
+with production json-dir semantics — the union of the bib's own dir and the
+*review root's* `intermediate_files/json`, per `subagent_stop_bib.sh` item-13
+A3; `bib.parent`-relative selection undercounts by half):
+
+| criterion | measured | verdict |
+|---|---|---|
+| metric identity with `main` | matched 6611, planned fields removed 2668, breaker trips 86, years corrected 0, crashes 0 — identical A=B=C | PASS |
+| ledger diff (pre-C merge → C) | **106 flips, all abstention-shaped** (`pooled_year_conflict` ×106, `scoped_year_disagreement` ×0), 0 anomalies | PASS |
+| tier diff | EXISTENCE **+56 regained, 0 lost** (incl. `slack2020fooling`, `mcmanus2018/2019autonomous`, `preston2013ethics`, `frank2019ethics`); no new ABSTRACT/CONTEXT (structurally impossible from cleaner output; confirmed no non-abstention ledger change) | PASS |
+| corpora untouched | 7910 files byte-identical (size+mtime snapshot) | PASS |
+
+The 56 > the §5 "17 lost" because Option C also attests abstained entries in
+the 206 bibs whose ledgers only exist post-merge. 8 bibs return handled
+per-bib `errors` (pre-existing malformed BibTeX, identical across variants,
+e.g. `what-are-data-2/intermediate_files/literature-domain-1.bib`) — these
+are returns, not crashes, and are not merge-related.
+
+**Still open after this resolution:** ROADMAP item 1's two merge gates
+((b) writer-guidance follow-ups, (c) blind coherence comparison) — they gate
+landing the branch on `main`, not this catch-up merge. The
+`metadata_cleaner.py` freeze on `main` stays until the branch lands.
 
 ## Related
 
