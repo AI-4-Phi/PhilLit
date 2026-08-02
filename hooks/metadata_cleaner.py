@@ -231,6 +231,34 @@ _INTEGRAL_YEAR_RE = re.compile(r"^([+-]?)([0-9]+)(?:\.0+)?$")
 _WRITABLE_YEAR_RE = re.compile(r"[1-9][0-9]{0,3}\Z")
 
 
+# Date fields whose year IS the citation year of the version of record.
+# `created` is CrossRef's registration timestamp and never qualifies;
+# `published-online` alone qualifies only because verify_paper.py reaches it
+# solely when there is no print date at all (see its _YEAR_FIELDS order).
+_VERSION_OF_RECORD_BASES = frozenset(
+    {"published-print", "published", "published-online"})
+
+
+def _year_is_overwritable(record: dict) -> bool:
+    """May this record's year OVERWRITE a populated bibliography year?
+
+    Requires POSITIVE provenance: the producer must say which date field the
+    year came from, and it must be a version-of-record field. A record with no
+    `year_basis` is refused - not because it is known bad, but because it is
+    unknown, and the failure it guards against was measured, not hypothetical.
+
+    Before verify_paper.py recorded a basis it took CrossRef's `published`
+    first, which is the EARLIEST of print and online. 27 of 42 year rewrites
+    across the local corpora therefore replaced a correct print-issue year with
+    the online-first year (docs/known-issues/metadata-cleaner-year-corruption.md,
+    "online-first" section). Those records are still on disk in delivered
+    reviews; nothing in them distinguishes the good years from the bad, so the
+    only safe rule is to require the evidence the fixed producer now supplies.
+    Refusals are counted in `years_declined` and warned about, never silent.
+    """
+    return record.get("year_basis") in _VERSION_OF_RECORD_BASES
+
+
 def _year_of(record: dict) -> str:
     """Canonical year of a pooled record, or "" when it supplies none.
 
@@ -370,7 +398,12 @@ def parse_openalex_result(data: dict, source_file: str) -> list[dict]:
 
 
 def parse_crossref_result(data: dict, source_file: str) -> list[dict]:
-    """Parse CrossRef JSON format."""
+    """Parse CrossRef JSON format.
+
+    `year_basis` is read through when the producer supplies it: it names the
+    CrossRef date field the year came from, and only a version-of-record field
+    licenses OVERWRITING a bibliography's own year (see _year_is_overwritable).
+    """
     results = data.get("results", [])
     entries = []
     for item in results:
@@ -382,6 +415,7 @@ def parse_crossref_result(data: dict, source_file: str) -> list[dict]:
             "pages": item.get("page"),
             "publisher": item.get("publisher"),
             "year": item.get("year"),
+            "year_basis": item.get("year_basis"),
             "doi": item.get("doi"),
         })
     return entries
@@ -613,17 +647,40 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
         entries = parse_s2_result(data, filename)
 
     # Source-authority tagging (year-corruption fix): record where each pooled
-    # record came from. verify_* files are entry-scoped CrossRef lookups
-    # (item-13 A4.1) and outrank broad search dumps for correction purposes
-    # (same "verify_" filename convention detect_api_source already relies
-    # on). The filename substring alone is not enough - it would also match a
-    # hypothetical other-source filename like "s2_verify_results.json" - so we
-    # additionally require the already-computed api_source to be "crossref":
-    # verify_paper.py's JSON always sets "source": "crossref", which
-    # detect_api_source checks before falling back to filename heuristics, so
-    # genuine verify_*.json files are unaffected while a same-named
-    # non-CrossRef file is correctly rejected.
-    entry_scoped = "verify_" in filename.lower() and api_source == "crossref"
+    # record came from, and which records may OVERWRITE a populated year.
+    # Authority is keyed on the envelope's CONTENT, not on its filename
+    # (ROADMAP 3I): a CrossRef envelope that resolved exactly ONE work is a
+    # targeted single-work lookup, which is precisely the evidence class the
+    # gate trusts; a multi-result envelope is a broad dump, which is precisely
+    # the class it exists to refuse.
+    #
+    # The old rule was `"verify_" in filename.lower() and api_source ==
+    # "crossref"`, and the filename half was wrong in both directions.
+    # Measured over the 45 local corpora (7109 JSON files):
+    #   * 262 files are genuine single-work CrossRef lookups saved WITHOUT a
+    #     `verify_` name (`cr_*.json`, `<author>_<year>.json`, ...). Every one
+    #     was trusted to acquit (its journal/volume/pages still protected
+    #     fields from stripping) but not to convict (it could not correct a
+    #     wrong year). They gain authority here.
+    #   * 181 `verify_*` CrossRef files lose the tag - and ALL 181 carry
+    #     `results: []` (not_found / error envelopes), contributing zero
+    #     records to the index. So no record loses authority, which is why the
+    #     filename rule needs no legacy fallback.
+    # `api_source == "crossref"` is retained and load-bearing: 11 multi-result
+    # `verify_*.json` files in the corpora are Semantic Scholar dumps, the very
+    # source class that caused the original corruption.
+    #
+    # Deliberately NOT required (the external review recommended both): that
+    # the lookup mode be `doi`, and that the requested DOI equal the record's.
+    # `verify_paper.py --title` is still a targeted single-work query (227 such
+    # files here), and once a record's DOI matches the bib entry's, the record
+    # IS CrossRef's own metadata for that DOI - identification path does not
+    # change provenance. The requested-vs-returned DOI check would buy nothing
+    # either: 2 of 981 differ locally, both benign aliases (a `10.1037//` typo
+    # CrossRef canonicalized, and a JSTOR->publisher redirect).
+    results = data.get("results")
+    entry_scoped = (api_source == "crossref"
+                    and isinstance(results, list) and len(results) == 1)
     for entry in entries:
         entry["source_file"] = filename
         entry["entry_scoped"] = entry_scoped
@@ -900,18 +957,27 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         "removed_field_names": [],
         "removed_fields": [],
         "year_corrected": None,
+        "year_correction_declined": None,
         "type_downgraded": None,
     }
 
-    # Year-corruption fix (Option C): only an entry-scoped verification
-    # record (a direct CrossRef lookup on this DOI) may OVERWRITE a
-    # populated year. Broad search dumps are discovery evidence, not
-    # correction authority - they were never queried for this entry, and
-    # their per-DOI metadata is sometimes wrong (docs/known-issues/
-    # metadata-cleaner-year-corruption.md). (See the entry_scoped-preference
-    # docstring on find_api_entry_by_doi for the corresponding limitation
-    # on non-year fields.)
-    if _year_of(api_entry) and api_entry.get("entry_scoped"):
+    # Year-corruption fix (Option C): overwriting a populated year takes TWO
+    # independent licences, because it has failed in two independent ways.
+    #   1. WHO says so - only an entry-scoped record (a targeted single-work
+    #      CrossRef lookup). Broad search dumps are discovery evidence, not
+    #      correction authority: they were never queried for this entry, and
+    #      their per-DOI metadata is sometimes wrong (a Semantic Scholar dump
+    #      rewrote Sparrow 2007 to 2019).
+    #   2. WHAT they are saying - the record's year must be a version-of-record
+    #      year, not an online-first or registration date. CrossRef's own
+    #      `published` field is the EARLIEST of print and online, so a record
+    #      built from it carries the pre-issue year and "corrects" correct
+    #      bibliographies (Mind 130(517): print 2021, online 2019).
+    # Both failures are documented in
+    # docs/known-issues/metadata-cleaner-year-corruption.md. (See the
+    # entry_scoped-preference docstring on find_api_entry_by_doi for the
+    # corresponding limitation on non-year fields.)
+    if _year_of(api_entry):
         # Compare AND write the canonical form: a record carrying 2007.0 must
         # neither read as a disagreement with a bib year of 2007 nor land in
         # the .bib as "2007.0". _year_key is exact, so the written value is
@@ -925,7 +991,22 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         # year may be written; see _WRITABLE_YEAR_RE.
         if (_WRITABLE_YEAR_RE.match(api_year)
                 and bib_year and _year_key(bib_year) != api_year):
-            plan["year_corrected"] = (bib_year, api_year)
+            if api_entry.get("entry_scoped") and _year_is_overwritable(api_entry):
+                plan["year_corrected"] = (bib_year, api_year)
+            else:
+                # COUNTABLE, not silent. A refusal is itself information, and
+                # until it is recorded there is no way to tell "corruption
+                # prevented" from "a legitimate correction refused". Recorded
+                # behind the SAME writability and difference guards as the
+                # correction itself, so non-changes ("n.d.", an equal year)
+                # never inflate the count. The reason travels with it: the two
+                # licences fail for different causes and want different fixes
+                # (re-verify the entry vs. re-run under the fixed producer).
+                reason = ("unscoped" if not api_entry.get("entry_scoped")
+                          else "no-version-of-record-date")
+                plan["year_correction_declined"] = (
+                    bib_year, api_year, api_entry.get("source_file") or "?",
+                    reason)
 
     surviving: set = set()
     for field_name in list(entry.fields.keys()):
@@ -1022,6 +1103,14 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         "cleaned_entries": {},  # entry_key -> [removed fields]
         "total_fields_removed": 0,
         "years_corrected": 0,
+        # Countable residual: corrections refused because the only DOI-matched
+        # evidence was a broad dump, with no entry-scoped CrossRef lookup.
+        # Each item is [bib_year, api_year, source_file].
+        "years_declined": [],
+        # True when JSON files were present but NONE of them yielded a usable
+        # record - "cleaning ran and found nothing to fix" and "the evidence
+        # base collapsed" must not read identically to a machine consumer.
+        "index_starved": False,
         "types_downgraded": 0,
         "entries_cleaned": 0,
         "entries_total": 0,
@@ -1074,6 +1163,7 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         )
 
     if not index.entries:
+        result["index_starved"] = True
         result["warnings"].append("No API results found in JSON directory - skipping cleaning")
         return _count_entries_as_unmatched(bib_path, result)  # B1: still count
 
@@ -1126,6 +1216,29 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
                 result["planned_fields_removed_by_name"].get(fname, 0) + 1)
         if plan["type_downgraded"]:
             result["planned_demotions"] += 1
+        if plan["year_correction_declined"]:
+            result["years_declined"].append(list(plan["year_correction_declined"]))
+
+    # Recorded with the other PLANNED metrics, i.e. BEFORE the breaker check: a
+    # refusal is a planning-time fact, and a breaker trip (which writes nothing)
+    # must not also erase the record of what the gate declined. NOTE the
+    # deliberate divergence from phillit-service, which tallies these after the
+    # breaker's early return and so reports none on a trip.
+    if result["years_declined"]:
+        unscoped = sum(1 for d in result["years_declined"] if d[3] == "unscoped")
+        undated = len(result["years_declined"]) - unscoped
+        parts = []
+        if unscoped:
+            parts.append(f"{unscoped} where the only DOI-matched evidence was a "
+                         "broad search dump, not a targeted CrossRef lookup")
+        if undated:
+            parts.append(f"{undated} where the CrossRef record does not say which "
+                         "date field its year came from, so it may be an "
+                         "online-first date rather than the citation year "
+                         "(re-run verification to resolve)")
+        result["warnings"].append(
+            f"Declined {len(result['years_declined'])} year correction(s): "
+            + "; ".join(parts) + ".")
 
     # Circuit breaker: refuse a mass strip (systemic index failure). Keyed on
     # the planned count computed above.

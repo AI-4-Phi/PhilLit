@@ -67,6 +67,9 @@ VERIFY_RESULT = {
             "title": "Killer Robots",
             "container_title": "Journal of Applied Philosophy",
             "year": 2007,
+            # verify_paper.py records WHICH CrossRef date field supplied the
+            # year; only a version-of-record field licenses an overwrite.
+            "year_basis": "published-print",
             "doi": SPARROW_DOI,
             "volume": "24",
             "issue": "1",
@@ -111,7 +114,7 @@ class TestSourceTagging:
 
     def test_verify_detection_is_case_insensitive_substring(self, tmp_path):
         """Domain-prefixed and oddly-cased verify filenames still count as
-        entry-scoped (same rule detect_api_source already uses)."""
+        entry-scoped (they are single-work CrossRef envelopes)."""
         json_dir = make_json_dir(tmp_path, {
             "domain-1_VERIFY_bainbridge1983.json": VERIFY_RESULT,
         })
@@ -119,6 +122,66 @@ class TestSourceTagging:
         index = build_metadata_index(json_dir)
 
         assert index.entries[0]["entry_scoped"] is True
+
+
+class TestAuthorityIsKeyedOnContentNotFilename:
+    """ROADMAP 3I. `entry_scoped` used to require "verify_" in the filename,
+    which was wrong in both directions. Measured over the 45 local corpora:
+    262 genuine single-work CrossRef lookups saved under other names lost
+    correction authority, and the filename could equally grant it to a broad
+    dump. Authority now follows the envelope: CrossRef + exactly one result.
+    """
+
+    def test_single_work_crossref_lookup_is_scoped_whatever_its_name(self, tmp_path):
+        """D1, observed 262 times locally: a per-DOI CrossRef lookup saved as
+        crossref_*.json was "trusted to acquit but not to convict" - its
+        journal/volume/pages still protected fields from stripping, but it
+        could not correct a wrong year."""
+        json_dir = make_json_dir(tmp_path, {
+            "crossref_williams_deed.json": VERIFY_RESULT,
+        })
+
+        index = build_metadata_index(json_dir)
+
+        assert index.entries[0]["entry_scoped"] is True
+
+    def test_multi_result_crossref_dump_is_not_scoped_even_when_named_verify(self, tmp_path):
+        """D2: a BROAD CrossRef search saved as verify_*.json used to mark
+        every record in it entry-scoped, letting one erroneous record
+        authorize the very year rewrite the gate exists to refuse."""
+        broad = json.loads(json.dumps(VERIFY_RESULT))
+        broad["results"].append({
+            "title": "Some Other Paper", "year": 1999,
+            "doi": "10.1111/other", "container_title": "Elsewhere",
+        })
+        json_dir = make_json_dir(tmp_path, {"verify_search.json": broad})
+
+        index = build_metadata_index(json_dir)
+
+        assert [e["entry_scoped"] for e in index.entries] == [False, False]
+
+    def test_non_crossref_source_is_never_scoped(self, tmp_path):
+        """The api_source conjunct is retained and load-bearing: 11 multi-result
+        verify_*.json files in the local corpora are Semantic Scholar dumps -
+        the source class that caused the original corruption."""
+        json_dir = make_json_dir(tmp_path, {"verify_habernal.json": S2_DUMP})
+
+        index = build_metadata_index(json_dir)
+
+        assert index.entries[0]["entry_scoped"] is False
+
+    def test_empty_result_envelope_contributes_no_records(self, tmp_path):
+        """The 181 verify_* files that lose the tag are all not_found/error
+        envelopes with results: [] - they supply no records, which is why
+        dropping the filename rule needs no legacy fallback."""
+        json_dir = make_json_dir(tmp_path, {
+            "verify_missing.json": {"status": "error", "source": "crossref",
+                                    "results": [], "count": 0},
+        })
+
+        index = build_metadata_index(json_dir)
+
+        assert index.entries == []
 
 
 class TestDoiLookupPriority:
@@ -532,7 +595,8 @@ class TestYearNormalizationAcrossComparisons:
         index = build_metadata_index(json_dir)
         entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
         api_entry = {
-            "year": 2007.0, "entry_scoped": True, "doi": SPARROW_DOI,
+            "year": 2007.0, "entry_scoped": True, "year_basis": "published-print",
+            "doi": SPARROW_DOI,
             "title": "Killer Robots",
             "container_title": "Journal of Applied Philosophy",
             "source_file": "verify_3_sparrow2007.json",
@@ -779,7 +843,8 @@ class TestYearKeyWriteSafety:
         entry = parse_string(
             "@article{x,author={A, B},title={T},year={2007},doi={10.1/x}}",
             "bibtex").entries["x"]
-        api = {"year": " ", "entry_scoped": True, "doi": "10.1/x", "title": "T"}
+        api = {"year": " ", "entry_scoped": True, "year_basis": "published-print",
+               "doi": "10.1/x", "title": "T"}
 
         plan = plan_entry_cleaning(entry, index, api)
 
@@ -795,7 +860,8 @@ class TestYearKeyWriteSafety:
         entry = parse_string(
             "@article{x,author={A, B},title={T},year={2007},doi={10.1/x}}",
             "bibtex").entries["x"]
-        api = {"year": "n.d.", "entry_scoped": True, "doi": "10.1/x", "title": "T"}
+        api = {"year": "n.d.", "entry_scoped": True, "year_basis": "published-print",
+               "doi": "10.1/x", "title": "T"}
 
         plan = plan_entry_cleaning(entry, index, api)
 
@@ -809,7 +875,8 @@ class TestYearKeyWriteSafety:
         entry = parse_string(
             "@article{x,author={A, B},title={T},year={2019},doi={10.1/x}}",
             "bibtex").entries["x"]
-        api = {"year": 2007, "entry_scoped": True, "doi": "10.1/x", "title": "T"}
+        api = {"year": 2007, "entry_scoped": True, "year_basis": "published-print",
+               "doi": "10.1/x", "title": "T"}
 
         plan = plan_entry_cleaning(entry, index, api)
 
@@ -919,7 +986,8 @@ class TestWriteGateMatchesTheGrammar:
         entry = parse_string(
             "@article{x,author={A, B},title={T},year={2007},doi={10.1/x}}",
             "bibtex").entries["x"]
-        api = {"year": bad_year, "entry_scoped": True, "doi": "10.1/x"}
+        api = {"year": bad_year, "entry_scoped": True,
+               "year_basis": "published-print", "doi": "10.1/x"}
 
         assert plan_entry_cleaning(entry, index, api)["year_corrected"] is None
 
@@ -932,7 +1000,8 @@ class TestWriteGateMatchesTheGrammar:
         entry = parse_string(
             "@article{x,author={A, B},title={T},year={1999},doi={10.1/x}}",
             "bibtex").entries["x"]
-        api = {"year": good_year, "entry_scoped": True, "doi": "10.1/x"}
+        api = {"year": good_year, "entry_scoped": True,
+               "year_basis": "published-print", "doi": "10.1/x"}
 
         plan = plan_entry_cleaning(entry, index, api)
 
@@ -1018,3 +1087,166 @@ class TestScopedSwapPreservesVerificationPower:
         from metadata_cleaner import _record_completeness
 
         assert _record_completeness({"publisher": " ", "issue": " "}) == 0
+
+
+class TestYearBasisGate:
+    """The second licence for a year overwrite: the record must say WHICH
+    CrossRef date field its year came from, and it must be a version-of-record
+    field.
+
+    verify_paper.py used to read CrossRef's `published` first, which is the
+    EARLIEST of published-print and published-online. Over the 43 local
+    corpora, 27 of 42 year rewrites therefore replaced a year that exactly
+    matched `published-print` with the online-first year (Mind 130(517): print
+    2021, online 2019). Those records are still on disk in delivered reviews
+    and nothing in them separates the good years from the bad, so a record with
+    no `year_basis` may not overwrite - it is refused, and counted.
+    """
+
+    BIB = """@article{pinder2019conceptual,
+  author = {Pinder, Mark},
+  title = {Conceptual Engineering},
+  journal = {Mind},
+  year = {2021},
+  volume = {130},
+  number = {517},
+  doi = {10.1093/mind/fzz069}
+}"""
+
+    def _run(self, tmp_path, record):
+        payload = {"status": "success", "source": "crossref", "results": [record]}
+        json_dir = make_json_dir(tmp_path, {"verify_pinder.json": payload})
+        bib = tmp_path / "lit.bib"
+        bib.write_text(self.BIB, encoding="utf-8")
+        return clean_bibtex(bib, json_dir), bib
+
+    # Everything except the year matches the bib, so the only thing under test
+    # is the year gate - no unrelated field stripping muddies the assertions.
+    ONLINE_FIRST = {
+        "title": "Conceptual Engineering",
+        "container_title": "Mind",
+        "volume": "130",
+        "issue": "517",
+        "year": 2019,
+        "doi": "10.1093/mind/fzz069",
+    }
+
+    def test_legacy_record_without_a_basis_cannot_overwrite(self, tmp_path):
+        result, bib = self._run(tmp_path, self.ONLINE_FIRST)
+
+        assert result["years_corrected"] == 0
+        assert "2021" in bib.read_text(encoding="utf-8")
+        assert_no_cleaned_marker(bib.read_text(encoding="utf-8"))
+
+    def test_the_refusal_is_countable_and_warned(self, tmp_path):
+        result, _ = self._run(tmp_path, self.ONLINE_FIRST)
+
+        assert result["years_declined"] == [
+            ["2021", "2019", "verify_pinder.json", "no-version-of-record-date"]]
+        assert any("online-first" in w for w in result["warnings"])
+
+    def test_registration_timestamp_cannot_overwrite(self, tmp_path):
+        """`created` is when CrossRef was told about the work."""
+        record = dict(self.ONLINE_FIRST, year_basis="created")
+
+        result, bib = self._run(tmp_path, record)
+
+        assert result["years_corrected"] == 0
+        assert "2021" in bib.read_text(encoding="utf-8")
+
+    def test_print_year_still_corrects(self, tmp_path):
+        """The gate must not be vacuous: a properly-provenanced record from the
+        fixed producer still fixes a genuinely wrong bib year."""
+        record = dict(self.ONLINE_FIRST, year=2021, year_basis="published-print")
+        bib_wrong_year = self.BIB.replace("year = {2021}", "year = {2019}")
+        payload = {"status": "success", "source": "crossref", "results": [record]}
+        json_dir = make_json_dir(tmp_path, {"verify_pinder.json": payload})
+        bib = tmp_path / "lit.bib"
+        bib.write_text(bib_wrong_year, encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 1
+        assert result["years_declined"] == []
+        assert "2021" in bib.read_text(encoding="utf-8")
+
+    def test_online_only_journal_still_corrects(self, tmp_path):
+        """No print edition: `published` IS the citation year."""
+        record = dict(self.ONLINE_FIRST, year=2020, year_basis="published")
+        payload = {"status": "success", "source": "crossref", "results": [record]}
+        json_dir = make_json_dir(tmp_path, {"verify_pinder.json": payload})
+        bib = tmp_path / "lit.bib"
+        bib.write_text(self.BIB, encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 1
+
+    def test_unscoped_and_undated_declines_report_different_reasons(self, tmp_path):
+        """The two licences fail for different causes and want different fixes
+        (re-verify the entry vs. re-run under the fixed producer), so the
+        reason travels with the refusal."""
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        index = build_metadata_index(tmp_path / "nonexistent")
+        entry = parse_string(
+            "@article{x,author={A, B},title={T},year={2021},doi={10.1/x}}",
+            "bibtex").entries["x"]
+
+        unscoped = plan_entry_cleaning(entry, index, {
+            "year": 2019, "year_basis": "published-print", "doi": "10.1/x",
+            "entry_scoped": False, "source_file": "s2_dump.json"})
+        undated = plan_entry_cleaning(entry, index, {
+            "year": 2019, "doi": "10.1/x",
+            "entry_scoped": True, "source_file": "verify_x.json"})
+
+        assert unscoped["year_correction_declined"][3] == "unscoped"
+        assert undated["year_correction_declined"][3] == "no-version-of-record-date"
+
+    def test_a_missing_year_is_still_filled(self, tmp_path):
+        """The gate protects POPULATED years. An entry with no year at all
+        loses nothing, so this path is unchanged."""
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        index = build_metadata_index(tmp_path / "nonexistent")
+        entry = parse_string(
+            "@article{x,author={A, B},title={T},doi={10.1/x}}",
+            "bibtex").entries["x"]
+
+        plan = plan_entry_cleaning(entry, index, {
+            "year": 2019, "doi": "10.1/x", "entry_scoped": True})
+
+        assert plan["year_corrected"] is None
+        assert plan["year_correction_declined"] is None
+
+
+class TestIndexStarvedFlag:
+    """A starved index and a clean bill of health used to be distinguishable
+    only by free-text warnings. External review finding E."""
+
+    def test_flag_set_when_no_file_yields_a_record(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "final_selection.json": ["not", "an", "envelope"],
+            "verify_missing.json": {"status": "error", "source": "crossref",
+                                    "results": []},
+        })
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["index_starved"] is True
+        assert result["success"] is True
+        assert result["entries_total"] == 1
+        assert result["unmatched_entries"] == 1
+
+    def test_flag_clear_on_an_ordinary_run(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {"verify_sparrow.json": VERIFY_RESULT})
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["index_starved"] is False

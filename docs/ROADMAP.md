@@ -153,21 +153,55 @@ hardening (no PhilLit producer emits a float year). Residual, documented not
 fixed: two scoped records agreeing on year but differing on
 journal/volume/pages are still first-wins.
 
-**I — `entry_scoped` authority is keyed on a FILENAME substring: OPEN, needs
-a decision.** Flagged by both kimi-k3 and gpt-5.6-sol reviewing the 2026-08-02
+**I — `entry_scoped` authority was keyed on a FILENAME substring: FIXED
+2026-08-02.** Flagged by both kimi-k3 and gpt-5.6-sol reviewing the 2026-08-02
 branch. `entry_scoped = "verify_" in filename.lower() and api_source ==
-"crossref"` has two failure modes: a genuine per-DOI CrossRef lookup saved as
-`crossref_*.json` silently loses correction authority (observed in the local
-corpora), and a *broad* CrossRef search saved as `verify_*.json` grants
-authority to every record in it — which can recreate the year corruption the
-gate exists to prevent. Recommended fix needs a `verify_paper.py` change:
-record the lookup mode + requested DOI in the payload and grant authority on
-content, keeping the filename rule as a legacy fallback. Cheap interim that
-kills the false-authority half alone: additionally require the envelope to
-hold exactly one result. The service now at least records refusals
-(`years_declined` + warning) so the residual is countable; mirroring that here
-is the smaller first step. Full write-up:
-`~/Downloads/phillit-review-findings-for-sister-repo-2026-08-02.md`.
+"crossref"` was wrong in both directions; authority now follows the envelope's
+content — `api_source == "crossref"` **and exactly one result**, i.e. a
+targeted single-work lookup. Measured over the 45 local corpora (7109 JSON
+files): **262 files gain** authority (genuine per-DOI CrossRef lookups saved as
+`crossref_*.json`, `<author>_<year>.json`; previously "trusted to acquit but
+not to convict"), and the **181 that lose the tag all carry `results: []`** —
+they contribute zero records, which is why no legacy filename fallback is
+needed. The `api_source` conjunct is retained and load-bearing: the 11
+multi-result `verify_*.json` files here are Semantic Scholar dumps. The
+external review recommended two further conjuncts (lookup mode `doi`, and
+requested DOI == record DOI); both were **deliberately not adopted** —
+`verify_paper.py --title` is still a targeted single-work query (227 such files
+here), and once a record's DOI matches the bib entry's, the record is
+CrossRef's own metadata for that DOI. Only 2 of 981 requested-vs-returned DOIs
+differ locally, both benign aliases. Dry-run over all 43 bibs: matched
+3109→3130, planned fields removed 1292→1293, breaker trips 11→11, zero errors.
+Refusals are now countable (`years_declined` + warning, mirrored from the
+service) and a starved index sets `index_starved` (review finding E). Full
+write-up: `~/Downloads/phillit-review-findings-for-sister-repo-2026-08-02.md`.
+
+**K — the CrossRef year was the ONLINE-FIRST year, so 64% of "corrections"
+corrupted a correct bibliography: FIXED 2026-08-02.** Found while measuring I.
+`verify_paper.py:format_result` read date fields in the order `published`,
+`published-print`, `published-online`, `created` — and CrossRef defines
+`published` as the **earliest** of print and online. Every online-first work
+therefore reported its pre-issue year, and the cleaner rewrote the bib to
+match. Ground-truthed against the CrossRef API for all 42 year rewrites the
+local corpora produce: **27 replaced a year that exactly equals
+`published-print` with the `published-online` year** (Mind 130(517): print
+2021-06, online 2019-12 → the correct 2021 became 2019; likewise Episteme
+17(2), Sci Eng Ethics 23(3), Synthese 197(7), …). This is the same corruption
+as the original known issue, from a different direction: G–J fixed *whose*
+evidence may correct a year, and nothing had asked whether the year itself was
+the citation year. Two-part fix: (a) the producer prefers `published-print` and
+records `year_basis` — which CrossRef field the year came from; (b) the cleaner
+requires *positive* provenance before overwriting a populated year
+(`_year_is_overwritable`), so the legacy records already on disk — where good
+and bad years are indistinguishable — decline instead, countably. The same
+online-first bug made the title-search `±1` year filter reject correct papers
+(a 2020 citation year vs a 2018 online date); it now accepts either date.
+Re-verified against CrossRef, the fixed producer turns **27 of the 42 rewrites
+into no-ops and leaves 15 corrections, all to the print year — zero
+corruptions**. On the legacy corpora the gate yields 0 corrections and 154
+recorded declines (up from 109), all surfaced to the model through the hook's
+existing `.warnings[]` pass-through. `metadata_validator.py` needs no mirror:
+it is read-only and has no year-overwrite path.
 
 **IF THE PORT PLAN'S TASK 2 PROCEEDS, carry the CORRECTED `_year_key`** — not
 the version the service shipped before 2026-08-02. The original

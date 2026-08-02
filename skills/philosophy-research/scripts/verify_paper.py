@@ -169,6 +169,35 @@ CROSSREF_TO_BIBTEX_TYPE = {
 }
 
 
+# Which CrossRef date field to believe, in order. `published-print` FIRST:
+# CrossRef defines `published` as the EARLIEST of published-print and
+# published-online, so for any online-first work `published` is the online
+# date, not the citation year. Trying it first made every online-first article
+# report the wrong year - and metadata_cleaner.py then "corrected" correct
+# bibliographies to match. Measured over the 43 local corpora: 27 of 42 year
+# rewrites replaced a year that exactly matched `published-print` with the
+# `published-online` year (e.g. Mind 130(517): print 2021-06, online 2019-12).
+# `created` is a registration timestamp, not a publication date; it is a last
+# resort and is marked as such so consumers can refuse to act on it.
+_YEAR_FIELDS = ["published-print", "published", "published-online", "created"]
+
+
+def extract_year(item: dict) -> tuple[Optional[int], Optional[str]]:
+    """Publication year of a CrossRef work, plus WHICH date field it came from.
+
+    Returns (year, basis); (None, None) when the item carries no usable date.
+    The basis travels with the record so a consumer can tell a version-of-record
+    year from a bare registration timestamp instead of guessing.
+    """
+    for date_field in _YEAR_FIELDS:
+        value = item.get(date_field)
+        if isinstance(value, dict) and "date-parts" in value:
+            parts = value["date-parts"]
+            if parts and parts[0] and parts[0][0]:
+                return parts[0][0], date_field
+    return None, None
+
+
 def format_result(item: dict, method: str, score: Optional[float] = None) -> dict:
     """Format CrossRef result into standard output format."""
     # Extract DOI
@@ -182,14 +211,8 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
     authors = extract_author_names(item.get("author", []))
     editors = extract_author_names(item.get("editor", []))
 
-    # Extract year from various date fields
-    year = None
-    for date_field in ["published", "published-print", "published-online", "created"]:
-        if date_field in item and "date-parts" in item[date_field]:
-            parts = item[date_field]["date-parts"]
-            if parts and parts[0] and parts[0][0]:
-                year = parts[0][0]
-                break
+    # Extract year, and record which CrossRef date field supplied it
+    year, year_basis = extract_year(item)
 
     # Extract container title (journal/book)
     container = item.get("container-title", [])
@@ -207,6 +230,9 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
         "authors": [{"family": a.split(", ")[0], "given": a.split(", ")[1] if ", " in a else ""} for a in authors],
         "editors": [{"family": e.split(", ")[0], "given": e.split(", ")[1] if ", " in e else ""} for e in editors],
         "year": year,
+        # Provenance of `year`, so a consumer can require positive evidence
+        # before OVERWRITING a bibliography's own year. See _YEAR_FIELDS.
+        "year_basis": year_basis,
         "container_title": container_title,
         "volume": volume,
         "issue": issue,
@@ -374,18 +400,24 @@ def search_by_metadata(
                         if author_lower not in all_author_text:
                             raise LookupError(f"Author '{author}' not found in result authors")
 
-                # Verify year if provided
+                # Verify year if provided. Accept a match against EITHER the
+                # print year or the online-first year: the researcher cites one
+                # of the two, and an online-first work can straddle the +/-1
+                # window (Episteme 17(2): online 2018, print 2020), which used
+                # to reject the correct paper outright.
                 if year:
-                    result_year = None
-                    for date_field in ["published", "published-print", "published-online"]:
-                        if date_field in top and "date-parts" in top[date_field]:
-                            parts = top[date_field]["date-parts"]
+                    candidates = set()
+                    for date_field in _YEAR_FIELDS[:-1]:  # not `created`
+                        value = top.get(date_field)
+                        if isinstance(value, dict) and "date-parts" in value:
+                            parts = value["date-parts"]
                             if parts and parts[0] and parts[0][0]:
-                                result_year = parts[0][0]
-                                break
+                                candidates.add(parts[0][0])
 
-                    if result_year and abs(result_year - year) > 1:
-                        raise LookupError(f"Year mismatch: expected {year}, got {result_year}")
+                    if candidates and all(abs(c - year) > 1 for c in candidates):
+                        raise LookupError(
+                            f"Year mismatch: expected {year}, got "
+                            f"{'/'.join(str(c) for c in sorted(candidates))}")
 
                 result = format_result(top, "bibliographic_search", score)
                 log_progress(f"Paper found: {result.get('title', '')[:50]}... (score: {score:.1f})")

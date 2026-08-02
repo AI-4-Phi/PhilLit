@@ -789,6 +789,7 @@ class TestYearCorrection:
                     "doi": "10.1234/test.2020",
                     "title": "Test Paper",
                     "year": 2020,
+                    "year_basis": "published-print",
                     "container_title": "Test Journal"
                 }
             ]
@@ -864,6 +865,7 @@ class TestYearCorrection:
                     "doi": "10.1234/test.2020",
                     "title": "Test Paper",
                     "year": 2020,
+                    "year_basis": "published-print",
                     "container_title": "Test Journal"
                 }
             ]

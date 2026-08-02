@@ -483,3 +483,148 @@ class TestVerifyPaperProgressOutput:
         output = captured.getvalue()
         assert "[verify_paper.py]" in output
         assert "Test message" in output
+
+
+class TestOnlineFirstYear:
+    """CrossRef's `published` is the EARLIEST of published-print and
+    published-online, so trying it first reported the ONLINE year for every
+    online-first work. metadata_cleaner.py then "corrected" correct
+    bibliographies to match: 27 of 42 year rewrites over the local corpora
+    replaced a year matching `published-print` with the online-first year.
+    See docs/known-issues/metadata-cleaner-year-corruption.md.
+    """
+
+    # Mind 130(517): online 2019-12-03, print 2021-06-01. The citation year is
+    # 2021; the pre-fix code reported 2019.
+    PINDER = {
+        "DOI": "10.1093/mind/fzz069",
+        "title": ["Conceptual Engineering, Metasemantic Externalism and Speaker-Meaning"],
+        "author": [{"given": "Mark", "family": "Pinder"}],
+        "published": {"date-parts": [[2019, 12, 3]]},
+        "published-online": {"date-parts": [[2019, 12, 3]]},
+        "published-print": {"date-parts": [[2021, 6, 1]]},
+        "container-title": ["Mind"],
+        "volume": "130",
+        "issue": "517",
+        "type": "journal-article",
+    }
+
+    def test_print_year_wins_over_online_first(self):
+        import verify_paper
+
+        assert verify_paper.extract_year(self.PINDER) == (2021, "published-print")
+
+    def test_format_result_reports_the_citation_year(self):
+        import verify_paper
+
+        result = verify_paper.format_result(self.PINDER, "doi_lookup")
+
+        assert result["year"] == 2021
+        assert result["year_basis"] == "published-print"
+
+    def test_online_only_work_falls_back_to_published(self):
+        """No print date: `published` IS the citation year, and the basis says
+        so, so the cleaner may still act on it."""
+        import verify_paper
+
+        item = {"published": {"date-parts": [[2022, 4]]},
+                "published-online": {"date-parts": [[2022, 4]]}}
+
+        assert verify_paper.extract_year(item) == (2022, "published")
+
+    def test_registration_timestamp_is_marked_as_such(self):
+        """`created` is when CrossRef was told about the work, not when it was
+        published. It is a last resort, and the basis lets a consumer refuse
+        to overwrite a bibliography year with it."""
+        import verify_paper
+
+        item = {"created": {"date-parts": [[2015, 8, 9]]}}
+
+        assert verify_paper.extract_year(item) == (2015, "created")
+
+    def test_no_dates_at_all(self):
+        import verify_paper
+
+        assert verify_paper.extract_year({"title": ["Undated"]}) == (None, None)
+
+    def test_malformed_date_parts_are_skipped(self):
+        import verify_paper
+
+        item = {"published-print": {"date-parts": [[]]},
+                "published": {"date-parts": [[1998]]}}
+
+        assert verify_paper.extract_year(item) == (1998, "published")
+
+    @patch("requests.get")
+    def test_title_search_accepts_the_print_year_of_an_online_first_work(self, mock_get):
+        """Regression: the +/-1 year filter compared ONLY against `published`
+        (the online date), so searching for Episteme 17(2) by its citation year
+        2020 was rejected as a "Year mismatch" against the 2018 online date -
+        the correct paper, refused."""
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: {
+                "message": {
+                    "items": [
+                        {
+                            "DOI": "10.1017/epi.2018.32",
+                            "title": ["Echo Chambers and Epistemic Bubbles"],
+                            "author": [{"given": "C. Thi", "family": "Nguyen"}],
+                            "published": {"date-parts": [[2018, 9, 13]]},
+                            "published-online": {"date-parts": [[2018, 9, 13]]},
+                            "published-print": {"date-parts": [[2020, 6]]},
+                            "score": 95.0,
+                        }
+                    ]
+                }
+            }
+        )
+
+        import verify_paper
+        from rate_limiter import get_limiter, ExponentialBackoff
+
+        result = verify_paper.search_by_metadata(
+            title="Echo Chambers and Epistemic Bubbles",
+            author="Nguyen",
+            year=2020,
+            limiter=get_limiter("crossref"),
+            backoff=ExponentialBackoff(),
+            mailto="test@example.com",
+        )
+
+        assert result["doi"] == "10.1017/epi.2018.32"
+        assert result["year"] == 2020
+
+    @patch("requests.get")
+    def test_title_search_still_rejects_a_genuinely_wrong_year(self, mock_get):
+        """Widening the filter to accept EITHER date must not make it vacuous."""
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: {
+                "message": {
+                    "items": [
+                        {
+                            "DOI": "10.1017/epi.2018.32",
+                            "title": ["Echo Chambers and Epistemic Bubbles"],
+                            "author": [{"given": "C. Thi", "family": "Nguyen"}],
+                            "published": {"date-parts": [[2018, 9, 13]]},
+                            "published-print": {"date-parts": [[2020, 6]]},
+                            "score": 95.0,
+                        }
+                    ]
+                }
+            }
+        )
+
+        import verify_paper
+        from rate_limiter import get_limiter, ExponentialBackoff
+
+        with pytest.raises(LookupError, match="Year mismatch"):
+            verify_paper.search_by_metadata(
+                title="Echo Chambers and Epistemic Bubbles",
+                author="Nguyen",
+                year=1995,
+                limiter=get_limiter("crossref"),
+                backoff=ExponentialBackoff(),
+                mailto="test@example.com",
+            )
