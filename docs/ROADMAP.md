@@ -42,22 +42,24 @@ exists so open work has a single place to be listed — it was created
 > layer yet, so Option C is a condition on its pending port item 20):
 > `~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
 >
-> **Two things gate the merge, both open (gate (b) re-scoped 2026-08-02):**
-> **(b) writer-guidance validation run** — the prompt edits themselves are
-> BUILT (Johannes's 2026-08-01 "full pre-port edit": every-sentence CONTEXT
-> attribution, EXISTENCE title-derivable clarifier, both calibration
-> exemplars, planner mirror — all verified present on the branch). What
-> remains, per Johannes's 2026-08-02 decision: **one live headless review on
-> the branch (book-heavy topic), spot-checking CONTEXT attribution and
-> EXISTENCE discipline post-edit** — the pre-edit baseline was 1-of-4
-> attribution compliance, and house rule is that prompt edits get a live
-> compliance run before the port. The "strip or fence unattested abstract
-> text at sanitize time" candidate is **CLOSED — REJECTED** (Johannes,
-> 2026-08-02, adopting the 2026-08-01 root-cause analysis: it would have
-> suppressed 7 correct abstracts; self-heal + prefilled attestation +
-> anti-re-emission guidance address the real mechanism).
-> **(c) blind holistic coherence comparison** — rubric item 3, the last open
-> pre-registered gate item. Arms archived at
+> **One thing gates the merge:**
+> **(b) writer-guidance follow-ups — CLOSED, PASSED 2026-08-02.** The b2
+> prompt edits (built 2026-08-01) were validated with a live headless Sonnet
+> run on the branch ("Scientific representation and models in science",
+> workspace `~/phillit-ab/gateb-validation-20260802`, kept): CONTEXT
+> in-prose attribution **11 of 11 sentences** (pre-edit baseline: 1 of 4);
+> violation sentences **2/28** low-tier entries (baseline: 7/27), both mild;
+> 4 exemplary title-derivable EXISTENCE uses. Option C live-validated in the
+> same run (3 abstentions attested, refusal visible, none demoted). Full
+> adjudication: A/B results doc, "Gate (b) validation run" section. The
+> sanitize-time stripping candidate is **CLOSED — REJECTED** (Johannes,
+> 2026-08-02: it would have suppressed 7 correct abstracts; self-heal +
+> prefilled attestation + anti-re-emission guidance address the real
+> mechanism). Side finding: the run hand-confirmed item 3E live — the
+> orchestrator removed 6 phantom References entries from the surname+year
+> matcher unprompted.
+> **(c) blind holistic coherence comparison — the last open gate** — rubric
+> item 3. Arms archived at
 > `~/phillit-ab/archives/{control,treatment}-*-20260725.tar.gz`.
 >
 > **DO NOT REMOVE THE `evidence-tier` WORKTREE.** `docs/superpowers/` is
