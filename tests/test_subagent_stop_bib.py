@@ -362,3 +362,91 @@ class TestMetadataCleaning:
         assert "Salvaged" in ctx or "Cleaner warnings" in ctx, (
             f"cleaner salvage warning did not surface in additionalContext: {out}"
         )
+
+    def test_core_json_does_not_silently_disable_cleaning(self, project):
+        # A CORE result file (string-shaped `journal`) crashed the cleaner, and
+        # the hook swallowed the traceback: no summary, bib untouched -- byte-
+        # identical to a clean run. The hallucinated `number` must now go.
+        review = project / "reviews" / "test-review"
+        bib = review / "d1.bib"
+        bib.write_text(HALLUCINATED_NUMBER_BIB, encoding="utf-8")
+        jdir = review / "intermediate_files" / "json"
+        jdir.mkdir(parents=True)
+        (jdir / "s2_nature.json").write_text(
+            json.dumps(S2_NATURE_JSON), encoding="utf-8")
+        (jdir / "core_moral.json").write_text(json.dumps({
+            "status": "success", "source": "core", "query": "moral machine",
+            "results": [{"core_id": "1", "doi": "10.1038/s41586-018-0637-6",
+                         "title": "The Moral Machine experiment", "year": 2018,
+                         "publisher": "Springer", "journal": "Nature"}],
+            "count": 1, "errors": [],
+        }), encoding="utf-8")
+        out, code, _ = run_hook(RESEARCHER, project)
+        assert code == 0
+        fields = {k.lower() for k in pybtex_parse_file(
+            str(bib), bib_format="bibtex").entries["awad2018moral"].fields}
+        assert "number" not in fields, (
+            "cleaning did not run: a CORE JSON in the dir still disables it")
+        assert "Cleaned d1.bib" in out.get(
+            "hookSpecificOutput", {}).get("additionalContext", "")
+
+
+class TestCleanerFailureIsNeverSilent:
+    """A crashed cleaner must not read as a clean run (never-silent policy)."""
+
+    def _stub_root(self, tmp_path: Path, cleaner_stdout: str, cleaner_rc: int) -> Path:
+        root = tmp_path / "stub-plugin"
+        (root / "bin").mkdir(parents=True)
+        run = root / "bin" / "phillit-run"
+        run.write_text(
+            "#!/usr/bin/env bash\n"
+            "case \"$1\" in\n"
+            "  *bib_validator.py) echo '{\"valid\": true, \"errors\": []}' ;;\n"
+            f"  *metadata_cleaner.py) {cleaner_stdout}\n"
+            f"                        exit {cleaner_rc} ;;\n"
+            "esac\n",
+            encoding="utf-8",
+        )
+        run.chmod(0o755)
+        return root
+
+    def _run(self, project: Path, root: Path) -> tuple[dict, int, str]:
+        proc = subprocess.run(
+            [BASH, str(SCRIPT)], input=json.dumps(RESEARCHER),
+            capture_output=True, text=True, encoding="utf-8",
+            env={**os.environ, "CLAUDE_PROJECT_DIR": str(project),
+                 "CLAUDE_PLUGIN_ROOT": str(root), "PHILLIT_UV": UV},
+        )
+        return json.loads(proc.stdout), proc.returncode, proc.stderr
+
+    def _seed(self, project: Path) -> None:
+        review = project / "reviews" / "test-review"
+        (review / "d1.bib").write_text(VALID_BIB, encoding="utf-8")
+        jdir = review / "intermediate_files" / "json"
+        jdir.mkdir(parents=True)
+        (jdir / "s2.json").write_text(json.dumps(S2_NATURE_JSON), encoding="utf-8")
+
+    def test_traceback_is_reported_not_swallowed(self, project, tmp_path):
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path,
+            "echo 'Traceback (most recent call last):' >&2; "
+            "echo \"AttributeError: 'str' object has no attribute 'get'\" >&2",
+            1)
+        out, code, stderr = self._run(project, root)
+        assert code == 0                              # hook protocol: never exit 2
+        assert "produced non-JSON output" in stderr
+        ctx = out.get("hookSpecificOutput", {}).get("additionalContext", "")
+        assert "FAILED for d1.bib" in ctx
+        assert "AttributeError" in ctx
+
+    def test_empty_output_is_reported_not_swallowed(self, project, tmp_path):
+        # `jq -r '.x // 0'` exits 0 on empty input, so the old code read an
+        # empty cleaner result as "0 fields removed".
+        self._seed(project)
+        root = self._stub_root(tmp_path, "true", 0)
+        out, code, stderr = self._run(project, root)
+        assert code == 0
+        assert "produced non-JSON output" in stderr
+        assert "FAILED for d1.bib" in out.get(
+            "hookSpecificOutput", {}).get("additionalContext", "")

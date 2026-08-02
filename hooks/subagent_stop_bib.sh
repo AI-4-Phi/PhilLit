@@ -149,7 +149,21 @@ for bib_file in "${BIB_FILES[@]}"; do
     shopt -u nullglob
 
     if [[ ${#JSON_DIRS[@]} -gt 0 ]]; then
-        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "${JSON_DIRS[@]}" 2>/dev/null || true)
+        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "${JSON_DIRS[@]}" 2>&1 || true)
+
+        # Never-silent policy (same guard step 1 applies to bib_validator):
+        # a crashed cleaner emits a traceback, `jq` then fails, and without
+        # this the `|| echo 0` fallback makes the run byte-identical to a
+        # clean one. Cleaning does not block, so this warns and moves on.
+        if ! echo "$CLEAN_RESULT" | jq -e . >/dev/null 2>&1; then
+            echo "WARNING: metadata_cleaner.py produced non-JSON output for $bib_file: $CLEAN_RESULT" >&2
+            CLEANING_SUMMARY="${CLEANING_SUMMARY}
+metadata_cleaner.py FAILED for $(basename "$bib_file") - metadata was NOT verified:
+$CLEAN_RESULT
+"
+            continue
+        fi
+
         FIELDS_REMOVED=$(echo "$CLEAN_RESULT" | jq -r '.total_fields_removed // 0' 2>/dev/null || echo "0")
         ENTRIES_CLEANED=$(echo "$CLEAN_RESULT" | jq -r '.entries_cleaned // 0' 2>/dev/null || echo "0")
 
@@ -185,7 +199,7 @@ fi
 # Surface cleaning summary to the model as non-error feedback (v2.1.163+;
 # harmlessly ignored by older Claude Code versions).
 if [[ -n "$CLEANING_SUMMARY" ]]; then
-    jq -cn --arg ctx "METADATA CLEANING PERFORMED:$CLEANING_SUMMARY" \
+    jq -cn --arg ctx "METADATA CLEANING REPORT:$CLEANING_SUMMARY" \
         '{"hookSpecificOutput": {"hookEventName": "SubagentStop", "additionalContext": $ctx}}'
     exit 0
 fi

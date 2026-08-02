@@ -27,6 +27,7 @@ import html
 import json
 import re
 import sys
+import traceback
 import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -224,11 +225,22 @@ def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
 
 
 def parse_s2_result(data: dict, source_file: str) -> list[dict]:
-    """Parse Semantic Scholar JSON format."""
+    """Parse Semantic Scholar JSON format.
+
+    Also the fallback parser for unrecognized sources, so `journal` may arrive
+    as a bare STRING rather than S2's {name, volume, pages} object (CORE writes
+    it that way). Coerce instead of dropping: the string IS the container
+    title, and treating it as `{}` would both lose the datum and — before the
+    isinstance guard — raise AttributeError.
+    """
     results = data.get("results", [])
     entries = []
     for item in results:
-        journal_info = item.get("journal") or {}
+        journal_info = item.get("journal")
+        if isinstance(journal_info, str):
+            journal_info = {"name": journal_info}
+        elif not isinstance(journal_info, dict):
+            journal_info = {}
         entries.append({
             "title": item.get("title"),
             "container_title": journal_info.get("name") or item.get("venue"),
@@ -321,9 +333,33 @@ def parse_philpapers_result(data: dict, source_file: str) -> list[dict]:
     return entries
 
 
+def parse_core_result(data: dict, source_file: str) -> list[dict]:
+    """Parse CORE JSON format (search_core.py's `_format_work`).
+
+    CORE's `journal` is a plain string (the first journal's title), and it
+    carries `publisher` — both of which the S2 fallback parser used to lose or
+    choke on.
+    """
+    results = data.get("results", [])
+    entries = []
+    for item in results:
+        entries.append({
+            "title": item.get("title"),
+            "container_title": item.get("journal"),
+            "volume": None,
+            "issue": None,
+            "pages": None,
+            "publisher": item.get("publisher"),
+            "year": item.get("year"),
+            "doi": item.get("doi"),
+        })
+    return entries
+
+
 def detect_api_source(data: dict, filename: str) -> str:
     """Detect which API produced this JSON file."""
-    source = data.get("source", "").lower()
+    raw_source = data.get("source")
+    source = raw_source.lower() if isinstance(raw_source, str) else ""
 
     if "semantic_scholar" in source or "s2" in source:
         return "s2"
@@ -335,6 +371,8 @@ def detect_api_source(data: dict, filename: str) -> str:
         return "arxiv"
     elif "philpapers" in source:
         return "philpapers"
+    elif "core" in source:
+        return "core"
 
     fname = filename.lower()
     if "s2_" in fname or fname.startswith("s2"):
@@ -347,6 +385,8 @@ def detect_api_source(data: dict, filename: str) -> str:
         return "arxiv"
     elif "philpapers" in fname or "pp_" in fname:
         return "philpapers"
+    elif "core_" in fname or fname.startswith("core"):
+        return "core"
 
     return "unknown"
 
@@ -361,6 +401,12 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
     json.loads are salvaged via _salvage_json (log-pollution tolerance);
     unsalvageable files are recorded in index.skipped_files, salvaged ones in
     index.salvaged_files.
+
+    Every file is processed in ISOLATION: one that is not a JSON *object*, or
+    whose contents a parser cannot handle, joins index.skipped_files and the
+    build continues. Without that isolation a single malformed file killed the
+    index — and so ALL cleaning — for the whole review; a string-shaped CORE
+    `journal` did exactly that on 27 of 42 real corpora.
     """
     index = MetadataIndex()
 
@@ -393,81 +439,103 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
                     continue
                 index.salvaged_files.append(json_file.name)
 
-            api_source = detect_api_source(data, json_file.name)
+            # Not an API envelope at all (e.g. a researcher's own top-level
+            # list, as in final_selection.json) — nothing to index.
+            if not isinstance(data, dict):
+                index.skipped_files.append(json_file.name)
+                continue
 
-            if api_source == "s2":
-                entries = parse_s2_result(data, json_file.name)
-            elif api_source == "openalex":
-                entries = parse_openalex_result(data, json_file.name)
-            elif api_source == "crossref":
-                entries = parse_crossref_result(data, json_file.name)
-            elif api_source == "arxiv":
-                entries = parse_arxiv_result(data, json_file.name)
-            elif api_source == "philpapers":
-                entries = parse_philpapers_result(data, json_file.name)
-            else:
-                entries = parse_s2_result(data, json_file.name)
-
-            # Source-authority tagging (year-corruption fix): record where
-            # each pooled record came from. verify_* files are entry-scoped
-            # CrossRef lookups (item-13 A4.1) and outrank broad search dumps
-            # for correction purposes (same "verify_" filename convention
-            # detect_api_source already relies on). The filename substring
-            # alone is not enough - it would also match a hypothetical
-            # other-source filename like "s2_verify_results.json" - so we
-            # additionally require the already-computed api_source to be
-            # "crossref": verify_paper.py's JSON always sets "source":
-            # "crossref", which detect_api_source checks before falling
-            # back to filename heuristics, so genuine verify_*.json files
-            # are unaffected while a same-named non-CrossRef file is
-            # correctly rejected.
-            entry_scoped = "verify_" in json_file.name.lower() and api_source == "crossref"
-            for entry in entries:
-                entry["source_file"] = json_file.name
-                entry["entry_scoped"] = entry_scoped
-                index.entries.append(entry)
-
-                if entry.get("container_title"):
-                    norm = normalize_journal(entry["container_title"])
-                    if norm not in index.journals:
-                        index.journals[norm] = []
-                    index.journals[norm].append(entry["container_title"])
-
-                if entry.get("volume"):
-                    vol = str(entry["volume"]).strip()
-                    if vol not in index.volumes:
-                        index.volumes[vol] = []
-                    index.volumes[vol].append(json_file.name)
-
-                if entry.get("issue"):
-                    iss = str(entry["issue"]).strip()
-                    if iss not in index.issues:
-                        index.issues[iss] = []
-                    index.issues[iss].append(json_file.name)
-
-                if entry.get("pages"):
-                    norm = normalize_pages(entry["pages"])
-                    if norm not in index.pages:
-                        index.pages[norm] = []
-                    index.pages[norm].append(entry["pages"])
-
-                if entry.get("publisher"):
-                    pub = entry["publisher"].lower().strip()
-                    if pub not in index.publishers:
-                        index.publishers[pub] = []
-                    index.publishers[pub].append(entry["publisher"])
-
-                if entry.get("year"):
-                    yr = str(entry["year"])
-                    if yr not in index.years:
-                        index.years[yr] = []
-                    index.years[yr].append(json_file.name)
-
-                if entry.get("doi"):
-                    norm = normalize_doi(entry["doi"])
-                    index.dois[norm] = json_file.name
+            try:
+                _index_one_file(index, data, json_file.name)
+            except Exception:
+                # Fail SOFT, per file: an unexpected shape costs this file's
+                # records, never the whole index. clean_bibtex surfaces the
+                # name in result["warnings"], so the skip is never silent.
+                index.skipped_files.append(json_file.name)
+                continue
 
     return index
+
+
+def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
+    """Parse one API JSON envelope and fold its records into `index`.
+
+    Split out of build_metadata_index so a single try/except can isolate the
+    whole per-file path — dispatch, parsing, and ingestion alike.
+    """
+    api_source = detect_api_source(data, filename)
+
+    if api_source == "s2":
+        entries = parse_s2_result(data, filename)
+    elif api_source == "openalex":
+        entries = parse_openalex_result(data, filename)
+    elif api_source == "crossref":
+        entries = parse_crossref_result(data, filename)
+    elif api_source == "arxiv":
+        entries = parse_arxiv_result(data, filename)
+    elif api_source == "philpapers":
+        entries = parse_philpapers_result(data, filename)
+    elif api_source == "core":
+        entries = parse_core_result(data, filename)
+    else:
+        entries = parse_s2_result(data, filename)
+
+    # Source-authority tagging (year-corruption fix): record where each pooled
+    # record came from. verify_* files are entry-scoped CrossRef lookups
+    # (item-13 A4.1) and outrank broad search dumps for correction purposes
+    # (same "verify_" filename convention detect_api_source already relies
+    # on). The filename substring alone is not enough - it would also match a
+    # hypothetical other-source filename like "s2_verify_results.json" - so we
+    # additionally require the already-computed api_source to be "crossref":
+    # verify_paper.py's JSON always sets "source": "crossref", which
+    # detect_api_source checks before falling back to filename heuristics, so
+    # genuine verify_*.json files are unaffected while a same-named
+    # non-CrossRef file is correctly rejected.
+    entry_scoped = "verify_" in filename.lower() and api_source == "crossref"
+    for entry in entries:
+        entry["source_file"] = filename
+        entry["entry_scoped"] = entry_scoped
+        index.entries.append(entry)
+
+        if entry.get("container_title"):
+            norm = normalize_journal(entry["container_title"])
+            if norm not in index.journals:
+                index.journals[norm] = []
+            index.journals[norm].append(entry["container_title"])
+
+        if entry.get("volume"):
+            vol = str(entry["volume"]).strip()
+            if vol not in index.volumes:
+                index.volumes[vol] = []
+            index.volumes[vol].append(filename)
+
+        if entry.get("issue"):
+            iss = str(entry["issue"]).strip()
+            if iss not in index.issues:
+                index.issues[iss] = []
+            index.issues[iss].append(filename)
+
+        if entry.get("pages"):
+            norm = normalize_pages(entry["pages"])
+            if norm not in index.pages:
+                index.pages[norm] = []
+            index.pages[norm].append(entry["pages"])
+
+        if entry.get("publisher"):
+            pub = entry["publisher"].lower().strip()
+            if pub not in index.publishers:
+                index.publishers[pub] = []
+            index.publishers[pub].append(entry["publisher"])
+
+        if entry.get("year"):
+            yr = str(entry["year"])
+            if yr not in index.years:
+                index.years[yr] = []
+            index.years[yr].append(filename)
+
+        if entry.get("doi"):
+            norm = normalize_doi(entry["doi"])
+            index.dois[norm] = filename
 
 
 def is_field_verifiable(field_name: str, value: str, index: MetadataIndex) -> bool:
@@ -761,7 +829,7 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     if index.skipped_files:
         result["warnings"].append(
             "Skipped " + str(len(index.skipped_files))
-            + " unparseable JSON file(s): " + ", ".join(index.skipped_files)
+            + " unusable JSON file(s): " + ", ".join(index.skipped_files)
         )
 
     if not index.entries:
@@ -863,7 +931,21 @@ def main():
     bib_path = Path(sys.argv[1])
     json_dirs = [Path(a) for a in sys.argv[2:]]
 
-    result = clean_bibtex(bib_path, json_dirs)
+    try:
+        result = clean_bibtex(bib_path, json_dirs)
+    except Exception as e:
+        # The contract with subagent_stop_bib.sh is JSON on stdout. A bare
+        # traceback makes the hook's `jq` fail, and the hook treats that as
+        # "nothing cleaned" — silence byte-identical to a clean run. Report
+        # the failure in-band instead.
+        traceback.print_exc(file=sys.stderr)
+        print(json.dumps({
+            "success": False,
+            "errors": [f"metadata_cleaner crashed on {bib_path.name}: "
+                       f"{type(e).__name__}: {e}"],
+        }, indent=2))
+        sys.exit(2)
+
     print(json.dumps(result, indent=2))
 
     if not result["success"]:
