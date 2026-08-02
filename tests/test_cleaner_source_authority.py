@@ -561,3 +561,125 @@ class TestYearNormalizationAcrossComparisons:
             "}", "bibtex").entries["s2007"]
 
         assert find_api_entry_for_bib_entry(entry, index) is not None
+
+
+SPARROW_BIB_WITH_BAD_YEAR = """@article{sparrow2007,
+  author = {Sparrow, Robert},
+  title = {Killer Robots},
+  journal = {Journal of Applied Philosophy},
+  year = {2019},
+  doi = {10.1111/j.1468-5930.2007.00346.x}
+}"""
+
+S2_DUMP_CONFLICTING = {
+    "status": "success",
+    "source": "semantic_scholar",
+    "results": [
+        {
+            "title": "Killer Robots", "year": 2019, "doi": SPARROW_DOI,
+            "journal": {"name": "Wrong Journal Name"},
+        }
+    ],
+}
+
+S2_DUMP_OTHER_YEAR = {
+    "status": "success",
+    "source": "semantic_scholar",
+    "results": [
+        {
+            "title": "Killer Robots", "year": 2015, "doi": SPARROW_DOI,
+            "journal": {"name": "Another Wrong Journal"},
+        }
+    ],
+}
+
+
+class TestConflictedDoiAbstention:
+    def test_conflicted_doi_without_authority_returns_no_match(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "s2_a.json": S2_DUMP_CONFLICTING,
+            "s2_b.json": S2_DUMP_OTHER_YEAR,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        assert find_api_entry_for_bib_entry(entry, index) is None
+
+    def test_conflicted_doi_is_not_rescued_by_title_year_fallback(self, tmp_path):
+        """Abstention must be TERMINAL. With the bib year already equal to the
+        bad value, a fall-through would let the weaker signal confirm the
+        wrong record - the circular confirmation this exists to prevent."""
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "s2_a.json": S2_DUMP_CONFLICTING,
+            "s2_b.json": S2_DUMP_OTHER_YEAR,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(
+            SPARROW_BIB_WITH_BAD_YEAR, "bibtex").entries["sparrow2007"]
+
+        assert find_api_entry_for_bib_entry(entry, index) is None
+
+    def test_entry_scoped_record_still_resolves_a_conflict(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "s2_roff.json": S2_DUMP,
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        api = find_api_entry_for_bib_entry(entry, index)
+
+        assert api is not None
+        assert api["source_file"] == "verify_3_sparrow2007.json"
+        assert api["year"] == 2007
+
+    def test_agreeing_sources_still_match(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {"s2_a.json": S2_DUMP_CONFLICTING})
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        assert find_api_entry_for_bib_entry(entry, index) is not None
+
+    def test_conflicted_doi_does_not_strip_a_correct_field(self, tmp_path):
+        """The measured harm: today the entry counts as MATCHED, so it is
+        cleaned against the untrusted record and its correct journal is
+        REMOVED."""
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+        json_dir = make_json_dir(tmp_path, {
+            "s2_a.json": S2_DUMP_CONFLICTING,
+            "s2_b.json": S2_DUMP_OTHER_YEAR,
+        })
+
+        result = clean_bibtex(bib, json_dir)
+
+        text = bib.read_text(encoding="utf-8")
+        assert "Journal of Applied Philosophy" in text
+        assert_no_cleaned_marker(text)
+        assert result["unmatched_entries"] == 1
+        assert result["matched_entries"] == 0
+
+    def test_conflict_warning_survives_abstention(self, tmp_path):
+        """Abstaining must not hide the disagreement that caused it."""
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+        json_dir = make_json_dir(tmp_path, {
+            "s2_a.json": S2_DUMP_CONFLICTING,
+            "s2_b.json": S2_DUMP_OTHER_YEAR,
+        })
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert any("disagree on year" in w for w in result["warnings"])

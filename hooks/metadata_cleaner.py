@@ -662,11 +662,35 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
     """Find THIS bib entry's own API record in the index (entry-scoped
     evidence, item-13 A4.1): first by DOI (exact normalized match), else by
     normalized title + year. Returns None when no affirmative match exists -
-    the entry is then left completely untouched by the cleaner."""
+    the entry is then left completely untouched by the cleaner.
+
+    A DOI whose pooled evidence CONFLICTS on year, with no entry-scoped
+    verify_* record to settle it, also returns None - and does so without
+    trying the title+year fallback (see the inline comment on that branch).
+    Abstention deliberately trades correction coverage for safety: when the
+    pool is self-inconsistent, filename order is not a valid authority rule.
+
+    Note the conflict test is EXISTENCE-based, not plurality-based: two
+    records saying 2007 and one saying 2019 still abstain. That is
+    intentional for a destructive fixer - do not "optimize" it into majority
+    rule without evidence that the majority is right."""
     doi_value = entry.fields.get('doi')
     if doi_value:
         api = find_api_entry_by_doi(doi_value, index)
         if api is not None:
+            # An entry-scoped verify_* record is a direct CrossRef lookup on
+            # this DOI: it carries correction authority and settles a
+            # same-DOI disagreement on its own.
+            if api.get("entry_scoped"):
+                return api
+            # No authority, and the pooled sources disagree: there is no basis
+            # to prefer either record, so abstain. Return None WITHOUT falling
+            # through to the title+year heuristic below - when the bib's own
+            # year already equals the bad value (common, since an earlier run
+            # may have written it), that weaker signal would "confirm" the
+            # wrong source and reintroduce the very failure this prevents.
+            if find_doi_year_conflicts(doi_value, index):
+                return None
             return api
     norm_title = _normalize_title(entry.fields.get('title', ''))
     if not norm_title:
@@ -941,11 +965,9 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     # cleaned; unmatched entries pass through untouched and are counted.
     plans = []  # (entry_key, entry, plan)
     for entry_key, entry in bib_data.entries.items():
-        api_entry = find_api_entry_for_bib_entry(entry, index)
-        if api_entry is None:
-            result["unmatched_entries"] += 1
-            continue
-        result["matched_entries"] += 1
+        # Emit the same-DOI year-disagreement warning BEFORE the match check:
+        # a conflicted DOI with no entry-scoped record now abstains, and this
+        # warning is the only signal that it did.
         doi_value = entry.fields.get('doi', '')
         conflicts = find_doi_year_conflicts(doi_value, index)
         if conflicts:
@@ -955,6 +977,12 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             result["warnings"].append(
                 f"{entry_key}: indexed sources disagree on year for DOI "
                 f"{normalize_doi(doi_value)}: {detail}")
+
+        api_entry = find_api_entry_for_bib_entry(entry, index)
+        if api_entry is None:
+            result["unmatched_entries"] += 1
+            continue
+        result["matched_entries"] += 1
         plans.append((entry_key, entry, plan_entry_cleaning(entry, index, api_entry)))
 
     # B2: compute the PLANNED metrics (by field name) BEFORE the breaker check,
