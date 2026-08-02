@@ -119,6 +119,34 @@ The same commit replaces two vacuous `assert "METADATA_CLEANED" not in
 content` assertions (pybtex escapes the underscore, so they could never fail)
 with a backslash-tolerant helper plus a control test that pins the vacuity.
 
+**J - cleaner DOI/year comparison hardening: FIXED 2026-08-02.** The residual
+comparison defects after G/H, all one pattern: comparing a *derived* value
+without asking whether it is meaningful. (a) `find_api_entry_by_doi` and
+`find_doi_year_conflicts` now reject an empty normalized DOI - the two scan
+sites H did not cover. (b) `_year_key` canonicalizes years across conflict
+detection, the title+year fallback AND the year correction that writes to the
+.bib - by exact string grammar, NOT `float()`. **This supersedes the advice in
+H**: a float round-trip turns `9007199254740993` into `...992` and collapses
+`"2007.0000000000001"`, so the version phillit-service ships must be replaced,
+not copied (report:
+`~/Downloads/phillit-service-cleaner-findings-2026-08-02.md`). (c) A
+conflicted DOI with no entry-scoped record now abstains terminally - no
+title+year fall-through, or the bib's own bad year confirms the wrong source -
+and the conflict warning moved above the match check so abstention is never
+silent. (d) Two entry-scoped records disagreeing on a non-empty canonical year
+also abstain, and a yearless scoped record no longer shadows a year-bearing
+one. `metadata_validator.py` gets G's full shape-tolerance too.
+
+Dry-run over all 42 corpora (43 bibs, 4073 entries, writes stubbed):
+matched 3179->3109, fields removed 1313->1292, **years corrected 36->36**,
+breaker trips 11->11, conflict warnings 140->140, zero errors. So 70 entries
+newly abstain, only 19 of which were receiving any cleaning - and no
+legitimate year correction was lost. Only (c) has measured harm behind it; the
+DOI guard had **zero** real-world incidence and the year work is boundary
+hardening (no PhilLit producer emits a float year). Residual, documented not
+fixed: two scoped records agreeing on year but differing on
+journal/volume/pages are still first-wins.
+
 **I — `entry_scoped` authority is keyed on a FILENAME substring: OPEN, needs
 a decision.** Flagged by both kimi-k3 and gpt-5.6-sol reviewing the 2026-08-02
 branch. `entry_scoped = "verify_" in filename.lower() and api_source ==
