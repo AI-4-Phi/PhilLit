@@ -85,6 +85,19 @@ Fix directions: transliteration-aware normalization (ä→ae as well as ä→a,
 and requiring each to resolve to a References entry, failing loudly
 otherwise. The post-check also guards every future matcher gap.
 
+**Second mode, found 2026-08-02 — the two normalization fix directions above
+do not cover it.** When the first-author surname is in a wholly non-Latin
+script (Greek, Cyrillic), `_normalize_for_matching` ASCII-folds it to `''`,
+and `generate_bibliography.py:417` (`if not norm_surname: continue`) skips the
+entry before any matching runs. The omission is therefore *deterministic*, not
+a spelling near-miss: transliteration tables and fuzzy fallback both need a
+non-empty key to work with, and there is nothing to be near. **The `lint_md.py`
+post-check is the only listed fix that catches this**, which breaks the tie
+between the two directions — do the post-check first. Root cause is shared with
+ROADMAP item 4 (three divergent title normalizers; `metadata_cleaner`'s
+Unicode-aware version keeps non-Latin scripts and is the one to standardize
+on).
+
 ## Issue C — fabricated abstract fields are indistinguishable from genuine ones (provenance not enforced)
 
 **Severity: Medium (structural; observed exploit was under a non-Anthropic orchestrator).**

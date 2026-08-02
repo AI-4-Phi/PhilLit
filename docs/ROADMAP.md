@@ -8,13 +8,32 @@ exists so open work has a single place to be listed — it was created
 
 ## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (BUILT + A/B'd HERE, unmerged; dual-repo)
 
-> **Status 2026-07-28 — read this before starting anything.** The build is
-> DONE on branch **`worktree-evidence-tier`** (worktree at
-> `.claude/worktrees/evidence-tier`, tip `f9e3fda`, 23 commits ahead of
-> `main`, unmerged and unpushed). All 11 plan tasks executed; **unit suite
-> 1069 green**. The free Sonnet two-arm A/B has run ("What are data?"), and
-> Johannes adjudicated **three of the four rubric items** on 2026-07-28.
-> Provisional outcome cell: **"Works. Proceed."**
+> **Status 2026-08-02 (measured, supersedes the 2026-07-28 figures) — read
+> this before starting anything.** The build is DONE on branch
+> **`worktree-evidence-tier`** (worktree at `.claude/worktrees/evidence-tier`,
+> tip **`15cd307`**, **33** commits, unmerged and unpushed). All 11 plan tasks
+> executed; **unit suite 1102 green** (re-run 2026-08-02). The free Sonnet
+> two-arm A/B has run ("What are data?"), and Johannes adjudicated **three of
+> the four rubric items** on 2026-07-28. Provisional outcome cell:
+> **"Works. Proceed."**
+>
+> The 2026-07-28 note said tip `f9e3fda`, 23 commits, 1069 tests. Ten further
+> commits landed **2026-08-01** (enrichment-ledger attestation, barrier
+> self-heal, writer tier rules, researcher Edit permission); `f9e3fda` is still
+> an ancestor, just no longer the tip. **The branch is not parked — it and
+> `main` are both active on the same subsystem.**
+>
+> **`main` HAS DIVERGED — this is now the branch's biggest risk.** Fork point
+> `fc2477f` (2026-07-24); since then **26 commits only on `main`, 33 only on
+> the branch**. `main` rewrote `hooks/metadata_cleaner.py` (+587/-109: the
+> whole 3G-3K year/DOI hardening) while the branch added its ledger to the
+> pre-hardening version. A merge today conflicts in exactly two files
+> (`hooks/metadata_cleaner.py`, `tests/test_metadata_cleaner.py`) and **one
+> hunk**, but the textual smallness is misleading: two semantic traps, both
+> invisible to either suite (1004 on `main`, 1102 on the branch, each green
+> alone). **Full analysis + the resolution recipe:**
+> `docs/known-issues/evidence-tier-branch-divergence.md` — read it before
+> attempting the merge.
 >
 > **Two things gate the merge, both open:**
 > **(b) writer-guidance follow-ups** — the A/B doc forward-references a
@@ -323,6 +342,59 @@ Cross-repo: fixes land here or in the service's vendored engine and are
 cherry-picked to the other side — same path as the metadata-cleaner year
 fix (plugin 0.2.6 ↔ service `7369880`). The service tracks the mirror item
 as roadmap item 23.
+
+## 4. One owner for bibliography identity and matching (refactor; cause of several measured symptoms)
+
+**Opened 2026-08-02**, after `metadata_validator.py` was deleted for being a
+dormant copy that absorbed hardening meant for the live path (item 3 G). That
+was the terminal case of a pattern that is still live elsewhere: **no module
+owns "is this the same work / is this value trustworthy", so every script
+re-implements it.** Measured, not inferred — three live copies of title
+normalization, all disagreeing:
+
+| input | `metadata_cleaner` | `dedupe_bib` | `generate_bibliography` |
+|---|---|---|---|
+| `Millière` | `milliere` | `milli re` | `milliere` |
+| `Davidović` | `davidovic` | `davidovi` | `davidovic` |
+| `Łącki on agency` | `łacki on agency` | `cki on agency` | `acki on agency` |
+| `Η ηθική της τεχνολογίας` | `η ηθικη τησ τεχνολογιασ` | `''` | `''` |
+
+**This explains two already-measured symptoms whose cause was recorded as
+unknown:**
+
+- The `Milliere`/`Millière` undeduped pairs in **5/32 reviews** (item 3's
+  out-of-scope find, above). `dedupe_bib._normalize_title` is the only one of
+  the three that applies no Unicode normalization at all — a bare
+  `re.sub(r"[^a-z0-9]+", " ", s.lower())`, so any non-ASCII letter becomes a
+  space. The other two match these pairs correctly.
+- A **new mode inside Issue B** (`bib-pipeline-integrity-gaps.md`): a title or
+  first-author surname in a wholly non-Latin script ASCII-folds to `''`, and
+  `generate_bibliography.py:417` (`if not norm_surname: continue`) then skips
+  the entry, so a cited work is **deterministically absent** from the rendered
+  References. Issue B's recorded fix directions (transliteration-aware
+  normalization, fuzzy near-miss fallback) **do not cover this** — there is
+  nothing to be near when the key is empty. The `lint_md.py` post-check does
+  cover it, which breaks the tie between B's two fix directions.
+
+The `metadata_cleaner` versions are the hardened ones (item-13 B3 fixed exactly
+this ASCII-fold bug there and the fix was never propagated — its docstring
+still documents the defect the other two carry). Scope: one module owning
+`normalize_doi`, title normalization, `normalize_pages`, `normalize_journal`,
+`_year_key`, and fallback-key construction; four import sites
+(`metadata_cleaner`, `dedupe_bib`, `generate_bibliography`, `verify_paper`).
+
+**No new infrastructure needed** — cross-directory sharing already exists and
+is already used: `generate_bibliography.py:19-24` imports `LATEX_ESCAPES` from
+`hooks/bib_validator.py` with the comment *"single source of truth"*. The
+project shares constants and duplicates judgments. One plan document
+(2026-07-24) explicitly sanctions the duplication — *"duplicating avoids a
+cross-module import for a trivial function"* — so this is policy to reverse,
+not an accident to patch.
+
+**Sequence AFTER the item-1 merge.** It touches `dedupe_bib.py`, which carries
++180 lines on `worktree-evidence-tier` and currently auto-merges cleanly;
+refactoring first manufactures a conflict where there is none. See
+`docs/known-issues/evidence-tier-branch-divergence.md`.
 
 ## Backlog pointers
 
