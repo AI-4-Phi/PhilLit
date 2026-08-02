@@ -24,6 +24,31 @@ isn't: the textual conflict is small, but resolving it wrong reverts a fix
 `main` landed today, and merging it *correctly* still changes evidence-tier
 behaviour in a way **no test on either side can detect**.
 
+## 0. Reading this from `main` — two things that will trip you up
+
+**Most of the code this document cites does not exist on `main`.**
+`stamp_evidence.py`, `check_evidence.py`, `evidence_barrier.py`,
+`resolve_context.py` and `sanitize_bib.py` live only on
+`worktree-evidence-tier`. Grepping `main` for `stamp_evidence.py:103` finds
+nothing and looks like a stale citation — it isn't. To read them without
+leaving `main`:
+
+```bash
+git show worktree-evidence-tier:skills/literature-review/scripts/stamp_evidence.py
+# or just read them in the checked-out worktree:
+less .claude/worktrees/evidence-tier/skills/literature-review/scripts/stamp_evidence.py
+```
+
+Citations to `hooks/metadata_cleaner.py`, `dedupe_bib.py` and
+`generate_bibliography.py` *are* valid on `main`.
+
+**There are two extra worktrees, and only one is load-bearing.**
+
+| worktree | branch | status |
+|---|---|---|
+| `.claude/worktrees/evidence-tier` | `worktree-evidence-tier` | **DO NOT REMOVE** — holds the only copy of the A/B results and adjudication record (gitignored, so not in any commit) |
+| `.claude/worktrees/merge-trial` | `merge-trial` | **throwaway.** Safe to delete once the real merge lands: `git worktree remove .claude/worktrees/merge-trial && git branch -D merge-trial` |
+
 ## 1. Topology (all figures measured 2026-08-02)
 
 | | `main` | `worktree-evidence-tier` |
