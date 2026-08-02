@@ -383,3 +383,50 @@ class TestTypeDowngradeDoiGuard:
         result, text = self._case(tmp_path, "10.1/same", "10.1/same")
         assert result["types_downgraded"] == 0
         assert "@article" in text
+
+
+MALFORMED_DOI_DUMP = {
+    "status": "success",
+    "source": "semantic_scholar",
+    "results": [
+        {
+            "title": "An Entirely Different Paper",
+            "year": 1999,
+            "doi": "https://doi.org/",
+            "journal": {"name": "Some Other Journal"},
+        }
+    ],
+}
+
+
+class TestEmptyNormalizedDoiGuard:
+    """The two index SCANS still compared normalized DOIs without the
+    non-empty guard that _field_matches_api has always carried (and that
+    _plan_type_downgrade gained in 7f6d38f)."""
+
+    def test_malformed_doi_does_not_match_another_malformed_doi(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {"s2_other.json": MALFORMED_DOI_DUMP})
+        index = build_metadata_index(json_dir)
+
+        assert find_api_entry_by_doi("doi:", index) is None
+
+    def test_malformed_doi_reports_no_year_conflict(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "s2_other.json": MALFORMED_DOI_DUMP,
+            "s2_more.json": {
+                "status": "success",
+                "source": "semantic_scholar",
+                "results": [
+                    {"title": "Third Paper", "year": 2001, "doi": "doi:"}
+                ],
+            },
+        })
+        index = build_metadata_index(json_dir)
+
+        assert find_doi_year_conflicts("https://doi.org/", index) == {}
+
+    def test_real_doi_lookup_still_works(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {"verify_3_sparrow2007.json": VERIFY_RESULT})
+        index = build_metadata_index(json_dir)
+
+        assert find_api_entry_by_doi(SPARROW_DOI, index)["year"] == 2007

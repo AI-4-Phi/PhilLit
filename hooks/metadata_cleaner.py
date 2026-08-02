@@ -190,6 +190,14 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     if not doi:
         return None
     norm_doi = normalize_doi(doi)
+    # An empty normalized DOI matches nothing. normalize_doi maps "doi:",
+    # "https://doi.org/", "DOI: " and "  " all to "", so without this guard
+    # any two records carrying a malformed DOI match each other and one
+    # becomes the other's "API record". Same non-empty rule _field_matches_api
+    # applies per field, hoisted out of the loop: the scan is dead work when
+    # the key is empty.
+    if not norm_doi:
+        return None
     fallback = None
     for api_entry in index.entries:
         api_doi = api_entry.get("doi")
@@ -211,6 +219,10 @@ def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
     if not doi:
         return {}
     norm_doi = normalize_doi(doi)
+    # Empty normalizes to "" and would collide with every other malformed
+    # DOI - see find_api_entry_by_doi.
+    if not norm_doi:
+        return {}
     years: dict = {}
     for api_entry in index.entries:
         api_doi = api_entry.get("doi")
