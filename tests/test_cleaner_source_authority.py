@@ -112,9 +112,11 @@ class TestSourceTagging:
         assert by_file["s2_roff.json"]["entry_scoped"] is False
         assert by_file["verify_3_sparrow2007.json"]["entry_scoped"] is True
 
-    def test_verify_detection_is_case_insensitive_substring(self, tmp_path):
-        """Domain-prefixed and oddly-cased verify filenames still count as
-        entry-scoped (they are single-work CrossRef envelopes)."""
+    def test_domain_prefixed_verify_file_is_still_scoped(self, tmp_path):
+        """Back-compat pin for the naming the corpora actually use. NOTE this
+        no longer tests the filename at all - the file qualifies because it is
+        a single-result CrossRef envelope. See
+        TestAuthorityIsKeyedOnContentNotFilename for the rule itself."""
         json_dir = make_json_dir(tmp_path, {
             "domain-1_VERIFY_bainbridge1983.json": VERIFY_RESULT,
         })
