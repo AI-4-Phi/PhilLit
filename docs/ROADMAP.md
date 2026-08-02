@@ -30,10 +30,19 @@ exists so open work has a single place to be listed — it was created
 > pre-hardening version. A merge today conflicts in exactly two files
 > (`hooks/metadata_cleaner.py`, `tests/test_metadata_cleaner.py`) and **one
 > hunk**, but the textual smallness is misleading: two semantic traps, both
-> invisible to either suite (1004 on `main`, 1102 on the branch, each green
-> alone). **Full analysis + the resolution recipe:**
+> invisible to either suite (1004 on `main`, 1102 on the branch, 1185 merged —
+> all green). **Full analysis + the verified resolution recipe:**
 > `docs/known-issues/evidence-tier-branch-divergence.md` — read it before
 > attempting the merge.
+>
+> **A trial merge has been measured** (throwaway branch `merge-trial` @
+> `6e84aa1`; `main` and the evidence-tier branch untouched). It says **merge
+> sooner, not later**: the branch runs the pre-3G cleaner, so today it dies
+> with `AttributeError` on **206 of 319 local bibs** and writes no ledger for
+> them — **5445 entries unattested, 3147 of which the merge attests**. Against
+> that, the 3J abstention costs **17** entries their attestation (43
+> `api_matched` flips; 28 other entries *gain* the gate). The trial resolution
+> passes 1185 tests with cleaner metrics identical to `main`.
 >
 > **Two things gate the merge, both open:**
 > **(b) writer-guidance follow-ups** — the A/B doc forward-references a

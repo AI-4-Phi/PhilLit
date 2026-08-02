@@ -1,9 +1,18 @@
 # `worktree-evidence-tier` has diverged from `main` — analysis before the merge
 
-**Status: OPEN, analysis complete, no code changed. Measured 2026-08-02.**
-Input for a dedicated planning session. Nothing here has been acted on: no
-merge, no rebase, no edit to the branch or its worktree. ROADMAP item 1 points
-here.
+**Status: OPEN, analysis + trial merge measured 2026-08-02.** Input for a
+dedicated planning session. `main` and `worktree-evidence-tier` are both
+untouched — the trial merge was done on a throwaway branch (`merge-trial`,
+worktree `.claude/worktrees/merge-trial`, commit `6e84aa1`) which is **not for
+shipping**. ROADMAP item 1 points here.
+
+**Headline, measured over all 319 local bibs: merging is strongly net-positive
+and the delay is what costs you.** The branch runs the *pre-3G* cleaner, so
+today it dies with `AttributeError` on **206 of 319 bibs** and writes no
+ledger for them — **5445 entries with no attestation at all**, of which 3147
+would pass the evidence-tier gate once merged. Against that, the abstention
+regression (Trap 2) costs **17 entries** their attestation. The traps are real
+and must be handled deliberately, but they are not a reason to wait.
 
 ## Summary
 
@@ -82,14 +91,77 @@ This one survives a *correct* textual resolution, and is the more serious of
 the two.
 
 `main`'s 3J abstention makes `find_api_entry_for_bib_entry` return `None` for
-entries that previously matched — **up to 70 across the 42 local corpora**.
-That 70 is a *bound*, not a measurement of the merged behaviour: it was measured
-by 3J's dry-run against `main`'s own pre-3J code, and the branch still carries
-the pre-hardening matcher. Under the resolution proposed in §7 (main's matcher
-survives), each abstaining entry would take the branch's
-`_ledger_entry_for_unmatched()` path — i.e. flip to `api_matched: False` — but
-**the actual count and direction under merged code are unmeasured.** Measuring
-it requires running the merged code, which has not been done.
+entries that previously matched, flipping them to `api_matched: False`.
+
+**Now measured** (trial merge, all 319 local bibs; the earlier "up to 70" was a
+bound taken from 3J's dry-run against main's own pre-3J code, and is
+superseded). Only 111 bibs produce a ledger on *both* sides — the branch
+crashes on the rest, see §5b — so those 111 are the comparable set:
+
+| on the 111 comparable bibs | count |
+|---|---|
+| `api_matched` unchanged | 3006 |
+| `api_matched` **True → False** (abstention) | **43** |
+| `api_matched` False → True | 0 |
+| evidence-tier gate **lost** (attested → not) | **17** |
+| evidence-tier gate **gained** (not → attested) | 28 |
+
+So the abstention regression is **17 entries losing attestation**, not 70, and
+it is *outweighed even within this set* by 28 gains — those come from the
+hardened matcher picking a better record (a non-empty
+`verified_identifier_value` where there was none) and from per-bib breaker-trip
+differences, both of which also feed `stamp_evidence.py:103`.
+
+The 43 flips are concentrated in DOI-conflict cases, as 3J predicts — e.g.
+`slack2020fooling` (ai-deception-mechanistic-interp), `mcmanus2018autonomous` /
+`mcmanus2019autonomous` (av-trolley-problem-ethics), `preston2013ethics` and
+`frank2019ethics` (cdr-ethics-2). Several appear in both a domain bib and
+`literature-all.bib`, so the 43 covers fewer than 43 distinct works.
+
+## 5b. The dominant effect — the branch currently crashes on 65% of bibs
+
+This was not visible before running the trial merge, and it reverses the
+cost-of-delay argument.
+
+The branch's `metadata_cleaner.py` is pre-3G, so it still has the defect 3G
+fixed: one CORE `journal`-as-string file raises `AttributeError` and kills the
+whole index. Over the local corpora:
+
+| | branch today | merged |
+|---|---|---|
+| bibs cleaned without error | **113** | **319** |
+| bibs dying with `AttributeError` | **206** | 0 |
+| entries matched | 2349 | 6611 |
+| fields removed (planned) | 1235 | 2668 |
+
+For all 206 crashed bibs, `clean_bibtex` raises before `_write_ledger_safe`, so
+**no cleaning ledger is written at all** — and a missing ledger demotes
+downstream by design. Merging fixes every one:
+
+- **5445 entries** gain a ledger entry,
+- **3147** of them pass the evidence-tier gate (newly attested),
+- 2298 are recorded but not attested (the honest, safe outcome).
+
+**Net effect of merging on evidence-tier attestation: +3147 newly attested
+against 17 lost.** Every day the merge waits, the branch's evidence tiers are
+being computed with cleaning dead on two thirds of its bibs.
+
+## 5c. What the trial merge verified
+
+`merge-trial` @ `6e84aa1` (throwaway, do not ship):
+
+- **1185 tests pass** (main 1004 + branch 1102, deduplicated).
+- Cleaner metrics **identical to `main`** over all 319 bibs — matched 6611,
+  fields removed 2668, breaker trips 86, years corrected 0, 0 errors. So the
+  §7 resolution preserves the 3G–3K hardening exactly.
+- Corpora provably untouched: `write_bibtex` and `write_cleaning_ledger` were
+  both stubbed, and all 7428 corpus files verified byte-identical (mtime+size)
+  before and after.
+
+Note both suites passing is *not* evidence the traps were handled — 1185 green
+is exactly what a wrong resolution would also produce (§6). The evidence that
+the resolution is right is the metric identity with `main`, plus keeping the
+warning hoisted.
 
 `api_matched` is not bookkeeping — it gates evidence-tier assignment:
 
@@ -110,7 +182,7 @@ Neither can fail, because the interaction does not exist on either branch —
 abstention. The defect is created **by the merge**. There is no existing test
 whose failure would announce it.
 
-## 7. Resolution recipe (proposed, not executed)
+## 7. Resolution recipe (executed once on `merge-trial`, verified — see §5c)
 
 1. **Catch-up merge, not rebase** — `git merge main` from inside the
    evidence-tier worktree. A rebase replays 33 commits (repeated chances to
@@ -137,15 +209,30 @@ whose failure would announce it.
 
 ## 8. Open questions for the planning session
 
-- The ledger's third state (item 4 above) — the one genuine design decision.
-- Should these two workstreams keep running in parallel on
-  `metadata_cleaner.py` at all? The divergence is a symptom; two active
-  branches editing one file is the cause.
+- **The ledger's third state** (§7 item 4) — the one genuine design decision.
+  Now quantified: 43 entries abstain, 17 of which lose attestation. Is
+  "abstained" the same ledger fact as "no API record found"? It is currently
+  recorded as the latter.
+- **The 17.** Worth eyeballing whether losing attestation is right for them.
+  3J's premise says yes — a conflicted DOI with no entry-scoped record should
+  not be treated as verified — in which case the 17 are a *correction*, not a
+  regression, and the only open question is whether the tier drop is surfaced
+  or silent.
+- **Should these two workstreams run in parallel on `metadata_cleaner.py` at
+  all?** The divergence is the symptom; two active branches editing one file is
+  the cause. This is the durable question behind the whole item.
 - Item 1's two existing merge gates (writer-guidance follow-ups, blind
   coherence comparison) are unaffected by any of this and still open.
-- Unknown: what the ten 2026-08-01 commits assume about the pre-3J cleaner
-  beyond the ledger. Only the conflict surface was analysed, not the full
-  +87 diff in context.
+- **Unmeasured:** what the ten 2026-08-01 commits assume about the pre-3J
+  cleaner beyond the ledger. Only the conflict surface and the ledger's
+  `api_matched` axis were analysed — not `resolve_context`, `check_evidence`, or
+  the barrier's own behaviour under merged cleaning.
+- Reproduce any of the above: the harness is throwaway (it lived in the job tmp
+  dir); it monkeypatches `mc.write_bibtex` and `mc.write_cleaning_ledger`, walks
+  `reviews/*/`, mirrors `subagent_stop_bib.sh`'s json-dir selection (bib's own
+  dir + `intermediate_files/json`), and dumps per-entry `api_matched` /
+  `verified_identifier_value` for diffing. Rebuild rather than trust these
+  numbers if a decision turns on them.
 
 ## Related
 
