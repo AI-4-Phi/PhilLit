@@ -222,6 +222,26 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
 # `0+` not `0*` so a bare trailing dot ("2007.") is NOT treated as integral.
 _INTEGRAL_YEAR_RE = re.compile(r"^([+-]?)([0-9]+)(?:\.0+)?$")
 
+# A year that may be WRITTEN into a .bib. Deliberately narrower than the
+# comparison grammar above: canonical form only (no leading zeros, no sign),
+# 1-4 digits, non-zero. `str.isdigit()` must NOT be used here - it accepts
+# Arabic-Indic and superscript digits that _INTEGRAL_YEAR_RE rejects, and
+# `lstrip("-")` would swallow "--2007", so the write gate would re-admit
+# exactly what the comparison grammar was tightened to exclude.
+_WRITABLE_YEAR_RE = re.compile(r"[1-9][0-9]{0,3}\Z")
+
+
+def _year_of(record: dict) -> str:
+    """Canonical year of a pooled record, or "" when it supplies none.
+
+    Tests `is None` rather than truthiness: a raw `0`/`0.0` is falsy but IS a
+    value, and `record.get("year") or ""` therefore made numeric zero read as
+    yearless while the string "0" read as year-bearing - reintroducing the
+    int/str split _year_key exists to erase.
+    """
+    raw = record.get("year")
+    return "" if raw is None else _year_key(raw)
+
 
 def _year_key(value) -> str:
     """Canonical form of a year, for comparing values from different producers.
@@ -691,9 +711,18 @@ def _normalize_title(title: str) -> str:
 _AUTHORITY_FIELDS = ("container_title", "volume", "issue", "pages", "publisher")
 
 
+def _supplied_fields(record: dict) -> set:
+    """Which verification-bearing fields this record actually supplies.
+
+    Whitespace is not a supplied value - it verifies nothing.
+    """
+    return {name for name in _AUTHORITY_FIELDS
+            if str(record.get(name) or "").strip()}
+
+
 def _record_completeness(record: dict) -> int:
     """How many verification-bearing fields this record actually supplies."""
-    return sum(1 for name in _AUTHORITY_FIELDS if record.get(name))
+    return len(_supplied_fields(record))
 
 
 def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
@@ -736,9 +765,7 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
                 # Canonicalize BEFORE testing emptiness: `" "` is raw-truthy
                 # but is not a year, and must not read as a disagreement.
                 scoped_years = {
-                    key for key in
-                    (_year_key(other.get("year") or "") for other in scoped)
-                    if key
+                    key for key in (_year_of(other) for other in scoped) if key
                 }
                 if len(scoped_years) > 1:
                     return None
@@ -749,14 +776,18 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
                     # swap to a LESS complete record: the winner governs
                     # verification of every field, so trading completeness
                     # for a year would delete metadata the first record
-                    # verified. (Equally complete records agreeing on year
-                    # but differing on journal/volume/pages remain
-                    # first-wins: a documented residual.)
-                    if not _year_key(api.get("year") or ""):
+                    # verified. Residual: two records supplying the SAME
+                    # fields with different VALUES are still first-wins - a
+                    # superset gate protects coverage, not agreement.
+                    if not _year_of(api):
                         for other in scoped:
-                            if (_year_key(other.get("year") or "")
-                                    and _record_completeness(other)
-                                    >= _record_completeness(api)):
+                            # A SUPERSET, not a bigger count: an equally-sized
+                            # but disjoint record cannot verify what `api`
+                            # could, so swapping to it deletes exactly the
+                            # fields this gate exists to protect.
+                            if (_year_of(other)
+                                    and _supplied_fields(other)
+                                    >= _supplied_fields(api)):
                                 return other
                     return api
                 # Every scoped record is yearless: none of them can say which
@@ -866,18 +897,19 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
     # metadata-cleaner-year-corruption.md). (See the entry_scoped-preference
     # docstring on find_api_entry_by_doi for the corresponding limitation
     # on non-year fields.)
-    if api_entry.get("year") and api_entry.get("entry_scoped"):
+    if _year_of(api_entry) and api_entry.get("entry_scoped"):
         # Compare AND write the canonical form: a record carrying 2007.0 must
         # neither read as a disagreement with a bib year of 2007 nor land in
         # the .bib as "2007.0". _year_key is exact, so the written value is
         # always one the record actually supplied.
-        api_year = _year_key(api_entry["year"])
+        api_year = _year_of(api_entry)
         bib_year = entry.fields.get('year', '')
         # A comparison KEY is not automatically a writable value. `" "` is
-        # raw-truthy but canonicalizes to "", and "n.d."/"2007." round-trip
-        # verbatim - writing any of those would corrupt or empty a populated
-        # year. Only a valid integral canonical year may be written.
-        if (api_year.lstrip("-").isdigit()
+        # raw-truthy but canonicalizes to "", and "n.d."/"2007."/"--2007" and
+        # non-ASCII digits round-trip verbatim - writing any of those would
+        # corrupt or empty a populated year. Only a plausible publication
+        # year may be written; see _WRITABLE_YEAR_RE.
+        if (_WRITABLE_YEAR_RE.match(api_year)
                 and bib_year and _year_key(bib_year) != api_year):
             plan["year_corrected"] = (bib_year, api_year)
 

@@ -662,11 +662,18 @@ class TestMalformedShapeTolerance:
 
         json_dir = tmp_path / "json"
         json_dir.mkdir()
-        for name in ("a_bad.json", "z_good.json"):
-            (json_dir / name).write_text(_json.dumps({
-                "source": "semantic_scholar",
-                "results": [{"title": "T", "year": 2007}],
-            }), encoding="utf-8")
+        # a_bad.json holds TWO records and raises on the SECOND, so this
+        # exercises the partially-indexed case: without staged-then-merge the
+        # first record would leak into the shared index of a "skipped" file.
+        (json_dir / "a_bad.json").write_text(_json.dumps({
+            "source": "semantic_scholar",
+            "results": [{"title": "First", "year": 2001},
+                        {"title": "Second", "year": 2002}],
+        }), encoding="utf-8")
+        (json_dir / "z_good.json").write_text(_json.dumps({
+            "source": "semantic_scholar",
+            "results": [{"title": "T", "year": 2007}],
+        }), encoding="utf-8")
 
         real = mv.normalize_journal
 
@@ -681,7 +688,8 @@ class TestMalformedShapeTolerance:
         def parse(data, source_file):
             out = real_parse(data, source_file)
             if source_file == "a_bad.json":
-                out[0].container_title = "EXPLODE"
+                out[0].container_title = "Fine Journal"   # indexes cleanly
+                out[1].container_title = "EXPLODE"        # raises mid-file
             return out
 
         monkeypatch.setattr(mv, "parse_s2_result", parse)
@@ -690,4 +698,65 @@ class TestMalformedShapeTolerance:
 
         assert "a_bad.json" in index.skipped_files
         assert index.entries          # z_good.json still indexed
+        # NOTHING from the half-read file leaked, not even its good first record
         assert all(e.source_file == "z_good.json" for e in index.entries)
+        assert "Fine Journal" not in [t for t, _ in
+                                      sum(index.journals.values(), [])]
+
+    def test_whitespace_doi_is_not_indexed_under_an_empty_key(self, tmp_path):
+        """Mirrors the cleaner's empty-normalized-DOI protection: a truthy but
+        meaningless DOI must not become a key every other malformed DOI can
+        collide with."""
+        import json as _json
+        from metadata_validator import build_metadata_index
+
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "s2_x.json").write_text(_json.dumps({
+            "source": "semantic_scholar",
+            "results": [{"title": "T", "year": 2007, "externalIds": {"DOI": "   "}}],
+        }), encoding="utf-8")
+
+        index = build_metadata_index(json_dir)
+
+        assert "" not in index.dois
+
+    def test_load_failure_outside_the_named_tuple_is_still_soft(self, monkeypatch, tmp_path):
+        """json.loads can raise RecursionError or a digit-limit ValueError,
+        neither of which is JSONDecodeError - those must not kill the build."""
+        import json as _json
+        import metadata_validator as mv
+
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "a_deep.json").write_text("[]", encoding="utf-8")
+        (json_dir / "z_good.json").write_text(_json.dumps({
+            "source": "semantic_scholar",
+            "results": [{"title": "T", "year": 2007}],
+        }), encoding="utf-8")
+
+        real_loads = mv.json.loads
+
+        def boom(text, *a, **k):
+            if text == "[]":
+                raise RecursionError("too deep")
+            return real_loads(text, *a, **k)
+
+        monkeypatch.setattr(mv.json, "loads", boom)
+
+        index = mv.build_metadata_index(json_dir)
+
+        assert "a_deep.json" in index.skipped_files
+        assert index.entries
+
+    def test_skip_reasons_records_why(self, tmp_path):
+        from metadata_validator import build_metadata_index
+
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "truncated.json").write_text("{not json", encoding="utf-8")
+
+        index = build_metadata_index(json_dir)
+
+        assert "truncated.json" in index.skip_reasons
+        assert index.skip_reasons["truncated.json"]

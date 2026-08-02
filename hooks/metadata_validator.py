@@ -338,7 +338,11 @@ def build_metadata_index(json_dir: Path) -> MetadataIndex:
     for json_file in json_dir.glob("*.json"):
         try:
             data = json.loads(json_file.read_text(encoding='utf-8'))
-        except (json.JSONDecodeError, UnicodeDecodeError, OSError) as exc:
+        except Exception as exc:   # noqa: BLE001 - per-file fail-soft
+            # Deliberately broad: json.loads can raise RecursionError (deep
+            # nesting) or ValueError (integer digit limit), and read_text can
+            # raise OSError - none are JSONDecodeError, and any of them would
+            # otherwise kill the whole build, which is the 3G failure class.
             # Unreadable is also "could not be parsed" - record it, so the
             # skip is countable rather than silent.
             index.skipped_files.append(json_file.name)
@@ -458,10 +462,11 @@ def _index_entries(index: MetadataIndex, entries: list) -> None:
 
         # Index DOI
         if entry.doi:
+            # Mirror the cleaner: an empty normalized DOI ("  ", "doi:") is
+            # not a key - it would collide with every other malformed DOI.
             norm = normalize_doi(entry.doi)
-            index.dois[norm] = entry.source_file
-
-    return index
+            if norm:
+                    index.dois[norm] = entry.source_file
 
 
 @dataclass

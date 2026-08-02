@@ -896,3 +896,125 @@ class TestScopedPreferenceDoesNotIncreaseDestruction:
 
         assert api is not None
         assert api["container_title"] == "Mind"   # kept the complete record
+
+
+class TestWriteGateMatchesTheGrammar:
+    """Review round 3 (gpt-5.6-sol): the write gate used
+    `api_year.lstrip("-").isdigit()`, a DIFFERENT language from
+    _INTEGRAL_YEAR_RE - it re-admitted exactly what the grammar rejects."""
+
+    @pytest.mark.parametrize("bad_year", [
+        "٢٠٠٧",   # Arabic-Indic digits: isdigit() is True
+        "²⁰⁰⁷",   # superscript digits: isdigit() is True
+        "--2007",                     # lstrip("-") removes BOTH signs
+        "-2007",                      # negative: not a publication year
+        "1" * 40,                     # absurd magnitude
+        "0",                          # year zero is not a publication year
+    ])
+    def test_ungrammatical_years_are_never_written(self, tmp_path, bad_year):
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        index = build_metadata_index(tmp_path / "nonexistent")
+        entry = parse_string(
+            "@article{x,author={A, B},title={T},year={2007},doi={10.1/x}}",
+            "bibtex").entries["x"]
+        api = {"year": bad_year, "entry_scoped": True, "doi": "10.1/x"}
+
+        assert plan_entry_cleaning(entry, index, api)["year_corrected"] is None
+
+    @pytest.mark.parametrize("good_year", [2007, "2007", 2007.0, "0002007", 1650])
+    def test_plausible_years_are_still_written(self, tmp_path, good_year):
+        from metadata_cleaner import plan_entry_cleaning
+        from pybtex.database import parse_string
+
+        index = build_metadata_index(tmp_path / "nonexistent")
+        entry = parse_string(
+            "@article{x,author={A, B},title={T},year={1999},doi={10.1/x}}",
+            "bibtex").entries["x"]
+        api = {"year": good_year, "entry_scoped": True, "doi": "10.1/x"}
+
+        plan = plan_entry_cleaning(entry, index, api)
+
+        assert plan["year_corrected"] == ("1999", _year_key(good_year))
+
+
+class TestNumericZeroIsNotTreatedAsAbsent:
+    """`record.get("year") or ""` made numeric 0 yearless while "0" was
+    year-bearing - the exact int/str split _year_key exists to erase."""
+
+    def test_scoped_years_zero_and_2007_are_a_disagreement(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1.json": {"source": "crossref",
+                              "results": [{"title": "T", "doi": "10.1/z", "year": 0}]},
+            "verify_9.json": {"source": "crossref",
+                              "results": [{"title": "T", "doi": "10.1/z", "year": 2007}]},
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(
+            "@article{z,author={A, B},title={T},year={2007},doi={10.1/z}}",
+            "bibtex").entries["z"]
+
+        assert find_api_entry_for_bib_entry(entry, index) is None
+
+    def test_authority_does_not_depend_on_int_vs_str_encoding(self, tmp_path):
+        """A scoped year of 0 and of "0" must behave identically."""
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        def outcome(year_value):
+            sub = tmp_path / repr(year_value).replace("'", "s")
+            sub.mkdir()
+            json_dir = make_json_dir(sub, {
+                "s2_a.json": {"source": "semantic_scholar",
+                              "results": [{"title": "T", "year": 2007, "doi": "10.1/w"}]},
+                "s2_b.json": {"source": "semantic_scholar",
+                              "results": [{"title": "T", "year": 2019, "doi": "10.1/w"}]},
+                "verify_1.json": {"source": "crossref",
+                                  "results": [{"title": "T", "doi": "10.1/w",
+                                               "year": year_value}]},
+            })
+            entry = parse_string(
+                "@article{w,author={A, B},title={T},year={2007},doi={10.1/w}}",
+                "bibtex").entries["w"]
+            return find_api_entry_for_bib_entry(
+                entry, build_metadata_index(json_dir)) is None
+
+        assert outcome(0) == outcome("0")
+
+
+class TestScopedSwapPreservesVerificationPower:
+    """Counting fields is not enough: an equally-sized but DISJOINT record
+    cannot verify what the first one could, so the swap deleted data."""
+
+    def test_equal_count_disjoint_record_does_not_win(self, tmp_path):
+        from metadata_cleaner import find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1.json": {"source": "crossref", "results": [{
+                "title": "T", "doi": "10.1/q",
+                "container_title": "Mind", "volume": "120",
+            }]},
+            "verify_9.json": {"source": "crossref", "results": [{
+                "title": "T", "doi": "10.1/q", "year": 2011,
+                "issue": "3", "publisher": "OUP",
+            }]},
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(
+            "@article{q,author={A, B},title={T},year={2011},"
+            "journal={Mind},volume={120},doi={10.1/q}}", "bibtex").entries["q"]
+
+        api = find_api_entry_for_bib_entry(entry, index)
+
+        assert api is not None
+        assert api["container_title"] == "Mind"
+
+    def test_whitespace_fields_do_not_count_as_supplied(self, tmp_path):
+        from metadata_cleaner import _record_completeness
+
+        assert _record_completeness({"publisher": " ", "issue": " "}) == 0
