@@ -153,20 +153,35 @@ for bib_file in "${BIB_FILES[@]}"; do
         # warnings/build progress to stderr on a cold venv, and merging that
         # into the JSON would make every first run look like a crash.
         CLEAN_STDERR_LOG=$(mktemp)
-        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "${JSON_DIRS[@]}" 2>"$CLEAN_STDERR_LOG" || true)
+        CLEAN_STATUS=0
+        CLEAN_RESULT=$(bash "$CLAUDE_PLUGIN_ROOT/bin/phillit-run" hooks/metadata_cleaner.py "$bib_file" "${JSON_DIRS[@]}" 2>"$CLEAN_STDERR_LOG") || CLEAN_STATUS=$?
 
-        # Never-silent policy (the guard step 1 applies to bib_validator): a
-        # crashed cleaner emits a traceback or nothing, `jq` then fails, and
-        # without this the `|| echo 0` fallback makes the run byte-identical
-        # to a clean one. `jq -e .` catches both (empty input exits 4).
+        # Never-silent policy (the guard step 1 applies to bib_validator).
+        # Three distinct failure shapes must all be caught, or a crash is
+        # byte-identical to a clean run:
+        #   1. non-JSON stdout (a bare traceback)
+        #   2. empty stdout (`jq -r '.x // 0'` exits 0 on empty input)
+        #   3. VALID JSON reporting failure -- metadata_cleaner.main() now
+        #      emits {"success": false, "errors": [...]} and exits 2 on an
+        #      unexpected exception, which passes a plain `jq -e .` and then
+        #      reads as "0 fields removed". Checking only well-formedness
+        #      would let the cleaner's own crash contract slip through.
+        # So: require a zero exit AND an object whose .success is true.
         # Cleaning does not block, so this warns and moves on.
-        if ! echo "$CLEAN_RESULT" | jq -e . >/dev/null 2>&1; then
+        if [[ $CLEAN_STATUS -ne 0 ]] || \
+           ! echo "$CLEAN_RESULT" | jq -e 'type == "object" and .success == true' >/dev/null 2>&1; then
             CLEAN_ERR_TAIL=$(tail -c 400 "$CLEAN_STDERR_LOG" 2>/dev/null || true)
             rm -f "$CLEAN_STDERR_LOG"
-            echo "WARNING: metadata_cleaner.py produced non-JSON output for $bib_file: ${CLEAN_RESULT}${CLEAN_ERR_TAIL}" >&2
+            # Prefer the structured .errors[] when the payload parsed at all.
+            CLEAN_REPORTED=$(echo "$CLEAN_RESULT" | jq -r '.errors[]?' 2>/dev/null || true)
+            # Cap the raw fallback the same way CLEAN_ERR_TAIL is capped: a
+            # library that dumps a huge repr to stdout must not push megabytes
+            # into the hook's JSON output.
+            [[ -z "$CLEAN_REPORTED" ]] && CLEAN_REPORTED=$(echo "$CLEAN_RESULT" | tail -c 1000)
+            echo "WARNING: metadata_cleaner.py failed (exit $CLEAN_STATUS) for $bib_file: ${CLEAN_REPORTED}${CLEAN_ERR_TAIL}" >&2
             CLEANING_SUMMARY="${CLEANING_SUMMARY}
-metadata_cleaner.py FAILED for $(basename "$bib_file") - metadata was NOT verified:
-${CLEAN_RESULT}${CLEAN_ERR_TAIL}
+metadata_cleaner.py FAILED for $(basename "$bib_file") (exit $CLEAN_STATUS) - metadata was NOT verified:
+${CLEAN_REPORTED}${CLEAN_ERR_TAIL}
 "
             continue
         fi

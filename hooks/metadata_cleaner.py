@@ -346,9 +346,14 @@ def parse_core_result(data: dict, source_file: str) -> list[dict]:
         entries.append({
             "title": item.get("title"),
             "container_title": item.get("journal"),
-            "volume": None,
-            "issue": None,
-            "pages": None,
+            # Read through rather than hardcoding None: search_core.py's
+            # _format_work does not emit these today, but CORE work objects
+            # carry them, and a hardcoded None would silently DISCARD that
+            # evidence the day the writer starts including it — which means
+            # more stripping, not less.
+            "volume": item.get("volume"),
+            "issue": item.get("issue"),
+            "pages": item.get("pages"),
             "publisher": item.get("publisher"),
             "year": item.get("year"),
             "doi": item.get("doi"),
@@ -445,16 +450,37 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
                 index.skipped_files.append(json_file.name)
                 continue
 
+            # TRANSACTIONAL: stage into a throwaway index and merge only on
+            # complete success. Ingesting straight into `index` would leave a
+            # half-read file's records behind when a later record raises — so
+            # a file reported as skipped would still be supplying DOI matches
+            # and presence evidence that authorize destructive cleaning.
+            staged = MetadataIndex()
             try:
-                _index_one_file(index, data, json_file.name)
+                _index_one_file(staged, data, json_file.name)
             except Exception:
                 # Fail SOFT, per file: an unexpected shape costs this file's
                 # records, never the whole index. clean_bibtex surfaces the
                 # name in result["warnings"], so the skip is never silent.
                 index.skipped_files.append(json_file.name)
                 continue
+            _merge_index(index, staged)
 
     return index
+
+
+def _merge_index(dst: MetadataIndex, src: MetadataIndex) -> None:
+    """Fold a fully-parsed file's staged index into the shared one.
+
+    Merging in file order preserves the previous semantics exactly: bucket
+    lists accumulate in the order files are read, and `dois` keeps its
+    last-writer-wins behaviour."""
+    dst.entries.extend(src.entries)
+    for bucket in ("journals", "volumes", "issues", "pages", "publishers", "years"):
+        target, source = getattr(dst, bucket), getattr(src, bucket)
+        for key, values in source.items():
+            target.setdefault(key, []).extend(values)
+    dst.dois.update(src.dois)
 
 
 def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:

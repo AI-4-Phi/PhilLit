@@ -435,7 +435,7 @@ class TestCleanerFailureIsNeverSilent:
             1)
         out, code, stderr = self._run(project, root)
         assert code == 0                              # hook protocol: never exit 2
-        assert "produced non-JSON output" in stderr
+        assert "metadata_cleaner.py failed" in stderr
         ctx = out.get("hookSpecificOutput", {}).get("additionalContext", "")
         assert "FAILED for d1.bib" in ctx
         assert "AttributeError" in ctx
@@ -447,7 +447,7 @@ class TestCleanerFailureIsNeverSilent:
         root = self._stub_root(tmp_path, "true", 0)
         out, code, stderr = self._run(project, root)
         assert code == 0
-        assert "produced non-JSON output" in stderr
+        assert "metadata_cleaner.py failed" in stderr
         assert "FAILED for d1.bib" in out.get(
             "hookSpecificOutput", {}).get("additionalContext", "")
 
@@ -459,10 +459,39 @@ class TestCleanerFailureIsNeverSilent:
         root = self._stub_root(
             tmp_path,
             "echo 'Building phillit-run v0.1 (cold venv)' >&2; "
-            "echo '{\"total_fields_removed\": 0, \"entries_cleaned\": 0, "
-            "\"warnings\": [], \"cleaned_entries\": {}}'",
+            "echo '{\"success\": true, \"total_fields_removed\": 0, "
+            "\"entries_cleaned\": 0, \"warnings\": [], \"cleaned_entries\": {}}'",
             0)
         out, code, stderr = self._run(project, root)
         assert code == 0
-        assert "produced non-JSON output" not in stderr
+        assert "metadata_cleaner.py failed" not in stderr
         assert out == {"decision": "allow"}
+
+    def test_valid_json_reporting_failure_is_not_treated_as_success(self, project, tmp_path):
+        """The shape metadata_cleaner.main() ACTUALLY emits on an unexpected
+        exception: well-formed JSON, success=false, exit 2. A guard that only
+        checked JSON validity passed it and then read
+        `.total_fields_removed // 0` as "nothing cleaned" -- the crash contract
+        and the hook guard defeating each other, restoring the original
+        silence. Found by external review of the fix itself."""
+        self._seed(project)
+        root = self._stub_root(
+            tmp_path,
+            "echo 'Traceback (most recent call last):' >&2; "
+            "echo '{\"success\": false, \"errors\": "
+            "[\"metadata_cleaner crashed on d1.bib: RuntimeError: boom\"]}'",
+            2)
+        out, code, stderr = self._run(project, root)
+        assert code == 0
+        assert "metadata_cleaner.py failed" in stderr
+        ctx = out.get("hookSpecificOutput", {}).get("additionalContext", "")
+        assert "FAILED for d1.bib" in ctx
+        assert "RuntimeError: boom" in ctx      # the structured .errors[] is surfaced
+
+    def test_non_object_json_is_not_treated_as_success(self, project, tmp_path):
+        """`jq -e .` also passes a bare scalar or an unrelated object."""
+        self._seed(project)
+        root = self._stub_root(tmp_path, "echo '\"just a string\"'", 0)
+        out, code, stderr = self._run(project, root)
+        assert code == 0
+        assert "metadata_cleaner.py failed" in stderr
