@@ -109,6 +109,28 @@ so it needs its own evidence), and the dormant `metadata_validator.py` still
 carries the identical defect. Details: phillit-service `HANDOVER.md`,
 2026-08-02.
 
+**H — malformed-DOI false verification (K1): FIXED 2026-08-02** (`7f6d38f`;
+service `59536cd`). `_plan_type_downgrade` compared DOIs with a bare
+`normalize_doi(a) == normalize_doi(b)`; `doi:`, `https://doi.org/` and `"  "`
+all normalize to `""`, so two malformed DOIs read as a verified match and
+suppressed the `@misc` demotion of an article that had just lost its
+`journal`. Now routed through `_field_matches_api` and its `bool(nv)` guard.
+The same commit replaces two vacuous `assert "METADATA_CLEANED" not in
+content` assertions (pybtex escapes the underscore, so they could never fail)
+with a backslash-tolerant helper plus a control test that pins the vacuity.
+
+**IF THE PORT PLAN'S TASK 2 PROCEEDS, carry the CORRECTED `_year_key`** — not
+the version the service shipped before 2026-08-02. The original
+`str(int(float(value)))` collapses genuinely different values (`"2007.9"` →
+`"2007"`) and lets `OverflowError` escape (it is not a `ValueError` subclass,
+and `float("1e999")` is `inf`). The service's current version canonicalizes
+only integral values and catches it — copy that one, and apply it at all four
+year-comparison sites, not just the two conflict-detection ones. Note the
+service also now gates its year overwrite on `entry_scoped`, ported FROM
+here, but keeps its stronger conflict abstention: where this repo lets a
+verify record win a same-DOI year conflict, the service abstains entirely.
+That divergence is deliberate and documented in both docstrings.
+
 Six related gaps. A–D were surfaced 2026-07-24 by the downstream
 `phillit-service` model-experiment audit and written up in
 `docs/known-issues/bib-pipeline-integrity-gaps.md`; E–F were added later
