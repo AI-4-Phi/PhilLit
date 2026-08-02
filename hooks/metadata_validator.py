@@ -80,6 +80,10 @@ class MetadataIndex:
     # All extracted metadata objects
     entries: list = field(default_factory=list)
 
+    # Files whose envelope or records could not be parsed. Recorded rather
+    # than crashing the build - see build_metadata_index.
+    skipped_files: list = field(default_factory=list)
+
 
 def normalize_pages(pages: str) -> str:
     """Normalize page ranges for comparison.
@@ -133,7 +137,17 @@ def parse_s2_result(data: dict, source_file: str) -> list[SourceMetadata]:
     entries = []
 
     for item in results:
-        journal_info = item.get("journal") or {}
+        # Also the fallback parser for unrecognized sources, so `journal` may
+        # arrive as a bare STRING rather than S2's {name, volume, pages}
+        # object (CORE writes it that way). Coerce instead of dropping: the
+        # string IS the container title, and treating it as {} would both
+        # lose the datum and raise AttributeError below.
+        # Mirrors hooks/metadata_cleaner.py.
+        journal_info = item.get("journal")
+        if isinstance(journal_info, str):
+            journal_info = {"name": journal_info}
+        elif not isinstance(journal_info, dict):
+            journal_info = {}
 
         entry = SourceMetadata(
             doi=item.get("doi"),
@@ -252,9 +266,34 @@ def parse_philpapers_result(data: dict, source_file: str) -> list[SourceMetadata
     return entries
 
 
+def parse_core_result(data: dict, source_file: str) -> list[SourceMetadata]:
+    """Parse CORE JSON format (search_core.py's `_format_work`).
+
+    CORE's `journal` is a plain string (the first journal's title) and it
+    carries `publisher` - both lost or fatal under the S2 fallback parser.
+    Mirrors hooks/metadata_cleaner.py.
+    """
+    results = data.get("results", [])
+    entries = []
+    for item in results:
+        entries.append(SourceMetadata(
+            source_file=source_file,
+            title=item.get("title"),
+            container_title=item.get("journal"),
+            volume=None,
+            issue=None,
+            pages=None,
+            publisher=item.get("publisher"),
+            year=item.get("year"),
+            doi=item.get("doi"),
+        ))
+    return entries
+
+
 def detect_api_source(data: dict, filename: str) -> str:
     """Detect which API produced this JSON file."""
-    source = data.get("source", "").lower()
+    raw_source = data.get("source") if isinstance(data, dict) else None
+    source = raw_source.lower() if isinstance(raw_source, str) else ""
 
     if "semantic_scholar" in source or "s2" in source:
         return "s2"
@@ -266,6 +305,8 @@ def detect_api_source(data: dict, filename: str) -> str:
         return "arxiv"
     elif "philpapers" in source:
         return "philpapers"
+    elif "core" in source:
+        return "core"
 
     # Fallback: detect from filename
     fname = filename.lower()
@@ -296,22 +337,37 @@ def build_metadata_index(json_dir: Path) -> MetadataIndex:
         except (json.JSONDecodeError, UnicodeDecodeError):
             continue
 
-        # Detect source and parse accordingly
-        api_source = detect_api_source(data, json_file.name)
+        # A non-object envelope has no "results" to parse - a researcher's
+        # top-level-list final_selection.json is the real shape that hit this.
+        if not isinstance(data, dict):
+            index.skipped_files.append(json_file.name)
+            continue
 
-        if api_source == "s2":
-            entries = parse_s2_result(data, json_file.name)
-        elif api_source == "openalex":
-            entries = parse_openalex_result(data, json_file.name)
-        elif api_source == "crossref":
-            entries = parse_crossref_result(data, json_file.name)
-        elif api_source == "arxiv":
-            entries = parse_arxiv_result(data, json_file.name)
-        elif api_source == "philpapers":
-            entries = parse_philpapers_result(data, json_file.name)
-        else:
-            # Try S2 format as default (most common)
-            entries = parse_s2_result(data, json_file.name)
+        # Detect source and parse accordingly. Fail SOFT per file: an
+        # unexpected record shape costs this file's records, never the whole
+        # index. Mirrors hooks/metadata_cleaner.py (ROADMAP 3G) - there, one
+        # malformed CORE dump killed cleaning for 64% of real reviews.
+        try:
+            api_source = detect_api_source(data, json_file.name)
+
+            if api_source == "s2":
+                entries = parse_s2_result(data, json_file.name)
+            elif api_source == "openalex":
+                entries = parse_openalex_result(data, json_file.name)
+            elif api_source == "crossref":
+                entries = parse_crossref_result(data, json_file.name)
+            elif api_source == "arxiv":
+                entries = parse_arxiv_result(data, json_file.name)
+            elif api_source == "philpapers":
+                entries = parse_philpapers_result(data, json_file.name)
+            elif api_source == "core":
+                entries = parse_core_result(data, json_file.name)
+            else:
+                # Try S2 format as default (most common)
+                entries = parse_s2_result(data, json_file.name)
+        except Exception:
+            index.skipped_files.append(json_file.name)
+            continue
 
         # Add entries to index
         for entry in entries:

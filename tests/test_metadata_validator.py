@@ -564,3 +564,79 @@ class TestCLI:
         assert "errors" in output
         assert "verified_count" in output
         assert "error_count" in output
+
+
+class TestMalformedShapeTolerance:
+    """Mirrors ROADMAP 3G's fix in metadata_cleaner.py. This module is dormant
+    (wired into no hook), but it carried the identical crash surface: one
+    malformed file killed the whole index."""
+
+    def test_string_journal_becomes_container_title(self):
+        """CORE writes `journal` as a bare string; parse_s2_result is also the
+        fallback for unrecognized sources, so it must not assume a dict."""
+        from metadata_validator import parse_s2_result
+
+        data = {"results": [{"title": "T", "year": 2020,
+                             "journal": "Philosophy Compass"}]}
+
+        entries = parse_s2_result(data, "core_x.json")
+
+        assert entries[0].container_title == "Philosophy Compass"
+
+    def test_non_dict_non_string_journal_falls_back_to_venue(self):
+        from metadata_validator import parse_s2_result
+
+        data = {"results": [{"title": "T", "year": 2020,
+                             "journal": ["a"], "venue": "V"}]}
+
+        entries = parse_s2_result(data, "x.json")
+
+        assert entries[0].container_title == "V"
+
+    def test_dict_journal_still_works(self):
+        from metadata_validator import parse_s2_result
+
+        data = {"results": [{"title": "T", "journal": {"name": "N", "volume": "3"}}]}
+
+        entries = parse_s2_result(data, "s2_x.json")
+
+        assert entries[0].container_title == "N"
+        assert entries[0].volume == "3"
+
+    def test_list_envelope_is_skipped_not_fatal(self, tmp_path):
+        """A researcher's top-level-list final_selection.json must not kill the
+        whole index build."""
+        import json as _json
+        from metadata_validator import build_metadata_index
+
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "final_selection.json").write_text(
+            _json.dumps([["abc", "High"]]), encoding="utf-8")
+        (json_dir / "s2_ok.json").write_text(_json.dumps({
+            "source": "semantic_scholar",
+            "results": [{"title": "T", "year": 2007}],
+        }), encoding="utf-8")
+
+        index = build_metadata_index(json_dir)
+
+        assert "final_selection.json" in index.skipped_files
+        assert index.entries          # the good file still got indexed
+
+    def test_core_dump_does_not_kill_the_index(self, tmp_path):
+        import json as _json
+        from metadata_validator import build_metadata_index
+
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "core_x.json").write_text(_json.dumps({
+            "source": "core",
+            "results": [{"title": "T", "year": 2020,
+                         "journal": "Philosophy Compass", "publisher": "Wiley"}],
+        }), encoding="utf-8")
+
+        index = build_metadata_index(json_dir)
+
+        assert index.entries
+        assert not index.skipped_files
+        assert index.entries[0].container_title == "Philosophy Compass"
