@@ -152,5 +152,6 @@ Full predatory-list curation is out of scope; flag-and-caveat is the goal.
 - `agents/domain-literature-researcher.md` Stage 5.5 +
   `agents/synthesis-writer.md` INCOMPLETE rule — the unenforced abstract
   provenance convention (Issue C)
-- verification scripts / `metadata_validator.py` — where venue heuristics
-  would live (Issue D)
+- verification scripts / `hooks/metadata_cleaner.py` — where venue heuristics
+  would live (Issue D). Named `metadata_validator.py` before 2026-08-02; that
+  module was deleted as dead code, so the cleaner is the only candidate home.

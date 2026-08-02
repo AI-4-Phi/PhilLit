@@ -4,8 +4,9 @@
 Removes BibTeX bibliographic metadata that cannot be verified against API output,
 preventing hallucinated data from persisting in the bibliography.
 
-This is the "fix" counterpart to metadata_validator.py - instead of blocking,
-it automatically removes unverifiable fields while preserving verified data.
+This is a fix, not a block: it automatically removes unverifiable fields while
+preserving verified data. (An earlier blocking design, metadata_validator.py,
+was never wired into any hook and was deleted 2026-08-02.)
 
 Features:
 1. Removes unverifiable fields (journal, booktitle, volume, number, pages, publisher, doi)

@@ -220,8 +220,7 @@ hooks/
 ├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
 ├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
 ├── bib_validator.py                      # BibTeX validation logic
-├── metadata_validator.py                 # Metadata provenance validation
-└── metadata_cleaner.py                   # Metadata year/type cleanup
+└── metadata_cleaner.py                   # Metadata provenance cleaning: year/type/field cleanup
 
 bin/
 └── phillit-run                           # uv wrapper: runs bundled Python in the per-install venv

@@ -229,20 +229,23 @@ Hooks validate BibTeX automatically at two points: `validate_bib_write.py` check
 - Required fields present per entry type
 - No BibLaTeX fields
 
-### 2. Metadata Provenance Validation (`metadata_validator.py`)
+### 2. Metadata Provenance Cleaning (`metadata_cleaner.py`)
 
-**Purpose**: Prevents LLM hallucination of bibliographic metadata by validating that field values exist in API output.
+**Purpose**: Prevents LLM hallucination of bibliographic metadata by REMOVING field values that cannot be verified against API output.
 
-**Validated fields** (must exist in JSON API output):
+This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py`) was written but never wired into any hook, and was deleted 2026-08-02 rather than left as a re-armable trap: because it duplicated the cleaner's whole parser/index layer without sharing it, hardening effort landed on the dormant copy (`9aa473d`) while the live one still crashed on a single malformed file — which is how the `json.loads` failure fixed in `a30cde0` stayed hidden. Anything below that reads as "blocks the subagent" describes the cleaner's *removal* behaviour instead.
+
+**Cleanable fields** (removed when unverifiable):
 - `journal` / `booktitle`
 - `volume`
 - `number` / `issue`
 - `pages`
 - `publisher`
-- `year`
 - `doi`
 
-**Exempt fields** (LLM-generated or enrichment-added, not validated):
+`year` is **corrected**, not removed — and only on entry-scoped evidence (a `verify_*` CrossRef lookup on this entry's own DOI) whose year is a writable canonical value. `author` and `title` are identity fields and are never touched.
+
+**Exempt fields** (LLM-generated or enrichment-added, not cleaned):
 - `note` (annotations)
 - `keywords`
 - `howpublished`
@@ -253,20 +256,17 @@ Hooks validate BibTeX automatically at two points: `validate_bib_write.py` check
 - `iep_context`
 
 **How it works**:
-1. Scans `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers)
-2. Builds an index of all metadata values from API responses
-3. Validates each BibTeX entry's fields against this index
-4. Blocks the subagent if any field value is not found in API output
+1. Scans the .bib's own directory AND `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers, CORE) — both feed ONE index, so directory shadowing cannot starve verification
+2. Builds a presence-based index of all metadata values from API responses, each file ingested transactionally so one malformed file costs only its own records
+3. Finds each entry's OWN API record (DOI, else normalized title+year); an entry with no affirmative match is left completely untouched
+4. Removes a cleanable field only when it matches neither that record nor the global index, then downgrades the entry type if a required field is gone, and tags the entry `METADATA_CLEANED`
 
-**Value normalization**: The validator normalizes values for comparison:
+**Value normalization**: values are normalized before comparison:
 - Pages: `"163 - 188"` matches `"163--188"` (handles space/dash variations)
-- Journals: case-insensitive, strips "The" prefix
+- Journals: LaTeX/HTML-entity/accent decoding, then case-insensitive, strips "The" prefix
 - DOIs: strips URL prefixes
+- Years: exact string grammar (`2007`, `2007.0` and `0002007` are one value; `2007.9` and `n.d.` are not years)
 
-**Error messages**: When validation fails, the validator reports:
-- Which entry has the problem
-- Which field contains the unverifiable value
-- What values the API actually contains
-- Action to take (remove field or use API value)
+**Circuit breaker**: if a .bib would lose fields from more than 30% of its entries and from at least 5, the cleaner writes NOTHING — a systemic index failure must not mass-strip verified data.
 
 See `hooks/hooks.json` for hook configuration.

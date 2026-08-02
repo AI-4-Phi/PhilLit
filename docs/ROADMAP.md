@@ -105,9 +105,11 @@ the 113 bibs that already worked are unchanged, the 206 newly-activated ones
 strip *less* (20.7% vs 29.7%). Two things left open on purpose: `unknown`
 sources still fall through to `parse_s2_result` (479 non-paper files inject
 928 bare-title entries — narrowing it would shrink the index and strip MORE,
-so it needs its own evidence), and the dormant `metadata_validator.py` still
-carries the identical defect. Details: phillit-service `HANDOVER.md`,
-2026-08-02.
+so it needs its own evidence). The second — the dormant `metadata_validator.py`
+carrying the identical defect — is **CLOSED 2026-08-02**: the module was
+deleted rather than fixed twice (it was wired into no hook, and its duplicated
+parser/index layer is what let the dormant copy be hardened past the live one).
+Details: phillit-service `HANDOVER.md`, 2026-08-02.
 
 **H — malformed-DOI false verification (K1): FIXED 2026-08-02** (`7f6d38f`;
 service `59536cd`). `_plan_type_downgrade` compared DOIs with a bare
@@ -137,7 +139,9 @@ silent. (d) Two entry-scoped records disagreeing on a non-empty canonical year
 also abstain, and a yearless scoped record no longer shadows a year-bearing
 one **that is at least as complete** - the winner governs verification of
 every field, so trading completeness for a year would delete metadata the
-first record verified. `metadata_validator.py` gets G's full shape-tolerance too.
+first record verified. `metadata_validator.py` got G's full shape-tolerance too
+(`9aa473d`) — work since discarded with the module itself, which was deleted
+2026-08-02 as dead code.
 
 Dry-run over all 42 corpora (43 bibs, 4073 entries, writes stubbed):
 matched 3179->3109, fields removed 1313->1292, **years corrected 36->36**,
@@ -200,8 +204,9 @@ Re-verified against CrossRef, the fixed producer turns **27 of the 42 rewrites
 into no-ops and leaves 15 corrections, all to the print year — zero
 corruptions**. On the legacy corpora the gate yields 0 corrections and 154
 recorded declines (up from 109), all surfaced to the model through the hook's
-existing `.warnings[]` pass-through. `metadata_validator.py` needs no mirror:
-it is read-only and has no year-overwrite path.
+existing `.warnings[]` pass-through. (`metadata_validator.py` needed no mirror —
+it was read-only with no year-overwrite path — and is moot since its deletion
+2026-08-02.)
 
 **IF THE PORT PLAN'S TASK 2 PROCEEDS, carry the CORRECTED `_year_key`** — not
 the version the service shipped before 2026-08-02. The original
