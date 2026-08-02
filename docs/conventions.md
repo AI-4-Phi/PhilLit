@@ -241,22 +241,22 @@ This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py
 **Cleanable fields** (removed when unverifiable):
 - `journal` / `booktitle`
 - `volume`
-- `number` / `issue`
+- `number` (the BibTeX field; API `issue` values verify it)
 - `pages`
 - `publisher`
 - `doi`
 
-`year` is **corrected**, not removed — and only on entry-scoped evidence (a `verify_*` CrossRef lookup on this entry's own DOI) whose year is a writable canonical value. `author` and `title` are identity fields and are never touched.
+`year` is **corrected**, not removed — and only on entry-scoped evidence: a CrossRef result identified by envelope content (`api_source` is `crossref` AND the file carries exactly one result — the filename is deliberately NOT the test) that matches this entry's own DOI, carries a version-of-record `year_basis` (recorded by `verify_paper.py`; registration/created timestamps never overwrite), and is not contradicted by another entry-scoped record. On any same-DOI year conflict the cleaner abstains from the entry entirely (attesting existence in the cleaning ledger — see Evidence Tiers above). `author` and `title` are identity fields and are never touched.
 
-**Exempt fields** (LLM-generated or enrichment-added, not cleaned):
+**Exempt fields** (LLM-generated or enrichment-added, not cleaned — `EXEMPT_FIELDS` in the cleaner):
 - `note` (annotations)
 - `keywords`
 - `howpublished`
 - `url`
 - `abstract`
 - `abstract_source`
-- `sep_context`
-- `iep_context`
+
+`sep_context` / `iep_context` are also never cleaned, but not via this list — they are outside `CLEANABLE_FIELDS` and are owned end-to-end by the evidence barrier (see Evidence Tiers above).
 
 **How it works**:
 1. Scans the .bib's own directory AND `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers, CORE) — both feed ONE index, so directory shadowing cannot starve verification
