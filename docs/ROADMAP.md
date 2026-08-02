@@ -8,51 +8,38 @@ exists so open work has a single place to be listed — it was created
 
 ## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (BUILT + A/B'd HERE, unmerged; dual-repo)
 
-> **Status 2026-08-02 (measured, supersedes the 2026-07-28 figures) — read
+> **Status 2026-08-02 (post-merge; supersedes all earlier figures) — read
 > this before starting anything.** The build is DONE on branch
 > **`worktree-evidence-tier`** (worktree at `.claude/worktrees/evidence-tier`,
-> tip **`15cd307`**, **33** commits, unmerged and unpushed). All 11 plan tasks
-> executed; **unit suite 1102 green** (re-run 2026-08-02). The free Sonnet
-> two-arm A/B has run ("What are data?"), and Johannes adjudicated **three of
-> the four rubric items** on 2026-07-28. Provisional outcome cell:
-> **"Works. Proceed."**
+> tip **`9842f2d`** = catch-up merge of `main` + Option C, unmerged into
+> `main` and unpushed). All 11 plan tasks executed; **unit suite 1192 green**
+> (2026-08-02, post-merge). The free Sonnet two-arm A/B has run ("What are
+> data?"), and Johannes adjudicated **three of the four rubric items** on
+> 2026-07-28. Provisional outcome cell: **"Works. Proceed."**
 >
-> The 2026-07-28 note said tip `f9e3fda`, 23 commits, 1069 tests. Ten further
-> commits landed **2026-08-01** (enrichment-ledger attestation, barrier
-> self-heal, writer tier rules, researcher Edit permission); `f9e3fda` is still
-> an ancestor, just no longer the tip. **The branch is not parked — it and
-> `main` are both active on the same subsystem.**
+> **DIVERGENCE RESOLVED 2026-08-02 — catch-up merge landed on the branch.**
+> `main` (fa6cde4, the 3G-3K cleaner hardening) was merged into the branch as
+> `ee5f12c` using the resolution verified on the `merge-trial` throwaway
+> (warning stays hoisted above the match check — 3J(c) preserved; the
+> branch's ledger writes re-inserted additively). **Option C ("attest
+> existence, decline the year"; Johannes's decision, write-up §9) is
+> implemented on top as `9842f2d`**: `find_api_entry_for_bib_entry` returns a
+> falsy `CleaningAbstention` on its two abstention paths, and the ledger
+> records `api_matched: True` + the normalized DOI + an additive
+> `cleaning_abstained` reason, while cleaning behaviour is byte-identical to
+> no-match. Acceptance measured over all 319 local bibs: **cleaner metrics
+> identical to `main`** (matched 6611, planned fields removed 2668, breaker
+> trips 86, years corrected 0, 0 crashes), ledger diff = **106 abstention
+> flips and nothing else** (all `pooled_year_conflict`), EXISTENCE gate
+> **+56 regained, 0 lost** (incl. every §9-named work), corpora untouched.
+> Suite: **1192 green**. Analysis + resolution record:
+> `docs/known-issues/evidence-tier-branch-divergence.md`.
 >
-> **`main` HAS DIVERGED — this is now the branch's biggest risk.** Fork point
-> `fc2477f` (2026-07-24); since then **26 commits only on `main`, 33 only on
-> the branch**. `main` rewrote `hooks/metadata_cleaner.py` (+587/-109: the
-> whole 3G-3K year/DOI hardening) while the branch added its ledger to the
-> pre-hardening version. A merge today conflicts in exactly two files
-> (`hooks/metadata_cleaner.py`, `tests/test_metadata_cleaner.py`) and **one
-> hunk**, but the textual smallness is misleading: two semantic traps, both
-> invisible to either suite (1004 on `main`, 1102 on the branch, 1185 merged —
-> all green). **Full analysis + the verified resolution recipe:**
-> `docs/known-issues/evidence-tier-branch-divergence.md` — read it before
-> attempting the merge.
->
-> **A trial merge has been measured** (throwaway branch `merge-trial` @
-> `6e84aa1`; `main` and the evidence-tier branch untouched). It says **merge
-> sooner, not later**: the branch runs the pre-3G cleaner, so today it dies
-> with `AttributeError` on **206 of 319 local bibs** and writes no ledger for
-> them — **5445 entries unattested, 3147 of which the merge attests**. Against
-> that, the 3J abstention costs **17** entries their attestation (43
-> `api_matched` flips; 28 other entries *gain* the gate). The trial resolution
-> passes 1185 tests with cleaner metrics identical to `main`.
->
-> **DECIDED 2026-08-02 (Johannes) — the merge must implement "Option C: attest
-> existence, decline the year."** Cleaner abstention currently records
-> `api_matched: False`, the same ledger fact as "no API record found", even
-> though both abstention paths run *after* an exact DOI match against ≥2 indexed
-> sources. Measured consequence of leaving it: 9 of the 11 distinct affected
-> works fall to `NONE`, i.e. **become uncitable**, for a year disagreement.
-> Rationale, acceptance criteria and the no-majority-rule constraint are in §9
-> of the write-up. Sister-repo instructions (the service has no evidence-tier
-> layer yet, so this is a condition on its pending port item 20):
+> **`hooks/metadata_cleaner.py` remains frozen on `main`** until the branch
+> lands: a main-side cleaner edit would re-open the divergence. Cleaner work
+> goes on the branch (which now carries main's hardening) or waits.
+> Sister-repo instructions for the port (the service has no evidence-tier
+> layer yet, so Option C is a condition on its pending port item 20):
 > `~/Downloads/phillit-abstention-attestation-decision-2026-08-02.md`.
 >
 > **Two things gate the merge, both open:**
