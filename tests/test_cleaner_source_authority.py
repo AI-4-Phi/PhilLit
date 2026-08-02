@@ -8,6 +8,7 @@ sources are surfaced as warnings.
 """
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -23,6 +24,19 @@ from metadata_cleaner import (
     find_api_entry_by_doi,
     find_doi_year_conflicts,
 )
+
+
+
+def assert_no_cleaned_marker(content: str) -> None:
+    """Assert the cleaner wrote no METADATA_CLEANED marker.
+
+    NOT `assert "METADATA_CLEANED" not in content`: pybtex escapes the
+    underscore on write (`METADATA\\_CLEANED`, and `METADATA\\\\_CLEANED` on a
+    second round-trip), so the plain-string form never appears and that
+    assertion can never fail. Match the same backslash-tolerant shape the
+    module's own _MARKER_RE uses.
+    """
+    assert not re.search(r"METADATA\\*_CLEANED", content), content
 
 
 SPARROW_DOI = "10.1111/j.1468-5930.2007.00346.x"
@@ -200,7 +214,7 @@ class TestYearCorrectionAuthority:
         assert result["years_corrected"] == 0
         content = bib_file.read_text(encoding="utf-8")
         assert "2007" in content
-        assert "METADATA_CLEANED" not in content
+        assert_no_cleaned_marker(content)
 
     def test_wrong_bib_year_corrected_from_verify_not_broad_dump(self, tmp_path):
         """When the bib year is genuinely wrong, correction still fires - and
@@ -254,7 +268,7 @@ class TestYearCorrectionAuthority:
         assert result["years_corrected"] == 0
         content = bib_file.read_text(encoding="utf-8")
         assert "2007" in content
-        assert "METADATA_CLEANED" not in content
+        assert_no_cleaned_marker(content)
 
 
 class TestConflictVisibility:
@@ -309,3 +323,63 @@ class TestConflictVisibility:
             "2007": ["verify_3_sparrow2007.json"],
             "2019": ["s2_roff.json"],
         }
+
+
+def test_assert_no_cleaned_marker_actually_catches_a_written_marker(tmp_path):
+    """Guard the guard: pin that the escaped form pybtex really writes DOES
+    trip the helper, so the two assertions above cannot go vacuous again."""
+    json_dir = make_json_dir(tmp_path, {"s2_roff.json": S2_DUMP})
+    bib_file = tmp_path / "test.bib"
+    # `number` is absent from every pooled record -> removed -> marker written.
+    bib_file.write_text(
+        "@article{sparrow2007,\n"
+        "  author = {Sparrow, Robert},\n"
+        "  title = {Killer Robots},\n"
+        "  journal = {Journal of Applied Philosophy},\n"
+        "  year = {2007},\n"
+        "  number = {1},\n"
+        f"  doi = {{{SPARROW_DOI}}}\n"
+        "}", encoding="utf-8")
+
+    result = clean_bibtex(bib_file, json_dir)
+    assert result["total_fields_removed"] >= 1
+
+    content = bib_file.read_text(encoding="utf-8")
+    assert "METADATA_CLEANED" not in content       # the OLD, vacuous assertion still "passes"
+    with pytest.raises(AssertionError):            # ...while the real one fails, as it must
+        assert_no_cleaned_marker(content)
+
+
+class TestTypeDowngradeDoiGuard:
+    """K1: `_plan_type_downgrade` compared DOIs without a non-empty guard, so
+    two MALFORMED dois (both normalizing to "") read as a verified match and
+    suppressed the demotion of an @article that had just lost its `journal`."""
+
+    def _case(self, tmp_path, bib_doi, api_doi):
+        json_dir = make_json_dir(tmp_path, {"s2.json": {
+            "source": "semantic_scholar",
+            "results": [{"title": "A Paper", "year": 2020, "doi": api_doi,
+                         "journal": {"name": "Real Journal"}}]}})
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(
+            "@article{k, author = {A, B}, title = {A Paper}, year = {2020}, "
+            "journal = {Fake Journal}, doi = {%s}}" % bib_doi, encoding="utf-8")
+        result = clean_bibtex(bib_file, json_dir)
+        return result, bib_file.read_text(encoding="utf-8").lower()
+
+    def test_malformed_dois_do_not_count_as_verified(self, tmp_path):
+        from metadata_cleaner import normalize_doi
+        assert normalize_doi("doi:") == normalize_doi("https://doi.org/") == ""
+        result, text = self._case(tmp_path, "doi:", "https://doi.org/")
+        assert result["types_downgraded"] == 1
+        assert "@misc" in text
+
+    def test_differing_real_dois_still_demote(self, tmp_path):
+        result, text = self._case(tmp_path, "10.1/real", "10.2/other")
+        assert result["types_downgraded"] == 1
+        assert "@misc" in text
+
+    def test_matching_real_doi_still_blocks_the_demotion(self, tmp_path):
+        result, text = self._case(tmp_path, "10.1/same", "10.1/same")
+        assert result["types_downgraded"] == 0
+        assert "@article" in text

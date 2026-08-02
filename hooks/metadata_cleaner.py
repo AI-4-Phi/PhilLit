@@ -643,7 +643,14 @@ def _plan_type_downgrade(entry, surviving_fields: set, api_entry: dict) -> Optio
     demoted when it retains a DOI matching its own API record - a verified DOI
     proves the work is identifiable and @article degrades cleanly to
     author/year/title. Container types keep the existing demotion (their
-    formatter's dangling 'In.' is suppressed downstream)."""
+    formatter's dangling 'In.' is suppressed downstream).
+
+    The DOI comparison goes through `_field_matches_api`, NOT a local
+    `normalize_doi(a) == normalize_doi(b)`: normalize_doi maps `doi:`,
+    `https://doi.org/` and `"  "` all to `""`, so a raw equality test reads
+    two MALFORMED DOIs as a verified match and suppresses a demotion that
+    should happen. `_field_matches_api` already carries the `bool(nv)`
+    non-empty guard every other comparison site uses."""
     entry_type = entry.type.lower()
     if entry_type not in REQUIRED_FIELDS:
         return None
@@ -651,8 +658,8 @@ def _plan_type_downgrade(entry, surviving_fields: set, api_entry: dict) -> Optio
         return None
     if entry_type == 'article':
         doi_value = entry.fields.get('doi')
-        if ('doi' in surviving_fields and doi_value and api_entry.get('doi')
-                and normalize_doi(doi_value) == normalize_doi(api_entry['doi'])):
+        if ('doi' in surviving_fields and doi_value
+                and _field_matches_api('doi', doi_value, api_entry)):
             return None
     return (entry.type, 'misc')
 
