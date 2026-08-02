@@ -1206,3 +1206,47 @@ class TestPerFileIsolation:
         payload = json.loads(proc.stdout)
         assert payload["success"] is False
         assert any("unexpected" in e for e in payload["errors"])
+
+
+class TestLoadFailuresOutsideJSONDecodeError:
+    """3G made the parser dispatch fail-soft per file, but the LOAD step still
+    named only JSONDecodeError. json.loads can raise a plain ValueError
+    (integer digit limit) or RecursionError (deep nesting) - neither is a
+    JSONDecodeError, so one such file killed the whole index build, which is
+    exactly the 3G failure class one layer up. Found by kimi-k3/gpt-5.6-sol
+    reviewing the dormant validator, then reproduced HERE, in the live
+    destructive path."""
+
+    def _dir(self, tmp_path, bad_name, bad_text):
+        import json as _json
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / bad_name).write_text(bad_text, encoding="utf-8")
+        (json_dir / "s2_ok.json").write_text(_json.dumps({
+            "source": "semantic_scholar",
+            "results": [{"title": "T", "year": 2007}],
+        }), encoding="utf-8")
+        return json_dir
+
+    def test_oversized_integer_is_skipped_not_fatal(self, tmp_path):
+        from metadata_cleaner import build_metadata_index
+
+        json_dir = self._dir(
+            tmp_path, "a_huge.json",
+            '{"results":[{"year":' + "9" * 5000 + "}]}")
+
+        index = build_metadata_index(json_dir)
+
+        assert "a_huge.json" in index.skipped_files
+        assert index.entries          # the good file still indexed
+
+    def test_deeply_nested_json_is_skipped_not_fatal(self, tmp_path):
+        from metadata_cleaner import build_metadata_index
+
+        json_dir = self._dir(
+            tmp_path, "a_deep.json", "[" * 200000 + "]" * 200000)
+
+        index = build_metadata_index(json_dir)
+
+        assert "a_deep.json" in index.skipped_files
+        assert index.entries

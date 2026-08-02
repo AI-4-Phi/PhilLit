@@ -539,6 +539,16 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
                     index.skipped_files.append(json_file.name)
                     continue
                 index.salvaged_files.append(json_file.name)
+            except Exception:   # noqa: BLE001 - per-file fail-soft
+                # json.loads can also raise a plain ValueError (integer digit
+                # limit) or RecursionError (deep nesting). Neither is a
+                # JSONDecodeError, so before this they escaped and killed the
+                # whole index - the 3G failure class one layer up, in the
+                # live destructive path. Salvage is pointless for these
+                # (the text parsed as JSON, it is the VALUE that is refused),
+                # so skip the file.
+                index.skipped_files.append(json_file.name)
+                continue
 
             # Not an API envelope at all (e.g. a researcher's own top-level
             # list, as in final_selection.json) — nothing to index.
@@ -793,7 +803,11 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex) -> Optional[dict]:
                 # Every scoped record is yearless: none of them can say which
                 # of two disagreeing broad years is right, so fall through to
                 # the pooled-conflict check rather than granting authority.
-            # No authority, and the pooled sources disagree: there is no basis
+            # Reached either with no entry-scoped record at all, OR with a
+            # yearless one that cannot settle a year disagreement. Do NOT
+            # re-gate this on entry_scoped: that is exactly the hole the
+            # yearless fall-through above was added to close.
+            # The pooled sources disagree: there is no basis
             # to prefer either record, so abstain. Return None WITHOUT falling
             # through to the title+year heuristic below - when the bib's own
             # year already equals the bad value (common, since an earlier run
