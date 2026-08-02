@@ -5,6 +5,24 @@ bibliography: flags citations whose entry carries no evidence-tier stamp,
 citations of EVIDENCE-NONE entries, and reporting-verb sentences attached to
 low-trust tiers (EXISTENCE, NONE, or unstamped). This is telemetry only --
 it always exits 0 (except on usage error) and never blocks anything.
+
+Known flag/miss shapes for the human adjudicating the output (all observed
+live, 2026-07-28 A/B run + 2026-08-02 gate-(b) validation run):
+
+- Same-surname-same-year collisions: the checker matches surname+year only,
+  so prose citing an ABSTRACT-tier sibling (Knuuttila 2005 mediation vs.
+  2005 artefacts thesis; Knuuttila & Boon 2011 vs. Knuuttila 2011) flags the
+  low-tier twin. Resolve against the full citation in prose / entry titles
+  before calling it a violation (ROADMAP items 3E/3F own the underlying
+  defect).
+- Self-reference FPs: "as argued in the section on X" trips the verb match
+  whenever a low-tier surname/year sits within the window.
+- Matches inside References-entry TITLES: a cited work whose title names
+  another work ("A Critical Assessment of Levins's ... (1966)") reads as a
+  prose cite of the named work.
+- Editor-only entries are INVISIBLE: rc_surname reads the author field, so
+  an entry with only `editor` gets no surname and is skipped entirely --
+  neither its violations nor its none-cites can ever be flagged.
 """
 from __future__ import annotations
 
