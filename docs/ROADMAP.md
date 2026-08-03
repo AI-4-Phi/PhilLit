@@ -6,86 +6,41 @@ line); forward-looking design sketches live in `docs/ideas/`. This file
 exists so open work has a single place to be listed — it was created
 2026-07-24 alongside the bib-pipeline item below.
 
-## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (BUILT + A/B'd HERE, unmerged; dual-repo)
+## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (MERGED here, v0.3.0; service port pending — dual-repo)
 
-> **Status 2026-08-02 (post-merge; supersedes all earlier figures) — read
-> this before starting anything.** The build is DONE on branch
-> **`worktree-evidence-tier`** (worktree at `.claude/worktrees/evidence-tier`,
-> tip = the catch-up merge of `main` + Option C (`ee5f12c`+`9842f2d`) plus
-> follow-up commits, unmerged into
-> `main` and unpushed). All 11 plan tasks executed; **unit suite 1192 green**
-> (2026-08-02, post-merge). The free Sonnet two-arm A/B has run ("What are
-> data?"), and Johannes adjudicated **three of the four rubric items** on
-> 2026-07-28. Provisional outcome cell: **"Works. Proceed."**
+> **Status 2026-08-02, end of day: MERGED TO `main` (`f89f4de`) and RELEASED
+> as plugin v0.3.0.** Both merge gates closed the same day: **(b)** the
+> writer-guidance validation run PASSED (fresh headless Sonnet run on the
+> branch, "Scientific representation and models in science": CONTEXT
+> in-prose attribution **11/11** sentences vs the 1/4 pre-edit baseline;
+> violation sentences **2/28** low-tier entries vs 7/27; Option C
+> live-validated — 3 abstentions attested, none demoted; run workspace
+> `~/phillit-ab/gateb-validation-20260802` kept); **(c)** the blind
+> coherence read — Johannes recorded his verdict before the mapping was
+> unsealed and PREFERRED the treatment arm "by a clear margin but not
+> overwhelmingly" (better structure, focus, and coverage; control ahead
+> only on prose style). **Final pre-registered outcome cell: "Works.
+> Proceed." — all four rubric items adjudicated.** Full records: the A/B
+> results doc (gitignored, see worktree warning below) and
+> `docs/known-issues/evidence-tier-branch-divergence.md` §10 (the earlier
+> catch-up merge + Option C acceptance). The `metadata_cleaner.py` freeze
+> on `main` is LIFTED — `main` is the single line again.
 >
-> **DIVERGENCE RESOLVED 2026-08-02 — catch-up merge landed on the branch.**
-> `main` (fa6cde4, the 3G-3K cleaner hardening) was merged into the branch as
-> `ee5f12c` using the resolution verified on the `merge-trial` throwaway
-> (warning stays hoisted above the match check — 3J(c) preserved; the
-> branch's ledger writes re-inserted additively). **Option C ("attest
-> existence, decline the year"; Johannes's decision, write-up §9) is
-> implemented on top as `9842f2d`**: `find_api_entry_for_bib_entry` returns a
-> falsy `CleaningAbstention` on its two abstention paths, and the ledger
-> records `api_matched: True` + the normalized DOI + an additive
-> `cleaning_abstained` reason, while cleaning behaviour is byte-identical to
-> no-match. Acceptance measured over all 319 local bibs: **cleaner metrics
-> identical to `main`** (matched 6611, planned fields removed 2668, breaker
-> trips 86, years corrected 0, 0 crashes), ledger diff = **106 abstention
-> flips and nothing else** (all `pooled_year_conflict`), EXISTENCE gate
-> **+56 regained, 0 lost** (incl. every §9-named work), corpora untouched.
-> Suite: **1192 green**. Analysis + resolution record:
-> `docs/known-issues/evidence-tier-branch-divergence.md`.
+> **DO NOT REMOVE THE `evidence-tier` WORKTREE** (branch
+> `worktree-evidence-tier`, fully merged): `docs/superpowers/` is gitignored,
+> so the A/B results + adjudication record exist ONLY inside that worktree,
+> at `docs/superpowers/plans/2026-07-25-evidence-tier-ab-results.md` (a
+> synced copy sits in the main checkout's gitignored `docs/superpowers/`).
+> Johannes decided on 2026-07-28 to leave them untracked — that decision is
+> made, don't re-raise it.
 >
-> **`hooks/metadata_cleaner.py` remains frozen on `main`** until the branch
-> lands: a main-side cleaner edit would re-open the divergence. Cleaner work
-> goes on the branch (which now carries main's hardening) or waits.
-> Sister-repo instructions for the port (the service has no evidence-tier
-> layer yet, so Option C is a condition on its pending port item 20):
+> **What remains of this item: the service port** (service roadmap item 20,
+> currently queued behind its item-25 repo audit). The port-scope list lives
+> there and must survive the port: the widened `check_evidence._VERB_RE`,
+> the SEP `–––` repeated-author resolution in `resolve_context`, and Option
+> C abstention attestation. Sister-repo instructions:
 > `docs/known-issues/phillit-abstention-attestation-decision-2026-08-02.md`
-> (local-only; original in ~/Downloads).
->
-> **THE MERGE IS UNGATED (2026-08-02): both gates closed the same day.**
-> **(b) writer-guidance follow-ups — CLOSED, PASSED 2026-08-02.** The b2
-> prompt edits (built 2026-08-01) were validated with a live headless Sonnet
-> run on the branch ("Scientific representation and models in science",
-> workspace `~/phillit-ab/gateb-validation-20260802`, kept): CONTEXT
-> in-prose attribution **11 of 11 sentences** (pre-edit baseline: 1 of 4);
-> violation sentences **2/28** low-tier entries (baseline: 7/27), both mild;
-> 4 exemplary title-derivable EXISTENCE uses. Option C live-validated in the
-> same run (3 abstentions attested, refusal visible, none demoted). Full
-> adjudication: A/B results doc, "Gate (b) validation run" section. The
-> sanitize-time stripping candidate is **CLOSED — REJECTED** (Johannes,
-> 2026-08-02: it would have suppressed 7 correct abstracts; self-heal +
-> prefilled attestation + anti-re-emission guidance address the real
-> mechanism). Side finding: the run hand-confirmed item 3E live — the
-> orchestrator removed 6 phantom References entries from the surname+year
-> matcher unprompted.
-> **(c) blind holistic coherence comparison — CLOSED, PASSED 2026-08-02.**
-> Johannes recorded his verdict blind (mapping unsealed only after): clear
-> preference for the TREATMENT arm "by a clear margin but not
-> overwhelmingly" — better structure (the given/taken dividing lines vs.
-> control anchoring on Floridi), better focus and coverage (e.g. Tal);
-> control ahead only on prose style; both trustworthy, no overstated
-> claims. **Final outcome cell: "Works. Proceed." — CONFIRMED**, all four
-> rubric items adjudicated. Arms archived at
-> `~/phillit-ab/archives/{control,treatment}-*-20260725.tar.gz`.
-> **Next: land the branch on `main`, bump the plugin version, port to the
-> service (its item 20).**
->
-> **DO NOT REMOVE THE `evidence-tier` WORKTREE.** `docs/superpowers/` is
-> gitignored here, so the A/B results + adjudication record exist ONLY inside
-> that worktree, at
-> `docs/superpowers/plans/2026-07-25-evidence-tier-ab-results.md`. Johannes
-> decided on 2026-07-28 to leave them untracked (sole developer, one machine,
-> daily backups) — that decision is made, don't re-raise it.
->
-> **Two post-A/B fixes on the branch must survive the downstream port** — a
-> merge conflict resolved against the old 11-verb regex silently reverts the
-> first: `6ee2566` (widened `check_evidence._VERB_RE`; violation-sentence
-> recall 2/7 → 6/7, precision 33% → 47%) and `f9e3fda` (SEP `–––`
-> repeated-author resolution in `resolve_context`, which had cost Leonelli
-> 2016 its CONTEXT tier). Sister-repo status: `phillit-service`
-> `docs/roadmap.md` item 20 + its `HANDOVER.md` top entry.
+> (local-only).
 
 The agreed next build (Johannes, 2026-07-24). The `INCOMPLETE` exclusion is
 unfollowable and fails in both directions — Claude cites excluded canon
@@ -310,8 +265,7 @@ failure modes, and why the fix cannot live in Phase 6).
 
 The pipeline identifies a work in prose by *first-author surname within 60
 characters of a 4-digit year* — `find_cited_entries` and
-`check_evidence.find_cites` (the latter on the `worktree-evidence-tier`
-branch), both on `_MATCH_WINDOW = 60`. Nothing
+`check_evidence.find_cites`, both on `_MATCH_WINDOW = 60`. Nothing
 distinguishes two works sharing that pair, and no stage assigns Chicago
 `2019a`/`2019b` suffixes. Two defects are visible in delivered output:
 
@@ -354,7 +308,7 @@ so a listed work is confirmed uncited.
   suffixes. The information is lost at write time, so suffixes must be
   assigned on the merged bib *before* Phase 5, into a dedicated field —
   **not** `year`, whose `\d{4}` guards in `check_evidence.py` and
-  `resolve_context.py` (both branch-side) would reject `2019a`. Touches `conventions.md` and
+  `resolve_context.py` would reject `2019a`. Touches `conventions.md` and
   `agents/synthesis-writer.md`, so it needs a live headless run to confirm
   writer compliance before the port.
 

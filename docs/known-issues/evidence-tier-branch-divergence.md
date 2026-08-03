@@ -353,6 +353,13 @@ are returns, not crashes, and are not merge-related.
 landing the branch on `main`, not this catch-up merge. The
 `metadata_cleaner.py` freeze on `main` stays until the branch lands.
 
+**LANDED (same day, 2026-08-02 evening):** both gates closed — (b) via a
+live validation run (PASSED), (c) via Johannes's blind read (treatment
+PREFERRED) — and the branch merged to `main` as `f89f4de`, released as
+plugin **v0.3.0**. The freeze is lifted; `main` is the single line again.
+This document is now wholly historical. §0's branch-only path caveat no
+longer applies: every cited file exists on `main`.
+
 ## Related
 
 - `docs/ROADMAP.md` item 1 (status block) and item 3 G/J (what `main` changed).
