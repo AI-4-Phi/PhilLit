@@ -380,6 +380,15 @@ and can be spuriously *included* in References. Fixing it would remove entries
 from References that ship today, so it was left out of a refactor. **Candidate
 follow-up item.**
 
+**Third candidate, surfaced by this work's test fixture but pre-existing:**
+`generate_bibliography._format_doi` renders the RAW `doi` field, never the
+normalized one, so a bib entry carrying `doi = {doi:10.1000/x}` emits the
+broken hyperlink `https://doi.org/doi:10.1000/x` into the delivered
+References. Confirmed to pre-date item 4 by reproducing it on stashed
+(pre-change) code. It is a rendering defect rather than an identity one, so it
+was out of scope here; the one-line fix is to route `_format_doi` through
+`bib_identity.normalize_doi`.
+
 Historical record follows.
 
 **Opened 2026-08-02**, after `metadata_validator.py` was deleted for being a
