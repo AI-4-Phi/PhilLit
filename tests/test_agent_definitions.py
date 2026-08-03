@@ -48,3 +48,65 @@ def test_researcher_teaches_verify_paper_output_convention():
         "researcher agent must explicitly instruct never to redirect "
         "verify_paper.py output (e.g. `> f.json 2>&1`) instead of using --output"
     )
+
+
+def test_researcher_forbids_post_enrichment_reemission():
+    """A/B root cause 2 (2026-07-25): researchers re-emit the whole bib
+    after enrichment, silently mutating hash-attested abstracts. The
+    guidance must freeze the file, name the Write AND the Bash-workaround
+    paths, and give the surgical-Edit alternative."""
+    path = REPO_ROOT / "agents" / "domain-literature-researcher.md"
+    text = path.read_text(encoding="utf-8")
+    assert "FROZEN after enrichment" in text
+    assert "Never `Write` the whole bib file again" in text
+    assert "Bash file operations" in text
+    assert "surgical" in text.lower()
+
+
+def test_researcher_has_edit_tool_and_guidance():
+    """Critical finding from reviewer (2026-08-01): researchers need Edit
+    for surgical changes to .bib files after enrichment. The tool must be
+    listed in frontmatter and guidance must replace the stale "Edit is NOT
+    available" note with new guidance about post-edit validation."""
+    path = REPO_ROOT / "agents" / "domain-literature-researcher.md"
+    text = path.read_text(encoding="utf-8")
+
+    # Extract frontmatter
+    lines = text.split("\n")
+    tools_line = None
+    for line in lines:
+        if line.startswith("tools:"):
+            tools_line = line
+            break
+
+    assert tools_line is not None, "could not find 'tools:' line in frontmatter"
+    assert "Edit" in tools_line, "Edit tool must be in the frontmatter tools list"
+
+    # Verify stale guidance is gone
+    assert "The Edit tool is NOT available to you" not in text, (
+        "stale guidance asserting Edit is unavailable must be removed"
+    )
+
+    # Verify new guidance is present
+    assert "Prefer `Edit` for targeted changes" in text or "Edit` to a `.bib`" in text, (
+        "new guidance about Edit post-edit validation must be present"
+    )
+
+
+def test_writer_tier_rules_carry_b2_edits():
+    """Adjudication 2026-07-28 + decision b2 2026-08-01: CONTEXT
+    attribution was followed 1 of 4 times, and EXISTENCE-tier
+    over-characterization needed a title-derivable clarifier plus
+    calibration examples from the adjudicated run."""
+    path = REPO_ROOT / "agents" / "synthesis-writer.md"
+    text = path.read_text(encoding="utf-8")
+    assert "title-derivable" in text
+    assert "every sentence" in text.lower()
+    assert "Calibration examples" in text
+    assert "Sequoiah-Grayson" in text          # CONTEXT exemplar present
+    assert "announces, in its very title" in text  # EXISTENCE exemplar present
+    assert "data creators" in text             # negative exemplar present
+
+    planner_path = REPO_ROOT / "agents" / "synthesis-planner.md"
+    planner_text = planner_path.read_text(encoding="utf-8")
+    assert "title-derivable" in planner_text   # mirrors the writer's carve-out

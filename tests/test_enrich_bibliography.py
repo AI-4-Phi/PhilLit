@@ -9,6 +9,7 @@ Tests cover:
 - Batch processing
 """
 
+import json
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
@@ -51,6 +52,17 @@ SAMPLE_ENTRY_INCOMPLETE = """@article{test2020paper,
 SAMPLE_COMMENT = """@comment{
   DOMAIN: Testing Domain
   NOTABLE_GAPS: None identified
+}"""
+
+# A @book entry with no abstract and High importance: after the main pass
+# marks it INCOMPLETE (resolve_abstract_for_entry finds nothing), it is a
+# candidate for the NDPR enrichment pass.
+SAMPLE_BOOK_INCOMPLETE_HIGH = """@book{parfit1984reasons,
+  author = {Parfit, Derek},
+  title = {Reasons and Persons},
+  publisher = {Oxford University Press},
+  year = {1984},
+  keywords = {personal-identity, ethics, High},
 }"""
 
 
@@ -259,6 +271,58 @@ class TestEntryModification:
 
         # Should only have one INCOMPLETE
         assert result.count('INCOMPLETE') == 1
+
+    def test_add_keyword_to_entry_quoted_preserves_existing_tokens(self):
+        """Quote-delimited keywords field: appending must preserve every
+        existing token (topic tags + importance level), not replace them.
+
+        Regression (reviewer-reproduced): the field-existence check only
+        matched brace-delimited `keywords = {...}`. A quote-delimited
+        field fell through to add_field_to_entry, which REPLACES a field
+        wholesale on a hit -- silently destroying all existing tokens and
+        leaving only the newly added keyword.
+        """
+        import enrich_bibliography
+
+        entry_quoted_keywords = """@article{test,
+  author = {Test},
+  title = {Test},
+  year = {2020},
+  keywords = "topic-tag, position-tag, High",
+}"""
+
+        result = enrich_bibliography.add_keyword_to_entry(
+            entry_quoted_keywords,
+            'INCOMPLETE'
+        )
+
+        assert 'topic-tag' in result
+        assert 'position-tag' in result
+        assert 'High' in result
+        assert 'INCOMPLETE' in result
+        assert result.lower().count('keywords') == 1
+
+    def test_remove_keyword_from_entry_quoted_preserves_other_tokens(self):
+        """Symmetric fix on the remove path: a quote-delimited keywords
+        field must lose only the target keyword, keeping the rest."""
+        import enrich_bibliography
+
+        entry_quoted_keywords = """@article{test,
+  author = {Test},
+  title = {Test},
+  year = {2020},
+  keywords = "topic-tag, position-tag, INCOMPLETE",
+}"""
+
+        result = enrich_bibliography.remove_keyword_from_entry(
+            entry_quoted_keywords,
+            'INCOMPLETE'
+        )
+
+        assert 'INCOMPLETE' not in result
+        assert 'topic-tag' in result
+        assert 'position-tag' in result
+        assert result.lower().count('keywords') == 1
 
 
 # =============================================================================
@@ -520,3 +584,482 @@ class TestStats:
         assert stats['sources']['s2'] == 1
         assert stats['sources']['openalex'] == 1
         assert stats['sources']['core'] == 1
+
+
+# =============================================================================
+# Enrichment Ledger Tests (evidence-tier: attests source + hash of the
+# abstract this script itself wrote, so the barrier can tell a
+# ledger-attested abstract from a hand-written/fabricated one).
+# =============================================================================
+
+class TestEnrichmentLedger:
+    """Tests for the enrichment ledger written to
+    <bib_dir>/intermediate_files/json/enrichment_ledger-<bib_stem>.json.
+
+    Sibling of the cleaning ledger (hooks/metadata_cleaner.py): written on
+    every parse-successful run (empty entries is valid), merged with any
+    prior ledger (new writes win per key, stale keys pruned), skipped only
+    when stats['validation_failed'] is True.
+    """
+
+    def _ledger_path(self, tmp_path, stem="test"):
+        return tmp_path / "intermediate_files" / "json" / f"enrichment_ledger-{stem}.json"
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_ledger_records_source_and_hash(self, mock_resolve, tmp_path):
+        """API-source enrichment site (~line 386) must record the exact
+        abstract text and source it wrote."""
+        import enrich_bibliography
+        import stamp_evidence
+        mock_resolve.return_value = ("A found abstract text.", "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        assert ledger["schema_version"] == 1
+        assert ledger["bib_file"] == "test.bib"
+        ent = ledger["entries"]["frankfurt1971freedom"]
+        assert ent["abstract_source"] == "s2"
+        assert ent["abstract_sha256"] == stamp_evidence.abstract_hash("A found abstract text.")
+
+    @patch("enrich_bibliography.resolve_ndpr_abstract")
+    def test_ledger_records_ndpr_source_and_hash(self, mock_ndpr, tmp_path):
+        """NDPR enrichment site (~line 492) must also record its write."""
+        import enrich_bibliography
+        import stamp_evidence
+        mock_ndpr.return_value = ("Summary of the book from NDPR review.", "ndpr")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_BOOK_INCOMPLETE_HIGH, encoding="utf-8")
+
+        with patch("enrich_bibliography.resolve_abstract_for_entry", return_value=(None, None)):
+            enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        ent = ledger["entries"]["parfit1984reasons"]
+        assert ent["abstract_source"] == "ndpr"
+        assert ent["abstract_sha256"] == stamp_evidence.abstract_hash(
+            "Summary of the book from NDPR review."
+        )
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_rerun_on_enriched_file_preserves_ledger(self, mock_resolve, tmp_path):
+        """Second run skips has_abstract entries; ledger must NOT be
+        clobbered back to empty."""
+        import enrich_bibliography
+        mock_resolve.return_value = ("A found abstract text.", "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)  # no-op pass
+
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        assert "frankfurt1971freedom" in ledger["entries"]
+
+    def test_stale_keys_pruned(self, tmp_path, monkeypatch):
+        """Keys no longer present in the bib are dropped from the ledger."""
+        import enrich_bibliography
+        # This entry now hits the pre-filled-attestation path (Task 2) --
+        # keep this test about pruning only, not attestation, so no network.
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_text(json.dumps({
+            "schema_version": 1, "bib_file": "test.bib",
+            "entries": {"gone2000": {"abstract_source": "s2", "abstract_sha256": "x"}},
+        }), encoding="utf-8")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert "gone2000" not in ledger["entries"]
+
+    def test_json_list_typed_ledger_recovers_instead_of_crashing(self, tmp_path, monkeypatch):
+        """Finding 3: a malformed on-disk ledger whose top-level JSON parses
+        but isn't a dict (e.g. a bare list) must fall back to an empty
+        ledger, not raise AttributeError past the (JSONDecodeError, OSError)
+        except clause."""
+        import enrich_bibliography
+        # Pre-filled-attestation path (Task 2) would otherwise hit the API;
+        # this test is about the malformed-ledger guard, not attestation.
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_text(
+            json.dumps(["not", "a", "dict"]), encoding="utf-8")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        # Must not raise.
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert ledger["entries"] == {}
+
+    def test_dict_ledger_with_non_dict_entries_recovers(self, tmp_path, monkeypatch):
+        """Same guard, other malformed shape: top-level dict but 'entries'
+        itself isn't a dict."""
+        import enrich_bibliography
+        # Pre-filled-attestation path (Task 2) would otherwise hit the API;
+        # this test is about the malformed-ledger guard, not attestation.
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_text(json.dumps({
+            "schema_version": 1, "bib_file": "test.bib",
+            "entries": ["not", "a", "dict"],
+        }), encoding="utf-8")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert ledger["entries"] == {}
+
+    def test_researcher_written_abstract_not_attested(self, tmp_path, monkeypatch):
+        """Entry already has an abstract; the API confirms nothing (no
+        network in this unit test) -> pre-filled attestation (Task 2) is a
+        no-op -> ledger is still written (always-write) but contains no
+        entry for it, and the entry text passes through unchanged."""
+        import enrich_bibliography
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        assert bib.read_text(encoding="utf-8").strip() == SAMPLE_ENTRY_WITH_ABSTRACT.strip()
+        p = self._ledger_path(tmp_path)
+        assert p.exists()
+        assert json.loads(p.read_text(encoding="utf-8"))["entries"] == {}
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_ledger_skipped_on_validation_failure(self, mock_resolve, tmp_path):
+        """No ledger write (and no clobber of an existing one) when the bib
+        write itself was aborted by pybtex validation."""
+        import enrich_bibliography
+        mock_resolve.return_value = ("Abstract text", "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        with patch("pybtex.database.parse_file", side_effect=Exception("Invalid BibTeX")):
+            stats = enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        assert stats.get("validation_failed") is True
+        assert not self._ledger_path(tmp_path).exists()
+
+    def test_undecodable_ledger_file_does_not_crash_enrichment(self, tmp_path, monkeypatch):
+        """_update_enrichment_ledger's read guard must be as wide as
+        _load_prior_ledger's: an undecodable (invalid-UTF-8) ledger file
+        raises UnicodeDecodeError, which the narrower
+        `except (json.JSONDecodeError, OSError)` clause does not catch --
+        crashing enrichment AFTER the bib write already happened. The run
+        must complete and rewrite the ledger cleanly instead."""
+        import enrich_bibliography
+        monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                            lambda *a, **k: (None, None))
+
+        ledger_dir = tmp_path / "intermediate_files" / "json"
+        ledger_dir.mkdir(parents=True)
+        (ledger_dir / "enrichment_ledger-test.json").write_bytes(
+            b'\xff\xfe\x00invalid utf-8 \x80\x81')
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_WITH_ABSTRACT, encoding="utf-8")
+
+        # Must not raise.
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        ledger = json.loads((ledger_dir / "enrichment_ledger-test.json").read_text(encoding="utf-8"))
+        assert ledger["entries"] == {}
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    def test_ledger_hash_survives_pybtex_roundtrip(self, mock_resolve, tmp_path):
+        """The attestation must still verify after the SubagentStop cleaner
+        rewrites the file via pybtex Writer (reflow/escaping)."""
+        import enrich_bibliography
+        import stamp_evidence
+        from pybtex.database import parse_file
+        from pybtex.database.output.bibtex import Writer
+
+        abstract = "An abstract with special chars: 5% & #2, A_B."
+        mock_resolve.return_value = (abstract, "s2")
+
+        bib = tmp_path / "test.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding="utf-8")
+
+        enrich_bibliography.enrich_bibliography(bib, None, None, None, None)
+
+        data = parse_file(str(bib), bib_format="bibtex")
+        with open(bib, "w", encoding="utf-8") as f:
+            Writer().write_file(data, f)
+
+        roundtripped = stamp_evidence.parse_entry_fields(bib.read_text(encoding="utf-8"))
+        ledger = json.loads(self._ledger_path(tmp_path).read_text(encoding="utf-8"))
+        ent = ledger["entries"]["frankfurt1971freedom"]
+        assert stamp_evidence.attest_abstract(roundtripped, ent) is True
+
+
+def test_add_field_replaces_quoted_value():
+    """pybtex round-trips write quoted fields; replace must not duplicate."""
+    import enrich_bibliography
+
+    entry = ('@article{k1,\n'
+             '    author = "McAllister, James W.",\n'
+             '    abstract_source = "semantic\\_scholar",\n'
+             '    title = "T"\n'
+             '}')
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract_source', 's2')
+    assert out.lower().count('abstract_source') == 1
+    assert 'abstract_source = {s2}' in out
+    assert 'semantic' not in out
+
+
+def test_add_field_replace_is_backslash_safe():
+    r"""Abstracts carry LaTeX; a template re.sub would eat \1 or \g."""
+    import enrich_bibliography
+
+    entry = '@article{k1,\n  abstract = {old text},\n  title = {T}\n}'
+    value = r'uses \textit{emphasis} and a literal \1 sequence'
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', value)
+    assert value in out
+
+
+def test_add_field_replaces_braced_value_with_nested_braces():
+    import enrich_bibliography
+
+    entry = '@article{k1,\n  abstract = {outer {nested} text},\n  title = {T}\n}'
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', 'replaced')
+    assert 'abstract = {replaced}' in out
+    assert 'nested' not in out
+
+
+def test_add_field_replaces_two_level_nested_braced_value():
+    """Review finding 1 (Task 4): a value nested TWO levels deep -- e.g. a
+    LaTeX emphasis command wrapping a further-nested phrase -- fails the
+    old one-level-tolerant regex outright, falling through to the insert
+    branch and leaving the stale field behind (a duplicate `abstract =`
+    pybtex rejects). The depth-counting locator must find and replace it
+    whole, regardless of nesting depth."""
+    import enrich_bibliography
+
+    entry = (
+        "@article{k1,\n"
+        "  abstract = {We show {\\it Kant's {a priori}} fails.},\n"
+        "  title = {T}\n"
+        "}"
+    )
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', 'replaced')
+    assert out.count('abstract =') == 1
+    assert 'abstract = {replaced}' in out
+    assert 'Kant' not in out
+    from pybtex.database import parse_string
+    parse_string(out, bib_format='bibtex')  # must not raise (no duplicate field)
+
+
+def test_add_field_replace_all_occurrences_pinned():
+    """Pins existing semantics: re.sub without count replaces EVERY
+    occurrence of the field within the entry text. Callers rely on
+    entry_text being a SINGLE entry (split_entries chunks) -- this test
+    documents that invariant by showing what happens when it's violated."""
+    import enrich_bibliography
+
+    entry = ('@article{k1,\n  abstract = {first},\n  title = {T},\n'
+             '  abstract = {second}\n}')
+    out = enrich_bibliography.add_field_to_entry(entry, 'abstract', 'new')
+    assert out.count('abstract = {new}') == 2
+
+
+# =============================================================================
+# Pre-filled Abstract Attestation Tests (Task 2)
+# =============================================================================
+
+def _prefilled_bib(tmp_path, abstract='Same text here.', source_field='semantic_scholar'):
+    bib = tmp_path / "literature-domain-1.bib"
+    bib.write_text(
+        '@article{k1,\n'
+        '  author = {McAllister, James W.},\n'
+        '  title = {What Do Patterns Tell Us},\n'
+        '  doi = {10.1007/s11229-009-9613-x},\n'
+        f'  abstract = {{{abstract}}},\n'
+        f'  abstract_source = {{{source_field}}},\n'
+        '  keywords = {patterns, Medium}\n'
+        '}\n', encoding='utf-8')
+    return bib
+
+
+def test_prefilled_abstract_attested_on_hash_match(tmp_path, monkeypatch):
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    # Fetched text differs only in whitespace -> abstract_hash-equal.
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Same  text here.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    out = bib.read_text(encoding='utf-8')
+    assert stats['prefilled_attested'] == 1
+    assert stats['prefilled_unverified'] == 0
+    assert stats['already_had_abstract'] == 1
+    assert 'abstract_source = {s2}' in out
+    assert out.lower().count('abstract_source') == 1
+    ledger = json.loads(
+        (tmp_path / "intermediate_files" / "json"
+         / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    rec = ledger['entries']['k1']
+    assert rec['abstract_source'] == 's2'
+    from stamp_evidence import abstract_hash
+    assert rec['abstract_sha256'] == abstract_hash('Same text here.')
+
+
+def test_prefilled_abstract_mismatch_left_unattested(tmp_path, monkeypatch):
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Entirely different abstract text.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    out = bib.read_text(encoding='utf-8')
+    assert stats['prefilled_attested'] == 0
+    assert stats['prefilled_unverified'] == 1
+    assert 'abstract_source = {semantic_scholar}' in out  # untouched
+    ledger = json.loads(
+        (tmp_path / "intermediate_files" / "json"
+         / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    assert ledger['entries'] == {}  # nothing attested
+
+
+def test_prefilled_abstract_fetch_failure_is_noop(tmp_path, monkeypatch):
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    def boom(*a, **k):
+        raise RuntimeError("API down")
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry', boom)
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_unverified'] == 1
+    assert 'abstract = {Same text here.}' in bib.read_text(encoding='utf-8')
+
+
+def test_rerun_skips_already_attested_entries(tmp_path, monkeypatch):
+    """Re-running enrichment on an already-enriched file must cost ZERO
+    API calls for entries whose text the prior ledger already attests
+    (Task 5 guidance tells researchers to re-run after adding entries)."""
+    import enrich_bibliography
+    from stamp_evidence import abstract_hash
+
+    bib = _prefilled_bib(tmp_path, source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": {"abstract_source": "s2",
+                           "abstract_sha256": abstract_hash('Same text here.')}},
+    }), encoding='utf-8')
+    def fail(*a, **k):
+        raise AssertionError("attested entries must not be re-fetched")
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry', fail)
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_attested'] == 1
+    ledger = json.loads(
+        (ij / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    assert ledger['entries']['k1']['abstract_sha256'] == abstract_hash('Same text here.')
+
+
+def test_source_mismatch_falls_through_to_api_check(tmp_path, monkeypatch):
+    """Ledger says openalex, bib field says s2, hash matches: the fast
+    path must NOT fire (field==ledger-source is part of what the barrier
+    checks); the API path runs and re-normalizes the field."""
+    import enrich_bibliography
+    from stamp_evidence import abstract_hash
+
+    bib = _prefilled_bib(tmp_path, source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": {"abstract_source": "openalex",
+                           "abstract_sha256": abstract_hash('Same text here.')}},
+    }), encoding='utf-8')
+    calls = []
+    def resolver(*a, **k):
+        calls.append(1)
+        return ('Same text here.', 'openalex')
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry', resolver)
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert calls, "API check must run on source mismatch"
+    assert stats['prefilled_attested'] == 1
+    assert 'abstract_source = {openalex}' in bib.read_text(encoding='utf-8')
+
+
+def test_drifted_text_keeps_prior_ledger_record(tmp_path, monkeypatch):
+    """Pre-filled text that matches NOTHING (drifted since attestation)
+    stays unattested -- but the PRIOR ledger record must survive the
+    merge, or the barrier's self-heal has nothing to heal toward."""
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path, abstract='Drifted mutated text.',
+                         source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": {"abstract_source": "s2",
+                           "abstract_sha256": "a" * 64}},
+    }), encoding='utf-8')
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('The true original text.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_unverified'] == 1
+    ledger = json.loads(
+        (ij / "enrichment_ledger-literature-domain-1.json").read_text(encoding='utf-8'))
+    assert ledger['entries']['k1']['abstract_sha256'] == "a" * 64  # preserved
+
+
+def test_non_dict_ledger_value_degrades_to_api_check(tmp_path, monkeypatch):
+    """A malformed ledger record (string value) must not crash the run --
+    it degrades to the API path (review finding 1b)."""
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path, source_field='s2')
+    ij = tmp_path / "intermediate_files" / "json"
+    ij.mkdir(parents=True, exist_ok=True)
+    (ij / "enrichment_ledger-literature-domain-1.json").write_text(json.dumps({
+        "schema_version": 1, "bib_file": "literature-domain-1.bib",
+        "entries": {"k1": "garbage"},
+    }), encoding='utf-8')
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Same text here.', 's2'))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_attested'] == 1  # API path attested it
+
+
+def test_resolver_none_source_rejected(tmp_path, monkeypatch):
+    """(text, None) from the resolver must not attest (the `not source`
+    guard) -- a sourceless record would fail attest_abstract anyway."""
+    import enrich_bibliography
+
+    bib = _prefilled_bib(tmp_path)
+    monkeypatch.setattr(enrich_bibliography, 'resolve_abstract_for_entry',
+                        lambda *a, **k: ('Same text here.', None))
+    stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
+    assert stats['prefilled_unverified'] == 1

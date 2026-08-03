@@ -138,7 +138,7 @@ Example: `keywords = {compatibilism, free-will, High}`
 
 The paper's actual abstract. Must come from API sources only (S2, OpenAlex, CORE).
 
-- Populated from API `abstract` field or via `enrich_bibliography.py`
+- Populated ONLY by `enrich_bibliography.py` (Stage 5.5) — researchers never write `abstract` or `abstract_source` by hand; the enrichment ledger attests source and text hash, and unattested abstracts earn no citability tier.
 - Never written by agent from memory
 - If missing from all sources: Omit field, add INCOMPLETE to keywords
 
@@ -157,8 +157,7 @@ Example: `abstract_source = {openalex}`
 Citation context extracted from Stanford Encyclopedia of Philosophy entries.
 Contains how the paper is discussed in authoritative SEP articles.
 
-- Source: `get_sep_context.py` script
-- Use for High importance papers to capture how experts position them
+- Source: the evidence barrier (`evidence_barrier.py`) — sole author. No agent writes these fields; pre-existing values are stripped before acquisition.
 
 Example:
 ```bibtex
@@ -170,18 +169,22 @@ sep_context = {Cited in 'freewill' entry: "Frankfurt (1971) argues that alternat
 Citation context extracted from Internet Encyclopedia of Philosophy entries.
 Similar to sep_context but from IEP.
 
-- Source: `get_iep_context.py` script
+- Source: the evidence barrier (`evidence_barrier.py`) — sole author. No agent writes these fields; pre-existing values are stripped before acquisition.
 
-### INCOMPLETE Keyword Flag
+### Evidence Tiers (EVIDENCE-* keyword)
 
-Added to `keywords` field when entry lacks required content:
-- `INCOMPLETE` — Entry missing abstract
-- `no-abstract` — Specifically missing abstract
+The `EVIDENCE-*` token in `keywords` is the **single authority on citability**, stamped mechanically by the evidence barrier at the Phase 3-to-4 boundary (and re-stamped attestation-aware on dedup merge — the one sanctioned mutation after the barrier; no stage adds content-evidence fields after it):
 
-Entries with INCOMPLETE flag:
-- **REMAIN in BibTeX file** (for transparency, reference manager import)
-- Are **EXCLUDED from literature review synthesis**
-- Should be noted in domain's NOTABLE_GAPS section
+- `EVIDENCE-ABSTRACT` — ledger-attested abstract: characterize/summarize/quote from the sourced abstract text
+- `EVIDENCE-CONTEXT` — barrier-written `sep_context`/`iep_context`: characterize from that description only, attributed in prose
+- `EVIDENCE-EXISTENCE` — identity positively verified (cleaning-ledger API match + surviving identifier): existence and coverage claims only. A cleaner *abstention* (exact DOI match, contradictory year evidence) also attests existence — the ledger records `api_matched: true` plus a `cleaning_abstained` reason, and the refusal stays visible in the evidence report (`cleaning_abstained` list). Abstention never claims the year; cleaning behaviour is identical to no-match.
+- `EVIDENCE-NONE` — no verified evidence: not citable; stays in the `.bib` for transparency
+
+An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed). Canonical keyword order: `topic-tags, Importance, EVIDENCE-*`, with any `METADATA_CLEANED:` marker last. Tier tokens are engine-internal — the delivered `.bib` has them stripped (`sanitize_bib.py`).
+
+### INCOMPLETE Keyword Flag (Phase-3-only artifact)
+
+`INCOMPLETE` / `no-abstract` are added by `enrich_bibliography.py` when no abstract is found. They exist only for Phase 3 reporting (NOTABLE_GAPS): the evidence barrier consumes and strips them when it stamps tiers. No downstream stage may key any decision off `INCOMPLETE`.
 
 ---
 
@@ -243,7 +246,7 @@ This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py
 - `publisher`
 - `doi`
 
-`year` is **corrected**, not removed — and only on entry-scoped evidence: a CrossRef result identified by envelope content (`api_source` is `crossref` AND the file carries exactly one result — the filename is deliberately NOT the test) that matches this entry's own DOI, carries a version-of-record `year_basis` (recorded by `verify_paper.py`; registration/created timestamps never overwrite), and is not contradicted by another entry-scoped record. On any same-DOI year conflict the cleaner abstains from the entry entirely. `author` and `title` are identity fields and are never touched.
+`year` is **corrected**, not removed — and only on entry-scoped evidence: a CrossRef result identified by envelope content (`api_source` is `crossref` AND the file carries exactly one result — the filename is deliberately NOT the test) that matches this entry's own DOI, carries a version-of-record `year_basis` (recorded by `verify_paper.py`; registration/created timestamps never overwrite), and is not contradicted by another entry-scoped record. On any same-DOI year conflict the cleaner abstains from the entry entirely (attesting existence in the cleaning ledger — see Evidence Tiers above). `author` and `title` are identity fields and are never touched.
 
 **Exempt fields** (LLM-generated or enrichment-added, not cleaned — `EXEMPT_FIELDS` in the cleaner):
 - `note` (annotations)
@@ -253,7 +256,7 @@ This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py
 - `abstract`
 - `abstract_source`
 
-`sep_context` / `iep_context` are also never cleaned, but not via this list — they are simply outside `CLEANABLE_FIELDS`, so the cleaner never considers them.
+`sep_context` / `iep_context` are also never cleaned, but not via this list — they are outside `CLEANABLE_FIELDS` and are owned end-to-end by the evidence barrier (see Evidence Tiers above).
 
 **How it works**:
 1. Scans the .bib's own directory AND `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers, CORE) — both feed ONE index, so directory shadowing cannot starve verification

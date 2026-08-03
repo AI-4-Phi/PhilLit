@@ -661,8 +661,8 @@ S2_DUMP_OTHER_YEAR = {
 
 
 class TestConflictedDoiAbstention:
-    def test_conflicted_doi_without_authority_returns_no_match(self, tmp_path):
-        from metadata_cleaner import find_api_entry_for_bib_entry
+    def test_conflicted_doi_without_authority_abstains(self, tmp_path):
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
         from pybtex.database import parse_string
 
         json_dir = make_json_dir(tmp_path, {
@@ -672,13 +672,16 @@ class TestConflictedDoiAbstention:
         index = build_metadata_index(json_dir)
         entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
 
-        assert find_api_entry_for_bib_entry(entry, index) is None
+        out = find_api_entry_for_bib_entry(entry, index)
+
+        assert isinstance(out, CleaningAbstention)
+        assert out.reason == "pooled_year_conflict"
 
     def test_conflicted_doi_is_not_rescued_by_title_year_fallback(self, tmp_path):
         """Abstention must be TERMINAL. With the bib year already equal to the
         bad value, a fall-through would let the weaker signal confirm the
         wrong record - the circular confirmation this exists to prevent."""
-        from metadata_cleaner import find_api_entry_for_bib_entry
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
         from pybtex.database import parse_string
 
         json_dir = make_json_dir(tmp_path, {
@@ -689,7 +692,8 @@ class TestConflictedDoiAbstention:
         entry = parse_string(
             SPARROW_BIB_WITH_BAD_YEAR, "bibtex").entries["sparrow2007"]
 
-        assert find_api_entry_for_bib_entry(entry, index) is None
+        assert isinstance(
+            find_api_entry_for_bib_entry(entry, index), CleaningAbstention)
 
     def test_entry_scoped_record_still_resolves_a_conflict(self, tmp_path):
         from metadata_cleaner import find_api_entry_for_bib_entry
@@ -716,7 +720,9 @@ class TestConflictedDoiAbstention:
         index = build_metadata_index(json_dir)
         entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
 
-        assert find_api_entry_for_bib_entry(entry, index) is not None
+        # A dict, specifically - not merely "not None", which an abstention
+        # would also satisfy under the Option C contract.
+        assert isinstance(find_api_entry_for_bib_entry(entry, index), dict)
 
     def test_conflicted_doi_does_not_strip_a_correct_field(self, tmp_path):
         """The measured harm: today the entry counts as MATCHED, so it is
@@ -769,7 +775,7 @@ class TestDualEntryScopedDisagreement:
     def test_two_disagreeing_verify_records_abstain(self, tmp_path):
         """Filename order must not decide which CrossRef snapshot may rewrite
         the bib year. CrossRef records are mutable across runs."""
-        from metadata_cleaner import find_api_entry_for_bib_entry
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
         from pybtex.database import parse_string
 
         json_dir = make_json_dir(tmp_path, {
@@ -779,7 +785,10 @@ class TestDualEntryScopedDisagreement:
         index = build_metadata_index(json_dir)
         entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
 
-        assert find_api_entry_for_bib_entry(entry, index) is None
+        out = find_api_entry_for_bib_entry(entry, index)
+
+        assert isinstance(out, CleaningAbstention)
+        assert out.reason == "scoped_year_disagreement"
 
     def test_two_agreeing_verify_records_still_resolve(self, tmp_path):
         from metadata_cleaner import find_api_entry_for_bib_entry
@@ -792,7 +801,7 @@ class TestDualEntryScopedDisagreement:
         index = build_metadata_index(json_dir)
         entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
 
-        assert find_api_entry_for_bib_entry(entry, index) is not None
+        assert isinstance(find_api_entry_for_bib_entry(entry, index), dict)
 
     def test_yearless_scoped_record_does_not_shadow_a_year_bearing_one(self, tmp_path):
         """A partial verify_* snapshot sorting first must not suppress the
@@ -828,6 +837,140 @@ class TestDualEntryScopedDisagreement:
         assert result["years_corrected"] == 0
         assert "2007" in bib.read_text(encoding="utf-8")
         assert any("disagree on year" in w for w in result["warnings"])
+
+
+class TestAbstentionAttestsExistence:
+    """Option C (evidence-tier divergence write-up §9): abstention is a
+    year-scoped refusal built on an exact DOI match, so the ledger must
+    attest existence (api_matched: True + the normalized DOI, plus an
+    additive cleaning_abstained reason) - while cleaning behaviour stays
+    identical to no-match: nothing removed, nothing corrected, no marker."""
+
+    def _ledger_entry(self, tmp_path):
+        payload = json.loads(
+            (tmp_path / "intermediate_files" / "json" / "cleaning_ledger-lit.json")
+            .read_text(encoding="utf-8"))
+        return payload["entries"]["sparrow2007"]
+
+    def test_pooled_conflict_returns_abstention_marker(self, tmp_path):
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "s2_a.json": S2_DUMP_CONFLICTING,
+            "s2_b.json": S2_DUMP_OTHER_YEAR,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        out = find_api_entry_for_bib_entry(entry, index)
+
+        assert isinstance(out, CleaningAbstention)
+        assert out.reason == "pooled_year_conflict"
+        assert out.normalized_doi == SPARROW_DOI
+        # Falsy on purpose: for cleaning decisions an abstention behaves
+        # exactly like no-match; only the ledger records the difference.
+        assert not out
+
+    def test_scoped_disagreement_returns_abstention_marker(self, tmp_path):
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
+        from pybtex.database import parse_string
+
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+            "verify_9_sparrow2007.json": VERIFY_RESULT_DISAGREEING,
+        })
+        index = build_metadata_index(json_dir)
+        entry = parse_string(SPARROW_BIB_CORRECT, "bibtex").entries["sparrow2007"]
+
+        out = find_api_entry_for_bib_entry(entry, index)
+
+        assert isinstance(out, CleaningAbstention)
+        assert out.reason == "scoped_year_disagreement"
+        assert out.normalized_doi == SPARROW_DOI
+
+    def test_pooled_conflict_abstention_attests_existence_in_ledger(self, tmp_path):
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+        json_dir = make_json_dir(tmp_path, {
+            "s2_a.json": S2_DUMP_CONFLICTING,
+            "s2_b.json": S2_DUMP_OTHER_YEAR,
+        })
+
+        result = clean_bibtex(bib, json_dir)
+
+        ent = self._ledger_entry(tmp_path)
+        assert ent["api_matched"] is True
+        assert ent["verified_identifier"] == "doi"
+        assert ent["verified_identifier_value"] == SPARROW_DOI
+        assert ent["cleaning_abstained"] == "pooled_year_conflict"
+        # The cleaner's own metrics are UNCHANGED by Option C: an abstained
+        # entry still counts as unmatched (metric identity with main).
+        assert result["matched_entries"] == 0
+        assert result["unmatched_entries"] == 1
+
+    def test_scoped_disagreement_abstention_attests_existence_in_ledger(self, tmp_path):
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+        json_dir = make_json_dir(tmp_path, {
+            "verify_3_sparrow2007.json": VERIFY_RESULT,
+            "verify_9_sparrow2007.json": VERIFY_RESULT_DISAGREEING,
+        })
+
+        result = clean_bibtex(bib, json_dir)
+
+        ent = self._ledger_entry(tmp_path)
+        assert ent["api_matched"] is True
+        assert ent["verified_identifier"] == "doi"
+        assert ent["verified_identifier_value"] == SPARROW_DOI
+        assert ent["cleaning_abstained"] == "scoped_year_disagreement"
+        assert result["matched_entries"] == 0
+        assert result["unmatched_entries"] == 1
+
+    def test_abstention_still_declines_cleaning(self, tmp_path):
+        """Attestation must not re-enable what abstention exists to prevent:
+        no field removal, no year rewrite, no marker, and the refusal is
+        countable."""
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+        json_dir = make_json_dir(tmp_path, {
+            "s2_a.json": S2_DUMP_CONFLICTING,
+            "s2_b.json": S2_DUMP_OTHER_YEAR,
+        })
+
+        result = clean_bibtex(bib, json_dir)
+
+        text = bib.read_text(encoding="utf-8")
+        assert "Journal of Applied Philosophy" in text
+        assert "2007" in text
+        assert_no_cleaned_marker(text)
+        assert result["years_corrected"] == 0
+        assert result["planned_entries_cleaned"] == 0
+        assert result["applied_entries_cleaned"] == 0
+        assert result["abstained_entries"] == 1
+
+    def test_genuine_no_match_does_not_attest(self, tmp_path):
+        """A DOI absent from the index is a real no-match - Option C must not
+        leak attestation onto it (§9: never attest the genuine no-match
+        paths)."""
+        bib = tmp_path / "lit.bib"
+        bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
+        json_dir = make_json_dir(tmp_path, {
+            "s2_other.json": {
+                "status": "success", "source": "semantic_scholar",
+                "results": [{"title": "Something Else Entirely",
+                             "year": 1999, "doi": "10.9999/other"}],
+            },
+        })
+
+        result = clean_bibtex(bib, json_dir)
+
+        ent = self._ledger_entry(tmp_path)
+        assert ent["api_matched"] is False
+        assert ent["verified_identifier"] is None
+        assert ent["verified_identifier_value"] is None
+        assert "cleaning_abstained" not in ent
+        assert result["abstained_entries"] == 0
 
 
 class TestYearKeyWriteSafety:
@@ -918,16 +1061,20 @@ class TestYearlessScopedRecordCannotSettleAConflict:
             "bibtex").entries["y"]
 
     def test_yearless_scoped_record_falls_through_to_abstention(self, tmp_path):
-        from metadata_cleaner import find_api_entry_for_bib_entry
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
 
-        assert find_api_entry_for_bib_entry(
-            self._entry(), self._index(tmp_path)) is None
+        out = find_api_entry_for_bib_entry(self._entry(), self._index(tmp_path))
+
+        assert isinstance(out, CleaningAbstention)
+        assert out.reason == "pooled_year_conflict"
 
     def test_whitespace_scoped_year_counts_as_yearless(self, tmp_path):
-        from metadata_cleaner import find_api_entry_for_bib_entry
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
 
-        assert find_api_entry_for_bib_entry(
-            self._entry(), self._index(tmp_path, scoped_year="  ")) is None
+        assert isinstance(
+            find_api_entry_for_bib_entry(
+                self._entry(), self._index(tmp_path, scoped_year="  ")),
+            CleaningAbstention)
 
     def test_a_scoped_year_does_settle_the_conflict(self, tmp_path):
         from metadata_cleaner import find_api_entry_for_bib_entry
@@ -1015,7 +1162,7 @@ class TestNumericZeroIsNotTreatedAsAbsent:
     year-bearing - the exact int/str split _year_key exists to erase."""
 
     def test_scoped_years_zero_and_2007_are_a_disagreement(self, tmp_path):
-        from metadata_cleaner import find_api_entry_for_bib_entry
+        from metadata_cleaner import CleaningAbstention, find_api_entry_for_bib_entry
         from pybtex.database import parse_string
 
         json_dir = make_json_dir(tmp_path, {
@@ -1029,7 +1176,10 @@ class TestNumericZeroIsNotTreatedAsAbsent:
             "@article{z,author={A, B},title={T},year={2007},doi={10.1/z}}",
             "bibtex").entries["z"]
 
-        assert find_api_entry_for_bib_entry(entry, index) is None
+        out = find_api_entry_for_bib_entry(entry, index)
+
+        assert isinstance(out, CleaningAbstention)
+        assert out.reason == "scoped_year_disagreement"
 
     def test_authority_does_not_depend_on_int_vs_str_encoding(self, tmp_path):
         """A scoped year of 0 and of "0" must behave identically."""
@@ -1051,8 +1201,12 @@ class TestNumericZeroIsNotTreatedAsAbsent:
             entry = parse_string(
                 "@article{w,author={A, B},title={T},year={2007},doi={10.1/w}}",
                 "bibtex").entries["w"]
-            return find_api_entry_for_bib_entry(
-                entry, build_metadata_index(json_dir)) is None
+            r = find_api_entry_for_bib_entry(
+                entry, build_metadata_index(json_dir))
+            # Discriminate all three contract outcomes (dict / abstention /
+            # None), not just None-ness - int 0 and "0" must land on the
+            # SAME one.
+            return (type(r).__name__, getattr(r, "reason", None))
 
         assert outcome(0) == outcome("0")
 

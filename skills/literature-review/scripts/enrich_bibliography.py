@@ -24,6 +24,7 @@ Exit Codes:
 """
 
 import argparse
+import json
 import os
 import re
 import sys
@@ -37,6 +38,10 @@ PHIL_SCRIPTS = Path(__file__).parent.parent.parent / "philosophy-research" / "sc
 sys.path.insert(0, str(PHIL_SCRIPTS))
 
 from rate_limiter import ExponentialBackoff, get_limiter
+
+# stamp_evidence lives alongside this script (same skills/literature-review/scripts dir).
+sys.path.insert(0, str(Path(__file__).parent))
+from stamp_evidence import abstract_hash
 
 
 def log_progress(message: str) -> None:
@@ -239,6 +244,44 @@ def resolve_ndpr_abstract(
 # BibTeX Modification
 # =============================================================================
 
+def _field_value_end(entry_text: str, value_start: int):
+    """Index just past the closing delimiter of a field value that begins
+    at value_start, or None if it can't be bounded there (no recognizable
+    delimiter, or an unbalanced brace-delimited value).
+
+    Brace-delimited values are bounded by explicit depth counting, not a
+    regex character class -- a class like `(?:[^{}]|\\{[^{}]*\\})*` only
+    tolerates ONE level of interior nesting; deepening it just moves the
+    wall further out, it never removes it (review finding 1, Task 4: a
+    two-level-nested existing abstract like
+    `{We show {\\it Kant's {a priori}} fails.}` silently failed to match,
+    falling through to the insert branch below and leaving BOTH the stale
+    and the newly inserted field in the entry -- a duplicate `abstract =`
+    that pybtex rejects, invisible to `stamp_evidence.parse_entry_fields`'
+    own one-level-tolerant regex, which is why the stamp went out wrong
+    too). Depth counting handles nesting at any depth because it isn't
+    matching a fixed shape -- it just tracks a counter.
+    """
+    if value_start >= len(entry_text):
+        return None
+    delim = entry_text[value_start]
+    if delim == '{':
+        depth = 0
+        for i in range(value_start, len(entry_text)):
+            c = entry_text[i]
+            if c == '{':
+                depth += 1
+            elif c == '}':
+                depth -= 1
+                if depth == 0:
+                    return i + 1
+        return None  # unbalanced -- can't safely bound this occurrence
+    if delim == '"':
+        end = entry_text.find('"', value_start + 1)
+        return None if end == -1 else end + 1
+    return None
+
+
 def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> str:
     """Add or update a field in a BibTeX entry.
 
@@ -247,16 +290,36 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
     unbalanced, which API-sourced content won't have. Escaping would corrupt
     LaTeX markup (e.g. \\textit{...}) in abstracts.
     """
-    # Check if field already exists
-    pattern = rf'(\s+){field_name}\s*=\s*\{{[^}}]*\}}'
-    if re.search(pattern, entry_text, re.IGNORECASE):
-        # Replace existing field
-        return re.sub(
-            pattern,
-            rf'\1{field_name} = {{{field_value}}}',
-            entry_text,
-            flags=re.IGNORECASE
-        )
+    # Check if field already exists -- brace- OR quote-delimited (pybtex's
+    # writer emits quoted values on round-trip; researchers hand-write both
+    # forms). Brace-delimited values are located by depth-counting
+    # (_field_value_end), not a shallow-nesting regex, so an existing value
+    # nested at ANY depth is found and replaced whole rather than silently
+    # missed. Every occurrence of the field is replaced (not just the
+    # first) -- pinned by
+    # tests/test_enrich_bibliography.py::test_add_field_replace_all_occurrences_pinned,
+    # which documents that callers rely on entry_text being a SINGLE entry.
+    head_pattern = re.compile(rf'(\s+){re.escape(field_name)}\s*=\s*', re.IGNORECASE)
+    pieces = []
+    pos = 0
+    replaced_any = False
+    while True:
+        m = head_pattern.search(entry_text, pos)
+        if not m:
+            break
+        value_end = _field_value_end(entry_text, m.end())
+        if value_end is None:
+            break  # can't safely bound this occurrence -- stop; fall through
+        pieces.append(entry_text[pos:m.start(1)])
+        pieces.append(m.group(1))
+        # Function replacement, NOT a template string: abstracts carry
+        # LaTeX backslashes, and a template would interpret \1, \g<...>.
+        pieces.append(f'{field_name} = {{{field_value}}}')
+        pos = value_end
+        replaced_any = True
+    if replaced_any:
+        pieces.append(entry_text[pos:])
+        return ''.join(pieces)
     else:
         # Add new field immediately after the entry's opening line (@type{key,).
         # The opening line is never inside a field value, so a multi-line value
@@ -298,31 +361,46 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
         return '\n'.join(lines)
 
 
+# Quote-aware keywords-field matcher: brace-delimited value in group(1),
+# quote-delimited value in group(2) (never both). Brace-only matching here
+# previously let a quote-delimited `keywords = "..."` field fall through to
+# add_field_to_entry, which REPLACES a field wholesale on a hit -- silently
+# destroying every existing token (topic tags + importance level) and
+# leaving only the newly added/removed keyword (reviewer-reproduced). Both
+# add_keyword_to_entry and remove_keyword_from_entry must find the field in
+# EITHER delimiter style and edit its value in place; only add_keyword_to_entry
+# delegates to add_field_to_entry, and only when no keywords field exists at
+# all.
+_KEYWORDS_FIELD_RE = re.compile(
+    r'keywords\s*=\s*(?:\{([^{}]*)\}|"([^"]*)")',
+    re.IGNORECASE
+)
+
+
 def remove_keyword_from_entry(entry_text: str, keyword: str) -> str:
-    """Remove a keyword from the keywords field."""
-    pattern = r'keywords\s*=\s*\{([^}]*)\}'
-    match = re.search(pattern, entry_text, re.IGNORECASE)
+    """Remove a keyword from the keywords field (brace- or quote-delimited;
+    see _KEYWORDS_FIELD_RE)."""
+    match = _KEYWORDS_FIELD_RE.search(entry_text)
 
     if not match:
         return entry_text
 
-    existing = match.group(1)
+    existing = match.group(1) if match.group(1) is not None else match.group(2)
     # Split, filter, rejoin
     keywords = [k.strip() for k in existing.split(',')]
     keywords = [k for k in keywords if k and k != keyword]
 
     if keywords:
         new_keywords = ', '.join(keywords)
-        return re.sub(
-            pattern,
-            f'keywords = {{{new_keywords}}}',
-            entry_text,
-            flags=re.IGNORECASE
+        return (
+            entry_text[:match.start()]
+            + f'keywords = {{{new_keywords}}}'
+            + entry_text[match.end():]
         )
     else:
         # Remove the entire keywords field if empty
         return re.sub(
-            r'\n\s*keywords\s*=\s*\{[^}]*\},?',
+            r'\n\s*keywords\s*=\s*(?:\{[^{}]*\}|"[^"]*"),?',
             '',
             entry_text,
             flags=re.IGNORECASE
@@ -330,20 +408,20 @@ def remove_keyword_from_entry(entry_text: str, keyword: str) -> str:
 
 
 def add_keyword_to_entry(entry_text: str, keyword: str) -> str:
-    """Add a keyword to the keywords field."""
-    # Check if keywords field exists
-    pattern = r'keywords\s*=\s*\{([^}]*)\}'
-    match = re.search(pattern, entry_text, re.IGNORECASE)
+    """Add a keyword to the keywords field (brace- or quote-delimited;
+    see _KEYWORDS_FIELD_RE). Appends inside the existing value, preserving
+    every other token; only delegates to add_field_to_entry (which
+    replaces a field wholesale) when no keywords field exists at all."""
+    match = _KEYWORDS_FIELD_RE.search(entry_text)
 
     if match:
-        existing = match.group(1)
+        existing = match.group(1) if match.group(1) is not None else match.group(2)
         if keyword not in existing:
             new_keywords = f'{existing}, {keyword}' if existing.strip() else keyword
-            return re.sub(
-                pattern,
-                f'keywords = {{{new_keywords}}}',
-                entry_text,
-                flags=re.IGNORECASE
+            return (
+                entry_text[:match.start()]
+                + f'keywords = {{{new_keywords}}}'
+                + entry_text[match.end():]
             )
         return entry_text
     else:
@@ -356,13 +434,18 @@ def enrich_entry(
     s2_api_key: Optional[str],
     openalex_email: Optional[str],
     core_api_key: Optional[str],
-    debug: bool = False
+    debug: bool = False,
+    ledger_writes: Optional[dict] = None
 ) -> tuple[str, bool, Optional[str]]:
     """
     Enrich a single BibTeX entry with abstract if missing.
 
     Returns:
         Tuple of (enriched_entry_text, was_enriched, abstract_source)
+
+    If `ledger_writes` is given, records {key: {abstract_source,
+    abstract_sha256}} for this entry when an abstract is written -- the
+    enrichment-ledger attestation the evidence barrier later consumes.
     """
     entry_text = entry['raw']
 
@@ -384,6 +467,11 @@ def enrich_entry(
         # Add abstract and source fields
         entry_text = add_field_to_entry(entry_text, 'abstract', abstract)
         entry_text = add_field_to_entry(entry_text, 'abstract_source', source)
+        if ledger_writes is not None:
+            ledger_writes[entry['key']] = {
+                "abstract_source": source,
+                "abstract_sha256": abstract_hash(abstract),
+            }
         log_progress(f"  Added abstract from {source} ({len(abstract)} chars)")
         return entry_text, True, source
     else:
@@ -392,6 +480,48 @@ def enrich_entry(
         entry_text = add_keyword_to_entry(entry_text, 'no-abstract')
         log_progress(f"  No abstract found, marked INCOMPLETE")
         return entry_text, False, None
+
+
+def attest_prefilled_entry(
+    entry: dict,
+    s2_api_key: Optional[str],
+    openalex_email: Optional[str],
+    core_api_key: Optional[str],
+    debug: bool = False,
+    ledger_writes: Optional[dict] = None,
+) -> tuple[str, bool]:
+    """Attest an entry whose abstract was written by the researcher.
+
+    The enrichment skip path made such abstracts structurally
+    unattestable (2026-07-25 A/B root cause 1: mcallister2011patterns).
+    Fetches the abstract from the APIs; if the fetched text hash-matches
+    the pre-filled text (whitespace/backslash-insensitive), records the
+    ledger attestation and normalizes abstract_source to the canonical
+    source. Any miss is a no-op: fail-closed, unattested stays unattested.
+
+    Returns (entry_text, attested).
+    """
+    entry_text = entry['raw']
+    existing = entry['fields'].get('abstract', '')
+    log_progress(f"Attesting pre-filled abstract for: {entry['key']}")
+    try:
+        fetched, source = resolve_abstract_for_entry(
+            entry, s2_api_key, openalex_email, core_api_key, debug)
+    except Exception as e:
+        log_progress(f"  Attestation fetch failed ({e}) -- left unattested")
+        return entry_text, False
+    if not fetched or not source or (
+            abstract_hash(fetched) != abstract_hash(existing)):
+        log_progress("  Pre-filled abstract matches no API text -- left unattested")
+        return entry_text, False
+    entry_text = add_field_to_entry(entry_text, 'abstract_source', source)
+    if ledger_writes is not None:
+        ledger_writes[entry['key']] = {
+            "abstract_source": source,
+            "abstract_sha256": abstract_hash(existing),
+        }
+    log_progress(f"  Pre-filled abstract attested via {source}")
+    return entry_text, True
 
 
 # =============================================================================
@@ -429,10 +559,17 @@ def enrich_bibliography(
         'enriched': 0,
         'marked_incomplete': 0,
         'skipped': 0,
+        'prefilled_attested': 0,
+        'prefilled_unverified': 0,
         'sources': {'s2': 0, 'openalex': 0, 'core': 0, 'ndpr': 0}
     }
 
     enriched_entries = []
+    # citation key -> {abstract_source, abstract_sha256} for abstracts this
+    # run wrote (shared-contract "Enrichment ledger" schema); merged with any
+    # prior ledger by _update_enrichment_ledger at the end of this function.
+    ledger_writes: dict = {}
+    prior_ledger = _load_prior_ledger(output_path or input_path)
 
     for entry in entries:
         # Skip comments
@@ -441,15 +578,36 @@ def enrich_bibliography(
             stats['skipped'] += 1
             continue
 
-        # Check if already has abstract
+        # Entry already has an abstract. If the prior ledger already
+        # attests exactly this text and source, it needs no re-check --
+        # re-running enrichment must not re-fetch attested entries.
+        # Otherwise (researcher-transcribed, or text drifted) try to
+        # attest it in place instead of skipping -- a correct pre-filled
+        # abstract was otherwise structurally unattestable (A/B root
+        # cause 1). Fail-closed: on any miss the entry is untouched.
         if has_abstract(entry):
-            enriched_entries.append(entry['raw'])
+            prior = prior_ledger.get(entry['key']) or {}
+            cur_source = (entry['fields'].get('abstract_source') or '').strip().lower()
+            if (prior.get('abstract_sha256') == abstract_hash(entry['fields']['abstract'])
+                    and cur_source
+                    and cur_source == (prior.get('abstract_source') or '').strip().lower()):
+                enriched_entries.append(entry['raw'])
+                stats['already_had_abstract'] += 1
+                stats['prefilled_attested'] += 1
+                continue
+            new_text, attested = attest_prefilled_entry(
+                entry, s2_api_key, openalex_email, core_api_key, debug,
+                ledger_writes=ledger_writes)
+            enriched_entries.append(new_text)
             stats['already_had_abstract'] += 1
+            stats['prefilled_attested' if attested
+                  else 'prefilled_unverified'] += 1
             continue
 
         # Try to enrich
         enriched_text, was_enriched, source = enrich_entry(
-            entry, s2_api_key, openalex_email, core_api_key, debug
+            entry, s2_api_key, openalex_email, core_api_key, debug,
+            ledger_writes=ledger_writes
         )
         enriched_entries.append(enriched_text)
 
@@ -492,6 +650,10 @@ def enrich_bibliography(
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract_source', 'ndpr')
                 enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'INCOMPLETE')
                 enriched_entries[idx] = remove_keyword_from_entry(enriched_entries[idx], 'no-abstract')
+                ledger_writes[entry['key']] = {
+                    "abstract_source": "ndpr",
+                    "abstract_sha256": abstract_hash(abstract),
+                }
                 # Stats: enriched/marked_incomplete are cumulative across all passes
                 stats['enriched'] += 1
                 stats['marked_incomplete'] -= 1
@@ -538,9 +700,78 @@ def enrich_bibliography(
             pass
         log_progress(f"WARNING: Validation failed — original file unchanged")
 
+    # Enrichment ledger: written on every parse-successful run, symmetric
+    # with the cleaning ledger (metadata_cleaner.py) -- an empty entries
+    # dict is valid (obscure domains legitimately enrich nothing; a missing
+    # ledger would spuriously demote everything under the evidence barrier).
+    # Skipped only when the bib write itself was aborted by validation.
+    if not stats.get('validation_failed'):
+        current_keys = {e['key'] for e in entries if e['entry_type'] != 'comment'}
+        try:
+            _update_enrichment_ledger(output_path, ledger_writes, current_keys)
+        except OSError as e:
+            stats.setdefault('warnings', []).append(f"Could not write enrichment ledger: {e}")
+
     log_progress(f"Stats: {stats['enriched']} enriched, {stats['marked_incomplete']} incomplete, {stats['already_had_abstract']} already had abstract")
 
     return stats
+
+
+def _load_prior_ledger(output_path: Path) -> dict:
+    """The existing enrichment ledger's entries dict ({} if absent or
+    malformed). Used to skip API calls for entries a prior run already
+    attested -- re-running enrichment must stay cheap.
+
+    Non-dict values are dropped, not passed through: a malformed record
+    must degrade to "not attested" (an API re-check), never crash the
+    run. NOTE the trust model: this file is agent-writable and is the
+    attestation authority for the zero-fetch fast path, the same trust
+    boundary the evidence barrier already places on it.
+    """
+    final = (output_path.parent / "intermediate_files" / "json"
+             / f"enrichment_ledger-{output_path.stem}.json")
+    if not final.exists():
+        return {}
+    try:
+        payload = json.loads(final.read_text(encoding='utf-8'))
+        entries = payload.get('entries', {}) if isinstance(payload, dict) else {}
+        if not isinstance(entries, dict):
+            return {}
+        return {k: v for k, v in entries.items() if isinstance(v, dict)}
+    except (json.JSONDecodeError, OSError, UnicodeDecodeError, ValueError):
+        return {}
+
+
+def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_keys: set) -> None:
+    """Atomically merge-write the enrichment ledger (tmp + os.replace) --
+    the per-entry abstract-source/hash attestation the evidence barrier
+    later consumes (shared-contract 'Enrichment ledger' schema). Existing
+    entries for keys still present in the bib are kept; keys no longer
+    present are pruned; new writes from this run win per key."""
+    ledger_dir = output_path.parent / "intermediate_files" / "json"
+    ledger_dir.mkdir(parents=True, exist_ok=True)
+    final = ledger_dir / f"enrichment_ledger-{output_path.stem}.json"
+
+    old_entries: dict = {}
+    if final.exists():
+        try:
+            payload = json.loads(final.read_text(encoding='utf-8'))
+            candidate = payload.get('entries', {}) if isinstance(payload, dict) else {}
+            old_entries = candidate if isinstance(candidate, dict) else {}
+        except (json.JSONDecodeError, OSError, UnicodeDecodeError, ValueError):
+            old_entries = {}
+
+    entries = {k: v for k, v in old_entries.items() if k in current_keys}
+    entries.update(ledger_writes)
+
+    payload = {
+        "schema_version": 1,
+        "bib_file": output_path.name,
+        "entries": entries,
+    }
+    tmp = final.with_name(final.name + ".tmp")
+    tmp.write_text(json.dumps(payload, indent=2), encoding='utf-8')
+    os.replace(str(tmp), str(final))
 
 
 def main():

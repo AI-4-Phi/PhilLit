@@ -331,7 +331,7 @@ def _sort_key(entry_tuple):
 # excluded so METADATA_CLEANED noise cannot win a duplicate contest.
 _SUBSTANTIVE_FIELDS = (
     "journal", "booktitle", "volume", "number", "pages",
-    "publisher", "doi", "url", "abstract",
+    "publisher", "doi", "url", "abstract", "sep_context", "iep_context",
 )
 
 

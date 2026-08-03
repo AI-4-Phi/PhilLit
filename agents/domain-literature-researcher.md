@@ -1,7 +1,7 @@
 ---
 name: domain-literature-researcher
 description: Conducts focused literature searches for specific domains in research. Searches SEP, IEP, PhilPapers, Semantic Scholar, OpenAlex, CORE, arXiv and produces accurate BibTeX bibliography files with rich content summaries and metadata for synthesis agents.
-tools: Bash, Glob, Grep, Read, Write, WebFetch, WebSearch
+tools: Bash, Edit, Glob, Grep, Read, Write, WebFetch, WebSearch
 model: sonnet
 permissionMode: acceptEdits
 ---
@@ -139,7 +139,7 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 
 > **Do not run `rm`.** You never need to delete anything. Leave every search-result JSON, draft, and temp file in place: Phase 6 archives review-directory files into `intermediate_files/`, and any scratchpad/temp directory is ephemeral (removed automatically). Running `rm` only triggers a permission prompt that interrupts the review for no benefit.
 
-> **CRITICAL: The Edit tool is NOT available to you.** To change a file you already wrote, rewrite the whole file with Write. Do not attempt a targeted edit.
+> **Prefer `Edit` for targeted changes to files you already wrote.** Every Edit to a `.bib` file is validated on disk immediately afterwards (post-edit hook) and blocked back to you on failure — same gate as Write. Reserve full-file `Write` for creating a file; re-writing a whole existing file risks silently corrupting content you are not looking at.
 
 > **CRITICAL: Never `cd`.** Your working directory must not change between Bash calls. Always use full `$REVIEW_DIR`-anchored paths so a later command cannot land in the wrong directory.
 
@@ -158,7 +158,7 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ie
 - Read preamble and key sections for domain overview
 - Parse bibliography for foundational works cited
 - Use bibliography entries as seeds for further search
-- **Save discovered entry slugs** for Stage 5.6: write a JSON file at `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries.json` with format `{"sep_entries": ["slug1", ...], "iep_entries": ["slug1", ...]}`. Create the directory if needed. This enables context extraction later.
+- **Save discovered entry slugs** (REQUIRED): write a JSON file at `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries-domain-N.json` — use the same N as your output filename (`literature-domain-N.bib`) — with format `{"sep_entries": ["slug1", ...], "iep_entries": ["slug1", ...]}`. Create the directory if needed. **Write the file even if you found no entries** (`{"sep_entries": [], "iep_entries": []}`): a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically.
 
 ### Stage 2: PhilPapers
 
@@ -269,40 +269,35 @@ This script automatically:
 3. Adds `abstract` and `abstract_source` fields for entries where abstract is found
 4. Marks entries `INCOMPLETE` (adds to keywords) if no abstract available
 
-After running, read the enriched file to check results. Note any INCOMPLETE entries in the NOTABLE_GAPS section of your @comment block.
+After running, check results with `grep` (e.g. `grep -c INCOMPLETE` and
+`grep -n 'abstract_source'`) rather than re-reading the whole file into
+context. Note any INCOMPLETE entries in the NOTABLE_GAPS section of your
+@comment block.
+
+**The bib file is FROZEN after enrichment.** Enrichment attests every
+abstract it writes by content hash; re-emitting the file re-serializes
+those abstracts from your context (straightened quotes, dropped
+sentences) and silently voids their attestation — the entries demote to
+EVIDENCE-EXISTENCE at best (EVIDENCE-NONE without a verified identifier) at the barrier. Concretely:
+
+- **Never `Write` the whole bib file again after enrichment has run.**
+  Use a surgical `Edit` (exact old/new strings) for any fix — updating
+  the @comment block, correcting a field, adding a missed entry.
+- **Never modify the bib via Bash file operations** (`cat`, `cp`, `sed`,
+  heredocs) — including to route around a rejected `Write`. The same
+  corruption applies, and the validation hook cannot check what it never
+  sees.
+- To add a NEW entry after enrichment: add it with `Edit`, leave
+  `abstract`/`abstract_source` out, and re-run the enrichment script —
+  entries whose abstracts are already attested are skipped without any
+  API call, so attested entries are untouched.
 
 **Handling INCOMPLETE entries**:
 - Entries marked `INCOMPLETE` **remain in the BibTeX file** (for transparency and reference manager import)
-- Entries marked `INCOMPLETE` are **excluded from literature review synthesis**
+- `INCOMPLETE` is a Phase-3-only working flag: after your domain completes, the orchestrator's evidence barrier replaces it with an `EVIDENCE-*` tier that governs citability. Do not remove or add tier tokens yourself.
 - Update your CORE ARGUMENT notes to be grounded in the abstract where available
 
-### Stage 5.6: Encyclopedia Context Extraction (REQUIRED for High importance papers)
-
-Extract how High importance papers are discussed in authoritative philosophy encyclopedias. This provides synthesis agents with expert framing of each paper's significance.
-
-**Steps**:
-1. Read `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries.json` (saved in Stage 1)
-2. Identify High importance BibTeX entries whose authors/years match SEP/IEP bibliography references
-3. For each match, run the context extraction script:
-
-```bash
-# Read saved encyclopedia entries
-ENTRIES_FILE="$REVIEW_DIR/intermediate_files/json/encyclopedia_entries.json"
-
-# Extract context for each High importance paper from each relevant SEP entry
-for sep_slug in $(jq -r '.sep_entries[]?' "$ENTRIES_FILE"); do
-  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_sep_context.py "$sep_slug" --author "{Author}" --year {YYYY}
-done
-
-# Same for IEP entries
-for iep_slug in $(jq -r '.iep_entries[]?' "$ENTRIES_FILE"); do
-  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/get_iep_context.py "$iep_slug" --author "{Author}" --year {YYYY}
-done
-```
-
-4. Add results to BibTeX entries as `sep_context` or `iep_context` fields
-
-**Skip conditions**: Only skip if Stage 1 found zero SEP/IEP entries for this domain, or if no High importance papers match any encyclopedia bibliography.
+Encyclopedia context (sep_context/iep_context) is attached mechanically by the orchestrator after all domains complete — never write those fields yourself.
 
 ### Stage 6: Web Search Fallback (When Needed)
 
@@ -448,6 +443,11 @@ KEY_POSITIONS:
 }
 ```
 
+**Never write `abstract` or `abstract_source` fields yourself** — `enrich_bibliography.py` (Stage 5.5) is their sole author. The evidence barrier attests a hand-written abstract only if it matches
+an API's text exactly (whitespace-insensitive); anything else earns no
+citability tier. Do not rely on that safety net — let the script be the
+sole author.
+
 See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name format, entry types, and required fields.
 
 ## Quality Standards
@@ -491,8 +491,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 - [ ] Each JSON file has `status: "success"` (or failures noted in completion message)
 
 ✅ **Encyclopedia Context**:
-- [ ] `encyclopedia_entries.json` saved in Stage 1 (or noted that none found)
-- [ ] Context extracted for High importance papers matching SEP/IEP bibliographies
+- [ ] `encyclopedia_entries-domain-N.json` saved in Stage 1 (valid-empty `{"sep_entries": [], "iep_entries": []}` if none found)
 
 ✅ **Citation Verification**:
 - [ ] Every paper verified through skill scripts
