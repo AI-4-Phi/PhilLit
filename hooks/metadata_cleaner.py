@@ -24,13 +24,11 @@ Output: JSON to stdout with cleaning summary
 Exit codes: 0 = success, 2 = file not found/read error
 """
 
-import html
 import json
 import os
 import re
 import sys
 import traceback
-import unicodedata
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -39,7 +37,18 @@ from pybtex.database import parse_file, BibliographyData
 from pybtex.database.output.bibtex import Writer
 from pybtex.scanner import PybtexSyntaxError
 
-from bib_validator import LATEX_ESCAPES
+from bib_identity import (
+    normalize_doi,
+    normalize_journal,
+    normalize_pages,
+    title_key,
+    year_key,
+)
+
+# Historic private names, kept so existing call sites and tests are unchanged.
+# These are aliases, not copies: tests assert `is` identity (ROADMAP item 4).
+_year_key = year_key
+_normalize_title = title_key
 
 
 # Fields that should be cleaned if not verifiable
@@ -97,60 +106,6 @@ class MetadataIndex:
     entries: list = field(default_factory=list)
     skipped_files: list = field(default_factory=list)   # unparseable after salvage
     salvaged_files: list = field(default_factory=list)  # recovered from log pollution
-
-
-def normalize_pages(pages: str) -> str:
-    """Normalize page ranges for comparison."""
-    if not pages:
-        return ""
-    normalized = re.sub(r'\s*[-–—]+\s*', '-', str(pages))
-    return normalized.strip()
-
-
-# \^{u} -> \^u so the no-brace LATEX_ESCAPES keys (and the accent safety net
-# below) can match the braced accent form real bibs actually use (No\^{u}s).
-_INNER_BRACE_ACCENT = re.compile(r'(\\["\'`^~])\{([A-Za-z])\}')
-
-
-def normalize_journal(name: str) -> str:
-    """Normalize journal name for comparison. Decodes HTML entities and LaTeX
-    escapes so LaTeX-encoded bib values (e.g. 'Philosophy \\& Technology',
-    'No\\^{u}s') compare equal to CrossRef's precomposed/entity forms
-    ('Philosophy &amp; Technology', 'Noûs')."""
-    if not name:
-        return ""
-    s = html.unescape(name)                       # &amp;->&, &#251;->û
-    s = _INNER_BRACE_ACCENT.sub(r'\1\2', s)        # \^{u} -> \^u so dict keys match
-    for latex, uni in LATEX_ESCAPES.items():       # \^u -> û, \c{c} -> ç, {\ss} -> ß
-        s = s.replace(latex, uni)
-    s = re.sub(r'\\["\'`^~=.]\{?([A-Za-z])\}?', r'\1', s)  # safety net: unknown accent -> base letter
-    s = re.sub(r'\\+&', '&', s)                    # \& and \\& -> &
-    s = s.replace('{', '').replace('}', '')        # residual braces
-    # NFKD-fold so decoded-Unicode and CrossRef-precomposed reduce to base letters
-    s = ''.join(c for c in unicodedata.normalize('NFKD', s) if not unicodedata.combining(c))
-    normalized = s.lower().strip()
-    if normalized.startswith("the "):
-        normalized = normalized[4:]
-    return " ".join(normalized.split())
-
-
-def normalize_doi(doi: str) -> str:
-    """Normalize DOI for comparison."""
-    if not doi:
-        return ""
-    doi = doi.strip().lower()
-    # dx.doi.org forms first so the bare-form check below can't shadow them
-    # (longest-prefix-wins; kept byte-equivalent with
-    # stamp_evidence.normalize_doi — pinned by
-    # tests/test_stamp_evidence.py::TestNormalizeDoiEquivalence).
-    prefixes = [
-        "https://dx.doi.org/", "http://dx.doi.org/",
-        "https://doi.org/", "http://doi.org/", "doi:", "doi.org/",
-    ]
-    for prefix in prefixes:
-        if doi.startswith(prefix):
-            doi = doi[len(prefix):]
-    return doi
 
 
 def _salvage_json(text: str) -> Optional[dict]:
@@ -223,16 +178,8 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     return fallback
 
 
-# Integral-year grammar for _year_key: optional sign, digits, and an
-# optional ALL-ZERO fractional part. Deliberately excludes exponent notation.
-# Integral-year grammar for _year_key: optional sign, ASCII digits, and an
-# optional fractional part of one-or-more zeros. `[0-9]` not `\d` (which also
-# matches non-ASCII decimal digits that lstrip("0") would not normalize), and
-# `0+` not `0*` so a bare trailing dot ("2007.") is NOT treated as integral.
-_INTEGRAL_YEAR_RE = re.compile(r"^([+-]?)([0-9]+)(?:\.0+)?$")
-
 # A year that may be WRITTEN into a .bib. Deliberately narrower than the
-# comparison grammar above: canonical form only (no leading zeros, no sign),
+# comparison grammar in bib_identity.year_key: canonical form only (no leading zeros, no sign),
 # 1-4 digits, non-zero. `str.isdigit()` must NOT be used here - it accepts
 # Arabic-Indic and superscript digits that _INTEGRAL_YEAR_RE rejects, and
 # `lstrip("-")` would swallow "--2007", so the write gate would re-admit
@@ -278,53 +225,6 @@ def _year_of(record: dict) -> str:
     """
     raw = record.get("year")
     return "" if raw is None else _year_key(raw)
-
-
-def _year_key(value) -> str:
-    """Canonical form of a year, for comparing values from different producers.
-
-    Pooled JSON is external data: the same real year can arrive as an int
-    (2007) or a float (2007.0) depending on how a producer parsed it. Compare
-    those equal instead of registering a phantom disagreement.
-
-    Canonicalizes WITHOUT a binary-float round-trip, so a string or an
-    arbitrary-precision int is never rewritten into a different number:
-    str(int(float("9007199254740993"))) is ...992, and float() collapses
-    "2007.0000000000001" to "2007". Note the limit of that guarantee - if the
-    JSON loader already parsed the value INTO a float, the precision is gone
-    before this function sees it; only `parse_float=Decimal` would preserve
-    it. Exactness here means "adds no new rounding", not "recovers what json
-    already discarded".
-
-    The grammar composes with repr(float), so the effective boundary is where
-    str() switches to exponent form: str(1e15) is "1000000000000000.0" and
-    canonicalizes, str(1e16) is "1e+16" and does not. Unreachable for real
-    years; noted so the contract is not mistaken for a pure-grammar one. Match sign + digits +
-    an optional all-zero fractional part; return the digits with sign and
-    leading zeros normalized. Everything else - "2007.5", "n.d.", "MMVII",
-    "2,007" - round-trips verbatim. Exponent notation ("2.007e3", "1e999") is
-    out of scope by design, so the contract comes from this grammar rather
-    than from binary-float range.
-
-    KNOWN LIMITATION (predates this helper, now routed through it): a
-    disambiguating BibTeX year like "2007a" canonicalizes verbatim and so
-    compares unequal to "2007". A scoped record would "correct" it to "2007"
-    and destroy the suffix. There is no plausibility gate on the correction
-    path beyond "must be an integral canonical year".
-
-    NOTE: no PhilLit producer is currently known to emit a float year. This
-    is boundary hardening for external JSON, not a fix for an observed
-    failure.
-    """
-    text = str(value).strip()
-    match = _INTEGRAL_YEAR_RE.match(text)
-    if not match:
-        return text
-    # A leading "+" is dropped; a negative sign is retained (except on zero).
-    sign, digits = match.group(1), match.group(2)
-    digits = digits.lstrip("0") or "0"
-    # -0 and 0 are the same year; do not let a sign survive on zero.
-    return ("-" if sign == "-" and digits != "0" else "") + digits
 
 
 def find_doi_year_conflicts(doi: str, index: 'MetadataIndex') -> dict:
@@ -761,25 +661,6 @@ def is_field_verifiable(field_name: str, value: str, index: MetadataIndex) -> bo
 
     # Unknown field - assume verifiable (don't remove)
     return True
-
-
-def _normalize_title(title: str) -> str:
-    """Unicode-aware, punctuation/subtitle-insensitive title key (item-13 B3).
-
-    NFKD-normalize, drop combining marks (accent-insensitive so a bib title
-    'Davidovic' matches an API 'Davidović'), keep every letter/digit including
-    non-Latin (Greek, Cyrillic, Latin Extended-A stroke letters), casefold, and
-    collapse punctuation/whitespace runs to single spaces. The old ASCII-only
-    fold both erased non-Latin titles to '' (matching everything) and equated
-    distinct stroke letters (Đ/Ł both dropped)."""
-    if not title:
-        return ""
-    out = []
-    for ch in unicodedata.normalize('NFKD', title):
-        if unicodedata.combining(ch):
-            continue
-        out.append(ch if ch.isalnum() else ' ')
-    return ' '.join(''.join(out).casefold().split())
 
 
 # Fields an api_entry supplies for verification. Used to compare how COMPLETE
