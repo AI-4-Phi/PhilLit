@@ -15,6 +15,16 @@ from pathlib import Path
 
 from pybtex.database import parse_string
 
+# Import identity/matching helpers from bib_identity (single source of truth)
+_hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
+sys.path.insert(0, str(_hook_dir))
+from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402,F401
+
+sys.path.pop(0)
+
+# Alias, not a copy - pinned by tests/test_dedupe_bib.py.
+_normalize_title = title_key
+
 IMPORTANCE_ORDER = {'High': 3, 'Medium': 2, 'Low': 1}
 
 
@@ -239,12 +249,6 @@ def _absorb(merged_from: dict, survivor_id: tuple, loser_id: tuple) -> None:
     merged_from[survivor_id] |= absorbed | {loser_id}
 
 
-def _normalize_title(text: str) -> str:
-    """Lowercase, collapse non-alphanumerics to single spaces (dedup key form)."""
-    t = re.sub(r"[^a-z0-9]+", " ", text.lower())
-    return re.sub(r"\s+", " ", t).strip()
-
-
 def _entry_fields(entry_text: str) -> dict:
     """Parse an entry's fields with pybtex (robust to quoted values and nested
     braces). Returns a lowercase-keyed field->value dict, or {} on parse
@@ -263,9 +267,9 @@ def _fallback_key(entry_text: str) -> tuple[str, str, str] | None:
 
     Parsed with pybtex so quoted values (title = "...") and nested braces
     ({The {AI} Problem}) are handled — the regex extractors elsewhere in this
-    file are brace-only and non-nested. Returns None if any component is
-    empty. Duplicated from generate_bibliography._fallback_key by design —
-    the two scripts do not import each other.
+    file are brace-only and non-nested. The key itself is built by
+    bib_identity.fallback_key, which generate_bibliography also uses
+    (ROADMAP item 4).
     """
     try:
         db = parse_string(entry_text, "bibtex")
@@ -277,17 +281,15 @@ def _fallback_key(entry_text: str) -> tuple[str, str, str] | None:
         break
     if entry is None:
         return None
-    title = _normalize_title(entry.fields.get("title", "") or "")
-    year = (entry.fields.get("year", "") or "").strip()
     persons = entry.persons.get("author", []) or entry.persons.get("editor", [])
     surname = ""
     if persons:
-        surname = _normalize_title(
-            " ".join(persons[0].prelast_names + persons[0].last_names)
-        )
-    if not title or not year or not surname:
-        return None
-    return (title, year, surname)
+        surname = " ".join(persons[0].prelast_names + persons[0].last_names)
+    return fallback_key(
+        entry.fields.get("title", "") or "",
+        entry.fields.get("year", "") or "",
+        surname,
+    )
 
 
 def _insert_field_text(entry_text: str, field: str, value: str) -> str:

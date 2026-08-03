@@ -830,3 +830,51 @@ class TestRestampMergedUnreadableReport:
         assert r.returncode == 0, r.stderr
         assert "warning: evidence report unreadable" in r.stderr
         assert str(report) in r.stderr
+
+
+# =============================================================================
+# ROADMAP item 4: identity keys come from the one owner (hooks/bib_identity.py)
+# =============================================================================
+
+class TestDiacriticInsensitiveTitleDedup:
+    """dedupe_bib was the only copy applying no Unicode normalization, so
+    accented/unaccented pairs survived dedup in 5/32 delivered reviews."""
+
+    def _entry(self, key: str, author: str) -> str:
+        return (
+            f"@article{{{key},\n"
+            f"  author = {{{author}}},\n"
+            "  title = {Moral Status and the Mind},\n"
+            "  year = {2020},\n"
+            "  journal = {J Phil},\n"
+            "}"
+        )
+
+    def test_accented_and_unaccented_first_author_are_one_work(self):
+        from dedupe_bib import dedupe_by_title_key
+        seen = {
+            "milliere2020": self._entry("milliere2020", "Millière, Raphaël"),
+            "milliere2020a": self._entry("milliere2020a", "Milliere, Raphael"),
+        }
+        removed = dedupe_by_title_key(seen)
+        assert len(seen) == 1, f"expected one survivor, got {sorted(seen)}"
+        assert len(removed) == 1
+
+    def test_normalize_title_is_the_shared_owner(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+        import bib_identity
+        import dedupe_bib
+        assert dedupe_bib._normalize_title is bib_identity.title_key
+
+    def test_non_latin_title_still_yields_a_key(self):
+        import dedupe_bib
+        entry = (
+            "@article{pap2021,\n"
+            "  author = {Παπαδόπουλος, Γ.},\n"
+            "  title = {Η ηθική της τεχνολογίας},\n"
+            "  year = {2021},\n"
+            "}"
+        )
+        assert dedupe_bib._fallback_key(entry) is not None
