@@ -26,13 +26,13 @@ exists so open work has a single place to be listed — it was created
 > catch-up merge + Option C acceptance). The `metadata_cleaner.py` freeze
 > on `main` is LIFTED — `main` is the single line again.
 >
-> **DO NOT REMOVE THE `evidence-tier` WORKTREE** (branch
-> `worktree-evidence-tier`, fully merged): `docs/superpowers/` is gitignored,
-> so the A/B results + adjudication record exist ONLY inside that worktree,
-> at `docs/superpowers/plans/2026-07-25-evidence-tier-ab-results.md` (a
-> synced copy sits in the main checkout's gitignored `docs/superpowers/`).
-> Johannes decided on 2026-07-28 to leave them untracked — that decision is
-> made, don't re-raise it.
+> **The A/B results + adjudication records live in the main checkout's
+> gitignored `docs/superpowers/plans/`** (`2026-07-25-evidence-tier-ab-results.md`
+> and the implementation/attestation-fix plans). The `evidence-tier` worktree
+> and branch were removed 2026-08-02 after the merge landed and every record
+> was verified byte-identical in the main checkout. Johannes decided on
+> 2026-07-28 to leave the records untracked (sole developer, one machine,
+> daily backups) — that decision is made, don't re-raise it.
 >
 > **What remains of this item: the service port** (service roadmap item 20,
 > currently queued behind its item-25 repo audit). The port-scope list lives
