@@ -327,7 +327,60 @@ cherry-picked to the other side — same path as the metadata-cleaner year
 fix (plugin 0.2.6 ↔ service `7369880`). The service tracks the mirror item
 as roadmap item 23.
 
-## 4. One owner for bibliography identity and matching (refactor; cause of several measured symptoms)
+## 4. One owner for bibliography identity and matching — DONE 2026-08-03
+
+**Landed 2026-08-03.** `hooks/bib_identity.py` now owns `normalize_doi`,
+`normalize_pages`, `normalize_journal`, `year_key`, `title_key` and
+`fallback_key`, seeded verbatim from the hardened `metadata_cleaner` versions.
+Every other site keeps its historic name as an **alias to the shared object**,
+so call sites are unchanged and the anti-drift tests assert `is` identity rather
+than a vacuous equality between two copies. Both measured symptoms are gone,
+verified end-to-end through `bin/phillit-run`: the `Millière`/`Milliere` pair
+merges, and a Greek-surname entry that was deterministically absent now appears
+in the rendered References.
+
+Scope was **six** sites, not the five originally listed. The sixth,
+`dedupe_bib.extract_doi`, inlined its own prefix list missing `doi:` and bare
+`doi.org/`, so `doi = {doi:10.1000/x}` keyed as `doi:10.1000/x` there and as
+`10.1000/x` everywhere else — a cross-key duplicate dedup silently failed to
+merge.
+
+Decisions taken, so they are not silently reversed later:
+
+- **The prose fold is deliberately NOT consolidated.**
+  `generate_bibliography._normalize_for_matching` folds author-written review
+  text, not two of our own keys. It keeps punctuation, and the 60-character
+  `_MATCH_WINDOW` is measured over its output, so swapping it for `title_key`
+  would change citation matching for every review. Its docstring now says so,
+  and the `_normalize_for_matching("Hübner") == "Hubner"` assertions in
+  `tests/test_generate_bibliography.py` are the tripwire.
+- **Casefold expansion is a fifth divergence axis**, beyond the four in the
+  table below. `ß` carries no combining mark, so NFKD ignores it while
+  `casefold()` expands it: `Straße` keyed as `stra e` / `strae` / `strasse`
+  across the three old copies. The shared key adopts `strasse` (so `Straße` and
+  `STRASSE` now merge), pinned by `TestTitleKey::test_eszett_expands_under_casefold`.
+- **LaTeX-escape residue is recorded, not fixed.** `generate_bibliography`
+  decodes LaTeX before keying while `dedupe_bib` reads pybtex fields raw, so an
+  escaped-accent title still keys differently in the two. Unmeasured, and adding
+  decoding to `title_key` would change the cleaner's API-vs-bib title matching —
+  the surface that produced the year-corruption incident. Candidate follow-up.
+- **`_SUBSTANTIVE_FIELDS` stays duplicated** — a constant, not a judgment, and
+  `test_generate_bibliography_copy_in_sync` already catches drift.
+- **The `lint_md.py` every-citation-resolves post-check is still unbuilt** and
+  still belongs to Issue B (see below): item 4 removed the *deterministic* drop
+  mode, not the near-miss class.
+
+Two limits of the non-Latin fix, deliberate and documented in the code: the
+year test is a substring match, so a non-numeric or bracketed year (`n.d.`,
+`[2021]`) still cannot match in the script-preserving haystack; and the fallback
+triggers only on an *empty* ASCII fold, so a surname folding to punctuation-only
+(a hyphenated non-Latin name folds to `-`) is untouched. That second case is a
+distinct, unmeasured symptom — such entries currently match a garbage pattern
+and can be spuriously *included* in References. Fixing it would remove entries
+from References that ship today, so it was left out of a refactor. **Candidate
+follow-up item.**
+
+Historical record follows.
 
 **Opened 2026-08-02**, after `metadata_validator.py` was deleted for being a
 dormant copy that absorbed hardening meant for the live path (item 3 G). That
@@ -382,8 +435,13 @@ not an accident to patch.
 **Sequencing constraint dissolved 2026-08-02.** This was queued behind the
 item-1 merge because `dedupe_bib.py` carried +180 branch-side lines and
 refactoring first would have manufactured a conflict; the branch landed on
-`main` (`f89f4de`), so this is now ordinary main-side work. Historical
+`main` (`f89f4de`), so this became ordinary main-side work. Historical
 context: `docs/known-issues/evidence-tier-branch-divergence.md`.
+
+**Service mirror outstanding.** The port to `phillit-service` is not done: it
+needs `engine/.claude/hooks/bib_identity.py` plus the six import sites, and a
+counterpart roadmap entry added via its **lowercase** `docs/roadmap.md` (the
+git-add case trap). Its roadmap had no item-4 counterpart as of 2026-08-03.
 
 ## Backlog pointers
 
