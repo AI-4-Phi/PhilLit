@@ -628,3 +628,49 @@ class TestNormalization:
         """Simple surname."""
         person = Person("Thomson, Judith")
         assert _get_full_surname(person) == "Thomson"
+
+
+# =============================================================================
+# ROADMAP item 4: identity keys come from the one owner (hooks/bib_identity.py)
+# =============================================================================
+
+class TestIdentityKeysComeFromTheOwner:
+    """Three copies of the title key disagreed; there is one now."""
+
+    def _bib_identity(self):
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+        import bib_identity
+        return bib_identity
+
+    def test_key_helpers_are_the_shared_objects(self):
+        import generate_bibliography as gb
+        bi = self._bib_identity()
+        assert gb._normalize_doi is bi.normalize_doi
+        assert gb._normalize_title_for_key is bi.title_key
+
+    def test_prose_fold_is_untouched(self):
+        # Decision 1: the review-text fold keeps punctuation and stays ASCII,
+        # because the 60-char _MATCH_WINDOW is measured over its output.
+        import generate_bibliography as gb
+        bi = self._bib_identity()
+        assert gb._normalize_for_matching is not bi.title_key
+        assert gb._normalize_for_matching("Mind, Self -- and Society") == "Mind, Self -- and Society"
+
+    def test_non_latin_title_yields_a_fallback_key(self):
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        db = parse_string(
+            "@article{pap2021,\n"
+            "  author = {Παπαδόπουλος, Γ.},\n"
+            "  title = {Η ηθική της τεχνολογίας},\n"
+            "  year = {2021},\n}",
+            "bibtex",
+        )
+        entry = next(iter(db.entries.values()))
+        assert gb._fallback_key(entry) is not None
+
+    def test_doi_colon_prefix_now_strips(self):
+        import generate_bibliography as gb
+        assert gb._normalize_doi("doi:10.1000/X") == "10.1000/x"

@@ -16,10 +16,12 @@ from pathlib import Path
 
 from pybtex.database import parse_file
 
-# Import LATEX_ESCAPES from bib_validator (single source of truth)
+# Import LATEX_ESCAPES from bib_validator and identity keys from bib_identity
+# (single source of truth)
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_validator import LATEX_ESCAPES  # noqa: E402
+from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402
 
 sys.path.pop(0)
 
@@ -67,7 +69,13 @@ def _get_first_names(person) -> str:
 
 
 def _normalize_for_matching(s: str) -> str:
-    """NFKD-normalize and strip combining marks for diacritical-tolerant matching."""
+    """NFKD-normalize and strip combining marks for diacritical-tolerant matching.
+
+    Deliberately NOT bib_identity.title_key (ROADMAP item 4, Decision 1): this
+    folds author-written review prose, and it must keep punctuation because the
+    60-character _MATCH_WINDOW is measured over its output. Pinned by this
+    file's tests in tests/test_generate_bibliography.py.
+    """
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
 
 
@@ -95,14 +103,8 @@ def _format_doi(doi: str) -> str:
     return f"https://doi.org/{doi}"
 
 
-def _normalize_doi(doi: str) -> str:
-    """Normalize DOI for deduplication: lowercase, strip URL prefix."""
-    doi = doi.strip().lower()
-    for prefix in ("https://doi.org/", "http://doi.org/", "http://dx.doi.org/", "https://dx.doi.org/"):
-        if doi.startswith(prefix):
-            doi = doi[len(prefix):]
-            break
-    return doi
+# Alias, not a copy - pinned by tests/test_generate_bibliography.py.
+_normalize_doi = normalize_doi
 
 
 def format_author_list(persons, is_editor: bool = False) -> str:
@@ -335,28 +337,20 @@ _SUBSTANTIVE_FIELDS = (
 )
 
 
-def _normalize_title_for_key(title: str) -> str:
-    """Fold to ascii, lowercase, collapse non-alphanumerics to single spaces."""
-    t = _normalize_for_matching(title).lower()
-    t = re.sub(r"[^a-z0-9]+", " ", t)
-    return re.sub(r"\s+", " ", t).strip()
+# Alias, not a copy - pinned by tests/test_generate_bibliography.py.
+_normalize_title_for_key = title_key
 
 
 def _fallback_key(entry) -> tuple[str, str, str] | None:
     """Title-axis dedup key: (normalized_title, year, first-author surname).
 
     Returns None if any component is empty (an entry with no fallback key is
-    never title-deduped — GPT S4).
+    never title-deduped — GPT S4). Key construction is bib_identity.fallback_key,
+    shared with dedupe_bib (ROADMAP item 4).
     """
-    title = _normalize_title_for_key(_get_field(entry, "title"))
-    year = _get_field(entry, "year").strip()
     persons = entry.persons.get("author", []) or entry.persons.get("editor", [])
-    surname = ""
-    if persons:
-        surname = _normalize_title_for_key(_get_full_surname(persons[0]))
-    if not title or not year or not surname:
-        return None
-    return (title, year, surname)
+    surname = _get_full_surname(persons[0]) if persons else ""
+    return fallback_key(_get_field(entry, "title"), _get_field(entry, "year"), surname)
 
 
 def _substantive_field_count(entry) -> int:
