@@ -720,3 +720,73 @@ class TestNonLatinSurnameNoLongerVanishes:
         assert [k for k, _ in gb.find_cited_entries(
             "As Clark and Chalmers (1998) argue,", bib)] == ["clark1998"]
         assert gb.find_cited_entries("No citation at all.", bib) == []
+
+
+class TestFormatDoiNormalizesFirst:
+    """Follow-up to ROADMAP item 4: _format_doi rendered the RAW doi field, so
+    a bib carrying a prefixed DOI emitted a broken hyperlink into References."""
+
+    def test_doi_colon_prefix_does_not_double_up(self):
+        import generate_bibliography as gb
+        assert gb._format_doi("doi:10.1000/x") == "https://doi.org/10.1000/x"
+
+    def test_bare_doi_org_prefix_does_not_double_up(self):
+        import generate_bibliography as gb
+        assert gb._format_doi("doi.org/10.1000/x") == "https://doi.org/10.1000/x"
+
+    def test_plain_doi_still_gets_a_url(self):
+        import generate_bibliography as gb
+        assert gb._format_doi("10.1000/x") == "https://doi.org/10.1000/x"
+
+    def test_existing_url_passes_through_unchanged(self):
+        import generate_bibliography as gb
+        assert gb._format_doi("https://doi.org/10.1000/x") == "https://doi.org/10.1000/x"
+        assert gb._format_doi("http://dx.doi.org/10.1000/x") == "https://doi.org/10.1000/x"
+
+    def test_non_doi_url_is_not_wrapped(self):
+        # A value that is a URL but not a known DOI prefix must not be glued
+        # onto https://doi.org/ - it is returned as-is, as before.
+        import generate_bibliography as gb
+        assert gb._format_doi("http://example.com/paper") == "http://example.com/paper"
+
+
+class TestPunctuationOnlySurnameFold:
+    """Follow-up to ROADMAP item 4: a surname whose ASCII fold retains no
+    alphanumeric character (a hyphenated non-Latin name folds to '-') took the
+    primary path and matched a garbage pattern, so the entry could be
+    spuriously INCLUDED in References."""
+
+    HYPHENATED = "Παπαδόπουλος-Ιωάννου"
+
+    def _bib(self):
+        from pybtex.database import parse_string
+        return parse_string(
+            "@article{papioa2021,\n"
+            f"  author = {{{self.HYPHENATED}, Γ.}},\n"
+            "  title = {On Technology},\n"
+            "  year = {2021},\n}",
+            "bibtex",
+        )
+
+    def test_uncited_hyphenated_non_latin_entry_is_not_spuriously_included(self):
+        import generate_bibliography as gb
+        review = "The mind-body problem was much discussed in 2021 by others."
+        assert gb.find_cited_entries(review, self._bib()) == []
+
+    def test_genuinely_cited_hyphenated_non_latin_entry_resolves(self):
+        import generate_bibliography as gb
+        review = f"Recent work ({self.HYPHENATED} 2021) argues otherwise."
+        assert [k for k, _ in gb.find_cited_entries(review, self._bib())] == ["papioa2021"]
+
+    def test_partly_latin_surname_still_takes_the_primary_path(self):
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        bib = parse_string(
+            "@article{papsmith2021,\n"
+            "  author = {Παπαδόπουλος-Smith, Γ.},\n"
+            "  title = {On Technology},\n"
+            "  year = {2021},\n}",
+            "bibtex",
+        )
+        assert [k for k, _ in gb.find_cited_entries(
+            "As Papadopoulos-Smith (2021) notes,", bib)] == ["papsmith2021"]

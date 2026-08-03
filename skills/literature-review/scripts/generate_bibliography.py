@@ -96,8 +96,16 @@ def _quoted_title(title: str) -> str:
 
 
 def _format_doi(doi: str) -> str:
-    """Format DOI as a full URL."""
-    doi = doi.strip()
+    """Format DOI as a full URL.
+
+    Normalizes first (ROADMAP item 4 follow-up): rendering the raw field meant
+    a bib carrying `doi = {doi:10.1000/x}` emitted the broken hyperlink
+    `https://doi.org/doi:10.1000/x` into the delivered References. A value that
+    is a URL but not a known DOI prefix still passes through untouched rather
+    than being glued onto https://doi.org/. Note normalize_doi lowercases;
+    DOI resolution is case-insensitive, so this only affects display.
+    """
+    doi = normalize_doi(doi)
     if doi.startswith("http"):
         return doi
     return f"https://doi.org/{doi}"
@@ -412,18 +420,19 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
 
         norm_surname = _normalize_for_matching(surname)
         haystack = norm_text
-        if not norm_surname:
-            # A wholly non-Latin surname (Greek, Cyrillic) ASCII-folds to '',
-            # and skipping here deleted a cited work from the References
-            # outright (ROADMAP item 4). Fall back to a script-preserving key,
-            # searched over the review text folded the same way, so the entry
-            # gets a real chance to match instead of a guaranteed drop.
+        if not any(c.isalnum() for c in norm_surname):
+            # The ASCII fold kept nothing that can identify anyone. A wholly
+            # non-Latin surname (Greek, Cyrillic) folds to '', and skipping
+            # here deleted a cited work from the References outright; a
+            # hyphenated one folds to '-' and matched a garbage pattern
+            # (\b-\b hits essentially every inter-word hyphen), so the entry
+            # was spuriously INCLUDED instead (ROADMAP item 4 + follow-up).
+            # Fall back to a script-preserving key, searched over the review
+            # text folded the same way, so the entry is judged on its name.
             #
-            # Two known limits, deliberate: the year test below is a substring
-            # match, so a non-numeric or bracketed year ("n.d.", "[2021]") still
-            # cannot match in this haystack; and a surname whose ASCII fold is
-            # punctuation-only rather than empty (a hyphenated non-Latin name
-            # folds to "-") does not reach this branch at all.
+            # Known limit, deliberate: the year test below is a substring
+            # match, so a non-numeric or bracketed year ("n.d.", "[2021]")
+            # still cannot match in this haystack.
             norm_surname = title_key(surname)
             if not norm_surname:
                 continue

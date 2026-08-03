@@ -370,24 +370,35 @@ Decisions taken, so they are not silently reversed later:
   still belongs to Issue B (see below): item 4 removed the *deterministic* drop
   mode, not the near-miss class.
 
-Two limits of the non-Latin fix, deliberate and documented in the code: the
-year test is a substring match, so a non-numeric or bracketed year (`n.d.`,
-`[2021]`) still cannot match in the script-preserving haystack; and the fallback
-triggers only on an *empty* ASCII fold, so a surname folding to punctuation-only
-(a hyphenated non-Latin name folds to `-`) is untouched. That second case is a
-distinct, unmeasured symptom — such entries currently match a garbage pattern
-and can be spuriously *included* in References. Fixing it would remove entries
-from References that ship today, so it was left out of a refactor. **Candidate
-follow-up item.**
+One limit of the non-Latin fix remains, deliberate and documented in the code:
+the year test is a substring match, so a non-numeric or bracketed year (`n.d.`,
+`[2021]`) still cannot match in the script-preserving haystack.
 
-**Third candidate, surfaced by this work's test fixture but pre-existing:**
-`generate_bibliography._format_doi` renders the RAW `doi` field, never the
-normalized one, so a bib entry carrying `doi = {doi:10.1000/x}` emits the
-broken hyperlink `https://doi.org/doi:10.1000/x` into the delivered
-References. Confirmed to pre-date item 4 by reproducing it on stashed
-(pre-change) code. It is a rendering defect rather than an identity one, so it
-was out of scope here; the one-line fix is to route `_format_doi` through
-`bib_identity.normalize_doi`.
+**Two follow-ups fixed 2026-08-03** (Johannes's call, same session):
+
+- **Punctuation-only surname folds.** The fallback originally triggered only on
+  an *empty* ASCII fold, so a hyphenated non-Latin surname — which folds to `-`,
+  not `''` — took the primary path and matched a garbage pattern (`\b-\b` hits
+  essentially every inter-word hyphen), spuriously *including* the entry in
+  References. The trigger is now "the fold retains no alphanumeric character",
+  which covers `''`, `-` and `' '` alike. A partly-Latin surname
+  (`Παπαδόπουλος-Smith` → `-Smith`) still takes the unchanged primary path.
+  Pinned by `TestPunctuationOnlySurnameFold`, including the negative case: an
+  uncited hyphenated non-Latin entry is no longer pulled in.
+- **`_format_doi` rendered the RAW `doi` field**, so `doi = {doi:10.1000/x}`
+  emitted the broken hyperlink `https://doi.org/doi:10.1000/x` into delivered
+  References. Confirmed pre-existing (reproduced on stashed pre-change code).
+  It now normalizes first; a URL that is not a known DOI prefix still passes
+  through rather than being glued onto `https://doi.org/`. Note this lowercases
+  the displayed DOI — resolution is case-insensitive, so it is display-only.
+
+**Still open — NOT a one-line fix:** the LaTeX-escape residue above.
+`generate_bibliography` decodes LaTeX before keying while `dedupe_bib` reads
+pybtex fields raw, so an escaped-accent title keys differently in the two.
+Closing it means either teaching `title_key` to decode LaTeX — which changes
+`metadata_cleaner`'s API-vs-bib title matching, the surface behind the
+year-corruption incident — or normalizing the inputs at one of the two call
+sites. Needs its own decision, not a drive-by.
 
 Historical record follows.
 
