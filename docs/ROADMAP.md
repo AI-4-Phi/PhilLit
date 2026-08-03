@@ -44,7 +44,7 @@ exists so open work has a single place to be listed — it was created
 > `docs/known-issues/phillit-abstention-attestation-decision-2026-08-02.md`
 > (local-only; original in ~/Downloads).
 >
-> **One thing gates the merge:**
+> **THE MERGE IS UNGATED (2026-08-02): both gates closed the same day.**
 > **(b) writer-guidance follow-ups — CLOSED, PASSED 2026-08-02.** The b2
 > prompt edits (built 2026-08-01) were validated with a live headless Sonnet
 > run on the branch ("Scientific representation and models in science",
@@ -60,9 +60,17 @@ exists so open work has a single place to be listed — it was created
 > mechanism). Side finding: the run hand-confirmed item 3E live — the
 > orchestrator removed 6 phantom References entries from the surname+year
 > matcher unprompted.
-> **(c) blind holistic coherence comparison — the last open gate** — rubric
-> item 3. Arms archived at
+> **(c) blind holistic coherence comparison — CLOSED, PASSED 2026-08-02.**
+> Johannes recorded his verdict blind (mapping unsealed only after): clear
+> preference for the TREATMENT arm "by a clear margin but not
+> overwhelmingly" — better structure (the given/taken dividing lines vs.
+> control anchoring on Floridi), better focus and coverage (e.g. Tal);
+> control ahead only on prose style; both trustworthy, no overstated
+> claims. **Final outcome cell: "Works. Proceed." — CONFIRMED**, all four
+> rubric items adjudicated. Arms archived at
 > `~/phillit-ab/archives/{control,treatment}-*-20260725.tar.gz`.
+> **Next: land the branch on `main`, bump the plugin version, port to the
+> service (its item 20).**
 >
 > **DO NOT REMOVE THE `evidence-tier` WORKTREE.** `docs/superpowers/` is
 > gitignored here, so the A/B results + adjudication record exist ONLY inside
