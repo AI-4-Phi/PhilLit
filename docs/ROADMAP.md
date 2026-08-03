@@ -334,10 +334,31 @@ as roadmap item 23.
 `fallback_key`, seeded verbatim from the hardened `metadata_cleaner` versions.
 Every other site keeps its historic name as an **alias to the shared object**,
 so call sites are unchanged and the anti-drift tests assert `is` identity rather
-than a vacuous equality between two copies. Both measured symptoms are gone,
-verified end-to-end through `bin/phillit-run`: the `Millière`/`Milliere` pair
-merges, and a Greek-surname entry that was deterministically absent now appears
-in the rendered References.
+than a vacuous equality between two copies. Both symptoms are gone, verified
+end-to-end through `bin/phillit-run`: the `Millière`/`Milliere` pair merges, and
+a Greek-surname entry that was deterministically absent now appears in the
+rendered References.
+
+**Corpus measurement, 2026-08-03 — the two symptoms had very different
+evidence behind them.** Scanning all 319 `.bib` files under `reviews/` (45
+reviews, 8,494 first-author entries):
+
+| symptom | first-author entries affected |
+|---|---|
+| divergent title key (the `Millière` class) | **174** — every non-ASCII surname keyed differently under the old `dedupe_bib` key |
+| surname ASCII-folds to `''` (the References drop) | **0** |
+| surname folds to punctuation-only (the follow-up below) | **0** |
+
+So the dedup fix has a real, sizable footprint — `Côté-Bouchard` keyed as
+`c t bouchard`, `García-Carpintero` as `garc a carpintero`, `Glüer-Pagin` as
+`gl er pagin`. The References-drop fix has **never fired in this corpus**. It is
+a real defect — deterministic and provable by reading the code — but it was
+derived from code reading, not observed in a delivered review, and the
+"two already-measured symptoms" heading in the historical section below is
+loose on that point: only the first was measured (5/32 reviews). The drop fix
+stands as cheap insurance against a proven-possible failure; this corpus is 45
+reviews of largely Anglophone analytic philosophy, and a topic drawing on Greek
+or Cyrillic first authors would plausibly hit it.
 
 Scope was **six** sites, not the five originally listed. The sixth,
 `dedupe_bib.extract_doi`, inlined its own prefix list missing `doi:` and bare
