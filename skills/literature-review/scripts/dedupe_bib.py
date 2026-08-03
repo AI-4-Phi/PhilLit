@@ -127,16 +127,17 @@ def upgrade_importance(entry: str, new_importance: str) -> str:
 
 
 def extract_doi(entry: str) -> str | None:
-    """Extract and normalize DOI from a BibTeX entry."""
+    """Extract and normalize DOI from a BibTeX entry.
+
+    Normalization is bib_identity.normalize_doi, shared with metadata_cleaner,
+    generate_bibliography and stamp_evidence (ROADMAP item 4) - an inline
+    prefix list here used to miss `doi:` and bare `doi.org/`, so the same DOI
+    keyed two different ways across the pipeline.
+    """
     match = re.search(r'doi\s*=\s*[{"]([^}"]+)["}]', entry, re.IGNORECASE)
     if not match:
         return None
-    doi = match.group(1).strip().lower()
-    # Strip URL prefixes
-    for prefix in ['https://doi.org/', 'http://doi.org/', 'https://dx.doi.org/', 'http://dx.doi.org/']:
-        if doi.startswith(prefix):
-            doi = doi[len(prefix):]
-    return doi
+    return normalize_doi(match.group(1))
 
 
 def has_abstract(entry: str) -> bool:

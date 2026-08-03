@@ -878,3 +878,37 @@ class TestDiacriticInsensitiveTitleDedup:
             "}"
         )
         assert dedupe_bib._fallback_key(entry) is not None
+
+
+class TestExtractDoiUsesSharedNormalization:
+    """ROADMAP item 4, sixth site: extract_doi carried its own prefix list,
+    missing `doi:` and bare `doi.org/`, so those entries keyed differently
+    here than in metadata_cleaner / generate_bibliography / stamp_evidence."""
+
+    def test_doi_colon_prefix_is_stripped(self):
+        from dedupe_bib import extract_doi
+        entry = "@article{a,\n  doi = {doi:10.1000/x},\n}"
+        assert extract_doi(entry) == "10.1000/x"
+
+    def test_bare_doi_org_prefix_is_stripped(self):
+        from dedupe_bib import extract_doi
+        entry = "@article{a,\n  doi = {doi.org/10.1000/x},\n}"
+        assert extract_doi(entry) == "10.1000/x"
+
+    def test_url_prefixes_and_case_still_normalize(self):
+        from dedupe_bib import extract_doi
+        assert extract_doi("@article{a,\n  doi = {https://dx.doi.org/10.1000/X},\n}") == "10.1000/x"
+
+    def test_missing_doi_field_still_returns_none(self):
+        from dedupe_bib import extract_doi
+        assert extract_doi("@article{a,\n  title = {No DOI Here},\n}") is None
+
+    def test_normalize_doi_is_the_shared_owner(self):
+        # extract_doi delegates through the module global, so a future
+        # shadowing redefinition would silently restore the sixth-site drift.
+        import sys
+        from pathlib import Path
+        sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+        import bib_identity
+        import dedupe_bib
+        assert dedupe_bib.normalize_doi is bib_identity.normalize_doi
