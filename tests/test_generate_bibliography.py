@@ -674,3 +674,49 @@ class TestIdentityKeysComeFromTheOwner:
     def test_doi_colon_prefix_now_strips(self):
         import generate_bibliography as gb
         assert gb._normalize_doi("doi:10.1000/X") == "10.1000/x"
+
+
+class TestNonLatinSurnameNoLongerVanishes:
+    """ROADMAP item 4 / bib-pipeline-integrity-gaps Issue B, second mode:
+    _normalize_for_matching ASCII-folds a wholly non-Latin surname to '' and
+    the entry was skipped before any matching ran, so a cited work was
+    deterministically absent from the rendered References."""
+
+    GREEK_SURNAME = "Παπαδόπουλος"
+
+    def _bib(self):
+        from pybtex.database import parse_string
+        return parse_string(
+            "@article{pap2021,\n"
+            f"  author = {{{self.GREEK_SURNAME}, Γ.}},\n"
+            "  title = {On Technology},\n"
+            "  year = {2021},\n"
+            "  journal = {J Phil},\n"
+            "}",
+            "bibtex",
+        )
+
+    def test_greek_surname_citation_resolves(self):
+        import generate_bibliography as gb
+        review = f"Recent work ({self.GREEK_SURNAME} 2021) argues otherwise."
+        cited = gb.find_cited_entries(review, self._bib())
+        assert [k for k, _ in cited] == ["pap2021"]
+
+    def test_uncited_greek_entry_is_still_excluded(self):
+        import generate_bibliography as gb
+        cited = gb.find_cited_entries("Nothing relevant is cited here.", self._bib())
+        assert cited == []
+
+    def test_latin_surname_matching_is_unchanged(self):
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        bib = parse_string(
+            "@article{clark1998,\n"
+            "  author = {Clark, Andy and Chalmers, David},\n"
+            "  title = {The Extended Mind},\n"
+            "  year = {1998},\n}",
+            "bibtex",
+        )
+        assert [k for k, _ in gb.find_cited_entries(
+            "As Clark and Chalmers (1998) argue,", bib)] == ["clark1998"]
+        assert gb.find_cited_entries("No citation at all.", bib) == []

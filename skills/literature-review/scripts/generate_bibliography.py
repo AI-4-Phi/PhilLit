@@ -389,6 +389,9 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     the two groups' non-empty DOI sets differ (GPT-B4).
     """
     norm_text = _normalize_for_matching(review_text)
+    # Script-preserving haystack for non-Latin surnames, built only if some
+    # entry needs it (see the empty-fold fallback below).
+    script_text = None
     cited = {}  # key -> entry
     seen_dois = {}  # normalized_doi -> citation_key
     seen_titles = {}  # (title, year, surname) -> citation_key
@@ -408,8 +411,25 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
             continue
 
         norm_surname = _normalize_for_matching(surname)
+        haystack = norm_text
         if not norm_surname:
-            continue
+            # A wholly non-Latin surname (Greek, Cyrillic) ASCII-folds to '',
+            # and skipping here deleted a cited work from the References
+            # outright (ROADMAP item 4). Fall back to a script-preserving key,
+            # searched over the review text folded the same way, so the entry
+            # gets a real chance to match instead of a guaranteed drop.
+            #
+            # Two known limits, deliberate: the year test below is a substring
+            # match, so a non-numeric or bracketed year ("n.d.", "[2021]") still
+            # cannot match in this haystack; and a surname whose ASCII fold is
+            # punctuation-only rather than empty (a hyphenated non-Latin name
+            # folds to "-") does not reach this branch at all.
+            norm_surname = title_key(surname)
+            if not norm_surname:
+                continue
+            if script_text is None:
+                script_text = title_key(review_text)
+            haystack = script_text
 
         # Word-boundary, case-insensitive surname match
         try:
@@ -418,10 +438,10 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
             continue
 
         matched = False
-        for m in pattern.finditer(norm_text):
+        for m in pattern.finditer(haystack):
             start = max(0, m.start() - _MATCH_WINDOW)
-            end = min(len(norm_text), m.end() + _MATCH_WINDOW)
-            window = norm_text[start:end]
+            end = min(len(haystack), m.end() + _MATCH_WINDOW)
+            window = haystack[start:end]
             if year in window:
                 matched = True
                 break
