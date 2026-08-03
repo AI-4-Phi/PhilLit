@@ -228,6 +228,7 @@ hooks/
 ├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
 ├── block_subagent_background_dispatch.py # PreToolUse (Agent/Task): review agents must dispatch foreground
 ├── bib_validator.py                      # BibTeX validation logic
+├── bib_identity.py                       # NOT a hook — the one owner of identity/comparison keys (DOI, title, pages, journal, year, fallback), imported by the cleaner and the skill scripts
 └── metadata_cleaner.py                   # Metadata provenance cleaning: year/type/field cleanup
 
 bin/
