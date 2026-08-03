@@ -21,7 +21,7 @@ exists so open work has a single place to be listed — it was created
 > overwhelmingly" (better structure, focus, and coverage; control ahead
 > only on prose style). **Final pre-registered outcome cell: "Works.
 > Proceed." — all four rubric items adjudicated.** Full records: the A/B
-> results doc (gitignored, see worktree warning below) and
+> results doc (gitignored — see the records note below) and
 > `docs/known-issues/evidence-tier-branch-divergence.md` §10 (the earlier
 > catch-up merge + Option C acceptance). The `metadata_cleaner.py` freeze
 > on `main` is LIFTED — `main` is the single line again.
@@ -379,10 +379,11 @@ project shares constants and duplicates judgments. One plan document
 cross-module import for a trivial function"* — so this is policy to reverse,
 not an accident to patch.
 
-**Sequence AFTER the item-1 merge.** It touches `dedupe_bib.py`, which carries
-+180 lines on `worktree-evidence-tier` and currently auto-merges cleanly;
-refactoring first manufactures a conflict where there is none. See
-`docs/known-issues/evidence-tier-branch-divergence.md`.
+**Sequencing constraint dissolved 2026-08-02.** This was queued behind the
+item-1 merge because `dedupe_bib.py` carried +180 branch-side lines and
+refactoring first would have manufactured a conflict; the branch landed on
+`main` (`f89f4de`), so this is now ordinary main-side work. Historical
+context: `docs/known-issues/evidence-tier-branch-divergence.md`.
 
 ## Backlog pointers
 
@@ -393,5 +394,6 @@ local-only `workflow-findings-softmax-review.md`).
 
 **If resuming an interrupted session, check the local-only
 `docs/known-issues/doc-rot-audit-2026-08-02.md` first** — it carries the
-agreed post-merge sequence (fix-wave → push → item-1 gates (b)/(c) → land
-the branch → item 4) with live checkboxes.
+agreed post-merge sequence with live checkboxes. Everything through landing
+the branch (steps 1–5) is done; what remains there is item 4, the
+27-wrong-years audit, and the deferred service mirror debt.

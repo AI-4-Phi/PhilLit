@@ -4,17 +4,17 @@
 service, third-party-model runs)
 **Severity**: High — affects every review; the rule provides no protection
 where protection is most needed
-**Status**: Fix **BUILT and A/B-tested** on branch `worktree-evidence-tier`
-(unmerged into `main`; live status = `docs/ROADMAP.md` item 1, which is the
-authority). The build-here-first plan below was executed: all 11 plan tasks
-done, the free Sonnet two-arm A/B ran on "What are data?" (book-heavy, as
-this doc suggests), and Johannes adjudicated three of the four rubric items
-on 2026-07-28 — provisional outcome "Works. Proceed." Remaining gates before
-the branch lands on `main`: (b) writer-guidance follow-ups, (c) the blind
-coherence read. **Everything below is the problem analysis and design
-record** — read passages that sound like future work ("suggested test",
-"where the fix gets tested") as the plan that was carried out, not as open
-work.
+**Status**: **SHIPPED — merged to `main` 2026-08-02 (`f89f4de`), released as
+plugin v0.3.0** (live status = `docs/ROADMAP.md` item 1, which is the
+authority; what remains there is the service port). The build-here-first
+plan below was executed: all 11 plan tasks done, the free Sonnet two-arm A/B
+ran on "What are data?" (book-heavy, as this doc suggests), Johannes
+adjudicated the rubric — final outcome "Works. Proceed." — and both merge
+gates closed 2026-08-02 ((b) via a live validation run, (c) via the blind
+coherence read; treatment preferred). **Everything below is the problem
+analysis and design record** — read passages that sound like future work
+("suggested test", "where the fix gets tested") as the plan that was
+carried out, not as open work.
 
 ## Summary
 
@@ -243,9 +243,8 @@ against code in **this repo** at the paths given, not merely carried over.
 6. **`_SUBSTANTIVE_FIELDS` in `skills/literature-review/scripts/dedupe_bib.py`
    omits `sep_context` and `iep_context`.** Today that silently loses
    encyclopedia context when merging cross-domain duplicates. Under a tier
-   system it silently *demotes a tier*. Add both fields. *(Done on the
-   branch — `dedupe_bib.py` there includes both; `main` still omits them,
-   which is correct only until the branch lands.)*
+   system it silently *demotes a tier*. Add both fields. *(Done —
+   `dedupe_bib.py` on `main` includes both since the 2026-08-02 merge.)*
 7. **Do not bundle the NDPR demotion.** Reclassifying `abstract_source = ndpr`
    as third-party context rather than an author abstract is defensible on this
    repo's own definition (`docs/conventions.md:151` — book-review prose,

@@ -42,11 +42,11 @@ less .claude/worktrees/evidence-tier/skills/literature-review/scripts/stamp_evid
 Citations to `hooks/metadata_cleaner.py`, `dedupe_bib.py` and
 `generate_bibliography.py` *are* valid on `main`.
 
-**There are two extra worktrees, and only one is load-bearing.**
+**There were two extra worktrees during this work; both are now removed.**
 
 | worktree | branch | status |
 |---|---|---|
-| `.claude/worktrees/evidence-tier` | `worktree-evidence-tier` | **DO NOT REMOVE** — holds the only copy of the A/B results and adjudication record (gitignored, so not in any commit) |
+| `.claude/worktrees/evidence-tier` | `worktree-evidence-tier` | **removed 2026-08-02** after the merge landed and every gitignored record (A/B results + adjudication) was verified byte-identical in the main checkout's `docs/superpowers/plans/` (was: DO NOT REMOVE — sole copy of that record) |
 | `.claude/worktrees/merge-trial` | `merge-trial` | **removed 2026-08-02** after the real merge landed (was the throwaway trial @ `6e84aa1`) |
 
 ## 1. Topology (all figures measured 2026-08-02)
