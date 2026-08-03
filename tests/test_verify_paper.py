@@ -138,6 +138,26 @@ class TestDOINormalization:
         result = verify_paper.normalize_doi("  10.2307/2024717  ")
         assert result == "10.2307/2024717"
 
+    def test_normalize_is_the_shared_owner(self):
+        """ROADMAP item 4: one owner for DOI normalization."""
+        import sys
+        from pathlib import Path
+
+        sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+        import bib_identity
+        import verify_paper
+
+        assert verify_paper.normalize_doi is bib_identity.normalize_doi
+
+    def test_uppercase_doi_prefix_and_case_normalize(self):
+        """DOI resolution is case-insensitive; the normalized value reaches
+        only the CrossRef URL and a log line (the emitted doi comes from
+        CrossRef, and query["doi"] echoes the raw argument)."""
+        import verify_paper
+
+        assert verify_paper.normalize_doi("DOI:10.2307/2024717") == "10.2307/2024717"
+        assert verify_paper.normalize_doi("https://dx.doi.org/10.2307/X") == "10.2307/x"
+
 
 class TestAuthorNameExtraction:
     """Tests for author name extraction from CrossRef format."""

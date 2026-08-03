@@ -16,35 +16,41 @@ sys.path.insert(0, str(HOOKS_DIR))
 from metadata_cleaner import normalize_doi as cleaner_normalize_doi  # noqa: E402
 
 
-class TestNormalizeDoiEquivalence:
-    """stamp_evidence.normalize_doi must be byte-equivalent to
-    metadata_cleaner.normalize_doi (finding 1): a cleaner-verified DOI value
-    is compared against the ledger value stamp_evidence computes, so any
-    divergence causes a spurious EVIDENCE-NONE demotion."""
+class TestNormalizeDoiIsTheSharedOwner:
+    """Was TestNormalizeDoiEquivalence: two copies pinned byte-equivalent.
+    ROADMAP item 4 made them one object, so identity is what now prevents
+    drift. A divergence here would make a cleaner-verified DOI compare unequal
+    to the ledger value stamp_evidence computes, spuriously demoting the entry
+    to EVIDENCE-NONE."""
 
-    CASES = [
-        "10.1000/X",
-        "https://doi.org/10.1000/x",
-        "http://doi.org/10.1000/x",
-        "doi:10.1000/x",
-        "doi.org/10.1000/x",
-        "https://dx.doi.org/10.1000/x",
-        "http://dx.doi.org/10.1000/x",
-        "  10.1000/X  ",
-        "  https://doi.org/10.1000/x  ",
-        "  https://dx.doi.org/10.1000/x  ",
-        "DOI:10.1000/X",
-        "",
-        None,
-    ]
+    # Literal expected values, not a copy-vs-copy comparison: once both names
+    # resolve to the same function object, `a(case) == b(case)` compares each
+    # output to itself and cannot fail.
+    CASES = {
+        "10.1000/X": "10.1000/x",
+        "https://doi.org/10.1000/x": "10.1000/x",
+        "http://doi.org/10.1000/x": "10.1000/x",
+        "doi:10.1000/x": "10.1000/x",
+        "doi.org/10.1000/x": "10.1000/x",
+        "https://dx.doi.org/10.1000/x": "10.1000/x",
+        "http://dx.doi.org/10.1000/x": "10.1000/x",
+        "  10.1000/X  ": "10.1000/x",
+        "  https://doi.org/10.1000/x  ": "10.1000/x",
+        "  https://dx.doi.org/10.1000/x  ": "10.1000/x",
+        "DOI:10.1000/X": "10.1000/x",
+        "": "",
+        None: "",
+    }
 
-    def test_equivalent_over_battery(self):
-        for case in self.CASES:
-            assert normalize_doi(case) == cleaner_normalize_doi(case), (
-                f"mismatch for {case!r}: "
-                f"stamp_evidence={normalize_doi(case)!r} "
-                f"cleaner={cleaner_normalize_doi(case)!r}"
-            )
+    def test_is_the_shared_object(self):
+        import bib_identity
+        import stamp_evidence
+        assert stamp_evidence.normalize_doi is bib_identity.normalize_doi
+        assert cleaner_normalize_doi is bib_identity.normalize_doi
+
+    def test_battery_normalizes_to_documented_values(self):
+        for raw, expected in self.CASES.items():
+            assert normalize_doi(raw) == expected, f"{raw!r} -> {normalize_doi(raw)!r}"
 
     def test_dx_doi_org_stripped(self):
         assert normalize_doi("https://dx.doi.org/10.1000/x") == "10.1000/x"

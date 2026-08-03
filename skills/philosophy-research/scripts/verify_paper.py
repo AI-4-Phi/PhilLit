@@ -44,6 +44,13 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from rate_limiter import ExponentialBackoff, get_limiter
 
+# Add hooks directory to path for bib_identity import (single source of truth)
+sys.path.insert(0, os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(
+        os.path.dirname(os.path.abspath(__file__))))), "hooks"))
+
+from bib_identity import normalize_doi  # noqa: E402,F401 - re-exported for callers
+
 
 def log_progress(message: str) -> None:
     """Emit progress to stderr (visible to user, doesn't break JSON output)."""
@@ -127,16 +134,6 @@ def output_error(query: dict, error_type: str, message: str, exit_code: int = 2)
         "count": 0,
         "errors": [{"type": error_type, "message": message, "recoverable": error_type == "rate_limit"}]
     }, exit_code)
-
-
-def normalize_doi(doi: str) -> str:
-    """Normalize DOI by removing common prefixes."""
-    doi = doi.strip()
-    prefixes = ["https://doi.org/", "http://doi.org/", "doi:", "DOI:"]
-    for prefix in prefixes:
-        if doi.startswith(prefix):
-            doi = doi[len(prefix):]
-    return doi
 
 
 def extract_author_names(authors: list[dict]) -> list[str]:

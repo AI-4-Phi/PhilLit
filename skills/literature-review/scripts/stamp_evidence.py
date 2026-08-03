@@ -10,7 +10,16 @@ from __future__ import annotations
 
 import hashlib
 import re
+import sys
 from dataclasses import dataclass
+from pathlib import Path
+
+# Import DOI normalization from bib_identity (single source of truth)
+_hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
+sys.path.insert(0, str(_hook_dir))
+from bib_identity import normalize_doi  # noqa: E402,F401 - re-exported for callers
+
+sys.path.pop(0)
 
 TIER_ABSTRACT = "EVIDENCE-ABSTRACT"
 TIER_CONTEXT = "EVIDENCE-CONTEXT"
@@ -36,27 +45,6 @@ class EntryAttestation:
     # only - compute_tier ignores it (existence is attested via api_matched +
     # the value binding); it exists so the refusal stays visible downstream.
     cleaning_abstained: str | None = None
-
-
-def normalize_doi(value: str) -> str:
-    """Normalize DOI for comparison. Byte-equivalent with
-    hooks.metadata_cleaner.normalize_doi -- pinned by
-    tests/test_stamp_evidence.py::TestNormalizeDoiEquivalence. A mismatch
-    here would make a cleaner-verified DOI compare unequal to the ledger
-    value stamp_evidence computes, causing spurious EVIDENCE-NONE demotion."""
-    if not value:
-        return ""
-    v = value.strip().lower()
-    # dx.doi.org forms first so the bare-form checks below can't shadow them
-    # (longest-prefix-wins).
-    prefixes = [
-        "https://dx.doi.org/", "http://dx.doi.org/",
-        "https://doi.org/", "http://doi.org/", "doi:", "doi.org/",
-    ]
-    for prefix in prefixes:
-        if v.startswith(prefix):
-            v = v[len(prefix):]
-    return v
 
 
 def normalize_publisher(value: str) -> str:
