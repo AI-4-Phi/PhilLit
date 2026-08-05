@@ -5,8 +5,10 @@
 Tracked as `ROADMAP.md` item 3, sub-items **E** (matcher) and **F** (Chicago
 suffixes). **E is FIXED 2026-08-05** (`917850d`, `fb6623e`, `be5ab30`,
 `e5e863a`, `e5cb717` — item 3 E, Tasks 1-4 of the collision-aware-matching
-plan). **F is still Open** — same-author collisions need Chicago `a`/`b`
-suffixes, which E cannot provide (see "Fix design" below).
+plan; `970b117` — final-review fix-wave, C1 left-anchor guard, I1
+second-position corroboration, M2 dead-span cleanup). **F is still Open**
+— same-author collisions need Chicago `a`/`b` suffixes, which E cannot
+provide (see "Fix design" below).
 
 ## Summary
 
@@ -158,8 +160,10 @@ review_text)`. Commits: `917850d` (Task 1, `ascii_variants` owner in
 `bib_identity`), `fb6623e` (Task 2, symmetric transliteration matching),
 `be5ab30` (Task 3, anchored `_collect_matches` refactor), `e5e863a` (Task 4,
 instance-based collision resolution), `e5cb717` (Task 4 review-round fix,
-decouples first- and second-position instance signals). Full suite:
-1329 green.
+decouples first- and second-position instance signals), `970b117`
+(final-review fix-wave: C1 left-anchor guard on `_CITE_INSTANCE_RE`, I1
+`_second_position_corroborated`, M2 drops the dead hit-span payload from
+`_collect_matches`). Full suite: 1332 green.
 
 **Resolution rule.** Bib entries sharing `(first-author surname, year)` are
 grouped by variant-intersection connected components. Each group is
@@ -179,22 +183,46 @@ discriminated a candidate:
    warning. A second-position sighting elsewhere in the text can never
    override this branch into a drop.
 3. No first-position instance seen, but a second-position sighting exists
-   (this group's surname appears only as the second author of an "and"
-   instance elsewhere, e.g. "Bloggs and Muldoon" against a Muldoon-first-
-   author group) → drop all members (the co-author position is the only
-   parsed explanation for the loose surname/year match).
+   (this group's surname appears as the second author of an "and" instance
+   elsewhere, e.g. "Bloggs and Muldoon" against a Muldoon-first-author
+   group) AND that sighting is *corroborated* by an actual bib record
+   (I1, `_second_position_corroborated`) — some entry, anywhere in the
+   bib, whose own first author matches the instance's first-position
+   surname and whose second author matches this group (e.g. a
+   `Bloggs, Joe and Muldoon, Ryan` entry actually backing "Bloggs and
+   Muldoon") → drop all members. An *uncorroborated* sighting - a
+   narrative co-mention with no bib record behind it, e.g. "Following
+   Kripke and Putnam (1975)" with no Kripke entry anywhere in the bib -
+   is not evidence against the group and falls to branch 4 instead.
 4. Neither → keep ALL members, `[COLLISION] ambiguous` warning (pure
    narrative mention, no parseable form at all).
 
 Warn-and-keep-all (branches 2 and 4) is the deliberate default whenever the
-prose doesn't affirmatively discriminate: **partial ambiguity never drops a
-cited work.**
+prose doesn't affirmatively discriminate. The accurate invariant: **a drop
+requires affirmative instance evidence** — a first-position instance that
+discriminates a candidate (branch 1), or a second-position sighting
+corroborated by an actual bib record (branch 3). Two narrow, documented
+paths can still lose a genuinely cited work despite this (see "Residuals,
+accepted" below): the C1 left-anchor guard's rejection direction is
+keep-all/safe (it never manufactures a spurious drop), but a work cited
+only through a form `_CITE_INSTANCE_RE` cannot parse, combined with an
+unrelated *corroborated* second-position sighting of the same group, can
+still drop that work along with the rest of the group.
 
 **Same-author groups are deliberately left whole for F.** Three same-author
 same-year works (Menary 2010 ×3) share every discriminator this fix has
 access to (surname, author-list shape, first initial), so they always fall
 to branch 2 or 4 and stay whole with a warning — resolving them needs
 Chicago `a`/`b` suffixes (F), which E does not attempt.
+
+**Side effect: straight/curly apostrophe matching.** The symmetric
+transliteration fold added for item 3 B (`bib_identity.ascii_variants`/
+`translit_fold`) unifies `'` and `’` as part of its lowercasing, so a bib
+entry's straight apostrophe now matches a prose curly apostrophe and vice
+versa (bib `O'Neill` meets prose `O’Neill`) — this did not match on the
+pre-item-3-B base, which only NFKD-ASCII-folded text and so dropped `’`
+(non-ASCII) while leaving `'` (ASCII) in place, producing two different
+strings.
 
 **Scope note: `check_evidence.find_cites` is untouched.** It keeps its own
 copy of the `(surname, year)`-within-`_MATCH_WINDOW` logic
@@ -214,20 +242,62 @@ with "Interaction with the evidence tier" below.
   possessive only for surnames already ending in `-s`) risks false
   positives against surnames that end in `'` as a matter of orthography,
   and no test case exists to validate either direction.
-- **Unparsed narrative forms fall to keep-all.** `_CITE_INSTANCE_RE` only
-  recognizes `solo`/`and`/`etal` shapes; any other narrative citation form
-  produces no instance for its group, which then falls to branch 4
-  (keep-all-and-warn) by construction — never a drop.
+- **Unparsed narrative forms fall to keep-all, UNLESS a corroborated
+  second-position sighting also exists for the group (honest limit, not
+  fixed).** `_CITE_INSTANCE_RE` only recognizes `solo`/`and`/`etal`
+  shapes; a work cited only through some other narrative form (a
+  possessive with an intervening word — "Muldoon's own 2023 monograph
+  disagrees" parses to NO instance at all, since the year isn't
+  immediately adjacent to the surname) contributes no instance of its
+  own. If nothing else in that (surname, year) group has an instance
+  either, this reaches branch 4 (keep-all-and-warn) — never a drop. But
+  if an *unrelated* sentence elsewhere in the text supplies a
+  *corroborated* second-position sighting for the same group (branch 3,
+  I1) — e.g. "Bloggs and Muldoon (2023) note this. Muldoon's own 2023
+  monograph disagrees." against a bib that has both a solo-Muldoon entry
+  and a `Bloggs, Joe and Muldoon, Ryan` entry — the whole group,
+  including the unparseably-cited solo work, still drops. I1's
+  corroboration check only distinguishes narrative asides (no bib entry
+  backs the sighting) from real co-author sightings (a bib entry backs
+  it); it cannot also recover a same-group member cited through a form
+  the instance regex never parses.
 - **Particled FIRST surnames never intersect instances.** The regex keeps
   the first surname single-token, so a particled first surname ("van der
   Deijl") never matches an instance's `surname_variants`; its group
   therefore always falls to keep-all-and-warn (documented in the
   `_PARTICLED_SURNAME` comment in code).
+- **Left-anchor guard on `_CITE_INSTANCE_RE` (C1, fixed, safe-direction
+  residual).** The regex has no left anchor, so it could bind at a
+  non-initial name — the second item of a longer comma list ("Smith,
+  Jones, and Lee (2020)" misread as "Jones and Lee"), or right after an
+  ampersand ("Jones & Lee (2020)" misread as a bare solo "Lee") — and
+  manufacture a phantom discriminator. `_NON_INITIAL_PRECEDING_RE`
+  rejects a match whose preceding text ends in a capitalized name
+  followed by `, and `/` & `/a bare `, `. The rejection direction is
+  keep-all/safe: a rejected match simply contributes no instance, which
+  can only push a group toward branches 2/4 (keep-all), never manufacture
+  a drop. It cannot, by itself, recover a work whose only citation was
+  the now-rejected (and always-wrong) binding — that work still needs
+  some other legitimate instance, or the group's genuine members fall to
+  keep-all-and-warn together, which is the safe outcome.
 - **Collision resolution runs before dedup (accepted, narrow).**
   `find_cited_entries` calls `_resolve_collisions` before the DOI/
   fallback-key dedup loop, so a duplicate pair with divergent author-list
-  lengths can lose its truncated copy to collision resolution before
-  field-union has a chance to run. Narrow and accepted, not fixed.
+  lengths can lose the RICHER copy's fields, not the truncated one's.
+  Example: a solo-form citation against a truncated 1-author duplicate
+  and its richer 3-author twin (same title/year) — collision resolution
+  discriminates on author-list shape (`solo` form selects the `n == 1`
+  entry) and drops the 3-author entry outright, so it never reaches the
+  dedup loop where `_union_substantive_fields` would otherwise have
+  copied its `journal`/`volume`/`pages`/`doi` into the survivor; the
+  surviving 1-author entry keeps only its own scant fields. Narrow and
+  accepted, not fixed. **Protected on the real pipeline**: `dedupe_bib.py`
+  runs before `generate_bibliography.py` in Phase 6 (`SKILL.md` step
+  order), so a duplicate pair is already merged to one entry, with fields
+  unioned, before collision resolution ever runs — this residual is
+  reachable only when a bib reaches `generate_bibliography.py` with the
+  duplicate still unmerged (e.g. a standalone/manual invocation that
+  skips the dedupe step).
 - **The two-Johnsons sub-shape is matcher-only; the writer-facing half of
   E never landed.** `_first_text_informative` discriminates two solo
   same-surname authors only when the prose already carries a first

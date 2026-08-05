@@ -15,9 +15,12 @@ decision pending); (3) item 3's residuals — **A, B, and E all DONE
 E's instance-based collision resolution); remaining C, D; F last; (4) ONE
 batched phillit-service mirror session — the item-4 `bib_identity` port,
 the item-1 evidence-tier port (service item 20), the item-3-E
-collision-aware-matching port (Tasks 1-4, `917850d`..`e5cb717` — port from
-`e5cb717` or later, never `e5e863a` alone: the first/second-position
-conflation bug lived entirely inside `e5e863a`'s `_resolve_collisions`),
+collision-aware-matching port (Tasks 1-4 plus the final-review fix-wave,
+`917850d`..`970b117` — port from `970b117` or later, never `e5e863a` or
+`e5cb717` alone: `970b117` fixes a left-anchor gap in
+`_CITE_INSTANCE_RE` (C1) and requires bib-record corroboration before a
+second-position sighting can drop a group (I1), both of which the
+earlier commits in this range still get wrong),
 and the deferred `rate_limiter` fix — which **opens with a decision: the
 two trees have drifted far enough that the session may conclude they
 should be developed separately rather than mirrored**; (5) item 2. Until
@@ -352,15 +355,18 @@ group has entries, so a listed work is confirmed uncited.
 
 - **E — matcher collisions / phantom references**
   (`generate_bibliography.py`): **FIXED 2026-08-05** (`917850d`, `fb6623e`,
-  `be5ab30`, `e5e863a`, `e5cb717`). Previously every entry sharing
-  `(first-author surname, year)` matched whenever any one of them was
-  cited, so uncited works were rendered into References *even when the
+  `be5ab30`, `e5e863a`, `e5cb717`, `970b117`). Previously every entry
+  sharing `(first-author surname, year)` matched whenever any one of them
+  was cited, so uncited works were rendered into References *even when the
   prose was unambiguous*. `_resolve_collisions` now groups colliding
   entries, parses citation instances from the original prose, and keeps
   only the union of entries an instance actually supports — a group with no
   discriminating instance is kept whole with a `[COLLISION] ambiguous`
-  stderr warning rather than guessed at (partial ambiguity never drops a
-  cited work). Scope: collisions where the works have **different
+  stderr warning rather than guessed at. A drop requires affirmative
+  instance evidence (a discriminating first-position instance, or a
+  second-position sighting corroborated by an actual bib record); two
+  narrow residual paths can still lose a work regardless (full detail
+  below). Scope: collisions where the works have **different
   authors**. Two sub-shapes:
   - *Different author lists* — `Muldoon et al. 2023` vs. `Muldoon and Wu
     2023`; also Moore 2020, Li 2022, Wang 2023, Adams 2010. Discriminating
@@ -377,9 +383,13 @@ group has entries, so a listed work is confirmed uncited.
   Residuals (full detail in
   `docs/known-issues/author-year-collision.md`): a bare-apostrophe
   possessive ("Rivers' (2020)") isn't stripped; unparsed narrative forms
-  fall to keep-all; particled FIRST surnames ("van der Deijl") never
-  intersect an instance's variants, so those groups keep-all by
-  construction; collision resolution runs before dedup (accepted, narrow).
+  fall to keep-all UNLESS an unrelated corroborated second-position
+  sighting also exists for the group, in which case the whole group,
+  including the unparseably-cited work, still drops; particled FIRST
+  surnames ("van der Deijl") never intersect an instance's variants, so
+  those groups keep-all by construction; collision resolution runs before
+  dedup and can lose the RICHER duplicate's fields (protected on the real
+  pipeline, where `dedupe_bib.py` runs first — accepted, narrow).
   Same-author collisions are deliberately left whole for F.
   Self-contained in `generate_bibliography.py`, no agent-prompt change, no
   live run — natural companion to B's every-citation-resolves check in
