@@ -94,6 +94,16 @@ References-side `find_cited_entries` dedup mirrors the same strip-and-
 blocked-union logic, so the object-side rendering path cannot reintroduce
 what the bib-side path just removed (`7816d2a`).
 
+Accepted limitation: `dedupe_bib.py`'s regex-based value extractors
+(`_field_value_re`, behind `_extract_keywords_value`, `has_abstract`, and
+the keywords/abstract readers built on it) only handle one level of nested
+braces in a field value; a double-nested value (`{a {b {c} d} e}`) is
+invisible to them - the marker or abstract simply reads as not found rather
+than erroring. `_remove_fields_text`'s own scanner is unaffected (it is a
+genuine depth counter, not regex-limited to one level), as are the
+pybtex-backed helpers (`_entry_fields`, `_fallback_key`, and everything in
+`generate_bibliography.py`, which parses with pybtex throughout).
+
 Three scoping residuals survive, surfaced by external review and
 deliberately not fixed in this round — they bound what "FIXED" means here
 rather than reopening the issue. (1) The marker records field *names* only,
@@ -114,6 +124,18 @@ by substantive-field count — so a fabricated value on the winning copy can
 still beat a verified value on the losing one, by either rule (review Q3)
 — see the ROADMAP item 3 follow-up line for the "vetted beats unvetted"
 refinement this implies.
+
+Ordering note (M6), not a residual but worth stating:
+`metadata_cleaner._apply_cleaned_marker` REPLACES a keywords field's marker
+rather than appending to it, so a cleaner re-run on an already-merged
+(dedupe_bib-consolidated) bib would erase a dedupe-folded marker outright.
+This is reachable only via a post-Phase-6
+researcher dispatch, since `hooks/subagent_stop_bib.sh` globs every `*.bib`
+in the workspace regardless of pipeline stage. Nothing resurrects a
+previously-stripped field at erasure time — the fields the folded marker
+recorded as removed stay removed — but the marker's own removal record
+would be gone, so a later duplicate merge could no longer see that this
+entry was already vetted.
 
 ## Issue B — a cited work can silently vanish from the rendered References (surname-match failure)
 
@@ -163,13 +185,21 @@ the surname, to a line in the rendered References section — ERROR-level,
 nonzero exit, so an omission that used to be invisible now fails the lint
 step loudly. Resolution is deliberately more tolerant than the generator's
 own matcher: transliteration variants (ä→a *and* ä→ae, generated on both
-sides of the comparison, so body "Fraenken" now meets bib "Fränken"), either
-year of a reprint form (`YEAR/YEAR`), Chicago a/b suffixes, 1600s–2000s
-years (`Kant 1785`), comma-separated multi-cites, and a fence-aware,
-last-heading-wins search for the `## References` section. Output is
-cp1252-safe (the citation text — where non-ASCII lives — is
-ASCII-backslash-escaped before printing), so the error path itself cannot
-crash on Windows.
+sides of the comparison), either year of a reprint form (`YEAR/YEAR`),
+Chicago a/b suffixes, 1600s–2000s years (`Kant 1785`), comma-separated
+multi-cites, and a fence-aware, last-heading-wins search for the
+`## References` section. Output is cp1252-safe (the citation text — where
+non-ASCII lives — is ASCII-backslash-escaped before printing), so the error
+path itself cannot crash on Windows.
+
+That transliteration tolerance operates on the RENDERED References text, not
+the raw `.bib` — it widens what the check can match within an entry that
+already made it into References, it does not reach back into the
+generator's own match decision. So in the original observed instance (body
+"Fraenken", bib "Fränken"), the entry never reached References in the first
+place (the generator's matcher dropped it, per Issue B above) — the check
+finds nothing to match against and correctly ERRORs on the citation. It
+surfaces the drop loudly; it does not make the match succeed.
 
 **Issue B itself remains Open.** The check is a guard, not a fix for the
 matcher: it makes every future matcher gap loud instead of silent, but the
