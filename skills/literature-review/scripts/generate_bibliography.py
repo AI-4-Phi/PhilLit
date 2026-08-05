@@ -519,6 +519,194 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
     return records
 
 
+# A second surname may carry lowercase particles: "and de la Cruz",
+# "and van der Waals" (review 2.7). The FIRST surname stays single-token -
+# a particled first surname ("van der Deijl") never intersects an
+# instance's variants, so its group safely falls to warn-and-keep-all
+# rather than dropping anything (document as a known limit).
+_PARTICLED_SURNAME = r"(?:[a-zà-ÿ'’-]+\s+)*[A-ZÀ-Þ][\w'’À-ÿ-]+"
+_CITE_INSTANCE_RE = re.compile(
+    r"(?:(?P<first>[A-ZÀ-Þ][\w.À-ÿ]*)\s+)?"          # initial/first name (optional)
+    r"(?P<surname>[A-ZÀ-Þ][\w'’À-ÿ-]+)"
+    r"(?:'s|’s)?"
+    r"(?:(?P<etal>\s+et al\.?)"
+    r"|(?:,?\s+and\s+(?P<second>" + _PARTICLED_SURNAME + r")))?"
+    r"(?:'s|’s)?"
+    r"[\s,]*\(?\s*(?P<year>(?:1[6-9]|20)\d{2})[a-z]?\b"
+)
+
+
+def _strip_possessive(s: str) -> str:
+    """Drop a trailing possessive marker ('s / ’s) from a captured name.
+
+    The surname/second character classes admit apostrophes (for names like
+    O'Brien), so the regex's own trailing `(?:'s|’s)?` groups never get a
+    chance to match - greedy `+` already swallowed "Moore's" whole, with
+    nothing downstream forcing backtracking. The doubled `(?:'s|’s)?` in
+    _CITE_INSTANCE_RE (once after surname, once after the etal/and
+    alternation) is the evidence the possessive was meant to be stripped;
+    this restores that intent without touching the character class (which
+    would risk mangling genuine apostrophed surnames)."""
+    for suf in ("'s", "’s"):
+        if s.endswith(suf):
+            return s[: -len(suf)]
+    return s
+
+
+def _citation_instances(review_text: str) -> list[dict]:
+    """Parse author-year citation instances from the ORIGINAL text.
+    Each: {"surname_variants", "form", "second_text", "first_text", "year"}.
+    form: 'solo' | 'and' | 'etal'. second_text may be a multiword particled
+    surname - compared whole-to-whole against candidate second-surname
+    variants, never tokenized; first_text is the raw leading token ('' when
+    absent) and is applied only when informative (see candidate rule)."""
+    out = []
+    for m in _CITE_INSTANCE_RE.finditer(review_text):
+        surname = _strip_possessive(m.group("surname"))
+        if m.group("etal"):
+            form, second = "etal", ""
+        elif m.group("second"):
+            form, second = "and", _strip_possessive(m.group("second"))
+        else:
+            form, second = "solo", ""
+        out.append({
+            "surname_variants": ascii_variants(surname),
+            "form": form,
+            "second_text": second,
+            "first_text": (m.group("first") or "").rstrip("."),
+            "year": m.group("year"),
+        })
+    return out
+
+
+def _ascii(s: str) -> str:
+    return s.encode("ascii", "backslashreplace").decode("ascii")
+
+
+def _persons_of(rec):
+    e = rec["entry"]
+    return e.persons.get("author", []) or e.persons.get("editor", [])
+
+
+def _first_text_informative(first_text: str, members: list[dict]) -> bool:
+    """A captured pre-surname token discriminates only when it names SOME
+    group member's first author - sentence-leading words ("As Muldoon...")
+    are captured too and must read as prose, not as a first name."""
+    ft = ascii_variants(first_text)
+    ftl = first_text.lower()
+    for rec in members:
+        persons = _persons_of(rec)
+        if not persons:
+            continue
+        fn = ascii_variants(_get_first_names(persons[0]))
+        if ft & fn or ftl in {v[0] for v in fn if v}:
+            return True
+    return False
+
+
+def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
+    """Item 3 E (external-review design): group colliding records by
+    variant-intersection connected components per year; resolve each group
+    by per-citation-instance candidate sets parsed from the ORIGINAL text;
+    keep the union of supported members; drop only what no instance
+    supports - and only when the group parsed at least one instance."""
+    for rec in records:
+        rec["_variants"] = ascii_variants(rec["surname"]) or \
+            frozenset({rec["surname"].lower()})
+    groups: list[list[dict]] = []
+    for rec in records:
+        hits = [g for g in groups if g[0]["year"] == rec["year"]
+                and any(rec["_variants"] & r["_variants"] for r in g)]
+        for g in hits[1:]:
+            hits[0].extend(g)
+            groups.remove(g)
+        if hits:
+            hits[0].append(rec)
+        else:
+            groups.append([rec])
+
+    instances = None  # parsed lazily, once, only if some group collides
+    keep = []
+    for members in groups:
+        if len(members) == 1:
+            keep.append(members[0])
+            continue
+        if instances is None:
+            instances = _citation_instances(review_text)
+        member_variants = frozenset().union(*(r["_variants"] for r in members))
+        year = members[0]["year"]
+        supported = set()
+        any_instance = False
+        for inst in instances:
+            if inst["year"] != year:
+                continue
+            if not (inst["surname_variants"] & member_variants):
+                # Not cited as first author here - but if this group's
+                # surname is the SECOND author of an "and" instance (e.g.
+                # "Bloggs and Muldoon (2023)" against a Muldoon-first-
+                # author group), that is positive evidence against the
+                # group, not narrative silence: count it as a parsed
+                # instance (so the group doesn't fall back to keep-all)
+                # while it supports nobody (review edge, second-author
+                # position must not read as a first-author citation).
+                if inst["form"] == "and" and (
+                        ascii_variants(inst["second_text"]) & member_variants):
+                    any_instance = True
+                continue
+            cands = []
+            for rec in members:
+                if not (inst["surname_variants"] & rec["_variants"]):
+                    continue
+                persons = _persons_of(rec)
+                n = len(persons)
+                if inst["form"] == "etal" and n >= 3:
+                    cands.append(rec)
+                elif inst["form"] == "and" and n == 2 and (
+                        ascii_variants(inst["second_text"])
+                        & ascii_variants(_get_full_surname(persons[1]))):
+                    cands.append(rec)
+                elif inst["form"] == "solo" and n == 1:
+                    if inst["first_text"] and _first_text_informative(
+                            inst["first_text"], members):
+                        fn = ascii_variants(_get_first_names(persons[0]))
+                        init = {v[0] for v in fn if v}
+                        if not (ascii_variants(inst["first_text"]) & fn
+                                or inst["first_text"].lower() in init):
+                            continue
+                    cands.append(rec)
+            if cands:
+                any_instance = True
+                supported.update(r["key"] for r in cands)
+                if len(cands) > 1:
+                    print("  [COLLISION] ambiguous: instance '"
+                          + _ascii(next(iter(inst["surname_variants"])))
+                          + " " + year + "' (" + inst["form"] + ") matches "
+                          + ", ".join(sorted(_ascii(r["key"]) for r in cands)),
+                          file=sys.stderr)
+        if any_instance:
+            for rec in members:
+                if rec["key"] in supported:
+                    keep.append(rec)
+                else:
+                    print("  [COLLISION] dropped " + _ascii(rec["key"])
+                          + ": shares surname/year with "
+                          + ", ".join(sorted(_ascii(r["key"]) for r in members
+                                             if r is not rec))
+                          + " and no citation instance supports it",
+                          file=sys.stderr)
+        else:
+            keep.extend(members)
+            print("  [COLLISION] ambiguous: "
+                  + ", ".join(sorted(_ascii(r["key"]) for r in members))
+                  + " share surname/year and no parseable citation form"
+                  " discriminates - all kept, possible phantom references",
+                  file=sys.stderr)
+
+    order = {id(r): i for i, r in enumerate(records)}
+    keep.sort(key=lambda r: order[id(r)])
+    return keep
+
+
 def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     """Find BibTeX entries cited in the review text.
 
@@ -530,7 +718,7 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     DOI identity is tracked per dedup GROUP: a fallback-key merge is refused when
     the two groups' non-empty DOI sets differ (GPT-B4).
     """
-    records = _collect_matches(review_text, bib_data)
+    records = _resolve_collisions(_collect_matches(review_text, bib_data), review_text)
 
     cited = {}  # key -> entry
     seen_dois = {}  # normalized_doi -> citation_key

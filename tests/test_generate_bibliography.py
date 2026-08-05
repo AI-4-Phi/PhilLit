@@ -965,3 +965,157 @@ class TestCollectMatches:
     def test_record_order_is_bib_order(self):
         recs = self._recs("Jones (2021) then Smith (2020).")
         assert [r["key"] for r in recs] == ["a1", "a2"]
+
+
+class TestCollisionResolution:
+    """Item 3 E: phantoms die when prose forms discriminate; partial
+    ambiguity keeps candidate unions; nothing cited is ever dropped."""
+
+    def _cited(self, bib, review):
+        from pybtex.database import parse_string
+        from generate_bibliography import find_cited_entries
+        return set(dict(find_cited_entries(review, parse_string(bib, "bibtex"))))
+
+    MULDOON = """
+    @article{muldoon2023a, author = {Muldoon, Ryan and Wu, Jin}, title = {T1}, year = {2023}, journal = {J}}
+    @article{muldoon2023b, author = {Muldoon, Ryan and Gordon, Ann and Wu, Jin and Li, Kai}, title = {T2}, year = {2023}, journal = {J}}
+    """
+
+    def test_two_author_form_kills_phantom(self):
+        assert self._cited(self.MULDOON, "As Muldoon and Wu (2023) argue, X.") == {"muldoon2023a"}
+
+    def test_et_al_form_selects_multiauthor(self):
+        assert self._cited(self.MULDOON, "As Muldoon et al. (2023) argue, X.") == {"muldoon2023b"}
+
+    def test_adjacent_forms_keep_both_either_order(self):
+        both = {"muldoon2023a", "muldoon2023b"}
+        assert self._cited(self.MULDOON,
+            "Muldoon and Wu (2023) argue X; Muldoon et al. (2023) argue Y.") == both
+        assert self._cited(self.MULDOON,
+            "Muldoon et al. (2023) argue Y; Muldoon and Wu (2023) argue X.") == both
+
+    def test_semicolon_parenthetical_both_orders(self):
+        both = {"muldoon2023a", "muldoon2023b"}
+        assert self._cited(self.MULDOON,
+            "Work agrees (Muldoon and Wu 2023; Muldoon et al. 2023).") == both
+        assert self._cited(self.MULDOON,
+            "Work agrees (Muldoon et al. 2023; Muldoon and Wu 2023).") == both
+
+    def test_and_form_must_not_affirm_multiauthor(self, capsys):
+        # review 2.4: the "and Gordon" form belongs to a TWO-author entry;
+        # the 4-author entry (second author Gordon) is cited "Muldoon et
+        # al." per house style, so this instance yields NO candidate - the
+        # group falls to warn-and-keep-all rather than confidently
+        # affirming the 4-author entry via its second author.
+        bib = self.MULDOON.replace("Wu, Jin}", "Qi, Bo}")  # a: Muldoon+Qi
+        cited = self._cited(bib, "As Muldoon and Gordon (2023) claim, X.")
+        assert cited == {"muldoon2023a", "muldoon2023b"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
+    def test_sentence_leading_capital_is_not_a_first_name(self):
+        # "As Moore (2020)" - the captured "As" must be ignored, not used
+        # to eliminate the solo candidate (informative-first_text rule).
+        assert self._cited(self.MOORE, "As Moore (2020) argues, X.") == {"moore2020solo"}
+
+    MOORE = """
+    @article{moore2020solo, author = {Moore, Alfred}, title = {T1}, year = {2020}, journal = {J}}
+    @article{moore2020five, author = {Moore, Alfred and A, B and C, D and E, F and G, H}, title = {T2}, year = {2020}, journal = {J}}
+    """
+
+    def test_solo_form_kills_multiauthor_phantom(self, capsys):
+        assert self._cited(self.MOORE, "Moore (2020) argues X.") == {"moore2020solo"}
+        assert "moore2020five" in capsys.readouterr().err
+
+    JOHNSONS = """
+    @article{johnsonG, author = {Johnson, Gabbrielle}, title = {T1}, year = {2024}, journal = {J}}
+    @article{johnsonR, author = {Johnson, Rebecca}, title = {T2}, year = {2024}, journal = {J}}
+    @article{johnsonTeam, author = {Johnson, Ada and B, C and D, E and F, G}, title = {T3}, year = {2024}, journal = {J}}
+    """
+
+    def test_first_initial_selects_person(self):
+        cited = self._cited(self.JOHNSONS, "G. Johnson (2024) argues X.")
+        assert cited == {"johnsonG"}
+
+    def test_partial_ambiguity_keeps_candidate_union(self, capsys):
+        # review P0: the bare solo instance supports BOTH solo entries; the
+        # et-al instance supports the team - nobody cited is dropped.
+        cited = self._cited(self.JOHNSONS,
+            "Johnson (2024) argues X; Johnson et al. (2024) argue Y.")
+        assert cited == {"johnsonG", "johnsonR", "johnsonTeam"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
+    def test_bare_ambiguous_keeps_solos_and_warns(self, capsys):
+        cited = self._cited(self.JOHNSONS, "Recent work (Johnson 2024) shows X.")
+        assert cited == {"johnsonG", "johnsonR"}
+        assert "[COLLISION]" in capsys.readouterr().err
+
+    def test_two_multiauthor_etal_keeps_both_and_warns(self, capsys):
+        bib = """
+        @article{t1, author = {Kim, S and A, B and C, D}, title = {T1}, year = {2022}, journal = {J}}
+        @article{t2, author = {Kim, S and E, F and G, H and I, J}, title = {T2}, year = {2022}, journal = {J}}
+        """
+        cited = self._cited(bib, "Kim et al. (2022) argue X.")
+        assert cited == {"t1", "t2"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
+    MENARY = """
+    @book{menary2010a, author = {Menary, Richard}, title = {The Extended Mind}, year = {2010}, publisher = {P}}
+    @incollection{menary2010b, author = {Menary, Richard}, title = {Cognitive Integration}, year = {2010}, booktitle = {B}, publisher = {P}}
+    """
+
+    def test_same_author_group_stays_whole_for_3f(self, capsys):
+        cited = self._cited(self.MENARY, "Menary (2010) develops integration.")
+        assert cited == {"menary2010a", "menary2010b"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
+    def test_year_suffix_stays_conservative(self, capsys):
+        # review edge: 2010a/2010b prose - E must not pretend to resolve
+        # what only item F's suffixes can.
+        cited = self._cited(self.MENARY, "Menary (2010a) and Menary (2010b) differ.")
+        assert cited == {"menary2010a", "menary2010b"}
+
+    def test_multiword_second_surname(self):
+        bib = """
+        @article{k1, author = {Kim, Sun and de la Cruz, Maria}, title = {T1}, year = {2022}, journal = {J}}
+        @article{k2, author = {Kim, Sun and Novak, Petr and Ola, Ade and P, Q}, title = {T2}, year = {2022}, journal = {J}}
+        """
+        cited = self._cited(bib, "As Kim and de la Cruz (2022) show, X.")
+        assert cited == {"k1"}
+
+    def test_cross_spelling_entries_form_one_group(self, capsys):
+        # review 2.5: bib Müller and bib Mueller must compete, not both
+        # survive as singletons.
+        bib = """
+        @article{u1, author = {Müller, Hans}, title = {T1}, year = {2022}, journal = {J}}
+        @article{u2, author = {Mueller, Hans and B, C and D, E}, title = {T2}, year = {2022}, journal = {J}}
+        """
+        cited = self._cited(bib, "Mueller (2022) argues X.")
+        assert cited == {"u1"}
+
+    def test_second_author_position_not_a_first_author_cite(self):
+        # review edge: "Bloggs and Muldoon (2023)" must not read as a solo
+        # Muldoon citation.
+        bib = """
+        @article{m1, author = {Muldoon, Ryan}, title = {T1}, year = {2023}, journal = {J}}
+        @article{m2, author = {Muldoon, Ryan and A, B}, title = {T2}, year = {2023}, journal = {J}}
+        @article{bloggs, author = {Bloggs, Joe and Muldoon, Ryan}, title = {T3}, year = {2023}, journal = {J}}
+        """
+        cited = self._cited(bib, "Bloggs and Muldoon (2023) note this.")
+        assert "m1" not in cited and "m2" not in cited
+
+    def test_possessive_narrative(self):
+        assert self._cited(self.MOORE, "Moore's (2020) account holds.") == {"moore2020solo"}
+
+    def test_singleton_untouched_no_warning(self, capsys):
+        bib = "@article{solo, author = {Rare, Ann}, title = {T}, year = {2020}, journal = {J}}"
+        assert self._cited(bib, "Rare (2020) argues X.") == {"solo"}
+        assert "[COLLISION]" not in capsys.readouterr().err
+
+    def test_nonascii_diagnostics_are_ascii(self, capsys):
+        bib = """
+        @article{g1, author = {Müller, Hans}, title = {T1}, year = {2021}, journal = {J}}
+        @article{g2, author = {Mueller, Hans}, title = {T2}, year = {2021}, journal = {J}}
+        """
+        self._cited(bib, "The debate continued through 2021 with Müller central.")
+        err = capsys.readouterr().err
+        assert all(ord(c) < 128 for c in err)
