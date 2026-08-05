@@ -8,7 +8,9 @@ exists so open work has a single place to be listed — it was created
 
 **Working sequence (Johannes, 2026-08-05):** (1) push `main` with a plugin
 version bump — DONE 2026-08-05, released as **v0.3.1** (`318aa2c`); (2) the 27-wrong-years
-audit of delivered reviews; (3) item 3's residuals (A+B, then E, C, D; F
+audit of delivered reviews — measurement DONE 2026-08-05 (finding: 449
+delivered entries carry online-first years, see item 3 K; remediation
+decision pending); (3) item 3's residuals (A+B, then E, C, D; F
 last); (4) ONE batched phillit-service mirror session — the item-4
 `bib_identity` port, the item-1 evidence-tier port (service item 20), and
 the deferred `rate_limiter` fix — which **opens with a decision: the two
@@ -222,6 +224,24 @@ recorded declines (up from 109), all surfaced to the model through the hook's
 existing `.warnings[]` pass-through. (`metadata_validator.py` needed no mirror —
 it was read-only with no year-overwrite path — and is moot since its deletion
 2026-08-02.)
+
+**Delivered-output audit DONE 2026-08-05** (the sequence's step 7): every
+DOI-bearing entry in all 41 delivered bibs ground-truthed against CrossRef.
+**449 of 3,456 entries (13%) carry the online-first year** — 417 pin the
+version of record via volume/number, 269 surface in the delivered review
+text, all 41 reviews are affected including the three tracked README
+examples (51 entries). Structurally these are NOT the 27: the cleaner never
+applied a year rewrite in this corpus (zero `METADATA_CLEANED` markers — the
+27 record-side corruptions never landed, and those delivered years are
+correct), so the 449 were **seeded at research/enrichment time from
+search-API metadata** (S2/OpenAlex report online-first years). K's fix
+covers the producer and the cleaner gate but NOT this seed path, so new
+runs still seed online years and self-correct only where an entry-scoped
+CrossRef record exists — candidate follow-up: measure the next live run's
+wrong-at-delivery rate; a durable fix belongs in the search formatters or a
+Phase-6 year-verification pass. Full report, per-review table, and
+remediation options (decision pending):
+`docs/known-issues/wrong-years-audit-2026-08-05.md` (local-only).
 
 > **⚠ SUPERSEDED BY ITEM J — do not act on the paragraph below.** It was
 > written against the service's interim `float()` + `is_integer()`
