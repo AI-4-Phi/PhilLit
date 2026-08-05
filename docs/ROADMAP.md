@@ -7,7 +7,7 @@ exists so open work has a single place to be listed — it was created
 2026-07-24 alongside the bib-pipeline item below.
 
 **Working sequence (Johannes, 2026-08-05):** (1) push `main` with a plugin
-version bump — the item-4 commits are unreleased; (2) the 27-wrong-years
+version bump — DONE 2026-08-05, released as **v0.3.1** (`318aa2c`); (2) the 27-wrong-years
 audit of delivered reviews; (3) item 3's residuals (A+B, then E, C, D; F
 last); (4) ONE batched phillit-service mirror session — the item-4
 `bib_identity` port, the item-1 evidence-tier port (service item 20), and
@@ -511,6 +511,6 @@ local-only `workflow-findings-softmax-review.md`).
 **If resuming an interrupted session, check the local-only
 `docs/known-issues/doc-rot-audit-2026-08-02.md` first** — it carries the
 agreed sequence with live checkboxes (extended + amended 2026-08-05).
-Everything through item 4 (steps 1–6) is done; what remains, in order: the
-push + version bump, the 27-wrong-years audit, item 3's residuals, the
-batched mirror session (with its mirror-vs-fork decision), then item 2.
+Everything through the v0.3.1 push (steps 1–6b) is done; what remains, in
+order: the 27-wrong-years audit, item 3's residuals, the batched mirror
+session (with its mirror-vs-fork decision), then item 2.
