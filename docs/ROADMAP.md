@@ -237,10 +237,19 @@ correct), so the 449 were **seeded at research/enrichment time from
 search-API metadata** (S2/OpenAlex report online-first years). K's fix
 covers the producer and the cleaner gate but NOT this seed path, so new
 runs still seed online years and self-correct only where an entry-scoped
-CrossRef record exists — candidate follow-up: measure the next live run's
-wrong-at-delivery rate; a durable fix belongs in the search formatters or a
-Phase-6 year-verification pass. Full report, per-review table, and
-remediation options (decision pending):
+CrossRef record exists. **Decisions (Johannes, 2026-08-05):** delivered
+reviews are NEVER retroactively changed — sole exception the public README
+examples, **fixed same day (`ef15dbd`, 54 entries; their Word-exported PDFs
+remain stale)**. Search-API data is accepted as veridical, with conflicts
+resolved by a *hierarchy of sources*: for years, CrossRef version-of-record
+dates trump S2/OpenAlex — which is what the cleaner's authority model
+(entry-scoped + `year_basis`) already implements. **Open follow-up (the
+year-hierarchy coverage gap):** Phase 3 instructs researchers to
+verify_paper every DOI-bearing entry, but coverage is agent-compliance, not
+a guarantee — an entry without an entry-scoped CrossRef record keeps its
+seeded online year. Measure the wrong-at-delivery rate on the next live run
+(natural rider on item 3 F's run); if material, add a mechanical year pass
+(search formatters or Phase 6). Full report + per-review table:
 `docs/known-issues/wrong-years-audit-2026-08-05.md` (local-only).
 
 > **⚠ SUPERSEDED BY ITEM J — do not act on the paragraph below.** It was
