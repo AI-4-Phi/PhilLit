@@ -330,6 +330,16 @@ Never advance to Phase 6 before all synthesis writers have completed.
 
    Fix any reported issues before proceeding. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
 
+   The linter also verifies every in-text author-year citation resolves to a
+   References entry (ERROR + nonzero exit otherwise). An unresolved citation
+   means the References generator dropped a cited work — fix the body/bib
+   author spelling divergence (or the bib entry) and re-run step 4; never
+   delete the citation to silence the check. This applies to primary and
+   legal sources too (statutes, regulations, treaties, reports): they are
+   cited like any other work, so they need a bib entry — the sanctioned
+   remedy for an unresolved "(GDPR 2016)" is adding the @misc entry, not
+   removing the citation.
+
 6. **Evidence checker (telemetry)**: run
 
    ```bash

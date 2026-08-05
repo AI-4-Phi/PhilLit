@@ -280,14 +280,23 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
 `docs/known-issues/bib-pipeline-integrity-gaps.md`; E–F were added later
 (see below).
 
-- **A — cleaner-unaware dedup** (`dedupe_bib.py`): cross-domain duplicate
-  merging can resurrect a field the metadata cleaner stripped as
-  unverifiable. Deterministic; affects plugin runs today.
-- **B — silent References omission** (`generate_bibliography.py`): a
-  body/bib author-spelling divergence beyond NFKD normalization silently
-  drops a cited work from the rendered References; no
-  every-citation-resolves post-check exists (natural home: `lint_md.py`).
-  Deterministic; affects plugin runs today.
+- **A — cleaner-unaware dedup** (`dedupe_bib.py`): **FIXED 2026-08-05**
+  (`fe46575`, `9ea5b97`, `a631d7a`, `7816d2a`) — `dedupe_bib.py` and
+  `generate_bibliography.py` now propagate `METADATA_CLEANED` verdicts
+  across duplicates via surgical field strip and a blocked union. Full
+  mechanism and three scoping residuals (marker records field names not
+  values; DOI-refusal branches pre-existing; unflagged-field conflicts
+  still resolve by count) in
+  `docs/known-issues/bib-pipeline-integrity-gaps.md` (local-only).
+- **B — silent References omission** (`generate_bibliography.py`):
+  every-citation-resolves post-check **landed 2026-08-05** (`03d2b6b`,
+  `lint_md.py`) — an unresolved in-text citation now fails the lint step
+  loudly (ERROR, nonzero exit) instead of vanishing silently. The
+  matcher-side transliteration/fuzzy-matching fix in
+  `generate_bibliography.py` itself (the near-miss that opened this issue:
+  body "Fraenken" vs bib "Franken") remains **open** — out of scope for
+  this branch, prioritized separately once the new check surfaces real
+  instances.
 - **C — unenforced abstract provenance**: an invented `abstract` field with
   no `abstract_source` marker passes every gate and evades the
   INCOMPLETE-keyed cite-cautiously rule. Structural; the observed exploit
@@ -300,6 +309,14 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   verification; flag-and-caveat heuristics (DOAJ lookup, `VENUE_UNVETTED`
   keyword + writer rule) would turn observed good model behavior into a
   pipeline guarantee.
+- **Follow-up (A's external review, Q3) — "vetted beats unvetted", not
+  built**: when a merge loser carries a `METADATA_CLEANED` marker (positive
+  proof it was vetted), prefer the loser's value on *conflicting* fields,
+  not just on gaps. Today, value conflicts on fields the cleaner didn't flag
+  still resolve by substantive-field count, so a fabricated value on the
+  richer copy can beat a verified value on the sparser one — the same
+  winner-rule bias the old abstract/importance heuristics had before A's
+  fix.
 
 Two further sub-items, added 2026-07-28 from a side finding during
 evidence-tier A/B adjudication, then measured across all 32 delivered
@@ -356,11 +373,13 @@ so a listed work is confirmed uncited.
   `agents/synthesis-writer.md`, so it needs a live headless run to confirm
   writer compliance before the port.
 
-Suggested order: A+B first (small, testable, deterministic), then E (same
-shape, and it pairs with B), then C (mechanical validator rule), then D
-(heuristics + prompt rules). F last — it is the only one of the six that
-needs a live run, and that run should not be entangled with the
-evidence-tier A/B experiment.
+Suggested order: A+B first (small, testable, deterministic) — **A fully
+fixed and B's citation-omission post-check landed 2026-08-05, B's
+matcher-side transliteration work still open** — then E (same shape, and it
+pairs with B), then C (mechanical validator rule), then D (heuristics +
+prompt rules). F last — it is the only one of the six that needs a live
+run, and that run should not be entangled with the evidence-tier A/B
+experiment.
 
 Related out-of-scope find (2026-07-28, recorded in the same write-up): 5/32
 reviews carry near-identical *undeduped* entries surviving on diacritic
