@@ -902,3 +902,34 @@ class TestCleanerVerdictPropagation:
         data = parse_file(str(bib_path), bib_format="bibtex")
         entry = data.entries["iclr_x"]
         assert "booktitle" in marker_removed_fields(entry.fields["keywords"])
+
+
+class TestTransliterationMatching:
+    """Item 3 B (matcher half), SYMMETRIC: either side may carry the
+    diacritic or the ae-spelling."""
+
+    def _cited(self, bib, review):
+        from pybtex.database import parse_string
+        from generate_bibliography import find_cited_entries
+        return set(dict(find_cited_entries(review, parse_string(bib, "bibtex"))))
+
+    FRAENKEN = ("@article{f2024, author = {Fr\u00e4nken, Jan}, title = {T},"
+                " year = {2024}, journal = {J}}")
+    MUELLER = ("@article{m2022, author = {Mueller, Hans}, title = {T},"
+               " year = {2022}, journal = {J}}")
+
+    def test_bib_diacritic_prose_ae(self):
+        assert self._cited(self.FRAENKEN, "Fraenken (2024) shows X.") == {"f2024"}
+
+    def test_bib_diacritic_prose_nfkd(self):
+        assert self._cited(self.FRAENKEN, "Franken (2024) shows X.") == {"f2024"}
+
+    def test_bib_ae_prose_diacritic_REVERSE(self):
+        # The direction the one-haystack design missed (review P0).
+        assert self._cited(self.MUELLER, "M\u00fcller (2022) shows X.") == {"m2022"}
+
+    def test_bib_ae_prose_ae(self):
+        assert self._cited(self.MUELLER, "Mueller (2022) shows X.") == {"m2022"}
+
+    def test_uncited_still_unmatched(self):
+        assert self._cited(self.MUELLER, "Nothing here (Other 2022).") == set()

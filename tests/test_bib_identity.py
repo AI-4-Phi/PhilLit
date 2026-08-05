@@ -136,3 +136,17 @@ class TestAsciiVariants:
         from bib_identity import ascii_variants
         assert ascii_variants("Παπαδόπουλος") == frozenset()
         assert ascii_variants("") == frozenset()
+
+    def test_translit_fold_text(self):
+        from bib_identity import translit_fold
+        assert translit_fold("As Müller (2022) shows") == "as mueller (2022) shows"
+
+    def test_decomposed_unicode_variants(self):
+        # NFC-recompose first: a decomposed a+combining-diaeresis must still
+        # transliterate to ae (external review). The literal below uses an
+        # explicit \u0308 escape (combining diaeresis), not a precomposed
+        # a-with-diaeresis character, so the source text is guaranteed NFD --
+        # a precomposed literal would pin nothing here, since it never
+        # exercises the recompose path.
+        from bib_identity import ascii_variants
+        assert "fraenken" in ascii_variants("Fra\u0308nken")

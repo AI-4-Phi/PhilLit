@@ -21,7 +21,9 @@ from pybtex.database import parse_file
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_validator import LATEX_ESCAPES  # noqa: E402
-from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402
+from bib_identity import (  # noqa: E402
+    ascii_variants, fallback_key, normalize_doi, title_key, translit_fold,
+)
 from metadata_cleaner import marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
@@ -427,6 +429,10 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     the two groups' non-empty DOI sets differ (GPT-B4).
     """
     norm_text = _normalize_for_matching(review_text)
+    # Second haystack, transliterated (ä->ae etc.) before the NFKD strip, so
+    # a bib surname's ae-spelling meets a prose surname's diacritic (item 3
+    # B, review P0: norm_text alone only catches the reverse direction).
+    translit_text = translit_fold(review_text)
     # Script-preserving haystack for non-Latin surnames, built only if some
     # entry needs it (see the empty-fold fallback below).
     script_text = None
@@ -449,7 +455,6 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
             continue
 
         norm_surname = _normalize_for_matching(surname)
-        haystack = norm_text
         if not any(c.isalnum() for c in norm_surname):
             # The ASCII fold kept nothing that can identify anyone. A wholly
             # non-Latin surname (Greek, Cyrillic) folds to '', and skipping
@@ -468,21 +473,38 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
                 continue
             if script_text is None:
                 script_text = title_key(review_text)
-            haystack = script_text
+            needles = {norm_surname}
+            haystacks = (script_text,)
+        else:
+            # Symmetric transliteration matching (item 3 B, review P0):
+            # every needle variant (the plain NFKD fold AND the ae-spelling)
+            # is tried against both haystacks, so a bib "Mueller" meets
+            # prose "Müller" and a bib "Fränken" meets prose "Fraenken"
+            # alike - not just the direction norm_text alone covers.
+            needles = ascii_variants(surname)
+            haystacks = (norm_text, translit_text)
 
-        # Word-boundary, case-insensitive surname match
-        try:
-            pattern = re.compile(r"\b" + re.escape(norm_surname) + r"\b", re.IGNORECASE)
-        except re.error:
-            continue
-
+        # Word-boundary, case-insensitive surname match. The proximity
+        # window is always sliced from the haystack that produced the hit
+        # (translit_text's offsets differ from norm_text's: ae/ss lengthen
+        # the text, so a window can't be sliced from the "wrong" haystack).
         matched = False
-        for m in pattern.finditer(haystack):
-            start = max(0, m.start() - _MATCH_WINDOW)
-            end = min(len(haystack), m.end() + _MATCH_WINDOW)
-            window = haystack[start:end]
-            if year in window:
-                matched = True
+        for needle in needles:
+            try:
+                pattern = re.compile(r"\b" + re.escape(needle) + r"\b", re.IGNORECASE)
+            except re.error:
+                continue
+            for haystack in haystacks:
+                for m in pattern.finditer(haystack):
+                    start = max(0, m.start() - _MATCH_WINDOW)
+                    end = min(len(haystack), m.end() + _MATCH_WINDOW)
+                    window = haystack[start:end]
+                    if year in window:
+                        matched = True
+                        break
+                if matched:
+                    break
+            if matched:
                 break
 
         if not matched:

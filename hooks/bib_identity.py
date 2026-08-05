@@ -169,19 +169,27 @@ _TRANSLIT = {
 }
 
 
+def translit_fold(s: str) -> str:
+    """Lowercased ASCII fold of arbitrary text with German/Nordic
+    transliteration applied BEFORE the NFKD strip (ä→ae, not ä→a). The
+    second haystack for symmetric surname matching (item 3 B)."""
+    low = unicodedata.normalize("NFC", s.lower().replace("’", "'"))
+    for ch, rep in _TRANSLIT.items():
+        low = low.replace(ch, rep)
+    return unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
+
+
 def ascii_variants(s: str) -> frozenset[str]:
     """Lowercased ASCII variants of a name: the NFKD-stripped fold and the
     transliterated fold, so body "Fraenken" meets bib "Fränken" (ä -> a AND
-    ä -> ae). Curly apostrophes unify with straight ones; empty variants are
-    dropped (an empty needle would match everything)."""
-    low = s.lower().replace("’", "'")
+    ä -> ae). Curly apostrophes unify with straight ones; a decomposed input
+    (combining diaeresis rather than a precomposed character) is NFC-recomposed
+    first so the transliteration table (keyed on precomposed characters) still
+    matches it. Empty variants are dropped (an empty needle would match
+    everything)."""
+    low = unicodedata.normalize("NFC", s.lower().replace("’", "'"))
     nfkd = unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
-    translit = low
-    for ch, rep in _TRANSLIT.items():
-        translit = translit.replace(ch, rep)
-    translit = unicodedata.normalize("NFKD", translit).encode(
-        "ascii", "ignore").decode()
-    return frozenset(v for v in (nfkd, translit) if v)
+    return frozenset(v for v in (nfkd, translit_fold(s)) if v)
 
 
 def fallback_key(title: str, year: str, surname: str) -> tuple[str, str, str] | None:
