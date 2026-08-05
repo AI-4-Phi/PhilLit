@@ -105,3 +105,34 @@ class TestCleanerIsTheOwner:
         assert mc.normalize_journal is bi.normalize_journal
         assert mc._year_key is bi.year_key
         assert mc._normalize_title is bi.title_key
+
+
+class TestAsciiVariants:
+    """ascii_variants: the one owner of the name fold shared by lint_md's
+    citation check and generate_bibliography's matcher (item 3 B/E)."""
+
+    def test_plain_ascii(self):
+        from bib_identity import ascii_variants
+        assert ascii_variants("Smith") == frozenset({"smith"})
+
+    def test_diacritic_two_variants(self):
+        from bib_identity import ascii_variants
+        assert ascii_variants("Fränken") == frozenset({"franken", "fraenken"})
+
+    def test_transliteration_meets_ae_spelling(self):
+        from bib_identity import ascii_variants
+        assert ascii_variants("Fraenken") & ascii_variants("Fränken")
+
+    def test_eszett_and_nordic(self):
+        from bib_identity import ascii_variants
+        assert "strasse" in ascii_variants("Straße")
+        assert "aaberg" in ascii_variants("Åberg")
+
+    def test_curly_apostrophe_unified(self):
+        from bib_identity import ascii_variants
+        assert ascii_variants("O’Neill") == ascii_variants("O'Neill")
+
+    def test_empty_variants_dropped(self):
+        from bib_identity import ascii_variants
+        assert ascii_variants("Παπαδόπουλος") == frozenset()
+        assert ascii_variants("") == frozenset()

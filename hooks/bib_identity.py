@@ -161,6 +161,29 @@ def title_key(title: str) -> str:
     return ' '.join(''.join(out).casefold().split())
 
 
+# German/Nordic transliteration for the alternate name fold. Shared by
+# lint_md's citation check and generate_bibliography's matcher (item 3 B/E).
+_TRANSLIT = {
+    "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss",
+    "å": "aa", "ø": "oe", "æ": "ae",
+}
+
+
+def ascii_variants(s: str) -> frozenset[str]:
+    """Lowercased ASCII variants of a name: the NFKD-stripped fold and the
+    transliterated fold, so body "Fraenken" meets bib "Fränken" (ä -> a AND
+    ä -> ae). Curly apostrophes unify with straight ones; empty variants are
+    dropped (an empty needle would match everything)."""
+    low = s.lower().replace("’", "'")
+    nfkd = unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
+    translit = low
+    for ch, rep in _TRANSLIT.items():
+        translit = translit.replace(ch, rep)
+    translit = unicodedata.normalize("NFKD", translit).encode(
+        "ascii", "ignore").decode()
+    return frozenset(v for v in (nfkd, translit) if v)
+
+
 def fallback_key(title: str, year: str, surname: str) -> tuple[str, str, str] | None:
     """Title-axis identity key: (title_key, year, title_key(surname)).
 

@@ -8,6 +8,17 @@ import subprocess
 import sys
 from pathlib import Path
 
+# Import the shared name fold from bib_identity (single source of truth,
+# item 3 B/E / item 4 pattern).
+_hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
+sys.path.insert(0, str(_hook_dir))
+from bib_identity import ascii_variants  # noqa: E402
+
+sys.path.pop(0)
+
+# Alias, not a copy - pinned by tests/test_lint_md.py.
+_fold_variants = ascii_variants
+
 # Rule explanations for helpful error messages
 RULE_EXPLANATIONS = {
     "MD001": "Heading levels should increment by one (don't skip from # to ###)",
@@ -213,29 +224,6 @@ _NARRATIVE_CITE_RE = re.compile(
     r"(" + _SURNAME + r")(?:'s|’s|')?(?:\s+et al\.?)?\s+\((" + _YEAR +
     r")(?:/(" + _YEAR + r"))?\)"
 )
-
-# Transliteration variants generated on BOTH sides of the comparison, so
-# body "Fraenken" meets References "Fränken" (ä -> a AND ä -> ae).
-_TRANSLIT = {
-    "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss",
-    "å": "aa", "ø": "oe", "æ": "ae",
-}
-
-
-def _fold_variants(s: str) -> set[str]:
-    """Lowercased ASCII variants of a name: NFKD-stripped and
-    transliteration-expanded. Curly apostrophes unify with straight ones
-    (review 4f); empty variants are dropped (an empty needle would match
-    everything - review 4g)."""
-    import unicodedata
-    low = s.lower().replace("’", "'")
-    nfkd = unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
-    translit = low
-    for ch, rep in _TRANSLIT.items():
-        translit = translit.replace(ch, rep)
-    translit = unicodedata.normalize("NFKD", translit).encode(
-        "ascii", "ignore").decode()
-    return {v for v in (nfkd, translit) if v}
 
 
 def _clean_tokens(tokens: list[str]) -> list[str]:

@@ -349,3 +349,11 @@ class TestMainUnreadableFile:
         assert "citation-check: no ## References section; skipped" not in out
         assert "WARN prose-quality" not in out  # prose-quality also skipped
         assert rc == 0  # exit code still comes from lint_markdown(), unchanged
+
+
+class TestFoldVariantsAlias:
+    def test_fold_variants_is_shared_owner(self):
+        # Alias, not a copy - the item-4 pattern (assert identity, not equality).
+        import lint_md
+        from bib_identity import ascii_variants
+        assert lint_md._fold_variants is ascii_variants
