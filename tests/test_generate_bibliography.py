@@ -936,9 +936,11 @@ class TestTransliterationMatching:
 
 
 class TestCollectMatches:
-    """Item 3 E: _collect_matches is find_cited_entries' matching pre-pass,
-    with ANCHORED hit spans (review P0) so Task 4 can attribute each hit to
-    its own citation instance instead of re-finding tokens."""
+    """Item 3 E: _collect_matches is find_cited_entries' matching pre-pass.
+    windows is a plain list[str] of year-bearing proximity slices - used by
+    callers only for truthiness (a match exists) and length (hit count); it
+    does not carry hit spans (M2: collision resolution re-parses citation
+    instances straight from review_text instead)."""
 
     BIB = """
     @article{a1, author = {Smith, Jane}, title = {T1}, year = {2020}, journal = {J}}
@@ -950,13 +952,12 @@ class TestCollectMatches:
         from generate_bibliography import _collect_matches
         return _collect_matches(review, parse_string(self.BIB, "bibtex"))
 
-    def test_matched_set_and_hit_spans(self):
+    def test_matched_set_and_windows(self):
         recs = self._recs("Smith (2020) argues; nothing else.")
         assert [r["key"] for r in recs] == ["a1"]
         assert recs[0]["windows"]
-        for w, hs, he in recs[0]["windows"]:
+        for w in recs[0]["windows"]:
             assert "2020" in w
-            assert w[hs:he].lower() == "smith"
 
     def test_every_hit_collected_in_order(self):
         recs = self._recs("Smith (2020) argues X. Later Smith (2020) repeats.")
@@ -1125,6 +1126,65 @@ class TestCollisionResolution:
         """
         cited = self._cited(bib, "Bloggs and Muldoon (2023) note this.")
         assert "m1" not in cited and "m2" not in cited
+
+    def test_second_position_sighting_requires_corroboration(self, capsys):
+        # I1: an uncorroborated second-position sighting must not license a
+        # drop. "Following Kripke and Putnam (1975)" puts "Putnam" second,
+        # but no bib record's author list actually explains a Kripke-
+        # Putnam pairing - there is no Kripke entry in this bib at all - so
+        # it's a narrative aside, not positive evidence against the Putnam
+        # group (contrast the branch's own bloggs test above, where the
+        # "bloggs" bib entry IS Bloggs-and-Muldoon and so corroborates the
+        # drop).
+        bib = """
+        @article{p1, author = {Putnam, Hilary}, title = {T1}, year = {1975}, journal = {J}}
+        @article{p2, author = {Putnam, Hilary and Other, B}, title = {T2}, year = {1975}, journal = {J}}
+        """
+        from pybtex.database import parse_string
+        from generate_bibliography import find_cited_entries, generate_references
+        entries = find_cited_entries(
+            "Following Kripke and Putnam (1975), reference is causal.",
+            parse_string(bib, "bibtex"))
+        assert {k for k, _ in entries} == {"p1", "p2"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+        # lint-consistency: both survive all the way to a rendered References
+        # section, not just find_cited_entries' membership.
+        refs = generate_references(entries)
+        assert '"T1."' in refs and '"T2."' in refs
+
+    def test_list_position_not_misread_as_and_form(self, capsys):
+        # C1: _CITE_INSTANCE_RE has no left anchor, so it can bind at the
+        # SECOND name of a longer comma list ("Smith, Jones, and Lee
+        # (2020)" -> misread as "Jones and Lee") and manufacture a phantom
+        # discriminator that drops the genuinely (if unparseably) cited
+        # solo Jones entry. The left-anchor guard rejects that binding, so
+        # the group falls to ambiguous-keep-all instead of a wrong drop.
+        bib = """
+        @article{j_solo, author = {Jones, A}, title = {T1}, year = {2020}, journal = {J}}
+        @article{j_pair, author = {Jones, A and Lee, B}, title = {T2}, year = {2020}, journal = {J}}
+        @article{j_team, author = {Jones, A and Lee, B and Wu, C}, title = {T3}, year = {2020}, journal = {J}}
+        """
+        cited = self._cited(bib,
+            "Smith, Jones, and Lee (2020) argue X. "
+            "Jones's separate 2020 paper differs.")
+        assert cited == {"j_solo", "j_pair", "j_team"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
+    def test_ampersand_lead_in_not_misread_as_solo(self, capsys):
+        # C1, second shape: "Jones & Lee (2020)" isn't a form
+        # _CITE_INSTANCE_RE parses ("&" unsupported for the two-author
+        # form), but without the anchor guard the regex still matches
+        # starting at "Lee", misreading it as a bare solo citation and
+        # dropping the et-al entry actually cited a sentence later.
+        bib = """
+        @article{l_solo, author = {Lee, B}, title = {T1}, year = {2020}, journal = {J}}
+        @article{l_team, author = {Lee, B and P, Q and R, S}, title = {T2}, year = {2020}, journal = {J}}
+        """
+        cited = self._cited(bib,
+            "Jones & Lee (2020) argue X. "
+            "Lee et al.'s earlier 2020 study agrees.")
+        assert cited == {"l_solo", "l_team"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
 
     def test_possessive_narrative(self):
         assert self._cited(self.MOORE, "Moore's (2020) account holds.") == {"moore2020solo"}

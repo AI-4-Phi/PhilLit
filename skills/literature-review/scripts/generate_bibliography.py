@@ -426,13 +426,14 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
 
     Returns one record per MATCHED entry, in bib_data.entries iteration
     order: {"key", "entry", "surname", "year", "windows"} where windows is
-    list[tuple[str, int, int]] = (window_text, hit_start, hit_end) - the
-    ±_MATCH_WINDOW haystack slice around each surname hit whose window
-    contains the year, plus the hit's own span within that slice. The span
-    is load-bearing (item 3 E, review P0): classifying by re-finding tokens
-    attributes adjacent citations to the wrong instance. EVERY year-bearing
-    window is collected, not just the first hit - windows may come from
-    either haystack (norm or translit).
+    list[str] - the ±_MATCH_WINDOW haystack slice around each surname hit
+    whose window contains the year. EVERY year-bearing window is collected,
+    not just the first hit - windows may come from either haystack (norm or
+    translit). Collision resolution (_resolve_collisions) does not consume
+    this list's contents - it re-parses citation instances straight from
+    review_text via _citation_instances - so windows is only ever used for
+    its truthiness (a match exists) and length (how many hits); it does not
+    carry hit spans.
     """
     norm_text = _normalize_for_matching(review_text)
     # Second haystack, transliterated (ä->ae etc.) before the NFKD strip, so
@@ -491,9 +492,7 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
         # window is always sliced from the haystack that produced the hit
         # (translit_text's offsets differ from norm_text's: ae/ss lengthen
         # the text, so a window can't be sliced from the "wrong" haystack).
-        # Every year-bearing window is kept, with the hit's own span within
-        # it (item 3 E: Task 4 attributes each hit to its own citation
-        # instance instead of re-finding tokens in the window).
+        # Every year-bearing window is kept, not just the first hit.
         windows = []
         for needle in needles:
             try:
@@ -506,7 +505,7 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
                     end = min(len(haystack), m.end() + _MATCH_WINDOW)
                     window = haystack[start:end]
                     if year in window:
-                        windows.append((window, m.start() - start, m.end() - start))
+                        windows.append(window)
 
         if not windows:
             continue
@@ -538,6 +537,22 @@ _CITE_INSTANCE_RE = re.compile(
     r"[\s,]*\(?\s*(?P<year>(?:1[6-9]|20)\d{2})[a-z]?\b"
 )
 
+# _CITE_INSTANCE_RE has no left anchor, so it can start matching at the
+# SECOND name of a longer list ("Smith, Jones, and Lee (2020)" ->
+# surname="Jones", second="Lee") or right after an ampersand ("Jones & Lee
+# (2020)" -> surname="Lee", form=solo), manufacturing an instance that
+# names the wrong person(s) as first author. Reject a match whose
+# immediately preceding text ends in a capitalized name followed by
+# ", and "/" & " (a dropped list member) or a bare ", " (a name-comma
+# lead-in the surname group swallowed past). Fails toward keep-all: a
+# rejected match yields no instance for its group, which then falls to
+# _resolve_collisions' ambiguous-keep-all branch rather than a drop -
+# never the reverse.
+_NON_INITIAL_PRECEDING_RE = re.compile(
+    r"(?:[A-ZÀ-Þ][\w'’À-ÿ-]+,?\s+(?:and|&)\s+"
+    r"|[A-ZÀ-Þ][\w'’À-ÿ-]+,\s+)$"
+)
+
 
 def _strip_possessive(s: str) -> str:
     """Drop a trailing possessive marker ('s / ’s) from a captured name.
@@ -562,9 +577,15 @@ def _citation_instances(review_text: str) -> list[dict]:
     form: 'solo' | 'and' | 'etal'. second_text may be a multiword particled
     surname - compared whole-to-whole against candidate second-surname
     variants, never tokenized; first_text is the raw leading token ('' when
-    absent) and is applied only when informative (see candidate rule)."""
+    absent) and is applied only when informative (see candidate rule).
+
+    Matches whose preceding text shows they bind at a non-initial name
+    (C1: _NON_INITIAL_PRECEDING_RE) are rejected outright and contribute no
+    instance - see that regex's docstring for why."""
     out = []
     for m in _CITE_INSTANCE_RE.finditer(review_text):
+        if _NON_INITIAL_PRECEDING_RE.search(review_text[:m.start()]):
+            continue
         surname = _strip_possessive(m.group("surname"))
         if m.group("etal"):
             form, second = "etal", ""
@@ -607,6 +628,34 @@ def _first_text_informative(first_text: str, members: list[dict]) -> bool:
     return False
 
 
+def _second_position_corroborated(inst: dict, member_variants: frozenset, records: list[dict]) -> bool:
+    """Is a second-position sighting backed by an actual bib record, or just
+    a narrative co-mention (I1)?
+
+    "Bloggs and Muldoon (2023)" is positive evidence against a Muldoon
+    group only when some bib record's own author list explains it: first
+    author variant-intersects the instance's (first-position) surname, and
+    second author variant-intersects this group's variants, same year.
+    Without that, the sighting is an uncorroborated narrative aside -
+    "Following Kripke and Putnam (1975), reference is causal" with no
+    Kripke-Putnam bib record - and must not license a drop of the Putnam
+    group. Searches all of _collect_matches' MATCHED records, not just
+    this group, since the corroborating entry's first author (e.g.
+    "Bloggs") is a different surname/group entirely. An entry that never
+    matched anything in the prose can't corroborate either - the safe
+    direction, since that only means falling through to keep-all."""
+    for rec in records:
+        if rec["year"] != inst["year"]:
+            continue
+        if not (inst["surname_variants"] & rec["_variants"]):
+            continue
+        persons = _persons_of(rec)
+        if len(persons) >= 2 and (
+                ascii_variants(_get_full_surname(persons[1])) & member_variants):
+            return True
+    return False
+
+
 def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     """Item 3 E (external-review design): group colliding records by
     variant-intersection connected components per year; resolve each group
@@ -617,12 +666,16 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     first-position and second-position evidence are tracked SEPARATELY per
     group (post-review fix): a second-position-only sighting ("Bloggs and
     Muldoon (2023)" against a Muldoon-first-author group) must drop the
-    group only when NO first-position instance exists for it at all. An
-    unrelated second-position sighting elsewhere in the text must never
-    flip an unresolved first-position instance (e.g. "Muldoon and Gordon
-    (2023)", which matches no candidate) from ambiguous-keep-all into a
-    drop - partial ambiguity never drops a cited work, and "cited"
-    includes works named only via an unresolvable first-position form."""
+    group only when NO first-position instance exists for it at all, AND
+    the sighting is corroborated by an actual bib record (I1,
+    _second_position_corroborated) - an uncorroborated narrative co-mention
+    ("Following Kripke and Putnam (1975)" with no Kripke bib entry) is not
+    evidence against the group. An unrelated second-position sighting
+    elsewhere in the text must never flip an unresolved first-position
+    instance (e.g. "Muldoon and Gordon (2023)", which matches no candidate)
+    from ambiguous-keep-all into a drop - partial ambiguity never drops a
+    cited work, and "cited" includes works named only via an unresolvable
+    first-position form."""
     for rec in records:
         rec["_variants"] = ascii_variants(rec["surname"]) or \
             frozenset({rec["surname"].lower()})
@@ -658,12 +711,17 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                 # Not cited as first author here - but if this group's
                 # surname is the SECOND author of an "and" instance (e.g.
                 # "Bloggs and Muldoon (2023)" against a Muldoon-first-
-                # author group), that is positive evidence against the
-                # group, not narrative silence: note it separately from
+                # author group) AND that sighting is corroborated by an
+                # actual bib record (I1), that is positive evidence against
+                # the group, not narrative silence: note it separately from
                 # first-position evidence (see docstring) rather than
-                # folding it into one any_instance flag.
+                # folding it into one any_instance flag. An uncorroborated
+                # sighting (no bib record explains it) is left unset here,
+                # so it falls through to ambiguous-keep-all like any other
+                # unparseable narrative mention.
                 if inst["form"] == "and" and (
-                        ascii_variants(inst["second_text"]) & member_variants):
+                        ascii_variants(inst["second_text"]) & member_variants) and (
+                        _second_position_corroborated(inst, member_variants, records)):
                     second_pos_seen = True
                 continue
             first_pos_seen = True
