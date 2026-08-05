@@ -105,7 +105,7 @@ The result is that literature reviews remain a practice where ethical failures g
 
 ### Gap 3: No Account of What Makes a Literature Review Ethically Bad
 
-While the research ethics literature develops accounts of intellectual honesty (Miller 2022) and intellectual transparency (Byerly 2022), these accounts focus on individual scholarly virtues without applying them specifically to literature reviews. Kubota (2019) critiques epistemological racism in knowledge production, and Burrell et al. (2022) call for reflexivity about who produces knowledge and how, but both address research conduct broadly rather than literature synthesis in particular. Lockard (2023) identifies the charitability gap as a mechanism of epistemic oppression but does not develop a comprehensive account of interpretive ethics for the review genre.
+While the research ethics literature develops accounts of intellectual honesty (Miller 2022) and intellectual transparency (Byerly 2023), these accounts focus on individual scholarly virtues without applying them specifically to literature reviews. Kubota (2020) critiques epistemological racism in knowledge production, and Burrell et al. (2022) call for reflexivity about who produces knowledge and how, but both address research conduct broadly rather than literature synthesis in particular. Lockard (2023) identifies the charitability gap as a mechanism of epistemic oppression but does not develop a comprehensive account of interpretive ethics for the review genre.
 
 A normative account of what makes a literature review ethically deficient is needed -- one that distinguishes failures of inclusion (citational injustice through systematic omission), failures of representation (interpretive injustice through biased or uncharitable engagement with included work), and failures of transparency (intellectual dishonesty about scope, limitations, and the reviewer's own positioning). Each failure type draws on existing conceptual resources but has not been articulated as such in the literature.
 
@@ -129,7 +129,7 @@ Three key findings emerge from the literatures surveyed. First, there is no sett
 
 Second, literature reviews are ethically consequential. They enact epistemic justice or injustice through citational choices (Fricker 2007; Dotson 2014; Dadze-Arthur and Mangai 2024), reproduce or contest canons constructed through exclusion (Graness 2018; Connell and Janssen-Lauret 2016), and operate within social structures that systematically advantage some voices while marginalizing others (Contesi, Chapman, and Sandis 2019; Leuschner 2019; Petrovich et al. 2024). These ethical dimensions are not incidental to the literature review but constitutive of it.
 
-Third, existing literatures provide rich but fragmented resources for addressing these questions. Virtue epistemology offers accounts of intellectual honesty and transparency (Miller 2022; Byerly 2022). Structural critique exposes mechanisms of exclusion from epistemological racism to epistemicide (Kubota 2019; Grosfoguel 2013). Hermeneutic theory illuminates the paradoxes and politics of charitable interpretation (Davidson 2001; Lockard 2023). But these resources have not been integrated into a unified account of what makes a philosophical literature review good -- methodologically sound, interpretively fair, and ethically responsible.
+Third, existing literatures provide rich but fragmented resources for addressing these questions. Virtue epistemology offers accounts of intellectual honesty and transparency (Miller 2022; Byerly 2023). Structural critique exposes mechanisms of exclusion from epistemological racism to epistemicide (Kubota 2020; Grosfoguel 2013). Hermeneutic theory illuminates the paradoxes and politics of charitable interpretation (Davidson 2001; Lockard 2023). But these resources have not been integrated into a unified account of what makes a philosophical literature review good -- methodologically sound, interpretively fair, and ethically responsible.
 
 The research project this review supports fills a genuine gap by bringing these disparate literatures into conversation. This matters beyond academic methodology. If literature reviews shape what counts as "the state of the art," determine which questions are taken to be open, and distribute epistemic recognition among scholars, then getting them right is not merely a matter of scholarly convenience but of epistemic justice.
 
@@ -141,7 +141,7 @@ Bruton, Samuel V., Alicia L. Macchione, Mitch Brown, and Mohammad Hosseini. 2023
 
 Burrell, Gibson, Michael R. Hyman, Christopher Michaelson, Julie A. Nelson, Scott Taylor, and Andrew West. 2022. "The Ethics and Politics of Academic Knowledge Production: Thoughts on the Future of Business Ethics." *Journal of Business Ethics* 180 (3): 917--940. https://doi.org/10.1007/s10551-022-05243-6
 
-Byerly, T. Ryan. 2022. "Intellectual Honesty and Intellectual Transparency." *Episteme* 20 (2): 410--428. https://doi.org/10.1017/epi.2021.54
+Byerly, T. Ryan. 2023. "Intellectual Honesty and Intellectual Transparency." *Episteme* 20 (2): 410--428. https://doi.org/10.1017/epi.2021.54
 
 Cappelen, Herman, Tamar Szabó Gendler, and John Hawthorne, eds. 2016. *The Oxford Handbook of Philosophical Methodology*. Oxford University Press. https://doi.org/10.1093/oxfordhb/9780199668779.001.0001
 
@@ -183,7 +183,7 @@ Heidegren, Carl-Göran, and Henrik Lundberg. 2010. "Towards a Sociology of Philo
 
 Katzav, Joel, and Krist Vaesen. 2017. "Pluralism and Peer Review in Philosophy." *Philosophers' Imprint* 17 (19): 1--20.
 
-Kubota, Ryuko. 2019. "Confronting Epistemological Racism, Decolonizing Scholarly Knowledge: Race and Gender in Applied Linguistics." *Applied Linguistics* 41 (5): 712--732. https://doi.org/10.1093/applin/amz033
+Kubota, Ryuko. 2020. "Confronting Epistemological Racism, Decolonizing Scholarly Knowledge: Race and Gender in Applied Linguistics." *Applied Linguistics* 41 (5): 712--732. https://doi.org/10.1093/applin/amz033
 
 Laakso, Mikael, and Andrea Polonioli. 2018. "Open access in ethics research: an analysis of open access availability and author self-archiving behaviour in light of journal copyright restrictions." *Scientometrics* 116 (1): 291--317. https://doi.org/10.1007/s11192-018-2751-5
 
