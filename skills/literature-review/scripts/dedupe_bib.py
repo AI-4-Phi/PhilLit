@@ -19,6 +19,7 @@ from pybtex.database import parse_string
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402,F401
+from metadata_cleaner import marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
 
@@ -240,6 +241,24 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
             winner = 1
             reason = f"kept existing ({importance_1})"
 
+    # Item 3 A: a field the LOSER's cleaner verdict removed must not ship
+    # via the winner's unchecked copy - strip it and record the verdict.
+    loser = entry2 if winner == 1 else entry1
+    loser_removed = set(marker_removed_fields(_extract_keywords_value(loser)))
+    if loser_removed:
+        base = _remove_fields_text(base, loser_removed)
+        still_present = {f for f in loser_removed
+                         if _field_value_re(f).search(base)}
+        if still_present:
+            print("  [DEDUPE] warning: could not strip cleaner-flagged "
+                  + ", ".join(sorted(still_present))
+                  + " (entry not parseable); the field ships UNVETTED",
+                  file=sys.stderr)
+        applied = loser_removed - still_present
+        if applied:
+            base = _fold_removals_into_marker(base, applied)
+            reason += f", dropped cleaner-flagged {', '.join(sorted(applied))}"
+
     # Remove INCOMPLETE flag if merged entry has abstract
     if has_abstract(base) and has_incomplete_flag(base):
         base = remove_incomplete_flag(base)
@@ -280,6 +299,52 @@ def _entry_fields(entry_text: str) -> dict:
     for _key, entry in db.entries.items():
         return {name.lower(): val for name, val in entry.fields.items()}
     return {}
+
+
+def _remove_fields_text(entry_text: str, fields: set[str]) -> str:
+    """Remove `fields` from a raw BibTeX entry via a pybtex round-trip
+    (brace/quote/multi-line safe). Parse failure returns the text unchanged
+    (plumbing fails open). The output is pybtex-quoted form - Task 2 made
+    every extractor in this file read that form."""
+    if not fields:
+        return entry_text
+    try:
+        db = parse_string(entry_text, "bibtex")
+    except Exception:
+        return entry_text
+    import io
+    from pybtex.database.output.bibtex import Writer
+    for _key, entry in db.entries.items():
+        for f in list(entry.fields.keys()):
+            if f.lower() in fields:
+                del entry.fields[f]
+    out = io.StringIO()
+    Writer().write_stream(db, out)
+    return out.getvalue().strip()
+
+
+def _fold_removals_into_marker(entry_text: str, removed: set[str]) -> str:
+    """Extend the entry's METADATA_CLEANED marker with `removed` names so the
+    verdict travels with the merged entry. Creates the marker (and a keywords
+    field) when absent."""
+    if not removed:
+        return entry_text
+    current = _extract_keywords_value(entry_text)
+    already = marker_removed_fields(current)
+    to_add = sorted(set(removed) - set(already))
+    if not to_add:
+        return entry_text
+    if "METADATA" in current and "_CLEANED" in current.replace("\\", ""):
+        # Append names to the existing marker's change list (marker is
+        # always the keywords tail - _MARKER_RE contract).
+        new_value = current.rstrip() + ", " + ", ".join(to_add)
+        return _rewrite_keywords(entry_text, lambda _v: new_value)
+    marker = "METADATA_CLEANED: " + ", ".join(to_add)
+    if current:
+        return _rewrite_keywords(
+            entry_text, lambda v: v.rstrip().rstrip(",") + ", " + marker)
+    # No keywords field at all: insert one.
+    return _insert_field_text(entry_text, "keywords", marker)
 
 
 def _fallback_key(entry_text: str) -> tuple[str, str, str] | None:
@@ -343,8 +408,12 @@ def _union_substantive_fields_text(winner_text: str, loser_text: str) -> str:
     are handled."""
     winner_fields = _entry_fields(winner_text)
     loser_fields = _entry_fields(loser_text)
+    blocked = set(marker_removed_fields(_extract_keywords_value(winner_text))) \
+        | set(marker_removed_fields(_extract_keywords_value(loser_text)))
     out = winner_text
     for f in _SUBSTANTIVE_FIELDS:
+        if f in blocked:
+            continue
         w = (winner_fields.get(f) or "").strip()
         l = (loser_fields.get(f) or "").strip()
         if not w and l:

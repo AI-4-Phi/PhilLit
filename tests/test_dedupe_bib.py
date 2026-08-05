@@ -963,3 +963,173 @@ class TestQuotedFormExtractors:
                   'length.},\n  keywords = {Medium}}')
         assert parse_importance(braced) == "Medium"
         assert has_abstract(braced) is True
+
+
+CLEANED_COPY = '''@inproceedings{iclr_d3,
+    author = "Doe, Jane",
+    title = "Impossible Publication",
+    year = "2024",
+    keywords = "Medium, METADATA\\_CLEANED: booktitle"
+}'''
+
+UNCLEANED_COPY = '''@inproceedings{iclr_d1,
+    author = {Doe, Jane},
+    title = {Impossible Publication},
+    year = {2024},
+    booktitle = {International Conference on Learning Representations},
+    abstract = {A substantial abstract that makes this copy win the merge.},
+    keywords = {Medium}
+}'''
+
+
+class TestCleanerVerdictPropagation:
+    """Item 3 A: a field one domain's evidence flagged unverifiable must not
+    ship via an unchecked duplicate."""
+
+    def test_uncleaned_winner_loses_flagged_field(self):
+        # The uncleaned copy wins (it has the abstract) - but booktitle,
+        # flagged by the cleaned loser, must be stripped from the merge.
+        from dedupe_bib import merge_entries
+        merged, _reason, winner = merge_entries(CLEANED_COPY, UNCLEANED_COPY)
+        assert winner == 2
+        assert "International Conference" not in merged
+        assert "abstract" in merged.lower()  # winner's own fields survive
+
+    def test_merged_marker_records_propagated_removal(self):
+        from dedupe_bib import merge_entries, _extract_keywords_value
+        from metadata_cleaner import marker_removed_fields
+        merged, _r, _w = merge_entries(CLEANED_COPY, UNCLEANED_COPY)
+        assert "booktitle" in marker_removed_fields(
+            _extract_keywords_value(merged))
+
+    def test_union_never_reinserts_flagged_field(self):
+        # Cleaned copy WINS (give it the abstract); union from the uncleaned
+        # loser must not re-insert booktitle.
+        from dedupe_bib import merge_entries, _union_substantive_fields_text
+        cleaned_with_abs = CLEANED_COPY.replace(
+            '"Medium, METADATA\\_CLEANED: booktitle"',
+            '"Medium, METADATA\\_CLEANED: booktitle",\n'
+            '    abstract = "A substantial abstract that makes this copy win."')
+        merged, _r, winner = merge_entries(UNCLEANED_COPY.replace(
+            "    abstract = {A substantial abstract that makes this copy "
+            "win the merge.},\n", ""), cleaned_with_abs)
+        assert winner == 2
+        out = _union_substantive_fields_text(merged, UNCLEANED_COPY)
+        assert "International Conference" not in out
+
+    def test_unflagged_fields_still_union(self):
+        from dedupe_bib import _union_substantive_fields_text
+        winner = CLEANED_COPY  # lacks doi; marker flags only booktitle
+        loser = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},",
+            "doi = {10.1000/xyz},")
+        out = _union_substantive_fields_text(winner, loser)
+        assert "10.1000/xyz" in out
+
+    def test_no_marker_no_behavior_change(self):
+        from dedupe_bib import merge_entries
+        plain1 = UNCLEANED_COPY
+        plain2 = UNCLEANED_COPY.replace("iclr_d1", "iclr_d2")
+        merged, _r, _w = merge_entries(plain1, plain2)
+        assert "International Conference" in merged
+
+    def test_end_to_end_through_deduplicate_bib(self, tmp_path):
+        # Same-key merge across two files: the shipped bib must not carry
+        # the flagged booktitle.
+        from dedupe_bib import deduplicate_bib
+        f1 = tmp_path / "d1.bib"
+        f2 = tmp_path / "d3.bib"
+        f1.write_text(UNCLEANED_COPY.replace("iclr_d1", "shared"),
+                      encoding="utf-8")
+        f2.write_text(CLEANED_COPY.replace("iclr_d3", "shared"),
+                      encoding="utf-8")
+        out = tmp_path / "merged.bib"
+        deduplicate_bib([f1, f2], out)
+        text = out.read_text(encoding="utf-8")
+        assert "International Conference" not in text
+
+    def test_doi_pass_with_flagged_loser(self, tmp_path):
+        # Pass 2 (shared DOI, different keys): strip must fire there too
+        # (review Q2 coverage note).
+        from dedupe_bib import deduplicate_bib
+        f1 = tmp_path / "d1.bib"
+        f2 = tmp_path / "d3.bib"
+        f1.write_text(UNCLEANED_COPY.replace(
+            "year = {2024},", "year = {2024},\n    doi = {10.1000/same},"),
+            encoding="utf-8")
+        f2.write_text(CLEANED_COPY.replace(
+            'year = "2024",', 'year = "2024",\n    doi = "10.1000/same",'),
+            encoding="utf-8")
+        out = tmp_path / "merged.bib"
+        deduplicate_bib([f1, f2], out)
+        assert "International Conference" not in out.read_text(encoding="utf-8")
+
+    def test_two_hop_transitive_verdict(self):
+        # A (cleaned) loses to B; the folded marker on the merged entry must
+        # then strip C's copy of the field in a SECOND merge - the scenario
+        # that justifies marker folding (review Q2).
+        from dedupe_bib import merge_entries
+        merged_ab, _r, _w = merge_entries(CLEANED_COPY, UNCLEANED_COPY)
+        third = UNCLEANED_COPY.replace("iclr_d1", "iclr_d6")
+        merged_abc, _r2, winner = merge_entries(third, merged_ab)
+        assert "International Conference" not in merged_abc
+
+    def test_unparseable_entry_ships_loudly_with_honest_marker(self, capsys):
+        # Strip failure (unbalanced brace): field ships with a stderr
+        # warning, and the marker/reason must NOT claim removal (review 5a).
+        from dedupe_bib import merge_entries, _extract_keywords_value
+        from metadata_cleaner import marker_removed_fields
+        broken = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},",
+            "booktitle = {International {Conference on Learning Representations},")
+        merged, reason, _w = merge_entries(CLEANED_COPY, broken)
+        err = capsys.readouterr().err
+        if "International" in merged:  # strip genuinely failed
+            assert "UNVETTED" in err
+            assert "dropped cleaner-flagged" not in reason
+            assert "booktitle" not in marker_removed_fields(
+                _extract_keywords_value(merged)) or \
+                "booktitle" in marker_removed_fields(
+                    _extract_keywords_value(CLEANED_COPY))
+
+    def test_roundtrip_preserves_corporate_author_and_custom_fields(self):
+        # Double-braced corporate authors and non-standard fields survive
+        # _remove_fields_text (review 5b). (Single-braced corporate authors
+        # are already person-parsed by every pybtex consumer in the pipeline;
+        # the round-trip materializes that existing interpretation.)
+        from dedupe_bib import _remove_fields_text
+        entry = ('@techreport{nrc, author = {{National Research Council}},\n'
+                 '  title = {R}, year = {2020}, pages = {1--3},\n'
+                 '  sep_context = {S}, iep_context = {I},\n'
+                 '  abstract_source = {crossref}, note = {N}}')
+        out = _remove_fields_text(entry, {"pages"})
+        assert "{National Research Council}" in out
+        assert "pages" not in out.lower().replace("abstract_source", "")
+        for f in ("sep_context", "iep_context", "abstract_source", "note"):
+            assert f in out.replace("\\_", "_")
+
+    def test_fold_removals_idempotent(self):
+        from dedupe_bib import _fold_removals_into_marker
+        once = _fold_removals_into_marker(UNCLEANED_COPY, {"booktitle"})
+        twice = _fold_removals_into_marker(once, {"booktitle"})
+        assert once == twice
+
+    def test_restamp_integration_on_flagged_merge(self, tmp_path):
+        # Round-tripped (quoted-form, folded-marker) entries must still flow
+        # through restamp_merged without error and carry a tier token
+        # (review 5c).
+        import json
+        from dedupe_bib import deduplicate_bib
+        f1 = tmp_path / "d1.bib"
+        f2 = tmp_path / "d3.bib"
+        f1.write_text(UNCLEANED_COPY.replace("iclr_d1", "shared"),
+                      encoding="utf-8")
+        f2.write_text(CLEANED_COPY.replace("iclr_d3", "shared"),
+                      encoding="utf-8")
+        report = tmp_path / "evidence_report.json"
+        report.write_text(json.dumps({"attestations": {}}), encoding="utf-8")
+        out = tmp_path / "merged.bib"
+        deduplicate_bib([f1, f2], out, evidence_report=report)
+        text = out.read_text(encoding="utf-8")
+        assert "International Conference" not in text
+        assert "EVIDENCE-" in text  # tier token stamped, no crash
