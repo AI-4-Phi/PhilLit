@@ -10,15 +10,19 @@ exists so open work has a single place to be listed — it was created
 version bump — DONE 2026-08-05, released as **v0.3.1** (`318aa2c`); (2) the 27-wrong-years
 audit of delivered reviews — measurement DONE 2026-08-05 (finding: 449
 delivered entries carry online-first years, see item 3 K; remediation
-decision pending); (3) item 3's residuals (A and B's post-check DONE
-2026-08-05; B's matcher-side transliteration work, then E, C, D; F
-last); (4) ONE batched phillit-service mirror session — the item-4
-`bib_identity` port, the item-1 evidence-tier port (service item 20), and
-the deferred `rate_limiter` fix — which **opens with a decision: the two
-trees have drifted far enough that the session may conclude they should be
-developed separately rather than mirrored**; (5) item 2. Until that session,
-mirror debt accumulates deliberately — don't mirror piecemeal, and don't
-touch/push phillit-service outside it.
+decision pending); (3) item 3's residuals — **A, B, and E all DONE
+2026-08-05** (A's dedup fix, B's post-check + matcher-side transliteration,
+E's instance-based collision resolution); remaining C, D; F last; (4) ONE
+batched phillit-service mirror session — the item-4 `bib_identity` port,
+the item-1 evidence-tier port (service item 20), the item-3-E
+collision-aware-matching port (Tasks 1-4, `917850d`..`e5cb717` — port from
+`e5cb717` or later, never `e5e863a` alone: the first/second-position
+conflation bug lived entirely inside `e5e863a`'s `_resolve_collisions`),
+and the deferred `rate_limiter` fix — which **opens with a decision: the
+two trees have drifted far enough that the session may conclude they
+should be developed separately rather than mirrored**; (5) item 2. Until
+that session, mirror debt accumulates deliberately — don't mirror
+piecemeal, and don't touch/push phillit-service outside it.
 
 ## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (MERGED here, v0.3.0; service port pending — dual-repo)
 
@@ -290,14 +294,16 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   still resolve by each merge path's own vetting-blind winner rule) in
   `docs/known-issues/bib-pipeline-integrity-gaps.md`.
 - **B — silent References omission** (`generate_bibliography.py`):
-  every-citation-resolves post-check **landed 2026-08-05** (`03d2b6b`,
-  `lint_md.py`) — an unresolved in-text citation now fails the lint step
-  loudly (ERROR, nonzero exit) instead of vanishing silently. The
-  matcher-side transliteration/fuzzy-matching fix in
-  `generate_bibliography.py` itself (the near-miss that opened this issue:
-  body "Fraenken" vs bib "Franken") remains **open** — out of scope for
-  this branch, prioritized separately once the new check surfaces real
-  instances.
+  **CLOSED 2026-08-05.** The every-citation-resolves post-check landed
+  (`03d2b6b`, `lint_md.py`) — an unresolved in-text citation now fails the
+  lint step loudly (ERROR, nonzero exit) instead of vanishing silently —
+  and the matcher-side transliteration fix landed the same day (item 3 E
+  Task 2, `fb6623e`): symmetric NFKD + transliteration-fold matching
+  resolves the near-miss that opened this issue (body "Fraenken" vs bib
+  "Franken") directly at match time. The fuzzy near-miss fallback from the
+  original fix directions was never built and is not needed to close this.
+  Documented check-side known limits remain — see
+  `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue B.
 - **C — unenforced abstract provenance**: an invented `abstract` field with
   no `abstract_source` marker passes every gate and evades the
   INCOMPLETE-keyed cite-cautiously rule. Structural; the observed exploit
@@ -335,28 +341,46 @@ distinguishes two works sharing that pair, and no stage assigns Chicago
 `2019a`/`2019b` suffixes. Two defects are visible in delivered output:
 
 Collisions come in two kinds, and they need *different* mechanisms — E
-handles those the prose can already distinguish, F those it cannot. Both
-close a phantom-reference hole for their own class. Measurements: 21/32
-reviews contain at least one collision group; in **7 groups** the prose
-carries strictly fewer distinct citation forms than the group has entries,
-so a listed work is confirmed uncited.
+handles those the prose can already distinguish, F those it cannot. E
+closes the phantom-reference hole outright for the different-author-list
+sub-shape; for the same-surname-different-solo-author sub-shape it closes
+the hole only when the prose already carries a first initial (the
+writer-facing note was never added — see E below). F remains fully open.
+Measurements: 21/32 reviews contain at least one collision group; in **7
+groups** the prose carries strictly fewer distinct citation forms than the
+group has entries, so a listed work is confirmed uncited.
 
 - **E — matcher collisions / phantom references**
-  (`generate_bibliography.py`): every entry sharing `(first-author surname,
-  year)` matches whenever any one of them is cited, so uncited works get
-  rendered into References *even when the prose was unambiguous*. Scope:
-  collisions where the works have **different authors**. Two sub-shapes,
-  both needing a fix:
+  (`generate_bibliography.py`): **FIXED 2026-08-05** (`917850d`, `fb6623e`,
+  `be5ab30`, `e5e863a`, `e5cb717`). Previously every entry sharing
+  `(first-author surname, year)` matched whenever any one of them was
+  cited, so uncited works were rendered into References *even when the
+  prose was unambiguous*. `_resolve_collisions` now groups colliding
+  entries, parses citation instances from the original prose, and keeps
+  only the union of entries an instance actually supports — a group with no
+  discriminating instance is kept whole with a `[COLLISION] ambiguous`
+  stderr warning rather than guessed at (partial ambiguity never drops a
+  cited work). Scope: collisions where the works have **different
+  authors**. Two sub-shapes:
   - *Different author lists* — `Muldoon et al. 2023` vs. `Muldoon and Wu
-    2023`; also Moore 2020, Li 2022, Wang 2023, Adams 2010. Fix: require a
-    discriminating token (second-author surname, or `et al.`) in the window
-    before matching.
+    2023`; also Moore 2020, Li 2022, Wang 2023, Adams 2010. Discriminating
+    token: second-author surname, or `et al.` with 3+ authors.
   - *Different people, same surname, both solo* — Gabbrielle vs. Rebecca
     **Johnson** 2024; no author-list token can separate these. Chicago's own
-    rule is first initials (`G. Johnson 2024` / `R. Johnson 2024`), which
-    means E also needs an initial-aware match and a writer-facing note.
+    rule is first initials (`G. Johnson 2024` / `R. Johnson 2024`); the
+    matcher-side half of this landed (`_first_text_informative`), but the
+    writer-facing note (`docs/conventions.md`, `agents/synthesis-writer.md`)
+    telling writers to actually supply an initial was **never added** — so a
+    bare `Johnson (2024)` with no initial in the prose still can't
+    discriminate and falls to keep-all-and-warn. Open follow-up.
 
-  Where the prose form stays ambiguous, warn rather than guess.
+  Residuals (full detail in
+  `docs/known-issues/author-year-collision.md`): a bare-apostrophe
+  possessive ("Rivers' (2020)") isn't stripped; unparsed narrative forms
+  fall to keep-all; particled FIRST surnames ("van der Deijl") never
+  intersect an instance's variants, so those groups keep-all by
+  construction; collision resolution runs before dedup (accepted, narrow).
+  Same-author collisions are deliberately left whole for F.
   Self-contained in `generate_bibliography.py`, no agent-prompt change, no
   live run — natural companion to B's every-citation-resolves check in
   `lint_md.py`.
@@ -377,10 +401,9 @@ so a listed work is confirmed uncited.
   `agents/synthesis-writer.md`, so it needs a live headless run to confirm
   writer compliance before the port.
 
-Suggested order: A+B first (small, testable, deterministic) — **A fully
-fixed and B's citation-omission post-check landed 2026-08-05, B's
-matcher-side transliteration work still open** — then E (same shape, and it
-pairs with B), then C (mechanical validator rule), then D (heuristics +
+Suggested order: A+B first (small, testable, deterministic), then E (same
+shape, pairs with B) — **A, B, and E are all FIXED/CLOSED as of
+2026-08-05** — then C (mechanical validator rule), then D (heuristics +
 prompt rules). F last — it is the only one of the six that needs a live
 run, and that run should not be entangled with the evidence-tier A/B
 experiment.
@@ -438,9 +461,13 @@ Decisions taken, so they are not silently reversed later:
 - **The prose fold is deliberately NOT consolidated.**
   `generate_bibliography._normalize_for_matching` folds author-written review
   text, not two of our own keys. It keeps punctuation, and the 60-character
-  `_MATCH_WINDOW` is measured over its output, so swapping it for `title_key`
-  would change citation matching for every review. Its docstring now says so,
-  and the `_normalize_for_matching("Hübner") == "Hubner"` assertions in
+  `_MATCH_WINDOW` is sliced from whichever haystack produced a hit — this
+  function's output (`norm_text`) or `bib_identity.translit_fold`'s output
+  (`translit_text`, item 3 E Task 2, `fb6623e`, 2026-08-05, symmetric
+  transliteration matching), both of which keep punctuation for the same
+  reason — so swapping either for `title_key` would change citation
+  matching for every review. Its docstring now says so, and the
+  `_normalize_for_matching("Hübner") == "Hubner"` assertions in
   `tests/test_generate_bibliography.py` are the tripwire.
 - **Casefold expansion is a fifth divergence axis**, beyond the four in the
   table below. `ß` carries no combining mark, so NFKD ignores it while
@@ -456,8 +483,10 @@ Decisions taken, so they are not silently reversed later:
   `test_generate_bibliography_copy_in_sync` already catches drift.
 - **The `lint_md.py` every-citation-resolves post-check landed 2026-08-05**
   (`03d2b6b`, item 3's residuals — see below): item 4 removed the
-  *deterministic* drop mode, not the near-miss class, which is still open
-  and belongs to Issue B's matcher-side work.
+  *deterministic* drop mode; the near-miss class (transliteration
+  divergences NFKD doesn't cover) was closed separately the same day by
+  item 3 E Task 2 (`fb6623e`, symmetric transliteration matching) — both
+  modes of Issue B are now closed.
 
 One limit of the non-Latin fix remains, deliberate and documented in the code:
 the year test is a substring match, so a non-numeric or bracketed year (`n.d.`,
@@ -565,6 +594,7 @@ local-only `workflow-findings-softmax-review.md`).
 **If resuming an interrupted session, check the local-only
 `docs/known-issues/doc-rot-audit-2026-08-02.md` first** — it carries the
 agreed sequence with live checkboxes (extended + amended 2026-08-05).
-Everything through the v0.3.1 push (steps 1–6b) is done; what remains, in
-order: the 27-wrong-years audit, item 3's residuals, the batched mirror
-session (with its mirror-vs-fork decision), then item 2.
+Everything through the v0.3.1 push (steps 1–6b) is done; the 27-wrong-years
+audit is done and item 3's A/B/E residuals are done (2026-08-05); what
+remains, in order: item 3's C, D, F, the batched mirror session (with its
+mirror-vs-fork decision), then item 2.

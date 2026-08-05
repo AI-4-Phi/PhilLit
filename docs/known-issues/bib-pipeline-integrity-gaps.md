@@ -9,10 +9,13 @@ against **this repo's current `main`**, not just the snapshot.
 **Severity**: Medium overall (per-issue below). None fails a run; all
 silently degrade bibliography/References integrity — the part of the output a
 reader is least able to audit.
-**Status**: Open overall (C and D untouched). **A is FIXED 2026-08-05; B's
-citation-omission post-check landed 2026-08-05, matcher-side transliteration
-work still open** — see the per-issue status lines below and
-`docs/ROADMAP.md`. The 2026-08-02 sequencing constraint (fixes touching
+**Status**: Open overall (C and D untouched). **A is FIXED 2026-08-05; B is
+CLOSED 2026-08-05** (citation-omission post-check plus symmetric
+matcher-side transliteration both landed the same day; the fuzzy near-miss
+fallback from B's original fix directions was never built and is not
+needed — see Issue B below for what remains, all check-side known limits)
+— see the per-issue status lines below and `docs/ROADMAP.md`. The
+2026-08-02 sequencing constraint (fixes touching
 `hooks/metadata_cleaner.py` or `dedupe_bib.py` had to wait for branch
 `worktree-evidence-tier`) is gone: the branch landed on `main` the same day
 (`f89f4de`, plugin v0.3.0) and the cleaner freeze is lifted — fixes are
@@ -32,12 +35,14 @@ user's session runs (normally an Anthropic model). Issues A and B were
 originally deterministic script defects that applied to plugin runs
 unconditionally; that framing is now dated. **A is FIXED 2026-08-05.** B's
 deterministic drop mode (the wholly-non-Latin-script skip) was fixed by
-item 4 on 2026-08-03, and any remaining matcher gap is now caught loudly
-by the every-citation-resolves check built 2026-08-05 rather than shipping
-silently — but B's original near-miss matcher class (transliteration
-divergences NFKD doesn't cover, e.g. "Fraenken" vs "Franken") is still
-open and can still drop a citation, now surfaced rather than silent. Issues
-C and D are missing safeguards: their observed exploits occurred under
+item 4 on 2026-08-03, its every-citation-resolves post-check landed
+2026-08-05 so any remaining matcher gap is caught loudly rather than
+shipping silently, and B's original near-miss matcher class (transliteration
+divergences NFKD doesn't cover, e.g. "Fraenken" vs "Franken") is now FIXED
+too — the matcher gained symmetric transliteration-fold matching the same
+day (item 3 E Task 2, `fb6623e`), so that exact divergence now matches at
+match time rather than merely being caught after the fact. **B is CLOSED.**
+Issues C and D are missing safeguards: their observed exploits occurred under
 non-Anthropic orchestrator models in the service's experiments, and Claude
 models behaved honestly in the same runs — but the plugin has no control over
 what model a user's session (or an `ANTHROPIC_BASE_URL` swap) actually runs,
@@ -140,29 +145,41 @@ entry was already vetted.
 ## Issue B — a cited work can silently vanish from the rendered References (surname-match failure)
 
 **Severity: Medium-High for reader-facing impact. Deterministic.**
-**Status: Post-check built 2026-08-05** (`03d2b6b`); matcher
-transliteration still open.
+**Status: CLOSED 2026-08-05** — the every-citation-resolves post-check
+landed (`03d2b6b`) and the matcher gained symmetric transliteration-fold
+matching the same day (item 3 E Task 2, `fb6623e`). The fuzzy near-miss
+fallback from the original fix directions was never built and is not
+needed to close this — see "Issue B is CLOSED" below. What remains are the
+documented check-side known limits (a)-(c), listed further down.
 
 `generate_bibliography.py` builds References by matching in-text citations to
-bib entries via surname+year proximity (`_MATCH_WINDOW = 60`, NFKD
-diacritics-tolerant via `_normalize_for_matching`). A body/bib spelling
-divergence that NFKD does not cover fails the match, and the cited work is
-simply absent from the References. The script reports only the aggregate
-"Matched X/Y BibTeX entries as cited" on stderr; nothing checks the converse
-— that every in-text citation resolves to a References entry — so in an
-autopilot run the omission is invisible.
+bib entries via surname+year proximity (`_MATCH_WINDOW = 60`; diacritics-
+tolerant via `_normalize_for_matching`'s NFKD fold and, since 2026-08-05,
+transliteration-tolerant via `bib_identity.translit_fold`/`ascii_variants`,
+tried symmetrically against both a plain-NFKD and a transliterated haystack
+— see the fix below). A body/bib spelling divergence that neither NFKD nor
+the transliteration table covers still fails the match, and the cited work
+would be absent from the References — but the omission is no longer silent
+(see the post-check below). The script reports only the aggregate "Matched
+X/Y BibTeX entries as cited" on stderr; nothing here checks the converse —
+that every in-text citation resolves to a References entry — which is the
+gap the post-check closes.
 
 Observed instance (service run `deepseek-v4-pro-dde-r1`): the review's anchor
 study, cited seven times, missing from the delivered References. Body spelled
 the author "Fraenken" (ae-transliteration), bib had "Franken" (NFKD of the
 real "Fränken"); "fraenken" ≠ "franken" → silent drop. The writer introduced
-the spelling divergence; the silence is the script's.
+the spelling divergence; the silence was the script's. **This exact
+divergence is now matched at match time** (symmetric transliteration,
+`fb6623e`) — a re-run of the same input would resolve it directly, without
+needing the post-check.
 
-Fix directions: transliteration-aware normalization (ä→ae as well as ä→a,
-ö/ü likewise) plus a fuzzy near-miss fallback; and a hard post-check —
+Fix directions were: transliteration-aware normalization (ä→ae as well as
+ä→a, ö/ü likewise) plus a fuzzy near-miss fallback; and a hard post-check —
 `lint_md.py` is the natural home — extracting in-text author-year citations
 and requiring each to resolve to a References entry, failing loudly
-otherwise. The post-check also guards every future matcher gap.
+otherwise. Both the transliteration-aware normalization and the post-check
+landed; the fuzzy near-miss fallback did not (not needed — see below).
 
 **Second mode, found 2026-08-02 — FIXED 2026-08-03 by ROADMAP item 4.** When the
 first-author surname was in a wholly non-Latin script (Greek, Cyrillic),
@@ -199,17 +216,25 @@ generator's own match decision. So in the original observed instance (body
 "Fraenken", bib "Fränken"), the entry never reached References in the first
 place (the generator's matcher dropped it, per Issue B above) — the check
 finds nothing to match against and correctly ERRORs on the citation. It
-surfaces the drop loudly; it does not make the match succeed.
+surfaces the drop loudly; it does not make the match succeed. **Note
+(2026-08-05): this account is now historical.** The generator's matcher
+gained symmetric transliteration-fold matching after this was written
+(`fb6623e`), so re-running the exact Fraenken/Franken input today resolves
+the entry directly at match time — the entry reaches References and the
+post-check finds nothing to flag.
 
-**Issue B itself remains Open.** The check is a guard, not a fix for the
-matcher: it makes every future matcher gap loud instead of silent, but the
-transliteration-aware normalization and fuzzy near-miss fallback that would
-actually resolve a "Fraenken"/"Franken" divergence *at match time* in
-`generate_bibliography.py` are unbuilt (out of scope for this branch —
-ROADMAP item 3 tracks it as B's remaining half, to be prioritized once the
-new check surfaces real instances). B's original tie-break — build the
-post-check regardless of the matcher fix, since it catches every future
-matcher gap, not just this one — stands vindicated on its own merits.
+**Issue B is CLOSED 2026-08-05.** The transliteration-aware normalization
+that resolves a "Fraenken"/"Franken" divergence *at match time* landed in
+`generate_bibliography.py` (item 3 E Task 2, `fb6623e`) — symmetric, tried
+in both directions, via `bib_identity.ascii_variants`/`translit_fold`. The
+fuzzy near-miss fallback from the original fix directions was never built
+and is not needed to close this: transliteration-table coverage plus the
+loud post-check together mean a genuine near-miss (a misspelling the
+transliteration table doesn't cover) now fails loudly at lint time instead
+of vanishing silently, which was the reader-facing harm this issue tracked.
+B's original tie-break — build the post-check regardless of the matcher
+fix, since it catches every future matcher gap, not just this one — stands
+vindicated on its own merits.
 
 Known limits of the check itself, all deliberate rather than oversights.
 (a) Same-author multi-year citations — `(Smith 2020, 2021)` — extract only
@@ -232,14 +257,16 @@ design that trades this narrow false-negative-on-error-detection risk for
 staying regex-simple and never producing a spurious ERROR on a
 correctly-formatted line.
 
-Two residual holes, deliberate and documented in the code (ROADMAP item 4):
-the year test is a substring match, so a non-numeric or bracketed year
-(`n.d.`, `[2021]`) still cannot match in the script-preserving haystack; and
-the fallback triggers only on an *empty* ASCII fold, so a surname folding to
-punctuation-only (a hyphenated non-Latin name folds to `-`) never reaches it.
-The latter is a distinct symptom in the opposite direction — those entries
-match a garbage pattern and can be spuriously *included* — and is an open
-candidate item.
+One residual hole remains, deliberate and documented in the code (ROADMAP
+item 4): the year test is a substring match, so a non-numeric or bracketed
+year (`n.d.`, `[2021]`) still cannot match in the script-preserving
+haystack. A companion hole this paragraph used to describe — the
+script-preserving fallback triggering only on an *empty* ASCII fold, so a
+punctuation-only fold (a hyphenated non-Latin surname folds to `-`) never
+reached it and matched a garbage `\b-\b` pattern instead, spuriously
+*including* the entry — was **FIXED 2026-08-03** (ROADMAP item 4's
+follow-up): the trigger is now "the fold retains no alphanumeric
+character," which covers `''`, `-`, and `' '` alike.
 
 ## Issue C — fabricated abstract fields are indistinguishable from genuine ones (provenance not enforced)
 
@@ -304,7 +331,8 @@ Full predatory-list curation is out of scope; flag-and-caveat is the goal.
   abstract-preference merge, now cleaner-verdict-aware via surgical field
   strip and blocked union (Issue A, FIXED)
 - `skills/literature-review/scripts/generate_bibliography.py` — surname+year
-  proximity matching, aggregate-only reporting (Issue B, matcher still open);
+  proximity matching, symmetric transliteration-tolerant since 2026-08-05
+  (Issue B, CLOSED) and collision-aware since 2026-08-05 (ROADMAP item 3 E);
   `find_cited_entries` mirrors Issue A's strip-and-blocked-union on the
   References-rendering side
 - `skills/literature-review/scripts/lint_md.py` — hosts the built

@@ -1,10 +1,12 @@
 # Author–year collisions: dangling `2015a` cites, phantom references, no Chicago disambiguation
 
-**Status:** Open, scheduled. Surfaced as a side finding during evidence-tier
-A/B adjudication (2026-07-28); quantified across all 32 delivered reviews
-the same day. Tracked as `ROADMAP.md` item 3, sub-items **E** (matcher) and
-**F** (Chicago suffixes), sequenced after the evidence-tier merge and
-service port.
+**Status:** Surfaced as a side finding during evidence-tier A/B adjudication
+(2026-07-28); quantified across all 32 delivered reviews the same day.
+Tracked as `ROADMAP.md` item 3, sub-items **E** (matcher) and **F** (Chicago
+suffixes). **E is FIXED 2026-08-05** (`917850d`, `fb6623e`, `be5ab30`,
+`e5e863a`, `e5cb717` — item 3 E, Tasks 1-4 of the collision-aware-matching
+plan). **F is still Open** — same-author collisions need Chicago `a`/`b`
+suffixes, which E cannot provide (see "Fix design" below).
 
 ## Summary
 
@@ -110,16 +112,18 @@ The information is lost at write time: Phase 6 cannot tell which
 **B is separable and cheaper than A** — it needs no agent-prompt change and
 no live run, which is why it is sequenced first (roadmap 3E vs 3F):
 
-- **B → roadmap 3E (matcher)** — scope: collisions between works by
-  *different* authors, which the prose can already distinguish. Make
-  `find_cited_entries` collision-aware in two shapes: when the colliding
-  entries have distinct author lists, require a discriminating token in the
-  window (second-author surname, or `et al.`); when they are distinct
-  *people* who are both solo authors (the two Johnsons), fall back to
-  Chicago's first-initial rule. Where the prose form stays ambiguous, warn
-  rather than guess. Self-contained in `generate_bibliography.py` + tests.
-  Natural companion to the item-3B every-citation-resolves check in
-  `lint_md.py`.
+- **B → roadmap 3E (matcher) — FIXED 2026-08-05.** Scope: collisions
+  between works by *different* authors, which the prose can already
+  distinguish. `find_cited_entries` is now collision-aware in both shapes:
+  when the colliding entries have distinct author lists, a discriminating
+  token in the window (second-author surname, or `et al.` with 3+ authors)
+  selects among them; when they are distinct *people* who are both solo
+  authors (the two Johnsons), a first-initial/first-name token does the
+  same. Where the prose form stays ambiguous, the group is kept whole and
+  warned about rather than guessed at. Self-contained in
+  `generate_bibliography.py` + tests. Natural companion to the item-3B
+  every-citation-resolves check in `lint_md.py`. Full resolution rule and
+  residuals: "E: fixed 2026-08-05" below.
 
   E cannot touch same-author collisions (Menary 2010 ×3): nothing in the
   citation distinguishes them, so those are F's alone.
@@ -143,6 +147,97 @@ failure — near-identical entries surviving dedupe on diacritic variance
 (`Milliere`/`Millière`, `Mohamed El-Amine`/`Mohamed El Amine`) and
 arXiv-vs-journal pairs. Recorded here as an out-of-scope find; it is not
 part of the proposed fix.
+
+## E: fixed 2026-08-05
+
+Implemented as instance-based collision resolution in
+`generate_bibliography.py` (`_citation_instances`, `_resolve_collisions`),
+wired between the matcher (`_collect_matches`) and dedup in
+`find_cited_entries`: `records = _resolve_collisions(_collect_matches(...),
+review_text)`. Commits: `917850d` (Task 1, `ascii_variants` owner in
+`bib_identity`), `fb6623e` (Task 2, symmetric transliteration matching),
+`be5ab30` (Task 3, anchored `_collect_matches` refactor), `e5e863a` (Task 4,
+instance-based collision resolution), `e5cb717` (Task 4 review-round fix,
+decouples first- and second-position instance signals). Full suite:
+1329 green.
+
+**Resolution rule.** Bib entries sharing `(first-author surname, year)` are
+grouped by variant-intersection connected components. Each group is
+resolved against citation instances parsed from the *original* review
+prose (`solo`, `and`, `etal` forms), per house style's discriminators
+(second-author surname, `et al.` for 3+ authors, first initial/name for
+solo authors sharing a surname). Four branches, keyed on whether a
+first-position instance was seen for the group and whether it
+discriminated a candidate:
+
+1. First-position instance(s) seen, and at least one discriminates a
+   candidate → keep the supported member(s), drop the rest (with a
+   `[COLLISION] dropped …` stderr note per drop).
+2. First-position instance(s) seen, but none discriminates a candidate
+   (genuinely unresolvable form, e.g. "Muldoon and Gordon" against an
+   and-Wu/and-Qi pair) → keep ALL members, one `[COLLISION] ambiguous`
+   warning. A second-position sighting elsewhere in the text can never
+   override this branch into a drop.
+3. No first-position instance seen, but a second-position sighting exists
+   (this group's surname appears only as the second author of an "and"
+   instance elsewhere, e.g. "Bloggs and Muldoon" against a Muldoon-first-
+   author group) → drop all members (the co-author position is the only
+   parsed explanation for the loose surname/year match).
+4. Neither → keep ALL members, `[COLLISION] ambiguous` warning (pure
+   narrative mention, no parseable form at all).
+
+Warn-and-keep-all (branches 2 and 4) is the deliberate default whenever the
+prose doesn't affirmatively discriminate: **partial ambiguity never drops a
+cited work.**
+
+**Same-author groups are deliberately left whole for F.** Three same-author
+same-year works (Menary 2010 ×3) share every discriminator this fix has
+access to (surname, author-list shape, first initial), so they always fall
+to branch 2 or 4 and stay whole with a warning — resolving them needs
+Chicago `a`/`b` suffixes (F), which E does not attempt.
+
+**Scope note: `check_evidence.find_cites` is untouched.** It keeps its own
+copy of the `(surname, year)`-within-`_MATCH_WINDOW` logic
+(`check_evidence.py:38`, "mirrors `generate_bibliography._MATCH_WINDOW`")
+for evidence-tier telemetry, not for the References-rendering path E fixes.
+Collision smearing in that telemetry is unaffected by this fix, consistent
+with "Interaction with the evidence tier" below.
+
+**Residuals, accepted:**
+
+- **Bare-apostrophe possessive not stripped.** `_strip_possessive` handles
+  `'s`/`’s` (the trailing `s` is required); a bare-apostrophe possessive on
+  a surname already ending in `-s` — "Rivers' (2020)" rather than
+  "Rivers's (2020)" — keeps its trailing `'` as part of the captured
+  surname and folds to a variant that will not match a bib entry's plain
+  "Rivers". Not fixed: the correct rule (bare `'` at a word boundary is
+  possessive only for surnames already ending in `-s`) risks false
+  positives against surnames that end in `'` as a matter of orthography,
+  and no test case exists to validate either direction.
+- **Unparsed narrative forms fall to keep-all.** `_CITE_INSTANCE_RE` only
+  recognizes `solo`/`and`/`etal` shapes; any other narrative citation form
+  produces no instance for its group, which then falls to branch 4
+  (keep-all-and-warn) by construction — never a drop.
+- **Particled FIRST surnames never intersect instances.** The regex keeps
+  the first surname single-token, so a particled first surname ("van der
+  Deijl") never matches an instance's `surname_variants`; its group
+  therefore always falls to keep-all-and-warn (documented in the
+  `_PARTICLED_SURNAME` comment in code).
+- **Collision resolution runs before dedup (accepted, narrow).**
+  `find_cited_entries` calls `_resolve_collisions` before the DOI/
+  fallback-key dedup loop, so a duplicate pair with divergent author-list
+  lengths can lose its truncated copy to collision resolution before
+  field-union has a chance to run. Narrow and accepted, not fixed.
+- **The two-Johnsons sub-shape is matcher-only; the writer-facing half of
+  E never landed.** `_first_text_informative` discriminates two solo
+  same-surname authors only when the prose already carries a first
+  initial or first name ("G. Johnson (2024)"). Nothing was added to
+  `docs/conventions.md` or `agents/synthesis-writer.md` telling writers to
+  supply one. A bare "Johnson (2024)" with no initial still can't
+  discriminate and falls to branch 2/4 (keep-all-and-warn) — so this
+  sub-shape's phantom-reference hole is not closed for reviews whose
+  writers don't already happen to use initials. Open follow-up, not
+  tracked as a separate roadmap item since it is E's own unfinished half.
 
 ## Interaction with the evidence tier
 
