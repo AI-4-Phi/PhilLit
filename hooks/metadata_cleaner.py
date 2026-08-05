@@ -69,6 +69,32 @@ BREAKER_FRACTION = 0.30
 # keywords tail, so removing from the first marker to end drops them all.
 _MARKER_RE = re.compile(r",?\s*METADATA\\*_CLEANED:.*$", re.DOTALL)
 
+# The marker's removed-field grammar, shared with dedupe_bib.py and
+# generate_bibliography.py (ROADMAP item 3 A). This module owns the marker
+# format (_apply_cleaned_marker writes it); parse it here, in one place.
+_MARKER_BODY_RE = re.compile(r"METADATA\\*_CLEANED:\s*(.*)$", re.DOTALL)
+
+
+def marker_removed_fields(keywords: str) -> frozenset[str]:
+    """Lowercase field names a METADATA_CLEANED marker records as REMOVED.
+
+    Change tokens (`year:2007->2019`, `type:@a->@b`) contain ':' and are not
+    removals. Tolerates pybtex's backslash-escaped form (METADATA\\_CLEANED)
+    - the Writer escapes '_' on round-trip. Empty/absent marker -> empty set.
+    """
+    if not keywords:
+        return frozenset()
+    m = _MARKER_BODY_RE.search(keywords)
+    if not m:
+        return frozenset()
+    names = set()
+    for token in m.group(1).split(","):
+        token = token.strip()
+        if token and ":" not in token:
+            names.add(token.lower())
+    return frozenset(names)
+
+
 # Fields exempt from cleaning (LLM-generated content is OK)
 EXEMPT_FIELDS = {
     'note', 'keywords', 'abstract_source', 'howpublished', 'url', 'abstract'

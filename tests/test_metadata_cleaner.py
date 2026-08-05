@@ -1455,3 +1455,59 @@ class TestLoadFailuresOutsideJSONDecodeError:
 
         assert "a_deep.json" in index.skipped_files
         assert index.entries
+
+
+# =============================================================================
+# Tests for marker_removed_fields
+# =============================================================================
+
+class TestMarkerRemovedFields:
+    """marker_removed_fields: the public parser for the METADATA_CLEANED
+    marker's removed-field names (ROADMAP item 3 A)."""
+
+    def test_plain_marker_removals(self):
+        from metadata_cleaner import marker_removed_fields
+        kw = "High, METADATA_CLEANED: booktitle, pages"
+        assert marker_removed_fields(kw) == frozenset({"booktitle", "pages"})
+
+    def test_pybtex_escaped_marker(self):
+        from metadata_cleaner import marker_removed_fields
+        kw = r"High, METADATA\_CLEANED: journal"
+        assert marker_removed_fields(kw) == frozenset({"journal"})
+
+    def test_double_escaped_marker(self):
+        from metadata_cleaner import marker_removed_fields
+        kw = r"METADATA\\_CLEANED: volume"
+        assert marker_removed_fields(kw) == frozenset({"volume"})
+
+    def test_change_tokens_are_not_removals(self):
+        from metadata_cleaner import marker_removed_fields
+        kw = "METADATA_CLEANED: year:2007->2019, type:@article->@misc, pages"
+        assert marker_removed_fields(kw) == frozenset({"pages"})
+
+    def test_no_marker_and_empty(self):
+        from metadata_cleaner import marker_removed_fields
+        assert marker_removed_fields("High, INCOMPLETE") == frozenset()
+        assert marker_removed_fields("") == frozenset()
+
+    def test_names_lowercased(self):
+        from metadata_cleaner import marker_removed_fields
+        assert marker_removed_fields("METADATA_CLEANED: Booktitle") == \
+            frozenset({"booktitle"})
+
+    def test_roundtrip_with_writer_output(self):
+        """The parser must read what _apply_cleaned_marker + pybtex Writer
+        actually produce."""
+        import io
+        from pybtex.database import parse_string
+        from pybtex.database.output.bibtex import Writer
+        from metadata_cleaner import marker_removed_fields
+        db = parse_string(
+            "@article{k, author={A B}, title={T}, year={2020},"
+            " keywords={High, METADATA_CLEANED: booktitle, pages}}", "bibtex")
+        out = io.StringIO()
+        Writer().write_stream(db, out)
+        text = out.getvalue()  # keywords = "High, METADATA\_CLEANED: booktitle, pages"
+        import re
+        kw = re.search(r'keywords\s*=\s*"([^"]*)"', text).group(1)
+        assert marker_removed_fields(kw) == frozenset({"booktitle", "pages"})
