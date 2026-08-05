@@ -288,7 +288,7 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   mechanism and three scoping residuals (marker records field names not
   values; DOI-refusal branches pre-existing; unflagged-field conflicts
   still resolve by count) in
-  `docs/known-issues/bib-pipeline-integrity-gaps.md` (local-only).
+  `docs/known-issues/bib-pipeline-integrity-gaps.md`.
 - **B — silent References omission** (`generate_bibliography.py`):
   every-citation-resolves post-check **landed 2026-08-05** (`03d2b6b`,
   `lint_md.py`) — an unresolved in-text citation now fails the lint step
@@ -313,11 +313,14 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
 - **Follow-up (A's external review, Q3) — "vetted beats unvetted", not
   built**: when a merge loser carries a `METADATA_CLEANED` marker (positive
   proof it was vetted), prefer the loser's value on *conflicting* fields,
-  not just on gaps. Today, value conflicts on fields the cleaner didn't flag
-  still resolve by substantive-field count, so a fabricated value on the
-  richer copy can beat a verified value on the sparser one — the same
-  winner-rule bias the old abstract/importance heuristics had before A's
-  fix.
+  not just on gaps. Today, neither merge path's winner rule consults
+  vetting: `dedupe_bib.merge_entries` (the pass that produces the on-disk
+  merged bib) still picks by has-abstract-then-importance-tag, and
+  `generate_bibliography.find_cited_entries` (the References-rendering
+  pass) still picks by substantive-field count — A's fix strips/blocks
+  flagged fields *after* the winner is chosen but never touches winner
+  selection itself. Either way, a fabricated value on the winning copy
+  still beats a verified value on the losing one.
 
 Two further sub-items, added 2026-07-28 from a side finding during
 evidence-tier A/B adjudication, then measured across all 32 delivered
