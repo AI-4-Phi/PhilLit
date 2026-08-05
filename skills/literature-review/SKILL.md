@@ -338,7 +338,10 @@ Never advance to Phase 6 before all synthesis writers have completed.
    legal sources too (statutes, regulations, treaties, reports): they are
    cited like any other work, so they need a bib entry — the sanctioned
    remedy for an unresolved "(GDPR 2016)" is adding the @misc entry, not
-   removing the citation.
+   removing the citation. The check only runs when the file has an exact
+   `## References` heading — confirm the lint output does NOT say
+   "citation-check: ... skipped" on a finished review; that message means the
+   check never ran, not that it passed.
 
 6. **Evidence checker (telemetry)**: run
 

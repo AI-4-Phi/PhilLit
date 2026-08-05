@@ -287,7 +287,7 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   across duplicates via surgical field strip and a blocked union. Full
   mechanism and three scoping residuals (marker records field names not
   values; DOI-refusal branches pre-existing; unflagged-field conflicts
-  still resolve by count) in
+  still resolve by each merge path's own vetting-blind winner rule) in
   `docs/known-issues/bib-pipeline-integrity-gaps.md`.
 - **B — silent References omission** (`generate_bibliography.py`):
   every-citation-resolves post-check **landed 2026-08-05** (`03d2b6b`,
