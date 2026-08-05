@@ -9,11 +9,14 @@ against **this repo's current `main`**, not just the snapshot.
 **Severity**: Medium overall (per-issue below). None fails a run; all
 silently degrade bibliography/References integrity — the part of the output a
 reader is least able to audit.
-**Status**: Open. See `docs/ROADMAP.md`. The 2026-08-02 sequencing
-constraint (fixes touching `hooks/metadata_cleaner.py` or `dedupe_bib.py`
-had to wait for branch `worktree-evidence-tier`) is gone: the branch landed
-on `main` the same day (`f89f4de`, plugin v0.3.0) and the cleaner freeze is
-lifted — fixes are ordinary main-side work again.
+**Status**: Open overall (C and D untouched). **A is FIXED 2026-08-05; B's
+citation-omission post-check landed 2026-08-05, matcher-side transliteration
+work still open** — see the per-issue status lines below and
+`docs/ROADMAP.md`. The 2026-08-02 sequencing constraint (fixes touching
+`hooks/metadata_cleaner.py` or `dedupe_bib.py` had to wait for branch
+`worktree-evidence-tier`) is gone: the branch landed on `main` the same day
+(`f89f4de`, plugin v0.3.0) and the cleaner freeze is lifted — fixes are
+ordinary main-side work again.
 **Cross-repo**: `phillit-service/docs/known-issues/bib-pipeline-integrity-gaps.md`
 is the sister write-up with the full evidence pointers (its experiment
 harness holds the artifacts). Fixes should land in one repo and be
@@ -38,6 +41,7 @@ and the safeguards are absent regardless of model.
 ## Issue A — dedup keeps the uncleaned copy of a cross-domain duplicate (cleaner verdicts discarded)
 
 **Severity: Medium. Deterministic.**
+**Status: FIXED 2026-08-05** (`fe46575`, `9ea5b97`, `a631d7a`, `7816d2a`).
 
 `metadata_cleaner.py` runs per-domain at SubagentStop, judging each domain
 bib against that domain's own search-cache JSONs — the same paper found by
@@ -64,9 +68,48 @@ to keep the year-fix's conflicting-evidence-means-unmatched semantics, since
 naive cross-domain pooling was exactly the year-corruption vector
 (`metadata-cleaner-year-corruption.md`).
 
+Landed via the first direction, not the second. Mechanism: pybtex's `Writer`
+round-trip emits fields in *quoted* form (`field = "value"`), not just
+braced — the pre-existing merge-time field readers only matched the braced
+form, so a cleaned copy's surviving `abstract`/`importance` fields were
+invisible to `merge_entries` in the first place, independently of any
+verdict-propagation logic (`fe46575`). With that fixed, `dedupe_bib.py` now
+reads each duplicate's `METADATA_CLEANED` marker, strips the loser's flagged
+fields from the union via surgical scanner-based text removal — not a pybtex
+round-trip; a fix round (`a631d7a`) replaced an initial round-trip approach
+after review found it corrupted single-braced corporate authors, and
+replaced a `still_present` regex proxy with per-field failure reporting so
+the marker can never claim a strip that didn't happen — blocks the merged
+union from re-admitting a flagged field from either copy, and folds markers
+across a two-hop transitive merge including fields absent on the transitive
+winner (`9ea5b97`, fix round `a631d7a`). `generate_bibliography.py`'s own
+References-side `find_cited_entries` dedup mirrors the same strip-and-
+blocked-union logic, so the object-side rendering path cannot reintroduce
+what the bib-side path just removed (`7816d2a`).
+
+Three scoping residuals survive, surfaced by external review and
+deliberately not fixed in this round — they bound what "FIXED" means here
+rather than reopening the issue. (1) The marker records field *names* only,
+not values or hashes, so a false-positive cleaner verdict (the cleaner
+wrongly judges a genuine field unverifiable) taints that field for the work
+across the whole run and cannot be overridden by a later, correctly-verified
+copy of the same field — the future enhancement is recording removed values
+(or hashes) in the marker, owned by `metadata_cleaner` (review Q1). (2) The
+DOI-refusal branches — two copies with distinct, non-empty DOI sets — leave
+both copies unmerged rather than reconciling them, so a fabricated DOI on
+one copy keeps the verdict machinery from ever engaging on that duplicate
+pair; pre-existing, not introduced by this fix (review Q2). (3) Value
+conflicts on fields the cleaner never flagged still resolve by the
+pre-existing substantive-field-count winner heuristic, so a fabricated value
+on the richer copy can still beat a verified value on the sparser one
+(review Q3) — see the ROADMAP item 3 follow-up line for the "vetted beats
+unvetted" refinement this implies.
+
 ## Issue B — a cited work can silently vanish from the rendered References (surname-match failure)
 
 **Severity: Medium-High for reader-facing impact. Deterministic.**
+**Status: Post-check built 2026-08-05** (`03d2b6b`); matcher
+transliteration still open.
 
 `generate_bibliography.py` builds References by matching in-text citations to
 bib entries via surname+year proximity (`_MATCH_WINDOW = 60`, NFKD
@@ -103,12 +146,51 @@ the branch that used to `continue` gained behavior: a script-preserving key
 Verified end-to-end: a Greek-surname entry cited in Greek prose now appears in
 the rendered References.
 
-**Issue B itself remains Open.** Only the deterministic mode is gone. The
-near-miss class that opened this issue — body "Fraenken" vs bib "Franken" —
-is untouched, and the every-citation-resolves post-check in `lint_md.py` is
-still unbuilt. That post-check is still the right general guard (it catches
-every future matcher gap, not just this one), so B's original tie-break stands
-on its own merits rather than on being the only fix for the second mode.
+**The every-citation-resolves post-check is now built** (`03d2b6b`):
+`lint_md.py`'s `check_citations` extracts every in-text author-year citation
+from the review body and requires each to resolve, word-boundary-strict on
+the surname, to a line in the rendered References section — ERROR-level,
+nonzero exit, so an omission that used to be invisible now fails the lint
+step loudly. Resolution is deliberately more tolerant than the generator's
+own matcher: transliteration variants (ä→a *and* ä→ae, generated on both
+sides of the comparison, so body "Fraenken" now meets bib "Fränken"), either
+year of a reprint form (`YEAR/YEAR`), Chicago a/b suffixes, 1600s–2000s
+years (`Kant 1785`), comma-separated multi-cites, and a fence-aware,
+last-heading-wins search for the `## References` section. Output is
+cp1252-safe (the citation text — where non-ASCII lives — is
+ASCII-backslash-escaped before printing), so the error path itself cannot
+crash on Windows.
+
+**Issue B itself remains Open.** The check is a guard, not a fix for the
+matcher: it makes every future matcher gap loud instead of silent, but the
+transliteration-aware normalization and fuzzy near-miss fallback that would
+actually resolve a "Fraenken"/"Franken" divergence *at match time* in
+`generate_bibliography.py` are unbuilt (out of scope for this branch —
+ROADMAP item 3 tracks it as B's remaining half, to be prioritized once the
+new check surfaces real instances). B's original tie-break — build the
+post-check regardless of the matcher fix, since it catches every future
+matcher gap, not just this one — stands vindicated on its own merits.
+
+Known limits of the check itself, all deliberate rather than oversights.
+(a) Same-author multi-year citations — `(Smith 2020, 2021)` — extract only
+the first year-bearing citation (`Smith 2020`); the trailing `2021` is never
+pulled out as a separate citation, so it is never checked. A safe-direction
+silent miss, not a false ERROR — and the house style in `docs/conventions.md`
+avoids the form anyway, since its Chicago table specifies `(Author Year;
+Author Year)` for multiple citations (repeating "Author Year" in full), so a
+compliant review never produces the shape the check can't see. (b)
+Non-Latin-script citations are not extracted at all: `_SURNAME`'s character
+class is Latin-plus-diacritics, so a wholly Greek or Cyrillic surname
+(`Χάλμης 2020`) never matches the citation regex and so is never checked, in
+either direction — safe-direction, and pinned by
+`test_non_latin_citation_blind_spot_is_deliberate`. (c) Resolution matches a
+surname token against the whole folded References *line*, not a parsed
+author field, so a surname that appears only in another entry's *title* (not
+its author list) on a line whose year happens to match can false-resolve a
+citation that is not actually in the bibliography — accepted as a lenient
+design that trades this narrow false-negative-on-error-detection risk for
+staying regex-simple and never producing a spurious ERROR on a
+correctly-formatted line.
 
 Two residual holes, deliberate and documented in the code (ROADMAP item 4):
 the year test is a substring match, so a non-numeric or bracketed year
@@ -176,13 +258,17 @@ Full predatory-list curation is out of scope; flag-and-caveat is the goal.
 ## Verified-on-main file map
 
 - `hooks/metadata_cleaner.py` — per-domain cleaning, invoked from
-  `hooks/subagent_stop_bib.sh` (Issue A input)
+  `hooks/subagent_stop_bib.sh` (Issue A input); writes the `METADATA_CLEANED`
+  marker that `dedupe_bib.py` and `generate_bibliography.py` now propagate
 - `skills/literature-review/scripts/dedupe_bib.py` — keep-first / DOI-dedup /
-  abstract-preference merge, cleaner-unaware (Issue A)
+  abstract-preference merge, now cleaner-verdict-aware via surgical field
+  strip and blocked union (Issue A, FIXED)
 - `skills/literature-review/scripts/generate_bibliography.py` — surname+year
-  proximity matching, aggregate-only reporting (Issue B)
-- `skills/literature-review/scripts/lint_md.py` — natural home for the
-  citation↔References post-check (Issue B fix)
+  proximity matching, aggregate-only reporting (Issue B, matcher still open);
+  `find_cited_entries` mirrors Issue A's strip-and-blocked-union on the
+  References-rendering side
+- `skills/literature-review/scripts/lint_md.py` — hosts the built
+  citation↔References post-check, `check_citations` (Issue B fix)
 - `agents/domain-literature-researcher.md` Stage 5.5 +
   `agents/synthesis-writer.md` INCOMPLETE rule — the unenforced abstract
   provenance convention (Issue C)
