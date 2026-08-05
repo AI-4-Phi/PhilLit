@@ -10,7 +10,8 @@ exists so open work has a single place to be listed — it was created
 version bump — DONE 2026-08-05, released as **v0.3.1** (`318aa2c`); (2) the 27-wrong-years
 audit of delivered reviews — measurement DONE 2026-08-05 (finding: 449
 delivered entries carry online-first years, see item 3 K; remediation
-decision pending); (3) item 3's residuals (A+B, then E, C, D; F
+decision pending); (3) item 3's residuals (A and B's post-check DONE
+2026-08-05; B's matcher-side transliteration work, then E, C, D; F
 last); (4) ONE batched phillit-service mirror session — the item-4
 `bib_identity` port, the item-1 evidence-tier port (service item 20), and
 the deferred `rate_limiter` fix — which **opens with a decision: the two
@@ -450,9 +451,10 @@ Decisions taken, so they are not silently reversed later:
   the surface that produced the year-corruption incident. Candidate follow-up.
 - **`_SUBSTANTIVE_FIELDS` stays duplicated** — a constant, not a judgment, and
   `test_generate_bibliography_copy_in_sync` already catches drift.
-- **The `lint_md.py` every-citation-resolves post-check is still unbuilt** and
-  still belongs to Issue B (see below): item 4 removed the *deterministic* drop
-  mode, not the near-miss class.
+- **The `lint_md.py` every-citation-resolves post-check landed 2026-08-05**
+  (`03d2b6b`, item 3's residuals — see below): item 4 removed the
+  *deterministic* drop mode, not the near-miss class, which is still open
+  and belongs to Issue B's matcher-side work.
 
 One limit of the non-Latin fix remains, deliberate and documented in the code:
 the year test is a substring match, so a non-numeric or bracketed year (`n.d.`,
@@ -516,8 +518,9 @@ unknown:**
   recorded fix directions (transliteration-aware normalization, fuzzy
   near-miss fallback) **do not cover this** — there is nothing to be near
   when the key is empty. An every-citation-resolves post-check in
-  `lint_md.py` (Issue B's proposed but NOT-yet-built check) *would* cover
-  it, which breaks the tie between B's two fix directions.
+  `lint_md.py` (Issue B's proposed check — built 2026-08-05, `03d2b6b`,
+  after this decision was made) *would* cover it, which breaks the tie
+  between B's two fix directions.
 
 The `metadata_cleaner` versions are the hardened ones (item-13 B3 — item-13
 is the gitignored bib-quality backport spec under `docs/superpowers/`; the
