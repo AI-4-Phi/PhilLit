@@ -839,3 +839,66 @@ class TestCleanerVerdictPropagation:
         cited = dict(find_cited_entries(self.REVIEW, parse_string(bib, "bibtex")))
         (entry,) = cited.values()
         assert "booktitle" not in {f.lower() for f in entry.fields.keys()}
+
+    def test_append_to_existing_marker_adds_new_name_once(self):
+        # Text/object seam (ledger T4a): the winner already carries its OWN
+        # METADATA_CLEANED marker (a different removed set) when it absorbs
+        # the loser's verdict - _apply_cleaner_verdicts must APPEND the new
+        # name to the existing marker's change list, not overwrite it, and
+        # each name must appear exactly once in the resulting value.
+        from pybtex.database import parse_string
+        from generate_bibliography import _apply_cleaner_verdicts
+        bib = '''
+        @article{w,
+            author = {A, B},
+            title = {T},
+            year = {2020},
+            doi = {10.1/x},
+            keywords = {METADATA\\_CLEANED: doi},
+        }
+        @article{l,
+            author = {A, B},
+            title = {T},
+            year = {2020},
+            keywords = {METADATA\\_CLEANED: booktitle},
+        }
+        '''
+        data = parse_string(bib, "bibtex")
+        winner, loser = data.entries["w"], data.entries["l"]
+        _apply_cleaner_verdicts(winner, loser)
+        kw = winner.fields["keywords"]
+        assert kw.count("doi") == 1
+        assert kw.count("booktitle") == 1
+
+    def test_folded_marker_readable_object_side_after_merge(self):
+        # Ledger T4b: after a real find_cited_entries merge, the folded
+        # marker must be readable back OBJECT-side via _entry_removed_fields
+        # (not just as raw keywords text).
+        from generate_bibliography import _entry_removed_fields
+        cited = self._cited()
+        (entry,) = cited.values()
+        assert "booktitle" in _entry_removed_fields(entry)
+
+    def test_dedupe_bib_folded_marker_round_trips_through_pybtex(self, tmp_path):
+        # Ledger T4c: the text/object seam itself. dedupe_bib.py folds a
+        # removal into the keywords marker as raw TEXT
+        # (_fold_removals_into_marker); generate_bibliography.py and its
+        # callers read markers back via pybtex-parsed field VALUES
+        # (marker_removed_fields on entry.fields["keywords"]). This pins that
+        # the text one script writes survives a real parse_file round-trip
+        # into the form the other script's reader expects.
+        from dedupe_bib import _fold_removals_into_marker
+        from pybtex.database import parse_file
+        from metadata_cleaner import marker_removed_fields
+        entry_text = ('@inproceedings{iclr_x,\n'
+                      '  author = {Doe, Jane},\n'
+                      '  title = {Impossible Publication},\n'
+                      '  year = {2024},\n'
+                      '  keywords = {Medium}\n'
+                      '}')
+        folded = _fold_removals_into_marker(entry_text, {"booktitle"})
+        bib_path = tmp_path / "seam.bib"
+        bib_path.write_text(folded, encoding="utf-8")
+        data = parse_file(str(bib_path), bib_format="bibtex")
+        entry = data.entries["iclr_x"]
+        assert "booktitle" in marker_removed_fields(entry.fields["keywords"])
