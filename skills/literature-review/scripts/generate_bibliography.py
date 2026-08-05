@@ -417,16 +417,19 @@ def _remap_index(mapping: dict, old_key: str, new_key: str) -> None:
             mapping[k] = new_key
 
 
-def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
-    """Find BibTeX entries cited in the review text.
+def _collect_matches(review_text: str, bib_data) -> list[dict]:
+    """Find bib entries whose surname+year proximity pattern matches in
+    review_text. The matching pre-pass of find_cited_entries.
 
-    Returns list of (key, entry) tuples for cited entries, deduplicated by DOI
-    and, as a fallback, by (normalized title, year, first-author surname).
-    Winner of a duplicate pair is the entry with more populated substantive
-    fields (tie-break: lexicographically-first citation key); the survivor
-    additionally UNIONs in any substantive field only the loser had (spec v2.1).
-    DOI identity is tracked per dedup GROUP: a fallback-key merge is refused when
-    the two groups' non-empty DOI sets differ (GPT-B4).
+    Returns one record per MATCHED entry, in bib_data.entries iteration
+    order: {"key", "entry", "surname", "year", "windows"} where windows is
+    list[tuple[str, int, int]] = (window_text, hit_start, hit_end) - the
+    ±_MATCH_WINDOW haystack slice around each surname hit whose window
+    contains the year, plus the hit's own span within that slice. The span
+    is load-bearing (item 3 E, review P0): classifying by re-finding tokens
+    attributes adjacent citations to the wrong instance. EVERY year-bearing
+    window is collected, not just the first hit - windows may come from
+    either haystack (norm or translit).
     """
     norm_text = _normalize_for_matching(review_text)
     # Second haystack, transliterated (ä->ae etc.) before the NFKD strip, so
@@ -436,10 +439,7 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     # Script-preserving haystack for non-Latin surnames, built only if some
     # entry needs it (see the empty-fold fallback below).
     script_text = None
-    cited = {}  # key -> entry
-    seen_dois = {}  # normalized_doi -> citation_key
-    seen_titles = {}  # (title, year, surname) -> citation_key
-    group_dois = {}  # citation_key -> set of normalized DOIs across the group
+    records = []
 
     for key, entry in bib_data.entries.items():
         # Get first person (author or editor fallback)
@@ -488,7 +488,10 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
         # window is always sliced from the haystack that produced the hit
         # (translit_text's offsets differ from norm_text's: ae/ss lengthen
         # the text, so a window can't be sliced from the "wrong" haystack).
-        matched = False
+        # Every year-bearing window is kept, with the hit's own span within
+        # it (item 3 E: Task 4 attributes each hit to its own citation
+        # instance instead of re-finding tokens in the window).
+        windows = []
         for needle in needles:
             try:
                 pattern = re.compile(r"\b" + re.escape(needle) + r"\b", re.IGNORECASE)
@@ -500,15 +503,43 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
                     end = min(len(haystack), m.end() + _MATCH_WINDOW)
                     window = haystack[start:end]
                     if year in window:
-                        matched = True
-                        break
-                if matched:
-                    break
-            if matched:
-                break
+                        windows.append((window, m.start() - start, m.end() - start))
 
-        if not matched:
+        if not windows:
             continue
+
+        records.append({
+            "key": key,
+            "entry": entry,
+            "surname": surname,
+            "year": year,
+            "windows": windows,
+        })
+
+    return records
+
+
+def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
+    """Find BibTeX entries cited in the review text.
+
+    Returns list of (key, entry) tuples for cited entries, deduplicated by DOI
+    and, as a fallback, by (normalized title, year, first-author surname).
+    Winner of a duplicate pair is the entry with more populated substantive
+    fields (tie-break: lexicographically-first citation key); the survivor
+    additionally UNIONs in any substantive field only the loser had (spec v2.1).
+    DOI identity is tracked per dedup GROUP: a fallback-key merge is refused when
+    the two groups' non-empty DOI sets differ (GPT-B4).
+    """
+    records = _collect_matches(review_text, bib_data)
+
+    cited = {}  # key -> entry
+    seen_dois = {}  # normalized_doi -> citation_key
+    seen_titles = {}  # (title, year, surname) -> citation_key
+    group_dois = {}  # citation_key -> set of normalized DOIs across the group
+
+    for record in records:
+        key = record["key"]
+        entry = record["entry"]
 
         # Deduplication (defense-in-depth; dedupe_bib.py handles this upstream).
         # Two entries are duplicates when their DOIs match OR their fallback keys

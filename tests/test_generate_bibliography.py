@@ -933,3 +933,35 @@ class TestTransliterationMatching:
 
     def test_uncited_still_unmatched(self):
         assert self._cited(self.MUELLER, "Nothing here (Other 2022).") == set()
+
+
+class TestCollectMatches:
+    """Item 3 E: _collect_matches is find_cited_entries' matching pre-pass,
+    with ANCHORED hit spans (review P0) so Task 4 can attribute each hit to
+    its own citation instance instead of re-finding tokens."""
+
+    BIB = """
+    @article{a1, author = {Smith, Jane}, title = {T1}, year = {2020}, journal = {J}}
+    @article{a2, author = {Jones, Bob}, title = {T2}, year = {2021}, journal = {J}}
+    """
+
+    def _recs(self, review):
+        from pybtex.database import parse_string
+        from generate_bibliography import _collect_matches
+        return _collect_matches(review, parse_string(self.BIB, "bibtex"))
+
+    def test_matched_set_and_hit_spans(self):
+        recs = self._recs("Smith (2020) argues; nothing else.")
+        assert [r["key"] for r in recs] == ["a1"]
+        assert recs[0]["windows"]
+        for w, hs, he in recs[0]["windows"]:
+            assert "2020" in w
+            assert w[hs:he].lower() == "smith"
+
+    def test_every_hit_collected_in_order(self):
+        recs = self._recs("Smith (2020) argues X. Later Smith (2020) repeats.")
+        assert len(recs[0]["windows"]) >= 2
+
+    def test_record_order_is_bib_order(self):
+        recs = self._recs("Jones (2021) then Smith (2020).")
+        assert [r["key"] for r in recs] == ["a1", "a2"]
