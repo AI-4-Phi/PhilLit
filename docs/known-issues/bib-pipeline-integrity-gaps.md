@@ -28,9 +28,16 @@ plugin — the cleaner fires via the `hooks/subagent_stop_bib.sh` SubagentStop
 gate, consolidation and References generation are skill steps
 (`skills/literature-review/scripts/dedupe_bib.py`,
 `generate_bibliography.py`), and the orchestrating model is whatever the
-user's session runs (normally an Anthropic model). Issues A and B are
-deterministic script defects that apply to plugin runs **today**. Issues C
-and D are missing safeguards: their observed exploits occurred under
+user's session runs (normally an Anthropic model). Issues A and B were
+originally deterministic script defects that applied to plugin runs
+unconditionally; that framing is now dated. **A is FIXED 2026-08-05.** B's
+deterministic drop mode (the wholly-non-Latin-script skip) was fixed by
+item 4 on 2026-08-03, and any remaining matcher gap is now caught loudly
+by the every-citation-resolves check built 2026-08-05 rather than shipping
+silently — but B's original near-miss matcher class (transliteration
+divergences NFKD doesn't cover, e.g. "Fraenken" vs "Franken") is still
+open and can still drop a citation, now surfaced rather than silent. Issues
+C and D are missing safeguards: their observed exploits occurred under
 non-Anthropic orchestrator models in the service's experiments, and Claude
 models behaved honestly in the same runs — but the plugin has no control over
 what model a user's session (or an `ANTHROPIC_BASE_URL` swap) actually runs,
@@ -99,11 +106,14 @@ DOI-refusal branches — two copies with distinct, non-empty DOI sets — leave
 both copies unmerged rather than reconciling them, so a fabricated DOI on
 one copy keeps the verdict machinery from ever engaging on that duplicate
 pair; pre-existing, not introduced by this fix (review Q2). (3) Value
-conflicts on fields the cleaner never flagged still resolve by the
-pre-existing substantive-field-count winner heuristic, so a fabricated value
-on the richer copy can still beat a verified value on the sparser one
-(review Q3) — see the ROADMAP item 3 follow-up line for the "vetted beats
-unvetted" refinement this implies.
+conflicts on fields the cleaner never flagged still resolve by each merge
+path's pre-existing, vetting-blind winner rule — `dedupe_bib.merge_entries`
+(the on-disk merged bib) by has-abstract-then-importance-tag,
+`generate_bibliography.find_cited_entries` (the References-rendering pass)
+by substantive-field count — so a fabricated value on the winning copy can
+still beat a verified value on the losing one, by either rule (review Q3)
+— see the ROADMAP item 3 follow-up line for the "vetted beats unvetted"
+refinement this implies.
 
 ## Issue B — a cited work can silently vanish from the rendered References (surname-match failure)
 
