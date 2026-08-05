@@ -912,3 +912,54 @@ class TestExtractDoiUsesSharedNormalization:
         import bib_identity
         import dedupe_bib
         assert dedupe_bib.normalize_doi is bib_identity.normalize_doi
+
+
+QUOTED_ENTRY = '''@article{q,
+    author = "B, A",
+    title = "T",
+    year = "2020",
+    abstract = "A perfectly substantial abstract of adequate length.",
+    keywords = "High, INCOMPLETE, no-abstract, METADATA\\_CLEANED: pages"
+}'''
+
+
+class TestQuotedFormExtractors:
+    """pybtex Writer emits quoted fields; the extractors must read them
+    (ROADMAP item 3 A prerequisite - cleaned bibs are quoted-form)."""
+
+    def test_extract_keywords_value_quoted(self):
+        from dedupe_bib import _extract_keywords_value
+        assert "High" in _extract_keywords_value(QUOTED_ENTRY)
+
+    def test_parse_importance_quoted(self):
+        from dedupe_bib import parse_importance
+        assert parse_importance(QUOTED_ENTRY) == "High"
+
+    def test_has_abstract_quoted(self):
+        from dedupe_bib import has_abstract
+        assert has_abstract(QUOTED_ENTRY) is True
+
+    def test_has_incomplete_flag_quoted(self):
+        from dedupe_bib import has_incomplete_flag
+        assert has_incomplete_flag(QUOTED_ENTRY) is True
+
+    def test_remove_incomplete_flag_quoted(self):
+        from dedupe_bib import remove_incomplete_flag, has_incomplete_flag
+        out = remove_incomplete_flag(QUOTED_ENTRY)
+        assert not has_incomplete_flag(out)
+        assert "no-abstract" not in out
+        # the rest of the keywords value survives
+        assert "High" in out and "METADATA" in out
+
+    def test_upgrade_importance_quoted(self):
+        from dedupe_bib import upgrade_importance, parse_importance
+        low = QUOTED_ENTRY.replace("High", "Low")
+        assert parse_importance(upgrade_importance(low, "High")) == "High"
+
+    def test_braced_form_still_works(self):
+        from dedupe_bib import parse_importance, has_abstract
+        braced = ('@article{b, author = {A B}, title = {T}, year = {2020},\n'
+                  '  abstract = {A perfectly substantial abstract of adequate '
+                  'length.},\n  keywords = {Medium}}')
+        assert parse_importance(braced) == "Medium"
+        assert has_abstract(braced) is True

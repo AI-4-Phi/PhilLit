@@ -98,10 +98,40 @@ def check_intra_entry_duplicates(content: str) -> list[str]:
     return warnings
 
 
+def _field_value_re(field: str) -> re.Pattern:
+    """Regex matching `field = {value}` OR `field = "value"` (pybtex Writer
+    emits quoted on round-trip). Group 'braced' or 'quoted' carries the value.
+    The \\b prefix stops `keywords` matching inside e.g. `otherkeywords`."""
+    return re.compile(
+        r'\b' + field + r'\s*=\s*(?:\{(?P<braced>(?:[^{}]|\{[^{}]*\})*)\}'
+                        r'|"(?P<quoted>[^"]*)")',
+        re.IGNORECASE | re.DOTALL,
+    )
+
+
+_KEYWORDS_RE = _field_value_re("keywords")
+_ABSTRACT_RE = _field_value_re("abstract")
+
+
 def _extract_keywords_value(entry: str) -> str:
     """Extract the value of the keywords field from a BibTeX entry."""
-    match = re.search(r'keywords\s*=\s*\{([^}]*)\}', entry, re.IGNORECASE)
-    return match.group(1) if match else ''
+    m = _KEYWORDS_RE.search(entry)
+    if not m:
+        return ''
+    return m.group('braced') if m.group('braced') is not None else m.group('quoted')
+
+
+def _rewrite_keywords(entry: str, transform) -> str:
+    """Apply `transform(value) -> value` to the keywords field's value,
+    preserving its original delimiter form (braces or quotes)."""
+    def _sub(m: re.Match) -> str:
+        braced = m.group('braced')
+        value = braced if braced is not None else m.group('quoted')
+        new = transform(value)
+        if braced is not None:
+            return f"keywords = {{{new}}}"
+        return f'keywords = "{new}"'
+    return _KEYWORDS_RE.sub(_sub, entry, count=1)
 
 
 def parse_importance(entry: str) -> str:
@@ -115,15 +145,15 @@ def parse_importance(entry: str) -> str:
 
 def upgrade_importance(entry: str, new_importance: str) -> str:
     """Replace importance level in keywords field."""
-    keywords = _extract_keywords_value(entry)
-    for level in ['High', 'Medium', 'Low']:
-        if level in keywords:
-            return re.sub(
-                r'(keywords\s*=\s*\{[^}]*)' + level,
-                lambda m: m.group(1) + new_importance,
-                entry, count=1, flags=re.IGNORECASE
-            )
-    return entry
+    current = parse_importance(entry)
+    if current == new_importance:
+        return entry
+    def _swap(value: str) -> str:
+        for level in ['High', 'Medium', 'Low']:
+            if level in value:
+                return value.replace(level, new_importance, 1)
+        return value
+    return _rewrite_keywords(entry, _swap)
 
 
 def extract_doi(entry: str) -> str | None:
@@ -142,9 +172,10 @@ def extract_doi(entry: str) -> str | None:
 
 def has_abstract(entry: str) -> bool:
     """Check if entry has a non-empty abstract field."""
-    match = re.search(r'abstract\s*=\s*\{([^}]+)\}', entry, re.IGNORECASE)
+    match = _ABSTRACT_RE.search(entry)
     if match:
-        abstract_content = match.group(1).strip()
+        value = match.group('braced') if match.group('braced') is not None else match.group('quoted')
+        abstract_content = value.strip()
         return len(abstract_content) > 10  # Filter out trivial abstracts
     return False
 
@@ -157,24 +188,12 @@ def has_incomplete_flag(entry: str) -> bool:
 
 def remove_incomplete_flag(entry: str) -> str:
     """Remove INCOMPLETE and no-abstract flags from keywords field only."""
-    def _clean_keywords(m: re.Match) -> str:
-        prefix = m.group(1)  # "keywords = {"
-        value = m.group(2)
-        suffix = m.group(3)  # "}"
+    def _strip_tokens(value: str) -> str:
         value = re.sub(r',?\s*INCOMPLETE\s*,?', ',', value)
         value = re.sub(r',?\s*no-abstract\s*,?', ',', value)
-        # Clean up resulting comma issues
         value = re.sub(r',\s*,', ',', value)
-        value = value.strip(', ')
-        return prefix + value + suffix
-
-    return re.sub(
-        r'(keywords\s*=\s*\{)([^}]*)(})',
-        _clean_keywords,
-        entry,
-        count=1,
-        flags=re.IGNORECASE,
-    )
+        return value.strip(', ')
+    return _rewrite_keywords(entry, _strip_tokens)
 
 
 def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
