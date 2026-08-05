@@ -233,6 +233,16 @@ with "Interaction with the evidence tier" below.
 
 **Residuals, accepted:**
 
+- **Sentence-adverb lead-ins defeat first-position discrimination.** The
+  C1 left-anchor guard's bare-comma branch (`Name, ` before the match)
+  cannot tell a dropped list member from a capitalized transition word, so
+  "However, Muldoon (2023) argues" (also Indeed,/Moreover,/Elsewhere,)
+  rejects the instance and the group falls back to warn-and-keep-all — the
+  pre-E status quo, visibly warned, never a wrong drop. Fix direction when
+  it earns one: require the comma-preceding token to itself look like a
+  surname (or corroborate against the bib) before rejecting. Found by the
+  final fix-wave re-review 2026-08-05; carry into the phillit-service port
+  notes.
 - **Bare-apostrophe possessive not stripped.** `_strip_possessive` handles
   `'s`/`’s` (the trailing `s` is required); a bare-apostrophe possessive on
   a surname already ending in `-s` — "Rivers' (2020)" rather than
