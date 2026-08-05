@@ -22,6 +22,7 @@ _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_validator import LATEX_ESCAPES  # noqa: E402
 from bib_identity import fallback_key, normalize_doi, title_key  # noqa: E402
+from metadata_cleaner import marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
 
@@ -366,6 +367,32 @@ def _substantive_field_count(entry) -> int:
     return sum(1 for f in _SUBSTANTIVE_FIELDS if _get_field(entry, f))
 
 
+def _entry_removed_fields(entry) -> set[str]:
+    """Fields this entry's METADATA_CLEANED marker records as removed."""
+    return set(marker_removed_fields(entry.fields.get("keywords", "") or ""))
+
+
+def _apply_cleaner_verdicts(winner, loser) -> None:
+    """Strip loser-flagged fields from the winner and fold the names into
+    the winner's marker (item 3 A, mirrored from dedupe_bib)."""
+    removed = _entry_removed_fields(loser)
+    if not removed:
+        return
+    for f in list(winner.fields.keys()):
+        if f.lower() in removed:
+            del winner.fields[f]
+    already = _entry_removed_fields(winner)
+    to_add = sorted(removed - already)
+    if not to_add:
+        return
+    kw = (winner.fields.get("keywords", "") or "").rstrip().rstrip(",")
+    if "_CLEANED" in kw.replace("\\", ""):
+        winner.fields["keywords"] = kw + ", " + ", ".join(to_add)
+    else:
+        marker = "METADATA_CLEANED: " + ", ".join(to_add)
+        winner.fields["keywords"] = (kw + ", " + marker) if kw else marker
+
+
 def _union_substantive_fields(winner, loser) -> None:
     """Union the loser's substantive fields into the winner (spec v2.1 / ADV-A0).
 
@@ -373,7 +400,10 @@ def _union_substantive_fields(winner, loser) -> None:
     lacks (or has empty). Operates on raw field values so the merged entry
     re-serializes cleanly.
     """
+    blocked = _entry_removed_fields(winner) | _entry_removed_fields(loser)
     for f in _SUBSTANTIVE_FIELDS:
+        if f in blocked:
+            continue
         if not _get_field(winner, f) and _get_field(loser, f):
             winner.fields[f] = loser.fields[f]
 
@@ -483,6 +513,7 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
             old_score = _substantive_field_count(existing_entry)
             if new_score > old_score or (new_score == old_score and key < existing_key):
                 # New entry wins the pair; union the loser's substantive fields in.
+                _apply_cleaner_verdicts(entry, existing_entry)
                 _union_substantive_fields(entry, existing_entry)
                 del cited[existing_key]
                 cited[key] = entry
@@ -497,6 +528,7 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
                 print(f"  [DEDUP] {key} replaces {existing_key} (duplicate)", file=sys.stderr)
             else:
                 # Existing entry wins; union the loser's (new) substantive fields in.
+                _apply_cleaner_verdicts(existing_entry, entry)
                 _union_substantive_fields(existing_entry, entry)
                 group_dois[existing_key] = merged_dois
                 if norm_doi:

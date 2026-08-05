@@ -790,3 +790,52 @@ class TestPunctuationOnlySurnameFold:
         )
         assert [k for k, _ in gb.find_cited_entries(
             "As Papadopoulos-Smith (2021) notes,", bib)] == ["papsmith2021"]
+
+
+class TestCleanerVerdictPropagation:
+    """Item 3 A mirror: References-side dedup must not resurrect
+    cleaner-removed fields."""
+
+    BIB = '''
+    @inproceedings{iclr_a,
+        author = {Doe, Jane},
+        title = {Impossible Publication},
+        year = {2024},
+        booktitle = {International Conference on Learning Representations},
+        doi = {10.1000/same},
+        abstract = {Substantial abstract making this the richer copy.},
+    }
+    @inproceedings{iclr_b,
+        author = {Doe, Jane},
+        title = {Impossible Publication},
+        year = {2024},
+        doi = {10.1000/same},
+        keywords = {METADATA\\_CLEANED: booktitle},
+    }
+    '''
+    REVIEW = "As Doe (2024) argued, the result is unpublishable."
+
+    def _cited(self):
+        from pybtex.database import parse_string
+        from generate_bibliography import find_cited_entries
+        return dict(find_cited_entries(self.REVIEW, parse_string(self.BIB, "bibtex")))
+
+    def test_winner_loses_flagged_field(self):
+        cited = self._cited()
+        (entry,) = cited.values()
+        assert "booktitle" not in {f.lower() for f in entry.fields.keys()}
+
+    def test_union_does_not_reinsert(self):
+        # Make the cleaned copy the winner (richer), uncleaned the loser.
+        from pybtex.database import parse_string
+        from generate_bibliography import find_cited_entries
+        bib = self.BIB.replace(
+            "abstract = {Substantial abstract making this the richer copy.},",
+            "").replace(
+            "keywords = {METADATA\\_CLEANED: booktitle},",
+            "keywords = {METADATA\\_CLEANED: booktitle},\n"
+            "        abstract = {Substantial abstract making this the richer copy.},\n"
+            "        pages = {1--10},")
+        cited = dict(find_cited_entries(self.REVIEW, parse_string(bib, "bibtex")))
+        (entry,) = cited.values()
+        assert "booktitle" not in {f.lower() for f in entry.fields.keys()}
