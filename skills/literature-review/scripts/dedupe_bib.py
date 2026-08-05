@@ -243,18 +243,23 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
 
     # Item 3 A: a field the LOSER's cleaner verdict removed must not ship
     # via the winner's unchecked copy - strip it and record the verdict.
+    # Deliberate decision (strip-always, review "Important" finding): the
+    # loser's positive evidence of unverifiability outweighs the winner's
+    # silence - entry text cannot distinguish "cleaned, field survived
+    # verified" from "never cleaned" (a marker exists only when changes were
+    # made), and a marker records field NAMES only. Rendered References
+    # degrade gracefully without these fields (item-13 A7 handles a missing
+    # booktitle).
     loser = entry2 if winner == 1 else entry1
     loser_removed = set(marker_removed_fields(_extract_keywords_value(loser)))
     if loser_removed:
-        base = _remove_fields_text(base, loser_removed)
-        still_present = {f for f in loser_removed
-                         if _field_value_re(f).search(base)}
-        if still_present:
+        base, failed = _remove_fields_text(base, loser_removed)
+        if failed:
             print("  [DEDUPE] warning: could not strip cleaner-flagged "
-                  + ", ".join(sorted(still_present))
-                  + " (entry not parseable); the field ships UNVETTED",
+                  + ", ".join(sorted(failed))
+                  + " (malformed entry); the field ships UNVETTED",
                   file=sys.stderr)
-        applied = loser_removed - still_present
+        applied = loser_removed - failed
         if applied:
             base = _fold_removals_into_marker(base, applied)
             reason += f", dropped cleaner-flagged {', '.join(sorted(applied))}"
@@ -301,26 +306,105 @@ def _entry_fields(entry_text: str) -> dict:
     return {}
 
 
-def _remove_fields_text(entry_text: str, fields: set[str]) -> str:
-    """Remove `fields` from a raw BibTeX entry via a pybtex round-trip
-    (brace/quote/multi-line safe). Parse failure returns the text unchanged
-    (plumbing fails open). The output is pybtex-quoted form - Task 2 made
-    every extractor in this file read that form."""
-    if not fields:
-        return entry_text
-    try:
-        db = parse_string(entry_text, "bibtex")
-    except Exception:
-        return entry_text
-    import io
-    from pybtex.database.output.bibtex import Writer
-    for _key, entry in db.entries.items():
-        for f in list(entry.fields.keys()):
-            if f.lower() in fields:
-                del entry.fields[f]
-    out = io.StringIO()
-    Writer().write_stream(db, out)
-    return out.getvalue().strip()
+# Known field names for _remove_fields_text's over-greedy guard: any of
+# these (other than the field being removed) whose assignment disappears
+# across a removal means the scan ate into a neighbor - malformed input,
+# not a safe strip.
+_KNOWN_FIELDS = set(_SUBSTANTIVE_FIELDS) | {
+    "author", "title", "year", "editor", "keywords",
+    "note", "howpublished", "school", "address",
+}
+
+
+def _assignment_start_re(field: str) -> re.Pattern:
+    """Locate `field`'s assignment start (`field = `), case-insensitive,
+    word-bounded so e.g. `author` doesn't match inside `coauthor`. Shared by
+    `_remove_fields_text`'s scan and its over-greedy post-condition guard."""
+    return re.compile(r'\b' + re.escape(field) + r'\s*=\s*', re.IGNORECASE)
+
+
+def _remove_fields_text(entry_text: str, fields: set[str]) -> tuple[str, set[str]]:
+    """Surgically remove `fields` from a raw BibTeX entry via brace/quote-depth
+    scanning of the text itself - no pybtex round-trip. A full parse +
+    reserialize reinterprets a single-braced corporate author
+    (`author = {National Research Council}`) as a person name and rewrites it
+    on output (`author = "Council, National Research"`) - the first place
+    this file WRITES a reinterpreted name back into shipped text (ROADMAP
+    item 3 A review finding 1). The scanner never touches any field but the
+    one it is removing.
+
+    Returns (new_text, failed): `failed` is the subset of `fields` whose
+    assignment IS present but could not be safely removed - a truncated/
+    unbalanced value, or a scan whose removal span would have swallowed a
+    neighboring field's assignment (checked by a post-condition guard, since
+    a regex miss on malformed input must never masquerade as a successful
+    strip - review finding 2). A field entirely absent from the entry is not
+    a failure; it is simply skipped (nothing ships either way)."""
+    out = entry_text
+    failed: set[str] = set()
+    for f in fields:
+        m = _assignment_start_re(f).search(out)
+        if not m:
+            continue  # not present - nothing to remove, not a failure
+        val_start = m.end()
+        if val_start >= len(out):
+            failed.add(f)
+            continue
+        ch = out[val_start]
+        if ch == '{':
+            depth = 0
+            value_end = None
+            for i in range(val_start, len(out)):
+                if out[i] == '{':
+                    depth += 1
+                elif out[i] == '}':
+                    depth -= 1
+                    if depth == 0:
+                        value_end = i + 1
+                        break
+            if value_end is None:
+                failed.add(f)
+                continue
+        elif ch == '"':
+            close = out.find('"', val_start + 1)
+            if close == -1:
+                failed.add(f)
+                continue
+            value_end = close + 1
+        else:
+            comma = out.find(',', val_start)
+            newline = out.find('\n', val_start)
+            ends = [e for e in (comma, newline) if e != -1]
+            value_end = min(ends) if ends else len(out)
+
+        removal_start = m.start()
+        # Consume leading line indentation (spaces/tabs immediately preceded
+        # by a newline) so no blank indented line is left behind.
+        j = removal_start
+        while j > 0 and out[j - 1] in ' \t':
+            j -= 1
+        if j > 0 and out[j - 1] == '\n':
+            removal_start = j
+
+        trailing = re.match(r'\s*,?', out[value_end:])
+        removal_end = value_end + trailing.end()
+
+        candidate = out[:removal_start] + out[removal_end:]
+
+        # Post-condition guard: removing `f` must not disturb any OTHER
+        # known field's assignment. If one disappeared, the scan was
+        # over-greedy on malformed input (e.g. an unclosed brace consumed a
+        # neighboring field) - treat as a failure and keep the pre-removal
+        # text.
+        known_others = _KNOWN_FIELDS - {f.lower()}
+        before = {k for k in known_others if _assignment_start_re(k).search(out)}
+        after = {k for k in before if _assignment_start_re(k).search(candidate)}
+        if before - after:
+            failed.add(f)
+            continue
+
+        out = candidate
+    return out.strip(), failed
 
 
 def _fold_removals_into_marker(entry_text: str, removed: set[str]) -> str:

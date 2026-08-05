@@ -1077,6 +1077,9 @@ class TestCleanerVerdictPropagation:
     def test_unparseable_entry_ships_loudly_with_honest_marker(self, capsys):
         # Strip failure (unbalanced brace): field ships with a stderr
         # warning, and the marker/reason must NOT claim removal (review 5a).
+        # With the surgical scanner (review findings 1/2 fix) this fixture's
+        # unmatched inner brace deterministically fails the depth scan every
+        # run - the branch below is always taken now, not merely possible.
         from dedupe_bib import merge_entries, _extract_keywords_value
         from metadata_cleaner import marker_removed_fields
         broken = UNCLEANED_COPY.replace(
@@ -1092,21 +1095,73 @@ class TestCleanerVerdictPropagation:
                 "booktitle" in marker_removed_fields(
                     _extract_keywords_value(CLEANED_COPY))
 
-    def test_roundtrip_preserves_corporate_author_and_custom_fields(self):
-        # Double-braced corporate authors and non-standard fields survive
-        # _remove_fields_text (review 5b). (Single-braced corporate authors
-        # are already person-parsed by every pybtex consumer in the pipeline;
-        # the round-trip materializes that existing interpretation.)
+    def test_truncated_value_ships_loudly_with_honest_marker(self, capsys):
+        # Winner's OWN booktitle value has an unclosed brace (malformed/
+        # truncated entry) while the loser independently flags booktitle via
+        # its cleaner marker. The scanner's depth count never returns to 0,
+        # so the strip must fail honestly rather than let a regex-miss
+        # masquerade as a successful removal (review finding 2) - and the
+        # failed scan must not have eaten neighboring fields.
+        from dedupe_bib import merge_entries, _extract_keywords_value
+        from metadata_cleaner import marker_removed_fields
+        truncated = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},",
+            "booktitle = {International {Conference on Learning Representations,")
+        merged, reason, winner = merge_entries(CLEANED_COPY, truncated)
+        assert winner == 2  # truncated copy still wins (it has the abstract)
+        err = capsys.readouterr().err
+        assert "UNVETTED" in err
+        assert "dropped cleaner-flagged booktitle" not in reason
+        assert "booktitle" not in marker_removed_fields(
+            _extract_keywords_value(merged))
+        # neighboring fields survive untouched - the scan did not swallow them
+        assert "abstract = {A substantial abstract" in merged
+        assert "Medium" in merged
+
+    def test_two_hop_field_absent_on_winner_still_folds_and_blocks(self):
+        # The winner need not even HAVE the flagged field for the fold to
+        # happen: _remove_fields_text treats "absent" as a no-op, not a
+        # failure, so `applied` still includes it. That is load-bearing for
+        # two-hop transitivity - a LATER merge against a third copy that DOES
+        # carry the field must still be blocked by the folded marker.
+        from dedupe_bib import (
+            merge_entries, _union_substantive_fields_text,
+            _extract_keywords_value)
+        from metadata_cleaner import marker_removed_fields
+        winner_no_booktitle = UNCLEANED_COPY.replace(
+            "    booktitle = {International Conference on Learning "
+            "Representations},\n", "")
+        merged, _r, winner = merge_entries(CLEANED_COPY, winner_no_booktitle)
+        assert winner == 2
+        assert "booktitle" in marker_removed_fields(
+            _extract_keywords_value(merged))
+        third_with_booktitle = UNCLEANED_COPY.replace("iclr_d1", "iclr_d9")
+        out = _union_substantive_fields_text(merged, third_with_booktitle)
+        assert "International Conference" not in out
+
+    def test_surgical_strip_preserves_corporate_author_and_custom_fields(self):
+        # Surgical scanner removal (no pybtex round-trip) must not
+        # reinterpret or rewrite any field outside the one being removed -
+        # review finding 1: the old pybtex round-trip re-emitted a
+        # single-braced corporate author as a person name
+        # (author = {National Research Council} -> author = "Council,
+        # National Research").
         from dedupe_bib import _remove_fields_text
-        entry = ('@techreport{nrc, author = {{National Research Council}},\n'
+        entry = ('@techreport{nrc, author = {National Research Council},\n'
                  '  title = {R}, year = {2020}, pages = {1--3},\n'
                  '  sep_context = {S}, iep_context = {I},\n'
                  '  abstract_source = {crossref}, note = {N}}')
-        out = _remove_fields_text(entry, {"pages"})
-        assert "{National Research Council}" in out
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == set()
+        # byte-identical single-braced corporate author - no reinterpretation
+        assert "author = {National Research Council}" in out
         assert "pages" not in out.lower().replace("abstract_source", "")
         for f in ("sep_context", "iep_context", "abstract_source", "note"):
-            assert f in out.replace("\\_", "_")
+            assert f in out
+        # every other field's own delimiter form is untouched by the removal
+        assert "title = {R}" in out
+        assert "year = {2020}" in out
+        assert "sep_context = {S}" in out
 
     def test_fold_removals_idempotent(self):
         from dedupe_bib import _fold_removals_into_marker
