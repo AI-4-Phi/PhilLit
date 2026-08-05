@@ -6,6 +6,17 @@ line); forward-looking design sketches live in `docs/ideas/`. This file
 exists so open work has a single place to be listed — it was created
 2026-07-24 alongside the bib-pipeline item below.
 
+**Working sequence (Johannes, 2026-08-05):** (1) push `main` with a plugin
+version bump — the item-4 commits are unreleased; (2) the 27-wrong-years
+audit of delivered reviews; (3) item 3's residuals (A+B, then E, C, D; F
+last); (4) ONE batched phillit-service mirror session — the item-4
+`bib_identity` port, the item-1 evidence-tier port (service item 20), and
+the deferred `rate_limiter` fix — which **opens with a decision: the two
+trees have drifted far enough that the session may conclude they should be
+developed separately rather than mirrored**; (5) item 2. Until that session,
+mirror debt accumulates deliberately — don't mirror piecemeal, and don't
+touch/push phillit-service outside it.
+
 ## 1. Evidence-tier citability — replace the INCOMPLETE exclusion (MERGED here, v0.3.0; service port pending — dual-repo)
 
 > **Status 2026-08-02, end of day: MERGED TO `main` (`f89f4de`) and RELEASED
@@ -35,7 +46,9 @@ exists so open work has a single place to be listed — it was created
 > daily backups) — that decision is made, don't re-raise it.
 >
 > **What remains of this item: the service port** (service roadmap item 20,
-> currently queued behind its item-25 repo audit). The port-scope list lives
+> currently queued behind its item-25 repo audit; batched into the mirror
+> session — working sequence above — and contingent on its mirror-vs-fork
+> decision). The port-scope list lives
 > there and must survive the port: the widened `check_evidence._VERB_RE`,
 > the SEP `–––` repeated-author resolution in `resolve_context`, and Option
 > C abstention attestation. Sister-repo instructions:
@@ -87,7 +100,9 @@ run, so this item starts from data.
 - **Dual-repo, same path as item 1**: spec lives in the sister repo
   (`phillit-service/docs/superpowers/specs/`), build and validate HERE
   first (free runs), then port. Service roadmap tracks the mirror as
-  item 24. Sequence after item 1 ships.
+  item 24. Sequenced last (working sequence above): after item 3's
+  residuals and the batched mirror session — whose mirror-vs-fork decision
+  determines whether this item's "dual-repo" framing still holds.
 
 ## 3. Bibliography-pipeline integrity fixes
 
@@ -483,6 +498,8 @@ context: `docs/known-issues/evidence-tier-branch-divergence.md`.
 needs `engine/.claude/hooks/bib_identity.py` plus the six import sites, and a
 counterpart roadmap entry added via its **lowercase** `docs/roadmap.md` (the
 git-add case trap). Its roadmap had no item-4 counterpart as of 2026-08-03.
+Batched into the mirror session (working sequence above — after item 3,
+before item 2), subject to its mirror-vs-fork decision.
 
 ## Backlog pointers
 
@@ -493,6 +510,7 @@ local-only `workflow-findings-softmax-review.md`).
 
 **If resuming an interrupted session, check the local-only
 `docs/known-issues/doc-rot-audit-2026-08-02.md` first** — it carries the
-agreed post-merge sequence with live checkboxes. Everything through landing
-the branch (steps 1–5) is done; what remains there is item 4, the
-27-wrong-years audit, and the deferred service mirror debt.
+agreed sequence with live checkboxes (extended + amended 2026-08-05).
+Everything through item 4 (steps 1–6) is done; what remains, in order: the
+push + version bump, the 27-wrong-years audit, item 3's residuals, the
+batched mirror session (with its mirror-vs-fork decision), then item 2.
