@@ -403,6 +403,23 @@ def _remove_fields_text(entry_text: str, fields: set[str]) -> tuple[str, set[str
             failed.add(f)
             continue
 
+        # Same guard, aimed at `f` itself (ROADMAP item 3 review C1): the
+        # scan above locates the FIRST `f = ` in the whole entry text, which
+        # can be a field-name-shaped substring inside a DIFFERENT field's
+        # value (e.g. `abstract = {We discuss pages = 12, and more.}` with
+        # flagged field `pages`) rather than the real assignment. The
+        # `known_others` check above can't see this - it deliberately
+        # excludes `f` itself. If an `f = ` assignment is still findable
+        # after the removal, either the removed span was the fake one (the
+        # real field survives untouched, but so does the fake text we
+        # thought we deleted alongside a mangled neighbor - ambiguous) or a
+        # genuine second occurrence remains (also ambiguous). Neither is a
+        # safe silent success; report the field failed and keep the
+        # pre-removal text so nothing ships mangled or half-stripped.
+        if _assignment_start_re(f).search(candidate):
+            failed.add(f)
+            continue
+
         out = candidate
     return out.strip(), failed
 

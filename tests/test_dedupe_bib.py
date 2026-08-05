@@ -1163,6 +1163,106 @@ class TestCleanerVerdictPropagation:
         assert "year = {2020}" in out
         assert "sep_context = {S}" in out
 
+    def test_post_condition_guard_reverts_when_spurious_brace_swallows_neighbor(self):
+        # Ledger T3: a dedicated pin for the PRE-EXISTING over-greedy-scan
+        # post-condition guard (`known_others`), which no prior test actually
+        # exercised. A spurious closing brace inside `pages`'s own value
+        # rebalances depth early, so the brace-depth scan for `pages` treats
+        # the whole `journal = {Mind}}` field as part of pages's value and
+        # eats it - a KNOWN OTHER field's assignment (`journal`) vanishes.
+        # The guard must revert the whole removal.
+        from dedupe_bib import _remove_fields_text
+        entry = ('@article{x,\n'
+                  '  author = {A},\n'
+                  '  title = {T},\n'
+                  '  year = {2020},\n'
+                  '  pages = {1--10,\n'
+                  '  journal = {Mind}},\n'
+                  '  volume = {5},\n'
+                  '  keywords = {Medium}\n'
+                  '}')
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == {"pages"}
+        assert out.strip() == entry.strip()
+        assert "journal = {Mind}" in out  # neighbor survived the revert
+
+    def test_c1_fake_match_before_real_field_does_not_mangle(self, capsys):
+        # C1: a field-name-shaped substring inside ANOTHER field's value
+        # (here, "pages = 12" inside the abstract) sits EARLIER in the
+        # entry text than the real `pages` field, so the naive scan's
+        # first-match search would grab the fake one first - stripping into
+        # the abstract while the real pages field survives untouched and the
+        # marker would lie about what was removed. The fix must report
+        # `pages` failed (loud + honest) and leave the whole entry
+        # byte-unchanged rather than shipping a mangled abstract.
+        from dedupe_bib import merge_entries, _extract_keywords_value
+        from metadata_cleaner import marker_removed_fields
+        loser = CLEANED_COPY.replace("booktitle", "pages")
+        winner = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},\n"
+            "    abstract = {A substantial abstract that makes this copy win the merge.},",
+            "abstract = {We discuss pages = 12, and more.},\n"
+            "    pages = {1--10},")
+        merged, reason, w = merge_entries(loser, winner)
+        assert w == 2
+        err = capsys.readouterr().err
+        assert "UNVETTED" in err
+        assert "dropped cleaner-flagged pages" not in reason
+        assert "pages" not in marker_removed_fields(_extract_keywords_value(merged))
+        assert merged.strip() == winner.strip()  # unmangled, byte-unchanged
+        assert "We discuss pages = 12, and more." in merged  # abstract intact
+        assert "pages = {1--10}" in merged  # real field intact
+
+    def test_c1_no_comma_variant_eats_closing_brace(self, capsys):
+        # C1, "no-comma" flavor: the fake `pages = 12` mention has no comma
+        # before its containing field's (abstract's) own closing brace, so
+        # the unquoted/unbraced value scan would run past that brace looking
+        # for the next comma - eating through it and writing an unparseable
+        # entry, in the pre-fix code. The real pages field (after the
+        # abstract) must still be found post-removal, so the fix reports
+        # `pages` failed and reverts to the untouched entry.
+        from dedupe_bib import merge_entries, _extract_keywords_value
+        from metadata_cleaner import marker_removed_fields
+        loser = CLEANED_COPY.replace("booktitle", "pages")
+        winner = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},\n"
+            "    abstract = {A substantial abstract that makes this copy win the merge.},",
+            "abstract = {We discuss pages = 12 without comment},\n"
+            "    pages = {1--10},")
+        merged, reason, w = merge_entries(loser, winner)
+        assert w == 2
+        err = capsys.readouterr().err
+        assert "UNVETTED" in err
+        assert "dropped cleaner-flagged pages" not in reason
+        assert "pages" not in marker_removed_fields(_extract_keywords_value(merged))
+        assert merged.strip() == winner.strip()  # entry text unchanged
+
+    def test_c1_real_field_first_fake_later_reports_failed(self, capsys):
+        # C1, accepted behavior change: the REAL pages field now sits FIRST
+        # in the entry text (so the naive scan's first match IS the real
+        # assignment), with the fake "pages = 12" mention in the abstract
+        # AFTER it. The strip of the real field is textually clean, but the
+        # fake occurrence still remains findable afterward - ambiguous, so
+        # the specified policy is loud-and-honest: report `pages` failed
+        # rather than silently accept a removal next to an unflagged
+        # look-alike. Do not "improve" this into a success; it is the
+        # deliberately conservative accepted trade-off (review-verified).
+        from dedupe_bib import merge_entries, _extract_keywords_value
+        from metadata_cleaner import marker_removed_fields
+        loser = CLEANED_COPY.replace("booktitle", "pages")
+        winner = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},\n"
+            "    abstract = {A substantial abstract that makes this copy win the merge.},",
+            "pages = {1--10},\n"
+            "    abstract = {We discuss pages = 12, and more.},")
+        merged, reason, w = merge_entries(loser, winner)
+        assert w == 2
+        err = capsys.readouterr().err
+        assert "UNVETTED" in err
+        assert "dropped cleaner-flagged pages" not in reason
+        assert "pages" not in marker_removed_fields(_extract_keywords_value(merged))
+        assert merged.strip() == winner.strip()  # unchanged, not half-stripped
+
     def test_fold_removals_idempotent(self):
         from dedupe_bib import _fold_removals_into_marker
         once = _fold_removals_into_marker(UNCLEANED_COPY, {"booktitle"})
