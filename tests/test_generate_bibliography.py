@@ -1012,6 +1012,29 @@ class TestCollisionResolution:
         assert cited == {"muldoon2023a", "muldoon2023b"}
         assert "[COLLISION] ambiguous" in capsys.readouterr().err
 
+    def test_unrelated_second_position_does_not_flip_ambiguous_to_drop(self, capsys):
+        # post-review fix: an unresolvable first-position form ("Muldoon
+        # and Gordon") must stay ambiguous-keep-all even when the SAME
+        # text elsewhere also contains an unrelated, cleanly-parsed
+        # second-position sighting of "Muldoon" (the Bloggs sentence) -
+        # partial ambiguity must never drop a cited work.
+        bib = self.MULDOON.replace("Wu, Jin}", "Qi, Bo}")  # a: Muldoon+Qi
+        cited = self._cited(bib,
+            "As Muldoon and Gordon (2023) claim, X. "
+            "Elsewhere, Bloggs and Muldoon (2023) discuss Q.")
+        assert cited == {"muldoon2023a", "muldoon2023b"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
+    def test_first_position_resolution_unaffected_by_unrelated_second_position(self):
+        # inverse guard: a first-position instance that DOES resolve to a
+        # candidate must keep resolving normally even when the text also
+        # contains an unrelated second-position sighting of the same
+        # surname family.
+        cited = self._cited(self.MULDOON,
+            "Muldoon and Wu (2023) argue X. "
+            "Bloggs and Muldoon (2023) discuss Q.")
+        assert cited == {"muldoon2023a"}
+
     def test_sentence_leading_capital_is_not_a_first_name(self):
         # "As Moore (2020)" - the captured "As" must be ignored, not used
         # to eliminate the solo candidate (informative-first_text rule).

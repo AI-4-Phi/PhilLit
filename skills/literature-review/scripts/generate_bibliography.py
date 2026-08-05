@@ -609,7 +609,17 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     variant-intersection connected components per year; resolve each group
     by per-citation-instance candidate sets parsed from the ORIGINAL text;
     keep the union of supported members; drop only what no instance
-    supports - and only when the group parsed at least one instance."""
+    supports - and only when the group parsed at least one instance.
+
+    first-position and second-position evidence are tracked SEPARATELY per
+    group (post-review fix): a second-position-only sighting ("Bloggs and
+    Muldoon (2023)" against a Muldoon-first-author group) must drop the
+    group only when NO first-position instance exists for it at all. An
+    unrelated second-position sighting elsewhere in the text must never
+    flip an unresolved first-position instance (e.g. "Muldoon and Gordon
+    (2023)", which matches no candidate) from ambiguous-keep-all into a
+    drop - partial ambiguity never drops a cited work, and "cited"
+    includes works named only via an unresolvable first-position form."""
     for rec in records:
         rec["_variants"] = ascii_variants(rec["surname"]) or \
             frozenset({rec["surname"].lower()})
@@ -636,7 +646,8 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
         member_variants = frozenset().union(*(r["_variants"] for r in members))
         year = members[0]["year"]
         supported = set()
-        any_instance = False
+        first_pos_seen = False
+        second_pos_seen = False
         for inst in instances:
             if inst["year"] != year:
                 continue
@@ -645,14 +656,14 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                 # surname is the SECOND author of an "and" instance (e.g.
                 # "Bloggs and Muldoon (2023)" against a Muldoon-first-
                 # author group), that is positive evidence against the
-                # group, not narrative silence: count it as a parsed
-                # instance (so the group doesn't fall back to keep-all)
-                # while it supports nobody (review edge, second-author
-                # position must not read as a first-author citation).
+                # group, not narrative silence: note it separately from
+                # first-position evidence (see docstring) rather than
+                # folding it into one any_instance flag.
                 if inst["form"] == "and" and (
                         ascii_variants(inst["second_text"]) & member_variants):
-                    any_instance = True
+                    second_pos_seen = True
                 continue
+            first_pos_seen = True
             cands = []
             for rec in members:
                 if not (inst["surname_variants"] & rec["_variants"]):
@@ -675,15 +686,16 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                             continue
                     cands.append(rec)
             if cands:
-                any_instance = True
                 supported.update(r["key"] for r in cands)
                 if len(cands) > 1:
                     print("  [COLLISION] ambiguous: instance '"
-                          + _ascii(next(iter(inst["surname_variants"])))
+                          + _ascii(min(inst["surname_variants"]))
                           + " " + year + "' (" + inst["form"] + ") matches "
                           + ", ".join(sorted(_ascii(r["key"]) for r in cands)),
                           file=sys.stderr)
-        if any_instance:
+        if first_pos_seen and supported:
+            # At least one first-position instance discriminated some
+            # members - keep those, drop the rest.
             for rec in members:
                 if rec["key"] in supported:
                     keep.append(rec)
@@ -694,6 +706,29 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                                              if r is not rec))
                           + " and no citation instance supports it",
                           file=sys.stderr)
+        elif first_pos_seen:
+            # A first-position form was parsed for this group but matched
+            # no candidate (e.g. "Muldoon and Gordon" against a and-Wu/
+            # and-Qi pair) - genuinely ambiguous, not evidence against
+            # anyone. A second-position sighting elsewhere in the text
+            # must NOT override this into a drop.
+            keep.extend(members)
+            print("  [COLLISION] ambiguous: "
+                  + ", ".join(sorted(_ascii(r["key"]) for r in members))
+                  + " share surname/year and no parseable citation form"
+                  " discriminates - all kept, possible phantom references",
+                  file=sys.stderr)
+        elif second_pos_seen:
+            # No first-position instance names this group at all - the
+            # only parsed explanation for the loose surname/year matches
+            # is a co-author position, so nothing here is actually cited.
+            for rec in members:
+                print("  [COLLISION] dropped " + _ascii(rec["key"])
+                      + ": shares surname/year with "
+                      + ", ".join(sorted(_ascii(r["key"]) for r in members
+                                         if r is not rec))
+                      + " and no citation instance supports it",
+                      file=sys.stderr)
         else:
             keep.extend(members)
             print("  [COLLISION] ambiguous: "
