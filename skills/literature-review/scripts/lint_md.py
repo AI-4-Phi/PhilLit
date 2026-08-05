@@ -346,7 +346,15 @@ def main(argv: list[str] | None = None) -> int:
     try:
         text = Path(filepath).read_text(encoding="utf-8")
     except OSError:
-        text = ""
+        # An unreadable file is a distinct condition from "no ## References
+        # section yet" - conflating the two into the same "skipped" message
+        # made a read failure look like an ordinary draft-stage skip. Skip
+        # both the prose-quality and citation checks (there is no text to
+        # check) and say so explicitly; the exit code still comes from
+        # lint_markdown() above, unaffected by this read attempt.
+        print("citation-check: file unreadable; skipped")
+        return rc
+
     for warning in check_prose_quality(text):
         print(f"WARN prose-quality: {warning}")
 

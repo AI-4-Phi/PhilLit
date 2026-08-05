@@ -324,3 +324,28 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
                 'Other, Ann. 2021. "X." *J* 1: 1.\n')
         errors, _ = check_citations(text)
         assert errors == []
+
+
+class TestMainUnreadableFile:
+    """An unreadable file must not funnel into the "no ## References
+    section" message - that phrasing implies the file WAS read and simply
+    has no References section yet (a normal draft-stage state), which is a
+    different condition from a read failure."""
+
+    def test_unreadable_file_reports_distinctly_and_skips_both_checks(
+            self, monkeypatch, capsys):
+        import lint_md
+
+        def boom(self, encoding="utf-8"):
+            raise OSError("simulated unreadable")
+
+        monkeypatch.setattr(lint_md.Path, "read_text", boom)
+        monkeypatch.setattr(lint_md, "lint_markdown", lambda filepath: 0)
+
+        rc = lint_md.main(["somefile.md"])
+        out = capsys.readouterr().out
+
+        assert "citation-check: file unreadable; skipped" in out
+        assert "citation-check: no ## References section; skipped" not in out
+        assert "WARN prose-quality" not in out  # prose-quality also skipped
+        assert rc == 0  # exit code still comes from lint_markdown(), unchanged
