@@ -76,8 +76,11 @@ def _normalize_for_matching(s: str) -> str:
 
     Deliberately NOT bib_identity.title_key (ROADMAP item 4, Decision 1): this
     folds author-written review prose, and it must keep punctuation because the
-    60-character _MATCH_WINDOW is measured over its output. Pinned by this
-    file's tests in tests/test_generate_bibliography.py.
+    60-character _MATCH_WINDOW is sliced from whichever haystack produced a
+    hit - this function's output (norm_text) or bib_identity.translit_fold's
+    output (translit_text, item 3 B/E: symmetric transliteration matching),
+    both of which keep punctuation for the same reason. Pinned by this file's
+    tests in tests/test_generate_bibliography.py.
     """
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
 
@@ -744,6 +747,17 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
 
 def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     """Find BibTeX entries cited in the review text.
+
+    Matching runs in two stages before this function's own dedup.
+    _collect_matches finds every candidate whose surname+year proximity
+    pattern appears in the prose (dual-haystack: plain NFKD and
+    transliterated, tried symmetrically). _resolve_collisions (item 3 E)
+    then groups candidates sharing (first-author surname, year) and resolves
+    each group against citation instances parsed from the prose: a
+    discriminating instance (second-author surname, et al., or a solo
+    author's first initial) drops the members it does not support; an
+    ambiguous or unparseable group is kept whole with a stderr warning -
+    partial ambiguity never silently drops a cited work.
 
     Returns list of (key, entry) tuples for cited entries, deduplicated by DOI
     and, as a fallback, by (normalized title, year, first-author surname).
