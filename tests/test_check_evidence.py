@@ -11,6 +11,9 @@ SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "s
 CHECKER = SCRIPTS_DIR / "check_evidence.py"
 SANITIZER = SCRIPTS_DIR / "sanitize_bib.py"
 
+sys.path.insert(0, str(SCRIPTS_DIR))
+import check_evidence  # noqa: E402
+
 BIB = """@book{kuhn1962structure,
   author = {Kuhn, Thomas S.},
   title = {The Structure of Scientific Revolutions},
@@ -171,6 +174,50 @@ def test_surname_does_not_match_inside_word(tmp_path):
     r = _run(tmp_path, "The literature (2020) on this topic is thin.",
              bib_text=BIB_LI)
     assert "li2020lit" not in r.stdout
+
+
+def test_find_cites_honours_the_entry_suffix():
+    md = "Menary (2010a) argues X. Menary (2010b) argues Y."
+    a = check_evidence.find_cites(md, "Menary", "2010", suffix="a")
+    b = check_evidence.find_cites(md, "Menary", "2010", suffix="b")
+    assert len(a) == 1 and len(b) == 1 and a != b
+
+
+def test_find_cites_without_suffix_is_unchanged():
+    md = "Menary (2010) argues X."
+    assert len(check_evidence.find_cites(md, "Menary", "2010")) == 1
+
+
+BIB_LETTERED = """@book{menary2010cognitive,
+  author = {Menary, Richard},
+  title = {Cognitive Integration},
+  year = {2010},
+  year_suffix = {a},
+  keywords = {High, EVIDENCE-NONE}
+}
+
+@book{menary2010extended,
+  author = {Menary, Richard},
+  title = {The Extended Mind},
+  year = {2010},
+  year_suffix = {b},
+  keywords = {High, EVIDENCE-NONE}
+}"""
+
+
+def test_bare_year_citation_flags_both_lettered_entries(tmp_path):
+    # Item 3 F: a bare "Menary (2010)" is what generate_bibliography
+    # deliberately treats as ambiguous-keep-all - the checker must not read
+    # a bare cite as citing NEITHER lettered work (false telemetry).
+    r = _run(tmp_path, "Menary (2010) is influential.", bib_text=BIB_LETTERED)
+    assert "CHECK none-cited: menary2010cognitive" in r.stdout
+    assert "CHECK none-cited: menary2010extended" in r.stdout
+
+
+def test_lettered_citation_flags_only_its_own_entry(tmp_path):
+    r = _run(tmp_path, "Menary (2010a) is influential.", bib_text=BIB_LETTERED)
+    assert "CHECK none-cited: menary2010cognitive" in r.stdout
+    assert "CHECK none-cited: menary2010extended" not in r.stdout
 
 
 def test_sanitizer_strips_all_tokens(tmp_path):

@@ -525,6 +525,55 @@ class TestDOIDeduplication:
         assert len(cited) == 1
 
 
+class TestYearSuffixField:
+    """Item 3 F, mirrored from dedupe_bib.merge_entries (task 5 scope
+    expansion): this dedup pass picks its winner by
+    _substantive_field_count, a DIFFERENT criterion than dedupe_bib's
+    (abstract-then-importance), so the survivor here can be a different
+    copy than the one dedupe_bib kept - and this function's output IS what
+    format_entry renders into the delivered References, so the same
+    unanimous / copy-up / conflict policy is needed independently."""
+
+    def _bib(self, winner_suffix=None, loser_suffix=None):
+        winner_fields = dict(
+            authors=["Smith, Anna"], title="Data and Things", year="2020",
+            journal="Synthese", abstract="A real abstract, long enough.",
+            doi="10.1000/xyz123")
+        loser_fields = dict(
+            authors=["Smith, Anna"], title="Data and Things", year="2020",
+            doi="10.1000/xyz123")
+        if winner_suffix is not None:
+            winner_fields["year_suffix"] = winner_suffix
+        if loser_suffix is not None:
+            loser_fields["year_suffix"] = loser_suffix
+        return _make_bib(
+            ("winner2020", _make_entry(**winner_fields)),
+            ("loser2020", _make_entry(**loser_fields)),
+        )
+
+    def test_unanimous_suffix_survives_merge(self):
+        bib = self._bib(winner_suffix="a", loser_suffix="a")
+        cited = find_cited_entries("Smith (2020a) argues X.", bib)
+        assert len(cited) == 1
+        assert cited[0][1].fields.get("year_suffix") == "a"
+
+    def test_missing_winner_suffix_is_copied_from_agreeing_loser(self):
+        bib = self._bib(winner_suffix=None, loser_suffix="b")
+        cited = find_cited_entries("Smith (2020) argues X.", bib)
+        assert len(cited) == 1
+        assert cited[0][1].fields.get("year_suffix") == "b"
+
+    def test_conflicting_suffixes_warn_and_change_nothing(self, capsys):
+        bib = self._bib(winner_suffix="a", loser_suffix="b")
+        cited = find_cited_entries("Smith (2020a) argues X.", bib)
+        assert len(cited) == 1
+        assert cited[0][1].fields.get("year_suffix") == "a"  # winner's kept
+        err = capsys.readouterr().err
+        assert "[SUFFIX] conflict" in err
+        assert "winner2020" in err and "loser2020" in err
+        assert "'a'" in err and "'b'" in err
+
+
 # =============================================================================
 # Tests for reference section generation
 # =============================================================================

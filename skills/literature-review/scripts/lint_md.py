@@ -277,26 +277,41 @@ def _find_refs_heading(text: str) -> tuple[int, int] | None:
     return found
 
 
-def check_citations(text: str) -> tuple[list[str], bool]:
+def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     """Verify every in-text author-year citation resolves to a References
-    entry. Returns (errors, checked); checked=False when the file has no
-    ## References section (draft - nothing to resolve against).
+    entry. Returns (errors, warnings, checked); checked=False when the file
+    has no ## References section (draft - nothing to resolve against).
 
     Resolution is deliberately MORE tolerant than the generator's matching
     (transliteration variants, either reprint year, suffix-tolerant) but
     word-boundary-strict on the surname: a substring test would let "he"
     resolve against "the" and blind the check for short surnames (review 4a).
+
+    A citation whose year carries a Chicago letter (item 3 F) resolves on
+    the BASE year as before; if no candidate reference entry it resolves to
+    carries that same letter, it is a WARN, not an ERROR - the work is
+    present in References, but the letter itself doesn't match anything
+    (a writer typo or a stale letter), which a reader can notice but a
+    build should not fail on.
     """
     span = _find_refs_heading(text)
     if span is None:
-        return [], False
+        return [], [], False
     body, refs = text[:span[0]], text[span[1]:]
     ref_lines = [ln for ln in refs.splitlines() if ln.strip()]
     folded_lines = [_fold_variants(ln) for ln in ref_lines]
-    errors = []
+    errors: list[str] = []
+    warnings: list[str] = []
     for lineno, raw, tokens, years in extract_citations(body):
         base_years = [y.rstrip("abcdefghijklmnopqrstuvwxyz") for y in years]
-        resolved = False
+        # cp1252-safe: the citation text is exactly where non-ASCII lives, and
+        # neither the error nor the warning path may crash the linter.
+        raw_ascii = raw.encode("ascii", "backslashreplace").decode("ascii")
+        # Collect EVERY reference line this citation could resolve to, not the
+        # first one: References routinely holds two "Menary 2010" entries, and
+        # the suffix check below has to ask whether ANY of them carries the
+        # requested letter.
+        candidate_lines = []
         for ln, line_variants in zip(ref_lines, folded_lines):
             if not any(y in ln for y in base_years):
                 continue
@@ -304,20 +319,37 @@ def check_citations(text: str) -> tuple[list[str], bool]:
                 for tv in _fold_variants(tok):
                     pat = re.compile(r"\b" + re.escape(tv) + r"\b")
                     if any(pat.search(lv) for lv in line_variants):
-                        resolved = True
+                        candidate_lines.append(ln)
                         break
-                if resolved:
-                    break
-            if resolved:
+                else:
+                    continue
                 break
-        if not resolved:
-            # cp1252-safe: the citation text is exactly where non-ASCII
-            # lives; the error path must never crash the linter (review 6).
-            raw_ascii = raw.encode("ascii", "backslashreplace").decode("ascii")
+        if not candidate_lines:
             errors.append(
                 f"line {lineno}: citation '{raw_ascii}' does not resolve to "
                 f"any References entry (ERROR)")
-    return errors, True
+            continue
+        # Item 3 F: it resolved on the BASE year. If the prose letters a work
+        # and no candidate reference carries that letter, a reader cannot tell
+        # which work is meant. WARN, never ERROR - hard-failing a run on a
+        # writer's typo costs more than reporting it, and this check is also
+        # how item 3 F's live run is measured.
+        #
+        # Match the whole YEAR TOKEN, never the bare letter: "a" occurs in
+        # "Menary" and in "Richard", so a `letter not in line` test can
+        # essentially never fire.
+        for original, base in zip(years, base_years):
+            letter = original[len(base):]
+            if not letter:
+                continue
+            token_re = re.compile(
+                rf"(?<!\d){re.escape(base)}{re.escape(letter)}\b")
+            if not any(token_re.search(ln) for ln in candidate_lines):
+                warnings.append(
+                    f"line {lineno}: citation '{raw_ascii}' carries the suffix "
+                    f"'{letter}' but no References entry it resolves to does "
+                    f"(WARN)")
+    return errors, warnings, True
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -346,11 +378,13 @@ def main(argv: list[str] | None = None) -> int:
     for warning in check_prose_quality(text):
         print(f"WARN prose-quality: {warning}")
 
-    citation_errors, checked = check_citations(text)
+    citation_errors, citation_warnings, checked = check_citations(text)
     if not checked:
         print("citation-check: no ## References section; skipped")
     for err in citation_errors:
         print(f"ERROR unresolved-citation: {err}")
+    for warn in citation_warnings:
+        print(f"WARN citation-suffix: {warn}")
     if citation_errors:
         rc = rc or 1
 

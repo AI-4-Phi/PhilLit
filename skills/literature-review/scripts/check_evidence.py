@@ -108,7 +108,7 @@ def rc_surname(author_field: str) -> str:
     return first.split(",")[0].strip()
 
 
-def find_cites(md: str, surname: str, year: str) -> list[int]:
+def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     """Positions (in md) of surname occurrences within 60 chars of year.
 
     The year regex is run over the FULL text (not a pre-sliced window): a
@@ -116,19 +116,60 @@ def find_cites(md: str, surname: str, year: str) -> list[int]:
     slice boundary (e.g. "91962") satisfy (?<!\\d)/(?!\\d) spuriously at the
     cut edge, producing a false-positive citation. Matching globally, then
     filtering by position, keeps the digit-boundary check honest.
+
+    `suffix` is the entry's own Chicago letter (item 3 F), if it carries
+    one. An entry carrying a letter is cited where the prose carries that
+    SAME letter -- OR where the prose gives a BARE year. A bare
+    "Menary (2010)" is what generate_bibliography deliberately treats as
+    ambiguous-keep-all, so counting it as citing NEITHER lettered work would
+    report both as uncited: false telemetry manufactured by this feature.
+    Entries without a letter keep the historic behaviour, so prose that
+    letters a work the bib never lettered still resolves.
+
+    Suffix mode additionally disambiguates two DIFFERENT lettered mentions
+    of the same base year sitting close together (e.g. "Menary (2010a) ...
+    Menary (2010b)" in one paragraph): the plain within-window check below
+    would count BOTH "Menary" occurrences for EITHER letter, since a
+    60-char window easily spans two adjacent citations. Instead, each
+    surname occurrence is paired with its NEAREST same-base-year mention
+    (right-lettered, wrong-lettered, or bare -- all recognized by
+    `bare_year_re`, which does not distinguish them) and only counted when
+    that nearest mention is itself one this entry's letter qualifies.
     """
     if not surname or not re.fullmatch(r"\d{4}", year or ""):
         return []
     surname_re = re.compile(rf"\b{re.escape(surname)}\b")
-    year_re = re.compile(rf"(?<!\d){re.escape(year)}(?!\d)")
-    year_positions = [m.start() for m in year_re.finditer(md)]
-    if not year_positions:
+    bare_year_re = re.compile(rf"(?<!\d){re.escape(year)}(?!\d)")
+
+    if not suffix:
+        year_positions = [m.start() for m in bare_year_re.finditer(md)]
+        if not year_positions:
+            return []
+        positions = []
+        for m in surname_re.finditer(md):
+            start = max(0, m.start() - _MATCH_WINDOW)
+            end = min(len(md), m.end() + _MATCH_WINDOW)
+            if any(start <= yp <= end for yp in year_positions):
+                positions.append(m.start())
+        return positions
+
+    qualifying_re = re.compile(
+        rf"(?<!\d){re.escape(year)}(?:{re.escape(suffix)}\b|(?![0-9a-z]))")
+    all_positions = [m.start() for m in bare_year_re.finditer(md)]
+    if not all_positions:
+        return []
+    qualifying_positions = {m.start() for m in qualifying_re.finditer(md)}
+    if not qualifying_positions:
         return []
     positions = []
     for m in surname_re.finditer(md):
         start = max(0, m.start() - _MATCH_WINDOW)
         end = min(len(md), m.end() + _MATCH_WINDOW)
-        if any(start <= yp <= end for yp in year_positions):
+        nearby = [yp for yp in all_positions if start <= yp <= end]
+        if not nearby:
+            continue
+        nearest = min(nearby, key=lambda yp: abs(yp - m.start()))
+        if nearest in qualifying_positions:
             positions.append(m.start())
     return positions
 
@@ -179,14 +220,22 @@ def main() -> int:
         year = (fields.get("year") or "").strip()
         if not surname or not re.fullmatch(r"\d{4}", year):
             continue  # Guard: empty surname/non-year -> unfindable, skip
+        # A malformed field (not a single a-z letter) renders as if absent
+        # rather than feeding a bogus suffix into find_cites (mirrors
+        # generate_bibliography._display_year's same guard).
+        raw_suffix = (fields.get("year_suffix") or "").strip().lower()
+        suffix = (raw_suffix if len(raw_suffix) == 1 and raw_suffix.isalpha()
+                  and raw_suffix.isascii() else "")
         matches = _TIER_RE.findall(fields.get("keywords", ""))
         tier = matches[-1] if matches else None  # last match wins
-        entries[key] = {"tier": tier, "surname": surname, "year": year}
+        entries[key] = {
+            "tier": tier, "surname": surname, "year": year, "suffix": suffix,
+        }
 
     counts = {"unstamped": 0, "none_cited": 0, "reporting_verb": 0}
 
     for key, info in entries.items():
-        positions = find_cites(md, info["surname"], info["year"])
+        positions = find_cites(md, info["surname"], info["year"], info["suffix"])
         if not positions:
             continue
         tier = info["tier"]

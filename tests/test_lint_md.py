@@ -154,7 +154,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
 
     def test_unresolved_citation_is_error(self):
         from lint_md import check_citations
-        errors, checked = check_citations(self.REVIEW)
+        errors, _, checked = check_citations(self.REVIEW)
         assert checked is True
         assert len(errors) == 1
         assert "Fraenken" in errors[0] and "2024" in errors[0]
@@ -162,7 +162,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
     def test_resolved_citations_are_clean(self):
         from lint_md import check_citations
         text = self.REVIEW.replace("Fraenken (2024) anchors this review. ", "")
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_transliteration_variant_resolves(self):
@@ -173,12 +173,14 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         text = self.REVIEW.replace(
             "## References",
             '## References\n\nFränken, Jan. 2024. "Anchor Study." *Mind* 133: 1--10.')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_year_suffix_tolerated(self):
-        # "(Wiens 2015a)" resolves against a References line dated 2015 -
-        # suffix rendering is ROADMAP 3F, not an unresolved citation.
+        # "(Wiens 2015a)" resolves against a References line dated 2015 even
+        # though that entry carries no letter - stays tolerant (no ERROR).
+        # Item 3 F now renders letters, so this is exactly the WARN case:
+        # the work is present, but no candidate entry carries the 'a'.
         from lint_md import check_citations
         text = self.REVIEW.replace(
             "(Clark and Chalmers 1998; Smith et al. 2020, 45)",
@@ -186,12 +188,13 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
             'Clark, Andy, and David Chalmers. 1998. "The Extended Mind." *Analysis* 58 (1): 7--19.',
             'Wiens, David. 2015. "Political Ideals." *Journal* 1: 1--2.'
         ).replace("Fraenken (2024) anchors this review. ", "")
-        errors, _ = check_citations(text)
+        errors, warnings, _ = check_citations(text)
         assert errors == []
+        assert any("2015a" in w for w in warnings)
 
     def test_no_references_section_skips(self):
         from lint_md import check_citations
-        errors, checked = check_citations("# Draft\n\nSmith (2020) says.\n")
+        errors, _, checked = check_citations("# Draft\n\nSmith (2020) says.\n")
         assert checked is False
         assert errors == []
 
@@ -200,7 +203,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         text = ("# T\n\nRecent work (2020-2025) grew.\n\n"
                 "```\nFake (2019) inside fence\n```\n\n## References\n\n"
                 'Real, Ann. 2021. "X." *J* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_narrative_possessive_and_et_al(self):
@@ -209,7 +212,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
                 "## References\n\n"
                 'Nussbaum, Martha. 2000. *Women*. CUP.\n\n'
                 'Gilbert, Sam, Ann Boldt, and Bo Fleming. 2020. "R." *JEP* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_multi_surname_citation_resolves_on_any_token(self):
@@ -218,7 +221,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         from lint_md import check_citations
         text = ("# T\n\nSee (Buzzell and Rini 2023).\n\n## References\n\n"
                 'Buzzell, Andrew, and Regina Rini. 2023. "DYOR." *PP* 36: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_short_surname_dropped_entry_is_caught(self):
@@ -228,14 +231,14 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         from lint_md import check_citations
         text = ("# T\n\nHe (2020) argues the point.\n\n## References\n\n"
                 'Smith, John. 2020. "The Public Philosophy of the Age." *J* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert len(errors) == 1 and "He" in errors[0]
 
     def test_short_surname_present_resolves(self):
         from lint_md import check_citations
         text = ("# T\n\nHe (2020) argues.\n\n## References\n\n"
                 'He, Wei. 2020. "A Paper." *J* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_reprint_slash_year_resolves_on_either_year(self):
@@ -244,7 +247,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         from lint_md import check_citations
         text = ("# T\n\nDuties (Ross 1930/2002) persist.\n\n## References\n\n"
                 'Ross, W. D. 2002. *The Right and the Good*. OUP.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_historical_year_extracted(self):
@@ -253,7 +256,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         from lint_md import check_citations
         text = ("# T\n\nAutonomy (Kant 1785) grounds this.\n\n## References\n\n"
                 'Modern, Ann. 2020. "X." *J* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert len(errors) == 1 and "Kant" in errors[0]
 
     def test_statute_citation_requires_bib_entry(self):
@@ -262,10 +265,10 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         # an entry resolves (review 4c).
         from lint_md import check_citations
         base = "# T\n\nData rules (GDPR 2016) apply.\n\n## References\n\n"
-        errors, _ = check_citations(
+        errors, _, _ = check_citations(
             base + 'Other, Ann. 2016. "X." *J* 1: 1.\n')
         assert len(errors) == 1
-        errors2, _ = check_citations(
+        errors2, _, _ = check_citations(
             base + "GDPR. 2016. Regulation (EU) 2016/679.\n")
         assert errors2 == []
 
@@ -275,7 +278,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         text = ("# T\n\nBoth agree (Smith 2020, Jones 2021).\n\n"
                 "## References\n\n"
                 'Smith, Ann. 2020. "X." *J* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert len(errors) == 1 and "Jones" in errors[0]
 
     def test_surnamed_year_range_not_extracted(self):
@@ -284,7 +287,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         from lint_md import check_citations
         text = ("# T\n\nWork by (Smith 2020-2025) grew.\n\n## References\n\n"
                 'Real, Ann. 2021. "X." *J* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_plural_possessive(self):
@@ -294,14 +297,14 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         text = ("# T\n\nClark and Chalmers' (1998) argument stands.\n\n"
                 "## References\n\n"
                 'Clark, Andy, and David Chalmers. 1998. "The Extended Mind." *A* 58: 7.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_curly_vs_straight_apostrophe_resolves(self):
         from lint_md import check_citations
         text = ("# T\n\nO’Neill (2020) argues.\n\n## References\n\n"
                 "O'Neill, Onora. 2020. *Trust*. CUP.\n")
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
 
     def test_fake_references_heading_in_fence_ignored(self):
@@ -311,7 +314,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         text = ("# T\n\n```\n## References\n```\n\nGhost (2019) says.\n\n"
                 "## References\n\n"
                 'Ghost, Ann. 2019. "X." *J* 1: 1.\n')
-        errors, checked = check_citations(text)
+        errors, _, checked = check_citations(text)
         assert checked is True and errors == []
 
     def test_non_latin_citation_blind_spot_is_deliberate(self):
@@ -322,8 +325,43 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         text = ("# T\n\n(Χάλμης 2020) argues.\n\n"
                 "## References\n\n"
                 'Other, Ann. 2021. "X." *J* 1: 1.\n')
-        errors, _ = check_citations(text)
+        errors, _, _ = check_citations(text)
         assert errors == []
+
+
+def test_suffix_mismatch_warns_but_does_not_error():
+    import lint_md
+    text = ("Menary (2010a) argues.\n\n## References\n\n"
+            "Menary, Richard 2010. *The Extended Mind*. MIT Press.\n")
+    errors, warnings, checked = lint_md.check_citations(text)
+    assert checked is True
+    assert errors == []                    # still tolerant: no hard failure
+    assert any("2010a" in w for w in warnings)
+
+
+def test_matching_suffix_does_not_warn():
+    import lint_md
+    text = ("Menary (2010a) argues.\n\n## References\n\n"
+            "Menary, Richard 2010a. *Cognitive Integration*. MIT Press.\n")
+    errors, warnings, checked = lint_md.check_citations(text)
+    assert errors == [] and warnings == []
+
+
+def test_main_prints_suffix_warning_but_keeps_exit_code(tmp_path, monkeypatch, capsys):
+    # main()'s wiring: the new third return value must reach a WARN print
+    # channel and never affect the exit code (mirrors WARN prose-quality).
+    import lint_md
+    monkeypatch.setattr(lint_md, "lint_markdown", lambda filepath: 0)
+    md_file = tmp_path / "r.md"
+    md_file.write_text(
+        "Menary (2010a) argues.\n\n## References\n\n"
+        "Menary, Richard 2010. *The Extended Mind*. MIT Press.\n",
+        encoding="utf-8")
+    rc = lint_md.main([str(md_file)])
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert "carries the suffix" in out
+    assert "ERROR" not in out
 
 
 class TestMainUnreadableFile:

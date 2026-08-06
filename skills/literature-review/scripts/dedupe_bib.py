@@ -112,6 +112,7 @@ def _field_value_re(field: str) -> re.Pattern:
 
 _KEYWORDS_RE = _field_value_re("keywords")
 _ABSTRACT_RE = _field_value_re("abstract")
+_YEAR_SUFFIX_RE = _field_value_re("year_suffix")
 
 
 def _extract_keywords_value(entry: str) -> str:
@@ -120,6 +121,23 @@ def _extract_keywords_value(entry: str) -> str:
     if not m:
         return ''
     return m.group('braced') if m.group('braced') is not None else m.group('quoted')
+
+
+def _extract_year_suffix_value(entry: str) -> str:
+    """Extract the value of the year_suffix field from a BibTeX entry, or
+    '' if the entry carries none."""
+    m = _YEAR_SUFFIX_RE.search(entry)
+    if not m:
+        return ''
+    value = m.group('braced') if m.group('braced') is not None else m.group('quoted')
+    return value.strip()
+
+
+def _entry_key(entry_text: str) -> str:
+    """Citation key parsed from a raw entry's opening line, or '' if
+    unparseable. Diagnostic use only (the [SUFFIX] conflict message)."""
+    m = re.match(r'@\w+\{([^,]+),', entry_text)
+    return m.group(1).strip() if m else ''
 
 
 def _rewrite_keywords(entry: str, transform) -> str:
@@ -269,6 +287,35 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
         base = remove_incomplete_flag(base)
         reason += ", removed INCOMPLETE flag"
 
+    # Item 3 F: carry the Chicago letter forward. Unlike venue_status,
+    # losing year_suffix here means the rendered References stops matching
+    # prose that already cites the lettered form ("2010a"). Every duplicate
+    # copy normally carries the same letter (the barrier assigns it once,
+    # over the union of every domain bib), but a per-entry stamping
+    # failure, a legacy/hand-edited bib, an entry added after the barrier,
+    # or an identity disagreement between the barrier and dedupe can break
+    # that. Read the winner's suffix from `base` (not the raw winner text):
+    # base is what actually ships, and a prior step in this function (the
+    # loser-flagged-field strip above) could in principle have already
+    # removed it. Resolved pairwise so a merge CHAIN (3+ domain copies
+    # folded in one pair at a time) composes correctly: `base` already
+    # carries whatever an earlier step in the chain decided, so a later
+    # disagreement is caught against that, not silently overwritten.
+    loser_text = entry2 if winner == 1 else entry1
+    winner_suffix = _extract_year_suffix_value(base)
+    loser_suffix = _extract_year_suffix_value(loser_text)
+    if winner_suffix and loser_suffix and winner_suffix != loser_suffix:
+        winner_key = _entry_key(entry1 if winner == 1 else entry2)
+        loser_key = _entry_key(loser_text)
+        print(
+            f"  [SUFFIX] conflict: '{winner_key}' and '{loser_key}' carry "
+            f"'{winner_suffix}' and '{loser_suffix}' - keeping "
+            f"'{winner_suffix}', not picking one",
+            file=sys.stderr)
+    elif not winner_suffix and loser_suffix:
+        base = _insert_field_text(base, "year_suffix", loser_suffix)
+        reason += f", copied year_suffix '{loser_suffix}' from loser"
+
     return base, reason, winner
 
 
@@ -321,6 +368,17 @@ _KNOWN_FIELDS = set(_SUBSTANTIVE_FIELDS) | {
     # journal is a different venue entirely (merge_entries picks the winner
     # on abstract-presence and importance, never on _SUBSTANTIVE_FIELDS).
     "venue_status",
+    # Item 3 F: barrier-stamped Chicago letter. Known to the over-greedy
+    # guard for the same reason as venue_status, but deliberately NOT
+    # substantive for the OPPOSITE reason: venue_status's job is done once
+    # the writers have read the domain bibs, so losing it in a merge costs
+    # nothing; losing year_suffix breaks a rendered References that prose
+    # already cites by letter (e.g. "2010a"). Rather than the
+    # union-into-a-different-identity risk _SUBSTANTIVE_FIELDS exists to
+    # avoid, merge_entries below carries it forward with its own explicit
+    # policy (unanimous -> keep; winner missing, loser has it -> copy up;
+    # they disagree -> warn and change nothing).
+    "year_suffix",
 }
 
 

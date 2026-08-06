@@ -1433,3 +1433,94 @@ class TestVenueStatusField:
         assert "International Conference" not in merged  # flagged field stripped
         assert "venue_status = {low-visibility}" in merged  # neighbor untouched
         assert "abstract" in merged.lower()  # another neighbor untouched
+
+
+class TestYearSuffixField:
+    """Item 3 F: unlike venue_status (item 3 D), whose job is already done
+    once the writers have read the domain bibs, losing year_suffix in a
+    merge breaks a rendered References that prose already cites by letter
+    (e.g. "2010a") - so this field needs a REAL merge policy, not
+    venue_status's "drop it, nothing depends on it" treatment."""
+
+    def test_year_suffix_is_a_known_field(self):
+        from dedupe_bib import _KNOWN_FIELDS, _SUBSTANTIVE_FIELDS
+        assert "year_suffix" in _KNOWN_FIELDS
+        assert "year_suffix" not in _SUBSTANTIVE_FIELDS
+
+    _WINNER = """@article{smith2020rich,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  journal = {Synthese},
+  doi = {10.1000/xyz123},
+  year = {2020},
+  abstract = {A real abstract, which is what makes this copy the winner.},
+  keywords = {data, High}
+}"""
+
+    _LOSER = """@article{smith2020thin,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  doi = {10.1000/xyz123},
+  year = {2020},
+  keywords = {data, Medium}
+}"""
+
+    def _run_dedupe(self, tmp_path, winner_text, loser_text, evidence_report=False):
+        """Real duplicates (same DOI, different citation keys) through
+        deduplicate_bib's DOI-based pass, mirroring
+        TestVenueStatusField.test_flagged_winner_keeps_its_field_and_
+        flagged_loser_does_not_donate."""
+        a = tmp_path / "literature-domain-1.bib"
+        b = tmp_path / "literature-domain-2.bib"
+        a.write_text(winner_text, encoding="utf-8")
+        b.write_text(loser_text, encoding="utf-8")
+        out = tmp_path / "literature-all.bib"
+        args = [sys.executable, str(SCRIPT_PATH), str(out), str(a), str(b)]
+        if evidence_report:
+            report = tmp_path / "evidence_report.json"
+            report.write_text(json.dumps({"attestations": {}}), encoding="utf-8")
+            args += ["--evidence-report", str(report)]
+        r = subprocess.run(args, capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        return r, out.read_text(encoding="utf-8")
+
+    def _sole_entry(self, merged_text):
+        from pybtex.database import parse_string
+        entries = parse_string(merged_text, "bibtex").entries
+        assert len(entries) == 1  # they really did merge
+        return list(entries.values())[0]
+
+    def test_unanimous_suffix_survives_merge(self, tmp_path):
+        winner = self._WINNER.replace(
+            "keywords = {data, High}",
+            "year_suffix = {a},\n  keywords = {data, High}")
+        loser = self._LOSER.replace(
+            "keywords = {data, Medium}",
+            "year_suffix = {a},\n  keywords = {data, Medium}")
+        _r, merged = self._run_dedupe(tmp_path, winner, loser)
+        surviving = self._sole_entry(merged)
+        assert surviving.fields.get("year_suffix") == "a"
+
+    def test_missing_winner_suffix_is_copied_from_agreeing_loser(self, tmp_path):
+        loser = self._LOSER.replace(
+            "keywords = {data, Medium}",
+            "year_suffix = {b},\n  keywords = {data, Medium}")
+        _r, merged = self._run_dedupe(tmp_path, self._WINNER, loser)
+        surviving = self._sole_entry(merged)
+        assert surviving.fields.get("year_suffix") == "b"
+
+    def test_conflicting_suffixes_warn_and_change_nothing(self, tmp_path):
+        # Exercised WITH --evidence-report so restamp_merged's re-stamp pass
+        # (which touches every surviving entry's text) is in the path too.
+        winner = self._WINNER.replace(
+            "keywords = {data, High}",
+            "year_suffix = {a},\n  keywords = {data, High}")
+        loser = self._LOSER.replace(
+            "keywords = {data, Medium}",
+            "year_suffix = {b},\n  keywords = {data, Medium}")
+        r, merged = self._run_dedupe(tmp_path, winner, loser, evidence_report=True)
+        assert "[SUFFIX] conflict" in r.stderr
+        assert "smith2020rich" in r.stderr and "smith2020thin" in r.stderr
+        assert "'a'" in r.stderr and "'b'" in r.stderr
+        surviving = self._sole_entry(merged)
+        assert surviving.fields.get("year_suffix") == "a"  # winner's, unpicked-not-guessed

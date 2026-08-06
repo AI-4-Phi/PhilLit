@@ -429,6 +429,30 @@ def _union_substantive_fields(winner, loser) -> None:
             winner.fields[f] = loser.fields[f]
 
 
+def _carry_year_suffix(winner, winner_key: str, loser, loser_key: str) -> None:
+    """Item 3 F, mirrored from dedupe_bib.merge_entries: this dedup pass
+    picks its winner by _substantive_field_count, a DIFFERENT criterion than
+    dedupe_bib's (abstract-then-importance), so the survivor here can be a
+    different copy than the one dedupe_bib kept - and this function's output
+    IS what format_entry renders into the delivered References. year_suffix
+    is deliberately excluded from _SUBSTANTIVE_FIELDS (same reason as
+    dedupe_bib's _KNOWN_FIELDS entry: unioning it there would be coupled to
+    no particular journal/identity check), so it needs this same explicit
+    unanimous / copy-up / conflict policy independently, not inherited from
+    the union above.
+    """
+    winner_suffix = _get_field(winner, "year_suffix").strip()
+    loser_suffix = _get_field(loser, "year_suffix").strip()
+    if winner_suffix and loser_suffix and winner_suffix != loser_suffix:
+        print(
+            f"  [SUFFIX] conflict: '{winner_key}' and '{loser_key}' carry "
+            f"'{winner_suffix}' and '{loser_suffix}' - keeping "
+            f"'{winner_suffix}', not picking one",
+            file=sys.stderr)
+    elif not winner_suffix and loser_suffix:
+        winner.fields["year_suffix"] = loser.fields["year_suffix"]
+
+
 def _remap_index(mapping: dict, old_key: str, new_key: str) -> None:
     """Repoint any dedup-index entries from old_key to new_key (winner swap)."""
     for k, v in list(mapping.items()):
@@ -899,6 +923,7 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
                 # New entry wins the pair; union the loser's substantive fields in.
                 _apply_cleaner_verdicts(entry, existing_entry)
                 _union_substantive_fields(entry, existing_entry)
+                _carry_year_suffix(entry, key, existing_entry, existing_key)
                 del cited[existing_key]
                 cited[key] = entry
                 _remap_index(seen_dois, existing_key, key)
@@ -914,6 +939,7 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
                 # Existing entry wins; union the loser's (new) substantive fields in.
                 _apply_cleaner_verdicts(existing_entry, entry)
                 _union_substantive_fields(existing_entry, entry)
+                _carry_year_suffix(existing_entry, existing_key, entry, key)
                 group_dois[existing_key] = merged_dois
                 if norm_doi:
                     # A DOI the loser carried now resolves to the surviving winner.
