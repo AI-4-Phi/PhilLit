@@ -805,6 +805,24 @@ git-add case trap). Its roadmap had no item-4 counterpart as of 2026-08-03.
 Batched into the mirror session (working sequence above — after item 3,
 before item 2), subject to its mirror-vs-fork decision.
 
+**Open that session with the SEP bibliography regex hang.** It is the only
+item in the mirror backlog that is a live, blocking defect on the service
+rather than a divergence: `engine/.claude/skills/philosophy-research/scripts/fetch_sep.py:67`
+still carries the catastrophically-backtracking pattern, and the service bills
+every run. A review that hits it burns up to arq's 90-minute `job_timeout`
+before the user is refunded — and `review_max_turns` does not bound it, since
+a subprocess wedged inside one Bash call consumes no turns.
+
+**Port the parser rewrite only.** The companion commit patches
+`resolve_context.py`, which that engine does not have (it predates the
+evidence-barrier work, so it also has no `evidence_barrier.py`,
+`year_suffix.py` or `venue_vetting.py`). The service also has a second call
+site this repo lacks in that form — `get_sep_context.py` imports
+`fetch_sep_article` directly — so both it and the researcher agent's Stage-1
+call are exposed. Written up for that session in the service's own
+`docs/known-issues/sep-bibliography-regex-hang.md` (**uncommitted there**,
+per the don't-touch-outside-the-mirror-session rule).
+
 ## Backlog pointers
 
 Other open items are tracked in their own known-issue docs — see
