@@ -805,7 +805,11 @@ def _rejected_span_surnames(review_text: str, m) -> list[str]:
         pm = _NON_INITIAL_PRECEDING_RE.search(head)
         if not pm:
             break
-        names.append(pm.group("conj_name") or pm.group("comma_name"))
+        # Possessive-stripped like every other captured name: the surname
+        # character class admits apostrophes, so "Nussbaum's and Sen (2010)"
+        # recovers "Nussbaum's", whose variants intersect no group.
+        names.append(_strip_possessive(
+            pm.group("conj_name") or pm.group("comma_name")))
         head = head[:pm.start()]
     names.reverse()
     names.append(_strip_possessive(m.group("surname")))

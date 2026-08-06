@@ -722,6 +722,34 @@ class TestFencedReferencesHeadingIsNotABoundary:
         assert "Stale, Entry" not in result
         assert "Smith (2020) argues that p." in result
 
+    def test_an_unterminated_fence_does_not_hide_the_real_heading(self):
+        # A REGRESSION the fence-awareness itself introduced, and not the
+        # harmless one it looks like. An unclosed fence hides every heading
+        # after it, so the scanner found nothing and the generator APPENDED a
+        # second References section beside the real one -- and handed the whole
+        # document, stale reference list included, to the matcher, where
+        # _sighted_letters reads the rendered "2010b." as a genuine mention and
+        # protects that entry for ever. That is the convergence failure the
+        # References strip exists to prevent, reached through unbalanced
+        # markdown. It also compounds: the fence stays unclosed in the output,
+        # so every operator re-run of Phase 6 step 4 appends one more section.
+        text = ('# Review\n\n```text\nunclosed example\n\n'
+                'Smith (2020) argues that p.\n\n'
+                '## References\n\nStale, Entry. 1999. "Gone."\n')
+        result = apply_references(text, '## References\n\nNew.\n')
+        assert result.count("## References") == 1
+        assert "Stale, Entry" not in result
+        assert "Smith (2020) argues that p." in result
+        assert generate_bibliography._strip_references_section(text).count(
+            "## References") == 0
+
+    def test_a_balanced_fence_never_reaches_the_fallback(self):
+        # The fallback fires ONLY when the strict pass found nothing AND ended
+        # inside a fence, so balanced input keeps the fence-aware answer. A
+        # fallback that fired unconditionally would restore the whole C1 bug.
+        assert generate_bibliography._strip_references_section(self.FENCED) \
+            == self.FENCED
+
     def test_the_generator_and_the_linter_share_one_scanner(self):
         # Not a copy - the object itself, per the repo's single-owner pattern.
         # Three sites read this boundary (two here, one in lint_md) and they
@@ -2310,3 +2338,17 @@ class TestRejectedMultiYearCitation:
             ("2006", False), ("2011", True)]
         assert generate_bibliography._continuation_years(", 2011) argues") == [
             ("2011", "")]
+
+
+class TestRecoveredNamesAreStrippedOfPossessives:
+    """The surname character class admits apostrophes, so a captured name
+    arrives with its possessive attached; every OTHER captured name in this
+    function is stripped, and the recovered ones were not."""
+
+    def test_a_possessive_leading_author_is_still_recovered(self):
+        # Ordinary prose: a possessive author list. The parser binds at the
+        # middle name and the guard rejects it, so Clark is a RECOVERED name --
+        # and it arrived as "Clark's", whose variants intersect no group.
+        got = generate_bibliography._unresolvable_mentions(
+            "Clark's, Menary's, and Sutton's (2010) accounts differ.")
+        assert [m["surname"] for m in got] == ["Clark", "Menary", "Sutton"]

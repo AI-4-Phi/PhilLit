@@ -275,22 +275,36 @@ def find_refs_heading(text: str) -> tuple[int, int] | None:
     loss). The invariant was already tested here and nowhere else, which is
     exactly how one component can hold the rule and another break it.
 
-    Known limit, on the keep side and therefore left open: an UNTERMINATED
-    fence hides every heading after it, so this returns None. The linter then
-    reports checked=False (nothing to resolve against) and the generator
-    APPENDS a second References section rather than replacing one. Neither
-    drops a work.
+    An UNTERMINATED fence would otherwise hide every heading after it and make
+    this return None, which is NOT the harmless outcome it looks like. The
+    generator would append a SECOND References section instead of replacing
+    the real one - and, worse, hand the whole document (stale reference list
+    included) to the matcher, where _sighted_letters reads the rendered
+    "2010b." as a genuine mention and protects that entry for ever. That is
+    the exact convergence failure the References strip exists to prevent,
+    reached through unbalanced markdown, and it compounds: the fence stays
+    unclosed in the output, so every operator re-run appends one more section.
+    So when the fence-aware pass ends INSIDE a fence having found nothing,
+    rescan ignoring fences. The fallback is reached only when the strict pass
+    finds no heading, so balanced input is byte-for-byte unaffected.
     """
-    offset = 0
-    in_fence = False
-    found = None
-    for line in text.splitlines(keepends=True):
-        stripped = line.lstrip()
-        if stripped.startswith("```") or stripped.startswith("~~~"):
-            in_fence = not in_fence
-        elif not in_fence and re.match(r"^## References\s*$", line):
-            found = (offset, offset + len(line))
-        offset += len(line)
+    def _scan(fence_aware: bool) -> tuple[tuple[int, int] | None, bool]:
+        offset = 0
+        in_fence = False
+        found = None
+        for line in text.splitlines(keepends=True):
+            stripped = line.lstrip()
+            if fence_aware and (stripped.startswith("```")
+                                or stripped.startswith("~~~")):
+                in_fence = not in_fence
+            elif not in_fence and re.match(r"^## References\s*$", line):
+                found = (offset, offset + len(line))
+            offset += len(line)
+        return found, in_fence
+
+    found, unclosed = _scan(True)
+    if found is None and unclosed:
+        found, _ = _scan(False)
     return found
 
 
