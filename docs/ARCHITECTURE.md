@@ -180,6 +180,8 @@ skills/literature-review/
     ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, stamp EVIDENCE-* tiers
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
+    ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, item 3 D)
+    ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, item 3 F)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
     ├── sanitize_bib.py                   # Strip engine-internal EVIDENCE-* tokens from delivered .bib
     ├── generate_bibliography.py          # Generate Chicago-style references
