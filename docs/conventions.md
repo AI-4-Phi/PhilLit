@@ -223,7 +223,7 @@ An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed).
 | With page numbers | (Author Year, pages) | (Fischer and Ravizza 1998, 31-45) |
 | Author as subject | Author (Year) argues... | Frankfurt (1971) argues... |
 | Two authors sharing a surname | (F. Author Year) — add the first initial | (G. Johnson 2024) vs. (R. Johnson 2024) |
-| One author, two works in one year | (Author Yeara) — add the entry's `year_suffix` letter | (Menary 2010a) vs. (Menary 2010b) |
+| One author, two works in one year | (Author Year+letter) — the entry's own `year_suffix` | (Menary 2010a) vs. (Menary 2010b) |
 
 **Same surname, same year, different people — always add the first initial.**
 This is Chicago's own rule, and in PhilLit it is load-bearing rather than
