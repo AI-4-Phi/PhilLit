@@ -334,10 +334,17 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         for ik, journal in venue_names.items():
             if venue_report["verdicts"].get(vv.normalize_venue_name(journal)):
                 venue_flags[ik] = vv.STATUS_LOW_VISIBILITY
+        # Inside the try, not after it: if venue_names is empty (no journal
+        # field anywhere), the loop above never touches venue_report, so a
+        # malformed (non-dict) return would otherwise reach an unguarded
+        # subscript below and fail the whole barrier (self-review finding,
+        # item 3 D). Keeping this assignment inside the safety boundary
+        # means ANY exception here -- however it arises -- lands in the
+        # except clause below instead.
+        venue_report["stamped"] = len(venue_flags)
     except Exception as exc:
         venue_flags = {}
-        venue_report = {"status": "error", "error": repr(exc)}
-    venue_report["stamped"] = len(venue_flags)
+        venue_report = {"status": "error", "error": repr(exc), "stamped": 0}
     report["venue_vetting"] = venue_report
 
     # Build final content in memory: context fields + stamp, then bookkeeping.

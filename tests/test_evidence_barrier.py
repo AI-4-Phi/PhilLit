@@ -1095,3 +1095,49 @@ def test_only_journal_bearing_entries_are_vetted(tmp_path, monkeypatch):
                         _fake_vet(flagged=[], seen=seen))
     assert evidence_barrier.execute(rd, 1) == 0
     assert seen == [["Synthese"]]   # raw journal names, deduped and sorted
+
+
+def test_non_dict_vet_venues_return_with_no_journals_never_fails_the_barrier(
+        tmp_path, monkeypatch):
+    """Regression pin for a self-review finding: when NO entry has a journal
+    field, the verdict-mapping loop never runs, so it never touches a
+    malformed `vet_venues` return -- the stamped-count assignment must be
+    inside the same try/except as everything else, or a non-dict return
+    reaches an unguarded subscript and fails the whole barrier."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    book_only = """@book{kuhn1962structure,
+  author = {Kuhn, Thomas S.},
+  title = {The Structure of Scientific Revolutions},
+  publisher = {University of Chicago Press},
+  year = {1962}
+}"""
+    _domain(rd, 1, book_only, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", lambda names: None)
+    assert evidence_barrier.execute(rd, 1) == 0          # NOT a failed run
+    report = _report(rd)
+    assert report["status"] in ("complete", "degraded")
+    assert report["venue_vetting"]["status"] == "error"
+    assert report["venue_vetting"]["stamped"] == 0
+
+
+def test_no_ambient_openalex_key_during_tests():
+    """Pins tests/conftest.py's session-scoped isolation fixture: item 3 D
+    put a real-network OpenAlex pass inside evidence_barrier.py, and the
+    barrier's subprocess-driven tests above (_run()) inherit the parent
+    environment verbatim, so a developer's real key must never be visible
+    to the suite -- it would otherwise spend real, metered OpenAlex budget
+    on every run. Tests that need the key still can via
+    monkeypatch.setenv(...); this only pins that nothing sets it ambiently.
+
+    Deliberately checked via a bound local, never a bare
+    `os.environ.get(...)` inside the assert: pytest's assertion rewriting
+    reprs every sub-expression on failure, and reprs `os.environ.get`'s
+    bound `__self__` as the WHOLE environment dict -- which on a real
+    developer machine holds several other live API keys. A failure here
+    must say the key leaked, not reprint every secret in the process.
+    """
+    import os
+    key_is_set = "OPENALEX_API_KEY" in os.environ
+    assert key_is_set is False, "OPENALEX_API_KEY is set in the test environment"

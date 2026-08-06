@@ -8,6 +8,7 @@ These tests validate:
 - Rate limiting and caching behavior
 """
 
+import os
 import sys
 from pathlib import Path
 
@@ -160,6 +161,25 @@ def mock_crossref_response():
 # =============================================================================
 # Isolation Fixtures
 # =============================================================================
+
+@pytest.fixture(autouse=True, scope="session")
+def _no_ambient_openalex_key():
+    """Strip OPENALEX_API_KEY from the environment for the whole session.
+
+    Item 3 D (venue vetting) added a real-network OpenAlex pass inside
+    evidence_barrier.py, gated on this key. Several barrier tests run the
+    script via subprocess and inherit the parent environment verbatim, so a
+    developer's real key would otherwise make the suite spend real, metered
+    OpenAlex budget ($1/day on a keyed account) every time it runs --
+    silently, since venue-vetting failures never fail a test. Tests that
+    need the key set it themselves with monkeypatch.setenv, which still
+    works: this fixture only removes what was ambient before any test ran.
+    """
+    saved = os.environ.pop("OPENALEX_API_KEY", None)
+    yield
+    if saved is not None:
+        os.environ["OPENALEX_API_KEY"] = saved
+
 
 @pytest.fixture(autouse=True)
 def isolated_phillit_dirs(tmp_path, monkeypatch):
