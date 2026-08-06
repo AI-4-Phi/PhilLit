@@ -587,8 +587,17 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         # A bare assigned-count cannot distinguish "no same-author-same-year
         # groups existed" from "a group existed and deliberately got no
         # letters", which is the one case an operator needs to look at. The
-        # two counts map 1:1 onto the report keys that name the groups.
+        # counts map 1:1 onto the report keys that name the groups.
+        #
+        # `status` first, and for the same reason the venue summary beside it
+        # carries one: WITHOUT it, an assignment that RAISED prints exactly
+        # the zeros a quiet run prints, so the loudest failure this pass has
+        # is the one an operator cannot see. The gate policy forbids a silent
+        # failure whichever direction the gate fails in, and this pass fails
+        # open by design (letters are lost, the run survives) -- which makes
+        # the printed line the only place the loss surfaces at all.
         "year_suffixes": {
+            "status": (report.get("year_suffixes") or {}).get("status", "not-run"),
             "assigned": (report.get("year_suffixes") or {}).get("assigned", 0),
             "overflow": len((report.get("year_suffixes") or {}).get("overflow") or []),
             "suppressed": len((report.get("year_suffixes") or {}).get("suppressed") or []),

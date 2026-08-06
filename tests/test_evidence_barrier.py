@@ -1434,7 +1434,44 @@ def test_console_summary_distinguishes_unlettered_groups(tmp_path, capsys):
     assert evidence_barrier.execute(rd, 1) == 0
     summary = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
     assert summary["year_suffixes"] == {
-        "assigned": 0, "overflow": 0, "suppressed": 1}
+        "status": "complete", "assigned": 0, "overflow": 0, "suppressed": 1}
+
+
+def test_console_summary_distinguishes_a_raised_assignment(tmp_path, capsys,
+                                                           monkeypatch):
+    """Item 3 F second opinion: without `status`, an assignment that RAISED
+    printed exactly the zeros a quiet run prints -- so the pass's loudest
+    failure was the one an operator could not see, while the venue summary
+    right beside it has always carried a status. Both directions are
+    asserted, and the two summaries compared: deleting the key collapses
+    them into each other and this fails.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    def boom(entries):
+        raise RuntimeError("assignment blew up")
+
+    # A quiet run: KUHN is one work in its year, so nothing is assigned,
+    # suppressed or overflowed and every count is zero.
+    quiet_dir = tmp_path / "quiet"
+    _domain(quiet_dir, 1, KUHN, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(quiet_dir, 1) == 0
+    quiet = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert quiet["year_suffixes"]["status"] == "complete"
+
+    raised_dir = tmp_path / "raised"
+    _domain(raised_dir, 1, KUHN, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(evidence_barrier.ys, "assign_suffixes", boom)
+    assert evidence_barrier.execute(raised_dir, 1) == 0     # fails OPEN, as designed
+    raised = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert raised["year_suffixes"]["status"] == "error"
+
+    # The counts alone are identical -- that IS the finding, and it is what
+    # makes `status` the only discriminator on the printed line.
+    assert {k: v for k, v in quiet["year_suffixes"].items() if k != "status"} == \
+           {k: v for k, v in raised["year_suffixes"].items() if k != "status"}
+    assert quiet["year_suffixes"] != raised["year_suffixes"]
 
 
 def test_both_optional_passes_stamp_together(tmp_path, monkeypatch):
