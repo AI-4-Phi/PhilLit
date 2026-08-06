@@ -13,15 +13,26 @@ delivered entries carry online-first years, see item 3 K; remediation
 decision pending); (3) item 3's residuals — **A, B, and E all DONE
 2026-08-05** (A's dedup fix, B's post-check + matcher-side transliteration,
 E's instance-based collision resolution); **C closed-as-narrowed 2026-08-05**
-(ledger write-protection) and **D BUILT 2026-08-06** (OpenAlex venue-status
-flag on low-visibility journals, plus the researcher/writer prompt rules);
-F last, now carrying
-five riders; (3b) **NEW 2026-08-05: OpenAlex began metering the API** —
+(ledger write-protection); **D BUILT 2026-08-06** (OpenAlex venue-status
+flag on low-visibility journals, plus the researcher/writer/planner prompt
+rules) and **CLOSED the same day** — whole-branch review verdict "safe to
+consider done", its 3 Important + 4 Minor findings all fixed; and **F BUILT
+2026-08-06** — all seven tasks, one Critical found and fixed in review. **F's
+live run is the one thing outstanding**, carrying five riders; (3b) **NEW
+2026-08-05: OpenAlex began metering the API** —
 **key support BUILT the same day** (`OPENALEX_API_KEY`, optional; plus
 fail-fast on budget exhaustion, which was costing 1–2.4 h of dead sleeping
 per review), see `docs/known-issues/openalex-metering-2026-08-05.md`. F's
 live run — including D's writer-compliance rider and D's own live smoke
-test — needs a working key in the environment; (4) ONE
+test — needs a working key in the environment. **Re-diagnosed 2026-08-06: the
+key is not stale or over-budget, it is UNREGISTERED.** OpenAlex answers
+`{"error":"Invalid or missing API key","message":"API key not found"}` under
+every documented auth mechanism (query parameter, `Bearer` header, `api_key`
+header) while the same URL unkeyed returns 200, and `~/.api_keys` and the shell
+profile hold the same value. A new key from `openalex.org/settings/api` is the
+only fix — see the write-up's "2026-08-06" section. Note riders 1-3 and F's own
+check need no key at all, so an F-only run is possible while riders 4-5 wait;
+(4) ONE
 batched phillit-service mirror session — the item-4 `bib_identity` port,
 the item-1 evidence-tier port (service item 20), the item-3-E
 collision-aware-matching port (Tasks 1-4 plus the final-review fix-wave,
@@ -350,8 +361,12 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue C.
 - **D — no venue-quality vetting: BUILT 2026-08-06**
   (`skills/literature-review/scripts/venue_vetting.py`, wired into the
-  evidence barrier; prompt rules in `agents/synthesis-writer.md` and
-  `agents/domain-literature-researcher.md`). The filed mechanism does not
+  evidence barrier; prompt rules in `agents/synthesis-writer.md`,
+  `agents/domain-literature-researcher.md` **and `agents/synthesis-planner.md`**
+  — the planner rule was added during D's own task 5 and reverses the plan's
+  "writer and researcher only" decision; it is the right call, since the
+  planner allocates section weight and would otherwise build a section around
+  a flagged venue before the writer ever sees the caveat). The filed mechanism does not
   work. DOAJ lists open-access journals only, so DOAJ-absence carries no
   signal for philosophy's subscription flagships (`Mind`, `Noûs`,
   `Philosophical Review` are all `is_in_doaj: false`), and
@@ -506,28 +521,61 @@ group has entries, so a listed work is confirmed uncited.
   Self-contained in `generate_bibliography.py`, no agent-prompt change, no
   live run — natural companion to B's every-citation-resolves check in
   `lint_md.py`.
-- **F — no Chicago a/b disambiguation**: scope is collisions where the
-  works have the **same author**, which E cannot touch — nothing in the
-  citation distinguishes them, so suffixes are the only fix. Flagship case:
+- **F — Chicago a/b disambiguation — BUILT 2026-08-06, live run outstanding.**
+  Seven tasks. Letters are assigned at the evidence barrier over **work
+  identity** (not entry identity), into a dedicated `year_suffix` field, once
+  over the union of every domain bibliography — so the same work carries the
+  same letter everywhere. A group is lettered whole or **suppressed whole**;
+  a partially lettered group is never produced, and both overflow (>26 works)
+  and suppressed groups are named in the barrier's report and its console
+  summary rather than vanishing silently. The References render the letter;
+  `generate_bibliography` uses it to resolve a citation to one member of a
+  same-author-same-year group, which is the token item 3 E structurally
+  lacked. Dedup, the sanitizer, the evidence check and the linter all carry
+  the field through, pinned end-to-end by `tests/test_pipeline_year_suffix.py`
+  running the real Phase 6 command-line sequence.
+
+  **The keep-all rule is the load-bearing part.** A letter may *narrow* a
+  candidate set but never delete a work the prose cites. Review found one
+  Critical of exactly that shape — eight prose forms (`(2010a, b)`,
+  `(2010a & 2010b)`, `The 2010b volume`, an uppercase `2010B`, a
+  second-position cite, and others) where a citation that failed to parse was
+  indistinguishable from "not cited", so a sibling citation that *did* parse
+  licensed a drop. Fixed by a **letter-sighting map**: a raw-prose scan for
+  year-plus-letter tokens, done with no citation parsing at all, so a member
+  is droppable only if its own `(year, letter)` appears nowhere in the
+  document. Two accepted costs, both measured and pinned rather than assumed:
+  the map is keyed by year, so two lettered groups sharing a year disable each
+  other's drops (a phantom survives — E's old behaviour, not a regression);
+  and a letterless cite the parser also rejects has nothing to sight, which
+  this mechanism cannot close.
+
+  What remains is **the live headless run** — F touches
+  `agents/synthesis-writer.md` and `docs/conventions.md`, so writer compliance
+  has to be observed, not assumed. It carries the five riders listed below.
+
+  Original problem statement, kept because the flagship case is the acceptance
+  test: scope is collisions where the works have the **same author**, which E
+  cannot touch — nothing in the citation distinguishes them, so suffixes are
+  the only fix. Flagship case:
   `extended-mind-cognitive-offloading` cites `Menary (2006, 2010, 2013)`
   while References lists **three** distinct solo-author Menary 2010 works
   (two chapters + the edited volume) — unresolvable for a reader, and two
   of the three are phantoms. Separately, 8/32 reviews contain prose cites
   like `Wiens (2015a; 2015b)` while **zero** reference lists carry a
   lettered entry, so the citation resolves to nothing (the mirror image of
-  B). Writers are already trying to disambiguate; the renderer never emits
-  suffixes. The information is lost at write time, so suffixes must be
-  assigned on the merged bib *before* Phase 5, into a dedicated field —
-  **not** `year`, whose `\d{4}` guards in `check_evidence.py` and
-  `resolve_context.py` would reject `2019a`. Touches `conventions.md` and
-  `agents/synthesis-writer.md`, so it needs a live headless run to confirm
-  writer compliance before the port.
+  B). Writers were already trying to disambiguate; the renderer never emitted
+  suffixes. The information is lost at write time, so suffixes are assigned on
+  the merged bib *before* Phase 5, into a dedicated field — **not** `year`,
+  whose `\d{4}` guards in `check_evidence.py` and `resolve_context.py` would
+  reject `2019a`.
 
-Suggested order: A+B first (small, testable, deterministic), then E (same
+Order taken: A+B first (small, testable, deterministic), then E (same
 shape, pairs with B) — **A, B, C and E are all FIXED/CLOSED as of
 2026-08-05** (C closed-as-narrowed: write-protect + document) — then D,
-**BUILT 2026-08-06** (mechanical vetting pass plus prompt rules). F last: it
-needs a live run, and that run should not
+**BUILT and CLOSED 2026-08-06** (mechanical vetting pass plus prompt rules),
+then **F, BUILT 2026-08-06**. All six sub-items are now built; **the only open
+work in item 3 is F's live run**, and that run should not
 be entangled with the evidence-tier A/B experiment. Note the live run now
 carries **five riders**: the year-coverage measurement (item 3 K —
 measurement script ready at
@@ -537,12 +585,27 @@ two-Johnsons writer note (**DONE 2026-08-05** — `docs/conventions.md` +
 sentence-adverb guard fix (**DONE 2026-08-05** — E's
 `_NON_INITIAL_PRECEDING_RE` no longer rejects a citation preceded by a
 sentence-initial transition word), D's writer-compliance check, and D's own
-live smoke test — the last two now that D is built.
+live smoke test — the last two now that D is built. **Riders 4 and 5 need a
+working `OPENALEX_API_KEY`; riders 1-3 and F's own check (are letters used in
+the prose, and does the rendered References carry them?) need none**, so an
+F-only run is possible while the key is sorted — record which riders it
+covered. Rider 5 also absorbs D's task-2b question: the sanitized
+`filter=display_name.search:` query's live recall on **punctuation-bearing**
+venue names is unmeasured (the offline validation used comma-free names only,
+and `:` / `|` are unsanitized in `filter=` values).
 
 Related out-of-scope find (2026-07-28, recorded in the same write-up): 5/32
 reviews carry near-identical *undeduped* entries surviving on diacritic
 variance (`Milliere`/`Millière`) and arXiv-vs-journal pairs. Overlaps A but
-is a distinct failure; not folded into A's scope.
+is a distinct failure; not folded into A's scope. **Measured wider 2026-08-06**
+while validating F: across 35 delivered reviews there are 117 same-surname,
+same-year collision groups in the *final merged* bibliographies, and **30 of
+them (25.6%) contain an undeduped duplicate pair** — same DOI
+(`wiedenbrug2018citizens` / `wiedenbrug2018what`) or same title with no DOI
+(`irving2018ai` / `irving2018safety`). So the residual is broader than the
+diacritic cases alone. It is not currently harmful — F's letter filter simply
+switches itself off for those groups, which is the safe direction — but it is
+the measurement to act on if A is ever revisited.
 Cross-repo: fixes land here or in the service's vendored engine and are
 cherry-picked to the other side — same path as the metadata-cleaner year
 fix (plugin 0.2.6 ↔ service `7369880`). The service tracks the mirror item
@@ -722,15 +785,30 @@ Other open items are tracked in their own known-issue docs — see
 `philpapers-rate-limiting.md` (re-scoped to Brave quota), and the
 local-only `workflow-findings-softmax-review.md`).
 
+**NEW 2026-08-06 — `json-unicode-escapes-leak-into-bibs.md`.** No script in
+`skills/` or `hooks/` passes `ensure_ascii=False`, so search-result JSON
+carries `\uXXXX` escapes and an agent that copies a venue name as text rather
+than parsing it writes the escape into the bib. Three confirmed instances,
+one of them in a **tracked, publicly-linked** example review. Found while
+measuring LaTeX-escaped venue names for item 3 D; unrelated to D itself.
+
 **If resuming an interrupted session, check the local-only
 `docs/known-issues/doc-rot-audit-2026-08-02.md` first** — it carries the
 agreed sequence with live checkboxes (extended + amended 2026-08-05).
 Everything through the v0.3.1 push (steps 1–6b) is done; the 27-wrong-years
-audit is done, and item 3's **A, B, C, D and E** are all done (A/B/C/E
-2026-08-05, C closed-as-narrowed; D 2026-08-06). What remains, in order:
-**item 3 F** (needs its own plan + a live run carrying five riders,
-including D's writer-compliance check and D's own live smoke test), the
-batched mirror session (with its
-mirror-vs-fork decision), then item 2. **Next session's scope: F — i.e.
-finish item 3.** Note **v0.3.4 is committed but not pushed**; v0.3.1–v0.3.3
-are (check with `git log origin/main..HEAD` rather than trusting a count here).
+audit is done, and item 3's **A, B, C, D, E and F are all BUILT** (A/B/C/E
+2026-08-05, C closed-as-narrowed; D and F 2026-08-06, each with a
+whole-branch review and fix wave). What remains, in order: **F's live
+headless run** — the last open piece of item 3, and the only one that needs
+anything outside this repo — then the batched mirror session (with its
+mirror-vs-fork decision), then item 2.
+
+**Next session's scope: F's live run.** Riders 1–3 and F's own check need no
+API key; riders 4–5 (D's writer compliance, D's live smoke test) need a
+**new** OpenAlex key, since the existing one is unregistered rather than
+merely stale.
+
+Note **nothing since v0.3.1 has been pushed**: v0.3.4 was committed but not
+pushed, and D and F have had **no version bump at all** — decide the release
+number at push time (check `git log origin/main..HEAD` rather than trusting a
+count here).
