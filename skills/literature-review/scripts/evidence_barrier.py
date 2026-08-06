@@ -515,7 +515,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # means it can no longer matter even if that ever changes.
             status = venue_flags.get((i, key))
             if status:
-                chunk = _stamp_optional_field(chunk, "venue_status", status)
+                # vv is never None here: `status` is truthy only if
+                # venue_flags was populated, which happens only past the
+                # `if vv is None: raise` guard. (_DERIVED_FIELD_RE above
+                # must keep the literal -- it is built at import time, when
+                # vv may legitimately be None.)
+                chunk = _stamp_optional_field(chunk, vv.VENUE_STATUS_FIELD, status)
             letter = suffix_map.get((i, key))
             if letter:
                 chunk = _stamp_optional_field(chunk, ys.SUFFIX_FIELD, letter)
