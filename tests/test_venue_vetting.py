@@ -15,6 +15,19 @@ sys.path.insert(0, str(SCRIPTS))
 import venue_vetting as vv
 
 
+@pytest.fixture(autouse=True)
+def _no_real_rate_limiting(monkeypatch):
+    # lookup_venue() calls get_limiter("openalex").wait(), which is a real
+    # file-locked, wall-clock rate limiter (0.11s/request). Left unpatched,
+    # any test making several sequential lookups sleeps for real time --
+    # forbidden by this suite's test discipline. The return value is unused
+    # by lookup_venue, so a no-op stand-in is safe everywhere.
+    class _NoWaitLimiter:
+        def wait(self):
+            return 0.0
+    monkeypatch.setattr(vv, "get_limiter", lambda *a, **k: _NoWaitLimiter())
+
+
 def hit(name, h, core, doaj, **kw):
     return {"display_name": name, "alternate_titles": kw.get("alt", []),
             "is_core": core, "is_in_doaj": doaj,
@@ -107,6 +120,72 @@ class TestRule:
         assert "flagged" not in rec  # the rule is applied at read time
 
 
+class TestTriStateSignals:
+    """Item 3 D hardening: a missing/null/malformed field must never read as
+    affirmative "non-core" / "non-DOAJ" evidence -- only an exact `False`
+    (or an exact int h_index) may trigger the rule."""
+
+    def test_missing_is_core_not_flagged(self):
+        rec = {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+               "is_in_doaj": False, "h_index": 2}
+        assert vv.is_flagged(rec) is False
+
+    def test_null_is_in_doaj_not_flagged(self):
+        rec = {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+               "is_core": False, "is_in_doaj": None, "h_index": 2}
+        assert vv.is_flagged(rec) is False
+
+    def test_string_false_for_is_core_not_flagged(self):
+        # bool("false") is True -- a truthy-but-wrong-type value must not
+        # count as the exact boolean False the rule requires.
+        rec = {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+               "is_core": "false", "is_in_doaj": False, "h_index": 2}
+        assert vv.is_flagged(rec) is False
+
+    def test_string_false_for_is_in_doaj_not_flagged(self):
+        rec = {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+               "is_core": False, "is_in_doaj": "false", "h_index": 2}
+        assert vv.is_flagged(rec) is False
+
+    def test_bool_h_index_not_flagged(self):
+        # isinstance(True, int) is True in Python -- must be excluded explicitly.
+        rec = {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+               "is_core": False, "is_in_doaj": False, "h_index": True}
+        assert vv.is_flagged(rec) is False
+
+    def test_non_numeric_h_index_not_flagged(self):
+        rec = {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+               "is_core": False, "is_in_doaj": False, "h_index": "2"}
+        assert vv.is_flagged(rec) is False
+
+    def test_is_flagged_never_raises_on_malformed_record(self):
+        for bad in ["a string", 42, ["list"], object()]:
+            assert vv.is_flagged(bad) is False
+
+    def test_record_from_hits_stores_raw_booleans(self):
+        # A hit missing "is_core" entirely (not via the hit() helper, which
+        # always sets a literal bool) must round-trip as None, not False.
+        raw_hit = {"display_name": "Sparse Journal",
+                   "summary_stats": {"h_index": 2}}
+        rec = vv.record_from_hits([raw_hit])
+        assert rec["is_core"] is None
+        assert rec["is_in_doaj"] is None
+        assert vv.is_flagged(rec) is False
+
+    def test_malformed_cached_record_reads_as_miss(self, tmp_path, monkeypatch):
+        import search_cache
+        monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path)
+        # Right schema_version, right top-level shape, but a string h_index --
+        # cache_get must validate the record's SHAPE, not just schema_version.
+        vv.cache_put("Malformed", {
+            "schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+            "matched_name": "Malformed", "h_index": "high",
+            "is_core": False, "is_in_doaj": False, "works_count": 1,
+            "fetched_at": time.time(),
+        })
+        assert vv.cache_get("Malformed") is None
+
+
 class TestCache:
     def test_roundtrip(self, tmp_path, monkeypatch):
         import search_cache
@@ -143,6 +222,44 @@ class TestCache:
         ten_days_ago = time.time() - 10 * 24 * 3600
         os.utime(cache_file, (ten_days_ago, ten_days_ago))
         assert vv.cache_get("small journal") == rec
+
+    def test_flagged_ttl_is_45_days(self):
+        assert vv.FLAGGED_CACHE_TTL_SECONDS == 45 * 24 * 3600
+
+    def test_stale_flagged_record_reads_as_miss(self, tmp_path, monkeypatch):
+        # A stale CLEAR verdict just costs a miss; a stale FLAG keeps
+        # discrediting a venue that may since have joined DOAJ, gone core,
+        # or grown past the threshold -- so flagged records get the shorter
+        # asymmetric TTL, checked against the record's own fetched_at, not
+        # the cache file's mtime.
+        import search_cache
+        monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path)
+        old = time.time() - (46 * 24 * 3600)
+        rec = vv.record_from_hits([hit("Small Journal", 2, False, False)])
+        rec["fetched_at"] = old
+        vv.cache_put("Small Journal", rec)
+        assert vv.is_flagged(rec) is True  # sanity: this record IS a flag
+        assert vv.cache_get("small journal") is None
+
+    def test_stale_clear_record_still_a_hit(self, tmp_path, monkeypatch):
+        import search_cache
+        monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path)
+        old = time.time() - (46 * 24 * 3600)
+        rec = vv.record_from_hits([hit("Synthese", 164, True, False)])  # clear: is_core
+        rec["fetched_at"] = old
+        vv.cache_put("Synthese", rec)
+        assert vv.is_flagged(rec) is False  # sanity: this record is clear
+        assert vv.cache_get("synthese") == rec
+
+    def test_flagged_record_with_no_fetched_at_reads_as_miss(self, tmp_path, monkeypatch):
+        # No usable fetched_at -> treated as expired for the flagged case:
+        # fail toward re-checking, never toward keeping a stale discredit.
+        import search_cache
+        monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path)
+        rec = vv.record_from_hits([hit("Small Journal", 2, False, False)])
+        del rec["fetched_at"]
+        vv.cache_put("Small Journal", rec)
+        assert vv.cache_get("small journal") is None
 
 
 class FakeResponse:
@@ -213,6 +330,15 @@ class TestLookupVenue:
         monkeypatch.setattr(vv.requests, "get", once)
         vv.lookup_venue("Whatever", {"api_key": "x"})
         assert len(calls) == 1  # one attempt, fail open -- never a backoff loop
+
+    def test_per_page_is_200(self, monkeypatch):
+        captured = {}
+        def responder(*a, **k):
+            captured.update(k["params"])
+            return FakeResponse(payload={"results": []})
+        monkeypatch.setattr(vv.requests, "get", responder)
+        vv.lookup_venue("Whatever", {"api_key": "x"})
+        assert captured["per_page"] == 200
 
 
 class TestVetVenues:
@@ -290,3 +416,209 @@ class TestVetVenues:
         result = vv.vet_venues([f"Journal {i}" for i in range(5)])
         assert result["looked_up"] == 2
         assert result["skipped_cap"] == 3  # reported, never silent
+
+
+class TestRawNameQuery:
+    """Item 3 D hardening: query OpenAlex with the RAW name (the validated
+    measurement queried raw names, and punctuation-stripping before the
+    query changes what OpenAlex's fuzzy search ranks), while the cache key
+    and exact-match target stay normalized."""
+
+    def test_queries_with_raw_not_normalized_name(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        captured = {}
+        def responder(*a, **k):
+            captured["filter"] = k["params"]["filter"]
+            return FakeResponse(payload={"results": []})
+        monkeypatch.setattr(vv.requests, "get", responder)
+        vv.vet_venues(["The Journal, Of Ratio!"])
+        assert captured["filter"] == "display_name.search:The Journal, Of Ratio!"
+
+    def test_differently_cased_raw_name_is_cache_hit(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        payload = {"results": [hit("Small Journal", 2, False, False)]}
+        def counted(*a, **k):
+            calls.append(k["params"]["filter"])
+            return FakeResponse(payload=payload)
+        monkeypatch.setattr(vv.requests, "get", counted)
+        first = vv.vet_venues(["small journal"])
+        second = vv.vet_venues(["SMALL JOURNAL"])
+        assert len(calls) == 1  # one distinct normalized key -- one network call
+        assert calls[0] == "display_name.search:small journal"
+        assert first["flagged"] == ["small journal"]
+        assert second["cache_hits"] == 1 and second["looked_up"] == 0
+        assert second["flagged"] == ["small journal"]
+
+    def test_representative_raw_name_is_first_after_sort(self, monkeypatch, isolated_cache):
+        # Both inputs normalize to "small journal"; sorted() over the raw
+        # inputs picks "SMALL JOURNAL" (capitals sort before lowercase in
+        # ASCII) as the deterministic representative queried.
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        captured = {}
+        def responder(*a, **k):
+            captured["filter"] = k["params"]["filter"]
+            return FakeResponse(payload={"results": []})
+        monkeypatch.setattr(vv.requests, "get", responder)
+        vv.vet_venues(["small journal", "SMALL JOURNAL"])
+        assert captured["filter"] == "display_name.search:SMALL JOURNAL"
+
+
+class TestHonestStatusAndErrors:
+    """Item 3 D hardening: "complete" must mean complete. A pass that errors
+    out or hits the lookup cap must say so, and must not silently drop
+    verdicts it already resolved."""
+
+    def test_all_errors_status_partial(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(status_code=500))
+        result = vv.vet_venues(["A Journal", "B Journal"])
+        assert result["status"] == "partial"
+        assert result["lookup_errors"] == 2
+        assert result["errors"] == ["a journal", "b journal"]
+        assert result["flagged"] == []
+
+    def test_one_success_then_error_survives(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        def responder(*a, **k):
+            if "aa journal" in k["params"]["filter"].lower():
+                return FakeResponse(payload={"results": [hit("AA Journal", 2, False, False)]})
+            return FakeResponse(status_code=500)
+        monkeypatch.setattr(vv.requests, "get", responder)
+        result = vv.vet_venues(["AA Journal", "ZZ Journal"])  # sorted: aa before zz
+        assert result["flagged"] == ["aa journal"]
+        assert result["status"] == "partial"
+        assert result["lookup_errors"] == 1
+        assert result["errors"] == ["zz journal"]
+        assert result["resolved"] == 1
+        assert result["unresolved"] == 0
+
+    def test_budget_exhaustion_increments_looked_up(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        def responder(*a, **k):
+            if "aa journal" in k["params"]["filter"].lower():
+                return FakeResponse(payload={"results": [hit("AA Journal", 2, False, False)]})
+            return FakeResponse(status_code=429, headers={"Retry-After": "81471"},
+                                 text="insufficient budget")
+        monkeypatch.setattr(vv.requests, "get", responder)
+        result = vv.vet_venues(["AA Journal", "ZZ Journal"])
+        assert result["flagged"] == ["aa journal"]  # earlier flag survives
+        assert result["looked_up"] == 2  # the exhausting call counts too
+        assert result["status"] == "budget_exhausted"
+
+    def test_capped_names_reported(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv, "MAX_LOOKUPS_PER_RUN", 2)
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload={"results": []}))
+        result = vv.vet_venues([f"Journal {i}" for i in range(5)])
+        assert result["skipped_cap"] == 3
+        assert len(result["capped"]) == 3
+        assert set(result["capped"]) == {"journal 2", "journal 3", "journal 4"}
+        assert result["status"] == "partial"
+        assert "cap" in result["reason"]
+
+    def test_unresolved_venue_counted(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload={"results": []}))
+        result = vv.vet_venues(["Nonexistent Journal"])
+        assert result["resolved"] == 0
+        assert result["unresolved"] == 1
+        assert result["status"] == "complete"
+
+    def test_all_keys_present_even_on_clean_pass(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload={"results": []}))
+        result = vv.vet_venues(["Some Journal"])
+        for key in ("lookup_errors", "errors", "capped", "unresolved", "resolved"):
+            assert key in result
+        assert result["lookup_errors"] == 0
+        assert result["errors"] == []
+        assert result["capped"] == []
+
+    def test_ok_outcome_with_no_record_never_raises(self, monkeypatch, isolated_cache):
+        # Defensive: lookup_venue's contract never pairs "ok" with a None
+        # record, but vet_venues must not crash even if a future change to
+        # lookup_venue broke that contract -- it must be treated as an
+        # unresolved lookup, same as an "error" outcome.
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv, "lookup_venue", lambda name, params: (None, "ok"))
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "partial"
+        assert result["lookup_errors"] == 1
+        assert result["flagged"] == []
+
+
+class TestTimeBounds:
+    """Item 3 D hardening: 80 cold names at a 30s timeout is 40 minutes
+    inside the workflow's slowest step -- bound both the error streak and
+    the wall-clock time a pass may spend on network lookups."""
+
+    def test_constants(self):
+        assert vv.MAX_CONSECUTIVE_ERRORS == 3
+        assert vv.PASS_DEADLINE_SECONDS == 120.0
+
+    def test_three_consecutive_errors_stop_pass(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        def responder(*a, **k):
+            calls.append(1)
+            return FakeResponse(status_code=500)
+        monkeypatch.setattr(vv.requests, "get", responder)
+        result = vv.vet_venues(["01 err", "02 err", "03 err", "04 never"])
+        assert len(calls) == 3  # stops before the fourth request
+        assert result["status"] == "partial"
+        assert result["lookup_errors"] == 3
+
+    def test_success_between_errors_resets_counter(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        names = ["01 err", "02 err", "03 ok", "04 err", "05 err", "06 err", "07 never"]
+        calls = []
+        def responder(*a, **k):
+            filt = k["params"]["filter"]
+            calls.append(filt)
+            if "03 ok" in filt:
+                return FakeResponse(payload={"results": [hit("03 ok", 2, False, False)]})
+            return FakeResponse(status_code=500)
+        monkeypatch.setattr(vv.requests, "get", responder)
+        result = vv.vet_venues(names)
+        # 01, 02 (errors, streak=2), 03 (success, resets streak), 04, 05, 06
+        # (errors, streak reaches 3 again) -- stops before 07.
+        assert len(calls) == 6
+        assert all("07 never" not in c for c in calls)
+        assert result["status"] == "partial"
+        assert result["flagged"] == ["03 ok"]  # the earlier success survives
+
+    def test_deadline_stops_further_lookups(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        # First call captures the deadline (t=0 -> deadline=120). The next
+        # reads (one per venue, before each network lookup) all land past it.
+        clock = iter([0.0, 1.0] + [vv.PASS_DEADLINE_SECONDS + 1] * 10)
+        monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock))
+        result = vv.vet_venues(["Journal A", "Journal B", "Journal C"])
+        assert len(calls) == 1  # only the first venue's lookup happened before the deadline
+        assert result["capped"] == ["journal b", "journal c"]
+        assert result["skipped_cap"] == 2
+        assert result["status"] == "partial"
+        assert "deadline" in result["reason"]  # distinguishable from a lookup-cap stop
+
+    def test_cache_hits_do_not_count_against_deadline(self, monkeypatch, isolated_cache):
+        # Populate the cache for one venue via a real lookup, then re-run
+        # with the deadline already blown -- the cache hit must still be
+        # served (cache hits do not count toward the deadline check).
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        payload = {"results": [hit("Small Journal", 2, False, False)]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        vv.vet_venues(["Small Journal"])
+
+        calls = []
+        monkeypatch.setattr(vv.requests, "get",
+                             lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
+        clock = iter([0.0] + [vv.PASS_DEADLINE_SECONDS + 1] * 10)
+        monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock))
+        result = vv.vet_venues(["Small Journal"])
+        assert calls == []  # no network call -- served from cache
+        assert result["cache_hits"] == 1
+        assert result["flagged"] == ["small journal"]
