@@ -238,6 +238,11 @@ BRAVE_API_KEY        # Required for SEP/PhilPapers discovery
 CROSSREF_MAILTO      # Required for CrossRef polite pool
 S2_API_KEY           # Recommended for Semantic Scholar
 OPENALEX_EMAIL       # Recommended for OpenAlex polite pool
+OPENALEX_API_KEY     # Optional: OpenAlex meters by daily spend, and one review
+                     # costs a quarter to a half of the unkeyed $0.10/day. Only
+                     # needed above ~4 reviews/day; free at
+                     # https://openalex.org/settings/api. On exhaustion PhilLit
+                     # says so and continues without OpenAlex.
 ```
 
 Check setup with:

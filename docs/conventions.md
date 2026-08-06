@@ -209,10 +209,17 @@ year* in the prose, so two different people who share a surname and a year are
 indistinguishable to the renderer unless the prose carries an initial. Given a
 bare `Johnson (2024)` the renderer cannot tell which work was cited, so it
 keeps **both** in the reference list and warns — meaning a work you never
-cited is listed as if you had. Writing `G. Johnson (2024)` resolves it. The
-same applies to a work cited alongside a same-surname co-author: prefer the
-form that names the second author (`Muldoon and Wu 2023`) over `Muldoon et
-al. 2023` when the reference list holds both.
+cited is listed as if you had. Writing `G. Johnson (2024)` resolves it.
+
+**Where the same first author has two works in one year, the correct form is
+already the disambiguator** — so use it exactly. A two-author work is
+`Muldoon and Wu (2023)` and a three-or-more-author work is `Muldoon et al.
+(2023)` (the rows above); those two forms are distinct, and that distinctness
+is what lets the renderer tell the works apart. What breaks it is collapsing a
+two-author work to `et al.` (wrong in Chicago regardless) or dropping to a bare
+`Muldoon (2023)`. Note this only helps when the author *lists* differ — two
+works by the same author(s) in the same year need `2023a`/`2023b`, which the
+renderer does not yet emit (ROADMAP item 3 F).
 
 ### Bibliography Format
 

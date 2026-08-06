@@ -94,9 +94,14 @@ cite share a first-author surname and year but are by *different people*, write
 the initial — `G. Johnson (2024)` / `R. Johnson (2024)`, not a bare `Johnson
 (2024)`. References are rendered by matching surname-near-year in your prose;
 a bare surname cannot be resolved, so both works get listed and one of them is
-a reference the review never actually cited. Likewise, when the bibliography
-holds both `Muldoon and Wu 2023` and `Muldoon et al. 2023`, use the form that
-names the second author rather than collapsing to `et al.`
+a reference the review never actually cited.
+
+Where one author has two works in the same year with *different co-author
+lists*, the correct Chicago form is already the disambiguator — two authors is
+`Muldoon and Wu (2023)`, three or more is `Muldoon et al. (2023)` — so use each
+work's own form precisely, and never collapse a two-author work to `et al.` or
+drop to a bare `Muldoon (2023)`. (Two works by the *same* author(s) in one year
+need `2023a`/`2023b`, which the renderer cannot emit yet.)
 
 **Evidence tiers govern what you may say about a work** (the `EVIDENCE-*` keyword in each entry is the single authority; an entry with no tier token counts as `EVIDENCE-NONE`):
 

@@ -15,10 +15,35 @@ Prompts for approval on first use of each tool per session. Standard security mo
 "deny": [
   "Bash(sudo *)",    // Prevent privilege escalation
   "Bash(dd *)",      // Prevent disk operations
-  "Bash(mkfs *)"     // Prevent filesystem formatting
+  "Bash(mkfs *)",    // Prevent filesystem formatting
+  "Edit(**/enrichment_ledger-*.json)",   // Evidence-tier attestation ledgers
+  "Edit(**/cleaning_ledger-*.json)"      // (see below)
 ]
 ```
-Explicitly blocks destructive operations for safety. These cannot be approved even if requested.
+Blocks destructive operations and hand-written evidence attestations. These cannot be approved even if requested.
+
+**Why the ledgers are denied.** An enrichment-ledger record grants an entry
+`EVIDENCE-ABSTRACT` and a cleaning-ledger record attests `EVIDENCE-EXISTENCE`,
+so a hand-written record buys a citability tier that no fetch ever
+corroborated (ROADMAP item 3 C). Both files are written *from inside Python*
+by the scripts that own them, so the supported pipeline is unaffected — but
+note this also blocks **you** from hand-editing a ledger while debugging;
+re-run the owning script or `git checkout` it. The allow rule `Edit(reviews/**)`
+below positively permits the ledger path, so this only works because deny is
+evaluated before allow. The rule is belt-and-braces: the mechanism that covers
+workspaces which have not re-run `/phillit:setup` is the plugin-shipped
+`hooks/block_ledger_write.py` gate.
+
+**What this is not.** Neither the rule nor the gate is a security boundary.
+`Bash` is allowed broadly by design, so a `cat >`, heredoc or `python -c`
+write reaches the ledger without passing any PreToolUse gate — a complete
+bypass for anything deliberate. What these controls buy is protection against
+accidental edits and tool-default behaviour, i.e. incidence reduction. The
+glob syntax itself is also **unverified against a live Claude Code permission
+matcher** (`--dry-run` only proves the strings were serialized); the hook, not
+the rule, is what this relies on. The real closure — barrier-side live
+corroboration, which makes the ledger a cache rather than an authority — is
+tracked as `phillit-service` item 23.
 
 ### Allow Rules (Auto-Approved)
 ```json
@@ -39,38 +64,6 @@ Explicitly blocks destructive operations for safety. These cannot be approved ev
 
 **Why `Bash` (all commands)?** Domain researcher subagents construct multi-line scripts with variable prefixes (setting variables, then invoking the `bin/phillit-run` wrapper) that no finite set of prefix patterns can enumerate, causing persistent permission prompts. (Note: current Claude Code splits compound commands — `&&`, `;`, pipes, newlines — and matches each subcommand against rules independently, and wildcards may appear at any position. That makes patterns more capable than when this design was chosen, but enumerating every command shape agents generate remains fragile — this design decision stands; see CLAUDE.md "Do not revert to enumerated Bash patterns".) Using bare `Bash` allows all commands, but the `deny` and `ask` rules still provide safety (see evaluation order below).
 
-### Deny Rules (Blocked Outright)
-```json
-"deny": [
-  "Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)",
-  "Edit(**/enrichment_ledger-*.json)",   // evidence-tier attestation ledgers
-  "Edit(**/cleaning_ledger-*.json)"      // (see below)
-]
-```
-
-**Why the ledgers are denied.** An enrichment-ledger record grants an entry
-`EVIDENCE-ABSTRACT` and a cleaning-ledger record attests `EVIDENCE-EXISTENCE`,
-so a hand-written record buys a citability tier that no fetch ever
-corroborated (ROADMAP item 3 C). Both files are written *from inside Python*
-by the scripts that own them, so the supported pipeline is unaffected — but
-note this also blocks **you** from hand-editing a ledger while debugging;
-re-run the owning script or `git checkout` it. The allow rule `Edit(reviews/**)`
-positively permits the ledger path, so this only works because deny is
-evaluated before allow. The rule is belt-and-braces: the mechanism that covers
-workspaces which have not re-run `/phillit:setup` is the plugin-shipped
-`hooks/block_ledger_write.py` gate.
-
-**What this is not.** Neither the rule nor the gate is a security boundary.
-`Bash` is allowed broadly by design, so a `cat >`, heredoc or `python -c`
-write reaches the ledger without passing any PreToolUse gate — a complete
-bypass for anything deliberate. What these controls buy is protection against
-accidental edits and tool-default behaviour, i.e. incidence reduction. The
-glob syntax itself is also **unverified against a live Claude Code permission
-matcher** (`--dry-run` only proves the strings were serialized); the hook, not
-the rule, is what this relies on. The real closure — barrier-side live
-corroboration, which makes the ledger a cache rather than an authority — is
-tracked as `phillit-service` item 23.
-
 ### Ask Rules (Require Approval)
 ```json
 "ask": [
@@ -90,11 +83,14 @@ The first matching rule wins. So `Bash(sudo *)` in `deny` blocks sudo even thoug
 
 ## Security Layers
 
-With `Bash` in the allow list, safety comes from three layers:
+With `Bash` in the allow list, safety comes from four layers:
 
-1. **Deny rules**: `sudo`, `dd`, `mkfs` are blocked unconditionally
+1. **Deny rules**: `sudo`, `dd`, `mkfs` are blocked unconditionally, as are file-tool writes to the evidence-tier ledgers
 2. **Ask rules**: `rm`, `rmdir` still require approval
 3. **Scoped writes**: file-editing tools are only auto-approved in `reviews/` (via `Edit(reviews/**)`)
+4. **Hook gates**: the PreToolUse/PostToolUse gates in the table below, which ship with the plugin and so apply even where no permission rules were merged — `.bib` validation and ledger write-protection
+
+Note what none of these reach: `Bash` is deliberately unenumerated, so anything a shell command does is outside all four layers. That is a considered trade (see "Why `Bash`" above), not an oversight, and it is why the ledger controls are described as incidence reduction rather than as a boundary.
 
 ## Hook Configuration
 

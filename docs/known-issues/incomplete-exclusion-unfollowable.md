@@ -264,13 +264,28 @@ against code in **this repo** at the paths given, not merely carried over.
    *(Done on the branch — researcher prompt + checklist write per-domain
    files there; `main` still has the single clobber-prone file.)*
 
-## Residual, not closed
+## Residual — narrowed twice since this was written
 
-A fabricated `abstract` accompanied by a **forged `abstract_source`** still
-grants full characterization rights — `abstract_source` is in `EXEMPT_FIELDS`
-(`hooks/metadata_cleaner.py:61`) and is never checked against API data. The
-design narrows Issue C but does not close it; closing it needs
-`bib-pipeline-integrity-gaps.md`'s abstract-provenance verification.
+**As filed (2026-07-24):** a fabricated `abstract` accompanied by a forged
+`abstract_source` still grants full characterization rights, because
+`abstract_source` is in `EXEMPT_FIELDS` (`hooks/metadata_cleaner.py`) and is
+never checked against API data.
+
+**That is no longer accurate, in two steps.** (1) The shipped tier does not
+trust the field: `stamp_evidence.attest_abstract` requires the enrichment
+ledger to carry the same source **and** the sha256 of the entry's current
+abstract text, so forging `abstract_source` alone earns nothing — the ledger
+has to be forged too. (2) ROADMAP item 3 C was re-scoped and closed-as-narrowed
+on 2026-08-05: `hooks/block_ledger_write.py` plus two `PHILLIT_RULES` deny
+rules now refuse native file-tool writes to both ledgers.
+
+**What actually remains:** a *deliberate* forger who writes the ledger through
+Bash, which no PreToolUse gate sees. That is documented as an accepted residual
+and the real closure — barrier-side live corroboration, making the ledger a
+cache rather than an authority — is routed to `phillit-service` item 23. Two
+mechanisms were measured and rejected on the way (on-disk envelope
+corroboration at 50.6% coverage; a Bash text gate). Current statement of all
+of this: `bib-pipeline-integrity-gaps.md` Issue C.
 
 ## Where the rule lives in this repo
 

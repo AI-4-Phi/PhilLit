@@ -227,7 +227,7 @@ hooks/
 ├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
 ├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
 ├── block_subagent_background_dispatch.py # PreToolUse (Agent/Task): review agents must dispatch foreground
-├── block_ledger_write.py                 # PreToolUse (Write/Edit): refuse tool-writes to the attestation ledgers (item 3 C)
+├── block_ledger_write.py                 # PreToolUse (Write/Edit/NotebookEdit): refuse tool-writes to the attestation ledgers (item 3 C)
 ├── bib_validator.py                      # BibTeX validation logic
 ├── bib_identity.py                       # NOT a hook — the one owner of identity/comparison keys (DOI, title, pages, journal, year, fallback) and name folds (ascii_variants, translit_fold), imported by the cleaner and the skill scripts
 └── metadata_cleaner.py                   # Metadata provenance cleaning: year/type/field cleanup

@@ -677,9 +677,26 @@ ride F's run as a fourth rider rather than buying its own.
   References-rendering side
 - `skills/literature-review/scripts/lint_md.py` — hosts the built
   citation↔References post-check, `check_citations` (Issue B fix)
-- `agents/domain-literature-researcher.md` Stage 5.5 +
-  `agents/synthesis-writer.md` INCOMPLETE rule — the unenforced abstract
-  provenance convention (Issue C)
-- verification scripts / `hooks/metadata_cleaner.py` — where venue heuristics
-  would live (Issue D). Named `metadata_validator.py` before 2026-08-02; that
-  module was deleted as dead code, so the cleaner is the only candidate home.
+- `agents/domain-literature-researcher.md` Stage 5.5 — where the abstract
+  provenance convention originates (Issue C). The `INCOMPLETE` rule this row
+  used to name in `agents/synthesis-writer.md` is **gone**: item 1 replaced it
+  with the evidence tier, and citability now keys on the `EVIDENCE-*` token.
+- `skills/literature-review/scripts/stamp_evidence.py` (`attest_abstract`,
+  `compute_tier`) + `skills/literature-review/scripts/evidence_barrier.py` —
+  what actually decides whether an abstract earns characterization rights, i.e.
+  Issue C's real surface after the tier shipped
+- `hooks/block_ledger_write.py` — the item 3 C control: denies native file-tool
+  writes to `enrichment_ledger-*.json` / `cleaning_ledger-*.json`, wired
+  PreToolUse on Write/Edit/NotebookEdit via `hooks/fast_gate.sh` (needle
+  `_ledger-`), with two matching `deny` rules in
+  `skills/setup/scripts/setup_workspace.py`
+- **Issue D has no home yet** — it needs a new venue-resolution step calling
+  OpenAlex `/sources` with a persistent per-venue cache, plus a dedicated
+  `venue_status` field that must survive `sanitize_bib.py`,
+  `_SUBSTANTIVE_FIELDS` in `dedupe_bib.py`/`generate_bibliography.py`, and the
+  barrier's field re-derivation. (An earlier revision of this row proposed
+  `hooks/metadata_cleaner.py` as the candidate home, from when the mechanism
+  was imagined as a cleaning-time heuristic; the validated design is a
+  venue-level lookup, which is a different shape and should not be bolted into
+  the cleaner. `metadata_validator.py`, named here before 2026-08-02, was
+  deleted as dead code.)

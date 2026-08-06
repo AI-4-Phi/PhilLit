@@ -687,6 +687,9 @@ local-only `workflow-findings-softmax-review.md`).
 `docs/known-issues/doc-rot-audit-2026-08-02.md` first** — it carries the
 agreed sequence with live checkboxes (extended + amended 2026-08-05).
 Everything through the v0.3.1 push (steps 1–6b) is done; the 27-wrong-years
-audit is done and item 3's A/B/E residuals are done (2026-08-05); what
-remains, in order: item 3's C, D, F, the batched mirror session (with its
-mirror-vs-fork decision), then item 2.
+audit is done, and item 3's **A, B, C and E** are all done (2026-08-05, C
+closed-as-narrowed). What remains, in order: **item 3 D** (re-scoped, rule
+validated, ready to build), **item 3 F** (needs its own plan + a live run
+carrying four riders), the batched mirror session (with its mirror-vs-fork
+decision), then item 2. Note **v0.3.4 is committed but not pushed** (10 commits
+ahead of `origin/main` at `b2983ed`); v0.3.1–v0.3.3 are pushed.
