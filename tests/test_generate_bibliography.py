@@ -1683,6 +1683,32 @@ class TestLetterSighting:
         assert generate_bibliography._sighted_letters(
             "Debates in the 2010s shifted.") == {"2010": {"s"}}
 
+    def test_another_authors_letter_protects_across_groups(self):
+        # DOCUMENTED EXPOSURE, pinned so it is not rediscovered as a defect.
+        # The map is keyed by year alone, so Menary's sighted "2010b" protects
+        # Clark's 2010b as well, even though the prose never cites it. Every
+        # lettered group contains an "a" and a "b", so once F ships this is the
+        # default whenever two lettered groups share a year -- the corpus
+        # measurement in _sighted_letters' docstring is a pre-F lower bound,
+        # not a bound on the rate. Kept anyway: the failure is a retained
+        # reference announced on stderr, and surname-keying the map would
+        # defeat the rows the safety net exists for.
+        two_groups = """@book{menary2010a, author = {Menary, Richard},
+  title = {Alpha}, publisher = {MIT}, year = {2010}, year_suffix = {a}}
+
+@book{menary2010b, author = {Menary, Richard}, title = {Beta},
+  publisher = {MIT}, year = {2010}, year_suffix = {b}}
+
+@book{clark2010a, author = {Clark, Andy}, title = {Gamma},
+  publisher = {MIT}, year = {2010}, year_suffix = {a}}
+
+@book{clark2010b, author = {Clark, Andy}, title = {Delta},
+  publisher = {MIT}, year = {2010}, year_suffix = {b}}"""
+        cited = self._cited(
+            "Menary (2010a) argues X, and Menary (2010b) argues Y."
+            " Clark (2010a) disagrees.", two_groups)
+        assert "clark2010b" in cited
+
     def test_unlettered_bib_is_untouched(self):
         # Item 3 E's behaviour must not change on a bib with no letters: an
         # entry with no letter can never be protected by a sighting.

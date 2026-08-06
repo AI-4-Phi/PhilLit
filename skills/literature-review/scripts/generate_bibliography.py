@@ -782,12 +782,21 @@ def _sighted_letters(review_text: str) -> dict:
       author. Under the cardinal rule (a path that drops a cited work is never
       acceptable) a false protection costs a possibly-uncited reference line,
       reported as "[COLLISION] kept"; a missed sighting costs a cited work.
-      Measured over the delivered corpus with the real assigner's letters
-      stamped (52 md/bib pairs, 152 letters): exactly ONE extra reference
-      retained - an uncited Lawford-Smith 2012 work protected by an unrelated
-      Valentini 2012b - and zero cited works lost. Keying on (surname, year)
-      would remove that one, at the cost of the rows this net exists for:
-      "The 2010b volume" supplies no usable surname at all, and the bare-letter
+
+      The rate is NOT bounded by the corpus measurement below, and must not be
+      quoted as if it were. Over the delivered reviews with the real assigner's
+      letters stamped (52 md/bib pairs, 152 letters) it is exactly ONE extra
+      reference retained - an uncited Lawford-Smith 2012 work protected by an
+      unrelated Valentini 2012b - with zero cited works lost. But that corpus
+      samples the PRE-F prose distribution, where writers had no letters to
+      copy. Once F ships, two lettered groups sharing a year disable each
+      other's drops by construction: every lettered group contains an "a" and a
+      "b", so a prose "Clark (2010a)" is protected by anyone else's "2010b".
+      Expect the rate to scale with lettered groups per year, not to stay at
+      one. It is still the right side of the cardinal rule - the failure is a
+      retained reference, announced on stderr - and keying on (surname, year)
+      is not the trade: it defeats the rows this net exists for, since
+      "The 2010b volume" supplies no usable surname at all and the bare-letter
       chain has none without re-introducing the citation parsing the scan is
       deliberately independent of.
     - "the 2010s" parses as year 2010, letter "s", and "(2010a, b)"'s bare
