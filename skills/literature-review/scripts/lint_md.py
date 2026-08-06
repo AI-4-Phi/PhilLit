@@ -338,6 +338,16 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
         # Match the whole YEAR TOKEN, never the bare letter: "a" occurs in
         # "Menary" and in "Richard", so a `letter not in line` test can
         # essentially never fire.
+        #
+        # Two known limits, both accepted: the check is per-CITATION, not
+        # per-(token, year) pair, so a multi-token or reprint citation can
+        # have its letter satisfied by a sibling entry ("(Smith and Jones
+        # 2010a)" is silenced by a separate "Jones 2010a" reference line);
+        # and _YEAR's trailing [a-z]? makes a decade read as a lettered
+        # year, so "(the United States 2020s)" can WARN about a suffix "s".
+        # Neither occurs anywhere in the 33-review corpus, and pairing
+        # tokens with years would mean restructuring extract_citations for
+        # a warning-only channel.
         for original, base in zip(years, base_years):
             letter = original[len(base):]
             if not letter:

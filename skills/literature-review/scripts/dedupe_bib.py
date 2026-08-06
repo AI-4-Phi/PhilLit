@@ -135,7 +135,14 @@ def _extract_year_suffix_value(entry: str) -> str:
 
 def _entry_key(entry_text: str) -> str:
     """Citation key parsed from a raw entry's opening line, or '' if
-    unparseable. Diagnostic use only (the [SUFFIX] conflict message)."""
+    unparseable. Diagnostic use only (the [SUFFIX] conflict message).
+
+    Deliberately NOT folded onto stamp_evidence.entry_header, the shared
+    version: that one keys on `[^,\\s]+`, so it rejects a whitespace-bearing
+    key this one accepts, and adopting it would add a cross-module import
+    to dedupe_bib for a message string. The divergence costs at most a
+    degraded conflict message ("'' and 'smith2020thin'"), never a merge
+    decision."""
     m = re.match(r'@\w+\{([^,]+),', entry_text)
     return m.group(1).strip() if m else ''
 
@@ -300,7 +307,11 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
     # removed it. Resolved pairwise so a merge CHAIN (3+ domain copies
     # folded in one pair at a time) composes correctly: `base` already
     # carries whatever an earlier step in the chain decided, so a later
-    # disagreement is caught against that, not silently overwritten.
+    # disagreement is caught against that, not silently overwritten. WHICH
+    # letter survives such a chain does depend on merge order (i.e. on the
+    # literature-domain-*.bib glob order) - measured over all six orderings
+    # of a 3-copy disagreement; the conflict is reported in every one of
+    # them, so the ambiguity is never silent.
     loser_text = entry2 if winner == 1 else entry1
     winner_suffix = _extract_year_suffix_value(base)
     loser_suffix = _extract_year_suffix_value(loser_text)
@@ -313,6 +324,12 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
             f"'{winner_suffix}', not picking one",
             file=sys.stderr)
     elif not winner_suffix and loser_suffix:
+        # No `blocked` guard here, unlike _union_substantive_fields_text
+        # beside it: "year_suffix" is outside metadata_cleaner's
+        # CLEANABLE_FIELDS, and the cleaner only ever removes a field in
+        # that set, so no cleaner verdict can name it and this copy-up
+        # cannot resurrect a removed field. Extending CLEANABLE_FIELDS to
+        # cover year_suffix would make that guard necessary here.
         base = _insert_field_text(base, "year_suffix", loser_suffix)
         reason += f", copied year_suffix '{loser_suffix}' from loser"
 

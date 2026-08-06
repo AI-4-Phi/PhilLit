@@ -360,8 +360,14 @@ def test_main_prints_suffix_warning_but_keeps_exit_code(tmp_path, monkeypatch, c
     rc = lint_md.main([str(md_file)])
     out = capsys.readouterr().out
     assert rc == 0
-    assert "carries the suffix" in out
-    assert "ERROR" not in out
+    # The exact channel prefix, not just the message body: a suffix mismatch
+    # must arrive as WARN. (The old `"ERROR" not in out` was vacuous twice
+    # over - the fixture raises no citation error, and lint_markdown is
+    # stubbed, so nothing could have printed one.)
+    assert "WARN citation-suffix:" in out
+    # The plan's binding suffix-TOLERANT decision: a lettered prose cite
+    # against an unlettered References entry never reaches the ERROR path.
+    assert "ERROR unresolved-citation:" not in out
 
 
 class TestMainUnreadableFile:

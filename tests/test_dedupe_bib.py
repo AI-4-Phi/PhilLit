@@ -1491,6 +1491,11 @@ class TestYearSuffixField:
         return list(entries.values())[0]
 
     def test_unanimous_suffix_survives_merge(self, tmp_path):
+        # Regression pin only: this case CANNOT be made to fail with the
+        # policy reverted, because "winner and loser agree" is a genuine
+        # no-op - the winner's own field already survives in `base`. The
+        # discrimination for the no-op branches lives in
+        # test_lettered_winner_keeps_its_letter_against_a_bare_loser below.
         winner = self._WINNER.replace(
             "keywords = {data, High}",
             "year_suffix = {a},\n  keywords = {data, High}")
@@ -1524,3 +1529,34 @@ class TestYearSuffixField:
         assert "'a'" in r.stderr and "'b'" in r.stderr
         surviving = self._sole_entry(merged)
         assert surviving.fields.get("year_suffix") == "a"  # winner's, unpicked-not-guessed
+
+    def test_lettered_winner_keeps_its_letter_against_a_bare_loser(self, tmp_path):
+        """Third policy branch (winner lettered, loser bare), untested until
+        the item-3-F review. Both halves discriminate: the letter must
+        survive the merge (a future _apply_cleaner_verdicts or
+        _union_substantive_fields change that stripped the field would fail
+        the first), and a one-sided letter must NOT read as a disagreement
+        (an over-eager conflict branch would fail the second)."""
+        winner = self._WINNER.replace(
+            "keywords = {data, High}",
+            "year_suffix = {c},\n  keywords = {data, High}")
+        r, merged = self._run_dedupe(tmp_path, winner, self._LOSER,
+                                     evidence_report=True)
+        surviving = self._sole_entry(merged)
+        assert surviving.fields.get("year_suffix") == "c"
+        assert "[SUFFIX]" not in r.stderr
+
+
+def test_both_derived_fields_are_known_and_neither_is_substantive():
+    """Items 3 D and F share the _KNOWN_FIELDS literal and the barrier's
+    insertion point, and each already has its own single-field pin above
+    (TestVenueStatusField / TestYearSuffixField). This asserts them JOINTLY,
+    so an edit that rewrites the shared literal and keeps only one of the two
+    fails here rather than passing one class and quietly gutting the other.
+    """
+    from dedupe_bib import _KNOWN_FIELDS, _SUBSTANTIVE_FIELDS
+    import generate_bibliography
+    assert {"venue_status", "year_suffix"} <= _KNOWN_FIELDS
+    assert not {"venue_status", "year_suffix"} & set(_SUBSTANTIVE_FIELDS)
+    assert not {"venue_status", "year_suffix"} & set(
+        generate_bibliography._SUBSTANTIVE_FIELDS)
