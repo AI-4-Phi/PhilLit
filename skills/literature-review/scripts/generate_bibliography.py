@@ -632,6 +632,12 @@ _YEAR_LETTER_RE = re.compile(
 # and permanently protect the 2010b entry, silently switching item 3 F back
 # off. (A multi-letter word after the citation is harmless either way - the
 # trailing \b rejects it - so the initial is the case that bites.)
+#
+# That exclusion closes the PARENTHESISED form only, and the docstring above
+# should not be read as closing the case. The unparenthesised one still
+# chains: "Menary 2010a and B. Smith replies" sights "b" via the " and "
+# separator. Left as is - it falls on the protecting side, like every other
+# spurious sighting, and tightening it would need sentence segmentation.
 _BARE_LETTER_RE = re.compile(
     r"\A[\s,;&/-]*(?:and|or)?[\s,;&/-]*(?P<letter>[A-Za-z])\b")
 
@@ -888,10 +894,23 @@ def _sighted_letters(review_text: str) -> dict:
       "The 2010b volume" supplies no usable surname at all and the bare-letter
       chain has none without re-introducing the citation parsing the scan is
       deliberately independent of.
-    - "the 2010s" parses as year 2010, letter "s", and "(2010a, b)"'s bare
-      chain will happily read the "a" of "a decade" too. Harmless for the
-      same reason: a group would need 19 members before any letter "s" is
-      assigned, and a spurious sighting can only protect.
+    - "the 2010s" parses as year 2010, letter "s", and the bare-letter chain
+      will read the "a" of "a decade of ferment" straight after it. The "s"
+      half IS harmless - a group would need 19 members before any letter "s"
+      is assigned - but do NOT extend that argument to the "a", as an earlier
+      version of this docstring did: "a" is the letter the FIRST member of
+      every lettered group carries, so a decade token followed by "a" disables
+      F's drop for that whole year. Reproduced: "Debates in the 2010s, a
+      decade of ferment, matured. As Menary (2010b) argues, ..." keeps
+      menary2010cognitive that "As Menary (2010b) argues" alone drops. The
+      guard is only that the chain stops at "." and ")", so "The 2010s. A
+      decade of ferment." does not chain.
+
+      Measured over the 41 delivered reviews, in the design's favour but not
+      as a bound: 11 decade tokens, of which 0 chain into an a-f letter, and
+      of the 20 distinct (year, letter a-f) pairs sighted corpus-wide all 20
+      are genuine lettered citations. The cost is real and unbounded; it is
+      accepted because it falls on the protecting side.
 
     A citation carrying NO letter that the parser also rejects
     ("Menary (2010a) ... See Clark, Menary (2010), and Sutton") leaves nothing
@@ -922,8 +941,18 @@ def _sighted_letters(review_text: str) -> dict:
 def _letter_is_sighted(rec: dict, sighted: dict) -> bool:
     """Does the prose mention this entry's rendered label ("2010b")?
 
-    An entry with no letter can never be protected this way, so item 3 E's
-    behaviour on unlettered bibs is untouched.
+    An entry with no letter can never be protected this way, so THIS net is
+    inert on an unlettered bib.
+
+    That is not the same claim as "item 3 F leaves item 3 E untouched", and
+    the two were conflated here once. F also parses multi-year continuations,
+    which is a second mechanism and one that fires on unlettered bibs: what
+    keeps E's behaviour there intact is the `not inst["continuation"]` guard on
+    second_pos_seen in _resolve_collisions, not this letter gate. Checked
+    against pre-F (13860fb) rather than an intermediate commit:
+    "Bloggs and Muldoon (2019, 2023) argue" against an unlettered
+    Muldoon-first-author pair is keep-all before F and keep-all after it, and
+    it is the continuation guard that makes that true.
     """
     letter = rec.get("suffix") or ""
     return bool(letter) and letter in sighted.get(rec["year"], ())
@@ -1125,6 +1154,19 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
         # letter, leaves the SPARSER copy as the delivered reference
         # (measured: prose "Smith (2020b)" kept a journal-less duplicate over
         # its journal- and abstract-bearing twin).
+        #
+        # A FOURTH conjunct - "every member came from the same suffix-assignment
+        # namespace" - was proposed by the external second opinion and by the
+        # whole-branch review, and is DECLINED, with the reason recorded because
+        # it will be proposed again. On assigner output it is unreachable: every
+        # signature group letters from "a" (LETTERS[index], index from 0), so two
+        # lettered signature groups landing in one collision group both carry an
+        # "a" and conjunct 2 already fails. It would bite only on stale or
+        # hand-edited letters. Against that: year_suffix.author_signature takes
+        # RAW BibTeX author strings while this function holds pybtex Person
+        # objects, whose raw field is lossy to reconstruct, so the conjunct means
+        # a parallel signature implementation - which the plan's "Not adopted"
+        # section already declined once, for the same reason.
         letters = [r.get("suffix") or "" for r in members]
         group_letters = {ltr for ltr in letters if ltr}
         fully_lettered = (all(letters) and len(set(letters)) == len(letters)
@@ -1229,14 +1271,39 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
             # fully_lettered above for all three conjuncts. The barrier's assigner
             # letters a group whole or suppresses it whole (year_suffix.py's
             # whole-group suppression), so a PARTIALLY lettered group here
-            # means the letters did not come from one clean assignment run:
-            # a legacy or hand-edited bib, a bib assembled from two runs, or
-            # -- expected to be the most frequent -- a DIFFERENT author who
-            # happens to share this surname and year and so was never in the
-            # lettered group at all. In any of those a suffixed instance would
-            # otherwise select the lettered member and drop every unlettered
-            # one. Incomplete groups fall through to item 3 E's behaviour
-            # unchanged.
+            # means the letters did not come from one clean assignment run.
+            # Four causes, of which only the last has actually been observed:
+            #
+            #   - a legacy or hand-edited bib;
+            #   - a bib assembled from two runs;
+            #   - a DIFFERENT author sharing this surname and year, who was
+            #     never in the lettered group at all;
+            #   - STRUCTURAL, and the one measured: the assigner groups on the
+            #     FULL AUTHOR-LIST signature while this function groups on
+            #     FIRST-AUTHOR SURNAME variants. A same-author CO-AUTHORED
+            #     sibling in the same year is therefore its own one-work
+            #     signature group, gets no letter (groups of one are never
+            #     lettered), and lands in the same collision group as its
+            #     lettered solo siblings. It follows directly from the two
+            #     grouping keys, so it recurs whenever an author has both solo
+            #     and co-authored work in one year.
+            #
+            # Measured over the 41 delivered reviews with the real assigner's
+            # letters stamped: 124 collision groups of >=2 members - 51 (41%)
+            # fully lettered, 68 with NO member lettered (ordinary item 3 E
+            # surname collisions, which F has nothing to say about), 4 all
+            # lettered but failing conjunct 2 or 3, and exactly ONE genuinely
+            # mixed. That one is the co-author case (political-polarization:
+            # mason2018uncivil "b" and mason2018ideologues "a", plus an
+            # unlettered Mason-and-Wronski 2018). The first three causes are
+            # hypotheses; do not restate them as frequencies. Note the 41% is a
+            # CEILING on the live-run firing rate: it assigns over the merged
+            # bib, while the pipeline assigns over the domain bibs, where more
+            # groups are suppressed.
+            #
+            # In any of those a suffixed instance would otherwise select the
+            # lettered member and drop every unlettered one. Incomplete groups
+            # fall through to item 3 E's behaviour unchanged.
             #
             # The flag also fires when the group's FORM matched no member, so
             # cands was already empty before the filter ran. Gating on `cands`

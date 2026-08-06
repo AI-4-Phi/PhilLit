@@ -1617,6 +1617,43 @@ class TestYearSuffixMatching:
         assert "2010b matches no entry" not in err
         assert "author form" in err
 
+    def test_a_co_authored_sibling_disables_the_filter_for_the_whole_group(
+            self, capsys):
+        # The one partially-lettered shape actually observed in the corpus, and
+        # a STRUCTURAL one: the barrier's assigner groups on the full
+        # author-list signature, this resolver on first-author surname
+        # variants. A same-author co-authored sibling is therefore its own
+        # one-work signature group, gets no letter, and lands in this collision
+        # group anyway -- so all(letters) is False and the letter filter is off
+        # for all three. Keep-all is the right outcome; it was untested and
+        # unnamed. (Shape taken from political-polarization's Mason 2018 group,
+        # the single mixed group across the 41 delivered reviews.)
+        mason = """@book{mason2018uncivil, author = {Mason, Lilliana},
+  title = {Uncivil Agreement}, publisher = {Chicago}, year = {2018},
+  year_suffix = {b}}
+
+@article{mason2018ideologues, author = {Mason, Lilliana},
+  title = {Ideologues without Issues}, journal = {POQ}, year = {2018},
+  year_suffix = {a}}
+
+@article{mason2018tribe, author = {Mason, Lilliana and Wronski, Julie},
+  title = {One Tribe to Bind Them All}, journal = {Political Psychology},
+  year = {2018}}"""
+        # The F-specific claim: the prose cites "2018a", but because the group
+        # is not fully lettered the letter must NOT select mason2018ideologues
+        # and drop the "b" work. Without the guard it does.
+        #
+        # mason2018tribe IS dropped here, and that is item 3 E, not F: the
+        # citation's form is solo and that entry has two authors. The cost this
+        # test pins is the other direction -- the unlettered co-authored
+        # sibling keeps mason2018uncivil in the References even though the
+        # prose named only 2018a. Over-retention is the side the cardinal rule
+        # puts us on.
+        assert sorted(self._cited("Mason (2018a) argues X.", mason)) == \
+            ["mason2018ideologues", "mason2018uncivil"]
+        assert "[COLLISION] dropped mason2018uncivil" not in \
+            capsys.readouterr().err
+
     def test_malformed_suffix_field_is_ignored(self):
         # A junk year_suffix reads as absent (same rule _display_year uses),
         # so the group is not fully lettered and nothing is dropped.
@@ -1740,12 +1777,43 @@ class TestLetterSighting:
         assert generate_bibliography._sighted_letters(prose) == {"2010": {"a"}}
         assert self._cited(prose) == ["menary2010cognitive"]
 
-    def test_decade_token_sights_a_letter_and_that_is_harmless(self):
+    def test_decade_token_sights_the_letter_s(self):
         # Documented, not a defect: "the 2010s" reads as year 2010, letter
-        # "s". A group needs 19 members before any letter "s" is assigned, and
-        # a sighting can only ever PROTECT a member, never drop one.
+        # "s". A group needs 19 members before any letter "s" is assigned, so
+        # this one really is inert.
         assert generate_bibliography._sighted_letters(
             "Debates in the 2010s shifted.") == {"2010": {"s"}}
+
+    def test_a_decade_chain_can_sight_the_letter_a_and_disable_the_drop(self):
+        # ACCEPTED COST, pinned so the docstring's claim stays honest. The
+        # 19-members argument above covers "s" and does NOT transfer to "a" --
+        # "a" is what the first member of EVERY lettered group carries, so a
+        # decade token followed by the article "a" switches F's drop off for
+        # that year. Measured across the 41 delivered reviews: 0 of 11 decade
+        # tokens chain this way, but the rate is not bounded by that.
+        assert generate_bibliography._sighted_letters(
+            "Debates in the 2010s, a decade of ferment, matured.") == \
+            {"2010": {"a", "s"}}
+        # ... and the consequence, end to end: the same prose that drops
+        # menary2010cognitive on its own stops dropping it.
+        assert self._cited("As Menary (2010b) argues, X.") == \
+            ["menary2010extended"]
+        assert self._cited(
+            "Debates in the 2010s, a decade of ferment, matured."
+            " As Menary (2010b) argues, X.") == \
+            ["menary2010cognitive", "menary2010extended"]
+        # The "." guard is what keeps it from being worse.
+        assert self._cited(
+            "The 2010s. A decade of ferment. As Menary (2010b) argues, X.") \
+            == ["menary2010extended"]
+
+    def test_an_unparenthesised_chain_still_crosses_into_an_initial(self):
+        # The ")"/"." exclusion closes the PARENTHESISED form only; the
+        # docstring should not be read as closing the case. Pinned as a known,
+        # protecting-side limit rather than fixed.
+        assert generate_bibliography._sighted_letters(
+            "Menary 2010a and B. Smith replies at length.") == \
+            {"2010": {"a", "b"}}
 
     def test_another_authors_letter_protects_across_groups(self):
         # DOCUMENTED EXPOSURE, pinned so it is not rediscovered as a defect.
@@ -1845,6 +1913,32 @@ class TestLetterSighting:
 @article{m2, author = {Muldoon, Ryan and Gordon, Ann and Wu, Jin},
   title = {T2}, year = {2023}, journal = {J}}"""
         assert self._cited("As Muldoon and Wu (2023) argue, X.", bare) == ["m1"]
+
+    def test_a_continuation_is_not_a_second_position_sighting(self, capsys):
+        # Fix re-review IMPORTANT D, and the guard it found untested (its
+        # MUT-12 left all tests green). "Bloggs and Muldoon (2019, 2023)"
+        # continues into 2023 carrying Bloggs' surname, so without the
+        # `not inst["continuation"]` guard on second_pos_seen the resolver
+        # reads it as positive evidence against the Muldoon 2023 group and
+        # drops BOTH members.
+        #
+        # Keep-all is also what pre-F (13860fb) does here -- it parses no
+        # continuation at all, so the 2023 group sees no instance and falls to
+        # the final keep-all. Item 3 E's behaviour on an unlettered bib is
+        # therefore genuinely unchanged, which is the claim
+        # _letter_is_sighted's docstring makes; the reason is this guard, not
+        # the letter gate.
+        bib = """@article{muldoonA2023, author = {Muldoon, Ryan and Wu, Li},
+  title = {T1}, journal = {J}, year = {2023}}
+
+@article{muldoonB2023, author = {Muldoon, Ryan and Qi, Fan},
+  title = {T2}, journal = {J}, year = {2023}}
+
+@article{bloggs2023, author = {Bloggs, Joe and Muldoon, Ryan},
+  title = {T3}, journal = {J}, year = {2023}}"""
+        assert self._cited("Bloggs and Muldoon (2019, 2023) argue.", bib) == \
+            ["bloggs2023", "muldoonA2023", "muldoonB2023"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
 
 
 # Two-author and three-author Muldoon 2023 works with no letters -- item 3 E's
