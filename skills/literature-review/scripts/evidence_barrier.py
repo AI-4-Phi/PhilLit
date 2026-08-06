@@ -535,10 +535,20 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         # invariant and would let generate_bibliography drop a cited work),
         # but it is invisible to an operator unless it is reported: the bib
         # simply comes back with no letters and nothing says why.
+        # `suppressed` and `suppressed_singletons` are one partition, not a
+        # list and a filtered view of it: a suppressed group whose work count
+        # is 1 could never have been lettered anyway (Chicago disambiguation
+        # starts at two works), so reporting it alongside the real ones buried
+        # 8 actionable records under 98 non-actionable ones on the real corpus.
+        # Both are carried, because "nothing the assigner declined is
+        # invisible" is the point of these keys -- a consumer that wants
+        # everything unions them.
         suffix_report = {"status": "complete", "assigned": len(suffix_map),
                          "groups": assignment["groups"],
                          "overflow": assignment["overflow"],
                          "suppressed": assignment["suppressed"],
+                         "suppressed_singletons":
+                             assignment["suppressed_singletons"],
                          "conflicts": assignment["conflicts"]}
     except Exception as exc:
         suffix_map = {}
@@ -548,7 +558,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         # path that gets the least testing.
         suffix_report = {"status": "error", "error": repr(exc), "assigned": 0,
                          "groups": [], "overflow": [], "suppressed": [],
-                         "conflicts": []}
+                         "suppressed_singletons": [], "conflicts": []}
     report["year_suffixes"] = suffix_report
     # Filled in by the chunk loop below and reported on BOTH branches: these
     # two keys are attached to the dict `suffix_report` already is, so the
