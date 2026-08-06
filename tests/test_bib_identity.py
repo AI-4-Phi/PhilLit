@@ -1,9 +1,12 @@
-"""ROADMAP item 4: one owner for bibliography identity and matching.
+"""ROADMAP item 4, one owner for bibliography identity and matching.
 
-The four-input table in docs/ROADMAP.md section 4 recorded three disagreeing
-title normalizations across metadata_cleaner, dedupe_bib and
-generate_bibliography. These pin the single surviving contract, plus the fifth
-divergence axis (casefold expansion) found during review.
+Before this landed, metadata_cleaner, dedupe_bib and generate_bibliography each
+carried their own title normalization and disagreed on non-ASCII input --
+`Millière` keyed differently in each, so duplicate entries survived dedup. These
+tests pin the single surviving contract, plus the fifth divergence axis
+(casefold expansion) found during review. `hooks/bib_identity.py` is the one
+owner; see CLAUDE.md for the standing rule that sites alias the shared objects
+rather than re-adding a local copy.
 """
 
 import sys
