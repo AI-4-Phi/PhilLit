@@ -872,7 +872,7 @@ is entirely contingent on writer compliance.** Delivered prose today carries no
 letters at all, so the corpus cannot show the feature working end to end — the
 run is the first time a writer will have lettered entries to cite.
 
-Note **nothing since v0.3.1 has been pushed**: v0.3.4 was committed but not
+Note **v0.3.3 is the last version on `origin/main`**; v0.3.4 was committed but not
 pushed, and D and F have had **no version bump at all** — decide the release
 number at push time (check `git log origin/main..HEAD` rather than trusting a
 count here).
