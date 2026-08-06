@@ -550,23 +550,34 @@ group has entries, so a listed work is confirmed uncited.
   and a letterless cite the parser also rejects has nothing to sight, which
   this mechanism cannot close.
 
-  **Open review findings (2026-08-06) — close these before the live run.** F's
-  fix re-review and an external second opinion (openai/gpt-5.6-sol) both
-  cleared the Critical and approved the assignment module, but neither will yet
-  certify the absolute "never drops a cited work" claim for the *resolver*.
-  Between them: F's drop is one-shot, because the sighting scan matches over a
-  pre-existing `## References` section and so sights every letter it just
-  printed (over-retention, not loss, but `SKILL.md` tells the operator to
-  re-run); a spurious continuation can still license a drop via `supported`;
-  the documented "bare cite the parser also rejects" residual is a real Issue B
-  path and is closable with a *scoped* bare-year sighting; and a stale
-  **compact** `year_suffix` — one not opening its line, which
-  `_strip_derived_fields` deliberately does not remove — can make a group look
-  structurally complete and license a drop on stale data. That last one is the
-  cross-item finding: the same position limit is harmless for `venue_status`,
-  where nothing acts on the value, and is not harmless here.
+  **Reviewed four ways (2026-08-06): per task, a fix re-review, a whole-branch
+  pass, and an external second opinion (openai/gpt-5.6-sol).** Two Criticals
+  and one High were found *after* the tasks were "done", all now fixed:
 
-  What then remains is **the live headless run** — F touches
+  - a **continuation** citation instance could license a drop — found twice,
+    because the first fix guarded only one of the two flags gating the drop
+    branch; the second splits the flag's two roles apart (protective vs
+    licensing). This one lost a cited work on an **unlettered** bibliography,
+    with `lint_md` exiting 0 and printing nothing;
+  - a stale **compact** `year_suffix` — one not opening its line, which
+    `_strip_derived_fields` deliberately does not remove — could make a group
+    look structurally complete and license a drop on letters this barrier
+    never issued. Reachable with nothing more exotic than two different people
+    sharing a surname and year. The same position limit is harmless for
+    `venue_status`, where nothing acts on the value; the barrier now detects
+    and overwrites what it cannot strip;
+  - the drop was **one-shot**: the sighting scan matched over a pre-existing
+    `## References` section and so sighted every letter it had just printed,
+    while `SKILL.md` tells the operator to re-run that step.
+
+  Two proposed fixes were **declined with reasons in code** — a namespace
+  conjunct (the duplicate-letter conjunct already blocks the case) and a
+  window-scoped bare-mention net, which was measured to destroy item 3 E on
+  ordinary prose. The filter still fires on **41% of real collision groups**
+  (51 of 124, across 23 of 41 reviews), so the safety work did not quietly
+  turn F off.
+
+  What remains is **the live headless run** — F touches
   `agents/synthesis-writer.md` and `docs/conventions.md`, so writer compliance
   has to be observed, not assumed. It carries the five riders listed below.
 
@@ -819,10 +830,15 @@ headless run** — the last open piece of item 3, and the only one that needs
 anything outside this repo — then the batched mirror session (with its
 mirror-vs-fork decision), then item 2.
 
-**Next session's scope: close F's open review findings (listed under item 3 F
-above), then F's live run.** Riders 1–3 and F's own check need no API key;
-riders 4–5 (D's writer compliance, D's live smoke test) need a **new**
-OpenAlex key, since the existing one is unregistered rather than merely stale.
+**Next session's scope: F's live run.** All of F's review findings are closed
+(see item 3 F above). Riders 1–3 and F's own check need no API key; riders 4–5
+(D's writer compliance, D's live smoke test) need a **new** OpenAlex key, since
+the existing one is unregistered rather than merely stale.
+
+One measurement should shape expectations for that run: **F's flagship benefit
+is entirely contingent on writer compliance.** Delivered prose today carries no
+letters at all, so the corpus cannot show the feature working end to end — the
+run is the first time a writer will have lettered entries to cite.
 
 Note **nothing since v0.3.1 has been pushed**: v0.3.4 was committed but not
 pushed, and D and F have had **no version bump at all** — decide the release
