@@ -355,7 +355,8 @@ group has entries, so a listed work is confirmed uncited.
 
 - **E — matcher collisions / phantom references**
   (`generate_bibliography.py`): **FIXED 2026-08-05** (`917850d`, `fb6623e`,
-  `be5ab30`, `e5e863a`, `e5cb717`, `970b117`). Previously every entry
+  `be5ab30`, `e5e863a`, `e5cb717`, `970b117`; released as plugin v0.3.3,
+  `de86918`). Previously every entry
   sharing `(first-author surname, year)` matched whenever any one of them
   was cited, so uncited works were rendered into References *even when the
   prose was unambiguous*. `_resolve_collisions` now groups colliding
