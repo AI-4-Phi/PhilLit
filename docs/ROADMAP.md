@@ -16,7 +16,7 @@ E's instance-based collision resolution); **C closed-as-narrowed 2026-08-05**
 (ledger write-protection) and **D BUILT 2026-08-06** (OpenAlex venue-status
 flag on low-visibility journals, plus the researcher/writer prompt rules);
 F last, now carrying
-four riders; (3b) **NEW 2026-08-05: OpenAlex began metering the API** —
+five riders; (3b) **NEW 2026-08-05: OpenAlex began metering the API** —
 **key support BUILT the same day** (`OPENALEX_API_KEY`, optional; plus
 fail-fast on budget exhaustion, which was costing 1–2.4 h of dead sleeping
 per review), see `docs/known-issues/openalex-metering-2026-08-05.md`. F's
@@ -410,9 +410,11 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   try/except-wrapped; any failure demotes to "no flags", never a barrier
   error), and `venue_status` is **stripped and re-derived on every run**, so
   no flag the barrier itself can write survives a later run (see the
-  documented shape limit in `_strip_venue_status`: a hand-edited bare-token
-  or nested-brace value is not stripped, though the barrier's own decision
-  still governs what gets re-added on top). **Recall is partial by
+  documented shape limit in `_strip_derived_fields` — renamed from
+  `_strip_venue_status` when item 3 F's session widened it to also cover
+  `year_suffix`: a hand-edited bare-token or nested-brace value is not
+  stripped, though the barrier's own decision still governs what gets
+  re-added on top). **Recall is partial by
   design** (4 of 9 known candidates) and **absence of the field means
   nothing** — most entries never carry it, including entries the check never
   evaluated (no key, cap or deadline hit, or an unresolved name).
@@ -527,15 +529,15 @@ shape, pairs with B) — **A, B, C and E are all FIXED/CLOSED as of
 **BUILT 2026-08-06** (mechanical vetting pass plus prompt rules). F last: it
 needs a live run, and that run should not
 be entangled with the evidence-tier A/B experiment. Note the live run now
-carries **four riders**: the year-coverage measurement (item 3 K —
+carries **five riders**: the year-coverage measurement (item 3 K —
 measurement script ready at
 `docs/known-issues/wrong-years-audit-data/year_coverage.py`, local-only), the
 two-Johnsons writer note (**DONE 2026-08-05** — `docs/conventions.md` +
 `agents/synthesis-writer.md`; the run confirms writer compliance), the
 sentence-adverb guard fix (**DONE 2026-08-05** — E's
 `_NON_INITIAL_PRECEDING_RE` no longer rejects a citation preceded by a
-sentence-initial transition word), and D's writer-compliance check, now that
-D is built.
+sentence-initial transition word), D's writer-compliance check, and D's own
+live smoke test — the last two now that D is built.
 
 Related out-of-scope find (2026-07-28, recorded in the same write-up): 5/32
 reviews carry near-identical *undeduped* entries surviving on diacritic
@@ -726,8 +728,9 @@ agreed sequence with live checkboxes (extended + amended 2026-08-05).
 Everything through the v0.3.1 push (steps 1–6b) is done; the 27-wrong-years
 audit is done, and item 3's **A, B, C, D and E** are all done (A/B/C/E
 2026-08-05, C closed-as-narrowed; D 2026-08-06). What remains, in order:
-**item 3 F** (needs its own plan + a live run carrying four riders,
-including D's writer-compliance check), the batched mirror session (with its
+**item 3 F** (needs its own plan + a live run carrying five riders,
+including D's writer-compliance check and D's own live smoke test), the
+batched mirror session (with its
 mirror-vs-fork decision), then item 2. **Next session's scope: F — i.e.
 finish item 3.** Note **v0.3.4 is committed but not pushed**; v0.3.1–v0.3.3
 are (check with `git log origin/main..HEAD` rather than trusting a count here).

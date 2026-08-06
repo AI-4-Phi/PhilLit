@@ -214,11 +214,15 @@ Never advance to a next step in this phase before completing the current step.
    flags entries whose journal is barely indexed. `"status": "skipped"` means
    no `OPENALEX_API_KEY` was set — mention it once in the final summary so the
    user knows the check did not run; it is optional and free to obtain. Any
-   other non-`complete` status (`partial`, `budget_exhausted`, `error`,
-   `not-run`) means the check ran but did not finish, or could not run at
-   all — surface that once too, reading the `reason` string from
+   other non-`complete` status means the check ran but did not finish, or
+   could not run at all — surface that once too, reading why from
    `intermediate_files/json/evidence_report.json`'s `venue_vetting` object
-   (the printed summary carries the status but not the reason).
+   (the printed summary carries the status but not the explanation): for
+   `partial`/`budget_exhausted`/`skipped` it is the `reason` string; for
+   `error` it is the `error` string instead (no `reason` key on that path);
+   `not-run` means the object is absent from the report entirely, which only
+   happens alongside a barrier failure already caught by the nonzero-exit
+   rule above.
 
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 
