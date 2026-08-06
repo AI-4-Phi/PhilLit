@@ -31,6 +31,12 @@ sys.path.pop(0)
 # Proximity window for surname↔year matching (chars)
 _MATCH_WINDOW = 60
 
+# The generated section's own heading. One pattern, two sides: the read side
+# (_strip_references_section, which keeps a stale reference list out of the
+# matcher) and the write side (apply_references, which replaces it). They must
+# agree on what counts as the boundary.
+_REFERENCES_HEADING_RE = re.compile(r"^## References\s*$", re.MULTILINE)
+
 
 def clean_bibtex_str(s: str) -> str:
     """Normalize a BibTeX string: LaTeX accents → braces → \\& → \\url{}."""
@@ -1289,6 +1295,33 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     return keep
 
 
+def _strip_references_section(review_text: str) -> str:
+    """Everything before a `## References` heading, or the whole text.
+
+    That section is this script's OWN previous output, not prose, and matching
+    over it made item 3 F's drop ONE-SHOT. Every kept entry renders as
+    "Menary, Richard. 2010b. ..." - a year carrying a letter with a "." after
+    it, which _sighted_letters reads as a genuine mention. So on a second run
+    the reference list sights every letter it printed, no member of any group
+    can be dropped again, and a phantom reference becomes a self-perpetuating
+    fixed point. SKILL.md Phase 6 step 5 tells the operator to re-run step 4
+    after a lint failure, so this fired in normal operation: measured over a
+    three-run cycle, the pre-F resolver converged at run 2 and F never
+    converged at all.
+
+    It also stops _collect_matches counting reference lines as surname/year
+    windows, which is the same error one stage earlier - an entry mentioned
+    ONLY in the stale reference list used to re-match itself on every run.
+    That is the intended direction: a work no longer named in the prose is a
+    phantom, and dropping it is what this script is for.
+
+    `apply_references` owns the same pattern for the write side; both use
+    _REFERENCES_HEADING_RE so they cannot drift apart.
+    """
+    match = _REFERENCES_HEADING_RE.search(review_text)
+    return review_text[:match.start()] if match else review_text
+
+
 def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     """Find BibTeX entries cited in the review text.
 
@@ -1314,8 +1347,13 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     additionally UNIONs in any substantive field only the loser had (spec v2.1).
     DOI identity is tracked per dedup GROUP: a fallback-key merge is refused when
     the two groups' non-empty DOI sets differ (GPT-B4).
+
+    A `## References` section already in the file is NOT prose and is stripped
+    before any matching (_strip_references_section) - see that function for the
+    convergence failure it fixes.
     """
-    records = _resolve_collisions(_collect_matches(review_text, bib_data), review_text)
+    prose = _strip_references_section(review_text)
+    records = _resolve_collisions(_collect_matches(prose, bib_data), prose)
 
     cited = {}  # key -> entry
     seen_dois = {}  # normalized_doi -> citation_key
@@ -1408,8 +1446,7 @@ def generate_references(entries: list[tuple[str, object]]) -> str:
 def apply_references(review_text: str, references_section: str) -> str:
     """Replace or append ## References section in the review text."""
     # Check for existing ## References
-    pattern = re.compile(r"^## References\s*$", re.MULTILINE)
-    match = pattern.search(review_text)
+    match = _REFERENCES_HEADING_RE.search(review_text)
 
     if match:
         # Replace from ## References to EOF

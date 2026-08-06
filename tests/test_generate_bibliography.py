@@ -1773,6 +1773,69 @@ class TestLetterSighting:
             " Clark (2010a) disagrees.", two_groups)
         assert "clark2010b" in cited
 
+    def test_a_stale_references_section_does_not_sight_its_own_letters(self):
+        # Fix re-review IMPORTANT A. main() used to match over the WHOLE file,
+        # and the reference list it had already written renders every kept
+        # entry as "Menary, Richard. 2010b." -- a year carrying a letter, which
+        # _sighted_letters reads as a genuine mention. So the drop worked once
+        # and never again.
+        stale = ("As Menary (2010a) argues, integration matters.\n\n"
+                 "## References\n\n"
+                 "Menary, Richard. 2010a. \"Cognitive Integration.\"\n\n"
+                 "Menary, Richard. 2010b. *The Extended Mind*.\n")
+        assert self._cited(stale) == ["menary2010cognitive"]
+
+    def test_the_renderer_converges_across_the_operator_fix_cycle(self):
+        # SKILL.md Phase 6 step 5 tells the operator to re-run step 4 after a
+        # lint failure, so the second run is the NORMAL path, not an edge case
+        # -- and the cycle that matters is the one where run 1 could NOT
+        # discriminate, because only then does its reference list carry the
+        # letter that run 2 must not sight.
+        #
+        # Run the real chain each time: resolve -> render -> splice.
+        #   run 1  bare "Menary (2010)"  -> ambiguous keep-all, BOTH rendered
+        #   run 2  operator disambiguates the body to "2010a" and re-runs
+        #          step 4 over the file, stale ## References and all
+        # Without the strip, run 2's own "2010b." reference line sights "b",
+        # menary2010extended is protected for ever, and the phantom the
+        # operator was fixing can never be removed.
+        from pybtex.database import parse_string
+        db = parse_string(MENARY_BIB, "bibtex")
+
+        def cycle(text):
+            cited = generate_bibliography.find_cited_entries(text, db)
+            refs = generate_bibliography.generate_references(cited)
+            return (sorted(k for k, _ in cited),
+                    generate_bibliography.apply_references(text, refs))
+
+        keys1, doc1 = cycle("As Menary (2010) argues, integration matters.\n")
+        assert keys1 == ["menary2010cognitive", "menary2010extended"]
+        assert "2010b" in doc1
+
+        edited = doc1.replace("Menary (2010) argues", "Menary (2010a) argues")
+        keys2, doc2 = cycle(edited)
+        assert keys2 == ["menary2010cognitive"]
+        assert "2010b" not in doc2
+
+        # ... and it stays converged: a third run changes nothing.
+        keys3, doc3 = cycle(doc2)
+        assert keys3 == keys2 and doc3 == doc2
+
+    def test_a_work_named_only_in_a_stale_reference_list_is_not_re_matched(self):
+        # The same error one stage earlier: _collect_matches used to count
+        # reference lines as surname/year windows, so an entry the prose no
+        # longer names re-matched itself off its own stale reference line for
+        # ever. Dropping it is what this script is for.
+        bare = """@article{clark1998, author = {Clark, Andy}, title = {T1},
+  journal = {Analysis}, year = {1998}}
+
+@article{menary2013, author = {Menary, Richard}, title = {T2},
+  journal = {Mind}, year = {2013}}"""
+        stale = ("Menary (2013) argues X.\n\n"
+                 "## References\n\n"
+                 "Clark, Andy. 1998. \"T1.\" *Analysis*.\n")
+        assert self._cited(stale, bare) == ["menary2013"]
+
     def test_unlettered_bib_is_untouched(self):
         # Item 3 E's behaviour must not change on a bib with no letters: an
         # entry with no letter can never be protected by a sighting.
