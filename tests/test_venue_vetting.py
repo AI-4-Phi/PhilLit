@@ -186,6 +186,52 @@ class TestTriStateSignals:
         assert vv.cache_get("Malformed") is None
 
 
+class TestMalformedFieldCaching:
+    """Post-review hardening: a wrong-typed field must not make a venue
+    PERMANENTLY uncacheable. Before this fix, `record_from_hits` stored
+    whatever OpenAlex sent verbatim; a wrong-typed field then failed
+    `_valid_record_shape` on every future read, forcing a fresh (10-credit)
+    network lookup forever, since a record that never validates can never
+    become a cache hit."""
+
+    def test_wrong_typed_field_coerced_to_none_at_construction(self):
+        # Defensive: a real OpenAlex response should never send is_core as
+        # a string, but if it ever does, record_from_hits must not store it
+        # raw-and-broken -- that is exactly what made the record
+        # permanently fail shape validation on every subsequent read.
+        raw_hit = {"display_name": "Weird Journal", "is_core": "not-a-bool",
+                   "is_in_doaj": False, "summary_stats": {"h_index": "not-an-int"}}
+        rec = vv.record_from_hits([raw_hit])
+        assert rec["is_core"] is None
+        assert rec["h_index"] is None
+        assert rec["is_in_doaj"] is False  # a well-typed field passes through raw
+
+    def test_coerced_record_becomes_a_stable_cache_hit(self, tmp_path, monkeypatch):
+        import search_cache
+        monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path)
+        raw_hit = {"display_name": "Weird Journal", "is_core": "not-a-bool",
+                   "is_in_doaj": False, "summary_stats": {"h_index": 2}}
+        rec = vv.record_from_hits([raw_hit])
+        vv.cache_put("Weird Journal", rec)
+        # A real cache hit, not a forever-miss -- proves the coercion fixed
+        # the root cause rather than merely being cosmetic.
+        assert vv.cache_get("weird journal") == rec
+
+    def test_cache_put_never_persists_an_invalid_shape(self, tmp_path, monkeypatch):
+        # Defensive backstop (independent of record_from_hits' own
+        # normalization): a record constructed some other way that fails
+        # shape validation must not even be written to disk -- not written
+        # and then rejected on read, but never written at all.
+        import search_cache
+        monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path)
+        bad = {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": True,
+               "h_index": "not-an-int", "is_core": False, "is_in_doaj": False,
+               "fetched_at": time.time()}
+        vv.cache_put("Bad Journal", bad)
+        assert vv.cache_get("bad journal") is None
+        assert list(tmp_path.glob("*.pkl")) == []
+
+
 class TestCache:
     def test_roundtrip(self, tmp_path, monkeypatch):
         import search_cache
@@ -425,14 +471,18 @@ class TestRawNameQuery:
     and exact-match target stay normalized."""
 
     def test_queries_with_raw_not_normalized_name(self, monkeypatch, isolated_cache):
+        # Comma-free on purpose -- TestFilterSanitization below covers the
+        # comma/LaTeX case, where the queried string is sanitized-but-raw
+        # rather than fully raw. This test isolates the "raw, not
+        # normalized" property from that sanitization.
         monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
         captured = {}
         def responder(*a, **k):
             captured["filter"] = k["params"]["filter"]
             return FakeResponse(payload={"results": []})
         monkeypatch.setattr(vv.requests, "get", responder)
-        vv.vet_venues(["The Journal, Of Ratio!"])
-        assert captured["filter"] == "display_name.search:The Journal, Of Ratio!"
+        vv.vet_venues(["The Journal Of Ratio!"])
+        assert captured["filter"] == "display_name.search:The Journal Of Ratio!"
 
     def test_differently_cased_raw_name_is_cache_hit(self, monkeypatch, isolated_cache):
         monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
@@ -462,6 +512,65 @@ class TestRawNameQuery:
         monkeypatch.setattr(vv.requests, "get", responder)
         vv.vet_venues(["small journal", "SMALL JOURNAL"])
         assert captured["filter"] == "display_name.search:SMALL JOURNAL"
+
+
+class TestFilterSanitization:
+    """Post-review hardening: OpenAlex's `filter=` grammar uses comma as the
+    AND-separator between clauses, so a raw bib venue name containing a
+    comma (very common: "Politics, Philosophy & Economics" is the single
+    most frequent venue in the measured corpus) would split into a
+    malformed second clause if interpolated unsanitized. Bib fields also
+    carry LaTeX escapes/braces the query string has no use for."""
+
+    def test_comma_and_latex_stripped_from_filter_value(self, monkeypatch):
+        captured = {}
+        def responder(*a, **k):
+            captured["filter"] = k["params"]["filter"]
+            return FakeResponse(payload={"results": []})
+        monkeypatch.setattr(vv.requests, "get", responder)
+        raw = "Politics, Philosophy \\& Economics"
+        vv.lookup_venue(raw, {"api_key": "x"})
+        filter_value = captured["filter"]
+        assert "," not in filter_value
+        assert "\\" not in filter_value
+        # Still raw-ish, not the folded/lowercased normalized key.
+        normalized_key = vv.normalize_venue_name(raw)
+        assert filter_value != f"display_name.search:{normalized_key}"
+        assert filter_value == "display_name.search:Politics Philosophy & Economics"
+
+    def test_sanitized_name_still_exact_matches(self, monkeypatch):
+        # The sanitization must not break the exact-match logic downstream:
+        # a hit whose display_name is the (comma-bearing) real venue name
+        # must still match, since normalize_venue_name folds both sides the
+        # same way regardless of the comma/backslash having been stripped
+        # from the query string.
+        payload = {"results": [hit("Politics, Philosophy & Economics", 45, True, False)]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        record, outcome = vv.lookup_venue("Politics, Philosophy \\& Economics", {"api_key": "x"})
+        assert outcome == "ok"
+        assert record["resolved"] is True
+
+    def test_three_comma_bearing_names_produce_comma_free_filters(self, monkeypatch, isolated_cache):
+        # The failure this prevents is compounded by item 4: three
+        # unsanitized comma-bearing filters adjacent in sorted order would
+        # each be a malformed OpenAlex query on live data -- three "error"
+        # outcomes in a row trip MAX_CONSECUTIVE_ERRORS and abort the whole
+        # pass. FakeResponse can't detect a malformed filter server-side (it
+        # always returns 200), so this asserts directly on the captured
+        # filter strings rather than on the pass completing.
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        captured_filters = []
+        def responder(*a, **k):
+            captured_filters.append(k["params"]["filter"])
+            return FakeResponse(payload={"results": []})
+        monkeypatch.setattr(vv.requests, "get", responder)
+        names = ["Ethics, Policy & Environment", "Journal of Logic, Language and Information",
+                 "Politics, Philosophy & Economics"]
+        result = vv.vet_venues(names)
+        assert len(captured_filters) == 3
+        assert all("," not in f for f in captured_filters)
+        assert result["lookup_errors"] == 0
+        assert result["status"] == "complete"
 
 
 class TestHonestStatusAndErrors:
@@ -548,6 +657,64 @@ class TestHonestStatusAndErrors:
         assert result["flagged"] == []
 
 
+class TestNeverRaisesStructurally:
+    """Post-review hardening: "nothing here raises" was an asserted claim,
+    not an enforced one. `cache_get` -> `search_cache.get_cache` catches
+    only (OSError, pickle.PickleError), so a truncated .pkl (EOFError) or an
+    unpicklable payload (ImportError/AttributeError) would propagate out of
+    vet_venues into the evidence barrier. Bad input (a non-iterable `names`)
+    raised too, at the initial sorted() call. This makes the claim
+    structurally true rather than merely aspirational."""
+
+    def test_cache_get_raising_does_not_propagate(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        def boom(name):
+            raise ImportError("simulated unpickle failure")
+        monkeypatch.setattr(vv, "cache_get", boom)
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "partial"
+        assert "unexpected error" in result["reason"]
+
+    def test_cache_get_raising_mid_pass_keeps_earlier_verdicts(self, monkeypatch, isolated_cache):
+        # A venue processed before the exception must keep its verdict --
+        # "returns the verdicts resolved so far", not an empty result.
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        payload = {"results": [hit("AA Journal", 2, False, False)]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        real_cache_get = vv.cache_get
+        def flaky(name):
+            if name == "zz journal":
+                raise EOFError("simulated truncated pickle")
+            return real_cache_get(name)
+        monkeypatch.setattr(vv, "cache_get", flaky)
+        result = vv.vet_venues(["AA Journal", "ZZ Journal"])  # sorted: aa before zz
+        assert result["flagged"] == ["aa journal"]  # resolved before the raise
+        assert result["status"] == "partial"
+
+    def test_non_iterable_names_does_not_raise(self):
+        result = vv.vet_venues(42)
+        assert result["status"] == "partial"
+        assert "unexpected error" in result["reason"]
+
+    def test_reason_names_the_normalizing_stage_for_bad_input(self):
+        # "sets status = partial with a reason naming the stage" -- for a
+        # non-iterable names argument, the exception fires before any venue
+        # is even identified, so the stage is name normalization, not
+        # network/cache work.
+        result = vv.vet_venues(42)
+        assert "normalizing names" in result["reason"]
+
+    def test_result_dict_always_returned_not_none(self, monkeypatch, isolated_cache):
+        # A crash-and-catch must still return the expected dict shape, not
+        # None or a partial object the barrier can't read status/flagged from.
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv, "cache_get", lambda name: (_ for _ in ()).throw(RuntimeError("boom")))
+        result = vv.vet_venues(["Some Journal"])
+        assert isinstance(result, dict)
+        for key in ("status", "verdicts", "flagged", "evidence"):
+            assert key in result
+
+
 class TestTimeBounds:
     """Item 3 D hardening: 80 cold names at a 30s timeout is 40 minutes
     inside the workflow's slowest step -- bound both the error streak and
@@ -595,8 +762,13 @@ class TestTimeBounds:
                              lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
         # First call captures the deadline (t=0 -> deadline=120). The next
         # reads (one per venue, before each network lookup) all land past it.
-        clock = iter([0.0, 1.0] + [vv.PASS_DEADLINE_SECONDS + 1] * 10)
-        monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock))
+        # `vv.time` IS the stdlib time module (shared globally), so any
+        # other consumer in the call tree that calls monotonic() beyond what
+        # this test anticipated must not raise StopIteration far from this
+        # assertion -- the default keeps every over-read safely past the
+        # deadline instead.
+        clock = iter([0.0, 1.0])
+        monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock, vv.PASS_DEADLINE_SECONDS + 1))
         result = vv.vet_venues(["Journal A", "Journal B", "Journal C"])
         assert len(calls) == 1  # only the first venue's lookup happened before the deadline
         assert result["capped"] == ["journal b", "journal c"]
@@ -616,8 +788,8 @@ class TestTimeBounds:
         calls = []
         monkeypatch.setattr(vv.requests, "get",
                              lambda *a, **k: (calls.append(1), FakeResponse(payload={"results": []}))[1])
-        clock = iter([0.0] + [vv.PASS_DEADLINE_SECONDS + 1] * 10)
-        monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock))
+        clock = iter([0.0])
+        monkeypatch.setattr(vv.time, "monotonic", lambda: next(clock, vv.PASS_DEADLINE_SECONDS + 1))
         result = vv.vet_venues(["Small Journal"])
         assert calls == []  # no network call -- served from cache
         assert result["cache_hits"] == 1

@@ -80,6 +80,11 @@ MAX_LOOKUPS_PER_RUN = 80
 # 80 cold names at a 30s timeout is 40 minutes inside the workflow's slowest
 # step -- both bounds stop a pass early rather than let it run that long.
 MAX_CONSECUTIVE_ERRORS = 3
+# The deadline is checked BEFORE each lookup, not around it, so it bounds
+# the LOOP, not the pass: one in-flight request can still take up to
+# REQUEST_TIMEOUT (30s, defined below) after the deadline is hit. Worst-case
+# wall time for a pass is therefore PASS_DEADLINE_SECONDS + REQUEST_TIMEOUT,
+# not PASS_DEADLINE_SECONDS alone.
 PASS_DEADLINE_SECONDS = 120.0
 # A stale CLEAR verdict costs a miss (tolerable); a stale FLAG keeps
 # discrediting a venue that has since joined DOAJ, gone core, or grown past
@@ -121,17 +126,23 @@ def record_from_hits(hits: list[dict]) -> dict:
     if best is None:
         return {"schema_version": RECORD_SCHEMA_VERSION, "resolved": False,
                 "fetched_at": time.time()}
+    h_index = (best.get("summary_stats") or {}).get("h_index")
+    is_core = best.get("is_core")
+    is_in_doaj = best.get("is_in_doaj")
     return {
         "schema_version": RECORD_SCHEMA_VERSION,
         "resolved": True,
         "matched_name": best.get("display_name"),
-        # Stored RAW throughout: None means "OpenAlex reports no value",
-        # which is not the same fact as False/0 and must not be flagged (see
-        # is_flagged). A missing/null/wrong-typed field must never read as
-        # affirmative evidence for the rule.
-        "h_index": (best.get("summary_stats") or {}).get("h_index"),
-        "is_core": best.get("is_core"),
-        "is_in_doaj": best.get("is_in_doaj"),
+        # Stored RAW but type-checked: None means "OpenAlex reports no
+        # value", which is not the same fact as False/0 and must not be
+        # flagged (see is_flagged). A wrong-typed field (defensive -- a real
+        # API should never send one) is coerced to None here rather than
+        # stored malformed: storing it raw-and-broken would make the record
+        # fail _valid_record_shape on every future cache read, forcing an
+        # expensive re-lookup forever instead of a stable cache hit.
+        "h_index": h_index if _is_int_or_none(h_index) else None,
+        "is_core": is_core if _is_bool_or_none(is_core) else None,
+        "is_in_doaj": is_in_doaj if _is_bool_or_none(is_in_doaj) else None,
         "works_count": best.get("works_count"),
         "fetched_at": time.time(),
     }
@@ -221,11 +232,37 @@ def cache_get(name: str) -> dict | None:
 
 
 def cache_put(name: str, record: dict) -> None:
+    # Defensive backstop: record_from_hits already type-checks its own
+    # output, but never persist a record cache_get would reject anyway --
+    # writing one would be pure waste (and could clobber a still-good older
+    # entry) without ever producing a cache hit on read.
+    if not _valid_record_shape(record):
+        return
     put_cache(_cache_key_for(name), record)
 
 
 OPENALEX_SOURCES_URL = "https://api.openalex.org/sources"
 REQUEST_TIMEOUT = 30
+
+
+def _sanitize_for_filter(name: str) -> str:
+    """Make a raw venue name safe to interpolate into an OpenAlex `filter=`
+    clause -- a DIFFERENT grammar than the free-text `search=` parameter the
+    2026-08-05 measurement validated "query the raw name" against.
+
+    A comma is the AND-separator between filter clauses, so
+    `display_name.search:Politics, Philosophy & Economics` parses as two
+    clauses (the second malformed) rather than one search string. Bib
+    fields also carry LaTeX escapes/braces (`Politics, Philosophy \\&
+    Economics`), which have no place in a query string either. Strips
+    `{`, `}`, `\\`, turns commas into spaces, and collapses whitespace --
+    otherwise leaves the string raw (case, `&`, and other punctuation
+    survive), since OpenAlex's own search is not sensitive to those the way
+    an exact match is.
+    """
+    s = re.sub(r"[{}\\]", "", name or "")
+    s = s.replace(",", " ")
+    return re.sub(r"\s+", " ", s).strip()
 
 
 def lookup_venue(name: str, params: dict) -> tuple[dict | None, str]:
@@ -243,7 +280,9 @@ def lookup_venue(name: str, params: dict) -> tuple[dict | None, str]:
         get_limiter("openalex").wait()
         response = requests.get(
             OPENALEX_SOURCES_URL,
-            params={**params, "filter": f"display_name.search:{name}", "per_page": 200},
+            params={**params,
+                    "filter": f"display_name.search:{_sanitize_for_filter(name)}",
+                    "per_page": 200},
             timeout=REQUEST_TIMEOUT,
         )
         if openalex_budget_exhausted(response):
@@ -282,74 +321,98 @@ def vet_venues(names) -> dict:
               "cache_hits": 0, "skipped_cap": 0, "flagged": [],
               "evidence": {}, "verdicts": {}, "lookup_errors": 0,
               "errors": [], "capped": [], "unresolved": 0, "resolved": 0}
-    raw_by_key: dict[str, str] = {}
-    for raw in sorted(n for n in (names or []) if isinstance(n, str) and n.strip()):
-        key = normalize_venue_name(raw)
-        if key:
-            raw_by_key.setdefault(key, raw)
-    distinct = sorted(raw_by_key)
-    if not distinct:
-        return result
+    # "Never raises" is enforced here, not just at the leaf functions: a
+    # truncated cache file (EOFError), an unpicklable payload
+    # (ImportError/AttributeError -- search_cache.get_cache only catches
+    # OSError/PickleError), or bad input (e.g. a non-iterable `names`) would
+    # otherwise propagate out of vet_venues into the evidence barrier. `stage`
+    # names where things were when an unexpected exception hit, so the
+    # reason says more than "something broke". Whatever verdicts were
+    # resolved before the exception are kept -- result is mutated in place
+    # throughout, and the except clause only touches status/reason.
+    stage = "normalizing names"
+    try:
+        raw_by_key: dict[str, str] = {}
+        for raw in sorted(n for n in (names or []) if isinstance(n, str) and n.strip()):
+            key = normalize_venue_name(raw)
+            if key:
+                raw_by_key.setdefault(key, raw)
+        distinct = sorted(raw_by_key)
+        if not distinct:
+            return result
 
-    params = openalex_params(os.environ.get("OPENALEX_EMAIL", ""))
-    if "api_key" not in params:
-        result["status"] = "skipped"
-        result["reason"] = ("no OPENALEX_API_KEY -- venue vetting needs the free key "
-                            "so it does not spend the unauthenticated search budget")
-        return result
+        stage = "resolving OpenAlex params"
+        params = openalex_params(os.environ.get("OPENALEX_EMAIL", ""))
+        if "api_key" not in params:
+            result["status"] = "skipped"
+            result["reason"] = ("no OPENALEX_API_KEY -- venue vetting needs the free key "
+                                "so it does not spend the unauthenticated search budget")
+            return result
 
-    deadline = time.monotonic() + PASS_DEADLINE_SECONDS
-    consecutive_errors = 0
+        deadline = time.monotonic() + PASS_DEADLINE_SECONDS
+        consecutive_errors = 0
 
-    for venue in distinct:
-        record = cache_get(venue)
-        if record is not None:
-            result["cache_hits"] += 1
-        else:
-            # Cache hits do not count against the cap or the deadline -- only
-            # a real network lookup does.
-            if result["looked_up"] >= MAX_LOOKUPS_PER_RUN:
-                result["skipped_cap"] += 1
-                result["capped"].append(venue)
-                if result["reason"] is None:
-                    result["reason"] = f"lookup cap ({MAX_LOOKUPS_PER_RUN}) reached"
-                continue
-            if time.monotonic() >= deadline:
-                result["skipped_cap"] += 1
-                result["capped"].append(venue)
-                if result["reason"] is None:
-                    result["reason"] = (
-                        f"pass deadline ({PASS_DEADLINE_SECONDS}s) exceeded "
-                        f"after {result['looked_up']} lookups")
-                continue
-            record, outcome = lookup_venue(raw_by_key[venue], params)
-            result["looked_up"] += 1  # a real request was made, win or lose
-            if outcome == "budget_exhausted":
-                result["status"] = "budget_exhausted"
-                result["reason"] = "OpenAlex daily budget exhausted mid-pass"
-                break
-            if outcome != "ok" or record is None:
-                result["lookup_errors"] += 1
-                result["errors"].append(venue)
-                consecutive_errors += 1
-                if consecutive_errors >= MAX_CONSECUTIVE_ERRORS:
-                    result["status"] = "partial"
-                    result["reason"] = (
-                        f"stopped after {MAX_CONSECUTIVE_ERRORS} consecutive lookup errors")
+        stage = "vetting venues"
+        for venue in distinct:
+            record = cache_get(venue)
+            if record is not None:
+                result["cache_hits"] += 1
+                # Deliberately does not touch consecutive_errors: the streak
+                # counts consecutive NETWORK errors, not "iterations since a
+                # network success" -- a cache hit is neither.
+            else:
+                # Cache hits do not count against the cap or the deadline --
+                # only a real network lookup does.
+                if result["looked_up"] >= MAX_LOOKUPS_PER_RUN:
+                    result["skipped_cap"] += 1
+                    result["capped"].append(venue)
+                    if result["reason"] is None:
+                        result["reason"] = f"lookup cap ({MAX_LOOKUPS_PER_RUN}) reached"
+                    continue
+                if time.monotonic() >= deadline:
+                    result["skipped_cap"] += 1
+                    result["capped"].append(venue)
+                    if result["reason"] is None:
+                        result["reason"] = (
+                            f"pass deadline ({PASS_DEADLINE_SECONDS}s) exceeded "
+                            f"after {result['looked_up']} lookups")
+                    continue
+                record, outcome = lookup_venue(raw_by_key[venue], params)
+                result["looked_up"] += 1  # a real request was made, win or lose
+                if outcome == "budget_exhausted":
+                    result["status"] = "budget_exhausted"
+                    result["reason"] = "OpenAlex daily budget exhausted mid-pass"
                     break
-                continue  # unknown venue -- no verdict, no flag
-            consecutive_errors = 0  # a successful lookup resets the streak
-            cache_put(venue, record)
-        flagged = is_flagged(record)
-        result["verdicts"][venue] = flagged
-        if record.get("resolved"):
-            result["resolved"] += 1
-        else:
-            result["unresolved"] += 1
-        if flagged:
-            result["flagged"].append(venue)
-            result["evidence"][venue] = record
-    result["flagged"].sort()
-    if result["status"] == "complete" and (result["lookup_errors"] or result["skipped_cap"]):
+                if outcome != "ok" or record is None:
+                    result["lookup_errors"] += 1
+                    result["errors"].append(venue)
+                    consecutive_errors += 1
+                    if consecutive_errors >= MAX_CONSECUTIVE_ERRORS:
+                        result["status"] = "partial"
+                        result["reason"] = (
+                            f"stopped after {MAX_CONSECUTIVE_ERRORS} consecutive lookup errors")
+                        break
+                    continue  # unknown venue -- no verdict, no flag
+                consecutive_errors = 0  # a successful lookup resets the streak
+                cache_put(venue, record)
+            flagged = is_flagged(record)
+            result["verdicts"][venue] = flagged
+            if record.get("resolved"):
+                result["resolved"] += 1
+            else:
+                result["unresolved"] += 1
+            if flagged:
+                result["flagged"].append(venue)
+                result["evidence"][venue] = record
+    except Exception as exc:
         result["status"] = "partial"
+        # type(exc).__name__ only -- never str(exc): the exception text can
+        # carry arbitrary content from an untrusted payload (a pickle blob,
+        # an OpenAlex response), including non-ASCII this repo forbids in
+        # output.
+        result["reason"] = f"unexpected error while {stage}: {type(exc).__name__}"
+    finally:
+        result["flagged"].sort()
+        if result["status"] == "complete" and (result["lookup_errors"] or result["skipped_cap"]):
+            result["status"] = "partial"
     return result
