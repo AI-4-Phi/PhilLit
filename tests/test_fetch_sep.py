@@ -629,3 +629,84 @@ def test_fetch_sends_env_user_agent_set_after_import(monkeypatch):
         pass  # parsing of the stub page may fail; the header capture is the point
 
     assert captured["ua"] == "PhilLitService/2.0 (+mailto:ops@example.org)"
+
+
+class TestBibliographyParserIsLinear:
+    """The parser must not backtrack catastrophically.
+
+    A live review's evidence barrier hung for 72 minutes at 100% CPU on one
+    SEP bibliography entry (2026-08-06; write-up in
+    docs/known-issues/sep-bibliography-regex-hang.md). The cause was a nested
+    comma-repetition regex whose cost grew ~4x per two commas on any line
+    lacking a year in the expected position.
+
+    These tests assert TIME, not the return value. That distinction is the
+    whole point: the old implementation returned the correct answer for every
+    input below -- it just took geometrically longer to do it, so a
+    value-only assertion passed while the bug was live.
+    """
+
+    def _pathological(self, n_commas):
+        return (", ".join(["Aaaa Bbbb"] * n_commas)
+                + " and Cccc Dddd, Some Long Title Without A Year")
+
+    @pytest.mark.timeout(30)
+    def test_year_less_comma_rich_entry_is_fast(self):
+        """The exact shape that hung the barrier."""
+        import time
+        import fetch_sep
+        raw = self._pathological(40)
+        start = time.perf_counter()
+        fetch_sep.parse_bibliography_entry(raw)
+        elapsed = time.perf_counter() - start
+        # The old regex took ~3.5s at 22 commas and ~4x per two more, so 40
+        # commas was hours. Anything near a second means backtracking is back.
+        assert elapsed < 0.5, f"parse took {elapsed:.3f}s -- backtracking regression"
+
+    @pytest.mark.timeout(30)
+    def test_cost_does_not_grow_geometrically(self):
+        """Doubling the comma count must not explode the cost.
+
+        This is the discriminating shape: the old pattern grew ~4x per two
+        commas, so 30 vs 15 was a factor of ~30,000. A linear parser stays
+        within a small constant factor.
+        """
+        import time
+        import fetch_sep
+
+        def cost(n):
+            raw = self._pathological(n)
+            start = time.perf_counter()
+            for _ in range(50):
+                fetch_sep.parse_bibliography_entry(raw)
+            return time.perf_counter() - start
+
+        small, large = cost(15), cost(30)
+        # Generous bound: linear would be ~2x, and the timer is noisy at these
+        # magnitudes. The old code would blow through this by orders of
+        # magnitude, which is what we are pinning against.
+        assert large < small * 20 + 0.05, (
+            f"cost grew from {small:.4f}s to {large:.4f}s -- superlinear")
+
+    @pytest.mark.timeout(30)
+    def test_absurdly_long_entry_is_rejected_not_parsed(self):
+        import fetch_sep
+        raw = ", ".join(["Aaaa Bbbb"] * 500)
+        parsed, confidence = fetch_sep.parse_bibliography_entry(raw)
+        assert parsed is None and confidence == "unparseable"
+
+    def test_forthcoming_and_editors_still_parse(self):
+        """Behaviour the rewrite had to preserve, not just speed."""
+        import fetch_sep
+        parsed, confidence = fetch_sep.parse_bibliography_entry(
+            "Greco, John and John Turri (eds.), 2012, Virtue Epistemology, "
+            "Cambridge: MIT Press.")
+        assert confidence == "high"
+        assert parsed["is_edited"] is True
+        assert parsed["year"] == "2012"
+        assert parsed["title"] == "Virtue Epistemology"
+
+        parsed, confidence = fetch_sep.parse_bibliography_entry(
+            "Sosa, Ernest, forthcoming, Epistemic Explanations, Oxford: OUP.")
+        assert confidence == "high"
+        assert parsed["year"] == "forthcoming"

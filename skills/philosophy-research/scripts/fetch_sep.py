@@ -51,10 +51,43 @@ def output_error(entry: str, error_type: str, message: str, exit_code: int = 2) 
     }, exit_code)
 
 
+# A year field in its own comma-separated position: "1971" or "forthcoming".
+_YEAR_FIELD_RE = re.compile(r'^(?:\d{4}|forthcoming)$', re.IGNORECASE)
+# Partial form: the entry opens "Surname, 1971" and nothing more is required.
+_PARTIAL_RE = re.compile(r'^([^,]+),\s*(\d{4})')
+_EDITOR_RE = re.compile(r'\(eds?\.?\)', re.IGNORECASE)
+
+# A single bibliography line longer than this is not a reference we can parse
+# and is not worth the attempt. SEP's longest genuine entries run a few hundred
+# characters; this bound exists so no future parser change can be handed an
+# unbounded string (see docs/known-issues/sep-bibliography-regex-hang.md).
+_MAX_ENTRY_CHARS = 2000
+
+
 def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
-    """Parse SEP bibliography entry. Returns (parsed_dict, confidence)."""
+    """Parse SEP bibliography entry. Returns (parsed_dict, confidence).
+
+    Splits on commas in ordinary Python rather than matching a
+    comma-structured regex. The previous implementation used
+
+        ^([^,]+(?:,\\s*[^,]+)*),\\s*(\\d{4}|forthcoming),...
+
+    whose nested repetition backtracks catastrophically: the inner `[^,]+`
+    can absorb the same characters as the outer one, so a line with no year
+    in the expected position made the engine try every partition of the
+    comma-separated prefix. Measured on the shipped pattern, a year-less
+    author list cost 0.0009 s at 10 commas and 3.5 s at 22 -- roughly 4x per
+    two commas, i.e. minutes at 30 and days at 40. One such entry in SEP's
+    "Virtue Epistemology" bibliography hung a real review's evidence barrier
+    for 72 minutes at 100% CPU (2026-08-06 live run).
+
+    The split-based form below is linear in the length of the line and cannot
+    backtrack, because there is no repetition to backtrack through.
+    """
     raw_text = raw_text.strip()
     if not raw_text:
+        return None, "unparseable"
+    if len(raw_text) > _MAX_ENTRY_CHARS:
         return None, "unparseable"
 
     # Skip non-reference entries
@@ -64,20 +97,31 @@ def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
             return None, "unparseable"
 
     # Common SEP format: Author, Year, Title, Publisher.
-    standard = r'^([^,]+(?:,\s*[^,]+)*),\s*(\d{4}|forthcoming),\s*["\']?(.+?)["\']?,\s*(.+)\.$'
-    match = re.match(standard, raw_text)
-    if match:
-        authors_str, year, title, publisher = match.groups()
-        authors = [a.strip() for a in re.split(r'\s+and\s+', authors_str)]
-        is_edited = bool(re.search(r'\(eds?\.?\)', authors_str, re.IGNORECASE))
-        parsed = {"authors": authors, "year": year, "title": title.strip("'\""), "publisher": publisher.strip()}
-        if is_edited:
+    # Find the FIRST comma-delimited field that is exactly a year; everything
+    # before it is the author list, everything after is title + publisher.
+    fields = [f.strip() for f in raw_text.split(',')]
+    year_at = next((i for i, f in enumerate(fields) if _YEAR_FIELD_RE.match(f)), None)
+    # A year at position 0 leaves no author, and one at the last position
+    # leaves no title/publisher -- neither is the standard form.
+    if year_at is not None and 0 < year_at < len(fields) - 2 and raw_text.endswith('.'):
+        authors_str = ', '.join(fields[:year_at])
+        year = fields[year_at]
+        # Title is the next field; publisher is everything after it, with the
+        # entry's trailing period removed (the old regex's `(.+)\.$`).
+        title = fields[year_at + 1].strip('\'"')
+        publisher = ', '.join(fields[year_at + 2:]).rstrip('.').strip()
+        parsed = {
+            "authors": [a.strip() for a in re.split(r'\s+and\s+', authors_str)],
+            "year": year,
+            "title": title,
+            "publisher": publisher,
+        }
+        if _EDITOR_RE.search(authors_str):
             parsed["is_edited"] = True
         return parsed, "high"
 
-    # Try partial extraction
-    partial = r'^([^,]+),\s*(\d{4})'
-    match = re.match(partial, raw_text)
+    # Try partial extraction. Safe as written: one bounded group, no nesting.
+    match = _PARTIAL_RE.match(raw_text)
     if match:
         return {"authors": [match.group(1).strip()], "year": match.group(2), "title": raw_text}, "low"
 
