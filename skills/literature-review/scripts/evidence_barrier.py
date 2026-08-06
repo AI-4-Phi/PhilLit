@@ -153,15 +153,40 @@ def _strip_derived_fields(entry_text: str) -> str:
     set changed -- a false discredit or a wrong letter that no later pass can
     clear.
 
-    Documented limit, accepted rather than fixed (single-nesting-level shape,
-    same reasoning as resolve_context.strip_context_fields): the regex only
-    matches a braced value with no nested braces, or a quoted value. A
-    bare-token value (`venue_status = low-visibility,`) or a nested-brace
-    value (`venue_status = {low {x} vis}`) is NOT stripped. Neither form is
-    ever produced by this barrier itself, so this only under-covers a
-    hand-edited or adversarially forged bib -- and even then the barrier's
-    own decision this run still governs what gets re-added, so the field
-    just goes stale rather than granting a forged advantage.
+    THREE documented limits, accepted rather than fixed. Two are about the
+    field's VALUE (single-nesting-level shape, same reasoning as
+    resolve_context.strip_context_fields); the third is orthogonal and about
+    its POSITION. All three apply identically to both fields.
+
+    1. VALUE, bare token: `venue_status = low-visibility,` is NOT stripped --
+       the pattern requires a braced or quoted value.
+    2. VALUE, nested braces: `venue_status = {low {x} vis}` is NOT stripped --
+       the braced alternative is `\\{[^{}]*\\}`, one nesting level only.
+    3. POSITION, not line-initial: the pattern is anchored to `\\n[ \\t]*`, so
+       it only matches a field that OPENS its line. An occurrence sharing a
+       line with anything else survives -- verified through the real
+       execute(): `@article{k, venue_status = {low-visibility},` on the
+       header line, `author = {A}, venue_status = {low-visibility},`
+       mid-entry, and `year = {2020}, venue_status = {low-visibility}`
+       trailing, all three kept the field.
+
+    Deliberately NOT fixed by widening the anchor. This pattern has no
+    brace-nesting awareness at all, so any start alternative looser than
+    `\\n` (e.g. `[\\n,]`) can begin a match INSIDE a braced value -- an
+    abstract or note containing `, venue_status = {...}` would be silently
+    truncated. Trading a cosmetic miss for value corruption in a fail-closed
+    accuracy gate is the wrong trade; closing it properly means a real field
+    parser, which is a rewrite, not a fix.
+
+    What the limits do and do not cost: none of these shapes is ever produced
+    by this barrier (add_field_to_entry always inserts the field on its own
+    line), by pybtex's writer, or by dedupe_bib's text scanner, so reaching
+    any of them takes a hand edit or an agent writing a compact multi-field
+    line. Even then the barrier's own decision this run governs what is
+    re-added: a run that DOES flag the entry overwrites the surviving value
+    in place (add_field_to_entry's head_pattern matches on any leading
+    whitespace), so only an UNFLAGGED run leaves a forged or stale value
+    standing, and no duplicate-field corruption results either way.
     """
     return _DERIVED_FIELD_RE.sub("", entry_text)
 
