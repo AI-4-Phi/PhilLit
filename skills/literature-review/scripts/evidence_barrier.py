@@ -403,7 +403,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 })
         assignment = ys.assign_suffixes(suffix_inputs)
         suffix_map = assignment["suffixes"]
-        # groups/overflow/conflicts are ALREADY plain, JSON-serializable
+        # groups/overflow/suppressed/conflicts are ALREADY plain, JSON-serializable
         # structures (lists of dicts / lists of repr() strings) -- pass them
         # through unchanged. An earlier revision wrapped overflow in
         # `[list(x) for x in ...]`, which on a list of DICTS returns each
@@ -413,16 +413,31 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         # works and got no letters at all -- who, what year, how many"). The
         # whole point of the >26 rule is that this must be reported, not
         # silent (year_suffix.py's own docstring for the coherence check
-        # says the same of `conflicts`), so all three reach the report
+        # says the same of `conflicts`), so all four reach the report
         # as-is.
+        #
+        # `suppressed` is the same class of report as `overflow`: a group the
+        # assigner deliberately left unlettered -- because a conflicting-DOI
+        # pair, an identity conflict, or a copy the usability filter dropped
+        # would otherwise letter it only in part. Whole-group suppression is
+        # the right call (a half-lettered group breaks the module's own
+        # invariant and would let generate_bibliography drop a cited work),
+        # but it is invisible to an operator unless it is reported: the bib
+        # simply comes back with no letters and nothing says why.
         suffix_report = {"status": "complete", "assigned": len(suffix_map),
                          "groups": assignment["groups"],
                          "overflow": assignment["overflow"],
+                         "suppressed": assignment["suppressed"],
                          "conflicts": assignment["conflicts"]}
     except Exception as exc:
         suffix_map = {}
+        # Every list key the complete branch emits must exist here too --
+        # a consumer that reads report["year_suffixes"]["suppressed"] would
+        # otherwise KeyError on the error path only, which is exactly the
+        # path that gets the least testing.
         suffix_report = {"status": "error", "error": repr(exc), "assigned": 0,
-                         "groups": [], "overflow": [], "conflicts": []}
+                         "groups": [], "overflow": [], "suppressed": [],
+                         "conflicts": []}
     report["year_suffixes"] = suffix_report
 
     # Build final content in memory: context fields + stamp, then bookkeeping.
@@ -539,7 +554,15 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
             "status": (report.get("venue_vetting") or {}).get("status", "not-run"),
             "flagged_entries": (report.get("venue_vetting") or {}).get("flagged_entries", 0),
         },
-        "year_suffixes": (report.get("year_suffixes") or {}).get("assigned", 0),
+        # A bare assigned-count cannot distinguish "no same-author-same-year
+        # groups existed" from "a group existed and deliberately got no
+        # letters", which is the one case an operator needs to look at. The
+        # two counts map 1:1 onto the report keys that name the groups.
+        "year_suffixes": {
+            "assigned": (report.get("year_suffixes") or {}).get("assigned", 0),
+            "overflow": len((report.get("year_suffixes") or {}).get("overflow") or []),
+            "suppressed": len((report.get("year_suffixes") or {}).get("suppressed") or []),
+        },
         "report": str(report_path),
     }))
     return 1 if report["status"] == "failed" else 0

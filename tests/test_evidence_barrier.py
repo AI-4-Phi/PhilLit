@@ -1329,3 +1329,101 @@ def test_overflow_group_is_named_in_the_report_and_gets_no_letters(tmp_path):
     assert report["year_suffixes"]["assigned"] == 0
     assert report["year_suffixes"]["overflow"] == [
         {"authors": "Prolific, Pat", "year": "2025", "works": 27}]
+
+
+SUPPRESSED_D1 = """@incollection{menary2010cognitive,
+  author = {Menary, Richard},
+  title = {Cognitive Integration and the Extended Mind},
+  booktitle = {The Extended Mind},
+  publisher = {MIT Press},
+  doi = {10.7551/mitpress/1.001},
+  year = {2010}
+}
+
+@book{menary2010extended,
+  author = {Menary, Richard},
+  title = {The Extended Mind},
+  publisher = {MIT Press},
+  doi = {10.7551/mitpress/2.002},
+  year = {2010}
+}
+
+@incollection{menaryUndated,
+  author = {Menary, Richard},
+  title = {Cognitive Integration and the Extended Mind},
+  booktitle = {The Extended Mind},
+  publisher = {MIT Press},
+  doi = {10.7551/mitpress/1.001},
+  year = {n.d.}
+}"""
+
+
+def test_suppressed_group_is_named_in_the_report(tmp_path):
+    """A group the assigner suppresses whole must be REPORTED, for the same
+    reason an overflow group must be: the bib comes back with no letters and
+    nothing else says why.
+
+    Here a third copy of the first work carries year "n.d.", so the usability
+    filter drops it while it still shares a DOI with a usable sibling. The
+    assigner refuses to letter only part of a work's copies, so it suppresses
+    the whole (Menary, 2010) group -- correct, but silent unless the barrier
+    passes `suppressed` through.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, SUPPRESSED_D1, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix" not in content   # no member of the group gets a letter
+    report = _report(rd)
+    assert report["year_suffixes"]["assigned"] == 0
+    suppressed = report["year_suffixes"]["suppressed"]
+    assert len(suppressed) == 1
+    rec = suppressed[0]
+    # Exact values, not key names -- the same shape of reporting bug that
+    # `overflow` carried (a dict wrapped in list() yields its KEY NAMES).
+    assert rec["authors"] == "Menary, Richard"
+    assert rec["year"] == "2010"
+    assert rec["reasons"] == ["filtered_copy"]
+    # `works` is documented in year_suffix.assign_suffixes as best-effort
+    # telemetry rather than a cross-order-stable exact count, so pin only
+    # that it counts a real group rather than the precise number.
+    assert rec["works"] >= 2
+
+
+def test_suffix_error_path_still_carries_every_list_key(tmp_path, monkeypatch):
+    """The error branch must expose the same keys as the complete branch.
+    A consumer reading report["year_suffixes"]["suppressed"] would otherwise
+    KeyError on the error path only -- the path that gets the least testing.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    def boom(entries):
+        raise RuntimeError("assignment blew up")
+
+    monkeypatch.setattr(evidence_barrier.ys, "assign_suffixes", boom)
+    rd = tmp_path / "review"
+    _domain(rd, 1, MENARY_D1, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    suffixes = _report(rd)["year_suffixes"]
+    assert suffixes["status"] == "error"
+    for key in ("groups", "overflow", "suppressed", "conflicts"):
+        assert suffixes[key] == [], key
+
+
+def test_console_summary_distinguishes_unlettered_groups(tmp_path, capsys):
+    """`execute` prints a one-line JSON summary; that line is what an operator
+    reads during a live run. A bare assigned-count of 0 cannot tell "no
+    same-author-same-year group existed" from "a group existed and got no
+    letters on purpose" -- only the second needs looking at.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, SUPPRESSED_D1, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    summary = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert summary["year_suffixes"] == {
+        "assigned": 0, "overflow": 0, "suppressed": 1}
