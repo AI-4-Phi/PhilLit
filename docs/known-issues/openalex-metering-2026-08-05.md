@@ -45,6 +45,33 @@ backoff.
 The key is created at `openalex.org/settings/api` (account required, ~30 s)
 and passed as the query parameter `api_key=…`.
 
+## Does a user need a key? No — measured 2026-08-05
+
+**One review costs roughly 210-430 credits of the unkeyed 1,000/day**, so
+**2-4 reviews a day run fine with no key**. Breakdown: 16-36 searches at 10
+credits (160-360) plus ~50-70 single-work DOI lookups at 1 credit. A key is
+therefore for heavy days only — including *development* days, which is how
+this was found. The key stays **optional**, `.env.example` says so plainly,
+and `check_setup.py` reports its absence neutrally rather than nagging; only
+actual exhaustion carries a call to action.
+
+**Value asymmetry worth knowing before anyone proposes dropping OpenAlex.**
+Measured across the 42 corpora with saved envelopes:
+
+| use | class | contribution |
+|---|---|---|
+| abstract resolution (`works/doi:`) | 1 credit, unmetered with a key | **1,711 abstracts (45%** of all resolved). It is tried only *after* S2 misses, so these are papers that would otherwise have **no abstract at all** — and under the evidence tier that means dropping from `EVIDENCE-ABSTRACT` to CONTEXT/EXISTENCE, which restricts what the writer may say. |
+| search (`search_openalex.py`) | 10 credits | **175 cited works, 5.8%** of the 3,005 DOI-bearing works in delivered bibliographies were reachable only via OpenAlex search (~4 per review). Its envelopes carry 16,320 DOIs of which 15,297 no other engine surfaced, so the recall is broad but mostly not *used*. |
+
+So the load-bearing use is the cheap one and the metered use buys ~4 extra
+cited works per review. Caveat on that 5.8%: "OpenAlex-only" means no other
+engine's *saved envelope* carried the DOI — another engine might have found it
+under a different query — so it measures what did come only from there, not
+what could only ever come from there. If credit pressure ever needs relieving,
+gating the search half (e.g. run it only when S2 returns thin results) cuts
+~75% of the spend; but 5.8% of cited works is real coverage and
+"Comprehensive" is priority 2 in this project, so that is not a cost-only call.
+
 ## PhilLit's exposure — measured, not inferred
 
 - **Abstract resolution is safe.** `get_abstract.py:198` resolves via

@@ -43,8 +43,8 @@ def check_env_vars() -> dict[str, dict[str, Any]]:
         "S2_API_KEY": "Recommended for Semantic Scholar (improves reliability)",
         "OPENALEX_EMAIL": "Recommended for OpenAlex polite pool",
         "OPENALEX_API_KEY": (
-            "Recommended for OpenAlex - FREE key, 10x the daily budget "
-            "($1/day vs $0.10) and unmetered DOI lookups"
+            "Optional - only if you run 5+ reviews a day. FREE key, 10x the "
+            "daily budget ($1/day vs $0.10) and unmetered DOI lookups"
         ),
         "CORE_API_KEY": "Optional for CORE API (improves rate limits)",
     }
@@ -263,13 +263,15 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
         # report it as the actionable thing rather than as "unreachable".
         exhausted = openalex_budget_exhausted(response)
         note = " (polite pool)" if polite else " (public pool)"
-        if keyed:
-            note += " [API key: $1/day budget]"
-        else:
-            note += " [no API key: $0.10/day, ~100 searches - get a free key" \
-                    " at https://openalex.org/settings/api]"
+        # Report the key neutrally: one review costs roughly a quarter to a
+        # half of the unkeyed daily budget, so 2-4 reviews/day need no key and
+        # nagging every user about one would be noise. Only budget exhaustion,
+        # which is the situation a key actually fixes, gets a call to action.
+        note += " [API key set: $1/day]" if keyed else " [no API key: $0.10/day, fine for 2-4 reviews/day]"
         if exhausted:
-            note = " DAILY BUDGET EXHAUSTED (resets midnight UTC)" + note
+            note = (" DAILY BUDGET EXHAUSTED (resets midnight UTC)"
+                    + ("" if keyed else " - a FREE key raises it 10x:"
+                       " https://openalex.org/settings/api") + note)
         results["openalex"] = {
             "reachable": response.status_code == 200,
             "status_code": response.status_code,
