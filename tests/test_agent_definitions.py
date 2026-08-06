@@ -124,6 +124,24 @@ def test_writer_knows_the_venue_status_rule():
     assert "absence of the field means nothing" in text
 
 
+def test_planner_knows_the_venue_status_rule():
+    """Whole-branch review M6 (item 3 D): the writer rule is pinned by four
+    assertions and the researcher rule by two, but the planner's venue
+    sentence -- added by Task 5 fix round 2 -- was pinned by nothing and
+    could be deleted with a green suite. Pin the load-bearing phrases, not
+    the bare field name: a "venue_status" substring alone would survive the
+    directive being rewritten into a quality judgement (same vacuity the
+    writer test's docstring warns about)."""
+    text = (REPO_ROOT / "agents" / "synthesis-planner.md").read_text(encoding="utf-8")
+    assert "venue_status" in text
+    assert "low-visibility" in text
+    assert "anchor of a section" in text
+    assert "sole support" in text
+    # The flag restricts PROMINENCE, never eligibility -- eligibility is the
+    # evidence tier's job, and conflating the two would silently drop work.
+    assert "still outline-eligible" in text
+
+
 def test_researcher_told_not_to_write_venue_status():
     text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
         encoding="utf-8")
