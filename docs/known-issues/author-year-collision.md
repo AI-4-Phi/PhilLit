@@ -233,16 +233,23 @@ with "Interaction with the evidence tier" below.
 
 **Residuals, accepted:**
 
-- **Sentence-adverb lead-ins defeat first-position discrimination.** The
-  C1 left-anchor guard's bare-comma branch (`Name, ` before the match)
-  cannot tell a dropped list member from a capitalized transition word, so
-  "However, Muldoon (2023) argues" (also Indeed,/Moreover,/Elsewhere,)
-  rejects the instance and the group falls back to warn-and-keep-all — the
-  pre-E status quo, visibly warned, never a wrong drop. Fix direction when
-  it earns one: require the comma-preceding token to itself look like a
-  surname (or corroborate against the bib) before rejecting. Found by the
-  final fix-wave re-review 2026-08-05; carry into the phillit-service port
-  notes.
+- **Sentence-adverb lead-ins defeated first-position discrimination —
+  FIXED 2026-08-05** (`0a44066`). The C1 left-anchor guard's bare-comma
+  branch (`Name, ` before the match) could not tell a dropped list member
+  from a capitalized transition word, so "However, Muldoon (2023) argues"
+  (also Indeed,/Moreover,/Elsewhere,) rejected the instance and the group
+  fell back to warn-and-keep-all — the pre-E status quo, visibly warned,
+  never a wrong drop. The recorded fix direction was "require the
+  comma-preceding token to itself look like a surname", which is not
+  decidable by shape (a transition word and a surname look identical there);
+  what shipped instead is a stoplist of ~50 sentence-initial transitions
+  excluded from that branch via negative lookahead. The and/& branch is
+  untouched — no transition word appears in that position — and an
+  **unlisted** transition still degrades to keep-all, never to a drop, so the
+  list being incomplete stays safe. Two tests pin both directions, including
+  the interaction that must not regress: a transition word *before* a genuine
+  comma list ("However, Muldoon, Wu, and Li (2023)") must still reject the
+  second-name binding. Carry into the phillit-service port notes.
 - **Bare-apostrophe possessive not stripped.** `_strip_possessive` handles
   `'s`/`’s` (the trailing `s` is required); a bare-apostrophe possessive on
   a surname already ending in `-s` — "Rivers' (2020)" rather than
@@ -308,16 +315,19 @@ with "Interaction with the evidence tier" below.
   reachable only when a bib reaches `generate_bibliography.py` with the
   duplicate still unmerged (e.g. a standalone/manual invocation that
   skips the dedupe step).
-- **The two-Johnsons sub-shape is matcher-only; the writer-facing half of
-  E never landed.** `_first_text_informative` discriminates two solo
-  same-surname authors only when the prose already carries a first
-  initial or first name ("G. Johnson (2024)"). Nothing was added to
-  `docs/conventions.md` or `agents/synthesis-writer.md` telling writers to
-  supply one. A bare "Johnson (2024)" with no initial still can't
-  discriminate and falls to branch 2/4 (keep-all-and-warn) — so this
-  sub-shape's phantom-reference hole is not closed for reviews whose
-  writers don't already happen to use initials. Open follow-up, not
-  tracked as a separate roadmap item since it is E's own unfinished half.
+- **The two-Johnsons sub-shape: writer-facing half LANDED 2026-08-05**
+  (`1b1162b`), so this now rests on writer compliance rather than on nothing.
+  `_first_text_informative` discriminates two solo same-surname authors only
+  when the prose already carries a first initial or first name ("G. Johnson
+  (2024)"). `docs/conventions.md` now carries an in-text-citation row plus the
+  rule and why it is load-bearing here (a bare surname cannot be resolved to
+  one of two entries, so both get listed and one is a reference the review
+  never cited), and `agents/synthesis-writer.md` instructs the writer to
+  supply the initial — and to prefer "Muldoon and Wu 2023" over "et al." when
+  the bibliography holds both. A bare "Johnson (2024)" still can't
+  discriminate and still falls to branch 2/4 (keep-all-and-warn), so the hole
+  is closed only for compliant prose. **Confirming compliance is a rider on
+  item 3 F's live run** — until that run, treat this as instructed-but-unverified.
 
 ## Interaction with the evidence tier
 

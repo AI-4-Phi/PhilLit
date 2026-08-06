@@ -430,14 +430,20 @@ group has entries, so a listed work is confirmed uncited.
   - *Different people, same surname, both solo* — Gabbrielle vs. Rebecca
     **Johnson** 2024; no author-list token can separate these. Chicago's own
     rule is first initials (`G. Johnson 2024` / `R. Johnson 2024`); the
-    matcher-side half of this landed (`_first_text_informative`), but the
-    writer-facing note (`docs/conventions.md`, `agents/synthesis-writer.md`)
-    telling writers to actually supply an initial was **never added** — so a
-    bare `Johnson (2024)` with no initial in the prose still can't
-    discriminate and falls to keep-all-and-warn. Open follow-up.
+    matcher-side half of this landed (`_first_text_informative`), and the
+    writer-facing half **landed 2026-08-05** — `docs/conventions.md` (a new
+    in-text-citation row plus the rule and why it is load-bearing) and
+    `agents/synthesis-writer.md`. A bare `Johnson (2024)` with no initial
+    still cannot discriminate and still falls to keep-all-and-warn, so this
+    now rests on writer compliance: **confirming it is a rider on F's live
+    run.**
 
   Residuals (full detail in
-  `docs/known-issues/author-year-collision.md`): a bare-apostrophe
+  `docs/known-issues/author-year-collision.md`) — note the sentence-adverb
+  lead-in residual is **FIXED 2026-08-05** (`_NON_INITIAL_PRECEDING_RE` no
+  longer rejects a citation preceded by a sentence-initial transition word
+  like "However, "; the and/& half is untouched and an unlisted transition
+  still degrades to keep-all): a bare-apostrophe
   possessive ("Rivers' (2020)") isn't stripped; unparsed narrative forms
   fall to keep-all UNLESS an unrelated corroborated second-position
   sighting also exists for the group, in which case the whole group,
@@ -475,7 +481,7 @@ threshold measurement. F last: it needs a live run, and that run should not
 be entangled with the evidence-tier A/B experiment. Note the live run now
 carries **four riders**: the year-coverage measurement (item 3 K —
 measurement script ready at
-`docs/known-issues/wrong-years-audit-data/year_coverage.py`), the
+`docs/known-issues/wrong-years-audit-data/year_coverage.py`, local-only), the
 two-Johnsons writer note (**DONE 2026-08-05** — `docs/conventions.md` +
 `agents/synthesis-writer.md`; the run confirms writer compliance), the
 sentence-adverb guard fix (**DONE 2026-08-05** — E's
