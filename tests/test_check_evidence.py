@@ -184,8 +184,62 @@ def test_find_cites_honours_the_entry_suffix():
 
 
 def test_find_cites_without_suffix_is_unchanged():
-    md = "Menary (2010) argues X."
-    assert len(check_evidence.find_cites(md, "Menary", "2010")) == 1
+    """The 3-arg call and the explicit `suffix=""` call must agree on every
+    input, i.e. an empty suffix really does route to the historic arm and
+    never into the year-anchored one. The old length-1 assertion pinned only
+    the arity and passed with the suffix work reverted."""
+    fixtures = [
+        "Menary (2010) argues X.",
+        "Menary (2010a) argues X. Menary (2010b) argues Y.",
+        "Menary (2010a; 2010b) both argue X.",
+        "In the 2010s, Menary (2010a) argues X.",
+        "This is contested (Menary 2010a; Menary 2010b).",
+        "Nothing about Menary here at all.",
+    ]
+    for md in fixtures:
+        assert (check_evidence.find_cites(md, "Menary", "2010")
+                == check_evidence.find_cites(md, "Menary", "2010", "")), md
+
+
+# Item 3 F review, F1: the first suffix implementation anchored the pairing
+# on the SURNAME, which under-reported genuinely-cited lettered works on the
+# exact prose forms the feature creates. Each test below FAILS on that
+# implementation; positions are derived from the fixture, never hard-coded,
+# and asserted exactly - a truthiness or length-only assertion lets the
+# surname-anchored behaviour back in silently.
+
+def test_find_cites_credits_both_letters_in_a_compact_parenthetical():
+    # One surname occurrence serves two letters. Surname-anchored pairing
+    # gave 'b' [] here, reporting a cited work as uncited.
+    for md in ("Menary (2010a; 2010b) both argue X.",
+               "Menary (2010a, 2010b) both argue X."):
+        pos = md.index("Menary")
+        assert check_evidence.find_cites(md, "Menary", "2010", "a") == [pos], md
+        assert check_evidence.find_cites(md, "Menary", "2010", "b") == [pos], md
+
+
+def test_find_cites_pairs_a_repeated_surname_with_the_following_year():
+    # "Surname YEAR" prose: the year that belongs to a surname FOLLOWS it.
+    # Surname-anchored pairing tied on distance and resolved backwards,
+    # giving 'a' both occurrences and 'b' none.
+    md = "This is contested (Menary 2010a; Menary 2010b)."
+    first = md.index("Menary")
+    second = md.index("Menary", first + 1)
+    assert check_evidence.find_cites(md, "Menary", "2010", "a") == [first]
+    assert check_evidence.find_cites(md, "Menary", "2010", "b") == [second]
+
+
+def test_find_cites_ignores_a_nearby_decade_mention():
+    # "2010s" is not a qualifying mention of 2010 for ANY letter. Under
+    # surname-anchored pairing it still entered the nearest-mention contest,
+    # won it, and suppressed the real "(2010a)" cite next to it.
+    md = "In the 2010s, Menary (2010a) argues X."
+    pos = md.index("Menary")
+    assert check_evidence.find_cites(md, "Menary", "2010", "a") == [pos]
+    assert check_evidence.find_cites(md, "Menary", "2010", "b") == []
+    # ...and the decade alone must not manufacture a cite either.
+    decade_only = "In the 2010s, Menary said little."
+    assert check_evidence.find_cites(decade_only, "Menary", "2010", "a") == []
 
 
 BIB_LETTERED = """@book{menary2010cognitive,

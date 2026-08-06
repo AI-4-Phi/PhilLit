@@ -130,18 +130,29 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     of the same base year sitting close together (e.g. "Menary (2010a) ...
     Menary (2010b)" in one paragraph): the plain within-window check below
     would count BOTH "Menary" occurrences for EITHER letter, since a
-    60-char window easily spans two adjacent citations. Instead, each
-    surname occurrence is paired with its NEAREST same-base-year mention
-    (right-lettered, wrong-lettered, or bare -- all recognized by
-    `bare_year_re`, which does not distinguish them) and only counted when
-    that nearest mention is itself one this entry's letter qualifies.
+    60-char window easily spans two adjacent citations. The pairing anchors
+    on the YEAR, not the surname -- each QUALIFYING year mention claims its
+    nearest surname occurrence. Anchoring on the surname instead
+    under-reports, in three ways measured on real prose: one surname can
+    serve two letters ("Menary (2010a; 2010b)", a form 4 of 33 delivered
+    reviews already use) but could credit only the nearer one; an equal
+    distance to two years resolved to the year PRECEDING the surname, which
+    is backwards for "Surname YEAR" prose; and an unqualifying mention
+    nearby ("the 2010s") could win the contest and suppress a real cite
+    outright.
+
+    The trade, deliberate: a surname occurrence near a qualifying year but
+    not the NEAREST surname to it is no longer credited ("Menary defends
+    integration. See also (Menary 2010a).") -- one lettered year names
+    exactly one work, so it votes once. That costs a little reporting-verb
+    recall on this recall-floor checker; do not widen it back.
     """
     if not surname or not re.fullmatch(r"\d{4}", year or ""):
         return []
     surname_re = re.compile(rf"\b{re.escape(surname)}\b")
-    bare_year_re = re.compile(rf"(?<!\d){re.escape(year)}(?!\d)")
 
     if not suffix:
+        bare_year_re = re.compile(rf"(?<!\d){re.escape(year)}(?!\d)")
         year_positions = [m.start() for m in bare_year_re.finditer(md)]
         if not year_positions:
             return []
@@ -153,25 +164,24 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
                 positions.append(m.start())
         return positions
 
+    # Right-lettered ("2010a") or bare ("2010", not followed by another
+    # letter or digit). No separate bare-year scan is needed as a guard:
+    # every qualifying position is also a bare-year position, since neither
+    # alternative can be followed by a digit.
     qualifying_re = re.compile(
         rf"(?<!\d){re.escape(year)}(?:{re.escape(suffix)}\b|(?![0-9a-z]))")
-    all_positions = [m.start() for m in bare_year_re.finditer(md)]
-    if not all_positions:
-        return []
-    qualifying_positions = {m.start() for m in qualifying_re.finditer(md)}
+    qualifying_positions = [m.start() for m in qualifying_re.finditer(md)]
     if not qualifying_positions:
         return []
-    positions = []
-    for m in surname_re.finditer(md):
-        start = max(0, m.start() - _MATCH_WINDOW)
-        end = min(len(md), m.end() + _MATCH_WINDOW)
-        nearby = [yp for yp in all_positions if start <= yp <= end]
-        if not nearby:
-            continue
-        nearest = min(nearby, key=lambda yp: abs(yp - m.start()))
-        if nearest in qualifying_positions:
-            positions.append(m.start())
-    return positions
+    surname_matches = list(surname_re.finditer(md))
+    hits = set()
+    for yp in qualifying_positions:
+        nearby = [m for m in surname_matches
+                  if max(0, m.start() - _MATCH_WINDOW) <= yp
+                  <= min(len(md), m.end() + _MATCH_WINDOW)]
+        if nearby:
+            hits.add(min(nearby, key=lambda m: abs(m.start() - yp)).start())
+    return sorted(hits)
 
 
 def _sentence_at(md: str, pos: int) -> str:
