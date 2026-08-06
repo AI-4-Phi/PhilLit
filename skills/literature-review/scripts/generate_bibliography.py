@@ -676,10 +676,22 @@ _SENTENCE_LEAD_INS = (
     "Still|Yet|Rather|Otherwise|Equally|Correspondingly|Unsurprisingly|"
     "Surprisingly|Curiously|Tellingly|Plainly|Clearly|Obviously|Presumably"
 )
+#
+# The two alternatives CAPTURE the name they matched. That is not for the
+# rejection decision - which is unchanged, and is still just "did this match" -
+# but for _rejected_span_surnames, which walks the same pattern backwards to
+# recover the author list this match landed in the middle of.
 _NON_INITIAL_PRECEDING_RE = re.compile(
-    r"(?:[A-ZÀ-Þ][\w'’À-ÿ-]+,?\s+(?:and|&)\s+"
-    r"|(?!(?:" + _SENTENCE_LEAD_INS + r")\b)[A-ZÀ-Þ][\w'’À-ÿ-]+,\s+)$"
+    r"(?:(?P<conj_name>[A-ZÀ-Þ][\w'’À-ÿ-]+),?\s+(?:and|&)\s+"
+    r"|(?!(?:" + _SENTENCE_LEAD_INS + r")\b)"
+    r"(?P<comma_name>[A-ZÀ-Þ][\w'’À-ÿ-]+),\s+)$"
 )
+
+# How far back _rejected_span_surnames walks. Long enough for any real author
+# list, short enough that the backward scan stays bounded per match on a
+# 100 KB review. A list longer than this loses its earliest names, which costs
+# protection, not accuracy - the recovered names are a keep-side net.
+_LIST_LOOKBACK = 200
 
 
 def _strip_possessive(s: str) -> str:
@@ -711,6 +723,72 @@ def _parser_verdicts(review_text: str):
         yield m, bool(_NON_INITIAL_PRECEDING_RE.search(review_text[:m.start()]))
 
 
+def _rejected_span_surnames(review_text: str, m) -> list[str]:
+    """Every surname the REJECTED citation `m` names, first author first.
+
+    A rejected match binds at a NON-INITIAL name of an author list - that is
+    the whole content of the rejection - so the surname the regex captured is
+    the second or third author, never the first. The collision groups it has
+    to protect are keyed by FIRST-author surname, so keying the protection on
+    the captured name alone points it at the wrong group and the sibling
+    citation drops the cited work anyway. Reproduced (whole-branch C2):
+
+        bib    muldoonSolo2023 (Muldoon), muldoonWu2023 (Muldoon and Wu)
+        prose  "Muldoon (2023) presents the solo account.
+                Muldoon & Wu (2023) present the joint account."
+        kept   muldoonSolo2023 only - muldoonWu2023 dropped though cited
+
+    The parser cannot read "Muldoon & Wu" as one list (see
+    _CITE_INSTANCE_RE), so it binds at Wu, _NON_INITIAL_PRECEDING_RE rejects
+    it for exactly the right reason, and the mention was filed under Wu while
+    the group is Muldoon. Identical shape for "Muldoon, Wu, and Li (2023)",
+    where the captured name is the middle author.
+
+    So walk _NON_INITIAL_PRECEDING_RE backwards - the same pattern that
+    rejected the match, peeled one list member at a time - and return the
+    recovered leading names plus the match's own surname and its second-author
+    capture. Returning the WHOLE span rather than only the recovered first
+    author is deliberate: "See Clark, Menary (2010), and Sutton" is genuinely
+    ambiguous between one three-author list and three separate citations, and
+    under the cardinal rule an ambiguous mention protects every group it could
+    name. Measured cost over the 41 delivered reviews: zero (see the report).
+
+    Fixing the PARSER instead - teaching _CITE_INSTANCE_RE that "&" is a
+    two-author "and" - was considered and DECLINED, and the reason is worth
+    keeping because the external review proposed it as the minimum fix. It is
+    drop-INCREASING, not protective: "Clark & Menary (2010)" would stop being
+    a rejected fragment and become an accepted instance naming Clark in first
+    position, which is uncorroborated second-position evidence against a
+    Menary group and therefore no protection at all. That is precisely what
+    the "and" spelling does today (verified: the same prose with "and" already
+    drops menary2010extended where "&" keeps it), so parsing "&" would import
+    the asymmetry into the safe half rather than remove it. It buys nothing on
+    the defect above, which this net closes outright. The asymmetry itself -
+    item 3 E's drop never fires on an ampersand author list - is a separate
+    accuracy question, on the keep side, and is routed onward rather than
+    settled here.
+    """
+    names = []
+    head = review_text[max(0, m.start() - _LIST_LOOKBACK):m.start()]
+    while True:
+        pm = _NON_INITIAL_PRECEDING_RE.search(head)
+        if not pm:
+            break
+        names.append(pm.group("conj_name") or pm.group("comma_name"))
+        head = head[:pm.start()]
+    names.reverse()
+    names.append(_strip_possessive(m.group("surname")))
+    if m.group("second"):
+        names.append(_strip_possessive(m.group("second")))
+    seen = set()
+    out = []
+    for n in names:
+        if n.lower() not in seen:
+            seen.add(n.lower())
+            out.append(n)
+    return out
+
+
 def _unresolvable_mentions(review_text: str) -> list[dict]:
     """Citations of a surname+year that the parser saw and REJECTED, carrying
     no Chicago letter. Each: {"surname_variants", "surname", "year"}.
@@ -738,17 +816,24 @@ def _unresolvable_mentions(review_text: str) -> list[dict]:
       of the whole group. Requiring the year to carry no letter is the second
       opinion's `(?![0-9A-Za-z])` condition, expressed through the parser's own
       suffix group rather than a second regex.
-    - SCOPED BY THE PARSER'S CAPTURED SURNAME, not by proximity. The obvious
+    - SCOPED BY THE REJECTED MATCH'S OWN SPAN, not by proximity. The obvious
       alternative - "a bare year anywhere within _MATCH_WINDOW of a member's
       surname" - was built and measured, and it DESTROYS item 3 E: an ordinary
       "Muldoon and Wu (2023) argue X." puts a bare 2023 next to Muldoon, so
       both of E's drop branches stop firing on their own canonical fixtures,
       and 15 extra references are retained across 13 of the 41 delivered
       reviews. That is the outcome _sighted_letters' docstring predicted for an
-      unscoped bare-year sighting. Keying on the surname the REJECTED match
-      itself captured has no such cost: zero corpus difference, because every
-      bare year that belongs to a citation the parser accepted is handled by
-      the instance machinery as before.
+      unscoped bare-year sighting. Keying on the REJECTED match has no such
+      cost: zero corpus difference, because every bare year that belongs to a
+      citation the parser accepted is handled by the instance machinery as
+      before.
+
+      "Span", not "captured surname" - the correction is whole-branch C2.
+      A rejected match binds at a non-initial name by definition, so the
+      captured surname is never the first author the collision groups are
+      keyed by. _rejected_span_surnames recovers the rest of the list; see
+      there for the case that made this a Critical and for why the tempting
+      parser-side fix is declined.
 
     Known limit, stated rather than closed: a bare mention with no citation
     shape at all ("In 2010, Menary argued that ...", "the 2010 crisis") is not
@@ -759,9 +844,10 @@ def _unresolvable_mentions(review_text: str) -> list[dict]:
     for m, rejected in _parser_verdicts(review_text):
         if not rejected or m.group("suffix"):
             continue
-        surname = _strip_possessive(m.group("surname"))
-        out.append({"surname_variants": ascii_variants(surname),
-                    "surname": surname, "year": m.group("year")})
+        year = m.group("year")
+        for surname in _rejected_span_surnames(review_text, m):
+            out.append({"surname_variants": ascii_variants(surname),
+                        "surname": surname, "year": year})
     return out
 
 

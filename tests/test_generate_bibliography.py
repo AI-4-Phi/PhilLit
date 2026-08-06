@@ -2160,3 +2160,84 @@ class TestUnresolvableBareMention:
         # is what keeps the two halves of _parser_verdicts disjoint.
         assert generate_bibliography._unresolvable_mentions(
             "Menary (2010) argues.") == []
+
+
+# =============================================================================
+# Whole-branch review C2: the mention a rejected citation makes belongs to the
+# list's FIRST author, not to the name the parser happened to bind at
+# =============================================================================
+
+MULDOON_C2_BIB = """@article{muldoonSolo2023, author = {Muldoon, Ryan},
+  title = {Solo Account}, journal = {Mind}, year = {2023}}
+
+@article{muldoonWu2023, author = {Muldoon, Ryan and Wu, Jin},
+  title = {Joint Account}, journal = {Synthese}, year = {2023}}"""
+
+MULDOON_TRIO_BIB = """@article{muldoonSolo2023, author = {Muldoon, Ryan},
+  title = {Solo Account}, journal = {Mind}, year = {2023}}
+
+@article{muldoonTrio2023, author = {Muldoon, Ryan and Wu, Jin and Li, Mei},
+  title = {Trio Account}, journal = {Synthese}, year = {2023}}"""
+
+
+class TestRejectedListRecoversItsFirstAuthor:
+    """_NON_INITIAL_PRECEDING_RE rejects a match precisely BECAUSE it bound at
+    a non-initial name, so the surname it captured is never the first author -
+    and collision groups are keyed by first author. The bare-mention net was
+    therefore filed under the wrong group and the sibling citation dropped the
+    cited work anyway.
+
+    Both fixtures need the accepted sibling: without a citation that licenses
+    a drop, nothing is dropped and the test would prove nothing."""
+
+    def _cited(self, prose, bib_text):
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        return sorted(k for k, _ in
+                      generate_bibliography.find_cited_entries(prose, db))
+
+    def test_an_ampersand_pair_does_not_lose_the_joint_work(self, capsys):
+        # The reproduced C2. "Muldoon & Wu (2023)" is parsed from Wu (the
+        # two-author form accepts only "and"), rejected for the right reason,
+        # and filed under WU while the group is MULDOON. The solo sibling then
+        # licensed the drop and the joint work vanished from References while
+        # the prose cited it. lint_md does not catch it: its tolerant
+        # token+year resolution resolves the citation against the surviving
+        # solo reference.
+        assert self._cited(
+            "Muldoon (2023) presents the solo account.\n"
+            "Muldoon & Wu (2023) present the joint account.\n",
+            MULDOON_C2_BIB) == ["muldoonSolo2023", "muldoonWu2023"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_three_author_list_does_not_lose_the_joint_work(self, capsys):
+        # The same defect where NO ampersand is involved, which is what makes
+        # "parse & as and" the wrong fix: here the parser binds at the MIDDLE
+        # author, so the rejection is by the bare-comma half of the guard and
+        # the recovered name comes from a different branch of it.
+        assert self._cited(
+            "Muldoon (2023) presents the solo account.\n"
+            "Muldoon, Wu, and Li (2023) present the joint account.\n",
+            MULDOON_TRIO_BIB) == ["muldoonSolo2023", "muldoonTrio2023"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_the_recovered_names_are_the_whole_list_first_author_first(self):
+        got = generate_bibliography._unresolvable_mentions(
+            "Muldoon, Wu, and Li (2023) present the joint account.")
+        assert [m["surname"] for m in got] == ["Muldoon", "Wu", "Li"]
+        assert {m["year"] for m in got} == {"2023"}
+
+    def test_a_sentence_lead_in_does_not_become_an_author(self):
+        # The walk-back reuses the guard's own lead-in exclusion, so the
+        # transition word opening the sentence is not peeled as a list member.
+        assert [m["surname"] for m in generate_bibliography._unresolvable_mentions(
+            "However, Muldoon, Wu, and Li (2023) present the joint account.")] \
+            == ["Muldoon", "Wu", "Li"]
+
+    def test_recovery_does_not_reach_a_group_the_list_never_names(self):
+        # NEGATIVE CONTROL. Widening the net to the whole rejected span must
+        # not widen it past the span: an unrelated rejected cite in the same
+        # year still protects nothing, so item 3 E's drop is intact.
+        assert self._cited(
+            "Menary (2010a) argues X. See Sutton, Clark (2010), and Rowlands.",
+            MENARY_BIB) == ["menary2010cognitive"]
