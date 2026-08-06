@@ -21,6 +21,33 @@
         ]
       },
       {
+        "matcher": "Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fast_gate.sh\" _ledger- hooks/block_ledger_write.py || echo '{\"systemMessage\": \"PhilLit: ledger write-protection gate could not run (uv failure) - the write was allowed.\"}'"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fast_gate.sh\" _ledger- hooks/block_ledger_write.py || echo '{\"systemMessage\": \"PhilLit: ledger write-protection gate could not run (uv failure) - the edit was allowed.\"}'"
+          }
+        ]
+      },
+      {
+        "matcher": "NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/fast_gate.sh\" _ledger- hooks/block_ledger_write.py || echo '{\"systemMessage\": \"PhilLit: ledger write-protection gate could not run (uv failure) - the edit was allowed.\"}'"
+          }
+        ]
+      },
+      {
         "matcher": "Bash",
         "hooks": [
           {

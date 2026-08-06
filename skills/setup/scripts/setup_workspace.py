@@ -28,7 +28,17 @@ ENV_KEYS = ("S2_API_KEY", "CROSSREF_MAILTO", "OPENALEX_EMAIL", "BRAVE_API_KEY", 
 # consulted and triggers a startup warning (verified in Claude Code 2.1.210).
 PHILLIT_RULES = {
     "defaultMode": "default",
-    "deny": ["Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)"],
+    "deny": [
+        "Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)",
+        # The evidence-tier attestation authority: hand-writing a ledger record
+        # grants a citability tier no fetch corroborated (ROADMAP item 3 C).
+        # The scripts that own them write from Python, so nothing honest is
+        # blocked. Belt-and-braces with hooks/block_ledger_write.py, which
+        # ships with the plugin and so also covers pre-existing workspaces
+        # that have not re-run /phillit:setup.
+        "Edit(**/enrichment_ledger-*.json)",
+        "Edit(**/cleaning_ledger-*.json)",
+    ],
     "allow": [
         "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
         "Edit(reviews/**)",

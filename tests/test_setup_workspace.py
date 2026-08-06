@@ -17,6 +17,22 @@ def test_merge_into_empty_adds_all_rules():
     assert merged["defaultMode"] == "default"
 
 
+def test_ledger_write_denied_and_ordered_before_the_reviews_allow():
+    # Item 3 C: the evidence-tier ledgers are the attestation authority, so a
+    # hand-written record must not be possible through a file tool. Note the
+    # allow rule Edit(reviews/**) positively permits the ledger path, so this
+    # only works because deny is evaluated before allow.
+    merged = sw.merge_permissions({}, RULES)
+    assert "Edit(**/enrichment_ledger-*.json)" in merged["deny"]
+    assert "Edit(**/cleaning_ledger-*.json)" in merged["deny"]
+    assert "Edit(reviews/**)" in merged["allow"]
+    # Belt-and-braces only: hooks/block_ledger_write.py is the mechanism that
+    # covers workspaces which have not re-run /phillit:setup, so the rule must
+    # never be the sole protection.
+    hook = Path(sw.__file__).parent.parent.parent.parent / "hooks" / "block_ledger_write.py"
+    assert hook.is_file()
+
+
 def test_rules_carry_no_dead_file_permission_patterns():
     # Claude Code matches file permission checks against Edit(path) rules only;
     # Write(path)/NotebookEdit(path)/MultiEdit(path) rules are never consulted and

@@ -59,6 +59,26 @@ def test_background_dispatch_gate_wired_for_agent_and_task():
         assert '" run_in_background ' in c  # needle argument precedes the script
 
 
+def test_ledger_write_gate_wired_for_every_file_editing_tool():
+    # Item 3 C: the ledgers are the evidence-tier attestation authority, so a
+    # tool-write to one must be BLOCKED -- which requires PreToolUse (a
+    # PostToolUse hook cannot stop the write). Every file-editing tool needs
+    # its own matcher: hook matchers dispatch by TOOL NAME, so unlike a
+    # permission rule -- where Edit(path) covers Write/Edit/NotebookEdit -- an
+    # "Edit" matcher does not also receive NotebookEdit events (external
+    # review, 2026-08-05). Edit had no PreToolUse hook at all before this gate.
+    matchers = set(_matchers_for("PreToolUse", "block_ledger_write.py"))
+    assert matchers == {"Write", "Edit", "NotebookEdit"}
+    cmds = [c for c in _commands("PreToolUse") if "block_ledger_write.py" in c]
+    assert len(cmds) == 3
+    for c in cmds:
+        assert "fast_gate.sh" in c
+        assert "${CLAUDE_PLUGIN_ROOT}" in c
+        assert '" _ledger- ' in c  # needle argument precedes the script
+    # It must not be wired as PostToolUse, where it could not block.
+    assert not _matchers_for("PostToolUse", "block_ledger_write.py")
+
+
 def test_plumbing_hooks_fail_open_with_visible_message():
     # Gate-failure policy (CLAUDE.md): plumbing gates fail OPEN and loud. uv
     # exits 2 when the cold venv build fails (e.g. offline); propagated from a

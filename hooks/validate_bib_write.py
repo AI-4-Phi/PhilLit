@@ -131,7 +131,10 @@ def main():
     tool_input = hook_input.get("tool_input", {})
 
     file_path = tool_input.get("file_path", "")
-    if not isinstance(file_path, str) or not file_path.endswith(".bib"):
+    # Case-insensitive suffix: macOS/Windows filesystems are case-insensitive,
+    # so "LITERATURE.BIB" is the same file as "literature.bib" and must not
+    # skip validation (found alongside the fast_gate needle fix, 2026-08-05).
+    if not isinstance(file_path, str) or not file_path.lower().endswith(".bib"):
         allow()
         return
 

@@ -110,6 +110,61 @@ def test_forwards_stdin_to_gate(tmp_path):
     assert f"GOT:{payload}" in result.stdout
 
 
+def test_needle_matches_case_insensitively(tmp_path):
+    # macOS and Windows filesystems are case-insensitive, so "REFS.BIB" and
+    # "ENRICHMENT_LEDGER-x.JSON" name the same files as their lowercase
+    # spellings -- a case-sensitive pre-filter would skip the gate entirely
+    # (found by the item-3-C external review, 2026-08-05). Widening the
+    # pre-filter is always safe: more calls reach the Python gate, which
+    # decides properly.
+    root = _plugin_root(tmp_path)
+    fake = _fake_uv(tmp_path)
+    proj = tmp_path / "workspace"
+    (proj / ".phillit").mkdir(parents=True)
+    for needle, path in ((".bib", "REFS.BIB"),
+                         ("_ledger-", "json/ENRICHMENT_LEDGER-b.JSON")):
+        result = _run(root, [needle, "hooks/h.py"],
+                      {"CLAUDE_PROJECT_DIR": str(proj), "PHILLIT_UV": str(fake),
+                       "HOME": str(tmp_path)},
+                      stdin='{"tool_input": {"file_path": "%s"}}' % path)
+        assert result.returncode == 0, result.stderr
+        assert "ARGS=run --locked" in result.stdout, (needle, path)
+
+
+def test_ledger_needle_reaches_the_real_gate_end_to_end(tmp_path):
+    # The unit tests exercise block_ledger_write.py directly; this pins the
+    # whole chain (marker -> needle -> phillit-run -> gate) for both the deny
+    # and the content-mention-only allow, which is where a prefilter
+    # over-approximation could otherwise leak a false block.
+    root = _plugin_root(tmp_path)
+    (root / "hooks" / "block_ledger_write.py").write_text(
+        (REPO / "hooks" / "block_ledger_write.py").read_text(encoding="utf-8"),
+        encoding="utf-8")
+    fakebin = tmp_path / "fakebin"
+    fakebin.mkdir()
+    (fakebin / "uv").write_text(
+        "#!/usr/bin/env bash\nshift 5\nexec python3 \"$@\"\n", encoding="utf-8")
+    (fakebin / "uv").chmod(0o755)
+    proj = tmp_path / "workspace"
+    (proj / ".phillit").mkdir(parents=True)
+    env = {"CLAUDE_PROJECT_DIR": str(proj), "PHILLIT_UV": str(fakebin / "uv"),
+           "HOME": str(tmp_path)}
+
+    denied = _run(root, ["_ledger-", "hooks/block_ledger_write.py"], env,
+                  stdin='{"tool_name": "Write", "tool_input": {"file_path":'
+                        ' "reviews/x/intermediate_files/json/'
+                        'enrichment_ledger-literature-domain-1.json"}}')
+    assert denied.returncode == 0, denied.stderr
+    assert '"permissionDecision": "deny"' in denied.stdout
+
+    allowed = _run(root, ["_ledger-", "hooks/block_ledger_write.py"], env,
+                   stdin='{"tool_name": "Write", "tool_input": {"file_path":'
+                         ' "docs/notes.md", "content":'
+                         ' "see enrichment_ledger-b.json"}}')
+    assert allowed.returncode == 0, allowed.stderr
+    assert allowed.stdout.strip() == "{}"
+
+
 def test_propagates_uv_failure_for_fail_open_fallback(tmp_path):
     # Gate-failure policy: plumbing fails open + loud. The nonzero exit must
     # reach hooks.json so its `|| echo systemMessage` fallback fires.
