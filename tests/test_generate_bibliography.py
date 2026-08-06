@@ -9,6 +9,7 @@ import pytest
 SCRIPT_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
 sys.path.insert(0, str(SCRIPT_DIR))
 
+import generate_bibliography
 from generate_bibliography import (
     clean_bibtex_str,
     format_author_list,
@@ -1232,3 +1233,64 @@ class TestCollisionResolution:
         self._cited(bib, "The debate continued through 2021 with Müller central.")
         err = capsys.readouterr().err
         assert all(ord(c) < 128 for c in err)
+
+
+class TestYearSuffixRendering:
+    def _entry(self, bib_text):
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        key = list(db.entries.keys())[0]
+        return key, db.entries[key]
+
+    def test_article_renders_letter(self):
+        key, entry = self._entry("""@article{m2010a,
+          author = {Menary, Richard}, title = {Cognitive Integration},
+          journal = {Synthese}, year = {2010}, year_suffix = {a}}""")
+        out = generate_bibliography.format_entry(entry, key)
+        # Author list always ends its own sentence with a period (existing
+        # convention, e.g. TestFormatEntry.test_missing_optional_fields'
+        # "Author, Test." check) - so the year clause reads "Richard. 2010a."
+        assert "Menary, Richard. 2010a." in out
+
+    def test_book_renders_letter(self):
+        key, entry = self._entry("""@book{m2010b,
+          author = {Menary, Richard}, title = {The Extended Mind},
+          publisher = {MIT Press}, year = {2010}, year_suffix = {b}}""")
+        assert "2010b." in generate_bibliography.format_entry(entry, key)
+
+    def test_no_field_renders_plain_year(self):
+        key, entry = self._entry("""@article{m2010,
+          author = {Menary, Richard}, title = {Solo}, journal = {Synthese},
+          year = {2010}}""")
+        out = generate_bibliography.format_entry(entry, key)
+        assert "2010." in out and "2010a" not in out
+
+    def test_junk_suffix_is_ignored(self):
+        # Defensive: a field that is not a single letter renders as if absent.
+        for junk in ("2010", "ab", "1", ""):
+            key, entry = self._entry("""@article{m2010,
+              author = {Menary, Richard}, title = {Solo}, journal = {Synthese},
+              year = {2010}, year_suffix = {%s}}""" % junk)
+            out = generate_bibliography.format_entry(entry, key)
+            assert "2010." in out
+            assert "2010" + junk not in out or junk == ""
+
+    def test_uppercase_suffix_is_normalized_not_rejected(self):
+        # Decided: _display_year lowercases, so {A} renders as 2010a. State the
+        # behaviour and test it, rather than leaving a comment that says
+        # "junk is ignored" while the code quietly accepts it.
+        key, entry = self._entry("""@article{m2010,
+          author = {Menary, Richard}, title = {Solo}, journal = {Synthese},
+          year = {2010}, year_suffix = {A}}""")
+        out = generate_bibliography.format_entry(entry, key)
+        assert "2010a." in out and "2010A" not in out
+
+    def test_sort_orders_a_before_b(self):
+        from pybtex.database import parse_string
+        db = parse_string("""@book{b,
+          author = {Menary, Richard}, title = {Zeta}, publisher = {MIT},
+          year = {2010}, year_suffix = {b}}
+        @book{a, author = {Menary, Richard}, title = {Alpha},
+          publisher = {MIT}, year = {2010}, year_suffix = {a}}""", "bibtex")
+        pairs = sorted(db.entries.items(), key=generate_bibliography._sort_key)
+        assert [k for k, _ in pairs] == ["a", "b"]

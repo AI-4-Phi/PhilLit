@@ -91,6 +91,22 @@ def _get_field(entry, name: str) -> str:
     return clean_bibtex_str(raw).strip() if raw else ""
 
 
+def _display_year(entry) -> str:
+    """The year as a reader sees it: `2010b` when a Chicago letter was
+    assigned (item 3 F), plain `2010` otherwise.
+
+    The letter lives in its own field, never in `year`: the \\d{4} guards in
+    check_evidence.py and resolve_context.py reject a suffixed year outright.
+    Only a single a-z letter is honoured, so a malformed field renders as if
+    absent rather than emitting nonsense into a delivered reference.
+    """
+    year = _get_field(entry, "year")
+    suffix = _get_field(entry, "year_suffix").strip().lower()
+    if year and len(suffix) == 1 and suffix.isalpha() and suffix.isascii():
+        return year + suffix
+    return year
+
+
 def _quoted_title(title: str) -> str:
     """Wrap title in quotes with proper terminal punctuation per Chicago style.
 
@@ -190,7 +206,7 @@ def format_entry(entry, key: str) -> str:
         return ""
 
     author_str = format_author_list(persons, is_editor=is_editor_volume)
-    year = _get_field(entry, "year")
+    year = _display_year(entry)
     title = _get_field(entry, "title")
 
     # Build the reference based on entry type
@@ -338,7 +354,7 @@ def _sort_key(entry_tuple):
     if not persons:
         return ("", "")
     surname = _get_full_surname(persons[0]).lower()
-    year = _get_field(entry, "year")
+    year = _display_year(entry)
     return (surname, year)
 
 
