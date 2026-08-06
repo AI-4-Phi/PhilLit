@@ -260,10 +260,27 @@ def extract_citations(body: str) -> list[tuple[int, str, list[str], list[str]]]:
     return out
 
 
-def _find_refs_heading(text: str) -> tuple[int, int] | None:
+def find_refs_heading(text: str) -> tuple[int, int] | None:
     """(start, end) char offsets of the real ## References heading line -
     fence-aware, so a heading inside a code block never splits the file
-    (review 6.1). The LAST real heading wins (References is a tail section)."""
+    (review 6.1). The LAST real heading wins (References is a tail section).
+
+    THE one References-boundary scanner in the pipeline. generate_bibliography
+    imports this function (not a copy of it) for both sides of its own
+    boundary - _strip_references_section on the read side and apply_references
+    on the write side. It used to carry its own fence-BLIND regex, and a
+    ```text fenced "## References" example then cut the prose at the fake
+    heading: every citation after it went unmatched (cited-work drop) and
+    apply_references replaced the rest of the document from that point (data
+    loss). The invariant was already tested here and nowhere else, which is
+    exactly how one component can hold the rule and another break it.
+
+    Known limit, on the keep side and therefore left open: an UNTERMINATED
+    fence hides every heading after it, so this returns None. The linter then
+    reports checked=False (nothing to resolve against) and the generator
+    APPENDS a second References section rather than replacing one. Neither
+    drops a work.
+    """
     offset = 0
     in_fence = False
     found = None
@@ -275,6 +292,10 @@ def _find_refs_heading(text: str) -> tuple[int, int] | None:
             found = (offset, offset + len(line))
         offset += len(line)
     return found
+
+
+# Historic name, kept as an alias to the shared object (never a copy).
+_find_refs_heading = find_refs_heading
 
 
 def check_citations(text: str) -> tuple[list[str], list[str], bool]:

@@ -662,6 +662,77 @@ class TestIdempotency:
 
 
 # =============================================================================
+# Whole-branch review C1: the References boundary is fence-aware, and there is
+# ONE scanner for it
+# =============================================================================
+
+class TestFencedReferencesHeadingIsNotABoundary:
+    """A ```text fenced "## References" example used to be treated as the real
+    boundary by BOTH sides of this script: the read side stopped matching
+    there (every citation after it silently dropped) and the write side
+    replaced the document from there (the prose itself deleted). The linter
+    already refused to be fooled by the same input, which is the whole point -
+    one component held the rule and another broke it."""
+
+    FENCED = ('# Review\n'
+              '\n'
+              'This review formats its bibliography like so:\n'
+              '\n'
+              '```text\n'
+              '## References\n'
+              '\n'
+              'Smith, Jane. 2020. "A Paper." *Mind*.\n'
+              '```\n'
+              '\n'
+              'Smith (2020) argues that p.\n')
+
+    BIB = """@article{smith2020, author = {Smith, Jane}, title = {A Paper},
+  journal = {Mind}, year = {2020}}"""
+
+    def _db(self):
+        from pybtex.database import parse_string
+        return parse_string(self.BIB, "bibtex")
+
+    def test_a_citation_after_a_fenced_heading_still_matches(self):
+        # The cited-work drop half. Pre-fix this returned [].
+        assert [k for k, _ in find_cited_entries(self.FENCED, self._db())] \
+            == ["smith2020"]
+
+    def test_the_document_is_not_truncated_at_a_fenced_heading(self):
+        # The data-loss half, asserted over the WHOLE document rather than the
+        # key list: pre-fix, apply_references returned everything up to the
+        # fence's heading plus the new section, so the fenced example, the
+        # sentence citing Smith, and anything after them were gone.
+        refs = generate_references(find_cited_entries(self.FENCED, self._db()))
+        result = apply_references(self.FENCED, refs)
+        assert self.FENCED.rstrip("\n") in result       # nothing removed
+        assert "Smith (2020) argues that p." in result  # the real citation
+        assert "```text\n## References\n" in result     # the fenced example
+        assert result.count("## References") == 2       # fenced + appended
+        assert result.rstrip("\n").endswith('*Mind*.')  # appended at the END
+
+    def test_a_real_heading_after_the_fence_is_still_the_boundary(self):
+        # The fence-awareness must not degrade into "never find a boundary":
+        # a genuine References section following the fenced example is still
+        # stripped from the matcher and replaced by the writer.
+        text = self.FENCED + '\n## References\n\nStale, Entry. 1999. "Gone."\n'
+        assert generate_bibliography._strip_references_section(text) \
+            == self.FENCED + "\n"
+        result = apply_references(text, '## References\n\nNew.\n')
+        assert "Stale, Entry" not in result
+        assert "Smith (2020) argues that p." in result
+
+    def test_the_generator_and_the_linter_share_one_scanner(self):
+        # Not a copy - the object itself, per the repo's single-owner pattern.
+        # Three sites read this boundary (two here, one in lint_md) and they
+        # disagreed; an identity assertion is what stops a fourth copy.
+        import lint_md
+        assert generate_bibliography.find_refs_heading is lint_md.find_refs_heading
+        assert lint_md._find_refs_heading is lint_md.find_refs_heading
+        assert not hasattr(generate_bibliography, "_REFERENCES_HEADING_RE")
+
+
+# =============================================================================
 # Tests for normalization utilities
 # =============================================================================
 

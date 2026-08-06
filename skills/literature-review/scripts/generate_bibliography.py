@@ -28,14 +28,18 @@ from metadata_cleaner import marker_removed_fields  # noqa: E402
 
 sys.path.pop(0)
 
+# The References-boundary scanner, imported rather than reimplemented: this
+# script has a read side (_strip_references_section) and a write side
+# (apply_references), lint_md has a third, and all three must agree on what
+# counts as the boundary. They did not - lint_md was fence-aware and this
+# script was not - see find_refs_heading's docstring for what that cost.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from lint_md import find_refs_heading  # noqa: E402
+
+sys.path.pop(0)
+
 # Proximity window for surname↔year matching (chars)
 _MATCH_WINDOW = 60
-
-# The generated section's own heading. One pattern, two sides: the read side
-# (_strip_references_section, which keeps a stale reference list out of the
-# matcher) and the write side (apply_references, which replaces it). They must
-# agree on what counts as the boundary.
-_REFERENCES_HEADING_RE = re.compile(r"^## References\s*$", re.MULTILINE)
 
 
 def clean_bibtex_str(s: str) -> str:
@@ -1471,11 +1475,14 @@ def _strip_references_section(review_text: str) -> str:
     That is the intended direction: a work no longer named in the prose is a
     phantom, and dropping it is what this script is for.
 
-    `apply_references` owns the same pattern for the write side; both use
-    _REFERENCES_HEADING_RE so they cannot drift apart.
+    `apply_references` owns the same boundary for the write side; both call
+    lint_md.find_refs_heading, so the two sides and the linter cannot drift
+    apart. That scanner is fence-aware and LAST-heading-wins; both properties
+    fall on the keep side here, since each makes this function strip LESS
+    prose than the fence-blind first-match regex it replaced.
     """
-    match = _REFERENCES_HEADING_RE.search(review_text)
-    return review_text[:match.start()] if match else review_text
+    span = find_refs_heading(review_text)
+    return review_text[:span[0]] if span else review_text
 
 
 def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
@@ -1601,13 +1608,17 @@ def generate_references(entries: list[tuple[str, object]]) -> str:
 
 
 def apply_references(review_text: str, references_section: str) -> str:
-    """Replace or append ## References section in the review text."""
-    # Check for existing ## References
-    match = _REFERENCES_HEADING_RE.search(review_text)
+    """Replace or append ## References section in the review text.
 
-    if match:
+    Shares the read side's boundary (lint_md.find_refs_heading) - a heading
+    inside a fenced example is not a boundary, so a review that quotes one
+    keeps its prose instead of being truncated at the quote.
+    """
+    span = find_refs_heading(review_text)
+
+    if span:
         # Replace from ## References to EOF
-        return review_text[:match.start()].rstrip("\n") + "\n\n" + references_section + "\n"
+        return review_text[:span[0]].rstrip("\n") + "\n\n" + references_section + "\n"
     else:
         # Append
         return review_text.rstrip("\n") + "\n\n" + references_section + "\n"
