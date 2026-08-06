@@ -1081,7 +1081,15 @@ def test_hand_written_venue_status_is_removed(tmp_path, monkeypatch):
     (`venue_status = low-visibility,`) or a nested-brace value
     (`venue_status = {low {x} vis}`) are accepted, documented limits of the
     regex (see _strip_derived_fields's docstring) that this test does not
-    cover."""
+    cover.
+
+    A THIRD accepted limit, orthogonal to those two and about POSITION rather
+    than value shape: the regex is anchored to `\\n[ \\t]*`, so it only matches
+    a field that OPENS its line. A `venue_status` sharing a line with anything
+    else -- on the `@article{key,` header line, or trailing after another
+    field -- survives the strip. The fixture below puts the forged field on
+    its own line, so this test does not cover that case either. All three
+    limits apply identically to `year_suffix`."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     rd = tmp_path / "review"
