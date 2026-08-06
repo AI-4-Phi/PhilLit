@@ -872,7 +872,8 @@ is entirely contingent on writer compliance.** Delivered prose today carries no
 letters at all, so the corpus cannot show the feature working end to end — the
 run is the first time a writer will have lettered entries to cite.
 
-Note **v0.3.3 is the last version on `origin/main`**; v0.3.4 was committed but not
-pushed, and D and F have had **no version bump at all** — decide the release
-number at push time (check `git log origin/main..HEAD` rather than trusting a
-count here).
+**Released as v0.3.5 and pushed 2026-08-06** (`995f32f`, 91 commits) — venue
+vetting, Chicago a/b disambiguation, and the SEP parser hang fix. Nothing is
+unpushed. (Check `git log origin/main..HEAD` rather than trusting a count
+here; a stale claim about what is pushed has already been written into this
+file twice.)
