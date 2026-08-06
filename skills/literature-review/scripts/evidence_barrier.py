@@ -26,6 +26,7 @@ import enrich_bibliography as eb
 from enrich_bibliography import add_field_to_entry
 import resolve_context as rc
 import stamp_evidence as se
+import year_suffix as ys
 
 try:
     import venue_vetting as vv
@@ -135,17 +136,21 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
     return None
 
 
-_VENUE_STATUS_FIELD_RE = re.compile(
-    r"\n[ \t]*venue_status\s*=\s*(?:\{[^{}]*\}|\"[^\"]*\")\s*,?", re.IGNORECASE)
+_DERIVED_FIELD_RE = re.compile(
+    r"\n[ \t]*(?:venue_status|year_suffix)\s*=\s*(?:\{[^{}]*\}|\"[^\"]*\")\s*,?",
+    re.IGNORECASE)
 
 
-def _strip_venue_status(entry_text: str) -> str:
-    """Remove every pre-existing venue_status field it can find.
+def _strip_derived_fields(entry_text: str) -> str:
+    """Remove every pre-existing venue_status or year_suffix field it can find.
 
-    The barrier OWNS this field (item 3 D): it is re-derived from OpenAlex on
-    every run, so a value already in the file is either stale or hand-written,
-    and both must go before this run decides. Without this, a flag survives a
-    later run that had no API key -- a false discredit that no later pass can
+    The barrier OWNS both fields (item 3 D's venue_status, item 3 F's
+    year_suffix): each is re-derived from scratch on every run -- venue_status
+    from OpenAlex, year_suffix from the current union of every domain
+    bibliography -- so a value already in the file is either stale or
+    hand-written, and both must go before this run decides. Without this, a
+    flag or letter survives a later run that had no API key, or whose domain
+    set changed -- a false discredit or a wrong letter that no later pass can
     clear.
 
     Documented limit, accepted rather than fixed (single-nesting-level shape,
@@ -158,7 +163,7 @@ def _strip_venue_status(entry_text: str) -> str:
     own decision this run still governs what gets re-added, so the field
     just goes stale rather than granting a forged advantage.
     """
-    return _VENUE_STATUS_FIELD_RE.sub("", entry_text)
+    return _DERIVED_FIELD_RE.sub("", entry_text)
 
 
 def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
@@ -260,7 +265,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     needs_context = {} # "bib_name::key" -> {"entry_type", "fields"}
     healed = {}         # (i, key) -> (restored_text, canonical_source)
     for i, d in domains.items():
-        chunks = [rc.strip_context_fields(_strip_venue_status(c))
+        chunks = [rc.strip_context_fields(_strip_derived_fields(c))
                   if se.entry_header(c) else c
                   for c in se.split_entries(d["bib"].read_text(encoding="utf-8"))]
         parsed[i] = chunks
@@ -375,6 +380,38 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         venue_report = {"status": "error", "error": repr(exc), "flagged_entries": 0}
     report["venue_vetting"] = venue_report
 
+    # Item 3 F: Chicago a/b letters, assigned ONCE over the union of every
+    # domain so the same work carries the same letter in every copy. Pure
+    # computation, but wrapped like the venue pass: a failure here must cost
+    # letters, never the run.
+    suffix_map = {}   # (i, key) -> letter
+    try:
+        suffix_inputs = []
+        for i, d in domains.items():
+            for chunk in parsed[i]:
+                header = se.entry_header(chunk)
+                if not header:
+                    continue
+                fields = se.parse_entry_fields(chunk)
+                suffix_inputs.append({
+                    "id": (i, header[1]),
+                    "author": fields.get("author", ""),
+                    "editor": fields.get("editor", ""),
+                    "year": fields.get("year", ""),
+                    "title": fields.get("title", ""),
+                    "doi": fields.get("doi", ""),
+                })
+        assignment = ys.assign_suffixes(suffix_inputs)
+        suffix_map = assignment["suffixes"]
+        suffix_report = {"status": "complete", "assigned": len(suffix_map),
+                         "groups": assignment["groups"],
+                         "overflow": [list(x) for x in assignment["overflow"]]}
+    except Exception as exc:
+        suffix_map = {}
+        suffix_report = {"status": "error", "error": repr(exc), "assigned": 0,
+                         "groups": [], "overflow": []}
+    report["year_suffixes"] = suffix_report
+
     # Build final content in memory: context fields + stamp, then bookkeeping.
     outputs = {}
     for i, d in domains.items():
@@ -426,6 +463,9 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             status = venue_flags.get((i, key))
             if status:
                 chunk = _stamp_optional_field(chunk, "venue_status", status)
+            letter = suffix_map.get((i, key))
+            if letter:
+                chunk = _stamp_optional_field(chunk, ys.SUFFIX_FIELD, letter)
             final_chunks.append(se.stamp_entry_text(chunk, tier))
             report["stamps"][bib_name][key] = tier
             report["attestations"][bib_name][key] = _att_blob(
@@ -486,6 +526,7 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
             "status": (report.get("venue_vetting") or {}).get("status", "not-run"),
             "flagged_entries": (report.get("venue_vetting") or {}).get("flagged_entries", 0),
         },
+        "year_suffixes": (report.get("year_suffixes") or {}).get("assigned", 0),
         "report": str(report_path),
     }))
     return 1 if report["status"] == "failed" else 0

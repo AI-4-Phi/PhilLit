@@ -1076,11 +1076,11 @@ def test_stale_venue_status_is_removed_when_vetting_is_skipped(tmp_path, monkeyp
 def test_hand_written_venue_status_is_removed(tmp_path, monkeypatch):
     """A braced- or quoted-value venue_status is stripped before the pass and
     only re-added on this run's own verdict. Narrower than "cannot inject
-    the flag" in general: _strip_venue_status's regex covers only these two
+    the flag" in general: _strip_derived_fields's regex covers only these two
     forms (single-nesting-level braced, or quoted) -- a bare-token value
     (`venue_status = low-visibility,`) or a nested-brace value
     (`venue_status = {low {x} vis}`) are accepted, documented limits of the
-    regex (see _strip_venue_status's docstring) that this test does not
+    regex (see _strip_derived_fields's docstring) that this test does not
     cover."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
@@ -1199,3 +1199,101 @@ def test_no_ambient_openalex_key_during_tests():
     import os
     key_is_set = "OPENALEX_API_KEY" in os.environ
     assert key_is_set is False, "OPENALEX_API_KEY is set in the test environment"
+
+
+# --- Item 3 F: Chicago a/b suffixes ---
+
+MENARY_D1 = """@incollection{menary2010cognitive,
+  author = {Menary, Richard},
+  title = {Cognitive Integration and the Extended Mind},
+  booktitle = {The Extended Mind},
+  publisher = {MIT Press},
+  doi = {10.7551/mitpress/1.001},
+  year = {2010}
+}
+
+@book{menary2010extended,
+  author = {Menary, Richard},
+  title = {The Extended Mind},
+  publisher = {MIT Press},
+  doi = {10.7551/mitpress/2.002},
+  year = {2010}
+}"""
+
+MENARY_D2 = """@incollection{menaryCogIntegration,
+  author = {Menary, Richard},
+  title = {Cognitive Integration and the Extended Mind},
+  booktitle = {The Extended Mind},
+  publisher = {MIT Press},
+  doi = {10.7551/mitpress/1.001},
+  year = {2010}
+}"""
+
+
+def test_same_author_same_year_gets_letters(tmp_path):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, MENARY_D1, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix = {a}" in content
+    assert "year_suffix = {b}" in content
+    # The `year` field itself is untouched -- the \\d{4} guards downstream
+    # depend on it.
+    assert "year = {2010}" in content
+    assert "2010a" not in content
+    report = _report(rd)
+    assert report["year_suffixes"]["assigned"] == 2
+
+
+def test_same_work_in_two_domains_gets_the_same_letter(tmp_path):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, MENARY_D1, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    _domain(rd, 2, MENARY_D2, cleaning=_cleaning(2, {}), enrichment=_enrichment(2))
+    assert evidence_barrier.execute(rd, 2) == 0
+    d1 = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    d2 = (rd / "literature-domain-2.bib").read_text(encoding="utf-8")
+    chunk1 = [c for c in d1.split("\n@") if "menary2010cognitive" in c][0]
+    chunk2 = [c for c in d2.split("\n@") if "menaryCogIntegration" in c][0]
+    letter1 = chunk1.split("year_suffix = {")[1][0]
+    letter2 = chunk2.split("year_suffix = {")[1][0]
+    assert letter1 == letter2
+
+
+def test_single_work_year_gets_no_suffix(tmp_path):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    assert "year_suffix" not in (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+
+
+def test_suffix_failure_never_fails_the_barrier(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    def boom(entries):
+        raise RuntimeError("assignment blew up")
+
+    monkeypatch.setattr(evidence_barrier.ys, "assign_suffixes", boom)
+    rd = tmp_path / "review"
+    _domain(rd, 1, MENARY_D1, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    report = _report(rd)
+    assert report["status"] in ("complete", "degraded")
+    assert report["year_suffixes"]["status"] == "error"
+    assert "year_suffix" not in (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+
+
+def test_suffix_does_not_change_evidence_tiers(tmp_path):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, MENARY_D1, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    stamps = _report(rd)["stamps"]["literature-domain-1.bib"]
+    assert set(stamps.values()) == {"EVIDENCE-NONE"}   # unattested, as before
