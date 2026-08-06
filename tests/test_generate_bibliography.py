@@ -2056,6 +2056,33 @@ class TestUnresolvableBareMention:
         assert self._cited("As Menary (2010a) argues, integration matters.") \
             == ["menary2010cognitive"]
 
+    def test_a_rendered_reference_list_manufactures_no_bare_mention(self):
+        # GUARD, not a detector: it fails no mutation of today's code, and it
+        # is here because the composition it pins is not obvious.
+        #
+        # A rendered line like "Clark, Andy. 1998." is an unlettered surname
+        # beside a bare year. If it produced a mention, every group would be
+        # protected from the second run onwards and F's drop would be one-shot
+        # again by a route the References strip's own tests do not cover (they
+        # use a lettered bib, whose reference lines the letterless-only
+        # conjunct filters out anyway).
+        #
+        # It does not, for a second and independent reason: the "." that closes
+        # every rendered author list blocks _CITE_INSTANCE_RE, which needs
+        # `[\s,]*\(?\s*` between the name and the year. So a References section
+        # yields no instances AND no mentions -- only _sighted_letters can see
+        # it, which is exactly the surface the strip was added for. If a future
+        # renderer change (or a widened separator class) breaks that, this test
+        # is where it surfaces.
+        rendered = ('## References\n\n'
+                    'Clark, Andy. 1998. "Solo Piece." *Analysis*.\n\n'
+                    'Clark, Andy, and David Chalmers. 1998. "The Extended'
+                    ' Mind." *Analysis*.\n\n'
+                    'Gilabert, Pablo, and Holly Lawford-Smith. 2012.'
+                    ' "Global Justice." *Ethics*.\n')
+        assert generate_bibliography._unresolvable_mentions(rendered) == []
+        assert generate_bibliography._citation_instances(rendered) == []
+
     def test_an_accepted_bare_cite_is_not_a_mention(self):
         # A bare cite the parser ACCEPTS is handled by the instance machinery
         # (it supports every member), so it must not also appear here -- that
