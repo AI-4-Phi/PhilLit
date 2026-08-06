@@ -211,9 +211,15 @@ def strip_context_fields(entry_text):
 
 
 # A WORK-ADMISSION BUDGET for the encyclopedia-acquisition pass, not a
-# wall-clock bound and not a watchdog. Same shape and rationale as
-# venue_vetting.PASS_DEADLINE_SECONDS: checked BEFORE each fetch, never around
-# one. The guarantee is exactly
+# wall-clock bound and not a watchdog. Same IDIOM as
+# venue_vetting.PASS_DEADLINE_SECONDS -- checked BEFORE each unit of work,
+# never around one -- but NOT the same guarantee, and the difference is the
+# whole point of this comment. venue_vetting bounds one lookup at
+# REQUEST_TIMEOUT, so its "worst case is the deadline plus one request" is a
+# real bound; one article fetch here includes arbitrary local parsing and is
+# not bounded at all, so no such statement can be made. (venue_vetting also
+# exempts cache hits from its deadline; this does not -- see below.) The
+# guarantee here is exactly
 #
 #     once a fetch returns, no further fetch is started past the budget
 #
