@@ -161,6 +161,22 @@ in `_CITE_INSTANCE_RE` and requires bib-record corroboration before a
 second-position sighting can drop a group; earlier commits in that range get
 both wrong), and the deferred `rate_limiter` fix.
 
+Porting specifics worth having before that session starts:
+
+- **The `bib_identity` port has six import sites**, not five: `metadata_cleaner`,
+  `dedupe_bib` **twice** (`_normalize_title`/`_fallback_key`, and separately
+  `extract_doi`), `generate_bibliography`, `stamp_evidence`, `verify_paper`.
+- **Do not copy the import-path arithmetic.** That engine's scripts sit under
+  `engine/.claude/`, so the `parent.parent.parent.parent / "hooks"` hop in the
+  cross-directory import blocks must be re-derived.
+- **The service roadmap has no counterpart for the bibliography-identity work** —
+  one has to be added. Use the **lowercase** `docs/roadmap.md` path (see the
+  git-add case trap in `CLAUDE.md`).
+- Also mutatis mutandis: the `rate_limiter.py` lazy user-agent fix and the
+  `load_dotenv` additions.
+- Check whether the service's restructured roadmap still carries the Option C
+  port-scope entry from its `ced6f33`.
+
 ## 4. One owner for bibliography identity and matching — residuals only
 
 Landed 2026-08-03; the single-owner rule is recorded in `CLAUDE.md`. Three
