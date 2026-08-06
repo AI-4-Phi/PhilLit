@@ -271,6 +271,8 @@ def lookup_venue(name: str, params: dict) -> tuple[dict | None, str]:
     outcome: "ok" (record is authoritative, resolved or not),
              "budget_exhausted" (caller must stop -- Retry-After is the
              seconds to midnight UTC, so retrying burns the rest of the day),
+             "auth_error" (caller must stop -- the key is missing or invalid,
+             so every remaining lookup would fail identically),
              "error" (transport/HTTP; caller treats the venue as unknown).
 
     ONE attempt, deliberately: this is a plumbing pass whose failure mode is
@@ -287,6 +289,14 @@ def lookup_venue(name: str, params: dict) -> tuple[dict | None, str]:
         )
         if openalex_budget_exhausted(response):
             return None, "budget_exhausted"
+        if response.status_code in (401, 403):
+            # Observed 2026-08-06 against the real API with a stale key:
+            # HTTP 401, {"error":"Invalid or missing API key","message":
+            # "API key not found"}. Bucketing it as a generic "error" made
+            # the pass burn three lookups and then report "stopped after 3
+            # consecutive lookup errors", which points the operator at
+            # OpenAlex's availability instead of at their own key.
+            return None, "auth_error"
         if response.status_code != 200:
             return None, "error"
         target = normalize_venue_name(name)
@@ -382,6 +392,18 @@ def vet_venues(names) -> dict:
                 if outcome == "budget_exhausted":
                     result["status"] = "budget_exhausted"
                     result["reason"] = "OpenAlex daily budget exhausted mid-pass"
+                    break
+                if outcome == "auth_error":
+                    # Same shape as budget exhaustion: a rejected key rejects
+                    # every remaining lookup, so grinding through the rest of
+                    # the list buys nothing. Status stays one of the tokens
+                    # SKILL.md enumerates -- the distinctness lives in the
+                    # reason, which is what the orchestrator is told to read.
+                    result["status"] = "partial"
+                    result["reason"] = (
+                        "OpenAlex rejected the API key (HTTP 401/403) -- "
+                        "OPENALEX_API_KEY is missing or invalid, not an outage; "
+                        "a fresh free key comes from openalex.org/settings/api")
                     break
                 if outcome != "ok" or record is None:
                     result["lookup_errors"] += 1

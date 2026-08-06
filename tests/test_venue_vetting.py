@@ -361,6 +361,22 @@ class TestLookupVenue:
         record, outcome = vv.lookup_venue("Whatever", {"api_key": "x"})
         assert outcome == "error" and record is None
 
+    def test_rejected_key_is_its_own_outcome(self, monkeypatch):
+        """Whole-branch review M5. The real response, observed 2026-08-06
+        with a stale key: HTTP 401, {"error":"Invalid or missing API key",
+        "message":"API key not found"}."""
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(
+            status_code=401,
+            text='{"error":"Invalid or missing API key","message":"API key not found"}'))
+        record, outcome = vv.lookup_venue("Whatever", {"api_key": "stale"})
+        assert outcome == "auth_error" and record is None
+
+    def test_forbidden_is_also_an_auth_error(self, monkeypatch):
+        monkeypatch.setattr(vv.requests, "get",
+                            lambda *a, **k: FakeResponse(status_code=403))
+        record, outcome = vv.lookup_venue("Whatever", {"api_key": "stale"})
+        assert outcome == "auth_error" and record is None
+
     def test_network_exception_is_swallowed(self, monkeypatch):
         def boom(*a, **k):
             raise RuntimeError("connection reset")
@@ -675,6 +691,30 @@ class TestHonestStatusAndErrors:
         assert result["lookup_errors"] == 1
         assert result["reason"] is not None
         assert "1 lookup error" in result["reason"]
+
+    def test_rejected_key_says_so_and_stops_the_pass(self, monkeypatch, isolated_cache):
+        """Whole-branch review M5: a rejected key used to surface as "stopped
+        after 3 consecutive lookup errors", which points the operator at
+        OpenAlex rather than at their own key. It is also not hypothetical --
+        that is the message D's first live run would produce today."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "stale-key")
+        calls = []
+
+        def rejected(*a, **k):
+            calls.append(1)
+            return FakeResponse(
+                status_code=401,
+                text='{"error":"Invalid or missing API key","message":"API key not found"}')
+
+        monkeypatch.setattr(vv.requests, "get", rejected)
+        result = vv.vet_venues(["A Journal", "B Journal", "C Journal"])
+        assert result["status"] == "partial"
+        assert "OPENALEX_API_KEY" in result["reason"]
+        assert "401" in result["reason"]
+        assert "consecutive lookup errors" not in result["reason"]
+        assert len(calls) == 1        # stops on the first rejection
+        assert result["looked_up"] == 1
+        assert result["flagged"] == []
 
     def test_promotion_does_not_clobber_a_more_specific_reason(
             self, monkeypatch, isolated_cache):
