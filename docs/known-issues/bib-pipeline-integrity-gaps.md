@@ -346,7 +346,7 @@ mechanism must answer *"what happens to an honest entry when this fails?"*
 before its price is discussed — because "strip or demote when corroboration
 is absent" is a decision **already taken and closed**: sanitize-time
 stripping of unattested abstract text was REJECTED on 2026-08-02
-(doc-rot-audit step 3(ii)) after it was measured to suppress 7 correct
+(decided 2026-08-02) after it was measured to suppress 7 correct
 abstracts. A C mechanism of that shape is a re-litigation, not a fix.
 
 **Measured, and it kills the filed second fix direction.** "Spot-verify

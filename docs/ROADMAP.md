@@ -208,7 +208,4 @@ escapes and an agent that copies a venue name as text rather than parsing it
 writes the escape into the bib. Three confirmed instances, one in a **tracked,
 publicly-linked** example review.
 
-**This file is the work queue.** The local-only
-`docs/known-issues/doc-rot-audit-2026-08-02.md` was the queue until 2026-08-06
-and is now completed history — useful for why a past decision went the way it
-did, not for what to do next.
+**This file is the work queue.**
