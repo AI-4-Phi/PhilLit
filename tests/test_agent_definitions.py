@@ -132,8 +132,15 @@ def test_researcher_told_not_to_write_venue_status():
 
 
 def test_writer_knows_the_year_suffix_rule():
+    """A bare "year_suffix" substring is vacuous -- item 3 D's review caught
+    this exact pattern for venue_status (see test_writer_knows_the_venue_
+    status_rule below). Pin the load-bearing phrases so the test fails if the
+    citation directive itself were stripped out, not just if the field name
+    disappeared."""
     text = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
     assert "year_suffix" in text
+    assert "the letter is part of the citation" in text
+    assert "never invent one" in text
     # The old "the renderer cannot emit yet" caveat must be gone.
     assert "cannot emit yet" not in text
 
