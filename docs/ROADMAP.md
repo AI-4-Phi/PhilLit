@@ -691,5 +691,6 @@ audit is done, and item 3's **A, B, C and E** are all done (2026-08-05, C
 closed-as-narrowed). What remains, in order: **item 3 D** (re-scoped, rule
 validated, ready to build), **item 3 F** (needs its own plan + a live run
 carrying four riders), the batched mirror session (with its mirror-vs-fork
-decision), then item 2. Note **v0.3.4 is committed but not pushed** (10 commits
-ahead of `origin/main` at `b2983ed`); v0.3.1–v0.3.3 are pushed.
+decision), then item 2. **Next session's scope (Johannes, 2026-08-06): D then F
+— i.e. finish item 3.** Note **v0.3.4 is committed but not pushed**; v0.3.1–v0.3.3
+are (check with `git log origin/main..HEAD` rather than trusting a count here).
