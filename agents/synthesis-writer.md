@@ -89,6 +89,15 @@ You receive from the orchestrator prompt:
 - ❌ `(Human Rights Watch 2012, non-peer-reviewed)`
 - ✅ the non-peer-reviewed Human Rights Watch report `(Human Rights Watch 2012)`
 
+**Disambiguate same-surname authors with a first initial.** If two entries you
+cite share a first-author surname and year but are by *different people*, write
+the initial — `G. Johnson (2024)` / `R. Johnson (2024)`, not a bare `Johnson
+(2024)`. References are rendered by matching surname-near-year in your prose;
+a bare surname cannot be resolved, so both works get listed and one of them is
+a reference the review never actually cited. Likewise, when the bibliography
+holds both `Muldoon and Wu 2023` and `Muldoon et al. 2023`, use the form that
+names the second author rather than collapsing to `et al.`
+
 **Evidence tiers govern what you may say about a work** (the `EVIDENCE-*` keyword in each entry is the single authority; an entry with no tier token counts as `EVIDENCE-NONE`):
 
 | Tier | You may |

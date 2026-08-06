@@ -12,7 +12,13 @@ audit of delivered reviews — measurement DONE 2026-08-05 (finding: 449
 delivered entries carry online-first years, see item 3 K; remediation
 decision pending); (3) item 3's residuals — **A, B, and E all DONE
 2026-08-05** (A's dedup fix, B's post-check + matcher-side transliteration,
-E's instance-based collision resolution); remaining C, D; F last; (4) ONE
+E's instance-based collision resolution); **C closed-as-narrowed 2026-08-05**
+(ledger write-protection) and **D re-scoped 2026-08-05 but blocked** on
+OpenAlex API-key support plus a threshold measurement; F last, now carrying
+four riders; (3b) **NEW 2026-08-05: OpenAlex began metering the API** and
+PhilLit runs unauthenticated on the $0.10/day tier — see
+`docs/known-issues/openalex-metering-2026-08-05.md`; the key support gates D
+and degrades F's run, so it comes before both; (4) ONE
 batched phillit-service mirror session — the item-4 `bib_identity` port,
 the item-1 evidence-tier port (service item 20), the item-3-E
 collision-aware-matching port (Tasks 1-4 plus the final-review fix-wave,
@@ -307,18 +313,67 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   original fix directions was never built and is not needed to close this.
   Documented check-side known limits remain — see
   `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue B.
-- **C — unenforced abstract provenance**: an invented `abstract` field with
-  no `abstract_source` marker passes every gate and evades the
-  INCOMPLETE-keyed cite-cautiously rule. Structural; the observed exploit
-  was under a non-Anthropic orchestrator, but nothing model-specific closes
-  the gap. *Partly superseded by item 1*: the tier design closes the
-  no-marker case (top tier requires `abstract_source`), and as of spec v5
-  `abstract_source` is enrichment-ledger attested — narrowing the residual
-  to a forged-*ledger* attack, revisited with the item-1 spec.
-- **D — no venue-quality vetting**: predatory-venue papers pass DOI
-  verification; flag-and-caveat heuristics (DOAJ lookup, `VENUE_UNVETTED`
-  keyword + writer rule) would turn observed good model behavior into a
-  pipeline guarantee.
+- **C — unenforced abstract provenance: RE-SCOPED and CLOSED-AS-NARROWED
+  2026-08-05.** The tier closes three of C's four routes (no marker; marker
+  present but unbacked; researcher-written abstract, which
+  `enrich_bibliography.attest_prefilled_abstract` re-fetches and attests only
+  on hash equality). The residual was exactly one thing: the enrichment
+  ledger is an agent-writable JSON file that is *also* the attestation
+  authority, so forging a record makes enrichment skip the fetch that would
+  have refused attestation and the barrier stamps the fabrication
+  `EVIDENCE-ABSTRACT`. **Johannes's decision, 2026-08-05: write-protect +
+  document** — `hooks/block_ledger_write.py` (PreToolUse on Write, Edit *and*
+  NotebookEdit, needle `_ledger-`) denies **native file-tool** writes to
+  `enrichment_ledger-*.json` / `cleaning_ledger-*.json`, with two matching
+  `deny` rules in `PHILLIT_RULES` as belt-and-braces for setup'd workspaces.
+  No false positives in the supported pipeline (both ledgers are written from
+  inside Python and no prompt mentions them — audited), at the price of two
+  deliberate denials: a developer hand-edit, and a same-named file elsewhere.
+  **State the scope honestly: this is not a security boundary.** Broadly-allowed
+  `Bash` (`cat >`, heredoc, `python -c`) bypasses every PreToolUse gate, so
+  against a *deliberate* forger the control is incidence reduction, not
+  closure — the external review was explicit that calling the ledgers
+  "write-protected" would be misleading. **Two mechanisms were measured and
+  rejected**: on-disk envelope
+  corroboration (50.6% coverage over 2,121 corpus abstracts — openalex only
+  23.8% — so demote-on-absence repeats the decision closed 2026-08-02 and
+  warn-on-absence is wrong half the time), and a Bash-command text gate (it
+  would need shell parsing to tell `cat ledger.json` from `cat > ledger.json`,
+  i.e. the enumerated-Bash-pattern approach this project records as having
+  failed four times). Residuals, documented and routed to the service (its
+  item 23): a deliberate shell-out, and the full closure — barrier-side live
+  corroboration, the only option that can demote an honest entry, costing
+  ~one extra enrichment pass. Full analysis, option set and measurements:
+  `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue C.
+- **D — no venue-quality vetting: RE-SCOPED 2026-08-05; build BLOCKED on an
+  OpenAlex API key + one measurement.** The filed mechanism does not work.
+  DOAJ lists open-access journals only, so DOAJ-absence carries no signal for
+  philosophy's subscription flagships (`Mind`, `Noûs`, `Philosophical Review`
+  are all `is_in_doaj: false`), and `is_indexed_in_scopus` now comes back
+  `null`. The nearest substitute, OpenAlex `is_core`, **misfires on reputable
+  venues — measured**: across the 120 most-frequent corpus venues it flags 7,
+  every one legitimate (Journal of Moral Philosophy, Political Theory,
+  Contemporary Political Theory, Jurisprudence, South African Journal of
+  Philosophy, plus Phronesis / Kantian Review / Oxford J Legal Studies in the
+  tail sample). A single-signal `is_core` rule is therefore prohibited — it
+  would insert false discredits and teach the writer to ignore the flag.
+  **D does have real targets here**: a free name-shape scan of all 928
+  distinct journal names surfaced ~9 candidates including `Advanced
+  International Journal for Research` — the *same* venue as the service
+  observation, `is_core false`, h-index **2**. The defensible rule is two
+  conjoined negative signals (not core AND h-index below a threshold;
+  observed margin 2 vs 22-23 for the lowest legitimate noncore venue), never
+  flagging an unresolved venue, with verdicts cached per venue rather than
+  re-resolved per review. Blockers: (i) bibs carry **zero** `issn` fields
+  (0 of 6,530 `@article` entries) so lookup must go by name — the expensive
+  request class — and OpenAlex now meters usage, see
+  `docs/known-issues/openalex-metering-2026-08-05.md`; (ii) the threshold must
+  be validated against the remaining 8 candidates, which needs the budget
+  reset. The flag needs a dedicated field (`venue_status`), **not** a
+  `keywords` token: `stamp_evidence.stamp_keywords` sorts an unrecognized
+  token into *topics*. D also has a writer-facing half, so **F is no longer
+  the only sub-item needing a live run** — D's writer-compliance check should
+  ride F's run as a fourth rider.
 - **Follow-up (A's external review, Q3) — "vetted beats unvetted", not
   built**: when a merge loser carries a `METADATA_CLEANED` marker (positive
   proof it was vetted), prefer the loser's value on *conflicting* fields,
@@ -413,11 +468,20 @@ group has entries, so a listed work is confirmed uncited.
   writer compliance before the port.
 
 Suggested order: A+B first (small, testable, deterministic), then E (same
-shape, pairs with B) — **A, B, and E are all FIXED/CLOSED as of
-2026-08-05** — then C (mechanical validator rule), then D (heuristics +
-prompt rules). F last — it is the only one of the six that needs a live
-run, and that run should not be entangled with the evidence-tier A/B
-experiment.
+shape, pairs with B) — **A, B, C and E are all FIXED/CLOSED as of
+2026-08-05** (C closed-as-narrowed: write-protect + document) — then D,
+which is **re-scoped but blocked** on OpenAlex API-key support plus one
+threshold measurement. F last: it needs a live run, and that run should not
+be entangled with the evidence-tier A/B experiment. Note the live run now
+carries **four riders**: the year-coverage measurement (item 3 K —
+measurement script ready at
+`docs/known-issues/wrong-years-audit-data/year_coverage.py`), the
+two-Johnsons writer note (**DONE 2026-08-05** — `docs/conventions.md` +
+`agents/synthesis-writer.md`; the run confirms writer compliance), the
+sentence-adverb guard fix (**DONE 2026-08-05** — E's
+`_NON_INITIAL_PRECEDING_RE` no longer rejects a citation preceded by a
+sentence-initial transition word), and D's writer-compliance check once D
+is unblocked.
 
 Related out-of-scope find (2026-07-28, recorded in the same write-up): 5/32
 reviews carry near-identical *undeduped* entries surviving on diacritic

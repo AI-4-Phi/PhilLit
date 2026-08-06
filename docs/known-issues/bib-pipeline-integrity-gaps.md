@@ -9,7 +9,12 @@ against **this repo's current `main`**, not just the snapshot.
 **Severity**: Medium overall (per-issue below). None fails a run; all
 silently degrade bibliography/References integrity — the part of the output a
 reader is least able to audit.
-**Status**: Open overall (C and D untouched). **A is FIXED 2026-08-05; B is
+**Status**: **A FIXED, B CLOSED, C CLOSED-AS-NARROWED — all 2026-08-05; D
+re-scoped 2026-08-05 and blocked on OpenAlex API-key support plus one
+threshold measurement** (each issue's own section carries the detail; C's and
+D's re-scope sections are the current statements — the "Fix directions"
+paragraphs above them are preserved but superseded). Was: "Open overall (C
+and D untouched)". **A is FIXED 2026-08-05; B is
 CLOSED 2026-08-05** (citation-omission post-check plus symmetric
 matcher-side transliteration both landed the same day; the fuzzy near-miss
 fallback from B's original fix directions was never built and is not
@@ -271,6 +276,11 @@ character," which covers `''`, `-`, and `' '` alike.
 ## Issue C — fabricated abstract fields are indistinguishable from genuine ones (provenance not enforced)
 
 **Severity: Medium (structural; observed exploit was under a non-Anthropic orchestrator).**
+**Status: RE-SCOPED 2026-08-05** — the evidence tier (item 1, v0.3.0) closed
+three of C's four routes; the residual is exactly one thing, and it is not
+what the "Fix directions" paragraph below describes. Read the re-scope
+section first; the original statement of the issue is kept beneath it because
+the observed exploit is still the only field evidence.
 
 The Stage 5.5 enrichment script is the *intended* sole writer of `abstract` +
 `abstract_source` fields (marking `INCOMPLETE, no-abstract` on failure), and
@@ -288,11 +298,184 @@ correctly; two of the distortions (one inverting a paper's conclusion)
 propagated into the delivered prose. Claude-based runs in the same experiment
 used the honest path throughout.
 
-Fix directions: a mechanical gate (cleaner or the SubagentStop validator) —
-`abstract` present ⇒ `abstract_source` present with a resolver-known value,
-else strip the abstract and mark INCOMPLETE (fail *toward* the existing
-safety rule); optionally, spot-verify abstract text against the already-
-fetched S2/OpenAlex records with a cheap similarity threshold.
+Fix directions as filed 2026-07-24 — **both are dead, see the re-scope**: a
+mechanical gate (cleaner or the SubagentStop validator) — `abstract` present ⇒
+`abstract_source` present with a resolver-known value, else strip the abstract
+and mark INCOMPLETE (fail *toward* the existing safety rule); optionally,
+spot-verify abstract text against the already-fetched S2/OpenAlex records with
+a cheap similarity threshold.
+
+### Re-scope, 2026-08-05 (post evidence-tier)
+
+**What the tier already closed.** Verified in code on `main`, by identifier:
+
+1. *No marker.* `stamp_evidence.compute_tier` grants `EVIDENCE-ABSTRACT` only
+   when `abstract_source` is present **and** in `ATTESTED_ABSTRACT_SOURCES`
+   (`{s2, openalex, core, ndpr}`) **and** `att.abstract_attested`. A
+   fabricated abstract with no marker — the filed shape — now earns at most
+   `EVIDENCE-EXISTENCE`, so it cannot be characterized. Fail-closed: an entry
+   with no `EVIDENCE-*` token reads as `EVIDENCE-NONE` downstream.
+2. *Marker present but unbacked.* `stamp_evidence.attest_abstract` requires
+   the enrichment-ledger record to carry the same source **and** the
+   `sha256` of the entry's current abstract text.
+3. *Researcher-written abstract, honest path.*
+   `enrich_bibliography.attest_prefilled_abstract` re-fetches from the APIs
+   and attests a pre-filled abstract **only on hash equality** with the
+   fetched text — so a fabricated abstract cannot be attested by the script,
+   and post-attestation mutation is separately repaired by
+   `evidence_barrier._heal_abstract` (also hash-gated).
+
+**The residual, stated precisely.** The enrichment ledger
+(`intermediate_files/json/enrichment_ledger-<bibstem>.json`) is a plain JSON
+file inside the workspace, so it is agent-writable, and it is the attestation
+authority. The code says so itself
+(`enrich_bibliography.py:725-729`: *"NOTE the trust model: this file is
+agent-writable and is the attestation authority for the zero-fetch fast
+path"*). The whole attack is therefore three lines wide: write the fabricated
+`abstract` + `abstract_source = s2` into the bib, **and** add a ledger record
+holding that source and the sha256 of the fabricated text. Consequences, in
+order: enrichment's prior-ledger fast path sees a matching hash and **skips
+the fetch that would have refused attestation** (route 3 above never runs);
+`attest_abstract` then passes; the barrier stamps `EVIDENCE-ABSTRACT`; the
+writer may characterize and quote. Nothing else in the pipeline re-derives
+the abstract's provenance from anything but that file.
+
+**The governing criterion is failure direction, not cost.** Every candidate
+mechanism must answer *"what happens to an honest entry when this fails?"*
+before its price is discussed — because "strip or demote when corroboration
+is absent" is a decision **already taken and closed**: sanitize-time
+stripping of unattested abstract text was REJECTED on 2026-08-02
+(doc-rot-audit step 3(ii)) after it was measured to suppress 7 correct
+abstracts. A C mechanism of that shape is a re-litigation, not a fix.
+
+**Measured, and it kills the filed second fix direction.** "Spot-verify
+against the already-fetched S2/OpenAlex records" assumes the records are on
+disk. They are not, for half the corpus: enrichment resolves abstracts
+through live `resolve_abstract_for_entry` calls and never saves an envelope,
+so the only on-disk corpus is the researcher's *search* output, which
+covers whatever the searches happened to return. Scanning all 45 local
+review corpora (2,121 distinct abstract-bearing entries in 319 bibs against
+every `abstract` string in their own `intermediate_files/json/`, normalized
+by `stamp_evidence.normalize_abstract_for_hash`, counting exact / substring /
+superstring / 120-char-window hits as corroborated):
+
+| `abstract_source` | entries | corroborated on disk | absent |
+|---|---|---|---|
+| `s2` | 970 | 775 (79.9%) | 195 |
+| `openalex` | 846 | 201 (23.8%) | 645 |
+| `core` | 96 | 16 (16.7%) | 80 |
+| `ndpr` | 4 | 0 | 4 |
+| *(no marker)* | 203 | 81 (39.9%) | 122 |
+| **all** | **2,121** | **1,074 (50.6%)** | **1,047 (49.4%)** |
+
+So on-disk corroboration is a coin flip overall and fails *most* OpenAlex
+entries. Demote-on-absence would demote ~1,000 honest entries; warn-on-absence
+would emit a warning that is wrong half the time, which is the
+unfollowability trap one level down — the tier design's own stated reason for
+mechanizing acquisition. **This mechanism is dead; do not revive it.** (Side
+finding worth keeping: 203 of these entries carry an abstract with **no**
+`abstract_source` at all, and two more carry non-canonical labels
+(`semantic_scholar`, `editorial`). All pre-date the tier and all now
+fail closed, which is route 1 working as designed on real data.)
+
+**Surviving options.**
+
+- **Option 1 — write-protect the ledgers (cheap, correct failure
+  direction, partial closure).** The honest path writes both ledgers from
+  inside Python (`_update_enrichment_ledger` and
+  `metadata_cleaner.write_cleaning_ledger`, both tmp + `os.replace`), which no
+  PreToolUse gate ever sees. So *no honest run writes a ledger through a
+  Claude tool*, and a `deny` rule on `Edit(**/*_ledger-*.json)` in
+  `PHILLIT_RULES` costs nothing, breaks nothing, and blocks the
+  forgery's tool-write route outright. Note today's rules positively **allow**
+  it: `Edit(reviews/**)` covers the ledger path, and deny beats allow. Does
+  not close the Bash route (`Bash` is allowed broadly, by design) — a
+  `_ledger-` needle in `hooks/fast_gate.sh` plus a Bash-command gate, in the
+  shape of `block_background_bash.py`, would raise that bar too without
+  touching the honest path.
+- **Option 2 — barrier-side live corroboration (full closure, one extra
+  enrichment-scale pass, small honest-demotion risk).** Make the ledger a
+  cache instead of an authority: at the barrier, every `EVIDENCE-ABSTRACT`
+  candidate must be corroborated by a live fetch whose text hash-matches. A
+  forged ledger then buys nothing, because attestation is re-derived from a
+  source the agent does not control. Cost is ~70-100 fetches per review
+  (measured: 24-105 abstract-bearing entries per corpus), i.e. roughly a
+  second enrichment pass; `_heal_abstract` already proves re-fetch + hash
+  equality is achievable for honest entries (it repaired 7 mutated ones in
+  the 2026-07-25 A/B run). The honest-demotion risk is real but small
+  *within a run* (the abstract was fetched minutes earlier). One trap:
+  treating a *failed* fetch as "attestation intact" is the tempting
+  honest-friendly variant and it defeats the point — the observed exploit
+  targeted **canonical works with no API abstract**, which is exactly the
+  case where the fetch returns nothing.
+- **Option 3 — sampled corroboration, warn-only (detection, no closure, no
+  honest cost).** Live-corroborate a random 20-30% of attested entries and
+  report mismatches in `evidence_report.json` without touching tiers. At 20%
+  a 6-entry fabrication is caught with p≈0.74, at 30% p≈0.88. Costs a
+  fraction of Option 2 and cannot demote anything honest; catches systematic
+  fabrication, not a single entry.
+- **Option 4 — accept and route.** PhilLit runs under Claude Code; the
+  observed exploit was `deepseek-v4-flash` under a non-Anthropic
+  orchestrator, and Claude runs in the same experiment used the honest path
+  throughout. The tree with arbitrary-model exposure is `phillit-service`
+  (its roadmap item 23). Declare C narrowed-and-accepted here and carry the
+  mechanism as a service item.
+
+Options 1 and 4 compose (write-protect + document the rest); so do 1 and 3.
+Option 2 is the only one that closes the hole, and it is the only one that can
+demote an honest entry.
+
+**DECIDED and BUILT 2026-08-05 (Johannes): Option 1 + 4.**
+`hooks/block_ledger_write.py` is a PreToolUse gate on **Write, Edit and
+NotebookEdit** (needle `_ledger-`, via `fast_gate.sh`) that denies a write
+whose `file_path` basename starts with `enrichment_ledger-` /
+`cleaning_ledger-` and ends `.json`; two `deny` rules
+(`Edit(**/enrichment_ledger-*.json)`, `Edit(**/cleaning_ledger-*.json)`) went
+into `PHILLIT_RULES` as belt-and-braces. Both mechanisms ship because they
+cover different populations: the permission rule only reaches workspaces that
+have re-run `/phillit:setup`, while the hook ships with the plugin. All three
+matchers are needed because hook matchers dispatch by **tool name** — unlike a
+permission rule, an `Edit` matcher does not also receive `NotebookEdit`.
+Verified end-to-end through `fast_gate.sh` → `bin/phillit-run`: denied inside
+a workspace, silent no-op outside one, and a sibling `s2_*.json` write never
+even starts uv. 1360 tests green.
+
+**Scope, stated as the external review insisted.** This denies *native
+file-tool* writes. It is **not** a security boundary: `Bash` is allowed
+broadly by design, so `cat >`, a heredoc or `python -c` writes a forged ledger
+without passing any PreToolUse gate. Against a deliberate forger — already
+fabricating an abstract, a source marker and a matching SHA-256 — losing the
+easiest route is not an escalation. The honest claim is incidence reduction
+against accidental edits and tool-default behaviour. Related accepted
+residuals, all requiring Bash to set up: a file symlink or hard link whose
+basename is innocuous, and a check-then-open race. Also unverified: the
+permission-glob syntax against a live Claude Code matcher — `--dry-run` proves
+only that the strings were serialized, so the hook is what this relies on.
+
+Two review recommendations were **deliberately not taken**, with reasons:
+requiring the `intermediate_files/json/` authority path in the match (a
+relative `file_path` written from inside that directory carries no such
+prefix, so path-anchoring would open a one-word bypass; over-blocking a
+same-named file elsewhere is the cheaper error), and narrowing the deny globs
+to that path for the same reason. Two were: the gate now **fails closed** on
+an unreadable payload (it is an accuracy gate, and the earlier draft
+advertised "fail open but loud" while actually failing open *silently* — the
+`|| echo` fallback fires only on a nonzero exit), and `fast_gate.sh`'s needle
+match became case-insensitive, which also closed a pre-existing hole where a
+`.BIB` write skipped BibTeX validation entirely on case-insensitive
+filesystems.
+
+**Option 2 is NOT built** and stays routed to the service. Option 3 (sampled
+warn-only corroboration) was not taken either — it remains the cheapest way to
+turn "never observed under Claude" into a measured claim if that question
+becomes live. The review also proposed a fourth shape worth recording: fuse
+enrichment and stamping into one trusted process and treat the persisted
+ledger as a *cache* rather than an authority, re-corroborating only entries
+that came through the prior-ledger fast path. That could close most of the gap
+without Option 2's full second pass, and is the better design if this is ever
+built here rather than in the service. (Signing the ledger was considered and
+rejected: a same-user local signer callable by the agent is another forgeable
+oracle, not a boundary.)
 
 ## Issue D — no venue-quality vetting; predatory-venue papers can anchor claims
 
@@ -313,12 +496,115 @@ bib note and weighted the paper lightly; other orchestrators lost the caveat
 and anchored claims on it. The good behavior exists as model behavior — not
 as a pipeline guarantee.
 
-Fix directions: cheap venue heuristics at verification time (DOAJ lookup,
+Fix directions as filed 2026-07-24 — **the named signal is the wrong one, see
+the re-scope**: cheap venue heuristics at verification time (DOAJ lookup,
 CrossRef member age/volume, publisher flags) emitting a `VENUE_UNVETTED`-
 style keyword; an agent-prompt rule making the researcher annotate venue
 quality for unrecognized venues and the writer caveat reliance on flagged
 entries — the same keyword-keyed pattern the INCOMPLETE rule already uses.
 Full predatory-list curation is out of scope; flag-and-caveat is the goal.
+
+### Re-scope, 2026-08-05 (measured against the real corpus)
+
+Two things in the filed direction are stale. The mechanism was to be keyed
+"the same keyword-keyed pattern the **INCOMPLETE** rule already uses" — item 1
+deleted that pattern in favour of evidence tiers, so D needs its own home
+(see *Where the flag lives*, below). And the named signal does not work.
+
+**DOAJ is the wrong index.** DOAJ lists *open-access* journals only.
+Philosophy's flagship venues are subscription-based — `Mind`, `Noûs`,
+`Philosophical Review` are all `is_in_doaj: false` — so DOAJ-absence carries
+no information about a philosophy venue and would flag the entire discipline.
+`is_indexed_in_scopus`, the obvious substitute, is now returned as `null` by
+the OpenAlex API and cannot be used either.
+
+**The nearest usable single signal produces false discredits — measured.**
+OpenAlex's curated `is_core` flag does separate the observed predatory venue
+from `Mind` (`Advanced International Journal for Research`: `is_core false`,
+h-index **2**, 2-year mean citedness 0.028 / `Mind`: `is_core true`, h-index
+162, citedness 1.50). But over the 120 most-frequent venues in this repo's 45
+review corpora (3,938 entries), `is_core false` fires on **7 venues, and every
+one of them is reputable**:
+
+| venue | h-index | entries |
+|---|---|---|
+| Journal of Moral Philosophy | 46 | 34 |
+| Political Theory | 117 | 20 |
+| Contemporary Political Theory | 81 | 19 |
+| Proceedings of the AAAI/ACM Conf. on AI, Ethics, and Society | 32 | 18 |
+| Jurisprudence | 23 | 11 |
+| South African Journal of Philosophy | 37 | 11 |
+| Oxford Journal of Legal Studies (tail sample) | 82 | 4 |
+| Phronesis (tail sample) | 86 | 2 |
+| Kantian Review (tail sample) | 42 | 2 |
+
+`is_core` is a coverage set, not a quality judgment, and it under-covers
+humanities journals. **A single-signal `is_core` rule is therefore
+prohibited**: stamping `VENUE_UNVETTED` on *Phronesis* would both insert a
+false discredit into scholarly output and teach the writer to ignore the flag
+— the unfollowability trap that item 1 exists to avoid.
+
+**D does have real targets in this corpus** (this corrects a first draft of
+this re-scope, which inferred "fires on nothing" from the top-120 stratum —
+the one stratum that structurally cannot contain a predatory venue). A free
+local name-shape scan of all 928 distinct journal names surfaced these, each
+appearing in 2 entries:
+
+- **`Advanced International Journal for Research`** — the *same venue* as the
+  service-experiment observation, now confirmed present in PhilLit's own
+  corpora
+- `Advanced Research Journal`
+- `Edumania-An International Multidisciplinary Journal`
+- `Global Multidisciplinary Perspectives Journal`
+- `International Journal of Multidisciplinary Research and Analysis`
+- `International Journal of Innovative Research in Computer and Communication Engineering`
+- `International Journal of Advanced Computer Science and Applications`
+- `Engineering and Technology Journal`, `ICTACT Journal on Soft Computing`
+
+The same crude name patterns also catch legitimate venues (*International
+Journal of Philosophical Studies*, *THEORIA*, *International Journal of
+Applied Philosophy*, *IJ Social Robotics*, *IJ Constitutional Law*), so the
+name shape is a *scan heuristic for this re-scope only* — never the ship rule.
+
+**The defensible rule is two conjoined negative signals**, because the
+observed separation is in citation impact, not index membership:
+
+    flag VENUE_UNVETTED  iff  venue resolved
+                         AND  is_core is false
+                         AND  h_index < THRESHOLD
+    never flag an unresolved venue (absence of a match is absence of evidence)
+
+Observed margin: predatory h-index **2** vs. the lowest *legitimate* noncore
+venue measured at **22-23** (Washington Law Review 22, Jurisprudence 23). A
+threshold near 12 sits mid-gap. **The threshold must be validated against the
+eight remaining candidate venues before shipping** — that measurement is
+blocked until the OpenAlex budget resets (see below), and shipping a
+threshold on a single data point is not acceptable.
+
+**Cost and the new metering constraint.** Bibs carry **zero `issn` fields**
+(0 of 6,530 `@article` entries), so venue resolution must go by name — the
+expensive request class. OpenAlex began metering during this session's
+measurement: unauthenticated use is **$0.10/day**, which is ~100 full-text
+search calls, and this measurement exhausted it. With a **free API key** the
+budget is $1/day = 1,000 search calls + 10,000 filter calls + *unlimited*
+single-entity (DOI) lookups, which makes per-venue resolution comfortably
+affordable. Full write-up and PhilLit's exposure:
+`docs/known-issues/openalex-metering-2026-08-05.md`. **D is therefore
+sequenced behind the OpenAlex API-key support**, and venue verdicts must be
+cached per venue (once ever, not once per review) rather than re-resolved.
+
+**Where the flag lives** (the INCOMPLETE-pattern replacement). Not the
+`keywords` field: `stamp_evidence.stamp_keywords` partitions that field into
+topics / importance / evidence-tier / trailing `METADATA_CLEANED` marker, and
+an unrecognized token falls through into *topics* and is re-ordered there. A
+dedicated field (e.g. `venue_status`) is the right home, and it must be added
+to the same survival surfaces F's suffix field needs — `sanitize_bib.py`,
+`_SUBSTANTIVE_FIELDS` in `dedupe_bib.py`/`generate_bibliography.py`, and the
+barrier's field re-derivation — or it will be stripped silently. D also has a
+writer-facing half (`docs/conventions.md` + `agents/synthesis-writer.md`
+caveat rule), which means **the roadmap's claim that F is the only one of the
+six needing a live run is no longer true**; D's writer-compliance check should
+ride F's run as a fourth rider rather than buying its own.
 
 ---
 

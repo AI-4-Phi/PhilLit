@@ -200,6 +200,19 @@ An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed).
 | Multiple citations | (Author Year; Author Year) | (Frankfurt 1971; Dennett 1984) |
 | With page numbers | (Author Year, pages) | (Fischer and Ravizza 1998, 31-45) |
 | Author as subject | Author (Year) argues... | Frankfurt (1971) argues... |
+| Two authors sharing a surname | (F. Author Year) — add the first initial | (G. Johnson 2024) vs. (R. Johnson 2024) |
+
+**Same surname, same year, different people — always add the first initial.**
+This is Chicago's own rule, and in PhilLit it is load-bearing rather than
+cosmetic. References are rendered by matching *first-author surname near a
+year* in the prose, so two different people who share a surname and a year are
+indistinguishable to the renderer unless the prose carries an initial. Given a
+bare `Johnson (2024)` the renderer cannot tell which work was cited, so it
+keeps **both** in the reference list and warns — meaning a work you never
+cited is listed as if you had. Writing `G. Johnson (2024)` resolves it. The
+same applies to a work cited alongside a same-surname co-author: prefer the
+form that names the second author (`Muldoon and Wu 2023`) over `Muldoon et
+al. 2023` when the reference list holds both.
 
 ### Bibliography Format
 
