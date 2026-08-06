@@ -124,7 +124,9 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     ambiguous-keep-all, so counting it as citing NEITHER lettered work would
     report both as uncited: false telemetry manufactured by this feature.
     Entries without a letter keep the historic behaviour, so prose that
-    letters a work the bib never lettered still resolves.
+    letters a work the bib never lettered still resolves. Letter matching
+    is case-insensitive in both directions -- see the comment on
+    `qualifying_re` for why a half-measure there is worse than none.
 
     Suffix mode additionally disambiguates two DIFFERENT lettered mentions
     of the same base year sitting close together (e.g. "Menary (2010a) ...
@@ -168,8 +170,25 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     # letter or digit). No separate bare-year scan is needed as a guard:
     # every qualifying position is also a bare-year position, since neither
     # alternative can be followed by a digit.
+    #
+    # CASE-INSENSITIVE. Case-sensitively, "2010B" failed the explicit `b`
+    # alternative and then SATISFIED the bare-year lookahead -- so an
+    # uppercase letter read as a BARE citation and credited every lettered
+    # entry for that year, the 'a' entry included. Case normalisation is
+    # settled elsewhere in item 3 F (generate_bibliography._entry_suffix
+    # lowercases what it renders and matches; its prose sighting scan is
+    # explicitly case-insensitive), so this checker follows suit rather than
+    # inventing a third reading.
+    #
+    # The FLAG is what does the work: under re.IGNORECASE a `[0-9a-z]` class
+    # already matches A-Z, so spelling the class `[0-9A-Za-z]` changes
+    # nothing today (measured, both ways). It is written out anyway so the
+    # bare-year half does not silently DEPEND on the flag -- dropping the
+    # flag alone would then reopen the hole, whereas dropping it now merely
+    # under-credits an uppercase mention, which is the safe direction.
     qualifying_re = re.compile(
-        rf"(?<!\d){re.escape(year)}(?:{re.escape(suffix)}\b|(?![0-9a-z]))")
+        rf"(?<!\d){re.escape(year)}(?:{re.escape(suffix)}\b|(?![0-9A-Za-z]))",
+        re.IGNORECASE)
     qualifying_positions = [m.start() for m in qualifying_re.finditer(md)]
     if not qualifying_positions:
         return []

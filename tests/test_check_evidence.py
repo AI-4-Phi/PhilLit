@@ -242,6 +242,33 @@ def test_find_cites_ignores_a_nearby_decade_mention():
     assert check_evidence.find_cites(decade_only, "Menary", "2010", "a") == []
 
 
+def test_find_cites_reads_an_uppercase_prose_letter_as_that_letter():
+    """Item 3 F second opinion: "2010B" used to fall THROUGH the
+    case-sensitive `b` alternative and satisfy the lowercase-only bare-year
+    lookahead instead -- so an uppercase letter was read as a BARE citation
+    and credited every lettered entry for that year, the 'a' entry included.
+    The 'b' row pins that an uppercase letter resolves to its own entry; the
+    'a' row pins that it no longer resolves to every OTHER lettered entry.
+    Both rows are carried by re.IGNORECASE alone -- the widened `[0-9A-Za-z]`
+    class is redundant under that flag (measured) and is spelled out only so
+    the bare-year half stops depending on it."""
+    md = "Menary (2010B) argues X."
+    pos = md.index("Menary")
+    assert check_evidence.find_cites(md, "Menary", "2010", "b") == [pos]
+    assert check_evidence.find_cites(md, "Menary", "2010", "a") == []
+    # An UNLETTERED entry keeps the historic reading: the no-suffix arm is
+    # untouched by this fix, and "2010B" is still a mention of 2010 there.
+    assert check_evidence.find_cites(md, "Menary", "2010") == [pos]
+    # The lowercase control behaves identically, which is the point: the
+    # renderer lowercases what it emits, so case must not carry meaning.
+    lower = "Menary (2010b) argues X."
+    assert (check_evidence.find_cites(lower, "Menary", "2010", "b")
+            == check_evidence.find_cites(md, "Menary", "2010", "b"))
+    # An uppercase ENTRY suffix reaching find_cites directly resolves too
+    # (main() lowercases before calling, but the function is public).
+    assert check_evidence.find_cites(lower, "Menary", "2010", "B") == [pos]
+
+
 BIB_LETTERED = """@book{menary2010cognitive,
   author = {Menary, Richard},
   title = {Cognitive Integration},
@@ -272,6 +299,14 @@ def test_lettered_citation_flags_only_its_own_entry(tmp_path):
     r = _run(tmp_path, "Menary (2010a) is influential.", bib_text=BIB_LETTERED)
     assert "CHECK none-cited: menary2010cognitive" in r.stdout
     assert "CHECK none-cited: menary2010extended" not in r.stdout
+
+
+def test_uppercase_lettered_citation_flags_only_its_own_entry(tmp_path):
+    # The whole-script consequence of the regex fix: before it, "2010B" read
+    # as a bare cite and reported BOTH lettered works as none-cited.
+    r = _run(tmp_path, "Menary (2010B) is influential.", bib_text=BIB_LETTERED)
+    assert "CHECK none-cited: menary2010extended" in r.stdout
+    assert "CHECK none-cited: menary2010cognitive" not in r.stdout
 
 
 def test_sanitizer_strips_all_tokens(tmp_path):
