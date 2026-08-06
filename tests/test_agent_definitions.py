@@ -142,11 +142,22 @@ def test_planner_knows_the_venue_status_rule():
     assert "still outline-eligible" in text
 
 
-def test_researcher_told_not_to_write_venue_status():
+def test_researcher_told_not_to_write_either_derived_field():
+    """The ban must cover BOTH barrier-owned fields, not just venue_status.
+
+    An external review (2026-08-06, kimi-k3 M3) found the prompt banned
+    hand-writing `venue_status` while saying nothing about `year_suffix` --
+    even though the barrier owns both, re-derives both every run, and a
+    hand-written `year_suffix` is the more dangerous of the two: one the
+    stripper cannot reach can make a collision group look structurally
+    complete and cost a cited work.
+    """
     text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
         encoding="utf-8")
-    assert "venue_status" in text
-    assert "Never write a `venue_status` field yourself" in text
+    assert "Never write a `venue_status` or `year_suffix` field yourself" in text
+    # And the reason, not just the prohibition -- a bare ban invites a
+    # researcher to treat it as style rather than correctness.
+    assert "re-derives them from scratch on every run" in text
 
 
 def test_writer_knows_the_year_suffix_rule():

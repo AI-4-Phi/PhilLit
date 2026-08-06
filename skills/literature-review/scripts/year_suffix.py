@@ -21,8 +21,22 @@ identity signal; full first-name disambiguation is item 3 E's mechanism, not
 this one.
 
 Letters run alphabetically by title (Chicago 15.18), tie-broken by entry id,
-so assignment is deterministic and independent of input order. Nothing is
-ever re-lettered: a later drop leaves a gap (2010a, 2010c), which is correct.
+so assignment is deterministic and independent of input order.
+
+Assignment is a pure function of the entries handed to THIS run: letters are
+always packed a, b, c with no gaps. An earlier docstring here claimed the
+opposite -- that nothing is ever re-lettered and a later drop leaves a gap
+(2010a, 2010c) -- and two independent external reviews caught it as false
+(2026-08-06). Verified: three same-author works letter a/b/c, and removing the
+middle one re-letters the third from c to b. The barrier strips and re-derives
+the field on every run, so there is no mechanism by which a previous run's
+letter could survive to leave a gap.
+
+The practical consequence is real and belongs to the caller, not here: a
+re-run whose bibliography changed can move a letter that prose was already
+written against. Within one review that is safe, because assignment happens at
+the Phase 3->4 barrier and every writer runs after it. It is only a hazard if
+a bib is edited and the renderer re-run without re-running the writers.
 Entry ids must have a stable `repr()` across a run (true of the str/tuple/int
 ids every caller uses; NOT true of a frozenset or a plain object, whose repr
 can carry an address or an arbitrary iteration order).

@@ -112,11 +112,14 @@ author has two or more works in the same year, following Chicago 15.18. The
 `year` field itself is never modified: `2010a` in a `year` field would be
 rejected by the `\d{4}` guards in `check_evidence.py` and `resolve_context.py`.
 References render `2010a`; in-text citations must carry the same letter.
-Letters are assigned once, over all domain bibliographies at once, so the same
-work carries the same letter everywhere — and a later removal leaves a gap
-(`2010a`, `2010c`) rather than triggering a re-lettering, which would break
-prose already written against the old letters. Agents must never write this
-field by hand.
+Letters are assigned once per run, over all domain bibliographies at once, so
+the same work carries the same letter in every domain. They are packed
+`a`, `b`, `c` with no gaps, and the barrier strips and re-derives them on every
+run — so if the bibliography changes between runs, a work's letter can change.
+That is safe within a review, because assignment happens at the Phase 3→4
+barrier and every writer runs after it; it is only a hazard if a bib is edited
+and the renderer re-run without re-running the writers. Agents must never write
+this field by hand.
 
 ### Field Grounding — CRITICAL
 

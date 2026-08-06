@@ -90,8 +90,12 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into reference mana
 - NEVER fill in "what you think" a field should be — even if you recognize the paper
 - A BibTeX entry with missing fields is BETTER than one with hallucinated data
 - Use `@misc` type if no venue information is available from any source
-- Never write a `venue_status` field yourself — the evidence barrier owns it
-  (it is stamped from OpenAlex data after Phase 3, like the `EVIDENCE-*` tiers)
+- Never write a `venue_status` or `year_suffix` field yourself — the evidence
+  barrier owns both and re-derives them from scratch on every run, like the
+  `EVIDENCE-*` tiers. `venue_status` comes from OpenAlex after Phase 3;
+  `year_suffix` is the Chicago a/b letter, assigned across all domains at once.
+  A hand-written value is either stripped or, if the stripper cannot reach it,
+  overwritten and reported as untrusted.
 
 **When You Can't Find a Paper**:
 - DO NOT include it

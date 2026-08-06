@@ -9,9 +9,10 @@ against **this repo's current `main`**, not just the snapshot.
 **Severity**: Medium overall (per-issue below). None fails a run; all
 silently degrade bibliography/References integrity — the part of the output a
 reader is least able to audit.
-**Status**: **A FIXED, B CLOSED, C CLOSED-AS-NARROWED — all 2026-08-05; D
-re-scoped and its rule VALIDATED 2026-08-05, ready to build with nothing
-blocking** (each issue's own section carries the detail; C's and
+**Status**: **A FIXED, B CLOSED, C CLOSED-AS-NARROWED — all 2026-08-05;
+D BUILT and CLOSED 2026-08-06** (venue vetting shipped: `venue_vetting.py`
+wired into the evidence barrier, whole-branch review verdict "safe to consider
+done") (each issue's own section carries the detail; C's and
 D's re-scope sections are the current statements — the "Fix directions"
 paragraphs above them are preserved but superseded). Was: "Open overall (C
 and D untouched)". **A is FIXED 2026-08-05; B is
@@ -693,7 +694,9 @@ ride F's run as a fourth rider rather than buying its own.
   PreToolUse on Write/Edit/NotebookEdit via `hooks/fast_gate.sh` (needle
   `_ledger-`), with two matching `deny` rules in
   `skills/setup/scripts/setup_workspace.py`
-- **Issue D has no home yet** — it needs a new venue-resolution step calling
+- **Issue D is BUILT (2026-08-06)** — `skills/literature-review/scripts/venue_vetting.py`,
+  wired into the barrier, gated on `OPENALEX_API_KEY`. What it needed, and now has,
+  was a venue-resolution step calling
   OpenAlex `/sources` with a persistent per-venue cache, plus a dedicated
   `venue_status` field that must survive `sanitize_bib.py`,
   `_SUBSTANTIVE_FIELDS` in `dedupe_bib.py`/`generate_bibliography.py`, and the
