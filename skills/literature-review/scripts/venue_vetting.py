@@ -41,9 +41,26 @@ Two documented limits:
   simply never flagged. PhilLit's own producers always write braced full
   venue names (docs/conventions.md), so this bites only on hand-imported
   bibliographies.
-- The name fold strips non-ASCII letters. It is applied symmetrically to
-  both sides of the comparison, so accented names still match; a wholly
-  non-Latin name folds to empty and is skipped, which is fail-open.
+- The name fold strips non-ASCII letters. The same fold runs on both sides
+  of the comparison (the bib field, and OpenAlex's display_name /
+  alternate_titles), but symmetry of the FUNCTION is not symmetry of the
+  RESULT: it only follows that accented names still match when both sides
+  spell the accent the same way. That holds for raw Unicode
+  (`Nous` with a circumflex -> `no s` on both sides, MATCH) and fails for
+  LaTeX-escaped accents, which is how BibTeX usually carries them. The
+  escape's punctuation folds to a SPACE, so the two sides diverge by a
+  whole token, not by a character (verified 2026-08-06):
+
+      bib `Cr{\\'i}tica`  -> `cr i tica`  vs  OpenAlex `Critica` -> `cr tica`
+      bib `No\\^us`       -> `no us`      vs  OpenAlex `Nous`    -> `no s`
+      bib `{\\'E}thique`  -> `e thique`   vs  OpenAlex `Ethique` -> `thique`
+
+  Such venues simply never resolve, so they are never flagged: a known
+  RECALL gap inside the declared fail-open envelope, NOT a false-flag path.
+  Eight distinct journal values in the local review corpus are of this
+  shape. Unescaping LaTeX accents before the fold would be a feature, not
+  a fix, and is deliberately out of scope here. A wholly non-Latin name
+  folds to empty and is skipped, also fail-open.
 """
 from __future__ import annotations
 

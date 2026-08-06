@@ -49,6 +49,27 @@ class TestNormalizeVenueName:
         assert vv.normalize_venue_name("") == ""
         assert vv.normalize_venue_name(None) == ""
 
+    def test_raw_unicode_accent_folds_the_same_on_both_sides(self):
+        """The case the module docstring's symmetry claim DOES hold for: a
+        bib field spelling the accent as raw Unicode folds to the same key
+        as OpenAlex's display_name."""
+        assert vv.normalize_venue_name("Noûs") == "no s"
+        assert vv.normalize_venue_name("Crítica") == "cr tica"
+
+    def test_latex_escaped_accent_folds_to_a_different_key(self):
+        """Whole-branch review I3, pinned so the corrected docstring stays
+        true: the escape's punctuation folds to a SPACE, so an escaped
+        accent diverges from OpenAlex's raw Unicode by a whole token and
+        the venue never resolves. A documented RECALL gap -- never a false
+        flag, since unresolved is never flagged."""
+        assert vv.normalize_venue_name("Cr{\\'i}tica") == "cr i tica"
+        assert vv.normalize_venue_name("No\\^us") == "no us"
+        assert vv.normalize_venue_name("{\\'E}thique") == "e thique"
+        for escaped, raw in (("Cr{\\'i}tica", "Crítica"),
+                             ("No\\^us", "Noûs"),
+                             ("{\\'E}thique", "Éthique")):
+            assert vv.normalize_venue_name(escaped) != vv.normalize_venue_name(raw)
+
 
 class TestSelectBestHit:
     def test_picks_highest_h_index(self):
