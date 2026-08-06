@@ -725,24 +725,41 @@ def _citation_instances(review_text: str) -> list[dict]:
         # (2015a; 2015b)" -- the shape 8 of 32 delivered reviews already use.
         # _CITE_INSTANCE_RE matches only the first year, so without this the
         # later works have no supporting instance and _resolve_collisions drops
-        # them: a regression F would INTRODUCE rather than fix. Continuations
-        # can only ADD support, never remove it, so a spurious one costs a kept
-        # work (safe) and never a dropped one.
+        # them: a regression F would INTRODUCE rather than fix.
         #
-        # That claim is only true because of the "continuation" flag:
-        # _resolve_collisions refuses to set first_pos_seen from a continuation.
-        # Without the flag a fabricated continuation ("Following Smith 2020,
-        # 1995 was a watershed") moved its group OUT of the keep-all branch and
-        # INTO the drop branch, so adding support to a group that had none
-        # removed the group's protection - the review's Important 2, measured
-        # as a real drop, not a hypothetical.
+        # A spurious continuation (", 1995" in "Following Smith 2020, 1995 was
+        # a watershed", which is not a citation at all) must not cost a cited
+        # work. Do NOT restate that as a slogan: two rounds of this branch
+        # shipped the sentence "continuations can only ADD support, never
+        # remove it, so a spurious one costs a kept work and never a dropped
+        # one", and both times it was false - ADDING support is itself a way to
+        # move a group out of keep-all and into the drop branch, which is how a
+        # continuation deleted a cited work twice (review IMPORTANT 2, then the
+        # whole-branch review's C1, measured end-to-end on an UNLETTERED bib
+        # with lint exiting 0).
+        #
+        # What holds the property up is an enumeration a later editor can
+        # re-check line by line against _resolve_collisions - one line per
+        # piece of group state a continuation instance can write:
+        #
+        #   supported             WRITTEN - keeps a member in the drop branch
+        #   first_pos_seen        WRITTEN - routes to keep-all-and-warn
+        #   unmatched_letters     WRITTEN - disables the drop branch outright
+        #   form_mismatch_letters WRITTEN - changes the message, never a branch
+        #   first_pos_supported   NOT written - the drop license
+        #   second_pos_seen       NOT written - the drop-everything license
+        #
+        # Every state a continuation reaches either protects a member or only
+        # talks; both drop licenses are closed to it. A later edit that adds a
+        # seventh piece of state must extend this list and say which column it
+        # is in.
         #
         # Every other key inherited from out[-1] is invariant across a
         # continuation run - surname_variants, form, second_text and first_text
         # all belong to the single author-list this parenthesis opened with, and
         # only the year and its letter vary. There is no positional key to copy:
-        # the resolver derives first_pos_seen itself. A continuation OF a
-        # continuation correctly inherits continuation=True.
+        # the resolver derives its own flags. A continuation OF a continuation
+        # correctly inherits continuation=True.
         tail = review_text[m.end():]
         while True:
             cont = _CONTINUATION_RE.match(tail)
@@ -956,6 +973,13 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     keep the union of supported members; drop only what no instance
     supports - and only when the group parsed at least one instance.
 
+    First-position evidence is tracked as TWO flags with opposite roles -
+    first_pos_seen (protective, set by any naming instance) and
+    first_pos_supported (licensing, set only by a non-continuation instance
+    that discriminated a member). Collapsing them into one variable is what
+    let a multi-year citation's tail delete a cited work; see their
+    declaration below for the full account.
+
     first-position and second-position evidence are tracked SEPARATELY per
     group (post-review fix): a second-position-only sighting ("Bloggs and
     Muldoon (2023)" against a Muldoon-first-author group) must drop the
@@ -1019,7 +1043,34 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                           and _members_are_distinct_works(members))
         year = members[0]["year"]
         supported = set()
+        # TWO first-position flags, because they play OPPOSITE roles and one
+        # variable cannot carry both. Collapsing them is the defect three
+        # independent reviewers found, and the one a first fix half-closed by
+        # tightening the single flag for one role while silently weakening the
+        # other:
+        #
+        #   first_pos_seen -- PROTECTIVE. "Some citation named this group in
+        #     first position." It routes the group into the keep-all-and-warn
+        #     branch, which is what keeps it OUT of the second-position
+        #     drop-everything branch. Set by ANY intersecting instance,
+        #     continuation included: a continuation is still the prose naming
+        #     this group, and withholding the flag pushed "Muldoon (2019, 2023)
+        #     argues" - an explicit citation, whose support this very function
+        #     had already printed - into the drop branch and deleted BOTH
+        #     candidate works.
+        #   first_pos_supported -- LICENSING. "A NON-continuation first-position
+        #     instance actually discriminated some member." Only this opens the
+        #     drop branch. A continuation is the tail of a citation whose only
+        #     certain content is the head year, so it must never move a group
+        #     out of keep-all on its own - it did, twice, through `supported`
+        #     ("Following Smith 2020, 1995 was a watershed"; and three ordinary
+        #     forms combined on an unlettered bib, silent through lint).
+        #
+        # first_pos_supported implies first_pos_seen (it is set inside the same
+        # block, which sets first_pos_seen unconditionally first), so the drop
+        # gate below names only the licensing flag.
         first_pos_seen = False
+        first_pos_supported = False
         second_pos_seen = False
         # Letters the prose used that this group could not resolve. Per-group
         # (not function-scope): at function scope one group's typo would leak
@@ -1052,16 +1103,11 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                         _second_position_corroborated(inst, member_variants, records)):
                     second_pos_seen = True
                 continue
-            # A continuation year ("Menary (2006, 2010)") may ADD support but
-            # must never by itself license a drop: it is the tail of a citation
-            # whose only certain content is the head year, and setting
-            # first_pos_seen here moved a group out of keep-all and into the
-            # drop branch (review IMPORTANT 2 - "Following Smith 2020, 1995 was
-            # a watershed" dropped a work). The cost is that a group whose ONLY
-            # support is a continuation now takes keep-all-and-warn instead of
-            # a silent keep-all: more warning, never a drop.
-            if not inst["continuation"]:
-                first_pos_seen = True
+            # Unconditional, continuations included: this flag is protective
+            # (see its declaration above), so a continuation year
+            # ("Menary (2006, 2010)") must set it. The drop license is
+            # first_pos_supported, which a continuation cannot set.
+            first_pos_seen = True
             cands = []
             for rec in members:
                 if not (inst["surname_variants"] & rec["_variants"]):
@@ -1121,15 +1167,27 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                     cands = []
             if cands:
                 supported.update(r["key"] for r in cands)
+                # The drop license, and the only line that grants it. Writing
+                # `supported` is NOT enough: flipping it from empty to
+                # non-empty used to reach the drop branch just as surely as
+                # first_pos_seen did, which is how a continuation kept costing
+                # cited works after the flag guard was added.
+                if not inst["continuation"]:
+                    first_pos_supported = True
                 if len(cands) > 1:
                     print("  [COLLISION] ambiguous: instance '"
                           + _ascii(min(inst["surname_variants"]))
                           + " " + year + "' (" + inst["form"] + ") matches "
                           + ", ".join(sorted(_ascii(r["key"]) for r in cands)),
                           file=sys.stderr)
-        if first_pos_seen and supported and not unmatched_letters:
-            # At least one first-position instance discriminated some
-            # members - keep those, drop the rest.
+        if first_pos_supported and not unmatched_letters:
+            # At least one NON-CONTINUATION first-position instance
+            # discriminated some members - keep those, drop the rest.
+            #
+            # `supported` still decides WHO is kept, and a continuation may
+            # have put a member there; what a continuation may not do is decide
+            # THAT anyone is dropped. Gating on `supported` alone did exactly
+            # that, and it is the whole of the whole-branch review's C1.
             #
             # Item 3 F: an unmatched letter anywhere in the group disables
             # dropping for the WHOLE group, even when other instances did
@@ -1158,12 +1216,17 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
             # anyone. A second-position sighting elsewhere in the text
             # must NOT override this into a drop.
             #
-            # The `or unmatched_letters` disjunct is currently redundant:
-            # a letter can only go unmatched inside the block that has
-            # already set first_pos_seen = True. It is kept as a guard
-            # against a later edit reordering those assignments, which would
-            # otherwise silently route an unmatched-letter group into the
-            # second-position DROP branch below.
+            # The `or unmatched_letters` disjunct is redundant TODAY, for a
+            # structural reason a later editor can re-check rather than take on
+            # trust: every unmatched_letters.add() sits inside the same
+            # per-instance block as the UNCONDITIONAL `first_pos_seen = True`
+            # that precedes it, so no letter can go unmatched with the flag
+            # unset. It is kept as a guard against an edit that breaks that
+            # ordering - and it has been load-bearing once already, in the round
+            # when first_pos_seen was conditional on `not continuation`: a
+            # continuation carrying an unmatched letter reached here with the
+            # flag unset, and deleting the disjunct then dropped two works with
+            # the whole test file still green.
             keep.extend(members)
             if unmatched_letters:
                 # The generic message ("no parseable citation form

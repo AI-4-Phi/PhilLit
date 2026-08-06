@@ -1533,6 +1533,70 @@ class TestYearSuffixMatching:
             bib)) == ["smithduo1995", "smithsolo1995"]
         assert "[COLLISION] dropped" not in capsys.readouterr().err
 
+    def test_continuation_support_alone_never_licenses_a_drop(self, capsys):
+        # Whole-branch review C1, and the coverage hole that let it ship: the
+        # first fix for the case above stopped a continuation setting
+        # first_pos_seen but left it writing `supported`, and flipping THAT
+        # from empty to non-empty reached the same drop branch. Every existing
+        # test passed with the defect in place.
+        #
+        # Three individually ordinary forms, no letters anywhere:
+        #   "Smith and Wu (2006, 2010)" -- a compact multi-year cite (the shape
+        #     8 of 32 delivered reviews use); its ", 2010" tail is the ONLY
+        #     thing that puts smithWu2010 into `supported`
+        #   "Smith et al. (2010)"       -- a loose et al. for a two-author work;
+        #     sets first_pos_seen, resolves to nobody (et al. needs n >= 3)
+        #   "Following Clark, Smith (2010)" -- rejected by the non-initial guard
+        # Together they used to delete smith2010solo from References while the
+        # prose still cited it, with lint_md exiting 0 and no letter to sight.
+        bib = """@article{smithWu2010, author = {Smith, Alice and Wu, Li},
+  title = {The Joint Account}, journal = {Mind}, year = {2010}}
+
+@article{smith2010solo, author = {Smith, Alice}, title = {The Solo Line},
+  journal = {Synthese}, year = {2010}}"""
+        prose = ("Smith and Wu (2006, 2010) develop the joint account.\n\n"
+                 "Smith et al. (2010) report the survey results.\n\n"
+                 "Following Clark, Smith (2010) argues for the solo line.\n")
+        assert sorted(self._cited(prose, bib)) == \
+            ["smith2010solo", "smithWu2010"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_continuation_routes_its_group_to_keep_all_not_to_the_second_position_drop(
+            self, capsys):
+        # The opposite half of the same defect, and a cited-work loss the fix
+        # for the case above INTRODUCED: withholding first_pos_seen from a
+        # continuation also withheld the group's protection against the
+        # SECOND-POSITION branch, which drops every member.
+        #
+        # "Muldoon (2019, 2023) argues" is an explicit citation of a Muldoon
+        # 2023 work -- the resolver even prints that its 2023 tail matches both
+        # candidates -- and both were then deleted on the strength of "Bloggs
+        # and Muldoon (2023)" being the only instance that reached the flags.
+        # first_pos_seen is protective, so a continuation must set it.
+        bib = """@article{muldoonA2023, author = {Muldoon, Ryan},
+  title = {Diversity One}, journal = {Mind}, year = {2023}}
+
+@article{muldoonB2023, author = {Muldoon, Ryan}, title = {Diversity Two},
+  journal = {Nous}, year = {2023}}
+
+@article{bloggs2023, author = {Bloggs, Joe and Muldoon, Ryan},
+  title = {Joint Work}, journal = {Ethics}, year = {2023}}"""
+        assert sorted(self._cited(
+            "Bloggs and Muldoon (2023) note this. Muldoon (2019, 2023) argues"
+            " for diversity.", bib)) == \
+            ["bloggs2023", "muldoonA2023", "muldoonB2023"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_a_non_continuation_instance_still_licenses_the_drop(self, capsys):
+        # The equal and opposite failure the two tests above must not cause:
+        # over-protection that makes the drop unreachable turns item 3 F into
+        # item 3 E. A plain first-position cite still discriminates, and the
+        # compact continuation form still narrows a three-work group to two.
+        assert self._cited("As Menary (2010a) argues, integration matters.") \
+            == ["menary2010cognitive"]
+        assert "[COLLISION] dropped menary2010extended" in \
+            capsys.readouterr().err
+
     def test_form_mismatch_warning_does_not_claim_the_letter_is_unknown(self, capsys):
         # Review IMPORTANT 3. The filter also fires when the citation's author
         # FORM matched no member, so cands was empty before the letter was ever
