@@ -1,9 +1,53 @@
 # SEP bibliography parsing hangs the evidence barrier (catastrophic backtracking)
 
-**Status: OPEN.** Found 2026-08-06 by item 3 F's live headless run — the first
-full-pipeline run since the barrier gained its encyclopedia-context step. It is
-a **blocking** defect: any review whose SEP set contains one bad entry never
-reaches Phase 4.
+**Status: FIXED 2026-08-06** (`e455b26` the parser, `82fd84e` the backstop).
+Found the same day by the first full-pipeline live run since the barrier gained
+its encyclopedia-context step. It was a **blocking** defect: any review whose
+SEP set contained one bad entry never reached Phase 4.
+
+**What shipped**
+
+1. `parse_bibliography_entry` now splits on commas in ordinary Python and finds
+   the year field by scanning, instead of matching a comma-structured regex.
+   Linear in the line length, with no repetition to backtrack through.
+   Measured on the shape that hung the run: **3.5 s → 0.000007 s** at 22
+   commas, and instant at 200. A 2000-character bound rejects absurd lines
+   outright, so no future parser change can be handed an unbounded string.
+2. `resolve_context.fetch_articles` now takes a wall-clock deadline
+   (`PASS_DEADLINE_SECONDS = 600`), checked before each fetch, matching
+   `venue_vetting`'s existing idiom. Slugs not reached are reported as
+   `failed`, so they show up in the barrier's report rather than silently
+   shortening the article set.
+
+**Regression tests assert TIME, not return values** — the old code returned the
+right answer for every input below, just geometrically slower, so a value-only
+assertion passed while the bug was live. They carry
+`@pytest.mark.timeout(30)`: under the old regex they *hang* rather than fail,
+which would wedge CI instead of reporting. Verified by reverting the regex —
+both timing tests fail at 30 s; verified again by deleting the deadline check —
+the deadline test fails.
+
+**Deleting the bibliography was considered and rejected.** It is not dead
+weight: `agents/domain-literature-researcher.md:153` has every researcher run
+`--sections "preamble,1,2,bibliography"` in Stage 1 of every review, and the
+prose instructs them to "parse bibliography for foundational works cited" and
+"use bibliography entries as seeds for further search". `fetch_sep.py` also
+exposes `--bibliography-only` as a documented flag. It is a primary
+literature-discovery path, not a byproduct.
+
+**Layer 2 of the original three-layer plan was dropped, deliberately.** The
+plan was to make parsing lazy on the barrier path, since `resolve_context`
+filters candidate lines on `raw` text and only uses the parsed dict to prefer a
+clean title when scoring. That was justified when parsing cost seconds per
+entry; with a linear parser it costs microseconds, so laziness would restructure
+the fetch/cache boundary for no measurable gain and add a second code path to
+keep correct. The `parsed` field is kept, which also preserves SEP title-scoring
+quality — `fetch_iep.py` already ships `"parsed": None` and takes the raw-line
+fallback, so that quality difference is real and worth keeping on the SEP side.
+
+---
+
+## Original report
 
 ## Symptom
 
@@ -69,7 +113,7 @@ triggers the blowup. The function has exactly one production caller
 (`fetch_sep.py:173`, inside the bibliography loop), so a single bad entry in a
 single article stalls the whole barrier.
 
-## Fix (not applied — needs its own task and a review)
+## Fix as originally proposed (superseded by what shipped, above)
 
 The group does not need to be ambiguous. Either:
 
