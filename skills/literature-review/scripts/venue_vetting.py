@@ -40,6 +40,13 @@ sys.path.insert(
 
 from search_cache import cache_key, get_cache, put_cache  # noqa: E402
 
+import requests  # noqa: E402
+from rate_limiter import (  # noqa: E402
+    get_limiter,
+    openalex_budget_exhausted,
+    openalex_params,
+)
+
 VENUE_STATUS_FIELD = "venue_status"
 STATUS_LOW_VISIBILITY = "low-visibility"
 
@@ -134,3 +141,89 @@ def cache_get(name: str) -> dict | None:
 
 def cache_put(name: str, record: dict) -> None:
     put_cache(_cache_key_for(name), record)
+
+
+OPENALEX_SOURCES_URL = "https://api.openalex.org/sources"
+REQUEST_TIMEOUT = 30
+
+
+def lookup_venue(name: str, params: dict) -> tuple[dict | None, str]:
+    """One OpenAlex `sources` query. Returns (record|None, outcome).
+
+    outcome: "ok" (record is authoritative, resolved or not),
+             "budget_exhausted" (caller must stop -- Retry-After is the
+             seconds to midnight UTC, so retrying burns the rest of the day),
+             "error" (transport/HTTP; caller treats the venue as unknown).
+
+    ONE attempt, deliberately: this is a plumbing pass whose failure mode is
+    "no flag", so a backoff loop would buy nothing and cost the barrier time.
+    """
+    try:
+        get_limiter("openalex").wait()
+        response = requests.get(
+            OPENALEX_SOURCES_URL,
+            params={**params, "filter": f"display_name.search:{name}", "per_page": 25},
+            timeout=REQUEST_TIMEOUT,
+        )
+        if openalex_budget_exhausted(response):
+            return None, "budget_exhausted"
+        if response.status_code != 200:
+            return None, "error"
+        target = normalize_venue_name(name)
+        hits = []
+        for source in (response.json().get("results") or []):
+            names = [source.get("display_name") or ""] + list(
+                source.get("alternate_titles") or [])
+            # `display_name.search` is a FUZZY filter -- a search for "Ratio"
+            # returns "Ratio Juris" too. Only exact normalized matches count.
+            if any(normalize_venue_name(n) == target for n in names):
+                hits.append(source)
+        return record_from_hits(hits), "ok"
+    except Exception:
+        return None, "error"
+
+
+def vet_venues(names) -> dict:
+    """Resolve every distinct venue name and apply the rule. Never raises.
+
+    Gated on OPENALEX_API_KEY: vetting runs AFTER Phase 3's searches, so
+    spending the unauthenticated $0.10/day budget here would starve the next
+    review's searches. A free key raises the budget to $1/day.
+    """
+    result = {"status": "complete", "reason": None, "looked_up": 0,
+              "cache_hits": 0, "skipped_cap": 0, "flagged": [],
+              "evidence": {}, "verdicts": {}}
+    distinct = sorted({normalize_venue_name(n) for n in (names or []) if normalize_venue_name(n)})
+    if not distinct:
+        return result
+
+    params = openalex_params(os.environ.get("OPENALEX_EMAIL", ""))
+    if "api_key" not in params:
+        result["status"] = "skipped"
+        result["reason"] = ("no OPENALEX_API_KEY -- venue vetting needs the free key "
+                            "so it does not spend the unauthenticated search budget")
+        return result
+
+    for venue in distinct:
+        record = cache_get(venue)
+        if record is not None:
+            result["cache_hits"] += 1
+        else:
+            if result["looked_up"] >= MAX_LOOKUPS_PER_RUN:
+                result["skipped_cap"] += 1
+                continue
+            record, outcome = lookup_venue(venue, params)
+            if outcome == "budget_exhausted":
+                result["status"] = "budget_exhausted"
+                break
+            result["looked_up"] += 1
+            if outcome != "ok" or record is None:
+                continue  # unknown venue -- no verdict, no flag
+            cache_put(venue, record)
+        flagged = is_flagged(record)
+        result["verdicts"][venue] = flagged
+        if flagged:
+            result["flagged"].append(venue)
+            result["evidence"][venue] = record
+    result["flagged"].sort()
+    return result

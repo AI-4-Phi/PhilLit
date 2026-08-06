@@ -44,7 +44,7 @@ class TestSelectBestHit:
         hits = [hit("Phronesis", 3, False, False), hit("Phronesis", 86, False, False)]
         assert vv.select_best_hit(hits)["summary_stats"]["h_index"] == 86
 
-    def test_missing_h_index_counts_as_zero(self):
+    def test_missing_h_index_still_selectable(self):
         hits = [hit("X", None, False, False)]
         assert vv.select_best_hit(hits) is not None
 
@@ -143,3 +143,150 @@ class TestCache:
         ten_days_ago = time.time() - 10 * 24 * 3600
         os.utime(cache_file, (ten_days_ago, ten_days_ago))
         assert vv.cache_get("small journal") == rec
+
+
+class FakeResponse:
+    def __init__(self, status_code=200, payload=None, headers=None, text=""):
+        self.status_code = status_code
+        self._payload = payload or {"results": []}
+        self.headers = headers or {}
+        self.text = text
+
+    def json(self):
+        return self._payload
+
+
+@pytest.fixture
+def isolated_cache(tmp_path, monkeypatch):
+    import search_cache
+    monkeypatch.setattr(search_cache, "CACHE_DIR", tmp_path)
+    return tmp_path
+
+
+class TestLookupVenue:
+    def test_exact_name_match_only(self, monkeypatch):
+        # OpenAlex `display_name.search` is fuzzy: a search for "Ratio" also
+        # returns "Ratio Juris". Only exact normalized matches may count.
+        payload = {"results": [hit("Ratio Juris", 2, False, False),
+                               hit("Ratio", 61, True, False)]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        record, outcome = vv.lookup_venue("Ratio", {"api_key": "x"})
+        assert outcome == "ok"
+        assert record["matched_name"] == "Ratio"
+        assert record["h_index"] == 61
+
+    def test_alternate_title_matches(self, monkeypatch):
+        payload = {"results": [hit("Nous", 90, True, False, alt=["Nous (Detroit)"])]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        record, outcome = vv.lookup_venue("Nous (Detroit)", {"api_key": "x"})
+        assert outcome == "ok" and record["resolved"] is True
+
+    def test_no_match_is_unresolved_not_error(self, monkeypatch):
+        payload = {"results": [hit("Something Else", 4, False, False)]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        record, outcome = vv.lookup_venue("Nonexistent Journal", {"api_key": "x"})
+        assert outcome == "ok" and record["resolved"] is False
+
+    def test_budget_exhaustion_reported(self, monkeypatch):
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(
+            status_code=429, headers={"Retry-After": "81471"}, text="insufficient budget"))
+        record, outcome = vv.lookup_venue("Whatever", {"api_key": "x"})
+        assert outcome == "budget_exhausted" and record is None
+
+    def test_http_error_is_error_not_exception(self, monkeypatch):
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(status_code=500))
+        record, outcome = vv.lookup_venue("Whatever", {"api_key": "x"})
+        assert outcome == "error" and record is None
+
+    def test_network_exception_is_swallowed(self, monkeypatch):
+        def boom(*a, **k):
+            raise RuntimeError("connection reset")
+        monkeypatch.setattr(vv.requests, "get", boom)
+        record, outcome = vv.lookup_venue("Whatever", {"api_key": "x"})
+        assert outcome == "error" and record is None
+
+    def test_no_retry_on_error(self, monkeypatch):
+        calls = []
+        def once(*a, **k):
+            calls.append(1)
+            return FakeResponse(status_code=500)
+        monkeypatch.setattr(vv.requests, "get", once)
+        vv.lookup_venue("Whatever", {"api_key": "x"})
+        assert len(calls) == 1  # one attempt, fail open -- never a backoff loop
+
+
+class TestVetVenues:
+    def test_skips_without_api_key(self, monkeypatch, isolated_cache):
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        called = []
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: called.append(1))
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "skipped"
+        assert "OPENALEX_API_KEY" in result["reason"]
+        assert called == []
+
+    def test_flags_and_reports_evidence(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        payload = {"results": [hit("Small Journal", 2, False, False)]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        result = vv.vet_venues(["Small Journal"])
+        assert result["status"] == "complete"
+        assert result["flagged"] == ["small journal"]
+        assert result["verdicts"]["small journal"] is True
+        assert result["evidence"]["small journal"]["h_index"] == 2
+        assert result["looked_up"] == 1
+
+    def test_clear_venue_carries_no_evidence_blob(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        payload = {"results": [hit("Synthese", 164, True, False)]}
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
+        result = vv.vet_venues(["Synthese"])
+        assert result["flagged"] == []
+        assert result["verdicts"]["synthese"] is False
+        assert result["evidence"] == {}
+
+    def test_second_call_uses_cache(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        payload = {"results": [hit("Small Journal", 2, False, False)]}
+        def counted(*a, **k):
+            calls.append(1)
+            return FakeResponse(payload=payload)
+        monkeypatch.setattr(vv.requests, "get", counted)
+        vv.vet_venues(["Small Journal"])
+        second = vv.vet_venues(["Small Journal"])
+        assert len(calls) == 1
+        assert second["cache_hits"] == 1 and second["looked_up"] == 0
+        assert second["flagged"] == ["small journal"]
+
+    def test_duplicate_and_empty_names_collapse(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        def counted(*a, **k):
+            calls.append(1)
+            return FakeResponse(payload={"results": []})
+        monkeypatch.setattr(vv.requests, "get", counted)
+        result = vv.vet_venues(["Mind", "MIND", "  ", "", None, "The Mind"])
+        assert len(calls) == 1  # one distinct normalized name
+        assert result["looked_up"] == 1
+
+    def test_budget_exhaustion_stops_the_pass(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        calls = []
+        def exhausted(*a, **k):
+            calls.append(1)
+            return FakeResponse(status_code=429, headers={"Retry-After": "81471"},
+                                text="insufficient budget")
+        monkeypatch.setattr(vv.requests, "get", exhausted)
+        result = vv.vet_venues(["A Journal", "B Journal", "C Journal"])
+        assert result["status"] == "budget_exhausted"
+        assert len(calls) == 1  # stops on the first exhaustion, does not grind
+        assert result["flagged"] == []
+
+    def test_cap_is_enforced_and_reported(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv, "MAX_LOOKUPS_PER_RUN", 2)
+        monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload={"results": []}))
+        result = vv.vet_venues([f"Journal {i}" for i in range(5)])
+        assert result["looked_up"] == 2
+        assert result["skipped_cap"] == 3  # reported, never silent
