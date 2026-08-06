@@ -14,6 +14,18 @@ def e(eid, author, year, title, doi="", editor=""):
             "title": title, "doi": doi}
 
 
+# One call producing BOTH kinds of suppression: a group that genuinely lost
+# letters, and a group that could never have had any. Shared by the partition
+# tests so the two are asserted against each other, not in isolation.
+_MIXED_SUPPRESSION = [
+    e("y_full", "Menary, Richard", "2010", "Cognitive Integration", doi="10.1/x"),
+    e("y_nd", "Menary, Richard", "n.d.", "Cognitive Integration", doi="10.1/x"),
+    e("y_other", "Menary, Richard", "2010", "The Extended Mind", doi="10.1/z"),
+    e("g1", "Gardenfors, Peter", "2011", "Belief Revision", doi="10.1/g"),
+    e("g2", "Gardenfors, Peter and Rott, Hans", "2011", "Belief Revision", doi="10.1/g"),
+]
+
+
 class TestAuthorSignature:
     def test_surname_and_initial(self):
         assert ys.author_signature("Menary, Richard") == (("menary", "r"),)
@@ -168,14 +180,18 @@ class TestAssignSuffixes:
         assert len(res["conflicts"]) == 1
 
     def test_telemetry_counts_works_and_entries_separately(self):
+        # The module's central distinction: three bib entries can be ONE
+        # work. Read off the surface the report actually carries -- the
+        # `assigned_entries`/`assigned_works` keys this used to assert were
+        # duplicates of these two numbers that no caller ever read.
         res = ys.assign_suffixes([
             e(("d1", "a"), "Menary, Richard", "2010", "Cognitive Integration", doi="10.1/a"),
             e(("d2", "a"), "Menary, Richard", "2010", "Cognitive Integration", doi="10.1/a"),
             e(("d3", "a"), "Menary, Richard", "2010", "Cognitive Integration", doi="10.1/a"),
             e(("d1", "b"), "Menary, Richard", "2010", "The Extended Mind", doi="10.1/b"),
         ])
-        assert res["assigned_entries"] == 4
-        assert res["assigned_works"] == 2
+        assert len(res["suffixes"]) == 4                      # entries lettered
+        assert [g["works"] for g in res["groups"]] == [2]     # works lettered
 
     def test_group_summary_reported(self):
         res = ys.assign_suffixes([
@@ -233,6 +249,77 @@ class TestWholeGroupSuppression:
         assert len(res["conflicts"]) == 1
         assert any(g["authors"] == "Menary, Richard" and g["year"] == "2010"
                    for g in res["suppressed"])
+
+    def test_partition_keeps_only_groups_that_could_have_been_lettered(self):
+        # Measured over the real barrier input (42 reviews, 4,582 domain-bib
+        # entries), 98 of 106 suppression records described a group holding
+        # ONE work -- which Chicago never letters anyway -- so the count an
+        # operator reads on the console was 92 % noise. The two situations
+        # are separated here rather than one of them dropped.
+        res = ys.assign_suffixes(_MIXED_SUPPRESSION)
+        # Real: y_nd is a dropped COPY of y_full, so the (Menary, 2010) group
+        # loses letters it would otherwise have had.
+        assert [(r["authors"], r["year"], r["reasons"]) for r in res["suppressed"]] == [
+            ("Menary, Richard", "2010", ["filtered_copy"])]
+        assert res["suppressed"][0]["works"] >= 2
+        # Noise: ONE work whose copies disagree, touching two (signature,
+        # year) combos that hold nothing else. Neither was ever letterable.
+        assert len(res["suppressed_singletons"]) == 2
+        assert all(r["year"] == "2011" and r["works"] == 1
+                   and r["reasons"] == ["identity_conflict"]
+                   for r in res["suppressed_singletons"])
+
+    def test_partition_discards_nothing(self):
+        # The split must PARTITION, not filter: `works` is a best-effort
+        # floor (module docstring), so an operator who wants everything has
+        # to be able to get it from the return value alone.
+        res = ys.assign_suffixes(_MIXED_SUPPRESSION)
+        both = res["suppressed"] + res["suppressed_singletons"]
+        assert len(both) == 3          # every tainted group is still reported
+        assert all(sorted(r) == ["authors", "reasons", "works", "year"]
+                   for r in both)      # and in the same shape
+
+    def test_conflicts_serialization_does_not_depend_on_input_order(self):
+        # `conflicts` is the one report list built outside the sorted-key
+        # loop -- it follows `works.items()`, i.e. input order.
+        entries = [
+            e("eff1", "Eff, Eve", "2003", "Eff Paper", doi="10.1/e"),
+            e("eff2", "Eff, Eve and Zed, Zoe", "2003", "Eff Paper", doi="10.1/e"),
+            e("cee1", "Cee, Cid", "2002", "Cee Paper", doi="10.1/c"),
+            e("cee2", "Cee, Cid and Yan, Yves", "2002", "Cee Paper", doi="10.1/c"),
+            e("alp1", "Alp, Ann", "2001", "Alp Paper", doi="10.1/a"),
+            e("alp2", "Alp, Ann and Xu, Xia", "2001", "Alp Paper", doi="10.1/a"),
+        ]
+        res = ys.assign_suffixes(entries)
+        # Three conflicting works, deliberately fed in reverse-alphabetical
+        # order: an unsorted list would come back eff/cee/alp.
+        assert res["conflicts"] == [["'alp1'", "'alp2'"],
+                                    ["'cee1'", "'cee2'"],
+                                    ["'eff1'", "'eff2'"]]
+        assert ys.assign_suffixes(list(reversed(entries)))["conflicts"] == res["conflicts"]
+
+    def test_group_naming_does_not_depend_on_input_order(self):
+        # A conflicting work's copies routinely spell one name two ways (the
+        # LaTeX-escape/diacritic duplicate pairs are the real-corpus case;
+        # capitalisation stands in for them here, since project rules keep
+        # non-ASCII out of source). Taking whichever spelling arrived first
+        # made the reported `authors` string flip with input order -- seen on
+        # three reviews of the real corpus.
+        entries = [
+            e("d1", "Dryzek, John S.", "2003", "Social Choice", doi="10.1/d"),
+            e("d2", "DRYZEK, John S.", "2003", "Social Choice", doi="10.1/d"),
+            e("d3", "Dryzek, John S. and List, Christian", "2003", "Social Choice",
+              doi="10.1/d"),
+        ]
+        named = set()
+        for perm in itertools.permutations(entries):
+            solo = [r for r in ys.assign_suffixes(list(perm))["suppressed_singletons"]
+                    if " and " not in r["authors"]]
+            assert len(solo) == 1
+            named.add(solo[0]["authors"])
+        # One spelling, chosen by value (lexicographically smallest), not by
+        # arrival order.
+        assert named == {"DRYZEK, John S."}
 
     def test_unusable_copy_suppresses_the_shared_work_group(self):
         # y_full and y_nd are ONE work by the module's own identity rule

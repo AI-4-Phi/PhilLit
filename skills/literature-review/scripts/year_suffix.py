@@ -28,8 +28,10 @@ ids every caller uses; NOT true of a frozenset or a plain object, whose repr
 can carry an address or an arbitrary iteration order).
 
 WHOLE-GROUP SUPPRESSION. Three situations make it unsafe to letter an
-author-year group at all. Each is reported in `suppressed` (never silent)
-rather than producing a partial or order-dependent result:
+author-year group at all. Each is reported (never silent) rather than
+producing a partial or order-dependent result -- in `suppressed`, or in
+`suppressed_singletons` when the group could not have been lettered anyway
+(see the split below):
 
   1. DOI-CONFLICT BRIDGE. A same-fallback-key cluster holds two or more
      entries with distinct, non-empty, mutually conflicting DOIs *and* at
@@ -51,11 +53,45 @@ rather than producing a partial or order-dependent result:
      passes. Filtering the unusable copy out before identity resolution would
      silently split one work into a lettered copy and an invisible one.
 
+Suppression is reported in TWO lists, because on real input the overwhelming
+majority of suppressed groups never had a letter at stake. `suppressed` holds
+the groups where suppression actually cost letters; `suppressed_singletons`
+holds groups the assigner left unlettered that held at most ONE work, which
+Chicago would not have lettered anyway (disambiguation starts at two).
+Measured over the real barrier input (42 delivered reviews, 4,582 domain-bib
+entries): 8 records in `suppressed` against 98 in `suppressed_singletons`,
+every one of the latter an `identity_conflict` raised by a duplicate pair
+that spells one author two ways. Nothing is discarded -- an operator who
+wants everything reads both lists -- but a count of `suppressed` alone, which
+is what a console summary shows, now counts only actionable groups.
+
 A suppressed group's `works` count includes entries hidden from normal group
 formation by (2) and (3) -- it is a best-effort total, not a guarantee that a
 different input order would report the identical number, since the group
-never receives a canonical partition. What every input order DOES guarantee
-identically is that no member of a suppressed group appears in `suffixes`.
+never receives a canonical partition. Where it errs, it errs HIGH: a filtered
+copy is counted apart from the sibling it is a copy of, so a one-work group
+can report `works: 2`. That direction is exactly what makes the split above
+safe. Because the count never runs LOW, `works == 1` really does mean "at
+most one work here, so no letter was ever in play", while `works >= 2` lets
+a few single works through into the list that gets read -- which costs an
+operator a second look, not a missed group.
+What every input order DOES guarantee identically is that no member of a
+suppressed group -- in EITHER list -- appears in `suffixes`.
+
+DETERMINISM has two scopes, and they are not the same claim -- an earlier
+version of this docstring asserted the first and let a reader assume the
+second. (1) The `suffixes` MAP is the module's invariant: reproducible from
+the input SET alone, whatever order it arrives in. (2) The REPORT is a weaker
+promise. Its ordering is fixed (records are emitted in sorted key order, and
+`conflicts` -- the one list built outside that loop -- is sorted before
+return), and every string in it is chosen by value rather than by arrival:
+`authors` is the lexicographically smallest spelling among the copies that
+name the group, because those copies routinely disagree about how to write
+one name. Shuffling the real corpus (42 reviews x 5 orderings) now changes
+nothing in either; before, three reviews flipped the `authors` string of a
+suppression record. But `works` remains the best-effort floor described
+above, since a suppressed group never receives a canonical partition to
+count -- so treat a report number as telemetry and a letter as a guarantee.
 """
 from __future__ import annotations
 
@@ -185,8 +221,14 @@ def assign_suffixes(entries: list[dict]) -> dict:
        "overflow": [{"authors": str, "year": str, "works": int}, ...],
        "suppressed": [{"authors": str, "year": str, "works": int,
                         "reasons": [str, ...]}, ...],
-       "conflicts": [[repr(id), ...], ...],
-       "assigned_entries": int, "assigned_works": int}
+       "suppressed_singletons": [<same shape as suppressed>, ...],
+       "conflicts": [[repr(id), ...], ...]}
+
+    `suppressed` vs `suppressed_singletons`, and the two scopes of
+    determinism the report keys carry, are in the module docstring. Entry and
+    work totals are deliberately NOT returned: `len(suffixes)` and
+    `sum(g["works"] for g in groups)` are the same numbers, and a second copy
+    of a derived count is a thing to keep in sync for nothing.
 
     Entries with no usable author signature or no 4-digit year are skipped
     entirely -- they can never be cited author-year anyway -- UNLESS a
@@ -217,7 +259,7 @@ def assign_suffixes(entries: list[dict]) -> dict:
 
     tainted: dict = {}        # (sig, year) -> set of reason strings
     taint_extra: dict = {}    # (sig, year) -> set of ids hidden from `roots`
-    taint_authors: dict = {}  # (sig, year) -> a raw author/editor string
+    taint_authors: dict = {}  # (sig, year) -> set of raw author/editor strings
 
     def taint(sig, year, reason, extra_id=None, authors_hint=""):
         if not sig or not year:
@@ -226,8 +268,12 @@ def assign_suffixes(entries: list[dict]) -> dict:
         tainted.setdefault(key, set()).add(reason)
         if extra_id is not None:
             taint_extra.setdefault(key, set()).add(extra_id)
-        if authors_hint and key not in taint_authors:
-            taint_authors[key] = authors_hint
+        if authors_hint:
+            # EVERY spelling, not the first one seen: the copies that taint a
+            # group routinely disagree about how to write one name (the
+            # LaTeX-escape/diacritic duplicate pairs are the common case), so
+            # "first seen" made the reported string depend on input order.
+            taint_authors.setdefault(key, set()).add(authors_hint)
 
     # Situation 3: an unusable copy sharing identity with a usable sibling
     # taints that sibling's group instead of silently vanishing.
@@ -332,13 +378,20 @@ def assign_suffixes(entries: list[dict]) -> dict:
         if len(sigs) > 1 or len(years) > 1:
             conflicts.append(sorted(repr(m["id"]) for m in members))
             combo_id = "conflict:" + min(repr(m["id"]) for m in members)
+            # Collect EVERY spelling each combo's members use, not the first
+            # one this loop happens to reach: `members` is iterated in input
+            # order, so a first-seen hint made the reported `authors` string
+            # flip between two spellings of one name when the input was
+            # reordered (observed on three reviews of the real corpus, e.g.
+            # "Dryzek, John S." vs "DRYZEK, John S.").
             hint_of_combo: dict = {}
             for m in members:
-                hint_of_combo.setdefault((m["_sig"], m["_year"]),
-                                         m.get("author") or m.get("editor") or "")
-            for combo_sig, combo_year in hint_of_combo:
-                taint(combo_sig, combo_year, "identity_conflict",
-                      extra_id=combo_id, authors_hint=hint_of_combo[(combo_sig, combo_year)])
+                hint_of_combo.setdefault((m["_sig"], m["_year"]), set()).add(
+                    m.get("author") or m.get("editor") or "")
+            for (combo_sig, combo_year), hints in hint_of_combo.items():
+                for hint in sorted(hints):
+                    taint(combo_sig, combo_year, "identity_conflict",
+                          extra_id=combo_id, authors_hint=hint)
             continue
         coherent[root] = members
 
@@ -353,7 +406,7 @@ def assign_suffixes(entries: list[dict]) -> dict:
         groups.setdefault((rep["_sig"], rep["_year"]), []).append(root)
 
     all_keys = set(groups.keys()) | set(tainted.keys())
-    suffixes, overflow, suppressed, summary = {}, [], [], []
+    suffixes, overflow, suppressed, singletons, summary = {}, [], [], [], []
     for sig, year in sorted(all_keys, key=lambda k: (k[1], repr(k[0]))):
         key = (sig, year)
         roots = groups.get(key, [])
@@ -363,16 +416,37 @@ def assign_suffixes(entries: list[dict]) -> dict:
         if roots:
             authors = reps[roots[0]].get("author") or reps[roots[0]].get("editor") or ""
         else:
-            authors = taint_authors.get(key, "")
+            hints = taint_authors.get(key)
+            authors = min(hints) if hints else ""
 
         if key in tainted:
             # NEVER partially letter a group: suppress it wholesale, the same
             # way overflow suppresses an oversized one, so a suffixed
             # citation can never select a lettered member and drop the rest.
             works_count = len(roots) + len(taint_extra.get(key, ()))
-            suppressed.append({"authors": authors, "year": year,
-                               "works": works_count,
-                               "reasons": sorted(tainted[key])})
+            record = {"authors": authors, "year": year,
+                      "works": works_count,
+                      "reasons": sorted(tainted[key])}
+            # A group that knows of at most one work could never have been
+            # lettered (Chicago disambiguates from two works up), so its
+            # suppression cost nothing and it is not something to act on.
+            # That this holds for EVERY way of reaching works_count == 1 is
+            # worth spelling out, because the non-obvious branch is the one a
+            # future reader will doubt:
+            #   * roots == 1, no hidden ids -- only `doi_conflict` taints
+            #     without hiding anything, and a group letters from its own
+            #     roots alone, so one root means no letters either way;
+            #   * roots == 0, one hidden id -- necessarily one conflicting
+            #     work, because `filtered_copy` CANNOT produce this: it fires
+            #     only for an unusable copy sharing identity with a USABLE
+            #     sibling, and a coherent work's representative carries its
+            #     members' own (signature, year), so that sibling's root is
+            #     always in this group's `roots`. Hence filtered_copy always
+            #     implies works_count >= 2.
+            # The count errs HIGH, never low (module docstring), so the split
+            # over-retains rather than under-reports: a one-work group with a
+            # filtered copy reads 2 and stays in `suppressed`.
+            (suppressed if works_count >= 2 else singletons).append(record)
             continue
         if len(roots) < 2:
             continue
@@ -384,7 +458,12 @@ def assign_suffixes(entries: list[dict]) -> dict:
                 suffixes[member["id"]] = LETTERS[index]
         summary.append({"authors": authors, "year": year, "works": len(roots)})
 
+    # `conflicts` is the one report list not built inside the sorted-key loop
+    # above -- it is appended in `works.items()` order, which follows input
+    # order. Sorting it here is what makes the whole report serialization
+    # order-independent (each element is already a sorted list of strings).
+    conflicts.sort()
+
     return {"suffixes": suffixes, "groups": summary, "overflow": overflow,
-            "suppressed": suppressed, "conflicts": conflicts,
-            "assigned_entries": len(suffixes),
-            "assigned_works": sum(g["works"] for g in summary)}
+            "suppressed": suppressed, "suppressed_singletons": singletons,
+            "conflicts": conflicts}
