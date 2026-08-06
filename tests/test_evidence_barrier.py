@@ -1827,3 +1827,53 @@ def test_singleton_suppression_is_reported_separately(tmp_path):
     assert len(singles) == 2, singles
     assert {r["works"] for r in singles} == {1}
     assert {r["year"] for r in singles} == {"2012"}
+
+
+def test_a_swallowed_splice_is_never_reported_as_neutralized(tmp_path, monkeypatch):
+    """A splice that silently did nothing must not be reported as a fix.
+
+    `_stamp_optional_field` swallows any exception from `add_field_to_entry`
+    and returns the text UNCHANGED -- deliberately, so an optional pass can
+    never fail the barrier. But an unchanged chunk still holds exactly one
+    `year_suffix =` and still parses, so a well-formedness check alone reads
+    as success and the entry lands in `residual_neutralized` while the stale
+    letter survives to disk (external review 2026-08-06, kimi-k3 I1 /
+    gpt-5.6-sol C3).
+
+    That is the "never silently" policy violated on the error path, and it is
+    a live drop hazard: two surviving stale letters read as a structurally
+    complete group in Phase 6, so a prose `Johnson (2024a)` drops the other
+    work -- with the barrier having reported the hazard as fixed.
+
+    Fault injection mirrors the established shape in
+    `test_stamp_failure_does_not_fail_the_barrier`.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    real_add = evidence_barrier.add_field_to_entry
+
+    def add_but_never_for_the_suffix(entry_text, field, value):
+        if field == "year_suffix":
+            raise RuntimeError("splice boom")
+        return real_add(entry_text, field, value)
+
+    monkeypatch.setattr(evidence_barrier, "add_field_to_entry",
+                        add_but_never_for_the_suffix)
+    rd = tmp_path / "review"
+    _domain(rd, 1, STALE_COMPACT_D1, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+
+    ys_report = _report(rd)["year_suffixes"]
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    stale_survived = "year_suffix = {a}" in content or 'year_suffix = "a"' in content
+
+    # The barrier must not claim a neutralization it did not perform: if the
+    # stale value is still on disk, the entry belongs in `unresolved`.
+    if stale_survived:
+        assert ys_report["residual_neutralized"] == [], (
+            "reported neutralized while the stale letter is still on disk: "
+            f"{ys_report['residual_neutralized']}")
+        assert ys_report["residual_unresolved"], (
+            "a surviving stale letter must reach an operator")

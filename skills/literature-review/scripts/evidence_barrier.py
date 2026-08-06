@@ -208,6 +208,37 @@ SUFFIX_UNTRUSTED = "unassigned"
 _SUFFIX_FIELD_RE = re.compile(r"\byear_suffix\s*=", re.IGNORECASE)
 
 
+def _splice_took(chunk: str, pre_splice: str, intended: str) -> bool:
+    """Did the splice actually replace the stale value, AND stay well-formed?
+
+    Both halves are required, and the first was missing until an external
+    review found it (2026-08-06, kimi-k3 I1 / gpt-5.6-sol C3).
+    `_stamp_optional_field` swallows any exception from `add_field_to_entry`
+    and returns the text UNCHANGED -- deliberately, so an optional pass can
+    never fail the barrier. But an unchanged chunk still holds exactly one
+    `year_suffix =` and still parses, so the well-formedness check alone says
+    True and the caller reports the entry as `residual_neutralized`. Nothing
+    was neutralized: the stale letter survives into the delivered bib while
+    the report claims it was cleaned.
+
+    That is the "never silently" policy violated on the error path, and it is
+    a live drop hazard downstream -- two surviving stale letters read as a
+    structurally complete group in Phase 6, so `fully_lettered` is true and a
+    prose `Johnson (2024a)` drops the other work, with the barrier having
+    reported the hazard as fixed.
+
+    So: confirm the field now actually carries the value this run intended,
+    by a FIELD PARSE rather than a substring test (the same reason detection
+    upstream parses rather than scans -- an abstract containing the literal
+    text `year_suffix = {a}` must not be mistaken for the field).
+    """
+    if chunk is pre_splice:
+        return False
+    if se.parse_entry_fields(chunk).get("year_suffix") != intended:
+        return False
+    return _suffix_splice_is_well_formed(chunk)
+
+
 def _suffix_splice_is_well_formed(chunk: str) -> bool:
     """Was a year_suffix splice over a PRE-EXISTING value safe to keep?
 
@@ -642,10 +673,11 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # the assigner does letter, leaving MORE untrusted values
                 # standing than doing nothing.
                 pre_splice = chunk
-                chunk = _stamp_optional_field(
-                    chunk, ys.SUFFIX_FIELD, letter or SUFFIX_UNTRUSTED)
-                if stale and not _suffix_splice_is_well_formed(chunk):
-                    # Never emit a bib the real parser rejects. Revert, and
+                intended = letter or SUFFIX_UNTRUSTED
+                chunk = _stamp_optional_field(chunk, ys.SUFFIX_FIELD, intended)
+                if stale and not _splice_took(chunk, pre_splice, intended):
+                    # Never emit a bib the real parser rejects, and never
+                    # claim a neutralization that did not happen. Revert, and
                     # report: this is the one shape that stays a live drop
                     # hazard, so it must reach an operator.
                     chunk = pre_splice
