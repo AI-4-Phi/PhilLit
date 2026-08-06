@@ -157,6 +157,10 @@ def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
             # "Author, 1999, , Publisher." -- an empty title field is not a
             # standard-form parse. Emitting it at "high" confidence would
             # advertise a title the entry does not have; fall through instead.
+            # NOT a restoration of old behaviour: checked against the old
+            # regex, whose `["\']?(.+?)["\']?` matched the separator SPACE and
+            # returned title=" " at "high". Both reviews assumed it fell
+            # through here; it did not. This is a deliberate improvement.
             return _partial_or_unparseable(raw_text)
         parsed = {
             "authors": [a.strip() for a in re.split(r'\s+and\s+', authors_str)],

@@ -688,10 +688,24 @@ class TestBibliographyParserIsLinear:
         assert large < small * 20 + 0.05, (
             f"cost grew from {small:.4f}s to {large:.4f}s -- superlinear")
 
+    @staticmethod
+    def _over_length_but_otherwise_parseable():
+        """A line the cap is the ONLY reason to reject.
+
+        A long comma-run of names is not this: it has no year field, so it is
+        unparseable with or without the cap, and a test built on one passes
+        even with the cap removed (found by mutation, 2026-08-06). This
+        fixture parses at "high" confidence the moment the cap is lifted.
+        """
+        return ("Smith, John, 1999, Some Title, "
+                + "Cambridge: Cambridge University Press "
+                + "x" * 2000 + ".")
+
     @pytest.mark.timeout(30)
     def test_absurdly_long_entry_is_rejected_not_parsed(self):
         import fetch_sep
-        raw = ", ".join(["Aaaa Bbbb"] * 500)
+        raw = self._over_length_but_otherwise_parseable()
+        assert len(raw) > fetch_sep._MAX_ENTRY_CHARS
         parsed, confidence = fetch_sep.parse_bibliography_entry(raw)
         assert parsed is None and confidence == "unparseable"
 
@@ -720,7 +734,7 @@ class TestBibliographyParserIsLinear:
         bibliography data the cap was never meant to touch.
         """
         import fetch_sep
-        raw = ", ".join(["Aaaa Bbbb"] * 500)
+        raw = self._over_length_but_otherwise_parseable()
         assert len(raw) > fetch_sep._MAX_ENTRY_CHARS
         soup = BeautifulSoup(
             f"<html><body><div id='bibliography'><ul><li>{raw}</li></ul>"
@@ -820,8 +834,13 @@ class TestBibliographyParserValues:
 
     def test_an_empty_title_field_is_not_a_high_confidence_parse(self):
         """"Author, 1999, , Publisher." has no title. Emitting one at "high"
-        advertises a field the entry does not have; the old regex's `(.+?)`
-        could not match empty and fell through, so this restores that."""
+        advertises a field the entry does not have.
+
+        A deliberate improvement, not a restoration: run against the old
+        regex, `["\\']?(.+?)["\\']?` matched the separator SPACE and returned
+        title=" " at "high" confidence. Both external reviews asserted it fell
+        through to partial here; it did not.
+        """
         import fetch_sep
         raw = "Author, 1999, , Publisher."
         parsed, confidence = fetch_sep.parse_bibliography_entry(raw)
