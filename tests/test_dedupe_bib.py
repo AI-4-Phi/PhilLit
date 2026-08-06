@@ -1311,7 +1311,13 @@ class TestVenueStatusField:
 
     def test_flagged_winner_keeps_its_field_and_flagged_loser_does_not_donate(self, tmp_path):
         """Real duplicates -- same DOI, different keys -- so this exercises
-        winner selection and the loser-field union, not just co-existence."""
+        real winner selection through deduplicate_bib's DOI-based pass, not
+        just field co-existence. It does NOT exercise the loser-field
+        union: that pass never calls _union_substantive_fields_text (only
+        dedupe_by_title_key's title-key pass does), so the merged output
+        here is simply the winner's own text -- the loser's venue_status
+        was never going to travel regardless of what _SUBSTANTIVE_FIELDS
+        contains."""
         winner = """@article{smith2020rich,
   author = {Smith, Anna},
   title = {Data and Things},
@@ -1351,8 +1357,12 @@ class TestVenueStatusField:
         assert "A real abstract" in surviving.fields.get("abstract", "")
 
     def test_entry_with_venue_status_survives_dedup(self, tmp_path):
-        """A flagged entry must merge like any other: the field is carried
-        through and no neighbouring field is eaten by the removal scan."""
+        """Contract pin, not a merge test: these two entries share no DOI
+        and no title-key, so no merge happens at all -- both survive as
+        separate entries. Confirms only that a bare venue_status field
+        tolerates parsing/splitting/writing across the whole
+        deduplicate_bib pipeline when nothing merges it; it does not reach
+        merge_entries or _remove_fields_text."""
         flagged = """@article{okoro2021ai,
   author = {Okoro, Ada},
   title = {Agency and Machines},
@@ -1387,3 +1397,39 @@ class TestVenueStatusField:
             assert expected in merged
         from pybtex.database import parse_string
         assert len(parse_string(merged, "bibtex").entries) == 2
+
+    def test_flagged_field_strip_leaves_venue_status_and_neighbors_intact(self):
+        """The one path _KNOWN_FIELDS actually feeds: _remove_fields_text's
+        over-greedy post-condition guard, reached only when merge_entries
+        strips a loser's METADATA_CLEANED-flagged field from a winner that
+        also carries venue_status. Reuses the item 3 A CLEANED_COPY (loser,
+        flags booktitle) / UNCLEANED_COPY (winner, has the field and the
+        abstract) fixtures with venue_status added to the winner, right
+        next to the field being stripped.
+
+        This is a well-formed-input pin, not fault injection: the removal
+        scan finds booktitle's true closing brace here, so venue_status
+        survives regardless of whether it is registered in _KNOWN_FIELDS --
+        confirmed by temporarily reverting the _KNOWN_FIELDS addition and
+        re-running this exact test (still green; see task-4-report.md fix
+        wave for the command and output). What this test does verify: the
+        guard's known_others enumeration -- which now includes
+        venue_status -- runs against real merge_entries output without
+        raising or corrupting the field, and the surrounding fields
+        (abstract) survive the strip untouched. A test that would actually
+        DISCRIMINATE on _KNOWN_FIELDS membership needs a malformed-brace
+        fixture that makes the booktitle scan over-reach into
+        venue_status, along the lines of
+        test_post_condition_guard_reverts_when_spurious_brace_swallows_
+        neighbor in TestCleanerVerdictPropagation.
+        """
+        from dedupe_bib import merge_entries
+        winner_with_venue = UNCLEANED_COPY.replace(
+            "booktitle = {International Conference on Learning Representations},",
+            "booktitle = {International Conference on Learning Representations},\n"
+            "    venue_status = {low-visibility},")
+        merged, _reason, winner = merge_entries(CLEANED_COPY, winner_with_venue)
+        assert winner == 2
+        assert "International Conference" not in merged  # flagged field stripped
+        assert "venue_status = {low-visibility}" in merged  # neighbor untouched
+        assert "abstract" in merged.lower()  # another neighbor untouched
