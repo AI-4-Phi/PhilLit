@@ -618,7 +618,10 @@ right not to condemn them. Recall is therefore ~4 of the 9 name-shape hits and
 that is the intended trade: this is a flag-and-caveat mechanism, where a false
 discredit costs far more than a miss.
 
-Data: `<session scratchpad>/d_threshold_results.json`.
+Data and the script that produced it, preserved out of the session scratchpad:
+`docs/known-issues/measurements-2026-08-05/` (`measure_d_threshold.py`,
+`d_threshold_results.json`; local-only, with a README mapping each script to
+the claim it supports).
 
 **A curated journal list is deliberately NOT part of this** (Johannes,
 2026-08-05 — decided, do not re-raise). PhilLit did carry one:
