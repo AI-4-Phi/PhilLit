@@ -96,6 +96,15 @@ Combine the arXiv ID and annotation in a **single `note` field**. Do NOT use sep
 - Format: `doi = {10.XXXX/xxxxx}` (no URL prefix)
 - If DOI unavailable, omit the field — never fabricate
 
+### Venue Status Field (engine-stamped)
+
+`venue_status = {low-visibility}` is added by the evidence barrier (Phase 3→4)
+to entries whose `journal` resolves in OpenAlex as non-core, not DOAJ-listed,
+and with an h-index below 15. It is a caveat for the synthesis writer, not a
+claim about the work. Only flagged entries carry it — absence means "not
+flagged, not evaluated, or vetting did not run" (vetting needs a free
+`OPENALEX_API_KEY`). Agents must never write this field by hand.
+
 ### Field Grounding — CRITICAL
 
 **ALL bibliographic fields must come ONLY from API/tool output.**

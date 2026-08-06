@@ -210,6 +210,11 @@ Never advance to a next step in this phase before completing the current step.
 
    The barrier validates every domain's outputs, mechanically acquires SEP/IEP citation context for entries lacking attested content evidence, writes `intermediate_files/json/evidence_report.json`, and stamps every entry with an `EVIDENCE-*` citability tier. **If it exits nonzero, do NOT proceed to Phase 4** — report the failure to the user and stop. If the summary reports `"status": "degraded"`, continue but include the degraded domains in the final summary.
 
+   The summary's `venue_vetting` key reports the venue check (item 3 D): it
+   flags entries whose journal is barely indexed. `"status": "skipped"` means
+   no `OPENALEX_API_KEY` was set — mention it once in the final summary so the
+   user knows the check did not run; it is optional and free to obtain.
+
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 
 ---

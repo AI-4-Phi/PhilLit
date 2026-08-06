@@ -110,3 +110,15 @@ def test_writer_tier_rules_carry_b2_edits():
     planner_path = REPO_ROOT / "agents" / "synthesis-planner.md"
     planner_text = planner_path.read_text(encoding="utf-8")
     assert "title-derivable" in planner_text   # mirrors the writer's carve-out
+
+
+def test_writer_knows_the_venue_status_rule():
+    text = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
+    assert "venue_status" in text
+    assert "low-visibility" in text
+
+
+def test_researcher_told_not_to_write_venue_status():
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    assert "venue_status" in text
