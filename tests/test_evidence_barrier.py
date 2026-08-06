@@ -1427,3 +1427,41 @@ def test_console_summary_distinguishes_unlettered_groups(tmp_path, capsys):
     summary = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
     assert summary["year_suffixes"] == {
         "assigned": 0, "overflow": 0, "suppressed": 1}
+
+
+def test_both_optional_passes_stamp_together(tmp_path, monkeypatch):
+    """Item 3 D's venue flag and item 3 F's Chicago letter are stamped by two
+    optional passes sharing one insertion point in `execute`. This pins that
+    they coexist on the same entry and that each still lands only where it
+    belongs -- the flag on the one flagged venue, the letters on every member
+    of the same-author-same-year group.
+
+    Deliberately NOT claiming "neither pass failing takes the other down":
+    both passes SUCCEED here, so this test cannot show that. The failure
+    directions are pinned separately, one pass each, by
+    test_venue_vetting_failure_never_fails_the_barrier and
+    test_suffix_failure_never_fails_the_barrier.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    # count=1 is load-bearing: "  publisher = {MIT Press}," occurs in BOTH
+    # MENARY_D1 entries, so an uncounted replace gives both a journal and
+    # hence both a venue_status -- destroying the per-entry discrimination
+    # this test exists for.
+    _domain(rd, 1, MENARY_D1.replace(
+        "  publisher = {MIT Press},",
+        "  publisher = {MIT Press},\n"
+        "  journal = {Advanced International Journal for Research},", 1),
+        cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(
+        evidence_barrier.vv, "vet_venues",
+        _fake_vet(flagged=["advanced international journal for research"]))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "venue_status = {low-visibility}" in content
+    assert "year_suffix = {a}" in content and "year_suffix = {b}" in content
+    flagged = [c for c in content.split("\n@") if "menary2010cognitive" in c][0]
+    other = [c for c in content.split("\n@") if "menary2010extended" in c][0]
+    assert "venue_status" in flagged and "year_suffix" in flagged
+    assert "venue_status" not in other and "year_suffix" in other
