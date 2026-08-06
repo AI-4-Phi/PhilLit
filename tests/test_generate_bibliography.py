@@ -1346,6 +1346,33 @@ class TestYearSuffixRendering:
         out = generate_bibliography.format_entry(entry, key)
         assert "2010a." in out and "2010A" not in out
 
+    def test_the_suffix_validity_rule_over_the_junk_table(self):
+        # Whole-branch M2. The same rule -- single ASCII a-z, lowercased, else
+        # absent -- is implemented TWICE: here in _entry_suffix and inline in
+        # check_evidence.py's main(). Nothing asserts they agree, so a drift
+        # would render "2010a" in the References while the evidence checker
+        # read the entry as unlettered.
+        #
+        # This pins THIS side against the junk table. The cross-check itself
+        # cannot live here: check_evidence's copy is inline in main(), not a
+        # callable, so pinning both against one table needs that rule extracted
+        # into a shared helper -- the right fix, and one that edits a file this
+        # change does not own.
+        cases = {"": "", "a": "a", "A": "a", "b": "b", "ab": "", "1": "",
+                 "2010": "", " a ": "a", "-": "", "e": "e"}
+        for raw, expected in cases.items():
+            _key, entry = self._entry("""@article{m2010,
+              author = {Menary, Richard}, title = {Solo}, journal = {Synthese},
+              year = {2010}, year_suffix = {%s}}""" % raw)
+            assert generate_bibliography._entry_suffix(entry) == expected, raw
+        # Non-ASCII letters read as absent too: isalpha() alone would accept
+        # them and put a character no citation can carry into a reference.
+        from pybtex.database import parse_string
+        db = parse_string(
+            "@article{m, author = {Menary, Richard}, title = {T},"
+            " journal = {J}, year = {2010}, year_suffix = {é}}", "bibtex")
+        assert generate_bibliography._entry_suffix(db.entries["m"]) == ""
+
     def test_sort_orders_a_before_b(self):
         from pybtex.database import parse_string
         db = parse_string("""@book{b,
