@@ -1758,3 +1758,72 @@ def test_stale_line_initial_year_suffix_is_stripped(tmp_path):
     # this one WAS reachable, so the stripper owns it.
     report = _report(rd)
     assert report["year_suffixes"]["assigned"] == 0
+
+
+def test_suppressed_singletons_reach_the_report_on_both_branches():
+    """`suppressed_singletons` is half of a partition and must not be dropped.
+
+    year_suffix.assign_suffixes splits the groups it declined to letter into
+    `suppressed` (suppression actually cost letters) and
+    `suppressed_singletons` (a single-work group, which could never have been
+    lettered). On the real corpus that is 8 vs 98, and reporting them together
+    buried the 8 actionable records. The barrier must carry BOTH, so that
+    "nothing the assigner declined is invisible" still holds -- and it must
+    carry both on the ERROR branch too, where a consumer reading the key
+    would otherwise KeyError on the least-tested path.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import year_suffix as ys
+    import inspect
+    src = inspect.getsource(evidence_barrier.run_barrier)
+    assert src.count('"suppressed_singletons"') >= 2, (
+        "both the complete and the error branch must carry the key")
+    # And the key the barrier reads is one the module actually returns.
+    assert "suppressed_singletons" in ys.assign_suffixes([])
+
+
+def test_singleton_suppression_is_reported_separately(tmp_path):
+    """End-to-end: a single-work suppressed group lands in the singleton list,
+    not in the list an operator is meant to act on.
+
+    Fixture is the real corpus shape behind all 98 singleton records: one DOI
+    claimed by two entries whose author signatures differ, so the work
+    component spans two (signature, year) groups and each is tainted with
+    `identity_conflict` while holding one work. Neither could ever have been
+    lettered -- Chicago disambiguation starts at two works -- so both belong
+    in the singleton list, leaving `suppressed` free to carry only the groups
+    where suppression actually cost letters.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    shared_doi = """@book{claimA,
+  author = {Alpha, Ann},
+  title = {One Work, Two Claimants},
+  publisher = {MIT Press},
+  doi = {10.1000/shared},
+  year = {2012}
+}
+
+@book{claimB,
+  author = {Beta, Bob},
+  title = {One Work, Two Claimants},
+  publisher = {MIT Press},
+  doi = {10.1000/shared},
+  year = {2012}
+}"""
+    _domain(rd, 1, shared_doi, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix" not in content
+    ys_report = _report(rd)["year_suffixes"]
+    assert ys_report["status"] == "complete"
+    assert ys_report["assigned"] == 0
+    # The actionable list stays EMPTY so a real multi-work suppression stands
+    # out; the singletons are still reported, just not mixed in.
+    assert ys_report["suppressed"] == []
+    singles = ys_report["suppressed_singletons"]
+    assert len(singles) == 2, singles
+    assert {r["works"] for r in singles} == {1}
+    assert {r["year"] for r in singles} == {"2012"}
