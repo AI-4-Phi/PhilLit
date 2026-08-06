@@ -1465,3 +1465,57 @@ def test_both_optional_passes_stamp_together(tmp_path, monkeypatch):
     other = [c for c in content.split("\n@") if "menary2010extended" in c][0]
     assert "venue_status" in flagged and "year_suffix" in flagged
     assert "venue_status" not in other and "year_suffix" in other
+
+
+def test_derived_fields_are_invisible_to_compute_tier(tmp_path, monkeypatch):
+    """Both optional splices must sit BELOW compute_tier, structurally.
+
+    Item 3 D's review round 2 moved the venue splice below `compute_tier` so
+    that tier invariance would be structural rather than incidental on
+    `compute_tier` happening not to read `venue_status`. Nothing pinned that
+    ordering: the whole-branch reviewer moved the splice back above
+    `parse_entry_fields` and all 49 barrier tests still passed, because they
+    all assert on the OUTPUT tier, which is unchanged while compute_tier
+    ignores the field.
+
+    This asserts the ordering directly instead -- it captures the `fields`
+    mapping compute_tier is actually handed and requires that neither derived
+    field has reached it. It therefore fails the moment either splice moves
+    above `parse_entry_fields`, whether or not the tier happens to change.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import stamp_evidence as se
+
+    seen_fields = []
+    real_compute_tier = se.compute_tier
+
+    def _spy(entry_type, fields, att):
+        seen_fields.append(dict(fields))
+        return real_compute_tier(entry_type, fields, att)
+
+    monkeypatch.setattr(evidence_barrier.se, "compute_tier", _spy)
+    rd = tmp_path / "review"
+    # Same fixture as test_both_optional_passes_stamp_together: one entry gets
+    # a venue flag, both get a Chicago letter, so a single run exercises both
+    # splices. count=1 keeps the journal on one entry only.
+    _domain(rd, 1, MENARY_D1.replace(
+        "  publisher = {MIT Press},",
+        "  publisher = {MIT Press},\n"
+        "  journal = {Advanced International Journal for Research},", 1),
+        cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(
+        evidence_barrier.vv, "vet_venues",
+        _fake_vet(flagged=["advanced international journal for research"]))
+    assert evidence_barrier.execute(rd, 1) == 0
+
+    # The run really did stamp both fields -- otherwise the assertions below
+    # would pass vacuously against a run that never spliced anything.
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "venue_status = {low-visibility}" in content
+    assert "year_suffix = {a}" in content and "year_suffix = {b}" in content
+
+    assert len(seen_fields) == 2, seen_fields
+    for fields in seen_fields:
+        assert "venue_status" not in fields
+        assert "year_suffix" not in fields
