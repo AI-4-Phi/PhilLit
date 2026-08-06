@@ -332,3 +332,64 @@ class TestFetchOnce:
         from resolve_context import fetch_articles
         articles, failed = fetch_articles({"sep": {"gone"}, "iep": set()})
         assert failed == ["sep:gone"] and articles == {}
+
+
+class TestFetchPassDeadline:
+    """The encyclopedia pass must be bounded in wall-clock time.
+
+    A live review's barrier sat at 100% CPU for 72 minutes inside one SEP
+    article and nothing here could notice (2026-08-06;
+    docs/known-issues/sep-bibliography-regex-hang.md). The parser that caused
+    it is now linear, so this deadline is the backstop for the next one, not
+    the fix for that one.
+    """
+
+    def test_slugs_past_the_deadline_are_reported_failed_not_dropped(self, monkeypatch):
+        import resolve_context
+
+        calls = []
+
+        def slow_fetch(slug, limiter, backoff, debug=False):
+            calls.append(slug)
+            return {"entry_name": slug, "bibliography": []}
+
+        import fetch_sep
+        monkeypatch.setattr(fetch_sep, "fetch_sep_article", slow_fetch)
+        # A deadline already in the past: nothing should be fetched, and every
+        # slug must surface as failed rather than vanishing from both lists.
+        articles, failed = resolve_context.fetch_articles(
+            {"sep": ["aaa", "bbb", "ccc"]}, deadline_seconds=-1.0)
+        assert calls == [], "no fetch should start past the deadline"
+        assert articles == {}
+        assert sorted(failed) == ["sep:aaa", "sep:bbb", "sep:ccc"]
+
+    def test_a_generous_deadline_fetches_everything(self, monkeypatch):
+        import resolve_context
+
+        import fetch_sep
+        monkeypatch.setattr(
+            fetch_sep, "fetch_sep_article",
+            lambda slug, limiter, backoff, debug=False: {
+                "entry_name": slug, "bibliography": []})
+        articles, failed = resolve_context.fetch_articles(
+            {"sep": ["aaa", "bbb"]}, deadline_seconds=600.0)
+        assert sorted(articles) == ["sep:aaa", "sep:bbb"]
+        assert failed == []
+
+    def test_nothing_is_lost_between_the_two_lists(self, monkeypatch):
+        """Every requested slug lands in exactly one of articles/failed."""
+        import resolve_context
+
+        import fetch_sep
+        seen = []
+
+        def one_then_slow(slug, limiter, backoff, debug=False):
+            seen.append(slug)
+            if len(seen) > 1:
+                raise RuntimeError("boom")
+            return {"entry_name": slug, "bibliography": []}
+
+        monkeypatch.setattr(fetch_sep, "fetch_sep_article", one_then_slow)
+        requested = ["aaa", "bbb", "ccc"]
+        articles, failed = resolve_context.fetch_articles({"sep": requested})
+        assert len(articles) + len(failed) == len(requested)

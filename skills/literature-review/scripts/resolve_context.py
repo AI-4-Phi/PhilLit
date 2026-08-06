@@ -210,14 +210,39 @@ def strip_context_fields(entry_text):
     return _CONTEXT_FIELD_RE.sub("", entry_text)
 
 
-def fetch_articles(union, debug=False):
+# Wall-clock bound on the whole encyclopedia-acquisition pass. Same shape and
+# rationale as venue_vetting.PASS_DEADLINE_SECONDS: checked BEFORE each fetch,
+# not around it, so it bounds how long the pass KEEPS STARTING work rather than
+# interrupting work already running. Worst case is therefore this deadline plus
+# one article's own cost, not this deadline alone.
+#
+# Why it exists: on 2026-08-06 a live review's barrier sat at 100% CPU for 72
+# minutes inside a single SEP article's bibliography parse, and nothing in this
+# path could notice or stop it (docs/known-issues/sep-bibliography-regex-hang.md).
+# The parser is now linear, so that specific hang cannot recur -- this is the
+# backstop for the next one. Context is a best-effort enrichment: an entry that
+# gets none simply fails to reach the CONTEXT tier, which is the same outcome as
+# a fetch that 404s, so degrading here is safe.
+PASS_DEADLINE_SECONDS = 600.0
+
+
+def fetch_articles(union, debug=False, deadline_seconds=None):
     """Fetch each slug in the union exactly once; (articles, failed_slug_ids).
 
     Imports resolve at call time so tests can monkeypatch the fetchers.
+
+    Slugs not reached before the deadline are reported in `failed`, exactly
+    like a fetch error -- the caller cannot tell the two apart and does not
+    need to, since both mean "no context from this article".
     """
+    import time
+
     import fetch_iep
     import fetch_sep
     from rate_limiter import ExponentialBackoff, get_limiter
+    if deadline_seconds is None:
+        deadline_seconds = PASS_DEADLINE_SECONDS
+    deadline = time.monotonic() + deadline_seconds
     articles, failed = {}, []
     for enc, module in (("sep", fetch_sep), ("iep", fetch_iep)):
         slugs = sorted(union.get(enc, ()))
@@ -227,6 +252,12 @@ def fetch_articles(union, debug=False):
         backoff = ExponentialBackoff(max_attempts=5)
         fetch = getattr(module, f"fetch_{enc}_article")
         for slug in slugs:
+            if time.monotonic() >= deadline:
+                # Out of budget: record every remaining slug as failed rather
+                # than silently returning a short article set, so the barrier's
+                # report shows what was skipped and why the entries demoted.
+                failed.append(f"{enc}:{slug}")
+                continue
             try:
                 articles[f"{enc}:{slug}"] = fetch(slug, limiter, backoff, debug=debug)
             except _FETCH_ERRORS:
