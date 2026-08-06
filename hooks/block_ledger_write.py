@@ -54,7 +54,14 @@ a reason saying the gate could not evaluate the call, rather than allowed
 without a word (the review caught that an earlier draft advertised "fail open
 but loud" while actually failing open *silently*: the hooks.json `|| echo`
 fallback only fires on a nonzero exit, i.e. a uv/process failure, never on a
-parse failure). A well-formed payload with no usable `file_path` is not a
+parse failure).
+
+That deny-on-unparseable is proportionate only because of a WIRING DEPENDENCY,
+not an invariant of this file: `hooks.json` reaches this gate exclusively
+through `fast_gate.sh` with the `_ledger-` needle, so a payload that gets here
+at all already mentioned a ledger. If a future wiring change ever points a
+matcher straight at this script, every unparseable payload on that matcher
+becomes a hard deny -- keep the needle prefilter, or revisit this branch. A well-formed payload with no usable `file_path` is not a
 failure -- it is a non-candidate -- and is allowed; but if the raw stdin still
 contains a ledger-shaped filename in that case (a payload-schema change would
 look like this), it is denied rather than waved through.
