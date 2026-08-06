@@ -15,10 +15,11 @@ decision pending); (3) item 3's residuals — **A, B, and E all DONE
 E's instance-based collision resolution); **C closed-as-narrowed 2026-08-05**
 (ledger write-protection) and **D re-scoped 2026-08-05 but blocked** on
 OpenAlex API-key support plus a threshold measurement; F last, now carrying
-four riders; (3b) **NEW 2026-08-05: OpenAlex began metering the API** and
-PhilLit runs unauthenticated on the $0.10/day tier — see
-`docs/known-issues/openalex-metering-2026-08-05.md`; the key support gates D
-and degrades F's run, so it comes before both; (4) ONE
+four riders; (3b) **NEW 2026-08-05: OpenAlex began metering the API** —
+**key support BUILT the same day** (`OPENALEX_API_KEY`, optional; plus
+fail-fast on budget exhaustion, which was costing 1–2.4 h of dead sleeping
+per review), see `docs/known-issues/openalex-metering-2026-08-05.md`. D and
+F are unblocked as soon as a key is in the environment; (4) ONE
 batched phillit-service mirror session — the item-4 `bib_identity` port,
 the item-1 evidence-tier port (service item 20), the item-3-E
 collision-aware-matching port (Tasks 1-4 plus the final-review fix-wave,
@@ -364,12 +365,13 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   conjoined negative signals (not core AND h-index below a threshold;
   observed margin 2 vs 22-23 for the lowest legitimate noncore venue), never
   flagging an unresolved venue, with verdicts cached per venue rather than
-  re-resolved per review. Blockers: (i) bibs carry **zero** `issn` fields
-  (0 of 6,530 `@article` entries) so lookup must go by name — the expensive
-  request class — and OpenAlex now meters usage, see
-  `docs/known-issues/openalex-metering-2026-08-05.md`; (ii) the threshold must
-  be validated against the remaining 8 candidates, which needs the budget
-  reset. The flag needs a dedicated field (`venue_status`), **not** a
+  re-resolved per review. Remaining blocker: **the threshold must be validated
+  against the remaining 8 candidate venues** before it ships (one data point is
+  not a threshold). Note bibs carry **zero** `issn` fields (0 of 6,530
+  `@article` entries), so venue lookup must go by name — the 10-credit request
+  class — which is affordable now that `OPENALEX_API_KEY` support is in
+  (`docs/known-issues/openalex-metering-2026-08-05.md`) but is the reason
+  verdicts must be cached per venue rather than re-resolved per review. The flag needs a dedicated field (`venue_status`), **not** a
   `keywords` token: `stamp_evidence.stamp_keywords` sorts an unrecognized
   token into *topics*. D also has a writer-facing half, so **F is no longer
   the only sub-item needing a live run** — D's writer-compliance check should

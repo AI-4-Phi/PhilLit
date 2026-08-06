@@ -45,12 +45,27 @@ from dotenv import find_dotenv, load_dotenv
 # Add parent directory to path for rate_limiter import
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from rate_limiter import ExponentialBackoff, get_limiter
+from rate_limiter import (
+    ExponentialBackoff,
+    get_limiter,
+    openalex_budget_exhausted,
+    openalex_params,
+)
 from search_cache import cache_key, get_cache, put_cache
 from output import emit, set_output_path, add_output_arg
 
 # OpenAlex API configuration
 OPENALEX_BASE_URL = "https://api.openalex.org"
+
+# Said once, in one place, because the actionable part is the key: OpenAlex
+# meters by daily spend and an unauthenticated client gets only ~100 full-text
+# searches a day (docs/known-issues/openalex-metering-2026-08-05.md).
+OPENALEX_BUDGET_MESSAGE = (
+    "OpenAlex daily budget exhausted - it resets at midnight UTC, so retrying "
+    "now cannot help. A FREE API key raises the budget 10x (and makes DOI "
+    "lookups unmetered): create one at https://openalex.org/settings/api and "
+    "set OPENALEX_API_KEY in your workspace .env."
+)
 
 
 def log_progress(message: str) -> None:
@@ -203,9 +218,7 @@ def get_work_by_id(
         # Assume it's a DOI without prefix
         url = f"{OPENALEX_BASE_URL}/works/doi:{work_id}"
 
-    params = {}
-    if email:
-        params["mailto"] = email
+    params = openalex_params(email)
 
     for attempt in range(backoff.max_attempts):
         limiter.wait()
@@ -222,6 +235,8 @@ def get_work_by_id(
             elif response.status_code == 404:
                 raise LookupError(f"Work not found: {work_id}")
             elif response.status_code == 429:
+                if openalex_budget_exhausted(response):
+                    raise RuntimeError(OPENALEX_BUDGET_MESSAGE)
                 if not backoff.wait(attempt):
                     raise RuntimeError("Rate limit exceeded")
                 continue
@@ -270,8 +285,7 @@ def search_works(
         "per_page": min(limit, 200),  # API max is 200
     }
 
-    if email:
-        params["mailto"] = email
+    params.update(openalex_params(email))
 
     # Build search query
     if query:
@@ -344,6 +358,16 @@ def search_works(
                     break  # Success, move to next page
 
                 elif response.status_code == 429:
+                    if openalex_budget_exhausted(response):
+                        # Not "slow down" but "today's budget is spent": the
+                        # reset is at midnight UTC, so retrying is pure delay.
+                        log_progress(OPENALEX_BUDGET_MESSAGE)
+                        errors.append({
+                            "type": "budget_exhausted",
+                            "message": OPENALEX_BUDGET_MESSAGE,
+                            "recoverable": False
+                        })
+                        return all_results, errors
                     log_progress(f"Rate limited, backing off (attempt {attempt+1}/{backoff.max_attempts})...")
                     if not backoff.wait(attempt):
                         log_progress(f"Max retries reached, returning {len(all_results)} partial results")

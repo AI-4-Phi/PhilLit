@@ -4,7 +4,12 @@
 **Severity**: Medium. Does not fail a run, but a heavy day silently starves
 Phase 3 searches, and the failure surfaces as five pointless backoff attempts
 per call rather than as "the budget is gone."
-**Status**: Open. The one-line remedy (support a free API key) is not built.
+**Status**: **Key support BUILT 2026-08-05** (same day). PhilLit now sends
+`api_key` on every OpenAlex request when `OPENALEX_API_KEY` is set, and both
+the search path and the abstract path stop retrying on budget exhaustion
+instead of sleeping through it. Remaining: nothing in the code — the user
+supplies the key (free, `openalex.org/settings/api`). An unkeyed install
+behaves exactly as before.
 
 ## What happened
 
@@ -56,26 +61,45 @@ and passed as the query parameter `api_key=…`.
   measurement left OpenAlex unusable for the rest of the UTC day — worth
   knowing before scheduling item 3 F's live run.
 
-## Defect: the 429 handler cannot tell "slow down" from "budget gone"
+## Defect: the 429 handler could not tell "slow down" from "budget gone" — FIXED
 
-`search_openalex.py:224` and `:346` treat any 429 as transient and hand it to
-`ExponentialBackoff` (5 attempts). Neither reads `Retry-After` nor the
-`Insufficient budget` body, so budget exhaustion costs five escalating sleeps
-per call and then fails — 16–36 times per review — and the user is told
-"Rate limited, backing off", which is wrong and unactionable.
+`search_openalex.py` and `get_abstract.py` treated every 429 as transient and
+handed it to `ExponentialBackoff` (5 attempts). Neither read `Retry-After` nor
+the `Insufficient budget` body, so exhaustion cost four escalating sleeps per
+call and then failed, while telling the user "Rate limited, backing off" —
+wrong and unactionable.
 
-Cheap fix, alongside key support: treat a 429 whose `Retry-After` exceeds the
-remaining backoff budget (or whose body says `Insufficient budget`) as
-terminal for the run, fail fast once, and say so — *"OpenAlex daily budget
-exhausted, resets at midnight UTC; set OPENALEX_API_KEY for 10× headroom."*
+The cost was worse than it looks. `ExponentialBackoff.wait` clamps
+`Retry-After` to `max_delay` (60 s), so it does *not* sleep for the 22.6 hours
+the header asks — but 4 × 60 s per call × 16–36 search calls is **1–2.4 hours
+of pure sleeping per review** before the run gives up on OpenAlex.
 
-## Remedy (not built)
+`rate_limiter.openalex_budget_exhausted(response)` now distinguishes them: a
+429 whose `Retry-After` exceeds 300 s, or whose body carries an
+`Insufficient budget` / `Rate limit exceeded` marker, is terminal. The search
+path returns a non-recoverable `budget_exhausted` error, the abstract path
+skips OpenAlex and moves down the resolver chain, and both name the fix. It
+never raises: an unexpected response shape reads as "not exhausted", so the
+caller falls back to ordinary backoff.
 
-1. Add `OPENALEX_API_KEY` support to the OpenAlex scripts (`api_key=` query
-   param, alongside the existing `mailto`), `.env.example`, and
-   `check_setup.py` — optional, so an unkeyed install keeps working.
-2. Fail fast and legibly on budget exhaustion (above).
-3. Note in the setup skill that the key is free and worth 10×.
+## Remedy — BUILT 2026-08-05
 
-This blocks item 3 D (per-venue lookups need the filter/search budget) and
-degrades item 3 F's live run.
+1. `rate_limiter.openalex_params(email)` is the one owner of OpenAlex query
+   auth: `mailto` plus `api_key` when `OPENALEX_API_KEY` is set. Used by
+   `search_openalex.py` (both the search and single-work paths),
+   `get_abstract.py` (the DOI path) and `check_setup.py`. Resolved at **call**
+   time, never import time — the workspace `.env` loads in each CLI's `main()`,
+   which runs after the module is imported, so an import-time read would
+   silently see no key (same rule as `rate_limiter.user_agent()`).
+2. Budget exhaustion fails fast and legibly (above).
+3. `.env.example` documents the key with the numbers and the 30-second signup
+   link; `check_setup.py` reports whether a key is in use (`[API key: $1/day
+   budget]` vs a `no API key` nudge) and surfaces exhaustion explicitly rather
+   than reporting "unreachable".
+
+The key is **optional by design**: with none set, every request is byte-identical
+to before. Set it in the workspace `.env` (preferred — that is what
+`load_dotenv(find_dotenv(usecwd=True))` reads) or in the shell environment.
+
+This unblocks item 3 D (per-venue lookups need the filter/search budget) and
+item 3 F's live run.

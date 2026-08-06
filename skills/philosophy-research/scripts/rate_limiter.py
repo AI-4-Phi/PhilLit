@@ -345,6 +345,59 @@ def parse_retry_after(header_value: Optional[str]) -> Optional[float]:
         return None
 
 
+def openalex_params(email: str = "") -> dict:
+    """Query params every OpenAlex request should carry: `mailto` and, when
+    available, `api_key`.
+
+    OpenAlex began metering by daily spend in 2026 (see
+    docs/known-issues/openalex-metering-2026-08-05.md). An unauthenticated
+    client gets $0.10/day -- about 100 full-text searches, which one review's
+    Phase 3 can approach on its own. A FREE key raises that to $1/day and
+    makes single-entity lookups (`works/doi:...`, the abstract-resolution
+    path) unmetered. The key is optional: without it every call behaves
+    exactly as before.
+
+    Resolved at CALL time, never import time -- same reason as user_agent():
+    the workspace .env is loaded in each CLI's main(), which runs after this
+    module is imported, so an import-time read would silently see no key.
+    """
+    params = {}
+    if email:
+        params["mailto"] = email
+    api_key = os.environ.get("OPENALEX_API_KEY", "").strip()
+    if api_key:
+        params["api_key"] = api_key
+    return params
+
+
+_BUDGET_MARKERS = ("insufficient budget", "daily limit", "rate limit exceeded")
+
+
+def openalex_budget_exhausted(response) -> bool:
+    """True when a 429 means "your daily budget is gone", not "slow down".
+
+    The two are not distinguishable by status code, and treating them alike is
+    a real cost: exhaustion sets `Retry-After` to the seconds remaining until
+    midnight UTC (observed: 81471), so an exponential backoff burns every
+    attempt and then fails, once per call, for the rest of the day. Callers
+    should stop retrying and say what happened instead.
+
+    Never raises: any unexpected response shape reads as "not exhausted", so
+    the caller falls back to ordinary backoff.
+    """
+    try:
+        if getattr(response, "status_code", None) != 429:
+            return False
+        # A wait longer than any sane backoff is the unambiguous signal.
+        retry_after = parse_retry_after(response.headers.get("Retry-After"))
+        if retry_after is not None and retry_after > 300:
+            return True
+        body = (response.text or "").lower()
+        return any(marker in body for marker in _BUDGET_MARKERS)
+    except Exception:
+        return False
+
+
 def clear_all_limiters() -> int:
     """
     Remove all lock files. Useful for testing or resetting state.

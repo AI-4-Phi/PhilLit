@@ -44,7 +44,13 @@ from dotenv import find_dotenv, load_dotenv
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from rate_limiter import ExponentialBackoff, get_limiter, parse_retry_after
+from rate_limiter import (
+    ExponentialBackoff,
+    get_limiter,
+    openalex_budget_exhausted,
+    openalex_params,
+    parse_retry_after,
+)
 
 SOURCE = "get_abstract"
 
@@ -196,9 +202,7 @@ def get_abstract_from_openalex(
         doi = doi[15:]
 
     url = f"https://api.openalex.org/works/doi:{doi}"
-    params = {}
-    if email:
-        params["mailto"] = email
+    params = openalex_params(email)
 
     for attempt in range(backoff.max_attempts):
         limiter.wait()
@@ -226,6 +230,15 @@ def get_abstract_from_openalex(
                 return None
 
             elif response.status_code == 429:
+                if openalex_budget_exhausted(response):
+                    # Budget exhaustion resets at midnight UTC, so every retry
+                    # is dead time: ExponentialBackoff clamps Retry-After to
+                    # max_delay (60 s) but still burns 4 of them per call.
+                    log_progress(
+                        "OpenAlex: daily budget exhausted (resets midnight UTC); "
+                        "set OPENALEX_API_KEY for 10x headroom - skipping OpenAlex"
+                    )
+                    return None
                 retry_after = parse_retry_after(response.headers.get("Retry-After"))
                 if not backoff.wait(attempt, retry_after=retry_after):
                     log_progress("OpenAlex: Rate limit exceeded, giving up")

@@ -402,6 +402,89 @@ class TestParseRetryAfter:
         assert parse_retry_after("") is None
 
 
+class TestOpenAlexParams:
+    """OpenAlex began metering by daily spend in 2026; a FREE api_key is worth
+    10x the budget and makes single-entity DOI lookups unmetered. The key must
+    be resolved at CALL time, not import time — the workspace .env loads in
+    each CLI's main(), after this module is imported."""
+
+    def test_key_from_env_is_included(self, monkeypatch):
+        from rate_limiter import openalex_params
+        monkeypatch.setenv("OPENALEX_API_KEY", "abc123")
+        assert openalex_params("me@example.com") == {
+            "mailto": "me@example.com", "api_key": "abc123"}
+
+    def test_absent_key_changes_nothing(self, monkeypatch):
+        # The key is optional: an unkeyed install must behave exactly as before.
+        from rate_limiter import openalex_params
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        assert openalex_params("me@example.com") == {"mailto": "me@example.com"}
+        assert openalex_params("") == {}
+
+    def test_blank_and_whitespace_key_omitted(self, monkeypatch):
+        from rate_limiter import openalex_params
+        monkeypatch.setenv("OPENALEX_API_KEY", "   ")
+        assert "api_key" not in openalex_params("")
+
+    def test_key_is_read_per_call_not_at_import(self, monkeypatch):
+        # The regression this guards: a module-level constant would pin the
+        # pre-.env value and the key would silently never be sent.
+        from rate_limiter import openalex_params
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        assert "api_key" not in openalex_params("")
+        monkeypatch.setenv("OPENALEX_API_KEY", "late-arrival")
+        assert openalex_params("")["api_key"] == "late-arrival"
+
+
+class TestOpenAlexBudgetExhausted:
+    """A 429 meaning "today's budget is spent" must be told apart from one
+    meaning "slow down": the former resets at midnight UTC, so retrying is
+    dead time (4 clamped 60 s sleeps per call, 16-36 calls per review)."""
+
+    class _Resp:
+        def __init__(self, status_code=429, headers=None, text=""):
+            self.status_code = status_code
+            self.headers = headers or {}
+            self.text = text
+
+    def test_long_retry_after_is_exhaustion(self):
+        from rate_limiter import openalex_budget_exhausted
+        assert openalex_budget_exhausted(
+            self._Resp(headers={"Retry-After": "81471"}))
+
+    def test_insufficient_budget_body_is_exhaustion(self):
+        from rate_limiter import openalex_budget_exhausted
+        assert openalex_budget_exhausted(self._Resp(
+            text='{"error":"Rate limit exceeded","message":"Insufficient '
+                 'budget. This request costs $0.001 but you only have $0 '
+                 'remaining. Resets at midnight UTC."}'))
+
+    def test_short_retry_after_is_ordinary_throttling(self):
+        from rate_limiter import openalex_budget_exhausted
+        assert not openalex_budget_exhausted(
+            self._Resp(headers={"Retry-After": "2"}, text="slow down"))
+
+    def test_non_429_is_never_exhaustion(self):
+        from rate_limiter import openalex_budget_exhausted
+        assert not openalex_budget_exhausted(self._Resp(
+            status_code=200, headers={"Retry-After": "99999"}))
+        assert not openalex_budget_exhausted(self._Resp(status_code=503))
+
+    def test_unexpected_shape_reads_as_not_exhausted(self):
+        # Fail toward ordinary backoff rather than raising inside a 429 branch.
+        from rate_limiter import openalex_budget_exhausted
+
+        class Broken:
+            status_code = 429
+
+            @property
+            def headers(self):
+                raise RuntimeError("boom")
+
+        assert not openalex_budget_exhausted(Broken())
+        assert not openalex_budget_exhausted(None)
+
+
 class TestLimiterManagement:
     """Tests for limiter listing and clearing."""
 

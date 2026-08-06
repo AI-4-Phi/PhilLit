@@ -25,7 +25,7 @@ from dotenv import find_dotenv, load_dotenv
 # Add parent directory to path for rate_limiter import
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from rate_limiter import get_limiter
+from rate_limiter import get_limiter, openalex_budget_exhausted, openalex_params
 
 
 def check_env_vars() -> dict[str, dict[str, Any]]:
@@ -42,6 +42,10 @@ def check_env_vars() -> dict[str, dict[str, Any]]:
     recommended = {
         "S2_API_KEY": "Recommended for Semantic Scholar (improves reliability)",
         "OPENALEX_EMAIL": "Recommended for OpenAlex polite pool",
+        "OPENALEX_API_KEY": (
+            "Recommended for OpenAlex - FREE key, 10x the daily budget "
+            "($1/day vs $0.10) and unmetered DOI lookups"
+        ),
         "CORE_API_KEY": "Optional for CORE API (improves rate limits)",
     }
 
@@ -244,8 +248,7 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
         limiter.wait()
         email = os.environ.get("OPENALEX_EMAIL", "")
         params = {"search": "test", "per_page": 1}
-        if email:
-            params["mailto"] = email
+        params.update(openalex_params(email))
 
         response = requests.get(
             "https://api.openalex.org/works",
@@ -255,11 +258,25 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
         limiter.record()
 
         polite = bool(email)
+        keyed = "api_key" in params
+        # A 429 here is almost always the daily budget, not a burst limit --
+        # report it as the actionable thing rather than as "unreachable".
+        exhausted = openalex_budget_exhausted(response)
+        note = " (polite pool)" if polite else " (public pool)"
+        if keyed:
+            note += " [API key: $1/day budget]"
+        else:
+            note += " [no API key: $0.10/day, ~100 searches - get a free key" \
+                    " at https://openalex.org/settings/api]"
+        if exhausted:
+            note = " DAILY BUDGET EXHAUSTED (resets midnight UTC)" + note
         results["openalex"] = {
             "reachable": response.status_code == 200,
             "status_code": response.status_code,
             "polite_pool": polite,
-            "message": "Responding" + (" (polite pool)" if polite else " (public pool)"),
+            "api_key": keyed,
+            "budget_exhausted": exhausted,
+            "message": "Responding" + note,
         }
     except Exception as e:
         results["openalex"] = {
