@@ -23,6 +23,41 @@ Get a fresh one at `openalex.org/settings/api`.
 subagents inherit; a value exported only in an interactive-shell profile is
 invisible to non-interactive Bash calls.
 
+### 2026-08-06: isolated to the key VALUE, three ways
+
+The key reachable from `~/.api_keys` (22 chars, alphanumeric) is rejected. The
+diagnosis is no longer inferential — all four requests below went to
+`api.openalex.org/sources?filter=display_name.search:Synthese`:
+
+| request | HTTP |
+|---|---|
+| no key at all | **200** |
+| `&api_key=<key>` (what the code sends) | 401 |
+| `Authorization: Bearer <key>` | 401 |
+| `api_key: <key>` header | 401 |
+
+Two conclusions. **The plumbing is not the problem**: the key fails under every
+auth mechanism OpenAlex has ever documented, and the same URL without a key
+succeeds. **The key is not registered**: the body is
+`{"error":"Invalid or missing API key","message":"API key not found"}` — *not
+found*, i.e. no such key exists on OpenAlex's side. That is a different failure
+from expired, revoked, or over-budget, and no amount of re-checking the local
+environment will change it. The only fix is to generate a new key at
+`openalex.org/settings/api` and replace the value.
+
+Also checked, to rule out the obvious near-miss: the interactive-shell profile
+and `~/.api_keys` hold the **same** value (fingerprints compared without
+printing either), and `~/.api_keys` defines it exactly once. There is no second,
+working key hiding in the other location.
+
+Trap when probing this by hand on dove: `zsh -ic 'printf "%s" "$VAR"'` captures
+**iTerm2 shell-integration escape sequences** along with the value, so the
+result looks like a 214-character key. Probe with `${VAR:+x}` and `${#VAR}`
+inside the shell and print only the verdict.
+
+Note the unkeyed tier answered **200** at 08:49 EDT 2026-08-06, so the daily
+budget had reset and unkeyed OpenAlex was usable again at that moment.
+
 One unresolved discrepancy, recorded rather than acted on: the current
 `developers.openalex.org/llms.txt` summary states the unkeyed budget as
 **$0.01/day**, while the `x-ratelimit-limit-usd: 0.1` header quoted below says
