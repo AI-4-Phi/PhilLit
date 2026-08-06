@@ -550,7 +550,23 @@ group has entries, so a listed work is confirmed uncited.
   and a letterless cite the parser also rejects has nothing to sight, which
   this mechanism cannot close.
 
-  What remains is **the live headless run** — F touches
+  **Open review findings (2026-08-06) — close these before the live run.** F's
+  fix re-review and an external second opinion (openai/gpt-5.6-sol) both
+  cleared the Critical and approved the assignment module, but neither will yet
+  certify the absolute "never drops a cited work" claim for the *resolver*.
+  Between them: F's drop is one-shot, because the sighting scan matches over a
+  pre-existing `## References` section and so sights every letter it just
+  printed (over-retention, not loss, but `SKILL.md` tells the operator to
+  re-run); a spurious continuation can still license a drop via `supported`;
+  the documented "bare cite the parser also rejects" residual is a real Issue B
+  path and is closable with a *scoped* bare-year sighting; and a stale
+  **compact** `year_suffix` — one not opening its line, which
+  `_strip_derived_fields` deliberately does not remove — can make a group look
+  structurally complete and license a drop on stale data. That last one is the
+  cross-item finding: the same position limit is harmless for `venue_status`,
+  where nothing acts on the value, and is not harmless here.
+
+  What then remains is **the live headless run** — F touches
   `agents/synthesis-writer.md` and `docs/conventions.md`, so writer compliance
   has to be observed, not assumed. It carries the five riders listed below.
 
@@ -803,10 +819,10 @@ headless run** — the last open piece of item 3, and the only one that needs
 anything outside this repo — then the batched mirror session (with its
 mirror-vs-fork decision), then item 2.
 
-**Next session's scope: F's live run.** Riders 1–3 and F's own check need no
-API key; riders 4–5 (D's writer compliance, D's live smoke test) need a
-**new** OpenAlex key, since the existing one is unregistered rather than
-merely stale.
+**Next session's scope: close F's open review findings (listed under item 3 F
+above), then F's live run.** Riders 1–3 and F's own check need no API key;
+riders 4–5 (D's writer compliance, D's live smoke test) need a **new**
+OpenAlex key, since the existing one is unregistered rather than merely stale.
 
 Note **nothing since v0.3.1 has been pushed**: v0.3.4 was committed but not
 pushed, and D and F have had **no version bump at all** — decide the release
