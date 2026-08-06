@@ -6,6 +6,20 @@ line); forward-looking design sketches live in `docs/ideas/`. This file
 exists so open work has a single place to be listed — it was created
 2026-07-24 alongside the bib-pipeline item below.
 
+**TODO (owed, not done): give every item a descriptive name and use it at
+every reference**, per `~/.claude/CLAUDE.md` — write "item 3 F, Chicago a/b
+disambiguation", never a bare "item 3 F". About 40 references in the tracked
+docs need it (37 here, 2 in `CLAUDE.md`, 1 in `SKILL.md`). Do it **by hand**:
+a mechanical pass was attempted 2026-08-06 and reverted because it produced
+broken prose ("item 3, the bibliography-pipeline integrity fixes K", doubled
+"service service item 23") — the references are embedded in sentences that
+need rewording around the name, not string substitution. Canonical names:
+1 evidence-tier citability, 2 web-source evidence, 3 bibliography-pipeline
+integrity fixes (A duplicate entries, B every-citation-resolves check,
+C ledger write-protection, D venue vetting, E collision-aware matching,
+F Chicago a/b disambiguation, G–K cleaner/year hardening, K online-first
+years), 4 one owner for bibliography identity.
+
 **Working sequence (Johannes, 2026-08-05):** (1) push `main` with a plugin
 version bump — DONE 2026-08-05, released as **v0.3.1** (`318aa2c`); (2) the 27-wrong-years
 audit of delivered reviews — measurement DONE 2026-08-05 (finding: 449
