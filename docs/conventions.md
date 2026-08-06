@@ -105,6 +105,19 @@ claim about the work. Only flagged entries carry it — absence means "not
 flagged, not evaluated, or vetting did not run" (vetting needs a free
 `OPENALEX_API_KEY`). Agents must never write this field by hand.
 
+### Year Suffix Field (engine-stamped)
+
+`year_suffix = {a}` is added by the evidence barrier (Phase 3→4) when one
+author has two or more works in the same year, following Chicago 15.18. The
+`year` field itself is never modified: `2010a` in a `year` field would be
+rejected by the `\d{4}` guards in `check_evidence.py` and `resolve_context.py`.
+References render `2010a`; in-text citations must carry the same letter.
+Letters are assigned once, over all domain bibliographies at once, so the same
+work carries the same letter everywhere — and a later removal leaves a gap
+(`2010a`, `2010c`) rather than triggering a re-lettering, which would break
+prose already written against the old letters. Agents must never write this
+field by hand.
+
 ### Field Grounding — CRITICAL
 
 **ALL bibliographic fields must come ONLY from API/tool output.**
@@ -210,6 +223,7 @@ An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed).
 | With page numbers | (Author Year, pages) | (Fischer and Ravizza 1998, 31-45) |
 | Author as subject | Author (Year) argues... | Frankfurt (1971) argues... |
 | Two authors sharing a surname | (F. Author Year) — add the first initial | (G. Johnson 2024) vs. (R. Johnson 2024) |
+| One author, two works in one year | (Author Yeara) — add the entry's `year_suffix` letter | (Menary 2010a) vs. (Menary 2010b) |
 
 **Same surname, same year, different people — always add the first initial.**
 This is Chicago's own rule, and in PhilLit it is load-bearing rather than
@@ -227,8 +241,9 @@ already the disambiguator** — so use it exactly. A two-author work is
 is what lets the renderer tell the works apart. What breaks it is collapsing a
 two-author work to `et al.` (wrong in Chicago regardless) or dropping to a bare
 `Muldoon (2023)`. Note this only helps when the author *lists* differ — two
-works by the same author(s) in the same year need `2023a`/`2023b`, which the
-renderer does not yet emit (ROADMAP item 3 F).
+works by the same author(s) in the same year are disambiguated instead by a
+Chicago letter, e.g. `Menary (2010a)` / `Menary (2010b)`: see the Year Suffix
+Field section above for where the letter comes from and how it is assigned.
 
 ### Bibliography Format
 

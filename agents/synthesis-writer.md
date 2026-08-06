@@ -100,8 +100,15 @@ Where one author has two works in the same year with *different co-author
 lists*, the correct Chicago form is already the disambiguator — two authors is
 `Muldoon and Wu (2023)`, three or more is `Muldoon et al. (2023)` — so use each
 work's own form precisely, and never collapse a two-author work to `et al.` or
-drop to a bare `Muldoon (2023)`. (Two works by the *same* author(s) in one year
-need `2023a`/`2023b`, which the renderer cannot emit yet.)
+drop to a bare `Muldoon (2023)`.
+
+**When a bib entry carries `year_suffix`, the letter is part of the citation.**
+Two works by the same author(s) in one year are distinguished only by their
+Chicago letter, so write `Menary (2010a)` / `Menary (2010b)` — never a bare
+`Menary (2010)`, which names both works and leaves a reader unable to tell
+which is meant. The letters come from the entry's own `year_suffix` field
+(`a`, `b`, ...); use exactly the letter the entry carries, and never invent one
+for an entry that has no such field.
 
 **Evidence tiers govern what you may say about a work** (the `EVIDENCE-*` keyword in each entry is the single authority; an entry with no tier token counts as `EVIDENCE-NONE`):
 

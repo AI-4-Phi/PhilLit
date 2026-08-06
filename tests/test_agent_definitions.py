@@ -129,3 +129,17 @@ def test_researcher_told_not_to_write_venue_status():
         encoding="utf-8")
     assert "venue_status" in text
     assert "Never write a `venue_status` field yourself" in text
+
+
+def test_writer_knows_the_year_suffix_rule():
+    text = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
+    assert "year_suffix" in text
+    # The old "the renderer cannot emit yet" caveat must be gone.
+    assert "cannot emit yet" not in text
+
+
+def test_conventions_has_no_stale_suffix_caveat():
+    text = (REPO_ROOT / "docs" / "conventions.md").read_text(encoding="utf-8")
+    assert "year_suffix" in text
+    for stale in ("does not yet emit", "cannot emit yet", "not yet emit"):
+        assert stale not in text, f"stale renderer caveat still present: {stale}"
