@@ -2241,3 +2241,72 @@ class TestRejectedListRecoversItsFirstAuthor:
         assert self._cited(
             "Menary (2010a) argues X. See Sutton, Clark (2010), and Rowlands.",
             MENARY_BIB) == ["menary2010cognitive"]
+
+
+# =============================================================================
+# kimi-k3 Critical: a REJECTED multi-year citation protects its tail years too
+# =============================================================================
+
+MENARY_2011_BIB = """@article{menary2011a, author = {Menary, Richard},
+  title = {T1}, journal = {Mind}, year = {2011}, year_suffix = {a}}
+
+@book{menary2011b, author = {Menary, Richard}, title = {T2},
+  publisher = {MIT}, year = {2011}, year_suffix = {b}}"""
+
+
+class TestRejectedMultiYearCitation:
+    """The continuation walker used to sit inside _citation_instances' ACCEPTED
+    branch, below its `if rejected: continue`, and _unresolvable_mentions
+    recorded only the head year. So a rejected citation with a multi-year tail
+    protected its head and silently lost every tail year."""
+
+    def _cited(self, prose, bib_text=MENARY_2011_BIB):
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        return sorted(k for k, _ in
+                      generate_bibliography.find_cited_entries(prose, db))
+
+    def test_a_tail_year_keeps_its_group_whole(self, capsys):
+        # The reproduced defect. The accepted sibling is what licenses the
+        # drop; without it nothing is dropped and the test proves nothing.
+        # lint_md reports nothing here either: "(2010, 2011)" resolves on base
+        # year against the surviving "2011a." reference line.
+        assert self._cited(
+            "Menary (2011a) argues X."
+            " See Clark, Menary (2010, 2011), and Sutton on this.") \
+            == ["menary2011a", "menary2011b"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_every_year_of_a_rejected_span_is_recorded(self):
+        got = generate_bibliography._unresolvable_mentions(
+            "See Clark, Menary (2010, 2011), and Sutton on this.")
+        assert sorted({(m["surname"], m["year"]) for m in got}) == [
+            ("Clark", "2010"), ("Clark", "2011"),
+            ("Menary", "2010"), ("Menary", "2011")]
+
+    def test_the_letterless_rule_is_per_year_not_per_citation(self, capsys):
+        # "(2011a, 2011)" - the head is _sighted_letters' business (it names
+        # ONE member) and the tail is this net's. The old whole-citation test
+        # threw both away together, so the letterless tail lost its
+        # protection because the HEAD happened to carry a letter.
+        got = generate_bibliography._unresolvable_mentions(
+            "See Clark, Menary (2011a, 2011), and Sutton on this.")
+        assert {(m["surname"], m["year"]) for m in got} == {
+            ("Clark", "2011"), ("Menary", "2011")}
+        assert self._cited(
+            "Menary (2011a) argues X."
+            " See Clark, Menary (2011a, 2011), and Sutton on this.") \
+            == ["menary2011a", "menary2011b"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_one_walker_serves_the_accepted_half_too(self):
+        # The fix is a SHARED walker, not a second copy of the loop: mutate
+        # _continuation_years and the accepted half must change with it.
+        # ("Menary (2006, 2011)" is the accepted shape 8 of 32 delivered
+        # reviews use.)
+        insts = generate_bibliography._citation_instances(
+            "Menary (2006, 2011) argues X.")
+        assert [(i["year"], i["continuation"]) for i in insts] == [
+            ("2006", False), ("2011", True)]
+        assert generate_bibliography._continuation_years(", 2011) argues") == [
+            ("2011", "")]

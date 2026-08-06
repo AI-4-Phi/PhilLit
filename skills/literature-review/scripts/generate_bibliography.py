@@ -723,6 +723,37 @@ def _parser_verdicts(review_text: str):
         yield m, bool(_NON_INITIAL_PRECEDING_RE.search(review_text[:m.start()]))
 
 
+def _continuation_years(tail: str) -> list[tuple[str, str]]:
+    """(year, suffix) for every year continuing the citation whose match ends
+    where `tail` begins: "Menary (2006, 2010, 2013)", "Wiens (2015a; 2015b)".
+
+    ONE walker, called by BOTH halves of the parser. It used to live inside
+    _citation_instances' accepted branch only, below its `if rejected:
+    continue`, so a REJECTED multi-year citation contributed its head year to
+    the bare-mention net and silently lost every tail year. Reproduced
+    (kimi-k3 Critical):
+
+        bib    menary2011a, menary2011b - same author, same year, distinct works
+        prose  "Menary (2011a) argues X.
+                See Clark, Menary (2010, 2011), and Sutton on this."
+        kept   menary2011a only - menary2011b dropped though the prose carries
+               a letterless, ambiguous 2011 mention of exactly that group
+
+    lint_md reports nothing, because "(2010, 2011)" resolves on base year
+    against the surviving "2011a." reference line. The two-year parenthesis is
+    not an exotic form: 8 of 32 delivered reviews already use it in accepted
+    position.
+    """
+    out = []
+    while True:
+        cont = _CONTINUATION_RE.match(tail)
+        if not cont:
+            break
+        out.append((cont.group("year"), cont.group("suffix") or ""))
+        tail = tail[cont.end():]
+    return out
+
+
 def _rejected_span_surnames(review_text: str, m) -> list[str]:
     """Every surname the REJECTED citation `m` names, first author first.
 
@@ -815,7 +846,9 @@ def _unresolvable_mentions(review_text: str) -> list[dict]:
       _sighted_letters, which protects the one member the letter names instead
       of the whole group. Requiring the year to carry no letter is the second
       opinion's `(?![0-9A-Za-z])` condition, expressed through the parser's own
-      suffix group rather than a second regex.
+      suffix group rather than a second regex. It is tested PER YEAR, not per
+      citation: "Menary (2011a, 2011)" hands its head to _sighted_letters and
+      its tail to this net, and a whole-citation test threw both away.
     - SCOPED BY THE REJECTED MATCH'S OWN SPAN, not by proximity. The obvious
       alternative - "a bare year anywhere within _MATCH_WINDOW of a member's
       surname" - was built and measured, and it DESTROYS item 3 E: an ordinary
@@ -842,12 +875,21 @@ def _unresolvable_mentions(review_text: str) -> list[dict]:
     """
     out = []
     for m, rejected in _parser_verdicts(review_text):
-        if not rejected or m.group("suffix"):
+        if not rejected:
             continue
-        year = m.group("year")
-        for surname in _rejected_span_surnames(review_text, m):
-            out.append({"surname_variants": ascii_variants(surname),
-                        "surname": surname, "year": year})
+        surnames = _rejected_span_surnames(review_text, m)
+        years = [(m.group("year"), m.group("suffix") or "")]
+        years += _continuation_years(review_text[m.end():])
+        for year, suffix in years:
+            # LETTERLESS ONLY, applied per year rather than per citation: in
+            # "Menary (2010b, 2011)" the head is _sighted_letters' business and
+            # the tail is this net's, and the old whole-citation test threw
+            # both away together.
+            if suffix:
+                continue
+            for surname in surnames:
+                out.append({"surname_variants": ascii_variants(surname),
+                            "surname": surname, "year": year})
     return out
 
 
@@ -928,15 +970,9 @@ def _citation_instances(review_text: str) -> list[dict]:
         # only the year and its letter vary. There is no positional key to copy:
         # the resolver derives its own flags. A continuation OF a continuation
         # correctly inherits continuation=True.
-        tail = review_text[m.end():]
-        while True:
-            cont = _CONTINUATION_RE.match(tail)
-            if not cont:
-                break
-            out.append({**out[-1], "year": cont.group("year"),
-                        "suffix": (cont.group("suffix") or ""),
+        for c_year, c_suffix in _continuation_years(review_text[m.end():]):
+            out.append({**out[-1], "year": c_year, "suffix": c_suffix,
                         "continuation": True})
-            tail = tail[cont.end():]
     return out
 
 
