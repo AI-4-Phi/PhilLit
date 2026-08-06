@@ -573,6 +573,18 @@ class TestYearSuffixField:
         assert "winner2020" in err and "loser2020" in err
         assert "'a'" in err and "'b'" in err
 
+    def test_lettered_winner_and_bare_loser_merge_silently(self, capsys):
+        # The fourth quadrant of the merge policy: the winner carries a letter
+        # and the loser carries none. Nothing to copy up, nothing to conflict
+        # over - the winner keeps its letter and NO warning fires. Pins the
+        # `loser_suffix and` conjunct of the conflict test, without which a
+        # bare loser would be reported as conflicting with every letter.
+        bib = self._bib(winner_suffix="a", loser_suffix=None)
+        cited = find_cited_entries("Smith (2020a) argues X.", bib)
+        assert len(cited) == 1
+        assert cited[0][1].fields.get("year_suffix") == "a"
+        assert "[SUFFIX] conflict" not in capsys.readouterr().err
+
 
 # =============================================================================
 # Tests for reference section generation
@@ -1361,6 +1373,16 @@ class TestYearSuffixMatching:
         db = parse_string(bib_text, "bibtex")
         return [k for k, _ in generate_bibliography.find_cited_entries(prose, db)]
 
+    def _resolved(self, prose, bib_text=MENARY_BIB):
+        """Keys surviving _resolve_collisions, BEFORE find_cited_entries'
+        dedup -- the only way to observe the resolver on a group holding two
+        copies of one work, which dedup would otherwise merge away."""
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        records = generate_bibliography._collect_matches(prose, db)
+        return sorted(r["key"] for r in
+                      generate_bibliography._resolve_collisions(records, prose))
+
     def test_instance_parses_the_suffix(self):
         insts = generate_bibliography._citation_instances("Menary (2010a) argues.")
         assert insts[0]["year"] == "2010" and insts[0]["suffix"] == "a"
@@ -1441,12 +1463,95 @@ class TestYearSuffixMatching:
     def test_duplicate_letters_disable_the_filter(self):
         # Two members carrying the SAME letter is not a structurally complete
         # group -- filtering on it would pick an arbitrary one. Keep all.
+        #
+        # The fixture needs a THIRD member carrying a different letter, and
+        # prose citing that letter. With only [a, a] the test could not fail:
+        # filtering on "a" selects BOTH members, so removing the
+        # distinct-letters conjunct changed nothing and the assertion held
+        # either way (review IMPORTANT 6). With [a, a, b] and prose "2010b",
+        # dropping the conjunct drops the two "a" members.
         dup = """@book{a1, author = {Menary, Richard}, title = {One},
   publisher = {MIT Press}, year = {2010}, year_suffix = {a}}
 
 @book{a2, author = {Menary, Richard}, title = {Two},
-  publisher = {MIT Press}, year = {2010}, year_suffix = {a}}"""
-        assert sorted(self._cited("Menary (2010a) argues.", dup)) == ["a1", "a2"]
+  publisher = {MIT Press}, year = {2010}, year_suffix = {a}}
+
+@book{b1, author = {Menary, Richard}, title = {Three},
+  publisher = {MIT Press}, year = {2010}, year_suffix = {b}}"""
+        assert sorted(self._cited("Menary (2010b) argues.", dup)) == \
+            ["a1", "a2", "b1"]
+
+    def test_shared_doi_disables_the_filter(self):
+        # _members_are_distinct_works, DOI axis alone. The titles differ, so
+        # only the shared DOI can spot that these are two copies of one work
+        # and switch the group back to keep-all. Asserted on the resolver
+        # rather than find_cited_entries, whose own dedup would merge the two
+        # copies afterwards and hide the difference.
+        shared_doi = """@article{d1, author = {Menary, Richard},
+  title = {Cognitive Integration}, journal = {Synthese}, year = {2010},
+  doi = {10.1/same}, year_suffix = {a}}
+
+@article{d2, author = {Menary, Richard}, title = {A Wholly Different Title},
+  journal = {Mind}, year = {2010}, doi = {10.1/SAME}, year_suffix = {b}}"""
+        assert self._resolved("Menary (2010a) argues.", shared_doi) == ["d1", "d2"]
+
+    def test_shared_fallback_key_disables_the_filter(self):
+        # _members_are_distinct_works, fallback-key axis alone: neither copy
+        # carries a DOI, so only (title, year, surname) can spot them.
+        shared_fkey = """@article{f1, author = {Menary, Richard},
+  title = {Cognitive Integration}, journal = {Synthese}, year = {2010},
+  year_suffix = {a}}
+
+@article{f2, author = {Menary, Richard}, title = {Cognitive integration!},
+  journal = {Mind}, year = {2010}, year_suffix = {b}}"""
+        assert self._resolved("Menary (2010a) argues.", shared_fkey) == ["f1", "f2"]
+
+    def test_unmatched_letter_disables_dropping_for_the_whole_group(self):
+        # The `not unmatched_letters` guard on the drop branch, which no test
+        # reached before (review IMPORTANT 5): "2010a" DOES discriminate here,
+        # so supported is non-empty and the branch would otherwise fire. The
+        # unresolvable "2010c" names a work we cannot identify, so we do not
+        # know which member it was meant to support -- keep the group whole.
+        assert sorted(self._cited(
+            "Menary (2010a) argues X. Menary (2010c) argues Y.")) == \
+            ["menary2010cognitive", "menary2010extended"]
+
+    def test_continuation_alone_never_licenses_a_drop(self, capsys):
+        # Review IMPORTANT 2. A continuation instance used to set
+        # first_pos_seen, which moved its group out of keep-all and INTO the
+        # drop branch -- so adding support to a group that had none removed
+        # that group's protection. Here "Smith 2020" is a real citation and
+        # ", 1995" is parsed as its continuation; the fabricated 1995 instance
+        # matches only the solo entry and used to drop the two-author one.
+        bib = """@article{smithsolo1995, author = {Smith, Alice},
+  title = {Solo Work}, journal = {Synthese}, year = {1995}}
+
+@article{smithduo1995, author = {Smith, Alice and Jones, Bob},
+  title = {Duo Work}, journal = {Mind}, year = {1995}}"""
+        assert sorted(self._cited(
+            "Following Smith 2020, 1995 was a watershed year for the field.",
+            bib)) == ["smithduo1995", "smithsolo1995"]
+        assert "[COLLISION] dropped" not in capsys.readouterr().err
+
+    def test_form_mismatch_warning_does_not_claim_the_letter_is_unknown(self, capsys):
+        # Review IMPORTANT 3. The filter also fires when the citation's author
+        # FORM matched no member, so cands was empty before the letter was ever
+        # consulted. Keeping the conservative keep-all is right; the old
+        # message was not -- it said 2010b "matches no entry" when 2010b names
+        # menary2010duo exactly, and that misdiagnosis lands on the stderr
+        # channel a live-run operator reads.
+        forms = """@article{menary2010solo, author = {Menary, Richard},
+  title = {Solo}, journal = {Synthese}, year = {2010}, year_suffix = {a}}
+
+@article{menary2010duo, author = {Menary, Richard and Clark, Andy},
+  title = {Duo}, journal = {Mind}, year = {2010}, year_suffix = {b}}"""
+        assert sorted(self._cited(
+            "Menary (2010a) argues X. Menary and Zhao (2010b) argue Y.",
+            forms)) == ["menary2010duo", "menary2010solo"]
+        err = capsys.readouterr().err
+        assert "2010b" in err
+        assert "2010b matches no entry" not in err
+        assert "author form" in err
 
     def test_malformed_suffix_field_is_ignored(self):
         # A junk year_suffix reads as absent (same rule _display_year uses),
@@ -1477,3 +1582,113 @@ class TestYearSuffixMatching:
         # the OLD generic message. Pin the wording swap itself.
         assert "no parseable citation form" not in err
         assert "letter" in err
+
+
+# The eight prose forms that carry a GENUINE "2010b" citation past
+# _citation_instances (review CRITICAL 1). Each defeats a different part of
+# the parser, which is why widening _CONTINUATION_RE's separator class closes
+# rows 2-4 and nothing else: rows 1, 5, 6, 7 and 8 have no continuation to
+# parse at all. _sighted_letters closes all eight because it parses no
+# citation -- it scans raw text for a year carrying a letter.
+#
+# Before the fix every row returned only ['menary2010cognitive'], deleting a
+# cited work from References; lint could not see five of them, because both of
+# its extractors require a surname token immediately before the year.
+LETTER_SLIPS_PAST_THE_PARSER = [
+    ("bare_letter_continuation", "Menary (2010a, b) argue."),
+    ("and_separator", "Menary (2010a and 2010b) argue."),
+    ("ampersand_separator", "Menary (2010a & 2010b) argue."),
+    ("hyphen_bare_letter", "Menary (2010a-b) argue."),
+    ("uppercase_letter",
+     "Menary (2010a) argues X. Menary (2010B) argues Y."),
+    ("rejected_by_non_initial_guard",
+     "Menary (2010a) argues X. See Clark, Menary (2010b), and Sutton on this."),
+    ("second_position",
+     "Menary (2010a) argues X. Compare Rowlands and Menary (2010b)."),
+    ("no_surname_at_all",
+     "Menary (2010a) argues X. The 2010b volume collects the replies."),
+]
+
+
+class TestLetterSighting:
+    """Item 3 F's keep-all safety net: a member whose rendered label the prose
+    mentions is never dropped, however that mention was written."""
+
+    def _cited(self, prose, bib_text=MENARY_BIB):
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        return sorted(k for k, _ in
+                      generate_bibliography.find_cited_entries(prose, db))
+
+    @pytest.mark.parametrize(
+        "prose", [p for _, p in LETTER_SLIPS_PAST_THE_PARSER],
+        ids=[i for i, _ in LETTER_SLIPS_PAST_THE_PARSER])
+    def test_cited_letter_the_parser_missed_still_keeps_the_work(self, prose):
+        assert self._cited(prose) == ["menary2010cognitive",
+                                      "menary2010extended"]
+
+    def test_an_unsighted_letter_is_still_dropped(self, capsys):
+        # The payoff case must survive the safety net. Prose cites 2010a only
+        # and never mentions 2010b anywhere, so menary2010extended stays
+        # droppable -- otherwise item 3 F does exactly what item 3 E already
+        # did. (This is why the rule is per-member: requiring EVERY member's
+        # letter to be sighted before the group may drop anything would
+        # license no drop here at all.)
+        assert self._cited("As Menary (2010a) argues, integration matters.") \
+            == ["menary2010cognitive"]
+        assert "[COLLISION] dropped menary2010extended" in capsys.readouterr().err
+
+    def test_second_position_drop_spares_a_sighted_letter(self, capsys):
+        # The other branch that drops, and it drops EVERY member. m2's label
+        # appears in the prose, so it must survive; m1's does not.
+        bib = """
+        @article{m1, author = {Muldoon, Ryan}, title = {T1}, year = {2023},
+          journal = {J}, year_suffix = {a}}
+        @article{m2, author = {Muldoon, Ryan and A, B}, title = {T2},
+          year = {2023}, journal = {J}, year_suffix = {b}}
+        @article{bloggs, author = {Bloggs, Joe and Muldoon, Ryan}, title = {T3},
+          year = {2023}, journal = {J}}
+        """
+        cited = self._cited(
+            "Bloggs and Muldoon (2023) note this. The 2023b paper is the"
+            " one at issue.", bib)
+        assert "m2" in cited and "m1" not in cited
+
+    def test_uppercase_is_folded_to_the_bib_letter(self):
+        # _entry_suffix lowercases, so the map must too, or "2010B" protects
+        # nothing.
+        assert generate_bibliography._sighted_letters(
+            "Menary (2010B) argues.") == {"2010": {"b"}}
+
+    def test_bare_letter_chain_is_collected(self):
+        assert generate_bibliography._sighted_letters(
+            "Menary (2010a, b) and Wiens (2015a-c) argue.") == \
+            {"2010": {"a", "b"}, "2015": {"a", "c"}}
+
+    def test_chain_does_not_cross_a_closing_paren_or_a_full_stop(self):
+        # Load-bearing: ")" and "." are excluded from the separator class. A
+        # citation that closes a sentence whose successor opens with an
+        # initial -- "(2010a). B. Smith replies" -- would otherwise sight "b",
+        # permanently protect menary2010extended, and switch item 3 F back off
+        # without any test noticing. (A following multi-letter word is
+        # harmless either way: \b after the letter rejects it.)
+        prose = "Menary (2010a). B. Smith replies at length."
+        assert generate_bibliography._sighted_letters(prose) == {"2010": {"a"}}
+        assert self._cited(prose) == ["menary2010cognitive"]
+
+    def test_decade_token_sights_a_letter_and_that_is_harmless(self):
+        # Documented, not a defect: "the 2010s" reads as year 2010, letter
+        # "s". A group needs 19 members before any letter "s" is assigned, and
+        # a sighting can only ever PROTECT a member, never drop one.
+        assert generate_bibliography._sighted_letters(
+            "Debates in the 2010s shifted.") == {"2010": {"s"}}
+
+    def test_unlettered_bib_is_untouched(self):
+        # Item 3 E's behaviour must not change on a bib with no letters: an
+        # entry with no letter can never be protected by a sighting.
+        bare = """@article{m1, author = {Muldoon, Ryan and Wu, Jin},
+  title = {T1}, year = {2023}, journal = {J}}
+
+@article{m2, author = {Muldoon, Ryan and Gordon, Ann and Wu, Jin},
+  title = {T2}, year = {2023}, journal = {J}}"""
+        assert self._cited("As Muldoon and Wu (2023) argue, X.", bare) == ["m1"]
