@@ -242,8 +242,9 @@ is what lets the renderer tell the works apart. What breaks it is collapsing a
 two-author work to `et al.` (wrong in Chicago regardless) or dropping to a bare
 `Muldoon (2023)`. Note this only helps when the author *lists* differ — two
 works by the same author(s) in the same year are disambiguated instead by a
-Chicago letter, e.g. `Menary (2010a)` / `Menary (2010b)`: see the Year Suffix
-Field section above for where the letter comes from and how it is assigned.
+barrier-assigned `year_suffix` letter that References render and prose must
+match exactly, e.g. `Menary (2010a)` / `Menary (2010b)` (see the Year Suffix
+Field section above).
 
 ### Bibliography Format
 
