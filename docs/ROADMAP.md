@@ -372,11 +372,12 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   *resolves* AND `is_core` is `False` AND `is_in_doaj` is `False` AND
   h-index < **15**, evaluated over the highest-h same-named source (two
   `Phronesis` entries exist); a missing or `null` signal on any conjunct
-  never flags. Result: **4/9 candidates flagged, 0/48 false positives**, and
-  the false-positive-free plateau runs from T=14 (where the 4-candidate
-  floor starts) to T=19 — **T=15 sits at the conservative end of that
-  plateau**, one step in from the floor, *not* mid-plateau (the earlier
-  wording here was wrong). Note `measure_d_threshold.py`'s own `flagged()`
+  never flags. Result: **4/9 candidates flagged, 0/48 false positives**. Zero
+  false positives holds from T=5 to T=19; recall separately reaches its
+  4/9 maximum at T=14 and stays there through T=19 — so **T=14..19 is the
+  region with both zero false positives and full recall, and T=15 sits at
+  its conservative end**, one step in from the floor, *not* mid-plateau (the
+  earlier wording here was wrong). Note `measure_d_threshold.py`'s own `flagged()`
   implements only **two of the rule's three conjuncts** (`is_core` and
   h-index — it never checks `is_in_doaj`), so its printed sweep is not the
   shipped rule: at T=15 that two-conjunct sweep already shows one false
@@ -389,11 +390,14 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   Filosofisk Tidsskrift, h=11). Recall of ~4/9 is the intended trade for a
   flag-and-caveat mechanism where a false discredit costs more than a miss;
   the 5 unflagged candidates are each correctly spared (no OpenAlex match,
-  `is_core`, or DOAJ-listed). **Corroborating measurement**: applying the
-  same rule to the 200 most-frequent corpus venues (`venue_verdicts.json`)
-  flags **0 of the 125 resolvable rows**; the nearest unflagged
-  non-core/non-DOAJ venues sit at h=22 (Washington Law Review) and h=23
-  (Jurisprudence), well clear of the T=15 line.
+  `is_core`, DOAJ-listed, or above the threshold — International Journal of
+  Innovative Research in Computer and Communication Engineering resolves,
+  is non-core and non-DOAJ, and is spared solely because h=26). **Corroborating
+  measurement**: applying the same rule to the 200 sampled corpus venues
+  (`venue_verdicts.json`: 120 most-frequent plus 80 from the tail) flags
+  **0 of the 125 resolvable rows**; the nearest unflagged non-core/non-DOAJ
+  venues sit at h=22 (Washington Law Review) and h=23 (Jurisprudence), well
+  clear of the T=15 line.
 
   Cost measured at 10 credits per name lookup, so verdicts are cached per
   venue: a **180-day cache** (45 days for records that currently flag, since
@@ -405,14 +409,19 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   next review's budget. The pass **cannot fail the barrier** (fully
   try/except-wrapped; any failure demotes to "no flags", never a barrier
   error), and `venue_status` is **stripped and re-derived on every run**, so
-  a stale or hand-written flag never survives. **Recall is partial by
+  no flag the barrier itself can write survives a later run (see the
+  documented shape limit in `_strip_venue_status`: a hand-edited bare-token
+  or nested-brace value is not stripped, though the barrier's own decision
+  still governs what gets re-added on top). **Recall is partial by
   design** (4 of 9 known candidates) and **absence of the field means
   nothing** — most entries never carry it, including entries the check never
   evaluated (no key, cap or deadline hit, or an unresolved name).
 
-  What remains: **writer compliance is a rider on item 3 F's live run**, and
-  the sanitized `filter=display_name.search:` query's live recall on
-  comma-bearing venue names is unmeasured (see the ledger).
+  What remains: **writer compliance is a rider on item 3 F's live run**,
+  alongside D's own live smoke test (both need a working `OPENALEX_API_KEY`,
+  per the working-sequence note above); and the sanitized
+  `filter=display_name.search:` query's live recall on comma-bearing venue
+  names is unmeasured.
 - **Follow-up (A's external review, Q3) — "vetted beats unvetted", not
   built**: when a merge loser carries a `METADATA_CLEANED` marker (positive
   proof it was vetted), prefer the loser's value on *conflicting* fields,

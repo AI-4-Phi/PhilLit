@@ -213,7 +213,12 @@ Never advance to a next step in this phase before completing the current step.
    The summary's `venue_vetting` key reports the venue check (item 3 D): it
    flags entries whose journal is barely indexed. `"status": "skipped"` means
    no `OPENALEX_API_KEY` was set — mention it once in the final summary so the
-   user knows the check did not run; it is optional and free to obtain.
+   user knows the check did not run; it is optional and free to obtain. Any
+   other non-`complete` status (`partial`, `budget_exhausted`, `error`,
+   `not-run`) means the check ran but did not finish, or could not run at
+   all — surface that once too, reading the `reason` string from
+   `intermediate_files/json/evidence_report.json`'s `venue_vetting` object
+   (the printed summary carries the status but not the reason).
 
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 

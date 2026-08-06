@@ -118,15 +118,14 @@ Quote only text actually present in the sourced `abstract` or context field. The
 venue.** The journal resolves, but it is not a core source, not DOAJ-listed,
 and has a low venue-level h-index. That is a statement about *visibility, not
 quality*: it is not evidence that the journal is predatory or that the article
-is wrong. Treat it as a reason to seek corroboration — never let such an entry
-be the *only* source for a substantive claim, and do not present its findings
-as established. If the point genuinely needs it, attribute the claim to the
-work in prose ("Okoro (2021) reports...") rather than asserting the claim
-yourself. The check is conservative and partial, so **absence of the field
-means nothing** — most entries never carry it, including entries the check
-never evaluated. Do not write the flag, the venue's standing, or any judgement
-about the journal into the review text: it is an internal weighting signal, not
-a claim to publish.
+is wrong. Treat it as a reason to seek corroboration where other sources
+exist; if it is the only source available, attribute rather than assert —
+write "Smith (2021) reports..." in prose rather than stating the claim
+yourself — and do not present its findings as established. The check is
+conservative and partial, so **absence of the field means nothing** — most
+entries never carry it, including entries the check never evaluated. Do not
+write the flag, the venue's standing, or any judgement about the journal into
+the review text: it is an internal weighting signal, not a claim to publish.
 
 **Calibration examples** (from an adjudicated run — imitate these shapes):
 

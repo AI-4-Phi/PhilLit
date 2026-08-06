@@ -113,12 +113,19 @@ def test_writer_tier_rules_carry_b2_edits():
 
 
 def test_writer_knows_the_venue_status_rule():
+    """Minor 8 (item 3 D review, round 2): a bare "venue_status" in text
+    substring is vacuous -- it would pass even if the flag were rewritten as
+    a quality signal. Pin the two phrases that make it a visibility-not-
+    quality caveat with a real floor on when the field means nothing."""
     text = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(encoding="utf-8")
     assert "venue_status" in text
     assert "low-visibility" in text
+    assert "visibility, not" in text
+    assert "absence of the field means nothing" in text
 
 
 def test_researcher_told_not_to_write_venue_status():
     text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
         encoding="utf-8")
     assert "venue_status" in text
+    assert "Never write a `venue_status` field yourself" in text

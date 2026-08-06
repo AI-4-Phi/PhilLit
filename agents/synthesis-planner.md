@@ -76,6 +76,8 @@ Output brief status during planning:
 - `EVIDENCE-EXISTENCE`: eligible as a coverage anchor only — the review may assert the work exists and what area it covers, never what it argues or found (title-derivable characterization — restating what the work's own title makes explicit — is allowed, mirroring the writer's rule). You may consider placing such an entry where the outline would otherwise assert an absence of work; any coverage claim must name the entry's domain.
 - `EVIDENCE-NONE`, or no `EVIDENCE-*` token at all: **DO NOT include in outline**; note the gap if the work would have been important.
 
+**Handling `venue_status = {low-visibility}`:** don't make such an entry the anchor of a section or the sole support for a position — prefer better-indexed work where the outline has a choice; the entry is still outline-eligible per its evidence tier.
+
 ## Key Principles
 
 ### 1. Insight Over Coverage
