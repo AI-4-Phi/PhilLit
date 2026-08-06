@@ -11,31 +11,17 @@ instead of sleeping through it. Remaining: nothing in the code — the user
 supplies the key (free, `openalex.org/settings/api`). An unkeyed install
 behaves exactly as before.
 
-## 2026-08-06: the key in the environment is being REJECTED — needs replacing
+## If OpenAlex says "Invalid or missing API key"
 
-While reviewing item 3 D's build, a subagent probing the live API got
-`{"error":"Invalid or missing API key"}` for the `OPENALEX_API_KEY` reachable
-from the interactive shell profile, and a plain 429 unkeyed. Almost certainly
-the key that was rotated out on the night of 2026-08-05 (it had leaked into a
-session transcript); the profile still holds the old value.
+The key is wrong or stale, not the plumbing: `developers.openalex.org` still
+documents the key as a **query parameter** (`api_key=YOUR_KEY`), which is
+exactly what `rate_limiter.openalex_params()` sends (re-checked 2026-08-06).
+Get a fresh one at `openalex.org/settings/api`.
 
-Two things this is **not**:
-
-- It is not a mechanism bug. `developers.openalex.org` still documents the key
-  as a **query parameter** (`api_key=YOUR_KEY`), which is exactly what
-  `rate_limiter.openalex_params()` sends. Re-checked 2026-08-06.
-- It is not a code change. Nothing to fix here — a fresh key from
-  `openalex.org/settings/api` needs to reach the process.
-
-**Where to put the new key: the workspace `.env`.** That is the path
+**Put it in the workspace `.env`**, not a shell profile. `.env` is the path
 `load_dotenv(find_dotenv(usecwd=True))` reads, and the only one hooks and
-subagents inherit; a value that lives only in an interactive-shell profile is
+subagents inherit; a value exported only in an interactive-shell profile is
 invisible to non-interactive Bash calls.
-
-Provenance note: the rejection was observed by a review subagent, not
-re-verified in the controller session (reading `.env` and the shell profile is
-blocked there, correctly — they hold credentials). Confirm with one keyed
-request before scheduling item 3 F's live run.
 
 One unresolved discrepancy, recorded rather than acted on: the current
 `developers.openalex.org/llms.txt` summary states the unkeyed budget as
