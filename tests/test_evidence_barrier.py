@@ -1297,3 +1297,35 @@ def test_suffix_does_not_change_evidence_tiers(tmp_path):
     assert evidence_barrier.execute(rd, 1) == 0
     stamps = _report(rd)["stamps"]["literature-domain-1.bib"]
     assert set(stamps.values()) == {"EVIDENCE-NONE"}   # unattested, as before
+
+
+def test_overflow_group_is_named_in_the_report_and_gets_no_letters(tmp_path):
+    """27 distinct works by the same author in the same year is one past the
+    26-letter cap: the group must NEVER be partially lettered (see
+    year_suffix.py's own reasoning), and per the coordinator's fix to a
+    reporting bug in this pass, the report must NAME the group -- author,
+    year, work count -- not just note that something overflowed. Pins the
+    regression: an earlier revision wrapped `assignment["overflow"]` (a list
+    of dicts) in `[list(x) for x in ...]`, which for a dict yields its KEY
+    NAMES ("authors", "year", "works") instead of the actual values,
+    silently defeating the whole point of reporting an unlettered group."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    entries = "\n\n".join(
+        f"""@book{{overflow{i:02d}2025,
+  author = {{Prolific, Pat}},
+  title = {{Overflow Work {i:02d}}},
+  publisher = {{Overflow Press}},
+  year = {{2025}}
+}}"""
+        for i in range(27)
+    )
+    _domain(rd, 1, entries, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix" not in content   # no entry in the group gets a letter
+    report = _report(rd)
+    assert report["year_suffixes"]["assigned"] == 0
+    assert report["year_suffixes"]["overflow"] == [
+        {"authors": "Prolific, Pat", "year": "2025", "works": 27}]

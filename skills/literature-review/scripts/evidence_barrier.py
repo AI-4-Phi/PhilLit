@@ -403,13 +403,26 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 })
         assignment = ys.assign_suffixes(suffix_inputs)
         suffix_map = assignment["suffixes"]
+        # groups/overflow/conflicts are ALREADY plain, JSON-serializable
+        # structures (lists of dicts / lists of repr() strings) -- pass them
+        # through unchanged. An earlier revision wrapped overflow in
+        # `[list(x) for x in ...]`, which on a list of DICTS returns each
+        # dict's KEY NAMES ("authors", "year", "works") instead of its
+        # values, discarding exactly the information a human needs to act on
+        # an overflow group ("this a/b run is >26 same-author-same-year
+        # works and got no letters at all -- who, what year, how many"). The
+        # whole point of the >26 rule is that this must be reported, not
+        # silent (year_suffix.py's own docstring for the coherence check
+        # says the same of `conflicts`), so all three reach the report
+        # as-is.
         suffix_report = {"status": "complete", "assigned": len(suffix_map),
                          "groups": assignment["groups"],
-                         "overflow": [list(x) for x in assignment["overflow"]]}
+                         "overflow": assignment["overflow"],
+                         "conflicts": assignment["conflicts"]}
     except Exception as exc:
         suffix_map = {}
         suffix_report = {"status": "error", "error": repr(exc), "assigned": 0,
-                         "groups": [], "overflow": []}
+                         "groups": [], "overflow": [], "conflicts": []}
     report["year_suffixes"] = suffix_report
 
     # Build final content in memory: context fields + stamp, then bookkeeping.
