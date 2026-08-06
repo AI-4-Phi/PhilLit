@@ -1417,8 +1417,166 @@ def test_suffix_error_path_still_carries_every_list_key(tmp_path, monkeypatch):
     assert evidence_barrier.execute(rd, 1) == 0
     suffixes = _report(rd)["year_suffixes"]
     assert suffixes["status"] == "error"
-    for key in ("groups", "overflow", "suppressed", "conflicts"):
+    for key in ("groups", "overflow", "suppressed", "conflicts",
+                "residual_neutralized", "residual_unresolved"):
         assert suffixes[key] == [], key
+
+
+# --- Item 3 F second opinion (HIGH): a stale COMPACT year_suffix ---
+#
+# `_strip_derived_fields` only matches a field OPENING its line -- an accepted,
+# documented limit. For `venue_status` a survivor is a stale metadata problem;
+# for `year_suffix` it is a correctness one, because generate_bibliography ACTS
+# on the value. The fixtures below put the field mid-line, which is exactly the
+# position the stripper cannot reach.
+
+# Two DIFFERENT people sharing a surname and a year: the case item 3 F
+# deliberately refuses to letter (it is item 3 E's, resolved by first
+# initials). So the assigner writes NOTHING here -- and before the fix both
+# stale letters travelled untouched into the output bib, where they read as a
+# complete a/b group nobody assigned.
+STALE_COMPACT_D1 = """@article{johnson2024algorithms,
+  author = {Johnson, Gabbrielle},
+  title = {Are Algorithms Value-Free},
+  journal = {Synthese}, year_suffix = {a}, year = {2024}
+}
+
+@article{johnson2024judgement,
+  author = {Johnson, Rebecca},
+  title = {Automating Judgement},
+  journal = {Synthese}, year_suffix = {b}, year = {2024}
+}"""
+
+# The one shape the neutralising splice cannot land: no whitespace before the
+# field, so add_field_to_entry's `(\s+)year_suffix\s*=` locator misses it and
+# the "add" path would insert a SECOND one -- which pybtex rejects outright.
+STALE_NO_SPACE_D1 = """@article{johnson2024algorithms,year_suffix={a},
+  author = {Johnson, Gabbrielle},
+  title = {Are Algorithms Value-Free},
+  journal = {Synthese}, year = {2024}
+}"""
+
+
+def test_stale_compact_year_suffix_is_neutralized(tmp_path):
+    """The barrier owns this field. A value it did not derive and cannot
+    strip is overwritten with its own decision for the entry -- here, no
+    letter -- and named in the report."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, STALE_COMPACT_D1, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix = {a}" not in content
+    assert "year_suffix = {b}" not in content
+    assert content.count("year_suffix = {unassigned}") == 2
+    suffixes = _report(rd)["year_suffixes"]
+    assert suffixes["assigned"] == 0        # the assigner still letters nothing
+    assert sorted(suffixes["residual_neutralized"]) == [
+        "literature-domain-1.bib:johnson2024algorithms",
+        "literature-domain-1.bib:johnson2024judgement"]
+    assert suffixes["residual_unresolved"] == []
+
+
+def test_a_stale_compact_letter_cannot_license_a_phase_6_drop(tmp_path):
+    """The finding's actual claim, end to end: two stale letters that look
+    like a complete a/b group make generate_bibliography's `fully_lettered`
+    gate true, and a prose "Johnson (2024a)" then DROPS the other cited work
+    from the References. Asserted through the real resolver on the barrier's
+    real output, because that composition is the defect -- neither script is
+    wrong on its own.
+
+    Run against the fixture WITHOUT the barrier, this same resolver call
+    returns only johnson2024algorithms (measured); it is the barrier's
+    neutralisation that restores ambiguous-keep-all.
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    import generate_bibliography
+    from pybtex.database import parse_string
+    rd = tmp_path / "review"
+    _domain(rd, 1, STALE_COMPACT_D1, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    db = parse_string(
+        (rd / "literature-domain-1.bib").read_text(encoding="utf-8"), "bibtex")
+    cited = sorted(k for k, _ in generate_bibliography.find_cited_entries(
+        "As Johnson (2024a) argues, this matters.", db))
+    assert cited == ["johnson2024algorithms", "johnson2024judgement"]
+
+
+def test_a_residual_the_splice_cannot_neutralize_is_reported(tmp_path, capsys):
+    """The accepted residual, and the reason the splice is verified rather
+    than trusted: neutralising this shape would insert a DUPLICATE field and
+    hand dedupe_bib a bibliography pybtex refuses to parse. The barrier
+    reverts instead and says so -- on the console line too, since this is the
+    one shape that stays a live drop hazard."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    from pybtex.database import parse_string
+    rd = tmp_path / "review"
+    _domain(rd, 1, STALE_NO_SPACE_D1, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    parse_string(content, "bibtex")          # MUST still parse -- non-negotiable
+    assert "year_suffix={a}" in content      # untouched, not half-spliced
+    assert "unassigned" not in content
+    suffixes = _report(rd)["year_suffixes"]
+    assert suffixes["residual_neutralized"] == []
+    assert suffixes["residual_unresolved"] == [
+        "literature-domain-1.bib:johnson2024algorithms"]
+    summary = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
+    assert summary["year_suffixes"]["residual_unresolved"] == 1
+
+
+def test_a_residual_is_neutralized_even_when_assignment_raises(tmp_path,
+                                                               monkeypatch):
+    """Detection lives OUTSIDE the assignment try/except on purpose: nested
+    inside it, an assignment exception would hide the residual -- the exact
+    silence this pass exists to end. On the error path suffix_map is empty,
+    so every residual entry is neutralised rather than overwritten with a
+    fresh letter."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    def boom(entries):
+        raise RuntimeError("assignment blew up")
+
+    monkeypatch.setattr(evidence_barrier.ys, "assign_suffixes", boom)
+    rd = tmp_path / "review"
+    _domain(rd, 1, STALE_COMPACT_D1, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert content.count("year_suffix = {unassigned}") == 2
+    suffixes = _report(rd)["year_suffixes"]
+    assert suffixes["status"] == "error"
+    assert len(suffixes["residual_neutralized"]) == 2
+
+
+def test_a_residual_on_a_lettered_entry_is_overwritten_by_this_run(tmp_path):
+    """Why the refusal is a WRITE and not a suppression. An entry the
+    assigner letters already has its residual overwritten in place, so
+    suppressing this run's letters on detection would leave MORE untrusted
+    values standing, not fewer -- it removes the overwrite that cleans them.
+    The stale value here is 'z', which no two-work group can ever produce."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    forged = MENARY_D1.replace(
+        "  doi = {10.7551/mitpress/1.001},",
+        "  doi = {10.7551/mitpress/1.001}, year_suffix = {z},", 1)
+    _domain(rd, 1, forged, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "{z}" not in content
+    assert "year_suffix = {a}" in content and "year_suffix = {b}" in content
+    suffixes = _report(rd)["year_suffixes"]
+    assert suffixes["assigned"] == 2
+    assert suffixes["residual_neutralized"] == [
+        "literature-domain-1.bib:menary2010cognitive"]
 
 
 def test_console_summary_distinguishes_unlettered_groups(tmp_path, capsys):
@@ -1434,7 +1592,8 @@ def test_console_summary_distinguishes_unlettered_groups(tmp_path, capsys):
     assert evidence_barrier.execute(rd, 1) == 0
     summary = json.loads(capsys.readouterr().out.strip().splitlines()[-1])
     assert summary["year_suffixes"] == {
-        "status": "complete", "assigned": 0, "overflow": 0, "suppressed": 1}
+        "status": "complete", "assigned": 0, "overflow": 0, "suppressed": 1,
+        "residual_unresolved": 0}
 
 
 def test_console_summary_distinguishes_a_raised_assignment(tmp_path, capsys,

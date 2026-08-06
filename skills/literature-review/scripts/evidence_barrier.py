@@ -191,6 +191,51 @@ def _strip_derived_fields(entry_text: str) -> str:
     return _DERIVED_FIELD_RE.sub("", entry_text)
 
 
+# What the barrier writes OVER a `year_suffix` value it did not derive and
+# `_strip_derived_fields` could not reach. Deliberately NON-EMPTY: both merge
+# policies that carry the field through Phase 6 (dedupe_bib.merge_entries and
+# generate_bibliography._carry_year_suffix) read an empty value as "winner
+# missing" and COPY A LOSER'S LETTER BACK UP into it, which would silently
+# undo the neutralisation in files this barrier no longer controls. A
+# non-empty token lands in their "both non-empty and unequal" branch instead:
+# the winner's value is preserved and the disagreement is announced. Every
+# downstream reader of the field requires a single ASCII a-z letter
+# (generate_bibliography._entry_suffix, check_evidence's same guard), so this
+# reads as "no letter" to all of them while staying self-documenting in a
+# delivered .bib.
+SUFFIX_UNTRUSTED = "unassigned"
+
+_SUFFIX_FIELD_RE = re.compile(r"\byear_suffix\s*=", re.IGNORECASE)
+
+
+def _suffix_splice_is_well_formed(chunk: str) -> bool:
+    """Was a year_suffix splice over a PRE-EXISTING value safe to keep?
+
+    Same shape and same reason as `_heal_splice_is_well_formed`: exactly one
+    `year_suffix =` in the chunk, and the chunk still parses. Load-bearing,
+    not defensive polish. `add_field_to_entry` locates an existing field by
+    `(\\s+)year_suffix\\s*=`, so a value written with NO whitespace before it
+    (`@article{k,year_suffix={a},`) is not found and the "add" path inserts a
+    SECOND one -- and pybtex raises `DuplicateField` on that, which would
+    hand dedupe_bib an unparseable bibliography and take down all of Phase 6.
+    Emitting no letter is survivable; emitting a bib the real parser rejects
+    is not.
+
+    Only ever called when a residual was detected, i.e. only when a duplicate
+    is possible: with no pre-existing field the splice always inserts exactly
+    one, so an unconditional pybtex parse per lettered entry would buy
+    nothing.
+    """
+    if len(_SUFFIX_FIELD_RE.findall(chunk)) != 1:
+        return False
+    from pybtex.database import parse_string
+    try:
+        parse_string(chunk, bib_format="bibtex")
+    except Exception:
+        return False
+    return True
+
+
 def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
     """Add an OPTIONAL engine-derived field, or return the text unchanged.
 
@@ -405,10 +450,51 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         venue_report = {"status": "error", "error": repr(exc), "flagged_entries": 0}
     report["venue_vetting"] = venue_report
 
+    # Item 3 F: a `year_suffix` that survived _strip_derived_fields. The
+    # stripper only matches a field OPENING its line, an accepted limit
+    # documented there and adjudicated for `venue_status` as "document, don't
+    # widen" -- a stale FLAG is a metadata problem. For `year_suffix` it is a
+    # correctness one, because the value is ACTED ON: if every member of a
+    # Phase 6 collision group happens to retain a distinct stale letter,
+    # generate_bibliography's `fully_lettered` gate becomes true on values
+    # this barrier never derived, and a cited work is dropped. Measured on
+    # the real execute(): two DIFFERENT people sharing a surname and a year
+    # (the case F deliberately refuses to letter) keep compact stale `a` and
+    # `b` all the way into the output bib.
+    #
+    # Detection is by se.parse_entry_fields -- a FIELD parse, not a substring
+    # scan. That is the whole reason detecting is safe where stripping is
+    # not: the stripper's veto is that a looser text anchor can begin a match
+    # INSIDE a braced value and truncate an abstract, and a field parse
+    # cannot (verified: an abstract containing the literal text
+    # `year_suffix = {a}` is not detected). Not claimed to be complete --
+    # a value the parser mis-bounds may slip past, which is harmless, since
+    # nothing that is not a single a-z letter reads as a letter downstream.
+    #
+    # OUTSIDE the assignment try/except below, deliberately: nested inside
+    # it, an assignment exception would hide the residual -- precisely the
+    # silence this detection exists to end.
+    residual_suffix = set()   # (i, key) with an untrusted value on entry
+    for i, d in domains.items():
+        for chunk in parsed[i]:
+            header = se.entry_header(chunk)
+            if not header:
+                continue
+            if (se.parse_entry_fields(chunk).get("year_suffix") or "").strip():
+                residual_suffix.add((i, header[1]))
+
     # Item 3 F: Chicago a/b letters, assigned ONCE over the union of every
     # domain so the same work carries the same letter in every copy. Pure
     # computation, but wrapped like the venue pass: a failure here must cost
-    # letters, never the run.
+    # the letters this run would have ASSIGNED, never the run.
+    #
+    # Note what that does NOT say. A failure here cannot cost a letter
+    # ALREADY IN THE FILE that the stripper could not reach -- an earlier
+    # version of this comment claimed assignment failure "must cost letters"
+    # flatly, which is false in exactly that case. Those are handled by the
+    # residual pass above and the neutralisation below, both of which run on
+    # the error path too (`suffix_map` is empty there, so every residual
+    # entry is neutralised rather than overwritten with a fresh letter).
     suffix_map = {}   # (i, key) -> letter
     try:
         suffix_inputs = []
@@ -464,6 +550,13 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                          "groups": [], "overflow": [], "suppressed": [],
                          "conflicts": []}
     report["year_suffixes"] = suffix_report
+    # Filled in by the chunk loop below and reported on BOTH branches: these
+    # two keys are attached to the dict `suffix_report` already is, so the
+    # error path carries them exactly like the complete path.
+    residual_neutralized: list = []
+    residual_unresolved: list = []
+    suffix_report["residual_neutralized"] = residual_neutralized
+    suffix_report["residual_unresolved"] = residual_unresolved
 
     # Build final content in memory: context fields + stamp, then bookkeeping.
     outputs = {}
@@ -522,8 +615,33 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # vv may legitimately be None.)
                 chunk = _stamp_optional_field(chunk, vv.VENUE_STATUS_FIELD, status)
             letter = suffix_map.get((i, key))
-            if letter:
-                chunk = _stamp_optional_field(chunk, ys.SUFFIX_FIELD, letter)
+            stale = (i, key) in residual_suffix
+            if letter or stale:
+                # One splice, two jobs. With a letter this run is the
+                # ordinary stamp, and it OVERWRITES a residual in place
+                # (add_field_to_entry matches on any leading whitespace) --
+                # so an entry the assigner letters is already safe. Without
+                # one, the splice is the REFUSAL: the barrier owns this
+                # field, it did not derive this value and cannot strip it,
+                # so it overwrites it with its own decision for this entry,
+                # which is "no letter".
+                #
+                # Note the refusal is NOT "suppress this run's letters".
+                # That option was measured and is strictly worse: it removes
+                # the very overwrite that cleans residuals off the entries
+                # the assigner does letter, leaving MORE untrusted values
+                # standing than doing nothing.
+                pre_splice = chunk
+                chunk = _stamp_optional_field(
+                    chunk, ys.SUFFIX_FIELD, letter or SUFFIX_UNTRUSTED)
+                if stale and not _suffix_splice_is_well_formed(chunk):
+                    # Never emit a bib the real parser rejects. Revert, and
+                    # report: this is the one shape that stays a live drop
+                    # hazard, so it must reach an operator.
+                    chunk = pre_splice
+                    residual_unresolved.append(f"{bib_name}:{key}")
+                elif stale:
+                    residual_neutralized.append(f"{bib_name}:{key}")
             final_chunks.append(se.stamp_entry_text(chunk, tier))
             report["stamps"][bib_name][key] = tier
             report["attestations"][bib_name][key] = _att_blob(
@@ -601,6 +719,13 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
             "assigned": (report.get("year_suffixes") or {}).get("assigned", 0),
             "overflow": len((report.get("year_suffixes") or {}).get("overflow") or []),
             "suppressed": len((report.get("year_suffixes") or {}).get("suppressed") or []),
+            # The one residual shape the barrier could NOT neutralise, and
+            # therefore the one an operator has to act on: a stale letter
+            # this run neither derived nor could overwrite is still on disk
+            # and can still license a Phase 6 drop. The neutralised ones need
+            # no action and stay in the report only.
+            "residual_unresolved": len(
+                (report.get("year_suffixes") or {}).get("residual_unresolved") or []),
         },
         "report": str(report_path),
     }))
