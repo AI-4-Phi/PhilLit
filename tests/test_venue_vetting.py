@@ -656,6 +656,39 @@ class TestHonestStatusAndErrors:
         assert result["lookup_errors"] == 1
         assert result["flagged"] == []
 
+    def test_scattered_lookup_errors_explain_themselves(self, monkeypatch, isolated_cache):
+        """Whole-branch review I1: the `finally` promotion to "partial" set no
+        reason, so the LIKELIEST partial in production -- one flaky 500 among
+        40 venues, a streak that never reaches MAX_CONSECUTIVE_ERRORS --
+        reported `reason: null` while SKILL.md sends the orchestrator to
+        exactly that key."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+
+        def responder(*a, **k):
+            if "aa journal" in k["params"]["filter"].lower():
+                return FakeResponse(payload={"results": [hit("AA Journal", 90, True, False)]})
+            return FakeResponse(status_code=500)
+
+        monkeypatch.setattr(vv.requests, "get", responder)
+        result = vv.vet_venues(["AA Journal", "ZZ Journal"])  # sorted: aa first
+        assert result["status"] == "partial"
+        assert result["lookup_errors"] == 1
+        assert result["reason"] is not None
+        assert "1 lookup error" in result["reason"]
+
+    def test_promotion_does_not_clobber_a_more_specific_reason(
+            self, monkeypatch, isolated_cache):
+        """The cap path names the cap; the promotion must only FILL a null
+        reason, never overwrite one set upstream."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setattr(vv, "MAX_LOOKUPS_PER_RUN", 1)
+        monkeypatch.setattr(vv.requests, "get",
+                            lambda *a, **k: FakeResponse(payload={"results": []}))
+        result = vv.vet_venues(["A Journal", "B Journal", "C Journal"])
+        assert result["status"] == "partial"
+        assert result["skipped_cap"] == 2
+        assert "cap" in result["reason"]
+
 
 class TestNeverRaisesStructurally:
     """Post-review hardening: "nothing here raises" was an asserted claim,

@@ -415,4 +415,20 @@ def vet_venues(names) -> dict:
         result["flagged"].sort()
         if result["status"] == "complete" and (result["lookup_errors"] or result["skipped_cap"]):
             result["status"] = "partial"
+            # A non-"complete" status must always EXPLAIN itself: SKILL.md
+            # sends the orchestrator to `reason` for a "partial" pass, so a
+            # null reason there is a silent degradation, which the
+            # fail-open-but-never-silent policy forbids. The cap and deadline
+            # paths already set one; scattered lookup errors that never reach
+            # MAX_CONSECUTIVE_ERRORS did not -- and that is the likeliest
+            # partial in production (one flaky 500 among 40 venues).
+            # Only fills a null reason: a reason set upstream (cap, deadline)
+            # is more specific than this summary and must not be clobbered.
+            if result["reason"] is None:
+                causes = []
+                if result["lookup_errors"]:
+                    causes.append(f"{result['lookup_errors']} lookup error(s)")
+                if result["skipped_cap"]:
+                    causes.append(f"{result['skipped_cap']} name(s) not looked up")
+                result["reason"] = "; ".join(causes)
     return result
