@@ -620,6 +620,23 @@ discredit costs far more than a miss.
 
 Data: `<session scratchpad>/d_threshold_results.json`.
 
+**A curated journal list is deliberately NOT part of this** (Johannes,
+2026-08-05 — decided, do not re-raise). PhilLit did carry one:
+`domain-literature-researcher.md` had a "Phase 2: Key Journals (If Needed)"
+section naming ~10 philosophy journals by subfield, from the initial commit
+until `be73958` ("implemented skill", 2025-12-21) replaced it with the API
+search battery. It was a **discovery hint, never a quality filter** — prose in
+a prompt with no mechanical use — so nothing was lost when it went. Reviving it
+as a positive rescue signal also would not help: every journal such a list
+names (Mind, Philosophical Review, Ethics, Philosophy & Public Affairs, Minds &
+Machines) is already `is_core: true` and already spared, while the venues that
+actually need rescuing are the obscure-but-legitimate ones a flagship list
+omits by construction (Norsk Filosofisk Tidsskrift, Phronesis, Kantian Review).
+With 928 distinct venue names in this corpus, a list long enough to matter is a
+maintenance project whose staleness fails toward false discredits. A
+user-extensible local allowlist was considered as an escape hatch and also
+declined: not worth the added surface.
+
 **Cost, measured.** Bibs carry **zero `issn` fields** (0 of 6,530 `@article`
 entries), so venue resolution must go by name. A
 `sources?filter=display_name.search:<name>` lookup costs **10 credits** —
