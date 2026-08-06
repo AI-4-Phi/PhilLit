@@ -8,17 +8,54 @@ The unit of assignment is a WORK, not a bib entry: the same paper routinely
 appears in two domain bibs under different citation keys, and giving those
 copies different letters would break every sentence written against the other
 copy. Work identity is exactly `dedupe_bib`'s: same normalized DOI, or same
-`bib_identity.fallback_key` (title/year/surname). Sharing the identity rule is
+`bib_identity.fallback_key` (title/year/surname), with dedupe's own refusal to
+merge across CONFLICTING non-empty DOI values. Sharing the identity rule is
 what keeps the Phase 6 merge and this pass from disagreeing.
 
 Groups are formed on (author signature, year), where the signature carries a
-first INITIAL per author. Two different people with the same surname (the
-Gabbrielle/Rebecca Johnson case) therefore never group: Chicago's rule for
-them is initials, which is item 3 E's mechanism, not this one.
+first INITIAL per author. Two different people with the same surname but a
+DIFFERENT first initial (the Gabbrielle/Rebecca Johnson case) never group.
+Two people who share BOTH surname and initial (Gabrielle and Gareth Johnson)
+are NOT distinguished by this module -- an initial is the limit of its
+identity signal; full first-name disambiguation is item 3 E's mechanism, not
+this one.
 
 Letters run alphabetically by title (Chicago 15.18), tie-broken by entry id,
 so assignment is deterministic and independent of input order. Nothing is
 ever re-lettered: a later drop leaves a gap (2010a, 2010c), which is correct.
+Entry ids must have a stable `repr()` across a run (true of the str/tuple/int
+ids every caller uses; NOT true of a frozenset or a plain object, whose repr
+can carry an address or an arbitrary iteration order).
+
+WHOLE-GROUP SUPPRESSION. Three situations make it unsafe to letter an
+author-year group at all. Each is reported in `suppressed` (never silent)
+rather than producing a partial or order-dependent result:
+
+  1. DOI-CONFLICT BRIDGE. A same-fallback-key cluster holds two or more
+     entries with distinct, non-empty, mutually conflicting DOIs *and* at
+     least one entry with no DOI at all. Which conflicting side that DOI-less
+     copy belongs to is undecidable from the data -- and picking greedily (as
+     a streaming merge would) gives a DIFFERENT answer depending on input
+     order. Detected cluster-wide (not entry-by-entry against an arbitrary
+     "first seen" representative), so the DETECTION itself does not depend on
+     order; the group is then suppressed outright rather than let a streaming
+     tie-break decide.
+  2. IDENTITY CONFLICT. A work's copies disagree about who wrote it or when
+     (see `conflicts`). The excluded work is invisible to normal group
+     formation, so lettering its siblings would silently under-count the
+     group and print one reference with no letter alongside ones that have
+     letters.
+  3. FILTERED COPY. A copy of a work fails the usability pre-filter (no
+     parseable author, or a year that is not exactly four digits, e.g.
+     "n.d.") while a sibling copy of the SAME work (same DOI or fallback key)
+     passes. Filtering the unusable copy out before identity resolution would
+     silently split one work into a lettered copy and an invisible one.
+
+A suppressed group's `works` count includes entries hidden from normal group
+formation by (2) and (3) -- it is a best-effort total, not a guarantee that a
+different input order would report the identical number, since the group
+never receives a canonical partition. What every input order DOES guarantee
+identically is that no member of a suppressed group appears in `suffixes`.
 """
 from __future__ import annotations
 
@@ -140,53 +177,153 @@ class _Union:
 
 
 def assign_suffixes(entries: list[dict]) -> dict:
-    """{"suffixes": {id: letter}, "groups": [...], "overflow": [ids]}.
+    """Assign Chicago a/b/c letters over WORK identity.
+
+    Returns:
+      {"suffixes": {id: letter},
+       "groups": [{"authors": str, "year": str, "works": int}, ...],
+       "overflow": [{"authors": str, "year": str, "works": int}, ...],
+       "suppressed": [{"authors": str, "year": str, "works": int,
+                        "reasons": [str, ...]}, ...],
+       "conflicts": [[repr(id), ...], ...],
+       "assigned_entries": int, "assigned_works": int}
 
     Entries with no usable author signature or no 4-digit year are skipped
-    entirely -- they can never be cited author-year anyway.
+    entirely -- they can never be cited author-year anyway -- UNLESS a
+    skipped entry shares identity (DOI or fallback key) with an otherwise
+    usable one, in which case it taints that work's group into `suppressed`
+    instead of silently disappearing (module docstring, situation 3).
     """
-    usable = []
-    for ent in entries or []:
+    all_entries = list(entries or [])
+
+    # Compute identity keys for EVERY entry, including ones the usability
+    # filter below will drop -- a dropped copy still needs to be checked
+    # against its usable siblings (situation 3).
+    doi_of: dict = {}
+    fkey_of: dict = {}
+    for ent in all_entries:
+        doi, fkey = work_identity_keys(ent)
+        doi_of[ent["id"]] = doi
+        fkey_of[ent["id"]] = fkey
+
+    usable, unusable = [], []
+    for ent in all_entries:
         sig = author_signature(ent.get("author", ""), ent.get("editor", ""))
         year = (ent.get("year") or "").strip()
         if not sig or not (len(year) == 4 and year.isdigit()):
+            unusable.append(ent)
             continue
         usable.append({**ent, "_sig": sig, "_year": year})
 
-    # 1. Collapse entries into works on dedupe's identity axes -- with dedupe's
-    #    own refusal: never merge across CONFLICTING non-empty DOIs.
-    #    generate_bibliography.find_cited_entries applies exactly this rule
-    #    ("distinct non-empty DOI sets => genuinely different works"). Without
-    #    it the barrier collapses two works Phase 6 keeps, both copies take one
-    #    letter, and the References render two entries labelled 2010a.
+    tainted: dict = {}        # (sig, year) -> set of reason strings
+    taint_extra: dict = {}    # (sig, year) -> set of ids hidden from `roots`
+    taint_authors: dict = {}  # (sig, year) -> a raw author/editor string
+
+    def taint(sig, year, reason, extra_id=None, authors_hint=""):
+        if not sig or not year:
+            return
+        key = (sig, year)
+        tainted.setdefault(key, set()).add(reason)
+        if extra_id is not None:
+            taint_extra.setdefault(key, set()).add(extra_id)
+        if authors_hint and key not in taint_authors:
+            taint_authors[key] = authors_hint
+
+    # Situation 3: an unusable copy sharing identity with a usable sibling
+    # taints that sibling's group instead of silently vanishing.
+    for u in unusable:
+        udoi, ufkey = doi_of[u["id"]], fkey_of[u["id"]]
+        if not udoi and not ufkey:
+            continue
+        for ent in usable:
+            same_doi = udoi and udoi == doi_of[ent["id"]]
+            same_fkey = ufkey and ufkey == fkey_of[ent["id"]]
+            if same_doi or same_fkey:
+                taint(ent["_sig"], ent["_year"], "filtered_copy",
+                      extra_id=repr(u["id"]),
+                      authors_hint=ent.get("author") or ent.get("editor") or "")
+
+    # 1. DOI axis: same normalized DOI is unconditionally the same work --
+    #    dedupe's strongest signal, no refusal possible. This pass is a pure
+    #    equivalence relation (group-by-value), so it is order-independent:
+    #    which entries land together never depends on iteration order.
     uf = _Union()
-    by_doi, by_fkey = {}, {}
-    doi_of = {}
+    doi_set_of: dict = {}
     for ent in usable:
         uf.find(ent["id"])
-        doi, fkey = work_identity_keys(ent)
-        doi_of[ent["id"]] = doi
-        if doi:
-            uf.union(by_doi.setdefault(doi, ent["id"]), ent["id"])
+        doi_set_of[ent["id"]] = {doi_of[ent["id"]]} if doi_of[ent["id"]] else set()
+    by_doi: dict = {}
     for ent in usable:
-        _doi, fkey = work_identity_keys(ent)
-        if not fkey:
+        d = doi_of[ent["id"]]
+        if not d:
             continue
-        other = by_fkey.setdefault(fkey, ent["id"])
+        other = by_doi.setdefault(d, ent["id"])
         if other == ent["id"]:
             continue
-        a, b = doi_of.get(other), doi_of.get(ent["id"])
-        if a and b and a != b:
-            continue  # conflicting DOIs -- distinct works, same as dedupe
-        uf.union(other, ent["id"])
+        ra, rb = uf.find(other), uf.find(ent["id"])
+        if ra != rb:
+            merged = doi_set_of.get(ra, set()) | doi_set_of.get(rb, set())
+            uf.union(ra, rb)
+            doi_set_of[uf.find(ra)] = merged
+
+    # 2. Fallback-key axis, resolved CLUSTER-WIDE -- every entry sharing one
+    #    fallback key is examined together, rather than merged one at a time
+    #    against an arbitrary "first seen" representative. generate_
+    #    bibliography.find_cited_entries and dedupe_bib both refuse to merge
+    #    across distinct non-empty DOI sets; here that refusal additionally
+    #    triggers whole-group suppression when a DOI-less entry could have
+    #    bridged either conflicting side (module docstring, situation 1) --
+    #    a per-pair streaming refusal cannot detect this, because whether the
+    #    bridge is "used up" by the time a given pair is compared depends on
+    #    the order entries were processed in.
+    fkey_clusters: dict = {}
+    for ent in usable:
+        fkey = fkey_of[ent["id"]]
+        if fkey:
+            fkey_clusters.setdefault(fkey, []).append(ent)
+
+    for fkey, cluster in fkey_clusters.items():
+        if len(cluster) < 2:
+            continue
+        components: dict = {}
+        for ent in cluster:
+            components.setdefault(uf.find(ent["id"]), []).append(ent)
+        if len(components) < 2:
+            continue  # already one component via the DOI axis
+        distinct_dois: set = set()
+        for root in components:
+            distinct_dois |= doi_set_of.get(root, set())
+        if len(distinct_dois) <= 1:
+            # No conflicting DOI in play (0 or 1 distinct value across every
+            # component in the cluster): safe to merge them all into one work.
+            roots = list(components.keys())
+            base = roots[0]
+            merged = set()
+            for root in roots:
+                merged |= doi_set_of.get(root, set())
+            for root in roots[1:]:
+                uf.union(base, root)
+            doi_set_of[uf.find(base)] = merged
+        else:
+            empty_doi_components = [r for r in components if not doi_set_of.get(r)]
+            if empty_doi_components:
+                # A DOI-less copy sits in a cluster with two-plus mutually
+                # conflicting DOIs. Which side it belongs to is undecidable;
+                # suppress the whole author-year group rather than let a
+                # greedy merge pick one side and vary by input order.
+                for ent in cluster:
+                    taint(ent["_sig"], ent["_year"], "doi_conflict",
+                          authors_hint=ent.get("author") or ent.get("editor") or "")
+            # Components with distinct non-empty DOIs and no bridge stay
+            # separate, matching dedupe's refusal -- nothing further to do.
 
     works: dict = {}
     for ent in usable:
         works.setdefault(uf.find(ent["id"]), []).append(ent)
 
-    # 2. A work whose copies DISAGREE about who wrote it or when gets no
-    #    letter: the letter would be assigned under a grouping the Phase 6
-    #    winner may not belong to. Reported, never silent.
+    # 3. A work whose copies DISAGREE about who wrote it or when gets no
+    #    letter -- and every author-year group any of its copies would have
+    #    belonged to is suppressed too (situation 2), not just this one work.
     conflicts = []
     coherent = {}
     for root, members in works.items():
@@ -194,38 +331,60 @@ def assign_suffixes(entries: list[dict]) -> dict:
         years = {m["_year"] for m in members}
         if len(sigs) > 1 or len(years) > 1:
             conflicts.append(sorted(repr(m["id"]) for m in members))
+            combo_id = "conflict:" + min(repr(m["id"]) for m in members)
+            hint_of_combo: dict = {}
+            for m in members:
+                hint_of_combo.setdefault((m["_sig"], m["_year"]),
+                                         m.get("author") or m.get("editor") or "")
+            for combo_sig, combo_year in hint_of_combo:
+                taint(combo_sig, combo_year, "identity_conflict",
+                      extra_id=combo_id, authors_hint=hint_of_combo[(combo_sig, combo_year)])
             continue
         coherent[root] = members
 
-    # 3. Each work's representative is its lexicographically-first id, so the
+    # 4. Each work's representative is its lexicographically-first id, so the
     #    group key and the sort title do not depend on input order.
     reps = {root: min(members, key=lambda m: repr(m["id"]))
             for root, members in coherent.items()}
 
-    # 4. Group works by (author signature, year).
+    # 5. Group works by (author signature, year).
     groups: dict = {}
     for root, rep in reps.items():
         groups.setdefault((rep["_sig"], rep["_year"]), []).append(root)
 
-    suffixes, overflow, summary = {}, [], []
-    for (sig, year), roots in sorted(groups.items(), key=lambda kv: (kv[0][1], repr(kv[0][0]))):
+    all_keys = set(groups.keys()) | set(tainted.keys())
+    suffixes, overflow, suppressed, summary = {}, [], [], []
+    for sig, year in sorted(all_keys, key=lambda k: (k[1], repr(k[0]))):
+        key = (sig, year)
+        roots = groups.get(key, [])
+        # Sort BEFORE reading reps[roots[0]] below -- reading it first would
+        # make the reported "authors"/title-tiebreak depend on input order.
+        roots.sort(key=lambda r: (title_key(reps[r].get("title") or ""), repr(reps[r]["id"])))
+        if roots:
+            authors = reps[roots[0]].get("author") or reps[roots[0]].get("editor") or ""
+        else:
+            authors = taint_authors.get(key, "")
+
+        if key in tainted:
+            # NEVER partially letter a group: suppress it wholesale, the same
+            # way overflow suppresses an oversized one, so a suffixed
+            # citation can never select a lettered member and drop the rest.
+            works_count = len(roots) + len(taint_extra.get(key, ()))
+            suppressed.append({"authors": authors, "year": year,
+                               "works": works_count,
+                               "reasons": sorted(tainted[key])})
+            continue
         if len(roots) < 2:
             continue
         if len(roots) > len(LETTERS):
-            # NEVER partially letter a group. A group where some members carry
-            # letters and some do not lets a suffixed citation select the
-            # lettered member and drop the rest -- the exact phantom-drop this
-            # feature must not introduce. Report the whole group instead.
-            overflow.append({"authors": reps[roots[0]].get("author") or "",
-                             "year": year, "works": len(roots)})
+            overflow.append({"authors": authors, "year": year, "works": len(roots)})
             continue
-        roots.sort(key=lambda r: (title_key(reps[r].get("title") or ""), repr(reps[r]["id"])))
         for index, root in enumerate(roots):
             for member in coherent[root]:
                 suffixes[member["id"]] = LETTERS[index]
-        summary.append({"authors": reps[roots[0]].get("author") or reps[roots[0]].get("editor") or "",
-                        "year": year, "works": len(roots)})
+        summary.append({"authors": authors, "year": year, "works": len(roots)})
+
     return {"suffixes": suffixes, "groups": summary, "overflow": overflow,
-            "conflicts": conflicts,
+            "suppressed": suppressed, "conflicts": conflicts,
             "assigned_entries": len(suffixes),
             "assigned_works": sum(g["works"] for g in summary)}

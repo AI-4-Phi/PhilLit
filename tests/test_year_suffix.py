@@ -1,4 +1,5 @@
 """Item 3 F: Chicago a/b letter assignment over work identity."""
+import itertools
 import sys
 from pathlib import Path
 
@@ -30,8 +31,10 @@ class TestAuthorSignature:
             ys.author_signature("Johnson, Rebecca")
 
     def test_diacritics_folded(self):
+        # Escaped rather than literal accented characters (project rule:
+        # no non-ASCII in code -- Windows cp1252 cannot encode them).
         assert ys.author_signature("Milliere, Raphael") == \
-            ys.author_signature("Millière, Raphaël")
+            ys.author_signature("Milli\u00e8re, Rapha\u00ebl")
 
     def test_editor_used_when_no_author(self):
         assert ys.author_signature("", editor="Menary, Richard") == (("menary", "r"),)
@@ -180,3 +183,68 @@ class TestAssignSuffixes:
             e("k2", "Menary, Richard", "2010", "B", doi="10.1/b"),
         ])
         assert res["groups"] == [{"authors": "Menary, Richard", "year": "2010", "works": 2}]
+
+
+class TestWholeGroupSuppression:
+    """Regression tests for the three Critical defects found in review: a
+    streaming union-find that (1) let a DOI-less entry silently bridge two
+    conflicting-DOI works, order-dependently; (2) let an excluded conflicting
+    work's siblings letter as if it did not exist; (3) let a copy dropped by
+    the usability pre-filter (e.g. year "n.d.") silently split off from its
+    identical-DOI sibling. All three must now suppress the WHOLE author-year
+    group -- never a partial lettering -- and report it in `suppressed`.
+    """
+
+    def test_doi_less_bridge_suppresses_whole_group_regardless_of_order(self):
+        # A fallback-key cluster with two conflicting non-empty DOIs plus one
+        # DOI-less entry is genuinely ambiguous: which side the DOI-less copy
+        # belongs to is undecidable, and a streaming merge that picks
+        # greedily gives a DIFFERENT (wrong) answer depending on input order.
+        # Assert a single outcome across every permutation, not just one.
+        entries = [
+            e("k_nodoi", "Menary, Richard", "2010", "Cognitive Integration"),
+            e("k_doix", "Menary, Richard", "2010", "Cognitive Integration", doi="10.1/x"),
+            e("k_doiy", "Menary, Richard", "2010", "Cognitive Integration", doi="10.1/y"),
+            e("k_other", "Menary, Richard", "2010", "The Extended Mind", doi="10.1/z"),
+        ]
+        outcomes = set()
+        for perm in itertools.permutations(entries):
+            res = ys.assign_suffixes(list(perm))
+            outcomes.add(tuple(sorted(res["suffixes"].items())))
+            assert res["suffixes"] == {}
+        assert outcomes == {()}      # one single outcome across all 24 orderings
+        res = ys.assign_suffixes(entries)
+        assert any(g["authors"] == "Menary, Richard" and g["year"] == "2010"
+                   for g in res["suppressed"])
+
+    def test_conflicting_work_suppresses_the_whole_group(self):
+        # Three works share (Menary, Richard, 2010): Alpha and Beta are
+        # clean, but Gamma's two copies disagree on author and so get
+        # excluded via `conflicts`. Alpha/Beta must NOT letter as if Gamma
+        # never existed -- the whole group is suppressed, and reported.
+        res = ys.assign_suffixes([
+            e("k1", "Menary, Richard", "2010", "Alpha", doi="10.1/alpha"),
+            e("k2", "Menary, Richard", "2010", "Beta", doi="10.1/beta"),
+            e("g1", "Menary, Richard", "2010", "Gamma", doi="10.1/gamma"),
+            e("g2", "Menary, Richard and Smith, Jane", "2010", "Gamma",
+              doi="10.1/gamma"),
+        ])
+        assert res["suffixes"] == {}
+        assert len(res["conflicts"]) == 1
+        assert any(g["authors"] == "Menary, Richard" and g["year"] == "2010"
+                   for g in res["suppressed"])
+
+    def test_unusable_copy_suppresses_the_shared_work_group(self):
+        # y_full and y_nd are ONE work by the module's own identity rule
+        # (same DOI): y_nd's year "n.d." fails the usability pre-filter, but
+        # dropping it before identity resolution must not let y_full letter
+        # as if y_nd's existence were unknown. The whole (Menary, 2010)
+        # group -- including the genuinely distinct y_other -- is suppressed.
+        res = ys.assign_suffixes([
+            e("y_full", "Menary, Richard", "2010", "Cognitive Integration", doi="10.1/x"),
+            e("y_nd", "Menary, Richard", "n.d.", "Cognitive Integration", doi="10.1/x"),
+            e("y_other", "Menary, Richard", "2010", "The Extended Mind", doi="10.1/z"),
+        ])
+        assert res["suffixes"] == {}
+        assert any(g["authors"] == "Menary, Richard" and g["year"] == "2010"
+                   for g in res["suppressed"])
