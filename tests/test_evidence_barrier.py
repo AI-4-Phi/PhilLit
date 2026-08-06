@@ -1723,3 +1723,38 @@ def test_derived_fields_are_invisible_to_compute_tier(tmp_path, monkeypatch):
     for fields in seen_fields:
         assert "venue_status" not in fields
         assert "year_suffix" not in fields
+
+
+def test_stale_line_initial_year_suffix_is_stripped(tmp_path):
+    """The `year_suffix` half of `_DERIVED_FIELD_RE` must actually strip.
+
+    The venue_status half is covered by three tests; this half was covered by
+    none -- removing `year_suffix` from that alternation left all 54 barrier
+    tests green (item 3 F whole-branch review, I3). The docstring's assertion
+    that "all three limits apply identically to year_suffix" pinned the
+    sentence, not the behaviour.
+
+    A stale LINE-INITIAL letter is the case the regex does reach, so the
+    barrier must re-derive it: `menaryStale` is a single Menary 2011 work,
+    which needs no letter at all, so a correct run leaves it with none. (The
+    compact, non-line-initial case is a documented limit of the regex and is
+    covered separately by test_stale_compact_year_suffix_is_neutralized.)
+    """
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    stale = """@book{menaryStale,
+  author = {Menary, Richard},
+  title = {A Lone Work Needing No Letter},
+  publisher = {MIT Press},
+  year = {2011},
+  year_suffix = {q}
+}"""
+    _domain(rd, 1, stale, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix" not in content, content
+    # And the run must not have reported it as an unreachable residual either:
+    # this one WAS reachable, so the stripper owns it.
+    report = _report(rd)
+    assert report["year_suffixes"]["assigned"] == 0
