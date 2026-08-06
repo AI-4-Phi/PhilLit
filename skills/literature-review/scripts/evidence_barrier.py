@@ -140,13 +140,23 @@ _VENUE_STATUS_FIELD_RE = re.compile(
 
 
 def _strip_venue_status(entry_text: str) -> str:
-    """Remove every pre-existing venue_status field.
+    """Remove every pre-existing venue_status field it can find.
 
     The barrier OWNS this field (item 3 D): it is re-derived from OpenAlex on
     every run, so a value already in the file is either stale or hand-written,
     and both must go before this run decides. Without this, a flag survives a
     later run that had no API key -- a false discredit that no later pass can
     clear.
+
+    Documented limit, accepted rather than fixed (single-nesting-level shape,
+    same reasoning as resolve_context.strip_context_fields): the regex only
+    matches a braced value with no nested braces, or a quoted value. A
+    bare-token value (`venue_status = low-visibility,`) or a nested-brace
+    value (`venue_status = {low {x} vis}`) is NOT stripped. Neither form is
+    ever produced by this barrier itself, so this only under-covers a
+    hand-edited or adversarially forged bib -- and even then the barrier's
+    own decision this run still governs what gets re-added, so the field
+    just goes stale rather than granting a forged advantage.
     """
     return _VENUE_STATUS_FIELD_RE.sub("", entry_text)
 
@@ -341,10 +351,28 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         # item 3 D). Keeping this assignment inside the safety boundary
         # means ANY exception here -- however it arises -- lands in the
         # except clause below instead.
-        venue_report["stamped"] = len(venue_flags)
+        # Named "flagged_entries", not "stamped": this counts entries the
+        # RULE decided to flag, not fields actually spliced into a bib --
+        # _stamp_optional_field can still swallow an individual splice
+        # failure below, and this count must not claim a stamp that does
+        # not exist on disk. Not bare "flagged": vet_venues's own return
+        # already uses that key for its LIST of flagged venue names (see
+        # venue_vetting.py's `result["flagged"]`) -- reusing it here would
+        # silently overwrite that list with this int. "flagged_entries"
+        # also matches the name execute() already prints in its summary.
+        venue_report["flagged_entries"] = len(venue_flags)
+        # report gets json.dumps'd whole in execute(), gated only on
+        # OSError there -- a non-serializable value anywhere in vet_venues's
+        # return (a stray object, NaN survives dict shape checks but a
+        # custom type would not) would otherwise escape execute() as an
+        # uncaught TypeError: no stdout summary, no report written, and the
+        # bibs never written either, since they are gated on the report
+        # write succeeding. Round-tripping here, still inside the try,
+        # demotes that all the way down to the already-tested "error" path.
+        venue_report = json.loads(json.dumps(venue_report))
     except Exception as exc:
         venue_flags = {}
-        venue_report = {"status": "error", "error": repr(exc), "stamped": 0}
+        venue_report = {"status": "error", "error": repr(exc), "flagged_entries": 0}
     report["venue_vetting"] = venue_report
 
     # Build final content in memory: context fields + stamp, then bookkeeping.
@@ -383,9 +411,6 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     chunk = pre_heal_chunk
                     report["healed"][bib_name][key] = {
                         "outcome": "unhealed", "source": h[1]}
-            status = venue_flags.get((i, key))
-            if status:
-                chunk = _stamp_optional_field(chunk, "venue_status", status)
             fields = se.parse_entry_fields(chunk)
             att = atts[i].get(key) or se.EntryAttestation()
             # Re-derive from the final text: the stamp must never trust a
@@ -393,6 +418,14 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # did not land in THIS chunk (fail-closed against index skew).
             att.abstract_attested = se.attest_abstract(fields, e_entries.get(key))
             tier = se.compute_tier(etype, fields, att)
+            # venue_status is spliced AFTER tier is computed, not before: it
+            # is the only field splice upstream of compute_tier, and tier
+            # invariance (item 3 D) must be structural, not incidental on
+            # compute_tier happening not to read this field. Splicing here
+            # means it can no longer matter even if that ever changes.
+            status = venue_flags.get((i, key))
+            if status:
+                chunk = _stamp_optional_field(chunk, "venue_status", status)
             final_chunks.append(se.stamp_entry_text(chunk, tier))
             report["stamps"][bib_name][key] = tier
             report["attestations"][bib_name][key] = _att_blob(
@@ -451,7 +484,7 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         "cleaning_abstained": len(report.get("cleaning_abstained") or []),
         "venue_vetting": {
             "status": (report.get("venue_vetting") or {}).get("status", "not-run"),
-            "flagged_entries": (report.get("venue_vetting") or {}).get("stamped", 0),
+            "flagged_entries": (report.get("venue_vetting") or {}).get("flagged_entries", 0),
         },
         "report": str(report_path),
     }))

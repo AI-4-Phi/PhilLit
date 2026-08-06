@@ -47,9 +47,19 @@ def _domain(review_dir, i, bib_text, cleaning=None, enrichment=None,
 
 
 def _run(review_dir, n):
+    # cwd=review_dir, not the pytest cwd (the repo root): evidence_barrier's
+    # main() calls load_dotenv(find_dotenv(usecwd=True), override=True),
+    # which walks UP from the subprocess's cwd looking for a .env and, if it
+    # finds one, OVERRIDES whatever was in the inherited environment --
+    # including a real OPENALEX_API_KEY that tests/conftest.py's isolation
+    # fixture already stripped. A repo-root .env (exactly what .env.example
+    # and /phillit:setup tell developers to create) would otherwise defeat
+    # that fixture for every _run()-driven test. review_dir is always an
+    # absolute path under pytest's tmp_path, outside the repo tree, so the
+    # upward search from there can never reach it.
     return subprocess.run(
         [sys.executable, str(SCRIPT), str(review_dir), "--domains", str(n)],
-        capture_output=True, text=True)
+        capture_output=True, text=True, cwd=str(review_dir))
 
 
 def _cleaning(i, entries, breaker=False):
@@ -960,7 +970,7 @@ def test_venue_flag_stamped_on_flagged_entry_only(tmp_path, monkeypatch):
     assert "venue_status" in okoro_chunk
     report = _report(rd)
     assert report["venue_vetting"]["status"] == "complete"
-    assert report["venue_vetting"]["stamped"] == 1
+    assert report["venue_vetting"]["flagged_entries"] == 1
 
 
 def test_venue_vetting_failure_never_fails_the_barrier(tmp_path, monkeypatch):
@@ -994,23 +1004,39 @@ def test_venue_vetting_skipped_without_key_is_recorded(tmp_path, monkeypatch):
     assert evidence_barrier.execute(rd, 1) == 0
     report = _report(rd)
     assert report["venue_vetting"]["status"] == "skipped"
-    assert report["venue_vetting"]["stamped"] == 0
+    assert report["venue_vetting"]["flagged_entries"] == 0
 
 
 def test_venue_flag_does_not_change_evidence_tiers(tmp_path, monkeypatch):
     """venue_status is not an evidence signal: the same review must stamp the
-    same EVIDENCE-* tiers with and without a flag."""
+    same EVIDENCE-* tiers with and without a flag.
+
+    Both TWO_VENUE_BIB entries sit at EVIDENCE-NONE, the floor tier -- a
+    plain dict-equality check on that alone cannot detect a demotion, since
+    there is nowhere lower to fall. smith2020data (journal Synthese, the
+    entry that gets flagged in the "on" case below) is given a verified DOI
+    here so it reaches EVIDENCE-EXISTENCE, giving the comparison somewhere
+    real to fall from.
+    """
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
+    bib = TWO_VENUE_BIB.replace(
+        "  journal = {Synthese},",
+        "  journal = {Synthese},\n  doi = {10.1000/xyz123},")
+    cleaning = _cleaning(1, {"smith2020data": {
+        "api_matched": True, "verified_identifier": "doi",
+        "verified_identifier_value": "10.1000/xyz123", "entry_type": "article"}})
     tiers = {}
     for label, vet in (("off", _fake_vet(flagged=[], status="skipped")),
                        ("on", _fake_vet(flagged=["synthese"]))):
         rd = tmp_path / f"review-{label}"
-        _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
-                enrichment=_enrichment(1))
+        _domain(rd, 1, bib, cleaning=cleaning, enrichment=_enrichment(1))
         monkeypatch.setattr(evidence_barrier.vv, "vet_venues", vet)
         assert evidence_barrier.execute(rd, 1) == 0
         tiers[label] = _report(rd)["stamps"]["literature-domain-1.bib"]
+    # Confirm the setup actually reaches a non-floor tier -- otherwise the
+    # equality check below would pass vacuously even with a demotion bug.
+    assert tiers["off"]["smith2020data"] == "EVIDENCE-EXISTENCE"
     assert tiers["off"] == tiers["on"]
 
 
@@ -1048,8 +1074,14 @@ def test_stale_venue_status_is_removed_when_vetting_is_skipped(tmp_path, monkeyp
 
 
 def test_hand_written_venue_status_is_removed(tmp_path, monkeypatch):
-    """A researcher (or a forging agent) cannot inject the flag: it is
-    stripped before the pass and only re-added on this run's own verdict."""
+    """A braced- or quoted-value venue_status is stripped before the pass and
+    only re-added on this run's own verdict. Narrower than "cannot inject
+    the flag" in general: _strip_venue_status's regex covers only these two
+    forms (single-nesting-level braced, or quoted) -- a bare-token value
+    (`venue_status = low-visibility,`) or a nested-brace value
+    (`venue_status = {low {x} vis}`) are accepted, documented limits of the
+    regex (see _strip_venue_status's docstring) that this test does not
+    cover."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     rd = tmp_path / "review"
@@ -1080,6 +1112,32 @@ def test_stamp_failure_does_not_fail_the_barrier(tmp_path, monkeypatch):
     assert report["status"] in ("complete", "degraded")
     assert "venue_status" not in (rd / "literature-domain-1.bib").read_text(
         encoding="utf-8")
+
+
+def test_non_serializable_vet_venues_return_never_fails_the_barrier(
+        tmp_path, monkeypatch):
+    """Regression pin: report["venue_vetting"] gets json.dumps'd whole in
+    execute(), gated only on OSError there -- a non-serializable value
+    anywhere in vet_venues's return (a stray object under "evidence", say)
+    would otherwise escape execute() as an uncaught TypeError: no stdout
+    summary, no report written, and the bibs never written either, since
+    they are gated on the report write succeeding. That is strictly worse
+    than a recorded "error" status. venue_names is non-empty here (TWO_
+    VENUE_BIB has two journal-bearing entries), so this exercises the
+    round-trip on the path THROUGH the verdict-mapping loop, not just the
+    empty-venue_names path test_non_dict_vet_venues_return_with_no_journals_
+    never_fails_the_barrier already covers."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    bad = {"status": "complete", "verdicts": {}, "evidence": {"x": object()}}
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", lambda names: bad)
+    assert evidence_barrier.execute(rd, 1) == 0          # NOT a failed run
+    report = _report(rd)
+    assert report["status"] in ("complete", "degraded")
+    assert report["venue_vetting"]["status"] == "error"
+    assert report["venue_vetting"]["flagged_entries"] == 0
 
 
 def test_only_journal_bearing_entries_are_vetted(tmp_path, monkeypatch):
@@ -1119,7 +1177,7 @@ def test_non_dict_vet_venues_return_with_no_journals_never_fails_the_barrier(
     report = _report(rd)
     assert report["status"] in ("complete", "degraded")
     assert report["venue_vetting"]["status"] == "error"
-    assert report["venue_vetting"]["stamped"] == 0
+    assert report["venue_vetting"]["flagged_entries"] == 0
 
 
 def test_no_ambient_openalex_key_during_tests():

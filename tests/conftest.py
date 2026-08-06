@@ -174,6 +174,18 @@ def _no_ambient_openalex_key():
     silently, since venue-vetting failures never fail a test. Tests that
     need the key set it themselves with monkeypatch.setenv, which still
     works: this fixture only removes what was ambient before any test ran.
+
+    This fixture is NECESSARY but not, by itself, SUFFICIENT: evidence_
+    barrier.main() calls load_dotenv(find_dotenv(usecwd=True), override=
+    True), which re-reads OPENALEX_API_KEY from a .env found by walking up
+    from the subprocess's cwd and OVERRIDES the stripped environment with
+    it. A repo-root .env (exactly what .env.example and /phillit:setup
+    tell developers to create) would defeat this fixture on its own. The
+    other half of the fix is in test_evidence_barrier.py's _run(): it runs
+    the subprocess with cwd=review_dir, a tmp_path directory outside the
+    repo tree, so that upward search can never reach a repo-root .env.
+    Both halves are required together; this fixture alone protects only
+    developer checkouts that have no .env at all.
     """
     saved = os.environ.pop("OPENALEX_API_KEY", None)
     yield
