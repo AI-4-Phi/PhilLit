@@ -895,3 +895,203 @@ def test_barrier_rederivation_demotes_when_splice_is_noop(tmp_path, monkeypatch)
     assert report["stamps"]["literature-domain-1.bib"]["pasq2019"] == "EVIDENCE-EXISTENCE"
     att = report["attestations"]["literature-domain-1.bib"]["pasq2019"]
     assert att["abstract_attested"] is False
+
+
+# --- Item 3 D: venue vetting ---
+
+TWO_VENUE_BIB = """@article{okoro2021ai,
+  author = {Okoro, Ada},
+  title = {Agency and Machines},
+  journal = {Advanced International Journal for Research},
+  year = {2021}
+}
+
+@article{smith2020data,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  journal = {Synthese},
+  year = {2020}
+}"""
+
+
+def _raise_on_field(field_name):
+    """A drop-in add_field_to_entry that blows up on ONE field, so a stamping
+    bug can be simulated without breaking context/heal splices."""
+    real = None
+
+    def _wrapped(entry_text, name, value):
+        if name == field_name:
+            raise RuntimeError("splice bug")
+        return real(entry_text, name, value)
+
+    import evidence_barrier as _eb
+    real = _eb.add_field_to_entry
+    return _wrapped
+
+
+def _fake_vet(flagged=(), status="complete", seen=None):
+    """A vet_venues stand-in. `flagged` holds NORMALIZED venue names."""
+    def _vet(names):
+        if seen is not None:
+            seen.append(list(names))
+        return {"status": status, "reason": None, "looked_up": len(names),
+                "cache_hits": 0, "skipped_cap": 0, "flagged": sorted(flagged),
+                "evidence": {v: {"h_index": 2, "resolved": True} for v in flagged},
+                "verdicts": {"advanced international journal for research":
+                             "advanced international journal for research" in flagged,
+                             "synthese": "synthese" in flagged}}
+    return _vet
+
+
+def test_venue_flag_stamped_on_flagged_entry_only(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    monkeypatch.setattr(
+        evidence_barrier.vv, "vet_venues",
+        _fake_vet(flagged=["advanced international journal for research"]))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "venue_status = {low-visibility}" in content
+    assert content.count("venue_status") == 1  # never the Synthese entry
+    okoro_chunk = [c for c in content.split("\n@") if "okoro2021ai" in c][0]
+    assert "venue_status" in okoro_chunk
+    report = _report(rd)
+    assert report["venue_vetting"]["status"] == "complete"
+    assert report["venue_vetting"]["stamped"] == 1
+
+
+def test_venue_vetting_failure_never_fails_the_barrier(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+
+    def boom(names):
+        raise RuntimeError("openalex down")
+
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", boom)
+    assert evidence_barrier.execute(rd, 1) == 0          # NOT a failed run
+    report = _report(rd)
+    assert report["status"] in ("complete", "degraded")
+    assert report["venue_vetting"]["status"] == "error"
+    assert "openalex down" in report["venue_vetting"]["error"]
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "venue_status" not in content
+
+
+def test_venue_vetting_skipped_without_key_is_recorded(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues",
+                        _fake_vet(flagged=[], status="skipped"))
+    assert evidence_barrier.execute(rd, 1) == 0
+    report = _report(rd)
+    assert report["venue_vetting"]["status"] == "skipped"
+    assert report["venue_vetting"]["stamped"] == 0
+
+
+def test_venue_flag_does_not_change_evidence_tiers(tmp_path, monkeypatch):
+    """venue_status is not an evidence signal: the same review must stamp the
+    same EVIDENCE-* tiers with and without a flag."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    tiers = {}
+    for label, vet in (("off", _fake_vet(flagged=[], status="skipped")),
+                       ("on", _fake_vet(flagged=["synthese"]))):
+        rd = tmp_path / f"review-{label}"
+        _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+                enrichment=_enrichment(1))
+        monkeypatch.setattr(evidence_barrier.vv, "vet_venues", vet)
+        assert evidence_barrier.execute(rd, 1) == 0
+        tiers[label] = _report(rd)["stamps"]["literature-domain-1.bib"]
+    assert tiers["off"] == tiers["on"]
+
+
+def test_stale_venue_status_is_removed_when_the_venue_is_now_clear(tmp_path, monkeypatch):
+    """The barrier OWNS venue_status: a flag from an earlier run must not
+    survive a run that no longer flags the venue."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    stale = TWO_VENUE_BIB.replace(
+        "  journal = {Synthese},",
+        "  journal = {Synthese},\n  venue_status = {low-visibility},")
+    _domain(rd, 1, stale, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", _fake_vet(flagged=[]))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "venue_status" not in content
+    assert "journal = {Synthese}" in content     # the neighbour survives intact
+
+
+def test_stale_venue_status_is_removed_when_vetting_is_skipped(tmp_path, monkeypatch):
+    """No API key must not mean "keep yesterday's discredit"."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    stale = TWO_VENUE_BIB.replace(
+        "  journal = {Synthese},",
+        "  journal = {Synthese},\n  venue_status = {low-visibility},")
+    _domain(rd, 1, stale, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues",
+                        _fake_vet(flagged=[], status="skipped"))
+    assert evidence_barrier.execute(rd, 1) == 0
+    assert "venue_status" not in (rd / "literature-domain-1.bib").read_text(
+        encoding="utf-8")
+
+
+def test_hand_written_venue_status_is_removed(tmp_path, monkeypatch):
+    """A researcher (or a forging agent) cannot inject the flag: it is
+    stripped before the pass and only re-added on this run's own verdict."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    forged = TWO_VENUE_BIB.replace(
+        "  journal = {Synthese},",
+        '  journal = {Synthese},\n  venue_status = "hand written nonsense",')
+    _domain(rd, 1, forged, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", _fake_vet(flagged=[]))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "hand written nonsense" not in content
+    assert "venue_status" not in content
+
+
+def test_stamp_failure_does_not_fail_the_barrier(tmp_path, monkeypatch):
+    """The optional splice is inside the safety boundary too."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    monkeypatch.setattr(
+        evidence_barrier.vv, "vet_venues",
+        _fake_vet(flagged=["advanced international journal for research"]))
+    monkeypatch.setattr(evidence_barrier, "add_field_to_entry",
+                        _raise_on_field("venue_status"))
+    assert evidence_barrier.execute(rd, 1) == 0
+    report = _report(rd)
+    assert report["status"] in ("complete", "degraded")
+    assert "venue_status" not in (rd / "literature-domain-1.bib").read_text(
+        encoding="utf-8")
+
+
+def test_only_journal_bearing_entries_are_vetted(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    mixed = TWO_VENUE_BIB.replace(
+        "journal = {Advanced International Journal for Research},",
+        "howpublished = {arXiv:2101.00001},")
+    _domain(rd, 1, mixed, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    seen = []
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues",
+                        _fake_vet(flagged=[], seen=seen))
+    assert evidence_barrier.execute(rd, 1) == 0
+    assert seen == [["Synthese"]]   # raw journal names, deduped and sorted

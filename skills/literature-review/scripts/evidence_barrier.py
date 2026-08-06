@@ -27,6 +27,11 @@ from enrich_bibliography import add_field_to_entry
 import resolve_context as rc
 import stamp_evidence as se
 
+try:
+    import venue_vetting as vv
+except Exception:  # optional pass -- never block the accuracy gate
+    vv = None
+
 
 def _load_ledger(path: Path, expected_bib_name: str, kind: str):
     """(state, payload): present / missing / malformed. Never raises."""
@@ -130,6 +135,37 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
     return None
 
 
+_VENUE_STATUS_FIELD_RE = re.compile(
+    r"\n[ \t]*venue_status\s*=\s*(?:\{[^{}]*\}|\"[^\"]*\")\s*,?", re.IGNORECASE)
+
+
+def _strip_venue_status(entry_text: str) -> str:
+    """Remove every pre-existing venue_status field.
+
+    The barrier OWNS this field (item 3 D): it is re-derived from OpenAlex on
+    every run, so a value already in the file is either stale or hand-written,
+    and both must go before this run decides. Without this, a flag survives a
+    later run that had no API key -- a false discredit that no later pass can
+    clear.
+    """
+    return _VENUE_STATUS_FIELD_RE.sub("", entry_text)
+
+
+def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
+    """Add an OPTIONAL engine-derived field, or return the text unchanged.
+
+    Optional passes (item 3 D's venue_status) must not be able to fail the
+    barrier, and that has to include their own splice, not just their network
+    calls -- a regression here would otherwise turn a reviewable run into
+    status "failed". Losing the field costs a caveat; losing the run costs the
+    review.
+    """
+    try:
+        return add_field_to_entry(entry_text, field, value)
+    except Exception:
+        return entry_text
+
+
 def _att_blob(att: se.EntryAttestation, enrich_entry, context_value):
     return {
         "abstract_attested": att.abstract_attested,
@@ -214,7 +250,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     needs_context = {} # "bib_name::key" -> {"entry_type", "fields"}
     healed = {}         # (i, key) -> (restored_text, canonical_source)
     for i, d in domains.items():
-        chunks = [rc.strip_context_fields(c) if se.entry_header(c) else c
+        chunks = [rc.strip_context_fields(_strip_venue_status(c))
+                  if se.entry_header(c) else c
                   for c in se.split_entries(d["bib"].read_text(encoding="utf-8"))]
         parsed[i] = chunks
         atts[i] = {}
@@ -277,6 +314,32 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             atts[i][key].context_written = True
             context_values[(i, key)] = (res["field"], res["value"])
 
+    # Item 3 D: venue vetting. A PLUMBING pass inside a fail-closed gate --
+    # it must never turn a reviewable run into a failed one, so everything is
+    # wrapped and every failure means "no flags".
+    venue_flags = {}   # (i, key) -> status token
+    try:
+        if vv is None:
+            raise RuntimeError("venue_vetting unavailable")
+        venue_names = {}   # (i, key) -> raw journal name
+        for i, d in domains.items():
+            for chunk in parsed[i]:
+                header = se.entry_header(chunk)
+                if not header:
+                    continue
+                journal = (se.parse_entry_fields(chunk).get("journal") or "").strip()
+                if journal:
+                    venue_names[(i, header[1])] = journal
+        venue_report = vv.vet_venues(sorted(set(venue_names.values())))
+        for ik, journal in venue_names.items():
+            if venue_report["verdicts"].get(vv.normalize_venue_name(journal)):
+                venue_flags[ik] = vv.STATUS_LOW_VISIBILITY
+    except Exception as exc:
+        venue_flags = {}
+        venue_report = {"status": "error", "error": repr(exc)}
+    venue_report["stamped"] = len(venue_flags)
+    report["venue_vetting"] = venue_report
+
     # Build final content in memory: context fields + stamp, then bookkeeping.
     outputs = {}
     for i, d in domains.items():
@@ -313,6 +376,9 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     chunk = pre_heal_chunk
                     report["healed"][bib_name][key] = {
                         "outcome": "unhealed", "source": h[1]}
+            status = venue_flags.get((i, key))
+            if status:
+                chunk = _stamp_optional_field(chunk, "venue_status", status)
             fields = se.parse_entry_fields(chunk)
             att = atts[i].get(key) or se.EntryAttestation()
             # Re-derive from the final text: the stamp must never trust a
@@ -376,6 +442,10 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         "tiers": tiers,
         "web_sources_none": (report.get("web_sources_none") or {}).get("count", 0),
         "cleaning_abstained": len(report.get("cleaning_abstained") or []),
+        "venue_vetting": {
+            "status": (report.get("venue_vetting") or {}).get("status", "not-run"),
+            "flagged_entries": (report.get("venue_vetting") or {}).get("stamped", 0),
+        },
         "report": str(report_path),
     }))
     return 1 if report["status"] == "failed" else 0
