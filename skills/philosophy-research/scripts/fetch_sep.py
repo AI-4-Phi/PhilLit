@@ -57,10 +57,47 @@ _YEAR_FIELD_RE = re.compile(r'^(?:\d{4}|forthcoming)$', re.IGNORECASE)
 _PARTIAL_RE = re.compile(r'^([^,]+),\s*(\d{4})')
 _EDITOR_RE = re.compile(r'\(eds?\.?\)', re.IGNORECASE)
 
+
+def _find_year_field(fields: list[str]) -> Optional[int]:
+    """Index of the field to read as the entry's year, or None.
+
+    The FIRST field that is exactly a year, skipping any whose successor is
+    also year-like. Two rules meet here:
+
+    * First, not last. The old regex's greedy author group effectively took
+      the *last* viable year; taking the first is better on entries that
+      carry a later reprint/translation/edition year, which is the common
+      multi-year shape.
+    * Except when the next field is itself a year, because then the first
+      year is the one that would be read as the title. On
+      "Smith, J., 1999, 2001, Title, Publisher." taking 1999 yields
+      title="2001" -- a fabricated-looking title emitted at "high"
+      confidence, and worse than no parse at all (see _title_text in
+      resolve_context.py). Skipping to 2001 reproduces the old greedy
+      outcome on exactly the inputs where the old outcome was the right one.
+
+    Index-safe: a year in the last field has no successor and is treated as
+    followed by nothing (the caller rejects it on position anyway).
+    """
+    for i, field in enumerate(fields):
+        if not _YEAR_FIELD_RE.match(field):
+            continue
+        following = fields[i + 1] if i + 1 < len(fields) else ''
+        if _YEAR_FIELD_RE.match(following):
+            continue
+        return i
+    return None
+
 # A single bibliography line longer than this is not a reference we can parse
-# and is not worth the attempt. SEP's longest genuine entries run a few hundred
-# characters; this bound exists so no future parser change can be handed an
-# unbounded string (see docs/known-issues/sep-bibliography-regex-hang.md).
+# and is not worth the attempt. This bound exists so no future parser change
+# can be handed an unbounded string (see
+# docs/known-issues/sep-bibliography-regex-hang.md). Over the local SEP cache
+# on 2026-08-06 -- 6,731 entries across the 41 articles past reviews had
+# fetched -- lengths ran: median 129, p95 244, p99 319, max 915, nothing above
+# 1,000. That is a sample of what this project asks SEP for, not of SEP, so the
+# cap sits about 2x above the longest line observed rather than at it. Over-cap
+# lines are not discarded: extract_bibliography still keeps `raw` with
+# `parsed: None`, which is exactly the IEP path.
 _MAX_ENTRY_CHARS = 2000
 
 
@@ -72,17 +109,23 @@ def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
 
         ^([^,]+(?:,\\s*[^,]+)*),\\s*(\\d{4}|forthcoming),...
 
-    whose nested repetition backtracks catastrophically: the inner `[^,]+`
-    can absorb the same characters as the outer one, so a line with no year
-    in the expected position made the engine try every partition of the
-    comma-separated prefix. Measured on the shipped pattern, a year-less
-    author list cost 0.0009 s at 10 commas and 3.5 s at 22 -- roughly 4x per
-    two commas, i.e. minutes at 30 and days at 40. One such entry in SEP's
+    whose repeated comma-field group contains overlapping repetitions: after
+    each comma both `\\s*` and `[^,]+` can consume the separator space, so
+    every ", " admits two equivalent ways to match the same text. (It is NOT
+    that the inner `[^,]+` absorbs what the outer one could -- the outer
+    repeated unit begins with a comma, which `[^,]+` cannot consume.) When the
+    required `,\\s*(\\d{4}|forthcoming),` never matches -- an entry with no year
+    in that position -- the engine explores those equivalent allocations in
+    combination across fields. Measured on the shipped pattern, a year-less
+    author list cost 0.0009 s at 10 commas and 3.5 s at 22: about 2x per comma,
+    4x per two, i.e. minutes at 30 and days at 40. One such entry in SEP's
     "Virtue Epistemology" bibliography hung a real review's evidence barrier
     for 72 minutes at 100% CPU (2026-08-06 live run).
 
-    The split-based form below is linear in the length of the line and cannot
-    backtrack, because there is no repetition to backtrack through.
+    The split-based form below is linear in the length of the line. It still
+    runs regexes -- `_YEAR_FIELD_RE`, `_PARTIAL_RE`, `_EDITOR_RE`, the skip
+    patterns -- but each is anchored or bounded and none contains nested
+    ambiguous repetition, so none can backtrack combinatorially.
     """
     raw_text = raw_text.strip()
     if not raw_text:
@@ -100,9 +143,9 @@ def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
     # Find the FIRST comma-delimited field that is exactly a year; everything
     # before it is the author list, everything after is title + publisher.
     fields = [f.strip() for f in raw_text.split(',')]
-    year_at = next((i for i, f in enumerate(fields) if _YEAR_FIELD_RE.match(f)), None)
-    # A year at position 0 leaves no author, and one at the last position
-    # leaves no title/publisher -- neither is the standard form.
+    year_at = _find_year_field(fields)
+    # A year at position 0 leaves no author, and fewer than two fields after
+    # the year leaves no title/publisher pair -- neither is the standard form.
     if year_at is not None and 0 < year_at < len(fields) - 2 and raw_text.endswith('.'):
         authors_str = ', '.join(fields[:year_at])
         year = fields[year_at]
@@ -110,6 +153,11 @@ def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
         # entry's trailing period removed (the old regex's `(.+)\.$`).
         title = fields[year_at + 1].strip('\'"')
         publisher = ', '.join(fields[year_at + 2:]).rstrip('.').strip()
+        if not title:
+            # "Author, 1999, , Publisher." -- an empty title field is not a
+            # standard-form parse. Emitting it at "high" confidence would
+            # advertise a title the entry does not have; fall through instead.
+            return _partial_or_unparseable(raw_text)
         parsed = {
             "authors": [a.strip() for a in re.split(r'\s+and\s+', authors_str)],
             "year": year,
@@ -120,7 +168,11 @@ def parse_bibliography_entry(raw_text: str) -> tuple[Optional[dict], str]:
             parsed["is_edited"] = True
         return parsed, "high"
 
-    # Try partial extraction. Safe as written: one bounded group, no nesting.
+    return _partial_or_unparseable(raw_text)
+
+
+def _partial_or_unparseable(raw_text: str) -> tuple[Optional[dict], str]:
+    """Partial extraction. Safe as written: one bounded group, no nesting."""
     match = _PARTIAL_RE.match(raw_text)
     if match:
         return {"authors": [match.group(1).strip()], "year": match.group(2), "title": raw_text}, "low"

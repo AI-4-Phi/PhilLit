@@ -710,3 +710,120 @@ class TestBibliographyParserIsLinear:
             "Sosa, Ernest, forthcoming, Epistemic Explanations, Oxford: OUP.")
         assert confidence == "high"
         assert parsed["year"] == "forthcoming"
+
+    def test_an_over_length_entry_keeps_its_raw_line(self):
+        """The cap rejects the PARSE, never the entry.
+
+        Over-cap lines must still reach the discovery agent and the barrier's
+        raw-text candidate matching, which is exactly what fetch_iep.py ships
+        for every entry (`parsed: None`). Dropping them instead would lose
+        bibliography data the cap was never meant to touch.
+        """
+        import fetch_sep
+        raw = ", ".join(["Aaaa Bbbb"] * 500)
+        assert len(raw) > fetch_sep._MAX_ENTRY_CHARS
+        soup = BeautifulSoup(
+            f"<html><body><div id='bibliography'><ul><li>{raw}</li></ul>"
+            "</div></body></html>", "lxml")
+        entries = fetch_sep.extract_bibliography(soup)
+        assert len(entries) == 1
+        assert entries[0]["raw"] == raw
+        assert entries[0]["parsed"] is None
+        assert entries[0]["confidence"] == "unparseable"
+
+
+class TestBibliographyParserValues:
+    """Value behaviour of the split parser, pinned against the old regex.
+
+    The rewrite (2026-08-06) had to be value-equivalent to the regex it
+    replaced on realistic input. Two external reviews traced the old pattern
+    by hand on these shapes; the assertions below record what both
+    implementations do, so a later refactor cannot flip one silently. Where
+    the behaviour is a known wart rather than a virtue, the test says so.
+    """
+
+    def test_a_comma_bearing_title_is_truncated_at_the_first_comma(self):
+        """RECORDED DECISION, not an accident -- and not a regression.
+
+        The old regex's non-greedy `(.+?)` title group also stopped at the
+        first comma after the year, so both implementations truncate here.
+        Fixing it needs quote-aware or markup-aware boundaries, which is a
+        separate change; see the follow-up in
+        docs/known-issues/sep-bibliography-regex-hang.md.
+        """
+        import fetch_sep
+        parsed, confidence = fetch_sep.parse_bibliography_entry(
+            "Ayer, A.J., 1936, Language, Truth and Logic, London: Gollancz.")
+        assert confidence == "high"
+        assert parsed["year"] == "1936"
+        assert parsed["title"] == "Language"
+        assert parsed["publisher"] == "Truth and Logic, London: Gollancz"
+
+    def test_a_repeated_author_dash_line_parses(self):
+        """SEP writes a repeated author as an em-dash run; it is a real entry."""
+        import fetch_sep
+        parsed, confidence = fetch_sep.parse_bibliography_entry(
+            "–––, 2011, Knowing Full Well, "
+            "Princeton: Princeton University Press.")
+        assert confidence == "high"
+        assert parsed["authors"] == ["–––"]
+        assert parsed["year"] == "2011"
+        assert parsed["title"] == "Knowing Full Well"
+
+    def test_no_trailing_period_falls_through_to_partial(self):
+        """The standard form requires a terminal period; without one the
+        entry drops to the low-confidence partial, whose title is the whole
+        raw line."""
+        import fetch_sep
+        raw = "Smith, 2020, Title, Press"
+        parsed, confidence = fetch_sep.parse_bibliography_entry(raw)
+        assert confidence == "low"
+        assert parsed["authors"] == ["Smith"]
+        assert parsed["year"] == "2020"
+        assert parsed["title"] == raw
+        assert "publisher" not in parsed
+
+    def test_an_adjacent_second_year_is_not_read_as_the_title(self):
+        """Take the FIRST year -- unless doing so makes the title a bare year.
+
+        Real instance, SEP's cached corpus: "Whitehead, Alfred and Bertrand
+        Russell, 1910, 1912, 1913, Principia Mathematica, 3 vols, ...". First
+        year alone gives title="1912" at "high" confidence -- a fabricated
+        title, and worse than no parse, since resolve_context._title_text
+        prefers a non-empty parsed title over the raw line. The old greedy
+        regex took the last viable year and got this one right.
+        """
+        import fetch_sep
+        parsed, confidence = fetch_sep.parse_bibliography_entry(
+            "Smith, J., 1999, 2001, Title, Publisher.")
+        assert confidence == "high"
+        assert parsed["year"] == "2001"
+        assert parsed["title"] == "Title"
+        assert parsed["publisher"] == "Publisher"
+
+        parsed, _ = fetch_sep.parse_bibliography_entry(
+            "Whitehead, Alfred and Bertrand Russell, 1910, 1912, 1913, "
+            "Principia Mathematica, 3 vols, Cambridge: Cambridge University Press.")
+        assert parsed["year"] == "1913"
+        assert parsed["title"] == "Principia Mathematica"
+
+    def test_a_lone_later_year_is_still_read_as_a_reprint_not_the_year(self):
+        """The guard fires only on ADJACENT years, so the first-year rule --
+        which is what makes reprint/translation years lose to the original --
+        survives everywhere else."""
+        import fetch_sep
+        parsed, confidence = fetch_sep.parse_bibliography_entry(
+            "Smith, 2000, Alpha, Note, 2010, Beta, Press.")
+        assert confidence == "high"
+        assert parsed["year"] == "2000"
+        assert parsed["title"] == "Alpha"
+
+    def test_an_empty_title_field_is_not_a_high_confidence_parse(self):
+        """"Author, 1999, , Publisher." has no title. Emitting one at "high"
+        advertises a field the entry does not have; the old regex's `(.+?)`
+        could not match empty and fell through, so this restores that."""
+        import fetch_sep
+        raw = "Author, 1999, , Publisher."
+        parsed, confidence = fetch_sep.parse_bibliography_entry(raw)
+        assert confidence == "low"
+        assert parsed["title"] == raw
