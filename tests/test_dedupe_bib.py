@@ -1288,3 +1288,102 @@ class TestCleanerVerdictPropagation:
         text = out.read_text(encoding="utf-8")
         assert "International Conference" not in text
         assert "EVIDENCE-" in text  # tier token stamped, no crash
+
+
+class TestVenueStatusField:
+    """Item 3 D: venue_status must be known to the field scanner, but must
+    be unioned apart from the journal identity it was computed against."""
+
+    def test_venue_status_is_a_known_field(self):
+        from dedupe_bib import _KNOWN_FIELDS
+        assert "venue_status" in _KNOWN_FIELDS
+
+    def test_venue_status_is_not_substantive(self):
+        # A derived venue verdict must never be unioned independently of the
+        # journal identity it was computed against: _union_substantive_fields
+        # copies any listed field the winner lacks, with no coupling between
+        # fields, so a winner with a different journal could inherit the
+        # loser's verdict.
+        from dedupe_bib import _SUBSTANTIVE_FIELDS
+        import generate_bibliography
+        assert "venue_status" not in _SUBSTANTIVE_FIELDS
+        assert "venue_status" not in generate_bibliography._SUBSTANTIVE_FIELDS
+
+    def test_flagged_winner_keeps_its_field_and_flagged_loser_does_not_donate(self, tmp_path):
+        """Real duplicates -- same DOI, different keys -- so this exercises
+        winner selection and the loser-field union, not just co-existence."""
+        winner = """@article{smith2020rich,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  journal = {Synthese},
+  doi = {10.1000/xyz123},
+  year = {2020},
+  abstract = {A real abstract, which is what makes this copy the winner.},
+  keywords = {data, High}
+}"""
+        loser = """@article{smith2020thin,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  journal = {Advanced International Journal for Research},
+  venue_status = {low-visibility},
+  doi = {10.1000/xyz123},
+  year = {2020},
+  keywords = {data, Medium}
+}"""
+        a = tmp_path / "literature-domain-1.bib"
+        b = tmp_path / "literature-domain-2.bib"
+        a.write_text(winner, encoding="utf-8")
+        b.write_text(loser, encoding="utf-8")
+        out = tmp_path / "literature-all.bib"
+        r = subprocess.run(
+            [sys.executable, str(SCRIPT_PATH), str(out), str(a), str(b)],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        merged = out.read_text(encoding="utf-8")
+        from pybtex.database import parse_string
+        entries = parse_string(merged, "bibtex").entries
+        assert len(entries) == 1                      # they really did merge
+        surviving = list(entries.values())[0]
+        # The loser's verdict must NOT travel to a winner whose journal is a
+        # different venue entirely.
+        assert "venue_status" not in surviving.fields
+        assert surviving.fields.get("journal") == "Synthese"
+        assert "A real abstract" in surviving.fields.get("abstract", "")
+
+    def test_entry_with_venue_status_survives_dedup(self, tmp_path):
+        """A flagged entry must merge like any other: the field is carried
+        through and no neighbouring field is eaten by the removal scan."""
+        flagged = """@article{okoro2021ai,
+  author = {Okoro, Ada},
+  title = {Agency and Machines},
+  journal = {Advanced International Journal for Research},
+  venue_status = {low-visibility},
+  doi = {10.1000/aim1},
+  year = {2021},
+  keywords = {agency, High}
+}"""
+        other = """@article{smith2020data,
+  author = {Smith, Anna},
+  title = {Data and Things},
+  journal = {Synthese},
+  doi = {10.1000/xyz123},
+  year = {2020},
+  keywords = {data, Medium}
+}"""
+        a = tmp_path / "literature-domain-1.bib"
+        b = tmp_path / "literature-domain-2.bib"
+        a.write_text(flagged, encoding="utf-8")
+        b.write_text(other, encoding="utf-8")
+        out = tmp_path / "literature-all.bib"
+        r = subprocess.run(
+            [sys.executable, str(SCRIPT_PATH), str(out), str(a), str(b)],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        merged = out.read_text(encoding="utf-8")
+        assert "venue_status = {low-visibility}" in merged
+        for expected in ("Agency and Machines", "10.1000/aim1",
+                         "Advanced International Journal for Research",
+                         "Data and Things"):
+            assert expected in merged
+        from pybtex.database import parse_string
+        assert len(parse_string(merged, "bibtex").entries) == 2

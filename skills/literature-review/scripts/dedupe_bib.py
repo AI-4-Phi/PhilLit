@@ -313,6 +313,14 @@ def _entry_fields(entry_text: str) -> dict:
 _KNOWN_FIELDS = set(_SUBSTANTIVE_FIELDS) | {
     "author", "title", "year", "editor", "keywords",
     "note", "howpublished", "school", "address",
+    # Item 3 D: barrier-stamped venue flag. Known to the over-greedy guard,
+    # deliberately NOT substantive: _SUBSTANTIVE_FIELDS drives
+    # _union_substantive_fields_text's loser->winner field copy with no
+    # coupling to which field justifies which, so listing venue_status here
+    # would let a flagged loser's verdict travel onto a survivor whose
+    # journal is a different venue entirely (merge_entries picks the winner
+    # on abstract-presence and importance, never on _SUBSTANTIVE_FIELDS).
+    "venue_status",
 }
 
 
