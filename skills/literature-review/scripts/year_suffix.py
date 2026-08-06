@@ -68,13 +68,17 @@ is what a console summary shows, now counts only actionable groups.
 A suppressed group's `works` count includes entries hidden from normal group
 formation by (2) and (3) -- it is a best-effort total, not a guarantee that a
 different input order would report the identical number, since the group
-never receives a canonical partition. Where it errs, it errs HIGH: a filtered
-copy is counted apart from the sibling it is a copy of, so a one-work group
-can report `works: 2`. That direction is exactly what makes the split above
-safe. Because the count never runs LOW, `works == 1` really does mean "at
-most one work here, so no letter was ever in play", while `works >= 2` lets
-a few single works through into the list that gets read -- which costs an
-operator a second look, not a missed group.
+never receives a canonical partition. Where it errs, it errs HIGH against the
+works THIS MODULE identifies: a filtered copy is counted apart from the
+sibling it is a copy of, so a one-work group can report `works: 2`. (Against
+ground truth it can of course run low -- two genuinely distinct works that
+share a title, year and surname with no DOIs merge into one root -- but that
+is the same partition lettering itself acts on, so such a pair would never
+have been lettered apart either.) Erring high is what makes the split above
+safe: `works == 1` really does mean "at most one work here, so no letter was
+ever in play", while `works >= 2` lets a few single works through into the
+list that gets read -- which costs an operator a second look, not a missed
+group.
 What every input order DOES guarantee identically is that no member of a
 suppressed group -- in EITHER list -- appears in `suffixes`.
 
@@ -443,9 +447,10 @@ def assign_suffixes(entries: list[dict]) -> dict:
             #     members' own (signature, year), so that sibling's root is
             #     always in this group's `roots`. Hence filtered_copy always
             #     implies works_count >= 2.
-            # The count errs HIGH, never low (module docstring), so the split
-            # over-retains rather than under-reports: a one-work group with a
-            # filtered copy reads 2 and stays in `suppressed`.
+            # Against this module's own work partition -- the one lettering
+            # acts on -- the count errs high, never low (module docstring),
+            # so the split over-retains rather than under-reports: a one-work
+            # group with a filtered copy reads 2 and stays in `suppressed`.
             (suppressed if works_count >= 2 else singletons).append(record)
             continue
         if len(roots) < 2:
