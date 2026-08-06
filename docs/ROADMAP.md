@@ -13,8 +13,8 @@ delivered entries carry online-first years, see item 3 K; remediation
 decision pending); (3) item 3's residuals — **A, B, and E all DONE
 2026-08-05** (A's dedup fix, B's post-check + matcher-side transliteration,
 E's instance-based collision resolution); **C closed-as-narrowed 2026-08-05**
-(ledger write-protection) and **D re-scoped 2026-08-05 but blocked** on
-OpenAlex API-key support plus a threshold measurement; F last, now carrying
+(ledger write-protection) and **D re-scoped 2026-08-05 with its rule
+validated — ready to build**; F last, now carrying
 four riders; (3b) **NEW 2026-08-05: OpenAlex began metering the API** —
 **key support BUILT the same day** (`OPENALEX_API_KEY`, optional; plus
 fail-fast on budget exhaustion, which was costing 1–2.4 h of dead sleeping
@@ -346,8 +346,8 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   corroboration, the only option that can demote an honest entry, costing
   ~one extra enrichment pass. Full analysis, option set and measurements:
   `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue C.
-- **D — no venue-quality vetting: RE-SCOPED 2026-08-05; build BLOCKED on an
-  OpenAlex API key + one measurement.** The filed mechanism does not work.
+- **D — no venue-quality vetting: RE-SCOPED and the rule VALIDATED 2026-08-05;
+  READY TO BUILD (nothing blocking).** The filed mechanism does not work.
   DOAJ lists open-access journals only, so DOAJ-absence carries no signal for
   philosophy's subscription flagships (`Mind`, `Noûs`, `Philosophical Review`
   are all `is_in_doaj: false`), and `is_indexed_in_scopus` now comes back
@@ -361,17 +361,25 @@ Six related gaps. A–D were surfaced 2026-07-24 by the downstream
   **D does have real targets here**: a free name-shape scan of all 928
   distinct journal names surfaced ~9 candidates including `Advanced
   International Journal for Research` — the *same* venue as the service
-  observation, `is_core false`, h-index **2**. The defensible rule is two
-  conjoined negative signals (not core AND h-index below a threshold;
-  observed margin 2 vs 22-23 for the lowest legitimate noncore venue), never
-  flagging an unresolved venue, with verdicts cached per venue rather than
-  re-resolved per review. Remaining blocker: **the threshold must be validated
-  against the remaining 8 candidate venues** before it ships (one data point is
-  not a threshold). Note bibs carry **zero** `issn` fields (0 of 6,530
-  `@article` entries), so venue lookup must go by name — the 10-credit request
-  class — which is affordable now that `OPENALEX_API_KEY` support is in
-  (`docs/known-issues/openalex-metering-2026-08-05.md`) but is the reason
-  verdicts must be cached per venue rather than re-resolved per review. The flag needs a dedicated field (`venue_status`), **not** a
+  observation, `is_core false`, h-index **2**. **The validated rule** (measured
+  against those 9 candidates and 48 legitimate philosophy venues chosen to
+  stress the rule — open-access, non-Anglophone, area-specialist, new): flag
+  iff the venue *resolves* AND `is_core` is false AND `is_in_doaj` is false AND
+  h-index < **15**, evaluated over the highest-h same-named source (two
+  `Phronesis` entries exist). Result: **4/9 candidates flagged, 0/48 false
+  positives**, and zero FPs holds across T=12..18 so the threshold sits
+  mid-plateau. Note DOAJ *is* useful after all — with its polarity **inverted**:
+  useless as a negative signal, sound as a positive rescue (it is what saves
+  Norsk Filosofisk Tidsskrift, h=11). Recall of ~4/9 is the intended trade for
+  a flag-and-caveat mechanism where a false discredit costs more than a miss;
+  the 5 unflagged candidates are each correctly spared (no OpenAlex match,
+  `is_core`, or DOAJ-listed). Cost measured at 10 credits per name lookup, so
+  **verdicts must be cached per venue, once ever** — affordable now that
+  `OPENALEX_API_KEY` support is in (`e5ffc02`). What remains is the build:
+  venue resolution + cache, a dedicated `venue_status` field (**not** a
+  `keywords` token — `stamp_evidence.stamp_keywords` sorts an unrecognized
+  token into *topics*) surviving `sanitize_bib.py`, `_SUBSTANTIVE_FIELDS` and
+  the barrier's field re-derivation, plus the researcher/writer prompt rules. The flag needs a dedicated field (`venue_status`), **not** a
   `keywords` token: `stamp_evidence.stamp_keywords` sorts an unrecognized
   token into *topics*. D also has a writer-facing half, so **F is no longer
   the only sub-item needing a live run** — D's writer-compliance check should
@@ -478,8 +486,9 @@ group has entries, so a listed work is confirmed uncited.
 Suggested order: A+B first (small, testable, deterministic), then E (same
 shape, pairs with B) — **A, B, C and E are all FIXED/CLOSED as of
 2026-08-05** (C closed-as-narrowed: write-protect + document) — then D,
-which is **re-scoped but blocked** on OpenAlex API-key support plus one
-threshold measurement. F last: it needs a live run, and that run should not
+which is **re-scoped with its rule validated and ready to build** (the build
+is the mechanical half plus prompt rules; nothing blocks it). F last: it needs
+a live run, and that run should not
 be entangled with the evidence-tier A/B experiment. Note the live run now
 carries **four riders**: the year-coverage measurement (item 3 K —
 measurement script ready at
@@ -488,8 +497,8 @@ two-Johnsons writer note (**DONE 2026-08-05** — `docs/conventions.md` +
 `agents/synthesis-writer.md`; the run confirms writer compliance), the
 sentence-adverb guard fix (**DONE 2026-08-05** — E's
 `_NON_INITIAL_PRECEDING_RE` no longer rejects a citation preceded by a
-sentence-initial transition word), and D's writer-compliance check once D
-is unblocked.
+sentence-initial transition word), and D's writer-compliance check once D's
+build lands.
 
 Related out-of-scope find (2026-07-28, recorded in the same write-up): 5/32
 reviews carry near-identical *undeduped* entries surviving on diacritic

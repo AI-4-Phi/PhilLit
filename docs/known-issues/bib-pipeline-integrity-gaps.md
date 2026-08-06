@@ -10,8 +10,8 @@ against **this repo's current `main`**, not just the snapshot.
 silently degrade bibliography/References integrity — the part of the output a
 reader is least able to audit.
 **Status**: **A FIXED, B CLOSED, C CLOSED-AS-NARROWED — all 2026-08-05; D
-re-scoped 2026-08-05 and blocked on OpenAlex API-key support plus one
-threshold measurement** (each issue's own section carries the detail; C's and
+re-scoped and its rule VALIDATED 2026-08-05, ready to build with nothing
+blocking** (each issue's own section carries the detail; C's and
 D's re-scope sections are the current statements — the "Fix directions"
 paragraphs above them are preserved but superseded). Was: "Open overall (C
 and D untouched)". **A is FIXED 2026-08-05; B is
@@ -566,32 +566,69 @@ Journal of Philosophical Studies*, *THEORIA*, *International Journal of
 Applied Philosophy*, *IJ Social Robotics*, *IJ Constitutional Law*), so the
 name shape is a *scan heuristic for this re-scope only* — never the ship rule.
 
-**The defensible rule is two conjoined negative signals**, because the
-observed separation is in citation impact, not index membership:
+**The rule, validated 2026-08-05.** Three conjoined signals, because the
+separation is in citation impact rather than index membership — and because
+DOAJ turns out to be genuinely useful once its **polarity is inverted**:
+worthless as a negative signal (absence says nothing about a subscription
+journal), but a sound *positive rescue* (presence means a vetted OA journal):
 
-    flag VENUE_UNVETTED  iff  venue resolved
+    flag VENUE_UNVETTED  iff  venue resolves in OpenAlex
                          AND  is_core is false
-                         AND  h_index < THRESHOLD
+                         AND  is_in_doaj is false
+                         AND  h_index < 15
     never flag an unresolved venue (absence of a match is absence of evidence)
+    evaluate over the BEST same-named source, by h-index
 
-Observed margin: predatory h-index **2** vs. the lowest *legitimate* noncore
-venue measured at **22-23** (Washington Law Review 22, Jurisprudence 23). A
-threshold near 12 sits mid-gap. **The threshold must be validated against the
-eight remaining candidate venues before shipping** — that measurement is
-blocked until the OpenAlex budget resets (see below), and shipping a
-threshold on a single data point is not acceptable.
+That last clause matters: OpenAlex can hold several sources sharing a
+`display_name` — there are two `Phronesis` entries (h=86 non-core, h=15 core) —
+so collapsing to the first hit both mis-measures and risks condemning a venue
+because a homonym is small.
 
-**Cost and the new metering constraint.** Bibs carry **zero `issn` fields**
-(0 of 6,530 `@article` entries), so venue resolution must go by name — the
-expensive request class. OpenAlex began metering during this session's
-measurement: unauthenticated use is **$0.10/day**, which is ~100 full-text
-search calls, and this measurement exhausted it. With a **free API key** the
-budget is $1/day = 1,000 search calls + 10,000 filter calls + *unlimited*
-single-entity (DOI) lookups, which makes per-venue resolution comfortably
-affordable. Full write-up and PhilLit's exposure:
-`docs/known-issues/openalex-metering-2026-08-05.md`. **D is therefore
-sequenced behind the OpenAlex API-key support**, and venue verdicts must be
-cached per venue (once ever, not once per review) rather than re-resolved.
+**Measured against 9 candidates and 48 legitimate philosophy venues** (the
+control set deliberately weighted toward where a naive impact threshold would
+misfire: open-access, non-Anglophone, area-specialist and new journals). Full
+sweep, flagged counts:
+
+| threshold | rule: not core | rule: not core AND not DOAJ |
+|---|---|---|
+| 10 | 3/9 candidates, **0** false positives | 3/9, **0** |
+| 12 | 3/9, 1 FP (Norsk Filosofisk Tidsskrift, h=11) | 3/9, **0** |
+| **15** | 4/9, 1 FP | **4/9, 0 FP** ← chosen |
+| 18 | 4/9, 1 FP | 4/9, **0** |
+| 20 | 4/9, 2 FP (+ Metascience, h=19) | 4/9, 1 FP |
+
+Zero false positives holds across T=12..18 with the DOAJ rescue, so **15 sits
+mid-plateau rather than on an edge**. The four flagged candidates are exactly
+the plausibly-predatory ones — `Advanced International Journal for Research`
+(h=2, the confirmed case), `Global Multidisciplinary Perspectives Journal`
+(h=5), `Edumania-An International Multidisciplinary Journal` (h=9),
+`International Journal of Multidisciplinary Research and Analysis` (h=13) —
+all non-core and non-DOAJ.
+
+The five candidates **not** flagged each have a defensible reason, which is
+the rule behaving correctly rather than missing: `Advanced Research Journal`
+has no OpenAlex match at all (never flag on absence of evidence);
+`International Journal of Advanced Computer Science and Applications` (h=97)
+and `ICTACT Journal on Soft Computing` (h=23, also DOAJ) are `is_core`;
+`Engineering and Technology Journal` is DOAJ-listed; `International Journal of
+Innovative Research in Computer and Communication Engineering` has h=26. My
+name-shape scan was an explicitly crude heuristic for *finding* candidates —
+several of those are evidently real if low-prestige venues, and the rule is
+right not to condemn them. Recall is therefore ~4 of the 9 name-shape hits and
+that is the intended trade: this is a flag-and-caveat mechanism, where a false
+discredit costs far more than a miss.
+
+Data: `<session scratchpad>/d_threshold_results.json`.
+
+**Cost, measured.** Bibs carry **zero `issn` fields** (0 of 6,530 `@article`
+entries), so venue resolution must go by name. A
+`sources?filter=display_name.search:<name>` lookup costs **10 credits** —
+measured directly, 560 credits over 57 lookups — i.e. it is the search class,
+not the 1-credit identifier class. With the free API key that is 1,000 lookups
+per day, and a review introduces perhaps 30-60 *new* venues (300-600 credits),
+so **verdicts must be cached per venue — once ever, not once per review**. The
+key support landed 2026-08-05 (`e5ffc02`), so this blocker is cleared:
+`docs/known-issues/openalex-metering-2026-08-05.md`.
 
 **Where the flag lives** (the INCOMPLETE-pattern replacement). Not the
 `keywords` field: `stamp_evidence.stamp_keywords` partitions that field into
