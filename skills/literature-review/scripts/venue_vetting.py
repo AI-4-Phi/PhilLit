@@ -10,9 +10,13 @@ chosen to stress it -- open-access, non-Anglophone, area-specialist, new):
             AND h_index < 15,
 
 evaluated over the HIGHEST-h same-named source. Result: 4/9 candidates
-flagged, 0/48 false positives. The FP-free plateau runs from T=14 (where the
-4-candidate floor starts) to T=19; T=15 sits at the CONSERVATIVE end of that
-plateau, one step in from the floor, not at its midpoint.
+flagged, 0/48 false positives. The two bounds are separate measurements:
+zero false positives holds all the way from T=5 to T=19, while recall
+reaches its 4/9 maximum only at T=14 and stays there through T=19. So
+T=14..19 is the band with BOTH, and T=15 sits at that band's CONSERVATIVE
+end, one step in from the recall floor, not at its midpoint. (T=14 is the
+recall floor, not where false positives start -- calling 14..19 "the
+FP-free plateau" mislabels which bound is which.)
 
 Three properties are load-bearing and must not be "simplified" away:
 
@@ -25,8 +29,18 @@ Three properties are load-bearing and must not be "simplified" away:
 - Unresolved is never flagged. Absence of evidence is not evidence, and a
   false discredit costs more than a miss.
 
-Nothing here raises. A missing OPENALEX_API_KEY or an empty name list
-produces no flags at all (status "skipped" or a no-op "complete" pass,
+`vet_venues` never raises. That guarantee is scoped to `vet_venues`, which
+enforces it in its own body rather than relying on its leaves: the leaf
+helpers (`normalize_venue_name`, `record_from_hits`, `select_best_hit`)
+assume well-typed input and DO raise on input `vet_venues` never hands
+them. Only one such shape is reachable from real data -- two same-named
+OpenAlex sources where one reports a stringly-typed `h_index`, which makes
+`select_best_hit` raise a TypeError -- and `lookup_venue`'s blanket except
+catches it, so it degrades to outcome "error" and counts toward
+MAX_CONSECUTIVE_ERRORS like any other failed lookup.
+
+A missing OPENALEX_API_KEY or an empty name list produces no flags at all
+(status "skipped" or a no-op "complete" pass,
 respectively). A pass that hits a transport error, exhausts its OpenAlex
 budget, or trips one of the two bounds (MAX_CONSECUTIVE_ERRORS,
 PASS_DEADLINE_SECONDS) KEEPS every verdict it did resolve and reports itself
