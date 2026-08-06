@@ -1845,3 +1845,99 @@ class TestLetterSighting:
 @article{m2, author = {Muldoon, Ryan and Gordon, Ann and Wu, Jin},
   title = {T2}, year = {2023}, journal = {J}}"""
         assert self._cited("As Muldoon and Wu (2023) argue, X.", bare) == ["m1"]
+
+
+# Two-author and three-author Muldoon 2023 works with no letters -- item 3 E's
+# own canonical drop fixtures, reused below as the negative controls that keep
+# the bare-mention net from swallowing E.
+MULDOON_BARE = """@article{m1, author = {Muldoon, Ryan and Wu, Li},
+  title = {T1}, journal = {J}, year = {2023}}
+
+@article{m2, author = {Muldoon, Ryan and Qi, Fan},
+  title = {T2}, journal = {J}, year = {2023}}
+
+@article{bloggs2023, author = {Bloggs, Joe and Muldoon, Ryan},
+  title = {T3}, journal = {J}, year = {2023}}"""
+
+
+class TestUnresolvableBareMention:
+    """A letterless citation the parser REJECTED still names its group, so it
+    disables dropping for that group (the residual the fix re-review and the
+    external second opinion reached independently)."""
+
+    def _cited(self, prose, bib_text=MENARY_BIB):
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        return sorted(k for k, _ in
+                      generate_bibliography.find_cited_entries(prose, db))
+
+    def test_a_rejected_bare_cite_keeps_the_group_whole(self, capsys):
+        # The documented residual, and a real Issue B path: the first cite
+        # licenses the drop, the second is rejected by
+        # _NON_INITIAL_PRECEDING_RE so it yields no instance, and it carries no
+        # letter for _sighted_letters to see. lint_md then resolves the
+        # surviving "Menary (2010)" against the "2010a." reference line and
+        # exits 0 -- the reader is pointed at the wrong work, silently.
+        assert self._cited(
+            "Menary (2010a) argues X. See Clark, Menary (2010), and Sutton"
+            " on this.") == ["menary2010cognitive", "menary2010extended"]
+        err = capsys.readouterr().err
+        assert "[COLLISION] dropped" not in err
+        # The warning must name the cause, not print the generic sentence.
+        assert "Menary 2010" in err and "cannot resolve" in err
+
+    def test_the_ampersand_form_is_covered_too(self):
+        # Same rejection rule, different prose: "Clark & Menary (2010)" makes
+        # _CITE_INSTANCE_RE bind at the SECOND name, which the guard rejects.
+        assert self._cited(
+            "Menary (2010a) argues X. Compare Clark & Menary (2010) on"
+            " scaffolding.") == ["menary2010cognitive", "menary2010extended"]
+
+    def test_a_rejected_cite_that_carries_a_letter_is_left_to_the_sighting_map(self):
+        # Scoping decision 1: the letter identifies ONE member, so the sighting
+        # map protects that member and the rest of the group stays droppable.
+        # Widening this net to lettered rejections would make every rejected
+        # cite keep-all and lose that precision.
+        assert generate_bibliography._unresolvable_mentions(
+            "See Clark, Menary (2010b), and Sutton.") == []
+        assert self._cited(
+            "Menary (2010b) argues X. See Clark, Menary (2010b), and Sutton.") \
+            == ["menary2010extended"]
+
+    def test_a_bare_mention_of_a_different_author_does_not_protect(self):
+        # Scoping decision 2, the half that keeps this affordable: the net is
+        # keyed to the surname the REJECTED match captured, so an unrelated
+        # rejected cite in the same year protects nothing.
+        assert self._cited(
+            "Menary (2010a) argues X. See Sutton, Clark (2010), and Rowlands.") \
+            == ["menary2010cognitive"]
+
+    def test_item_3_e_first_position_drop_still_fires(self, capsys):
+        # NEGATIVE CONTROL. The rejected alternative -- "a bare year within
+        # _MATCH_WINDOW of a member surname" -- kills this: "Muldoon and Wu
+        # (2023)" puts a bare 2023 next to Muldoon, so the group would be
+        # protected by the very citation that discriminates it. Measured, that
+        # rule retained 15 extra references across 13 of the 41 delivered
+        # reviews and broke both of E's drop branches.
+        assert self._cited("Muldoon and Wu (2023) argue X.", MULDOON_BARE) == \
+            ["m1"]
+        assert "[COLLISION] dropped m2" in capsys.readouterr().err
+
+    def test_item_3_e_second_position_drop_still_fires(self, capsys):
+        # NEGATIVE CONTROL, the other branch: "Bloggs and Muldoon (2023)" is
+        # also a bare year beside a member surname.
+        assert self._cited("Bloggs and Muldoon (2023) note this.",
+                           MULDOON_BARE) == ["bloggs2023"]
+        assert "[COLLISION] dropped" in capsys.readouterr().err
+
+    def test_the_payoff_drop_still_fires(self):
+        # NEGATIVE CONTROL for item 3 F itself.
+        assert self._cited("As Menary (2010a) argues, integration matters.") \
+            == ["menary2010cognitive"]
+
+    def test_an_accepted_bare_cite_is_not_a_mention(self):
+        # A bare cite the parser ACCEPTS is handled by the instance machinery
+        # (it supports every member), so it must not also appear here -- that
+        # is what keeps the two halves of _parser_verdicts disjoint.
+        assert generate_bibliography._unresolvable_mentions(
+            "Menary (2010) argues.") == []

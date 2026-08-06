@@ -689,6 +689,72 @@ def _strip_possessive(s: str) -> str:
     return s
 
 
+def _parser_verdicts(review_text: str):
+    """Yield (match, rejected) for every _CITE_INSTANCE_RE match.
+
+    One scanner, so the parser's ACCEPTED half (_citation_instances) and its
+    REJECTED half (_unresolvable_mentions) cannot drift apart: a future
+    rejection rule added here reaches both, and a citation can never be
+    simultaneously absent from the instances and absent from the mentions.
+    """
+    for m in _CITE_INSTANCE_RE.finditer(review_text):
+        yield m, bool(_NON_INITIAL_PRECEDING_RE.search(review_text[:m.start()]))
+
+
+def _unresolvable_mentions(review_text: str) -> list[dict]:
+    """Citations of a surname+year that the parser saw and REJECTED, carrying
+    no Chicago letter. Each: {"surname_variants", "surname", "year"}.
+
+    This closes the residual both the fix re-review and the external second
+    opinion reached independently, and it is a real Issue B path rather than a
+    theoretical one. "Menary (2010a) argues X. See Clark, Menary (2010), and
+    Sutton" used to lose a work: the first cite licenses the drop, the second
+    is rejected by _NON_INITIAL_PRECEDING_RE so it contributes no instance,
+    and it carries no letter for _sighted_letters to see. lint_md then resolves
+    the surviving "Menary (2010)" against the "2010a." reference line and exits
+    0, so the reader is pointed at the wrong work with nothing reported. Same
+    shape for the forms that regex rejects for the same reason, e.g.
+    "Clark & Menary (2010)".
+
+    A bare mention of THIS group's author-year is exactly what
+    ambiguous-keep-all means, so it disables dropping for that group - and for
+    that group only, which is what makes this affordable.
+
+    Two scoping decisions, both load-bearing, both measured:
+
+    - LETTERLESS ONLY. A rejected cite that DOES carry a letter
+      ("See Clark, Menary (2010b), and Sutton") is already covered by
+      _sighted_letters, which protects the one member the letter names instead
+      of the whole group. Requiring the year to carry no letter is the second
+      opinion's `(?![0-9A-Za-z])` condition, expressed through the parser's own
+      suffix group rather than a second regex.
+    - SCOPED BY THE PARSER'S CAPTURED SURNAME, not by proximity. The obvious
+      alternative - "a bare year anywhere within _MATCH_WINDOW of a member's
+      surname" - was built and measured, and it DESTROYS item 3 E: an ordinary
+      "Muldoon and Wu (2023) argue X." puts a bare 2023 next to Muldoon, so
+      both of E's drop branches stop firing on their own canonical fixtures,
+      and 15 extra references are retained across 13 of the 41 delivered
+      reviews. That is the outcome _sighted_letters' docstring predicted for an
+      unscoped bare-year sighting. Keying on the surname the REJECTED match
+      itself captured has no such cost: zero corpus difference, because every
+      bare year that belongs to a citation the parser accepted is handled by
+      the instance machinery as before.
+
+    Known limit, stated rather than closed: a bare mention with no citation
+    shape at all ("In 2010, Menary argued that ...", "the 2010 crisis") is not
+    a rejected match and is not seen here. Covering it needs the proximity rule
+    measured above, which costs item 3 E.
+    """
+    out = []
+    for m, rejected in _parser_verdicts(review_text):
+        if not rejected or m.group("suffix"):
+            continue
+        surname = _strip_possessive(m.group("surname"))
+        out.append({"surname_variants": ascii_variants(surname),
+                    "surname": surname, "year": m.group("year")})
+    return out
+
+
 def _citation_instances(review_text: str) -> list[dict]:
     """Parse author-year citation instances from the ORIGINAL text.
     Each: {"surname_variants", "form", "second_text", "first_text", "year",
@@ -707,8 +773,8 @@ def _citation_instances(review_text: str) -> list[dict]:
     (C1: _NON_INITIAL_PRECEDING_RE) are rejected outright and contribute no
     instance - see that regex's docstring for why."""
     out = []
-    for m in _CITE_INSTANCE_RE.finditer(review_text):
-        if _NON_INITIAL_PRECEDING_RE.search(review_text[:m.start()]):
+    for m, rejected in _parser_verdicts(review_text):
+        if rejected:
             continue
         surname = _strip_possessive(m.group("surname"))
         if m.group("etal"):
@@ -827,13 +893,14 @@ def _sighted_letters(review_text: str) -> dict:
       same reason: a group would need 19 members before any letter "s" is
       assigned, and a spurious sighting can only protect.
 
-    Known limit, stated rather than fixed: a citation carrying NO letter that
-    the parser also rejects ("Menary (2010a) ... See Clark, Menary (2010), and
-    Sutton") leaves nothing to sight, so the bare cite's keep-all protection
-    still depends on its instance parsing. Closing that would mean treating a
-    bare year as a sighting, which - since _collect_matches already requires
-    the year near the surname - would protect every member always and disable
-    item 3 F outright.
+    A citation carrying NO letter that the parser also rejects
+    ("Menary (2010a) ... See Clark, Menary (2010), and Sutton") leaves nothing
+    to sight, and this scan cannot see it. That residual is closed elsewhere,
+    by _unresolvable_mentions, which scopes the protection by the surname the
+    rejected match itself captured. It is NOT closed by treating a bare year as
+    a sighting here: _collect_matches already requires the year near the
+    surname, so a proximity rule protects every member always - measured, it
+    disables both of item 3 E's drop branches on their own canonical fixtures.
     """
     sighted: dict = {}
     for m in _YEAR_LETTER_RE.finditer(review_text):
@@ -1000,10 +1067,14 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     cited work, and "cited" includes works named only via an unresolvable
     first-position form.
 
-    Item 3 F adds a FOURTH discriminator, the Chicago letter, and one safety
-    net that outranks all of them: no member is ever dropped while the prose
+    Item 3 F adds a FOURTH discriminator, the Chicago letter, and TWO safety
+    nets that outrank all of them. No member is ever dropped while the prose
     mentions its rendered label ("2010b"), whether or not that mention parsed
-    as a citation (_sighted_letters)."""
+    as a citation (_sighted_letters). And no member of a group is dropped while
+    the prose carries a LETTERLESS citation of that group's author-year which
+    the parser rejected (_unresolvable_mentions) - such a mention names the
+    group without saying which member, which is what ambiguous-keep-all is
+    for."""
     for rec in records:
         rec["_variants"] = ascii_variants(rec["surname"]) or \
             frozenset({rec["surname"].lower()})
@@ -1021,6 +1092,7 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
 
     instances = None  # parsed lazily, once, only if some group collides
     sighted: dict = {}  # {year: {letter}} - parsed with instances, see below
+    unresolvable: list = []  # letterless cites the parser rejected, ditto
     keep = []
     for members in groups:
         if len(members) == 1:
@@ -1029,7 +1101,17 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
         if instances is None:
             instances = _citation_instances(review_text)
             sighted = _sighted_letters(review_text)
+            unresolvable = _unresolvable_mentions(review_text)
         member_variants = frozenset().union(*(r["_variants"] for r in members))
+        # A letterless citation of THIS group's author-year that the parser
+        # rejected. It names the group without saying which member, so it is
+        # an ambiguous mention and must disable dropping for this group - the
+        # residual the fix re-review and the second opinion both reached
+        # (_unresolvable_mentions). Held as the surname text, not a flag, so
+        # the warning can name what an operator has to go and look at.
+        bare_mentions = {mm["surname"] for mm in unresolvable
+                         if mm["year"] == members[0]["year"]
+                         and (mm["surname_variants"] & member_variants)}
         # Item 3 F: is this group STRUCTURALLY COMPLETE - every member
         # lettered, all letters distinct, and the members distinct WORKS?
         # Only then may a prose letter drop anything (see the filter below).
@@ -1186,7 +1268,7 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                           + " " + year + "' (" + inst["form"] + ") matches "
                           + ", ".join(sorted(_ascii(r["key"]) for r in cands)),
                           file=sys.stderr)
-        if first_pos_supported and not unmatched_letters:
+        if first_pos_supported and not unmatched_letters and not bare_mentions:
             # At least one NON-CONTINUATION first-position instance
             # discriminated some members - keep those, drop the rest.
             #
@@ -1215,7 +1297,7 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                                              if r is not rec))
                           + " and no citation instance supports it",
                           file=sys.stderr)
-        elif first_pos_seen or unmatched_letters:
+        elif first_pos_seen or unmatched_letters or bare_mentions:
             # A first-position form was parsed for this group but matched
             # no candidate (e.g. "Muldoon and Gordon" against a and-Wu/
             # and-Qi pair) - genuinely ambiguous, not evidence against
@@ -1234,36 +1316,43 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
             # flag unset, and deleting the disjunct then dropped two works with
             # the whole test file still green.
             keep.extend(members)
-            if unmatched_letters:
-                # The generic message ("no parseable citation form
-                # discriminates") is FALSE here: the form parsed fine and the
-                # letter is what went unresolved. Name the citation as the
-                # prose wrote it, so a live-run operator can find the typo -
-                # and distinguish the two ways this fires, because on live runs
-                # the form-mismatch case will be the common one and the
-                # undistinguished message claimed a letter matched no entry
-                # when it matched one exactly.
-                clauses = []
-                missing = unmatched_letters - form_mismatch_letters
-                if missing:
-                    clauses.append(_cited_letters_phrase(year, missing)
-                                   + " no entry")
-                if form_mismatch_letters:
-                    clauses.append(
-                        _cited_letters_phrase(year, form_mismatch_letters)
-                        + " an entry, but no entry matches the citation's"
-                        " author form")
-                print("  [COLLISION] ambiguous: "
-                      + ", ".join(sorted(_ascii(r["key"]) for r in members))
-                      + " share surname/year and " + "; ".join(clauses)
-                      + " - all kept, possible phantom references",
-                      file=sys.stderr)
-            else:
-                print("  [COLLISION] ambiguous: "
-                      + ", ".join(sorted(_ascii(r["key"]) for r in members))
-                      + " share surname/year and no parseable citation form"
-                      " discriminates - all kept, possible phantom references",
-                      file=sys.stderr)
+            # Name the actual cause. The generic message ("no parseable
+            # citation form discriminates") is FALSE for every case below: the
+            # form parsed fine and something else went unresolved, and that
+            # message lands on the stderr channel a live-run operator reads.
+            # Each cause gets its own clause and they can co-occur.
+            clauses = []
+            missing = unmatched_letters - form_mismatch_letters
+            if missing:
+                clauses.append(_cited_letters_phrase(year, missing)
+                               + " no entry")
+            if form_mismatch_letters:
+                # On live runs this is the common one, and the undistinguished
+                # message claimed a letter matched no entry when it matched one
+                # exactly.
+                clauses.append(
+                    _cited_letters_phrase(year, form_mismatch_letters)
+                    + " an entry, but no entry matches the citation's"
+                    " author form")
+            if bare_mentions:
+                clauses.append(
+                    "the prose also cites "
+                    + ", ".join(sorted(_ascii(s) + " " + year
+                                       for s in bare_mentions))
+                    + " with no letter, in a form the citation parser cannot"
+                    " resolve")
+            if not clauses:
+                # A form DID name this group (that is what put us in this
+                # branch) - it just did not separate the members. Distinct from
+                # the final else, where nothing named them at all; both used to
+                # print the same sentence.
+                clauses.append("the citation forms naming them do not"
+                               " discriminate between them")
+            print("  [COLLISION] ambiguous: "
+                  + ", ".join(sorted(_ascii(r["key"]) for r in members))
+                  + " share surname/year and " + "; ".join(clauses)
+                  + " - all kept, possible phantom references",
+                  file=sys.stderr)
         elif second_pos_seen:
             # No first-position instance names this group at all - the
             # only parsed explanation for the loose surname/year matches
@@ -1338,7 +1427,8 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     stderr warning - partial ambiguity never silently drops a cited work. A
     member whose rendered label ("2010b") appears anywhere in the prose is
     never dropped, however the citation carrying it was written
-    (_sighted_letters).
+    (_sighted_letters); nor is any member of a group the prose cites
+    letterlessly in a form the parser rejects (_unresolvable_mentions).
 
     Returns list of (key, entry) tuples for cited entries, deduplicated by DOI
     and, as a fallback, by (normalized title, year, first-author surname).
