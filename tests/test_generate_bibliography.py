@@ -1343,3 +1343,137 @@ class TestYearSuffixRendering:
           publisher = {MIT}, year = {2010}, year_suffix = {a}}""", "bibtex")
         pairs = sorted(db.entries.items(), key=generate_bibliography._sort_key)
         assert [k for k, _ in pairs] == ["a", "b"]
+
+
+MENARY_BIB = """@incollection{menary2010cognitive,
+  author = {Menary, Richard}, title = {Cognitive Integration},
+  booktitle = {The Extended Mind}, publisher = {MIT Press},
+  year = {2010}, year_suffix = {a}}
+
+@book{menary2010extended,
+  author = {Menary, Richard}, title = {The Extended Mind},
+  publisher = {MIT Press}, year = {2010}, year_suffix = {b}}"""
+
+
+class TestYearSuffixMatching:
+    def _cited(self, prose, bib_text=MENARY_BIB):
+        from pybtex.database import parse_string
+        db = parse_string(bib_text, "bibtex")
+        return [k for k, _ in generate_bibliography.find_cited_entries(prose, db)]
+
+    def test_instance_parses_the_suffix(self):
+        insts = generate_bibliography._citation_instances("Menary (2010a) argues.")
+        assert insts[0]["year"] == "2010" and insts[0]["suffix"] == "a"
+
+    def test_instance_without_suffix_is_empty_string(self):
+        insts = generate_bibliography._citation_instances("Menary (2010) argues.")
+        assert insts[0]["suffix"] == ""
+
+    def test_suffixed_citation_selects_one_member(self):
+        # THE payoff: same author, same year -- E cannot discriminate these,
+        # the letter can.
+        assert self._cited("As Menary (2010a) argues, integration matters.") == \
+            ["menary2010cognitive"]
+
+    def test_both_suffixes_keep_both(self):
+        cited = self._cited("Menary (2010a) and Menary (2010b) differ.")
+        assert sorted(cited) == ["menary2010cognitive", "menary2010extended"]
+
+    def test_bare_citation_still_keeps_all(self):
+        # Unchanged behaviour: an undisambiguated cite is ambiguous, and
+        # ambiguity never drops a work.
+        assert sorted(self._cited("Menary (2010) argues.")) == \
+            ["menary2010cognitive", "menary2010extended"]
+
+    def test_unmatched_suffix_never_drops(self):
+        # Writer typo: no member carries 'c'. Keep both and warn -- dropping
+        # here would delete a cited work (the Issue B failure).
+        assert sorted(self._cited("Menary (2010c) argues.")) == \
+            ["menary2010cognitive", "menary2010extended"]
+
+    def test_partial_suffix_use_does_not_drop_the_other(self):
+        assert sorted(self._cited("Menary (2010a) argues; Menary (2010) also.")) == \
+            ["menary2010cognitive", "menary2010extended"]
+
+    def test_semicolon_multicite_form(self):
+        cited = self._cited("(Menary 2010a; Menary 2010b)")
+        assert sorted(cited) == ["menary2010cognitive", "menary2010extended"]
+
+    def test_continuation_years_are_parsed(self):
+        # "Wiens (2015a; 2015b)" is the form 8 of 32 delivered reviews already
+        # use: the surname appears ONCE and the second year follows a
+        # semicolon. Without continuation parsing only 2015a becomes an
+        # instance, and E's resolver would then drop the 2015b work as
+        # unsupported -- a regression this feature must not introduce.
+        insts = generate_bibliography._citation_instances("Menary (2010a; 2010b) differ.")
+        assert [(i["year"], i["suffix"]) for i in insts] == [("2010", "a"), ("2010", "b")]
+        assert insts[1]["surname_variants"] == insts[0]["surname_variants"]
+
+    def test_continuation_keeps_both_works(self):
+        assert sorted(self._cited("Menary (2010a; 2010b) differ.")) == \
+            ["menary2010cognitive", "menary2010extended"]
+
+    def test_comma_continuation_across_years(self):
+        # The ROADMAP's flagship case: "Menary (2006, 2010, 2013)".
+        insts = generate_bibliography._citation_instances("Menary (2006, 2010, 2013) argue.")
+        assert [i["year"] for i in insts] == ["2006", "2010", "2013"]
+
+    def test_continuation_stops_at_the_closing_paren(self):
+        # "Menary (2010), 2011 saw a shift" must NOT yield a 2011 citation.
+        insts = generate_bibliography._citation_instances(
+            "Menary (2010), 2011 saw a shift in the debate.")
+        assert [i["year"] for i in insts] == ["2010"]
+
+    def test_uncited_year_still_absent(self):
+        assert self._cited("Nothing is cited here.") == []
+
+    def test_partially_lettered_group_never_drops(self):
+        # One member carries no letter (a legacy bib, a hand-edited bib, or a
+        # DIFFERENT author who shares the surname and year). A suffixed
+        # citation must NOT select the lettered member and drop the rest.
+        mixed = MENARY_BIB + """
+
+@article{menary2010third,
+  author = {Menary, Richard}, title = {A Third Thing},
+  journal = {Synthese}, year = {2010}}"""
+        assert len(self._cited("Menary (2010a) argues.", mixed)) == 3
+
+    def test_duplicate_letters_disable_the_filter(self):
+        # Two members carrying the SAME letter is not a structurally complete
+        # group -- filtering on it would pick an arbitrary one. Keep all.
+        dup = """@book{a1, author = {Menary, Richard}, title = {One},
+  publisher = {MIT Press}, year = {2010}, year_suffix = {a}}
+
+@book{a2, author = {Menary, Richard}, title = {Two},
+  publisher = {MIT Press}, year = {2010}, year_suffix = {a}}"""
+        assert sorted(self._cited("Menary (2010a) argues.", dup)) == ["a1", "a2"]
+
+    def test_malformed_suffix_field_is_ignored(self):
+        # A junk year_suffix reads as absent (same rule _display_year uses),
+        # so the group is not fully lettered and nothing is dropped.
+        junk = """@book{j1, author = {Menary, Richard}, title = {One},
+  publisher = {MIT Press}, year = {2010}, year_suffix = {ab}}
+
+@book{j2, author = {Menary, Richard}, title = {Two},
+  publisher = {MIT Press}, year = {2010}, year_suffix = {b}}"""
+        assert sorted(self._cited("Menary (2010b) argues.", junk)) == ["j1", "j2"]
+
+    def test_ambiguous_group_warns(self, capsys):
+        # The plan promises keep-all-AND-WARN; assert the warning, not just
+        # the kept entries.
+        self._cited("Menary (2010) argues.")
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
+    def test_unmatched_suffix_warns(self, capsys):
+        self._cited("Menary (2010c) argues.")
+        err = capsys.readouterr().err
+        assert "[COLLISION]" in err
+        # The message must name the real cause. The pre-existing ambiguous
+        # message says "no parseable citation form discriminates", which is
+        # FALSE here: the form parsed fine, the letter matched no member.
+        assert "2010c" in err
+        # That check alone does NOT discriminate: the key 'menary2010cognitive'
+        # contains "2010c" by accident, so the assertion above passes even on
+        # the OLD generic message. Pin the wording swap itself.
+        assert "no parseable citation form" not in err
+        assert "letter" in err

@@ -91,18 +91,39 @@ def _get_field(entry, name: str) -> str:
     return clean_bibtex_str(raw).strip() if raw else ""
 
 
+def _entry_suffix(entry) -> str:
+    """The entry's Chicago letter, or "" when absent or malformed.
+
+    One rule, two consumers: _display_year renders it into the delivered
+    References and _collect_matches discriminates citations by it. If the
+    two ever disagreed, a reference would render "2010a" while the resolver
+    read that entry as unlettered - dropping a cited work or keeping a
+    phantom. Only a single ASCII a-z letter counts; anything else reads as
+    absent rather than emitting nonsense into a delivered reference.
+
+    Deliberately NOT used by _carry_year_suffix, which is a merge policy
+    over raw values (it must preserve whatever a copy carries), not a
+    display or matching rule.
+    """
+    suffix = _get_field(entry, "year_suffix").strip().lower()
+    if len(suffix) == 1 and suffix.isalpha() and suffix.isascii():
+        return suffix
+    return ""
+
+
 def _display_year(entry) -> str:
     """The year as a reader sees it: `2010b` when a Chicago letter was
     assigned (item 3 F), plain `2010` otherwise.
 
     The letter lives in its own field, never in `year`: the \\d{4} guards in
     check_evidence.py and resolve_context.py reject a suffixed year outright.
-    Only a single a-z letter is honoured, so a malformed field renders as if
-    absent rather than emitting nonsense into a delivered reference.
+    Only a single a-z letter is honoured (_entry_suffix), so a malformed
+    field renders as if absent rather than emitting nonsense into a
+    delivered reference.
     """
     year = _get_field(entry, "year")
-    suffix = _get_field(entry, "year_suffix").strip().lower()
-    if year and len(suffix) == 1 and suffix.isalpha() and suffix.isascii():
+    suffix = _entry_suffix(entry)
+    if year and suffix:
         return year + suffix
     return year
 
@@ -555,6 +576,11 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
             "entry": entry,
             "surname": surname,
             "year": year,
+            # Item 3 F: the Chicago letter this entry carries, "" when it has
+            # none. The window test above stays on the bare year - prose
+            # "2010a" contains "2010", so MATCHING is unchanged and only
+            # _resolve_collisions' DISCRIMINATION is new.
+            "suffix": _entry_suffix(entry),
             "windows": windows,
         })
 
@@ -574,8 +600,15 @@ _CITE_INSTANCE_RE = re.compile(
     r"(?:(?P<etal>\s+et al\.?)"
     r"|(?:,?\s+and\s+(?P<second>" + _PARTICLED_SURNAME + r")))?"
     r"(?:'s|’s)?"
-    r"[\s,]*\(?\s*(?P<year>(?:1[6-9]|20)\d{2})[a-z]?\b"
+    r"[\s,]*\(?\s*(?P<year>(?:1[6-9]|20)\d{2})(?P<suffix>[a-z])?\b"
 )
+
+# A year continuation inside the SAME citation: ";" or "," then another year.
+# \A-anchored, so it only ever matches text immediately following the previous
+# year -- "Menary (2010), 2011 saw a shift" does not continue, because the ")"
+# sits between them.
+_CONTINUATION_RE = re.compile(
+    r"\A\s*[;,]\s*(?P<year>(?:1[6-9]|20)\d{2})(?P<suffix>[a-z])?\b")
 
 # _CITE_INSTANCE_RE has no left anchor, so it can start matching at the
 # SECOND name of a longer list ("Smith, Jones, and Lee (2020)" ->
@@ -633,7 +666,8 @@ def _strip_possessive(s: str) -> str:
 
 def _citation_instances(review_text: str) -> list[dict]:
     """Parse author-year citation instances from the ORIGINAL text.
-    Each: {"surname_variants", "form", "second_text", "first_text", "year"}.
+    Each: {"surname_variants", "form", "second_text", "first_text", "year",
+    "suffix"}.
     form: 'solo' | 'and' | 'etal'. second_text may be a multiword particled
     surname - compared whole-to-whole against candidate second-surname
     variants, never tokenized; first_text is the raw leading token ('' when
@@ -659,7 +693,30 @@ def _citation_instances(review_text: str) -> list[dict]:
             "second_text": second,
             "first_text": (m.group("first") or "").rstrip("."),
             "year": m.group("year"),
+            # Item 3 F: the Chicago letter the PROSE carries, "" when none.
+            "suffix": (m.group("suffix") or ""),
         })
+        # One surname, several years: "Menary (2006, 2010, 2013)", "Wiens
+        # (2015a; 2015b)" -- the shape 8 of 32 delivered reviews already use.
+        # _CITE_INSTANCE_RE matches only the first year, so without this the
+        # later works have no supporting instance and _resolve_collisions drops
+        # them: a regression F would INTRODUCE rather than fix. Continuations
+        # can only ADD support, never remove it, so a spurious one costs a kept
+        # work (safe) and never a dropped one.
+        #
+        # Every key inherited from out[-1] is invariant across a continuation
+        # run - surname_variants, form, second_text and first_text all belong
+        # to the single author-list this parenthesis opened with, and only the
+        # year and its letter vary. There is no positional key to copy: the
+        # resolver derives first_pos_seen itself.
+        tail = review_text[m.end():]
+        while True:
+            cont = _CONTINUATION_RE.match(tail)
+            if not cont:
+                break
+            out.append({**out[-1], "year": cont.group("year"),
+                        "suffix": (cont.group("suffix") or "")})
+            tail = tail[cont.end():]
     return out
 
 
@@ -716,6 +773,32 @@ def _second_position_corroborated(inst: dict, member_variants: frozenset, record
     return False
 
 
+def _members_are_distinct_works(members: list[dict]) -> bool:
+    """Do these collision-group members name pairwise-distinct works?
+
+    _resolve_collisions runs BEFORE find_cited_entries' dedup, so a group can
+    hold two COPIES of one work - which item 3 F's suffix filter must not read
+    as two lettered works. Duplication is tested on the same two axes dedup
+    itself uses: a shared non-empty normalized DOI, or a shared fallback key.
+    Either one alone is enough, so this is a pairwise scan rather than a single
+    tuple identity (groups are tiny). The GPT-B4 DOI-set refusal is deliberately
+    NOT replicated: here the permissive direction is the safe one, because any
+    hint of duplication disables the filter and falls through to keep-all.
+    """
+    dois, fkeys = [], []
+    for rec in members:
+        doi = _get_field(rec["entry"], "doi")
+        dois.append(_normalize_doi(doi) if doi else "")
+        fkeys.append(_fallback_key(rec["entry"]))
+    for i in range(len(members)):
+        for j in range(i + 1, len(members)):
+            if dois[i] and dois[i] == dois[j]:
+                return False
+            if fkeys[i] is not None and fkeys[i] == fkeys[j]:
+                return False
+    return True
+
+
 def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     """Item 3 E (external-review design): group colliding records by
     variant-intersection connected components per year; resolve each group
@@ -760,10 +843,32 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
         if instances is None:
             instances = _citation_instances(review_text)
         member_variants = frozenset().union(*(r["_variants"] for r in members))
+        # Item 3 F: is this group STRUCTURALLY COMPLETE - every member
+        # lettered, all letters distinct, and the members distinct WORKS?
+        # Only then may a prose letter drop anything (see the filter below).
+        #
+        # The third conjunct is not redundant. This function runs BEFORE
+        # find_cited_entries' dedup, so a group can hold two COPIES of one
+        # work carrying conflicting letters - precisely the state
+        # _carry_year_suffix exists to report. Filtering on the letter there
+        # drops one copy before the merge can happen, which silences the
+        # [SUFFIX] conflict warning and, when the prose cites the loser's
+        # letter, leaves the SPARSER copy as the delivered reference
+        # (measured: prose "Smith (2020b)" kept a journal-less duplicate over
+        # its journal- and abstract-bearing twin).
+        letters = [r.get("suffix") or "" for r in members]
+        fully_lettered = (all(letters) and len(set(letters)) == len(letters)
+                          and _members_are_distinct_works(members))
         year = members[0]["year"]
         supported = set()
         first_pos_seen = False
         second_pos_seen = False
+        # Letters the prose used that match no member of THIS group. Per-group
+        # (not function-scope): at function scope one group's typo would leak
+        # into every later group. Holds the letters, not just a flag, so the
+        # warning can name the citation the operator has to go and fix; its
+        # truthiness is what the branch conditions below read.
+        unmatched_letters = set()
         for inst in instances:
             if inst["year"] != year:
                 continue
@@ -806,6 +911,32 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                                 or inst["first_text"].lower() in init):
                             continue
                     cands.append(rec)
+            # Item 3 F: a Chicago letter is the only token that can separate
+            # two works by the SAME author in the same year. When the prose
+            # carries one, it filters the candidate set; when it matches no
+            # member at all (a writer typo, or a letter for a work that never
+            # made it into the bib), the group must fall through to
+            # ambiguous-keep-all - a drop here would delete a cited work,
+            # which is the failure Issue B exists to prevent.
+            #
+            # The filter applies ONLY to a structurally complete group - see
+            # fully_lettered above for all three conjuncts. The barrier's assigner
+            # letters a group whole or suppresses it whole (year_suffix.py's
+            # whole-group suppression), so a PARTIALLY lettered group here
+            # means the letters did not come from one clean assignment run:
+            # a legacy or hand-edited bib, a bib assembled from two runs, or
+            # -- the common case -- a DIFFERENT author who happens to share
+            # this surname and year and so was never in the lettered group at
+            # all. In any of those a suffixed instance would otherwise select
+            # the lettered member and drop every unlettered one. Incomplete
+            # groups fall through to item 3 E's behaviour unchanged.
+            if fully_lettered and inst["suffix"]:
+                matched = [r for r in cands if r.get("suffix") == inst["suffix"]]
+                if matched:
+                    cands = matched
+                else:
+                    unmatched_letters.add(inst["suffix"])
+                    cands = []
             if cands:
                 supported.update(r["key"] for r in cands)
                 if len(cands) > 1:
@@ -814,9 +945,17 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                           + " " + year + "' (" + inst["form"] + ") matches "
                           + ", ".join(sorted(_ascii(r["key"]) for r in cands)),
                           file=sys.stderr)
-        if first_pos_seen and supported:
+        if first_pos_seen and supported and not unmatched_letters:
             # At least one first-position instance discriminated some
             # members - keep those, drop the rest.
+            #
+            # Item 3 F: an unmatched letter anywhere in the group disables
+            # dropping for the WHOLE group, even when other instances did
+            # discriminate ("Menary (2010a) ...; Menary (2010c) ..."). That is
+            # deliberate, not an oversight: the letter that matched nothing
+            # names a work we cannot identify, so we do not know which member
+            # -- if any -- it was meant to support, and dropping on the
+            # remaining evidence could delete exactly that work.
             for rec in members:
                 if rec["key"] in supported:
                     keep.append(rec)
@@ -827,18 +966,39 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                                              if r is not rec))
                           + " and no citation instance supports it",
                           file=sys.stderr)
-        elif first_pos_seen:
+        elif first_pos_seen or unmatched_letters:
             # A first-position form was parsed for this group but matched
             # no candidate (e.g. "Muldoon and Gordon" against a and-Wu/
             # and-Qi pair) - genuinely ambiguous, not evidence against
             # anyone. A second-position sighting elsewhere in the text
             # must NOT override this into a drop.
+            #
+            # The `or unmatched_letters` disjunct is currently redundant:
+            # a letter can only go unmatched inside the block that has
+            # already set first_pos_seen = True. It is kept as a guard
+            # against a later edit reordering those assignments, which would
+            # otherwise silently route an unmatched-letter group into the
+            # second-position DROP branch below.
             keep.extend(members)
-            print("  [COLLISION] ambiguous: "
-                  + ", ".join(sorted(_ascii(r["key"]) for r in members))
-                  + " share surname/year and no parseable citation form"
-                  " discriminates - all kept, possible phantom references",
-                  file=sys.stderr)
+            if unmatched_letters:
+                # The generic message ("no parseable citation form
+                # discriminates") is FALSE here: the form parsed fine, the
+                # letter matched no member. Name the citation as the prose
+                # wrote it, so a live-run operator can find the writer's typo.
+                print("  [COLLISION] ambiguous: "
+                      + ", ".join(sorted(_ascii(r["key"]) for r in members))
+                      + " share surname/year and the cited letter "
+                      + ", ".join(_ascii(year + s)
+                                  for s in sorted(unmatched_letters))
+                      + " matches no entry - all kept, possible phantom"
+                      " references",
+                      file=sys.stderr)
+            else:
+                print("  [COLLISION] ambiguous: "
+                      + ", ".join(sorted(_ascii(r["key"]) for r in members))
+                      + " share surname/year and no parseable citation form"
+                      " discriminates - all kept, possible phantom references",
+                      file=sys.stderr)
         elif second_pos_seen:
             # No first-position instance names this group at all - the
             # only parsed explanation for the loose surname/year matches
