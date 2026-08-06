@@ -548,9 +548,29 @@ _CITE_INSTANCE_RE = re.compile(
 # rejected match yields no instance for its group, which then falls to
 # _resolve_collisions' ambiguous-keep-all branch rather than a drop -
 # never the reverse.
+#
+# The bare-comma half needs one exclusion. A sentence-initial transition word
+# ("However, Muldoon (2023) argues...") has the identical shape - one
+# capitalized word, a comma, a space - so it was rejecting legitimate
+# citations whose only sighting was such a lead-in, and the group then fell to
+# keep-all-and-warn. Transitions are a closed-enough class to list; the
+# `and`/`&` half is unaffected because no transition word is followed by
+# "and"/"&" in that position. An unlisted transition still degrades to
+# keep-all, never to a drop, so the list being incomplete is safe.
+_SENTENCE_LEAD_INS = (
+    "However|Moreover|Nevertheless|Nonetheless|Furthermore|Therefore|Thus|"
+    "Hence|Accordingly|Consequently|Instead|Conversely|Similarly|Likewise|"
+    "Indeed|Admittedly|Arguably|Notably|Crucially|Importantly|Interestingly|"
+    "Strikingly|Famously|Relatedly|Alternatively|Meanwhile|Overall|Finally|"
+    "Ultimately|First|Second|Third|Fourth|Fifth|Recently|Historically|"
+    "Traditionally|Classically|Typically|Generally|Specifically|Broadly|"
+    "Roughly|Strictly|Formally|Initially|Subsequently|Originally|Again|"
+    "Still|Yet|Rather|Otherwise|Equally|Correspondingly|Unsurprisingly|"
+    "Surprisingly|Curiously|Tellingly|Plainly|Clearly|Obviously|Presumably"
+)
 _NON_INITIAL_PRECEDING_RE = re.compile(
     r"(?:[A-ZÀ-Þ][\w'’À-ÿ-]+,?\s+(?:and|&)\s+"
-    r"|[A-ZÀ-Þ][\w'’À-ÿ-]+,\s+)$"
+    r"|(?!(?:" + _SENTENCE_LEAD_INS + r")\b)[A-ZÀ-Þ][\w'’À-ÿ-]+,\s+)$"
 )
 
 

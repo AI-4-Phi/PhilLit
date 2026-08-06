@@ -1186,6 +1186,36 @@ class TestCollisionResolution:
         assert cited == {"l_solo", "l_team"}
         assert "[COLLISION] ambiguous" in capsys.readouterr().err
 
+    ADVERB_BIB = """
+    @article{m_solo, author = {Muldoon, Ryan}, title = {T1}, year = {2023}, journal = {J}}
+    @article{m_pair, author = {Muldoon, Ryan and Wu, Jin}, title = {T2}, year = {2023}, journal = {J}}
+    """
+
+    def test_sentence_adverb_lead_in_still_discriminates(self, capsys):
+        # The bare-comma half of the left-anchor guard used to reject any
+        # match preceded by "Capitalized, " - which includes a sentence-
+        # initial transition ("However, Muldoon and Wu (2023)"). The
+        # instance was discarded and the group fell to keep-all-and-warn,
+        # listing an uncited work. The lead-in exclusion restores it.
+        cited = self._cited(self.ADVERB_BIB,
+            "However, Muldoon and Wu (2023) argue X.")
+        assert cited == {"m_pair"}
+        assert "[COLLISION] ambiguous" not in capsys.readouterr().err
+
+    def test_list_guard_survives_an_adverb_prefix(self, capsys):
+        # The interaction that must NOT regress: a transition word before a
+        # genuine comma list must not re-enable the wrong binding. Here the
+        # "Wu" match is preceded by "Muldoon, ", which is still a name-comma
+        # lead-in, so it stays rejected and the group keeps all + warns.
+        bib = self.ADVERB_BIB + (
+            "@article{w_solo, author = {Wu, Jin}, title = {T3},"
+            " year = {2023}, journal = {J}}\n")
+        cited = self._cited(bib,
+            "However, Muldoon, Wu, and Li (2023) argue X. "
+            "Wu's separate 2023 paper differs.")
+        assert cited == {"m_solo", "m_pair", "w_solo"}
+        assert "[COLLISION] ambiguous" in capsys.readouterr().err
+
     def test_possessive_narrative(self):
         assert self._cited(self.MOORE, "Moore's (2020) account holds.") == {"moore2020solo"}
 
