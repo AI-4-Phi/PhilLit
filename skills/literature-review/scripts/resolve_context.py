@@ -210,30 +210,56 @@ def strip_context_fields(entry_text):
     return _CONTEXT_FIELD_RE.sub("", entry_text)
 
 
-# Wall-clock bound on the whole encyclopedia-acquisition pass. Same shape and
-# rationale as venue_vetting.PASS_DEADLINE_SECONDS: checked BEFORE each fetch,
-# not around it, so it bounds how long the pass KEEPS STARTING work rather than
-# interrupting work already running. Worst case is therefore this deadline plus
-# one article's own cost, not this deadline alone.
+# A WORK-ADMISSION BUDGET for the encyclopedia-acquisition pass, not a
+# wall-clock bound and not a watchdog. Same shape and rationale as
+# venue_vetting.PASS_DEADLINE_SECONDS: checked BEFORE each fetch, never around
+# one. The guarantee is exactly
 #
-# Why it exists: on 2026-08-06 a live review's barrier sat at 100% CPU for 72
-# minutes inside a single SEP article's bibliography parse, and nothing in this
-# path could notice or stop it (docs/known-issues/sep-bibliography-regex-hang.md).
-# The parser is now linear, so that specific hang cannot recur -- this is the
-# backstop for the next one. Context is a best-effort enrichment: an entry that
-# gets none simply fails to reach the CONTEXT tier, which is the same outcome as
-# a fetch that 404s, so degrading here is safe.
+#     once a fetch returns, no further fetch is started past the budget
+#
+# so what it bounds is cumulative time across *returning* fetches: the
+# slow-but-progressing pass (many slugs, each fetch slow -- backoff storms, a
+# degrading server), which would otherwise run unbounded.
+#
+# WHAT IT DOES NOT COVER: a single call that never returns. Control never comes
+# back to the check, so such a call runs forever exactly as if this budget did
+# not exist. That is the failure that motivated the file -- on 2026-08-06 a live
+# review's barrier sat at 100% CPU for 72 minutes inside one SEP article's
+# bibliography parse (docs/known-issues/sep-bibliography-regex-hang.md) -- and
+# this budget would NOT have stopped it. What fixed that was making the parser
+# linear. Nor is "this budget plus one article's cost" a bound worth stating:
+# an article's cost is not itself bounded (the 30 s request timeout governs
+# connection and inter-byte reads, not total work).
+#
+# A per-article interrupt was considered and declined: signal.alarm is
+# Windows-hostile and main-thread-only, a multiprocessing worker adds pickling
+# boundaries and a subprocess per fetch, and an abandoned daemon thread keeps
+# burning the CPU it was meant to reclaim. Instead the budget logs when it
+# fires, so a future wedge is visible in the run's stderr rather than silent.
+#
+# Two policy consequences, stated rather than left to be discovered:
+#   * sep is always attempted before iep, so a sep overrun starves every iep
+#     slug. Deterministic and arbitrary; acceptable for best-effort enrichment.
+#   * the check wraps fetch(), which does its own cache lookup, so past-budget
+#     CACHED articles are skipped too even though they would have been free.
+#
+# Degrading here is safe: context is a best-effort enrichment, and an entry that
+# gets none simply fails to reach the CONTEXT tier -- the same outcome as a
+# fetch that 404s.
 PASS_DEADLINE_SECONDS = 600.0
 
 
 def fetch_articles(union, debug=False, deadline_seconds=None):
-    """Fetch each slug in the union exactly once; (articles, failed_slug_ids).
+    """Attempt each slug in the union at most once; (articles, failed_slug_ids).
+
+    At most once, not exactly once: slugs reached after the work-admission
+    budget expires are fetched zero times.
 
     Imports resolve at call time so tests can monkeypatch the fetchers.
 
-    Slugs not reached before the deadline are reported in `failed`, exactly
-    like a fetch error -- the caller cannot tell the two apart and does not
-    need to, since both mean "no context from this article".
+    Slugs not reached before the budget expires are reported in `failed`,
+    exactly like a fetch error -- the caller cannot tell the two apart and does
+    not need to, since both mean "no context from this article".
     """
     import time
 
@@ -244,6 +270,7 @@ def fetch_articles(union, debug=False, deadline_seconds=None):
         deadline_seconds = PASS_DEADLINE_SECONDS
     deadline = time.monotonic() + deadline_seconds
     articles, failed = {}, []
+    skipped = 0
     for enc, module in (("sep", fetch_sep), ("iep", fetch_iep)):
         slugs = sorted(union.get(enc, ()))
         if not slugs:
@@ -254,14 +281,24 @@ def fetch_articles(union, debug=False, deadline_seconds=None):
         for slug in slugs:
             if time.monotonic() >= deadline:
                 # Out of budget: record every remaining slug as failed rather
-                # than silently returning a short article set, so the barrier's
-                # report shows what was skipped and why the entries demoted.
+                # than silently returning a short article set, so the entries
+                # that demote show up in the barrier's report. `failed` carries
+                # bare slug ids and says nothing about WHY -- a budget skip, a
+                # 404 and a network error are indistinguishable in it. The
+                # stderr line below is the only place the distinction is drawn.
                 failed.append(f"{enc}:{slug}")
+                skipped += 1
                 continue
             try:
                 articles[f"{enc}:{slug}"] = fetch(slug, limiter, backoff, debug=debug)
             except _FETCH_ERRORS:
                 failed.append(f"{enc}:{slug}")
+    if skipped:
+        # The one signal that a wedge or a slow pass happened at all. Without
+        # it a budget overrun is indistinguishable from an encyclopedia set
+        # that simply had few articles.
+        print(f"[resolve_context] acquisition budget of {deadline_seconds:.0f}s "
+              f"expired; {skipped} slug(s) never attempted", file=sys.stderr, flush=True)
     return articles, failed
 
 

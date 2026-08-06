@@ -333,16 +333,59 @@ class TestFetchOnce:
         articles, failed = fetch_articles({"sep": {"gone"}, "iep": set()})
         assert failed == ["sep:gone"] and articles == {}
 
+    def test_a_partial_failure_partitions_the_requested_slugs(self, monkeypatch):
+        """Every requested slug lands in exactly one of articles/failed.
+
+        No deadline involvement: this is the fetch-error path. A count-only
+        assertion would not establish the partition (one id in both lists plus
+        one id in neither preserves the total), so assert the sets.
+        """
+        import fetch_sep
+        import resolve_context
+
+        seen = []
+
+        def first_ok_then_boom(slug, limiter, backoff, debug=False):
+            seen.append(slug)
+            if len(seen) > 1:
+                raise RuntimeError("boom")
+            return {"entry_name": slug, "bibliography": []}
+
+        monkeypatch.setattr(fetch_sep, "fetch_sep_article", first_ok_then_boom)
+        requested = ["aaa", "bbb", "ccc"]
+        articles, failed = resolve_context.fetch_articles({"sep": requested})
+        expected = {f"sep:{slug}" for slug in requested}
+        assert set(articles) | set(failed) == expected
+        assert set(articles).isdisjoint(failed)
+        assert len(failed) == len(set(failed))
+
 
 class TestFetchPassDeadline:
-    """The encyclopedia pass must be bounded in wall-clock time.
+    """The acquisition pass admits work against a budget.
 
-    A live review's barrier sat at 100% CPU for 72 minutes inside one SEP
-    article and nothing here could notice (2026-08-06;
-    docs/known-issues/sep-bibliography-regex-hang.md). The parser that caused
-    it is now linear, so this deadline is the backstop for the next one, not
-    the fix for that one.
+    What is pinned here is exactly the guarantee the code gives: once a fetch
+    RETURNS, no further fetch is started past the budget. It is not a
+    wall-clock bound on the pass and not a watchdog -- a single call that never
+    returns is never interrupted, which is why
+    test_a_single_fetch_may_overrun_the_budget_entirely is here to record the
+    limitation rather than a bound that does not exist.
+
+    Context: a live review's barrier sat at 100% CPU for 72 minutes inside one
+    SEP article and nothing here could notice (2026-08-06;
+    docs/known-issues/sep-bibliography-regex-hang.md). This budget would NOT
+    have stopped that; making the parser linear did. What it does stop is the
+    slow-but-progressing pass.
     """
+
+    @staticmethod
+    def _fake_clock(monkeypatch, start=0.0):
+        """A monotonic() the test drives by hand. fetch_articles does its
+        `import time` at call time, so this patches the same module object it
+        will look up."""
+        import time
+        now = [start]
+        monkeypatch.setattr(time, "monotonic", lambda: now[0])
+        return now
 
     def test_slugs_past_the_deadline_are_reported_failed_not_dropped(self, monkeypatch):
         import resolve_context
@@ -376,20 +419,69 @@ class TestFetchPassDeadline:
         assert sorted(articles) == ["sep:aaa", "sep:bbb"]
         assert failed == []
 
-    def test_nothing_is_lost_between_the_two_lists(self, monkeypatch):
-        """Every requested slug lands in exactly one of articles/failed."""
+    def test_a_budget_that_expires_mid_pass_skips_only_the_remainder(
+            self, monkeypatch, capsys):
+        """The case the already-expired test cannot reach.
+
+        One fetch runs, returns, and has consumed the whole budget. Every
+        later slug -- including every iep slug, since sep is always attempted
+        first -- must be skipped and reported, not silently dropped.
+        """
+        import fetch_iep
+        import fetch_sep
         import resolve_context
 
-        import fetch_sep
-        seen = []
+        now = self._fake_clock(monkeypatch)
+        attempted = []
 
-        def one_then_slow(slug, limiter, backoff, debug=False):
-            seen.append(slug)
-            if len(seen) > 1:
-                raise RuntimeError("boom")
+        def slow_but_returning(slug, limiter, backoff, debug=False):
+            attempted.append(slug)
+            now[0] += 150.0  # this one fetch outlasts the whole budget
             return {"entry_name": slug, "bibliography": []}
 
-        monkeypatch.setattr(fetch_sep, "fetch_sep_article", one_then_slow)
-        requested = ["aaa", "bbb", "ccc"]
-        articles, failed = resolve_context.fetch_articles({"sep": requested})
-        assert len(articles) + len(failed) == len(requested)
+        monkeypatch.setattr(fetch_sep, "fetch_sep_article", slow_but_returning)
+        monkeypatch.setattr(fetch_iep, "fetch_iep_article", slow_but_returning)
+        articles, failed = resolve_context.fetch_articles(
+            {"sep": ["aaa", "bbb", "ccc"], "iep": ["zzz"]}, deadline_seconds=100.0)
+
+        assert attempted == ["aaa"], "only the pre-budget fetch may start"
+        assert sorted(articles) == ["sep:aaa"]
+        assert sorted(failed) == ["iep:zzz", "sep:bbb", "sep:ccc"]
+        assert "3 slug(s) never attempted" in capsys.readouterr().err
+
+    def test_a_single_fetch_may_overrun_the_budget_entirely(self, monkeypatch):
+        """RECORDED LIMITATION, not a bug to be read as one.
+
+        The budget is checked between fetches, so one call that takes ten
+        times the budget runs to completion and its result is kept. A call
+        that never returns is therefore never interrupted at all -- the pass
+        is not bounded in wall-clock time. Any future claim that it is should
+        break this test first.
+        """
+        import fetch_sep
+        import resolve_context
+
+        now = self._fake_clock(monkeypatch)
+
+        def very_slow(slug, limiter, backoff, debug=False):
+            now[0] += 1000.0
+            return {"entry_name": slug, "bibliography": []}
+
+        monkeypatch.setattr(fetch_sep, "fetch_sep_article", very_slow)
+        articles, failed = resolve_context.fetch_articles(
+            {"sep": ["aaa"]}, deadline_seconds=100.0)
+        assert sorted(articles) == ["sep:aaa"], (
+            "an overrunning fetch is neither interrupted nor discarded")
+        assert failed == []
+        assert now[0] == 1000.0  # ten times the budget, uninterrupted
+
+    def test_no_message_when_the_budget_is_never_hit(self, monkeypatch, capsys):
+        import fetch_sep
+        import resolve_context
+
+        monkeypatch.setattr(
+            fetch_sep, "fetch_sep_article",
+            lambda slug, limiter, backoff, debug=False: {
+                "entry_name": slug, "bibliography": []})
+        resolve_context.fetch_articles({"sep": ["aaa"]}, deadline_seconds=600.0)
+        assert capsys.readouterr().err == ""
