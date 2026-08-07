@@ -12,14 +12,20 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence (Johannes)
 
-1. **F's live headless run** — the last open piece of the bibliography-pipeline
-   integrity work, and the only piece needing anything outside this repo.
-2. **ONE batched phillit-service mirror session**, which opens with a decision:
+1. **ONE batched phillit-service mirror session**, which opens with a decision:
    the two trees have drifted far enough that it may conclude they should be
    developed separately rather than mirrored. Until that session mirror debt
    accumulates deliberately — don't mirror piecemeal, and don't touch or push
    `phillit-service` outside it.
+2. **Citation-year correctness for editions and search-verified works** (item 5
+   below) — approved 2026-08-07 to land *after* the mirror-vs-fork decision,
+   because that decision determines whether it has to be ported at all. Its
+   position relative to web-source evidence is my reading of "after the mirror
+   session", not something Johannes ruled on; swap freely.
 3. **Web-source evidence** (item 2 below).
+
+Rider 4 under item 3 is a small bounded piece that can go before or alongside any
+of these.
 
 **TODO, owed:** give every item here a descriptive name and use it at every
 reference — "item 3 F, Chicago a/b disambiguation", never a bare "item 3 F"
@@ -31,7 +37,9 @@ names: 1 evidence-tier citability, 2 web-source evidence, 3 bibliography-pipelin
 integrity fixes (A duplicate entries, B every-citation-resolves check, C ledger
 write-protection, D venue vetting, E collision-aware matching, F Chicago a/b
 disambiguation, G–K cleaner/year hardening), 4 one owner for bibliography
-identity.
+identity, 5 citation-year correctness for editions and search-verified works
+(A the missing `published-print` request, B the reprint-edition overwrite),
+6 venue-name recall for subtitled journals.
 
 ## 1. Evidence-tier citability — service port only
 
@@ -67,48 +75,34 @@ report counts affected entries per run, so this item starts from data.
   mirror session's mirror-vs-fork decision determines whether the "dual-repo"
   framing still holds.
 
-## 3. Bibliography-pipeline integrity fixes — all built; F's live run outstanding
+## 3. Bibliography-pipeline integrity fixes — closed except the first-initials gap
 
 Sub-items A–K are all fixed or closed (A, B, C, E 2026-08-05; D and F
 2026-08-06, each with a whole-branch review and fix wave). Problem statements
 and measurements: `docs/known-issues/bib-pipeline-integrity-gaps.md` and
 `author-year-collision.md`.
 
-### F's live headless run — the remaining validation
+F's live run and all five of its riders are done. Record of the run, the rider
+results, and the three defects it surfaced (now items 5 and 6):
+`.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
+`OPENALEX_API_KEY` is in place, so venue vetting runs.
 
-F (Chicago a/b disambiguation) touches `agents/synthesis-writer.md` and
-`docs/conventions.md`, so **writer compliance must be observed, not assumed**.
-This is the one question the existing corpus structurally cannot answer:
-delivered prose carries no letters at all, so the run is the first time a
-writer will have lettered entries to cite.
+### The first-initials gap — what remains of item 3
 
-A run on 2026-08-06 reached Phase 3 only and produced **zero** letters —
-correctly, because its three apparent same-author-same-year collisions were
-duplicate copies of single works. **So the run needs a topic that yields
-genuinely distinct same-author-same-year works.**
+The writer does **not** carry first initials for same-surname different-author
+cites. Observed live 2026-08-07: a review cited **Onora** O'Neill as
+`(O'Neill 1987)` and **Martin** O'Neill as `(O'Neill and Williamson 2009)`, so the
+solo cite is ambiguous to a reader. Chicago requires the initial here (the
+co-authored cite is disambiguated by "and Williamson").
 
-Five riders:
+F's Chicago letters do **not** address this — letters disambiguate one author's
+several works in a year, initials disambiguate two authors sharing a surname, and
+the two mechanisms are independent. Nothing in `agents/synthesis-writer.md` or
+`docs/conventions.md` currently instructs the initial.
 
-1. **Year coverage** — run
-   `docs/known-issues/wrong-years-audit-data/year_coverage.py` over the run's
-   bibs. A nonzero "wrong + HAS record" cell is a live hole.
-2. **Two-Johnsons compliance** — does the writer carry first initials for
-   same-surname different-author cites?
-3. **The sentence-adverb guard** — a citation led by "However, " must not fall
-   to keep-all.
-4. **Venue-vetting writer compliance** — does the writer avoid resting claims
-   on `venue_status = {low-visibility}` entries?
-5. **The venue pass's own live smoke test**, including the unmeasured live
-   recall of the sanitized `filter=display_name.search:` query on
-   **punctuation-bearing** venue names (`:` and `|` are unsanitized in
-   `filter=` values; the offline validation used comma-free names only).
-
-**Riders 1–3 and F's own check need no API key. Riders 4–5 do**, and the
-OpenAlex key on this machine is **unregistered, not stale** — OpenAlex answers
-`{"error":"Invalid or missing API key","message":"API key not found"}` under
-every documented auth mechanism while the same URL unkeyed returns 200. A new
-key from `openalex.org/settings/api` is the only fix; see
-`docs/known-issues/openalex-metering-2026-08-05.md`.
+Sibling detail from the same corpus: prose can mix the straight and curly
+apostrophe for one surname (`O'Neill` / `O’Neill`) within a single document, which
+also matters to any surname-matching that keys on the raw character.
 
 ### Open findings from the external reviews (2026-08-06) — none is a drop path
 
@@ -194,6 +188,82 @@ things stay open:
 - A surname that folds to punctuation-only (`Παπαδόπουλος-Smith` → `-Smith`)
   still takes the unchanged primary path. Never observed in the corpus (0 of
   8,494 first-author entries).
+
+## 5. Citation-year correctness for editions and search-verified works — two COUPLED defects
+
+Found by F's live run, 2026-08-07, each with a reproducible proof. **They must be
+fixed together: fixing 5A alone makes 5B strictly worse.** Sequenced after the
+mirror-vs-fork decision. Full evidence:
+`.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`.
+
+### 5A. The search path never asks CrossRef for `published-print`
+
+`skills/philosophy-research/scripts/verify_paper.py:340` — the bibliographic-search
+path's CrossRef `select` list requests `published` but not `published-print`. Item
+3 K put `published-print` first in `_YEAR_FIELDS` (`:179`), but a field that was
+never requested cannot be found, so `extract_year` falls through to `published` —
+which CrossRef defines as the EARLIEST of print and online, i.e. the online-first
+year.
+
+Proved against the live API: with the current `select` only `published` comes back
+(`2014-06-22`); adding `published-print` returns `published-print: 2015-02`; the
+DOI-lookup path (no `select`) returns all three. Measured incidence on the fresh
+run: 2 of 111 DOI-bearing entries (`vallier2014moral` bib=2014/print=2015,
+`wiens2011prescribing` bib=2011/print=2012), both with `method:
+bibliographic_search`.
+
+**The cleaner's gate never declines here** — `_year_is_overwritable`
+(`hooks/metadata_cleaner.py:241`) is a pure basis-membership test and
+`_VERSION_OF_RECORD_BASES` (`:220`) already contains `published`. The record's
+year simply *agrees* with the bib's wrong year, so there is no conflict to
+resolve. That is worse than a refusal: the on-disk verify record positively
+corroborates the wrong year.
+
+Fix: add `published-print` (and `published-online`) to the `select` list.
+
+### 5B. A reprint DOI's print year overwrites a book's real publication year
+
+`rawls1999lawofpeoples` came out of the run carrying `year = "2001"` and
+`METADATA_CLEANED: year:1999->2001`. *The Law of Peoples* is Harvard UP **1999**;
+JSTOR registered DOI `10.2307/j.ctv1pncngc` against the 2001 paperback, so
+CrossRef returns `year: 2001` with `year_basis: published-print` — the very basis
+3 K taught us to trust. Every component behaved as designed and the result is a
+canonical book misdated by two years.
+
+It then **manufactured a spurious Chicago collision group**: the wrong year put it
+in the same author-year bucket as *Justice as Fairness: A Restatement* (2001), and
+F correctly lettered a collision that does not exist. So the prose cites a 1999
+book as "Rawls 2001b".
+
+Incidence 1 of 122 entries in the run, but the class selects for canonical
+reprinted books — the highest-cited items in a philosophy review.
+
+**Why the coupling is load-bearing**: the gate has **no direction or magnitude
+bound**. Making print years available on the search path (5A) extends print-year
+overwrites to every search-verified entry *including books*, amplifying 5B from
+"books verified by DOI lookup" to "books, full stop". The direction bound — a
+book's year must not be moved later — belongs in the same change. The verify
+record already carries `type: monograph` / `suggested_bibtex_type: book`, so the
+signal is available.
+
+## 6. Venue-name recall for subtitled journals — low priority, benign direction
+
+`venue_vetting` resolves a bare venue name but not the subtitled form a bib may
+carry. Controlled test, 2026-08-07: "Res Publica" resolves, "Res Publica: A
+Journal of Moral, Legal and Social Philosophy" does not; same for Erkenntnis;
+**0 errors either way**. So the previously-suspected injection risk from the
+unsanitized `:` and `|` in `filter=` values is **unfounded** — that half of rider
+5 is closed, not open.
+
+Consequence is a silent no-op: vetting never evaluates such entries. Direction is
+benign — the rule flags only venues that RESOLVE, so this yields false negatives,
+never false low-visibility flags.
+
+Incidence: 48 of 880 distinct journal names across the delivered corpus (5.5%)
+carry a colon. **Not all of those fail** — many colons are part of the real venue
+name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitles
+fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
+Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
 
 ## Backlog pointers
 

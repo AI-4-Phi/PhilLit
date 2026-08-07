@@ -7,9 +7,27 @@ per call rather than as "the budget is gone."
 **Status**: **Key support BUILT 2026-08-05** (same day). PhilLit now sends
 `api_key` on every OpenAlex request when `OPENALEX_API_KEY` is set, and both
 the search path and the abstract path stop retrying on budget exhaustion
-instead of sleeping through it. Remaining: nothing in the code — the user
-supplies the key (free, `openalex.org/settings/api`). An unkeyed install
-behaves exactly as before.
+instead of sleeping through it. An unkeyed install behaves exactly as before.
+
+**CLOSED 2026-08-07.** Johannes registered a working key and it is in place.
+Verified end-to-end through the real code path, not just by presence: the
+previously-held key was **unregistered, not stale** (OpenAlex answered 401/403,
+"API key not found", under every documented mechanism while the same URL unkeyed
+returned 200), and `vet_venues` reported `status: partial` naming exactly that.
+With the new key the same call returns `status: complete`, and item 3 F's live run
+then completed a full keyed venue pass — **40 venues looked up, 2 cache hits, 0
+unresolved, 0 errors, 0 flagged**. That was the first time keyed venue vetting had
+ever run against a registered key; the support was built correct but unexercised.
+
+Two notes worth keeping:
+
+- **A key added to a workspace `.env` reaches a run already in flight.** Every CLI
+  script calls `load_dotenv(find_dotenv(usecwd=True), override=True)` in `main()`,
+  so `.env` beats the environment the `claude -p` process inherited at launch. No
+  restart needed. Updating `~/.api_keys` does **not** reach a running process.
+- Timing still matters per phase: on 2026-08-07 the key landed after most Phase 3
+  researchers had run, so **6 entries were tagged `INCOMPLETE`** for metadata
+  OpenAlex would have supplied, even though venue vetting (Phase 3→4) was keyed.
 
 ## If OpenAlex says "Invalid or missing API key"
 
