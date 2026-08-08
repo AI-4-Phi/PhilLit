@@ -146,7 +146,7 @@ evidence-barrier work, so it also has no `evidence_barrier.py`,
 call site this repo lacks in the same form — `get_sep_context.py` imports
 `fetch_sep_article` directly. Written up there in
 `docs/known-issues/sep-bibliography-regex-hang.md` plus a `docs/roadmap.md`
-table row, both **uncommitted** per the don't-touch rule.
+table row (committed there 2026-08-07, `73f0da1`/`a4aceb1`).
 
 Also in the mirror backlog: the `bib_identity` port, the evidence-tier port
 (item 1 above), the collision-aware-matching port (**start from `970b117` or
@@ -157,19 +157,16 @@ both wrong), and the deferred `rate_limiter` fix.
 
 Porting specifics worth having before that session starts:
 
-- **The `bib_identity` port has six import sites**, not five: `metadata_cleaner`,
-  `dedupe_bib` **twice** (`_normalize_title`/`_fallback_key`, and separately
-  `extract_doi`), `generate_bibliography`, `stamp_evidence`, `verify_paper`.
+- **Derive `bib_identity`'s import sites at port time — the recorded count has
+  gone stale twice** (five, then six). As of 2026-08-07 it is **seven modules**:
+  `metadata_cleaner`, `dedupe_bib`, `generate_bibliography`, `stamp_evidence`,
+  `verify_paper`, plus `lint_md` and `year_suffix`, which postdate the old
+  count. `grep -rn 'from bib_identity import' skills hooks` is the authority.
 - **Do not copy the import-path arithmetic.** That engine's scripts sit under
   `engine/.claude/`, so the `parent.parent.parent.parent / "hooks"` hop in the
   cross-directory import blocks must be re-derived.
-- **The service roadmap has no counterpart for the bibliography-identity work** —
-  one has to be added. Use the **lowercase** `docs/roadmap.md` path (see the
-  git-add case trap in `CLAUDE.md`).
 - Also mutatis mutandis: the `rate_limiter.py` lazy user-agent fix and the
   `load_dotenv` additions.
-- Check whether the service's restructured roadmap still carries the Option C
-  port-scope entry from its `ced6f33`.
 
 ## 4. One owner for bibliography identity and matching — residuals only
 
@@ -277,5 +274,23 @@ Other open items live in their own known-issue docs — see
 escapes and an agent that copies a venue name as text rather than parsing it
 writes the escape into the bib. Three confirmed instances, one in a **tracked,
 publicly-linked** example review.
+
+**Two engine defects filed by phillit-service and owned here** (write-ups in
+the service's `docs/known-issues/`; both verified still present upstream
+2026-08-07):
+
+- **The planner prose names a `--recent` flag `s2_search.py` does not have**
+  (`agents/literature-review-planner.md:104`; `search_arxiv.py` has `--recent`,
+  `s2_search.py` has `--year`). 44 of 44 stored service plans carried the bogus
+  flag. Service write-up: `engine-planner-recent-flag.md`.
+- **`assemble_review.py` writes the frontmatter `title` unvalidated** — no
+  length cap, no character screen. Measured consequence in the service (its
+  consumer rejects titles over 160 chars or containing Cc/Cf/Zl/Zp, and an
+  oversized title leaves raw YAML in the delivered review body); the plugin
+  path has no such consumer, so producer-side validation serves both. The
+  service's copy validates `--subfield` via a service-added `build_frontmatter`
+  (its `098a57f`, a cherry-pick candidate never sent here) — adopt or decline
+  that in the same decision. Service write-up:
+  `frontmatter-title-unvalidated-at-producer.md`.
 
 **This file is the work queue.**
