@@ -12,16 +12,23 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence (Johannes)
 
-1. **ONE batched phillit-service mirror session**, which opens with a decision:
-   the two trees have drifted far enough that it may conclude they should be
-   developed separately rather than mirrored. Until that session mirror debt
-   accumulates deliberately — don't mirror piecemeal, and don't touch or push
-   `phillit-service` outside it.
+1. **The mirror-vs-fork decision is MADE (Johannes, 2026-08-08, at the intake
+   session): MIRROR, by scripted re-vendor.** The session's four-option
+   analysis plus an external adversarial review both closed on it; the
+   re-vendor's spec (mirror with deletion-sync, region-invariant post-run
+   gate, pinned upstream commit) and its run criterion live in the service's
+   `docs/roadmap.md` Phase 1 — the authority, not restated here. The session
+   also hot-ported the SEP parser rewrite (see the mirror-backlog section).
+   Mirror debt still accumulates deliberately until the re-vendor RUNS —
+   don't mirror piecemeal, and don't touch or push `phillit-service` outside
+   that work.
 2. **Citation-year correctness for editions and search-verified works** (item 5
-   below) — approved 2026-08-07 to land *after* the mirror-vs-fork decision,
-   because that decision determines whether it has to be ported at all. Its
-   position relative to web-source evidence is my reading of "after the mirror
-   session", not something Johannes ruled on; swap freely.
+   below) — the mirror-vs-fork decision it was gated on is made, so it is
+   UNBLOCKED, and sooner is better: the service's re-vendor deliberately
+   waits for it (capped by its own hard criterion), so item 5 landing
+   promptly is what lets one intake pass carry everything. Its position
+   relative to web-source evidence is my reading, not something Johannes
+   ruled on; swap freely.
 3. **Web-source evidence** (item 2 below).
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
@@ -185,8 +192,9 @@ things stay open:
 Found by the live run of item 3 F (Chicago a/b disambiguation), 2026-08-07,
 each with a reproducible proof. **They must be fixed together: fixing 5 A (the
 missing `published-print` request) alone makes 5 B (the reprint-edition
-overwrite) strictly worse.** Sequenced after the
-mirror-vs-fork decision. Full evidence:
+overwrite) strictly worse.** The mirror-vs-fork gate is decided (mirror,
+2026-08-08) — unblocked, and the service's re-vendor waits on this item, so
+it leads the queue. Full evidence:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`.
 
 ### 5A. The search path never asks CrossRef for `published-print`
@@ -281,10 +289,16 @@ verified still present upstream 2026-08-07):
 length cap, no character screen. Measured consequence in the service (its
 consumer rejects titles over 160 chars or containing Cc/Cf/Zl/Zp, and an
 oversized title leaves raw YAML in the delivered review body); the plugin
-path has no such consumer, so producer-side validation serves both. The
-service's copy validates `--subfield` via a service-added `build_frontmatter`
-(its `098a57f`, a cherry-pick candidate never sent here) — adopt or decline
-that in the same decision.
+path has no such consumer, so producer-side validation serves both.
+**Adopt-or-decline DECIDED (Johannes, 2026-08-08, at the intake session):
+ADOPT.** This repo lands the service's `build_frontmatter` (its `098a57f` —
+subfield-emitting, subfield-validating) together with the `--title`/`--date`
+validation as ONE change; the service then receives the validated builder at
+intake and its `assemble_review.py` divergence dissolves. Fix-shape
+constraints are in the service write-up: drop-with-warning (never sanitize),
+bounded warnings (never echo a 10,000-char title into logs), `--date` as
+exact `YYYY-MM-DD`, and ideally a post-serialization assert that the block
+stays within the consumer's 50-line/2 KB caps.
 
 The sibling filing (`engine-planner-recent-flag.md`, the planner prose naming
 a `--recent` flag `s2_search.py` does not have) was fixed here in the
