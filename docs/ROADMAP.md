@@ -299,7 +299,8 @@ a `--recent` flag `s2_search.py` does not have) was fixed here in the
 2026-08-07 doc-rot sweep, which also ran the gate that filing proposed —
 every prose-named CLI flag in `skills/*/SKILL.md` and `agents/*.md` parsed
 against the named script's argparse (two further defects found and fixed:
-both NDPR usage rows, plus `check_setup.py`'s "(no options)"). Adopting that
-check as a standing pytest gate is open and cheap (~30 lines).
+both NDPR usage rows, plus `check_setup.py`'s "(no options)"). That check is
+now a standing test, `tests/test_prose_flags.py` (mutation-proven; its
+docstring records the union-on-multi-script-lines and no-positionals limits).
 
 **This file is the work queue.**
