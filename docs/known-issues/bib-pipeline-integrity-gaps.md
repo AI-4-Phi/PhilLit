@@ -10,9 +10,11 @@ against **this repo's current `main`**, not just the snapshot.
 silently degrade bibliography/References integrity — the part of the output a
 reader is least able to audit.
 **Status**: **A FIXED, B CLOSED, C CLOSED-AS-NARROWED — all 2026-08-05;
-D BUILT and CLOSED 2026-08-06** (venue vetting shipped: `venue_vetting.py`
-wired into the evidence barrier, whole-branch review verdict "safe to consider
-done") (each issue's own section carries the detail; C's and
+D BUILT and CLOSED 2026-08-06, validated live 2026-08-07** (venue vetting
+shipped: `venue_vetting.py` wired into the evidence barrier, whole-branch
+review verdict "safe to consider done"; the 2026-08-07 live run made 40 venue
+lookups with 0 errors, and a controlled writer test confirmed the
+`low-visibility` flag causes the attribute-rather-than-assert behavior) (each issue's own section carries the detail; C's and
 D's re-scope sections are the current statements — the "Fix directions"
 paragraphs above them are preserved but superseded). Was: "Open overall (C
 and D untouched)". **A is FIXED 2026-08-05; B is
@@ -694,7 +696,9 @@ ride F's run as a fourth rider rather than buying its own.
   PreToolUse on Write/Edit/NotebookEdit via `hooks/fast_gate.sh` (needle
   `_ledger-`), with two matching `deny` rules in
   `skills/setup/scripts/setup_workspace.py`
-- **Issue D is BUILT (2026-08-06)** — `skills/literature-review/scripts/venue_vetting.py`,
+- **Issue D is BUILT (2026-08-06, validated live 2026-08-07: 40 lookups, 0
+  errors, writer compliance confirmed by a controlled flag-vs-no-flag test)** —
+  `skills/literature-review/scripts/venue_vetting.py`,
   wired into the barrier, gated on `OPENALEX_API_KEY`. What it needed, and now has,
   was a venue-resolution step calling
   OpenAlex `/sources` with a persistent per-venue cache, plus a dedicated

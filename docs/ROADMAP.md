@@ -24,28 +24,20 @@ here; a stale claim about that has been written into this file twice.
    session", not something Johannes ruled on; swap freely.
 3. **Web-source evidence** (item 2 below).
 
-Rider 4 under item 3 is a small bounded piece that can go before or alongside any
-of these.
-
-**TODO, owed:** give every item here a descriptive name and use it at every
-reference — "item 3 F, Chicago a/b disambiguation", never a bare "item 3 F"
-(rule in `~/.claude/CLAUDE.md`). ~40 references in tracked docs need it (37
-here, 2 in `CLAUDE.md`, 1 in `SKILL.md`). **Do it by hand**: a mechanical pass
-was attempted 2026-08-06 and reverted because it produced broken prose — the
-references sit inside sentences that need rewording around the name. Canonical
-names: 1 evidence-tier citability, 2 web-source evidence, 3 bibliography-pipeline
-integrity fixes (A duplicate entries, B every-citation-resolves check, C ledger
-write-protection, D venue vetting, E collision-aware matching, F Chicago a/b
-disambiguation, G–K cleaner/year hardening), 4 one owner for bibliography
-identity, 5 citation-year correctness for editions and search-verified works
-(A the missing `published-print` request, B the reprint-edition overwrite),
-6 venue-name recall for subtitled journals.
+**Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
+reference carries its descriptive name, never a bare symbol): this file,
+`CLAUDE.md`, and the skill/agent prose were named by hand in the 2026-08-07
+doc-rot sweep. The tracked known-issue write-ups, `ARCHITECTURE.md`, and
+`permissions-guide.md` still carry bare sub-item symbols (`3E`, `item 3 D`,
+...) at roughly 30 sites — name them as those files get touched. Do it by
+hand: a mechanical pass was attempted 2026-08-06 and reverted because the
+references sit inside sentences that need rewording around the name.
 
 ## 1. Evidence-tier citability — service port only
 
 Merged here and released as v0.3.0; **what remains is the phillit-service
-port** (service roadmap item 20, batched into the mirror session and contingent
-on its mirror-vs-fork decision). The port-scope list lives in the service's
+port** (the service's roadmap item 20, its evidence-tier port — batched into
+the mirror session and contingent on its mirror-vs-fork decision). The port-scope list lives in the service's
 roadmap and must survive the port: the widened `check_evidence._VERB_RE`, the
 SEP `–––` repeated-author resolution in `resolve_context`, and Option C
 abstention attestation. Sister-repo instructions:
@@ -71,23 +63,29 @@ report counts affected entries per run, so this item starts from data.
   licensed claims, then external review.
 - **Dual-repo**: spec lives in the sister repo
   (`phillit-service/docs/superpowers/specs/`), build and validate HERE first
-  (free runs), then port. Service roadmap tracks the mirror as item 24. The
+  (free runs), then port. The service's roadmap tracks the mirror as its item
+  24, web-source evidence. The
   mirror session's mirror-vs-fork decision determines whether the "dual-repo"
   framing still holds.
 
 ## 3. Bibliography-pipeline integrity fixes — closed except the first-initials gap
 
-Sub-items A–K are all fixed or closed (A, B, C, E 2026-08-05; D and F
-2026-08-06, each with a whole-branch review and fix wave). Problem statements
-and measurements: `docs/known-issues/bib-pipeline-integrity-gaps.md` and
+Sub-items A–K are all fixed or closed (A duplicate entries, B
+every-citation-resolves, C ledger write-protection, and E collision-aware
+matching on 2026-08-05; D venue vetting and F Chicago a/b disambiguation on
+2026-08-06, each with a whole-branch review and fix wave; G–K cleaner/year
+hardening by 2026-08-02). Problem statements and measurements:
+`docs/known-issues/bib-pipeline-integrity-gaps.md` and
 `author-year-collision.md`.
 
-F's live run and all five of its riders are done. Record of the run, the rider
-results, and the three defects it surfaced (now items 5 and 6):
+Sub-item F's (Chicago a/b disambiguation) live run and all five of its riders
+are done. Record of the run, the rider results, and the three defects it
+surfaced (now item 5, citation-year correctness, and item 6, venue-name
+recall):
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
 
-### The first-initials gap — what remains of item 3
+### The first-initials gap — all that remains of this item
 
 The writer does **not** carry first initials for same-surname different-author
 cites. Observed live 2026-08-07: a review cited **Onora** O'Neill as
@@ -95,10 +93,14 @@ cites. Observed live 2026-08-07: a review cited **Onora** O'Neill as
 solo cite is ambiguous to a reader. Chicago requires the initial here (the
 co-authored cite is disambiguated by "and Williamson").
 
-F's Chicago letters do **not** address this — letters disambiguate one author's
-several works in a year, initials disambiguate two authors sharing a surname, and
-the two mechanisms are independent. Nothing in `agents/synthesis-writer.md` or
-`docs/conventions.md` currently instructs the initial.
+The Chicago a/b letters (sub-item F) do **not** address this — letters
+disambiguate one author's several works in a year, initials disambiguate two
+authors sharing a surname, and the two mechanisms are independent. Both
+`agents/synthesis-writer.md` and `docs/conventions.md` DO instruct the initial,
+but only for the same-surname *same-year* case, where reference rendering
+itself breaks (both added 2026-08-05); nothing instructs it when the years
+differ — the case observed, which renders fine and is ambiguous only to the
+reader.
 
 Sibling detail from the same corpus: prose can mix the straight and curly
 apostrophe for one surname (`O'Neill` / `O’Neill`) within a single document, which
@@ -188,8 +190,10 @@ things stay open:
 
 ## 5. Citation-year correctness for editions and search-verified works — two COUPLED defects
 
-Found by F's live run, 2026-08-07, each with a reproducible proof. **They must be
-fixed together: fixing 5A alone makes 5B strictly worse.** Sequenced after the
+Found by the live run of item 3 F (Chicago a/b disambiguation), 2026-08-07,
+each with a reproducible proof. **They must be fixed together: fixing 5 A (the
+missing `published-print` request) alone makes 5 B (the reprint-edition
+overwrite) strictly worse.** Sequenced after the
 mirror-vs-fork decision. Full evidence:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`.
 
@@ -197,7 +201,8 @@ mirror-vs-fork decision. Full evidence:
 
 `skills/philosophy-research/scripts/verify_paper.py:340` — the bibliographic-search
 path's CrossRef `select` list requests `published` but not `published-print`. Item
-3 K put `published-print` first in `_YEAR_FIELDS` (`:179`), but a field that was
+3 K (cleaner/year hardening) put `published-print` first in `_YEAR_FIELDS`
+(`:179`), but a field that was
 never requested cannot be found, so `extract_year` falls through to `published` —
 which CrossRef defines as the EARLIEST of print and online, i.e. the online-first
 year.
@@ -224,7 +229,8 @@ Fix: add `published-print` (and `published-online`) to the `select` list.
 `METADATA_CLEANED: year:1999->2001`. *The Law of Peoples* is Harvard UP **1999**;
 JSTOR registered DOI `10.2307/j.ctv1pncngc` against the 2001 paperback, so
 CrossRef returns `year: 2001` with `year_basis: published-print` — the very basis
-3 K taught us to trust. Every component behaved as designed and the result is a
+item 3 K (cleaner/year hardening) taught us to trust. Every component behaved as
+designed and the result is a
 canonical book misdated by two years.
 
 It then **manufactured a spurious Chicago collision group**: the wrong year put it
@@ -236,9 +242,10 @@ Incidence 1 of 122 entries in the run, but the class selects for canonical
 reprinted books — the highest-cited items in a philosophy review.
 
 **Why the coupling is load-bearing**: the gate has **no direction or magnitude
-bound**. Making print years available on the search path (5A) extends print-year
-overwrites to every search-verified entry *including books*, amplifying 5B from
-"books verified by DOI lookup" to "books, full stop". The direction bound — a
+bound**. Making print years available on the search path (5 A, the
+`published-print` request) extends print-year overwrites to every
+search-verified entry *including books*, amplifying 5 B (the reprint-edition
+overwrite) from "books verified by DOI lookup" to "books, full stop". The direction bound — a
 book's year must not be moved later — belongs in the same change. The verify
 record already carries `type: monograph` / `suggested_bibtex_type: book`, so the
 signal is available.
@@ -275,22 +282,24 @@ escapes and an agent that copies a venue name as text rather than parsing it
 writes the escape into the bib. Three confirmed instances, one in a **tracked,
 publicly-linked** example review.
 
-**Two engine defects filed by phillit-service and owned here** (write-ups in
-the service's `docs/known-issues/`; both verified still present upstream
-2026-08-07):
+**One engine defect filed by phillit-service and still owned here** (write-up
+in the service's `docs/known-issues/frontmatter-title-unvalidated-at-producer.md`;
+verified still present upstream 2026-08-07):
+**`assemble_review.py` writes the frontmatter `title` unvalidated** — no
+length cap, no character screen. Measured consequence in the service (its
+consumer rejects titles over 160 chars or containing Cc/Cf/Zl/Zp, and an
+oversized title leaves raw YAML in the delivered review body); the plugin
+path has no such consumer, so producer-side validation serves both. The
+service's copy validates `--subfield` via a service-added `build_frontmatter`
+(its `098a57f`, a cherry-pick candidate never sent here) — adopt or decline
+that in the same decision.
 
-- **The planner prose names a `--recent` flag `s2_search.py` does not have**
-  (`agents/literature-review-planner.md:104`; `search_arxiv.py` has `--recent`,
-  `s2_search.py` has `--year`). 44 of 44 stored service plans carried the bogus
-  flag. Service write-up: `engine-planner-recent-flag.md`.
-- **`assemble_review.py` writes the frontmatter `title` unvalidated** — no
-  length cap, no character screen. Measured consequence in the service (its
-  consumer rejects titles over 160 chars or containing Cc/Cf/Zl/Zp, and an
-  oversized title leaves raw YAML in the delivered review body); the plugin
-  path has no such consumer, so producer-side validation serves both. The
-  service's copy validates `--subfield` via a service-added `build_frontmatter`
-  (its `098a57f`, a cherry-pick candidate never sent here) — adopt or decline
-  that in the same decision. Service write-up:
-  `frontmatter-title-unvalidated-at-producer.md`.
+The sibling filing (`engine-planner-recent-flag.md`, the planner prose naming
+a `--recent` flag `s2_search.py` does not have) was fixed here in the
+2026-08-07 doc-rot sweep, which also ran the gate that filing proposed —
+every prose-named CLI flag in `skills/*/SKILL.md` and `agents/*.md` parsed
+against the named script's argparse (two further defects found and fixed:
+both NDPR usage rows, plus `check_setup.py`'s "(no options)"). Adopting that
+check as a standing pytest gate is open and cheap (~30 lines).
 
 **This file is the work queue.**

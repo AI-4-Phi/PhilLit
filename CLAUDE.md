@@ -58,9 +58,12 @@ plugin layout has no `.claude/` prefix).
 
 **Every fix or improvement made here must be implemented or mirrored in
 phillit-service, mutatis mutandis** (Johannes, 2026-07-28) — code, docs,
-and roadmap items alike. Adapt rather than copy: paths gain the
-`engine/.claude/` prefix, roadmap sub-items renumber (PhilLit item 3 ↔
-service item 23), and a file may not exist there yet. Mirroring holds in
+and roadmap items alike. Amended 2026-08-05: mirroring is **batched** —
+accumulate mirror debt and land it in the single scheduled intake session
+(`docs/ROADMAP.md`, working sequence); don't mirror piecemeal. Adapt rather than copy: paths gain the
+`engine/.claude/` prefix, roadmap sub-items renumber (PhilLit item 3, the
+bibliography-pipeline integrity fixes, ↔ service item 23, its intake of
+them), and a file may not exist there yet. Mirroring holds in
 both directions; a fix that lands in the service comes back here.
 
 **Engine/prompt fixes that need test runs are built and validated HERE

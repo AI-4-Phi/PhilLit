@@ -49,7 +49,7 @@ Output brief status during writing as **text output only** (never write these in
 
 ## Writing Mode
 
-**Section-by-Section** (default):
+**Section-by-Section**:
 - Write one section at a time to separate files
 - Read only relevant BibTeX files per section
 - Progress tracked per section
@@ -82,7 +82,7 @@ You receive from the orchestrator prompt:
    - `keywords` field: Contains topic tags and importance level (High/Medium/Low)
    - `abstract` field: Paper's actual abstract (if available)
 3. Cite using (Author Year) format in prose
-4. Build bibliography at end using BibTeX data
+4. Do NOT append a References section — the orchestrator generates the bibliography during assembly
 
 **Citation parentheses hold only citations**: author, year, and an optional page/chapter locator (e.g., `, 45`, `, ch. 3`). Never add process notes, source-reliability caveats, or evaluative qualifiers inside the parenthesis — put those in the surrounding prose instead.
 
@@ -191,10 +191,6 @@ Write to specified filename:
 [Content...]
 ```
 
-For full draft mode, include:
-- Word count at end
-- Complete References section in Chicago Author-Date format (see `$PHILLIT_ROOT/docs/conventions.md`)
-
 ## Writing Guidelines
 
 ### Citation Integration
@@ -249,7 +245,7 @@ Before submitting:
 ✅ **Citation coverage**: Key papers from literature files cited?
 ✅ **Narrative flow**: Coherent story throughout?
 ✅ **Connection to project**: Relevance clear throughout?
-✅ **References**: All in-text citations in Chicago-style bibliography?
+✅ **No References section**: Section ends with prose, not a bibliography?
 
 ### Pitfalls to Avoid
 
@@ -259,7 +255,6 @@ Before submitting:
 
 ## Communication with Orchestrator
 
-### Section-by-Section Mode
 ```
 Section [N] complete: [Section Title]
 
@@ -269,18 +264,6 @@ Statistics:
 
 File: synthesis-section-[N].md
 Ready for next section.
-```
-
-### Full Draft Mode
-```
-Literature review draft complete.
-
-Statistics:
-- Word count: [X words]
-- Papers cited: [N papers]
-- Sections: [M sections]
-Ready for editorial review.
-File: [filename]
 ```
 
 ## Notes

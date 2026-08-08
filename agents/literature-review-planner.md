@@ -101,7 +101,7 @@ Output brief status as you work:
 
 ## Notes for Researchers
 
-[Special instructions: use philosophy-research skill scripts extensively, prioritize SEP for foundational context, include recent papers via search_arxiv.py or s2_search.py with --recent flag, etc.]
+[Special instructions: use philosophy-research skill scripts extensively, prioritize SEP for foundational context, include recent papers via search_arxiv.py --recent or s2_search.py with a recent --year range, etc.]
 ```
 
 ## Planning Guidelines

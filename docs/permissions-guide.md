@@ -114,7 +114,7 @@ Agents specify `model` and `tools` in their frontmatter (see `agents/`):
 
 | Agent | Model | Tools | Permission Mode |
 |-------|-------|-------|-----------------|
-| `domain-literature-researcher` | `sonnet` | Bash, Glob, Grep, Read, Write, WebFetch, WebSearch | `acceptEdits` |
+| `domain-literature-researcher` | `sonnet` | Bash, Edit, Glob, Grep, Read, Write, WebFetch, WebSearch | `acceptEdits` |
 | `synthesis-planner` | `inherit` | Glob, Grep, Read, Write | `acceptEdits` |
 | `synthesis-writer` | `sonnet` | Glob, Grep, Read, Write | `acceptEdits` |
 | `literature-review-planner` | `sonnet` | Read, Write | `acceptEdits` |

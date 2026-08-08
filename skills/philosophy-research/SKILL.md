@@ -67,7 +67,7 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_c
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "AI alignment ethics" --category cs.AI --recent
 ```
 
-**Note**: CORE API is rate-limited to 5 requests per 10 seconds (free tier, no API key required).
+**Note**: CORE requires a (free) `CORE_API_KEY` — without one the script skips CORE entirely rather than fight the unauthenticated rate limit. Keyed access is rate-limited to 5 requests per 10 seconds.
 
 ### Phase 4: Citation Traversal
 
@@ -108,10 +108,10 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/enrich_bib
 
 ```bash
 # Discover NDPR reviews for a book
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_ndpr.py "book title or author"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_ndpr.py --title "Book Title" --author "AuthorSurname"
 
 # Extract content from an NDPR review
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ndpr.py REVIEW_URL
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ndpr.py --url REVIEW_URL
 ```
 
 NDPR extracts are tagged with `abstract_source = {ndpr}` in BibTeX entries. Note: NDPR content is primarily descriptive of the book's arguments but may include reviewer evaluation.
@@ -191,9 +191,9 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ie
 | `get_abstract.py` | Multi-source abstract resolution | `--doi`, `--s2-id`, `--title`, `--author` |
 | `get_sep_context.py` | SEP citation context extraction | `--author`, `--year`, `--coauthor` |
 | `get_iep_context.py` | IEP citation context extraction | `--author`, `--year`, `--coauthor` |
-| `search_ndpr.py` | NDPR book review discovery | `--limit` |
-| `fetch_ndpr.py` | NDPR content extraction | `--sections` |
-| `check_setup.py` | Environment check | (no options) |
+| `search_ndpr.py` | NDPR book review discovery | `--title`, `--author` |
+| `fetch_ndpr.py` | NDPR content extraction | `--url`, `--slug` |
+| `check_setup.py` | Environment check | `--json`, `--verbose`, `--skip-api` |
 
 ## Output Format
 
@@ -243,6 +243,8 @@ OPENALEX_API_KEY     # Optional: OpenAlex meters by daily spend, and one review
                      # needed above ~4 reviews/day; free at
                      # https://openalex.org/settings/api. On exhaustion PhilLit
                      # says so and continues without OpenAlex.
+CORE_API_KEY         # Optional: CORE searches and CORE abstract fallback are
+                     # skipped without it; free at https://core.ac.uk/services/api
 ```
 
 Check setup with:

@@ -1,8 +1,10 @@
 # `\uXXXX` escapes leak from search-result JSON into delivered bibliographies
 
-**Found** 2026-08-06, by item 3 D's whole-branch review, while measuring how
-many corpus `journal` values carry backslashes. Not a venue-vetting bug — it
-predates item 3 D and affects any field an agent copies out of a search result.
+**Status**: Open (tracked in `docs/ROADMAP.md`, Backlog pointers).
+**Found** 2026-08-06, by the whole-branch review of item 3 D (venue vetting),
+while measuring how many corpus `journal` values carry backslashes. Not a
+venue-vetting bug — it predates item 3 D and affects any field an agent copies
+out of a search result.
 
 ## The defect
 

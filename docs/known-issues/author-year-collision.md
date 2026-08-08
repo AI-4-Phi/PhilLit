@@ -6,9 +6,14 @@ Tracked as `ROADMAP.md` item 3, sub-items **E** (matcher) and **F** (Chicago
 suffixes). **E is FIXED 2026-08-05** (`917850d`, `fb6623e`, `be5ab30`,
 `e5e863a`, `e5cb717` — item 3 E, Tasks 1-4 of the collision-aware-matching
 plan; `970b117` — final-review fix-wave, C1 left-anchor guard, I1
-second-position corroboration, M2 dead-span cleanup). **F is still Open**
-— same-author collisions need Chicago `a`/`b` suffixes, which E cannot
-provide (see "Fix design" below).
+second-position corroboration, M2 dead-span cleanup). **F is FIXED 2026-08-06
+and validated live 2026-08-07** (`year_suffix.py` assigns Chicago `a`/`b` at
+the evidence barrier; the live run produced 5 lettered cites, each verified by
+hand to name the right work, 0 bare-year cites of lettered groups, 0 phantom
+letters — record: `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`,
+local-only). What remains of item 3 is the **first-initials gap**
+(`ROADMAP.md` §3): the live run's only same-surname pair (Onora vs Martin
+O'Neill, different years) shipped without initials.
 
 ## Summary
 
@@ -130,7 +135,8 @@ no live run, which is why it is sequenced first (roadmap 3E vs 3F):
   E cannot touch same-author collisions (Menary 2010 ×3): nothing in the
   citation distinguishes them, so those are F's alone.
 
-- **A → roadmap 3F (suffixes)** — four coordinated pieces:
+- **A → roadmap 3F (suffixes) — BUILT 2026-08-06 as designed, validated live
+  2026-08-07** — four coordinated pieces:
   1. Assign suffixes on the merged bib after dedupe, before Phase 5, into a
      dedicated field (**not** the `year` field — `re.fullmatch(r"\d{4}", …)`
      guards in `check_evidence.py` and `resolve_context.py` would reject `2019a`). Order by
@@ -141,8 +147,10 @@ no live run, which is why it is sequenced first (roadmap 3E vs 3F):
   4. Optionally renumber at Phase 6 to close letter gaps — safe only
      because suffixed prose tokens are unique per work.
 
-  Requires a live headless review run to confirm writers actually comply,
-  then a port to `phillit-service`'s vendored `engine/.claude/`.
+  The live headless run (2026-08-07) confirmed writers actually comply —
+  every lettered group was cited with its letter, and every letter named the
+  right work. The port to `phillit-service`'s vendored `engine/.claude/`
+  remains (the intake session).
 
 **C** overlaps ROADMAP item 3A (cleaner-unaware dedup) but is a *distinct*
 failure — near-identical entries surviving dedupe on diacritic variance
@@ -326,8 +334,14 @@ with "Interaction with the evidence tier" below.
   supply the initial — and to prefer "Muldoon and Wu 2023" over "et al." when
   the bibliography holds both. A bare "Johnson (2024)" still can't
   discriminate and still falls to branch 2/4 (keep-all-and-warn), so the hole
-  is closed only for compliant prose. **Confirming compliance is a rider on
-  item 3 F's live run** — until that run, treat this as instructed-but-unverified.
+  is closed only for compliant prose. **The rider fired on item 3 F's live
+  run (2026-08-07): not compliant.** The run's only same-surname pair was
+  Onora vs Martin O'Neill in *different* years — a case the landed same-year
+  instruction does not even cover — and the writer carried no initial. The
+  same-year two-Johnsons shape itself went unexercised (no such pair occurred
+  in the run), so compliance for the instructed case is still unverified, and
+  the cross-year case is tracked as the first-initials gap in `ROADMAP.md` §3
+  (all that remains of item 3).
 
 ## Interaction with the evidence tier
 
