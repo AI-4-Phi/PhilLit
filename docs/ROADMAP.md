@@ -132,25 +132,14 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
 - **Suspicion, unverified:** `rate_limiter.openalex_budget_exhausted` may read
   a transient 429 as daily exhaustion.
 
-### Cross-repo: open the mirror session with the SEP regex hang
+### Cross-repo: mirror-session backlog
 
-`phillit-service` still carries the catastrophically-backtracking regex at
-`engine/.claude/skills/philosophy-research/scripts/fetch_sep.py:67`. It is the
-only **live blocking** defect in the mirror backlog rather than a divergence: a
-review that hits it burns up to arq's 90-minute `job_timeout` before the user is
-refunded, and that repo bills every run. `review_max_turns` does not bound it —
-a subprocess wedged inside one Bash call consumes no turns.
+(The SEP parser rewrite — formerly this section's opening item and the one
+live *blocking* defect in the backlog — was ported to `phillit-service`
+2026-08-08, byte-identical in the parser region, with the two rewrite test
+classes adapted there as `tests/test_engine_fetch_sep.py`.)
 
-**Port the parser rewrite only.** The companion deadline commit patches
-`resolve_context.py`, which that engine does not have (it predates the
-evidence-barrier work, so it also has no `evidence_barrier.py`,
-`year_suffix.py` or `venue_vetting.py`). That engine also has a second exposed
-call site this repo lacks in the same form — `get_sep_context.py` imports
-`fetch_sep_article` directly. Written up there in
-`docs/known-issues/sep-bibliography-regex-hang.md` plus a `docs/roadmap.md`
-table row (committed there 2026-08-07, `73f0da1`/`a4aceb1`).
-
-Also in the mirror backlog: the `bib_identity` port, the evidence-tier port
+In the mirror backlog: the `bib_identity` port, the evidence-tier port
 (item 1 above), the collision-aware-matching port (**start from `970b117` or
 later, never `e5e863a` or `e5cb717` alone** — `970b117` fixes a left-anchor gap
 in `_CITE_INSTANCE_RE` and requires bib-record corroboration before a
@@ -164,9 +153,12 @@ Porting specifics worth having before that session starts:
   `metadata_cleaner`, `dedupe_bib`, `generate_bibliography`, `stamp_evidence`,
   `verify_paper`, plus `lint_md` and `year_suffix`, which postdate the old
   count. `grep -rn 'from bib_identity import' skills hooks` is the authority.
-- **Do not copy the import-path arithmetic.** That engine's scripts sit under
-  `engine/.claude/`, so the `parent.parent.parent.parent / "hooks"` hop in the
-  cross-directory import blocks must be re-derived.
+- **The import-path arithmetic survives the shape map unchanged — verified
+  2026-08-08.** `skills/… → engine/.claude/skills/…` preserves relative depth,
+  so `parent.parent.parent.parent / "hooks"` lands on `engine/.claude/hooks`,
+  exactly where `hooks/bib_identity.py` maps to. (An earlier version of this
+  bullet said the hops "must be re-derived" as if they would differ; they were
+  re-derived and do not.)
 - Also mutatis mutandis: the `rate_limiter.py` lazy user-agent fix and the
   `load_dotenv` additions.
 
