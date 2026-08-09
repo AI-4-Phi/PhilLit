@@ -320,3 +320,102 @@ class TestCLI:
 
         content = output.read_text()
         assert "2025-06-15" in content
+
+
+class TestBuildFrontmatter:
+    """The ADOPTed service builder (its 098a57f) plus the --title/--date
+    validation decided 2026-08-08 - landed as ONE change so the service
+    receives a validated builder at its next re-vendor pin.
+
+    Grammar parity is the constraint (the service consumer's
+    validate_title): title invalid when longer than 160 after NFC+trim or
+    containing Cc/Cf/Zl/Zp; invalid values are DROPPED with a bounded
+    warning, never sanitized - a producer that strips could emit a title
+    the consumer's grammar would never have accepted from the original
+    input. --date must be exact YYYY-MM-DD. The serialized block must stay
+    within the consumer's 50-line/2 KB caps."""
+
+    def test_no_subfield_output_identical_to_historical(self):
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("Epistemic Autonomy and AI", "2026-08-09")
+        assert block == (
+            "---\n"
+            "title: Epistemic Autonomy and AI\n"
+            "date: '2026-08-09'\n"
+            "---"
+        )
+
+    def test_valid_subfield_emitted(self):
+        import yaml
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("T", "2026-08-09",
+                                  subfield="Political Philosophy")
+        parsed = yaml.safe_load(block.strip("-\n").replace("---", ""))
+        assert parsed["subfield"] == "Political Philosophy"
+
+    def test_invalid_subfield_dropped_with_bounded_warning(self, capsys):
+        from assemble_review import build_frontmatter
+        bad = "not;a;subfield" + ("x" * 10_000)
+        block = build_frontmatter("T", "2026-08-09", subfield=bad)
+        assert "subfield" not in block
+        err = capsys.readouterr().err
+        assert "subfield" in err
+        # Bounded: the 10,000-char value must not be echoed into logs.
+        assert len(err) < 300
+
+    def test_overlong_title_dropped_not_truncated(self, capsys):
+        from assemble_review import build_frontmatter
+        long_title = "t" * 10_000
+        block = build_frontmatter(long_title, "2026-08-09")
+        assert "title" not in block
+        assert "ttt" not in block  # not sanitized INTO the block either
+        err = capsys.readouterr().err
+        assert "title" in err
+        assert "10000" in err     # the length is loggable...
+        assert "ttt" not in err   # ...the text is not
+
+    def test_title_at_the_160_boundary_kept(self):
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("t" * 160, "2026-08-09")
+        assert "title" in block
+
+    def test_title_with_format_control_chars_dropped(self, capsys):
+        """Cf covers the bidi override; Cc covers newline/tab (multiline)."""
+        from assemble_review import build_frontmatter
+        for bad in ("evil ‮ title", "two\nlines"):
+            block = build_frontmatter(bad, "2026-08-09")
+            assert "title" not in block, bad
+
+    def test_title_nfc_normalized_and_trimmed(self):
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("  Café Ethics  ", "2026-08-09")
+        assert "Café Ethics" in block
+        assert "  Caf" not in block
+
+    def test_invalid_date_dropped_with_warning(self, capsys):
+        from assemble_review import build_frontmatter
+        for bad in ("August 9, 2026", "2026-8-9", "2026-13-45"):
+            block = build_frontmatter("T", bad)
+            assert "date" not in block, bad
+        err = capsys.readouterr().err
+        assert "date" in err
+
+    def test_maximal_valid_inputs_stay_within_consumer_caps(self):
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("t" * 160, "2026-08-09",
+                                  subfield="s" * 59 + "x")
+        assert len(block.encode("utf-8")) <= 2048
+        assert block.count("\n") + 1 <= 50
+
+    def test_assemble_review_passes_subfield_through(self, tmp_path):
+        import yaml
+        from assemble_review import assemble_review
+        section = tmp_path / "section-1.md"
+        section.write_text("## One\n\nBody.\n", encoding="utf-8")
+        out = tmp_path / "review.md"
+        assemble_review(out, [section], "T", review_date="2026-08-09",
+                        subfield="Ethics")
+        text = out.read_text(encoding="utf-8")
+        parsed = yaml.safe_load(text.split("---")[1])
+        assert parsed == {"title": "T", "date": "2026-08-09",
+                          "subfield": "Ethics"}

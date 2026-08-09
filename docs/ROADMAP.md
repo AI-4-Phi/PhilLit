@@ -19,10 +19,9 @@ mirror debt accumulates anymore. Fixes land HERE and reach the service when
 it re-runs the re-vendor at a later pin; never hand-mirror engine files
 piecemeal. phillit-service work stays in sessions launched from that repo.
 
-1. **The frontmatter-title ADOPT change** (Backlog pointers, below) — small
-   and decided; landing it right after item 5, citation-year correctness
-   (shipped 2026-08-09), puts both inside the same future re-vendor pin.
-2. **Item 2, web-source evidence** (below) — spec-first.
+1. **Item 2, web-source evidence** (below) — spec-first. (Item 5,
+   citation-year correctness, and the frontmatter-title ADOPT change both
+   shipped 2026-08-09 and ride the service's next re-vendor pin together.)
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -189,24 +188,12 @@ escapes and an agent that copies a venue name as text rather than parsing it
 writes the escape into the bib. Three confirmed instances, one in a **tracked,
 publicly-linked** example review.
 
-**One engine defect filed by phillit-service and still owned here** (write-up
-in the service's `docs/known-issues/frontmatter-title-unvalidated-at-producer.md`;
-verified still present upstream 2026-08-07):
-**`assemble_review.py` writes the frontmatter `title` unvalidated** — no
-length cap, no character screen. Measured consequence in the service (its
-consumer rejects titles over 160 chars or containing Cc/Cf/Zl/Zp, and an
-oversized title leaves raw YAML in the delivered review body); the plugin
-path has no such consumer, so producer-side validation serves both.
-**Adopt-or-decline DECIDED (Johannes, 2026-08-08, at the intake session):
-ADOPT.** This repo lands the service's `build_frontmatter` (its `098a57f` —
-subfield-emitting, subfield-validating) together with the `--title`/`--date`
-validation as ONE change; the service then receives the validated builder at
-its next re-vendor pin and its `assemble_review.py` divergence dissolves.
-Second step of the accepted working sequence. Fix-shape
-constraints are in the service write-up: drop-with-warning (never sanitize),
-bounded warnings (never echo a 10,000-char title into logs), `--date` as
-exact `YYYY-MM-DD`, and ideally a post-serialization assert that the block
-stays within the consumer's 50-line/2 KB caps.
+(The frontmatter-title ADOPT change shipped 2026-08-09: `assemble_review.py`
+now carries the service's `build_frontmatter` — subfield-emitting,
+subfield-validating — plus `--title`/`--date` validation and the
+50-line/2 KB post-serialization invariant, as one change. The service's
+divergence dissolves at its next re-vendor pin; its port note asks its
+`TestServiceGrammarParity` to gain the title rule at intake.)
 
 The sibling filing (`engine-planner-recent-flag.md`, the planner prose naming
 a `--recent` flag `s2_search.py` does not have) was fixed here in the
