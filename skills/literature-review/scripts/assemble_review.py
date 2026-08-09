@@ -16,7 +16,11 @@ import yaml
 # a bounded warning instead (decided 2026-08-08, ADOPT; constraints in the
 # service's known-issues/frontmatter-title-unvalidated-at-producer.md).
 _TITLE_MAX_CHARS = 160
-_TITLE_FORBIDDEN_CATEGORIES = ("Cc", "Cf", "Zl", "Zp")  # covers multiline+bidi
+# Cc/Cf/Zl/Zp cover multiline and the bidi override; Cs (lone surrogates,
+# producer-stricter than the consumer) covers undecodable argv bytes, which
+# surrogateescape would otherwise carry into the delivered YAML as a
+# deferred UnicodeEncodeError for whoever re-encodes the parsed title.
+_TITLE_FORBIDDEN_CATEGORIES = ("Cc", "Cf", "Cs", "Zl", "Zp")
 _SUBFIELD_RE = re.compile(r"[A-Za-z][A-Za-z /&-]{0,59}\Z")
 _DATE_RE = re.compile(r"\d{4}-\d{2}-\d{2}\Z")
 # The consumer rejects any frontmatter block over 50 lines or 2 KB and - by
@@ -26,25 +30,25 @@ _FRONTMATTER_MAX_LINES = 50
 _FRONTMATTER_MAX_BYTES = 2048
 
 
-def _valid_title(title: str) -> str | None:
+def _valid_title(title: str, warn) -> str | None:
     """NFC+trimmed title, or None with a BOUNDED warning (drop, never
     sanitize; never echo the text - it can carry 10,000 chars of user topic
     into logs, so the warning names the reason and a length only)."""
     normalized = unicodedata.normalize("NFC", title).strip()
     if not normalized or len(normalized) > _TITLE_MAX_CHARS:
-        print(f"Warning: invalid title dropped from frontmatter "
-              f"(length {len(normalized)} after NFC+trim; "
-              f"1-{_TITLE_MAX_CHARS} required)", file=sys.stderr)
+        warn(f"invalid title dropped from frontmatter "
+             f"(length {len(normalized)} after NFC+trim; "
+             f"1-{_TITLE_MAX_CHARS} required)")
         return None
     if any(unicodedata.category(ch) in _TITLE_FORBIDDEN_CATEGORIES
            for ch in normalized):
-        print("Warning: invalid title dropped from frontmatter "
-              "(contains a control or format character)", file=sys.stderr)
+        warn("invalid title dropped from frontmatter "
+             "(contains a control, format, or surrogate character)")
         return None
     return normalized
 
 
-def _valid_date(value: str) -> str | None:
+def _valid_date(value: str, warn) -> str | None:
     """The exact-shape calendar date, or None with a bounded warning."""
     if _DATE_RE.match(value):
         try:
@@ -52,26 +56,45 @@ def _valid_date(value: str) -> str | None:
             return value
         except ValueError:
             pass
-    print(f"Warning: invalid date dropped from frontmatter "
-          f"(need YYYY-MM-DD, got {len(value)} chars)", file=sys.stderr)
+    warn(f"invalid date dropped from frontmatter "
+         f"(need YYYY-MM-DD, got {len(value)} chars)")
     return None
 
 
-def build_frontmatter(title: str, date: str, subfield: str | None = None) -> str:
+# Today's date, resolvable inside build_frontmatter where the `date`
+# parameter shadows the datetime import.
+_today_iso = date.today
+
+
+def build_frontmatter(title: str, date: str | None = None,
+                      subfield: str | None = None,
+                      warnings: list | None = None) -> str:
     """Build the ----delimited YAML frontmatter block for the review file.
 
     Adopted from phillit-service (its 098a57f) with the --title/--date
     validation landed as one change. Every field is validated and an invalid
-    value is dropped with a bounded warning, its key omitted; with a valid
-    title and date and no subfield the output is byte-identical to the
-    historical block. The subfield grammar (letters/spaces/`/`/`&`/`-`,
-    starts with a letter, max 60 chars) is the service consumer's.
+    value is dropped with a bounded warning, its key omitted; a None date
+    falls back to today. With a valid title and date and no subfield the
+    output is byte-identical to the historical block. The subfield grammar
+    (letters/spaces/`/`/`&`/`-`, starts with a letter, max 60 chars) is the
+    service consumer's.
+
+    Warnings go to stderr AND, when a `warnings` list is supplied, into it -
+    the caller's summary is what an autopilot run actually reads, and a
+    dropped title with only a scrollable stderr line ships an untitled
+    review with no visible signal.
     """
+    def warn(reason: str) -> None:
+        print(f"Warning: {reason}", file=sys.stderr)
+        if warnings is not None:
+            warnings.append(reason)
+
     fields = {}
-    valid_title = _valid_title(title)
+    valid_title = _valid_title(title, warn)
     if valid_title is not None:
         fields['title'] = valid_title
-    valid_date = _valid_date(date)
+    valid_date = _valid_date(date, warn) if date is not None \
+        else _today_iso().isoformat()
     if valid_date is not None:
         fields['date'] = valid_date
     if subfield is not None:
@@ -79,8 +102,12 @@ def build_frontmatter(title: str, date: str, subfield: str | None = None) -> str
         if _SUBFIELD_RE.fullmatch(subfield):
             fields['subfield'] = subfield
         else:
-            print(f"Warning: invalid subfield dropped from frontmatter "
-                  f"({len(subfield)} chars)", file=sys.stderr)
+            warn(f"invalid subfield dropped from frontmatter "
+                 f"({len(subfield)} chars)")
+
+    if not fields:
+        # yaml.safe_dump({}) would emit a literal '{}' line into the review.
+        return '---\n---'
 
     # yaml.safe_dump handles special characters (quoting, unicode)
     yaml_block = yaml.safe_dump(
@@ -149,18 +176,20 @@ def assemble_review(
     if review_date is None:
         review_date = date.today().isoformat()
 
-    # Build output content
-    parts = []
-
-    # YAML frontmatter
-    parts.append(build_frontmatter(title, review_date, subfield))
-    parts.append('')  # Blank line after frontmatter
-
     stats = {
         'sections': [],
         'total_bytes': 0,
         'warnings': []
     }
+
+    # Build output content
+    parts = []
+
+    # YAML frontmatter; drops land in stats['warnings'] so the printed
+    # summary shows them, not just stderr
+    parts.append(build_frontmatter(title, review_date, subfield,
+                                   warnings=stats['warnings']))
+    parts.append('')  # Blank line after frontmatter
 
     for section_file in sorted_files:
         if not section_file.exists():

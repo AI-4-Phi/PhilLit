@@ -29,6 +29,7 @@ import os
 import re
 import sys
 import traceback
+from collections import Counter
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
@@ -70,7 +71,7 @@ BREAKER_FRACTION = 0.30
 _MARKER_RE = re.compile(r",?\s*METADATA\\*_CLEANED:.*$", re.DOTALL)
 
 # The marker's removed-field grammar, shared with dedupe_bib.py and
-# generate_bibliography.py (ROADMAP item 3 A). This module owns the marker
+# generate_bibliography.py (item 3 A, duplicate entries). This module owns the marker
 # format (_apply_cleaned_marker writes it); parse it here, in one place.
 _MARKER_BODY_RE = re.compile(r"METADATA\\*_CLEANED:\s*(.*)$", re.DOTALL)
 
@@ -241,8 +242,36 @@ def _year_is_overwritable(record: dict) -> bool:
     return record.get("year_basis") in _VERSION_OF_RECORD_BASES
 
 
-def _book_year_moves_later(record: dict, api_year: str, bib_year_key: str) -> bool:
-    """Would writing this record's year move a BOOK's year LATER? (Item 5 B.)
+# The reprint-capable entry class: the works that get re-registered under a
+# later edition's DOI. Chapters ride their volume's edition, so incollection/
+# inbook share the failure with book - the same set stamp_evidence.py models.
+_REPRINT_CAPABLE_TYPES = frozenset({"book", "incollection", "inbook"})
+
+# User-facing explanation per decline reason. The reasons exist because
+# different causes want different fixes (the Option C design note above), so
+# each maps to its own remediation; the report never folds one into another.
+_DECLINE_REASON_MESSAGES = {
+    "unscoped": ("where the only DOI-matched evidence was a broad search "
+                 "dump, not a targeted CrossRef lookup"),
+    "no-version-of-record-date": (
+        "where the CrossRef record does not say which date field its year "
+        "came from, so it may be an online-first date rather than the "
+        "citation year (re-run verification to resolve)"),
+    "book-year-moved-later": (
+        "where a book-class entry's year would have moved LATER - a reprint "
+        "edition's DOI carries the reprint's print year, not the work's "
+        "(kept the earlier bibliography year)"),
+    "book-year-direction-unknown": (
+        "where a book-class entry's year could not be compared for "
+        "direction (unparseable bibliography year; fix it or re-verify "
+        "the entry)"),
+}
+
+
+def _book_year_decline_reason(record: dict, entry_type: str,
+                              api_year: str, bib_year_key: str) -> Optional[str]:
+    """Reason to REFUSE this year write under item 5 B, the reprint-edition
+    direction bound - or None when the write stays licensed.
 
     A reprint edition gets its own DOI, and CrossRef's `published-print` for
     that DOI is genuinely the reprint's year while being the wrong citation
@@ -250,24 +279,33 @@ def _book_year_moves_later(record: dict, api_year: str, bib_year_key: str) -> bo
     paperback DOI carries published-print 2001, and the resulting rewrite
     manufactured a spurious Chicago a/b collision ("Rawls 2001b" for a 1999
     book). Chicago author-date cites the original publication year, and a
-    reprint can only move a year FORWARD - so for book-typed records a later
-    year is refused while an earlier one (a correction back toward the
-    original edition) stays allowed. This bound is what makes item 5 A safe:
-    requesting print dates on the search path extends print-year overwrites
-    from "books verified by DOI lookup" to every search-verified book.
+    reprint can only move a year FORWARD - so for the reprint-capable class
+    a later year is refused ("book-year-moved-later") while an earlier one
+    (a correction back toward the original edition) stays allowed. This
+    bound is what makes item 5 A, the missing published-print request, safe
+    to fix: requesting print dates on the search path extends print-year
+    overwrites from "books verified by DOI lookup" to every search-verified
+    book.
 
-    Bookness must be POSITIVE evidence: `suggested_bibtex_type == "book"`,
-    which verify_paper.py derives onto every record (book/monograph/
-    edited-book). A record without the field predates that producer and the
-    bound simply never fires - the pre-5B behavior. A bib year the direction
-    test cannot parse ("n.d.", "[2021]") gives no direction evidence, so for
-    books the guard fails closed (declines are counted, never silent).
+    Bookness is POSITIVE evidence from either side: the record's
+    `suggested_bibtex_type` (verify_paper.py derives it onto every record;
+    covers per-chapter DOIs of a reprint volume, which map to incollection)
+    OR the bib entry's own type (covers records written before the producer
+    emitted the field, and wrong-granularity DOIs pasted into a @book
+    entry). A bib year the direction test cannot parse ("n.d.", "[2021]")
+    gives no direction evidence, so for this class the guard fails closed
+    under its own reason ("book-year-direction-unknown" - the remediation
+    is fixing the malformed year, not hunting reprint DOIs); declines are
+    counted, never silent.
     """
-    if record.get("suggested_bibtex_type") != "book":
-        return False
+    if (record.get("suggested_bibtex_type") not in _REPRINT_CAPABLE_TYPES
+            and (entry_type or "").lower() not in _REPRINT_CAPABLE_TYPES):
+        return None
     if not _WRITABLE_YEAR_RE.match(bib_year_key):
-        return True
-    return int(api_year) > int(bib_year_key)
+        return "book-year-direction-unknown"
+    if int(api_year) > int(bib_year_key):
+        return "book-year-moved-later"
+    return None
 
 
 def _year_of(record: dict) -> str:
@@ -966,17 +1004,19 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         if (_WRITABLE_YEAR_RE.match(api_year)
                 and bib_year and _year_key(bib_year) != api_year):
             if api_entry.get("entry_scoped") and _year_is_overwritable(api_entry):
-                # Third licence, direction-shaped (item 5 B): both provenance
-                # licences pass on a reprint edition's record - the DOI is
-                # entry-scoped and published-print is the doctrinal basis -
-                # yet the year is wrong for the WORK. Basis membership cannot
-                # see this; only the direction of the move can.
-                if _book_year_moves_later(api_entry, api_year,
-                                          _year_key(bib_year)):
+                # Third licence, direction-shaped (item 5 B, the reprint-
+                # edition direction bound): both provenance licences pass on
+                # a reprint edition's record - the DOI is entry-scoped and
+                # published-print is the doctrinal basis - yet the year is
+                # wrong for the WORK. Basis membership cannot see this; only
+                # the direction of the move can.
+                bound_reason = _book_year_decline_reason(
+                    api_entry, entry.type, api_year, _year_key(bib_year))
+                if bound_reason:
                     plan["year_correction_declined"] = (
                         bib_year, api_year,
                         api_entry.get("source_file") or "?",
-                        "book-year-moved-later")
+                        bound_reason)
                 else:
                     plan["year_corrected"] = (bib_year, api_year)
             else:
@@ -1308,24 +1348,18 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     # deliberate divergence from phillit-service, which tallies these after the
     # breaker's early return and so reports none on a trip.
     if result["years_declined"]:
-        unscoped = sum(1 for d in result["years_declined"] if d[3] == "unscoped")
-        book_later = sum(1 for d in result["years_declined"]
-                         if d[3] == "book-year-moved-later")
-        undated = len(result["years_declined"]) - unscoped - book_later
+        # Every reason is counted BY NAME, with an explicit bucket for
+        # anything unrecognized - deriving one bucket by subtraction let a
+        # future reason be silently reported under the wrong explanation.
+        reasons = Counter(d[3] for d in result["years_declined"])
         parts = []
-        if unscoped:
-            parts.append(f"{unscoped} where the only DOI-matched evidence was a "
-                         "broad search dump, not a targeted CrossRef lookup")
-        if book_later:
-            parts.append(f"{book_later} where a book's year would have moved "
-                         "LATER - a reprint edition's DOI carries the "
-                         "reprint's print year, not the work's (kept the "
-                         "earlier bibliography year)")
-        if undated:
-            parts.append(f"{undated} where the CrossRef record does not say which "
-                         "date field its year came from, so it may be an "
-                         "online-first date rather than the citation year "
-                         "(re-run verification to resolve)")
+        for reason, message in _DECLINE_REASON_MESSAGES.items():
+            count = reasons.pop(reason, 0)
+            if count:
+                parts.append(f"{count} {message}")
+        if reasons:
+            parts.append(f"{sum(reasons.values())} for other reasons "
+                         f"({', '.join(sorted(reasons))})")
         result["warnings"].append(
             f"Declined {len(result['years_declined'])} year correction(s): "
             + "; ".join(parts) + ".")

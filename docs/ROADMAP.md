@@ -19,9 +19,9 @@ mirror debt accumulates anymore. Fixes land HERE and reach the service when
 it re-runs the re-vendor at a later pin; never hand-mirror engine files
 piecemeal. phillit-service work stays in sessions launched from that repo.
 
-1. **Item 2, web-source evidence** (below) — spec-first. (Item 5,
-   citation-year correctness, and the frontmatter-title ADOPT change both
-   shipped 2026-08-09 and ride the service's next re-vendor pin together.)
+1. **Item 2, web-source evidence** (below) — spec-first.
+2. **Item 7, reprint years at research time** (below) — small, or fold into
+   other cleaner work.
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -72,8 +72,8 @@ hardening by 2026-08-02). Problem statements and measurements:
 
 Sub-item F's (Chicago a/b disambiguation) live run and all five of its riders
 are done. Record of the run, the rider results, and the three defects it
-surfaced (now item 5, citation-year correctness, and item 6, venue-name
-recall):
+surfaced (the citation-year pair shipped 2026-08-09; the third is item 6,
+venue-name recall):
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
 
@@ -148,14 +148,6 @@ things stay open:
   still takes the unchanged primary path. Never observed in the corpus (0 of
   8,494 first-author entries).
 
-(Item 5, citation-year correctness for editions and search-verified works,
-shipped 2026-08-09: the search path's `select` now requests
-`published-print`/`published-online`, and the cleaner refuses to move a
-book-typed record's year LATER — the reprint-edition direction bound, with
-its own decline reason. Evidence remains in
-`.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`; the service carries
-both defects until its next re-vendor pin.)
-
 ## 6. Venue-name recall for subtitled journals — low priority, benign direction
 
 `venue_vetting` resolves a bare venue name but not the subtitled form a bib may
@@ -175,7 +167,21 @@ name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitle
 fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
 Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
 
-## Backlog pointers
+## 7. Reprint years at research time — the seeding half of the reprint-year defect
+
+The 2026-08-09 citation-year work fixed the CLEANER half: a reprint DOI's
+later print year can no longer overwrite a book-class entry's earlier year.
+The RESEARCH-TIME half remains: a researcher who verifies the reprint DOI
+first seeds the reprint's year into the bib directly, the years then AGREE,
+no licence is ever consulted, and the on-disk verify record corroborates
+the wrong year (the pre-fix Rawls route, one step earlier). Found by the
+2026-08-09 whole-diff review.
+
+Mitigation shipped 2026-08-09: `agents/domain-literature-researcher.md` now
+instructs preferring an earlier API-attested year for books/chapters. Open:
+a mechanical producer-side signal — e.g. `verify_paper.py` stamping a
+year-caveat on book-class records whose DOI registration postdates other
+attested years — needs a design pass; prose alone is a soft control.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open, e.g.
@@ -187,13 +193,6 @@ Other open items live in their own known-issue docs — see
 escapes and an agent that copies a venue name as text rather than parsing it
 writes the escape into the bib. Three confirmed instances, one in a **tracked,
 publicly-linked** example review.
-
-(The frontmatter-title ADOPT change shipped 2026-08-09: `assemble_review.py`
-now carries the service's `build_frontmatter` — subfield-emitting,
-subfield-validating — plus `--title`/`--date` validation and the
-50-line/2 KB post-serialization invariant, as one change. The service's
-divergence dissolves at its next re-vendor pin; its port note asks its
-`TestServiceGrammarParity` to gain the title rule at intake.)
 
 The sibling filing (`engine-planner-recent-flag.md`, the planner prose naming
 a `--recent` flag `s2_search.py` does not have) was fixed here in the

@@ -419,3 +419,46 @@ class TestBuildFrontmatter:
         parsed = yaml.safe_load(text.split("---")[1])
         assert parsed == {"title": "T", "date": "2026-08-09",
                           "subfield": "Ethics"}
+
+
+class TestFrontmatterReviewFindings:
+    """Verified review findings on the adopted builder."""
+
+    def test_lone_surrogate_in_title_dropped(self):
+        """An undecodable argv byte arrives as a lone surrogate (category
+        Cs, surrogateescape); it must not flow into the delivered
+        frontmatter, where it becomes a deferred UnicodeEncodeError in any
+        consumer that re-encodes the parsed title."""
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("Kant\udc80 Ethics", "2026-08-09")
+        assert "title" not in block
+        assert "Kant" not in block
+
+    def test_frontmatter_drops_reach_assembly_warnings(self, tmp_path):
+        """A dropped title must surface in stats['warnings'] - the block the
+        printed summary shows - not only as a scrollable stderr line, or an
+        autopilot run ships an untitled review with no visible signal."""
+        from assemble_review import assemble_review
+        section = tmp_path / "section-1.md"
+        section.write_text("## One\n\nBody.\n", encoding="utf-8")
+        out = tmp_path / "review.md"
+        stats = assemble_review(out, [section], "t" * 10_000,
+                                review_date="2026-08-09")
+        assert any("title" in w for w in stats["warnings"])
+
+    def test_all_fields_dropped_emits_empty_block_not_braces(self, capsys):
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("two\nlines", "not-a-date")
+        assert block == "---\n---"
+        assert "{}" not in block
+
+    def test_none_date_defaults_to_today(self):
+        """The drop-with-warning contract must hold on the ADOPT surface:
+        a date-less call is the service's natural signature and must not
+        crash (nor warn) - it falls back to today."""
+        import yaml
+        from datetime import date as _date
+        from assemble_review import build_frontmatter
+        block = build_frontmatter("T", None)
+        parsed = yaml.safe_load(block.strip("-\n").replace("---", ""))
+        assert parsed["date"] == _date.today().isoformat()

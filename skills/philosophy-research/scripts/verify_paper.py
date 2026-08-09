@@ -155,9 +155,17 @@ CROSSREF_TO_BIBTEX_TYPE = {
     "journal-article": "article",
     "book-chapter": "incollection",
     "book-section": "incollection",
+    "book-part": "incollection",
+    "book-track": "incollection",
     "book": "book",
     "monograph": "book",
     "edited-book": "book",
+    # Reference works and multi-volume sets are the canonical, reprint-prone
+    # class the cleaner's direction bound (item 5 B, the reprint-edition
+    # direction bound) exists for - falling to "misc" bypassed it.
+    "reference-book": "book",
+    "book-set": "book",
+    "book-series": "book",
     "proceedings-article": "inproceedings",
     "dissertation": "phdthesis",
     "posted-content": "misc",       # preprints
@@ -177,6 +185,18 @@ CROSSREF_TO_BIBTEX_TYPE = {
 # `created` is a registration timestamp, not a publication date; it is a last
 # resort and is marked as such so consumers can refuse to act on it.
 _YEAR_FIELDS = ["published-print", "published", "published-online", "created"]
+
+# The bibliographic-search path's CrossRef `select` list, derived from
+# _YEAR_FIELDS so extract_year's preference order can never desync from what
+# is actually requested (item 5 A, the missing published-print request, WAS
+# that desync: the field was first in _YEAR_FIELDS but never asked for, so
+# every search-verified record carried the online-first year). `created` is
+# deliberately not requested here - it is a registration timestamp, a
+# last-resort the search path has no business acting on.
+_SEARCH_SELECT = ",".join(
+    ["DOI", "title", "author", "editor", "container-title", "volume",
+     "issue", "page", "publisher", "type", "score"]
+    + [f for f in _YEAR_FIELDS if f != "created"])
 
 
 def extract_year(item: dict) -> tuple[Optional[int], Optional[str]]:
@@ -337,15 +357,7 @@ def search_by_metadata(
         "rows": 5,
         "sort": "score",
         "order": "desc",
-        # published-print and published-online are load-bearing: CrossRef's
-        # `published` is the EARLIEST of the two, so a select list without
-        # them means extract_year can never reach its own first preference on
-        # this path and every search-verified record carries the online-first
-        # year (item 5 A - measured 2/111 wrong-at-delivery on the 2026-08-07
-        # live run, with the verify record corroborating the wrong year).
-        "select": "DOI,title,author,editor,published,published-print,"
-                  "published-online,container-title,volume,issue,page,"
-                  "publisher,type,score",
+        "select": _SEARCH_SELECT,
     }
 
     if author:

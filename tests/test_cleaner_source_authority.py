@@ -1501,16 +1501,25 @@ class TestBookYearDirectionBound:
         assert "year:2001" in content  # marker records the old value
 
     def test_article_record_may_still_move_a_year_later(self, tmp_path):
-        """The bound is book-only. For articles the later print year IS the
-        citation year (the online-first class item 3 K fixed), so an
-        article-typed record must still correct 2011 -> 2012."""
+        """The bound covers only the reprint-capable book class. For
+        articles the later print year IS the citation year (the online-first
+        class item 3 K, cleaner/year hardening, fixed), so an @article entry
+        with an article-typed record must still correct 2011 -> 2012.
+        Bookness on EITHER side (record type or bib entry type) triggers the
+        bound, so this test keeps both sides article-typed."""
         record = _verify_book_record(2012, suggested_bibtex_type="article",
                                      crossref_type="journal-article")
         json_dir = make_json_dir(tmp_path, {
             "verify_1_wiens.json": record,
         })
         bib = tmp_path / "test.bib"
-        bib.write_text(_rawls_bib(2011), encoding="utf-8")
+        bib.write_text(f"""@article{{wiens2011prescribing,
+  author = {{Wiens, David}},
+  title = {{Prescribing Institutions Without Ideal Theory}},
+  journal = {{Journal of Political Philosophy}},
+  year = {{2011}},
+  doi = {{{RAWLS_DOI}}}
+}}""", encoding="utf-8")
 
         result = clean_bibtex(bib, json_dir)
 
@@ -1521,7 +1530,9 @@ class TestBookYearDirectionBound:
     def test_nonintegral_book_year_fails_closed(self, tmp_path):
         """With a bib year the direction test cannot parse ("n.d."), the
         guard cannot prove the move is not later, so for books it declines
-        (counted, never silent) rather than writing."""
+        (counted, never silent) rather than writing - under its own reason,
+        since the remediation (fix the malformed year) differs from the
+        moved-later case's (check for a reprint DOI)."""
         json_dir = make_json_dir(tmp_path, {
             "verify_1_rawls1999lop.json": _verify_book_record(2001),
         })
@@ -1532,6 +1543,99 @@ class TestBookYearDirectionBound:
 
         assert result["years_corrected"] == 0
         assert len(result["years_declined"]) == 1
-        assert result["years_declined"][0][3] == "book-year-moved-later"
+        assert result["years_declined"][0][3] == "book-year-direction-unknown"
         content = bib.read_text(encoding="utf-8")
         assert "n.d." in content
+
+
+class TestDirectionBoundCoverage:
+    """Review findings on item 5 B, the reprint-edition direction bound:
+    bookness keyed on suggested_bibtex_type == "book" exactly missed (a) the
+    chapter class - a per-chapter DOI of the same reprint edition maps to
+    "incollection" and the researcher agent explicitly instructs
+    @incollection entries with chapter DOIs, and (b) records written before
+    verify_paper.py emitted the field at all (pre-2026-02-09 workspaces),
+    where the bib entry's own @book type is the only bookness evidence."""
+
+    def test_chapter_record_of_reprint_does_not_move_year_later(self, tmp_path):
+        record = _verify_book_record(2001, suggested_bibtex_type="incollection",
+                                     crossref_type="book-chapter")
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawlschapter.json": record,
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(f"""@incollection{{rawls1999chapter,
+  author = {{Rawls, John}},
+  title = {{Section 58}},
+  booktitle = {{The Law of Peoples}},
+  year = {{1999}},
+  doi = {{{RAWLS_DOI}}}
+}}""", encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 0
+        assert result["years_declined"][0][3] == "book-year-moved-later"
+
+    def test_book_bib_entry_is_bookness_evidence_when_record_lacks_the_field(
+            self, tmp_path):
+        """A verify record written before the producer emitted
+        suggested_bibtex_type must not reopen the Rawls rewrite when the bib
+        entry itself says @book."""
+        record = _verify_book_record(2001)
+        del record["results"][0]["suggested_bibtex_type"]
+        del record["results"][0]["type"]
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawls1999lop.json": record,
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib(1999), encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 0
+        assert result["years_declined"][0][3] == "book-year-moved-later"
+
+    def test_article_bib_entry_with_fieldless_record_still_corrects(self, tmp_path):
+        """The entry-type fallback must not over-block: an @article whose
+        record lacks the field keeps the pre-bound behavior (year may move
+        later - the online-first class)."""
+        record = _verify_book_record(2012)
+        del record["results"][0]["suggested_bibtex_type"]
+        del record["results"][0]["type"]
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_wiens.json": record,
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(f"""@article{{wiens2011,
+  author = {{Wiens, David}},
+  title = {{Prescribing Institutions Without Ideal Theory}},
+  journal = {{Journal of Political Philosophy}},
+  year = {{2011}},
+  doi = {{{RAWLS_DOI}}}
+}}""", encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 1
+
+
+class TestDeclineReasonReporting:
+    """Review findings: the unparseable-year branch reused the moved-later
+    reason (sending the operator hunting reprint DOIs when the remediation
+    is fixing a malformed year), and the summary derived one bucket by
+    subtraction (a future reason would be silently misreported)."""
+
+    def test_unparseable_book_year_gets_its_own_reason(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawls1999lop.json": _verify_book_record(2001),
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib("n.d."), encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 0
+        assert result["years_declined"][0][3] == "book-year-direction-unknown"
+        assert any("could not be compared" in w for w in result["warnings"])
+        assert not any("moved LATER" in w for w in result["warnings"])

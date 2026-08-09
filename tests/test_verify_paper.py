@@ -708,3 +708,38 @@ class TestSearchSelectRequestsPrintDates:
         _, result = self._run_search()
         assert result["year"] == 2015
         assert result["year_basis"] == "published-print"
+
+
+class TestSelectListYearFieldSync:
+    """Item 5 A (the missing published-print request) WAS a desync between
+    _YEAR_FIELDS and the hand-maintained select string; the select value is
+    now derived from the constant so the next date-field change cannot miss
+    the search path again."""
+
+    def test_select_carries_every_year_field_except_created(self):
+        import verify_paper
+        select_fields = verify_paper._SEARCH_SELECT.split(",")
+        for field in verify_paper._YEAR_FIELDS:
+            if field == "created":
+                assert field not in select_fields  # registration timestamp
+            else:
+                assert field in select_fields, field
+
+
+class TestBookTypeMapCoverage:
+    """Review finding on item 5 B (the reprint-edition direction bound):
+    CrossRef's other book types fell to the default 'misc', so genuinely
+    book-typed records bypassed the bound - reference works and multi-volume
+    sets are precisely the canonical, reprint-prone class it was built for."""
+
+    @pytest.mark.parametrize("crossref_type,expected", [
+        ("reference-book", "book"),
+        ("book-set", "book"),
+        ("book-series", "book"),
+        ("book-part", "incollection"),
+        ("book-track", "incollection"),
+    ])
+    def test_remaining_book_types_map_into_the_book_class(
+            self, crossref_type, expected):
+        import verify_paper
+        assert verify_paper.CROSSREF_TO_BIBTEX_TYPE[crossref_type] == expected
