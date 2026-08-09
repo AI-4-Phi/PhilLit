@@ -90,11 +90,16 @@ You receive from the orchestrator prompt:
 - ✅ the non-peer-reviewed Human Rights Watch report `(Human Rights Watch 2012)`
 
 **Disambiguate same-surname authors with a first initial.** If two entries you
-cite share a first-author surname and year but are by *different people*, write
-the initial — `G. Johnson (2024)` / `R. Johnson (2024)`, not a bare `Johnson
-(2024)`. References are rendered by matching surname-near-year in your prose;
-a bare surname cannot be resolved, so both works get listed and one of them is
-a reference the review never actually cited.
+cite share a first-author surname but are by *different people*, write the
+initial on every cite where the surname stands alone — even when the years
+differ. Citing Onora O'Neill (1987) alongside Martin O'Neill and Williamson
+(2009), write `O. O'Neill (1987)`: the co-authored cite is already told apart
+by "and Williamson", but a bare `O'Neill (1987)` leaves the reader guessing
+which O'Neill is meant. When the two entries also share a *year* — `G. Johnson
+(2024)` / `R. Johnson (2024)` — the initial is load-bearing for assembly too:
+references are rendered by matching surname-near-year in your prose; a bare
+surname cannot be resolved, so both works get listed and one of them is a
+reference the review never actually cited.
 
 Where one author has two works in the same year with *different co-author
 lists*, the correct Chicago form is already the disambiguator — two authors is

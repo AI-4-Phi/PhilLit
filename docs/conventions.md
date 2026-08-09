@@ -228,14 +228,17 @@ An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed).
 | Two authors sharing a surname | (F. Author Year) — add the first initial | (G. Johnson 2024) vs. (R. Johnson 2024) |
 | One author, two works in one year | (Author Year+letter) — the entry's own `year_suffix` | (Menary 2010a) vs. (Menary 2010b) |
 
-**Same surname, same year, different people — always add the first initial.**
-This is Chicago's own rule, and in PhilLit it is load-bearing rather than
-cosmetic. References are rendered by matching *first-author surname near a
-year* in the prose, so two different people who share a surname and a year are
-indistinguishable to the renderer unless the prose carries an initial. Given a
-bare `Johnson (2024)` the renderer cannot tell which work was cited, so it
-keeps **both** in the reference list and warns — meaning a work you never
-cited is listed as if you had. Writing `G. Johnson (2024)` resolves it.
+**Different people sharing a surname — always add the first initial, whatever
+the years.** This is Chicago's own rule. When the years differ the citations
+render fine but the reader is left guessing: citing Onora O'Neill (1987)
+alongside Martin O'Neill and Williamson (2009), a bare `(O'Neill 1987)` does
+not say which O'Neill is meant — write `(O. O'Neill 1987)` (the co-authored
+cite is already told apart by "and Williamson"). When the two also share a
+*year*, the initial is load-bearing rather than cosmetic: references are
+rendered by matching *first-author surname near a year* in the prose, so given
+a bare `Johnson (2024)` the renderer cannot tell which work was cited, keeps
+**both** in the reference list, and warns — meaning a work you never cited is
+listed as if you had. Writing `G. Johnson (2024)` resolves it.
 
 **Where the same first author has two works in one year, the correct form is
 already the disambiguator** — so use it exactly. A two-author work is

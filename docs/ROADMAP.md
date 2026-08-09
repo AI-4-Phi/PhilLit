@@ -57,13 +57,15 @@ report counts affected entries per run, so this item starts from data.
   re-vendor at a later pin. The service's roadmap tracks the arrival as its
   item 24, web-source evidence.
 
-## 3. Bibliography-pipeline integrity fixes — closed except the first-initials gap
+## 3. Bibliography-pipeline integrity fixes — closed except recorded findings
 
 Sub-items A–K are all fixed or closed (A duplicate entries, B
 every-citation-resolves, C ledger write-protection, and E collision-aware
 matching on 2026-08-05; D venue vetting and F Chicago a/b disambiguation on
 2026-08-06, each with a whole-branch review and fix wave; G–K cleaner/year
-hardening by 2026-08-02). Problem statements and measurements:
+hardening by 2026-08-02; the first-initials gap — the writer instructed the
+same-surname initial only when the years also matched — on 2026-08-09).
+Problem statements and measurements:
 `docs/known-issues/bib-pipeline-integrity-gaps.md` and
 `author-year-collision.md`.
 
@@ -73,26 +75,14 @@ recall. Record of the run and the rider results:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
 
-### The first-initials gap — all that remains of this item
-
-The writer does **not** carry first initials for same-surname different-author
-cites. Observed live 2026-08-07: a review cited **Onora** O'Neill as
-`(O'Neill 1987)` and **Martin** O'Neill as `(O'Neill and Williamson 2009)`, so the
-solo cite is ambiguous to a reader. Chicago requires the initial here (the
-co-authored cite is disambiguated by "and Williamson").
-
-The Chicago a/b letters (sub-item F) do **not** address this — letters
-disambiguate one author's several works in a year, initials disambiguate two
-authors sharing a surname, and the two mechanisms are independent. Both
-`agents/synthesis-writer.md` and `docs/conventions.md` DO instruct the initial,
-but only for the same-surname *same-year* case, where reference rendering
-itself breaks (both added 2026-08-05); nothing instructs it when the years
-differ — the case observed, which renders fine and is ambiguous only to the
-reader.
-
-Sibling detail from the same corpus: prose can mix the straight and curly
-apostrophe for one surname (`O'Neill` / `O’Neill`) within a single document, which
-also matters to any surname-matching that keys on the raw character.
+One residual from the same corpus observation: prose can mix the straight and
+curly apostrophe for one surname (`O'Neill` / `O’Neill`) within a single
+document. The renderer and the linter are immune (both compare through
+`bib_identity` folds, which unify `’` with `'`), but
+`check_evidence.find_cites` builds its surname regex from the raw bib
+character — a mixed-apostrophe document under-reports cites there. Direction
+is benign on a recall-floor checker (false "uncited" telemetry, never a
+block), so this is recorded, not queued.
 
 ### Open findings from the external reviews (2026-08-06) — none is a drop path
 
