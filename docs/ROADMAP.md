@@ -10,26 +10,22 @@ Last release: **plugin v0.3.5**, pushed 2026-08-06. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
-## Working sequence (Johannes)
+## Working sequence (accepted by Johannes, 2026-08-08)
 
-1. **The mirror-vs-fork decision is MADE (Johannes, 2026-08-08, at the intake
-   session): MIRROR, by scripted re-vendor.** The session's four-option
-   analysis plus an external adversarial review both closed on it; the
-   re-vendor's spec (mirror with deletion-sync, region-invariant post-run
-   gate, pinned upstream commit) and its run criterion live in the service's
-   `docs/roadmap.md` Phase 1 — the authority, not restated here. The session
-   also hot-ported the SEP parser rewrite (see the mirror-backlog section).
-   Mirror debt still accumulates deliberately until the re-vendor RUNS —
-   don't mirror piecemeal, and don't touch or push `phillit-service` outside
-   that work.
-2. **Citation-year correctness for editions and search-verified works** (item 5
-   below) — the mirror-vs-fork decision it was gated on is made, so it is
-   UNBLOCKED, and sooner is better: the service's re-vendor deliberately
-   waits for it (capped by its own hard criterion), so item 5 landing
-   promptly is what lets one intake pass carry everything. Its position
-   relative to web-source evidence is my reading, not something Johannes
-   ruled on; swap freely.
-3. **Web-source evidence** (item 2 below).
+Intake status: the service's scripted re-vendor (`tools/revendor.py`, its
+roadmap's item 26) **RAN 2026-08-08 at pin `08a3b3e`** — the full run, then a
+same-day cleaner unification — so the mirror backlog is DRAINED and no
+mirror debt accumulates anymore. Fixes land HERE and reach the service when
+it re-runs the re-vendor at a later pin; never hand-mirror engine files
+piecemeal. phillit-service work stays in sessions launched from that repo.
+
+1. **Item 5, citation-year correctness** (below) — both coupled halves
+   (5 A, the missing `published-print` request; 5 B, the reprint-edition
+   overwrite) as ONE change.
+2. **The frontmatter-title ADOPT change** (Backlog pointers, below) — small
+   and decided; landing it right after item 5 puts both inside the same
+   future re-vendor pin.
+3. **Item 2, web-source evidence** (below) — spec-first.
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -40,16 +36,10 @@ doc-rot sweep. The tracked known-issue write-ups, `ARCHITECTURE.md`, and
 hand: a mechanical pass was attempted 2026-08-06 and reverted because the
 references sit inside sentences that need rewording around the name.
 
-## 1. Evidence-tier citability — service port only
-
-Merged here and released as v0.3.0; **what remains is the phillit-service
-port** (the service's roadmap item 20, its evidence-tier port — batched into
-the mirror session and contingent on its mirror-vs-fork decision). The port-scope list lives in the service's
-roadmap and must survive the port: the widened `check_evidence._VERB_RE`, the
-SEP `–––` repeated-author resolution in `resolve_context`, and Option C
-abstention attestation. Sister-repo instructions:
-`docs/known-issues/phillit-abstention-attestation-decision-2026-08-02.md`
-(local-only).
+(Item 1, the evidence-tier service port, left this queue 2026-08-08: its
+engine half arrived at the service with the re-vendor and the cleaner
+unification; the remaining validation-then-deploy is service-side work,
+owned by the service's roadmap item 20, its evidence-tier port.)
 
 ## 2. Web-source evidence — citability for `@misc`/url-only entries (dual-repo, spec-first)
 
@@ -70,10 +60,9 @@ report counts affected entries per run, so this item starts from data.
   licensed claims, then external review.
 - **Dual-repo**: spec lives in the sister repo
   (`phillit-service/docs/superpowers/specs/`), build and validate HERE first
-  (free runs), then port. The service's roadmap tracks the mirror as its item
-  24, web-source evidence. The
-  mirror session's mirror-vs-fork decision determines whether the "dual-repo"
-  framing still holds.
+  (free runs); the built fix then reaches the service via its scripted
+  re-vendor at a later pin. The service's roadmap tracks the arrival as its
+  item 24, web-source evidence.
 
 ## 3. Bibliography-pipeline integrity fixes — closed except the first-initials gap
 
@@ -139,35 +128,11 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
 - **Suspicion, unverified:** `rate_limiter.openalex_budget_exhausted` may read
   a transient 429 as daily exhaustion.
 
-### Cross-repo: mirror-session backlog
-
-(The SEP parser rewrite — formerly this section's opening item and the one
-live *blocking* defect in the backlog — was ported to `phillit-service`
-2026-08-08, byte-identical in the parser region, with the two rewrite test
-classes adapted there as `tests/test_engine_fetch_sep.py`.)
-
-In the mirror backlog: the `bib_identity` port, the evidence-tier port
-(item 1 above), the collision-aware-matching port (**start from `970b117` or
-later, never `e5e863a` or `e5cb717` alone** — `970b117` fixes a left-anchor gap
-in `_CITE_INSTANCE_RE` and requires bib-record corroboration before a
-second-position sighting can drop a group; earlier commits in that range get
-both wrong), and the deferred `rate_limiter` fix.
-
-Porting specifics worth having before that session starts:
-
-- **Derive `bib_identity`'s import sites at port time — the recorded count has
-  gone stale twice** (five, then six). As of 2026-08-07 it is **seven modules**:
-  `metadata_cleaner`, `dedupe_bib`, `generate_bibliography`, `stamp_evidence`,
-  `verify_paper`, plus `lint_md` and `year_suffix`, which postdate the old
-  count. `grep -rn 'from bib_identity import' skills hooks` is the authority.
-- **The import-path arithmetic survives the shape map unchanged — verified
-  2026-08-08.** `skills/… → engine/.claude/skills/…` preserves relative depth,
-  so `parent.parent.parent.parent / "hooks"` lands on `engine/.claude/hooks`,
-  exactly where `hooks/bib_identity.py` maps to. (An earlier version of this
-  bullet said the hops "must be re-derived" as if they would differ; they were
-  re-derived and do not.)
-- Also mutatis mutandis: the `rate_limiter.py` lazy user-agent fix and the
-  `load_dotenv` additions.
+(The former mirror-session backlog — the SEP parser rewrite, the
+`bib_identity` port, the evidence-tier port, collision-aware matching, the
+`rate_limiter` fix — all arrived at the service 2026-08-08: the SEP rewrite
+was hot-ported at the intake session, the rest with the re-vendor run at pin
+`08a3b3e`. Nothing cross-repo remains under this item.)
 
 ## 4. One owner for bibliography identity and matching — residuals only
 
@@ -192,9 +157,10 @@ things stay open:
 Found by the live run of item 3 F (Chicago a/b disambiguation), 2026-08-07,
 each with a reproducible proof. **They must be fixed together: fixing 5 A (the
 missing `published-print` request) alone makes 5 B (the reprint-edition
-overwrite) strictly worse.** The mirror-vs-fork gate is decided (mirror,
-2026-08-08) — unblocked, and the service's re-vendor waits on this item, so
-it leads the queue. Full evidence:
+overwrite) strictly worse.** It leads the accepted working sequence
+(2026-08-08). Both defects are confirmed present in the service's engine
+too, where a wrong year ships to a paying user; the fix arrives there with
+the service's next re-vendor pin. Full evidence:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`.
 
 ### 5A. The search path never asks CrossRef for `published-print`
@@ -294,7 +260,8 @@ path has no such consumer, so producer-side validation serves both.
 ADOPT.** This repo lands the service's `build_frontmatter` (its `098a57f` —
 subfield-emitting, subfield-validating) together with the `--title`/`--date`
 validation as ONE change; the service then receives the validated builder at
-intake and its `assemble_review.py` divergence dissolves. Fix-shape
+its next re-vendor pin and its `assemble_review.py` divergence dissolves.
+Second step of the accepted working sequence. Fix-shape
 constraints are in the service write-up: drop-with-warning (never sanitize),
 bounded warnings (never echo a 10,000-char title into logs), `--date` as
 exact `YYYY-MM-DD`, and ideally a post-serialization assert that the block

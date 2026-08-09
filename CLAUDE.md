@@ -58,13 +58,16 @@ plugin layout has no `.claude/` prefix).
 
 **Every fix or improvement made here must be implemented or mirrored in
 phillit-service, mutatis mutandis** (Johannes, 2026-07-28) — code, docs,
-and roadmap items alike. Amended 2026-08-05: mirroring is **batched** —
-accumulate mirror debt and land it in the single scheduled intake session
-(`docs/ROADMAP.md`, working sequence); don't mirror piecemeal. Adapt rather than copy: paths gain the
-`engine/.claude/` prefix, roadmap sub-items renumber (PhilLit item 3, the
-bibliography-pipeline integrity fixes, ↔ service item 23, its intake of
-them), and a file may not exist there yet. Mirroring holds in
-both directions; a fix that lands in the service comes back here.
+and roadmap items alike. Amended 2026-08-08: the mirror is **scripted** —
+the service's `tools/revendor.py` re-vendors the whole engine region at a
+pinned upstream commit (first run 2026-08-08 at `08a3b3e`; its roadmap item
+26 owns reruns). Fixes land here and arrive there at the next pin — never
+hand-mirror engine files piecemeal, and phillit-service work stays in
+sessions launched from that repo. Docs and roadmap items still adapt rather
+than copy (cross-numbering: PhilLit item 3, the bibliography-pipeline
+integrity fixes, ↔ service item 23, its intake of them). Mirroring holds in
+both directions; a fix that lands in the service comes back here (e.g. the
+frontmatter-title ADOPT change).
 
 **Engine/prompt fixes that need test runs are built and validated HERE
 first** — reviews here run under Claude Code (free), while the service bills
