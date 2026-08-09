@@ -1,6 +1,7 @@
 # `\uXXXX` escapes leak from search-result JSON into delivered bibliographies
 
-**Status**: Open (tracked in `docs/ROADMAP.md`, Backlog pointers).
+**Status**: Open (tracked in `docs/ROADMAP.md`, among the open items pointed
+to at the end of the queue).
 **Found** 2026-08-06, by the whole-branch review of item 3 D (venue vetting),
 while measuring how many corpus `journal` values carry backslashes. Not a
 venue-vetting bug — it predates item 3 D and affects any field an agent copies

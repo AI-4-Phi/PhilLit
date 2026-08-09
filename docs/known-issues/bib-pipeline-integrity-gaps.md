@@ -30,9 +30,9 @@ needed — see Issue B below for what remains, all check-side known limits)
 ordinary main-side work again.
 **Cross-repo**: `phillit-service/docs/known-issues/bib-pipeline-integrity-gaps.md`
 is the sister write-up with the full evidence pointers (its experiment
-harness holds the artifacts). Fixes should land in one repo and be
-cherry-picked to the other — same path as the metadata-cleaner year fix
-(this repo's plugin 0.2.6 ↔ service engine commit `7369880`).
+harness holds the artifacts). Fixes land here and reach the service when it
+re-runs its scripted re-vendor at a later upstream pin — never hand-mirrored
+file by file (see `CLAUDE.md`, "Sister repo: phillit-service").
 
 Architecture note for this repo: PhilLit runs interactively as a Claude Code
 plugin — the cleaner fires via the `hooks/subagent_stop_bib.sh` SubagentStop
@@ -279,8 +279,8 @@ character," which covers `''`, `-`, and `' '` alike.
 ## Issue C — fabricated abstract fields are indistinguishable from genuine ones (provenance not enforced)
 
 **Severity: Medium (structural; observed exploit was under a non-Anthropic orchestrator).**
-**Status: RE-SCOPED 2026-08-05** — the evidence tier (item 1, v0.3.0) closed
-three of C's four routes; the residual is exactly one thing, and it is not
+**Status: RE-SCOPED 2026-08-05** — the evidence-tier citability work (v0.3.0)
+closed three of C's four routes; the residual is exactly one thing, and it is not
 what the "Fix directions" paragraph below describes. Read the re-scope
 section first; the original statement of the issue is kept beneath it because
 the observed exploit is still the only field evidence.
@@ -510,8 +510,8 @@ Full predatory-list curation is out of scope; flag-and-caveat is the goal.
 ### Re-scope, 2026-08-05 (measured against the real corpus)
 
 Two things in the filed direction are stale. The mechanism was to be keyed
-"the same keyword-keyed pattern the **INCOMPLETE** rule already uses" — item 1
-deleted that pattern in favour of evidence tiers, so D needs its own home
+"the same keyword-keyed pattern the **INCOMPLETE** rule already uses" — the
+evidence-tier work deleted that pattern in favour of tiers, so D needs its own home
 (see *Where the flag lives*, below). And the named signal does not work.
 
 **DOAJ is the wrong index.** DOAJ lists *open-access* journals only.
@@ -545,7 +545,7 @@ one of them is reputable**:
 humanities journals. **A single-signal `is_core` rule is therefore
 prohibited**: stamping `VENUE_UNVETTED` on *Phronesis* would both insert a
 false discredit into scholarly output and teach the writer to ignore the flag
-— the unfollowability trap that item 1 exists to avoid.
+— the unfollowability trap the evidence-tier work exists to avoid.
 
 **D does have real targets in this corpus** (this corrects a first draft of
 this re-scope, which inferred "fires on nothing" from the top-120 stratum —
@@ -685,13 +685,14 @@ ride F's run as a fourth rider rather than buying its own.
   citation↔References post-check, `check_citations` (Issue B fix)
 - `agents/domain-literature-researcher.md` Stage 5.5 — where the abstract
   provenance convention originates (Issue C). The `INCOMPLETE` rule this row
-  used to name in `agents/synthesis-writer.md` is **gone**: item 1 replaced it
-  with the evidence tier, and citability now keys on the `EVIDENCE-*` token.
+  used to name in `agents/synthesis-writer.md` is **gone**: the evidence-tier
+  work replaced it, and citability now keys on the `EVIDENCE-*` token.
 - `skills/literature-review/scripts/stamp_evidence.py` (`attest_abstract`,
   `compute_tier`) + `skills/literature-review/scripts/evidence_barrier.py` —
   what actually decides whether an abstract earns characterization rights, i.e.
   Issue C's real surface after the tier shipped
-- `hooks/block_ledger_write.py` — the item 3 C control: denies native file-tool
+- `hooks/block_ledger_write.py` — the control from item 3 C, ledger
+  write-protection: denies native file-tool
   writes to `enrichment_ledger-*.json` / `cleaning_ledger-*.json`, wired
   PreToolUse on Write/Edit/NotebookEdit via `hooks/fast_gate.sh` (needle
   `_ledger-`), with two matching `deny` rules in

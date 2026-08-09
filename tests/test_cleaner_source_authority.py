@@ -1549,7 +1549,7 @@ class TestBookYearDirectionBound:
 
 
 class TestDirectionBoundCoverage:
-    """Review findings on item 5 B, the reprint-edition direction bound:
+    """Review findings on the reprint-edition direction bound:
     bookness keyed on suggested_bibtex_type == "book" exactly missed (a) the
     chapter class - a per-chapter DOI of the same reprint edition maps to
     "incollection" and the researcher agent explicitly instructs

@@ -4,7 +4,9 @@
 `ee5f12c` (resolution from the verified trial) with Option C implemented on
 top as `9842f2d`; all §9 acceptance criteria measured and met (see §10).**
 Sections 1–9 are the pre-merge analysis, kept as the record of why the
-resolution looks the way it does. ROADMAP item 1 points here.
+resolution looks the way it does. The evidence-tier citability item that
+pointed here left `docs/ROADMAP.md` on 2026-08-08, its service half having
+arrived with the scripted re-vendor; nothing in the queue points here now.
 
 **Headline, measured over all 319 local bibs: merging is strongly net-positive
 and the delay is what costs you.** The branch runs the *pre-3G* cleaner, so
@@ -362,6 +364,8 @@ longer applies: every cited file exists on `main`.
 
 ## Related
 
-- `docs/ROADMAP.md` item 1 (status block) and item 3 G/J (what `main` changed).
+- `docs/ROADMAP.md` items 3 G and 3 J, the cleaner/year hardening (what `main`
+  changed). The evidence-tier citability item that carried the status block has
+  since left that queue.
 - Same-shape problem, different layer:
   `bib-pipeline-integrity-gaps.md` — duplicated matching logic with no owner.

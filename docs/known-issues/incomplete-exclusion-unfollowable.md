@@ -5,8 +5,8 @@ service, third-party-model runs)
 **Severity**: High — affects every review; the rule provides no protection
 where protection is most needed
 **Status**: **SHIPPED — merged to `main` 2026-08-02 (`f89f4de`), released as
-plugin v0.3.0** (live status = `docs/ROADMAP.md` item 1, which is the
-authority; what remains there is the service port). The build-here-first
+plugin v0.3.0**, and the service port arrived downstream with the scripted
+re-vendor on 2026-08-08, so nothing remains open here. The build-here-first
 plan below was executed: all 11 plan tasks done, the free Sonnet two-arm A/B
 ran on "What are data?" (book-heavy, as this doc suggests), Johannes
 adjudicated the rubric — final outcome "Works. Proceed." — and both merge
@@ -203,10 +203,11 @@ against code in **this repo** at the paths given, not merely carried over.
    way to verify identity for DOI-less entries. It cannot work here: the
    cleaner normalizes every API record to a fixed schema (`title`,
    `container_title`, `volume`, `issue`, `pages`, `publisher`, `year`, `doi`,
-   plus `year_basis` on CrossRef records since the 3K work) in all its
-   parsers (six since 3G added `parse_core_result`) — **there is no
-   `url` key** anywhere in that file to match against. And
-   `_field_matches_api`'s contract is that empty API values never match, so
+   plus `year_basis` on CrossRef records since item 3 K, the cleaner/year
+   hardening) in all its parsers (six since item 3 G of that same hardening
+   added `parse_core_result`) — **there is no `url` key** anywhere in that
+   file to match against. And `_field_matches_api`'s contract is that empty
+   API values never match, so
    enabling it would strip URLs from every entry whose API record lacks one:
    a mass-strip that trips the circuit breaker
    (`hooks/metadata_cleaner.py:51-52`, `BREAKER_FRACTION = 0.30`) and skips
@@ -275,7 +276,8 @@ never checked against API data.
 trust the field: `stamp_evidence.attest_abstract` requires the enrichment
 ledger to carry the same source **and** the sha256 of the entry's current
 abstract text, so forging `abstract_source` alone earns nothing — the ledger
-has to be forged too. (2) ROADMAP item 3 C was re-scoped and closed-as-narrowed
+has to be forged too. (2) ROADMAP item 3 C, ledger write-protection, was
+re-scoped and closed-as-narrowed
 on 2026-08-05: `hooks/block_ledger_write.py` plus two `PHILLIT_RULES` deny
 rules now refuse native file-tool writes to both ledgers.
 

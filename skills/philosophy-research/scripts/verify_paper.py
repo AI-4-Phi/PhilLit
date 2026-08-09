@@ -161,8 +161,8 @@ CROSSREF_TO_BIBTEX_TYPE = {
     "monograph": "book",
     "edited-book": "book",
     # Reference works and multi-volume sets are the canonical, reprint-prone
-    # class the cleaner's direction bound (item 5 B, the reprint-edition
-    # direction bound) exists for - falling to "misc" bypassed it.
+    # class the cleaner's reprint-edition direction bound exists for -
+    # falling to "misc" bypassed it.
     "reference-book": "book",
     "book-set": "book",
     "book-series": "book",
@@ -188,9 +188,9 @@ _YEAR_FIELDS = ["published-print", "published", "published-online", "created"]
 
 # The bibliographic-search path's CrossRef `select` list, derived from
 # _YEAR_FIELDS so extract_year's preference order can never desync from what
-# is actually requested (item 5 A, the missing published-print request, WAS
-# that desync: the field was first in _YEAR_FIELDS but never asked for, so
-# every search-verified record carried the online-first year). `created` is
+# is actually requested. The missing published-print request WAS that desync:
+# the field was first in _YEAR_FIELDS but never asked for, so every
+# search-verified record carried the online-first year. `created` is
 # deliberately not requested here - it is a registration timestamp, a
 # last-resort the search path has no business acting on.
 _SEARCH_SELECT = ",".join(

@@ -56,8 +56,9 @@ value-alignment-ai                 prose a/b tokens=2   lettered refs=0
 
 Concrete: `nonideal-theory` prose reads `Wiens (2015a; 2015b)` while the
 References list three unlettered `Wiens, David. 2015.` entries. The
-citation resolves to nothing. This is the mirror image of ROADMAP item 3B
-("silent References omission… no every-citation-resolves post-check").
+citation resolves to nothing. This is the mirror image of ROADMAP item 3 B,
+every-citation-resolves ("silent References omission… no
+every-citation-resolves post-check").
 
 The writers are *already trying* to disambiguate — they invent suffixes
 that the reference-list renderer never emits. The convention gap is on the
@@ -117,9 +118,10 @@ The information is lost at write time: Phase 6 cannot tell which
 **before** section writing, not after.
 
 **B is separable and cheaper than A** — it needs no agent-prompt change and
-no live run, which is why it is sequenced first (roadmap 3E vs 3F):
+no live run, which is why it is sequenced first (roadmap item 3 E,
+collision-aware matching, before item 3 F, Chicago a/b disambiguation):
 
-- **B → roadmap 3E (matcher) — FIXED 2026-08-05.** Scope: collisions
+- **B → roadmap item 3 E, collision-aware matching — FIXED 2026-08-05.** Scope: collisions
   between works by *different* authors, which the prose can already
   distinguish. `find_cited_entries` is now collision-aware in both shapes:
   when the colliding entries have distinct author lists, a discriminating
@@ -128,14 +130,14 @@ no live run, which is why it is sequenced first (roadmap 3E vs 3F):
   authors (the two Johnsons), a first-initial/first-name token does the
   same. Where the prose form stays ambiguous, the group is kept whole and
   warned about rather than guessed at. Self-contained in
-  `generate_bibliography.py` + tests. Natural companion to the item-3B
+  `generate_bibliography.py` + tests. Natural companion to item 3 B's
   every-citation-resolves check in `lint_md.py`. Full resolution rule and
   residuals: "E: fixed 2026-08-05" below.
 
   E cannot touch same-author collisions (Menary 2010 ×3): nothing in the
   citation distinguishes them, so those are F's alone.
 
-- **A → roadmap 3F (suffixes) — BUILT 2026-08-06 as designed, validated live
+- **A → roadmap item 3 F, Chicago a/b disambiguation — BUILT 2026-08-06 as designed, validated live
   2026-08-07** — four coordinated pieces:
   1. Assign suffixes on the merged bib after dedupe, before Phase 5, into a
      dedicated field (**not** the `year` field — `re.fullmatch(r"\d{4}", …)`
@@ -149,8 +151,8 @@ no live run, which is why it is sequenced first (roadmap 3E vs 3F):
 
   The live headless run (2026-08-07) confirmed writers actually comply —
   every lettered group was cited with its letter, and every letter named the
-  right work. The port to `phillit-service`'s vendored `engine/.claude/`
-  remains (the intake session).
+  right work. The service's vendored `engine/.claude/` picked this up with
+  its scripted re-vendor on 2026-08-08; nothing cross-repo remains.
 
 **C** overlaps ROADMAP item 3A (cleaner-unaware dedup) but is a *distinct*
 failure — near-identical entries surviving dedupe on diacritic variance
@@ -224,9 +226,10 @@ to branch 2 or 4 and stay whole with a warning — resolving them needs
 Chicago `a`/`b` suffixes (F), which E does not attempt.
 
 **Side effect: straight/curly apostrophe matching.** The symmetric
-transliteration fold added for item 3 B (`bib_identity.ascii_variants`/
-`translit_fold`) unifies `'` and `’` as part of its lowercasing, so a bib
-entry's straight apostrophe now matches a prose curly apostrophe and vice
+transliteration fold added for item 3 B, every-citation-resolves
+(`bib_identity.ascii_variants`/`translit_fold`), unifies `'` and `’` as part
+of its lowercasing, so a bib entry's straight apostrophe now matches a prose
+curly apostrophe and vice
 versa (bib `O'Neill` meets prose `O’Neill`) — this did not match on the
 pre-item-3-B base, which only NFKD-ASCII-folded text and so dropped `’`
 (non-ASCII) while leaving `'` (ASCII) in place, producing two different
@@ -257,7 +260,7 @@ with "Interaction with the evidence tier" below.
   list being incomplete stays safe. Two tests pin both directions, including
   the interaction that must not regress: a transition word *before* a genuine
   comma list ("However, Muldoon, Wu, and Li (2023)") must still reject the
-  second-name binding. Carry into the phillit-service port notes.
+  second-name binding.
 - **Bare-apostrophe possessive not stripped.** `_strip_possessive` handles
   `'s`/`’s` (the trailing `s` is required); a bare-apostrophe possessive on
   a surname already ending in `-s` — "Rivers' (2020)" rather than
@@ -334,8 +337,9 @@ with "Interaction with the evidence tier" below.
   supply the initial — and to prefer "Muldoon and Wu 2023" over "et al." when
   the bibliography holds both. A bare "Johnson (2024)" still can't
   discriminate and still falls to branch 2/4 (keep-all-and-warn), so the hole
-  is closed only for compliant prose. **The rider fired on item 3 F's live
-  run (2026-08-07): not compliant.** The run's only same-surname pair was
+  is closed only for compliant prose. **The rider fired on the live run of
+  item 3 F, Chicago a/b disambiguation (2026-08-07): not compliant.** The run's
+  only same-surname pair was
   Onora vs Martin O'Neill in *different* years — a case the landed same-year
   instruction does not even cover — and the writer carried no initial. The
   same-year two-Johnsons shape itself went unexercised (no such pair occurred

@@ -727,7 +727,7 @@ class TestSelectListYearFieldSync:
 
 
 class TestBookTypeMapCoverage:
-    """Review finding on item 5 B (the reprint-edition direction bound):
+    """Review finding on the reprint-edition direction bound:
     CrossRef's other book types fell to the default 'misc', so genuinely
     book-typed records bypassed the bound - reference works and multi-volume
     sets are precisely the canonical, reprint-prone class it was built for."""

@@ -6,18 +6,15 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.3.5**, pushed 2026-08-06. Check
+Last release: **plugin v0.3.6**, pushed 2026-08-09. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
 ## Working sequence (accepted by Johannes, 2026-08-08)
 
-Intake status: the service's scripted re-vendor (`tools/revendor.py`, its
-roadmap's item 26) **RAN 2026-08-08 at pin `08a3b3e`** — the full run, then a
-same-day cleaner unification — so the mirror backlog is DRAINED and no
-mirror debt accumulates anymore. Fixes land HERE and reach the service when
-it re-runs the re-vendor at a later pin; never hand-mirror engine files
-piecemeal. phillit-service work stays in sessions launched from that repo.
+Nothing below is blocked on phillit-service. The cross-repo rule — scripted
+re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
+phillit-service".
 
 1. **Item 2, web-source evidence** (below) — spec-first.
 2. **Item 7, reprint years at research time** (below) — small, or fold into
@@ -28,14 +25,14 @@ reference carries its descriptive name, never a bare symbol): this file,
 `CLAUDE.md`, and the skill/agent prose were named by hand in the 2026-08-07
 doc-rot sweep. The tracked known-issue write-ups, `ARCHITECTURE.md`, and
 `permissions-guide.md` still carry bare sub-item symbols (`3E`, `item 3 D`,
-...) at roughly 30 sites — name them as those files get touched. Do it by
-hand: a mechanical pass was attempted 2026-08-06 and reverted because the
+...). `ARCHITECTURE.md` (3 sites) and `permissions-guide.md` (1) are untouched;
+the tracked known-issue write-ups hold ~44 sub-item references between them,
+of which the 2026-08-09 sweep named those in the passages it edited — over
+half remain, 18 of them in the deliberately-historical
+`evidence-tier-branch-divergence.md`. Name the rest as those files get
+touched. Do it by hand: a mechanical pass was attempted 2026-08-06 and
+reverted because the
 references sit inside sentences that need rewording around the name.
-
-(Item 1, the evidence-tier service port, left this queue 2026-08-08: its
-engine half arrived at the service with the re-vendor and the cleaner
-unification; the remaining validation-then-deploy is service-side work,
-owned by the service's roadmap item 20, its evidence-tier port.)
 
 ## 2. Web-source evidence — citability for `@misc`/url-only entries (dual-repo, spec-first)
 
@@ -71,9 +68,8 @@ hardening by 2026-08-02). Problem statements and measurements:
 `author-year-collision.md`.
 
 Sub-item F's (Chicago a/b disambiguation) live run and all five of its riders
-are done. Record of the run, the rider results, and the three defects it
-surfaced (the citation-year pair shipped 2026-08-09; the third is item 6,
-venue-name recall):
+are done; the only defect it surfaced that is still open is item 6, venue-name
+recall. Record of the run and the rider results:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
 
@@ -123,12 +119,6 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
   `docs/known-issues/sep-bibliography-regex-hang.md`.
 - **Suspicion, unverified:** `rate_limiter.openalex_budget_exhausted` may read
   a transient 429 as daily exhaustion.
-
-(The former mirror-session backlog — the SEP parser rewrite, the
-`bib_identity` port, the evidence-tier port, collision-aware matching, the
-`rate_limiter` fix — all arrived at the service 2026-08-08: the SEP rewrite
-was hot-ported at the intake session, the rest with the re-vendor run at pin
-`08a3b3e`. Nothing cross-repo remains under this item.)
 
 ## 4. One owner for bibliography identity and matching — residuals only
 

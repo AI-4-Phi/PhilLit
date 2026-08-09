@@ -6,7 +6,7 @@
 Option A landed the day this was filed (`1a97b65` 2026-02-10, gated to
 `book` + no-abstract + INCOMPLETE + High/Medium importance in
 `enrich_bibliography.py`; narrowed `8424551`, matching improved `6390794`).
-Option B is the evidence-tier design (ROADMAP item 1, merged to `main`
+Option B is the evidence-tier citability design (merged to `main`
 2026-08-02, plugin v0.3.0): `INCOMPLETE` stops meaning "exclude" and is
 consumed/stripped by the barrier. The headline numbers below (~38
 INCOMPLETE, 3 enriched) describe the pre-fix state; the post-fix enrichment

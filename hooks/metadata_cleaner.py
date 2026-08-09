@@ -270,8 +270,8 @@ _DECLINE_REASON_MESSAGES = {
 
 def _book_year_decline_reason(record: dict, entry_type: str,
                               api_year: str, bib_year_key: str) -> Optional[str]:
-    """Reason to REFUSE this year write under item 5 B, the reprint-edition
-    direction bound - or None when the write stays licensed.
+    """Reason to REFUSE this year write under the reprint-edition direction
+    bound - or None when the write stays licensed.
 
     A reprint edition gets its own DOI, and CrossRef's `published-print` for
     that DOI is genuinely the reprint's year while being the wrong citation
@@ -282,8 +282,8 @@ def _book_year_decline_reason(record: dict, entry_type: str,
     reprint can only move a year FORWARD - so for the reprint-capable class
     a later year is refused ("book-year-moved-later") while an earlier one
     (a correction back toward the original edition) stays allowed. This
-    bound is what makes item 5 A, the missing published-print request, safe
-    to fix: requesting print dates on the search path extends print-year
+    bound is what made fixing the missing published-print request on the
+    search path safe: requesting print dates there extends print-year
     overwrites from "books verified by DOI lookup" to every search-verified
     book.
 
@@ -1004,8 +1004,8 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         if (_WRITABLE_YEAR_RE.match(api_year)
                 and bib_year and _year_key(bib_year) != api_year):
             if api_entry.get("entry_scoped") and _year_is_overwritable(api_entry):
-                # Third licence, direction-shaped (item 5 B, the reprint-
-                # edition direction bound): both provenance licences pass on
+                # Third licence, direction-shaped (the reprint-edition
+                # direction bound): both provenance licences pass on
                 # a reprint edition's record - the DOI is entry-scoped and
                 # published-print is the doctrinal basis - yet the year is
                 # wrong for the WORK. Basis membership cannot see this; only
