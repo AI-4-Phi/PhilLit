@@ -19,13 +19,10 @@ mirror debt accumulates anymore. Fixes land HERE and reach the service when
 it re-runs the re-vendor at a later pin; never hand-mirror engine files
 piecemeal. phillit-service work stays in sessions launched from that repo.
 
-1. **Item 5, citation-year correctness** (below) — both coupled halves
-   (5 A, the missing `published-print` request; 5 B, the reprint-edition
-   overwrite) as ONE change.
-2. **The frontmatter-title ADOPT change** (Backlog pointers, below) — small
-   and decided; landing it right after item 5 puts both inside the same
-   future re-vendor pin.
-3. **Item 2, web-source evidence** (below) — spec-first.
+1. **The frontmatter-title ADOPT change** (Backlog pointers, below) — small
+   and decided; landing it right after item 5, citation-year correctness
+   (shipped 2026-08-09), puts both inside the same future re-vendor pin.
+2. **Item 2, web-source evidence** (below) — spec-first.
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -152,69 +149,13 @@ things stay open:
   still takes the unchanged primary path. Never observed in the corpus (0 of
   8,494 first-author entries).
 
-## 5. Citation-year correctness for editions and search-verified works — two COUPLED defects
-
-Found by the live run of item 3 F (Chicago a/b disambiguation), 2026-08-07,
-each with a reproducible proof. **They must be fixed together: fixing 5 A (the
-missing `published-print` request) alone makes 5 B (the reprint-edition
-overwrite) strictly worse.** It leads the accepted working sequence
-(2026-08-08). Both defects are confirmed present in the service's engine
-too, where a wrong year ships to a paying user; the fix arrives there with
-the service's next re-vendor pin. Full evidence:
-`.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`.
-
-### 5A. The search path never asks CrossRef for `published-print`
-
-`skills/philosophy-research/scripts/verify_paper.py:340` — the bibliographic-search
-path's CrossRef `select` list requests `published` but not `published-print`. Item
-3 K (cleaner/year hardening) put `published-print` first in `_YEAR_FIELDS`
-(`:179`), but a field that was
-never requested cannot be found, so `extract_year` falls through to `published` —
-which CrossRef defines as the EARLIEST of print and online, i.e. the online-first
-year.
-
-Proved against the live API: with the current `select` only `published` comes back
-(`2014-06-22`); adding `published-print` returns `published-print: 2015-02`; the
-DOI-lookup path (no `select`) returns all three. Measured incidence on the fresh
-run: 2 of 111 DOI-bearing entries (`vallier2014moral` bib=2014/print=2015,
-`wiens2011prescribing` bib=2011/print=2012), both with `method:
-bibliographic_search`.
-
-**The cleaner's gate never declines here** — `_year_is_overwritable`
-(`hooks/metadata_cleaner.py:241`) is a pure basis-membership test and
-`_VERSION_OF_RECORD_BASES` (`:220`) already contains `published`. The record's
-year simply *agrees* with the bib's wrong year, so there is no conflict to
-resolve. That is worse than a refusal: the on-disk verify record positively
-corroborates the wrong year.
-
-Fix: add `published-print` (and `published-online`) to the `select` list.
-
-### 5B. A reprint DOI's print year overwrites a book's real publication year
-
-`rawls1999lawofpeoples` came out of the run carrying `year = "2001"` and
-`METADATA_CLEANED: year:1999->2001`. *The Law of Peoples* is Harvard UP **1999**;
-JSTOR registered DOI `10.2307/j.ctv1pncngc` against the 2001 paperback, so
-CrossRef returns `year: 2001` with `year_basis: published-print` — the very basis
-item 3 K (cleaner/year hardening) taught us to trust. Every component behaved as
-designed and the result is a
-canonical book misdated by two years.
-
-It then **manufactured a spurious Chicago collision group**: the wrong year put it
-in the same author-year bucket as *Justice as Fairness: A Restatement* (2001), and
-F correctly lettered a collision that does not exist. So the prose cites a 1999
-book as "Rawls 2001b".
-
-Incidence 1 of 122 entries in the run, but the class selects for canonical
-reprinted books — the highest-cited items in a philosophy review.
-
-**Why the coupling is load-bearing**: the gate has **no direction or magnitude
-bound**. Making print years available on the search path (5 A, the
-`published-print` request) extends print-year overwrites to every
-search-verified entry *including books*, amplifying 5 B (the reprint-edition
-overwrite) from "books verified by DOI lookup" to "books, full stop". The direction bound — a
-book's year must not be moved later — belongs in the same change. The verify
-record already carries `type: monograph` / `suggested_bibtex_type: book`, so the
-signal is available.
+(Item 5, citation-year correctness for editions and search-verified works,
+shipped 2026-08-09: the search path's `select` now requests
+`published-print`/`published-online`, and the cleaner refuses to move a
+book-typed record's year LATER — the reprint-edition direction bound, with
+its own decline reason. Evidence remains in
+`.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`; the service carries
+both defects until its next re-vendor pin.)
 
 ## 6. Venue-name recall for subtitled journals — low priority, benign direction
 

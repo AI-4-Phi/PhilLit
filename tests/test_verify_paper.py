@@ -648,3 +648,63 @@ class TestOnlineFirstYear:
                 backoff=ExponentialBackoff(),
                 mailto="test@example.com",
             )
+
+
+class TestSearchSelectRequestsPrintDates:
+    """Item 5 A (citation-year correctness): the bibliographic-search path
+    must ASK CrossRef for the print/online date fields. A `select` list that
+    omits `published-print` means extract_year can never reach its own first
+    preference on that path - the record's year is the online-first
+    `published` year, and the on-disk verify record then positively
+    corroborates a wrong bibliography year (measured live: vallier2014moral
+    bib=2014/print=2015, wiens2011prescribing bib=2011/print=2012, both
+    `method: bibliographic_search`).
+
+    The fake CrossRef below RESPECTS the select list - it returns only the
+    fields the request asked for, which is what the live API does - so the
+    year assertions fail against a select list that never requests the
+    print date, not merely against a stubbed response.
+    """
+
+    _FULL_ITEM = {
+        "DOI": "10.1234/select-test",
+        "title": ["Moral Rights and Political Freedom"],
+        "score": 90.0,
+        "type": "journal-article",
+        "published": {"date-parts": [[2014, 6, 22]]},
+        "published-print": {"date-parts": [[2015, 2]]},
+        "published-online": {"date-parts": [[2014, 6, 22]]},
+    }
+
+    def _run_search(self):
+        import verify_paper
+
+        captured = {}
+
+        def fake_get(url, params=None, timeout=None):
+            captured["params"] = params
+            selected = set((params or {}).get("select", "").split(","))
+            item = {k: v for k, v in self._FULL_ITEM.items() if k in selected}
+            response = MagicMock()
+            response.status_code = 200
+            response.json.return_value = {"message": {"items": [item]}}
+            return response
+
+        limiter = MagicMock()
+        backoff = MagicMock(max_attempts=1)
+        with patch.object(verify_paper.requests, "get", side_effect=fake_get):
+            result = verify_paper.search_by_metadata(
+                "Moral Rights and Political Freedom", None, None,
+                limiter, backoff, mailto="")
+        return captured["params"], result
+
+    def test_select_list_requests_print_and_online_dates(self):
+        params, _ = self._run_search()
+        select_fields = params["select"].split(",")
+        assert "published-print" in select_fields
+        assert "published-online" in select_fields
+
+    def test_search_result_year_is_the_print_year(self):
+        _, result = self._run_search()
+        assert result["year"] == 2015
+        assert result["year_basis"] == "published-print"

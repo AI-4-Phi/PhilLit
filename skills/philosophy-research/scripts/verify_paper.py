@@ -337,7 +337,15 @@ def search_by_metadata(
         "rows": 5,
         "sort": "score",
         "order": "desc",
-        "select": "DOI,title,author,editor,published,container-title,volume,issue,page,publisher,type,score",
+        # published-print and published-online are load-bearing: CrossRef's
+        # `published` is the EARLIEST of the two, so a select list without
+        # them means extract_year can never reach its own first preference on
+        # this path and every search-verified record carries the online-first
+        # year (item 5 A - measured 2/111 wrong-at-delivery on the 2026-08-07
+        # live run, with the verify record corroborating the wrong year).
+        "select": "DOI,title,author,editor,published,published-print,"
+                  "published-online,container-title,volume,issue,page,"
+                  "publisher,type,score",
     }
 
     if author:

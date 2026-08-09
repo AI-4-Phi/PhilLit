@@ -1406,3 +1406,132 @@ class TestIndexStarvedFlag:
         result = clean_bibtex(bib, json_dir)
 
         assert result["index_starved"] is False
+
+
+# --- Item 5 B: the reprint-edition direction bound ------------------------
+
+RAWLS_DOI = "10.2307/j.ctv1pncngc"
+
+
+def _verify_book_record(year, suggested_bibtex_type="book",
+                        crossref_type="monograph"):
+    """Entry-scoped CrossRef verify record for a book, verify_paper.py shape.
+
+    The live failure: JSTOR registered this DOI against the 2001 paperback of
+    The Law of Peoples (Harvard UP 1999), so CrossRef's published-print is
+    genuinely 2001 for the DOI while being the wrong citation year for the
+    work - every component behaved as designed and a canonical book was
+    misdated, which then manufactured a spurious Chicago a/b collision with
+    Justice as Fairness (2001)."""
+    return {
+        "status": "success",
+        "source": "crossref",
+        "results": [{
+            "title": "The Law of Peoples",
+            "year": year,
+            "year_basis": "published-print",
+            "doi": RAWLS_DOI,
+            "publisher": "Harvard University Press",
+            "type": crossref_type,
+            "suggested_bibtex_type": suggested_bibtex_type,
+        }],
+    }
+
+
+def _rawls_bib(year):
+    return f"""@book{{rawls1999lawofpeoples,
+  author = {{Rawls, John}},
+  title = {{The Law of Peoples}},
+  publisher = {{Harvard University Press}},
+  year = {{{year}}},
+  doi = {{{RAWLS_DOI}}}
+}}"""
+
+
+class TestBookYearDirectionBound:
+    """A book's year must never be moved LATER by a CrossRef record: a
+    reprint edition gets its own DOI whose print year postdates the work's
+    real publication year, and a reprint can only move a year forward."""
+
+    def test_reprint_print_year_does_not_move_book_year_later(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawls1999lop.json": _verify_book_record(2001),
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib(1999), encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 0
+        content = bib.read_text(encoding="utf-8")
+        assert "1999" in content
+        assert_no_cleaned_marker(content)
+
+    def test_book_decline_is_recorded_with_its_own_reason(self, tmp_path):
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawls1999lop.json": _verify_book_record(2001),
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib(1999), encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert len(result["years_declined"]) == 1
+        declined = result["years_declined"][0]
+        assert declined[0] == "1999"
+        assert declined[1] == "2001"
+        assert declined[3] == "book-year-moved-later"
+        assert any("book" in w for w in result["warnings"])
+
+    def test_book_year_still_corrects_toward_earlier(self, tmp_path):
+        """The bound is a DIRECTION bound, not a book-year freeze: a bib
+        wrongly carrying the reprint year is still corrected back to the
+        earlier (original-edition) print year."""
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawls1999lop.json": _verify_book_record(1999),
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib(2001), encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 1
+        content = bib.read_text(encoding="utf-8")
+        assert re.search(r"year\s*=\s*[{\"]1999", content)
+        assert "year:2001" in content  # marker records the old value
+
+    def test_article_record_may_still_move_a_year_later(self, tmp_path):
+        """The bound is book-only. For articles the later print year IS the
+        citation year (the online-first class item 3 K fixed), so an
+        article-typed record must still correct 2011 -> 2012."""
+        record = _verify_book_record(2012, suggested_bibtex_type="article",
+                                     crossref_type="journal-article")
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_wiens.json": record,
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib(2011), encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 1
+        content = bib.read_text(encoding="utf-8")
+        assert re.search(r"year\s*=\s*[{\"]2012", content)
+
+    def test_nonintegral_book_year_fails_closed(self, tmp_path):
+        """With a bib year the direction test cannot parse ("n.d."), the
+        guard cannot prove the move is not later, so for books it declines
+        (counted, never silent) rather than writing."""
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawls1999lop.json": _verify_book_record(2001),
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib("n.d."), encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 0
+        assert len(result["years_declined"]) == 1
+        assert result["years_declined"][0][3] == "book-year-moved-later"
+        content = bib.read_text(encoding="utf-8")
+        assert "n.d." in content

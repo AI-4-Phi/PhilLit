@@ -241,6 +241,35 @@ def _year_is_overwritable(record: dict) -> bool:
     return record.get("year_basis") in _VERSION_OF_RECORD_BASES
 
 
+def _book_year_moves_later(record: dict, api_year: str, bib_year_key: str) -> bool:
+    """Would writing this record's year move a BOOK's year LATER? (Item 5 B.)
+
+    A reprint edition gets its own DOI, and CrossRef's `published-print` for
+    that DOI is genuinely the reprint's year while being the wrong citation
+    year for the WORK: *The Law of Peoples* is Harvard UP 1999, JSTOR's
+    paperback DOI carries published-print 2001, and the resulting rewrite
+    manufactured a spurious Chicago a/b collision ("Rawls 2001b" for a 1999
+    book). Chicago author-date cites the original publication year, and a
+    reprint can only move a year FORWARD - so for book-typed records a later
+    year is refused while an earlier one (a correction back toward the
+    original edition) stays allowed. This bound is what makes item 5 A safe:
+    requesting print dates on the search path extends print-year overwrites
+    from "books verified by DOI lookup" to every search-verified book.
+
+    Bookness must be POSITIVE evidence: `suggested_bibtex_type == "book"`,
+    which verify_paper.py derives onto every record (book/monograph/
+    edited-book). A record without the field predates that producer and the
+    bound simply never fires - the pre-5B behavior. A bib year the direction
+    test cannot parse ("n.d.", "[2021]") gives no direction evidence, so for
+    books the guard fails closed (declines are counted, never silent).
+    """
+    if record.get("suggested_bibtex_type") != "book":
+        return False
+    if not _WRITABLE_YEAR_RE.match(bib_year_key):
+        return True
+    return int(api_year) > int(bib_year_key)
+
+
 def _year_of(record: dict) -> str:
     """Canonical year of a pooled record, or "" when it supplies none.
 
@@ -351,6 +380,11 @@ def parse_crossref_result(data: dict, source_file: str) -> list[dict]:
             "publisher": item.get("publisher"),
             "year": item.get("year"),
             "year_basis": item.get("year_basis"),
+            # Read through so the reprint-edition direction bound can tell a
+            # book from an article (see _book_year_moves_later). verify_paper
+            # writes it on every record; absence just means the bound never
+            # fires, which is the old behavior.
+            "suggested_bibtex_type": item.get("suggested_bibtex_type"),
             "doi": item.get("doi"),
         })
     return entries
@@ -932,7 +966,19 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         if (_WRITABLE_YEAR_RE.match(api_year)
                 and bib_year and _year_key(bib_year) != api_year):
             if api_entry.get("entry_scoped") and _year_is_overwritable(api_entry):
-                plan["year_corrected"] = (bib_year, api_year)
+                # Third licence, direction-shaped (item 5 B): both provenance
+                # licences pass on a reprint edition's record - the DOI is
+                # entry-scoped and published-print is the doctrinal basis -
+                # yet the year is wrong for the WORK. Basis membership cannot
+                # see this; only the direction of the move can.
+                if _book_year_moves_later(api_entry, api_year,
+                                          _year_key(bib_year)):
+                    plan["year_correction_declined"] = (
+                        bib_year, api_year,
+                        api_entry.get("source_file") or "?",
+                        "book-year-moved-later")
+                else:
+                    plan["year_corrected"] = (bib_year, api_year)
             else:
                 # COUNTABLE, not silent. A refusal is itself information, and
                 # until it is recorded there is no way to tell "corruption
@@ -1263,11 +1309,18 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     # breaker's early return and so reports none on a trip.
     if result["years_declined"]:
         unscoped = sum(1 for d in result["years_declined"] if d[3] == "unscoped")
-        undated = len(result["years_declined"]) - unscoped
+        book_later = sum(1 for d in result["years_declined"]
+                         if d[3] == "book-year-moved-later")
+        undated = len(result["years_declined"]) - unscoped - book_later
         parts = []
         if unscoped:
             parts.append(f"{unscoped} where the only DOI-matched evidence was a "
                          "broad search dump, not a targeted CrossRef lookup")
+        if book_later:
+            parts.append(f"{book_later} where a book's year would have moved "
+                         "LATER - a reprint edition's DOI carries the "
+                         "reprint's print year, not the work's (kept the "
+                         "earlier bibliography year)")
         if undated:
             parts.append(f"{undated} where the CrossRef record does not say which "
                          "date field its year came from, so it may be an "
