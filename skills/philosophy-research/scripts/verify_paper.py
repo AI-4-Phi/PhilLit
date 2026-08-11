@@ -43,6 +43,10 @@ from dotenv import find_dotenv, load_dotenv
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from rate_limiter import ExponentialBackoff, get_limiter
+# output.dumps is the ONE owner of the ensure_ascii decision (and of the
+# Windows stdout guard behind it) -- this script keeps its own emit path, but
+# must not keep its own copy of that rule.
+import output
 
 # Add hooks directory to path for bib_identity import (single source of truth)
 sys.path.insert(0, os.path.join(
@@ -73,7 +77,7 @@ def write_output_file(payload: dict, path: str) -> bool:
         fd, tmp = tempfile.mkstemp(dir=directory, suffix=".tmp")
         try:
             with os.fdopen(fd, "w", encoding="utf-8") as f:
-                json.dump(payload, f, indent=2)
+                json.dump(payload, f, indent=2, ensure_ascii=False)
             os.replace(tmp, path)
         except Exception:
             try:
@@ -93,7 +97,7 @@ def _emit(payload: dict, exit_code: int) -> None:
     --output was given also write it atomically. A failed --output write is a
     hard error: the JSON is still on stdout, but the exit code becomes 4
     (output write failed) so the researcher retries with a good path."""
-    print(json.dumps(payload, indent=2))
+    print(output.dumps(payload))
     if _OUTPUT_PATH is not None and not write_output_file(payload, _OUTPUT_PATH):
         sys.exit(4)
     sys.exit(exit_code)

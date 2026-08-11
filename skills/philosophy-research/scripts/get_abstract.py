@@ -51,6 +51,10 @@ from rate_limiter import (
     openalex_params,
     parse_retry_after,
 )
+# Abstracts are the field most likely to carry non-ASCII and the field agents
+# most often copy as text -- so this emitter goes through the shared unescaped
+# dumper too. output.dumps owns the ensure_ascii decision; see its docstring.
+import output
 
 SOURCE = "get_abstract"
 
@@ -69,19 +73,19 @@ def output_result(status: str, query: dict, abstract: Optional[str] = None,
         "abstract": abstract,
         "abstract_source": abstract_source,
     }
-    print(json.dumps(result, indent=2))
+    print(output.dumps(result))
     sys.exit(0)
 
 
 def output_error(query: dict, error_type: str, message: str, exit_code: int = 2) -> None:
     """Output error result."""
-    print(json.dumps({
+    print(output.dumps({
         "status": "error",
         "query": query,
         "abstract": None,
         "abstract_source": None,
         "error": {"type": error_type, "message": message}
-    }, indent=2))
+    }))
     sys.exit(exit_code)
 
 

@@ -52,6 +52,42 @@ def add_output_arg(parser: argparse.ArgumentParser) -> None:
     )
 
 
+def stdout_accepts_unicode() -> bool:
+    """True when it is safe to print non-ASCII to stdout.
+
+    Every JSON emitter here passes `ensure_ascii=False` so that real
+    characters, not `\\uXXXX` escapes, reach the researcher: agents copy venue
+    and author names out of this output as TEXT rather than parsing it, and an
+    escaped `O\\u00f1ati Socio-legal Series` then lands in a .bib verbatim,
+    where it is neither valid BibTeX nor readable prose.
+
+    Files are always safe (they are opened `encoding='utf-8'`). Stdout is not:
+    the default Windows console codepage cannot encode most non-ASCII, so
+    printing real characters there raises UnicodeEncodeError. Try to put
+    stdout into UTF-8 first; if that fails, the caller falls back to escapes,
+    because a mangled name is a far smaller failure than a crashed search.
+    """
+    def _is_utf8() -> bool:
+        enc = (getattr(sys.stdout, "encoding", None) or "").lower().replace("-", "")
+        return enc.startswith("utf")
+
+    if _is_utf8():
+        return True
+    reconfigure = getattr(sys.stdout, "reconfigure", None)
+    if reconfigure is None:      # a test double or a non-TextIO stream
+        return False
+    try:
+        reconfigure(encoding="utf-8")
+    except Exception:
+        return False
+    return _is_utf8()
+
+
+def dumps(payload: dict) -> str:
+    """`json.dumps` for stdout, unescaped where the stream can take it."""
+    return json.dumps(payload, indent=2, ensure_ascii=not stdout_accepts_unicode())
+
+
 def _write_output_file(payload: dict, path: str, script_name: str) -> bool:
     """Atomically write payload as pretty JSON to path (tmp + os.replace,
     encoding='utf-8'). Creates parent dirs. Returns True on success, False on
@@ -62,7 +98,7 @@ def _write_output_file(payload: dict, path: str, script_name: str) -> bool:
         fd, tmp = tempfile.mkstemp(dir=directory, suffix=".tmp")
         try:
             with os.fdopen(fd, "w", encoding="utf-8") as f:
-                json.dump(payload, f, indent=2)
+                json.dump(payload, f, indent=2, ensure_ascii=False)
             os.replace(tmp, path)
         except Exception:
             try:
@@ -82,7 +118,7 @@ def _emit(output: dict, exit_code: int) -> NoReturn:
     --output was configured, also write it atomically. A failed --output write
     is a hard error: the JSON is still on stdout, but the exit code becomes 4
     so the researcher retries with a good path."""
-    print(json.dumps(output, indent=2))
+    print(dumps(output))
     if _OUTPUT_PATH is not None and not _write_output_file(
         output, _OUTPUT_PATH, output.get("source", "search")
     ):
