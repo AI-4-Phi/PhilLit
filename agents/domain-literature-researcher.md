@@ -52,11 +52,16 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into reference mana
   - Use CrossRef `container_title` as journal/booktitle
   - Use CrossRef `volume`, `issue`, `page` fields
 - **If paper has no DOI** → use S2/OpenAlex `venue`, `journal`, or `source.name`
-- Publication year → use what the API returns. **Exception — books and book
-  chapters**: a reprint/paperback DOI makes CrossRef report the *reprint's*
-  print year, not the work's original publication year (the year Chicago
-  cites — e.g. a 1999 book whose JSTOR paperback DOI says 2001). If another
-  API result for the same work attests an EARLIER year, use the earlier one
+- Publication year → use what the API returns, and keep it consistent with
+  the edition the entry names: year, `booktitle`/`publisher` and `pages` must
+  all describe the SAME volume. **Exception — a reissue of the same book**
+  (paperback of an earlier hardcover, same publisher, same title, no new
+  edition): CrossRef reports the reissue's print year, so if another API
+  result attests an EARLIER year for that same book, use the earlier one
+  (e.g. a 1999 book whose JSTOR paperback DOI says 2001 → 1999). This does
+  NOT apply when the entry cites a work reprinted in a DIFFERENT volume — an
+  anthology chapter is correctly dated by its anthology, and back-dating it
+  to the original article would contradict the `booktitle` beside it
 - If a field is missing/null in ALL API outputs → **OMIT the field entirely**
 - NEVER "recognize" a paper and fill in details from memory — this causes errors
 - This applies to ALL fields: author, title, year, journal, volume, pages, publisher, etc.
