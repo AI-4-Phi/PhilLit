@@ -16,9 +16,8 @@ Nothing below is blocked on phillit-service. The cross-repo rule — scripted
 re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
 phillit-service".
 
-1. **Item 2, web-source evidence** (below) — spec-first.
-2. **Item 7, reprint years at research time** (below) — small, or fold into
-   other cleaner work.
+1. **Item 2, web-source evidence** (below) — spec-first; the spec is written
+   and externally reviewed (v1.1), so the next step is the build.
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -146,22 +145,6 @@ carry a colon. **Not all of those fail** — many colons are part of the real ve
 name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitles
 fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
 Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
-
-## 7. Reprint years at research time — the seeding half of the reprint-year defect
-
-The 2026-08-09 citation-year work fixed the CLEANER half: a reprint DOI's
-later print year can no longer overwrite a book-class entry's earlier year.
-The RESEARCH-TIME half remains: a researcher who verifies the reprint DOI
-first seeds the reprint's year into the bib directly, the years then AGREE,
-no licence is ever consulted, and the on-disk verify record corroborates
-the wrong year (the pre-fix Rawls route, one step earlier). Found by the
-2026-08-09 whole-diff review.
-
-Mitigation shipped 2026-08-09: `agents/domain-literature-researcher.md` now
-instructs preferring an earlier API-attested year for books/chapters. Open:
-a mechanical producer-side signal — e.g. `verify_paper.py` stamping a
-year-caveat on book-class records whose DOI registration postdates other
-attested years — needs a design pass; prose alone is a soft control.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open, e.g.
