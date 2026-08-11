@@ -148,14 +148,8 @@ Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open, e.g.
-`philpapers-rate-limiting.md` (re-scoped to Brave quota), the local-only
-`workflow-findings-softmax-review.md`, and:
-
-**`json-unicode-escapes-leak-into-bibs.md`** — no script in `skills/` or
-`hooks/` passes `ensure_ascii=False`, so search-result JSON carries `\uXXXX`
-escapes and an agent that copies a venue name as text rather than parsing it
-writes the escape into the bib. Three confirmed instances, one in a **tracked,
-publicly-linked** example review.
+`philpapers-rate-limiting.md` (re-scoped to Brave quota) and the local-only
+`workflow-findings-softmax-review.md` (findings 2 and 4, plus 3's residual).
 
 The sibling filing (`engine-planner-recent-flag.md`, the planner prose naming
 a `--recent` flag `s2_search.py` does not have) was fixed here in the

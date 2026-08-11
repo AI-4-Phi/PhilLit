@@ -1,7 +1,9 @@
 # `\uXXXX` escapes leak from search-result JSON into delivered bibliographies
 
-**Status**: Open (tracked in `docs/ROADMAP.md`, among the open items pointed
-to at the end of the queue).
+**Status**: **FIXED 2026-08-11** (`dc606de`) — emitters no longer escape, and
+the three tracked example reviews were repaired under the public-examples
+exception. Left the roadmap the same day. See "Fix" below for what was
+deliberately NOT done.
 **Found** 2026-08-06, by the whole-branch review of item 3 D (venue vetting),
 while measuring how many corpus `journal` values carry backslashes. Not a
 venue-vetting bug — it predates item 3 D and affects any field an agent copies
@@ -49,25 +51,33 @@ only on a *source-authority* verdict. An escaped-but-otherwise-plausible venue
 name is not a contradiction against CrossRef in any way the cleaner tests, and
 `abstract` is not in the set at all.
 
-## Fix (not applied — needs its own task)
+## Fix — APPLIED 2026-08-11 (`dc606de`)
 
-Cheapest and most complete fix is upstream, at the point the search scripts
-serialize: pass `ensure_ascii=False` in the `json.dump`/`json.dumps` calls that
-produce **agent-facing** output, so the text an agent copies is already the
-character it should write. Candidate sites (verified present 2026-08-06):
-`skills/philosophy-research/scripts/output.py:65,85`,
-`verify_paper.py:76,96`, `get_abstract.py:72,78`.
+`ensure_ascii=False` at the agent-facing emitters, exactly the sites listed
+here: `output.py` (the shared funnel for every search script), `verify_paper.py`
+and `get_abstract.py`, each of which keeps its own emit path but now imports the
+one decision instead of copying it.
 
-Two cautions for whoever takes it:
+Both cautions above were honoured, and both were real:
 
-1. **Not every `json.dumps` should change.** `search_cache.py:54` builds a
-   cache *key* from sorted params — changing its encoding silently invalidates
-   every cached entry. Leave key-construction alone.
-2. **Windows.** `CLAUDE.md` warns that non-ASCII in output piped through
-   subprocesses can fail to encode under `cp1252`. Emitting real `ñ` instead of
-   `ñ` moves non-ASCII into stdout that previously had none, so this needs
-   an explicit encoding check on the Windows path, not just a flag flip.
+1. **`search_cache.py:54` was left alone.** It builds a cache *key* from sorted
+   params; re-encoding it would silently invalidate every cached entry.
+2. **Windows is handled, not assumed away.** Files were always safe (opened
+   `encoding='utf-8'`), but stdout was not. `output.stdout_accepts_unicode()`
+   puts stdout into UTF-8 and falls back to escapes when it cannot — so a
+   cp1252 console gets a mangled name rather than a `UnicodeEncodeError` that
+   kills the search. Both branches are pinned by
+   `tests/test_json_unicode_output.py`.
 
-A separate, smaller question: whether to also add a normalization pass that
-decodes existing `\uXXXX` sequences in a bib field, which would repair the
-three instances above rather than only preventing new ones.
+The "separate, smaller question" — a normalization pass decoding existing
+`\uXXXX` in bib fields — was **not** built, and should not be without new
+evidence. It would have to run over delivered reviews, which the wrong-years
+audit's standing rule forbids touching; the public examples were repaired
+directly instead, which is the same exception that rule already carries.
+
+**Corpus note:** 7 of the 43 local review bibs carried escapes at fix time.
+Those are delivered reviews and stay as delivered. Only the tracked examples
+were repaired (5 escapes across two of them, including
+`author = {Medina, José}` and the `\u3c` markup case above), and
+`tests/test_json_unicode_output.py` now fails if an escape reappears in any of
+the three.
