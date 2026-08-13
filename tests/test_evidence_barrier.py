@@ -1877,3 +1877,98 @@ def test_a_swallowed_splice_is_never_reported_as_neutralized(tmp_path, monkeypat
             f"{ys_report['residual_neutralized']}")
         assert ys_report["residual_unresolved"], (
             "a surviving stale letter must reach an operator")
+
+
+# ---------------------------------------------------------------------------
+# venue_status splice verification (the second half of the silent-splice bug;
+# the year_suffix half was fixed 2026-08-06 in 78dd470)
+# ---------------------------------------------------------------------------
+
+def test_venue_stamp_that_lands_is_counted_as_stamped(tmp_path, monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    monkeypatch.setattr(
+        evidence_barrier.vv, "vet_venues",
+        _fake_vet(flagged=["advanced international journal for research"]))
+    assert evidence_barrier.execute(rd, 1) == 0
+    report = _report(rd)
+    assert report["venue_vetting"]["flagged_entries"] == 1
+    assert len(report["venue_vetting"]["stamped_entries"]) == 1
+    assert report["venue_vetting"]["splice_failed"] == []
+
+
+def test_a_swallowed_venue_splice_is_reported_not_silent(tmp_path, monkeypatch):
+    """The bug this fixes: _stamp_optional_field swallows a splice failure and
+    returns the text unchanged, so the entry ships with no venue_status and
+    NOTHING in the report says so. flagged_entries was honest about counting
+    rule decisions rather than stamps, which made the gap invisible rather than
+    misreported -- and a silent loss is what the gate policy forbids."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    monkeypatch.setattr(
+        evidence_barrier.vv, "vet_venues",
+        _fake_vet(flagged=["advanced international journal for research"]))
+    # Exactly what a swallowed add_field_to_entry exception looks like from the
+    # caller's side: the text comes back untouched.
+    monkeypatch.setattr(evidence_barrier, "_stamp_optional_field",
+                        lambda text, field, value: text)
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "venue_status" not in content          # the loss really happened
+    report = _report(rd)
+    assert report["venue_vetting"]["flagged_entries"] == 1
+    assert report["venue_vetting"]["stamped_entries"] == []
+    assert len(report["venue_vetting"]["splice_failed"]) == 1   # and is reported
+
+
+def test_a_duplicate_venue_field_is_reverted_rather_than_emitted(tmp_path, monkeypatch):
+    """A compact pre-existing venue_status survives _strip_derived_fields (it
+    only reaches a field OPENING its line), and add_field_to_entry cannot find
+    a field with no whitespace before it -- so the add path inserts a SECOND
+    one and pybtex raises DuplicateField, which would take down all of Phase 6.
+    Revert, report, keep the bib parseable."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    from pybtex.database import parse_string
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    monkeypatch.setattr(
+        evidence_barrier.vv, "vet_venues",
+        _fake_vet(flagged=["advanced international journal for research"]))
+    # Simulate the duplicate-inserting outcome directly.
+    def _double(text, field, value):
+        return text.replace("@article{okoro2021ai,",
+                            "@article{okoro2021ai,\n  %s = {%s},\n  %s = {%s},"
+                            % (field, value, field, value), 1)
+    monkeypatch.setattr(evidence_barrier, "_stamp_optional_field", _double)
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert content.count("venue_status") == 0    # reverted, not emitted twice
+    parse_string(content, bib_format="bibtex")   # and still parses
+    report = _report(rd)
+    assert len(report["venue_vetting"]["splice_failed"]) == 1
+
+
+def test_venue_splice_keys_are_present_even_when_vetting_errored(tmp_path, monkeypatch):
+    """The lists are attached before the stamping loop so the ERROR path
+    carries the keys too -- a consumer must not have to guess."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    def _boom(names):
+        raise RuntimeError("openalex down")
+    monkeypatch.setattr(evidence_barrier.vv, "vet_venues", _boom)
+    assert evidence_barrier.execute(rd, 1) == 0
+    report = _report(rd)
+    assert report["venue_vetting"]["status"] == "error"
+    assert report["venue_vetting"]["stamped_entries"] == []
+    assert report["venue_vetting"]["splice_failed"] == []

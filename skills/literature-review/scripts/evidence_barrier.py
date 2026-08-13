@@ -208,6 +208,52 @@ SUFFIX_UNTRUSTED = "unassigned"
 _SUFFIX_FIELD_RE = re.compile(r"\byear_suffix\s*=", re.IGNORECASE)
 
 
+_VENUE_FIELD_RE = re.compile(r"\bvenue_status\s*=", re.IGNORECASE)
+
+
+def _derived_field_took(chunk: str, pre_splice: str, field: str, intended: str,
+                        field_re: re.Pattern) -> bool:
+    """Did a derived-field splice actually land, and is the result still a bib
+    the real parser accepts? The shared core behind both derived fields.
+
+    Three conditions, and each has its own failure it exists to catch:
+
+    1. **The text changed.** `_stamp_optional_field` swallows any exception
+       from `add_field_to_entry` and returns the text UNCHANGED -- deliberately,
+       so an optional pass can never fail the barrier. But an unchanged chunk
+       still parses and still holds exactly one field, so the other two checks
+       alone say True and the caller reports a stamp that is not on disk.
+    2. **The field now carries THIS run's value**, by a field PARSE rather than
+       a substring test -- an abstract containing the literal text
+       `venue_status = {low-visibility}` must not be mistaken for the field.
+    3. **Exactly one instance, and pybtex accepts the chunk.**
+       `add_field_to_entry` locates an existing field by `(\\s+)<field>\\s*=`,
+       so a value written with NO whitespace before it
+       (`@article{k,venue_status={x},`) is not found and the "add" path inserts
+       a SECOND one -- and pybtex raises `DuplicateField` on that, which would
+       hand dedupe_bib an unparseable bibliography and take down all of Phase
+       6. Losing a flag is survivable; emitting a bib the real parser rejects
+       is not.
+
+    Condition 3 is why this matters for `venue_status` and not only for
+    `year_suffix`: `_strip_derived_fields` only reaches a field that OPENS its
+    line, so a compact pre-existing `venue_status` survives the strip and a
+    duplicate becomes possible on the very next splice.
+    """
+    if chunk is pre_splice:
+        return False
+    if se.parse_entry_fields(chunk).get(field) != intended:
+        return False
+    if len(field_re.findall(chunk)) != 1:
+        return False
+    from pybtex.database import parse_string
+    try:
+        parse_string(chunk, bib_format="bibtex")
+    except Exception:
+        return False
+    return True
+
+
 def _splice_took(chunk: str, pre_splice: str, intended: str) -> bool:
     """Did the splice actually replace the stale value, AND stay well-formed?
 
@@ -231,40 +277,28 @@ def _splice_took(chunk: str, pre_splice: str, intended: str) -> bool:
     by a FIELD PARSE rather than a substring test (the same reason detection
     upstream parses rather than scans -- an abstract containing the literal
     text `year_suffix = {a}` must not be mistaken for the field).
-    """
-    if chunk is pre_splice:
-        return False
-    if se.parse_entry_fields(chunk).get("year_suffix") != intended:
-        return False
-    return _suffix_splice_is_well_formed(chunk)
-
-
-def _suffix_splice_is_well_formed(chunk: str) -> bool:
-    """Was a year_suffix splice over a PRE-EXISTING value safe to keep?
-
-    Same shape and same reason as `_heal_splice_is_well_formed`: exactly one
-    `year_suffix =` in the chunk, and the chunk still parses. Load-bearing,
-    not defensive polish. `add_field_to_entry` locates an existing field by
-    `(\\s+)year_suffix\\s*=`, so a value written with NO whitespace before it
-    (`@article{k,year_suffix={a},`) is not found and the "add" path inserts a
-    SECOND one -- and pybtex raises `DuplicateField` on that, which would
-    hand dedupe_bib an unparseable bibliography and take down all of Phase 6.
-    Emitting no letter is survivable; emitting a bib the real parser rejects
-    is not.
 
     Only ever called when a residual was detected, i.e. only when a duplicate
     is possible: with no pre-existing field the splice always inserts exactly
-    one, so an unconditional pybtex parse per lettered entry would buy
-    nothing.
+    one, so an unconditional pybtex parse per lettered entry would buy nothing.
     """
-    if len(_SUFFIX_FIELD_RE.findall(chunk)) != 1:
-        return False
-    from pybtex.database import parse_string
-    try:
-        parse_string(chunk, bib_format="bibtex")
-    except Exception:
-        return False
-    return True
+    return _derived_field_took(chunk, pre_splice, "year_suffix", intended,
+                               _SUFFIX_FIELD_RE)
+
+
+def _venue_splice_took(chunk: str, pre_splice: str, status: str) -> bool:
+    """The same question for `venue_status`, which had no answer at all until
+    2026-08-11.
+
+    The `year_suffix` half of this bug was fixed on 2026-08-06 (`78dd470`);
+    this half was recorded and left open. It is the milder of the two -- a lost
+    `venue_status` costs a caveat rather than dropping a cited work -- but it
+    was a SILENT loss, which the gate-failure policy forbids in either
+    direction, and condition 3 of `_derived_field_took` makes a duplicate
+    field reachable here too.
+    """
+    return _derived_field_took(chunk, pre_splice, vv.VENUE_STATUS_FIELD, status,
+                               _VENUE_FIELD_RE)
 
 
 def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
@@ -461,7 +495,11 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         # RULE decided to flag, not fields actually spliced into a bib --
         # _stamp_optional_field can still swallow an individual splice
         # failure below, and this count must not claim a stamp that does
-        # not exist on disk. Not bare "flagged": vet_venues's own return
+        # not exist on disk. Since 2026-08-11 the stamps ARE counted too, in
+        # `stamped_entries`, with failures named in `splice_failed`: honest
+        # about not being a stamp count was never the same as reporting the
+        # gap, and a silent loss is what the gate policy forbids.
+        # Not bare "flagged": vet_venues's own return
         # already uses that key for its LIST of flagged venue names (see
         # venue_vetting.py's `result["flagged"]`) -- reusing it here would
         # silently overwrite that list with this int. "flagged_entries"
@@ -599,6 +637,18 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     suffix_report["residual_neutralized"] = residual_neutralized
     suffix_report["residual_unresolved"] = residual_unresolved
 
+    # Same by-reference trick as the two lists above, for the same two reasons:
+    # the venue splice happens inside the stamping loop, long after
+    # venue_report was built and attached, so the report must hold the SAME
+    # list objects the loop appends to; and attaching here means the vetting
+    # ERROR path carries these keys too rather than only the complete path.
+    # `stamped_entries` is what `flagged_entries` deliberately is not -- a
+    # count of fields that actually reached the bib.
+    venue_stamped: list = []
+    venue_splice_failed: list = []
+    venue_report["stamped_entries"] = venue_stamped
+    venue_report["splice_failed"] = venue_splice_failed
+
     # Build final content in memory: context fields + stamp, then bookkeeping.
     outputs = {}
     for i, d in domains.items():
@@ -654,7 +704,18 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # `if vv is None: raise` guard. (_DERIVED_FIELD_RE above
                 # must keep the literal -- it is built at import time, when
                 # vv may legitimately be None.)
+                pre_venue = chunk
                 chunk = _stamp_optional_field(chunk, vv.VENUE_STATUS_FIELD, status)
+                if _venue_splice_took(chunk, pre_venue, status):
+                    venue_stamped.append(f"{bib_name}:{key}")
+                else:
+                    # Revert, then report. Reverting matters because one of the
+                    # ways the splice fails is a DUPLICATE field, which pybtex
+                    # rejects outright -- keeping that chunk would cost all of
+                    # Phase 6 rather than one caveat. Reporting matters because
+                    # the alternative is the silent loss this fix exists to end.
+                    chunk = pre_venue
+                    venue_splice_failed.append(f"{bib_name}:{key}")
             letter = suffix_map.get((i, key))
             stale = (i, key) in residual_suffix
             if letter or stale:
@@ -743,6 +804,13 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         "venue_vetting": {
             "status": (report.get("venue_vetting") or {}).get("status", "not-run"),
             "flagged_entries": (report.get("venue_vetting") or {}).get("flagged_entries", 0),
+            # Printed beside flagged_entries because the DIFFERENCE is the
+            # finding: flagged is what the rule decided, stamped is what
+            # reached the bib, and a gap between them used to be invisible.
+            "stamped_entries": len(
+                (report.get("venue_vetting") or {}).get("stamped_entries") or []),
+            "splice_failed": len(
+                (report.get("venue_vetting") or {}).get("splice_failed") or []),
         },
         # A bare assigned-count cannot distinguish "no same-author-same-year
         # groups existed" from "a group existed and deliberately got no

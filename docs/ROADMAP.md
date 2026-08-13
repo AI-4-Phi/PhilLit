@@ -90,12 +90,11 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
 `.superpowers/sdd/2026-08-06-item3f-chicago-ab-suffixes/progress.md` and the
 `external-review-*.md` files beside it (local-only).
 
-- The `venue_status` half of the silent-splice-failure bug. The `year_suffix`
-  half is fixed (`78dd470`); `venue_status` has the same shape — a swallowed
-  splice can be reported as success.
 - A surviving compact `venue_status` (one not opening its line, which the
   stripper cannot reach) is acted on by both planner and writer, so the
-  documented strip asymmetry is not fully honest.
+  documented strip asymmetry is not fully honest. (The *splice* half of this
+  shape was fixed 2026-08-11 — see below — but a residual that survives the
+  strip and is never re-flagged still reaches the planner.)
 - The encyclopedia acquisition budget cannot bound a *hanging* fetch — it is a
   work-admission budget. Documented honestly rather than fixed; a per-article
   interrupt was declined for cross-platform reasons (`signal.alarm` is
