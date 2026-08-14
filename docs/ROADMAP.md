@@ -6,7 +6,7 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.3.8**, pushed 2026-08-13. Check
+Last release: **plugin v0.4.0**, pushed 2026-08-14. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
@@ -16,8 +16,8 @@ Nothing below is blocked on phillit-service. The cross-repo rule — scripted
 re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
 phillit-service".
 
-1. **Item 2, web-source evidence** (below) — spec-first; the spec is written
-   and externally reviewed (v1.1), so the next step is the build.
+1. **Item 2, web-source evidence** (below) — **built 2026-08-14**; what remains
+   is the live acceptance run, which is the gate on calling it done.
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -33,28 +33,36 @@ touched. Do it by hand: a mechanical pass was attempted 2026-08-06 and
 reverted because the
 references sit inside sentences that need rewording around the name.
 
-## 2. Web-source evidence — citability for `@misc`/url-only entries (dual-repo, spec-first)
+## 2. Web-source evidence — BUILT, awaiting live acceptance
 
-Descoped from the evidence-tier spec in v5.1 (Johannes, 2026-07-24): every
-abstract-less web source (blog posts, org reports, working papers not on arXiv)
-stamps `EVIDENCE-NONE` and is uncitable — measured at **~3–17 entries per
-AI-adjacent review, near zero for classic topics** (arXiv preprints get API
-abstracts via normal enrichment and are unaffected). The evidence barrier's
-report counts affected entries per run, so this item starts from data.
+The `EVIDENCE-WEB` fetch gate shipped 2026-08-14 (8 commits, `web_evidence.py`
++ `fetch_web.py` + barrier/tier/rendering/prose, 93 new tests). Design:
+`phillit-service/docs/superpowers/specs/2026-08-09-web-source-evidence-design.md`
+(v1.1); build plan and the executed record:
+`docs/superpowers/plans/2026-08-11-web-source-evidence.md` (local-only).
+**Span grounding was adopted now** rather than kept as an escalation (Johannes,
+2026-08-11), so the spec's open owner question is closed.
 
-- A first mechanism (`verify_web.py` fetch-and-match) was cut from the spec
-  after one round: no alternatives evaluation, A/B contamination, and naive
-  fetching fails on the legitimate targets (JS-rendered pages, PDFs,
-  bot-blocking hosts). Full autopsy: the spec's Cut section.
-- **Spec-first** — brainstorm alternatives (researcher-side page capture,
-  Wayback snapshot pinning, archive-fallback fetch, title-in-page match,
-  existence-only citability, PDF extraction), decide the earned tier and
-  licensed claims, then external review.
-- **Dual-repo**: spec lives in the sister repo
-  (`phillit-service/docs/superpowers/specs/`), build and validate HERE first
-  (free runs); the built fix then reaches the service via its scripted
-  re-vendor at a later pin. The service's roadmap tracks the arrival as its
-  item 24, web-source evidence.
+Open, in order:
+
+- **The live acceptance run is the gate** — one AI-adjacent headless review.
+  Pick the topic from corpus data so more than one report bucket is exercised;
+  hand-audit every `EVIDENCE-WEB` stamp for false promotion, and every web
+  entry's note against its capture, **aimed at beyond-span content** (spans
+  themselves are proven by construction now). Details in the plan's Live
+  acceptance section.
+- **Service-side spec bump to v1.2** — records the span-grounding decision plus
+  four deliberate departures: span parameters (6–40 words, at most 2), the
+  title-anchor text-head fallback widened beyond `--stdin` captures, the
+  `capture_rejected` reason-keyed bucket (which fills a hole in the spec's own
+  report schema), and capture-before-network ordering with the honest
+  `no_capture` bucket name. Service session only — never edited from here.
+- The service receives the code at its next re-vendor pin (its item 24).
+
+One import edge for whoever ports it: `web_evidence.http_get` reaches
+`rate_limiter.user_agent` across skills via `sys.path`, following the precedent
+`venue_vetting.py` set for `search_cache`. It works, but couples a
+literature-review module to a sibling skill's layout.
 
 ## 3. Bibliography-pipeline integrity fixes — closed except recorded findings
 
