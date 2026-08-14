@@ -177,11 +177,12 @@ skills/literature-review/
     ├── normalize_headings.py             # Normalize section/subsection heading numbering
     ├── dedupe_bib.py                     # Deduplicate and merge BibTeX (re-stamps tiers via --evidence-report)
     ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
-    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, stamp EVIDENCE-* tiers
+    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, gate web sources, stamp EVIDENCE-* tiers
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
     ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, item 3 D)
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, item 3 F)
+    ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, item 2's EVIDENCE-WEB gate)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
     ├── sanitize_bib.py                   # Strip engine-internal EVIDENCE-* tokens from delivered .bib
     ├── generate_bibliography.py          # Generate Chicago-style references
