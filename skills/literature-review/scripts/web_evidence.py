@@ -222,3 +222,84 @@ def check_capture(capture: dict | None, entry_url: str, title: str,
             return False, "span_unverified"
 
     return True, "ok"
+
+
+BOT_BLOCK_STATUSES = (403, 429)
+EXISTENCE_TIMEOUT = 15
+WAYBACK_API = "https://archive.org/wayback/available"
+
+
+def http_get(url: str) -> dict:
+    """Existence probe. GET, not HEAD: hosts routinely 405 a HEAD they would
+    answer 200 for, which would read as link rot.
+
+    Reaches rate_limiter across skills the way venue_vetting reaches
+    search_cache. Flagged for the service port: it couples this module to a
+    sibling skill's directory layout.
+    """
+    import requests
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent
+                           / "philosophy-research" / "scripts"))
+    from rate_limiter import user_agent
+    session = requests.Session()
+    session.max_redirects = 5
+    resp = session.get(url, timeout=EXISTENCE_TIMEOUT, allow_redirects=True,
+                       headers={"User-Agent": user_agent()})
+    return {"status": resp.status_code, "final_url": resp.url}
+
+
+def wayback_lookup(url: str) -> str | None:
+    """Read-only availability lookup. NEVER Save Page Now (owner decision):
+    no outward writes to the archive."""
+    import requests
+    resp = requests.get(WAYBACK_API, params={"url": url},
+                        timeout=EXISTENCE_TIMEOUT)
+    snap = ((resp.json() or {}).get("archived_snapshots") or {}).get("closest") or {}
+    return snap.get("url") if snap.get("available") else None
+
+
+def evaluate_existence(url: str, get_fn=None, wayback_fn=None) -> dict:
+    """Rule (a): does this source exist?
+
+    Direct corroboration is a 2xx that stayed on the same registered domain,
+    or a bot-block on that same domain. Everything else -- connection failure,
+    404/410, 5xx, or a cross-domain redirect -- falls through to the archive,
+    because link rot is not nonexistence while a fabricated URL is neither
+    reachable nor archived. The archive lookup runs either way (delivery wants
+    the snapshot URL), and its failure never poisons existence the GET earned.
+    """
+    # Resolved HERE, not in the signature: a default bound at def time would
+    # capture the original function object, so a test monkeypatching the module
+    # global would silently hit the real network.
+    get_fn = http_get if get_fn is None else get_fn
+    wayback_fn = wayback_lookup if wayback_fn is None else wayback_fn
+
+    basis, final_url = "none", None
+    try:
+        res = get_fn(url) or {}
+        status = res.get("status")
+        final_url = res.get("final_url") or url
+        if isinstance(status, int):
+            same_domain = registered_domain(final_url) == registered_domain(url)
+            if 200 <= status < 300 and same_domain:
+                basis = "direct"
+            elif status in BOT_BLOCK_STATUSES and same_domain:
+                # same_domain applies to bot_block too. The spec's honesty
+                # section owns the blanket-WAF residual ("this host exists and
+                # blocks bots"), but a CROSS-domain redirect ending at a WAF'd
+                # 403 says only "some OTHER host blocks bots", which
+                # corroborates nothing about the cited source.
+                basis = "bot_block"
+    except Exception:
+        final_url = None
+
+    archiveurl = None
+    try:
+        archiveurl = wayback_fn(url) or None
+    except Exception:
+        archiveurl = None
+
+    if basis == "none" and archiveurl:
+        basis = "archive"
+    return {"exists": basis != "none", "basis": basis,
+            "final_url": final_url, "archiveurl": archiveurl}

@@ -215,3 +215,97 @@ def test_load_capture_returns_none_for_absent_or_unparseable(tmp_path):
     d.mkdir(parents=True)
     (d / "bad.json").write_text("{not json", encoding="utf-8")
     assert wv.load_capture(tmp_path, "bad") is None
+
+
+# ---------------------------------------------------------------------------
+# evaluate_existence: rule (a), direct GET then read-only archive fallback
+# ---------------------------------------------------------------------------
+
+def _get(status, final=None, error=None):
+    def fn(url):
+        if error:
+            raise error
+        return {"status": status, "final_url": final or url}
+    return fn
+
+
+def _wb(snapshot):
+    return lambda url: snapshot
+
+
+def test_2xx_on_the_same_registered_domain_corroborates_directly():
+    r = wv.evaluate_existence("https://a.example/x", _get(200), _wb(None))
+    assert r["exists"] and r["basis"] == "direct"
+
+
+def test_redirect_within_the_registered_domain_still_counts_as_direct():
+    r = wv.evaluate_existence("https://www.a.example/x",
+                              _get(200, final="https://blog.a.example/x"), _wb(None))
+    assert r["exists"] and r["basis"] == "direct"
+
+
+def test_cross_domain_redirect_to_200_does_not_corroborate():
+    # The realistic link-rot end-state: a squatter answering 200.
+    r = wv.evaluate_existence("https://a.example/x",
+                              _get(200, final="https://squatter.test/parked"), _wb(None))
+    assert not r["exists"] and r["basis"] == "none"
+
+
+def test_cross_domain_redirect_falls_through_to_the_archive():
+    r = wv.evaluate_existence("https://a.example/x",
+                              _get(200, final="https://squatter.test/parked"),
+                              _wb("https://web.archive.org/web/2020/https://a.example/x"))
+    assert r["exists"] and r["basis"] == "archive"
+
+
+def test_bot_block_corroborates_existence():
+    for status in (403, 429):
+        r = wv.evaluate_existence("https://a.example/x", _get(status), _wb(None))
+        assert r["exists"] and r["basis"] == "bot_block"
+
+
+def test_a_cross_domain_redirect_to_a_403_does_not_corroborate():
+    # "Some other host blocks bots" says nothing about the cited source.
+    r = wv.evaluate_existence("https://a.example/x",
+                              _get(403, final="https://waf.other.test/blocked"), _wb(None))
+    assert not r["exists"] and r["basis"] == "none"
+
+
+def test_404_falls_through_to_the_archive():
+    r = wv.evaluate_existence("https://a.example/x", _get(404),
+                              _wb("https://web.archive.org/web/2019/https://a.example/x"))
+    assert r["exists"] and r["basis"] == "archive"
+
+
+def test_404_with_no_snapshot_is_no_existence():
+    r = wv.evaluate_existence("https://a.example/x", _get(404), _wb(None))
+    assert not r["exists"] and r["basis"] == "none"
+
+
+def test_connection_failure_falls_through_to_the_archive():
+    r = wv.evaluate_existence("https://a.example/x", _get(None, error=OSError("dns")),
+                              _wb("https://web.archive.org/web/2019/https://a.example/x"))
+    assert r["exists"] and r["basis"] == "archive"
+
+
+def test_archive_lookup_failure_never_poisons_existence_already_earned():
+    def boom(url):
+        raise OSError("wayback down")
+    r = wv.evaluate_existence("https://a.example/x", _get(200), boom)
+    assert r["exists"] and r["basis"] == "direct" and r["archiveurl"] is None
+
+
+def test_snapshot_is_recorded_even_when_the_direct_get_succeeded():
+    snap = "https://web.archive.org/web/2021/https://a.example/x"
+    r = wv.evaluate_existence("https://a.example/x", _get(200), _wb(snap))
+    assert r["basis"] == "direct" and r["archiveurl"] == snap
+
+
+def test_the_callables_default_to_the_module_level_functions(monkeypatch):
+    """Resolved in the BODY, never in the signature: a default bound at def
+    time would capture the original function and the barrier's tests would
+    silently hit the network."""
+    monkeypatch.setattr(wv, "http_get", lambda url: {"status": 200, "final_url": url})
+    monkeypatch.setattr(wv, "wayback_lookup", lambda url: None)
+    r = wv.evaluate_existence("https://a.example/x")
+    assert r["exists"] and r["basis"] == "direct"
