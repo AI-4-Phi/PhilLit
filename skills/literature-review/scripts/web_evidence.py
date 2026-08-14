@@ -43,6 +43,31 @@ _TWO_PART_SUFFIXES = frozenset({
 })
 
 
+CAPTURE_DIR = "web_captures"
+SPAN_DELIM = "||"
+MIN_TEXT_CHARS = 200
+# Span parameters. The spec's proposal said "1-2 spans of 8-15 words"; it was a
+# proposal, not normative, and these are deliberately looser at both ends -- 8
+# words is short enough that a real sentence fragment often misses it, and a
+# hard 15 forces researchers to trim mid-clause. MAX_SPANS enforces the "one or
+# two" the researcher prose asks for, so prose and check cannot drift.
+MIN_SPAN_WORDS = 6      # floor: a 2-word "span" proves nothing
+MAX_SPAN_WORDS = 40
+MAX_SPANS = 2
+
+# Versioned negative signatures. Incomplete BY DESIGN -- it only has to cover
+# the few dominant interstitial providers; the title anchor catches the rest.
+BOILERPLATE_SIGNATURES_VERSION = 1
+_BOILERPLATE = (
+    "just a moment",
+    "enable javascript",
+    "checking your browser",
+    "verify you are human",
+    "accept all cookies",
+    "attention required! | cloudflare",
+)
+
+
 def _unescape_latex(text: str) -> str:
     for esc, plain in _LATEX_UNESCAPE.items():
         text = text.replace(esc, plain)
@@ -95,3 +120,105 @@ def registered_domain(url: str) -> str:
     if len(labels) >= 3 and ".".join(labels[-2:]) in _TWO_PART_SUFFIXES:
         return ".".join(labels[-3:])
     return ".".join(labels[-2:])
+
+
+def load_capture(review_dir, citekey: str) -> dict | None:
+    """The research-time capture for one citekey, or None."""
+    path = Path(review_dir) / "intermediate_files" / CAPTURE_DIR / f"{citekey}.json"
+    if not path.is_file():
+        return None
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def _fold(text: str) -> str:
+    """Comparison form for containment: NFKC, LaTeX unescaped, whitespace
+    collapsed, casefolded. Without this, spans fail on line wrapping and on the
+    `\\&` the bib writer emits -- so "verbatim" here means verbatim up to this
+    folding, which is what the researcher prose must say too."""
+    text = _unescape_latex(unicodedata.normalize("NFKC", text or ""))
+    return " ".join(text.split()).casefold()
+
+
+def split_spans(raw: str) -> list[str]:
+    return [s.strip() for s in (raw or "").split(SPAN_DELIM) if s.strip()]
+
+
+def _title_tokens(text: str) -> set[str]:
+    return {t for t in re.split(r"\W+", _fold(text)) if len(t) > 3}
+
+
+def check_capture(capture: dict | None, entry_url: str, title: str,
+                  spans: str) -> tuple[bool, str]:
+    """The five rule-(b) checks. Returns (passed, reason).
+
+    Every reason is a distinct diagnosis, deliberately: collapsing any two of
+    them hides the answer to a different operational question. `no_capture` vs
+    `fetch_error` is "the researcher never ran the tool" vs "the tool ran and
+    hit a WAF or an outage" -- the spec writes failure records precisely so
+    those stay apart. `thin` vs `title_mismatch` is "too little text" vs
+    "captured the wrong page". `span_malformed` vs `span_unverified` is a
+    formatting problem vs a note that outran its source, and only the second is
+    evidence about the note.
+    """
+    if not capture:
+        return False, "no_capture"
+    if capture.get("error"):
+        return False, "fetch_error"
+
+    # 1. URL binding -- without it the gate is satisfiable by two unrelated
+    #    facts: the entry's URL answers somewhere, and a file named for this
+    #    citekey exists. Binding is what makes (a) and (b) about one source.
+    want = normalize_url(entry_url)
+    if not want:
+        # Unreachable from the barrier (it only calls this after extract_url
+        # returned non-None), but this is a public interface and an empty
+        # `want` would otherwise bind to a capture missing both URL fields.
+        return False, "url_mismatch"
+    if want not in {normalize_url(capture.get("url") or ""),
+                    normalize_url(capture.get("final_url") or "")}:
+        return False, "url_mismatch"
+
+    # 2. Status -- everything EXCEPT an explicit agent capture. A scripted
+    #    fetch of a WAF challenge page records its 403 and must not pass on
+    #    text length. Testing `!= "agent"` rather than `== "script"` so an
+    #    unrecognized provenance value fails STRICT.
+    if (capture.get("provenance") or "script") != "agent":
+        status = capture.get("http_status")
+        if not (isinstance(status, int) and 200 <= status < 300):
+            return False, "bad_status"
+
+    text = capture.get("text") or ""
+    folded = _fold(text)
+
+    # 3. Negative signatures.
+    if any(sig in folded for sig in _BOILERPLATE):
+        return False, "boilerplate"
+
+    # 4. Substance, then title anchor -- two separate diagnoses. The text-head
+    #    fallback is broader than the spec's (which scoped it to --stdin): a
+    #    SCRIPT capture of a page with no <title>/<h1>/PDF-metadata title still
+    #    needs an anchor, and refusing it would fail pages that are real.
+    if len(text) < MIN_TEXT_CHARS:
+        return False, "thin"
+    anchor = capture.get("title") or text[:1000]
+    wanted = _title_tokens(title)
+    if wanted and not (wanted & _title_tokens(anchor)):
+        return False, "title_mismatch"
+
+    # 5. Span grounding (owner decision 2026-08-11). EVERY listed span must
+    #    appear; one-of-many would reward padding the field.
+    listed = split_spans(spans)
+    if not listed or len(listed) > MAX_SPANS:
+        return False, "span_malformed"
+    for span in listed:
+        words = _fold(span).split()
+        if not (MIN_SPAN_WORDS <= len(words) <= MAX_SPAN_WORDS):
+            return False, "span_malformed"
+        if " ".join(words) not in folded:
+            return False, "span_unverified"
+
+    return True, "ok"
