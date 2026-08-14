@@ -343,6 +343,7 @@ WebSearch: "[topic] [author/org] blog/report/whitepaper"
   title = {Title of Blog Post or Report},
   year = {YYYY},
   howpublished = {\url{https://example.com/path}},
+  web_span = {a verbatim run of 6-40 words copied from the page},
   note = {
   CORE ARGUMENT: [2-3 sentences]
 
@@ -354,12 +355,38 @@ WebSearch: "[topic] [author/org] blog/report/whitepaper"
 }
 ```
 
+**Fetch every web source you keep — this is what makes it citable.**
+
+A web source has no API abstract, so without a fetch it stamps
+`EVIDENCE-NONE` and the writer cannot cite it at all. Run:
+
+```bash
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
+    --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir .
+```
+
+Then **read the captured text and write CORE ARGUMENT from it**, and copy one
+or two verbatim runs of 6–40 words into `web_span` (separate two with ` || `).
+The barrier checks that every span really occurs in the capture, so **copy,
+never paraphrase** — spans are matched ignoring case, spacing and LaTeX
+escapes, but nothing else. Handles PDFs as well as HTML.
+
+If the script cannot get the page but you can read it (JS-rendered hosts),
+read it with WebFetch and pipe what you read to the same script:
+
+```bash
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
+    --stdin --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir .
+```
+
 **Cautions**:
 - ⚠️ Web sources are less authoritative than peer-reviewed literature
 - ⚠️ Mark web sources clearly with `web-source` keyword tag
-- ⚠️ Verify author and date from the actual page (use WebFetch if needed)
+- ⚠️ Verify author and date from the actual page
 - ⚠️ Prioritize academic sources; use web sources to supplement, not replace
 - ❌ Do NOT cite paywalled content you cannot verify
+- ❌ NEVER hand-write `urldate` or `archiveurl` — the barrier owns both and
+  strips any value it finds, exactly as it does for `venue_status`
 
 ## Parallel Search Mode (HIGHLY RECOMMENDED)
 

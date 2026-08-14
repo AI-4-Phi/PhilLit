@@ -126,3 +126,27 @@ def test_prose_flags_exist_in_named_scripts_argparse():
         "documented invocation would exit non-zero in a user workspace:\n"
         + "\n".join(offenders)
     )
+
+
+def test_web_source_fetch_obligation_is_stated_in_the_researcher_prose():
+    """Item 2: a web source is uncitable without a capture, so the obligation
+    and the span field both have to be in the prose the researcher reads."""
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    assert "fetch_web.py" in text
+    assert "web_span" in text
+    assert "--stdin" in text
+    # The barrier owns these two; a hand-written value is stripped.
+    assert "NEVER hand-write `urldate`" in text
+
+
+def test_both_tier_tables_carry_the_web_row():
+    for rel in ("agents/synthesis-writer.md", "docs/conventions.md"):
+        text = (REPO_ROOT / rel).read_text(encoding="utf-8")
+        assert "EVIDENCE-WEB" in text, rel
+
+
+def test_conventions_states_the_scoped_note_amendment():
+    """The doctrine change must be visible where the doctrine lives."""
+    text = (REPO_ROOT / "docs" / "conventions.md").read_text(encoding="utf-8")
+    assert "Scoped amendment to the note doctrine" in text
