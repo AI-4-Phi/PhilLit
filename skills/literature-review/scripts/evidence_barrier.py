@@ -26,6 +26,7 @@ import enrich_bibliography as eb
 from enrich_bibliography import add_field_to_entry
 import resolve_context as rc
 import stamp_evidence as se
+import web_evidence as wv
 import year_suffix as ys
 
 try:
@@ -137,17 +138,20 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
 
 
 _DERIVED_FIELD_RE = re.compile(
-    r"\n[ \t]*(?:venue_status|year_suffix)\s*=\s*(?:\{[^{}]*\}|\"[^\"]*\")\s*,?",
+    r"\n[ \t]*(?:venue_status|year_suffix|urldate|archiveurl)\s*=\s*"
+    r"(?:\{[^{}]*\}|\"[^\"]*\")\s*,?",
     re.IGNORECASE)
 
 
 def _strip_derived_fields(entry_text: str) -> str:
-    """Remove every pre-existing venue_status or year_suffix field it can find.
+    """Remove every pre-existing derived field it can find.
 
-    The barrier OWNS both fields (item 3 D's venue_status, item 3 F's
-    year_suffix): each is re-derived from scratch on every run -- venue_status
-    from OpenAlex, year_suffix from the current union of every domain
-    bibliography -- so a value already in the file is either stale or
+    The barrier OWNS all four (item 3 D's venue_status, item 3 F's
+    year_suffix, item 2's urldate and archiveurl): each is re-derived from
+    scratch on every run -- venue_status from OpenAlex, year_suffix from the
+    current union of every domain bibliography, urldate from the capture's
+    retrieved_at and archiveurl from the archive lookup -- so a value already
+    in the file is either stale or
     hand-written, and both must go before this run decides. Without this, a
     flag or letter survives a later run that had no API key, or whose domain
     set changed -- a false discredit or a wrong letter that no later pass can
@@ -343,7 +347,6 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         "schema_version": 1, "status": "complete", "domains": {},
         "articles": {"fetched": [], "failed": []}, "acquisition": {},
         "attestations": {}, "stamps": {},
-        "web_sources_none": {"count": 0, "keys": []},
         "demoted_would_be_existence_v4": [],
         # Option C: entries whose cleaner abstention attests existence -- the
         # refusal must stay visible however the tier lands (§9, the retained
@@ -519,6 +522,98 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         venue_report = {"status": "error", "error": repr(exc), "flagged_entries": 0}
     report["venue_vetting"] = venue_report
 
+    # Item 2: web-source evidence. A PLUMBING pass inside a fail-closed gate,
+    # wrapped like venue vetting -- but with TWO boundaries, and the difference
+    # is load-bearing. The OUTER try is for pass-level catastrophes (the JSON
+    # round-trip below). The INNER one, per entry, is for DATA problems: without
+    # it, one malformed URL would revoke promotion from every other web entry in
+    # the review, and the spec requires entry-level failures to degrade to
+    # no-promotion (external review, Q7.1).
+    #
+    # Promote-only by construction: every path either sets a gate flag or
+    # leaves the entry exactly where it already was, and each non-promotion
+    # lands in a NAMED bucket rather than nowhere.
+    web_gates = {}    # (i, key) -> {"urldate": str, "archiveurl": str | None}
+    web_report = {"status": "complete",
+                  "gate_passed": {"script": 0, "agent": 0},
+                  "no_capture": [], "no_existence": [],
+                  "fetch_error": [], "capture_rejected": {},
+                  "no_url": [], "entry_error": []}
+    try:
+        for i, d in domains.items():
+            for chunk in parsed[i]:
+                header = se.entry_header(chunk)
+                if not header:
+                    continue
+                etype, key = header
+                fields = se.parse_entry_fields(chunk)
+                # Scope: @misc without an abstract. An abstract-bearing entry
+                # already has its own channel, and a url on an @article is
+                # decoration (spec, Out of scope).
+                if etype.lower() != "misc" or fields.get("abstract"):
+                    continue
+                qual = f"{d['bib_name']}:{key}"
+                try:
+                    url = wv.extract_url(fields)
+                    if not url:
+                        web_report["no_url"].append(qual)
+                        continue
+                    # Capture FIRST, before any network. Two reasons, and the
+                    # second is why this departs from the spec's ordering:
+                    #   1. An entry with no capture cannot pass the gate, so
+                    #      probing its URL buys nothing -- and the spec's stated
+                    #      motive for looking anyway (delivery wants the
+                    #      snapshot) does not apply, since archiveurl is only
+                    #      spliced onto entries that DO pass.
+                    #   2. It keeps the barrier network-free for reviews with no
+                    #      captures at all, which is every pre-item-2 workspace
+                    #      and every test that drives the real execute().
+                    # The bucket is therefore `no_capture`, not the spec's
+                    # `exists_no_capture`: with this order we have not checked
+                    # existence, and claiming it would be a lie.
+                    capture = wv.load_capture(review_dir, key)
+                    if capture is None:
+                        web_report["no_capture"].append(qual)
+                        continue
+                    ex = wv.evaluate_existence(url)
+                    if not ex["exists"]:
+                        web_report["no_existence"].append(qual)
+                        continue
+                    passed, reason = wv.check_capture(
+                        capture, url, fields.get("title") or "",
+                        fields.get("web_span") or "")
+                    if reason == "fetch_error":
+                        # The tool ran and failed: a reachability problem, not
+                        # a compliance one. Kept apart on purpose.
+                        web_report["fetch_error"].append(qual)
+                        continue
+                    if not passed:
+                        web_report["capture_rejected"].setdefault(
+                            reason, []).append(qual)
+                        continue
+                    prov = capture.get("provenance") or "script"
+                    web_report["gate_passed"][prov] = \
+                        web_report["gate_passed"].get(prov, 0) + 1
+                    web_gates[(i, key)] = {
+                        "urldate": (capture.get("retrieved_at") or "")[:10],
+                        "archiveurl": ex["archiveurl"],
+                    }
+                except Exception as exc:
+                    web_report["entry_error"].append(f"{qual}: {exc!r}")
+                    continue
+        # Round-tripped inside the try for the same reason venue vetting is: a
+        # non-serializable value would otherwise escape execute() as an
+        # uncaught TypeError, and the bibs are gated on the report write.
+        web_report = json.loads(json.dumps(web_report))
+    except Exception as exc:
+        web_gates = {}
+        web_report = {"status": "error", "error": repr(exc),
+                      "gate_passed": {"script": 0, "agent": 0},
+                      "no_capture": [], "no_existence": [],
+                      "fetch_error": [], "capture_rejected": {},
+                      "no_url": [], "entry_error": []}
+    report["web_sources"] = web_report
+
     # Item 3 F: a `year_suffix` that survived _strip_derived_fields. The
     # stripper only matches a field OPENING its line, an accepted limit
     # documented there and adjudicated for `venue_status` as "document, don't
@@ -691,6 +786,10 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # flag set in the attestation loop if the corresponding splice
             # did not land in THIS chunk (fail-closed against index skew).
             att.abstract_attested = se.attest_abstract(fields, e_entries.get(key))
+            # Re-derived per chunk for the same fail-closed reason as the line
+            # above: the flag is keyed (i, key), so an index skew must never
+            # promote a neighbouring entry.
+            att.web_gate_passed = (i, key) in web_gates
             tier = se.compute_tier(etype, fields, att)
             # venue_status is spliced AFTER tier is computed, not before: it
             # is the only field splice upstream of compute_tier, and tier
@@ -716,6 +815,16 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     # the alternative is the silent loss this fix exists to end.
                     chunk = pre_venue
                     venue_splice_failed.append(f"{bib_name}:{key}")
+            gate = web_gates.get((i, key))
+            if gate:
+                # Spliced AFTER compute_tier for the same reason venue_status
+                # is: tier invariance under field splices stays structural
+                # rather than depending on compute_tier not reading them.
+                if gate["urldate"]:
+                    chunk = _stamp_optional_field(chunk, "urldate", gate["urldate"])
+                if gate["archiveurl"]:
+                    chunk = _stamp_optional_field(chunk, "archiveurl",
+                                                  gate["archiveurl"])
             letter = suffix_map.get((i, key))
             stale = (i, key) in residual_suffix
             if letter or stale:
@@ -753,17 +862,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             if att.cleaning_abstained:
                 report["cleaning_abstained"].append(qual)
             if tier == se.TIER_NONE:
-                if etype.lower() == "misc" and (
-                    fields.get("url") or "url" in (fields.get("howpublished") or "").lower()
-                ) and not fields.get("abstract"):
-                    report["web_sources_none"]["keys"].append(qual)
                 if (not att.api_matched or att.breaker_tripped) and (
                     fields.get("doi")
                     or (fields.get("publisher") and etype.lower() in se.CONTAINER_TYPES)
                 ):
                     report["demoted_would_be_existence_v4"].append(qual)
         outputs[d["bib"]] = "\n".join(final_chunks)
-    report["web_sources_none"]["count"] = len(report["web_sources_none"]["keys"])
     report["status"] = "degraded" if degraded else "complete"
     return report, outputs
 
@@ -799,7 +903,21 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         "status": report["status"],
         "stamped": sum(len(v) for v in (report.get("stamps") or {}).values()),
         "tiers": tiers,
-        "web_sources_none": (report.get("web_sources_none") or {}).get("count", 0),
+        # Replaces the flat web_sources_none count: that number could not
+        # distinguish "nobody ran the fetch tool" from "the hosts were down"
+        # from "the notes' spans were not on the page", which are three
+        # different things for an operator to do something about.
+        "web_sources": {
+            "status": (report.get("web_sources") or {}).get("status", "not-run"),
+            "gate_passed": (report.get("web_sources") or {}).get(
+                "gate_passed", {"script": 0, "agent": 0}),
+            "not_promoted": sum(
+                len(v) for k, v in (report.get("web_sources") or {}).items()
+                if k in ("no_capture", "no_existence", "no_url",
+                         "fetch_error", "entry_error")
+            ) + sum(len(v) for v in ((report.get("web_sources") or {})
+                                     .get("capture_rejected") or {}).values()),
+        },
         "cleaning_abstained": len(report.get("cleaning_abstained") or []),
         "venue_vetting": {
             "status": (report.get("venue_vetting") or {}).get("status", "not-run"),

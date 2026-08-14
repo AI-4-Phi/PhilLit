@@ -200,7 +200,11 @@ def test_fabricated_context_field_stripped_and_none(tmp_path):
     assert "EVIDENCE-NONE" in content
 
 
-def test_web_source_count(tmp_path):
+def test_web_source_without_a_capture_is_bucketed_and_stays_none(tmp_path):
+    """Renamed from test_web_source_count when the flat web_sources_none count
+    became a per-outcome breakdown. Note this entry reaches NO network: with no
+    capture on disk the pass short-circuits before the existence probe, which is
+    what keeps the real-execute() tests offline."""
     rd = tmp_path / "review"
     misc = """@misc{blogpost2024ai,
   author = {Blogger, Some},
@@ -214,10 +218,11 @@ def test_web_source_count(tmp_path):
     report = _report(rd)
     assert report["stamps"]["literature-domain-1.bib"]["blogpost2024ai"] == (
         "EVIDENCE-NONE")
-    assert report["web_sources_none"]["count"] == 1
-    assert report["web_sources_none"]["keys"] == [
+    assert report["web_sources"]["no_capture"] == [
         "literature-domain-1.bib:blogpost2024ai"]
-    assert json.loads(r.stdout)["web_sources_none"] == 1
+    assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 0}
+    summary = json.loads(r.stdout)["web_sources"]
+    assert summary["not_promoted"] == 1 and summary["status"] == "complete"
 
 
 def test_would_be_existence_v4_demotions_listed(tmp_path):
@@ -1972,3 +1977,166 @@ def test_venue_splice_keys_are_present_even_when_vetting_errored(tmp_path, monke
     assert report["venue_vetting"]["status"] == "error"
     assert report["venue_vetting"]["stamped_entries"] == []
     assert report["venue_vetting"]["splice_failed"] == []
+
+
+# ---------------------------------------------------------------------------
+# Item 2: web-source evidence in the barrier
+# ---------------------------------------------------------------------------
+
+_WEB_ENTRY = """@misc{k,
+  author = {Omohundro, Steve},
+  title = {The Basic AI Drives},
+  year = {2008},
+  url = {https://a.example/x},
+  web_span = {acquire steel manipulators and energy resources for itself},
+  note = {CORE ARGUMENT: convergent instrumental drives.}
+}"""
+
+_WEB_CAPTURE = {
+    "url": "https://a.example/x", "final_url": "https://a.example/x",
+    "http_status": 200, "provenance": "script",
+    "retrieved_at": "2026-08-14T14:02:00+00:00",
+    "title": "The Basic AI Drives",
+    "text": "word " * 100 + "acquire steel manipulators and energy resources for itself",
+}
+
+
+def _web_review(tmp_path, entry=_WEB_ENTRY, capture=_WEB_CAPTURE, capture_key="k"):
+    rd = tmp_path / "review"
+    _domain(rd, 1, entry, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    if capture is not None:
+        cdir = rd / "intermediate_files" / "web_captures"
+        cdir.mkdir(parents=True, exist_ok=True)
+        (cdir / f"{capture_key}.json").write_text(
+            json.dumps(capture), encoding="utf-8")
+    return rd
+
+
+def _stub_net(monkeypatch, status=200, snapshot=None, final=None):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    monkeypatch.setattr(evidence_barrier.wv, "http_get",
+                        lambda url: {"status": status, "final_url": final or url})
+    monkeypatch.setattr(evidence_barrier.wv, "wayback_lookup", lambda url: snapshot)
+    return evidence_barrier
+
+
+def test_a_gate_passing_web_entry_is_stamped_web_with_derived_fields(tmp_path, monkeypatch):
+    eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
+    rd = _web_review(tmp_path)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    text = list(outputs.values())[0]
+    assert "EVIDENCE-WEB" in text
+    assert "urldate = {2026-08-14}" in text
+    assert "web.archive.org" in text
+    assert report["web_sources"]["gate_passed"] == {"script": 1, "agent": 0}
+
+
+def test_a_web_entry_whose_span_is_absent_stays_none_and_is_reported(tmp_path, monkeypatch):
+    eb_mod = _stub_net(monkeypatch)
+    cap = dict(_WEB_CAPTURE, text="word " * 100 + "nothing the note ever quoted")
+    rd = _web_review(tmp_path, capture=cap)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    assert report["stamps"]["literature-domain-1.bib"]["k"] == "EVIDENCE-NONE"
+    assert report["web_sources"]["capture_rejected"]["span_unverified"] == [
+        "literature-domain-1.bib:k"]
+    assert "EVIDENCE-WEB" not in list(outputs.values())[0]
+
+
+def test_an_error_record_lands_in_fetch_error_not_no_capture(tmp_path, monkeypatch):
+    eb_mod = _stub_net(monkeypatch)
+    rd = _web_review(tmp_path, capture={"url": "https://a.example/x",
+                                        "error": "fetch-failed:timeout"})
+    report, _ = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["fetch_error"] == ["literature-domain-1.bib:k"]
+    assert report["web_sources"]["no_capture"] == []
+
+
+def test_no_existence_is_its_own_bucket(tmp_path, monkeypatch):
+    eb_mod = _stub_net(monkeypatch, status=404)
+    rd = _web_review(tmp_path)
+    report, _ = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["no_existence"] == ["literature-domain-1.bib:k"]
+
+
+def test_agent_provenance_is_counted_separately(tmp_path, monkeypatch):
+    eb_mod = _stub_net(monkeypatch)
+    cap = dict(_WEB_CAPTURE, provenance="agent", http_status=None)
+    rd = _web_review(tmp_path, capture=cap)
+    report, _ = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 1}
+
+
+def test_a_stale_urldate_in_the_source_bib_is_stripped_and_re_derived(tmp_path, monkeypatch):
+    """The barrier is sole author of urldate/archiveurl, like sep_context."""
+    eb_mod = _stub_net(monkeypatch)
+    stale = _WEB_ENTRY.replace("  year = {2008},",
+                               "  year = {2008},\n  urldate = {1999-01-01},")
+    rd = _web_review(tmp_path, entry=stale)
+    _, outputs = eb_mod.run_barrier(rd, 1)
+    text = list(outputs.values())[0]
+    assert "1999-01-01" not in text
+    assert text.count("urldate") == 1
+
+
+def test_one_raising_entry_does_not_cost_its_neighbour_its_promotion(tmp_path, monkeypatch):
+    """The spec requires entry-level degradation. Without the per-entry
+    boundary, the single pass-level wrapper zeroes web_gates and the GOOD entry
+    demotes with the bad one.
+
+    The raise is INJECTED rather than provoked through data: normalize_url is
+    hardened against the malformed-port case, so the data-driven version of this
+    test passed for the wrong reason (the second entry simply had no capture of
+    its own). Mutation-checked -- removing the inner try/except fails this.
+    """
+    eb_mod = _stub_net(monkeypatch)
+    real = eb_mod.wv.evaluate_existence
+
+    def selective(url, *a, **k):
+        if "bad" in url:
+            raise RuntimeError("one entry's data is poison")
+        return real(url, *a, **k)
+
+    monkeypatch.setattr(eb_mod.wv, "evaluate_existence", selective)
+    bad = _WEB_ENTRY.replace("@misc{k,", "@misc{bad,").replace(
+        "https://a.example/x", "https://a.example/bad")
+    rd = _web_review(tmp_path, entry=_WEB_ENTRY + "\n\n" + bad)
+    # A capture for the poison entry too, so it reaches the raising call.
+    cdir = rd / "intermediate_files" / "web_captures"
+    (cdir / "bad.json").write_text(json.dumps(
+        dict(_WEB_CAPTURE, url="https://a.example/bad",
+             final_url="https://a.example/bad")), encoding="utf-8")
+
+    report, _ = eb_mod.run_barrier(rd, 1)
+    stamps = report["stamps"]["literature-domain-1.bib"]
+    assert stamps["k"] == "EVIDENCE-WEB", "the good entry lost its promotion"
+    assert stamps["bad"] == "EVIDENCE-NONE"
+    assert len(report["web_sources"]["entry_error"]) == 1
+    assert report["web_sources"]["status"] == "complete"
+
+
+def test_a_pass_level_failure_degrades_to_no_promotions_not_a_failed_run(tmp_path, monkeypatch):
+    """The OUTER boundary. A non-serializable value in the report is exactly
+    what the json round-trip inside the try exists to catch: without it the
+    TypeError escapes execute(), and the bibs -- gated on the report write --
+    are never written at all."""
+    eb_mod = _stub_net(monkeypatch)
+    monkeypatch.setattr(eb_mod.wv, "check_capture",
+                        lambda *a, **k: (False, object()))   # unserializable
+    rd = _web_review(tmp_path)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    assert report["status"] != "failed"
+    assert report["web_sources"]["status"] == "error"
+    assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 0}
+    assert "EVIDENCE-WEB" not in list(outputs.values())[0]
+
+
+def test_a_non_misc_entry_with_a_url_is_never_web_gated(tmp_path, monkeypatch):
+    """A url on an @article is decoration; its evidence channels are the API
+    ones (spec, Out of scope)."""
+    eb_mod = _stub_net(monkeypatch)
+    art = _WEB_ENTRY.replace("@misc{k,", "@article{k,")
+    rd = _web_review(tmp_path, entry=art)
+    report, _ = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 0}
+    assert report["stamps"]["literature-domain-1.bib"]["k"] != "EVIDENCE-WEB"
