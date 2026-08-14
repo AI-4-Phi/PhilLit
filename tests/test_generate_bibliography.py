@@ -323,6 +323,55 @@ class TestFormatEntry:
         result = format_entry(entry, "sep2012")
         assert "[https://" in result
 
+    def test_misc_renders_accessed_date_and_archive_link(self):
+        """urldate and archiveurl are barrier-authored (item 2). Chicago
+        provides for both, and the archive link is link-rot insurance."""
+        entry = _make_entry(
+            "misc",
+            authors=["Omohundro, Steve"],
+            title="The Basic AI Drives",
+            year="2008",
+            howpublished="https://a.example/x",
+            urldate="2026-08-14",
+            archiveurl="https://web.archive.org/web/2024/https://a.example/x",
+        )
+        result = format_entry(entry, "omohundro2008basic")
+        assert "Accessed 2026-08-14." in result
+        assert "web.archive.org" in result
+
+    def test_latex_wrapped_url_is_unwrapped_not_printed_literally(self):
+        """REGRESSION PIN, not a fix. The item-2 spec carries a rider claiming
+        this is broken -- that `_format_misc` tests `howpublished.startswith
+        ("http")`, so the `\\url{...}` form the researcher template mandates
+        falls to the plain-text branch and ships the macro as visible text.
+
+        It does not: `clean_bibtex_str` already strips the macro (step 4,
+        `generate_bibliography.py:62`) before `_format_misc` ever sees the
+        value, so the http branch is taken. The rider is moot and no unwrap was
+        added; this test exists so the behaviour cannot regress silently, since
+        the two functions that produce it are far apart."""
+        entry = _make_entry(
+            "misc",
+            authors=["Blogger, Some"],
+            title="A Post",
+            year="2024",
+            howpublished=r"\url{https://a.example/x}",
+        )
+        result = format_entry(entry, "blog2024post")
+        assert r"\url{" not in result
+        assert "[https://a.example/x](https://a.example/x)" in result
+
+    def test_misc_without_the_new_fields_is_unchanged(self):
+        entry = _make_entry(
+            "misc",
+            authors=["Blogger, Some"],
+            title="A Post",
+            year="2024",
+            howpublished="https://a.example/x",
+        )
+        result = format_entry(entry, "blog2024post")
+        assert "Accessed" not in result and "Archived" not in result
+
     def test_unknown_type_falls_back_to_misc(self):
         """Unknown entry type uses @misc formatting."""
         entry = _make_entry(

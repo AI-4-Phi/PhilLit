@@ -365,6 +365,12 @@ def _format_phdthesis(author_str, year, title, entry) -> str:
 def _format_misc(author_str, year, title, entry) -> str:
     doi = _get_field(entry, "doi")
     howpublished = _get_field(entry, "howpublished")
+    # Item 2: barrier-authored, so their presence means the entry passed the
+    # web gate this run. Chicago provides for both, and the archive link is
+    # link-rot insurance rather than content attestation -- availability
+    # matches the URL string, and news and org hosts reassign URLs.
+    urldate = _get_field(entry, "urldate")
+    archiveurl = _get_field(entry, "archiveurl")
 
     parts = [f'{author_str} {year}. {_quoted_title(title)}']
     if howpublished:
@@ -372,6 +378,10 @@ def _format_misc(author_str, year, title, entry) -> str:
             parts.append(f"[{howpublished}]({howpublished}).")
         else:
             parts.append(f"{howpublished}.")
+    if urldate:
+        parts.append(f"Accessed {urldate}.")
+    if archiveurl:
+        parts.append(f"Archived at [{archiveurl}]({archiveurl}).")
     if doi:
         parts.append(_format_doi(doi))
 
