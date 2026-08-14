@@ -664,6 +664,37 @@ class TestEvidenceRestamp:
               "api_matched": False, "verified_identifier": None,
               "verified_identifier_value": None, "breaker_tripped": False}
 
+    def test_a_web_entry_keeps_its_tier_through_the_restamp(self, tmp_path):
+        """REGRESSION: the re-stamp rebuilds every attestation from the report,
+        so a flag it does not know about is silently dropped. web_gate_passed
+        was exactly that at first -- every EVIDENCE-WEB entry re-stamped
+        EVIDENCE-NONE here, which makes a source the writer already cited
+        uncitable in Phase 6. Found by review, not by the barrier's own tests,
+        because the barrier is green in isolation."""
+        web = ('@misc{omohundro2008basic,\n  author = {Omohundro, Steve},\n'
+               '  title = {The Basic AI Drives},\n  year = {2008},\n'
+               '  url = {https://a.example/x},\n'
+               '  keywords = {ai, High, EVIDENCE-WEB}\n}\n')
+        att = {**self.NO_ATT, "web_gate_passed": True,
+               "web_url": "https://a.example/x"}
+        out = self._run_cli(tmp_path, web, "", {"omohundro2008basic": att}, {})
+        assert "EVIDENCE-WEB" in out
+        assert "EVIDENCE-NONE" not in out
+
+    def test_a_web_attestation_does_not_authorize_a_different_url(self, tmp_path):
+        """The value binding. A bare boolean carried across a merge must not
+        vouch for a URL the gate never saw -- same rule the abstract and
+        context hashes enforce."""
+        web = ('@misc{omohundro2008basic,\n  author = {Omohundro, Steve},\n'
+               '  title = {The Basic AI Drives},\n  year = {2008},\n'
+               '  url = {https://elsewhere.example/other},\n'
+               '  keywords = {ai, High, EVIDENCE-WEB}\n}\n')
+        att = {**self.NO_ATT, "web_gate_passed": True,
+               "web_url": "https://a.example/x"}
+        out = self._run_cli(tmp_path, web, "", {"omohundro2008basic": att}, {})
+        assert "EVIDENCE-NONE" in out
+        assert "EVIDENCE-WEB" not in out
+
     def test_context_survives_merge_and_tier_via_loser_attestation(self, tmp_path):
         # A's key carries sep_context + a value-bound context attestation;
         # B's duplicate (different key, same title/year/author) wins on

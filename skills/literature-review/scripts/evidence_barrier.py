@@ -320,7 +320,17 @@ def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
         return entry_text
 
 
-def _att_blob(att: se.EntryAttestation, enrich_entry, context_value):
+def _att_blob(att: se.EntryAttestation, enrich_entry, context_value,
+              web_url: str | None = None):
+    """The attestation as the report records it -- and therefore as
+    dedupe_bib.py rebuilds it when it re-stamps merged entries.
+
+    `web_url` is the VALUE BINDING for the web gate, and it is why the flag
+    cannot be persisted as a bare boolean: dedupe's rule is that one
+    contributor's boolean must never authorize another contributor's field
+    value, so the re-stamp has to be able to confirm the merged entry still
+    carries the same URL this gate passed for.
+    """
     return {
         "abstract_attested": att.abstract_attested,
         "abstract_source": (enrich_entry or {}).get("abstract_source"),
@@ -333,6 +343,8 @@ def _att_blob(att: se.EntryAttestation, enrich_entry, context_value):
         "verified_identifier_value": att.verified_identifier_value,
         "breaker_tripped": att.breaker_tripped,
         "cleaning_abstained": att.cleaning_abstained,
+        "web_gate_passed": att.web_gate_passed,
+        "web_url": web_url,
     }
 
 
@@ -857,7 +869,9 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             final_chunks.append(se.stamp_entry_text(chunk, tier))
             report["stamps"][bib_name][key] = tier
             report["attestations"][bib_name][key] = _att_blob(
-                att, e_entries.get(key), cv)
+                att, e_entries.get(key), cv,
+                web_url=(wv.normalize_url(wv.extract_url(fields) or "") or None)
+                if att.web_gate_passed else None)
             qual = f"{bib_name}:{key}"
             if att.cleaning_abstained:
                 report["cleaning_abstained"].append(qual)

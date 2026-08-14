@@ -819,6 +819,7 @@ def restamp_merged(
     if script_dir not in sys.path:
         sys.path.insert(0, script_dir)
     import stamp_evidence as se
+    import web_evidence as wv
     try:
         atts = json.loads(Path(report_path).read_text(encoding="utf-8")).get("attestations", {})
     except (json.JSONDecodeError, OSError):
@@ -855,6 +856,18 @@ def restamp_merged(
             blob.get("context_written") and cf and fields.get(cf)
             and se.abstract_hash(fields[cf]) == blob.get("context_sha256")
         )
+        # The web gate is VALUE-BOUND here, like the abstract and context
+        # hashes above and for the same reason: a bare boolean from one
+        # contributor must never authorize another contributor's URL. Without
+        # this re-verification the flag could not be carried across the merge at
+        # all -- and without carrying it, EVERY web entry re-stamps
+        # EVIDENCE-NONE here, silently making a cited source uncitable in
+        # Phase 6 after the writer already cited it.
+        web_url = blob.get("web_url")
+        web_ok = bool(
+            blob.get("web_gate_passed") and web_url
+            and wv.normalize_url(wv.extract_url(fields) or "") == web_url
+        )
         return se.EntryAttestation(
             abstract_attested=abstract_ok,
             context_written=context_ok,
@@ -862,6 +875,7 @@ def restamp_merged(
             verified_identifier=blob.get("verified_identifier"),
             verified_identifier_value=blob.get("verified_identifier_value"),
             breaker_tripped=bool(blob.get("breaker_tripped")),
+            web_gate_passed=web_ok,
         )
 
     for key, entry in seen.items():
