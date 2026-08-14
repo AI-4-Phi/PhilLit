@@ -23,9 +23,13 @@ sys.path.pop(0)
 
 TIER_ABSTRACT = "EVIDENCE-ABSTRACT"
 TIER_CONTEXT = "EVIDENCE-CONTEXT"
+TIER_WEB = "EVIDENCE-WEB"
 TIER_EXISTENCE = "EVIDENCE-EXISTENCE"
 TIER_NONE = "EVIDENCE-NONE"
-TIER_RANK = {TIER_ABSTRACT: 3, TIER_CONTEXT: 2, TIER_EXISTENCE: 1, TIER_NONE: 0}
+# Only the ORDER is meaningful -- every comparison is relative and no absolute
+# rank is persisted anywhere, which is what let WEB be inserted mid-ladder.
+TIER_RANK = {TIER_ABSTRACT: 4, TIER_CONTEXT: 3, TIER_WEB: 2,
+             TIER_EXISTENCE: 1, TIER_NONE: 0}
 
 ATTESTED_ABSTRACT_SOURCES = {"s2", "openalex", "core", "ndpr"}
 CONTAINER_TYPES = {"book", "incollection", "inbook"}
@@ -45,6 +49,11 @@ class EntryAttestation:
     # only - compute_tier ignores it (existence is attested via api_matched +
     # the value binding); it exists so the refusal stays visible downstream.
     cleaning_abstained: str | None = None
+    # Item 2: set by the barrier when rule (a) existence AND all of rule (b)'s
+    # capture checks held for this entry THIS run. Never inferred from field
+    # presence -- like every other tier, the attestation comes from outside the
+    # bib, not from the bib.
+    web_gate_passed: bool = False
 
 
 def normalize_publisher(value: str) -> str:
@@ -93,6 +102,11 @@ def compute_tier(entry_type: str, fields: dict, att: EntryAttestation) -> str:
         return TIER_ABSTRACT
     if (fields.get("sep_context") or fields.get("iep_context")) and att.context_written:
         return TIER_CONTEXT
+    # Above EXISTENCE: the web gate proves a fetch of this entry's own URL
+    # produced real, title-matching, span-bearing content, which is strictly
+    # more than "some API confirmed this identifier exists".
+    if att.web_gate_passed:
+        return TIER_WEB
     if att.api_matched and not att.breaker_tripped and att.verified_identifier_value:
         # Value binding: the CURRENT field value must equal the value the
         # cleaner verified -- presence of the right kind is not enough.

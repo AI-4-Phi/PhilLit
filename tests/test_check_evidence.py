@@ -318,3 +318,14 @@ def test_sanitizer_strips_all_tokens(tmp_path):
     content = bib.read_text(encoding="utf-8")
     assert "EVIDENCE-" not in content        # the delivered-artifact invariant
     assert "ps, High" in content             # other keywords intact
+
+
+def test_the_web_tier_is_not_low_trust():
+    """EVIDENCE-WEB licenses characterization, so it must NOT join the
+    low-trust set: check_evidence's verb heuristics police what a writer may
+    claim, and WEB entries are citable."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import check_evidence as ce
+    import stamp_evidence as se
+    assert se.TIER_WEB not in ce._LOW_TRUST_TIERS
+    assert se.TIER_EXISTENCE in ce._LOW_TRUST_TIERS

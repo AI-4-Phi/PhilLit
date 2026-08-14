@@ -6,7 +6,7 @@ SCRIPTS_DIR = Path(__file__).parent.parent / "skills" / "literature-review" / "s
 sys.path.insert(0, str(SCRIPTS_DIR))
 
 from stamp_evidence import (
-    TIER_ABSTRACT, TIER_CONTEXT, TIER_EXISTENCE, TIER_NONE,
+    TIER_ABSTRACT, TIER_CONTEXT, TIER_EXISTENCE, TIER_NONE, TIER_RANK, TIER_WEB,
     EntryAttestation, abstract_hash, attest_abstract, compute_tier,
     normalize_abstract_for_hash, normalize_doi,
 )
@@ -348,3 +348,45 @@ class TestStampFile:
         bib = tmp_path / "b.bib"
         bib.write_text(entry + "\n", encoding="utf-8")
         stamp_file(bib, {})  # must not raise; behavior documented as inherited
+
+
+# ---------------------------------------------------------------------------
+# Item 2: the EVIDENCE-WEB tier
+# ---------------------------------------------------------------------------
+
+def test_tier_rank_orders_web_between_context_and_existence():
+    # Pinned RELATIVELY -- no absolute rank is persisted anywhere.
+    r = TIER_RANK
+    assert r[TIER_ABSTRACT] > r[TIER_CONTEXT] > r[TIER_WEB] \
+        > r[TIER_EXISTENCE] > r[TIER_NONE]
+
+
+def test_web_gate_grants_the_web_tier_for_a_misc_entry():
+    att = EntryAttestation(web_gate_passed=True)
+    assert compute_tier("misc", {"url": "https://a.example/x"}, att) == TIER_WEB
+
+
+def test_without_the_gate_a_web_entry_stays_none():
+    assert compute_tier("misc", {"url": "https://a.example/x"},
+                           EntryAttestation()) == TIER_NONE
+
+
+def test_web_outranks_existence_when_both_are_attested():
+    att = EntryAttestation(web_gate_passed=True, api_matched=True,
+                              verified_identifier="doi",
+                              verified_identifier_value="10.1/x")
+    assert compute_tier("misc", {"url": "https://a.example/x", "doi": "10.1/x"},
+                           att) == TIER_WEB
+
+
+def test_abstract_still_outranks_web():
+    att = EntryAttestation(abstract_attested=True, web_gate_passed=True)
+    tier = compute_tier("misc", {"url": "https://a.example/x",
+                                    "abstract": "text", "abstract_source": "s2"}, att)
+    assert tier == TIER_ABSTRACT
+
+
+def test_context_still_outranks_web():
+    att = EntryAttestation(context_written=True, web_gate_passed=True)
+    tier = compute_tier("misc", {"sep_context": "c"}, att)
+    assert tier == TIER_CONTEXT
