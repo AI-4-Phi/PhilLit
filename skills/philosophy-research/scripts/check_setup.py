@@ -80,6 +80,7 @@ def check_dependencies() -> dict[str, dict[str, Any]]:
         "arxiv": "1.4.0",
         "pymarkdownlnt": "0.9.0",
         "python-dotenv": "0.19.0",
+        "pypdf": "4.0.0",
     }
 
     results = {}
