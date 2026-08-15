@@ -6,18 +6,16 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.4.1**, pushed 2026-08-14. Check
+Last release: **plugin v0.4.2**, 2026-08-15. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
-## Working sequence (accepted by Johannes, 2026-08-08)
+## Working sequence
 
-Nothing below is blocked on phillit-service. The cross-repo rule — scripted
-re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
-phillit-service".
-
-1. **Item 2, web-source evidence** (below) — **built 2026-08-14**; what remains
-   is the live acceptance run, which is the gate on calling it done.
+Nothing is queued in this repo. The next open work is service-side (item 2's
+spec bump and re-vendor pin, below) and runs in phillit-service sessions only.
+The cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
+`CLAUDE.md`, "Sister repo: phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -33,30 +31,32 @@ touched. Do it by hand: a mechanical pass was attempted 2026-08-06 and
 reverted because the
 references sit inside sentences that need rewording around the name.
 
-## 2. Web-source evidence — BUILT, awaiting live acceptance
+## 2. Web-source evidence — ACCEPTED 2026-08-15; service handoff open
 
-The `EVIDENCE-WEB` fetch gate shipped 2026-08-14 (8 commits, `web_evidence.py`
-+ `fetch_web.py` + barrier/tier/rendering/prose, 93 new tests). Design:
-`phillit-service/docs/superpowers/specs/2026-08-09-web-source-evidence-design.md`
-(v1.1); build plan and the executed record:
-`docs/superpowers/plans/2026-08-11-web-source-evidence.md` (local-only).
-**Span grounding was adopted now** rather than kept as an escalation (Johannes,
-2026-08-11), so the spec's open owner question is closed.
+The `EVIDENCE-WEB` fetch gate shipped as v0.4.1 and **passed its live
+acceptance run** (2026-08-15, one AI-adjacent headless review: five report
+buckets exercised, 0/4 false promotions, the one `span_unverified` rejection a
+true positive). Johannes accepted the item the same day. Audit record:
+`docs/known-issues/item2-web-evidence-live-acceptance-2026-08-15.md`
+(local-only). The run's findings shipped as the v0.4.2 riders: researcher
+note-fidelity prose, the writer-prose note-license carve-out, the
+verbatim-CHECK summary rule, and the `wayback_failed` report bucket.
 
-Open, in order:
+Two owner decisions recorded 2026-08-15: v0.4.x stands (no revert/recall
+despite shipping ahead of the gate), and the delivered bib **keeps**
+`web_span`/`venue_status`/`year_suffix` (decision note in `sanitize_bib.py`'s
+docstring — do not strip without a new owner decision).
 
-- **The live acceptance run is the gate** — one AI-adjacent headless review.
-  Pick the topic from corpus data so more than one report bucket is exercised;
-  hand-audit every `EVIDENCE-WEB` stamp for false promotion, and every web
-  entry's note against its capture, **aimed at beyond-span content** (spans
-  themselves are proven by construction now). Details in the plan's Live
-  acceptance section.
+Open (service session only — never edited from here):
+
 - **Service-side spec bump to v1.2** — records the span-grounding decision plus
-  four deliberate departures: span parameters (6–40 words, at most 2), the
+  five deliberate departures: span parameters (6–40 words, at most 2), the
   title-anchor text-head fallback widened beyond `--stdin` captures, the
   `capture_rejected` reason-keyed bucket (which fills a hole in the spec's own
-  report schema), and capture-before-network ordering with the honest
-  `no_capture` bucket name. Service session only — never edited from here.
+  report schema), capture-before-network ordering with the honest
+  `no_capture` bucket name, and the `wayback_failed` diagnostic bucket
+  (v0.4.2, from the live run — API-throttled vs no-snapshot was
+  indistinguishable post hoc).
 - The service receives the code at its next re-vendor pin (its item 24).
 
 One import edge for whoever ports it: `web_evidence.http_get` reaches
@@ -81,6 +81,20 @@ are done; the only defect it surfaced that is still open is item 6, venue-name
 recall. Record of the run and the rider results:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
+
+A rendering residual from item 2's live acceptance run (2026-08-15), accepted
+with reasons: **a half-cited suffix group leaves a dangling Chicago letter** —
+the run's review cites "Thornley (2025b)" with no 2025a anywhere in the
+document, because letters are assigned over the full bib before writing and
+only one member got cited. Suppressing the letter at render time was designed
+and REJECTED: prose-only suppression desyncs prose from References, and
+rewriting the prose to the bare year makes the citation letterless over a
+bib group that still holds both works — on the re-run that SKILL step 5
+mandates, `_resolve_collisions`' protective keep-all branch then resurrects
+the uncited sibling as a phantom reference, the exact class sub-item F
+(Chicago a/b disambiguation) exists to prevent. Direction is benign
+(cosmetic; prose↔References stay consistent; the delivered bib names both
+works). Record: the live-acceptance audit doc.
 
 One residual from the same corpus observation: prose can mix the straight and
 curly apostrophe for one surname (`O'Neill` / `O’Neill`) within a single
