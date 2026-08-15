@@ -363,7 +363,7 @@ Never advance to Phase 6 before all synthesis writers have completed.
    bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/check_evidence.py "reviews/[project-name]/literature-review-[project-name].md" "reviews/[project-name]/literature-[project-name].bib"
    ```
 
-   Include any `CHECK` findings in the final summary (they are telemetry, not blockers).
+   Include every `CHECK` line **verbatim** in the final summary (they are telemetry, not blockers) — never summarize, count, or gloss them: a live run's summary once reported four findings as "two minor notes", which hid a do-not-cite violation from the user.
 
 7. **Sanitize the delivered bibliography** (engine-internal tier tokens must not ship):
 
