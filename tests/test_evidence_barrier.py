@@ -2067,6 +2067,30 @@ def test_agent_provenance_is_counted_separately(tmp_path, monkeypatch):
     assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 1}
 
 
+def test_a_wayback_lookup_failure_lands_in_the_wayback_failed_bucket(tmp_path, monkeypatch):
+    """Live-acceptance finding (2026-08-15): with the availability API
+    throttled (429), a missing archiveurl was indistinguishable post hoc from
+    "no snapshot exists". The bucket is diagnostic, not an outcome: the entry
+    still gate-passes and still gets no archiveurl."""
+    eb_mod = _stub_net(monkeypatch)
+
+    def boom(url):
+        raise OSError("wayback 429")
+    monkeypatch.setattr(eb_mod.wv, "wayback_lookup", boom)
+    rd = _web_review(tmp_path)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["gate_passed"] == {"script": 1, "agent": 0}
+    assert report["web_sources"]["wayback_failed"] == ["literature-domain-1.bib:k"]
+    assert "archiveurl" not in list(outputs.values())[0]
+
+
+def test_a_clean_run_reports_an_empty_wayback_failed_bucket(tmp_path, monkeypatch):
+    eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
+    rd = _web_review(tmp_path)
+    report, _ = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["wayback_failed"] == []
+
+
 def test_a_stale_urldate_in_the_source_bib_is_stripped_and_re_derived(tmp_path, monkeypatch):
     """The barrier is sole author of urldate/archiveurl, like sep_context."""
     eb_mod = _stub_net(monkeypatch)

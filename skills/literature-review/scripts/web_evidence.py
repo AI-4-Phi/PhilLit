@@ -294,12 +294,20 @@ def evaluate_existence(url: str, get_fn=None, wayback_fn=None) -> dict:
         final_url = None
 
     archiveurl = None
+    wayback_error = False
     try:
         archiveurl = wayback_fn(url) or None
     except Exception:
+        # Failure never poisons existence already earned -- but it IS recorded:
+        # the live acceptance run (2026-08-15) delivered no archiveurl on any
+        # promoted entry, and a throttled availability API (429) was
+        # indistinguishable post hoc from "no snapshot exists". Diagnostic
+        # only; basis and archiveurl behave exactly as before.
         archiveurl = None
+        wayback_error = True
 
     if basis == "none" and archiveurl:
         basis = "archive"
     return {"exists": basis != "none", "basis": basis,
-            "final_url": final_url, "archiveurl": archiveurl}
+            "final_url": final_url, "archiveurl": archiveurl,
+            "wayback_error": wayback_error}

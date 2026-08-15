@@ -550,7 +550,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                   "gate_passed": {"script": 0, "agent": 0},
                   "no_capture": [], "no_existence": [],
                   "fetch_error": [], "capture_rejected": {},
-                  "no_url": [], "entry_error": []}
+                  "no_url": [], "entry_error": [],
+                  # Diagnostic overlay, not an outcome bucket: entries listed
+                  # here ALSO land in their outcome. Distinguishes "the
+                  # availability API failed/throttled" from "no snapshot
+                  # exists" (live acceptance, 2026-08-15).
+                  "wayback_failed": []}
     try:
         for i, d in domains.items():
             for chunk in parsed[i]:
@@ -588,6 +593,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                         web_report["no_capture"].append(qual)
                         continue
                     ex = wv.evaluate_existence(url)
+                    if ex.get("wayback_error"):
+                        web_report["wayback_failed"].append(qual)
                     if not ex["exists"]:
                         web_report["no_existence"].append(qual)
                         continue
@@ -623,7 +630,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                       "gate_passed": {"script": 0, "agent": 0},
                       "no_capture": [], "no_existence": [],
                       "fetch_error": [], "capture_rejected": {},
-                      "no_url": [], "entry_error": []}
+                      "no_url": [], "entry_error": [],
+                      "wayback_failed": []}
     report["web_sources"] = web_report
 
     # Item 3 F: a `year_suffix` that survived _strip_derived_fields. The

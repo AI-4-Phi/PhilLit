@@ -295,6 +295,28 @@ def test_archive_lookup_failure_never_poisons_existence_already_earned():
     assert r["exists"] and r["basis"] == "direct" and r["archiveurl"] is None
 
 
+def test_a_wayback_lookup_failure_is_flagged_distinct_from_no_snapshot():
+    # Live-acceptance finding (2026-08-15): archiveurl was absent on every
+    # promoted entry and a throttled availability API (429) was
+    # indistinguishable post hoc from "no snapshot exists". The flag is
+    # diagnostic only -- existence and archiveurl behavior are unchanged.
+    def boom(url):
+        raise OSError("wayback 429")
+    r = wv.evaluate_existence("https://a.example/x", _get(200), boom)
+    assert r["wayback_error"] is True
+
+
+def test_no_snapshot_is_not_a_wayback_error():
+    r = wv.evaluate_existence("https://a.example/x", _get(200), _wb(None))
+    assert r["wayback_error"] is False
+
+
+def test_a_found_snapshot_is_not_a_wayback_error():
+    snap = "https://web.archive.org/web/2021/https://a.example/x"
+    r = wv.evaluate_existence("https://a.example/x", _get(200), _wb(snap))
+    assert r["wayback_error"] is False
+
+
 def test_snapshot_is_recorded_even_when_the_direct_get_succeeded():
     snap = "https://web.archive.org/web/2021/https://a.example/x"
     r = wv.evaluate_existence("https://a.example/x", _get(200), _wb(snap))
