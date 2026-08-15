@@ -371,6 +371,19 @@ The barrier checks that every span really occurs in the capture, so **copy,
 never paraphrase** — spans are matched ignoring case, spacing and LaTeX
 escapes, but nothing else. Handles PDFs as well as HTML.
 
+**The whole note is held to the capture, not just the spans.** For a
+gate-passed web source — and only there — the writer is licensed to
+characterize the work from your note, so anything the note *attributes to the
+source* (a named framing, a quotation, "explicitly argues X") must actually
+appear in the captured text. Do not import background knowledge as
+attribution: if you know the piece is usually read through Goodhart's Law but
+the page never says so, that framing belongs — unattributed — in RELEVANCE as
+your analysis ("this bridges to the Goodhart literature"), never as a claim
+about what the page states. The same discipline applies to POSITION: reception
+and affiliation claims you cannot see on the page are your assessment — word
+them as such ("appears widely discussed on..."), and drop any you are not
+confident of.
+
 If the script cannot get the page but you can read it (JS-rendered hosts),
 read it with WebFetch and pipe what you read to the same script:
 
