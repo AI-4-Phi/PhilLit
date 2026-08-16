@@ -362,7 +362,7 @@ A web source has no API abstract, so without a fetch it stamps
 
 ```bash
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
-    --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir .
+    --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir "$REVIEW_DIR"
 ```
 
 Then **read the captured text and write CORE ARGUMENT from it**, and copy one
@@ -389,7 +389,7 @@ read it with WebFetch and pipe what you read to the same script:
 
 ```bash
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
-    --stdin --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir .
+    --stdin --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir "$REVIEW_DIR"
 ```
 
 **Cautions**:

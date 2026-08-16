@@ -3,12 +3,11 @@
 
 Usage:
   bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
-      --url https://example.org/post --citekey smith2024post --review-dir .
+      --url https://example.org/post --citekey smith2024post --review-dir "$REVIEW_DIR"
 
   # JS-rendered or bot-blocking hosts: read the page with WebFetch, then pipe it
-  cat page.txt | bash "$PHILLIT_ROOT/bin/phillit-run" \
-      skills/philosophy-research/scripts/fetch_web.py \
-      --stdin --url https://example.org/post --citekey smith2024post
+  cat page.txt | bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
+      --stdin --url https://example.org/post --citekey smith2024post --review-dir "$REVIEW_DIR"
 
 The capture is EVIDENCE that content was fetched, not writer input: the note is
 written from the page, and the barrier reads the capture only to check that the

@@ -212,6 +212,7 @@ skills/philosophy-research/
     ├── citation_context.py               # Shared SEP/IEP citation-context helpers
     ├── search_ndpr.py                    # NDPR discovery
     ├── fetch_ndpr.py                     # NDPR content extraction
+    ├── fetch_web.py                      # Research-time web-source capture (item 2's fetch gate)
     ├── search_cache.py                   # Search result caching
     ├── rate_limiter.py                   # Shared rate limiting
     ├── output.py                         # Shared output utilities
