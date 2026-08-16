@@ -13,8 +13,10 @@ import yaml
 # validate_title and frontmatter.py caps) - parity, not sanitizing: a
 # producer that STRIPS could emit a title the consumer's grammar would never
 # have accepted from the original input, so invalid values are dropped with
-# a bounded warning instead (decided 2026-08-08, ADOPT; constraints in the
-# service's known-issues/frontmatter-title-unvalidated-at-producer.md).
+# a bounded warning instead (decided 2026-08-08, ADOPT). The consumer-side
+# constraints, restated: NFC+trim then 1-160 chars, no Cc/Cf/Zl/Zp anywhere,
+# whole frontmatter block under 50 lines / 2048 bytes - pinned by the
+# service's tests/test_engine_assemble.py::TestServiceTitleRuleParity.
 _TITLE_MAX_CHARS = 160
 # Cc/Cf/Zl/Zp cover multiline and the bidi override; Cs (lone surrogates,
 # producer-stricter than the consumer) covers undecodable argv bytes, which
