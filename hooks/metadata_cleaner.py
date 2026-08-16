@@ -419,7 +419,7 @@ def parse_crossref_result(data: dict, source_file: str) -> list[dict]:
             "year": item.get("year"),
             "year_basis": item.get("year_basis"),
             # Read through so the reprint-edition direction bound can tell a
-            # book from an article (see _book_year_moves_later). verify_paper
+            # book from an article (see _book_year_decline_reason). verify_paper
             # writes it on every record; absence just means the bound never
             # fires, which is the old behavior.
             "suggested_bibtex_type": item.get("suggested_bibtex_type"),
