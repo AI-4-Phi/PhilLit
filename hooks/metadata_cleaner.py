@@ -1344,9 +1344,7 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
 
     # Recorded with the other PLANNED metrics, i.e. BEFORE the breaker check: a
     # refusal is a planning-time fact, and a breaker trip (which writes nothing)
-    # must not also erase the record of what the gate declined. NOTE the
-    # deliberate divergence from phillit-service, which tallies these after the
-    # breaker's early return and so reports none on a trip.
+    # must not also erase the record of what the gate declined.
     if result["years_declined"]:
         # Every reason is counted BY NAME, with an explicit bucket for
         # anything unrecognized - deriving one bucket by subtraction let a
