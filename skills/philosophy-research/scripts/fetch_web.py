@@ -193,7 +193,17 @@ def main() -> int:
     args = ap.parse_args()
 
     if args.stdin:
-        record = build_stdin_record(args.url, sys.stdin.read())
+        # Capped like the network path (which enforces MAX_BYTES twice): an
+        # unbounded read is a self-inflicted OOM with a large enough pipe,
+        # and an oversize paste becomes the same error-record taxonomy.
+        body = sys.stdin.read(MAX_BYTES + 1)
+        if len(body) > MAX_BYTES:
+            record = {"url": args.url, "final_url": None,
+                      "retrieved_at": _now(), "http_status": None,
+                      "content_type": None, "provenance": "agent",
+                      "error": f"response-too-large:{len(body)}"}
+        else:
+            record = build_stdin_record(args.url, body)
     else:
         try:
             record = fetch(args.url)

@@ -157,3 +157,21 @@ def test_a_lying_content_length_is_still_capped_while_streaming(monkeypatch):
     monkeypatch.setattr(fw.requests, "Session", lambda: Session())
     rec = fw.fetch("https://a.example/big")
     assert rec["error"].startswith("response-too-large")
+
+
+def test_stdin_read_is_capped_like_the_network_path(monkeypatch, tmp_path):
+    """The network path enforces MAX_BYTES twice; --stdin used to read
+    unbounded (2026-08-16 review finding). Oversize input becomes the same
+    error-record taxonomy, never a capture."""
+    import io
+    monkeypatch.setattr(fw, "MAX_BYTES", 100)
+    monkeypatch.setattr(sys, "stdin", io.StringIO("x" * 200))
+    monkeypatch.setattr(sys, "argv", [
+        "fetch_web.py", "--stdin", "--url", "https://a.example/x",
+        "--citekey", "k", "--review-dir", str(tmp_path)])
+    assert fw.main() == 0
+    rec = json.loads((tmp_path / "intermediate_files" / "web_captures"
+                      / "k.json").read_text(encoding="utf-8"))
+    assert rec["error"].startswith("response-too-large:")
+    assert not rec.get("text")
+    assert rec["provenance"] == "agent"
