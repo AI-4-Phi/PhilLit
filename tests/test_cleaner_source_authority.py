@@ -1577,6 +1577,25 @@ class TestDirectionBoundCoverage:
         assert result["years_corrected"] == 0
         assert result["years_declined"][0][3] == "book-year-moved-later"
 
+    def test_record_side_bookness_is_case_folded(self, tmp_path):
+        """The producer emits lowercase types today, but the record side used
+        to compare case-SENSITIVELY while the entry side folded — one
+        producer change away from silently skipping the bound (2026-08-16
+        review finding). Entry is @misc so only the record side can supply
+        bookness here."""
+        record = _verify_book_record(2001, suggested_bibtex_type="Book")
+        json_dir = make_json_dir(tmp_path, {
+            "verify_1_rawls1999lop.json": record,
+        })
+        bib = tmp_path / "test.bib"
+        bib.write_text(_rawls_bib(1999).replace("@book", "@misc"),
+                       encoding="utf-8")
+
+        result = clean_bibtex(bib, json_dir)
+
+        assert result["years_corrected"] == 0
+        assert result["years_declined"][0][3] == "book-year-moved-later"
+
     def test_book_bib_entry_is_bookness_evidence_when_record_lacks_the_field(
             self, tmp_path):
         """A verify record written before the producer emitted

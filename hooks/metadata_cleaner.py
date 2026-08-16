@@ -298,7 +298,8 @@ def _book_year_decline_reason(record: dict, entry_type: str,
     is fixing the malformed year, not hunting reprint DOIs); declines are
     counted, never silent.
     """
-    if (record.get("suggested_bibtex_type") not in _REPRINT_CAPABLE_TYPES
+    if ((record.get("suggested_bibtex_type") or "").lower()
+            not in _REPRINT_CAPABLE_TYPES
             and (entry_type or "").lower() not in _REPRINT_CAPABLE_TYPES):
         return None
     if not _WRITABLE_YEAR_RE.match(bib_year_key):
