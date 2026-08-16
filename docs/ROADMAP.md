@@ -78,6 +78,36 @@ One import edge for whoever ports it: `web_evidence.http_get` reaches
 `venue_vetting.py` set for `search_cache`. It works, but couples a
 literature-review module to a sibling skill's layout.
 
+Follow-up candidates from the service's 2026-08-16 whole-branch review
+(kimi-k3 + glm-5.2; the splice guard, the record-side case fold and the
+`--stdin` cap from that review landed here same-day — these are the
+remainder, recorded not decided):
+
+- **`dedupe_bib.restamp_merged` re-binds the web gate by URL only.** A merge
+  that keeps one contributor's attestation blob and another contributor's
+  `web_span`/note fields (same normalized URL — the duplicate-across-domains
+  population dedupe exists for) ships an `EVIDENCE-WEB` entry whose spans
+  were never containment-checked against any capture. The abstract/context
+  attestations re-verify by content hash; the stronger web binding is
+  re-running `check_capture` at restamp.
+- **Direction-bound residuals:** an EARLIER api year is trusted
+  unconditionally (a bad-early CrossRef record back-dates a correct year
+  silently, and no corpus record can exercise the licence); a bib
+  deliberately citing a revised later edition on the first edition's DOI
+  gets back-dated — consistent with trust-the-DOI, but the researcher's
+  reissue prose does not say so; `@proceedings`/`@booklet`/`@manual` sit
+  outside `_REPRINT_CAPABLE_TYPES` on a coupling argument, not a
+  reprint-risk one.
+- **`wayback_failed` is constant noise for an egress-denied consumer** (in
+  the service every capture-bearing entry raises on the availability call,
+  every run) — the bucket was built to separate throttling from no-snapshot
+  and drowns there; consider a distinct unreachable marker.
+- **Prose nuances:** conventions' "the gate proves … real, title-matching
+  content" overstates the adversarial case (captures are agent-writable; the
+  only non-agent leg is the existence probe), and the researcher's "ignoring
+  case, spacing and LaTeX escapes, but nothing else" understates `_fold`
+  (NFKC also folds ligatures and full-width forms).
+
 ## 3. Bibliography-pipeline integrity fixes — closed except recorded findings
 
 Sub-items A–K are all fixed or closed (A duplicate entries, B
