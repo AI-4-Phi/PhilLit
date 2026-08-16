@@ -2164,3 +2164,76 @@ def test_a_non_misc_entry_with_a_url_is_never_web_gated(tmp_path, monkeypatch):
     report, _ = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["gate_passed"] == {"script": 0, "agent": 0}
     assert report["stamps"]["literature-domain-1.bib"]["k"] != "EVIDENCE-WEB"
+
+
+# ---------------------------------------------------------------------------
+# urldate/archiveurl splice verification (the web-gate siblings of the
+# venue_status fix above; added 2026-08-16 from the service's whole-branch
+# review of the item-2 intake)
+# ---------------------------------------------------------------------------
+
+def test_web_derived_field_splices_that_land_are_counted_as_stamped(tmp_path, monkeypatch):
+    eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
+    rd = _web_review(tmp_path)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    text = list(outputs.values())[0]
+    assert "urldate = {2026-08-14}" in text
+    assert "web.archive.org" in text
+    assert sorted(report["web_sources"]["stamped_entries"]) == [
+        "literature-domain-1.bib:k:archiveurl",
+        "literature-domain-1.bib:k:urldate"]
+    assert report["web_sources"]["splice_failed"] == []
+
+
+def test_a_swallowed_web_splice_is_reported_not_silent(tmp_path, monkeypatch):
+    """_stamp_optional_field swallows a splice failure and returns the text
+    unchanged; before this fix the entry shipped with no urldate and NOTHING
+    in the report said so — the same silent loss the venue fix ended."""
+    eb_mod = _stub_net(monkeypatch)
+    rd = _web_review(tmp_path)
+    monkeypatch.setattr(eb_mod, "_stamp_optional_field",
+                        lambda text, field, value: text)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    text = list(outputs.values())[0]
+    assert "urldate" not in text                       # the loss really happened
+    assert report["web_sources"]["stamped_entries"] == []
+    assert report["web_sources"]["splice_failed"] == [
+        "literature-domain-1.bib:k:urldate"]           # and is reported
+    # The gate itself still passed — only the field splice was lost.
+    assert report["web_sources"]["gate_passed"] == {"script": 1, "agent": 0}
+
+
+def test_a_duplicate_urldate_is_reverted_and_the_archiveurl_still_lands(tmp_path, monkeypatch):
+    """A compact pre-existing urldate survives _strip_derived_fields (it only
+    reaches a field OPENING its line) and add_field_to_entry cannot find a
+    field with no whitespace before it — the add path would insert a SECOND
+    urldate and pybtex raises DuplicateField, taking down all of Phase 6.
+    Revert THAT splice, report it, keep the bib parseable — and the sibling
+    archiveurl splice must land independently."""
+    from pybtex.database import parse_string
+    eb_mod = _stub_net(monkeypatch, snapshot="https://web.archive.org/web/2024/x")
+    compact = _WEB_ENTRY.replace("@misc{k,",
+                                 "@misc{k,urldate = {1999-01-01},", 1)
+    rd = _web_review(tmp_path, entry=compact)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    text = list(outputs.values())[0]
+    assert text.count("urldate") == 1                  # the stale one, not two
+    assert "1999-01-01" in text                        # revert kept pre-splice text
+    parse_string(text, bib_format="bibtex")            # and it still parses
+    assert report["web_sources"]["splice_failed"] == [
+        "literature-domain-1.bib:k:urldate"]
+    assert report["web_sources"]["stamped_entries"] == [
+        "literature-domain-1.bib:k:archiveurl"]        # sibling unaffected
+
+
+def test_web_splice_keys_are_present_even_with_no_web_entries(tmp_path, monkeypatch):
+    """The lists are attached after the web pass unconditionally, so every
+    report shape carries the keys — a consumer must not have to guess."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, TWO_VENUE_BIB, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1))
+    report, _ = evidence_barrier.run_barrier(rd, 1)
+    assert report["web_sources"]["stamped_entries"] == []
+    assert report["web_sources"]["splice_failed"] == []

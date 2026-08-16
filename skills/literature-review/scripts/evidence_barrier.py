@@ -214,6 +214,15 @@ _SUFFIX_FIELD_RE = re.compile(r"\byear_suffix\s*=", re.IGNORECASE)
 
 _VENUE_FIELD_RE = re.compile(r"\bvenue_status\s*=", re.IGNORECASE)
 
+# The web gate's two derived fields take the same splice verification as
+# venue_status/year_suffix (2026-08-16, from the service's whole-branch
+# review of the item-2 intake): _strip_derived_fields only reaches a field
+# that OPENS its line, so a compact hand-written urldate/archiveurl survives
+# the strip and the very next splice inserts a DUPLICATE field pybtex
+# rejects — losing an access date is survivable; an unparseable bib is not.
+_URLDATE_FIELD_RE = re.compile(r"\burldate\s*=", re.IGNORECASE)
+_ARCHIVEURL_FIELD_RE = re.compile(r"\barchiveurl\s*=", re.IGNORECASE)
+
 
 def _derived_field_took(chunk: str, pre_splice: str, field: str, intended: str,
                         field_re: re.Pattern) -> bool:
@@ -764,6 +773,16 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     venue_report["stamped_entries"] = venue_stamped
     venue_report["splice_failed"] = venue_splice_failed
 
+    # Same by-reference attach for the web gate's two derived fields. It must
+    # happen HERE, after the web pass's json round-trip (and after its error
+    # path rebuilt the dict), or the stamping loop would append to list
+    # objects the report no longer holds. Attached unconditionally so the
+    # ERROR path carries the keys too — a consumer must not have to guess.
+    web_stamped: list = []
+    web_splice_failed: list = []
+    web_report["stamped_entries"] = web_stamped
+    web_report["splice_failed"] = web_splice_failed
+
     # Build final content in memory: context fields + stamp, then bookkeeping.
     outputs = {}
     for i, d in domains.items():
@@ -840,11 +859,24 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # Spliced AFTER compute_tier for the same reason venue_status
                 # is: tier invariance under field splices stays structural
                 # rather than depending on compute_tier not reading them.
-                if gate["urldate"]:
-                    chunk = _stamp_optional_field(chunk, "urldate", gate["urldate"])
-                if gate["archiveurl"]:
-                    chunk = _stamp_optional_field(chunk, "archiveurl",
-                                                  gate["archiveurl"])
+                # Each splice is verified and reverted independently, like
+                # its venue/year_suffix siblings — a failed urldate must not
+                # cost the archiveurl, and vice versa.
+                for wfield, wvalue, wre in (
+                        ("urldate", gate["urldate"], _URLDATE_FIELD_RE),
+                        ("archiveurl", gate["archiveurl"], _ARCHIVEURL_FIELD_RE)):
+                    if not wvalue:
+                        continue
+                    pre_web = chunk
+                    chunk = _stamp_optional_field(chunk, wfield, wvalue)
+                    if _derived_field_took(chunk, pre_web, wfield, wvalue, wre):
+                        web_stamped.append(f"{bib_name}:{key}:{wfield}")
+                    else:
+                        # Revert, then report — same two reasons as the venue
+                        # path: a duplicate field would cost all of Phase 6,
+                        # and a silent loss is what the gate policy forbids.
+                        chunk = pre_web
+                        web_splice_failed.append(f"{bib_name}:{key}:{wfield}")
             letter = suffix_map.get((i, key))
             stale = (i, key) in residual_suffix
             if letter or stale:
@@ -939,6 +971,13 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
                          "fetch_error", "entry_error")
             ) + sum(len(v) for v in ((report.get("web_sources") or {})
                                      .get("capture_rejected") or {}).values()),
+            # Printed for the same reason venue_vetting's pair is: the
+            # DIFFERENCE between what the gate decided and what reached the
+            # bib is the finding, and a swallowed splice used to be invisible.
+            "stamped_entries": len(
+                (report.get("web_sources") or {}).get("stamped_entries") or []),
+            "splice_failed": len(
+                (report.get("web_sources") or {}).get("splice_failed") or []),
         },
         "cleaning_abstained": len(report.get("cleaning_abstained") or []),
         "venue_vetting": {
