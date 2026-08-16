@@ -12,10 +12,11 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-Nothing is queued in this repo. The next open work is service-side (item 2's
-spec bump and re-vendor pin, below) and runs in phillit-service sessions only.
-The cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
-`CLAUDE.md`, "Sister repo: phillit-service".
+Nothing is being built in this repo. Item 2's service handoff closed
+2026-08-16 (the service re-vendored at pin `0b9916a` and bumped its spec to
+v1.2); what remains of item 2 is one owner decision — the encyclopedia-host
+exclusion, below. The cross-repo rule — scripted re-vendor, never
+hand-mirroring — lives in `CLAUDE.md`, "Sister repo: phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -31,7 +32,7 @@ touched. Do it by hand: a mechanical pass was attempted 2026-08-06 and
 reverted because the
 references sit inside sentences that need rewording around the name.
 
-## 2. Web-source evidence — ACCEPTED 2026-08-15; service handoff open
+## 2. Web-source evidence — ACCEPTED 2026-08-15; intaken by the service 2026-08-16 — one owner decision open
 
 The `EVIDENCE-WEB` fetch gate shipped as v0.4.1 and **passed its live
 acceptance run** (2026-08-15, one AI-adjacent headless review: five report
@@ -47,17 +48,30 @@ despite shipping ahead of the gate), and the delivered bib **keeps**
 `web_span`/`venue_status`/`year_suffix` (decision note in `sanitize_bib.py`'s
 docstring — do not strip without a new owner decision).
 
-Open (service session only — never edited from here):
+The service handoff CLOSED 2026-08-16: the service re-vendored at pin
+`0b9916a` and bumped its spec to v1.2, recording the five departures above
+plus two its scope review found unrecorded — encyclopedia hosts in scope
+(below), and the fact that the spec's honesty-escalation trigger FIRED in
+the acceptance run (1 of 4 promoted notes carried a fabricated attribution,
+with propagation) and was resolved by the v0.4.2 prose riders, making that
+the measured baseline.
 
-- **Service-side spec bump to v1.2** — records the span-grounding decision plus
-  five deliberate departures: span parameters (6–40 words, at most 2), the
-  title-anchor text-head fallback widened beyond `--stdin` captures, the
-  `capture_rejected` reason-keyed bucket (which fills a hole in the spec's own
-  report schema), capture-before-network ordering with the honest
-  `no_capture` bucket name, and the `wayback_failed` diagnostic bucket
-  (v0.4.2, from the live run — API-throttled vs no-snapshot was
-  indistinguishable post hoc).
-- The service receives the code at its next re-vendor pin (its item 24).
+Open — an owner decision, not a build:
+
+- **Encyclopedia-host exclusion.** The spec's out-of-scope clause
+  (encyclopedia-hosted `@misc` — SEP/IEP "have their own channel") was never
+  implemented: the gate has no host filter and the researcher fetch
+  obligation no carve-out; the acceptance run's own web population included
+  4 SEP and 2 PhilPapers URLs. Here that means unthrottled SEP GETs
+  (`fetch_web.py` takes no rate-limiter slot on any host, so SEP's 5 s
+  crawl delay is bypassed); in the service it also bypasses the
+  source-store courtesy layer, so the service carries an interim prose
+  carve-out (its `researcher-service-constraints` unit: use
+  fetch_sep/iep/ndpr for those hosts). Decide: land a host exclusion here
+  (researcher-prose carve-out and/or barrier scope filter — the service's
+  interim region then retires by mirror), or declare encyclopedia-hosted
+  `@misc` IN scope deliberately and record it (the service then re-decides
+  its carve-out with the egress question its item 24 owns).
 
 One import edge for whoever ports it: `web_evidence.http_get` reaches
 `rate_limiter.user_agent` across skills via `sys.path`, following the precedent
