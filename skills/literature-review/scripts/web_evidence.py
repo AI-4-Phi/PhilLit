@@ -122,6 +122,72 @@ def registered_domain(url: str) -> str:
     return ".".join(labels[-2:])
 
 
+# Encyclopedia-host exclusion (owner decision, 2026-08-17). These hosts never
+# earn EVIDENCE-WEB -- the spec's out-of-scope clause, now mechanical:
+#   - SEP (plus its two official mirrors -- same content, same crawl-delay
+#     courtesy, so leaving them in scope would leave a one-edit hole) and IEP
+#     reach evidence through the store-backed CONTEXT channel, not captures.
+#   - NDPR reviews feed @book abstracts through fetch_ndpr.py.
+#   - A PhilPapers /rec/ page is an index ABOUT a work; the work itself is
+#     the citation, resolved through the abstract/API channel. This repo also
+#     never contacts philpapers.org directly anywhere else (search goes
+#     through Brave -- docs/known-issues/philpapers-rate-limiting.md);
+#     excluding it here keeps that true. philarchive.org, the OA archive on
+#     its own domain, stays IN scope on purpose.
+# Matching is exact host or dot-subdomain, never bare suffix (see
+# excluded_host). Values are the hints fetch_web.py prints on refusal.
+EXCLUDED_HOST_HINTS = {
+    "plato.stanford.edu": (
+        "SEP entries earn evidence through the encyclopedia context channel: "
+        "cite the SEP entry itself (search_sep.py / fetch_sep.py), not a web "
+        "capture."),
+    "plato.sydney.edu.au": (
+        "This is a SEP mirror. SEP entries earn evidence through the "
+        "encyclopedia context channel: cite the SEP entry itself "
+        "(search_sep.py / fetch_sep.py), not a web capture."),
+    "seop.illc.uva.nl": (
+        "This is a SEP mirror. SEP entries earn evidence through the "
+        "encyclopedia context channel: cite the SEP entry itself "
+        "(search_sep.py / fetch_sep.py), not a web capture."),
+    "iep.utm.edu": (
+        "IEP entries earn evidence through the encyclopedia context channel: "
+        "cite the IEP entry itself (search_iep.py / fetch_iep.py), not a web "
+        "capture."),
+    "ndpr.nd.edu": (
+        "NDPR reviews feed @book abstracts through fetch_ndpr.py; they are "
+        "not web-capture sources."),
+    "philpapers.org": (
+        "A PhilPapers record page indexes a work: cite the work itself "
+        "(resolve it via get_abstract.py / verify_paper.py), never the "
+        "record page."),
+}
+
+
+def excluded_host(url: str) -> str | None:
+    """The canonical excluded host `url` belongs to, or None.
+
+    Subdomains count (www.iep.utm.edu is iep.utm.edu); look-alike suffixes
+    do not (notphilpapers.org is nobody's subdomain), hence the dot in the
+    endswith test. A trailing DNS dot is normalized away -- plato.stanford.edu.
+    is the same host, and would otherwise match neither arm. Malformed
+    netlocs return None rather than raise (urlsplit raises ValueError on bad
+    IPv6 brackets): the callers' own bad-URL handling stays in charge.
+    Deliberately NOT handled: IDN/punycode homographs -- every excluded host
+    is ASCII, and a homograph is a different domain.
+    """
+    try:
+        host = (urlsplit(url or "").hostname or "")
+    except (TypeError, ValueError):
+        return None
+    host = host.rstrip(".").lower()
+    if not host:
+        return None
+    for key in EXCLUDED_HOST_HINTS:
+        if host == key or host.endswith("." + key):
+            return key
+    return None
+
+
 def load_capture(review_dir, citekey: str) -> dict | None:
     """The research-time capture for one citekey, or None."""
     path = Path(review_dir) / "intermediate_files" / CAPTURE_DIR / f"{citekey}.json"

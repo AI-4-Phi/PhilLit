@@ -331,3 +331,79 @@ def test_the_callables_default_to_the_module_level_functions(monkeypatch):
     monkeypatch.setattr(wv, "wayback_lookup", lambda url: None)
     r = wv.evaluate_existence("https://a.example/x")
     assert r["exists"] and r["basis"] == "direct"
+
+
+# ---------------------------------------------------------------------------
+# encyclopedia-host exclusion (owner decision 2026-08-17)
+# ---------------------------------------------------------------------------
+
+def test_excluded_host_matches_sep_and_both_mirrors():
+    assert wv.excluded_host(
+        "https://plato.stanford.edu/entries/agency/") == "plato.stanford.edu"
+    assert wv.excluded_host(
+        "https://plato.sydney.edu.au/entries/agency/") == "plato.sydney.edu.au"
+    assert wv.excluded_host(
+        "https://seop.illc.uva.nl/entries/agency/") == "seop.illc.uva.nl"
+
+
+def test_excluded_host_matches_iep_ndpr_and_philpapers():
+    assert wv.excluded_host("https://iep.utm.edu/freewill/") == "iep.utm.edu"
+    assert wv.excluded_host(
+        "https://ndpr.nd.edu/reviews/being-and-time/") == "ndpr.nd.edu"
+    assert wv.excluded_host(
+        "https://philpapers.org/rec/SMIT-1") == "philpapers.org"
+
+
+def test_excluded_host_matches_subdomains_case_insensitively():
+    assert wv.excluded_host("https://WWW.IEP.UTM.EDU/freewill/") == "iep.utm.edu"
+
+
+def test_excluded_host_normalizes_a_trailing_dns_dot():
+    """plato.stanford.edu. is an absolute-DNS spelling of the same host —
+    without rstrip it matches neither arm (external reviews, 2026-08-17)."""
+    assert wv.excluded_host(
+        "https://plato.stanford.edu./entries/agency/") == "plato.stanford.edu"
+    assert wv.excluded_host("https://WWW.IEP.UTM.EDU.:443/x") == "iep.utm.edu"
+
+
+def test_excluded_host_never_matches_a_bare_suffix_lookalike():
+    """notphilpapers.org is nobody's subdomain — a naive endswith would
+    match it. philarchive.org is the deliberately-in-scope sibling."""
+    assert wv.excluded_host("https://notphilpapers.org/rec/X") is None
+    assert wv.excluded_host("https://philarchive.org/rec/X") is None
+    assert wv.excluded_host("https://philpapers.org.evil.example/x") is None
+
+
+def test_excluded_host_classifies_the_active_host_only():
+    """Userinfo tricks and lookalike query params must not trigger: the
+    HOST is what gets contacted, nothing else."""
+    assert wv.excluded_host("https://philpapers.org@evil.example/x") is None
+    assert wv.excluded_host(
+        "https://evil.example/?next=https://philpapers.org/rec/X") is None
+    assert wv.excluded_host(
+        "https://user@philpapers.org/rec/X") == "philpapers.org"
+    assert wv.excluded_host("//philpapers.org/rec/X") == "philpapers.org"
+
+
+def test_excluded_host_is_none_for_ordinary_and_garbage_input():
+    """Malformed netlocs must return None, never raise: the fetch refusal
+    path runs before fetch()'s own error handling, so a raise here would
+    turn a bad --url into a traceback instead of an error record."""
+    assert wv.excluded_host("https://a.example/x") is None
+    assert wv.excluded_host("") is None
+    assert wv.excluded_host("not a url") is None
+    assert wv.excluded_host("http://[not-an-ipv6-host/") is None
+    assert wv.excluded_host("   ") is None
+
+
+def test_every_excluded_host_has_a_hint_naming_real_scripts():
+    """Every hint is nonempty, and every script a hint names exists — a
+    rename must not leave a lying hint (external review, 2026-08-17)."""
+    import re
+    scripts_dir = (Path(__file__).resolve().parent.parent
+                   / "skills" / "philosophy-research" / "scripts")
+    for host, hint in wv.EXCLUDED_HOST_HINTS.items():
+        assert wv.excluded_host(f"https://{host}/x") == host
+        assert hint.strip()
+        for name in re.findall(r"\b(\w+\.py)\b", hint):
+            assert (scripts_dir / name).is_file(), f"{host} hint names missing {name}"
