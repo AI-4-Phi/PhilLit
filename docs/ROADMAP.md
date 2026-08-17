@@ -12,10 +12,11 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-Nothing is being built in this repo. Item 2's service handoff closed
-2026-08-16 (the service re-vendored at pin `0b9916a` and bumped its spec to
-v1.2); what remains of item 2 is one owner decision — the encyclopedia-host
-exclusion, below. The cross-repo rule — scripted re-vendor, never
+One approved build is queued: item 7, researcher search batching (not
+urgent — quality-validate here before it ports). Item 2's service handoff
+closed 2026-08-16 (the service re-vendored at pin `0b9916a` and bumped its
+spec to v1.2); what remains of item 2 is one owner decision — the
+encyclopedia-host exclusion, below. The cross-repo rule — scripted re-vendor, never
 hand-mirroring — lives in `CLAUDE.md`, "Sister repo: phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
@@ -253,6 +254,30 @@ carry a colon. **Not all of those fail** — many colons are part of the real ve
 name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitles
 fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
 Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
+
+## 7. Researcher search batching — approved cost lever (Johannes, 2026-08-17), not urgent
+
+Cut the domain researchers' turn count by running a whole search stage in
+**one** Bash call: chain several `search_*.py` invocations, write full
+results to files, print only compact summaries, then Read/Grep selectively.
+Today every script invocation is its own Bash turn (~100+ per researcher),
+and the service measured that turn count × context size is the structural
+cost of a paid review — caching is healthy, so batching is the one lever
+chosen (the service's cost-reduction roadmap item records the decision;
+coefficients in `phillit-service/docs/review-cost-analysis.md`: halving
+researcher turns saves ~$3–7/review list on reads alone, more if writes
+shrink with it). Domain-count capping and Haiku researchers were considered
+there and NOT adopted — do not fold them in.
+
+Scope: `agents/domain-literature-researcher.md` and/or the
+philosophy-research skill's search-stage prose. The search-output slimming
+question (print less, file more — a mid-context researcher token costs
+≈$9/MTok list all-in on the service) is part of this build, weighed against
+review quality, not a separate decision. Validate with free runs here —
+the risk to watch is search *behaviour* degrading (fewer adaptive
+follow-ups when results arrive batched), not token math. Ports to the
+service via its intake item afterwards, where it faces that repo's engine
+tests.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open, e.g.
