@@ -108,6 +108,39 @@ remainder, recorded not decided):
   case, spacing and LaTeX escapes, but nothing else" understates `_fold`
   (NFKC also folds ligatures and full-width forms).
 
+Three more from the service's 2026-08-17 pre-deploy divergence audit
+(recorded not decided; the service recorded each as a spec departure on its
+side):
+
+- **The spec's pinned HTML charset mechanic was never built.**
+  `fetch_web.py` force-decodes the body as UTF-8 (`errors="replace"`)
+  before BeautifulSoup sees it — no response-header charset, no
+  `apparent_encoding` fallback, and lxml's meta-charset sniffing is
+  bypassed because it receives `str`, not bytes. A Windows-1252/Shift-JIS
+  page yields U+FFFD-riddled text that *looks* like a valid capture (the
+  printable-ratio floor applies only to PDFs) and then silently fails the
+  title anchor and span containment for any non-ASCII span. Direction safe
+  (no promotion); the cheap fix is passing bytes to bs4.
+- **Abstract-bearing `@misc` entries are skipped by the web pass and land
+  in NO report bucket.** The barrier's scope condition
+  (`etype != "misc" or fields.get("abstract")`) `continue`s before bucket
+  assignment, so an `@misc` with a hand-written abstract — or one whose
+  attested abstract was mutated and whose `_heal_abstract` retry failed —
+  appears in neither `no_url`, `no_capture` nor `capture_rejected`,
+  against the report's every-non-promotion-lands-in-a-named-bucket design
+  claim. (The scope narrowing itself may stand, but note the code comment
+  cites the spec for support the spec never gave — the spec's scope rule is
+  "a `@misc` entry carrying a URL", with no abstract condition; decide the
+  narrowing on its merits and give the skipped class a bucket either way.)
+- **No mechanical check polices WEB-tier characterization.**
+  `check_evidence.py`'s verb heuristics run only on `_LOW_TRUST_TIERS`
+  (EXISTENCE/NONE/unstamped), so the note-license boundary — the tier's
+  whole content grant, with a measured 1-in-4 note-drift baseline — is
+  held by writer prose alone. Extending the verb heuristic as-is would
+  false-positive on legitimate note-licensed cites; whether any feasible
+  mechanical check exists (e.g. note-vs-prose containment at Phase 6) is
+  the open question.
+
 ## 3. Bibliography-pipeline integrity fixes — closed except recorded findings
 
 Sub-items A–K are all fixed or closed (A duplicate entries, B
@@ -175,6 +208,14 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
   `docs/known-issues/sep-bibliography-regex-hang.md`.
 - **Suspicion, unverified:** `rate_limiter.openalex_budget_exhausted` may read
   a transient 429 as daily exhaustion.
+- **The cleaning ledger's `schema_version` stayed 1 through the Option C
+  change** (service pre-deploy audit, 2026-08-17). The abstention spec
+  instructed bumping it when `cleaning_abstained` was added;
+  `metadata_cleaner.py` still writes `1` and `evidence_barrier.py`
+  hard-rejects anything else, so pre- and post-Option-C ledgers are
+  indistinguishable by version. Internally consistent (the field is
+  additive, producer+consumer shipped together); decide on the next ledger
+  change: bump then, or record staying at 1 as deliberate.
 
 ## 4. One owner for bibliography identity and matching — residuals only
 
