@@ -213,6 +213,15 @@ def test_stdin_cannot_capture_an_excluded_host_either(monkeypatch, tmp_path, cap
 
 
 def test_a_refusal_never_touches_an_existing_good_capture(monkeypatch, tmp_path, capsys):
+    """Network stubbed with the Boom idiom (like
+    test_an_excluded_host_is_refused_before_any_request): unstubbed, this
+    test false-passes on a network-isolated machine via the never-clobber
+    fallback, and a regression that let the exclusion pre-check slip would
+    make a live outbound GET in CI (external review, 2026-08-17)."""
+    class Boom:
+        def __init__(self):
+            raise AssertionError("network touched for an excluded host")
+    monkeypatch.setattr(fw.requests, "Session", Boom)
     cdir = tmp_path / "intermediate_files" / "web_captures"
     cdir.mkdir(parents=True)
     payload = json.dumps({"url": "https://iep.utm.edu/freewill/", "text": "good",
@@ -222,6 +231,9 @@ def test_a_refusal_never_touches_an_existing_good_capture(monkeypatch, tmp_path,
         "fetch_web.py", "--url", "https://iep.utm.edu/freewill/",
         "--citekey", "k", "--review-dir", str(tmp_path)])
     assert fw.main() == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["outcome"] == "refused"
+    assert out["error"] == "excluded-host:iep.utm.edu"
     assert (cdir / "k.json").read_text(encoding="utf-8") == payload  # byte-identical
 
 

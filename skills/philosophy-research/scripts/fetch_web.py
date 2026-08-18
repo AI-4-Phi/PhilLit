@@ -247,11 +247,12 @@ def main() -> int:
                       "provenance": "script", "error": f"fetch-failed:{exc}"}
 
         # The redirect seam: an allowed URL can land on an excluded host.
-        # The GET has already happened by now (accepted residual -- one
-        # polite request; preventing it means hand-rolling redirect
-        # handling). Refusing the WRITE is the load-bearing half: excluded
-        # content never enters the evidence chain, and the barrier
-        # re-checks the capture's final_url independently.
+        # A bounded handful of requests (at most MAX_REDIRECTS hops) has
+        # already happened by now (accepted residual -- preventing it means
+        # hand-rolling redirect handling). Refusing the WRITE is the
+        # load-bearing half: excluded content never enters the evidence
+        # chain, and the barrier re-checks the capture's final_url
+        # independently.
         fhost = excluded_host(record.get("final_url") or "")
         if fhost:
             print(_refusal_summary(args.citekey, fhost))
