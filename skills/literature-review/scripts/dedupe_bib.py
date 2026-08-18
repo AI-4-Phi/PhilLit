@@ -862,11 +862,16 @@ def restamp_merged(
         # this re-verification the flag could not be carried across the merge at
         # all -- and without carrying it, EVERY web entry re-stamps
         # EVIDENCE-NONE here, silently making a cited source uncitable in
-        # Phase 6 after the writer already cited it.
+        # Phase 6 after the writer already cited it. The excluded_host check
+        # closes a third grant site: a Phase-6-only re-run against a
+        # PRE-exclusion evidence_report.json can carry a blob with
+        # web_gate_passed True for a now-excluded host (e.g. SEP); that must
+        # not re-stamp EVIDENCE-WEB just because the URL matches.
         web_url = blob.get("web_url")
         web_ok = bool(
             blob.get("web_gate_passed") and web_url
             and wv.normalize_url(wv.extract_url(fields) or "") == web_url
+            and not wv.excluded_host(web_url)
         )
         return se.EntryAttestation(
             abstract_attested=abstract_ok,

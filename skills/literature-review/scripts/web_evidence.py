@@ -172,13 +172,21 @@ def excluded_host(url: str) -> str | None:
     is the same host, and would otherwise match neither arm. Malformed
     netlocs return None rather than raise (urlsplit raises ValueError on bad
     IPv6 brackets): the callers' own bad-URL handling stays in charge.
-    Deliberately NOT handled: IDN/punycode homographs -- every excluded host
-    is ASCII, and a homograph is a different domain.
+    The three Unicode DNS label separators -- IDEOGRAPHIC FULL STOP (U+3002),
+    FULLWIDTH FULL STOP (U+FF0E), HALFWIDTH IDEOGRAPHIC FULL STOP (U+FF61) --
+    are normalized to ASCII "." before matching: IDNA/UTS-46 treats them as
+    the same separator, so a host spelled with one of them IS iep.utm.edu
+    (e.g.) once resolved, and must not bypass the policy matcher via an
+    alternate spelling of the SAME host. Deliberately NOT handled: IDN/punycode
+    homographs -- every excluded host is ASCII, and a homograph is a
+    DIFFERENT domain (unlike the separator case above, which is the same
+    domain under a different spelling).
     """
     try:
         host = (urlsplit(url or "").hostname or "")
     except (TypeError, ValueError):
         return None
+    host = host.translate({0x3002: ".", 0xFF0E: ".", 0xFF61: "."})
     host = host.rstrip(".").lower()
     if not host:
         return None

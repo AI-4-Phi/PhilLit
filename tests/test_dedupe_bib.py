@@ -695,6 +695,22 @@ class TestEvidenceRestamp:
         assert "EVIDENCE-NONE" in out
         assert "EVIDENCE-WEB" not in out
 
+    def test_a_re_stamp_never_grants_evidence_web_to_an_excluded_host(self, tmp_path):
+        """Third EVIDENCE-WEB grant site: a Phase-6-only re-run against a
+        PRE-exclusion evidence_report.json can carry web_gate_passed True with
+        a matching web_url for a host that is EXCLUDED under the current
+        code (e.g. plato.stanford.edu). URL equality alone must not be
+        enough to re-stamp EVIDENCE-WEB for it."""
+        web = ('@misc{sep_agency,\n  author = {Schlosser, Markus},\n'
+               '  title = {Agency},\n  year = {2019},\n'
+               '  url = {https://plato.stanford.edu/entries/agency},\n'
+               '  keywords = {phil, High, EVIDENCE-WEB}\n}\n')
+        att = {**self.NO_ATT, "web_gate_passed": True,
+               "web_url": "https://plato.stanford.edu/entries/agency"}
+        out = self._run_cli(tmp_path, web, "", {"sep_agency": att}, {})
+        assert "EVIDENCE-WEB" not in out
+        assert "EVIDENCE-NONE" in out
+
     def test_context_survives_merge_and_tier_via_loser_attestation(self, tmp_path):
         # A's key carries sep_context + a value-bound context attestation;
         # B's duplicate (different key, same title/year/author) wins on

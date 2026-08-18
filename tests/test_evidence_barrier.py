@@ -2318,17 +2318,24 @@ def test_a_capture_that_redirected_onto_an_excluded_host_is_not_promoted(tmp_pat
     report, outputs = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
     assert "EVIDENCE-WEB" not in list(outputs.values())[0]
+    assert report["web_sources"]["entry_error"] == []
 
 
 _PRIOR_WEB_ENTRY = """@misc{k,
   author = {Schlosser, Markus},
   title = {Agency},
   year = {2019},
-  url = {https://plato.stanford.edu/entries/agency/},
+  howpublished = {\\url{https://plato.stanford.edu/entries/agency/}},
   web_span = {an agent is a being with the capacity to act},
   note = {CORE ARGUMENT: standard theory of agency.},
   keywords = {agency-tag, web-source, EVIDENCE-WEB}
 }"""
+# Production shape, not the `url = {...}` idiom the other fixtures in this
+# section use: the researcher template (agents/domain-literature-researcher.md)
+# emits `howpublished = {\url{...}}`, and web_evidence.extract_url falls
+# through to `howpublished` only when `url` is absent. This pins that the
+# exclusion path handles the REAL shape, not just the convenient one
+# (external review, 2026-08-17).
 
 
 def test_a_rerun_demotion_of_a_previously_promoted_entry_is_signalled(tmp_path, monkeypatch):
@@ -2346,6 +2353,34 @@ def test_a_rerun_demotion_of_a_previously_promoted_entry_is_signalled(tmp_path, 
         "literature-domain-1.bib:k"]
     assert report["stamps"]["literature-domain-1.bib"]["k"] == "EVIDENCE-NONE"
     assert "EVIDENCE-WEB" not in list(outputs.values())[0]
+    assert report["web_sources"]["entry_error"] == []
+
+
+_TOKEN_LOOKALIKE_ENTRY = """@misc{k,
+  author = {Schlosser, Markus},
+  title = {Agency},
+  year = {2019},
+  url = {https://plato.stanford.edu/entries/agency/},
+  web_span = {an agent is a being with the capacity to act},
+  note = {CORE ARGUMENT: standard theory of agency.},
+  keywords = {agency-tag, pre-EVIDENCE-WEB-candidate}
+}"""
+
+
+def test_a_keyword_that_merely_contains_evidence_web_does_not_signal_demotion(tmp_path, monkeypatch):
+    """Token-exactness, not substring: a hypothetical keyword like
+    "pre-EVIDENCE-WEB-candidate" must not false-positive the demotion signal
+    -- it names an unrelated keyword, not a stamped tier (external review,
+    2026-08-17)."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    monkeypatch.setattr(eb_mod.wv, "evaluate_existence",
+                        lambda url: (_ for _ in ()).throw(AssertionError(url)))
+    rd = _web_review(tmp_path, entry=_TOKEN_LOOKALIKE_ENTRY, capture=_SEP_CAPTURE)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
+    assert report["web_sources"]["excluded_host_demoted"] == []
+    assert report["web_sources"]["entry_error"] == []
 
 
 def test_an_excluded_host_entry_without_a_capture_still_lands_in_excluded_host(tmp_path, monkeypatch):
@@ -2362,6 +2397,7 @@ def test_an_excluded_host_entry_without_a_capture_still_lands_in_excluded_host(t
     report, _ = eb_mod.run_barrier(rd, 1)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
     assert report["web_sources"]["no_capture"] == []
+    assert report["web_sources"]["entry_error"] == []
 
 
 def test_excluded_host_bucket_is_present_even_on_the_web_error_path(tmp_path, monkeypatch):
@@ -2378,6 +2414,36 @@ def test_excluded_host_bucket_is_present_even_on_the_web_error_path(tmp_path, mo
     assert report["web_sources"]["status"] == "error"
     assert report["web_sources"]["excluded_host"] == []
     assert report["web_sources"]["excluded_host_demoted"] == []
+
+
+def test_web_sources_key_set_matches_between_complete_and_error_paths(tmp_path, monkeypatch):
+    """Structural pin, not an instance pin: the "complete" and "error"
+    branches of the web pass's report dict have now been hand-edited twice
+    (wayback_failed, this branch's excluded_host / excluded_host_demoted) --
+    each edit risks updating one literal and not the other, silently making
+    the error path KeyError-prone for a consumer that only exercised the
+    complete path. stamped_entries/splice_failed are attached to BOTH
+    branches by reference AFTER the try/except (see the comment above their
+    attachment in the source), so a naive dict-literal diff would wrongly
+    ignore them; comparing the REALIZED dicts catches that. The only key
+    that legitimately differs is "error" itself, present only when the pass
+    actually failed (external review, 2026-08-17)."""
+    complete_eb_mod = _stub_net(monkeypatch)
+    complete_report, _ = complete_eb_mod.run_barrier(
+        _web_review(tmp_path / "complete"), 1)
+    assert complete_report["web_sources"]["status"] == "complete"
+
+    error_eb_mod = _stub_net(monkeypatch)
+    monkeypatch.setattr(error_eb_mod.wv, "check_capture",
+                        lambda *a, **k: (False, object()))   # unserializable
+    error_report, _ = error_eb_mod.run_barrier(
+        _web_review(tmp_path / "error"), 1)
+    assert error_report["web_sources"]["status"] == "error"
+
+    complete_keys = set(complete_report["web_sources"].keys())
+    error_keys = set(error_report["web_sources"].keys())
+    assert error_keys - complete_keys == {"error"}
+    assert complete_keys - error_keys == set()
 
 
 def test_excluded_host_entry_is_counted_in_the_printed_not_promoted_summary(tmp_path):

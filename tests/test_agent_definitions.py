@@ -179,3 +179,20 @@ def test_conventions_has_no_stale_suffix_caveat():
     assert "year_suffix" in text
     for stale in ("does not yet emit", "cannot emit yet", "not yet emit"):
         assert stale not in text, f"stale renderer caveat still present: {stale}"
+
+
+def test_researcher_carve_out_names_every_primary_excluded_host():
+    """Prose-vs-policy pin (Task 4, the encyclopedia-host exclusion, shipped
+    with manual verification only, external review 2026-08-17): the
+    researcher's carve-out block must name each of the four primary excluded
+    hosts literally, not just gesture at "encyclopedia hosts". A rename or a
+    dropped host in web_evidence.EXCLUDED_HOST_HINTS with no matching prose
+    update must fail this, and vice versa if the prose silently drops one.
+    The two SEP mirror hostnames are deliberately NOT required literally --
+    the prose covers them generically via "or its mirrors"."""
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    for host in ("plato.stanford.edu", "iep.utm.edu", "ndpr.nd.edu",
+                 "philpapers.org"):
+        assert host in text, f"researcher prose does not name {host}"
+    assert "mirrors" in text

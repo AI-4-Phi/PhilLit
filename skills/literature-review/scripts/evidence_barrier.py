@@ -68,6 +68,17 @@ def _parseable_bib(path: Path) -> bool:
         return False
 
 
+def _keywords_has_evidence_web(keywords: str | None) -> bool:
+    """True iff "evidence-web" appears as an EXACT comma-separated keyword
+    token (casefolded), not merely as a substring -- a naive `in` check
+    false-positives on a hypothetical keyword like
+    "pre-EVIDENCE-WEB-candidate" (external review, 2026-08-17)."""
+    return any(
+        t.strip().casefold() == "evidence-web"
+        for t in (keywords or "").split(",")
+    )
+
+
 _ABSTRACT_FIELD_RE = re.compile(r'\babstract\s*=', re.IGNORECASE)
 
 
@@ -602,7 +613,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                         # A prior pass may have promoted this entry (the
                         # exclusion shipped after v0.4.1 populations did):
                         # signal the demotion so a re-run is auditable.
-                        if "evidence-web" in (fields.get("keywords") or "").lower():
+                        if _keywords_has_evidence_web(fields.get("keywords")):
                             web_report["excluded_host_demoted"].append(qual)
                         continue
                     # Capture FIRST, before any network. Two reasons, and the
@@ -630,7 +641,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                                 or wv.excluded_host(capture.get("final_url") or ""))
                     if cap_host:
                         web_report["excluded_host"].append(qual)
-                        if "evidence-web" in (fields.get("keywords") or "").lower():
+                        if _keywords_has_evidence_web(fields.get("keywords")):
                             web_report["excluded_host_demoted"].append(qual)
                         continue
                     ex = wv.evaluate_existence(url)

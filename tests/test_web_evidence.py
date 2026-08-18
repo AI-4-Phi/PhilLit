@@ -366,6 +366,27 @@ def test_excluded_host_normalizes_a_trailing_dns_dot():
     assert wv.excluded_host("https://WWW.IEP.UTM.EDU.:443/x") == "iep.utm.edu"
 
 
+def test_excluded_host_normalizes_idna_dot_equivalent_separators():
+    """U+3002 (IDEOGRAPHIC FULL STOP), U+FF0E (FULLWIDTH FULL STOP), and
+    U+FF61 (HALFWIDTH IDEOGRAPHIC FULL STOP) are DNS-label separators under
+    IDNA/UTS-46: the transport treats them as ".", so a URL spelled with one
+    resolves to the SAME host -- not the homograph case (a homograph is a
+    DIFFERENT domain; this is the same domain, differently spelled) and must
+    not bypass the policy matcher (external review, 2026-08-17)."""
+    ideographic_full_stop = "\u3002"
+    fullwidth_full_stop = "\uFF0E"
+    halfwidth_ideographic_full_stop = "\uFF61"
+    assert wv.excluded_host(
+        f"https://www{ideographic_full_stop}iep.utm.edu/freewill/"
+    ) == "iep.utm.edu"
+    assert wv.excluded_host(
+        f"https://plato{fullwidth_full_stop}stanford.edu/entries/agency/"
+    ) == "plato.stanford.edu"
+    assert wv.excluded_host(
+        f"https://philpapers{halfwidth_ideographic_full_stop}org/rec/X"
+    ) == "philpapers.org"
+
+
 def test_excluded_host_never_matches_a_bare_suffix_lookalike():
     """notphilpapers.org is nobody's subdomain — a naive endswith would
     match it. philarchive.org is the deliberately-in-scope sibling."""
@@ -398,12 +419,17 @@ def test_excluded_host_is_none_for_ordinary_and_garbage_input():
 
 def test_every_excluded_host_has_a_hint_naming_real_scripts():
     """Every hint is nonempty, and every script a hint names exists — a
-    rename must not leave a lying hint (external review, 2026-08-17)."""
+    rename must not leave a lying hint (external review, 2026-08-17). Also
+    pins that every hint names AT LEAST ONE script: without this, a hint
+    with no `.py` reference would pass the loop vacuously (external review,
+    2026-08-17)."""
     import re
     scripts_dir = (Path(__file__).resolve().parent.parent
                    / "skills" / "philosophy-research" / "scripts")
     for host, hint in wv.EXCLUDED_HOST_HINTS.items():
         assert wv.excluded_host(f"https://{host}/x") == host
         assert hint.strip()
-        for name in re.findall(r"\b(\w+\.py)\b", hint):
+        names = re.findall(r"\b(\w+\.py)\b", hint)
+        assert names, f"{host} hint names no script at all"
+        for name in names:
             assert (scripts_dir / name).is_file(), f"{host} hint names missing {name}"
