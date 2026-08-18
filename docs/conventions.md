@@ -30,7 +30,7 @@ Requirements:
 | `@incollection` | Book chapters |
 | `@inproceedings` | Conference papers |
 | `@phdthesis` | Dissertations |
-| `@misc` | SEP entries, online resources |
+| `@misc` | SEP entries, online resources (encyclopedia entries reach evidence through the context channel — see the Evidence Tiers note) |
 
 **Determining entry type from CrossRef**: When `verify_paper.py` returns a `suggested_bibtex_type` field, **use it**. CrossRef knows whether a DOI is a journal article or a book chapter. Common mapping:
 - CrossRef `journal-article` → `@article` (use `container_title` as `journal`)

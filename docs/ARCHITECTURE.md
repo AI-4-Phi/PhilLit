@@ -182,7 +182,7 @@ skills/literature-review/
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
     ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, item 3 D)
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, item 3 F)
-    ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, item 2's EVIDENCE-WEB gate)
+    ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, item 2's EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
     ├── sanitize_bib.py                   # Strip engine-internal EVIDENCE-* tokens from delivered .bib
     ├── generate_bibliography.py          # Generate Chicago-style references
@@ -212,7 +212,7 @@ skills/philosophy-research/
     ├── citation_context.py               # Shared SEP/IEP citation-context helpers
     ├── search_ndpr.py                    # NDPR discovery
     ├── fetch_ndpr.py                     # NDPR content extraction
-    ├── fetch_web.py                      # Research-time web-source capture (item 2's fetch gate)
+    ├── fetch_web.py                      # Research-time web-source capture (item 2's fetch gate; refuses the excluded encyclopedia hosts — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
     ├── search_cache.py                   # Search result caching
     ├── rate_limiter.py                   # Shared rate limiting
     ├── output.py                         # Shared output utilities
