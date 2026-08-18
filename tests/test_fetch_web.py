@@ -175,3 +175,96 @@ def test_stdin_read_is_capped_like_the_network_path(monkeypatch, tmp_path):
     assert rec["error"].startswith("response-too-large:")
     assert not rec.get("text")
     assert rec["provenance"] == "agent"
+
+
+# ---------------------------------------------------------------------------
+# encyclopedia-host exclusion (owner decision 2026-08-17)
+# ---------------------------------------------------------------------------
+
+def test_an_excluded_host_is_refused_before_any_request(monkeypatch, tmp_path, capsys):
+    class Boom:
+        def __init__(self):
+            raise AssertionError("network touched for an excluded host")
+    monkeypatch.setattr(fw.requests, "Session", Boom)
+    monkeypatch.setattr(sys, "argv", [
+        "fetch_web.py", "--url", "https://plato.stanford.edu/entries/agency/",
+        "--citekey", "k", "--review-dir", str(tmp_path)])
+    assert fw.main() == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["status"] == "error"
+    assert out["error"] == "excluded-host:plato.stanford.edu"
+    assert out["outcome"] == "refused"
+    assert "fetch_sep" in out["hint"]
+    assert not (tmp_path / "intermediate_files" / "web_captures" / "k.json").exists()
+
+
+def test_stdin_cannot_capture_an_excluded_host_either(monkeypatch, tmp_path, capsys):
+    """The exclusion is scope, not network courtesy alone: piping page text
+    via --stdin must not create a capture for an excluded host."""
+    import io
+    monkeypatch.setattr(sys, "stdin", io.StringIO("page text " * 50))
+    monkeypatch.setattr(sys, "argv", [
+        "fetch_web.py", "--stdin", "--url", "https://philpapers.org/rec/SMIT-1",
+        "--citekey", "k", "--review-dir", str(tmp_path)])
+    assert fw.main() == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["error"] == "excluded-host:philpapers.org"
+    assert not (tmp_path / "intermediate_files" / "web_captures" / "k.json").exists()
+
+
+def test_a_refusal_never_touches_an_existing_good_capture(monkeypatch, tmp_path, capsys):
+    cdir = tmp_path / "intermediate_files" / "web_captures"
+    cdir.mkdir(parents=True)
+    payload = json.dumps({"url": "https://iep.utm.edu/freewill/", "text": "good",
+                          "provenance": "script"})
+    (cdir / "k.json").write_text(payload, encoding="utf-8")
+    monkeypatch.setattr(sys, "argv", [
+        "fetch_web.py", "--url", "https://iep.utm.edu/freewill/",
+        "--citekey", "k", "--review-dir", str(tmp_path)])
+    assert fw.main() == 0
+    assert (cdir / "k.json").read_text(encoding="utf-8") == payload  # byte-identical
+
+
+def test_a_redirect_onto_an_excluded_host_refuses_to_write_the_capture(monkeypatch, tmp_path, capsys):
+    """The redirect seam (both external reviews, 2026-08-17): an allowed
+    --url whose response chain lands on SEP must not become a capture. The
+    GET has already happened (accepted, documented residual); the refusal
+    keeps the excluded content out of the evidence chain."""
+    class Resp:
+        url = "https://plato.stanford.edu/entries/agency/"   # final, post-redirect
+        status_code = 200
+        headers = {"Content-Type": "text/html"}
+        def iter_content(self, chunk_size):
+            yield b"<html><head><title>Agency</title></head><body>" + b"x" * 500 + b"</body></html>"
+        def close(self):
+            pass
+    class Session:
+        max_redirects = 5
+        def get(self, *a, **k):
+            return Resp()
+    monkeypatch.setattr(fw.requests, "Session", lambda: Session())
+    monkeypatch.setattr(sys, "argv", [
+        "fetch_web.py", "--url", "https://a.example/agency",
+        "--citekey", "k", "--review-dir", str(tmp_path)])
+    assert fw.main() == 0
+    out = json.loads(capsys.readouterr().out)
+    assert out["status"] == "error"
+    assert out["error"] == "excluded-host:plato.stanford.edu"
+    assert out["outcome"] == "refused"
+    assert not (tmp_path / "intermediate_files" / "web_captures" / "k.json").exists()
+
+
+def test_cli_refusal_resolves_the_cross_skill_import_in_a_clean_process(tmp_path):
+    """The sibling-skill sys.path reach must work OUTSIDE pytest's mutated
+    import state (external review, 2026-08-17): in-process imports can mask
+    a broken path computation because web_evidence is already in
+    sys.modules from other test files."""
+    import subprocess
+    proc = subprocess.run(
+        [sys.executable, str(SCRIPTS / "fetch_web.py"),
+         "--url", "https://iep.utm.edu/freewill/",
+         "--citekey", "k", "--review-dir", str(tmp_path)],
+        capture_output=True, text=True, timeout=120)
+    assert proc.returncode == 0, proc.stderr
+    out = json.loads(proc.stdout)
+    assert out["error"] == "excluded-host:iep.utm.edu"

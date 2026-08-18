@@ -9,6 +9,11 @@ Usage:
   cat page.txt | bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_web.py \
       --stdin --url https://example.org/post --citekey smith2024post --review-dir "$REVIEW_DIR"
 
+Encyclopedia and index hosts (SEP + mirrors, IEP, NDPR, PhilPapers) are refused
+-- they never earn EVIDENCE-WEB; the refusal message names the dedicated
+channel. A fetch whose redirects land on an excluded host is refused the same
+way (the capture is not written).
+
 The capture is EVIDENCE that content was fetched, not writer input: the note is
 written from the page, and the barrier reads the capture only to check that the
 fetch happened and that the note's spans really occur in it.
@@ -30,6 +35,14 @@ from dotenv import find_dotenv, load_dotenv
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import output  # noqa: E402
 from rate_limiter import user_agent  # noqa: E402
+
+# The exclusion policy lives with the evidence design (web_evidence owns it);
+# this reaches it the way web_evidence.http_get reaches rate_limiter, in the
+# opposite direction. Same caveat, flagged for the service port: it couples
+# this script to a sibling skill's directory layout.
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent.parent
+                       / "literature-review" / "scripts"))
+from web_evidence import EXCLUDED_HOST_HINTS, excluded_host  # noqa: E402
 
 MAX_BYTES = 20 * 1024 * 1024
 TIMEOUT = 15
@@ -115,6 +128,19 @@ def build_stdin_record(url: str, text: str) -> dict:
             "provenance": "agent", "text": text}
 
 
+def _refusal_summary(citekey: str, host: str) -> str:
+    """The excluded-host refusal, shared by the pre-check and the
+    post-redirect check. Nothing is written for a refusal -- "the tool did
+    not run" stays true, and the barrier buckets these entries by host,
+    not by capture."""
+    return output.dumps({
+        "status": "error", "citekey": citekey,
+        "outcome": "refused", "error": f"excluded-host:{host}",
+        "hint": EXCLUDED_HOST_HINTS[host],
+        "chars": 0, "title": "",
+    })
+
+
 def write_capture(out_dir, citekey: str, record: dict) -> str:
     """Atomic write. Returns "written" or "kept_existing".
 
@@ -192,6 +218,14 @@ def main() -> int:
                     help="Read page text from stdin instead of fetching")
     args = ap.parse_args()
 
+    host = excluded_host(args.url)
+    if host:
+        # Refused BEFORE either path: the exclusion is scope, not network
+        # courtesy alone, so --stdin cannot produce a capture for an
+        # excluded page.
+        print(_refusal_summary(args.citekey, host))
+        return 0
+
     if args.stdin:
         # Capped like the network path (which enforces MAX_BYTES twice): an
         # unbounded read is a self-inflicted OOM with a large enough pipe,
@@ -211,6 +245,17 @@ def main() -> int:
             record = {"url": args.url, "final_url": None, "retrieved_at": _now(),
                       "http_status": None, "content_type": None,
                       "provenance": "script", "error": f"fetch-failed:{exc}"}
+
+        # The redirect seam: an allowed URL can land on an excluded host.
+        # The GET has already happened by now (accepted residual -- one
+        # polite request; preventing it means hand-rolling redirect
+        # handling). Refusing the WRITE is the load-bearing half: excluded
+        # content never enters the evidence chain, and the barrier
+        # re-checks the capture's final_url independently.
+        fhost = excluded_host(record.get("final_url") or "")
+        if fhost:
+            print(_refusal_summary(args.citekey, fhost))
+            return 0
 
     out_dir = Path(args.review_dir) / "intermediate_files" / "web_captures"
     outcome = write_capture(out_dir, args.citekey, record)
