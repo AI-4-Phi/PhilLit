@@ -273,9 +273,10 @@ baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
 - **Never re-open a results file** with `cat`, `python3`, `jq`, or a
   repeat Read of pages you already saw. If a LATER file makes you need
   something specific from an earlier one (deduping DOIs, checking whether
-  a paper appeared in both sources), that is what a single Grep over
-  `"$JSON_DIR"/*.json` is for — one call across all files, not one per
-  file.
+  a paper appeared in both sources), that is what ONE cross-file lookup is
+  for — a single Grep tool call with `path` set to the review's
+  `intermediate_files/json` directory, or a single `grep` Bash call over
+  `"$JSON_DIR"/*.json` — one call across all files, never one per file.
 - Investigating a file whose status line said `"error"` or `"partial"` is
   licensed separately and does not count against read-once.
 - No standalone `ls` or `mkdir` calls: every stage call starts with the
