@@ -420,8 +420,8 @@ reviews/[project-name]/
 ├── literature-[project-name].bib          # Aggregated bibliography
 └── intermediate_files/           # Workflow artifacts
     ├── json/                     # JSON files archived here
-    │   ├── s2_results.json
-    │   ├── openalex_results.json
+    │   ├── s2_<domain>_results.json
+    │   ├── openalex_<domain>_results.json
     │   └── stage3_*.json
     ├── task-progress.md
     ├── lit-review-plan.md

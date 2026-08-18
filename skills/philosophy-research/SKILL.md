@@ -29,7 +29,11 @@ Use this skill when:
 > fan-outs give each script `--output` and finish with
 > `grep -m1 '"status"' <files>` — full results land in files, one short
 > attributed status line each lands on screen; sequential same-API chains
-> with small payloads skip both and just consume the inline stdout.
+> with small payloads skip both and just consume the inline stdout
+> (exception: `verify_paper.py` always keeps `--output` — the metadata
+> cleaner reads its files — while its status prints inline). Never batch
+> across a dependency: a search whose query is composed from an earlier
+> search's results is its own call.
 
 ### Phase 1: SEP & IEP (Most Authoritative)
 
