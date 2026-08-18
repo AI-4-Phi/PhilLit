@@ -264,11 +264,12 @@ baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
 `jq` one-liners. The rules:
 
 - **Read each file you write to disk once** (Read tool) — Stage 3 search
-  results and Stage 1's encyclopedia fetches, not the sequential small-payload
-  calls that print inline instead — extracting everything you need — titles,
-  years, DOIs, abstracts — in that pass. Paging through a long file with
-  offset continuations counts as that ONE read; what is banned is
-  RE-opening content you already pulled into context.
+  results, Stage 1's encyclopedia fetches, and Stage 4's `cites_*.json`/
+  `recommendations.json`, not the sequential small-payload calls that print
+  inline instead — extracting everything you need — titles, years, DOIs,
+  abstracts — in that pass. Paging through a long file with offset
+  continuations counts as that ONE read; what is banned is RE-opening
+  content you already pulled into context.
 - **When several independent files genuinely need Reading, issue those
   Reads TOGETHER in one message** (parallel tool calls) — each message
   round-trip costs the same context re-read whether it carries one Read
@@ -282,8 +283,9 @@ baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
   `"$JSON_DIR"/*.json` — one call across all files, never one per file.
 - Investigating a file whose status line said `"error"` or `"partial"` is
   licensed separately and does not count against read-once.
-- No standalone `ls` or `mkdir` calls: every stage call starts with the
-  `mkdir -p` it needs, and the status tail replaces existence checks.
+- No standalone `ls` or `mkdir` calls: file-writing stage calls start with
+  the `mkdir -p` they need, and their status tails replace existence
+  checks; inline calls need neither.
 
 ### Stage 4: Citation Chaining
 
@@ -529,7 +531,7 @@ your follow-ups, instead of one call per script invocation.
 
 > **Why `--output` matters most here.** Running four searches concurrently interleaves their stderr progress lines. With a bare `> file` redirect you might be tempted to add `2>&1` to tame that noise — which merges the progress lines into the JSON and corrupts every file. `--output` sidesteps the problem entirely: each script writes its own clean JSON file regardless of what happens on stdout/stderr, and the interleaved progress simply scrolls past on your terminal.
 
-**Error handling**: Each search runs independently with its own retry logic. If one fails, others continue. Check each output file's `status` field.
+**Error handling**: Each search runs independently with its own retry logic. If one fails, others continue. Check each result's `status` — in the status tail for file-writing calls, in the inline payload otherwise.
 
 ## BibTeX File Structure
 
@@ -658,9 +660,11 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 
 ## Error Checking
 
-**After each search stage**, the batched call's status tail has already
-shown each file's `status`. Investigate any `"error"` or `"partial"` with
-ONE focused look at that file:
+**After each search stage**: for calls that wrote `--output` files (Stage 1
+fetches, Stage 3, Stage 4), the status tail has already shown each file's
+`status` — investigate any `"error"` or `"partial"` with ONE focused look
+at that file. For inline calls (Stage 1 discovery, Stage 2, Stage 5
+verification), the `status` is in the printed payload itself:
 
 **Track source failures**:
 - `status: "error"` → Source completely failed (critical)
