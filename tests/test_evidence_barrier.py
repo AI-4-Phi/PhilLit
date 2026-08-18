@@ -2237,3 +2237,144 @@ def test_web_splice_keys_are_present_even_with_no_web_entries(tmp_path, monkeypa
     report, _ = evidence_barrier.run_barrier(rd, 1)
     assert report["web_sources"]["stamped_entries"] == []
     assert report["web_sources"]["splice_failed"] == []
+
+
+# ---------------------------------------------------------------------------
+# Item 2 rider: encyclopedia-host exclusion in the barrier web pass
+# ---------------------------------------------------------------------------
+
+_SEP_ENTRY = """@misc{k,
+  author = {Schlosser, Markus},
+  title = {Agency},
+  year = {2019},
+  url = {https://plato.stanford.edu/entries/agency/},
+  web_span = {an agent is a being with the capacity to act},
+  note = {CORE ARGUMENT: standard theory of agency.}
+}"""
+
+_SEP_CAPTURE = {
+    "url": "https://plato.stanford.edu/entries/agency/",
+    "final_url": "https://plato.stanford.edu/entries/agency/",
+    "http_status": 200, "provenance": "script",
+    "retrieved_at": "2026-08-17T14:02:00+00:00",
+    "title": "Agency",
+    "text": "word " * 100 + "an agent is a being with the capacity to act",
+}
+
+
+def test_an_excluded_host_entry_is_bucketed_and_never_probed_or_read(tmp_path, monkeypatch):
+    """Exclusion beats even a valid capture, and NOTHING runs for the
+    entry -- not the existence probe (a crawl-delayed host must not be
+    GET) and not even the capture read."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+
+    def _no_net(url):
+        raise AssertionError(f"existence probe ran for excluded host: {url}")
+    def _no_read(review_dir, key):
+        raise AssertionError(f"capture read for excluded host entry: {key}")
+    monkeypatch.setattr(eb_mod.wv, "evaluate_existence", _no_net)
+    monkeypatch.setattr(eb_mod.wv, "load_capture", _no_read)
+    rd = _web_review(tmp_path, entry=_SEP_ENTRY, capture=_SEP_CAPTURE)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
+    assert report["web_sources"]["excluded_host_demoted"] == []  # no prior stamp
+    assert report["web_sources"]["entry_error"] == []            # nothing raised
+    assert report["stamps"]["literature-domain-1.bib"]["k"] == "EVIDENCE-NONE"
+    assert "EVIDENCE-WEB" not in list(outputs.values())[0]
+    assert report["web_sources"]["no_capture"] == []
+
+
+_REDIRECTED_ENTRY = """@misc{k,
+  author = {Schlosser, Markus},
+  title = {Agency},
+  year = {2019},
+  url = {https://a.example/agency},
+  web_span = {an agent is a being with the capacity to act},
+  note = {CORE ARGUMENT: standard theory of agency.}
+}"""
+
+_REDIRECTED_CAPTURE = {
+    "url": "https://a.example/agency",
+    "final_url": "https://plato.stanford.edu/entries/agency/",
+    "http_status": 200, "provenance": "script",
+    "retrieved_at": "2026-08-17T14:02:00+00:00",
+    "title": "Agency",
+    "text": "word " * 100 + "an agent is a being with the capacity to act",
+}
+
+
+def test_a_capture_that_redirected_onto_an_excluded_host_is_not_promoted(tmp_path, monkeypatch):
+    """The redirect seam (both external reviews, 2026-08-17): an allowed bib
+    URL whose capture's final_url landed on SEP must be bucketed, never
+    probed, never promoted -- otherwise a redirector defeats the exclusion."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+
+    def _no_net(url):
+        raise AssertionError(f"existence probe ran after excluded redirect: {url}")
+    monkeypatch.setattr(eb_mod.wv, "evaluate_existence", _no_net)
+    rd = _web_review(tmp_path, entry=_REDIRECTED_ENTRY, capture=_REDIRECTED_CAPTURE)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
+    assert "EVIDENCE-WEB" not in list(outputs.values())[0]
+
+
+_PRIOR_WEB_ENTRY = """@misc{k,
+  author = {Schlosser, Markus},
+  title = {Agency},
+  year = {2019},
+  url = {https://plato.stanford.edu/entries/agency/},
+  web_span = {an agent is a being with the capacity to act},
+  note = {CORE ARGUMENT: standard theory of agency.},
+  keywords = {agency-tag, web-source, EVIDENCE-WEB}
+}"""
+
+
+def test_a_rerun_demotion_of_a_previously_promoted_entry_is_signalled(tmp_path, monkeypatch):
+    """The real re-run case both reviews demanded: an entry a PRIOR pass
+    promoted (EVIDENCE-WEB already in its keywords) is demoted on this
+    pass -- and the report says so, distinguishably from never-promoted."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    monkeypatch.setattr(eb_mod.wv, "evaluate_existence",
+                        lambda url: (_ for _ in ()).throw(AssertionError(url)))
+    rd = _web_review(tmp_path, entry=_PRIOR_WEB_ENTRY, capture=_SEP_CAPTURE)
+    report, outputs = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
+    assert report["web_sources"]["excluded_host_demoted"] == [
+        "literature-domain-1.bib:k"]
+    assert report["stamps"]["literature-domain-1.bib"]["k"] == "EVIDENCE-NONE"
+    assert "EVIDENCE-WEB" not in list(outputs.values())[0]
+
+
+def test_an_excluded_host_entry_without_a_capture_still_lands_in_excluded_host(tmp_path, monkeypatch):
+    """Pins the check's PLACEMENT before the capture read: exclusion is
+    scope, so capture presence is irrelevant -- a capture-less SEP entry is
+    excluded_host, never no_capture."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+
+    def _no_net(url):
+        raise AssertionError(f"existence probe ran for excluded host: {url}")
+    monkeypatch.setattr(eb_mod.wv, "evaluate_existence", _no_net)
+    rd = _web_review(tmp_path, entry=_SEP_ENTRY, capture=None)
+    report, _ = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
+    assert report["web_sources"]["no_capture"] == []
+
+
+def test_excluded_host_bucket_is_present_even_on_the_web_error_path(tmp_path, monkeypatch):
+    """The error-path report dict must carry the same keys as the normal
+    one -- a consumer must not have to guess (same rule as venue vetting).
+    Crash mechanism mirrors test_a_pass_level_failure_degrades_to_no_promotions
+    _not_a_failed_run: an unserializable reason trips the json round-trip
+    inside the web pass's try."""
+    eb_mod = _stub_net(monkeypatch)
+    monkeypatch.setattr(eb_mod.wv, "check_capture",
+                        lambda *a, **k: (False, object()))   # unserializable
+    rd = _web_review(tmp_path)
+    report, _ = eb_mod.run_barrier(rd, 1)
+    assert report["web_sources"]["status"] == "error"
+    assert report["web_sources"]["excluded_host"] == []
+    assert report["web_sources"]["excluded_host_demoted"] == []

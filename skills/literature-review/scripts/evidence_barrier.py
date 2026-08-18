@@ -560,6 +560,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                   "no_capture": [], "no_existence": [],
                   "fetch_error": [], "capture_rejected": {},
                   "no_url": [], "entry_error": [],
+                  "excluded_host": [],
+                  # Diagnostic overlay, not an outcome bucket: entries listed
+                  # here ALSO land in excluded_host. Means a PRIOR pass had
+                  # promoted them (the exclusion shipped after v0.4.1
+                  # populations did) -- same overlay pattern as wayback_failed.
+                  "excluded_host_demoted": [],
                   # Diagnostic overlay, not an outcome bucket: entries listed
                   # here ALSO land in their outcome. Distinguishes "the
                   # availability API failed/throttled" from "no snapshot
@@ -584,6 +590,21 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     if not url:
                         web_report["no_url"].append(qual)
                         continue
+                    ex_host = wv.excluded_host(url)
+                    if ex_host:
+                        # Scope, not failure: encyclopedia/index hosts never
+                        # earn EVIDENCE-WEB (web_evidence owns the list), so
+                        # no capture is read and no network probe runs --
+                        # placed HERE so the existence probe cannot GET a
+                        # crawl-delayed host even when an agent hand-wrote a
+                        # capture for it.
+                        web_report["excluded_host"].append(qual)
+                        # A prior pass may have promoted this entry (the
+                        # exclusion shipped after v0.4.1 populations did):
+                        # signal the demotion so a re-run is auditable.
+                        if "evidence-web" in (fields.get("keywords") or "").lower():
+                            web_report["excluded_host_demoted"].append(qual)
+                        continue
                     # Capture FIRST, before any network. Two reasons, and the
                     # second is why this departs from the spec's ordering:
                     #   1. An entry with no capture cannot pass the gate, so
@@ -600,6 +621,17 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     capture = wv.load_capture(review_dir, key)
                     if capture is None:
                         web_report["no_capture"].append(qual)
+                        continue
+                    # The capture's own URLs can betray a redirect onto an
+                    # excluded host even when the bib URL is allowed -- a
+                    # redirector must not smuggle SEP content past the
+                    # exclusion, and the probe below must not run for it.
+                    cap_host = (wv.excluded_host(capture.get("url") or "")
+                                or wv.excluded_host(capture.get("final_url") or ""))
+                    if cap_host:
+                        web_report["excluded_host"].append(qual)
+                        if "evidence-web" in (fields.get("keywords") or "").lower():
+                            web_report["excluded_host_demoted"].append(qual)
                         continue
                     ex = wv.evaluate_existence(url)
                     if ex.get("wayback_error"):
@@ -640,6 +672,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                       "no_capture": [], "no_existence": [],
                       "fetch_error": [], "capture_rejected": {},
                       "no_url": [], "entry_error": [],
+                      "excluded_host": [], "excluded_host_demoted": [],
                       "wayback_failed": []}
     report["web_sources"] = web_report
 
