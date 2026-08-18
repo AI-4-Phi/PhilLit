@@ -21,6 +21,20 @@ Use this skill when:
 
 ## Search Workflow
 
+> **Batching:** when you have several searches, run them in ONE shell
+> call — `&` + `wait` between scripts hitting DIFFERENT APIs, plain
+> sequential lines between calls to the SAME API (its shared rate limiter
+> would serialize them anyway, and the limiter's file lock is Unix-only,
+> so same-API parallelism buys nothing and can race on Windows). Parallel
+> fan-outs give each script `--output` and finish with
+> `grep -m1 '"status"' <files>` — full results land in files, one short
+> attributed status line each lands on screen; sequential same-API chains
+> with small payloads skip both and just consume the inline stdout
+> (exception: `verify_paper.py` always keeps `--output` — the metadata
+> cleaner reads its files — while its status prints inline). Never batch
+> across a dependency: a search whose query is composed from an earlier
+> search's results is its own call.
+
 ### Phase 1: SEP & IEP (Most Authoritative)
 
 ```bash

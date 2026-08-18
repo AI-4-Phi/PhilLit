@@ -152,6 +152,36 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 
 > **No manual backups**: Do not create backup copies of `.bib` files (e.g., `cp file.bib file.bib.backup`). The workflow handles file safety through hook validation.
 
+> **One Bash call per search stage** (Stage 1 is the one exception: two
+> calls — discover, then fetch what you chose). Each such call chains all
+> of its script invocations: `&` (with a final `wait`) between scripts
+> that hit DIFFERENT APIs, plain sequential lines between calls to the
+> SAME API (its shared rate limiter would serialize them anyway, and the
+> limiter's file lock is Unix-only, so same-API parallelism buys nothing
+> and can race on Windows).
+> A status tail (`grep -m1 '"status"' <files>` — no `-h`, so each line
+> carries its filename) belongs only on calls that write full results to a
+> file with `--output` and discard stdout — parallel stages and big
+> fetches — where the tail shows every file's `status` without opening
+> anything. Sequential calls with small payloads skip both `--output` and
+> the discard: results print inline and you consume them straight from
+> stdout, no file, no Read, no tail (one exception: Stage 5 verification
+> keeps `--output` — the metadata cleaner reads those files — while you
+> consume its inline stdout). If an inline result comes back truncated,
+> re-run that one script with `--output` and Read the file once.
+> Follow-ups stay
+> first-class: a thin or empty result deserves a reformulated query, and
+> that follow-up is its own call. Batching cuts turns, never curiosity.
+
+> **Namespace every result file you write with your `<domain>` stem**
+> (`s2_<domain>_results.json`, `cites_<domain>_{paper_id}.json`, ...): all
+> parallel domain researchers share the one `intermediate_files/json/`
+> directory, so an un-namespaced name (`s2_results.json`) is silently
+> overwritten by a sibling researcher — you would then read the OTHER
+> domain's results. `<domain>` is the stem of your assigned bib filename
+> after `literature-domain-`; the Stage 5 namespacing note has the full
+> rationale.
+
 > **Do not run `rm`.** You never need to delete anything. Leave every search-result JSON, draft, and temp file in place: Phase 6 archives review-directory files into `intermediate_files/`, and any scratchpad/temp directory is ephemeral (removed automatically). Running `rm` only triggers a permission prompt that interrupts the review for no benefit.
 
 > **Prefer `Edit` for targeted changes to files you already wrote.** Every Edit to a `.bib` file is validated on disk immediately afterwards (post-edit hook) and blocked back to you on failure — same gate as Write. Reserve full-file `Write` for creating a file; re-writing a whole existing file risks silently corrupting content you are not looking at.
@@ -161,13 +191,32 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 ### Stage 1: SEP & IEP (Most Authoritative)
 
 ```bash
-# Discover relevant SEP articles
+# One call: discover SEP and IEP entries (sequential -- both searches ride
+# the same Brave rate limiter, so parallel would buy nothing). Small
+# payload, no --output: results print inline, consumed straight from stdout.
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_sep.py "{topic}"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py {entry_name} --sections "preamble,1,2,bibliography"
-
-# Discover relevant IEP articles (different coverage from SEP)
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_iep.py "{topic}"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py {entry_name} --sections "1,2,3,bibliography"
+```
+
+From the two inline results above, choose the entries worth fetching, then
+fetch them ALL in one second call:
+
+```bash
+# One call: fetch every chosen entry. SEP fetches run sequentially (one
+# shared crawl-delay limiter), IEP fetches likewise; the two FAMILIES run
+# in parallel with each other (different hosts, different limiters).
+REVIEW_DIR="$PWD/reviews/[project-name]"
+JSON_DIR="$REVIEW_DIR/intermediate_files/json"
+mkdir -p "$JSON_DIR"
+{
+  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py {entry_1} --sections "preamble,1,2,bibliography" --output "$JSON_DIR/sep_<domain>_{entry_1}.json" > /dev/null
+  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py {entry_2} --sections "preamble,1,2,bibliography" --output "$JSON_DIR/sep_<domain>_{entry_2}.json" > /dev/null
+} &
+{
+  bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_iep.py {entry_3} --sections "1,2,3,bibliography" --output "$JSON_DIR/iep_<domain>_{entry_3}.json" > /dev/null
+} &
+wait
+grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.json 2>/dev/null || true
 ```
 
 - Read preamble and key sections for domain overview
@@ -178,6 +227,8 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_ie
 ### Stage 2: PhilPapers
 
 ```bash
+# One call: both PhilPapers passes (sequential -- same Brave limiter).
+# Small payload, no --output: results print inline.
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}" --recent
 ```
@@ -193,21 +244,26 @@ JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
 
 # Semantic Scholar - broad academic search with filtering
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 --output "$JSON_DIR/s2_results.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 --output "$JSON_DIR/s2_<domain>_results.json" > /dev/null &
 
 # OpenAlex - 250M+ works, cross-disciplinary coverage
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 --output "$JSON_DIR/openalex_results.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 --output "$JSON_DIR/openalex_<domain>_results.json" > /dev/null &
 
 # CORE - 431M papers with abstracts, excellent for finding paper content
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 --output "$JSON_DIR/core_results.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 --output "$JSON_DIR/core_<domain>_results.json" > /dev/null &
 
 # arXiv - preprints, AI ethics, recent work
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent --output "$JSON_DIR/arxiv_results.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent --output "$JSON_DIR/arxiv_<domain>_results.json" > /dev/null &
+
+wait
+grep -m1 '"status"' "$JSON_DIR"/s2_<domain>_results.json "$JSON_DIR"/openalex_<domain>_results.json "$JSON_DIR"/core_<domain>_results.json "$JSON_DIR"/arxiv_<domain>_results.json
 ```
 
 > **CRITICAL: capture search JSON with `--output`, never with a bare `>` and never with `2>&1`.** Every search script writes clean JSON to the path given by `--output` and sends progress logs to *stderr*. If you instead pipe stdout to a file with `2>&1`, the progress lines corrupt the JSON and the metadata cleaner has to salvage it. `--output` makes the script own the file, so a stray redirect can no longer corrupt it. The trailing `> /dev/null` just discards the redundant stdout echo (the real output is the `--output` file); progress still shows on your terminal.
 
-After each search, use the **Read** tool on the JSON file to examine results and check the `status` field.
+The status tail already told you which searches succeeded. Read each
+results file ONCE to select papers — pull titles, years, DOIs, and
+abstracts in that single pass.
 
 **When to prioritize arXiv**: AI ethics, AI alignment, computational philosophy, cross-disciplinary CS/philosophy.
 
@@ -215,14 +271,55 @@ After each search, use the **Read** tool on the JSON file to examine results and
 
 **When to prioritize CORE**: Papers needing abstracts, open access content, papers missing from other sources.
 
+### Consuming results without re-reading them
+
+The measured anti-pattern (61% of researcher Bash calls in the 2026-08-15
+baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
+`jq` one-liners. The rules:
+
+- **Read each file you write to disk once** (Read tool) — Stage 3 search
+  results, Stage 1's encyclopedia fetches, and Stage 4's
+  `cites_<domain>_*.json`/`recommendations_<domain>.json`, not the
+  sequential small-payload calls that print inline instead — extracting
+  everything you need — titles, years, DOIs, abstracts — in that pass.
+  Stage 5 verify files are consumed from their inline stdout: do not Read
+  them unless investigating an `"error"`/`"partial"` status. Paging
+  through a long file with offset
+  continuations counts as that ONE read; what is banned is RE-opening
+  content you already pulled into context.
+- **When several independent files genuinely need Reading, issue those
+  Reads TOGETHER in one message** (parallel tool calls) — each message
+  round-trip costs the same context re-read whether it carries one Read
+  or five.
+- **Never re-open a results file** with `cat`, `python3`, `jq`, or a
+  repeat Read of pages you already saw. If a LATER file makes you need
+  something specific from an earlier one (deduping DOIs, checking whether
+  a paper appeared in both sources), that is what ONE cross-file lookup is
+  for — a single Grep tool call with `path` set to the review's
+  `intermediate_files/json` directory, or a single `grep` Bash call over
+  `"$JSON_DIR"/*<domain>*.json` — one call across all files, never one per
+  file. The directory is shared, so match only your own files (they all
+  carry your `<domain>` stem). The lookup covers only file-writing stages:
+  Stage 1 discovery and Stage 2 results live in your transcript — dedupe
+  against those from context.
+- Investigating a file whose status line said `"error"` or `"partial"` is
+  licensed separately and does not count against read-once.
+- No standalone `ls` or `mkdir` calls: file-writing stage calls start with
+  the `mkdir -p` they need, and their status tails replace existence
+  checks; inline calls need neither.
+
 ### Stage 4: Citation Chaining
 
 ```bash
-# Get references and citing papers for foundational works
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py {paper_id} --both --influential-only
-
-# Find recommendations based on seed papers
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_recommend.py --positive "{paper_id1},{paper_id2}"
+# One call: chain citations for ALL seed papers (sequential -- every line
+# rides the same Semantic Scholar limiter)
+REVIEW_DIR="$PWD/reviews/[project-name]"
+JSON_DIR="$REVIEW_DIR/intermediate_files/json"
+mkdir -p "$JSON_DIR"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py "{paper_id_1}" --both --influential-only --output "$JSON_DIR/cites_<domain>_{paper_id_1}.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py "{paper_id_2}" --both --influential-only --output "$JSON_DIR/cites_<domain>_{paper_id_2}.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_recommend.py --positive "{paper_id_1},{paper_id_2}" --output "$JSON_DIR/recommendations_<domain>.json" > /dev/null
+grep -m1 '"status"' "$JSON_DIR"/cites_<domain>_*.json "$JSON_DIR/recommendations_<domain>.json" 2>/dev/null || true
 ```
 
 - Identify foundational papers from SEP bibliography + PhilPapers + S2 search
@@ -235,12 +332,16 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_recom
 For every paper with a DOI, use CrossRef to get authoritative publication metadata:
 
 ```bash
-# Get authoritative metadata from CrossRef (journal name, volume, pages).
-# verify_paper.py writes clean JSON itself via --output — do NOT redirect.
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py \
-  --doi "10.2307/2024717" \
-  --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey>.json"
+# One call: verify EVERY paper with a DOI (sequential -- one CrossRef
+# limiter; repeat the line per paper)
+REVIEW_DIR="$PWD/reviews/[project-name]"
+mkdir -p "$REVIEW_DIR/intermediate_files/json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.xxxx/aaaa" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey1>.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.yyyy/bbbb" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey2>.json"
 ```
+
+Batch verifications in groups of about six per call — payloads print
+inline, and one call's output should stay readable.
 
 > **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey>.json"` instead.
 >
@@ -273,6 +374,15 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_p
 After writing the initial BibTeX file (with all entries and notes), run the enrichment script to add abstracts.
 
 **CRITICAL: Run this in the foreground (no `&`, no `run_in_background`).** Background tasks outlive your session and their results won't be read. The orchestrator proceeds to synthesis immediately after you finish — enrichment must complete before you return.
+
+**Run enrichment ONCE, after the bib is complete.** Finish writing every
+entry from every stage before the first `enrich_bibliography.py` run. If
+reviewing the enriched file surfaces entries you still must add, add them
+ALL with `Edit`, then re-run once — already-attested entries are skipped,
+so the re-run is cheap. Two runs total is then the expected shape (a FAILED
+run — network error, crash — does not count: re-run it); the measured
+anti-pattern is a run per added entry (up to 17 in one domain), which
+wastes turns and API calls alike.
 
 ```bash
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/literature-review/scripts/enrich_bibliography.py "$REVIEW_DIR/literature-domain-N.bib"
@@ -415,46 +525,46 @@ grants them `EVIDENCE-WEB`. What to do instead:
 - ❌ NEVER hand-write `urldate` or `archiveurl` — the barrier owns both and
   strips any value it finds, exactly as it does for `venue_status`
 
-## Parallel Search Mode (HIGHLY RECOMMENDED)
+## One Bash Call Per Stage (REQUIRED)
 
 **NEVER use `run_in_background: true` on Bash tool calls.** Background Bash tasks outlive your session — they keep running after you finish but nobody reads their output. Use bash `&` with `wait` instead (see below).
 
-**CRITICAL for time efficiency**: Run independent searches in parallel using background processes to dramatically reduce search time (30-45 min → 10-15 min).
+Every search stage runs as one Bash call: `&` (plus a final `wait`)
+between scripts hitting DIFFERENT APIs, plain sequential lines between
+calls to the SAME API. To keep one API family's calls sequential while
+other families run alongside, wrap the family in a brace group and
+background the GROUP: `{ cmd_a; cmd_b; } &` runs its lines in order while
+the groups parallelize with each other (Stage 1's fetch block is the
+worked example). Parallel stages and big fetches write results with
+`--output`, discard stdout, and end with a `grep -m1 '"status"' …` tail
+naming the stage's files; sequential stages with small payloads skip both
+`--output` and the tail — results print inline and you read them straight
+from the transcript (Stage 5 verification is the exception: it keeps
+`--output` for the metadata cleaner while its status prints inline).
+Same-API calls run sequentially because their shared rate limiter would
+serialize them anyway — same-API parallelism buys nothing, and the
+limiter's file lock is Unix-only, so it can also race on Windows. Stage
+3's four
+searches hit four different APIs, which is why they parallelize.
 
-### How to Parallelize Searches
+**What stays a separate call:**
+- A follow-up search reacting to results (empty/thin result → reformulated
+  query; a discovered seed paper → its citation chase). Adaptive follow-ups
+  are the point of a researcher — never skip one to save a turn. A
+  file-writing follow-up writes to a FRESH filename
+  (`s2_<domain>_results2.json`) — never overwrite a results file you
+  already read, or a crash mid-script leaves the old file reporting
+  success.
+- A later stage that needs an earlier stage's results to compose its
+  queries (Stage 2 uses SEP findings; Stage 4 needs chosen seeds).
 
-Append `&` to each command in a single Bash call, then `wait` for all to finish:
-
-```bash
-REVIEW_DIR="$PWD/reviews/[project-name]"
-JSON_DIR="$REVIEW_DIR/intermediate_files/json"
-mkdir -p "$JSON_DIR"
-
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_search.py "{topic}" --field Philosophy --year 2015-2025 --output "$JSON_DIR/s2_results.json" > /dev/null &
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_openalex.py "{topic}" --year 2015-2025 --output "$JSON_DIR/openalex_results.json" > /dev/null &
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_core.py "{topic}" --year 2020-2024 --output "$JSON_DIR/core_results.json" > /dev/null &
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_arxiv.py "{topic}" --category cs.AI --recent --output "$JSON_DIR/arxiv_results.json" > /dev/null &
-
-wait
-```
+Expected shape per domain: Stages 1–5 in roughly 6–8 batched calls
+(verification may take a few more groups of ~6) plus your follow-ups,
+instead of one call per script invocation.
 
 > **Why `--output` matters most here.** Running four searches concurrently interleaves their stderr progress lines. With a bare `> file` redirect you might be tempted to add `2>&1` to tame that noise — which merges the progress lines into the JSON and corrupts every file. `--output` sidesteps the problem entirely: each script writes its own clean JSON file regardless of what happens on stdout/stderr, and the interleaved progress simply scrolls past on your terminal.
 
-After `wait`, use the **Read** tool to examine each JSON result file.
-
-### When to Parallelize
-
-**Use parallel mode**:
-- ✅ Stage 3 (Extended Academic Search) — all API searches are independent
-- ✅ Multiple PhilPapers searches with different queries
-- ✅ Citation chaining for multiple seed papers
-
-**Do NOT parallelize**:
-- ❌ Stages 1-2 if you need SEP results to inform PhilPapers queries
-- ❌ When searches depend on results from previous searches
-- ❌ Verification steps that depend on gathered metadata
-
-**Error handling**: Each search runs independently with its own retry logic. If one fails, others continue. Check each output file's `status` field.
+**Error handling**: Each search runs independently with its own retry logic. If one fails, others continue. Check each result's `status` — in the status tail for file-writing calls, in the inline payload otherwise. A missing file in a status tail (a `grep: ... No such file` line) means that ONE source failed — investigate or re-run that script alone, never the whole stage.
 
 ## BibTeX File Structure
 
@@ -556,7 +666,7 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 - [ ] INCOMPLETE entries noted in NOTABLE_GAPS section
 
 ✅ **JSON Intermediate Files**:
-- [ ] All Stage 3 search results saved as `.json` files in `$REVIEW_DIR/`
+- [ ] Every file-writing call left its `.json` in `$JSON_DIR`, namespaced with `<domain>` (Stage 1 fetches, Stage 3 searches, Stage 4 chains, Stage 5 verify)
 - [ ] Each JSON file has `status: "success"` (or failures noted in completion message)
 
 ✅ **Encyclopedia Context**:
@@ -583,7 +693,13 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 
 ## Error Checking
 
-**After each search stage**, use the Read tool on each JSON output file and check the `status` field:
+**After each search stage**: for calls that wrote `--output` files (Stage 1
+fetches, Stage 3, Stage 4), the status tail has already shown each file's
+`status` — investigate any `"error"` or `"partial"` with ONE focused look
+at that file. For inline calls (Stage 1 discovery, Stage 2, and Stage 5
+verification — which also writes `--output` files for the cleaner, but
+whose status you read inline), the `status` is in the printed payload
+itself:
 
 **Track source failures**:
 - `status: "error"` → Source completely failed (critical)
