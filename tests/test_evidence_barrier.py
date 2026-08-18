@@ -2388,20 +2388,28 @@ def test_excluded_host_entry_is_counted_in_the_printed_not_promoted_summary(tmp_
     subprocess path (_run/_report), not run_barrier() directly, and a real
     plato.stanford.edu URL: excluded_host is decided before any capture
     read or network probe, so this needs no captures dir and no stubbing.
-    excluded_host_demoted must NOT also be summed -- its entries already
-    live in excluded_host, and double-counting would inflate the total."""
+
+    The entry's keywords ALSO carry a prior EVIDENCE-WEB stamp, so it lands
+    in BOTH excluded_host and excluded_host_demoted -- the double-counting
+    guard this test exists for only bites when an entry is in both buckets
+    at once. A no-keywords fixture would pass identically whether or not
+    excluded_host_demoted is (wrongly) added to the summed tuple, since its
+    bucket would always be empty; not_promoted must still read 1, not 2."""
     rd = tmp_path / "review"
     misc = """@misc{k,
   author = {Schlosser, Markus},
   title = {Agency},
   year = {2019},
-  url = {https://plato.stanford.edu/entries/agency/}
+  url = {https://plato.stanford.edu/entries/agency/},
+  keywords = {agency-tag, web-source, EVIDENCE-WEB}
 }"""
     _domain(rd, 1, misc, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
     r = _run(rd, 1)
     assert r.returncode == 0, r.stderr
     report = _report(rd)
     assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
+    assert report["web_sources"]["excluded_host_demoted"] == [
+        "literature-domain-1.bib:k"]
     summary = json.loads(r.stdout)["web_sources"]
-    assert summary["not_promoted"] == 1
+    assert summary["not_promoted"] == 1               # not 2 -- no double count
     assert summary["status"] == "complete"
