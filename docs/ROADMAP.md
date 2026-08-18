@@ -6,18 +6,23 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.4.2**, 2026-08-15. Check
+Last release: **plugin v0.4.3**, 2026-08-17. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-Two approved builds are queued: item 2's encyclopedia-host exclusion
-(decided 2026-08-17, small) and item 7, researcher search batching (not
-urgent — quality-validate here before it ports). Item 2's service handoff
-closed 2026-08-16 (the service re-vendored at pin `0b9916a` and bumped its
-spec to v1.2). The cross-repo rule — scripted re-vendor, never
-hand-mirroring — lives in `CLAUDE.md`, "Sister repo: phillit-service".
+One approved build is queued: item 7, researcher search batching (not
+urgent — quality-validate here before it ports). Item 2's encyclopedia-host
+exclusion (decided 2026-08-17) shipped the same day — the gate and
+`fetch_web.py` now refuse SEP (plus its two mirrors), IEP, NDPR, and
+`philpapers.org`, with `philpapers.org` settled as EXCLUDED, domain-wide.
+Item 2's service handoff closed 2026-08-16 (the service re-vendored at pin
+`0b9916a` and bumped its spec to v1.2); the service's interim
+researcher-prose carve-out for those hosts retires at its next re-vendor
+pin, once this exclusion is mirrored. The cross-repo rule — scripted
+re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
+phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -33,7 +38,7 @@ touched. Do it by hand: a mechanical pass was attempted 2026-08-06 and
 reverted because the
 references sit inside sentences that need rewording around the name.
 
-## 2. Web-source evidence — ACCEPTED 2026-08-15; intaken by the service 2026-08-16 — the host-exclusion build open
+## 2. Web-source evidence — ACCEPTED 2026-08-15; intaken by the service 2026-08-16; residual findings recorded
 
 The `EVIDENCE-WEB` fetch gate shipped as v0.4.1 and **passed its live
 acceptance run** (2026-08-15, one AI-adjacent headless review: five report
@@ -52,40 +57,18 @@ docstring — do not strip without a new owner decision).
 The service handoff CLOSED 2026-08-16: the service re-vendored at pin
 `0b9916a` and bumped its spec to v1.2, recording the five departures above
 plus two its scope review found unrecorded — encyclopedia hosts in scope
-(below), and the fact that the spec's honesty-escalation trigger FIRED in
-the acceptance run (1 of 4 promoted notes carried a fabricated attribution,
-with propagation) and was resolved by the v0.4.2 prose riders, making that
-the measured baseline.
-
-Open — the encyclopedia-host exclusion build (DECIDED, Johannes 2026-08-17):
-
-- **Encyclopedia-host exclusion.** The spec's out-of-scope clause
-  (encyclopedia-hosted `@misc` — SEP/IEP "have their own channel") was never
-  implemented: the gate has no host filter and the researcher fetch
-  obligation no carve-out; the acceptance run's own web population included
-  4 SEP and 2 PhilPapers URLs. Here that means unthrottled SEP GETs
-  (`fetch_web.py` takes no rate-limiter slot on any host, so SEP's 5 s
-  crawl delay is bypassed); in the service it also bypasses the
-  source-store courtesy layer, so the service carries an interim prose
-  carve-out (its `researcher-service-constraints` unit: use
-  fetch_sep/iep/ndpr for those hosts). **Decision: implement the exclusion
-  the spec declared.** Build shape: a MECHANICAL filter — `fetch_web.py`
-  refuses the excluded hosts with a message pointing at the dedicated
-  fetchers, and the exclusion covers the barrier's existence probe
-  (`web_evidence.http_get`), not just the fetch script — plus the
-  researcher-prose carve-out (the service's interim region then retires by
-  mirror). Host list: `plato.stanford.edu` / `iep.utm.edu` / `ndpr.nd.edu`
-  at minimum; settle `philpapers.org` during the build (it appeared in the
-  acceptance population and has its own channel — check what a dedicated
-  path offers before excluding, since unlike SEP/IEP there may be no
-  page fetcher to redirect to). Declaring encyclopedia `@misc` IN scope was
-  considered and rejected — SEP/IEP content already reaches evidence
-  through the richer store-backed CONTEXT channel.
+(now shipped, see Working sequence above), and the fact that the spec's
+honesty-escalation trigger FIRED in the acceptance run (1 of 4 promoted
+notes carried a fabricated attribution, with propagation) and was resolved
+by the v0.4.2 prose riders, making that the measured baseline.
 
 One import edge for whoever ports it: `web_evidence.http_get` reaches
 `rate_limiter.user_agent` across skills via `sys.path`, following the precedent
 `venue_vetting.py` set for `search_cache`. It works, but couples a
-literature-review module to a sibling skill's layout.
+literature-review module to a sibling skill's layout. `fetch_web.py` now makes
+the same cross-skill reach in the opposite direction (importing `web_evidence`
+for the exclusion list); the seam is pinned by a clean-process subprocess
+test.
 
 Follow-up candidates from the service's 2026-08-16 whole-branch review
 (kimi-k3 + glm-5.2; the splice guard, the record-side case fold and the
