@@ -25,9 +25,11 @@ Use this skill when:
 > call — `&` + `wait` between scripts hitting DIFFERENT APIs, plain
 > sequential lines between calls to the SAME API (its shared rate limiter
 > would serialize them anyway, and the limiter's file lock is Unix-only,
-> so same-API parallelism buys nothing and can race on Windows). Give each
-> `--output`, and finish with `grep -m1 '"status"' <files>` — full results
-> land in files, one short attributed status line each lands on screen.
+> so same-API parallelism buys nothing and can race on Windows). Parallel
+> fan-outs give each script `--output` and finish with
+> `grep -m1 '"status"' <files>` — full results land in files, one short
+> attributed status line each lands on screen; sequential same-API chains
+> with small payloads skip both and just consume the inline stdout.
 
 ### Phase 1: SEP & IEP (Most Authoritative)
 

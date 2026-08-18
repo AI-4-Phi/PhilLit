@@ -158,10 +158,13 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 > that hit DIFFERENT APIs, plain sequential lines between calls to the
 > SAME API — its rate limiter would serialize them anyway, so sequential
 > costs no time and cannot race the limiter.
-> Every invocation writes full results to a file with `--output`, and the
-> call ends with a status tail (`grep -m1 '"status"' <files>` — no `-h`, so
-> each line carries its filename) showing every file's `status` without
-> opening anything. Follow-ups stay
+> A status tail (`grep -m1 '"status"' <files>` — no `-h`, so each line
+> carries its filename) belongs only on calls that write full results to a
+> file with `--output` and discard stdout — parallel stages and big
+> fetches — where the tail shows every file's `status` without opening
+> anything. Sequential calls with small payloads skip both `--output` and
+> the discard: results print inline and you consume them straight from
+> stdout, no file, no Read, no tail. Follow-ups stay
 > first-class: a thin or empty result deserves a reformulated query, and
 > that follow-up is its own call. Batching cuts turns, never curiosity.
 
@@ -175,17 +178,14 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 
 ```bash
 # One call: discover SEP and IEP entries (sequential -- both searches ride
-# the same Brave rate limiter, so parallel would buy nothing)
-REVIEW_DIR="$PWD/reviews/[project-name]"
-JSON_DIR="$REVIEW_DIR/intermediate_files/json"
-mkdir -p "$JSON_DIR"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_sep.py "{topic}" --output "$JSON_DIR/sep_search.json" > /dev/null
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_iep.py "{topic}" --output "$JSON_DIR/iep_search.json" > /dev/null
-grep -m1 '"status"' "$JSON_DIR/sep_search.json" "$JSON_DIR/iep_search.json"
+# the same Brave rate limiter, so parallel would buy nothing). Small
+# payload, no --output: results print inline, consumed straight from stdout.
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_sep.py "{topic}"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_iep.py "{topic}"
 ```
 
-Read both search files once, choose the entries worth fetching, then fetch
-them ALL in one second call:
+From the two inline results above, choose the entries worth fetching, then
+fetch them ALL in one second call:
 
 ```bash
 # One call: fetch every chosen entry. SEP fetches run sequentially (one
@@ -213,13 +213,10 @@ grep -m1 '"status"' "$JSON_DIR"/sep_*.json "$JSON_DIR"/iep_*.json 2>/dev/null ||
 ### Stage 2: PhilPapers
 
 ```bash
-# One call: both PhilPapers passes (sequential -- same Brave limiter)
-REVIEW_DIR="$PWD/reviews/[project-name]"
-JSON_DIR="$REVIEW_DIR/intermediate_files/json"
-mkdir -p "$JSON_DIR"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}" --output "$JSON_DIR/philpapers.json" > /dev/null
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}" --recent --output "$JSON_DIR/philpapers_recent.json" > /dev/null
-grep -m1 '"status"' "$JSON_DIR"/philpapers*.json 2>/dev/null || true
+# One call: both PhilPapers passes (sequential -- same Brave limiter).
+# Small payload, no --output: results print inline.
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/search_philpapers.py "{topic}" --recent
 ```
 
 - Cross-reference with SEP bibliography entries
@@ -266,10 +263,16 @@ The measured anti-pattern (61% of researcher Bash calls in the 2026-08-15
 baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
 `jq` one-liners. The rules:
 
-- **Read each results file once** (Read tool), extracting everything you
-  need — titles, years, DOIs, abstracts — in that pass. Paging through a
-  long file with offset continuations counts as that ONE read; what is
-  banned is RE-opening content you already pulled into context.
+- **Read each file you write to disk once** (Read tool) — Stage 3 search
+  results and Stage 1's encyclopedia fetches, not the sequential small-payload
+  calls that print inline instead — extracting everything you need — titles,
+  years, DOIs, abstracts — in that pass. Paging through a long file with
+  offset continuations counts as that ONE read; what is banned is
+  RE-opening content you already pulled into context.
+- **When several independent files genuinely need Reading, issue those
+  Reads TOGETHER in one message** (parallel tool calls) — each message
+  round-trip costs the same context re-read whether it carries one Read
+  or five.
 - **Never re-open a results file** with `cat`, `python3`, `jq`, or a
   repeat Read of pages you already saw. If a LATER file makes you need
   something specific from an earlier one (deduping DOIs, checking whether
@@ -310,10 +313,12 @@ For every paper with a DOI, use CrossRef to get authoritative publication metada
 # limiter; repeat the line per paper)
 REVIEW_DIR="$PWD/reviews/[project-name]"
 mkdir -p "$REVIEW_DIR/intermediate_files/json"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.xxxx/aaaa" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey1>.json" > /dev/null
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.yyyy/bbbb" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey2>.json" > /dev/null
-grep -m1 '"status"' "$REVIEW_DIR"/intermediate_files/json/verify_<domain>_*.json 2>/dev/null || true
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.xxxx/aaaa" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey1>.json"
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.yyyy/bbbb" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey2>.json"
 ```
+
+Batch verifications in groups of about six per call — payloads print
+inline, and one call's output should stay readable.
 
 > **CRITICAL: verification output MUST be written with `--output`.** Never redirect verify_paper.py's stdout to a file, and never `2>&1` into a `.json` file — its stderr carries progress logs, not data, so a redirected file is corrupted and the downstream metadata cleaner silently skips it (destroying the verified metadata it should protect). Use `--output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey>.json"` instead.
 >
@@ -503,12 +508,14 @@ grants them `EVIDENCE-WEB`. What to do instead:
 
 Every search stage runs as one Bash call: `&` (plus a final `wait`)
 between scripts hitting DIFFERENT APIs, plain sequential lines between
-calls to the SAME API, `--output` for every results file, and a
-`grep -m1 '"status"' …` tail naming the stage's files. Same-API calls
-run sequentially because their shared rate limiter would serialize them
-anyway — sequential costs no wall-clock and cannot race the limiter
-(whose file lock is Unix-only). Stage 3's four searches hit four
-different APIs, which is why they parallelize.
+calls to the SAME API. Parallel stages and big fetches write results with
+`--output`, discard stdout, and end with a `grep -m1 '"status"' …` tail
+naming the stage's files; sequential stages with small payloads skip both
+`--output` and the tail — results print inline and you read them straight
+from the transcript. Same-API calls run sequentially because their shared
+rate limiter would serialize them anyway — sequential costs no wall-clock
+and cannot race the limiter (whose file lock is Unix-only). Stage 3's four
+searches hit four different APIs, which is why they parallelize.
 
 **What stays a separate call:**
 - A follow-up search reacting to results (empty/thin result → reformulated
