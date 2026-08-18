@@ -1001,7 +1001,7 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
             "not_promoted": sum(
                 len(v) for k, v in (report.get("web_sources") or {}).items()
                 if k in ("no_capture", "no_existence", "no_url",
-                         "fetch_error", "entry_error")
+                         "fetch_error", "entry_error", "excluded_host")
             ) + sum(len(v) for v in ((report.get("web_sources") or {})
                                      .get("capture_rejected") or {}).values()),
             # Printed for the same reason venue_vetting's pair is: the

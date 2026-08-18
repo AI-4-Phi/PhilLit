@@ -2378,3 +2378,30 @@ def test_excluded_host_bucket_is_present_even_on_the_web_error_path(tmp_path, mo
     assert report["web_sources"]["status"] == "error"
     assert report["web_sources"]["excluded_host"] == []
     assert report["web_sources"]["excluded_host_demoted"] == []
+
+
+def test_excluded_host_entry_is_counted_in_the_printed_not_promoted_summary(tmp_path):
+    """The CLI summary's not_promoted arithmetic (main(), like
+    test_web_source_without_a_capture_is_bucketed_and_stays_none pins for
+    no_capture) must count excluded_host entries too, or they silently
+    vanish from the operator-facing non-promotion count. Uses the real
+    subprocess path (_run/_report), not run_barrier() directly, and a real
+    plato.stanford.edu URL: excluded_host is decided before any capture
+    read or network probe, so this needs no captures dir and no stubbing.
+    excluded_host_demoted must NOT also be summed -- its entries already
+    live in excluded_host, and double-counting would inflate the total."""
+    rd = tmp_path / "review"
+    misc = """@misc{k,
+  author = {Schlosser, Markus},
+  title = {Agency},
+  year = {2019},
+  url = {https://plato.stanford.edu/entries/agency/}
+}"""
+    _domain(rd, 1, misc, cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["web_sources"]["excluded_host"] == ["literature-domain-1.bib:k"]
+    summary = json.loads(r.stdout)["web_sources"]
+    assert summary["not_promoted"] == 1
+    assert summary["status"] == "complete"
