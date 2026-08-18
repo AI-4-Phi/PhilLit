@@ -12,8 +12,10 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-One approved build is queued: item 7, researcher search batching (not
-urgent — quality-validate here before it ports). Item 2's encyclopedia-host
+No build is queued. Item 7, researcher search batching, is BUILT and
+validated on a preserved branch but missed its pre-committed turn-count
+gate (−17.6% vs the ≥30% target, quality intact or better) — the ship
+decision is Johannes's; see that item's section. Item 2's encyclopedia-host
 exclusion (decided 2026-08-17) shipped the same day — the gate and
 `fetch_web.py` now refuse SEP (plus its two mirrors), IEP, NDPR, and
 `philpapers.org`, with `philpapers.org` settled as EXCLUDED, domain-wide.
@@ -246,29 +248,41 @@ name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitle
 fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
 Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
 
-## 7. Researcher search batching — approved cost lever (Johannes, 2026-08-17), not urgent
+## 7. Researcher search batching — BUILT AND VALIDATED 2026-08-18; ship decision WAITING ON JOHANNES
 
-Cut the domain researchers' turn count by running a whole search stage in
-**one** Bash call: chain several `search_*.py` invocations, write full
-results to files, print only compact summaries, then Read/Grep selectively.
-Today every script invocation is its own Bash turn (~100+ per researcher),
-and the service measured that turn count × context size is the structural
-cost of a paid review — caching is healthy, so batching is the one lever
-chosen (the service's cost-reduction roadmap item records the decision;
-coefficients in `phillit-service/docs/review-cost-analysis.md`: halving
-researcher turns saves ~$3–7/review list on reads alone, more if writes
-shrink with it). Domain-count capping and Haiku researchers were considered
-there and NOT adopted — do not fold them in.
+The build exists and is fully reviewed (plan externally reviewed by kimi +
+glm; prose landed via SDD with per-round reviews) on the PRESERVED branch
+`worktree-researcher-search-batching` (worktree
+`.claude/worktrees/researcher-search-batching`, tip `b3e1b57`, 4 commits,
+prose-only: one Bash call per search stage with sequential-within-API /
+parallel-across-API discipline, inline stdout for sequential small-payload
+stages, read-once consumption rules, enrichment-run discipline). Plan +
+external-review record: `docs/superpowers/plans/2026-08-17-researcher-search-batching.md`
+(local-only); ledger + full measurements:
+`<worktree>/.superpowers/sdd/2026-08-17-researcher-search-batching/`
+(`progress.md`, `validation-report.md`).
 
-Scope: `agents/domain-literature-researcher.md` and/or the
-philosophy-research skill's search-stage prose. The search-output slimming
-question (print less, file more — a mid-context researcher token costs
-≈$9/MTok list all-in on the service) is part of this build, weighed against
-review quality, not a separate decision. Validate with free runs here —
-the risk to watch is search *behaviour* degrading (fewer adaptive
-follow-ups when results arrive batched), not token math. Ports to the
-service via its intake item afterwards, where it faces that repo's engine
-tests.
+Two same-topic headless validation runs against the 2026-08-15 baseline
+(per-domain medians; baseline 74 total tool calls / 61 Bash):
+
+- Run 1 (files+`> /dev/null` everywhere): Bash −37% but Reads 43→250, total
+  tools +12% — the substitution artifact the external reviews predicted;
+  fixed by the plan's one sanctioned revision (inline stdout for sequential
+  stages).
+- Run 3 (revised prose): total tools **−17.6%** (61), Bash **−29.5%** (43),
+  Reads 80; quality UP — 121 papers (vs run-1's 86), INCOMPLETE 4.1% (vs
+  8.1%), 101 verify files, adaptivity intact (7/7 domains, follow-ups at
+  57% of baseline, above the 50% floor), stage order preserved, barrier
+  complete.
+
+**Why it did not ship:** the pre-committed gate demanded ≥30% reduction in
+median per-domain tool calls; −17.6% missed it, and the gate was not moved
+after seeing the data. The tension for the ship decision: researchers
+converted saved turns into MORE OUTPUT, so tools-per-paper fell ~2.6×
+(≈9.8 → ≈3.7) — per-review cost on the service likely still falls even
+though per-dispatch turns fell only 17.6%. Decide: ship as-is (merge the
+branch, bump to 0.4.4), iterate further, or drop. Domain-count capping and
+Haiku researchers remain NOT adopted — do not fold them in.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open, e.g.
