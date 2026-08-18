@@ -6,25 +6,24 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.4.3**, 2026-08-17. Check
+Last release: **plugin v0.4.4**, 2026-08-18. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-No build is queued. Item 7, researcher search batching, is BUILT and
-validated on a preserved branch but missed its pre-committed turn-count
-gate (−17.6% vs the ≥30% target, quality intact or better) — the ship
-decision is Johannes's; see that item's section. Item 2's encyclopedia-host
-exclusion (decided 2026-08-17) shipped the same day — the gate and
-`fetch_web.py` now refuse SEP (plus its two mirrors), IEP, NDPR, and
-`philpapers.org`, with `philpapers.org` settled as EXCLUDED, domain-wide.
-Item 2's service handoff closed 2026-08-16 (the service re-vendored at pin
-`0b9916a` and bumped its spec to v1.2); the service's interim
-researcher-prose carve-out for those hosts retires at its next re-vendor
-pin, once this exclusion is mirrored. The cross-repo rule — scripted
-re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
-phillit-service".
+No build is queued. Researcher search batching SHIPPED 2026-08-18 as
+plugin v0.4.4 — merged from the preserved branch on Johannes's decision
+after a final kimi-k3 + gpt-5.6-sol whole-branch review round (record:
+`.superpowers/sdd/2026-08-17-researcher-search-batching/progress.md`,
+local-only). Next: (a) walk the recorded-not-decided findings below
+(web-source evidence follow-ups, bibliography-pipeline residuals,
+identity-owner residuals) with Johannes and turn each into decisions;
+(b) a phillit-service session moves the re-vendor pin past the batching
+merge, which also picks up item 2's encyclopedia-host exclusion (v0.4.3)
+and retires the service's interim researcher-prose carve-out for those
+hosts. The cross-repo rule — scripted re-vendor, never hand-mirroring —
+lives in `CLAUDE.md`, "Sister repo: phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -59,7 +58,9 @@ docstring — do not strip without a new owner decision).
 The service handoff CLOSED 2026-08-16: the service re-vendored at pin
 `0b9916a` and bumped its spec to v1.2, recording the five departures above
 plus two its scope review found unrecorded — encyclopedia hosts in scope
-(now shipped, see Working sequence above), and the fact that the spec's
+(shipped 2026-08-17 as v0.4.3: the gate and `fetch_web.py` refuse SEP plus
+its two mirrors, IEP, NDPR, and `philpapers.org`, settled as EXCLUDED
+domain-wide), and the fact that the spec's
 honesty-escalation trigger FIRED in the acceptance run (1 of 4 promoted
 notes carried a fabricated attribution, with propagation) and was resolved
 by the v0.4.2 prose riders, making that the measured baseline.
@@ -247,42 +248,6 @@ carry a colon. **Not all of those fail** — many colons are part of the real ve
 name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitles
 fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
 Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
-
-## 7. Researcher search batching — BUILT AND VALIDATED 2026-08-18; ship decision WAITING ON JOHANNES
-
-The build exists and is fully reviewed (plan externally reviewed by kimi +
-glm; prose landed via SDD with per-round reviews) on the PRESERVED branch
-`worktree-researcher-search-batching` (worktree
-`.claude/worktrees/researcher-search-batching`, tip `b3e1b57`, 4 commits,
-prose-only: one Bash call per search stage with sequential-within-API /
-parallel-across-API discipline, inline stdout for sequential small-payload
-stages, read-once consumption rules, enrichment-run discipline). Plan +
-external-review record: `docs/superpowers/plans/2026-08-17-researcher-search-batching.md`
-(local-only); ledger + full measurements:
-`<worktree>/.superpowers/sdd/2026-08-17-researcher-search-batching/`
-(`progress.md`, `validation-report.md`).
-
-Two same-topic headless validation runs against the 2026-08-15 baseline
-(per-domain medians; baseline 74 total tool calls / 61 Bash):
-
-- Run 1 (files+`> /dev/null` everywhere): Bash −37% but Reads 43→250, total
-  tools +12% — the substitution artifact the external reviews predicted;
-  fixed by the plan's one sanctioned revision (inline stdout for sequential
-  stages).
-- Run 3 (revised prose): total tools **−17.6%** (61), Bash **−29.5%** (43),
-  Reads 80; quality UP — 121 papers (vs run-1's 86), INCOMPLETE 4.1% (vs
-  8.1%), 101 verify files, adaptivity intact (7/7 domains, follow-ups at
-  57% of baseline, above the 50% floor), stage order preserved, barrier
-  complete.
-
-**Why it did not ship:** the pre-committed gate demanded ≥30% reduction in
-median per-domain tool calls; −17.6% missed it, and the gate was not moved
-after seeing the data. The tension for the ship decision: researchers
-converted saved turns into MORE OUTPUT, so tools-per-paper fell ~2.6×
-(≈9.8 → ≈3.7) — per-review cost on the service likely still falls even
-though per-dispatch turns fell only 17.6%. Decide: ship as-is (merge the
-branch, bump to 0.4.4), iterate further, or drop. Domain-count capping and
-Haiku researchers remain NOT adopted — do not fold them in.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open, e.g.
