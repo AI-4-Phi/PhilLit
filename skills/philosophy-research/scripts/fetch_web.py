@@ -25,6 +25,7 @@ import io
 import json
 import os
 import sys
+from email.message import Message
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -56,10 +57,33 @@ def _now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
-def extract_html(html: str) -> tuple[str, str]:
+def _declared_charset(content_type: str | None) -> str | None:
+    """The charset the HTTP Content-Type header declares, or None. Stdlib
+    MIME parsing, not a regex: a regex draft missed the legal quoted
+    (charset="windows-1252") and spaced (charset = X) forms, silently
+    dropping the header hint exactly where sniffing needs it most
+    (external review, 2026-08-18). A garbage charset name passes through --
+    BeautifulSoup ignores encodings it cannot resolve."""
+    if not content_type:
+        return None
+    msg = Message()
+    msg["Content-Type"] = content_type
+    return msg.get_content_charset()
+
+
+def extract_html(html, declared_charset: str | None = None) -> tuple[str, str]:
     """(title, text). `<title>` first, then `<h1>`; scripts and styles dropped
-    so their source never counts toward the barrier's length floor."""
-    soup = BeautifulSoup(html, "lxml")
+    so their source never counts toward the barrier's length floor.
+
+    Accepts bytes or str. Bytes are decoded by BeautifulSoup itself (meta
+    charset sniffing), with the HTTP header's charset as the first hint --
+    force-decoding as UTF-8 turned Windows-1252/Shift-JIS pages into
+    U+FFFD-riddled "captures" that silently failed the barrier's title anchor
+    and span containment for any non-ASCII span."""
+    if isinstance(html, bytes):
+        soup = BeautifulSoup(html, "lxml", from_encoding=declared_charset)
+    else:
+        soup = BeautifulSoup(html, "lxml")
     for tag in soup(["script", "style", "noscript"]):
         tag.decompose()
     title = ""
@@ -112,7 +136,7 @@ def build_record_from_response(url, final_url, status, content_type, body) -> di
             if _printable_ratio(text) < MIN_PRINTABLE_RATIO:
                 return {**base, "error": "pdf-unreadable-text"}
         else:
-            title, text = extract_html(body.decode("utf-8", errors="replace"))
+            title, text = extract_html(body, _declared_charset(content_type))
     except Exception as exc:
         return {**base, "error": f"extract-failed:{exc}"}
     return {**base, "title": title, "text": text}

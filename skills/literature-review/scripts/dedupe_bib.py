@@ -820,6 +820,26 @@ def restamp_merged(
         sys.path.insert(0, script_dir)
     import stamp_evidence as se
     import web_evidence as wv
+
+    # The supported pipeline puts the report at
+    # <review_dir>/intermediate_files/json/evidence_report.json, which is how
+    # the captures directory (a sibling under intermediate_files/) is found
+    # for the web re-check below. Underivable -> the re-check degrades to the
+    # URL-only binding, never to a crash.
+    review_dir = next(
+        (p.parent for p in Path(report_path).resolve().parents
+         if p.name == "intermediate_files"),
+        None,
+    )
+    capture_cache: dict = {}
+
+    def _capture(citekey):
+        if citekey not in capture_cache:
+            capture_cache[citekey] = (
+                wv.load_capture(review_dir, citekey)
+                if review_dir is not None else None)
+        return capture_cache[citekey]
+
     try:
         atts = json.loads(Path(report_path).read_text(encoding="utf-8")).get("attestations", {})
     except (json.JSONDecodeError, OSError):
@@ -843,7 +863,7 @@ def restamp_merged(
         blob = inner.get(key)
         return blob if isinstance(blob, dict) else None
 
-    def _reverified_att(blob, fields):
+    def _reverified_att(blob, fields, contrib_key):
         """Rebuild an EntryAttestation valid for the MERGED fields."""
         if not blob:
             return se.EntryAttestation()
@@ -873,6 +893,30 @@ def restamp_merged(
             and wv.normalize_url(wv.extract_url(fields) or "") == web_url
             and not wv.excluded_host(web_url)
         )
+        # URL equality alone cannot re-bind the gate to MERGED content: a
+        # merge can pair this contributor's attestation with the OTHER
+        # contributor's web_span (same normalized URL -- the population the
+        # duplicate-across-domains dedupe exists for), shipping spans never
+        # containment-checked against any capture. So when the contributor's
+        # capture is on disk, re-run the full capture check over the merged
+        # values (pure string work, no network -- existence was probed at the
+        # barrier). A missing capture degrades to the URL-only binding above:
+        # absence can never promote anything the barrier did not already
+        # pass, and legacy invocations without the intermediate_files layout
+        # keep their behavior. An error-record capture fails check_capture,
+        # which is correct: fetch_web never overwrites a good capture with a
+        # failure record, so error + gate-passed blob is an inconsistency.
+        if web_ok:
+            capture = _capture(contrib_key)
+            if capture is not None:
+                if (wv.excluded_host(capture.get("url") or "")
+                        or wv.excluded_host(capture.get("final_url") or "")):
+                    web_ok = False
+                else:
+                    web_ok, _ = wv.check_capture(
+                        capture, wv.extract_url(fields) or "",
+                        fields.get("title") or "",
+                        fields.get("web_span") or "")
         return se.EntryAttestation(
             abstract_attested=abstract_ok,
             context_written=context_ok,
@@ -892,7 +936,8 @@ def restamp_merged(
         me = origin[key]
         contributing = {me} | merged_from.get(me, set())
         best = max(
-            (se.compute_tier(etype, fields, _reverified_att(_blob(c), fields))
+            (se.compute_tier(etype, fields,
+                             _reverified_att(_blob(c), fields, c[1]))
              for c in contributing),
             key=lambda t: se.TIER_RANK[t],
         )

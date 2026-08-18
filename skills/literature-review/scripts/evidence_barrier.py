@@ -581,7 +581,14 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                   # here ALSO land in their outcome. Distinguishes "the
                   # availability API failed/throttled" from "no snapshot
                   # exists" (live acceptance, 2026-08-15).
-                  "wayback_failed": []}
+                  "wayback_failed": [],
+                  # Scope bucket, not an outcome: an abstract-bearing @misc is
+                  # owned by the abstract attestation channel and may promote
+                  # THERE, so it is deliberately absent from the summary's
+                  # not_promoted count -- but it must land somewhere, or the
+                  # every-non-promotion-lands-in-a-named-bucket claim above is
+                  # false for this class (decided 2026-08-18).
+                  "misc_with_abstract": []}
     try:
         for i, d in domains.items():
             for chunk in parsed[i]:
@@ -590,10 +597,17 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     continue
                 etype, key = header
                 fields = se.parse_entry_fields(chunk)
-                # Scope: @misc without an abstract. An abstract-bearing entry
-                # already has its own channel, and a url on an @article is
-                # decoration (spec, Out of scope).
-                if etype.lower() != "misc" or fields.get("abstract"):
+                # Scope: @misc only -- a url on an @article is decoration
+                # (spec, Out of scope). The abstract narrowing below is a
+                # deliberate DEPARTURE from the spec (whose scope rule is "a
+                # @misc entry carrying a URL", with no abstract condition),
+                # decided on its merits 2026-08-18: an abstract-bearing entry
+                # already has its own attestation channel.
+                if etype.lower() != "misc":
+                    continue
+                if fields.get("abstract"):
+                    web_report["misc_with_abstract"].append(
+                        f"{d['bib_name']}:{key}")
                     continue
                 qual = f"{d['bib_name']}:{key}"
                 try:
@@ -684,7 +698,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                       "fetch_error": [], "capture_rejected": {},
                       "no_url": [], "entry_error": [],
                       "excluded_host": [], "excluded_host_demoted": [],
-                      "wayback_failed": []}
+                      "wayback_failed": [], "misc_with_abstract": []}
     report["web_sources"] = web_report
 
     # Item 3 F: a `year_suffix` that survived _strip_derived_fields. The

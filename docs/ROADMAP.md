@@ -16,14 +16,17 @@ No build is queued. Researcher search batching SHIPPED 2026-08-18 as
 plugin v0.4.4 — merged from the preserved branch on Johannes's decision
 after a final kimi-k3 + gpt-5.6-sol whole-branch review round (record:
 `.superpowers/sdd/2026-08-17-researcher-search-batching/progress.md`,
-local-only). Next: (a) walk the recorded-not-decided findings below
-(web-source evidence follow-ups, bibliography-pipeline residuals,
-identity-owner residuals) with Johannes and turn each into decisions;
-(b) a phillit-service session moves the re-vendor pin past the batching
-merge, which also picks up item 2's encyclopedia-host exclusion (v0.4.3)
-and retires the service's interim researcher-prose carve-out for those
-hosts. The cross-repo rule — scripted re-vendor, never hand-mirroring —
-lives in `CLAUDE.md`, "Sister repo: phillit-service".
+local-only). The recorded-findings walkthrough also ran 2026-08-18:
+Johannes accepted every recommendation, and the accepted fixes (charset
+decoding, restamp capture re-check, the abstract-bearing-@misc report
+bucket, two prose corrections) shipped as v0.4.5 — the remaining decisions
+are recorded in place below. Next: a phillit-service session moves the
+re-vendor pin past the v0.4.5 tip, which picks up item 2's
+encyclopedia-host exclusion (v0.4.3), the batching merge (v0.4.4), and the
+walkthrough fixes (v0.4.5), and retires the service's interim
+researcher-prose carve-out for the excluded hosts. The cross-repo rule —
+scripted re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister
+repo: phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -73,68 +76,31 @@ the same cross-skill reach in the opposite direction (importing `web_evidence`
 for the exclusion list); the seam is pinned by a clean-process subprocess
 test.
 
-Follow-up candidates from the service's 2026-08-16 whole-branch review
-(kimi-k3 + glm-5.2; the splice guard, the record-side case fold and the
-`--stdin` cap from that review landed here same-day — these are the
-remainder, recorded not decided):
+Follow-up candidates from the service's 2026-08-16 whole-branch review and
+its 2026-08-17 pre-deploy divergence audit — all decided in the 2026-08-18
+walkthrough. The three accepted fixes shipped as v0.4.5 (charset decoding
+in `fetch_web.py`, the restamp capture re-check in
+`dedupe_bib.restamp_merged`, the `misc_with_abstract` report bucket, plus
+two prose corrections in `conventions.md` and the researcher agent); what
+remains recorded here are the decisions that did NOT produce code:
 
-- **`dedupe_bib.restamp_merged` re-binds the web gate by URL only.** A merge
-  that keeps one contributor's attestation blob and another contributor's
-  `web_span`/note fields (same normalized URL — the duplicate-across-domains
-  population dedupe exists for) ships an `EVIDENCE-WEB` entry whose spans
-  were never containment-checked against any capture. The abstract/context
-  attestations re-verify by content hash; the stronger web binding is
-  re-running `check_capture` at restamp.
-- **Direction-bound residuals:** an EARLIER api year is trusted
-  unconditionally (a bad-early CrossRef record back-dates a correct year
-  silently, and no corpus record can exercise the licence); a bib
+- **Direction-bound residuals — ACCEPTED 2026-08-18** (no corpus record
+  exercises them): an EARLIER api year is trusted unconditionally; a bib
   deliberately citing a revised later edition on the first edition's DOI
-  gets back-dated — consistent with trust-the-DOI, but the researcher's
-  reissue prose does not say so; `@proceedings`/`@booklet`/`@manual` sit
-  outside `_REPRINT_CAPABLE_TYPES` on a coupling argument, not a
-  reprint-risk one.
-- **`wayback_failed` is constant noise for an egress-denied consumer** (in
-  the service every capture-bearing entry raises on the availability call,
-  every run) — the bucket was built to separate throttling from no-snapshot
-  and drowns there; consider a distinct unreachable marker.
-- **Prose nuances:** conventions' "the gate proves … real, title-matching
-  content" overstates the adversarial case (captures are agent-writable; the
-  only non-agent leg is the existence probe), and the researcher's "ignoring
-  case, spacing and LaTeX escapes, but nothing else" understates `_fold`
-  (NFKC also folds ligatures and full-width forms).
-
-Three more from the service's 2026-08-17 pre-deploy divergence audit
-(recorded not decided; the service recorded each as a spec departure on its
-side):
-
-- **The spec's pinned HTML charset mechanic was never built.**
-  `fetch_web.py` force-decodes the body as UTF-8 (`errors="replace"`)
-  before BeautifulSoup sees it — no response-header charset, no
-  `apparent_encoding` fallback, and lxml's meta-charset sniffing is
-  bypassed because it receives `str`, not bytes. A Windows-1252/Shift-JIS
-  page yields U+FFFD-riddled text that *looks* like a valid capture (the
-  printable-ratio floor applies only to PDFs) and then silently fails the
-  title anchor and span containment for any non-ASCII span. Direction safe
-  (no promotion); the cheap fix is passing bytes to bs4.
-- **Abstract-bearing `@misc` entries are skipped by the web pass and land
-  in NO report bucket.** The barrier's scope condition
-  (`etype != "misc" or fields.get("abstract")`) `continue`s before bucket
-  assignment, so an `@misc` with a hand-written abstract — or one whose
-  attested abstract was mutated and whose `_heal_abstract` retry failed —
-  appears in neither `no_url`, `no_capture` nor `capture_rejected`,
-  against the report's every-non-promotion-lands-in-a-named-bucket design
-  claim. (The scope narrowing itself may stand, but note the code comment
-  cites the spec for support the spec never gave — the spec's scope rule is
-  "a `@misc` entry carrying a URL", with no abstract condition; decide the
-  narrowing on its merits and give the skipped class a bucket either way.)
-- **No mechanical check polices WEB-tier characterization.**
-  `check_evidence.py`'s verb heuristics run only on `_LOW_TRUST_TIERS`
-  (EXISTENCE/NONE/unstamped), so the note-license boundary — the tier's
-  whole content grant, with a measured 1-in-4 note-drift baseline — is
-  held by writer prose alone. Extending the verb heuristic as-is would
+  gets back-dated (consistent with trust-the-DOI, unstated in the
+  researcher's reissue prose); `@proceedings`/`@booklet`/`@manual` sit
+  outside `_REPRINT_CAPABLE_TYPES` on a coupling argument.
+- **`wayback_failed` noise for an egress-denied consumer — decided
+  2026-08-18: a service-side concern.** A distinct unreachable marker
+  belongs in the service's consumer at its next touch; no change here.
+- **No mechanical check polices WEB-tier characterization — kept as an
+  open question, decided 2026-08-18 not to build speculatively.**
+  `check_evidence.py`'s verb heuristics run only on `_LOW_TRUST_TIERS`, so
+  the note-license boundary (measured 1-in-4 note-drift baseline) is held
+  by writer prose alone. Extending the verb heuristic as-is would
   false-positive on legitimate note-licensed cites; whether any feasible
-  mechanical check exists (e.g. note-vs-prose containment at Phase 6) is
-  the open question.
+  mechanical check exists (e.g. note-vs-prose containment at Phase 6)
+  remains open.
 
 ## 3. Bibliography-pipeline integrity fixes — closed except recorded findings
 
@@ -201,16 +167,17 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
   line with no fallback, so a truncated parse can score **worse** than the IEP
   path's `parsed=None`. Follow-up recorded in
   `docs/known-issues/sep-bibliography-regex-hang.md`.
-- **Suspicion, unverified:** `rate_limiter.openalex_budget_exhausted` may read
-  a transient 429 as daily exhaustion.
-- **The cleaning ledger's `schema_version` stayed 1 through the Option C
-  change** (service pre-deploy audit, 2026-08-17). The abstention spec
-  instructed bumping it when `cleaning_abstained` was added;
-  `metadata_cleaner.py` still writes `1` and `evidence_barrier.py`
-  hard-rejects anything else, so pre- and post-Option-C ledgers are
-  indistinguishable by version. Internally consistent (the field is
-  additive, producer+consumer shipped together); decide on the next ledger
-  change: bump then, or record staying at 1 as deliberate.
+- **`rate_limiter.openalex_budget_exhausted` transient-429 suspicion —
+  VERIFIED BENIGN 2026-08-18, closed.** The detector requires a 429 plus
+  either a Retry-After above 300 s or an explicit budget phrase in the
+  body; the one over-broad path (the generic "rate limit exceeded" body
+  marker) costs at most one call's retries and is visibly reported, and
+  tightening the marker list without empirical OpenAlex bodies would risk
+  breaking real detection.
+- **The cleaning ledger's `schema_version` staying 1 through the Option C
+  change — decided 2026-08-18: deliberate.** Recorded at the write site in
+  `metadata_cleaner.py`; bump at the NEXT schema change (the barrier
+  hard-rejects any other value, so a bump lands in both or neither).
 
 ## 4. One owner for bibliography identity and matching — residuals only
 
@@ -225,10 +192,11 @@ things stay open:
   year-corruption incident — or normalizing the inputs at one of the two call
   sites.
 - A non-numeric or bracketed year (`n.d.`, `[2021]`) still cannot match in the
-  script-preserving haystack.
+  script-preserving haystack — ACCEPTED 2026-08-18 (never observed in
+  practice).
 - A surname that folds to punctuation-only (`Παπαδόπουλος-Smith` → `-Smith`)
-  still takes the unchanged primary path. Never observed in the corpus (0 of
-  8,494 first-author entries).
+  still takes the unchanged primary path — ACCEPTED 2026-08-18. Never
+  observed in the corpus (0 of 8,494 first-author entries).
 
 ## 6. Venue-name recall for subtitled journals — low priority, benign direction
 

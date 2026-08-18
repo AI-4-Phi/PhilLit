@@ -1120,6 +1120,10 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
     ledger_dir = bib_path.parent / "intermediate_files" / "json"
     ledger_dir.mkdir(parents=True, exist_ok=True)
     payload = {
+        # Stayed 1 through the Option C `cleaning_abstained` addition
+        # (additive field, producer+consumer shipped together), recorded as
+        # deliberate 2026-08-18. Bump at the NEXT schema change -- the
+        # barrier hard-rejects any other value, so a bump must land in both.
         "schema_version": 1,
         "bib_file": bib_path.name,
         "breaker_tripped": bool(breaker_tripped),

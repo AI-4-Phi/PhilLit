@@ -2043,6 +2043,31 @@ def test_a_web_entry_whose_span_is_absent_stays_none_and_is_reported(tmp_path, m
     assert "EVIDENCE-WEB" not in list(outputs.values())[0]
 
 
+def test_an_abstract_bearing_misc_lands_in_its_own_bucket(tmp_path):
+    """The web pass deliberately skips a @misc that carries an abstract (the
+    abstract attestation channel owns it), but the skip must land in a named
+    bucket -- the report's design claim is that every non-promotion is
+    accounted for, and this class used to vanish without a trace. Reaches no
+    network: the skip fires before any probe, so the CLI run stays offline.
+    The summary assertion pins the other half of the decision: this is a
+    SCOPE bucket, deliberately excluded from not_promoted (the entry can
+    still promote through the abstract channel)."""
+    entry = _WEB_ENTRY.replace(
+        "  note = {CORE ARGUMENT: convergent instrumental drives.}",
+        "  abstract = {Hand-written abstract.},\n"
+        "  note = {CORE ARGUMENT: convergent instrumental drives.}")
+    rd = _web_review(tmp_path, entry=entry)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    ws = _report(rd)["web_sources"]
+    assert ws["misc_with_abstract"] == ["literature-domain-1.bib:k"]
+    assert ws["no_url"] == [] and ws["no_capture"] == []
+    assert ws["capture_rejected"] == {}
+    assert ws["gate_passed"] == {"script": 0, "agent": 0}
+    summary = json.loads(r.stdout)["web_sources"]
+    assert summary["not_promoted"] == 0
+
+
 def test_an_error_record_lands_in_fetch_error_not_no_capture(tmp_path, monkeypatch):
     eb_mod = _stub_net(monkeypatch)
     rd = _web_review(tmp_path, capture={"url": "https://a.example/x",

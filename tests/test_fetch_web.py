@@ -32,6 +32,63 @@ def test_html_extraction_falls_back_to_h1_when_title_is_absent():
     assert title == "Fallback Heading"
 
 
+def test_a_windows_1252_page_with_a_meta_charset_decodes_correctly():
+    """A non-UTF-8 page must not become U+FFFD soup: replacement characters
+    look like a valid capture but silently fail the barrier's title anchor
+    and span containment for any non-ASCII span. The meta charset is the
+    page's own declaration -- the parser must honor it."""
+    filler = "He said “philosophy” and café matters greatly. " * 20
+    body = ('<html><head><meta charset="windows-1252">'
+            "<title>Café Studies</title></head>"
+            f"<body><p>{filler}</p></body></html>").encode("windows-1252")
+    rec = fw.build_record_from_response(
+        "https://a.example/x", "https://a.example/x", 200, "text/html", body)
+    assert "error" not in rec
+    assert "�" not in rec["text"] and "�" not in rec["title"]
+    assert rec["title"] == "Café Studies"
+    assert "café matters" in rec["text"]
+
+
+def test_the_http_header_charset_is_honored_without_a_meta_tag():
+    """Pins the bytes-to-bs4 path with the header hint plumbed through.
+    Honesty note: bs4's own statistical fallback also decodes this body, so
+    this test discriminates the force-decode-as-UTF-8 bug, not the hint
+    alone -- the hint is belt-and-braces for bodies where detection
+    guesses wrong."""
+    filler = "He said “philosophy” and café matters greatly. " * 20
+    body = ("<html><head><title>Café Studies</title></head>"
+            f"<body><p>{filler}</p></body></html>").encode("windows-1252")
+    rec = fw.build_record_from_response(
+        "https://a.example/x", "https://a.example/x", 200,
+        "text/html; charset=windows-1252", body)
+    assert "error" not in rec
+    assert "�" not in rec["text"]
+    assert "café matters" in rec["text"]
+
+
+def test_declared_charset_parses_the_legal_header_forms():
+    """Quoted values and whitespace around '=' are legal and common; a regex
+    draft missed both, silently dropping the header hint (external review,
+    2026-08-18)."""
+    assert fw._declared_charset('text/html; charset="windows-1252"') == "windows-1252"
+    assert fw._declared_charset("text/html; charset = Shift_JIS") == "shift_jis"
+    assert fw._declared_charset("text/html; charset=windows-1252") == "windows-1252"
+    assert fw._declared_charset("text/html; xcharset=evil") is None
+    assert fw._declared_charset("text/html") is None
+    assert fw._declared_charset(None) is None
+
+
+def test_a_garbage_charset_name_degrades_to_sniffing_not_an_error_record():
+    filler = "Plain ASCII sentences that decode anywhere at all. " * 10
+    body = ("<html><head><title>Plain Page</title></head>"
+            f"<body><p>{filler}</p></body></html>").encode("ascii")
+    rec = fw.build_record_from_response(
+        "https://a.example/x", "https://a.example/x", 200,
+        "text/html; charset=totally-bogus-name", body)
+    assert "error" not in rec
+    assert "Plain ASCII sentences" in rec["text"]
+
+
 # ---------------------------------------------------------------------------
 # capture writing
 # ---------------------------------------------------------------------------

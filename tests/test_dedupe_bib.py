@@ -711,6 +711,147 @@ class TestEvidenceRestamp:
         assert "EVIDENCE-WEB" not in out
         assert "EVIDENCE-NONE" in out
 
+    def _run_cli_with_captures(self, tmp_path, bib_a, bib_b, atts_a, atts_b,
+                               captures):
+        """Like _run_cli, but with the supported pipeline's layout: the report
+        under intermediate_files/json/ and captures under
+        intermediate_files/web_captures/ -- restamp derives the review dir
+        from the report path."""
+        rd = tmp_path / "review"
+        ijson = rd / "intermediate_files" / "json"
+        ijson.mkdir(parents=True)
+        cdir = rd / "intermediate_files" / "web_captures"
+        cdir.mkdir(parents=True)
+        for citekey, cap in captures.items():
+            (cdir / f"{citekey}.json").write_text(json.dumps(cap),
+                                                  encoding="utf-8")
+        (tmp_path / "a.bib").write_text(bib_a, encoding="utf-8")
+        (tmp_path / "b.bib").write_text(bib_b, encoding="utf-8")
+        report = ijson / "evidence_report.json"
+        report.write_text(json.dumps(
+            {"schema_version": 1,
+             "attestations": {"a.bib": atts_a, "b.bib": atts_b}}),
+            encoding="utf-8")
+        out = tmp_path / "merged.bib"
+        r = subprocess.run(
+            [sys.executable, str(SCRIPT_PATH), str(out),
+             str(tmp_path / "a.bib"), str(tmp_path / "b.bib"),
+             "--evidence-report", str(report)],
+            capture_output=True, text=True)
+        assert r.returncode == 0, r.stderr
+        return out.read_text(encoding="utf-8")
+
+    _CAPTURE = {
+        "url": "https://a.example/x", "final_url": "https://a.example/x",
+        "http_status": 200, "provenance": "script",
+        "retrieved_at": "2026-08-14T14:02:00+00:00",
+        "title": "The Basic AI Drives",
+        "text": "word " * 100
+                + "acquire steel manipulators and energy resources for itself",
+    }
+
+    def test_a_merge_cannot_pair_one_entrys_attestation_with_anothers_spans(self, tmp_path):
+        """The URL-only re-bind hole: a merge that keeps contributor A's
+        gate-passed attestation and contributor B's web_span (same normalized
+        URL -- the population dedupe exists for) used to ship EVIDENCE-WEB
+        with spans never containment-checked against any capture. The restamp
+        must re-run the capture check over the MERGED fields."""
+        # A (Medium) carries the gate-passed attestation; B (High) wins the
+        # merge on importance and keeps its OWN never-checked web_span. The
+        # survivor pairs B's span with A's attestation blob.
+        a = ('@misc{weba,\n  author = {Omohundro, Steve},\n'
+             '  title = {The Basic AI Drives},\n  year = {2008},\n'
+             '  url = {https://a.example/x},\n'
+             '  web_span = {acquire steel manipulators and energy resources for itself},\n'
+             '  keywords = {ai, Medium, EVIDENCE-WEB}\n}\n')
+        b = ('@misc{webb,\n  author = {Omohundro, Steve},\n'
+             '  title = {The Basic AI Drives},\n  year = {2008},\n'
+             '  url = {https://a.example/x},\n'
+             '  note = {CORE ARGUMENT: drives.},\n'
+             '  web_span = {a fabricated quotation the captured page never contained at all},\n'
+             '  keywords = {ai, High, EVIDENCE-WEB}\n}\n')
+        att = {**self.NO_ATT, "web_gate_passed": True,
+               "web_url": "https://a.example/x"}
+        out = self._run_cli_with_captures(
+            tmp_path, a, b, {"weba": att}, {}, {"weba": self._CAPTURE})
+        # Self-check of the construction: the fabricated span must actually
+        # have survived the merge, or this test exercises nothing.
+        assert "a fabricated quotation" in out
+        assert "EVIDENCE-WEB" not in out
+        assert "EVIDENCE-NONE" in out
+
+    _WEB_A = ('@misc{weba,\n  author = {Omohundro, Steve},\n'
+              '  title = {The Basic AI Drives},\n  year = {2008},\n'
+              '  url = {https://a.example/x},\n'
+              '  web_span = {acquire steel manipulators and energy resources for itself},\n'
+              '  keywords = {ai, High, EVIDENCE-WEB}\n}\n')
+    _WEB_ATT_URL = "https://a.example/x"
+
+    def test_the_restamp_runs_the_full_capture_check_not_span_containment_alone(self, tmp_path):
+        """Anti-narrowing pins (external review, 2026-08-18): a weakened
+        re-check that only tested span containment would pass the merge test
+        above. These three captures each contain the span but fail a
+        DIFFERENT check_capture rule -- title anchor, length floor, HTTP
+        status -- so a span-only implementation keeps EVIDENCE-WEB on all
+        three and fails here."""
+        att = {**self.NO_ATT, "web_gate_passed": True,
+               "web_url": self._WEB_ATT_URL}
+        span = "acquire steel manipulators and energy resources for itself"
+        bad_captures = [
+            dict(self._CAPTURE, title="Unrelated Login Portal Homepage"),
+            dict(self._CAPTURE, text=span),  # below the length floor
+            dict(self._CAPTURE, http_status=403),
+        ]
+        for i, cap in enumerate(bad_captures):
+            out = self._run_cli_with_captures(
+                tmp_path / f"case{i}",
+                self._WEB_A, "", {"weba": att}, {}, {"weba": cap})
+            assert "EVIDENCE-WEB" not in out, cap
+            assert "EVIDENCE-NONE" in out, cap
+
+    def test_a_capture_that_redirected_onto_an_excluded_host_cannot_restamp_web(self, tmp_path):
+        """Parity with the barrier's capture-redirect check: the bib URL and
+        blob web_url are allowed, but the capture's final_url betrays a
+        redirect onto SEP -- a redirector must not smuggle excluded-host
+        content past the restamp any more than past the barrier."""
+        a = ('@misc{weba,\n  author = {Omohundro, Steve},\n'
+             '  title = {The Basic AI Drives},\n  year = {2008},\n'
+             '  url = {https://a.example/x},\n'
+             '  web_span = {acquire steel manipulators and energy resources for itself},\n'
+             '  keywords = {ai, High, EVIDENCE-WEB}\n}\n')
+        att = {**self.NO_ATT, "web_gate_passed": True,
+               "web_url": "https://a.example/x"}
+        cap = dict(self._CAPTURE,
+                   final_url="https://plato.stanford.edu/entries/agency/")
+        out = self._run_cli_with_captures(
+            tmp_path, a, "", {"weba": att}, {}, {"weba": cap})
+        assert "EVIDENCE-WEB" not in out
+        assert "EVIDENCE-NONE" in out
+
+    def test_a_merged_entry_whose_spans_match_the_capture_keeps_web(self, tmp_path):
+        """Positive control for the capture re-check: when the merged spans
+        really occur in the attesting contributor's capture, the re-stamp must
+        not demote -- an over-eager implementation that demotes whenever a
+        merge happened would fail here."""
+        a = ('@misc{weba,\n  author = {Omohundro, Steve},\n'
+             '  title = {The Basic AI Drives},\n  year = {2008},\n'
+             '  url = {https://a.example/x},\n'
+             '  web_span = {acquire steel manipulators and energy resources for itself},\n'
+             '  keywords = {ai, High, EVIDENCE-WEB}\n}\n')
+        b = ('@misc{webb,\n  author = {Omohundro, Steve},\n'
+             '  title = {The Basic AI Drives},\n  year = {2008},\n'
+             '  url = {https://a.example/x},\n'
+             '  howpublished = {Self-archived manuscript},\n'
+             '  note = {CORE ARGUMENT: drives.},\n'
+             '  keywords = {ai, Medium, EVIDENCE-WEB}\n}\n')
+        att = {**self.NO_ATT, "web_gate_passed": True,
+               "web_url": "https://a.example/x"}
+        out = self._run_cli_with_captures(
+            tmp_path, a, b, {"weba": att}, {}, {"weba": self._CAPTURE})
+        assert "acquire steel manipulators" in out  # A won; its span survives
+        assert "EVIDENCE-WEB" in out
+        assert "EVIDENCE-NONE" not in out
+
     def test_context_survives_merge_and_tier_via_loser_attestation(self, tmp_path):
         # A's key carries sep_context + a value-bound context attestation;
         # B's duplicate (different key, same title/year/author) wins on

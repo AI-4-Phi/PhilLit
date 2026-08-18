@@ -478,8 +478,9 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_we
 Then **read the captured text and write CORE ARGUMENT from it**, and copy one
 or two verbatim runs of 6–40 words into `web_span` (separate two with ` || `).
 The barrier checks that every span really occurs in the capture, so **copy,
-never paraphrase** — spans are matched ignoring case, spacing and LaTeX
-escapes, but nothing else. Handles PDFs as well as HTML.
+never paraphrase** — spans are matched ignoring case, spacing, LaTeX
+escapes and Unicode compatibility forms (ligatures, full-width letters),
+but nothing else. Handles PDFs as well as HTML.
 
 **The whole note is held to the capture, not just the spans.** For a
 gate-passed web source — and only there — the writer is licensed to
