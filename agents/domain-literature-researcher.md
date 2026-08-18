@@ -392,6 +392,20 @@ bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_we
     --stdin --url "https://example.com/path" --citekey authorYYYYkeyword --review-dir "$REVIEW_DIR"
 ```
 
+**Encyclopedia and index hosts are refused** — `fetch_web.py` will not
+capture `plato.stanford.edu` (or its mirrors), `iep.utm.edu`, `ndpr.nd.edu`,
+or `philpapers.org`, whether fetching or via `--stdin`, and the barrier never
+grants them `EVIDENCE-WEB`. What to do instead:
+
+- **SEP/IEP**: cite the encyclopedia entry itself (Stage 1) — context is
+  attached mechanically by the orchestrator, so do NOT create a `@misc` web
+  source for an encyclopedia page.
+- **NDPR**: reviews feed `@book` abstracts (the enrichment step runs
+  `fetch_ndpr.py`); a review page is not a web-capture source.
+- **PhilPapers**: a record page indexes a work — cite the work itself
+  (verify it and resolve its abstract through the API channel), never the
+  record page.
+
 **Cautions**:
 - ⚠️ Web sources are less authoritative than peer-reviewed literature
 - ⚠️ Mark web sources clearly with `web-source` keyword tag
