@@ -21,6 +21,14 @@ Use this skill when:
 
 ## Search Workflow
 
+> **Batching:** when you have several searches, run them in ONE shell
+> call — `&` + `wait` between scripts hitting DIFFERENT APIs, plain
+> sequential lines between calls to the SAME API (its shared rate limiter
+> would serialize them anyway, and the limiter's file lock is Unix-only,
+> so same-API parallelism buys nothing and can race on Windows). Give each
+> `--output`, and finish with `grep -m1 '"status"' <files>` — full results
+> land in files, one short attributed status line each lands on screen.
+
 ### Phase 1: SEP & IEP (Most Authoritative)
 
 ```bash
