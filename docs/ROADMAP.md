@@ -6,7 +6,7 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.4.5**, 2026-08-18. Check
+Last release: **plugin v0.4.6**, 2026-08-19. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
