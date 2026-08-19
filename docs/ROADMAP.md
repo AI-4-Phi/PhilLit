@@ -25,11 +25,11 @@ sequence has gaps. Refer to items by name.)
 Everything else in this file is a recorded residual, not work.
 
 **Cross-repo, needs a phillit-service session** (not doable from here): move
-the service's re-vendor pin to the current tip. That single move picks up the
+the service's re-vendor pin to `888a827` or later. That single move picks up the
 web-source evidence item's encyclopedia-host exclusion (v0.4.3), researcher
 search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5) and
-the conference-venue provenance fix, and it retires the service's interim
-researcher-prose carve-out for the excluded hosts. The cross-repo rule —
+the conference-venue provenance fix (v0.4.6), and it retires the service's
+interim researcher-prose carve-out for the excluded hosts. The cross-repo rule —
 scripted re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
 phillit-service".
 
