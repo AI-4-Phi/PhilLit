@@ -15,9 +15,12 @@ here; a stale claim about that has been written into this file twice.
 Two items are queued, in this order:
 
 1. **Venue-name recall for subtitled journals** — measure the true failure
-   fraction, then decide. Item 6 below.
-2. **LaTeX accents key one title two ways** — its own decision session. Item 8
-   below.
+   fraction, then decide.
+2. **LaTeX accents key one title two ways** — its own decision session.
+
+Both have their own section below, under those names. (Section numbers in this
+file are historical: numbers are never reused once an item ships, so the
+sequence has gaps. Refer to items by name.)
 
 Everything else in this file is a recorded residual, not work.
 
@@ -117,8 +120,8 @@ Problem statements and measurements:
 `author-year-collision.md`.
 
 Sub-item F's (Chicago a/b disambiguation) live run and all five of its riders
-are done; the only defect it surfaced that is still open is item 6, venue-name
-recall. Record of the run and the rider results:
+are done; the only defect it surfaced that is still open is venue-name recall
+for subtitled journals. Record of the run and the rider results:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
 
