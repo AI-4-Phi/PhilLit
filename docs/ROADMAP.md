@@ -125,7 +125,8 @@ for subtitled journals. Record of the run and the rider results:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
 
-A rendering residual from item 2's live acceptance run (2026-08-15), accepted
+A rendering residual from the web-source evidence item's live acceptance run
+(2026-08-15), accepted
 with reasons: **a half-cited suffix group leaves a dangling Chicago letter** —
 the run's review cites "Thornley (2025b)" with no 2025a anywhere in the
 document, because letters are assigned over the full bib before writing and
