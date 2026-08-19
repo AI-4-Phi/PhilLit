@@ -113,15 +113,13 @@ class TestVenueKeyBounds:
             "oxford studies in political philosophy volume 5"
 
     def test_volume_number_survives_inside_a_proceedings_name(self):
-        """The volume guard, not the proceedings gate, has to do the work here.
-
-        A name that reads as proceedings opens the aggressive strips, so the
-        trailing number is only saved by the volume-word check inside them.
-        """
+        """Different volumes of one proceedings series stay different keys."""
         five = venue_key("Proceedings of the Aristotelian Society Volume 5")
         eight = venue_key("Proceedings of the Aristotelian Society Volume 8")
         assert five != eight
-        assert five == "aristotelian society volume 5"
+        # "Proceedings of the" is this venue's actual name, not decoration:
+        # nothing after it names a series, so the prefix is kept.
+        assert five == "proceedings of the aristotelian society volume 5"
 
     def test_volume_numbered_book_series_never_opens_the_strips(self):
         """A volume number must not be mistaken for a conference series number.
@@ -154,6 +152,54 @@ class TestVenueKeyBounds:
         assert venue_key(None) == ""
 
 
+class TestNoTokenIsItsOwnLicence:
+    """External review of the first draft (kimi-k3 and GLM-5.2, 2026-08-19)
+    found three false-merge classes, all with one cause: a token was allowed to
+    license its own removal. Each case below fails against that first draft."""
+
+    @pytest.mark.parametrize("left,right", [
+        # A bare trailing number opened the strips, which then deleted it --
+        # so a journal name with a volume glued on folded onto the bare name of
+        # a DIFFERENT journal.
+        ("Advances in Applied Energy 12", "Applied Energy 34"),
+        ("Advances in Applied Energy 12", "Applied Energy"),
+        ("Advances in Experimental Social Psychology 45",
+         "Experimental Social Psychology"),
+        # "congress" occurs inside an institution name, so a conference word
+        # anywhere was enough to strip a real volume number.
+        ("Library of Congress Quarterly 7", "Library of Congress Quarterly"),
+        # A fabricated "Proceedings of the ..." wrapper around a real journal
+        # verified against that journal. This is a plausible invention shape:
+        # the model knows the work is proceedings-like and wraps a journal it
+        # has seen.
+        ("Proceedings of the Journal of Philosophy", "Journal of Philosophy"),
+        ("Proceedings of the Mind", "Mind"),
+        ("Proceedings of the Ethics", "Ethics"),
+    ])
+    def test_distinct_venues_stay_distinct(self, left, right):
+        assert venue_key(left) != venue_key(right)
+
+    def test_real_proceedings_named_venue_keeps_its_prefix(self):
+        """The flip side: when nothing after "Proceedings of" names a series,
+        the phrase is the venue's own name and must survive."""
+        assert venue_key("Proceedings of the Aristotelian Society") == \
+            "proceedings of the aristotelian society"
+
+    def test_prefix_still_folds_when_a_series_follows_it(self):
+        """...but it IS decoration when what follows is itself named a series."""
+        assert venue_key("Proceedings of the International Joint Conference on"
+                         " Artificial Intelligence") == \
+            venue_key("International Joint Conference on Artificial Intelligence")
+
+    def test_known_series_without_a_conference_word_still_folds(self):
+        """NeurIPS carries no conference word, so only the known-series list
+        distinguishes it from "Advances in <journal> <volume>"."""
+        assert venue_key("Advances in Neural Information Processing Systems 30") \
+            == venue_key("Neural Information Processing Systems")
+        # ...and the lookalike shape must NOT fold.
+        assert venue_key("Advances in Applied Energy 30") != venue_key("Applied Energy")
+
+
 # =============================================================================
 # The cleaner honours the fold
 # =============================================================================
@@ -169,7 +215,7 @@ def _s2_conference_json(title, venue, pages, doi=None):
     }
 
 
-class TestClearnerAcceptsExpandedVenue:
+class TestCleanerAcceptsExpandedVenue:
 
     def test_index_verifies_expanded_conference_name(self, tmp_path):
         jd = tmp_path / "json"
@@ -359,3 +405,38 @@ class TestOpenAlexProducerEmitsBiblio:
         assert rec["volume"] == "129"
         assert rec["publisher"] == "Oxford University Press"
         assert rec["container_title"] == "Mind"
+
+
+class TestRemainingGuards:
+    """Guards whose mutants survived the first pass — each now pinned."""
+
+    def test_volume_number_survives_after_a_prefix_was_stripped(self):
+        """Once a prefix is removed the string is a known series instance, which
+        licenses removing a trailing number. A VOLUME number must still be
+        exempt: it identifies the book rather than the instance."""
+        key = venue_key("Proceedings of the 5th International Conference on"
+                        " Ethics Volume 2")
+        assert key.endswith("volume 2"), key
+        assert key != venue_key("Proceedings of the 5th International Conference"
+                                " on Ethics Volume 3")
+
+    def test_unhyphenated_ordinal_in_a_name_is_not_stripped(self):
+        """GLM-5.2 raised this: "Eighteenth Century Life" without the hyphen
+        would lose its head if a leading ordinal were stripped unlicensed.
+        Nothing here names a conference, so no ordinal strip may fire."""
+        assert venue_key("Eighteenth Century Life") == "eighteenth century life"
+        assert venue_key("Eighteenth Century Life") != venue_key("Century Life")
+
+    def test_lone_last_page_is_not_a_page_value(self):
+        """kimi-k3 raised this: OpenAlex emits last_page-only records where an
+        article number was mis-parsed, and treating it as a page would let a
+        bibliography verify a page the source never attested."""
+        rec = parse_openalex_result(
+            {"results": [{"title": "T", "source": {"name": "Mind"},
+                          "biblio": {"last_page": "432"}}]}, "oa.json")[0]
+        assert rec["pages"] is None
+        # first_page alone remains a real single-page citation.
+        rec2 = parse_openalex_result(
+            {"results": [{"title": "T", "source": {"name": "Mind"},
+                          "biblio": {"first_page": "7"}}]}, "oa.json")[0]
+        assert rec2["pages"] == "7"

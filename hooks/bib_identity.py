@@ -101,8 +101,18 @@ _CONF_WORD = re.compile(r"\b(conference|proceedings|symposium|workshop|congress|
 _VOL_NUM = re.compile(r"\b(vol\.?|volume|part|pt\.?|no\.?|issue|number)[\s,]+\d{1,3}$")
 
 
+_KNOWN_SERIES = frozenset({
+    # Conference series whose names contain no conference word, so nothing in
+    # the string itself says "this is a proceedings volume". Without an entry
+    # here, "Advances in Neural Information Processing Systems 30" cannot be
+    # told apart from "Advances in Applied Energy 12" -- a journal name with a
+    # volume glued on, which must NOT fold onto "Applied Energy".
+    "neural information processing systems",
+})
+
+
 def venue_key(name: str) -> str:
-    """Looser-than-identity key for verifying a venue name against API output.
+    r"""Looser-than-identity key for verifying a venue name against API output.
 
     Folds the citation-form variance of conference proceedings onto the
     canonical series name, so a bibliography's expanded form verifies against
@@ -113,53 +123,113 @@ def venue_key(name: str) -> str:
         "Advances in Neural Information
          Processing Systems 30 (NeurIPS 2017)" -> "neural information processing systems"
 
-    Two bounds are deliberate, both chosen against losing the venue entirely:
+    THE GOVERNING RULE: **no token may be its own licence.** Every strip needs
+    evidence independent of the text it removes. A bare trailing number does not
+    license removing itself, and does not license removing a prefix -- otherwise
+    "Advances in Applied Energy 12" folds onto "Applied Energy" (two different
+    Elsevier journals) and "Library of Congress Quarterly 7" folds onto its own
+    unnumbered form. Both were found by external review of the first draft,
+    which gated the strips on the number's mere presence.
 
-    * **The series is verified, the instance is not.** Ordinals and instance
-      years are stripped, so a fabricated "41st ICML" verifies against a record
-      that says ICML. The alternative - deleting `booktitle` - loses the venue
-      from the reference altogether, which is the worse error. The year field is
-      separately verified and corrected.
-    * **A trailing parenthetical is treated as a qualifier, not identity.** This
-      is what folds "Criminology (Beverly Hills)" onto "Criminology". It also
-      folds distinct institutional repositories that differ only in their
-      parenthetical ("Scholar Commons (Santa Clara University)" vs "(University
-      of South Carolina)"). Repository names are not citable venues and the
-      direction is fewer deletions, so this is accepted.
+    Concretely:
+
+    * "Proceedings of X" is decoration only when X is *itself* named as a
+      series -- it carries a conference word, an instance marker, or is a
+      known series. Otherwise the phrase belongs to the venue's own name
+      ("Proceedings of the Aristotelian Society") or is a fabricated wrapper
+      around a real journal ("Proceedings of the Journal of Philosophy"), and
+      folding it would let that fabrication verify.
+    * "Advances in X" likewise, and because such series often carry no
+      conference word, this is where `_KNOWN_SERIES` earns its keep.
+    * A trailing series number is removed only once some prefix or ordinal has
+      already been removed, i.e. only once the string is known to be an
+      instance of a series.
+
+    Three bounds are deliberate, each chosen against losing the venue entirely:
+
+    1. **The series is verified, the instance is not.** Ordinals and instance
+       years are stripped, so a fabricated "41st ICML" verifies against a record
+       that says ICML. Deleting `booktitle` instead loses the venue from the
+       reference, which is the worse error; the year field is separately
+       verified and corrected.
+    2. **A trailing parenthetical is a qualifier, not identity.** This folds
+       "Criminology (Beverly Hills)" onto "Criminology" -- 100 such pairs in the
+       corpus, all the same journal. It also folds distinctions someone might
+       mean to keep ("Journal of X (Print)" vs "(Online)"), folds institutional
+       repositories differing only in their parenthetical, and lets an invented
+       parenthetical ("Journal of Philosophy (Special Issue on ...)") ride along
+       on a verified journal name. Accepted: the direction is fewer deletions,
+       and the qualifier text is never rewritten into the bibliography.
+    3. **Instance numbers above 999 are not recognised** (`\d{1,3}`), so a
+       four-digit series number survives where a three-digit one is stripped.
 
     Measured over the 46-corpus comparison surface (16,906 raw venue strings
-    from bibliographies and API records): 15,644 distinct normalized forms fold
-    to 15,078 keys across 365 groups, and no group merges two genuinely
-    different journals.
+    from bibliographies and API records, 15,644 distinct normalized forms):
+    every multi-member fold group was inspected and none merges two different
+    journals. That is a property of THIS corpus, not a proof about the function
+    -- the bounds above are the parts known to be loose.
     """
     s = normalize_journal(name or "")
     if not s:
         return ""
     # Always safe, whatever the venue type: a trailing parenthetical is a
-    # disambiguating qualifier (acronym, city, "print"), and a leading 4-digit
-    # year is an edition marker. No journal's identity rests on either.
+    # disambiguating qualifier and a leading 4-digit year is an edition marker.
+    # (The loop matters: only the innermost trailing group matches at a time.)
     prev = None
     while prev != s:
         prev = s
         s = _TRAIL_PARENS.sub("", s).strip()
     s = _LEAD_YEAR.sub("", s).strip()
 
-    # The aggressive strips fire only on proceedings evidence. Ungated, "Advances
-    # in Applied Energy" folds onto "Applied Energy" - two different Elsevier
-    # journals, both observed in the corpus.
-    series_num = bool(_TRAIL_NUM.search(s)) and not _VOL_NUM.search(s)
-    if _LEAD_PROC.match(s) or _CONF_WORD.search(s) or series_num:
-        for _ in range(3):
-            before = s
-            s = _LEAD_PROC.sub("", s).strip()
-            s = _LEAD_ADV.sub("", s).strip()
-            s = _LEAD_ORD.sub("", s).strip()
-            s = _LEAD_YEAR.sub("", s).strip()
-            if s == before:
-                break
-        if not _VOL_NUM.search(s):
-            s = _TRAIL_NUM.sub("", s).strip()
+    def _series_like(rest: str) -> bool:
+        """Does what follows a prefix name a series in its own right?
+
+        A trailing instance number is ignored, and can be removed
+        unconditionally here: neither a conference word nor a known-series name
+        can be created or destroyed by dropping a run of digits, so the
+        volume-vs-series distinction that matters elsewhere is irrelevant.
+        """
+        bare = _TRAIL_NUM.sub("", rest).strip()
+        return bool(_CONF_WORD.search(bare)) or bare in _KNOWN_SERIES
+
+    # `instance_evidence` records that this string has been shown to be one
+    # instance of a series, which is what later licenses the trailing number.
+    instance_evidence = False
+    changed = True
+    while changed:          # self-terminating: every branch shortens `s`
+        changed = False
+        m = _LEAD_PROC.match(s)
+        if m:
+            rest = s[m.end():].strip()
+            if (_LEAD_ORD.match(rest) or _LEAD_YEAR.match(rest)
+                    or _series_like(rest)):
+                s, changed, instance_evidence = rest, True, True
+                continue
+        m = _LEAD_ADV.match(s)
+        if m:
+            rest = s[m.end():].strip()
+            if _series_like(rest):
+                s, changed, instance_evidence = rest, True, True
+                continue
+        if instance_evidence or _CONF_WORD.search(s) or _bare_series(s):
+            for pattern in (_LEAD_ORD, _LEAD_YEAR):
+                m = pattern.match(s)
+                if m:
+                    s, changed, instance_evidence = s[m.end():].strip(), True, True
+                    break
+            if changed:
+                continue
+
+    if instance_evidence and not _VOL_NUM.search(s):
+        s = _TRAIL_NUM.sub("", s).strip()
     return " ".join(s.split())
+
+
+def _bare_series(s: str) -> bool:
+    """Is this a known series, with or without a trailing instance number?"""
+    if s in _KNOWN_SERIES:
+        return True
+    return _TRAIL_NUM.sub("", s).strip() in _KNOWN_SERIES
 
 
 def normalize_doi(doi: str) -> str:
