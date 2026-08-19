@@ -65,6 +65,103 @@ def normalize_journal(name: str) -> str:
     return " ".join(normalized.split())
 
 
+# --- Venue comparison key -----------------------------------------------------
+# A conference is named one way by the APIs ("International Conference on Machine
+# Learning") and another way in a bibliography ("Proceedings of the 34th
+# International Conference on Machine Learning (ICML 2017)"). Both are correct.
+# Comparing the two with normalize_journal alone reports a mismatch, and the
+# metadata cleaner then deletes `booktitle` - which is @inproceedings' required
+# field, so the entry is demoted to @misc and the reference loses its venue.
+# Measured over the delivered corpus: 30 of 43 demotions were @inproceedings,
+# and `booktitle` was the most-removed field.
+#
+# venue_key strips the decoration that distinguishes those two forms. It is a
+# VERIFICATION key, deliberately looser than normalize_journal, and is never
+# used for dedup identity.
+
+_ORD_WORD = (r"first|second|third|fourth|fifth|sixth|seventh|eighth|ninth|tenth|"
+             r"eleventh|twelfth|thirteenth|fourteenth|fifteenth|sixteenth|"
+             r"seventeenth|eighteenth|nineteenth|twentieth|thirtieth|fortieth|"
+             r"fiftieth|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety")
+_TRAIL_PARENS = re.compile(r"\s*\([^()]*\)\s*$")
+_LEAD_YEAR = re.compile(r"^(19|20)\d{2}\s+")
+_TRAIL_NUM = re.compile(r"[\s,]+\d{1,3}$")
+_LEAD_PROC = re.compile(r"^(proceedings|proc\.?)\s+of\s+(the\s+)?")
+_LEAD_ADV = re.compile(r"^advances\s+in\s+")
+# An ordinal only counts as decoration when it is a WHOLE token. Hyphen-joined it
+# is part of the name: "Eighteenth-Century Life" is a journal, and stripping its
+# ordinal yields the nonsense key "-century life" (observed while measuring).
+_LEAD_ORD = re.compile(
+    r"^(\d+(st|nd|rd|th)|(" + _ORD_WORD + r")(-(" + _ORD_WORD + r"))?)\s+")
+_CONF_WORD = re.compile(r"\b(conference|proceedings|symposium|workshop|congress|"
+                        r"annual meeting|colloquium)\b")
+# A trailing number introduced by a volume word IDENTIFIES the book rather than
+# decorating a series: "Oxford Studies in Political Philosophy Volume 5" and
+# "... Volume 8" are different books, both present in the corpus.
+_VOL_NUM = re.compile(r"\b(vol\.?|volume|part|pt\.?|no\.?|issue|number)[\s,]+\d{1,3}$")
+
+
+def venue_key(name: str) -> str:
+    """Looser-than-identity key for verifying a venue name against API output.
+
+    Folds the citation-form variance of conference proceedings onto the
+    canonical series name, so a bibliography's expanded form verifies against
+    the short form an API reports:
+
+        "Proceedings of the 34th International Conference on Machine Learning
+         (ICML 2017)"                    -> "international conference on machine learning"
+        "Advances in Neural Information
+         Processing Systems 30 (NeurIPS 2017)" -> "neural information processing systems"
+
+    Two bounds are deliberate, both chosen against losing the venue entirely:
+
+    * **The series is verified, the instance is not.** Ordinals and instance
+      years are stripped, so a fabricated "41st ICML" verifies against a record
+      that says ICML. The alternative - deleting `booktitle` - loses the venue
+      from the reference altogether, which is the worse error. The year field is
+      separately verified and corrected.
+    * **A trailing parenthetical is treated as a qualifier, not identity.** This
+      is what folds "Criminology (Beverly Hills)" onto "Criminology". It also
+      folds distinct institutional repositories that differ only in their
+      parenthetical ("Scholar Commons (Santa Clara University)" vs "(University
+      of South Carolina)"). Repository names are not citable venues and the
+      direction is fewer deletions, so this is accepted.
+
+    Measured over the 46-corpus comparison surface (16,906 raw venue strings
+    from bibliographies and API records): 15,644 distinct normalized forms fold
+    to 15,078 keys across 365 groups, and no group merges two genuinely
+    different journals.
+    """
+    s = normalize_journal(name or "")
+    if not s:
+        return ""
+    # Always safe, whatever the venue type: a trailing parenthetical is a
+    # disambiguating qualifier (acronym, city, "print"), and a leading 4-digit
+    # year is an edition marker. No journal's identity rests on either.
+    prev = None
+    while prev != s:
+        prev = s
+        s = _TRAIL_PARENS.sub("", s).strip()
+    s = _LEAD_YEAR.sub("", s).strip()
+
+    # The aggressive strips fire only on proceedings evidence. Ungated, "Advances
+    # in Applied Energy" folds onto "Applied Energy" - two different Elsevier
+    # journals, both observed in the corpus.
+    series_num = bool(_TRAIL_NUM.search(s)) and not _VOL_NUM.search(s)
+    if _LEAD_PROC.match(s) or _CONF_WORD.search(s) or series_num:
+        for _ in range(3):
+            before = s
+            s = _LEAD_PROC.sub("", s).strip()
+            s = _LEAD_ADV.sub("", s).strip()
+            s = _LEAD_ORD.sub("", s).strip()
+            s = _LEAD_YEAR.sub("", s).strip()
+            if s == before:
+                break
+        if not _VOL_NUM.search(s):
+            s = _TRAIL_NUM.sub("", s).strip()
+    return " ".join(s.split())
+
+
 def normalize_doi(doi: str) -> str:
     """Normalize DOI for comparison."""
     if not doi:

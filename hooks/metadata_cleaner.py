@@ -43,6 +43,7 @@ from bib_identity import (
     normalize_journal,
     normalize_pages,
     title_key,
+    venue_key,
     year_key,
 )
 
@@ -124,6 +125,12 @@ REQUIRED_FIELDS = {
 class MetadataIndex:
     """Index of all metadata values from JSON files."""
     journals: dict = field(default_factory=dict)
+    # Same container titles as `journals`, keyed by the looser venue_key so a
+    # bibliography's expanded conference name verifies against the canonical
+    # series name an API reports. Kept as a SEPARATE bucket rather than
+    # re-keying `journals`: exact-name verification must stay available and
+    # unchanged, and the loose key is only ever a fallback.
+    venues: dict = field(default_factory=dict)
     volumes: dict = field(default_factory=dict)
     issues: dict = field(default_factory=dict)
     pages: dict = field(default_factory=dict)
@@ -381,19 +388,40 @@ def parse_s2_result(data: dict, source_file: str) -> list[dict]:
     return entries
 
 
+def _openalex_pages(biblio: dict) -> Optional[str]:
+    """OpenAlex reports first_page/last_page separately; the index stores a range."""
+    first = str(biblio.get("first_page") or "").strip()
+    last = str(biblio.get("last_page") or "").strip()
+    if first and last:
+        return first if first == last else f"{first}-{last}"
+    return first or last or None
+
+
 def parse_openalex_result(data: dict, source_file: str) -> list[dict]:
-    """Parse OpenAlex JSON format."""
+    """Parse OpenAlex JSON format.
+
+    `biblio` (volume/issue/first_page/last_page) and the source's publisher are
+    read through rather than hardcoded to None. Hardcoding them DISCARDED
+    evidence OpenAlex supplies, so a page range or volume the bibliography got
+    right had to be re-verified by some other source or be deleted - the same
+    trap the CORE parser's comment warns about. Older result files that predate
+    the producer emitting `biblio` simply carry nothing here, which is the old
+    behaviour.
+    """
     results = data.get("results", [])
     entries = []
     for item in results:
         source = item.get("source") or {}
+        biblio = item.get("biblio") or {}
+        if not isinstance(biblio, dict):
+            biblio = {}
         entries.append({
             "title": item.get("title"),
             "container_title": source.get("name"),
-            "volume": None,
-            "issue": None,
-            "pages": None,
-            "publisher": None,
+            "volume": str(biblio["volume"]).strip() if biblio.get("volume") else None,
+            "issue": str(biblio["issue"]).strip() if biblio.get("issue") else None,
+            "pages": _openalex_pages(biblio),
+            "publisher": source.get("publisher") or None,
             "year": item.get("publication_year"),
             "doi": item.get("doi"),
         })
@@ -624,7 +652,8 @@ def _merge_index(dst: MetadataIndex, src: MetadataIndex) -> None:
     lists accumulate in the order files are read, and `dois` keeps its
     last-writer-wins behaviour."""
     dst.entries.extend(src.entries)
-    for bucket in ("journals", "volumes", "issues", "pages", "publishers", "years"):
+    for bucket in ("journals", "venues", "volumes", "issues", "pages",
+                   "publishers", "years"):
         target, source = getattr(dst, bucket), getattr(src, bucket)
         for key, values in source.items():
             target.setdefault(key, []).extend(values)
@@ -699,6 +728,11 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
             if norm not in index.journals:
                 index.journals[norm] = []
             index.journals[norm].append(entry["container_title"])
+            vkey = venue_key(entry["container_title"])
+            if vkey:
+                if vkey not in index.venues:
+                    index.venues[vkey] = []
+                index.venues[vkey].append(entry["container_title"])
 
         if entry.get("volume"):
             vol = str(entry["volume"]).strip()
@@ -738,8 +772,12 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
 def is_field_verifiable(field_name: str, value: str, index: MetadataIndex) -> bool:
     """Check if a field value can be verified against the metadata index."""
     if field_name in ('journal', 'booktitle'):
-        norm = normalize_journal(value)
-        return norm in index.journals
+        if normalize_journal(value) in index.journals:
+            return True
+        # Fallback: the same venue named in a different citation form. See
+        # bib_identity.venue_key for the folds and their measured bounds.
+        vkey = venue_key(value)
+        return bool(vkey) and vkey in index.venues
 
     elif field_name == 'volume':
         return str(value).strip() in index.volumes
@@ -909,6 +947,10 @@ def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
     """Does this cleanable field's value match the entry's OWN matched API
     record (normalized)? Empty API values never match (can't confirm)."""
     if field_lower in ('journal', 'booktitle'):
+        api_container = api_entry.get('container_title') or ''
+        vkey, api_vkey = venue_key(value), venue_key(api_container)
+        if vkey and vkey == api_vkey:
+            return True
         nv = normalize_journal(value)
         return bool(nv) and nv == normalize_journal(api_entry.get('container_title') or '')
     if field_lower == 'volume':

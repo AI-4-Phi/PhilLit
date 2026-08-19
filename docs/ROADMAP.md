@@ -12,21 +12,23 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-No build is queued. Researcher search batching SHIPPED 2026-08-18 as
-plugin v0.4.4 — merged from the preserved branch on Johannes's decision
-after a final kimi-k3 + gpt-5.6-sol whole-branch review round (record:
-`.superpowers/sdd/2026-08-17-researcher-search-batching/progress.md`,
-local-only). The recorded-findings walkthrough also ran 2026-08-18:
-Johannes accepted every recommendation, and the accepted fixes (charset
-decoding, restamp capture re-check, the abstract-bearing-@misc report
-bucket, two prose corrections) shipped as v0.4.5 — the remaining decisions
-are recorded in place below. Next: a phillit-service session moves the
-re-vendor pin past the v0.4.5 tip, which picks up item 2's
-encyclopedia-host exclusion (v0.4.3), the batching merge (v0.4.4), and the
-walkthrough fixes (v0.4.5), and retires the service's interim
+Two items are queued, in this order:
+
+1. **Venue-name recall for subtitled journals** — measure the true failure
+   fraction, then decide. Item 6 below.
+2. **LaTeX accents key one title two ways** — its own decision session. Item 8
+   below.
+
+Everything else in this file is a recorded residual, not work.
+
+**Cross-repo, needs a phillit-service session** (not doable from here): move
+the service's re-vendor pin to the current tip. That single move picks up the
+web-source evidence item's encyclopedia-host exclusion (v0.4.3), researcher
+search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5) and
+the conference-venue provenance fix, and it retires the service's interim
 researcher-prose carve-out for the excluded hosts. The cross-repo rule —
-scripted re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister
-repo: phillit-service".
+scripted re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
+phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -184,13 +186,8 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
 Landed 2026-08-03; the single-owner rule is recorded in `CLAUDE.md`. Three
 things stay open:
 
-- **LaTeX-escape residue — needs its own decision, not a drive-by.**
-  `generate_bibliography` decodes LaTeX before keying while `dedupe_bib` reads
-  pybtex fields raw, so an escaped-accent title keys differently in the two.
-  Closing it means either teaching `title_key` to decode LaTeX — which changes
-  `metadata_cleaner`'s API-vs-bib title matching, the surface behind the
-  year-corruption incident — or normalizing the inputs at one of the two call
-  sites.
+- The LaTeX-escape divergence is promoted to its own item below, "LaTeX accents
+  key one title two ways".
 - A non-numeric or bracketed year (`n.d.`, `[2021]`) still cannot match in the
   script-preserving haystack — ACCEPTED 2026-08-18 (never observed in
   practice).
@@ -198,7 +195,14 @@ things stay open:
   still takes the unchanged primary path — ACCEPTED 2026-08-18. Never
   observed in the corpus (0 of 8,494 first-author entries).
 
-## 6. Venue-name recall for subtitled journals — low priority, benign direction
+## 6. Venue-name recall for subtitled journals — QUEUED: measure first, then decide
+
+**Next step is a measurement, not a build** (Johannes, 2026-08-19). Settle the
+true failure fraction (~480 OpenAlex lookups, see below), then decide whether to
+fix, accept, or drop. Do not design a fix before the number exists — the
+incidence figure that looks alarming (5.5%) is an upper bound that includes
+colons which resolve perfectly well.
+
 
 `venue_vetting` resolves a bare venue name but not the subtitled form a bib may
 carry. Controlled test, 2026-08-07: "Res Publica" resolves, "Res Publica: A
@@ -217,10 +221,37 @@ name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitle
 fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
 Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
 
+## 8. LaTeX accents key one title two ways — QUEUED: needs its own decision session
+
+**Give this a session of its own** (Johannes, 2026-08-19). It is a decision
+first and a patch second, and it must not be picked up as a drive-by inside
+other bibliography work.
+
+`generate_bibliography` decodes LaTeX before it builds a title key, while
+`dedupe_bib` reads pybtex fields raw. So one title with an escaped accent
+(`Milli\`ere`, `No\^{u}s`) produces two different keys depending on which module
+is asking — the two modules can disagree about whether they are looking at the
+same work.
+
+Why it is a decision and not a patch: both available fixes move the code behind
+the year-corruption incident.
+
+- **Teach `title_key` to decode LaTeX.** One owner, one behaviour — but it
+  changes `metadata_cleaner`'s API-vs-bib title matching, which is precisely the
+  surface that mis-corrected years before. Any change here needs the same
+  corpus-scale before/after measurement that work got.
+- **Normalize the inputs at one of the two call sites.** Leaves `title_key`
+  untouched and the blast radius small, but re-introduces the two-owners
+  situation that `bib_identity` exists to end (see `CLAUDE.md`, single source of
+  truth).
+
+Scope note already recorded in `bib_identity.py`'s module docstring, which
+states the divergence is deliberate and unmeasured. **Measure the incidence
+first** — how many delivered entries actually carry an escaped accent in a
+title — because if it is near zero the right answer may be to accept and record.
+
 Other open items live in their own known-issue docs — see
-`docs/known-issues/` for anything whose Status line is still Open, e.g.
-`philpapers-rate-limiting.md` (re-scoped to Brave quota) and the local-only
-`workflow-findings-softmax-review.md` (findings 2 and 4, plus 3's residual).
+`docs/known-issues/` for anything whose Status line is still Open.
 
 The sibling filing (`engine-planner-recent-flag.md`, the planner prose naming
 a `--recent` flag `s2_search.py` does not have) was fixed here in the

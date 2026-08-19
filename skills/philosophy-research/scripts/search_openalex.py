@@ -164,7 +164,16 @@ def format_work(work: dict) -> dict:
             "name": source_info.get("display_name"),
             "type": source_info.get("type"),
             "issn": source_info.get("issn"),
+            # The publishing organization, so downstream consumers can verify a
+            # bibliography's `publisher` against OpenAlex rather than deleting it.
+            "publisher": source_info.get("host_organization_name"),
         }
+
+    # Extract volume/issue/pages (OpenAlex reports first_page/last_page apart)
+    biblio_raw = work.get("biblio") or {}
+    biblio = {k: biblio_raw.get(k) for k in
+              ("volume", "issue", "first_page", "last_page")
+              if biblio_raw.get(k)} if isinstance(biblio_raw, dict) else {}
 
     # Extract abstract
     abstract = None
@@ -188,6 +197,10 @@ def format_work(work: dict) -> dict:
         "cited_by_count": work.get("cited_by_count"),
         "type": work.get("type"),
         "source": source if source.get("name") else None,
+        # Volume / issue / page range. Emitted so the metadata cleaner can accept
+        # OpenAlex as provenance for these fields; without it OpenAlex verifies
+        # nothing beyond the venue name and correct page ranges get stripped.
+        "biblio": biblio or None,
         "open_access": {
             "is_oa": open_access.get("is_oa", False),
             "oa_status": open_access.get("oa_status"),

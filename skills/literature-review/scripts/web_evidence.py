@@ -130,9 +130,9 @@ def registered_domain(url: str) -> str:
 #   - NDPR reviews feed @book abstracts through fetch_ndpr.py.
 #   - A PhilPapers /rec/ page is an index ABOUT a work; the work itself is
 #     the citation, resolved through the abstract/API channel. This repo also
-#     never contacts philpapers.org directly anywhere else (search goes
-#     through Brave -- docs/known-issues/philpapers-rate-limiting.md);
-#     excluding it here keeps that true. philarchive.org, the OA archive on
+#     never contacts philpapers.org directly anywhere else -- search_philpapers.py
+#     goes through the Brave Search API, filtered to philpapers.org/rec/ --
+#     and excluding it here keeps that true. philarchive.org, the OA archive on
 #     its own domain, stays IN scope on purpose.
 # Matching is exact host or dot-subdomain, never bare suffix (see
 # excluded_host). Values are the hints fetch_web.py prints on refusal.
