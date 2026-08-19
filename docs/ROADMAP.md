@@ -22,9 +22,13 @@ Both have their own section below, under those names. (Section numbers in this
 file are historical: numbers are never reused once an item ships, so the
 sequence has gaps. Refer to items by name.)
 
+The phillit-service re-vendor comes after both — see the cross-repo note below.
+
 Everything else in this file is a recorded residual, not work.
 
-**Cross-repo, needs a phillit-service session** (not doable from here): move
+**Cross-repo, needs a phillit-service session — and Johannes wants it LAST**
+(decided 2026-08-19): re-vendor after both queued items above have landed, so
+the service takes one pin covering everything rather than a pin per item. Move
 the service's re-vendor pin to `888a827` or later. That single move picks up the
 web-source evidence item's encyclopedia-host exclusion (v0.4.3), researcher
 search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5) and

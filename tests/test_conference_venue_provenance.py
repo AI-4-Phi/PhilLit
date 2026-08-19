@@ -468,10 +468,11 @@ class TestConferenceWordInsideAProperNoun:
 
         The fix — requiring the conference word to head the phrase — was measured
         against the corpus and rejected: it strips 56 genuine conference series of
-        their fold to protect roughly eight journals of this shape, causing about
-        six times more `booktitle` deletion than it prevents. If this assertion
-        ever starts failing, someone has changed that trade; re-measure before
-        accepting the change.
+        their fold while protecting only 7 of the 9 journals of this shape it
+        targets, causing about eight times more `booktitle` deletion than it
+        prevents. If this assertion ever starts failing, someone has changed that
+        trade; re-measure first, with
+        `.superpowers/sdd/2026-08-19-conference-venue-provenance/measure-bound4-trade.py`.
         """
         assert venue_key(fabricated) == venue_key(real)
 

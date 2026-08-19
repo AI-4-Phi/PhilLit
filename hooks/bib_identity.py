@@ -178,10 +178,12 @@ def venue_key(name: str) -> str:
        Congress Quarterly" verifies against the real journal, because "congress"
        reads as conference evidence. Raised by external review; the obvious fix
        (requiring the conference word to head the phrase) was MEASURED against
-       the corpus and rejected -- it would strip 56 genuine conference series of
-       their fold to protect roughly eight journals with a conference word in
-       their names, i.e. it causes about six times more of the deletion this
-       whole function exists to prevent. Pinned by test, not left blind.
+       the corpus and rejected -- it strips 56 genuine conference series of their
+       fold while actually protecting only 7 of the 9 conference-worded journals
+       it targets, i.e. it causes about eight times more of the deletion this
+       whole function exists to prevent. Re-measure with
+       `.superpowers/sdd/2026-08-19-conference-venue-provenance/measure-bound4-trade.py`
+       before revisiting. Pinned by test, not left blind.
     5. **A series whose name carries no conference word does not fold** unless
        it is in `_KNOWN_SERIES`. "Proceedings of NAACL" (the short form) and
        similar therefore still lose `booktitle`. Accepted: admitting names
