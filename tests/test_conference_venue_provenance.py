@@ -440,3 +440,44 @@ class TestRemainingGuards:
             {"results": [{"title": "T", "source": {"name": "Mind"},
                           "biblio": {"first_page": "7"}}]}, "oa.json")[0]
         assert rec2["pages"] == "7"
+
+
+class TestConferenceWordInsideAProperNoun:
+    """Round-2 review (kimi-k3, GLM-5.2) found that every fabrication case above
+    picks a journal with NO conference word in its name, so none of them exercise
+    the path where `_CONF_WORD` matches a proper-noun component. These pin that
+    path — one side as a fixed defect, one side as a measured, accepted bound."""
+
+    def test_ordinal_does_not_license_removing_a_volume_number(self):
+        """FIXED. A conference word anywhere licenses the ordinal strip, but the
+        ordinal must not then license the trailing-number strip — otherwise
+        "congress" inside an institution name deletes a real volume number."""
+        assert venue_key("7th Library of Congress Quarterly 7") != \
+            venue_key("Library of Congress Quarterly")
+
+    @pytest.mark.parametrize("fabricated,real", [
+        ("Proceedings of the Library of Congress Quarterly",
+         "Library of Congress Quarterly"),
+        ("Proceedings of the Congress & the Presidency", "Congress & the Presidency"),
+        ("Proceedings of the History Workshop Journal", "History Workshop Journal"),
+    ])
+    def test_proceedings_wrapper_is_accepted_over_a_conference_worded_journal(
+            self, fabricated, real):
+        """ACCEPTED BOUND 4, pinned so it stays a known bound rather than a blind
+        spot. These SHOULD ideally differ, and they do not.
+
+        The fix — requiring the conference word to head the phrase — was measured
+        against the corpus and rejected: it strips 56 genuine conference series of
+        their fold to protect roughly eight journals of this shape, causing about
+        six times more `booktitle` deletion than it prevents. If this assertion
+        ever starts failing, someone has changed that trade; re-measure before
+        accepting the change.
+        """
+        assert venue_key(fabricated) == venue_key(real)
+
+    def test_the_bound_does_not_extend_to_journals_without_a_conference_word(self):
+        """The far more common shape stays protected."""
+        for fabricated, real in [("Proceedings of the Journal of Philosophy",
+                                  "Journal of Philosophy"),
+                                 ("Proceedings of the Mind", "Mind")]:
+            assert venue_key(fabricated) != venue_key(real)

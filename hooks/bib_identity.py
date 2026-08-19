@@ -101,9 +101,16 @@ _CONF_WORD = re.compile(r"\b(conference|proceedings|symposium|workshop|congress|
 _VOL_NUM = re.compile(r"\b(vol\.?|volume|part|pt\.?|no\.?|issue|number)[\s,]+\d{1,3}$")
 
 
+# ADMISSION RULE, read before adding anything: a series belongs here only if
+# (a) its canonical name contains no `_CONF_WORD` match -- ICLR, ACL and NAACL
+# all carry "Conference"/"Annual Meeting" in their full names and already fold
+# without help, so adding them turns this into a grab-bag -- and (b) it is
+# attested as a proceedings venue and NOT also as a journal name. Admitting a
+# journal name here would make "Advances in <that name> 12" fold onto the bare
+# name, which is exactly the false merge this list is shaped to avoid.
 _KNOWN_SERIES = frozenset({
-    # Conference series whose names contain no conference word, so nothing in
-    # the string itself says "this is a proceedings volume". Without an entry
+    # The rare series whose name carries no conference word at all, so nothing
+    # in the string itself says "this is a proceedings volume". Without an entry
     # here, "Advances in Neural Information Processing Systems 30" cannot be
     # told apart from "Advances in Applied Energy 12" -- a journal name with a
     # volume glued on, which must NOT fold onto "Applied Energy".
@@ -124,7 +131,10 @@ def venue_key(name: str) -> str:
          Processing Systems 30 (NeurIPS 2017)" -> "neural information processing systems"
 
     THE GOVERNING RULE: **no token may be its own licence.** Every strip needs
-    evidence independent of the text it removes. A bare trailing number does not
+    evidence independent of the text it removes. That is necessary but not
+    sufficient -- independent evidence can still be wrong, because a conference
+    word can be a component of a proper noun rather than the head of a series
+    name ("Library of Congress"). See bound 4. A bare trailing number does not
     license removing itself, and does not license removing a prefix -- otherwise
     "Advances in Applied Energy 12" folds onto "Applied Energy" (two different
     Elsevier journals) and "Library of Congress Quarterly 7" folds onto its own
@@ -147,11 +157,12 @@ def venue_key(name: str) -> str:
 
     Three bounds are deliberate, each chosen against losing the venue entirely:
 
-    1. **The series is verified, the instance is not.** Ordinals and instance
-       years are stripped, so a fabricated "41st ICML" verifies against a record
-       that says ICML. Deleting `booktitle` instead loses the venue from the
-       reference, which is the worse error; the year field is separately
-       verified and corrected.
+    1. **The series is verified, the instance is not.** Ordinals, instance years
+       and unlabelled part numbers are stripped, so a fabricated "41st ICML"
+       verifies against a record that says ICML, and part 2 of a multi-part
+       proceedings folds onto part 1. Deleting `booktitle` instead loses the
+       venue from the reference, which is the worse error; the year field is
+       separately verified and corrected.
     2. **A trailing parenthetical is a qualifier, not identity.** This folds
        "Criminology (Beverly Hills)" onto "Criminology" -- 100 such pairs in the
        corpus, all the same journal. It also folds distinctions someone might
@@ -162,6 +173,19 @@ def venue_key(name: str) -> str:
        and the qualifier text is never rewritten into the bibliography.
     3. **Instance numbers above 999 are not recognised** (`\d{1,3}`), so a
        four-digit series number survives where a three-digit one is stripped.
+    4. **A "Proceedings of X" wrapper is accepted when X's own name contains a
+       conference word.** So a fabricated "Proceedings of the Library of
+       Congress Quarterly" verifies against the real journal, because "congress"
+       reads as conference evidence. Raised by external review; the obvious fix
+       (requiring the conference word to head the phrase) was MEASURED against
+       the corpus and rejected -- it would strip 56 genuine conference series of
+       their fold to protect roughly eight journals with a conference word in
+       their names, i.e. it causes about six times more of the deletion this
+       whole function exists to prevent. Pinned by test, not left blind.
+    5. **A series whose name carries no conference word does not fold** unless
+       it is in `_KNOWN_SERIES`. "Proceedings of NAACL" (the short form) and
+       similar therefore still lose `booktitle`. Accepted: admitting names
+       loosely to this list reintroduces bound 4's failure in a worse form.
 
     Measured over the 46-corpus comparison surface (16,906 raw venue strings
     from bibliographies and API records, 15,644 distinct normalized forms):
@@ -185,9 +209,13 @@ def venue_key(name: str) -> str:
         """Does what follows a prefix name a series in its own right?
 
         A trailing instance number is ignored, and can be removed
-        unconditionally here: neither a conference word nor a known-series name
-        can be created or destroyed by dropping a run of digits, so the
-        volume-vs-series distinction that matters elsewhere is irrelevant.
+        unconditionally here: `_TRAIL_NUM` requires whitespace or a comma before
+        the digits, so dropping them can neither create nor destroy a word
+        match, and the volume-vs-series distinction that matters elsewhere
+        cannot change the answer.
+
+        This is a gate on the WORDS present, not a reliable series detector: a
+        conference word inside a proper noun passes it. See bound 4.
         """
         bare = _TRAIL_NUM.sub("", rest).strip()
         return bool(_CONF_WORD.search(bare)) or bare in _KNOWN_SERIES
@@ -215,7 +243,14 @@ def venue_key(name: str) -> str:
             for pattern in (_LEAD_ORD, _LEAD_YEAR):
                 m = pattern.match(s)
                 if m:
-                    s, changed, instance_evidence = s[m.end():].strip(), True, True
+                    # Deliberately does NOT set instance_evidence. This branch
+                    # can fire on a conference word appearing anywhere, and
+                    # "congress" occurs inside institution names ("Library of
+                    # Congress Quarterly"). Letting a leading ordinal license
+                    # the trailing-number strip would reopen the volume-number
+                    # merge through a second door; only a prefix strip, which
+                    # names the series explicitly, is strong enough evidence.
+                    s, changed = s[m.end():].strip(), True
                     break
             if changed:
                 continue

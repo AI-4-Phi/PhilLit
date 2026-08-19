@@ -394,10 +394,12 @@ def _openalex_pages(biblio: dict) -> Optional[str]:
     last = str(biblio.get("last_page") or "").strip()
     if first and last:
         return first if first == last else f"{first}-{last}"
-    # A lone last_page is NOT evidence of a page value: OpenAlex emits it for
-    # records whose article number was mis-parsed into that field, and treating
-    # it as a standalone page would let a bibliography verify a page the source
-    # never attested. first_page alone is a real single-page citation.
+    # A lone last_page is NOT evidence of a page value. A record that supplies
+    # only an end page has not attested a page range or a page, so accepting it
+    # would let a bibliography verify a page number the source never gave.
+    # (Why such records exist is not established here -- a mis-parsed article
+    # number is one suggested explanation, unverified.) first_page alone IS a
+    # real single-page citation and is kept.
     return first or None
 
 

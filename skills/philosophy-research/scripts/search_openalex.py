@@ -167,8 +167,8 @@ def format_work(work: dict) -> dict:
             # OpenAlex's host organization, carried as a PROXY for publisher so
             # a bibliography's `publisher` has something to verify against
             # rather than being deleted. It is not always the imprint: for
-            # repository sources it is the hosting institution, and for some
-            # journals an umbrella org. A mismatch therefore means "unconfirmed
+            # repository sources it is the hosting institution, and it may be a
+            # parent organization rather than the imprint. A mismatch means "unconfirmed
             # here", not "wrong". Absent when the work has no named source.
             "publisher": source_info.get("host_organization_name"),
         }
