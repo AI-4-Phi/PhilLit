@@ -89,6 +89,8 @@ You receive from the orchestrator prompt:
 - ❌ `(Human Rights Watch 2012, non-peer-reviewed)`
 - ✅ the non-peer-reviewed Human Rights Watch report `(Human Rights Watch 2012)`
 
+**When you name a work by its title, also cite it author-year in the same sentence** — "Heersmink (2016) frames the upshot in the title of 'The Internet, Cognitive Enhancement, and the Values of Cognition'" — a title mention alone is not a citation the reference builder can resolve for short titles.
+
 **Disambiguate same-surname authors with a first initial.** If two entries you
 cite share a first-author surname but are by *different people*, write the
 initial on every cite where the surname stands alone — even when the years
