@@ -1158,12 +1158,21 @@ def _title_mentions(prose: str, bib_data) -> dict:
        characters are asterisks, and `("Title")` abuts parentheses.
 
     Honest residual: this is an enumeration of shapes, not a closure
-    proof. A pathological mixture still evades both guards -- e.g. a short
-    failed span ending in punctuation (`*...*a theory of justice*however*`
-    abuts `.`, not a word character). What such a capture still has to
-    survive is the other three conjuncts: exact span equality with the
-    folded title, the >=4-folded-word floor, and the first author/editor
-    surname appearing as a token in the document.
+    proof. Guard 2 tests BOTH sides, so evading it needs the mis-capture to
+    be punctuation-abutted at both ends -- the failed short span must end
+    in punctuation AND the text after the closer must begin with it.
+    Measured: `*...*a theory of justice*however*` is CAUGHT (the closer
+    abuts `h`), while `*no.*a theory of justice*(however)*` still fires.
+    What such a capture has to survive is the other three conjuncts: exact
+    span equality with the folded title, the >=4-folded-word floor, and the
+    first author/editor surname appearing as a token in the document.
+
+    One accepted false rejection, in the safe direction: `\\w` counts `_`,
+    so an underscore-delimited emphasis wrapper (`_*A Theory of Justice*_`)
+    is read as word-abutted and dropped. It is not a form this pipeline's
+    writers emit -- format_entry renders titles with quotes and asterisks,
+    and the corpus mentions follow -- and narrowing the class to
+    `[^\\W_]` would loosen a net guard to buy back a shape nobody writes.
 
     Known limits, deliberate: a prose quote of the pre-colon main title
     only ("The Extended Mind" for "The Extended Mind: ...") does not
