@@ -2421,3 +2421,122 @@ class TestRecoveredNamesAreStrippedOfPossessives:
         got = generate_bibliography._unresolvable_mentions(
             "Clark's, Menary's, and Sutton's (2010) accounts differ.")
         assert [m["surname"] for m in got] == ["Clark", "Menary", "Sutton"]
+
+
+def test_title_key_possessive_folds_to_space():
+    """The surname conjunct tokenizes prose via title_key; a curly
+    possessive must fold to 'surname s', not 'surnames' -- five fixtures
+    below carry the surname ONLY as a possessive (the production shape)."""
+    from bib_identity import title_key
+    assert title_key("Heersmink’s") == "heersmink s"
+    assert title_key("Heersmink's") == "heersmink s"
+
+
+class TestTitleMentions:
+    """Item 10 (reference list omits title-only citations): a quoted/italic
+    span equal to a bib title, with the author's surname in the document,
+    is a citation-by-title. Measured over the 36 delivered reviews + the
+    production pair: with the >=4-word guard the net fires exactly twice,
+    both genuine References omissions (production heersmink2016internet;
+    corpus rawls1971theory). 0 false fires over 37 documents is a
+    rule-of-three upper bound of ~8%/document, not a proof -- the surname
+    conjunct exists to push the true rate further down."""
+
+    HEERSMINK_PROSE = (
+        'Heersmink’s "The Internet, Cognitive Enhancement, and the '
+        'Values of Cognition" (2016) frames the upshot in its title: '
+        'verdicts on offloading depend on which values are prioritized.'
+    )
+
+    def _heersmink_bib(self):
+        return _make_bib(("heersmink2016internet", _make_entry(
+            authors=["Heersmink, Richard"], year="2016",
+            title="The Internet, Cognitive Enhancement, and the Values of Cognition")))
+
+    def test_quoted_title_mention_fires(self):
+        m = generate_bibliography._title_mentions(
+            self.HEERSMINK_PROSE, self._heersmink_bib())
+        assert "heersmink2016internet" in m
+
+    def test_italicized_book_title_fires(self):
+        prose = ("Since John Rawls introduced the distinction between ideal "
+                 "and nonideal theory in *A Theory of Justice* (1971), the "
+                 "question has stayed contested.")
+        bib = _make_bib(("rawls1971theory", _make_entry(
+            entry_type="book", authors=["Rawls, John"], year="1971",
+            title="A Theory of Justice")))
+        assert "rawls1971theory" in generate_bibliography._title_mentions(prose, bib)
+
+    def test_bold_span_fires_like_italic(self):
+        """**Bold** captures its inner span between the doubled asterisks;
+        a bolded exact >=4-word title with the surname present reads as a
+        title mention -- pinned as intended behavior, not an accident."""
+        prose = ("Rawls changed the field. **A Theory of Justice** is where "
+                 "the ideal/nonideal distinction enters.")
+        bib = _make_bib(("rawls1971theory", _make_entry(
+            entry_type="book", authors=["Rawls, John"], year="1971",
+            title="A Theory of Justice")))
+        assert "rawls1971theory" in generate_bibliography._title_mentions(prose, bib)
+
+    def test_period_inside_closing_quote_still_matches(self):
+        """Chicago puts terminal punctuation INSIDE the quotes; title_key
+        folds punctuation, so the span still matches."""
+        prose = ('Heersmink wrote "The Internet, Cognitive Enhancement, '
+                 'and the Values of Cognition." It set the agenda.')
+        assert "heersmink2016internet" in generate_bibliography._title_mentions(
+            prose, self._heersmink_bib())
+
+    def test_short_title_term_of_art_does_not_fire(self):
+        """Two-word titles are indistinguishable from italicized terms of
+        art ('a failure mode termed *deceptive alignment*') -- measured
+        false fire, excluded by the >=4-word guard even though the
+        surname is present."""
+        prose = ("Hubinger warned early: a failure mode termed "
+                 "*deceptive alignment*.")
+        bib = _make_bib(("hubinger2019deceptive", _make_entry(
+            authors=["Hubinger, Evan"], year="2019", title="Deceptive Alignment")))
+        assert generate_bibliography._title_mentions(prose, bib) == {}
+
+    def test_scare_quoted_word_does_not_fire(self):
+        prose = 'Floridi asks: yet "data" remains a surprisingly elusive concept.'
+        bib = _make_bib(("floridi2014data", _make_entry(
+            authors=["Floridi, Luciano"], year="2014", title="Data")))
+        assert generate_bibliography._title_mentions(prose, bib) == {}
+
+    def test_unquoted_title_phrase_does_not_fire(self):
+        """The title text appearing as plain prose is NOT a citation --
+        the unguarded containment design measured 31 firings, mostly
+        canonical-term collisions ('a theory of justice' in running text)."""
+        prose = ("Rawls held that any a theory of justice must confront "
+                 "nonideal conditions in practice today.")
+        bib = _make_bib(("rawls1971theory", _make_entry(
+            entry_type="book", authors=["Rawls, John"], year="1971",
+            title="A Theory of Justice")))
+        assert generate_bibliography._title_mentions(prose, bib) == {}
+
+    def test_missing_surname_blocks_fire(self):
+        """The surname conjunct: an exact quoted span whose author is
+        nowhere in the document does not fire -- precision insurance for
+        term-of-art collisions that pass the word guard."""
+        prose = ('"The Internet, Cognitive Enhancement, and the Values of '
+                 'Cognition" is a phrase someone quoted without attribution.')
+        assert generate_bibliography._title_mentions(
+            prose, self._heersmink_bib()) == {}
+
+    def test_curly_quotes_and_curly_single_quotes_fire(self):
+        prose = ("Heersmink’s “The Internet, Cognitive Enhancement, "
+                 "and the Values of Cognition” shaped the debate; some "
+                 "cite it as ‘The Internet, Cognitive Enhancement, and "
+                 "the Values of Cognition’ informally.")
+        assert "heersmink2016internet" in generate_bibliography._title_mentions(
+            prose, self._heersmink_bib())
+
+    def test_latex_escaped_title_matches_unicode_prose(self):
+        """Bib title carries a LaTeX accent; prose quotes the unicode form.
+        clean_bibtex_str decodes before folding, so they meet."""
+        prose = ('Dupont’s "Une Théorie de la Justice Sociale '
+                 'Moderne" (1990) set the agenda.')
+        bib = _make_bib(("x1990", _make_entry(
+            authors=["Dupont, Jean"], year="1990",
+            title="Une Th{\\'e}orie de la Justice Sociale Moderne")))
+        assert "x1990" in generate_bibliography._title_mentions(prose, bib)

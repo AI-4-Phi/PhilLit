@@ -1087,6 +1087,76 @@ def _sighted_letters(review_text: str) -> dict:
     return sighted
 
 
+# Item 10 (reference list omits title-only citations): spans a reader would
+# recognize as a work's name -- double-quoted (straight or curly, the forms
+# the writers emit), single-curly-quoted, or *italicized* (markdown; a
+# **bold** span matches between its inner asterisks, which is accepted --
+# a bolded exact title still names the work). The 4..300 length bounds
+# skip degenerate spans and runaway matches when a closing delimiter is
+# missing. Straight single quotes are deliberately absent: apostrophes
+# make them unbounded.
+_TITLE_SPAN_RES = (
+    re.compile(r'"([^"\n]{4,300})"'),
+    re.compile(r'“([^”\n]{4,300})”'),
+    re.compile(r'‘([^’\n]{4,300})’'),
+    re.compile(r'\*([^*\n]{4,300})\*'),
+)
+
+# Minimum folded word count for a title to be nettable. Measured over the
+# 36 delivered reviews + the production pair: at 4 words the net fires
+# exactly twice, both genuine References omissions (heersmink2016internet
+# in production run 42b02936; rawls1971theory in nonideal-theory-justice);
+# at fewer words it manufactures phantom references from terms of art
+# ('deceptive alignment' italicized as a term, scare-quoted 'data'). A
+# false ADD is a phantom reference -- the class item 3 E/F polices -- so
+# precision wins over recall here; short-titled works remain covered by
+# ordinary author-year citation, which the writer convention requires
+# alongside any title mention. NOTE the corpus bound honestly: 0 false
+# fires over 37 documents is a rule-of-three 95% upper bound of ~8% per
+# document, which is why the surname conjunct below also gates the net.
+_TITLE_MENTION_MIN_WORDS = 4
+
+
+def _title_mentions(prose: str, bib_data) -> dict:
+    """{citation_key: folded_title} for entries the prose cites BY TITLE:
+    a quoted or italicized span whose title_key fold EQUALS the entry's
+    cleaned, folded title, where the entry's first author/editor surname
+    also appears in the folded prose. Span equality, not containment -- a
+    title appearing as plain running text is a canonical phrase, not a
+    citation (measured: containment alone fires 31 times, mostly falsely).
+
+    Known limits, deliberate: a prose quote of the pre-colon main title
+    only ("The Extended Mind" for "The Extended Mind: ...") does not
+    match; neither does a title under 4 folded words, nor a title
+    mention whose author is named nowhere in the document. All three
+    stay covered by ordinary author-year citation, which the writer
+    convention requires alongside any title mention.
+    """
+    folded_spans = set()
+    for rx in _TITLE_SPAN_RES:
+        for m in rx.finditer(prose):
+            fs = title_key(m.group(1))
+            if fs:
+                folded_spans.add(fs)
+    if not folded_spans:
+        return {}
+    folded_prose = " " + title_key(prose) + " "
+    out = {}
+    for key, entry in bib_data.entries.items():
+        tk = title_key(clean_bibtex_str(entry.fields.get("title", "") or ""))
+        if len(tk.split()) < _TITLE_MENTION_MIN_WORDS:
+            continue
+        if tk not in folded_spans:
+            continue
+        persons = entry.persons.get("author", []) or entry.persons.get("editor", [])
+        if not persons:
+            continue  # cannot corroborate authorship -- precision side
+        sk = title_key(_get_full_surname(persons[0]))
+        if sk and (" " + sk + " ") in folded_prose:
+            out[key] = tk
+    return out
+
+
 def _letter_is_sighted(rec: dict, sighted: dict) -> bool:
     """Does the prose mention this entry's rendered label ("2010b")?
 
