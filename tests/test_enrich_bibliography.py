@@ -113,6 +113,21 @@ class TestBibTeXParsing:
         assert len(entries) == 1
         assert entries[0]['entry_type'] == 'comment'
 
+    def test_parse_bom_prefixed_first_entry(self):
+        """A UTF-8 BOM survives read_text(encoding='utf-8') as U+FEFF, and
+        `str.lstrip()` does NOT strip it (Cf, not whitespace) -- so the
+        line-anchored splitter's first chunk began with the BOM, failed
+        `startswith('@')` and the first entry was silently DROPPED. Both
+        entries must parse, with the right keys."""
+        import enrich_bibliography
+
+        content = ("\ufeff" + SAMPLE_ENTRY_NO_ABSTRACT + "\n\n"
+                   + SAMPLE_ENTRY_WITH_ABSTRACT)
+        entries = enrich_bibliography.parse_bibtex_entries(content)
+
+        assert [e['key'] for e in entries] == [
+            'frankfurt1971freedom', 'wolf1990freedom']
+
 
 ENTRY_WITH_AT_IN_KEYWORDS = """@misc{riggs2003understanding,
   author = {Riggs, Wayne D.},
@@ -1206,6 +1221,41 @@ def test_validation_failure_reports_offender(tmp_path, monkeypatch, capsys):
     assert stats.get("validation_failed_keys") == ["ok2020"]
     err = capsys.readouterr().err
     assert "ok2020" in err
+
+
+def test_zero_parse_of_nonempty_file_refuses_to_overwrite(tmp_path, capsys):
+    """Drop-direction backstop. If the splitter yields NO entries from a
+    non-empty file (here: the single entry's opener is corrupted to
+    '@ article{', so no line-initial '@type{' exists), the joined output is
+    the EMPTY string -- which pybtex validates happily, so os.replace would
+    install an empty bib and destroy the file. The run must refuse: original
+    byte-identical, parse_failed set, loud warning."""
+    import enrich_bibliography as eb
+    bib = tmp_path / "in.bib"
+    content = ("@ article{corrupted2020,\n  author = {A, B},\n"
+               "  title = {T},\n  year = {2020},\n}\n")
+    bib.write_text(content, encoding="utf-8")
+    before = bib.read_bytes()
+
+    stats = eb.enrich_bibliography(bib, None, None, None, None)
+
+    assert stats.get("parse_failed") is True
+    assert bib.read_bytes() == before
+    assert not (tmp_path / "in.bib.tmp").exists()
+    assert not (tmp_path / "intermediate_files").exists()
+    assert "refusing to overwrite" in capsys.readouterr().err
+
+
+def test_zero_parse_of_empty_file_still_writes(tmp_path):
+    """The refusal keys on non-empty input: a legitimately empty bib (or a
+    whitespace-only one) is not a parse failure and must keep its existing
+    write-and-ledger behavior."""
+    import enrich_bibliography as eb
+    bib = tmp_path / "empty.bib"
+    bib.write_text("\n  \n", encoding="utf-8")
+    stats = eb.enrich_bibliography(bib, None, None, None, None)
+    assert not stats.get("parse_failed")
+    assert stats["total"] == 0
 
 
 def test_production_shape_round_trip_writes_ledger(tmp_path, monkeypatch):

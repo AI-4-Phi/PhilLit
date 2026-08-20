@@ -65,6 +65,14 @@ def parse_bibtex_entries(content: str) -> list[dict]:
     """
     entries = []
 
+    # A UTF-8 BOM survives read_text(encoding='utf-8') as U+FEFF, and
+    # str.lstrip() does NOT strip it (Cf, not whitespace) -- so the first
+    # chunk below started with the BOM, failed startswith('@'), and the
+    # first entry was silently dropped (in a single-entry file, that is a
+    # zero-entry parse, i.e. a destroyed bib -- see enrich_bibliography's
+    # non-empty-input refusal).
+    content = content.lstrip('\ufeff')
+
     # Split at line-initial entry openers. The old pattern (@\w+\{[^@]+)
     # truncated an entry at ANY interior '@' -- the metadata cleaner's
     # type-demotion marker ('type:@incollection->@misc') cut the entry
@@ -587,7 +595,11 @@ def enrich_bibliography(
         Stats dict with keys: total, already_had_abstract, enriched,
         marked_incomplete, skipped, sources. If pybtex validation fails,
         the original file is left unchanged and stats['validation_failed']
-        is set to True.
+        is set to True. If a non-empty input parses to ZERO entries, the
+        run returns early with stats['parse_failed'] = True, having written
+        neither the bib nor the ledger. Both failure markers are advisory
+        in the same way: main() reports and exits 0 either way, so a caller
+        that cares has to read the stats (or the stderr warning).
     """
     if not input_path.exists():
         raise FileNotFoundError(f"Input file not found: {input_path}")
@@ -607,6 +619,18 @@ def enrich_bibliography(
         'prefilled_unverified': 0,
         'sources': {'s2': 0, 'openalex': 0, 'core': 0, 'ndpr': 0}
     }
+
+    # Drop-direction backstop, BEFORE any work. A zero-entry parse of a
+    # NON-EMPTY file means the splitter recognized nothing -- and the joined
+    # output would then be the empty string, which pybtex validates happily,
+    # so os.replace would install an empty bib over the original and destroy
+    # it. Refuse loudly and leave the file alone (an actually-empty input is
+    # a legitimate no-op and keeps the normal write path).
+    if not entries and content.strip():
+        log_progress("WARNING: parsed zero entries from non-empty input -- "
+                     "refusing to overwrite " + input_path.name)
+        stats['parse_failed'] = True
+        return stats
 
     enriched_entries = []
     # citation key -> {abstract_source, abstract_sha256} for abstracts this
