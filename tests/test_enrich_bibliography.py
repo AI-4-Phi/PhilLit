@@ -1206,3 +1206,46 @@ def test_validation_failure_reports_offender(tmp_path, monkeypatch, capsys):
     assert stats.get("validation_failed_keys") == ["ok2020"]
     err = capsys.readouterr().err
     assert "ok2020" in err
+
+
+def test_production_shape_round_trip_writes_ledger(tmp_path, monkeypatch):
+    """Production 42b02936 domain-2 shape: pybtex-round-tripped (quoted)
+    fields plus a cleaner marker with '@' in keywords. Must enrich, emit a
+    pybtex-valid file, and WRITE the enrichment ledger (its absence is what
+    demoted the whole domain)."""
+    import enrich_bibliography as eb
+    bib = tmp_path / "literature-domain-2.bib"
+    bib.write_text(
+        '@misc{riggs2003understanding,\n'
+        '    author = "Riggs, Wayne D.",\n'
+        '    title = "Understanding Virtue and the Virtue of Understanding",\n'
+        '    year = "2003",\n'
+        '    doi = "10.1093/acprof:oso/9780199252732.003.0010",\n'
+        '    keywords = {understanding, Medium, METADATA\\_CLEANED: booktitle, type:@incollection->@misc}\n'
+        '}\n\n'
+        '@article{hardwig1985epistemic,\n'
+        '    author = "Hardwig, John",\n'
+        '    title = "Epistemic Dependence",\n'
+        '    year = "1985",\n'
+        '    doi = "10.2307/2026523",\n'
+        '    keywords = {autonomy, High}\n'
+        '}\n', encoding="utf-8")
+    monkeypatch.setattr(
+        eb, "resolve_abstract_for_entry",
+        lambda entry, *a, **k: ("A real abstract over ten chars.", "s2")
+        if entry["key"] == "hardwig1985epistemic" else (None, None))
+    # output_path=None means overwrite-in-place, so reading `bib` below
+    # reads the OUTPUT, not the untouched input.
+    stats = eb.enrich_bibliography(bib, None, None, None, None)
+    assert not stats.get("validation_failed")
+    assert stats["enriched"] == 1
+    ledger = (tmp_path / "intermediate_files" / "json"
+              / "enrichment_ledger-literature-domain-2.json")
+    assert ledger.exists()
+    payload = json.loads(ledger.read_text(encoding="utf-8"))
+    assert "hardwig1985epistemic" in payload["entries"]
+    # the enriched file still carries the @ marker intact
+    out = bib.read_text(encoding="utf-8")
+    assert "type:@incollection->@misc" in out
+    from pybtex.database import parse_string
+    parse_string(out, bib_format="bibtex")  # no exception
