@@ -6,34 +6,44 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.4.6**, 2026-08-19. Check
+Last release: **plugin v0.4.7**, 2026-08-19. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-Two items are queued, in this order:
+Four items are queued, in this order:
 
-1. **Venue-name recall for subtitled journals** — measure the true failure
-   fraction, then decide.
-2. **LaTeX accents key one title two ways** — its own decision session.
+1. **Venue-name recall for subtitled journals** — measured 2026-08-19; what
+   remains is the owner's fix / accept / drop decision.
+2. **Reference list omits title-only citations** — decide the citation-form
+   convention, or teach the matcher title mentions.
+3. **Enrichment serialization failure drops a whole domain's ledger** —
+   reproduce from the service's kept artifacts, then fix.
+4. **LaTeX accents key one title two ways** — its own decision session.
 
-Both have their own section below, under those names. (Section numbers in this
+Each has its own section below, under those names. (Section numbers in this
 file are historical: numbers are never reused once an item ships, so the
 sequence has gaps. Refer to items by name.)
 
-The phillit-service re-vendor comes after both — see the cross-repo note below.
+The phillit-service re-vendor comes after all of these — see the cross-repo
+note below.
 
 Everything else in this file is a recorded residual, not work.
 
 **Cross-repo, needs a phillit-service session — and Johannes wants it LAST**
-(decided 2026-08-19): re-vendor after both queued items above have landed, so
+(decided 2026-08-19): re-vendor after the queued items above have landed, so
 the service takes one pin covering everything rather than a pin per item. Move
 the service's re-vendor pin to `888a827` or later. That single move picks up the
 web-source evidence item's encyclopedia-host exclusion (v0.4.3), researcher
 search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5) and
-the conference-venue provenance fix (v0.4.6), and it retires the service's
-interim researcher-prose carve-out for the excluded hosts. The cross-repo rule —
+the conference-venue provenance fix (v0.4.6), and the synthesis-planner
+false-gap convention (v0.4.7 — the fix for the High-severity defect the
+service's first production run surfaced), and it retires the service's
+interim researcher-prose carve-out for the excluded hosts. The other two
+production-run defect fixes (the title-only-citation and
+enrichment-serialization items above) land here and ride whichever pin
+follows them. The cross-repo rule —
 scripted re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
 phillit-service".
 
@@ -203,31 +213,28 @@ things stay open:
   still takes the unchanged primary path — ACCEPTED 2026-08-18. Never
   observed in the corpus (0 of 8,494 first-author entries).
 
-## 6. Venue-name recall for subtitled journals — QUEUED: measure first, then decide
-
-**Next step is a measurement, not a build** (Johannes, 2026-08-19). Settle the
-true failure fraction (~480 OpenAlex lookups, see below), then decide whether to
-fix, accept, or drop. Do not design a fix before the number exists — the
-incidence figure that looks alarming (5.5%) is an upper bound that includes
-colons which resolve perfectly well.
-
+## 6. Venue-name recall for subtitled journals — MEASURED 2026-08-19: decision pending
 
 `venue_vetting` resolves a bare venue name but not the subtitled form a bib may
-carry. Controlled test, 2026-08-07: "Res Publica" resolves, "Res Publica: A
-Journal of Moral, Legal and Social Philosophy" does not; same for Erkenntnis;
-**0 errors either way**. So the previously-suspected injection risk from the
-unsanitized `:` and `|` in `filter=` values is **unfounded** — that half of rider
-5 is closed, not open.
+carry ("Res Publica" resolves; "Res Publica: A Journal of Moral, Legal and
+Social Philosophy" does not; 0 errors either way, so the once-suspected
+injection risk from the unsanitized `:` and `|` in `filter=` values is
+unfounded and closed). Consequence is a silent no-op: vetting never evaluates
+such entries. Direction is benign — the rule flags only venues that RESOLVE,
+so this yields false negatives, never false low-visibility flags.
 
-Consequence is a silent no-op: vetting never evaluates such entries. Direction is
-benign — the rule flags only venues that RESOLVE, so this yields false negatives,
-never false low-visibility flags.
+**Measured 2026-08-19** through the production lookup path, every failure
+re-confirmed fresh past the cache (method, per-venue evidence, raw data:
+`docs/known-issues/venue-recall-subtitled-journals.md`): of 928 distinct
+journal names in the corpus, 55 carry a colon — 28 resolve fine with their
+subtitle, 22 are unrescuable non-journals (arXiv IDs, proceedings,
+edited-volume titles, one LaTeX-escaped name), and **5 are true subtitle
+failures (0.54% of all journal names, 10 entries corpus-wide). Only 2 of the
+5 would be FLAGGED if rescued (4 entries), and a prefix-fallback rescue
+carries a wrong-venue false-merge risk in the harm-dominant direction.** The
+write-up recommends accept-and-record.
 
-Incidence: 48 of 880 distinct journal names across the delivered corpus (5.5%)
-carry a colon. **Not all of those fail** — many colons are part of the real venue
-name ("Asiascape: Digital Asia"), which resolves; only OpenAlex-omitted subtitles
-fail. The true failure fraction is unmeasured (~480 OpenAlex credits to settle).
-Booktitles are 15.1% but vetting keys on `journal`, so that is likely moot.
+**Remaining step: the owner's fix / accept / drop decision** (Johannes).
 
 ## 8. LaTeX accents key one title two ways — QUEUED: needs its own decision session
 
@@ -257,6 +264,40 @@ Scope note already recorded in `bib_identity.py`'s module docstring, which
 states the divergence is deliberate and unmeasured. **Measure the incidence
 first** — how many delivered entries actually carry an escaped accent in a
 title — because if it is near zero the right answer may be to accept and record.
+
+## 10. Reference list omits title-only citations — QUEUED
+
+The reference builder's cited-entry matcher works on author-year shapes, so
+a body citation by title alone never reaches the References list — a
+delivered review cited a work the reader cannot look up (one instance, same
+production run; all 135 author-year tokens in that run resolved with zero
+orphans, so the failure is specific to the title-mention shape). The
+sentence itself was evidence-disciplined; only the References omission is
+the defect.
+
+Fix is a decision between two directions: require author-year form for
+every citation (writer convention — title-only mentions become
+non-citations by definition), or teach `find_cited_entries` title mentions.
+Same matcher the collision-aware-matching and Chicago a/b disambiguation
+work hardened (`author-year-collision.md`), but a different failure shape —
+a citation form the matcher never sees at all. Write-up:
+`docs/known-issues/reference-list-omits-title-only-citations.md`.
+
+## 11. Enrichment serialization failure drops a whole domain's ledger — QUEUED
+
+One `enrich_bibliography.py` crash cost a domain its entire enrichment
+ledger: zero EVIDENCE-ABSTRACT entries where sibling domains had 7–16, so
+the text cites that whole domain with existence-level hedging (same
+production run). The degrade path held — the barrier reported top-level
+`status: degraded` and a full tier recomputation confirmed no false
+promotion — so the crash itself is the defect, and the quality tax is
+silent to the reader.
+
+The failing domain's inputs are preserved in the service's kept artifact
+set (retrieving them needs a service-side touch; the fix lands here). The
+exact exception shape was not captured, so the fix should also make the
+failure path log the exception class and offending record. Write-up:
+`docs/known-issues/enrich-bibliography-serialization-failure.md`.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open.
