@@ -104,12 +104,22 @@ def parse_bibtex_entries(content: str) -> list[dict]:
         # Extract fields
         fields = {}
 
-        # Match field = {value} or field = "value" patterns
-        # Handle multi-line values in braces
-        field_pattern = r'(\w+)\s*=\s*\{((?:[^{}]|\{[^{}]*\})*)\}'
+        # Match field = {value} OR field = "value" -- pybtex's Writer emits
+        # quoted values on round-trip (CLAUDE.md), and the cleaner
+        # round-trips domain bibs, so a brace-only pattern made every
+        # cleaned field invisible (production 42b02936: the whole domain
+        # "had no identifiers" and enriched nothing). [^"]* is safe against
+        # the pinned pybtex Writer: it brace-wraps any value containing a
+        # double quote (verified empirically), and quotes numerics, so
+        # neither truncation nor bare values arise from round-tripped
+        # files. Braced alternative keeps its one-level nesting tolerance;
+        # add_field_to_entry's depth-counting editor is the write-side
+        # owner and is unchanged.
+        field_pattern = r'(\w+)\s*=\s*(?:\{((?:[^{}]|\{[^{}]*\})*)\}|"([^"]*)")'
         for match in re.finditer(field_pattern, raw, re.DOTALL):
             field_name = match.group(1).lower()
-            field_value = match.group(2).strip()
+            field_value = (match.group(2) if match.group(2) is not None
+                           else match.group(3)).strip()
             fields[field_name] = field_value
 
         entries.append({

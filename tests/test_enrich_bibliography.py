@@ -159,6 +159,38 @@ def test_crlf_line_endings_still_split():
     assert [e["key"] for e in parse_bibtex_entries(content)] == ["a2020", "b2021"]
 
 
+QUOTED_FIELDS_ENTRY = """@article{hardwig1985epistemic,
+    sep_context = {Cited in 'testimony' entry: "some quoted prose"},
+    author = "Hardwig, John",
+    title = "Epistemic Dependence",
+    journal = "The Journal of Philosophy",
+    year = "1985",
+    doi = "10.2307/2026523",
+    keywords = {autonomy, High, EVIDENCE-CONTEXT}
+}"""
+
+
+def test_quoted_fields_are_parsed():
+    """pybtex's Writer emits field = "value" on round-trip (CLAUDE.md);
+    the cleaner round-trips domain bibs, so enrichment must read both
+    forms. Production: every quoted title was invisible and the whole
+    domain enriched nothing."""
+    from enrich_bibliography import parse_bibtex_entries
+    e = parse_bibtex_entries(QUOTED_FIELDS_ENTRY)[0]
+    assert e["fields"]["title"] == "Epistemic Dependence"
+    assert e["fields"]["doi"] == "10.2307/2026523"
+    assert e["fields"]["author"] == "Hardwig, John"
+    # braced fields still work alongside
+    assert "EVIDENCE-CONTEXT" in e["fields"]["keywords"]
+
+
+def test_multiline_quoted_field_parsed():
+    entry = '@book{k2003,\n  author = "Kvanvig,\n    Jonathan",\n  title = "The Value of Knowledge",\n  year = "2003",\n}'
+    from enrich_bibliography import parse_bibtex_entries
+    e = parse_bibtex_entries(entry)[0]
+    assert "Jonathan" in e["fields"]["author"]
+
+
 class TestFieldDetection:
     """Tests for field detection helpers."""
 
