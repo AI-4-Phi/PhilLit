@@ -111,13 +111,23 @@ class TestCleanBibtexStr:
         assert clean_bibtex_str(r"What's Fair is\ldots{} Fair?") == "What's Fair is... Fair?"
         assert clean_bibtex_str(r"is\ldots done") == "is... done"
 
-    def test_ldots_requires_a_word_boundary(self):
-        """`\\ldotsfoo` is a DIFFERENT (unknown) control sequence, so the
-        ellipsis substitution must not fire on it -- without the `\\b` the
-        result read '...foo'. What such pathological input degrades to
-        afterwards is the pre-existing `\\l` (l-slash) fold in
-        LATEX_ESCAPES, which is out of scope here; only the absence of the
-        ellipsis rewrite is pinned."""
+    def test_ldots_terminates_at_non_letters_only(self):
+        """A TeX control word ends at any non-LETTER, so the guard on the
+        ellipsis rewrite must be `(?![A-Za-z])`, not `\\b`.
+
+        `\\ldotsfoo` is a DIFFERENT (unknown) control sequence and must not
+        become '...foo' -- but `\\b` was stricter than TeX and also blocked
+        digits and `_`, regressing `page 3\\ldots42` into the `\\l`
+        (l-slash) fold this rewrite exists to prevent."""
+        # Non-letter terminators: the rewrite MUST fire.
+        assert clean_bibtex_str(r"page 3\ldots42 end") == "page 3...42 end"
+        assert clean_bibtex_str(r"is\ldots_x done") == "is..._x done"
+        # Letter terminator: the rewrite must NOT fire. The exact result
+        # pins the PRE-EXISTING `\l` fold on this pathological input
+        # ('is\ldotsfoo' -> 'is<l-slash>dotsfoo'), which is not something
+        # this guard promises to fix -- what it promises is the absence of
+        # the ellipsis rewrite, asserted separately below.
+        assert clean_bibtex_str(r"is\ldotsfoo done") == "isłdotsfoo done"
         assert "..." not in clean_bibtex_str(r"is\ldotsfoo done")
 
     def test_textit_command_stripped_argument_kept(self):

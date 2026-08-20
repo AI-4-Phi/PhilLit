@@ -46,10 +46,13 @@ def clean_bibtex_str(s: str) -> str:
     """Normalize a BibTeX string: LaTeX accents → braces → \\& → \\url{}."""
     # Step 0a: ellipsis command BEFORE the escapes loop -- LATEX_ESCAPES
     # contains \l (l-slash), which otherwise fires inside \ldots and
-    # delivered 'isłdots' into a References line. The `\b` after the
-    # command name matters: `\ldotsfoo` is a DIFFERENT (unknown) control
-    # sequence and must not be rewritten to '...foo'.
-    s = re.sub(r"\\ldots\b(\{\})?", "...", s)
+    # delivered 'isłdots' into a References line. The terminator matters:
+    # `\ldotsfoo` is a DIFFERENT (unknown) control sequence and must not be
+    # rewritten to '...foo'. Guard on non-LETTER, not on `\b` -- a TeX
+    # control word terminates at any non-letter, so `\b` was stricter than
+    # TeX and regressed `page 3\ldots42` and `\ldots_x` into the very `\l`
+    # l-slash fold this line exists to prevent.
+    s = re.sub(r"\\ldots(?![A-Za-z])(\{\})?", "...", s)
     # Step 0b: text-style commands -- drop the command token, keep the
     # argument (the existing brace strip below unwraps it). Without this a
     # References line read 'Precis of \textitUtopophobia'.
