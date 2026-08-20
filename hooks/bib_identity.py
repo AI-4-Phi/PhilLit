@@ -18,7 +18,8 @@ depending on whether the caller pre-decoded it (`generate_bibliography` does via
 2026-08-20 over 8,517 titled entries in 313 local bibs: 149 divergent keys
 (1.7%) and one duplicate-detection disagreement, in an old-architecture review.
 Adding decoding here would change `metadata_cleaner`'s API-vs-bib title matching
-- the surface that produced the year-corruption incident. Left as is.
+- the surface that produced the year-corruption incident. Left as is
+(owner decision, 2026-08-20).
 
 NOT owned here: `generate_bibliography._normalize_for_matching`, the fold applied
 to author-written review prose. It keeps punctuation, and the citation matcher's

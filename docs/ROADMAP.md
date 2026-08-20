@@ -12,18 +12,16 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-One item is queued: **LaTeX accents key one title two ways** — its own
-decision session. Its section is below, under that name. (Section numbers in
-this file are historical: numbers are never reused once an item ships, so the
-sequence has gaps. Refer to items by name.)
-
-The phillit-service re-vendor comes after it — see the cross-repo note below.
-
-Everything else in this file is a recorded residual, not work.
+Nothing is queued here. The one open step is the phillit-service re-vendor —
+see the cross-repo note below. Everything else in this file is a recorded
+residual, not work. (Section numbers in this file are historical: numbers are
+never reused once an item ships, so the sequence has gaps. Refer to items by
+name.)
 
 **Cross-repo, needs a phillit-service session — and Johannes wants it LAST**
-(decided 2026-08-19): re-vendor after the queued item above has landed, so
-the service takes one pin covering everything rather than a pin per item. Move
+(decided 2026-08-19): the queue ahead of it drained 2026-08-20, so the
+re-vendor can run at the next service session, taking one pin covering
+everything rather than a pin per item. Move
 the service's re-vendor pin to the v0.4.8 bump commit or later. That single
 move picks up the web-source evidence item's encyclopedia-host exclusion
 (v0.4.3), researcher
@@ -196,72 +194,22 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
 ## 4. One owner for bibliography identity and matching — residuals only
 
 Landed 2026-08-03; the single-owner rule is recorded in `CLAUDE.md`. Three
-things stay open:
+residuals, all accepted:
 
-- The LaTeX-escape divergence is promoted to its own item below, "LaTeX accents
-  key one title two ways".
+- The LaTeX-escape title-key divergence (`generate_bibliography` decodes
+  before keying, `dedupe_bib` reads raw) — ACCEPTED 2026-08-20 after
+  measurement: 149 of 8,517 titled entries diverge (1.7%), with exactly one
+  duplicate-detection disagreement in the whole local corpus, in an
+  old-architecture review whose damage today's References-side decoded dedup
+  would contain. The binding record and the do-not-decode rationale live in
+  `bib_identity.py`'s module docstring; measurement scripts under
+  `docs/known-issues/title-net-measurement-2026-08-20/` (local-only).
 - A non-numeric or bracketed year (`n.d.`, `[2021]`) still cannot match in the
   script-preserving haystack — ACCEPTED 2026-08-18 (never observed in
   practice).
 - A surname that folds to punctuation-only (`Παπαδόπουλος-Smith` → `-Smith`)
   still takes the unchanged primary path — ACCEPTED 2026-08-18. Never
   observed in the corpus (0 of 8,494 first-author entries).
-
-## 8. LaTeX accents key one title two ways — QUEUED: needs its own decision session
-
-**Give this a session of its own** (Johannes, 2026-08-19). It is a decision
-first and a patch second, and it must not be picked up as a drive-by inside
-other bibliography work.
-
-`generate_bibliography` decodes LaTeX before it builds a title key, while
-`dedupe_bib` reads pybtex fields raw. So one title with an escaped accent
-(`Milli\`ere`, `No\^{u}s`) produces two different keys depending on which module
-is asking — the two modules can disagree about whether they are looking at the
-same work.
-
-Why it is a decision and not a patch: both available fixes move the code behind
-the year-corruption incident.
-
-- **Teach `title_key` to decode LaTeX.** One owner, one behaviour — but it
-  changes `metadata_cleaner`'s API-vs-bib title matching, which is precisely the
-  surface that mis-corrected years before. Any change here needs the same
-  corpus-scale before/after measurement that work got.
-- **Normalize the inputs at one of the two call sites.** Leaves `title_key`
-  untouched and the blast radius small, but re-introduces the two-owners
-  situation that `bib_identity` exists to end (see `CLAUDE.md`, single source of
-  truth).
-
-Scope note recorded in `bib_identity.py`'s module docstring, which now carries
-the measurement below.
-
-**Measured 2026-08-20**, two scopes (scripts preserved locally under
-`docs/known-issues/title-net-measurement-2026-08-20/`; `reviews/` is
-local-only, so this can never be a CI check):
-
-- Delivered final bibs (36 `literature-all.bib` plus the production bib):
-  3,593 titled entries, 62 whose two keys diverge (1.7%), 5 of them
-  accent-class, and **zero** duplicate-detection disagreements.
-- Every bib under `reviews/` (313 files, including per-domain and
-  old-architecture bibs; 8,517 titled entries): 149 divergent (1.7%), 9
-  accent-class, and exactly **one** duplicate-detection disagreement — the
-  `gerstgrasser2024` triplicate in `synthetic-data-distribution-compression`,
-  where a brace-protected `{B}reaking` copy keys differently when read raw.
-  That is an old-architecture review whose delivered References show the entry
-  three times; under today's pipeline the References-side decoded dedup would
-  contain the reader-visible damage, leaving a redundant bib entry.
-
-The item's name understates its scope: the dominant divergence class is
-brace-protected capitals and `\textit`/`\emph`, not accents. The `\ldots`
-display mangling (the `\l` prefix collision) was a separate defect and was
-fixed independently of this keying decision.
-
-Recommendation: **accept and record.** One reader-visible instance in the
-whole local corpus, in an architecture no longer in use, is thin warrant for
-moving code behind the year-corruption incident. If Johannes wants a
-harm-reducing step short of full decoding, the smallest is stripping braces
-inside `title_key` before folding: it reaches the dominant class without
-touching accent handling or `metadata_cleaner`'s API-vs-bib title matching.
-The decision is still Johannes's.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open.
