@@ -638,14 +638,20 @@ def enrich_bibliography(
     # Only attempt NDPR for @book entries that:
     # 1. Still lack an abstract after the main enrichment pass
     # 2. Have High or Medium importance (as noted in keywords)
-    _incomplete_kw_re = re.compile(r'keywords\s*=\s*\{[^}]*INCOMPLETE', re.IGNORECASE)
-    _kw_value_re = re.compile(r'keywords\s*=\s*\{([^}]*)\}', re.IGNORECASE)
+    # Both delimiter forms, like the module-level _KEYWORDS_FIELD_RE
+    # (defined near line 374 -- it exists; do not invent it): on a
+    # round-tripped bib these were brace-only and the NDPR pass went blind.
+    _incomplete_kw_re = re.compile(
+        r'keywords\s*=\s*(?:\{[^}]*INCOMPLETE|"[^"]*INCOMPLETE)', re.IGNORECASE)
+    _kw_value_re = re.compile(
+        r'keywords\s*=\s*(?:\{([^}]*)\}|"([^"]*)")', re.IGNORECASE)
 
     def _has_high_or_medium_importance(entry_text: str) -> bool:
         m = _kw_value_re.search(entry_text)
         if not m:
             return False
-        tokens = [t.strip() for t in m.group(1).split(',')]
+        value = m.group(1) if m.group(1) is not None else m.group(2)
+        tokens = [t.strip() for t in value.split(',')]
         return any(t in ('High', 'Medium') for t in tokens)
 
     book_entries_without_abstract = [

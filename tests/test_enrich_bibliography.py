@@ -1140,3 +1140,26 @@ def test_resolver_none_source_rejected(tmp_path, monkeypatch):
                         lambda *a, **k: ('Same text here.', None))
     stats = enrich_bibliography.enrich_bibliography(bib, None, '', '', '')
     assert stats['prefilled_unverified'] == 1
+
+
+def test_ndpr_pass_sees_quoted_keywords(tmp_path, monkeypatch):
+    """A round-tripped bib carries keywords = "..." -- the NDPR book pass
+    must still detect INCOMPLETE + High there."""
+    import enrich_bibliography as eb
+    bib = tmp_path / "in.bib"
+    bib.write_text(
+        '@book{zagzebski1996virtues,\n'
+        '  author = "Zagzebski, Linda",\n'
+        '  title = "Virtues of the Mind",\n'
+        '  year = "1996",\n'
+        '  keywords = "virtue-epistemology, High, INCOMPLETE, no-abstract"\n'
+        '}\n', encoding="utf-8")
+    monkeypatch.setattr(eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (None, None))
+    calls = []
+    def fake_ndpr(title, author=None, debug=False):
+        calls.append(title)
+        return None, None
+    monkeypatch.setattr(eb, "resolve_ndpr_abstract", fake_ndpr)
+    eb.enrich_bibliography(bib, None, None, None, None)
+    assert calls == ["Virtues of the Mind"]
