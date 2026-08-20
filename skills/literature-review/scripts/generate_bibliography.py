@@ -1160,15 +1160,28 @@ def _title_mentions(prose: str, bib_data) -> dict:
        character is rejected. Bold `**Title**` still fires: the abutting
        characters are asterisks, and `("Title")` abuts parentheses.
 
-    Honest residual: this is an enumeration of shapes, not a closure
-    proof. Guard 2 tests BOTH sides, so evading it needs the mis-capture to
+    Honest residual, stated without hedging: this is an enumeration of
+    shapes, not a closure proof, and one shape still produces a phantom
+    ADD. Guard 2 tests BOTH sides, so evading it needs the mis-capture to
     be punctuation-abutted at both ends -- the failed short span must end
     in punctuation AND the text after the closer must begin with it.
     Measured: `*...*a theory of justice*however*` is CAUGHT (the closer
-    abuts `h`), while `*no.*a theory of justice*(however)*` still fires.
-    What such a capture has to survive is the other three conjuncts: exact
-    span equality with the folded title, the >=4-folded-word floor, and the
-    first author/editor surname appearing as a token in the document.
+    abuts `h`), while
+
+        Rawls wrote *no.*a theory of justice*(1971)* in reply.
+
+    FIRES. The other three conjuncts do not mitigate it -- they are
+    satisfied, not violated: the capture folds to EXACTLY the entry's
+    4-word title, and Rawls is named in the document. An italicized
+    parenthetical year right after the title text is the realistic form of
+    this shape, so it is not purely hypothetical.
+
+    It is accepted, not closed, because the required shape is narrow: a
+    short span that fails the {4,300} floor AND ends in punctuation, whose
+    closing delimiter is immediately followed by the title text with no
+    space, followed in turn by a span that opens on punctuation. Closing it
+    needs a different mechanism (a real inline-markdown parse), not another
+    character-class guard.
 
     One accepted false rejection, in the safe direction: `\\w` counts `_`,
     so an underscore-delimited emphasis wrapper (`_*A Theory of Justice*_`)
@@ -1180,9 +1193,27 @@ def _title_mentions(prose: str, bib_data) -> dict:
     Known limits, deliberate: a prose quote of the pre-colon main title
     only ("The Extended Mind" for "The Extended Mind: ...") does not
     match; neither does a title under 4 folded words, nor a title
-    mention whose author is named nowhere in the document. All three
-    stay covered by ordinary author-year citation, which the writer
-    convention requires alongside any title mention.
+    mention whose author is named nowhere in the document. Guard 2 adds
+    two more, both measured with a shape probe rather than assumed:
+
+      - a footnote marker abutting the closer, `"A Theory of Justice"¹`
+        -- Unicode superscripts/subscripts are N-category codepoints and
+        `\\w` matches them, so the span is read as word-abutted; and
+      - a missing-space typo before the opener, `wrote"A Theory of
+        Justice"`, which is genuinely indistinguishable from the
+        intraword mis-pairing guard 2 exists to reject.
+
+    All of these are recall losses in the SAFE direction (a missed keep,
+    never a phantom add) and stay covered by ordinary author-year
+    citation, which the writer convention requires alongside any title
+    mention.
+
+    On the evidence for that: the corpus re-run over the delivered reviews
+    showing no change is a PRECISION result -- it proves the guard costs
+    nothing on the shapes those documents happen to contain. It is not
+    general recall safety, because it cannot speak to shapes the corpus
+    lacks. The recall evidence is the shape probe, and the probe's gaps are
+    exactly the two bullets above.
 
     Two further scoping notes, both deliberate. The surname conjunct is a
     DOCUMENT-GLOBAL token check, not a proximity-bounded one: the surname
