@@ -219,6 +219,18 @@ only through a form `_CITE_INSTANCE_RE` cannot parse, combined with an
 unrelated *corroborated* second-position sighting of the same group, can
 still drop that work along with the rest of the group.
 
+**The four branches are subject to two later keep-side overrides.** Since
+the Chicago-letter sighting net (item 3 F) and the title-mention net
+(item 10), the branches above describe how a drop is *decided*, not
+whether it is *executed*. A member whose rendered label (`2010b`) appears
+in the prose, or whose title appears there in quoted or italicized form
+matching the entry's own title exactly, is never dropped: both drop sites
+(the branch-1 and branch-3 paths) consult those nets first and keep the
+member with a `[COLLISION] kept …` / `[TITLE] kept …` note instead. Both
+overrides run one way only — they can turn a drop into a keep, never a
+keep into a drop — so the invariant above still holds a fortiori, and a
+future third drop site has to carry them too.
+
 **Same-author groups are deliberately left whole for F.** Three same-author
 same-year works (Menary 2010 ×3) share every discriminator this fix has
 access to (surname, author-list shape, first initial), so they always fall

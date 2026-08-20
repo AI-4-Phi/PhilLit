@@ -111,6 +111,15 @@ class TestCleanBibtexStr:
         assert clean_bibtex_str(r"What's Fair is\ldots{} Fair?") == "What's Fair is... Fair?"
         assert clean_bibtex_str(r"is\ldots done") == "is... done"
 
+    def test_ldots_requires_a_word_boundary(self):
+        """`\\ldotsfoo` is a DIFFERENT (unknown) control sequence, so the
+        ellipsis substitution must not fire on it -- without the `\\b` the
+        result read '...foo'. What such pathological input degrades to
+        afterwards is the pre-existing `\\l` (l-slash) fold in
+        LATEX_ESCAPES, which is out of scope here; only the absence of the
+        ellipsis rewrite is pinned."""
+        assert "..." not in clean_bibtex_str(r"is\ldotsfoo done")
+
     def test_textit_command_stripped_argument_kept(self):
         """Delivered References carried 'Precis of \\textitUtopophobia'."""
         assert clean_bibtex_str(
@@ -2771,15 +2780,33 @@ class TestTitleMentionWiring:
         assert [k for k, _ in find_cited_entries(prose, bib)] == ["rawls1971theory"]
 
     def test_no_mention_no_change(self):
-        """A bib/prose pair with no quoted titles behaves exactly as
-        before (guard against the net perturbing item 3 E/F behavior)."""
-        prose = "Muldoon (2023) presents the solo account.\n"
+        """The net must not perturb item 3 E/F behavior, and this guard has
+        to be able to FAIL to say so.
+
+        Construction, all load-bearing. Both titles are >=4 folded words,
+        so the net's word floor cannot make the test vacuous (an earlier
+        version used 3-word titles, which the net can never reach on ANY
+        prose). The prose carries a delimited span, so `_title_mentions`
+        does not bail at `if not folded_spans` before the equality gate.
+        And the running-text title is the JOINT member's, not the solo
+        one's: the drop under test is the joint entry's, so loosening the
+        span-equality gate to prose containment (the pre-design behavior
+        the net's docstring rejects) rescues it and changes the outcome.
+        Mutation-verified: replacing `tk not in folded_spans` with
+        `(" " + tk + " ") not in " " + title_key(prose) + " "` turns this
+        test RED (muldoonWu2023 gets a [TITLE] kept rescue). With the SOLO
+        title in the prose instead, that same mutant yields the same
+        answer and the test would stay green while broken."""
+        prose = ("Muldoon (2023) presents the joint account theory of "
+                 "choice in detail, calling it a \"theory of choice under "
+                 "constraint\" throughout.\n")
         bib = _make_bib(
             ("muldoonSolo2023", _make_entry(
-                authors=["Muldoon, Ryan"], year="2023", title="Solo Account Theory")),
+                authors=["Muldoon, Ryan"], year="2023",
+                title="Solo Account Theory of Choice")),
             ("muldoonWu2023", _make_entry(
                 authors=["Muldoon, Ryan", "Wu, Jane"], year="2023",
-                title="Joint Account Theory")))
+                title="Joint Account Theory of Choice")))
         cited = {k for k, _ in find_cited_entries(prose, bib)}
         assert cited == {"muldoonSolo2023"}
 

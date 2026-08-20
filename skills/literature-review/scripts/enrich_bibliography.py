@@ -697,6 +697,12 @@ def enrich_bibliography(
     # and the NDPR pass went blind. Value extraction reuses the
     # module-level _KEYWORDS_FIELD_RE (defined above; do not duplicate it)
     # -- same group semantics, group(1)=braced value, group(2)=quoted value.
+    # Scope note, unchanged by that fix: the braced alternative below is
+    # `[^}]*`, which stops at the FIRST '}', so a keywords value carrying a
+    # nested brace group before INCOMPLETE (e.g. `{... {LaTeX} ..., INCOMPLETE}`)
+    # is still not seen. That one-level nesting blindness predates the
+    # quoted-form addition and is not what this pattern is for; the
+    # field-value owner with nesting tolerance is _KEYWORDS_FIELD_RE.
     _incomplete_kw_re = re.compile(
         r'keywords\s*=\s*(?:\{[^}]*INCOMPLETE|"[^"]*INCOMPLETE)', re.IGNORECASE)
 
