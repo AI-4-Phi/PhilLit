@@ -105,6 +105,26 @@ class TestCleanBibtexStr:
         assert "{" not in result
         assert "\\" not in result
 
+    def test_ldots_not_mangled_by_l_escape(self):
+        """\\l (l-slash) must not fire inside \\ldots -- delivered
+        References carried 'isłdots' (algorithmic-fairness-2023)."""
+        assert clean_bibtex_str(r"What's Fair is\ldots{} Fair?") == "What's Fair is... Fair?"
+        assert clean_bibtex_str(r"is\ldots done") == "is... done"
+
+    def test_textit_command_stripped_argument_kept(self):
+        """Delivered References carried 'Precis of \\textitUtopophobia'."""
+        assert clean_bibtex_str(
+            r"Precis of \textit{Utopophobia: On the Limits}"
+        ) == "Precis of Utopophobia: On the Limits"
+
+    def test_emph_command_stripped(self):
+        assert clean_bibtex_str(
+            r"Debate: On {Christiano}'s {\emph{The Constitution of Equality}}"
+        ) == "Debate: On Christiano's The Constitution of Equality"
+
+    def test_l_slash_alone_still_decodes(self):
+        assert clean_bibtex_str(r"Wis{\l}awa") == "Wisława"
+
 
 # =============================================================================
 # Tests for format_author_list

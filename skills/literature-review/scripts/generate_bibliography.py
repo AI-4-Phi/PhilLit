@@ -44,9 +44,18 @@ _MATCH_WINDOW = 60
 
 def clean_bibtex_str(s: str) -> str:
     """Normalize a BibTeX string: LaTeX accents → braces → \\& → \\url{}."""
+    # Step 0a: ellipsis command BEFORE the escapes loop -- LATEX_ESCAPES
+    # contains \l (l-slash), which otherwise fires inside \ldots and
+    # delivered 'isłdots' into a References line.
+    s = re.sub(r"\\ldots(\{\})?", "...", s)
+    # Step 0b: text-style commands -- drop the command token, keep the
+    # argument (the existing brace strip below unwraps it). Without this a
+    # References line read 'Precis of \textitUtopophobia'.
+    s = re.sub(r"\\(textit|emph|textbf|textsc)\b\s*", "", s)
+
     # Step 1: LaTeX accent-inside-braces → Unicode
     # Handle both {\'e} and \'e forms
-    for latex, uni in LATEX_ESCAPES.items():
+    for latex, uni in sorted(LATEX_ESCAPES.items(), key=lambda kv: -len(kv[0])):
         # Braced form: {\cmd}
         s = s.replace("{" + latex + "}", uni)
         # Unbraced form: \cmd (but not if already handled by braced replacement)
