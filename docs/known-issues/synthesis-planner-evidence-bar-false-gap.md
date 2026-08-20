@@ -6,7 +6,17 @@ acceptance quality read found it)
 **Severity**: High — produces confident false negative-existence claims in
 the delivered text, the exact reader-facing harm the evidence tier was built
 to prevent
-**Status**: Open
+**Status**: FIXED 2026-08-19 — the convention below shipped the same day the
+issue was filed: `agents/synthesis-planner.md` now carries the
+evidence-bar-is-never-a-claim-about-the-literature rule (verified-substitute
+routing first, silent omission second, absence claims licensed only when no
+relevant entry exists at ANY tier; the seeding phrase "note the gap if the
+work would have been important" is gone, and barred-work losses are reported
+to the orchestrator, never into review-facing content), and
+`agents/synthesis-writer.md` bans unplanned negative-existence claims
+(outline-licensed only — covers the observed third, writer-invented
+instance). Both pinned by `tests/test_agent_definitions.py`. Reaches the
+service at its next re-vendor pin.
 
 ## Summary
 

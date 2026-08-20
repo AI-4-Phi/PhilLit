@@ -181,6 +181,39 @@ def test_conventions_has_no_stale_suffix_caveat():
         assert stale not in text, f"stale renderer caveat still present: {stale}"
 
 
+def test_planner_never_converts_evidence_bar_into_gap_claim():
+    """Production finding (2026-08-19, the service's first kimi run,
+    review 42b029364b084b6b): the planner converted EVIDENCE-NONE bars into
+    "a gap the reviewed literature leaves unaddressed" while an
+    abstract-attested source bearing on the same question sat unused in the
+    corpus; the claim shipped 3x in the final text. The old prose seeded it:
+    "note the gap if the work would have been important". Pin the
+    replacement convention's load-bearing phrases (a bare "gap" substring
+    would be vacuous), and pin the seeding phrase OUT."""
+    text = (REPO_ROOT / "agents" / "synthesis-planner.md").read_text(
+        encoding="utf-8")
+    assert "never a claim about the literature" in text
+    assert "verified substitute" in text
+    assert "omit the topic silently" in text
+    # The permission floor for a genuine absence claim: no relevant entry
+    # at ANY tier -- not "no citable entry".
+    assert "at any tier" in text
+    # The seeding phrase must be gone.
+    assert "note the gap if the work would have been important" not in text
+
+
+def test_writer_never_asserts_unplanned_literature_gap():
+    """Same production run: the writer transcribed the planned gap claim
+    twice, stripped the disclosing parenthetical, and ADDED a third
+    unplanned instance in the Conclusion. The planner convention cannot
+    reach that third instance -- pin a writer-side guard that makes
+    negative-existence claims outline-licensed only."""
+    text = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(
+        encoding="utf-8")
+    assert "only where the outline explicitly plans" in text
+    assert "not evidence of absence" in text
+
+
 def test_researcher_carve_out_names_every_primary_excluded_host():
     """Prose-vs-policy pin (Task 4, the encyclopedia-host exclusion, shipped
     with manual verification only, external review 2026-08-17): the

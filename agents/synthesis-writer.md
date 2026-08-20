@@ -127,6 +127,8 @@ for an entry that has no such field.
 
 Quote only text actually present in the sourced `abstract` or context field. The `note` field (CORE ARGUMENT / RELEVANCE / POSITION) is LLM-generated and licenses **no content claim at any tier except `EVIDENCE-WEB`** — everywhere else it may inform relevance and placement only. The WEB exception is exactly the one the tier table states: characterization grounded in the note, never quotation. Even there, treat the note's claims about *what the source says* as reliable only insofar as they stay close to its `web_span` fragments — a note can carry a framing the page never states (measured in the live acceptance run: a "Goodhart's Law" framing attributed to a page that never mentions it), so prefer the note's span-adjacent content and drop a note claim that names a specific framing, quotation, or attribution you cannot see supported. Disclosure rides the qualifier-in-prose convention above: write "as the SEP entry describes it, ..." in prose, never "(Smith 2020, abstract unavailable)" in the parenthesis.
 
+**Never assert a gap in the literature on your own.** Write "the literature does not address X" (or any equivalent negative-existence claim) only where the outline explicitly plans it — never introduce one yourself, not even in the Conclusion. A source you were not given, or were told not to cite, is invisible to you — it is not evidence of absence.
+
 **`venue_status = {low-visibility}` means OpenAlex records little about the
 venue.** The journal resolves, but it is not a core source, not DOAJ-listed,
 and has a low venue-level h-index. That is a statement about *visibility, not
