@@ -1223,6 +1223,55 @@ def test_validation_failure_reports_offender(tmp_path, monkeypatch, capsys):
     assert "ok2020" in err
 
 
+def test_validation_failure_with_no_offender_says_file_level(
+        tmp_path, monkeypatch, capsys):
+    """When no single entry reproduces the failure, the operator must be
+    told so explicitly -- silence after the whole-file message reads like a
+    missing diagnostic. Offenders are forced empty (the real cause of this
+    shape is file-level: duplicate keys, or a join artifact)."""
+    import enrich_bibliography as eb
+    bib = tmp_path / "in.bib"
+    bib.write_text(
+        "@article{ok2020,\n  author = {A, B},\n  title = {T},\n"
+        "  year = {2020},\n}\n",
+        encoding="utf-8")
+    monkeypatch.setattr(eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (None, None))
+    real = eb.add_keyword_to_entry
+    monkeypatch.setattr(eb, "add_keyword_to_entry",
+                        lambda text, kw: real(text, kw).replace("}", "", 1))
+    monkeypatch.setattr(eb, "_name_invalid_entries", lambda raws: [])
+    stats = eb.enrich_bibliography(bib, None, None, None, None)
+    assert stats.get("validation_failed") is True
+    assert stats.get("validation_failed_keys") == []
+    err = capsys.readouterr().err
+    assert "no single entry reproduces the failure" in err
+    assert "file-level" in err
+
+
+def test_validation_failure_sanitizes_non_ascii_key(tmp_path, monkeypatch, capsys):
+    """A non-ASCII citation key must reach the warning backslash-escaped,
+    the same way the pybtex diag already does -- this line can be piped
+    through Windows cp1252."""
+    import enrich_bibliography as eb
+    bib = tmp_path / "in.bib"
+    bib.write_text(
+        "@article{ok2020,\n  author = {A, B},\n  title = {T},\n"
+        "  year = {2020},\n}\n",
+        encoding="utf-8")
+    monkeypatch.setattr(eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (None, None))
+    real = eb.add_keyword_to_entry
+    monkeypatch.setattr(eb, "add_keyword_to_entry",
+                        lambda text, kw: real(text, kw).replace("}", "", 1))
+    monkeypatch.setattr(eb, "_name_invalid_entries",
+                        lambda raws: [("müller2020", "SyntaxError: x")])
+    eb.enrich_bibliography(bib, None, None, None, None)
+    err = capsys.readouterr().err
+    assert "m\\xfcller2020" in err
+    assert "müller2020" not in err
+
+
 def test_zero_parse_of_nonempty_file_refuses_to_overwrite(tmp_path, capsys):
     """Drop-direction backstop. If the splitter yields NO entries from a
     non-empty file (here: the single entry's opener is corrupted to

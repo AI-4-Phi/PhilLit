@@ -553,6 +553,13 @@ def attest_prefilled_entry(
 # Main Processing
 # =============================================================================
 
+def _ascii_safe(s: str) -> str:
+    """backslashreplace fold for diagnostics: pybtex messages, and citation
+    keys themselves, can carry accented source text, and this output may be
+    piped through Windows cp1252 (CLAUDE.md non-ASCII output rule)."""
+    return s.encode('ascii', 'backslashreplace').decode('ascii')
+
+
 def _name_invalid_entries(raw_entries: list) -> list:
     """(citation_key, 'ExceptionClass: message') for every entry text that
     fails a standalone pybtex parse. Diagnostic-only: called on the
@@ -571,11 +578,8 @@ def _name_invalid_entries(raw_entries: list) -> list:
         try:
             parse_string(raw, bib_format='bibtex')
         except Exception as e:
-            # backslashreplace: pybtex messages can embed accented source
-            # text, and this diagnostic may be piped through Windows
-            # cp1252 (CLAUDE.md non-ASCII output rule).
-            diag = f"{type(e).__name__}: {e}".encode(
-                'ascii', 'backslashreplace').decode('ascii')
+            # _ascii_safe: see its docstring for why (non-ASCII output rule).
+            diag = _ascii_safe(f"{type(e).__name__}: {e}")
             named.append((key, diag))
     return named
 
@@ -752,10 +756,23 @@ def enrich_bibliography(
             parse_file(str(tmp_path), bib_format='bibtex')
         except Exception as e:
             validation_ok = False
-            log_progress(f"WARNING: Enriched file has BibTeX syntax errors: {e}")
+            log_progress("WARNING: Enriched file has BibTeX syntax errors: "
+                         + _ascii_safe(str(e)))
             offenders = _name_invalid_entries(enriched_entries)
             for key, diag in offenders:
-                log_progress(f"WARNING:   offending entry '{key}': {diag}")
+                # The KEY needs the same backslashreplace treatment the diag
+                # already got: non-ASCII citation keys exist in the corpus,
+                # and this line may be piped through Windows cp1252.
+                log_progress(f"WARNING:   offending entry "
+                             f"'{_ascii_safe(key)}': {diag}")
+            if not offenders:
+                # Say so explicitly rather than leaving the operator to read
+                # silence: every entry parses standalone, so the fault is
+                # file-level (duplicate keys, or a join artifact between
+                # entries), not attributable to any one record.
+                log_progress("WARNING:   no single entry reproduces the "
+                             "failure -- it is file-level (e.g. duplicate "
+                             "keys, or a join artifact between entries)")
             # Set BOTH failure markers here so they cannot drift apart if
             # the later else-branch is ever refactored.
             stats['validation_failed'] = True
@@ -778,7 +795,7 @@ def enrich_bibliography(
             tmp_path.unlink()
         except OSError:
             pass
-        log_progress(f"WARNING: Validation failed — original file unchanged")
+        log_progress("WARNING: Validation failed -- original file unchanged")
 
     # Enrichment ledger: written on every parse-successful run, symmetric
     # with the cleaning ledger (metadata_cleaner.py) -- an empty entries
