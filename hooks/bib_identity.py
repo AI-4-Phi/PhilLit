@@ -14,8 +14,10 @@ here is pure: no I/O, no environment reads, no state.
 SCOPE NOTE (deliberate, ROADMAP item 4 Decision 4): `title_key` does NOT decode
 LaTeX escapes, so a title stored with an escaped accent keys differently
 depending on whether the caller pre-decoded it (`generate_bibliography` does via
-`clean_bibtex_str`; `dedupe_bib` does not). That divergence is unmeasured, and
-adding decoding here would change `metadata_cleaner`'s API-vs-bib title matching
+`clean_bibtex_str`; `dedupe_bib` does not). That divergence was measured
+2026-08-20 over 8,517 titled entries in 313 local bibs: 149 divergent keys
+(1.7%) and one duplicate-detection disagreement, in an old-architecture review.
+Adding decoding here would change `metadata_cleaner`'s API-vs-bib title matching
 - the surface that produced the year-corruption incident. Left as is.
 
 NOT owned here: `generate_bibliography._normalize_for_matching`, the fold applied

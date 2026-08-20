@@ -6,44 +6,38 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.4.7**, 2026-08-19. Check
+Last release: **plugin v0.4.8**, 2026-08-20. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-Three items are queued, in this order:
-
-1. **Reference list omits title-only citations** — decide the citation-form
-   convention, or teach the matcher title mentions.
-2. **Enrichment serialization failure drops a whole domain's ledger** —
-   reproduce from the service's kept artifacts, then fix.
-3. **LaTeX accents key one title two ways** — its own decision session.
-
-Each has its own section below, under those names. (Section numbers in this
-file are historical: numbers are never reused once an item ships, so the
+One item is queued: **LaTeX accents key one title two ways** — its own
+decision session. Its section is below, under that name. (Section numbers in
+this file are historical: numbers are never reused once an item ships, so the
 sequence has gaps. Refer to items by name.)
 
-The phillit-service re-vendor comes after all of these — see the cross-repo
-note below.
+The phillit-service re-vendor comes after it — see the cross-repo note below.
 
 Everything else in this file is a recorded residual, not work.
 
 **Cross-repo, needs a phillit-service session — and Johannes wants it LAST**
-(decided 2026-08-19): re-vendor after the queued items above have landed, so
+(decided 2026-08-19): re-vendor after the queued item above has landed, so
 the service takes one pin covering everything rather than a pin per item. Move
-the service's re-vendor pin to the v0.4.7 bump commit or later. That single move picks up the
-web-source evidence item's encyclopedia-host exclusion (v0.4.3), researcher
-search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5) and
-the conference-venue provenance fix (v0.4.6), and the synthesis-planner
+the service's re-vendor pin to the v0.4.8 bump commit or later. That single
+move picks up the web-source evidence item's encyclopedia-host exclusion
+(v0.4.3), researcher
+search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5),
+the conference-venue provenance fix (v0.4.6), the synthesis-planner
 false-gap convention (v0.4.7 — the fix for the High-severity defect the
-service's first production run surfaced), and it retires the service's
-interim researcher-prose carve-out for the excluded hosts. The other two
-production-run defect fixes (the title-only-citation and
-enrichment-serialization items above) land here and ride whichever pin
-follows them. The cross-repo rule —
-scripted re-vendor, never hand-mirroring — lives in `CLAUDE.md`, "Sister repo:
-phillit-service".
+service's first production run surfaced), and the remaining two
+production-run defect fixes plus the reference-rendering display fixes
+(v0.4.8: the title-mention net and the writer's author-year convention, the
+enrichment parser hardening with its validation diagnostics, and
+`clean_bibtex_str`'s `\ldots`/`\textit`/`\emph` handling); and it retires the
+service's interim researcher-prose carve-out for the excluded hosts. The
+cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
+`CLAUDE.md`, "Sister repo: phillit-service".
 
 **Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
 reference carries its descriptive name, never a bare symbol): this file,
@@ -237,44 +231,37 @@ the year-corruption incident.
   situation that `bib_identity` exists to end (see `CLAUDE.md`, single source of
   truth).
 
-Scope note already recorded in `bib_identity.py`'s module docstring, which
-states the divergence is deliberate and unmeasured. **Measure the incidence
-first** — how many delivered entries actually carry an escaped accent in a
-title — because if it is near zero the right answer may be to accept and record.
+Scope note recorded in `bib_identity.py`'s module docstring, which now carries
+the measurement below.
 
-## 10. Reference list omits title-only citations — QUEUED
+**Measured 2026-08-20**, two scopes (scripts preserved locally under
+`docs/known-issues/title-net-measurement-2026-08-20/`; `reviews/` is
+local-only, so this can never be a CI check):
 
-The reference builder's cited-entry matcher works on author-year shapes, so
-a body citation by title alone never reaches the References list — a
-delivered review cited a work the reader cannot look up (one instance, same
-production run; all 135 author-year tokens in that run resolved with zero
-orphans, so the failure is specific to the title-mention shape). The
-sentence itself was evidence-disciplined; only the References omission is
-the defect.
+- Delivered final bibs (36 `literature-all.bib` plus the production bib):
+  3,593 titled entries, 62 whose two keys diverge (1.7%), 5 of them
+  accent-class, and **zero** duplicate-detection disagreements.
+- Every bib under `reviews/` (313 files, including per-domain and
+  old-architecture bibs; 8,517 titled entries): 149 divergent (1.7%), 9
+  accent-class, and exactly **one** duplicate-detection disagreement — the
+  `gerstgrasser2024` triplicate in `synthetic-data-distribution-compression`,
+  where a brace-protected `{B}reaking` copy keys differently when read raw.
+  That is an old-architecture review whose delivered References show the entry
+  three times; under today's pipeline the References-side decoded dedup would
+  contain the reader-visible damage, leaving a redundant bib entry.
 
-Fix is a decision between two directions: require author-year form for
-every citation (writer convention — title-only mentions become
-non-citations by definition), or teach `find_cited_entries` title mentions.
-Same matcher the collision-aware-matching and Chicago a/b disambiguation
-work hardened (`author-year-collision.md`), but a different failure shape —
-a citation form the matcher never sees at all. Write-up:
-`docs/known-issues/reference-list-omits-title-only-citations.md`.
+The item's name understates its scope: the dominant divergence class is
+brace-protected capitals and `\textit`/`\emph`, not accents. The `\ldots`
+display mangling (the `\l` prefix collision) was a separate defect and was
+fixed independently of this keying decision.
 
-## 11. Enrichment serialization failure drops a whole domain's ledger — QUEUED
-
-One `enrich_bibliography.py` crash cost a domain its entire enrichment
-ledger: zero EVIDENCE-ABSTRACT entries where sibling domains had 7–16, so
-the text cites that whole domain with existence-level hedging (same
-production run). The degrade path held — the barrier reported top-level
-`status: degraded` and a full tier recomputation confirmed no false
-promotion — so the crash itself is the defect, and the quality tax is
-silent to the reader.
-
-The failing domain's inputs are preserved in the service's kept artifact
-set (retrieving them needs a service-side touch; the fix lands here). The
-exact exception shape was not captured, so the fix should also make the
-failure path log the exception class and offending record. Write-up:
-`docs/known-issues/enrich-bibliography-serialization-failure.md`.
+Recommendation: **accept and record.** One reader-visible instance in the
+whole local corpus, in an architecture no longer in use, is thin warrant for
+moving code behind the year-corruption incident. If Johannes wants a
+harm-reducing step short of full decoding, the smallest is stripping braces
+inside `title_key` before folding: it reaches the dominant class without
+touching accent handling or `metadata_cleaner`'s API-vs-bib title matching.
+The decision is still Johannes's.
 
 Other open items live in their own known-issue docs — see
 `docs/known-issues/` for anything whose Status line is still Open.
