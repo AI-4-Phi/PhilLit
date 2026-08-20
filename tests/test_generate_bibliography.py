@@ -2749,3 +2749,59 @@ class TestTitleMentionWiring:
                 title="Joint Account Theory")))
         cited = {k for k, _ in find_cited_entries(prose, bib)}
         assert cited == {"muldoonSolo2023"}
+
+    @pytest.mark.parametrize("prose,key,entry", [
+        # Article: format_entry renders the title in QUOTES -- the same shape
+        # the net's quoted-span regexes match.
+        ("## Review\n\nHeersmink’s \"The Internet, Cognitive Enhancement, "
+         "and the Values of Cognition\" (2016) frames the upshot.\n",
+         "heersmink2016internet",
+         dict(authors=["Heersmink, Richard"], year="2016", journal="Synthese",
+              title="The Internet, Cognitive Enhancement, and the Values of Cognition")),
+        # Book: rendered in ITALICS -- the other format_entry path, matched by
+        # the net's `*...*` regex.
+        ("## Review\n\nRawls looms over everything here. *A Theory of Justice* "
+         "remains the touchstone for the whole debate.\n",
+         "rawls1971theory",
+         dict(entry_type="book", authors=["Rawls, John"], year="1971",
+              title="A Theory of Justice", publisher="Harvard University Press")),
+    ], ids=["quoted-article", "italicized-book"])
+    def test_net_added_entry_converges_across_reruns(self, prose, key, entry):
+        """The net must not self-perpetuate through its OWN rendered output.
+
+        format_entry writes article titles in quotes and book titles in
+        italics -- exactly the spans _title_mentions matches -- so the
+        References section this script emits is a document full of
+        net-matchable title spans. That is the item 3 F fixed-point failure
+        class recorded in _strip_references_section's docstring (F "never
+        converged at all" over a three-run cycle), and SKILL.md Phase 6 tells
+        operators to re-run step 4 after a lint failure, so second runs happen
+        in normal operation. What contains it here is that the net is fed the
+        STRIPPED prose (_title_mentions(prose, ...), not review_text).
+
+        Two phases, and the SECOND is what gives the test teeth. Three stable
+        render/re-parse cycles alone are vacuous as a guard: with one entry
+        whose title the prose still mentions, the answer is the same key
+        whether or not the reference list is stripped (verified by mutation --
+        swapping `prose` for `review_text` leaves phase 1 green). Only the
+        operator fix cycle separates them, exactly as it does for item 3 F's
+        letter net: once the operator deletes the title mention from the body
+        and re-runs step 4 over the file, stale ## References and all, the
+        entry must go. Unstripped, its own reference line quotes/italicizes
+        the title AND names the surname, so the net re-adds the very phantom
+        the operator was removing -- for ever."""
+        bib = _make_bib((key, _make_entry(**entry)))
+        doc = prose
+        for _ in range(3):
+            cited = find_cited_entries(doc, bib)
+            assert [k for k, _ in cited] == [key]
+            doc = apply_references(doc, generate_references(cited))
+
+        # Phase 2: the operator removes the title mention; the stale rendered
+        # References section (still carrying the quoted/italicized title and
+        # the surname) is the only place the work is now named.
+        assert "## References" in doc  # sanity: a reference list exists to inherit
+        edited = apply_references(
+            "## Review\n\nThe debate has moved on to other questions.\n",
+            generate_references(find_cited_entries(doc, bib)))
+        assert [k for k, _ in find_cited_entries(edited, bib)] == []
