@@ -2425,7 +2425,7 @@ class TestRecoveredNamesAreStrippedOfPossessives:
 
 def test_title_key_possessive_folds_to_space():
     """The surname conjunct tokenizes prose via title_key; a curly
-    possessive must fold to 'surname s', not 'surnames' -- five fixtures
+    possessive must fold to 'surname s', not 'surnames' -- three fixtures
     below carry the surname ONLY as a possessive (the production shape)."""
     from bib_identity import title_key
     assert title_key("Heersmink’s") == "heersmink s"
@@ -2540,3 +2540,76 @@ class TestTitleMentions:
             authors=["Dupont, Jean"], year="1990",
             title="Une Th{\\'e}orie de la Justice Sociale Moderne")))
         assert "x1990" in generate_bibliography._title_mentions(prose, bib)
+
+    def _rawls_bib(self):
+        return _make_bib(("rawls1971theory", _make_entry(
+            entry_type="book", authors=["Rawls, John"], year="1971",
+            title="A Theory of Justice")))
+
+    def test_short_failed_italic_does_not_leak_closing_delimiter_as_opener(self):
+        """`"`/`*` are non-directional: a short span that fails the >=4-word
+        (here, {4,300}-char) floor leaves its CLOSING delimiter free to be
+        retried as the next match's OPENER, which can capture plain running
+        text between two unrelated delimiters. Measured false fire before
+        the edge-whitespace guard: this span captured " a theory of
+        justice " between the two failed *not*/*however* italics."""
+        prose = "Rawls is *not* a theory of justice *however* in the strict sense."
+        assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
+
+    def test_short_failed_quote_does_not_leak_closing_delimiter_as_opener(self):
+        """Same mis-pairing, straight double quotes: "AI" is too short to
+        net, so its closing quote is retried as an opener and can capture
+        plain text up to the next quote."""
+        prose = 'Rawls called it "AI", a theory of justice, "fails" on its own terms.'
+        assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
+
+    def test_leading_bare_asterisk_does_not_leak(self):
+        """A leading bare `*` (e.g. a markdown list marker) can pair with a
+        later closing delimiter and mis-capture running text."""
+        prose = "* Rawls, *ok*, a theory of justice *matters*."
+        assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
+
+    def test_word_adjacent_asterisks_do_not_leak(self):
+        """Asterisks immediately touching a word (no surrounding space) are
+        exactly the CommonMark-illegal shape the edge-whitespace guard is
+        built on -- the captured span still carries the whitespace that
+        was inside the delimiters, so it is still rejected."""
+        prose = "Rawls wrote* a theory of justice *here."
+        assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
+
+    def test_span_equality_rejects_a_superset_title(self):
+        """Containment, not just equality, must be rejected: a span that
+        CONTAINS the bib title plus more text is not a match. If `tk not
+        in folded_spans` were ever loosened to substring containment, this
+        would fire; under equality it must not."""
+        prose = ("*A Theory of Justice, Revised Edition* changed everything, "
+                 "as Rawls knew.")
+        assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
+
+    def test_three_word_title_blocked_by_word_guard(self):
+        """Pins the >=4-word floor itself: a 3-folded-word title, exactly
+        quoted with the surname present, must still not fire."""
+        prose = "Clark discussed *the extended mind* at length in that essay."
+        bib = _make_bib(("clark1998extended", _make_entry(
+            authors=["Clark, Andy"], year="1998", title="The Extended Mind")))
+        assert generate_bibliography._title_mentions(prose, bib) == {}
+
+    def test_surname_as_substring_of_longer_word_does_not_satisfy_conjunct(self):
+        """The surname conjunct is a whitespace-bounded token match, not
+        substring containment: "Rawlsian" must not stand in for "Rawls"."""
+        prose = ('The Rawlsian tradition endorses "A Theory of Justice, '
+                 'Framed Anew" as its touchstone.')
+        bib = _make_bib(("rawls1971framed", _make_entry(
+            entry_type="book", authors=["Rawls, John"], year="1971",
+            title="A Theory of Justice, Framed Anew")))
+        assert generate_bibliography._title_mentions(prose, bib) == {}
+
+    def test_personless_entry_is_skipped(self):
+        """An entry with neither an author nor an editor cannot corroborate
+        the surname conjunct, so it never fires even on an exact quoted
+        span -- precision side, per the function's own docstring."""
+        prose = '"A Theory of Justice, Framed Anew" is quoted here in full.'
+        bib = _make_bib(("anon1971framed", _make_entry(
+            entry_type="book", year="1971",
+            title="A Theory of Justice, Framed Anew")))
+        assert generate_bibliography._title_mentions(prose, bib) == {}

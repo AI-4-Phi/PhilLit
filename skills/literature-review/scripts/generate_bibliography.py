@@ -1097,8 +1097,8 @@ def _sighted_letters(review_text: str) -> dict:
 # make them unbounded.
 _TITLE_SPAN_RES = (
     re.compile(r'"([^"\n]{4,300})"'),
-    re.compile(r'“([^”\n]{4,300})”'),
-    re.compile(r'‘([^’\n]{4,300})’'),
+    re.compile(r'\u201c([^\u201d\n]{4,300})\u201d'),
+    re.compile(r'\u2018([^\u2019\n]{4,300})\u2019'),
     re.compile(r'\*([^*\n]{4,300})\*'),
 )
 
@@ -1125,6 +1125,22 @@ def _title_mentions(prose: str, bib_data) -> dict:
     title appearing as plain running text is a canonical phrase, not a
     citation (measured: containment alone fires 31 times, mostly falsely).
 
+    The running-text safety rests on span equality PLUS an edge-whitespace
+    guard, not equality alone. `"`/`*` are non-directional delimiters: when
+    a short span fails the {4,300} floor (e.g. `*not*`), the regex engine
+    retries the FAILED span's closing delimiter as the next match's opener,
+    and can capture plain running text up to the following delimiter (e.g.
+    "Rawls is *not* a theory of justice *however* in the strict sense."
+    mis-captures " a theory of justice " between the two failed italics).
+    Every such mis-paired capture carries leading and/or trailing
+    whitespace, because a real quoted or italicized title is never written
+    with a space just inside its delimiter (CommonMark's flanking rule
+    already forbids whitespace-adjacent emphasis delimiters, and no writer
+    quotes " Title " with padding) -- so rejecting any raw capture that
+    disagrees with its own `.strip()` closes the mis-pairing without
+    narrowing {4,300} (narrowing it to {1,300} only closes 2 of the 4
+    measured mis-pairing shapes).
+
     Known limits, deliberate: a prose quote of the pre-colon main title
     only ("The Extended Mind" for "The Extended Mind: ...") does not
     match; neither does a title under 4 folded words, nor a title
@@ -1135,7 +1151,10 @@ def _title_mentions(prose: str, bib_data) -> dict:
     folded_spans = set()
     for rx in _TITLE_SPAN_RES:
         for m in rx.finditer(prose):
-            fs = title_key(m.group(1))
+            g = m.group(1)
+            if g != g.strip():
+                continue  # non-directional-delimiter mis-pairing guard
+            fs = title_key(g)
             if fs:
                 folded_spans.add(fs)
     if not folded_spans:
