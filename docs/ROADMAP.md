@@ -34,7 +34,7 @@ Everything else in this file is a recorded residual, not work.
 **Cross-repo, needs a phillit-service session — and Johannes wants it LAST**
 (decided 2026-08-19): re-vendor after the queued items above have landed, so
 the service takes one pin covering everything rather than a pin per item. Move
-the service's re-vendor pin to `888a827` or later. That single move picks up the
+the service's re-vendor pin to the v0.4.7 bump commit or later. That single move picks up the
 web-source evidence item's encyclopedia-host exclusion (v0.4.3), researcher
 search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5) and
 the conference-venue provenance fix (v0.4.6), and the synthesis-planner
