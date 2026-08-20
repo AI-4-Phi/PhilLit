@@ -1209,6 +1209,14 @@ def _print_letter_rescue(rec: dict) -> None:
           file=sys.stderr)
 
 
+def _print_title_rescue(rec: dict) -> None:
+    """Report a member kept only because the prose mentions its title."""
+    print("  [TITLE] kept " + _ascii(rec["key"])
+          + ": no citation instance supports it, but the prose mentions "
+          "its title - keeping it rather than dropping a cited work",
+          file=sys.stderr)
+
+
 def _cited_letters_phrase(year: str, letters) -> str:
     """"the cited letter 2010c matches" / "the cited letters 2010c, 2010d
     match" - the singular/plural halves of the unmatched-letter warning."""
@@ -1306,7 +1314,8 @@ def _members_are_distinct_works(members: list[dict]) -> bool:
     return True
 
 
-def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
+def _resolve_collisions(records: list[dict], review_text: str,
+                        title_mentioned: frozenset = frozenset()) -> list[dict]:
     """Item 3 E (external-review design): group colliding records by
     variant-intersection connected components per year; resolve each group
     by per-citation-instance candidate sets parsed from the ORIGINAL text;
@@ -1341,7 +1350,14 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
     the prose carries a LETTERLESS citation of that group's author-year which
     the parser rejected (_unresolvable_mentions) - such a mention names the
     group without saying which member, which is what ambiguous-keep-all is
-    for."""
+    for.
+
+    Item 10 adds a discriminator-independent net: no member is dropped while
+    the prose mentions its TITLE in quoted/italicized form (_title_mentions) -
+    a title names exactly one work, so it outranks every author-year
+    ambiguity. The function has exactly two drop sites (the
+    first_pos_supported branch and the second_pos_seen branch); both carry the
+    rescue, and a future third drop site must too."""
     for rec in records:
         rec["_variants"] = ascii_variants(rec["surname"]) or \
             frozenset({rec["surname"].lower()})
@@ -1595,6 +1611,9 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                 elif _letter_is_sighted(rec, sighted):
                     _print_letter_rescue(rec)
                     keep.append(rec)
+                elif rec["key"] in title_mentioned:
+                    _print_title_rescue(rec)
+                    keep.append(rec)
                 else:
                     print("  [COLLISION] dropped " + _ascii(rec["key"])
                           + ": shares surname/year with "
@@ -1670,6 +1689,10 @@ def _resolve_collisions(records: list[dict], review_text: str) -> list[dict]:
                     _print_letter_rescue(rec)
                     keep.append(rec)
                     continue
+                if rec["key"] in title_mentioned:
+                    _print_title_rescue(rec)
+                    keep.append(rec)
+                    continue
                 print("  [COLLISION] dropped " + _ascii(rec["key"])
                       + ": shares surname/year with "
                       + ", ".join(sorted(_ascii(r["key"]) for r in members
@@ -1722,7 +1745,7 @@ def _strip_references_section(review_text: str) -> str:
 def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     """Find BibTeX entries cited in the review text.
 
-    Matching runs in two stages before this function's own dedup.
+    Matching runs in three stages before this function's own dedup.
     _collect_matches finds every candidate whose surname+year proximity
     pattern appears in the prose (dual-haystack: plain NFKD and
     transliterated, tried symmetrically). _resolve_collisions (item 3 E)
@@ -1737,6 +1760,9 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     never dropped, however the citation carrying it was written
     (_sighted_letters); nor is any member of a group the prose cites
     letterlessly in a form the parser rejects (_unresolvable_mentions).
+    Third, item 10's title net (_title_mentions): an entry whose title the
+    prose quotes or italicizes is never dropped by the resolver, and is
+    appended here if no author-year instance matched it at all.
 
     Returns list of (key, entry) tuples for cited entries, deduplicated by DOI
     and, as a fallback, by (normalized title, year, first-author surname).
@@ -1751,7 +1777,27 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     convergence failure it fixes.
     """
     prose = _strip_references_section(review_text)
-    records = _resolve_collisions(_collect_matches(prose, bib_data), prose)
+    title_mentioned = _title_mentions(prose, bib_data)
+    records = _resolve_collisions(
+        _collect_matches(prose, bib_data), prose, frozenset(title_mentioned))
+
+    # Item 10: entries the prose cites by TITLE alone (or whose author-year
+    # never matched -- e.g. the year pushed outside _MATCH_WINDOW by the
+    # quoted title itself) never enter _collect_matches at all. Append them
+    # here so they reach References; they flow through the same dedup loop
+    # as every other record (verified: that loop and everything after it
+    # read only record["key"] and record["entry"], so the minimal record
+    # shape is safe), so a title-mentioned duplicate still merges
+    # (and two same-title copies with DIFFERENT DOIs both survive, per the
+    # dedup layer's GPT-B4 refusal -- pinned by test). kept_keys is
+    # computed AFTER _resolve_collisions so rescued members are never
+    # double-added.
+    kept_keys = {r["key"] for r in records}
+    for key, entry in bib_data.entries.items():
+        if key in title_mentioned and key not in kept_keys:
+            print("  [TITLE] added " + _ascii(key)
+                  + ": the prose cites its title", file=sys.stderr)
+            records.append({"key": key, "entry": entry})
 
     cited = {}  # key -> entry
     seen_dois = {}  # normalized_doi -> citation_key

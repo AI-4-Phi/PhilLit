@@ -2613,3 +2613,139 @@ class TestTitleMentions:
             entry_type="book", year="1971",
             title="A Theory of Justice, Framed Anew")))
         assert generate_bibliography._title_mentions(prose, bib) == {}
+
+
+class TestTitleMentionWiring:
+    def test_title_only_citation_reaches_references(self):
+        """The production defect end-to-end: surname and year both present
+        but pushed apart by the 66-char quoted title (outside the +/-60
+        window), no other citation -- the entry must still be found."""
+        prose = (
+            "## Review\n\nHeersmink’s \"The Internet, Cognitive "
+            "Enhancement, and the Values of Cognition\" (2016) frames the "
+            "upshot in its title.\n")
+        bib = _make_bib(("heersmink2016internet", _make_entry(
+            authors=["Heersmink, Richard"], year="2016",
+            title="The Internet, Cognitive Enhancement, and the Values of Cognition")))
+        cited = find_cited_entries(prose, bib)
+        assert [k for k, _ in cited] == ["heersmink2016internet"]
+
+    def test_title_mention_rescues_first_pos_drop(self, capsys):
+        """Same first-author+year group, the two-author member
+        discriminated by an 'and' instance, the solo member supported only
+        by a quoted title mention -- the mention must rescue it from the
+        first_pos_supported drop branch (NOT via post-resolution
+        inclusion: both members surname-match, so both are IN records and
+        the solo one reaches the drop print).
+
+        Test-design note: two solo-author members with a bare solo
+        instance would BOTH land in cands (ambiguous keep-all) and the
+        test would pass without the rescue. The and-form discrimination
+        is what opens the drop branch."""
+        prose = (
+            "Heersmink and Sutton (2016) argue for extended memory. "
+            "Heersmink's \"The Internet, Cognitive Enhancement, and the "
+            "Values of Cognition\" (2016) frames the values question.\n")
+        bib = _make_bib(
+            ("heersminkSutton2016", _make_entry(
+                authors=["Heersmink, Richard", "Sutton, John"], year="2016",
+                title="Extended Memory Systems and Distributed Cognition Today")),
+            ("heersmink2016internet", _make_entry(
+                authors=["Heersmink, Richard"], year="2016",
+                title="The Internet, Cognitive Enhancement, and the Values of Cognition")))
+        cited = {k for k, _ in find_cited_entries(prose, bib)}
+        assert "heersmink2016internet" in cited
+        assert "heersminkSutton2016" in cited
+        assert "[TITLE] kept" in capsys.readouterr().err
+
+    def test_title_mention_rescues_second_pos_drop(self, capsys):
+        """The second_pos_seen branch drops EVERY member of a group no
+        first-position instance names; a title mention must rescue there
+        too. Construction notes, all load-bearing: the Muldoon group needs
+        TWO members (a singleton group is kept unconditionally and never
+        reaches any drop branch); the only parse of 'Muldoon' is second
+        position in a corroborated 'and' instance (bloggsMuldoon2023's own
+        author list explains it), so the group reaches second_pos_seen;
+        one member's title is quoted. The rescue (not the inclusion loop)
+        must fire: assert the '[TITLE] kept' report, because the inclusion
+        loop would re-add the entry anyway but print '[TITLE] added' after
+        a misleading 'dropped' line."""
+        prose = (
+            "Bloggs and Muldoon (2023) argue the point, drawing on "
+            "\"The Grand Theory of Collective Agency Formation\" (2023) "
+            "throughout.\n")
+        bib = _make_bib(
+            ("bloggsMuldoon2023", _make_entry(
+                authors=["Bloggs, Joe", "Muldoon, Ryan"], year="2023",
+                title="Joint Work on Collective Agency and Institutions")),
+            ("muldoonSolo2023", _make_entry(
+                authors=["Muldoon, Ryan"], year="2023",
+                title="The Grand Theory of Collective Agency Formation")),
+            ("muldoonOther2023", _make_entry(
+                authors=["Muldoon, Ryan"], year="2023",
+                title="A Different Muldoon Work on Something Else Entirely")))
+        cited = {k for k, _ in find_cited_entries(prose, bib)}
+        assert "muldoonSolo2023" in cited
+        assert "muldoonOther2023" not in cited  # legitimately dropped
+        assert "bloggsMuldoon2023" in cited
+        err = capsys.readouterr().err
+        assert "[TITLE] kept" in err
+        assert "[TITLE] added muldoonSolo2023" not in err
+
+    def test_added_title_mention_flows_through_dedup(self, capsys):
+        """Two duplicate copies (same DOI) cited ONLY by title: both are
+        appended by the inclusion path (no author-year instance exists)
+        and must merge in the existing dedup loop, not appear twice."""
+        prose = ("Rawls looms over everything here. *A Theory of Justice* "
+                 "remains the touchstone for the whole debate.\n")
+        bib = _make_bib(
+            ("rawls1971a", _make_entry(
+                entry_type="book", authors=["Rawls, John"], year="1971",
+                title="A Theory of Justice", doi="10.4159/9780674042605")),
+            ("rawls1971b", _make_entry(
+                entry_type="book", authors=["Rawls, John"], year="1971",
+                title="A Theory of Justice", doi="10.4159/9780674042605")))
+        cited = [k for k, _ in find_cited_entries(prose, bib)]
+        assert len(cited) == 1
+        assert "[TITLE] added" in capsys.readouterr().err
+
+    def test_same_title_distinct_dois_both_added(self):
+        """Two entries with the SAME >=4-word title but DIFFERENT DOIs
+        (e.g. a paper and its book chapter reprint) both reach References
+        on a title-only citation -- pinned as consistent with the dedup
+        layer's GPT-B4 rule (never merge groups whose non-empty DOI sets
+        differ). The operator sees two [TITLE] added lines."""
+        prose = ("Rawls looms over everything here. *A Theory of Justice "
+                 "and Its Critics* remains the touchstone.\n")
+        bib = _make_bib(
+            ("copyA", _make_entry(
+                entry_type="book", authors=["Rawls, John"], year="1971",
+                title="A Theory of Justice and Its Critics", doi="10.1/aaa")),
+            ("copyB", _make_entry(
+                entry_type="book", authors=["Rawls, John"], year="1971",
+                title="A Theory of Justice and Its Critics", doi="10.2/bbb")))
+        cited = {k for k, _ in find_cited_entries(prose, bib)}
+        assert cited == {"copyA", "copyB"}
+
+    def test_author_year_cited_and_title_mentioned_not_double_added(self):
+        """An entry cited author-year AND title-mentioned appears once:
+        the inclusion loop skips keys already among kept records."""
+        prose = ("Rawls (1971) set the agenda with *A Theory of Justice* "
+                 "and the field followed his lead for decades after.\n")
+        bib = _make_bib(("rawls1971theory", _make_entry(
+            entry_type="book", authors=["Rawls, John"], year="1971",
+            title="A Theory of Justice")))
+        assert [k for k, _ in find_cited_entries(prose, bib)] == ["rawls1971theory"]
+
+    def test_no_mention_no_change(self):
+        """A bib/prose pair with no quoted titles behaves exactly as
+        before (guard against the net perturbing item 3 E/F behavior)."""
+        prose = "Muldoon (2023) presents the solo account.\n"
+        bib = _make_bib(
+            ("muldoonSolo2023", _make_entry(
+                authors=["Muldoon, Ryan"], year="2023", title="Solo Account Theory")),
+            ("muldoonWu2023", _make_entry(
+                authors=["Muldoon, Ryan", "Wu, Jane"], year="2023",
+                title="Joint Account Theory")))
+        cited = {k for k, _ in find_cited_entries(prose, bib)}
+        assert cited == {"muldoonSolo2023"}
