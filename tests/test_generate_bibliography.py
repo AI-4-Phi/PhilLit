@@ -2577,6 +2577,39 @@ class TestTitleMentions:
         prose = "Rawls wrote* a theory of justice *here."
         assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
 
+    def test_intraword_asterisk_mis_pairing_does_not_leak(self):
+        """The mis-pairing shape the edge-whitespace guard alone does NOT
+        catch: when the failed short span's delimiters abut words on both
+        sides (`*not*a theory of justice*however*`), the retried opener
+        captures the running text with NO edge whitespace, so every earlier
+        guard passes and the entry was falsely ADDED (a phantom reference).
+        The word-boundary context guard rejects it: the character before
+        the match is `t`, from `not`."""
+        prose = ("Rawls is *not*a theory of justice*however* in the "
+                 "strict sense.")
+        assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
+
+    def test_intraword_quote_mis_pairing_does_not_leak(self):
+        """Same shape with straight double quotes: `"AI"` fails the floor,
+        its closing quote is retried as an opener, and the captured span
+        `a theory of justice` is whitespace-clean because the delimiters
+        abut words."""
+        prose = ('Rawls called it "AI"a theory of justice"fails" on its '
+                 'own terms.')
+        assert generate_bibliography._title_mentions(prose, self._rawls_bib()) == {}
+
+    def test_word_boundary_guard_admits_bold_and_parenthesized_forms(self):
+        """The word-boundary context guard must not narrow legitimate
+        forms: a **bold** span abuts asterisks (not word characters), and a
+        parenthesized quoted title abuts `(` and `)`."""
+        assert "rawls1971theory" in generate_bibliography._title_mentions(
+            "Rawls changed the field. **A Theory of Justice** is the entry "
+            "point.", self._rawls_bib())
+        prose = ('Heersmink makes the point ("The Internet, Cognitive '
+                 'Enhancement, and the Values of Cognition") at length.')
+        assert "heersmink2016internet" in generate_bibliography._title_mentions(
+            prose, self._heersmink_bib())
+
     def test_span_equality_rejects_a_superset_title(self):
         """Containment, not just equality, must be rejected: a span that
         CONTAINS the bib title plus more text is not a match. If `tk not

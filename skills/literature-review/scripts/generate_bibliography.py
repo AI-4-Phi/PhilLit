@@ -1102,6 +1102,10 @@ _TITLE_SPAN_RES = (
     re.compile(r'\*([^*\n]{4,300})\*'),
 )
 
+# Word-character probe for the span-context guard in _title_mentions. Used
+# with re.match(s, pos) so it can test a single position without slicing.
+_WORD_CH_RE = re.compile(r'\w')
+
 # Minimum folded word count for a title to be nettable. Measured over the
 # 36 delivered reviews + the production pair: at 4 words the net fires
 # exactly twice, both genuine References omissions (heersmink2016internet
@@ -1125,21 +1129,39 @@ def _title_mentions(prose: str, bib_data) -> dict:
     title appearing as plain running text is a canonical phrase, not a
     citation (measured: containment alone fires 31 times, mostly falsely).
 
-    The running-text safety rests on span equality PLUS an edge-whitespace
-    guard, not equality alone. `"`/`*` are non-directional delimiters: when
-    a short span fails the {4,300} floor (e.g. `*not*`), the regex engine
-    retries the FAILED span's closing delimiter as the next match's opener,
-    and can capture plain running text up to the following delimiter (e.g.
-    "Rawls is *not* a theory of justice *however* in the strict sense."
-    mis-captures " a theory of justice " between the two failed italics).
-    Every such mis-paired capture carries leading and/or trailing
-    whitespace, because a real quoted or italicized title is never written
-    with a space just inside its delimiter (CommonMark's flanking rule
-    already forbids whitespace-adjacent emphasis delimiters, and no writer
-    quotes " Title " with padding) -- so rejecting any raw capture that
-    disagrees with its own `.strip()` closes the mis-pairing without
-    narrowing {4,300} (narrowing it to {1,300} only closes 2 of the 4
-    measured mis-pairing shapes).
+    The running-text safety rests on span equality PLUS two span-level
+    guards, not equality alone. `"`/`*` are non-directional delimiters:
+    when a short span fails the {4,300} floor (e.g. `*not*`), the regex
+    engine retries the FAILED span's closing delimiter as the next match's
+    opener, and can capture plain running text up to the following
+    delimiter (e.g. "Rawls is *not* a theory of justice *however* in the
+    strict sense." mis-captures " a theory of justice " between the two
+    failed italics). Two guards narrow that class, and neither closes it
+    alone:
+
+    1. Edge whitespace. A real quoted or italicized title is never written
+       with a space just inside its delimiter (CommonMark's flanking rule
+       already forbids whitespace-adjacent emphasis delimiters, and no
+       writer quotes " Title " with padding), so any raw capture that
+       disagrees with its own `.strip()` is rejected. This costs nothing
+       and needs no narrowing of {4,300} (narrowing it to {1,300} only
+       closes 2 of the 4 measured mis-pairing shapes).
+    2. Word-boundary context. When the failed short span abuts words on
+       both sides (`*not*a theory of justice*however*`, `"AI"a theory of
+       justice"fails"`) the mis-capture is whitespace-clean and passes
+       guard 1 -- a confirmed phantom-ADD. A genuine title mention is
+       never word-abutted on the OUTSIDE of its delimiters, so a match
+       whose immediately preceding or following character is a word
+       character is rejected. Bold `**Title**` still fires: the abutting
+       characters are asterisks, and `("Title")` abuts parentheses.
+
+    Honest residual: this is an enumeration of shapes, not a closure
+    proof. A pathological mixture still evades both guards -- e.g. a short
+    failed span ending in punctuation (`*...*a theory of justice*however*`
+    abuts `.`, not a word character). What such a capture still has to
+    survive is the other three conjuncts: exact span equality with the
+    folded title, the >=4-folded-word floor, and the first author/editor
+    surname appearing as a token in the document.
 
     Known limits, deliberate: a prose quote of the pre-colon main title
     only ("The Extended Mind" for "The Extended Mind: ...") does not
@@ -1147,6 +1169,17 @@ def _title_mentions(prose: str, bib_data) -> dict:
     mention whose author is named nowhere in the document. All three
     stay covered by ordinary author-year citation, which the writer
     convention requires alongside any title mention.
+
+    Two further scoping notes, both deliberate. The surname conjunct is a
+    DOCUMENT-GLOBAL token check, not a proximity-bounded one: the surname
+    may appear anywhere in the prose, sections away from the title span.
+    It is precision insurance against term-of-art collisions, not a
+    locality claim, and bounding it would lose the ordinary case where a
+    section names the author once and quotes the title later. And the span
+    regexes exclude `\\n`, so a title mention hard-wrapped across two lines
+    is invisible to the net -- a recall gap, accepted for the same reason
+    as the limits above: the writer convention requires an author-year
+    citation alongside any title mention.
     """
     folded_spans = set()
     for rx in _TITLE_SPAN_RES:
@@ -1154,6 +1187,11 @@ def _title_mentions(prose: str, bib_data) -> dict:
             g = m.group(1)
             if g != g.strip():
                 continue  # non-directional-delimiter mis-pairing guard
+            # Word-boundary context guard: see docstring guard 2.
+            if m.start() and _WORD_CH_RE.match(prose, m.start() - 1):
+                continue
+            if _WORD_CH_RE.match(prose, m.end()):
+                continue
             fs = title_key(g)
             if fs:
                 folded_spans.add(fs)
