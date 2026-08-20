@@ -114,6 +114,51 @@ class TestBibTeXParsing:
         assert entries[0]['entry_type'] == 'comment'
 
 
+ENTRY_WITH_AT_IN_KEYWORDS = """@misc{riggs2003understanding,
+  author = {Riggs, Wayne D.},
+  title = {Understanding Virtue and the Virtue of Understanding},
+  year = {2003},
+  keywords = {understanding, Medium, METADATA\\_CLEANED: booktitle, type:@incollection->@misc}
+}"""
+
+
+def test_entry_with_interior_at_not_truncated():
+    """An @ inside a field value must not split the entry (production
+    reproducer: the cleaner's type-demotion marker). The raw text must stay
+    brace-balanced and the fields after the @ must still parse."""
+    from enrich_bibliography import parse_bibtex_entries
+    entries = parse_bibtex_entries(ENTRY_WITH_AT_IN_KEYWORDS)
+    assert len(entries) == 1
+    e = entries[0]
+    assert e["key"] == "riggs2003understanding"
+    assert e["raw"].count("{") == e["raw"].count("}")
+    assert "type:@incollection->@misc" in e["fields"]["keywords"]
+
+
+def test_two_entries_with_interior_at_split_correctly():
+    content = ENTRY_WITH_AT_IN_KEYWORDS + "\n\n" + """@article{smith2020,
+  author = {Smith, Jane},
+  title = {A Title},
+  year = {2020},
+}"""
+    from enrich_bibliography import parse_bibtex_entries
+    entries = parse_bibtex_entries(content)
+    assert [e["key"] for e in entries] == ["riggs2003understanding", "smith2020"]
+    assert entries[0]["raw"].count("{") == entries[0]["raw"].count("}")
+
+
+def test_crlf_line_endings_still_split():
+    """CRLF content: \\r precedes \\n, so the char after each \\n is the
+    next line's first char and line-anchored splitting works; pinned
+    because a reviewer plausibly claimed the opposite."""
+    from enrich_bibliography import parse_bibtex_entries
+    content = ("@article{a2020,\r\n  author = {A, B},\r\n  title = {T},\r\n"
+               "  year = {2020},\r\n}\r\n\r\n"
+               "@article{b2021,\r\n  author = {C, D},\r\n  title = {U},\r\n"
+               "  year = {2021},\r\n}\r\n")
+    assert [e["key"] for e in parse_bibtex_entries(content)] == ["a2020", "b2021"]
+
+
 class TestFieldDetection:
     """Tests for field detection helpers."""
 

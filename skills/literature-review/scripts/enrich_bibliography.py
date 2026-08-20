@@ -65,9 +65,16 @@ def parse_bibtex_entries(content: str) -> list[dict]:
     """
     entries = []
 
-    # Split into entries
-    entry_pattern = r'(@\w+\{[^@]+)'
-    raw_entries = re.findall(entry_pattern, content, re.DOTALL)
+    # Split at line-initial entry openers. The old pattern (@\w+\{[^@]+)
+    # truncated an entry at ANY interior '@' -- the metadata cleaner's
+    # type-demotion marker ('type:@incollection->@misc') cut the entry
+    # mid-keywords, the reassembled file failed pybtex validation, and the
+    # whole domain lost its enrichment ledger (production review
+    # 42b029364b084b6b, domain 2). A value line that itself starts with
+    # '@entry{' would still over-split; a line-initial opener is the
+    # documented boundary and interior '@' is now inert.
+    chunks = re.split(r'(?m)^[ \t]*(?=@\w+\s*\{)', content)
+    raw_entries = [c for c in chunks if c.lstrip().startswith('@')]
 
     for raw in raw_entries:
         # Extract entry type
