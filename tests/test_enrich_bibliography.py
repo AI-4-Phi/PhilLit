@@ -1163,3 +1163,46 @@ def test_ndpr_pass_sees_quoted_keywords(tmp_path, monkeypatch):
     monkeypatch.setattr(eb, "resolve_ndpr_abstract", fake_ndpr)
     eb.enrich_bibliography(bib, None, None, None, None)
     assert calls == ["Virtues of the Mind"]
+
+
+def test_name_invalid_entries_flags_unbalanced_entry():
+    from enrich_bibliography import _name_invalid_entries
+    good = "@article{ok2020,\n  author = {A, B},\n  title = {T},\n  year = {2020},\n}"
+    bad = "@article{broken2020,\n  author = {A, B},\n  title = {T,\n  year = {2020},\n}"
+    named = _name_invalid_entries([good, bad])
+    assert len(named) == 1
+    key, diag = named[0]
+    assert key == "broken2020"
+    assert diag  # carries the exception class/message text
+
+
+def test_name_invalid_entries_skips_nonentry_chunks():
+    from enrich_bibliography import _name_invalid_entries
+    assert _name_invalid_entries([
+        "@comment{arbitrary text}",
+        "@string{jphil = {J. Phil.}}",
+        "@preamble{...}",
+    ]) == []
+
+
+def test_validation_failure_reports_offender(tmp_path, monkeypatch, capsys):
+    """End-to-end: corrupt output -> warning names the offending key and
+    stats carry validation_failed_keys."""
+    import enrich_bibliography as eb
+    bib = tmp_path / "in.bib"
+    bib.write_text(
+        "@article{ok2020,\n  author = {A, B},\n  title = {T},\n"
+        "  year = {2020},\n}\n",
+        encoding="utf-8")
+    monkeypatch.setattr(eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (None, None))
+    # Force corruption the way production did: make the enriched text
+    # brace-unbalanced.
+    real = eb.add_keyword_to_entry
+    monkeypatch.setattr(eb, "add_keyword_to_entry",
+                        lambda text, kw: real(text, kw).replace("}", "", 1))
+    stats = eb.enrich_bibliography(bib, None, None, None, None)
+    assert stats.get("validation_failed") is True
+    assert stats.get("validation_failed_keys") == ["ok2020"]
+    err = capsys.readouterr().err
+    assert "ok2020" in err

@@ -545,6 +545,33 @@ def attest_prefilled_entry(
 # Main Processing
 # =============================================================================
 
+def _name_invalid_entries(raw_entries: list) -> list:
+    """(citation_key, 'ExceptionClass: message') for every entry text that
+    fails a standalone pybtex parse. Diagnostic-only: called on the
+    validation-failure path so the operator can see WHICH record broke
+    the file, not just pybtex's whole-file line number (the production
+    ledger drop was undiagnosable from 'premature end of file').
+    Non-entry chunks (@comment/@string/@preamble) are skipped -- parsed
+    standalone they would be falsely named."""
+    from pybtex.database import parse_string
+    named = []
+    for raw in raw_entries:
+        m = re.match(r'@(\w+)\{([^,\s}]*)', raw.lstrip())
+        if not m or m.group(1).lower() in ('comment', 'string', 'preamble'):
+            continue
+        key = m.group(2).strip()
+        try:
+            parse_string(raw, bib_format='bibtex')
+        except Exception as e:
+            # backslashreplace: pybtex messages can embed accented source
+            # text, and this diagnostic may be piped through Windows
+            # cp1252 (CLAUDE.md non-ASCII output rule).
+            diag = f"{type(e).__name__}: {e}".encode(
+                'ascii', 'backslashreplace').decode('ascii')
+            named.append((key, diag))
+    return named
+
+
 def enrich_bibliography(
     input_path: Path,
     output_path: Optional[Path],
@@ -702,6 +729,13 @@ def enrich_bibliography(
         except Exception as e:
             validation_ok = False
             log_progress(f"WARNING: Enriched file has BibTeX syntax errors: {e}")
+            offenders = _name_invalid_entries(enriched_entries)
+            for key, diag in offenders:
+                log_progress(f"WARNING:   offending entry '{key}': {diag}")
+            # Set BOTH failure markers here so they cannot drift apart if
+            # the later else-branch is ever refactored.
+            stats['validation_failed'] = True
+            stats['validation_failed_keys'] = [k for k, _ in offenders]
 
     if validation_ok:
         try:
