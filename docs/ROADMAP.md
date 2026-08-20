@@ -12,28 +12,34 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-Nothing is queued here. The one open step is the phillit-service re-vendor —
-see the cross-repo note below. Everything else in this file is a recorded
+The queue: three prose defects the service's 2026-08-20 re-vendor review
+found in byte-mirrored agent prose (fix here, they arrive there by mirror;
+all found by diff review, none yet observed misleading a live run):
+
+- **Researcher Stage-5 batching contradiction**
+  (`agents/domain-literature-researcher.md`): the Stage 5 code comment says
+  "repeat the line per paper" while the adjacent prose says "Batch
+  verifications in groups of about six per call" — two incompatible batching
+  instructions for one stage.
+- **Status-tail error-signature inconsistency** (same file): the
+  error-handling paragraph says a failed source surfaces as a
+  `grep: ... No such file` line in the status tail, but the Stage 1 and
+  Stage 4 tail examples end `2>/dev/null || true`, which suppresses exactly
+  that signature — only Stage 3's tail produces it.
+- **Planner substitute rule vs the EXISTENCE licence**
+  (`agents/synthesis-planner.md`): the absence-claim rule's step 1 lists
+  `EXISTENCE` among tiers that may "carry the content", in tension with the
+  coverage-claims-only licence three lines above it.
+
+Everything else in this file is a recorded
 residual, not work. (Section numbers in this file are historical: numbers are
 never reused once an item ships, so the sequence has gaps. Refer to items by
 name.)
 
-**Cross-repo, needs a phillit-service session — and Johannes wants it LAST**
-(decided 2026-08-19): the queue ahead of it drained 2026-08-20, so the
-re-vendor can run at the next service session, taking one pin covering
-everything rather than a pin per item. Move
-the service's re-vendor pin to the v0.4.8 bump commit or later. That single
-move picks up the web-source evidence item's encyclopedia-host exclusion
-(v0.4.3), researcher
-search batching (v0.4.4), the recorded-findings walkthrough fixes (v0.4.5),
-the conference-venue provenance fix (v0.4.6), the synthesis-planner
-false-gap convention (v0.4.7 — the fix for the High-severity defect the
-service's first production run surfaced), and the remaining two
-production-run defect fixes plus the reference-rendering display fixes
-(v0.4.8: the title-mention net and the writer's author-year convention, the
-enrichment parser hardening with its validation diagnostics, and
-`clean_bibtex_str`'s `\ldots`/`\textit`/`\emph` handling); and it retires the
-service's interim researcher-prose carve-out for the excluded hosts. The
+**The service re-vendor RAN 2026-08-20** at pin `5495839` (v0.4.8 tip),
+picking up everything queued for it since v0.4.3 and retiring the service's
+interim researcher-prose carve-out for the excluded hosts; the service's
+`docs/engine-provenance.md` Run record is the as-executed account. The
 cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
 `CLAUDE.md`, "Sister repo: phillit-service".
 
