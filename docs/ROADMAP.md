@@ -12,15 +12,13 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-Four items are queued, in this order:
+Three items are queued, in this order:
 
-1. **Venue-name recall for subtitled journals** — measured 2026-08-19; what
-   remains is the owner's fix / accept / drop decision.
-2. **Reference list omits title-only citations** — decide the citation-form
+1. **Reference list omits title-only citations** — decide the citation-form
    convention, or teach the matcher title mentions.
-3. **Enrichment serialization failure drops a whole domain's ledger** —
+2. **Enrichment serialization failure drops a whole domain's ledger** —
    reproduce from the service's kept artifacts, then fix.
-4. **LaTeX accents key one title two ways** — its own decision session.
+3. **LaTeX accents key one title two ways** — its own decision session.
 
 Each has its own section below, under those names. (Section numbers in this
 file are historical: numbers are never reused once an item ships, so the
@@ -134,8 +132,10 @@ Problem statements and measurements:
 `author-year-collision.md`.
 
 Sub-item F's (Chicago a/b disambiguation) live run and all five of its riders
-are done; the only defect it surfaced that is still open is venue-name recall
-for subtitled journals. Record of the run and the rider results:
+are done; no defect it surfaced remains open (venue-name recall for subtitled
+journals was measured and closed as a non-issue 2026-08-19 —
+`docs/known-issues/venue-recall-subtitled-journals.md`). Record of the run and
+the rider results:
 `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
 `OPENALEX_API_KEY` is in place, so venue vetting runs.
 
@@ -212,29 +212,6 @@ things stay open:
 - A surname that folds to punctuation-only (`Παπαδόπουλος-Smith` → `-Smith`)
   still takes the unchanged primary path — ACCEPTED 2026-08-18. Never
   observed in the corpus (0 of 8,494 first-author entries).
-
-## 6. Venue-name recall for subtitled journals — MEASURED 2026-08-19: decision pending
-
-`venue_vetting` resolves a bare venue name but not the subtitled form a bib may
-carry ("Res Publica" resolves; "Res Publica: A Journal of Moral, Legal and
-Social Philosophy" does not; 0 errors either way, so the once-suspected
-injection risk from the unsanitized `:` and `|` in `filter=` values is
-unfounded and closed). Consequence is a silent no-op: vetting never evaluates
-such entries. Direction is benign — the rule flags only venues that RESOLVE,
-so this yields false negatives, never false low-visibility flags.
-
-**Measured 2026-08-19** through the production lookup path, every failure
-re-confirmed fresh past the cache (method, per-venue evidence, raw data:
-`docs/known-issues/venue-recall-subtitled-journals.md`): of 928 distinct
-journal names in the corpus, 55 carry a colon — 28 resolve fine with their
-subtitle, 22 are unrescuable non-journals (arXiv IDs, proceedings,
-edited-volume titles, one LaTeX-escaped name), and **5 are true subtitle
-failures (0.54% of all journal names, 10 entries corpus-wide). Only 2 of the
-5 would be FLAGGED if rescued (4 entries), and a prefix-fallback rescue
-carries a wrong-venue false-merge risk in the harm-dominant direction.** The
-write-up recommends accept-and-record.
-
-**Remaining step: the owner's fix / accept / drop decision** (Johannes).
 
 ## 8. LaTeX accents key one title two ways — QUEUED: needs its own decision session
 

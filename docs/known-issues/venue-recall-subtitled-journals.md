@@ -4,9 +4,10 @@
 rider 5
 **Severity**: Low — silent no-op in venue vetting; misses only, never a
 false flag
-**Status**: MEASURED 2026-08-19 — true failure fraction settled below;
-decision (fix / accept / drop) is the owner's, pending. Recommendation:
-accept and record.
+**Status**: CLOSED 2026-08-19 — measured (below), then dropped as
+effectively a non-issue by Johannes the same day. No fix will be built; the
+measured residual (2 flaggable venues, 4 entries corpus-wide, misses only)
+is accepted. Removed from the roadmap.
 
 ## Problem
 
@@ -79,4 +80,5 @@ this module's own design rule ("a false discredit costs more than a miss").
 Accept and record. The measured benefit of any fix is at most 2 venues / 4
 entries in a 928-venue corpus, the failure direction is benign by design,
 and the only available fix shape (prefix fallback) reintroduces a measured
-false-merge risk in the harm-dominant direction. Decision is the owner's.
+false-merge risk in the harm-dominant direction. **Decided: Johannes closed
+it as effectively a non-issue, 2026-08-19.**
