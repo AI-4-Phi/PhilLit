@@ -6,40 +6,23 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.4.8**, 2026-08-20. Check
+Last release: **plugin v0.4.9**, 2026-08-23. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-The queue: three prose defects the service's 2026-08-20 re-vendor review
-found in byte-mirrored agent prose (fix here, they arrive there by mirror;
-all found by diff review, none yet observed misleading a live run):
-
-- **Researcher Stage-5 batching contradiction**
-  (`agents/domain-literature-researcher.md`): the Stage 5 code comment says
-  "repeat the line per paper" while the adjacent prose says "Batch
-  verifications in groups of about six per call" — two incompatible batching
-  instructions for one stage.
-- **Status-tail error-signature inconsistency** (same file): the
-  error-handling paragraph says a failed source surfaces as a
-  `grep: ... No such file` line in the status tail, but the Stage 1 and
-  Stage 4 tail examples end `2>/dev/null || true`, which suppresses exactly
-  that signature — only Stage 3's tail produces it.
-- **Planner substitute rule vs the EXISTENCE licence**
-  (`agents/synthesis-planner.md`): the absence-claim rule's step 1 lists
-  `EXISTENCE` among tiers that may "carry the content", in tension with the
-  coverage-claims-only licence three lines above it.
-
-Everything else in this file is a recorded
-residual, not work. (Section numbers in this file are historical: numbers are
-never reused once an item ships, so the sequence has gaps. Refer to items by
+The queue is empty. Everything in this file is a recorded residual, not
+work. (Section numbers in this file are historical: numbers are never
+reused once an item ships, so the sequence has gaps. Refer to items by
 name.)
 
 **The service re-vendor RAN 2026-08-20** at pin `5495839` (v0.4.8 tip),
 picking up everything queued for it since v0.4.3 and retiring the service's
 interim researcher-prose carve-out for the excluded hosts; the service's
 `docs/engine-provenance.md` Run record is the as-executed account. The
+three agent-prose fixes its diff review found shipped here as v0.4.9 and
+arrive there at the next re-vendor. The
 cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
 `CLAUDE.md`, "Sister repo: phillit-service".
 
