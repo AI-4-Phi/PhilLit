@@ -120,8 +120,8 @@ Full spec, including rejected alternatives and the reasons they were rejected:
 external adversarial reviews committed alongside it (kimi-k3 and glm-5.2 on
 v2; kimi-k3 on v3, folded into v4; gpt-5.6-sol on v4 — three blockers —
 folded into v5 with the owner decision on positive-verification identity;
-v5.1 descoped web-source verification to its own roadmap item — PhilLit
-item 2 / service item 24).
+v5.1 descoped web-source verification to its own roadmap item —
+web-source evidence, PhilLit item 2 / service item 24).
 
 **Core idea:** citability stops keying off `INCOMPLETE` and keys off an
 explicit *evidence tier* recording what grounding an entry actually carries.
@@ -176,7 +176,8 @@ Each encyclopedia article is fetched **once per review** and all candidates
 match in memory (`fetch_sep.py` caches with a 7-day TTL, line 216-219), so
 this costs less than today's loop. It emits `evidence_report.json`
 (manifest state, matched/unmatched/ambiguous lists, the abstract-less
-web-source count feeding roadmap item 2, all attestations) and stamps
+web-source count feeding roadmap item 2, web-source evidence, all
+attestations) and stamps
 **only after** acquisition completes; run-level failure exits nonzero and
 stamps nothing.
 
@@ -284,7 +285,8 @@ rules now refuse native file-tool writes to both ledgers.
 **What actually remains:** a *deliberate* forger who writes the ledger through
 Bash, which no PreToolUse gate sees. That is documented as an accepted residual
 and the real closure — barrier-side live corroboration, making the ledger a
-cache rather than an authority — is routed to `phillit-service` item 23. Two
+cache rather than an authority — is routed to `phillit-service` item 23,
+the service's intake of the bibliography-pipeline integrity fixes. Two
 mechanisms were measured and rejected on the way (on-disk envelope
 corroboration at 50.6% coverage; a Bash text gate). Current statement of all
 of this: `bib-pipeline-integrity-gaps.md` Issue C.

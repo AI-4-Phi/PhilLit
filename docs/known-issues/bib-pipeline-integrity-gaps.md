@@ -43,12 +43,14 @@ user's session runs (normally an Anthropic model). Issues A and B were
 originally deterministic script defects that applied to plugin runs
 unconditionally; that framing is now dated. **A is FIXED 2026-08-05.** B's
 deterministic drop mode (the wholly-non-Latin-script skip) was fixed by
-item 4 on 2026-08-03, its every-citation-resolves post-check landed
+item 4, one owner for bibliography identity and matching, on 2026-08-03;
+its every-citation-resolves post-check landed
 2026-08-05 so any remaining matcher gap is caught loudly rather than
 shipping silently, and B's original near-miss matcher class (transliteration
 divergences NFKD doesn't cover, e.g. "Fraenken" vs "Franken") is now FIXED
 too — the matcher gained symmetric transliteration-fold matching the same
-day (item 3 E Task 2, `fb6623e`), so that exact divergence now matches at
+day (item 3 E, collision-aware matching, Task 2, `fb6623e`), so that exact
+divergence now matches at
 match time rather than merely being caught after the fact. **B is CLOSED.**
 Issues C and D are missing safeguards: their observed exploits occurred under
 non-Anthropic orchestrator models in the service's experiments, and Claude
@@ -134,9 +136,11 @@ path's pre-existing, vetting-blind winner rule — `dedupe_bib.merge_entries`
 (the on-disk merged bib) by has-abstract-then-importance-tag,
 `generate_bibliography.find_cited_entries` (the References-rendering pass)
 by substantive-field count — so a fabricated value on the winning copy can
-still beat a verified value on the losing one, by either rule (review Q3)
-— see the ROADMAP item 3 follow-up line for the "vetted beats unvetted"
-refinement this implies.
+still beat a verified value on the losing one, by either rule (review Q3).
+The "vetted beats unvetted" refinement this implies — prefer a merge
+loser's value on *conflicting* fields when the loser carries a
+`METADATA_CLEANED` marker — was recorded as a follow-up on item 3, the
+bibliography-pipeline integrity fixes, and never built.
 
 Ordering note (M6), not a residual but worth stating:
 `metadata_cleaner._apply_cleaned_marker` REPLACES a keywords field's marker
@@ -155,7 +159,8 @@ entry was already vetted.
 **Severity: Medium-High for reader-facing impact. Deterministic.**
 **Status: CLOSED 2026-08-05** — the every-citation-resolves post-check
 landed (`03d2b6b`) and the matcher gained symmetric transliteration-fold
-matching the same day (item 3 E Task 2, `fb6623e`). The fuzzy near-miss
+matching the same day (item 3 E, collision-aware matching, Task 2,
+`fb6623e`). The fuzzy near-miss
 fallback from the original fix directions was never built and is not
 needed to close this — see "Issue B is CLOSED" below. What remains are the
 documented check-side known limits (a)-(c), listed further down.
@@ -189,7 +194,8 @@ and requiring each to resolve to a References entry, failing loudly
 otherwise. Both the transliteration-aware normalization and the post-check
 landed; the fuzzy near-miss fallback did not (not needed — see below).
 
-**Second mode, found 2026-08-02 — FIXED 2026-08-03 by ROADMAP item 4.** When the
+**Second mode, found 2026-08-02 — FIXED 2026-08-03 by ROADMAP item 4, one
+owner for bibliography identity and matching.** When the
 first-author surname was in a wholly non-Latin script (Greek, Cyrillic),
 `_normalize_for_matching` ASCII-folded it to `''` and
 `generate_bibliography.py` (`if not norm_surname: continue`) skipped the entry
@@ -233,7 +239,8 @@ post-check finds nothing to flag.
 
 **Issue B is CLOSED 2026-08-05.** The transliteration-aware normalization
 that resolves a "Fraenken"/"Franken" divergence *at match time* landed in
-`generate_bibliography.py` (item 3 E Task 2, `fb6623e`) — symmetric, tried
+`generate_bibliography.py` (item 3 E, collision-aware matching, Task 2,
+`fb6623e`) — symmetric, tried
 in both directions, via `bib_identity.ascii_variants`/`translit_fold`. The
 fuzzy near-miss fallback from the original fix directions was never built
 and is not needed to close this: transliteration-table coverage plus the
@@ -266,14 +273,16 @@ staying regex-simple and never producing a spurious ERROR on a
 correctly-formatted line.
 
 One residual hole remains, deliberate and documented in the code (ROADMAP
-item 4): the year test is a substring match, so a non-numeric or bracketed
+item 4, one owner for bibliography identity and matching): the year test is
+a substring match, so a non-numeric or bracketed
 year (`n.d.`, `[2021]`) still cannot match in the script-preserving
 haystack. A companion hole this paragraph used to describe — the
 script-preserving fallback triggering only on an *empty* ASCII fold, so a
 punctuation-only fold (a hyphenated non-Latin surname folds to `-`) never
 reached it and matched a garbage `\b-\b` pattern instead, spuriously
-*including* the entry — was **FIXED 2026-08-03** (ROADMAP item 4's
-follow-up): the trigger is now "the fold retains no alphanumeric
+*including* the entry — was **FIXED 2026-08-03** (a follow-up of ROADMAP
+item 4, one owner for bibliography identity and matching): the trigger is
+now "the fold retains no alphanumeric
 character," which covers `''`, `-`, and `' '` alike.
 
 ## Issue C — fabricated abstract fields are indistinguishable from genuine ones (provenance not enforced)
@@ -421,7 +430,8 @@ fail closed, which is route 1 working as designed on real data.)
   observed exploit was `deepseek-v4-flash` under a non-Anthropic
   orchestrator, and Claude runs in the same experiment used the honest path
   throughout. The tree with arbitrary-model exposure is `phillit-service`
-  (its roadmap item 23). Declare C narrowed-and-accepted here and carry the
+  (its roadmap item 23, the service's intake of these bibliography-pipeline
+  integrity fixes). Declare C narrowed-and-accepted here and carry the
   mechanism as a service item.
 
 Options 1 and 4 compose (write-protect + document the rest); so do 1 and 3.
@@ -678,7 +688,8 @@ ride F's run as a fourth rider rather than buying its own.
   strip and blocked union (Issue A, FIXED)
 - `skills/literature-review/scripts/generate_bibliography.py` — surname+year
   proximity matching, symmetric transliteration-tolerant since 2026-08-05
-  (Issue B, CLOSED) and collision-aware since 2026-08-05 (ROADMAP item 3 E);
+  (Issue B, CLOSED) and collision-aware since 2026-08-05 (ROADMAP item 3 E,
+  collision-aware matching);
   `find_cited_entries` mirrors Issue A's strip-and-blocked-union on the
   References-rendering side
 - `skills/literature-review/scripts/lint_md.py` — hosts the built

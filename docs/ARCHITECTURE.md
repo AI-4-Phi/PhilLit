@@ -180,8 +180,8 @@ skills/literature-review/
     ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, gate web sources, stamp EVIDENCE-* tiers
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
-    ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, item 3 D)
-    ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, item 3 F)
+    ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, item 3 D, venue vetting)
+    ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, item 3 F, Chicago a/b disambiguation)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, item 2's EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
     ├── check_evidence.py                 # Phase 6 evidence-tier telemetry checker
     ├── sanitize_bib.py                   # Strip engine-internal EVIDENCE-* tokens from delivered .bib
@@ -231,7 +231,7 @@ hooks/
 ├── validate_bib_write.py                 # PreToolUse (Write) + PostToolUse (Edit): validate .bib
 ├── block_background_bash.py              # PreToolUse (Bash): block run_in_background in subagents
 ├── block_subagent_background_dispatch.py # PreToolUse (Agent/Task): review agents must dispatch foreground
-├── block_ledger_write.py                 # PreToolUse (Write/Edit/NotebookEdit): refuse tool-writes to the attestation ledgers (item 3 C)
+├── block_ledger_write.py                 # PreToolUse (Write/Edit/NotebookEdit): refuse tool-writes to the attestation ledgers (item 3 C, ledger write-protection)
 ├── bib_validator.py                      # BibTeX validation logic
 ├── bib_identity.py                       # NOT a hook — the one owner of identity/comparison keys (DOI, title, pages, journal, year, fallback) and name folds (ascii_variants, translit_fold), imported by the cleaner and the skill scripts
 └── metadata_cleaner.py                   # Metadata provenance cleaning: year/type/field cleanup

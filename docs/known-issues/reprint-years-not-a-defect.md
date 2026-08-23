@@ -9,8 +9,9 @@ This file exists so the observation is not re-raised as a defect a third time.
 A researcher who verifies a reprint edition's DOI seeds that edition's year
 into the bib. Because the bib year and the API year then agree, the cleaner's
 reprint-edition direction bound (`_book_year_decline_reason` in
-`hooks/metadata_cleaner.py`) never fires. This was carried as roadmap item 7
-and described there as the "seeding half" of a year defect.
+`hooks/metadata_cleaner.py`) never fires. This was carried as roadmap
+item 7, reprint-year seeding, and described there as the "seeding half" of a
+year defect.
 
 ## What the corpus actually shows
 

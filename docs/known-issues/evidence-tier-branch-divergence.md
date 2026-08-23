@@ -9,7 +9,8 @@ pointed here left `docs/ROADMAP.md` on 2026-08-08, its service half having
 arrived with the scripted re-vendor; nothing in the queue points here now.
 
 **Headline, measured over all 319 local bibs: merging is strongly net-positive
-and the delay is what costs you.** The branch runs the *pre-3G* cleaner, so
+and the delay is what costs you.** The branch runs the *pre-3G* cleaner
+(before the dead-cleaner fix), so
 today it dies with `AttributeError` on **206 of 319 bibs** and writes no
 ledger for them — **5445 entries with no attestation at all**, of which 3147
 would pass the evidence-tier gate once merged. Against that, the abstention
@@ -18,7 +19,8 @@ and must be handled deliberately, but they are not a reason to wait.
 
 ## Summary
 
-ROADMAP item 1's build lives on `worktree-evidence-tier`. It is **not a stale
+The build for ROADMAP item 1, the evidence tier, lives on
+`worktree-evidence-tier`. It is **not a stale
 branch trailing `main`** — both sides are active on the same subsystem, and
 they have edited the same function for different purposes. A merge today
 conflicts in **two files, one hunk each**, which makes it look trivial. It
@@ -80,7 +82,8 @@ quoting/brace safety. `f9e3fda` is still an ancestor, just not the tip.
 Both rewrote the entry loop in **`clean_bibtex`**.
 
 - **`main`** (+587/−109 since the fork): the whole 3G–3K year/DOI hardening.
-  Relevant here — 3J(c) made a conflicted-DOI entry with no entry-scoped
+  Relevant here — 3J(c), the abstention warning-hoist, made a conflicted-DOI
+  entry with no entry-scoped
   record **abstain**, and **moved the year-disagreement warning above the
   match check** so an abstention is never silent. The code comment says so
   outright: *"a conflicted DOI with no entry-scoped record now abstains, and
@@ -88,7 +91,8 @@ Both rewrote the entry loop in **`clean_bibtex`**.
 - **branch** (+87): added a **cleaning/evidence ledger**. Every entry gets a
   record — `api_matched` + `verified_identifier` on a match,
   `_ledger_entry_for_unmatched()` otherwise. The year-conflict warning stayed
-  **inside** the matched path, where it was before 3J.
+  **inside** the matched path, where it was before 3J, the cleaner DOI/year
+  comparison hardening.
 
 ## 3. The conflict
 
@@ -99,7 +103,7 @@ Both rewrote the entry loop in **`clean_bibtex`**.
 
 Everything else auto-merges, including the 2026-08-02 doc edits.
 
-## 4. Trap 1 — a naive resolution silently reverts ROADMAP 3J(c)
+## 4. Trap 1 — a naive resolution silently reverts ROADMAP 3J(c), the abstention warning-hoist
 
 The conflicting hunk is literally `main`'s warning-hoist comment against the
 branch's ledger block. Take the branch's side (or "keep both, branch order")
@@ -107,8 +111,10 @@ and the warning goes back **below** the match check. An abstaining entry then
 produces **no warning at all** — which is exactly the silent-abstention defect
 3J(c) fixed.
 
-This is the hazard ROADMAP item 1 already warns about for `6ee2566`, but worse:
-the corpus dry-run **cannot see it**. Every 3G–3K defect lived in a
+This is the hazard ROADMAP item 1, the evidence tier, already warns about for
+`6ee2566`, but worse:
+the corpus dry-run **cannot see it**. Every defect in the 3G–3K cleaner/year
+hardening lived in a
 malformed-input path, and the 42-corpus dry-run was byte-identical through all
 three review rounds. A reverted warning-hoist would pass it silently.
 
@@ -121,7 +127,8 @@ the two.
 entries that previously matched, flipping them to `api_matched: False`.
 
 **Now measured** (trial merge, all 319 local bibs; the earlier "up to 70" was a
-bound taken from 3J's dry-run against main's own pre-3J code, and is
+bound taken from the dry-run for 3J, the comparison hardening, against
+main's own pre-3J code, and is
 superseded). Only 111 bibs produce a ledger on *both* sides — the branch
 crashes on the rest, see §5b — so those 111 are the comparable set:
 
@@ -139,7 +146,8 @@ hardened matcher picking a better record (a non-empty
 `verified_identifier_value` where there was none) and from per-bib breaker-trip
 differences, both of which also feed `stamp_evidence.py:103`.
 
-The 43 flips are concentrated in DOI-conflict cases, as 3J predicts — e.g.
+The 43 flips are concentrated in DOI-conflict cases, as the 3J comparison
+hardening predicts — e.g.
 `slack2020fooling` (ai-deception-mechanistic-interp), `mcmanus2018autonomous` /
 `mcmanus2019autonomous` (av-trolley-problem-ethics), `preston2013ethics` and
 `frank2019ethics` (cdr-ethics-2). Several appear in both a domain bib and
@@ -150,8 +158,9 @@ The 43 flips are concentrated in DOI-conflict cases, as 3J predicts — e.g.
 This was not visible before running the trial merge, and it reverses the
 cost-of-delay argument.
 
-The branch's `metadata_cleaner.py` is pre-3G, so it still has the defect 3G
-fixed: one CORE `journal`-as-string file raises `AttributeError` and kills the
+The branch's `metadata_cleaner.py` is pre-3G, so it still has the defect
+that 3G, the dead-cleaner fix, removed: one CORE `journal`-as-string file
+raises `AttributeError` and kills the
 whole index. Over the local corpora:
 
 | | branch today | merged |
@@ -197,7 +206,7 @@ warning hoisted.
 - `dedupe_bib.py:586` — `api_matched=bool(blob.get("api_matched"))`
 
 So merging `main` into the branch **changes the evidence tier of every entry
-3J newly abstains on**. The direction (how many lose a tier, and which)
+that 3J, the comparison hardening, newly abstains on**. The direction (how many lose a tier, and which)
 is **unmeasured** — I did not run merged code. The 70 figure comes from
 `main`'s dry-run and is the upper bound on affected entries there.
 
@@ -214,21 +223,23 @@ whose failure would announce it.
 1. **Catch-up merge, not rebase** — `git merge main` from inside the
    evidence-tier worktree. A rebase replays 33 commits (repeated chances to
    resolve the same file inconsistently) and rewrites `6ee2566` / `f9e3fda`,
-   which ROADMAP item 1 references by hash. A merge resolves once and keeps
+   which ROADMAP item 1, the evidence tier, references by hash. A merge
+   resolves once and keeps
    those commits addressable. The gitignored A/B results in that worktree are
    untouched either way — git does not move untracked files.
 2. **Resolve with `main`'s version as the base**, then re-insert the branch's
    two ledger writes into it. `main`'s block is the hardened one; the branch's
    contribution is additive.
 3. **Keep the warning hoisted above the match check.** Non-negotiable — that
-   ordering *is* 3J(c).
+   ordering *is* the 3J(c) abstention warning-hoist.
 4. **Implement Option C for the abstention ledger semantics — DECIDED, see §9.**
    Abstention attests existence (the DOI is confirmed) and declines cleaning;
    it must no longer be recorded as "no API record found". This requires
    changing `find_api_entry_for_bib_entry`'s return contract, so it is part of
    the resolution, not a follow-up.
-5. **Acceptance gates**: both suites (1004 + 1102 → merged count), the 3J
-   year/abstention tests specifically, and a fresh 42-corpus dry-run compared
+5. **Acceptance gates**: both suites (1004 + 1102 → merged count), the
+   year/abstention tests of 3J, the comparison hardening, specifically, and a
+   fresh 42-corpus dry-run compared
    against `main`'s recorded baseline (matched 3109, fields removed 1292,
    years corrected 36, breaker trips 11). Note the dry-run is necessary but
    **not sufficient** — see Trap 1.
@@ -240,10 +251,11 @@ whose failure would announce it.
 - **Should these two workstreams run in parallel on `metadata_cleaner.py` at
   all?** The divergence is the symptom; two active branches editing one file is
   the cause. This is the durable question behind the whole item.
-- Item 1's two existing merge gates (writer-guidance follow-ups, blind
-  coherence comparison) are unaffected by any of this and still open.
-- **Unmeasured:** what the ten 2026-08-01 commits assume about the pre-3J
-  cleaner beyond the ledger. Only the conflict surface and the ledger's
+- The evidence tier's (item 1) two existing merge gates (writer-guidance
+  follow-ups, blind coherence comparison) are unaffected by any of this and
+  still open.
+- **Unmeasured:** what the ten 2026-08-01 commits assume about the cleaner
+  as it stood before 3J, the comparison hardening, beyond the ledger. Only the conflict surface and the ledger's
   `api_matched` axis were analysed — not `resolve_context`, `check_evidence`, or
   the barrier's own behaviour under merged cleaning.
 - Reproduce any of the above: the harness is throwaway (it lived in the job tmp
@@ -350,7 +362,8 @@ per-bib `errors` (pre-existing malformed BibTeX, identical across variants,
 e.g. `what-are-data-2/intermediate_files/literature-domain-1.bib`) — these
 are returns, not crashes, and are not merge-related.
 
-**Still open after this resolution:** ROADMAP item 1's two merge gates
+**Still open after this resolution:** the two merge gates of ROADMAP item 1,
+the evidence tier
 ((b) writer-guidance follow-ups, (c) blind coherence comparison) — they gate
 landing the branch on `main`, not this catch-up merge. The
 `metadata_cleaner.py` freeze on `main` stays until the branch lands.

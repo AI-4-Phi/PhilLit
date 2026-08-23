@@ -6,7 +6,8 @@ exception. Left the roadmap the same day. See "Fix" below for what was
 deliberately NOT done.
 **Found** 2026-08-06, by the whole-branch review of item 3 D (venue vetting),
 while measuring how many corpus `journal` values carry backslashes. Not a
-venue-vetting bug — it predates item 3 D and affects any field an agent copies
+venue-vetting bug — it predates item 3 D, venue vetting, and affects any
+field an agent copies
 out of a search result.
 
 ## The defect

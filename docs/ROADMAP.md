@@ -26,20 +26,6 @@ arrive there at the next re-vendor. The
 cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
 `CLAUDE.md`, "Sister repo: phillit-service".
 
-**Naming-rule debt** (rule in `~/.claude/CLAUDE.md`: every roadmap-item
-reference carries its descriptive name, never a bare symbol): this file,
-`CLAUDE.md`, and the skill/agent prose were named by hand in the 2026-08-07
-doc-rot sweep. The tracked known-issue write-ups, `ARCHITECTURE.md`, and
-`permissions-guide.md` still carry bare sub-item symbols (`3E`, `item 3 D`,
-...). `ARCHITECTURE.md` (3 sites) and `permissions-guide.md` (1) are untouched;
-the tracked known-issue write-ups hold ~44 sub-item references between them,
-of which the 2026-08-09 sweep named those in the passages it edited — over
-half remain, 18 of them in the deliberately-historical
-`evidence-tier-branch-divergence.md`. Name the rest as those files get
-touched. Do it by hand: a mechanical pass was attempted 2026-08-06 and
-reverted because the
-references sit inside sentences that need rewording around the name.
-
 ## 2. Web-source evidence — ACCEPTED 2026-08-15; intaken by the service 2026-08-16; residual findings recorded
 
 The `EVIDENCE-WEB` fetch gate shipped as v0.4.1 and **passed its live

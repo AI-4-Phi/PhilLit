@@ -2,8 +2,9 @@
 
 **Status:** Surfaced as a side finding during evidence-tier A/B adjudication
 (2026-07-28); quantified across all 32 delivered reviews the same day.
-Tracked as `ROADMAP.md` item 3, sub-items **E** (matcher) and **F** (Chicago
-suffixes). **E is FIXED 2026-08-05** (`917850d`, `fb6623e`, `be5ab30`,
+Tracked as `ROADMAP.md` item 3, the bibliography-pipeline integrity fixes,
+sub-items **E** (collision-aware matching) and **F** (Chicago a/b
+disambiguation). **E is FIXED 2026-08-05** (`917850d`, `fb6623e`, `be5ab30`,
 `e5e863a`, `e5cb717` — item 3 E, Tasks 1-4 of the collision-aware-matching
 plan; `970b117` — final-review fix-wave, C1 left-anchor guard, I1
 second-position corroboration, M2 dead-span cleanup). **F is FIXED 2026-08-06
@@ -11,9 +12,11 @@ and validated live 2026-08-07** (`year_suffix.py` assigns Chicago `a`/`b` at
 the evidence barrier; the live run produced 5 lettered cites, each verified by
 hand to name the right work, 0 bare-year cites of lettered groups, 0 phantom
 letters — record: `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`,
-local-only). What remains of item 3 is the **first-initials gap**
-(`ROADMAP.md` §3): the live run's only same-surname pair (Onora vs Martin
-O'Neill, different years) shipped without initials.
+local-only). The last piece of item 3, the bibliography-pipeline integrity
+fixes, was the **first-initials gap** — the live run's only same-surname pair
+(Onora vs Martin O'Neill, different years) shipped without initials because
+the writer instructed the initial only when the years also matched — **FIXED
+2026-08-09**.
 
 ## Summary
 
@@ -154,7 +157,8 @@ collision-aware matching, before item 3 F, Chicago a/b disambiguation):
   right work. The service's vendored `engine/.claude/` picked this up with
   its scripted re-vendor on 2026-08-08; nothing cross-repo remains.
 
-**C** overlaps ROADMAP item 3A (cleaner-unaware dedup) but is a *distinct*
+**C** overlaps ROADMAP item 3 A, duplicate entries (cleaner-unaware dedup),
+but is a *distinct*
 failure — near-identical entries surviving dedupe on diacritic variance
 (`Milliere`/`Millière`, `Mohamed El-Amine`/`Mohamed El Amine`) and
 arXiv-vs-journal pairs. Recorded here as an out-of-scope find; it is not
@@ -220,8 +224,8 @@ unrelated *corroborated* second-position sighting of the same group, can
 still drop that work along with the rest of the group.
 
 **The four branches are subject to two later keep-side overrides.** Since
-the Chicago-letter sighting net (item 3 F) and the title-mention net
-(item 10), the branches above describe how a drop is *decided*, not
+the Chicago-letter sighting net (item 3 F, Chicago a/b disambiguation) and
+the title-mention net (item 10), the branches above describe how a drop is *decided*, not
 whether it is *executed*. A member whose rendered label (`2010b`) appears
 in the prose, or whose title appears there in quoted or italicized form
 matching the entry's own title exactly, is never dropped: both drop sites
@@ -355,9 +359,10 @@ with "Interaction with the evidence tier" below.
   Onora vs Martin O'Neill in *different* years — a case the landed same-year
   instruction does not even cover — and the writer carried no initial. The
   same-year two-Johnsons shape itself went unexercised (no such pair occurred
-  in the run), so compliance for the instructed case is still unverified, and
-  the cross-year case is tracked as the first-initials gap in `ROADMAP.md` §3
-  (all that remains of item 3).
+  in the run), so compliance for the instructed case is still unverified. The
+  cross-year case — the first-initials gap, the last piece of item 3, the
+  bibliography-pipeline integrity fixes — was FIXED 2026-08-09 (the writer
+  now instructs the initial for same-surname pairs regardless of year).
 
 ## Interaction with the evidence tier
 

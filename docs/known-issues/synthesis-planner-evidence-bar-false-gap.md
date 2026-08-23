@@ -61,4 +61,4 @@ itself; this is the residual failure mode of the shipped design's
 planning-stage bar. Downstream mirror:
 phillit-service `docs/known-issues/synthesis-planner-evidence-bar-false-gap.md`
 (the service ports the fix; its intake item is the service's roadmap
-item 26).
+item 26, the scripted re-vendor reruns).

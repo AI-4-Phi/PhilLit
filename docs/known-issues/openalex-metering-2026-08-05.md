@@ -1,6 +1,7 @@
 # OpenAlex began metering the API — PhilLit runs unauthenticated on the $0.10/day tier
 
-**Observed**: 2026-08-05, while measuring venue signals for ROADMAP item 3 D.
+**Observed**: 2026-08-05, while measuring venue signals for ROADMAP
+item 3 D, venue vetting.
 **Severity**: Medium. Does not fail a run, but a heavy day silently starves
 Phase 3 searches, and the failure surfaces as five pointless backoff attempts
 per call rather than as "the budget is gone."
@@ -14,8 +15,9 @@ Verified end-to-end through the real code path, not just by presence: the
 previously-held key was **unregistered, not stale** (OpenAlex answered 401/403,
 "API key not found", under every documented mechanism while the same URL unkeyed
 returned 200), and `vet_venues` reported `status: partial` naming exactly that.
-With the new key the same call returns `status: complete`, and item 3 F's live run
-then completed a full keyed venue pass — **40 venues looked up, 2 cache hits, 0
+With the new key the same call returns `status: complete`, and the live run
+of item 3 F, Chicago a/b disambiguation, then completed a full keyed venue
+pass — **40 venues looked up, 2 cache hits, 0
 unresolved, 0 errors, 0 flagged**. That was the first time keyed venue vetting had
 ever run against a registered key; the support was built correct but unexercised.
 
@@ -157,7 +159,8 @@ gating the search half (e.g. run it only when S2 returns thin results) cuts
   free key it is ~30–60.
 - **A dev measurement and a live run share one budget.** This session's
   measurement left OpenAlex unusable for the rest of the UTC day — worth
-  knowing before scheduling item 3 F's live run.
+  knowing before scheduling the live run of item 3 F, Chicago a/b
+  disambiguation.
 
 ## Defect: the 429 handler could not tell "slow down" from "budget gone" — FIXED
 
@@ -199,5 +202,6 @@ The key is **optional by design**: with none set, every request is byte-identica
 to before. Set it in the workspace `.env` (preferred — that is what
 `load_dotenv(find_dotenv(usecwd=True))` reads) or in the shell environment.
 
-This unblocks item 3 D (per-venue lookups need the filter/search budget) and
-item 3 F's live run.
+This unblocks item 3 D, venue vetting (per-venue lookups need the
+filter/search budget), and the live run of item 3 F, Chicago a/b
+disambiguation.

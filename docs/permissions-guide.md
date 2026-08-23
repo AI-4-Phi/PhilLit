@@ -25,7 +25,8 @@ Blocks destructive operations and hand-written evidence attestations. These cann
 **Why the ledgers are denied.** An enrichment-ledger record grants an entry
 `EVIDENCE-ABSTRACT` and a cleaning-ledger record attests `EVIDENCE-EXISTENCE`,
 so a hand-written record buys a citability tier that no fetch ever
-corroborated (ROADMAP item 3 C). Both files are written *from inside Python*
+corroborated (ROADMAP item 3 C, ledger write-protection). Both files are
+written *from inside Python*
 by the scripts that own them, so the supported pipeline is unaffected — but
 note this also blocks **you** from hand-editing a ledger while debugging;
 re-run the owning script or `git checkout` it. The allow rule `Edit(reviews/**)`
@@ -43,7 +44,8 @@ glob syntax itself is also **unverified against a live Claude Code permission
 matcher** (`--dry-run` only proves the strings were serialized); the hook, not
 the rule, is what this relies on. The real closure — barrier-side live
 corroboration, which makes the ledger a cache rather than an authority — is
-tracked as `phillit-service` item 23.
+tracked as `phillit-service` item 23, that repo's intake of the
+bibliography-pipeline integrity fixes.
 
 ### Allow Rules (Auto-Approved)
 ```json
