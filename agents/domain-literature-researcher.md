@@ -332,8 +332,8 @@ grep -m1 '"status"' "$JSON_DIR"/cites_<domain>_*.json "$JSON_DIR/recommendations
 For every paper with a DOI, use CrossRef to get authoritative publication metadata:
 
 ```bash
-# One call: verify EVERY paper with a DOI (sequential -- one CrossRef
-# limiter; repeat the line per paper)
+# Repeat the verify line once per paper -- EVERY paper with a DOI, about
+# six verify lines per Bash call (sequential: one shared CrossRef limiter)
 REVIEW_DIR="$PWD/reviews/[project-name]"
 mkdir -p "$REVIEW_DIR/intermediate_files/json"
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/verify_paper.py --doi "10.xxxx/aaaa" --output "$REVIEW_DIR/intermediate_files/json/verify_<domain>_<citekey1>.json"
@@ -565,7 +565,7 @@ instead of one call per script invocation.
 
 > **Why `--output` matters most here.** Running four searches concurrently interleaves their stderr progress lines. With a bare `> file` redirect you might be tempted to add `2>&1` to tame that noise — which merges the progress lines into the JSON and corrupts every file. `--output` sidesteps the problem entirely: each script writes its own clean JSON file regardless of what happens on stdout/stderr, and the interleaved progress simply scrolls past on your terminal.
 
-**Error handling**: Each search runs independently with its own retry logic. If one fails, others continue. Check each result's `status` — in the status tail for file-writing calls, in the inline payload otherwise. A missing file in a status tail (a `grep: ... No such file` line) means that ONE source failed — investigate or re-run that script alone, never the whole stage.
+**Error handling**: Each search runs independently with its own retry logic. If one fails, others continue. Check each result's `status` — in the status tail for file-writing calls, in the inline payload otherwise. A source that failed before writing its file surfaces differently by stage: Stage 3's tail names each expected file explicitly, so a missing one prints a `grep: ... No such file` line; the Stage 1 and Stage 4 tails glob and suppress grep's stderr, so a missing file is simply ABSENT from the tail — compare the filenames printed against the stage's expected output files. Either way, ONE source failed to produce its file — investigate or re-run that script alone, never the whole stage.
 
 ## BibTeX File Structure
 

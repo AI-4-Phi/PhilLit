@@ -78,7 +78,7 @@ Output brief status during planning:
 
 **An evidence bar is never a claim about the literature.** `EVIDENCE-NONE` means this run could not verify the work; it says nothing about what the literature contains. When the sources covering a question are citation-barred:
 
-1. **Route to a verified substitute first**: search the bibliography for entries at any licensed tier (`ABSTRACT`, `CONTEXT`, `WEB`, `EXISTENCE`) that bear on the same question, and let one of those carry the content.
+1. **Route to a verified substitute first**: search the bibliography for entries at a content-licensed tier (`ABSTRACT`, `CONTEXT`, `WEB`) that bear on the same question, and let one of those carry the content. An `EXISTENCE` entry is not a content substitute: it may serve only as a coverage anchor (plus title-derivable characterization), never carrying what the work argues or found.
 2. **If no substitute exists, omit the topic silently** — the review must not comment on the omission.
 
 Never plan text that presents a barred question as "a gap", "unaddressed", or "open in the literature". An absence claim ("the literature does not address X") may be planned ONLY when the bibliography holds no X-relevant entry **at any tier** — a corpus that contains the work, citable or not, contradicts the claim.
