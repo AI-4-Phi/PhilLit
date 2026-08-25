@@ -98,10 +98,13 @@ Three-valued comparison against the entry's own matched record
   matched by DOI; a title+year-matched broad record can never strip (the
   jamieson wrong-artifact hazard generalized: a review/whole-book record
   carries its own pages). Comparison hardening so CONTRADICT means
-  contradiction: pages contradict only on a differing first page;
-  publisher and number/volume compare exact after normalization, with
-  publisher tolerating containment either way (`Springer` /
-  `Springer International Publishing`). The global-bucket coincidence
+  contradiction: pages contradict only on a differing first page (and a
+  punctuation-only record value like `" - "` — S2's empty-pages shape — is
+  no-evidence, never a contradiction); publisher and number/volume compare
+  exact after normalization, with publisher tolerating word-prefix
+  containment either way (`Springer` / `Springer International Publishing`
+  match; a bare generic token like `Press` inside `Oxford University
+  Press` does not). The global-bucket coincidence
   check is REMOVED from these fields' decision entirely (today it can keep
   a contradicted value via an unrelated paper's matching issue number).
 - **Venue fields** (`journal`, `booktitle`): policy unchanged (absence
@@ -143,12 +146,47 @@ checker script is the pattern); (2) measuring and raising entry-scoped
 verify coverage, which converts NO-EVIDENCE into MATCH/CONTRADICT
 structurally.
 
-## Gates
+## Gates — RAN 2026-08-25, post-change (branch `item14-15-engine-fixes`)
 
-1. `cleaner_corpus_dryrun.py` before/after with every delta explained —
-   the 2026-08-25 baseline is captured (session scratchpad; numbers above).
-2. CrossRef spot-check of post-change planned strips, INCLUDING the
-   venue-absence cell (the one cell the 2026-08-25 truth anchor did not
-   sample).
-3. Full test suite; mutation-proof tests for the three-way comparator per
-   field class, the identity-verified guard, and the schema bump.
+1. **Corpus dry-run before/after** (writes stubbed, corpus digest verified
+   unchanged both runs): breaker trips **81 → 2** (0.6%; the two are
+   genuine mass-strip bibs, the systemic case the breaker exists for);
+   removals withheld 1,338 → 12; removals performed 1,243 → 515;
+   planned-strip entries 1,929 → 498; applied demotions 262 → 231. Year
+   path provably untouched (`years_corrected` 0→0, `years_declined`
+   364→364); matching identical (matched/unmatched counts unchanged).
+   Every delta class is the policy.
+2. **Venue-cell CrossRef spot-check** (15 post-change venue strips from
+   formerly-tripped bibs: 10 absence-cell + 5 contradiction; 12
+   CrossRef-adjudicable): ~9 destroy TRUE venue data — conference and
+   handbook containers the index never carried, plus two checker
+   normalization artifacts re-adjudicated by hand — while 3 catch genuine
+   chapter-DOI/container mismatches (a bib naming a different book than
+   its DOI resolves to), the exploit class the venue policy exists to
+   strip. The venue policy stands as reviewed; this measurement is the
+   motivation record for the venue follow-up below.
+3. Full suite green at every task gate (1,969 at the cleaner-policy
+   completion); mutation-proof tests per field class, the
+   identity-verified guard, and the schema bump (14 mutations run across
+   the rounds, all killed or proven-unkillable-and-documented).
+
+## Residuals recorded at the gate (all deliberate, none silent)
+
+- **Venue-hardening follow-up (strengthened by gate 2):** venue-absence
+  strips are majority-true-data where the index lacks conference/handbook
+  containers; candidate remedies to MEASURE first — citation-form folds
+  beyond `&`↔`and` (`Proceedings of the Nth X` vs `YYYY Nth X (ACRO)`),
+  and index venue coverage (S2 conference records often carry no
+  container).
+- Letter-prefixed page ranges (`S1--S9`) against a truncated record
+  (`S1`) still read as a contradiction — the first-page tolerance is
+  digit-run-based. Bogen-shaped, rarer; unmeasured.
+- Single-token publisher prefix (`Brill` inside a hypothetical `Brillante
+  Editores`) can still match; unmeasured, telemetered class.
+- `entry_scoped` includes single-result title-lookup verify records, so
+  the identity-verified guard is not strictly same-work in that corner
+  (pre-existing class — the year gate keys on `entry_scoped` the same
+  way).
+- On a breaker trip the ledger telemetry records the PLAN under
+  applied-sounding key names (`breaker_tripped: true` sits in the same
+  payload).
