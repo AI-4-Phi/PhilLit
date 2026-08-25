@@ -522,7 +522,11 @@ to the CLAIMED value on every non-corroborated outcome, since nobody
 answered (attribution imprecision only — no outcome turns on it); and the
 consecutive-non-answer breaker's streak can be reset by `source_empty`
 candidates that spent no network, so the 180 s deadline is the only hard
-bound on the pass. Option 3 (sampled warn-only corroboration) was not taken
+bound on the pass. One consistency-pass candidate: the Phase-6 re-stamp's
+sibling flags (`api_matched`, `context_written`) still read bare
+truthiness where `abstract_attested` now requires `is True` — their value
+bindings mean a junk-truthy flag alone grants nothing, but the idioms
+diverge. Option 3 (sampled warn-only corroboration) was not taken
 either — it remains the cheapest way to
 turn "never observed under Claude" into a measured claim if that question
 becomes live. The review also proposed a fourth shape worth recording: fuse

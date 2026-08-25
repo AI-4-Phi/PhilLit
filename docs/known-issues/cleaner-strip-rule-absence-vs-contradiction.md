@@ -193,7 +193,16 @@ structurally.
   container).
 - Letter-prefixed page ranges (`S1--S9`) against a truncated record
   (`S1`) still read as a contradiction — the first-page tolerance is
-  digit-run-based. Bogen-shaped, rarer; unmeasured.
+  digit-run-based. Bogen-shaped, rarer; unmeasured. Two adjacent shapes
+  the 2026-08-25 external-review bounds make newly strict were measured
+  at ZERO corpus incidence: a first-page-plus-dangling-separator record
+  value (`163 -` — 0 of 43,192 pages values in the corpus JSONs) and
+  Chicago-elided bib ranges (`321--28` vs `321-328` — 0 of 5,508 numeric
+  ranges).
+- The bounded publisher prefix rule keeps two corners, unmeasured and
+  telemetered: a multi-token prefix cut mid-word still matches
+  (`cambridge uni` / `cambridge university press`), and a single-token
+  concatenated imprint now contradicts (`routledge` / `routledgecurzon`).
 - `entry_scoped` includes single-result title-lookup verify records, so
   the identity-verified guard is not strictly same-work in that corner
   (pre-existing class — the year gate keys on `entry_scoped` the same
