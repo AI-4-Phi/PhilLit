@@ -102,6 +102,12 @@ _CONF_WORD = re.compile(r"\b(conference|proceedings|symposium|workshop|congress|
 # decorating a series: "Oxford Studies in Political Philosophy Volume 5" and
 # "... Volume 8" are different books, both present in the corpus.
 _VOL_NUM = re.compile(r"\b(vol\.?|volume|part|pt\.?|no\.?|issue|number)[\s,]+\d{1,3}$")
+# A standalone "&" (whitespace on both sides) is orthographic variance for the
+# coordinator "and", not part of the venue's name: LaTeX source has "\&" (which
+# normalize_journal already decodes to a literal "&" -- see its docstring),
+# while an API record spells the same venue with "and" written out. An
+# embedded ampersand ("AT&T") has no surrounding whitespace and does not match.
+_STANDALONE_AMP = re.compile(r"\s&\s")
 
 
 # ADMISSION RULE, read before adding anything: a series belongs here only if
@@ -132,6 +138,12 @@ def venue_key(name: str) -> str:
          (ICML 2017)"                    -> "international conference on machine learning"
         "Advances in Neural Information
          Processing Systems 30 (NeurIPS 2017)" -> "neural information processing systems"
+
+    Also folds orthographic variance unrelated to series decoration: a
+    standalone "&" (flanked by whitespace) is the coordinator "and" spelled
+    differently ("Health Information \\& Libraries Journal" verifies against
+    "Health information and libraries journal"). An embedded ampersand
+    ("AT&T") is part of a name, not a coordinator, and is left alone.
 
     THE GOVERNING RULE: **no token may be its own licence.** Every strip needs
     evidence independent of the text it removes. That is necessary but not
@@ -201,6 +213,10 @@ def venue_key(name: str) -> str:
     s = normalize_journal(name or "")
     if not s:
         return ""
+    # Fold a standalone "&" onto "and" (see _STANDALONE_AMP above). Safe to do
+    # unconditionally and first: it never introduces or removes any of the
+    # words the decoration-stripping below keys on.
+    s = _STANDALONE_AMP.sub(" and ", s)
     # Always safe, whatever the venue type: a trailing parenthetical is a
     # disambiguating qualifier and a leading 4-digit year is an edition marker.
     # (The loop matters: only the innermost trailing group matches at a time.)

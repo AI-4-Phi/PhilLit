@@ -84,6 +84,39 @@ class TestNormalizePagesJournalYear:
         assert bi.year_key("n.d.") == "n.d."
 
 
+class TestVenueKeyAmpersandFold:
+    """venue_key folds a standalone "&" onto "and" so a bibliography's LaTeX
+    "\\&" verifies against an API record that spells the coordinator out --
+    normalize_journal stays strict (dedup identity must not fold this).
+    Motivating case: the cleaner planned to strip a correct `journal =
+    {Health Information \\& Libraries Journal}` because the matched API
+    record spells it "Health information and libraries journal" and no fold
+    unified "&" with the word "and"."""
+
+    def test_standalone_ampersand_folds_onto_and(self):
+        assert bi.venue_key("Health Information \\& Libraries Journal") == \
+            bi.venue_key("Health information and libraries journal")
+
+    def test_normalize_journal_stays_strict_on_ampersand(self):
+        # The identity key must NOT fold this -- only the looser verification
+        # key does. If this ever starts holding, the diagnosis behind this
+        # fold is wrong (dedup would already treat these as the same venue).
+        assert bi.normalize_journal("Health Information \\& Libraries Journal") != \
+            bi.normalize_journal("Health information and libraries journal")
+
+    def test_plain_name_without_ampersand_is_unaffected(self):
+        # Guard against substring damage: no "&" present, so the fold must be
+        # a no-op.
+        assert bi.venue_key("Anderson Quarterly") == "anderson quarterly"
+
+    def test_embedded_ampersand_is_not_standalone(self):
+        # "AT&T" has no whitespace around its "&" -- it is part of a proper
+        # noun, not a coordinating "and", and must keep its pre-fold key.
+        # Value pinned from the pre-change behavior (computed before this
+        # fold was added).
+        assert bi.venue_key("AT&T Technical Journal") == "at&t technical journal"
+
+
 class TestFallbackKey:
     def test_builds_normalized_triple(self):
         assert bi.fallback_key("The Extended Mind", "1998", "Clark") == (
