@@ -355,6 +355,73 @@ def test_ledger_wrong_top_level_type_is_malformed_not_crash(tmp_path):
     assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
 
 
+def test_v2_cleaning_ledger_loads_present(tmp_path):
+    rd = tmp_path / "review"
+    v2 = dict(CLEAN_KUHN, schema_version=2)
+    _domain(rd, 1, KUHN, cleaning=v2, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["domains"]["1"]["cleaning_ledger"] == "present"
+    assert report["status"] == "complete"
+    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] == (
+        "EVIDENCE-EXISTENCE")
+
+
+def test_cleaning_ledger_schema_version_3_is_malformed(tmp_path):
+    rd = tmp_path / "review"
+    v3 = dict(CLEAN_KUHN, schema_version=3)
+    _domain(rd, 1, KUHN, cleaning=v3, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+def test_cleaning_ledger_schema_version_string_is_malformed(tmp_path):
+    rd = tmp_path / "review"
+    # "2" the STRING must not alias to the int 2 -- a strict membership
+    # check, not a loose/coerced comparison.
+    v_str = dict(CLEAN_KUHN, schema_version="2")
+    _domain(rd, 1, KUHN, cleaning=v_str, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+def test_cleaning_ledger_schema_version_absent_is_malformed(tmp_path):
+    rd = tmp_path / "review"
+    no_version = {k: v for k, v in CLEAN_KUHN.items() if k != "schema_version"}
+    _domain(rd, 1, KUHN, cleaning=no_version, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["status"] == "degraded"
+    assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
+
+
+def test_v2_entry_with_unverified_fields_passes_validation(tmp_path):
+    # The new schema-2 per-entry key (task 3 makes the cleaner write it) is
+    # not one the entries-validation loop constrains -- it only ever reads
+    # verified_identifier -- so it must ride through unchanged.
+    entries = {"kuhn1962structure": dict(
+        CLEAN_KUHN["entries"]["kuhn1962structure"],
+        unverified_fields=["pages"])}
+    v2 = dict(CLEAN_KUHN, schema_version=2, entries=entries)
+    rd = tmp_path / "review"
+    _domain(rd, 1, KUHN, cleaning=v2, enrichment=EMPTY_ENRICH)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    report = _report(rd)
+    assert report["domains"]["1"]["cleaning_ledger"] == "present"
+    assert report["status"] == "complete"
+    assert report["stamps"]["literature-domain-1.bib"]["kuhn1962structure"] == (
+        "EVIDENCE-EXISTENCE")
+
+
 def test_unparseable_bib_marked_malformed_and_untouched(tmp_path):
     rd = tmp_path / "review"
     garbage = "@book{broken,\n  author = {Never closed\n"

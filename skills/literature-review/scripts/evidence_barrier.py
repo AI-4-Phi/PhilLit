@@ -43,7 +43,7 @@ def _load_ledger(path: Path, expected_bib_name: str, kind: str):
         data = json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError, UnicodeDecodeError):
         return "malformed", None
-    if not isinstance(data, dict) or data.get("schema_version") != 1:
+    if not isinstance(data, dict) or data.get("schema_version") not in (1, 2):
         return "malformed", None
     if data.get("bib_file") != expected_bib_name:
         return "malformed", None  # stale/copied ledger -- reject
