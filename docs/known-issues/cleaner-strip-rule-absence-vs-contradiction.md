@@ -1,12 +1,17 @@
 # The cleaner strips true detail fields on absent evidence; the breaker contains it on a quarter of bibs
 
-**Status:** Open. Owned by ROADMAP item 14, the cleaner strip-rule fix.
-Transferred from phillit-service 2026-08-25 (its
+**Status:** FIXED 2026-08-25, shipped in plugin v0.5.0 — `5bc1421` (the
+`venue_key` `&`↔`and` fold), `7344008` (the barrier accepts cleaning-ledger
+schema_version 2), `2519b62`/`3515c30`/`b667c1f` (the three-way strip
+policy, agent-prose alignment, and the pages/publisher comparison
+hardening); gate results below. The shipped ledger telemetry: per-entry
+`unverified_fields` and `venue_stripped_no_evidence` keys, schema_version
+2. Transferred from phillit-service the same morning (its
 `cleaner-circuit-breaker-trip-rate.md`; its retired roadmap item 23), where
-it was filed as a circuit-breaker trip-rate problem. The measurements below
-(2026-08-25) reframe it: the breaker is the containment, not the defect.
-Design reviewed 2026-08-25 by gpt-5.6-sol, kimi-k3 and glm-5.3 (two rounds;
-approve-with-changes, all changes folded in below).
+it was filed as a circuit-breaker trip-rate problem — the measurements
+below reframed it: the breaker is the containment, not the defect. Design
+reviewed 2026-08-25 by gpt-5.6-sol, kimi-k3 and glm-5.3 (two rounds;
+approve-with-changes, all changes folded in).
 
 ## Measurements (2026-08-25, current engine)
 

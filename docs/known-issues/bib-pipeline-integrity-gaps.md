@@ -483,9 +483,41 @@ reversed: the service retired its owning item and transferred the
 forged-marker residual back here on 2026-08-25 (BYOK third-party
 orchestrators are in its production since 2026-08-19, so the exposure the
 routing assumed is now live on the service side while the fix surface is
-engine code). It is now ROADMAP item 15, barrier abstract re-corroboration
-— the "better design" recorded below (ledger as cache, re-corroborate at
-the barrier). Option 3 (sampled warn-only corroboration) was not taken
+engine code). It shipped as item 15, barrier abstract re-corroboration, on 2026-08-25
+(plugin v0.5.0) — the "better design" recorded below (ledger as cache,
+re-corroborate at the barrier). **As built** (`2512665`/`c038e4f` the
+per-source corroborator; `2b17d7e`/`f208d8e`/`7cbcf4e` the barrier gate):
+ledger equality is CANDIDACY only; `EVIDENCE-ABSTRACT` requires a live
+fetch by the entry's own identity whose text hash-matches the bib's
+(claimed source probed first, then the other allowlisted APIs — any
+source's matching text attests, so cross-source rendering drift cannot
+demote what the claimed source confirms). Every failure direction is
+fail-closed and bucketed in the report: `mismatch`, `source_empty`
+(probed, authoritatively none), `probe_unavailable` (claimed source
+unaskable — no CORE key, no DOI for s2, or a non-allowlisted claim),
+`transport_failed` and `corroboration_deadline` (both PENDING — the
+barrier re-derives on every run), `probe_error`, and the heal path's
+`unhealed`. The pass is budgeted like its siblings (180 s deadline, 3
+consecutive-non-answer breaker). The report's `schema_version` bumped to
+2 and `dedupe_bib.restamp_merged` conjoins `abstract_attested` only from
+v2 reports, so a Phase-6-only re-run against a pre-item-15 report cannot
+re-grant the tier — and the same fix wave closed a latent Phase-6 hole:
+`restamp_merged` had been RECOMPUTING abstract attestation from the
+report blob's source+hash (ledger-equality vintage) instead of conjoining
+the barrier's boolean, which would have handed the tier back to every
+refused entry. Enforcement shipped after a live shadow gate: the entire
+attested population corroborated 13/13 (0% honest demotion; the
+months-stale proxy stratum's 34/118 mismatches are drift on unledgered
+entries enforcement never touches). Threat-model scope, stated honestly:
+this binds fabricated workspace content whenever the barrier executes; an
+orchestrator that skips the barrier is the consumer's enforcement problem
+(service port note). Residuals, recorded: the heal path still spends a
+fetch on non-allowlisted ledger sources that can never earn the tier;
+`probe_unavailable` and `corroboration_deadline` each merge two
+operator-distinct causes (SKILL.md tells the orchestrator how to read
+them); the 180 s deadline is a judgment call pending real-run numbers;
+and the enrichment ledger remains the candidacy authority (its hash still
+binds which text is checked). Option 3 (sampled warn-only corroboration) was not taken
 either — it remains the cheapest way to
 turn "never observed under Claude" into a measured claim if that question
 becomes live. The review also proposed a fourth shape worth recording: fuse

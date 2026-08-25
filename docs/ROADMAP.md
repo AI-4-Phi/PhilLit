@@ -12,22 +12,24 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-The queue: **item 14, the cleaner strip-rule fix, then item 15, barrier
-abstract re-corroboration** — both transferred from the service 2026-08-25
-(its commit `892b4ce`, which retired its item 23). They share a joint gate:
-after item 15 lands, re-run item 14's corpus compare and measure item 15's
-re-fetch success on post-14 output (item 14's doi policy feeds item 15's
-best re-fetch identifier). Everything else in this file is a recorded
-residual, not work. (Section numbers in this file are historical: numbers
-are never reused once an item ships, so the sequence has gaps. Refer to
-items by name.)
+The queue is empty. Items 14 (the cleaner strip-rule fix) and 15 (barrier
+abstract re-corroboration) — transferred from the service 2026-08-25 (its
+commit `892b4ce`, which retired its item 23) — SHIPPED the same day as
+v0.5.0; their problem statements, measurements, gate results and residuals
+live in `docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md`
+and `docs/known-issues/bib-pipeline-integrity-gaps.md` (Issue C).
+Everything else in this file is a recorded residual, not work. (Section
+numbers in this file are historical: numbers are never reused once an item
+ships, so the sequence has gaps. Refer to items by name.)
 
 **The service re-vendor RAN 2026-08-20** at pin `5495839` (v0.4.8 tip),
 picking up everything queued for it since v0.4.3 and retiring the service's
 interim researcher-prose carve-out for the excluded hosts; the service's
 `docs/engine-provenance.md` Run record is the as-executed account. The
-three agent-prose fixes its diff review found shipped here as v0.4.9 and
-arrive there at the next re-vendor. The
+three agent-prose fixes its diff review found shipped here as v0.4.9, and
+the two 2026-08-25 engine items (the cleaner strip-rule fix and barrier
+abstract re-corroboration, v0.5.0) followed — all arrive there at the next
+re-vendor (pin >= the v0.5.0 tip). The
 cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
 `CLAUDE.md`, "Sister repo: phillit-service".
 
@@ -100,8 +102,9 @@ matching on 2026-08-05; D venue vetting and F Chicago a/b disambiguation on
 hardening by 2026-08-02; the first-initials gap — the writer instructed the
 same-surname initial only when the years also matched — on 2026-08-09).
 Issue C's forged-marker residual (Option 2, never built here) was
-transferred back by the service on 2026-08-25 and is now item 15, barrier
-abstract re-corroboration.
+transferred back by the service on 2026-08-25 and shipped the same day as
+item 15, barrier abstract re-corroboration (v0.5.0; record in
+`docs/known-issues/bib-pipeline-integrity-gaps.md`, Issue C).
 Problem statements and measurements:
 `docs/known-issues/bib-pipeline-integrity-gaps.md` and
 `author-year-collision.md`.
@@ -169,10 +172,10 @@ paths were found and fixed; these remain, recorded rather than closed. Detail:
   marker) costs at most one call's retries and is visibly reported, and
   tightening the marker list without empirical OpenAlex bodies would risk
   breaking real detection.
-- **The cleaning ledger's `schema_version` staying 1 through the Option C
-  change — decided 2026-08-18: deliberate.** Recorded at the write site in
-  `metadata_cleaner.py`; bump at the NEXT schema change (the barrier
-  hard-rejects any other value, so a bump lands in both or neither).
+- **The cleaning ledger's `schema_version` — bumped 1→2 on 2026-08-25,
+  exactly per the 2026-08-18 decision** (the strip-rule fix's telemetry
+  keys were the next schema change): the cleaner writes 2, the barrier
+  accepts {1, 2} and hard-rejects anything else, landed together.
 
 ## 4. One owner for bibliography identity and matching — residuals only
 
@@ -205,51 +208,5 @@ against the named script's argparse (two further defects found and fixed:
 both NDPR usage rows, plus `check_setup.py`'s "(no options)"). That check is
 now a standing test, `tests/test_prose_flags.py` (mutation-proven; its
 docstring records the union-on-multi-script-lines and no-positionals limits).
-
-## 14. Cleaner strip rule: strip on contradiction, keep on absence (detail fields)
-
-The cleaner's absence-driven strip rule destroys true detail metadata at
-scale, and the circuit breaker contains it on a quarter of bibs. Problem
-statement, the 2026-08-25 measurements (trip rate 81/321; 80% of 2,581
-planned strips absence-driven; CrossRef spot-checks), the reviewed fix
-design and its gates live in
-`docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md`.
-Transferred from the service 2026-08-25 (its
-`cleaner-circuit-breaker-trip-rate.md`). In one line: `_field_matches_api`
-goes three-valued; pages/number/volume/publisher strip only on an
-identity-verified contradiction; journal/booktitle keep absence-strips;
-doi strips only on entry-scoped contradiction; `venue_key` gains the
-word-boundary `&`↔`and` fold; kept no-evidence detail fields are
-ledger-telemetered (schema_version 1→2, cleaner and barrier together);
-breaker constants untouched (projected trips 81 → ~2).
-
-## 15. Abstract attestation: ledger as cache, re-corroborate at the barrier
-
-Closes Issue C's forged-marker residual (transferred back from the service
-2026-08-25; the full 2026-08-05 re-scope lives in
-`docs/known-issues/bib-pipeline-integrity-gaps.md`, Issue C). The
-enrichment ledger stops being the attestation authority: `EVIDENCE-ABSTRACT`
-requires the barrier to re-derive attestation from a live fetch — resolve
-by the entry's own identity against the allowlisted APIs (S2/OpenAlex/CORE;
-NDPR class via its resolver), attest only on
-`normalize_abstract_for_hash` equality between the bib's text and ANY
-fetched text (claimed source first; per-source iteration so one source's
-different abstract cannot mask another's match). Failure directions, all
-fail-closed and bucketed: `abstract_uncorroborated` (mismatch),
-`abstract_source_empty` (no source carries one — falls to CONTEXT/EXISTENCE
-by tier design), `abstract_refetch_failed` (transport; PENDING, not
-disproven — the barrier re-derives on every run, so restoration is
-automatic on re-run; an orchestrator inducing timeouts can only lower
-tiers). Threat model stated honestly: this closes fabricated
-workspace-content attestation whenever the barrier executes; it does not
-bind an orchestrator that skips the barrier — that enforcement is the
-consumer's (service port note). The ledger-write hook stays as
-defense-in-depth. Measure-then-enforce in one release: report-only over a
-stratified ~150-entry corpus sample first; enforce only if sampled honest
-demotion (mismatch AND source-empty together) is ≤2% with the exact counts
-and interval reported, else ship report-only and escalate the numbers; the
-transport-failure ceiling is reported alongside. Recurring cost 24–105
-identifier-class fetches per review at the barrier (service BYOK note:
-spends the user's quota).
 
 **This file is the work queue.**
