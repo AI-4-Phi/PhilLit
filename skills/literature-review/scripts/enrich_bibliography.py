@@ -41,7 +41,11 @@ from rate_limiter import ExponentialBackoff, get_limiter
 
 # stamp_evidence lives alongside this script (same skills/literature-review/scripts dir).
 sys.path.insert(0, str(Path(__file__).parent))
-from stamp_evidence import abstract_hash, normalize_abstract_for_hash
+from stamp_evidence import (
+    ATTESTED_ABSTRACT_SOURCES,
+    abstract_hash,
+    normalize_abstract_for_hash,
+)
 
 
 def log_progress(message: str) -> None:
@@ -278,7 +282,16 @@ MISMATCH = "mismatch"
 SOURCE_EMPTY = "source_empty"
 TRANSPORT_FAILED = "transport_failed"
 
-# Probed in this order when the entry claims none of them.
+# Probe ORDER for the API sources -- local knowledge (cheapest and most
+# reliable first), so it stays here. WHICH source names are recognized at
+# all is not local: that is stamp_evidence.ATTESTED_ABSTRACT_SOURCES, and
+# corroborate_abstract tests membership against the canonical set rather
+# than re-deriving it. Kept honest by
+# test_corroboration_covers_every_attested_source: a fifth attested source
+# added there without teaching corroboration to probe it would otherwise be
+# read as UNKNOWN, probed against the other three, and could report a
+# MISMATCH off a source the entry never claimed -- a false forgery signal
+# in the metric item 15 enforces on.
 _API_SOURCES = ("s2", "openalex", "core")
 
 
@@ -336,7 +349,7 @@ def corroborate_abstract(
 
     claimed = (fields.get('abstract_source') or '').strip().lower()
     candidates = [s for s in _API_SOURCES if s != claimed]
-    if claimed in _API_SOURCES or claimed == 'ndpr':
+    if claimed in ATTESTED_ABSTRACT_SOURCES:
         candidates.insert(0, claimed)
 
     ctx = get_abstract.build_source_context(s2_api_key)

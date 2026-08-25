@@ -630,6 +630,30 @@ class TestProbeCore:
             doi="10.1/x", limiter=limiter, backoff=backoff) is None
 
 
+class TestBuildSourceContext:
+    """The retry budgets are shared by resolve_abstract and
+    enrich_bibliography.corroborate_abstract, so the keyed/keyless branch is
+    pinned here rather than left to whichever caller happens to notice."""
+
+    def test_keyless_s2_gets_the_longer_budget(self):
+        import get_abstract
+
+        ctx = get_abstract.build_source_context(None)
+        assert (ctx["s2_backoff"].max_attempts,
+                ctx["s2_backoff"].base_delay) == (5, 2.0)
+        assert (ctx["other_backoff"].max_attempts,
+                ctx["other_backoff"].base_delay) == (3, 1.0)
+
+    def test_keyed_s2_gets_the_shorter_budget(self):
+        import get_abstract
+
+        ctx = get_abstract.build_source_context("some-key")
+        assert (ctx["s2_backoff"].max_attempts,
+                ctx["s2_backoff"].base_delay) == (3, 1.0)
+        assert (ctx["other_backoff"].max_attempts,
+                ctx["other_backoff"].base_delay) == (3, 1.0)
+
+
 class TestPublicFunctionsGateOnStatus:
     """The text-or-None view keys on the STATUS, not on the probe happening
     to return None alongside a non-ok status."""

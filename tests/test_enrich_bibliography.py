@@ -1456,6 +1456,28 @@ def test_remaining_sources_follow_the_claimed_one_in_fixed_order():
     assert calls == ["openalex", "s2", "core"]
 
 
+def test_corroboration_covers_every_attested_source():
+    """The recognized-source set has ONE owner (stamp_evidence); the tuple
+    here only fixes probe order. A fifth attested source added there without
+    teaching corroboration to probe it would be read as unknown and could
+    report a mismatch off a source the entry never claimed."""
+    import enrich_bibliography
+    from stamp_evidence import ATTESTED_ABSTRACT_SOURCES
+
+    assert (set(enrich_bibliography._API_SOURCES) | {"ndpr"}
+            == ATTESTED_ABSTRACT_SOURCES)
+
+
+def test_transport_then_empty_on_retry_lands_in_source_empty():
+    """Deliberate and pinned: the retry's status is the source's verdict, so
+    a source that recovers into 'empty' contributes empty, not transport."""
+    outcome, source, calls, _ = _corroborate(
+        _fields(), s2=(("transport", None), ("empty", None)))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == ["s2", "s2", "openalex", "core"]
+
+
 def test_unknown_claimed_source_uses_default_order_and_never_ndpr():
     outcome, source, calls, stubs = _corroborate(
         _fields(abstract_source="semantic scholar"))
