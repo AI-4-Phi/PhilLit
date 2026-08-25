@@ -207,9 +207,15 @@ class _CorroborationBudget:
     """Wall-clock deadline + consecutive-error breaker for one barrier run.
 
     The clock starts LAZILY, on the first probe this pass is actually asked
-    to allow, not at construction: corroboration is interleaved with the
-    heal fetches in the same loop, and a slow heal pass must not spend the
-    corroboration budget and demote candidates that would have corroborated.
+    to allow, rather than at construction. State the bound exactly, because
+    it is narrower than it looks: corroboration and the heal fetches share
+    one per-entry loop, so the lazy start shields only the work that PRECEDES
+    the first probe (heals over earlier entries, the parse and ledger reads).
+    Every heal after that point runs inside the window and does count against
+    the 180 s, which can stop the pass on candidates a quiet run would have
+    probed. That direction is fail-closed -- those candidates bucket
+    `corroboration_deadline`, carry a lower tier, and are re-derived on the
+    next run -- so it is accepted rather than fixed with a second clock.
 
     "Error" means a non-answer -- `transport_failed` or `probe_error`. A
     corroboration, a mismatch or an authoritative empty is an ANSWER: it

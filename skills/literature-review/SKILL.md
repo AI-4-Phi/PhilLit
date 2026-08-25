@@ -227,9 +227,14 @@ Never advance to a next step in this phase before completing the current step.
    The summary's `abstract_corroboration` key reports the abstract check,
    which re-fetches one abstract per candidate entry and is bounded at 180 s
    and 3 consecutive failures — mentioned for the same reason as the venue
-   timing above: a non-zero `corroboration_deadline` count means the bound
-   stopped the pass early, so those entries carry a lower tier this run and
-   a re-run restores it.
+   timing above: a non-zero `corroboration_deadline` count means one of those
+   two bounds stopped the pass early, so those entries carry a lower tier
+   this run and a re-run restores it. But a count that REPEATS across runs
+   means the probes themselves are failing rather than the pass merely
+   running long — read it alongside the `transport_failed` and `probe_error`
+   counts beside it and check credentials and connectivity (a missing or
+   invalid `S2_API_KEY`, or an API outage, trips the breaker at the third
+   entry on every run).
 
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 
