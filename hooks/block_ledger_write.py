@@ -4,9 +4,14 @@
 The ledgers drive the evidence tier: a cleaning-ledger record is what
 attests `EVIDENCE-EXISTENCE`, and an enrichment-ledger record
 (`abstract_source` + `abstract_sha256`) is what makes an entry a CANDIDATE
-for `EVIDENCE-ABSTRACT` -- since item 15 the abstract tier also requires a
-live corroboration fetch at the barrier, so a forged enrichment record no
-longer grants it by itself. Both are plain JSON files inside the workspace,
+for `EVIDENCE-ABSTRACT` -- since item 15 THE BARRIER'S grant of that tier
+also requires a live corroboration fetch, so a forged enrichment record no
+longer earns it there. Phase 6's re-stamp is a separate trust step: it reads
+`evidence_report.json`, itself workspace content, so a forged REPORT (schema
+version 2 or later, with `abstract_attested` set and a matching hash) still
+re-grants the tier on merge -- the version gate added with item 15 rules out
+stale vintage, not forged provenance. Both ledgers are plain JSON files
+inside the workspace,
 which made them agent-writable -- forge a record next to a fabricated
 abstract and enrichment's prior-ledger fast path skips the fetch that would
 have refused attestation (ROADMAP item 3 C; `enrich_bibliography.py` says as

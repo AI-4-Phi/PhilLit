@@ -287,7 +287,7 @@ def test_report_is_valid_json_with_schema_version(tmp_path):
     r = _run(rd, 1)
     assert r.returncode == 0, r.stderr
     report = _report(rd)  # valid JSON or this raises
-    assert report["schema_version"] == 1
+    assert report["schema_version"] == 2   # corroboration-gated vintage
     # per-entry maps are nested per bib filename, never bare keys
     assert "kuhn1962structure" not in report["stamps"]
     assert isinstance(report["stamps"]["literature-domain-1.bib"], dict)
@@ -2929,13 +2929,24 @@ def test_no_bucket_and_no_probe_for_an_entry_without_a_ledger_record(tmp_path, m
     assert calls == []
 
 
-def test_compute_tier_never_grants_abstract_without_the_attestation(tmp_path):
+def test_compute_tier_never_grants_abstract_without_the_attestation(tmp_path, monkeypatch):
     """Tier-equivalence: neither the abstract_source field, nor a ledger
     record, nor anything a bucket could say reaches TIER_ABSTRACT on its
     own -- att.abstract_attested is the only door, and the corroboration
-    gate is upstream of it."""
+    gate is upstream of it.
+
+    Non-allowlisted claims are pinned on BOTH sides of that door: candidacy
+    holds for them (attest_abstract does not consult the allowlist) but the
+    tier is unreachable, so the barrier must skip the probe rather than
+    spend a fetch on a decision compute_tier has already made."""
     sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
     import stamp_evidence as se
+
+    def _never(*a, **k):
+        raise AssertionError("corroborator called for an unreachable tier")
+    monkeypatch.setattr(eb_mod.eb, "corroborate_abstract", _never)
+
     text = CORROB_TEXT
     for source in ("s2", "openalex", "core", "ndpr", "", "crossref"):
         for extra in ({}, {"doi": "10.1/x"}, {"sep_context": "ctx"}):
@@ -2951,8 +2962,16 @@ def test_compute_tier_never_grants_abstract_without_the_attestation(tmp_path):
             granted = se.compute_tier(
                 "article", fields,
                 se.EntryAttestation(abstract_attested=True))
-            assert (granted == se.TIER_ABSTRACT) == (
-                source in se.ATTESTED_ABSTRACT_SOURCES)
+            reachable = source in se.ATTESTED_ABSTRACT_SOURCES
+            assert (granted == se.TIER_ABSTRACT) == reachable
+            if not reachable:
+                # The free bound, at unit level: no fetch is spent, and the
+                # bucket says why (integration coverage in
+                # test_a_claimed_source_outside_the_allowlist_is_never_probed).
+                assert eb_mod._corroborate_candidate(
+                    fields, eb_mod._CorroborationBudget()) == {
+                        "outcome": eb_mod.PROBE_UNAVAILABLE,
+                        "source": source, "claimed": source}
 
 
 def test_a_crash_inside_the_corroborator_demotes_without_failing_the_run(tmp_path, monkeypatch):
@@ -2991,7 +3010,8 @@ def test_the_printed_summary_counts_corroboration_outcomes(tmp_path, monkeypatch
     summary = json.loads(r.stdout)["abstract_corroboration"]
     assert summary == {"candidates": 1, "corroborated": 0, "mismatch": 0,
                        "source_empty": 0, "transport_failed": 0,
-                       "probe_unavailable": 1, "probe_error": 0, "other": 0}
+                       "probe_unavailable": 1, "probe_error": 0,
+                       "corroboration_deadline": 0, "other": 0}
     report = _report(rd)
     assert report["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-EXISTENCE"
 
@@ -3026,4 +3046,231 @@ def test_heal_buckets_are_excluded_from_the_summary_counts(tmp_path, monkeypatch
     assert eb_mod._corroboration_summary(report) == {
         "candidates": 0, "corroborated": 0, "mismatch": 0, "source_empty": 0,
         "transport_failed": 0, "probe_unavailable": 0, "probe_error": 0,
-        "other": 0}
+        "corroboration_deadline": 0, "other": 0}
+
+
+def _multi_candidate_domain(review_dir, keys, *, source="s2"):
+    """One domain with several entries, each a passing ledger candidate."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import stamp_evidence as se
+    chunks, entries = [], {}
+    for n, key in enumerate(keys, start=1):
+        text = f"Abstract number {n} for the corroboration budget tests."
+        chunks.append('@article{' + key + ',\n'
+                      '  author = {Doe, Jane},\n'
+                      f'  title = {{Study {n}}},\n'
+                      f'  doi = {{10.1/{key}}},\n'
+                      '  year = {2020},\n'
+                      f'  abstract = {{{text}}},\n'
+                      f'  abstract_source = {{{source}}},\n'
+                      '  keywords = {topic, High}\n'
+                      '}')
+        entries[key] = {"abstract_source": source,
+                        "abstract_sha256": se.abstract_hash(text)}
+    _domain(review_dir, 1, "\n\n".join(chunks), cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1, entries))
+    return entries
+
+
+def test_the_consecutive_error_breaker_stops_the_corroboration_pass(tmp_path, monkeypatch):
+    """MAX_CONSECUTIVE_ERRORS = 3, mirroring venue_vetting: after three
+    non-answers in a row the pass stops probing and the remaining candidates
+    bucket `corroboration_deadline` instead of costing four more fetches
+    each. Uses the REAL constant, so a change to it turns this red."""
+    eb_mod = _barrier(monkeypatch)
+    keys = ["a2020", "b2020", "c2020", "d2020", "e2020"]
+    _multi_candidate_domain(tmp_path, keys)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("transport_failed", None), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    buckets = report["abstract_corroboration"]["literature-domain-1.bib"]
+    assert len(calls) == eb_mod.CORROBORATION_MAX_CONSECUTIVE_ERRORS == 3
+    outcomes = [buckets[k]["outcome"] for k in keys]
+    assert outcomes == ["transport_failed"] * 3 + ["corroboration_deadline"] * 2
+    stamps = report["stamps"]["literature-domain-1.bib"]
+    assert all(t != "EVIDENCE-ABSTRACT" for t in stamps.values())
+
+
+def test_an_answer_resets_the_consecutive_error_streak(tmp_path, monkeypatch):
+    """The streak counts consecutive NON-ANSWERS. A mismatch or an
+    authoritative empty is an answer about the entry, so it resets the
+    counter exactly as a successful lookup does in venue_vetting -- without
+    this, two unrelated flaky entries plus one mismatch would stop a pass
+    that is working fine."""
+    eb_mod = _barrier(monkeypatch)
+    keys = ["a2020", "b2020", "c2020", "d2020", "e2020"]
+    _multi_candidate_domain(tmp_path, keys)
+    results = iter([("transport_failed", None), ("transport_failed", None),
+                    ("mismatch", None), ("transport_failed", None),
+                    ("corroborated", "s2")])
+    calls = []
+
+    def _fake(fields, *a, **k):
+        calls.append(dict(fields))
+        return next(results)
+    monkeypatch.setattr(eb_mod.eb, "corroborate_abstract", _fake)
+    monkeypatch.setattr(eb_mod.rc, "fetch_articles",
+                        lambda union, debug=False: ({}, []))
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    buckets = report["abstract_corroboration"]["literature-domain-1.bib"]
+    assert len(calls) == 5                      # never stopped
+    assert [buckets[k]["outcome"] for k in keys] == [
+        "transport_failed", "transport_failed", "mismatch",
+        "transport_failed", "corroborated"]
+    assert report["stamps"]["literature-domain-1.bib"]["e2020"] == "EVIDENCE-ABSTRACT"
+
+
+def test_the_pass_deadline_stops_the_corroboration_pass(tmp_path, monkeypatch):
+    """The other bound. Checked BEFORE each probe, so it bounds the loop:
+    the first candidate is always probed (that is when the clock starts),
+    and every later one buckets `corroboration_deadline`."""
+    eb_mod = _barrier(monkeypatch)
+    # Negative, not 0.0: the deadline must be unambiguously in the past on
+    # the second check regardless of clock granularity, so the test states
+    # "the budget is already spent" rather than "some time passed".
+    monkeypatch.setattr(eb_mod, "CORROBORATION_PASS_DEADLINE_SECONDS", -1.0)
+    keys = ["a2020", "b2020", "c2020"]
+    _multi_candidate_domain(tmp_path, keys)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    buckets = report["abstract_corroboration"]["literature-domain-1.bib"]
+    assert len(calls) == 1
+    assert [buckets[k]["outcome"] for k in keys] == [
+        "corroborated", "corroboration_deadline", "corroboration_deadline"]
+    stamps = report["stamps"]["literature-domain-1.bib"]
+    assert stamps["a2020"] == "EVIDENCE-ABSTRACT"      # probed in time
+    assert stamps["b2020"] != "EVIDENCE-ABSTRACT"      # PENDING, re-derivable
+    summary = eb_mod._corroboration_summary(report)
+    assert summary["corroboration_deadline"] == 2
+    assert summary["candidates"] == 3
+
+
+def test_the_budget_is_one_per_run_not_one_per_domain(tmp_path, monkeypatch):
+    """The bound exists to keep the whole barrier inside SKILL.md's Bash
+    ceiling, so a second domain must not get a fresh allowance."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.setattr(eb_mod, "CORROBORATION_PASS_DEADLINE_SECONDS", -1.0)
+    import stamp_evidence as se
+    for i in (1, 2):
+        text = f"Domain {i}'s abstract for the shared-budget test."
+        bib = ('@article{k' + str(i) + ',\n'
+               '  author = {Doe, Jane},\n'
+               f'  title = {{Study {i}}},\n'
+               f'  doi = {{10.1/k{i}}},\n'
+               '  year = {2020},\n'
+               f'  abstract = {{{text}}},\n'
+               '  abstract_source = {s2},\n'
+               '  keywords = {topic, High}\n'
+               '}')
+        _domain(tmp_path, i, bib, cleaning=_cleaning(i, {}),
+                enrichment=_enrichment(i, {f"k{i}": {
+                    "abstract_source": "s2",
+                    "abstract_sha256": se.abstract_hash(text)}}))
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 2) == 0
+    report = _report(tmp_path)
+    assert len(calls) == 1          # not one per domain
+    assert report["abstract_corroboration"]["literature-domain-2.bib"][
+        "k2"]["outcome"] == "corroboration_deadline"
+
+
+def test_a_claimed_source_outside_the_allowlist_is_never_probed(tmp_path, monkeypatch):
+    """The free bound. `compute_tier` grants TIER_ABSTRACT only for a source
+    in ATTESTED_ABSTRACT_SOURCES, so probing anything else spends a fetch on
+    a decision already made -- candidacy can still hold there, since
+    attest_abstract does not check the allowlist."""
+    eb_mod = _barrier(monkeypatch)
+    import stamp_evidence as se
+    key = _corroboration_domain(tmp_path, source="crossref")
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "crossref"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    # candidacy DOES hold -- the skip is the barrier's, not attest_abstract's
+    fields = se.parse_entry_fields(
+        (tmp_path / bib_name).read_text(encoding="utf-8"))
+    assert se.attest_abstract(fields, {
+        "abstract_source": "crossref",
+        "abstract_sha256": se.abstract_hash(fields["abstract"])}) is True
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "probe_unavailable", "source": "crossref",
+        "claimed": "crossref"}
+    assert calls == []
+    assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
+
+
+def test_a_whitespace_only_core_key_is_probed_not_pre_classified(tmp_path, monkeypatch):
+    """Parity pin with `_probe_candidate`, which gates on `if not
+    core_api_key` -- raw truthiness, no strip. The pre-classification must
+    make the same call or it demotes an entry the probe would have answered
+    for."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.setenv("CORE_API_KEY", "   ")
+    key = _corroboration_domain(tmp_path, source="core")
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "core"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    assert len(calls) == 1
+    assert report["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-ABSTRACT"
+
+
+def test_a_skipped_candidate_neither_counts_nor_resets_the_streak(tmp_path, monkeypatch):
+    """The streak counts consecutive non-answers FROM THE NETWORK, so a
+    candidate skipped before any request (free bound, environment
+    pre-classification) must not reset it -- otherwise a run of unprobeable
+    claims interleaved with real failures hides a live outage and the
+    breaker never trips. Interleaving here: fail, skip, fail, skip, fail."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.delenv("CORE_API_KEY", raising=False)
+    import stamp_evidence as se
+    order = ["f1", "skip_allow", "f2", "skip_core", "f3", "f4"]
+    chunks, entries = [], {}
+    for n, key in enumerate(order, start=1):
+        source = {"skip_allow": "crossref", "skip_core": "core"}.get(key, "s2")
+        text = f"Streak abstract {n}."
+        chunks.append('@article{' + key + ',\n'
+                      '  author = {Doe, Jane},\n'
+                      f'  title = {{Study {n}}},\n'
+                      f'  doi = {{10.1/{key}}},\n'
+                      '  year = {2020},\n'
+                      f'  abstract = {{{text}}},\n'
+                      f'  abstract_source = {{{source}}},\n'
+                      '  keywords = {topic, High}\n'
+                      '}')
+        entries[key] = {"abstract_source": source,
+                        "abstract_sha256": se.abstract_hash(text)}
+    _domain(tmp_path, 1, "\n\n".join(chunks), cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1, entries))
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("transport_failed", None), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    buckets = _report(tmp_path)["abstract_corroboration"]["literature-domain-1.bib"]
+    # three real non-answers trip the breaker even though two skips sat
+    # between them; the sixth candidate is never probed
+    assert len(calls) == 3
+    assert [buckets[k]["outcome"] for k in order] == [
+        "transport_failed", "probe_unavailable", "transport_failed",
+        "probe_unavailable", "transport_failed", "corroboration_deadline"]
+
+
+def test_an_unrecognized_outcome_neither_counts_nor_resets(tmp_path, monkeypatch):
+    """`record` names the answer set explicitly rather than treating
+    "anything that is not an error" as an answer: a token this class has
+    never seen is no evidence either way, and the report files it under
+    `other` for the same reason."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier as eb_mod
+    budget = eb_mod._CorroborationBudget()
+    budget.record(eb_mod.eb.TRANSPORT_FAILED)
+    budget.record("something_new")
+    assert budget.consecutive_errors == 1     # not reset, not incremented
+    budget.record(eb_mod.eb.MISMATCH)
+    assert budget.consecutive_errors == 0     # a real answer does reset
+    assert budget.stopped is False

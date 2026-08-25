@@ -642,12 +642,13 @@ class TestEvidenceRestamp:
     """CLI-level: two input bibs with title-pass duplicates + a report file,
     run with --evidence-report, assert on the merged file's tier token."""
 
-    def _run_cli(self, tmp_path, bib_a, bib_b, atts_a, atts_b):
+    def _run_cli(self, tmp_path, bib_a, bib_b, atts_a, atts_b, version=2):
+        tmp_path.mkdir(parents=True, exist_ok=True)   # allows a subdir per run
         (tmp_path / "a.bib").write_text(bib_a, encoding="utf-8")
         (tmp_path / "b.bib").write_text(bib_b, encoding="utf-8")
         report = tmp_path / "evidence_report.json"
         report.write_text(json.dumps(
-            {"schema_version": 1,
+            {"schema_version": version,   # 2 = current, corroboration-gated
              "attestations": {"a.bib": atts_a, "b.bib": atts_b}}), encoding="utf-8")
         out = tmp_path / "merged.bib"
         r = subprocess.run(
@@ -729,7 +730,7 @@ class TestEvidenceRestamp:
         (tmp_path / "b.bib").write_text(bib_b, encoding="utf-8")
         report = ijson / "evidence_report.json"
         report.write_text(json.dumps(
-            {"schema_version": 1,
+            {"schema_version": 2,      # current vintage: corroboration-gated
              "attestations": {"a.bib": atts_a, "b.bib": atts_b}}),
             encoding="utf-8")
         out = tmp_path / "merged.bib"
@@ -942,6 +943,46 @@ class TestEvidenceRestamp:
                                {"smith2020dup": att_b})
         assert "EVIDENCE-ABSTRACT" in merged
         assert "EVIDENCE-NONE" not in merged
+
+    def test_a_pre_item15_report_cannot_re_grant_the_abstract_tier(self, tmp_path):
+        """Report VINTAGE. In a schema_version-1 report `abstract_attested`
+        means only "the enrichment ledger matched" -- the very thing the
+        barrier's corroboration gate stopped accepting. A Phase-6-only
+        re-run against such a report must not resurrect the tier, exactly as
+        a pre-exclusion `web_gate_passed` blob cannot resurrect
+        EVIDENCE-WEB. Same fixture as the version-2 test below, one integer
+        apart."""
+        import stamp_evidence
+        text = "An abstract attested the old way, by ledger equality alone."
+        a = ('@article{smith2020,\n  author = {Smith, Sam},\n'
+             '  title = {A Real Study},\n  year = {2020},\n'
+             '  abstract = {' + text + '},\n  abstract_source = {s2},\n'
+             '  keywords = {EVIDENCE-ABSTRACT}\n}')
+        att = dict(self.NO_ATT, abstract_attested=True, abstract_source="s2",
+                   abstract_sha256=stamp_evidence.abstract_hash(text))
+        old = self._run_cli(tmp_path / "v1", a, "", {"smith2020": att}, {},
+                            version=1)
+        assert "EVIDENCE-ABSTRACT" not in old
+        assert "EVIDENCE-NONE" in old
+        new = self._run_cli(tmp_path / "v2", a, "", {"smith2020": att}, {},
+                            version=2)
+        assert "EVIDENCE-ABSTRACT" in new
+
+    def test_an_unparseable_report_version_fails_closed(self, tmp_path):
+        """A string "2" is not a version, and neither is a bool: the check is
+        `isinstance(version, int) and version >= 2`, so both demote."""
+        import stamp_evidence
+        text = "An abstract whose report carries a junk schema_version."
+        a = ('@article{smith2020,\n  author = {Smith, Sam},\n'
+             '  title = {A Real Study},\n  year = {2020},\n'
+             '  abstract = {' + text + '},\n  abstract_source = {s2},\n'
+             '  keywords = {EVIDENCE-ABSTRACT}\n}')
+        att = dict(self.NO_ATT, abstract_attested=True, abstract_source="s2",
+                   abstract_sha256=stamp_evidence.abstract_hash(text))
+        for bad in ("2", True, None):
+            merged = self._run_cli(tmp_path / f"v-{bad}", a, "",
+                                   {"smith2020": att}, {}, version=bad)
+            assert "EVIDENCE-ABSTRACT" not in merged, bad
 
     def test_context_laundering_blocked(self, tmp_path):
         # Same-field context laundering: the survivor (B, wins on abstract)

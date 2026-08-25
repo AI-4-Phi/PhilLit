@@ -224,6 +224,13 @@ Never advance to a next step in this phase before completing the current step.
    happens alongside a barrier failure already caught by the nonzero-exit
    rule above.
 
+   The summary's `abstract_corroboration` key reports the abstract check,
+   which re-fetches one abstract per candidate entry and is bounded at 180 s
+   and 3 consecutive failures — mentioned for the same reason as the venue
+   timing above: a non-zero `corroboration_deadline` count means the bound
+   stopped the pass early, so those entries carry a lower tier this run and
+   a re-run restores it.
+
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 
 ---

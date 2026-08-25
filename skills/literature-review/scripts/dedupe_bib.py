@@ -841,16 +841,30 @@ def restamp_merged(
         return capture_cache[citekey]
 
     try:
-        atts = json.loads(Path(report_path).read_text(encoding="utf-8")).get("attestations", {})
+        report = json.loads(Path(report_path).read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError):
         print(
             f"[DEDUPE] warning: evidence report unreadable at {report_path}; "
             "all entries re-stamp EVIDENCE-NONE",
             file=sys.stderr,
         )
-        atts = {}
+        report = {}
+    if not isinstance(report, dict):
+        report = {}
+    atts = report.get("attestations", {})
     if not isinstance(atts, dict):
         atts = {}
+    # REPORT VINTAGE, not report provenance. `abstract_attested` means
+    # "corroborated by a live fetch" only from schema_version 2 on (item
+    # 15); in a version-1 report it means "the enrichment ledger matched",
+    # which is precisely what the gate stopped accepting. Carrying such a
+    # flag across a Phase-6-only re-run would re-grant EVIDENCE-ABSTRACT on
+    # ledger equality alone -- the same shape as the pre-exclusion
+    # web_gate_passed blob the excluded_host re-check below refuses, and
+    # fail-closed for the same reason. `isinstance(True, int)` is True but
+    # `True >= 2` is not, so a bool cannot pass; a string cannot either.
+    version = report.get("schema_version")
+    abstract_vintage_ok = isinstance(version, int) and version >= 2
 
     def _blob(entry_id):
         """Attestation dict for (bib_file, key), or None. Malformed report
@@ -876,11 +890,13 @@ def restamp_merged(
         # in the delivered bibliography. The hash re-check still has to run
         # on top, for its original reason: one contributor's boolean must
         # never authorize another contributor's text.
-        abstract_ok = bool(blob.get("abstract_attested")) and se.attest_abstract(
-            fields, {
+        abstract_ok = (
+            abstract_vintage_ok
+            and bool(blob.get("abstract_attested"))
+            and se.attest_abstract(fields, {
                 "abstract_source": blob.get("abstract_source"),
                 "abstract_sha256": blob.get("abstract_sha256"),
-            })
+            }))
         cf = blob.get("context_field")
         context_ok = bool(
             blob.get("context_written") and cf and fields.get(cf)

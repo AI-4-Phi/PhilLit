@@ -18,6 +18,7 @@ import json
 import os
 import re
 import sys
+import time
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -148,25 +149,119 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
     return None
 
 
-# Two corroboration outcomes this file owns, on top of the four
-# enrich_bibliography.corroborate_abstract returns. Neither is evidence:
-# like every non-corroborated outcome they leave the entry unattested.
+# Three corroboration outcomes this file owns, on top of the four
+# enrich_bibliography.corroborate_abstract returns. None is evidence: like
+# every non-corroborated outcome they leave the entry unattested.
 #
-# PROBE_UNAVAILABLE: the CLAIMED source cannot be asked at all in THIS
-# environment, decided before any request. Calling the corroborator anyway
-# would burn the fallback probes and then label the result
-# `source_empty` -- and that bucket has to keep meaning "a source was
-# probed and authoritatively has no abstract", or the item-15 rate it feeds
-# means nothing. Fail-closed, so an entry claiming `core` in a keyless
-# workspace gains nothing by the claim.
+# PROBE_UNAVAILABLE: `compute_tier` could never grant this claim, or the
+# CLAIMED source cannot be asked at all in THIS environment -- decided
+# before any request. The tradeoff is real and worth stating in the
+# direction it actually runs: the corroborator accepts ANY source's matching
+# text, so a DOI-bearing candidate whose claimed source is unaskable could
+# still have been corroborated by a fallback, and pre-classifying gives that
+# up. What it buys is the meaning of `source_empty` -- "a source was probed
+# and authoritatively has no abstract", the reading item 15's rate depends
+# on -- which a fallback sweep launched from an unaskable claim would blur,
+# since all three of corroborated / mismatch / source_empty are reachable
+# that way. The give-up is small in honest runs: enrichment only writes
+# `abstract_source = core` when a key was configured and `= s2` when a DOI
+# resolved, so an unaskable claim means the environment or the entry changed
+# after enrichment.
 #
 # PROBE_ERROR: an exception escaped the corroborator itself. Its probes are
 # individually wrapped, but the shared client/limiter setup around them is
 # not, and a plumbing failure there must not fail the whole barrier and
 # take down the review -- same fail-closed-but-survivable treatment
 # `_heal_abstract` gives its own fetch, for the same reason.
+#
+# CORROBORATION_DEADLINE: the pass ran out of budget or tripped its
+# consecutive-error breaker before reaching this candidate, which was
+# therefore never probed. PENDING, not disproven -- exactly like
+# `transport_failed`: the barrier re-derives every attestation on every run,
+# so a re-run restores the tier, and an outage can only lower tiers.
 PROBE_UNAVAILABLE = "probe_unavailable"
 PROBE_ERROR = "probe_error"
+CORROBORATION_DEADLINE = "corroboration_deadline"
+
+# The corroboration sweep's two bounds, mirroring venue_vetting's pair for
+# the same reason it has them: this is the only unbounded network pass left
+# inside a barrier that runs under SKILL.md's single 600 s Bash ceiling,
+# whose documented failure mode is an orphaned barrier leaving every entry
+# EVIDENCE-NONE. Its siblings are bounded at 600 s (resolve_context's
+# article fetches) and 120 s (venue vetting); corroboration gets the
+# smallest of the three because it is the one that scales with the number
+# of ENTRIES rather than the number of articles or venues, and because
+# every candidate it skips is restored on the next run.
+#
+# Both bounds are checked BEFORE a probe, so they bound the LOOP, not the
+# pass: one in-flight `corroborate_abstract` call can still run past the
+# deadline for as long as its own per-source timeouts and single retry
+# allow (up to four sources). Worst-case wall time is therefore the
+# deadline plus one full corroboration, not the deadline alone -- the same
+# caveat venue_vetting states about REQUEST_TIMEOUT.
+CORROBORATION_MAX_CONSECUTIVE_ERRORS = 3
+CORROBORATION_PASS_DEADLINE_SECONDS = 180.0
+
+
+class _CorroborationBudget:
+    """Wall-clock deadline + consecutive-error breaker for one barrier run.
+
+    The clock starts LAZILY, on the first probe this pass is actually asked
+    to allow, not at construction: corroboration is interleaved with the
+    heal fetches in the same loop, and a slow heal pass must not spend the
+    corroboration budget and demote candidates that would have corroborated.
+
+    "Error" means a non-answer -- `transport_failed` or `probe_error`. A
+    corroboration, a mismatch or an authoritative empty is an ANSWER: it
+    tells the barrier something true about the entry, so it resets the
+    streak exactly as a successful lookup does in venue_vetting. Both
+    bounds are sticky: once the pass stops probing it stays stopped, so the
+    outcome cannot flip back and forth entry by entry within one run.
+
+    A SKIPPED candidate is neither, and deliberately does not touch the
+    streak (the same thing venue_vetting says about cache hits): the free
+    bound and the environment pre-classification return before `record` is
+    ever called, because the streak counts consecutive non-answers from the
+    network, not "candidates since the last network success". Resetting on a
+    skip would let a run of unprobeable claims hide a live outage.
+
+    An unrecognized token neither counts nor resets, for the same reason
+    `_corroboration_summary` keeps an `other` bucket: the outcome set is not
+    trusted to stay fixed, and a token this class has never seen is no
+    evidence either way about the network.
+    """
+
+    def __init__(self, deadline_seconds=None, max_consecutive_errors=None):
+        # Read the module constants at CONSTRUCTION, not import, so a test
+        # (or a future caller) can monkeypatch them.
+        self.deadline_seconds = (CORROBORATION_PASS_DEADLINE_SECONDS
+                                 if deadline_seconds is None
+                                 else deadline_seconds)
+        self.max_consecutive_errors = (CORROBORATION_MAX_CONSECUTIVE_ERRORS
+                                       if max_consecutive_errors is None
+                                       else max_consecutive_errors)
+        self._deadline = None
+        self.consecutive_errors = 0
+        self.stopped = False
+
+    def allows_probe(self) -> bool:
+        if self.stopped:
+            return False
+        if self._deadline is None:
+            self._deadline = time.monotonic() + self.deadline_seconds
+            return True
+        if time.monotonic() >= self._deadline:
+            self.stopped = True
+            return False
+        return True
+
+    def record(self, outcome: str) -> None:
+        if outcome in (eb.TRANSPORT_FAILED, PROBE_ERROR):
+            self.consecutive_errors += 1
+            if self.consecutive_errors >= self.max_consecutive_errors:
+                self.stopped = True
+        elif outcome in (eb.CORROBORATED, eb.MISMATCH, eb.SOURCE_EMPTY):
+            self.consecutive_errors = 0
 
 
 def _heal_bucket(source: str, outcome: str) -> dict:
@@ -177,6 +272,14 @@ def _heal_bucket(source: str, outcome: str) -> dict:
     `via: heal` marks the population: candidacy FAILED for these entries, so
     they are not part of the candidate rate item 15 reads -- their own
     fetch, hash-gated against the ledger, is what stands in for a probe.
+
+    Both `source` and `claimed` carry the LEDGER's source, and neither is
+    the resolver that answered: `_heal_abstract` discards that (integrity
+    comes from the hash, not the messenger), so it is genuinely unrecorded
+    rather than omitted here. `claimed` is the ledger's rather than the
+    bib's for the same reason -- on an UNHEALED entry the bib's own
+    `abstract_source` may say something else entirely, and it is the ledger
+    record that this bucket is reporting on.
     """
     return {"outcome": outcome, "source": source, "claimed": source,
             "via": "heal"}
@@ -190,13 +293,18 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
 
     * `core` with no API key -- resolution skips keyless CORE rather than
       burn futile unauthenticated attempts (item 13 D3), so the probe
-      returns "empty" without a request.
+      returns "empty" without a request. Tested with the RAW truthiness of
+      the environment value, deliberately not stripped: `_probe_candidate`
+      gates on `if not core_api_key`, so a whitespace-only key is probed
+      there and must be probed here too. Parity with the probe is the whole
+      point of this predicate -- a check that disagrees with it in either
+      direction is a bug, and the disagreement this avoids would demote an
+      entry the probe would have answered for.
     * `s2` with no DOI -- a bib entry carries no Semantic Scholar id, so
       the DOI is the only identifier the probe has. Read through
-      `eb.get_doi`, the same extractor the corroborator uses, so the
-      pre-classification cannot disagree with the probe it stands in for:
-      mislabeling a PROBEABLE entry unprobeable would demote an honest
-      attestation, which is the one error direction that costs a tier.
+      `eb.get_doi`, the same extractor the corroborator uses, for that same
+      parity reason: mislabeling a PROBEABLE entry unprobeable would demote
+      an honest attestation, the one error direction that costs a tier.
 
     Deliberately NOT generalized to every unprobeable combination
     (`openalex` without a DOI, `ndpr` without a title): the refinement
@@ -206,13 +314,14 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
     `source_empty` -- visible, fail-closed, and re-derived on the next run.
     """
     if claimed == "core":
-        return not (os.environ.get("CORE_API_KEY", "") or "").strip()
+        return not os.environ.get("CORE_API_KEY", "")
     if claimed == "s2":
         return not eb.get_doi({"fields": fields})
     return False
 
 
-def _corroborate_candidate(fields: dict, debug: bool = False) -> dict:
+def _corroborate_candidate(fields: dict, budget: "_CorroborationBudget",
+                           debug: bool = False) -> dict:
     """One candidate's corroboration bucket, as the report records it.
 
     Ledger equality only makes an entry a CANDIDATE (item 15): the ledger
@@ -227,10 +336,22 @@ def _corroborate_candidate(fields: dict, debug: bool = False) -> dict:
     because their DIFFERENCE is what makes the item-15 rate readable --
     a mismatch off a source the entry never claimed reads very differently
     from one off the source it did.
+
+    Three gates run BEFORE any request, in cost order. The free bound comes
+    first: a claim outside `se.ATTESTED_ABSTRACT_SOURCES` can never reach
+    TIER_ABSTRACT whatever a fetch says (compute_tier requires membership),
+    so probing it spends a fetch on a decision already made. Then the
+    environment pre-classification, then the pass budget -- so an entry
+    skipped for a reason of its own is labelled with that reason rather
+    than with the budget's.
     """
     claimed = (fields.get("abstract_source") or "").strip().lower()
-    if _claimed_source_unprobeable(fields, claimed):
+    if (claimed not in se.ATTESTED_ABSTRACT_SOURCES
+            or _claimed_source_unprobeable(fields, claimed)):
         return {"outcome": PROBE_UNAVAILABLE, "source": claimed,
+                "claimed": claimed}
+    if not budget.allows_probe():
+        return {"outcome": CORROBORATION_DEADLINE, "source": claimed,
                 "claimed": claimed}
     try:
         outcome, matched = eb.corroborate_abstract(
@@ -241,7 +362,9 @@ def _corroborate_candidate(fields: dict, debug: bool = False) -> dict:
             debug,
         )
     except Exception:
+        budget.record(PROBE_ERROR)
         return {"outcome": PROBE_ERROR, "source": claimed, "claimed": claimed}
+    budget.record(outcome)
     return {"outcome": outcome, "source": matched or claimed,
             "claimed": claimed}
 
@@ -259,7 +382,7 @@ def _corroboration_summary(report: dict) -> dict:
     """
     counts = {k: 0 for k in (eb.CORROBORATED, eb.MISMATCH, eb.SOURCE_EMPTY,
                              eb.TRANSPORT_FAILED, PROBE_UNAVAILABLE,
-                             PROBE_ERROR)}
+                             PROBE_ERROR, CORROBORATION_DEADLINE)}
     counts["other"] = 0
     total = 0
     for per_bib in (report.get("abstract_corroboration") or {}).values():
@@ -500,7 +623,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     """
     ijson = review_dir / "intermediate_files" / "json"
     report = {
-        "schema_version": 1, "status": "complete", "domains": {},
+        # 2 (was 1): the abstract attestation in this report is
+        # corroboration-gated (item 15). Phase 6's re-stamp keys on this
+        # version -- a version-1 report predates the gate, so its
+        # `abstract_attested` flags carry only ledger-equality vintage and
+        # must not be trusted to re-grant EVIDENCE-ABSTRACT there.
+        "schema_version": 2, "status": "complete", "domains": {},
         "articles": {"fetched": [], "failed": []}, "acquisition": {},
         "attestations": {}, "stamps": {},
         "demoted_would_be_existence_v4": [],
@@ -569,6 +697,10 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     # and conjoins THIS set, so no path can attest an abstract that no fetch
     # backed.
     corroborated = set()
+    # One budget per RUN, shared across domains: the bound exists to keep
+    # the whole barrier inside SKILL.md's Bash ceiling, and a per-domain
+    # budget would multiply by the domain count and bound nothing.
+    corroboration_budget = _CorroborationBudget()
     for i, d in domains.items():
         chunks = [rc.strip_context_fields(_strip_derived_fields(c))
                   if se.entry_header(c) else c
@@ -601,7 +733,8 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             # Ledger equality is CANDIDACY, not attestation (item 15).
             candidate = se.attest_abstract(fields, e_rec)
             if candidate:
-                bucket = _corroborate_candidate(fields, debug=debug)
+                bucket = _corroborate_candidate(
+                    fields, corroboration_budget, debug=debug)
                 report["abstract_corroboration"].setdefault(
                     d["bib_name"], {})[key] = bucket
                 if bucket["outcome"] == eb.CORROBORATED:
@@ -1173,7 +1306,7 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
     try:
         report, outputs = run_barrier(review_dir, n_domains, debug=debug)
     except Exception as exc:  # crash = run-level failure; nothing was written
-        report = {"schema_version": 1, "status": "failed", "error": repr(exc)}
+        report = {"schema_version": 2, "status": "failed", "error": repr(exc)}
     try:
         _atomic_write(report_path, json.dumps(report, indent=2))
         if report["status"] != "failed":
