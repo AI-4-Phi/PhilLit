@@ -12,7 +12,8 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-The queue is empty. Items 14 (the cleaner strip-rule fix) and 15 (barrier
+The queue is the four findings from the service's 2026-08-25 intake reviews
+(next section). Items 14 (the cleaner strip-rule fix) and 15 (barrier
 abstract re-corroboration) — transferred from the service 2026-08-25 (its
 commit `892b4ce`, which retired its item 23) — SHIPPED the same day as
 v0.5.0; their problem statements, measurements, gate results and residuals
@@ -22,16 +23,48 @@ Everything else in this file is a recorded residual, not work. (Section
 numbers in this file are historical: numbers are never reused once an item
 ships, so the sequence has gaps. Refer to items by name.)
 
-**The service re-vendor RAN 2026-08-20** at pin `5495839` (v0.4.8 tip),
-picking up everything queued for it since v0.4.3 and retiring the service's
-interim researcher-prose carve-out for the excluded hosts; the service's
-`docs/engine-provenance.md` Run record is the as-executed account. The
-three agent-prose fixes its diff review found shipped here as v0.4.9, and
-the two 2026-08-25 engine items (the cleaner strip-rule fix and barrier
-abstract re-corroboration, v0.5.0) followed — all arrive there at the next
-re-vendor (pin >= the v0.5.0 tip). The
+**The service re-vendor at the v0.5.0 tip RAN 2026-08-25** (pin `fffb721`):
+items 14/15 and the v0.4.9 prose fixes are now in the service's `engine/`;
+its `docs/engine-provenance.md` Run record is the as-executed account (its
+corpus gate reproduced this repo's item-14 measurements byte-exactly with
+the hooks at the measurement commit). The
 cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
 `CLAUDE.md`, "Sister repo: phillit-service".
+
+## Findings from the service's fffb721 intake reviews (2026-08-25)
+
+Four upstream-owned defects, found by the service's pre-run diff reviews
+and verified against this repo's code at `fffb721`; each reaches production
+by mirror once fixed here. In priority order:
+
+- **Corroboration streak-reset wart** (`evidence_barrier.py`,
+  `_claimed_source_unprobeable`): an `openalex`-claimed entry with no DOI
+  is not pre-classified unprobeable (the helper covers only keyless-`core`
+  and DOI-less-`s2`), so it reaches `corroborate_abstract`, returns
+  `SOURCE_EMPTY` with zero network, and RESETS the consecutive-transport
+  streak — delaying the breaker during a real outage and burning deadline,
+  which the `_CorroborationBudget` docstring says skips must not do. In the
+  service the cost is elevated: no next-run heal, and the wasted deadline
+  raises the barrier's 600 s Bash-kill probability with backgrounding
+  disabled.
+- **NDPR outage/empty conflation**
+  (`enrich_bibliography.py::resolve_ndpr_abstract`): NDPR errors are
+  swallowed to `(None, None)`, so a sitemap outage reads as `PROBE_EMPTY`
+  and buckets `SOURCE_EMPTY` — telemetry cannot distinguish an outage from
+  a genuine no-match, which makes NDPR demotion counts unattributable in
+  any run report.
+- **Operator-facing sentence in agent-facing prose**
+  (`skills/literature-review/SKILL.md`, the `abstract_corroboration`
+  paragraph): "…so set the key" instructs a reader who, in a headless run,
+  does not exist and cannot set anything. Near-unreachable trigger (keyless
+  CORE never produces a claimed-`core` abstract), but the sentence belongs
+  in operator docs, not the skill.
+- **`docs/conventions.md` year-gate sentence overstates abstention**
+  (long-standing; re-verified byte-unchanged at `fffb721`): "On any
+  same-DOI year conflict the cleaner abstains from the entry entirely"
+  overstates the scoped-settling branch — `find_api_entry_for_bib_entry`
+  lets agreeing entry-scoped records settle a conflict with pooled records
+  and abstains only otherwise.
 
 ## 2. Web-source evidence — ACCEPTED 2026-08-15; intaken by the service 2026-08-16; residual findings recorded
 
