@@ -478,8 +478,15 @@ match became case-insensitive, which also closed a pre-existing hole where a
 `.BIB` write skipped BibTeX validation entirely on case-insensitive
 filesystems.
 
-**Option 2 is NOT built** and stays routed to the service. Option 3 (sampled
-warn-only corroboration) was not taken either — it remains the cheapest way to
+**Option 2 was NOT built in that round**, and the routing has since
+reversed: the service retired its owning item and transferred the
+forged-marker residual back here on 2026-08-25 (BYOK third-party
+orchestrators are in its production since 2026-08-19, so the exposure the
+routing assumed is now live on the service side while the fix surface is
+engine code). It is now ROADMAP item 15, barrier abstract re-corroboration
+— the "better design" recorded below (ledger as cache, re-corroborate at
+the barrier). Option 3 (sampled warn-only corroboration) was not taken
+either — it remains the cheapest way to
 turn "never observed under Claude" into a measured claim if that question
 becomes live. The review also proposed a fourth shape worth recording: fuse
 enrichment and stamping into one trusted process and treat the persisted
