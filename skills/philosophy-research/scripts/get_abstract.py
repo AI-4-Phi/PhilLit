@@ -58,6 +58,16 @@ import output
 
 SOURCE = "get_abstract"
 
+# Probe status vocabulary. A source that ANSWERED and has no abstract for
+# this identity is PROBE_EMPTY; a source we never got an answer out of is
+# PROBE_TRANSPORT. The text-or-None public functions below cannot express
+# that difference, which is why corroboration reads the probes instead:
+# "no abstract here" is evidence about the work, "the request failed" is
+# evidence about the network.
+PROBE_OK = "ok"
+PROBE_EMPTY = "empty"
+PROBE_TRANSPORT = "transport"
+
 
 def log_progress(message: str) -> None:
     """Emit progress to stderr (visible to user, doesn't break JSON output)."""
@@ -104,6 +114,39 @@ def get_abstract_from_s2(
     """Try to get abstract from Semantic Scholar by paper ID or DOI.
 
     When s2_id is provided, uses it directly. Otherwise falls back to DOI:{doi}.
+
+    The text-or-None view of probe_s2 -- every request, retry and log line
+    lives there, so the two can never drift.
+    """
+    status, abstract = probe_s2(
+        s2_id=s2_id, api_key=api_key, limiter=limiter,
+        backoff=backoff, debug=debug, doi=doi
+    )
+    return abstract if status == PROBE_OK else None
+
+
+def probe_s2(
+    s2_id: Optional[str] = None,
+    api_key: Optional[str] = None,
+    limiter=None,
+    backoff: ExponentialBackoff = None,
+    debug: bool = False,
+    doi: Optional[str] = None
+) -> tuple[str, Optional[str]]:
+    """Semantic Scholar abstract lookup, reporting WHY there is no text.
+
+    Returns (status, abstract): (PROBE_OK, text) when S2 served an
+    abstract; (PROBE_EMPTY, None) when S2 answered and has none for this
+    identity (200-without-abstract, 404, or no identifier to ask with);
+    (PROBE_TRANSPORT, None) when we never got an answer -- HTTP error,
+    timeout, connection failure, exhausted rate-limit retries, or a body
+    that is not a JSON object.
+
+    Malformation is classified at RESPONSE-SHAPE level only. A residual
+    per-field type error (a JSON object with a field of the wrong type)
+    still propagates, exactly as before this function existed;
+    enrich_bibliography.corroborate_abstract wraps every probe call and
+    classifies such an escape as transport.
     """
     if s2_id:
         identifier = s2_id
@@ -116,7 +159,7 @@ def get_abstract_from_s2(
             clean_doi = clean_doi[15:]
         identifier = f"DOI:{clean_doi}"
     else:
-        return None
+        return PROBE_EMPTY, None
 
     log_progress(f"Trying Semantic Scholar: {identifier}")
 
@@ -139,36 +182,39 @@ def get_abstract_from_s2(
 
             if response.status_code == 200:
                 data = response.json()
+                if not isinstance(data, dict):
+                    log_progress("S2: malformed response body (not a JSON object)")
+                    return PROBE_TRANSPORT, None
                 abstract = data.get("abstract")
                 if abstract:
                     log_progress(f"Found abstract from S2 ({len(abstract)} chars)")
-                    return abstract
+                    return PROBE_OK, abstract
                 log_progress("S2: Paper found but no abstract")
-                return None
+                return PROBE_EMPTY, None
 
             elif response.status_code == 404:
                 log_progress("S2: Paper not found")
-                return None
+                return PROBE_EMPTY, None
 
             elif response.status_code == 429:
                 retry_after = parse_retry_after(response.headers.get("Retry-After"))
                 if not backoff.wait(attempt, retry_after=retry_after):
                     log_progress("S2: Rate limit exceeded, giving up")
-                    return None
+                    return PROBE_TRANSPORT, None
                 continue
 
             else:
                 log_progress(f"S2: API error {response.status_code}")
-                return None
+                return PROBE_TRANSPORT, None
 
         except requests.exceptions.RequestException as e:
             if attempt < backoff.max_attempts - 1:
                 backoff.wait(attempt)
                 continue
             log_progress(f"S2: Network error: {e}")
-            return None
+            return PROBE_TRANSPORT, None
 
-    return None
+    return PROBE_TRANSPORT, None
 
 
 # =============================================================================
@@ -196,7 +242,29 @@ def get_abstract_from_openalex(
     backoff: ExponentialBackoff,
     debug: bool = False
 ) -> Optional[str]:
-    """Try to get abstract from OpenAlex by DOI."""
+    """Try to get abstract from OpenAlex by DOI.
+
+    The text-or-None view of probe_openalex; see it for the status
+    vocabulary and for where the request behavior lives.
+    """
+    status, abstract = probe_openalex(doi, email, limiter, backoff, debug)
+    return abstract if status == PROBE_OK else None
+
+
+def probe_openalex(
+    doi: str,
+    email: Optional[str],
+    limiter,
+    backoff: ExponentialBackoff,
+    debug: bool = False
+) -> tuple[str, Optional[str]]:
+    """OpenAlex abstract lookup, reporting WHY there is no text.
+
+    Status vocabulary as in probe_s2. Daily-budget exhaustion is
+    PROBE_TRANSPORT, not PROBE_EMPTY: a quota wall is a non-answer about
+    the work, and reading it as "OpenAlex has no abstract" would let a
+    quota outage look like evidence.
+    """
     log_progress(f"Trying OpenAlex: {doi}")
 
     # Clean DOI
@@ -220,18 +288,24 @@ def get_abstract_from_openalex(
 
             if response.status_code == 200:
                 data = response.json()
+                if not isinstance(data, dict):
+                    log_progress("OpenAlex: malformed response body (not a JSON object)")
+                    return PROBE_TRANSPORT, None
                 inverted_index = data.get("abstract_inverted_index")
                 if inverted_index:
+                    if not isinstance(inverted_index, dict):
+                        log_progress("OpenAlex: malformed abstract_inverted_index")
+                        return PROBE_TRANSPORT, None
                     abstract = reconstruct_abstract(inverted_index)
                     if abstract:
                         log_progress(f"Found abstract from OpenAlex ({len(abstract)} chars)")
-                        return abstract
+                        return PROBE_OK, abstract
                 log_progress("OpenAlex: Paper found but no abstract")
-                return None
+                return PROBE_EMPTY, None
 
             elif response.status_code == 404:
                 log_progress("OpenAlex: Paper not found")
-                return None
+                return PROBE_EMPTY, None
 
             elif response.status_code == 429:
                 if openalex_budget_exhausted(response):
@@ -242,25 +316,25 @@ def get_abstract_from_openalex(
                         "OpenAlex: daily budget exhausted (resets midnight UTC); "
                         "set OPENALEX_API_KEY for 10x headroom - skipping OpenAlex"
                     )
-                    return None
+                    return PROBE_TRANSPORT, None
                 retry_after = parse_retry_after(response.headers.get("Retry-After"))
                 if not backoff.wait(attempt, retry_after=retry_after):
                     log_progress("OpenAlex: Rate limit exceeded, giving up")
-                    return None
+                    return PROBE_TRANSPORT, None
                 continue
 
             else:
                 log_progress(f"OpenAlex: API error {response.status_code}")
-                return None
+                return PROBE_TRANSPORT, None
 
         except requests.exceptions.RequestException as e:
             if attempt < backoff.max_attempts - 1:
                 backoff.wait(attempt)
                 continue
             log_progress(f"OpenAlex: Network error: {e}")
-            return None
+            return PROBE_TRANSPORT, None
 
-    return None
+    return PROBE_TRANSPORT, None
 
 
 # =============================================================================
@@ -277,7 +351,35 @@ def get_abstract_from_core(
     backoff: ExponentialBackoff = None,
     debug: bool = False
 ) -> Optional[str]:
-    """Try to get abstract from CORE by DOI or title+author."""
+    """Try to get abstract from CORE by DOI or title+author.
+
+    The text-or-None view of probe_core; see it for the status vocabulary
+    and for where the request behavior lives.
+    """
+    status, abstract = probe_core(
+        doi=doi, title=title, author=author, year=year, api_key=api_key,
+        limiter=limiter, backoff=backoff, debug=debug
+    )
+    return abstract if status == PROBE_OK else None
+
+
+def probe_core(
+    doi: Optional[str] = None,
+    title: Optional[str] = None,
+    author: Optional[str] = None,
+    year: Optional[int] = None,
+    api_key: Optional[str] = None,
+    limiter=None,
+    backoff: ExponentialBackoff = None,
+    debug: bool = False
+) -> tuple[str, Optional[str]]:
+    """CORE abstract lookup, reporting WHY there is no text.
+
+    Status vocabulary as in probe_s2. PROBE_EMPTY covers "searched and
+    nothing usable came back" -- including results whose abstract is too
+    short or whose title does not match -- because that is CORE answering
+    about this identity.
+    """
     if doi:
         log_progress(f"Trying CORE: DOI {doi}")
         # Clean DOI
@@ -293,7 +395,7 @@ def get_abstract_from_core(
             query_parts.append(f'authors:"{author}"')
         query = " AND ".join(query_parts)
     else:
-        return None
+        return PROBE_EMPTY, None
 
     url = "https://api.core.ac.uk/v3/search/works"
     params = {"q": query, "limit": 5}
@@ -314,9 +416,18 @@ def get_abstract_from_core(
 
             if response.status_code == 200:
                 data = response.json()
+                if not isinstance(data, dict):
+                    log_progress("CORE: malformed response body (not a JSON object)")
+                    return PROBE_TRANSPORT, None
                 results = data.get("results", [])
+                if not isinstance(results, list):
+                    log_progress("CORE: malformed results (not a list)")
+                    return PROBE_TRANSPORT, None
 
                 for work in results:
+                    if not isinstance(work, dict):
+                        log_progress("CORE: malformed result entry (not a JSON object)")
+                        return PROBE_TRANSPORT, None
                     abstract = work.get("abstract")
                     if abstract and len(abstract) > 50:  # Filter out very short "abstracts"
                         # If searching by title, verify it's a reasonable match
@@ -326,38 +437,61 @@ def get_abstract_from_core(
                             # Basic title matching
                             if search_title[:30] in work_title or work_title[:30] in search_title:
                                 log_progress(f"Found abstract from CORE ({len(abstract)} chars)")
-                                return abstract
+                                return PROBE_OK, abstract
                         else:
                             log_progress(f"Found abstract from CORE ({len(abstract)} chars)")
-                            return abstract
+                            return PROBE_OK, abstract
 
                 log_progress("CORE: No abstract found")
-                return None
+                return PROBE_EMPTY, None
 
             elif response.status_code == 429:
                 retry_after = parse_retry_after(response.headers.get("Retry-After"))
                 if not backoff.wait(attempt, retry_after=retry_after):
                     log_progress("CORE: Rate limit exceeded, giving up")
-                    return None
+                    return PROBE_TRANSPORT, None
                 continue
 
             else:
                 log_progress(f"CORE: API error {response.status_code}")
-                return None
+                return PROBE_TRANSPORT, None
 
         except requests.exceptions.RequestException as e:
             if attempt < backoff.max_attempts - 1:
                 backoff.wait(attempt)
                 continue
             log_progress(f"CORE: Network error: {e}")
-            return None
+            return PROBE_TRANSPORT, None
 
-    return None
+    return PROBE_TRANSPORT, None
 
 
 # =============================================================================
 # Main Resolution Logic
 # =============================================================================
+
+def build_source_context(s2_api_key: Optional[str] = None) -> dict:
+    """Rate limiters and retry budgets for the three API sources.
+
+    One owner of the tuning: resolve_abstract and
+    enrich_bibliography.corroborate_abstract both build their clients
+    here, so a change to a limiter or a retry budget cannot land on one
+    path and silently miss the other.
+    """
+    # Fewer retries than main S2 scripts: abstract resolution has fallback sources
+    if s2_api_key:
+        s2_backoff = ExponentialBackoff(max_attempts=3, base_delay=1.0)
+    else:
+        s2_backoff = ExponentialBackoff(max_attempts=5, base_delay=2.0)
+    return {
+        # Auth-aware for S2
+        "s2_limiter": get_limiter("semantic_scholar", authenticated=bool(s2_api_key)),
+        "openalex_limiter": get_limiter("openalex"),
+        "core_limiter": get_limiter("core"),
+        "s2_backoff": s2_backoff,
+        "other_backoff": ExponentialBackoff(max_attempts=3, base_delay=1.0),
+    }
+
 
 def resolve_abstract(
     doi: Optional[str] = None,
@@ -377,17 +511,12 @@ def resolve_abstract(
         Tuple of (abstract, source) where source is "s2", "openalex", or "core"
         Returns (None, None) if no abstract found
     """
-    # Get rate limiters (auth-aware for S2)
-    s2_limiter = get_limiter("semantic_scholar", authenticated=bool(s2_api_key))
-    openalex_limiter = get_limiter("openalex")
-    core_limiter = get_limiter("core")
-
-    # Fewer retries than main S2 scripts: abstract resolution has fallback sources
-    if s2_api_key:
-        s2_backoff = ExponentialBackoff(max_attempts=3, base_delay=1.0)
-    else:
-        s2_backoff = ExponentialBackoff(max_attempts=5, base_delay=2.0)
-    other_backoff = ExponentialBackoff(max_attempts=3, base_delay=1.0)
+    ctx = build_source_context(s2_api_key)
+    s2_limiter = ctx["s2_limiter"]
+    openalex_limiter = ctx["openalex_limiter"]
+    core_limiter = ctx["core_limiter"]
+    s2_backoff = ctx["s2_backoff"]
+    other_backoff = ctx["other_backoff"]
 
     # Source 1: Semantic Scholar (by S2 ID or DOI)
     if s2_id or doi:

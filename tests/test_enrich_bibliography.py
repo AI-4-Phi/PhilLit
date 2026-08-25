@@ -1348,3 +1348,290 @@ def test_production_shape_round_trip_writes_ledger(tmp_path, monkeypatch):
     assert "type:@incollection->@misc" in out
     from pybtex.database import parse_string
     parse_string(out, bib_format="bibtex")  # no exception
+
+
+# =============================================================================
+# Per-source abstract corroboration (Task 5b)
+# =============================================================================
+
+CORROBORATE_ABSTRACT = "This is the attested abstract text, long enough to be real."
+
+CORROBORATE_FIELDS = {
+    "abstract": CORROBORATE_ABSTRACT,
+    "abstract_source": "s2",
+    "doi": "https://doi.org/10.1234/test",
+    "title": "A Test Paper",
+    "author": "Doe, Jane and Roe, Richard",
+    "year": "2020",
+}
+
+
+def _fields(**overrides):
+    fields = dict(CORROBORATE_FIELDS)
+    for k, v in overrides.items():
+        if v is None:
+            fields.pop(k, None)
+        else:
+            fields[k] = v
+    return fields
+
+
+class _ProbeStub:
+    """Records call ORDER into a shared list and replays queued results.
+
+    Order is the whole point of the claimed-source test: an outcome
+    assertion alone passes even when the wrong source is probed first, so
+    every stub in a test appends to one shared list.
+    """
+
+    def __init__(self, calls, name, *results):
+        self.calls = calls
+        self.name = name
+        self.results = list(results) or [("empty", None)]
+        self.kwargs_seen = []
+
+    def __call__(self, *args, **kwargs):
+        self.calls.append(self.name)
+        self.kwargs_seen.append(kwargs)
+        result = self.results[min(len(self.kwargs_seen) - 1, len(self.results) - 1)]
+        if isinstance(result, Exception):
+            raise result
+        return result
+
+
+def _corroborate(fields, s2=(("empty", None),), openalex=(("empty", None),),
+                 core=(("empty", None),), ndpr=None, core_api_key="core-key"):
+    """Run corroborate_abstract with all four sources stubbed.
+
+    Returns (outcome, matched_source, call_order, stubs).
+    """
+    import enrich_bibliography
+    import get_abstract
+
+    calls = []
+    stubs = {
+        "s2": _ProbeStub(calls, "s2", *s2),
+        "openalex": _ProbeStub(calls, "openalex", *openalex),
+        "core": _ProbeStub(calls, "core", *core),
+    }
+    ndpr_stub = _ProbeStub(calls, "ndpr", *(ndpr or ((None, None),)))
+    with patch.object(get_abstract, "probe_s2", stubs["s2"]), \
+         patch.object(get_abstract, "probe_openalex", stubs["openalex"]), \
+         patch.object(get_abstract, "probe_core", stubs["core"]), \
+         patch.object(enrich_bibliography, "resolve_ndpr_abstract", ndpr_stub):
+        outcome, source = enrich_bibliography.corroborate_abstract(
+            fields, "s2-key", "mail@example.com", core_api_key)
+    stubs["ndpr"] = ndpr_stub
+    return outcome, source, calls, stubs
+
+
+def test_corroborated_when_claimed_source_returns_same_text():
+    outcome, source, calls, _ = _corroborate(
+        _fields(), s2=(("ok", CORROBORATE_ABSTRACT),))
+
+    assert (outcome, source) == ("corroborated", "s2")
+    # Returns immediately: no further source is spent.
+    assert calls == ["s2"]
+
+
+def test_claimed_source_is_probed_first_and_is_not_masked():
+    """A claimed openalex that matches must win even though an s2 probe would
+    mismatch. The ORDER assertion is the test -- the outcome alone passes
+    even with the order wrong, because a mismatch does not stop the loop."""
+    outcome, source, calls, stubs = _corroborate(
+        _fields(abstract_source="openalex"),
+        s2=(("ok", "Some entirely different text from S2."),),
+        openalex=(("ok", CORROBORATE_ABSTRACT),))
+
+    assert (outcome, source) == ("corroborated", "openalex")
+    assert calls == ["openalex"]
+    assert stubs["s2"].kwargs_seen == []
+
+
+def test_remaining_sources_follow_the_claimed_one_in_fixed_order():
+    outcome, source, calls, _ = _corroborate(
+        _fields(abstract_source="OpenAlex "))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == ["openalex", "s2", "core"]
+
+
+def test_unknown_claimed_source_uses_default_order_and_never_ndpr():
+    outcome, source, calls, stubs = _corroborate(
+        _fields(abstract_source="semantic scholar"))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == ["s2", "openalex", "core"]
+    assert stubs["ndpr"].kwargs_seen == []
+
+
+def test_mismatch_when_every_answering_source_differs():
+    outcome, source, calls, _ = _corroborate(
+        _fields(),
+        s2=(("ok", "Fabricated text that no API ever served."),),
+        openalex=(("ok", "Another different abstract."),))
+
+    assert (outcome, source) == ("mismatch", None)
+    assert calls == ["s2", "openalex", "core"]
+
+
+def test_source_empty_when_no_source_has_an_abstract():
+    outcome, source, calls, _ = _corroborate(_fields())
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == ["s2", "openalex", "core"]
+
+
+def test_transport_failed_when_every_source_fails_transport():
+    outcome, source, calls, _ = _corroborate(
+        _fields(),
+        s2=(("transport", None),),
+        openalex=(("transport", None),),
+        core=(("transport", None),))
+
+    assert (outcome, source) == ("transport_failed", None)
+    # One retry per source, then give up: two calls each, no third.
+    assert calls == ["s2", "s2", "openalex", "openalex", "core", "core"]
+
+
+def test_retry_after_transport_can_still_corroborate():
+    """The retry must actually re-probe, not merely be counted."""
+    outcome, source, calls, _ = _corroborate(
+        _fields(), s2=(("transport", None), ("ok", CORROBORATE_ABSTRACT)))
+
+    assert (outcome, source) == ("corroborated", "s2")
+    assert calls == ["s2", "s2"]
+
+
+def test_mismatch_outranks_transport():
+    outcome, source, _, _ = _corroborate(
+        _fields(),
+        s2=(("ok", "Different text."),),
+        openalex=(("transport", None),),
+        core=(("transport", None),))
+
+    assert (outcome, source) == ("mismatch", None)
+
+
+def test_transport_outranks_source_empty():
+    outcome, source, _, _ = _corroborate(
+        _fields(), openalex=(("transport", None),))
+
+    assert (outcome, source) == ("transport_failed", None)
+
+
+def test_probe_exception_is_classified_transport():
+    outcome, source, calls, _ = _corroborate(
+        _fields(), s2=(RuntimeError("boom"),), openalex=(RuntimeError("boom"),),
+        core=(RuntimeError("boom"),))
+
+    assert (outcome, source) == ("transport_failed", None)
+    assert calls == ["s2", "s2", "openalex", "openalex", "core", "core"]
+
+
+def test_ndpr_is_queried_only_when_it_is_the_claimed_source():
+    outcome, source, calls, stubs = _corroborate(_fields(abstract_source="core"))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert stubs["ndpr"].kwargs_seen == []
+    assert "ndpr" not in calls
+
+
+def test_ndpr_corroborates_when_claimed():
+    outcome, source, calls, _ = _corroborate(
+        _fields(abstract_source="ndpr"),
+        ndpr=((CORROBORATE_ABSTRACT, "ndpr"),))
+
+    assert (outcome, source) == ("corroborated", "ndpr")
+    assert calls == ["ndpr"]
+
+
+def test_claimed_ndpr_falls_through_to_the_api_sources():
+    outcome, source, calls, _ = _corroborate(_fields(abstract_source="ndpr"))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == ["ndpr", "s2", "openalex", "core"]
+
+
+def test_whitespace_and_backslash_folded_text_still_corroborates():
+    """Comparison goes through stamp_evidence.abstract_hash, which folds
+    runs of whitespace and drops backslashes -- a raw `fetched == bib`
+    comparison fails this."""
+    fields = _fields(abstract="A  \\emph{cat}\nsat   on the mat.\n")
+    outcome, source, _, _ = _corroborate(
+        fields, s2=(("ok", "A emph{cat} sat on the mat."),))
+
+    assert (outcome, source) == ("corroborated", "s2")
+
+
+def test_genuinely_different_text_is_not_folded_into_a_match():
+    fields = _fields(abstract="A  \\emph{cat}\nsat   on the mat.\n")
+    outcome, source, _, _ = _corroborate(
+        fields, s2=(("ok", "A dog sat on the mat."),))
+
+    assert (outcome, source) == ("mismatch", None)
+
+
+def test_entry_without_abstract_text_is_source_empty_without_fetching():
+    """Nothing to corroborate: fail closed, but never as 'mismatch' -- that
+    bucket must mean "fetched and differed" for the item-15 measurement."""
+    outcome, source, calls, _ = _corroborate(_fields(abstract=None))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == []
+
+
+def test_abstract_that_normalizes_to_nothing_is_not_corroborable():
+    """Backslashes and whitespace are folded by the hash, so an abstract
+    made only of them would match any text that also folded to nothing --
+    a vacuous comparison, not evidence."""
+    outcome, source, calls, _ = _corroborate(
+        _fields(abstract="\\\\ \\\\ \\\\ \\\\ \\\\ \\\\"),
+        s2=(("ok", "   "),))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == []
+
+
+def test_entry_without_identifiers_probes_nothing():
+    outcome, source, calls, _ = _corroborate(_fields(doi=None, title=None))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == []
+
+
+def test_title_only_entry_probes_core_alone():
+    """s2 and openalex need a DOI here (there is no s2_id on a bib entry)."""
+    outcome, source, calls, _ = _corroborate(_fields(doi=None))
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == ["core"]
+
+
+def test_core_is_skipped_without_a_core_key():
+    outcome, source, calls, _ = _corroborate(_fields(), core_api_key="")
+
+    assert (outcome, source) == ("source_empty", None)
+    assert calls == ["s2", "openalex"]
+
+
+def test_identity_comes_from_the_entry_fields():
+    _, _, _, stubs = _corroborate(_fields())
+
+    s2_kwargs = stubs["s2"].kwargs_seen[0]
+    assert s2_kwargs["doi"] == "10.1234/test"  # https://doi.org/ prefix stripped
+    core_kwargs = stubs["core"].kwargs_seen[0]
+    assert core_kwargs["doi"] == "10.1234/test"
+    assert core_kwargs["title"] == "A Test Paper"
+    assert core_kwargs["author"] == "Doe"
+    assert core_kwargs["year"] == 2020
+    openalex_kwargs = stubs["openalex"].kwargs_seen[0]
+    assert openalex_kwargs["doi"] == "10.1234/test"
+
+
+def test_ndpr_receives_title_and_author_only():
+    _, _, _, stubs = _corroborate(_fields(abstract_source="ndpr"))
+
+    args_or_kwargs = stubs["ndpr"].kwargs_seen[0]
+    assert args_or_kwargs.get("title") == "A Test Paper"
+    assert args_or_kwargs.get("author") == "Doe"

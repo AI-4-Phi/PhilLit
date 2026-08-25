@@ -41,7 +41,7 @@ from rate_limiter import ExponentialBackoff, get_limiter
 
 # stamp_evidence lives alongside this script (same skills/literature-review/scripts dir).
 sys.path.insert(0, str(Path(__file__).parent))
-from stamp_evidence import abstract_hash
+from stamp_evidence import abstract_hash, normalize_abstract_for_hash
 
 
 def log_progress(message: str) -> None:
@@ -263,6 +263,176 @@ def resolve_ndpr_abstract(
     except Exception as e:
         log_progress(f"  NDPR error for '{title}': {e}")
         return None, None
+
+
+# =============================================================================
+# Live corroboration of an entry's abstract
+# =============================================================================
+
+# Corroboration outcomes. Only CORROBORATED is evidence; the other three
+# are distinct KINDS of non-evidence, and keeping them apart is the point:
+# MISMATCH means "fetched and differed" (the forgery signal item 15
+# measures) and must never absorb "there was nothing to compare".
+CORROBORATED = "corroborated"
+MISMATCH = "mismatch"
+SOURCE_EMPTY = "source_empty"
+TRANSPORT_FAILED = "transport_failed"
+
+# Probed in this order when the entry claims none of them.
+_API_SOURCES = ("s2", "openalex", "core")
+
+
+def corroborate_abstract(
+    fields: dict,
+    s2_api_key: Optional[str],
+    openalex_email: Optional[str],
+    core_api_key: Optional[str],
+    debug: bool = False,
+) -> tuple[str, Optional[str]]:
+    """Does a live fetch still return THIS entry's abstract text?
+
+    Returns (outcome, matched_source): (CORROBORATED, source) as soon as
+    some source serves text whose stamp_evidence.abstract_hash equals the
+    hash of the entry's own abstract; otherwise (MISMATCH | SOURCE_EMPTY |
+    TRANSPORT_FAILED, None), preferring the most informative thing seen --
+    a mismatch outranks a transport failure, which outranks "no source has
+    an abstract".
+
+    The claimed source (`abstract_source`) is probed first, then the rest
+    of s2/openalex/core; `ndpr` is probed only when it is the claimed
+    source, since NDPR resolution is a title search over review essays and
+    asking it about an arbitrary paper invites a wrong-work match. Each
+    source gets one retry on a transport failure, on top of the probe's
+    own backoff, so one flaky connection cannot read as evidence.
+
+    Identity comes ONLY from the entry's own fields (doi/title/author/
+    year): there is no caller-supplied URL or identifier surface, so a
+    forged bib cannot point corroboration at a document of its choosing.
+    """
+    import get_abstract  # local import: mirrors resolve_abstract_for_entry
+
+    existing = fields.get('abstract') or ''
+    if not normalize_abstract_for_hash(existing):
+        # Nothing to corroborate: absent, or normalizing to nothing at all
+        # (whitespace and backslashes only, which the hash folds away -- any
+        # fetched text that also normalized to nothing would "match", so the
+        # comparison would be vacuous rather than evidence). Fail closed,
+        # but NOT as MISMATCH: that bucket has to mean "fetched and
+        # differed" or the item-15 rate it feeds means nothing.
+        if debug:
+            log_progress("  corroboration: entry carries no comparable abstract text")
+        return SOURCE_EMPTY, None
+
+    target = abstract_hash(existing)
+
+    # get_doi/get_author_last_name/get_year read entry['fields'] and
+    # nothing else, so a bare view over the fields dict reuses them
+    # instead of duplicating the extraction rules.
+    view = {'fields': fields}
+    doi = get_doi(view)
+    title = (fields.get('title') or '').strip()
+    author = get_author_last_name(view)
+    year = get_year(view)
+
+    claimed = (fields.get('abstract_source') or '').strip().lower()
+    candidates = [s for s in _API_SOURCES if s != claimed]
+    if claimed in _API_SOURCES or claimed == 'ndpr':
+        candidates.insert(0, claimed)
+
+    ctx = get_abstract.build_source_context(s2_api_key)
+    saw_mismatch = False
+    saw_transport = False
+
+    for source in candidates:
+        for _attempt in range(2):  # one retry on transport, then give up
+            status, fetched = _probe_candidate(
+                source, get_abstract, ctx,
+                doi=doi, title=title, author=author, year=year,
+                s2_api_key=s2_api_key, openalex_email=openalex_email,
+                core_api_key=core_api_key, debug=debug,
+            )
+            if status != get_abstract.PROBE_TRANSPORT:
+                break
+        if status == get_abstract.PROBE_OK:
+            if abstract_hash(fetched or '') == target:
+                return CORROBORATED, source
+            saw_mismatch = True
+            if debug:
+                log_progress(f"  corroboration: {source} served different text")
+        elif status == get_abstract.PROBE_TRANSPORT:
+            saw_transport = True
+
+    if saw_mismatch:
+        return MISMATCH, None
+    if saw_transport:
+        return TRANSPORT_FAILED, None
+    return SOURCE_EMPTY, None
+
+
+def _probe_candidate(
+    source: str,
+    ga,
+    ctx: dict,
+    *,
+    doi: Optional[str],
+    title: str,
+    author: Optional[str],
+    year: Optional[int],
+    s2_api_key: Optional[str],
+    openalex_email: Optional[str],
+    core_api_key: Optional[str],
+    debug: bool,
+) -> tuple[str, Optional[str]]:
+    """(status, text) for one candidate source; never raises.
+
+    PROBE_EMPTY without any request when the source has no usable
+    identifier for this identity -- and, for CORE, when no API key is
+    configured: resolve_abstract skips keyless CORE rather than burn
+    futile unauthenticated attempts (item 13 D3), and a corroboration
+    sweep runs over a whole bibliography, so it must not reintroduce them.
+    Consequence to know: a claimed-`core` abstract cannot be corroborated
+    in a keyless workspace, which is fail-CLOSED (no attestation), not
+    fail-open.
+
+    Any exception escaping a probe is a non-answer, i.e. PROBE_TRANSPORT:
+    corroboration runs inside the evidence barrier, where a crash would
+    take down a whole bib's stamping run.
+    """
+    try:
+        if source == 's2':
+            # No s2_id surface: a bib entry carries no Semantic Scholar id.
+            if not doi:
+                return ga.PROBE_EMPTY, None
+            return ga.probe_s2(
+                api_key=s2_api_key, limiter=ctx['s2_limiter'],
+                backoff=ctx['s2_backoff'], debug=debug, doi=doi)
+        if source == 'openalex':
+            if not doi:
+                return ga.PROBE_EMPTY, None
+            return ga.probe_openalex(
+                doi=doi, email=openalex_email, limiter=ctx['openalex_limiter'],
+                backoff=ctx['other_backoff'], debug=debug)
+        if source == 'core':
+            if not core_api_key or not (doi or title):
+                return ga.PROBE_EMPTY, None
+            return ga.probe_core(
+                doi=doi, title=title or None, author=author, year=year,
+                api_key=core_api_key, limiter=ctx['core_limiter'],
+                backoff=ctx['other_backoff'], debug=debug)
+        if source == 'ndpr':
+            if not title:
+                return ga.PROBE_EMPTY, None
+            # resolve_ndpr_abstract swallows its own errors and returns
+            # (None, None), so an NDPR fetch failure is indistinguishable
+            # from "no such review" and reads as PROBE_EMPTY -- the
+            # fail-closed direction, but it does mean ndpr never reports a
+            # transport failure of its own.
+            text, _ = resolve_ndpr_abstract(title=title, author=author, debug=debug)
+            return (ga.PROBE_OK, text) if text else (ga.PROBE_EMPTY, None)
+    except Exception as e:
+        log_progress(f"  corroboration probe {source} failed: {e}")
+        return ga.PROBE_TRANSPORT, None
+    return ga.PROBE_EMPTY, None
 
 
 # =============================================================================

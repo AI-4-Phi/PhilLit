@@ -12,6 +12,7 @@ import json
 from unittest.mock import patch, MagicMock
 
 import pytest
+import requests
 
 
 # =============================================================================
@@ -366,6 +367,291 @@ class TestCoreSource:
 
         assert result is not None
         assert "freedom" in result.lower()
+
+
+# =============================================================================
+# Status-bearing probes (Task 5a)
+# =============================================================================
+
+def _limiter_and_backoff(name, max_attempts=1):
+    from rate_limiter import get_limiter, ExponentialBackoff
+    return get_limiter(name), ExponentialBackoff(max_attempts=max_attempts)
+
+
+class TestProbeS2:
+    """probe_s2 distinguishes 'the API answered and has none' from 'transport'."""
+
+    @patch("requests.get")
+    def test_ok_carries_text(self, mock_get):
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: {"abstract": "The S2 abstract."})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            "abc123", None, limiter, backoff) == ("ok", "The S2 abstract.")
+
+    @patch("requests.get")
+    def test_answered_without_abstract_is_empty(self, mock_get):
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: {"abstract": None})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            "abc123", None, limiter, backoff) == ("empty", None)
+
+    @patch("requests.get")
+    def test_404_is_empty(self, mock_get):
+        """404 is the API answering authoritatively: it has no such record."""
+        mock_get.return_value = MagicMock(status_code=404)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            "nope", None, limiter, backoff) == ("empty", None)
+
+    @patch("requests.get")
+    def test_no_identifier_is_empty_without_request(self, mock_get):
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            limiter=limiter, backoff=backoff) == ("empty", None)
+        mock_get.assert_not_called()
+
+    @patch("requests.get")
+    def test_http_error_is_transport(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=500)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            "abc123", None, limiter, backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_connection_failure_is_transport(self, mock_get):
+        mock_get.side_effect = requests.exceptions.ConnectionError("down")
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            "abc123", None, limiter, backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_rate_limit_exhaustion_is_transport(self, mock_get):
+        """A 429 we never got past is a non-answer, not an authoritative 'none'."""
+        mock_get.return_value = MagicMock(
+            status_code=429, headers={}, text="")
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            "abc123", None, limiter, backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_malformed_payload_is_transport(self, mock_get):
+        """A 200 whose body is not a JSON object told us nothing."""
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: ["not", "an", "object"])
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.probe_s2(
+            "abc123", None, limiter, backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_public_function_delegates_malformed_to_none(self, mock_get):
+        """Delegation divergence, pinned: a wrong-shape 200 body used to raise
+        out of the public function; it now reads as any other non-answer."""
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: ["not", "an", "object"])
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.get_abstract_from_s2(
+            "abc123", None, limiter, backoff) is None
+
+    @patch("requests.get")
+    def test_public_function_maps_transport_to_none(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=500)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("semantic_scholar")
+
+        assert get_abstract.get_abstract_from_s2(
+            "abc123", None, limiter, backoff) is None
+
+
+class TestProbeOpenAlex:
+    """probe_openalex status vocabulary."""
+
+    @patch("requests.get")
+    def test_ok_carries_reconstructed_text(self, mock_get):
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: {"abstract_inverted_index": {"A": [0], "test": [1]}})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+
+        assert get_abstract.probe_openalex(
+            "10.1/x", None, limiter, backoff) == ("ok", "A test")
+
+    @patch("requests.get")
+    def test_answered_without_index_is_empty(self, mock_get):
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: {"abstract_inverted_index": None})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+
+        assert get_abstract.probe_openalex(
+            "10.1/x", None, limiter, backoff) == ("empty", None)
+
+    @patch("requests.get")
+    def test_404_is_empty(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=404)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+
+        assert get_abstract.probe_openalex(
+            "10.1/x", None, limiter, backoff) == ("empty", None)
+
+    @patch("requests.get")
+    def test_budget_exhaustion_is_transport(self, mock_get):
+        """Daily-budget exhaustion is a quota non-answer, not 'no abstract'."""
+        mock_get.return_value = MagicMock(
+            status_code=429, headers={"Retry-After": "81471"}, text="")
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+
+        assert get_abstract.probe_openalex(
+            "10.1/x", None, limiter, backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_http_error_is_transport(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=503)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+
+        assert get_abstract.probe_openalex(
+            "10.1/x", None, limiter, backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_malformed_index_is_transport(self, mock_get):
+        """A truthy non-object index is malformed, not an absent abstract."""
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: {"abstract_inverted_index": "not-an-object"})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+
+        assert get_abstract.probe_openalex(
+            "10.1/x", None, limiter, backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_public_function_maps_transport_to_none(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=503)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+
+        assert get_abstract.get_abstract_from_openalex(
+            "10.1/x", None, limiter, backoff) is None
+
+
+class TestProbeCore:
+    """probe_core status vocabulary."""
+
+    @patch("requests.get")
+    def test_ok_carries_text(self, mock_get):
+        long_abstract = "A CORE abstract long enough to clear the length filter."
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: {"results": [{"abstract": long_abstract}]})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("core")
+
+        assert get_abstract.probe_core(
+            doi="10.1/x", limiter=limiter, backoff=backoff) == ("ok", long_abstract)
+
+    @patch("requests.get")
+    def test_no_usable_result_is_empty(self, mock_get):
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: {"results": []})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("core")
+
+        assert get_abstract.probe_core(
+            doi="10.1/x", limiter=limiter, backoff=backoff) == ("empty", None)
+
+    @patch("requests.get")
+    def test_no_identifier_is_empty_without_request(self, mock_get):
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("core")
+
+        assert get_abstract.probe_core(
+            limiter=limiter, backoff=backoff) == ("empty", None)
+        mock_get.assert_not_called()
+
+    @patch("requests.get")
+    def test_http_error_is_transport(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=500)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("core")
+
+        assert get_abstract.probe_core(
+            doi="10.1/x", limiter=limiter, backoff=backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_non_iterable_results_is_transport(self, mock_get):
+        """Without the results-shape guard this raises TypeError instead."""
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: {"results": 5})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("core")
+
+        assert get_abstract.probe_core(
+            doi="10.1/x", limiter=limiter, backoff=backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_non_object_result_entry_is_transport(self, mock_get):
+        mock_get.return_value = MagicMock(
+            status_code=200, json=lambda: {"results": ["not-an-object"]})
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("core")
+
+        assert get_abstract.probe_core(
+            doi="10.1/x", limiter=limiter, backoff=backoff) == ("transport", None)
+
+    @patch("requests.get")
+    def test_public_function_maps_transport_to_none(self, mock_get):
+        mock_get.return_value = MagicMock(status_code=500)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("core")
+
+        assert get_abstract.get_abstract_from_core(
+            doi="10.1/x", limiter=limiter, backoff=backoff) is None
+
+
+class TestPublicFunctionsGateOnStatus:
+    """The text-or-None view keys on the STATUS, not on the probe happening
+    to return None alongside a non-ok status."""
+
+    def test_s2_discards_text_carried_with_a_non_ok_status(self):
+        import get_abstract
+        with patch.object(get_abstract, "probe_s2",
+                          lambda **k: ("empty", "leaked text")):
+            assert get_abstract.get_abstract_from_s2(s2_id="x") is None
+
+    def test_openalex_discards_text_carried_with_a_non_ok_status(self):
+        import get_abstract
+        with patch.object(get_abstract, "probe_openalex",
+                          lambda *a, **k: ("transport", "leaked text")):
+            assert get_abstract.get_abstract_from_openalex(
+                "10.1/x", None, None, None) is None
+
+    def test_core_discards_text_carried_with_a_non_ok_status(self):
+        import get_abstract
+        with patch.object(get_abstract, "probe_core",
+                          lambda **k: ("empty", "leaked text")):
+            assert get_abstract.get_abstract_from_core(doi="10.1/x") is None
 
 
 # =============================================================================
