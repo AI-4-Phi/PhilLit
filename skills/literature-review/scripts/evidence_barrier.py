@@ -148,6 +148,130 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
     return None
 
 
+# Two corroboration outcomes this file owns, on top of the four
+# enrich_bibliography.corroborate_abstract returns. Neither is evidence:
+# like every non-corroborated outcome they leave the entry unattested.
+#
+# PROBE_UNAVAILABLE: the CLAIMED source cannot be asked at all in THIS
+# environment, decided before any request. Calling the corroborator anyway
+# would burn the fallback probes and then label the result
+# `source_empty` -- and that bucket has to keep meaning "a source was
+# probed and authoritatively has no abstract", or the item-15 rate it feeds
+# means nothing. Fail-closed, so an entry claiming `core` in a keyless
+# workspace gains nothing by the claim.
+#
+# PROBE_ERROR: an exception escaped the corroborator itself. Its probes are
+# individually wrapped, but the shared client/limiter setup around them is
+# not, and a plumbing failure there must not fail the whole barrier and
+# take down the review -- same fail-closed-but-survivable treatment
+# `_heal_abstract` gives its own fetch, for the same reason.
+PROBE_UNAVAILABLE = "probe_unavailable"
+PROBE_ERROR = "probe_error"
+
+
+def _heal_bucket(source: str, outcome: str) -> dict:
+    """A heal-path corroboration bucket, in one place because it is written
+    from three sites (restored, unhealed, and the output loop's correction
+    when the splice is dropped) and they must not drift apart.
+
+    `via: heal` marks the population: candidacy FAILED for these entries, so
+    they are not part of the candidate rate item 15 reads -- their own
+    fetch, hash-gated against the ledger, is what stands in for a probe.
+    """
+    return {"outcome": outcome, "source": source, "claimed": source,
+            "via": "heal"}
+
+
+def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
+    """Can the claimed abstract source be asked about THIS entry, here?
+
+    Exactly the two shapes where the answer is a flat no, both read off
+    `_probe_candidate`'s own preconditions rather than guessed at:
+
+    * `core` with no API key -- resolution skips keyless CORE rather than
+      burn futile unauthenticated attempts (item 13 D3), so the probe
+      returns "empty" without a request.
+    * `s2` with no DOI -- a bib entry carries no Semantic Scholar id, so
+      the DOI is the only identifier the probe has. Read through
+      `eb.get_doi`, the same extractor the corroborator uses, so the
+      pre-classification cannot disagree with the probe it stands in for:
+      mislabeling a PROBEABLE entry unprobeable would demote an honest
+      attestation, which is the one error direction that costs a tier.
+
+    Deliberately NOT generalized to every unprobeable combination
+    (`openalex` without a DOI, `ndpr` without a title): the refinement
+    enumerates these two and every other case goes to the corroborator and
+    is recorded verbatim. Both residual shapes need a field the entry's own
+    enrichment must have had, i.e. a later deletion, and both land in
+    `source_empty` -- visible, fail-closed, and re-derived on the next run.
+    """
+    if claimed == "core":
+        return not (os.environ.get("CORE_API_KEY", "") or "").strip()
+    if claimed == "s2":
+        return not eb.get_doi({"fields": fields})
+    return False
+
+
+def _corroborate_candidate(fields: dict, debug: bool = False) -> dict:
+    """One candidate's corroboration bucket, as the report records it.
+
+    Ledger equality only makes an entry a CANDIDATE (item 15): the ledger
+    is agent-written, so the three-line forgery -- fabricate an abstract,
+    write `abstract_source`, write the fabricated text's own sha256 --
+    satisfies it by construction. The tier needs a live fetch that still
+    serves the same text.
+
+    `source` is who ANSWERED (integrity-irrelevant: the gate is hash
+    equality, so any source's matching text is equally good evidence),
+    `claimed` is what the bib said. Both are recorded on every bucket
+    because their DIFFERENCE is what makes the item-15 rate readable --
+    a mismatch off a source the entry never claimed reads very differently
+    from one off the source it did.
+    """
+    claimed = (fields.get("abstract_source") or "").strip().lower()
+    if _claimed_source_unprobeable(fields, claimed):
+        return {"outcome": PROBE_UNAVAILABLE, "source": claimed,
+                "claimed": claimed}
+    try:
+        outcome, matched = eb.corroborate_abstract(
+            fields,
+            os.environ.get("S2_API_KEY", ""),
+            os.environ.get("OPENALEX_EMAIL", ""),
+            os.environ.get("CORE_API_KEY", ""),
+            debug,
+        )
+    except Exception:
+        return {"outcome": PROBE_ERROR, "source": claimed, "claimed": claimed}
+    return {"outcome": outcome, "source": matched or claimed,
+            "claimed": claimed}
+
+
+def _corroboration_summary(report: dict) -> dict:
+    """Operator-facing counts over the corroboration buckets.
+
+    Heal-path buckets (`via: heal`) are excluded: they are a different
+    population (candidacy FAILED there) already summarized by
+    `report["healed"]`, and folding them in would inflate the corroborated
+    count that item 15's rate reads. `candidates` is the sum of the rest by
+    construction, and `other` exists so a token added later cannot go
+    silently uncounted -- the key set is fixed either way, since a consumer
+    must not have to guess which keys a given run will print.
+    """
+    counts = {k: 0 for k in (eb.CORROBORATED, eb.MISMATCH, eb.SOURCE_EMPTY,
+                             eb.TRANSPORT_FAILED, PROBE_UNAVAILABLE,
+                             PROBE_ERROR)}
+    counts["other"] = 0
+    total = 0
+    for per_bib in (report.get("abstract_corroboration") or {}).values():
+        for bucket in (per_bib or {}).values():
+            if not isinstance(bucket, dict) or bucket.get("via") == "heal":
+                continue
+            total += 1
+            outcome = bucket.get("outcome")
+            counts["other" if outcome not in counts else outcome] += 1
+    return {"candidates": total, **counts}
+
+
 _DERIVED_FIELD_RE = re.compile(
     r"\n[ \t]*(?:venue_status|year_suffix|urldate|archiveurl)\s*=\s*"
     r"(?:\{[^{}]*\}|\"[^\"]*\")\s*,?",
@@ -385,6 +509,11 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         # half of Option D).
         "cleaning_abstained": [],
         "healed": {},
+        # Item 15: one bucket per CANDIDATE (ledger equality held) plus one
+        # per heal, recording what a live fetch said. Every entry that
+        # reaches EVIDENCE-ABSTRACT has a `corroborated` bucket here; every
+        # other outcome is a visible, re-derivable demotion.
+        "abstract_corroboration": {},
     }
     degraded = False
     domains = {}
@@ -434,6 +563,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     atts = {}          # i -> {key: EntryAttestation}
     needs_context = {} # "bib_name::key" -> {"entry_type", "fields"}
     healed = {}         # (i, key) -> (restored_text, canonical_source)
+    # (i, key) of every entry a live fetch corroborated this run -- either
+    # directly or via a heal. The output loop below re-derives ledger
+    # equality per chunk (fail-closed against a splice that did not land)
+    # and conjoins THIS set, so no path can attest an abstract that no fetch
+    # backed.
+    corroborated = set()
     for i, d in domains.items():
         chunks = [rc.strip_context_fields(_strip_derived_fields(c))
                   if se.entry_header(c) else c
@@ -456,7 +591,6 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             fields = se.parse_entry_fields(chunk)
             cl = c_entries.get(key) or {}
             att = se.EntryAttestation(
-                abstract_attested=se.attest_abstract(fields, e_entries.get(key)),
                 api_matched=bool(cl.get("api_matched")),
                 verified_identifier=cl.get("verified_identifier"),
                 verified_identifier_value=cl.get("verified_identifier_value"),
@@ -464,8 +598,25 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 cleaning_abstained=cl.get("cleaning_abstained"),
             )
             e_rec = e_entries.get(key)
-            if (not att.abstract_attested and e_rec
-                    and e_rec.get("abstract_sha256")):
+            # Ledger equality is CANDIDACY, not attestation (item 15).
+            candidate = se.attest_abstract(fields, e_rec)
+            if candidate:
+                bucket = _corroborate_candidate(fields, debug=debug)
+                report["abstract_corroboration"].setdefault(
+                    d["bib_name"], {})[key] = bucket
+                if bucket["outcome"] == eb.CORROBORATED:
+                    att.abstract_attested = True
+                    corroborated.add((i, key))
+            elif e_rec and e_rec.get("abstract_sha256"):
+                # Keyed on CANDIDACY, exactly as before -- NOT on the
+                # post-corroboration flag. A candidate that fails
+                # corroboration could never be healed anyway: candidacy
+                # already equated the bib's abstract hash with the ledger's,
+                # so the heal's own gate (fetched hash == LEDGER hash) is the
+                # very comparison corroboration just failed. Entering the
+                # heal path there would only spend a second fetch to
+                # re-derive the same no -- or, worse, hand back an
+                # attestation the gate had refused.
                 restored = _heal_abstract(fields, e_rec, debug=debug)
                 src = ((e_rec.get("abstract_source") or "").strip().lower())
                 if restored is not None:
@@ -474,12 +625,22 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     # actually served the text is integrity-irrelevant
                     # (hash-gated) and is not recorded in the bib.
                     att.abstract_attested = True
+                    corroborated.add((i, key))
                     healed[(i, key)] = (restored, src)
                     report["healed"].setdefault(d["bib_name"], {})[key] = {
                         "outcome": "restored", "source": src}
+                    # A heal IS a corroboration, by construction: the fetched
+                    # text had to hash-equal the ledger value, and that text
+                    # is what gets written into the bib. No second fetch.
+                    report["abstract_corroboration"].setdefault(
+                        d["bib_name"], {})[key] = _heal_bucket(
+                            src, eb.CORROBORATED)
                 else:
                     report["healed"].setdefault(d["bib_name"], {})[key] = {
                         "outcome": "unhealed", "source": src}
+                    report["abstract_corroboration"].setdefault(
+                        d["bib_name"], {})[key] = _heal_bucket(
+                            src, "unhealed")
             atts[i][key] = att
             if att.abstract_attested:
                 report["acquisition"][d["bib_name"]][key] = {"outcome": "not-needed"}
@@ -877,12 +1038,26 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     chunk = pre_heal_chunk
                     report["healed"][bib_name][key] = {
                         "outcome": "unhealed", "source": h[1]}
+                    # Correct the corroboration bucket too, or the report
+                    # contradicts itself -- "corroborated" beside an
+                    # "unhealed" heal and a demoted stamp -- and item 15's
+                    # corroborated count is inflated by restorations that
+                    # never reached the bib.
+                    report["abstract_corroboration"].setdefault(
+                        bib_name, {})[key] = _heal_bucket(h[1], "unhealed")
             fields = se.parse_entry_fields(chunk)
             att = atts[i].get(key) or se.EntryAttestation()
             # Re-derive from the final text: the stamp must never trust a
             # flag set in the attestation loop if the corresponding splice
             # did not land in THIS chunk (fail-closed against index skew).
-            att.abstract_attested = se.attest_abstract(fields, e_entries.get(key))
+            # BOTH conjuncts are load-bearing, and neither implies the other:
+            # ledger equality proves the text in THIS chunk is the attested
+            # one, and the corroboration set proves a live fetch backed it
+            # this run. Dropping the second re-grants the tier to every
+            # forged ledger record the gate above just refused.
+            att.abstract_attested = bool(
+                se.attest_abstract(fields, e_entries.get(key))
+                and (i, key) in corroborated)
             # Re-derived per chunk for the same fail-closed reason as the line
             # above: the flag is keyed (i, key), so an index skew must never
             # promote a neighbouring entry.
@@ -1038,6 +1213,13 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
                 (report.get("web_sources") or {}).get("splice_failed") or []),
         },
         "cleaning_abstained": len(report.get("cleaning_abstained") or []),
+        # Printed for the same reason the two pairs below are: the DIFFERENCE
+        # between candidates and corroborated is the finding. Every
+        # non-corroborated outcome demotes an entry the ledger vouched for,
+        # and a demotion nobody can see is exactly what the gate policy
+        # forbids -- the report names the entries, this line makes the rate
+        # visible without opening it.
+        "abstract_corroboration": _corroboration_summary(report),
         "venue_vetting": {
             "status": (report.get("venue_vetting") or {}).get("status", "not-run"),
             "flagged_entries": (report.get("venue_vetting") or {}).get("flagged_entries", 0),

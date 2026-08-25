@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
 """PreToolUse hook: block tool-writes to the enrichment/cleaning ledgers.
 
-The ledgers are the *attestation authority* for the evidence tier: an
-enrichment-ledger record (`abstract_source` + `abstract_sha256`) is what
-grants an entry `EVIDENCE-ABSTRACT`, and a cleaning-ledger record is what
-attests `EVIDENCE-EXISTENCE`. Both are plain JSON files inside the workspace,
+The ledgers drive the evidence tier: a cleaning-ledger record is what
+attests `EVIDENCE-EXISTENCE`, and an enrichment-ledger record
+(`abstract_source` + `abstract_sha256`) is what makes an entry a CANDIDATE
+for `EVIDENCE-ABSTRACT` -- since item 15 the abstract tier also requires a
+live corroboration fetch at the barrier, so a forged enrichment record no
+longer grants it by itself. Both are plain JSON files inside the workspace,
 which made them agent-writable -- forge a record next to a fabricated
 abstract and enrichment's prior-ledger fast path skips the fetch that would
-have refused attestation, so the barrier stamps the fabrication as fully
-citable (ROADMAP item 3 C; `enrich_bibliography.py` says as much in
-`_load_prior_ledger`'s docstring).
+have refused attestation (ROADMAP item 3 C; `enrich_bibliography.py` says as
+much in `_load_prior_ledger`'s docstring), which is still the whole story for
+the existence tier and still buys candidacy for the abstract one.
 
 **Scope, stated exactly** (the external review of 2026-08-05 rejected looser
 wording, rightly): this denies ledger writes made through Claude Code's
@@ -24,9 +26,9 @@ marker and a matching SHA-256 is not stopped by losing its easiest route. The
 value here is against accidental edits and tool-default behaviour, plus the
 incidence reduction that comes from closing the cheap path. Symlink/hardlink
 aliases and check-then-open races are in the same accepted bucket: creating
-one needs Bash. Full residual list and the real closure (barrier-side live
-corroboration, routed to phillit-service item 23):
-`docs/known-issues/bib-pipeline-integrity-gaps.md` Issue C.
+one needs Bash. Full residual list, and the real closure -- barrier-side live
+corroboration, now shipped for the abstract tier (item 15), never for the
+existence tier: `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue C.
 
 Nothing in the supported pipeline is affected: the designated writers
 `enrich_bibliography._update_enrichment_ledger` and

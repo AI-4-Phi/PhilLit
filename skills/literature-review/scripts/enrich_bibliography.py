@@ -1011,8 +1011,10 @@ def _load_prior_ledger(output_path: Path) -> dict:
     Non-dict values are dropped, not passed through: a malformed record
     must degrade to "not attested" (an API re-check), never crash the
     run. NOTE the trust model: this file is agent-writable and is the
-    attestation authority for the zero-fetch fast path, the same trust
-    boundary the evidence barrier already places on it.
+    authority for the zero-fetch fast path HERE. The evidence barrier no
+    longer shares that trust for the abstract tier -- since item 15 a ledger
+    record only makes an entry a candidate there, and `corroborate_abstract`
+    has to see a live fetch serve the same text before the tier is granted.
     """
     final = (output_path.parent / "intermediate_files" / "json"
              / f"enrichment_ledger-{output_path.stem}.json")

@@ -2571,3 +2571,459 @@ def test_excluded_host_entry_is_counted_in_the_printed_not_promoted_summary(tmp_
     summary = json.loads(r.stdout)["web_sources"]
     assert summary["not_promoted"] == 1               # not 2 -- no double count
     assert summary["status"] == "complete"
+
+
+# --- Task 7: live corroboration gates EVIDENCE-ABSTRACT --------------------
+# Ledger equality is only CANDIDACY now; the tier needs a live fetch that
+# still serves the same text. Every test here mocks eb.corroborate_abstract
+# (the module attribute the barrier looks up at call time -- never a
+# barrier-local helper, or the probe-availability pre-classification would
+# go untested) and rc.fetch_articles, so the suite stays offline.
+
+CORROB_TEXT = ("We argue that reward hacking is a specification problem "
+               "rather than a capability problem.")
+
+
+def _corroboration_domain(review_dir, *, abstract=CORROB_TEXT, source="s2",
+                          doi="10.1/corrob", author="Doe, Jane",
+                          year="2020", title="Reward Hacking",
+                          cleaning_entries=None,
+                          slugs=EMPTY_SLUGS, key="forge2020"):
+    """One domain whose single entry PASSES ledger candidacy: the bib's
+    abstract hash and abstract_source equal the enrichment record's. Before
+    Task 7 that alone attested the entry; now it only makes it a candidate."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import stamp_evidence as se
+    bib = ('@article{' + key + ',\n'
+           f'  author = {{{author}}},\n'
+           f'  title = {{{title}}},\n'
+           '  journal = {Journal of Alignment},\n'
+           + (f'  doi = {{{doi}}},\n' if doi else '')
+           + f'  year = {{{year}}},\n'
+           f'  abstract = {{{abstract}}},\n'
+           f'  abstract_source = {{{source}}},\n'
+           '  keywords = {alignment, High}\n'
+           '}')
+    enrichment = _enrichment(1, {key: {"abstract_source": source,
+                                       "abstract_sha256": se.abstract_hash(abstract)}})
+    if cleaning_entries is None:
+        cleaning_entries = {key: {
+            "api_matched": True, "verified_identifier": "doi",
+            "verified_identifier_value": doi, "entry_type": "article"}} if doi else {}
+    _domain(review_dir, 1, bib, cleaning=_cleaning(1, cleaning_entries),
+            enrichment=enrichment, slugs=slugs)
+    return key
+
+
+def _stub_corroborator(monkeypatch, eb_mod, result, calls, articles=None):
+    """Mock the corroborator (recording every call) and the SEP/IEP fetch."""
+    def _fake(fields, s2_api_key=None, openalex_email=None, core_api_key=None,
+              debug=False):
+        calls.append({"fields": dict(fields), "s2": s2_api_key,
+                      "email": openalex_email, "core": core_api_key})
+        return result
+    monkeypatch.setattr(eb_mod.eb, "corroborate_abstract", _fake)
+    monkeypatch.setattr(eb_mod.rc, "fetch_articles",
+                        lambda union, debug=False: (articles or {}, []))
+
+
+def _barrier(monkeypatch):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    # Keyed by default so the probe-availability pre-classification does not
+    # fire in tests that are about the corroboration outcome itself.
+    monkeypatch.setenv("S2_API_KEY", "s2-key")
+    monkeypatch.setenv("OPENALEX_EMAIL", "dev@example.org")
+    monkeypatch.setenv("CORE_API_KEY", "core-key")
+    return evidence_barrier
+
+
+def test_forged_ledger_record_does_not_attest_without_corroboration(tmp_path, monkeypatch):
+    """The three-line forgery: fabricate an abstract, write abstract_source,
+    write the fabricated text's own sha256 into the enrichment ledger.
+    Ledger equality holds, so candidacy passes -- and a live fetch that
+    serves different text must stop the tier there. The entry then proceeds
+    exactly like any unattested entry: context acquisition, then whatever
+    the identifier attestation earns (EXISTENCE here)."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, abstract="FABRICATED FINDINGS.")
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("mismatch", None), calls)
+
+    def _no_heal(*a, **k):
+        # The heal path stays keyed on CANDIDACY, not on the attestation
+        # flag: a failed candidate must not spend a second fetch to
+        # re-derive the same no (its gate is the comparison corroboration
+        # just failed) -- still less get the tier back through it.
+        raise AssertionError("heal fetch ran for a failed candidate")
+    monkeypatch.setattr(eb_mod.eb, "resolve_abstract_for_entry", _no_heal)
+    monkeypatch.setattr(eb_mod.eb, "resolve_ndpr_abstract", _no_heal)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "mismatch", "source": "s2", "claimed": "s2"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is False
+    assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
+    # no new code path: the entry went through context acquisition
+    assert report["acquisition"][bib_name][key] == {"outcome": "unmatched"}
+    out = (tmp_path / bib_name).read_text(encoding="utf-8")
+    assert "EVIDENCE-ABSTRACT" not in out
+    assert len(calls) == 1                      # candidacy passed -> probed
+
+
+def test_a_corroborated_abstract_is_attested_and_bucketed(tmp_path, monkeypatch):
+    """The honest path. The bucket records the source that ANSWERED
+    (openalex) next to the source the bib CLAIMED (s2) -- which source
+    served the text is integrity-irrelevant, since the gate is hash
+    equality, but the split is what makes the item-15 rate readable."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "openalex"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "corroborated", "source": "openalex", "claimed": "s2"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is True
+    assert report["stamps"][bib_name][key] == "EVIDENCE-ABSTRACT"
+    # attested entries never consume encyclopedia matching
+    assert report["acquisition"][bib_name][key] == {"outcome": "not-needed"}
+    assert len(calls) == 1
+
+
+def test_transport_failure_demotes_and_a_re_run_restores(tmp_path, monkeypatch):
+    """A flaky network must not read as evidence -- and must not be
+    permanent either. Run 2 goes over run 1's OWN OUTPUT (a fresh fixture
+    would just re-test the honest path and prove nothing about
+    restoration): the abstract and abstract_source survive the barrier's
+    field strip, so candidacy re-passes and the tier comes back."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("transport_failed", None), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "transport_failed", "source": "s2", "claimed": "s2"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is False
+    assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
+    assert "EVIDENCE-ABSTRACT" not in (tmp_path / bib_name).read_text(
+        encoding="utf-8")
+
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "corroborated", "source": "s2", "claimed": "s2"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is True
+    assert report["stamps"][bib_name][key] == "EVIDENCE-ABSTRACT"
+    assert len(calls) == 2
+
+
+def test_corroboration_reads_the_same_env_keys_as_the_heal_path(tmp_path, monkeypatch):
+    """The keys come from the environment, not from the bib: S2_API_KEY,
+    OPENALEX_EMAIL and CORE_API_KEY -- exactly what _heal_abstract reads."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.setenv("S2_API_KEY", "sk-s2")
+    monkeypatch.setenv("OPENALEX_EMAIL", "dev@phillit.test")
+    monkeypatch.setenv("CORE_API_KEY", "sk-core")
+    _corroboration_domain(tmp_path)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    assert calls[0]["s2"] == "sk-s2"
+    assert calls[0]["email"] == "dev@phillit.test"
+    assert calls[0]["core"] == "sk-core"
+    # identity comes from the entry's own fields, nothing else
+    assert calls[0]["fields"]["doi"] == "10.1/corrob"
+
+
+def test_claimed_core_in_a_keyless_workspace_is_probe_unavailable(tmp_path, monkeypatch):
+    """Pre-classification, not a probe: keyless CORE cannot be asked, so
+    calling the corroborator would burn the fallback probes and then label
+    the outcome source_empty -- which has to keep meaning "a source was
+    probed and authoritatively has no abstract". Fail-closed all the same:
+    no tier, so claiming `core` in a keyless workspace gains nothing."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.delenv("CORE_API_KEY", raising=False)
+    key = _corroboration_domain(tmp_path, source="core")
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "core"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "probe_unavailable", "source": "core", "claimed": "core"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is False
+    assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
+    assert calls == []                      # the corroborator was never called
+
+
+def test_claimed_core_with_a_key_is_corroborated_normally(tmp_path, monkeypatch):
+    """Control for the pre-classification: `core` is unprobeable only
+    WITHOUT a key. With one, the entry takes the ordinary path."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.setenv("CORE_API_KEY", "sk-core")
+    key = _corroboration_domain(tmp_path, source="core")
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "core"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "corroborated", "source": "core", "claimed": "core"}
+    assert report["stamps"][bib_name][key] == "EVIDENCE-ABSTRACT"
+    assert len(calls) == 1
+
+
+def test_claimed_s2_without_a_doi_is_probe_unavailable(tmp_path, monkeypatch):
+    """A bib entry carries no Semantic Scholar id, so the s2 probe needs a
+    DOI. Without one the claimed source cannot be asked at all -- same
+    pre-classification, same fail-closed direction."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, source="s2", doi=None)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "probe_unavailable", "source": "s2", "claimed": "s2"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is False
+    assert report["stamps"][bib_name][key] == "EVIDENCE-NONE"
+    assert calls == []
+
+
+def test_claimed_s2_with_a_doi_is_corroborated_normally(tmp_path, monkeypatch):
+    """Control for the DOI half of the pre-classification (a mutant that
+    always pre-classifies s2 as unprobeable turns this red)."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, source="s2", doi="10.5/withdoi")
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    assert report["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-ABSTRACT"
+    assert len(calls) == 1
+
+
+def test_an_uncorroborated_entry_can_still_earn_context(tmp_path, monkeypatch):
+    """"Proceed exactly like any unattested entry" means the ordinary
+    downstream tiers stay reachable -- no new code path, no dead end: this
+    entry loses ABSTRACT to a mismatch and then earns CONTEXT from the SEP
+    article it matches."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(
+        tmp_path, abstract="FABRICATED FINDINGS.", author="Kuhn, Thomas S.",
+        year="1962", title="The Structure of Scientific Revolutions",
+        cleaning_entries={},
+        slugs='{"sep_entries": ["test-entry"], "iep_entries": []}')
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("mismatch", None), calls,
+                       articles={"sep:test-entry": KUHN_ARTICLE})
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["acquisition"][bib_name][key]["outcome"] == "matched"
+    assert report["stamps"][bib_name][key] == "EVIDENCE-CONTEXT"
+    out = (tmp_path / bib_name).read_text(encoding="utf-8")
+    assert "sep_context" in out and "EVIDENCE-ABSTRACT" not in out
+
+
+def test_a_heal_is_its_own_corroboration_and_fetches_only_once(tmp_path, monkeypatch):
+    """The heal path is unchanged and needs no second fetch: its own gate is
+    hash equality against the ledger, and the restored text is written into
+    the bib. Candidacy FAILED here (the bib text was mutated), so the
+    corroborator must never be called for it."""
+    eb_mod = _barrier(monkeypatch)
+    import stamp_evidence as se
+    true_text = "The original attested abstract text, restored."
+    bib = ('@article{pasq2019,\n'
+           '  abstract_source = {s2},\n'
+           '  abstract = {mutated text},\n'
+           '  author = {Pasquetto, Irene V.},\n'
+           '  title = {Uses and Reuses},\n'
+           '  doi = {10.1162/99608f92.fc14bf2d},\n'
+           '  year = {2019},\n'
+           '  keywords = {data-reuse, Medium}\n'
+           '}')
+    _domain(tmp_path, 1, bib,
+            cleaning=_cleaning(1, {"pasq2019": {
+                "api_matched": True, "verified_identifier": "doi",
+                "verified_identifier_value": "10.1162/99608f92.fc14bf2d",
+                "entry_type": "article"}}),
+            enrichment=_enrichment(1, {"pasq2019": {
+                "abstract_source": "s2",
+                "abstract_sha256": se.abstract_hash(true_text)}}))
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("mismatch", None), calls)
+    monkeypatch.setattr(eb_mod.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (true_text, "s2"))
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name]["pasq2019"] == {
+        "outcome": "corroborated", "source": "s2", "claimed": "s2",
+        "via": "heal"}
+    assert report["healed"][bib_name]["pasq2019"] == {
+        "outcome": "restored", "source": "s2"}
+    assert report["stamps"][bib_name]["pasq2019"] == "EVIDENCE-ABSTRACT"
+    assert calls == []                      # no second corroboration fetch
+
+
+def test_a_failed_heal_splice_corrects_the_corroboration_bucket(tmp_path, monkeypatch):
+    """When the heal splice is dropped for well-formedness, the entry
+    demotes -- and the corroboration bucket must say so too. Otherwise the
+    report contradicts itself (bucket "corroborated" beside healed
+    "unhealed" and a demoted stamp) and any item-15 rate counting
+    corroborated outcomes is inflated by splices that never landed."""
+    eb_mod = _barrier(monkeypatch)
+    import stamp_evidence as se
+    broken_text = "Restored text with a rogue { brace."
+    bib = ('@article{broken2020,\n'
+           '  author = {Doe, Jane},\n'
+           '  title = {Broken},\n'
+           '  doi = {10.1/broken},\n'
+           '  year = {2020},\n'
+           '  abstract = {mutated text},\n'
+           '  abstract_source = {s2},\n'
+           '  keywords = {topic, High}\n'
+           '}')
+    _domain(tmp_path, 1, bib,
+            cleaning=_cleaning(1, {"broken2020": {
+                "api_matched": True, "verified_identifier": "doi",
+                "verified_identifier_value": "10.1/broken",
+                "entry_type": "article"}}),
+            enrichment=_enrichment(1, {"broken2020": {
+                "abstract_source": "s2",
+                "abstract_sha256": se.abstract_hash(broken_text)}}))
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    monkeypatch.setattr(eb_mod.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (broken_text, "s2"))
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["healed"][bib_name]["broken2020"]["outcome"] == "unhealed"
+    assert report["abstract_corroboration"][bib_name]["broken2020"] == {
+        "outcome": "unhealed", "source": "s2", "claimed": "s2", "via": "heal"}
+    assert report["stamps"][bib_name]["broken2020"] == "EVIDENCE-EXISTENCE"
+    assert calls == []
+
+
+def test_no_bucket_and_no_probe_for_an_entry_without_a_ledger_record(tmp_path, monkeypatch):
+    """Candidacy is the gate on probing: an entry with no enrichment record
+    is not a candidate, so it neither costs a fetch nor appears in the
+    bucket (which must stay a record of candidates, or the item-15 rate
+    counts entries that were never in scope)."""
+    eb_mod = _barrier(monkeypatch)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "s2"), calls)
+    _domain(tmp_path, 1, KUHN, cleaning=CLEAN_KUHN, enrichment=EMPTY_ENRICH)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    assert report["abstract_corroboration"].get("literature-domain-1.bib", {}) == {}
+    assert calls == []
+
+
+def test_compute_tier_never_grants_abstract_without_the_attestation(tmp_path):
+    """Tier-equivalence: neither the abstract_source field, nor a ledger
+    record, nor anything a bucket could say reaches TIER_ABSTRACT on its
+    own -- att.abstract_attested is the only door, and the corroboration
+    gate is upstream of it."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import stamp_evidence as se
+    text = CORROB_TEXT
+    for source in ("s2", "openalex", "core", "ndpr", "", "crossref"):
+        for extra in ({}, {"doi": "10.1/x"}, {"sep_context": "ctx"}):
+            fields = {"abstract": text, "abstract_source": source,
+                      "title": "T", "author": "Doe, Jane", **extra}
+            assert se.compute_tier(
+                "article", fields, se.EntryAttestation()) != se.TIER_ABSTRACT
+            # ... and a ledger record that would pass attest_abstract is
+            # still not an attestation by itself.
+            assert se.attest_abstract(fields, {
+                "abstract_source": source,
+                "abstract_sha256": se.abstract_hash(text)}) == bool(source)
+            granted = se.compute_tier(
+                "article", fields,
+                se.EntryAttestation(abstract_attested=True))
+            assert (granted == se.TIER_ABSTRACT) == (
+                source in se.ATTESTED_ABSTRACT_SOURCES)
+
+
+def test_a_crash_inside_the_corroborator_demotes_without_failing_the_run(tmp_path, monkeypatch):
+    """The corroborator wraps each probe, but the shared client/limiter
+    setup around them is not covered -- and a plumbing failure there must
+    not take down the whole Phase 3->4 gate for the review. Same treatment
+    _heal_abstract gives its own fetch: swallow, record, demote."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path)
+
+    def _boom(*a, **k):
+        raise RuntimeError("limiter lock dir unwritable")
+    monkeypatch.setattr(eb_mod.eb, "corroborate_abstract", _boom)
+    monkeypatch.setattr(eb_mod.rc, "fetch_articles",
+                        lambda union, debug=False: ({}, []))
+    assert eb_mod.execute(tmp_path, 1) == 0          # run survives
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "probe_error", "source": "s2", "claimed": "s2"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is False
+    assert report["stamps"][bib_name][key] == "EVIDENCE-EXISTENCE"
+
+
+def test_the_printed_summary_counts_corroboration_outcomes(tmp_path, monkeypatch):
+    """Through the REAL CLI (no mocks): the demotion has to be visible to an
+    operator who never opens the report, exactly like the venue and
+    year_suffix pairs beside it. Offline by construction -- a claimed-`core`
+    entry in a keyless workspace is pre-classified before any request, and
+    venue vetting is key-gated to "skipped"."""
+    monkeypatch.delenv("CORE_API_KEY", raising=False)
+    rd = tmp_path / "review"
+    key = _corroboration_domain(rd, source="core")
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    summary = json.loads(r.stdout)["abstract_corroboration"]
+    assert summary == {"candidates": 1, "corroborated": 0, "mismatch": 0,
+                       "source_empty": 0, "transport_failed": 0,
+                       "probe_unavailable": 1, "probe_error": 0, "other": 0}
+    report = _report(rd)
+    assert report["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-EXISTENCE"
+
+
+def test_heal_buckets_are_excluded_from_the_summary_counts(tmp_path, monkeypatch):
+    """The heal population is a DIFFERENT population (candidacy failed) with
+    its own report section; folding it in would inflate the corroborated
+    count item 15's rate reads."""
+    eb_mod = _barrier(monkeypatch)
+    import stamp_evidence as se
+    true_text = "The original attested abstract text, restored."
+    bib = ('@article{pasq2019,\n'
+           '  abstract_source = {s2},\n'
+           '  abstract = {mutated text},\n'
+           '  author = {Pasquetto, Irene V.},\n'
+           '  title = {Uses and Reuses},\n'
+           '  doi = {10.1162/99608f92.fc14bf2d},\n'
+           '  year = {2019},\n'
+           '  keywords = {data-reuse, Medium}\n'
+           '}')
+    _domain(tmp_path, 1, bib, cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1, {"pasq2019": {
+                "abstract_source": "s2",
+                "abstract_sha256": se.abstract_hash(true_text)}}))
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("mismatch", None), calls)
+    monkeypatch.setattr(eb_mod.eb, "resolve_abstract_for_entry",
+                        lambda *a, **k: (true_text, "s2"))
+    report, _ = eb_mod.run_barrier(tmp_path, 1)
+    assert report["abstract_corroboration"]["literature-domain-1.bib"][
+        "pasq2019"]["via"] == "heal"
+    assert eb_mod._corroboration_summary(report) == {
+        "candidates": 0, "corroborated": 0, "mismatch": 0, "source_empty": 0,
+        "transport_failed": 0, "probe_unavailable": 0, "probe_error": 0,
+        "other": 0}

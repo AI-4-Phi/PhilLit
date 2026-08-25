@@ -899,6 +899,50 @@ class TestEvidenceRestamp:
                                {"smith2020dup": dict(self.NO_ATT)})
         assert "EVIDENCE-ABSTRACT" not in merged
 
+    def test_an_uncorroborated_abstract_is_not_re_granted_here(self, tmp_path):
+        """The barrier's corroboration gate (Task 7) must survive Phase 6.
+        Ledger equality no longer attests anything -- so a re-stamp that
+        RECOMPUTES the abstract attestation from the blob's source+hash,
+        instead of conjoining the barrier's own boolean, hands
+        EVIDENCE-ABSTRACT straight back to the entries the gate refused, in
+        the delivered bibliography. The hash here MATCHES the entry's own
+        abstract exactly (the forgery shape): only abstract_attested=False
+        distinguishes it."""
+        import stamp_evidence
+        forged = "FABRICATED FINDINGS, with a matching ledger hash."
+        a = ('@article{forge2020,\n  author = {Doe, Jane},\n'
+             '  title = {A Forged Study},\n  year = {2020},\n'
+             '  abstract = {' + forged + '},\n  abstract_source = {s2},\n'
+             '  keywords = {EVIDENCE-NONE}\n}')
+        att_a = dict(self.NO_ATT, abstract_attested=False, abstract_source="s2",
+                     abstract_sha256=stamp_evidence.abstract_hash(forged))
+        merged = self._run_cli(tmp_path, a, "", {"forge2020": att_a}, {})
+        assert "EVIDENCE-ABSTRACT" not in merged
+        assert "EVIDENCE-NONE" in merged
+
+    def test_an_attested_contributor_still_carries_abstract_across_a_merge(self, tmp_path):
+        """The honest cross-contributor case the conjunct must not break:
+        the same paper in two domains, same abstract text, one domain's
+        corroboration transport-failed and the other's corroborated. The
+        merged entry keeps EVIDENCE-ABSTRACT on the attested contributor's
+        blob (restamp_merged takes the max over contributors)."""
+        import stamp_evidence
+        text = "A genuine abstract, corroborated in one domain of two."
+        entry = ('  author = {Smith, Sam},\n  title = {A Real Study},\n'
+                 '  year = {2020},\n  abstract = {' + text + '},\n'
+                 '  abstract_source = {s2},\n')
+        a = '@article{smith2020,\n' + entry + '  keywords = {EVIDENCE-NONE}\n}'
+        b = '@article{smith2020dup,\n' + entry + '  keywords = {EVIDENCE-ABSTRACT}\n}'
+        sha = stamp_evidence.abstract_hash(text)
+        att_a = dict(self.NO_ATT, abstract_attested=False,   # transport_failed
+                     abstract_source="s2", abstract_sha256=sha)
+        att_b = dict(self.NO_ATT, abstract_attested=True,    # corroborated
+                     abstract_source="s2", abstract_sha256=sha)
+        merged = self._run_cli(tmp_path, a, b, {"smith2020": att_a},
+                               {"smith2020dup": att_b})
+        assert "EVIDENCE-ABSTRACT" in merged
+        assert "EVIDENCE-NONE" not in merged
+
     def test_context_laundering_blocked(self, tmp_path):
         # Same-field context laundering: the survivor (B, wins on abstract)
         # carries a FABRICATED sep_context; the loser's (A's) attestation

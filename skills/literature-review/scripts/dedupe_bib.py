@@ -867,10 +867,20 @@ def restamp_merged(
         """Rebuild an EntryAttestation valid for the MERGED fields."""
         if not blob:
             return se.EntryAttestation()
-        abstract_ok = se.attest_abstract(fields, {
-            "abstract_source": blob.get("abstract_source"),
-            "abstract_sha256": blob.get("abstract_sha256"),
-        })
+        # Conjoins the barrier's own boolean, exactly like the context and
+        # web re-verifications below -- the hash re-check alone is NOT
+        # equivalent to it. Ledger equality stopped being attestation when
+        # the barrier put a live corroboration fetch in front of the ABSTRACT
+        # tier (item 15): recomputing from source+hash here would hand
+        # EVIDENCE-ABSTRACT straight back to every entry the gate refused,
+        # in the delivered bibliography. The hash re-check still has to run
+        # on top, for its original reason: one contributor's boolean must
+        # never authorize another contributor's text.
+        abstract_ok = bool(blob.get("abstract_attested")) and se.attest_abstract(
+            fields, {
+                "abstract_source": blob.get("abstract_source"),
+                "abstract_sha256": blob.get("abstract_sha256"),
+            })
         cf = blob.get("context_field")
         context_ok = bool(
             blob.get("context_written") and cf and fields.get(cf)
