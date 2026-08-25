@@ -1738,6 +1738,19 @@ class TestFieldCompare:
         rule is never condemned."""
         assert mc._field_compare("school", "Anywhere", {}) == "match"
 
+    def test_publisher_containment_reaches_verified_identifier(self):
+        """The containment widening is INHERITED by _verified_identifier, and
+        that inheritance has a downstream consequence: stamp_evidence binds
+        EVIDENCE-EXISTENCE to a publisher-verified book. Pinned here so a later
+        tightening of publisher comparison cannot revert it silently."""
+        from pybtex.database import parse_string
+        entry = parse_string(
+            '@book{k, author="A, B", title="T", year="2020", '
+            'publisher="Springer"}', "bibtex").entries["k"]
+        assert mc._verified_identifier(
+            entry, {"publisher": "Springer International Publishing"}) == (
+                "publisher", "springer")
+
     def test_field_matches_api_is_exactly_the_match_state(self):
         cases = [
             ("pages", "303--352", {"pages": "303"}),
