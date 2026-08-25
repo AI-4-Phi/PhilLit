@@ -141,7 +141,7 @@ def venue_key(name: str) -> str:
 
     Also folds orthographic variance unrelated to series decoration: a
     standalone "&" (flanked by whitespace) is the coordinator "and" spelled
-    differently ("Health Information \\& Libraries Journal" verifies against
+    differently ("Health Information \& Libraries Journal" verifies against
     "Health information and libraries journal"). An embedded ampersand
     ("AT&T") is part of a name, not a coordinator, and is left alone.
 

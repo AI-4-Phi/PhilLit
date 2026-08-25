@@ -753,9 +753,10 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 # already equated the bib's abstract hash with the ledger's,
                 # so the heal's own gate (fetched hash == LEDGER hash) is the
                 # very comparison corroboration just failed. Entering the
-                # heal path there would only spend a second fetch to
-                # re-derive the same no -- or, worse, hand back an
-                # attestation the gate had refused.
+                # heal path there would only spend a redundant fetch: a
+                # hash match there would itself be live corroboration, not
+                # an attestation the gate had refused sneaking through, so
+                # the only real cost is re-deriving the same no.
                 restored = _heal_abstract(fields, e_rec, debug=debug)
                 src = ((e_rec.get("abstract_source") or "").strip().lower())
                 if restored is not None:

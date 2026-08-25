@@ -234,7 +234,11 @@ Never advance to a next step in this phase before completing the current step.
    running long — read it alongside the `transport_failed` and `probe_error`
    counts beside it and check credentials and connectivity (a missing or
    invalid `S2_API_KEY`, or an API outage, trips the breaker at the third
-   entry on every run).
+   entry on every run). `probe_unavailable` merges two different causes
+   instead — a claimed source outside the allowlist, which can never earn
+   the tier, and one this environment cannot ask (claimed `core` with no
+   `CORE_API_KEY` set, which demotes every claimed-core entry in a keyless
+   workspace, so set the key; claimed `s2` with no DOI).
 
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 

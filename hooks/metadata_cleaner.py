@@ -1068,12 +1068,15 @@ def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
     record (normalized)? Empty API values never match (can't confirm).
 
     Exactly the 'match' state of _field_compare, so the two can never drift.
-    Item 14 widened the pages and publisher comparisons; of this function's
-    three other call sites, two inherit that deliberately - a CrossRef-truncated
-    page range no longer blocks _plan_type_downgrade's @article DOI guard, and
-    'Springer' against 'Springer International Publishing' now verifies a book
-    identity in _verified_identifier. The third, the scoped-year-disagreement
-    scan in find_api_entry_for_bib_entry, passes only 'doi' and is unchanged."""
+    Item 14 widened the pages and publisher comparisons in _field_compare,
+    but this function's four call expressions in this module, across three
+    other callers, only ever pass 'doi' or 'publisher' - never 'pages'. Only
+    _verified_identifier's publisher check inherits that widening:
+    'Springer' against 'Springer International Publishing' now verifies a
+    book identity there. The other three - _plan_type_downgrade's @article
+    DOI guard, _verified_identifier's own DOI check, and the
+    scoped-year-disagreement scan in find_api_entry_for_bib_entry - all
+    pass only 'doi', which never widened, so they are unchanged."""
     return _field_compare(field_lower, value, api_entry) == 'match'
 
 

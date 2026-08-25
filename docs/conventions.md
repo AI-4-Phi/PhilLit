@@ -287,7 +287,7 @@ Hooks validate BibTeX automatically at two points: `validate_bib_write.py` check
 
 ### 2. Metadata Provenance Cleaning (`metadata_cleaner.py`)
 
-**Purpose**: Prevents LLM hallucination of bibliographic metadata by REMOVING field values that cannot be verified against API output.
+**Purpose**: Prevents LLM hallucination of bibliographic metadata by verifying entries against API output, removing venue values it cannot verify and detail values an identity-verified record contradicts.
 
 This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py`) was written but never wired into any hook, and was deleted 2026-08-02 rather than left as a re-armable trap: because it duplicated the cleaner's whole parser/index layer without sharing it, hardening effort landed on the dormant copy (`9aa473d`) while the live one still crashed on a single malformed file — which is how the `json.loads` failure fixed in `a30cde0` stayed hidden. Anything below that reads as "blocks the subagent" describes the cleaner's *removal* behaviour instead.
 
