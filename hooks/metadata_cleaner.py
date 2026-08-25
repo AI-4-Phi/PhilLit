@@ -1031,12 +1031,19 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
             return 'no-evidence'
         # CrossRef truncates a page RANGE to its first page, so a differing
         # TAIL is not a contradiction (bogen1988saving: true `303--352` against
-        # a record's `303`). Only a differing FIRST page contradicts, and only
-        # when both sides have one - otherwise the full-string test above has
-        # already spoken.
+        # a record's `303`). The tolerance needs both sides to HAVE a first
+        # page, and it is bounded to the shape it was written for: at least
+        # one side must be a bare first page (no range separator, which
+        # normalize_pages has already reduced to '-'). When BOTH sides carry a
+        # range, a shared first page is not truncation - `100--999` against
+        # `100--101` is a real disagreement about the work's extent, and
+        # reading it as a match was an over-match (external review,
+        # 2026-08-25). Unequal first pages contradict either way.
         first_nv, first_api = _first_page(nv), _first_page(api)
         if first_nv and first_api:
-            return 'match' if first_nv == first_api else 'contradict'
+            truncation_shape = '-' not in nv or '-' not in api
+            if first_nv == first_api and truncation_shape:
+                return 'match'
         return 'contradict'
     if field_lower == 'publisher':
         nv = value.lower().strip()
@@ -1049,9 +1056,24 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
         # but names no publisher, and suffix containment would verify it.
         # Both sides must be non-empty: '' is a prefix of everything, which
         # would make absence read as a match.
+        #
+        # But a BARE prefix is not enough - unbounded, it verified 'O' against
+        # 'Oxford University Press', keeping a one-letter fabrication and (via
+        # _verified_identifier) buying EVIDENCE-EXISTENCE on the identifier
+        # "o". So a strict prefix counts only when it stops somewhere
+        # credible: at a WORD BOUNDARY in the longer name (the Springer case),
+        # or - for the concatenation artifact, which has no boundary by
+        # construction - when the prefix is itself MULTI-TOKEN ('oxford
+        # university press'). A single token cut mid-word contradicts:
+        # 'Brill' is not 'Brillante Editores' (external review, 2026-08-25).
         if nv and api:
+            if nv == api:
+                return 'match'
             shorter, longer = sorted((nv, api), key=len)
-            if longer.startswith(shorter):
+            # Not equal + prefix => strictly longer, so the index is safe.
+            if longer.startswith(shorter) and (
+                    not longer[len(shorter)].isalnum()
+                    or len(shorter.split()) >= 2):
                 return 'match'
         return 'contradict' if api else 'no-evidence'
     if field_lower == 'doi':
@@ -1073,7 +1095,9 @@ def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
     other callers, only ever pass 'doi' or 'publisher' - never 'pages'. Only
     _verified_identifier's publisher check inherits that widening:
     'Springer' against 'Springer International Publishing' now verifies a
-    book identity there. The other three - _plan_type_downgrade's @article
+    book identity there - but only as far as the boundary/multi-token bound
+    on prefix containment reaches, so a one-letter 'O' does not. The other
+    three - _plan_type_downgrade's @article
     DOI guard, _verified_identifier's own DOI check, and the
     scoped-year-disagreement scan in find_api_entry_for_bib_entry - all
     pass only 'doi', which never widened, so they are unchanged."""

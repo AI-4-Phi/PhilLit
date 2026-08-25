@@ -516,8 +516,13 @@ fetch on non-allowlisted ledger sources that can never earn the tier;
 `probe_unavailable` and `corroboration_deadline` each merge two
 operator-distinct causes (SKILL.md tells the orchestrator how to read
 them); the 180 s deadline is a judgment call pending real-run numbers;
-and the enrichment ledger remains the candidacy authority (its hash still
-binds which text is checked). Option 3 (sampled warn-only corroboration) was not taken
+the enrichment ledger remains the candidacy authority (its hash still
+binds which text is checked); a corroboration bucket's `source` falls back
+to the CLAIMED value on every non-corroborated outcome, since nobody
+answered (attribution imprecision only — no outcome turns on it); and the
+consecutive-non-answer breaker's streak can be reset by `source_empty`
+candidates that spent no network, so the 180 s deadline is the only hard
+bound on the pass. Option 3 (sampled warn-only corroboration) was not taken
 either — it remains the cheapest way to
 turn "never observed under Claude" into a measured claim if that question
 becomes live. The review also proposed a fourth shape worth recording: fuse

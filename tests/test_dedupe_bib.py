@@ -968,9 +968,31 @@ class TestEvidenceRestamp:
                             version=2)
         assert "EVIDENCE-ABSTRACT" in new
 
+    def test_a_string_abstract_attested_flag_cannot_re_grant_the_tier(self, tmp_path):
+        """The flag is read `is True`, not `bool(...)`: the STRING "false" is
+        truthy, so a report serializing the flag as text used to re-grant the
+        tier it denies. Everything else in the fixture is valid -- v2 vintage,
+        real source, real hash -- so only the flag's reading decides."""
+        import stamp_evidence
+        text = "An abstract whose report carries a string flag, not a boolean."
+        a = ('@article{smith2020,\n  author = {Smith, Sam},\n'
+             '  title = {A Real Study},\n  year = {2020},\n'
+             '  abstract = {' + text + '},\n  abstract_source = {s2},\n'
+             '  keywords = {EVIDENCE-ABSTRACT}\n}')
+        junk = dict(self.NO_ATT, abstract_attested="false",
+                    abstract_source="s2",
+                    abstract_sha256=stamp_evidence.abstract_hash(text))
+        out = self._run_cli(tmp_path / "str", a, "", {"smith2020": junk}, {})
+        assert "EVIDENCE-ABSTRACT" not in out
+        assert "EVIDENCE-NONE" in out
+        real = dict(junk, abstract_attested=True)
+        out2 = self._run_cli(tmp_path / "bool", a, "", {"smith2020": real}, {})
+        assert "EVIDENCE-ABSTRACT" in out2
+
     def test_an_unparseable_report_version_fails_closed(self, tmp_path):
-        """A string "2" is not a version, and neither is a bool: the check is
-        `isinstance(version, int) and version >= 2`, so both demote."""
+        """A string "2" is not a version, and neither is a bool or a float:
+        the check is `isinstance(version, int) and version >= 2`, so all
+        demote (`True >= 2` is False; a float is not an int)."""
         import stamp_evidence
         text = "An abstract whose report carries a junk schema_version."
         a = ('@article{smith2020,\n  author = {Smith, Sam},\n'
@@ -979,7 +1001,7 @@ class TestEvidenceRestamp:
              '  keywords = {EVIDENCE-ABSTRACT}\n}')
         att = dict(self.NO_ATT, abstract_attested=True, abstract_source="s2",
                    abstract_sha256=stamp_evidence.abstract_hash(text))
-        for bad in ("2", True, None):
+        for bad in ("2", True, None, 2.0):
             merged = self._run_cli(tmp_path / f"v-{bad}", a, "",
                                    {"smith2020": att}, {}, version=bad)
             assert "EVIDENCE-ABSTRACT" not in merged, bad

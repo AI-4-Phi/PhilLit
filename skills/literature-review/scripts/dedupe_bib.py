@@ -892,7 +892,10 @@ def restamp_merged(
         # never authorize another contributor's text.
         abstract_ok = (
             abstract_vintage_ok
-            and bool(blob.get("abstract_attested"))
+            # `is True`, not bool(): the flag decides a tier, and the STRING
+            # "false" is truthy, so a report that serialized the boolean as
+            # text would re-grant exactly what it denies.
+            and blob.get("abstract_attested") is True
             and se.attest_abstract(fields, {
                 "abstract_source": blob.get("abstract_source"),
                 "abstract_sha256": blob.get("abstract_sha256"),

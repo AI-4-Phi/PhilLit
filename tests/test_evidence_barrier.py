@@ -392,6 +392,22 @@ def test_cleaning_ledger_schema_version_string_is_malformed(tmp_path):
     assert report["domains"]["1"]["cleaning_ledger"] == "malformed"
 
 
+def test_cleaning_ledger_type_confused_schema_version_is_malformed(tmp_path):
+    """`in` compares with `==`, so JSON `true` (True == 1) and `1.0` both
+    equalled the int 1 and sailed through as a valid version-1 ledger. The
+    gate now takes the TYPE first -- `type(v) is int`, NOT isinstance, since
+    bool subclasses int (external review, 2026-08-25)."""
+    for i, bad in enumerate((True, 1.0)):
+        rd = tmp_path / f"review-{i}"
+        _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN, schema_version=bad),
+                enrichment=EMPTY_ENRICH)
+        r = _run(rd, 1)
+        assert r.returncode == 0, r.stderr
+        report = _report(rd)
+        assert report["status"] == "degraded", bad
+        assert report["domains"]["1"]["cleaning_ledger"] == "malformed", bad
+
+
 def test_cleaning_ledger_schema_version_absent_is_malformed(tmp_path):
     rd = tmp_path / "review"
     no_version = {k: v for k, v in CLEAN_KUHN.items() if k != "schema_version"}

@@ -64,8 +64,10 @@ truth-by-state join that shaped the fix:
 - **mhlambi2023decolonizing** — wrong pages: CONTRADICT from a DOI-matched
   record; still strips.
 - **bogen1988saving** — TRUE pages `303--352`: CONTRADICT via CrossRef's
-  own first-page truncation (`303`). Pages contradiction must require a
-  differing FIRST page.
+  own first-page truncation (`303`). Pages contradiction must tolerate a
+  differing TAIL against a truncated record value (bounded to exactly that
+  shape below — an equal first page across two full ranges still
+  contradicts).
 - **grant2009typology** — TRUE journal: CONTRADICT via a normalizer gap —
   `normalize_journal` decodes `\&`/`&amp;` but nothing folds `&` against
   the word `and` (`Health Information & Libraries Journal` vs
@@ -103,13 +105,19 @@ Three-valued comparison against the entry's own matched record
   matched by DOI; a title+year-matched broad record can never strip (the
   jamieson wrong-artifact hazard generalized: a review/whole-book record
   carries its own pages). Comparison hardening so CONTRADICT means
-  contradiction: pages contradict only on a differing first page (and a
+  contradiction: pages contradict on a differing first page (and a
   punctuation-only record value like `" - "` — S2's empty-pages shape — is
   no-evidence, never a contradiction); publisher and number/volume compare
   exact after normalization, with publisher tolerating word-prefix
   containment either way (`Springer` / `Springer International Publishing`
   match; a bare generic token like `Press` inside `Oxford University
-  Press` does not). The global-bucket coincidence
+  Press` does not). **Both tolerances were bounded by the external review
+  of 2026-08-25**, which found each over-matching: the first-page tolerance
+  now applies only when a side IS a bare first page, so two full ranges
+  sharing a first page (`100--999` vs `100--101`) contradict; and a prefix
+  must stop at a word boundary or be multi-token, so `O` no longer verifies
+  `Oxford University Press` (which had also bought EVIDENCE-EXISTENCE on
+  the identifier "o"). The global-bucket coincidence
   check is REMOVED from these fields' decision entirely (today it can keep
   a contradicted value via an unrelated paper's matching issue number).
 - **Venue fields** (`journal`, `booktitle`): policy unchanged (absence
@@ -186,8 +194,6 @@ structurally.
 - Letter-prefixed page ranges (`S1--S9`) against a truncated record
   (`S1`) still read as a contradiction — the first-page tolerance is
   digit-run-based. Bogen-shaped, rarer; unmeasured.
-- Single-token publisher prefix (`Brill` inside a hypothetical `Brillante
-  Editores`) can still match; unmeasured, telemetered class.
 - `entry_scoped` includes single-result title-lookup verify records, so
   the identity-verified guard is not strictly same-work in that corner
   (pre-existing class — the year gate keys on `entry_scoped` the same

@@ -662,7 +662,14 @@ class TestIntegration:
         `publisher` survives: a title+year match is not identity-verified and
         the record names no publisher at all, so since item 14 that value is
         unverified rather than refuted. The demotion still fires, which is what
-        keeps the fabricated container out of the rendered citation."""
+        keeps the fabricated container out of the rendered citation.
+
+        `pages` survives too, and is telemetry-flagged: the bib's `163--175`
+        and the record's `163 - 188` are two full RANGES that merely start
+        together, which is a contradiction rather than CrossRef truncation
+        (the true extent is 163-188, so the flag is right). Being a detail
+        field on a record that is not identity-verified, a contradiction
+        cannot strip it."""
         # S2 API output — the real record is a journal article.
         s2_json = {
             "status": "success",
@@ -709,8 +716,9 @@ class TestIntegration:
         ledger = json.loads(
             (tmp_path / "intermediate_files" / "json"
              / "cleaning_ledger-test.json").read_text(encoding="utf-8"))
+        assert not any("pages" in field for field in cleaned_entries)
         assert ledger["entries"]["gardiner2011early"]["unverified_fields"] == [
-            "publisher"]
+            "publisher", "pages"]
 
         parsed = pybtex_parse_file(str(bib_file), bib_format='bibtex')
         entry = parsed.entries["gardiner2011early"]
@@ -1693,6 +1701,19 @@ class TestFieldCompare:
         assert mc._field_compare(
             "pages", "641--658", {"pages": "867-880"}) == "contradict"
 
+    def test_pages_two_full_ranges_sharing_a_first_page_contradict(self):
+        """The tolerance exists for CrossRef's first-page TRUNCATION, so it
+        applies only when a side actually IS a bare first page. Two full
+        ranges that merely start together disagree about the work's extent:
+        `100--999` is not `100--101`."""
+        assert mc._field_compare(
+            "pages", "100--999", {"pages": "100--101"}) == "contradict"
+        assert mc._field_compare(
+            "pages", "100--101", {"pages": "100-999"}) == "contradict"
+        # Equal ranges still match, on the full-string test that runs first.
+        assert mc._field_compare(
+            "pages", "100--999", {"pages": "100-999"}) == "match"
+
     def test_pages_no_evidence_when_record_has_none(self):
         assert mc._field_compare("pages", "641--658", {}) == "no-evidence"
         assert mc._field_compare(
@@ -1722,6 +1743,7 @@ class TestFieldCompare:
             "pages", "xii--xv", {"pages": "1-10"}) == "contradict"
 
     def test_publisher_prefix_containment_matches_in_either_direction(self):
+        # Imprint depth: the prefix ends at a WORD BOUNDARY in the longer name.
         assert mc._field_compare(
             "publisher", "Springer",
             {"publisher": "Springer International Publishing"}) == "match"
@@ -1729,10 +1751,25 @@ class TestFieldCompare:
             "publisher", "Springer International Publishing",
             {"publisher": "springer"}) == "match"
         # Concatenated-location artifact: the tail is glued on with no
-        # separator, so only a PREFIX test rescues it.
+        # separator, so only a PREFIX test rescues it -- and it is licensed
+        # by the prefix being MULTI-TOKEN, not by a boundary.
         assert mc._field_compare(
             "publisher", "Oxford University Press",
             {"publisher": "Oxford University PressNew York"}) == "match"
+
+    def test_publisher_prefix_needs_a_boundary_or_a_multi_token_prefix(self):
+        """Unbounded prefix containment verified `O` against `Oxford
+        University Press`: it kept a one-letter fabricated publisher AND,
+        inherited by _verified_identifier, bought EVIDENCE-EXISTENCE on the
+        identifier "o". A SINGLE-token prefix that cuts a word in half is a
+        contradiction, not a shallower report of the same imprint (external
+        review, 2026-08-25)."""
+        assert mc._field_compare(
+            "publisher", "O",
+            {"publisher": "Oxford University Press"}) == "contradict"
+        assert mc._field_compare(
+            "publisher", "Brill",
+            {"publisher": "Brillante Editores"}) == "contradict"
 
     def test_publisher_containment_is_prefix_only_not_substring(self):
         """A bare imprint word is a SUBSTRING of a real publisher but names no

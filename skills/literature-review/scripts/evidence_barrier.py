@@ -44,7 +44,14 @@ def _load_ledger(path: Path, expected_bib_name: str, kind: str):
         data = json.loads(path.read_text(encoding="utf-8"))
     except (json.JSONDecodeError, OSError, UnicodeDecodeError):
         return "malformed", None
-    if not isinstance(data, dict) or data.get("schema_version") not in (1, 2):
+    if not isinstance(data, dict):
+        return "malformed", None
+    # TYPE first, then membership. `in` compares with `==`, and JSON `true`
+    # and `1.0` both equal the int 1 -- so a ledger whose version is a bool
+    # or a float used to read as a valid version-1 ledger. `type(v) is int`,
+    # NOT isinstance: bool subclasses int, so isinstance admits `true`.
+    version = data.get("schema_version")
+    if type(version) is not int or version not in (1, 2):
         return "malformed", None
     if data.get("bib_file") != expected_bib_name:
         return "malformed", None  # stale/copied ledger -- reject
@@ -341,7 +348,10 @@ def _corroborate_candidate(fields: dict, budget: "_CorroborationBudget",
     `claimed` is what the bib said. Both are recorded on every bucket
     because their DIFFERENCE is what makes the item-15 rate readable --
     a mismatch off a source the entry never claimed reads very differently
-    from one off the source it did.
+    from one off the source it did. On a NON-corroborated outcome nobody
+    answered, so `source` falls back to `claimed`: on those buckets it
+    records the claim, not an answerer (attribution imprecision only -- no
+    outcome is decided by it).
 
     Three gates run BEFORE any request, in cost order. The free bound comes
     first: a claim outside `se.ATTESTED_ABSTRACT_SOURCES` can never reach
