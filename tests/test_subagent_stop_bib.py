@@ -49,7 +49,9 @@ INVALID_BIB = """@article{wolf1990freedom,
 }
 """
 
-# Entry with a `number` field not present in the API JSON -> cleaner removes it
+# Entry with a `number` the entry-scoped CrossRef record below REFUTES ->
+# cleaner removes it. Since item 14 a field merely ABSENT from the pool is kept,
+# so a "did the cleaner run" detector needs the contradicting record too.
 HALLUCINATED_NUMBER_BIB = """@article{awad2018moral,
   author = {Awad, Edmond and Dsouza, Sohan},
   title = {The Moral Machine experiment},
@@ -74,6 +76,29 @@ S2_NATURE_JSON = {
             "venue": "Nature",
             "journal": {"name": "Nature", "pages": None, "volume": None},
             "publicationTypes": ["JournalArticle"],
+        }
+    ],
+    "count": 1,
+    "errors": [],
+}
+
+
+# Entry-scoped CrossRef record for the same DOI, naming a DIFFERENT issue.
+# An S2 dump can never refute `number` (parse_s2_result reports issue=None
+# unconditionally), so the strip needs this record.
+VERIFY_AWAD_JSON = {
+    "status": "success",
+    "source": "crossref",
+    "query": {"doi": "10.1038/s41586-018-0637-6"},
+    "results": [
+        {
+            "verified": True,
+            "doi": "10.1038/s41586-018-0637-6",
+            "title": "The Moral Machine experiment",
+            "container_title": "Nature",
+            "issue": "1",
+            "year": 2018,
+            "type": "journal-article",
         }
     ],
     "count": 1,
@@ -283,6 +308,9 @@ class TestMetadataCleaning:
         (review / "s2_results.json").write_text(
             json.dumps(S2_NATURE_JSON), encoding="utf-8"
         )
+        (review / "verify_awad.json").write_text(
+            json.dumps(VERIFY_AWAD_JSON), encoding="utf-8"
+        )
         out, code, _ = run_hook(RESEARCHER, project)
         assert code == 0
         ctx = out["hookSpecificOutput"]["additionalContext"]
@@ -362,6 +390,9 @@ class TestMetadataCleaning:
         (review / "s2_results.json").write_text(
             json.dumps(S2_NATURE_JSON), encoding="utf-8"
         )
+        (review / "verify_awad.json").write_text(
+            json.dumps(VERIFY_AWAD_JSON), encoding="utf-8"
+        )
         # Pass 1: validation error (missing `journal`) -> block. The cleaner
         # still parses this bib fine and seeds a STALE ledger (wolf1990freedom).
         bib.write_text(INVALID_BIB, encoding="utf-8")
@@ -386,7 +417,7 @@ class TestMetadataCleaning:
         ledger = review / "intermediate_files" / "json" / "cleaning_ledger-d1.json"
         assert ledger.exists()
         ldata = json.loads(ledger.read_text(encoding="utf-8"))
-        assert ldata["schema_version"] == 1
+        assert ldata["schema_version"] == 2
         assert ldata["bib_file"] == "d1.bib"
         assert "awad2018moral" in ldata["entries"]
         assert "wolf1990freedom" not in ldata["entries"], (
@@ -435,7 +466,7 @@ class TestMetadataCleaning:
     def test_core_json_does_not_silently_disable_cleaning(self, project):
         # A CORE result file (string-shaped `journal`) crashed the cleaner, and
         # the hook swallowed the traceback: no summary, bib untouched -- byte-
-        # identical to a clean run. The hallucinated `number` must now go.
+        # identical to a clean run. The refuted `number` must now go.
         review = project / "reviews" / "test-review"
         bib = review / "d1.bib"
         bib.write_text(HALLUCINATED_NUMBER_BIB, encoding="utf-8")
@@ -443,6 +474,8 @@ class TestMetadataCleaning:
         jdir.mkdir(parents=True)
         (jdir / "s2_nature.json").write_text(
             json.dumps(S2_NATURE_JSON), encoding="utf-8")
+        (jdir / "verify_awad.json").write_text(
+            json.dumps(VERIFY_AWAD_JSON), encoding="utf-8")
         (jdir / "core_moral.json").write_text(json.dumps({
             "status": "success", "source": "core", "query": "moral machine",
             "results": [{"core_id": "1", "doi": "10.1038/s41586-018-0637-6",

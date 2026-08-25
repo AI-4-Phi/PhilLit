@@ -21,15 +21,19 @@ DOI = "10.1111/j.1468-5930.2007.00346.x"
 
 def _write_polluted_verify(target: Path) -> None:
     """Reproduce `verify_paper.py ... > target 2>&1`: stderr log lines land in
-    the file AHEAD of the JSON object. The JSON has an EMPTY page, so `pages`
-    can only be verified via the root search JSON (the dir-union assertion)."""
+    the file AHEAD of the JSON object.
+
+    The JSON names NO container title, so `journal` can only survive via the
+    root search JSON's global bucket (the dir-union assertion; venue fields are
+    the class that still consults it). Its `issue` REFUTES the bib's number,
+    which is what makes the strip happen at all since item 14."""
     obj = {
         "status": "success", "source": "crossref",
         "query": {"doi": DOI},
         "results": [{
             "verified": True, "doi": DOI, "title": "Killer Robots",
-            "container_title": "Journal of Applied Philosophy",
-            "volume": "24", "issue": "", "page": "", "publisher": "", "year": 2007,
+            "container_title": "",
+            "volume": "24", "issue": "1", "page": "", "publisher": "", "year": 2007,
         }],
         "count": 1, "errors": [],
     }
@@ -50,8 +54,9 @@ def test_composition_salvage_union_gating(tmp_path):
     #     of the DOI (so the entry can only MATCH if salvage succeeds).
     _write_polluted_verify(jdir / "verify_sparrow.json")
 
-    # (2) Clean search JSON at the REVIEW ROOT — the ONLY source of `pages`
-    #     "62-77" (so `pages` survives only via the dir-UNION).
+    # (2) Clean search JSON at the REVIEW ROOT — the ONLY source of the venue
+    #     "Journal of Applied Philosophy" (so `journal` survives only via the
+    #     dir-UNION).
     (review / "s2_results.json").write_text(json.dumps({
         "source": "s2",
         "results": [{"title": "Killer Robots",
@@ -59,8 +64,8 @@ def test_composition_salvage_union_gating(tmp_path):
                      "year": 2007}],
     }), encoding="utf-8")
 
-    # (3) The .bib: a MATCHED entry with one hallucinated field (number=99),
-    #     and an UNMATCHED entry that must pass through untouched.
+    # (3) The .bib: a MATCHED entry with one refuted field (number=99 against
+    #     the record's issue 1), and an UNMATCHED entry that passes untouched.
     bib = review / "literature-domain-1.bib"
     bib.write_text(
         '@article{sparrow2007killer,\n'
@@ -87,10 +92,10 @@ def test_composition_salvage_union_gating(tmp_path):
     out = parse_file(str(bib), bib_format="bibtex")
     matched = out.entries["sparrow2007killer"]
     fields = {k.lower() for k in matched.fields.keys()}
-    assert "number" not in fields                 # hallucinated -> stripped
+    assert "number" not in fields                 # refuted -> stripped
     assert "doi" in fields                         # matched via SALVAGED verify JSON
-    assert "pages" in fields                       # kept via dir-UNION (root s2 JSON)
-    assert "journal" in fields and "volume" in fields
+    assert "journal" in fields                     # kept via dir-UNION (root s2 JSON)
+    assert "pages" in fields and "volume" in fields
     assert matched.type == "article"               # journal survived -> no demote
 
     unmatched = out.entries["unmatchedfoo"]

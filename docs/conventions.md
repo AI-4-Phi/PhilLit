@@ -291,13 +291,11 @@ Hooks validate BibTeX automatically at two points: `validate_bib_write.py` check
 
 This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py`) was written but never wired into any hook, and was deleted 2026-08-02 rather than left as a re-armable trap: because it duplicated the cleaner's whole parser/index layer without sharing it, hardening effort landed on the dormant copy (`9aa473d`) while the live one still crashed on a single malformed file — which is how the `json.loads` failure fixed in `a30cde0` stayed hidden. Anything below that reads as "blocks the subagent" describes the cleaner's *removal* behaviour instead.
 
-**Cleanable fields** (removed when unverifiable):
-- `journal` / `booktitle`
-- `volume`
-- `number` (the BibTeX field; API `issue` values verify it)
-- `pages`
-- `publisher`
-- `doi`
+**Cleanable fields** — every value is compared three ways against the entry's own matched API record (MATCH / CONTRADICT / NO-EVIDENCE), and each field class has its own removal rule:
+
+- **Venue** — `journal` / `booktitle`: removed unless the record matches it or the value appears in the global index. Absence from the record still removes — a venue is the claim-bearing field, and a fabricated proceedings volume is an observed failure mode.
+- **Detail** — `volume`, `number` (the BibTeX field; API `issue` values verify it), `pages`, `publisher`: removed ONLY on a CONTRADICTION from an *identity-verified* record (entry-scoped, or matched on this entry's own DOI). Absence removes nothing: search-API records rarely carry these fields, and 80% of the pre-fix removals were absence-driven on values a CrossRef truth anchor found majority-TRUE (measured 2026-08-25). The global index is deliberately not consulted here — an unrelated paper's matching issue number is coincidence, not corroboration.
+- **`doi`**: removed only on a CONTRADICTION from an entry-scoped record. Named residual: a fabricated DOI on an entry that was never verified survives cleaning. Accepted residual of the detail rule: fabricated detail values whose record carries nothing are kept.
 
 `year` is **corrected**, not removed — and only on entry-scoped evidence: a CrossRef result identified by envelope content (`api_source` is `crossref` AND the file carries exactly one result — the filename is deliberately NOT the test) that matches this entry's own DOI, carries a version-of-record `year_basis` (recorded by `verify_paper.py`; registration/created timestamps never overwrite), and is not contradicted by another entry-scoped record. On any same-DOI year conflict the cleaner abstains from the entry entirely (attesting existence in the cleaning ledger — see Evidence Tiers above). For the reprint-capable entry types (`@book`, `@incollection`, `@inbook`) a further **direction bound** applies: the year may only move earlier. A reprint edition has its own DOI whose print date is the reprint's year, not the work's original publication year — the year Chicago cites — so a later year is refused, as is a bib year the direction test cannot parse (`n.d.`, `[2021]`); every refusal is counted in the cleaning report rather than passing silently. `author` and `title` are identity fields and are never touched.
 
@@ -315,11 +313,13 @@ This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py
 1. Scans the .bib's own directory AND `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers, CORE) — both feed ONE index, so directory shadowing cannot starve verification
 2. Builds a presence-based index of all metadata values from API responses, each file ingested transactionally so one malformed file costs only its own records
 3. Finds each entry's OWN API record (DOI, else normalized title+year); an entry with no affirmative match is left completely untouched
-4. Removes a cleanable field only when it matches neither that record nor the global index, then downgrades the entry type if a required field is gone, and tags the entry `METADATA_CLEANED`
+4. Applies each field class's removal rule (above), then downgrades the entry type if a required field is gone, and tags the entry `METADATA_CLEANED`
+5. Records, per entry in the cleaning ledger (`schema_version` 2), the detail fields kept without corroboration (`unverified_fields`) and the venue fields removed for want of evidence (`venue_stripped_no_evidence`) — owner-facing measurement of the accepted residual, never a control: the ledger is agent-writable, so nothing downstream may gate on either key
 
 **Value normalization**: values are normalized before comparison:
-- Pages: `"163 - 188"` matches `"163--188"` (handles space/dash variations)
+- Pages: `"163 - 188"` matches `"163--188"` (handles space/dash variations); a range and its own first page corroborate each other (`"303--352"` vs CrossRef's truncated `"303"`), so only a differing FIRST page contradicts. Values with no leading digit run (roman numerals, `e12345`) compare whole.
 - Journals: LaTeX/HTML-entity/accent decoding, then case-insensitive, strips "The" prefix
+- Publishers: case-insensitive, and containment either way matches (`Springer` / `Springer International Publishing` name the same imprint at different depths)
 - DOIs: strips URL prefixes
 - Years: exact string grammar (`2007`, `2007.0` and `0002007` are one value; `2007.9` and `n.d.` are not years)
 

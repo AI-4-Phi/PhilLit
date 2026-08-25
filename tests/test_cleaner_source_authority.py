@@ -396,14 +396,14 @@ def test_assert_no_cleaned_marker_actually_catches_a_written_marker(tmp_path):
     trip the helper, so the two assertions above cannot go vacuous again."""
     json_dir = make_json_dir(tmp_path, {"s2_roff.json": S2_DUMP})
     bib_file = tmp_path / "test.bib"
-    # `number` is absent from every pooled record -> removed -> marker written.
+    # The pooled record names another journal -> `journal` removed -> marker
+    # written. (An absent field no longer strips; a refuted venue still does.)
     bib_file.write_text(
         "@article{sparrow2007,\n"
         "  author = {Sparrow, Robert},\n"
         "  title = {Killer Robots},\n"
-        "  journal = {Journal of Applied Philosophy},\n"
+        "  journal = {Journal of Fabrications},\n"
         "  year = {2007},\n"
-        "  number = {1},\n"
         f"  doi = {{{SPARROW_DOI}}}\n"
         "}", encoding="utf-8")
 

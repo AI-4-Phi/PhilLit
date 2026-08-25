@@ -49,7 +49,7 @@ def test_matched_entry_keeps_verified_strips_hallucinated(tmp_path):
     jdir = tmp_path / "json"; jdir.mkdir()
     (jdir / "verify_k.json").write_text(_crossref_json([
         {"doi": "10.1/aaa", "title": "Some Paper", "container_title": "Real Journal",
-         "volume": "12", "issue": "", "page": "5-9", "year": 2020}
+         "volume": "12", "issue": "1", "page": "5-9", "year": 2020}
     ]), encoding="utf-8")
     bib = tmp_path / "d.bib"
     bib.write_text(
@@ -63,7 +63,7 @@ def test_matched_entry_keeps_verified_strips_hallucinated(tmp_path):
     # ADV-A3: assert on PARSED fields — the cleaner writes "METADATA_CLEANED:
     # number" into keywords, so a raw substring check would false-fail.
     fields = {c.lower() for c in parse_file(str(bib), bib_format="bibtex").entries["k"].fields}
-    assert "number" not in fields                                        # hallucinated, stripped
+    assert "number" not in fields                                        # refuted, stripped
     assert "@article" in out                                            # journal survived, no demote
 
 
@@ -90,7 +90,7 @@ def test_article_no_demote_when_matched_doi_retained(tmp_path):
 def test_circuit_breaker_writes_nothing(tmp_path):
     jdir = tmp_path / "json"; jdir.mkdir()
     results = [{"doi": f"10.1/{i}", "title": f"P{i}", "container_title": "J",
-                "year": 2020} for i in range(6)]
+                "issue": "1", "year": 2020} for i in range(6)]
     (jdir / "c.json").write_text(_crossref_json(results), encoding="utf-8")
     entries = "".join(
         f'@article{{k{i}, author="A, B", title="P{i}", journal="J", '
@@ -108,10 +108,40 @@ def test_circuit_breaker_writes_nothing(tmp_path):
     assert res["applied_entries_cleaned"] == 0
 
 
+def test_breaker_constants_unchanged_by_item_14(tmp_path):
+    """The thresholds are a safety floor, not a knob: item 14 shrank what the
+    breaker has to catch (projected 81 -> ~2 trips over the 313-bib corpus) by
+    changing the STRIP RULE, never these."""
+    assert mc.BREAKER_MIN_ENTRIES == 5
+    assert mc.BREAKER_FRACTION == 0.30
+
+
+def test_fruh_shape_no_longer_trips_the_breaker(tmp_path):
+    """The pre-item-14 mass-strip that tripped the breaker on a quarter of the
+    corpus: 6 DOI-matched entries whose records carry no issue and no pages,
+    each contributing two absence strips. Nothing is stripped now, so the
+    breaker has nothing to contain and cleaning is not withheld."""
+    jdir = tmp_path / "json"; jdir.mkdir()
+    results = [{"doi": f"10.1/{i}", "title": f"P{i}", "container_title": "J",
+                "year": 2020} for i in range(6)]
+    (jdir / "c.json").write_text(_crossref_json(results), encoding="utf-8")
+    bib = tmp_path / "d.bib"
+    bib.write_text("".join(
+        f'@article{{k{i}, author="A, B", title="P{i}", journal="J", '
+        f'year="2020", number="99", pages="1--9", doi="10.1/{i}"}}\n'
+        for i in range(6)), encoding="utf-8")
+    before = bib.read_text(encoding="utf-8")
+    res = mc.clean_bibtex(bib, [jdir])
+    assert res["matched_entries"] == 6            # not a vacuous no-match
+    assert res["breaker_tripped"] is False
+    assert res["planned_entries_cleaned"] == 0
+    assert bib.read_text(encoding="utf-8") == before
+
+
 def test_breaker_not_tripped_below_min_entries(tmp_path):
     jdir = tmp_path / "json"; jdir.mkdir()
     results = [{"doi": f"10.1/{i}", "title": f"P{i}", "container_title": "J",
-                "year": 2020} for i in range(3)]
+                "issue": "1", "year": 2020} for i in range(3)]
     (jdir / "c.json").write_text(_crossref_json(results), encoding="utf-8")
     entries = "".join(
         f'@article{{k{i}, author="A, B", title="P{i}", journal="J", '
@@ -120,7 +150,7 @@ def test_breaker_not_tripped_below_min_entries(tmp_path):
     bib.write_text(entries, encoding="utf-8")
     res = mc.clean_bibtex(bib, [jdir])
     assert res["breaker_tripped"] is False
-    assert res["total_fields_removed"] == 3   # each lost its bogus number
+    assert res["total_fields_removed"] == 3   # each lost its refuted number
     # ADV-A3: parse the fields — "number" survives as a keywords marker token.
     out = parse_file(str(bib), bib_format="bibtex")
     for i in range(3):
@@ -205,11 +235,11 @@ def test_greek_title_matches_same_greek_title(tmp_path):
 ])
 def test_breaker_boundaries(tmp_path, n_strip, total, expect_trip):
     jdir = tmp_path / "json"; jdir.mkdir()
-    # every entry matches its API record by DOI; exactly n_strip carry a
-    # hallucinated `number` (absent from the API record) so exactly n_strip
-    # entries would be stripped.
+    # every entry matches its API record by DOI, which makes that record
+    # identity-verified; exactly n_strip carry a `number` the record REFUTES
+    # (issue 1), so exactly n_strip entries would be stripped.
     results = [{"doi": f"10.1/{i}", "title": f"P{i}", "container_title": "J",
-                "volume": "1", "year": 2020} for i in range(total)]
+                "volume": "1", "issue": "1", "year": 2020} for i in range(total)]
     (jdir / "c.json").write_text(_crossref_json(results), encoding="utf-8")
     entries = []
     for i in range(total):

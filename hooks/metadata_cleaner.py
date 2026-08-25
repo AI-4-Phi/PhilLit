@@ -58,6 +58,14 @@ CLEANABLE_FIELDS = {
     'journal', 'booktitle', 'volume', 'number', 'pages', 'publisher', 'doi'
 }
 
+# The three strip-policy classes partition CLEANABLE_FIELDS (pinned by test).
+# DETAIL fields locate a work within an edition; their absence from a
+# search-API record is the norm, so absence must never strip them - only a
+# contradiction from an identity-verified record may (item 14). journal and
+# booktitle are claim-bearing (a fabricated venue is the observed exploit) and
+# keep the older policy; doi has its own, stricter licence.
+DETAIL_FIELDS = frozenset({'volume', 'number', 'pages', 'publisher'})
+
 # Circuit breaker (item-13 A4.3): if a .bib would lose fields from more than
 # BREAKER_FRACTION of its entries AND from at least BREAKER_MIN_ENTRIES, the
 # cleaner writes nothing (a systemic index failure must not mass-strip verified
@@ -949,32 +957,104 @@ def find_api_entry_for_bib_entry(entry, index: MetadataIndex):
     return None
 
 
-def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
-    """Does this cleanable field's value match the entry's OWN matched API
-    record (normalized)? Empty API values never match (can't confirm)."""
+def _compare_scalar(value, api_value) -> str:
+    """Three-way state for a field compared as a whitespace-stripped scalar
+    (volume, number). Match requires a non-empty bib value: an empty field
+    confirms nothing, so it can never be corroborated by a record."""
+    nv = str(value).strip()
+    api = str(api_value or '').strip()
+    if nv and nv == api:
+        return 'match'
+    return 'contradict' if api else 'no-evidence'
+
+
+# Leading digit run of a normalized page value. A value that does not START
+# with digits (roman numerals `xii--xv`, article ids `e12345`) has no
+# comparable first page. Anchored in the pattern as well as by .match(), so a
+# later switch to .search() cannot silently find `12345` inside `e12345`.
+_FIRST_PAGE_RE = re.compile(r'\A\d+')
+
+
+def _first_page(normalized_pages: str) -> str:
+    """First page of a normalized page value, '' when it has none."""
+    m = _FIRST_PAGE_RE.match(normalized_pages)
+    return m.group(0) if m else ''
+
+
+def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
+    """Three-way comparison of a cleanable field against the entry's OWN
+    matched API record: 'match' | 'contradict' | 'no-evidence'.
+
+    'no-evidence' means the record does not carry the field at all. It is NOT a
+    weak 'contradict': search-API records rarely carry pages/issue/publisher,
+    and 80% of the pre-item-14 strips were absence-driven on values a CrossRef
+    truth anchor found majority-TRUE (item 14; see
+    docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md). Which
+    states may strip is plan_entry_cleaning's decision, per field class - this
+    function only reports the evidence.
+
+    A field with no comparison rule reports 'match', mirroring the
+    default-keep every earlier version of this comparison carried: an unknown
+    field must never be condemned by a rule that was never written for it."""
     if field_lower in ('journal', 'booktitle'):
         api_container = api_entry.get('container_title') or ''
         vkey, api_vkey = venue_key(value), venue_key(api_container)
         if vkey and vkey == api_vkey:
-            return True
+            return 'match'
         nv = normalize_journal(value)
-        return bool(nv) and nv == normalize_journal(api_entry.get('container_title') or '')
+        if nv and nv == normalize_journal(api_container):
+            return 'match'
+        return 'contradict' if str(api_container).strip() else 'no-evidence'
     if field_lower == 'volume':
-        nv = str(value).strip()
-        return bool(nv) and nv == str(api_entry.get('volume') or '').strip()
+        return _compare_scalar(value, api_entry.get('volume'))
     if field_lower == 'number':
-        nv = str(value).strip()
-        return bool(nv) and nv == str(api_entry.get('issue') or '').strip()
+        return _compare_scalar(value, api_entry.get('issue'))
     if field_lower == 'pages':
         nv = normalize_pages(value)
-        return bool(nv) and nv == normalize_pages(api_entry.get('pages') or '')
+        api = normalize_pages(api_entry.get('pages') or '')
+        if nv and nv == api:
+            return 'match'
+        if not api:
+            return 'no-evidence'
+        # CrossRef truncates a page RANGE to its first page, so a differing
+        # TAIL is not a contradiction (bogen1988saving: true `303--352` against
+        # a record's `303`). Only a differing FIRST page contradicts, and only
+        # when both sides have one - otherwise the full-string test above has
+        # already spoken.
+        first_nv, first_api = _first_page(nv), _first_page(api)
+        if first_nv and first_api:
+            return 'match' if first_nv == first_api else 'contradict'
+        return 'contradict'
     if field_lower == 'publisher':
         nv = value.lower().strip()
-        return bool(nv) and nv == str(api_entry.get('publisher') or '').lower().strip()
+        api = str(api_entry.get('publisher') or '').lower().strip()
+        # Containment either way, because publisher names are reported at
+        # different depths of the same imprint ('Springer' vs 'Springer
+        # International Publishing'). Both sides must be non-empty: '' is
+        # contained in everything, which would make absence read as a match.
+        if nv and api and (nv in api or api in nv):
+            return 'match'
+        return 'contradict' if api else 'no-evidence'
     if field_lower == 'doi':
         nv = normalize_doi(value)
-        return bool(nv) and nv == normalize_doi(api_entry.get('doi') or '')
-    return True
+        api = normalize_doi(api_entry.get('doi') or '')
+        if nv and nv == api:
+            return 'match'
+        return 'contradict' if api else 'no-evidence'
+    return 'match'
+
+
+def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
+    """Does this cleanable field's value match the entry's OWN matched API
+    record (normalized)? Empty API values never match (can't confirm).
+
+    Exactly the 'match' state of _field_compare, so the two can never drift.
+    Item 14 widened two of those comparisons, which this function's other
+    callers inherit deliberately: a CrossRef-truncated page range no longer
+    blocks _plan_type_downgrade's @article DOI guard, and 'Springer' against
+    'Springer International Publishing' now verifies a book identity in
+    _verified_identifier."""
+    return _field_compare(field_lower, value, api_entry) == 'match'
 
 
 def _plan_type_downgrade(entry, surviving_fields: set, api_entry: dict) -> Optional[tuple]:
@@ -1010,16 +1090,26 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
     """Compute (WITHOUT mutating) the cleaning plan for a MATCHED entry, so the
     circuit breaker can inspect the whole .bib before anything is written.
 
-    A cleanable field is KEPT when it matches the entry's own API record OR
-    appears in the global buckets (a value legitimately sourced from another
-    file); otherwise it is a matched-entry mismatch - the hallucination class
-    the cleaner exists for - and removed."""
+    Each cleanable field is compared three ways against the entry's own API
+    record (_field_compare) and judged by its class (item 14):
+
+      * DETAIL_FIELDS - removed only on a CONTRADICTION from an
+        identity-verified record. Absence removes nothing.
+      * journal / booktitle - policy unchanged: removed unless the record
+        matches or the value appears in the global buckets (legitimately
+        sourced from another file), so absence still removes.
+      * doi - removed only on a contradiction from an ENTRY-SCOPED record.
+
+    `unverified_fields` and `venue_stripped_no_evidence` are telemetry, not
+    inputs to any decision here or downstream (see write_cleaning_ledger)."""
     plan = {
         "removed_field_names": [],
         "removed_fields": [],
         "year_corrected": None,
         "year_correction_declined": None,
         "type_downgraded": None,
+        "unverified_fields": [],
+        "venue_stripped_no_evidence": [],
     }
 
     # Year-corruption fix (Option C): overwriting a populated year takes TWO
@@ -1083,6 +1173,16 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
                     bib_year, api_year, api_entry.get("source_file") or "?",
                     reason)
 
+    # Is this record THIS work's own metadata beyond doubt? Only then may its
+    # detail fields convict. A title+year match to a broad dump is not: it can
+    # land on a different artifact about the same work - jamieson2014reason
+    # matched a Choice review of the book, whose pages and DOI are legitimately
+    # its own and contradicted the bib's true ones.
+    doi_value = entry.fields.get("doi")
+    identity_verified = bool(api_entry.get("entry_scoped")) or (
+        bool(doi_value)
+        and _field_compare("doi", doi_value, api_entry) == "match")
+
     surviving: set = set()
     for field_name in list(entry.fields.keys()):
         field_lower = field_name.lower()
@@ -1091,10 +1191,40 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
             surviving.add(field_lower)
             continue
         value = entry.fields[field_name]
-        keep = _field_matches_api(field_lower, value, api_entry) or \
-            is_field_verifiable(field_lower, value, index)
+        state = _field_compare(field_lower, value, api_entry)
+        if field_lower in ('journal', 'booktitle'):
+            keep = state == 'match' or is_field_verifiable(field_lower, value, index)
+            if not keep and state == 'no-evidence':
+                plan["venue_stripped_no_evidence"].append(field_name)
+        elif field_lower == 'doi':
+            # Only a targeted lookup can condemn a DOI: a broad dump's
+            # differing DOI is most likely its own artifact's (jamieson).
+            # Written as entry_scoped per spec; note it is EQUIVALENT to
+            # identity_verified here, since a contradicting DOI kills that
+            # variable's own doi-match disjunct. No test can separate the two -
+            # do not go looking for one.
+            # Residual, named and accepted: a fabricated DOI on an entry that
+            # was never verify_*-checked survives cleaning.
+            keep = not (state == 'contradict' and api_entry.get('entry_scoped'))
+        elif field_lower in DETAIL_FIELDS:
+            # The global bucket (is_field_verifiable) is deliberately NOT
+            # consulted for these: an unrelated paper's matching issue number
+            # is coincidence, not corroboration, and it used to keep values the
+            # entry's own record contradicted.
+            keep = not (state == 'contradict' and identity_verified)
+        else:
+            # Unreachable while the three classes partition CLEANABLE_FIELDS
+            # (pinned by test). Default-keep, matching _field_compare's unknown
+            # field: a newly cleanable field must not start life being deleted
+            # under no policy at all.
+            keep = True
         if keep:
             surviving.add(field_lower)
+            # Telemetry for detail fields and doi only. A venue kept by the
+            # global bucket is bucket-verified rather than unverified, and its
+            # absence strips have their own key above.
+            if state != 'match' and field_lower not in ('journal', 'booktitle'):
+                plan["unverified_fields"].append(field_name)
         else:
             plan["removed_field_names"].append(field_name)
             plan["removed_fields"].append(f"{field_name}={value}")
@@ -1163,16 +1293,24 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
     """Atomically write the per-bib cleaning ledger (tmp + os.replace) - the
     positive-match attestation source the evidence barrier later consumes
     (shared-contract 'Cleaning ledger' schema). Overwrites any prior ledger
-    for this bib stem so a re-clean reflects only the final pass."""
+    for this bib stem so a re-clean reflects only the final pass.
+
+    An entry record's `unverified_fields` and `venue_stripped_no_evidence` are
+    owner-facing TELEMETRY, not a control: this file is agent-writable, so
+    nothing downstream may gate on them. They exist to measure the accepted
+    residual of item 14 (kept values no record corroborates, and venues
+    stripped for want of evidence), and are present only when non-empty."""
     bib_path = Path(bib_path)
     ledger_dir = bib_path.parent / "intermediate_files" / "json"
     ledger_dir.mkdir(parents=True, exist_ok=True)
     payload = {
-        # Stayed 1 through the Option C `cleaning_abstained` addition
-        # (additive field, producer+consumer shipped together), recorded as
-        # deliberate 2026-08-18. Bump at the NEXT schema change -- the
-        # barrier hard-rejects any other value, so a bump must land in both.
-        "schema_version": 1,
+        # 2 since item 14, the cleaner strip-rule fix, which added the optional
+        # telemetry keys documented above. (1 held through the Option C
+        # `cleaning_abstained` addition, recorded 2026-08-18 as deliberate
+        # because producer and consumer shipped together.) The barrier accepts
+        # {1, 2} and hard-rejects anything else, so a further bump must land in
+        # both -- and a v1 ledger still reads, as one with no telemetry.
+        "schema_version": 2,
         "bib_file": bib_path.name,
         "breaker_tripped": bool(breaker_tripped),
         "entries": ledger_entries,
@@ -1372,14 +1510,26 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
             ledger_entries[entry_key] = _ledger_entry_for_unmatched(entry)
             continue
         result["matched_entries"] += 1
+        # Planned BEFORE the ledger record is built: the record carries the
+        # plan's telemetry keys.
+        plan = plan_entry_cleaning(entry, index, api_entry)
         verified_kind, verified_value = _verified_identifier(entry, api_entry)
-        ledger_entries[entry_key] = {
+        record = {
             "api_matched": True,
             "verified_identifier": verified_kind,
             "verified_identifier_value": verified_value,
             "entry_type": entry.type.lower(),
         }
-        plans.append((entry_key, entry, plan_entry_cleaning(entry, index, api_entry)))
+        # Telemetry only, never a control (see write_cleaning_ledger). Omitted
+        # when empty so a fully-corroborated bib's ledger reads as it did
+        # before item 14.
+        if plan["unverified_fields"]:
+            record["unverified_fields"] = list(plan["unverified_fields"])
+        if plan["venue_stripped_no_evidence"]:
+            record["venue_stripped_no_evidence"] = list(
+                plan["venue_stripped_no_evidence"])
+        ledger_entries[entry_key] = record
+        plans.append((entry_key, entry, plan))
 
     # B2: compute the PLANNED metrics (by field name) BEFORE the breaker check,
     # so an aborted plan is fully recorded even when nothing is written

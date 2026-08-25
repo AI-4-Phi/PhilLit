@@ -95,6 +95,34 @@ def crossref_with_issue_json():
 
 
 @pytest.fixture
+def crossref_awad_other_issue():
+    """Entry-scoped CrossRef record for s2_nature_json's DOI that names a
+    DIFFERENT issue.
+
+    Needed by every test that wants a `number` strip: since item 14 only a
+    CONTRADICTION strips a detail field, and an S2 dump can never supply one
+    (parse_s2_result reports issue=None unconditionally). Constructed to
+    disagree - the disagreement, not the value, is the point."""
+    return {
+        "status": "success",
+        "source": "crossref",
+        "results": [
+            {
+                "verified": True,
+                "doi": "10.1038/s41586-018-0637-6",
+                "title": "The Moral Machine experiment",
+                "container_title": "Nature",
+                "issue": "1",
+                "year": 2018,
+                "type": "journal-article",
+            }
+        ],
+        "count": 1,
+        "errors": [],
+    }
+
+
+@pytest.fixture
 def bibtex_with_hallucinated_number():
     """BibTeX entry with hallucinated issue number."""
     return """@article{awad2018moral,
@@ -152,7 +180,7 @@ def bibtex_multiple_entries():
 @article{hallucinatedentry,
   author = {Another Author},
   title = {Paper with fake metadata},
-  journal = {Science},
+  journal = {Journal of Fabrications},
   year = {2016},
   volume = {352},
   number = {6293},
@@ -278,18 +306,24 @@ class TestIsFieldVerifiable:
 class TestCleanBibtex:
     """Tests for the main cleaning function."""
 
-    def test_removes_hallucinated_number(self, tmp_path, s2_nature_json, bibtex_with_hallucinated_number):
-        """Should remove hallucinated issue number while preserving valid fields."""
+    def test_removes_contradicted_number(self, tmp_path, s2_nature_json,
+                                         crossref_awad_other_issue,
+                                         bibtex_with_hallucinated_number):
+        """Should remove an issue number the entry's own CrossRef record
+        contradicts, while preserving valid fields."""
         json_dir = tmp_path / "json"
         json_dir.mkdir()
         (json_dir / "s2_nature.json").write_text(
             json.dumps(s2_nature_json), encoding='utf-8'
         )
+        (json_dir / "verify_awad.json").write_text(
+            json.dumps(crossref_awad_other_issue), encoding='utf-8'
+        )
 
         bib_file = tmp_path / "test.bib"
         bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
 
-        result = clean_bibtex(bib_file, json_dir, 
+        result = clean_bibtex(bib_file, json_dir,
 )
 
         assert result["success"] is True
@@ -305,12 +339,36 @@ class TestCleanBibtex:
         assert 'number' not in entry.fields
         assert 'journal' in entry.fields  # Should still have journal
 
-    def test_removes_all_hallucinated_fields(self, tmp_path, bibtex_fully_hallucinated):
-        """A matched entry (by DOI) whose bibliographic fields are hallucinated
-        loses the unconfirmable ones but keeps its verified DOI (entry-scoped:
-        the DOI proves identity, so @article is not demoted)."""
+    def test_absent_number_is_kept_end_to_end(self, tmp_path, s2_nature_json,
+                                              bibtex_with_hallucinated_number):
+        """Item 14, at the level a user sees: with only an S2 dump in the pool
+        the record says NOTHING about the issue, so `number` survives in the
+        written .bib and no marker is written. Pre-item-14 it was stripped."""
+        json_dir = tmp_path / "json"
+        json_dir.mkdir()
+        (json_dir / "s2_nature.json").write_text(
+            json.dumps(s2_nature_json), encoding='utf-8'
+        )
+
+        bib_file = tmp_path / "test.bib"
+        bib_file.write_text(bibtex_with_hallucinated_number, encoding='utf-8')
+        before = bib_file.read_text(encoding='utf-8')
+
+        result = clean_bibtex(bib_file, json_dir)
+
+        assert result["matched_entries"] == 1  # not a vacuous no-match
+        assert result["total_fields_removed"] == 0
+        assert bib_file.read_text(encoding='utf-8') == before  # not rewritten
+
+    def test_removes_only_the_venue_when_the_record_carries_nothing(
+            self, tmp_path, bibtex_fully_hallucinated):
+        """A matched entry (by DOI) whose record supplies no bibliographic
+        metadata at all loses only its VENUE - journal is claim-bearing, so
+        absence still strips it. volume/number/pages are absence-only and
+        survive as unverified telemetry (item 14; pre-item-14 all four went).
+        The verified DOI is kept, so @article is not demoted."""
         # Matches bonnefon by DOI but carries NONE of the claimed
-        # journal/volume/issue/pages, so those bib values are unconfirmable.
+        # journal/volume/issue/pages.
         api_json = {
             "source": "crossref",
             "results": [
@@ -332,14 +390,13 @@ class TestCleanBibtex:
 
         assert result["success"] is True
         assert result["entries_cleaned"] == 1
-        # journal, volume, number, pages unconfirmable -> removed (4).
-        # doi MATCHES the API record -> kept (the verified identity).
-        assert result["total_fields_removed"] == 4
+        assert result["total_fields_removed"] == 1
 
         parsed = pybtex_parse_file(str(bib_file), bib_format='bibtex')
         entry = parsed.entries["bonnefon2016social"]
         fields = {c.lower() for c in entry.fields}
-        assert not ({"journal", "volume", "number", "pages"} & fields)
+        assert "journal" not in fields
+        assert {"volume", "number", "pages"} <= fields  # absence-only -> kept
         assert "doi" in fields            # verified DOI kept
         assert "note" in fields           # exempt field preserved
         assert entry.type == "article"    # matched DOI -> @article guard, no demote
@@ -363,10 +420,13 @@ class TestCleanBibtex:
         assert result["total_fields_removed"] == 0
 
     def test_cleans_only_hallucinated_entry(self, tmp_path, bibtex_multiple_entries):
-        """Both entries match by title+year; only the one carrying a field
-        absent from its API record is cleaned."""
-        # Both match by title+year; the first's journal checks out, the second's
-        # volume+number are absent from its API record (hallucinated).
+        """Both entries match by title+year; only the one carrying a field its
+        API record refutes is cleaned.
+
+        The refuted field is the VENUE: a title+year match is not
+        identity-verified, so since item 14 no detail field of either entry
+        could be stripped on this evidence (the second entry's volume+number
+        are absent from its record and stay)."""
         api_json = {
             "source": "semantic_scholar",
             "results": [
@@ -529,12 +589,18 @@ class TestCLI:
         assert result.returncode == 2
         assert "Usage:" in result.stdout
 
-    def test_successful_cleaning_exit_0(self, tmp_path, s2_nature_json, bibtex_with_hallucinated_number):
+    def test_successful_cleaning_exit_0(self, tmp_path, s2_nature_json,
+                                       crossref_awad_other_issue,
+                                       bibtex_with_hallucinated_number):
         """Should exit with code 0 after successful cleaning."""
         json_dir = tmp_path / "json"
         json_dir.mkdir()
         (json_dir / "s2_nature.json").write_text(
             json.dumps(s2_nature_json), encoding='utf-8'
+        )
+        # Contradicting record: the strip this test detects needs one.
+        (json_dir / "verify_awad.json").write_text(
+            json.dumps(crossref_awad_other_issue), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
@@ -590,8 +656,13 @@ class TestIntegration:
     def test_real_world_hallucination_pattern(self, tmp_path):
         """Gardiner pattern: the LLM cited the anthology (booktitle/publisher)
         for a paper the API shows as a journal article. Matched by title+year,
-        the hallucinated container fields are stripped and the @incollection
-        demotes to @misc (container types get no @article no-demote guard)."""
+        the fabricated BOOKTITLE is stripped and the @incollection demotes to
+        @misc (container types get no @article no-demote guard).
+
+        `publisher` survives: a title+year match is not identity-verified and
+        the record names no publisher at all, so since item 14 that value is
+        unverified rather than refuted. The demotion still fires, which is what
+        keeps the fabricated container out of the rendered citation."""
         # S2 API output — the real record is a journal article.
         s2_json = {
             "status": "success",
@@ -631,10 +702,15 @@ class TestIntegration:
         assert result["matched_entries"] == 1
         assert result["entries_cleaned"] == 1
 
-        # Should remove the hallucinated container fields booktitle + publisher.
+        # Should remove the fabricated booktitle; publisher is unverified, kept.
         cleaned_entries = result["cleaned_entries"]["gardiner2011early"]
         assert any("booktitle" in field for field in cleaned_entries)
-        assert any("publisher" in field for field in cleaned_entries)
+        assert not any("publisher" in field for field in cleaned_entries)
+        ledger = json.loads(
+            (tmp_path / "intermediate_files" / "json"
+             / "cleaning_ledger-test.json").read_text(encoding="utf-8"))
+        assert ledger["entries"]["gardiner2011early"]["unverified_fields"] == [
+            "publisher"]
 
         parsed = pybtex_parse_file(str(bib_file), bib_format='bibtex')
         entry = parsed.entries["gardiner2011early"]
@@ -645,8 +721,11 @@ class TestIntegration:
         assert entry.persons.get("author")          # author preserved
 
     def test_mixed_valid_and_hallucinated(self, tmp_path):
-        """Test file with both valid and hallucinated entries."""
-        # API data for both papers
+        """Test file with both valid and hallucinated entries.
+
+        The hallucinated entry carries a DOI its record confirms, which makes
+        that record identity-verified - so its refuted `volume` is stripped.
+        Its `number` and `pages` are absent from the record and survive."""
         api_json = {
             "status": "success",
             "source": "semantic_scholar",
@@ -661,7 +740,8 @@ class TestIntegration:
                     "paperId": "2",
                     "title": "Another Paper",
                     "year": 2021,
-                    "journal": {"name": "Philosophy Review"},
+                    "doi": "10.2/another",
+                    "journal": {"name": "Philosophy Review", "volume": "7"},
                 }
             ]
         }
@@ -682,7 +762,8 @@ class TestIntegration:
   year = {2021},
   volume = {99},
   number = {5},
-  pages = {100--200}
+  pages = {100--200},
+  doi = {10.2/another}
 }"""
 
         json_dir = tmp_path / "json"
@@ -709,12 +790,18 @@ class TestIntegration:
 class TestCleanedEntryTagging:
     """Tests for METADATA_CLEANED keyword tagging."""
 
-    def test_cleaned_entry_has_keywords_tag(self, tmp_path, s2_nature_json, bibtex_with_hallucinated_number):
+    def test_cleaned_entry_has_keywords_tag(self, tmp_path, s2_nature_json,
+                                            crossref_awad_other_issue,
+                                            bibtex_with_hallucinated_number):
         """Should add METADATA_CLEANED tag to keywords field after cleaning."""
         json_dir = tmp_path / "json"
         json_dir.mkdir()
         (json_dir / "s2_nature.json").write_text(
             json.dumps(s2_nature_json), encoding='utf-8'
+        )
+        # Contradicting record: the strip this test detects needs one.
+        (json_dir / "verify_awad.json").write_text(
+            json.dumps(crossref_awad_other_issue), encoding='utf-8'
         )
 
         bib_file = tmp_path / "test.bib"
@@ -737,13 +824,14 @@ class TestCleanedEntryTagging:
         bibtex = """@article{test2018,
   author = {Test Author},
   title = {Test Title},
-  journal = {Nature},
+  journal = {Journal of Fabrications},
   year = {2018},
-  number = {999},
   keywords = {ethics, AI}
 }"""
-        # Matches test2018 by title+year; journal Nature checks out, number 999
-        # is absent from the API record -> stripped -> a marker is written.
+        # Matches test2018 by title+year; the API record names another journal
+        # and nothing else in the pool names this one -> journal stripped -> a
+        # marker is written. (A title+year match is not identity-verified, so
+        # since item 14 only the venue can be stripped on this evidence.)
         api_json = {
             "source": "semantic_scholar",
             "results": [
@@ -1123,7 +1211,8 @@ class TestCleaningLedger:
         assert ledger_path.exists()
         assert result["ledger_path"] == str(ledger_path)
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
-        assert ledger["schema_version"] == 1
+        # 2 since item 14 added the optional telemetry keys.
+        assert ledger["schema_version"] == 2
         assert ledger["bib_file"] == "literature-domain-1.bib"
         assert ledger["breaker_tripped"] is False
         ent = ledger["entries"]["nature2018"]
@@ -1132,6 +1221,34 @@ class TestCleaningLedger:
         # value binding: the normalized confirmed DOI itself is recorded
         assert ent["verified_identifier_value"] == normalize_doi(rec["doi"])
         assert ent["entry_type"] == "article"
+        # Telemetry keys are OMITTED when empty: this entry's only cleanable
+        # field is its matching doi, so a v2 record reads exactly like a v1 one.
+        assert "unverified_fields" not in ent
+        assert "venue_stripped_no_evidence" not in ent
+
+    def test_telemetry_keys_recorded_when_non_empty(self, tmp_path):
+        """Item 14's owner-facing telemetry: kept-but-uncorroborated detail
+        fields and venue strips made for want of evidence. Present only when
+        non-empty (the empty case is pinned in
+        test_matched_entry_with_verified_doi), and never a control - nothing
+        downstream may gate on either key."""
+        api = {"source": "crossref", "results": [
+            {"doi": "10.1/t", "title": "Telemetry", "year": 2020}]}
+        bib = (
+            "@article{tel2020,\n"
+            "  author = {T, T.},\n"
+            "  title = {Telemetry},\n"
+            "  journal = {Ghost Journal of Nothing},\n"
+            "  year = {2020},\n"
+            "  volume = {5},\n"
+            "  pages = {1--9},\n"
+            "  doi = {10.1/t}\n"
+            "}\n"
+        )
+        _result, ledger_path = self._run(tmp_path, bib, {"verify_t.json": api})
+        ent = json.loads(ledger_path.read_text(encoding="utf-8"))["entries"]["tel2020"]
+        assert ent["unverified_fields"] == ["volume", "pages"]
+        assert ent["venue_stripped_no_evidence"] == ["journal"]
 
     def test_unmatched_entry_recorded_no_match(self, tmp_path, s2_nature_json):
         """An entry that matches no API record at all (no DOI, and a
@@ -1166,11 +1283,12 @@ class TestCleaningLedger:
         """Breaker-trip case, adapted from the existing
         test_circuit_breaker_writes_nothing template in
         tests/test_item13_cleaner_gating.py: 6 matched entries would each
-        lose a hallucinated 'number' field (6/6 > 30% and >= 5), tripping
-        the breaker. The ledger must STILL be written (with the flag set)
-        even though clean_bibtex writes nothing to the .bib itself."""
+        lose a 'number' their own record refutes (6/6 > 30% and >= 5),
+        tripping the breaker. The ledger must STILL be written (with the flag
+        set) even though clean_bibtex writes nothing to the .bib itself."""
         results = [
-            {"doi": f"10.1/{i}", "title": f"P{i}", "container_title": "J", "year": 2020}
+            {"doi": f"10.1/{i}", "title": f"P{i}", "container_title": "J",
+             "issue": "1", "year": 2020}
             for i in range(6)
         ]
         api_json = {"source": "crossref", "results": results}
@@ -1511,3 +1629,366 @@ class TestMarkerRemovedFields:
         import re
         kw = re.search(r'keywords\s*=\s*"([^"]*)"', text).group(1)
         assert marker_removed_fields(kw) == frozenset({"booktitle", "pages"})
+
+
+# =============================================================================
+# Tests for the three-way comparator and the per-field strip policy
+# (ROADMAP item 14, the cleaner strip-rule fix). Spec + measurements:
+# docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md
+# =============================================================================
+
+class TestFieldCompare:
+    """_field_compare: MATCH / CONTRADICT / NO-EVIDENCE against the entry's
+    OWN matched API record. Absence of a field from the record is NOT a weak
+    contradiction - 80% of the pre-item-14 strips were absence-driven and the
+    truth anchor found those values majority-TRUE."""
+
+    def test_venue_match_via_normalize_journal(self):
+        assert mc._field_compare(
+            "journal", "The Journal of Philosophy",
+            {"container_title": "Journal of Philosophy"}) == "match"
+
+    def test_venue_contradicts_when_record_names_another_venue(self):
+        assert mc._field_compare(
+            "journal", "Mind", {"container_title": "Synthese"}) == "contradict"
+
+    def test_venue_no_evidence_when_record_carries_no_container(self):
+        assert mc._field_compare("journal", "Mind", {}) == "no-evidence"
+        assert mc._field_compare(
+            "booktitle", "Some Volume",
+            {"container_title": "   "}) == "no-evidence"
+
+    def test_booktitle_uses_the_same_rule_as_journal(self):
+        assert mc._field_compare(
+            "booktitle", "Handbook of A",
+            {"container_title": "Handbook of A"}) == "match"
+        assert mc._field_compare(
+            "booktitle", "Handbook of A",
+            {"container_title": "Handbook of B"}) == "contradict"
+        assert mc._field_compare("booktitle", "Handbook of A", {}) == "no-evidence"
+
+    def test_volume_three_states(self):
+        assert mc._field_compare("volume", "13", {"volume": " 13 "}) == "match"
+        assert mc._field_compare("volume", "13", {"volume": "14"}) == "contradict"
+        assert mc._field_compare("volume", "13", {}) == "no-evidence"
+
+    def test_number_compares_against_the_records_issue(self):
+        assert mc._field_compare("number", "4", {"issue": "4"}) == "match"
+        assert mc._field_compare("number", "4", {"issue": "5"}) == "contradict"
+        assert mc._field_compare("number", "4", {"issue": None}) == "no-evidence"
+
+    def test_pages_exact_range_matches(self):
+        assert mc._field_compare(
+            "pages", "320--342", {"pages": "320-342"}) == "match"
+
+    def test_pages_first_page_tolerance_is_a_match(self):
+        """bogen1988saving: TRUE pages `303--352` against CrossRef's own
+        first-page truncation `303`. A differing TAIL is not a contradiction."""
+        assert mc._field_compare(
+            "pages", "303--352", {"pages": "303"}) == "match"
+        assert mc._field_compare(
+            "pages", "303", {"pages": "303--352"}) == "match"
+
+    def test_pages_differing_first_page_contradicts(self):
+        assert mc._field_compare(
+            "pages", "641--658", {"pages": "867-880"}) == "contradict"
+
+    def test_pages_no_evidence_when_record_has_none(self):
+        assert mc._field_compare("pages", "641--658", {}) == "no-evidence"
+        assert mc._field_compare(
+            "pages", "641--658", {"pages": ""}) == "no-evidence"
+
+    def test_pages_without_a_leading_digit_run_fall_back_to_full_equality(self):
+        """Roman-numeral and article-id pages have no comparable first page,
+        so they compare whole - equal is a match, unequal a contradiction."""
+        assert mc._field_compare(
+            "pages", "e12345", {"pages": "e12345"}) == "match"
+        assert mc._field_compare(
+            "pages", "e12345", {"pages": "e99999"}) == "contradict"
+        assert mc._field_compare(
+            "pages", "xii--xv", {"pages": "1-10"}) == "contradict"
+
+    def test_publisher_containment_matches_in_either_direction(self):
+        assert mc._field_compare(
+            "publisher", "Springer",
+            {"publisher": "Springer International Publishing"}) == "match"
+        assert mc._field_compare(
+            "publisher", "Springer International Publishing",
+            {"publisher": "springer"}) == "match"
+
+    def test_publisher_three_states(self):
+        assert mc._field_compare(
+            "publisher", "Oxford University Press",
+            {"publisher": "oxford university press"}) == "match"
+        assert mc._field_compare(
+            "publisher", "Oxford University Press",
+            {"publisher": "Routledge"}) == "contradict"
+        assert mc._field_compare(
+            "publisher", "Oxford University Press", {}) == "no-evidence"
+
+    def test_doi_three_states(self):
+        assert mc._field_compare(
+            "doi", "https://doi.org/10.1/A", {"doi": "10.1/a"}) == "match"
+        assert mc._field_compare(
+            "doi", "10.1/a", {"doi": "10.2/b"}) == "contradict"
+        assert mc._field_compare("doi", "10.1/a", {"doi": ""}) == "no-evidence"
+
+    def test_unknown_field_is_match(self):
+        """Mirror of the pre-item-14 default-keep: a field with no comparison
+        rule is never condemned."""
+        assert mc._field_compare("school", "Anywhere", {}) == "match"
+
+    def test_field_matches_api_is_exactly_the_match_state(self):
+        cases = [
+            ("pages", "303--352", {"pages": "303"}),
+            ("pages", "641--658", {"pages": "867-880"}),
+            ("publisher", "Springer", {"publisher": "Springer Nature"}),
+            ("number", "4", {"issue": "5"}),
+            ("journal", "Mind", {}),
+            ("doi", "10.1/a", {"doi": "10.1/A"}),
+        ]
+        for field_lower, value, api in cases:
+            assert mc._field_matches_api(field_lower, value, api) is (
+                mc._field_compare(field_lower, value, api) == "match"), (
+                    field_lower, value, api)
+
+
+def _plan_for(tmp_path, bib_text, json_payloads):
+    """(plan, entry) for the single entry in `bib_text`, planned against an
+    index built from `json_payloads`. Asserts the fixture really MATCHES a
+    record - an accidental no-match would make every policy assertion below
+    vacuously true."""
+    json_dir = tmp_path / "json"
+    json_dir.mkdir(exist_ok=True)
+    for name, payload in json_payloads.items():
+        (json_dir / name).write_text(json.dumps(payload), encoding="utf-8")
+    index = build_metadata_index([json_dir])
+    bib = tmp_path / "p.bib"
+    bib.write_text(bib_text, encoding="utf-8")
+    parsed = pybtex_parse_file(str(bib), bib_format="bibtex")
+    (_key, entry), = parsed.entries.items()
+    api_entry = find_api_entry_for_bib_entry(entry, index)
+    assert isinstance(api_entry, dict), "fixture must MATCH an API record"
+    return mc.plan_entry_cleaning(entry, index, api_entry), entry
+
+
+class TestStripPolicy:
+    """plan_entry_cleaning's per-field policy: detail fields strip only on a
+    CONTRADICTION from an identity-verified record; venue fields keep the
+    older policy (absence strips too); doi needs an entry-scoped record."""
+
+    def test_field_classes_partition_the_cleanable_fields(self):
+        """Every cleanable field reaches exactly one policy branch - a new
+        cleanable field must not silently inherit another class's policy."""
+        assert mc.DETAIL_FIELDS | {"journal", "booktitle", "doi"} == CLEANABLE_FIELDS
+        assert not mc.DETAIL_FIELDS & {"journal", "booktitle", "doi"}
+
+    def test_fruh_shape_absent_detail_fields_are_kept(self, tmp_path):
+        """fruh2019climate / pamuk2020risk shape: a DOI-matched record that
+        carries NO volume, issue or pages. Those bib values are absence-only,
+        so all three are KEPT (pre-item-14 all three were stripped) and
+        recorded as unverified telemetry."""
+        api = {"source": "crossref", "results": [
+            {"doi": "10.1/fruh", "title": "Climate and Justice", "year": 2019,
+             "container_title": "Journal of Applied Philosophy"}]}
+        bib = (
+            "@article{fruh2019climate,\n"
+            "  author = {Fruh, K.},\n"
+            "  title = {Climate and Justice},\n"
+            "  journal = {Journal of Applied Philosophy},\n"
+            "  year = {2019},\n"
+            "  volume = {36},\n"
+            "  number = {3},\n"
+            "  pages = {1--20},\n"
+            "  doi = {10.1/fruh}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(tmp_path, bib, {"verify_fruh.json": api})
+        assert plan["removed_field_names"] == []
+        assert set(plan["unverified_fields"]) == {"volume", "number", "pages"}
+        assert plan["venue_stripped_no_evidence"] == []
+
+    def test_jamieson_shape_broad_record_contradiction_keeps_details(self, tmp_path):
+        """jamieson2014reason: a title+year match to a broad dump's record for
+        a DIFFERENT artifact about the same book (a Choice review, with its own
+        pages and its own DOI). Not identity-verified, so neither a detail
+        field nor the doi may be stripped on its say-so."""
+        api = {"source": "semantic_scholar", "results": [
+            {"title": "Reason in a Dark Time", "year": 2014,
+             "doi": "10.5860/choice.99999",
+             "journal": {"name": "Choice Reviews Online",
+                         "volume": "52", "pages": "52-0999"},
+             "publisher": "Association of College and Research Libraries"}]}
+        bib = (
+            "@book{jamieson2014reason,\n"
+            "  author = {Jamieson, Dale},\n"
+            "  title = {Reason in a Dark Time},\n"
+            "  year = {2014},\n"
+            "  publisher = {Oxford University Press},\n"
+            "  pages = {1--266},\n"
+            "  doi = {10.1093/acprof:oso/9780199337668.001.0001}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(tmp_path, bib, {"s2_dump.json": api})
+        assert plan["removed_field_names"] == []
+        assert set(plan["unverified_fields"]) == {"publisher", "pages", "doi"}
+
+    def test_entry_scoped_contradiction_strips_details_and_doi(self, tmp_path):
+        """The same contradiction from an entry-scoped record (a targeted
+        single-work CrossRef lookup) DOES strip - that is the hallucination
+        class the cleaner exists for."""
+        api = {"source": "crossref", "results": [
+            {"title": "Reason in a Dark Time", "year": 2014,
+             "doi": "10.5860/choice.99999",
+             "container_title": "Choice Reviews Online",
+             "page": "52-0999",
+             "publisher": "Association of College and Research Libraries"}]}
+        bib = (
+            "@book{jamieson2014reason,\n"
+            "  author = {Jamieson, Dale},\n"
+            "  title = {Reason in a Dark Time},\n"
+            "  year = {2014},\n"
+            "  publisher = {Oxford University Press},\n"
+            "  pages = {1--266},\n"
+            "  doi = {10.1093/acprof:oso/9780199337668.001.0001}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(tmp_path, bib, {"verify_jam.json": api})
+        assert set(plan["removed_field_names"]) == {"publisher", "pages", "doi"}
+        assert plan["unverified_fields"] == []
+
+    def test_doi_match_makes_a_broad_record_identity_verified(self, tmp_path):
+        """A DOI match is identity verification even from a broad dump: the
+        record IS this work's metadata, so its contradictions can strip
+        (mhlambi2023decolonizing's wrong pages)."""
+        api = {"source": "semantic_scholar", "results": [
+            {"title": "Wrong Pages", "year": 2020, "doi": "10.1/x",
+             "journal": {"name": "Mind", "pages": "867-880"}}]}
+        bib = (
+            "@article{mhlambi2023decolonizing,\n"
+            "  author = {M, S.},\n"
+            "  title = {Wrong Pages},\n"
+            "  journal = {Mind},\n"
+            "  year = {2020},\n"
+            "  pages = {641--658},\n"
+            "  doi = {10.1/x}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(tmp_path, bib, {"s2_dump.json": api})
+        assert plan["removed_field_names"] == ["pages"]
+        assert plan["unverified_fields"] == []
+
+    def test_broad_record_doi_contradiction_is_kept(self, tmp_path):
+        """doi keys on entry_scoped, NOT on identity_verified: a broad dump's
+        differing DOI is usually its own artifact's, so it can never strip -
+        even when the record contradicts on other fields too."""
+        api = {"source": "semantic_scholar", "results": [
+            {"title": "Reason in a Dark Time", "year": 2014,
+             "doi": "10.5860/choice.99999",
+             "journal": {"name": "Choice Reviews Online"}}]}
+        bib = (
+            "@book{jamieson2014reason,\n"
+            "  author = {Jamieson, Dale},\n"
+            "  title = {Reason in a Dark Time},\n"
+            "  year = {2014},\n"
+            "  doi = {10.1093/acprof:oso/9780199337668.001.0001}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(tmp_path, bib, {"s2_dump.json": api})
+        assert plan["removed_field_names"] == []
+        assert plan["unverified_fields"] == ["doi"]
+
+    def test_global_bucket_no_longer_rescues_a_contradicted_detail_field(self, tmp_path):
+        """The coincidence check is REMOVED from the detail fields' decision:
+        an unrelated paper's matching issue number used to keep a value the
+        entry's own record contradicted."""
+        own = {"source": "crossref", "results": [
+            {"doi": "10.1/own", "title": "Paper A", "year": 2020,
+             "container_title": "Journal A", "issue": "4"}]}
+        unrelated = {"source": "crossref", "results": [
+            {"doi": "10.1/other", "title": "Paper B", "year": 2001,
+             "container_title": "Journal B", "issue": "9"},
+            {"doi": "10.1/third", "title": "Paper C", "year": 2002,
+             "container_title": "Journal C", "issue": "9"}]}
+        bib = (
+            "@article{a2020,\n"
+            "  author = {A, A.},\n"
+            "  title = {Paper A},\n"
+            "  journal = {Journal A},\n"
+            "  year = {2020},\n"
+            "  number = {9},\n"
+            "  doi = {10.1/own}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(
+            tmp_path, bib, {"verify_a.json": own, "verify_b.json": unrelated})
+        assert "9" in build_metadata_index([tmp_path / "json"]).issues, (
+            "fixture must put the contradicted value in the global bucket")
+        assert plan["removed_field_names"] == ["number"]
+
+    def test_venue_absence_still_strips_and_is_recorded(self, tmp_path):
+        """Venue policy is UNCHANGED: a journal absent from both the entry's
+        record and the global bucket still strips (farina2021extended's
+        fabricated booktitle stays caught). The strip is recorded as telemetry
+        under its own key, never as 'unverified'."""
+        api = {"source": "crossref", "results": [
+            {"doi": "10.1/v", "title": "No Venue Record", "year": 2020}]}
+        bib = (
+            "@article{v2020,\n"
+            "  author = {V, V.},\n"
+            "  title = {No Venue Record},\n"
+            "  journal = {Ghost Journal of Nothing},\n"
+            "  year = {2020},\n"
+            "  doi = {10.1/v}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(tmp_path, bib, {"verify_v.json": api})
+        assert plan["removed_field_names"] == ["journal"]
+        assert plan["venue_stripped_no_evidence"] == ["journal"]
+        assert plan["unverified_fields"] == []
+
+    def test_venue_global_bucket_rescue_still_works(self, tmp_path):
+        """A venue named by ANOTHER indexed file is legitimately sourced, so
+        the bucket still keeps it - and a bucket-verified venue is not
+        'unverified' telemetry."""
+        own = {"source": "crossref", "results": [
+            {"doi": "10.1/w", "title": "Bucket Venue", "year": 2020}]}
+        elsewhere = {"source": "crossref", "results": [
+            {"doi": "10.1/other", "title": "Other", "year": 1999,
+             "container_title": "Ghost Journal of Nothing"},
+            {"doi": "10.1/third", "title": "Third", "year": 1998,
+             "container_title": "Ghost Journal of Nothing"}]}
+        bib = (
+            "@article{w2020,\n"
+            "  author = {W, W.},\n"
+            "  title = {Bucket Venue},\n"
+            "  journal = {Ghost Journal of Nothing},\n"
+            "  year = {2020},\n"
+            "  doi = {10.1/w}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(
+            tmp_path, bib, {"verify_w.json": own, "verify_e.json": elsewhere})
+        assert plan["removed_field_names"] == []
+        assert plan["venue_stripped_no_evidence"] == []
+        assert plan["unverified_fields"] == []
+
+    def test_venue_contradiction_strips_without_the_no_evidence_key(self, tmp_path):
+        """A contradicted venue strips as before, but only ABSENCE strips are
+        recorded under venue_stripped_no_evidence - the key means what it
+        says."""
+        api = {"source": "crossref", "results": [
+            {"doi": "10.1/c", "title": "Wrong Venue", "year": 2020,
+             "container_title": "Synthese"}]}
+        bib = (
+            "@article{c2020,\n"
+            "  author = {C, C.},\n"
+            "  title = {Wrong Venue},\n"
+            "  journal = {Mind},\n"
+            "  year = {2020},\n"
+            "  doi = {10.1/c}\n"
+            "}\n"
+        )
+        plan, _ = _plan_for(tmp_path, bib, {"verify_c.json": api})
+        assert plan["removed_field_names"] == ["journal"]
+        assert plan["venue_stripped_no_evidence"] == []
