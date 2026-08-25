@@ -1247,7 +1247,7 @@ class TestCleaningLedger:
         )
         _result, ledger_path = self._run(tmp_path, bib, {"verify_t.json": api})
         ent = json.loads(ledger_path.read_text(encoding="utf-8"))["entries"]["tel2020"]
-        assert ent["unverified_fields"] == ["volume", "pages"]
+        assert set(ent["unverified_fields"]) == {"volume", "pages"}
         assert ent["venue_stripped_no_evidence"] == ["journal"]
 
     def test_unmatched_entry_recorded_no_match(self, tmp_path, s2_nature_json):
@@ -1698,6 +1698,19 @@ class TestFieldCompare:
         assert mc._field_compare(
             "pages", "641--658", {"pages": ""}) == "no-evidence"
 
+    def test_pages_punctuation_only_record_value_is_no_evidence(self):
+        """An API record that emitted a bare separator carries no page
+        information however non-empty it looks: OpenAlex/S2 records with
+        `pages: " - "` normalize to "-", which used to reach the fall-through
+        and CONDEMN a true page range."""
+        assert mc._field_compare("pages", "641--658", {"pages": " - "}) == "no-evidence"
+        assert mc._field_compare("pages", "641--658", {"pages": "--"}) == "no-evidence"
+        # Narrow by design: alphanumeric non-digit forms still contradict.
+        assert mc._field_compare(
+            "pages", "e12345", {"pages": "e99999"}) == "contradict"
+        assert mc._field_compare(
+            "pages", "641--658", {"pages": "xii-xv"}) == "contradict"
+
     def test_pages_without_a_leading_digit_run_fall_back_to_full_equality(self):
         """Roman-numeral and article-id pages have no comparable first page,
         so they compare whole - equal is a match, unequal a contradiction."""
@@ -1708,13 +1721,29 @@ class TestFieldCompare:
         assert mc._field_compare(
             "pages", "xii--xv", {"pages": "1-10"}) == "contradict"
 
-    def test_publisher_containment_matches_in_either_direction(self):
+    def test_publisher_prefix_containment_matches_in_either_direction(self):
         assert mc._field_compare(
             "publisher", "Springer",
             {"publisher": "Springer International Publishing"}) == "match"
         assert mc._field_compare(
             "publisher", "Springer International Publishing",
             {"publisher": "springer"}) == "match"
+        # Concatenated-location artifact: the tail is glued on with no
+        # separator, so only a PREFIX test rescues it.
+        assert mc._field_compare(
+            "publisher", "Oxford University Press",
+            {"publisher": "Oxford University PressNew York"}) == "match"
+
+    def test_publisher_containment_is_prefix_only_not_substring(self):
+        """A bare imprint word is a SUBSTRING of a real publisher but names no
+        publisher, and suffix containment would verify it against any house
+        ending the same way. Prefix-only, so these contradict."""
+        assert mc._field_compare(
+            "publisher", "Press",
+            {"publisher": "Oxford University Press"}) == "contradict"
+        assert mc._field_compare(
+            "publisher", "University Press",
+            {"publisher": "Cambridge University Press"}) == "contradict"
 
     def test_publisher_three_states(self):
         assert mc._field_compare(

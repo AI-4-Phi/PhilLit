@@ -784,7 +784,14 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
 
 
 def is_field_verifiable(field_name: str, value: str, index: MetadataIndex) -> bool:
-    """Check if a field value can be verified against the metadata index."""
+    """Check if a field value can be verified against the metadata index.
+
+    Only the journal/booktitle branch is LIVE in production since item 14:
+    plan_entry_cleaning consults this bucket for venue fields alone, so the
+    detail-field branches below are exercised by unit tests only. Do not read
+    their presence as evidence that bucket rescue still applies to them - an
+    unrelated paper's matching issue number is coincidence, not corroboration,
+    and rewiring it would restore exactly the defect item 14 removed."""
     if field_name in ('journal', 'booktitle'):
         if normalize_journal(value) in index.journals:
             return True
@@ -1014,7 +1021,13 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
         api = normalize_pages(api_entry.get('pages') or '')
         if nv and nv == api:
             return 'match'
-        if not api:
+        # A record value with no alphanumeric character at all carries no page
+        # information, however non-empty it looks: normalize_pages(" - ") is
+        # "-", which would sail past a bare `not api` test and then condemn a
+        # true page range through the fall-through below. The guard is
+        # deliberately narrow - `e12345` and roman numerals stay alphanumeric
+        # and keep contradicting.
+        if not api or not any(ch.isalnum() for ch in api):
             return 'no-evidence'
         # CrossRef truncates a page RANGE to its first page, so a differing
         # TAIL is not a contradiction (bogen1988saving: true `303--352` against
@@ -1028,12 +1041,18 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
     if field_lower == 'publisher':
         nv = value.lower().strip()
         api = str(api_entry.get('publisher') or '').lower().strip()
-        # Containment either way, because publisher names are reported at
+        # PREFIX containment either way, because publisher names are reported at
         # different depths of the same imprint ('Springer' vs 'Springer
-        # International Publishing'). Both sides must be non-empty: '' is
-        # contained in everything, which would make absence read as a match.
-        if nv and api and (nv in api or api in nv):
-            return 'match'
+        # International Publishing') and sometimes with a location concatenated
+        # onto the tail ('Oxford University PressNew York'). A prefix test, not
+        # a substring test: 'Press' is a substring of 'Oxford University Press'
+        # but names no publisher, and suffix containment would verify it.
+        # Both sides must be non-empty: '' is a prefix of everything, which
+        # would make absence read as a match.
+        if nv and api:
+            shorter, longer = sorted((nv, api), key=len)
+            if longer.startswith(shorter):
+                return 'match'
         return 'contradict' if api else 'no-evidence'
     if field_lower == 'doi':
         nv = normalize_doi(value)
@@ -1049,11 +1068,12 @@ def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
     record (normalized)? Empty API values never match (can't confirm).
 
     Exactly the 'match' state of _field_compare, so the two can never drift.
-    Item 14 widened two of those comparisons, which this function's other
-    callers inherit deliberately: a CrossRef-truncated page range no longer
-    blocks _plan_type_downgrade's @article DOI guard, and 'Springer' against
-    'Springer International Publishing' now verifies a book identity in
-    _verified_identifier."""
+    Item 14 widened the pages and publisher comparisons; of this function's
+    three other call sites, two inherit that deliberately - a CrossRef-truncated
+    page range no longer blocks _plan_type_downgrade's @article DOI guard, and
+    'Springer' against 'Springer International Publishing' now verifies a book
+    identity in _verified_identifier. The third, the scoped-year-disagreement
+    scan in find_api_entry_for_bib_entry, passes only 'doi' and is unchanged."""
     return _field_compare(field_lower, value, api_entry) == 'match'
 
 

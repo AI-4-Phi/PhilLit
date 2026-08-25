@@ -297,7 +297,7 @@ This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py
 - **Detail** — `volume`, `number` (the BibTeX field; API `issue` values verify it), `pages`, `publisher`: removed on a CONTRADICTION from an *identity-verified* record (entry-scoped, or matched on this entry's own DOI). The global index is deliberately not consulted here — an unrelated paper's matching issue number is coincidence, not corroboration.
 - **`doi`**: removed on a CONTRADICTION from an entry-scoped record.
 
-The cleaner is a backstop against metadata that contradicts the APIs, not a licence: it cannot see a fabricated value the APIs are simply silent about. **Field Grounding above is the actual rule** — write only what API output gave you, and omit the field otherwise.
+The cleaner is a backstop against metadata that contradicts the APIs, not a licence. **Field Grounding above is the actual rule** — write only what API output gave you, and omit the field otherwise.
 
 `year` is **corrected**, not removed — and only on entry-scoped evidence: a CrossRef result identified by envelope content (`api_source` is `crossref` AND the file carries exactly one result — the filename is deliberately NOT the test) that matches this entry's own DOI, carries a version-of-record `year_basis` (recorded by `verify_paper.py`; registration/created timestamps never overwrite), and is not contradicted by another entry-scoped record. On any same-DOI year conflict the cleaner abstains from the entry entirely (attesting existence in the cleaning ledger — see Evidence Tiers above). For the reprint-capable entry types (`@book`, `@incollection`, `@inbook`) a further **direction bound** applies: the year may only move earlier. A reprint edition has its own DOI whose print date is the reprint's year, not the work's original publication year — the year Chicago cites — so a later year is refused, as is a bib year the direction test cannot parse (`n.d.`, `[2021]`); every refusal is counted in the cleaning report rather than passing silently. `author` and `title` are identity fields and are never touched.
 
@@ -319,9 +319,9 @@ The cleaner is a backstop against metadata that contradicts the APIs, not a lice
 5. Records, per entry in the cleaning ledger (`schema_version` 2), which detail fields no record corroborated (`unverified_fields`) and which venue fields were removed for want of evidence (`venue_stripped_no_evidence`) — owner-facing measurement, never a control: the ledger is agent-writable, so nothing downstream may gate on either key
 
 **Value normalization**: values are normalized before comparison:
-- Pages: `"163 - 188"` matches `"163--188"` (handles space/dash variations); a range and its own first page corroborate each other (`"303--352"` vs CrossRef's truncated `"303"`), so only a differing FIRST page contradicts. Values with no leading digit run (roman numerals, `e12345`) compare whole.
+- Pages: `"163 - 188"` matches `"163--188"` (handles space/dash variations); a range and its own first page corroborate each other (`"303--352"` vs CrossRef's truncated `"303"`), so differing FIRST pages are what contradict. Forms that start with no digit (roman numerals, `e12345`) compare whole and contradict on inequality, as does a digit-run value against a digitless one. A record value with no alphanumeric character at all (a bare `-`) carries no page information and is treated as no evidence.
 - Journals: LaTeX/HTML-entity/accent decoding, then case-insensitive, strips "The" prefix
-- Publishers: case-insensitive, and containment either way matches (`Springer` / `Springer International Publishing` name the same imprint at different depths)
+- Publishers: case-insensitive, and one value being a PREFIX of the other matches (`Springer` / `Springer International Publishing` name the same imprint at different depths; `Oxford University Press` / `Oxford University PressNew York` is a concatenated location). Prefix, not substring — a bare `Press` names no publisher.
 - DOIs: strips URL prefixes
 - Years: exact string grammar (`2007`, `2007.0` and `0002007` are one value; `2007.9` and `n.d.` are not years)
 
