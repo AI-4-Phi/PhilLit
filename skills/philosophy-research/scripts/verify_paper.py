@@ -219,14 +219,34 @@ def extract_year(item: dict) -> tuple[Optional[int], Optional[str]]:
     return None, None
 
 
+def _first_string(value) -> str:
+    """First usable (non-blank string) element of a CrossRef list field,
+    '' otherwise.
+
+    CrossRef's contract says `title` and `container-title` are string
+    arrays, but malformed shapes reach this code: a bare scalar (whose
+    [0] is a character or a crash), a dict (KeyError), or a list whose
+    first element is not a string. format_result runs before every bail
+    path in both verification routes, so it must never crash and must
+    never emit a non-string -- and a bare string is NOT adopted as the
+    value, because guessing at a shape the contract forbids is how wrong
+    metadata ships.
+    """
+    if isinstance(value, list):
+        for v in value:
+            if isinstance(v, str) and v.strip():
+                return v
+    return ""
+
+
 def format_result(item: dict, method: str, score: Optional[float] = None) -> dict:
     """Format CrossRef result into standard output format."""
     # Extract DOI
     doi = item.get("DOI", "")
 
-    # Extract title (CrossRef returns list)
-    titles = item.get("title", [])
-    title = titles[0] if titles else ""
+    # Extract title (CrossRef returns a list; malformed shapes -- a bare
+    # scalar, a dict, a non-string first element -- defer to _first_string).
+    title = _first_string(item.get("title"))
 
     # Extract authors and editors
     authors = extract_author_names(item.get("author", []))
@@ -235,9 +255,8 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
     # Extract year, and record which CrossRef date field supplied it
     year, year_basis = extract_year(item)
 
-    # Extract container title (journal/book)
-    container = item.get("container-title", [])
-    container_title = container[0] if container else ""
+    # Extract container title (journal/book); same malformed-shape guard.
+    container_title = _first_string(item.get("container-title"))
 
     # Extract volume, issue, pages
     volume = item.get("volume", "")

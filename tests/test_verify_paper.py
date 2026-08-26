@@ -296,6 +296,55 @@ class TestFormatResult:
         assert result["score"] == 85.5
 
 
+class TestFormatResultMalformedShapes:
+    """format_result must never crash or emit a non-string for the two
+    CrossRef list fields it indexes, whatever shape arrives."""
+
+    @staticmethod
+    def _item(**overrides):
+        base = {"DOI": "10.1/x", "type": "journal-article",
+                "title": ["A Fine Title"],
+                "container-title": ["A Fine Journal"]}
+        base.update(overrides)
+        return base
+
+    def test_bare_int_title_yields_empty_not_crash(self):
+        import verify_paper as vp
+        result = vp.format_result(self._item(title=123), "doi_lookup")
+        assert result["title"] == ""
+
+    def test_dict_title_yields_empty_not_crash(self):
+        import verify_paper as vp
+        result = vp.format_result(self._item(title={"bad": "shape"}), "doi_lookup")
+        assert result["title"] == ""
+
+    def test_bare_string_title_is_not_adopted_or_char_sliced(self):
+        import verify_paper as vp
+        result = vp.format_result(self._item(title="Bare String"), "doi_lookup")
+        assert result["title"] == ""
+
+    def test_first_usable_element_wins_over_malformed_ones(self):
+        import verify_paper as vp
+        result = vp.format_result(
+            self._item(title=[{"bad": 1}, "  ", "Real Title"]), "doi_lookup")
+        assert result["title"] == "Real Title"
+
+    def test_container_title_gets_the_same_guards(self):
+        import verify_paper as vp
+        for bad, expected in (
+                (123, ""), ({"bad": 1}, ""), ("Bare String", ""),
+                ([{"bad": 1}, "Real Venue"], "Real Venue")):
+            result = vp.format_result(
+                self._item(**{"container-title": bad}), "doi_lookup")
+            assert result["container_title"] == expected
+
+    def test_wellformed_lists_unchanged(self):
+        import verify_paper as vp
+        result = vp.format_result(self._item(), "doi_lookup")
+        assert result["title"] == "A Fine Title"
+        assert result["container_title"] == "A Fine Journal"
+
+
 class TestContainerDisambiguation:
     CHAPTER_ITEM = {
         "DOI": "10.1007/978-3-642-31674-6_21",
@@ -593,8 +642,10 @@ class TestContainerDisambiguation:
         vp.disambiguate_container(item, result, self._limiter(), "")
         mock_get.assert_not_called()
         assert result["series"] == ""
-        # format_result's own handling of a bare-string container is
-        # pre-existing behavior, outside this task's scope -- not asserted.
+        # A bare string is not a CrossRef-conformant list, so
+        # _first_string defines the behavior now: "", not the first
+        # character.
+        assert result["container_title"] == ""
 
     @patch("requests.get")
     def test_malformed_elements_inside_lists_bail_cleanly(self, mock_get):
