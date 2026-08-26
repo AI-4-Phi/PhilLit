@@ -322,12 +322,12 @@ def disambiguate_container(item: dict, result: dict, limiter,
     pooled set: the parent record's own container-title names its series,
     and `series` is set only when at least one parent's well-formed
     non-empty container-title contains the one remaining element (exactly-2
-    arrays) and no such parent lacks it -- otherwise one parent could
-    supply the element while another names a different series, and the
-    union would emit `series` off contradictory evidence. A parent with no
-    well-formed non-empty container-title abstains, casting no vote either
-    way. Leftover position alone proves nothing, so a 3+-element array
-    fixes container_title only.
+    usable-element arrays) and no such parent lacks it -- otherwise one
+    parent could supply the element while another names a different series,
+    and the union would emit `series` off contradictory evidence. A parent
+    with no well-formed non-empty container-title abstains, casting no vote
+    either way. Leftover position alone proves nothing, so an array with 3+
+    usable elements fixes container_title only.
 
     Every failure path BAILS to the incumbent behavior (container_title =
     element [0], series empty): this is best-effort enrichment, not
