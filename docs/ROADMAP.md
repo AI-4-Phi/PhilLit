@@ -12,12 +12,51 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-The queue is empty. The next external step is the service's scripted
-re-vendor at a pin at or past the v0.5.1 tip (service-session work, never
-hand-mirrored — rule in `CLAUDE.md`, "Sister repo: phillit-service").
+The queue is the three items below (two service-filed findings from
+2026-08-26 plus a web-evidence exercise run); the next external step is the
+service's scripted re-vendor at a pin at or past the v0.5.2 tip
+(service-session work, never hand-mirrored — rule in `CLAUDE.md`, "Sister
+repo: phillit-service").
 Everything else in this file is a recorded residual, not work. (Section
 numbers in this file are historical: numbers are never reused once an item
 ships, so the sequence has gaps. Refer to items by name.)
+
+- **OpenAlex key travels in the URL, and a connection error writes it into
+  captured stderr** (service-filed 2026-08-26; found while wiring its
+  operator `OPENALEX_API_KEY`). `rate_limiter.openalex_params` puts the key
+  in an `api_key=` query parameter, and `probe_openalex` logs
+  `f"OpenAlex: Network error: {e}"` on a `requests.RequestException` — whose
+  message embeds the full request URL, query string included. `log_progress`
+  goes to stderr; in the service that stderr is captured into per-review
+  transcripts which are synced to off-site backup, so one DNS failure during
+  an OpenAlex call puts an operator key into an off-box archive. The fix is
+  a transport swap with no functional change: the service verified live
+  (2026-08-26) that OpenAlex accepts `Authorization: Bearer` identically to
+  the query parameter (a bogus key returns the same "API key not found" body
+  on both). Swapping also makes the service's own key validator
+  transport-faithful (it already uses the header deliberately).
+- **Venue vetting is gated on `OPENALEX_API_KEY`'s mere presence, which
+  couples two unrelated operator decisions** (service-filed 2026-08-26).
+  `venue_vetting.vet_venues` returns `"skipped"` when the key is absent, so
+  supplying a key for the 10x daily budget ALSO switches venue vetting on —
+  an operator who wants one cannot decline the other. A separate flag (or a
+  `--vet-venues` argument threaded from the barrier) would decouple them.
+  The service pins the current gate BOTH ways
+  (`tests/test_engine_rate_limiter.py` there), so whichever shape ships next
+  fails loudly on its side rather than silently changing its operator docs.
+- **Web-evidence exercise run — needs a DELIBERATELY web-pulling topic.**
+  The EVIDENCE-WEB path has produced zero signal on every run since the
+  2026-08-15 acceptance run: three service production runs and this repo's
+  2026-08-26 `machine-consciousness` run all ended `gate_passed {script: 0,
+  agent: 0}` with no captures (that run's six domain bibs carried ONE
+  `url =` field between them — the topic, not the machinery, is why).
+  Pick the topic the way the acceptance run did: from the corpus's
+  `@misc`-with-URL mass (alignment/AI-blog-adjacent topics). Run it at the
+  tip the next service re-vendor will pin, so the exercised tree equals
+  what ships. What a run here CAN discharge: the capture path, bucket
+  spread incl. `wayback_failed`, the book-year direction bound, the
+  publisher-prefix attestation edge. What it cannot (service-only): bwrap
+  fetch-denial latency, stored-payload volume, the barrier Bash-kill odds.
 
 **The service re-vendor at the v0.5.0 tip RAN 2026-08-25** (pin `fffb721`):
 items 14/15 and the v0.4.9 prose fixes are now in the service's `engine/`;
