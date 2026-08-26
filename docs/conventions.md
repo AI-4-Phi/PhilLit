@@ -47,8 +47,8 @@ volume by looking up the parent volume's own CrossRef record by ISBN:
 record unanimously names the same array element as its own title; `series`
 is populated only when at least one parent record carries a `container-title`
 of its own that corroborates the one remaining element, and no
-container-title-bearing parent lacks it, and only for exactly-two-element
-arrays (a 3+-element array fixes `container_title` alone and leaves
+container-title-bearing parent lacks it, and only for exactly-two-usable-element
+arrays (a 3+-usable-element array fixes `container_title` alone and leaves
 `series` empty). On any lookup failure, ambiguity, or disagreement among
 parents, disambiguation bails to the incumbent fallback: `container_title`
 = the array's first element, `series` empty. **Do not "fix" a bailed entry
@@ -326,7 +326,7 @@ The cleaner is a backstop against metadata that contradicts the APIs, not a lice
 - `abstract`
 - `abstract_source`
 
-`sep_context` / `iep_context` are also never cleaned, but not via this list — they are outside `CLEANABLE_FIELDS` and are owned end-to-end by the evidence barrier (see Evidence Tiers above).
+`sep_context` / `iep_context` are also never cleaned, but not via this list — they are outside `CLEANABLE_FIELDS` and are owned end-to-end by the evidence barrier (see Evidence Tiers above). `series` (populated by `verify_paper.py`'s parent-volume corroboration for chapters) is likewise outside `CLEANABLE_FIELDS` and is never cleaned.
 
 **How it works**:
 1. Scans the .bib's own directory AND `intermediate_files/json/` for API output files (S2, OpenAlex, CrossRef, arXiv, PhilPapers, CORE) — both feed ONE index, so directory shadowing cannot starve verification

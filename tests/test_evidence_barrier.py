@@ -499,6 +499,20 @@ def test_heal_abstract_never_raises(monkeypatch):
                                            ledger_entry) is None
 
 
+def test_heal_abstract_never_raises_for_ndpr(monkeypatch):
+    """resolve_ndpr_abstract PROPAGATES transport errors since the outage/
+    no-match split; the heal path's own wrap is what keeps an NDPR outage
+    a failed heal instead of a dead barrier run."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    ledger_entry = {"abstract_source": "ndpr", "abstract_sha256": "0" * 64}
+    def boom(*a, **k):
+        raise RuntimeError("Network error fetching sitemap")
+    monkeypatch.setattr(evidence_barrier.eb, "resolve_ndpr_abstract", boom)
+    assert evidence_barrier._heal_abstract({"title": "T", "author": "Doe, J."},
+                                           ledger_entry) is None
+
+
 def test_heal_abstract_uses_ndpr_resolver_for_ndpr_source(monkeypatch):
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier

@@ -553,6 +553,18 @@ class TestContainerDisambiguation:
         assert result["series"] != ""
 
     @patch("requests.get")
+    def test_isbn_check_digit_is_uppercased_for_the_filter(self, mock_get):
+        """CrossRef's indexed ISBN-10 check digit is uppercase X; a lowercase
+        x in the source array must not silently defeat the lookup."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM, ISBN=["3-540-49698-x"])
+        mock_get.return_value = self._parent_response([self.PARENT_BOOK])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        called_params = mock_get.call_args.kwargs.get("params") or {}
+        assert "isbn:354049698X" in called_params["filter"]
+
+    @patch("requests.get")
     def test_non_list_isbn_bails_without_request(self, mock_get):
         """A bare scalar where CrossRef normally sends an array: the
         container-level guard must bail. Both comprehensions sit BEFORE the

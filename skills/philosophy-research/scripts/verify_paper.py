@@ -371,11 +371,16 @@ def disambiguate_container(item: dict, result: dict, limiter,
     norm_containers = dict(zip(normalized, containers))
     # CrossRef's isbn: filter matches its indexed UNHYPHENATED form; the
     # ISBN array on a record is not guaranteed unhyphenated, and a
-    # hyphenated value would yield zero hits and a silent bail.
+    # hyphenated value would yield zero hits and a silent bail. The check
+    # digit is uppercased and non-ASCII digits are rejected to match that
+    # indexed form exactly: `str.isdigit()` is also true for non-ASCII
+    # digit characters, which CrossRef's filter can never match, and a
+    # lowercase x check digit would stay lowercase against CrossRef's
+    # uppercase-indexed form.
     raw_isbns = item.get("ISBN")
     if not isinstance(raw_isbns, list):
         return
-    isbns = ["".join(ch for ch in raw if ch.isdigit() or ch in "Xx")
+    isbns = ["".join(ch for ch in raw.upper() if ch in "0123456789X")
              for raw in raw_isbns if isinstance(raw, str)]
     isbns = [i for i in isbns if i][:2]
     if not isbns:
@@ -455,6 +460,8 @@ def verify_by_doi(doi: str, limiter, backoff: ExponentialBackoff, mailto: str, d
     log_progress(f"Verifying DOI: {doi}")
 
     url = f"https://api.crossref.org/works/{doi}"
+    # No `select`: the full record is required -- disambiguate_container
+    # reads ISBN/container-title off it.
     params = {}
     if mailto:
         params["mailto"] = mailto
