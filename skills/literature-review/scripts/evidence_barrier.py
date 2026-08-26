@@ -323,9 +323,17 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
       had (both resolvers are DOI-gated), i.e. a later deletion.
     * `ndpr` with no title -- NDPR resolution is a title search over
       review essays; `_probe_candidate` gates on the stripped title, so
-      the same expression is used here (parity again). Near-unreachable (a
-      bib entry without a title is broken upstream), covered because it is
-      the same zero-network streak-reset shape as the openalex one.
+      the same expression is used here (parity again). NOT the same
+      zero-network shape as s2/openalex whenever a DOI survives: those
+      probes gate on DOI, so a title-less ndpr claim with a DOI would
+      still reach a full corroboration's DOI-gated s2/openalex fallbacks
+      (and a keyed core) and could be corroborated through one of them.
+      Pre-classifying it here forecloses that fallback path -- accepted
+      for the same reason as the s2/openalex foreclosure below: the
+      contract is "can the CLAIMED source be asked", not "is there any
+      answer at all". Zero-network only when the entry also lacks a DOI
+      and a CORE key, and near-unreachable regardless, since a title-less
+      entry is broken upstream.
 
     Pre-classification forecloses the fallback probes a full corroboration
     would still run for these claims (e.g. core-by-title for a DOI-less s2

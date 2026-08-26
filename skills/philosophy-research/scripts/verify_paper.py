@@ -327,17 +327,23 @@ def disambiguate_container(item: dict, result: dict, limiter,
     """
     if item.get("type") not in _MULTI_CONTAINER_TYPES:
         return
-    # isinstance guards at BOTH levels -- the container and its elements.
-    # External JSON can put a null, a bare scalar or an object where a
-    # string array is expected, and these comprehensions run BEFORE the
-    # try, so an unguarded value raises out of this function entirely:
-    # verify_by_doi handles only RequestException, so a TypeError would
-    # escape its retry loop and take down the verification itself,
-    # violating the bail guarantee. A bare STRING is the quiet case -- it
-    # would iterate into single characters that all pass the element
-    # check, so `len >= 2` succeeds and a pointless request fires for an
-    # item that is not multi-container. Null and absent keys bail through
-    # the same isinstance check, so there is one mechanism, not two.
+    # isinstance guards on both container-title and ISBN below. External
+    # JSON can put a null, a bare scalar or an object where a string array
+    # is expected. An int or dict container-title already raises in
+    # format_result's own `container[0]`, one call earlier at both call
+    # sites, so this function never runs for that shape -- this guard
+    # isn't what saves it there. Two shapes ARE this function's own
+    # reachable defense: a bare STRING container-title, which
+    # format_result accepts quietly (`"foo"[0]` doesn't raise) -- without
+    # this guard it would iterate into single characters that all pass
+    # the element check, so `len >= 2` succeeds and a pointless request
+    # fires for an item that is not multi-container; and a malformed ISBN
+    # value, which format_result never reads at all, so an unguarded
+    # value here would raise out of this function entirely -- verify_by_doi
+    # handles only RequestException, so a TypeError would escape its
+    # retry loop and take down the verification itself. Null and absent
+    # keys bail through the same isinstance checks, so there is one
+    # mechanism, not two.
     raw_containers = item.get("container-title")
     if not isinstance(raw_containers, list):
         return

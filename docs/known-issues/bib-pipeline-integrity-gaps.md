@@ -521,9 +521,13 @@ the enrichment ledger remains the candidacy authority (its hash still
 binds which text is checked); a corroboration bucket's `source` falls back
 to the CLAIMED value on every non-corroborated outcome, since nobody
 answered (attribution imprecision only — no outcome turns on it); and the
-consecutive-non-answer breaker's streak can be reset by `source_empty`
-candidates that spent no network, so the 180 s deadline is the only hard
-bound on the pass. One consistency-pass candidate: the Phase-6 re-stamp's
+consecutive-non-answer breaker's streak can still be reset by one
+zero-network `source_empty` shape the claimed-source pre-classification
+doesn't cover: `corroborate_abstract`'s own top-of-function early return
+for an entry whose abstract text normalizes to nothing ("no comparable
+abstract text") returns `source_empty` before any probe fires, whatever
+the claimed source — so the 180 s deadline remains the only hard bound
+against that residual. One consistency-pass candidate: the Phase-6 re-stamp's
 sibling flags (`api_matched`, `context_written`) still read bare
 truthiness where `abstract_attested` now requires `is True` — their value
 bindings mean a junk-truthy flag alone grants nothing, but the idioms

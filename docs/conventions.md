@@ -38,17 +38,21 @@ Requirements:
 - CrossRef `book` / `edited-book` → `@book` (for `edited-book`, use `editor` instead of `author`)
 - CrossRef `proceedings-article` → `@inproceedings` (use `container_title` as `booktitle`)
 
-**`container_title` can name the SERIES rather than the volume.** CrossRef's
-raw `container-title` is an ARRAY, and for a `book-chapter` it commonly holds
-both the series and the volume. `verify_paper.py` collapses it to `[0]`, so a
-chapter's `booktitle` can arrive as the series name — observed in production
-2026-08-26, where `susser2013artificial` shipped `booktitle = {Studies in
-Applied Philosophy, Epistemology and Rational Ethics}` instead of *Philosophy
-and Theory of Artificial Intelligence*. Nothing else about such an entry is
-wrong (DOI, publisher, authors, year all verify), but the reference is not
-resolvable by a reader. **Do not "fix" this by reading `[1]`** — array order
-is not guaranteed. Open finding; see the service-intake findings section in
-`docs/ROADMAP.md`.
+**`container_title` may need disambiguating from a SERIES name.** CrossRef's
+raw `container-title` is an ARRAY, and for a `book-chapter` or
+`proceedings-article` it can hold both the series and the volume together.
+`verify_paper.py`'s `disambiguate_container` resolves which element is the
+volume by looking up the parent volume's own CrossRef record by ISBN:
+`container_title` is set to the volume only when every returned parent
+record unanimously names the same array element as its own title; `series`
+is populated only when the parent record's own `container-title`
+corroborates the one remaining element, and only for exactly-two-element
+arrays (a 3+-element array fixes `container_title` alone and leaves
+`series` empty). On any lookup failure, ambiguity, or disagreement among
+parents, disambiguation bails to the incumbent fallback: `container_title`
+= the array's first element, `series` empty. **Do not "fix" a bailed entry
+by reading `[1]`** — array order is undocumented, so without a parent
+match there is no authority either way.
 
 See `CROSSREF_TO_BIBTEX_TYPE` in `verify_paper.py` for the full mapping.
 
