@@ -2826,6 +2826,55 @@ def test_claimed_s2_with_a_doi_is_corroborated_normally(tmp_path, monkeypatch):
     assert len(calls) == 1
 
 
+def test_claimed_openalex_without_a_doi_is_probe_unavailable(tmp_path, monkeypatch):
+    """A bib entry carries no OpenAlex id, so the openalex probe needs a
+    DOI (`_probe_candidate` gates on `if not doi`) -- same
+    pre-classification as s2, same fail-closed direction. Before this
+    shape was covered it reached the corroborator, came back source_empty
+    with zero network, and RESET the consecutive-transport streak: the
+    `calls == []` assertion is the streak proof, since `record` is only
+    ever called after a probe."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, source="openalex", doi=None)
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "openalex"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    bib_name = "literature-domain-1.bib"
+    assert report["abstract_corroboration"][bib_name][key] == {
+        "outcome": "probe_unavailable", "source": "openalex",
+        "claimed": "openalex"}
+    assert report["attestations"][bib_name][key]["abstract_attested"] is False
+    assert report["stamps"][bib_name][key] == "EVIDENCE-NONE"
+    assert calls == []
+
+
+def test_claimed_openalex_with_a_doi_is_corroborated_normally(tmp_path, monkeypatch):
+    """Control for the DOI half (a mutant that always pre-classifies
+    openalex as unprobeable turns this red)."""
+    eb_mod = _barrier(monkeypatch)
+    key = _corroboration_domain(tmp_path, source="openalex", doi="10.5/oa")
+    calls = []
+    _stub_corroborator(monkeypatch, eb_mod, ("corroborated", "openalex"), calls)
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    assert report["stamps"]["literature-domain-1.bib"][key] == "EVIDENCE-ABSTRACT"
+    assert len(calls) == 1
+
+
+def test_claimed_ndpr_without_a_title_is_unprobeable_and_with_one_is_not(monkeypatch):
+    """Unit-level parity pin for the ndpr shape (near-unreachable in a real
+    bib, so no execute()-level fixture): `_probe_candidate` gates ndpr on
+    `if not title` after `.strip()` -- the predicate must make the same
+    call. Without this branch, a title-less DOI-less ndpr claim in a
+    keyless-CORE workspace is a zero-network source_empty that resets the
+    consecutive-transport streak, the same defect as the openalex shape."""
+    eb_mod = _barrier(monkeypatch)
+    assert eb_mod._claimed_source_unprobeable({"title": "   "}, "ndpr") is True
+    assert eb_mod._claimed_source_unprobeable({}, "ndpr") is True
+    assert eb_mod._claimed_source_unprobeable({"title": "A Book"}, "ndpr") is False
+
+
 def test_an_uncorroborated_entry_can_still_earn_context(tmp_path, monkeypatch):
     """"Proceed exactly like any unattested entry" means the ordinary
     downstream tiers stay reachable -- no new code path, no dead end: this
@@ -3274,6 +3323,59 @@ def test_a_skipped_candidate_neither_counts_nor_resets_the_streak(tmp_path, monk
     assert [buckets[k]["outcome"] for k in order] == [
         "transport_failed", "probe_unavailable", "transport_failed",
         "probe_unavailable", "transport_failed", "corroboration_deadline"]
+
+
+def test_a_doiless_openalex_claim_does_not_reset_the_streak(tmp_path, monkeypatch):
+    """The reported defect end-to-end, with a FIELD-SENSITIVE stub that
+    plays the real corroborator's part: for a DOI-less openalex claim in
+    this keyless-CORE environment every probe is empty without a request,
+    so the corroborator returns source_empty -- which record() treats as an
+    ANSWER and resets the streak. Pre-fix trace: all six entries probed
+    (calls == 6), the two source_empty resets keep the breaker from ever
+    tripping. Post-fix: the two skips are pre-classified (never probed,
+    neither count nor reset), f3 trips the breaker at the third consecutive
+    transport failure, f4 buckets corroboration_deadline without a probe."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.delenv("CORE_API_KEY", raising=False)
+    import stamp_evidence as se
+    order = ["f1", "skip_oa1", "f2", "skip_oa2", "f3", "f4"]
+    chunks, entries = [], {}
+    for n, key in enumerate(order, start=1):
+        source = "openalex" if key.startswith("skip_oa") else "s2"
+        doi_line = "" if key.startswith("skip_oa") else f"  doi = {{10.1/{key}}},\n"
+        text = f"Streak abstract {n}."
+        chunks.append('@article{' + key + ',\n'
+                      '  author = {Doe, Jane},\n'
+                      f'  title = {{Study {n}}},\n'
+                      + doi_line +
+                      '  year = {2020},\n'
+                      f'  abstract = {{{text}}},\n'
+                      f'  abstract_source = {{{source}}},\n'
+                      '  keywords = {topic, High}\n'
+                      '}')
+        entries[key] = {"abstract_source": source,
+                        "abstract_sha256": se.abstract_hash(text)}
+    _domain(tmp_path, 1, "\n\n".join(chunks), cleaning=_cleaning(1, {}),
+            enrichment=_enrichment(1, entries))
+    calls = []
+
+    def _outage_stub(fields, s2_api_key=None, openalex_email=None,
+                     core_api_key=None, debug=False):
+        calls.append(dict(fields))
+        if not fields.get("doi"):
+            return ("source_empty", None)   # zero-network empty, pre-fix
+        return ("transport_failed", None)   # the live outage
+    monkeypatch.setattr(eb_mod.eb, "corroborate_abstract", _outage_stub)
+    monkeypatch.setattr(eb_mod.rc, "fetch_articles",
+                        lambda union, debug=False: ({}, []))
+
+    assert eb_mod.execute(tmp_path, 1) == 0
+    report = _report(tmp_path)
+    buckets = report["abstract_corroboration"]["literature-domain-1.bib"]
+    assert [buckets[k]["outcome"] for k in order] == [
+        "transport_failed", "probe_unavailable", "transport_failed",
+        "probe_unavailable", "transport_failed", "corroboration_deadline"]
+    assert len(calls) == 3
 
 
 def test_an_unrecognized_outcome_neither_counts_nor_resets(tmp_path, monkeypatch):

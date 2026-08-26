@@ -301,7 +301,7 @@ def _heal_bucket(source: str, outcome: str) -> dict:
 def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
     """Can the claimed abstract source be asked about THIS entry, here?
 
-    Exactly the two shapes where the answer is a flat no, both read off
+    Every shape where the answer is a flat no, each read off
     `_probe_candidate`'s own preconditions rather than guessed at:
 
     * `core` with no API key -- resolution skips keyless CORE rather than
@@ -313,23 +313,33 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
       point of this predicate -- a check that disagrees with it in either
       direction is a bug, and the disagreement this avoids would demote an
       entry the probe would have answered for.
-    * `s2` with no DOI -- a bib entry carries no Semantic Scholar id, so
-      the DOI is the only identifier the probe has. Read through
-      `eb.get_doi`, the same extractor the corroborator uses, for that same
-      parity reason: mislabeling a PROBEABLE entry unprobeable would demote
-      an honest attestation, the one error direction that costs a tier.
+    * `s2` or `openalex` with no DOI -- a bib entry carries no Semantic
+      Scholar or OpenAlex id, so the DOI is the only identifier either
+      probe has (`_probe_candidate` gates both on `if not doi`). Read
+      through `eb.get_doi`, the same extractor the corroborator uses, for
+      that same parity reason: mislabeling a PROBEABLE entry unprobeable
+      would demote an honest attestation, the one error direction that
+      costs a tier. Both need a field the entry's own enrichment must have
+      had (both resolvers are DOI-gated), i.e. a later deletion.
+    * `ndpr` with no title -- NDPR resolution is a title search over
+      review essays; `_probe_candidate` gates on the stripped title, so
+      the same expression is used here (parity again). Near-unreachable (a
+      bib entry without a title is broken upstream), covered because it is
+      the same zero-network streak-reset shape as the openalex one.
 
-    Deliberately NOT generalized to every unprobeable combination
-    (`openalex` without a DOI, `ndpr` without a title): the refinement
-    enumerates these two and every other case goes to the corroborator and
-    is recorded verbatim. Both residual shapes need a field the entry's own
-    enrichment must have had, i.e. a later deletion, and both land in
-    `source_empty` -- visible, fail-closed, and re-derived on the next run.
+    Pre-classification forecloses the fallback probes a full corroboration
+    would still run for these claims (e.g. core-by-title for a DOI-less s2
+    claim when a CORE key is set) -- accepted: this predicate's contract
+    is "can the CLAIMED source be asked", and streak integrity (a
+    zero-network SOURCE_EMPTY resets the consecutive-transport streak,
+    hiding a live outage) outweighs a rare fallback corroboration.
     """
     if claimed == "core":
         return not os.environ.get("CORE_API_KEY", "")
-    if claimed == "s2":
+    if claimed in ("s2", "openalex"):
         return not eb.get_doi({"fields": fields})
+    if claimed == "ndpr":
+        return not (fields.get("title") or "").strip()
     return False
 
 

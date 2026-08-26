@@ -494,8 +494,9 @@ source's matching text attests, so cross-source rendering drift cannot
 demote what the claimed source confirms). Every failure direction is
 fail-closed and bucketed in the report: `mismatch`, `source_empty`
 (probed, authoritatively none), `probe_unavailable` (claimed source
-unaskable — no CORE key, no DOI for s2, or a non-allowlisted claim),
-`transport_failed` and `corroboration_deadline` (both PENDING — the
+unaskable — no CORE key, no DOI for s2 or openalex, no title for ndpr,
+or a non-allowlisted claim), `transport_failed` and
+`corroboration_deadline` (both PENDING — the
 barrier re-derives on every run), `probe_error`, and the heal path's
 `unhealed`. The pass is budgeted like its siblings (180 s deadline, 3
 consecutive-non-answer breaker). The report's `schema_version` bumped to
