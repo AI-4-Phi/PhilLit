@@ -38,6 +38,18 @@ Requirements:
 - CrossRef `book` / `edited-book` → `@book` (for `edited-book`, use `editor` instead of `author`)
 - CrossRef `proceedings-article` → `@inproceedings` (use `container_title` as `booktitle`)
 
+**`container_title` can name the SERIES rather than the volume.** CrossRef's
+raw `container-title` is an ARRAY, and for a `book-chapter` it commonly holds
+both the series and the volume. `verify_paper.py` collapses it to `[0]`, so a
+chapter's `booktitle` can arrive as the series name — observed in production
+2026-08-26, where `susser2013artificial` shipped `booktitle = {Studies in
+Applied Philosophy, Epistemology and Rational Ethics}` instead of *Philosophy
+and Theory of Artificial Intelligence*. Nothing else about such an entry is
+wrong (DOI, publisher, authors, year all verify), but the reference is not
+resolvable by a reader. **Do not "fix" this by reading `[1]`** — array order
+is not guaranteed. Open finding; see the service-intake findings section in
+`docs/ROADMAP.md`.
+
 See `CROSSREF_TO_BIBTEX_TYPE` in `verify_paper.py` for the full mapping.
 
 ### Citation Keys
@@ -136,7 +148,7 @@ This prevents hallucination of any metadata. The rule applies to EVERY field, no
 | `author` | Any API | — | Required — don't include paper |
 | `title` | Any API | — | Required — don't include paper |
 | `year` | Any API | — | Required — don't include paper |
-| `journal`/`booktitle` | CrossRef `container_title` (field name depends on `suggested_bibtex_type`: `journal` for articles, `booktitle` for incollection/inproceedings) | S2 `venue`, OpenAlex `source.name` | **Omit field entirely** |
+| `journal`/`booktitle` | CrossRef `container_title` (field name depends on `suggested_bibtex_type`: `journal` for articles, `booktitle` for incollection/inproceedings; **for chapters this may be the SERIES, not the volume** — see the note under "Determining entry type from CrossRef") | S2 `venue`, OpenAlex `source.name` | **Omit field entirely** |
 | `volume` | CrossRef | S2/OpenAlex | **Omit field entirely** |
 | `number` (issue) | CrossRef `issue` | S2/OpenAlex | **Omit field entirely** |
 | `pages` | CrossRef `page` | S2/OpenAlex | **Omit field entirely** |

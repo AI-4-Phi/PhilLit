@@ -33,9 +33,10 @@ cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
 
 ## Findings from the service's fffb721 intake reviews (2026-08-25)
 
-Four upstream-owned defects, found by the service's pre-run diff reviews
-and verified against this repo's code at `fffb721`; each reaches production
-by mirror once fixed here. In priority order:
+Five upstream-owned defects, found by the service's pre-run diff reviews and
+by its 2026-08-26 acceptance run, verified against this repo's code at
+`fffb721`; each reaches production by mirror once fixed here. In priority
+order:
 
 - **Corroboration streak-reset wart** (`evidence_barrier.py`,
   `_claimed_source_unprobeable`): an `openalex`-claimed entry with no DOI
@@ -59,6 +60,28 @@ by mirror once fixed here. In priority order:
   does not exist and cannot set anything. Near-unreachable trigger (keyless
   CORE never produces a claimed-`core` abstract), but the sentence belongs
   in operator docs, not the skill.
+- **`container-title[0]` ships a book chapter's SERIES as its `booktitle`**
+  (`skills/philosophy-research/scripts/verify_paper.py:239-240`:
+  `container = item.get("container-title", []); container_title =
+  container[0] if container else ""`). CrossRef returns `container-title` as
+  an ARRAY, and for a `book-chapter` it commonly holds both the series and
+  the volume; taking `[0]` silently picks whichever came first. **Observed in
+  production**, not inferred: the service's acceptance run
+  `dbe0667370d74b4f` (2026-08-26) delivered `susser2013artificial` with
+  `booktitle = {Studies in Applied Philosophy, Epistemology and Rational
+  Ethics}` — the Springer series — while CrossRef's array for
+  `10.1007/978-3-642-31674-6_21` is `["Studies in Applied Philosophy,
+  Epistemology and Rational Ethics", "Philosophy and Theory of Artificial
+  Intelligence"]`, the second being the actual volume. Low severity and **NOT
+  an attestation failure** — DOI, publisher, title, authors and year are all
+  correct and the entry keeps its tier — but a reader cannot find the book
+  from what shipped, and a citation to it is not resolvable. **`[1]` is not
+  the fix**: array order is not documented as series-then-volume, so the
+  disambiguators worth using are the `series` field, `suggested_bibtex_type`,
+  and the fact that a series name recurs across many unrelated DOIs while a
+  volume title does not. Scope is `book-chapter` / `proceedings-article`;
+  `journal-article` is unaffected in practice (journals rarely carry two
+  container titles), so the fix should not disturb the `@article` path.
 - **`docs/conventions.md` year-gate sentence overstates abstention**
   (long-standing; re-verified byte-unchanged at `fffb721`): "On any
   same-DOI year conflict the cleaner abstains from the entry entirely"
