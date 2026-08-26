@@ -126,6 +126,22 @@ the uncited sibling as a phantom reference, the exact class sub-item F
 (cosmetic; prose↔References stay consistent; the delivered bib names both
 works). Record: the live-acceptance audit doc.
 
+The 2026-08-26 acceptance run produced a sharper instance of the same
+keep-all resurrection, at FIRST assembly — no re-run involved: prose cited
+"Chalmers (2023a)", and the protective branch carried the group's uncited
+b-sibling into References, an entry the synthesis outline had excluded as
+EVIDENCE-NONE (the entry's key said 2024 but its `year` field said 2023, so
+the barrier had lettered it into the Chalmers-2023 group). The run's
+orchestrator caught it by hand and removed it. The "benign / cosmetic"
+rationale above does not cover an evidence-excluded phantom in delivered
+References — recorded here (owner decision 2026-08-26: extend this residual,
+do not queue) so a recurrence is read as this residual, not a new defect. If
+it recurs, the directions worth evaluating are assembly-time letter
+re-derivation over the delivered set (which re-opens the desync analysis
+above, but on different premises — assembly can renumber prose and
+References together) and a report bucket naming every keep-all resurrection
+so no orchestrator has to find one by hand.
+
 One residual from the same corpus observation: prose can mix the straight and
 curly apostrophe for one surname (`O'Neill` / `O’Neill`) within a single
 document. The renderer and the linter are immune (both compare through
