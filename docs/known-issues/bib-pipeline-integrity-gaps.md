@@ -491,10 +491,16 @@ ledger equality is CANDIDACY only; `EVIDENCE-ABSTRACT` requires a live
 fetch by the entry's own identity whose text hash-matches the bib's
 (claimed source probed first, then the other allowlisted APIs — any
 source's matching text attests, so cross-source rendering drift cannot
-demote what the claimed source confirms). Every failure direction is
+demote what the claimed source confirms). Those commits pre-classified
+only two unaskable shapes, keyless-core and DOI-less-s2; the
+pre-classification was extended 2026-08-26 (plugin v0.5.1) to DOI-less
+openalex, title-less ndpr, and keyed core with neither DOI nor title, so
+each of the four allowlisted claims is now checked against its own
+probe's gate. Every failure direction is
 fail-closed and bucketed in the report: `mismatch`, `source_empty`
 (probed, authoritatively none), `probe_unavailable` (claimed source
-unaskable — no CORE key, no DOI for s2 or openalex, no title for ndpr,
+unaskable — no CORE key, a keyed CORE claim with neither DOI nor title,
+no DOI for s2 or openalex, no title for ndpr,
 or a non-allowlisted claim), `transport_failed` and
 `corroboration_deadline` (both PENDING — the
 barrier re-derives on every run), `probe_error`, and the heal path's

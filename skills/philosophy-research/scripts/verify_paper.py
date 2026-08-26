@@ -309,15 +309,25 @@ def disambiguate_container(item: dict, result: dict, limiter,
     UNANIMITY gate, not a vote: every returned parent must name exactly one
     and the same container element. A parent naming neither (title drift or
     ISBN reuse), both, or a different element is contradictory exact-ISBN
-    evidence and bails; agreeing duplicate registrations pass. A truncated
-    page (total-results beyond the rows returned) also bails -- unseen
-    records could dissent.
+    evidence and bails; agreeing duplicate registrations pass. A parent
+    whose `title` is not a LIST is unusable rather than merely unhelpful
+    and bails too -- an object title would otherwise be iterated as its
+    keys, each a str, and could authorize a volume the record never names.
+    A truncated page (total-results beyond the rows returned) also bails --
+    unseen records could dissent. Container elements that NORMALIZE alike
+    bail before the request: they collapse in the normalized->raw map, so
+    a parent naming both would score as naming exactly one.
 
-    `series` needs SEPARATE support: the parent record's own
-    container-title names its series, and only when it corroborates the one
-    remaining element (exactly-2 arrays) is `series` set -- leftover
-    position alone proves nothing, so a 3+-element array fixes
-    container_title only.
+    `series` needs SEPARATE support, judged PER PARENT rather than over a
+    pooled set: the parent record's own container-title names its series,
+    and `series` is set only when at least one parent's well-formed
+    non-empty container-title contains the one remaining element (exactly-2
+    arrays) and no such parent lacks it -- otherwise one parent could
+    supply the element while another names a different series, and the
+    union would emit `series` off contradictory evidence. A parent with no
+    well-formed non-empty container-title abstains, casting no vote either
+    way. Leftover position alone proves nothing, so a 3+-element array
+    fixes container_title only.
 
     Every failure path BAILS to the incumbent behavior (container_title =
     element [0], series empty): this is best-effort enrichment, not
@@ -351,6 +361,14 @@ def disambiguate_container(item: dict, result: dict, limiter,
                   if isinstance(c, str) and c.strip()]
     if len(containers) < 2:
         return
+    # Two elements that normalize alike collapse in the normalized->raw
+    # dict below, so a parent naming BOTH would score `len(matches) == 1`
+    # and silently defeat the exactly-one-element rule. Nothing about such
+    # an array can be disambiguated, so bail before spending a request.
+    normalized = [_norm_container(c) for c in containers]
+    if len(set(normalized)) != len(normalized):
+        return
+    norm_containers = dict(zip(normalized, containers))
     # CrossRef's isbn: filter matches its indexed UNHYPHENATED form; the
     # ISBN array on a record is not guaranteed unhyphenated, and a
     # hyphenated value would yield zero hits and a silent bail.
@@ -382,10 +400,15 @@ def disambiguate_container(item: dict, result: dict, limiter,
         total = message.get("total-results", len(parents))
         if not parents or (isinstance(total, int) and total > len(parents)):
             return
-        norm_containers = {_norm_container(c): c for c in containers}
         volume_keys = set()
         for p in parents:
-            titles = {_norm_container(t) for t in (p.get("title") or [])
+            # A parent whose `title` is an object would iterate its KEYS,
+            # every one of them a str -- so a malformed record could
+            # positively authorize a volume it never names. Unusable
+            # evidence bails, like every other shape short of agreement.
+            if not isinstance(p, dict) or not isinstance(p.get("title"), list):
+                return
+            titles = {_norm_container(t) for t in p["title"]
                       if isinstance(t, str)}
             matches = {k for k in norm_containers if k in titles}
             if len(matches) != 1:
@@ -396,12 +419,23 @@ def disambiguate_container(item: dict, result: dict, limiter,
         volume = norm_containers[next(iter(volume_keys))]
         result["container_title"] = volume
         remaining = [c for c in containers if c != volume]
-        parent_series = {_norm_container(t)
-                         for p in parents
-                         for t in (p.get("container-title") or [])
-                         if isinstance(t, str)}
-        if (len(containers) == 2 and len(remaining) == 1
-                and _norm_container(remaining[0]) in parent_series):
+        # Per-parent, deliberately NOT a union: pooling lets one parent
+        # supply the remaining element while another's container-title
+        # names a DIFFERENT series, and contradictory evidence must not
+        # emit `series`. A parent with no well-formed non-empty
+        # container-title abstains rather than dissenting -- it passed the
+        # title gate above, so it stays usable for the volume.
+        voters = []
+        for p in parents:
+            raw_series = p.get("container-title")
+            if not isinstance(raw_series, list):
+                continue
+            vals = {_norm_container(t) for t in raw_series
+                    if isinstance(t, str) and t.strip()}
+            if vals:
+                voters.append(vals)
+        if (len(containers) == 2 and len(remaining) == 1 and voters
+                and all(_norm_container(remaining[0]) in v for v in voters)):
             result["series"] = remaining[0]
     except Exception as e:
         if debug:

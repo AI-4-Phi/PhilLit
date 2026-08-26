@@ -312,7 +312,13 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
       there and must be probed here too. Parity with the probe is the whole
       point of this predicate -- a check that disagrees with it in either
       direction is a bug, and the disagreement this avoids would demote an
-      entry the probe would have answered for.
+      entry the probe would have answered for. The key is only HALF the
+      precondition: `_probe_candidate` gates on `not (doi or title)` too,
+      so a KEYED workspace still cannot ask CORE about an entry carrying
+      neither identifier -- the same parity-with-the-probe reading, and
+      near-unreachable for the same broken-upstream reason as the ndpr
+      shape below. Read through `eb.get_doi` and the stripped title, the
+      expressions the probe itself uses.
     * `s2` or `openalex` with no DOI -- a bib entry carries no Semantic
       Scholar or OpenAlex id, so the DOI is the only identifier either
       probe has (`_probe_candidate` gates both on `if not doi`). Read
@@ -343,7 +349,9 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
     hiding a live outage) outweighs a rare fallback corroboration.
     """
     if claimed == "core":
-        return not os.environ.get("CORE_API_KEY", "")
+        return (not os.environ.get("CORE_API_KEY", "")
+                or not (eb.get_doi({"fields": fields})
+                        or (fields.get("title") or "").strip()))
     if claimed in ("s2", "openalex"):
         return not eb.get_doi({"fields": fields})
     if claimed == "ndpr":

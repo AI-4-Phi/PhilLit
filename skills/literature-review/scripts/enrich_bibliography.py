@@ -249,7 +249,10 @@ def resolve_ndpr_abstract(
     made an outage indistinguishable from a genuine no-match, so NDPR
     demotion counts were unattributable in any run report. Each caller
     picks its own failure direction -- the enrichment pass logs and moves
-    on; the corroboration probe reads it as a transport non-answer.
+    on; the corroboration probe reads it as a transport non-answer; and
+    the barrier heal path (`evidence_barrier._heal_abstract`, which calls
+    this directly for a claimed-`ndpr` ledger source) already wraps the
+    call in its own try/except and reads it as a failed heal.
     """
     import search_ndpr
     import fetch_ndpr

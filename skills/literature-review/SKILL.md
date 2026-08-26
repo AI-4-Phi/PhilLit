@@ -237,9 +237,9 @@ Never advance to a next step in this phase before completing the current step.
    entry on every run). `probe_unavailable` merges two different causes
    instead — a claimed source outside the allowlist, which can never earn
    the tier, and one this environment cannot ask (claimed `core` with no
-   `CORE_API_KEY` set, which demotes every claimed-core entry in a keyless
-   workspace; claimed `s2` or `openalex` with no DOI; claimed `ndpr` with
-   no title).
+   `CORE_API_KEY` set — which demotes every claimed-core entry in a keyless
+   workspace — or with neither DOI nor title; claimed `s2` or `openalex`
+   with no DOI; claimed `ndpr` with no title).
 
 Never advance to Phase 4 before all domain researchers have completed AND the evidence barrier has exited zero.
 

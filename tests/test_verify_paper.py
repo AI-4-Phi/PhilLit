@@ -587,10 +587,11 @@ class TestContainerDisambiguation:
     @patch("requests.get")
     def test_malformed_elements_inside_lists_bail_cleanly(self, mock_get):
         """Element-level malformation inside well-formed lists (an integer
-        and an object among the ISBNs, an object among the containers, a
-        parent whose title is a bare string): each bad value is skipped, the
-        char-iterating parent title matches zero elements, and the unanimity
-        gate bails -- leaving the incumbent container_title untouched."""
+        and an object among the ISBNs, an object among the containers): each
+        bad value is skipped. The parent whose title is a bare STRING is not
+        element-level malformation but a bad title TYPE, so it bails on the
+        list-type gate before the unanimity check ever sees it -- either way
+        the incumbent container_title is left untouched."""
         import verify_paper as vp
         item = dict(self.CHAPTER_ITEM)
         item["ISBN"] = [9783642316739, {"isbn": "x"}, "9783642316746"]
@@ -605,6 +606,57 @@ class TestContainerDisambiguation:
         before = result["container_title"]
         vp.disambiguate_container(item, result, self._limiter(), "")
         assert result["container_title"] == before
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_dict_parent_title_is_not_evidence(self, mock_get):
+        """A parent whose `title` is an OBJECT iterates its KEYS, and a key is
+        a str, so a malformed record could positively authorize a volume it
+        never names. A parent that is not a dict with a LIST title is
+        unusable evidence, and unusable evidence bails -- consistent with the
+        unanimity gate treating anything short of agreement as contradiction."""
+        import verify_paper as vp
+        mock_get.return_value = self._parent_response(
+            [{"title": {"Philosophy and Theory of Artificial Intelligence": True},
+              "type": "book"}])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == self.CHAPTER_ITEM["container-title"][0]
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_parents_disagreeing_on_the_series_set_no_series(self, mock_get):
+        """Series support is per-parent, not a union: both parents agree on
+        the VOLUME (so container_title is corrected), but one names the real
+        series and the other names a different one. A union would find the
+        remaining element present in the pooled set and emit `series` off
+        contradictory evidence."""
+        import verify_paper as vp
+        dissenter = dict(self.PARENT_BOOK,
+                         **{"container-title": ["Some Other Series"]})
+        mock_get.return_value = self._parent_response(
+            [dict(self.PARENT_BOOK), dissenter])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_containers_normalizing_alike_bail_without_request(self, mock_get):
+        """Two elements that normalize to the same key collapse in the
+        normalized->raw dict, so `len(matches) != 1` silently reads as ONE
+        match and the exactly-one-element rule is defeated. Caught before the
+        request: nothing about this array can be disambiguated, whatever the
+        parents say."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM)
+        item["container-title"] = ["Book Title", "  BOOK   TITLE  "]
+        mock_get.return_value = self._parent_response([self.PARENT_BOOK])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        mock_get.assert_not_called()
+        assert result["container_title"] == "Book Title"
         assert result["series"] == ""
 
     @patch("requests.get")

@@ -34,9 +34,9 @@ Requirements:
 
 **Determining entry type from CrossRef**: When `verify_paper.py` returns a `suggested_bibtex_type` field, **use it**. CrossRef knows whether a DOI is a journal article or a book chapter. Common mapping:
 - CrossRef `journal-article` → `@article` (use `container_title` as `journal`)
-- CrossRef `book-chapter` → `@incollection` (use `container_title` as `booktitle`, include `publisher`)
+- CrossRef `book-chapter` → `@incollection` (use `container_title` as `booktitle`, include `publisher`, and `series` when the output carries one)
 - CrossRef `book` / `edited-book` → `@book` (for `edited-book`, use `editor` instead of `author`)
-- CrossRef `proceedings-article` → `@inproceedings` (use `container_title` as `booktitle`)
+- CrossRef `proceedings-article` → `@inproceedings` (use `container_title` as `booktitle`, and `series` when the output carries one)
 
 **`container_title` may need disambiguating from a SERIES name.** CrossRef's
 raw `container-title` is an ARRAY, and for a `book-chapter` or
@@ -45,8 +45,8 @@ raw `container-title` is an ARRAY, and for a `book-chapter` or
 volume by looking up the parent volume's own CrossRef record by ISBN:
 `container_title` is set to the volume only when every returned parent
 record unanimously names the same array element as its own title; `series`
-is populated only when the parent record's own `container-title`
-corroborates the one remaining element, and only for exactly-two-element
+is populated only when every parent record that carries a `container-title`
+of its own corroborates the one remaining element, and only for exactly-two-element
 arrays (a 3+-element array fixes `container_title` alone and leaves
 `series` empty). On any lookup failure, ambiguity, or disagreement among
 parents, disambiguation bails to the incumbent fallback: `container_title`
@@ -315,7 +315,7 @@ This is a *fix*, not a block. An earlier blocking design (`metadata_validator.py
 
 The cleaner is a backstop against metadata that contradicts the APIs, not a licence. **Field Grounding above is the actual rule** — write only what API output gave you, and omit the field otherwise.
 
-`year` is **corrected**, not removed — and only on entry-scoped evidence: a CrossRef result identified by envelope content (`api_source` is `crossref` AND the file carries exactly one result — the filename is deliberately NOT the test) that matches this entry's own DOI, carries a version-of-record `year_basis` (recorded by `verify_paper.py`; registration/created timestamps never overwrite), and is not contradicted by another entry-scoped record. On a same-DOI year conflict the cleaner abstains from the entry entirely (attesting existence in the cleaning ledger — see Evidence Tiers above) unless entry-scoped records settle it: an entry-scoped record is a direct CrossRef lookup on this entry's own DOI and carries correction authority, so when the year-bearing entry-scoped records agree the conflict does not force abstention (whether the agreed year actually overwrites still follows the selected record and its completeness rules); when the entry-scoped records disagree among themselves, the cleaner abstains; and when none supplies a year they settle nothing, so a conflicted pool abstains as before. For the reprint-capable entry types (`@book`, `@incollection`, `@inbook`) a further **direction bound** applies: the year may only move earlier. A reprint edition has its own DOI whose print date is the reprint's year, not the work's original publication year — the year Chicago cites — so a later year is refused, as is a bib year the direction test cannot parse (`n.d.`, `[2021]`); every refusal is counted in the cleaning report rather than passing silently. `author` and `title` are identity fields and are never touched.
+`year` is **corrected**, not removed — and only on entry-scoped evidence: a CrossRef result identified by envelope content (`api_source` is `crossref` AND the file carries exactly one result — the filename is deliberately NOT the test) that matches this entry's own DOI, carries a version-of-record `year_basis` (recorded by `verify_paper.py`; registration/created timestamps never overwrite), and is not contradicted by another entry-scoped record. On a same-DOI year conflict the cleaner abstains from the entry entirely (attesting existence in the cleaning ledger — see Evidence Tiers above) unless entry-scoped records settle it: an entry-scoped record — the singleton CrossRef envelope matching this entry's own DOI, as defined above — carries correction authority, so when the year-bearing entry-scoped records agree the conflict does not force abstention (whether the agreed year actually overwrites still follows the selected record and its completeness rules); when the entry-scoped records disagree among themselves, the cleaner abstains; and when none supplies a year they settle nothing, so a conflicted pool abstains as before. For the reprint-capable entry types (`@book`, `@incollection`, `@inbook`) a further **direction bound** applies: the year may only move earlier. A reprint edition has its own DOI whose print date is the reprint's year, not the work's original publication year — the year Chicago cites — so a later year is refused, as is a bib year the direction test cannot parse (`n.d.`, `[2021]`); every refusal is counted in the cleaning report rather than passing silently. `author` and `title` are identity fields and are never touched.
 
 **Exempt fields** (LLM-generated or enrichment-added, not cleaned — `EXEMPT_FIELDS` in the cleaner):
 - `note` (annotations)

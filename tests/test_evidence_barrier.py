@@ -2875,6 +2875,25 @@ def test_claimed_ndpr_without_a_title_is_unprobeable_and_with_one_is_not(monkeyp
     assert eb_mod._claimed_source_unprobeable({"title": "A Book"}, "ndpr") is False
 
 
+def test_claimed_core_with_a_key_but_no_doi_or_title_is_unprobeable(monkeypatch):
+    """The key is only HALF of CORE's precondition: `_probe_candidate` gates
+    core on `if not core_api_key or not (doi or title)`, so a keyed workspace
+    still cannot ask CORE about an entry carrying neither. Without this
+    conjunct the entry reached the corroborator, whose core probe returned
+    empty with no request (and s2/openalex too, both DOI-gated), producing a
+    zero-network source_empty that RESET the consecutive-transport streak --
+    the same defect as the openalex and ndpr shapes above."""
+    eb_mod = _barrier(monkeypatch)
+    monkeypatch.setenv("CORE_API_KEY", "core-key")
+    assert eb_mod._claimed_source_unprobeable({"title": "  "}, "core") is True
+    assert eb_mod._claimed_source_unprobeable({}, "core") is True
+    # controls: either identifier alone makes the probe possible
+    assert eb_mod._claimed_source_unprobeable(
+        {"title": "A Book"}, "core") is False
+    assert eb_mod._claimed_source_unprobeable(
+        {"doi": "10.1/x"}, "core") is False
+
+
 def test_an_uncorroborated_entry_can_still_earn_context(tmp_path, monkeypatch):
     """"Proceed exactly like any unattested entry" means the ordinary
     downstream tiers stay reachable -- no new code path, no dead end: this
