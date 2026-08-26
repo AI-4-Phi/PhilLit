@@ -328,6 +328,64 @@ MOCK_REVIEW_HTML = """<html><body><article><div class="entry-content">
 </div></article></body></html>"""
 
 
+class TestNdprTransportErrorPropagation:
+    def test_transport_error_propagates(self):
+        """search_ndpr raises RuntimeError on network failure; the resolver
+        must not swallow it into (None, None) -- that made an outage
+        indistinguishable from a genuine no-match in every run report."""
+        import enrich_bibliography
+        with patch("search_ndpr.search_ndpr",
+                   side_effect=RuntimeError("Network error fetching sitemap")):
+            with pytest.raises(RuntimeError):
+                enrich_bibliography.resolve_ndpr_abstract("Some Book", "Doe")
+
+    def test_no_match_is_still_none(self):
+        import enrich_bibliography
+        with patch("search_ndpr.search_ndpr", return_value=None):
+            assert enrich_bibliography.resolve_ndpr_abstract(
+                "Some Book") == (None, None)
+
+    def test_fetch_transport_error_propagates_too(self):
+        """The swallow covered BOTH stages; a future try/except around only
+        the review fetch would leave the conflation half-intact."""
+        import enrich_bibliography
+        with patch("search_ndpr.search_ndpr",
+                   return_value={"url": "https://ndpr.nd.edu/reviews/x/",
+                                 "slug": "x", "score": 0.9}), \
+             patch("fetch_ndpr.fetch_ndpr_review",
+                   side_effect=RuntimeError("HTTP 503 fetching review")):
+            with pytest.raises(RuntimeError):
+                enrich_bibliography.resolve_ndpr_abstract("Some Book", "Doe")
+
+    @patch("enrich_bibliography.resolve_abstract_for_entry")
+    @patch("enrich_bibliography.resolve_ndpr_abstract")
+    def test_ndpr_outage_does_not_kill_the_pass(self, mock_ndpr, mock_resolve):
+        """Best-effort enrichment: the transport error now propagates out of
+        the resolver, so the pass-level wrap is what keeps an NDPR outage
+        from killing the whole enrichment run."""
+        mock_resolve.return_value = (None, None)
+        mock_ndpr.side_effect = RuntimeError("Network error fetching sitemap")
+
+        import enrich_bibliography
+
+        with tempfile.NamedTemporaryFile(mode='w', suffix='.bib', delete=False,
+                                         encoding='utf-8') as f:
+            f.write(SAMPLE_BOOK_NO_ABSTRACT)
+            input_path = Path(f.name)
+        output_path = input_path.with_suffix('.enriched.bib')
+        try:
+            stats = enrich_bibliography.enrich_bibliography(
+                input_path, output_path, None, None, None
+            )
+            assert stats['marked_incomplete'] == 1
+            assert stats['sources']['ndpr'] == 0
+            assert 'INCOMPLETE' in output_path.read_text(encoding='utf-8')
+        finally:
+            input_path.unlink()
+            if output_path.exists():
+                output_path.unlink()
+
+
 class TestResolveNdprAbstractIntegration:
     """Integration test exercising the real import chain inside resolve_ndpr_abstract."""
 

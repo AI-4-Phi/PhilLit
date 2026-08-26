@@ -243,30 +243,30 @@ def resolve_ndpr_abstract(
     """
     Try to find and extract a book summary from NDPR.
 
-    Returns:
-        Tuple of (summary_text, "ndpr") or (None, None)
+    Returns (summary_text, "ndpr") on a match, (None, None) when NDPR has
+    no matching review. Transport failures PROPAGATE (search_ndpr and
+    fetch_ndpr raise RuntimeError on network errors): swallowing them here
+    made an outage indistinguishable from a genuine no-match, so NDPR
+    demotion counts were unattributable in any run report. Each caller
+    picks its own failure direction -- the enrichment pass logs and moves
+    on; the corroboration probe reads it as a transport non-answer.
     """
     import search_ndpr
     import fetch_ndpr
 
-    try:
-        match = search_ndpr.search_ndpr(title, author, debug=debug)
-        if not match:
-            if debug:
-                log_progress(f"  NDPR: no sitemap match for '{title}'")
-            return None, None
-
-        result = fetch_ndpr.fetch_ndpr_review(match["url"], debug=debug)
-        summary = result.get("summary_text", "")
-
-        if summary and len(summary) > 50:
-            return summary, "ndpr"
-
+    match = search_ndpr.search_ndpr(title, author, debug=debug)
+    if not match:
+        if debug:
+            log_progress(f"  NDPR: no sitemap match for '{title}'")
         return None, None
 
-    except Exception as e:
-        log_progress(f"  NDPR error for '{title}': {e}")
-        return None, None
+    result = fetch_ndpr.fetch_ndpr_review(match["url"], debug=debug)
+    summary = result.get("summary_text", "")
+
+    if summary and len(summary) > 50:
+        return summary, "ndpr"
+
+    return None, None
 
 
 # =============================================================================
@@ -435,11 +435,11 @@ def _probe_candidate(
         if source == 'ndpr':
             if not title:
                 return ga.PROBE_EMPTY, None
-            # resolve_ndpr_abstract swallows its own errors and returns
-            # (None, None), so an NDPR fetch failure is indistinguishable
-            # from "no such review" and reads as PROBE_EMPTY -- the
-            # fail-closed direction, but it does mean ndpr never reports a
-            # transport failure of its own.
+            # resolve_ndpr_abstract propagates transport errors
+            # (RuntimeError from the sitemap or review fetch), so an NDPR
+            # outage escapes to this function's own except and reads as
+            # PROBE_TRANSPORT -- distinguishable from "no such review",
+            # which stays PROBE_EMPTY.
             text, _ = resolve_ndpr_abstract(title=title, author=author, debug=debug)
             return (ga.PROBE_OK, text) if text else (ga.PROBE_EMPTY, None)
     except Exception as e:
@@ -910,7 +910,15 @@ def enrich_bibliography(
         for idx, entry in book_entries_without_abstract:
             title = entry['fields'].get('title', '')
             author = get_author_last_name(entry)
-            abstract, source = resolve_ndpr_abstract(title, author, debug)
+            try:
+                abstract, source = resolve_ndpr_abstract(title, author, debug)
+            except Exception as e:
+                # Best-effort enrichment: an NDPR outage must not kill the
+                # pass. The corroboration probe deliberately has no such
+                # blanket -- there the same exception must read as a
+                # transport non-answer, not a no-match.
+                log_progress(f"  NDPR error for '{title}': {e}")
+                continue
             if abstract:
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract', abstract)
                 enriched_entries[idx] = add_field_to_entry(enriched_entries[idx], 'abstract_source', 'ndpr')

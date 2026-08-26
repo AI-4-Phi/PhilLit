@@ -1575,6 +1575,30 @@ def test_claimed_ndpr_falls_through_to_the_api_sources():
     assert calls == ["ndpr", "s2", "openalex", "core"]
 
 
+def test_ndpr_outage_reads_as_transport_failed_not_source_empty():
+    """RED before the fix: resolve_ndpr_abstract's blanket except turned an
+    NDPR outage into (None, None) -> PROBE_EMPTY -> source_empty. With
+    propagation, _probe_candidate's own except reads it as a transport
+    non-answer, which also counts toward the corroboration breaker streak
+    -- an outage IS a network non-answer."""
+    import enrich_bibliography
+    import get_abstract
+    import search_ndpr
+    calls = []
+    with patch.object(search_ndpr, "search_ndpr",
+                      side_effect=RuntimeError("Network error fetching sitemap")), \
+         patch.object(get_abstract, "probe_s2",
+                      _ProbeStub(calls, "s2", ("empty", None))), \
+         patch.object(get_abstract, "probe_openalex",
+                      _ProbeStub(calls, "openalex", ("empty", None))), \
+         patch.object(get_abstract, "probe_core",
+                      _ProbeStub(calls, "core", ("empty", None))):
+        outcome, source = enrich_bibliography.corroborate_abstract(
+            _fields(abstract_source="ndpr"), "s2-key", "mail@example.com",
+            "core-key")
+    assert (outcome, source) == ("transport_failed", None)
+
+
 def test_whitespace_and_backslash_folded_text_still_corroborates():
     """Comparison goes through stamp_evidence.abstract_hash, which folds
     runs of whitespace and drops backslashes -- a raw `fetched == bib`
