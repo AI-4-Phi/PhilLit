@@ -296,6 +296,326 @@ class TestFormatResult:
         assert result["score"] == 85.5
 
 
+class TestContainerDisambiguation:
+    CHAPTER_ITEM = {
+        "DOI": "10.1007/978-3-642-31674-6_21",
+        "type": "book-chapter",
+        "title": ["Artificial Intelligence and the Body"],
+        "container-title": [
+            "Studies in Applied Philosophy, Epistemology and Rational Ethics",
+            "Philosophy and Theory of Artificial Intelligence"],
+        "ISBN": ["9783642316739", "9783642316746"],
+        "publisher": "Springer Berlin Heidelberg",
+    }
+
+    # The parent volume's own CrossRef record, as the ISBN lookup returns
+    # it -- its `title` names the volume, its `container-title` the series
+    # (both verified against the live record for 10.1007/978-3-642-31674-6).
+    PARENT_BOOK = {
+        "title": ["Philosophy and Theory of Artificial Intelligence"],
+        "type": "book",
+        "container-title": [
+            "Studies in Applied Philosophy, Epistemology and Rational Ethics"],
+    }
+
+    @staticmethod
+    def _parent_response(items, total=None):
+        resp = MagicMock()
+        resp.status_code = 200
+        resp.json.return_value = {"message": {
+            "items": items,
+            "total-results": total if total is not None else len(items)}}
+        return resp
+
+    @staticmethod
+    def _limiter():
+        from rate_limiter import get_limiter
+        return get_limiter("crossref")
+
+    def test_format_result_series_defaults_empty(self, mock_crossref_response):
+        import verify_paper as vp
+        result = vp.format_result(mock_crossref_response["message"], "doi_lookup")
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_parent_title_picks_the_volume(self, mock_get):
+        """The parent book's own record (found by ISBN) names the volume;
+        its container-title corroborates the remaining element as the
+        series. This is the production shape: CrossRef put the series FIRST
+        for 10.1007/978-3-642-31674-6_21. ONE request, both ISBN forms in
+        one ORed filter."""
+        import verify_paper as vp
+        mock_get.return_value = self._parent_response([self.PARENT_BOOK])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert result["series"] == (
+            "Studies in Applied Philosophy, Epistemology and Rational Ethics")
+        assert mock_get.call_count == 1
+        called_params = mock_get.call_args.kwargs.get("params") or {}
+        assert "isbn:9783642316739" in called_params["filter"]
+        assert "isbn:9783642316746" in called_params["filter"]
+        assert "type:book" in called_params["filter"]
+
+    @patch("requests.get")
+    def test_reversed_array_order_picks_element_zero(self, mock_get):
+        """Mutation guard against the explicitly rejected `[1]` rule: with
+        the array REVERSED (volume first), the parent match must still pick
+        the volume -- a positional implementation that passes the
+        production-shape test fails here."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM)
+        item["container-title"] = list(reversed(
+            self.CHAPTER_ITEM["container-title"]))
+        mock_get.return_value = self._parent_response([self.PARENT_BOOK])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert result["series"] == (
+            "Studies in Applied Philosophy, Epistemology and Rational Ethics")
+
+    @patch("requests.get")
+    def test_genuinely_ambiguous_parents_bail(self, mock_get):
+        """Two parents naming DIFFERENT container elements: contradictory
+        exact-ISBN evidence, the unanimity gate bails."""
+        import verify_paper as vp
+        mock_get.return_value = self._parent_response(
+            [{"title": [self.CHAPTER_ITEM["container-title"][0]], "type": "book"},
+             {"title": [self.CHAPTER_ITEM["container-title"][1]], "type": "book"}])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == self.CHAPTER_ITEM["container-title"][0]
+        assert result["series"] == ""
+        assert mock_get.call_count == 1   # one combined request, no retry
+
+    @patch("requests.get")
+    def test_contradictory_unrelated_parent_bails(self, mock_get):
+        """One parent names the volume, a second exact-ISBN parent names an
+        UNRELATED book (ISBN reuse / registration error): the unrelated
+        record is contradictory evidence, not noise to be outvoted."""
+        import verify_paper as vp
+        mock_get.return_value = self._parent_response(
+            [self.PARENT_BOOK,
+             {"title": ["Some Entirely Different Book"], "type": "book"}])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == self.CHAPTER_ITEM["container-title"][0]
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_agreeing_duplicate_parents_proceed(self, mock_get):
+        """Duplicate registrations of the SAME volume agree -- they must not
+        read as ambiguity (the unanimity gate is on titles, not rows)."""
+        import verify_paper as vp
+        mock_get.return_value = self._parent_response(
+            [dict(self.PARENT_BOOK), dict(self.PARENT_BOOK)])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert mock_get.call_count == 1
+
+    @patch("requests.get")
+    def test_truncated_result_set_bails(self, mock_get):
+        """total-results beyond the returned rows means unseen records could
+        dissent -- deciding from a truncated page is not fail-closed."""
+        import verify_paper as vp
+        mock_get.return_value = self._parent_response(
+            [dict(self.PARENT_BOOK), dict(self.PARENT_BOOK)], total=12)
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == self.CHAPTER_ITEM["container-title"][0]
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_three_element_array_fixes_container_only(self, mock_get):
+        """A 3+-element array's leftover is not provably a series name:
+        container_title is fixed, series stays empty."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM)
+        item["container-title"] = list(self.CHAPTER_ITEM["container-title"]) + [
+            "A Third Container Value"]
+        mock_get.return_value = self._parent_response([self.PARENT_BOOK])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_series_needs_parent_corroboration(self, mock_get):
+        """A parent WITHOUT a container-title proves the volume but not the
+        series: container_title is fixed, series stays empty."""
+        import verify_paper as vp
+        parent = {k: v for k, v in self.PARENT_BOOK.items()
+                  if k != "container-title"}
+        mock_get.return_value = self._parent_response([parent])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_proceedings_article_parent_is_type_proceedings(self, mock_get):
+        """A proceedings-article's volume record is type `proceedings` --
+        omitting it from the parent-type filter would silently exclude that
+        half of the scope."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM, type="proceedings-article")
+        mock_get.return_value = self._parent_response(
+            [{"title": ["Philosophy and Theory of Artificial Intelligence"],
+              "type": "proceedings"}])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        called_params = mock_get.call_args.kwargs.get("params") or {}
+        assert "type:proceedings" in called_params["filter"]
+
+    @patch("requests.get")
+    def test_parent_title_matching_no_element_bails(self, mock_get):
+        """An ISBN hit whose title matches neither element carries no
+        authority over THIS array -- conservative bail, no guessing."""
+        import verify_paper as vp
+        mock_get.return_value = self._parent_response(
+            [{"title": ["Some Entirely Different Book"], "type": "book"}])
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == self.CHAPTER_ITEM["container-title"][0]
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_network_failure_bails(self, mock_get):
+        import verify_paper as vp
+        mock_get.side_effect = Exception("boom")
+        result = vp.format_result(self.CHAPTER_ITEM, "doi_lookup")
+        vp.disambiguate_container(self.CHAPTER_ITEM, result, self._limiter(), "")
+        assert result["container_title"] == self.CHAPTER_ITEM["container-title"][0]
+        assert result["series"] == ""
+
+    @patch("requests.get")
+    def test_json_null_container_or_isbn_never_crashes(self, mock_get):
+        """CrossRef can emit a JSON null where an array is expected; the
+        guards must bail BEFORE any comprehension raises TypeError."""
+        import verify_paper as vp
+        for null_key in ("container-title", "ISBN"):
+            item = dict(self.CHAPTER_ITEM)
+            item[null_key] = None
+            result = vp.format_result(item, "doi_lookup")
+            vp.disambiguate_container(item, result, self._limiter(), "")
+            assert result["series"] == ""
+        mock_get.assert_not_called()
+
+    @patch("requests.get")
+    def test_journal_article_never_looked_up(self, mock_get, mock_crossref_response):
+        import verify_paper as vp
+        item = mock_crossref_response["message"]
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        mock_get.assert_not_called()
+
+    @patch("requests.get")
+    def test_single_container_never_looked_up(self, mock_get):
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM,
+                    **{"container-title": ["Just The Book Title"]})
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        mock_get.assert_not_called()
+        assert result["container_title"] == "Just The Book Title"
+
+    @patch("requests.get")
+    def test_no_isbn_never_looked_up(self, mock_get):
+        import verify_paper as vp
+        item = {k: v for k, v in self.CHAPTER_ITEM.items() if k != "ISBN"}
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        mock_get.assert_not_called()
+
+    def test_search_select_requests_isbn(self):
+        import verify_paper as vp
+        assert "ISBN" in vp._SEARCH_SELECT.split(",")
+
+    @patch("requests.get")
+    def test_hyphenated_isbn_is_normalized_for_the_filter(self, mock_get):
+        """CrossRef's isbn: filter matches the unhyphenated indexed form; a
+        hyphenated array value must not silently defeat the lookup."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM, ISBN=["978-3-642-31673-9"])
+        mock_get.return_value = self._parent_response([self.PARENT_BOOK])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        called_params = mock_get.call_args.kwargs.get("params") or {}
+        assert "isbn:9783642316739" in called_params["filter"]
+        assert result["series"] != ""
+
+    @patch("requests.get")
+    def test_non_string_shapes_never_crash(self, mock_get):
+        """External JSON can put numbers/objects where strings are expected
+        (an integer ISBN, an object container element, a parent title that
+        is a bare string instead of an array) -- none may crash
+        verification; all bail or skip the malformed value."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM)
+        item["ISBN"] = [9783642316739, {"isbn": "x"}, "9783642316746"]
+        item["container-title"] = [
+            {"bad": "shape"},
+            "Studies in Applied Philosophy, Epistemology and Rational Ethics",
+            "Philosophy and Theory of Artificial Intelligence"]
+        mock_get.return_value = self._parent_response(
+            [{"title": "not-a-list", "type": "book"},
+             self.PARENT_BOOK])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        # the string-typed parent title iterates as characters, matches no
+        # element, and the unanimity gate bails -- the point is no crash
+        assert "container_title" in result
+
+    @patch("requests.get")
+    def test_verify_by_doi_wires_the_disambiguation(self, mock_get):
+        """Mutation guard for the call-site wiring: a perfect
+        disambiguate_container that verify_by_doi never calls fails here."""
+        import verify_paper as vp
+        from rate_limiter import get_limiter, ExponentialBackoff
+        doi_resp = MagicMock()
+        doi_resp.status_code = 200
+        doi_resp.json.return_value = {"message": self.CHAPTER_ITEM}
+        mock_get.side_effect = [doi_resp,
+                                self._parent_response([self.PARENT_BOOK])]
+        result = vp.verify_by_doi("10.1007/978-3-642-31674-6_21",
+                                  get_limiter("crossref"),
+                                  ExponentialBackoff(max_attempts=1), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert result["series"] == (
+            "Studies in Applied Philosophy, Epistemology and Rational Ethics")
+        assert mock_get.call_count == 2
+
+    @patch("requests.get")
+    def test_search_by_metadata_wires_the_disambiguation(self, mock_get):
+        """Same mutation guard for the search path. No author/year passed,
+        so the top item only needs score >= 50 to clear the gate."""
+        import verify_paper as vp
+        from rate_limiter import get_limiter, ExponentialBackoff
+        top = dict(self.CHAPTER_ITEM, score=120.0)
+        search_resp = MagicMock()
+        search_resp.status_code = 200
+        search_resp.json.return_value = {"message": {"items": [top]}}
+        mock_get.side_effect = [search_resp,
+                                self._parent_response([self.PARENT_BOOK])]
+        result = vp.search_by_metadata(
+            "Artificial Intelligence and the Body", None, None,
+            get_limiter("crossref"), ExponentialBackoff(max_attempts=1), "")
+        assert result["container_title"] == (
+            "Philosophy and Theory of Artificial Intelligence")
+        assert result["series"] == (
+            "Studies in Applied Philosophy, Epistemology and Rational Ethics")
+        assert mock_get.call_count == 2
+
+
 class TestVerifyByDOI:
     """Tests for DOI verification."""
 

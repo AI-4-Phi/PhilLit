@@ -199,7 +199,7 @@ _YEAR_FIELDS = ["published-print", "published", "published-online", "created"]
 # last-resort the search path has no business acting on.
 _SEARCH_SELECT = ",".join(
     ["DOI", "title", "author", "editor", "container-title", "volume",
-     "issue", "page", "publisher", "type", "score"]
+     "issue", "page", "publisher", "type", "score", "ISBN"]
     + [f for f in _YEAR_FIELDS if f != "created"])
 
 
@@ -255,6 +255,9 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
         # before OVERWRITING a bibliography's own year. See _YEAR_FIELDS.
         "year_basis": year_basis,
         "container_title": container_title,
+        # Volume-vs-series split for multi-valued container-title lives in
+        # disambiguate_container; "" until it positively identifies one.
+        "series": "",
         "volume": volume,
         "issue": issue,
         "page": page,
@@ -269,6 +272,122 @@ def format_result(item: dict, method: str, score: Optional[float] = None) -> dic
         result["score"] = score
 
     return result
+
+
+# CrossRef `container-title` is an ARRAY; for a book chapter it commonly
+# holds both the series and the volume, in UNDOCUMENTED order -- [0] shipped
+# a Springer series as a booktitle in production. The parent volume's own
+# CrossRef record, found by ISBN filtered to book-like types, names the
+# volume authoritatively; the remaining element is the series.
+_MULTI_CONTAINER_TYPES = {"book-chapter", "proceedings-article"}
+# `proceedings` is the parent type of a proceedings-article's volume record
+# -- without it, that half of the stated scope would silently never
+# disambiguate (deepseek review, 2026-08-26).
+_BOOK_PARENT_TYPES = ("book", "edited-book", "monograph", "reference-book",
+                      "proceedings")
+
+
+def _norm_container(value: str) -> str:
+    """Whitespace-collapsed casefold, the only normalization the parent-title
+    match needs -- anything looser risks matching the wrong element."""
+    return " ".join((value or "").split()).casefold()
+
+
+def disambiguate_container(item: dict, result: dict, limiter,
+                           mailto: str, debug: bool = False) -> None:
+    """Split a multi-valued `container-title` into volume vs series, in place.
+
+    Runs only for CrossRef types where two container titles mean
+    series+volume (journal articles rarely carry two and are deliberately
+    untouched). ONE extra CrossRef request per multi-container chapter,
+    through the same limiter as the verification itself: both normalized
+    ISBN forms in a single filter (same-key values are ORed), so print and
+    electronic registrations land in one result set that is judged
+    together -- sequential per-ISBN lookups could accept a second form's
+    answer after the first form contradicted it.
+
+    UNANIMITY gate, not a vote: every returned parent must name exactly one
+    and the same container element. A parent naming neither (title drift or
+    ISBN reuse), both, or a different element is contradictory exact-ISBN
+    evidence and bails; agreeing duplicate registrations pass. A truncated
+    page (total-results beyond the rows returned) also bails -- unseen
+    records could dissent.
+
+    `series` needs SEPARATE support: the parent record's own
+    container-title names its series, and only when it corroborates the one
+    remaining element (exactly-2 arrays) is `series` set -- leftover
+    position alone proves nothing, so a 3+-element array fixes
+    container_title only.
+
+    Every failure path BAILS to the incumbent behavior (container_title =
+    element [0], series empty): this is best-effort enrichment, not
+    attestation -- doi/title/authors/year never depend on it. `[1]` is
+    deliberately NOT the fallback: array order is undocumented, so without
+    a parent match there is no authority either way.
+    """
+    if item.get("type") not in _MULTI_CONTAINER_TYPES:
+        return
+    # isinstance guards: external JSON can put a null, number or object
+    # where a string array is expected, and a crash here would take down
+    # the verification itself, violating the bail guarantee.
+    containers = [c for c in (item.get("container-title") or [])
+                  if isinstance(c, str) and c.strip()]
+    if len(containers) < 2:
+        return
+    # CrossRef's isbn: filter matches its indexed UNHYPHENATED form; the
+    # ISBN array on a record is not guaranteed unhyphenated, and a
+    # hyphenated value would yield zero hits and a silent bail.
+    isbns = ["".join(ch for ch in raw if ch.isdigit() or ch in "Xx")
+             for raw in (item.get("ISBN") or []) if isinstance(raw, str)]
+    isbns = [i for i in isbns if i][:2]
+    if not isbns:
+        return
+    params = {
+        "filter": ",".join([f"isbn:{i}" for i in isbns]
+                           + [f"type:{t}" for t in _BOOK_PARENT_TYPES]),
+        "rows": 10,
+        "select": "title,type,container-title",
+    }
+    if mailto:
+        params["mailto"] = mailto
+    try:
+        limiter.wait()
+        response = requests.get("https://api.crossref.org/works",
+                                params=params, timeout=30)
+        limiter.record()
+        if response.status_code != 200:
+            return
+        message = response.json().get("message") or {}
+        parents = message.get("items") or []
+        total = message.get("total-results", len(parents))
+        if not parents or (isinstance(total, int) and total > len(parents)):
+            return
+        norm_containers = {_norm_container(c): c for c in containers}
+        volume_keys = set()
+        for p in parents:
+            titles = {_norm_container(t) for t in (p.get("title") or [])
+                      if isinstance(t, str)}
+            matches = {k for k in norm_containers if k in titles}
+            if len(matches) != 1:
+                return
+            volume_keys |= matches
+        if len(volume_keys) != 1:
+            return
+        volume = norm_containers[next(iter(volume_keys))]
+        result["container_title"] = volume
+        remaining = [c for c in containers if c != volume]
+        parent_series = {_norm_container(t)
+                         for p in parents
+                         for t in (p.get("container-title") or [])
+                         if isinstance(t, str)}
+        if (len(containers) == 2 and len(remaining) == 1
+                and _norm_container(remaining[0]) in parent_series):
+            result["series"] = remaining[0]
+    except Exception as e:
+        if debug:
+            print(f"DEBUG: container disambiguation failed: {e}",
+                  file=sys.stderr)
+        return
 
 
 def verify_by_doi(doi: str, limiter, backoff: ExponentialBackoff, mailto: str, debug: bool = False) -> dict:
@@ -302,6 +421,8 @@ def verify_by_doi(doi: str, limiter, backoff: ExponentialBackoff, mailto: str, d
             if response.status_code == 200:
                 data = response.json()
                 result = format_result(data.get("message", {}), "doi_lookup")
+                disambiguate_container(data.get("message", {}), result,
+                                       limiter, mailto, debug)
                 log_progress(f"DOI verified: {result.get('title', '')[:50]}...")
                 return result
 
@@ -441,6 +562,7 @@ def search_by_metadata(
                             f"{'/'.join(str(c) for c in sorted(candidates))}")
 
                 result = format_result(top, "bibliographic_search", score)
+                disambiguate_container(top, result, limiter, mailto, debug)
                 log_progress(f"Paper found: {result.get('title', '')[:50]}... (score: {score:.1f})")
                 return result
 
