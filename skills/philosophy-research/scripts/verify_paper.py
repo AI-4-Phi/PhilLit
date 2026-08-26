@@ -327,18 +327,32 @@ def disambiguate_container(item: dict, result: dict, limiter,
     """
     if item.get("type") not in _MULTI_CONTAINER_TYPES:
         return
-    # isinstance guards: external JSON can put a null, number or object
-    # where a string array is expected, and a crash here would take down
-    # the verification itself, violating the bail guarantee.
-    containers = [c for c in (item.get("container-title") or [])
+    # isinstance guards at BOTH levels -- the container and its elements.
+    # External JSON can put a null, a bare scalar or an object where a
+    # string array is expected, and these comprehensions run BEFORE the
+    # try, so an unguarded value raises out of this function entirely:
+    # verify_by_doi handles only RequestException, so a TypeError would
+    # escape its retry loop and take down the verification itself,
+    # violating the bail guarantee. A bare STRING is the quiet case -- it
+    # would iterate into single characters that all pass the element
+    # check, so `len >= 2` succeeds and a pointless request fires for an
+    # item that is not multi-container. Null and absent keys bail through
+    # the same isinstance check, so there is one mechanism, not two.
+    raw_containers = item.get("container-title")
+    if not isinstance(raw_containers, list):
+        return
+    containers = [c for c in raw_containers
                   if isinstance(c, str) and c.strip()]
     if len(containers) < 2:
         return
     # CrossRef's isbn: filter matches its indexed UNHYPHENATED form; the
     # ISBN array on a record is not guaranteed unhyphenated, and a
     # hyphenated value would yield zero hits and a silent bail.
+    raw_isbns = item.get("ISBN")
+    if not isinstance(raw_isbns, list):
+        return
     isbns = ["".join(ch for ch in raw if ch.isdigit() or ch in "Xx")
-             for raw in (item.get("ISBN") or []) if isinstance(raw, str)]
+             for raw in raw_isbns if isinstance(raw, str)]
     isbns = [i for i in isbns if i][:2]
     if not isbns:
         return

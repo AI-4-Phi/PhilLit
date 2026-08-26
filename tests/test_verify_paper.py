@@ -553,11 +553,44 @@ class TestContainerDisambiguation:
         assert result["series"] != ""
 
     @patch("requests.get")
-    def test_non_string_shapes_never_crash(self, mock_get):
-        """External JSON can put numbers/objects where strings are expected
-        (an integer ISBN, an object container element, a parent title that
-        is a bare string instead of an array) -- none may crash
-        verification; all bail or skip the malformed value."""
+    def test_non_list_isbn_bails_without_request(self, mock_get):
+        """A bare scalar where CrossRef normally sends an array: the
+        container-level guard must bail. Both comprehensions sit BEFORE the
+        try, so an unguarded `or []` would raise TypeError: 'int' object is
+        not iterable straight out of disambiguate_container -- and
+        verify_by_doi only handles RequestException, so it would escape the
+        retry loop and take down the whole verification."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM, ISBN=9783642316739)
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        mock_get.assert_not_called()
+        assert result["series"] == ""
+        assert result["container_title"] == self.CHAPTER_ITEM["container-title"][0]
+
+    @patch("requests.get")
+    def test_bare_string_container_title_bails_without_request(self, mock_get):
+        """A bare STRING container-title is the quiet half of the same bug:
+        it iterates into single characters, each a non-empty str, so
+        `len(containers) >= 2` passes and a real CrossRef request fires for
+        an item that is not multi-container at all."""
+        import verify_paper as vp
+        item = dict(self.CHAPTER_ITEM)
+        item["container-title"] = "Just A String"
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(item, result, self._limiter(), "")
+        mock_get.assert_not_called()
+        assert result["series"] == ""
+        # format_result's own handling of a bare-string container is
+        # pre-existing behavior, outside this task's scope -- not asserted.
+
+    @patch("requests.get")
+    def test_malformed_elements_inside_lists_bail_cleanly(self, mock_get):
+        """Element-level malformation inside well-formed lists (an integer
+        and an object among the ISBNs, an object among the containers, a
+        parent whose title is a bare string): each bad value is skipped, the
+        char-iterating parent title matches zero elements, and the unanimity
+        gate bails -- leaving the incumbent container_title untouched."""
         import verify_paper as vp
         item = dict(self.CHAPTER_ITEM)
         item["ISBN"] = [9783642316739, {"isbn": "x"}, "9783642316746"]
@@ -569,10 +602,10 @@ class TestContainerDisambiguation:
             [{"title": "not-a-list", "type": "book"},
              self.PARENT_BOOK])
         result = vp.format_result(item, "doi_lookup")
+        before = result["container_title"]
         vp.disambiguate_container(item, result, self._limiter(), "")
-        # the string-typed parent title iterates as characters, matches no
-        # element, and the unanimity gate bails -- the point is no crash
-        assert "container_title" in result
+        assert result["container_title"] == before
+        assert result["series"] == ""
 
     @patch("requests.get")
     def test_verify_by_doi_wires_the_disambiguation(self, mock_get):
