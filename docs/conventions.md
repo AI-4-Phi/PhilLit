@@ -45,8 +45,9 @@ raw `container-title` is an ARRAY, and for a `book-chapter` or
 volume by looking up the parent volume's own CrossRef record by ISBN:
 `container_title` is set to the volume only when every returned parent
 record unanimously names the same array element as its own title; `series`
-is populated only when every parent record that carries a `container-title`
-of its own corroborates the one remaining element, and only for exactly-two-element
+is populated only when at least one parent record carries a `container-title`
+of its own that corroborates the one remaining element, and no
+container-title-bearing parent lacks it, and only for exactly-two-element
 arrays (a 3+-element array fixes `container_title` alone and leaves
 `series` empty). On any lookup failure, ambiguity, or disagreement among
 parents, disambiguation bails to the incumbent fallback: `container_title`
