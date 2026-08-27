@@ -436,6 +436,53 @@ class TestOpenAlexParams:
         assert openalex_params("")["api_key"] == "late-arrival"
 
 
+class TestOpenAlexAuth:
+    """The key's transport is the Authorization header, never the URL: a
+    query parameter becomes part of the request URL, and requests'
+    RequestException messages embed the full URL -- from there one DNS
+    failure writes the key into captured stderr (service-filed 2026-08-26)."""
+
+    def test_bearer_header_when_key_set(self, monkeypatch):
+        from rate_limiter import openalex_headers
+        monkeypatch.setenv("OPENALEX_API_KEY", "abc123")
+        assert openalex_headers() == {"Authorization": "Bearer abc123"}
+
+    def test_empty_headers_when_key_unset(self, monkeypatch):
+        from rate_limiter import openalex_headers
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        assert openalex_headers() == {}
+
+    def test_whitespace_key_reads_as_unset(self, monkeypatch):
+        from rate_limiter import openalex_api_key, openalex_headers
+        monkeypatch.setenv("OPENALEX_API_KEY", "   ")
+        assert openalex_api_key() == ""
+        assert openalex_headers() == {}
+
+    def test_key_is_stripped(self, monkeypatch):
+        from rate_limiter import openalex_api_key
+        monkeypatch.setenv("OPENALEX_API_KEY", "  k1  ")
+        assert openalex_api_key() == "k1"
+
+    def test_control_character_key_reads_as_unset(self, monkeypatch):
+        # An embedded CR/LF would make requests raise InvalidHeader with the
+        # malformed value IN the exception message -- the leak class this
+        # module exists to close. Such a key must never reach a header.
+        from rate_limiter import openalex_api_key, openalex_headers
+        for bad in ("se\nkret", "se\rkret", "se\tkret"):
+            monkeypatch.setenv("OPENALEX_API_KEY", bad)
+            assert openalex_api_key() == ""
+            assert openalex_headers() == {}
+
+    def test_key_resolved_at_call_time_not_import_time(self, monkeypatch):
+        # .env loads in each CLI's main(), after this module is imported.
+        from rate_limiter import openalex_api_key, openalex_headers
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        assert openalex_api_key() == ""
+        monkeypatch.setenv("OPENALEX_API_KEY", "late-arrival")
+        assert openalex_api_key() == "late-arrival"
+        assert openalex_headers() == {"Authorization": "Bearer late-arrival"}
+
+
 class TestOpenAlexBudgetExhausted:
     """A 429 meaning "today's budget is spent" must be told apart from one
     meaning "slow down": the former resets at midnight UTC, so retrying is

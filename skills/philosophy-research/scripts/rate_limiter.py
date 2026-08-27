@@ -370,6 +370,44 @@ def openalex_params(email: str = "") -> dict:
     return params
 
 
+def openalex_api_key() -> str:
+    """The configured OpenAlex key, or "" -- the one owner of the env read.
+
+    Resolved at CALL time, never import time -- same reason as user_agent():
+    the workspace .env is loaded in each CLI's main(), which runs after this
+    module is imported, so an import-time read would silently see no key.
+
+    A value with characters outside printable ASCII reads as unset: real
+    keys are short alphanumerics, and an embedded CR/LF would make requests
+    raise InvalidHeader with the malformed value IN the exception message --
+    re-opening the exact leak-to-stderr the header transport exists to close.
+    """
+    key = os.environ.get("OPENALEX_API_KEY", "").strip()
+    if key and all(33 <= ord(c) <= 126 for c in key):
+        return key
+    return ""
+
+
+def openalex_headers() -> dict:
+    """Auth header for OpenAlex requests, `{}` when no key is configured.
+
+    Header transport keeps the key out of the URL, and therefore out of
+    every exception message and log line that embeds one. The header is
+    authoritative server-side (verified live 2026-08-27 with a registered
+    key: header+param both 200; a bogus header 401s even with a valid
+    param). Two known, accepted edges, both of which degrade to an UNKEYED
+    request rather than a leak or an error: requests strips this header on
+    a cross-host redirect (none of the endpoint shapes we call redirects --
+    verified same day), and a user's ~/.netrc entry for api.openalex.org
+    would replace it with Basic auth, which OpenAlex silently ignores
+    (verified: Basic garbage -> 200). Either way the request runs on the
+    $0.10/day unkeyed budget, and exhaustion is what the
+    openalex_budget_exhausted detector reports loudly.
+    """
+    key = openalex_api_key()
+    return {"Authorization": f"Bearer {key}"} if key else {}
+
+
 _BUDGET_MARKERS = ("insufficient budget", "daily limit", "rate limit exceeded")
 
 
