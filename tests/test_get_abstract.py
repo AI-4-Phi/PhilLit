@@ -577,12 +577,13 @@ class TestProbeOpenAlex:
         any transport regression at this site surfaces in stderr."""
         monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
 
+        prepared = []
+
         def boom(url, params=None, headers=None, timeout=None):
-            real = requests.Request(
-                "GET", url, params=params, headers=headers).prepare()
-            assert real.headers.get("Authorization") == "Bearer sekret"
+            prepared.append(requests.Request(
+                "GET", url, params=params, headers=headers).prepare())
             raise requests.exceptions.ConnectionError(
-                f"Failed to resolve 'api.openalex.org' for url: {real.url}")
+                f"Failed to resolve 'api.openalex.org' for url: {prepared[-1].url}")
 
         mock_get.side_effect = boom
         import get_abstract
@@ -594,6 +595,9 @@ class TestProbeOpenAlex:
         err = capsys.readouterr().err
         assert "OpenAlex: Network error:" in err   # the logging path RAN
         assert "sekret" not in err                 # and never carried the key
+        assert prepared, "requests.get was never called"
+        assert prepared[0].headers.get("Authorization") == "Bearer sekret"
+        assert "sekret" not in prepared[0].url
 
 
 class TestProbeCore:

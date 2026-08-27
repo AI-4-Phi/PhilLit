@@ -25,7 +25,19 @@ from dotenv import find_dotenv, load_dotenv
 # Add parent directory to path for rate_limiter import
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from rate_limiter import get_limiter, openalex_budget_exhausted, openalex_headers, openalex_params
+from rate_limiter import (
+    get_limiter,
+    openalex_budget_exhausted,
+    openalex_headers,
+    openalex_key_unusable,
+    openalex_params,
+)
+
+# Mirror venue_vetting._ON_TOKENS/_OFF_TOKENS (the owner) -- deliberately
+# duplicated to avoid a runtime cross-skill import; equality is drift-pinned
+# by test_vetting_note_agrees_with_the_flag_parser.
+_VET_ON_TOKENS = ("1", "true", "yes", "on")
+_VET_OFF_TOKENS = ("0", "false", "no", "off")
 
 
 def check_env_vars() -> dict[str, dict[str, Any]]:
@@ -275,11 +287,14 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
             note = (" DAILY BUDGET EXHAUSTED (resets midnight UTC)"
                     + ("" if keyed else " - a FREE key raises it 10x:"
                        " https://openalex.org/settings/api") + note)
+        if openalex_key_unusable():
+            note += (" [OPENALEX_API_KEY is set but contains characters outside"
+                     " printable ASCII -- ignored, running unkeyed]")
         # Token sets mirror venue_vetting._vetting_mode (the owner); the
         # agreement is pinned by a test, so drift fails loudly.
         vet_flag = os.environ.get("PHILLIT_VET_VENUES", "").strip().lower()
-        if vet_flag and vet_flag not in ("0", "false", "no", "off"):
-            if vet_flag not in ("1", "true", "yes", "on"):
+        if vet_flag and vet_flag not in _VET_OFF_TOKENS:
+            if vet_flag not in _VET_ON_TOKENS:
                 note += (" [PHILLIT_VET_VENUES holds an unrecognized value --"
                          " venue vetting will skip]")
             elif not keyed:

@@ -403,6 +403,16 @@ def openalex_headers() -> dict:
     return {"Authorization": f"Bearer {key}"} if key else {}
 
 
+def openalex_key_unusable() -> bool:
+    """True when OPENALEX_API_KEY is set but openalex_api_key() rejects it
+    (characters outside printable ASCII). Callers use this to say "set but
+    unusable" instead of the false "no key" -- fail open, never silent.
+    Never returns or logs the value itself.
+    """
+    raw = os.environ.get("OPENALEX_API_KEY", "").strip()
+    return bool(raw) and not openalex_api_key()
+
+
 _BUDGET_MARKERS = ("insufficient budget", "daily limit", "rate limit exceeded")
 
 

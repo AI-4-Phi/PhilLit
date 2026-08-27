@@ -177,18 +177,26 @@ def test_vetting_note_agrees_with_the_flag_parser(monkeypatch):
     """Drift pin for the token tuples check_setup duplicates from
     venue_vetting._vetting_mode: for every token the parser knows, the note
     behavior must match the parser's classification."""
-    import sys
-    from pathlib import Path
-    sys.path.insert(0, str(Path(__file__).parent.parent
+    monkeypatch.syspath_prepend(str(Path(__file__).parent.parent
                            / "skills" / "literature-review" / "scripts"))
     import venue_vetting as vv
+    assert check_setup._VET_ON_TOKENS == vv._ON_TOKENS
+    assert check_setup._VET_OFF_TOKENS == vv._OFF_TOKENS
     for token in ("1", "true", "yes", "on"):
-        monkeypatch.setenv("PHILLIT_VET_VENUES", token)
-        assert vv._vetting_mode() == "on"
-        msg = _openalex_message(monkeypatch, key=None, flag=token)
-        assert "OPENALEX_API_KEY" in msg, token
+        for spelling in (token, token.upper(), f"  {token}  "):
+            monkeypatch.setenv("PHILLIT_VET_VENUES", spelling)
+            assert vv._vetting_mode() == "on"
+            msg = _openalex_message(monkeypatch, key=None, flag=spelling)
+            assert "OPENALEX_API_KEY" in msg, spelling
     for token in ("0", "false", "no", "off"):
-        monkeypatch.setenv("PHILLIT_VET_VENUES", token)
-        assert vv._vetting_mode() == "off"
-        msg = _openalex_message(monkeypatch, key="sekret", flag=token)
-        assert "PHILLIT_VET_VENUES" not in msg, token
+        for spelling in (token, token.upper(), f"  {token}  "):
+            monkeypatch.setenv("PHILLIT_VET_VENUES", spelling)
+            assert vv._vetting_mode() == "off"
+            msg = _openalex_message(monkeypatch, key="sekret", flag=spelling)
+            assert "PHILLIT_VET_VENUES" not in msg, spelling
+
+
+def test_openalex_probe_reports_unusable_key(monkeypatch):
+    msg = _openalex_message(monkeypatch, key="se\tkret", flag=None)
+    assert "outside printable ASCII" in msg
+    assert "se\tkret" not in msg

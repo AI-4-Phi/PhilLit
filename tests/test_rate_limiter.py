@@ -466,6 +466,17 @@ class TestOpenAlexAuth:
         assert openalex_api_key() == "late-arrival"
         assert openalex_headers() == {"Authorization": "Bearer late-arrival"}
 
+    def test_unusable_vs_absent_distinction(self, monkeypatch):
+        from rate_limiter import openalex_key_unusable
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        assert openalex_key_unusable() is False
+        monkeypatch.setenv("OPENALEX_API_KEY", "se\tkret")
+        assert openalex_key_unusable() is True
+        monkeypatch.setenv("OPENALEX_API_KEY", "goodkey")
+        assert openalex_key_unusable() is False
+        monkeypatch.setenv("OPENALEX_API_KEY", "   ")
+        assert openalex_key_unusable() is False
+
 
 class TestOpenAlexBudgetExhausted:
     """A 429 meaning "today's budget is spent" must be told apart from one
