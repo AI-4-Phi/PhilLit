@@ -6,44 +6,20 @@ sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
 marked done — the git log is the history. A decision that is still binding
 belongs in `CLAUDE.md` or the owning module, not here.
 
-Last release: **plugin v0.5.2**, 2026-08-26. Check
+Last release: **plugin v0.5.3**, 2026-08-27. Check
 `git log origin/main..HEAD` for what is unpushed rather than trusting prose
 here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-The queue is the three items below (two service-filed findings from
-2026-08-26 plus a web-evidence exercise run); the next external step is the
-service's scripted re-vendor at a pin at or past the v0.5.2 tip
-(service-session work, never hand-mirrored — rule in `CLAUDE.md`, "Sister
-repo: phillit-service").
+The queue is one item (the web-evidence exercise run below); the next
+external step is the service's scripted re-vendor at a pin at or past the
+v0.5.3 tip (service-session work, never hand-mirrored — rule in
+`CLAUDE.md`, "Sister repo: phillit-service").
 Everything else in this file is a recorded residual, not work. (Section
 numbers in this file are historical: numbers are never reused once an item
 ships, so the sequence has gaps. Refer to items by name.)
 
-- **OpenAlex key travels in the URL, and a connection error writes it into
-  captured stderr** (service-filed 2026-08-26; found while wiring its
-  operator `OPENALEX_API_KEY`). `rate_limiter.openalex_params` puts the key
-  in an `api_key=` query parameter, and `probe_openalex` logs
-  `f"OpenAlex: Network error: {e}"` on a `requests.RequestException` — whose
-  message embeds the full request URL, query string included. `log_progress`
-  goes to stderr; in the service that stderr is captured into per-review
-  transcripts which are synced to off-site backup, so one DNS failure during
-  an OpenAlex call puts an operator key into an off-box archive. The fix is
-  a transport swap with no functional change: the service verified live
-  (2026-08-26) that OpenAlex accepts `Authorization: Bearer` identically to
-  the query parameter (a bogus key returns the same "API key not found" body
-  on both). Swapping also makes the service's own key validator
-  transport-faithful (it already uses the header deliberately).
-- **Venue vetting is gated on `OPENALEX_API_KEY`'s mere presence, which
-  couples two unrelated operator decisions** (service-filed 2026-08-26).
-  `venue_vetting.vet_venues` returns `"skipped"` when the key is absent, so
-  supplying a key for the 10x daily budget ALSO switches venue vetting on —
-  an operator who wants one cannot decline the other. A separate flag (or a
-  `--vet-venues` argument threaded from the barrier) would decouple them.
-  The service pins the current gate BOTH ways
-  (`tests/test_engine_rate_limiter.py` there), so whichever shape ships next
-  fails loudly on its side rather than silently changing its operator docs.
 - **Web-evidence exercise run — needs a DELIBERATELY web-pulling topic.**
   The EVIDENCE-WEB path has produced zero signal on every run since the
   2026-08-15 acceptance run: three service production runs and this repo's

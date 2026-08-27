@@ -6,9 +6,11 @@ item 3 D, venue vetting.
 Phase 3 searches, and the failure surfaces as five pointless backoff attempts
 per call rather than as "the budget is gone."
 **Status**: **Key support BUILT 2026-08-05** (same day). PhilLit now sends
-`api_key` on every OpenAlex request when `OPENALEX_API_KEY` is set, and both
-the search path and the abstract path stop retrying on budget exhaustion
-instead of sleeping through it. An unkeyed install behaves exactly as before.
+the key on every OpenAlex request when `OPENALEX_API_KEY` is set (since
+v0.5.3 as an `Authorization: Bearer` header — the key never rides in the
+URL), and both the search path and the abstract path stop retrying on
+budget exhaustion instead of sleeping through it. An unkeyed install
+behaves exactly as before.
 
 **CLOSED 2026-08-07.** Johannes registered a working key and it is in place.
 Verified end-to-end through the real code path, not just by presence: the
@@ -34,8 +36,11 @@ Two notes worth keeping:
 ## If OpenAlex says "Invalid or missing API key"
 
 The key is wrong or stale, not the plumbing: `developers.openalex.org` still
-documents the key as a **query parameter** (`api_key=YOUR_KEY`), which is
-exactly what `rate_limiter.openalex_params()` sends (re-checked 2026-08-06).
+documents the key as a **query parameter** (`api_key=YOUR_KEY`) — that was
+exactly what `rate_limiter.openalex_params()` sent at the time (re-checked
+2026-08-06). Since v0.5.3 the key travels as an `Authorization: Bearer`
+header via `rate_limiter.openalex_headers()` (presence checked by
+`openalex_api_key()`); `openalex_params(email)` now owns `mailto` only.
 Get a fresh one at `openalex.org/settings/api`.
 
 **Put it in the workspace `.env`**, not a shell profile. `.env` is the path
@@ -116,7 +121,9 @@ backoff.
 | full-text search | ~100/day | **1,000/day** |
 
 The key is created at `openalex.org/settings/api` (account required, ~30 s)
-and passed as the query parameter `api_key=…`.
+and sent by PhilLit as an `Authorization: Bearer` header (v0.5.3+; OpenAlex
+accepts both transports and the header takes precedence — verified live
+2026-08-27).
 
 ## Does a user need a key? No — measured 2026-08-05
 
@@ -185,13 +192,16 @@ caller falls back to ordinary backoff.
 
 ## Remedy — BUILT 2026-08-05
 
-1. `rate_limiter.openalex_params(email)` is the one owner of OpenAlex query
-   auth: `mailto` plus `api_key` when `OPENALEX_API_KEY` is set. Used by
-   `search_openalex.py` (both the search and single-work paths),
-   `get_abstract.py` (the DOI path) and `check_setup.py`. Resolved at **call**
-   time, never import time — the workspace `.env` loads in each CLI's `main()`,
-   which runs after the module is imported, so an import-time read would
-   silently see no key (same rule as `rate_limiter.user_agent()`).
+1. `rate_limiter.openalex_headers()` is the one owner of OpenAlex auth
+   transport: an `Authorization: Bearer` header when `OPENALEX_API_KEY` is
+   set (presence checked by `openalex_api_key()`), `{}` otherwise.
+   `openalex_params(email)` owns `mailto` only — the key deliberately never
+   rides in query params. Used by `search_openalex.py` (both the search and
+   single-work paths), `get_abstract.py` (the DOI path) and `check_setup.py`.
+   Resolved at **call** time, never import time — the workspace `.env` loads
+   in each CLI's `main()`, which runs after the module is imported, so an
+   import-time read would silently see no key (same rule as
+   `rate_limiter.user_agent()`).
 2. Budget exhaustion fails fast and legibly (above).
 3. `.env.example` documents the key with the numbers and the 30-second signup
    link; `check_setup.py` reports whether a key is in use (`[API key: $1/day
