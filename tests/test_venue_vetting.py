@@ -354,7 +354,7 @@ class TestLookupVenue:
         payload = {"results": [hit("Ratio Juris", 2, False, False),
                                hit("Ratio", 61, True, False)]}
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
-        record, outcome = vv.lookup_venue("Ratio", {"api_key": "x"})
+        record, outcome = vv.lookup_venue("Ratio", {}, {"Authorization": "Bearer x"})
         assert outcome == "ok"
         assert record["matched_name"] == "Ratio"
         assert record["h_index"] == 61
@@ -362,24 +362,24 @@ class TestLookupVenue:
     def test_alternate_title_matches(self, monkeypatch):
         payload = {"results": [hit("Nous", 90, True, False, alt=["Nous (Detroit)"])]}
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
-        record, outcome = vv.lookup_venue("Nous (Detroit)", {"api_key": "x"})
+        record, outcome = vv.lookup_venue("Nous (Detroit)", {}, {"Authorization": "Bearer x"})
         assert outcome == "ok" and record["resolved"] is True
 
     def test_no_match_is_unresolved_not_error(self, monkeypatch):
         payload = {"results": [hit("Something Else", 4, False, False)]}
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
-        record, outcome = vv.lookup_venue("Nonexistent Journal", {"api_key": "x"})
+        record, outcome = vv.lookup_venue("Nonexistent Journal", {}, {"Authorization": "Bearer x"})
         assert outcome == "ok" and record["resolved"] is False
 
     def test_budget_exhaustion_reported(self, monkeypatch):
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(
             status_code=429, headers={"Retry-After": "81471"}, text="insufficient budget"))
-        record, outcome = vv.lookup_venue("Whatever", {"api_key": "x"})
+        record, outcome = vv.lookup_venue("Whatever", {}, {"Authorization": "Bearer x"})
         assert outcome == "budget_exhausted" and record is None
 
     def test_http_error_is_error_not_exception(self, monkeypatch):
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(status_code=500))
-        record, outcome = vv.lookup_venue("Whatever", {"api_key": "x"})
+        record, outcome = vv.lookup_venue("Whatever", {}, {"Authorization": "Bearer x"})
         assert outcome == "error" and record is None
 
     def test_rejected_key_is_its_own_outcome(self, monkeypatch):
@@ -389,20 +389,20 @@ class TestLookupVenue:
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(
             status_code=401,
             text='{"error":"Invalid or missing API key","message":"API key not found"}'))
-        record, outcome = vv.lookup_venue("Whatever", {"api_key": "stale"})
+        record, outcome = vv.lookup_venue("Whatever", {}, {"Authorization": "Bearer stale"})
         assert outcome == "auth_error" and record is None
 
     def test_forbidden_is_also_an_auth_error(self, monkeypatch):
         monkeypatch.setattr(vv.requests, "get",
                             lambda *a, **k: FakeResponse(status_code=403))
-        record, outcome = vv.lookup_venue("Whatever", {"api_key": "stale"})
+        record, outcome = vv.lookup_venue("Whatever", {}, {"Authorization": "Bearer stale"})
         assert outcome == "auth_error" and record is None
 
     def test_network_exception_is_swallowed(self, monkeypatch):
         def boom(*a, **k):
             raise RuntimeError("connection reset")
         monkeypatch.setattr(vv.requests, "get", boom)
-        record, outcome = vv.lookup_venue("Whatever", {"api_key": "x"})
+        record, outcome = vv.lookup_venue("Whatever", {}, {"Authorization": "Bearer x"})
         assert outcome == "error" and record is None
 
     def test_no_retry_on_error(self, monkeypatch):
@@ -411,7 +411,7 @@ class TestLookupVenue:
             calls.append(1)
             return FakeResponse(status_code=500)
         monkeypatch.setattr(vv.requests, "get", once)
-        vv.lookup_venue("Whatever", {"api_key": "x"})
+        vv.lookup_venue("Whatever", {}, {"Authorization": "Bearer x"})
         assert len(calls) == 1  # one attempt, fail open -- never a backoff loop
 
     def test_per_page_is_200(self, monkeypatch):
@@ -420,8 +420,22 @@ class TestLookupVenue:
             captured.update(k["params"])
             return FakeResponse(payload={"results": []})
         monkeypatch.setattr(vv.requests, "get", responder)
-        vv.lookup_venue("Whatever", {"api_key": "x"})
+        vv.lookup_venue("Whatever", {}, {"Authorization": "Bearer x"})
         assert captured["per_page"] == 200
+
+    def test_lookup_sends_headers_to_requests(self, monkeypatch):
+        captured = {}
+
+        def fake_get(url, params=None, headers=None, timeout=None):
+            captured["params"] = dict(params or {})
+            captured["headers"] = dict(headers or {})
+            raise vv.requests.exceptions.ConnectionError("boom")
+
+        monkeypatch.setattr(vv.requests, "get", fake_get)
+        record, outcome = vv.lookup_venue(
+            "Whatever", {"mailto": "e@x.org"}, {"Authorization": "Bearer sekret"})
+        assert outcome == "error"
+        assert captured["headers"] == {"Authorization": "Bearer sekret"}
 
 
 class TestVetVenues:
@@ -500,6 +514,21 @@ class TestVetVenues:
         assert result["looked_up"] == 2
         assert result["skipped_cap"] == 3  # reported, never silent
 
+    def test_vet_venues_passes_headers_to_lookup(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
+        seen = {}
+
+        def fake_lookup(name, params, headers):
+            seen["params"] = params
+            seen["headers"] = headers
+            return {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": False,
+                    "fetched_at": time.time()}, "ok"
+
+        monkeypatch.setattr(vv, "lookup_venue", fake_lookup)
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "complete"
+        assert seen["headers"] == {"Authorization": "Bearer sekret"}
+
 
 class TestRawNameQuery:
     """Item 3 D hardening: query OpenAlex with the RAW name (the validated
@@ -566,7 +595,7 @@ class TestFilterSanitization:
             return FakeResponse(payload={"results": []})
         monkeypatch.setattr(vv.requests, "get", responder)
         raw = "Politics, Philosophy \\& Economics"
-        vv.lookup_venue(raw, {"api_key": "x"})
+        vv.lookup_venue(raw, {}, {"Authorization": "Bearer x"})
         filter_value = captured["filter"]
         assert "," not in filter_value
         assert "\\" not in filter_value
@@ -583,7 +612,7 @@ class TestFilterSanitization:
         # from the query string.
         payload = {"results": [hit("Politics, Philosophy & Economics", 45, True, False)]}
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(payload=payload))
-        record, outcome = vv.lookup_venue("Politics, Philosophy \\& Economics", {"api_key": "x"})
+        record, outcome = vv.lookup_venue("Politics, Philosophy \\& Economics", {}, {"Authorization": "Bearer x"})
         assert outcome == "ok"
         assert record["resolved"] is True
 
@@ -687,7 +716,7 @@ class TestHonestStatusAndErrors:
         # lookup_venue broke that contract -- it must be treated as an
         # unresolved lookup, same as an "error" outcome.
         monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
-        monkeypatch.setattr(vv, "lookup_venue", lambda name, params: (None, "ok"))
+        monkeypatch.setattr(vv, "lookup_venue", lambda name, params, headers: (None, "ok"))
         result = vv.vet_venues(["Some Journal"])
         assert result["status"] == "partial"
         assert result["lookup_errors"] == 1

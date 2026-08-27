@@ -94,6 +94,7 @@ import requests  # noqa: E402
 from rate_limiter import (  # noqa: E402
     get_limiter,
     openalex_budget_exhausted,
+    openalex_headers,
     openalex_params,
 )
 
@@ -296,7 +297,7 @@ def _sanitize_for_filter(name: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def lookup_venue(name: str, params: dict) -> tuple[dict | None, str]:
+def lookup_venue(name: str, params: dict, headers: dict) -> tuple[dict | None, str]:
     """One OpenAlex `sources` query. Returns (record|None, outcome).
 
     outcome: "ok" (record is authoritative, resolved or not),
@@ -316,6 +317,7 @@ def lookup_venue(name: str, params: dict) -> tuple[dict | None, str]:
             params={**params,
                     "filter": f"display_name.search:{_sanitize_for_filter(name)}",
                     "per_page": 200},
+            headers=headers,
             timeout=REQUEST_TIMEOUT,
         )
         if openalex_budget_exhausted(response):
@@ -384,7 +386,8 @@ def vet_venues(names) -> dict:
 
         stage = "resolving OpenAlex params"
         params = openalex_params(os.environ.get("OPENALEX_EMAIL", ""))
-        if "api_key" not in params:
+        headers = openalex_headers()
+        if not headers:
             result["status"] = "skipped"
             result["reason"] = ("no OPENALEX_API_KEY -- venue vetting needs the free key "
                                 "so it does not spend the unauthenticated search budget")
@@ -418,7 +421,7 @@ def vet_venues(names) -> dict:
                             f"pass deadline ({PASS_DEADLINE_SECONDS}s) exceeded "
                             f"after {result['looked_up']} lookups")
                     continue
-                record, outcome = lookup_venue(raw_by_key[venue], params)
+                record, outcome = lookup_venue(raw_by_key[venue], params, headers)
                 result["looked_up"] += 1  # a real request was made, win or lose
                 if outcome == "budget_exhausted":
                     result["status"] = "budget_exhausted"
