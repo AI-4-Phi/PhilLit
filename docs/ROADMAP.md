@@ -12,27 +12,12 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-The queue is one item (the web-evidence exercise run below); the next
-external step is the service's scripted re-vendor at a pin at or past the
-v0.5.3 tip (service-session work, never hand-mirrored — rule in
-`CLAUDE.md`, "Sister repo: phillit-service").
+The queue is EMPTY; the next external step is the service's scripted
+re-vendor at a pin at or past the v0.5.3 tip (service-session work, never
+hand-mirrored — rule in `CLAUDE.md`, "Sister repo: phillit-service").
 Everything else in this file is a recorded residual, not work. (Section
 numbers in this file are historical: numbers are never reused once an item
 ships, so the sequence has gaps. Refer to items by name.)
-
-- **Web-evidence exercise run — needs a DELIBERATELY web-pulling topic.**
-  The EVIDENCE-WEB path has produced zero signal on every run since the
-  2026-08-15 acceptance run: three service production runs and this repo's
-  2026-08-26 `machine-consciousness` run all ended `gate_passed {script: 0,
-  agent: 0}` with no captures (that run's six domain bibs carried ONE
-  `url =` field between them — the topic, not the machinery, is why).
-  Pick the topic the way the acceptance run did: from the corpus's
-  `@misc`-with-URL mass (alignment/AI-blog-adjacent topics). Run it at the
-  tip the next service re-vendor will pin, so the exercised tree equals
-  what ships. What a run here CAN discharge: the capture path, bucket
-  spread incl. `wayback_failed`, the book-year direction bound, the
-  publisher-prefix attestation edge. What it cannot (service-only): bwrap
-  fetch-denial latency, stored-payload volume, the barrier Bash-kill odds.
 
 **The service re-vendor at the v0.5.0 tip RAN 2026-08-25** (pin `fffb721`):
 items 14/15 and the v0.4.9 prose fixes are now in the service's `engine/`;
@@ -52,6 +37,19 @@ true positive). Johannes accepted the item the same day. Audit record:
 (local-only). The run's findings shipped as the v0.4.2 riders: researcher
 note-fidelity prose, the writer-prose note-license carve-out, the
 verbatim-CHECK summary rule, and the `wayback_failed` report bucket.
+
+A second exercising run landed 2026-08-27 (`shutdown-corrigibility`, headless
+at the v0.5.3 tip, topic picked from the `@misc`-with-URL corpus mass after
+three zero-signal runs on URL-poor topics): `gate_passed {script: 4, agent:
+0}`, 0/4 false promotions (every sub-span re-verified verbatim against its
+capture, all HTTP 200), all four cited in prose, `urldate`/`archiveurl`
+stamped 8/8, `misc_with_abstract` 10, `splice_failed` 0 — and the same run
+live-validated the v0.5.3 Bearer-header transport (venue vetting `complete`,
+8 keyed lookups, 0 errors, 1 real flag). Still unexercised in production
+because no run data has triggered them (recorded, not queued — all are
+test-covered): the `wayback_failed` bucket, the book-year direction bound,
+and the publisher-prefix attestation edge. Artifacts:
+`reviews/shutdown-corrigibility/` (local-only).
 
 Two owner decisions recorded 2026-08-15: v0.4.x stands (no revert/recall
 despite shipping ahead of the gate), and the delivered bib **keeps**
