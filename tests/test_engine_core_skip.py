@@ -139,4 +139,6 @@ def test_openalex_probe_sends_key_as_bearer_header(monkeypatch):
                       if "api.openalex.org" in c.args[0]]
     assert openalex_calls, "no request to api.openalex.org was made"
     assert openalex_calls[0].kwargs["headers"] == {"Authorization": "Bearer sekret"}
+    assert "api_key" not in openalex_calls[0].kwargs["params"]
+    assert "sekret" not in openalex_calls[0].args[0]
     assert results["openalex"]["api_key"] is True

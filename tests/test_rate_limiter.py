@@ -403,37 +403,21 @@ class TestParseRetryAfter:
 
 
 class TestOpenAlexParams:
-    """OpenAlex began metering by daily spend in 2026; a FREE api_key is worth
-    10x the budget and makes single-entity DOI lookups unmetered. The key must
-    be resolved at CALL time, not import time — the workspace .env loads in
-    each CLI's main(), after this module is imported."""
+    """Params become the URL, and RequestException messages embed the URL --
+    so the key must NEVER appear here (service-filed 2026-08-26). Transport
+    is openalex_headers(); see TestOpenAlexAuth."""
 
-    def test_key_from_env_is_included(self, monkeypatch):
+    def test_params_never_carry_the_key(self, monkeypatch):
         from rate_limiter import openalex_params
         monkeypatch.setenv("OPENALEX_API_KEY", "abc123")
-        assert openalex_params("me@example.com") == {
-            "mailto": "me@example.com", "api_key": "abc123"}
-
-    def test_absent_key_changes_nothing(self, monkeypatch):
-        # The key is optional: an unkeyed install must behave exactly as before.
-        from rate_limiter import openalex_params
-        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
         assert openalex_params("me@example.com") == {"mailto": "me@example.com"}
         assert openalex_params("") == {}
 
-    def test_blank_and_whitespace_key_omitted(self, monkeypatch):
-        from rate_limiter import openalex_params
-        monkeypatch.setenv("OPENALEX_API_KEY", "   ")
-        assert "api_key" not in openalex_params("")
-
-    def test_key_is_read_per_call_not_at_import(self, monkeypatch):
-        # The regression this guards: a module-level constant would pin the
-        # pre-.env value and the key would silently never be sent.
+    def test_mailto_only_shapes(self, monkeypatch):
         from rate_limiter import openalex_params
         monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
-        assert "api_key" not in openalex_params("")
-        monkeypatch.setenv("OPENALEX_API_KEY", "late-arrival")
-        assert openalex_params("")["api_key"] == "late-arrival"
+        assert openalex_params("") == {}
+        assert openalex_params("me@example.com") == {"mailto": "me@example.com"}
 
 
 class TestOpenAlexAuth:

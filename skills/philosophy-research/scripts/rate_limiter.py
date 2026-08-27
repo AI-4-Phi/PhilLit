@@ -346,28 +346,23 @@ def parse_retry_after(header_value: Optional[str]) -> Optional[float]:
 
 
 def openalex_params(email: str = "") -> dict:
-    """Query params every OpenAlex request should carry: `mailto` and, when
-    available, `api_key`.
+    """Query params every OpenAlex request should carry: `mailto` only.
 
-    OpenAlex began metering by daily spend in 2026 (see
-    docs/known-issues/openalex-metering-2026-08-05.md). An unauthenticated
-    client gets $0.10/day -- about 100 full-text searches, which one review's
-    Phase 3 can approach on its own. A FREE key raises that to $1/day and
-    makes single-entity lookups (`works/doi:...`, the abstract-resolution
-    path) unmetered. The key is optional: without it every call behaves
-    exactly as before.
+    The API key deliberately does NOT ride here. A query parameter becomes
+    part of the request URL, and requests' RequestException messages embed
+    the full URL -- so one DNS failure would write the key into captured
+    stderr, which downstream consumers archive (service-filed 2026-08-26).
+    Transport is openalex_headers(); presence checks are openalex_api_key().
 
-    Resolved at CALL time, never import time -- same reason as user_agent():
-    the workspace .env is loaded in each CLI's main(), which runs after this
-    module is imported, so an import-time read would silently see no key.
+    OpenAlex metering context (why there is a key at all): an
+    unauthenticated client gets $0.10/day -- about 100 full-text searches,
+    which one review's Phase 3 can approach on its own. A FREE key raises
+    that to $1/day and makes single-entity lookups (`works/doi:...`, the
+    abstract-resolution path) unmetered. The key is optional: without it
+    every call behaves exactly as before. See
+    docs/known-issues/openalex-metering-2026-08-05.md.
     """
-    params = {}
-    if email:
-        params["mailto"] = email
-    api_key = os.environ.get("OPENALEX_API_KEY", "").strip()
-    if api_key:
-        params["api_key"] = api_key
-    return params
+    return {"mailto": email} if email else {}
 
 
 def openalex_api_key() -> str:

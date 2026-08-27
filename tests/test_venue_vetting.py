@@ -427,6 +427,7 @@ class TestLookupVenue:
         captured = {}
 
         def fake_get(url, params=None, headers=None, timeout=None):
+            captured["url"] = url
             captured["params"] = dict(params or {})
             captured["headers"] = dict(headers or {})
             raise vv.requests.exceptions.ConnectionError("boom")
@@ -436,6 +437,8 @@ class TestLookupVenue:
             "Whatever", {"mailto": "e@x.org"}, {"Authorization": "Bearer sekret"})
         assert outcome == "error"
         assert captured["headers"] == {"Authorization": "Bearer sekret"}
+        assert "api_key" not in captured["params"]
+        assert "sekret" not in captured["url"]
 
 
 class TestVetVenues:
@@ -528,6 +531,7 @@ class TestVetVenues:
         result = vv.vet_venues(["Some Journal"])
         assert result["status"] == "complete"
         assert seen["headers"] == {"Authorization": "Bearer sekret"}
+        assert "api_key" not in seen["params"]
 
 
 class TestRawNameQuery:

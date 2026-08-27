@@ -565,6 +565,35 @@ class TestProbeOpenAlex:
         get_abstract.probe_openalex("10.1/x", "e@x.org", limiter, backoff)
         _, kwargs = mock_get.call_args
         assert kwargs["headers"] == {"Authorization": "Bearer sekret"}
+        assert "api_key" not in (kwargs.get("params") or {})
+        assert "sekret" not in mock_get.call_args.args[0]
+
+    @patch("requests.get")
+    def test_incident_regression_key_reaches_neither_url_nor_stderr(
+            self, mock_get, monkeypatch, capsys):
+        """The service-filed incident shape (2026-08-26): a RequestException
+        whose message embeds the FINAL request URL is logged to stderr. The
+        message here is built from what probe_openalex actually passed, so
+        any transport regression at this site surfaces in stderr."""
+        monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
+
+        def boom(url, params=None, headers=None, timeout=None):
+            real = requests.Request(
+                "GET", url, params=params, headers=headers).prepare()
+            assert real.headers.get("Authorization") == "Bearer sekret"
+            raise requests.exceptions.ConnectionError(
+                f"Failed to resolve 'api.openalex.org' for url: {real.url}")
+
+        mock_get.side_effect = boom
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+        status, text = get_abstract.probe_openalex(
+            "10.1/x", "e@x.org", limiter, backoff)
+        assert status == get_abstract.PROBE_TRANSPORT
+        assert text is None
+        err = capsys.readouterr().err
+        assert "OpenAlex: Network error:" in err   # the logging path RAN
+        assert "sekret" not in err                 # and never carried the key
 
 
 class TestProbeCore:

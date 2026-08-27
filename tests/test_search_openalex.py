@@ -242,6 +242,8 @@ class TestOpenAlexIntegration:
             limiter=get_limiter("openalex"), backoff=ExponentialBackoff())
         _, kwargs = mock_get.call_args
         assert kwargs["headers"] == {"Authorization": "Bearer sekret"}
+        assert "api_key" not in (kwargs.get("params") or {})
+        assert "sekret" not in mock_get.call_args.args[0]
 
     @patch("requests.get")
     def test_search_works_sends_bearer_header(self, mock_get, mock_openalex_response, monkeypatch):
@@ -258,6 +260,8 @@ class TestOpenAlexIntegration:
             limiter=get_limiter("openalex"), backoff=ExponentialBackoff())
         _, kwargs = mock_get.call_args
         assert kwargs["headers"] == {"Authorization": "Bearer sekret"}
+        assert "api_key" not in (kwargs.get("params") or {})
+        assert "sekret" not in mock_get.call_args.args[0]
 
 
 class TestOpenAlexCLI:
