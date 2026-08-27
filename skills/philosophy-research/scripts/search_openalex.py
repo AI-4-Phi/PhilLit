@@ -49,6 +49,7 @@ from rate_limiter import (
     ExponentialBackoff,
     get_limiter,
     openalex_budget_exhausted,
+    openalex_headers,
     openalex_params,
 )
 from search_cache import cache_key, get_cache, put_cache
@@ -236,6 +237,7 @@ def get_work_by_id(
         url = f"{OPENALEX_BASE_URL}/works/doi:{work_id}"
 
     params = openalex_params(email)
+    headers = openalex_headers()
 
     for attempt in range(backoff.max_attempts):
         limiter.wait()
@@ -244,7 +246,7 @@ def get_work_by_id(
             print(f"DEBUG: GET {url}", file=sys.stderr)
 
         try:
-            response = requests.get(url, params=params, timeout=30)
+            response = requests.get(url, params=params, headers=headers, timeout=30)
             limiter.record()
 
             if response.status_code == 200:
@@ -303,6 +305,7 @@ def search_works(
     }
 
     params.update(openalex_params(email))
+    headers = openalex_headers()
 
     # Build search query
     if query:
@@ -344,7 +347,7 @@ def search_works(
                 print(f"DEBUG: GET {url} cursor={cursor[:20]}...", file=sys.stderr)
 
             try:
-                response = requests.get(url, params=params, timeout=30)
+                response = requests.get(url, params=params, headers=headers, timeout=30)
                 limiter.record()
 
                 if debug:

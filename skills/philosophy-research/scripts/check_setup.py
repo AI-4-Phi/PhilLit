@@ -25,7 +25,7 @@ from dotenv import find_dotenv, load_dotenv
 # Add parent directory to path for rate_limiter import
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from rate_limiter import get_limiter, openalex_budget_exhausted, openalex_params
+from rate_limiter import get_limiter, openalex_budget_exhausted, openalex_headers, openalex_params
 
 
 def check_env_vars() -> dict[str, dict[str, Any]]:
@@ -250,16 +250,18 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
         email = os.environ.get("OPENALEX_EMAIL", "")
         params = {"search": "test", "per_page": 1}
         params.update(openalex_params(email))
+        headers = openalex_headers()
 
         response = requests.get(
             "https://api.openalex.org/works",
             params=params,
+            headers=headers,
             timeout=10,
         )
         limiter.record()
 
         polite = bool(email)
-        keyed = "api_key" in params
+        keyed = bool(headers)
         # A 429 here is almost always the daily budget, not a burst limit --
         # report it as the actionable thing rather than as "unreachable".
         exhausted = openalex_budget_exhausted(response)

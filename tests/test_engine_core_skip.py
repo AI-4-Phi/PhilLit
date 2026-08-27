@@ -120,3 +120,23 @@ def test_search_core_skips_without_key(tmp_path):
     )
     assert proc.returncode == 0, proc.stderr
     assert json.loads(proc.stdout) == {"status": "skipped", "reason": "no CORE_API_KEY"}
+
+
+# --- check_setup OpenAlex probe: key transport + keyed reporting -------------
+
+def test_openalex_probe_sends_key_as_bearer_header(monkeypatch):
+    from unittest.mock import MagicMock, patch
+    monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
+    monkeypatch.delenv("BRAVE_API_KEY", raising=False)
+    monkeypatch.delenv("CORE_API_KEY", raising=False)
+    mock_response = MagicMock(status_code=200, headers={}, text="")
+    # check_api_connectivity does `import requests` inside its body, so
+    # patching the module attribute globally is the working form (same
+    # idiom the other test files use for the scripts' plain `import requests`).
+    with patch("requests.get", return_value=mock_response) as mock_get:
+        results = check_setup.check_api_connectivity()
+    openalex_calls = [c for c in mock_get.call_args_list
+                      if "api.openalex.org" in c.args[0]]
+    assert openalex_calls, "no request to api.openalex.org was made"
+    assert openalex_calls[0].kwargs["headers"] == {"Authorization": "Bearer sekret"}
+    assert results["openalex"]["api_key"] is True

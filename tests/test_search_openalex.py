@@ -228,6 +228,37 @@ class TestOpenAlexIntegration:
 
         assert "not found" in str(exc_info.value).lower()
 
+    @patch("requests.get")
+    def test_get_work_by_id_sends_bearer_header(self, mock_get, mock_openalex_response, monkeypatch):
+        monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: mock_openalex_response["results"][0]
+        )
+        import search_openalex
+        from rate_limiter import get_limiter, ExponentialBackoff
+        search_openalex.get_work_by_id(
+            "10.2307/2024717", email=None,
+            limiter=get_limiter("openalex"), backoff=ExponentialBackoff())
+        _, kwargs = mock_get.call_args
+        assert kwargs["headers"] == {"Authorization": "Bearer sekret"}
+
+    @patch("requests.get")
+    def test_search_works_sends_bearer_header(self, mock_get, mock_openalex_response, monkeypatch):
+        monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
+        mock_get.return_value = MagicMock(
+            status_code=200,
+            json=lambda: mock_openalex_response
+        )
+        import search_openalex
+        from rate_limiter import get_limiter, ExponentialBackoff
+        search_openalex.search_works(
+            query="free will", limit=1, year=None, cites=None, oa_only=False,
+            min_citations=None, work_type=None, email=None,
+            limiter=get_limiter("openalex"), backoff=ExponentialBackoff())
+        _, kwargs = mock_get.call_args
+        assert kwargs["headers"] == {"Authorization": "Bearer sekret"}
+
 
 class TestOpenAlexCLI:
     """Tests for command-line interface."""

@@ -48,6 +48,7 @@ from rate_limiter import (
     ExponentialBackoff,
     get_limiter,
     openalex_budget_exhausted,
+    openalex_headers,
     openalex_params,
     parse_retry_after,
 )
@@ -275,6 +276,7 @@ def probe_openalex(
 
     url = f"https://api.openalex.org/works/doi:{doi}"
     params = openalex_params(email)
+    headers = openalex_headers()
 
     for attempt in range(backoff.max_attempts):
         limiter.wait()
@@ -283,7 +285,7 @@ def probe_openalex(
             print(f"DEBUG: GET {url}", file=sys.stderr)
 
         try:
-            response = requests.get(url, params=params, timeout=30)
+            response = requests.get(url, params=params, headers=headers, timeout=30)
             limiter.record()
 
             if response.status_code == 200:

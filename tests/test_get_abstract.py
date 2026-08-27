@@ -556,6 +556,16 @@ class TestProbeOpenAlex:
         assert get_abstract.get_abstract_from_openalex(
             "10.1/x", None, limiter, backoff) is None
 
+    @patch("requests.get")
+    def test_key_rides_as_bearer_header(self, mock_get, monkeypatch):
+        monkeypatch.setenv("OPENALEX_API_KEY", "sekret")
+        mock_get.return_value = MagicMock(status_code=404)
+        import get_abstract
+        limiter, backoff = _limiter_and_backoff("openalex")
+        get_abstract.probe_openalex("10.1/x", "e@x.org", limiter, backoff)
+        _, kwargs = mock_get.call_args
+        assert kwargs["headers"] == {"Authorization": "Bearer sekret"}
+
 
 class TestProbeCore:
     """probe_core status vocabulary."""
