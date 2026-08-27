@@ -102,6 +102,7 @@ from rate_limiter import (  # noqa: E402
     get_limiter,
     openalex_budget_exhausted,
     openalex_headers,
+    openalex_key_unusable,
     openalex_params,
 )
 
@@ -353,6 +354,10 @@ def lookup_venue(name: str, params: dict, headers: dict) -> tuple[dict | None, s
         return None, "error"
 
 
+_ON_TOKENS = ("1", "true", "yes", "on")
+_OFF_TOKENS = ("0", "false", "no", "off")
+
+
 def _vetting_mode() -> str:
     """PHILLIT_VET_VENUES parsed strictly: 'auto' (unset or whitespace),
     'on' (1/true/yes/on), 'off' (0/false/no/off), else 'invalid'.
@@ -365,9 +370,9 @@ def _vetting_mode() -> str:
     value = os.environ.get("PHILLIT_VET_VENUES", "").strip().lower()
     if not value:
         return "auto"
-    if value in ("1", "true", "yes", "on"):
+    if value in _ON_TOKENS:
         return "on"
-    if value in ("0", "false", "no", "off"):
+    if value in _OFF_TOKENS:
         return "off"
     return "invalid"
 
@@ -410,6 +415,9 @@ def vet_venues(names) -> dict:
                 raw_by_key.setdefault(key, raw)
         distinct = sorted(raw_by_key)
         if not distinct:
+            # Deliberately BEFORE the flag gates: an empty pass stays the
+            # legacy no-op "complete"; config feedback for a bad flag value
+            # is check_setup's job (it fires regardless of venue count).
             return result
 
         stage = "resolving OpenAlex params"
@@ -427,7 +435,11 @@ def vet_venues(names) -> dict:
         headers = openalex_headers()
         if not headers:
             result["status"] = "skipped"
-            if mode == "on":
+            if openalex_key_unusable():
+                result["reason"] = (
+                    "OPENALEX_API_KEY is set but contains characters that cannot "
+                    "travel in an HTTP header -- treating it as unset; venue vetting skipped")
+            elif mode == "on":
                 result["reason"] = (
                     "PHILLIT_VET_VENUES requests vetting but it still needs "
                     "OPENALEX_API_KEY -- an unkeyed pass would spend the whole "

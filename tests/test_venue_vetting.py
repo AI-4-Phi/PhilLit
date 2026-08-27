@@ -526,6 +526,22 @@ class TestVetVenues:
         assert "OPENALEX_API_KEY" in result["reason"]
         assert "PHILLIT_VET_VENUES" not in result["reason"]
 
+    def test_unusable_key_reason_names_the_real_problem(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "se\nkret")
+        monkeypatch.delenv("PHILLIT_VET_VENUES", raising=False)
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "skipped"
+        assert "cannot travel in an HTTP header" in result["reason"]
+        assert "se\nkret" not in result["reason"]
+        assert result["looked_up"] == 0
+
+    def test_auto_no_key_reason_is_the_service_pinned_string(self, monkeypatch, isolated_cache):
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        monkeypatch.delenv("PHILLIT_VET_VENUES", raising=False)
+        result = vv.vet_venues(["Some Journal"])
+        assert result["reason"] == ("no OPENALEX_API_KEY -- venue vetting needs the free key "
+                                    "so it does not spend the unauthenticated search budget")
+
     def test_flags_and_reports_evidence(self, monkeypatch, isolated_cache):
         monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
         payload = {"results": [hit("Small Journal", 2, False, False)]}
