@@ -770,7 +770,8 @@ ride F's run as a fourth rider rather than buying its own.
 - **Issue D is BUILT (2026-08-06, validated live 2026-08-07: 40 lookups, 0
   errors, writer compliance confirmed by a controlled flag-vs-no-flag test)** —
   `skills/literature-review/scripts/venue_vetting.py`,
-  wired into the barrier, gated on `OPENALEX_API_KEY`. What it needed, and now has,
+  wired into the barrier, gated on `PHILLIT_VET_VENUES` (default: run iff
+  `OPENALEX_API_KEY` is set). What it needed, and now has,
   was a venue-resolution step calling
   OpenAlex `/sources` with a persistent per-venue cache, plus a dedicated
   `venue_status` field that must survive `sanitize_bib.py`,

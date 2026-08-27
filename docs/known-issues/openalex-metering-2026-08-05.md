@@ -57,7 +57,7 @@ diagnosis is no longer inferential — all four requests below went to
 | request | HTTP |
 |---|---|
 | no key at all | **200** |
-| `&api_key=<key>` (what the code sends) | 401 |
+| `&api_key=<key>` (what the code sent then) | 401 |
 | `Authorization: Bearer <key>` | 401 |
 | `api_key: <key>` header | 401 |
 
