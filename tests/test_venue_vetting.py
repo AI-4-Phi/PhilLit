@@ -451,6 +451,81 @@ class TestVetVenues:
         assert "OPENALEX_API_KEY" in result["reason"]
         assert called == []
 
+    def test_vetting_mode_contract(self, monkeypatch):
+        cases = {None: "auto", "": "auto", "   ": "auto",
+                 "1": "on", "true": "on", "Yes": "on", " ON ": "on",
+                 "0": "off", "false": "off", "No": "off", " OFF ": "off",
+                 "2": "invalid", "flase": "invalid", "disable": "invalid"}
+        for raw, expected in cases.items():
+            if raw is None:
+                monkeypatch.delenv("PHILLIT_VET_VENUES", raising=False)
+            else:
+                monkeypatch.setenv("PHILLIT_VET_VENUES", raw)
+            assert vv._vetting_mode() == expected, repr(raw)
+
+    def test_flag_off_skips_even_with_key(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setenv("PHILLIT_VET_VENUES", "0")
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "skipped"
+        assert "PHILLIT_VET_VENUES" in result["reason"]
+        assert result["looked_up"] == 0
+
+    def test_flag_invalid_skips_and_never_echoes_the_value(self, monkeypatch, isolated_cache):
+        # A typo like 'flase' must NOT read as enable-intent: the flag's
+        # primary use is DECLINING vetting while keeping a key, so unknown
+        # values fail toward skip-with-reason. The raw value is never echoed
+        # (it may hold control characters; output must stay ASCII).
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        for value in ("flase", "2", "disable"):
+            monkeypatch.setenv("PHILLIT_VET_VENUES", value)
+            result = vv.vet_venues(["Some Journal"])
+            assert result["status"] == "skipped"
+            assert "PHILLIT_VET_VENUES" in result["reason"]
+            assert value not in result["reason"]
+            assert result["looked_up"] == 0
+
+    def test_flag_on_without_key_skips_and_names_both(self, monkeypatch, isolated_cache):
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        monkeypatch.setenv("PHILLIT_VET_VENUES", "1")
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "skipped"
+        assert "PHILLIT_VET_VENUES" in result["reason"]
+        assert "OPENALEX_API_KEY" in result["reason"]
+
+    def test_flag_on_with_whitespace_key_skips_naming_both(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "   ")
+        monkeypatch.setenv("PHILLIT_VET_VENUES", "on")
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "skipped"
+        assert "PHILLIT_VET_VENUES" in result["reason"]
+        assert "OPENALEX_API_KEY" in result["reason"]
+
+    def test_flag_on_with_key_vets(self, monkeypatch, isolated_cache):
+        monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
+        monkeypatch.setenv("PHILLIT_VET_VENUES", "true")
+        seen = {}
+
+        def fake_lookup(name, params, headers):
+            seen["called"] = True
+            return {"schema_version": vv.RECORD_SCHEMA_VERSION, "resolved": False,
+                    "fetched_at": time.time()}, "ok"
+
+        monkeypatch.setattr(vv, "lookup_venue", fake_lookup)
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "complete"
+        assert seen.get("called") is True
+
+    def test_flag_empty_means_auto_not_enable(self, monkeypatch, isolated_cache):
+        # Both auto directions already have tests (test_skips_without_api_key,
+        # and the key-set vetting tests); this pins that EMPTY means auto.
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+        monkeypatch.setenv("PHILLIT_VET_VENUES", "")
+        result = vv.vet_venues(["Some Journal"])
+        assert result["status"] == "skipped"
+        assert "OPENALEX_API_KEY" in result["reason"]
+        assert "PHILLIT_VET_VENUES" not in result["reason"]
+
     def test_flags_and_reports_evidence(self, monkeypatch, isolated_cache):
         monkeypatch.setenv("OPENALEX_API_KEY", "test-key")
         payload = {"results": [hit("Small Journal", 2, False, False)]}

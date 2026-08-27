@@ -142,3 +142,53 @@ def test_openalex_probe_sends_key_as_bearer_header(monkeypatch):
     assert "api_key" not in openalex_calls[0].kwargs["params"]
     assert "sekret" not in openalex_calls[0].args[0]
     assert results["openalex"]["api_key"] is True
+
+
+def _openalex_message(monkeypatch, *, key, flag):
+    from unittest.mock import MagicMock, patch
+    if key is None:
+        monkeypatch.delenv("OPENALEX_API_KEY", raising=False)
+    else:
+        monkeypatch.setenv("OPENALEX_API_KEY", key)
+    if flag is None:
+        monkeypatch.delenv("PHILLIT_VET_VENUES", raising=False)
+    else:
+        monkeypatch.setenv("PHILLIT_VET_VENUES", flag)
+    monkeypatch.delenv("BRAVE_API_KEY", raising=False)
+    monkeypatch.delenv("CORE_API_KEY", raising=False)
+    mock_response = MagicMock(status_code=200, headers={}, text="")
+    with patch("requests.get", return_value=mock_response):
+        return check_setup.check_api_connectivity()["openalex"]["message"]
+
+
+def test_vetting_conflict_notes_in_openalex_message(monkeypatch):
+    # on + no key: the round-1 latency gap -- config-time feedback.
+    msg = _openalex_message(monkeypatch, key=None, flag="1")
+    assert "PHILLIT_VET_VENUES" in msg and "OPENALEX_API_KEY" in msg
+    # unrecognized value: flagged regardless of the key.
+    msg = _openalex_message(monkeypatch, key="sekret", flag="flase")
+    assert "unrecognized" in msg
+    # off + key: the SUPPORTED configuration -- no note, no noise.
+    msg = _openalex_message(monkeypatch, key="sekret", flag="0")
+    assert "PHILLIT_VET_VENUES" not in msg
+
+
+def test_vetting_note_agrees_with_the_flag_parser(monkeypatch):
+    """Drift pin for the token tuples check_setup duplicates from
+    venue_vetting._vetting_mode: for every token the parser knows, the note
+    behavior must match the parser's classification."""
+    import sys
+    from pathlib import Path
+    sys.path.insert(0, str(Path(__file__).parent.parent
+                           / "skills" / "literature-review" / "scripts"))
+    import venue_vetting as vv
+    for token in ("1", "true", "yes", "on"):
+        monkeypatch.setenv("PHILLIT_VET_VENUES", token)
+        assert vv._vetting_mode() == "on"
+        msg = _openalex_message(monkeypatch, key=None, flag=token)
+        assert "OPENALEX_API_KEY" in msg, token
+    for token in ("0", "false", "no", "off"):
+        monkeypatch.setenv("PHILLIT_VET_VENUES", token)
+        assert vv._vetting_mode() == "off"
+        msg = _openalex_message(monkeypatch, key="sekret", flag=token)
+        assert "PHILLIT_VET_VENUES" not in msg, token

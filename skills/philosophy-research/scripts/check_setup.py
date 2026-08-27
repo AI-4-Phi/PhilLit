@@ -275,6 +275,16 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
             note = (" DAILY BUDGET EXHAUSTED (resets midnight UTC)"
                     + ("" if keyed else " - a FREE key raises it 10x:"
                        " https://openalex.org/settings/api") + note)
+        # Token sets mirror venue_vetting._vetting_mode (the owner); the
+        # agreement is pinned by a test, so drift fails loudly.
+        vet_flag = os.environ.get("PHILLIT_VET_VENUES", "").strip().lower()
+        if vet_flag and vet_flag not in ("0", "false", "no", "off"):
+            if vet_flag not in ("1", "true", "yes", "on"):
+                note += (" [PHILLIT_VET_VENUES holds an unrecognized value --"
+                         " venue vetting will skip]")
+            elif not keyed:
+                note += (" [PHILLIT_VET_VENUES requests venue vetting, which"
+                         " also needs OPENALEX_API_KEY -- it will skip]")
         results["openalex"] = {
             "reachable": response.status_code == 200,
             "status_code": response.status_code,

@@ -186,11 +186,21 @@ def _no_ambient_openalex_key():
     repo tree, so that upward search can never reach a repo-root .env.
     Both halves are required together; this fixture alone protects only
     developer checkouts that have no .env at all.
+
+    Also strips PHILLIT_VET_VENUES -- same ambient-leak path, opposite
+    direction (it could disable a gate a test asserts on).
     """
     saved = os.environ.pop("OPENALEX_API_KEY", None)
-    yield
-    if saved is not None:
-        os.environ["OPENALEX_API_KEY"] = saved
+    saved_flag = os.environ.pop("PHILLIT_VET_VENUES", None)
+    try:
+        yield
+    finally:
+        os.environ.pop("OPENALEX_API_KEY", None)
+        os.environ.pop("PHILLIT_VET_VENUES", None)
+        if saved is not None:
+            os.environ["OPENALEX_API_KEY"] = saved
+        if saved_flag is not None:
+            os.environ["PHILLIT_VET_VENUES"] = saved_flag
 
 
 @pytest.fixture(autouse=True)

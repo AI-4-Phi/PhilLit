@@ -120,7 +120,8 @@ to entries whose `journal` resolves in OpenAlex as non-core, not DOAJ-listed,
 and with an h-index below 15. It is a caveat for the synthesis writer, not a
 claim about the work. Only flagged entries carry it — absence means "not
 flagged, not evaluated, or vetting did not run" (vetting needs a free
-`OPENALEX_API_KEY`). Agents must never write this field by hand.
+`OPENALEX_API_KEY` and can be switched off with `PHILLIT_VET_VENUES=0`).
+Agents must never write this field by hand.
 
 ### Year Suffix Field (engine-stamped)
 

@@ -212,9 +212,11 @@ Never advance to a next step in this phase before completing the current step.
 
    The summary's `venue_vetting` key reports the venue check: it
    flags entries whose journal is barely indexed. `"status": "skipped"` means
-   no `OPENALEX_API_KEY` was set — mention it once in the final summary so the
-   user knows the check did not run; it is optional and free to obtain. Any
-   other non-`complete` status means the check ran but did not finish, or
+   the check did not run — the `reason` says why (no `OPENALEX_API_KEY`, or
+   `PHILLIT_VET_VENUES` switched it off or holds an unrecognized value);
+   mention it once in the final summary so the user knows. `OPENALEX_API_KEY`
+   remains optional; obtaining one is free. Any other non-`complete` status
+   means the check ran but did not finish, or
    could not run at all — surface that once too, reading why from
    `intermediate_files/json/evidence_report.json`'s `venue_vetting` object
    (the printed summary carries the status but not the explanation): for

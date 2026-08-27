@@ -39,9 +39,16 @@ OpenAlex sources where one reports a stringly-typed `h_index`, which makes
 catches it, so it degrades to outcome "error" and counts toward
 MAX_CONSECUTIVE_ERRORS like any other failed lookup.
 
-A missing OPENALEX_API_KEY or an empty name list produces no flags at all
-(status "skipped" or a no-op "complete" pass,
-respectively). A pass that hits a transport error, exhausts its OpenAlex
+A missing OPENALEX_API_KEY, a PHILLIT_VET_VENUES of off/0/false/no (or an
+unrecognized value, which reads as off-with-explanation, never as on), or an
+empty name list produces no flags at all (status "skipped" for the first
+two, a no-op "complete" pass for the last). The flag decouples two operator
+decisions: a key can be supplied purely for the 10x daily budget without
+also switching vetting on. Vetting never runs unkeyed, even under an
+explicit PHILLIT_VET_VENUES=1 -- an unkeyed pass would spend the whole
+unauthenticated search budget.
+
+A pass that hits a transport error, exhausts its OpenAlex
 budget, or trips one of the two bounds (MAX_CONSECUTIVE_ERRORS,
 PASS_DEADLINE_SECONDS) KEEPS every verdict it did resolve and reports itself
 as "partial" rather than discarding them -- an independently resolved
@@ -346,12 +353,33 @@ def lookup_venue(name: str, params: dict, headers: dict) -> tuple[dict | None, s
         return None, "error"
 
 
+def _vetting_mode() -> str:
+    """PHILLIT_VET_VENUES parsed strictly: 'auto' (unset or whitespace),
+    'on' (1/true/yes/on), 'off' (0/false/no/off), else 'invalid'.
+
+    Unknown values are NOT enable-intent: the flag's primary use is
+    declining vetting while keeping a key for the 10x search budget, so a
+    typo like 'flase' must fail toward skip-with-reason, never toward
+    silently running the check the operator meant to switch off.
+    """
+    value = os.environ.get("PHILLIT_VET_VENUES", "").strip().lower()
+    if not value:
+        return "auto"
+    if value in ("1", "true", "yes", "on"):
+        return "on"
+    if value in ("0", "false", "no", "off"):
+        return "off"
+    return "invalid"
+
+
 def vet_venues(names) -> dict:
     """Resolve every distinct venue name and apply the rule. Never raises.
 
-    Gated on OPENALEX_API_KEY: vetting runs AFTER Phase 3's searches, so
+    Gated on PHILLIT_VET_VENUES (default when unset: run iff OPENALEX_API_KEY
+    is set) and on the key itself: vetting runs AFTER Phase 3's searches, so
     spending the unauthenticated $0.10/day budget here would starve the next
-    review's searches. A free key raises the budget to $1/day.
+    review's searches -- which is why even an explicit PHILLIT_VET_VENUES=1
+    does not run unkeyed. A free key raises the budget to $1/day.
 
     Queries OpenAlex with the RAW venue name (per normalized key, the first
     raw spelling seen after sorting the raw inputs, so the choice is
@@ -385,12 +413,28 @@ def vet_venues(names) -> dict:
             return result
 
         stage = "resolving OpenAlex params"
+        mode = _vetting_mode()
+        if mode == "off":
+            result["status"] = "skipped"
+            result["reason"] = "venue vetting disabled by PHILLIT_VET_VENUES"
+            return result
+        if mode == "invalid":
+            result["status"] = "skipped"
+            result["reason"] = ("unrecognized PHILLIT_VET_VENUES value -- expected "
+                                "1/true/yes/on, 0/false/no/off, or unset; venue vetting skipped")
+            return result
         params = openalex_params(os.environ.get("OPENALEX_EMAIL", ""))
         headers = openalex_headers()
         if not headers:
             result["status"] = "skipped"
-            result["reason"] = ("no OPENALEX_API_KEY -- venue vetting needs the free key "
-                                "so it does not spend the unauthenticated search budget")
+            if mode == "on":
+                result["reason"] = (
+                    "PHILLIT_VET_VENUES requests vetting but it still needs "
+                    "OPENALEX_API_KEY -- an unkeyed pass would spend the whole "
+                    "unauthenticated search budget (free key: openalex.org/settings/api)")
+            else:
+                result["reason"] = ("no OPENALEX_API_KEY -- venue vetting needs the free key "
+                                    "so it does not spend the unauthenticated search budget")
             return result
 
         deadline = time.monotonic() + PASS_DEADLINE_SECONDS
