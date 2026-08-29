@@ -12,7 +12,8 @@ here; a stale claim about that has been written into this file twice.
 
 ## Working sequence
 
-The queue is EMPTY; the next external step is the service's scripted
+One queued item — **strip the dangling spec cross-references from engine
+scripts** (below). The other external step is the service's scripted
 re-vendor at a pin at or past the v0.5.3 tip (service-session work, never
 hand-mirrored — rule in `CLAUDE.md`, "Sister repo: phillit-service").
 Everything else in this file is a recorded residual, not work. (Section
@@ -26,6 +27,55 @@ corpus gate reproduced this repo's item-14 measurements byte-exactly with
 the hooks at the measurement commit). The
 cross-repo rule — scripted re-vendor, never hand-mirroring — lives in
 `CLAUDE.md`, "Sister repo: phillit-service".
+
+## 16. Strip dangling spec cross-references from engine scripts
+
+**Filed by the service 2026-08-29.** Nineteen comments and docstrings across
+eight engine files cite section numbers of design documents under
+`docs/superpowers/`. That directory is **gitignored here — `git ls-files
+docs/superpowers` returns 0** — so every one of these pointers resolves only on
+the machine that happens to hold the local copy, and for everyone else it is a
+reference to a document that does not exist.
+
+It is worse downstream. phillit-service vendors these scripts and
+`build_workspace` copies them into **every review workspace**, so a paid agent
+reads `source-caching spec §4` and `Option C (divergence write-up §9)` with no
+way to follow either. The service's own copies of those documents are gone
+besides: its source-caching spec and service-v1 spec were deleted in its
+2026-08-02 purge.
+
+The fix is to say the thing instead of citing a location — the same rule the
+service applied to its own tree on 2026-08-29 (369 citations removed from 95
+files), and the same restate-at-the-point-of-use rule both repos already
+follow for prose. **Delete the pointer, keep any fact it inlined.** No
+behaviour changes; these are comments and docstrings only.
+
+Sites, by file:
+
+- `skills/philosophy-research/scripts/source_store.py` — 6 (module docstring
+  "source-caching design spec 2026-07-15 §4", plus `§6.3`, `§3.2` ×2, `§4` ×2)
+- `skills/literature-review/scripts/lint_md.py` — 3 (`item 13 §4.2` ×3)
+- `.claude/hooks/metadata_cleaner.py` — 2 (`divergence write-up §9`,
+  `Option C (§9)`)
+- `skills/philosophy-research/scripts/fetch_sep.py` — 1 (`source-caching spec §4`)
+- `skills/philosophy-research/scripts/fetch_ndpr.py` — 1 (same)
+- `skills/philosophy-research/scripts/fetch_iep.py` — 1 (same)
+- `skills/philosophy-research/scripts/rate_limiter.py` — 1 (`§6.1`)
+- `skills/literature-review/scripts/stamp_evidence.py` — 1
+  (`Option C (divergence write-up §9)`)
+- `skills/literature-review/scripts/dedupe_bib.py` — 1 (`spec §9`)
+- `skills/literature-review/scripts/evidence_barrier.py` — 1 (`§9`)
+
+Two hazards the service hit doing this mechanically, both caught only by its
+test suite: an "empty parens" cleanup turned `load_settings()` into an
+attribute access, and a double-space collapse broke the
+two-spaces-before-inline-comment convention. Verify by running the suite, not
+by reading the diff.
+
+Note for whoever takes it: the service cannot fix these itself. `engine/` is a
+vendored snapshot and an edit there would be silently reverted by the next
+re-vendor, so the fix has to land here and arrive by mirror.
+
 
 ## 2. Web-source evidence — ACCEPTED 2026-08-15; intaken by the service 2026-08-16; residual findings recorded
 
