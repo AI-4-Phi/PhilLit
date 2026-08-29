@@ -10,16 +10,52 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Service re-vendor.** Run the service's scripted re-vendor (`tools/revendor.py`)
-at a pin at or past this repo's tip. Service-session work, never
-hand-mirrored — rule in `CLAUDE.md`, "Sister repo: phillit-service".
+**Decide whether a chapter's `series` belongs in the rendered entry.**
+`disambiguate_container` populates `series`, and
+`agents/domain-literature-researcher.md` tells the researcher to write it into
+the entry — but `grep -c series
+skills/literature-review/scripts/generate_bibliography.py` returns 0, so no
+formatter reads it. The value reaches the delivered `.bib` and never the
+References. Plausibly correct as it stands (Chicago does not require a series
+for a chapter), in which case the producer side is fine and nothing is owed;
+the point is that the question has not been answered anywhere. Measured in the
+service's re-vendor at `1896361`, against this tree.
 
-The dangling section citations are settled from this side: a grep over tracked
-files returns zero, and the sites that survive in the service tree are its own.
-The key-transport intake — that three assertions in the service's
-`tests/test_engine_rate_limiter.py` fail on the header swap, and that the fix
-is to pin the claim rather than re-pin the mechanism — is recorded in its
-item 26, at both bullets that own it. Nothing owed here.
+**The researcher's chapter instruction overstates the container fix.**
+`agents/domain-literature-researcher.md` now says "For a chapter,
+`container_title` is the book (`booktitle`)". That holds only when the
+parent-volume lookup succeeds. Every bail path — no usable ISBN, non-200, a
+truncated result page, a malformed or disagreeing parent — leaves
+`container_title` at CrossRef's first array element, which for the
+`susser2013artificial` record that motivated the fix is the SERIES. The
+practical harm is small, since the agent should write `container_title` into
+`booktitle` either way and no better value exists on a bail; what is wrong is
+that agent-facing prose asserts a guarantee the code deliberately does not
+make.
+
+**The References matcher cannot bridge an independently ae-transliterated
+surname.** `ascii_variants` returns the NFKD fold and `translit_fold`, both
+derived from the input's own diacritics — so it covers its documented case,
+body "Fraenken" against bib "Fränken". It does not cover body "Fraenken"
+against bib "Franken", where the bib field has already been NFKD-stripped:
+neither side carries a diacritic, no ae-variant is generated, and
+`generate_bibliography.py`'s surname+year matcher misses the entry. It does
+not ship silently — `lint_md.check_citations` flags the miss as an ERROR, and
+that path was verified non-vacuous — but the match itself fails. Fix shape: a
+symmetric ae/oe/ue fold at match time, collision-aware like the existing one.
+Filed by the service in 2026-08, where it was recorded as "fix in PhilLit" and
+then never reached this queue.
+
+**Measure what an unrecognized API envelope licenses in the cleaner.**
+`metadata_cleaner._ingest_file` dispatches on `api_source` and its `else` arm
+falls through to `parse_s2_result`, so a non-paper dump — a SEP or IEP page, a
+bare abstract file — is parsed as if it were Semantic Scholar and injects
+bare-title entries into the metadata index. That index is what licenses
+stripping. Deliberately NOT narrowed when it was found, and the reason is why
+it needs a measurement rather than a patch: a thinner presence-index strips
+MORE, so narrowing the fall-through could degrade corpora that currently work.
+What is owed first is a measurement of what those entries actually license.
+Same provenance as the entry above — service-filed, never queued here.
 
 **Fix the parsed-title inversion in encyclopedia context matching.**
 `resolve_context._title_text` returns the parsed title whenever it is
