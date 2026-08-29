@@ -9,7 +9,21 @@ sys.path.insert(0, str(SCRIPTS_DIR))
 from resolve_context import (
     load_slug_files, first_author_surname, title_score, match_entry_to_article,
     extract_passage, format_context_value, strip_context_fields, acquire_context,
+    _title_texts,
 )
+
+
+def _article_from_entries(entries):
+    """Like _article() below, but the caller supplies raw+parsed+confidence
+    directly instead of forcing parsed=None -- needed to test parsed-title
+    scoring."""
+    return {
+        "entry_name": "test-entry",
+        "title": "Test Entry",
+        "preamble": "",
+        "sections": {},
+        "bibliography": entries,
+    }
 
 
 def _article(bib_lines, sections=None, preamble=""):
@@ -187,6 +201,143 @@ class TestMatchEntry:
                   "title": "Counterfactual Dependence and Time's Arrow"}
         m = match_entry_to_article(fields, art)
         assert m["suffix"] == "a"
+
+
+class TestParsedTitleMaxScoring:
+    """match_entry_to_article scores each candidate as the max of its parsed
+    title and its raw line, never one at the other's expense. Both SEP's
+    parser and the old regex truncate a title at its first comma, so a
+    correct comma-bearing bib title can score zero on the parsed title
+    alone; the raw line still carries every token."""
+
+    def test_ayer_regression_comma_truncated_parsed_title_still_matches(self):
+        # SEP's parser truncates "Language, Truth and Logic" to a parsed
+        # title of "Language" -- overlap 1 < TITLE_MIN_OVERLAP, score 0.0 on
+        # parsed alone. Under the old parsed-preferred scoring this candidate
+        # never passes; the raw line has all three title tokens.
+        art = _article_from_entries([{
+            "raw": "Ayer, A.J., 1936, Language, Truth and Logic, London: Gollancz.",
+            "parsed": {"authors": ["Ayer, A.J."], "year": "1936",
+                       "title": "Language", "publisher": "Truth and Logic, London: Gollancz"},
+            "confidence": "high",
+        }])
+        fields = {"author": "Ayer, A.J.", "year": "1936",
+                  "title": "Language, Truth and Logic"}
+        m = match_entry_to_article(fields, art)
+        assert m is not None and not m.get("ambiguous")
+
+    def test_ambiguity_still_fires_with_parsed_titles(self):
+        # Both lines' parsed titles fully overlap the bib title; the
+        # ambiguity rule must still fire exactly as it does on raw-only
+        # scoring.
+        art = _article_from_entries([
+            {"raw": "Lewis, D., 1979a, Counterfactual Dependence and Time's Arrow, reprint.",
+             "parsed": {"title": "Counterfactual Dependence and Time's Arrow"},
+             "confidence": "high"},
+            {"raw": "Lewis, D., 1979b, More on Counterfactual Dependence and Time's Arrow.",
+             "parsed": {"title": "More on Counterfactual Dependence and Time's Arrow"},
+             "confidence": "high"},
+        ])
+        fields = {"author": "Lewis, David", "year": "1979",
+                  "title": "Counterfactual Dependence and Time's Arrow"}
+        m = match_entry_to_article(fields, art)
+        assert m is not None and m.get("ambiguous") is True
+
+    def test_parsed_none_items_unchanged_raw_fallback(self):
+        # parsed: None (IEP's shape, and low-confidence SEP partials) must
+        # still score on raw alone, exactly as before the fix.
+        art = _article_from_entries([{
+            "raw": "Kuhn, T., 1962, The Structure of Scientific Revolutions, Chicago.",
+            "parsed": None, "confidence": "low",
+        }])
+        fields = {"author": "Kuhn, Thomas S.", "year": "1962",
+                  "title": "The Structure of Scientific Revolutions"}
+        m = match_entry_to_article(fields, art)
+        assert m is not None and not m.get("ambiguous")
+
+    def test_junk_line_rejected_when_both_texts_score_low(self):
+        art = _article_from_entries([{
+            "raw": "Kuhn, T., 1962, Totally Unrelated Topic, Publisher.",
+            "parsed": {"title": "Totally Unrelated Topic"}, "confidence": "high",
+        }])
+        fields = {"author": "Kuhn, Thomas S.", "year": "1962",
+                  "title": "The Structure of Scientific Revolutions"}
+        assert match_entry_to_article(fields, art) is None
+
+    def test_max_semantics_low_parsed_score_high_raw_score_still_matches(self):
+        # parsed title overlaps 2 of 5 bib tokens (0.4, below threshold on
+        # its own); the raw line contains all 5 (1.0). A narrower fix (e.g.
+        # "prefer parsed, else raw" without ever combining) would lose this
+        # case -- pin the max explicitly.
+        art = _article_from_entries([{
+            "raw": "Zeta, Z., 1999, Alpha Beta Gamma Delta Epsilon, Publisher.",
+            "parsed": {"title": "Alpha Beta"}, "confidence": "high",
+        }])
+        fields = {"author": "Zeta, Z.", "year": "1999",
+                  "title": "Alpha Beta Gamma Delta Epsilon"}
+        m = match_entry_to_article(fields, art)
+        assert m is not None and not m.get("ambiguous")
+        assert m["score"] == 1.0
+
+    def test_sibling_residual_accepted_when_own_work_absent(self):
+        # ACCEPTED RESIDUAL (measured 2026-08-29, docs/known-issues/
+        # parsed-title-measurement-2026-08-29/): a same-author-same-year
+        # SIBLING title, comma-truncated by the parser exactly like the Ayer
+        # case, can raw-overlap the bib title at >= threshold (0.75 here)
+        # when the entry's own work is absent from the article's
+        # bibliography. Pinned deliberately -- a future change to this
+        # behavior, in EITHER direction, must break this test rather than
+        # slip by silently.
+        art = _article_from_entries([{
+            "raw": "Piccinini, G., 2004, Computation, Explanation, and Mental Contents, Publisher.",
+            "parsed": {"title": "Computation"}, "confidence": "high",
+        }])
+        fields = {"author": "Piccinini, Gualtiero", "year": "2004",
+                  "title": "Computation, Explanation, and Mental States"}
+        m = match_entry_to_article(fields, art)
+        assert m is not None and not m.get("ambiguous")
+
+    def test_both_siblings_present_backstop_is_ambiguous(self):
+        # Now load-bearing: when both the entry's own work and its sibling
+        # are present, it is the ambiguity rule -- not raw-overlap avoidance
+        # -- that bounds the sibling-residual class pinned above.
+        art = _article_from_entries([
+            {"raw": "Piccinini, G., 2004, Computation, Explanation, and Mental States, Publisher.",
+             "parsed": {"title": "Computation"}, "confidence": "high"},
+            {"raw": "Piccinini, G., 2004, Computation, Explanation, and Mental Contents, Publisher.",
+             "parsed": {"title": "Computation"}, "confidence": "high"},
+        ])
+        fields = {"author": "Piccinini, Gualtiero", "year": "2004",
+                  "title": "Computation, Explanation, and Mental States"}
+        m = match_entry_to_article(fields, art)
+        assert m is not None and m.get("ambiguous") is True
+
+    def test_loss_to_ambiguous_is_the_accepted_conservative_direction(self):
+        # Under the old parsed-only scoring, line B's parsed title
+        # ("Something Else Entirely") scores 0 and only line A passes: a
+        # single (baseline) match. Under max(), line B's RAW line also
+        # scores >= threshold (2 of 4 bib tokens), so both lines pass and
+        # the matcher must retreat to AMBIGUOUS rather than guess -- a lost
+        # match costs one tier; a wrong one manufactures a sanctioned
+        # mischaracterization.
+        art = _article_from_entries([
+            {"raw": "Wright, C., 2000, Alpha Beta Gamma Delta, Publisher A.",
+             "parsed": {"title": "Alpha Beta Gamma Delta"}, "confidence": "high"},
+            {"raw": "Wright, C., 2000b, Alpha Beta Unrelated Extra, Publisher B.",
+             "parsed": {"title": "Something Else Entirely"}, "confidence": "high"},
+        ])
+        fields = {"author": "Wright, Crispin", "year": "2000",
+                  "title": "Alpha Beta Gamma Delta"}
+        m = match_entry_to_article(fields, art)
+        assert m is not None and m.get("ambiguous") is True
+
+    def test_title_texts_scores_parsed_when_raw_missing(self):
+        # Plumbing symmetry: an item with a parsed title but no raw key must
+        # not crash, and the parsed title must still be scored.
+        item = {"parsed": {"title": "Data-Centric Biology"}}
+        texts = _title_texts(item)
+        assert texts == ["Data-Centric Biology", ""]
+        assert title_score("Data-Centric Biology", texts[0]) == 1.0
 
 
 # Real fetch_sep.py/fetch_iep.py sections are keyed by id with

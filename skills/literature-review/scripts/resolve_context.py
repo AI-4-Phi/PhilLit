@@ -127,34 +127,44 @@ def _candidate_lines(article: dict, surname: str, year: str) -> list:
     return out
 
 
-def _title_text(item) -> str:
-    """Prefer the parsed title (SEP provides one) over the whole raw line --
-    whole-line scoring can pick up token overlap from journal/publisher text.
+def _title_texts(item) -> list:
+    """Texts to score a candidate line against the bib title: the parsed
+    title (SEP/high-confidence lines provide one) AND the raw line -- never
+    one at the other's expense. `match_entry_to_article` takes the max.
 
-    OPEN DEFECT, pre-existing and deliberately not fixed: there is no fallback
-    to `raw` when the parsed title scores ZERO, only when it is absent. Both
-    the old regex and the split parser truncate at the first comma, so a
-    CORRECT line can fail to match -- BibTeX title "Language, Truth and Logic"
+    The parsed title avoids journal/publisher token overlap that whole-line
+    scoring can pick up; the raw line covers what both parsers truncate at
+    the first comma inside a title -- BibTeX "Language, Truth and Logic"
     against SEP's `Ayer, A.J., 1936, Language, Truth and Logic, London:
-    Gollancz.` parses to title="Language", overlap 1, below the
-    TITLE_MIN_OVERLAP of 2, score 0.0, no CONTEXT match. Scoring the raw line
-    would have matched, so `parsed` INVERTS on comma-bearing titles: IEP's
-    `parsed: None` entries do better on exactly these works, because None is
-    falsy and activates the raw fallback while a wrong non-empty title
-    suppresses it.
+    Gollancz.` parses to title="Language" (overlap 1, below
+    TITLE_MIN_OVERLAP, score 0.0 on parsed alone); the raw line still has
+    every token.
 
-    Two candidate fixes, each needing its own measurement pass: score
-    `max(title_score(title, parsed_title), title_score(title, raw))` in
-    `match_entry_to_article` (removes the inversion but widens what can match,
-    so it needs a false-positive check against the barrier's ambiguity rule);
-    or make the parser quote-aware so a quoted title keeps its internal commas
-    (narrower -- SEP also sets titles in <em>/<cite>, which would be a better
-    boundary and means changing extraction, not parsing).
+    Measured 2026-08-29 (docs/known-issues/parsed-title-measurement-2026-08-29/):
+    production-faithful pass gains 9/9 true, loses 2 to the ambiguity rule
+    (conservative: attaches nothing); the stress pass over 488,520 pairs
+    found ONE false gain (up to 3 counting two unclear conservatively) -- a
+    same-author-same-year SIBLING title ("...Mental States" vs "...Mental
+    Contents", raw overlap 0.75) surfacing only when the entry's own work is
+    absent from the article's bibliography; the ambiguity rule catches the
+    pair when both siblings are present. Zero production-faithful falses is
+    consistent with, not proof of, a zero production rate at this
+    resolution.
+
+    Two rejected refinements: a raw-only threshold bump (true gains sit at
+    raw 0.5/0.625, below the false's 0.75, but trades 4 measured gains
+    against 1 stress-only false while the ambiguity rule already bounds the
+    sibling class); and a truncation-evidence gate ("use raw only when
+    parsed is a comma-cut prefix of raw") -- observationally identical on
+    all 69 measured gains, including the false, since SEP's parser
+    comma-cuts everything, so it adds parser coupling for no gain.
     """
-    parsed = item.get("parsed") if isinstance(item, dict) else None
+    if not isinstance(item, dict):
+        return [str(item)]
+    parsed = item.get("parsed")
     if isinstance(parsed, dict) and parsed.get("title"):
-        return parsed["title"]
-    return item.get("raw", "") if isinstance(item, dict) else str(item)
+        return [parsed["title"], item.get("raw", "")]
+    return [item.get("raw", "")]
 
 
 def match_entry_to_article(fields: dict, article: dict):
@@ -164,7 +174,8 @@ def match_entry_to_article(fields: dict, article: dict):
     if not surname or not re.fullmatch(r"\d{4}", year):
         return None
     candidates = _candidate_lines(article, surname, year)
-    scored = [(item, title_score(title, _title_text(item))) for item in candidates]
+    scored = [(item, max(title_score(title, t) for t in _title_texts(item)))
+              for item in candidates]
     passing = [(i, s) for i, s in scored if s >= TITLE_MATCH_THRESHOLD]
     if not passing:
         return None
