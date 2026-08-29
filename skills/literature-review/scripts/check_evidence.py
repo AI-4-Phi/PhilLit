@@ -13,8 +13,8 @@ live, 2026-07-28 A/B run + 2026-08-02 gate-(b) validation run):
   so prose citing an ABSTRACT-tier sibling (Knuuttila 2005 mediation vs.
   2005 artefacts thesis; Knuuttila & Boon 2011 vs. Knuuttila 2011) flags the
   low-tier twin. Resolve against the full citation in prose / entry titles
-  before calling it a violation (ROADMAP items 3E/3F own the underlying
-  defect).
+  before calling it a violation (collision-aware matching and the Chicago
+  letters own the underlying defect).
 - Self-reference FPs: "as argued in the section on X" trips the verb match
   whenever a low-tier surname/year sits within the window.
 - Matches inside References-entry TITLES: a cited work whose title names
@@ -110,6 +110,13 @@ def rc_surname(author_field: str) -> str:
 
 def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     """Positions (in md) of surname occurrences within 60 chars of year.
+
+    ACCEPTED RESIDUAL: the surname regex is built from the RAW bib character,
+    so a document mixing the straight and curly apostrophe for one surname
+    (`O'Neill` / `O’Neill`) under-reports cites here. The renderer and the
+    linter are immune -- both compare through `bib_identity` folds, which unify
+    the two -- so the cost is false "uncited" telemetry on a recall-floor
+    checker, never a block.
 
     The year regex is run over the FULL text (not a pre-sliced window): a
     window carved out first would let a longer digit run straddling the

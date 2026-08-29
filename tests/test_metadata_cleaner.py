@@ -1546,7 +1546,8 @@ class TestPerFileIsolation:
 
 
 class TestLoadFailuresOutsideJSONDecodeError:
-    """3G made the parser dispatch fail-soft per file, but the LOAD step still
+    """An earlier fix made the parser dispatch fail-soft per file, but the
+    LOAD step still
     named only JSONDecodeError. json.loads can raise a plain ValueError
     (integer digit limit) or RecursionError (deep nesting) - neither is a
     JSONDecodeError, so one such file killed the whole index build, which is

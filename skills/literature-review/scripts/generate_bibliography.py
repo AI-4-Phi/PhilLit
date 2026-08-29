@@ -568,7 +568,11 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
             #
             # Known limit, deliberate: the year test below is a substring
             # match, so a non-numeric or bracketed year ("n.d.", "[2021]")
-            # still cannot match in this haystack.
+            # still cannot match in this haystack. A related residual sits on
+            # the other side of the guard: a surname that folds to
+            # punctuation PLUS something ("Παπαδόπουλος-Smith" -> "-Smith")
+            # keeps an alnum character, so it takes the primary path
+            # unchanged. Accepted: 0 of 8,494 first-author entries hit it.
             norm_surname = title_key(surname)
             if not norm_surname:
                 continue

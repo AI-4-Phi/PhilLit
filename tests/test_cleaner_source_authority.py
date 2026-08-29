@@ -127,7 +127,7 @@ class TestSourceTagging:
 
 
 class TestAuthorityIsKeyedOnContentNotFilename:
-    """ROADMAP 3I. `entry_scoped` used to require "verify_" in the filename,
+    """`entry_scoped` used to require "verify_" in the filename,
     which was wrong in both directions. Measured over the 45 local corpora:
     262 genuine single-work CrossRef lookups saved under other names lost
     correction authority, and the filename could equally grant it to a broad

@@ -259,6 +259,14 @@ def _year_is_overwritable(record: dict) -> bool:
 # The reprint-capable entry class: the works that get re-registered under a
 # later edition's DOI. Chapters ride their volume's edition, so incollection/
 # inbook share the failure with book - the same set stamp_evidence.py models.
+#
+# Three accepted residuals of the direction bound, none observed in the corpus:
+# an EARLIER api year is trusted unconditionally; a bib deliberately citing a
+# revised later edition on the FIRST edition's DOI gets back-dated (consistent
+# with trust-the-DOI, and unstated in the researcher's reissue prose); and
+# @proceedings/@booklet/@manual sit outside this set on a coupling argument --
+# admitting them would tie the bound to types whose editions do not behave
+# like a book's.
 _REPRINT_CAPABLE_TYPES = frozenset({"book", "incollection", "inbook"})
 
 # User-facing explanation per decline reason. The reasons exist because
@@ -626,7 +634,7 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
                 # json.loads can also raise a plain ValueError (integer digit
                 # limit) or RecursionError (deep nesting). Neither is a
                 # JSONDecodeError, so before this they escaped and killed the
-                # whole index - the 3G failure class one layer up, in the
+                # whole index - the same failure class one layer up, in the
                 # live destructive path. Salvage is pointless for these
                 # (the text parsed as JSON, it is the VALUE that is refused),
                 # so skip the file.
@@ -699,7 +707,7 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
     # Source-authority tagging (year-corruption fix): record where each pooled
     # record came from, and which records may OVERWRITE a populated year.
     # Authority is keyed on the envelope's CONTENT, not on its filename
-    # (ROADMAP 3I): a CrossRef envelope that resolved exactly ONE work is a
+    # a CrossRef envelope that resolved exactly ONE work is a
     # targeted single-work lookup, which is precisely the evidence class the
     # gate trusts; a multi-result envelope is a broad dump, which is precisely
     # the class it exists to refuse.

@@ -266,6 +266,12 @@ def fetch_articles(union, debug=False, deadline_seconds=None):
     Slugs not reached before the budget expires are reported in `failed`,
     exactly like a fetch error -- the caller cannot tell the two apart and does
     not need to, since both mean "no context from this article".
+
+    ACCEPTED LIMIT: this is a work-ADMISSION budget, so it cannot bound a
+    single *hanging* fetch -- once a slug is admitted, the deadline does not
+    interrupt it. A per-article interrupt was declined rather than overlooked:
+    `signal.alarm` is Windows-hostile and main-thread-only, and this runs under
+    Git Bash on Windows too. Documented honestly instead of half-fixed.
     """
     import time
 
