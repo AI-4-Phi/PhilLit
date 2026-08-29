@@ -22,10 +22,13 @@ Prompts for approval on first use of each tool per session. Standard security mo
 ```
 Blocks destructive operations and hand-written evidence attestations. These cannot be approved even if requested.
 
-**Why the ledgers are denied.** An enrichment-ledger record grants an entry
-`EVIDENCE-ABSTRACT` and a cleaning-ledger record attests `EVIDENCE-EXISTENCE`,
-so a hand-written record buys a citability tier that no fetch ever
-corroborated (ledger write-protection). Both files are
+**Why the ledgers are denied.** A cleaning-ledger record is the sole
+attestation behind `EVIDENCE-EXISTENCE`, so a hand-written record there buys a
+citability tier that no API match ever corroborated. An enrichment-ledger
+record decides `EVIDENCE-ABSTRACT` *candidacy* only, so a hand-written one
+cannot reach that tier by itself — the barrier re-fetches (see `CLAUDE.md`,
+`skills/literature-review/`) — but it can still spend the corroboration budget
+and misreport. Both files are
 written *from inside Python*
 by the scripts that own them, so the supported pipeline is unaffected — but
 note this also blocks **you** from hand-editing a ledger while debugging;
@@ -42,10 +45,10 @@ bypass for anything deliberate. What these controls buy is protection against
 accidental edits and tool-default behaviour, i.e. incidence reduction. The
 glob syntax itself is also **unverified against a live Claude Code permission
 matcher** (`--dry-run` only proves the strings were serialized); the hook, not
-the rule, is what this relies on. The real closure — barrier-side live
-corroboration, which makes the ledger a cache rather than an authority — is
-tracked in `phillit-service` as that repo's intake of the
-bibliography-pipeline integrity fixes.
+the rule, is what this relies on. The real closure is barrier-side live
+corroboration, which makes the ledger a cache rather than an authority: shipped
+for the abstract tier, never for the existence tier — whose ledger records are
+therefore still load-bearing on their own.
 
 ### Allow Rules (Auto-Approved)
 ```json

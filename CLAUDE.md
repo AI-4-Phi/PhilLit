@@ -57,17 +57,14 @@ skills/agents/hooks under `engine/.claude/` (near-identical files; this repo's
 plugin layout has no `.claude/` prefix).
 
 **Every fix or improvement made here must be implemented or mirrored in
-phillit-service, mutatis mutandis** (Johannes, 2026-07-28) — code, docs,
-and roadmap items alike. Amended 2026-08-08: the mirror is **scripted** —
-the service's `tools/revendor.py` re-vendors the whole engine region at a
-pinned upstream commit (first run 2026-08-08 at `08a3b3e`; its roadmap item
-26 owns reruns). Fixes land here and arrive there at the next pin — never
-hand-mirror engine files piecemeal, and phillit-service work stays in
-sessions launched from that repo. Docs and roadmap items still adapt rather
-than copy (cross-numbering: PhilLit item 3, the bibliography-pipeline
-integrity fixes, ↔ service item 23, its intake of them). Mirroring holds in
-both directions; a fix that lands in the service comes back here (e.g. the
-frontmatter-title ADOPT change).
+phillit-service, mutatis mutandis** — code, docs, and roadmap items alike.
+The mirror is **scripted**: the service's `tools/revendor.py` re-vendors the
+whole engine region at a pinned upstream commit, and its own roadmap owns the
+reruns. Fixes land here and arrive there at the next pin — never hand-mirror
+engine files piecemeal, and phillit-service work stays in sessions launched
+from that repo. Docs and roadmap items adapt rather than copy, so the two
+queues never share numbering; name the work, not the number. Mirroring holds
+in both directions — a fix that lands in the service comes back here.
 
 **Engine/prompt fixes that need test runs are built and validated HERE
 first** — reviews here run under Claude Code (free), while the service bills
@@ -86,7 +83,7 @@ PhilLit must work in Claude Code Cloud, Linux, macOS, and Windows. **Windows/Git
 
 ## Git Worktrees
 
-`git worktree add` (and `EnterWorktree`) only checks out tracked files. `docs/superpowers/` (plans, specs) and the local-only files under `docs/known-issues/` are untracked, so a fresh worktree won't have them — copy them over manually before running a plan-driven workflow (e.g. subagent-driven-development) that needs to read a plan file from inside the worktree.
+`git worktree add` (and `EnterWorktree`) only checks out tracked files. Everything under `docs/known-issues/` is untracked, as is any `docs/superpowers/` a plan-driven workflow creates, so a fresh worktree won't have them — copy them over manually before running a workflow (e.g. subagent-driven-development) that needs to read a plan file from inside the worktree.
 
 ## Setup
 
@@ -134,9 +131,9 @@ env -u ANTHROPIC_API_KEY claude --plugin-dir <checkout> --model sonnet \
 
 ## Releasing
 
-Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. There is no CHANGELOG and there are no git tags — the `Plugin: bump version to X` commits are the release history (one exception: the 0.2.8 bump rode in on `88ccc50`, a `Hooks:` commit).
+Bump `version` in `.claude-plugin/plugin.json` for every user-facing release — installed plugins are pinned to that version string, and `/plugin update` (and marketplace auto-update, off by default for third-party marketplaces) only fires when it changes. There is no CHANGELOG and there are no git tags — the `Plugin: bump version to X` commits are the release history.
 
-Installs go through the external `ai4phi` marketplace ([AI-4-Phi/plugins](https://github.com/AI-4-Phi/plugins)) since 2026-07-22; this repo is the plugin source only. The legacy in-repo `.claude-plugin/marketplace.json` was removed; installs that registered this repo directly no longer receive updates, and the README migration note tells them how to switch. Do not reintroduce a `marketplace.json` here — and never declare `version` in a marketplace entry: `plugin.json` silently wins, so a duplicate is a stale-value trap.
+Installs go through the external `ai4phi` marketplace ([AI-4-Phi/plugins](https://github.com/AI-4-Phi/plugins)); this repo is the plugin source only. Do not reintroduce a `marketplace.json` here — installs that registered this repo directly stopped receiving updates when the in-repo one was removed, and the README tells them how to migrate. Never declare `version` in a marketplace entry either: `plugin.json` silently wins, so a duplicate is a stale-value trap.
 
 ## Commit Messages
 
@@ -169,7 +166,7 @@ Convention: `<Area>: short description` (e.g. `Hooks: ...`, `Docs: ...`, `Deps: 
 - **The SessionStart bootstrap** (`hooks/setup-environment.sh`) is thin: it bridges `PHILLIT_ROOT`, `PHILLIT_UV` (and `PHILLIT_ACTIVE` inside a workspace) into `$CLAUDE_ENV_FILE` for later Bash tool calls and subagents. No venv build, no `.env` load, no package checks — it must stay cheap because plugin hooks fire in *every* session.
 - **`.env` loading**: every CLI script that reads configuration from the environment (API keys, `PHILLIT_FETCH_USER_AGENT`) calls `load_dotenv(find_dotenv(usecwd=True), override=True)` in `main()`, before `argparse.ArgumentParser()` (argparse defaults read `os.environ` at definition time); pure-stdin/file tools don't need it. `usecwd=True` is load-bearing: it searches upward from the *workspace* (cwd). The bare default walks up from the script's own directory — in an installed plugin that is the plugin cache, and the workspace `.env` silently never loads. `.env` values take priority over the shell environment. Library modules must never read env at IMPORT time — main() hasn't loaded `.env` yet when imports run; resolve per call instead (pattern: `rate_limiter.user_agent()`). The usecwd idiom is pinned by `tests/test_dotenv_loading.py`.
 - **All hooks live in `hooks/hooks.json`**, never in agent frontmatter (plugin subagents ignore frontmatter hooks) — single source of truth, plugin-compatible.
-- **Gate-failure policy**: a gate's failure direction follows what the gate is *for*, not which event it fires on, and is never silent. *Accuracy gates* fail **closed** — SubagentStop BibTeX validation (a crashed/empty validator is a block with an explicit "crashed" reason, never a silent allow) and `block_ledger_write.py` (an unreadable payload is denied with a "could not evaluate" reason, since nothing in the supported pipeline writes a ledger through a file tool). *Plumbing gates* fail **open**: a broken uv/venv must never brick the workspace — hook commands carry an `|| echo '{"systemMessage": …}'` fallback so the failure surfaces to the user without blocking. Note the two mechanisms are independent: `|| echo` only fires on a **nonzero exit** (a uv/process failure), so a gate that exits 0 with an "allow" decision after failing to parse its input is failing open *silently* — which the policy forbids, and which the ledger-write-protection review caught in a first draft.
+- **Gate-failure policy**: a gate's failure direction follows what the gate is *for*, not which event it fires on, and is never silent. *Accuracy gates* fail **closed** — SubagentStop BibTeX validation (a crashed/empty validator is a block with an explicit "crashed" reason, never a silent allow) and `block_ledger_write.py` (an unreadable payload is denied with a "could not evaluate" reason, since nothing in the supported pipeline writes a ledger through a file tool). *Plumbing gates* fail **open**: a broken uv/venv must never brick the workspace — hook commands carry an `|| echo '{"systemMessage": …}'` fallback so the failure surfaces to the user without blocking. Note the two mechanisms are independent: `|| echo` only fires on a **nonzero exit** (a uv/process failure), so a gate that exits 0 with an "allow" decision after failing to parse its input is failing open *silently* — which the policy forbids.
 - **Marker gating + fast path**: intrusive hooks no-op outside a workspace. PreToolUse/PostToolUse route through `hooks/fast_gate.sh`, which checks the `.phillit` marker AND a cheap stdin-needle match (`.bib` / `run_in_background` / `_ledger-`, matched **case-insensitively** via `nocasematch` — macOS and Windows filesystems are case-insensitive, so a case-sensitive needle would let `LITERATURE.BIB` skip validation entirely) before uv ever starts — per-call gates must not pay uv startup (or a cold venv build, which can exceed the 60 s hook timeout) for calls that cannot concern them. The needle is a safe over-approximation: a miss can never need blocking; a spurious hit just hands the decision to the Python gate. `subagent_stop_bib.sh` checks `"$CLAUDE_PROJECT_DIR/.phillit"` directly (it has no matcher and fires for every SubagentStop, so it must self-scope).
 - **Shell hooks + `jq`**: when parsing a script's JSON output, capture **stdout only** (`2>/dev/null` — the wrapper's `uv` writes warnings/build progress to stderr, which would corrupt the JSON), and guard against non-JSON output with `if ! VAR=$(… | jq … 2>/dev/null); then …` to avoid silent `set -e` deaths. Note `jq` exits **0 on empty input**, so an empty capture slips through that guard — check for empty output explicitly first and treat it as a crash.
 - **SubagentStop protocol**: all decisions are stdout JSON with exit 0 (JSON is ignored on exit 2).

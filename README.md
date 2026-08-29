@@ -108,7 +108,10 @@ Prefer not to auto-merge settings? Add this to your own `.claude/settings.json` 
 {
   "permissions": {
     "defaultMode": "default",
-    "deny": ["Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)"],
+    "deny": [
+      "Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)",
+      "Edit(**/enrichment_ledger-*.json)", "Edit(**/cleaning_ledger-*.json)"
+    ],
     "allow": [
       "Read", "Grep", "Glob", "WebSearch", "WebFetch", "Bash",
       "Edit(reviews/**)",
