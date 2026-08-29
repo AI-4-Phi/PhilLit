@@ -36,7 +36,7 @@ This workflow uses a consistent architectural pattern for computationally intens
 
 ## Philosophy-Research Skill
 
-Domain researchers and citation validators use the `philosophy-research` skill (`skills/philosophy-research/`) which provides structured API access to academic sources:
+The `domain-literature-researcher` subagent uses the `philosophy-research` skill (`skills/philosophy-research/`) which provides structured API access to academic sources:
 
 | Script | Purpose | API |
 |--------|---------|-----|
@@ -58,6 +58,7 @@ Domain researchers and citation validators use the `philosophy-research` skill (
 | `get_iep_context.py` | IEP citation context extraction | Direct IEP |
 | `search_ndpr.py` | NDPR discovery | Brave → NDPR |
 | `fetch_ndpr.py` | NDPR content extraction | Direct NDPR |
+| `fetch_web.py` | Research-time web-source capture behind the EVIDENCE-WEB gate; refuses the excluded encyclopedia hosts (SEP + mirrors, IEP, NDPR, PhilPapers) | Direct fetch |
 | `brave_search.py` | Web search fallback | Brave Search |
 | `search_cache.py` | Search result caching | — |
 | `rate_limiter.py` | Shared rate limiting | — |
@@ -177,7 +178,7 @@ skills/literature-review/
     ├── normalize_headings.py             # Normalize section/subsection heading numbering
     ├── dedupe_bib.py                     # Deduplicate and merge BibTeX (re-stamps tiers via --evidence-report)
     ├── enrich_bibliography.py            # Batch abstract resolution for BibTeX
-    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, gate web sources, stamp EVIDENCE-* tiers
+    ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, gate web sources, corroborate abstracts, stamp EVIDENCE-* tiers
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
     ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, venue vetting)
@@ -190,33 +191,8 @@ skills/literature-review/
 
 skills/philosophy-research/
 ├── SKILL.md                              # API search skill
-└── scripts/
-    ├── s2_search.py                      # Semantic Scholar search
-    ├── s2_citations.py                   # Citation traversal
-    ├── s2_batch.py                       # Batch paper details
-    ├── s2_recommend.py                   # Find similar papers
-    ├── s2_formatters.py                  # S2 output formatting
-    ├── search_openalex.py                # OpenAlex search
-    ├── search_arxiv.py                   # arXiv search
-    ├── search_core.py                    # CORE API search (abstracts)
-    ├── search_sep.py                     # SEP discovery
-    ├── fetch_sep.py                      # SEP content extraction
-    ├── search_iep.py                     # IEP discovery
-    ├── fetch_iep.py                      # IEP content extraction
-    ├── search_philpapers.py              # PhilPapers search
-    ├── brave_search.py                   # Brave web search
-    ├── verify_paper.py                   # CrossRef verification
-    ├── get_abstract.py                   # Multi-source abstract resolution
-    ├── get_sep_context.py                # SEP citation context extraction
-    ├── get_iep_context.py                # IEP citation context extraction
-    ├── citation_context.py               # Shared SEP/IEP citation-context helpers
-    ├── search_ndpr.py                    # NDPR discovery
-    ├── fetch_ndpr.py                     # NDPR content extraction
-    ├── fetch_web.py                      # Research-time web-source capture (the web-evidence fetch gate; refuses the excluded encyclopedia hosts — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
-    ├── search_cache.py                   # Search result caching
-    ├── rate_limiter.py                   # Shared rate limiting
-    ├── output.py                         # Shared output utilities
-    └── check_setup.py                    # Environment verification
+└── scripts/                              # every script is listed in the
+                                          #   Philosophy-Research Skill table above
 
 skills/setup/
 ├── SKILL.md                              # /phillit:setup workspace scaffolding
