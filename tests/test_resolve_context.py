@@ -336,8 +336,10 @@ class TestParsedTitleMaxScoring:
         # not crash, and the parsed title must still be scored.
         item = {"parsed": {"title": "Data-Centric Biology"}}
         texts = _title_texts(item)
-        assert texts == ["Data-Centric Biology", ""]
+        assert texts == ["Data-Centric Biology"]
         assert title_score("Data-Centric Biology", texts[0]) == 1.0
+        # And a fully malformed item still yields a scoreable (zero) text.
+        assert _title_texts({"raw": None}) == [""]
 
 
 # Real fetch_sep.py/fetch_iep.py sections are keyed by id with

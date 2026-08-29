@@ -690,6 +690,34 @@ def _merge_index(dst: MetadataIndex, src: MetadataIndex) -> None:
     dst.dois.update(src.dois)
 
 
+# The fields whose presence admits a record into the index. Title is
+# deliberately absent - see the admission gate in _index_one_file.
+_ADMISSION_FIELDS = ("container_title", "volume", "issue", "pages",
+                     "publisher", "year", "doi")
+
+
+def _has_non_title_datum(entry: dict) -> bool:
+    """Does this record carry at least one admission field with substance?
+
+    Strings must survive .strip() - a whitespace-only year or venue is not a
+    datum, and admitting it would let index_starved misreport (the very
+    distortion the gate exists to fix). Non-strings (int years) are plain
+    truthiness. Deliberately NOT full downstream validation (normalize_doi,
+    _year_key): over-validating here recreates the thinner-index-strips-more
+    concern, and a malformed-but-non-blank value is the downstream rules'
+    problem to refuse - e.g. find_api_entry_by_doi already treats an
+    empty-normalizing DOI as unmatchable.
+    """
+    for field in _ADMISSION_FIELDS:
+        value = entry.get(field)
+        if isinstance(value, str):
+            if value.strip():
+                return True
+        elif value:
+            return True
+    return False
+
+
 def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
     """Parse one API JSON envelope and fold its records into `index`.
 
@@ -712,11 +740,14 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
         entries = parse_core_result(data, filename)
     else:
         # Deliberate: grace for an S2-shaped envelope from a source this
-        # dispatch doesn't recognize. UNTESTED - no such source exists in the
-        # corpus - and removing it is out of scope for a minimal fix (a
-        # thinner index would strip venue fields harder, so removal isn't
-        # free either). Whatever junk this admits is made inert by the
-        # admission gate below.
+        # dispatch doesn't recognize. That beneficiary has never been
+        # observed - all 433 unknown-source files in the measured corpora
+        # are non-S2-shaped dumps (SEP/IEP pages, abstracts) - and removing
+        # the arm is out of scope for a minimal fix (a thinner index would
+        # strip venue fields harder, so removal isn't free either).
+        # Bare-title and empty junk it admits is made inert by the admission
+        # gate below; a junk record that DOES carry a year or DOI is admitted
+        # like any sparse S2 record and governed by the same downstream rules.
         entries = parse_s2_result(data, filename)
 
     # Source-authority tagging (year-corruption fix): record where each pooled
@@ -759,23 +790,20 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
         # all) can license NOTHING downstream, so admitting it only lets
         # index_starved (computed in clean_bibtex as `not index.entries`)
         # misreport a functionally starved corpus as healthy.
-        # Every verification channel is title-blind - naming them so the
-        # assumption stays auditable when someone later adds title-based
-        # logic: venue buckets key on container_title; the volume/issue/
-        # pages/publisher/year detail buckets on those fields; the DOI index
-        # on doi; find_api_entry_for_bib_entry needs a DOI or title+year
-        # (rule B3 requires the year). No parser emits an author field, so a
-        # "title+authors" shape cannot arise here. Applied uniformly, not
-        # just to the else arm above: a recognized source's title-only
-        # record is inert by the identical mechanism.
+        # No verification channel is licensed by TITLE ALONE - naming them so
+        # the assumption stays auditable when someone later adds title-based
+        # (or author-based) logic: venue buckets key on container_title; the
+        # volume/issue/pages/publisher/year detail buckets on those fields;
+        # the DOI index on doi; find_api_entry_for_bib_entry needs a DOI or
+        # title+year (rule B3 requires the year). Authors are not a governing
+        # field in any channel (and no current parser emits one). Applied
+        # uniformly, not just to the else arm above: a recognized source's
+        # title-only record is inert by the identical mechanism.
         # Measured basis (docs/known-issues/cleaner-envelope-measurement-2026-08-29/):
         # 361/361 unknown-envelope injections across 46 corpora were
         # title-only or empty; A/B over 335 bibs, zero cleaning-outcome
         # differences either way.
-        if not (entry.get("container_title") or entry.get("volume")
-                or entry.get("issue") or entry.get("pages")
-                or entry.get("publisher") or entry.get("year")
-                or entry.get("doi")):
+        if not _has_non_title_datum(entry):
             continue
 
         entry["source_file"] = filename

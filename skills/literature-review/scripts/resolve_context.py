@@ -161,10 +161,17 @@ def _title_texts(item) -> list:
     """
     if not isinstance(item, dict):
         return [str(item)]
+    texts = []
     parsed = item.get("parsed")
-    if isinstance(parsed, dict) and parsed.get("title"):
-        return [parsed["title"], item.get("raw", "")]
-    return [item.get("raw", "")]
+    if isinstance(parsed, dict) and isinstance(parsed.get("title"), str) \
+            and parsed["title"]:
+        texts.append(parsed["title"])
+    raw = item.get("raw")
+    if isinstance(raw, str):
+        texts.append(raw)
+    # Never empty: title_score("x", "") is 0.0, so a malformed item scores
+    # zero instead of crashing max() on an empty sequence.
+    return texts or [""]
 
 
 def match_entry_to_article(fields: dict, article: dict):

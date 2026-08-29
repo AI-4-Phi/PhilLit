@@ -213,3 +213,34 @@ def test_doi_only_entry_is_admitted(tmp_path):
     index = mc.build_metadata_index(jdir)
     assert len(index.entries) == 1
     assert mc.normalize_doi("10.5/doi-only") in index.dois
+
+
+def test_whitespace_only_values_do_not_admit(tmp_path):
+    """A whitespace year/venue is not a datum: admitting it would let
+    index_starved misreport a functionally starved corpus (the distortion
+    the admission gate exists to fix)."""
+    jdir = tmp_path / "json"; jdir.mkdir()
+    (jdir / "sep_dump.json").write_text(
+        json.dumps({"source": "sep_something", "results": [
+            {"title": "Dump A", "year": " "},
+            {"title": "Dump B", "journal": "   "},
+        ]}), encoding="utf-8")
+    index = mc.build_metadata_index(jdir)
+    assert index.entries == []
+
+    bib = tmp_path / "d.bib"
+    bib.write_text('@article{a, author="A, B", title="T1", journal="J", year="2020"}\n',
+                   encoding="utf-8")
+    res = mc.clean_bibtex(bib, [jdir])
+    assert res["index_starved"] is True
+
+
+def test_integer_year_still_admits(tmp_path):
+    """The gate's strip() applies to strings only - an int year is a datum."""
+    jdir = tmp_path / "json"; jdir.mkdir()
+    (jdir / "sep_dump.json").write_text(
+        json.dumps({"source": "sep_something",
+                    "results": [{"title": "Dated", "year": 2019}]}),
+        encoding="utf-8")
+    index = mc.build_metadata_index(jdir)
+    assert len(index.entries) == 1

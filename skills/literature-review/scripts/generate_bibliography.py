@@ -533,12 +533,14 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
     is list[str] - the ±_MATCH_WINDOW haystack slice around each surname hit
     whose window contains the year. EVERY year-bearing window is collected,
     not just the first hit - windows may come from any of the three
-    haystacks (norm, translit, or contract). Collision resolution
+    haystacks (norm, translit, or contract; byte-identical haystacks are
+    deduplicated, but haystacks that differ elsewhere can still reproduce
+    the same logical hit, so len(windows) counts axis-hits, not distinct
+    occurrences). Collision resolution
     (_resolve_collisions) does not consume this list's contents - it
     re-parses citation instances straight from
     review_text via _citation_instances - so windows is only ever used for
-    its truthiness (a match exists) and length (how many hits); it does not
-    carry hit spans.
+    its truthiness (a match exists); it does not carry hit spans.
     """
     norm_text = _normalize_for_matching(review_text)
     # Second haystack, transliterated (ä->ae etc.) before the NFKD strip, so
@@ -603,7 +605,11 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
             # side diacritic'd - the contract haystack's job) alike - not
             # just the directions norm_text/translit_text alone cover.
             needles = ascii_variants(surname)
-            haystacks = (norm_text, translit_text, contract_text)
+            # dict.fromkeys: drop byte-identical haystacks (pure-ASCII text
+            # folds identically on all three axes) so one occurrence is not
+            # searched three times.
+            haystacks = tuple(dict.fromkeys(
+                (norm_text, translit_text, contract_text)))
 
         # Word-boundary, case-insensitive surname match. The proximity
         # window is always sliced from the haystack that produced the hit

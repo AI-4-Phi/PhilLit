@@ -402,6 +402,16 @@ def translit_fold(s: str) -> str:
     return unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
 
 
+def _contract_ascii(s: str) -> str:
+    """The digraph contractions ae->a, oe->o, ue->u, in that order, on text
+    that is already lowercase ASCII. Single left-to-right str.replace passes,
+    NOT a fixed point: "aee" becomes "ae", not "a" -- fine for the
+    one-digraph-per-umlaut transliteration model this serves."""
+    for pair, single in (("ae", "a"), ("oe", "o"), ("ue", "u")):
+        s = s.replace(pair, single)
+    return s
+
+
 def contract_fold(s: str) -> str:
     """The third axis of symmetric surname matching: bridges two
     independently ASCII-fied spellings of the same umlaut/Nordic name that
@@ -411,18 +421,13 @@ def contract_fold(s: str) -> str:
     axes bridges it).
 
     `translit_fold(s)` (ä->ae, ö->oe, ü->ue, å->aa, æ->ae, ø->oe, NFKD-fold,
-    then ASCII-encode), followed by the digraph contractions ae->a, oe->o,
-    ue->u in that order -- plain str.replace is fine here because the input
-    is already lowercase ASCII once translit_fold has run.
+    then ASCII-encode), then `_contract_ascii`.
 
     Via translit_fold the contraction also reaches ø->oe->o and æ->ae->a, so
     Scandinavian names are in scope: that is where the live regression came
     from (Sogaard/Søgaard -- ø does not NFKD-decompose, so the plain fold is
     "sgaard", not "sogaard")."""
-    contracted = translit_fold(s)
-    for pair, single in (("ae", "a"), ("oe", "o"), ("ue", "u")):
-        contracted = contracted.replace(pair, single)
-    return contracted
+    return _contract_ascii(translit_fold(s))
 
 
 def ascii_variants(s: str) -> frozenset[str]:
@@ -436,11 +441,12 @@ def ascii_variants(s: str) -> frozenset[str]:
     the transliteration table (keyed on precomposed characters) still matches
     it. Empty variants are dropped (an empty needle would match everything).
 
-    Digraph-free names and already-diacritic'd names are unaffected: a name
-    with no "ae"/"oe"/"ue" substring in any variant contracts to itself, and
-    {"franken", "fraenken"} (from "Fränken") is closed under contraction --
-    contract_fold("franken") == "franken" and contract_fold("fraenken") ==
-    "franken", so contracting adds nothing new there.
+    The returned set is unchanged for a name with no "ae"/"oe"/"ue" substring
+    in any GENERATED variant, and for a name whose variant set is already
+    closed under contraction ({"franken", "fraenken"} from "Fränken":
+    contracting either yields "franken", already present). A diacritic name
+    whose transliteration opens a digraph is NOT unaffected -- that is the
+    point: "Søgaard" ({"sgaard", "soegaard"}) gains "sogaard".
 
     A contracted variant is kept only when it is at least 4 characters long.
     Measured (2026-08-29, 2,430 corpus surnames): every sub-4 contraction
@@ -449,24 +455,34 @@ def ascii_variants(s: str) -> frozenset[str]:
     near a year) and never a genuine bridge, since a diacritic-stripped
     prose spelling is already covered by the plain NFKD variant. The sole
     >=4-character dictionary-word contraction in the corpus was
-    Mueller->"muller", this fix's own target class.
+    Mueller->"muller", this fix's own target class. NOTE the guard is
+    per-ARGUMENT: it protects surname-shaped inputs (matcher needles, lint
+    citation tokens). Consumers that fold WHOLE STRINGS through this function
+    or contract_fold -- generate_bibliography's contract_text haystack,
+    lint_md's reference-line variants -- contract every digraph in the string
+    with no token-local guard; residual (b) below is that class.
 
     ACCEPTED RESIDUALS (stated, not silently absorbed):
     (a) true homograph pairs (Michael/Michal-shape) fold together --
-    corrected extended-set census found ONE newly-bridged pair corpus-wide
-    (Schaeffer/Schaffer), sharing no year; the same-year precondition for a
-    false match lands in generate_bibliography._resolve_collisions' keep-side
-    machinery, not here.
-    (b) the contracted HAYSTACK (generate_bibliography._collect_matches) can
-    fold a prose digraph name onto a short plain needle (prose "Guest" ->
-    "gust" meeting a bib surname "Gust") -- needs the same year in the match
-    window, unobserved in the corpus.
+    extended-set census found ONE newly-bridged pair corpus-wide
+    (Schaeffer/Schaffer), sharing no year. A same-year pair would form a
+    collision group in generate_bibliography._resolve_collisions, whose
+    failure direction is keep-all and whose [COLLISION] stderr diagnostics
+    make the group visible; the length guard does NOT cover this class.
+    (b) whole-string contraction can fold a prose or reference-line digraph
+    word onto a short plain needle (prose "Guest" -> "gust" meeting a bib
+    surname "Gust" in the matcher; a References line's "Guest" resolving a
+    body "Gust (2020)" citation in lint) -- needs the same year alongside,
+    unobserved in the corpus.
     Pointer: docs/known-issues/surname-contraction-measurement-2026-08-29/.
     """
     low = unicodedata.normalize("NFC", s.lower().replace("’", "'"))
     nfkd = unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
     variants = frozenset(v for v in (nfkd, translit_fold(s)) if v)
-    contracted = frozenset(c for c in map(contract_fold, variants) if len(c) >= 4)
+    # Base variants are already ASCII, so contracting them directly equals
+    # contract_fold minus the redundant re-transliteration.
+    contracted = frozenset(
+        c for c in map(_contract_ascii, variants) if len(c) >= 4)
     return variants | contracted
 
 

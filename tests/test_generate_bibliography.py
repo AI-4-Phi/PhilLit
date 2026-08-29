@@ -634,10 +634,11 @@ class TestFindCitedEntries:
         contract_fold("michael") == "michal" (the "ae" in "Michael"
         contracts), so bib "Michael, J." now bridges to prose "Michal" even
         though these are different names, not an umlaut/digraph pair. Pinned
-        deliberately -- the extended-set census found this is the sole
-        newly-bridged homograph pair sharing this shape corpus-wide, and the
-        same-year collision precondition that would make it a real mismatch
-        lands in _resolve_collisions, not here."""
+        deliberately -- the extended-set census found NO Michael/Michal-shape
+        first-author pair in the corpus (its sole newly-bridged pair was
+        Schaeffer/Schaffer, sharing no year), and the same-year collision
+        precondition that would make this a real mismatch lands in
+        _resolve_collisions, not here."""
         bib = _make_bib(("michael2020", _make_entry(
             authors=["Michael, J."], title="T", year="2020")))
         cited = find_cited_entries("As Michal (2020) argues, this holds.", bib)
