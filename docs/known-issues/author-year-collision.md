@@ -11,8 +11,7 @@ second-position corroboration, M2 dead-span cleanup). **F is FIXED 2026-08-06
 and validated live 2026-08-07** (`year_suffix.py` assigns Chicago `a`/`b` at
 the evidence barrier; the live run produced 5 lettered cites, each verified by
 hand to name the right work, 0 bare-year cites of lettered groups, 0 phantom
-letters — record: `.superpowers/sdd/2026-08-07-item3f-live-run/plan.md`,
-local-only). The last piece of item 3, the bibliography-pipeline integrity
+letters). The last piece of item 3, the bibliography-pipeline integrity
 fixes, was the **first-initials gap** — the live run's only same-surname pair
 (Onora vs Martin O'Neill, different years) shipped without initials because
 the writer instructed the initial only when the years also matched — **FIXED

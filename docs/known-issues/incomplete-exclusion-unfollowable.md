@@ -114,14 +114,13 @@ required" — but does not close it fully.
 
 ## The fix (shared design — build here, port downstream)
 
-Full spec, including rejected alternatives and the reasons they were rejected:
-`phillit-service/docs/superpowers/specs/2026-07-24-evidence-tier-citability-design.md`
-(**v5.1, dual-repo** — it carries a path/line map for both trees), with four
-external adversarial reviews committed alongside it (kimi-k3 and glm-5.2 on
-v2; kimi-k3 on v3, folded into v4; gpt-5.6-sol on v4 — three blockers —
-folded into v5 with the owner decision on positive-verification identity;
-v5.1 descoped web-source verification to its own roadmap item —
-web-source evidence, PhilLit item 2 / service item 24).
+The spec that carried the rejected alternatives and their reasons (v5.1,
+dual-repo, with a path/line map for both trees) has been deleted in both
+repos; what it decided now lives in the code it produced. Four adversarial
+reviews shaped it: two on v2; one on v3, folded into v4; and one on v4 that
+raised three blockers, folded into v5 with the owner decision on
+positive-verification identity. v5.1 then descoped web-source verification to
+its own roadmap item, web-source evidence.
 
 **Core idea:** citability stops keying off `INCOMPLETE` and keys off an
 explicit *evidence tier* recording what grounding an entry actually carries.

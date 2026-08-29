@@ -132,10 +132,10 @@ Problem statements and measurements:
 Sub-item F's (Chicago a/b disambiguation) live run and all five of its riders
 are done; no defect it surfaced remains open (venue-name recall for subtitled
 journals was measured and closed as a non-issue 2026-08-19 —
-`docs/known-issues/venue-recall-subtitled-journals.md`). Record of the run and
-the rider results:
-`.superpowers/sdd/2026-08-07-item3f-live-run/plan.md` (local-only). A registered
-`OPENALEX_API_KEY` is in place, so venue vetting runs.
+`docs/known-issues/venue-recall-subtitled-journals.md`). The run produced 5
+lettered cites, each verified by hand to name the right work, with 0 bare and
+0 phantom references. A registered `OPENALEX_API_KEY` is in place, so venue
+vetting runs.
 
 A rendering residual from the web-source evidence item's live acceptance run
 (2026-08-15), accepted
@@ -177,12 +177,11 @@ character — a mixed-apostrophe document under-reports cites there. Direction
 is benign on a recall-floor checker (false "uncited" telemetry, never a
 block), so this is recorded, not queued.
 
-### Open findings from the external reviews (2026-08-06) — none is a drop path
+### Open findings from the 2026-08-06 whole-branch review — none is a drop path
 
-Both gpt-5.6-sol and kimi-k3 reviewed the whole branch. Four cited-work drop
-paths were found and fixed; these remain, recorded rather than closed. Detail:
-`.superpowers/sdd/2026-08-06-item3f-chicago-ab-suffixes/progress.md` and the
-`external-review-*.md` files beside it (local-only).
+Four cited-work drop paths were found and fixed. The entries below remain,
+recorded rather than closed; each states its own reason, since the review
+records they came from have been deleted.
 
 - A surviving compact `venue_status` (one not opening its line, which the
   stripper cannot reach) is acted on by both planner and writer, so the

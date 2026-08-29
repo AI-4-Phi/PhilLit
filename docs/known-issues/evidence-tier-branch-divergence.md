@@ -50,7 +50,7 @@ Citations to `hooks/metadata_cleaner.py`, `dedupe_bib.py` and
 
 | worktree | branch | status |
 |---|---|---|
-| `.claude/worktrees/evidence-tier` | `worktree-evidence-tier` | **removed 2026-08-02** after the merge landed and every gitignored record (A/B results + adjudication) was verified byte-identical in the main checkout's `docs/superpowers/plans/` (was: DO NOT REMOVE — sole copy of that record) |
+| `.claude/worktrees/evidence-tier` | `worktree-evidence-tier` | **removed 2026-08-02** after the merge landed and every gitignored record (A/B results + adjudication) was verified byte-identical in the main checkout (was: DO NOT REMOVE — sole copy of that record). The A/B results survive at `docs/known-issues/evidence-tier-ab-results-2026-07-25.md`; the adjudication record was deleted 2026-08-29. |
 | `.claude/worktrees/merge-trial` | `merge-trial` | **removed 2026-08-02** after the real merge landed (was the throwaway trial @ `6e84aa1`) |
 
 ## 1. Topology (all figures measured 2026-08-02)
