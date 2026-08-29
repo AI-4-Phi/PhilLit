@@ -27,8 +27,10 @@ that count was taken from the service tree. The strip that shipped here went
 wider than the filing (every unfollowable pointer in shipped code and tests:
 section signs, gitignored paths, versioned spec identifiers, external-review
 finding codes, and roadmap item numbers), but it cannot reach the ~11
-service-side sites. Those are that repo's own divergence from the vendored
-snapshot and have to be fixed there.
+remaining sites: they sit in files this repo does not have
+(`source_store.py`) or that carry no such pointer here, so no mirror will
+touch them and they are the service's own to check — its 2026-08-29 pass over
+its tree may already have.
 
 **The service re-vendor at the v0.5.0 tip RAN 2026-08-25** (pin `fffb721`):
 items 14/15 and the v0.4.9 prose fixes are now in the service's `engine/`;
