@@ -186,3 +186,67 @@ class TestAsciiVariants:
         # exercises the recompose path.
         from bib_identity import ascii_variants
         assert "fraenken" in ascii_variants("Fra\u0308nken")
+
+    # -- contraction (third axis): bridges two independently ASCII-fied
+    # spellings that carry no diacritic on either side -----------------
+
+    def test_contraction_bridges_digraph_and_plain(self):
+        # Fraenken/Franken: neither side has a diacritic, so the NFKD fold
+        # and the translit fold already agree with each other ({"fraenken"})
+        # and cannot bridge to "franken" without the contraction.
+        from bib_identity import ascii_variants
+        assert ascii_variants("Fraenken") >= frozenset({"fraenken", "franken"})
+
+    def test_contraction_needle_side_unaffected_when_already_contracted(self):
+        from bib_identity import ascii_variants
+        assert ascii_variants("Franken") == frozenset({"franken"})
+
+    def test_diacritic_variants_unchanged_by_contraction(self):
+        # Pinned exact-equality set from test_diacritic_two_variants above:
+        # {franken, fraenken} is closed under contraction (contract_fold of
+        # either element yields "franken", already in the set), so adding
+        # the third axis changes nothing here.
+        from bib_identity import ascii_variants
+        assert ascii_variants("Fr\u00e4nken") == frozenset({"franken", "fraenken"})
+
+    def test_digraph_free_name_unchanged(self):
+        from bib_identity import ascii_variants
+        assert ascii_variants("Smith") == frozenset({"smith"})
+
+    def test_length_guard_drops_short_contractions(self):
+        # Measured 2026-08-29: every sub-4 contraction in the 2,430-surname
+        # corpus was a match-flood needle, not a genuine bridge - "no" hits
+        # essentially every sentence near a year.
+        from bib_identity import ascii_variants
+        assert "no" not in ascii_variants("No\u00eb")
+        assert "co" not in ascii_variants("Coe")
+        assert "shu" not in ascii_variants("Shue")
+
+    def test_length_guard_keeps_four_character_contraction(self):
+        # B\u00f6hm/Boehm: "bohm" is exactly 4 characters, so it clears the guard
+        # (unlike the sub-4 needles above) whether the input already carries
+        # the digraph or the diacritic.
+        from bib_identity import ascii_variants
+        assert "bohm" in ascii_variants("B\u00f6hm")
+        assert "bohm" in ascii_variants("Boehm")
+
+
+class TestContractFold:
+    """contract_fold: the third axis of symmetric surname matching -
+    translit_fold followed by the ae/oe/ue digraph contractions."""
+
+    def test_digraph_ae_contracts(self):
+        from bib_identity import contract_fold
+        assert contract_fold("Fraenken") == "franken"
+
+    def test_diacritic_ue_contracts_via_translit(self):
+        from bib_identity import contract_fold
+        assert contract_fold("M\u00fcller") == "muller"
+
+    def test_nordic_oe_contracts_via_translit(self):
+        # S\u00f8gaard: \u00f8 does not NFKD-decompose, so the plain fold is "sgaard"
+        # (dropping the letter entirely); the live regression this fix
+        # targets. contract_fold goes through translit_fold first (\u00f8->oe),
+        # so it reaches "sogaard" instead.
+        from bib_identity import contract_fold
+        assert contract_fold("S\u00f8gaard") == "sogaard"

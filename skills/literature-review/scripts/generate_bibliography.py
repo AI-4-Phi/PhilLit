@@ -22,7 +22,8 @@ _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_validator import LATEX_ESCAPES  # noqa: E402
 from bib_identity import (  # noqa: E402
-    ascii_variants, fallback_key, normalize_doi, title_key, translit_fold,
+    ascii_variants, contract_fold, fallback_key, normalize_doi, title_key,
+    translit_fold,
 )
 from metadata_cleaner import marker_removed_fields  # noqa: E402
 
@@ -530,9 +531,10 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
     the discriminator _resolve_collisions filters candidates by) and windows
     is list[str] - the ±_MATCH_WINDOW haystack slice around each surname hit
     whose window contains the year. EVERY year-bearing window is collected,
-    not just the first hit - windows may come from either haystack (norm or
-    translit). Collision resolution (_resolve_collisions) does not consume
-    this list's contents - it re-parses citation instances straight from
+    not just the first hit - windows may come from any of the three
+    haystacks (norm, translit, or contract). Collision resolution
+    (_resolve_collisions) does not consume this list's contents - it
+    re-parses citation instances straight from
     review_text via _citation_instances - so windows is only ever used for
     its truthiness (a match exists) and length (how many hits); it does not
     carry hit spans.
@@ -542,6 +544,12 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
     # a bib surname's ae-spelling meets a prose surname's diacritic (norm_text
     # alone only catches the reverse direction).
     translit_text = translit_fold(review_text)
+    # Third haystack, digraph-contracted (ae->a, oe->o, ue->u on top of the
+    # translit fold): needle-side ascii_variants already contracts the BIB
+    # surname, which covers bib-digraph-meets-prose-plain ("Fraenken" bib
+    # meeting "Franken" prose); the filed direction is the reverse (bib
+    # "Franken", prose "Fraenken") and needs the haystack contracted too.
+    contract_text = contract_fold(review_text)
     # Script-preserving haystack for non-Latin surnames, built only if some
     # entry needs it (see the empty-fold fallback below).
     script_text = None
@@ -587,12 +595,14 @@ def _collect_matches(review_text: str, bib_data) -> list[dict]:
             haystacks = (script_text,)
         else:
             # Symmetric transliteration matching:
-            # every needle variant (the plain NFKD fold AND the ae-spelling)
-            # is tried against both haystacks, so a bib "Mueller" meets
-            # prose "Müller" and a bib "Fränken" meets prose "Fraenken"
-            # alike - not just the direction norm_text alone covers.
+            # every needle variant (the plain NFKD fold, the ae-spelling, and
+            # the contracted fold) is tried against all three haystacks, so a
+            # bib "Mueller" meets prose "Müller", a bib "Fränken" meets prose
+            # "Fraenken", and a bib "Franken" meets prose "Fraenken" (neither
+            # side diacritic'd - the contract haystack's job) alike - not
+            # just the directions norm_text/translit_text alone cover.
             needles = ascii_variants(surname)
-            haystacks = (norm_text, translit_text)
+            haystacks = (norm_text, translit_text, contract_text)
 
         # Word-boundary, case-insensitive surname match. The proximity
         # window is always sliced from the haystack that produced the hit

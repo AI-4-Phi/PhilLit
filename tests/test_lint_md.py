@@ -176,6 +176,37 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         errors, _, _ = check_citations(text)
         assert errors == []
 
+    def test_ae_contraction_bridges_digraph_free_citation(self):
+        # Body "Fraenken", References "Franken" - neither side carries a
+        # diacritic, so the check needs the ae/oe/ue contraction fold (the
+        # third axis of ascii_variants) rather than the transliteration
+        # variant test above. lint_md itself is unchanged: _fold_variants is
+        # ascii_variants, so extending that shared function is enough.
+        from lint_md import check_citations
+        text = self.REVIEW.replace(
+            "## References",
+            '## References\n\nFranken, F. 2024. "Anchor Study." *Mind* 133: 1--10.')
+        errors, _, _ = check_citations(text)
+        assert errors == []
+
+    def test_aaroe_line_side_contraction_resolves(self):
+        # The Aarøe direction (the live-fix's real regression, line-side
+        # contraction): body "Aaroe" (plain, no diacritic) against a
+        # References line spelling "Aarøe" resolves because ascii_variants
+        # applied to the whole reference LINE now also carries the
+        # contracted fold (translit "aaroee" -> contracted "aaroe"), meeting
+        # the body's plain "aaroe" needle.
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Aaroe (2015) reports similar findings.\n\n"
+            "## References\n\n"
+            'Aarøe, Lene. 2015. "Political Attitudes." *Journal* 2: 3--4.\n'
+        )
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+
     def test_year_suffix_tolerated(self):
         # "(Wiens 2015a)" resolves against a References line dated 2015 even
         # though that entry carries no letter - stays tolerant (no ERROR).

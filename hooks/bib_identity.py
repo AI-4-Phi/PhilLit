@@ -402,17 +402,72 @@ def translit_fold(s: str) -> str:
     return unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
 
 
+def contract_fold(s: str) -> str:
+    """The third axis of symmetric surname matching: bridges two
+    independently ASCII-fied spellings of the same umlaut/Nordic name that
+    carry NO diacritic on either side ("Fraenken"/"Franken",
+    "Soegaard"/"Sogaard" -- the NFKD fold and the transliterated fold agree
+    with each other in that case, so neither of ascii_variants' first two
+    axes bridges it).
+
+    `translit_fold(s)` (ä->ae, ö->oe, ü->ue, å->aa, æ->ae, ø->oe, NFKD-fold,
+    then ASCII-encode), followed by the digraph contractions ae->a, oe->o,
+    ue->u in that order -- plain str.replace is fine here because the input
+    is already lowercase ASCII once translit_fold has run.
+
+    Via translit_fold the contraction also reaches ø->oe->o and æ->ae->a, so
+    Scandinavian names are in scope: that is where the live regression came
+    from (Sogaard/Søgaard -- ø does not NFKD-decompose, so the plain fold is
+    "sgaard", not "sogaard")."""
+    contracted = translit_fold(s)
+    for pair, single in (("ae", "a"), ("oe", "o"), ("ue", "u")):
+        contracted = contracted.replace(pair, single)
+    return contracted
+
+
 def ascii_variants(s: str) -> frozenset[str]:
-    """Lowercased ASCII variants of a name: the NFKD-stripped fold and the
-    transliterated fold, so body "Fraenken" meets bib "Fränken" (ä -> a AND
-    ä -> ae). Curly apostrophes unify with straight ones; a decomposed input
-    (combining diaeresis rather than a precomposed character) is NFC-recomposed
-    first so the transliteration table (keyed on precomposed characters) still
-    matches it. Empty variants are dropped (an empty needle would match
-    everything)."""
+    """Lowercased ASCII variants of a name: the NFKD-stripped fold, the
+    transliterated fold, and the contracted fold of each, so body "Fraenken"
+    meets bib "Fränken" (ä -> a AND ä -> ae) AND body "Fraenken" meets bib
+    "Franken" (neither side carries a diacritic, so the first two axes agree
+    with each other and need the contraction to bridge them). Curly
+    apostrophes unify with straight ones; a decomposed input (combining
+    diaeresis rather than a precomposed character) is NFC-recomposed first so
+    the transliteration table (keyed on precomposed characters) still matches
+    it. Empty variants are dropped (an empty needle would match everything).
+
+    Digraph-free names and already-diacritic'd names are unaffected: a name
+    with no "ae"/"oe"/"ue" substring in any variant contracts to itself, and
+    {"franken", "fraenken"} (from "Fränken") is closed under contraction --
+    contract_fold("franken") == "franken" and contract_fold("fraenken") ==
+    "franken", so contracting adds nothing new there.
+
+    A contracted variant is kept only when it is at least 4 characters long.
+    Measured (2026-08-29, 2,430 corpus surnames): every sub-4 contraction
+    found was {Noe->"no", Coe->"co", Shue->"shu", OECD->"ocd"} -- a
+    match-flood needle (word-bounded "no" hits essentially every sentence
+    near a year) and never a genuine bridge, since a diacritic-stripped
+    prose spelling is already covered by the plain NFKD variant. The sole
+    >=4-character dictionary-word contraction in the corpus was
+    Mueller->"muller", this fix's own target class.
+
+    ACCEPTED RESIDUALS (stated, not silently absorbed):
+    (a) true homograph pairs (Michael/Michal-shape) fold together --
+    corrected extended-set census found ONE newly-bridged pair corpus-wide
+    (Schaeffer/Schaffer), sharing no year; the same-year precondition for a
+    false match lands in generate_bibliography._resolve_collisions' keep-side
+    machinery, not here.
+    (b) the contracted HAYSTACK (generate_bibliography._collect_matches) can
+    fold a prose digraph name onto a short plain needle (prose "Guest" ->
+    "gust" meeting a bib surname "Gust") -- needs the same year in the match
+    window, unobserved in the corpus.
+    Pointer: docs/known-issues/surname-contraction-measurement-2026-08-29/.
+    """
     low = unicodedata.normalize("NFC", s.lower().replace("’", "'"))
     nfkd = unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
-    return frozenset(v for v in (nfkd, translit_fold(s)) if v)
+    variants = frozenset(v for v in (nfkd, translit_fold(s)) if v)
+    contracted = frozenset(c for c in map(contract_fold, variants) if len(c) >= 4)
+    return variants | contracted
 
 
 def fallback_key(title: str, year: str, surname: str) -> tuple[str, str, str] | None:

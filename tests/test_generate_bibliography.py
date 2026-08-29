@@ -17,6 +17,7 @@ from generate_bibliography import (
     find_cited_entries,
     generate_references,
     apply_references,
+    _collect_matches,
     _get_full_surname,
     _normalize_for_matching,
     _quoted_title,
@@ -577,6 +578,92 @@ class TestFindCitedEntries:
         bib = _bib_from_file(tmp_path, bib_content)
         cited = find_cited_entries("Greve (2020) argues.", bib)
         assert len(cited) == 1
+
+    # -- ae/oe/ue contraction fold (third haystack + needle axis) ---------
+
+    def test_contract_haystack_bridges_bib_digraph_free_to_prose_digraph(self):
+        """Bib "Franken" (no diacritic, no digraph) is matched by prose
+        "Fraenken" (2023) -- THIS is the third-haystack direction. Needle-side
+        ascii_variants alone contracts "Fraenken" -> "franken", but that only
+        helps when the BIB surname carries the digraph; here the digraph is
+        in the PROSE, so a refactor that drops the contract_text haystack
+        (leaving only norm_text/translit_text) fails this test."""
+        bib = _make_bib(("franken2023", _make_entry(
+            authors=["Franken, F."], title="T", year="2023")))
+        cited = find_cited_entries("As Fraenken (2023) argues, this holds.", bib)
+        assert len(cited) == 1
+        assert cited[0][0] == "franken2023"
+
+    def test_needle_side_bridges_bib_digraph_to_prose_plain(self):
+        """Bib "Fraenken" matched by prose "Franken" (2023) -- the needle-side
+        direction (ascii_variants' contraction of the BIB surname)."""
+        bib = _make_bib(("fraenken2023", _make_entry(
+            authors=["Fraenken, F."], title="T", year="2023")))
+        cited = find_cited_entries("As Franken (2023) argues, this holds.", bib)
+        assert len(cited) == 1
+        assert cited[0][0] == "fraenken2023"
+
+    def test_sogaard_hedden_shaped_live_regression(self):
+        """The live regression this fix targets: a delivered algorithmic-
+        fairness review's References contained sogaard2024hedden, and the
+        pre-fix matcher DROPPED it on re-run. Bib "Søgaard" (ø does not
+        NFKD-decompose -> plain fold "sgaard") vs prose "Sogaard" needs the
+        contraction, which routes ø->oe->o via translit_fold."""
+        bib = _make_bib(("sogaard2024hedden", _make_entry(
+            authors=["Søgaard, Søren"], title="T", year="2024")))
+        cited = find_cited_entries("As Sogaard (2024) shows, fairness metrics vary.", bib)
+        assert len(cited) == 1
+        assert cited[0][0] == "sogaard2024hedden"
+
+    def test_flood_non_regression_short_contraction_not_a_needle(self):
+        """Bib "Noë" 2004: contract_fold("noe") == "no", which the length
+        guard in ascii_variants excludes (a bare "no" would match essentially
+        any sentence near a year). Prose here contains "no" near "(2004)" but
+        never the name Noë/Noe -- must NOT match, which is the guard's whole
+        point."""
+        bib = _make_bib(("noe2004", _make_entry(
+            authors=["Noë, N."], title="T", year="2004")))
+        matches = _collect_matches(
+            "There is no reason to doubt this claim; the report (2004) "
+            "supports it.",
+            bib)
+        assert matches == []
+
+    def test_residual_michael_michal_homograph_pin(self):
+        """ACCEPTED RESIDUAL (see bib_identity.ascii_variants docstring):
+        contract_fold("michael") == "michal" (the "ae" in "Michael"
+        contracts), so bib "Michael, J." now bridges to prose "Michal" even
+        though these are different names, not an umlaut/digraph pair. Pinned
+        deliberately -- the extended-set census found this is the sole
+        newly-bridged homograph pair sharing this shape corpus-wide, and the
+        same-year collision precondition that would make it a real mismatch
+        lands in _resolve_collisions, not here."""
+        bib = _make_bib(("michael2020", _make_entry(
+            authors=["Michael, J."], title="T", year="2020")))
+        cited = find_cited_entries("As Michal (2020) argues, this holds.", bib)
+        assert len(cited) == 1
+        assert cited[0][0] == "michael2020"
+
+    def test_same_year_contraction_collision_pin(self):
+        """PIN, not a prescription: bib holds BOTH "Müller 2020" (needle-side
+        already includes plain "muller" via the NFKD fold, pre-existing) and
+        "Mueller 2020" (now ALSO includes "muller" via the new contraction of
+        its translit fold "mueller" -> "muller") -- introduced by this fix.
+        Prose cites "Muller (2020)" once, ambiguously, so both entries fall
+        into one same-year collision group. _resolve_collisions' keep-all
+        rule for an unresolvable ambiguous group keeps both rather than
+        guessing which is meant. Comment exists so a future change to that
+        keep-side machinery shows up here, not silently."""
+        bib = _make_bib(
+            ("muller_umlaut2020", _make_entry(
+                authors=["Müller, Hans"], title="T1", year="2020")),
+            ("mueller_ascii2020", _make_entry(
+                authors=["Mueller, Hans"], title="T2", year="2020")),
+        )
+        cited = find_cited_entries(
+            "As Muller (2020) argued, the point stands.", bib)
+        keys = {k for k, _ in cited}
+        assert keys == {"muller_umlaut2020", "mueller_ascii2020"}
 
 
 # =============================================================================
