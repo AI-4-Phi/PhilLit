@@ -760,9 +760,9 @@ class TestBibliographyParserValues:
 
         The old regex's non-greedy `(.+?)` title group also stopped at the
         first comma after the year, so both implementations truncate here.
-        Fixing it needs quote-aware or markup-aware boundaries, which is a
-        separate change; the open residual is recorded in
-        resolve_context._title_text's docstring.
+        Fixing the parse needs quote-aware or markup-aware boundaries, which
+        remains a separate, unpursued change; at MATCH time the truncation is
+        covered, since resolve_context._title_texts scores the raw line too.
         """
         import fetch_sep
         parsed, confidence = fetch_sep.parse_bibliography_entry(
@@ -802,8 +802,9 @@ class TestBibliographyParserValues:
         Real instance, SEP's cached corpus: "Whitehead, Alfred and Bertrand
         Russell, 1910, 1912, 1913, Principia Mathematica, 3 vols, ...". First
         year alone gives title="1912" at "high" confidence -- a fabricated
-        title, and worse than no parse, since resolve_context._title_text
-        prefers a non-empty parsed title over the raw line. The old greedy
+        title, and a wrong datum even now that resolve_context._title_texts
+        also scores the raw line (a bad parse no longer suppresses a CONTEXT
+        match, but the parsed title itself still travels). The old greedy
         regex took the last viable year and got this one right.
         """
         import fetch_sep

@@ -72,8 +72,9 @@ def _find_year_field(fields: list[str]) -> Optional[int]:
       year is the one that would be read as the title. On
       "Smith, J., 1999, 2001, Title, Publisher." taking 1999 yields
       title="2001" -- a fabricated-looking title emitted at "high"
-      confidence, and worse than no parse at all (see _title_text in
-      resolve_context.py). Skipping to 2001 reproduces the old greedy
+      confidence. (resolve_context._title_texts now scores the raw line
+      too, so a bad parse no longer costs a CONTEXT match -- but it is
+      still a wrong datum.) Skipping to 2001 reproduces the old greedy
       outcome on exactly the inputs where the old outcome was the right one.
 
     Index-safe: a year in the last field has no successor and is treated as

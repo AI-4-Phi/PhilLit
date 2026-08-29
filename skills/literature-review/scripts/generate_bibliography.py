@@ -102,9 +102,10 @@ def _normalize_for_matching(s: str) -> str:
     Deliberately NOT bib_identity.title_key: this
     folds author-written review prose, and it must keep punctuation because the
     60-character _MATCH_WINDOW is sliced from whichever haystack produced a
-    hit - this function's output (norm_text) or bib_identity.translit_fold's
-    output (translit_text, symmetric transliteration matching),
-    both of which keep punctuation for the same reason. Pinned by this file's
+    hit - this function's output (norm_text), bib_identity.translit_fold's
+    (translit_text, symmetric transliteration matching) or
+    bib_identity.contract_fold's (contract_text, digraph contraction),
+    all of which keep punctuation for the same reason. Pinned by this file's
     tests in tests/test_generate_bibliography.py.
     """
     return unicodedata.normalize("NFKD", s).encode("ascii", "ignore").decode("ascii")
