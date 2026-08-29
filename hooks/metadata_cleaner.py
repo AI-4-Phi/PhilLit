@@ -183,6 +183,10 @@ def find_api_entry_by_doi(doi: str, index: 'MetadataIndex') -> Optional[dict]:
     lookup on this exact DOI) outrank broad search-result dumps, which can
     carry another API's bad metadata for the same DOI (year-corruption fix).
     Among records of equal rank, pool order (filename sort) still decides.
+    ACCEPTED RESIDUAL: two entry-scoped records agreeing on year but differing
+    on journal/volume/pages are therefore resolved by filename order, and the
+    winner can authorize field removal. Closing it needs a full scoped-record
+    selection policy, not a tweak here.
 
     find_api_entry_for_bib_entry's conflict/abstention logic DEPENDS on this
     preference: it inspects `entry_scoped` on the single record returned here,
@@ -267,6 +271,12 @@ def _year_is_overwritable(record: dict) -> bool:
 # @proceedings/@booklet/@manual sit outside this set on a coupling argument --
 # admitting them would tie the bound to types whose editions do not behave
 # like a book's.
+#
+# Related observation, investigated 2026-08-11 and dismissed: a researcher who
+# verifies a REPRINT edition's DOI seeds that edition's year, so bib and record
+# agree and the bound never fires. That is not a defect -- the entry names the
+# edition it cites, and citing it by its own year is coherent. Do not re-raise
+# it as a year bug.
 _REPRINT_CAPABLE_TYPES = frozenset({"book", "incollection", "inbook"})
 
 # User-facing explanation per decline reason. The reasons exist because
@@ -1002,8 +1012,7 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
     'no-evidence' means the record does not carry the field at all. It is NOT a
     weak 'contradict': search-API records rarely carry pages/issue/publisher,
     and 80% of the pre-fix strips were absence-driven on values a CrossRef
-    truth anchor found majority-TRUE (see
-    docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md). Which
+    truth anchor found majority-TRUE. Which
     states may strip is plan_entry_cleaning's decision, per field class - this
     function only reports the evidence.
 

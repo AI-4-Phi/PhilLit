@@ -1,10 +1,11 @@
 # PhilLit Roadmap
 
-**Open engineering work only.** Detailed problem write-ups live in
-`docs/known-issues/` (one file per issue, each with a Status line); design
-sketches in `docs/ideas/`. Shipped work is deleted from this file rather than
-marked done — the git log is the history. A decision that is still binding
-belongs in `CLAUDE.md` or the owning module, not here.
+**Open engineering work only.** Design sketches live in `docs/ideas/`;
+`docs/known-issues/` holds only measurement scripts and their data, kept as the
+reproduction path for decisions this file says to re-measure. Shipped work is
+deleted from this file rather than marked done — the git log is the history. A
+decision that is still binding belongs in `CLAUDE.md` or the owning module, not
+here.
 
 ## Queue
 
@@ -54,5 +55,4 @@ re-investigated.
   publisher-prefix attestation edge. All three are test-covered, so this is
   not a coverage gap — but do not describe them as validated by a live run.
 
-Anything else still open lives in its own `docs/known-issues/` file — look for
-a Status line that still reads Open.
+Every other residual is recorded in the module that owns it, not here.

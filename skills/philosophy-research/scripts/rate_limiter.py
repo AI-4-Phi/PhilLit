@@ -359,8 +359,7 @@ def openalex_params(email: str = "") -> dict:
     which one review's Phase 3 can approach on its own. A FREE key raises
     that to $1/day and makes single-entity lookups (`works/doi:...`, the
     abstract-resolution path) unmetered. The key is optional: without it
-    every call behaves exactly as before. See
-    docs/known-issues/openalex-metering-2026-08-05.md.
+    every call behaves exactly as before.
     """
     return {"mailto": email} if email else {}
 

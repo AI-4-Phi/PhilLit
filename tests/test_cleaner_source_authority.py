@@ -1,6 +1,6 @@
 """Tests for source-authority handling in metadata_cleaner.py.
 
-Fix for docs/known-issues/metadata-cleaner-year-corruption.md: broad
+Fix for the year-corruption defect: broad
 keyword-search dumps (s2_*, openalex_*, ...) must never overwrite a
 field value; only entry-scoped CrossRef verification files (verify_*)
 carry correction authority. Same-DOI year disagreements across pooled

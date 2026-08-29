@@ -33,7 +33,7 @@ incidence reduction that comes from closing the cheap path. Symlink/hardlink
 aliases and check-then-open races are in the same accepted bucket: creating
 one needs Bash. Full residual list, and the real closure -- barrier-side live
 corroboration, now shipped for the abstract tier, never for the
-existence tier: `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue C.
+existence tier.
 
 Nothing in the supported pipeline is affected: the designated writers
 `enrich_bibliography._update_enrichment_ledger` and

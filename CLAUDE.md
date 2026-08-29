@@ -82,7 +82,7 @@ change silently misses the commit. Use the lowercase path, and check
 
 ## Cross-Platform
 
-PhilLit must work in Claude Code Cloud, Linux, macOS, and Windows. On Windows, Claude Code uses Git Bash to run hooks and Bash tool calls. Use forward-slash paths everywhere. Python is never invoked directly — the `bin/phillit-run` wrapper runs it through `uv`, which resolves the correct interpreter per platform, so there is no `.venv/bin` vs `.venv/Scripts` branching to maintain.
+PhilLit must work in Claude Code Cloud, Linux, macOS, and Windows. **Windows/Git Bash has never been verified** — the clean-install parity gate deferred that step for want of a Windows machine; revisit on the first Windows bug report or when hardware is available. On Windows, Claude Code uses Git Bash to run hooks and Bash tool calls. Use forward-slash paths everywhere. Python is never invoked directly — the `bin/phillit-run` wrapper runs it through `uv`, which resolves the correct interpreter per platform, so there is no `.venv/bin` vs `.venv/Scripts` branching to maintain.
 
 ## Git Worktrees
 
@@ -145,6 +145,7 @@ Convention: `<Area>: short description` (e.g. `Hooks: ...`, `Docs: ...`, `Deps: 
 ## Principles
 
 - **Keep the repository lean** — Do not keep files only for reference if the functionality is already documented elsewhere (e.g., in `pyproject.toml`). Remove deprecated files rather than marking them as such.
+- **Delivered reviews are never retroactively changed** — they stay as delivered, permanently, wrong years included. The sole exception is the public example reviews advertised in the README, fixed once (`ef15dbd`, PDFs/DOCX re-exported `3c1f9e9`). A defect found in delivered output is archived, not corrected.
 - **Single source of truth** — Dependencies in `pyproject.toml`, agent definitions in `agents/`, skill definitions in `skills/`, hooks in `hooks/hooks.json`. Avoid duplicating information across files.
 - **Simple and concise** — Prefer simple solutions. Keep agent/skill instructions brief and effective. Avoid verbosity.
 - **Verify assumptions empirically** — Test bash patterns and environment behavior in actual subagent context before codifying. Don't assume documentation is accurate.
@@ -157,7 +158,7 @@ Convention: `<Area>: short description` (e.g. `Hooks: ...`, `Docs: ...`, `Deps: 
 - **Evaluation order**: deny → ask → allow. First matching rule wins. An `ask` rule overrides a matching `allow` rule.
 - **A plugin cannot ship permissions.** `/phillit:setup` merges PhilLit's rules into the user's workspace `.claude/settings.json` (parse / merge / dedupe / back up / atomic write). The canonical rule set lives in `skills/setup/scripts/setup_workspace.py` (`PHILLIT_RULES`).
 - **Bash is allowed broadly** (not enumerated). Enumerating prefix patterns (e.g., `Bash(python *)`) is fragile — subagents construct multi-line scripts with variable prefixes that no finite pattern set can match. Safety comes from deny rules (`sudo`, `dd`, `mkfs`), ask rules (`rm`, `rmdir`), and a scoped `Edit(reviews/**)` rule. Edit rules cover all file-editing tools (Write, Edit, NotebookEdit); `Write(path)` rules are never consulted and trigger a startup warning — never add one.
-- **Do not revert to enumerated Bash patterns.** This was attempted 4 times (Jan–Feb 2026) and failed each time. See `docs/known-issues/background-bash-tasks.md` and `docs/permissions-guide.md` for details.
+- **Do not revert to enumerated Bash patterns.** This was attempted 4 times (Jan–Feb 2026) and failed each time. See `docs/permissions-guide.md` for details.
 
 ## Hooks and Python
 

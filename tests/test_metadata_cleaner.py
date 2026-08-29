@@ -1647,8 +1647,7 @@ class TestMarkerRemovedFields:
 
 # =============================================================================
 # Tests for the three-way comparator and the per-field strip policy
-# (the cleaner strip-rule fix). Measurements:
-# docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md
+# (the cleaner strip-rule fix).
 # =============================================================================
 
 class TestFieldCompare:

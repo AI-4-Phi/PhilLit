@@ -635,8 +635,7 @@ class TestBibliographyParserIsLinear:
     """The parser must not backtrack catastrophically.
 
     A live review's evidence barrier hung for 72 minutes at 100% CPU on one
-    SEP bibliography entry (2026-08-06; write-up in
-    docs/known-issues/sep-bibliography-regex-hang.md). The cause was a nested
+    SEP bibliography entry (2026-08-06). The cause was a nested
     comma-repetition regex whose cost grew ~4x per two commas on any line
     lacking a year in the expected position.
 
@@ -762,8 +761,8 @@ class TestBibliographyParserValues:
         The old regex's non-greedy `(.+?)` title group also stopped at the
         first comma after the year, so both implementations truncate here.
         Fixing it needs quote-aware or markup-aware boundaries, which is a
-        separate change; see the follow-up in
-        docs/known-issues/sep-bibliography-regex-hang.md.
+        separate change; the open residual is recorded in
+        resolve_context._title_text's docstring.
         """
         import fetch_sep
         parsed, confidence = fetch_sep.parse_bibliography_entry(

@@ -979,7 +979,6 @@ class TestOnlineFirstYear:
     online-first work. metadata_cleaner.py then "corrected" correct
     bibliographies to match: 27 of 42 year rewrites over the local corpora
     replaced a year matching `published-print` with the online-first year.
-    See docs/known-issues/metadata-cleaner-year-corruption.md.
     """
 
     # Mind 130(517): online 2019-12-03, print 2021-06-01. The citation year is

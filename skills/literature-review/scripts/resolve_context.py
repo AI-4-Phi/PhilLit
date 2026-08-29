@@ -129,7 +129,28 @@ def _candidate_lines(article: dict, surname: str, year: str) -> list:
 
 def _title_text(item) -> str:
     """Prefer the parsed title (SEP provides one) over the whole raw line --
-    whole-line scoring can pick up token overlap from journal/publisher text."""
+    whole-line scoring can pick up token overlap from journal/publisher text.
+
+    OPEN DEFECT, pre-existing and deliberately not fixed: there is no fallback
+    to `raw` when the parsed title scores ZERO, only when it is absent. Both
+    the old regex and the split parser truncate at the first comma, so a
+    CORRECT line can fail to match -- BibTeX title "Language, Truth and Logic"
+    against SEP's `Ayer, A.J., 1936, Language, Truth and Logic, London:
+    Gollancz.` parses to title="Language", overlap 1, below the
+    TITLE_MIN_OVERLAP of 2, score 0.0, no CONTEXT match. Scoring the raw line
+    would have matched, so `parsed` INVERTS on comma-bearing titles: IEP's
+    `parsed: None` entries do better on exactly these works, because None is
+    falsy and activates the raw fallback while a wrong non-empty title
+    suppresses it.
+
+    Two candidate fixes, each needing its own measurement pass: score
+    `max(title_score(title, parsed_title), title_score(title, raw))` in
+    `match_entry_to_article` (removes the inversion but widens what can match,
+    so it needs a false-positive check against the barrier's ambiguity rule);
+    or make the parser quote-aware so a quoted title keeps its internal commas
+    (narrower -- SEP also sets titles in <em>/<cite>, which would be a better
+    boundary and means changing extraction, not parsing).
+    """
     parsed = item.get("parsed") if isinstance(item, dict) else None
     if isinstance(parsed, dict) and parsed.get("title"):
         return parsed["title"]
@@ -231,7 +252,7 @@ def strip_context_fields(entry_text):
 # back to the check, so such a call runs forever exactly as if this budget did
 # not exist. That is the failure that motivated the file -- on 2026-08-06 a live
 # review's barrier sat at 100% CPU for 72 minutes inside one SEP article's
-# bibliography parse (docs/known-issues/sep-bibliography-regex-hang.md) -- and
+# bibliography parse -- and
 # this budget would NOT have stopped it. What fixed that was making the parser
 # linear. Nor is "this budget plus one article's cost" a bound worth stating:
 # an article's cost is not itself bounded (the 30 s request timeout governs

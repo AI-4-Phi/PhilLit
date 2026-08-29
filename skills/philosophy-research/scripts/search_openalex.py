@@ -60,7 +60,7 @@ OPENALEX_BASE_URL = "https://api.openalex.org"
 
 # Said once, in one place, because the actionable part is the key: OpenAlex
 # meters by daily spend and an unauthenticated client gets only ~100 full-text
-# searches a day (docs/known-issues/openalex-metering-2026-08-05.md).
+# searches a day.
 OPENALEX_BUDGET_MESSAGE = (
     "OpenAlex daily budget exhausted - it resets at midnight UTC, so retrying "
     "now cannot help. A FREE API key raises the budget 10x (and makes DOI "

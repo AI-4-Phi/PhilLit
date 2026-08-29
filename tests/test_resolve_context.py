@@ -371,8 +371,8 @@ class TestFetchPassDeadline:
     limitation rather than a bound that does not exist.
 
     Context: a live review's barrier sat at 100% CPU for 72 minutes inside one
-    SEP article and nothing here could notice (2026-08-06;
-    docs/known-issues/sep-bibliography-regex-hang.md). This budget would NOT
+    SEP article and nothing here could notice (2026-08-06). This budget would
+    NOT
     have stopped that; making the parser linear did. What it does stop is the
     slow-but-progressing pass.
     """

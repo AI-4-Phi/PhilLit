@@ -90,8 +90,7 @@ def _find_year_field(fields: list[str]) -> Optional[int]:
 
 # A single bibliography line longer than this is not a reference we can parse
 # and is not worth the attempt. This bound exists so no future parser change
-# can be handed an unbounded string (see
-# docs/known-issues/sep-bibliography-regex-hang.md). Over the local SEP cache
+# can be handed an unbounded string. Over the local SEP cache
 # on 2026-08-06 -- 6,731 entries across the 41 articles past reviews had
 # fetched -- lengths ran: median 129, p95 244, p99 319, max 915, nothing above
 # 1,000. That is a sample of what this project asks SEP for, not of SEP, so the

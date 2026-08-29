@@ -725,6 +725,14 @@ _LIST_LOOKBACK = 200
 def _strip_possessive(s: str) -> str:
     """Drop a trailing possessive marker ('s / ’s) from a captured name.
 
+    ACCEPTED RESIDUAL: a bare-apostrophe possessive on a surname already
+    ending in -s -- "Rivers' (2020)" rather than "Rivers's (2020)" -- keeps
+    its trailing quote and folds to a variant that will not match the bib's
+    plain "Rivers". Not fixed: the correct rule (a bare quote at a word
+    boundary is possessive only for surnames already ending in -s) risks false
+    positives against surnames that end in a quote orthographically, and no
+    test case exists to validate either direction.
+
     The surname/second character classes admit apostrophes (for names like
     O'Brien), so the regex's own trailing `(?:'s|’s)?` groups never get a
     chance to match - greedy `+` already swallowed "Moore's" whole, with
@@ -1406,6 +1414,12 @@ def _resolve_collisions(records: list[dict], review_text: str,
     """Group colliding records by
     variant-intersection connected components per year; resolve each group
     by per-citation-instance candidate sets parsed from the ORIGINAL text;
+    ACCEPTED RESIDUAL (narrow): when a bib still holds an unmerged duplicate
+    pair, a drop here removes the richer member before dedup could union its
+    journal/volume/pages/doi into the survivor, so the survivor keeps only its
+    own scant fields. Protected on the real pipeline -- SKILL.md Phase 6 runs
+    dedupe_bib.py BEFORE this script, so the pair is already one entry with
+    fields unioned. Reachable only on a standalone or manual invocation.
     keep the union of supported members; drop only what no instance
     supports - and only when the group parsed at least one instance.
 
