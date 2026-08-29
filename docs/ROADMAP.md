@@ -15,27 +15,11 @@ at a pin at or past this repo's tip. Service-session work, never
 hand-mirrored — rule in `CLAUDE.md`, "Sister repo: phillit-service".
 
 The dangling section citations are settled from this side: a grep over tracked
-files returns zero. The sites that survive in the service tree are its own —
-no mirror reaches them — and its item 26 counts and splits them itself. Nothing
-owed here.
-
-One thing that run cannot infer, because the service's own note reads the other
-way. Item 26 says `tests/test_engine_rate_limiter.py` will NOT fail loudly on
-arrival — true of the venue gate, whose test passes against the tri-state flag,
-and incomplete about the file. Three *other* assertions there dereference
-`openalex_params(...)["api_key"]` and fail on a bare `KeyError`, because the
-key moved into an `Authorization` header. That failure is the fix arriving, and
-intake is not a re-pin at the new mechanism: those assertions welded transport
-into a test about whether the engine reads `OPENALEX_API_KEY`. Pin the claim
-instead — the env-name round-trip through `openalex_api_key()` — plus a
-prohibition that the key never appears in `openalex_params()` output. Three
-sibling `"api_key" not in ...` assertions now pass vacuously and the module
-docstring's mutation counts are stale, so re-measure. Four service-side prose
-sites state the old transport: `transcript.py`'s scrubbing rationale,
-`config.py`'s strip comment, and two `test_config.py` docstrings. The scrubber
-itself stays — it covers every operator secret, not just this one. All of it
-lands in the re-vendor commit: against the engine vendored today the rewrite
-is RED.
+files returns zero, and the sites that survive in the service tree are its own.
+The key-transport intake — that three assertions in the service's
+`tests/test_engine_rate_limiter.py` fail on the header swap, and that the fix
+is to pin the claim rather than re-pin the mechanism — is recorded in its
+item 26, at both bullets that own it. Nothing owed here.
 
 **Fix the parsed-title inversion in encyclopedia context matching.**
 `resolve_context._title_text` returns the parsed title whenever it is
