@@ -14,27 +14,28 @@ that a recurrence is recognized where it would be read.
 at a pin at or past this repo's tip. Service-session work, never
 hand-mirrored — rule in `CLAUDE.md`, "Sister repo: phillit-service".
 
-Two things that run cannot infer. First, the service filed 19 dangling section
-citations across 8 engine files, but only 8 existed here. `source_store.py` is
-not in this repo at all, and `fetch_sep`/`fetch_iep`/`fetch_ndpr`/`rate_limiter`
-carry no such pointer, so that count was taken from the service tree. The
-remaining ~11 sites are the service's own to check — no mirror reaches them.
+The dangling section citations are settled from this side: a grep over tracked
+files returns zero. The sites that survive in the service tree are its own —
+no mirror reaches them — and its item 26 counts and splits them itself. Nothing
+owed here.
 
-Second, three assertions in the service's `tests/test_engine_rate_limiter.py`
-dereference `openalex_params(...)["api_key"]` and will fail on a bare
-`KeyError`: the key moved into an `Authorization` header, closing the
-URL-in-exception leak the service itself filed. That failure is the fix
-arriving. Intake is *not* a re-pin at the new mechanism — those assertions
-welded transport into a test about whether the engine reads
-`OPENALEX_API_KEY`, so pin the claim instead (the env-name round-trip through
-`openalex_api_key()`) plus a prohibition that the key never appears in
-`openalex_params()` output. Three sibling `"api_key" not in ...` assertions now
-pass vacuously and the module docstring's mutation counts are stale, so
-re-measure. Four service-side prose sites state the old transport:
-`transcript.py`'s scrubbing rationale, `config.py`'s strip comment, and two
-`test_config.py` docstrings. The scrubber itself stays — it covers every
-operator secret, not just this one. All of it lands in the re-vendor commit:
-against the engine vendored today the rewrite is RED.
+One thing that run cannot infer, because the service's own note reads the other
+way. Item 26 says `tests/test_engine_rate_limiter.py` will NOT fail loudly on
+arrival — true of the venue gate, whose test passes against the tri-state flag,
+and incomplete about the file. Three *other* assertions there dereference
+`openalex_params(...)["api_key"]` and fail on a bare `KeyError`, because the
+key moved into an `Authorization` header. That failure is the fix arriving, and
+intake is not a re-pin at the new mechanism: those assertions welded transport
+into a test about whether the engine reads `OPENALEX_API_KEY`. Pin the claim
+instead — the env-name round-trip through `openalex_api_key()` — plus a
+prohibition that the key never appears in `openalex_params()` output. Three
+sibling `"api_key" not in ...` assertions now pass vacuously and the module
+docstring's mutation counts are stale, so re-measure. Four service-side prose
+sites state the old transport: `transcript.py`'s scrubbing rationale,
+`config.py`'s strip comment, and two `test_config.py` docstrings. The scrubber
+itself stays — it covers every operator secret, not just this one. All of it
+lands in the re-vendor commit: against the engine vendored today the rewrite
+is RED.
 
 **Fix the parsed-title inversion in encyclopedia context matching.**
 `resolve_context._title_text` returns the parsed title whenever it is
