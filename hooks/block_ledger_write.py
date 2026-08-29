@@ -4,18 +4,18 @@
 The ledgers drive the evidence tier: a cleaning-ledger record is what
 attests `EVIDENCE-EXISTENCE`, and an enrichment-ledger record
 (`abstract_source` + `abstract_sha256`) is what makes an entry a CANDIDATE
-for `EVIDENCE-ABSTRACT` -- since item 15 THE BARRIER'S grant of that tier
-also requires a live corroboration fetch, so a forged enrichment record no
+for `EVIDENCE-ABSTRACT` -- but THE BARRIER'S grant of that tier also
+requires a live corroboration fetch, so a forged enrichment record no
 longer earns it there. Phase 6's re-stamp is a separate trust step: it reads
 `evidence_report.json`, itself workspace content, so a forged REPORT (schema
 version 2 or later, with `abstract_attested` set and a matching hash) still
-re-grants the tier on merge -- the version gate added with item 15 rules out
+re-grants the tier on merge -- the report's schema-version gate rules out
 stale vintage, not forged provenance. Both ledgers are plain JSON files
 inside the workspace,
 which made them agent-writable -- forge a record next to a fabricated
 abstract and enrichment's prior-ledger fast path skips the fetch that would
-have refused attestation (ROADMAP item 3 C; `enrich_bibliography.py` says as
-much in `_load_prior_ledger`'s docstring), which is still the whole story for
+have refused attestation (`enrich_bibliography.py` says as much in
+`_load_prior_ledger`'s docstring), which is still the whole story for
 the existence tier and still buys candidacy for the abstract one.
 
 **Scope, stated exactly** (the external review of 2026-08-05 rejected looser
@@ -32,7 +32,7 @@ value here is against accidental edits and tool-default behaviour, plus the
 incidence reduction that comes from closing the cheap path. Symlink/hardlink
 aliases and check-then-open races are in the same accepted bucket: creating
 one needs Bash. Full residual list, and the real closure -- barrier-side live
-corroboration, now shipped for the abstract tier (item 15), never for the
+corroboration, now shipped for the abstract tier, never for the
 existence tier: `docs/known-issues/bib-pipeline-integrity-gaps.md` Issue C.
 
 Nothing in the supported pipeline is affected: the designated writers
@@ -94,8 +94,7 @@ _REASON = (
     "supported pipeline writes them only from inside "
     "enrich_bibliography.py / metadata_cleaner.py. To change a ledger, re-run "
     "the script that owns it; to restore one, use git. A hand-written "
-    "attestation would grant a citability tier no fetch ever corroborated "
-    "(ROADMAP item 3 C)."
+    "attestation would grant a citability tier no fetch ever corroborated."
 )
 
 _UNEVALUABLE_REASON = (
@@ -104,7 +103,7 @@ _UNEVALUABLE_REASON = (
     "evidence-tier attestation ledgers, so it fails closed rather than "
     "allowing an unexaminable write. Re-run the call; if this repeats, the "
     "hook payload format has changed and hooks/block_ledger_write.py needs "
-    "updating (ROADMAP item 3 C)."
+    "updating."
 )
 
 

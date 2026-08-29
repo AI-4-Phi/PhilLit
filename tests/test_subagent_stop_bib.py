@@ -23,7 +23,7 @@ from pybtex.database import parse_file as pybtex_parse_file
 
 REPO_ROOT = Path(__file__).parent.parent
 SCRIPT = REPO_ROOT / "hooks" / "subagent_stop_bib.sh"
-FIXTURES = Path(__file__).parent / "fixtures" / "item13"
+FIXTURES = Path(__file__).parent / "fixtures" / "bib_quality"
 
 BASH = shutil.which("bash")
 JQ = shutil.which("jq")
@@ -50,7 +50,8 @@ INVALID_BIB = """@article{wolf1990freedom,
 """
 
 # Entry with a `number` the entry-scoped CrossRef record below REFUTES ->
-# cleaner removes it. Since item 14 a field merely ABSENT from the pool is kept,
+# cleaner removes it. Since the strip-rule fix a field merely ABSENT from the
+# pool is kept,
 # so a "did the cleaner run" detector needs the contradicting record too.
 HALLUCINATED_NUMBER_BIB = """@article{awad2018moral,
   author = {Awad, Edmond and Dsouza, Sohan},
@@ -318,7 +319,7 @@ class TestMetadataCleaning:
         assert "awad2018moral" in ctx
 
     def test_union_of_json_dirs_passed_to_cleaner(self, project):
-        # Item-13 A3: a field verifiable ONLY via intermediate_files/json must
+        # A field verifiable ONLY via intermediate_files/json must
         # survive — proving the hook passes the UNION of both dirs. The old
         # first-match logic picked the review root alone and would have shadowed
         # (starved) the verify JSON, stripping the field.
@@ -375,7 +376,7 @@ class TestMetadataCleaning:
         assert bib.read_text(encoding="utf-8") == original  # untouched
 
     def test_blocked_resume_still_writes_final_pass_ledger(self, project):
-        """Spec section 8 pre-merge checklist: a researcher whose SubagentStop
+        """Pre-merge checklist: a researcher whose SubagentStop
         BLOCKED on a BibTeX syntax error and then resumed must still end with a
         cleaned file AND a cleaning ledger reflecting the FINAL pass.
 
@@ -445,7 +446,7 @@ class TestMetadataCleaning:
         )
 
     def test_cleaner_warnings_surface_in_additional_context(self, project):
-        # Item-13 A3 (never-silent): a salvage/skip notice from the cleaner must
+        # Never-silent: a salvage/skip notice from the cleaner must
         # reach the model via additionalContext even when no field is removed.
         review = project / "reviews" / "test-review"
         (review / "d1.bib").write_text(VALID_BIB, encoding="utf-8")

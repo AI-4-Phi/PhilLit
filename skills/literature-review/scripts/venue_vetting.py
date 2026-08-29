@@ -1,4 +1,4 @@
-"""Item 3 D: flag entries published in venues OpenAlex barely records.
+"""Flag entries published in venues OpenAlex barely records.
 
 The rule (validated 2026-08-05 against 9 predatory-shape candidates found by a
 free name scan of all 928 corpus venues, and 48 legitimate philosophy venues

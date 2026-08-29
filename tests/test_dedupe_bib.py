@@ -1128,7 +1128,7 @@ class TestRestampMergedUnreadableReport:
 
 
 # =============================================================================
-# ROADMAP item 4: identity keys come from the one owner (hooks/bib_identity.py)
+# Identity keys come from the one owner (hooks/bib_identity.py)
 # =============================================================================
 
 class TestDiacriticInsensitiveTitleDedup:
@@ -1176,7 +1176,7 @@ class TestDiacriticInsensitiveTitleDedup:
 
 
 class TestExtractDoiUsesSharedNormalization:
-    """ROADMAP item 4, sixth site: extract_doi carried its own prefix list,
+    """Sixth site: extract_doi carried its own prefix list,
     missing `doi:` and bare `doi.org/`, so those entries keyed differently
     here than in metadata_cleaner / generate_bibliography / stamp_evidence."""
 
@@ -1220,7 +1220,7 @@ QUOTED_ENTRY = '''@article{q,
 
 class TestQuotedFormExtractors:
     """pybtex Writer emits quoted fields; the extractors must read them
-    (ROADMAP item 3 A prerequisite - cleaned bibs are quoted-form)."""
+    (prerequisite - cleaned bibs are quoted-form)."""
 
     def test_extract_keywords_value_quoted(self):
         from dedupe_bib import _extract_keywords_value
@@ -1278,7 +1278,7 @@ UNCLEANED_COPY = '''@inproceedings{iclr_d1,
 
 
 class TestCleanerVerdictPropagation:
-    """Item 3 A: a field one domain's evidence flagged unverifiable must not
+    """A field one domain's evidence flagged unverifiable must not
     ship via an unchecked duplicate."""
 
     def test_uncleaned_winner_loses_flagged_field(self):
@@ -1345,7 +1345,7 @@ class TestCleanerVerdictPropagation:
 
     def test_doi_pass_with_flagged_loser(self, tmp_path):
         # Pass 2 (shared DOI, different keys): strip must fire there too
-        # (review Q2 coverage note).
+        # (coverage note).
         from dedupe_bib import deduplicate_bib
         f1 = tmp_path / "d1.bib"
         f2 = tmp_path / "d3.bib"
@@ -1362,7 +1362,7 @@ class TestCleanerVerdictPropagation:
     def test_two_hop_transitive_verdict(self):
         # A (cleaned) loses to B; the folded marker on the merged entry must
         # then strip C's copy of the field in a SECOND merge - the scenario
-        # that justifies marker folding (review Q2).
+        # that justifies marker folding.
         from dedupe_bib import merge_entries
         merged_ab, _r, _w = merge_entries(CLEANED_COPY, UNCLEANED_COPY)
         third = UNCLEANED_COPY.replace("iclr_d1", "iclr_d6")
@@ -1395,7 +1395,7 @@ class TestCleanerVerdictPropagation:
         # truncated entry) while the loser independently flags booktitle via
         # its cleaner marker. The scanner's depth count never returns to 0,
         # so the strip must fail honestly rather than let a regex-miss
-        # masquerade as a successful removal (review finding 2) - and the
+        # masquerade as a successful removal - and the
         # failed scan must not have eaten neighboring fields.
         from dedupe_bib import merge_entries, _extract_keywords_value
         from metadata_cleaner import marker_removed_fields
@@ -1437,7 +1437,7 @@ class TestCleanerVerdictPropagation:
     def test_surgical_strip_preserves_corporate_author_and_custom_fields(self):
         # Surgical scanner removal (no pybtex round-trip) must not
         # reinterpret or rewrite any field outside the one being removed -
-        # review finding 1: the old pybtex round-trip re-emitted a
+        # The old pybtex round-trip re-emitted a
         # single-braced corporate author as a person name
         # (author = {National Research Council} -> author = "Council,
         # National Research").
@@ -1586,7 +1586,7 @@ class TestCleanerVerdictPropagation:
 
 
 class TestVenueStatusField:
-    """Item 3 D: venue_status must be known to the field scanner, but must
+    """venue_status must be known to the field scanner, but must
     be unioned apart from the journal identity it was computed against."""
 
     def test_venue_status_is_a_known_field(self):
@@ -1697,7 +1697,7 @@ class TestVenueStatusField:
         """The one path _KNOWN_FIELDS actually feeds: _remove_fields_text's
         over-greedy post-condition guard, reached only when merge_entries
         strips a loser's METADATA_CLEANED-flagged field from a winner that
-        also carries venue_status. Reuses the item 3 A CLEANED_COPY (loser,
+        also carries venue_status. Reuses the CLEANED_COPY (loser,
         flags booktitle) / UNCLEANED_COPY (winner, has the field and the
         abstract) fixtures with venue_status added to the winner, right
         next to the field being stripped.
@@ -1731,7 +1731,7 @@ class TestVenueStatusField:
 
 
 class TestYearSuffixField:
-    """Item 3 F: unlike venue_status (item 3 D), whose job is already done
+    """Unlike venue_status, whose job is already done
     once the writers have read the domain bibs, losing year_suffix in a
     merge breaks a rendered References that prose already cites by letter
     (e.g. "2010a") - so this field needs a REAL merge policy, not
@@ -1827,7 +1827,7 @@ class TestYearSuffixField:
 
     def test_lettered_winner_keeps_its_letter_against_a_bare_loser(self, tmp_path):
         """Third policy branch (winner lettered, loser bare), untested until
-        the item-3-F review. Both halves discriminate: the letter must
+        review. Both halves discriminate: the letter must
         survive the merge (a future _apply_cleaner_verdicts or
         _union_substantive_fields change that stripped the field would fail
         the first), and a one-sided letter must NOT read as a disagreement

@@ -48,7 +48,7 @@ from bib_identity import (
 )
 
 # Historic private names, kept so existing call sites and tests are unchanged.
-# These are aliases, not copies: tests assert `is` identity (ROADMAP item 4).
+# These are aliases, not copies: tests assert `is` identity.
 _year_key = year_key
 _normalize_title = title_key
 
@@ -61,12 +61,12 @@ CLEANABLE_FIELDS = {
 # The three strip-policy classes partition CLEANABLE_FIELDS (pinned by test).
 # DETAIL fields locate a work within an edition; their absence from a
 # search-API record is the norm, so absence must never strip them - only a
-# contradiction from an identity-verified record may (item 14). journal and
+# contradiction from an identity-verified record may. journal and
 # booktitle are claim-bearing (a fabricated venue is the observed exploit) and
 # keep the older policy; doi has its own, stricter licence.
 DETAIL_FIELDS = frozenset({'volume', 'number', 'pages', 'publisher'})
 
-# Circuit breaker (item-13 A4.3): if a .bib would lose fields from more than
+# Circuit breaker: if a .bib would lose fields from more than
 # BREAKER_FRACTION of its entries AND from at least BREAKER_MIN_ENTRIES, the
 # cleaner writes nothing (a systemic index failure must not mass-strip verified
 # data). Constants, not config - thresholds are a safety floor, not a knob.
@@ -80,7 +80,7 @@ BREAKER_FRACTION = 0.30
 _MARKER_RE = re.compile(r",?\s*METADATA\\*_CLEANED:.*$", re.DOTALL)
 
 # The marker's removed-field grammar, shared with dedupe_bib.py and
-# generate_bibliography.py (item 3 A, duplicate entries). This module owns the marker
+# generate_bibliography.py. This module owns the marker
 # format (_apply_cleaned_marker writes it); parse it here, in one place.
 _MARKER_BODY_RE = re.compile(r"METADATA\\*_CLEANED:\s*(.*)$", re.DOTALL)
 
@@ -248,8 +248,7 @@ def _year_is_overwritable(record: dict) -> bool:
     Before verify_paper.py recorded a basis it took CrossRef's `published`
     first, which is the EARLIEST of print and online. 27 of 42 year rewrites
     across the local corpora therefore replaced a correct print-issue year with
-    the online-first year (docs/known-issues/metadata-cleaner-year-corruption.md,
-    "online-first" section). Those records are still on disk in delivered
+    the online-first year. Those records are still on disk in delivered
     reviews; nothing in them distinguishes the good years from the bad, so the
     only safe rule is to require the evidence the fixed producer now supplies.
     Refusals are counted in `years_declined` and warned about, never silent.
@@ -580,8 +579,8 @@ def build_metadata_index(json_dirs) -> MetadataIndex:
     """Build a presence-based index of metadata from JSON files across one or
     more directories.
 
-    json_dirs may be a single Path (back-compat) or a list of Paths (item-13
-    union: the review root AND intermediate_files/json both feed one index, so
+    json_dirs may be a single Path (back-compat) or a list of Paths (the
+    review root AND intermediate_files/json both feed one index, so
     directory shadowing no longer starves verification). Files failing
     json.loads are salvaged via _salvage_json (log-pollution tolerance);
     unsalvageable files are recorded in index.skipped_files, salvaged ones in
@@ -786,12 +785,13 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
 def is_field_verifiable(field_name: str, value: str, index: MetadataIndex) -> bool:
     """Check if a field value can be verified against the metadata index.
 
-    Only the journal/booktitle branch is LIVE in production since item 14:
-    plan_entry_cleaning consults this bucket for venue fields alone, so the
-    detail-field branches below are exercised by unit tests only. Do not read
-    their presence as evidence that bucket rescue still applies to them - an
-    unrelated paper's matching issue number is coincidence, not corroboration,
-    and rewiring it would restore exactly the defect item 14 removed."""
+    Only the journal/booktitle branch is LIVE in production since the
+    strip-rule fix: plan_entry_cleaning consults this bucket for venue fields
+    alone, so the detail-field branches below are exercised by unit tests
+    only. Do not read their presence as evidence that bucket rescue still
+    applies to them - an unrelated paper's matching issue number is
+    coincidence, not corroboration, and rewiring it would restore exactly the
+    defect that fix removed."""
     if field_name in ('journal', 'booktitle'):
         if normalize_journal(value) in index.journals:
             return True
@@ -841,14 +841,13 @@ def _record_completeness(record: dict) -> int:
 
 
 class CleaningAbstention:
-    """Third outcome of find_api_entry_for_bib_entry (Option C, evidence-tier
-    divergence write-up §9): this entry's DOI matched indexed records - its
-    existence is confirmed - but the year evidence is contradictory, so the
-    cleaner declines to clean. Falsy on purpose: for every cleaning decision
-    an abstention behaves exactly like no-match; only the cleaning ledger
-    records the difference (api_matched: True + cleaning_abstained), so a
-    year-scoped refusal is never converted into an existence-scoped penalty
-    downstream."""
+    """Third outcome of find_api_entry_for_bib_entry: this entry's DOI matched
+    indexed records - its existence is confirmed - but the year evidence is
+    contradictory, so the cleaner declines to clean. Falsy on purpose: for
+    every cleaning decision an abstention behaves exactly like no-match; only
+    the cleaning ledger records the difference (api_matched: True +
+    cleaning_abstained), so a year-scoped refusal is never converted into an
+    existence-scoped penalty downstream."""
     __slots__ = ("reason", "normalized_doi")
 
     def __init__(self, reason: str, normalized_doi: str):
@@ -861,7 +860,7 @@ class CleaningAbstention:
 
 def find_api_entry_for_bib_entry(entry, index: MetadataIndex):
     """Find THIS bib entry's own API record in the index (entry-scoped
-    evidence, item-13 A4.1): first by DOI (exact normalized match), else by
+    evidence): first by DOI (exact normalized match), else by
     normalized title + year. Returns the matched record dict, None when no
     affirmative match exists, or a CleaningAbstention - in both of the
     latter cases the entry is left completely untouched by the cleaner.
@@ -994,8 +993,8 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
 
     'no-evidence' means the record does not carry the field at all. It is NOT a
     weak 'contradict': search-API records rarely carry pages/issue/publisher,
-    and 80% of the pre-item-14 strips were absence-driven on values a CrossRef
-    truth anchor found majority-TRUE (item 14; see
+    and 80% of the pre-fix strips were absence-driven on values a CrossRef
+    truth anchor found majority-TRUE (see
     docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md). Which
     states may strip is plan_entry_cleaning's decision, per field class - this
     function only reports the evidence.
@@ -1090,10 +1089,11 @@ def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
     record (normalized)? Empty API values never match (can't confirm).
 
     Exactly the 'match' state of _field_compare, so the two can never drift.
-    Item 14 widened the pages and publisher comparisons in _field_compare,
-    but this function's four call expressions in this module, across three
-    other callers, only ever pass 'doi' or 'publisher' - never 'pages'. Only
-    _verified_identifier's publisher check inherits that widening:
+    The strip-rule fix widened the pages and publisher comparisons in
+    _field_compare, but this function's four call expressions in this module,
+    across three other callers, only ever pass 'doi' or 'publisher' - never
+    'pages'. Only _verified_identifier's publisher check inherits that
+    widening:
     'Springer' against 'Springer International Publishing' now verifies a
     book identity there - but only as far as the boundary/multi-token bound
     on prefix containment reaches, so a one-letter 'O' does not. The other
@@ -1105,7 +1105,7 @@ def _field_matches_api(field_lower: str, value: str, api_entry: dict) -> bool:
 
 
 def _plan_type_downgrade(entry, surviving_fields: set, api_entry: dict) -> Optional[tuple]:
-    """Post-removal type-downgrade decision (item-13 A4.2). Returns
+    """Post-removal type-downgrade decision. Returns
     (old_type, 'misc') or None.
 
     @article guard: an article that would lose its required 'journal' is NOT
@@ -1138,7 +1138,7 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
     circuit breaker can inspect the whole .bib before anything is written.
 
     Each cleanable field is compared three ways against the entry's own API
-    record (_field_compare) and judged by its class (item 14):
+    record (_field_compare) and judged by its class:
 
       * DETAIL_FIELDS - removed only on a CONTRADICTION from an
         identity-verified record. Absence removes nothing.
@@ -1171,10 +1171,8 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
     #      `published` field is the EARLIEST of print and online, so a record
     #      built from it carries the pre-issue year and "corrects" correct
     #      bibliographies (Mind 130(517): print 2021, online 2019).
-    # Both failures are documented in
-    # docs/known-issues/metadata-cleaner-year-corruption.md. (See the
-    # entry_scoped-preference docstring on find_api_entry_by_doi for the
-    # corresponding limitation on non-year fields.)
+    # (See the entry_scoped-preference docstring on find_api_entry_by_doi for
+    # the corresponding limitation on non-year fields.)
     if _year_of(api_entry):
         # Compare AND write the canonical form: a record carrying 2007.0 must
         # neither read as a disagreement with a bib year of 2007 nor land in
@@ -1246,7 +1244,7 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
         elif field_lower == 'doi':
             # Only a targeted lookup can condemn a DOI: a broad dump's
             # differing DOI is most likely its own artifact's (jamieson).
-            # Written as entry_scoped per spec; note it is EQUIVALENT to
+            # Written as entry_scoped deliberately; note it is EQUIVALENT to
             # identity_verified here, since a contradicting DOI kills that
             # variable's own doi-match disjunct. No test can separate the two -
             # do not go looking for one.
@@ -1282,7 +1280,7 @@ def plan_entry_cleaning(entry, index: MetadataIndex, api_entry: dict) -> dict:
 
 def _apply_cleaned_marker(entry, plan: dict) -> None:
     """Set a single METADATA_CLEANED tag on keywords, REPLACING any existing
-    marker(s) rather than appending (item-13 A6) - a re-parsed bib re-cleaned
+    marker(s) rather than appending - a re-parsed bib re-cleaned
     on a second SubagentStop must not accumulate duplicate markers."""
     all_changes = list(plan["removed_field_names"])
     if plan["year_corrected"]:
@@ -1323,7 +1321,7 @@ def write_bibtex(bib_data: BibliographyData, output_path: Path) -> None:
 def _verified_identifier(entry, api_entry: dict):
     """(kind, normalized_value) the entry's own matched API record confirms.
 
-    Value binding (shared-contract): the ledger attests a VALUE, never just a
+    Value binding: the ledger attests a VALUE, never just a
     field's presence or kind. 'doi' outranks 'publisher' when both would be
     confirmable. Returns (None, None) when neither identifier is confirmed."""
     doi_val = entry.fields.get("doi", "")
@@ -1338,21 +1336,22 @@ def _verified_identifier(entry, api_entry: dict):
 
 def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped: bool) -> str:
     """Atomically write the per-bib cleaning ledger (tmp + os.replace) - the
-    positive-match attestation source the evidence barrier later consumes
-    (shared-contract 'Cleaning ledger' schema). Overwrites any prior ledger
+    positive-match attestation source the evidence barrier later consumes.
+    Overwrites any prior ledger
     for this bib stem so a re-clean reflects only the final pass.
 
     An entry record's `unverified_fields` and `venue_stripped_no_evidence` are
     owner-facing TELEMETRY, not a control: this file is agent-writable, so
     nothing downstream may gate on them. They exist to measure the accepted
-    residual of item 14 (kept values no record corroborates, and venues
-    stripped for want of evidence), and are present only when non-empty."""
+    residual of the strip-rule fix (kept values no record corroborates, and
+    venues stripped for want of evidence), and are present only when
+    non-empty."""
     bib_path = Path(bib_path)
     ledger_dir = bib_path.parent / "intermediate_files" / "json"
     ledger_dir.mkdir(parents=True, exist_ok=True)
     payload = {
-        # 2 since item 14, the cleaner strip-rule fix, which added the optional
-        # telemetry keys documented above. (1 held through the Option C
+        # 2 since the cleaner strip-rule fix, which added the optional
+        # telemetry keys documented above. (1 held through the
         # `cleaning_abstained` addition, recorded 2026-08-18 as deliberate
         # because producer and consumer shipped together.) The barrier accepts
         # {1, 2} and hard-rejects anything else, so a further bump must land in
@@ -1371,7 +1370,7 @@ def write_cleaning_ledger(bib_path: Path, ledger_entries: dict, breaker_tripped:
 
 def _write_ledger_safe(result: dict, bib_path: Path, ledger_entries: dict, breaker_tripped: bool) -> None:
     """Write the cleaning ledger, but never let this break cleaning itself -
-    a plumbing gate fails open (per shared-contract gate-failure policy). On
+    a plumbing gate fails open. On
     failure result['ledger_path'] stays None and the failure surfaces only as
     a warning; the missing ledger then demotes downstream, which is the safe
     direction."""
@@ -1422,11 +1421,10 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         bib_path: Path to BibTeX file
         json_dirs: a single Path (back-compat) OR a list of Paths holding JSON
             API output. All existing dirs' parseable/salvageable files feed one
-            presence-based index (item-13 union: fixes directory shadowing).
+            presence-based index (one union: fixes directory shadowing).
 
-    Returns a result dict. Item-13 keys: skipped_files, salvaged_files (A3);
-    matched_entries, unmatched_entries, breaker_tripped, and the
-    planned_*/applied_* metrics (A4, populated by the W3 loop).
+    Returns a result dict: skipped_files, salvaged_files, matched_entries,
+    unmatched_entries, breaker_tripped, and the planned_*/applied_* metrics.
     """
     result = {
         "success": True,
@@ -1519,7 +1517,7 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
     # Entry-scoped planning: only entries with an affirmative API match are
     # cleaned; unmatched entries pass through untouched and are counted.
     plans = []  # (entry_key, entry, plan)
-    ledger_entries = {}  # entry_key -> cleaning-ledger record (shared-contract schema)
+    ledger_entries = {}  # entry_key -> cleaning-ledger record
     for entry_key, entry in bib_data.entries.items():
         # Emit the same-DOI year-disagreement warning BEFORE the match check:
         # a conflicted DOI with no entry-scoped record now abstains, and this
@@ -1536,8 +1534,8 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
 
         api_entry = find_api_entry_for_bib_entry(entry, index)
         if isinstance(api_entry, CleaningAbstention):
-            # Option C (§9): the DOI matched - existence is confirmed - but
-            # the year evidence is contradictory, so cleaning declines. The
+            # The DOI matched - existence is confirmed - but the year
+            # evidence is contradictory, so cleaning declines. The
             # ledger attests existence with an additive refusal reason;
             # cleaner behaviour and metrics are IDENTICAL to no-match (no
             # plan, still counted unmatched). compute_tier's value binding
@@ -1569,7 +1567,7 @@ def clean_bibtex(bib_path: Path, json_dirs) -> dict:
         }
         # Telemetry only, never a control (see write_cleaning_ledger). Omitted
         # when empty so a fully-corroborated bib's ledger reads as it did
-        # before item 14.
+        # before the strip-rule fix.
         if plan["unverified_fields"]:
             record["unverified_fields"] = list(plan["unverified_fields"])
         if plan["venue_stripped_no_evidence"]:

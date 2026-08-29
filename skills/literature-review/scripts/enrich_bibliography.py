@@ -278,8 +278,9 @@ def resolve_ndpr_abstract(
 
 # Corroboration outcomes. Only CORROBORATED is evidence; the other three
 # are distinct KINDS of non-evidence, and keeping them apart is the point:
-# MISMATCH means "fetched and differed" (the forgery signal item 15
-# measures) and must never absorb "there was nothing to compare".
+# MISMATCH means "fetched and differed" (the forgery signal the barrier's
+# corroboration gate measures) and must never absorb "there was nothing to
+# compare".
 CORROBORATED = "corroborated"
 MISMATCH = "mismatch"
 SOURCE_EMPTY = "source_empty"
@@ -294,7 +295,7 @@ TRANSPORT_FAILED = "transport_failed"
 # added there without teaching corroboration to probe it would otherwise be
 # read as UNKNOWN, probed against the other three, and could report a
 # MISMATCH off a source the entry never claimed -- a false forgery signal
-# in the metric item 15 enforces on.
+# in the metric the barrier's corroboration gate enforces on.
 _API_SOURCES = ("s2", "openalex", "core")
 
 
@@ -334,7 +335,7 @@ def corroborate_abstract(
         # fetched text that also normalized to nothing would "match", so the
         # comparison would be vacuous rather than evidence). Fail closed,
         # but NOT as MISMATCH: that bucket has to mean "fetched and
-        # differed" or the item-15 rate it feeds means nothing.
+        # differed" or the corroboration rate it feeds means nothing.
         if debug:
             log_progress("  corroboration: entry carries no comparable abstract text")
         return SOURCE_EMPTY, None
@@ -404,7 +405,7 @@ def _probe_candidate(
     PROBE_EMPTY without any request when the source has no usable
     identifier for this identity -- and, for CORE, when no API key is
     configured: resolve_abstract skips keyless CORE rather than burn
-    futile unauthenticated attempts (item 13 D3), and a corroboration
+    futile unauthenticated attempts, and a corroboration
     sweep runs over a whole bibliography, so it must not reintroduce them.
     Consequence to know: a claimed-`core` abstract cannot be corroborated
     in a keyless workspace, which is fail-CLOSED (no attestation), not
@@ -463,7 +464,7 @@ def _field_value_end(entry_text: str, value_start: int):
     Brace-delimited values are bounded by explicit depth counting, not a
     regex character class -- a class like `(?:[^{}]|\\{[^{}]*\\})*` only
     tolerates ONE level of interior nesting; deepening it just moves the
-    wall further out, it never removes it (review finding 1, Task 4: a
+    wall further out, it never removes it (a
     two-level-nested existing abstract like
     `{We show {\\it Kant's {a priori}} fails.}` silently failed to match,
     falling through to the insert branch below and leaving BOTH the stale
@@ -534,8 +535,7 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
     else:
         # Add new field immediately after the entry's opening line (@type{key,).
         # The opening line is never inside a field value, so a multi-line value
-        # (e.g. a wrapped abstract) can no longer swallow the next insertion
-        # (item 13 D2).
+        # (e.g. a wrapped abstract) can no longer swallow the next insertion.
         lines = entry_text.split('\n')
         opening_idx = None
         for i, line in enumerate(lines):
@@ -824,7 +824,7 @@ def enrich_bibliography(
 
     enriched_entries = []
     # citation key -> {abstract_source, abstract_sha256} for abstracts this
-    # run wrote (shared-contract "Enrichment ledger" schema); merged with any
+    # run wrote; merged with any
     # prior ledger by _update_enrichment_ledger at the end of this function.
     ledger_writes: dict = {}
     prior_ledger = _load_prior_ledger(output_path or input_path)
@@ -1023,8 +1023,8 @@ def _load_prior_ledger(output_path: Path) -> dict:
     must degrade to "not attested" (an API re-check), never crash the
     run. NOTE the trust model: this file is agent-writable and is the
     authority for the zero-fetch fast path HERE. The evidence barrier no
-    longer shares that trust for the abstract tier -- since item 15 a ledger
-    record only makes an entry a candidate there, and `corroborate_abstract`
+    longer shares that trust for the abstract tier -- a ledger record only
+    makes an entry a candidate there, and `corroborate_abstract`
     has to see a live fetch serve the same text before the tier is granted.
     """
     final = (output_path.parent / "intermediate_files" / "json"
@@ -1044,7 +1044,7 @@ def _load_prior_ledger(output_path: Path) -> dict:
 def _update_enrichment_ledger(output_path: Path, ledger_writes: dict, current_keys: set) -> None:
     """Atomically merge-write the enrichment ledger (tmp + os.replace) --
     the per-entry abstract-source/hash attestation the evidence barrier
-    later consumes (shared-contract 'Enrichment ledger' schema). Existing
+    later consumes. Existing
     entries for keys still present in the bib are kept; keys no longer
     present are pruned; new writes from this run win per key."""
     ledger_dir = output_path.parent / "intermediate_files" / "json"

@@ -35,7 +35,7 @@ SITEMAP_URL = "https://ndpr.nd.edu/sitemap.xml"
 _sitemap_cache: Optional[list[str]] = None
 
 # Pure function words: dropped from title/slug tokens so coincidental overlap
-# on "and"/"the"/"for" can't inflate the match score (item 13 D1). Content-
+# on "and"/"the"/"for" can't inflate the match score. Content-
 # bearing short words philosophy titles use (why, what, not, how, new) stay.
 STOPWORDS = frozenset({
     "and", "the", "for", "with", "from", "that", "this", "its",
@@ -247,7 +247,7 @@ def search_ndpr(
         print(f"DEBUG: Best match: {best_slug} (score={best_score:.3f})", file=sys.stderr)
 
     # Tiered acceptance: 0.75 outright, or 0.6 when the author is confirmed in
-    # the slug (item 13 D1). The stopword-inflated Wallace/Adam-Smith pair
+    # the slug. The stopword-inflated Wallace/Adam-Smith pair
     # (0.667, no author) now rejects; descriptive-slug book matches still pass.
     if best_score >= 0.75 or (best_confirmed and best_score >= 0.6):
         return {"url": best_url, "slug": best_slug, "score": best_score}

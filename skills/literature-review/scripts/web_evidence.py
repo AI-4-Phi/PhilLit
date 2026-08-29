@@ -34,7 +34,7 @@ _LATEX_UNESCAPE = {r"\_": "_", r"\&": "&", r"\%": "%", r"\#": "#", r"\$": "$"}
 # redirect from one GitHub Pages site to a DIFFERENT user's is read as
 # same-domain and corroborates directly -- which is exactly the squatter
 # scenario the check exists to catch, and github is one of the 15 in-scope
-# hosts the spec measured. Same story for `a.example.co.uk` vs
+# hosts measured for this list. Same story for `a.example.co.uk` vs
 # `b.other.co.uk`. External review, 2026-08-11.
 _TWO_PART_SUFFIXES = frozenset({
     "github.io", "gitlab.io", "blogspot.com", "wordpress.com", "substack.com",
@@ -46,7 +46,7 @@ _TWO_PART_SUFFIXES = frozenset({
 CAPTURE_DIR = "web_captures"
 SPAN_DELIM = "||"
 MIN_TEXT_CHARS = 200
-# Span parameters. The spec's proposal said "1-2 spans of 8-15 words"; it was a
+# Span parameters. The first proposal said "1-2 spans of 8-15 words"; it was a
 # proposal, not normative, and these are deliberately looser at both ends -- 8
 # words is short enough that a real sentence fragment often misses it, and a
 # hard 15 forces researchers to trim mid-clause. MAX_SPANS enforces the "one or
@@ -123,7 +123,7 @@ def registered_domain(url: str) -> str:
 
 
 # Encyclopedia-host exclusion (owner decision, 2026-08-17). These hosts never
-# earn EVIDENCE-WEB -- the spec's out-of-scope clause, now mechanical:
+# earn EVIDENCE-WEB -- out of scope by design, and now mechanical:
 #   - SEP (plus its two official mirrors -- same content, same crawl-delay
 #     courtesy, so leaving them in scope would leave a one-edit hole) and IEP
 #     reach evidence through the store-backed CONTEXT channel, not captures.
@@ -232,8 +232,8 @@ def check_capture(capture: dict | None, entry_url: str, title: str,
     Every reason is a distinct diagnosis, deliberately: collapsing any two of
     them hides the answer to a different operational question. `no_capture` vs
     `fetch_error` is "the researcher never ran the tool" vs "the tool ran and
-    hit a WAF or an outage" -- the spec writes failure records precisely so
-    those stay apart. `thin` vs `title_mismatch` is "too little text" vs
+    hit a WAF or an outage" -- failure records are written precisely so those
+    stay apart. `thin` vs `title_mismatch` is "too little text" vs
     "captured the wrong page". `span_malformed` vs `span_unverified` is a
     formatting problem vs a note that outran its source, and only the second is
     evidence about the note.
@@ -273,7 +273,7 @@ def check_capture(capture: dict | None, entry_url: str, title: str,
         return False, "boilerplate"
 
     # 4. Substance, then title anchor -- two separate diagnoses. The text-head
-    #    fallback is broader than the spec's (which scoped it to --stdin): a
+    #    fallback is broader than first designed (scoped then to --stdin): a
     #    SCRIPT capture of a page with no <title>/<h1>/PDF-metadata title still
     #    needs an anchor, and refusing it would fail pages that are real.
     if len(text) < MIN_TEXT_CHARS:
@@ -358,9 +358,9 @@ def evaluate_existence(url: str, get_fn=None, wayback_fn=None) -> dict:
             if 200 <= status < 300 and same_domain:
                 basis = "direct"
             elif status in BOT_BLOCK_STATUSES and same_domain:
-                # same_domain applies to bot_block too. The spec's honesty
-                # section owns the blanket-WAF residual ("this host exists and
-                # blocks bots"), but a CROSS-domain redirect ending at a WAF'd
+                # same_domain applies to bot_block too. The blanket-WAF
+                # residual ("this host exists and blocks bots") is an accepted
+                # honesty limit, but a CROSS-domain redirect ending at a WAF'd
                 # 403 says only "some OTHER host blocks bots", which
                 # corroborates nothing about the cited source.
                 basis = "bot_block"

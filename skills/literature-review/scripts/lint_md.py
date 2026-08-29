@@ -8,8 +8,8 @@ import subprocess
 import sys
 from pathlib import Path
 
-# Import the shared name fold from bib_identity (single source of truth,
-# item 3 B/E / item 4 pattern).
+# Import the shared name fold from bib_identity (single source of truth for
+# bibliography identity and name folds).
 _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_identity import ascii_variants  # noqa: E402
@@ -115,12 +115,12 @@ def lint_markdown(filepath: str) -> int:
         return 1
 
 
-# --- Prose-quality heuristics (roadmap item 13, B5) -------------------------
+# --- Prose-quality heuristics -----------------------------------------------
 # WARN-level advisory checks surfaced at Phase 6. They NEVER affect the exit
 # code: false positives cost nothing, so the patterns stay simple and err
 # toward noticing rather than silence.
 
-# Annotation phrases that leak into citation parentheses (item 13 §4.2): a
+# Annotation phrases that leak into citation parentheses: a
 # citation parenthesis carrying any of these is an improvised process note
 # that loses its margin-apparatus anchor at render.
 _ANNOTATION_PHRASES = (
@@ -150,7 +150,7 @@ _H2_META_LABEL_RE = re.compile(
 
 
 def check_prose_quality(text: str) -> list[str]:
-    """Return WARN-level advisories about prose-quality issues (item 13 §4.2).
+    """Return WARN-level advisories about prose-quality issues.
 
     Heuristic, WARN-only — the caller must never let these affect the exit
     code. Detects: (1) citation parentheses carrying process annotations,
@@ -199,7 +199,7 @@ def check_prose_quality(text: str) -> list[str]:
     return warnings
 
 
-# --- Every-citation-resolves check (ROADMAP item 3 B) ------------------------
+# --- Every-citation-resolves check -------------------------------------------
 # ERROR-level: a cited work missing from the rendered References is the one
 # defect a reader cannot detect and the pipeline used to swallow silently
 # (observed: an anchor study cited seven times, absent from References).
@@ -320,9 +320,9 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     Resolution is deliberately MORE tolerant than the generator's matching
     (transliteration variants, either reprint year, suffix-tolerant) but
     word-boundary-strict on the surname: a substring test would let "he"
-    resolve against "the" and blind the check for short surnames (review 4a).
+    resolve against "the" and blind the check for short surnames.
 
-    A citation whose year carries a Chicago letter (item 3 F) resolves on
+    A citation whose year carries a Chicago letter resolves on
     the BASE year as before; if no candidate reference entry it resolves to
     carries that same letter, it is a WARN, not an ERROR - the work is
     present in References, but the letter itself doesn't match anything
@@ -364,11 +364,11 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
                 f"line {lineno}: citation '{raw_ascii}' does not resolve to "
                 f"any References entry (ERROR)")
             continue
-        # Item 3 F: it resolved on the BASE year. If the prose letters a work
-        # and no candidate reference carries that letter, a reader cannot tell
-        # which work is meant. WARN, never ERROR - hard-failing a run on a
-        # writer's typo costs more than reporting it, and this check is also
-        # how item 3 F's live run is measured.
+        # It resolved on the BASE year. If the prose letters a work and no
+        # candidate reference carries that letter, a reader cannot tell which
+        # work is meant. WARN, never ERROR - hard-failing a run on a writer's
+        # typo costs more than reporting it, and this check is also how the
+        # Chicago letters are measured on a live run.
         #
         # Match the whole YEAR TOKEN, never the bare letter: "a" occurs in
         # "Menary" and in "Richard", so a `letter not in line` test can
@@ -406,7 +406,7 @@ def main(argv: list[str] | None = None) -> int:
     filepath = args[0]
     rc = lint_markdown(filepath)
 
-    # Prose-quality advisories (item 13 §4.2): WARN-only — printed for the
+    # Prose-quality advisories: WARN-only — printed for the
     # orchestrator to see at Phase 6, never affecting the exit code.
     try:
         text = Path(filepath).read_text(encoding="utf-8")

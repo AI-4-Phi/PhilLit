@@ -1,4 +1,4 @@
-"""Item 3 D: the venue-vetting rule, normalization and cache.
+"""The venue-vetting rule, normalization and cache.
 
 Fixtures are the real OpenAlex facts measured 2026-08-05 (the measurement
 data itself is local-only and untracked, so the numbers are inlined here).
@@ -57,7 +57,7 @@ class TestNormalizeVenueName:
         assert vv.normalize_venue_name("Crítica") == "cr tica"
 
     def test_latex_escaped_accent_folds_to_a_different_key(self):
-        """Whole-branch review I3, pinned so the corrected docstring stays
+        """Pinned so the corrected docstring stays
         true: the escape's punctuation folds to a SPACE, so an escaped
         accent diverges from OpenAlex's raw Unicode by a whole token and
         the venue never resolves. A documented RECALL gap -- never a false
@@ -142,7 +142,7 @@ class TestRule:
 
 
 class TestTriStateSignals:
-    """Item 3 D hardening: a missing/null/malformed field must never read as
+    """Hardening: a missing/null/malformed field must never read as
     affirmative "non-core" / "non-DOAJ" evidence -- only an exact `False`
     (or an exact int h_index) may trigger the rule."""
 
@@ -383,7 +383,7 @@ class TestLookupVenue:
         assert outcome == "error" and record is None
 
     def test_rejected_key_is_its_own_outcome(self, monkeypatch):
-        """Whole-branch review M5. The real response, observed 2026-08-06
+        """The real response, observed 2026-08-06
         with a stale key: HTTP 401, {"error":"Invalid or missing API key",
         "message":"API key not found"}."""
         monkeypatch.setattr(vv.requests, "get", lambda *a, **k: FakeResponse(
@@ -626,7 +626,7 @@ class TestVetVenues:
 
 
 class TestRawNameQuery:
-    """Item 3 D hardening: query OpenAlex with the RAW name (the validated
+    """Hardening: query OpenAlex with the RAW name (the validated
     measurement queried raw names, and punctuation-stripping before the
     query changes what OpenAlex's fuzzy search ranks), while the cache key
     and exact-match target stay normalized."""
@@ -712,7 +712,8 @@ class TestFilterSanitization:
         assert record["resolved"] is True
 
     def test_three_comma_bearing_names_produce_comma_free_filters(self, monkeypatch, isolated_cache):
-        # The failure this prevents is compounded by item 4: three
+        # The failure this prevents is compounded by shared identity keys:
+        # three
         # unsanitized comma-bearing filters adjacent in sorted order would
         # each be a malformed OpenAlex query on live data -- three "error"
         # outcomes in a row trip MAX_CONSECUTIVE_ERRORS and abort the whole
@@ -735,7 +736,7 @@ class TestFilterSanitization:
 
 
 class TestHonestStatusAndErrors:
-    """Item 3 D hardening: "complete" must mean complete. A pass that errors
+    """Hardening: "complete" must mean complete. A pass that errors
     out or hits the lookup cap must say so, and must not silently drop
     verdicts it already resolved."""
 
@@ -818,7 +819,7 @@ class TestHonestStatusAndErrors:
         assert result["flagged"] == []
 
     def test_scattered_lookup_errors_explain_themselves(self, monkeypatch, isolated_cache):
-        """Whole-branch review I1: the `finally` promotion to "partial" set no
+        """The `finally` promotion to "partial" set no
         reason, so the LIKELIEST partial in production -- one flaky 500 among
         40 venues, a streak that never reaches MAX_CONSECUTIVE_ERRORS --
         reported `reason: null` while SKILL.md sends the orchestrator to
@@ -838,7 +839,7 @@ class TestHonestStatusAndErrors:
         assert "1 lookup error" in result["reason"]
 
     def test_rejected_key_says_so_and_stops_the_pass(self, monkeypatch, isolated_cache):
-        """Whole-branch review M5: a rejected key used to surface as "stopped
+        """A rejected key used to surface as "stopped
         after 3 consecutive lookup errors", which points the operator at
         OpenAlex rather than at their own key. It is also not hypothetical --
         that is the message D's first live run would produce today."""
@@ -934,7 +935,7 @@ class TestNeverRaisesStructurally:
 
 
 class TestTimeBounds:
-    """Item 3 D hardening: 80 cold names at a 30s timeout is 40 minutes
+    """Hardening: 80 cold names at a 30s timeout is 40 minutes
     inside the workflow's slowest step -- bound both the error streak and
     the wall-clock time a pass may spend on network lookups."""
 

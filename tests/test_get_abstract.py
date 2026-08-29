@@ -780,7 +780,7 @@ class TestFallbackChain:
         self, mock_s2, mock_openalex, mock_core
     ):
         """CORE should be tried when OpenAlex returns None (with a CORE key
-        configured — item 13 D3 gates CORE on the resolved core_api_key)."""
+        configured — CORE is gated on the resolved core_api_key)."""
         mock_s2.return_value = None
         mock_openalex.return_value = None
         mock_core.return_value = "CORE abstract"
@@ -870,7 +870,7 @@ class TestFallbackChain:
         self, mock_s2, mock_openalex, mock_core
     ):
         """Full fallback: S2-by-DOI -> OpenAlex -> CORE (with a CORE key
-        configured — item 13 D3 gates CORE on the resolved core_api_key)."""
+        configured — CORE is gated on the resolved core_api_key)."""
         mock_s2.return_value = None
         mock_openalex.return_value = None
         mock_core.return_value = "CORE abstract"
@@ -893,7 +893,7 @@ class TestFallbackChain:
     @patch("get_abstract.get_abstract_from_core")
     def test_title_only_uses_core(self, mock_core):
         """Should use CORE when only title provided (with a CORE key
-        configured — item 13 D3 gates CORE on the resolved core_api_key)."""
+        configured — CORE is gated on the resolved core_api_key)."""
         mock_core.return_value = "CORE abstract"
 
         import get_abstract

@@ -91,7 +91,7 @@ _ABSTRACT_FIELD_RE = re.compile(r'\babstract\s*=', re.IGNORECASE)
 
 
 def _heal_splice_is_well_formed(chunk: str) -> bool:
-    """Defense-in-depth check run after a heal splice (review finding 1b):
+    """Defense-in-depth check run after a heal splice:
     the splice must have produced EXACTLY ONE `abstract =` field, AND the
     resulting single-entry chunk must be pybtex-parseable.
 
@@ -167,8 +167,9 @@ def _heal_abstract(fields: dict, ledger_entry: dict, debug: bool = False):
 # text, so a DOI-bearing candidate whose claimed source is unaskable could
 # still have been corroborated by a fallback, and pre-classifying gives that
 # up. What it buys is the meaning of `source_empty` -- "a source was probed
-# and authoritatively has no abstract", the reading item 15's rate depends
-# on -- which a fallback sweep launched from an unaskable claim would blur,
+# and authoritatively has no abstract", the reading the corroboration rate
+# depends on -- which a fallback sweep launched from an unaskable claim would
+# blur,
 # since all three of corroborated / mismatch / source_empty are reachable
 # that way. The give-up is small in honest runs: enrichment only writes
 # `abstract_source = core` when a key was configured and `= s2` when a DOI
@@ -283,7 +284,7 @@ def _heal_bucket(source: str, outcome: str) -> dict:
     when the splice is dropped) and they must not drift apart.
 
     `via: heal` marks the population: candidacy FAILED for these entries, so
-    they are not part of the candidate rate item 15 reads -- their own
+    they are not part of the candidate rate -- their own
     fetch, hash-gated against the ledger, is what stands in for a probe.
 
     Both `source` and `claimed` carry the LEDGER's source, and neither is
@@ -305,7 +306,7 @@ def _claimed_source_unprobeable(fields: dict, claimed: str) -> bool:
     `_probe_candidate`'s own preconditions rather than guessed at:
 
     * `core` with no API key -- resolution skips keyless CORE rather than
-      burn futile unauthenticated attempts (item 13 D3), so the probe
+      burn futile unauthenticated attempts, so the probe
       returns "empty" without a request. Tested with the RAW truthiness of
       the environment value, deliberately not stripped: `_probe_candidate`
       gates on `if not core_api_key`, so a whitespace-only key is probed
@@ -363,7 +364,7 @@ def _corroborate_candidate(fields: dict, budget: "_CorroborationBudget",
                            debug: bool = False) -> dict:
     """One candidate's corroboration bucket, as the report records it.
 
-    Ledger equality only makes an entry a CANDIDATE (item 15): the ledger
+    Ledger equality only makes an entry a CANDIDATE: the ledger
     is agent-written, so the three-line forgery -- fabricate an abstract,
     write `abstract_source`, write the fabricated text's own sha256 --
     satisfies it by construction. The tier needs a live fetch that still
@@ -372,7 +373,7 @@ def _corroborate_candidate(fields: dict, budget: "_CorroborationBudget",
     `source` is who ANSWERED (integrity-irrelevant: the gate is hash
     equality, so any source's matching text is equally good evidence),
     `claimed` is what the bib said. Both are recorded on every bucket
-    because their DIFFERENCE is what makes the item-15 rate readable --
+    because their DIFFERENCE is what makes the corroboration rate readable --
     a mismatch off a source the entry never claimed reads very differently
     from one off the source it did. On a NON-corroborated outcome nobody
     answered, so `source` falls back to `claimed`: on those buckets it
@@ -417,7 +418,8 @@ def _corroboration_summary(report: dict) -> dict:
     Heal-path buckets (`via: heal`) are excluded: they are a different
     population (candidacy FAILED there) already summarized by
     `report["healed"]`, and folding them in would inflate the corroborated
-    count that item 15's rate reads. `candidates` is the sum of the rest by
+    count the corroboration rate reads. `candidates` is the sum of the rest
+    by
     construction, and `other` exists so a token added later cannot go
     silently uncounted -- the key set is fixed either way, since a consumer
     must not have to guess which keys a given run will print.
@@ -446,8 +448,8 @@ _DERIVED_FIELD_RE = re.compile(
 def _strip_derived_fields(entry_text: str) -> str:
     """Remove every pre-existing derived field it can find.
 
-    The barrier OWNS all four (item 3 D's venue_status, item 3 F's
-    year_suffix, item 2's urldate and archiveurl): each is re-derived from
+    The barrier OWNS all four (venue_status, year_suffix, urldate and
+    archiveurl): each is re-derived from
     scratch on every run -- venue_status from OpenAlex, year_suffix from the
     current union of every domain bibliography, urldate from the capture's
     retrieved_at and archiveurl from the archive lookup -- so a value already
@@ -516,7 +518,8 @@ _VENUE_FIELD_RE = re.compile(r"\bvenue_status\s*=", re.IGNORECASE)
 
 # The web gate's two derived fields take the same splice verification as
 # venue_status/year_suffix (2026-08-16, from the service's whole-branch
-# review of the item-2 intake): _strip_derived_fields only reaches a field
+# review of the web-evidence intake): _strip_derived_fields only reaches a
+# field
 # that OPENS its line, so a compact hand-written urldate/archiveurl survives
 # the strip and the very next splice inserts a DUPLICATE field pybtex
 # rejects — losing an access date is survivable; an unparseable bib is not.
@@ -571,7 +574,7 @@ def _splice_took(chunk: str, pre_splice: str, intended: str) -> bool:
     """Did the splice actually replace the stale value, AND stay well-formed?
 
     Both halves are required, and the first was missing until an external
-    review found it (2026-08-06, kimi-k3 I1 / gpt-5.6-sol C3).
+    review found it (2026-08-06).
     `_stamp_optional_field` swallows any exception from `add_field_to_entry`
     and returns the text UNCHANGED -- deliberately, so an optional pass can
     never fail the barrier. But an unchanged chunk still holds exactly one
@@ -617,7 +620,7 @@ def _venue_splice_took(chunk: str, pre_splice: str, status: str) -> bool:
 def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
     """Add an OPTIONAL engine-derived field, or return the text unchanged.
 
-    Optional passes (item 3 D's venue_status) must not be able to fail the
+    Optional passes (venue_status) must not be able to fail the
     barrier, and that has to include their own splice, not just their network
     calls -- a regression here would otherwise turn a reviewable run into
     status "failed". Losing the field costs a caveat; losing the run costs the
@@ -666,7 +669,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     ijson = review_dir / "intermediate_files" / "json"
     report = {
         # 2 (was 1): the abstract attestation in this report is
-        # corroboration-gated (item 15). Phase 6's re-stamp keys on this
+        # corroboration-gated. Phase 6's re-stamp keys on this
         # version -- a version-1 report predates the gate, so its
         # `abstract_attested` flags carry only ledger-equality vintage and
         # must not be trusted to re-grant EVIDENCE-ABSTRACT there.
@@ -674,12 +677,11 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         "articles": {"fetched": [], "failed": []}, "acquisition": {},
         "attestations": {}, "stamps": {},
         "demoted_would_be_existence_v4": [],
-        # Option C: entries whose cleaner abstention attests existence -- the
-        # refusal must stay visible however the tier lands (§9, the retained
-        # half of Option D).
+        # Entries whose cleaner abstention attests existence -- the refusal
+        # must stay visible however the tier lands.
         "cleaning_abstained": [],
         "healed": {},
-        # Item 15: one bucket per CANDIDATE (ledger equality held) plus one
+        # One bucket per CANDIDATE (ledger equality held) plus one
         # per heal, recording what a live fetch said. Every entry that
         # reaches EVIDENCE-ABSTRACT has a `corroborated` bucket here; every
         # other outcome is a visible, re-derivable demotion.
@@ -772,7 +774,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                 cleaning_abstained=cl.get("cleaning_abstained"),
             )
             e_rec = e_entries.get(key)
-            # Ledger equality is CANDIDACY, not attestation (item 15).
+            # Ledger equality is CANDIDACY, not attestation.
             candidate = se.attest_abstract(fields, e_rec)
             if candidate:
                 bucket = _corroborate_candidate(
@@ -836,7 +838,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             atts[i][key].context_written = True
             context_values[(i, key)] = (res["field"], res["value"])
 
-    # Item 3 D: venue vetting. A PLUMBING pass inside a fail-closed gate --
+    # Venue vetting. A PLUMBING pass inside a fail-closed gate --
     # it must never turn a reviewable run into a failed one, so everything is
     # wrapped and every failure means "no flags".
     venue_flags = {}   # (i, key) -> status token
@@ -859,9 +861,9 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         # Inside the try, not after it: if venue_names is empty (no journal
         # field anywhere), the loop above never touches venue_report, so a
         # malformed (non-dict) return would otherwise reach an unguarded
-        # subscript below and fail the whole barrier (self-review finding,
-        # item 3 D). Keeping this assignment inside the safety boundary
-        # means ANY exception here -- however it arises -- lands in the
+        # subscript below and fail the whole barrier. Keeping this assignment
+        # inside the safety boundary means ANY exception here -- however it
+        # arises -- lands in the
         # except clause below instead.
         # Named "flagged_entries", not "stamped": this counts entries the
         # RULE decided to flag, not fields actually spliced into a bib --
@@ -891,13 +893,13 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
         venue_report = {"status": "error", "error": repr(exc), "flagged_entries": 0}
     report["venue_vetting"] = venue_report
 
-    # Item 2: web-source evidence. A PLUMBING pass inside a fail-closed gate,
+    # Web-source evidence. A PLUMBING pass inside a fail-closed gate,
     # wrapped like venue vetting -- but with TWO boundaries, and the difference
     # is load-bearing. The OUTER try is for pass-level catastrophes (the JSON
     # round-trip below). The INNER one, per entry, is for DATA problems: without
     # it, one malformed URL would revoke promotion from every other web entry in
-    # the review, and the spec requires entry-level failures to degrade to
-    # no-promotion (external review, Q7.1).
+    # the review; an entry-level failure must degrade to no-promotion, never
+    # to a pass-level one.
     #
     # Promote-only by construction: every path either sets a gate flag or
     # leaves the entry exactly where it already was, and each non-promotion
@@ -934,12 +936,12 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     continue
                 etype, key = header
                 fields = se.parse_entry_fields(chunk)
-                # Scope: @misc only -- a url on an @article is decoration
-                # (spec, Out of scope). The abstract narrowing below is a
-                # deliberate DEPARTURE from the spec (whose scope rule is "a
-                # @misc entry carrying a URL", with no abstract condition),
-                # decided on its merits 2026-08-18: an abstract-bearing entry
-                # already has its own attestation channel.
+                # Scope: @misc only -- a url on an @article is decoration and
+                # out of scope. The abstract narrowing below is a deliberate
+                # NARROWING of the original rule ("a @misc entry carrying a
+                # URL", with no abstract condition), decided on its merits
+                # 2026-08-18: an abstract-bearing entry already has its own
+                # attestation channel.
                 if etype.lower() != "misc":
                     continue
                 if fields.get("abstract"):
@@ -968,16 +970,17 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                             web_report["excluded_host_demoted"].append(qual)
                         continue
                     # Capture FIRST, before any network. Two reasons, and the
-                    # second is why this departs from the spec's ordering:
+                    # second is why this reverses the original ordering:
                     #   1. An entry with no capture cannot pass the gate, so
-                    #      probing its URL buys nothing -- and the spec's stated
-                    #      motive for looking anyway (delivery wants the
-                    #      snapshot) does not apply, since archiveurl is only
-                    #      spliced onto entries that DO pass.
+                    #      probing its URL buys nothing -- and the one motive
+                    #      for looking anyway (delivery wants the snapshot)
+                    #      does not apply, since archiveurl is only spliced
+                    #      onto entries that DO pass.
                     #   2. It keeps the barrier network-free for reviews with no
-                    #      captures at all, which is every pre-item-2 workspace
-                    #      and every test that drives the real execute().
-                    # The bucket is therefore `no_capture`, not the spec's
+                    #      captures at all, which is every workspace predating
+                    #      the web-evidence gate and every test that drives
+                    #      the real execute().
+                    # The bucket is therefore `no_capture`, not
                     # `exists_no_capture`: with this order we have not checked
                     # existence, and claiming it would be a lie.
                     capture = wv.load_capture(review_dir, key)
@@ -1038,7 +1041,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                       "wayback_failed": [], "misc_with_abstract": []}
     report["web_sources"] = web_report
 
-    # Item 3 F: a `year_suffix` that survived _strip_derived_fields. The
+    # A `year_suffix` that survived _strip_derived_fields. The
     # stripper only matches a field OPENING its line, an accepted limit
     # documented there and adjudicated for `venue_status` as "document, don't
     # widen" -- a stale FLAG is a metadata problem. For `year_suffix` it is a
@@ -1071,7 +1074,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             if (se.parse_entry_fields(chunk).get("year_suffix") or "").strip():
                 residual_suffix.add((i, header[1]))
 
-    # Item 3 F: Chicago a/b letters, assigned ONCE over the union of every
+    # Chicago a/b letters, assigned ONCE over the union of every
     # domain so the same work carries the same letter in every copy. Pure
     # computation, but wrapped like the venue pass: a failure here must cost
     # the letters this run would have ASSIGNED, never the run.
@@ -1210,13 +1213,13 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     # field). Drop the heal: revert to the pre-splice
                     # chunk, let the entry demote via the re-derivation
                     # below, and correct the report so it never claims a
-                    # restore that did not land (review finding 1b).
+                    # restore that did not land.
                     chunk = pre_heal_chunk
                     report["healed"][bib_name][key] = {
                         "outcome": "unhealed", "source": h[1]}
                     # Correct the corroboration bucket too, or the report
                     # contradicts itself -- "corroborated" beside an
-                    # "unhealed" heal and a demoted stamp -- and item 15's
+                    # "unhealed" heal and a demoted stamp -- and the
                     # corroborated count is inflated by restorations that
                     # never reached the bib.
                     report["abstract_corroboration"].setdefault(
@@ -1241,7 +1244,7 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
             tier = se.compute_tier(etype, fields, att)
             # venue_status is spliced AFTER tier is computed, not before: it
             # is the only field splice upstream of compute_tier, and tier
-            # invariance (item 3 D) must be structural, not incidental on
+            # invariance must be structural, not incidental on
             # compute_tier happening not to read this field. Splicing here
             # means it can no longer matter even if that ever changes.
             status = venue_flags.get((i, key))

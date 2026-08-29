@@ -1,5 +1,5 @@
 """
-Item 13 D2: add_field_to_entry must not splice a second field inside a
+add_field_to_entry must not splice a second field inside a
 just-inserted multi-line abstract.
 """
 

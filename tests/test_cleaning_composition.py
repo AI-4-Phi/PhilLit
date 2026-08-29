@@ -1,4 +1,4 @@
-"""Composition regression (spec W13): reproduce the exact production pollution -
+"""Composition regression: reproduce the exact production pollution -
 a verify JSON that was redirected `> file.json 2>&1` into intermediate_files/json/
 (stderr log lines ahead of the JSON), plus a clean search JSON at the review
 root - then run the REAL cleaning path (clean_bibtex over BOTH dirs, exactly what
@@ -26,7 +26,7 @@ def _write_polluted_verify(target: Path) -> None:
     The JSON names NO container title, so `journal` can only survive via the
     root search JSON's global bucket (the dir-union assertion; venue fields are
     the class that still consults it). Its `issue` REFUTES the bib's number,
-    which is what makes the strip happen at all since item 14."""
+    which is what makes the strip happen at all since the strip-rule fix."""
     obj = {
         "status": "success", "source": "crossref",
         "query": {"doi": DOI},

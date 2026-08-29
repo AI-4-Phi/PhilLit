@@ -31,7 +31,7 @@ def test_no_relative_docs_paths_in_agents_or_skills():
 
 
 def test_researcher_teaches_verify_paper_output_convention():
-    """verify_paper.py owns its output file via --output (item 13, A2/D4);
+    """verify_paper.py owns its output file via --output;
     a researcher piping stdout to a file (or worse, `2>&1`) corrupts the
     JSON with interleaved progress logs. The agent definition must both
     show the --output invocation and explicitly forbid the redirect
@@ -113,7 +113,7 @@ def test_writer_tier_rules_carry_b2_edits():
 
 
 def test_writer_knows_the_venue_status_rule():
-    """Minor 8 (item 3 D review, round 2): a bare "venue_status" in text
+    """A bare "venue_status" in text
     substring is vacuous -- it would pass even if the flag were rewritten as
     a quality signal. Pin the two phrases that make it a visibility-not-
     quality caveat with a real floor on when the field means nothing."""
@@ -125,7 +125,7 @@ def test_writer_knows_the_venue_status_rule():
 
 
 def test_planner_knows_the_venue_status_rule():
-    """Whole-branch review M6 (item 3 D): the writer rule is pinned by four
+    """The writer rule is pinned by four
     assertions and the researcher rule by two, but the planner's venue
     sentence -- added by Task 5 fix round 2 -- was pinned by nothing and
     could be deleted with a green suite. Pin the load-bearing phrases, not
@@ -145,7 +145,7 @@ def test_planner_knows_the_venue_status_rule():
 def test_researcher_told_not_to_write_either_derived_field():
     """The ban must cover BOTH barrier-owned fields, not just venue_status.
 
-    An external review (2026-08-06, kimi-k3 M3) found the prompt banned
+    An external review (2026-08-06, kimi-k3) found the prompt banned
     hand-writing `venue_status` while saying nothing about `year_suffix` --
     even though the barrier owns both, re-derives both every run, and a
     hand-written `year_suffix` is the more dangerous of the two: one the
@@ -161,7 +161,8 @@ def test_researcher_told_not_to_write_either_derived_field():
 
 
 def test_writer_knows_the_year_suffix_rule():
-    """A bare "year_suffix" substring is vacuous -- item 3 D's review caught
+    """A bare "year_suffix" substring is vacuous -- the venue-vetting review
+    caught
     this exact pattern for venue_status (see test_writer_knows_the_venue_
     status_rule below). Pin the load-bearing phrases so the test fails if the
     citation directive itself were stripped out, not just if the field name

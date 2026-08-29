@@ -186,7 +186,7 @@ def extract_doi(entry: str) -> str | None:
     """Extract and normalize DOI from a BibTeX entry.
 
     Normalization is bib_identity.normalize_doi, shared with metadata_cleaner,
-    generate_bibliography and stamp_evidence (ROADMAP item 4) - an inline
+    generate_bibliography and stamp_evidence - an inline
     prefix list here used to miss `doi:` and bare `doi.org/`, so the same DOI
     keyed two different ways across the pipeline.
     """
@@ -266,15 +266,15 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
             winner = 1
             reason = f"kept existing ({importance_1})"
 
-    # Item 3 A: a field the LOSER's cleaner verdict removed must not ship
+    # A field the LOSER's cleaner verdict removed must not ship
     # via the winner's unchecked copy - strip it and record the verdict.
-    # Deliberate decision (strip-always, review "Important" finding): the
+    # Deliberate decision (strip-always): the
     # loser's positive evidence of unverifiability outweighs the winner's
     # silence - entry text cannot distinguish "cleaned, field survived
     # verified" from "never cleaned" (a marker exists only when changes were
     # made), and a marker records field NAMES only. Rendered References
-    # degrade gracefully without these fields (item-13 A7 handles a missing
-    # booktitle).
+    # degrade gracefully without these fields (the title pass handles a
+    # missing booktitle).
     loser = entry2 if winner == 1 else entry1
     loser_removed = set(marker_removed_fields(_extract_keywords_value(loser)))
     if loser_removed:
@@ -294,7 +294,7 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
         base = remove_incomplete_flag(base)
         reason += ", removed INCOMPLETE flag"
 
-    # Item 3 F: carry the Chicago letter forward. Unlike venue_status,
+    # Carry the Chicago letter forward. Unlike venue_status,
     # losing year_suffix here means the rendered References stops matching
     # prose that already cites the lettered form ("2010a"). Every duplicate
     # copy normally carries the same letter (the barrier assigns it once,
@@ -336,7 +336,7 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
     return base, reason, winner
 
 
-# Substantive fields a survivor UNIONs in from a loser (spec v2.1 / ADV-A0).
+# Substantive fields a survivor UNIONs in from a loser.
 # Keep byte-identical to generate_bibliography._SUBSTANTIVE_FIELDS (the two
 # scripts do not import each other by design; pinned by
 # tests/test_dedupe_bib.py::TestSubstantiveFieldsIncludeContext).
@@ -377,7 +377,7 @@ def _entry_fields(entry_text: str) -> dict:
 _KNOWN_FIELDS = set(_SUBSTANTIVE_FIELDS) | {
     "author", "title", "year", "editor", "keywords",
     "note", "howpublished", "school", "address",
-    # Item 3 D: barrier-stamped venue flag. Known to the over-greedy guard,
+    # Barrier-stamped venue flag. Known to the over-greedy guard,
     # deliberately NOT substantive: _SUBSTANTIVE_FIELDS drives
     # _union_substantive_fields_text's loser->winner field copy with no
     # coupling to which field justifies which, so listing venue_status here
@@ -385,7 +385,7 @@ _KNOWN_FIELDS = set(_SUBSTANTIVE_FIELDS) | {
     # journal is a different venue entirely (merge_entries picks the winner
     # on abstract-presence and importance, never on _SUBSTANTIVE_FIELDS).
     "venue_status",
-    # Item 3 F: barrier-stamped Chicago letter. Known to the over-greedy
+    # Barrier-stamped Chicago letter. Known to the over-greedy
     # guard for the same reason as venue_status, but deliberately NOT
     # substantive for the OPPOSITE reason: venue_status's job is done once
     # the writers have read the domain bibs, so losing it in a merge costs
@@ -412,16 +412,15 @@ def _remove_fields_text(entry_text: str, fields: set[str]) -> tuple[str, set[str
     reserialize reinterprets a single-braced corporate author
     (`author = {National Research Council}`) as a person name and rewrites it
     on output (`author = "Council, National Research"`) - the first place
-    this file WRITES a reinterpreted name back into shipped text (ROADMAP
-    item 3 A review finding 1). The scanner never touches any field but the
-    one it is removing.
+    this file WRITES a reinterpreted name back into shipped text. The scanner
+    never touches any field but the one it is removing.
 
     Returns (new_text, failed): `failed` is the subset of `fields` whose
     assignment IS present but could not be safely removed - a truncated/
     unbalanced value, or a scan whose removal span would have swallowed a
     neighboring field's assignment (checked by a post-condition guard, since
     a regex miss on malformed input must never masquerade as a successful
-    strip - review finding 2). A field entirely absent from the entry is not
+    strip). A field entirely absent from the entry is not
     a failure; it is simply skipped (nothing ships either way)."""
     out = entry_text
     failed: set[str] = set()
@@ -486,7 +485,7 @@ def _remove_fields_text(entry_text: str, fields: set[str]) -> tuple[str, set[str
             failed.add(f)
             continue
 
-        # Same guard, aimed at `f` itself (ROADMAP item 3 review C1): the
+        # Same guard, aimed at `f` itself: the
         # scan above locates the FIRST `f = ` in the whole entry text, which
         # can be a field-name-shaped substring inside a DIFFERENT field's
         # value (e.g. `abstract = {We discuss pages = 12, and more.}` with
@@ -537,8 +536,7 @@ def _fallback_key(entry_text: str) -> tuple[str, str, str] | None:
     Parsed with pybtex so quoted values (title = "...") and nested braces
     ({The {AI} Problem}) are handled — the regex extractors elsewhere in this
     file are brace-only and non-nested. The key itself is built by
-    bib_identity.fallback_key, which generate_bibliography also uses
-    (ROADMAP item 4).
+    bib_identity.fallback_key, which generate_bibliography also uses.
     """
     try:
         db = parse_string(entry_text, "bibtex")
@@ -586,10 +584,10 @@ def _insert_field_text(entry_text: str, field: str, value: str) -> str:
 
 
 def _union_substantive_fields_text(winner_text: str, loser_text: str) -> str:
-    """Union the loser's substantive fields into the winner's text (spec v2.1 /
-    ADV-A0): insert every field in _SUBSTANTIVE_FIELDS the loser has and the
-    winner lacks. Field extraction uses pybtex so quoted/nested-brace values
-    are handled."""
+    """Union the loser's substantive fields into the winner's text: insert
+    every field in _SUBSTANTIVE_FIELDS the loser has and the winner lacks.
+    Field extraction uses pybtex so quoted/nested-brace values are
+    handled."""
     winner_fields = _entry_fields(winner_text)
     loser_fields = _entry_fields(loser_text)
     blocked = set(marker_removed_fields(_extract_keywords_value(winner_text))) \
@@ -614,8 +612,8 @@ def dedupe_by_title_key(
     """Third dedup pass: catch same-work duplicates that share no DOI, keyed on
     (normalized_title, year, first-author surname). Winner via merge_entries()
     (abstract-preference, then importance); the survivor then UNIONs in any
-    substantive field the loser had and it lacked (spec v2.1 / ADV-A0 —
-    merge_entries alone is winner-take-all). DOI identity is tracked per GROUP:
+    substantive field the loser had and it lacked (merge_entries alone is
+    winner-take-all). DOI identity is tracked per GROUP:
     a merge is refused when the two groups' non-empty DOI sets differ.
     Mutates `seen` in place; returns removed keys.
 
@@ -808,9 +806,9 @@ def restamp_merged(
 
     For each entry, take the highest tier computable over the MERGED fields
     under any contributing (bib_file, key)'s attestation — where each
-    attestation is first RE-VERIFIED against the merged values (spec §9,
-    hardened): a bare boolean from one contributor must never authorize
-    another contributor's (possibly fabricated) field value. Abstract and
+    attestation is first RE-VERIFIED against the merged values: a bare boolean
+    from one contributor must never authorize another contributor's (possibly
+    fabricated) field value. Abstract and
     context attestations re-check the value hash; the identifier attestation
     is value-bound inside compute_tier. Every failure path demotes (an entry
     whose attestation no longer matches computes EVIDENCE-NONE).
@@ -885,7 +883,7 @@ def restamp_merged(
         # web re-verifications below -- the hash re-check alone is NOT
         # equivalent to it. Ledger equality stopped being attestation when
         # the barrier put a live corroboration fetch in front of the ABSTRACT
-        # tier (item 15): recomputing from source+hash here would hand
+        # tier: recomputing from source+hash here would hand
         # EVIDENCE-ABSTRACT straight back to every entry the gate refused,
         # in the delivered bibliography. The hash re-check still has to run
         # on top, for its original reason: one contributor's boolean must

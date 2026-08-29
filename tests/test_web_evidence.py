@@ -1,4 +1,4 @@
-"""Item 2: web-source evidence — URL extraction, capture checks, existence.
+"""Web-source evidence — URL extraction, capture checks, existence.
 
 Pure logic, no network: `evaluate_existence` takes its two HTTP callables by
 injection, and every test here supplies stubs.
@@ -57,7 +57,7 @@ def test_normalize_keeps_path_case_and_query():
 def test_normalize_does_not_raise_on_a_malformed_port():
     # urlsplit(...).port raises ValueError on an out-of-range port, and
     # _URL_RE will happily capture `https://a.example:99999/x` out of a bib
-    # field. This must degrade, not throw (external review, Q7.1).
+    # field. This must degrade, not throw (external review).
     assert wv.normalize_url("https://a.example:99999/x")
 
 
@@ -154,8 +154,8 @@ def test_title_anchor_rejects_a_capture_of_the_wrong_page():
 
 
 def test_an_error_record_is_a_fetch_error_not_a_missing_capture():
-    """Attempted-and-failed stays distinguishable from never-attempted: the
-    spec writes failure records for exactly this reason."""
+    """Attempted-and-failed stays distinguishable from never-attempted:
+    failure records are written for exactly this reason."""
     ok, why = wv.check_capture({"url": "https://a.example/x",
                                 "error": "fetch-failed:timeout"},
                                "https://a.example/x", _TITLE, _SPAN)

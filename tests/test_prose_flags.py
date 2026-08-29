@@ -129,7 +129,7 @@ def test_prose_flags_exist_in_named_scripts_argparse():
 
 
 def test_web_source_fetch_obligation_is_stated_in_the_researcher_prose():
-    """Item 2: a web source is uncitable without a capture, so the obligation
+    """A web source is uncitable without a capture, so the obligation
     and the span field both have to be in the prose the researcher reads."""
     text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
         encoding="utf-8")

@@ -538,7 +538,7 @@ def resolve_abstract(
     # Source 3: CORE (by DOI or title+author) — only when a CORE key was
     # resolved (from the environment OR an explicit --core-api-key). Without a
     # key the unauthenticated tier only rate-limits, so skip rather than burn
-    # futile "Trying CORE" attempts (item 13 D3). Gate on the resolved param,
+    # futile "Trying CORE" attempts. Gate on the resolved param,
     # not os.environ, so an explicit key with CORE_API_KEY unset in the
     # environment still works (mirrors search_core.py, which gates on
     # args.api_key).

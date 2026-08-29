@@ -61,7 +61,7 @@ def log_progress(message: str) -> None:
     print(f"[verify_paper.py] {message}", file=sys.stderr, flush=True)
 
 
-# A1 (item 13): the script owns its output file so a researcher's shell
+# The script owns its output file so a researcher's shell
 # redirection (`> f.json 2>&1`) can no longer merge stderr logs into the JSON.
 # Set by main() from --output; None means stdout-only (upstream default).
 _OUTPUT_PATH: Optional[str] = None

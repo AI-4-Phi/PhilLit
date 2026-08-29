@@ -166,7 +166,7 @@ def mock_crossref_response():
 def _no_ambient_openalex_key():
     """Strip OPENALEX_API_KEY from the environment for the whole session.
 
-    Item 3 D (venue vetting) added a real-network OpenAlex pass inside
+    Venue vetting added a real-network OpenAlex pass inside
     evidence_barrier.py, gated on this key. Several barrier tests run the
     script via subprocess and inherit the parent environment verbatim, so a
     developer's real key would otherwise make the suite spend real, metered

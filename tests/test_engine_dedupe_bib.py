@@ -1,4 +1,4 @@
-"""Item 13 A7: dedupe_bib third pass (title-axis) - pybtex-robust fallback key,
+"""dedupe_bib third pass (title-axis) - pybtex-robust fallback key,
 union-into-survivor, and DOI-group bridge guard."""
 
 import sys
@@ -14,7 +14,7 @@ from dedupe_bib import dedupe_by_title_key, _fallback_key
 def test_dedupe_by_title_key_merges_same_work_abstract_wins():
     # Same (title, year, first-author surname); no shared DOI; one has an
     # abstract. merge_entries() selects the abstract-bearing entry as winner,
-    # then the survivor UNIONs in the loser's substantive fields (spec v2.1) -
+    # then the survivor UNIONs in the loser's substantive fields -
     # here the loser-only journal.
     seen = {
         "doe2020a": (
@@ -39,14 +39,14 @@ def test_dedupe_by_title_key_merges_same_work_abstract_wins():
     assert removed == ["doe2020a"]           # bare (no-abstract) entry dropped
     survivor = next(iter(seen.values()))
     assert "abstract" in survivor            # abstract-bearing winner survives
-    assert "J Phil" in survivor              # loser-only journal unioned in (spec v2.1)
+    assert "J Phil" in survivor              # loser-only journal unioned in
 
 
 def test_dedupe_by_title_key_unions_loser_journal_and_doi():
     # The winner is chosen by merge_entries() for its abstract; it lacks
     # journal+doi. The loser carries journal+doi. After the pass the survivor
-    # (abstract entry) UNIONs in the loser-only journal + doi (spec v2.1 /
-    # ADV-A0). This is the "survivor retains a journal+DOI only the LOSER had"
+    # (abstract entry) UNIONs in the loser-only journal + doi. This is the
+    # "survivor retains a journal+DOI only the LOSER had"
     # assertion.
     seen = {
         "rich_meta": (

@@ -363,7 +363,7 @@ class TestFormatEntry:
         assert "[https://" in result
 
     def test_misc_renders_accessed_date_and_archive_link(self):
-        """urldate and archiveurl are barrier-authored (item 2). Chicago
+        """urldate and archiveurl are barrier-authored. Chicago
         provides for both, and the archive link is link-rot insurance."""
         entry = _make_entry(
             "misc",
@@ -379,7 +379,7 @@ class TestFormatEntry:
         assert "web.archive.org" in result
 
     def test_latex_wrapped_url_is_unwrapped_not_printed_literally(self):
-        """REGRESSION PIN, not a fix. The item-2 spec carries a rider claiming
+        """REGRESSION PIN, not a fix. A rider once claimed
         this is broken -- that `_format_misc` tests `howpublished.startswith
         ("http")`, so the `\\url{...}` form the researcher template mandates
         falls to the plain-text branch and ships the macro as visible text.
@@ -614,8 +614,8 @@ class TestDOIDeduplication:
 
 
 class TestYearSuffixField:
-    """Item 3 F, mirrored from dedupe_bib.merge_entries (task 5 scope
-    expansion): this dedup pass picks its winner by
+    """Chicago letters, mirrored from dedupe_bib.merge_entries: this dedup
+    pass picks its winner by
     _substantive_field_count, a DIFFERENT criterion than dedupe_bib's
     (abstract-then-importance), so the survivor here can be a different
     copy than the one dedupe_bib kept - and this function's output IS what
@@ -750,7 +750,7 @@ class TestIdempotency:
 
 
 # =============================================================================
-# Whole-branch review C1: the References boundary is fence-aware, and there is
+# The References boundary is fence-aware, and there is
 # ONE scanner for it
 # =============================================================================
 
@@ -880,7 +880,7 @@ class TestNormalization:
 
 
 # =============================================================================
-# ROADMAP item 4: identity keys come from the one owner (hooks/bib_identity.py)
+# Identity keys come from the one owner (hooks/bib_identity.py)
 # =============================================================================
 
 class TestIdentityKeysComeFromTheOwner:
@@ -926,7 +926,7 @@ class TestIdentityKeysComeFromTheOwner:
 
 
 class TestNonLatinSurnameNoLongerVanishes:
-    """ROADMAP item 4 / bib-pipeline-integrity-gaps Issue B, second mode:
+    """Non-Latin surnames, second mode:
     _normalize_for_matching ASCII-folds a wholly non-Latin surname to '' and
     the entry was skipped before any matching ran, so a cited work was
     deterministically absent from the rendered References."""
@@ -972,7 +972,7 @@ class TestNonLatinSurnameNoLongerVanishes:
 
 
 class TestFormatDoiNormalizesFirst:
-    """Follow-up to ROADMAP item 4: _format_doi rendered the RAW doi field, so
+    """_format_doi rendered the RAW doi field, so
     a bib carrying a prefixed DOI emitted a broken hyperlink into References."""
 
     def test_doi_colon_prefix_does_not_double_up(self):
@@ -1000,7 +1000,7 @@ class TestFormatDoiNormalizesFirst:
 
 
 class TestPunctuationOnlySurnameFold:
-    """Follow-up to ROADMAP item 4: a surname whose ASCII fold retains no
+    """A surname whose ASCII fold retains no
     alphanumeric character (a hyphenated non-Latin name folds to '-') took the
     primary path and matched a garbage pattern, so the entry could be
     spuriously INCLUDED in References."""
@@ -1042,7 +1042,7 @@ class TestPunctuationOnlySurnameFold:
 
 
 class TestCleanerVerdictPropagation:
-    """Item 3 A mirror: References-side dedup must not resurrect
+    """References-side dedup must not resurrect
     cleaner-removed fields."""
 
     BIB = '''
@@ -1154,7 +1154,7 @@ class TestCleanerVerdictPropagation:
 
 
 class TestTransliterationMatching:
-    """Item 3 B (matcher half), SYMMETRIC: either side may carry the
+    """Matcher half, SYMMETRIC: either side may carry the
     diacritic or the ae-spelling."""
 
     def _cited(self, bib, review):
@@ -1174,7 +1174,7 @@ class TestTransliterationMatching:
         assert self._cited(self.FRAENKEN, "Franken (2024) shows X.") == {"f2024"}
 
     def test_bib_ae_prose_diacritic_REVERSE(self):
-        # The direction the one-haystack design missed (review P0).
+        # The direction the one-haystack design missed.
         assert self._cited(self.MUELLER, "M\u00fcller (2022) shows X.") == {"m2022"}
 
     def test_bib_ae_prose_ae(self):
@@ -1185,7 +1185,7 @@ class TestTransliterationMatching:
 
 
 class TestCollectMatches:
-    """Item 3 E: _collect_matches is find_cited_entries' matching pre-pass.
+    """_collect_matches is find_cited_entries' matching pre-pass.
     windows is a plain list[str] of year-bearing proximity slices - used by
     callers only for truthiness (a match exists) and length (hit count); it
     does not carry hit spans (M2: collision resolution re-parses citation
@@ -1218,7 +1218,7 @@ class TestCollectMatches:
 
 
 class TestCollisionResolution:
-    """Item 3 E: phantoms die when prose forms discriminate; partial
+    """Phantoms die when prose forms discriminate; partial
     ambiguity keeps candidate unions; nothing cited is ever dropped."""
 
     def _cited(self, bib, review):
@@ -1310,7 +1310,7 @@ class TestCollisionResolution:
         assert cited == {"johnsonG"}
 
     def test_partial_ambiguity_keeps_candidate_union(self, capsys):
-        # review P0: the bare solo instance supports BOTH solo entries; the
+        # The bare solo instance supports BOTH solo entries; the
         # et-al instance supports the team - nobody cited is dropped.
         cited = self._cited(self.JOHNSONS,
             "Johnson (2024) argues X; Johnson et al. (2024) argue Y.")
@@ -1534,7 +1534,7 @@ class TestYearSuffixRendering:
         assert "2010a." in out and "2010A" not in out
 
     def test_the_suffix_validity_rule_over_the_junk_table(self):
-        # Whole-branch M2. The same rule -- single ASCII a-z, lowercased, else
+        # The same rule -- single ASCII a-z, lowercased, else
         # absent -- is implemented TWICE: here in _entry_suffix and inline in
         # check_evidence.py's main(). Nothing asserts they agree, so a drift
         # would render "2010a" in the References while the evidence checker
@@ -1682,7 +1682,7 @@ class TestYearSuffixMatching:
         # prose citing that letter. With only [a, a] the test could not fail:
         # filtering on "a" selects BOTH members, so removing the
         # distinct-letters conjunct changed nothing and the assertion held
-        # either way (review IMPORTANT 6). With [a, a, b] and prose "2010b",
+        # either way. With [a, a, b] and prose "2010b",
         # dropping the conjunct drops the two "a" members.
         dup = """@book{a1, author = {Menary, Richard}, title = {One},
   publisher = {MIT Press}, year = {2010}, year_suffix = {a}}
@@ -1722,7 +1722,7 @@ class TestYearSuffixMatching:
 
     def test_unmatched_letter_disables_dropping_for_the_whole_group(self):
         # The `not unmatched_letters` guard on the drop branch, which no test
-        # reached before (review IMPORTANT 5): "2010a" DOES discriminate here,
+        # reached before: "2010a" DOES discriminate here,
         # so supported is non-empty and the branch would otherwise fire. The
         # unresolvable "2010c" names a work we cannot identify, so we do not
         # know which member it was meant to support -- keep the group whole.
@@ -1731,7 +1731,7 @@ class TestYearSuffixMatching:
             ["menary2010cognitive", "menary2010extended"]
 
     def test_continuation_alone_never_licenses_a_drop(self, capsys):
-        # Review IMPORTANT 2. A continuation instance used to set
+        # A continuation instance used to set
         # first_pos_seen, which moved its group out of keep-all and INTO the
         # drop branch -- so adding support to a group that had none removed
         # that group's protection. Here "Smith 2020" is a real citation and
@@ -1748,7 +1748,7 @@ class TestYearSuffixMatching:
         assert "[COLLISION] dropped" not in capsys.readouterr().err
 
     def test_continuation_support_alone_never_licenses_a_drop(self, capsys):
-        # Whole-branch review C1, and the coverage hole that let it ship: the
+        # The defect, and the coverage hole that let it ship: the
         # first fix for the case above stopped a continuation setting
         # first_pos_seen but left it writing `supported`, and flipping THAT
         # from empty to non-empty reached the same drop branch. Every existing
@@ -1803,8 +1803,9 @@ class TestYearSuffixMatching:
 
     def test_a_non_continuation_instance_still_licenses_the_drop(self, capsys):
         # The equal and opposite failure the two tests above must not cause:
-        # over-protection that makes the drop unreachable turns item 3 F into
-        # item 3 E. A plain first-position cite still discriminates, and the
+        # over-protection that makes the drop unreachable turns the letter
+        # filter into plain collision resolution. A plain first-position cite
+        # still discriminates, and the
         # compact continuation form still narrows a three-work group to two.
         assert self._cited("As Menary (2010a) argues, integration matters.") \
             == ["menary2010cognitive"]
@@ -1812,7 +1813,7 @@ class TestYearSuffixMatching:
             capsys.readouterr().err
 
     def test_form_mismatch_warning_does_not_claim_the_letter_is_unknown(self, capsys):
-        # Review IMPORTANT 3. The filter also fires when the citation's author
+        # The filter also fires when the citation's author
         # FORM matched no member, so cands was empty before the letter was ever
         # consulted. Keeping the conservative keep-all is right; the old
         # message was not -- it said 2010b "matches no entry" when 2010b names
@@ -1857,7 +1858,8 @@ class TestYearSuffixMatching:
         # is not fully lettered the letter must NOT select mason2018ideologues
         # and drop the "b" work. Without the guard it does.
         #
-        # mason2018tribe IS dropped here, and that is item 3 E, not F: the
+        # mason2018tribe IS dropped here, by surname collision and not by
+        # letter: the
         # citation's form is solo and that entry has two authors. The cost this
         # test pins is the other direction -- the unlettered co-authored
         # sibling keeps mason2018uncivil in the References even though the
@@ -1900,7 +1902,7 @@ class TestYearSuffixMatching:
 
 
 # The eight prose forms that carry a GENUINE "2010b" citation past
-# _citation_instances (review CRITICAL 1). Each defeats a different part of
+# _citation_instances. Each defeats a different part of
 # the parser, which is why widening _CONTINUATION_RE's separator class closes
 # rows 2-4 and nothing else: rows 1, 5, 6, 7 and 8 have no continuation to
 # parse at all. _sighted_letters closes all eight because it parses no
@@ -1926,8 +1928,8 @@ LETTER_SLIPS_PAST_THE_PARSER = [
 
 
 class TestLetterSighting:
-    """Item 3 F's keep-all safety net: a member whose rendered label the prose
-    mentions is never dropped, however that mention was written."""
+    """The letters' keep-all safety net: a member whose rendered label the
+    prose mentions is never dropped, however that mention was written."""
 
     def _cited(self, prose, bib_text=MENARY_BIB):
         from pybtex.database import parse_string
@@ -1945,9 +1947,10 @@ class TestLetterSighting:
     def test_an_unsighted_letter_is_still_dropped(self, capsys):
         # The payoff case must survive the safety net. Prose cites 2010a only
         # and never mentions 2010b anywhere, so menary2010extended stays
-        # droppable -- otherwise item 3 F does exactly what item 3 E already
-        # did. (This is why the rule is per-member: requiring EVERY member's
-        # letter to be sighted before the group may drop anything would
+        # droppable -- otherwise the letter filter does exactly what plain
+        # collision resolution already did. (This is why the rule is
+        # per-member: requiring EVERY member's letter to be sighted before
+        # the group may drop anything would
         # license no drop here at all.)
         assert self._cited("As Menary (2010a) argues, integration matters.") \
             == ["menary2010cognitive"]
@@ -1984,7 +1987,7 @@ class TestLetterSighting:
         # Load-bearing: ")" and "." are excluded from the separator class. A
         # citation that closes a sentence whose successor opens with an
         # initial -- "(2010a). B. Smith replies" -- would otherwise sight "b",
-        # permanently protect menary2010extended, and switch item 3 F back off
+        # permanently protect menary2010extended, and switch the filter off
         # without any test noticing. (A following multi-letter word is
         # harmless either way: \b after the letter rejects it.)
         prose = "Menary (2010a). B. Smith replies at length."
@@ -2119,7 +2122,7 @@ class TestLetterSighting:
         assert self._cited(stale, bare) == ["menary2013"]
 
     def test_unlettered_bib_is_untouched(self):
-        # Item 3 E's behaviour must not change on a bib with no letters: an
+        # Collision behaviour must not change on a bib with no letters: an
         # entry with no letter can never be protected by a sighting.
         bare = """@article{m1, author = {Muldoon, Ryan and Wu, Jin},
   title = {T1}, year = {2023}, journal = {J}}
@@ -2138,7 +2141,7 @@ class TestLetterSighting:
         #
         # Keep-all is also what pre-F (13860fb) does here -- it parses no
         # continuation at all, so the 2023 group sees no instance and falls to
-        # the final keep-all. Item 3 E's behaviour on an unlettered bib is
+        # the final keep-all. Collision behaviour on an unlettered bib is
         # therefore genuinely unchanged, which is the claim
         # _letter_is_sighted's docstring makes; the reason is this guard, not
         # the letter gate.
@@ -2155,7 +2158,7 @@ class TestLetterSighting:
         assert "[COLLISION] dropped" not in capsys.readouterr().err
 
 
-# Two-author and three-author Muldoon 2023 works with no letters -- item 3 E's
+# Two-author and three-author Muldoon 2023 works with no letters -- the
 # own canonical drop fixtures, reused below as the negative controls that keep
 # the bare-mention net from swallowing E.
 MULDOON_BARE = """@article{m1, author = {Muldoon, Ryan and Wu, Li},
@@ -2239,7 +2242,7 @@ class TestUnresolvableBareMention:
         assert "[COLLISION] dropped" in capsys.readouterr().err
 
     def test_the_payoff_drop_still_fires(self):
-        # NEGATIVE CONTROL for item 3 F itself.
+        # NEGATIVE CONTROL for the letter filter itself.
         assert self._cited("As Menary (2010a) argues, integration matters.") \
             == ["menary2010cognitive"]
 
@@ -2279,7 +2282,7 @@ class TestUnresolvableBareMention:
 
 
 # =============================================================================
-# Whole-branch review C2: the mention a rejected citation makes belongs to the
+# The mention a rejected citation makes belongs to the
 # list's FIRST author, not to the name the parser happened to bind at
 # =============================================================================
 
@@ -2353,7 +2356,7 @@ class TestRejectedListRecoversItsFirstAuthor:
     def test_recovery_does_not_reach_a_group_the_list_never_names(self):
         # NEGATIVE CONTROL. Widening the net to the whole rejected span must
         # not widen it past the span: an unrelated rejected cite in the same
-        # year still protects nothing, so item 3 E's drop is intact.
+        # year still protects nothing, so the collision drop is intact.
         assert self._cited(
             "Menary (2010a) argues X. See Sutton, Clark (2010), and Rowlands.",
             MENARY_BIB) == ["menary2010cognitive"]
@@ -2452,7 +2455,7 @@ def test_title_key_possessive_folds_to_space():
 
 
 class TestTitleMentions:
-    """Item 10 (reference list omits title-only citations): a quoted/italic
+    """Title-only citations a reference list can omit: a quoted/italic
     span equal to a bib title, with the author's surname in the document,
     is a citation-by-title. Measured over the 36 delivered reviews + the
     production pair: with the >=4-word guard the net fires exactly twice,
@@ -2765,7 +2768,7 @@ class TestTitleMentionWiring:
         """Two entries with the SAME >=4-word title but DIFFERENT DOIs
         (e.g. a paper and its book chapter reprint) both reach References
         on a title-only citation -- pinned as consistent with the dedup
-        layer's GPT-B4 rule (never merge groups whose non-empty DOI sets
+        layer's DOI-set rule (never merge groups whose non-empty DOI sets
         differ). The operator sees two [TITLE] added lines."""
         prose = ("Rawls looms over everything here. *A Theory of Justice "
                  "and Its Critics* remains the touchstone.\n")
@@ -2790,7 +2793,8 @@ class TestTitleMentionWiring:
         assert [k for k, _ in find_cited_entries(prose, bib)] == ["rawls1971theory"]
 
     def test_no_mention_no_change(self):
-        """The net must not perturb item 3 E/F behavior, and this guard has
+        """The net must not perturb collision or letter behavior, and this
+        guard has
         to be able to FAIL to say so.
 
         Construction, all load-bearing. Both titles are >=4 folded words,
@@ -2842,8 +2846,8 @@ class TestTitleMentionWiring:
         format_entry writes article titles in quotes and book titles in
         italics -- exactly the spans _title_mentions matches -- so the
         References section this script emits is a document full of
-        net-matchable title spans. That is the item 3 F fixed-point failure
-        class recorded in _strip_references_section's docstring (F "never
+        net-matchable title spans. That is the fixed-point failure class
+        recorded in _strip_references_section's docstring (the letters "never
         converged at all" over a three-run cycle), and SKILL.md Phase 6 tells
         operators to re-run step 4 after a lint failure, so second runs happen
         in normal operation. What contains it here is that the net is fed the
@@ -2854,8 +2858,8 @@ class TestTitleMentionWiring:
         whose title the prose still mentions, the answer is the same key
         whether or not the reference list is stripped (verified by mutation --
         swapping `prose` for `review_text` leaves phase 1 green). Only the
-        operator fix cycle separates them, exactly as it does for item 3 F's
-        letter net: once the operator deletes the title mention from the body
+        operator fix cycle separates them, exactly as it does for the letter
+        net: once the operator deletes the title mention from the body
         and re-runs step 4 over the file, stale ## References and all, the
         entry must go. Unstripped, its own reference line quotes/italicizes
         the title AND names the surname, so the net re-adds the very phantom

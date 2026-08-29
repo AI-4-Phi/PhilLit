@@ -1,5 +1,5 @@
 """Tests for hooks/block_ledger_write.py — the PreToolUse gate that refuses
-tool-writes to the evidence-tier attestation ledgers (ROADMAP item 3 C).
+tool-writes to the evidence-tier attestation ledgers.
 
 The gate must DENY exactly when ``tool_input.file_path``'s basename is one of
 the two filenames ``evidence_barrier._load_ledger`` opens

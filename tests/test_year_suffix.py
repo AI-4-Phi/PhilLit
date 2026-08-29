@@ -1,4 +1,4 @@
-"""Item 3 F: Chicago a/b letter assignment over work identity."""
+"""Chicago a/b letter assignment over work identity."""
 import itertools
 import sys
 from pathlib import Path
@@ -38,7 +38,7 @@ class TestAuthorSignature:
         assert sig == (("menary", "r"), ("wu", "j"))
 
     def test_different_people_same_surname_differ(self):
-        # The two Johnsons: item 3 E's case, which F must NOT letter.
+        # The two Johnsons: a surname collision, which must NOT be lettered.
         assert ys.author_signature("Johnson, Gabbrielle") != \
             ys.author_signature("Johnson, Rebecca")
 
@@ -104,7 +104,8 @@ class TestAssignSuffixes:
         assert res["suffixes"] == {}
 
     def test_different_coauthor_lists_not_lettered(self):
-        # "Muldoon and Wu 2023" vs "Muldoon et al. 2023" is item 3 E's case:
+        # "Muldoon and Wu 2023" vs "Muldoon et al. 2023" is a surname
+        # collision:
         # the citation form already disambiguates, so no letters.
         res = ys.assign_suffixes([
             e("k1", "Muldoon, Ryan and Wu, Jing", "2023", "A"),

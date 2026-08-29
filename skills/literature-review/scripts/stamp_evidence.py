@@ -1,8 +1,8 @@
 """Evidence-tier computation and stamping for BibTeX entries.
 
-Implements the tier rule from the evidence-tier citability design (spec
-v5.1): a tier is granted only under report/ledger attestation -- field
-presence is never sufficient by itself. Every failure path demotes, never
+Implements the tier rule from the evidence-tier citability design: a tier is
+granted only under report/ledger attestation -- field presence is never
+sufficient by itself. Every failure path demotes, never
 promotes (fail-closed: an entry with no EVIDENCE-* token reads as
 EVIDENCE-NONE downstream).
 """
@@ -44,15 +44,15 @@ class EntryAttestation:
     verified_identifier: str | None = None  # "doi" | "publisher" | None
     verified_identifier_value: str | None = None  # normalized confirmed value
     breaker_tripped: bool = False
-    # Option C (divergence write-up §9): set when the cleaner matched the DOI
+    # Cleaning abstention: set when the cleaner matched the DOI
     # but declined to clean over contradictory year evidence. Informational
     # only - compute_tier ignores it (existence is attested via api_matched +
     # the value binding); it exists so the refusal stays visible downstream.
     cleaning_abstained: str | None = None
-    # Item 2: set by the barrier when rule (a) existence AND all of rule (b)'s
-    # capture checks held for this entry THIS run. Never inferred from field
-    # presence -- like every other tier, the attestation comes from outside the
-    # bib, not from the bib.
+    # EVIDENCE-WEB: set by the barrier when rule (a) existence AND all of rule
+    # (b)'s capture checks held for this entry THIS run. Never inferred from
+    # field presence -- like every other tier, the attestation comes from
+    # outside the bib, not from the bib.
     web_gate_passed: bool = False
 
 

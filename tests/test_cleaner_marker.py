@@ -6,7 +6,7 @@ from pathlib import Path
 from pybtex.database import parse_file
 
 HOOKS_DIR = Path(__file__).parent.parent / "hooks"
-FIXTURES = Path(__file__).parent / "fixtures" / "item13"
+FIXTURES = Path(__file__).parent / "fixtures" / "bib_quality"
 sys.path.insert(0, str(HOOKS_DIR))
 
 import metadata_cleaner as mc  # noqa: E402

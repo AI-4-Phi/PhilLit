@@ -99,7 +99,8 @@ def crossref_awad_other_issue():
     """Entry-scoped CrossRef record for s2_nature_json's DOI that names a
     DIFFERENT issue.
 
-    Needed by every test that wants a `number` strip: since item 14 only a
+    Needed by every test that wants a `number` strip: since the strip-rule
+    fix only a
     CONTRADICTION strips a detail field, and an S2 dump can never supply one
     (parse_s2_result reports issue=None unconditionally). Constructed to
     disagree - the disagreement, not the value, is the point."""
@@ -341,9 +342,11 @@ class TestCleanBibtex:
 
     def test_absent_number_is_kept_end_to_end(self, tmp_path, s2_nature_json,
                                               bibtex_with_hallucinated_number):
-        """Item 14, at the level a user sees: with only an S2 dump in the pool
+        """The strip rule at the level a user sees: with only an S2 dump in
+        the pool
         the record says NOTHING about the issue, so `number` survives in the
-        written .bib and no marker is written. Pre-item-14 it was stripped."""
+        written .bib and no marker is written. Before the fix it was
+        stripped."""
         json_dir = tmp_path / "json"
         json_dir.mkdir()
         (json_dir / "s2_nature.json").write_text(
@@ -365,7 +368,8 @@ class TestCleanBibtex:
         """A matched entry (by DOI) whose record supplies no bibliographic
         metadata at all loses only its VENUE - journal is claim-bearing, so
         absence still strips it. volume/number/pages are absence-only and
-        survive as unverified telemetry (item 14; pre-item-14 all four went).
+        survive as unverified telemetry (before the strip-rule fix all four
+        went).
         The verified DOI is kept, so @article is not demoted."""
         # Matches bonnefon by DOI but carries NONE of the claimed
         # journal/volume/issue/pages.
@@ -424,7 +428,8 @@ class TestCleanBibtex:
         API record refutes is cleaned.
 
         The refuted field is the VENUE: a title+year match is not
-        identity-verified, so since item 14 no detail field of either entry
+        identity-verified, so since the strip-rule fix no detail field of
+        either entry
         could be stripped on this evidence (the second entry's volume+number
         are absent from its record and stay)."""
         api_json = {
@@ -660,7 +665,8 @@ class TestIntegration:
         @misc (container types get no @article no-demote guard).
 
         `publisher` survives: a title+year match is not identity-verified and
-        the record names no publisher at all, so since item 14 that value is
+        the record names no publisher at all, so since the strip-rule fix
+        that value is
         unverified rather than refuted. The demotion still fires, which is what
         keeps the fabricated container out of the rendered citation.
 
@@ -839,7 +845,7 @@ class TestCleanedEntryTagging:
         # Matches test2018 by title+year; the API record names another journal
         # and nothing else in the pool names this one -> journal stripped -> a
         # marker is written. (A title+year match is not identity-verified, so
-        # since item 14 only the venue can be stripped on this evidence.)
+        # since the strip-rule fix only the venue can be stripped here.)
         api_json = {
             "source": "semantic_scholar",
             "results": [
@@ -1184,7 +1190,7 @@ class TestHelperFunctions:
 class TestCleaningLedger:
     """Tests for the cleaning ledger clean_bibtex writes on every
     parse-successful invocation - the attestation source the evidence
-    barrier later consumes (docs/superpowers/sdd .../shared-contract.md).
+    barrier later consumes.
 
     Note: clean_bibtex's real signature takes bib_path/json_dirs as Path
     objects (bib_path.exists() is called directly on the argument), not
@@ -1219,7 +1225,7 @@ class TestCleaningLedger:
         assert ledger_path.exists()
         assert result["ledger_path"] == str(ledger_path)
         ledger = json.loads(ledger_path.read_text(encoding="utf-8"))
-        # 2 since item 14 added the optional telemetry keys.
+        # 2 since the strip-rule fix added the optional telemetry keys.
         assert ledger["schema_version"] == 2
         assert ledger["bib_file"] == "literature-domain-1.bib"
         assert ledger["breaker_tripped"] is False
@@ -1235,7 +1241,7 @@ class TestCleaningLedger:
         assert "venue_stripped_no_evidence" not in ent
 
     def test_telemetry_keys_recorded_when_non_empty(self, tmp_path):
-        """Item 14's owner-facing telemetry: kept-but-uncorroborated detail
+        """Owner-facing telemetry: kept-but-uncorroborated detail
         fields and venue strips made for want of evidence. Present only when
         non-empty (the empty case is pinned in
         test_matched_entry_with_verified_doi), and never a control - nothing
@@ -1290,7 +1296,7 @@ class TestCleaningLedger:
     def test_ledger_written_on_breaker_trip_with_flag(self, tmp_path):
         """Breaker-trip case, adapted from the existing
         test_circuit_breaker_writes_nothing template in
-        tests/test_item13_cleaner_gating.py: 6 matched entries would each
+        tests/test_cleaner_gating.py: 6 matched entries would each
         lose a 'number' their own record refutes (6/6 > 30% and >= 5),
         tripping the breaker. The ledger must STILL be written (with the flag
         set) even though clean_bibtex writes nothing to the .bib itself."""
@@ -1320,7 +1326,7 @@ class TestCleaningLedger:
 
     def test_matched_book_with_verified_publisher(self, tmp_path, crossref_with_issue_json):
         """A MATCHED @book entry whose publisher is confirmed by its own API
-        record (shared-contract kuhn1962structure example shape). The entry
+        record (the kuhn1962structure example shape). The entry
         carries no doi field of its own, so it matches by title+year (only
         CrossRef's parser populates 'publisher'); the ledger must then record
         the 'publisher' branch of _verified_identifier, not 'doi'."""
@@ -1345,7 +1351,7 @@ class TestCleaningLedger:
 
     def test_ledger_write_failure_is_fail_open(self, tmp_path, s2_nature_json, monkeypatch):
         """A ledger-write OSError must not fail cleaning itself (plumbing gate
-        fails open, per the shared-contract gate-failure policy): the failure
+        fails open): the failure
         surfaces only as a warning, result['ledger_path'] stays None, and
         cleaning still reports success - the missing ledger then demotes
         downstream, which is the safe direction."""
@@ -1544,7 +1550,7 @@ class TestLoadFailuresOutsideJSONDecodeError:
     named only JSONDecodeError. json.loads can raise a plain ValueError
     (integer digit limit) or RecursionError (deep nesting) - neither is a
     JSONDecodeError, so one such file killed the whole index build, which is
-    exactly the 3G failure class one layer up. Found by kimi-k3/gpt-5.6-sol
+    exactly the same failure class one layer up. Found by kimi-k3/gpt-5.6-sol
     reviewing the dormant validator, then reproduced HERE, in the live
     destructive path."""
 
@@ -1589,7 +1595,7 @@ class TestLoadFailuresOutsideJSONDecodeError:
 
 class TestMarkerRemovedFields:
     """marker_removed_fields: the public parser for the METADATA_CLEANED
-    marker's removed-field names (ROADMAP item 3 A)."""
+    marker's removed-field names."""
 
     def test_plain_marker_removals(self):
         from metadata_cleaner import marker_removed_fields
@@ -1641,14 +1647,14 @@ class TestMarkerRemovedFields:
 
 # =============================================================================
 # Tests for the three-way comparator and the per-field strip policy
-# (ROADMAP item 14, the cleaner strip-rule fix). Spec + measurements:
+# (the cleaner strip-rule fix). Measurements:
 # docs/known-issues/cleaner-strip-rule-absence-vs-contradiction.md
 # =============================================================================
 
 class TestFieldCompare:
     """_field_compare: MATCH / CONTRADICT / NO-EVIDENCE against the entry's
     OWN matched API record. Absence of a field from the record is NOT a weak
-    contradiction - 80% of the pre-item-14 strips were absence-driven and the
+    contradiction - 80% of the pre-fix strips were absence-driven and the
     truth anchor found those values majority-TRUE."""
 
     def test_venue_match_via_normalize_journal(self):
@@ -1800,7 +1806,7 @@ class TestFieldCompare:
         assert mc._field_compare("doi", "10.1/a", {"doi": ""}) == "no-evidence"
 
     def test_unknown_field_is_match(self):
-        """Mirror of the pre-item-14 default-keep: a field with no comparison
+        """Mirror of the pre-fix default-keep: a field with no comparison
         rule is never condemned."""
         assert mc._field_compare("school", "Anywhere", {}) == "match"
 
@@ -1865,7 +1871,7 @@ class TestStripPolicy:
     def test_fruh_shape_absent_detail_fields_are_kept(self, tmp_path):
         """fruh2019climate / pamuk2020risk shape: a DOI-matched record that
         carries NO volume, issue or pages. Those bib values are absence-only,
-        so all three are KEPT (pre-item-14 all three were stripped) and
+        so all three are KEPT (before the fix all three were stripped) and
         recorded as unverified telemetry."""
         api = {"source": "crossref", "results": [
             {"doi": "10.1/fruh", "title": "Climate and Justice", "year": 2019,

@@ -377,7 +377,7 @@ def main():
     set_output_path(args.output)
 
     # CORE is optional (BYOK posture). Without a key the unauthenticated tier
-    # only rate-limits (429 + ~18s backoff), so skip entirely (item 13 D3).
+    # only rate-limits (429 + ~18s backoff), so skip entirely.
     if not args.api_key:
         emit({"status": "skipped", "reason": "no CORE_API_KEY"}, 0)
 

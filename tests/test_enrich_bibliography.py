@@ -285,7 +285,7 @@ class TestEntryModification:
         """Should add comma to the opening line when it lacks one.
 
         New fields are inserted right after the opening `@type{key,` line
-        (item 13 D2), so it is that line - not the last existing field -
+        so it is that line - not the last existing field -
         whose trailing comma is ensured.
         """
         import enrich_bibliography
@@ -1129,7 +1129,7 @@ def test_drifted_text_keeps_prior_ledger_record(tmp_path, monkeypatch):
 
 def test_non_dict_ledger_value_degrades_to_api_check(tmp_path, monkeypatch):
     """A malformed ledger record (string value) must not crash the run --
-    it degrades to the API path (review finding 1b)."""
+    it degrades to the API path."""
     import enrich_bibliography
 
     bib = _prefilled_bib(tmp_path, source_field='s2')
@@ -1620,7 +1620,8 @@ def test_genuinely_different_text_is_not_folded_into_a_match():
 
 def test_entry_without_abstract_text_is_source_empty_without_fetching():
     """Nothing to corroborate: fail closed, but never as 'mismatch' -- that
-    bucket must mean "fetched and differed" for the item-15 measurement."""
+    bucket must mean "fetched and differed" for the corroboration
+    measurement."""
     outcome, source, calls, _ = _corroborate(_fields(abstract=None))
 
     assert (outcome, source) == ("source_empty", None)

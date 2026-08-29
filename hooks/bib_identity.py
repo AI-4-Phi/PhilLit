@@ -1,17 +1,17 @@
 #!/usr/bin/env python3
 """The one owner of bibliography identity and value-comparison keys.
 
-ROADMAP item 4. Before this module, six sites re-implemented "is this the same
-work / is this value trustworthy" and disagreed: `dedupe_bib` applied no Unicode
-normalization at all (so `Milliere`/`Milliere` pairs with differing diacritics
-survived dedup in 5/32 delivered reviews), and `generate_bibliography`
-ASCII-folded non-Latin surnames to '' and skipped those entries, deleting cited
-works from the rendered References.
+Before this module, six sites re-implemented "is this the same work / is this
+value trustworthy" and disagreed: `dedupe_bib` applied no Unicode normalization
+at all (so `Milliere`/`Milliere` pairs with differing diacritics survived dedup
+in 5/32 delivered reviews), and `generate_bibliography` ASCII-folded non-Latin
+surnames to '' and skipped those entries, deleting cited works from the
+rendered References.
 
-Seeded from the hardened `metadata_cleaner` versions (item-13 B3). Every helper
+Seeded from the hardened `metadata_cleaner` versions. Every helper
 here is pure: no I/O, no environment reads, no state.
 
-SCOPE NOTE (deliberate, ROADMAP item 4 Decision 4): `title_key` does NOT decode
+SCOPE NOTE (deliberate): `title_key` does NOT decode
 LaTeX escapes, so a title stored with an escaped accent keys differently
 depending on whether the caller pre-decoded it (`generate_bibliography` does via
 `clean_bibtex_str`; `dedupe_bib` does not). That divergence was measured
@@ -196,9 +196,9 @@ def venue_key(name: str) -> str:
        the corpus and rejected -- it strips 56 genuine conference series of their
        fold while actually protecting only 7 of the 9 conference-worded journals
        it targets, i.e. it causes about eight times more of the deletion this
-       whole function exists to prevent. Re-measure with
-       `.superpowers/sdd/2026-08-19-conference-venue-provenance/measure-bound4-trade.py`
-       before revisiting. Pinned by test, not left blind.
+       whole function exists to prevent. Re-measure that trade -- folds lost
+       against journals protected, over the venue corpus -- before revisiting.
+       Pinned by test, not left blind.
     5. **A series whose name carries no conference word does not fold** unless
        it is in `_KNOWN_SERIES`. "Proceedings of NAACL" (the short form) and
        similar therefore still lose `booktitle`. Accepted: admitting names
@@ -360,7 +360,7 @@ def year_key(value) -> str:
 
 
 def title_key(title: str) -> str:
-    """Unicode-aware, punctuation/subtitle-insensitive title key (item-13 B3).
+    """Unicode-aware, punctuation/subtitle-insensitive title key.
 
     NFKD-normalize, drop combining marks (accent-insensitive so a bib title
     'Davidovic' matches an API 'Davidovic' spelled with a caron), keep every
@@ -372,7 +372,7 @@ def title_key(title: str) -> str:
 
     Note that casefold EXPANDS some characters - eszett becomes 'ss' - which is
     a distinct fold axis from combining-mark stripping and is adopted
-    deliberately (ROADMAP item 4 Decision 7).
+    deliberately.
     """
     if not title:
         return ""
@@ -385,7 +385,7 @@ def title_key(title: str) -> str:
 
 
 # German/Nordic transliteration for the alternate name fold. Shared by
-# lint_md's citation check and generate_bibliography's matcher (item 3 B/E).
+# lint_md's citation check and generate_bibliography's matcher.
 _TRANSLIT = {
     "ä": "ae", "ö": "oe", "ü": "ue", "ß": "ss",
     "å": "aa", "ø": "oe", "æ": "ae",
@@ -395,7 +395,7 @@ _TRANSLIT = {
 def translit_fold(s: str) -> str:
     """Lowercased ASCII fold of arbitrary text with German/Nordic
     transliteration applied BEFORE the NFKD strip (ä→ae, not ä→a). The
-    second haystack for symmetric surname matching (item 3 B)."""
+    second haystack for symmetric surname matching."""
     low = unicodedata.normalize("NFC", s.lower().replace("’", "'"))
     for ch, rep in _TRANSLIT.items():
         low = low.replace(ch, rep)
@@ -419,7 +419,7 @@ def fallback_key(title: str, year: str, surname: str) -> tuple[str, str, str] | 
     """Title-axis identity key: (title_key, year, title_key(surname)).
 
     Returns None if any component is empty - an entry with no fallback key is
-    never title-deduped (item-13 GPT S4). Callers pass strings, not entries:
+    never title-deduped. Callers pass strings, not entries:
     `dedupe_bib` reads pybtex fields raw while `generate_bibliography` decodes
     LaTeX first (see the module docstring's SCOPE NOTE).
 

@@ -1,4 +1,5 @@
-"""Item 3 F end-to-end: a letter assigned at the barrier must survive every
+"""Chicago letters end-to-end: a letter assigned at the barrier must survive
+every
 Phase 6 stage and come out in the rendered References.
 
 `year_suffix` in dedupe_bib._KNOWN_FIELDS proves nothing on its own: the
@@ -67,7 +68,7 @@ DOMAIN_2 = """@incollection{menaryCogIntegration,
 # Two citation forms, and BOTH are load-bearing -- do not drop either.
 #
 # "Menary (2010a; 2010b)" is the compact continuation form that
-# generate_bibliography._citation_instances parses (item 3 F, task 4). It is
+# generate_bibliography._citation_instances parses. It is
 # invisible to lint_md.extract_citations: _NARRATIVE_CITE_RE needs the
 # closing paren right after the year, and _PAREN_CITE_RE needs a surname
 # INSIDE the parenthesis, so "(2010a; 2010b)" matches neither. With only that

@@ -311,7 +311,7 @@ class TestAcquireContext:
 class TestFetchOnce:
     def test_each_slug_fetched_exactly_once(self, monkeypatch):
         # union across domains is a set; the same slug in three domain files
-        # triggers one fetch (spec: fetch once, match many)
+        # triggers one fetch (fetch once, match many)
         import fetch_sep  # importable via resolve_context's sys.path insert
         calls = []
         # real signature: fetch_sep_article(entry_name, limiter, backoff, debug=False)

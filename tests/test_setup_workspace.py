@@ -18,7 +18,7 @@ def test_merge_into_empty_adds_all_rules():
 
 
 def test_ledger_write_denied_and_ordered_before_the_reviews_allow():
-    # Item 3 C: the evidence-tier ledgers are the attestation authority, so a
+    # The evidence-tier ledgers are the attestation authority, so a
     # hand-written record must not be possible through a file tool. Note the
     # allow rule Edit(reviews/**) positively permits the ledger path, so this
     # only works because deny is evaluated before allow.

@@ -167,9 +167,9 @@ def _json_status(env_results: dict, dep_results: dict, api_results: dict) -> tup
 
     Only required env vars, all deps, and the required APIs (brave, crossref)
     gate status — matching text mode. A required API whose record is ABSENT
-    fails the check (never silently passes — GPT-SF10). Optional APIs that are
+    fails the check (never silently passes). Optional APIs that are
     unreachable (and not skipped for a missing key) are reported in
-    optional_failures but never flip status to error (item 13 D3)."""
+    optional_failures but never flip status to error."""
     required_env_ok = all(info["set"] for info in env_results.values() if info["required"])
     deps_ok = all(info["installed"] for info in dep_results.values())
     required_apis_ok = all(
@@ -370,7 +370,7 @@ def check_api_connectivity(verbose: bool = False) -> dict[str, dict[str, Any]]:
             "message": str(e),
         }
 
-    # CORE (optional — probed only when a key is configured; item 13 D3)
+    # CORE (optional — probed only when a key is configured)
     results["core"] = check_core_connectivity()
 
     return results

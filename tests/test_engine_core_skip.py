@@ -1,4 +1,4 @@
-"""Item 13 D3: optional CORE is skipped/non-fatal when no key is configured."""
+"""Optional CORE is skipped/non-fatal when no key is configured."""
 
 import json
 import os
@@ -43,7 +43,7 @@ def test_json_status_required_api_failure_is_error():
 
 def test_json_status_missing_brave_record_is_error():
     # A required API whose record is entirely ABSENT must fail, not silently
-    # pass through an `if a in api_results` skip (GPT-SF10).
+    # pass through an `if a in api_results` skip.
     env = {"BRAVE_API_KEY": {"set": True, "required": True}}
     deps = {"requests": {"installed": True}}
     apis = {"crossref": {"reachable": True}}   # brave record missing

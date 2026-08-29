@@ -840,7 +840,7 @@ class TestDualEntryScopedDisagreement:
 
 
 class TestAbstentionAttestsExistence:
-    """Option C (evidence-tier divergence write-up §9): abstention is a
+    """Abstention is a
     year-scoped refusal built on an exact DOI match, so the ledger must
     attest existence (api_matched: True + the normalized DOI, plus an
     additive cleaning_abstained reason) - while cleaning behaviour stays
@@ -951,7 +951,7 @@ class TestAbstentionAttestsExistence:
 
     def test_genuine_no_match_does_not_attest(self, tmp_path):
         """A DOI absent from the index is a real no-match - Option C must not
-        leak attestation onto it (§9: never attest the genuine no-match
+        leak attestation onto it (never attest the genuine no-match
         paths)."""
         bib = tmp_path / "lit.bib"
         bib.write_text(SPARROW_BIB_CORRECT, encoding="utf-8")
@@ -1408,7 +1408,7 @@ class TestIndexStarvedFlag:
         assert result["index_starved"] is False
 
 
-# --- Item 5 B: the reprint-edition direction bound ------------------------
+# --- The reprint-edition direction bound ----------------------------------
 
 RAWLS_DOI = "10.2307/j.ctv1pncngc"
 
@@ -1503,7 +1503,7 @@ class TestBookYearDirectionBound:
     def test_article_record_may_still_move_a_year_later(self, tmp_path):
         """The bound covers only the reprint-capable book class. For
         articles the later print year IS the citation year (the online-first
-        class item 3 K, cleaner/year hardening, fixed), so an @article entry
+        class, fixed by the cleaner/year hardening), so an @article entry
         with an article-typed record must still correct 2011 -> 2012.
         Bookness on EITHER side (record type or bib entry type) triggers the
         bound, so this test keeps both sides article-typed."""

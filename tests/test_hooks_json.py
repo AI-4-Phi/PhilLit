@@ -60,7 +60,7 @@ def test_background_dispatch_gate_wired_for_agent_and_task():
 
 
 def test_ledger_write_gate_wired_for_every_file_editing_tool():
-    # Item 3 C: the ledgers are the evidence-tier attestation authority, so a
+    # The ledgers are the evidence-tier attestation authority, so a
     # tool-write to one must be BLOCKED -- which requires PreToolUse (a
     # PostToolUse hook cannot stop the write). Every file-editing tool needs
     # its own matcher: hook matchers dispatch by TOOL NAME, so unlike a

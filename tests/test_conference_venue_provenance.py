@@ -472,7 +472,7 @@ class TestConferenceWordInsideAProperNoun:
         targets, causing about eight times more `booktitle` deletion than it
         prevents. If this assertion ever starts failing, someone has changed that
         trade; re-measure first, with
-        `.superpowers/sdd/2026-08-19-conference-venue-provenance/measure-bound4-trade.py`.
+        the folds-lost-against-journals-protected trade over the venue corpus.
         """
         assert venue_key(fabricated) == venue_key(real)
 

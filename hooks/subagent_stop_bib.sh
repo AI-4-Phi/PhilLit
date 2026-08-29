@@ -135,7 +135,7 @@ for bib_file in "${BIB_FILES[@]}"; do
     fi
 
     # Step 2: Metadata provenance cleaning (removes hallucinated fields, does NOT block)
-    # Item-13 A3: pass the UNION of JSON dirs (same dir as .bib AND
+    # Pass the UNION of JSON dirs (same dir as .bib AND
     # $REVIEW_DIR/intermediate_files/json) so directory shadowing no longer
     # starves the verification index. metadata_cleaner.py accepts one-or-more.
     # (The old $CLAUDE_PROJECT_DIR third fallback is dropped: a processed .bib
@@ -203,7 +203,7 @@ $CLEANED_ENTRIES
 "
         fi
 
-        # Item-13 A3 (never-silent policy): surface cleaner warnings — salvage/
+        # Never-silent policy: surface cleaner warnings — salvage/
         # skip notices and, after W3, a circuit-breaker trip — to the model.
         # Without this a tripped breaker is byte-identical to a clean run (the
         # original incident's silence). Reuses the additionalContext emission.

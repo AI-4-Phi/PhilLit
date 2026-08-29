@@ -1,4 +1,4 @@
-"""A4: entry-scoped gating, @article no-demote guard, circuit breaker."""
+"""Entry-scoped gating, @article no-demote guard, circuit breaker."""
 import sys
 from pathlib import Path
 
@@ -60,7 +60,7 @@ def test_matched_entry_keeps_verified_strips_hallucinated(tmp_path):
     assert res["matched_entries"] == 1
     out = bib.read_text(encoding="utf-8")
     assert "Real Journal" in out and "10.1/aaa" in out and "5--9" in out  # kept
-    # ADV-A3: assert on PARSED fields — the cleaner writes "METADATA_CLEANED:
+    # Assert on PARSED fields — the cleaner writes "METADATA_CLEANED:
     # number" into keywords, so a raw substring check would false-fail.
     fields = {c.lower() for c in parse_file(str(bib), bib_format="bibtex").entries["k"].fields}
     assert "number" not in fields                                        # refuted, stripped
@@ -109,7 +109,8 @@ def test_circuit_breaker_writes_nothing(tmp_path):
 
 
 def test_breaker_constants_unchanged_by_item_14(tmp_path):
-    """The thresholds are a safety floor, not a knob: item 14 shrank what the
+    """The thresholds are a safety floor, not a knob: the strip-rule fix
+    shrank what the
     breaker has to catch (projected 81 -> ~2 trips over the 313-bib corpus) by
     changing the STRIP RULE, never these."""
     assert mc.BREAKER_MIN_ENTRIES == 5
@@ -117,7 +118,7 @@ def test_breaker_constants_unchanged_by_item_14(tmp_path):
 
 
 def test_fruh_shape_no_longer_trips_the_breaker(tmp_path):
-    """The pre-item-14 mass-strip that tripped the breaker on a quarter of the
+    """The pre-fix mass-strip that tripped the breaker on a quarter of the
     corpus: 6 DOI-matched entries whose records carry no issue and no pages,
     each contributing two absence strips. Nothing is stripped now, so the
     breaker has nothing to contain and cleaning is not withheld."""
@@ -151,7 +152,7 @@ def test_breaker_not_tripped_below_min_entries(tmp_path):
     res = mc.clean_bibtex(bib, [jdir])
     assert res["breaker_tripped"] is False
     assert res["total_fields_removed"] == 3   # each lost its refuted number
-    # ADV-A3: parse the fields — "number" survives as a keywords marker token.
+    # Parse the fields — "number" survives as a keywords marker token.
     out = parse_file(str(bib), bib_format="bibtex")
     for i in range(3):
         assert "number" not in {c.lower() for c in out.entries[f"k{i}"].fields}
@@ -225,7 +226,7 @@ def test_greek_title_matches_same_greek_title(tmp_path):
     assert api is not None and api["doi"] == "10.1/g"
 
 
-# --- SF11: circuit-breaker boundary table + container-type demotion ---
+# --- Circuit-breaker boundary table + container-type demotion ---
 
 @pytest.mark.parametrize("n_strip,total,expect_trip", [
     (6, 20, False),   # exactly 30% (>=5) -> NOT > 30% -> no trip
@@ -263,7 +264,7 @@ def test_breaker_boundaries(tmp_path, n_strip, total, expect_trip):
 
 def test_incollection_demotes_even_with_matched_doi(tmp_path):
     # A DOI-bearing @incollection that loses booktitle STILL demotes — the
-    # no-demote guard is @article-only (SF11 container negative).
+    # no-demote guard is @article-only (container negative).
     jdir = tmp_path / "json"; jdir.mkdir()
     (jdir / "c.json").write_text(_crossref_json([
         {"doi": "10.1/inc", "title": "Chapter X", "container_title": "Real Anthology",

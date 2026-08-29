@@ -1,4 +1,4 @@
-"""ROADMAP item 4, one owner for bibliography identity and matching.
+"""One owner for bibliography identity and matching.
 
 Before this landed, metadata_cleaner, dedupe_bib and generate_bibliography each
 carried their own title normalization and disagreed on non-ASCII input --
@@ -145,7 +145,7 @@ class TestCleanerIsTheOwner:
 
 class TestAsciiVariants:
     """ascii_variants: the one owner of the name fold shared by lint_md's
-    citation check and generate_bibliography's matcher (item 3 B/E)."""
+    citation check and generate_bibliography's matcher."""
 
     def test_plain_ascii(self):
         from bib_identity import ascii_variants

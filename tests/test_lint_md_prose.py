@@ -1,9 +1,8 @@
-"""Prose-quality WARN backstop for the assembled review (roadmap item 13, B5).
+"""Prose-quality WARN backstop for the assembled review.
 
 check_prose_quality is a heuristic, WARN-only detector run at Phase 6. It must
 never affect lint_md's exit code. Strings below are the real leaks observed in
-the 2026-07-17 production test review (spec 2026-07-17-bib-metadata-quality
-§1.1/§4.2).
+the 2026-07-17 production test review.
 """
 
 import sys

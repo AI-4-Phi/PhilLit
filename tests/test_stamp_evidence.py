@@ -18,7 +18,7 @@ from metadata_cleaner import normalize_doi as cleaner_normalize_doi  # noqa: E40
 
 class TestNormalizeDoiIsTheSharedOwner:
     """Was TestNormalizeDoiEquivalence: two copies pinned byte-equivalent.
-    ROADMAP item 4 made them one object, so identity is what now prevents
+    They are now one object, so identity is what prevents
     drift. A divergence here would make a cleaner-verified DOI compare unequal
     to the ledger value stamp_evidence computes, spuriously demoting the entry
     to EVIDENCE-NONE."""
@@ -351,7 +351,7 @@ class TestStampFile:
 
 
 # ---------------------------------------------------------------------------
-# Item 2: the EVIDENCE-WEB tier
+# The EVIDENCE-WEB tier
 # ---------------------------------------------------------------------------
 
 def test_tier_rank_orders_web_between_context_and_existence():

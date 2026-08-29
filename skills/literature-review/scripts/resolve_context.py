@@ -83,7 +83,7 @@ def title_score(bib_title: str, candidate_line: str) -> float:
 # so a naive surname search skips every one of them -- and the convention
 # applies to exactly the authors with 2+ listed works, i.e. the canonical
 # figures context acquisition most needs to reach. (This cost Leonelli 2016
-# its CONTEXT tier in the 2026-07-25 A/B run; see the results write-up.)
+# its CONTEXT tier in the 2026-07-25 A/B run.)
 # Dash class escaped rather than literal: ASCII hyphen plus U+2010..U+2015
 # (hyphen, non-breaking hyphen, figure/en/em dash, horizontal bar). SEP uses
 # en dashes today; the escapes keep the source ASCII and the intent explicit.

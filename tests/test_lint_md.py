@@ -137,7 +137,7 @@ class TestLintMarkdown:
 
 
 class TestCitationCheck:
-    """Item 3 B: every in-text author-year citation must resolve to a
+    """Every in-text author-year citation must resolve to a
     References entry; unresolved -> ERROR (exit nonzero)."""
 
     REVIEW = """# Title
@@ -179,7 +179,7 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
     def test_year_suffix_tolerated(self):
         # "(Wiens 2015a)" resolves against a References line dated 2015 even
         # though that entry carries no letter - stays tolerant (no ERROR).
-        # Item 3 F now renders letters, so this is exactly the WARN case:
+        # Letters are now rendered, so this is exactly the WARN case:
         # the work is present, but no candidate entry carries the 'a'.
         from lint_md import check_citations
         text = self.REVIEW.replace(
@@ -365,7 +365,7 @@ def test_main_prints_suffix_warning_but_keeps_exit_code(tmp_path, monkeypatch, c
     # over - the fixture raises no citation error, and lint_markdown is
     # stubbed, so nothing could have printed one.)
     assert "WARN citation-suffix:" in out
-    # The plan's binding suffix-TOLERANT decision: a lettered prose cite
+    # The binding suffix-TOLERANT decision: a lettered prose cite
     # against an unlettered References entry never reaches the ERROR path.
     assert "ERROR unresolved-citation:" not in out
 
@@ -397,7 +397,7 @@ class TestMainUnreadableFile:
 
 class TestFoldVariantsAlias:
     def test_fold_variants_is_shared_owner(self):
-        # Alias, not a copy - the item-4 pattern (assert identity, not equality).
+        # Alias, not a copy: assert identity, not equality.
         import lint_md
         from bib_identity import ascii_variants
         assert lint_md._fold_variants is ascii_variants

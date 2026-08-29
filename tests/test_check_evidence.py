@@ -201,7 +201,7 @@ def test_find_cites_without_suffix_is_unchanged():
                 == check_evidence.find_cites(md, "Menary", "2010", "")), md
 
 
-# Item 3 F review, F1: the first suffix implementation anchored the pairing
+# The first suffix implementation anchored the pairing
 # on the SURNAME, which under-reported genuinely-cited lettered works on the
 # exact prose forms the feature creates. Each test below FAILS on that
 # implementation; positions are derived from the fixture, never hard-coded,
@@ -243,7 +243,7 @@ def test_find_cites_ignores_a_nearby_decade_mention():
 
 
 def test_find_cites_reads_an_uppercase_prose_letter_as_that_letter():
-    """Item 3 F second opinion: "2010B" used to fall THROUGH the
+    """Uppercase letters: "2010B" used to fall THROUGH the
     case-sensitive `b` alternative and satisfy the lowercase-only bare-year
     lookahead instead -- so an uppercase letter was read as a BARE citation
     and credited every lettered entry for that year, the 'a' entry included.
@@ -287,7 +287,7 @@ BIB_LETTERED = """@book{menary2010cognitive,
 
 
 def test_bare_year_citation_flags_both_lettered_entries(tmp_path):
-    # Item 3 F: a bare "Menary (2010)" is what generate_bibliography
+    # A bare "Menary (2010)" is what generate_bibliography
     # deliberately treats as ambiguous-keep-all - the checker must not read
     # a bare cite as citing NEITHER lettered work (false telemetry).
     r = _run(tmp_path, "Menary (2010) is influential.", bib_text=BIB_LETTERED)

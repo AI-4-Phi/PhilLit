@@ -1,4 +1,4 @@
-"""Item 13 D1: NDPR match tightening (stopword filter + tiered acceptance).
+"""NDPR match tightening (stopword filter + tiered acceptance).
 The real Wallace/Adam-Smith mismatch slug is the load-bearing negative."""
 
 import sys

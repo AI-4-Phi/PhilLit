@@ -243,7 +243,7 @@ def test_would_be_existence_v4_demotions_listed(tmp_path):
 
 
 def test_cleaning_abstention_attests_existence_and_stays_visible(tmp_path):
-    """Option C (divergence write-up §9): a cleaner abstention attests
+    """A cleaner abstention attests
     existence (api_matched True + verified DOI), so the entry regains
     EVIDENCE-EXISTENCE - and the refusal itself stays visible in the
     evidence report (the retained half of Option D)."""
@@ -530,7 +530,7 @@ def test_heal_abstract_uses_ndpr_resolver_for_ndpr_source(monkeypatch):
 
 
 def test_heal_abstract_non_dict_ledger_entry_is_none(monkeypatch):
-    """Malformed ledger record (review finding 1b): never raises."""
+    """Malformed ledger record: never raises."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier
     def fail(*a, **k):
@@ -960,7 +960,7 @@ def test_barrier_guard_drops_heal_on_unbalanced_restored_value(tmp_path, monkeyp
 
 def test_barrier_rederivation_demotes_when_splice_is_noop(tmp_path, monkeypatch):
     """Regression coverage for the defense-in-depth re-derivation line
-    (review finding 2): with add_field_to_entry monkeypatched to a no-op,
+    with add_field_to_entry monkeypatched to a no-op,
     the heal splice never lands, yet the attestation-loop flag was set
     True when the fetch hash-matched. The FINAL text must be what decides
     the stamp: demoted to EVIDENCE-EXISTENCE with abstract_attested False.
@@ -1009,7 +1009,7 @@ def test_barrier_rederivation_demotes_when_splice_is_noop(tmp_path, monkeypatch)
     assert att["abstract_attested"] is False
 
 
-# --- Item 3 D: venue vetting ---
+# --- Venue vetting ---
 
 TWO_VENUE_BIB = """@article{okoro2021ai,
   author = {Okoro, Ada},
@@ -1291,7 +1291,8 @@ def test_non_dict_vet_venues_return_with_no_journals_never_fails_the_barrier(
 
 
 def test_no_ambient_openalex_key_during_tests():
-    """Pins tests/conftest.py's session-scoped isolation fixture: item 3 D
+    """Pins tests/conftest.py's session-scoped isolation fixture: venue
+    vetting
     put a real-network OpenAlex pass inside evidence_barrier.py, and the
     barrier's subprocess-driven tests above (_run()) inherit the parent
     environment verbatim, so a developer's real key must never be visible
@@ -1311,7 +1312,7 @@ def test_no_ambient_openalex_key_during_tests():
     assert key_is_set is False, "OPENALEX_API_KEY is set in the test environment"
 
 
-# --- Item 3 F: Chicago a/b suffixes ---
+# --- Chicago a/b suffixes ---
 
 MENARY_D1 = """@incollection{menary2010cognitive,
   author = {Menary, Richard},
@@ -1524,7 +1525,7 @@ def test_suffix_error_path_still_carries_every_list_key(tmp_path, monkeypatch):
         assert suffixes[key] == [], key
 
 
-# --- Item 3 F second opinion (HIGH): a stale COMPACT year_suffix ---
+# --- A stale COMPACT year_suffix ---
 #
 # `_strip_derived_fields` only matches a field OPENING its line -- an accepted,
 # documented limit. For `venue_status` a survivor is a stale metadata problem;
@@ -1532,10 +1533,11 @@ def test_suffix_error_path_still_carries_every_list_key(tmp_path, monkeypatch):
 # on the value. The fixtures below put the field mid-line, which is exactly the
 # position the stripper cannot reach.
 
-# Two DIFFERENT people sharing a surname and a year: the case item 3 F
-# deliberately refuses to letter (it is item 3 E's, resolved by first
-# initials). So the assigner writes NOTHING here -- and before the fix both
-# stale letters travelled untouched into the output bib, where they read as a
+# Two DIFFERENT people sharing a surname and a year: the case the letter
+# assigner deliberately refuses to letter (it is a surname collision, resolved
+# by first initials). So the assigner writes NOTHING here -- and before the
+# fix both stale letters travelled untouched into the output bib, where they
+# read as a
 # complete a/b group nobody assigned.
 STALE_COMPACT_D1 = """@article{johnson2024algorithms,
   author = {Johnson, Gabbrielle},
@@ -1700,7 +1702,7 @@ def test_console_summary_distinguishes_unlettered_groups(tmp_path, capsys):
 
 def test_console_summary_distinguishes_a_raised_assignment(tmp_path, capsys,
                                                            monkeypatch):
-    """Item 3 F second opinion: without `status`, an assignment that RAISED
+    """Without `status`, an assignment that RAISED
     printed exactly the zeros a quiet run prints -- so the pass's loudest
     failure was the one an operator could not see, while the venue summary
     right beside it has always carried a status. Both directions are
@@ -1736,7 +1738,7 @@ def test_console_summary_distinguishes_a_raised_assignment(tmp_path, capsys,
 
 
 def test_both_optional_passes_stamp_together(tmp_path, monkeypatch):
-    """Item 3 D's venue flag and item 3 F's Chicago letter are stamped by two
+    """The venue flag and the Chicago letter are stamped by two
     optional passes sharing one insertion point in `execute`. This pins that
     they coexist on the same entry and that each still lands only where it
     belongs -- the flag on the one flagged venue, the letters on every member
@@ -1776,10 +1778,10 @@ def test_both_optional_passes_stamp_together(tmp_path, monkeypatch):
 def test_derived_fields_are_invisible_to_compute_tier(tmp_path, monkeypatch):
     """Both optional splices must sit BELOW compute_tier, structurally.
 
-    Item 3 D's review round 2 moved the venue splice below `compute_tier` so
+    A review moved the venue splice below `compute_tier` so
     that tier invariance would be structural rather than incidental on
     `compute_tier` happening not to read `venue_status`. Nothing pinned that
-    ordering: the whole-branch reviewer moved the splice back above
+    ordering: a reviewer moved the splice back above
     `parse_entry_fields` and all 49 barrier tests still passed, because they
     all assert on the OUTPUT tier, which is unchanged while compute_tier
     ignores the field.
@@ -1832,7 +1834,7 @@ def test_stale_line_initial_year_suffix_is_stripped(tmp_path):
 
     The venue_status half is covered by three tests; this half was covered by
     none -- removing `year_suffix` from that alternation left all 54 barrier
-    tests green (item 3 F whole-branch review, I3). The docstring's assertion
+    tests green. The docstring's assertion
     that "all three limits apply identically to year_suffix" pinned the
     sentence, not the behaviour.
 
@@ -1939,8 +1941,8 @@ def test_a_swallowed_splice_is_never_reported_as_neutralized(tmp_path, monkeypat
     never fail the barrier. But an unchanged chunk still holds exactly one
     `year_suffix =` and still parses, so a well-formedness check alone reads
     as success and the entry lands in `residual_neutralized` while the stale
-    letter survives to disk (external review 2026-08-06, kimi-k3 I1 /
-    gpt-5.6-sol C3).
+    letter survives to disk (external review 2026-08-06, kimi-k3 /
+    gpt-5.6-sol).
 
     That is the "never silently" policy violated on the error path, and it is
     a live drop hazard: two surviving stale letters read as a structurally
@@ -2077,7 +2079,7 @@ def test_venue_splice_keys_are_present_even_when_vetting_errored(tmp_path, monke
 
 
 # ---------------------------------------------------------------------------
-# Item 2: web-source evidence in the barrier
+# Web-source evidence in the barrier
 # ---------------------------------------------------------------------------
 
 _WEB_ENTRY = """@misc{k,
@@ -2226,7 +2228,7 @@ def test_a_stale_urldate_in_the_source_bib_is_stripped_and_re_derived(tmp_path, 
 
 
 def test_one_raising_entry_does_not_cost_its_neighbour_its_promotion(tmp_path, monkeypatch):
-    """The spec requires entry-level degradation. Without the per-entry
+    """Entry-level degradation is required. Without the per-entry
     boundary, the single pass-level wrapper zeroes web_gates and the GOOD entry
     demotes with the bad one.
 
@@ -2279,7 +2281,7 @@ def test_a_pass_level_failure_degrades_to_no_promotions_not_a_failed_run(tmp_pat
 
 def test_a_non_misc_entry_with_a_url_is_never_web_gated(tmp_path, monkeypatch):
     """A url on an @article is decoration; its evidence channels are the API
-    ones (spec, Out of scope)."""
+    ones (out of scope)."""
     eb_mod = _stub_net(monkeypatch)
     art = _WEB_ENTRY.replace("@misc{k,", "@article{k,")
     rd = _web_review(tmp_path, entry=art)
@@ -2291,7 +2293,7 @@ def test_a_non_misc_entry_with_a_url_is_never_web_gated(tmp_path, monkeypatch):
 # ---------------------------------------------------------------------------
 # urldate/archiveurl splice verification (the web-gate siblings of the
 # venue_status fix above; added 2026-08-16 from the service's whole-branch
-# review of the item-2 intake)
+# review of the web-evidence intake)
 # ---------------------------------------------------------------------------
 
 def test_web_derived_field_splices_that_land_are_counted_as_stamped(tmp_path, monkeypatch):
@@ -2362,7 +2364,7 @@ def test_web_splice_keys_are_present_even_with_no_web_entries(tmp_path, monkeypa
 
 
 # ---------------------------------------------------------------------------
-# Item 2 rider: encyclopedia-host exclusion in the barrier web pass
+# Encyclopedia-host exclusion in the barrier web pass
 # ---------------------------------------------------------------------------
 
 _SEP_ENTRY = """@misc{k,
@@ -2706,7 +2708,7 @@ def test_a_corroborated_abstract_is_attested_and_bucketed(tmp_path, monkeypatch)
     """The honest path. The bucket records the source that ANSWERED
     (openalex) next to the source the bib CLAIMED (s2) -- which source
     served the text is integrity-irrelevant, since the gate is hash
-    equality, but the split is what makes the item-15 rate readable."""
+    equality, but the split is what makes the corroboration rate readable."""
     eb_mod = _barrier(monkeypatch)
     key = _corroboration_domain(tmp_path)
     calls = []
@@ -2976,7 +2978,7 @@ def test_a_failed_heal_splice_corrects_the_corroboration_bucket(tmp_path, monkey
     """When the heal splice is dropped for well-formedness, the entry
     demotes -- and the corroboration bucket must say so too. Otherwise the
     report contradicts itself (bucket "corroborated" beside healed
-    "unhealed" and a demoted stamp) and any item-15 rate counting
+    "unhealed" and a demoted stamp) and any rate counting
     corroborated outcomes is inflated by splices that never landed."""
     eb_mod = _barrier(monkeypatch)
     import stamp_evidence as se
@@ -3015,7 +3017,7 @@ def test_a_failed_heal_splice_corrects_the_corroboration_bucket(tmp_path, monkey
 def test_no_bucket_and_no_probe_for_an_entry_without_a_ledger_record(tmp_path, monkeypatch):
     """Candidacy is the gate on probing: an entry with no enrichment record
     is not a candidate, so it neither costs a fetch nor appears in the
-    bucket (which must stay a record of candidates, or the item-15 rate
+    bucket (which must stay a record of candidates, or the corroboration rate
     counts entries that were never in scope)."""
     eb_mod = _barrier(monkeypatch)
     calls = []
@@ -3117,7 +3119,7 @@ def test_the_printed_summary_counts_corroboration_outcomes(tmp_path, monkeypatch
 def test_heal_buckets_are_excluded_from_the_summary_counts(tmp_path, monkeypatch):
     """The heal population is a DIFFERENT population (candidacy failed) with
     its own report section; folding it in would inflate the corroborated
-    count item 15's rate reads."""
+    count the corroboration rate reads."""
     eb_mod = _barrier(monkeypatch)
     import stamp_evidence as se
     true_text = "The original attested abstract text, restored."

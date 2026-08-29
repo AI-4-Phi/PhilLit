@@ -1,4 +1,4 @@
-"""Item 2: fetch_web.py — the research-time fetch-and-capture tool.
+"""fetch_web.py — the research-time fetch-and-capture tool.
 
 No network: the HTML/PDF extraction and record-building functions are called
 directly, and `fetch` is exercised through a stubbed session.

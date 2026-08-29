@@ -1,4 +1,4 @@
-"""Item 3 F: Chicago a/b letters for same-author same-year works.
+"""Chicago a/b letters for same-author same-year works.
 
 Assignment happens ONCE, in the evidence barrier, over the union of every
 domain bib -- before Phase 5, because the information is lost at write time
@@ -17,8 +17,8 @@ first INITIAL per author. Two different people with the same surname but a
 DIFFERENT first initial (the Gabbrielle/Rebecca Johnson case) never group.
 Two people who share BOTH surname and initial (Gabrielle and Gareth Johnson)
 are NOT distinguished by this module -- an initial is the limit of its
-identity signal; full first-name disambiguation is item 3 E's mechanism, not
-this one.
+identity signal; full first-name disambiguation is collision-aware
+matching's mechanism, not this one.
 
 Letters run alphabetically by title (Chicago 15.18), tie-broken by entry id,
 so assignment is deterministic and independent of input order.

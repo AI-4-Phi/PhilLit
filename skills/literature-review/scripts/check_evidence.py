@@ -117,7 +117,7 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     cut edge, producing a false-positive citation. Matching globally, then
     filtering by position, keeps the digit-boundary check honest.
 
-    `suffix` is the entry's own Chicago letter (item 3 F), if it carries
+    `suffix` is the entry's own Chicago letter, if it carries
     one. An entry carrying a letter is cited where the prose carries that
     SAME letter -- OR where the prose gives a BARE year. A bare
     "Menary (2010)" is what generate_bibliography deliberately treats as
@@ -175,10 +175,10 @@ def find_cites(md: str, surname: str, year: str, suffix: str = "") -> list[int]:
     # alternative and then SATISFIED the bare-year lookahead -- so an
     # uppercase letter read as a BARE citation and credited every lettered
     # entry for that year, the 'a' entry included. Case normalisation is
-    # settled elsewhere in item 3 F (generate_bibliography._entry_suffix
-    # lowercases what it renders and matches; its prose sighting scan is
-    # explicitly case-insensitive), so this checker follows suit rather than
-    # inventing a third reading.
+    # settled elsewhere in the Chicago a/b machinery
+    # (generate_bibliography._entry_suffix lowercases what it renders and
+    # matches; its prose sighting scan is explicitly case-insensitive), so
+    # this checker follows suit rather than inventing a third reading.
     #
     # The FLAG is what does the work: under re.IGNORECASE a `[0-9a-z]` class
     # already matches A-Z, so spelling the class `[0-9A-Za-z]` changes

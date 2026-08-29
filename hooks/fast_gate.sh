@@ -32,7 +32,7 @@ INPUT="$(cat)"
 # Case-insensitive needle: macOS and Windows filesystems are case-insensitive,
 # so "ENRICHMENT_LEDGER-x.JSON" and "LITERATURE.BIB" name the same files as
 # their lowercase spellings while a case-sensitive match would skip the gate
-# entirely (found by the item-3-C external review). Widening the pre-filter is
+# entirely (found by external review). Widening the pre-filter is
 # always safe - it only sends MORE calls to the Python gate, which decides
 # properly - and the gates themselves already match case-insensitively.
 shopt -s nocasematch

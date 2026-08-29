@@ -1,4 +1,4 @@
-"""Item 13 A7: generate_bibliography dedup (title axis + winner policy +
+"""generate_bibliography dedup (title axis + winner policy +
 union-into-survivor + DOI-group bridge guard) and the dangling-'In.' guard."""
 
 import re
@@ -81,7 +81,7 @@ def test_survivor_unions_loser_only_journal_and_doi():
     # Winner (king2019a) has more substantive fields overall (volume+number+
     # pages = 3); the loser (king2019b) carries a journal + doi (2) the winner
     # lacks. The winner survives AND UNIONs in the loser-only journal + doi
-    # (spec v2.1 / ADV-A0).
+    # union.
     bib = (
         "@article{king2019a,\n"
         "  author = {King, Ada},\n"
@@ -113,7 +113,7 @@ def test_doi_bridge_three_entries_not_over_merged():
     # A(doi=X, title=T), B(no doi, title=T), C(doi=Y, title=T). A+B may merge
     # (B has no DOI), but the resulting AB group (dois={X}) must NOT bridge to C
     # (dois={Y}) through the shared title — distinct DOI sets. Final: 2 entries
-    # (GPT-B4). DOI identity is per GROUP, not per current winner.
+    # DOI identity is per GROUP, not per current winner.
     bib = (
         "@article{a_pre,\n"
         "  author = {Vale, Uma},\n"
@@ -147,7 +147,7 @@ def test_doi_bridge_three_entries_not_over_merged():
 
 def test_equal_counts_lexicographic_tie_break():
     # Equal substantive counts (each has exactly one journal). The
-    # lexicographically-smaller citation key wins the tie (GPT-SF14c).
+    # lexicographically-smaller citation key wins the tie.
     bib = (
         "@article{zeta2021,\n"
         "  author = {Nolan, Ben},\n"
@@ -173,7 +173,7 @@ def test_marker_note_keyword_noise_does_not_count():
     # The noisy entry has keywords (with a METADATA_CLEANED marker) + a note but
     # ZERO substantive fields; the plain entry has one substantive field (a
     # journal). Substantive count = 1 vs 0, so the plain entry wins — marker /
-    # keyword / note text is NOT substantive (GPT-SF14c).
+    # keyword / note text is NOT substantive.
     bib = (
         "@article{noisy2022,\n"
         "  author = {West, Cara},\n"

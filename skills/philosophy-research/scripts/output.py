@@ -24,7 +24,7 @@ import tempfile
 from typing import Any, NoReturn, Optional
 
 
-# item 13 A1, generalized: each script can own its output file so a
+# Each script can own its output file so a
 # researcher's shell redirection (`> f.json 2>&1`) can no longer merge stderr
 # progress logs into the JSON. Set by the script's main() from --output;
 # None (the default) keeps the upstream stdout-only behavior.

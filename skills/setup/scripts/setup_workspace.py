@@ -31,7 +31,7 @@ PHILLIT_RULES = {
     "deny": [
         "Bash(sudo *)", "Bash(dd *)", "Bash(mkfs *)",
         # The evidence-tier attestation authority: hand-writing a ledger record
-        # grants a citability tier no fetch corroborated (ROADMAP item 3 C).
+        # grants a citability tier no fetch corroborated.
         # The scripts that own them write from Python, so nothing honest is
         # blocked. Belt-and-braces with hooks/block_ledger_write.py, which
         # ships with the plugin and so also covers pre-existing workspaces

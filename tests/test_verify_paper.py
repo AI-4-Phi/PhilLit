@@ -139,7 +139,7 @@ class TestDOINormalization:
         assert result == "10.2307/2024717"
 
     def test_normalize_is_the_shared_owner(self):
-        """ROADMAP item 4: one owner for DOI normalization."""
+        """One owner for DOI normalization."""
         import sys
         from pathlib import Path
 
@@ -1119,7 +1119,7 @@ class TestOnlineFirstYear:
 
 
 class TestSearchSelectRequestsPrintDates:
-    """Item 5 A (citation-year correctness): the bibliographic-search path
+    """Citation-year correctness: the bibliographic-search path
     must ASK CrossRef for the print/online date fields. A `select` list that
     omits `published-print` means extract_year can never reach its own first
     preference on that path - the record's year is the online-first
@@ -1179,7 +1179,7 @@ class TestSearchSelectRequestsPrintDates:
 
 
 class TestSelectListYearFieldSync:
-    """Item 5 A (the missing published-print request) WAS a desync between
+    """The missing published-print request WAS a desync between
     _YEAR_FIELDS and the hand-maintained select string; the select value is
     now derived from the constant so the next date-field change cannot miss
     the search path again."""
