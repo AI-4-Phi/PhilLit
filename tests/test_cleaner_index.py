@@ -1,4 +1,5 @@
 """A3: union of JSON dirs, salvage of log-polluted verify JSON, surfaced skips."""
+import json
 import sys
 from pathlib import Path
 
@@ -129,3 +130,86 @@ def test_clean_bibtex_zero_results_counts_entries_unmatched(tmp_path):
     assert res["entries_total"] == 1
     assert res["unmatched_entries"] == 1
     assert res["matched_entries"] == 0
+
+
+# --- Admission gate: a title-only (or empty) record licenses nothing -----
+# Measured basis: docs/known-issues/cleaner-envelope-measurement-2026-08-29/
+# (361 unknown-envelope injections across 46 corpora, every one title-only
+# or empty; A/B over 335 bibs, zero cleaning-outcome differences).
+
+def test_title_only_unknown_source_contributes_no_entries_and_starves(tmp_path):
+    jdir = tmp_path / "json"; jdir.mkdir()
+    (jdir / "sep_dump.json").write_text(
+        json.dumps({"source": "sep_something",
+                    "results": [{"title": "A Stanford Encyclopedia Page"}]}),
+        encoding="utf-8")
+    index = mc.build_metadata_index(jdir)
+    assert index.entries == []
+
+    bib = tmp_path / "d.bib"
+    bib.write_text('@article{a, author="A, B", title="T1", journal="J", year="2020"}\n',
+                   encoding="utf-8")
+    res = mc.clean_bibtex(bib, [jdir])
+    assert res["index_starved"] is True
+
+
+def test_mixed_corpus_title_only_dumps_contribute_nothing(tmp_path):
+    jdir = tmp_path / "json"; jdir.mkdir()
+    (jdir / "s2_real.json").write_text(
+        json.dumps({"source": "s2", "results": [{
+            "title": "Real Paper", "year": 2020,
+            "journal": {"name": "Journal A"}, "doi": "10.1/real",
+        }]}), encoding="utf-8")
+    (jdir / "sep_dump.json").write_text(
+        json.dumps({"source": "sep_something",
+                    "results": [{"title": "A Stanford Encyclopedia Page"}]}),
+        encoding="utf-8")
+    index = mc.build_metadata_index(jdir)
+    assert len(index.entries) == 1
+    assert index.entries[0]["title"] == "Real Paper"
+
+    bib = tmp_path / "d.bib"
+    bib.write_text('@article{a, author="A, B", title="T1", journal="J", year="2020"}\n',
+                   encoding="utf-8")
+    res = mc.clean_bibtex(bib, [jdir])
+    assert res["index_starved"] is False
+
+
+def test_unknown_envelope_title_and_year_is_admitted(tmp_path):
+    jdir = tmp_path / "json"; jdir.mkdir()
+    (jdir / "sep_dump.json").write_text(
+        json.dumps({"source": "sep_something",
+                    "results": [{"title": "A Dated Page", "year": 2019}]}),
+        encoding="utf-8")
+    index = mc.build_metadata_index(jdir)
+    assert len(index.entries) == 1
+    assert index.entries[0]["year"] == 2019
+
+    bib = tmp_path / "d.bib"
+    bib.write_text('@article{a, author="A, B", title="T1", journal="J", year="2020"}\n',
+                   encoding="utf-8")
+    res = mc.clean_bibtex(bib, [jdir])
+    assert res["index_starved"] is False
+
+
+def test_recognized_source_title_only_item_dropped_full_item_kept(tmp_path):
+    jdir = tmp_path / "json"; jdir.mkdir()
+    (jdir / "s2.json").write_text(
+        json.dumps({"source": "s2", "results": [
+            {"title": "Bare Title Only"},
+            {"title": "Full Record", "year": 2020,
+             "journal": {"name": "Journal A"}, "doi": "10.1/full"},
+        ]}), encoding="utf-8")
+    index = mc.build_metadata_index(jdir)
+    assert len(index.entries) == 1
+    assert index.entries[0]["title"] == "Full Record"
+
+
+def test_doi_only_entry_is_admitted(tmp_path):
+    jdir = tmp_path / "json"; jdir.mkdir()
+    (jdir / "s2.json").write_text(
+        json.dumps({"source": "s2", "results": [{"doi": "10.5/doi-only"}]}),
+        encoding="utf-8")
+    index = mc.build_metadata_index(jdir)
+    assert len(index.entries) == 1
+    assert mc.normalize_doi("10.5/doi-only") in index.dois

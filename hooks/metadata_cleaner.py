@@ -711,6 +711,12 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
     elif api_source == "core":
         entries = parse_core_result(data, filename)
     else:
+        # Deliberate: grace for an S2-shaped envelope from a source this
+        # dispatch doesn't recognize. UNTESTED - no such source exists in the
+        # corpus - and removing it is out of scope for a minimal fix (a
+        # thinner index would strip venue fields harder, so removal isn't
+        # free either). Whatever junk this admits is made inert by the
+        # admission gate below.
         entries = parse_s2_result(data, filename)
 
     # Source-authority tagging (year-corruption fix): record where each pooled
@@ -749,6 +755,29 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
     entry_scoped = (api_source == "crossref"
                     and isinstance(results, list) and len(results) == 1)
     for entry in entries:
+        # Admission gate: a record with no datum beyond title (or nothing at
+        # all) can license NOTHING downstream, so admitting it only lets
+        # index_starved (computed in clean_bibtex as `not index.entries`)
+        # misreport a functionally starved corpus as healthy.
+        # Every verification channel is title-blind - naming them so the
+        # assumption stays auditable when someone later adds title-based
+        # logic: venue buckets key on container_title; the volume/issue/
+        # pages/publisher/year detail buckets on those fields; the DOI index
+        # on doi; find_api_entry_for_bib_entry needs a DOI or title+year
+        # (rule B3 requires the year). No parser emits an author field, so a
+        # "title+authors" shape cannot arise here. Applied uniformly, not
+        # just to the else arm above: a recognized source's title-only
+        # record is inert by the identical mechanism.
+        # Measured basis (docs/known-issues/cleaner-envelope-measurement-2026-08-29/):
+        # 361/361 unknown-envelope injections across 46 corpora were
+        # title-only or empty; A/B over 335 bibs, zero cleaning-outcome
+        # differences either way.
+        if not (entry.get("container_title") or entry.get("volume")
+                or entry.get("issue") or entry.get("pages")
+                or entry.get("publisher") or entry.get("year")
+                or entry.get("doi")):
+            continue
+
         entry["source_file"] = filename
         entry["entry_scoped"] = entry_scoped
         index.entries.append(entry)
