@@ -10,29 +10,6 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Decide whether a chapter's `series` belongs in the rendered entry.**
-`disambiguate_container` populates `series`, and
-`agents/domain-literature-researcher.md` tells the researcher to write it into
-the entry — but `grep -c series
-skills/literature-review/scripts/generate_bibliography.py` returns 0, so no
-formatter reads it. The value reaches the delivered `.bib` and never the
-References. Plausibly correct as it stands (Chicago does not require a series
-for a chapter), in which case the producer side is fine and nothing is owed;
-the point is that the question has not been answered anywhere. Measured in the
-service's re-vendor at `1896361`, against this tree.
-
-**The researcher's chapter instruction overstates the container fix.**
-`agents/domain-literature-researcher.md` now says "For a chapter,
-`container_title` is the book (`booktitle`)". That holds only when the
-parent-volume lookup succeeds. Every bail path — no usable ISBN, non-200, a
-truncated result page, a malformed or disagreeing parent — leaves
-`container_title` at CrossRef's first array element, which for the
-`susser2013artificial` record that motivated the fix is the SERIES. The
-practical harm is small, since the agent should write `container_title` into
-`booktitle` either way and no better value exists on a bail; what is wrong is
-that agent-facing prose asserts a guarantee the code deliberately does not
-make.
-
 **The References matcher cannot bridge an independently ae-transliterated
 surname.** `ascii_variants` returns the NFKD fold and `translit_fold`, both
 derived from the input's own diacritics — so it covers its documented case,

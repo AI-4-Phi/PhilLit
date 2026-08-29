@@ -311,6 +311,11 @@ def _format_book(author_str, year, title, entry) -> str:
 
 
 def _format_incollection(author_str, year, title, entry, editors) -> str:
+    # A chapter's `series` (disambiguate_container's per-parent enrichment) is
+    # deliberately NOT rendered: Chicago author-date treats a series as
+    # optional, and the delivered .bib keeps the field for toolchains whose
+    # styles do render it. Best-effort enrichment stays machine-readable
+    # without adding unverified decoration to the References.
     booktitle = _get_field(entry, "booktitle")
     journal = _get_field(entry, "journal")
 
