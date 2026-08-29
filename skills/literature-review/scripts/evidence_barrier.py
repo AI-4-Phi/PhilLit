@@ -493,6 +493,13 @@ def _strip_derived_fields(entry_text: str) -> str:
     in place (add_field_to_entry's head_pattern matches on any leading
     whitespace), so only an UNFLAGGED run leaves a forged or stale value
     standing, and no duplicate-field corruption results either way.
+
+    ACCEPTED RESIDUAL: that surviving `venue_status` is never re-flagged, and
+    both the synthesis planner and the writer act on the field -- so the strip
+    asymmetry their prose documents is not fully honest. The SPLICE half of
+    this shape is fixed (a swallowed or duplicate-producing splice reverts and
+    is reported, see _derived_field_took); this half is not, for the
+    widening-the-anchor reason above.
     """
     return _DERIVED_FIELD_RE.sub("", entry_text)
 
@@ -919,7 +926,9 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                   # Diagnostic overlay, not an outcome bucket: entries listed
                   # here ALSO land in their outcome. Distinguishes "the
                   # availability API failed/throttled" from "no snapshot
-                  # exists" (live acceptance, 2026-08-15).
+                  # exists" (live acceptance, 2026-08-15). Test-covered but
+                  # never yet reached by production data -- so do not describe
+                  # this bucket as validated by a live run.
                   "wayback_failed": [],
                   # Scope bucket, not an outcome: an abstract-bearing @misc is
                   # owned by the abstract attestation channel and may promote

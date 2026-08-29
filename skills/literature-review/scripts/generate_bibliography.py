@@ -1414,14 +1414,25 @@ def _resolve_collisions(records: list[dict], review_text: str,
     """Group colliding records by
     variant-intersection connected components per year; resolve each group
     by per-citation-instance candidate sets parsed from the ORIGINAL text;
+    keep the union of supported members; drop only what no instance
+    supports - and only when the group parsed at least one instance.
+
     ACCEPTED RESIDUAL (narrow): when a bib still holds an unmerged duplicate
     pair, a drop here removes the richer member before dedup could union its
     journal/volume/pages/doi into the survivor, so the survivor keeps only its
     own scant fields. Protected on the real pipeline -- SKILL.md Phase 6 runs
     dedupe_bib.py BEFORE this script, so the pair is already one entry with
     fields unioned. Reachable only on a standalone or manual invocation.
-    keep the union of supported members; drop only what no instance
-    supports - and only when the group parsed at least one instance.
+
+    ACCEPTED RESIDUAL (keep-all resurrection): the protective keep-all branch
+    carries a suffix group's UNCITED sibling through even when the synthesis
+    outline excluded it as EVIDENCE-NONE, so an evidence-excluded entry can
+    reach delivered References. Observed once on a live run, whose orchestrator
+    removed the entry by hand. Recorded, not queued. If it recurs, the two
+    directions worth evaluating are assembly-time letter re-derivation over the
+    delivered set (assembly can renumber prose and References together, which
+    render-time suppression cannot) and a report bucket naming every keep-all
+    resurrection, so nobody has to find one by hand.
 
     First-position evidence is tracked as TWO flags with opposite roles -
     first_pos_seen (protective, set by any naming instance) and

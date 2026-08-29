@@ -19,7 +19,7 @@ import bib_identity as bi  # noqa: E402
 
 
 class TestTitleKey:
-    """The ROADMAP section 4 divergence table, as a contract."""
+    """The name-fold divergence table in `bib_identity`, as a contract."""
 
     def test_latin_diacritics_fold_to_base_letters(self):
         assert bi.title_key("Millière") == "milliere"

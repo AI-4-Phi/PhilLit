@@ -97,6 +97,13 @@ _VERB_RE = re.compile(
     re.IGNORECASE,
 )
 
+# The verb heuristics below run only on these tiers, so nothing mechanical
+# polices how a WEB-tier source is characterized: the note-license boundary is
+# held by writer prose alone, against a measured 1-in-4 note-drift baseline.
+# ACCEPTED RESIDUAL, not queued. Extending the verb heuristic as it stands
+# would false-positive on legitimate note-licensed cites (WEB characterization
+# IS licensed from the entry's note); whether a feasible check exists at all --
+# note-vs-prose containment at Phase 6, say -- is open.
 _LOW_TRUST_TIERS = (se.TIER_EXISTENCE, se.TIER_NONE, None)
 
 

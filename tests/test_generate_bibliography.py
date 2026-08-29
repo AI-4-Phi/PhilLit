@@ -1650,7 +1650,7 @@ class TestYearSuffixMatching:
             ["menary2010cognitive", "menary2010extended"]
 
     def test_comma_continuation_across_years(self):
-        # The ROADMAP's flagship case: "Menary (2006, 2010, 2013)".
+        # The flagship comma-continuation case: "Menary (2006, 2010, 2013)".
         insts = generate_bibliography._citation_instances("Menary (2006, 2010, 2013) argue.")
         assert [i["year"] for i in insts] == ["2006", "2010", "2013"]
 
