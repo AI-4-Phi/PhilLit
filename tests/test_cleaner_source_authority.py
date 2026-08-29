@@ -974,7 +974,7 @@ class TestAbstentionAttestsExistence:
 
 
 class TestYearKeyWriteSafety:
-    """Review findings (gpt-5.6-sol, 2026-08-02): a comparison KEY is not
+    """A comparison KEY is not
     automatically a value that may be written into the .bib."""
 
     def test_whitespace_scoped_year_never_erases_a_populated_year(self, tmp_path):
@@ -1115,7 +1115,7 @@ class TestScopedPreferenceDoesNotIncreaseDestruction:
 
 
 class TestWriteGateMatchesTheGrammar:
-    """Review round 3 (gpt-5.6-sol): the write gate used
+    """The write gate used
     `api_year.lstrip("-").isdigit()`, a DIFFERENT language from
     _INTEGRAL_YEAR_RE - it re-admitted exactly what the grammar rejects."""
 
@@ -1380,7 +1380,7 @@ class TestYearBasisGate:
 
 class TestIndexStarvedFlag:
     """A starved index and a clean bill of health used to be distinguishable
-    only by free-text warnings. External review finding E."""
+    only by free-text warnings."""
 
     def test_flag_set_when_no_file_yields_a_record(self, tmp_path):
         json_dir = make_json_dir(tmp_path, {

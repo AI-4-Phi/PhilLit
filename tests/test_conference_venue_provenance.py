@@ -153,9 +153,8 @@ class TestVenueKeyBounds:
 
 
 class TestNoTokenIsItsOwnLicence:
-    """External review of the first draft (kimi-k3 and GLM-5.2, 2026-08-19)
-    found three false-merge classes, all with one cause: a token was allowed to
-    license its own removal. Each case below fails against that first draft."""
+    """The first draft had three false-merge classes, all with one cause: a
+    token was allowed to license its own removal. Each case below fails against that first draft."""
 
     @pytest.mark.parametrize("left,right", [
         # A bare trailing number opened the strips, which then deleted it --
@@ -421,15 +420,15 @@ class TestRemainingGuards:
                                 " on Ethics Volume 3")
 
     def test_unhyphenated_ordinal_in_a_name_is_not_stripped(self):
-        """GLM-5.2 raised this: "Eighteenth Century Life" without the hyphen
-        would lose its head if a leading ordinal were stripped unlicensed.
+        """Without the hyphen, "Eighteenth Century Life" would lose its head
+        if a leading ordinal were stripped unlicensed.
         Nothing here names a conference, so no ordinal strip may fire."""
         assert venue_key("Eighteenth Century Life") == "eighteenth century life"
         assert venue_key("Eighteenth Century Life") != venue_key("Century Life")
 
     def test_lone_last_page_is_not_a_page_value(self):
-        """kimi-k3 raised this: OpenAlex emits last_page-only records where an
-        article number was mis-parsed, and treating it as a page would let a
+        """OpenAlex emits last_page-only records where an article number was
+        mis-parsed, and treating it as a page would let a
         bibliography verify a page the source never attested."""
         rec = parse_openalex_result(
             {"results": [{"title": "T", "source": {"name": "Mind"},
@@ -443,8 +442,8 @@ class TestRemainingGuards:
 
 
 class TestConferenceWordInsideAProperNoun:
-    """Round-2 review (kimi-k3, GLM-5.2) found that every fabrication case above
-    picks a journal with NO conference word in its name, so none of them exercise
+    """Every fabrication case above picks a journal with NO conference word in
+    its name, so none of them exercise
     the path where `_CONF_WORD` matches a proper-noun component. These pin that
     path — one side as a fixed defect, one side as a measured, accepted bound."""
 

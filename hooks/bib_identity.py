@@ -153,8 +153,8 @@ def venue_key(name: str) -> str:
     license removing itself, and does not license removing a prefix -- otherwise
     "Advances in Applied Energy 12" folds onto "Applied Energy" (two different
     Elsevier journals) and "Library of Congress Quarterly 7" folds onto its own
-    unnumbered form. Both were found by external review of the first draft,
-    which gated the strips on the number's mere presence.
+    unnumbered form. Both come from an earlier draft that gated the strips on
+    the number's mere presence.
 
     Concretely:
 
@@ -191,8 +191,8 @@ def venue_key(name: str) -> str:
     4. **A "Proceedings of X" wrapper is accepted when X's own name contains a
        conference word.** So a fabricated "Proceedings of the Library of
        Congress Quarterly" verifies against the real journal, because "congress"
-       reads as conference evidence. Raised by external review; the obvious fix
-       (requiring the conference word to head the phrase) was MEASURED against
+       reads as conference evidence. The obvious fix (requiring the conference
+       word to head the phrase) was MEASURED against
        the corpus and rejected -- it strips 56 genuine conference series of their
        fold while actually protecting only 7 of the 9 conference-worded journals
        it targets, i.e. it causes about eight times more of the deletion this

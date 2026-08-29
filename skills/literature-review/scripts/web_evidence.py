@@ -35,7 +35,7 @@ _LATEX_UNESCAPE = {r"\_": "_", r"\&": "&", r"\%": "%", r"\#": "#", r"\$": "$"}
 # same-domain and corroborates directly -- which is exactly the squatter
 # scenario the check exists to catch, and github is one of the 15 in-scope
 # hosts measured for this list. Same story for `a.example.co.uk` vs
-# `b.other.co.uk`. External review, 2026-08-11.
+# `b.other.co.uk`.
 _TWO_PART_SUFFIXES = frozenset({
     "github.io", "gitlab.io", "blogspot.com", "wordpress.com", "substack.com",
     "webflow.io", "netlify.app", "vercel.app", "co.uk", "org.uk", "ac.uk",

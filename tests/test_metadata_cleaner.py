@@ -1550,9 +1550,8 @@ class TestLoadFailuresOutsideJSONDecodeError:
     named only JSONDecodeError. json.loads can raise a plain ValueError
     (integer digit limit) or RecursionError (deep nesting) - neither is a
     JSONDecodeError, so one such file killed the whole index build, which is
-    exactly the same failure class one layer up. Found by kimi-k3/gpt-5.6-sol
-    reviewing the dormant validator, then reproduced HERE, in the live
-    destructive path."""
+    exactly the same failure class one layer up. Found in the dormant
+    validator, then reproduced HERE, in the live destructive path."""
 
     def _dir(self, tmp_path, bad_name, bad_text):
         import json as _json

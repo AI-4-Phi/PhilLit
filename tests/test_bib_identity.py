@@ -179,7 +179,7 @@ class TestAsciiVariants:
 
     def test_decomposed_unicode_variants(self):
         # NFC-recompose first: a decomposed a+combining-diaeresis must still
-        # transliterate to ae (external review). The literal below uses an
+        # transliterate to ae. The literal below uses an
         # explicit \u0308 escape (combining diaeresis), not a precomposed
         # a-with-diaeresis character, so the source text is guaranteed NFD --
         # a precomposed literal would pin nothing here, since it never

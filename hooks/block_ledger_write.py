@@ -18,8 +18,8 @@ have refused attestation (`enrich_bibliography.py` says as much in
 `_load_prior_ledger`'s docstring), which is still the whole story for
 the existence tier and still buys candidacy for the abstract one.
 
-**Scope, stated exactly** (the external review of 2026-08-05 rejected looser
-wording, rightly): this denies ledger writes made through Claude Code's
+**Scope, stated exactly** (looser wording overstates what this buys): this
+denies ledger writes made through Claude Code's
 native file-editing tools. It is NOT a security boundary. A deliberate
 forger keeps a complete bypass -- `Bash` is allowed broadly by design, so
 `cat > ledger.json`, a heredoc or `python -c` writes the file without ever

@@ -113,9 +113,9 @@ def test_forwards_stdin_to_gate(tmp_path):
 def test_needle_matches_case_insensitively(tmp_path):
     # macOS and Windows filesystems are case-insensitive, so "REFS.BIB" and
     # "ENRICHMENT_LEDGER-x.JSON" name the same files as their lowercase
-    # spellings -- a case-sensitive pre-filter would skip the gate entirely
-    # (found by external review, 2026-08-05). Widening the
-    # pre-filter is always safe: more calls reach the Python gate, which
+    # spellings -- a case-sensitive pre-filter would skip the gate entirely.
+    # Widening the pre-filter is always safe: more calls reach the Python
+    # gate, which
     # decides properly.
     root = _plugin_root(tmp_path)
     fake = _fake_uv(tmp_path)

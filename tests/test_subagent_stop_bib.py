@@ -576,7 +576,7 @@ class TestCleanerFailureIsNeverSilent:
         checked JSON validity passed it and then read
         `.total_fields_removed // 0` as "nothing cleaned" -- the crash contract
         and the hook guard defeating each other, restoring the original
-        silence. Found by external review of the fix itself."""
+        silence -- a defect in the fix itself."""
         self._seed(project)
         root = self._stub_root(
             tmp_path,

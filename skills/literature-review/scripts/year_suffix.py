@@ -26,8 +26,8 @@ so assignment is deterministic and independent of input order.
 Assignment is a pure function of the entries handed to THIS run: letters are
 always packed a, b, c with no gaps. An earlier docstring here claimed the
 opposite -- that nothing is ever re-lettered and a later drop leaves a gap
-(2010a, 2010c) -- and two independent external reviews caught it as false
-(2026-08-06). Verified: three same-author works letter a/b/c, and removing the
+(2010a, 2010c) -- and that claim is false. Verified: three same-author works
+letter a/b/c, and removing the
 middle one re-letters the third from c to b. The barrier strips and re-derives
 the field on every run, so there is no mechanism by which a previous run's
 letter could survive to leave a gap.

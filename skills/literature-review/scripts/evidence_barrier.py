@@ -80,7 +80,7 @@ def _keywords_has_evidence_web(keywords: str | None) -> bool:
     """True iff "evidence-web" appears as an EXACT comma-separated keyword
     token (casefolded), not merely as a substring -- a naive `in` check
     false-positives on a hypothetical keyword like
-    "pre-EVIDENCE-WEB-candidate" (external review, 2026-08-17)."""
+    "pre-EVIDENCE-WEB-candidate"."""
     return any(
         t.strip().casefold() == "evidence-web"
         for t in (keywords or "").split(",")

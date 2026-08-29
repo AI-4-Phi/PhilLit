@@ -61,8 +61,8 @@ def _declared_charset(content_type: str | None) -> str | None:
     """The charset the HTTP Content-Type header declares, or None. Stdlib
     MIME parsing, not a regex: a regex draft missed the legal quoted
     (charset="windows-1252") and spaced (charset = X) forms, silently
-    dropping the header hint exactly where sniffing needs it most
-    (external review, 2026-08-18). A garbage charset name passes through --
+    dropping the header hint exactly where sniffing needs it most. A garbage
+    charset name passes through --
     BeautifulSoup ignores encodings it cannot resolve."""
     if not content_type:
         return None

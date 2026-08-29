@@ -809,7 +809,7 @@ def _rejected_span_surnames(review_text: str, m) -> list[str]:
 
     Fixing the PARSER instead - teaching _CITE_INSTANCE_RE that "&" is a
     two-author "and" - was considered and DECLINED, and the reason is worth
-    keeping because the external review proposed it as the minimum fix. It is
+    keeping because it will be proposed again as the minimum fix. It is
     drop-INCREASING, not protective: "Clark & Menary (2010)" would stop being
     a rejected fragment and become an accepted instance naming Clark in first
     position, which is uncorroborated second-position evidence against a
@@ -851,9 +851,8 @@ def _unresolvable_mentions(review_text: str) -> list[dict]:
     """Citations of a surname+year that the parser saw and REJECTED, carrying
     no Chicago letter. Each: {"surname_variants", "surname", "year"}.
 
-    This closes the residual both the fix re-review and the external second
-    opinion reached independently, and it is a real Issue B path rather than a
-    theoretical one. "Menary (2010a) argues X. See Clark, Menary (2010), and
+    This closes a residual on a real Issue B path rather than a theoretical
+    one. "Menary (2010a) argues X. See Clark, Menary (2010), and
     Sutton" used to lose a work: the first cite licenses the drop, the second
     is rejected by _NON_INITIAL_PRECEDING_RE so it contributes no instance,
     and it carries no letter for _sighted_letters to see. lint_md then resolves
@@ -1474,8 +1473,8 @@ def _resolve_collisions(records: list[dict], review_text: str,
         # A letterless citation of THIS group's author-year that the parser
         # rejected. It names the group without saying which member, so it is
         # an ambiguous mention and must disable dropping for this group - the
-        # residual the fix re-review and the second opinion both reached
-        # (_unresolvable_mentions). Held as the surname text, not a flag, so
+        # residual named in _unresolvable_mentions. Held as the surname text,
+        # not a flag, so
         # the warning can name what an operator has to go and look at.
         bare_mentions = {mm["surname"] for mm in unresolvable
                          if mm["year"] == members[0]["year"]
@@ -1495,9 +1494,8 @@ def _resolve_collisions(records: list[dict], review_text: str,
         # its journal- and abstract-bearing twin).
         #
         # A FOURTH conjunct - "every member came from the same suffix-assignment
-        # namespace" - was proposed by the external second opinion and by the
-        # whole-branch review, and is DECLINED, with the reason recorded because
-        # it will be proposed again. On assigner output it is unreachable: every
+        # namespace" - has been proposed twice and is DECLINED, with the
+        # reason recorded because it will be proposed again. On assigner output it is unreachable: every
         # signature group letters from "a" (LETTERS[index], index from 0), so two
         # lettered signature groups landing in one collision group both carry an
         # "a" and conjunct 2 already fails. It would bite only on stale or
@@ -1513,10 +1511,9 @@ def _resolve_collisions(records: list[dict], review_text: str,
         year = members[0]["year"]
         supported = set()
         # TWO first-position flags, because they play OPPOSITE roles and one
-        # variable cannot carry both. Collapsing them is the defect three
-        # independent reviewers found, and the one a first fix half-closed by
-        # tightening the single flag for one role while silently weakening the
-        # other:
+        # variable cannot carry both. Collapsing them is a real defect, and
+        # one a first fix half-closed by tightening the single flag for one
+        # role while silently weakening the other:
         #
         #   first_pos_seen -- PROTECTIVE. "Some citation named this group in
         #     first position." It routes the group into the keep-all-and-warn

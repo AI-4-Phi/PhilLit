@@ -68,8 +68,7 @@ def test_the_http_header_charset_is_honored_without_a_meta_tag():
 
 def test_declared_charset_parses_the_legal_header_forms():
     """Quoted values and whitespace around '=' are legal and common; a regex
-    draft missed both, silently dropping the header hint (external review,
-    2026-08-18)."""
+    draft missed both, silently dropping the header hint."""
     assert fw._declared_charset('text/html; charset="windows-1252"') == "windows-1252"
     assert fw._declared_charset("text/html; charset = Shift_JIS") == "shift_jis"
     assert fw._declared_charset("text/html; charset=windows-1252") == "windows-1252"
@@ -274,7 +273,7 @@ def test_a_refusal_never_touches_an_existing_good_capture(monkeypatch, tmp_path,
     test_an_excluded_host_is_refused_before_any_request): unstubbed, this
     test false-passes on a network-isolated machine via the never-clobber
     fallback, and a regression that let the exclusion pre-check slip would
-    make a live outbound GET in CI (external review, 2026-08-17)."""
+    make a live outbound GET in CI."""
     class Boom:
         def __init__(self):
             raise AssertionError("network touched for an excluded host")
@@ -295,7 +294,7 @@ def test_a_refusal_never_touches_an_existing_good_capture(monkeypatch, tmp_path,
 
 
 def test_a_redirect_onto_an_excluded_host_refuses_to_write_the_capture(monkeypatch, tmp_path, capsys):
-    """The redirect seam (both external reviews, 2026-08-17): an allowed
+    """The redirect seam: an allowed
     --url whose response chain lands on SEP must not become a capture. The
     GET has already happened (accepted, documented residual); the refusal
     keeps the excluded content out of the evidence chain."""
@@ -325,7 +324,7 @@ def test_a_redirect_onto_an_excluded_host_refuses_to_write_the_capture(monkeypat
 
 def test_cli_refusal_resolves_the_cross_skill_import_in_a_clean_process(tmp_path):
     """The sibling-skill sys.path reach must work OUTSIDE pytest's mutated
-    import state (external review, 2026-08-17): in-process imports can mask
+    import state: in-process imports can mask
     a broken path computation because web_evidence is already in
     sys.modules from other test files."""
     import subprocess

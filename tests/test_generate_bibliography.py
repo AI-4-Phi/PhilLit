@@ -2173,8 +2173,7 @@ MULDOON_BARE = """@article{m1, author = {Muldoon, Ryan and Wu, Li},
 
 class TestUnresolvableBareMention:
     """A letterless citation the parser REJECTED still names its group, so it
-    disables dropping for that group (the residual the fix re-review and the
-    external second opinion reached independently)."""
+    disables dropping for that group."""
 
     def _cited(self, prose, bib_text=MENARY_BIB):
         from pybtex.database import parse_string
@@ -2363,7 +2362,7 @@ class TestRejectedListRecoversItsFirstAuthor:
 
 
 # =============================================================================
-# kimi-k3 Critical: a REJECTED multi-year citation protects its tail years too
+# A REJECTED multi-year citation protects its tail years too
 # =============================================================================
 
 MENARY_2011_BIB = """@article{menary2011a, author = {Menary, Richard},

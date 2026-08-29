@@ -670,8 +670,8 @@ class TestEvidenceRestamp:
         so a flag it does not know about is silently dropped. web_gate_passed
         was exactly that at first -- every EVIDENCE-WEB entry re-stamped
         EVIDENCE-NONE here, which makes a source the writer already cited
-        uncitable in Phase 6. Found by review, not by the barrier's own tests,
-        because the barrier is green in isolation."""
+        uncitable in Phase 6. The barrier's own tests miss it, because the
+        barrier is green in isolation."""
         web = ('@misc{omohundro2008basic,\n  author = {Omohundro, Steve},\n'
                '  title = {The Basic AI Drives},\n  year = {2008},\n'
                '  url = {https://a.example/x},\n'
@@ -789,7 +789,7 @@ class TestEvidenceRestamp:
     _WEB_ATT_URL = "https://a.example/x"
 
     def test_the_restamp_runs_the_full_capture_check_not_span_containment_alone(self, tmp_path):
-        """Anti-narrowing pins (external review, 2026-08-18): a weakened
+        """Anti-narrowing pins: a weakened
         re-check that only tested span containment would pass the merge test
         above. These three captures each contain the span but fail a
         DIFFERENT check_capture rule -- title anchor, length floor, HTTP
@@ -1034,7 +1034,7 @@ class TestEvidenceRestamp:
         assert "EVIDENCE-NONE" in merged
 
     def test_resurrected_identifier_on_no_match_entry_stays_none(self, tmp_path):
-        # glm-5.2's dedup-resurrection path: loser's doi is unioned into the
+        # Dedup-resurrection path: loser's doi is unioned into the
         # survivor, but neither key was api-matched -> still NONE.
         a = ('@article{phantom2001data,\n  author = {Phantom, Pia},\n'
              '  title = {A Phantom Data Study},\n  year = {2001},\n'

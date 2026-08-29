@@ -577,7 +577,7 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
 # previously let a quote-delimited `keywords = "..."` field fall through to
 # add_field_to_entry, which REPLACES a field wholesale on a hit -- silently
 # destroying every existing token (topic tags + importance level) and
-# leaving only the newly added/removed keyword (reviewer-reproduced). Both
+# leaving only the newly added/removed keyword. Both
 # add_keyword_to_entry and remove_keyword_from_entry must find the field in
 # EITHER delimiter style and edit its value in place; only add_keyword_to_entry
 # delegates to add_field_to_entry, and only when no keywords field exists at

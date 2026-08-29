@@ -64,7 +64,7 @@ def test_researcher_forbids_post_enrichment_reemission():
 
 
 def test_researcher_has_edit_tool_and_guidance():
-    """Critical finding from reviewer (2026-08-01): researchers need Edit
+    """Researchers need Edit
     for surgical changes to .bib files after enrichment. The tool must be
     listed in frontmatter and guidance must replace the stale "Edit is NOT
     available" note with new guidance about post-edit validation."""
@@ -145,8 +145,8 @@ def test_planner_knows_the_venue_status_rule():
 def test_researcher_told_not_to_write_either_derived_field():
     """The ban must cover BOTH barrier-owned fields, not just venue_status.
 
-    An external review (2026-08-06, kimi-k3) found the prompt banned
-    hand-writing `venue_status` while saying nothing about `year_suffix` --
+    The prompt banned hand-writing `venue_status` while saying nothing
+    about `year_suffix` --
     even though the barrier owns both, re-derives both every run, and a
     hand-written `year_suffix` is the more dangerous of the two: one the
     stripper cannot reach can make a collision group look structurally
@@ -183,8 +183,8 @@ def test_conventions_has_no_stale_suffix_caveat():
 
 
 def test_planner_never_converts_evidence_bar_into_gap_claim():
-    """Production finding (2026-08-19, the service's first kimi run,
-    review 42b029364b084b6b): the planner converted EVIDENCE-NONE bars into
+    """Observed in production (2026-08-19): the planner converted
+    EVIDENCE-NONE bars into
     "a gap the reviewed literature leaves unaddressed" while an
     abstract-attested source bearing on the same question sat unused in the
     corpus; the claim shipped 3x in the final text. The old prose seeded it:
@@ -216,8 +216,8 @@ def test_writer_never_asserts_unplanned_literature_gap():
 
 
 def test_researcher_carve_out_names_every_primary_excluded_host():
-    """Prose-vs-policy pin (Task 4, the encyclopedia-host exclusion, shipped
-    with manual verification only, external review 2026-08-17): the
+    """Prose-vs-policy pin (the encyclopedia-host exclusion shipped with
+    manual verification only): the
     researcher's carve-out block must name each of the four primary excluded
     hosts literally, not just gesture at "encyclopedia hosts". A rename or a
     dropped host in web_evidence.EXCLUDED_HOST_HINTS with no matching prose

@@ -57,7 +57,7 @@ def test_normalize_keeps_path_case_and_query():
 def test_normalize_does_not_raise_on_a_malformed_port():
     # urlsplit(...).port raises ValueError on an out-of-range port, and
     # _URL_RE will happily capture `https://a.example:99999/x` out of a bib
-    # field. This must degrade, not throw (external review).
+    # field. This must degrade, not throw.
     assert wv.normalize_url("https://a.example:99999/x")
 
 
@@ -360,7 +360,7 @@ def test_excluded_host_matches_subdomains_case_insensitively():
 
 def test_excluded_host_normalizes_a_trailing_dns_dot():
     """plato.stanford.edu. is an absolute-DNS spelling of the same host —
-    without rstrip it matches neither arm (external reviews, 2026-08-17)."""
+    without rstrip it matches neither arm."""
     assert wv.excluded_host(
         "https://plato.stanford.edu./entries/agency/") == "plato.stanford.edu"
     assert wv.excluded_host("https://WWW.IEP.UTM.EDU.:443/x") == "iep.utm.edu"
@@ -372,7 +372,7 @@ def test_excluded_host_normalizes_idna_dot_equivalent_separators():
     IDNA/UTS-46: the transport treats them as ".", so a URL spelled with one
     resolves to the SAME host -- not the homograph case (a homograph is a
     DIFFERENT domain; this is the same domain, differently spelled) and must
-    not bypass the policy matcher (external review, 2026-08-17)."""
+    not bypass the policy matcher."""
     ideographic_full_stop = "\u3002"
     fullwidth_full_stop = "\uFF0E"
     halfwidth_ideographic_full_stop = "\uFF61"
@@ -419,10 +419,9 @@ def test_excluded_host_is_none_for_ordinary_and_garbage_input():
 
 def test_every_excluded_host_has_a_hint_naming_real_scripts():
     """Every hint is nonempty, and every script a hint names exists — a
-    rename must not leave a lying hint (external review, 2026-08-17). Also
-    pins that every hint names AT LEAST ONE script: without this, a hint
-    with no `.py` reference would pass the loop vacuously (external review,
-    2026-08-17)."""
+    rename must not leave a lying hint. Also pins that every hint names AT
+    LEAST ONE script: without this, a hint with no `.py` reference would pass
+    the loop vacuously."""
     import re
     scripts_dir = (Path(__file__).resolve().parent.parent
                    / "skills" / "philosophy-research" / "scripts")

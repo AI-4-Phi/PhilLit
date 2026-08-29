@@ -720,8 +720,8 @@ def _index_one_file(index: MetadataIndex, data: dict, filename: str) -> None:
     # `verify_*.json` files in the corpora are Semantic Scholar dumps, the very
     # source class that caused the original corruption.
     #
-    # Deliberately NOT required (the external review recommended both): that
-    # the lookup mode be `doi`, and that the requested DOI equal the record's.
+    # Deliberately NOT required, though both were proposed: that the lookup
+    # mode be `doi`, and that the requested DOI equal the record's.
     # `verify_paper.py --title` is still a targeted single-work query (227 such
     # files here), and once a record's DOI matches the bib entry's, the record
     # IS CrossRef's own metadata for that DOI - identification path does not
@@ -1036,8 +1036,8 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
         # normalize_pages has already reduced to '-'). When BOTH sides carry a
         # range, a shared first page is not truncation - `100--999` against
         # `100--101` is a real disagreement about the work's extent, and
-        # reading it as a match was an over-match (external review,
-        # 2026-08-25). Unequal first pages contradict either way.
+        # reading it as a match was an over-match. Unequal first pages
+        # contradict either way.
         first_nv, first_api = _first_page(nv), _first_page(api)
         if first_nv and first_api:
             truncation_shape = '-' not in nv or '-' not in api
@@ -1064,7 +1064,7 @@ def _field_compare(field_lower: str, value: str, api_entry: dict) -> str:
         # or - for the concatenation artifact, which has no boundary by
         # construction - when the prefix is itself MULTI-TOKEN ('oxford
         # university press'). A single token cut mid-word contradicts:
-        # 'Brill' is not 'Brillante Editores' (external review, 2026-08-25).
+        # 'Brill' is not 'Brillante Editores'.
         if nv and api:
             if nv == api:
                 return 'match'

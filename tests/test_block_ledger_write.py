@@ -112,8 +112,8 @@ class TestAllows:
 
 class TestFailureDirection:
     """This is an ACCURACY gate, so it fails closed and never silently
-    (CLAUDE.md gate-failure policy). The external review of 2026-08-05 caught
-    an earlier draft advertising "fail open but loud" while actually failing
+    (CLAUDE.md gate-failure policy). An earlier draft advertised "fail open
+    but loud" while actually failing
     open *silently* — hooks.json's `|| echo` fallback fires only on a nonzero
     exit (a uv/process failure), never on a parse failure."""
 

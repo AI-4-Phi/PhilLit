@@ -750,9 +750,9 @@ class TestBibliographyParserValues:
     """Value behaviour of the split parser, pinned against the old regex.
 
     The rewrite (2026-08-06) had to be value-equivalent to the regex it
-    replaced on realistic input. Two external reviews traced the old pattern
-    by hand on these shapes; the assertions below record what both
-    implementations do, so a later refactor cannot flip one silently. Where
+    replaced on realistic input. The old pattern was traced by hand on these
+    shapes; the assertions below record what both implementations do, so a
+    later refactor cannot flip one silently. Where
     the behaviour is a known wart rather than a virtue, the test says so.
     """
 
@@ -838,8 +838,8 @@ class TestBibliographyParserValues:
 
         A deliberate improvement, not a restoration: run against the old
         regex, `["\\']?(.+?)["\\']?` matched the separator SPACE and returned
-        title=" " at "high" confidence. Both external reviews asserted it fell
-        through to partial here; it did not.
+        title=" " at "high" confidence. It was expected to fall through to
+        partial here; it did not.
         """
         import fetch_sep
         raw = "Author, 1999, , Publisher."

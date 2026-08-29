@@ -396,7 +396,7 @@ def test_cleaning_ledger_type_confused_schema_version_is_malformed(tmp_path):
     """`in` compares with `==`, so JSON `true` (True == 1) and `1.0` both
     equalled the int 1 and sailed through as a valid version-1 ledger. The
     gate now takes the TYPE first -- `type(v) is int`, NOT isinstance, since
-    bool subclasses int (external review, 2026-08-25)."""
+    bool subclasses int."""
     for i, bad in enumerate((True, 1.0)):
         rd = tmp_path / f"review-{i}"
         _domain(rd, 1, KUHN, cleaning=dict(CLEAN_KUHN, schema_version=bad),
@@ -855,10 +855,10 @@ def test_barrier_heals_deleted_abstract_field(tmp_path, monkeypatch):
     assert true_text in (tmp_path / "literature-domain-1.bib").read_text(encoding="utf-8")
 
 
-# --- Review round 2 (2026-08-01): fix-verification tests -------------------
+# --- Fix-verification tests ------------------------------------------------
 
 def test_barrier_heals_two_level_nested_mutated_abstract_end_to_end(tmp_path, monkeypatch):
-    """Review finding 1's own reproduction case, run end-to-end through the
+    """The original reproduction case, run end-to-end through the
     REAL (fixed) add_field_to_entry -- no monkeypatch of the splice itself.
     The CURRENT (mutated) abstract is nested two levels deep, which the
     old shallow-nesting regex silently failed to locate, falling through
@@ -1781,8 +1781,8 @@ def test_derived_fields_are_invisible_to_compute_tier(tmp_path, monkeypatch):
     A review moved the venue splice below `compute_tier` so
     that tier invariance would be structural rather than incidental on
     `compute_tier` happening not to read `venue_status`. Nothing pinned that
-    ordering: a reviewer moved the splice back above
-    `parse_entry_fields` and all 49 barrier tests still passed, because they
+    ordering: moving the splice back above `parse_entry_fields` left all 49
+    barrier tests passing, because they
     all assert on the OUTPUT tier, which is unchanged while compute_tier
     ignores the field.
 
@@ -1941,8 +1941,7 @@ def test_a_swallowed_splice_is_never_reported_as_neutralized(tmp_path, monkeypat
     never fail the barrier. But an unchanged chunk still holds exactly one
     `year_suffix =` and still parses, so a well-formedness check alone reads
     as success and the entry lands in `residual_neutralized` while the stale
-    letter survives to disk (external review 2026-08-06, kimi-k3 /
-    gpt-5.6-sol).
+    letter survives to disk.
 
     That is the "never silently" policy violated on the error path, and it is
     a live drop hazard: two surviving stale letters read as a structurally
@@ -2429,7 +2428,7 @@ _REDIRECTED_CAPTURE = {
 
 
 def test_a_capture_that_redirected_onto_an_excluded_host_is_not_promoted(tmp_path, monkeypatch):
-    """The redirect seam (both external reviews, 2026-08-17): an allowed bib
+    """The redirect seam: an allowed bib
     URL whose capture's final_url landed on SEP must be bucketed, never
     probed, never promoted -- otherwise a redirector defeats the exclusion."""
     sys.path.insert(0, str(SCRIPTS_DIR))
@@ -2458,8 +2457,7 @@ _PRIOR_WEB_ENTRY = """@misc{k,
 # section use: the researcher template (agents/domain-literature-researcher.md)
 # emits `howpublished = {\url{...}}`, and web_evidence.extract_url falls
 # through to `howpublished` only when `url` is absent. This pins that the
-# exclusion path handles the REAL shape, not just the convenient one
-# (external review, 2026-08-17).
+# exclusion path handles the REAL shape, not just the convenient one.
 
 
 def test_a_rerun_demotion_of_a_previously_promoted_entry_is_signalled(tmp_path, monkeypatch):
@@ -2494,8 +2492,7 @@ _TOKEN_LOOKALIKE_ENTRY = """@misc{k,
 def test_a_keyword_that_merely_contains_evidence_web_does_not_signal_demotion(tmp_path, monkeypatch):
     """Token-exactness, not substring: a hypothetical keyword like
     "pre-EVIDENCE-WEB-candidate" must not false-positive the demotion signal
-    -- it names an unrelated keyword, not a stamped tier (external review,
-    2026-08-17)."""
+    -- it names an unrelated keyword, not a stamped tier."""
     sys.path.insert(0, str(SCRIPTS_DIR))
     import evidence_barrier as eb_mod
     monkeypatch.setattr(eb_mod.wv, "evaluate_existence",
@@ -2551,7 +2548,7 @@ def test_web_sources_key_set_matches_between_complete_and_error_paths(tmp_path, 
     attachment in the source), so a naive dict-literal diff would wrongly
     ignore them; comparing the REALIZED dicts catches that. The only key
     that legitimately differs is "error" itself, present only when the pass
-    actually failed (external review, 2026-08-17)."""
+    actually failed."""
     complete_eb_mod = _stub_net(monkeypatch)
     complete_report, _ = complete_eb_mod.run_barrier(
         _web_review(tmp_path / "complete"), 1)

@@ -165,7 +165,7 @@ def test_two_entries_with_interior_at_split_correctly():
 def test_crlf_line_endings_still_split():
     """CRLF content: \\r precedes \\n, so the char after each \\n is the
     next line's first char and line-anchored splitting works; pinned
-    because a reviewer plausibly claimed the opposite."""
+    because the opposite is plausible."""
     from enrich_bibliography import parse_bibtex_entries
     content = ("@article{a2020,\r\n  author = {A, B},\r\n  title = {T},\r\n"
                "  year = {2020},\r\n}\r\n\r\n"
@@ -368,7 +368,7 @@ class TestEntryModification:
         """Quote-delimited keywords field: appending must preserve every
         existing token (topic tags + importance level), not replace them.
 
-        Regression (reviewer-reproduced): the field-existence check only
+        Regression: the field-existence check only
         matched brace-delimited `keywords = {...}`. A quote-delimited
         field fell through to add_field_to_entry, which REPLACES a field
         wholesale on a hit -- silently destroying all existing tokens and
