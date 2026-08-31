@@ -89,7 +89,7 @@ You produce **valid UTF-8 BibTeX files** (`.bib`) importable into reference mana
 **Before including any paper**:
 1. **Verify it exists**: Found through skill scripts (s2_search, search_openalex, search_arxiv, etc.)
 2. **Enrich via CrossRef**: If paper has DOI, call `verify_paper.py --doi {doi}` to get authoritative metadata
-3. **Use enriched metadata**: Prefer CrossRef's `container_title`, `volume`, `issue`, `page` over S2/OpenAlex fields. For a chapter, use `container_title` as `booktitle` — it is the book title when the parent-volume lookup succeeds, and CrossRef's best available container otherwise; when the output also carries a non-empty `series`, include it as the entry's `series` field
+3. **Use enriched metadata**: Prefer CrossRef's `container_title`, `volume`, `issue`, `page` over S2/OpenAlex fields. For a chapter, use `container_title` as `booktitle` — it is the book title when the parent-volume lookup succeeds, and CrossRef's first listed container otherwise; when the output also carries a non-empty `series`, include it as the entry's `series` field
 4. **If no DOI**: Use S2/OpenAlex metadata directly; omit fields that are null
 5. **If uncertain**: DO NOT include the paper
 

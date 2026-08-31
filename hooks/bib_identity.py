@@ -473,7 +473,21 @@ def ascii_variants(s: str) -> frozenset[str]:
     word onto a short plain needle (prose "Guest" -> "gust" meeting a bib
     surname "Gust" in the matcher; a References line's "Guest" resolving a
     body "Gust (2020)" citation in lint) -- needs the same year alongside,
-    unobserved in the corpus.
+    and no case was reported by the censuses behind this note. Read that
+    NARROWLY: those censuses enumerate bib surnames and lint citation
+    tokens -- the NEEDLE side -- not arbitrary words on the line side, where
+    (b) lives. They therefore do not establish that (b) is absent from the
+    corpus, and nothing here bounds future input; that is why (b) is
+    accepted rather than retired.
+    Lint additionally has NO backstop -- the matcher path at least has the
+    one cited under (a), but lint_md's _fold_variants is this function bare,
+    so a (b) fold resolves SILENTLY there, and the failure direction is the
+    wrong one for a checker: what was a correct ERROR becomes a clean pass.
+    Pinned in test_lint_md.py::TestCitationCheck by
+    test_guest_gust_false_resolve_is_the_accepted_residual and
+    test_michael_michal_residual_reaches_lint_too (residual (a) reaches lint
+    too). Each pin fails if its own example stops resolving silently;
+    neither detects a widening of the fold.
     Pointer: docs/known-issues/surname-contraction-measurement-2026-08-29/.
     """
     low = unicodedata.normalize("NFC", s.lower().replace("’", "'"))

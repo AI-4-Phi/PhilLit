@@ -207,6 +207,66 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         assert checked is True
         assert errors == []
 
+    def test_guest_gust_false_resolve_is_the_accepted_residual(self):
+        # PIN of an ACCEPTED RESIDUAL, not a prescription. Residual (b) in
+        # ascii_variants' docstring: whole-LINE contraction folds a genuine
+        # digraph word onto a short plain needle - References "Guest"
+        # (contract_fold "gust") resolves a body "Gust (2020)" citation.
+        # Unlike the matcher path, lint has no collision backstop, and the
+        # failure direction is the bad one for a checker: pre-contraction
+        # this fired a correct ERROR, post-contraction it is silent. No
+        # case was reported by the censuses behind the residual, but those
+        # enumerate the NEEDLE side (bib surnames, citation tokens), not
+        # line-side vocabulary, so the class is accepted rather than
+        # retired. This pin fails if THIS example stops resolving silently
+        # (fold tightened, or a backstop that surfaces as an ERROR) - a
+        # tripwire on the decision, not a detector of a widening fold.
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Gust (2020) presses the objection.\n\n"
+            "## References\n\n"
+            'Guest, Dominic. 2020. "An Objection." *Mind* 129: 1--10.\n'
+        )
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+
+    def test_michael_michal_residual_reaches_lint_too(self):
+        # Symmetry pin: test_generate_bibliography.py's
+        # test_residual_michael_michal_homograph_pin covers the matcher
+        # path, and the identical contraction (contract_fold("michael") ==
+        # "michal") reaches lint through the same shared ascii_variants.
+        # Residual (a) is silent HERE too, not merely on the matcher side.
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Michal (2020) argues this.\n\n"
+            "## References\n\n"
+            'Michael, J. 2020. "The Argument." *Mind* 129: 1--10.\n'
+        )
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+
+    def test_negative_control_unrelated_mismatch_still_errors(self):
+        # Without this, a check_citations that returned no errors
+        # UNCONDITIONALLY would pass every contraction test above. An
+        # unrelated body/References mismatch must still ERROR, so the two
+        # accepted-residual pins mean "silently bridges", not "linting off".
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Smith (2020) makes the point.\n\n"
+            "## References\n\n"
+            'Franken, F. 2020. "Unrelated Work." *Mind* 129: 1--10.\n'
+        )
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        # Neither `len(errors) == 1` nor `errors[0]`: both would couple this
+        # control to whether lint later also reports the orphaned entry.
+        assert any("does not resolve" in e for e in errors)
+
     def test_year_suffix_tolerated(self):
         # "(Wiens 2015a)" resolves against a References line dated 2015 even
         # though that entry carries no letter - stays tolerant (no ERROR).
