@@ -222,7 +222,7 @@ grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.j
 - Read preamble and key sections for domain overview
 - Parse bibliography for foundational works cited
 - Use bibliography entries as seeds for further search
-- **Save discovered entry slugs** (REQUIRED): write a JSON file at `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries-domain-N.json` — use the same N as your output filename (`literature-domain-N.bib`) — with format `{"sep_entries": ["slug1", ...], "iep_entries": ["slug1", ...]}`. Create the directory if needed. **Write the file even if you found no entries** (`{"sep_entries": [], "iep_entries": []}`): a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically.
+- **Save discovered entry slugs** (REQUIRED): write a JSON file at `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries-domain-N.json` — use the same N as your output filename (`literature-domain-N.bib`) — with format `{"sep_entries": ["slug1", ...], "iep_entries": ["slug1", ...]}`. Create the directory if needed. **Write the file even if you found no entries** (`{"sep_entries": [], "iep_entries": []}`): a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically. This is enforced mechanically: the Write that CREATES your `literature-domain-N.bib` is DENIED while this file is missing or malformed.
 
 ### Stage 2: PhilPapers
 

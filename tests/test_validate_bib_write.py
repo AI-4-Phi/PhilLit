@@ -57,12 +57,16 @@ def write_payload(file_path: str, content: str) -> str:
 
 class TestPreToolUseWrite:
     def test_valid_bib_allows_with_empty_object(self):
-        out, code = run_hook(write_payload("reviews/x/literature-domain-1.bib", VALID_BIB))
+        # Non-domain-numbered filename: this test is about content
+        # validation, not the slug gate (TestSlugFileGate below), and the
+        # relative "reviews/x" path here does not exist on disk, so a
+        # domain-bib filename would trip the new creation-time slug check.
+        out, code = run_hook(write_payload("reviews/x/literature.bib", VALID_BIB))
         assert out == {}
         assert code == 0
 
     def test_invalid_bib_denies_with_reason(self):
-        out, code = run_hook(write_payload("reviews/x/literature-domain-1.bib", INVALID_BIB))
+        out, code = run_hook(write_payload("reviews/x/literature.bib", INVALID_BIB))
         assert code == 0
         hso = out["hookSpecificOutput"]
         assert hso["hookEventName"] == "PreToolUse"
@@ -77,7 +81,10 @@ class TestPreToolUseWrite:
         assert code == 0
 
     def test_empty_content_allows(self):
-        out, code = run_hook(write_payload("reviews/x/literature-domain-1.bib", ""))
+        # Non-domain-numbered filename: this test is about content
+        # validation (empty content -> no content errors), not the slug
+        # gate (TestSlugFileGate below) -- see test_valid_bib_allows above.
+        out, code = run_hook(write_payload("reviews/x/literature.bib", ""))
         assert out == {}
         assert code == 0
 
@@ -162,5 +169,134 @@ class TestPostToolUseEdit:
         md = tmp_path / "notes.md"
         md.write_text("# notes", encoding="utf-8")
         out, code = run_hook(edit_payload(str(md)))
+        assert out == {}
+        assert code == 0
+
+
+class TestSlugFileGate:
+    """Pins the Stage-1 encyclopedia-slug-file write gate: the Write that
+    CREATES a domain bib is denied while its paired
+    encyclopedia_entries-domain-<stem>.json is missing or malformed."""
+
+    DEFAULT_CONTENT = (
+        "@misc{k2020a,\n  author = {A, B},\n  title = {T},\n"
+        "  year = {2020},\n  note = {n},\n}\n"
+    )
+
+    def test_domain_bib_without_slug_file_is_denied(self, tmp_path):
+        review = tmp_path / "reviews" / "topic"
+        review.mkdir(parents=True)
+        bib = review / "literature-domain-1.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        assert code == 0
+        hso = out["hookSpecificOutput"]
+        assert hso["permissionDecision"] == "deny"
+        reason = hso["permissionDecisionReason"]
+        assert "encyclopedia_entries-domain-1.json" in reason
+        assert "sep_entries" in reason  # tells the agent the exact shape
+
+    def test_domain_bib_with_slug_file_is_allowed(self, tmp_path):
+        review = tmp_path / "reviews" / "topic"
+        slug_dir = review / "intermediate_files" / "json"
+        slug_dir.mkdir(parents=True)
+        (slug_dir / "encyclopedia_entries-domain-1.json").write_text(
+            '{"sep_entries": [], "iep_entries": []}', encoding="utf-8"
+        )
+        bib = review / "literature-domain-1.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        assert out == {}
+        assert code == 0
+
+    def test_non_domain_bib_is_not_slug_checked(self, tmp_path):
+        review = tmp_path / "reviews" / "topic"
+        review.mkdir(parents=True)
+        out, code = run_hook(
+            write_payload(str(review / "literature.bib"), self.DEFAULT_CONTENT)
+        )
+        assert out == {}
+        assert code == 0
+
+    def test_domain_bib_outside_reviews_is_not_slug_checked(self, tmp_path):
+        # A stray root bib is its own defect with its own handling
+        # (SubagentStop validation); the slug gate must not compound it.
+        bib = tmp_path / "literature-domain-1.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        assert out == {}
+        assert code == 0
+
+    def test_named_domain_stem_maps_to_named_slug_file(self, tmp_path):
+        review = tmp_path / "reviews" / "topic"
+        review.mkdir(parents=True)
+        bib = review / "literature-domain-compatibilism.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        reason = out["hookSpecificOutput"]["permissionDecisionReason"]
+        assert "encyclopedia_entries-domain-compatibilism.json" in reason
+
+    def test_slug_error_and_content_errors_are_combined(self, tmp_path):
+        review = tmp_path / "reviews" / "topic"
+        review.mkdir(parents=True)
+        bib = review / "literature-domain-1.bib"
+        out, code = run_hook(write_payload(str(bib), "@article{broken,\n"))
+        reason = out["hookSpecificOutput"]["permissionDecisionReason"]
+        assert "encyclopedia_entries-domain-1.json" in reason
+        # The name promises COMBINATION: the content error must appear too.
+        assert "broken" in reason or "syntax" in reason.lower()
+
+    def test_existing_bib_rewrite_without_slug_file_is_allowed(self, tmp_path):
+        # Legacy reviews predate the slug-file convention; a fix-up Write
+        # over an EXISTING non-empty domain bib must not be held hostage
+        # to a research phase that finished long ago. The gate scopes to
+        # creation only.
+        review = tmp_path / "reviews" / "topic"
+        review.mkdir(parents=True)
+        bib = review / "literature-domain-1.bib"
+        bib.write_text(self.DEFAULT_CONTENT, encoding="utf-8")
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        assert out == {}
+        assert code == 0
+
+    def test_empty_placeholder_does_not_bypass_slug_gate(self, tmp_path):
+        # A zero-byte file (touch, a crashed earlier run) is not an
+        # existing bib -- the creation gate still applies.
+        review = tmp_path / "reviews" / "topic"
+        review.mkdir(parents=True)
+        bib = review / "literature-domain-1.bib"
+        bib.write_text("", encoding="utf-8")
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        out_json = out
+        assert out_json["hookSpecificOutput"]["permissionDecision"] == "deny"
+
+    def test_malformed_slug_file_is_denied(self, tmp_path):
+        # Existence is not enough: garbage bytes written under deny
+        # pressure must not pass (worse than absent - silently malformed).
+        review = tmp_path / "reviews" / "topic"
+        slug_dir = review / "intermediate_files" / "json"
+        slug_dir.mkdir(parents=True)
+        (slug_dir / "encyclopedia_entries-domain-1.json").write_text(
+            "not json", encoding="utf-8"
+        )
+        bib = review / "literature-domain-1.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        assert out["hookSpecificOutput"]["permissionDecision"] == "deny"
+        assert "malformed" in out["hookSpecificOutput"]["permissionDecisionReason"]
+
+    def test_wrong_key_shape_slug_file_is_denied(self, tmp_path):
+        review = tmp_path / "reviews" / "topic"
+        slug_dir = review / "intermediate_files" / "json"
+        slug_dir.mkdir(parents=True)
+        (slug_dir / "encyclopedia_entries-domain-1.json").write_text(
+            '{"sep_entries": "not-a-list"}', encoding="utf-8"
+        )
+        bib = review / "literature-domain-1.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
+        assert out["hookSpecificOutput"]["permissionDecision"] == "deny"
+
+    def test_degenerate_stem_is_not_slug_checked(self, tmp_path):
+        # "literature-domain-.bib" has an empty stem; the (.+) regex does
+        # not match, so only ordinary content validation applies.
+        review = tmp_path / "reviews" / "topic"
+        review.mkdir(parents=True)
+        bib = review / "literature-domain-.bib"
+        out, code = run_hook(write_payload(str(bib), self.DEFAULT_CONTENT))
         assert out == {}
         assert code == 0
