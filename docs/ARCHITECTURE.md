@@ -12,23 +12,23 @@ The literature review workflow is coordinated by the `literature-review` skill (
 
 **Why a skill, not a subagent?**
 - Subagents cannot spawn other subagents (Claude Code constraint)
-- The orchestrator needs to invoke multiple specialized subagents via the Task tool
-- Skills run in main conversation context, which has Task tool access
-- This enables: skill → Task tool → specialized subagents
+- The orchestrator needs to invoke multiple specialized subagents via the Agent tool
+- Skills run in main conversation context, which has Agent tool access
+- This enables: skill → Agent tool → specialized subagents
 
 **Architecture**:
 ```
 User request
     ↓
 /phillit:literature-review skill (main conversation, has Task access)
-    ↓ Task tool
+    ↓ Agent tool
     ├── literature-review-planner (subagent)
     ├── domain-literature-researcher ×N (subagents)
     ├── synthesis-planner (subagent)
     └── synthesis-writer ×N (subagents)
 ```
 
-Specialized subagents (in `agents/`) are invoked via Task tool and cannot themselves invoke other subagents.
+Specialized subagents (in `agents/`) are invoked via the Agent tool and cannot themselves invoke other subagents.
 
 ## Design Pattern: Multi-File-Then-Assemble
 

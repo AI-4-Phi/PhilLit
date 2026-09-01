@@ -40,11 +40,11 @@
 When asked to perform a new literature review:
 1. Invoke the `/phillit:literature-review` skill to begin the 6-phase workflow
 2. The skill creates a new directory in `reviews/` with an informative short name (e.g., `reviews/epistemic-autonomy-ai/`)
-3. The skill coordinates specialized subagents via the Task tool to complete all phases
+3. The skill coordinates specialized subagents via the Agent tool to complete all phases
 
 # Workflow Architecture
 
-The `/phillit:literature-review` skill runs in the main conversation and coordinates the 6-phase workflow (verify environment → plan domains → parallel domain research → synthesis outline → parallel section writing → assemble/lint), dispatching the four subagents in `agents/` via the Task tool (`literature-review-planner`, `domain-literature-researcher`, `synthesis-planner`, `synthesis-writer` — subagents cannot spawn other subagents). The phase-by-phase procedure lives in `skills/literature-review/SKILL.md`; design patterns and rationale in `docs/ARCHITECTURE.md`.
+The `/phillit:literature-review` skill runs in the main conversation and coordinates the 6-phase workflow (verify environment → plan domains → parallel domain research → synthesis outline → parallel section writing → assemble/lint), dispatching the four subagents in `agents/` via the Agent tool — `literature-review-planner`, `domain-literature-researcher`, `synthesis-planner`, `synthesis-writer`; subagents cannot spawn other subagents. The dispatch tool was named `Task` before the rename, and `hooks.json` matches both spellings, so never drop the `Task` matcher when editing it. The phase-by-phase procedure lives in `skills/literature-review/SKILL.md`; design patterns and rationale in `docs/ARCHITECTURE.md`.
 
 # Development
 
