@@ -139,6 +139,18 @@ barrier and every writer runs after it; it is only a hazard if a bib is edited
 and the renderer re-run without re-running the writers. Agents must never write
 this field by hand.
 
+### Same Work Group Field (barrier-stamped)
+
+`same_work_group = {key1, key2, ...}` is added by the evidence barrier
+(Phase 3→4) to entries whose title and first author match across different
+years — usually one work cited twice via a reprint or reissue. It is an
+advisory for the synthesis writer, who cites the group once (see
+`agents/synthesis-writer.md`) rather than presenting the members as distinct
+positions. Absence means not grouped, or grouped but withheld (the group
+collapsed to a single shared citekey, or a citekey carries two conflicting
+comparison years) — not "not a reprint." Agents must never write this field
+by hand.
+
 ### Field Grounding — CRITICAL
 
 **ALL bibliographic fields must come ONLY from API/tool output.**
@@ -247,6 +259,7 @@ An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed).
 | Author as subject | Author (Year) argues... | Frankfurt (1971) argues... |
 | Two authors sharing a surname | (F. Author Year) — add the first initial | (G. Johnson 2024) vs. (R. Johnson 2024) |
 | One author, two works in one year | (Author Year+letter) — the entry's own `year_suffix` | (Menary 2010a) vs. (Menary 2010b) |
+| Reprint cited under its original date | (Author OriginalYear/ReprintYear) — only for entries sharing `same_work_group` | (Reiman 1984/2017) |
 
 **Different people sharing a surname — always add the first initial, whatever
 the years.** This is Chicago's own rule. When the years differ the citations

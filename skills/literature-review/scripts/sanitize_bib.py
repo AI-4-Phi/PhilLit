@@ -8,12 +8,12 @@ exist, but the delivered file must not carry them either). Only `keywords`
 values are sanitized -- an EVIDENCE- string pasted into another field (e.g.
 `note`) is out of scope.
 
-The engine-derived FIELDS (`web_span`, `venue_status`, `year_suffix`) are
-deliberately NOT stripped -- decided by Johannes 2026-08-15, against a
-recommendation to strip the first two. The delivered bib keeps them for
-audit transparency; standard BibTeX/biblatex styles ignore unknown fields, so
-they are inert downstream. Do not add field stripping here without a new
-owner decision.
+The engine-derived FIELDS (`web_span`, `venue_status`, `year_suffix`,
+`urldate`, `archiveurl`, `same_work_group`) are deliberately NOT stripped --
+decided by Johannes 2026-08-15, against a recommendation to strip the first
+two. The delivered bib keeps them for audit transparency; standard
+BibTeX/biblatex styles ignore unknown fields, so they are inert downstream.
+Do not add field stripping here without a new owner decision.
 """
 from __future__ import annotations
 
