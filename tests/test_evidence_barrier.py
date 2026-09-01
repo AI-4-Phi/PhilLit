@@ -3519,6 +3519,8 @@ def test_cross_domain_reprint_pair_is_stamped_and_reported(tmp_path):
         f"literature-domain-1.bib:{_SW_ORIGINAL_KEY}",
         f"literature-domain-2.bib:{_SW_REPRINT_KEY}"]
     assert report["same_work"]["splice_failed"] == []
+    assert json.loads(r.stdout)["same_work"] == {
+        "groups": 1, "stamped_entries": 2, "splice_failed": 0}
 
 
 def test_distinct_years_required(tmp_path):
@@ -3570,6 +3572,10 @@ def test_same_key_across_domains_is_reported_not_stamped(tmp_path):
     assert sorted(m["year"] for m in groups[0]["members"]) == ["1984", "2017"]
     assert groups[0]["key_year_conflict"] == [_SW_ORIGINAL_KEY]
     assert report["same_work"]["stamped_entries"] == []
+    # The case `groups` earns its keep in the printed summary: a group WAS
+    # detected, and it reaches neither stamped_entries nor splice_failed.
+    assert json.loads(r.stdout)["same_work"] == {
+        "groups": 1, "stamped_entries": 0, "splice_failed": 0}
 
 
 def test_mixed_group_with_consistent_duplicate_key_is_stamped(tmp_path):
@@ -3661,6 +3667,31 @@ def test_splice_failure_is_reverted_and_reported(tmp_path, monkeypatch):
     assert sorted(report["same_work"]["splice_failed"]) == [
         f"literature-domain-1.bib:{_SW_ORIGINAL_KEY}",
         f"literature-domain-2.bib:{_SW_REPRINT_KEY}"]
+
+
+def test_a_same_work_splice_failure_reaches_the_printed_summary(
+        tmp_path, monkeypatch, capsys):
+    """SKILL.md makes the printed summary the OPERATOR channel -- the report
+    JSON is opened only when a summary line flags something. A swallowed or
+    reverted splice means the reprint annotation never reached that entry, so
+    the writer can still cite one essay as two positions with nothing saying
+    so. The repo closed this identical omission for year_suffix (2026-08-06),
+    venue_status (2026-08-11) and the web pair (2026-08-16)."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    def _double_splice(entry_text, field, value):
+        lines = entry_text.split("\n")
+        lines.insert(1, f"  {field} = {{{value}}},")
+        lines.insert(1, f"  {field} = {{{value}}},")
+        return "\n".join(lines)
+
+    rd = _sw_review(tmp_path)
+    monkeypatch.setattr(evidence_barrier, "_stamp_optional_field",
+                        _double_splice)
+    assert evidence_barrier.execute(rd, 2) == 0
+    assert json.loads(capsys.readouterr().out)["same_work"] == {
+        "groups": 1, "stamped_entries": 0, "splice_failed": 2}
 
 
 def test_year_variants_group_via_same_work_year(tmp_path):

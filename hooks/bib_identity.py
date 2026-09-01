@@ -517,8 +517,11 @@ def ascii_variants(s: str, contract: bool = True) -> frozenset[str]:
 
 # Whole-field year grammar for same_work_year. Anchored at both ends on
 # purpose: a year field is the whole value or it is not a year at all.
+# `[0-9]` not `\d`, the same convention _INTEGRAL_YEAR_RE states above: `\d`
+# also matches non-ASCII decimal digits, which would key a year against a
+# string no other producer in the pipeline can spell.
 _SAME_WORK_YEAR_RE = re.compile(
-    r"^\s*(\d{4})[a-z]?(?:\s*(?:--?|/)\s*\d{4}[a-z]?)?\s*$")
+    r"^\s*([0-9]{4})[a-z]?(?:\s*(?:--?|/)\s*[0-9]{4}[a-z]?)?\s*$")
 
 
 def same_work_key(title: str, surname: str) -> tuple[str, str] | None:
@@ -534,7 +537,19 @@ def same_work_key(title: str, surname: str) -> tuple[str, str] | None:
     by design. Census (2026-09-01, 45 delivered reviews): 23 groups, ~20
     warranting writer attention; auto-merge measured against and rejected
     (dedup runs after synthesis, and the DOI-guard-refused set holds the
-    genuinely distinct works)."""
+    genuinely distinct works).
+
+    FEED IT RAW FIELD VALUES. The module SCOPE NOTE above applies here in
+    full: `title_key` does not decode LaTeX escapes, so a title keys
+    differently depending on whether the caller pre-decoded it (measured
+    2026-08-20: 149 of 8,517 titled entries diverge). Both declared consumers
+    -- the evidence barrier's annotation and `generate_bibliography`'s Phase 6
+    [SAME-WORK] advisory -- must pass the values as they stand in the .bib,
+    NOT through `clean_bibtex_str`, which `generate_bibliography` applies
+    elsewhere. One owner for the rule buys nothing if the two sides normalize
+    their inputs differently before calling in: that defeats the guarantee
+    through the front door, and it is the exact drift this shared placement
+    exists to prevent."""
     nt = title_key(title or "")
     ns = title_key(surname or "")
     if not nt or not ns:

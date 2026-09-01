@@ -189,7 +189,7 @@ def test_writer_and_planner_know_the_same_work_group_rule():
         encoding="utf-8")
     assert "same_work_group" in writer
     assert "treat them as ONE work" in writer
-    assert "Cite\nthe work ONCE" in writer
+    assert "the work ONCE" in writer
     # The escape hatch stays available -- the annotation is advisory, and a
     # writer that inspects and finds two real works must be able to cite both.
     assert "genuinely distinct" in writer

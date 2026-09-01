@@ -1541,6 +1541,27 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
             "splice_failed": len(
                 (report.get("venue_vetting") or {}).get("splice_failed") or []),
         },
+        # The printed summary is the OPERATOR channel (SKILL.md): the report
+        # JSON is opened only when a line here flags something. A same_work
+        # splice failure means the reprint annotation silently did not reach
+        # that entry -- the writer never sees it, and cites one essay as two
+        # positions, which is the whole defect this pass exists to prevent.
+        # Same closure already made for year_suffix (2026-08-06),
+        # venue_status (2026-08-11) and the web pair (2026-08-16).
+        #
+        # `groups` beside the pair for the same reason venue prints
+        # flagged_entries: the DIFFERENCE is the finding. A group the stamp
+        # gate deliberately declined (one distinct citekey, or a key carrying
+        # two comparison years) reaches neither stamped_entries nor
+        # splice_failed, so without this count it is a detection an operator
+        # cannot see at all.
+        "same_work": {
+            "groups": len((report.get("same_work") or {}).get("groups") or []),
+            "stamped_entries": len(
+                (report.get("same_work") or {}).get("stamped_entries") or []),
+            "splice_failed": len(
+                (report.get("same_work") or {}).get("splice_failed") or []),
+        },
         # A bare assigned-count cannot distinguish "no same-author-same-year
         # groups existed" from "a group existed and deliberately got no
         # letters", which is the one case an operator needs to look at. The
