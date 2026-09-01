@@ -347,10 +347,10 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     word-boundary-strict on the surname: a substring test would let "he"
     resolve against "the" and blind the check for short surnames. A slash
     form (Y1/Y2) whose two years resolve to two DIFFERENT References
-    entries is an ERROR instead: the pair renders as a double listing, so
-    the writer must cite one year and put the original date in prose.
-    Resolution to a single edition (or one line carrying both years) stays
-    tolerated.
+    entries is an ERROR instead: the citation renders against two listings
+    (a reprint pair double-listed, or two distinct works), so the writer
+    must cite one year and put the original date in prose. Resolution to a
+    single edition (or one line carrying both years) stays tolerated.
 
     A citation whose year carries a Chicago letter resolves on
     the BASE year as before; if no candidate reference entry it resolves to
@@ -395,6 +395,17 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
         # side empty means the bib holds a single edition (the legitimate,
         # long-tolerated use), and any shared line means one entry already
         # carries both years.
+        #
+        # False-positive surface, both accepted: (1) the two entries need not
+        # be a reprint pair at all - "(Gutmann and Thompson 1996/2004)"
+        # against a solo Gutmann 1996 and a co-authored Gutmann-and-Thompson
+        # 2004 fires too, even though they are two distinct works, not one
+        # double-listed reprint (the message below is worded to cover both
+        # readings, not just the reprint one); (2) _candidate_lines_for
+        # matches on ANY token, so a multi-surname citation can straddle via
+        # a SIBLING surname at the other year (a References line with a
+        # different co-author sharing one year is enough to make that side
+        # non-empty) rather than the cited work itself repeating.
         if len(base_years) == 2:
             y1, y2 = base_years
             lines_y1 = _candidate_lines_for(
@@ -405,10 +416,11 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
                 errors.append(
                     f"line {lineno}: citation '{raw_ascii}' uses the "
                     f"reprint form but its two years resolve to two "
-                    f"DIFFERENT References entries - the pair renders as a "
-                    f"double listing; cite ONE year (the edition the claim "
-                    f"relies on) and give the original date in prose "
-                    f"(ERROR)")
+                    f"DIFFERENT References entries, so the citation renders "
+                    f"against two listings (a reprint pair double-listed, "
+                    f"or two distinct works); cite ONE year (the edition "
+                    f"the claim relies on) and give the original date in "
+                    f"prose (ERROR)")
         # Residual (b) is no longer silent here: a resolution that exists
         # ONLY through the ae/oe/ue contraction (bib "Mueller" vs prose
         # "Muller", or a line-side digraph word folding onto a short
@@ -514,7 +526,14 @@ def main(argv: list[str] | None = None) -> int:
     if not checked:
         print("citation-check: no ## References section; skipped")
     for err in citation_errors:
-        print(f"ERROR unresolved-citation: {err}")
+        # citation_errors now carries two kinds (unresolved citations and
+        # reprint-form straddles) - a single generic "ERROR citation:" prefix
+        # (mirrors the earlier "WARN citation-suffix:" -> "WARN citation:"
+        # rename below) rather than the old "ERROR unresolved-citation:"
+        # label, which would misdescribe a straddle as a dropped bib entry
+        # and steer a fix into the wrong file (SKILL.md's remedy text is
+        # scoped per-case for exactly this reason).
+        print(f"ERROR citation: {err}")
     for warn in citation_warnings:
         # citation_warnings now carries two kinds (Chicago-letter suffix
         # mismatches and contraction-only resolutions) - a single generic

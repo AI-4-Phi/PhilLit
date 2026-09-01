@@ -364,15 +364,26 @@ Never advance to Phase 6 before all synthesis writers have completed.
    Fix any reported issues before proceeding. The References section is now in scope for linting — verify no false positives from italicized journal names, DOI URLs, or other bibliography formatting.
 
    The linter also verifies every in-text author-year citation resolves to a
-   References entry (ERROR + nonzero exit otherwise). An unresolved citation
-   means the References generator dropped a cited work — fix the body/bib
-   author spelling divergence (or the bib entry) and re-run step 4; never
-   delete the citation to silence the check. This applies to primary and
-   legal sources too (statutes, regulations, treaties, reports): they are
-   cited like any other work, so they need a bib entry — the sanctioned
-   remedy for an unresolved "(GDPR 2016)" is adding the @misc entry, not
-   removing the citation. The check only runs when the file has an exact
-   `## References` heading — confirm the lint output does NOT say
+   References entry (ERROR + nonzero exit otherwise, printed as
+   `ERROR citation: ...`). This channel carries two distinct cases with two
+   distinct remedies — read which one fired before touching anything:
+
+   - **Does not resolve to any References entry**: the References generator
+     dropped a cited work — fix the body/bib author spelling divergence (or
+     the bib entry) and re-run step 4; never delete the citation to silence
+     the check. This applies to primary and legal sources too (statutes,
+     regulations, treaties, reports): they are cited like any other work, so
+     they need a bib entry — the sanctioned remedy for an unresolved
+     "(GDPR 2016)" is adding the @misc entry, not removing the citation.
+   - **Reprint-form straddle** ("uses the reprint form but its two years
+     resolve to two DIFFERENT References entries"): the bib is correct as
+     is — do NOT edit it. The fix is in the PROSE: cite the one year whose
+     edition the claim relies on, and give the original date as prose words
+     instead of the second year (e.g. "Reiman ([1984] 2017)" becomes
+     "Reiman (2017), originally published 1984").
+
+   The check only runs when the file has an exact `## References`
+   heading — confirm the lint output does NOT say
    "citation-check: ... skipped" on a finished review; that message means the
    check never ran, not that it passed.
 

@@ -578,7 +578,7 @@ def test_main_prints_suffix_warning_but_keeps_exit_code(tmp_path, monkeypatch, c
     assert "WARN citation:" in out
     # The binding suffix-TOLERANT decision: a lettered prose cite
     # against an unlettered References entry never reaches the ERROR path.
-    assert "ERROR unresolved-citation:" not in out
+    assert "ERROR citation:" not in out
 
 
 def test_main_prints_contraction_warning_under_the_same_generic_label(
@@ -600,6 +600,31 @@ def test_main_prints_contraction_warning_under_the_same_generic_label(
     assert "WARN citation:" in out
     assert "contraction" in out
     assert "WARN citation-suffix:" not in out
+
+
+def test_main_prints_straddle_error_under_the_generic_citation_prefix(
+        tmp_path, monkeypatch, capsys):
+    # main()-level pin for the CRITICAL fix: a straddle ERROR must print
+    # under "ERROR citation:", not the retired "ERROR unresolved-citation:"
+    # label - that label's documented SKILL.md remedy ("fix the body/bib
+    # spelling divergence") would steer a straddle fix into the wrong file,
+    # since the bib is correct here and the fix is prose-only.
+    import lint_md
+    monkeypatch.setattr(lint_md, "lint_markdown", lambda filepath: 0)
+    md_file = tmp_path / "r.md"
+    md_file.write_text(
+        "Punishment theory (Reiman 1984/2017) is central.\n\n"
+        "## References\n\n"
+        'Reiman, Jeffrey. 1984. "The Case Against Punishment." *Journal*'
+        ' 1: 1--10.\n\n'
+        'Reiman, Jeffrey. 2017. *The Case Against Punishment*. Routledge.\n',
+        encoding="utf-8")
+    rc = lint_md.main([str(md_file)])
+    out = capsys.readouterr().out
+    assert rc == 1
+    assert "ERROR citation:" in out
+    assert "two listings" in out
+    assert "ERROR unresolved-citation:" not in out
 
 
 class TestMainUnreadableFile:
@@ -636,9 +661,12 @@ class TestFoldVariantsAlias:
 
 
 class TestReprintStraddle:
-    """A reprint-form citation (Author Y1/Y2) that resolves to two DIFFERENT
-    References entries renders as a double listing - the slash citation
-    corresponds to no single References line. This must ERROR."""
+    """A reprint-form citation (Author Y1/Y2) whose two years resolve to two
+    DIFFERENT References entries renders against two listings - the slash
+    citation corresponds to no single References line. This must ERROR. The
+    message deliberately does not claim "reprint pair": the same straddle
+    fires for two distinct works sharing a surname (see IMPORTANT-1 below),
+    not only for a double-listed reprint."""
 
     REFS_BOTH_EDITIONS = (
         "## References\n\n"
@@ -653,8 +681,9 @@ class TestReprintStraddle:
                 + self.REFS_BOTH_EDITIONS)
         errors, _, checked = check_citations(text)
         assert checked is True
-        assert any("double listing" in e for e in errors)
-        assert not any("does not resolve" in e for e in errors)
+        assert len(errors) == 1
+        assert "two listings" in errors[0]
+        assert "does not resolve" not in errors[0]
 
     def test_narrative_straddle_is_error(self):
         from lint_md import check_citations
@@ -662,8 +691,29 @@ class TestReprintStraddle:
                 + self.REFS_BOTH_EDITIONS)
         errors, _, checked = check_citations(text)
         assert checked is True
-        assert any("double listing" in e for e in errors)
-        assert not any("does not resolve" in e for e in errors)
+        assert len(errors) == 1
+        assert "two listings" in errors[0]
+        assert "does not resolve" not in errors[0]
+
+    def test_distinct_works_straddle_wording_is_not_reprint_specific(self):
+        # IMPORTANT-1: the straddle can fire on two DISTINCT works sharing a
+        # surname, not a genuine reprint pair - a solo Gutmann 1996 and a
+        # co-authored Gutmann-and-Thompson 2004. The message must not claim
+        # "double listing" / "reprint pair" as fact; it must cover both
+        # readings.
+        from lint_md import check_citations
+        text = (
+            "# T\n\nDeliberation matters (Gutmann and Thompson 1996/2004).\n\n"
+            "## References\n\n"
+            'Gutmann, Amy. 1996. *Color Conscious*. Princeton.\n\n'
+            'Gutmann, Amy, and Dennis Thompson. 2004. *Why Deliberative'
+            ' Democracy?* Princeton.\n'
+        )
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert len(errors) == 1
+        assert "two listings" in errors[0]
+        assert "double listing" not in errors[0]
 
     def test_single_edition_slash_is_silent(self):
         # Bib holds only the 2017 edition - the slash form resolves on the
@@ -703,7 +753,7 @@ class TestReprintStraddle:
         errors, _, checked = check_citations(text)
         assert checked is True
         assert errors == []
-        assert not any("double listing" in e for e in errors)
+        assert not any("two listings" in e for e in errors)
 
     def test_unresolvable_slash_citation_still_gets_existing_error_only(self):
         # Neither year is in References: the existing does-not-resolve ERROR
@@ -716,4 +766,4 @@ class TestReprintStraddle:
         assert checked is True
         assert len(errors) == 1
         assert "does not resolve" in errors[0]
-        assert not any("double listing" in e for e in errors)
+        assert not any("two listings" in e for e in errors)
