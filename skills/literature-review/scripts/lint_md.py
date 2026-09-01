@@ -345,7 +345,12 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     Resolution is deliberately MORE tolerant than the generator's matching
     (transliteration variants, either reprint year, suffix-tolerant) but
     word-boundary-strict on the surname: a substring test would let "he"
-    resolve against "the" and blind the check for short surnames.
+    resolve against "the" and blind the check for short surnames. A slash
+    form (Y1/Y2) whose two years resolve to two DIFFERENT References
+    entries is an ERROR instead: the pair renders as a double listing, so
+    the writer must cite one year and put the original date in prose.
+    Resolution to a single edition (or one line carrying both years) stays
+    tolerated.
 
     A citation whose year carries a Chicago letter resolves on
     the BASE year as before; if no candidate reference entry it resolves to
@@ -381,6 +386,29 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
                 f"line {lineno}: citation '{raw_ascii}' does not resolve to "
                 f"any References entry (ERROR)")
             continue
+        # STRADDLE check: a slash-form citation (len(base_years) == 2) whose
+        # two years each resolve, but to two DIFFERENT References lines, is a
+        # double listing - the citation names one work but the bib holds
+        # both members of a reprint pair (same_work_group), and no single
+        # References line covers the slash form. Fires only when BOTH years
+        # have a non-empty candidate set and those sets are disjoint: one
+        # side empty means the bib holds a single edition (the legitimate,
+        # long-tolerated use), and any shared line means one entry already
+        # carries both years.
+        if len(base_years) == 2:
+            y1, y2 = base_years
+            lines_y1 = _candidate_lines_for(
+                ref_lines, folded_lines, tokens, [y1], _fold_variants)
+            lines_y2 = _candidate_lines_for(
+                ref_lines, folded_lines, tokens, [y2], _fold_variants)
+            if lines_y1 and lines_y2 and not (set(lines_y1) & set(lines_y2)):
+                errors.append(
+                    f"line {lineno}: citation '{raw_ascii}' uses the "
+                    f"reprint form but its two years resolve to two "
+                    f"DIFFERENT References entries - the pair renders as a "
+                    f"double listing; cite ONE year (the edition the claim "
+                    f"relies on) and give the original date in prose "
+                    f"(ERROR)")
         # Residual (b) is no longer silent here: a resolution that exists
         # ONLY through the ae/oe/ue contraction (bib "Mueller" vs prose
         # "Muller", or a line-side digraph word folding onto a short

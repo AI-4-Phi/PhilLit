@@ -633,3 +633,87 @@ class TestFoldVariantsAlias:
         import lint_md
         from bib_identity import ascii_variants
         assert lint_md._fold_variants is ascii_variants
+
+
+class TestReprintStraddle:
+    """A reprint-form citation (Author Y1/Y2) that resolves to two DIFFERENT
+    References entries renders as a double listing - the slash citation
+    corresponds to no single References line. This must ERROR."""
+
+    REFS_BOTH_EDITIONS = (
+        "## References\n\n"
+        'Reiman, Jeffrey. 1984. "The Case Against Punishment." *Journal*'
+        ' 1: 1--10.\n\n'
+        'Reiman, Jeffrey. 2017. *The Case Against Punishment*. Routledge.\n'
+    )
+
+    def test_parenthetical_straddle_is_error(self):
+        from lint_md import check_citations
+        text = ("# T\n\nPunishment theory (Reiman 1984/2017) is central.\n\n"
+                + self.REFS_BOTH_EDITIONS)
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert any("double listing" in e for e in errors)
+        assert not any("does not resolve" in e for e in errors)
+
+    def test_narrative_straddle_is_error(self):
+        from lint_md import check_citations
+        text = ("# T\n\nReiman (1984/2017) argues against punishment.\n\n"
+                + self.REFS_BOTH_EDITIONS)
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert any("double listing" in e for e in errors)
+        assert not any("does not resolve" in e for e in errors)
+
+    def test_single_edition_slash_is_silent(self):
+        # Bib holds only the 2017 edition - the slash form resolves on the
+        # single existing entry. Legitimate, long-tolerated use.
+        from lint_md import check_citations
+        text = (
+            "# T\n\nPunishment theory (Reiman 1984/2017) is central.\n\n"
+            "## References\n\n"
+            'Reiman, Jeffrey. 2017. *The Case Against Punishment*. Routledge.\n'
+        )
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+
+    def test_single_line_carrying_both_years_is_silent(self):
+        # One References line carries both years - not a straddle.
+        from lint_md import check_citations
+        text = (
+            "# T\n\nPunishment theory (Reiman 1984/2017) is central.\n\n"
+            "## References\n\n"
+            'Reiman, Jeffrey. (1984) 2017. *The Case Against Punishment*.'
+            ' Routledge.\n'
+        )
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+
+    def test_comma_multi_cite_is_not_a_slash_form(self):
+        # Pins the extraction assumption: two years in one citation occur
+        # ONLY via the Y1/Y2 slash regex groups. A comma multi-cite parses
+        # as two separate single-year citations, so straddle never fires.
+        from lint_md import check_citations
+        text = ("# T\n\nBoth agree (Smith 2020, Jones 2021).\n\n"
+                "## References\n\n"
+                'Smith, Ann. 2020. "X." *J* 1: 1.\n\n'
+                'Jones, Bo. 2021. "Y." *J* 2: 2.\n')
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+        assert not any("double listing" in e for e in errors)
+
+    def test_unresolvable_slash_citation_still_gets_existing_error_only(self):
+        # Neither year is in References: the existing does-not-resolve ERROR
+        # fires, and the straddle check must not also fire or crash.
+        from lint_md import check_citations
+        text = ("# T\n\nPunishment theory (Reiman 1984/2017) is central.\n\n"
+                "## References\n\n"
+                'Other, Ann. 2020. "Unrelated." *J* 1: 1.\n')
+        errors, _, checked = check_citations(text)
+        assert checked is True
+        assert len(errors) == 1
+        assert "does not resolve" in errors[0]
+        assert not any("double listing" in e for e in errors)
