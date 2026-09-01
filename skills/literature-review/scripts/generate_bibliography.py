@@ -22,8 +22,8 @@ _hook_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
 sys.path.insert(0, str(_hook_dir))
 from bib_validator import LATEX_ESCAPES  # noqa: E402
 from bib_identity import (  # noqa: E402
-    ascii_variants, contract_fold, fallback_key, normalize_doi, title_key,
-    translit_fold,
+    ascii_variants, contract_fold, fallback_key, normalize_doi,
+    same_work_key, same_work_year, title_key, translit_fold,
 )
 from metadata_cleaner import marker_removed_fields  # noqa: E402
 
@@ -87,6 +87,24 @@ def _clean_name_parts(parts: list[str]) -> list[str]:
 def _get_full_surname(person) -> str:
     """Construct full surname from prelast_names + last_names."""
     parts = _clean_name_parts(person.prelast_names + person.last_names)
+    return " ".join(p for p in parts if p)
+
+
+def _raw_surname(person) -> str:
+    """UN-decoded surname, for bib_identity.same_work_key only.
+
+    Deliberately NOT _get_full_surname: that applies clean_bibtex_str's
+    LaTeX decode, and same_work_key's docstring requires RAW field values
+    so this advisory's grouping agrees with the evidence barrier's, which
+    also feeds raw text (year_suffix.first_surname_raw). A decoded surname
+    disagrees with the barrier's raw one on LaTeX-escaped names -- e.g.
+    decoded "Müller" folds to "muller" while raw "M{\\"u}ller" folds to
+    "m u ller" (title_key treats the surviving brace/backslash as
+    word-breaking punctuation) -- which would silently defeat the
+    shared-helper design (pinned by
+    TestSameWorkCitedAdvisory.test_grouping_agrees_with_barrier_helper_on_hard_surnames
+    in tests/test_generate_bibliography.py)."""
+    parts = person.prelast_names + person.last_names
     return " ".join(p for p in parts if p)
 
 
@@ -2005,6 +2023,50 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     return list(cited.items())
 
 
+def warn_same_work_cited(cited: list) -> None:
+    """[SAME-WORK] advisory: >=2 CITED entries share bib_identity's
+    same_work_key with different same_work_years - usually one work cited
+    as two (a reprint and its original; the barrier's same_work_group
+    annotation upstream marks the same groups, via the SAME shared
+    helpers - never re-implement the rule locally). Print-only on the
+    [SAME-WORK] channel; never blocks, never merges, exit code unchanged -
+    the DOI guard and Phase 6 dedup are untouched.
+
+    Feeds same_work_key RAW field values (entry.fields.get, _raw_surname),
+    NOT the decoded _get_field/_get_full_surname this module uses
+    elsewhere - see _raw_surname's docstring and same_work_key's "FEED IT
+    RAW FIELD VALUES" in hooks/bib_identity.py.
+
+    Prints to stderr, matching every other diagnostic in this module
+    ([COLLISION], [TITLE], [DEDUP], the match/write summary lines) - this
+    IS the [COLLISION] channel, not a new stream.
+
+    NOTE for anyone measuring: this fires whether the double-cite is a
+    defect or a deliberate both-editions citation, so its corpus rate is
+    an upper bound on the defect rate, not an estimate of it."""
+    groups: dict = {}
+    for key, entry in cited:
+        persons = entry.persons.get("author") or entry.persons.get("editor") or []
+        if not persons:
+            continue
+        gkey = same_work_key(entry.fields.get("title") or "",
+                              _raw_surname(persons[0]))
+        year = same_work_year(entry.fields.get("year"))
+        if gkey is None or not year:
+            continue
+        groups.setdefault(gkey, []).append((key, year))
+    for _gkey, members in sorted(groups.items()):
+        years = {y for _k, y in members}
+        if len(members) < 2 or len(years) < 2:
+            continue
+        names = ", ".join(
+            "'" + _ascii(k) + "' (" + y + ")" for k, y in sorted(members))
+        print("  [SAME-WORK] " + names
+              + " share title and first author across years - likely ONE "
+              "work cited as two (reprint); the prose should treat them as "
+              "one work or distinguish the editions explicitly", file=sys.stderr)
+
+
 def generate_references(entries: list[tuple[str, object]]) -> str:
     """Format cited entries as a ## References section."""
     # Sort by first author surname, then year
@@ -2064,6 +2126,8 @@ def main():
     if not cited:
         print("Warning: No cited entries found. No references generated.", file=sys.stderr)
         sys.exit(0)
+
+    warn_same_work_cited(cited)
 
     # Log matched entries
     for key, _entry in sorted(cited, key=lambda x: x[0]):

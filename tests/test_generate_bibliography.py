@@ -2966,3 +2966,126 @@ class TestTitleMentionWiring:
             "## Review\n\nThe debate has moved on to other questions.\n",
             generate_references(find_cited_entries(doc, bib)))
         assert [k for k, _ in find_cited_entries(edited, bib)] == []
+
+
+# =============================================================================
+# Phase 6 [SAME-WORK] cited-pair advisory
+# =============================================================================
+
+class TestSameWorkCitedAdvisory:
+    """warn_same_work_cited: print-only advisory when >=2 CITED entries share
+    bib_identity's same_work_key with different same_work_years - usually one
+    work cited as both a reprint and its original. Never blocks, never
+    merges; exit code and generated References output are untouched."""
+
+    _BIB = """
+@incollection{reiman1984privacy,
+  author = {Reiman, Jeffrey},
+  title = {Privacy, Intimacy, and Personhood},
+  booktitle = {Philosophical Dimensions of Privacy},
+  year = {1984},
+}
+@incollection{reiman2017privacy,
+  author = {Reiman, Jeffrey},
+  title = {Privacy, Intimacy, and Personhood},
+  booktitle = {Privacy (Routledge)},
+  year = {2017},
+}
+@article{other2020work,
+  author = {Other, Ann},
+  title = {A Different Work},
+  journal = {Mind},
+  year = {2020},
+}
+"""
+
+    def test_cited_reprint_pair_prints_advisory(self, capsys):
+        # stderr, not stdout: matches every other diagnostic in this module
+        # ([COLLISION], [TITLE], [DEDUP]) - this IS the [COLLISION] channel.
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        db = parse_string(self._BIB, "bibtex")
+        cited = [(k, e) for k, e in db.entries.items()]
+        gb.warn_same_work_cited(cited)
+        err = capsys.readouterr().err
+        assert "[SAME-WORK]" in err
+        assert "reiman1984privacy" in err and "reiman2017privacy" in err
+        assert "other2020work" not in err
+
+    def test_single_member_or_same_year_prints_nothing(self, capsys):
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        db = parse_string(self._BIB, "bibtex")
+        cited = [("reiman1984privacy", db.entries["reiman1984privacy"]),
+                 ("other2020work", db.entries["other2020work"])]
+        gb.warn_same_work_cited(cited)
+        assert "[SAME-WORK]" not in capsys.readouterr().err
+
+    def test_grouping_agrees_with_barrier_helper_on_hard_surnames(self):
+        # Cross-module drift pin: the barrier keys on
+        # year_suffix.first_surname_raw(fields) while this advisory keys on
+        # gb._raw_surname(persons[0]) -- both must feed same_work_key
+        # RAW field values (bib_identity.same_work_key's docstring: "FEED IT
+        # RAW FIELD VALUES") identically for particled, hyphenated, and
+        # diacritic surnames. Deliberately NOT gb._get_full_surname, which
+        # applies clean_bibtex_str's LaTeX decode and would disagree with
+        # the barrier's raw text on the diacritic case below (measured:
+        # decoded "Müller" folds to "muller", raw "M{\"u}ller" folds to
+        # "m u ller" -- a real divergence, not a hypothetical one).
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent.parent / "hooks"))
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        import year_suffix as ys
+        from bib_identity import same_work_key
+        for field, name in (("author", "van der Deijl, Willem"),
+                            ("author", "Sogaard-Smith, Anne"),
+                            ("author", "M{\\\"u}ller, Eva"),
+                            # editor-only entry: both sides must apply the
+                            # same editor fallback (first_surname_raw does,
+                            # line ~196 of year_suffix.py - pinned here).
+                            ("editor", "Editor-Only, Named")):
+            bib = ("@article{k1,\n  " + field + " = {" + name + "},\n"
+                   "  title = {A Title},\n  year = {2020},\n}")
+            db = parse_string(bib, "bibtex")
+            entry = db.entries["k1"]
+            persons = (entry.persons.get("author")
+                       or entry.persons.get("editor"))
+            via_advisory = same_work_key(
+                entry.fields.get("title") or "",
+                gb._raw_surname(persons[0]))
+            via_barrier = same_work_key(
+                "A Title", ys.first_surname_raw(
+                    {field: name, "title": "A Title"}))
+            assert via_advisory == via_barrier
+
+    def test_multiple_groups_print_in_deterministic_order(self, capsys):
+        # Two groups in one cited set: two [SAME-WORK] lines, ordered by
+        # group key (sorted(groups.items()) -- rerun-stable output), NOT
+        # by insertion order. The aaronson pair is placed FIRST in the bib
+        # text (so it is inserted into `groups` first) while its title_key
+        # ("zzz title") sorts AFTER the reiman group's ("privacy intimacy
+        # and personhood") -- insertion order and sorted order disagree,
+        # so this only passes if the implementation actually sorts.
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        bib = """
+@article{aaronson2000zzz,
+  author = {Aaronson, Ann},
+  title = {Zzz Title},
+  year = {2000},
+}
+@article{aaronson2010zzz,
+  author = {Aaronson, Ann},
+  title = {Zzz Title},
+  year = {2010},
+}
+""" + self._BIB
+        db = parse_string(bib, "bibtex")
+        cited = [(k, e) for k, e in db.entries.items()]
+        gb.warn_same_work_cited(cited)
+        err = capsys.readouterr().err
+        lines = [line for line in err.splitlines() if "[SAME-WORK]" in line]
+        assert len(lines) == 2
+        assert "reiman1984privacy" in lines[0] and "reiman2017privacy" in lines[0]
+        assert "aaronson2000zzz" in lines[1] and "aaronson2010zzz" in lines[1]
