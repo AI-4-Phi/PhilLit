@@ -484,8 +484,17 @@ def ascii_variants(s: str, contract: bool = True) -> frozenset[str]:
     accepted rather than retired.
     Since v0.5.7 lint surfaces a contraction-only resolution as a WARN
     (check_citations; measured 2026-09-01: 1 firing per 34 reviews, 0
-    regressions), so a (b) fold no longer resolves silently there. The
-    matcher path's side of (b) is unchanged.
+    regressions), so a (b) fold no longer resolves silently there -- but only
+    when the contraction is the citation's ONLY resolution path. A
+    multi-token citation resolving cleanly via a sibling token still masks a
+    contraction-only bridge on another token ("(Smith and Mueller 2018)"
+    against bib "Smith, Ann, and Hans Muller. 2018." resolves via Smith, no
+    WARN for the Muller/Muller bridge), and a References section holding a
+    sibling entry that resolves the citation without contraction still masks
+    a genuinely ambiguous contraction-only entry (bib "Mueller, Hans. 2018."
+    and "Muller, Eva. 2018." both present: body "Muller (2018)" resolves via
+    the Muller line, no WARN despite the two-person ambiguity). The matcher
+    path's side of (b) is unchanged.
     Pinned in test_lint_md.py::TestCitationCheck by
     test_guest_gust_false_resolve_now_warns and
     test_michael_michal_residual_reaches_lint_too (residual (a) reaches lint

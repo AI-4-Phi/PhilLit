@@ -352,7 +352,8 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         # Without this, a check_citations that returned no errors
         # UNCONDITIONALLY would pass every contraction test above. An
         # unrelated body/References mismatch must still ERROR, so the two
-        # accepted-residual pins mean "silently bridges", not "linting off".
+        # accepted-residual pins mean "resolves and now WARNs", not
+        # "linting off".
         from lint_md import check_citations
         text = (
             "# Title\n\n"
@@ -554,10 +555,31 @@ def test_main_prints_suffix_warning_but_keeps_exit_code(tmp_path, monkeypatch, c
     # must arrive as WARN. (The old `"ERROR" not in out` was vacuous twice
     # over - the fixture raises no citation error, and lint_markdown is
     # stubbed, so nothing could have printed one.)
-    assert "WARN citation-suffix:" in out
+    assert "WARN citation:" in out
     # The binding suffix-TOLERANT decision: a lettered prose cite
     # against an unlettered References entry never reaches the ERROR path.
     assert "ERROR unresolved-citation:" not in out
+
+
+def test_main_prints_contraction_warning_under_the_same_generic_label(
+        tmp_path, monkeypatch, capsys):
+    # citation_warnings holds two kinds since v0.5.7 (suffix mismatches and
+    # contraction-only resolutions); this pins that the contraction kind
+    # also renders under the truthful generic "WARN citation:" prefix, not
+    # the retired "WARN citation-suffix:" label that would misdescribe it.
+    import lint_md
+    monkeypatch.setattr(lint_md, "lint_markdown", lambda filepath: 0)
+    md_file = tmp_path / "r.md"
+    md_file.write_text(
+        "Muller (2018) argues this.\n\n## References\n\n"
+        'Mueller, Hans. 2018. "A Work." *Mind* 127: 1--10.\n',
+        encoding="utf-8")
+    rc = lint_md.main([str(md_file)])
+    out = capsys.readouterr().out
+    assert rc == 0
+    assert "WARN citation:" in out
+    assert "contraction" in out
+    assert "WARN citation-suffix:" not in out
 
 
 class TestMainUnreadableFile:

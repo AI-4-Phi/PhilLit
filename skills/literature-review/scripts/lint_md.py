@@ -390,6 +390,18 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
         # person/work") is one action however often the citation repeats,
         # unlike the per-instance ERROR channel where each line needs an
         # edit.
+        #
+        # Two known blind spots, both accepted: a multi-token citation that
+        # resolves cleanly via a sibling token still masks a contraction-only
+        # bridge on another token ("(Smith and Mueller 2018)" against bib
+        # "Smith, Ann, and Hans Muller. 2018." resolves via Smith, no WARN
+        # for the Muller/Muller bridge); and a References section holding a
+        # sibling entry that resolves the citation without contraction still
+        # masks a genuinely ambiguous contraction-only entry (bib "Mueller,
+        # Hans. 2018." and "Muller, Eva. 2018." both present: body
+        # "Muller (2018)" resolves via the Muller line, no WARN despite the
+        # two-person ambiguity). The WARN fires only when the citation's ONLY
+        # resolution path is the contraction.
         if not _candidate_lines_for(
                 ref_lines, unc_folded_lines, tokens, base_years,
                 _fold_uncontracted):
@@ -468,7 +480,11 @@ def main(argv: list[str] | None = None) -> int:
     for err in citation_errors:
         print(f"ERROR unresolved-citation: {err}")
     for warn in citation_warnings:
-        print(f"WARN citation-suffix: {warn}")
+        # citation_warnings now carries two kinds (Chicago-letter suffix
+        # mismatches and contraction-only resolutions) - a single generic
+        # prefix that is truthful for both, rather than the old
+        # "citation-suffix" label that would mislabel a contraction WARN.
+        print(f"WARN citation: {warn}")
     if citation_errors:
         rc = rc or 1
 
