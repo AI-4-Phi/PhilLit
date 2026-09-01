@@ -230,6 +230,14 @@ class TestAsciiVariants:
         assert "bohm" in ascii_variants("B\u00f6hm")
         assert "bohm" in ascii_variants("Boehm")
 
+    def test_ascii_variants_contract_false_omits_contraction(self):
+        from bib_identity import ascii_variants
+        full = ascii_variants("S\u00f8gaard")
+        plain = ascii_variants("S\u00f8gaard", contract=False)
+        assert "sogaard" in full
+        assert "sogaard" not in plain
+        assert plain <= full
+
 
 class TestContractFold:
     """contract_fold: the third axis of symmetric surname matching -

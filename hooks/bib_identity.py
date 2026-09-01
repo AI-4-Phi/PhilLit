@@ -430,7 +430,7 @@ def contract_fold(s: str) -> str:
     return _contract_ascii(translit_fold(s))
 
 
-def ascii_variants(s: str) -> frozenset[str]:
+def ascii_variants(s: str, contract: bool = True) -> frozenset[str]:
     """Lowercased ASCII variants of a name: the NFKD-stripped fold, the
     transliterated fold, and the contracted fold of each, so body "Fraenken"
     meets bib "Fränken" (ä -> a AND ä -> ae) AND body "Fraenken" meets bib
@@ -440,6 +440,9 @@ def ascii_variants(s: str) -> frozenset[str]:
     diaeresis rather than a precomposed character) is NFC-recomposed first so
     the transliteration table (keyed on precomposed characters) still matches
     it. Empty variants are dropped (an empty needle would match everything).
+
+    `contract=False` returns only the NFKD + translit axes -- lint's
+    contraction-only WARN compares the two sets.
 
     The returned set is unchanged for a name with no "ae"/"oe"/"ue" substring
     in any GENERATED variant, and for a name whose variant set is already
@@ -479,20 +482,23 @@ def ascii_variants(s: str) -> frozenset[str]:
     (b) lives. They therefore do not establish that (b) is absent from the
     corpus, and nothing here bounds future input; that is why (b) is
     accepted rather than retired.
-    Lint additionally has NO backstop -- the matcher path at least has the
-    one cited under (a), but lint_md's _fold_variants is this function bare,
-    so a (b) fold resolves SILENTLY there, and the failure direction is the
-    wrong one for a checker: what was a correct ERROR becomes a clean pass.
+    Since v0.5.7 lint surfaces a contraction-only resolution as a WARN
+    (check_citations; measured 2026-09-01: 1 firing per 34 reviews, 0
+    regressions), so a (b) fold no longer resolves silently there. The
+    matcher path's side of (b) is unchanged.
     Pinned in test_lint_md.py::TestCitationCheck by
-    test_guest_gust_false_resolve_is_the_accepted_residual and
+    test_guest_gust_false_resolve_now_warns and
     test_michael_michal_residual_reaches_lint_too (residual (a) reaches lint
-    too). Each pin fails if its own example stops resolving silently;
-    neither detects a widening of the fold.
+    too) -- both pins now assert the WARN fires rather than that the
+    resolution stays silent. Each pin fails if its own example stops
+    resolving, or stops warning; neither detects a widening of the fold.
     Pointer: docs/known-issues/surname-contraction-measurement-2026-08-29/.
     """
     low = unicodedata.normalize("NFC", s.lower().replace("’", "'"))
     nfkd = unicodedata.normalize("NFKD", low).encode("ascii", "ignore").decode()
     variants = frozenset(v for v in (nfkd, translit_fold(s)) if v)
+    if not contract:
+        return variants
     # Base variants are already ASCII, so contracting them directly equals
     # contract_fold minus the redundant re-transliteration.
     contracted = frozenset(

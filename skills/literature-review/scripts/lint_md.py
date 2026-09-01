@@ -312,6 +312,31 @@ def find_refs_heading(text: str) -> tuple[int, int] | None:
 _find_refs_heading = find_refs_heading
 
 
+def _candidate_lines_for(ref_lines, folded_lines, tokens, base_years, fold_fn):
+    """Reference lines this citation resolves to under fold_fn (which must
+    be the SAME fold folded_lines was built with)."""
+    matches = []
+    for ln, line_variants in zip(ref_lines, folded_lines):
+        if not any(y in ln for y in base_years):
+            continue
+        hit = False
+        for tok in tokens:
+            for tv in fold_fn(tok):
+                pat = re.compile(r"\b" + re.escape(tv) + r"\b")
+                if any(pat.search(lv) for lv in line_variants):
+                    hit = True
+                    break
+            if hit:
+                break
+        if hit:
+            matches.append(ln)
+    return matches
+
+
+def _fold_uncontracted(s: str) -> frozenset:
+    return ascii_variants(s, contract=False)
+
+
 def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     """Verify every in-text author-year citation resolves to a References
     entry. Returns (errors, warnings, checked); checked=False when the file
@@ -327,7 +352,8 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     carries that same letter, it is a WARN, not an ERROR - the work is
     present in References, but the letter itself doesn't match anything
     (a writer typo or a stale letter), which a reader can notice but a
-    build should not fail on.
+    build should not fail on. A resolution that exists only through the
+    contraction axis is reported as a WARN.
     """
     span = _find_refs_heading(text)
     if span is None:
@@ -335,8 +361,10 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
     body, refs = text[:span[0]], text[span[1]:]
     ref_lines = [ln for ln in refs.splitlines() if ln.strip()]
     folded_lines = [_fold_variants(ln) for ln in ref_lines]
+    unc_folded_lines = [_fold_uncontracted(ln) for ln in ref_lines]
     errors: list[str] = []
     warnings: list[str] = []
+    contraction_hits: dict = {}
     for lineno, raw, tokens, years in extract_citations(body):
         base_years = [y.rstrip("abcdefghijklmnopqrstuvwxyz") for y in years]
         # cp1252-safe: the citation text is exactly where non-ASCII lives, and
@@ -346,24 +374,28 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
         # first one: References routinely holds two "Menary 2010" entries, and
         # the suffix check below has to ask whether ANY of them carries the
         # requested letter.
-        candidate_lines = []
-        for ln, line_variants in zip(ref_lines, folded_lines):
-            if not any(y in ln for y in base_years):
-                continue
-            for tok in tokens:
-                for tv in _fold_variants(tok):
-                    pat = re.compile(r"\b" + re.escape(tv) + r"\b")
-                    if any(pat.search(lv) for lv in line_variants):
-                        candidate_lines.append(ln)
-                        break
-                else:
-                    continue
-                break
+        candidate_lines = _candidate_lines_for(
+            ref_lines, folded_lines, tokens, base_years, _fold_variants)
         if not candidate_lines:
             errors.append(
                 f"line {lineno}: citation '{raw_ascii}' does not resolve to "
                 f"any References entry (ERROR)")
             continue
+        # Residual (b) is no longer silent here: a resolution that exists
+        # ONLY through the ae/oe/ue contraction (bib "Mueller" vs prose
+        # "Muller", or a line-side digraph word folding onto a short
+        # needle) is flagged for verification. Measured firing rate:
+        # 1 per 34 reviews (2026-09-01 census). ONE warning per distinct
+        # citation identity, lines aggregated: the remedy ("verify same
+        # person/work") is one action however often the citation repeats,
+        # unlike the per-instance ERROR channel where each line needs an
+        # edit.
+        if not _candidate_lines_for(
+                ref_lines, unc_folded_lines, tokens, base_years,
+                _fold_uncontracted):
+            contraction_hits.setdefault(
+                (tuple(tokens), tuple(sorted(set(base_years)))),
+                [raw_ascii, []])[1].append(lineno)
         # It resolved on the BASE year. If the prose letters a work and no
         # candidate reference carries that letter, a reader cannot tell which
         # work is meant. WARN, never ERROR - hard-failing a run on a writer's
@@ -394,6 +426,13 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
                     f"line {lineno}: citation '{raw_ascii}' carries the suffix "
                     f"'{letter}' but no References entry it resolves to does "
                     f"(WARN)")
+    for (_toks, _yrs), (raw_ascii, linenos) in contraction_hits.items():
+        lines = ", ".join(str(n) for n in linenos)
+        warnings.append(
+            f"line{'s' if len(linenos) > 1 else ''} {lines}: citation "
+            f"'{raw_ascii}' resolves only through ae/oe/ue contraction "
+            f"(bib 'Mueller' vs prose 'Muller' shape) - verify it cites "
+            f"the same person and work (WARN)")
     return errors, warnings, True
 
 

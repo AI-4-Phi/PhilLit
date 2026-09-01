@@ -195,7 +195,10 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         # References line spelling "Aarøe" resolves because ascii_variants
         # applied to the whole reference LINE now also carries the
         # contracted fold (translit "aaroee" -> contracted "aaroe"), meeting
-        # the body's plain "aaroe" needle.
+        # the body's plain "aaroe" needle. Since v0.5.7 this resolution is
+        # ONLY visible under the full fold (not under contract=False on
+        # both sides), so it now also surfaces as a contraction WARN rather
+        # than resolving silently.
         from lint_md import check_citations
         text = (
             "# Title\n\n"
@@ -203,24 +206,22 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
             "## References\n\n"
             'Aarøe, Lene. 2015. "Political Attitudes." *Journal* 2: 3--4.\n'
         )
-        errors, _, checked = check_citations(text)
+        errors, warnings, checked = check_citations(text)
         assert checked is True
         assert errors == []
+        assert any("contraction" in w for w in warnings)
 
-    def test_guest_gust_false_resolve_is_the_accepted_residual(self):
-        # PIN of an ACCEPTED RESIDUAL, not a prescription. Residual (b) in
-        # ascii_variants' docstring: whole-LINE contraction folds a genuine
-        # digraph word onto a short plain needle - References "Guest"
-        # (contract_fold "gust") resolves a body "Gust (2020)" citation.
-        # Unlike the matcher path, lint has no collision backstop, and the
-        # failure direction is the bad one for a checker: pre-contraction
-        # this fired a correct ERROR, post-contraction it is silent. No
-        # case was reported by the censuses behind the residual, but those
-        # enumerate the NEEDLE side (bib surnames, citation tokens), not
-        # line-side vocabulary, so the class is accepted rather than
-        # retired. This pin fails if THIS example stops resolving silently
-        # (fold tightened, or a backstop that surfaces as an ERROR) - a
-        # tripwire on the decision, not a detector of a widening fold.
+    def test_guest_gust_false_resolve_now_warns(self):
+        # Residual (b) in ascii_variants' docstring: whole-LINE contraction
+        # folds a genuine digraph word onto a short plain needle -
+        # References "Guest" (contract_fold "gust") resolves a body
+        # "Gust (2020)" citation. Unlike the matcher path, lint has no
+        # collision backstop - but since v0.5.7 the resolution is no longer
+        # silent: it exists only under the full fold (not under
+        # contract=False on both sides), so it now surfaces as a
+        # contraction WARN for the writer to verify. This pin's subject
+        # changed from "silent residual" to "surfaced residual" - it now
+        # fails if the WARN stops firing on this example.
         from lint_md import check_citations
         text = (
             "# Title\n\n"
@@ -228,16 +229,19 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
             "## References\n\n"
             'Guest, Dominic. 2020. "An Objection." *Mind* 129: 1--10.\n'
         )
-        errors, _, checked = check_citations(text)
+        errors, warnings, checked = check_citations(text)
         assert checked is True
         assert errors == []
+        assert any("contraction" in w for w in warnings)
 
     def test_michael_michal_residual_reaches_lint_too(self):
         # Symmetry pin: test_generate_bibliography.py's
         # test_residual_michael_michal_homograph_pin covers the matcher
         # path, and the identical contraction (contract_fold("michael") ==
         # "michal") reaches lint through the same shared ascii_variants.
-        # Residual (a) is silent HERE too, not merely on the matcher side.
+        # Residual (a) now surfaces as a contraction WARN on the lint side
+        # (v0.5.7) while remaining silent on the matcher side, which has no
+        # equivalent WARN channel.
         from lint_md import check_citations
         text = (
             "# Title\n\n"
@@ -245,9 +249,104 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
             "## References\n\n"
             'Michael, J. 2020. "The Argument." *Mind* 129: 1--10.\n'
         )
-        errors, _, checked = check_citations(text)
+        errors, warnings, checked = check_citations(text)
         assert checked is True
         assert errors == []
+        assert any("contraction" in w for w in warnings)
+
+    def test_mueller_in_refs_muller_in_prose_warns(self):
+        # The contraction-ONLY class: bib spells the digraph out, prose
+        # contracts it. Resolves (no ERROR), but flagged for verification.
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Muller (2018) argues this.\n\n"
+            "## References\n\n"
+            'Mueller, Hans. 2018. "A Work." *Mind* 127: 1--10.\n'
+        )
+        errors, warnings, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+        assert any("contraction" in w for w in warnings)
+
+    def test_umlaut_muller_plain_muller_does_not_warn(self):
+        # PIN of the measured framing correction: the roadmap feared this
+        # pair as "the common case" the WARN would fire on. It resolves via
+        # the plain NFKD axis (u-umlaut -> u); no contraction involved, no
+        # WARN. If this test fails, the WARN's precondition has widened.
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Muller (2015) reports findings.\n\n"
+            "## References\n\n"
+            'Müller, Eva. 2015. "Findings." *Journal* 2: 3--4.\n'
+        )
+        errors, warnings, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+        assert not any("contraction" in w for w in warnings)
+
+    def test_ordinary_resolution_does_not_warn(self):
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Smith (2020) makes the point.\n\n"
+            "## References\n\n"
+            'Smith, Ann. 2020. "The Point." *Mind* 129: 1--10.\n'
+        )
+        errors, warnings, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+        assert not any("contraction" in w for w in warnings)
+
+    def test_token_side_contraction_also_warns(self):
+        # Reverse direction of the Mueller/Muller case: bib "Muller",
+        # prose "Mueller" - the TOKEN's contracted variant bridges. Both
+        # sides of the fold are in the firing predicate.
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Mueller (2018) argues this.\n\n"
+            "## References\n\n"
+            'Muller, Hans. 2018. "A Work." *Mind* 127: 1--10.\n'
+        )
+        errors, warnings, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+        assert any("contraction" in w for w in warnings)
+
+    def test_fold_variants_alias_still_patchable_with_single_arg_callable(self):
+        # External harnesses (docs/known-issues measurement scripts)
+        # monkeypatch lint_md._fold_variants with plain single-argument
+        # callables. The WARN machinery must never route contract= through
+        # the alias.
+        import lint_md
+        orig = lint_md._fold_variants
+        lint_md._fold_variants = lambda s: frozenset({s.lower()})
+        try:
+            _errors, _warnings, checked = lint_md.check_citations(
+                "# T\n\nSmith (2020) says.\n\n## References\n\n"
+                'Smith, Ann. 2020. "W." *Mind* 1: 1--2.\n')
+        finally:
+            lint_md._fold_variants = orig
+        assert checked is True
+
+    def test_repeated_contraction_citation_warns_once_with_all_lines(self):
+        # Same "Muller (2018)" cited on three lines: ONE warning naming
+        # all three line numbers (the remedy is one verification action).
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Muller (2018) argues this.\n\n"
+            "Later, Muller (2018) extends it.\n\n"
+            "Finally Muller (2018) concludes.\n\n"
+            "## References\n\n"
+            'Mueller, Hans. 2018. "A Work." *Mind* 127: 1--10.\n'
+        )
+        _errors, warnings, _checked = check_citations(text)
+        contraction = [w for w in warnings if "contraction" in w]
+        assert len(contraction) == 1
+        assert "3" in contraction[0] and "5" in contraction[0] and "7" in contraction[0]
 
     def test_negative_control_unrelated_mismatch_still_errors(self):
         # Without this, a check_citations that returned no errors
