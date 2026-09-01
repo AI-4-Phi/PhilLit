@@ -3021,6 +3021,79 @@ class TestSameWorkCitedAdvisory:
         gb.warn_same_work_cited(cited)
         assert "[SAME-WORK]" not in capsys.readouterr().err
 
+        # The SAME-YEAR half of this test's name: two entries sharing
+        # title AND first author AND year, with distinct DOIs, are exactly
+        # the DOI-guard-refused shape that dedup deliberately leaves
+        # unmerged (see docs/known-issues/reprint-dedup-measurement-
+        # 2026-09-01/README.md) -- the advisory must stay off it too.
+        # Without `or len(years) < 2` in warn_same_work_cited this group
+        # would (wrongly) fire.
+        same_year_bib = """
+@article{barry2016a,
+  author = {Barry, Ann},
+  title = {Same Title Here},
+  journal = {Journal A},
+  year = {2016},
+  doi = {10.1/aaa},
+}
+@article{barry2016b,
+  author = {Barry, Ann},
+  title = {Same Title Here},
+  journal = {Journal B},
+  year = {2016},
+  doi = {10.1/bbb},
+}
+"""
+        db2 = parse_string(same_year_bib, "bibtex")
+        cited_same_year = [(k, e) for k, e in db2.entries.items()]
+        gb.warn_same_work_cited(cited_same_year)
+        assert "[SAME-WORK]" not in capsys.readouterr().err
+
+    def test_reprint_pair_survives_find_cited_entries_and_reaches_advisory(self, capsys):
+        # Pins the pipeline claim, not just warn_same_work_cited's own
+        # grouping: a reprint pair the prose actually cites must survive
+        # find_cited_entries's matching AND its defense-in-depth dedup
+        # (different years -> different fallback_key, so no merge) before
+        # it ever reaches the advisory. Deleting the warn_same_work_cited
+        # call in main(), or a future find_cited_entries change that drops
+        # or merges one half of a same-work pair, must fail this test.
+        from pybtex.database import parse_string
+        import generate_bibliography as gb
+        db = parse_string(self._BIB, "bibtex")
+        prose = ("## Review\n\nReiman (1984) develops an account of "
+                  "privacy grounded in personhood. Reiman (2017) revisits "
+                  "the same argument in a later edited collection.\n")
+        cited = find_cited_entries(prose, db)
+        assert {"reiman1984privacy", "reiman2017privacy"} <= {k for k, _ in cited}
+        gb.warn_same_work_cited(cited)
+        err = capsys.readouterr().err
+        assert "[SAME-WORK]" in err
+        assert "reiman1984privacy" in err and "reiman2017privacy" in err
+
+    def test_main_end_to_end_prints_advisory_on_stderr(self, tmp_path, capsys, monkeypatch):
+        # Closes the gap the direct-call test above leaves open: that test
+        # calls find_cited_entries and warn_same_work_cited itself, so
+        # deleting the `warn_same_work_cited(cited)` line INSIDE main()
+        # would still pass it (and every other test in this class, since
+        # none of them go through main()). This one drives main() itself.
+        import sys
+        import generate_bibliography as gb
+        review_path = tmp_path / "review.md"
+        bib_path = tmp_path / "literature.bib"
+        review_path.write_text(
+            "## Review\n\nReiman (1984) develops an account of privacy "
+            "grounded in personhood. Reiman (2017) revisits the same "
+            "argument in a later edited collection.\n",
+            encoding="utf-8")
+        bib_path.write_text(self._BIB, encoding="utf-8")
+        monkeypatch.setattr(
+            sys, "argv",
+            ["generate_bibliography.py", str(review_path), str(bib_path)])
+        gb.main()
+        err = capsys.readouterr().err
+        assert "[SAME-WORK]" in err
+        assert "reiman1984privacy" in err and "reiman2017privacy" in err
+
     def test_grouping_agrees_with_barrier_helper_on_hard_surnames(self):
         # Cross-module drift pin: the barrier keys on
         # year_suffix.first_surname_raw(fields) while this advisory keys on
