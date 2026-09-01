@@ -3694,6 +3694,29 @@ def test_a_same_work_splice_failure_reaches_the_printed_summary(
         "groups": 1, "stamped_entries": 0, "splice_failed": 2}
 
 
+def test_same_work_groups_compute_failure_fails_open(tmp_path, monkeypatch, capsys):
+    """The compute itself (_same_work_groups) is ADVISORY plumbing, not part
+    of the accuracy gate -- an exception here must not kill the whole
+    barrier. It must not vanish silently either: compute_failed carries the
+    error into both the report and the printed operator summary."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    def boom(parsed):
+        raise RuntimeError("same-work compute exploded")
+
+    rd = _sw_review(tmp_path)
+    monkeypatch.setattr(evidence_barrier, "_same_work_groups", boom)
+    assert evidence_barrier.execute(rd, 2) == 0          # NOT a failed run
+    report = _report(rd)
+    assert report["status"] in ("complete", "degraded")
+    assert "same-work compute exploded" in report["same_work"]["compute_failed"]
+    assert report["same_work"]["groups"] == []
+
+    summary = json.loads(capsys.readouterr().out)
+    assert "same-work compute exploded" in summary["same_work"]["compute_failed"]
+
+
 def test_year_variants_group_via_same_work_year(tmp_path):
     """The comparison year is whole-field: a Chicago suffix is not a second
     publication year, but a genuinely different year is."""

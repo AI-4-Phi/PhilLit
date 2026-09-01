@@ -1290,10 +1290,19 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     # The advisory reprint annotation. Computed from `parsed` (post-strip,
     # see _same_work_groups) and attached by reference like the two pairs
     # above, since the splice itself happens in the stamping loop below.
-    same_work_map, sw_groups = _same_work_groups(parsed)
+    # ADVISORY PLUMBING FAILS OPEN, NEVER SILENTLY: this compute is not part
+    # of the accuracy gate itself, so an exception here must not take down
+    # the barrier -- but it must not vanish either, hence compute_failed
+    # below, which the printed operator summary surfaces.
+    try:
+        same_work_map, sw_groups = _same_work_groups(parsed)
+    except Exception as e:
+        same_work_map, sw_groups = {}, []
+        report.setdefault("same_work", {})["compute_failed"] = repr(e)[:200]
     same_work_stamped: list = []
     same_work_splice_failed: list = []
-    report["same_work"] = {"groups": sw_groups,
+    report["same_work"] = {**report.get("same_work", {}),
+                           "groups": sw_groups,
                            "stamped_entries": same_work_stamped,
                            "splice_failed": same_work_splice_failed}
 
@@ -1496,6 +1505,18 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
     for per_bib in (report.get("stamps") or {}).values():
         for t in per_bib.values():
             tiers[t] = tiers.get(t, 0) + 1
+    same_work_summary = {
+        "groups": len((report.get("same_work") or {}).get("groups") or []),
+        "stamped_entries": len(
+            (report.get("same_work") or {}).get("stamped_entries") or []),
+        "splice_failed": len(
+            (report.get("same_work") or {}).get("splice_failed") or []),
+    }
+    # Only present when _same_work_groups raised (see the try/except above):
+    # a crashed advisory compute must be as loud in the operator summary as
+    # any other same_work finding, never a silent zero-groups line.
+    if (report.get("same_work") or {}).get("compute_failed") is not None:
+        same_work_summary["compute_failed"] = report["same_work"]["compute_failed"]
     print(json.dumps({
         "status": report["status"],
         "stamped": sum(len(v) for v in (report.get("stamps") or {}).values()),
@@ -1555,13 +1576,7 @@ def execute(review_dir: Path, n_domains: int, debug: bool = False) -> int:
         # two comparison years) reaches neither stamped_entries nor
         # splice_failed, so without this count it is a detection an operator
         # cannot see at all.
-        "same_work": {
-            "groups": len((report.get("same_work") or {}).get("groups") or []),
-            "stamped_entries": len(
-                (report.get("same_work") or {}).get("stamped_entries") or []),
-            "splice_failed": len(
-                (report.get("same_work") or {}).get("splice_failed") or []),
-        },
+        "same_work": same_work_summary,
         # A bare assigned-count cannot distinguish "no same-author-same-year
         # groups existed" from "a group existed and deliberately got no
         # letters", which is the one case an operator needs to look at. The

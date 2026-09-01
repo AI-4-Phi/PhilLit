@@ -3094,6 +3094,36 @@ class TestSameWorkCitedAdvisory:
         assert "[SAME-WORK]" in err
         assert "reiman1984privacy" in err and "reiman2017privacy" in err
 
+    def test_main_survives_same_work_advisory_crash(self, tmp_path, capsys, monkeypatch):
+        # The advisory must never take down References generation: fail
+        # open, not silently. A crashed warn_same_work_cited still lets
+        # main() write the References section, with the failure printed
+        # to stderr instead.
+        import sys
+        import generate_bibliography as gb
+        review_path = tmp_path / "review.md"
+        bib_path = tmp_path / "literature.bib"
+        review_path.write_text(
+            "## Review\n\nReiman (1984) develops an account of privacy "
+            "grounded in personhood. Reiman (2017) revisits the same "
+            "argument in a later edited collection.\n",
+            encoding="utf-8")
+        bib_path.write_text(self._BIB, encoding="utf-8")
+        monkeypatch.setattr(
+            sys, "argv",
+            ["generate_bibliography.py", str(review_path), str(bib_path)])
+
+        def boom(cited):
+            raise RuntimeError("same-work advisory exploded")
+
+        monkeypatch.setattr(gb, "warn_same_work_cited", boom)
+        gb.main()
+        err = capsys.readouterr().err
+        assert "[SAME-WORK] advisory failed" in err
+        assert "same-work advisory exploded" in err
+        result = review_path.read_text(encoding="utf-8")
+        assert "## References" in result
+
     def test_grouping_agrees_with_barrier_helper_on_hard_surnames(self):
         # Cross-module drift pin: the barrier keys on
         # year_suffix.first_surname_raw(fields) while this advisory keys on
@@ -3112,6 +3142,10 @@ class TestSameWorkCitedAdvisory:
         import year_suffix as ys
         from bib_identity import same_work_key
         for field, name in (("author", "van der Deijl, Willem"),
+                            # No-comma particle form: pybtex parses this
+                            # differently from the "Last, First" form above,
+                            # so both extraction paths must still agree.
+                            ("author", "Willem van der Deijl"),
                             ("author", "Sogaard-Smith, Anne"),
                             ("author", "M{\\\"u}ller, Eva"),
                             # editor-only entry: both sides must apply the
@@ -3130,6 +3164,10 @@ class TestSameWorkCitedAdvisory:
             via_barrier = same_work_key(
                 "A Title", ys.first_surname_raw(
                     {field: name, "title": "A Title"}))
+            # same_work_key returns None when a component is empty, so an
+            # equality check alone would pass vacuously if both extractors
+            # somehow yielded an empty surname for a given row.
+            assert via_advisory is not None
             assert via_advisory == via_barrier
 
     def test_multiple_groups_print_in_deterministic_order(self, capsys):

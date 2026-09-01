@@ -333,7 +333,12 @@ def disambiguate_container(item: dict, result: dict, limiter,
     and bails too -- an object title would otherwise be iterated as its
     keys, each a str, and could authorize a volume the record never names.
     A truncated page (total-results beyond the rows returned) also bails --
-    unseen records could dissent. Container elements that NORMALIZE alike
+    unseen records could dissent. This is "bailed", deliberately, not
+    "error": CrossRef answered the request, so the shortfall is client-side
+    pagination (`rows`), not infrastructure -- the insufficiency is
+    evidence-shaped (an unseen record could contradict what was seen), the
+    same reason a disagreeing parent bails rather than errors. Container
+    elements that NORMALIZE alike
     bail before the request: they collapse in the normalized->raw map, so
     a parent naming both would score as naming exactly one.
 
@@ -378,8 +383,17 @@ def disambiguate_container(item: dict, result: dict, limiter,
     What would reopen this: an EVIDENCE bail rate - bailed/(bailed +
     resolved), "error" excluded, so infrastructure flakiness cannot trip
     it - above roughly 30% of multi-element chapters, at which point the
-    affected population justifies a flag. The 30% is a priori (the counter
-    exists because the rate was unknowable); the first measured rate also
+    affected population justifies a flag. "Multi-element chapter" here means
+    an artifact carrying the keys at all: `container_candidates` counts
+    `containers`, the array AFTER the isinstance/non-empty-string filter
+    (line ~407-409), i.e. items with >=2 USABLE elements -- not >=2 raw
+    container-title elements, which the isinstance/strip filter can shrink
+    below 2 (a two-element raw array with one blank or non-string entry
+    still reaches this function, but exits at `len(containers) < 2` BEFORE
+    `container_candidates` is set, so it never carries the keys either
+    way). The 30%
+    is a priori (the counter exists because the rate was unknowable); the
+    first measured rate also
     judges whether that threshold was sane.
     """
     if item.get("type") not in _MULTI_CONTAINER_TYPES:
@@ -412,10 +426,15 @@ def disambiguate_container(item: dict, result: dict, limiter,
     # item IS a multi-element chapter, so every exit is a bail, an
     # infrastructure error, or a resolution. PHASED DEFAULTS: "bailed"
     # covers the evidence-side guards below (collapse, no usable ISBN);
-    # the default flips to "error" just before the network call, back to
-    # "bailed" once a parseable body is in hand (post-parse returns are
-    # evidence-based refusals: no parents, truncation, disagreement), and
-    # to "resolved" at the single success site. `result` is the caller's
+    # the default flips to "error" just before the network call -- that
+    # bucket covers ONLY the network-and-parse window (request, status
+    # code, response.json()) -- back to "bailed" once a parseable body is
+    # in hand. Past that flip, "bailed" no longer means only an
+    # evidence-based refusal (no parents, truncation, disagreement); it
+    # also covers a post-parse SHAPE defect (a parent's `title` not a list)
+    # that is unusable rather than dissenting -- both exit through the same
+    # bucket because both are best-effort-enrichment non-answers, and
+    # "resolved" at the single success site. `result` is the caller's
     # dict, mutated in place and persisted on every path, including the
     # except handler (audited 2026-09-01).
     result["container_disambiguation"] = "bailed"
@@ -508,6 +527,12 @@ def disambiguate_container(item: dict, result: dict, limiter,
                 and all(_norm_container(remaining[0]) in v for v in voters)):
             result["series"] = remaining[0]
     except Exception as e:
+        # Deliberately does NOT write result["container_disambiguation"]:
+        # whatever phase default was in force at the moment of the
+        # exception (see PHASED DEFAULTS above) is left standing as the
+        # classification, since a write here could clobber an
+        # already-recorded "resolved" from a partial success earlier in
+        # this try block.
         if debug:
             print(f"DEBUG: container disambiguation failed: {e}",
                   file=sys.stderr)

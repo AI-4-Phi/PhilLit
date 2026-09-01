@@ -40,3 +40,20 @@ anywhere, so support or reject it properly: either special-case the
 `lint_md.py`'s grammar reject the form outright and escalate
 `warn_same_work_cited` to something stronger than a stderr print when both
 group members are independently matched as cited.
+
+Escalating `warn_same_work_cited` is not a free move: the advisory sees only
+the cited-entry list, not any citation's own text, so it cannot distinguish
+the double-listing bug from the SANCTIONED case of a writer legitimately
+citing both editions as two separate citations ("(Reiman 1984)" and
+"(Reiman 2017)" each on their own) — and would fire on both. `lint_md.py`
+still sees each citation's own text, including the `Year1/Year2` token when
+present, so it is the right place to escalate. Today the form RESOLVES
+SILENTLY in lint: `_candidate_lines_for`
+matches a citation to a reference line if EITHER year is present (tolerant
+either-year matching), so `(Reiman 1984/2017)` resolves with no ERROR and no
+WARN class covering it — the Phase 6 stderr advisory is the only pipeline
+witness right now. Any "reject the form" fix should be scoped to `lint_md`'s
+`_YEAR` grammar only; do not tighten `bib_identity.same_work_year`, whose
+acceptance of a bib YEAR FIELD like "1984/2017" is a defensive parse of
+real-world data (a malformed/reprint year field), not an endorsement of the
+citation form.

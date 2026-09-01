@@ -286,6 +286,26 @@ Smith, Jane, Bob Roe, and Cai Wu. 2020. *A Book*. Press.
         assert errors == []
         assert not any("contraction" in w for w in warnings)
 
+    def test_oslash_name_cited_without_diacritic_warns(self):
+        # Pins the ACCEPTED ø/æ firing class (non-decomposable diacritic --
+        # see bib_identity.contract_fold's docstring): unlike Müller/Muller
+        # above, "ø" does not NFKD-decompose, so the clean ASCII spelling
+        # ("Moller") is reachable ONLY through the contraction axis. The WARN
+        # fires here even though it is a legitimate same-person citation, not
+        # a masked homograph collision -- the negative pin for the umlaut
+        # class is test_umlaut_muller_plain_muller_does_not_warn above.
+        from lint_md import check_citations
+        text = (
+            "# Title\n\n"
+            "Moller (2018) argues this.\n\n"
+            "## References\n\n"
+            'Møller, Hans. 2018. "A Work." *Mind* 127: 1--10.\n'
+        )
+        errors, warnings, checked = check_citations(text)
+        assert checked is True
+        assert errors == []
+        assert any("contraction" in w for w in warnings)
+
     def test_ordinary_resolution_does_not_warn(self):
         from lint_md import check_citations
         text = (

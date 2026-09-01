@@ -495,6 +495,16 @@ def ascii_variants(s: str, contract: bool = True) -> frozenset[str]:
     and "Muller, Eva. 2018." both present: body "Muller (2018)" resolves via
     the Muller line, no WARN despite the two-person ambiguity). The matcher
     path's side of (b) is unchanged.
+    NARROW THE CLOSURE CLAIM: it holds cleanly only for NFKD-DECOMPOSABLE
+    diacritics (ä/ö/ü/å - the Müller/Muller class), where the plain NFKD
+    fold already resolves a legitimate same-person citation, so the WARN
+    there fires only on a genuine homograph-shaped bridge. For ø and æ
+    (non-decomposable - see contract_fold above), the clean ASCII spelling
+    exists ONLY through the contraction axis, so bib "Møller" cited as
+    "Moller" (or "Søgaard" as "Sogaard") DOES fire the WARN for a legitimate
+    same-person pair, not a masked collision. This is an accepted firing
+    class, already inside the measured 1-per-34-reviews rate; the remedy is
+    the same one-line verification the WARN already asks for.
     Pinned in test_lint_md.py::TestCitationCheck by
     test_guest_gust_false_resolve_now_warns and
     test_michael_michal_residual_reaches_lint_too (residual (a) reaches lint

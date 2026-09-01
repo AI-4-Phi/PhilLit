@@ -402,6 +402,14 @@ def check_citations(text: str) -> tuple[list[str], list[str], bool]:
         # "Muller (2018)" resolves via the Muller line, no WARN despite the
         # two-person ambiguity). The WARN fires only when the citation's ONLY
         # resolution path is the contraction.
+        #
+        # For non-decomposable diacritics (o-with-stroke, ash - see
+        # bib_identity.ascii_variants' docstring), the contraction axis is
+        # the ONLY route from a bib surname spelled with the diacritic to
+        # the plain-ASCII spelling a writer cites it with, so this WARN also
+        # fires on a legitimate same-person citation (a real o-with-stroke
+        # surname cited with a plain "o"), not just a masked collision -- an
+        # accepted firing.
         if not _candidate_lines_for(
                 ref_lines, unc_folded_lines, tokens, base_years,
                 _fold_uncontracted):

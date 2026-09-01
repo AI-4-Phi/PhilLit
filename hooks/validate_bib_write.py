@@ -57,7 +57,11 @@ def check_slug_file(file_path: str) -> list[str]:
     ACCEPTED RESIDUALS: an agent can still fabricate empty lists (the deny
     text forbids it; not mechanically checkable), and the gate covers the
     Write tool only - a bib created via Bash bypasses it (same stance as
-    block_ledger_write: a compliance gate, not a security boundary)."""
+    block_ledger_write: a compliance gate, not a security boundary). The
+    gate keys on the NAME PATTERN literature-domain-*.bib, so a lookalike
+    scratch file (literature-domain-notes.bib) under reviews/ is gated too -
+    deliberate (multi-form stems are real), and the deny message makes
+    recovery obvious."""
     p = Path(file_path)
     m = _DOMAIN_BIB_RE.match(p.name)
     # "reviews" check is case-sensitive and positional-agnostic by intent:
@@ -148,7 +152,10 @@ def handle_write(tool_input: dict) -> None:
     if isinstance(content, str) and content:
         errors.extend(validate_content(content, file_path))
     if errors:
-        reason = "BibTeX validation failed:\n" + "\n".join(f"  - {e}" for e in errors)
+        # "Bib write denied" (not "BibTeX validation failed"): errors here can
+        # come from check_slug_file, a Stage 1 compliance gate, not a BibTeX
+        # defect - the old header was false for that class of deny.
+        reason = "Bib write denied:\n" + "\n".join(f"  - {e}" for e in errors)
         print(
             json.dumps(
                 {

@@ -2127,7 +2127,12 @@ def main():
         print("Warning: No cited entries found. No references generated.", file=sys.stderr)
         sys.exit(0)
 
-    warn_same_work_cited(cited)
+    # Advisory: must never take down References generation. Fail open, not
+    # silently -- the failure still prints, just without stopping the run.
+    try:
+        warn_same_work_cited(cited)
+    except Exception as e:
+        print(f"  [SAME-WORK] advisory failed: {e}", file=sys.stderr)
 
     # Log matched entries
     for key, _entry in sorted(cited, key=lambda x: x[0]):
