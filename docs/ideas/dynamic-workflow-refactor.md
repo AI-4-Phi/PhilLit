@@ -28,16 +28,22 @@ Plugins cannot ship workflows, but `/phillit:setup` can install one: copying a w
 Both are cheap, and neither is a matter of taste. Clear them in this order —
 the second costs a headless run and is worth nothing if the first says no.
 
-**1. Does the Agent SDK have a Workflow tool?** This plan was written as if
-PhilLit were the only consumer of `skills/literature-review/SKILL.md`. It is
-not: phillit-service vendors the engine and drives it through the Agent SDK,
-and `CLAUDE.md`'s mirror rule is unconditional. Step 4 makes SKILL.md call the
-Workflow tool; the service's `tools/revendor.py` then carries that call
-downstream at the next pin. If the SDK cannot resolve `.claude/workflows/` or
-has no Workflow tool, the vendored skill names an orchestration primitive that
-does not exist there — which forks the engine permanently or kills the plan.
-Settle it by reading how the service drives the phase pipeline, before writing
-any of the workflow script.
+**1. Does the service's run path reach a workspace `.claude/workflows/`?**
+This plan was written as if PhilLit were the only consumer of
+`skills/literature-review/SKILL.md`. It is not: phillit-service vendors the
+engine and drives it through the Agent SDK, and `CLAUDE.md`'s mirror rule is
+unconditional. Step 4 makes SKILL.md call the Workflow tool; the service's
+`tools/revendor.py` then carries that call downstream at the next pin.
+
+*Half of this is already settled* (2026-09-01): the SDK is not a separate
+runtime with its own tool registry — it bundles the Claude Code CLI, pinned in
+`claude_agent_sdk/_cli_version.py`, currently **2.1.233**. That is above both
+floors below (Workflow tool ≥ 2.1.154, multi-directory resolution ≥ 2.1.178),
+so the tool exists there. What is NOT settled is the service's own invocation:
+whether its workspace scaffolding installs the workflow file at all, whether
+its cwd resolves `.claude/workflows/`, and whether its permission surface
+grants `Workflow`. Read the service's run path before writing any of the
+script — a workflow the service cannot reach forks the engine.
 
 **2. Re-run the Step 1 hook test on the current Claude Code.** The results
 below are from **2.1.218**; the installed CLI is **2.1.252**. The dispatch tool
