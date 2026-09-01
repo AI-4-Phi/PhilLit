@@ -20,7 +20,7 @@ The literature review workflow is coordinated by the `literature-review` skill (
 ```
 User request
     ↓
-/phillit:literature-review skill (main conversation, has Task access)
+/phillit:literature-review skill (main conversation, has Agent access)
     ↓ Agent tool
     ├── literature-review-planner (subagent)
     ├── domain-literature-researcher ×N (subagents)
