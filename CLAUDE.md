@@ -113,7 +113,10 @@ full transcripts under `~/.claude-work/projects/<encoded-cwd>/` —
 with `.meta.json` sidecars naming each subagent's domain. Tool_use blocks
 carry complete Write/Edit inputs, so you can reconstruct exactly who wrote
 what into a bib and when. Gotcha: transcript timestamps are UTC; workspace
-file mtimes are local.
+file mtimes are local. Each record also carries a `version` field naming the
+Claude Code build, so pairing it with the tool names in the same transcript
+dates a CLI behavior change empirically instead of by guesswork — that is how
+the Task -> Agent rename was placed at 2.1.220 or earlier.
 
 ## Headless review runs (free end-to-end test runs)
 
