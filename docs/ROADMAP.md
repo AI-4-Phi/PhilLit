@@ -27,3 +27,13 @@ false-positive rate first**: the WARN would also fire on every legitimate
 Müller/Muller pair, which is the common case, and a checker that cries wolf on
 the common case is worse than the silent residual. Harness:
 `docs/known-issues/surname-contraction-measurement-2026-08-29/`.
+
+**Make `disambiguate_container`'s reopen threshold measurable** — the
+accepted bail-path residual (v0.5.6, `verify_paper.py` docstring) says it
+reopens above "roughly 30% of multi-element chapters" bailing, but by the
+docstring's own admission neither cache retains the raw `container-title`
+array, so the bail rate is uncomputable and the residual has no working
+reopen mechanism. Cheap fix: count multi-element arrays and bails in the
+existing debug/enrichment output, so the at-risk subset becomes measurable
+from a run's artifacts instead of unmeasurable in principle. Raised by the
+service's 7911770 pin review (glm-5.3 round, 2026-09-01).
