@@ -117,6 +117,16 @@ which is meant. The letters come from the entry's own `year_suffix` field
 (`a`, `b`, ...); use exactly the letter the entry carries, and never invent one
 for an entry that has no such field.
 
+**When entries share a `same_work_group` field, treat them as ONE work.**
+The field lists the citekeys of entries that share title and first author
+across different years — usually a reprint or reissue of one text. Never
+present the members as distinct positions or as engaging each other. Cite
+the work ONCE, using the entry whose content your claim relies on; where
+the original date matters, use the reprint form "(Reiman 1984/2017)". If
+inspection shows the members are genuinely distinct (a revised edition, a
+different text under the same title), you may cite both — but then
+distinguish them explicitly in prose.
+
 **Evidence tiers govern what you may say about a work** (the `EVIDENCE-*` keyword in each entry is the single authority; an entry with no tier token counts as `EVIDENCE-NONE`):
 
 | Tier | You may |

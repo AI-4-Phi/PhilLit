@@ -211,6 +211,12 @@ def _first_surname_raw(fields: dict) -> str:
     return parts[-1] if parts else ""
 
 
+# Public alias to the shared object (repo convention: sites keep historic
+# names as aliases, tests assert `is` identity) - the evidence barrier's
+# same-work grouping parses surnames the way the rest of the pipeline does.
+first_surname_raw = _first_surname_raw
+
+
 class _Union:
     """Minimal union-find over hashable ids."""
 

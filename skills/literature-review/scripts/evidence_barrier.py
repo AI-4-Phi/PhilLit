@@ -30,6 +30,18 @@ import stamp_evidence as se
 import web_evidence as wv
 import year_suffix as ys
 
+# The same sys.path dance year_suffix.py does, and self-sufficient on
+# purpose: reaching bib_identity only because year_suffix happened to import
+# it first would break the moment that import changed. It is the ONE owner of
+# the same-work grouping rule, shared with generate_bibliography's Phase 6
+# advisory -- a local re-implementation in either is the drift failure mode
+# the shared placement exists to prevent.
+_hooks_dir = Path(__file__).resolve().parent.parent.parent.parent / "hooks"
+sys.path.insert(0, str(_hooks_dir))
+from bib_identity import same_work_key, same_work_year  # noqa: E402
+
+sys.path.pop(0)
+
 try:
     import venue_vetting as vv
 except Exception:  # optional pass -- never block the accuracy gate
@@ -440,7 +452,8 @@ def _corroboration_summary(report: dict) -> dict:
 
 
 _DERIVED_FIELD_RE = re.compile(
-    r"\n[ \t]*(?:venue_status|year_suffix|urldate|archiveurl)\s*=\s*"
+    r"\n[ \t]*(?:venue_status|year_suffix|urldate|archiveurl|same_work_group)"
+    r"\s*=\s*"
     r"(?:\{[^{}]*\}|\"[^\"]*\")\s*,?",
     re.IGNORECASE)
 
@@ -448,11 +461,12 @@ _DERIVED_FIELD_RE = re.compile(
 def _strip_derived_fields(entry_text: str) -> str:
     """Remove every pre-existing derived field it can find.
 
-    The barrier OWNS all four (venue_status, year_suffix, urldate and
-    archiveurl): each is re-derived from
+    The barrier OWNS all five (venue_status, year_suffix, urldate,
+    archiveurl and same_work_group): each is re-derived from
     scratch on every run -- venue_status from OpenAlex, year_suffix from the
     current union of every domain bibliography, urldate from the capture's
-    retrieved_at and archiveurl from the archive lookup -- so a value already
+    retrieved_at, archiveurl from the archive lookup and same_work_group from
+    the current union's title/surname grouping -- so a value already
     in the file is either stale or
     hand-written, and both must go before this run decides. Without this, a
     flag or letter survives a later run that had no API key, or whose domain
@@ -462,7 +476,7 @@ def _strip_derived_fields(entry_text: str) -> str:
     THREE documented limits, accepted rather than fixed. Two are about the
     field's VALUE (single-nesting-level shape, same reasoning as
     resolve_context.strip_context_fields); the third is orthogonal and about
-    its POSITION. All three apply identically to both fields.
+    its POSITION. All three apply identically to every owned field.
 
     1. VALUE, bare token: `venue_status = low-visibility,` is NOT stripped --
        the pattern requires a braced or quoted value.
@@ -532,6 +546,14 @@ _VENUE_FIELD_RE = re.compile(r"\bvenue_status\s*=", re.IGNORECASE)
 # rejects — losing an access date is survivable; an unparseable bib is not.
 _URLDATE_FIELD_RE = re.compile(r"\burldate\s*=", re.IGNORECASE)
 _ARCHIVEURL_FIELD_RE = re.compile(r"\barchiveurl\s*=", re.IGNORECASE)
+
+# same_work_group is spliced with the same verified-took pattern as
+# venue_status; a compact pre-existing value survives the strip and is
+# accepted exactly like venue_status's documented residual. Unanchored on
+# purpose, mirroring _VENUE_FIELD_RE's shape: _derived_field_took's
+# pre/post-count logic is what handles a prose-literal false match, so do not
+# "fix" this with a line anchor.
+_SAME_WORK_FIELD_RE = re.compile(r"\bsame_work_group\s*=", re.IGNORECASE)
 
 
 def _derived_field_took(chunk: str, pre_splice: str, field: str, intended: str,
@@ -622,6 +644,81 @@ def _venue_splice_took(chunk: str, pre_splice: str, status: str) -> bool:
     """
     return _derived_field_took(chunk, pre_splice, vv.VENUE_STATUS_FIELD, status,
                                _VENUE_FIELD_RE)
+
+
+def _same_work_groups(parsed: dict) -> tuple[dict, list]:
+    """Advisory same-work grouping across ALL domains of one review:
+    entries sharing (title_key, first-author surname fold) with >=2
+    distinct years. This is NOT dedup identity -- year stays part of
+    dedup's key, and this pass exists precisely because a coherent
+    reprint year defeats that key by design (the Reiman defect). DOIs are
+    deliberately ignored: a reprint carries its own DOI, and the
+    annotation is an advisory to the writer, not a merge.
+
+    Reads the POST-STRIP chunks in `parsed`, which is what makes a
+    hand-written same_work_group unable to influence this run's grouping --
+    keep the call downstream of the strip if it ever moves.
+
+    SEMANTICS ARE BARRIER-TIME: the stamped field snapshots the grouping
+    as of Phase 3->4, which is when its audience (the synthesis writer,
+    reading the pre-dedup domain bibs) consumes it. In the DELIVERED bib
+    a member key may later be merged away by Phase 6's DOI pass; the
+    delivered field is audit data about what the barrier saw, and the
+    live Phase 6 channel (generate_bibliography's [SAME-WORK] advisory)
+    recomputes from the final entries instead of trusting this field.
+
+    Returns ((domain_index, key) -> comma-joined sorted member keys,
+    report group list).
+    """
+    groups: dict[tuple, list] = {}
+    for i, chunks in parsed.items():
+        for chunk in chunks:
+            header = se.entry_header(chunk)
+            if not header:
+                continue
+            _etype, key = header
+            fields = se.parse_entry_fields(chunk)
+            gkey = same_work_key(fields.get("title") or "",
+                                 ys.first_surname_raw(fields))
+            year = same_work_year(fields.get("year"))
+            if gkey is None or not year:
+                continue
+            groups.setdefault(gkey, []).append((i, key, year))
+    value_map: dict = {}
+    report_groups: list = []
+    for (nt, ns), members in sorted(groups.items()):
+        years = {y for _i, _k, y in members}
+        if len(members) < 2 or len(years) < 2:
+            continue
+        distinct_keys = sorted({k for _i, k, _y in members})
+        joined = ", ".join(distinct_keys)
+        # STAMP GATE, two conditions:
+        # (1) >=2 distinct keys -- two domains routinely hold the SAME
+        #     citekey for one overlapping paper; with divergent years that
+        #     is a year-consistency problem, not a reprint pair, and a
+        #     self-referential `same_work_group = {key}` would only
+        #     confuse the writer.
+        # (2) every key internally year-consistent -- if one citekey
+        #     carries TWO comparison years (A/1984 and A/2017), the writer
+        #     cannot even tell the two A records apart by key, so a stamp
+        #     would certify confusion rather than resolve it. Such a group
+        #     is reported with key_year_conflict and left unstamped.
+        years_by_key: dict[str, set] = {}
+        for _i, k, y in members:
+            years_by_key.setdefault(k, set()).add(y)
+        conflicted = sorted(k for k, ys_ in years_by_key.items()
+                            if len(ys_) > 1)
+        if len(distinct_keys) >= 2 and not conflicted:
+            for i, key, _y in members:
+                value_map[(i, key)] = joined
+        report_groups.append({
+            "title_key": nt,
+            "surname_key": ns,
+            "key_year_conflict": conflicted,
+            "members": [{"domain": i, "key": k, "year": y}
+                        for i, k, y in members],
+        })
+    return value_map, report_groups
 
 
 def _stamp_optional_field(entry_text: str, field: str, value: str) -> str:
@@ -1190,6 +1287,16 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
     web_report["stamped_entries"] = web_stamped
     web_report["splice_failed"] = web_splice_failed
 
+    # The advisory reprint annotation. Computed from `parsed` (post-strip,
+    # see _same_work_groups) and attached by reference like the two pairs
+    # above, since the splice itself happens in the stamping loop below.
+    same_work_map, sw_groups = _same_work_groups(parsed)
+    same_work_stamped: list = []
+    same_work_splice_failed: list = []
+    report["same_work"] = {"groups": sw_groups,
+                           "stamped_entries": same_work_stamped,
+                           "splice_failed": same_work_splice_failed}
+
     # Build final content in memory: context fields + stamp, then bookkeeping.
     outputs = {}
     for i, d in domains.items():
@@ -1275,6 +1382,21 @@ def run_barrier(review_dir: Path, n_domains: int, debug: bool = False):
                     # the alternative is the silent loss this fix exists to end.
                     chunk = pre_venue
                     venue_splice_failed.append(f"{bib_name}:{key}")
+            sw_value = same_work_map.get((i, key))
+            if sw_value:
+                # Spliced AFTER compute_tier like venue_status: tier
+                # invariance under field splices stays structural.
+                pre_sw = chunk
+                chunk = _stamp_optional_field(chunk, "same_work_group", sw_value)
+                if _derived_field_took(chunk, pre_sw, "same_work_group",
+                                       sw_value, _SAME_WORK_FIELD_RE):
+                    same_work_stamped.append(f"{bib_name}:{key}")
+                else:
+                    # Revert, then report -- a duplicate field would cost
+                    # all of Phase 6; a silent loss is what the gate
+                    # policy forbids.
+                    chunk = pre_sw
+                    same_work_splice_failed.append(f"{bib_name}:{key}")
             gate = web_gates.get((i, key))
             if gate:
                 # Spliced AFTER compute_tier for the same reason venue_status

@@ -515,6 +515,46 @@ def ascii_variants(s: str, contract: bool = True) -> frozenset[str]:
     return variants | contracted
 
 
+# Whole-field year grammar for same_work_year. Anchored at both ends on
+# purpose: a year field is the whole value or it is not a year at all.
+_SAME_WORK_YEAR_RE = re.compile(
+    r"^\s*(\d{4})[a-z]?(?:\s*(?:--?|/)\s*\d{4}[a-z]?)?\s*$")
+
+
+def same_work_key(title: str, surname: str) -> tuple[str, str] | None:
+    """Year-less advisory grouping key for the reprint class: entries
+    sharing (title_key, first-author-surname fold) across DIFFERENT years
+    are usually one work reprinted. None when either component is empty -
+    such an entry never groups. The surname goes through title_key
+    deliberately: that is fallback_key's established surname axis (see
+    fallback_key below), and title_key is a generic fold - NFKD, strip
+    combining marks, casefold, collapse - with no title-specific logic.
+    This is NOT dedup identity: year stays part of fallback_key, and this
+    key exists precisely because a coherent reprint year defeats that key
+    by design. Census (2026-09-01, 45 delivered reviews): 23 groups, ~20
+    warranting writer attention; auto-merge measured against and rejected
+    (dedup runs after synthesis, and the DOI-guard-refused set holds the
+    genuinely distinct works)."""
+    nt = title_key(title or "")
+    ns = title_key(surname or "")
+    if not nt or not ns:
+        return None
+    return (nt, ns)
+
+
+def same_work_year(year) -> str:
+    """The comparison year for same-work grouping: WHOLE-FIELD grammar, so
+    "1984", "1984a" and the range/reprint forms "1984--1985" / "1984/2017"
+    all compare as "1984" (year_key deliberately keeps a "1984a" verbatim -
+    wrong axis here, where a suffix or range must not fake a second
+    publication year). "" for anything else - a malformed year field
+    ("10.1234/2017.42", an ISBN, prose) must never mint a phantom year and
+    group a valid entry against garbage; an entry with no comparison year
+    never groups, the fail-safe direction for an advisory."""
+    m = _SAME_WORK_YEAR_RE.match(str(year or ""))
+    return m.group(1) if m else ""
+
+
 def fallback_key(title: str, year: str, surname: str) -> tuple[str, str, str] | None:
     """Title-axis identity key: (title_key, year, title_key(surname)).
 

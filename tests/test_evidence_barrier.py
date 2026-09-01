@@ -3424,3 +3424,361 @@ def test_an_unrecognized_outcome_neither_counts_nor_resets(tmp_path, monkeypatch
     budget.record(eb_mod.eb.MISMATCH)
     assert budget.consecutive_errors == 0     # a real answer does reset
     assert budget.stopped is False
+
+
+# ---------------------------------------------------------------------------
+# same_work_group: the barrier's advisory reprint annotation (the Reiman
+# defect -- a reprint and its original never merge, because a coherent
+# reprint year defeats the title axis by design, so the synthesis writer can
+# cite one essay as two positions). The annotation lands at the Phase 3->4
+# barrier because Phase 6's dedup runs after the prose is written.
+# ---------------------------------------------------------------------------
+
+_SW_ORIGINAL = """@incollection{reiman1984panopticon,
+  author = {Reiman, Jeffrey H.},
+  title = {Driving to the Panopticon},
+  booktitle = {Philosophical Dimensions of Privacy},
+  publisher = {Cambridge University Press},
+  doi = {10.1000/orig1984},
+  year = {1984}
+}"""
+
+# Distinct DOI, distinct container, distinct key: the annotation must fire
+# regardless of DOI, unlike dedup's merge, which a reprint's own DOI blocks.
+_SW_REPRINT = """@incollection{reiman2017panopticon,
+  author = {Reiman, Jeffrey H.},
+  title = {Driving to the Panopticon},
+  booktitle = {Privacy, Security and Accountability},
+  publisher = {Rowman and Littlefield},
+  doi = {10.1000/reprint2017},
+  year = {2017}
+}"""
+
+_SW_ORIGINAL_KEY = "reiman1984panopticon"
+_SW_REPRINT_KEY = "reiman2017panopticon"
+_SW_BOTH = f"{_SW_ORIGINAL_KEY}, {_SW_REPRINT_KEY}"
+
+# No `journal` field anywhere in these fixtures, deliberately: venue vetting
+# collects journal names only, so the venue pass looks nothing up and the
+# only optional splice these tests can exercise is the one under test.
+_SW_ORIGINAL_2017 = _SW_ORIGINAL.replace(
+    "doi = {10.1000/orig1984}", "doi = {10.1000/reprint2017}").replace(
+    "year = {1984}", "year = {2017}")
+
+
+def _sw_domain(review_dir, i, bib_text):
+    _domain(review_dir, i, bib_text, cleaning=_cleaning(i, {}),
+            enrichment=_enrichment(i))
+
+
+def _sw_review(tmp_path, name="review"):
+    """The cross-domain reprint pair: original in domain 1, reissue in 2."""
+    rd = tmp_path / name
+    _sw_domain(rd, 1, _SW_ORIGINAL)
+    _sw_domain(rd, 2, _SW_REPRINT)
+    return rd
+
+
+def _sw_entry(review_dir, i, key):
+    """The raw chunk for one citekey in one domain bib."""
+    content = (review_dir / f"literature-domain-{i}.bib").read_text(
+        encoding="utf-8")
+    return [c for c in content.split("\n@") if "{" + key + "," in c][0]
+
+
+def _sw_bib(review_dir, i):
+    return (review_dir / f"literature-domain-{i}.bib").read_text(
+        encoding="utf-8")
+
+
+def test_first_surname_raw_alias_is_the_shared_object():
+    """The barrier parses surnames the way the rest of the pipeline does --
+    via year_suffix's parser, aliased rather than copied (repo convention:
+    sites keep historic names as aliases to the shared object)."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import year_suffix
+    assert year_suffix.first_surname_raw is year_suffix._first_surname_raw
+
+
+def test_cross_domain_reprint_pair_is_stamped_and_reported(tmp_path):
+    rd = _sw_review(tmp_path)
+    r = _run(rd, 2)
+    assert r.returncode == 0, r.stderr
+    for i, key in ((1, _SW_ORIGINAL_KEY), (2, _SW_REPRINT_KEY)):
+        chunk = _sw_entry(rd, i, key)
+        assert "same_work_group = {" in chunk
+        assert _SW_BOTH in chunk
+    report = _report(rd)
+    groups = report["same_work"]["groups"]
+    assert len(groups) == 1
+    assert sorted(m["key"] for m in groups[0]["members"]) == [
+        _SW_ORIGINAL_KEY, _SW_REPRINT_KEY]
+    assert sorted(m["year"] for m in groups[0]["members"]) == ["1984", "2017"]
+    assert groups[0]["key_year_conflict"] == []
+    assert sorted(report["same_work"]["stamped_entries"]) == [
+        f"literature-domain-1.bib:{_SW_ORIGINAL_KEY}",
+        f"literature-domain-2.bib:{_SW_REPRINT_KEY}"]
+    assert report["same_work"]["splice_failed"] == []
+
+
+def test_distinct_years_required(tmp_path):
+    """Same title and surname in the SAME year is not a reprint pair -- it is
+    dedup's and year_suffix's business, and an advisory here would only add
+    noise."""
+    rd = tmp_path / "review"
+    _sw_domain(rd, 1, _SW_ORIGINAL)
+    _sw_domain(rd, 2, _SW_REPRINT.replace("year = {2017}", "year = {1984}"))
+    r = _run(rd, 2)
+    assert r.returncode == 0, r.stderr
+    for i in (1, 2):
+        assert "same_work_group" not in _sw_bib(rd, i)
+    assert _report(rd)["same_work"]["groups"] == []
+
+
+def test_hand_written_same_work_group_is_stripped(tmp_path):
+    """The field joins the barrier-owned set: a value the barrier did not
+    derive this run must not survive it."""
+    rd = tmp_path / "review"
+    forged = _SW_ORIGINAL.replace(
+        "  year = {1984}",
+        "  same_work_group = {bogus1999, bogus2001},\n  year = {1984}")
+    _sw_domain(rd, 1, forged)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    content = _sw_bib(rd, 1)
+    assert "same_work_group" not in content
+    assert "bogus" not in content
+    assert _report(rd)["same_work"]["groups"] == []
+
+
+def test_same_key_across_domains_is_reported_not_stamped(tmp_path):
+    """Two domains holding the SAME citekey with divergent years is an
+    overlap inconsistency, not a reprint pair: a self-referential
+    `same_work_group = {key}` would only confuse the writer. Reported,
+    never stamped."""
+    rd = tmp_path / "review"
+    _sw_domain(rd, 1, _SW_ORIGINAL)
+    _sw_domain(rd, 2, _SW_ORIGINAL_2017)
+    r = _run(rd, 2)
+    assert r.returncode == 0, r.stderr
+    for i in (1, 2):
+        assert "same_work_group" not in _sw_bib(rd, i)
+    report = _report(rd)
+    groups = report["same_work"]["groups"]
+    assert len(groups) == 1
+    assert {m["key"] for m in groups[0]["members"]} == {_SW_ORIGINAL_KEY}
+    assert sorted(m["year"] for m in groups[0]["members"]) == ["1984", "2017"]
+    assert groups[0]["key_year_conflict"] == [_SW_ORIGINAL_KEY]
+    assert report["same_work"]["stamped_entries"] == []
+
+
+def test_mixed_group_with_consistent_duplicate_key_is_stamped(tmp_path):
+    """A/1984, A/1984, B/2017: the duplicated key is internally
+    year-consistent, so the writer can still tell the records apart by key
+    and all three members are stamped."""
+    rd = tmp_path / "review"
+    _sw_domain(rd, 1, _SW_ORIGINAL)
+    _sw_domain(rd, 2, _SW_ORIGINAL)          # same key, same year
+    _sw_domain(rd, 3, _SW_REPRINT)
+    r = _run(rd, 3)
+    assert r.returncode == 0, r.stderr
+    for i, key in ((1, _SW_ORIGINAL_KEY), (2, _SW_ORIGINAL_KEY),
+                   (3, _SW_REPRINT_KEY)):
+        assert _SW_BOTH in _sw_entry(rd, i, key)
+    report = _report(rd)
+    assert report["same_work"]["groups"][0]["key_year_conflict"] == []
+    assert sorted(report["same_work"]["stamped_entries"]) == [
+        f"literature-domain-1.bib:{_SW_ORIGINAL_KEY}",
+        f"literature-domain-2.bib:{_SW_ORIGINAL_KEY}",
+        f"literature-domain-3.bib:{_SW_REPRINT_KEY}"]
+
+
+def test_mixed_group_with_conflicting_duplicate_key_is_not_stamped(tmp_path):
+    """A/1984, A/2017, B/2017: key A carries two comparison years, so the
+    writer cannot tell the two A records apart by key at all. A stamp would
+    certify confusion rather than resolve it -- report, do not stamp."""
+    rd = tmp_path / "review"
+    _sw_domain(rd, 1, _SW_ORIGINAL)
+    _sw_domain(rd, 2, _SW_ORIGINAL_2017)
+    _sw_domain(rd, 3, _SW_REPRINT)
+    r = _run(rd, 3)
+    assert r.returncode == 0, r.stderr
+    for i in (1, 2, 3):
+        assert "same_work_group" not in _sw_bib(rd, i)
+    report = _report(rd)
+    groups = report["same_work"]["groups"]
+    assert len(groups) == 1
+    assert groups[0]["key_year_conflict"] == [_SW_ORIGINAL_KEY]
+    assert len(groups[0]["members"]) == 3
+    assert report["same_work"]["stamped_entries"] == []
+
+
+def test_within_domain_pair_groups_too(tmp_path):
+    """Grouping is review-wide, not cross-domain-only: one domain holding
+    both the original and the reissue is the same defect."""
+    rd = tmp_path / "review"
+    _sw_domain(rd, 1, _SW_ORIGINAL + "\n\n" + _SW_REPRINT)
+    r = _run(rd, 1)
+    assert r.returncode == 0, r.stderr
+    for key in (_SW_ORIGINAL_KEY, _SW_REPRINT_KEY):
+        assert _SW_BOTH in _sw_entry(rd, 1, key)
+    report = _report(rd)
+    assert len(report["same_work"]["groups"]) == 1
+    assert len(report["same_work"]["stamped_entries"]) == 2
+
+
+def test_splice_failure_is_reverted_and_reported(tmp_path, monkeypatch):
+    """The optional pass's one live data-loss shape. A splice that would
+    leave a DUPLICATE field costs all of Phase 6 (pybtex rejects it), so the
+    chunk is reverted -- and the loss is reported rather than swallowed,
+    which is what the gate-failure policy forbids."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+
+    def _double_splice(entry_text, field, value):
+        lines = entry_text.split("\n")
+        lines.insert(1, f"  {field} = {{{value}}},")
+        lines.insert(1, f"  {field} = {{{value}}},")
+        return "\n".join(lines)
+
+    # Control run: the annotation pass yields nothing, so the comparison
+    # below is a BYTE-identity check on the revert, not merely a check that
+    # the output happens to parse.
+    control = _sw_review(tmp_path, "control")
+    monkeypatch.setattr(evidence_barrier, "_same_work_groups",
+                        lambda parsed: ({}, []))
+    assert evidence_barrier.execute(control, 2) == 0
+    expected = [_sw_bib(control, i) for i in (1, 2)]
+    monkeypatch.undo()
+
+    rd = _sw_review(tmp_path, "review")
+    monkeypatch.setattr(evidence_barrier, "_stamp_optional_field",
+                        _double_splice)
+    assert evidence_barrier.execute(rd, 2) == 0
+    assert [_sw_bib(rd, i) for i in (1, 2)] == expected   # reverted, byte-wise
+    report = _report(rd)
+    assert report["same_work"]["stamped_entries"] == []
+    assert sorted(report["same_work"]["splice_failed"]) == [
+        f"literature-domain-1.bib:{_SW_ORIGINAL_KEY}",
+        f"literature-domain-2.bib:{_SW_REPRINT_KEY}"]
+
+
+def test_year_variants_group_via_same_work_year(tmp_path):
+    """The comparison year is whole-field: a Chicago suffix is not a second
+    publication year, but a genuinely different year is."""
+    same = tmp_path / "same"
+    _sw_domain(same, 1, _SW_ORIGINAL)
+    _sw_domain(same, 2, _SW_REPRINT.replace("year = {2017}", "year = {1984a}"))
+    r = _run(same, 2)
+    assert r.returncode == 0, r.stderr
+    assert _report(same)["same_work"]["groups"] == []
+    for i in (1, 2):
+        assert "same_work_group" not in _sw_bib(same, i)
+
+    diff = tmp_path / "diff"
+    _sw_domain(diff, 1, _SW_ORIGINAL.replace("year = {1984}", "year = {1984a}"))
+    _sw_domain(diff, 2, _SW_REPRINT)
+    r = _run(diff, 2)
+    assert r.returncode == 0, r.stderr
+    report = _report(diff)
+    assert len(report["same_work"]["groups"]) == 1
+    assert sorted(m["year"] for m in report["same_work"]["groups"][0]["members"]) \
+        == ["1984", "2017"]
+    assert len(report["same_work"]["stamped_entries"]) == 2
+
+
+def test_barrier_rerun_is_idempotent(tmp_path):
+    """The barrier re-runs on workflow resume: the second run must strip the
+    first run's stamp and re-stamp cleanly, never accumulate a duplicate.
+
+    Byte-equality is asserted from the SECOND run on, not from the first.
+    A first run inserts `keywords` after the header line of an entry that had
+    none, landing it above the freshly spliced `same_work_group`; on every
+    later run `keywords` is updated in place while the field is re-inserted
+    after the header, so the two swap once and then stay put. The stamp
+    itself is unchanged throughout -- that ordering settles after one run and
+    is what "idempotent" means here."""
+    rd = _sw_review(tmp_path)
+    assert _run(rd, 2).returncode == 0
+    assert _run(rd, 2).returncode == 0
+    second = [_sw_bib(rd, i) for i in (1, 2)]
+    for content in second:
+        assert content.count("same_work_group") == 1
+        assert _SW_BOTH in content
+    assert _run(rd, 2).returncode == 0
+    assert [_sw_bib(rd, i) for i in (1, 2)] == second     # a fixed point
+    assert len(_report(rd)["same_work"]["stamped_entries"]) == 2
+
+
+def test_three_member_group_stamps_all(tmp_path):
+    """Every member carries every key, so the writer sees the whole group
+    from whichever entry it is looking at."""
+    rd = tmp_path / "review"
+    third = _SW_ORIGINAL.replace(
+        _SW_ORIGINAL_KEY, "reiman1995panopticon").replace(
+        "doi = {10.1000/orig1984}", "doi = {10.1000/mid1995}").replace(
+        "year = {1984}", "year = {1995}")
+    _sw_domain(rd, 1, _SW_ORIGINAL)
+    _sw_domain(rd, 2, third)
+    _sw_domain(rd, 3, _SW_REPRINT)
+    r = _run(rd, 3)
+    assert r.returncode == 0, r.stderr
+    expected = ("reiman1984panopticon, reiman1995panopticon, "
+                "reiman2017panopticon")
+    for i, key in ((1, _SW_ORIGINAL_KEY), (2, "reiman1995panopticon"),
+                   (3, _SW_REPRINT_KEY)):
+        assert expected in _sw_entry(rd, i, key)
+    assert len(_report(rd)["same_work"]["stamped_entries"]) == 3
+
+
+def test_incomplete_entries_are_skipped_not_poisoning(tmp_path):
+    """A year-less entry has no comparison year, so it never groups -- and
+    it must not suppress the real pair either."""
+    rd = tmp_path / "review"
+    yearless = _SW_ORIGINAL.replace(
+        _SW_ORIGINAL_KEY, "reimanNoYearPanopticon").replace(
+        "doi = {10.1000/orig1984}", "doi = {10.1000/noyear}").replace(
+        ",\n  year = {1984}", "")
+    _sw_domain(rd, 1, _SW_ORIGINAL)
+    _sw_domain(rd, 2, _SW_REPRINT)
+    _sw_domain(rd, 3, yearless)
+    r = _run(rd, 3)
+    assert r.returncode == 0, r.stderr
+    for i, key in ((1, _SW_ORIGINAL_KEY), (2, _SW_REPRINT_KEY)):
+        assert _SW_BOTH in _sw_entry(rd, i, key)
+    assert "same_work_group" not in _sw_bib(rd, 3)
+    report = _report(rd)
+    assert len(report["same_work"]["groups"]) == 1
+    assert len(report["same_work"]["groups"][0]["members"]) == 2
+    assert len(report["same_work"]["stamped_entries"]) == 2
+
+
+def test_strip_regex_covers_same_work_group():
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    from evidence_barrier import _strip_derived_fields
+    entry = ("@article{k,\n  author = {A, B},\n"
+             "  same_work_group = {x, y},\n  year = {2020},\n}")
+    assert "same_work_group" not in _strip_derived_fields(entry)
+
+
+def test_quoted_form_hand_written_field_is_stripped():
+    """pybtex's writer emits quoted fields on round-trip, so every regex over
+    .bib text must match both forms."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    from evidence_barrier import _strip_derived_fields
+    entry = ('@article{k,\n  author = {A, B},\n'
+             '  same_work_group = "x, y",\n  year = {2020},\n}')
+    assert "same_work_group" not in _strip_derived_fields(entry)
+
+
+def test_value_embedded_literal_is_not_mistaken_for_a_field():
+    """_derived_field_took's condition 2 is a field PARSE, not a substring
+    count: a splice that lands the text INSIDE another field's value must be
+    rejected."""
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    from evidence_barrier import _derived_field_took, _SAME_WORK_FIELD_RE
+    before = "@article{k,\n  title = {A title},\n  year = {2020},\n}"
+    after = ("@article{k,\n  title = {A title same_work_group = {a, b}},\n"
+             "  year = {2020},\n}")
+    assert not _derived_field_took(
+        after, before, "same_work_group", "a, b", _SAME_WORK_FIELD_RE)

@@ -70,6 +70,8 @@ Output brief status during planning:
 - Parse @comment for domain overview and synthesis guidance
 - Check `keywords` for importance level — prioritize High
 - Use citation keys to reference papers in outline
+- Entries sharing a `same_work_group` field are one work (usually a
+  reprint). Plan them as a single position, never as two.
 
 **Handling evidence tiers** (the `EVIDENCE-*` keyword is the single authority on citability — see conventions.md):
 - `EVIDENCE-ABSTRACT`, `EVIDENCE-WEB`, or `EVIDENCE-CONTEXT`: outline-eligible normally.

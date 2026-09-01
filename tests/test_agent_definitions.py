@@ -142,19 +142,23 @@ def test_planner_knows_the_venue_status_rule():
     assert "still outline-eligible" in text
 
 
-def test_researcher_told_not_to_write_either_derived_field():
-    """The ban must cover BOTH barrier-owned fields, not just venue_status.
+def test_researcher_told_not_to_write_any_derived_field():
+    """The ban must cover EVERY barrier-owned field a researcher could
+    plausibly hand-write, not just venue_status.
 
     The prompt banned hand-writing `venue_status` while saying nothing
     about `year_suffix` --
     even though the barrier owns both, re-derives both every run, and a
     hand-written `year_suffix` is the more dangerous of the two: one the
     stripper cannot reach can make a collision group look structurally
-    complete and cost a cited work.
+    complete and cost a cited work. `same_work_group` joined the owned set
+    with the reprint annotation and takes the same ban: a hand-written one
+    would tell the writer to collapse two genuinely distinct works.
     """
     text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
         encoding="utf-8")
-    assert "Never write a `venue_status` or `year_suffix` field yourself" in text
+    assert ("Never write a `venue_status`, `year_suffix`, or "
+            "`same_work_group` field yourself") in text
     # And the reason, not just the prohibition -- a bare ban invites a
     # researcher to treat it as style rather than correctness.
     assert "re-derives them from scratch on every run" in text
@@ -173,6 +177,27 @@ def test_writer_knows_the_year_suffix_rule():
     assert "never invent one" in text
     # The old "the renderer cannot emit yet" caveat must be gone.
     assert "cannot emit yet" not in text
+
+
+def test_writer_and_planner_know_the_same_work_group_rule():
+    """A bare "same_work_group" substring is vacuous, the same vacuity the
+    venue_status and year_suffix pins warn about. Pin the load-bearing
+    directive on both sides: the field's whole purpose is that the members
+    are ONE work, so a rewrite that lost "one work" while keeping the field
+    name would leave the Reiman defect exactly where it was."""
+    writer = (REPO_ROOT / "agents" / "synthesis-writer.md").read_text(
+        encoding="utf-8")
+    assert "same_work_group" in writer
+    assert "treat them as ONE work" in writer
+    assert "Cite\nthe work ONCE" in writer
+    # The escape hatch stays available -- the annotation is advisory, and a
+    # writer that inspects and finds two real works must be able to cite both.
+    assert "genuinely distinct" in writer
+
+    planner = (REPO_ROOT / "agents" / "synthesis-planner.md").read_text(
+        encoding="utf-8")
+    assert "same_work_group" in planner
+    assert "single position, never as two" in planner
 
 
 def test_conventions_has_no_stale_suffix_caveat():

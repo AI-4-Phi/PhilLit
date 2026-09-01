@@ -258,3 +258,55 @@ class TestContractFold:
         # so it reaches "sogaard" instead.
         from bib_identity import contract_fold
         assert contract_fold("S\u00f8gaard") == "sogaard"
+
+
+class TestSameWorkKeys:
+    """The advisory reprint-grouping axis the evidence barrier stamps and
+    generate_bibliography's Phase 6 advisory re-derives. One owner here, so
+    the two cannot drift apart on what counts as "the same work"."""
+
+    def test_same_work_key_requires_both_components(self):
+        from bib_identity import same_work_key
+        assert same_work_key("A Title", "Reiman") == same_work_key(
+            "a  title!", "Reiman")
+        assert same_work_key("", "Reiman") is None
+        assert same_work_key("A Title", "") is None
+        assert same_work_key(None, None) is None
+
+    def test_brace_protection_keys_differently(self):
+        """title_key maps every non-alphanumeric to a space rather than
+        removing it, so a brace-protected initial ("a {T}itle") splits the
+        word. Inherited from title_key's documented scope, pinned here so
+        the grouping's known blind spot is stated rather than assumed away:
+        a reprint whose title braces a word matches only a sibling that
+        braces it the same way."""
+        from bib_identity import same_work_key
+        assert same_work_key("A Title", "Reiman") != same_work_key(
+            "a {T}itle", "Reiman")
+
+    def test_same_work_key_is_the_title_key_fold_on_both_axes(self):
+        from bib_identity import same_work_key, title_key
+        assert same_work_key("Driving to the Panopticon", "Millière") == (
+            title_key("Driving to the Panopticon"), "milliere")
+
+    def test_same_work_year_whole_field_grammar(self):
+        from bib_identity import same_work_year
+        assert same_work_year("1984") == "1984"
+        assert same_work_year("1984a") == "1984"
+        assert same_work_year("1984--1985") == "1984"
+        assert same_work_year("1984-1985") == "1984"
+        assert same_work_year("1984/2017") == "1984"
+        assert same_work_year(" 2017 ") == "2017"
+        assert same_work_year(2017) == "2017"
+        assert same_work_year("n.d.") == ""
+        assert same_work_year(None) == ""
+        assert same_work_year("") == ""
+
+    def test_malformed_year_fields_mint_no_phantom_year(self):
+        """The fail-safe direction for an advisory: a garbage year field must
+        never group a valid entry against it."""
+        from bib_identity import same_work_year
+        assert same_work_year("9781234567890") == ""
+        assert same_work_year("10.1234/2017.42") == ""
+        assert same_work_year("pages 1984--1990") == ""
+        assert same_work_year("forthcoming 2017") == ""
