@@ -122,7 +122,8 @@ The field lists the citekeys of entries that share title and first author
 across different years — usually a reprint or reissue of one text. Never
 present the members as distinct positions or as engaging each other. Cite
 the work ONCE, using the entry whose content your claim relies on; where
-the original date matters, use the reprint form "(Reiman 1984/2017)". If
+the original date matters, note it in the surrounding prose (e.g.
+"originally published in 1984"), never inside the citation parenthesis. If
 inspection shows the members are genuinely distinct (a revised edition, a
 different text under the same title), you may cite both — but then
 distinguish them explicitly in prose.

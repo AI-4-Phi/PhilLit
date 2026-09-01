@@ -20,9 +20,12 @@ from a Claude Code two dozen versions back. Design, status and both gates:
 **The reprint citation form `(Author Year1/Year2)` causes both `same_work_group`
 members to be double-listed in delivered References** — found verifying the
 v0.5.7 reprint-dedup fix (`docs/known-issues/reprint-dedup-measurement-2026-09-01/`,
-2026-09-01). `agents/synthesis-writer.md` instructs writers to cite a reprint
-group once, using this form (e.g. `(Reiman 1984/2017)`), and `docs/conventions.md`
-now documents it. But `generate_bibliography.find_cited_entries`'s matcher
+2026-09-01). `agents/synthesis-writer.md` no longer recommends this form (it
+now instructs writers to note the original date in prose instead), and
+`docs/conventions.md` no longer documents it. But `skills/literature-review/scripts/lint_md.py`'s
+citation grammar still accepts `(Author Year1/Year2)` (`_YEAR` allows an
+optional `/YEAR` group), so a writer can still produce the form spontaneously
+and the double-listing bug fires when they do. `generate_bibliography.find_cited_entries`'s matcher
 (`_collect_matches`, `_resolve_collisions`) groups match candidates by
 `(surname, EXACT year)`, so the two years in `Year1/Year2` land in separate
 singleton groups — each always kept, with no collision resolution between them —
@@ -31,7 +34,9 @@ and both bib entries end up in the delivered `.bib`'s References, exactly the
 `warn_same_work_cited` (the `[SAME-WORK]` advisory) does fire but is print-only
 to stderr and never blocks or merges. Reproduced directly against
 `find_cited_entries` with a synthetic `same_work_group` pair and a
-`(Surname Year1/Year2)`-only prose citation. Candidate fixes: special-case the
-`Year1/Year2` form in the matcher to resolve to one entry, or escalate
+`(Surname Year1/Year2)`-only prose citation. The form is no longer recommended
+anywhere, so support or reject it properly: either special-case the
+`Year1/Year2` form in the matcher to resolve to one entry, or have
+`lint_md.py`'s grammar reject the form outright and escalate
 `warn_same_work_cited` to something stronger than a stderr print when both
 group members are independently matched as cited.

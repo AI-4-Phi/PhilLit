@@ -259,7 +259,6 @@ An entry with no `EVIDENCE-*` token is treated as `EVIDENCE-NONE` (fail-closed).
 | Author as subject | Author (Year) argues... | Frankfurt (1971) argues... |
 | Two authors sharing a surname | (F. Author Year) — add the first initial | (G. Johnson 2024) vs. (R. Johnson 2024) |
 | One author, two works in one year | (Author Year+letter) — the entry's own `year_suffix` | (Menary 2010a) vs. (Menary 2010b) |
-| Reprint cited under its original date | (Author OriginalYear/ReprintYear) — only for entries sharing `same_work_group` | (Reiman 1984/2017) |
 
 **Different people sharing a surname — always add the first initial, whatever
 the years.** This is Chicago's own rule. When the years differ the citations
