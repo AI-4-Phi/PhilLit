@@ -1,7 +1,7 @@
 # Dynamic-Workflow Refactor of the Literature-Review Orchestration
 
 **Date**: 2026-07-22
-**Status**: Unblocked — the Step 1 gate test was executed 2026-07-22 and **PASSED on all six checks** (see "Step 1 results" below). Implementation (roadmap steps 2–6) not started.
+**Status**: Implementation (roadmap steps 2–6) is unstarted, and **two gates stand before step 2** — see "Gates before step 2". The Step 1 hook test passed on all six checks, but on a Claude Code that has since moved; a second gate was never examined at all.
 **Origin**: Feasibility investigation of refactoring `skills/literature-review/` onto Claude Code's dynamic-workflow feature (docs verified 2026-07-22: workflows.md, plugins.md, plugins-reference.md at code.claude.com/docs).
 
 ## Summary
@@ -10,7 +10,7 @@ The Phase 3 → 4 → 5 pipeline (parallel domain researchers → synthesis plan
 
 Plugins cannot ship workflows, but `/phillit:setup` can install one: copying a workflow file from the plugin into the workspace's `.claude/workflows/` is the same move as the existing permissions merge (a plugin cannot ship permissions either; setup merges them into `.claude/settings.json`).
 
-**The gating unknown is resolved**: plugin hooks — including the fail-closed SubagentStop BibTeX validator with its full block → re-prompt → fix loop — fire for workflow-spawned subagents exactly as for Task-tool subagents (empirically verified 2026-07-22, Claude Code 2.1.218; see "Step 1 results" below). The refactor is unblocked.
+**The gating unknown is resolved**: plugin hooks — including the fail-closed SubagentStop BibTeX validator with its full block → re-prompt → fix loop — fire for workflow-spawned subagents exactly as for Task-tool subagents (empirically verified 2026-07-22, Claude Code 2.1.218; see "Step 1 results" below). That answers the question the investigation opened; it does not by itself clear the refactor — the two gates below do.
 
 ## Verified facts (docs, 2026-07-22)
 
@@ -22,6 +22,31 @@ Plugins cannot ship workflows, but `/phillit:setup` can install one: copying a w
 - **No mid-run user input** (confirmed verbatim in docs): only permission prompts can pause a run; per-stage sign-off requires one workflow per stage. *Decision: acceptable — the workflow covers only the non-interactive middle of the review; Human-in-the-Loop mode is not a constraint we optimize for.*
 - **Execution mode**: the docs say workflow subagents always run in `acceptEdits` mode and inherit the session's tool allowlist. *Step 1 verified*: PhilLit's scoped `Write`/`Edit` rules bind as expected — and hook payloads actually report `permission_mode: "default"`, contradicting the docs' `acceptEdits` claim (at least headless, 2.1.218).
 - **Custom agent types**: the Workflow tool's `agent()` accepts an `agentType` option resolved from the same registry as the Task tool. *Step 1 verified*: `agentType: "phillit:domain-literature-researcher"` resolves, and hook payloads carry exactly that string.
+
+## Gates before step 2
+
+Both are cheap, and neither is a matter of taste. Clear them in this order —
+the second costs a headless run and is worth nothing if the first says no.
+
+**1. Does the Agent SDK have a Workflow tool?** This plan was written as if
+PhilLit were the only consumer of `skills/literature-review/SKILL.md`. It is
+not: phillit-service vendors the engine and drives it through the Agent SDK,
+and `CLAUDE.md`'s mirror rule is unconditional. Step 4 makes SKILL.md call the
+Workflow tool; the service's `tools/revendor.py` then carries that call
+downstream at the next pin. If the SDK cannot resolve `.claude/workflows/` or
+has no Workflow tool, the vendored skill names an orchestration primitive that
+does not exist there — which forks the engine permanently or kills the plan.
+Settle it by reading how the service drives the phase pipeline, before writing
+any of the workflow script.
+
+**2. Re-run the Step 1 hook test on the current Claude Code.** The results
+below are from **2.1.218**; the installed CLI is **2.1.252**. The dispatch tool
+was renamed Task -> Agent in between — a rename this repo's own hook layer had
+to absorb (`hooks/hooks.json` now carries PreToolUse matchers for both `Agent`
+and `Task`; `block_subagent_background_dispatch.py` documents it). The platform
+moved underneath exactly the surface the gate test measured, so the six checks
+are evidence about 2.1.218 and not about now. The protocol below is unchanged
+and re-runnable as written.
 
 ## Proposed architecture
 

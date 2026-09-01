@@ -10,8 +10,12 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Dynamic-workflow orchestration for Phases 3–5** — unstarted, unblocked.
-Design and status: `docs/ideas/dynamic-workflow-refactor.md`, which owns them.
+**Dynamic-workflow orchestration for Phases 3–5** — unstarted, and two gates
+stand before implementation: whether the Agent SDK has a Workflow tool at all
+(the service vendors this skill and the mirror rule is unconditional), and a
+re-run of the hook gate test, whose evidence is from a Claude Code two dozen
+versions back. Design, status and both gates:
+`docs/ideas/dynamic-workflow-refactor.md`, which owns them.
 
 **Lint WARN on contraction-only citation resolutions** — undecided, blocked on
 a measurement. `lint_md`'s `_fold_variants` is `ascii_variants` bare, so
