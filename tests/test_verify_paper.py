@@ -764,6 +764,104 @@ class TestContainerDisambiguation:
         assert mock_get.call_count == 2
 
 
+class TestContainerDisposition:
+    """`container_disambiguation`/`container_candidates`: the reopen-metric
+    channel (v0.5.7, PHASED DEFAULTS). Reuses TestContainerDisambiguation's
+    fixtures (CHAPTER_ITEM, PARENT_BOOK, _parent_response, _limiter) rather
+    than duplicating them."""
+
+    def test_single_container_leaves_keys_absent(self):
+        import verify_paper as vp
+        item = {"type": "book-chapter", "container-title": ["Only One"],
+                "ISBN": ["9781"]}
+        result = {}
+        vp.disambiguate_container(
+            item, result, TestContainerDisambiguation._limiter(), "")
+        assert "container_disambiguation" not in result
+        assert "container_candidates" not in result
+
+    def test_missing_isbn_multi_element_records_bailed(self):
+        import verify_paper as vp
+        item = {"type": "book-chapter",
+                "container-title": ["Series Name", "Volume Name"]}
+        result = {}
+        vp.disambiguate_container(
+            item, result, TestContainerDisambiguation._limiter(), "")
+        assert result["container_disambiguation"] == "bailed"
+        assert result["container_candidates"] == 2
+
+    @patch("requests.get")
+    def test_successful_disambiguation_records_resolved(self, mock_get):
+        """Reuses the existing happy-path fixture (parent title picks the
+        volume): after a clean resolution, both new keys are present."""
+        import verify_paper as vp
+        item = TestContainerDisambiguation.CHAPTER_ITEM
+        mock_get.return_value = TestContainerDisambiguation._parent_response(
+            [TestContainerDisambiguation.PARENT_BOOK])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(
+            item, result, TestContainerDisambiguation._limiter(), "")
+        assert result["container_disambiguation"] == "resolved"
+        assert result["container_candidates"] == 2
+
+    @patch("requests.get")
+    def test_unanimity_bail_records_bailed(self, mock_get):
+        """Reuses the contradictory-parents fixture: two parents naming
+        different elements fail the unanimity gate -- an evidence bail."""
+        import verify_paper as vp
+        item = TestContainerDisambiguation.CHAPTER_ITEM
+        mock_get.return_value = TestContainerDisambiguation._parent_response(
+            [{"title": [item["container-title"][0]], "type": "book"},
+             {"title": [item["container-title"][1]], "type": "book"}])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(
+            item, result, TestContainerDisambiguation._limiter(), "")
+        assert result["container_disambiguation"] == "bailed"
+        assert result["container_candidates"] == 2
+
+    @patch("requests.get")
+    def test_exception_path_records_error_and_persists(self, mock_get):
+        """An exception before any response is infrastructure, not
+        evidence -- the mutated result dict must still carry the
+        disposition and candidate count, proving the except handler
+        persists the caller's dict rather than discarding it."""
+        import verify_paper as vp
+        item = TestContainerDisambiguation.CHAPTER_ITEM
+        mock_get.side_effect = RuntimeError("boom")
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(
+            item, result, TestContainerDisambiguation._limiter(), "")
+        assert result["container_disambiguation"] == "error"
+        assert result["container_candidates"] == 2
+
+    @patch("requests.get")
+    def test_non_200_response_records_error(self, mock_get):
+        import verify_paper as vp
+        item = TestContainerDisambiguation.CHAPTER_ITEM
+        resp = MagicMock()
+        resp.status_code = 500
+        mock_get.return_value = resp
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(
+            item, result, TestContainerDisambiguation._limiter(), "")
+        assert result["container_disambiguation"] == "error"
+        assert result["container_candidates"] == 2
+
+    @patch("requests.get")
+    def test_empty_parent_result_is_an_evidence_bail_not_error(self, mock_get):
+        """CrossRef answered with a parseable body whose `items` is empty --
+        the answer authorizes nothing, so this is an evidence bail, not an
+        infrastructure error (the post-parse default flip)."""
+        import verify_paper as vp
+        item = TestContainerDisambiguation.CHAPTER_ITEM
+        mock_get.return_value = TestContainerDisambiguation._parent_response([])
+        result = vp.format_result(item, "doi_lookup")
+        vp.disambiguate_container(
+            item, result, TestContainerDisambiguation._limiter(), "")
+        assert result["container_disambiguation"] == "bailed"
+        assert result["container_candidates"] == 2
+
+
 class TestVerifyByDOI:
     """Tests for DOI verification."""
 

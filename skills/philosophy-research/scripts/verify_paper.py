@@ -370,13 +370,17 @@ def disambiguate_container(item: dict, result: dict, limiter,
 
     Read the evidence NARROWLY: the 46 chapter/proceedings entries in the
     two reviews run after this function shipped show no series-in-booktitle
-    error, and the three `series` values among them are correct -- but
-    neither cache retains the raw container-title array, so the AT-RISK
-    subset (multi-element arrays that then bailed) could not be separated
-    from single-element arrays that were never at risk. Rarity is therefore
-    unmeasured, not established. What would reopen this: a measured bail
-    rate above roughly 30% of multi-element chapters, at which point the
-    affected population justifies a flag.
+    error, but rarity is unmeasured, not established. Reopen mechanism
+    (added v0.5.7): every multi-element chapter's persisted verify result
+    carries `container_disambiguation` ("bailed"/"resolved") and
+    `container_candidates`, so the bail rate is computable from a run's
+    verify_*.json artifacts; only post-v0.5.7 artifacts carry the keys.
+    What would reopen this: an EVIDENCE bail rate - bailed/(bailed +
+    resolved), "error" excluded, so infrastructure flakiness cannot trip
+    it - above roughly 30% of multi-element chapters, at which point the
+    affected population justifies a flag. The 30% is a priori (the counter
+    exists because the rate was unknowable); the first measured rate also
+    judges whether that threshold was sane.
     """
     if item.get("type") not in _MULTI_CONTAINER_TYPES:
         return
@@ -404,6 +408,18 @@ def disambiguate_container(item: dict, result: dict, limiter,
                   if isinstance(c, str) and c.strip()]
     if len(containers) < 2:
         return
+    # Measurement channel for the ACCEPTED RESIDUAL below: from here on the
+    # item IS a multi-element chapter, so every exit is a bail, an
+    # infrastructure error, or a resolution. PHASED DEFAULTS: "bailed"
+    # covers the evidence-side guards below (collapse, no usable ISBN);
+    # the default flips to "error" just before the network call, back to
+    # "bailed" once a parseable body is in hand (post-parse returns are
+    # evidence-based refusals: no parents, truncation, disagreement), and
+    # to "resolved" at the single success site. `result` is the caller's
+    # dict, mutated in place and persisted on every path, including the
+    # except handler (audited 2026-09-01).
+    result["container_disambiguation"] = "bailed"
+    result["container_candidates"] = len(containers)
     # Two elements that normalize alike collapse in the normalized->raw
     # dict below, so a parent naming BOTH would score `len(matches) == 1`
     # and silently defeat the exactly-one-element rule. Nothing about such
@@ -437,6 +453,9 @@ def disambiguate_container(item: dict, result: dict, limiter,
     if mailto:
         params["mailto"] = mailto
     try:
+        # Anything that fails from here until the body parses is
+        # infrastructure, not evidence (see the phased-defaults comment).
+        result["container_disambiguation"] = "error"
         limiter.wait()
         response = requests.get("https://api.crossref.org/works",
                                 params=params, timeout=30)
@@ -444,6 +463,7 @@ def disambiguate_container(item: dict, result: dict, limiter,
         if response.status_code != 200:
             return
         message = response.json().get("message") or {}
+        result["container_disambiguation"] = "bailed"
         parents = message.get("items") or []
         total = message.get("total-results", len(parents))
         if not parents or (isinstance(total, int) and total > len(parents)):
@@ -466,6 +486,8 @@ def disambiguate_container(item: dict, result: dict, limiter,
             return
         volume = norm_containers[next(iter(volume_keys))]
         result["container_title"] = volume
+        # The single success site (see the phased-defaults comment).
+        result["container_disambiguation"] = "resolved"
         remaining = [c for c in containers if c != volume]
         # Per-parent, deliberately NOT a union: pooling lets one parent
         # supply the remaining element while another's container-title
