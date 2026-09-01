@@ -353,6 +353,30 @@ def disambiguate_container(item: dict, result: dict, limiter,
     attestation -- doi/title/authors/year never depend on it. `[1]` is
     deliberately NOT the fallback: array order is undocumented, so without
     a parent match there is no authority either way.
+
+    ACCEPTED RESIDUAL (owner decision, 2026-09-01): a bail therefore ships
+    element [0] as the booktitle even when [0] IS the series -- the exact
+    defect this function was built for (see the module comment above: a
+    Springer series shipped as a booktitle in production). Nothing detects
+    it downstream; no Phase-6 script reads `series` at all. Accepted on
+    DETECTABILITY, not on rarity: a series name sitting in a booktitle slot
+    is legible to anyone reading the bibliography, so a recurrence is caught
+    by reading the output rather than by machinery, and that is cheaper than
+    the provenance field a flag would need threaded from here into lint.
+    Suppressing the field instead was rejected -- the string is from the
+    verified record, so the doubt is which ROLE it plays, not whether it is
+    real, and conventions.md's "omit entirely" fallback covers the second
+    case only.
+
+    Read the evidence NARROWLY: the 46 chapter/proceedings entries in the
+    two reviews run after this function shipped show no series-in-booktitle
+    error, and the three `series` values among them are correct -- but
+    neither cache retains the raw container-title array, so the AT-RISK
+    subset (multi-element arrays that then bailed) could not be separated
+    from single-element arrays that were never at risk. Rarity is therefore
+    unmeasured, not established. What would reopen this: a measured bail
+    rate above roughly 30% of multi-element chapters, at which point the
+    affected population justifies a flag.
     """
     if item.get("type") not in _MULTI_CONTAINER_TYPES:
         return
