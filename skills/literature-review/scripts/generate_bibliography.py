@@ -1926,6 +1926,20 @@ def find_cited_entries(review_text: str, bib_data) -> list[tuple[str, object]]:
     A `## References` section already in the file is NOT prose and is stripped
     before any matching (_strip_references_section) - see that function for the
     convergence failure it fixes.
+
+    The reprint citation form (Author Year1/Year2) is unsupported BY DESIGN
+    (decided 2026-09-01): grouping is by (surname, EXACT year), so a
+    slash-form citation's two years match as two independent entries, and no
+    code path collapses a same_work_group pair into one rendered reprint
+    entry. Do not add one - a single rendering would have to merge two
+    entries' metadata (distinct DOIs, evidence tiers) at render time, against
+    the per-entry identity model. Enforcement lives in lint_md.check_citations'
+    STRADDLE check (ERROR when the two years resolve to two DIFFERENT
+    References entries); the remedy is prose - cite one year, give the
+    original date in prose (agents/synthesis-writer.md) - never a bib or
+    matcher change. warn_same_work_cited stays print-only: it sees only the
+    cited-entry list, never citation text, so it cannot tell a double-listing
+    from a sanctioned both-editions citation.
     """
     prose = _strip_references_section(review_text)
     title_mentioned = _title_mentions(prose, bib_data)
