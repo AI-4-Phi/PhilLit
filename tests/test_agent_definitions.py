@@ -279,7 +279,7 @@ def test_researcher_prose_makes_citation_chaining_required():
     assert "Stage 4 skipped: no resolvable seeds (S2 status:" in stage4
     assert "Exactly one" in stage4  # the one-seed case has an action
     # A chaining run that errored is not a skip: it has its own evidenced line.
-    assert "Stage 4 attempted: chaining failed" in stage4
+    assert "Stage 4 attempted: chaining incomplete" in stage4
     checklist = _section(text, "## Before Submitting — Quality Checklist", "## Error Checking")
     assert "Stage 4 ran" in checklist
     # The status example must model every stage, not a subset.
@@ -309,13 +309,26 @@ def test_researcher_prose_budgets_calls_and_forbids_probing():
     assert "as many rounds as the results warrant" in batching
     assert "one follow-up call per round" in batching
     assert "Marked INCOMPLETE" in text  # prose reads the conditional summary line
-    assert "valid-empty slug file" in batching  # the one exempt standalone call
+    assert "valid-empty slug-file call" in batching  # the one exempt standalone call
     assert "result JSON" in batching  # pokes named as out of budget
     # The slug file rides the Stage 1 fetch call, and the valid-empty rule survives.
     stage1 = _section(text, "### Stage 1: SEP & IEP (Most Authoritative)", "### Stage 2: PhilPapers")
     fetch_block = [b for b in re.findall(r"```bash\n(.*?)```", stage1, re.S) if "fetch_sep.py" in b]
     assert len(fetch_block) == 1 and "encyclopedia_entries-domain-N.json" in fetch_block[0]
     assert '{"sep_entries": [], "iep_entries": []}' in stage1
+    # The valid-empty case is a runnable block, not a `...` schematic, and it
+    # spells out the concrete N so nobody writes a literal `domain-N` file.
+    assert "encyclopedia_entries-domain-3.json" in stage1
+    # Stage 5's DOI-search fallback writes a namespaced verify file; no bash
+    # example may still show the collision-prone bare form. (The anti-pattern
+    # is named in the CRITICAL prose on purpose, so scope this to the blocks.)
+    assert "verify_<domain>_<citekey>.json" in text
+    for block in re.findall(r"```bash\n(.*?)```", text, re.S):
+        assert "verify_<citekey>.json" not in block, "a bash example still writes a bare verify file"
+    # Stage 6's --stdin example actually pipes the text the prose says to pipe.
+    assert "PAGE_TEXT" in text
+    # The orchestrator always assigns literature-domain-N.bib (SKILL.md Phase 3).
+    assert "literature-domain-compatibilism" not in text
     # Stage 3's worked example still chains all four searches in one block.
     stage3 = _section(text, "### Stage 3: Extended Academic Search", "### Consuming results without re-reading them")
     m = re.search(r"```bash\n(.*?)```", stage3, re.S)
