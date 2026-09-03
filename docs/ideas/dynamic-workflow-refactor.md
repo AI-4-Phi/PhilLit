@@ -1,7 +1,7 @@
 # Dynamic-Workflow Refactor of the Literature-Review Orchestration
 
 **Date**: 2026-07-22
-**Status**: Implementation (roadmap steps 2–6) is unstarted, and **two gates stand before step 2** — see "Gates before step 2". The Step 1 hook test passed on all six checks, but on a Claude Code that has since moved; a second gate was never examined at all.
+**Status**: Implementation (roadmap steps 2–6) is unstarted. **Gate 1 is now ANSWERED, and the answer is no** — the service cannot reach a workspace `.claude/workflows/`, and the blocker is delivery rather than capability, so **step 3 needs redesigning before step 2 is worth starting** (see "Gates before step 2"). Gate 2 still stands: the Step 1 hook test passed on all six checks, but on a Claude Code that has since moved, and the version it should be re-run on is not the installed one.
 **Origin**: Feasibility investigation of refactoring `skills/literature-review/` onto Claude Code's dynamic-workflow feature (docs verified 2026-07-22: workflows.md, plugins.md, plugins-reference.md at code.claude.com/docs).
 
 ## Summary
@@ -25,8 +25,10 @@ Plugins cannot ship workflows, but `/phillit:setup` can install one: copying a w
 
 ## Gates before step 2
 
-Both are cheap, and neither is a matter of taste. Clear them in this order —
-the second costs a headless run and is worth nothing if the first says no.
+Both are cheap, and neither is a matter of taste. They were to be cleared in
+this order, the second costing a headless run and being worth nothing if the
+first said no. **The first has since been answered, and it said no** — so the
+step-3 redesign it asks for comes before spending the headless run on gate 2.
 
 **1. Does the service's run path reach a workspace `.claude/workflows/`?**
 This plan was written as if PhilLit were the only consumer of
@@ -35,15 +37,52 @@ engine and drives it through the Agent SDK, and `CLAUDE.md`'s mirror rule is
 unconditional. Step 4 makes SKILL.md call the Workflow tool; the service's
 `tools/revendor.py` then carries that call downstream at the next pin.
 
-*Half of this is already settled* (2026-09-01): the SDK is not a separate
+*Half of this was already settled* (2026-09-01): the SDK is not a separate
 runtime with its own tool registry — it bundles the Claude Code CLI, pinned in
 `claude_agent_sdk/_cli_version.py`, currently **2.1.233**. That is above both
 floors below (Workflow tool ≥ 2.1.154, multi-directory resolution ≥ 2.1.178),
-so the tool exists there. What is NOT settled is the service's own invocation:
-whether its workspace scaffolding installs the workflow file at all, whether
-its cwd resolves `.claude/workflows/`, and whether its permission surface
-grants `Workflow`. Read the service's run path before writing any of the
-script — a workflow the service cannot reach forks the engine.
+so the tool exists there.
+
+**ANSWERED 2026-09-03 by reading the service's run path (phillit-service at
+`3a65178`, engine pin `8fc09af`): it cannot, and the blocking half is DELIVERY,
+not capability.** Four facts, each read off code rather than inferred:
+
+| fact | where |
+|---|---|
+| the workspace builder copies an explicit list — `("skills", "agents", "hooks", "docs", "anthropic_key_helper.sh")` — so no review workspace ever holds a `.claude/workflows/` | `src/phillit_service/reviews/workspace.py`, `_ENGINE_CLAUDE_COPIES` |
+| `allowed_tools` is `Skill, Task, Agent, Read, Write, Edit, Bash, Glob, Grep, TodoWrite` — no `Workflow` — under `permission_mode="dontAsk"` | `src/phillit_service/reviews/worker.py` |
+| the re-vendor manifest has no `workflows/` mapping: a top-level upstream `workflows/` is UNMAPPED, and a `skills/…/workflows/` would land under `.claude/skills/`, never `.claude/workflows/` | `tools/revendor.py`, `EXACT_MAP` / `PREFIX_MAP` |
+| **`skills/setup/` is excluded from the mirror by recorded decision** — an interactive first-run skill that would instruct a paid agent to rewrite its own confinement | `tools/revendor.py`, `EXCLUDE_PREFIX` |
+
+The last row is the one that decides the gate. **This plan's delivery mechanism
+is step 3** — `setup_workspace.py` copying the script into
+`<workspace>/.claude/workflows/`, run by `/phillit:setup`. That skill is
+structurally unavailable there: excluded by decision, and there is no user at a
+keyboard to run it. So step 4 lands as **prose calling the Workflow tool with no
+registered workflow file, no allowlist entry, and an approval gate with nobody
+to approve it** — Phases 3–5 would fail in the service's production.
+
+That failure class has already happened once in exactly this direction:
+`hooks/validate_bib_write.py` is excluded from the same mirror (there by name,
+in `EXCLUDE_EXACT`), so it carried the *prose claiming the slug-file gate* and
+none of the gate, until the service ported the check by hand
+(`phillit-service/docs/known-issues/missing-encyclopedia-slug-file.md`).
+
+**What that asks of step 3**: a delivery path the `skills/` mirror already
+carries — the script shipped inside `skills/literature-review/` rather than
+installed from `skills/setup/` — with the install decided by the consumer.
+`/phillit:setup` can still do the interactive install for PhilLit's own users;
+what it cannot be is the only path. Decide this before step 2, because it
+changes where the script lives and therefore what `meta.name` and the version
+stamp have to survive.
+
+**Two unknowns remain, both unprobed, and neither matters until delivery is
+settled**: whether the bundled CLI resolves `.claude/workflows/` from the SDK's
+`cwd` (the service sets `cwd=<workspace>` with `setting_sources=["project"]`, so
+the directory would sit in the right place, but nothing has been run), and what
+`permission_mode="dontAsk"` does to the "Review dynamic workflow before running"
+gate that Step 1 hit — adding `"Workflow"` to `allowed_tools` is a one-line
+change there, but whether that clears the gate is a probe, not a claim.
 
 **2. Re-run the Step 1 hook test on the current Claude Code.** The results
 below are from **2.1.218**; the installed CLI is **2.1.252**. The dispatch tool
@@ -53,6 +92,29 @@ and `Task`; `block_subagent_background_dispatch.py` documents it). The platform
 moved underneath exactly the surface the gate test measured, so the six checks
 are evidence about 2.1.218 and not about now. The protocol below is unchanged
 and re-runnable as written.
+
+**Re-run it against the CLI the Agent SDK bundles, not the installed one.** The
+service never executes the installed CLI: the SDK bundles its own and prefers it
+over anything on `PATH`, at **2.1.233** for the SDK version pinned in
+`phillit-service/uv.lock` (0.2.139). So a pass at 2.1.252 is evidence about a
+binary one of this skill's two consumers does not run, and if the gate clears
+there while the service sits at 2.1.233, the two diverge on exactly the surface
+the test measures. Making the engine depend on workflows would then force an SDK
+bump in the service, which is deliberately held and carries re-verification of
+ten behaviours keyed to the bundled CLI — cheaper to measure both, or 2.1.233
+alone, than to discover the divergence at a pin. Run it under
+`ANTHROPIC_API_KEY` with the SDK's bundled binary on `PATH`, or with the
+service's own `.venv`, so the version under test is the one production has.
+
+*What the service can already contribute, and its limit*: PreToolUse,
+PostToolUse and SubagentStop propagation into subagents was re-verified at
+**2.1.233** on 2026-08-18 — `phillit-service/tests/test_sandbox_verify.py`'s
+`test_pretooluse_hook_fires_in_subagent` and
+`test_posttooluse_hook_fires_in_subagent`, an operator-run integration pair.
+That is the **Agent/Task dispatch path**, NOT workflow-spawned agents — a
+different dispatch path, so it discharges none of the six checks below. What it does say is that
+the Task→Agent rename did not break hook propagation at 2.1.233 for ordinary
+subagents, which narrows the re-run to the workflow path itself.
 
 ## Proposed architecture
 
