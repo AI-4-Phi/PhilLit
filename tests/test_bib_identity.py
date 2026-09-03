@@ -373,3 +373,5 @@ class TestAuthorListSplit:
         # Person raises UnboundLocalError (pybtex's own bug) on a tie-only
         # name -> whitespace fallback returns the token whole.
         assert bi.first_author_surname("~") == "~"
+        # Empty author falls back to the editor list, same parse.
+        assert bi.first_author_surname("", "Menary, Richard and Wu, Jing") == "Menary"

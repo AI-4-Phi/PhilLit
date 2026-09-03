@@ -169,7 +169,9 @@ def get_doi(entry: dict) -> Optional[str]:
 
 def _is_one_brace_group(name: str) -> bool:
     """True when the first `{` closes only at the final character, i.e. the
-    whole name is one outer brace group (nested groups allowed)."""
+    whole name is one outer brace group (nested groups allowed). Escaped
+    braces (`\\{`) are counted like any other -- unreachable in author
+    fields, documented limitation."""
     if len(name) < 2 or name[0] != '{' or name[-1] != '}':
         return False
     depth = 0
@@ -187,16 +189,17 @@ def get_author_last_name(entry: dict) -> Optional[str]:
     """First author's surname as search text for abstract matching.
 
     Brace-aware on the list split (bib_identity). A first name that is one
-    outer brace group with no comma inside is a corporate author and is
-    returned whole; otherwise the token rule stands: text before the first
-    comma (a braced personal name `{Doe, Jane}` lands here), else the last
-    whitespace token. Case-protection braces around plain letters are
-    removed from the result because it is used as search text; LaTeX escape
-    groups are kept."""
+    outer brace group is returned whole, commas inside included: pybtex
+    treats such a group as ONE surname regardless of its punctuation
+    (`{Smith, Jones and Lee Institute}`), and this is how
+    `generate_bibliography` renders it. Otherwise the token rule stands:
+    text before the first comma, else the last whitespace token.
+    Case-protection braces around plain letters are removed from the result
+    because it is used as search text; LaTeX escape groups are kept."""
     first = first_author_name(entry['fields'].get('author', ''))
     if not first:
         return None
-    if _is_one_brace_group(first) and ',' not in first:
+    if _is_one_brace_group(first):
         surname = first[1:-1]
     elif ',' in first:
         surname = first.split(',')[0]
@@ -208,10 +211,6 @@ def get_author_last_name(entry: dict) -> Optional[str]:
     # argument of a one-letter accent command (\c{c}) -- those stay as the
     # bib wrote them, exactly as before this change.
     surname = re.sub(r"(?<!\\[A-Za-z])(?<![\\'\"^`~=.])\{([A-Za-z]+)\}", r"\1", surname)
-    # The comma branch on a braced personal name ({Doe, Jane}) leaves an
-    # unmatched leading brace: drop it. Balanced groups ({\O}stergaard) stay.
-    if surname.startswith('{') and surname.count('{') > surname.count('}'):
-        surname = surname[1:]
     surname = surname.strip()
     return surname or None
 

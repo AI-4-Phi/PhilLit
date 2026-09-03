@@ -668,6 +668,29 @@ class TestBatchProcessing:
         assert "  INCOMPLETE entries: k1, k2" in lines
         empty = dict(base, marked_incomplete=0, incomplete_keys=[])
         assert not any("INCOMPLETE entries" in l for l in enrich_bibliography.summary_lines(empty))
+        # Sources is the other conditional line: nothing enriched, nothing to name.
+        nothing = dict(base, enriched=0, sources={})
+        assert not any("Sources:" in l for l in enrich_bibliography.summary_lines(nothing))
+
+    def test_main_prints_the_summary_the_prose_reads(self, tmp_path, capsys, monkeypatch):
+        """The Stage 5.5 prose replaced a grep with the script's own stdout,
+        so the keys and the count must survive main()'s print loop, not just
+        summary_lines()."""
+        import enrich_bibliography
+        stats = {'total': 2, 'already_had_abstract': 0, 'enriched': 1,
+                 'marked_incomplete': 1, 'sources': {'core': 1},
+                 'incomplete_keys': ['k1', 'k2']}
+        monkeypatch.setattr(enrich_bibliography, "enrich_bibliography",
+                            lambda *a, **k: stats)
+        bib = tmp_path / "literature-domain-1.bib"
+        bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding='utf-8')
+        monkeypatch.setattr(sys, "argv", ["enrich_bibliography.py", str(bib)])
+        with pytest.raises(SystemExit) as exc:
+            enrich_bibliography.main()
+        assert exc.value.code == 0
+        out = capsys.readouterr().out
+        assert "INCOMPLETE entries: k1, k2" in out
+        assert "Marked INCOMPLETE: 1" in out
 
     @patch("enrich_bibliography.resolve_abstract_for_entry")
     def test_enrich_bibliography_preserves_comments(self, mock_resolve, tmp_path):
@@ -1845,9 +1868,11 @@ def test_get_author_last_name_fixes_the_split_and_braces_only():
     assert g("{{ACM} and IEEE Committee}") == "ACM and IEEE Committee"
     assert g("{Research {and} Development Council}") == "Research and Development Council"
     assert g("{B}rown, John") == "Brown"
-    # Braced personal names: pybtex keeps them whole; the comma rule applies.
-    assert g("{Doe, Jane}") == "Doe"
-    assert g("{van der Deijl, Willem}") == "van der Deijl"
+    # One outer brace group: pybtex sees ONE surname however the group is
+    # punctuated, and this matches how generate_bibliography renders it.
+    assert g("{Doe, Jane}") == "Doe, Jane"
+    assert g("{van der Deijl, Willem}") == "van der Deijl, Willem"
+    assert g("{Smith, Jones and Lee Institute}") == "Smith, Jones and Lee Institute"
     assert g("Doe, Jane and Smith, John") == "Doe"
     # Unchanged token rule for ordinary comma-less names.
     assert g("Willem van der Deijl") == "Deijl"
@@ -1858,3 +1883,16 @@ def test_get_author_last_name_fixes_the_split_and_braces_only():
     assert g('Mendon{\\c{c}}a, Ana') == 'Mendon{\\c{c}}a'
     assert g('{\\O}stergaard, Jens') == '{\\O}stergaard'
     assert g('C\\^{o}t\\\'{e}-Bouchard, Charles') == 'C\\^{o}t\\\'{e}-Bouchard'
+
+
+def test_is_one_brace_group_recognizes_only_a_single_outer_group():
+    f = eb._is_one_brace_group
+    assert f("{a}") is True
+    assert f("{{ACM} and IEEE}") is True
+    assert f("{a}x{b}") is False       # first group closes early
+    assert f("{a}}") is False          # closes early, trailing brace
+    assert f("{{a}") is False          # never closes
+    assert f("a") is False             # no braces at all
+    # Empty group: len 2 and balanced, so the scanner says True. Harmless --
+    # get_author_last_name then yields '' and returns None.
+    assert f("{}") is True

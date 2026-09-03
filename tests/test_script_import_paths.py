@@ -1,4 +1,4 @@
-"""The three scripts that import bib_identity across `hooks/` must do so
+"""The four scripts that import bib_identity across `hooks/` must do so
 when executed directly (as the wrapper does), not only inside one pytest
 process where an earlier import can satisfy them from sys.modules."""
 import os
@@ -11,16 +11,17 @@ import pytest
 SCRIPTS = Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"
 
 
-@pytest.mark.parametrize("script,func,expected", [
-    ("resolve_context.py", "first_author_surname", "{A and B}"),
-    ("check_evidence.py", "rc_surname", "{A and B}"),
+@pytest.mark.parametrize("script,expr,expected", [
+    ("resolve_context.py", "m.first_author_surname('{A and B} and C, D')", "{A and B}"),
+    ("check_evidence.py", "m.rc_surname('{A and B} and C, D')", "{A and B}"),
+    ("year_suffix.py", "m.first_surname_raw({'author': '{A and B} and C, D'})", "{A and B}"),
 ])
-def test_script_imports_bib_identity_when_loaded_by_path(tmp_path, script, func, expected):
+def test_script_imports_bib_identity_when_loaded_by_path(tmp_path, script, expr, expected):
     code = (
         "import importlib.util\n"
         f"spec = importlib.util.spec_from_file_location('m', {str(SCRIPTS / script)!r})\n"
         "m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)\n"
-        f"print(m.{func}('{{A and B}} and C, D'))"
+        f"print({expr})"
     )
     r = subprocess.run([sys.executable, "-c", code], cwd=tmp_path, capture_output=True,
                        text=True, env={**os.environ, "PYTHONPATH": ""})

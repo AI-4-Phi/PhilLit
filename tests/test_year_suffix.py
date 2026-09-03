@@ -57,6 +57,9 @@ class TestAuthorSignature:
     def test_braced_corporate_author_containing_and_is_one_slot(self):
         sig = ys.author_signature("{Smith and Jones Institute} and Doe, Jane")
         assert len(sig) == 2
+        # Person reads the whole group as one last name, so the fold is the
+        # entire name and there is no first initial to take.
+        assert sig[0] == ("smith and jones institute", "")
         assert sig[1] == ("doe", "j")
 
 
