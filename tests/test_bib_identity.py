@@ -310,3 +310,53 @@ class TestSameWorkKeys:
         assert same_work_year("10.1234/2017.42") == ""
         assert same_work_year("pages 1984--1990") == ""
         assert same_work_year("forthcoming 2017") == ""
+
+
+class TestAuthorListSplit:
+    """One owner for splitting a BibTeX name list. pybtex is brace-aware;
+    the naive `" and "` split it replaces was not, so a braced corporate
+    author containing "and" keyed as `smith` in the barrier and as
+    `smith and jones institute` in Phase 6. The rows below that differ from
+    the literal split (uppercase AND, doubled spaces) are documented
+    changes: 0 of 9,157 local author/editor fields have either shape."""
+
+    def test_plain_two_authors(self):
+        assert bi.split_author_list("Smith, John and Doe, Jane") == ["Smith, John", "Doe, Jane"]
+
+    def test_braced_corporate_author_containing_and_stays_one_name(self):
+        assert bi.split_author_list("{Smith and Jones Institute} and Doe, Jane") == [
+            "{Smith and Jones Institute}", "Doe, Jane"]
+
+    def test_uppercase_and_and_doubled_spaces_split_like_pybtex(self):
+        assert bi.split_author_list("Smith, John AND Doe, Jane") == ["Smith, John", "Doe, Jane"]
+        assert bi.split_author_list("Smith, John  and  Doe, Jane") == ["Smith, John", "Doe, Jane"]
+
+    def test_newline_before_second_name_is_not_a_separator(self):
+        # Same as the literal split: pybtex does not split across a newline.
+        assert bi.split_author_list("Smith, John and\nDoe, Jane") == ["Smith, John and\nDoe, Jane"]
+
+    def test_empty_and_none_are_empty(self):
+        assert bi.split_author_list("") == []
+        assert bi.split_author_list(None) == []
+
+    def test_unbalanced_brace_and_leading_and_do_not_raise(self):
+        assert bi.split_author_list("{Smith and Jones") == ["{Smith and Jones"]
+        assert bi.split_author_list("and Smith") == ["and Smith"]
+
+    def test_first_author_name_falls_back_to_editor(self):
+        assert bi.first_author_name("", "Menary, Richard and Wu, Jing") == "Menary, Richard"
+        assert bi.first_author_name("Doe, Jane", "Menary, Richard") == "Doe, Jane"
+        assert bi.first_author_name("", "") == ""
+
+    def test_first_author_surname_is_pybtex_prelast_plus_last(self):
+        assert bi.first_author_surname("Willem van der Deijl and Doe, Jane") == "van der Deijl"
+        assert bi.first_author_surname("van der Deijl, Willem") == "van der Deijl"
+
+    def test_first_author_surname_keeps_braced_corporate_author_whole(self):
+        assert bi.first_author_surname("{Smith and Jones Institute} and Doe, Jane") == "{Smith and Jones Institute}"
+
+    def test_first_author_surname_keeps_case_protection_braces_raw(self):
+        assert bi.first_author_surname("{B}rown, John") == "{B}rown"
+
+    def test_first_author_surname_empty(self):
+        assert bi.first_author_surname("") == ""

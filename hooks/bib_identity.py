@@ -30,6 +30,9 @@ import html
 import re
 import unicodedata
 
+from pybtex.bibtex.utils import split_name_list
+from pybtex.database import Person
+
 from bib_validator import LATEX_ESCAPES
 
 
@@ -600,3 +603,53 @@ def fallback_key(title: str, year: str, surname: str) -> tuple[str, str, str] | 
     if not norm_title or not norm_year or not norm_surname:
         return None
     return (norm_title, norm_year, norm_surname)
+
+
+def split_author_list(field: str | None) -> list[str]:
+    """Split a BibTeX author/editor field into its names, brace-aware.
+
+    The one owner of this split, with no literal-`" and "` fallback: pybtex's
+    `split_name_list` treats a braced group as opaque, so
+    `{Smith and Jones Institute} and Doe, Jane` is two names, not three,
+    where a literal split gave `{Smith` and keyed the corporate author
+    differently from `generate_bibliography`, which reads pybtex's persons.
+    pybtex never raises here: unbalanced input comes back whole.
+    """
+    text = (field or "").strip()
+    if not text:
+        return []
+    return [n.strip() for n in split_name_list(text) if n.strip()]
+
+
+def first_author_name(author: str | None, editor: str | None = "") -> str:
+    """First name string of the author list; editors are the fallback for
+    edited volumes, matching generate_bibliography's rule."""
+    field = (author or "").strip() or (editor or "").strip()
+    names = split_author_list(field)
+    return names[0] if names else ""
+
+
+def first_author_surname(author: str | None, editor: str | None = "") -> str:
+    """The first author's FULL surname (pybtex prelast + last), RAW.
+
+    Undecoded and braces kept, so it agrees with `generate_bibliography`'s
+    `_raw_surname` and, through `year_suffix._first_surname_raw`, feeds
+    `fallback_key` and `same_work_key` the same text the Phase 6 advisory
+    does. Callers pass RAW field values (see the module scope note). A name
+    pybtex's `Person` cannot parse degrades to the comma/whitespace split
+    rather than raising.
+    """
+    first = first_author_name(author, editor)
+    if not first:
+        return ""
+    try:
+        person = Person(first)
+        surname = " ".join(person.prelast_names + person.last_names).strip()
+        if surname:
+            return surname
+    except Exception:
+        pass
+    if "," in first:
+        return first.split(",")[0].strip()
+    parts = first.split()
+    return parts[-1] if parts else ""
