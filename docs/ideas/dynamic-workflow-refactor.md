@@ -1,7 +1,7 @@
 # Dynamic-Workflow Refactor of the Literature-Review Orchestration
 
 **Date**: 2026-07-22
-**Status**: Implementation (roadmap steps 2–6) is unstarted. **Gate 1 is now ANSWERED, and the answer is no** — the service cannot reach a workspace `.claude/workflows/`, and the blocker is delivery rather than capability, so **step 3 needs redesigning before step 2 is worth starting** (see "Gates before step 2"). Gate 2 still stands: the Step 1 hook test passed on all six checks, but on a Claude Code that has since moved, and the version it should be re-run on is not the installed one.
+**Status**: Parked 2026-09-03 — set aside while engine work is directed at philosophy.reviews (the phillit-service consumer, which cannot deliver a workspace workflow file; see "Gates before step 2"). Design and gates below stand as written; nothing is scheduled.
 **Origin**: Feasibility investigation of refactoring `skills/literature-review/` onto Claude Code's dynamic-workflow feature (docs verified 2026-07-22: workflows.md, plugins.md, plugins-reference.md at code.claude.com/docs).
 
 ## Summary
