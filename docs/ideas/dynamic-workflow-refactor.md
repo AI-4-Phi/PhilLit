@@ -70,11 +70,31 @@ none of the gate, until the service ported the check by hand
 
 **What that asks of step 3**: a delivery path the `skills/` mirror already
 carries — the script shipped inside `skills/literature-review/` rather than
-installed from `skills/setup/` — with the install decided by the consumer.
-`/phillit:setup` can still do the interactive install for PhilLit's own users;
-what it cannot be is the only path. Decide this before step 2, because it
-changes where the script lives and therefore what `meta.name` and the version
-stamp have to survive.
+installed from `skills/setup/` — with the install into `.claude/workflows/`
+decided by the consumer. `/phillit:setup` can still do the interactive install
+for PhilLit's own users; what it cannot be is the only path. Decide this before
+step 2, because it changes where the script lives and therefore what
+`meta.name` and the version stamp have to survive.
+
+*That half was checked, not assumed*: `revendor.py` filters by path prefix
+only, with no extension rule anywhere in its walk, so a `.js` file under
+`skills/literature-review/` really does arrive — at
+`.claude/skills/literature-review/`, from where the consumer's own build step
+copies it to `.claude/workflows/` (one line in the service's `workspace.py`).
+
+**But the script's CONTENT then hits a second constraint, and this one is not
+about delivery.** Every workspace-copied file that arrives through the mirror is
+scanned line by line — whatever its extension — by a post-run residual gate
+whose terms include **`phillit:`** (also `phillit-run`, `PHILLIT_ROOT`,
+`hooks.json`, `fast_gate`, `SessionStart`, `.claude-plugin`), and a hit is a
+GATE FAILURE that hard-stops the re-vendor, not a warning. Step 1 verified that
+`agentType: "phillit:domain-literature-researcher"` is what resolves here — so
+the script as designed would trip that gate on the line that makes it work. And
+it would not resolve there in any case: the service's agents are unnamespaced
+files (`.claude/agents/domain-literature-researcher.md` and three siblings,
+zero `phillit:` occurrences in the whole vendored engine). So the agent type has
+to come from `args`, or be resolved by the caller, rather than be a literal in
+the script. Worth settling in step 2, since it shapes the `args` contract.
 
 **Two unknowns remain, both unprobed, and neither matters until delivery is
 settled**: whether the bundled CLI resolves `.claude/workflows/` from the SDK's

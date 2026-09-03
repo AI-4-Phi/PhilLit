@@ -96,7 +96,10 @@ mirror excludes `skills/setup/` by decision, so step 3's install step is
 structurally unavailable there and step 4 would arrive as prose calling a tool
 with no registered workflow file and no allowlist entry. Step 3 needs a delivery
 path the `skills/` mirror already carries, decided before the script is
-written. Gate 2 (re-run the hook gate test) still stands, and belongs against
+written — and the script cannot carry a literal
+`agentType: "phillit:domain-literature-researcher"`, which is both a hard gate
+failure in that mirror and unresolvable there, so the agent type belongs in the
+`args` contract. Gate 2 (re-run the hook gate test) still stands, and belongs against
 the CLI the Agent SDK bundles rather than the installed one, or the two
 consumers of this skill diverge on the surface it measures. Design, both gates
 and the service's verified answer: `docs/ideas/dynamic-workflow-refactor.md`,
