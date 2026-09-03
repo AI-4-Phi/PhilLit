@@ -1546,38 +1546,164 @@ class TestCleanerVerdictPropagation:
         assert "year = {2020}" in out
         assert "sep_context = {S}" in out
 
-    def test_post_condition_guard_reverts_when_spurious_brace_swallows_neighbor(self):
-        # Ledger T3: a dedicated pin for the PRE-EXISTING over-greedy-scan
-        # post-condition guard (`known_others`), which no prior test actually
-        # exercised. A spurious closing brace inside `pages`'s own value
-        # rebalances depth early, so the brace-depth scan for `pages` treats
-        # the whole `journal = {Mind}}` field as part of pages's value and
-        # eats it - a KNOWN OTHER field's assignment (`journal`) vanishes.
-        # The guard must revert the whole removal.
+    def test_a_value_containing_field_shaped_text_is_one_field_and_goes_whole(self):
+        # `pages = {1--10,\n  journal = {Mind}},` -- a human may read a stray
+        # brace and two fields; the text IS one balanced `pages` value that
+        # contains "journal = {Mind}". pybtex reads it that way (no journal
+        # field), generate_bibliography renders it that way, and so does the
+        # structural remover: removing pages removes the whole value. The
+        # old textual guard reverted this as "over-greedy" because ITS scan
+        # could not tell the difference. Balanced braces are authoritative
+        # here as everywhere else in the pipeline; a heuristic that guessed
+        # at a "meant" reading was too narrow (a same-line swallow escaped
+        # it) and too broad (wrapped prose tripped it) at once.
+        # Measured 2026-09-03 over 8,894 delivered entries: 185
+        # intermediate-file abstracts carry a swallowed
+        # `abstract_source = {...}` line inside their braces (a historical
+        # splice defect); pybtex and this remover agree it is abstract text.
         from dedupe_bib import _remove_fields_text
-        entry = ('@article{x,\n'
-                  '  author = {A},\n'
-                  '  title = {T},\n'
-                  '  year = {2020},\n'
-                  '  pages = {1--10,\n'
-                  '  journal = {Mind}},\n'
-                  '  volume = {5},\n'
-                  '  keywords = {Medium}\n'
-                  '}')
+        from pybtex.database import parse_string
+        for entry in (
+            '@article{x,\n  author = {A},\n  title = {T},\n  year = {2020},\n'
+            '  pages = {1--10,\n  journal = {Mind}},\n  volume = {5},\n'
+            '  keywords = {Medium}\n}',
+            '@article{x,\n  author = {A},\n  title = {T},\n  year = {2020},\n'
+            '  pages = {1--10 journal = {Mind}},\n  volume = {5},\n'
+            '  keywords = {Medium}\n}',
+        ):
+            before = next(iter(parse_string(entry, "bibtex").entries.values()))
+            assert "journal" not in before.fields          # pybtex agrees: one field
+            out, failed = _remove_fields_text(entry, {"pages"})
+            assert failed == set()
+            assert "pages" not in out and "Mind" not in out
+            assert "volume = {5}" in out and "keywords = {Medium}" in out
+            parse_string(out, "bibtex")
+
+    def test_a_value_that_swallowed_the_entry_closer_is_refused(self):
+        # The one shape where "balanced braces are authoritative" would
+        # produce UNPARSEABLE output: the value's closing brace IS the
+        # entry's closing brace, so removing it would leave `@article{x,`.
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\n  year = {2020},\n  pages = {1,\n}"
         out, failed = _remove_fields_text(entry, {"pages"})
         assert failed == {"pages"}
         assert out.strip() == entry.strip()
-        assert "journal = {Mind}" in out  # neighbor survived the revert
 
-    def test_c1_fake_match_before_real_field_does_not_mangle(self, capsys):
+    def test_multiline_values_are_removed_whatever_their_prose_looks_like(self):
+        # Wrapped prose, a line beginning `x = y`, a wrapped URL continuing
+        # `&b=2`, a line beginning `note = {Important}`: all one value.
+        from dedupe_bib import _remove_fields_text
+        for entry, field in (
+            ("@article{x,\n  pages = {1--10 and\n    more pages = later},\n"
+             "  year = {2020}\n}", "pages"),
+            ("@article{x,\n  abstract = {We show that\n  x = y holds.},\n"
+             "  year = {2020}\n}", "abstract"),
+            ("@article{x,\n  abstract = {We argue that\n    note = {Important}\n"
+             "    is decisive.},\n  year = {2020}\n}", "abstract"),
+            ("@misc{x,\n  url = {https://x.org/?a=1\n&b=2},\n"
+             "  year = {2020}\n}", "url"),
+        ):
+            out, failed = _remove_fields_text(entry, {field})
+            assert failed == set(), entry
+            assert out == "@article{x,\n  year = {2020}\n}".replace(
+                "@article", entry[:entry.index("{")]), entry
+
+    def test_trusted_match_plus_same_name_in_the_untrusted_tail_fails_whole(self):
+        # A `pages` before an unclosed value AND a `pages` string after it.
+        # Removing the trusted one and reporting success would let the
+        # marker say "pages removed" while a pages assignment still sits in
+        # the tail. Transactional: fail, touch nothing.
+        from dedupe_bib import _remove_fields_text
+        entry = ("@article{x,\n  pages = {1--10},\n  note = {unterminated\n"
+                 "  pages = {20--30},\n")
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == {"pages"}
+        assert out == entry.strip()
+
+    def test_assignment_with_no_value_is_present_and_fails(self):
+        # `pages = ,` is an assignment the scanner skips (no value to read).
+        # It is still text that says pages; reporting it absent would let the
+        # marker claim a removal that left the text standing.
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\n  pages = ,\n  title = {T}\n}"
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == {"pages"}
+        assert out == entry.strip()
+
+    def test_tail_check_handles_a_name_the_word_boundary_would_miss(self):
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\n  title = {T},\n  -pages = {unterminated\n"
+        _out, failed = _remove_fields_text(entry, {"-pages"})
+        assert failed == {"-pages"}
+
+    def test_remover_fails_when_a_different_unclosed_field_hides_the_target(self):
+        # The target is fine in itself but sits past an unrelated value that
+        # never closes: nothing there is trustworthy, so it is reported
+        # failed (ships UNVETTED) rather than guessed at or called absent.
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\n  year = {2020},\n  note = {open\n  pages = {1--10},\n"
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == {"pages"}
+        assert out == entry.strip()
+
+    def test_remover_handles_crlf(self):
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\r\n  author = {A},\r\n  pages = {1},\r\n  year = {2020}\r\n}"
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == set()
+        assert out == "@article{x,\r\n  author = {A},\r\n  year = {2020}\r\n}"
+
+    def test_remover_takes_a_concatenated_value_whole(self):
+        from dedupe_bib import _remove_fields_text
+        entry = '@article{x,\n  pages = "1" # {--} # "10",\n  year = {2020}\n}'
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == set()
+        assert out == "@article{x,\n  year = {2020}\n}"
+
+    def test_remover_bounds_a_quoted_value_with_a_protected_quote(self):
+        # The old quoted branch was find('"'): it stopped at the `"` inside
+        # `{"Q"}` and left `Q"} result",` behind as garbage.
+        from dedupe_bib import _remove_fields_text
+        entry = ('@article{x,\n  author = {A},\n'
+                 '  pages = "The {"Q"} result",\n  year = {2020}\n}')
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == set()
+        assert out == '@article{x,\n  author = {A},\n  year = {2020}\n}'
+
+    def test_remover_takes_a_bare_value(self):
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\n  author = {A},\n  pages = 12,\n  year = {2020}\n}"
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == set()
+        assert out == "@article{x,\n  author = {A},\n  year = {2020}\n}"
+
+    def test_remover_only_fake_mention_is_absent_not_failed(self):
+        # No real `pages` field, only prose that looks like one: nothing to
+        # remove, and (as for any absent field) not a failure.
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\n  abstract = {We discuss pages = 12, and more.},\n  year = {2020}\n}"
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == set()
+        assert out == entry
+
+    def test_remover_fails_when_the_field_itself_is_truncated(self):
+        # A field whose value opens and never closes cannot be bounded; the
+        # remover must say so rather than guess, and leave the text alone.
+        from dedupe_bib import _remove_fields_text
+        entry = "@article{x,\n  author = {A},\n  pages = {1--10,\n  year = {2020}\n"
+        out, failed = _remove_fields_text(entry, {"pages"})
+        assert failed == {"pages"}
+        assert out == entry.strip()
+
+    def test_c1_fake_match_before_real_field_removes_only_the_real_one(self, capsys):
         # C1: a field-name-shaped substring inside ANOTHER field's value
-        # (here, "pages = 12" inside the abstract) sits EARLIER in the
-        # entry text than the real `pages` field, so the naive scan's
-        # first-match search would grab the fake one first - stripping into
-        # the abstract while the real pages field survives untouched and the
-        # marker would lie about what was removed. The fix must report
-        # `pages` failed (loud + honest) and leave the whole entry
-        # byte-unchanged rather than shipping a mangled abstract.
+        # (here, "pages = 12" inside the abstract) sits EARLIER in the entry
+        # text than the real `pages` field. A textual scan could not tell
+        # the two apart, so the remover used to refuse (report FAILED, ship
+        # the flagged field, leave the text untouched). Located structurally
+        # now (bib_fields): text inside a value is not a field, the real
+        # `pages` goes, the abstract stays byte-identical, and the marker
+        # records the removal honestly.
         from dedupe_bib import merge_entries, _extract_keywords_value
         from metadata_cleaner import marker_removed_fields
         loser = CLEANED_COPY.replace("booktitle", "pages")
@@ -1588,22 +1714,19 @@ class TestCleanerVerdictPropagation:
             "    pages = {1--10},")
         merged, reason, w = merge_entries(loser, winner)
         assert w == 2
-        err = capsys.readouterr().err
-        assert "UNVETTED" in err
-        assert "dropped cleaner-flagged pages" not in reason
-        assert "pages" not in marker_removed_fields(_extract_keywords_value(merged))
-        assert merged.strip() == winner.strip()  # unmangled, byte-unchanged
+        assert "UNVETTED" not in capsys.readouterr().err
+        assert "dropped cleaner-flagged pages" in reason
+        assert "pages" in marker_removed_fields(_extract_keywords_value(merged))
         assert "We discuss pages = 12, and more." in merged  # abstract intact
-        assert "pages = {1--10}" in merged  # real field intact
+        assert "pages = {1--10}" not in merged               # real field gone
+        from pybtex.database import parse_string
+        parse_string(merged, "bibtex")
 
-    def test_c1_no_comma_variant_eats_closing_brace(self, capsys):
-        # C1, "no-comma" flavor: the fake `pages = 12` mention has no comma
-        # before its containing field's (abstract's) own closing brace, so
-        # the unquoted/unbraced value scan would run past that brace looking
-        # for the next comma - eating through it and writing an unparseable
-        # entry, in the pre-fix code. The real pages field (after the
-        # abstract) must still be found post-removal, so the fix reports
-        # `pages` failed and reverts to the untouched entry.
+    def test_c1_no_comma_variant_leaves_the_abstract_alone(self, capsys):
+        # C1, "no-comma" flavor: the fake `pages = 12` mention runs straight
+        # into the abstract's closing brace. The old bare-value scan, once
+        # it grabbed the fake, ran past that brace to the next comma. A
+        # structural locator never sees the fake at all.
         from dedupe_bib import merge_entries, _extract_keywords_value
         from metadata_cleaner import marker_removed_fields
         loser = CLEANED_COPY.replace("booktitle", "pages")
@@ -1614,22 +1737,20 @@ class TestCleanerVerdictPropagation:
             "    pages = {1--10},")
         merged, reason, w = merge_entries(loser, winner)
         assert w == 2
-        err = capsys.readouterr().err
-        assert "UNVETTED" in err
-        assert "dropped cleaner-flagged pages" not in reason
-        assert "pages" not in marker_removed_fields(_extract_keywords_value(merged))
-        assert merged.strip() == winner.strip()  # entry text unchanged
+        assert "UNVETTED" not in capsys.readouterr().err
+        assert "dropped cleaner-flagged pages" in reason
+        assert "pages" in marker_removed_fields(_extract_keywords_value(merged))
+        assert "abstract = {We discuss pages = 12 without comment}" in merged
+        assert "pages = {1--10}" not in merged
 
-    def test_c1_real_field_first_fake_later_reports_failed(self, capsys):
-        # C1, accepted behavior change: the REAL pages field now sits FIRST
-        # in the entry text (so the naive scan's first match IS the real
-        # assignment), with the fake "pages = 12" mention in the abstract
-        # AFTER it. The strip of the real field is textually clean, but the
-        # fake occurrence still remains findable afterward - ambiguous, so
-        # the specified policy is loud-and-honest: report `pages` failed
-        # rather than silently accept a removal next to an unflagged
-        # look-alike. Do not "improve" this into a success; it is the
-        # deliberately conservative accepted trade-off (review-verified).
+    def test_c1_real_field_first_fake_later_removes_the_real_one(self, capsys):
+        # C1 with the REAL pages field FIRST and the fake mention in the
+        # abstract AFTER it. The old policy reported FAILED here because a
+        # `pages =` string was still findable after the removal -- a
+        # conservative trade-off adopted when the scan was textual and could
+        # not tell an assignment from prose. Unpinned 2026-09-03: the
+        # structural locator can, so refusing shipped a flagged field for no
+        # protective reason.
         from dedupe_bib import merge_entries, _extract_keywords_value
         from metadata_cleaner import marker_removed_fields
         loser = CLEANED_COPY.replace("booktitle", "pages")
@@ -1640,11 +1761,11 @@ class TestCleanerVerdictPropagation:
             "    abstract = {We discuss pages = 12, and more.},")
         merged, reason, w = merge_entries(loser, winner)
         assert w == 2
-        err = capsys.readouterr().err
-        assert "UNVETTED" in err
-        assert "dropped cleaner-flagged pages" not in reason
-        assert "pages" not in marker_removed_fields(_extract_keywords_value(merged))
-        assert merged.strip() == winner.strip()  # unchanged, not half-stripped
+        assert "UNVETTED" not in capsys.readouterr().err
+        assert "dropped cleaner-flagged pages" in reason
+        assert "pages" in marker_removed_fields(_extract_keywords_value(merged))
+        assert "pages = {1--10}" not in merged
+        assert "We discuss pages = 12, and more." in merged
 
     def test_fold_removals_idempotent(self):
         from dedupe_bib import _fold_removals_into_marker
@@ -1676,10 +1797,6 @@ class TestCleanerVerdictPropagation:
 class TestVenueStatusField:
     """venue_status must be known to the field scanner, but must
     be unioned apart from the journal identity it was computed against."""
-
-    def test_venue_status_is_a_known_field(self):
-        from dedupe_bib import _KNOWN_FIELDS
-        assert "venue_status" in _KNOWN_FIELDS
 
     def test_venue_status_is_not_substantive(self):
         # A derived venue verdict must never be unioned independently of the
@@ -1782,29 +1899,12 @@ class TestVenueStatusField:
         assert len(parse_string(merged, "bibtex").entries) == 2
 
     def test_flagged_field_strip_leaves_venue_status_and_neighbors_intact(self):
-        """The one path _KNOWN_FIELDS actually feeds: _remove_fields_text's
-        over-greedy post-condition guard, reached only when merge_entries
-        strips a loser's METADATA_CLEANED-flagged field from a winner that
-        also carries venue_status. Reuses the CLEANED_COPY (loser,
-        flags booktitle) / UNCLEANED_COPY (winner, has the field and the
-        abstract) fixtures with venue_status added to the winner, right
-        next to the field being stripped.
-
-        This is a well-formed-input pin, not fault injection: the removal
-        scan finds booktitle's true closing brace here, so venue_status
-        survives regardless of whether it is registered in _KNOWN_FIELDS --
-        confirmed by temporarily reverting the _KNOWN_FIELDS addition and
-        re-running this exact test (still green; see task-4-report.md fix
-        wave for the command and output). What this test does verify: the
-        guard's known_others enumeration -- which now includes
-        venue_status -- runs against real merge_entries output without
-        raising or corrupting the field, and the surrounding fields
-        (abstract) survive the strip untouched. A test that would actually
-        DISCRIMINATE on _KNOWN_FIELDS membership needs a malformed-brace
-        fixture that makes the booktitle scan over-reach into
-        venue_status, along the lines of
-        test_post_condition_guard_reverts_when_spurious_brace_swallows_
-        neighbor in TestCleanerVerdictPropagation.
+        """merge_entries strips a loser's METADATA_CLEANED-flagged field from
+        a winner that also carries venue_status, right next to the field
+        being stripped. Reuses the CLEANED_COPY (loser, flags booktitle) /
+        UNCLEANED_COPY (winner, has the field and the abstract) fixtures. The
+        neighbours -- venue_status and the abstract -- must survive the strip
+        byte for byte.
         """
         from dedupe_bib import merge_entries
         winner_with_venue = UNCLEANED_COPY.replace(
@@ -1825,9 +1925,8 @@ class TestYearSuffixField:
     (e.g. "2010a") - so this field needs a REAL merge policy, not
     venue_status's "drop it, nothing depends on it" treatment."""
 
-    def test_year_suffix_is_a_known_field(self):
-        from dedupe_bib import _KNOWN_FIELDS, _SUBSTANTIVE_FIELDS
-        assert "year_suffix" in _KNOWN_FIELDS
+    def test_year_suffix_is_not_substantive(self):
+        from dedupe_bib import _SUBSTANTIVE_FIELDS
         assert "year_suffix" not in _SUBSTANTIVE_FIELDS
 
     _WINNER = """@article{smith2020rich,
@@ -1930,16 +2029,15 @@ class TestYearSuffixField:
         assert "[SUFFIX]" not in r.stderr
 
 
-def test_both_derived_fields_are_known_and_neither_is_substantive():
-    """Items 3 D and F share the _KNOWN_FIELDS literal and the barrier's
-    insertion point, and each already has its own single-field pin above
-    (TestVenueStatusField / TestYearSuffixField). This asserts them JOINTLY,
-    so an edit that rewrites the shared literal and keeps only one of the two
-    fails here rather than passing one class and quietly gutting the other.
+def test_neither_barrier_stamped_field_is_substantive():
+    """The two barrier-stamped fields each have their own single-field pin
+    above (TestVenueStatusField / TestYearSuffixField). This asserts them
+    JOINTLY against both scripts' union tuples, so an edit that admits one of
+    them fails here rather than passing one class and quietly gutting the
+    other.
     """
-    from dedupe_bib import _KNOWN_FIELDS, _SUBSTANTIVE_FIELDS
+    from dedupe_bib import _SUBSTANTIVE_FIELDS
     import generate_bibliography
-    assert {"venue_status", "year_suffix"} <= _KNOWN_FIELDS
     assert not {"venue_status", "year_suffix"} & set(_SUBSTANTIVE_FIELDS)
     assert not {"venue_status", "year_suffix"} & set(
         generate_bibliography._SUBSTANTIVE_FIELDS)

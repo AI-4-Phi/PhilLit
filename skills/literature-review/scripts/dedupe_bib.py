@@ -335,6 +335,18 @@ def merge_entries(entry1: str, entry2: str) -> tuple[str, str, int]:
 # Keep byte-identical to generate_bibliography._SUBSTANTIVE_FIELDS (the two
 # scripts do not import each other by design; pinned by
 # tests/test_dedupe_bib.py::TestSubstantiveFieldsIncludeContext).
+#
+# Two barrier-stamped fields are deliberately NOT here, for opposite reasons.
+# venue_status: _union_substantive_fields_text copies any listed field the
+# winner lacks with no coupling to which field justifies which, so listing it
+# would let a flagged loser's verdict travel onto a survivor whose journal is
+# a different venue entirely (merge_entries picks the winner on
+# abstract-presence and importance, never on this tuple). year_suffix: its
+# job is NOT done once the writers have read the domain bibs -- losing it in
+# a merge breaks a rendered References that prose already cites by letter
+# ("2010a") -- so merge_entries carries it forward with its own explicit
+# policy (unanimous -> keep; winner missing, loser has it -> copy up; they
+# disagree -> warn and change nothing) rather than through this union.
 _SUBSTANTIVE_FIELDS = (
     "journal", "booktitle", "volume", "number", "pages",
     "publisher", "doi", "url", "abstract", "sep_context", "iep_context",
@@ -365,140 +377,84 @@ def _entry_fields(entry_text: str) -> dict:
     return {}
 
 
-# Known field names for _remove_fields_text's over-greedy guard: any of
-# these (other than the field being removed) whose assignment disappears
-# across a removal means the scan ate into a neighbor - malformed input,
-# not a safe strip.
-_KNOWN_FIELDS = set(_SUBSTANTIVE_FIELDS) | {
-    "author", "title", "year", "editor", "keywords",
-    "note", "howpublished", "school", "address",
-    # Barrier-stamped venue flag. Known to the over-greedy guard,
-    # deliberately NOT substantive: _SUBSTANTIVE_FIELDS drives
-    # _union_substantive_fields_text's loser->winner field copy with no
-    # coupling to which field justifies which, so listing venue_status here
-    # would let a flagged loser's verdict travel onto a survivor whose
-    # journal is a different venue entirely (merge_entries picks the winner
-    # on abstract-presence and importance, never on _SUBSTANTIVE_FIELDS).
-    "venue_status",
-    # Barrier-stamped Chicago letter. Known to the over-greedy
-    # guard for the same reason as venue_status, but deliberately NOT
-    # substantive for the OPPOSITE reason: venue_status's job is done once
-    # the writers have read the domain bibs, so losing it in a merge costs
-    # nothing; losing year_suffix breaks a rendered References that prose
-    # already cites by letter (e.g. "2010a"). Rather than the
-    # union-into-a-different-identity risk _SUBSTANTIVE_FIELDS exists to
-    # avoid, merge_entries below carries it forward with its own explicit
-    # policy (unanimous -> keep; winner missing, loser has it -> copy up;
-    # they disagree -> warn and change nothing).
-    "year_suffix",
-}
-
-
 def _assignment_start_re(field: str) -> re.Pattern:
-    """Locate `field`'s assignment start (`field = `), case-insensitive,
-    word-bounded so e.g. `author` doesn't match inside `coauthor`. Shared by
-    `_remove_fields_text`'s scan and its over-greedy post-condition guard."""
-    return re.compile(r'\b' + re.escape(field) + r'\s*=\s*', re.IGNORECASE)
+    """Textual `field = ` finder, case-insensitive, word-bounded so `author`
+    doesn't match inside `coauthor`. Used only on the tail of an entry the
+    structural scan could not trust (_remove_fields_text), where "is the
+    name mentioned at all" is the most that can honestly be asked."""
+    # Identifier boundary in bib_fields' terms (a name may start with `-`,
+    # where `\b` would see no boundary after whitespace).
+    return re.compile(r"""(?<![^\s"#%'(),={}])""" + re.escape(field) + r'\s*=\s*',
+                      re.IGNORECASE)
 
 
 def _remove_fields_text(entry_text: str, fields: set[str]) -> tuple[str, set[str]]:
-    """Surgically remove `fields` from a raw BibTeX entry via brace/quote-depth
-    scanning of the text itself - no pybtex round-trip. A full parse +
-    reserialize reinterprets a single-braced corporate author
-    (`author = {National Research Council}`) as a person name and rewrites it
-    on output (`author = "Council, National Research"`) - the first place
-    this file WRITES a reinterpreted name back into shipped text. The scanner
-    never touches any field but the one it is removing.
+    """Surgically remove `fields` from a raw BibTeX entry - no pybtex
+    round-trip. A full parse + reserialize reinterprets a single-braced
+    corporate author (`author = {National Research Council}`) as a person
+    name and rewrites it on output (`author = "Council, National Research"`)
+    - the first place this file would WRITE a reinterpreted name back into
+    shipped text. Nothing but the removed field is touched.
+
+    Fields are located structurally (bib_fields): a field-name-shaped
+    substring inside ANOTHER field's value (`abstract = {We discuss pages =
+    12}`) is not a field and cannot be mistaken for one. Until 2026-09-03 the
+    locator was a textual `\\bpages\\s*=` search that could not tell the two
+    apart, and the remover REFUSED whenever such a string was still findable
+    after a removal - shipping the flagged field, loudly, rather than risk
+    cutting into an abstract. That trade-off protected against a confusion
+    the structural locator does not have, so it was unpinned.
 
     Returns (new_text, failed): `failed` is the subset of `fields` whose
-    assignment IS present but could not be safely removed - a truncated/
-    unbalanced value, or a scan whose removal span would have swallowed a
-    neighboring field's assignment (checked by a post-condition guard, since
-    a regex miss on malformed input must never masquerade as a successful
-    strip). A field entirely absent from the entry is not
-    a failure; it is simply skipped (nothing ships either way)."""
+    assignment IS present but cannot be removed safely, so the field ships
+    (loudly, see merge_entries) rather than be guessed at:
+      * a `name =` for it sits at or past the point the scan stopped
+        trusting the text (an unclosed value or block) - checked whether or
+        not a trusted occurrence was also found, so the marker never claims
+        a removal while another assignment of the name stands; or
+      * it is written with no readable value at all (`pages = ,`); or
+      * its value's closing brace is the entry's own closer (`pages =
+        {1,\\n}`) - removing it would leave unparseable text.
+    A field entirely absent from the entry is not a failure; it is simply
+    skipped (nothing ships either way).
+
+    Balanced braces are AUTHORITATIVE, here as for pybtex and the renderer:
+    `pages = {1--10,\\n  journal = {Mind}},` is one pages value that happens
+    to contain "journal = {Mind}", and removing pages removes it whole.
+    Two textual guards from the old remover are gone. One reverted whenever
+    a KNOWN neighbour's `name =` string vanished - it was reacting to text
+    inside the removed value, not to a field, and a heuristic replacement
+    (refuse on a line-initial assignment inside the value) proved both too
+    narrow (a same-line swallow escaped it) and too broad (wrapped prose
+    tripped it). The other refused whenever a `name =` string for the field
+    was still findable ANYWHERE afterwards, conflating prose inside another
+    value (`abstract = {We discuss pages = 12}`) with an assignment and
+    shipping a flagged field for no protective reason. Unpinned 2026-09-03."""
     out = entry_text
     failed: set[str] = set()
     for f in fields:
-        m = _assignment_start_re(f).search(out)
-        if not m:
-            continue  # not present - nothing to remove, not a failure
-        val_start = m.end()
-        if val_start >= len(out):
-            failed.add(f)
+        name = f.lower()
+        present, stop, unreadable = bib_fields.scan(out)
+        in_tail = stop is not None and _assignment_start_re(f).search(out, stop)
+        no_value = any(n.lower() == name for n, _i in unreadable)
+        matches = [x for x in present if x.name.lower() == name]
+        if in_tail or no_value or any(_swallows_entry_closer(out, m) for m in matches):
+            failed.add(f)   # present in some form, not safely removable
             continue
-        ch = out[val_start]
-        if ch == '{':
-            depth = 0
-            value_end = None
-            for i in range(val_start, len(out)):
-                if out[i] == '{':
-                    depth += 1
-                elif out[i] == '}':
-                    depth -= 1
-                    if depth == 0:
-                        value_end = i + 1
-                        break
-            if value_end is None:
-                failed.add(f)
-                continue
-        elif ch == '"':
-            close = out.find('"', val_start + 1)
-            if close == -1:
-                failed.add(f)
-                continue
-            value_end = close + 1
-        else:
-            comma = out.find(',', val_start)
-            newline = out.find('\n', val_start)
-            ends = [e for e in (comma, newline) if e != -1]
-            value_end = min(ends) if ends else len(out)
-
-        removal_start = m.start()
-        # Consume leading line indentation (spaces/tabs immediately preceded
-        # by a newline) so no blank indented line is left behind.
-        j = removal_start
-        while j > 0 and out[j - 1] in ' \t':
-            j -= 1
-        if j > 0 and out[j - 1] == '\n':
-            removal_start = j
-
-        trailing = re.match(r'\s*,?', out[value_end:])
-        removal_end = value_end + trailing.end()
-
-        candidate = out[:removal_start] + out[removal_end:]
-
-        # Post-condition guard: removing `f` must not disturb any OTHER
-        # known field's assignment. If one disappeared, the scan was
-        # over-greedy on malformed input (e.g. an unclosed brace consumed a
-        # neighboring field) - treat as a failure and keep the pre-removal
-        # text.
-        known_others = _KNOWN_FIELDS - {f.lower()}
-        before = {k for k in known_others if _assignment_start_re(k).search(out)}
-        after = {k for k in before if _assignment_start_re(k).search(candidate)}
-        if before - after:
-            failed.add(f)
-            continue
-
-        # Same guard, aimed at `f` itself: the
-        # scan above locates the FIRST `f = ` in the whole entry text, which
-        # can be a field-name-shaped substring inside a DIFFERENT field's
-        # value (e.g. `abstract = {We discuss pages = 12, and more.}` with
-        # flagged field `pages`) rather than the real assignment. The
-        # `known_others` check above can't see this - it deliberately
-        # excludes `f` itself. If an `f = ` assignment is still findable
-        # after the removal, either the removed span was the fake one (the
-        # real field survives untouched, but so does the fake text we
-        # thought we deleted alongside a mangled neighbor - ambiguous) or a
-        # genuine second occurrence remains (also ambiguous). Neither is a
-        # safe silent success; report the field failed and keep the
-        # pre-removal text so nothing ships mangled or half-stripped.
-        if _assignment_start_re(f).search(candidate):
-            failed.add(f)
-            continue
-
-        out = candidate
+        for m in reversed(matches):   # absent -> no matches -> no-op
+            out = bib_fields.remove_field(out, m)
     return out.strip(), failed
+
+
+def _swallows_entry_closer(text: str, field) -> bool:
+    """Does nothing but whitespace follow the value -- i.e. its closing brace
+    is the last thing in the text, the position a well-formed entry's own
+    closer holds (`pages = {1,\\n}`)? Removing such a field would leave
+    `@article{x,` -- the one shape where reading balanced braces as
+    authoritative produces UNPARSEABLE output. A well-formed entry's last
+    non-blank character is its closer, not a value's, so this never fires on
+    one; it can only fire on text pybtex already rejects."""
+    return field.value_end >= len(text.rstrip())
 
 
 def _fold_removals_into_marker(entry_text: str, removed: set[str]) -> str:

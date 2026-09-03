@@ -515,9 +515,9 @@ def _carry_year_suffix(winner, winner_key: str, loser, loser_key: str) -> None:
     dedupe_bib's (abstract-then-importance), so the survivor here can be a
     different copy than the one dedupe_bib kept - and this function's output
     IS what format_entry renders into the delivered References. year_suffix
-    is deliberately excluded from _SUBSTANTIVE_FIELDS (same reason as
-    dedupe_bib's _KNOWN_FIELDS entry: unioning it there would be coupled to
-    no particular journal/identity check), so it needs this same explicit
+    is deliberately excluded from _SUBSTANTIVE_FIELDS (same reason as in
+    dedupe_bib: unioning it there would be coupled to no particular
+    journal/identity check), so it needs this same explicit
     unanimous / copy-up / conflict policy independently, not inherited from
     the union above.
     """

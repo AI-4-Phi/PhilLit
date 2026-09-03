@@ -282,6 +282,50 @@ class TestSpans:
         assert f.name == "title"
 
 
+class TestScan:
+    """scan() tells a caller where the text stopped being trustworthy and
+    which assignments it had to skip -- what a remover needs to distinguish
+    "absent" from "present but unreadable"."""
+
+    def test_stop_is_none_when_everything_was_read(self):
+        from bib_fields import scan
+        fields, stop, unreadable = scan("@article{k,\n  year = {2020}\n}")
+        assert [f.name for f in fields] == ["year"]
+        assert stop is None and unreadable == []
+
+    def test_stop_is_the_name_index_of_the_unclosed_field(self):
+        from bib_fields import scan
+        text = "@article{k,\n  year = {2020},\n  note = {open\n  title = {T}\n"
+        fields, stop, _ = scan(text)
+        assert [f.name for f in fields] == ["year"]
+        assert text[stop:stop + 4] == "note"
+
+    def test_an_unclosed_skipped_block_also_sets_stop(self):
+        # `@comment{` that never closes: the scan returned early, and a
+        # caller must not read "stop is None" as "read to the end".
+        from bib_fields import scan
+        text = "@comment{open\n@article{k,\n  year = {2020}\n}"
+        fields, stop, _ = scan(text)
+        assert fields == [] and stop == 0
+
+    def test_an_unclosed_paren_block_marks_trust_but_scanning_continues(self):
+        # `@comment(open` never closes: fields after it are still read (a
+        # lenient reader), but `stop` says trust ended at the `@`, so a
+        # caller that must not guess can refuse everything past it.
+        from bib_fields import scan
+        text = "@comment(open\n@article{k,\n  year = {2020}\n}"
+        fields, stop, _ = scan(text)
+        assert [f.name for f in fields] == ["year"]
+        assert stop == 0
+
+    def test_unreadable_assignments_are_reported_by_name_and_index(self):
+        from bib_fields import scan
+        text = "@article{k,\n  note = ,\n  year = {2020}\n}"
+        fields, stop, unreadable = scan(text)
+        assert [f.name for f in fields] == ["year"] and stop is None
+        assert [(n, text[i:i + 4]) for n, i in unreadable] == [("note", "note")]
+
+
 class TestRemoveField:
     """The edit primitive editors share: cut a field out of the text with its
     own line and its trailing comma, and nothing else."""

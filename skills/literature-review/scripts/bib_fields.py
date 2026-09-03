@@ -13,8 +13,8 @@ re-parses a spliced chunk); this module is the lenient reader beside it.
 Every field VALUE read, edited or stripped in this directory is located
 here. Outside it, by design: the barrier's `\\b<name>\\s*=` presence counters
 (they count assignments in a splice check, not bound values), dedupe_bib's
-line-based duplicate-field warning, and dedupe_bib's field remover, which
-keeps its own scan for a reason recorded on the roadmap.
+line-based duplicate-field warning, and dedupe_bib's field remover's one
+textual check: a `name =` in the tail past where `scan` says trust ended.
 
 The reader it replaced was a regex whose value alternation admitted a brace
 group containing no braces -- ONE level of nesting. The standard LaTeX accent
@@ -57,7 +57,7 @@ from __future__ import annotations
 
 import re
 from dataclasses import dataclass
-from typing import Iterator
+from typing import Iterator, NamedTuple
 
 # Characters BibTeX excludes from identifiers (field and macro names).
 _NAME_RE = re.compile(r"""[^\s"#%'(),={}]+""")
@@ -197,18 +197,12 @@ def _read_value(text: str, i: int) -> tuple[str, int] | None:
         end = nxt[1]
 
 
-def iter_fields(text: str) -> Iterator[Field]:
-    """Every field in `text`, in order -- across entries if there are several.
-
-    Fields are read only INSIDE an entry: from its `@type{key,` (or
-    `@type(key,`) header to the delimiter that closes it. Text outside
-    entries is commentary, as BibTeX treats it, and is skipped -- so are a
-    `@comment`, `@string` or `@preamble` block and any other `@word{...}` /
-    `@word(...)` block. Inside an entry, a token that is not followed by `=`
-    is skipped, and so is an assignment with no value at all (`note = ,`).
-    Only a piece that OPENS with `{` or `"` and never closes -- first or
-    after a `#` -- ends the scan; everything read before it is returned.
-    """
+def _scan(text: str, stop: list, unreadable: list) -> Iterator[Field]:
+    """Body of iter_fields. When the scan ends early -- on a value that never
+    closes, or on a skipped `@word{` block that never closes -- the index
+    where trust ended (the field's NAME, or the block's `@`) is appended to
+    `stop`. An assignment skipped for having no readable value (`note = ,`)
+    is appended to `unreadable` as (name, name index)."""
     n = len(text)
     i = 0
     close = None  # the delimiter that ends the entry being read, if any
@@ -229,14 +223,19 @@ def iter_fields(text: str) -> Iterator[Field]:
             if j < n and text[j] == "{":
                 end = _balanced_end(text, j)
                 if end is None:
+                    stop.append(i)
                     return
                 i = end
                 continue
             if j < n and text[j] == "(":
                 end = _paren_block_end(text, j)
-                # Never closed: scan its contents leniently instead of
-                # treating the rest of the text as the block.
-                i = j + 1 if end is None else end
+                if end is None:
+                    # Never closed: keep reading leniently, but mark that
+                    # trust ended here for callers that must not guess.
+                    stop.append(i)
+                    i = j + 1
+                else:
+                    i = end
                 continue
             i = j
             continue
@@ -259,13 +258,54 @@ def iter_fields(text: str) -> Iterator[Field]:
         try:
             read = _read_value(text, value_start)
         except _Unbounded:
+            stop.append(m.start())
             return
         if read is None:
+            unreadable.append((m.group(), m.start()))
             i = value_start  # no value at all (`note = ,`): drop it, go on
             continue
         value, value_end = read
         yield Field(m.group(), m.start(), value_start, value_end, value)
         i = value_end
+
+
+def iter_fields(text: str) -> Iterator[Field]:
+    """Every field in `text`, in order -- across entries if there are several.
+
+    Fields are read only INSIDE an entry: from its `@type{key,` (or
+    `@type(key,`) header to the delimiter that closes it. Text outside
+    entries is commentary, as BibTeX treats it, and is skipped -- so are a
+    `@comment`, `@string` or `@preamble` block and any other `@word{...}` /
+    `@word(...)` block. Inside an entry, a token that is not followed by `=`
+    is skipped, and so is an assignment with no value at all (`note = ,`).
+    Only a piece that OPENS with `{` or `"` and never closes -- first or
+    after a `#` -- or an unclosed skipped `@word{` block ends the scan;
+    everything read before it is returned. This iterator hides WHERE it
+    stopped; a caller that must tell "absent" from "unreadable" uses scan().
+    """
+    yield from _scan(text, [], [])
+
+
+class Scan(NamedTuple):
+    """What a full scan saw: the fields; `stop`, the index from which the
+    text could no longer be trusted (an unclosed value's name, or an
+    unclosed skipped `@word{` / `@word(` block's `@` -- after an unclosed
+    `(` block the scan keeps reading leniently, so fields may follow it),
+    None if trust held to the end; and the assignments skipped for having
+    no readable value, as (name, index)."""
+    fields: list[Field]
+    stop: int | None
+    unreadable: list[tuple[str, int]]
+
+
+def scan(text: str) -> Scan:
+    """For callers that must distinguish a field that is ABSENT from one that
+    is present but unreadable -- past the point the text stops being
+    trustworthy, or written with no value at all."""
+    stop: list = []
+    unreadable: list = []
+    fields = list(_scan(text, stop, unreadable))
+    return Scan(fields, stop[0] if stop else None, unreadable)
 
 
 def parse_entry_fields(entry_text: str) -> dict:
