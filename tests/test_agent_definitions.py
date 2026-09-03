@@ -7,6 +7,7 @@ Review finding (2026-07-13): SKILL.md was fixed to the $PHILLIT_ROOT form
 during the plugin conversion; the agent files were not.
 """
 
+import re
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).parent.parent
@@ -255,3 +256,32 @@ def test_researcher_carve_out_names_every_primary_excluded_host():
                  "philpapers.org"):
         assert host in text, f"researcher prose does not name {host}"
     assert "mirrors" in text
+
+
+def _section(text, start_heading, end_heading):
+    """The prose between two Markdown headings, both anchored at line start."""
+    pattern = (r"(?ms)^" + re.escape(start_heading) + r".*?(?=^" + re.escape(end_heading) + r")")
+    m = re.search(pattern, text)
+    assert m, f"section {start_heading!r} not found before {end_heading!r}"
+    return m.group(0)
+
+
+def test_researcher_prose_makes_citation_chaining_required():
+    """Stage 4 was skipped silently in 18 of 33 local domains and 6 of 6
+    service domains (2026-09-03 measurement): nothing said it must run.
+    Pin the heading marker, the per-domain rule, the narrow documented
+    skip, and the checklist row."""
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    assert "### Stage 4: Citation Chaining (REQUIRED)" in text
+    stage4 = _section(text, "### Stage 4: Citation Chaining (REQUIRED)", "### Stage 5: Metadata Enrichment & Verification")
+    assert "Stage 4 runs in every domain" in stage4
+    assert "Stage 4 skipped: no resolvable seeds (S2 status:" in stage4
+    assert "Exactly one" in stage4  # the one-seed case has an action
+    checklist = _section(text, "## Before Submitting — Quality Checklist", "## Error Checking")
+    assert "Stage 4 ran" in checklist
+    # The status example must model every stage, not a subset.
+    status = _section(text, "## Status Updates", "## Search Process")
+    example = re.search(r"```\n(.*?)```", status, re.S).group(1)
+    for stage in ("Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"):
+        assert stage in example, f"status example omits {stage}"

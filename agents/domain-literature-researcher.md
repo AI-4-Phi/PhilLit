@@ -125,10 +125,17 @@ Output brief status after each search phase. Users should see progress every 2-3
 
 **Example:**
 ```
-→ Stage 1: Searching SEP...
-✓ SEP: 3 entries
-→ Stage 3: Searching Semantic Scholar...
-✓ S2: 28 papers
+→ Stage 1: Searching SEP & IEP...
+✓ SEP: 3 entries, IEP: 1 entry
+→ Stage 2: Searching PhilPapers...
+✓ PhilPapers: 12 papers
+→ Stage 3: Searching S2, OpenAlex, CORE, arXiv...
+✓ Stage 3: 41 candidates
+→ Stage 4: Chaining citations for 3 seeds...
+✓ Stage 4: 9 new papers
+→ Stage 5: Verifying 18 DOIs...
+✓ Verified: 18
+→ Stage 5.5: Resolving abstracts...
 ✓ Domain complete: literature-domain-1.bib (18 papers)
 ```
 
@@ -311,7 +318,26 @@ baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
   the `mkdir -p` they need, and their status tails replace existence
   checks; inline calls need neither.
 
-### Stage 4: Citation Chaining
+### Stage 4: Citation Chaining (REQUIRED)
+
+Stage 4 runs in every domain. Seeds are the most foundational works
+Stages 1–3 surfaced (SEP bibliography staples, the most-cited Stage 3
+hits) plus every seed paper the orchestrator named; a seed is usable when
+you hold its Semantic Scholar paper ID or DOI. Chaining is the one
+discovery mechanism here with no substitute: keyword search cannot reach a
+paper whose title shares no words with the topic, the citation graph can.
+Three cases, and only these:
+
+- Two or more usable seeds: chain at least two and feed the same seeds to
+  the recommender.
+- Exactly one usable seed: chain it and run the recommender with it; note
+  `Stage 4: one seed available` in NOTABLE_GAPS.
+- No usable seed after Stages 1–3 succeeded (rare — every Stage 3 S2 hit
+  carries an ID): write `Stage 4 skipped: no resolvable seeds (S2 status:
+  <status from the Stage 3 tail>, candidates inspected: <N>)` in
+  NOTABLE_GAPS. Only that evidenced line is a complete skip; a silent skip
+  leaves the domain incomplete, and so does a skip while Stage 3 returned
+  results.
 
 ```bash
 # One call: chain citations for ALL seed papers (sequential -- every line
@@ -319,14 +345,17 @@ baseline) is re-opening already-fetched JSON with `cat`, `python3 -c`, or
 REVIEW_DIR="$PWD/reviews/[project-name]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py "{paper_id_1}" --both --influential-only --output "$JSON_DIR/cites_<domain>_{paper_id_1}.json" > /dev/null
-bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py "{paper_id_2}" --both --influential-only --output "$JSON_DIR/cites_<domain>_{paper_id_2}.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py "{paper_id_1}" --both --influential-only --output "$JSON_DIR/cites_<domain>_seed1.json" > /dev/null
+bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_citations.py "{paper_id_2}" --both --influential-only --output "$JSON_DIR/cites_<domain>_seed2.json" > /dev/null
 bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/s2_recommend.py --positive "{paper_id_1},{paper_id_2}" --output "$JSON_DIR/recommendations_<domain>.json" > /dev/null
 grep -m1 '"status"' "$JSON_DIR"/cites_<domain>_*.json "$JSON_DIR/recommendations_<domain>.json" 2>/dev/null || true
 ```
 
-- Identify foundational papers from SEP bibliography + PhilPapers + S2 search
-- Chain citations to find related work
+- Seeds come from what you already read: SEP bibliography + PhilPapers +
+  Stage 3 results. Choosing them needs no extra call.
+- Read the chain files once (with the recommendations file, in one
+  message) and add the works they surface to your candidate set on the
+  same footing as search hits.
 
 ### Stage 5: Metadata Enrichment & Verification
 
@@ -561,6 +590,7 @@ searches hit four different APIs, which is why they parallelize.
   success.
 - A later stage that needs an earlier stage's results to compose its
   queries (Stage 2 uses SEP findings; Stage 4 needs chosen seeds).
+  Separate is not optional: Stage 4 runs in every domain.
 
 Expected shape per domain: Stages 1–5 in roughly 6–8 batched calls
 (verification may take a few more groups of ~6) plus your follow-ups,
@@ -672,6 +702,9 @@ See `$PHILLIT_ROOT/docs/conventions.md` for citation key format, author name for
 ✅ **JSON Intermediate Files**:
 - [ ] Every file-writing call left its `.json` in `$JSON_DIR`, namespaced with `<domain>` (Stage 1 fetches, Stage 3 searches, Stage 4 chains, Stage 5 verify)
 - [ ] Each JSON file has `status: "success"` (or failures noted in completion message)
+
+✅ **Citation Chaining**:
+- [ ] Stage 4 ran: seeds chained (`cites_<domain>_*.json` present) and `recommendations_<domain>.json` written, works they surfaced considered — or NOTABLE_GAPS carries the evidenced `Stage 4 skipped: no resolvable seeds (S2 status: …, candidates inspected: …)` line
 
 ✅ **Encyclopedia Context**:
 - [ ] `encyclopedia_entries-domain-N.json` saved in Stage 1 (valid-empty `{"sep_entries": [], "iep_entries": []}` if none found)
