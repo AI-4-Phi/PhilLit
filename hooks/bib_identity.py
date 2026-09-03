@@ -648,7 +648,8 @@ def first_author_surname(author: str | None, editor: str | None = "") -> str:
         surname = " ".join(person.prelast_names + person.last_names).strip()
         if surname:
             return surname
-    except PybtexError:
+    except (PybtexError, UnboundLocalError):
+        # UnboundLocalError: pybtex's own bug on tie-only names ("~")
         pass
     if "," in first:
         return first.split(",")[0].strip()

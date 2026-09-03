@@ -370,3 +370,6 @@ class TestAuthorListSplit:
         assert bi.first_author_surname("Smith, John and\nDoe, Jane") == "Smith"
         # Person raises InvalidNameString (a PybtexError) -> comma fallback.
         assert bi.first_author_surname("a, b, c, d") == "a"
+        # Person raises UnboundLocalError (pybtex's own bug) on a tie-only
+        # name -> whitespace fallback returns the token whole.
+        assert bi.first_author_surname("~") == "~"

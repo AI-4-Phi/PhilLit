@@ -19,7 +19,7 @@ import pytest
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent / "skills" / "literature-review" / "scripts"))
 
-import enrich_bibliography as eb
+import enrich_bibliography as eb  # noqa: E402
 
 
 # =============================================================================
@@ -1852,3 +1852,9 @@ def test_get_author_last_name_fixes_the_split_and_braces_only():
     # Unchanged token rule for ordinary comma-less names.
     assert g("Willem van der Deijl") == "Deijl"
     assert g("") is None
+    # LaTeX escape groups are kept, never stripped as case-protection braces.
+    assert g('M{\\"u}ller, Eva') == 'M{\\"u}ller'
+    assert g('Bergvall-K{\\aa}reborn, Birgitta') == 'Bergvall-K{\\aa}reborn'
+    assert g('Mendon{\\c{c}}a, Ana') == 'Mendon{\\c{c}}a'
+    assert g('{\\O}stergaard, Jens') == '{\\O}stergaard'
+    assert g('C\\^{o}t\\\'{e}-Bouchard, Charles') == 'C\\^{o}t\\\'{e}-Bouchard'

@@ -190,8 +190,9 @@ def get_author_last_name(entry: dict) -> Optional[str]:
     outer brace group with no comma inside is a corporate author and is
     returned whole; otherwise the token rule stands: text before the first
     comma (a braced personal name `{Doe, Jane}` lands here), else the last
-    whitespace token. All braces are removed from the result because it is
-    used as search text."""
+    whitespace token. Case-protection braces around plain letters are
+    removed from the result because it is used as search text; LaTeX escape
+    groups are kept."""
     first = first_author_name(entry['fields'].get('author', ''))
     if not first:
         return None
@@ -202,7 +203,16 @@ def get_author_last_name(entry: dict) -> Optional[str]:
     else:
         parts = first.split()
         surname = parts[-1] if parts else ''
-    surname = surname.replace('{', '').replace('}', '').strip()
+    # Remove case-protection braces around plain letters ({B}rown -> Brown),
+    # never a group holding a LaTeX escape ({\"u}, {\aa}) and never the
+    # argument of a one-letter accent command (\c{c}) -- those stay as the
+    # bib wrote them, exactly as before this change.
+    surname = re.sub(r"(?<!\\[A-Za-z])(?<![\\'\"^`~=.])\{([A-Za-z]+)\}", r"\1", surname)
+    # The comma branch on a braced personal name ({Doe, Jane}) leaves an
+    # unmatched leading brace: drop it. Balanced groups ({\O}stergaard) stay.
+    if surname.startswith('{') and surname.count('{') > surname.count('}'):
+        surname = surname[1:]
+    surname = surname.strip()
     return surname or None
 
 

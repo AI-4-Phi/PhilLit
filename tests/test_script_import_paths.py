@@ -17,7 +17,7 @@ SCRIPTS = Path(__file__).parent.parent / "skills" / "literature-review" / "scrip
 ])
 def test_script_imports_bib_identity_when_loaded_by_path(tmp_path, script, func, expected):
     code = (
-        "import importlib.util, sys\n"
+        "import importlib.util\n"
         f"spec = importlib.util.spec_from_file_location('m', {str(SCRIPTS / script)!r})\n"
         "m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)\n"
         f"print(m.{func}('{{A and B}} and C, D'))"
@@ -30,7 +30,7 @@ def test_script_imports_bib_identity_when_loaded_by_path(tmp_path, script, func,
 
 def test_enrich_imports_bib_identity_when_loaded_by_path(tmp_path):
     code = (
-        "import importlib.util, sys\n"
+        "import importlib.util\n"
         f"spec = importlib.util.spec_from_file_location('m', {str(SCRIPTS / 'enrich_bibliography.py')!r})\n"
         "m = importlib.util.module_from_spec(spec); spec.loader.exec_module(m)\n"
         "print(m.get_author_last_name({'fields': {'author': '{A and B} and C, D'}}))"
