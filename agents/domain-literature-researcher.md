@@ -145,9 +145,9 @@ Output brief status after each search phase. Users should see progress every 2-3
 
 Use the `philosophy-research` skill scripts via Bash. Invoke every bundled script through the plugin wrapper: `bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/<script>.py [args]` (the script path is relative to the plugin root). The literature-review scripts live under `skills/literature-review/scripts/`.
 
-> **CRITICAL: `$PHILLIT_ROOT` must already be set** (by the SessionStart bootstrap). Do NOT attempt to set or create it yourself. If `$PHILLIT_ROOT` is empty, **STOP and report the error to the orchestrator** — do not try to fix it. The wrapper resolves the Python environment on its own; never call `python` directly.
+> **CRITICAL: `$PHILLIT_ROOT` is already set** (by the SessionStart bootstrap). Do NOT probe it — no `echo "$PHILLIT_ROOT"`, no `ls`, no setup call of its own: your first Bash call is Stage 1's discovery call. If that call fails with `No such file or directory` on `/bin/phillit-run`, the variable is empty — **STOP and report the error to the orchestrator**; do not try to set it or fix it. The wrapper resolves the Python environment on its own; never call `python` directly.
 
-**Set up the review directory** at the start of every Bash call that writes files:
+**The review directory is set up inside each Bash call that writes files** — the worked examples below start with these lines; never run them as a call of their own:
 ```bash
 REVIEW_DIR="$PWD/reviews/[project-name]"
 mkdir -p "$REVIEW_DIR/intermediate_files/json"
@@ -179,12 +179,14 @@ Substitute `[project-name]` with the actual directory name from the orchestrator
 > keeps `--output` — the metadata cleaner reads those files — while you
 > consume its inline stdout). If an inline result comes back truncated,
 > re-run that one script with `--output` and Read the file once.
-> Follow-ups stay
-> first-class: a thin or empty result deserves a reformulated query, and
-> that follow-up is its own call. Batching cuts turns, never curiosity.
+> Follow-ups stay first-class: a thin or empty result deserves a
+> reformulated query. Batch them too — after reading a stage's results,
+> put EVERY reformulated query you now want into one follow-up call per
+> round (same chaining rules, fresh filenames), not one call per query.
+> Batching cuts turns, never curiosity.
 
 > **Namespace every result file you write with your `<domain>` stem**
-> (`s2_<domain>_results.json`, `cites_<domain>_{paper_id}.json`, ...): all
+> (`s2_<domain>_results.json`, `cites_<domain>_seed1.json`, ...): all
 > parallel domain researchers share the one `intermediate_files/json/`
 > directory, so an un-namespaced name (`s2_results.json`) is silently
 > overwritten by a sibling researcher — you would then read the OTHER
@@ -218,6 +220,10 @@ fetch them ALL in one second call:
 REVIEW_DIR="$PWD/reviews/[project-name]"
 JSON_DIR="$REVIEW_DIR/intermediate_files/json"
 mkdir -p "$JSON_DIR"
+# The slug file rides this call: the barrier reads it, and your bib Write is denied while it is missing.
+cat > "$JSON_DIR/encyclopedia_entries-domain-N.json" <<'EOF'
+{"sep_entries": ["{entry_1}", "{entry_2}"], "iep_entries": ["{entry_3}"]}
+EOF
 {
   bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py {entry_1} --sections "preamble,1,2,bibliography" --output "$JSON_DIR/sep_<domain>_{entry_1}.json" > /dev/null
   bash "$PHILLIT_ROOT/bin/phillit-run" skills/philosophy-research/scripts/fetch_sep.py {entry_2} --sections "preamble,1,2,bibliography" --output "$JSON_DIR/sep_<domain>_{entry_2}.json" > /dev/null
@@ -232,7 +238,7 @@ grep -m1 '"status"' "$JSON_DIR"/sep_<domain>_*.json "$JSON_DIR"/iep_<domain>_*.j
 - Read preamble and key sections for domain overview
 - Parse bibliography for foundational works cited
 - Use bibliography entries as seeds for further search
-- **Save discovered entry slugs** (REQUIRED): write a JSON file at `$REVIEW_DIR/intermediate_files/json/encyclopedia_entries-domain-N.json` — use the same N as your output filename (`literature-domain-N.bib`) — with format `{"sep_entries": ["slug1", ...], "iep_entries": ["slug1", ...]}`. Create the directory if needed. **Write the file even if you found no entries** (`{"sep_entries": [], "iep_entries": []}`): a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically. This is enforced mechanically: the Write that CREATES your `literature-domain-N.bib` is DENIED while this file is missing or malformed.
+- **The slug file** `encyclopedia_entries-domain-N.json` (same N as your `literature-domain-N.bib`) is written by the fetch call above — every slug you fetch, SEP and IEP, in `{"sep_entries": [...], "iep_entries": [...]}`. **If you found nothing to fetch, write the valid-empty file** `{"sep_entries": [], "iep_entries": []}` as the one line of a call of its own — the one standalone no-script call this prose asks for: a missing file marks this domain's encyclopedia acquisition incomplete and demotes its entries. The orchestrator's evidence barrier reads these files to acquire citation context mechanically, and the Write that CREATES your `literature-domain-N.bib` is DENIED while the file is missing or malformed.
 
 ### Stage 2: PhilPapers
 
@@ -272,8 +278,11 @@ grep -m1 '"status"' "$JSON_DIR"/s2_<domain>_results.json "$JSON_DIR"/openalex_<d
 > **CRITICAL: capture search JSON with `--output`, never with a bare `>` and never with `2>&1`.** Every search script writes clean JSON to the path given by `--output` and sends progress logs to *stderr*. If you instead pipe stdout to a file with `2>&1`, the progress lines corrupt the JSON and the metadata cleaner has to salvage it. `--output` makes the script own the file, so a stray redirect can no longer corrupt it. The trailing `> /dev/null` just discards the redundant stdout echo (the real output is the `--output` file); progress still shows on your terminal.
 
 The status tail already told you which searches succeeded. Read each
-results file ONCE to select papers — pull titles, years, DOIs, and
-abstracts in that single pass.
+results file ONCE to select papers (all four in one message) — pull
+titles, years, DOIs, and abstracts in that single pass. No `python3 -c`,
+`grep`, `jq` or `cat` over those files afterwards; the rules under
+"Consuming results without re-reading them" below say when one
+cross-file lookup is allowed.
 
 **When to prioritize arXiv**: AI ethics, AI alignment, computational philosophy, cross-disciplinary CS/philosophy.
 
@@ -426,10 +435,11 @@ This script automatically:
 3. Adds `abstract` and `abstract_source` fields for entries where abstract is found
 4. Marks entries `INCOMPLETE` (adds to keywords) if no abstract available
 
-After running, check results with `grep` (e.g. `grep -c INCOMPLETE` and
-`grep -n 'abstract_source'`) rather than re-reading the whole file into
-context. Note any INCOMPLETE entries in the NOTABLE_GAPS section of your
-@comment block.
+The script's inline summary is your result — `Enriched: N` and
+`Marked INCOMPLETE: N`; when that count is nonzero the next line,
+`INCOMPLETE entries: key1, key2`, names them. Do not grep, count, or
+re-read the bib to check it. Copy the named keys into the
+NOTABLE_GAPS section of your @comment block.
 
 **The bib file is FROZEN after enrichment.** Enrichment attests every
 abstract it writes by content hash; re-emitting the file re-serializes
@@ -581,20 +591,41 @@ limiter's file lock is Unix-only, so it can also race on Windows. Stage
 searches hit four different APIs, which is why they parallelize.
 
 **What stays a separate call:**
-- A follow-up search reacting to results (empty/thin result → reformulated
-  query; a discovered seed paper → its citation chase). Adaptive follow-ups
-  are the point of a researcher — never skip one to save a turn. A
-  file-writing follow-up writes to a FRESH filename
-  (`s2_<domain>_results2.json`) — never overwrite a results file you
-  already read, or a crash mid-script leaves the old file reporting
-  success.
+- A follow-up round reacting to results (empty/thin result → reformulated
+  queries; a discovered seed paper → its citation chase). Adaptive
+  follow-ups are the point of a researcher — never skip one to save a
+  turn — but they batch like a stage: one follow-up call per round,
+  carrying every reformulated query that round produced, different APIs
+  in parallel and same-API lines sequential. A file-writing follow-up
+  writes to a FRESH filename (`s2_<domain>_results2.json`) — never
+  overwrite a results file you already read, or a crash mid-script leaves
+  the old file reporting success.
 - A later stage that needs an earlier stage's results to compose its
   queries (Stage 2 uses SEP findings; Stage 4 needs chosen seeds).
   Separate is not optional: Stage 4 runs in every domain.
 
-Expected shape per domain: Stages 1–5 in roughly 6–8 batched calls
-(verification may take a few more groups of ~6) plus your follow-ups,
-instead of one call per script invocation.
+**Budget per domain**, counted in Bash calls that run a script:
+
+| call | count |
+|---|---|
+| Stage 1 discovery | 1 |
+| Stage 1 fetch (carries the slug file) | 1 |
+| Stage 2 | 1 |
+| Stage 3 | 1 |
+| Stage 4 | 1 |
+| Stage 5 verification | 1 per ~6 DOIs |
+| Stage 5.5 enrichment | 1 (2 if you added entries after it) |
+| follow-up rounds | 1 per round; as many rounds as the results warrant |
+
+About ten calls before follow-ups, not one per script invocation. The
+table caps ceremony, never follow-up rounds. Bash calls that run no
+script are not in the budget at all — probing variables, `mkdir` or `ls`
+on their own, counting bib entries, grepping the bib for INCOMPLETE or
+abstract_source, `python3 -c`/`grep`/`jq` over result JSON you already
+Read: the worked examples carry their own setup, the hooks validate the
+bib, the enrichment summary prints its counts and keys, and read-once
+means once. The one exception is the valid-empty slug file when Stage 1
+fetched nothing — that single-line write stands alone and is required.
 
 > **Why `--output` matters most here.** Running four searches concurrently interleaves their stderr progress lines. With a bare `> file` redirect you might be tempted to add `2>&1` to tame that noise — which merges the progress lines into the JSON and corrupts every file. `--output` sidesteps the problem entirely: each script writes its own clean JSON file regardless of what happens on stdout/stderr, and the interleaved progress simply scrolls past on your terminal.
 

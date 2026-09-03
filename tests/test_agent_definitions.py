@@ -285,3 +285,40 @@ def test_researcher_prose_makes_citation_chaining_required():
     example = re.search(r"```\n(.*?)```", status, re.S).group(1)
     for stage in ("Stage 1", "Stage 2", "Stage 3", "Stage 4", "Stage 5"):
         assert stage in example, f"status example omits {stage}"
+
+
+def test_researcher_prose_budgets_calls_and_forbids_probing():
+    """2026-09-03 measurement: 16 no-script Bash calls per domain, every
+    domain opening with an `echo PHILLIT_ROOT; mkdir; ls` probe the prose
+    itself invited. Pin the replacements, scoped to their sections."""
+    text = (REPO_ROOT / "agents" / "domain-literature-researcher.md").read_text(
+        encoding="utf-8")
+    assert "Do NOT probe it" in text
+    batching = _section(text, "## One Bash Call Per Stage (REQUIRED)", "## BibTeX File Structure")
+    assert "roughly 6" not in batching
+    assert "Budget per domain" in batching
+    assert "| Stage 4 |" in batching
+    assert "as many rounds as the results warrant" in batching
+    assert "one follow-up call per round" in batching
+    assert "Marked INCOMPLETE" in text  # prose reads the conditional summary line
+    assert "valid-empty slug file" in batching  # the one exempt standalone call
+    assert "result JSON" in batching  # pokes named as out of budget
+    # The slug file rides the Stage 1 fetch call, and the valid-empty rule survives.
+    stage1 = _section(text, "### Stage 1: SEP & IEP (Most Authoritative)", "### Stage 2: PhilPapers")
+    fetch_block = [b for b in re.findall(r"```bash\n(.*?)```", stage1, re.S) if "fetch_sep.py" in b]
+    assert len(fetch_block) == 1 and "encyclopedia_entries-domain-N.json" in fetch_block[0]
+    assert '{"sep_entries": [], "iep_entries": []}' in stage1
+    # Stage 3's worked example still chains all four searches in one block.
+    stage3 = _section(text, "### Stage 3: Extended Academic Search", "### Consuming results without re-reading them")
+    block = re.search(r"```bash\n(.*?)```", stage3, re.S).group(1)
+    assert "python3 -c" in stage3  # the read-once clause sits in Stage 3's own paragraph
+    for script in ("s2_search.py", "search_openalex.py", "search_core.py", "search_arxiv.py"):
+        assert script in block
+    # Task 4's DOI-safe chain filenames and its batching sentence stay pinned.
+    assert "cites_<domain>_{paper_id" not in text
+    assert "cites_<domain>_seed1.json" in text
+    assert "Separate is not optional: Stage 4 runs in every domain." in batching
+    # The Stage 5.5 grep instruction is gone; the summary names the keys.
+    stage55 = _section(text, "### Stage 5.5: Abstract Resolution", "### Stage 6: Web Search Fallback (When Needed)")
+    assert "grep -c INCOMPLETE" not in stage55
+    assert "INCOMPLETE entries:" in stage55
