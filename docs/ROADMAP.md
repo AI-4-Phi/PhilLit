@@ -10,13 +10,13 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**Researcher prose residuals after the turn-waste rewrite** — one headless
-validation run (8 domains, Sonnet, topic "specification gaming and reward
-hacking in AI systems", prose at `c5f430b`) against the same-topic baseline:
-first-call probes 6/6 → 0/8, standalone non-empty slug heredocs 3 → 0, Stage 4
-fired 2/6 → 7/8 with one silent skip, follow-up rounds split across calls 2/20
-→ 3/15, prescribed post-enrichment bib greps 0 → 1. Three bars missed narrowly;
-the run predates the Stage 4 partial-failure case and the executable
-valid-empty slug call added by review. Re-measure with a second run on the same
-topic (`docs/known-issues/researcher-turn-measurement-2026-09-03/validation_report.py`)
-before spending prose on the residuals.
+**Follow-up search rounds still split across Bash calls** — the one bar the
+researcher-prose rewrite did not move. Two headless runs on the same topic
+("specification gaming and reward hacking in AI systems", Sonnet): 3 of 15 and
+4 of 21 follow-up rounds ran as more than one call, against a baseline of 2 of
+20, while every other measured bar cleared (first-call probes 6/6 → 0/7, Stage 4
+fired 2/6 → 7/7, standalone slug heredocs 3 → 0, prescribed bib greps → 0). The
+"one follow-up call per round" rule is therefore inert; the lever is small
+(about one call per domain, since most rounds are single queries). Decide
+whether to drop the rule as noise or find a mechanism that is not prose.
+Measure with `docs/known-issues/researcher-turn-measurement-2026-09-03/validation_report.py`.
