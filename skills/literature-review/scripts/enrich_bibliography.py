@@ -170,8 +170,8 @@ def get_doi(entry: dict) -> Optional[str]:
 def _is_one_brace_group(name: str) -> bool:
     """True when the first `{` closes only at the final character, i.e. the
     whole name is one outer brace group (nested groups allowed). Escaped
-    braces (`\\{`) are counted like any other -- unreachable in author
-    fields, documented limitation."""
+    braces (`\\{`) are counted like any other -- unusual in author
+    fields; accepted limitation — such a name falls to the token rule."""
     if len(name) < 2 or name[0] != '{' or name[-1] != '}':
         return False
     depth = 0
@@ -188,11 +188,11 @@ def _is_one_brace_group(name: str) -> bool:
 def get_author_last_name(entry: dict) -> Optional[str]:
     """First author's surname as search text for abstract matching.
 
-    Brace-aware on the list split (bib_identity). A first name that is one
-    outer brace group is returned whole, commas inside included: pybtex
-    treats such a group as ONE surname regardless of its punctuation
-    (`{Smith, Jones and Lee Institute}`), and this is how
-    `generate_bibliography` renders it. Otherwise the token rule stands:
+    Brace-aware on the list split (bib_identity). A first name that is
+    one outer brace group (nested groups unwrapped) is a corporate or
+    literal surname; its text before any comma is the search token,
+    matching how the matchers compare (an NDPR slug, a CORE query, an S2
+    author term never carry a comma). Otherwise the token rule stands:
     text before the first comma, else the last whitespace token.
     Case-protection braces around plain letters are removed from the result
     because it is used as search text; LaTeX escape groups are kept."""
@@ -200,7 +200,11 @@ def get_author_last_name(entry: dict) -> Optional[str]:
     if not first:
         return None
     if _is_one_brace_group(first):
-        surname = first[1:-1]
+        surname = first
+        while _is_one_brace_group(surname):
+            surname = surname[1:-1]
+        if ',' in surname:
+            surname = surname.split(',')[0]
     elif ',' in first:
         surname = first.split(',')[0]
     else:

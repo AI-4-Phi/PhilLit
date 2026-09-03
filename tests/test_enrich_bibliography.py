@@ -684,6 +684,9 @@ class TestBatchProcessing:
                             lambda *a, **k: stats)
         bib = tmp_path / "literature-domain-1.bib"
         bib.write_text(SAMPLE_ENTRY_NO_ABSTRACT, encoding='utf-8')
+        # main() calls find_dotenv(usecwd=True): keep it from walking up into
+        # a real .env on the developer's machine.
+        monkeypatch.chdir(tmp_path)
         monkeypatch.setattr(sys, "argv", ["enrich_bibliography.py", str(bib)])
         with pytest.raises(SystemExit) as exc:
             enrich_bibliography.main()
@@ -1868,11 +1871,14 @@ def test_get_author_last_name_fixes_the_split_and_braces_only():
     assert g("{{ACM} and IEEE Committee}") == "ACM and IEEE Committee"
     assert g("{Research {and} Development Council}") == "Research and Development Council"
     assert g("{B}rown, John") == "Brown"
-    # One outer brace group: pybtex sees ONE surname however the group is
-    # punctuated, and this matches how generate_bibliography renders it.
-    assert g("{Doe, Jane}") == "Doe, Jane"
-    assert g("{van der Deijl, Willem}") == "van der Deijl, Willem"
-    assert g("{Smith, Jones and Lee Institute}") == "Smith, Jones and Lee Institute"
+    # One outer brace group: the group is unwrapped (repeatedly) and the
+    # comma rule applies to its CONTENT, because this is SEARCH TEXT -- an
+    # NDPR slug match, a CORE query, an S2 author term. A comma in the
+    # result would defeat every one of those matchers.
+    assert g("{Doe, Jane}") == "Doe"
+    assert g("{van der Deijl, Willem}") == "van der Deijl"
+    assert g("{Smith, Jones and Lee Institute}") == "Smith"
+    assert g("{{Doe, Jane}}") == "Doe"
     assert g("Doe, Jane and Smith, John") == "Doe"
     # Unchanged token rule for ordinary comma-less names.
     assert g("Willem van der Deijl") == "Deijl"
@@ -1896,3 +1902,5 @@ def test_is_one_brace_group_recognizes_only_a_single_outer_group():
     # Empty group: len 2 and balanced, so the scanner says True. Harmless --
     # get_author_last_name then yields '' and returns None.
     assert f("{}") is True
+    # escaped brace counted as structural: accepted limitation
+    assert f(r"{Research \{Lab}") is False

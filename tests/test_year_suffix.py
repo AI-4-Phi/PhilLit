@@ -62,6 +62,15 @@ class TestAuthorSignature:
         assert sig[0] == ("smith and jones institute", "")
         assert sig[1] == ("doe", "j")
 
+    def test_braced_corporate_author_with_comma_is_one_slot(self):
+        sig = ys.author_signature("{Smith, Jones and Lee Institute} and Doe, Jane")
+        assert len(sig) == 2
+        # A comma INSIDE the group does not split the slot: Person still reads
+        # one last name, and title_key's punctuation fold drops the comma, so
+        # the fold is the whole group text with the comma gone.
+        assert sig[0] == ("smith jones and lee institute", "")
+        assert sig[1] == ("doe", "j")
+
 
 def test_first_surname_raw_keeps_braced_corporate_author_whole():
     fields = {"author": "{Smith and Jones Institute} and Doe, Jane", "title": "T"}

@@ -375,3 +375,16 @@ class TestAuthorListSplit:
         assert bi.first_author_surname("~") == "~"
         # Empty author falls back to the editor list, same parse.
         assert bi.first_author_surname("", "Menary, Richard and Wu, Jing") == "Menary"
+
+    def test_first_author_surname_falls_back_when_person_raises(self, monkeypatch):
+        """The catch is scoped to the Person call, so ANY failure there --
+        not only pybtex's own -- still yields the comma/whitespace split."""
+        def boom(_):
+            raise RuntimeError("Person exploded")
+        monkeypatch.setattr(bi, "Person", boom)
+        assert bi.first_author_surname("Doe, Jane") == "Doe"
+
+    def test_first_author_surname_keeps_braced_comma_name_whole(self):
+        # raw identity text keeps the group whole; get_author_last_name's
+        # search token differs by design
+        assert bi.first_author_surname("{Doe, Jane}") == "{Doe, Jane}"

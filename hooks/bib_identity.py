@@ -629,6 +629,14 @@ def first_author_name(author: str | None, editor: str | None = "") -> str:
     return names[0] if names else ""
 
 
+def _fallback_surname(first: str) -> str:
+    """Comma/whitespace split used when pybtex cannot give a surname."""
+    if "," in first:
+        return first.split(",")[0].strip()
+    parts = first.split()
+    return parts[-1] if parts else ""
+
+
 def first_author_surname(author: str | None, editor: str | None = "") -> str:
     """The first author's FULL surname (pybtex prelast + last), RAW.
 
@@ -639,21 +647,18 @@ def first_author_surname(author: str | None, editor: str | None = "") -> str:
     or yields no surname; callers pass RAW field values (undecoded), as
     `same_work_key` requires.
     """
-    first = first_author_name(author, editor)
+    try:
+        first = first_author_name(author, editor)
+    except Exception:  # pybtex split failure on one malformed field: no name, no key
+        return ""
     if not first:
         return ""
     try:
         person = Person(first)
-        surname = " ".join(person.prelast_names + person.last_names).strip()
-        if surname:
-            return surname
     except Exception:
-        # Identity heuristic, not a validator: any Person failure
-        # (InvalidNameString on too many commas, pybtex's own
-        # UnboundLocalError on tie-only names) degrades to the
-        # comma/whitespace split rather than crashing the barrier.
-        pass
-    if "," in first:
-        return first.split(",")[0].strip()
-    parts = first.split()
-    return parts[-1] if parts else ""
+        # Identity heuristic, not a validator: any Person failure (InvalidNameString on
+        # too many commas, pybtex's own UnboundLocalError on tie-only names) degrades to
+        # the comma/whitespace split rather than crashing the barrier.
+        return _fallback_surname(first)
+    surname = " ".join(person.prelast_names + person.last_names).strip()
+    return surname or _fallback_surname(first)
