@@ -10,6 +10,7 @@ Tests cover:
 """
 
 import json
+import pathlib
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
@@ -205,6 +206,94 @@ def test_multiline_quoted_field_parsed():
     e = parse_bibtex_entries(entry)[0]
     assert "Jonathan" in e["fields"]["author"]
 
+
+def test_two_level_nested_and_bare_values_are_parsed():
+    """parse_bibtex_entries carried its own copy of the one-level-nesting
+    regex and dropped the same 39 fields over the corpus as the barrier's
+    parser did (22 author, 11 title, 4 bare year, 2 journal) -- an accented
+    first author made the entry look author-less to the abstract lookup. It
+    now reads through bib_fields, the one owner of raw-text field location."""
+    from enrich_bibliography import parse_bibtex_entries
+    entry = ("@article{bonnefon2019trolley,\n"
+             "  author = {Bonnefon, Jean-Fran{\\c{c}}ois and Shariff, Azim},\n"
+             "  title = {The Trolley, the Bull Bar, and Why Engineers Should Care},\n"
+             "  journal = {Studia Universitatis Babe{\\c{s}}-Bolyai Philosophia},\n"
+             "  year = 2019\n}")
+    e = parse_bibtex_entries(entry)[0]
+    assert e["fields"]["author"] == "Bonnefon, Jean-Fran{\\c{c}}ois and Shariff, Azim"
+    assert e["fields"]["journal"] == "Studia Universitatis Babe{\\c{s}}-Bolyai Philosophia"
+    assert e["fields"]["year"] == "2019"
+    assert e["fields"]["title"].startswith("The Trolley")
+
+
+class TestKeywordEditsOnNestedValues:
+    """add/remove_keyword_from_entry located the keywords value with a regex
+    whose braced alternative was `[^{}]*` -- NO nesting. When it missed,
+    add_keyword_to_entry fell through to add_field_to_entry, which REPLACED
+    the whole value: `{on {K}alon, High}` became `{INCOMPLETE}`, topic tags
+    and importance gone, and the result is a valid entry pybtex accepts, so
+    no gate could catch it. Both editors now locate the value through
+    bib_fields, the same scanner the readers use."""
+
+    NESTED = "@article{k,\n  title = {T},\n  keywords = {on {K}alon, {\\'{e}}thics, High}\n}"
+
+    def test_add_keyword_preserves_every_existing_token(self):
+        from enrich_bibliography import add_keyword_to_entry
+        out = add_keyword_to_entry(self.NESTED, "INCOMPLETE")
+        assert out.count("keywords =") == 1
+        assert "keywords = {on {K}alon, {\\'{e}}thics, High, INCOMPLETE}" in out
+
+    def test_add_existing_keyword_is_a_noop(self):
+        from enrich_bibliography import add_keyword_to_entry
+        assert add_keyword_to_entry(self.NESTED, "High") == self.NESTED
+
+    def test_remove_keyword_preserves_the_other_tokens(self):
+        from enrich_bibliography import remove_keyword_from_entry
+        out = remove_keyword_from_entry(self.NESTED, "High")
+        assert "keywords = {on {K}alon, {\\'{e}}thics}" in out
+        assert "title = {T}" in out
+
+    def test_remove_last_keyword_removes_the_field_and_its_comma(self):
+        from enrich_bibliography import remove_keyword_from_entry
+        entry = "@article{k,\n  keywords = {on {K}alon},\n  title = {T}\n}"
+        out = remove_keyword_from_entry(entry, "on {K}alon")
+        assert out == "@article{k,\n  title = {T}\n}"
+
+    def test_remove_last_keyword_when_field_is_last_leaves_no_dangling_comma(self):
+        from enrich_bibliography import remove_keyword_from_entry
+        entry = "@article{k,\n  title = {T},\n  keywords = {on {K}alon}\n}"
+        out = remove_keyword_from_entry(entry, "on {K}alon")
+        from pybtex.database import parse_string
+        parse_string(out, "bibtex")
+        assert "keywords" not in out
+        assert "title = {T}" in out
+
+    def test_quoted_keywords_value_is_edited_in_place(self):
+        from enrich_bibliography import add_keyword_to_entry
+        entry = '@article{k,\n  keywords = "tag, High",\n  title = {T}\n}'
+        out = add_keyword_to_entry(entry, "INCOMPLETE")
+        assert "keywords = {tag, High, INCOMPLETE}" in out
+        assert '"' not in out
+
+    def test_no_keywords_field_still_inserts_one(self):
+        from enrich_bibliography import add_keyword_to_entry
+        out = add_keyword_to_entry("@article{k,\n  title = {T}\n}", "INCOMPLETE")
+        assert "keywords = {INCOMPLETE}" in out
+
+    def test_ndpr_candidate_check_is_case_insensitive_on_incomplete(self):
+        # The regex it replaced carried re.IGNORECASE; equivalence kept.
+        from enrich_bibliography import _is_ndpr_candidate
+        assert _is_ndpr_candidate("@book{k,\n  keywords = {ethics, High, Incomplete}\n}")
+        assert _is_ndpr_candidate("@book{k,\n  keywords = {on {K}alon, Medium, INCOMPLETE}\n}")
+        assert not _is_ndpr_candidate("@book{k,\n  keywords = {ethics, Low, INCOMPLETE}\n}")
+        assert not _is_ndpr_candidate("@book{k,\n  keywords = {ethics, High}\n}")
+        assert not _is_ndpr_candidate("@book{k,\n  title = {T}\n}")
+
+    def test_enrich_has_no_private_keywords_regex_left(self):
+        import enrich_bibliography
+        src = pathlib.Path(enrich_bibliography.__file__).read_text(encoding="utf-8")
+        assert "_KEYWORDS_FIELD_RE" not in src
+        assert "_incomplete_kw_re" not in src
 
 class TestFieldDetection:
     """Tests for field detection helpers."""

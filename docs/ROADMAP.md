@@ -10,29 +10,29 @@ that a recurrence is recognized where it would be read.
 
 ## Queue
 
-**`parse_entry_fields` drops any field nested two braces deep** — and it
-partially defeats the `same_work_group` stamping shipped at `8fc09af`.
-`_FIELD_RE`'s value alternation admits a brace group containing no braces, so
-the standard LaTeX accent form (`Mendon{\c{c}}a`, `Garc{\'{i}}a-Ferrero`, and
-`\textit{{T}he {P}rivatized {S}tate}` in titles) fails to match and the field
-is dropped — absent, not mangled, not flagged. One level parses fine, so the
-affected population is entries whose authors have accented names, not a random
-slice. Two consumers degrade together, both fed from the same dict:
-`_same_work_groups` produces no key and therefore no stamp, so the synthesis
-writer never learns the reprint pair is one work; and the Chicago a/b pass
-reaches `fallback_key` with an empty surname axis, which is the failure
-`_first_surname_raw`'s own docstring was written to prevent. `compute_tier`
-shares the parser but reads other fields and is not implicated on current
-evidence. Measured over `reviews/` at this pin: **33 of 8,894 entries (0.37%),
-22 author / 11 title, every one in the same direction**. Census, script and the
-two traps that produced two earlier wrong figures:
-`docs/known-issues/field-parse-divergence-measurement-2026-09-02/`. Candidate
-fix is a brace-depth-aware scan, or handing the entry to pybtex and stopping
-maintaining a second parser — the second would also close the sibling gap where
-`_first_surname_raw` pre-splits the author field on a naive `" and "` (0 of
-8,975 today, so it matters only as a reason to do this once). Found by the
-service while reviewing this pin; it is pinned there as a scope guard, so a fix
-here is reported rather than absorbed.
+**Raw-text field locators still on one-level regexes** — the shared read
+path now goes through `bib_fields.iter_fields` (depth-counting, braced /
+quoted / bare / concatenated): `parse_entry_fields`, the enrichment reader,
+the keywords stamp and the keywords editors. Four EDIT-side locators keep
+their own regex, each with the one-level wall the read side lost:
+`dedupe_bib._field_value_re` (keywords, abstract, year_suffix);
+`evidence_barrier._DERIVED_FIELD_RE` (the strip before re-derivation, whose
+docstring lists three accepted residuals); `resolve_context._CONTEXT_FIELD_RE`;
+and the quoted branch of `enrich_bibliography._field_value_end` (`find('"')`,
+not brace-aware). Measured exposure at `bib_fields`' landing over 13,757
+engine-written field values in `reviews/` (keywords, abstract, year_suffix,
+venue_status, same_work_group, sep/iep_context, urldate, archiveurl): no
+value nests two deep, no keywords value nests at all, 211 abstracts nest one
+deep (within every site's tolerance). So this is consistency and robustness,
+not a measured defect: the engine writes these fields flat, and only an
+agent- or hand-written value reaches the wall. At the three strip/extract
+sites a miss ends as a duplicate or surviving field pybtex rejects or the
+next run overwrites; `_field_value_end`'s quoted branch is the one that can
+instead cut a value SHORT (`"The {"Q"} result"` ends at the protected
+quote), so take it first. Do it site by site with a RED test per site; the tests that pin
+`_strip_derived_fields`' residuals (compact / bare / nested values
+surviving) are pinning the wall itself and flip to asserting the better
+behaviour. `bib_fields.remove_field` is the edit primitive to build on.
 
 **Dynamic-workflow orchestration for Phases 3–5** — unstarted, and two gates
 stand before implementation: whether the service's run path can reach a

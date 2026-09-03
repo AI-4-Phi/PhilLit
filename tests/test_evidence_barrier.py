@@ -3836,3 +3836,43 @@ def test_value_embedded_literal_is_not_mistaken_for_a_field():
              "  year = {2020},\n}")
     assert not _derived_field_took(
         after, before, "same_work_group", "a, b", _SAME_WORK_FIELD_RE)
+
+
+# ---------------------------------------------------------------------------
+# The nested-brace field drop, seen from its two consumers. parse_entry_fields
+# used to lose any field whose value nested braces two deep -- the standard
+# LaTeX accent form -- so an accented first author had no surname axis: no
+# same_work_group stamp, and no a/b letters (the entry fell out of
+# assign_suffixes as author-less). Measured at 33 of 8,894 delivered entries
+# (docs/known-issues/field-parse-divergence-measurement-2026-09-02/).
+# ---------------------------------------------------------------------------
+
+_ACCENTED_AUTHOR = r"Mendon{\c{c}}a, Ricardo F."
+
+
+def test_accented_author_reprint_pair_is_stamped(tmp_path):
+    rd = tmp_path / "review"
+    _sw_domain(rd, 1, _SW_ORIGINAL.replace("Reiman, Jeffrey H.", _ACCENTED_AUTHOR))
+    _sw_domain(rd, 2, _SW_REPRINT.replace("Reiman, Jeffrey H.", _ACCENTED_AUTHOR))
+    r = _run(rd, 2)
+    assert r.returncode == 0, r.stderr
+    for i, key in ((1, _SW_ORIGINAL_KEY), (2, _SW_REPRINT_KEY)):
+        chunk = _sw_entry(rd, i, key)
+        assert "same_work_group = {" in chunk
+        assert _SW_BOTH in chunk
+    groups = _report(rd)["same_work"]["groups"]
+    assert len(groups) == 1
+    assert groups[0]["surname_key"]  # the surname axis is populated, not ""
+
+
+def test_accented_same_author_same_year_gets_letters(tmp_path):
+    sys.path.insert(0, str(SCRIPTS_DIR))
+    import evidence_barrier
+    rd = tmp_path / "review"
+    _domain(rd, 1, MENARY_D1.replace("Menary, Richard", r"Garc{\'{i}}a, Richard"),
+            cleaning=_cleaning(1, {}), enrichment=_enrichment(1))
+    assert evidence_barrier.execute(rd, 1) == 0
+    content = (rd / "literature-domain-1.bib").read_text(encoding="utf-8")
+    assert "year_suffix = {a}" in content
+    assert "year_suffix = {b}" in content
+    assert _report(rd)["year_suffixes"]["assigned"] == 2

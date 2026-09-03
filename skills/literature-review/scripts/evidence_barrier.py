@@ -495,8 +495,11 @@ def _strip_derived_fields(entry_text: str) -> str:
     `\\n` (e.g. `[\\n,]`) can begin a match INSIDE a braced value -- an
     abstract or note containing `, venue_status = {...}` would be silently
     truncated. Trading a cosmetic miss for value corruption in a fail-closed
-    accuracy gate is the wrong trade; closing it properly means a real field
-    parser, which is a rewrite, not a fix.
+    accuracy gate is the wrong trade; closing it properly means locating the
+    field structurally. `bib_fields.iter_fields` now does exactly that for
+    the shared read path (parse_entry_fields, the enrichment reader, the
+    keywords stamp and editors); moving this strip and the remaining regex
+    locators onto it is the roadmap's locator-consolidation item.
 
     What the limits do and do not cost: none of these shapes is ever produced
     by this barrier (add_field_to_entry always inserts the field on its own

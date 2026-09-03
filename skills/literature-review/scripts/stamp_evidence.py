@@ -21,6 +21,14 @@ from bib_identity import normalize_doi  # noqa: E402,F401 - re-exported for call
 
 sys.path.pop(0)
 
+# Sibling module, imported through an explicit path insert (the same idiom as
+# bib_identity above) so this file also works when a caller loads it by file
+# path without putting the scripts directory on sys.path itself.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import bib_fields  # noqa: E402
+
+sys.path.pop(0)
+
 TIER_ABSTRACT = "EVIDENCE-ABSTRACT"
 TIER_CONTEXT = "EVIDENCE-CONTEXT"
 TIER_WEB = "EVIDENCE-WEB"
@@ -136,15 +144,6 @@ _MARKER_RE = re.compile(r",?\s*(METADATA\\*_CLEANED:.*)$", re.DOTALL)
 # Strip ANY evidence-shaped token (unknown/mixed-case included); only the
 # four canonical uppercase tiers are ever emitted.
 _EVIDENCE_TOKEN_RE = re.compile(r"^EVIDENCE-[A-Za-z0-9_-]+$", re.IGNORECASE)
-# Matches braced AND quoted keywords values (a forging agent may use quotes).
-_KEYWORDS_FIELD_RE = re.compile(
-    r"(keywords\s*=\s*)(\{((?:[^{}]|\{[^{}]*\})*)\}|\"([^\"]*)\")",
-    re.IGNORECASE | re.DOTALL,
-)
-_FIELD_RE = re.compile(
-    r'(\w+)\s*=\s*(?:\{((?:[^{}]|\{[^{}]*\})*)\}|"([^"]*)")',
-    re.DOTALL,
-)
 _HEADER_RE = re.compile(r"@(\w+)\s*\{([^,\s]+)\s*,")
 
 
@@ -168,14 +167,10 @@ def stamp_keywords(keywords_value: str | None, tier: str | None) -> str:
     return ", ".join(parts)
 
 
-def parse_entry_fields(entry_text: str) -> dict:
-    """Field name -> value, tolerating both brace- and quote-delimited
-    values (pybtex's bibtex Writer emits quoted values on round-trip)."""
-    fields: dict = {}
-    for name, braced, quoted in _FIELD_RE.findall(entry_text):
-        value = braced if braced else quoted
-        fields[name.lower()] = value.strip()
-    return fields
+# Historic name kept as an alias to the shared scanner (repo convention:
+# sites keep their names as aliases to the shared object; tests assert `is`).
+# Was a one-level-nesting regex here; see bib_fields for what that dropped.
+parse_entry_fields = bib_fields.parse_entry_fields
 
 
 def split_entries(content: str) -> list[str]:
@@ -190,13 +185,22 @@ def entry_header(entry_text: str) -> tuple[str, str] | None:
 
 
 def stamp_entry_text(entry_text: str, tier: str | None) -> str:
-    m = _KEYWORDS_FIELD_RE.search(entry_text)
-    if m:
-        # group 3 = braced content, group 4 = quoted content
-        old_val = m.group(3) if m.group(3) is not None else m.group(4)
-        new_val = stamp_keywords(old_val, tier)
-        return (entry_text[: m.start(2)] + "{" + new_val + "}"
-                + entry_text[m.end(2):])
+    # The keywords value is located by the SAME scanner parse_entry_fields
+    # uses, so the two can never disagree about whether the field exists:
+    # a value the parse saw but the stamp missed would be re-inserted as a
+    # second `keywords =`, a duplicate field pybtex rejects. Braced or quoted
+    # (a forging agent may use quotes), nested to any depth; the replacement
+    # is always braced and canonical.
+    # FIRST keywords field, as the regex's .search() was; parse_entry_fields
+    # keeps the LAST. Two such fields never coexist in text that shipped
+    # (pybtex rejects the duplicate), so the two only differ on text that
+    # the write hook already refused.
+    kw = next((f for f in bib_fields.iter_fields(entry_text)
+               if f.name.lower() == "keywords"), None)
+    if kw is not None:
+        new_val = stamp_keywords(kw.value, tier)
+        return (entry_text[: kw.value_start] + "{" + new_val + "}"
+                + entry_text[kw.value_end:])
     if tier is None:
         return entry_text
     # Insert after the opening "@type{key," line (same insertion point

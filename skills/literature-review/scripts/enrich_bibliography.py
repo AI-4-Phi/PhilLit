@@ -41,6 +41,7 @@ from rate_limiter import ExponentialBackoff, get_limiter
 
 # stamp_evidence lives alongside this script (same skills/literature-review/scripts dir).
 sys.path.insert(0, str(Path(__file__).parent))
+import bib_fields  # noqa: E402 - same directory
 from stamp_evidence import (
     ATTESTED_ABSTRACT_SOURCES,
     abstract_hash,
@@ -113,26 +114,15 @@ def parse_bibtex_entries(content: str) -> list[dict]:
 
         key = header_match.group(1).strip()
 
-        # Extract fields
-        fields = {}
-
-        # Match field = {value} OR field = "value" -- pybtex's Writer emits
-        # quoted values on round-trip (CLAUDE.md), and the cleaner
-        # round-trips domain bibs, so a brace-only pattern made every
-        # cleaned field invisible (production 42b02936: the whole domain
-        # "had no identifiers" and enriched nothing). [^"]* is safe against
-        # the pinned pybtex Writer: it brace-wraps any value containing a
-        # double quote (verified empirically), and quotes numerics, so
-        # neither truncation nor bare values arise from round-tripped
-        # files. Braced alternative keeps its one-level nesting tolerance;
-        # add_field_to_entry's depth-counting editor is the write-side
-        # owner and is unchanged.
-        field_pattern = r'(\w+)\s*=\s*(?:\{((?:[^{}]|\{[^{}]*\})*)\}|"([^"]*)")'
-        for match in re.finditer(field_pattern, raw, re.DOTALL):
-            field_name = match.group(1).lower()
-            field_value = (match.group(2) if match.group(2) is not None
-                           else match.group(3)).strip()
-            fields[field_name] = field_value
+        # Fields are read by the shared depth-counting scanner: braced or
+        # quoted (pybtex's Writer emits quoted values on round-trip, and the
+        # cleaner round-trips domain bibs -- a brace-only reader once made
+        # every cleaned field invisible, production 42b02936), bare, and
+        # nested to any depth. A private one-level regex here dropped the
+        # same 39 fields over the corpus as the barrier's did (see
+        # bib_fields), so an accented first author looked author-less to the
+        # abstract lookup. add_field_to_entry stays the write-side owner.
+        fields = bib_fields.parse_entry_fields(raw)
 
         entries.append({
             'raw': raw,
@@ -469,10 +459,11 @@ def _field_value_end(entry_text: str, value_start: int):
     `{We show {\\it Kant's {a priori}} fails.}` silently failed to match,
     falling through to the insert branch below and leaving BOTH the stale
     and the newly inserted field in the entry -- a duplicate `abstract =`
-    that pybtex rejects, invisible to `stamp_evidence.parse_entry_fields`'
-    own one-level-tolerant regex, which is why the stamp went out wrong
-    too). Depth counting handles nesting at any depth because it isn't
-    matching a fixed shape -- it just tracks a counter.
+    that pybtex rejects, and invisible at the time to
+    `stamp_evidence.parse_entry_fields`, then a one-level regex of its own,
+    which is why the stamp went out wrong too; that reader is now
+    `bib_fields`). Depth counting handles nesting at any depth because it
+    isn't matching a fixed shape -- it just tracks a counter.
     """
     if value_start >= len(entry_text):
         return None
@@ -572,72 +563,63 @@ def add_field_to_entry(entry_text: str, field_name: str, field_value: str) -> st
         return '\n'.join(lines)
 
 
-# Quote-aware keywords-field matcher: brace-delimited value in group(1),
-# quote-delimited value in group(2) (never both). Brace-only matching here
-# previously let a quote-delimited `keywords = "..."` field fall through to
-# add_field_to_entry, which REPLACES a field wholesale on a hit -- silently
-# destroying every existing token (topic tags + importance level) and
-# leaving only the newly added/removed keyword. Both
-# add_keyword_to_entry and remove_keyword_from_entry must find the field in
-# EITHER delimiter style and edit its value in place; only add_keyword_to_entry
-# delegates to add_field_to_entry, and only when no keywords field exists at
-# all.
-_KEYWORDS_FIELD_RE = re.compile(
-    r'keywords\s*=\s*(?:\{([^{}]*)\}|"([^"]*)")',
-    re.IGNORECASE
-)
+def _keywords_field(entry_text: str):
+    """The keywords field's span, located by the shared scanner -- braced or
+    quoted, nested to any depth -- or None. A private regex here once had a
+    braced alternative of `[^{}]*` (no nesting), and when it missed,
+    add_keyword_to_entry fell through to add_field_to_entry, which REPLACES a
+    field wholesale: `{on {K}alon, High}` became `{INCOMPLETE}`, every topic
+    tag and the importance level gone, in an entry pybtex accepts -- silent
+    data loss no gate could catch. Both editors, and the NDPR pass's
+    keywords checks, now read the same span the parsers read."""
+    return next((f for f in bib_fields.iter_fields(entry_text)
+                 if f.name.lower() == "keywords"), None)
+
+
+def _replace_keywords_value(entry_text: str, field, new_value: str) -> str:
+    return (entry_text[:field.value_start] + "{" + new_value + "}"
+            + entry_text[field.value_end:])
 
 
 def remove_keyword_from_entry(entry_text: str, keyword: str) -> str:
-    """Remove a keyword from the keywords field (brace- or quote-delimited;
-    see _KEYWORDS_FIELD_RE)."""
-    match = _KEYWORDS_FIELD_RE.search(entry_text)
-
-    if not match:
+    """Remove a keyword from the keywords field, editing the value in place;
+    the whole field goes when its last token does."""
+    field = _keywords_field(entry_text)
+    if field is None:
         return entry_text
-
-    existing = match.group(1) if match.group(1) is not None else match.group(2)
-    # Split, filter, rejoin
-    keywords = [k.strip() for k in existing.split(',')]
+    keywords = [k.strip() for k in field.value.split(',')]
     keywords = [k for k in keywords if k and k != keyword]
-
     if keywords:
-        new_keywords = ', '.join(keywords)
-        return (
-            entry_text[:match.start()]
-            + f'keywords = {{{new_keywords}}}'
-            + entry_text[match.end():]
-        )
-    else:
-        # Remove the entire keywords field if empty
-        return re.sub(
-            r'\n\s*keywords\s*=\s*(?:\{[^{}]*\}|"[^"]*"),?',
-            '',
-            entry_text,
-            flags=re.IGNORECASE
-        )
+        return _replace_keywords_value(entry_text, field, ', '.join(keywords))
+    return bib_fields.remove_field(entry_text, field)
+
+
+def _is_ndpr_candidate(entry_text: str) -> bool:
+    """Keywords carry INCOMPLETE (any case, as the regex this replaced had
+    re.IGNORECASE) and a High or Medium importance token. Both delimiter
+    forms, any nesting: the value comes from the shared scanner. One
+    deliberate change from the regex: a brace group before INCOMPLETE
+    (`{on {K}alon, High, INCOMPLETE}`) used to hide it, so that book was
+    skipped; it is a candidate now."""
+    field = _keywords_field(entry_text)
+    if field is None:
+        return False
+    tokens = [t.strip() for t in field.value.split(',')]
+    return ('incomplete' in field.value.casefold()
+            and any(t in ('High', 'Medium') for t in tokens))
 
 
 def add_keyword_to_entry(entry_text: str, keyword: str) -> str:
-    """Add a keyword to the keywords field (brace- or quote-delimited;
-    see _KEYWORDS_FIELD_RE). Appends inside the existing value, preserving
-    every other token; only delegates to add_field_to_entry (which
-    replaces a field wholesale) when no keywords field exists at all."""
-    match = _KEYWORDS_FIELD_RE.search(entry_text)
-
-    if match:
-        existing = match.group(1) if match.group(1) is not None else match.group(2)
-        if keyword not in existing:
-            new_keywords = f'{existing}, {keyword}' if existing.strip() else keyword
-            return (
-                entry_text[:match.start()]
-                + f'keywords = {{{new_keywords}}}'
-                + entry_text[match.end():]
-            )
-        return entry_text
-    else:
-        # Add keywords field
+    """Add a keyword to the keywords field, appending inside the existing
+    value and preserving every other token; delegates to add_field_to_entry
+    (which replaces a field wholesale) only when no keywords field exists."""
+    field = _keywords_field(entry_text)
+    if field is None:
         return add_field_to_entry(entry_text, 'keywords', keyword)
+    if keyword in field.value:
+        return entry_text
+    new_value = f'{field.value}, {keyword}' if field.value.strip() else keyword
+    return _replace_keywords_value(entry_text, field, new_value)
 
 
 def enrich_entry(
@@ -879,33 +861,11 @@ def enrich_bibliography(
     # Only attempt NDPR for @book entries that:
     # 1. Still lack an abstract after the main enrichment pass
     # 2. Have High or Medium importance (as noted in keywords)
-    # Both delimiter forms: on a round-tripped bib these were brace-only
-    # and the NDPR pass went blind. Value extraction reuses the
-    # module-level _KEYWORDS_FIELD_RE (defined above; do not duplicate it)
-    # -- same group semantics, group(1)=braced value, group(2)=quoted value.
-    # Scope note, unchanged by that fix: the braced alternative below is
-    # `[^}]*`, which stops at the FIRST '}', so a keywords value carrying a
-    # nested brace group before INCOMPLETE (e.g. `{... {LaTeX} ..., INCOMPLETE}`)
-    # is still not seen. That one-level nesting blindness predates the
-    # quoted-form addition and is not what this pattern is for; the
-    # field-value owner with nesting tolerance is _KEYWORDS_FIELD_RE.
-    _incomplete_kw_re = re.compile(
-        r'keywords\s*=\s*(?:\{[^}]*INCOMPLETE|"[^"]*INCOMPLETE)', re.IGNORECASE)
-
-    def _has_high_or_medium_importance(entry_text: str) -> bool:
-        m = _KEYWORDS_FIELD_RE.search(entry_text)
-        if not m:
-            return False
-        value = m.group(1) if m.group(1) is not None else m.group(2)
-        tokens = [t.strip() for t in value.split(',')]
-        return any(t in ('High', 'Medium') for t in tokens)
-
     book_entries_without_abstract = [
         (i, e) for i, e in enumerate(entries)
         if e['entry_type'] == 'book'
         and not has_abstract(e)
-        and _incomplete_kw_re.search(enriched_entries[i])
-        and _has_high_or_medium_importance(enriched_entries[i])
+        and _is_ndpr_candidate(enriched_entries[i])
     ]
 
     if book_entries_without_abstract:

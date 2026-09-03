@@ -273,6 +273,33 @@ class TestStampEntryText:
         assert fields["publisher"] == "University of Chicago Press"
         assert fields["year"] == "1962"
 
+    def test_two_level_nested_keywords_value_is_replaced_not_duplicated(self):
+        """parse_entry_fields and stamp_entry_text must agree on where the
+        keywords value is. With the parse on the depth-counting scanner and
+        the stamp still on a one-level regex, a two-level value was SEEN by
+        the parse but MISSED by the stamp, which then inserted a second
+        `keywords =` -- a duplicate field pybtex rejects, taking down every
+        Phase 6 parse of the file."""
+        entry = ("@article{k,\n  author = {A},\n  year = {2020},\n"
+                 "  keywords = {ethics {\\'{e}}, High, INCOMPLETE}\n}")
+        out = stamp_entry_text(entry, "EVIDENCE-NONE")
+        assert out.count("keywords =") == 1
+        assert "keywords = {ethics {\\'{e}}, High, EVIDENCE-NONE}" in out
+        from pybtex.database import parse_string
+        parse_string(out, "bibtex")  # must not raise DuplicateField
+
+    def test_bare_keywords_value_is_braced_when_stamped(self):
+        """Pinned, not endorsed: `keywords = mytags` is a macro reference,
+        which the stamp freezes into literal text. The engine always writes
+        braced keywords, so a macro-valued one is agent- or hand-written;
+        undefined, pybtex rejects it (UndefinedMacro) at the barrier's own
+        validation, and a macro the agent also defined via @string is the one
+        shape this accepts silently."""
+        out = stamp_entry_text("@article{k,\n  keywords = mytags,\n  year = {2020}\n}",
+                               "EVIDENCE-NONE")
+        assert "keywords = {mytags, EVIDENCE-NONE}" in out
+        assert out.count("keywords =") == 1
+
     def test_quoted_keywords_value_stamped(self):
         # a forging agent may use quotes instead of braces; the whole
         # quoted value must be replaced with a braced canonical one, no
@@ -390,3 +417,23 @@ def test_context_still_outranks_web():
     att = EntryAttestation(context_written=True, web_gate_passed=True)
     tier = compute_tier("misc", {"sep_context": "c"}, att)
     assert tier == TIER_CONTEXT
+
+
+class TestParseEntryFieldsIsTheSharedScanner:
+    """parse_entry_fields was a one-level-nesting regex here; it is now an
+    alias to bib_fields' depth-counting scanner (repo convention: sites keep
+    historic names as aliases to the shared object, tests assert identity)."""
+
+    def test_alias_is_the_shared_object(self):
+        import bib_fields
+        import stamp_evidence
+        assert stamp_evidence.parse_entry_fields is bib_fields.parse_entry_fields
+
+    def test_two_level_nested_author_reaches_the_tier_dict(self):
+        entry = (r"@article{k," "\n"
+                 r"  author = {Garc{\'{i}}a-Ferrero, Iker}," "\n"
+                 r"  title = {T}," "\n"
+                 r"  year = 2016" "\n}")
+        fields = parse_entry_fields(entry)
+        assert fields["author"] == r"Garc{\'{i}}a-Ferrero, Iker"
+        assert fields["year"] == "2016"

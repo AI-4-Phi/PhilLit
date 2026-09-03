@@ -1,0 +1,297 @@
+"""Locate fields in raw BibTeX text: the owner of the shared read path.
+
+The barrier pipeline edits bibliographies as TEXT -- it splices, strips and
+re-stamps individual fields inside chunks it otherwise leaves byte-for-byte
+alone -- so it needs to know where a field's value starts and ends without
+re-serialising the entry. pybtex cannot give it that: a parse loses the
+spans, moves author/editor into `.persons`, rewrites a single-braced
+corporate author as a person name on output, and rejects a chunk outright
+on a duplicate field, where a lenient reader should still return the rest.
+pybtex stays the STRICT gate (the barrier validates every domain bib with it
+before doing anything else, SubagentStop re-validates, `_derived_field_took`
+re-parses a spliced chunk); this module is the lenient reader beside it. Four
+edit-side locators still carry their own one-level regex and are queued to
+move here (roadmap: locator consolidation).
+
+The reader it replaced was a regex whose value alternation admitted a brace
+group containing no braces -- ONE level of nesting. The standard LaTeX accent
+form nests two (`Mendon{\\c{c}}a`, `Garc{\\'{i}}a`), so any field carrying it
+failed to match and was dropped from the parse: absent, not mangled, not
+flagged. Two consumers degraded together from the same dict -- the barrier's
+same-work grouping produced no key, and the Chicago a/b pass reached its
+fallback key with an empty surname axis. Census over 8,894 delivered
+entries: 39 fields dropped -- 22 authors and 11 titles (the 33 entries that
+lost their same-work key, all with accented names), 2 journals, and 4 BARE
+values (`year = 2016,`, valid BibTeX, which the regex also skipped)
+(docs/known-issues/field-parse-divergence-measurement-2026-09-02/). Depth
+counting has no wall to move: it tracks a counter instead of matching a fixed
+shape.
+
+Grammar read here (BibTeX's, minus macro expansion):
+
+    field  := name '=' value
+    value  := piece ('#' piece)*
+    piece  := '{' balanced '}' | '"' quoted '"' | bare
+    bare   := run of characters outside whitespace and  " # % ' ( ) , = { }
+
+Inside a quoted piece, braces balance and a `"` at brace depth zero closes it.
+Concatenated pieces are joined; a bare macro name is returned as its own
+text, since no @string table is read. Nothing is unescaped or normalised.
+
+Scanning is STRUCTURAL: a field is recognised only inside an entry and at
+its top level -- never inside a value, never in a skipped block, never in
+the commentary between entries -- so text shaped like `year = {1999}` inside
+an abstract, or in a note after the entry, is not a field, which the regex
+got wrong on both counts. (A repeated name keeps the last value.) A bare
+value is a macro identifier, so a `#` inside one is BibTeX's concatenation
+operator, not text -- a bare URL with a fragment reads wrong, but the engine
+never writes bare values, and an undefined one fails the barrier's pybtex
+validation before any decision reads it. On a piece that opens and never
+closes the scan stops and returns what it has read: fail lenient, never
+loud, because the strict gate is pybtex's.
+"""
+from __future__ import annotations
+
+import re
+from dataclasses import dataclass
+from typing import Iterator
+
+# Characters BibTeX excludes from identifiers (field and macro names).
+_NAME_RE = re.compile(r"""[^\s"#%'(),={}]+""")
+# Both entry delimiters, whitespace tolerated around the key: this only
+# steps OVER a header, it never identifies an entry (stamp_evidence.
+# entry_header does that, more strictly). The three non-entry block types
+# are excluded by name so `@comment{TODO, ...}` is skipped whole rather than
+# read as an entry whose fields then leak into the parse.
+_HEADER_RE = re.compile(
+    r"@(?!(?:comment|string|preamble)\b)\w+\s*([{(])\s*[^,\s]+\s*,",
+    re.IGNORECASE)
+_CLOSER = {"{": "}", "(": ")"}
+_WS_RE = re.compile(r"\s*")
+
+
+@dataclass(frozen=True)
+class Field:
+    """One field as it sits in the text.
+
+    `text[value_start:value_end]` is the raw value with its delimiters (for a
+    concatenation, from the first piece's opening delimiter to the last
+    piece's closing one); `value` is the same span with delimiters removed
+    and pieces joined, NOT stripped. `name` keeps the case it was written in.
+    """
+    name: str
+    name_start: int
+    value_start: int
+    value_end: int
+    value: str
+
+
+def _ws(text: str, i: int) -> int:
+    return _WS_RE.match(text, i).end()
+
+
+def _balanced_end(text: str, i: int) -> int | None:
+    """Index just past the `}` closing the group opened at `text[i] == '{'`."""
+    depth = 0
+    for j in range(i, len(text)):
+        c = text[j]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth -= 1
+            if depth == 0:
+                return j + 1
+    return None
+
+
+def _quoted_end(text: str, i: int) -> int | None:
+    """Index just past the `"` closing the string opened at `text[i] == '"'`.
+    Braces balance inside, and a `"` only closes at brace depth zero. A stray
+    `}` (depth would go negative) is treated as text, so `"see } below"`
+    still closes. If the braces never balance at all (`"a } b { c"`), fall
+    back to the next `"`, as the old reader did, rather than end the scan;
+    pybtex rejects such a value anyway."""
+    depth = 0
+    for j in range(i + 1, len(text)):
+        c = text[j]
+        if c == "{":
+            depth += 1
+        elif c == "}":
+            depth = max(0, depth - 1)
+        elif c == '"' and depth == 0:
+            return j + 1
+    end = text.find('"', i + 1)
+    return None if end == -1 else end + 1
+
+
+def _paren_block_end(text: str, i: int) -> int | None:
+    """Index just past the `)` closing a `@word(...)` block opened at
+    `text[i] == '('`: a `)` counts only outside braces and quotes."""
+    depth = 0
+    in_quote = False
+    for j in range(i + 1, len(text)):
+        c = text[j]
+        if in_quote:
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth = max(0, depth - 1)
+            elif c == '"' and depth == 0:
+                in_quote = False
+        elif c == "{":
+            depth += 1
+        elif c == "}":
+            depth = max(0, depth - 1)
+        elif c == '"' and depth == 0:
+            in_quote = True
+        elif c == ")" and depth == 0:
+            return j + 1
+    return None
+
+
+class _Unbounded(Exception):
+    """A `{` or `"` piece opened and the text ended before it closed. Nothing
+    after it can be trusted, so the scan ends (fields already read stand)."""
+
+
+def _read_piece(text: str, i: int) -> tuple[str, int] | None:
+    """(piece content, index just past its closing delimiter); None if no
+    piece starts at `i`; raises _Unbounded if one starts and never closes."""
+    if i >= len(text):
+        return None
+    c = text[i]
+    if c == "{":
+        end = _balanced_end(text, i)
+    elif c == '"':
+        end = _quoted_end(text, i)
+    else:
+        m = _NAME_RE.match(text, i)
+        return None if not m else (m.group(), m.end())
+    if end is None:
+        raise _Unbounded
+    return text[i + 1:end - 1], end
+
+
+def _read_value(text: str, i: int) -> tuple[str, int] | None:
+    """(joined value, index just past the last piece), or None if no piece
+    starts at `i` (`note = ,`). A `#` followed by something that is not a
+    piece (`{2020} #,`) is dropped and the value ends at the last piece read
+    -- malformed, but what was read is complete, and abandoning the entry
+    would lose it. A piece that opens and never closes, first or later,
+    raises _Unbounded."""
+    first = _read_piece(text, i)
+    if first is None:
+        return None
+    pieces, end = [first[0]], first[1]
+    while True:
+        j = _ws(text, end)
+        if j >= len(text) or text[j] != "#":
+            return "".join(pieces), end
+        nxt = _read_piece(text, _ws(text, j + 1))
+        if nxt is None:
+            return "".join(pieces), end
+        pieces.append(nxt[0])
+        end = nxt[1]
+
+
+def iter_fields(text: str) -> Iterator[Field]:
+    """Every field in `text`, in order -- across entries if there are several.
+
+    Fields are read only INSIDE an entry: from its `@type{key,` (or
+    `@type(key,`) header to the delimiter that closes it. Text outside
+    entries is commentary, as BibTeX treats it, and is skipped -- so are a
+    `@comment`, `@string` or `@preamble` block and any other `@word{...}` /
+    `@word(...)` block. Inside an entry, a token that is not followed by `=`
+    is skipped, and so is an assignment with no value at all (`note = ,`).
+    Only a piece that OPENS with `{` or `"` and never closes -- first or
+    after a `#` -- ends the scan; everything read before it is returned.
+    """
+    n = len(text)
+    i = 0
+    close = None  # the delimiter that ends the entry being read, if any
+    while i < n:
+        if close is None:
+            i = text.find("@", i)
+            if i == -1:
+                return
+        c = text[i]
+        if c == "@":
+            m = _HEADER_RE.match(text, i)
+            if m:
+                close = _CLOSER[m.group(1)]
+                i = m.end()
+                continue
+            m = _NAME_RE.match(text, i + 1)
+            j = _ws(text, m.end()) if m else i + 1
+            if j < n and text[j] == "{":
+                end = _balanced_end(text, j)
+                if end is None:
+                    return
+                i = end
+                continue
+            if j < n and text[j] == "(":
+                end = _paren_block_end(text, j)
+                # Never closed: scan its contents leniently instead of
+                # treating the rest of the text as the block.
+                i = j + 1 if end is None else end
+                continue
+            i = j
+            continue
+        if c == close:
+            close = None
+            i += 1
+            continue
+        if c.isspace() or c in ",}":
+            i += 1
+            continue
+        m = _NAME_RE.match(text, i)
+        if not m:
+            i += 1
+            continue
+        j = _ws(text, m.end())
+        if j >= n or text[j] != "=":
+            i = m.end()
+            continue
+        value_start = _ws(text, j + 1)
+        try:
+            read = _read_value(text, value_start)
+        except _Unbounded:
+            return
+        if read is None:
+            i = value_start  # no value at all (`note = ,`): drop it, go on
+            continue
+        value, value_end = read
+        yield Field(m.group(), m.start(), value_start, value_end, value)
+        i = value_end
+
+
+def parse_entry_fields(entry_text: str) -> dict:
+    """Field name (lowercased) -> value (stripped). A repeated name keeps the
+    last value, as the regex reader did; pybtex rejects such an entry at the
+    barrier's validation, so this only ever governs text no decision reads."""
+    return {f.name.lower(): f.value.strip() for f in iter_fields(entry_text)}
+
+
+# Whitespace only, so the comma may sit on the next line.
+_TRAILING_COMMA_RE = re.compile(r"\s*,")
+
+
+def remove_field(text: str, field: Field) -> str:
+    """`text` with `field` cut out: the field, its trailing comma (even on
+    the next line), and -- when it had a line to itself -- that line's
+    leading whitespace and newline.
+    A field sharing a line loses only itself. The comma of the field BEFORE
+    it is left alone: BibTeX accepts a trailing comma before the closing
+    brace, so the result stays parseable either way."""
+    start = field.name_start
+    while start > 0 and text[start - 1] in " \t":
+        start -= 1
+    if start > 0 and text[start - 1] == "\n":
+        start -= 1
+        if start > 0 and text[start - 1] == "\r":
+            start -= 1
+    end = field.value_end
+    m = _TRAILING_COMMA_RE.match(text, end)
+    if m:
+        end = m.end()
+    return text[:start] + text[end:]

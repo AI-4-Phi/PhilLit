@@ -181,6 +181,7 @@ skills/literature-review/
     ├── evidence_barrier.py               # Phase 3-to-4 barrier: validate, acquire SEP/IEP context, vet venues, letter collisions, group reprints (same_work_group), gate web sources, corroborate abstracts, stamp EVIDENCE-* tiers
     ├── resolve_context.py                # Mechanical SEP/IEP context acquisition (barrier helper)
     ├── stamp_evidence.py                 # Evidence-tier computation and stamping (barrier helper)
+    ├── bib_fields.py                     # Depth-counting scanner owning the shared read path for fields in raw BibTeX text (barrier + enrichment readers, keywords stamp and editors)
     ├── venue_vetting.py                  # OpenAlex venue check behind venue_status (barrier helper, venue vetting)
     ├── year_suffix.py                    # Chicago a/b assignment over work identity (barrier helper, Chicago a/b disambiguation)
     ├── web_evidence.py                   # URL extraction, capture checks, existence (barrier helper, the EVIDENCE-WEB gate; owns the excluded-host policy — SEP + mirrors, IEP, NDPR, PhilPapers — which never earn EVIDENCE-WEB)
